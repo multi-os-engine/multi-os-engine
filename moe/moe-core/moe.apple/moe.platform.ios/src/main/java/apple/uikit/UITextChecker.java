@@ -60,34 +60,18 @@ public class UITextChecker extends NSObject {
     @Selector("alloc")
     public static native UITextChecker alloc();
 
-    /**
-     * availableLanguages</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITextChecker_Class/index.html#//apple_ref/occ/clm/UITextChecker/availableLanguages">iOS Dev Center</a>
-     */
     @Generated
     @Selector("availableLanguages")
     public static native NSArray<?> availableLanguages();
 
-    /**
-     * hasLearnedWord:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITextChecker_Class/index.html#//apple_ref/occ/clm/UITextChecker/hasLearnedWord:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("hasLearnedWord:")
     public static native boolean hasLearnedWord(String word);
 
-    /**
-     * learnWord:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITextChecker_Class/index.html#//apple_ref/occ/clm/UITextChecker/learnWord:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("learnWord:")
     public static native void learnWord(String word);
 
-    /**
-     * unlearnWord:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITextChecker_Class/index.html#//apple_ref/occ/clm/UITextChecker/unlearnWord:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("unlearnWord:")
     public static native void unlearnWord(String word);
@@ -192,36 +176,20 @@ public class UITextChecker extends NSObject {
     @NInt
     public static native long version_static();
 
-    /**
-     * completionsForPartialWordRange:inString:language:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITextChecker_Class/index.html#//apple_ref/occ/instm/UITextChecker/completionsForPartialWordRange:inString:language:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("completionsForPartialWordRange:inString:language:")
     public native NSArray<?> completionsForPartialWordRangeInStringLanguage(@ByValue NSRange range, String string,
             String language);
 
-    /**
-     * guessesForWordRange:inString:language:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITextChecker_Class/index.html#//apple_ref/occ/instm/UITextChecker/guessesForWordRange:inString:language:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("guessesForWordRange:inString:language:")
     public native NSArray<?> guessesForWordRangeInStringLanguage(@ByValue NSRange range, String string,
             String language);
 
-    /**
-     * ignoreWord:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITextChecker_Class/index.html#//apple_ref/occ/instm/UITextChecker/ignoreWord:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("ignoreWord:")
     public native void ignoreWord(String wordToIgnore);
 
-    /**
-     * ignoredWords</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITextChecker_Class/index.html#//apple_ref/occ/instm/UITextChecker/ignoredWords">iOS Dev Center</a>
-     */
     @Generated
     @Selector("ignoredWords")
     public native NSArray<?> ignoredWords();
@@ -230,20 +198,12 @@ public class UITextChecker extends NSObject {
     @Selector("init")
     public native UITextChecker init();
 
-    /**
-     * rangeOfMisspelledWordInString:range:startingAt:wrap:language:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITextChecker_Class/index.html#//apple_ref/occ/instm/UITextChecker/rangeOfMisspelledWordInString:range:startingAt:wrap:language:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("rangeOfMisspelledWordInString:range:startingAt:wrap:language:")
     @ByValue
     public native NSRange rangeOfMisspelledWordInStringRangeStartingAtWrapLanguage(String stringToCheck,
             @ByValue NSRange range, @NInt long startingOffset, boolean wrapFlag, String language);
 
-    /**
-     * setIgnoredWords:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITextChecker_Class/index.html#//apple_ref/occ/instm/UITextChecker/setIgnoredWords:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setIgnoredWords:")
     public native void setIgnoredWords(NSArray<?> words);

@@ -161,27 +161,15 @@ public class GLKBaseEffect extends NSObject implements GLKNamedEffect {
     @NInt
     public static native long version_static();
 
-    /**
-     * colorMaterialEnabled</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GLkit/Reference/GLKBaseEffect_ClassRef/index.html#//apple_ref/occ/instp/GLKBaseEffect/colorMaterialEnabled">iOS Dev Center</a>
-     */
     @Generated
     @Selector("colorMaterialEnabled")
     public native byte colorMaterialEnabled();
 
-    /**
-     * constantColor</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GLkit/Reference/GLKBaseEffect_ClassRef/index.html#//apple_ref/occ/instp/GLKBaseEffect/constantColor">iOS Dev Center</a>
-     */
     @Generated
     @Selector("constantColor")
     @ByValue
     public native GLKVector4 constantColor();
 
-    /**
-     * fog</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GLkit/Reference/GLKBaseEffect_ClassRef/index.html#//apple_ref/occ/instp/GLKBaseEffect/fog">iOS Dev Center</a>
-     */
     @Generated
     @Selector("fog")
     public native GLKEffectPropertyFog fog();
@@ -190,67 +178,35 @@ public class GLKBaseEffect extends NSObject implements GLKNamedEffect {
     @Selector("init")
     public native GLKBaseEffect init();
 
-    /**
-     * label</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GLkit/Reference/GLKBaseEffect_ClassRef/index.html#//apple_ref/occ/instp/GLKBaseEffect/label">iOS Dev Center</a>
-     */
     @Generated
     @Selector("label")
     public native String label();
 
-    /**
-     * light0</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GLkit/Reference/GLKBaseEffect_ClassRef/index.html#//apple_ref/occ/instp/GLKBaseEffect/light0">iOS Dev Center</a>
-     */
     @Generated
     @Selector("light0")
     public native GLKEffectPropertyLight light0();
 
-    /**
-     * light1</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GLkit/Reference/GLKBaseEffect_ClassRef/index.html#//apple_ref/occ/instp/GLKBaseEffect/light1">iOS Dev Center</a>
-     */
     @Generated
     @Selector("light1")
     public native GLKEffectPropertyLight light1();
 
-    /**
-     * light2</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GLkit/Reference/GLKBaseEffect_ClassRef/index.html#//apple_ref/occ/instp/GLKBaseEffect/light2">iOS Dev Center</a>
-     */
     @Generated
     @Selector("light2")
     public native GLKEffectPropertyLight light2();
 
-    /**
-     * lightModelAmbientColor</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GLkit/Reference/GLKBaseEffect_ClassRef/index.html#//apple_ref/occ/instp/GLKBaseEffect/lightModelAmbientColor">iOS Dev Center</a>
-     */
     @Generated
     @Selector("lightModelAmbientColor")
     @ByValue
     public native GLKVector4 lightModelAmbientColor();
 
-    /**
-     * lightModelTwoSided</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GLkit/Reference/GLKBaseEffect_ClassRef/index.html#//apple_ref/occ/instp/GLKBaseEffect/lightModelTwoSided">iOS Dev Center</a>
-     */
     @Generated
     @Selector("lightModelTwoSided")
     public native byte lightModelTwoSided();
 
-    /**
-     * lightingType</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GLkit/Reference/GLKBaseEffect_ClassRef/index.html#//apple_ref/occ/instp/GLKBaseEffect/lightingType">iOS Dev Center</a>
-     */
     @Generated
     @Selector("lightingType")
     public native int lightingType();
 
-    /**
-     * material</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GLkit/Reference/GLKBaseEffect_ClassRef/index.html#//apple_ref/occ/instp/GLKBaseEffect/material">iOS Dev Center</a>
-     */
     @Generated
     @Selector("material")
     public native GLKEffectPropertyMaterial material();
@@ -259,106 +215,54 @@ public class GLKBaseEffect extends NSObject implements GLKNamedEffect {
     @Selector("prepareToDraw")
     public native void prepareToDraw();
 
-    /**
-     * colorMaterialEnabled</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GLkit/Reference/GLKBaseEffect_ClassRef/index.html#//apple_ref/occ/instp/GLKBaseEffect/colorMaterialEnabled">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setColorMaterialEnabled:")
     public native void setColorMaterialEnabled(byte value);
 
-    /**
-     * constantColor</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GLkit/Reference/GLKBaseEffect_ClassRef/index.html#//apple_ref/occ/instp/GLKBaseEffect/constantColor">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setConstantColor:")
     public native void setConstantColor(@ByValue GLKVector4 value);
 
-    /**
-     * label</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GLkit/Reference/GLKBaseEffect_ClassRef/index.html#//apple_ref/occ/instp/GLKBaseEffect/label">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setLabel:")
     public native void setLabel(String value);
 
-    /**
-     * lightModelAmbientColor</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GLkit/Reference/GLKBaseEffect_ClassRef/index.html#//apple_ref/occ/instp/GLKBaseEffect/lightModelAmbientColor">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setLightModelAmbientColor:")
     public native void setLightModelAmbientColor(@ByValue GLKVector4 value);
 
-    /**
-     * lightModelTwoSided</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GLkit/Reference/GLKBaseEffect_ClassRef/index.html#//apple_ref/occ/instp/GLKBaseEffect/lightModelTwoSided">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setLightModelTwoSided:")
     public native void setLightModelTwoSided(byte value);
 
-    /**
-     * lightingType</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GLkit/Reference/GLKBaseEffect_ClassRef/index.html#//apple_ref/occ/instp/GLKBaseEffect/lightingType">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setLightingType:")
     public native void setLightingType(int value);
 
-    /**
-     * textureOrder</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GLkit/Reference/GLKBaseEffect_ClassRef/index.html#//apple_ref/occ/instp/GLKBaseEffect/textureOrder">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setTextureOrder:")
     public native void setTextureOrder(NSArray<? extends GLKEffectPropertyTexture> value);
 
-    /**
-     * useConstantColor</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GLkit/Reference/GLKBaseEffect_ClassRef/index.html#//apple_ref/occ/instp/GLKBaseEffect/useConstantColor">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setUseConstantColor:")
     public native void setUseConstantColor(byte value);
 
-    /**
-     * texture2d0</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GLkit/Reference/GLKBaseEffect_ClassRef/index.html#//apple_ref/occ/instp/GLKBaseEffect/texture2d0">iOS Dev Center</a>
-     */
     @Generated
     @Selector("texture2d0")
     public native GLKEffectPropertyTexture texture2d0();
 
-    /**
-     * texture2d1</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GLkit/Reference/GLKBaseEffect_ClassRef/index.html#//apple_ref/occ/instp/GLKBaseEffect/texture2d1">iOS Dev Center</a>
-     */
     @Generated
     @Selector("texture2d1")
     public native GLKEffectPropertyTexture texture2d1();
 
-    /**
-     * textureOrder</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GLkit/Reference/GLKBaseEffect_ClassRef/index.html#//apple_ref/occ/instp/GLKBaseEffect/textureOrder">iOS Dev Center</a>
-     */
     @Generated
     @Selector("textureOrder")
     public native NSArray<? extends GLKEffectPropertyTexture> textureOrder();
 
-    /**
-     * transform</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GLkit/Reference/GLKBaseEffect_ClassRef/index.html#//apple_ref/occ/instp/GLKBaseEffect/transform">iOS Dev Center</a>
-     */
     @Generated
     @Selector("transform")
     public native GLKEffectPropertyTransform transform();
 
-    /**
-     * useConstantColor</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GLkit/Reference/GLKBaseEffect_ClassRef/index.html#//apple_ref/occ/instp/GLKBaseEffect/useConstantColor">iOS Dev Center</a>
-     */
     @Generated
     @Selector("useConstantColor")
     public native byte useConstantColor();

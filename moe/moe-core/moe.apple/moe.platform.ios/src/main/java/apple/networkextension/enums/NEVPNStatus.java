@@ -27,6 +27,7 @@ public final class NEVPNStatus {
     @Generated @NInt public static final long Connected = 0x0000000000000003L;
     @Generated @NInt public static final long Reasserting = 0x0000000000000004L;
     @Generated @NInt public static final long Disconnecting = 0x0000000000000005L;
+
     @Generated
     private NEVPNStatus() {
     }

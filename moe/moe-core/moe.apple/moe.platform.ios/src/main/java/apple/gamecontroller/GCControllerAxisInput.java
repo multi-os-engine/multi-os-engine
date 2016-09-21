@@ -163,27 +163,15 @@ public class GCControllerAxisInput extends GCControllerElement {
     @Selector("init")
     public native GCControllerAxisInput init();
 
-    /**
-     * valueChangedHandler</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameController/Reference/GCControllerAxisInput_Ref/index.html#//apple_ref/occ/instp/GCControllerAxisInput/valueChangedHandler">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setValueChangedHandler:")
     public native void setValueChangedHandler(
             @ObjCBlock(name = "call_setValueChangedHandler") Block_setValueChangedHandler value);
 
-    /**
-     * value</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameController/Reference/GCControllerAxisInput_Ref/index.html#//apple_ref/occ/instp/GCControllerAxisInput/value">iOS Dev Center</a>
-     */
     @Generated
     @Selector("value")
     public native float value();
 
-    /**
-     * valueChangedHandler</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameController/Reference/GCControllerAxisInput_Ref/index.html#//apple_ref/occ/instp/GCControllerAxisInput/valueChangedHandler">iOS Dev Center</a>
-     */
     @Generated
     @Selector("valueChangedHandler")
     @ObjCBlock(name = "call_valueChangedHandler_ret")

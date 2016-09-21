@@ -32,10 +32,6 @@ import org.moe.natj.objc.ann.Selector;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("AVVideoCompositing")
 public interface AVVideoCompositing {
-    /**
-     * cancelAllPendingVideoCompositionRequests</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVVideoCompositing_Protocol/index.html#//apple_ref/occ/intfm/AVVideoCompositing/cancelAllPendingVideoCompositionRequests">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("cancelAllPendingVideoCompositionRequests")
@@ -43,34 +39,18 @@ public interface AVVideoCompositing {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * renderContextChanged:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVVideoCompositing_Protocol/index.html#//apple_ref/occ/intfm/AVVideoCompositing/renderContextChanged:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("renderContextChanged:")
     void renderContextChanged(AVVideoCompositionRenderContext newRenderContext);
 
-    /**
-     * requiredPixelBufferAttributesForRenderContext</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVVideoCompositing_Protocol/index.html#//apple_ref/occ/intfp/AVVideoCompositing/requiredPixelBufferAttributesForRenderContext">iOS Dev Center</a>
-     */
     @Generated
     @Selector("requiredPixelBufferAttributesForRenderContext")
     NSDictionary<String, ?> requiredPixelBufferAttributesForRenderContext();
 
-    /**
-     * sourcePixelBufferAttributes</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVVideoCompositing_Protocol/index.html#//apple_ref/occ/intfp/AVVideoCompositing/sourcePixelBufferAttributes">iOS Dev Center</a>
-     */
     @Generated
     @Selector("sourcePixelBufferAttributes")
     NSDictionary<String, ?> sourcePixelBufferAttributes();
 
-    /**
-     * startVideoCompositionRequest:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVVideoCompositing_Protocol/index.html#//apple_ref/occ/intfm/AVVideoCompositing/startVideoCompositionRequest:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("startVideoCompositionRequest:")
     void startVideoCompositionRequest(AVAsynchronousVideoCompositionRequest asyncVideoCompositionRequest);

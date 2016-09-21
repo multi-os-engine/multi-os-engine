@@ -26,6 +26,7 @@ public final class Enums {
     @Generated public static final int kJSPropertyAttributeReadOnly = 0x00000002;
     @Generated public static final int kJSPropertyAttributeDontEnum = 0x00000004;
     @Generated public static final int kJSPropertyAttributeDontDelete = 0x00000008;
+
     @Generated
     private Enums() {
     }

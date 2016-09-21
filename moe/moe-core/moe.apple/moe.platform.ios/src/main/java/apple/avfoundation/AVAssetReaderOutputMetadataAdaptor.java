@@ -58,10 +58,6 @@ public class AVAssetReaderOutputMetadataAdaptor extends NSObject {
     @Selector("alloc")
     public static native AVAssetReaderOutputMetadataAdaptor alloc();
 
-    /**
-     * assetReaderOutputMetadataAdaptorWithAssetReaderTrackOutput:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAssetReaderOutputMetadataAdaptor_Class/index.html#//apple_ref/occ/clm/AVAssetReaderOutputMetadataAdaptor/assetReaderOutputMetadataAdaptorWithAssetReaderTrackOutput:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("assetReaderOutputMetadataAdaptorWithAssetReaderTrackOutput:")
     public static native AVAssetReaderOutputMetadataAdaptor assetReaderOutputMetadataAdaptorWithAssetReaderTrackOutput(
@@ -167,10 +163,6 @@ public class AVAssetReaderOutputMetadataAdaptor extends NSObject {
     @NInt
     public static native long version();
 
-    /**
-     * assetReaderTrackOutput</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAssetReaderOutputMetadataAdaptor_Class/index.html#//apple_ref/occ/instp/AVAssetReaderOutputMetadataAdaptor/assetReaderTrackOutput">iOS Dev Center</a>
-     */
     @Generated
     @Selector("assetReaderTrackOutput")
     public native AVAssetReaderTrackOutput assetReaderTrackOutput();
@@ -179,19 +171,11 @@ public class AVAssetReaderOutputMetadataAdaptor extends NSObject {
     @Selector("init")
     public native AVAssetReaderOutputMetadataAdaptor init();
 
-    /**
-     * initWithAssetReaderTrackOutput:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAssetReaderOutputMetadataAdaptor_Class/index.html#//apple_ref/occ/instm/AVAssetReaderOutputMetadataAdaptor/initWithAssetReaderTrackOutput:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithAssetReaderTrackOutput:")
     public native AVAssetReaderOutputMetadataAdaptor initWithAssetReaderTrackOutput(
             AVAssetReaderTrackOutput trackOutput);
 
-    /**
-     * nextTimedMetadataGroup</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAssetReaderOutputMetadataAdaptor_Class/index.html#//apple_ref/occ/instm/AVAssetReaderOutputMetadataAdaptor/nextTimedMetadataGroup">iOS Dev Center</a>
-     */
     @Generated
     @Selector("nextTimedMetadataGroup")
     public native AVTimedMetadataGroup nextTimedMetadataGroup();

@@ -60,18 +60,10 @@ public class UIVibrancyEffect extends UIVisualEffect {
     @Selector("alloc")
     public static native UIVibrancyEffect alloc();
 
-    /**
-     * effectForBlurEffect:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIVibrancyEffect/index.html#//apple_ref/occ/clm/UIVibrancyEffect/effectForBlurEffect:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("effectForBlurEffect:")
     public static native UIVibrancyEffect effectForBlurEffect(UIBlurEffect blurEffect);
 
-    /**
-     * notificationCenterVibrancyEffect</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIVibrancyEffect/index.html#//apple_ref/occ/clm/UIVibrancyEffect/notificationCenterVibrancyEffect">iOS Dev Center</a>
-     */
     @Generated
     @Selector("notificationCenterVibrancyEffect")
     public static native UIVibrancyEffect notificationCenterVibrancyEffect();

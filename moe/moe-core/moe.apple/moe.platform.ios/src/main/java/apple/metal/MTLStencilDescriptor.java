@@ -165,19 +165,11 @@ public class MTLStencilDescriptor extends NSObject implements NSCopying {
     @MappedReturn(ObjCObjectMapper.class)
     public native Object copyWithZone(VoidPtr zone);
 
-    /**
-     * depthFailureOperation</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Metal/Reference/MTLStencilDescriptor_Ref/index.html#//apple_ref/occ/instp/MTLStencilDescriptor/depthFailureOperation">iOS Dev Center</a>
-     */
     @Generated
     @Selector("depthFailureOperation")
     @NUInt
     public native long depthFailureOperation();
 
-    /**
-     * depthStencilPassOperation</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Metal/Reference/MTLStencilDescriptor_Ref/index.html#//apple_ref/occ/instp/MTLStencilDescriptor/depthStencilPassOperation">iOS Dev Center</a>
-     */
     @Generated
     @Selector("depthStencilPassOperation")
     @NUInt
@@ -187,84 +179,44 @@ public class MTLStencilDescriptor extends NSObject implements NSCopying {
     @Selector("init")
     public native MTLStencilDescriptor init();
 
-    /**
-     * readMask</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Metal/Reference/MTLStencilDescriptor_Ref/index.html#//apple_ref/occ/instp/MTLStencilDescriptor/readMask">iOS Dev Center</a>
-     */
     @Generated
     @Selector("readMask")
     public native int readMask();
 
-    /**
-     * depthFailureOperation</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Metal/Reference/MTLStencilDescriptor_Ref/index.html#//apple_ref/occ/instp/MTLStencilDescriptor/depthFailureOperation">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setDepthFailureOperation:")
     public native void setDepthFailureOperation(@NUInt long value);
 
-    /**
-     * depthStencilPassOperation</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Metal/Reference/MTLStencilDescriptor_Ref/index.html#//apple_ref/occ/instp/MTLStencilDescriptor/depthStencilPassOperation">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setDepthStencilPassOperation:")
     public native void setDepthStencilPassOperation(@NUInt long value);
 
-    /**
-     * readMask</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Metal/Reference/MTLStencilDescriptor_Ref/index.html#//apple_ref/occ/instp/MTLStencilDescriptor/readMask">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setReadMask:")
     public native void setReadMask(int value);
 
-    /**
-     * stencilCompareFunction</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Metal/Reference/MTLStencilDescriptor_Ref/index.html#//apple_ref/occ/instp/MTLStencilDescriptor/stencilCompareFunction">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setStencilCompareFunction:")
     public native void setStencilCompareFunction(@NUInt long value);
 
-    /**
-     * stencilFailureOperation</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Metal/Reference/MTLStencilDescriptor_Ref/index.html#//apple_ref/occ/instp/MTLStencilDescriptor/stencilFailureOperation">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setStencilFailureOperation:")
     public native void setStencilFailureOperation(@NUInt long value);
 
-    /**
-     * writeMask</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Metal/Reference/MTLStencilDescriptor_Ref/index.html#//apple_ref/occ/instp/MTLStencilDescriptor/writeMask">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setWriteMask:")
     public native void setWriteMask(int value);
 
-    /**
-     * stencilCompareFunction</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Metal/Reference/MTLStencilDescriptor_Ref/index.html#//apple_ref/occ/instp/MTLStencilDescriptor/stencilCompareFunction">iOS Dev Center</a>
-     */
     @Generated
     @Selector("stencilCompareFunction")
     @NUInt
     public native long stencilCompareFunction();
 
-    /**
-     * stencilFailureOperation</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Metal/Reference/MTLStencilDescriptor_Ref/index.html#//apple_ref/occ/instp/MTLStencilDescriptor/stencilFailureOperation">iOS Dev Center</a>
-     */
     @Generated
     @Selector("stencilFailureOperation")
     @NUInt
     public native long stencilFailureOperation();
 
-    /**
-     * writeMask</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Metal/Reference/MTLStencilDescriptor_Ref/index.html#//apple_ref/occ/instp/MTLStencilDescriptor/writeMask">iOS Dev Center</a>
-     */
     @Generated
     @Selector("writeMask")
     public native int writeMask();

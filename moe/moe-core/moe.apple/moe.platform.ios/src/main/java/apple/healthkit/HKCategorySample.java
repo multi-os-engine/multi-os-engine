@@ -62,28 +62,16 @@ public class HKCategorySample extends HKSample {
     @Selector("alloc")
     public static native HKCategorySample alloc();
 
-    /**
-     * categorySampleWithType:value:startDate:endDate:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HealthKit/Reference/HKCategorySample_Class/index.html#//apple_ref/occ/clm/HKCategorySample/categorySampleWithType:value:startDate:endDate:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("categorySampleWithType:value:startDate:endDate:")
     public static native HKCategorySample categorySampleWithTypeValueStartDateEndDate(HKCategoryType type,
             @NInt long value, NSDate startDate, NSDate endDate);
 
-    /**
-     * categorySampleWithType:value:startDate:endDate:metadata:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HealthKit/Reference/HKCategorySample_Class/index.html#//apple_ref/occ/clm/HKCategorySample/categorySampleWithType:value:startDate:endDate:metadata:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("categorySampleWithType:value:startDate:endDate:metadata:")
     public static native HKCategorySample categorySampleWithTypeValueStartDateEndDateMetadata(HKCategoryType type,
             @NInt long value, NSDate startDate, NSDate endDate, NSDictionary<String, ?> metadata);
 
-    /**
-     * categorySampleWithType:value:startDate:endDate:device:metadata:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HealthKit/Reference/HKCategorySample_Class/index.html#//apple_ref/occ/clm/HKCategorySample/categorySampleWithType:value:startDate:endDate:device:metadata:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("categorySampleWithType:value:startDate:endDate:device:metadata:")
     public static native HKCategorySample categorySampleWithTypeValueStartDateEndDateDeviceMetadata(HKCategoryType type,
@@ -193,10 +181,6 @@ public class HKCategorySample extends HKSample {
     @NInt
     public static native long version_static();
 
-    /**
-     * categoryType</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HealthKit/Reference/HKCategorySample_Class/index.html#//apple_ref/occ/instp/HKCategorySample/categoryType">iOS Dev Center</a>
-     */
     @Generated
     @Selector("categoryType")
     public native HKCategoryType categoryType();
@@ -205,10 +189,6 @@ public class HKCategorySample extends HKSample {
     @Selector("init")
     public native HKCategorySample init();
 
-    /**
-     * value</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HealthKit/Reference/HKCategorySample_Class/index.html#//apple_ref/occ/instp/HKCategorySample/value">iOS Dev Center</a>
-     */
     @Generated
     @Selector("value")
     @NInt

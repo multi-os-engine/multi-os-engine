@@ -162,27 +162,15 @@ public class HMTrigger extends NSObject {
     @NInt
     public static native long version();
 
-    /**
-     * actionSets</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HomeKit/Reference/HMTrigger_Class/index.html#//apple_ref/occ/instp/HMTrigger/actionSets">iOS Dev Center</a>
-     */
     @Generated
     @Selector("actionSets")
     public native NSArray<? extends HMActionSet> actionSets();
 
-    /**
-     * addActionSet:completionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HomeKit/Reference/HMTrigger_Class/index.html#//apple_ref/occ/instm/HMTrigger/addActionSet:completionHandler:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("addActionSet:completionHandler:")
     public native void addActionSetCompletionHandler(HMActionSet actionSet,
             @ObjCBlock(name = "call_addActionSetCompletionHandler") Block_addActionSetCompletionHandler completion);
 
-    /**
-     * enable:completionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HomeKit/Reference/HMTrigger_Class/index.html#//apple_ref/occ/instm/HMTrigger/enable:completionHandler:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("enable:completionHandler:")
     public native void enableCompletionHandler(boolean enable,
@@ -192,43 +180,23 @@ public class HMTrigger extends NSObject {
     @Selector("init")
     public native HMTrigger init();
 
-    /**
-     * enabled</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HomeKit/Reference/HMTrigger_Class/index.html#//apple_ref/occ/instp/HMTrigger/enabled">iOS Dev Center</a>
-     */
     @Generated
     @Selector("isEnabled")
     public native boolean isEnabled();
 
-    /**
-     * lastFireDate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HomeKit/Reference/HMTrigger_Class/index.html#//apple_ref/occ/instp/HMTrigger/lastFireDate">iOS Dev Center</a>
-     */
     @Generated
     @Selector("lastFireDate")
     public native NSDate lastFireDate();
 
-    /**
-     * name</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HomeKit/Reference/HMTrigger_Class/index.html#//apple_ref/occ/instp/HMTrigger/name">iOS Dev Center</a>
-     */
     @Generated
     @Selector("name")
     public native String name();
 
-    /**
-     * removeActionSet:completionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HomeKit/Reference/HMTrigger_Class/index.html#//apple_ref/occ/instm/HMTrigger/removeActionSet:completionHandler:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("removeActionSet:completionHandler:")
     public native void removeActionSetCompletionHandler(HMActionSet actionSet,
             @ObjCBlock(name = "call_removeActionSetCompletionHandler") Block_removeActionSetCompletionHandler completion);
 
-    /**
-     * updateName:completionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HomeKit/Reference/HMTrigger_Class/index.html#//apple_ref/occ/instm/HMTrigger/updateName:completionHandler:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("updateName:completionHandler:")
     public native void updateNameCompletionHandler(String name,

@@ -35,10 +35,6 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("UIAdaptivePresentationControllerDelegate")
 public interface UIAdaptivePresentationControllerDelegate {
-    /**
-     * adaptivePresentationStyleForPresentationController:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIAdaptivePresentationControllerDelegate_protocol/index.html#//apple_ref/occ/intfm/UIAdaptivePresentationControllerDelegate/adaptivePresentationStyleForPresentationController:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("adaptivePresentationStyleForPresentationController:")
@@ -47,10 +43,6 @@ public interface UIAdaptivePresentationControllerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * adaptivePresentationStyleForPresentationController:traitCollection:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIAdaptivePresentationControllerDelegate_protocol/index.html#//apple_ref/occ/intfm/UIAdaptivePresentationControllerDelegate/adaptivePresentationStyleForPresentationController:traitCollection:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("adaptivePresentationStyleForPresentationController:traitCollection:")
@@ -60,10 +52,6 @@ public interface UIAdaptivePresentationControllerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * presentationController:viewControllerForAdaptivePresentationStyle:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIAdaptivePresentationControllerDelegate_protocol/index.html#//apple_ref/occ/intfm/UIAdaptivePresentationControllerDelegate/presentationController:viewControllerForAdaptivePresentationStyle:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("presentationController:viewControllerForAdaptivePresentationStyle:")
@@ -72,10 +60,6 @@ public interface UIAdaptivePresentationControllerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * presentationController:willPresentWithAdaptiveStyle:transitionCoordinator:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIAdaptivePresentationControllerDelegate_protocol/index.html#//apple_ref/occ/intfm/UIAdaptivePresentationControllerDelegate/presentationController:willPresentWithAdaptiveStyle:transitionCoordinator:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("presentationController:willPresentWithAdaptiveStyle:transitionCoordinator:")

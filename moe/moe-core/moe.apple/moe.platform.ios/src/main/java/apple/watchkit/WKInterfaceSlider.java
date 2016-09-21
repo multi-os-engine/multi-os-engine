@@ -163,34 +163,18 @@ public class WKInterfaceSlider extends WKInterfaceObject {
     @Selector("init")
     public native WKInterfaceSlider init();
 
-    /**
-     * setColor:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WatchKit/Reference/WKInterfaceSlider_class/index.html#//apple_ref/occ/instm/WKInterfaceSlider/setColor:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setColor:")
     public native void setColor(UIColor color);
 
-    /**
-     * setEnabled:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WatchKit/Reference/WKInterfaceSlider_class/index.html#//apple_ref/occ/instm/WKInterfaceSlider/setEnabled:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setEnabled:")
     public native void setEnabled(boolean enabled);
 
-    /**
-     * setNumberOfSteps:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WatchKit/Reference/WKInterfaceSlider_class/index.html#//apple_ref/occ/instm/WKInterfaceSlider/setNumberOfSteps:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setNumberOfSteps:")
     public native void setNumberOfSteps(@NInt long numberOfSteps);
 
-    /**
-     * setValue:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WatchKit/Reference/WKInterfaceSlider_class/index.html#//apple_ref/occ/instm/WKInterfaceSlider/setValue:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setValue:")
     public native void setValue(float value);

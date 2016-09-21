@@ -63,18 +63,10 @@ public class NSFileProviderExtension extends NSObject {
     @Selector("alloc")
     public static native NSFileProviderExtension alloc();
 
-    /**
-     * placeholderURLForURL:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/NSFileProviderExtension_Class/index.html#//apple_ref/occ/clm/NSFileProviderExtension/placeholderURLForURL:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("placeholderURLForURL:")
     public static native NSURL placeholderURLForURL(NSURL url);
 
-    /**
-     * writePlaceholderAtURL:withMetadata:error:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/NSFileProviderExtension_Class/index.html#//apple_ref/occ/clm/NSFileProviderExtension/writePlaceholderAtURL:withMetadata:error:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("writePlaceholderAtURL:withMetadata:error:")
     public static native boolean writePlaceholderAtURLWithMetadataError(NSURL placeholderURL,
@@ -180,18 +172,10 @@ public class NSFileProviderExtension extends NSObject {
     @NInt
     public static native long version_static();
 
-    /**
-     * URLForItemWithPersistentIdentifier:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/NSFileProviderExtension_Class/index.html#//apple_ref/occ/instm/NSFileProviderExtension/URLForItemWithPersistentIdentifier:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("URLForItemWithPersistentIdentifier:")
     public native NSURL URLForItemWithPersistentIdentifier(String identifier);
 
-    /**
-     * documentStorageURL</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/NSFileProviderExtension_Class/index.html#//apple_ref/occ/instm/NSFileProviderExtension/documentStorageURL">iOS Dev Center</a>
-     */
     @Generated
     @Selector("documentStorageURL")
     public native NSURL documentStorageURL();
@@ -200,52 +184,28 @@ public class NSFileProviderExtension extends NSObject {
     @Selector("init")
     public native NSFileProviderExtension init();
 
-    /**
-     * itemChangedAtURL:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/NSFileProviderExtension_Class/index.html#//apple_ref/occ/instm/NSFileProviderExtension/itemChangedAtURL:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("itemChangedAtURL:")
     public native void itemChangedAtURL(NSURL url);
 
-    /**
-     * persistentIdentifierForItemAtURL:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/NSFileProviderExtension_Class/index.html#//apple_ref/occ/instm/NSFileProviderExtension/persistentIdentifierForItemAtURL:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("persistentIdentifierForItemAtURL:")
     public native String persistentIdentifierForItemAtURL(NSURL url);
 
-    /**
-     * providePlaceholderAtURL:completionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/NSFileProviderExtension_Class/index.html#//apple_ref/occ/instm/NSFileProviderExtension/providePlaceholderAtURL:completionHandler:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("providePlaceholderAtURL:completionHandler:")
     public native void providePlaceholderAtURLCompletionHandler(NSURL url,
             @ObjCBlock(name = "call_providePlaceholderAtURLCompletionHandler") Block_providePlaceholderAtURLCompletionHandler completionHandler);
 
-    /**
-     * providerIdentifier</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/NSFileProviderExtension_Class/index.html#//apple_ref/occ/instm/NSFileProviderExtension/providerIdentifier">iOS Dev Center</a>
-     */
     @Generated
     @Selector("providerIdentifier")
     public native String providerIdentifier();
 
-    /**
-     * startProvidingItemAtURL:completionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/NSFileProviderExtension_Class/index.html#//apple_ref/occ/instm/NSFileProviderExtension/startProvidingItemAtURL:completionHandler:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("startProvidingItemAtURL:completionHandler:")
     public native void startProvidingItemAtURLCompletionHandler(NSURL url,
             @ObjCBlock(name = "call_startProvidingItemAtURLCompletionHandler") Block_startProvidingItemAtURLCompletionHandler completionHandler);
 
-    /**
-     * stopProvidingItemAtURL:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/NSFileProviderExtension_Class/index.html#//apple_ref/occ/instm/NSFileProviderExtension/stopProvidingItemAtURL:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("stopProvidingItemAtURL:")
     public native void stopProvidingItemAtURL(NSURL url);

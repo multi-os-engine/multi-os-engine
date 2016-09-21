@@ -28,130 +28,66 @@ import org.moe.natj.objc.ann.Selector;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("CAMediaTiming")
 public interface CAMediaTiming {
-    /**
-     * autoreverses</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/CAMediaTiming_protocol/index.html#//apple_ref/occ/intfp/CAMediaTiming/autoreverses">iOS Dev Center</a>
-     */
     @Generated
     @Selector("autoreverses")
     boolean autoreverses();
 
-    /**
-     * beginTime</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/CAMediaTiming_protocol/index.html#//apple_ref/occ/intfp/CAMediaTiming/beginTime">iOS Dev Center</a>
-     */
     @Generated
     @Selector("beginTime")
     double beginTime();
 
-    /**
-     * duration</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/CAMediaTiming_protocol/index.html#//apple_ref/occ/intfp/CAMediaTiming/duration">iOS Dev Center</a>
-     */
     @Generated
     @Selector("duration")
     double duration();
 
-    /**
-     * fillMode</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/CAMediaTiming_protocol/index.html#//apple_ref/occ/intfp/CAMediaTiming/fillMode">iOS Dev Center</a>
-     */
     @Generated
     @Selector("fillMode")
     String fillMode();
 
-    /**
-     * repeatCount</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/CAMediaTiming_protocol/index.html#//apple_ref/occ/intfp/CAMediaTiming/repeatCount">iOS Dev Center</a>
-     */
     @Generated
     @Selector("repeatCount")
     float repeatCount();
 
-    /**
-     * repeatDuration</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/CAMediaTiming_protocol/index.html#//apple_ref/occ/intfp/CAMediaTiming/repeatDuration">iOS Dev Center</a>
-     */
     @Generated
     @Selector("repeatDuration")
     double repeatDuration();
 
-    /**
-     * autoreverses</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/CAMediaTiming_protocol/index.html#//apple_ref/occ/intfp/CAMediaTiming/autoreverses">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setAutoreverses:")
     void setAutoreverses(boolean value);
 
-    /**
-     * beginTime</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/CAMediaTiming_protocol/index.html#//apple_ref/occ/intfp/CAMediaTiming/beginTime">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setBeginTime:")
     void setBeginTime(double value);
 
-    /**
-     * duration</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/CAMediaTiming_protocol/index.html#//apple_ref/occ/intfp/CAMediaTiming/duration">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setDuration:")
     void setDuration(double value);
 
-    /**
-     * fillMode</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/CAMediaTiming_protocol/index.html#//apple_ref/occ/intfp/CAMediaTiming/fillMode">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setFillMode:")
     void setFillMode(String value);
 
-    /**
-     * repeatCount</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/CAMediaTiming_protocol/index.html#//apple_ref/occ/intfp/CAMediaTiming/repeatCount">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setRepeatCount:")
     void setRepeatCount(float value);
 
-    /**
-     * repeatDuration</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/CAMediaTiming_protocol/index.html#//apple_ref/occ/intfp/CAMediaTiming/repeatDuration">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setRepeatDuration:")
     void setRepeatDuration(double value);
 
-    /**
-     * speed</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/CAMediaTiming_protocol/index.html#//apple_ref/occ/intfp/CAMediaTiming/speed">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setSpeed:")
     void setSpeed(float value);
 
-    /**
-     * timeOffset</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/CAMediaTiming_protocol/index.html#//apple_ref/occ/intfp/CAMediaTiming/timeOffset">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setTimeOffset:")
     void setTimeOffset(double value);
 
-    /**
-     * speed</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/CAMediaTiming_protocol/index.html#//apple_ref/occ/intfp/CAMediaTiming/speed">iOS Dev Center</a>
-     */
     @Generated
     @Selector("speed")
     float speed();
 
-    /**
-     * timeOffset</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/CAMediaTiming_protocol/index.html#//apple_ref/occ/intfp/CAMediaTiming/timeOffset">iOS Dev Center</a>
-     */
     @Generated
     @Selector("timeOffset")
     double timeOffset();

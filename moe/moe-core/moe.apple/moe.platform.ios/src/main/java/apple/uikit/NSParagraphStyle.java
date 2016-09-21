@@ -64,18 +64,10 @@ public class NSParagraphStyle extends NSObject implements NSCopying, NSMutableCo
     @Selector("alloc")
     public static native NSParagraphStyle alloc();
 
-    /**
-     * defaultParagraphStyle</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/ApplicationKit/Classes/NSParagraphStyle_Class/index.html#//apple_ref/occ/clm/NSParagraphStyle/defaultParagraphStyle">iOS Dev Center</a>
-     */
     @Generated
     @Selector("defaultParagraphStyle")
     public static native NSParagraphStyle defaultParagraphStyle();
 
-    /**
-     * defaultWritingDirectionForLanguage:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/ApplicationKit/Classes/NSParagraphStyle_Class/index.html#//apple_ref/occ/clm/NSParagraphStyle/defaultWritingDirectionForLanguage:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("defaultWritingDirectionForLanguage:")
     @NInt
@@ -185,19 +177,11 @@ public class NSParagraphStyle extends NSObject implements NSCopying, NSMutableCo
     @NInt
     public static native long version_static();
 
-    /**
-     * alignment</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/ApplicationKit/Classes/NSParagraphStyle_Class/index.html#//apple_ref/occ/instp/NSParagraphStyle/alignment">iOS Dev Center</a>
-     */
     @Generated
     @Selector("alignment")
     @NInt
     public native long alignment();
 
-    /**
-     * baseWritingDirection</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/ApplicationKit/Classes/NSParagraphStyle_Class/index.html#//apple_ref/occ/instp/NSParagraphStyle/baseWritingDirection">iOS Dev Center</a>
-     */
     @Generated
     @Selector("baseWritingDirection")
     @NInt
@@ -209,10 +193,6 @@ public class NSParagraphStyle extends NSObject implements NSCopying, NSMutableCo
     @MappedReturn(ObjCObjectMapper.class)
     public native Object copyWithZone(VoidPtr zone);
 
-    /**
-     * defaultTabInterval</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/ApplicationKit/Classes/NSParagraphStyle_Class/index.html#//apple_ref/occ/instp/NSParagraphStyle/defaultTabInterval">iOS Dev Center</a>
-     */
     @Generated
     @Selector("defaultTabInterval")
     @NFloat
@@ -222,28 +202,16 @@ public class NSParagraphStyle extends NSObject implements NSCopying, NSMutableCo
     @Selector("encodeWithCoder:")
     public native void encodeWithCoder(NSCoder aCoder);
 
-    /**
-     * firstLineHeadIndent</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/ApplicationKit/Classes/NSParagraphStyle_Class/index.html#//apple_ref/occ/instp/NSParagraphStyle/firstLineHeadIndent">iOS Dev Center</a>
-     */
     @Generated
     @Selector("firstLineHeadIndent")
     @NFloat
     public native double firstLineHeadIndent();
 
-    /**
-     * headIndent</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/ApplicationKit/Classes/NSParagraphStyle_Class/index.html#//apple_ref/occ/instp/NSParagraphStyle/headIndent">iOS Dev Center</a>
-     */
     @Generated
     @Selector("headIndent")
     @NFloat
     public native double headIndent();
 
-    /**
-     * hyphenationFactor</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/ApplicationKit/Classes/NSParagraphStyle_Class/index.html#//apple_ref/occ/instp/NSParagraphStyle/hyphenationFactor">iOS Dev Center</a>
-     */
     @Generated
     @Selector("hyphenationFactor")
     public native float hyphenationFactor();
@@ -256,46 +224,26 @@ public class NSParagraphStyle extends NSObject implements NSCopying, NSMutableCo
     @Selector("initWithCoder:")
     public native NSParagraphStyle initWithCoder(NSCoder aDecoder);
 
-    /**
-     * lineBreakMode</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/ApplicationKit/Classes/NSParagraphStyle_Class/index.html#//apple_ref/occ/instp/NSParagraphStyle/lineBreakMode">iOS Dev Center</a>
-     */
     @Generated
     @Selector("lineBreakMode")
     @NInt
     public native long lineBreakMode();
 
-    /**
-     * lineHeightMultiple</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/ApplicationKit/Classes/NSParagraphStyle_Class/index.html#//apple_ref/occ/instp/NSParagraphStyle/lineHeightMultiple">iOS Dev Center</a>
-     */
     @Generated
     @Selector("lineHeightMultiple")
     @NFloat
     public native double lineHeightMultiple();
 
-    /**
-     * lineSpacing</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/ApplicationKit/Classes/NSParagraphStyle_Class/index.html#//apple_ref/occ/instp/NSParagraphStyle/lineSpacing">iOS Dev Center</a>
-     */
     @Generated
     @Selector("lineSpacing")
     @NFloat
     public native double lineSpacing();
 
-    /**
-     * maximumLineHeight</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/ApplicationKit/Classes/NSParagraphStyle_Class/index.html#//apple_ref/occ/instp/NSParagraphStyle/maximumLineHeight">iOS Dev Center</a>
-     */
     @Generated
     @Selector("maximumLineHeight")
     @NFloat
     public native double maximumLineHeight();
 
-    /**
-     * minimumLineHeight</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/ApplicationKit/Classes/NSParagraphStyle_Class/index.html#//apple_ref/occ/instp/NSParagraphStyle/minimumLineHeight">iOS Dev Center</a>
-     */
     @Generated
     @Selector("minimumLineHeight")
     @NFloat
@@ -306,36 +254,20 @@ public class NSParagraphStyle extends NSObject implements NSCopying, NSMutableCo
     @MappedReturn(ObjCObjectMapper.class)
     public native Object mutableCopyWithZone(VoidPtr zone);
 
-    /**
-     * paragraphSpacing</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/ApplicationKit/Classes/NSParagraphStyle_Class/index.html#//apple_ref/occ/instp/NSParagraphStyle/paragraphSpacing">iOS Dev Center</a>
-     */
     @Generated
     @Selector("paragraphSpacing")
     @NFloat
     public native double paragraphSpacing();
 
-    /**
-     * paragraphSpacingBefore</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/ApplicationKit/Classes/NSParagraphStyle_Class/index.html#//apple_ref/occ/instp/NSParagraphStyle/paragraphSpacingBefore">iOS Dev Center</a>
-     */
     @Generated
     @Selector("paragraphSpacingBefore")
     @NFloat
     public native double paragraphSpacingBefore();
 
-    /**
-     * tabStops</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/ApplicationKit/Classes/NSParagraphStyle_Class/index.html#//apple_ref/occ/instp/NSParagraphStyle/tabStops">iOS Dev Center</a>
-     */
     @Generated
     @Selector("tabStops")
     public native NSArray<? extends NSTextTab> tabStops();
 
-    /**
-     * tailIndent</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/ApplicationKit/Classes/NSParagraphStyle_Class/index.html#//apple_ref/occ/instp/NSParagraphStyle/tailIndent">iOS Dev Center</a>
-     */
     @Generated
     @Selector("tailIndent")
     @NFloat

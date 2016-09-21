@@ -187,26 +187,14 @@ public class NEFilterBrowserFlow extends NEFilterFlow implements NSSecureCoding,
     @Selector("initWithCoder:")
     public native NEFilterBrowserFlow initWithCoder(NSCoder aDecoder);
 
-    /**
-     * parentURL</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEFilterBrowserFlowClassRef/index.html#//apple_ref/occ/instp/NEFilterBrowserFlow/parentURL">iOS Dev Center</a>
-     */
     @Generated
     @Selector("parentURL")
     public native NSURL parentURL();
 
-    /**
-     * request</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEFilterBrowserFlowClassRef/index.html#//apple_ref/occ/instp/NEFilterBrowserFlow/request">iOS Dev Center</a>
-     */
     @Generated
     @Selector("request")
     public native NSURLRequest request();
 
-    /**
-     * response</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEFilterBrowserFlowClassRef/index.html#//apple_ref/occ/instp/NEFilterBrowserFlow/response">iOS Dev Center</a>
-     */
     @Generated
     @Selector("response")
     public native NSURLResponse response();

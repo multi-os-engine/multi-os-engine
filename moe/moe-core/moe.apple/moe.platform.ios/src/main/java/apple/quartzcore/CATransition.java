@@ -168,18 +168,10 @@ public class CATransition extends CAAnimation {
     @NInt
     public static native long version_static();
 
-    /**
-     * endProgress</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/CATransition_class/index.html#//apple_ref/occ/instp/CATransition/endProgress">iOS Dev Center</a>
-     */
     @Generated
     @Selector("endProgress")
     public native float endProgress();
 
-    /**
-     * filter</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/CATransition_class/index.html#//apple_ref/occ/instp/CATransition/filter">iOS Dev Center</a>
-     */
     @Generated
     @Selector("filter")
     @MappedReturn(ObjCObjectMapper.class)
@@ -189,66 +181,34 @@ public class CATransition extends CAAnimation {
     @Selector("init")
     public native CATransition init();
 
-    /**
-     * endProgress</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/CATransition_class/index.html#//apple_ref/occ/instp/CATransition/endProgress">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setEndProgress:")
     public native void setEndProgress(float value);
 
-    /**
-     * filter</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/CATransition_class/index.html#//apple_ref/occ/instp/CATransition/filter">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setFilter:")
     public native void setFilter(@Mapped(ObjCObjectMapper.class) Object value);
 
-    /**
-     * startProgress</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/CATransition_class/index.html#//apple_ref/occ/instp/CATransition/startProgress">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setStartProgress:")
     public native void setStartProgress(float value);
 
-    /**
-     * subtype</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/CATransition_class/index.html#//apple_ref/occ/instp/CATransition/subtype">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setSubtype:")
     public native void setSubtype(String value);
 
-    /**
-     * type</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/CATransition_class/index.html#//apple_ref/occ/instp/CATransition/type">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setType:")
     public native void setType(String value);
 
-    /**
-     * startProgress</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/CATransition_class/index.html#//apple_ref/occ/instp/CATransition/startProgress">iOS Dev Center</a>
-     */
     @Generated
     @Selector("startProgress")
     public native float startProgress();
 
-    /**
-     * subtype</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/CATransition_class/index.html#//apple_ref/occ/instp/CATransition/subtype">iOS Dev Center</a>
-     */
     @Generated
     @Selector("subtype")
     public native String subtype();
 
-    /**
-     * type</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/CATransition_class/index.html#//apple_ref/occ/instp/CATransition/type">iOS Dev Center</a>
-     */
     @Generated
     @Selector("type")
     public native String type();

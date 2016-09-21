@@ -155,27 +155,15 @@ public class NSDateIntervalFormatter extends NSFormatter {
     @NInt
     public static native long version_static();
 
-    /**
-     * calendar</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSDateIntervalFormatter_class/index.html#//apple_ref/occ/instp/NSDateIntervalFormatter/calendar">iOS Dev Center</a>
-     */
     @Generated
     @Selector("calendar")
     public native NSCalendar calendar();
 
-    /**
-     * dateStyle</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSDateIntervalFormatter_class/index.html#//apple_ref/occ/instp/NSDateIntervalFormatter/dateStyle">iOS Dev Center</a>
-     */
     @Generated
     @Selector("dateStyle")
     @NUInt
     public native long dateStyle();
 
-    /**
-     * dateTemplate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSDateIntervalFormatter_class/index.html#//apple_ref/occ/instp/NSDateIntervalFormatter/dateTemplate">iOS Dev Center</a>
-     */
     @Generated
     @Selector("dateTemplate")
     public native String dateTemplate();
@@ -184,83 +172,43 @@ public class NSDateIntervalFormatter extends NSFormatter {
     @Selector("init")
     public native NSDateIntervalFormatter init();
 
-    /**
-     * locale</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSDateIntervalFormatter_class/index.html#//apple_ref/occ/instp/NSDateIntervalFormatter/locale">iOS Dev Center</a>
-     */
     @Generated
     @Selector("locale")
     public native NSLocale locale();
 
-    /**
-     * calendar</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSDateIntervalFormatter_class/index.html#//apple_ref/occ/instp/NSDateIntervalFormatter/calendar">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setCalendar:")
     public native void setCalendar(NSCalendar value);
 
-    /**
-     * dateStyle</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSDateIntervalFormatter_class/index.html#//apple_ref/occ/instp/NSDateIntervalFormatter/dateStyle">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setDateStyle:")
     public native void setDateStyle(@NUInt long value);
 
-    /**
-     * dateTemplate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSDateIntervalFormatter_class/index.html#//apple_ref/occ/instp/NSDateIntervalFormatter/dateTemplate">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setDateTemplate:")
     public native void setDateTemplate(String value);
 
-    /**
-     * locale</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSDateIntervalFormatter_class/index.html#//apple_ref/occ/instp/NSDateIntervalFormatter/locale">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setLocale:")
     public native void setLocale(NSLocale value);
 
-    /**
-     * timeStyle</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSDateIntervalFormatter_class/index.html#//apple_ref/occ/instp/NSDateIntervalFormatter/timeStyle">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setTimeStyle:")
     public native void setTimeStyle(@NUInt long value);
 
-    /**
-     * timeZone</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSDateIntervalFormatter_class/index.html#//apple_ref/occ/instp/NSDateIntervalFormatter/timeZone">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setTimeZone:")
     public native void setTimeZone(NSTimeZone value);
 
-    /**
-     * stringFromDate:toDate:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSDateIntervalFormatter_class/index.html#//apple_ref/occ/instm/NSDateIntervalFormatter/stringFromDate:toDate:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("stringFromDate:toDate:")
     public native String stringFromDateToDate(NSDate fromDate, NSDate toDate);
 
-    /**
-     * timeStyle</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSDateIntervalFormatter_class/index.html#//apple_ref/occ/instp/NSDateIntervalFormatter/timeStyle">iOS Dev Center</a>
-     */
     @Generated
     @Selector("timeStyle")
     @NUInt
     public native long timeStyle();
 
-    /**
-     * timeZone</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSDateIntervalFormatter_class/index.html#//apple_ref/occ/instp/NSDateIntervalFormatter/timeZone">iOS Dev Center</a>
-     */
     @Generated
     @Selector("timeZone")
     public native NSTimeZone timeZone();

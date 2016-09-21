@@ -70,86 +70,46 @@ public class SKTexture extends NSObject implements NSCopying, NSCoding {
     @Selector("alloc")
     public static native SKTexture alloc();
 
-    /**
-     * preloadTextures:withCompletionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKTexture_Ref/index.html#//apple_ref/occ/clm/SKTexture/preloadTextures:withCompletionHandler:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("preloadTextures:withCompletionHandler:")
     public static native void preloadTexturesWithCompletionHandler(NSArray<? extends SKTexture> textures,
             @ObjCBlock(name = "call_preloadTexturesWithCompletionHandler") Block_preloadTexturesWithCompletionHandler completionHandler);
 
-    /**
-     * textureNoiseWithSmoothness:size:grayscale:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKTexture_Ref/index.html#//apple_ref/occ/clm/SKTexture/textureNoiseWithSmoothness:size:grayscale:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("textureNoiseWithSmoothness:size:grayscale:")
     public static native SKTexture textureNoiseWithSmoothnessSizeGrayscale(@NFloat double smoothness,
             @ByValue CGSize size, boolean grayscale);
 
-    /**
-     * textureVectorNoiseWithSmoothness:size:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKTexture_Ref/index.html#//apple_ref/occ/clm/SKTexture/textureVectorNoiseWithSmoothness:size:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("textureVectorNoiseWithSmoothness:size:")
     public static native SKTexture textureVectorNoiseWithSmoothnessSize(@NFloat double smoothness,
             @ByValue CGSize size);
 
-    /**
-     * textureWithCGImage:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKTexture_Ref/index.html#//apple_ref/occ/clm/SKTexture/textureWithCGImage:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("textureWithCGImage:")
     public static native SKTexture textureWithCGImage(CGImageRef image);
 
-    /**
-     * textureWithData:size:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKTexture_Ref/index.html#//apple_ref/occ/clm/SKTexture/textureWithData:size:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("textureWithData:size:")
     public static native SKTexture textureWithDataSize(NSData pixelData, @ByValue CGSize size);
 
-    /**
-     * textureWithData:size:flipped:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKTexture_Ref/index.html#//apple_ref/occ/clm/SKTexture/textureWithData:size:flipped:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("textureWithData:size:flipped:")
     public static native SKTexture textureWithDataSizeFlipped(NSData pixelData, @ByValue CGSize size, boolean flipped);
 
-    /**
-     * textureWithData:size:rowLength:alignment:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKTexture_Ref/index.html#//apple_ref/occ/clm/SKTexture/textureWithData:size:rowLength:alignment:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("textureWithData:size:rowLength:alignment:")
     public static native SKTexture textureWithDataSizeRowLengthAlignment(NSData pixelData, @ByValue CGSize size,
             int rowLength, int alignment);
 
-    /**
-     * textureWithImage:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKTexture_Ref/index.html#//apple_ref/occ/clm/SKTexture/textureWithImage:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("textureWithImage:")
     public static native SKTexture textureWithImage(UIImage image);
 
-    /**
-     * textureWithImageNamed:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKTexture_Ref/index.html#//apple_ref/occ/clm/SKTexture/textureWithImageNamed:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("textureWithImageNamed:")
     public static native SKTexture textureWithImageNamed(String name);
 
-    /**
-     * textureWithRect:inTexture:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKTexture_Ref/index.html#//apple_ref/occ/clm/SKTexture/textureWithRect:inTexture:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("textureWithRect:inTexture:")
     public static native SKTexture textureWithRectInTexture(@ByValue CGRect rect, SKTexture texture);
@@ -264,10 +224,6 @@ public class SKTexture extends NSObject implements NSCopying, NSCoding {
     @Selector("encodeWithCoder:")
     public native void encodeWithCoder(NSCoder aCoder);
 
-    /**
-     * filteringMode</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKTexture_Ref/index.html#//apple_ref/occ/instp/SKTexture/filteringMode">iOS Dev Center</a>
-     */
     @Generated
     @Selector("filteringMode")
     @NInt
@@ -281,89 +237,49 @@ public class SKTexture extends NSObject implements NSCopying, NSCoding {
     @Selector("initWithCoder:")
     public native SKTexture initWithCoder(NSCoder aDecoder);
 
-    /**
-     * preloadWithCompletionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKTexture_Ref/index.html#//apple_ref/occ/instm/SKTexture/preloadWithCompletionHandler:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("preloadWithCompletionHandler:")
     public native void preloadWithCompletionHandler(
             @ObjCBlock(name = "call_preloadWithCompletionHandler") Block_preloadWithCompletionHandler completionHandler);
 
-    /**
-     * filteringMode</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKTexture_Ref/index.html#//apple_ref/occ/instp/SKTexture/filteringMode">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setFilteringMode:")
     public native void setFilteringMode(@NInt long value);
 
-    /**
-     * usesMipmaps</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKTexture_Ref/index.html#//apple_ref/occ/instp/SKTexture/usesMipmaps">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setUsesMipmaps:")
     public native void setUsesMipmaps(boolean value);
 
-    /**
-     * size</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKTexture_Ref/index.html#//apple_ref/occ/instm/SKTexture/size">iOS Dev Center</a>
-     */
     @Generated
     @Selector("size")
     @ByValue
     public native CGSize size();
 
-    /**
-     * textureByApplyingCIFilter:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKTexture_Ref/index.html#//apple_ref/occ/instm/SKTexture/textureByApplyingCIFilter:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("textureByApplyingCIFilter:")
     @MappedReturn(ObjCObjectMapper.class)
     public native Object textureByApplyingCIFilter(CIFilter filter);
 
-    /**
-     * textureByGeneratingNormalMap</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKTexture_Ref/index.html#//apple_ref/occ/instm/SKTexture/textureByGeneratingNormalMap">iOS Dev Center</a>
-     */
     @Generated
     @Selector("textureByGeneratingNormalMap")
     @MappedReturn(ObjCObjectMapper.class)
     public native Object textureByGeneratingNormalMap();
 
-    /**
-     * textureByGeneratingNormalMapWithSmoothness:contrast:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKTexture_Ref/index.html#//apple_ref/occ/instm/SKTexture/textureByGeneratingNormalMapWithSmoothness:contrast:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("textureByGeneratingNormalMapWithSmoothness:contrast:")
     @MappedReturn(ObjCObjectMapper.class)
     public native Object textureByGeneratingNormalMapWithSmoothnessContrast(@NFloat double smoothness,
             @NFloat double contrast);
 
-    /**
-     * textureRect</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKTexture_Ref/index.html#//apple_ref/occ/instm/SKTexture/textureRect">iOS Dev Center</a>
-     */
     @Generated
     @Selector("textureRect")
     @ByValue
     public native CGRect textureRect();
 
-    /**
-     * usesMipmaps</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKTexture_Ref/index.html#//apple_ref/occ/instp/SKTexture/usesMipmaps">iOS Dev Center</a>
-     */
     @Generated
     @Selector("usesMipmaps")
     public native boolean usesMipmaps();
 
-    /**
-     * CGImage</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKTexture_Ref/index.html#//apple_ref/occ/instm/SKTexture/CGImage">iOS Dev Center</a>
-     */
     @Generated
     @Selector("CGImage")
     public native CGImageRef CGImage();

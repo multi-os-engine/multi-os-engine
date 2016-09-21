@@ -32,10 +32,6 @@ import org.moe.natj.objc.ann.Selector;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("HMAccessoryDelegate")
 public interface HMAccessoryDelegate {
-    /**
-     * accessory:didUpdateAssociatedServiceTypeForService:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HomeKit/Reference/HMAccessoryDelegate_Protocol/index.html#//apple_ref/occ/intfm/HMAccessoryDelegate/accessory:didUpdateAssociatedServiceTypeForService:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("accessory:didUpdateAssociatedServiceTypeForService:")
@@ -43,10 +39,6 @@ public interface HMAccessoryDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * accessory:didUpdateNameForService:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HomeKit/Reference/HMAccessoryDelegate_Protocol/index.html#//apple_ref/occ/intfm/HMAccessoryDelegate/accessory:didUpdateNameForService:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("accessory:didUpdateNameForService:")
@@ -54,10 +46,6 @@ public interface HMAccessoryDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * accessory:service:didUpdateValueForCharacteristic:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HomeKit/Reference/HMAccessoryDelegate_Protocol/index.html#//apple_ref/occ/intfm/HMAccessoryDelegate/accessory:service:didUpdateValueForCharacteristic:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("accessory:service:didUpdateValueForCharacteristic:")
@@ -66,10 +54,6 @@ public interface HMAccessoryDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * accessoryDidUpdateName:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HomeKit/Reference/HMAccessoryDelegate_Protocol/index.html#//apple_ref/occ/intfm/HMAccessoryDelegate/accessoryDidUpdateName:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("accessoryDidUpdateName:")
@@ -77,10 +61,6 @@ public interface HMAccessoryDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * accessoryDidUpdateReachability:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HomeKit/Reference/HMAccessoryDelegate_Protocol/index.html#//apple_ref/occ/intfm/HMAccessoryDelegate/accessoryDidUpdateReachability:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("accessoryDidUpdateReachability:")
@@ -88,10 +68,6 @@ public interface HMAccessoryDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * accessoryDidUpdateServices:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HomeKit/Reference/HMAccessoryDelegate_Protocol/index.html#//apple_ref/occ/intfm/HMAccessoryDelegate/accessoryDidUpdateServices:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("accessoryDidUpdateServices:")

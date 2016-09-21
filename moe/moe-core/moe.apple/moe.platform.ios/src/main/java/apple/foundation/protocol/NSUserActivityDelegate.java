@@ -32,10 +32,6 @@ import org.moe.natj.objc.ann.Selector;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("NSUserActivityDelegate")
 public interface NSUserActivityDelegate {
-    /**
-     * userActivity:didReceiveInputStream:outputStream:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AppKit/Reference/NSUserActivityDelegate_Protocol/index.html#//apple_ref/occ/intfm/NSUserActivityDelegate/userActivity:didReceiveInputStream:outputStream:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("userActivity:didReceiveInputStream:outputStream:")
@@ -44,10 +40,6 @@ public interface NSUserActivityDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * userActivityWasContinued:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AppKit/Reference/NSUserActivityDelegate_Protocol/index.html#//apple_ref/occ/intfm/NSUserActivityDelegate/userActivityWasContinued:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("userActivityWasContinued:")
@@ -55,10 +47,6 @@ public interface NSUserActivityDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * userActivityWillSave:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AppKit/Reference/NSUserActivityDelegate_Protocol/index.html#//apple_ref/occ/intfm/NSUserActivityDelegate/userActivityWillSave:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("userActivityWillSave:")

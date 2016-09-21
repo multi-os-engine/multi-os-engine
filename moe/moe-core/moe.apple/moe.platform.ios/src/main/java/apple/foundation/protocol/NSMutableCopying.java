@@ -31,10 +31,6 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("NSMutableCopying")
 public interface NSMutableCopying {
-    /**
-     * mutableCopyWithZone:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Protocols/NSMutableCopying_Protocol/index.html#//apple_ref/occ/intfm/NSMutableCopying/mutableCopyWithZone:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("mutableCopyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)

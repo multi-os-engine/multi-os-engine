@@ -65,18 +65,10 @@ public class MKPolyline extends MKMultiPoint implements MKOverlay {
     @Selector("alloc")
     public static native MKPolyline alloc();
 
-    /**
-     * polylineWithCoordinates:count:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKPolyline_class/index.html#//apple_ref/occ/clm/MKPolyline/polylineWithCoordinates:count:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("polylineWithCoordinates:count:")
     public static native MKPolyline polylineWithCoordinatesCount(Ptr<CLLocationCoordinate2D> coords, @NUInt long count);
 
-    /**
-     * polylineWithPoints:count:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKPolyline_class/index.html#//apple_ref/occ/clm/MKPolyline/polylineWithPoints:count:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("polylineWithPoints:count:")
     public static native MKPolyline polylineWithPointsCount(Ptr<MKMapPoint> points, @NUInt long count);

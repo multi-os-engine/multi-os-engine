@@ -158,26 +158,14 @@ public class ACAccountType extends NSObject {
     @NInt
     public static native long version_static();
 
-    /**
-     * accessGranted</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accounts/Reference/ACAccountTypeClassRef/index.html#//apple_ref/occ/instp/ACAccountType/accessGranted">iOS Dev Center</a>
-     */
     @Generated
     @Selector("accessGranted")
     public native boolean accessGranted();
 
-    /**
-     * accountTypeDescription</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accounts/Reference/ACAccountTypeClassRef/index.html#//apple_ref/occ/instp/ACAccountType/accountTypeDescription">iOS Dev Center</a>
-     */
     @Generated
     @Selector("accountTypeDescription")
     public native String accountTypeDescription();
 
-    /**
-     * identifier</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accounts/Reference/ACAccountTypeClassRef/index.html#//apple_ref/occ/instp/ACAccountType/identifier">iOS Dev Center</a>
-     */
     @Generated
     @Selector("identifier")
     public native String identifier();

@@ -58,10 +58,6 @@ public class AVAssetWriterInputMetadataAdaptor extends NSObject {
     @Selector("alloc")
     public static native AVAssetWriterInputMetadataAdaptor alloc();
 
-    /**
-     * assetWriterInputMetadataAdaptorWithAssetWriterInput:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAssetWriterInputMetadataAdaptor_Class/index.html#//apple_ref/occ/clm/AVAssetWriterInputMetadataAdaptor/assetWriterInputMetadataAdaptorWithAssetWriterInput:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("assetWriterInputMetadataAdaptorWithAssetWriterInput:")
     public static native AVAssetWriterInputMetadataAdaptor assetWriterInputMetadataAdaptorWithAssetWriterInput(
@@ -167,18 +163,10 @@ public class AVAssetWriterInputMetadataAdaptor extends NSObject {
     @NInt
     public static native long version_static();
 
-    /**
-     * appendTimedMetadataGroup:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAssetWriterInputMetadataAdaptor_Class/index.html#//apple_ref/occ/instm/AVAssetWriterInputMetadataAdaptor/appendTimedMetadataGroup:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("appendTimedMetadataGroup:")
     public native boolean appendTimedMetadataGroup(AVTimedMetadataGroup timedMetadataGroup);
 
-    /**
-     * assetWriterInput</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAssetWriterInputMetadataAdaptor_Class/index.html#//apple_ref/occ/instp/AVAssetWriterInputMetadataAdaptor/assetWriterInput">iOS Dev Center</a>
-     */
     @Generated
     @Selector("assetWriterInput")
     public native AVAssetWriterInput assetWriterInput();
@@ -187,10 +175,6 @@ public class AVAssetWriterInputMetadataAdaptor extends NSObject {
     @Selector("init")
     public native AVAssetWriterInputMetadataAdaptor init();
 
-    /**
-     * initWithAssetWriterInput:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAssetWriterInputMetadataAdaptor_Class/index.html#//apple_ref/occ/instm/AVAssetWriterInputMetadataAdaptor/initWithAssetWriterInput:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithAssetWriterInput:")
     public native AVAssetWriterInputMetadataAdaptor initWithAssetWriterInput(AVAssetWriterInput input);

@@ -160,18 +160,10 @@ public class AVCaptureInputPort extends NSObject {
     @NInt
     public static native long version_static();
 
-    /**
-     * clock</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVCaptureInputPort_Class/index.html#//apple_ref/occ/instp/AVCaptureInputPort/clock">iOS Dev Center</a>
-     */
     @Generated
     @Selector("clock")
     public native CMClockRef clock();
 
-    /**
-     * formatDescription</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVCaptureInputPort_Class/index.html#//apple_ref/occ/instp/AVCaptureInputPort/formatDescription">iOS Dev Center</a>
-     */
     @Generated
     @Selector("formatDescription")
     public native CMFormatDescriptionRef formatDescription();
@@ -180,34 +172,18 @@ public class AVCaptureInputPort extends NSObject {
     @Selector("init")
     public native AVCaptureInputPort init();
 
-    /**
-     * input</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVCaptureInputPort_Class/index.html#//apple_ref/occ/instp/AVCaptureInputPort/input">iOS Dev Center</a>
-     */
     @Generated
     @Selector("input")
     public native AVCaptureInput input();
 
-    /**
-     * enabled</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVCaptureInputPort_Class/index.html#//apple_ref/occ/instp/AVCaptureInputPort/enabled">iOS Dev Center</a>
-     */
     @Generated
     @Selector("isEnabled")
     public native boolean isEnabled();
 
-    /**
-     * enabled</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVCaptureInputPort_Class/index.html#//apple_ref/occ/instp/AVCaptureInputPort/enabled">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setEnabled:")
     public native void setEnabled(boolean value);
 
-    /**
-     * mediaType</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVCaptureInputPort_Class/index.html#//apple_ref/occ/instp/AVCaptureInputPort/mediaType">iOS Dev Center</a>
-     */
     @Generated
     @Selector("mediaType")
     public native String mediaType();

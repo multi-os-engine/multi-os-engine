@@ -62,10 +62,6 @@ public class PKAddPassesViewController extends UIViewController {
     @Selector("alloc")
     public static native PKAddPassesViewController alloc();
 
-    /**
-     * canAddPasses</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/PassKit/Reference/PKAddPassesViewController_Ref/index.html#//apple_ref/occ/clm/PKAddPassesViewController/canAddPasses">iOS Dev Center</a>
-     */
     @Generated
     @Selector("canAddPasses")
     public static native boolean canAddPasses();
@@ -182,10 +178,6 @@ public class PKAddPassesViewController extends UIViewController {
     @NInt
     public static native long version_static();
 
-    /**
-     * delegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/PassKit/Reference/PKAddPassesViewController_Ref/index.html#//apple_ref/occ/instp/PKAddPassesViewController/delegate">iOS Dev Center</a>
-     */
     @Generated
     @Selector("delegate")
     @MappedReturn(ObjCObjectMapper.class)
@@ -199,34 +191,18 @@ public class PKAddPassesViewController extends UIViewController {
     @Selector("initWithNibName:bundle:")
     public native PKAddPassesViewController initWithNibNameBundle(String nibNameOrNil, NSBundle nibBundleOrNil);
 
-    /**
-     * initWithPass:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/PassKit/Reference/PKAddPassesViewController_Ref/index.html#//apple_ref/occ/instm/PKAddPassesViewController/initWithPass:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithPass:")
     public native PKAddPassesViewController initWithPass(PKPass pass);
 
-    /**
-     * initWithPasses:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/PassKit/Reference/PKAddPassesViewController_Ref/index.html#//apple_ref/occ/instm/PKAddPassesViewController/initWithPasses:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithPasses:")
     public native PKAddPassesViewController initWithPasses(NSArray<? extends PKPass> passes);
 
-    /**
-     * delegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/PassKit/Reference/PKAddPassesViewController_Ref/index.html#//apple_ref/occ/instp/PKAddPassesViewController/delegate">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setDelegate:")
     public native void setDelegate_unsafe(@Mapped(ObjCObjectMapper.class) PKAddPassesViewControllerDelegate value);
 
-    /**
-     * delegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/PassKit/Reference/PKAddPassesViewController_Ref/index.html#//apple_ref/occ/instp/PKAddPassesViewController/delegate">iOS Dev Center</a>
-     */
     @Generated
     public void setDelegate(@Mapped(ObjCObjectMapper.class) PKAddPassesViewControllerDelegate value) {
         Object __old = delegate();

@@ -27,6 +27,7 @@ public final class MACaptionAppearanceTextEdgeStyle {
     @Generated @NInt public static final long Depressed = 0x0000000000000003L;
     @Generated @NInt public static final long Uniform = 0x0000000000000004L;
     @Generated @NInt public static final long DropShadow = 0x0000000000000005L;
+
     @Generated
     private MACaptionAppearanceTextEdgeStyle() {
     }

@@ -159,10 +159,6 @@ public class HMCharacteristicMetadata extends NSObject {
     @NInt
     public static native long version_static();
 
-    /**
-     * format</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HomeKit/Reference/HMCharacteristicMetadata_Class/index.html#//apple_ref/occ/instp/HMCharacteristicMetadata/format">iOS Dev Center</a>
-     */
     @Generated
     @Selector("format")
     public native String format();
@@ -171,50 +167,26 @@ public class HMCharacteristicMetadata extends NSObject {
     @Selector("init")
     public native HMCharacteristicMetadata init();
 
-    /**
-     * manufacturerDescription</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HomeKit/Reference/HMCharacteristicMetadata_Class/index.html#//apple_ref/occ/instp/HMCharacteristicMetadata/manufacturerDescription">iOS Dev Center</a>
-     */
     @Generated
     @Selector("manufacturerDescription")
     public native String manufacturerDescription();
 
-    /**
-     * maxLength</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HomeKit/Reference/HMCharacteristicMetadata_Class/index.html#//apple_ref/occ/instp/HMCharacteristicMetadata/maxLength">iOS Dev Center</a>
-     */
     @Generated
     @Selector("maxLength")
     public native NSNumber maxLength();
 
-    /**
-     * maximumValue</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HomeKit/Reference/HMCharacteristicMetadata_Class/index.html#//apple_ref/occ/instp/HMCharacteristicMetadata/maximumValue">iOS Dev Center</a>
-     */
     @Generated
     @Selector("maximumValue")
     public native NSNumber maximumValue();
 
-    /**
-     * minimumValue</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HomeKit/Reference/HMCharacteristicMetadata_Class/index.html#//apple_ref/occ/instp/HMCharacteristicMetadata/minimumValue">iOS Dev Center</a>
-     */
     @Generated
     @Selector("minimumValue")
     public native NSNumber minimumValue();
 
-    /**
-     * stepValue</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HomeKit/Reference/HMCharacteristicMetadata_Class/index.html#//apple_ref/occ/instp/HMCharacteristicMetadata/stepValue">iOS Dev Center</a>
-     */
     @Generated
     @Selector("stepValue")
     public native NSNumber stepValue();
 
-    /**
-     * units</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HomeKit/Reference/HMCharacteristicMetadata_Class/index.html#//apple_ref/occ/instp/HMCharacteristicMetadata/units">iOS Dev Center</a>
-     */
     @Generated
     @Selector("units")
     public native String units();

@@ -31,10 +31,6 @@ import org.moe.natj.objc.ann.Selector;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("GLKViewDelegate")
 public interface GLKViewDelegate {
-    /**
-     * glkView:drawInRect:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GLkit/Reference/GLKViewDelegate_ProtocolRef/index.html#//apple_ref/occ/intfm/GLKViewDelegate/glkView:drawInRect:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("glkView:drawInRect:")
     void glkViewDrawInRect(GLKView view, @ByValue CGRect rect);

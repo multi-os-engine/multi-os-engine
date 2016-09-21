@@ -58,10 +58,6 @@ public class NCWidgetController extends NSObject {
     @Selector("alloc")
     public static native NCWidgetController alloc();
 
-    /**
-     * widgetController</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NotificationCenter/Reference/NCWidgetController_Class/index.html#//apple_ref/occ/clm/NCWidgetController/widgetController">iOS Dev Center</a>
-     */
     @Generated
     @Selector("widgetController")
     public static native NCWidgetController widgetController();
@@ -170,10 +166,6 @@ public class NCWidgetController extends NSObject {
     @Selector("init")
     public native NCWidgetController init();
 
-    /**
-     * setHasContent:forWidgetWithBundleIdentifier:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NotificationCenter/Reference/NCWidgetController_Class/index.html#//apple_ref/occ/instm/NCWidgetController/setHasContent:forWidgetWithBundleIdentifier:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setHasContent:forWidgetWithBundleIdentifier:")
     public native void setHasContentForWidgetWithBundleIdentifier(boolean flag, String bundleID);

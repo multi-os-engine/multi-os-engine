@@ -32,10 +32,6 @@ import org.moe.natj.objc.ann.Selector;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("AVCaptureAudioDataOutputSampleBufferDelegate")
 public interface AVCaptureAudioDataOutputSampleBufferDelegate {
-    /**
-     * captureOutput:didOutputSampleBuffer:fromConnection:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVCaptureAudioDataOutputSampleBufferDelegate_Protocol/index.html#//apple_ref/occ/intfm/AVCaptureAudioDataOutputSampleBufferDelegate/captureOutput:didOutputSampleBuffer:fromConnection:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("captureOutput:didOutputSampleBuffer:fromConnection:")

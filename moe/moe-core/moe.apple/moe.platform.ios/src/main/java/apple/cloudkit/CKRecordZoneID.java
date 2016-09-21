@@ -184,18 +184,10 @@ public class CKRecordZoneID extends NSObject implements NSSecureCoding, NSCopyin
     @Selector("initWithCoder:")
     public native CKRecordZoneID initWithCoder(NSCoder aDecoder);
 
-    /**
-     * initWithZoneName:ownerName:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKRecordZoneID_class/index.html#//apple_ref/occ/instm/CKRecordZoneID/initWithZoneName:ownerName:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithZoneName:ownerName:")
     public native CKRecordZoneID initWithZoneNameOwnerName(String zoneName, String ownerName);
 
-    /**
-     * ownerName</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKRecordZoneID_class/index.html#//apple_ref/occ/instp/CKRecordZoneID/ownerName">iOS Dev Center</a>
-     */
     @Generated
     @Selector("ownerName")
     public native String ownerName();
@@ -206,10 +198,6 @@ public class CKRecordZoneID extends NSObject implements NSSecureCoding, NSCopyin
         return supportsSecureCoding();
     }
 
-    /**
-     * zoneName</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKRecordZoneID_class/index.html#//apple_ref/occ/instp/CKRecordZoneID/zoneName">iOS Dev Center</a>
-     */
     @Generated
     @Selector("zoneName")
     public native String zoneName();

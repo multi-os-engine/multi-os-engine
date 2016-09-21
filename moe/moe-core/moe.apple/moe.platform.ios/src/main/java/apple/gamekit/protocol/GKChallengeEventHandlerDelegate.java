@@ -30,10 +30,6 @@ import org.moe.natj.objc.ann.Selector;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("GKChallengeEventHandlerDelegate")
 public interface GKChallengeEventHandlerDelegate {
-    /**
-     * localPlayerDidCompleteChallenge:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GLkit/Reference/GKChallengeEventHandlerDelegate_Ref/index.html#//apple_ref/occ/intfm/GKChallengeEventHandlerDelegate/localPlayerDidCompleteChallenge:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("localPlayerDidCompleteChallenge:")
@@ -41,10 +37,6 @@ public interface GKChallengeEventHandlerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * localPlayerDidReceiveChallenge:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GLkit/Reference/GKChallengeEventHandlerDelegate_Ref/index.html#//apple_ref/occ/intfm/GKChallengeEventHandlerDelegate/localPlayerDidReceiveChallenge:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("localPlayerDidReceiveChallenge:")
@@ -52,10 +44,6 @@ public interface GKChallengeEventHandlerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * localPlayerDidSelectChallenge:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GLkit/Reference/GKChallengeEventHandlerDelegate_Ref/index.html#//apple_ref/occ/intfm/GKChallengeEventHandlerDelegate/localPlayerDidSelectChallenge:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("localPlayerDidSelectChallenge:")
@@ -63,10 +51,6 @@ public interface GKChallengeEventHandlerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * remotePlayerDidCompleteChallenge:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GLkit/Reference/GKChallengeEventHandlerDelegate_Ref/index.html#//apple_ref/occ/intfm/GKChallengeEventHandlerDelegate/remotePlayerDidCompleteChallenge:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("remotePlayerDidCompleteChallenge:")
@@ -74,10 +58,6 @@ public interface GKChallengeEventHandlerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * shouldShowBannerForLocallyCompletedChallenge:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GLkit/Reference/GKChallengeEventHandlerDelegate_Ref/index.html#//apple_ref/occ/intfm/GKChallengeEventHandlerDelegate/shouldShowBannerForLocallyCompletedChallenge:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("shouldShowBannerForLocallyCompletedChallenge:")
@@ -85,10 +65,6 @@ public interface GKChallengeEventHandlerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * shouldShowBannerForLocallyReceivedChallenge:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GLkit/Reference/GKChallengeEventHandlerDelegate_Ref/index.html#//apple_ref/occ/intfm/GKChallengeEventHandlerDelegate/shouldShowBannerForLocallyReceivedChallenge:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("shouldShowBannerForLocallyReceivedChallenge:")
@@ -96,10 +72,6 @@ public interface GKChallengeEventHandlerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * shouldShowBannerForRemotelyCompletedChallenge:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GLkit/Reference/GKChallengeEventHandlerDelegate_Ref/index.html#//apple_ref/occ/intfm/GKChallengeEventHandlerDelegate/shouldShowBannerForRemotelyCompletedChallenge:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("shouldShowBannerForRemotelyCompletedChallenge:")

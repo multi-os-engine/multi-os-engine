@@ -168,10 +168,6 @@ public class CAAnimationGroup extends CAAnimation {
     @NInt
     public static native long version_static();
 
-    /**
-     * animations</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/CAAnimationGroup_class/index.html#//apple_ref/occ/instp/CAAnimationGroup/animations">iOS Dev Center</a>
-     */
     @Generated
     @Selector("animations")
     public native NSArray<? extends CAAnimation> animations();
@@ -180,10 +176,6 @@ public class CAAnimationGroup extends CAAnimation {
     @Selector("init")
     public native CAAnimationGroup init();
 
-    /**
-     * animations</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/CAAnimationGroup_class/index.html#//apple_ref/occ/instp/CAAnimationGroup/animations">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setAnimations:")
     public native void setAnimations(NSArray<? extends CAAnimation> value);

@@ -60,10 +60,6 @@ public class AVAssetReaderVideoCompositionOutput extends AVAssetReaderOutput {
     @Selector("alloc")
     public static native AVAssetReaderVideoCompositionOutput alloc();
 
-    /**
-     * assetReaderVideoCompositionOutputWithVideoTracks:videoSettings:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAssetReaderVideoCompositionOutput_Class/index.html#//apple_ref/occ/clm/AVAssetReaderVideoCompositionOutput/assetReaderVideoCompositionOutputWithVideoTracks:videoSettings:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("assetReaderVideoCompositionOutputWithVideoTracks:videoSettings:")
     public static native AVAssetReaderVideoCompositionOutput assetReaderVideoCompositionOutputWithVideoTracksVideoSettings(
@@ -169,10 +165,6 @@ public class AVAssetReaderVideoCompositionOutput extends AVAssetReaderOutput {
     @NInt
     public static native long version_static();
 
-    /**
-     * customVideoCompositor</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAssetReaderVideoCompositionOutput_Class/index.html#//apple_ref/occ/instp/AVAssetReaderVideoCompositionOutput/customVideoCompositor">iOS Dev Center</a>
-     */
     @Generated
     @Selector("customVideoCompositor")
     @MappedReturn(ObjCObjectMapper.class)
@@ -182,43 +174,23 @@ public class AVAssetReaderVideoCompositionOutput extends AVAssetReaderOutput {
     @Selector("init")
     public native AVAssetReaderVideoCompositionOutput init();
 
-    /**
-     * initWithVideoTracks:videoSettings:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAssetReaderVideoCompositionOutput_Class/index.html#//apple_ref/occ/instm/AVAssetReaderVideoCompositionOutput/initWithVideoTracks:videoSettings:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithVideoTracks:videoSettings:")
     public native AVAssetReaderVideoCompositionOutput initWithVideoTracksVideoSettings(
             NSArray<? extends AVAssetTrack> videoTracks, NSDictionary<String, ?> videoSettings);
 
-    /**
-     * videoComposition</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAssetReaderVideoCompositionOutput_Class/index.html#//apple_ref/occ/instp/AVAssetReaderVideoCompositionOutput/videoComposition">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setVideoComposition:")
     public native void setVideoComposition(AVVideoComposition value);
 
-    /**
-     * videoComposition</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAssetReaderVideoCompositionOutput_Class/index.html#//apple_ref/occ/instp/AVAssetReaderVideoCompositionOutput/videoComposition">iOS Dev Center</a>
-     */
     @Generated
     @Selector("videoComposition")
     public native AVVideoComposition videoComposition();
 
-    /**
-     * videoSettings</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAssetReaderVideoCompositionOutput_Class/index.html#//apple_ref/occ/instp/AVAssetReaderVideoCompositionOutput/videoSettings">iOS Dev Center</a>
-     */
     @Generated
     @Selector("videoSettings")
     public native NSDictionary<String, ?> videoSettings();
 
-    /**
-     * videoTracks</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAssetReaderVideoCompositionOutput_Class/index.html#//apple_ref/occ/instp/AVAssetReaderVideoCompositionOutput/videoTracks">iOS Dev Center</a>
-     */
     @Generated
     @Selector("videoTracks")
     public native NSArray<? extends AVAssetTrack> videoTracks();

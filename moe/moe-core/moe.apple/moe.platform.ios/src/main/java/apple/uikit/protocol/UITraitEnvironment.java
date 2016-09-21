@@ -29,18 +29,10 @@ import org.moe.natj.objc.ann.Selector;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("UITraitEnvironment")
 public interface UITraitEnvironment {
-    /**
-     * traitCollection</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITraitEnvironment_Ref/index.html#//apple_ref/occ/intfp/UITraitEnvironment/traitCollection">iOS Dev Center</a>
-     */
     @Generated
     @Selector("traitCollection")
     UITraitCollection traitCollection();
 
-    /**
-     * traitCollectionDidChange:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITraitEnvironment_Ref/index.html#//apple_ref/occ/intfm/UITraitEnvironment/traitCollectionDidChange:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("traitCollectionDidChange:")
     void traitCollectionDidChange(UITraitCollection previousTraitCollection);

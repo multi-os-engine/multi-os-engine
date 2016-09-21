@@ -162,59 +162,31 @@ public class UIAccessibilityCustomAction extends NSObject {
     @Selector("init")
     public native UIAccessibilityCustomAction init();
 
-    /**
-     * initWithName:target:selector:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIAccessibilityCustomAction_class/index.html#//apple_ref/occ/instm/UIAccessibilityCustomAction/initWithName:target:selector:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithName:target:selector:")
     public native UIAccessibilityCustomAction initWithNameTargetSelector(String name,
             @Mapped(ObjCObjectMapper.class) Object target, SEL selector);
 
-    /**
-     * name</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIAccessibilityCustomAction_class/index.html#//apple_ref/occ/instp/UIAccessibilityCustomAction/name">iOS Dev Center</a>
-     */
     @Generated
     @Selector("name")
     public native String name();
 
-    /**
-     * selector</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIAccessibilityCustomAction_class/index.html#//apple_ref/occ/instp/UIAccessibilityCustomAction/selector">iOS Dev Center</a>
-     */
     @Generated
     @Selector("selector")
     public native SEL selector();
 
-    /**
-     * name</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIAccessibilityCustomAction_class/index.html#//apple_ref/occ/instp/UIAccessibilityCustomAction/name">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setName:")
     public native void setName(String value);
 
-    /**
-     * selector</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIAccessibilityCustomAction_class/index.html#//apple_ref/occ/instp/UIAccessibilityCustomAction/selector">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setSelector:")
     public native void setSelector(SEL value);
 
-    /**
-     * target</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIAccessibilityCustomAction_class/index.html#//apple_ref/occ/instp/UIAccessibilityCustomAction/target">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setTarget:")
     public native void setTarget_unsafe(@Mapped(ObjCObjectMapper.class) Object value);
 
-    /**
-     * target</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIAccessibilityCustomAction_class/index.html#//apple_ref/occ/instp/UIAccessibilityCustomAction/target">iOS Dev Center</a>
-     */
     @Generated
     public void setTarget(@Mapped(ObjCObjectMapper.class) Object value) {
         Object __old = target();
@@ -227,10 +199,6 @@ public class UIAccessibilityCustomAction extends NSObject {
         }
     }
 
-    /**
-     * target</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIAccessibilityCustomAction_class/index.html#//apple_ref/occ/instp/UIAccessibilityCustomAction/target">iOS Dev Center</a>
-     */
     @Generated
     @Selector("target")
     @MappedReturn(ObjCObjectMapper.class)

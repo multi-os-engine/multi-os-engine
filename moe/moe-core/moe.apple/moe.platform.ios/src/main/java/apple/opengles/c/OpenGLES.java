@@ -1884,10 +1884,6 @@ public final class OpenGLES {
     public static native void glProgramUniformMatrix4x3fvEXT(int program, int location, int count, byte transpose,
             ConstFloatPtr value);
 
-    /**
-     * EAGLGetVersion</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/OpenGLES/Reference/EAGL_functions/index.html#//apple_ref/c/func/EAGLGetVersion">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void EAGLGetVersion(IntPtr major, IntPtr minor);

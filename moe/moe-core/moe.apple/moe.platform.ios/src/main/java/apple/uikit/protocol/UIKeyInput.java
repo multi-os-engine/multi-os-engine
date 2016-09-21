@@ -28,26 +28,14 @@ import org.moe.natj.objc.ann.Selector;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("UIKeyInput")
 public interface UIKeyInput extends UITextInputTraits {
-    /**
-     * deleteBackward</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIKeyInput_Protocol/index.html#//apple_ref/occ/intfm/UIKeyInput/deleteBackward">iOS Dev Center</a>
-     */
     @Generated
     @Selector("deleteBackward")
     void deleteBackward();
 
-    /**
-     * hasText</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIKeyInput_Protocol/index.html#//apple_ref/occ/intfm/UIKeyInput/hasText">iOS Dev Center</a>
-     */
     @Generated
     @Selector("hasText")
     boolean hasText();
 
-    /**
-     * insertText:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIKeyInput_Protocol/index.html#//apple_ref/occ/intfm/UIKeyInput/insertText:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("insertText:")
     void insertText(String text);

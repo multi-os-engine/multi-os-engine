@@ -40,28 +40,16 @@ public final class MobileCoreServices {
     private MobileCoreServices() {
     }
 
-    /**
-     * UTTypeCreatePreferredIdentifierForTag</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MobileCoreServices/Reference/UTTypeRef/index.html#//apple_ref/c/func/UTTypeCreatePreferredIdentifierForTag">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native CFStringRef UTTypeCreatePreferredIdentifierForTag(CFStringRef inTagClass, CFStringRef inTag,
             CFStringRef inConformingToUTI);
 
-    /**
-     * UTTypeCreateAllIdentifiersForTag</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MobileCoreServices/Reference/UTTypeRef/index.html#//apple_ref/c/func/UTTypeCreateAllIdentifiersForTag">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native CFArrayRef UTTypeCreateAllIdentifiersForTag(CFStringRef inTagClass, CFStringRef inTag,
             CFStringRef inConformingToUTI);
 
-    /**
-     * UTTypeCopyPreferredTagWithClass</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MobileCoreServices/Reference/UTTypeRef/index.html#//apple_ref/c/func/UTTypeCopyPreferredTagWithClass">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native CFStringRef UTTypeCopyPreferredTagWithClass(CFStringRef inUTI, CFStringRef inTagClass);
@@ -70,26 +58,14 @@ public final class MobileCoreServices {
     @CFunction
     public static native CFArrayRef UTTypeCopyAllTagsWithClass(CFStringRef inUTI, CFStringRef inTagClass);
 
-    /**
-     * UTTypeEqual</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MobileCoreServices/Reference/UTTypeRef/index.html#//apple_ref/c/func/UTTypeEqual">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native byte UTTypeEqual(CFStringRef inUTI1, CFStringRef inUTI2);
 
-    /**
-     * UTTypeConformsTo</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MobileCoreServices/Reference/UTTypeRef/index.html#//apple_ref/c/func/UTTypeConformsTo">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native byte UTTypeConformsTo(CFStringRef inUTI, CFStringRef inConformsToUTI);
 
-    /**
-     * UTTypeCopyDescription</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MobileCoreServices/Reference/UTTypeRef/index.html#//apple_ref/c/func/UTTypeCopyDescription">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native CFStringRef UTTypeCopyDescription(CFStringRef inUTI);
@@ -102,18 +78,10 @@ public final class MobileCoreServices {
     @CFunction
     public static native byte UTTypeIsDynamic(CFStringRef inUTI);
 
-    /**
-     * UTTypeCopyDeclaration</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MobileCoreServices/Reference/UTTypeRef/index.html#//apple_ref/c/func/UTTypeCopyDeclaration">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native CFDictionaryRef UTTypeCopyDeclaration(CFStringRef inUTI);
 
-    /**
-     * UTTypeCopyDeclaringBundleURL</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MobileCoreServices/Reference/UTTypeRef/index.html#//apple_ref/c/func/UTTypeCopyDeclaringBundleURL">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native CFURLRef UTTypeCopyDeclaringBundleURL(CFStringRef inUTI);

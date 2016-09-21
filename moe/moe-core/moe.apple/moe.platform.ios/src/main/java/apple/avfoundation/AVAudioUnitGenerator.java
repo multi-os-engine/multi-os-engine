@@ -169,10 +169,6 @@ public class AVAudioUnitGenerator extends AVAudioUnit implements AVAudioMixing {
     @NInt
     public static native long version_static();
 
-    /**
-     * bypass</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioUnitGenerator_Class/index.html#//apple_ref/occ/instp/AVAudioUnitGenerator/bypass">iOS Dev Center</a>
-     */
     @Generated
     @Selector("bypass")
     public native boolean bypass();
@@ -181,10 +177,6 @@ public class AVAudioUnitGenerator extends AVAudioUnit implements AVAudioMixing {
     @Selector("init")
     public native AVAudioUnitGenerator init();
 
-    /**
-     * initWithAudioComponentDescription:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioUnitGenerator_Class/index.html#//apple_ref/occ/instm/AVAudioUnitGenerator/initWithAudioComponentDescription:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithAudioComponentDescription:")
     public native AVAudioUnitGenerator initWithAudioComponentDescription(
@@ -220,10 +212,6 @@ public class AVAudioUnitGenerator extends AVAudioUnit implements AVAudioMixing {
     @Selector("reverbBlend")
     public native float reverbBlend();
 
-    /**
-     * bypass</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioUnitGenerator_Class/index.html#//apple_ref/occ/instp/AVAudioUnitGenerator/bypass">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setBypass:")
     public native void setBypass(boolean value);

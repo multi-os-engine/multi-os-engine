@@ -57,10 +57,6 @@ public class NEFilterNewFlowVerdict extends NEFilterVerdict implements NSSecureC
         super(peer);
     }
 
-    /**
-     * URLAppendStringVerdictWithMapKey:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEFilterNewFlowVerdictClassRef/index.html#//apple_ref/occ/clm/NEFilterNewFlowVerdict/URLAppendStringVerdictWithMapKey:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("URLAppendStringVerdictWithMapKey:")
     public static native NEFilterNewFlowVerdict URLAppendStringVerdictWithMapKey(String urlAppendMapKey);
@@ -70,43 +66,23 @@ public class NEFilterNewFlowVerdict extends NEFilterVerdict implements NSSecureC
     @Selector("alloc")
     public static native NEFilterNewFlowVerdict alloc();
 
-    /**
-     * allowVerdict</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEFilterNewFlowVerdictClassRef/index.html#//apple_ref/occ/clm/NEFilterNewFlowVerdict/allowVerdict">iOS Dev Center</a>
-     */
     @Generated
     @Selector("allowVerdict")
     public static native NEFilterNewFlowVerdict allowVerdict();
 
-    /**
-     * dropVerdict</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEFilterNewFlowVerdictClassRef/index.html#//apple_ref/occ/clm/NEFilterNewFlowVerdict/dropVerdict">iOS Dev Center</a>
-     */
     @Generated
     @Selector("dropVerdict")
     public static native NEFilterNewFlowVerdict dropVerdict();
 
-    /**
-     * filterDataVerdictWithFilterInbound:peekInboundBytes:filterOutbound:peekOutboundBytes:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEFilterNewFlowVerdictClassRef/index.html#//apple_ref/occ/clm/NEFilterNewFlowVerdict/filterDataVerdictWithFilterInbound:peekInboundBytes:filterOutbound:peekOutboundBytes:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("filterDataVerdictWithFilterInbound:peekInboundBytes:filterOutbound:peekOutboundBytes:")
     public static native NEFilterNewFlowVerdict filterDataVerdictWithFilterInboundPeekInboundBytesFilterOutboundPeekOutboundBytes(
             boolean filterInbound, @NUInt long peekInboundBytes, boolean filterOutbound, @NUInt long peekOutboundBytes);
 
-    /**
-     * needRulesVerdict</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEFilterNewFlowVerdictClassRef/index.html#//apple_ref/occ/clm/NEFilterNewFlowVerdict/needRulesVerdict">iOS Dev Center</a>
-     */
     @Generated
     @Selector("needRulesVerdict")
     public static native NEFilterNewFlowVerdict needRulesVerdict();
 
-    /**
-     * remediateVerdictWithRemediationURLMapKey:remediationButtonTextMapKey:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEFilterNewFlowVerdictClassRef/index.html#//apple_ref/occ/clm/NEFilterNewFlowVerdict/remediateVerdictWithRemediationURLMapKey:remediationButtonTextMapKey:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("remediateVerdictWithRemediationURLMapKey:remediationButtonTextMapKey:")
     public static native NEFilterNewFlowVerdict remediateVerdictWithRemediationURLMapKeyRemediationButtonTextMapKey(

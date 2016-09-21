@@ -62,18 +62,10 @@ public class CNSocialProfile extends NSObject implements NSCopying, NSSecureCodi
     @Selector("alloc")
     public static native CNSocialProfile alloc();
 
-    /**
-     * localizedStringForKey:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Contacts/Reference/CNSocialProfile_Class/index.html#//apple_ref/occ/clm/CNSocialProfile/localizedStringForKey:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("localizedStringForKey:")
     public static native String localizedStringForKey(String key);
 
-    /**
-     * localizedStringForService:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Contacts/Reference/CNSocialProfile_Class/index.html#//apple_ref/occ/clm/CNSocialProfile/localizedStringForService:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("localizedStringForService:")
     public static native String localizedStringForService(String service);
@@ -205,10 +197,6 @@ public class CNSocialProfile extends NSObject implements NSCopying, NSSecureCodi
     public native CNSocialProfile initWithUrlStringUsernameUserIdentifierService(String urlString, String username,
             String userIdentifier, String service);
 
-    /**
-     * service</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Contacts/Reference/CNSocialProfile_Class/index.html#//apple_ref/occ/instp/CNSocialProfile/service">iOS Dev Center</a>
-     */
     @Generated
     @Selector("service")
     public native String service();
@@ -219,26 +207,14 @@ public class CNSocialProfile extends NSObject implements NSCopying, NSSecureCodi
         return supportsSecureCoding();
     }
 
-    /**
-     * urlString</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Contacts/Reference/CNSocialProfile_Class/index.html#//apple_ref/occ/instp/CNSocialProfile/urlString">iOS Dev Center</a>
-     */
     @Generated
     @Selector("urlString")
     public native String urlString();
 
-    /**
-     * userIdentifier</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Contacts/Reference/CNSocialProfile_Class/index.html#//apple_ref/occ/instp/CNSocialProfile/userIdentifier">iOS Dev Center</a>
-     */
     @Generated
     @Selector("userIdentifier")
     public native String userIdentifier();
 
-    /**
-     * username</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Contacts/Reference/CNSocialProfile_Class/index.html#//apple_ref/occ/instp/CNSocialProfile/username">iOS Dev Center</a>
-     */
     @Generated
     @Selector("username")
     public native String username();

@@ -159,50 +159,26 @@ public class GCGamepad extends NSObject {
     @NInt
     public static native long version();
 
-    /**
-     * buttonA</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameController/Reference/GCGamePad_Ref/index.html#//apple_ref/occ/instp/GCGamepad/buttonA">iOS Dev Center</a>
-     */
     @Generated
     @Selector("buttonA")
     public native GCControllerButtonInput buttonA();
 
-    /**
-     * buttonB</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameController/Reference/GCGamePad_Ref/index.html#//apple_ref/occ/instp/GCGamepad/buttonB">iOS Dev Center</a>
-     */
     @Generated
     @Selector("buttonB")
     public native GCControllerButtonInput buttonB();
 
-    /**
-     * buttonX</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameController/Reference/GCGamePad_Ref/index.html#//apple_ref/occ/instp/GCGamepad/buttonX">iOS Dev Center</a>
-     */
     @Generated
     @Selector("buttonX")
     public native GCControllerButtonInput buttonX();
 
-    /**
-     * buttonY</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameController/Reference/GCGamePad_Ref/index.html#//apple_ref/occ/instp/GCGamepad/buttonY">iOS Dev Center</a>
-     */
     @Generated
     @Selector("buttonY")
     public native GCControllerButtonInput buttonY();
 
-    /**
-     * controller</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameController/Reference/GCGamePad_Ref/index.html#//apple_ref/occ/instp/GCGamepad/controller">iOS Dev Center</a>
-     */
     @Generated
     @Selector("controller")
     public native GCController controller();
 
-    /**
-     * dpad</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameController/Reference/GCGamePad_Ref/index.html#//apple_ref/occ/instp/GCGamepad/dpad">iOS Dev Center</a>
-     */
     @Generated
     @Selector("dpad")
     public native GCControllerDirectionPad dpad();
@@ -211,43 +187,23 @@ public class GCGamepad extends NSObject {
     @Selector("init")
     public native GCGamepad init();
 
-    /**
-     * leftShoulder</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameController/Reference/GCGamePad_Ref/index.html#//apple_ref/occ/instp/GCGamepad/leftShoulder">iOS Dev Center</a>
-     */
     @Generated
     @Selector("leftShoulder")
     public native GCControllerButtonInput leftShoulder();
 
-    /**
-     * rightShoulder</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameController/Reference/GCGamePad_Ref/index.html#//apple_ref/occ/instp/GCGamepad/rightShoulder">iOS Dev Center</a>
-     */
     @Generated
     @Selector("rightShoulder")
     public native GCControllerButtonInput rightShoulder();
 
-    /**
-     * saveSnapshot</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameController/Reference/GCGamePad_Ref/index.html#//apple_ref/occ/instm/GCGamepad/saveSnapshot">iOS Dev Center</a>
-     */
     @Generated
     @Selector("saveSnapshot")
     public native GCGamepadSnapshot saveSnapshot();
 
-    /**
-     * valueChangedHandler</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameController/Reference/GCGamePad_Ref/index.html#//apple_ref/occ/instp/GCGamepad/valueChangedHandler">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setValueChangedHandler:")
     public native void setValueChangedHandler(
             @ObjCBlock(name = "call_setValueChangedHandler") Block_setValueChangedHandler value);
 
-    /**
-     * valueChangedHandler</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameController/Reference/GCGamePad_Ref/index.html#//apple_ref/occ/instp/GCGamepad/valueChangedHandler">iOS Dev Center</a>
-     */
     @Generated
     @Selector("valueChangedHandler")
     @ObjCBlock(name = "call_valueChangedHandler_ret")

@@ -161,34 +161,18 @@ public class ACAccountStore extends NSObject {
     @NInt
     public static native long version_static();
 
-    /**
-     * accountTypeWithAccountTypeIdentifier:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accounts/Reference/ACAccountStoreClassRef/index.html#//apple_ref/occ/instm/ACAccountStore/accountTypeWithAccountTypeIdentifier:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("accountTypeWithAccountTypeIdentifier:")
     public native ACAccountType accountTypeWithAccountTypeIdentifier(String typeIdentifier);
 
-    /**
-     * accountWithIdentifier:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accounts/Reference/ACAccountStoreClassRef/index.html#//apple_ref/occ/instm/ACAccountStore/accountWithIdentifier:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("accountWithIdentifier:")
     public native ACAccount accountWithIdentifier(String identifier);
 
-    /**
-     * accounts</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accounts/Reference/ACAccountStoreClassRef/index.html#//apple_ref/occ/instp/ACAccountStore/accounts">iOS Dev Center</a>
-     */
     @Generated
     @Selector("accounts")
     public native NSArray<?> accounts();
 
-    /**
-     * accountsWithAccountType:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accounts/Reference/ACAccountStoreClassRef/index.html#//apple_ref/occ/instm/ACAccountStore/accountsWithAccountType:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("accountsWithAccountType:")
     public native NSArray<?> accountsWithAccountType(ACAccountType accountType);
@@ -197,48 +181,28 @@ public class ACAccountStore extends NSObject {
     @Selector("init")
     public native ACAccountStore init();
 
-    /**
-     * removeAccount:withCompletionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accounts/Reference/ACAccountStoreClassRef/index.html#//apple_ref/occ/instm/ACAccountStore/removeAccount:withCompletionHandler:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("removeAccount:withCompletionHandler:")
     public native void removeAccountWithCompletionHandler(ACAccount account,
             @ObjCBlock(name = "call_removeAccountWithCompletionHandler") Block_removeAccountWithCompletionHandler completionHandler);
 
-    /**
-     * renewCredentialsForAccount:completion:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accounts/Reference/ACAccountStoreClassRef/index.html#//apple_ref/occ/instm/ACAccountStore/renewCredentialsForAccount:completion:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("renewCredentialsForAccount:completion:")
     public native void renewCredentialsForAccountCompletion(ACAccount account,
             @ObjCBlock(name = "call_renewCredentialsForAccountCompletion") Block_renewCredentialsForAccountCompletion completionHandler);
 
-    /**
-     * requestAccessToAccountsWithType:options:completion:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accounts/Reference/ACAccountStoreClassRef/index.html#//apple_ref/occ/instm/ACAccountStore/requestAccessToAccountsWithType:options:completion:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("requestAccessToAccountsWithType:options:completion:")
     public native void requestAccessToAccountsWithTypeOptionsCompletion(ACAccountType accountType,
             NSDictionary<?, ?> options,
             @ObjCBlock(name = "call_requestAccessToAccountsWithTypeOptionsCompletion") Block_requestAccessToAccountsWithTypeOptionsCompletion completion);
 
-    /**
-     * requestAccessToAccountsWithType:withCompletionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accounts/Reference/ACAccountStoreClassRef/index.html#//apple_ref/occ/instm/ACAccountStore/requestAccessToAccountsWithType:withCompletionHandler:">iOS Dev Center</a>
-     */
     @Generated
     @Deprecated
     @Selector("requestAccessToAccountsWithType:withCompletionHandler:")
     public native void requestAccessToAccountsWithTypeWithCompletionHandler(ACAccountType accountType,
             @ObjCBlock(name = "call_requestAccessToAccountsWithTypeWithCompletionHandler") Block_requestAccessToAccountsWithTypeWithCompletionHandler handler);
 
-    /**
-     * saveAccount:withCompletionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accounts/Reference/ACAccountStoreClassRef/index.html#//apple_ref/occ/instm/ACAccountStore/saveAccount:withCompletionHandler:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("saveAccount:withCompletionHandler:")
     public native void saveAccountWithCompletionHandler(ACAccount account,

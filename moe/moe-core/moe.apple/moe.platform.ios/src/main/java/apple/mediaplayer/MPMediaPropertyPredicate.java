@@ -60,19 +60,11 @@ public class MPMediaPropertyPredicate extends MPMediaPredicate {
     @Selector("alloc")
     public static native MPMediaPropertyPredicate alloc();
 
-    /**
-     * predicateWithValue:forProperty:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPMediaPropertyPredicate_ClassReference/index.html#//apple_ref/occ/clm/MPMediaPropertyPredicate/predicateWithValue:forProperty:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("predicateWithValue:forProperty:")
     public static native MPMediaPropertyPredicate predicateWithValueForProperty(
             @Mapped(ObjCObjectMapper.class) Object value, String property);
 
-    /**
-     * predicateWithValue:forProperty:comparisonType:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPMediaPropertyPredicate_ClassReference/index.html#//apple_ref/occ/clm/MPMediaPropertyPredicate/predicateWithValue:forProperty:comparisonType:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("predicateWithValue:forProperty:comparisonType:")
     public static native MPMediaPropertyPredicate predicateWithValueForPropertyComparisonType(
@@ -182,10 +174,6 @@ public class MPMediaPropertyPredicate extends MPMediaPredicate {
     @NInt
     public static native long version_static();
 
-    /**
-     * comparisonType</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPMediaPropertyPredicate_ClassReference/index.html#//apple_ref/occ/instp/MPMediaPropertyPredicate/comparisonType">iOS Dev Center</a>
-     */
     @Generated
     @Selector("comparisonType")
     @NInt
@@ -195,18 +183,10 @@ public class MPMediaPropertyPredicate extends MPMediaPredicate {
     @Selector("init")
     public native MPMediaPropertyPredicate init();
 
-    /**
-     * property</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPMediaPropertyPredicate_ClassReference/index.html#//apple_ref/occ/instp/MPMediaPropertyPredicate/property">iOS Dev Center</a>
-     */
     @Generated
     @Selector("property")
     public native String property();
 
-    /**
-     * value</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPMediaPropertyPredicate_ClassReference/index.html#//apple_ref/occ/instp/MPMediaPropertyPredicate/value">iOS Dev Center</a>
-     */
     @Generated
     @Selector("value")
     @MappedReturn(ObjCObjectMapper.class)

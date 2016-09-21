@@ -60,43 +60,23 @@ public class NSMapTable<_KeyType, _ObjectType> extends NSObject implements NSCop
     @Selector("alloc")
     public static native NSMapTable<?, ?> alloc();
 
-    /**
-     * mapTableWithKeyOptions:valueOptions:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSMapTable_class/index.html#//apple_ref/occ/clm/NSMapTable/mapTableWithKeyOptions:valueOptions:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("mapTableWithKeyOptions:valueOptions:")
     public static native <_KeyType, _ObjectType> NSMapTable<_KeyType, _ObjectType> mapTableWithKeyOptionsValueOptions(
             @NUInt long keyOptions, @NUInt long valueOptions);
 
-    /**
-     * strongToStrongObjectsMapTable</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSMapTable_class/index.html#//apple_ref/occ/clm/NSMapTable/strongToStrongObjectsMapTable">iOS Dev Center</a>
-     */
     @Generated
     @Selector("strongToStrongObjectsMapTable")
     public static native <_KeyType, _ObjectType> NSMapTable<_KeyType, _ObjectType> strongToStrongObjectsMapTable();
 
-    /**
-     * strongToWeakObjectsMapTable</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSMapTable_class/index.html#//apple_ref/occ/clm/NSMapTable/strongToWeakObjectsMapTable">iOS Dev Center</a>
-     */
     @Generated
     @Selector("strongToWeakObjectsMapTable")
     public static native <_KeyType, _ObjectType> NSMapTable<_KeyType, _ObjectType> strongToWeakObjectsMapTable();
 
-    /**
-     * weakToStrongObjectsMapTable</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSMapTable_class/index.html#//apple_ref/occ/clm/NSMapTable/weakToStrongObjectsMapTable">iOS Dev Center</a>
-     */
     @Generated
     @Selector("weakToStrongObjectsMapTable")
     public static native <_KeyType, _ObjectType> NSMapTable<_KeyType, _ObjectType> weakToStrongObjectsMapTable();
 
-    /**
-     * weakToWeakObjectsMapTable</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSMapTable_class/index.html#//apple_ref/occ/clm/NSMapTable/weakToWeakObjectsMapTable">iOS Dev Center</a>
-     */
     @Generated
     @Selector("weakToWeakObjectsMapTable")
     public static native <_KeyType, _ObjectType> NSMapTable<_KeyType, _ObjectType> weakToWeakObjectsMapTable();
@@ -207,10 +187,6 @@ public class NSMapTable<_KeyType, _ObjectType> extends NSObject implements NSCop
     @MappedReturn(ObjCObjectMapper.class)
     public native Object copyWithZone(VoidPtr zone);
 
-    /**
-     * count</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSMapTable_class/index.html#//apple_ref/occ/instp/NSMapTable/count">iOS Dev Center</a>
-     */
     @Generated
     @Selector("count")
     @NUInt
@@ -221,10 +197,6 @@ public class NSMapTable<_KeyType, _ObjectType> extends NSObject implements NSCop
     @NUInt
     public native long countByEnumeratingWithStateObjectsCount(VoidPtr state, Ptr<ObjCObject> buffer, @NUInt long len);
 
-    /**
-     * dictionaryRepresentation</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSMapTable_class/index.html#//apple_ref/occ/instm/NSMapTable/dictionaryRepresentation">iOS Dev Center</a>
-     */
     @Generated
     @Selector("dictionaryRepresentation")
     public native NSDictionary<_KeyType, _ObjectType> dictionaryRepresentation();
@@ -241,86 +213,46 @@ public class NSMapTable<_KeyType, _ObjectType> extends NSObject implements NSCop
     @Selector("initWithCoder:")
     public native NSMapTable<?, ?> initWithCoder(NSCoder aDecoder);
 
-    /**
-     * initWithKeyOptions:valueOptions:capacity:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSMapTable_class/index.html#//apple_ref/occ/instm/NSMapTable/initWithKeyOptions:valueOptions:capacity:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithKeyOptions:valueOptions:capacity:")
     public native NSMapTable<?, ?> initWithKeyOptionsValueOptionsCapacity(@NUInt long keyOptions,
             @NUInt long valueOptions, @NUInt long initialCapacity);
 
-    /**
-     * initWithKeyPointerFunctions:valuePointerFunctions:capacity:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSMapTable_class/index.html#//apple_ref/occ/instm/NSMapTable/initWithKeyPointerFunctions:valuePointerFunctions:capacity:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithKeyPointerFunctions:valuePointerFunctions:capacity:")
     public native NSMapTable<?, ?> initWithKeyPointerFunctionsValuePointerFunctionsCapacity(
             NSPointerFunctions keyFunctions, NSPointerFunctions valueFunctions, @NUInt long initialCapacity);
 
-    /**
-     * keyEnumerator</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSMapTable_class/index.html#//apple_ref/occ/instm/NSMapTable/keyEnumerator">iOS Dev Center</a>
-     */
     @Generated
     @Selector("keyEnumerator")
     public native NSEnumerator<_KeyType> keyEnumerator();
 
-    /**
-     * keyPointerFunctions</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSMapTable_class/index.html#//apple_ref/occ/instp/NSMapTable/keyPointerFunctions">iOS Dev Center</a>
-     */
     @Generated
     @Selector("keyPointerFunctions")
     public native NSPointerFunctions keyPointerFunctions();
 
-    /**
-     * objectEnumerator</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSMapTable_class/index.html#//apple_ref/occ/instm/NSMapTable/objectEnumerator">iOS Dev Center</a>
-     */
     @Generated
     @Selector("objectEnumerator")
     public native NSEnumerator<_ObjectType> objectEnumerator();
 
-    /**
-     * objectForKey:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSMapTable_class/index.html#//apple_ref/occ/instm/NSMapTable/objectForKey:">iOS Dev Center</a>
-     */
     @MappedReturn(ObjCObjectMapper.class)
     @Generated
     @Selector("objectForKey:")
     public native _ObjectType objectForKey(@Mapped(ObjCObjectMapper.class) _KeyType aKey);
 
-    /**
-     * removeAllObjects</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSMapTable_class/index.html#//apple_ref/occ/instm/NSMapTable/removeAllObjects">iOS Dev Center</a>
-     */
     @Generated
     @Selector("removeAllObjects")
     public native void removeAllObjects();
 
-    /**
-     * removeObjectForKey:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSMapTable_class/index.html#//apple_ref/occ/instm/NSMapTable/removeObjectForKey:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("removeObjectForKey:")
     public native void removeObjectForKey(@Mapped(ObjCObjectMapper.class) _KeyType aKey);
 
-    /**
-     * setObject:forKey:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSMapTable_class/index.html#//apple_ref/occ/instm/NSMapTable/setObject:forKey:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setObject:forKey:")
     public native void setObjectForKey(@Mapped(ObjCObjectMapper.class) _ObjectType anObject,
             @Mapped(ObjCObjectMapper.class) _KeyType aKey);
 
-    /**
-     * valuePointerFunctions</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSMapTable_class/index.html#//apple_ref/occ/instp/NSMapTable/valuePointerFunctions">iOS Dev Center</a>
-     */
     @Generated
     @Selector("valuePointerFunctions")
     public native NSPointerFunctions valuePointerFunctions();

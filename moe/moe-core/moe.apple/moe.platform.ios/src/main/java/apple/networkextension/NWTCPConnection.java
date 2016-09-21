@@ -161,42 +161,22 @@ public class NWTCPConnection extends NSObject {
     @NInt
     public static native long version_static();
 
-    /**
-     * cancel</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NWTCPConnectionClassRef/index.html#//apple_ref/occ/instm/NWTCPConnection/cancel">iOS Dev Center</a>
-     */
     @Generated
     @Selector("cancel")
     public native void cancel();
 
-    /**
-     * connectedPath</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NWTCPConnectionClassRef/index.html#//apple_ref/occ/instp/NWTCPConnection/connectedPath">iOS Dev Center</a>
-     */
     @Generated
     @Selector("connectedPath")
     public native NWPath connectedPath();
 
-    /**
-     * endpoint</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NWTCPConnectionClassRef/index.html#//apple_ref/occ/instp/NWTCPConnection/endpoint">iOS Dev Center</a>
-     */
     @Generated
     @Selector("endpoint")
     public native NWEndpoint endpoint();
 
-    /**
-     * error</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NWTCPConnectionClassRef/index.html#//apple_ref/occ/instp/NWTCPConnection/error">iOS Dev Center</a>
-     */
     @Generated
     @Selector("error")
     public native NSError error();
 
-    /**
-     * hasBetterPath</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NWTCPConnectionClassRef/index.html#//apple_ref/occ/instp/NWTCPConnection/hasBetterPath">iOS Dev Center</a>
-     */
     @Generated
     @Selector("hasBetterPath")
     public native boolean hasBetterPath();
@@ -205,86 +185,46 @@ public class NWTCPConnection extends NSObject {
     @Selector("init")
     public native NWTCPConnection init();
 
-    /**
-     * initWithUpgradeForConnection:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NWTCPConnectionClassRef/index.html#//apple_ref/occ/instm/NWTCPConnection/initWithUpgradeForConnection:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithUpgradeForConnection:")
     public native NWTCPConnection initWithUpgradeForConnection(NWTCPConnection connection);
 
-    /**
-     * viable</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NWTCPConnectionClassRef/index.html#//apple_ref/occ/instp/NWTCPConnection/viable">iOS Dev Center</a>
-     */
     @Generated
     @Selector("isViable")
     public native boolean isViable();
 
-    /**
-     * localAddress</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NWTCPConnectionClassRef/index.html#//apple_ref/occ/instp/NWTCPConnection/localAddress">iOS Dev Center</a>
-     */
     @Generated
     @Selector("localAddress")
     public native NWEndpoint localAddress();
 
-    /**
-     * readLength:completionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NWTCPConnectionClassRef/index.html#//apple_ref/occ/instm/NWTCPConnection/readLength:completionHandler:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("readLength:completionHandler:")
     public native void readLengthCompletionHandler(@NUInt long length,
             @ObjCBlock(name = "call_readLengthCompletionHandler") Block_readLengthCompletionHandler completion);
 
-    /**
-     * readMinimumLength:maximumLength:completionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NWTCPConnectionClassRef/index.html#//apple_ref/occ/instm/NWTCPConnection/readMinimumLength:maximumLength:completionHandler:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("readMinimumLength:maximumLength:completionHandler:")
     public native void readMinimumLengthMaximumLengthCompletionHandler(@NUInt long minimum, @NUInt long maximum,
             @ObjCBlock(name = "call_readMinimumLengthMaximumLengthCompletionHandler") Block_readMinimumLengthMaximumLengthCompletionHandler completion);
 
-    /**
-     * remoteAddress</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NWTCPConnectionClassRef/index.html#//apple_ref/occ/instp/NWTCPConnection/remoteAddress">iOS Dev Center</a>
-     */
     @Generated
     @Selector("remoteAddress")
     public native NWEndpoint remoteAddress();
 
-    /**
-     * state</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NWTCPConnectionClassRef/index.html#//apple_ref/occ/instp/NWTCPConnection/state">iOS Dev Center</a>
-     */
     @Generated
     @Selector("state")
     @NInt
     public native long state();
 
-    /**
-     * txtRecord</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NWTCPConnectionClassRef/index.html#//apple_ref/occ/instp/NWTCPConnection/txtRecord">iOS Dev Center</a>
-     */
     @Generated
     @Selector("txtRecord")
     public native NSData txtRecord();
 
-    /**
-     * write:completionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NWTCPConnectionClassRef/index.html#//apple_ref/occ/instm/NWTCPConnection/write:completionHandler:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("write:completionHandler:")
     public native void writeCompletionHandler(NSData data,
             @ObjCBlock(name = "call_writeCompletionHandler") Block_writeCompletionHandler completion);
 
-    /**
-     * writeClose</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NWTCPConnectionClassRef/index.html#//apple_ref/occ/instm/NWTCPConnection/writeClose">iOS Dev Center</a>
-     */
     @Generated
     @Selector("writeClose")
     public native void writeClose();

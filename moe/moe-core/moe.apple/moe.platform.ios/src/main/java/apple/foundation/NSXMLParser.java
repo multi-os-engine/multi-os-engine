@@ -156,10 +156,6 @@ public class NSXMLParser extends NSObject {
     @NInt
     public static native long version_static();
 
-    /**
-     * abortParsing</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSXMLParser_Class/index.html#//apple_ref/occ/instm/NSXMLParser/abortParsing">iOS Dev Center</a>
-     */
     @Generated
     @Selector("abortParsing")
     public native void abortParsing();
@@ -168,19 +164,11 @@ public class NSXMLParser extends NSObject {
     @Selector("allowedExternalEntityURLs")
     public native NSSet<? extends NSURL> allowedExternalEntityURLs();
 
-    /**
-     * columnNumber</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSXMLParser_Class/index.html#//apple_ref/occ/instp/NSXMLParser/columnNumber">iOS Dev Center</a>
-     */
     @Generated
     @Selector("columnNumber")
     @NInt
     public native long columnNumber();
 
-    /**
-     * delegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSXMLParser_Class/index.html#//apple_ref/occ/instp/NSXMLParser/delegate">iOS Dev Center</a>
-     */
     @Generated
     @Selector("delegate")
     @MappedReturn(ObjCObjectMapper.class)
@@ -195,59 +183,31 @@ public class NSXMLParser extends NSObject {
     @Selector("init")
     public native NSXMLParser init();
 
-    /**
-     * initWithContentsOfURL:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSXMLParser_Class/index.html#//apple_ref/occ/instm/NSXMLParser/initWithContentsOfURL:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithContentsOfURL:")
     public native NSXMLParser initWithContentsOfURL(NSURL url);
 
-    /**
-     * initWithData:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSXMLParser_Class/index.html#//apple_ref/occ/instm/NSXMLParser/initWithData:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithData:")
     public native NSXMLParser initWithData(NSData data);
 
-    /**
-     * initWithStream:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSXMLParser_Class/index.html#//apple_ref/occ/instm/NSXMLParser/initWithStream:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithStream:")
     public native NSXMLParser initWithStream(NSInputStream stream);
 
-    /**
-     * lineNumber</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSXMLParser_Class/index.html#//apple_ref/occ/instp/NSXMLParser/lineNumber">iOS Dev Center</a>
-     */
     @Generated
     @Selector("lineNumber")
     @NInt
     public native long lineNumber();
 
-    /**
-     * parse</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSXMLParser_Class/index.html#//apple_ref/occ/instm/NSXMLParser/parse">iOS Dev Center</a>
-     */
     @Generated
     @Selector("parse")
     public native boolean parse();
 
-    /**
-     * parserError</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSXMLParser_Class/index.html#//apple_ref/occ/instp/NSXMLParser/parserError">iOS Dev Center</a>
-     */
     @Generated
     @Selector("parserError")
     public native NSError parserError();
 
-    /**
-     * publicID</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSXMLParser_Class/index.html#//apple_ref/occ/instp/NSXMLParser/publicID">iOS Dev Center</a>
-     */
     @Generated
     @Selector("publicID")
     public native String publicID();
@@ -256,18 +216,10 @@ public class NSXMLParser extends NSObject {
     @Selector("setAllowedExternalEntityURLs:")
     public native void setAllowedExternalEntityURLs(NSSet<? extends NSURL> value);
 
-    /**
-     * delegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSXMLParser_Class/index.html#//apple_ref/occ/instp/NSXMLParser/delegate">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setDelegate:")
     public native void setDelegate_unsafe(@Mapped(ObjCObjectMapper.class) NSXMLParserDelegate value);
 
-    /**
-     * delegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSXMLParser_Class/index.html#//apple_ref/occ/instp/NSXMLParser/delegate">iOS Dev Center</a>
-     */
     @Generated
     public void setDelegate(@Mapped(ObjCObjectMapper.class) NSXMLParserDelegate value) {
         Object __old = delegate();
@@ -284,58 +236,30 @@ public class NSXMLParser extends NSObject {
     @Selector("setExternalEntityResolvingPolicy:")
     public native void setExternalEntityResolvingPolicy(@NUInt long value);
 
-    /**
-     * shouldProcessNamespaces</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSXMLParser_Class/index.html#//apple_ref/occ/instp/NSXMLParser/shouldProcessNamespaces">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setShouldProcessNamespaces:")
     public native void setShouldProcessNamespaces(boolean value);
 
-    /**
-     * shouldReportNamespacePrefixes</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSXMLParser_Class/index.html#//apple_ref/occ/instp/NSXMLParser/shouldReportNamespacePrefixes">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setShouldReportNamespacePrefixes:")
     public native void setShouldReportNamespacePrefixes(boolean value);
 
-    /**
-     * shouldResolveExternalEntities</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSXMLParser_Class/index.html#//apple_ref/occ/instp/NSXMLParser/shouldResolveExternalEntities">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setShouldResolveExternalEntities:")
     public native void setShouldResolveExternalEntities(boolean value);
 
-    /**
-     * shouldProcessNamespaces</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSXMLParser_Class/index.html#//apple_ref/occ/instp/NSXMLParser/shouldProcessNamespaces">iOS Dev Center</a>
-     */
     @Generated
     @Selector("shouldProcessNamespaces")
     public native boolean shouldProcessNamespaces();
 
-    /**
-     * shouldReportNamespacePrefixes</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSXMLParser_Class/index.html#//apple_ref/occ/instp/NSXMLParser/shouldReportNamespacePrefixes">iOS Dev Center</a>
-     */
     @Generated
     @Selector("shouldReportNamespacePrefixes")
     public native boolean shouldReportNamespacePrefixes();
 
-    /**
-     * shouldResolveExternalEntities</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSXMLParser_Class/index.html#//apple_ref/occ/instp/NSXMLParser/shouldResolveExternalEntities">iOS Dev Center</a>
-     */
     @Generated
     @Selector("shouldResolveExternalEntities")
     public native boolean shouldResolveExternalEntities();
 
-    /**
-     * systemID</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSXMLParser_Class/index.html#//apple_ref/occ/instp/NSXMLParser/systemID">iOS Dev Center</a>
-     */
     @Generated
     @Selector("systemID")
     public native String systemID();

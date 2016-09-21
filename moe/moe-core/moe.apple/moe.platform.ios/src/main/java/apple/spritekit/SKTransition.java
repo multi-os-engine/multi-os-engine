@@ -61,114 +61,58 @@ public class SKTransition extends NSObject implements NSCopying {
     @Selector("alloc")
     public static native SKTransition alloc();
 
-    /**
-     * crossFadeWithDuration:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKTransition_Ref/index.html#//apple_ref/occ/clm/SKTransition/crossFadeWithDuration:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("crossFadeWithDuration:")
     public static native SKTransition crossFadeWithDuration(double sec);
 
-    /**
-     * doorsCloseHorizontalWithDuration:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKTransition_Ref/index.html#//apple_ref/occ/clm/SKTransition/doorsCloseHorizontalWithDuration:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("doorsCloseHorizontalWithDuration:")
     public static native SKTransition doorsCloseHorizontalWithDuration(double sec);
 
-    /**
-     * doorsCloseVerticalWithDuration:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKTransition_Ref/index.html#//apple_ref/occ/clm/SKTransition/doorsCloseVerticalWithDuration:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("doorsCloseVerticalWithDuration:")
     public static native SKTransition doorsCloseVerticalWithDuration(double sec);
 
-    /**
-     * doorsOpenHorizontalWithDuration:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKTransition_Ref/index.html#//apple_ref/occ/clm/SKTransition/doorsOpenHorizontalWithDuration:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("doorsOpenHorizontalWithDuration:")
     public static native SKTransition doorsOpenHorizontalWithDuration(double sec);
 
-    /**
-     * doorsOpenVerticalWithDuration:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKTransition_Ref/index.html#//apple_ref/occ/clm/SKTransition/doorsOpenVerticalWithDuration:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("doorsOpenVerticalWithDuration:")
     public static native SKTransition doorsOpenVerticalWithDuration(double sec);
 
-    /**
-     * doorwayWithDuration:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKTransition_Ref/index.html#//apple_ref/occ/clm/SKTransition/doorwayWithDuration:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("doorwayWithDuration:")
     public static native SKTransition doorwayWithDuration(double sec);
 
-    /**
-     * fadeWithColor:duration:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKTransition_Ref/index.html#//apple_ref/occ/clm/SKTransition/fadeWithColor:duration:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("fadeWithColor:duration:")
     public static native SKTransition fadeWithColorDuration(UIColor color, double sec);
 
-    /**
-     * fadeWithDuration:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKTransition_Ref/index.html#//apple_ref/occ/clm/SKTransition/fadeWithDuration:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("fadeWithDuration:")
     public static native SKTransition fadeWithDuration(double sec);
 
-    /**
-     * flipHorizontalWithDuration:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKTransition_Ref/index.html#//apple_ref/occ/clm/SKTransition/flipHorizontalWithDuration:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("flipHorizontalWithDuration:")
     public static native SKTransition flipHorizontalWithDuration(double sec);
 
-    /**
-     * flipVerticalWithDuration:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKTransition_Ref/index.html#//apple_ref/occ/clm/SKTransition/flipVerticalWithDuration:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("flipVerticalWithDuration:")
     public static native SKTransition flipVerticalWithDuration(double sec);
 
-    /**
-     * moveInWithDirection:duration:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKTransition_Ref/index.html#//apple_ref/occ/clm/SKTransition/moveInWithDirection:duration:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("moveInWithDirection:duration:")
     public static native SKTransition moveInWithDirectionDuration(@NInt long direction, double sec);
 
-    /**
-     * pushWithDirection:duration:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKTransition_Ref/index.html#//apple_ref/occ/clm/SKTransition/pushWithDirection:duration:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("pushWithDirection:duration:")
     public static native SKTransition pushWithDirectionDuration(@NInt long direction, double sec);
 
-    /**
-     * revealWithDirection:duration:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKTransition_Ref/index.html#//apple_ref/occ/clm/SKTransition/revealWithDirection:duration:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("revealWithDirection:duration:")
     public static native SKTransition revealWithDirectionDuration(@NInt long direction, double sec);
 
-    /**
-     * transitionWithCIFilter:duration:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKTransition_Ref/index.html#//apple_ref/occ/clm/SKTransition/transitionWithCIFilter:duration:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("transitionWithCIFilter:duration:")
     public static native SKTransition transitionWithCIFilterDuration(CIFilter filter, double sec);
@@ -277,34 +221,18 @@ public class SKTransition extends NSObject implements NSCopying {
     @Selector("init")
     public native SKTransition init();
 
-    /**
-     * pausesIncomingScene</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKTransition_Ref/index.html#//apple_ref/occ/instp/SKTransition/pausesIncomingScene">iOS Dev Center</a>
-     */
     @Generated
     @Selector("pausesIncomingScene")
     public native boolean pausesIncomingScene();
 
-    /**
-     * pausesOutgoingScene</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKTransition_Ref/index.html#//apple_ref/occ/instp/SKTransition/pausesOutgoingScene">iOS Dev Center</a>
-     */
     @Generated
     @Selector("pausesOutgoingScene")
     public native boolean pausesOutgoingScene();
 
-    /**
-     * pausesIncomingScene</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKTransition_Ref/index.html#//apple_ref/occ/instp/SKTransition/pausesIncomingScene">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setPausesIncomingScene:")
     public native void setPausesIncomingScene(boolean value);
 
-    /**
-     * pausesOutgoingScene</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKTransition_Ref/index.html#//apple_ref/occ/instp/SKTransition/pausesOutgoingScene">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setPausesOutgoingScene:")
     public native void setPausesOutgoingScene(boolean value);

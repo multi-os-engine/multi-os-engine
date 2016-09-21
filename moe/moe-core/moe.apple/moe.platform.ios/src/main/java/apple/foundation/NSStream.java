@@ -167,10 +167,6 @@ public class NSStream extends NSObject {
     @NInt
     public static native long version_static();
 
-    /**
-     * close</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSStream_Class/index.html#//apple_ref/occ/instm/NSStream/close">iOS Dev Center</a>
-     */
     @Generated
     @Selector("close")
     public native void close();
@@ -184,35 +180,19 @@ public class NSStream extends NSObject {
     @Selector("init")
     public native NSStream init();
 
-    /**
-     * open</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSStream_Class/index.html#//apple_ref/occ/instm/NSStream/open">iOS Dev Center</a>
-     */
     @Generated
     @Selector("open")
     public native void open();
 
-    /**
-     * propertyForKey:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSStream_Class/index.html#//apple_ref/occ/instm/NSStream/propertyForKey:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("propertyForKey:")
     @MappedReturn(ObjCObjectMapper.class)
     public native Object propertyForKey(String key);
 
-    /**
-     * removeFromRunLoop:forMode:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSStream_Class/index.html#//apple_ref/occ/instm/NSStream/removeFromRunLoop:forMode:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("removeFromRunLoop:forMode:")
     public native void removeFromRunLoopForMode(NSRunLoop aRunLoop, String mode);
 
-    /**
-     * scheduleInRunLoop:forMode:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSStream_Class/index.html#//apple_ref/occ/instm/NSStream/scheduleInRunLoop:forMode:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("scheduleInRunLoop:forMode:")
     public native void scheduleInRunLoopForMode(NSRunLoop aRunLoop, String mode);
@@ -233,10 +213,6 @@ public class NSStream extends NSObject {
         }
     }
 
-    /**
-     * setProperty:forKey:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSStream_Class/index.html#//apple_ref/occ/instm/NSStream/setProperty:forKey:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setProperty:forKey:")
     public native boolean setPropertyForKey(@Mapped(ObjCObjectMapper.class) Object property, String key);

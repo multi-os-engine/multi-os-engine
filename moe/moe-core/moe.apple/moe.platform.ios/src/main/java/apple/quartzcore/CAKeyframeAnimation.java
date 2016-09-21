@@ -174,26 +174,14 @@ public class CAKeyframeAnimation extends CAPropertyAnimation {
     @NInt
     public static native long version_static();
 
-    /**
-     * biasValues</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/CAKeyframeAnimation_class/index.html#//apple_ref/occ/instp/CAKeyframeAnimation/biasValues">iOS Dev Center</a>
-     */
     @Generated
     @Selector("biasValues")
     public native NSArray<? extends NSNumber> biasValues();
 
-    /**
-     * calculationMode</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/CAKeyframeAnimation_class/index.html#//apple_ref/occ/instp/CAKeyframeAnimation/calculationMode">iOS Dev Center</a>
-     */
     @Generated
     @Selector("calculationMode")
     public native String calculationMode();
 
-    /**
-     * continuityValues</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/CAKeyframeAnimation_class/index.html#//apple_ref/occ/instp/CAKeyframeAnimation/continuityValues">iOS Dev Center</a>
-     */
     @Generated
     @Selector("continuityValues")
     public native NSArray<? extends NSNumber> continuityValues();
@@ -202,122 +190,62 @@ public class CAKeyframeAnimation extends CAPropertyAnimation {
     @Selector("init")
     public native CAKeyframeAnimation init();
 
-    /**
-     * keyTimes</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/CAKeyframeAnimation_class/index.html#//apple_ref/occ/instp/CAKeyframeAnimation/keyTimes">iOS Dev Center</a>
-     */
     @Generated
     @Selector("keyTimes")
     public native NSArray<? extends NSNumber> keyTimes();
 
-    /**
-     * path</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/CAKeyframeAnimation_class/index.html#//apple_ref/occ/instp/CAKeyframeAnimation/path">iOS Dev Center</a>
-     */
     @Generated
     @Selector("path")
     public native CGPathRef path();
 
-    /**
-     * rotationMode</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/CAKeyframeAnimation_class/index.html#//apple_ref/occ/instp/CAKeyframeAnimation/rotationMode">iOS Dev Center</a>
-     */
     @Generated
     @Selector("rotationMode")
     public native String rotationMode();
 
-    /**
-     * biasValues</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/CAKeyframeAnimation_class/index.html#//apple_ref/occ/instp/CAKeyframeAnimation/biasValues">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setBiasValues:")
     public native void setBiasValues(NSArray<? extends NSNumber> value);
 
-    /**
-     * calculationMode</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/CAKeyframeAnimation_class/index.html#//apple_ref/occ/instp/CAKeyframeAnimation/calculationMode">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setCalculationMode:")
     public native void setCalculationMode(String value);
 
-    /**
-     * continuityValues</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/CAKeyframeAnimation_class/index.html#//apple_ref/occ/instp/CAKeyframeAnimation/continuityValues">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setContinuityValues:")
     public native void setContinuityValues(NSArray<? extends NSNumber> value);
 
-    /**
-     * keyTimes</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/CAKeyframeAnimation_class/index.html#//apple_ref/occ/instp/CAKeyframeAnimation/keyTimes">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setKeyTimes:")
     public native void setKeyTimes(NSArray<? extends NSNumber> value);
 
-    /**
-     * path</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/CAKeyframeAnimation_class/index.html#//apple_ref/occ/instp/CAKeyframeAnimation/path">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setPath:")
     public native void setPath(CGPathRef value);
 
-    /**
-     * rotationMode</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/CAKeyframeAnimation_class/index.html#//apple_ref/occ/instp/CAKeyframeAnimation/rotationMode">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setRotationMode:")
     public native void setRotationMode(String value);
 
-    /**
-     * tensionValues</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/CAKeyframeAnimation_class/index.html#//apple_ref/occ/instp/CAKeyframeAnimation/tensionValues">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setTensionValues:")
     public native void setTensionValues(NSArray<? extends NSNumber> value);
 
-    /**
-     * timingFunctions</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/CAKeyframeAnimation_class/index.html#//apple_ref/occ/instp/CAKeyframeAnimation/timingFunctions">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setTimingFunctions:")
     public native void setTimingFunctions(NSArray<? extends CAMediaTimingFunction> value);
 
-    /**
-     * values</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/CAKeyframeAnimation_class/index.html#//apple_ref/occ/instp/CAKeyframeAnimation/values">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setValues:")
     public native void setValues(NSArray<?> value);
 
-    /**
-     * tensionValues</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/CAKeyframeAnimation_class/index.html#//apple_ref/occ/instp/CAKeyframeAnimation/tensionValues">iOS Dev Center</a>
-     */
     @Generated
     @Selector("tensionValues")
     public native NSArray<? extends NSNumber> tensionValues();
 
-    /**
-     * timingFunctions</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/CAKeyframeAnimation_class/index.html#//apple_ref/occ/instp/CAKeyframeAnimation/timingFunctions">iOS Dev Center</a>
-     */
     @Generated
     @Selector("timingFunctions")
     public native NSArray<? extends CAMediaTimingFunction> timingFunctions();
 
-    /**
-     * values</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/CAKeyframeAnimation_class/index.html#//apple_ref/occ/instp/CAKeyframeAnimation/values">iOS Dev Center</a>
-     */
     @Generated
     @Selector("values")
     public native NSArray<?> values();

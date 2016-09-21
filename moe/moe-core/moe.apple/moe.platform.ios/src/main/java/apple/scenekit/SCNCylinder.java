@@ -62,10 +62,6 @@ public class SCNCylinder extends SCNGeometry {
     @Selector("alloc")
     public static native SCNCylinder alloc();
 
-    /**
-     * cylinderWithRadius:height:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNCylinder_Class/index.html#//apple_ref/occ/clm/SCNCylinder/cylinderWithRadius:height:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("cylinderWithRadius:height:")
     public static native SCNCylinder cylinderWithRadiusHeight(@NFloat double radius, @NFloat double height);
@@ -187,19 +183,11 @@ public class SCNCylinder extends SCNGeometry {
     @NInt
     public static native long version_static();
 
-    /**
-     * height</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNCylinder_Class/index.html#//apple_ref/occ/instp/SCNCylinder/height">iOS Dev Center</a>
-     */
     @Generated
     @Selector("height")
     @NFloat
     public native double height();
 
-    /**
-     * heightSegmentCount</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNCylinder_Class/index.html#//apple_ref/occ/instp/SCNCylinder/heightSegmentCount">iOS Dev Center</a>
-     */
     @Generated
     @Selector("heightSegmentCount")
     @NInt
@@ -209,52 +197,28 @@ public class SCNCylinder extends SCNGeometry {
     @Selector("init")
     public native SCNCylinder init();
 
-    /**
-     * radialSegmentCount</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNCylinder_Class/index.html#//apple_ref/occ/instp/SCNCylinder/radialSegmentCount">iOS Dev Center</a>
-     */
     @Generated
     @Selector("radialSegmentCount")
     @NInt
     public native long radialSegmentCount();
 
-    /**
-     * radius</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNCylinder_Class/index.html#//apple_ref/occ/instp/SCNCylinder/radius">iOS Dev Center</a>
-     */
     @Generated
     @Selector("radius")
     @NFloat
     public native double radius();
 
-    /**
-     * height</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNCylinder_Class/index.html#//apple_ref/occ/instp/SCNCylinder/height">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setHeight:")
     public native void setHeight(@NFloat double value);
 
-    /**
-     * heightSegmentCount</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNCylinder_Class/index.html#//apple_ref/occ/instp/SCNCylinder/heightSegmentCount">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setHeightSegmentCount:")
     public native void setHeightSegmentCount(@NInt long value);
 
-    /**
-     * radialSegmentCount</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNCylinder_Class/index.html#//apple_ref/occ/instp/SCNCylinder/radialSegmentCount">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setRadialSegmentCount:")
     public native void setRadialSegmentCount(@NInt long value);
 
-    /**
-     * radius</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNCylinder_Class/index.html#//apple_ref/occ/instp/SCNCylinder/radius">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setRadius:")
     public native void setRadius(@NFloat double value);

@@ -169,42 +169,22 @@ public class WKInterfaceGroup extends WKInterfaceObject implements WKImageAnimat
     @Selector("init")
     public native WKInterfaceGroup init();
 
-    /**
-     * setBackgroundColor:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WatchKit/Reference/WKInterfaceGroup_class/index.html#//apple_ref/occ/instm/WKInterfaceGroup/setBackgroundColor:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setBackgroundColor:")
     public native void setBackgroundColor(UIColor color);
 
-    /**
-     * setBackgroundImage:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WatchKit/Reference/WKInterfaceGroup_class/index.html#//apple_ref/occ/instm/WKInterfaceGroup/setBackgroundImage:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setBackgroundImage:")
     public native void setBackgroundImage(UIImage image);
 
-    /**
-     * setBackgroundImageData:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WatchKit/Reference/WKInterfaceGroup_class/index.html#//apple_ref/occ/instm/WKInterfaceGroup/setBackgroundImageData:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setBackgroundImageData:")
     public native void setBackgroundImageData(NSData imageData);
 
-    /**
-     * setBackgroundImageNamed:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WatchKit/Reference/WKInterfaceGroup_class/index.html#//apple_ref/occ/instm/WKInterfaceGroup/setBackgroundImageNamed:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setBackgroundImageNamed:")
     public native void setBackgroundImageNamed(String imageName);
 
-    /**
-     * setCornerRadius:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WatchKit/Reference/WKInterfaceGroup_class/index.html#//apple_ref/occ/instm/WKInterfaceGroup/setCornerRadius:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setCornerRadius:")
     public native void setCornerRadius(@NFloat double cornerRadius);

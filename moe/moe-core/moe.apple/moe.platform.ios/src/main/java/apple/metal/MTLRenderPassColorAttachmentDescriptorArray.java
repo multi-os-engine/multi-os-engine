@@ -162,18 +162,10 @@ public class MTLRenderPassColorAttachmentDescriptorArray extends NSObject {
     @Selector("init")
     public native MTLRenderPassColorAttachmentDescriptorArray init();
 
-    /**
-     * objectAtIndexedSubscript:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Metal/Reference/MTLRenderPassColorAttachmentDescriptorArray_Ref/index.html#//apple_ref/occ/instm/MTLRenderPassColorAttachmentDescriptorArray/objectAtIndexedSubscript:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("objectAtIndexedSubscript:")
     public native MTLRenderPassColorAttachmentDescriptor objectAtIndexedSubscript(@NUInt long attachmentIndex);
 
-    /**
-     * setObject:atIndexedSubscript:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Metal/Reference/MTLRenderPassColorAttachmentDescriptorArray_Ref/index.html#//apple_ref/occ/instm/MTLRenderPassColorAttachmentDescriptorArray/setObject:atIndexedSubscript:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setObject:atIndexedSubscript:")
     public native void setObjectAtIndexedSubscript(MTLRenderPassColorAttachmentDescriptor attachment,

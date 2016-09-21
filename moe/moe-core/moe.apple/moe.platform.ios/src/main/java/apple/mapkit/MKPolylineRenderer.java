@@ -167,18 +167,10 @@ public class MKPolylineRenderer extends MKOverlayPathRenderer {
     @Selector("initWithOverlay:")
     public native MKPolylineRenderer initWithOverlay(@Mapped(ObjCObjectMapper.class) MKOverlay overlay);
 
-    /**
-     * initWithPolyline:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKPolylineRenderer_class/index.html#//apple_ref/occ/instm/MKPolylineRenderer/initWithPolyline:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithPolyline:")
     public native MKPolylineRenderer initWithPolyline(MKPolyline polyline);
 
-    /**
-     * polyline</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKPolylineRenderer_class/index.html#//apple_ref/occ/instp/MKPolylineRenderer/polyline">iOS Dev Center</a>
-     */
     @Generated
     @Selector("polyline")
     public native MKPolyline polyline();

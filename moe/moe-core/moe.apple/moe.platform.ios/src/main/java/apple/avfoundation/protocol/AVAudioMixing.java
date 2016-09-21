@@ -31,18 +31,10 @@ import org.moe.natj.objc.ann.Selector;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("AVAudioMixing")
 public interface AVAudioMixing extends AVAudioStereoMixing, AVAudio3DMixing {
-    /**
-     * volume</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioMixing_Protocol/index.html#//apple_ref/occ/intfp/AVAudioMixing/volume">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setVolume:")
     void setVolume(float value);
 
-    /**
-     * volume</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioMixing_Protocol/index.html#//apple_ref/occ/intfp/AVAudioMixing/volume">iOS Dev Center</a>
-     */
     @Generated
     @Selector("volume")
     float volume();

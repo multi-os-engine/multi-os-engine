@@ -47,186 +47,106 @@ public final class SceneKit {
     private SceneKit() {
     }
 
-    /**
-     * SCNVector3EqualToVector3</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SceneKit_Functions/index.html#//apple_ref/c/func/SCNVector3EqualToVector3">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native boolean SCNVector3EqualToVector3(@ByValue SCNVector3 a, @ByValue SCNVector3 b);
 
-    /**
-     * SCNVector4EqualToVector4</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SceneKit_Functions/index.html#//apple_ref/c/func/SCNVector4EqualToVector4">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native boolean SCNVector4EqualToVector4(@ByValue SCNVector4 a, @ByValue SCNVector4 b);
 
-    /**
-     * SCNVector3Make</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SceneKit_Functions/index.html#//apple_ref/c/func/SCNVector3Make">iOS Dev Center</a>
-     */
     @Generated
     @Inline
     @CFunction
     @ByValue
     public static native SCNVector3 SCNVector3Make(float x, float y, float z);
 
-    /**
-     * SCNVector4Make</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SceneKit_Functions/index.html#//apple_ref/c/func/SCNVector4Make">iOS Dev Center</a>
-     */
     @Generated
     @Inline
     @CFunction
     @ByValue
     public static native SCNVector4 SCNVector4Make(float x, float y, float z, float w);
 
-    /**
-     * SCNMatrix4MakeTranslation</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SceneKit_Functions/index.html#//apple_ref/c/func/SCNMatrix4MakeTranslation">iOS Dev Center</a>
-     */
     @Generated
     @Inline
     @CFunction
     @ByValue
     public static native SCNMatrix4 SCNMatrix4MakeTranslation(float x, float y, float z);
 
-    /**
-     * SCNMatrix4MakeScale</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SceneKit_Functions/index.html#//apple_ref/c/func/SCNMatrix4MakeScale">iOS Dev Center</a>
-     */
     @Generated
     @Inline
     @CFunction
     @ByValue
     public static native SCNMatrix4 SCNMatrix4MakeScale(float sx, float sy, float sz);
 
-    /**
-     * SCNMatrix4Translate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SceneKit_Functions/index.html#//apple_ref/c/func/SCNMatrix4Translate">iOS Dev Center</a>
-     */
     @Generated
     @Inline
     @CFunction
     @ByValue
     public static native SCNMatrix4 SCNMatrix4Translate(@ByValue SCNMatrix4 mat, float x, float y, float z);
 
-    /**
-     * SCNMatrix4MakeRotation</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SceneKit_Functions/index.html#//apple_ref/c/func/SCNMatrix4MakeRotation">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @ByValue
     public static native SCNMatrix4 SCNMatrix4MakeRotation(float angle, float x, float y, float z);
 
-    /**
-     * SCNMatrix4Scale</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SceneKit_Functions/index.html#//apple_ref/c/func/SCNMatrix4Scale">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @ByValue
     public static native SCNMatrix4 SCNMatrix4Scale(@ByValue SCNMatrix4 mat, float x, float y, float z);
 
-    /**
-     * SCNMatrix4Rotate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SceneKit_Functions/index.html#//apple_ref/c/func/SCNMatrix4Rotate">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @ByValue
     public static native SCNMatrix4 SCNMatrix4Rotate(@ByValue SCNMatrix4 mat, float angle, float x, float y, float z);
 
-    /**
-     * SCNMatrix4Invert</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SceneKit_Functions/index.html#//apple_ref/c/func/SCNMatrix4Invert">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @ByValue
     public static native SCNMatrix4 SCNMatrix4Invert(@ByValue SCNMatrix4 mat);
 
-    /**
-     * SCNMatrix4Mult</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SceneKit_Functions/index.html#//apple_ref/c/func/SCNMatrix4Mult">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @ByValue
     public static native SCNMatrix4 SCNMatrix4Mult(@ByValue SCNMatrix4 matA, @ByValue SCNMatrix4 matB);
 
-    /**
-     * SCNMatrix4IsIdentity</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SceneKit_Functions/index.html#//apple_ref/c/func/SCNMatrix4IsIdentity">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native boolean SCNMatrix4IsIdentity(@ByValue SCNMatrix4 mat);
 
-    /**
-     * SCNMatrix4EqualToMatrix4</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SceneKit_Functions/index.html#//apple_ref/c/func/SCNMatrix4EqualToMatrix4">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native boolean SCNMatrix4EqualToMatrix4(@ByValue SCNMatrix4 matA, @ByValue SCNMatrix4 matB);
 
-    /**
-     * SCNVector3FromGLKVector3</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SceneKit_Functions/index.html#//apple_ref/c/func/SCNVector3FromGLKVector3">iOS Dev Center</a>
-     */
     @Generated
     @Inline
     @CFunction
     @ByValue
     public static native SCNVector3 SCNVector3FromGLKVector3(@ByValue GLKVector3 vector);
 
-    /**
-     * SCNVector3ToGLKVector3</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SceneKit_Functions/index.html#//apple_ref/c/func/SCNVector3ToGLKVector3">iOS Dev Center</a>
-     */
     @Generated
     @Inline
     @CFunction
     @ByValue
     public static native GLKVector3 SCNVector3ToGLKVector3(@ByValue SCNVector3 vector);
 
-    /**
-     * SCNVector4FromGLKVector4</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SceneKit_Functions/index.html#//apple_ref/c/func/SCNVector4FromGLKVector4">iOS Dev Center</a>
-     */
     @Generated
     @Inline
     @CFunction
     @ByValue
     public static native SCNVector4 SCNVector4FromGLKVector4(@ByValue GLKVector4 vector);
 
-    /**
-     * SCNVector4ToGLKVector4</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SceneKit_Functions/index.html#//apple_ref/c/func/SCNVector4ToGLKVector4">iOS Dev Center</a>
-     */
     @Generated
     @Inline
     @CFunction
     @ByValue
     public static native GLKVector4 SCNVector4ToGLKVector4(@ByValue SCNVector4 vector);
 
-    /**
-     * SCNMatrix4ToGLKMatrix4</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SceneKit_Functions/index.html#//apple_ref/c/func/SCNMatrix4ToGLKMatrix4">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @ByValue
     public static native GLKMatrix4 SCNMatrix4ToGLKMatrix4(@ByValue SCNMatrix4 mat);
 
-    /**
-     * SCNMatrix4FromGLKMatrix4</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SceneKit_Functions/index.html#//apple_ref/c/func/SCNMatrix4FromGLKMatrix4">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @ByValue

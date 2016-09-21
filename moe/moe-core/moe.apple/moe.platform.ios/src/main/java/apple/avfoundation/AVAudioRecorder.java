@@ -164,51 +164,27 @@ public class AVAudioRecorder extends NSObject {
     @NInt
     public static native long version_static();
 
-    /**
-     * averagePowerForChannel:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioRecorder_ClassReference/index.html#//apple_ref/occ/instm/AVAudioRecorder/averagePowerForChannel:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("averagePowerForChannel:")
     public native float averagePowerForChannel(@NUInt long channelNumber);
 
-    /**
-     * channelAssignments</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioRecorder_ClassReference/index.html#//apple_ref/occ/instp/AVAudioRecorder/channelAssignments">iOS Dev Center</a>
-     */
     @Generated
     @Selector("channelAssignments")
     public native NSArray<? extends NSNumber> channelAssignments();
 
-    /**
-     * currentTime</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioRecorder_ClassReference/index.html#//apple_ref/occ/instp/AVAudioRecorder/currentTime">iOS Dev Center</a>
-     */
     @Generated
     @Selector("currentTime")
     public native double currentTime();
 
-    /**
-     * delegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioRecorder_ClassReference/index.html#//apple_ref/occ/instp/AVAudioRecorder/delegate">iOS Dev Center</a>
-     */
     @Generated
     @Selector("delegate")
     @MappedReturn(ObjCObjectMapper.class)
     public native AVAudioRecorderDelegate delegate();
 
-    /**
-     * deleteRecording</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioRecorder_ClassReference/index.html#//apple_ref/occ/instm/AVAudioRecorder/deleteRecording">iOS Dev Center</a>
-     */
     @Generated
     @Selector("deleteRecording")
     public native boolean deleteRecording();
 
-    /**
-     * deviceCurrentTime</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioRecorder_ClassReference/index.html#//apple_ref/occ/instp/AVAudioRecorder/deviceCurrentTime">iOS Dev Center</a>
-     */
     @Generated
     @Selector("deviceCurrentTime")
     public native double deviceCurrentTime();
@@ -217,115 +193,59 @@ public class AVAudioRecorder extends NSObject {
     @Selector("init")
     public native AVAudioRecorder init();
 
-    /**
-     * initWithURL:settings:error:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioRecorder_ClassReference/index.html#//apple_ref/occ/instm/AVAudioRecorder/initWithURL:settings:error:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithURL:settings:error:")
     public native AVAudioRecorder initWithURLSettingsError(NSURL url, NSDictionary<String, ?> settings,
             Ptr<NSError> outError);
 
-    /**
-     * meteringEnabled</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioRecorder_ClassReference/index.html#//apple_ref/occ/instp/AVAudioRecorder/meteringEnabled">iOS Dev Center</a>
-     */
     @Generated
     @Selector("isMeteringEnabled")
     public native boolean isMeteringEnabled();
 
-    /**
-     * meteringEnabled</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioRecorder_ClassReference/index.html#//apple_ref/occ/instp/AVAudioRecorder/meteringEnabled">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setMeteringEnabled:")
     public native void setMeteringEnabled(boolean value);
 
-    /**
-     * recording</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioRecorder_ClassReference/index.html#//apple_ref/occ/instp/AVAudioRecorder/recording">iOS Dev Center</a>
-     */
     @Generated
     @Selector("isRecording")
     public native boolean isRecording();
 
-    /**
-     * pause</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioRecorder_ClassReference/index.html#//apple_ref/occ/instm/AVAudioRecorder/pause">iOS Dev Center</a>
-     */
     @Generated
     @Selector("pause")
     public native void pause();
 
-    /**
-     * peakPowerForChannel:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioRecorder_ClassReference/index.html#//apple_ref/occ/instm/AVAudioRecorder/peakPowerForChannel:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("peakPowerForChannel:")
     public native float peakPowerForChannel(@NUInt long channelNumber);
 
-    /**
-     * prepareToRecord</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioRecorder_ClassReference/index.html#//apple_ref/occ/instm/AVAudioRecorder/prepareToRecord">iOS Dev Center</a>
-     */
     @Generated
     @Selector("prepareToRecord")
     public native boolean prepareToRecord();
 
-    /**
-     * record</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioRecorder_ClassReference/index.html#//apple_ref/occ/instm/AVAudioRecorder/record">iOS Dev Center</a>
-     */
     @Generated
     @Selector("record")
     public native boolean record();
 
-    /**
-     * recordAtTime:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioRecorder_ClassReference/index.html#//apple_ref/occ/instm/AVAudioRecorder/recordAtTime:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("recordAtTime:")
     public native boolean recordAtTime(double time);
 
-    /**
-     * recordAtTime:forDuration:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioRecorder_ClassReference/index.html#//apple_ref/occ/instm/AVAudioRecorder/recordAtTime:forDuration:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("recordAtTime:forDuration:")
     public native boolean recordAtTimeForDuration(double time, double duration);
 
-    /**
-     * recordForDuration:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioRecorder_ClassReference/index.html#//apple_ref/occ/instm/AVAudioRecorder/recordForDuration:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("recordForDuration:")
     public native boolean recordForDuration(double duration);
 
-    /**
-     * channelAssignments</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioRecorder_ClassReference/index.html#//apple_ref/occ/instp/AVAudioRecorder/channelAssignments">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setChannelAssignments:")
     public native void setChannelAssignments(NSArray<? extends NSNumber> value);
 
-    /**
-     * delegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioRecorder_ClassReference/index.html#//apple_ref/occ/instp/AVAudioRecorder/delegate">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setDelegate:")
     public native void setDelegate_unsafe(@Mapped(ObjCObjectMapper.class) AVAudioRecorderDelegate value);
 
-    /**
-     * delegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioRecorder_ClassReference/index.html#//apple_ref/occ/instp/AVAudioRecorder/delegate">iOS Dev Center</a>
-     */
     @Generated
     public void setDelegate(@Mapped(ObjCObjectMapper.class) AVAudioRecorderDelegate value) {
         Object __old = delegate();
@@ -338,34 +258,18 @@ public class AVAudioRecorder extends NSObject {
         }
     }
 
-    /**
-     * settings</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioRecorder_ClassReference/index.html#//apple_ref/occ/instp/AVAudioRecorder/settings">iOS Dev Center</a>
-     */
     @Generated
     @Selector("settings")
     public native NSDictionary<String, ?> settings();
 
-    /**
-     * stop</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioRecorder_ClassReference/index.html#//apple_ref/occ/instm/AVAudioRecorder/stop">iOS Dev Center</a>
-     */
     @Generated
     @Selector("stop")
     public native void stop();
 
-    /**
-     * updateMeters</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioRecorder_ClassReference/index.html#//apple_ref/occ/instm/AVAudioRecorder/updateMeters">iOS Dev Center</a>
-     */
     @Generated
     @Selector("updateMeters")
     public native void updateMeters();
 
-    /**
-     * url</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioRecorder_ClassReference/index.html#//apple_ref/occ/instp/AVAudioRecorder/url">iOS Dev Center</a>
-     */
     @Generated
     @Selector("url")
     public native NSURL url();

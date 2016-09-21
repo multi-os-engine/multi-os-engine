@@ -38,26 +38,14 @@ public final class MediaPlayer {
     private MediaPlayer() {
     }
 
-    /**
-     * MPVolumeSettingsAlertShow</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MediaPlayerFunctionsReference/index.html#//apple_ref/c/func/MPVolumeSettingsAlertShow">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void MPVolumeSettingsAlertShow();
 
-    /**
-     * MPVolumeSettingsAlertHide</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MediaPlayerFunctionsReference/index.html#//apple_ref/c/func/MPVolumeSettingsAlertHide">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void MPVolumeSettingsAlertHide();
 
-    /**
-     * MPVolumeSettingsAlertIsVisible</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MediaPlayerFunctionsReference/index.html#//apple_ref/c/func/MPVolumeSettingsAlertIsVisible">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native boolean MPVolumeSettingsAlertIsVisible();

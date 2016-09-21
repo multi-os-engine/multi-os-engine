@@ -26,6 +26,7 @@ import org.moe.natj.c.ann.CFunction;
 import org.moe.natj.c.ann.CVariable;
 import org.moe.natj.c.ann.FunctionPtr;
 import org.moe.natj.c.ann.Inline;
+import org.moe.natj.c.ann.Variadic;
 import org.moe.natj.general.NatJ;
 import org.moe.natj.general.ann.ByValue;
 import org.moe.natj.general.ann.Generated;
@@ -37,6 +38,7 @@ import org.moe.natj.general.ann.NUInt;
 import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.general.ann.UncertainArgument;
 import org.moe.natj.general.ann.UncertainReturn;
+import org.moe.natj.general.ptr.BytePtr;
 import org.moe.natj.general.ptr.ConstVoidPtr;
 import org.moe.natj.general.ptr.NUIntPtr;
 import org.moe.natj.general.ptr.VoidPtr;
@@ -71,44 +73,24 @@ public final class Foundation {
     private Foundation() {
     }
 
-    /**
-     * NSStringFromSelector</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Miscellaneous/Foundation_Functions/index.html#//apple_ref/c/func/NSStringFromSelector">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @MappedReturn(ObjCStringMapper.class)
     public static native String NSStringFromSelector(SEL aSelector);
 
-    /**
-     * NSSelectorFromString</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Miscellaneous/Foundation_Functions/index.html#//apple_ref/c/func/NSSelectorFromString">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native SEL NSSelectorFromString(@Mapped(ObjCStringMapper.class) String aSelectorName);
 
-    /**
-     * NSStringFromClass</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Miscellaneous/Foundation_Functions/index.html#//apple_ref/c/func/NSStringFromClass">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @MappedReturn(ObjCStringMapper.class)
     public static native String NSStringFromClass(Class aClass);
 
-    /**
-     * NSClassFromString</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Miscellaneous/Foundation_Functions/index.html#//apple_ref/c/func/NSClassFromString">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native Class NSClassFromString(@Mapped(ObjCStringMapper.class) String aClassName);
 
-    /**
-     * NSGetSizeAndAlignment</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Miscellaneous/Foundation_Functions/index.html#//apple_ref/c/func/NSGetSizeAndAlignment">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @UncertainReturn("Options: java.string, c.const-byte-ptr Fallback: java.string")
@@ -116,767 +98,431 @@ public final class Foundation {
             @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String typePtr,
             NUIntPtr sizep, NUIntPtr alignp);
 
-    /**
-     * NSDefaultMallocZone</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Miscellaneous/Foundation_Functions/index.html#//apple_ref/c/func/NSDefaultMallocZone">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native VoidPtr NSDefaultMallocZone();
 
-    /**
-     * NSCreateZone</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Miscellaneous/Foundation_Functions/index.html#//apple_ref/c/func/NSCreateZone">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native VoidPtr NSCreateZone(@NUInt long startSize, @NUInt long granularity, boolean canFree);
 
-    /**
-     * NSRecycleZone</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Miscellaneous/Foundation_Functions/index.html#//apple_ref/c/func/NSRecycleZone">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void NSRecycleZone(VoidPtr zone);
 
-    /**
-     * NSSetZoneName</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Miscellaneous/Foundation_Functions/index.html#//apple_ref/c/func/NSSetZoneName">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void NSSetZoneName(VoidPtr zone, @Mapped(ObjCStringMapper.class) String name);
 
-    /**
-     * NSZoneName</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Miscellaneous/Foundation_Functions/index.html#//apple_ref/c/func/NSZoneName">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @MappedReturn(ObjCStringMapper.class)
     public static native String NSZoneName(VoidPtr zone);
 
-    /**
-     * NSZoneFromPointer</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Miscellaneous/Foundation_Functions/index.html#//apple_ref/c/func/NSZoneFromPointer">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native VoidPtr NSZoneFromPointer(VoidPtr ptr);
 
-    /**
-     * NSZoneMalloc</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Miscellaneous/Foundation_Functions/index.html#//apple_ref/c/func/NSZoneMalloc">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native VoidPtr NSZoneMalloc(VoidPtr zone, @NUInt long size);
 
-    /**
-     * NSZoneCalloc</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Miscellaneous/Foundation_Functions/index.html#//apple_ref/c/func/NSZoneCalloc">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native VoidPtr NSZoneCalloc(VoidPtr zone, @NUInt long numElems, @NUInt long byteSize);
 
-    /**
-     * NSZoneRealloc</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Miscellaneous/Foundation_Functions/index.html#//apple_ref/c/func/NSZoneRealloc">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native VoidPtr NSZoneRealloc(VoidPtr zone, VoidPtr ptr, @NUInt long size);
 
-    /**
-     * NSZoneFree</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Miscellaneous/Foundation_Functions/index.html#//apple_ref/c/func/NSZoneFree">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void NSZoneFree(VoidPtr zone, VoidPtr ptr);
 
-    /**
-     * NSPageSize</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Miscellaneous/Foundation_Functions/index.html#//apple_ref/c/func/NSPageSize">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @NUInt
     public static native long NSPageSize();
 
-    /**
-     * NSLogPageSize</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Miscellaneous/Foundation_Functions/index.html#//apple_ref/c/func/NSLogPageSize">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @NUInt
     public static native long NSLogPageSize();
 
-    /**
-     * NSRoundUpToMultipleOfPageSize</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Miscellaneous/Foundation_Functions/index.html#//apple_ref/c/func/NSRoundUpToMultipleOfPageSize">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @NUInt
     public static native long NSRoundUpToMultipleOfPageSize(@NUInt long bytes);
 
-    /**
-     * NSRoundDownToMultipleOfPageSize</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Miscellaneous/Foundation_Functions/index.html#//apple_ref/c/func/NSRoundDownToMultipleOfPageSize">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @NUInt
     public static native long NSRoundDownToMultipleOfPageSize(@NUInt long bytes);
 
-    /**
-     * NSAllocateMemoryPages</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Miscellaneous/Foundation_Functions/index.html#//apple_ref/c/func/NSAllocateMemoryPages">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native VoidPtr NSAllocateMemoryPages(@NUInt long bytes);
 
-    /**
-     * NSDeallocateMemoryPages</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Miscellaneous/Foundation_Functions/index.html#//apple_ref/c/func/NSDeallocateMemoryPages">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void NSDeallocateMemoryPages(VoidPtr ptr, @NUInt long bytes);
 
-    /**
-     * NSCopyMemoryPages</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Miscellaneous/Foundation_Functions/index.html#//apple_ref/c/func/NSCopyMemoryPages">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void NSCopyMemoryPages(ConstVoidPtr source, VoidPtr dest, @NUInt long bytes);
 
-    /**
-     * NSRealMemoryAvailable</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Miscellaneous/Foundation_Functions/index.html#//apple_ref/c/func/NSRealMemoryAvailable">iOS Dev Center</a>
-     */
     @Generated
     @Deprecated
     @CFunction
     @NUInt
     public static native long NSRealMemoryAvailable();
 
-    /**
-     * CFBridgingRetain</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Miscellaneous/Foundation_Functions/index.html#//apple_ref/c/func/CFBridgingRetain">iOS Dev Center</a>
-     */
     @Generated
     @Inline
     @CFunction
     public static native ConstVoidPtr CFBridgingRetain(@Mapped(ObjCObjectMapper.class) Object X);
 
-    /**
-     * CFBridgingRelease</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Miscellaneous/Foundation_Functions/index.html#//apple_ref/c/func/CFBridgingRelease">iOS Dev Center</a>
-     */
     @Generated
     @Inline
     @CFunction
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object CFBridgingRelease(ConstVoidPtr X);
 
-    /**
-     * NSMakeRange</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Miscellaneous/Foundation_Functions/index.html#//apple_ref/c/func/NSMakeRange">iOS Dev Center</a>
-     */
     @Generated
     @Inline
     @CFunction
     @ByValue
     public static native NSRange NSMakeRange(@NUInt long loc, @NUInt long len);
 
-    /**
-     * NSMaxRange</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Miscellaneous/Foundation_Functions/index.html#//apple_ref/c/func/NSMaxRange">iOS Dev Center</a>
-     */
     @Generated
     @Inline
     @CFunction
     @NUInt
     public static native long NSMaxRange(@ByValue NSRange range);
 
-    /**
-     * NSLocationInRange</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Miscellaneous/Foundation_Functions/index.html#//apple_ref/c/func/NSLocationInRange">iOS Dev Center</a>
-     */
     @Generated
     @Inline
     @CFunction
     public static native boolean NSLocationInRange(@NUInt long loc, @ByValue NSRange range);
 
-    /**
-     * NSEqualRanges</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Miscellaneous/Foundation_Functions/index.html#//apple_ref/c/func/NSEqualRanges">iOS Dev Center</a>
-     */
     @Generated
     @Inline
     @CFunction
     public static native boolean NSEqualRanges(@ByValue NSRange range1, @ByValue NSRange range2);
 
-    /**
-     * NSUnionRange</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Miscellaneous/Foundation_Functions/index.html#//apple_ref/c/func/NSUnionRange">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @ByValue
     public static native NSRange NSUnionRange(@ByValue NSRange range1, @ByValue NSRange range2);
 
-    /**
-     * NSIntersectionRange</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Miscellaneous/Foundation_Functions/index.html#//apple_ref/c/func/NSIntersectionRange">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @ByValue
     public static native NSRange NSIntersectionRange(@ByValue NSRange range1, @ByValue NSRange range2);
 
-    /**
-     * NSStringFromRange</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Miscellaneous/Foundation_Functions/index.html#//apple_ref/c/func/NSStringFromRange">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @MappedReturn(ObjCStringMapper.class)
     public static native String NSStringFromRange(@ByValue NSRange range);
 
-    /**
-     * NSRangeFromString</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Miscellaneous/Foundation_Functions/index.html#//apple_ref/c/func/NSRangeFromString">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @ByValue
     public static native NSRange NSRangeFromString(@Mapped(ObjCStringMapper.class) String aString);
 
-    /**
-     * NSHostByteOrder</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Miscellaneous/Foundation_Functions/index.html#//apple_ref/c/func/NSHostByteOrder">iOS Dev Center</a>
-     */
     @Generated
     @Inline
     @CFunction
     @NInt
     public static native long NSHostByteOrder();
 
-    /**
-     * NSSwapShort</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Miscellaneous/Foundation_Functions/index.html#//apple_ref/c/func/NSSwapShort">iOS Dev Center</a>
-     */
     @Generated
     @Inline
     @CFunction
     public static native char NSSwapShort(char inv);
 
-    /**
-     * NSSwapInt</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Miscellaneous/Foundation_Functions/index.html#//apple_ref/c/func/NSSwapInt">iOS Dev Center</a>
-     */
     @Generated
     @Inline
     @CFunction
     public static native int NSSwapInt(int inv);
 
-    /**
-     * NSSwapLong</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Miscellaneous/Foundation_Functions/index.html#//apple_ref/c/func/NSSwapLong">iOS Dev Center</a>
-     */
     @Generated
     @Inline
     @CFunction
     @NUInt
     public static native long NSSwapLong(@NUInt long inv);
 
-    /**
-     * NSSwapLongLong</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Miscellaneous/Foundation_Functions/index.html#//apple_ref/c/func/NSSwapLongLong">iOS Dev Center</a>
-     */
     @Generated
     @Inline
     @CFunction
     public static native long NSSwapLongLong(long inv);
 
-    /**
-     * NSSwapBigShortToHost</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Miscellaneous/Foundation_Functions/index.html#//apple_ref/c/func/NSSwapBigShortToHost">iOS Dev Center</a>
-     */
     @Generated
     @Inline
     @CFunction
     public static native char NSSwapBigShortToHost(char x);
 
-    /**
-     * NSSwapBigIntToHost</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Miscellaneous/Foundation_Functions/index.html#//apple_ref/c/func/NSSwapBigIntToHost">iOS Dev Center</a>
-     */
     @Generated
     @Inline
     @CFunction
     public static native int NSSwapBigIntToHost(int x);
 
-    /**
-     * NSSwapBigLongToHost</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Miscellaneous/Foundation_Functions/index.html#//apple_ref/c/func/NSSwapBigLongToHost">iOS Dev Center</a>
-     */
     @Generated
     @Inline
     @CFunction
     @NUInt
     public static native long NSSwapBigLongToHost(@NUInt long x);
 
-    /**
-     * NSSwapBigLongLongToHost</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Miscellaneous/Foundation_Functions/index.html#//apple_ref/c/func/NSSwapBigLongLongToHost">iOS Dev Center</a>
-     */
     @Generated
     @Inline
     @CFunction
     public static native long NSSwapBigLongLongToHost(long x);
 
-    /**
-     * NSSwapHostShortToBig</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Miscellaneous/Foundation_Functions/index.html#//apple_ref/c/func/NSSwapHostShortToBig">iOS Dev Center</a>
-     */
     @Generated
     @Inline
     @CFunction
     public static native char NSSwapHostShortToBig(char x);
 
-    /**
-     * NSSwapHostIntToBig</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Miscellaneous/Foundation_Functions/index.html#//apple_ref/c/func/NSSwapHostIntToBig">iOS Dev Center</a>
-     */
     @Generated
     @Inline
     @CFunction
     public static native int NSSwapHostIntToBig(int x);
 
-    /**
-     * NSSwapHostLongToBig</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Miscellaneous/Foundation_Functions/index.html#//apple_ref/c/func/NSSwapHostLongToBig">iOS Dev Center</a>
-     */
     @Generated
     @Inline
     @CFunction
     @NUInt
     public static native long NSSwapHostLongToBig(@NUInt long x);
 
-    /**
-     * NSSwapHostLongLongToBig</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Miscellaneous/Foundation_Functions/index.html#//apple_ref/c/func/NSSwapHostLongLongToBig">iOS Dev Center</a>
-     */
     @Generated
     @Inline
     @CFunction
     public static native long NSSwapHostLongLongToBig(long x);
 
-    /**
-     * NSSwapLittleShortToHost</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Miscellaneous/Foundation_Functions/index.html#//apple_ref/c/func/NSSwapLittleShortToHost">iOS Dev Center</a>
-     */
     @Generated
     @Inline
     @CFunction
     public static native char NSSwapLittleShortToHost(char x);
 
-    /**
-     * NSSwapLittleIntToHost</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Miscellaneous/Foundation_Functions/index.html#//apple_ref/c/func/NSSwapLittleIntToHost">iOS Dev Center</a>
-     */
     @Generated
     @Inline
     @CFunction
     public static native int NSSwapLittleIntToHost(int x);
 
-    /**
-     * NSSwapLittleLongToHost</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Miscellaneous/Foundation_Functions/index.html#//apple_ref/c/func/NSSwapLittleLongToHost">iOS Dev Center</a>
-     */
     @Generated
     @Inline
     @CFunction
     @NUInt
     public static native long NSSwapLittleLongToHost(@NUInt long x);
 
-    /**
-     * NSSwapLittleLongLongToHost</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Miscellaneous/Foundation_Functions/index.html#//apple_ref/c/func/NSSwapLittleLongLongToHost">iOS Dev Center</a>
-     */
     @Generated
     @Inline
     @CFunction
     public static native long NSSwapLittleLongLongToHost(long x);
 
-    /**
-     * NSSwapHostShortToLittle</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Miscellaneous/Foundation_Functions/index.html#//apple_ref/c/func/NSSwapHostShortToLittle">iOS Dev Center</a>
-     */
     @Generated
     @Inline
     @CFunction
     public static native char NSSwapHostShortToLittle(char x);
 
-    /**
-     * NSSwapHostIntToLittle</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Miscellaneous/Foundation_Functions/index.html#//apple_ref/c/func/NSSwapHostIntToLittle">iOS Dev Center</a>
-     */
     @Generated
     @Inline
     @CFunction
     public static native int NSSwapHostIntToLittle(int x);
 
-    /**
-     * NSSwapHostLongToLittle</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Miscellaneous/Foundation_Functions/index.html#//apple_ref/c/func/NSSwapHostLongToLittle">iOS Dev Center</a>
-     */
     @Generated
     @Inline
     @CFunction
     @NUInt
     public static native long NSSwapHostLongToLittle(@NUInt long x);
 
-    /**
-     * NSSwapHostLongLongToLittle</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Miscellaneous/Foundation_Functions/index.html#//apple_ref/c/func/NSSwapHostLongLongToLittle">iOS Dev Center</a>
-     */
     @Generated
     @Inline
     @CFunction
     public static native long NSSwapHostLongLongToLittle(long x);
 
-    /**
-     * NSConvertHostFloatToSwapped</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Miscellaneous/Foundation_Functions/index.html#//apple_ref/c/func/NSConvertHostFloatToSwapped">iOS Dev Center</a>
-     */
     @Generated
     @Inline
     @CFunction
     @ByValue
     public static native NSSwappedFloat NSConvertHostFloatToSwapped(float x);
 
-    /**
-     * NSConvertSwappedFloatToHost</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Miscellaneous/Foundation_Functions/index.html#//apple_ref/c/func/NSConvertSwappedFloatToHost">iOS Dev Center</a>
-     */
     @Generated
     @Inline
     @CFunction
     public static native float NSConvertSwappedFloatToHost(@ByValue NSSwappedFloat x);
 
-    /**
-     * NSConvertHostDoubleToSwapped</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Miscellaneous/Foundation_Functions/index.html#//apple_ref/c/func/NSConvertHostDoubleToSwapped">iOS Dev Center</a>
-     */
     @Generated
     @Inline
     @CFunction
     @ByValue
     public static native NSSwappedDouble NSConvertHostDoubleToSwapped(double x);
 
-    /**
-     * NSConvertSwappedDoubleToHost</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Miscellaneous/Foundation_Functions/index.html#//apple_ref/c/func/NSConvertSwappedDoubleToHost">iOS Dev Center</a>
-     */
     @Generated
     @Inline
     @CFunction
     public static native double NSConvertSwappedDoubleToHost(@ByValue NSSwappedDouble x);
 
-    /**
-     * NSSwapFloat</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Miscellaneous/Foundation_Functions/index.html#//apple_ref/c/func/NSSwapFloat">iOS Dev Center</a>
-     */
     @Generated
     @Inline
     @CFunction
     @ByValue
     public static native NSSwappedFloat NSSwapFloat(@ByValue NSSwappedFloat x);
 
-    /**
-     * NSSwapDouble</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Miscellaneous/Foundation_Functions/index.html#//apple_ref/c/func/NSSwapDouble">iOS Dev Center</a>
-     */
     @Generated
     @Inline
     @CFunction
     @ByValue
     public static native NSSwappedDouble NSSwapDouble(@ByValue NSSwappedDouble x);
 
-    /**
-     * NSSwapBigDoubleToHost</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Miscellaneous/Foundation_Functions/index.html#//apple_ref/c/func/NSSwapBigDoubleToHost">iOS Dev Center</a>
-     */
     @Generated
     @Inline
     @CFunction
     public static native double NSSwapBigDoubleToHost(@ByValue NSSwappedDouble x);
 
-    /**
-     * NSSwapBigFloatToHost</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Miscellaneous/Foundation_Functions/index.html#//apple_ref/c/func/NSSwapBigFloatToHost">iOS Dev Center</a>
-     */
     @Generated
     @Inline
     @CFunction
     public static native float NSSwapBigFloatToHost(@ByValue NSSwappedFloat x);
 
-    /**
-     * NSSwapHostDoubleToBig</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Miscellaneous/Foundation_Functions/index.html#//apple_ref/c/func/NSSwapHostDoubleToBig">iOS Dev Center</a>
-     */
     @Generated
     @Inline
     @CFunction
     @ByValue
     public static native NSSwappedDouble NSSwapHostDoubleToBig(double x);
 
-    /**
-     * NSSwapHostFloatToBig</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Miscellaneous/Foundation_Functions/index.html#//apple_ref/c/func/NSSwapHostFloatToBig">iOS Dev Center</a>
-     */
     @Generated
     @Inline
     @CFunction
     @ByValue
     public static native NSSwappedFloat NSSwapHostFloatToBig(float x);
 
-    /**
-     * NSSwapLittleDoubleToHost</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Miscellaneous/Foundation_Functions/index.html#//apple_ref/c/func/NSSwapLittleDoubleToHost">iOS Dev Center</a>
-     */
     @Generated
     @Inline
     @CFunction
     public static native double NSSwapLittleDoubleToHost(@ByValue NSSwappedDouble x);
 
-    /**
-     * NSSwapLittleFloatToHost</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Miscellaneous/Foundation_Functions/index.html#//apple_ref/c/func/NSSwapLittleFloatToHost">iOS Dev Center</a>
-     */
     @Generated
     @Inline
     @CFunction
     public static native float NSSwapLittleFloatToHost(@ByValue NSSwappedFloat x);
 
-    /**
-     * NSSwapHostDoubleToLittle</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Miscellaneous/Foundation_Functions/index.html#//apple_ref/c/func/NSSwapHostDoubleToLittle">iOS Dev Center</a>
-     */
     @Generated
     @Inline
     @CFunction
     @ByValue
     public static native NSSwappedDouble NSSwapHostDoubleToLittle(double x);
 
-    /**
-     * NSSwapHostFloatToLittle</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Miscellaneous/Foundation_Functions/index.html#//apple_ref/c/func/NSSwapHostFloatToLittle">iOS Dev Center</a>
-     */
     @Generated
     @Inline
     @CFunction
     @ByValue
     public static native NSSwappedFloat NSSwapHostFloatToLittle(float x);
 
-    /**
-     * NSDecimalIsNotANumber</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Miscellaneous/Foundation_Functions/index.html#//apple_ref/c/func/NSDecimalIsNotANumber">iOS Dev Center</a>
-     */
     @Generated
     @Inline
     @CFunction
     public static native boolean NSDecimalIsNotANumber(VoidPtr dcm);
 
-    /**
-     * NSDecimalCopy</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Miscellaneous/Foundation_Functions/index.html#//apple_ref/c/func/NSDecimalCopy">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void NSDecimalCopy(VoidPtr destination, VoidPtr source);
 
-    /**
-     * NSDecimalCompact</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Miscellaneous/Foundation_Functions/index.html#//apple_ref/c/func/NSDecimalCompact">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void NSDecimalCompact(VoidPtr number);
 
-    /**
-     * NSDecimalCompare</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Miscellaneous/Foundation_Functions/index.html#//apple_ref/c/func/NSDecimalCompare">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @NInt
     public static native long NSDecimalCompare(VoidPtr leftOperand, VoidPtr rightOperand);
 
-    /**
-     * NSDecimalRound</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Miscellaneous/Foundation_Functions/index.html#//apple_ref/c/func/NSDecimalRound">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void NSDecimalRound(VoidPtr result, VoidPtr number, @NInt long scale,
             @NUInt long roundingMode);
 
-    /**
-     * NSDecimalNormalize</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Miscellaneous/Foundation_Functions/index.html#//apple_ref/c/func/NSDecimalNormalize">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @NUInt
     public static native long NSDecimalNormalize(VoidPtr number1, VoidPtr number2, @NUInt long roundingMode);
 
-    /**
-     * NSDecimalAdd</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Miscellaneous/Foundation_Functions/index.html#//apple_ref/c/func/NSDecimalAdd">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @NUInt
     public static native long NSDecimalAdd(VoidPtr result, VoidPtr leftOperand, VoidPtr rightOperand,
             @NUInt long roundingMode);
 
-    /**
-     * NSDecimalSubtract</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Miscellaneous/Foundation_Functions/index.html#//apple_ref/c/func/NSDecimalSubtract">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @NUInt
     public static native long NSDecimalSubtract(VoidPtr result, VoidPtr leftOperand, VoidPtr rightOperand,
             @NUInt long roundingMode);
 
-    /**
-     * NSDecimalMultiply</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Miscellaneous/Foundation_Functions/index.html#//apple_ref/c/func/NSDecimalMultiply">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @NUInt
     public static native long NSDecimalMultiply(VoidPtr result, VoidPtr leftOperand, VoidPtr rightOperand,
             @NUInt long roundingMode);
 
-    /**
-     * NSDecimalDivide</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Miscellaneous/Foundation_Functions/index.html#//apple_ref/c/func/NSDecimalDivide">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @NUInt
     public static native long NSDecimalDivide(VoidPtr result, VoidPtr leftOperand, VoidPtr rightOperand,
             @NUInt long roundingMode);
 
-    /**
-     * NSDecimalPower</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Miscellaneous/Foundation_Functions/index.html#//apple_ref/c/func/NSDecimalPower">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @NUInt
     public static native long NSDecimalPower(VoidPtr result, VoidPtr number, @NUInt long power,
             @NUInt long roundingMode);
 
-    /**
-     * NSDecimalMultiplyByPowerOf10</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Miscellaneous/Foundation_Functions/index.html#//apple_ref/c/func/NSDecimalMultiplyByPowerOf10">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @NUInt
     public static native long NSDecimalMultiplyByPowerOf10(VoidPtr result, VoidPtr number, short power,
             @NUInt long roundingMode);
 
-    /**
-     * NSDecimalString</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Miscellaneous/Foundation_Functions/index.html#//apple_ref/c/func/NSDecimalString">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @MappedReturn(ObjCStringMapper.class)
     public static native String NSDecimalString(VoidPtr dcm, @Mapped(ObjCObjectMapper.class) Object locale);
 
-    /**
-     * NSSetUncaughtExceptionHandler</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Miscellaneous/Foundation_Functions/index.html#//apple_ref/c/func/NSSetUncaughtExceptionHandler">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void NSSetUncaughtExceptionHandler(
             @FunctionPtr(name = "call_NSSetUncaughtExceptionHandler") Function_NSSetUncaughtExceptionHandler arg1);
 
-    /**
-     * NSUserName</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Miscellaneous/Foundation_Functions/index.html#//apple_ref/c/func/NSUserName">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @MappedReturn(ObjCStringMapper.class)
     public static native String NSUserName();
 
-    /**
-     * NSFullUserName</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Miscellaneous/Foundation_Functions/index.html#//apple_ref/c/func/NSFullUserName">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @MappedReturn(ObjCStringMapper.class)
     public static native String NSFullUserName();
 
-    /**
-     * NSHomeDirectory</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Miscellaneous/Foundation_Functions/index.html#//apple_ref/c/func/NSHomeDirectory">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @MappedReturn(ObjCStringMapper.class)
     public static native String NSHomeDirectory();
 
-    /**
-     * NSHomeDirectoryForUser</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Miscellaneous/Foundation_Functions/index.html#//apple_ref/c/func/NSHomeDirectoryForUser">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @MappedReturn(ObjCStringMapper.class)
     public static native String NSHomeDirectoryForUser(@Mapped(ObjCStringMapper.class) String userName);
 
-    /**
-     * NSTemporaryDirectory</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Miscellaneous/Foundation_Functions/index.html#//apple_ref/c/func/NSTemporaryDirectory">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @MappedReturn(ObjCStringMapper.class)
     public static native String NSTemporaryDirectory();
 
-    /**
-     * NSOpenStepRootDirectory</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Miscellaneous/Foundation_Functions/index.html#//apple_ref/c/func/NSOpenStepRootDirectory">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @MappedReturn(ObjCStringMapper.class)
     public static native String NSOpenStepRootDirectory();
 
-    /**
-     * NSSearchPathForDirectoriesInDomains</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Miscellaneous/Foundation_Functions/index.html#//apple_ref/c/func/NSSearchPathForDirectoriesInDomains">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native NSArray<String> NSSearchPathForDirectoriesInDomains(@NUInt long directory,
@@ -3232,10 +2878,6 @@ public final class Foundation {
     @MappedReturn(ObjCStringMapper.class)
     public static native String NSUserActivityTypeBrowsingWeb();
 
-    /**
-     * NSGetUncaughtExceptionHandler</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Miscellaneous/Foundation_Functions/index.html#//apple_ref/c/func/NSGetUncaughtExceptionHandler">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @FunctionPtr(name = "call_NSGetUncaughtExceptionHandler_ret")
@@ -3419,6 +3061,15 @@ public final class Foundation {
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String NSUbiquitousUserDefaultsCompletedInitialSyncNotification();
+
+    @Generated
+    @Variadic()
+    @CFunction
+    public static native void NSLog(@Mapped(ObjCObjectMapper.class) Object format, Object... varargs);
+
+    @Generated
+    @CFunction
+    public static native void NSLogv(@Mapped(ObjCObjectMapper.class) Object format, BytePtr args);
 
     @Runtime(CRuntime.class)
     @Generated

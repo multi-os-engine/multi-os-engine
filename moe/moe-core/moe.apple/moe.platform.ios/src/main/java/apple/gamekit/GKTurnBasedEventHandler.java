@@ -58,10 +58,6 @@ public class GKTurnBasedEventHandler extends NSObject {
     @Selector("alloc")
     public static native GKTurnBasedEventHandler alloc();
 
-    /**
-     * sharedTurnBasedEventHandler</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKTurnBasedEventHandler_Ref/index.html#//apple_ref/occ/clm/GKTurnBasedEventHandler/sharedTurnBasedEventHandler">iOS Dev Center</a>
-     */
     @Generated
     @Deprecated
     @Selector("sharedTurnBasedEventHandler")
@@ -167,10 +163,6 @@ public class GKTurnBasedEventHandler extends NSObject {
     @NInt
     public static native long version_static();
 
-    /**
-     * delegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKTurnBasedEventHandler_Ref/index.html#//apple_ref/occ/instp/GKTurnBasedEventHandler/delegate">iOS Dev Center</a>
-     */
     @Generated
     @Deprecated
     @Selector("delegate")
@@ -180,19 +172,11 @@ public class GKTurnBasedEventHandler extends NSObject {
     @Selector("init")
     public native GKTurnBasedEventHandler init();
 
-    /**
-     * delegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKTurnBasedEventHandler_Ref/index.html#//apple_ref/occ/instp/GKTurnBasedEventHandler/delegate">iOS Dev Center</a>
-     */
     @Generated
     @Deprecated
     @Selector("setDelegate:")
     public native void setDelegate_unsafe(NSObject value);
 
-    /**
-     * delegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKTurnBasedEventHandler_Ref/index.html#//apple_ref/occ/instp/GKTurnBasedEventHandler/delegate">iOS Dev Center</a>
-     */
     @Generated
     @Deprecated
     public void setDelegate(NSObject value) {

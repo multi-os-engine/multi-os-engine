@@ -59,10 +59,6 @@ public class UIDevice extends NSObject {
     @Selector("alloc")
     public static native UIDevice alloc();
 
-    /**
-     * currentDevice</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIDevice_Class/index.html#//apple_ref/occ/clm/UIDevice/currentDevice">iOS Dev Center</a>
-     */
     @Generated
     @Selector("currentDevice")
     public static native UIDevice currentDevice();
@@ -167,43 +163,23 @@ public class UIDevice extends NSObject {
     @NInt
     public static native long version_static();
 
-    /**
-     * batteryLevel</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIDevice_Class/index.html#//apple_ref/occ/instp/UIDevice/batteryLevel">iOS Dev Center</a>
-     */
     @Generated
     @Selector("batteryLevel")
     public native float batteryLevel();
 
-    /**
-     * batteryState</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIDevice_Class/index.html#//apple_ref/occ/instp/UIDevice/batteryState">iOS Dev Center</a>
-     */
     @Generated
     @Selector("batteryState")
     @NInt
     public native long batteryState();
 
-    /**
-     * beginGeneratingDeviceOrientationNotifications</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIDevice_Class/index.html#//apple_ref/occ/instm/UIDevice/beginGeneratingDeviceOrientationNotifications">iOS Dev Center</a>
-     */
     @Generated
     @Selector("beginGeneratingDeviceOrientationNotifications")
     public native void beginGeneratingDeviceOrientationNotifications();
 
-    /**
-     * endGeneratingDeviceOrientationNotifications</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIDevice_Class/index.html#//apple_ref/occ/instm/UIDevice/endGeneratingDeviceOrientationNotifications">iOS Dev Center</a>
-     */
     @Generated
     @Selector("endGeneratingDeviceOrientationNotifications")
     public native void endGeneratingDeviceOrientationNotifications();
 
-    /**
-     * identifierForVendor</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIDevice_Class/index.html#//apple_ref/occ/instp/UIDevice/identifierForVendor">iOS Dev Center</a>
-     */
     @Generated
     @Selector("identifierForVendor")
     public native NSUUID identifierForVendor();
@@ -212,123 +188,63 @@ public class UIDevice extends NSObject {
     @Selector("init")
     public native UIDevice init();
 
-    /**
-     * batteryMonitoringEnabled</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIDevice_Class/index.html#//apple_ref/occ/instp/UIDevice/batteryMonitoringEnabled">iOS Dev Center</a>
-     */
     @Generated
     @Selector("isBatteryMonitoringEnabled")
     public native boolean isBatteryMonitoringEnabled();
 
-    /**
-     * batteryMonitoringEnabled</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIDevice_Class/index.html#//apple_ref/occ/instp/UIDevice/batteryMonitoringEnabled">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setBatteryMonitoringEnabled:")
     public native void setBatteryMonitoringEnabled(boolean value);
 
-    /**
-     * generatesDeviceOrientationNotifications</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIDevice_Class/index.html#//apple_ref/occ/instp/UIDevice/generatesDeviceOrientationNotifications">iOS Dev Center</a>
-     */
     @Generated
     @Selector("isGeneratingDeviceOrientationNotifications")
     public native boolean isGeneratingDeviceOrientationNotifications();
 
-    /**
-     * multitaskingSupported</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIDevice_Class/index.html#//apple_ref/occ/instp/UIDevice/multitaskingSupported">iOS Dev Center</a>
-     */
     @Generated
     @Selector("isMultitaskingSupported")
     public native boolean isMultitaskingSupported();
 
-    /**
-     * proximityMonitoringEnabled</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIDevice_Class/index.html#//apple_ref/occ/instp/UIDevice/proximityMonitoringEnabled">iOS Dev Center</a>
-     */
     @Generated
     @Selector("isProximityMonitoringEnabled")
     public native boolean isProximityMonitoringEnabled();
 
-    /**
-     * proximityMonitoringEnabled</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIDevice_Class/index.html#//apple_ref/occ/instp/UIDevice/proximityMonitoringEnabled">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setProximityMonitoringEnabled:")
     public native void setProximityMonitoringEnabled(boolean value);
 
-    /**
-     * localizedModel</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIDevice_Class/index.html#//apple_ref/occ/instp/UIDevice/localizedModel">iOS Dev Center</a>
-     */
     @Generated
     @Selector("localizedModel")
     public native String localizedModel();
 
-    /**
-     * model</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIDevice_Class/index.html#//apple_ref/occ/instp/UIDevice/model">iOS Dev Center</a>
-     */
     @Generated
     @Selector("model")
     public native String model();
 
-    /**
-     * name</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIDevice_Class/index.html#//apple_ref/occ/instp/UIDevice/name">iOS Dev Center</a>
-     */
     @Generated
     @Selector("name")
     public native String name();
 
-    /**
-     * orientation</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIDevice_Class/index.html#//apple_ref/occ/instp/UIDevice/orientation">iOS Dev Center</a>
-     */
     @Generated
     @Selector("orientation")
     @NInt
     public native long orientation();
 
-    /**
-     * playInputClick</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIDevice_Class/index.html#//apple_ref/occ/instm/UIDevice/playInputClick">iOS Dev Center</a>
-     */
     @Generated
     @Selector("playInputClick")
     public native void playInputClick();
 
-    /**
-     * proximityState</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIDevice_Class/index.html#//apple_ref/occ/instp/UIDevice/proximityState">iOS Dev Center</a>
-     */
     @Generated
     @Selector("proximityState")
     public native boolean proximityState();
 
-    /**
-     * systemName</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIDevice_Class/index.html#//apple_ref/occ/instp/UIDevice/systemName">iOS Dev Center</a>
-     */
     @Generated
     @Selector("systemName")
     public native String systemName();
 
-    /**
-     * systemVersion</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIDevice_Class/index.html#//apple_ref/occ/instp/UIDevice/systemVersion">iOS Dev Center</a>
-     */
     @Generated
     @Selector("systemVersion")
     public native String systemVersion();
 
-    /**
-     * userInterfaceIdiom</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIDevice_Class/index.html#//apple_ref/occ/instp/UIDevice/userInterfaceIdiom">iOS Dev Center</a>
-     */
     @Generated
     @Selector("userInterfaceIdiom")
     @NInt

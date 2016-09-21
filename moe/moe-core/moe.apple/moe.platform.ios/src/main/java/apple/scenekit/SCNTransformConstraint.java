@@ -63,10 +63,6 @@ public class SCNTransformConstraint extends SCNConstraint {
     @Selector("alloc")
     public static native SCNTransformConstraint alloc();
 
-    /**
-     * transformConstraintInWorldSpace:withBlock:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNTransformConstraint_Class/index.html#//apple_ref/occ/clm/SCNTransformConstraint/transformConstraintInWorldSpace:withBlock:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("transformConstraintInWorldSpace:withBlock:")
     public static native SCNTransformConstraint transformConstraintInWorldSpaceWithBlock(boolean world,

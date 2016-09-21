@@ -162,39 +162,23 @@ public class ALAssetsGroup extends NSObject {
     @NInt
     public static native long version_static();
 
-    /**
-     * addAsset:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AssetsLibrary/Reference/ALAssetsGroup_Class/index.html#//apple_ref/occ/instm/ALAssetsGroup/addAsset:">iOS Dev Center</a>
-     */
     @Deprecated
     @Generated
     @Selector("addAsset:")
     public native boolean addAsset(ALAsset asset);
 
-    /**
-     * enumerateAssetsAtIndexes:options:usingBlock:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AssetsLibrary/Reference/ALAssetsGroup_Class/index.html#//apple_ref/occ/instm/ALAssetsGroup/enumerateAssetsAtIndexes:options:usingBlock:">iOS Dev Center</a>
-     */
     @Deprecated
     @Generated
     @Selector("enumerateAssetsAtIndexes:options:usingBlock:")
     public native void enumerateAssetsAtIndexesOptionsUsingBlock(NSIndexSet indexSet, @NUInt long options,
             @ObjCBlock(name = "call_enumerateAssetsAtIndexesOptionsUsingBlock") Block_enumerateAssetsAtIndexesOptionsUsingBlock enumerationBlock);
 
-    /**
-     * enumerateAssetsUsingBlock:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AssetsLibrary/Reference/ALAssetsGroup_Class/index.html#//apple_ref/occ/instm/ALAssetsGroup/enumerateAssetsUsingBlock:">iOS Dev Center</a>
-     */
     @Deprecated
     @Generated
     @Selector("enumerateAssetsUsingBlock:")
     public native void enumerateAssetsUsingBlock(
             @ObjCBlock(name = "call_enumerateAssetsUsingBlock") Block_enumerateAssetsUsingBlock enumerationBlock);
 
-    /**
-     * enumerateAssetsWithOptions:usingBlock:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AssetsLibrary/Reference/ALAssetsGroup_Class/index.html#//apple_ref/occ/instm/ALAssetsGroup/enumerateAssetsWithOptions:usingBlock:">iOS Dev Center</a>
-     */
     @Deprecated
     @Generated
     @Selector("enumerateAssetsWithOptions:usingBlock:")
@@ -205,47 +189,27 @@ public class ALAssetsGroup extends NSObject {
     @Selector("init")
     public native ALAssetsGroup init();
 
-    /**
-     * editable</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AssetsLibrary/Reference/ALAssetsGroup_Class/index.html#//apple_ref/occ/instp/ALAssetsGroup/editable">iOS Dev Center</a>
-     */
     @Deprecated
     @Generated
     @Selector("isEditable")
     public native boolean isEditable();
 
-    /**
-     * numberOfAssets</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AssetsLibrary/Reference/ALAssetsGroup_Class/index.html#//apple_ref/occ/instm/ALAssetsGroup/numberOfAssets">iOS Dev Center</a>
-     */
     @Deprecated
     @Generated
     @Selector("numberOfAssets")
     @NInt
     public native long numberOfAssets();
 
-    /**
-     * posterImage</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AssetsLibrary/Reference/ALAssetsGroup_Class/index.html#//apple_ref/occ/instm/ALAssetsGroup/posterImage">iOS Dev Center</a>
-     */
     @Deprecated
     @Generated
     @Selector("posterImage")
     public native CGImageRef posterImage();
 
-    /**
-     * setAssetsFilter:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AssetsLibrary/Reference/ALAssetsGroup_Class/index.html#//apple_ref/occ/instm/ALAssetsGroup/setAssetsFilter:">iOS Dev Center</a>
-     */
     @Deprecated
     @Generated
     @Selector("setAssetsFilter:")
     public native void setAssetsFilter(ALAssetsFilter filter);
 
-    /**
-     * valueForProperty:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AssetsLibrary/Reference/ALAssetsGroup_Class/index.html#//apple_ref/occ/instm/ALAssetsGroup/valueForProperty:">iOS Dev Center</a>
-     */
     @Deprecated
     @Generated
     @Selector("valueForProperty:")

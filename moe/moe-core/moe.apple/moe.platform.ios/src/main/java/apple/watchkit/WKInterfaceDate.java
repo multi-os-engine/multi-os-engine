@@ -165,26 +165,14 @@ public class WKInterfaceDate extends WKInterfaceObject {
     @Selector("init")
     public native WKInterfaceDate init();
 
-    /**
-     * setCalendar:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WatchKit/Reference/WKInterfaceDate_class/index.html#//apple_ref/occ/instm/WKInterfaceDate/setCalendar:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setCalendar:")
     public native void setCalendar(NSCalendar calendar);
 
-    /**
-     * setTextColor:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WatchKit/Reference/WKInterfaceDate_class/index.html#//apple_ref/occ/instm/WKInterfaceDate/setTextColor:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setTextColor:")
     public native void setTextColor(UIColor color);
 
-    /**
-     * setTimeZone:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WatchKit/Reference/WKInterfaceDate_class/index.html#//apple_ref/occ/instm/WKInterfaceDate/setTimeZone:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setTimeZone:")
     public native void setTimeZone(NSTimeZone timeZone);

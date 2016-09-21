@@ -31,43 +31,23 @@ import org.moe.natj.objc.ann.Selector;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("UIFocusEnvironment")
 public interface UIFocusEnvironment {
-    /**
-     * didUpdateFocusInContext:withAnimationCoordinator:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIFocusEnvironment_Protocol/index.html#//apple_ref/occ/intfm/UIFocusEnvironment/didUpdateFocusInContext:withAnimationCoordinator:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("didUpdateFocusInContext:withAnimationCoordinator:")
     void didUpdateFocusInContextWithAnimationCoordinator(UIFocusUpdateContext context,
             UIFocusAnimationCoordinator coordinator);
 
-    /**
-     * preferredFocusedView</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIFocusEnvironment_Protocol/index.html#//apple_ref/occ/intfp/UIFocusEnvironment/preferredFocusedView">iOS Dev Center</a>
-     */
     @Generated
     @Selector("preferredFocusedView")
     UIView preferredFocusedView();
 
-    /**
-     * setNeedsFocusUpdate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIFocusEnvironment_Protocol/index.html#//apple_ref/occ/intfm/UIFocusEnvironment/setNeedsFocusUpdate">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setNeedsFocusUpdate")
     void setNeedsFocusUpdate();
 
-    /**
-     * shouldUpdateFocusInContext:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIFocusEnvironment_Protocol/index.html#//apple_ref/occ/intfm/UIFocusEnvironment/shouldUpdateFocusInContext:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("shouldUpdateFocusInContext:")
     boolean shouldUpdateFocusInContext(UIFocusUpdateContext context);
 
-    /**
-     * updateFocusIfNeeded</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIFocusEnvironment_Protocol/index.html#//apple_ref/occ/intfm/UIFocusEnvironment/updateFocusIfNeeded">iOS Dev Center</a>
-     */
     @Generated
     @Selector("updateFocusIfNeeded")
     void updateFocusIfNeeded();

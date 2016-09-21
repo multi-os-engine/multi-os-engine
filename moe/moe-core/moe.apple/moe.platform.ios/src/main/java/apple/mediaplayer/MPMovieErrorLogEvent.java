@@ -160,10 +160,6 @@ public class MPMovieErrorLogEvent extends NSObject implements NSCopying {
     @NInt
     public static native long version_static();
 
-    /**
-     * URI</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPMovieErrorLogEvent_Class/index.html#//apple_ref/occ/instp/MPMovieErrorLogEvent/URI">iOS Dev Center</a>
-     */
     @Generated
     @Selector("URI")
     public native String URI();
@@ -174,34 +170,18 @@ public class MPMovieErrorLogEvent extends NSObject implements NSCopying {
     @MappedReturn(ObjCObjectMapper.class)
     public native Object copyWithZone(VoidPtr zone);
 
-    /**
-     * date</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPMovieErrorLogEvent_Class/index.html#//apple_ref/occ/instp/MPMovieErrorLogEvent/date">iOS Dev Center</a>
-     */
     @Generated
     @Selector("date")
     public native NSDate date();
 
-    /**
-     * errorComment</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPMovieErrorLogEvent_Class/index.html#//apple_ref/occ/instp/MPMovieErrorLogEvent/errorComment">iOS Dev Center</a>
-     */
     @Generated
     @Selector("errorComment")
     public native String errorComment();
 
-    /**
-     * errorDomain</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPMovieErrorLogEvent_Class/index.html#//apple_ref/occ/instp/MPMovieErrorLogEvent/errorDomain">iOS Dev Center</a>
-     */
     @Generated
     @Selector("errorDomain")
     public native String errorDomain();
 
-    /**
-     * errorStatusCode</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPMovieErrorLogEvent_Class/index.html#//apple_ref/occ/instp/MPMovieErrorLogEvent/errorStatusCode">iOS Dev Center</a>
-     */
     @Generated
     @Selector("errorStatusCode")
     @NInt
@@ -211,18 +191,10 @@ public class MPMovieErrorLogEvent extends NSObject implements NSCopying {
     @Selector("init")
     public native MPMovieErrorLogEvent init();
 
-    /**
-     * playbackSessionID</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPMovieErrorLogEvent_Class/index.html#//apple_ref/occ/instp/MPMovieErrorLogEvent/playbackSessionID">iOS Dev Center</a>
-     */
     @Generated
     @Selector("playbackSessionID")
     public native String playbackSessionID();
 
-    /**
-     * serverAddress</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPMovieErrorLogEvent_Class/index.html#//apple_ref/occ/instp/MPMovieErrorLogEvent/serverAddress">iOS Dev Center</a>
-     */
     @Generated
     @Selector("serverAddress")
     public native String serverAddress();

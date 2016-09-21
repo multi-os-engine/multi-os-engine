@@ -171,10 +171,6 @@ public class CNPostalAddressFormatter extends NSFormatter {
     @NInt
     public static native long version_static();
 
-    /**
-     * attributedStringFromPostalAddress:withDefaultAttributes:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Contacts/Reference/CNPostalAddressFormatter_Class/index.html#//apple_ref/occ/instm/CNPostalAddressFormatter/attributedStringFromPostalAddress:withDefaultAttributes:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("attributedStringFromPostalAddress:withDefaultAttributes:")
     public native NSAttributedString attributedStringFromPostalAddressWithDefaultAttributes(
@@ -188,10 +184,6 @@ public class CNPostalAddressFormatter extends NSFormatter {
     @Selector("setStyle:")
     public native void setStyle(@NInt long value);
 
-    /**
-     * stringFromPostalAddress:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Contacts/Reference/CNPostalAddressFormatter_Class/index.html#//apple_ref/occ/instm/CNPostalAddressFormatter/stringFromPostalAddress:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("stringFromPostalAddress:")
     public native String stringFromPostalAddress(CNPostalAddress postalAddress);

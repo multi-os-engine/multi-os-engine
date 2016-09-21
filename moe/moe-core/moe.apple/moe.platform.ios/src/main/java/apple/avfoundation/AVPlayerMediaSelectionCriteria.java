@@ -162,27 +162,15 @@ public class AVPlayerMediaSelectionCriteria extends NSObject {
     @Selector("init")
     public native AVPlayerMediaSelectionCriteria init();
 
-    /**
-     * initWithPreferredLanguages:preferredMediaCharacteristics:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVPlayerMediaSelectionCriteria_Class/index.html#//apple_ref/occ/instm/AVPlayerMediaSelectionCriteria/initWithPreferredLanguages:preferredMediaCharacteristics:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithPreferredLanguages:preferredMediaCharacteristics:")
     public native AVPlayerMediaSelectionCriteria initWithPreferredLanguagesPreferredMediaCharacteristics(
             NSArray<String> preferredLanguages, NSArray<String> preferredMediaCharacteristics);
 
-    /**
-     * preferredLanguages</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVPlayerMediaSelectionCriteria_Class/index.html#//apple_ref/occ/instp/AVPlayerMediaSelectionCriteria/preferredLanguages">iOS Dev Center</a>
-     */
     @Generated
     @Selector("preferredLanguages")
     public native NSArray<String> preferredLanguages();
 
-    /**
-     * preferredMediaCharacteristics</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVPlayerMediaSelectionCriteria_Class/index.html#//apple_ref/occ/instp/AVPlayerMediaSelectionCriteria/preferredMediaCharacteristics">iOS Dev Center</a>
-     */
     @Generated
     @Selector("preferredMediaCharacteristics")
     public native NSArray<String> preferredMediaCharacteristics();

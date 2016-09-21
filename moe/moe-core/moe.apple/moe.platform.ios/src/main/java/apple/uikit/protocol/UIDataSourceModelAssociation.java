@@ -30,18 +30,10 @@ import org.moe.natj.objc.ann.Selector;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("UIDataSourceModelAssociation")
 public interface UIDataSourceModelAssociation {
-    /**
-     * indexPathForElementWithModelIdentifier:inView:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIDataSourceModelAssociation_protocol/index.html#//apple_ref/occ/intfm/UIDataSourceModelAssociation/indexPathForElementWithModelIdentifier:inView:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("indexPathForElementWithModelIdentifier:inView:")
     NSIndexPath indexPathForElementWithModelIdentifierInView(String identifier, UIView view);
 
-    /**
-     * modelIdentifierForElementAtIndexPath:inView:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIDataSourceModelAssociation_protocol/index.html#//apple_ref/occ/intfm/UIDataSourceModelAssociation/modelIdentifierForElementAtIndexPath:inView:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("modelIdentifierForElementAtIndexPath:inView:")
     String modelIdentifierForElementAtIndexPathInView(NSIndexPath idx, UIView view);

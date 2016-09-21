@@ -56,10 +56,6 @@ public class UIPreviewAction extends NSObject implements NSCopying, UIPreviewAct
         super(peer);
     }
 
-    /**
-     * actionWithTitle:style:handler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPreviewAction_Class/index.html#//apple_ref/occ/clm/UIPreviewAction/actionWithTitle:style:handler:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("actionWithTitle:style:handler:")
     public static native UIPreviewAction actionWithTitleStyleHandler(String title, @NInt long style,
@@ -176,10 +172,6 @@ public class UIPreviewAction extends NSObject implements NSCopying, UIPreviewAct
     @MappedReturn(ObjCObjectMapper.class)
     public native Object copyWithZone(VoidPtr zone);
 
-    /**
-     * handler</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPreviewAction_Class/index.html#//apple_ref/occ/instp/UIPreviewAction/handler">iOS Dev Center</a>
-     */
     @Generated
     @Selector("handler")
     @ObjCBlock(name = "call_handler_ret")

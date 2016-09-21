@@ -158,18 +158,10 @@ public class MPContentItem extends NSObject {
     @NInt
     public static native long version();
 
-    /**
-     * artwork</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPContentItem_Ref/index.html#//apple_ref/occ/instp/MPContentItem/artwork">iOS Dev Center</a>
-     */
     @Generated
     @Selector("artwork")
     public native MPMediaItemArtwork artwork();
 
-    /**
-     * identifier</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPContentItem_Ref/index.html#//apple_ref/occ/instp/MPContentItem/identifier">iOS Dev Center</a>
-     */
     @Generated
     @Selector("identifier")
     public native String identifier();
@@ -178,98 +170,50 @@ public class MPContentItem extends NSObject {
     @Selector("init")
     public native MPContentItem init();
 
-    /**
-     * initWithIdentifier:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPContentItem_Ref/index.html#//apple_ref/occ/instm/MPContentItem/initWithIdentifier:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithIdentifier:")
     public native MPContentItem initWithIdentifier(String identifier);
 
-    /**
-     * container</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPContentItem_Ref/index.html#//apple_ref/occ/instp/MPContentItem/container">iOS Dev Center</a>
-     */
     @Generated
     @Selector("isContainer")
     public native boolean isContainer();
 
-    /**
-     * container</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPContentItem_Ref/index.html#//apple_ref/occ/instp/MPContentItem/container">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setContainer:")
     public native void setContainer(boolean value);
 
-    /**
-     * playable</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPContentItem_Ref/index.html#//apple_ref/occ/instp/MPContentItem/playable">iOS Dev Center</a>
-     */
     @Generated
     @Selector("isPlayable")
     public native boolean isPlayable();
 
-    /**
-     * playable</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPContentItem_Ref/index.html#//apple_ref/occ/instp/MPContentItem/playable">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setPlayable:")
     public native void setPlayable(boolean value);
 
-    /**
-     * playbackProgress</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPContentItem_Ref/index.html#//apple_ref/occ/instp/MPContentItem/playbackProgress">iOS Dev Center</a>
-     */
     @Generated
     @Selector("playbackProgress")
     public native float playbackProgress();
 
-    /**
-     * artwork</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPContentItem_Ref/index.html#//apple_ref/occ/instp/MPContentItem/artwork">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setArtwork:")
     public native void setArtwork(MPMediaItemArtwork value);
 
-    /**
-     * playbackProgress</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPContentItem_Ref/index.html#//apple_ref/occ/instp/MPContentItem/playbackProgress">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setPlaybackProgress:")
     public native void setPlaybackProgress(float value);
 
-    /**
-     * subtitle</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPContentItem_Ref/index.html#//apple_ref/occ/instp/MPContentItem/subtitle">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setSubtitle:")
     public native void setSubtitle(String value);
 
-    /**
-     * title</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPContentItem_Ref/index.html#//apple_ref/occ/instp/MPContentItem/title">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setTitle:")
     public native void setTitle(String value);
 
-    /**
-     * subtitle</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPContentItem_Ref/index.html#//apple_ref/occ/instp/MPContentItem/subtitle">iOS Dev Center</a>
-     */
     @Generated
     @Selector("subtitle")
     public native String subtitle();
 
-    /**
-     * title</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPContentItem_Ref/index.html#//apple_ref/occ/instp/MPContentItem/title">iOS Dev Center</a>
-     */
     @Generated
     @Selector("title")
     public native String title();

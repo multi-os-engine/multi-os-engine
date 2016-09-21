@@ -53,10 +53,6 @@ public class NSUUID extends NSObject implements NSCopying, NSSecureCoding {
         super(peer);
     }
 
-    /**
-     * UUID</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSUUID_Class/index.html#//apple_ref/occ/clm/NSUUID/UUID">iOS Dev Center</a>
-     */
     @Generated
     @Selector("UUID")
     public static native NSUUID UUID();
@@ -170,10 +166,6 @@ public class NSUUID extends NSObject implements NSCopying, NSSecureCoding {
     @NInt
     public static native long version_static();
 
-    /**
-     * UUIDString</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSUUID_Class/index.html#//apple_ref/occ/instp/NSUUID/UUIDString">iOS Dev Center</a>
-     */
     @Generated
     @Selector("UUIDString")
     public native String UUIDString();
@@ -188,10 +180,6 @@ public class NSUUID extends NSObject implements NSCopying, NSSecureCoding {
     @Selector("encodeWithCoder:")
     public native void encodeWithCoder(NSCoder aCoder);
 
-    /**
-     * init</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSUUID_Class/index.html#//apple_ref/occ/instm/NSUUID/init">iOS Dev Center</a>
-     */
     @Generated
     @Selector("init")
     public native NSUUID init();
@@ -200,10 +188,6 @@ public class NSUUID extends NSObject implements NSCopying, NSSecureCoding {
     @Selector("initWithCoder:")
     public native NSUUID initWithCoder(NSCoder aDecoder);
 
-    /**
-     * initWithUUIDString:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSUUID_Class/index.html#//apple_ref/occ/instm/NSUUID/initWithUUIDString:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithUUIDString:")
     public native NSUUID initWithUUIDString(String string);

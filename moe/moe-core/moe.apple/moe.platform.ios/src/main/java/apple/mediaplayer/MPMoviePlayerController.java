@@ -170,28 +170,16 @@ public class MPMoviePlayerController extends NSObject implements MPMediaPlayback
     @NInt
     public static native long version_static();
 
-    /**
-     * accessLog</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPMoviePlayerController_Class/index.html#//apple_ref/occ/instp/MPMoviePlayerController/accessLog">iOS Dev Center</a>
-     */
     @Deprecated
     @Generated
     @Selector("accessLog")
     public native MPMovieAccessLog accessLog();
 
-    /**
-     * allowsAirPlay</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPMoviePlayerController_Class/index.html#//apple_ref/occ/instp/MPMoviePlayerController/allowsAirPlay">iOS Dev Center</a>
-     */
     @Deprecated
     @Generated
     @Selector("allowsAirPlay")
     public native boolean allowsAirPlay();
 
-    /**
-     * backgroundView</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPMoviePlayerController_Class/index.html#//apple_ref/occ/instp/MPMoviePlayerController/backgroundView">iOS Dev Center</a>
-     */
     @Generated
     @Selector("backgroundView")
     public native UIView backgroundView();
@@ -204,10 +192,6 @@ public class MPMoviePlayerController extends NSObject implements MPMediaPlayback
     @Selector("beginSeekingForward")
     public native void beginSeekingForward();
 
-    /**
-     * cancelAllThumbnailImageRequests</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPMoviePlayerController_Class/index.html#//apple_ref/occ/instm/MPMoviePlayerController/cancelAllThumbnailImageRequests">iOS Dev Center</a>
-     */
     @Deprecated
     @Generated
     @Selector("cancelAllThumbnailImageRequests")
@@ -217,18 +201,10 @@ public class MPMoviePlayerController extends NSObject implements MPMediaPlayback
     @Selector("cancelPreroll")
     public native void cancelPreroll();
 
-    /**
-     * contentURL</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPMoviePlayerController_Class/index.html#//apple_ref/occ/instp/MPMoviePlayerController/contentURL">iOS Dev Center</a>
-     */
     @Generated
     @Selector("contentURL")
     public native NSURL contentURL();
 
-    /**
-     * controlStyle</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPMoviePlayerController_Class/index.html#//apple_ref/occ/instp/MPMoviePlayerController/controlStyle">iOS Dev Center</a>
-     */
     @Generated
     @Selector("controlStyle")
     @NInt
@@ -242,19 +218,11 @@ public class MPMoviePlayerController extends NSObject implements MPMediaPlayback
     @Selector("currentPlaybackTime")
     public native double currentPlaybackTime();
 
-    /**
-     * duration</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPMoviePlayerController_Class/index.html#//apple_ref/occ/instp/MPMoviePlayerController/duration">iOS Dev Center</a>
-     */
     @Deprecated
     @Generated
     @Selector("duration")
     public native double duration();
 
-    /**
-     * endPlaybackTime</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPMoviePlayerController_Class/index.html#//apple_ref/occ/instp/MPMoviePlayerController/endPlaybackTime">iOS Dev Center</a>
-     */
     @Deprecated
     @Generated
     @Selector("endPlaybackTime")
@@ -264,10 +232,6 @@ public class MPMoviePlayerController extends NSObject implements MPMediaPlayback
     @Selector("endSeeking")
     public native void endSeeking();
 
-    /**
-     * errorLog</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPMoviePlayerController_Class/index.html#//apple_ref/occ/instp/MPMoviePlayerController/errorLog">iOS Dev Center</a>
-     */
     @Deprecated
     @Generated
     @Selector("errorLog")
@@ -277,44 +241,24 @@ public class MPMoviePlayerController extends NSObject implements MPMediaPlayback
     @Selector("init")
     public native MPMoviePlayerController init();
 
-    /**
-     * initWithContentURL:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPMoviePlayerController_Class/index.html#//apple_ref/occ/instm/MPMoviePlayerController/initWithContentURL:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithContentURL:")
     public native MPMoviePlayerController initWithContentURL(NSURL url);
 
-    /**
-     * initialPlaybackTime</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPMoviePlayerController_Class/index.html#//apple_ref/occ/instp/MPMoviePlayerController/initialPlaybackTime">iOS Dev Center</a>
-     */
     @Deprecated
     @Generated
     @Selector("initialPlaybackTime")
     public native double initialPlaybackTime();
 
-    /**
-     * airPlayVideoActive</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPMoviePlayerController_Class/index.html#//apple_ref/occ/instp/MPMoviePlayerController/airPlayVideoActive">iOS Dev Center</a>
-     */
     @Deprecated
     @Generated
     @Selector("isAirPlayVideoActive")
     public native boolean isAirPlayVideoActive();
 
-    /**
-     * fullscreen</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPMoviePlayerController_Class/index.html#//apple_ref/occ/instp/MPMoviePlayerController/fullscreen">iOS Dev Center</a>
-     */
     @Generated
     @Selector("isFullscreen")
     public native boolean isFullscreen();
 
-    /**
-     * fullscreen</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPMoviePlayerController_Class/index.html#//apple_ref/occ/instp/MPMoviePlayerController/fullscreen">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setFullscreen:")
     public native void setFullscreen(boolean value);
@@ -323,39 +267,23 @@ public class MPMoviePlayerController extends NSObject implements MPMediaPlayback
     @Selector("isPreparedToPlay")
     public native boolean isPreparedToPlay();
 
-    /**
-     * loadState</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPMoviePlayerController_Class/index.html#//apple_ref/occ/instp/MPMoviePlayerController/loadState">iOS Dev Center</a>
-     */
     @Generated
     @Selector("loadState")
     @NUInt
     public native long loadState();
 
-    /**
-     * movieMediaTypes</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPMoviePlayerController_Class/index.html#//apple_ref/occ/instp/MPMoviePlayerController/movieMediaTypes">iOS Dev Center</a>
-     */
     @Deprecated
     @Generated
     @Selector("movieMediaTypes")
     @NUInt
     public native long movieMediaTypes();
 
-    /**
-     * movieSourceType</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPMoviePlayerController_Class/index.html#//apple_ref/occ/instp/MPMoviePlayerController/movieSourceType">iOS Dev Center</a>
-     */
     @Deprecated
     @Generated
     @Selector("movieSourceType")
     @NInt
     public native long movieSourceType();
 
-    /**
-     * naturalSize</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPMoviePlayerController_Class/index.html#//apple_ref/occ/instp/MPMoviePlayerController/naturalSize">iOS Dev Center</a>
-     */
     @Deprecated
     @Generated
     @Selector("naturalSize")
@@ -370,28 +298,16 @@ public class MPMoviePlayerController extends NSObject implements MPMediaPlayback
     @Selector("play")
     public native void play();
 
-    /**
-     * playPrerollAdWithCompletionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPMoviePlayerController_Class/index.html#//apple_ref/occ/instm/MPMoviePlayerController/playPrerollAdWithCompletionHandler:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("playPrerollAdWithCompletionHandler:")
     public native void playPrerollAdWithCompletionHandler(
             @ObjCBlock(name = "call_playPrerollAdWithCompletionHandler") Block_playPrerollAdWithCompletionHandler completionHandler);
 
-    /**
-     * playableDuration</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPMoviePlayerController_Class/index.html#//apple_ref/occ/instp/MPMoviePlayerController/playableDuration">iOS Dev Center</a>
-     */
     @Deprecated
     @Generated
     @Selector("playableDuration")
     public native double playableDuration();
 
-    /**
-     * playbackState</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPMoviePlayerController_Class/index.html#//apple_ref/occ/instp/MPMoviePlayerController/playbackState">iOS Dev Center</a>
-     */
     @Generated
     @Selector("playbackState")
     @NInt
@@ -401,62 +317,34 @@ public class MPMoviePlayerController extends NSObject implements MPMediaPlayback
     @Selector("prepareToPlay")
     public native void prepareToPlay();
 
-    /**
-     * readyForDisplay</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPMoviePlayerController_Class/index.html#//apple_ref/occ/instp/MPMoviePlayerController/readyForDisplay">iOS Dev Center</a>
-     */
     @Generated
     @Selector("readyForDisplay")
     public native boolean readyForDisplay();
 
-    /**
-     * repeatMode</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPMoviePlayerController_Class/index.html#//apple_ref/occ/instp/MPMoviePlayerController/repeatMode">iOS Dev Center</a>
-     */
     @Generated
     @Selector("repeatMode")
     @NInt
     public native long repeatMode();
 
-    /**
-     * requestThumbnailImagesAtTimes:timeOption:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPMoviePlayerController_Class/index.html#//apple_ref/occ/instm/MPMoviePlayerController/requestThumbnailImagesAtTimes:timeOption:">iOS Dev Center</a>
-     */
     @Deprecated
     @Generated
     @Selector("requestThumbnailImagesAtTimes:timeOption:")
     public native void requestThumbnailImagesAtTimesTimeOption(NSArray<?> playbackTimes, @NInt long option);
 
-    /**
-     * scalingMode</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPMoviePlayerController_Class/index.html#//apple_ref/occ/instp/MPMoviePlayerController/scalingMode">iOS Dev Center</a>
-     */
     @Generated
     @Selector("scalingMode")
     @NInt
     public native long scalingMode();
 
-    /**
-     * allowsAirPlay</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPMoviePlayerController_Class/index.html#//apple_ref/occ/instp/MPMoviePlayerController/allowsAirPlay">iOS Dev Center</a>
-     */
     @Deprecated
     @Generated
     @Selector("setAllowsAirPlay:")
     public native void setAllowsAirPlay(boolean value);
 
-    /**
-     * contentURL</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPMoviePlayerController_Class/index.html#//apple_ref/occ/instp/MPMoviePlayerController/contentURL">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setContentURL:")
     public native void setContentURL(NSURL value);
 
-    /**
-     * controlStyle</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPMoviePlayerController_Class/index.html#//apple_ref/occ/instp/MPMoviePlayerController/controlStyle">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setControlStyle:")
     public native void setControlStyle(@NInt long value);
@@ -469,78 +357,42 @@ public class MPMoviePlayerController extends NSObject implements MPMediaPlayback
     @Selector("setCurrentPlaybackTime:")
     public native void setCurrentPlaybackTime(double value);
 
-    /**
-     * endPlaybackTime</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPMoviePlayerController_Class/index.html#//apple_ref/occ/instp/MPMoviePlayerController/endPlaybackTime">iOS Dev Center</a>
-     */
     @Deprecated
     @Generated
     @Selector("setEndPlaybackTime:")
     public native void setEndPlaybackTime(double value);
 
-    /**
-     * setFullscreen:animated:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPMoviePlayerController_Class/index.html#//apple_ref/occ/instm/MPMoviePlayerController/setFullscreen:animated:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setFullscreen:animated:")
     public native void setFullscreenAnimated(boolean fullscreen, boolean animated);
 
-    /**
-     * initialPlaybackTime</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPMoviePlayerController_Class/index.html#//apple_ref/occ/instp/MPMoviePlayerController/initialPlaybackTime">iOS Dev Center</a>
-     */
     @Deprecated
     @Generated
     @Selector("setInitialPlaybackTime:")
     public native void setInitialPlaybackTime(double value);
 
-    /**
-     * movieSourceType</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPMoviePlayerController_Class/index.html#//apple_ref/occ/instp/MPMoviePlayerController/movieSourceType">iOS Dev Center</a>
-     */
     @Deprecated
     @Generated
     @Selector("setMovieSourceType:")
     public native void setMovieSourceType(@NInt long value);
 
-    /**
-     * repeatMode</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPMoviePlayerController_Class/index.html#//apple_ref/occ/instp/MPMoviePlayerController/repeatMode">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setRepeatMode:")
     public native void setRepeatMode(@NInt long value);
 
-    /**
-     * scalingMode</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPMoviePlayerController_Class/index.html#//apple_ref/occ/instp/MPMoviePlayerController/scalingMode">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setScalingMode:")
     public native void setScalingMode(@NInt long value);
 
-    /**
-     * shouldAutoplay</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPMoviePlayerController_Class/index.html#//apple_ref/occ/instp/MPMoviePlayerController/shouldAutoplay">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setShouldAutoplay:")
     public native void setShouldAutoplay(boolean value);
 
-    /**
-     * useApplicationAudioSession</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPMoviePlayerController_Class/index.html#//apple_ref/occ/instp/MPMoviePlayerController/useApplicationAudioSession">iOS Dev Center</a>
-     */
     @Generated
     @Deprecated
     @Selector("setUseApplicationAudioSession:")
     public native void setUseApplicationAudioSession(boolean value);
 
-    /**
-     * shouldAutoplay</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPMoviePlayerController_Class/index.html#//apple_ref/occ/instp/MPMoviePlayerController/shouldAutoplay">iOS Dev Center</a>
-     */
     @Generated
     @Selector("shouldAutoplay")
     public native boolean shouldAutoplay();
@@ -549,10 +401,6 @@ public class MPMoviePlayerController extends NSObject implements MPMediaPlayback
     @Selector("stop")
     public native void stop();
 
-    /**
-     * thumbnailImageAtTime:timeOption:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPMoviePlayerController_Class/index.html#//apple_ref/occ/instm/MPMoviePlayerController/thumbnailImageAtTime:timeOption:">iOS Dev Center</a>
-     */
     @Generated
     @Deprecated
     @Selector("thumbnailImageAtTime:timeOption:")
@@ -563,19 +411,11 @@ public class MPMoviePlayerController extends NSObject implements MPMediaPlayback
     @Selector("timedMetadata")
     public native NSArray<?> timedMetadata();
 
-    /**
-     * useApplicationAudioSession</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPMoviePlayerController_Class/index.html#//apple_ref/occ/instp/MPMoviePlayerController/useApplicationAudioSession">iOS Dev Center</a>
-     */
     @Generated
     @Deprecated
     @Selector("useApplicationAudioSession")
     public native boolean useApplicationAudioSession();
 
-    /**
-     * view</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPMoviePlayerController_Class/index.html#//apple_ref/occ/instp/MPMoviePlayerController/view">iOS Dev Center</a>
-     */
     @Generated
     @Selector("view")
     public native UIView view();

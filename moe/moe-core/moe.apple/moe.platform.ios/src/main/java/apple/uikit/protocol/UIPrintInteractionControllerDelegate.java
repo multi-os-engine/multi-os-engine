@@ -35,10 +35,6 @@ import org.moe.natj.objc.ann.Selector;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("UIPrintInteractionControllerDelegate")
 public interface UIPrintInteractionControllerDelegate {
-    /**
-     * printInteractionController:choosePaper:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPrintInteractionControllerDelegate_Protocol/index.html#//apple_ref/occ/intfm/UIPrintInteractionControllerDelegate/printInteractionController:choosePaper:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("printInteractionController:choosePaper:")
@@ -47,10 +43,6 @@ public interface UIPrintInteractionControllerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * printInteractionController:cutLengthForPaper:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPrintInteractionControllerDelegate_Protocol/index.html#//apple_ref/occ/intfm/UIPrintInteractionControllerDelegate/printInteractionController:cutLengthForPaper:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("printInteractionController:cutLengthForPaper:")
@@ -60,10 +52,6 @@ public interface UIPrintInteractionControllerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * printInteractionControllerDidDismissPrinterOptions:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPrintInteractionControllerDelegate_Protocol/index.html#//apple_ref/occ/intfm/UIPrintInteractionControllerDelegate/printInteractionControllerDidDismissPrinterOptions:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("printInteractionControllerDidDismissPrinterOptions:")
@@ -72,10 +60,6 @@ public interface UIPrintInteractionControllerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * printInteractionControllerDidFinishJob:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPrintInteractionControllerDelegate_Protocol/index.html#//apple_ref/occ/intfm/UIPrintInteractionControllerDelegate/printInteractionControllerDidFinishJob:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("printInteractionControllerDidFinishJob:")
@@ -83,10 +67,6 @@ public interface UIPrintInteractionControllerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * printInteractionControllerDidPresentPrinterOptions:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPrintInteractionControllerDelegate_Protocol/index.html#//apple_ref/occ/intfm/UIPrintInteractionControllerDelegate/printInteractionControllerDidPresentPrinterOptions:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("printInteractionControllerDidPresentPrinterOptions:")
@@ -95,10 +75,6 @@ public interface UIPrintInteractionControllerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * printInteractionControllerParentViewController:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPrintInteractionControllerDelegate_Protocol/index.html#//apple_ref/occ/intfm/UIPrintInteractionControllerDelegate/printInteractionControllerParentViewController:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("printInteractionControllerParentViewController:")
@@ -107,10 +83,6 @@ public interface UIPrintInteractionControllerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * printInteractionControllerWillDismissPrinterOptions:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPrintInteractionControllerDelegate_Protocol/index.html#//apple_ref/occ/intfm/UIPrintInteractionControllerDelegate/printInteractionControllerWillDismissPrinterOptions:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("printInteractionControllerWillDismissPrinterOptions:")
@@ -119,10 +91,6 @@ public interface UIPrintInteractionControllerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * printInteractionControllerWillPresentPrinterOptions:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPrintInteractionControllerDelegate_Protocol/index.html#//apple_ref/occ/intfm/UIPrintInteractionControllerDelegate/printInteractionControllerWillPresentPrinterOptions:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("printInteractionControllerWillPresentPrinterOptions:")
@@ -131,10 +99,6 @@ public interface UIPrintInteractionControllerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * printInteractionControllerWillStartJob:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPrintInteractionControllerDelegate_Protocol/index.html#//apple_ref/occ/intfm/UIPrintInteractionControllerDelegate/printInteractionControllerWillStartJob:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("printInteractionControllerWillStartJob:")
@@ -142,10 +106,6 @@ public interface UIPrintInteractionControllerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * printInteractionController:chooseCutterBehavior:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPrintInteractionControllerDelegate_Protocol/index.html#//apple_ref/occ/intfm/UIPrintInteractionControllerDelegate/printInteractionController:chooseCutterBehavior:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("printInteractionController:chooseCutterBehavior:")

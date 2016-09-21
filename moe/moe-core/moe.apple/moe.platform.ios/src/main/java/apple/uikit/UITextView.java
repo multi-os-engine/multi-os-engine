@@ -354,18 +354,10 @@ public class UITextView extends UIScrollView implements UITextInput {
     @NInt
     public static native long version_static();
 
-    /**
-     * allowsEditingTextAttributes</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITextView_Class/index.html#//apple_ref/occ/instp/UITextView/allowsEditingTextAttributes">iOS Dev Center</a>
-     */
     @Generated
     @Selector("allowsEditingTextAttributes")
     public native boolean allowsEditingTextAttributes();
 
-    /**
-     * attributedText</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITextView_Class/index.html#//apple_ref/occ/instp/UITextView/attributedText">iOS Dev Center</a>
-     */
     @Generated
     @Selector("attributedText")
     public native NSAttributedString attributedText();
@@ -411,10 +403,6 @@ public class UITextView extends UIScrollView implements UITextInput {
     public native UITextRange characterRangeByExtendingPositionInDirection(UITextPosition position,
             @NInt long direction);
 
-    /**
-     * clearsOnInsertion</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITextView_Class/index.html#//apple_ref/occ/instp/UITextView/clearsOnInsertion">iOS Dev Center</a>
-     */
     @Generated
     @Selector("clearsOnInsertion")
     public native boolean clearsOnInsertion();
@@ -432,19 +420,11 @@ public class UITextView extends UIScrollView implements UITextInput {
     @NInt
     public native long comparePositionToPosition(UITextPosition position, UITextPosition other);
 
-    /**
-     * dataDetectorTypes</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITextView_Class/index.html#//apple_ref/occ/instp/UITextView/dataDetectorTypes">iOS Dev Center</a>
-     */
     @Generated
     @Selector("dataDetectorTypes")
     @NUInt
     public native long dataDetectorTypes();
 
-    /**
-     * delegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITextView_Class/index.html#//apple_ref/occ/instp/UITextView/delegate">iOS Dev Center</a>
-     */
     @Generated
     @Selector("delegate")
     @MappedReturn(ObjCObjectMapper.class)
@@ -478,10 +458,6 @@ public class UITextView extends UIScrollView implements UITextInput {
     @ByValue
     public native CGRect firstRectForRange(UITextRange range);
 
-    /**
-     * font</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITextView_Class/index.html#//apple_ref/occ/instp/UITextView/font">iOS Dev Center</a>
-     */
     @Generated
     @Selector("font")
     public native UIFont font();
@@ -504,18 +480,10 @@ public class UITextView extends UIScrollView implements UITextInput {
     @Selector("initWithFrame:")
     public native UITextView initWithFrame(@ByValue CGRect frame);
 
-    /**
-     * initWithFrame:textContainer:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITextView_Class/index.html#//apple_ref/occ/instm/UITextView/initWithFrame:textContainer:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithFrame:textContainer:")
     public native UITextView initWithFrameTextContainer(@ByValue CGRect frame, NSTextContainer textContainer);
 
-    /**
-     * inputAccessoryView</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITextView_Class/index.html#//apple_ref/occ/instp/UITextView/inputAccessoryView">iOS Dev Center</a>
-     */
     @Generated
     @Selector("inputAccessoryView")
     public native UIView inputAccessoryView();
@@ -525,10 +493,6 @@ public class UITextView extends UIScrollView implements UITextInput {
     @MappedReturn(ObjCObjectMapper.class)
     public native Object inputDelegate();
 
-    /**
-     * inputView</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITextView_Class/index.html#//apple_ref/occ/instp/UITextView/inputView">iOS Dev Center</a>
-     */
     @Generated
     @Selector("inputView")
     public native UIView inputView();
@@ -548,18 +512,10 @@ public class UITextView extends UIScrollView implements UITextInput {
     @Selector("insertText:")
     public native void insertText(String text);
 
-    /**
-     * editable</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITextView_Class/index.html#//apple_ref/occ/instp/UITextView/editable">iOS Dev Center</a>
-     */
     @Generated
     @Selector("isEditable")
     public native boolean isEditable();
 
-    /**
-     * editable</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITextView_Class/index.html#//apple_ref/occ/instp/UITextView/editable">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setEditable:")
     public native void setEditable(boolean value);
@@ -574,18 +530,10 @@ public class UITextView extends UIScrollView implements UITextInput {
     @Selector("setSecureTextEntry:")
     public native void setSecureTextEntry(boolean value);
 
-    /**
-     * selectable</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITextView_Class/index.html#//apple_ref/occ/instp/UITextView/selectable">iOS Dev Center</a>
-     */
     @Generated
     @Selector("isSelectable")
     public native boolean isSelectable();
 
-    /**
-     * selectable</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITextView_Class/index.html#//apple_ref/occ/instp/UITextView/selectable">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setSelectable:")
     public native void setSelectable(boolean value);
@@ -602,18 +550,10 @@ public class UITextView extends UIScrollView implements UITextInput {
     @NInt
     public native long keyboardType();
 
-    /**
-     * layoutManager</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITextView_Class/index.html#//apple_ref/occ/instp/UITextView/layoutManager">iOS Dev Center</a>
-     */
     @Generated
     @Selector("layoutManager")
     public native NSLayoutManager layoutManager();
 
-    /**
-     * linkTextAttributes</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITextView_Class/index.html#//apple_ref/occ/instp/UITextView/linkTextAttributes">iOS Dev Center</a>
-     */
     @Generated
     @Selector("linkTextAttributes")
     public native NSDictionary<String, ?> linkTextAttributes();
@@ -665,18 +605,10 @@ public class UITextView extends UIScrollView implements UITextInput {
     @NInt
     public native long returnKeyType();
 
-    /**
-     * scrollRangeToVisible:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITextView_Class/index.html#//apple_ref/occ/instm/UITextView/scrollRangeToVisible:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("scrollRangeToVisible:")
     public native void scrollRangeToVisible(@ByValue NSRange range);
 
-    /**
-     * selectedRange</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITextView_Class/index.html#//apple_ref/occ/instp/UITextView/selectedRange">iOS Dev Center</a>
-     */
     @Generated
     @Selector("selectedRange")
     @ByValue
@@ -696,18 +628,10 @@ public class UITextView extends UIScrollView implements UITextInput {
     @Selector("selectionRectsForRange:")
     public native NSArray<?> selectionRectsForRange(UITextRange range);
 
-    /**
-     * allowsEditingTextAttributes</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITextView_Class/index.html#//apple_ref/occ/instp/UITextView/allowsEditingTextAttributes">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setAllowsEditingTextAttributes:")
     public native void setAllowsEditingTextAttributes(boolean value);
 
-    /**
-     * attributedText</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITextView_Class/index.html#//apple_ref/occ/instp/UITextView/attributedText">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setAttributedText:")
     public native void setAttributedText(NSAttributedString value);
@@ -726,34 +650,18 @@ public class UITextView extends UIScrollView implements UITextInput {
     @Selector("setBaseWritingDirection:forRange:")
     public native void setBaseWritingDirectionForRange(@NInt long writingDirection, UITextRange range);
 
-    /**
-     * clearsOnInsertion</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITextView_Class/index.html#//apple_ref/occ/instp/UITextView/clearsOnInsertion">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setClearsOnInsertion:")
     public native void setClearsOnInsertion(boolean value);
 
-    /**
-     * dataDetectorTypes</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITextView_Class/index.html#//apple_ref/occ/instp/UITextView/dataDetectorTypes">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setDataDetectorTypes:")
     public native void setDataDetectorTypes(@NUInt long value);
 
-    /**
-     * delegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITextView_Class/index.html#//apple_ref/occ/instp/UITextView/delegate">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setDelegate:")
     public native void setDelegate_unsafe(@Mapped(ObjCObjectMapper.class) Object value);
 
-    /**
-     * delegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITextView_Class/index.html#//apple_ref/occ/instp/UITextView/delegate">iOS Dev Center</a>
-     */
     @Generated
     public void setDelegate(@Mapped(ObjCObjectMapper.class) Object value) {
         Object __old = delegate();
@@ -771,18 +679,10 @@ public class UITextView extends UIScrollView implements UITextInput {
     @Selector("setEnablesReturnKeyAutomatically:")
     public native void setEnablesReturnKeyAutomatically(boolean value);
 
-    /**
-     * font</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITextView_Class/index.html#//apple_ref/occ/instp/UITextView/font">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setFont:")
     public native void setFont(UIFont value);
 
-    /**
-     * inputAccessoryView</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITextView_Class/index.html#//apple_ref/occ/instp/UITextView/inputAccessoryView">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setInputAccessoryView:")
     public native void setInputAccessoryView(UIView value);
@@ -803,10 +703,6 @@ public class UITextView extends UIScrollView implements UITextInput {
         }
     }
 
-    /**
-     * inputView</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITextView_Class/index.html#//apple_ref/occ/instp/UITextView/inputView">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setInputView:")
     public native void setInputView(UIView value);
@@ -821,10 +717,6 @@ public class UITextView extends UIScrollView implements UITextInput {
     @Selector("setKeyboardType:")
     public native void setKeyboardType(@NInt long value);
 
-    /**
-     * linkTextAttributes</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITextView_Class/index.html#//apple_ref/occ/instp/UITextView/linkTextAttributes">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setLinkTextAttributes:")
     public native void setLinkTextAttributes(NSDictionary<String, ?> value);
@@ -842,10 +734,6 @@ public class UITextView extends UIScrollView implements UITextInput {
     @Selector("setReturnKeyType:")
     public native void setReturnKeyType(@NInt long value);
 
-    /**
-     * selectedRange</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITextView_Class/index.html#//apple_ref/occ/instp/UITextView/selectedRange">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setSelectedRange:")
     public native void setSelectedRange(@ByValue NSRange value);
@@ -864,42 +752,22 @@ public class UITextView extends UIScrollView implements UITextInput {
     @Selector("setSpellCheckingType:")
     public native void setSpellCheckingType(@NInt long value);
 
-    /**
-     * text</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITextView_Class/index.html#//apple_ref/occ/instp/UITextView/text">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setText:")
     public native void setText(String value);
 
-    /**
-     * textAlignment</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITextView_Class/index.html#//apple_ref/occ/instp/UITextView/textAlignment">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setTextAlignment:")
     public native void setTextAlignment(@NInt long value);
 
-    /**
-     * textColor</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITextView_Class/index.html#//apple_ref/occ/instp/UITextView/textColor">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setTextColor:")
     public native void setTextColor(UIColor value);
 
-    /**
-     * textContainerInset</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITextView_Class/index.html#//apple_ref/occ/instp/UITextView/textContainerInset">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setTextContainerInset:")
     public native void setTextContainerInset(@ByValue UIEdgeInsets value);
 
-    /**
-     * typingAttributes</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITextView_Class/index.html#//apple_ref/occ/instp/UITextView/typingAttributes">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setTypingAttributes:")
     public native void setTypingAttributes(NSDictionary<String, ?> value);
@@ -915,43 +783,23 @@ public class UITextView extends UIScrollView implements UITextInput {
     @NInt
     public native long spellCheckingType();
 
-    /**
-     * text</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITextView_Class/index.html#//apple_ref/occ/instp/UITextView/text">iOS Dev Center</a>
-     */
     @Generated
     @Selector("text")
     public native String text();
 
-    /**
-     * textAlignment</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITextView_Class/index.html#//apple_ref/occ/instp/UITextView/textAlignment">iOS Dev Center</a>
-     */
     @Generated
     @Selector("textAlignment")
     @NInt
     public native long textAlignment();
 
-    /**
-     * textColor</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITextView_Class/index.html#//apple_ref/occ/instp/UITextView/textColor">iOS Dev Center</a>
-     */
     @Generated
     @Selector("textColor")
     public native UIColor textColor();
 
-    /**
-     * textContainer</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITextView_Class/index.html#//apple_ref/occ/instp/UITextView/textContainer">iOS Dev Center</a>
-     */
     @Generated
     @Selector("textContainer")
     public native NSTextContainer textContainer();
 
-    /**
-     * textContainerInset</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITextView_Class/index.html#//apple_ref/occ/instp/UITextView/textContainerInset">iOS Dev Center</a>
-     */
     @Generated
     @Selector("textContainerInset")
     @ByValue
@@ -970,10 +818,6 @@ public class UITextView extends UIScrollView implements UITextInput {
     @Selector("textRangeFromPosition:toPosition:")
     public native UITextRange textRangeFromPositionToPosition(UITextPosition fromPosition, UITextPosition toPosition);
 
-    /**
-     * textStorage</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITextView_Class/index.html#//apple_ref/occ/instp/UITextView/textStorage">iOS Dev Center</a>
-     */
     @Generated
     @Selector("textStorage")
     public native NSTextStorage textStorage();
@@ -989,10 +833,6 @@ public class UITextView extends UIScrollView implements UITextInput {
     @MappedReturn(ObjCObjectMapper.class)
     public native Object tokenizer();
 
-    /**
-     * typingAttributes</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITextView_Class/index.html#//apple_ref/occ/instp/UITextView/typingAttributes">iOS Dev Center</a>
-     */
     @Generated
     @Selector("typingAttributes")
     public native NSDictionary<String, ?> typingAttributes();

@@ -66,10 +66,6 @@ public class NSMutableSet<_ObjectType> extends NSSet<_ObjectType> {
     @Selector("setWithArray:")
     public static native <_ObjectType> NSMutableSet<?> setWithArray(NSArray<_ObjectType> array);
 
-    /**
-     * setWithCapacity:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSMutableSet_Class/index.html#//apple_ref/occ/clm/NSMutableSet/setWithCapacity:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setWithCapacity:")
     public static native <_ObjectType> NSMutableSet<?> setWithCapacity(@NUInt long numItems);
@@ -198,34 +194,18 @@ public class NSMutableSet<_ObjectType> extends NSSet<_ObjectType> {
     @NInt
     public static native long version_static();
 
-    /**
-     * addObject:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSMutableSet_Class/index.html#//apple_ref/occ/instm/NSMutableSet/addObject:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("addObject:")
     public native void addObject(@Mapped(ObjCObjectMapper.class) _ObjectType object);
 
-    /**
-     * addObjectsFromArray:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSMutableSet_Class/index.html#//apple_ref/occ/instm/NSMutableSet/addObjectsFromArray:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("addObjectsFromArray:")
     public native void addObjectsFromArray(NSArray<_ObjectType> array);
 
-    /**
-     * filterUsingPredicate:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSMutableSet_Class/index.html#//apple_ref/occ/instm/NSMutableSet/filterUsingPredicate:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("filterUsingPredicate:")
     public native void filterUsingPredicate(NSPredicate predicate);
 
-    /**
-     * init</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSMutableSet_Class/index.html#//apple_ref/occ/instm/NSMutableSet/init">iOS Dev Center</a>
-     */
     @Generated
     @Selector("init")
     public native NSMutableSet<?> init();
@@ -234,10 +214,6 @@ public class NSMutableSet<_ObjectType> extends NSSet<_ObjectType> {
     @Selector("initWithArray:")
     public native NSMutableSet<?> initWithArray(NSArray<_ObjectType> array);
 
-    /**
-     * initWithCapacity:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSMutableSet_Class/index.html#//apple_ref/occ/instm/NSMutableSet/initWithCapacity:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithCapacity:")
     public native NSMutableSet<?> initWithCapacity(@NUInt long numItems);
@@ -264,50 +240,26 @@ public class NSMutableSet<_ObjectType> extends NSSet<_ObjectType> {
     @Selector("initWithSet:copyItems:")
     public native NSMutableSet<?> initWithSetCopyItems(NSSet<_ObjectType> set, boolean flag);
 
-    /**
-     * intersectSet:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSMutableSet_Class/index.html#//apple_ref/occ/instm/NSMutableSet/intersectSet:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("intersectSet:")
     public native void intersectSet(NSSet<_ObjectType> otherSet);
 
-    /**
-     * minusSet:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSMutableSet_Class/index.html#//apple_ref/occ/instm/NSMutableSet/minusSet:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("minusSet:")
     public native void minusSet(NSSet<_ObjectType> otherSet);
 
-    /**
-     * removeAllObjects</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSMutableSet_Class/index.html#//apple_ref/occ/instm/NSMutableSet/removeAllObjects">iOS Dev Center</a>
-     */
     @Generated
     @Selector("removeAllObjects")
     public native void removeAllObjects();
 
-    /**
-     * removeObject:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSMutableSet_Class/index.html#//apple_ref/occ/instm/NSMutableSet/removeObject:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("removeObject:")
     public native void removeObject(@Mapped(ObjCObjectMapper.class) _ObjectType object);
 
-    /**
-     * setSet:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSMutableSet_Class/index.html#//apple_ref/occ/instm/NSMutableSet/setSet:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setSet:")
     public native void setSet(NSSet<_ObjectType> otherSet);
 
-    /**
-     * unionSet:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSMutableSet_Class/index.html#//apple_ref/occ/instm/NSMutableSet/unionSet:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("unionSet:")
     public native void unionSet(NSSet<_ObjectType> otherSet);

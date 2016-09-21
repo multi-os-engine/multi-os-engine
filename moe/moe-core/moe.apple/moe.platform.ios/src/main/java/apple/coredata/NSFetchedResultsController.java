@@ -62,10 +62,6 @@ public class NSFetchedResultsController extends NSObject {
     @Selector("alloc")
     public static native NSFetchedResultsController alloc();
 
-    /**
-     * deleteCacheWithName:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreData/Reference/NSFetchedResultsController_Class/index.html#//apple_ref/occ/clm/NSFetchedResultsController/deleteCacheWithName:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("deleteCacheWithName:")
     public static native void deleteCacheWithName(String name);
@@ -170,43 +166,23 @@ public class NSFetchedResultsController extends NSObject {
     @NInt
     public static native long version_static();
 
-    /**
-     * cacheName</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreData/Reference/NSFetchedResultsController_Class/index.html#//apple_ref/occ/instp/NSFetchedResultsController/cacheName">iOS Dev Center</a>
-     */
     @Generated
     @Selector("cacheName")
     public native String cacheName();
 
-    /**
-     * delegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreData/Reference/NSFetchedResultsController_Class/index.html#//apple_ref/occ/instp/NSFetchedResultsController/delegate">iOS Dev Center</a>
-     */
     @Generated
     @Selector("delegate")
     @MappedReturn(ObjCObjectMapper.class)
     public native NSFetchedResultsControllerDelegate delegate();
 
-    /**
-     * fetchRequest</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreData/Reference/NSFetchedResultsController_Class/index.html#//apple_ref/occ/instp/NSFetchedResultsController/fetchRequest">iOS Dev Center</a>
-     */
     @Generated
     @Selector("fetchRequest")
     public native NSFetchRequest fetchRequest();
 
-    /**
-     * fetchedObjects</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreData/Reference/NSFetchedResultsController_Class/index.html#//apple_ref/occ/instp/NSFetchedResultsController/fetchedObjects">iOS Dev Center</a>
-     */
     @Generated
     @Selector("fetchedObjects")
     public native NSArray<?> fetchedObjects();
 
-    /**
-     * indexPathForObject:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreData/Reference/NSFetchedResultsController_Class/index.html#//apple_ref/occ/instm/NSFetchedResultsController/indexPathForObject:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("indexPathForObject:")
     public native NSIndexPath indexPathForObject(@Mapped(ObjCObjectMapper.class) Object object);
@@ -215,93 +191,49 @@ public class NSFetchedResultsController extends NSObject {
     @Selector("init")
     public native NSFetchedResultsController init();
 
-    /**
-     * initWithFetchRequest:managedObjectContext:sectionNameKeyPath:cacheName:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreData/Reference/NSFetchedResultsController_Class/index.html#//apple_ref/occ/instm/NSFetchedResultsController/initWithFetchRequest:managedObjectContext:sectionNameKeyPath:cacheName:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithFetchRequest:managedObjectContext:sectionNameKeyPath:cacheName:")
     public native NSFetchedResultsController initWithFetchRequestManagedObjectContextSectionNameKeyPathCacheName(
             NSFetchRequest fetchRequest, NSManagedObjectContext context, String sectionNameKeyPath, String name);
 
-    /**
-     * managedObjectContext</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreData/Reference/NSFetchedResultsController_Class/index.html#//apple_ref/occ/instp/NSFetchedResultsController/managedObjectContext">iOS Dev Center</a>
-     */
     @Generated
     @Selector("managedObjectContext")
     public native NSManagedObjectContext managedObjectContext();
 
-    /**
-     * objectAtIndexPath:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreData/Reference/NSFetchedResultsController_Class/index.html#//apple_ref/occ/instm/NSFetchedResultsController/objectAtIndexPath:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("objectAtIndexPath:")
     @MappedReturn(ObjCObjectMapper.class)
     public native Object objectAtIndexPath(NSIndexPath indexPath);
 
-    /**
-     * performFetch:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreData/Reference/NSFetchedResultsController_Class/index.html#//apple_ref/occ/instm/NSFetchedResultsController/performFetch:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("performFetch:")
     public native boolean performFetch(Ptr<NSError> error);
 
-    /**
-     * sectionForSectionIndexTitle:atIndex:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreData/Reference/NSFetchedResultsController_Class/index.html#//apple_ref/occ/instm/NSFetchedResultsController/sectionForSectionIndexTitle:atIndex:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("sectionForSectionIndexTitle:atIndex:")
     @NInt
     public native long sectionForSectionIndexTitleAtIndex(String title, @NInt long sectionIndex);
 
-    /**
-     * sectionIndexTitleForSectionName:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreData/Reference/NSFetchedResultsController_Class/index.html#//apple_ref/occ/instm/NSFetchedResultsController/sectionIndexTitleForSectionName:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("sectionIndexTitleForSectionName:")
     public native String sectionIndexTitleForSectionName(String sectionName);
 
-    /**
-     * sectionIndexTitles</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreData/Reference/NSFetchedResultsController_Class/index.html#//apple_ref/occ/instp/NSFetchedResultsController/sectionIndexTitles">iOS Dev Center</a>
-     */
     @Generated
     @Selector("sectionIndexTitles")
     public native NSArray<String> sectionIndexTitles();
 
-    /**
-     * sectionNameKeyPath</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreData/Reference/NSFetchedResultsController_Class/index.html#//apple_ref/occ/instp/NSFetchedResultsController/sectionNameKeyPath">iOS Dev Center</a>
-     */
     @Generated
     @Selector("sectionNameKeyPath")
     public native String sectionNameKeyPath();
 
-    /**
-     * sections</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreData/Reference/NSFetchedResultsController_Class/index.html#//apple_ref/occ/instp/NSFetchedResultsController/sections">iOS Dev Center</a>
-     */
     @Generated
     @Selector("sections")
     public native NSArray<?> sections();
 
-    /**
-     * delegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreData/Reference/NSFetchedResultsController_Class/index.html#//apple_ref/occ/instp/NSFetchedResultsController/delegate">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setDelegate:")
     public native void setDelegate_unsafe(@Mapped(ObjCObjectMapper.class) NSFetchedResultsControllerDelegate value);
 
-    /**
-     * delegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreData/Reference/NSFetchedResultsController_Class/index.html#//apple_ref/occ/instp/NSFetchedResultsController/delegate">iOS Dev Center</a>
-     */
     @Generated
     public void setDelegate(@Mapped(ObjCObjectMapper.class) NSFetchedResultsControllerDelegate value) {
         Object __old = delegate();

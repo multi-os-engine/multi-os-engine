@@ -31,10 +31,6 @@ import org.moe.natj.objc.ann.Selector;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("UIVideoEditorControllerDelegate")
 public interface UIVideoEditorControllerDelegate {
-    /**
-     * videoEditorController:didFailWithError:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIVideoEditorControllerDelegate_ProtocolReference/index.html#//apple_ref/occ/intfm/UIVideoEditorControllerDelegate/videoEditorController:didFailWithError:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("videoEditorController:didFailWithError:")
@@ -42,10 +38,6 @@ public interface UIVideoEditorControllerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * videoEditorController:didSaveEditedVideoToPath:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIVideoEditorControllerDelegate_ProtocolReference/index.html#//apple_ref/occ/intfm/UIVideoEditorControllerDelegate/videoEditorController:didSaveEditedVideoToPath:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("videoEditorController:didSaveEditedVideoToPath:")
@@ -53,10 +45,6 @@ public interface UIVideoEditorControllerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * videoEditorControllerDidCancel:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIVideoEditorControllerDelegate_ProtocolReference/index.html#//apple_ref/occ/intfm/UIVideoEditorControllerDelegate/videoEditorControllerDidCancel:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("videoEditorControllerDidCancel:")

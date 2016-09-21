@@ -30,53 +30,29 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("MTLCommandQueue")
 public interface MTLCommandQueue {
-    /**
-     * commandBuffer</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Metal/Reference/MTLCommandQueue_Ref/index.html#//apple_ref/occ/intfm/MTLCommandQueue/commandBuffer">iOS Dev Center</a>
-     */
     @Generated
     @Selector("commandBuffer")
     @MappedReturn(ObjCObjectMapper.class)
     Object commandBuffer();
 
-    /**
-     * commandBufferWithUnretainedReferences</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Metal/Reference/MTLCommandQueue_Ref/index.html#//apple_ref/occ/intfm/MTLCommandQueue/commandBufferWithUnretainedReferences">iOS Dev Center</a>
-     */
     @Generated
     @Selector("commandBufferWithUnretainedReferences")
     @MappedReturn(ObjCObjectMapper.class)
     Object commandBufferWithUnretainedReferences();
 
-    /**
-     * device</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Metal/Reference/MTLCommandQueue_Ref/index.html#//apple_ref/occ/intfp/MTLCommandQueue/device">iOS Dev Center</a>
-     */
     @Generated
     @Selector("device")
     @MappedReturn(ObjCObjectMapper.class)
     Object device();
 
-    /**
-     * insertDebugCaptureBoundary</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Metal/Reference/MTLCommandQueue_Ref/index.html#//apple_ref/occ/intfm/MTLCommandQueue/insertDebugCaptureBoundary">iOS Dev Center</a>
-     */
     @Generated
     @Selector("insertDebugCaptureBoundary")
     void insertDebugCaptureBoundary();
 
-    /**
-     * label</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Metal/Reference/MTLCommandQueue_Ref/index.html#//apple_ref/occ/intfp/MTLCommandQueue/label">iOS Dev Center</a>
-     */
     @Generated
     @Selector("label")
     String label();
 
-    /**
-     * label</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Metal/Reference/MTLCommandQueue_Ref/index.html#//apple_ref/occ/intfp/MTLCommandQueue/label">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setLabel:")
     void setLabel(String value);

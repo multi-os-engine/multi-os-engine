@@ -58,18 +58,10 @@ public class PHAssetResource extends NSObject {
     @Selector("alloc")
     public static native PHAssetResource alloc();
 
-    /**
-     * assetResourcesForAsset:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHAssetResource_Class/index.html#//apple_ref/occ/clm/PHAssetResource/assetResourcesForAsset:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("assetResourcesForAsset:")
     public static native NSArray<? extends PHAssetResource> assetResourcesForAsset(PHAsset asset);
 
-    /**
-     * assetResourcesForLivePhoto:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHAssetResource_Class/index.html#//apple_ref/occ/clm/PHAssetResource/assetResourcesForLivePhoto:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("assetResourcesForLivePhoto:")
     public static native NSArray<? extends PHAssetResource> assetResourcesForLivePhoto(PHLivePhoto livePhoto);
@@ -174,10 +166,6 @@ public class PHAssetResource extends NSObject {
     @NInt
     public static native long version_static();
 
-    /**
-     * assetLocalIdentifier</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHAssetResource_Class/index.html#//apple_ref/occ/instp/PHAssetResource/assetLocalIdentifier">iOS Dev Center</a>
-     */
     @Generated
     @Selector("assetLocalIdentifier")
     public native String assetLocalIdentifier();
@@ -186,27 +174,15 @@ public class PHAssetResource extends NSObject {
     @Selector("init")
     public native PHAssetResource init();
 
-    /**
-     * originalFilename</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHAssetResource_Class/index.html#//apple_ref/occ/instp/PHAssetResource/originalFilename">iOS Dev Center</a>
-     */
     @Generated
     @Selector("originalFilename")
     public native String originalFilename();
 
-    /**
-     * type</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHAssetResource_Class/index.html#//apple_ref/occ/instp/PHAssetResource/type">iOS Dev Center</a>
-     */
     @Generated
     @Selector("type")
     @NInt
     public native long type();
 
-    /**
-     * uniformTypeIdentifier</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHAssetResource_Class/index.html#//apple_ref/occ/instp/PHAssetResource/uniformTypeIdentifier">iOS Dev Center</a>
-     */
     @Generated
     @Selector("uniformTypeIdentifier")
     public native String uniformTypeIdentifier();

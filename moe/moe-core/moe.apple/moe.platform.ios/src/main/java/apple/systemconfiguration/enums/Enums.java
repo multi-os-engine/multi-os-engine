@@ -52,6 +52,7 @@ public final class Enums {
     @Generated public static final int kSCStatusReachabilityUnknown = 0x00000FA1;
     @Generated public static final int kSCStatusConnectionNoService = 0x00001389;
     @Generated public static final int kSCStatusConnectionIgnore = 0x0000138A;
+
     @Generated
     private Enums() {
     }

@@ -33,10 +33,6 @@ import org.moe.natj.objc.ann.Selector;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("UIPopoverControllerDelegate")
 public interface UIPopoverControllerDelegate {
-    /**
-     * popoverController:willRepositionPopoverToRect:inView:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPopoverControllerDelegate_protocol/index.html#//apple_ref/occ/intfm/UIPopoverControllerDelegate/popoverController:willRepositionPopoverToRect:inView:">iOS Dev Center</a>
-     */
     @Deprecated
     @Generated
     @IsOptional
@@ -46,10 +42,6 @@ public interface UIPopoverControllerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * popoverControllerDidDismissPopover:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPopoverControllerDelegate_protocol/index.html#//apple_ref/occ/intfm/UIPopoverControllerDelegate/popoverControllerDidDismissPopover:">iOS Dev Center</a>
-     */
     @Deprecated
     @Generated
     @IsOptional
@@ -58,10 +50,6 @@ public interface UIPopoverControllerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * popoverControllerShouldDismissPopover:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPopoverControllerDelegate_protocol/index.html#//apple_ref/occ/intfm/UIPopoverControllerDelegate/popoverControllerShouldDismissPopover:">iOS Dev Center</a>
-     */
     @Deprecated
     @Generated
     @IsOptional

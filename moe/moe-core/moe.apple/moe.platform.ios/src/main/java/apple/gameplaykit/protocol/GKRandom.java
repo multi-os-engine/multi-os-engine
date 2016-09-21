@@ -30,36 +30,20 @@ import org.moe.natj.objc.ann.Selector;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("GKRandom")
 public interface GKRandom {
-    /**
-     * nextBool</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameplayKit/Reference/GKRandom_Protocol/index.html#//apple_ref/occ/intfm/GKRandom/nextBool">iOS Dev Center</a>
-     */
     @Generated
     @Selector("nextBool")
     boolean nextBool();
 
-    /**
-     * nextInt</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameplayKit/Reference/GKRandom_Protocol/index.html#//apple_ref/occ/intfm/GKRandom/nextInt">iOS Dev Center</a>
-     */
     @Generated
     @Selector("nextInt")
     @NInt
     long nextInt();
 
-    /**
-     * nextIntWithUpperBound:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameplayKit/Reference/GKRandom_Protocol/index.html#//apple_ref/occ/intfm/GKRandom/nextIntWithUpperBound:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("nextIntWithUpperBound:")
     @NUInt
     long nextIntWithUpperBound(@NUInt long upperBound);
 
-    /**
-     * nextUniform</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameplayKit/Reference/GKRandom_Protocol/index.html#//apple_ref/occ/intfm/GKRandom/nextUniform">iOS Dev Center</a>
-     */
     @Generated
     @Selector("nextUniform")
     float nextUniform();

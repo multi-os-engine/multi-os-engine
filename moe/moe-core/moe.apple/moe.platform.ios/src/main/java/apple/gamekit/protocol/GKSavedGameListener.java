@@ -32,10 +32,6 @@ import org.moe.natj.objc.ann.Selector;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("GKSavedGameListener")
 public interface GKSavedGameListener {
-    /**
-     * player:didModifySavedGame:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKSavedGameListener_Ref/index.html#//apple_ref/occ/intfm/GKSavedGameListener/player:didModifySavedGame:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("player:didModifySavedGame:")
@@ -43,10 +39,6 @@ public interface GKSavedGameListener {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * player:hasConflictingSavedGames:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKSavedGameListener_Ref/index.html#//apple_ref/occ/intfm/GKSavedGameListener/player:hasConflictingSavedGames:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("player:hasConflictingSavedGames:")

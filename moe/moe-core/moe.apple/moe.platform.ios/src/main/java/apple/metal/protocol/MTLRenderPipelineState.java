@@ -30,19 +30,11 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("MTLRenderPipelineState")
 public interface MTLRenderPipelineState {
-    /**
-     * device</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Metal/Reference/MTLRenderPipelineState_Ref/index.html#//apple_ref/occ/intfp/MTLRenderPipelineState/device">iOS Dev Center</a>
-     */
     @Generated
     @Selector("device")
     @MappedReturn(ObjCObjectMapper.class)
     Object device();
 
-    /**
-     * label</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Metal/Reference/MTLRenderPipelineState_Ref/index.html#//apple_ref/occ/intfp/MTLRenderPipelineState/label">iOS Dev Center</a>
-     */
     @Generated
     @Selector("label")
     String label();

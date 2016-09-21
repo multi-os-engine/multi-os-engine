@@ -165,10 +165,6 @@ public class UILexiconEntry extends NSObject implements NSCopying {
     @MappedReturn(ObjCObjectMapper.class)
     public native Object copyWithZone(VoidPtr zone);
 
-    /**
-     * documentText</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UILexiconEntry_Class/index.html#//apple_ref/occ/instp/UILexiconEntry/documentText">iOS Dev Center</a>
-     */
     @Generated
     @Selector("documentText")
     public native String documentText();
@@ -177,10 +173,6 @@ public class UILexiconEntry extends NSObject implements NSCopying {
     @Selector("init")
     public native UILexiconEntry init();
 
-    /**
-     * userInput</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UILexiconEntry_Class/index.html#//apple_ref/occ/instp/UILexiconEntry/userInput">iOS Dev Center</a>
-     */
     @Generated
     @Selector("userInput")
     public native String userInput();

@@ -32,10 +32,6 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("NSCopying")
 public interface NSCopying {
-    /**
-     * copyWithZone:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Protocols/NSCopying_Protocol/index.html#//apple_ref/occ/intfm/NSCopying/copyWithZone:">iOS Dev Center</a>
-     */
     @Generated
     @Owned
     @Selector("copyWithZone:")

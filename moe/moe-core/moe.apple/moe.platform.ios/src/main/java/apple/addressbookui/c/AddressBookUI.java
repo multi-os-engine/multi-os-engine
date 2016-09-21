@@ -39,10 +39,6 @@ public final class AddressBookUI {
     private AddressBookUI() {
     }
 
-    /**
-     * ABCreateStringWithAddressDictionary</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AddressBookUI/Reference/AddressBookUI_Functions/index.html#//apple_ref/c/func/ABCreateStringWithAddressDictionary">iOS Dev Center</a>
-     */
     @Deprecated
     @Generated
     @CFunction

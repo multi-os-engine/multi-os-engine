@@ -166,10 +166,6 @@ public class WCSessionUserInfoTransfer extends NSObject implements NSSecureCodin
     @NInt
     public static native long version_static();
 
-    /**
-     * cancel</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WatchConnectivity/Reference/WCSessionUserInfoTransfer_class/index.html#//apple_ref/occ/instm/WCSessionUserInfoTransfer/cancel">iOS Dev Center</a>
-     */
     @Generated
     @Selector("cancel")
     public native void cancel();
@@ -186,18 +182,10 @@ public class WCSessionUserInfoTransfer extends NSObject implements NSSecureCodin
     @Selector("initWithCoder:")
     public native WCSessionUserInfoTransfer initWithCoder(NSCoder aDecoder);
 
-    /**
-     * currentComplicationInfo</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WatchConnectivity/Reference/WCSessionUserInfoTransfer_class/index.html#//apple_ref/occ/instp/WCSessionUserInfoTransfer/currentComplicationInfo">iOS Dev Center</a>
-     */
     @Generated
     @Selector("isCurrentComplicationInfo")
     public native boolean isCurrentComplicationInfo();
 
-    /**
-     * transferring</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WatchConnectivity/Reference/WCSessionUserInfoTransfer_class/index.html#//apple_ref/occ/instp/WCSessionUserInfoTransfer/transferring">iOS Dev Center</a>
-     */
     @Generated
     @Selector("isTransferring")
     public native boolean isTransferring();
@@ -208,10 +196,6 @@ public class WCSessionUserInfoTransfer extends NSObject implements NSSecureCodin
         return supportsSecureCoding();
     }
 
-    /**
-     * userInfo</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WatchConnectivity/Reference/WCSessionUserInfoTransfer_class/index.html#//apple_ref/occ/instp/WCSessionUserInfoTransfer/userInfo">iOS Dev Center</a>
-     */
     @Generated
     @Selector("userInfo")
     public native NSDictionary<String, ?> userInfo();

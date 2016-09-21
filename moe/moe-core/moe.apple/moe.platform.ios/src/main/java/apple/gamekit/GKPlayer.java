@@ -61,19 +61,11 @@ public class GKPlayer extends NSObject {
     @Selector("alloc")
     public static native GKPlayer alloc();
 
-    /**
-     * loadPlayersForIdentifiers:withCompletionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKPlayer_Ref/index.html#//apple_ref/occ/clm/GKPlayer/loadPlayersForIdentifiers:withCompletionHandler:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("loadPlayersForIdentifiers:withCompletionHandler:")
     public static native void loadPlayersForIdentifiersWithCompletionHandler(NSArray<String> identifiers,
             @ObjCBlock(name = "call_loadPlayersForIdentifiersWithCompletionHandler") Block_loadPlayersForIdentifiersWithCompletionHandler completionHandler);
 
-    /**
-     * anonymousGuestPlayerWithIdentifier:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKPlayer_Ref/index.html#//apple_ref/occ/clm/GKPlayer/anonymousGuestPlayerWithIdentifier:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("anonymousGuestPlayerWithIdentifier:")
     @MappedReturn(ObjCObjectMapper.class)
@@ -179,18 +171,10 @@ public class GKPlayer extends NSObject {
     @NInt
     public static native long version_static();
 
-    /**
-     * alias</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKPlayer_Ref/index.html#//apple_ref/occ/instp/GKPlayer/alias">iOS Dev Center</a>
-     */
     @Generated
     @Selector("alias")
     public native String alias();
 
-    /**
-     * displayName</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKPlayer_Ref/index.html#//apple_ref/occ/instp/GKPlayer/displayName">iOS Dev Center</a>
-     */
     @Generated
     @Selector("displayName")
     public native String displayName();
@@ -199,36 +183,20 @@ public class GKPlayer extends NSObject {
     @Selector("init")
     public native GKPlayer init();
 
-    /**
-     * isFriend</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKPlayer_Ref/index.html#//apple_ref/occ/instp/GKPlayer/isFriend">iOS Dev Center</a>
-     */
     @Generated
     @Deprecated
     @Selector("isFriend")
     public native boolean isFriend();
 
-    /**
-     * loadPhotoForSize:withCompletionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKPlayer_Ref/index.html#//apple_ref/occ/instm/GKPlayer/loadPhotoForSize:withCompletionHandler:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("loadPhotoForSize:withCompletionHandler:")
     public native void loadPhotoForSizeWithCompletionHandler(@NInt long size,
             @ObjCBlock(name = "call_loadPhotoForSizeWithCompletionHandler") Block_loadPhotoForSizeWithCompletionHandler completionHandler);
 
-    /**
-     * playerID</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKPlayer_Ref/index.html#//apple_ref/occ/instp/GKPlayer/playerID">iOS Dev Center</a>
-     */
     @Generated
     @Selector("playerID")
     public native String playerID();
 
-    /**
-     * guestIdentifier</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKPlayer_Ref/index.html#//apple_ref/occ/instp/GKPlayer/guestIdentifier">iOS Dev Center</a>
-     */
     @Generated
     @Selector("guestIdentifier")
     public native String guestIdentifier();

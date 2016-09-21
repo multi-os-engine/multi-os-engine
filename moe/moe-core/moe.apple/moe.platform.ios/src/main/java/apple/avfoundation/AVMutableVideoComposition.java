@@ -63,18 +63,10 @@ public class AVMutableVideoComposition extends AVVideoComposition {
     @Selector("alloc")
     public static native AVMutableVideoComposition alloc();
 
-    /**
-     * videoComposition</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVMutableVideoComposition_Class/index.html#//apple_ref/occ/clm/AVMutableVideoComposition/videoComposition">iOS Dev Center</a>
-     */
     @Generated
     @Selector("videoComposition")
     public static native AVMutableVideoComposition videoComposition();
 
-    /**
-     * videoCompositionWithPropertiesOfAsset:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVMutableVideoComposition_Class/index.html#//apple_ref/occ/clm/AVMutableVideoComposition/videoCompositionWithPropertiesOfAsset:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("videoCompositionWithPropertiesOfAsset:")
     public static native AVMutableVideoComposition videoCompositionWithPropertiesOfAsset(AVAsset asset);
@@ -184,27 +176,15 @@ public class AVMutableVideoComposition extends AVVideoComposition {
     @NInt
     public static native long version_static();
 
-    /**
-     * animationTool</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVMutableVideoComposition_Class/index.html#//apple_ref/occ/instp/AVMutableVideoComposition/animationTool">iOS Dev Center</a>
-     */
     @Generated
     @Selector("animationTool")
     public native AVVideoCompositionCoreAnimationTool animationTool();
 
-    /**
-     * customVideoCompositorClass</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVMutableVideoComposition_Class/index.html#//apple_ref/occ/instp/AVMutableVideoComposition/customVideoCompositorClass">iOS Dev Center</a>
-     */
     @Generated
     @Selector("customVideoCompositorClass")
     @MappedReturn(ObjCObjectMapper.class)
     public native AVVideoCompositing customVideoCompositorClass();
 
-    /**
-     * frameDuration</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVMutableVideoComposition_Class/index.html#//apple_ref/occ/instp/AVMutableVideoComposition/frameDuration">iOS Dev Center</a>
-     */
     @Generated
     @Selector("frameDuration")
     @ByValue
@@ -214,75 +194,39 @@ public class AVMutableVideoComposition extends AVVideoComposition {
     @Selector("init")
     public native AVMutableVideoComposition init();
 
-    /**
-     * instructions</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVMutableVideoComposition_Class/index.html#//apple_ref/occ/instp/AVMutableVideoComposition/instructions">iOS Dev Center</a>
-     */
     @Generated
     @Selector("instructions")
     public native NSArray<?> instructions();
 
-    /**
-     * renderScale</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVMutableVideoComposition_Class/index.html#//apple_ref/occ/instp/AVMutableVideoComposition/renderScale">iOS Dev Center</a>
-     */
     @Generated
     @Selector("renderScale")
     public native float renderScale();
 
-    /**
-     * renderSize</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVMutableVideoComposition_Class/index.html#//apple_ref/occ/instp/AVMutableVideoComposition/renderSize">iOS Dev Center</a>
-     */
     @Generated
     @Selector("renderSize")
     @ByValue
     public native CGSize renderSize();
 
-    /**
-     * animationTool</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVMutableVideoComposition_Class/index.html#//apple_ref/occ/instp/AVMutableVideoComposition/animationTool">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setAnimationTool:")
     public native void setAnimationTool(AVVideoCompositionCoreAnimationTool value);
 
-    /**
-     * customVideoCompositorClass</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVMutableVideoComposition_Class/index.html#//apple_ref/occ/instp/AVMutableVideoComposition/customVideoCompositorClass">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setCustomVideoCompositorClass:")
     public native void setCustomVideoCompositorClass(@Mapped(ObjCObjectMapper.class) AVVideoCompositing value);
 
-    /**
-     * frameDuration</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVMutableVideoComposition_Class/index.html#//apple_ref/occ/instp/AVMutableVideoComposition/frameDuration">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setFrameDuration:")
     public native void setFrameDuration(@ByValue CMTime value);
 
-    /**
-     * instructions</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVMutableVideoComposition_Class/index.html#//apple_ref/occ/instp/AVMutableVideoComposition/instructions">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setInstructions:")
     public native void setInstructions(NSArray<?> value);
 
-    /**
-     * renderScale</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVMutableVideoComposition_Class/index.html#//apple_ref/occ/instp/AVMutableVideoComposition/renderScale">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setRenderScale:")
     public native void setRenderScale(float value);
 
-    /**
-     * renderSize</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVMutableVideoComposition_Class/index.html#//apple_ref/occ/instp/AVMutableVideoComposition/renderSize">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setRenderSize:")
     public native void setRenderSize(@ByValue CGSize value);

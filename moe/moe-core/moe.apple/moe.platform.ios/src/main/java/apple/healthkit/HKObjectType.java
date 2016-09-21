@@ -62,34 +62,18 @@ public class HKObjectType extends NSObject implements NSSecureCoding, NSCopying 
     @Selector("alloc")
     public static native HKObjectType alloc();
 
-    /**
-     * categoryTypeForIdentifier:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HealthKit/Reference/HKObjectType_Class/index.html#//apple_ref/occ/clm/HKObjectType/categoryTypeForIdentifier:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("categoryTypeForIdentifier:")
     public static native HKCategoryType categoryTypeForIdentifier(String identifier);
 
-    /**
-     * characteristicTypeForIdentifier:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HealthKit/Reference/HKObjectType_Class/index.html#//apple_ref/occ/clm/HKObjectType/characteristicTypeForIdentifier:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("characteristicTypeForIdentifier:")
     public static native HKCharacteristicType characteristicTypeForIdentifier(String identifier);
 
-    /**
-     * correlationTypeForIdentifier:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HealthKit/Reference/HKObjectType_Class/index.html#//apple_ref/occ/clm/HKObjectType/correlationTypeForIdentifier:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("correlationTypeForIdentifier:")
     public static native HKCorrelationType correlationTypeForIdentifier(String identifier);
 
-    /**
-     * quantityTypeForIdentifier:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HealthKit/Reference/HKObjectType_Class/index.html#//apple_ref/occ/clm/HKObjectType/quantityTypeForIdentifier:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("quantityTypeForIdentifier:")
     public static native HKQuantityType quantityTypeForIdentifier(String identifier);
@@ -98,18 +82,10 @@ public class HKObjectType extends NSObject implements NSSecureCoding, NSCopying 
     @Selector("supportsSecureCoding")
     public static native boolean supportsSecureCoding();
 
-    /**
-     * workoutType</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HealthKit/Reference/HKObjectType_Class/index.html#//apple_ref/occ/clm/HKObjectType/workoutType">iOS Dev Center</a>
-     */
     @Generated
     @Selector("workoutType")
     public static native HKWorkoutType workoutType();
 
-    /**
-     * activitySummaryType</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HealthKit/Reference/HKObjectType_Class/index.html#//apple_ref/occ/clm/HKObjectType/activitySummaryType">iOS Dev Center</a>
-     */
     @Generated
     @Selector("activitySummaryType")
     public static native HKActivitySummaryType activitySummaryType();
@@ -224,10 +200,6 @@ public class HKObjectType extends NSObject implements NSSecureCoding, NSCopying 
     @Selector("encodeWithCoder:")
     public native void encodeWithCoder(NSCoder aCoder);
 
-    /**
-     * identifier</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HealthKit/Reference/HKObjectType_Class/index.html#//apple_ref/occ/instp/HKObjectType/identifier">iOS Dev Center</a>
-     */
     @Generated
     @Selector("identifier")
     public native String identifier();

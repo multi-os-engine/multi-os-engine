@@ -165,10 +165,6 @@ public class NEVPNProtocolIPSec extends NEVPNProtocol {
     @NInt
     public static native long version_static();
 
-    /**
-     * authenticationMethod</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEVPNProtocolIPSecClassRef/index.html#//apple_ref/occ/instp/NEVPNProtocolIPSec/authenticationMethod">iOS Dev Center</a>
-     */
     @Generated
     @Selector("authenticationMethod")
     @NInt
@@ -178,74 +174,38 @@ public class NEVPNProtocolIPSec extends NEVPNProtocol {
     @Selector("init")
     public native NEVPNProtocolIPSec init();
 
-    /**
-     * localIdentifier</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEVPNProtocolIPSecClassRef/index.html#//apple_ref/occ/instp/NEVPNProtocolIPSec/localIdentifier">iOS Dev Center</a>
-     */
     @Generated
     @Selector("localIdentifier")
     public native String localIdentifier();
 
-    /**
-     * remoteIdentifier</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEVPNProtocolIPSecClassRef/index.html#//apple_ref/occ/instp/NEVPNProtocolIPSec/remoteIdentifier">iOS Dev Center</a>
-     */
     @Generated
     @Selector("remoteIdentifier")
     public native String remoteIdentifier();
 
-    /**
-     * authenticationMethod</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEVPNProtocolIPSecClassRef/index.html#//apple_ref/occ/instp/NEVPNProtocolIPSec/authenticationMethod">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setAuthenticationMethod:")
     public native void setAuthenticationMethod(@NInt long value);
 
-    /**
-     * localIdentifier</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEVPNProtocolIPSecClassRef/index.html#//apple_ref/occ/instp/NEVPNProtocolIPSec/localIdentifier">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setLocalIdentifier:")
     public native void setLocalIdentifier(String value);
 
-    /**
-     * remoteIdentifier</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEVPNProtocolIPSecClassRef/index.html#//apple_ref/occ/instp/NEVPNProtocolIPSec/remoteIdentifier">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setRemoteIdentifier:")
     public native void setRemoteIdentifier(String value);
 
-    /**
-     * sharedSecretReference</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEVPNProtocolIPSecClassRef/index.html#//apple_ref/occ/instp/NEVPNProtocolIPSec/sharedSecretReference">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setSharedSecretReference:")
     public native void setSharedSecretReference(NSData value);
 
-    /**
-     * useExtendedAuthentication</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEVPNProtocolIPSecClassRef/index.html#//apple_ref/occ/instp/NEVPNProtocolIPSec/useExtendedAuthentication">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setUseExtendedAuthentication:")
     public native void setUseExtendedAuthentication(boolean value);
 
-    /**
-     * sharedSecretReference</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEVPNProtocolIPSecClassRef/index.html#//apple_ref/occ/instp/NEVPNProtocolIPSec/sharedSecretReference">iOS Dev Center</a>
-     */
     @Generated
     @Selector("sharedSecretReference")
     public native NSData sharedSecretReference();
 
-    /**
-     * useExtendedAuthentication</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEVPNProtocolIPSecClassRef/index.html#//apple_ref/occ/instp/NEVPNProtocolIPSec/useExtendedAuthentication">iOS Dev Center</a>
-     */
     @Generated
     @Selector("useExtendedAuthentication")
     public native boolean useExtendedAuthentication();

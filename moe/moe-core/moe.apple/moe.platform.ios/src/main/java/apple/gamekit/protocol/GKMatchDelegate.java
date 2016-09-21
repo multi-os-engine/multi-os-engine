@@ -34,10 +34,6 @@ import org.moe.natj.objc.ann.Selector;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("GKMatchDelegate")
 public interface GKMatchDelegate {
-    /**
-     * match:didFailWithError:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKMatchDelegate_Ref/index.html#//apple_ref/occ/intfm/GKMatchDelegate/match:didFailWithError:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("match:didFailWithError:")
@@ -45,10 +41,6 @@ public interface GKMatchDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * match:didReceiveData:fromPlayer:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKMatchDelegate_Ref/index.html#//apple_ref/occ/intfm/GKMatchDelegate/match:didReceiveData:fromPlayer:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Deprecated
@@ -57,10 +49,6 @@ public interface GKMatchDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * match:didReceiveData:fromRemotePlayer:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKMatchDelegate_Ref/index.html#//apple_ref/occ/intfm/GKMatchDelegate/match:didReceiveData:fromRemotePlayer:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("match:didReceiveData:fromRemotePlayer:")
@@ -68,10 +56,6 @@ public interface GKMatchDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * match:player:didChangeConnectionState:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKMatchDelegate_Ref/index.html#//apple_ref/occ/intfm/GKMatchDelegate/match:player:didChangeConnectionState:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("match:player:didChangeConnectionState:")
@@ -79,10 +63,6 @@ public interface GKMatchDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * match:player:didChangeState:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKMatchDelegate_Ref/index.html#//apple_ref/occ/intfm/GKMatchDelegate/match:player:didChangeState:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Deprecated
@@ -91,10 +71,6 @@ public interface GKMatchDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * match:shouldReinviteDisconnectedPlayer:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKMatchDelegate_Ref/index.html#//apple_ref/occ/intfm/GKMatchDelegate/match:shouldReinviteDisconnectedPlayer:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("match:shouldReinviteDisconnectedPlayer:")
@@ -102,10 +78,6 @@ public interface GKMatchDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * match:shouldReinvitePlayer:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKMatchDelegate_Ref/index.html#//apple_ref/occ/intfm/GKMatchDelegate/match:shouldReinvitePlayer:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Deprecated
@@ -114,10 +86,6 @@ public interface GKMatchDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * match:didReceiveData:forRecipient:fromRemotePlayer:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKMatchDelegate_Ref/index.html#//apple_ref/occ/intfm/GKMatchDelegate/match:didReceiveData:forRecipient:fromRemotePlayer:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("match:didReceiveData:forRecipient:fromRemotePlayer:")

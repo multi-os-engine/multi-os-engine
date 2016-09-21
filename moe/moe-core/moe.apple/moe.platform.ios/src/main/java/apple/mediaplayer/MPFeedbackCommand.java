@@ -162,50 +162,26 @@ public class MPFeedbackCommand extends MPRemoteCommand {
     @Selector("init")
     public native MPFeedbackCommand init();
 
-    /**
-     * active</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPFeedbackCommand/index.html#//apple_ref/occ/instp/MPFeedbackCommand/active">iOS Dev Center</a>
-     */
     @Generated
     @Selector("isActive")
     public native boolean isActive();
 
-    /**
-     * active</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPFeedbackCommand/index.html#//apple_ref/occ/instp/MPFeedbackCommand/active">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setActive:")
     public native void setActive(boolean value);
 
-    /**
-     * localizedShortTitle</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPFeedbackCommand/index.html#//apple_ref/occ/instp/MPFeedbackCommand/localizedShortTitle">iOS Dev Center</a>
-     */
     @Generated
     @Selector("localizedShortTitle")
     public native String localizedShortTitle();
 
-    /**
-     * localizedTitle</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPFeedbackCommand/index.html#//apple_ref/occ/instp/MPFeedbackCommand/localizedTitle">iOS Dev Center</a>
-     */
     @Generated
     @Selector("localizedTitle")
     public native String localizedTitle();
 
-    /**
-     * localizedShortTitle</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPFeedbackCommand/index.html#//apple_ref/occ/instp/MPFeedbackCommand/localizedShortTitle">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setLocalizedShortTitle:")
     public native void setLocalizedShortTitle(String value);
 
-    /**
-     * localizedTitle</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPFeedbackCommand/index.html#//apple_ref/occ/instp/MPFeedbackCommand/localizedTitle">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setLocalizedTitle:")
     public native void setLocalizedTitle(String value);

@@ -168,27 +168,15 @@ public class UIPinchGestureRecognizer extends UIGestureRecognizer {
     public native UIPinchGestureRecognizer initWithTargetAction(@Mapped(ObjCObjectMapper.class) Object target,
             SEL action);
 
-    /**
-     * scale</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPinchGestureRecognizer_Class/index.html#//apple_ref/occ/instp/UIPinchGestureRecognizer/scale">iOS Dev Center</a>
-     */
     @Generated
     @Selector("scale")
     @NFloat
     public native double scale();
 
-    /**
-     * scale</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPinchGestureRecognizer_Class/index.html#//apple_ref/occ/instp/UIPinchGestureRecognizer/scale">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setScale:")
     public native void setScale(@NFloat double value);
 
-    /**
-     * velocity</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPinchGestureRecognizer_Class/index.html#//apple_ref/occ/instp/UIPinchGestureRecognizer/velocity">iOS Dev Center</a>
-     */
     @Generated
     @Selector("velocity")
     @NFloat

@@ -161,75 +161,39 @@ public class CIFaceFeature extends CIFeature {
     @NInt
     public static native long version_static();
 
-    /**
-     * bounds</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreImage/Reference/CIFaceFeature/index.html#//apple_ref/occ/instp/CIFaceFeature/bounds">iOS Dev Center</a>
-     */
     @Generated
     @Selector("bounds")
     @ByValue
     public native CGRect bounds();
 
-    /**
-     * faceAngle</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreImage/Reference/CIFaceFeature/index.html#//apple_ref/occ/instp/CIFaceFeature/faceAngle">iOS Dev Center</a>
-     */
     @Generated
     @Selector("faceAngle")
     public native float faceAngle();
 
-    /**
-     * hasFaceAngle</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreImage/Reference/CIFaceFeature/index.html#//apple_ref/occ/instp/CIFaceFeature/hasFaceAngle">iOS Dev Center</a>
-     */
     @Generated
     @Selector("hasFaceAngle")
     public native boolean hasFaceAngle();
 
-    /**
-     * hasLeftEyePosition</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreImage/Reference/CIFaceFeature/index.html#//apple_ref/occ/instp/CIFaceFeature/hasLeftEyePosition">iOS Dev Center</a>
-     */
     @Generated
     @Selector("hasLeftEyePosition")
     public native boolean hasLeftEyePosition();
 
-    /**
-     * hasMouthPosition</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreImage/Reference/CIFaceFeature/index.html#//apple_ref/occ/instp/CIFaceFeature/hasMouthPosition">iOS Dev Center</a>
-     */
     @Generated
     @Selector("hasMouthPosition")
     public native boolean hasMouthPosition();
 
-    /**
-     * hasRightEyePosition</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreImage/Reference/CIFaceFeature/index.html#//apple_ref/occ/instp/CIFaceFeature/hasRightEyePosition">iOS Dev Center</a>
-     */
     @Generated
     @Selector("hasRightEyePosition")
     public native boolean hasRightEyePosition();
 
-    /**
-     * hasSmile</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreImage/Reference/CIFaceFeature/index.html#//apple_ref/occ/instp/CIFaceFeature/hasSmile">iOS Dev Center</a>
-     */
     @Generated
     @Selector("hasSmile")
     public native boolean hasSmile();
 
-    /**
-     * hasTrackingFrameCount</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreImage/Reference/CIFaceFeature/index.html#//apple_ref/occ/instp/CIFaceFeature/hasTrackingFrameCount">iOS Dev Center</a>
-     */
     @Generated
     @Selector("hasTrackingFrameCount")
     public native boolean hasTrackingFrameCount();
 
-    /**
-     * hasTrackingID</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreImage/Reference/CIFaceFeature/index.html#//apple_ref/occ/instp/CIFaceFeature/hasTrackingID">iOS Dev Center</a>
-     */
     @Generated
     @Selector("hasTrackingID")
     public native boolean hasTrackingID();
@@ -238,61 +202,33 @@ public class CIFaceFeature extends CIFeature {
     @Selector("init")
     public native CIFaceFeature init();
 
-    /**
-     * leftEyeClosed</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreImage/Reference/CIFaceFeature/index.html#//apple_ref/occ/instp/CIFaceFeature/leftEyeClosed">iOS Dev Center</a>
-     */
     @Generated
     @Selector("leftEyeClosed")
     public native boolean leftEyeClosed();
 
-    /**
-     * leftEyePosition</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreImage/Reference/CIFaceFeature/index.html#//apple_ref/occ/instp/CIFaceFeature/leftEyePosition">iOS Dev Center</a>
-     */
     @Generated
     @Selector("leftEyePosition")
     @ByValue
     public native CGPoint leftEyePosition();
 
-    /**
-     * mouthPosition</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreImage/Reference/CIFaceFeature/index.html#//apple_ref/occ/instp/CIFaceFeature/mouthPosition">iOS Dev Center</a>
-     */
     @Generated
     @Selector("mouthPosition")
     @ByValue
     public native CGPoint mouthPosition();
 
-    /**
-     * rightEyeClosed</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreImage/Reference/CIFaceFeature/index.html#//apple_ref/occ/instp/CIFaceFeature/rightEyeClosed">iOS Dev Center</a>
-     */
     @Generated
     @Selector("rightEyeClosed")
     public native boolean rightEyeClosed();
 
-    /**
-     * rightEyePosition</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreImage/Reference/CIFaceFeature/index.html#//apple_ref/occ/instp/CIFaceFeature/rightEyePosition">iOS Dev Center</a>
-     */
     @Generated
     @Selector("rightEyePosition")
     @ByValue
     public native CGPoint rightEyePosition();
 
-    /**
-     * trackingFrameCount</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreImage/Reference/CIFaceFeature/index.html#//apple_ref/occ/instp/CIFaceFeature/trackingFrameCount">iOS Dev Center</a>
-     */
     @Generated
     @Selector("trackingFrameCount")
     public native int trackingFrameCount();
 
-    /**
-     * trackingID</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreImage/Reference/CIFaceFeature/index.html#//apple_ref/occ/instp/CIFaceFeature/trackingID">iOS Dev Center</a>
-     */
     @Generated
     @Selector("trackingID")
     public native int trackingID();

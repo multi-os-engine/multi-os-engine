@@ -163,50 +163,26 @@ public class NSAtomicStoreCacheNode extends NSObject {
     @Selector("init")
     public native NSAtomicStoreCacheNode init();
 
-    /**
-     * initWithObjectID:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSAtomicStoreCacheNode_class/index.html#//apple_ref/occ/instm/NSAtomicStoreCacheNode/initWithObjectID:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithObjectID:")
     public native NSAtomicStoreCacheNode initWithObjectID(NSManagedObjectID moid);
 
-    /**
-     * objectID</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSAtomicStoreCacheNode_class/index.html#//apple_ref/occ/instp/NSAtomicStoreCacheNode/objectID">iOS Dev Center</a>
-     */
     @Generated
     @Selector("objectID")
     public native NSManagedObjectID objectID();
 
-    /**
-     * propertyCache</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSAtomicStoreCacheNode_class/index.html#//apple_ref/occ/instp/NSAtomicStoreCacheNode/propertyCache">iOS Dev Center</a>
-     */
     @Generated
     @Selector("propertyCache")
     public native NSMutableDictionary<String, Object> propertyCache();
 
-    /**
-     * propertyCache</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSAtomicStoreCacheNode_class/index.html#//apple_ref/occ/instp/NSAtomicStoreCacheNode/propertyCache">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setPropertyCache:")
     public native void setPropertyCache(NSMutableDictionary<String, Object> value);
 
-    /**
-     * setValue:forKey:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSAtomicStoreCacheNode_class/index.html#//apple_ref/occ/instm/NSAtomicStoreCacheNode/setValue:forKey:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setValue:forKey:")
     public native void setValueForKey(@Mapped(ObjCObjectMapper.class) Object value, String key);
 
-    /**
-     * valueForKey:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSAtomicStoreCacheNode_class/index.html#//apple_ref/occ/instm/NSAtomicStoreCacheNode/valueForKey:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("valueForKey:")
     @MappedReturn(ObjCObjectMapper.class)

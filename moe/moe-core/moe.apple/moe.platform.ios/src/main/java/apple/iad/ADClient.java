@@ -62,10 +62,6 @@ public class ADClient extends NSObject {
     @Selector("alloc")
     public static native ADClient alloc();
 
-    /**
-     * sharedClient</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/iAd/Reference/ADClient/index.html#//apple_ref/occ/clm/ADClient/sharedClient">iOS Dev Center</a>
-     */
     @Generated
     @Selector("sharedClient")
     public static native ADClient sharedClient();
@@ -174,10 +170,6 @@ public class ADClient extends NSObject {
     @Selector("addClientToSegments:replaceExisting:")
     public native void addClientToSegmentsReplaceExisting(NSArray<?> segmentIdentifiers, boolean replaceExisting);
 
-    /**
-     * determineAppInstallationAttributionWithCompletionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/iAd/Reference/ADClient/index.html#//apple_ref/occ/instm/ADClient/determineAppInstallationAttributionWithCompletionHandler:">iOS Dev Center</a>
-     */
     @Deprecated
     @Generated
     @Selector("determineAppInstallationAttributionWithCompletionHandler:")

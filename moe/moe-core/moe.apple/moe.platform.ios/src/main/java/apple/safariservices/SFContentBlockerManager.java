@@ -60,10 +60,6 @@ public class SFContentBlockerManager extends NSObject {
     @Selector("alloc")
     public static native SFContentBlockerManager alloc();
 
-    /**
-     * reloadContentBlockerWithIdentifier:completionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SafariServices/Reference/SFContentBlockerManager_Class_Ref/index.html#//apple_ref/occ/clm/SFContentBlockerManager/reloadContentBlockerWithIdentifier:completionHandler:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("reloadContentBlockerWithIdentifier:completionHandler:")
     public static native void reloadContentBlockerWithIdentifierCompletionHandler(String identifier,

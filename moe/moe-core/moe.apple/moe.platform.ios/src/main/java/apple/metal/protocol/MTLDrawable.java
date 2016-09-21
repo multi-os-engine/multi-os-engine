@@ -28,18 +28,10 @@ import org.moe.natj.objc.ann.Selector;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("MTLDrawable")
 public interface MTLDrawable {
-    /**
-     * present</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Metal/Reference/MTLDrawable_Ref/index.html#//apple_ref/occ/intfm/MTLDrawable/present">iOS Dev Center</a>
-     */
     @Generated
     @Selector("present")
     void present();
 
-    /**
-     * presentAtTime:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Metal/Reference/MTLDrawable_Ref/index.html#//apple_ref/occ/intfm/MTLDrawable/presentAtTime:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("presentAtTime:")
     void presentAtTime(double presentationTime);

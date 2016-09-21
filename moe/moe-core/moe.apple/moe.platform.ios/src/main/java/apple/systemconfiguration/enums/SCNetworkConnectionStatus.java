@@ -25,6 +25,7 @@ public final class SCNetworkConnectionStatus {
     @Generated public static final int Connecting = 0x00000001;
     @Generated public static final int Connected = 0x00000002;
     @Generated public static final int Disconnecting = 0x00000003;
+
     @Generated
     private SCNetworkConnectionStatus() {
     }

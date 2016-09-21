@@ -38,6 +38,7 @@ public final class CFNumberType {
     @Generated @NInt public static final long NSIntegerType = 0x000000000000000FL;
     @Generated @NInt public static final long CGFloatType = 0x0000000000000010L;
     @Generated @NInt public static final long MaxType = 0x0000000000000010L;
+
     @Generated
     private CFNumberType() {
     }

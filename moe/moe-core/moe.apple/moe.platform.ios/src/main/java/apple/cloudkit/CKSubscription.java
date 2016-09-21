@@ -185,102 +185,54 @@ public class CKSubscription extends NSObject implements NSSecureCoding, NSCopyin
     @Selector("initWithCoder:")
     public native CKSubscription initWithCoder(NSCoder aDecoder);
 
-    /**
-     * initWithRecordType:predicate:options:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKSubscription_class/index.html#//apple_ref/occ/instm/CKSubscription/initWithRecordType:predicate:options:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithRecordType:predicate:options:")
     public native CKSubscription initWithRecordTypePredicateOptions(String recordType, NSPredicate predicate,
             @NUInt long subscriptionOptions);
 
-    /**
-     * initWithRecordType:predicate:subscriptionID:options:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKSubscription_class/index.html#//apple_ref/occ/instm/CKSubscription/initWithRecordType:predicate:subscriptionID:options:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithRecordType:predicate:subscriptionID:options:")
     public native CKSubscription initWithRecordTypePredicateSubscriptionIDOptions(String recordType,
             NSPredicate predicate, String subscriptionID, @NUInt long subscriptionOptions);
 
-    /**
-     * initWithZoneID:options:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKSubscription_class/index.html#//apple_ref/occ/instm/CKSubscription/initWithZoneID:options:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithZoneID:options:")
     public native CKSubscription initWithZoneIDOptions(CKRecordZoneID zoneID, @NUInt long subscriptionOptions);
 
-    /**
-     * initWithZoneID:subscriptionID:options:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKSubscription_class/index.html#//apple_ref/occ/instm/CKSubscription/initWithZoneID:subscriptionID:options:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithZoneID:subscriptionID:options:")
     public native CKSubscription initWithZoneIDSubscriptionIDOptions(CKRecordZoneID zoneID, String subscriptionID,
             @NUInt long subscriptionOptions);
 
-    /**
-     * notificationInfo</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKSubscription_class/index.html#//apple_ref/occ/instp/CKSubscription/notificationInfo">iOS Dev Center</a>
-     */
     @Generated
     @Selector("notificationInfo")
     public native CKNotificationInfo notificationInfo();
 
-    /**
-     * predicate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKSubscription_class/index.html#//apple_ref/occ/instp/CKSubscription/predicate">iOS Dev Center</a>
-     */
     @Generated
     @Selector("predicate")
     public native NSPredicate predicate();
 
-    /**
-     * recordType</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKSubscription_class/index.html#//apple_ref/occ/instp/CKSubscription/recordType">iOS Dev Center</a>
-     */
     @Generated
     @Selector("recordType")
     public native String recordType();
 
-    /**
-     * notificationInfo</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKSubscription_class/index.html#//apple_ref/occ/instp/CKSubscription/notificationInfo">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setNotificationInfo:")
     public native void setNotificationInfo(CKNotificationInfo value);
 
-    /**
-     * zoneID</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKSubscription_class/index.html#//apple_ref/occ/instp/CKSubscription/zoneID">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setZoneID:")
     public native void setZoneID(CKRecordZoneID value);
 
-    /**
-     * subscriptionID</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKSubscription_class/index.html#//apple_ref/occ/instp/CKSubscription/subscriptionID">iOS Dev Center</a>
-     */
     @Generated
     @Selector("subscriptionID")
     public native String subscriptionID();
 
-    /**
-     * subscriptionOptions</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKSubscription_class/index.html#//apple_ref/occ/instp/CKSubscription/subscriptionOptions">iOS Dev Center</a>
-     */
     @Generated
     @Selector("subscriptionOptions")
     @NUInt
     public native long subscriptionOptions();
 
-    /**
-     * subscriptionType</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKSubscription_class/index.html#//apple_ref/occ/instp/CKSubscription/subscriptionType">iOS Dev Center</a>
-     */
     @Generated
     @Selector("subscriptionType")
     @NInt
@@ -292,10 +244,6 @@ public class CKSubscription extends NSObject implements NSSecureCoding, NSCopyin
         return supportsSecureCoding();
     }
 
-    /**
-     * zoneID</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKSubscription_class/index.html#//apple_ref/occ/instp/CKSubscription/zoneID">iOS Dev Center</a>
-     */
     @Generated
     @Selector("zoneID")
     public native CKRecordZoneID zoneID();

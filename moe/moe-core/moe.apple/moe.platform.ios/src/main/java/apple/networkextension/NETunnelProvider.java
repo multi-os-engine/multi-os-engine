@@ -161,18 +161,10 @@ public class NETunnelProvider extends NEProvider {
     @NInt
     public static native long version_static();
 
-    /**
-     * appRules</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NETunnelProviderClassRef/index.html#//apple_ref/occ/instp/NETunnelProvider/appRules">iOS Dev Center</a>
-     */
     @Generated
     @Selector("appRules")
     public native NSArray<? extends NEAppRule> appRules();
 
-    /**
-     * handleAppMessage:completionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NETunnelProviderClassRef/index.html#//apple_ref/occ/instm/NETunnelProvider/handleAppMessage:completionHandler:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("handleAppMessage:completionHandler:")
     public native void handleAppMessageCompletionHandler(NSData messageData,
@@ -182,43 +174,23 @@ public class NETunnelProvider extends NEProvider {
     @Selector("init")
     public native NETunnelProvider init();
 
-    /**
-     * protocolConfiguration</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NETunnelProviderClassRef/index.html#//apple_ref/occ/instp/NETunnelProvider/protocolConfiguration">iOS Dev Center</a>
-     */
     @Generated
     @Selector("protocolConfiguration")
     public native NEVPNProtocol protocolConfiguration();
 
-    /**
-     * reasserting</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NETunnelProviderClassRef/index.html#//apple_ref/occ/instp/NETunnelProvider/reasserting">iOS Dev Center</a>
-     */
     @Generated
     @Selector("reasserting")
     public native boolean reasserting();
 
-    /**
-     * routingMethod</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NETunnelProviderClassRef/index.html#//apple_ref/occ/instp/NETunnelProvider/routingMethod">iOS Dev Center</a>
-     */
     @Generated
     @Selector("routingMethod")
     @NInt
     public native long routingMethod();
 
-    /**
-     * reasserting</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NETunnelProviderClassRef/index.html#//apple_ref/occ/instp/NETunnelProvider/reasserting">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setReasserting:")
     public native void setReasserting(boolean value);
 
-    /**
-     * setTunnelNetworkSettings:completionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NETunnelProviderClassRef/index.html#//apple_ref/occ/instm/NETunnelProvider/setTunnelNetworkSettings:completionHandler:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setTunnelNetworkSettings:completionHandler:")
     public native void setTunnelNetworkSettingsCompletionHandler(NETunnelNetworkSettings tunnelNetworkSettings,

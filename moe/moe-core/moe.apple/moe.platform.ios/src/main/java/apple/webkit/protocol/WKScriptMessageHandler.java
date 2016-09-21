@@ -30,10 +30,6 @@ import org.moe.natj.objc.ann.Selector;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("WKScriptMessageHandler")
 public interface WKScriptMessageHandler {
-    /**
-     * userContentController:didReceiveScriptMessage:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WebKit/Reference/WKScriptMessageHandler_Ref/index.html#//apple_ref/occ/intfm/WKScriptMessageHandler/userContentController:didReceiveScriptMessage:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("userContentController:didReceiveScriptMessage:")
     void userContentControllerDidReceiveScriptMessage(WKUserContentController userContentController,

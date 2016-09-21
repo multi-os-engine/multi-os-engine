@@ -31,18 +31,10 @@ import org.moe.natj.objc.ann.Selector;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("MTKViewDelegate")
 public interface MTKViewDelegate {
-    /**
-     * drawInMTKView:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MetalKit/Reference/MTKViewDelegate_ProtocolReference/index.html#//apple_ref/occ/intfm/MTKViewDelegate/drawInMTKView:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("drawInMTKView:")
     void drawInMTKView(MTKView view);
 
-    /**
-     * mtkView:drawableSizeWillChange:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MetalKit/Reference/MTKViewDelegate_ProtocolReference/index.html#//apple_ref/occ/intfm/MTKViewDelegate/mtkView:drawableSizeWillChange:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("mtkView:drawableSizeWillChange:")
     void mtkViewDrawableSizeWillChange(MTKView view, @ByValue CGSize size);

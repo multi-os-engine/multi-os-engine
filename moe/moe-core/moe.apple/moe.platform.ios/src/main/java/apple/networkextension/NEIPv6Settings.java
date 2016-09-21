@@ -167,10 +167,6 @@ public class NEIPv6Settings extends NSObject implements NSSecureCoding, NSCopyin
     @NInt
     public static native long version_static();
 
-    /**
-     * addresses</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEIPv6SettingsClassRef/index.html#//apple_ref/occ/instp/NEIPv6Settings/addresses">iOS Dev Center</a>
-     */
     @Generated
     @Selector("addresses")
     public native NSArray<String> addresses();
@@ -185,18 +181,10 @@ public class NEIPv6Settings extends NSObject implements NSSecureCoding, NSCopyin
     @Selector("encodeWithCoder:")
     public native void encodeWithCoder(NSCoder aCoder);
 
-    /**
-     * excludedRoutes</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEIPv6SettingsClassRef/index.html#//apple_ref/occ/instp/NEIPv6Settings/excludedRoutes">iOS Dev Center</a>
-     */
     @Generated
     @Selector("excludedRoutes")
     public native NSArray<? extends NEIPv6Route> excludedRoutes();
 
-    /**
-     * includedRoutes</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEIPv6SettingsClassRef/index.html#//apple_ref/occ/instp/NEIPv6Settings/includedRoutes">iOS Dev Center</a>
-     */
     @Generated
     @Selector("includedRoutes")
     public native NSArray<? extends NEIPv6Route> includedRoutes();
@@ -205,10 +193,6 @@ public class NEIPv6Settings extends NSObject implements NSSecureCoding, NSCopyin
     @Selector("init")
     public native NEIPv6Settings init();
 
-    /**
-     * initWithAddresses:networkPrefixLengths:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEIPv6SettingsClassRef/index.html#//apple_ref/occ/instm/NEIPv6Settings/initWithAddresses:networkPrefixLengths:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithAddresses:networkPrefixLengths:")
     public native NEIPv6Settings initWithAddressesNetworkPrefixLengths(NSArray<String> addresses,
@@ -218,26 +202,14 @@ public class NEIPv6Settings extends NSObject implements NSSecureCoding, NSCopyin
     @Selector("initWithCoder:")
     public native NEIPv6Settings initWithCoder(NSCoder aDecoder);
 
-    /**
-     * networkPrefixLengths</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEIPv6SettingsClassRef/index.html#//apple_ref/occ/instp/NEIPv6Settings/networkPrefixLengths">iOS Dev Center</a>
-     */
     @Generated
     @Selector("networkPrefixLengths")
     public native NSArray<? extends NSNumber> networkPrefixLengths();
 
-    /**
-     * excludedRoutes</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEIPv6SettingsClassRef/index.html#//apple_ref/occ/instp/NEIPv6Settings/excludedRoutes">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setExcludedRoutes:")
     public native void setExcludedRoutes(NSArray<? extends NEIPv6Route> value);
 
-    /**
-     * includedRoutes</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEIPv6SettingsClassRef/index.html#//apple_ref/occ/instp/NEIPv6Settings/includedRoutes">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setIncludedRoutes:")
     public native void setIncludedRoutes(NSArray<? extends NEIPv6Route> value);

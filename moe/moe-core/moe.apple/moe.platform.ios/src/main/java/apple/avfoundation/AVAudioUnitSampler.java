@@ -170,10 +170,6 @@ public class AVAudioUnitSampler extends AVAudioUnitMIDIInstrument {
     @NInt
     public static native long version_static();
 
-    /**
-     * globalTuning</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioUnitSampler_Class/index.html#//apple_ref/occ/instp/AVAudioUnitSampler/globalTuning">iOS Dev Center</a>
-     */
     @Generated
     @Selector("globalTuning")
     public native float globalTuning();
@@ -186,18 +182,10 @@ public class AVAudioUnitSampler extends AVAudioUnitMIDIInstrument {
     @Selector("initWithAudioComponentDescription:")
     public native AVAudioUnitSampler initWithAudioComponentDescription(@ByValue AudioComponentDescription description);
 
-    /**
-     * loadAudioFilesAtURLs:error:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioUnitSampler_Class/index.html#//apple_ref/occ/instm/AVAudioUnitSampler/loadAudioFilesAtURLs:error:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("loadAudioFilesAtURLs:error:")
     public native boolean loadAudioFilesAtURLsError(NSArray<? extends NSURL> audioFiles, Ptr<NSError> outError);
 
-    /**
-     * loadInstrumentAtURL:error:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioUnitSampler_Class/index.html#//apple_ref/occ/instm/AVAudioUnitSampler/loadInstrumentAtURL:error:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("loadInstrumentAtURL:error:")
     public native boolean loadInstrumentAtURLError(NSURL instrumentURL, Ptr<NSError> outError);
@@ -207,42 +195,22 @@ public class AVAudioUnitSampler extends AVAudioUnitMIDIInstrument {
     public native boolean loadSoundBankInstrumentAtURLProgramBankMSBBankLSBError(NSURL bankURL, byte program,
             byte bankMSB, byte bankLSB, Ptr<NSError> outError);
 
-    /**
-     * masterGain</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioUnitSampler_Class/index.html#//apple_ref/occ/instp/AVAudioUnitSampler/masterGain">iOS Dev Center</a>
-     */
     @Generated
     @Selector("masterGain")
     public native float masterGain();
 
-    /**
-     * globalTuning</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioUnitSampler_Class/index.html#//apple_ref/occ/instp/AVAudioUnitSampler/globalTuning">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setGlobalTuning:")
     public native void setGlobalTuning(float value);
 
-    /**
-     * masterGain</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioUnitSampler_Class/index.html#//apple_ref/occ/instp/AVAudioUnitSampler/masterGain">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setMasterGain:")
     public native void setMasterGain(float value);
 
-    /**
-     * stereoPan</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioUnitSampler_Class/index.html#//apple_ref/occ/instp/AVAudioUnitSampler/stereoPan">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setStereoPan:")
     public native void setStereoPan(float value);
 
-    /**
-     * stereoPan</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioUnitSampler_Class/index.html#//apple_ref/occ/instp/AVAudioUnitSampler/stereoPan">iOS Dev Center</a>
-     */
     @Generated
     @Selector("stereoPan")
     public native float stereoPan();

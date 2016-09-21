@@ -55,10 +55,6 @@ public class NSUbiquitousKeyValueStore extends NSObject {
     @Selector("alloc")
     public static native NSUbiquitousKeyValueStore alloc();
 
-    /**
-     * defaultStore</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSUbiquitousKeyValueStore_class/index.html#//apple_ref/occ/clm/NSUbiquitousKeyValueStore/defaultStore">iOS Dev Center</a>
-     */
     @Generated
     @Selector("defaultStore")
     public static native NSUbiquitousKeyValueStore defaultStore();
@@ -163,50 +159,26 @@ public class NSUbiquitousKeyValueStore extends NSObject {
     @NInt
     public static native long version_static();
 
-    /**
-     * arrayForKey:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSUbiquitousKeyValueStore_class/index.html#//apple_ref/occ/instm/NSUbiquitousKeyValueStore/arrayForKey:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("arrayForKey:")
     public native NSArray<?> arrayForKey(String aKey);
 
-    /**
-     * boolForKey:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSUbiquitousKeyValueStore_class/index.html#//apple_ref/occ/instm/NSUbiquitousKeyValueStore/boolForKey:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("boolForKey:")
     public native boolean boolForKey(String aKey);
 
-    /**
-     * dataForKey:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSUbiquitousKeyValueStore_class/index.html#//apple_ref/occ/instm/NSUbiquitousKeyValueStore/dataForKey:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("dataForKey:")
     public native NSData dataForKey(String aKey);
 
-    /**
-     * dictionaryForKey:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSUbiquitousKeyValueStore_class/index.html#//apple_ref/occ/instm/NSUbiquitousKeyValueStore/dictionaryForKey:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("dictionaryForKey:")
     public native NSDictionary<String, ?> dictionaryForKey(String aKey);
 
-    /**
-     * dictionaryRepresentation</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSUbiquitousKeyValueStore_class/index.html#//apple_ref/occ/instp/NSUbiquitousKeyValueStore/dictionaryRepresentation">iOS Dev Center</a>
-     */
     @Generated
     @Selector("dictionaryRepresentation")
     public native NSDictionary<String, ?> dictionaryRepresentation();
 
-    /**
-     * doubleForKey:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSUbiquitousKeyValueStore_class/index.html#//apple_ref/occ/instm/NSUbiquitousKeyValueStore/doubleForKey:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("doubleForKey:")
     public native double doubleForKey(String aKey);
@@ -215,107 +187,55 @@ public class NSUbiquitousKeyValueStore extends NSObject {
     @Selector("init")
     public native NSUbiquitousKeyValueStore init();
 
-    /**
-     * longLongForKey:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSUbiquitousKeyValueStore_class/index.html#//apple_ref/occ/instm/NSUbiquitousKeyValueStore/longLongForKey:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("longLongForKey:")
     public native long longLongForKey(String aKey);
 
-    /**
-     * objectForKey:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSUbiquitousKeyValueStore_class/index.html#//apple_ref/occ/instm/NSUbiquitousKeyValueStore/objectForKey:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("objectForKey:")
     @MappedReturn(ObjCObjectMapper.class)
     public native Object objectForKey(String aKey);
 
-    /**
-     * removeObjectForKey:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSUbiquitousKeyValueStore_class/index.html#//apple_ref/occ/instm/NSUbiquitousKeyValueStore/removeObjectForKey:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("removeObjectForKey:")
     public native void removeObjectForKey(String aKey);
 
-    /**
-     * setArray:forKey:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSUbiquitousKeyValueStore_class/index.html#//apple_ref/occ/instm/NSUbiquitousKeyValueStore/setArray:forKey:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setArray:forKey:")
     public native void setArrayForKey(NSArray<?> anArray, String aKey);
 
-    /**
-     * setBool:forKey:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSUbiquitousKeyValueStore_class/index.html#//apple_ref/occ/instm/NSUbiquitousKeyValueStore/setBool:forKey:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setBool:forKey:")
     public native void setBoolForKey(boolean value, String aKey);
 
-    /**
-     * setData:forKey:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSUbiquitousKeyValueStore_class/index.html#//apple_ref/occ/instm/NSUbiquitousKeyValueStore/setData:forKey:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setData:forKey:")
     public native void setDataForKey(NSData aData, String aKey);
 
-    /**
-     * setDictionary:forKey:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSUbiquitousKeyValueStore_class/index.html#//apple_ref/occ/instm/NSUbiquitousKeyValueStore/setDictionary:forKey:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setDictionary:forKey:")
     public native void setDictionaryForKey(NSDictionary<String, ?> aDictionary, String aKey);
 
-    /**
-     * setDouble:forKey:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSUbiquitousKeyValueStore_class/index.html#//apple_ref/occ/instm/NSUbiquitousKeyValueStore/setDouble:forKey:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setDouble:forKey:")
     public native void setDoubleForKey(double value, String aKey);
 
-    /**
-     * setLongLong:forKey:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSUbiquitousKeyValueStore_class/index.html#//apple_ref/occ/instm/NSUbiquitousKeyValueStore/setLongLong:forKey:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setLongLong:forKey:")
     public native void setLongLongForKey(long value, String aKey);
 
-    /**
-     * setObject:forKey:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSUbiquitousKeyValueStore_class/index.html#//apple_ref/occ/instm/NSUbiquitousKeyValueStore/setObject:forKey:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setObject:forKey:")
     public native void setObjectForKey(@Mapped(ObjCObjectMapper.class) Object anObject, String aKey);
 
-    /**
-     * setString:forKey:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSUbiquitousKeyValueStore_class/index.html#//apple_ref/occ/instm/NSUbiquitousKeyValueStore/setString:forKey:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setString:forKey:")
     public native void setStringForKey(String aString, String aKey);
 
-    /**
-     * stringForKey:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSUbiquitousKeyValueStore_class/index.html#//apple_ref/occ/instm/NSUbiquitousKeyValueStore/stringForKey:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("stringForKey:")
     public native String stringForKey(String aKey);
 
-    /**
-     * synchronize</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSUbiquitousKeyValueStore_class/index.html#//apple_ref/occ/instm/NSUbiquitousKeyValueStore/synchronize">iOS Dev Center</a>
-     */
     @Generated
     @Selector("synchronize")
     public native boolean synchronize();

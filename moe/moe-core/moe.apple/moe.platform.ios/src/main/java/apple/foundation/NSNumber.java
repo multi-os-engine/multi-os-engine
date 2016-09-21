@@ -77,122 +77,62 @@ public class NSNumber extends NSValue implements CKRecordValue {
     @Selector("alloc")
     public static native NSNumber alloc();
 
-    /**
-     * numberWithBool:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSNumber_Class/index.html#//apple_ref/occ/clm/NSNumber/numberWithBool:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("numberWithBool:")
     public static native NSNumber numberWithBool(boolean value);
 
-    /**
-     * numberWithChar:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSNumber_Class/index.html#//apple_ref/occ/clm/NSNumber/numberWithChar:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("numberWithChar:")
     public static native NSNumber numberWithChar(byte value);
 
-    /**
-     * numberWithDouble:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSNumber_Class/index.html#//apple_ref/occ/clm/NSNumber/numberWithDouble:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("numberWithDouble:")
     public static native NSNumber numberWithDouble(double value);
 
-    /**
-     * numberWithFloat:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSNumber_Class/index.html#//apple_ref/occ/clm/NSNumber/numberWithFloat:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("numberWithFloat:")
     public static native NSNumber numberWithFloat(float value);
 
-    /**
-     * numberWithInt:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSNumber_Class/index.html#//apple_ref/occ/clm/NSNumber/numberWithInt:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("numberWithInt:")
     public static native NSNumber numberWithInt(int value);
 
-    /**
-     * numberWithInteger:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSNumber_Class/index.html#//apple_ref/occ/clm/NSNumber/numberWithInteger:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("numberWithInteger:")
     public static native NSNumber numberWithInteger(@NInt long value);
 
-    /**
-     * numberWithLong:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSNumber_Class/index.html#//apple_ref/occ/clm/NSNumber/numberWithLong:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("numberWithLong:")
     public static native NSNumber numberWithLong(@NInt long value);
 
-    /**
-     * numberWithLongLong:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSNumber_Class/index.html#//apple_ref/occ/clm/NSNumber/numberWithLongLong:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("numberWithLongLong:")
     public static native NSNumber numberWithLongLong(long value);
 
-    /**
-     * numberWithShort:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSNumber_Class/index.html#//apple_ref/occ/clm/NSNumber/numberWithShort:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("numberWithShort:")
     public static native NSNumber numberWithShort(short value);
 
-    /**
-     * numberWithUnsignedChar:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSNumber_Class/index.html#//apple_ref/occ/clm/NSNumber/numberWithUnsignedChar:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("numberWithUnsignedChar:")
     public static native NSNumber numberWithUnsignedChar(byte value);
 
-    /**
-     * numberWithUnsignedInt:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSNumber_Class/index.html#//apple_ref/occ/clm/NSNumber/numberWithUnsignedInt:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("numberWithUnsignedInt:")
     public static native NSNumber numberWithUnsignedInt(int value);
 
-    /**
-     * numberWithUnsignedInteger:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSNumber_Class/index.html#//apple_ref/occ/clm/NSNumber/numberWithUnsignedInteger:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("numberWithUnsignedInteger:")
     public static native NSNumber numberWithUnsignedInteger(@NUInt long value);
 
-    /**
-     * numberWithUnsignedLong:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSNumber_Class/index.html#//apple_ref/occ/clm/NSNumber/numberWithUnsignedLong:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("numberWithUnsignedLong:")
     public static native NSNumber numberWithUnsignedLong(@NUInt long value);
 
-    /**
-     * numberWithUnsignedLongLong:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSNumber_Class/index.html#//apple_ref/occ/clm/NSNumber/numberWithUnsignedLongLong:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("numberWithUnsignedLongLong:")
     public static native NSNumber numberWithUnsignedLongLong(long value);
 
-    /**
-     * numberWithUnsignedShort:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSNumber_Class/index.html#//apple_ref/occ/clm/NSNumber/numberWithUnsignedShort:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("numberWithUnsignedShort:")
     public static native NSNumber numberWithUnsignedShort(char value);
@@ -385,51 +325,27 @@ public class NSNumber extends NSValue implements CKRecordValue {
     @NInt
     public static native long version_static();
 
-    /**
-     * boolValue</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSNumber_Class/index.html#//apple_ref/occ/instp/NSNumber/boolValue">iOS Dev Center</a>
-     */
     @Generated
     @Selector("boolValue")
     public native boolean boolValue();
 
-    /**
-     * charValue</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSNumber_Class/index.html#//apple_ref/occ/instp/NSNumber/charValue">iOS Dev Center</a>
-     */
     @Generated
     @Selector("charValue")
     public native byte charValue();
 
-    /**
-     * compare:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSNumber_Class/index.html#//apple_ref/occ/instm/NSNumber/compare:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("compare:")
     @NInt
     public native long compare(NSNumber otherNumber);
 
-    /**
-     * descriptionWithLocale:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSNumber_Class/index.html#//apple_ref/occ/instm/NSNumber/descriptionWithLocale:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("descriptionWithLocale:")
     public native String descriptionWithLocale(@Mapped(ObjCObjectMapper.class) Object locale);
 
-    /**
-     * doubleValue</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSNumber_Class/index.html#//apple_ref/occ/instp/NSNumber/doubleValue">iOS Dev Center</a>
-     */
     @Generated
     @Selector("doubleValue")
     public native double doubleValue();
 
-    /**
-     * floatValue</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSNumber_Class/index.html#//apple_ref/occ/instp/NSNumber/floatValue">iOS Dev Center</a>
-     */
     @Generated
     @Selector("floatValue")
     public native float floatValue();
@@ -438,10 +354,6 @@ public class NSNumber extends NSValue implements CKRecordValue {
     @Selector("init")
     public native NSNumber init();
 
-    /**
-     * initWithBool:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSNumber_Class/index.html#//apple_ref/occ/instm/NSNumber/initWithBool:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithBool:")
     public native NSNumber initWithBool(boolean value);
@@ -450,10 +362,6 @@ public class NSNumber extends NSValue implements CKRecordValue {
     @Selector("initWithBytes:objCType:")
     public native NSNumber initWithBytesObjCType(ConstVoidPtr value, @Mapped(CStringMapper.class) String type);
 
-    /**
-     * initWithChar:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSNumber_Class/index.html#//apple_ref/occ/instm/NSNumber/initWithChar:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithChar:")
     public native NSNumber initWithChar(byte value);
@@ -462,214 +370,110 @@ public class NSNumber extends NSValue implements CKRecordValue {
     @Selector("initWithCoder:")
     public native NSNumber initWithCoder(NSCoder aDecoder);
 
-    /**
-     * initWithDouble:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSNumber_Class/index.html#//apple_ref/occ/instm/NSNumber/initWithDouble:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithDouble:")
     public native NSNumber initWithDouble(double value);
 
-    /**
-     * initWithFloat:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSNumber_Class/index.html#//apple_ref/occ/instm/NSNumber/initWithFloat:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithFloat:")
     public native NSNumber initWithFloat(float value);
 
-    /**
-     * initWithInt:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSNumber_Class/index.html#//apple_ref/occ/instm/NSNumber/initWithInt:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithInt:")
     public native NSNumber initWithInt(int value);
 
-    /**
-     * initWithInteger:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSNumber_Class/index.html#//apple_ref/occ/instm/NSNumber/initWithInteger:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithInteger:")
     public native NSNumber initWithInteger(@NInt long value);
 
-    /**
-     * initWithLong:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSNumber_Class/index.html#//apple_ref/occ/instm/NSNumber/initWithLong:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithLong:")
     public native NSNumber initWithLong(@NInt long value);
 
-    /**
-     * initWithLongLong:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSNumber_Class/index.html#//apple_ref/occ/instm/NSNumber/initWithLongLong:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithLongLong:")
     public native NSNumber initWithLongLong(long value);
 
-    /**
-     * initWithShort:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSNumber_Class/index.html#//apple_ref/occ/instm/NSNumber/initWithShort:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithShort:")
     public native NSNumber initWithShort(short value);
 
-    /**
-     * initWithUnsignedChar:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSNumber_Class/index.html#//apple_ref/occ/instm/NSNumber/initWithUnsignedChar:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithUnsignedChar:")
     public native NSNumber initWithUnsignedChar(byte value);
 
-    /**
-     * initWithUnsignedInt:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSNumber_Class/index.html#//apple_ref/occ/instm/NSNumber/initWithUnsignedInt:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithUnsignedInt:")
     public native NSNumber initWithUnsignedInt(int value);
 
-    /**
-     * initWithUnsignedInteger:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSNumber_Class/index.html#//apple_ref/occ/instm/NSNumber/initWithUnsignedInteger:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithUnsignedInteger:")
     public native NSNumber initWithUnsignedInteger(@NUInt long value);
 
-    /**
-     * initWithUnsignedLong:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSNumber_Class/index.html#//apple_ref/occ/instm/NSNumber/initWithUnsignedLong:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithUnsignedLong:")
     public native NSNumber initWithUnsignedLong(@NUInt long value);
 
-    /**
-     * initWithUnsignedLongLong:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSNumber_Class/index.html#//apple_ref/occ/instm/NSNumber/initWithUnsignedLongLong:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithUnsignedLongLong:")
     public native NSNumber initWithUnsignedLongLong(long value);
 
-    /**
-     * initWithUnsignedShort:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSNumber_Class/index.html#//apple_ref/occ/instm/NSNumber/initWithUnsignedShort:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithUnsignedShort:")
     public native NSNumber initWithUnsignedShort(char value);
 
-    /**
-     * intValue</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSNumber_Class/index.html#//apple_ref/occ/instp/NSNumber/intValue">iOS Dev Center</a>
-     */
     @Generated
     @Selector("intValue")
     public native int intValue();
 
-    /**
-     * integerValue</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSNumber_Class/index.html#//apple_ref/occ/instp/NSNumber/integerValue">iOS Dev Center</a>
-     */
     @Generated
     @Selector("integerValue")
     @NInt
     public native long integerValue();
 
-    /**
-     * isEqualToNumber:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSNumber_Class/index.html#//apple_ref/occ/instm/NSNumber/isEqualToNumber:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("isEqualToNumber:")
     public native boolean isEqualToNumber(NSNumber number);
 
-    /**
-     * longLongValue</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSNumber_Class/index.html#//apple_ref/occ/instp/NSNumber/longLongValue">iOS Dev Center</a>
-     */
     @Generated
     @Selector("longLongValue")
     public native long longLongValue();
 
-    /**
-     * longValue</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSNumber_Class/index.html#//apple_ref/occ/instp/NSNumber/longValue">iOS Dev Center</a>
-     */
     @Generated
     @Selector("longValue")
     @NInt
     public native long longValue();
 
-    /**
-     * shortValue</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSNumber_Class/index.html#//apple_ref/occ/instp/NSNumber/shortValue">iOS Dev Center</a>
-     */
     @Generated
     @Selector("shortValue")
     public native short shortValue();
 
-    /**
-     * stringValue</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSNumber_Class/index.html#//apple_ref/occ/instp/NSNumber/stringValue">iOS Dev Center</a>
-     */
     @Generated
     @Selector("stringValue")
     public native String stringValue();
 
-    /**
-     * unsignedCharValue</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSNumber_Class/index.html#//apple_ref/occ/instp/NSNumber/unsignedCharValue">iOS Dev Center</a>
-     */
     @Generated
     @Selector("unsignedCharValue")
     public native byte unsignedCharValue();
 
-    /**
-     * unsignedIntValue</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSNumber_Class/index.html#//apple_ref/occ/instp/NSNumber/unsignedIntValue">iOS Dev Center</a>
-     */
     @Generated
     @Selector("unsignedIntValue")
     public native int unsignedIntValue();
 
-    /**
-     * unsignedIntegerValue</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSNumber_Class/index.html#//apple_ref/occ/instp/NSNumber/unsignedIntegerValue">iOS Dev Center</a>
-     */
     @Generated
     @Selector("unsignedIntegerValue")
     @NUInt
     public native long unsignedIntegerValue();
 
-    /**
-     * unsignedLongLongValue</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSNumber_Class/index.html#//apple_ref/occ/instp/NSNumber/unsignedLongLongValue">iOS Dev Center</a>
-     */
     @Generated
     @Selector("unsignedLongLongValue")
     public native long unsignedLongLongValue();
 
-    /**
-     * unsignedLongValue</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSNumber_Class/index.html#//apple_ref/occ/instp/NSNumber/unsignedLongValue">iOS Dev Center</a>
-     */
     @Generated
     @Selector("unsignedLongValue")
     @NUInt
     public native long unsignedLongValue();
 
-    /**
-     * unsignedShortValue</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSNumber_Class/index.html#//apple_ref/occ/instp/NSNumber/unsignedShortValue">iOS Dev Center</a>
-     */
     @Generated
     @Selector("unsignedShortValue")
     public native char unsignedShortValue();

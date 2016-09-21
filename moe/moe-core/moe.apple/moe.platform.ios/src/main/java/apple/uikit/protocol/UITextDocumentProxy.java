@@ -29,26 +29,14 @@ import org.moe.natj.objc.ann.Selector;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("UITextDocumentProxy")
 public interface UITextDocumentProxy extends UIKeyInput {
-    /**
-     * adjustTextPositionByCharacterOffset:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITextDocumentProxy_Protocol/index.html#//apple_ref/occ/intfm/UITextDocumentProxy/adjustTextPositionByCharacterOffset:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("adjustTextPositionByCharacterOffset:")
     void adjustTextPositionByCharacterOffset(@NInt long offset);
 
-    /**
-     * documentContextAfterInput</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITextDocumentProxy_Protocol/index.html#//apple_ref/occ/intfp/UITextDocumentProxy/documentContextAfterInput">iOS Dev Center</a>
-     */
     @Generated
     @Selector("documentContextAfterInput")
     String documentContextAfterInput();
 
-    /**
-     * documentContextBeforeInput</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITextDocumentProxy_Protocol/index.html#//apple_ref/occ/intfp/UITextDocumentProxy/documentContextBeforeInput">iOS Dev Center</a>
-     */
     @Generated
     @Selector("documentContextBeforeInput")
     String documentContextBeforeInput();

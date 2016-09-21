@@ -158,10 +158,6 @@ public class MTLRenderPassDepthAttachmentDescriptor extends MTLRenderPassAttachm
     @NInt
     public static native long version_static();
 
-    /**
-     * clearDepth</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Metal/Reference/MTLRenderPassDepthAttachmentDescriptor_Ref/index.html#//apple_ref/occ/instp/MTLRenderPassDepthAttachmentDescriptor/clearDepth">iOS Dev Center</a>
-     */
     @Generated
     @Selector("clearDepth")
     public native double clearDepth();
@@ -170,27 +166,15 @@ public class MTLRenderPassDepthAttachmentDescriptor extends MTLRenderPassAttachm
     @Selector("init")
     public native MTLRenderPassDepthAttachmentDescriptor init();
 
-    /**
-     * clearDepth</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Metal/Reference/MTLRenderPassDepthAttachmentDescriptor_Ref/index.html#//apple_ref/occ/instp/MTLRenderPassDepthAttachmentDescriptor/clearDepth">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setClearDepth:")
     public native void setClearDepth(double value);
 
-    /**
-     * depthResolveFilter</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Metal/Reference/MTLRenderPassDepthAttachmentDescriptor_Ref/index.html#//apple_ref/occ/instp/MTLRenderPassDepthAttachmentDescriptor/depthResolveFilter">iOS Dev Center</a>
-     */
     @Generated
     @Selector("depthResolveFilter")
     @NUInt
     public native long depthResolveFilter();
 
-    /**
-     * depthResolveFilter</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Metal/Reference/MTLRenderPassDepthAttachmentDescriptor_Ref/index.html#//apple_ref/occ/instp/MTLRenderPassDepthAttachmentDescriptor/depthResolveFilter">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setDepthResolveFilter:")
     public native void setDepthResolveFilter(@NUInt long value);

@@ -161,34 +161,18 @@ public class NWUDPSession extends NSObject {
     @NInt
     public static native long version_static();
 
-    /**
-     * cancel</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NWUDPSessionClassRef/index.html#//apple_ref/occ/instm/NWUDPSession/cancel">iOS Dev Center</a>
-     */
     @Generated
     @Selector("cancel")
     public native void cancel();
 
-    /**
-     * currentPath</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NWUDPSessionClassRef/index.html#//apple_ref/occ/instp/NWUDPSession/currentPath">iOS Dev Center</a>
-     */
     @Generated
     @Selector("currentPath")
     public native NWPath currentPath();
 
-    /**
-     * endpoint</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NWUDPSessionClassRef/index.html#//apple_ref/occ/instp/NWUDPSession/endpoint">iOS Dev Center</a>
-     */
     @Generated
     @Selector("endpoint")
     public native NWEndpoint endpoint();
 
-    /**
-     * hasBetterPath</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NWUDPSessionClassRef/index.html#//apple_ref/occ/instp/NWUDPSession/hasBetterPath">iOS Dev Center</a>
-     */
     @Generated
     @Selector("hasBetterPath")
     public native boolean hasBetterPath();
@@ -197,79 +181,43 @@ public class NWUDPSession extends NSObject {
     @Selector("init")
     public native NWUDPSession init();
 
-    /**
-     * initWithUpgradeForSession:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NWUDPSessionClassRef/index.html#//apple_ref/occ/instm/NWUDPSession/initWithUpgradeForSession:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithUpgradeForSession:")
     public native NWUDPSession initWithUpgradeForSession(NWUDPSession session);
 
-    /**
-     * viable</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NWUDPSessionClassRef/index.html#//apple_ref/occ/instp/NWUDPSession/viable">iOS Dev Center</a>
-     */
     @Generated
     @Selector("isViable")
     public native boolean isViable();
 
-    /**
-     * maximumDatagramLength</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NWUDPSessionClassRef/index.html#//apple_ref/occ/instp/NWUDPSession/maximumDatagramLength">iOS Dev Center</a>
-     */
     @Generated
     @Selector("maximumDatagramLength")
     @NUInt
     public native long maximumDatagramLength();
 
-    /**
-     * resolvedEndpoint</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NWUDPSessionClassRef/index.html#//apple_ref/occ/instp/NWUDPSession/resolvedEndpoint">iOS Dev Center</a>
-     */
     @Generated
     @Selector("resolvedEndpoint")
     public native NWEndpoint resolvedEndpoint();
 
-    /**
-     * setReadHandler:maxDatagrams:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NWUDPSessionClassRef/index.html#//apple_ref/occ/instm/NWUDPSession/setReadHandler:maxDatagrams:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setReadHandler:maxDatagrams:")
     public native void setReadHandlerMaxDatagrams(
             @ObjCBlock(name = "call_setReadHandlerMaxDatagrams") Block_setReadHandlerMaxDatagrams handler,
             @NUInt long maxDatagrams);
 
-    /**
-     * state</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NWUDPSessionClassRef/index.html#//apple_ref/occ/instp/NWUDPSession/state">iOS Dev Center</a>
-     */
     @Generated
     @Selector("state")
     @NInt
     public native long state();
 
-    /**
-     * tryNextResolvedEndpoint</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NWUDPSessionClassRef/index.html#//apple_ref/occ/instm/NWUDPSession/tryNextResolvedEndpoint">iOS Dev Center</a>
-     */
     @Generated
     @Selector("tryNextResolvedEndpoint")
     public native void tryNextResolvedEndpoint();
 
-    /**
-     * writeDatagram:completionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NWUDPSessionClassRef/index.html#//apple_ref/occ/instm/NWUDPSession/writeDatagram:completionHandler:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("writeDatagram:completionHandler:")
     public native void writeDatagramCompletionHandler(NSData datagram,
             @ObjCBlock(name = "call_writeDatagramCompletionHandler") Block_writeDatagramCompletionHandler completionHandler);
 
-    /**
-     * writeMultipleDatagrams:completionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NWUDPSessionClassRef/index.html#//apple_ref/occ/instm/NWUDPSession/writeMultipleDatagrams:completionHandler:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("writeMultipleDatagrams:completionHandler:")
     public native void writeMultipleDatagramsCompletionHandler(NSArray<? extends NSData> datagramArray,

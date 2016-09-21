@@ -180,10 +180,6 @@ public class SCNMorpher extends NSObject implements SCNAnimatable, NSSecureCodin
     @Selector("animationKeys")
     public native NSArray<String> animationKeys();
 
-    /**
-     * calculationMode</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNMorpher_Class/index.html#//apple_ref/occ/instp/SCNMorpher/calculationMode">iOS Dev Center</a>
-     */
     @Generated
     @Selector("calculationMode")
     @NInt
@@ -225,26 +221,14 @@ public class SCNMorpher extends NSObject implements SCNAnimatable, NSSecureCodin
     @Selector("resumeAnimationForKey:")
     public native void resumeAnimationForKey(String key);
 
-    /**
-     * calculationMode</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNMorpher_Class/index.html#//apple_ref/occ/instp/SCNMorpher/calculationMode">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setCalculationMode:")
     public native void setCalculationMode(@NInt long value);
 
-    /**
-     * targets</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNMorpher_Class/index.html#//apple_ref/occ/instp/SCNMorpher/targets">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setTargets:")
     public native void setTargets(NSArray<? extends SCNGeometry> value);
 
-    /**
-     * setWeight:forTargetAtIndex:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNMorpher_Class/index.html#//apple_ref/occ/instm/SCNMorpher/setWeight:forTargetAtIndex:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setWeight:forTargetAtIndex:")
     public native void setWeightForTargetAtIndex(@NFloat double weight, @NUInt long targetIndex);
@@ -255,18 +239,10 @@ public class SCNMorpher extends NSObject implements SCNAnimatable, NSSecureCodin
         return supportsSecureCoding();
     }
 
-    /**
-     * targets</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNMorpher_Class/index.html#//apple_ref/occ/instp/SCNMorpher/targets">iOS Dev Center</a>
-     */
     @Generated
     @Selector("targets")
     public native NSArray<? extends SCNGeometry> targets();
 
-    /**
-     * weightForTargetAtIndex:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNMorpher_Class/index.html#//apple_ref/occ/instm/SCNMorpher/weightForTargetAtIndex:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("weightForTargetAtIndex:")
     @NFloat

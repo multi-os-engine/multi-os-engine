@@ -34,10 +34,6 @@ import org.moe.natj.objc.ann.Selector;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("AVPlayerItemLegibleOutputPushDelegate")
 public interface AVPlayerItemLegibleOutputPushDelegate extends AVPlayerItemOutputPushDelegate {
-    /**
-     * legibleOutput:didOutputAttributedStrings:nativeSampleBuffers:forItemTime:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVPlayerItemLegibleOutputPushDelegate_Protocol/index.html#//apple_ref/occ/intfm/AVPlayerItemLegibleOutputPushDelegate/legibleOutput:didOutputAttributedStrings:nativeSampleBuffers:forItemTime:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("legibleOutput:didOutputAttributedStrings:nativeSampleBuffers:forItemTime:")

@@ -165,10 +165,6 @@ public class GLKReflectionMapEffect extends GLKBaseEffect implements GLKNamedEff
     @Selector("init")
     public native GLKReflectionMapEffect init();
 
-    /**
-     * matrix</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GLkit/Reference/GLKReflectionEffect_ClassRef/index.html#//apple_ref/occ/instp/GLKReflectionMapEffect/matrix">iOS Dev Center</a>
-     */
     @Generated
     @Selector("matrix")
     @ByValue
@@ -178,18 +174,10 @@ public class GLKReflectionMapEffect extends GLKBaseEffect implements GLKNamedEff
     @Selector("prepareToDraw")
     public native void prepareToDraw();
 
-    /**
-     * matrix</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GLkit/Reference/GLKReflectionEffect_ClassRef/index.html#//apple_ref/occ/instp/GLKReflectionMapEffect/matrix">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setMatrix:")
     public native void setMatrix(@ByValue GLKMatrix3 value);
 
-    /**
-     * textureCubeMap</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GLkit/Reference/GLKReflectionEffect_ClassRef/index.html#//apple_ref/occ/instp/GLKReflectionMapEffect/textureCubeMap">iOS Dev Center</a>
-     */
     @Generated
     @Selector("textureCubeMap")
     public native GLKEffectPropertyTexture textureCubeMap();

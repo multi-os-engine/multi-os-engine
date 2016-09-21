@@ -67,10 +67,6 @@ public class AVAssetImageGenerator extends NSObject {
     @Selector("alloc")
     public static native AVAssetImageGenerator alloc();
 
-    /**
-     * assetImageGeneratorWithAsset:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAssetImageGenerator_Class/index.html#//apple_ref/occ/clm/AVAssetImageGenerator/assetImageGeneratorWithAsset:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("assetImageGeneratorWithAsset:")
     public static native AVAssetImageGenerator assetImageGeneratorWithAsset(AVAsset asset);
@@ -175,60 +171,32 @@ public class AVAssetImageGenerator extends NSObject {
     @NInt
     public static native long version_static();
 
-    /**
-     * apertureMode</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAssetImageGenerator_Class/index.html#//apple_ref/occ/instp/AVAssetImageGenerator/apertureMode">iOS Dev Center</a>
-     */
     @Generated
     @Selector("apertureMode")
     public native String apertureMode();
 
-    /**
-     * appliesPreferredTrackTransform</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAssetImageGenerator_Class/index.html#//apple_ref/occ/instp/AVAssetImageGenerator/appliesPreferredTrackTransform">iOS Dev Center</a>
-     */
     @Generated
     @Selector("appliesPreferredTrackTransform")
     public native boolean appliesPreferredTrackTransform();
 
-    /**
-     * asset</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAssetImageGenerator_Class/index.html#//apple_ref/occ/instp/AVAssetImageGenerator/asset">iOS Dev Center</a>
-     */
     @Generated
     @Selector("asset")
     public native AVAsset asset();
 
-    /**
-     * cancelAllCGImageGeneration</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAssetImageGenerator_Class/index.html#//apple_ref/occ/instm/AVAssetImageGenerator/cancelAllCGImageGeneration">iOS Dev Center</a>
-     */
     @Generated
     @Selector("cancelAllCGImageGeneration")
     public native void cancelAllCGImageGeneration();
 
-    /**
-     * copyCGImageAtTime:actualTime:error:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAssetImageGenerator_Class/index.html#//apple_ref/occ/instm/AVAssetImageGenerator/copyCGImageAtTime:actualTime:error:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("copyCGImageAtTime:actualTime:error:")
     public native CGImageRef copyCGImageAtTimeActualTimeError(@ByValue CMTime requestedTime, CMTime actualTime,
             Ptr<NSError> outError);
 
-    /**
-     * customVideoCompositor</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAssetImageGenerator_Class/index.html#//apple_ref/occ/instp/AVAssetImageGenerator/customVideoCompositor">iOS Dev Center</a>
-     */
     @Generated
     @Selector("customVideoCompositor")
     @MappedReturn(ObjCObjectMapper.class)
     public native AVVideoCompositing customVideoCompositor();
 
-    /**
-     * generateCGImagesAsynchronouslyForTimes:completionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAssetImageGenerator_Class/index.html#//apple_ref/occ/instm/AVAssetImageGenerator/generateCGImagesAsynchronouslyForTimes:completionHandler:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("generateCGImagesAsynchronouslyForTimes:completionHandler:")
     public native void generateCGImagesAsynchronouslyForTimesCompletionHandler(
@@ -239,93 +207,49 @@ public class AVAssetImageGenerator extends NSObject {
     @Selector("init")
     public native AVAssetImageGenerator init();
 
-    /**
-     * initWithAsset:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAssetImageGenerator_Class/index.html#//apple_ref/occ/instm/AVAssetImageGenerator/initWithAsset:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithAsset:")
     public native AVAssetImageGenerator initWithAsset(AVAsset asset);
 
-    /**
-     * maximumSize</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAssetImageGenerator_Class/index.html#//apple_ref/occ/instp/AVAssetImageGenerator/maximumSize">iOS Dev Center</a>
-     */
     @Generated
     @Selector("maximumSize")
     @ByValue
     public native CGSize maximumSize();
 
-    /**
-     * requestedTimeToleranceAfter</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAssetImageGenerator_Class/index.html#//apple_ref/occ/instp/AVAssetImageGenerator/requestedTimeToleranceAfter">iOS Dev Center</a>
-     */
     @Generated
     @Selector("requestedTimeToleranceAfter")
     @ByValue
     public native CMTime requestedTimeToleranceAfter();
 
-    /**
-     * requestedTimeToleranceBefore</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAssetImageGenerator_Class/index.html#//apple_ref/occ/instp/AVAssetImageGenerator/requestedTimeToleranceBefore">iOS Dev Center</a>
-     */
     @Generated
     @Selector("requestedTimeToleranceBefore")
     @ByValue
     public native CMTime requestedTimeToleranceBefore();
 
-    /**
-     * apertureMode</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAssetImageGenerator_Class/index.html#//apple_ref/occ/instp/AVAssetImageGenerator/apertureMode">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setApertureMode:")
     public native void setApertureMode(String value);
 
-    /**
-     * appliesPreferredTrackTransform</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAssetImageGenerator_Class/index.html#//apple_ref/occ/instp/AVAssetImageGenerator/appliesPreferredTrackTransform">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setAppliesPreferredTrackTransform:")
     public native void setAppliesPreferredTrackTransform(boolean value);
 
-    /**
-     * maximumSize</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAssetImageGenerator_Class/index.html#//apple_ref/occ/instp/AVAssetImageGenerator/maximumSize">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setMaximumSize:")
     public native void setMaximumSize(@ByValue CGSize value);
 
-    /**
-     * requestedTimeToleranceAfter</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAssetImageGenerator_Class/index.html#//apple_ref/occ/instp/AVAssetImageGenerator/requestedTimeToleranceAfter">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setRequestedTimeToleranceAfter:")
     public native void setRequestedTimeToleranceAfter(@ByValue CMTime value);
 
-    /**
-     * requestedTimeToleranceBefore</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAssetImageGenerator_Class/index.html#//apple_ref/occ/instp/AVAssetImageGenerator/requestedTimeToleranceBefore">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setRequestedTimeToleranceBefore:")
     public native void setRequestedTimeToleranceBefore(@ByValue CMTime value);
 
-    /**
-     * videoComposition</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAssetImageGenerator_Class/index.html#//apple_ref/occ/instp/AVAssetImageGenerator/videoComposition">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setVideoComposition:")
     public native void setVideoComposition(AVVideoComposition value);
 
-    /**
-     * videoComposition</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAssetImageGenerator_Class/index.html#//apple_ref/occ/instp/AVAssetImageGenerator/videoComposition">iOS Dev Center</a>
-     */
     @Generated
     @Selector("videoComposition")
     public native AVVideoComposition videoComposition();

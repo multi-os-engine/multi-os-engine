@@ -166,18 +166,10 @@ public class NEProxyServer extends NSObject implements NSSecureCoding, NSCopying
     @NInt
     public static native long version_static();
 
-    /**
-     * address</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEProxyServerClassRef/index.html#//apple_ref/occ/instp/NEProxyServer/address">iOS Dev Center</a>
-     */
     @Generated
     @Selector("address")
     public native String address();
 
-    /**
-     * authenticationRequired</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEProxyServerClassRef/index.html#//apple_ref/occ/instp/NEProxyServer/authenticationRequired">iOS Dev Center</a>
-     */
     @Generated
     @Selector("authenticationRequired")
     public native boolean authenticationRequired();
@@ -196,10 +188,6 @@ public class NEProxyServer extends NSObject implements NSSecureCoding, NSCopying
     @Selector("init")
     public native NEProxyServer init();
 
-    /**
-     * initWithAddress:port:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEProxyServerClassRef/index.html#//apple_ref/occ/instm/NEProxyServer/initWithAddress:port:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithAddress:port:")
     public native NEProxyServer initWithAddressPort(String address, @NInt long port);
@@ -208,43 +196,23 @@ public class NEProxyServer extends NSObject implements NSSecureCoding, NSCopying
     @Selector("initWithCoder:")
     public native NEProxyServer initWithCoder(NSCoder aDecoder);
 
-    /**
-     * password</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEProxyServerClassRef/index.html#//apple_ref/occ/instp/NEProxyServer/password">iOS Dev Center</a>
-     */
     @Generated
     @Selector("password")
     public native String password();
 
-    /**
-     * port</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEProxyServerClassRef/index.html#//apple_ref/occ/instp/NEProxyServer/port">iOS Dev Center</a>
-     */
     @Generated
     @Selector("port")
     @NInt
     public native long port();
 
-    /**
-     * authenticationRequired</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEProxyServerClassRef/index.html#//apple_ref/occ/instp/NEProxyServer/authenticationRequired">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setAuthenticationRequired:")
     public native void setAuthenticationRequired(boolean value);
 
-    /**
-     * password</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEProxyServerClassRef/index.html#//apple_ref/occ/instp/NEProxyServer/password">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setPassword:")
     public native void setPassword(String value);
 
-    /**
-     * username</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEProxyServerClassRef/index.html#//apple_ref/occ/instp/NEProxyServer/username">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setUsername:")
     public native void setUsername(String value);
@@ -255,10 +223,6 @@ public class NEProxyServer extends NSObject implements NSSecureCoding, NSCopying
         return supportsSecureCoding();
     }
 
-    /**
-     * username</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEProxyServerClassRef/index.html#//apple_ref/occ/instp/NEProxyServer/username">iOS Dev Center</a>
-     */
     @Generated
     @Selector("username")
     public native String username();

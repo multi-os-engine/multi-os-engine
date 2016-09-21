@@ -27,6 +27,7 @@ public final class NEVPNError {
     @Generated @NInt public static final long ConfigurationStale = 0x0000000000000004L;
     @Generated @NInt public static final long ConfigurationReadWriteFailed = 0x0000000000000005L;
     @Generated @NInt public static final long ConfigurationUnknown = 0x0000000000000006L;
+
     @Generated
     private NEVPNError() {
     }

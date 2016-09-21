@@ -158,18 +158,10 @@ public class GLKEffectPropertyTexture extends GLKEffectProperty {
     @NInt
     public static native long version();
 
-    /**
-     * enabled</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GLkit/Reference/GLKEffectPropertyTexture_ClassRef/index.html#//apple_ref/occ/instp/GLKEffectPropertyTexture/enabled">iOS Dev Center</a>
-     */
     @Generated
     @Selector("enabled")
     public native byte enabled();
 
-    /**
-     * envMode</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GLkit/Reference/GLKEffectPropertyTexture_ClassRef/index.html#//apple_ref/occ/instp/GLKEffectPropertyTexture/envMode">iOS Dev Center</a>
-     */
     @Generated
     @Selector("envMode")
     public native int envMode();
@@ -178,50 +170,26 @@ public class GLKEffectPropertyTexture extends GLKEffectProperty {
     @Selector("init")
     public native GLKEffectPropertyTexture init();
 
-    /**
-     * name</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GLkit/Reference/GLKEffectPropertyTexture_ClassRef/index.html#//apple_ref/occ/instp/GLKEffectPropertyTexture/name">iOS Dev Center</a>
-     */
     @Generated
     @Selector("name")
     public native int name();
 
-    /**
-     * enabled</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GLkit/Reference/GLKEffectPropertyTexture_ClassRef/index.html#//apple_ref/occ/instp/GLKEffectPropertyTexture/enabled">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setEnabled:")
     public native void setEnabled(byte value);
 
-    /**
-     * envMode</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GLkit/Reference/GLKEffectPropertyTexture_ClassRef/index.html#//apple_ref/occ/instp/GLKEffectPropertyTexture/envMode">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setEnvMode:")
     public native void setEnvMode(int value);
 
-    /**
-     * name</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GLkit/Reference/GLKEffectPropertyTexture_ClassRef/index.html#//apple_ref/occ/instp/GLKEffectPropertyTexture/name">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setName:")
     public native void setName(int value);
 
-    /**
-     * target</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GLkit/Reference/GLKEffectPropertyTexture_ClassRef/index.html#//apple_ref/occ/instp/GLKEffectPropertyTexture/target">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setTarget:")
     public native void setTarget(int value);
 
-    /**
-     * target</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GLkit/Reference/GLKEffectPropertyTexture_ClassRef/index.html#//apple_ref/occ/instp/GLKEffectPropertyTexture/target">iOS Dev Center</a>
-     */
     @Generated
     @Selector("target")
     public native int target();

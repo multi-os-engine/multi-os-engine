@@ -162,10 +162,6 @@ public class MTKMeshBufferAllocator extends NSObject implements MDLMeshBufferAll
     @NInt
     public static native long version_static();
 
-    /**
-     * device</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MetalKit/Reference/MTKMeshBufferAllocator_ClassReference/index.html#//apple_ref/occ/instp/MTKMeshBufferAllocator/device">iOS Dev Center</a>
-     */
     @Generated
     @Selector("device")
     @MappedReturn(ObjCObjectMapper.class)
@@ -175,10 +171,6 @@ public class MTKMeshBufferAllocator extends NSObject implements MDLMeshBufferAll
     @Selector("init")
     public native MTKMeshBufferAllocator init();
 
-    /**
-     * initWithDevice:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MetalKit/Reference/MTKMeshBufferAllocator_ClassReference/index.html#//apple_ref/occ/instm/MTKMeshBufferAllocator/initWithDevice:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithDevice:")
     public native MTKMeshBufferAllocator initWithDevice(@Mapped(ObjCObjectMapper.class) MTLDevice device);

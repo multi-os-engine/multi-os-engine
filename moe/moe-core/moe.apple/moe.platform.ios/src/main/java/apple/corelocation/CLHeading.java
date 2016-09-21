@@ -169,10 +169,6 @@ public class CLHeading extends NSObject implements NSCopying, NSSecureCoding {
     @MappedReturn(ObjCObjectMapper.class)
     public native Object copyWithZone(VoidPtr zone);
 
-    /**
-     * description</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreLocation/Reference/CLHeading_Class/index.html#//apple_ref/occ/instp/CLHeading/description">iOS Dev Center</a>
-     */
     @Generated
     @Selector("description")
     public native String description();
@@ -181,10 +177,6 @@ public class CLHeading extends NSObject implements NSCopying, NSSecureCoding {
     @Selector("encodeWithCoder:")
     public native void encodeWithCoder(NSCoder aCoder);
 
-    /**
-     * headingAccuracy</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreLocation/Reference/CLHeading_Class/index.html#//apple_ref/occ/instp/CLHeading/headingAccuracy">iOS Dev Center</a>
-     */
     @Generated
     @Selector("headingAccuracy")
     public native double headingAccuracy();
@@ -197,10 +189,6 @@ public class CLHeading extends NSObject implements NSCopying, NSSecureCoding {
     @Selector("initWithCoder:")
     public native CLHeading initWithCoder(NSCoder aDecoder);
 
-    /**
-     * magneticHeading</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreLocation/Reference/CLHeading_Class/index.html#//apple_ref/occ/instp/CLHeading/magneticHeading">iOS Dev Center</a>
-     */
     @Generated
     @Selector("magneticHeading")
     public native double magneticHeading();
@@ -211,42 +199,22 @@ public class CLHeading extends NSObject implements NSCopying, NSSecureCoding {
         return supportsSecureCoding();
     }
 
-    /**
-     * timestamp</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreLocation/Reference/CLHeading_Class/index.html#//apple_ref/occ/instp/CLHeading/timestamp">iOS Dev Center</a>
-     */
     @Generated
     @Selector("timestamp")
     public native NSDate timestamp();
 
-    /**
-     * trueHeading</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreLocation/Reference/CLHeading_Class/index.html#//apple_ref/occ/instp/CLHeading/trueHeading">iOS Dev Center</a>
-     */
     @Generated
     @Selector("trueHeading")
     public native double trueHeading();
 
-    /**
-     * x</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreLocation/Reference/CLHeading_Class/index.html#//apple_ref/occ/instp/CLHeading/x">iOS Dev Center</a>
-     */
     @Generated
     @Selector("x")
     public native double x();
 
-    /**
-     * y</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreLocation/Reference/CLHeading_Class/index.html#//apple_ref/occ/instp/CLHeading/y">iOS Dev Center</a>
-     */
     @Generated
     @Selector("y")
     public native double y();
 
-    /**
-     * z</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreLocation/Reference/CLHeading_Class/index.html#//apple_ref/occ/instp/CLHeading/z">iOS Dev Center</a>
-     */
     @Generated
     @Selector("z")
     public native double z();

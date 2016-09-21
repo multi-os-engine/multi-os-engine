@@ -159,10 +159,6 @@ public class MDLMeshBufferMap extends NSObject {
     @NInt
     public static native long version_static();
 
-    /**
-     * bytes</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLMeshBufferMap_Class/index.html#//apple_ref/occ/instp/MDLMeshBufferMap/bytes">iOS Dev Center</a>
-     */
     @Generated
     @Selector("bytes")
     public native VoidPtr bytes();
@@ -171,10 +167,6 @@ public class MDLMeshBufferMap extends NSObject {
     @Selector("init")
     public native MDLMeshBufferMap init();
 
-    /**
-     * initWithBytes:deallocator:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLMeshBufferMap_Class/index.html#//apple_ref/occ/instm/MDLMeshBufferMap/initWithBytes:deallocator:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithBytes:deallocator:")
     public native MDLMeshBufferMap initWithBytesDeallocator(VoidPtr bytes,

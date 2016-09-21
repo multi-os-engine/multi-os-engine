@@ -55,10 +55,6 @@ public class AVURLAsset extends AVAsset {
         super(peer);
     }
 
-    /**
-     * URLAssetWithURL:options:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVURLAsset_Class/index.html#//apple_ref/occ/clm/AVURLAsset/URLAssetWithURL:options:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("URLAssetWithURL:options:")
     public static native AVURLAsset URLAssetWithURLOptions(NSURL URL, NSDictionary<String, ?> options);
@@ -72,26 +68,14 @@ public class AVURLAsset extends AVAsset {
     @Selector("assetWithURL:")
     public static native AVURLAsset assetWithURL(NSURL URL);
 
-    /**
-     * audiovisualMIMETypes</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVURLAsset_Class/index.html#//apple_ref/occ/clm/AVURLAsset/audiovisualMIMETypes">iOS Dev Center</a>
-     */
     @Generated
     @Selector("audiovisualMIMETypes")
     public static native NSArray<String> audiovisualMIMETypes();
 
-    /**
-     * audiovisualTypes</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVURLAsset_Class/index.html#//apple_ref/occ/clm/AVURLAsset/audiovisualTypes">iOS Dev Center</a>
-     */
     @Generated
     @Selector("audiovisualTypes")
     public static native NSArray<String> audiovisualTypes();
 
-    /**
-     * isPlayableExtendedMIMEType:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVURLAsset_Class/index.html#//apple_ref/occ/clm/AVURLAsset/isPlayableExtendedMIMEType:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("isPlayableExtendedMIMEType:")
     public static native boolean isPlayableExtendedMIMEType(String extendedMIMEType);
@@ -196,18 +180,10 @@ public class AVURLAsset extends AVAsset {
     @NInt
     public static native long version_static();
 
-    /**
-     * URL</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVURLAsset_Class/index.html#//apple_ref/occ/instp/AVURLAsset/URL">iOS Dev Center</a>
-     */
     @Generated
     @Selector("URL")
     public native NSURL URL();
 
-    /**
-     * compatibleTrackForCompositionTrack:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVURLAsset_Class/index.html#//apple_ref/occ/instm/AVURLAsset/compatibleTrackForCompositionTrack:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("compatibleTrackForCompositionTrack:")
     public native AVAssetTrack compatibleTrackForCompositionTrack(AVCompositionTrack compositionTrack);
@@ -216,18 +192,10 @@ public class AVURLAsset extends AVAsset {
     @Selector("init")
     public native AVURLAsset init();
 
-    /**
-     * initWithURL:options:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVURLAsset_Class/index.html#//apple_ref/occ/instm/AVURLAsset/initWithURL:options:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithURL:options:")
     public native AVURLAsset initWithURLOptions(NSURL URL, NSDictionary<String, ?> options);
 
-    /**
-     * resourceLoader</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVURLAsset_Class/index.html#//apple_ref/occ/instp/AVURLAsset/resourceLoader">iOS Dev Center</a>
-     */
     @Generated
     @Selector("resourceLoader")
     public native AVAssetResourceLoader resourceLoader();

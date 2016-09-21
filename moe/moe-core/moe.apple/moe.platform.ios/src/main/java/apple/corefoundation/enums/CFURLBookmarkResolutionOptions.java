@@ -25,6 +25,7 @@ public final class CFURLBookmarkResolutionOptions {
     @Generated @NUInt public static final long CFURLBookmarkResolutionWithoutMountingMask = 0x0000000000000200L;
     @Generated @NUInt public static final long CFBookmarkResolutionWithoutUIMask = 0x0000000000000100L;
     @Generated @NUInt public static final long CFBookmarkResolutionWithoutMountingMask = 0x0000000000000200L;
+
     @Generated
     private CFURLBookmarkResolutionOptions() {
     }

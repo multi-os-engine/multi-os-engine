@@ -30,10 +30,6 @@ import org.moe.natj.objc.ann.Selector;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("EKCalendarChooserDelegate")
 public interface EKCalendarChooserDelegate {
-    /**
-     * calendarChooserDidCancel:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/EventKitUI/Reference/EKCalendarChooserDelegateProtocolRef/index.html#//apple_ref/occ/intfm/EKCalendarChooserDelegate/calendarChooserDidCancel:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("calendarChooserDidCancel:")
@@ -41,10 +37,6 @@ public interface EKCalendarChooserDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * calendarChooserDidFinish:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/EventKitUI/Reference/EKCalendarChooserDelegateProtocolRef/index.html#//apple_ref/occ/intfm/EKCalendarChooserDelegate/calendarChooserDidFinish:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("calendarChooserDidFinish:")
@@ -52,10 +44,6 @@ public interface EKCalendarChooserDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * calendarChooserSelectionDidChange:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/EventKitUI/Reference/EKCalendarChooserDelegateProtocolRef/index.html#//apple_ref/occ/intfm/EKCalendarChooserDelegate/calendarChooserSelectionDidChange:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("calendarChooserSelectionDidChange:")

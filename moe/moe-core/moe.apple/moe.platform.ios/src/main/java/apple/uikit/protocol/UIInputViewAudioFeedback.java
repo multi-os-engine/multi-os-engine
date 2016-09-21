@@ -29,10 +29,6 @@ import org.moe.natj.objc.ann.Selector;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("UIInputViewAudioFeedback")
 public interface UIInputViewAudioFeedback {
-    /**
-     * enableInputClicksWhenVisible</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIInputViewAudioFeedback_ProtocolReference/index.html#//apple_ref/occ/intfp/UIInputViewAudioFeedback/enableInputClicksWhenVisible">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("enableInputClicksWhenVisible")

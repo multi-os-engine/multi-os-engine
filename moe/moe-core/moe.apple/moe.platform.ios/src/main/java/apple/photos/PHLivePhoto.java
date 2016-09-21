@@ -68,18 +68,10 @@ public class PHLivePhoto extends NSObject implements NSCopying, NSSecureCoding {
     @Selector("alloc")
     public static native PHLivePhoto alloc();
 
-    /**
-     * cancelLivePhotoRequestWithRequestID:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHLivePhoto_Class/index.html#//apple_ref/occ/clm/PHLivePhoto/cancelLivePhotoRequestWithRequestID:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("cancelLivePhotoRequestWithRequestID:")
     public static native void cancelLivePhotoRequestWithRequestID(int requestID);
 
-    /**
-     * requestLivePhotoWithResourceFileURLs:placeholderImage:targetSize:contentMode:resultHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHLivePhoto_Class/index.html#//apple_ref/occ/clm/PHLivePhoto/requestLivePhotoWithResourceFileURLs:placeholderImage:targetSize:contentMode:resultHandler:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("requestLivePhotoWithResourceFileURLs:placeholderImage:targetSize:contentMode:resultHandler:")
     public static native int requestLivePhotoWithResourceFileURLsPlaceholderImageTargetSizeContentModeResultHandler(
@@ -208,10 +200,6 @@ public class PHLivePhoto extends NSObject implements NSCopying, NSSecureCoding {
     @Selector("initWithCoder:")
     public native PHLivePhoto initWithCoder(NSCoder aDecoder);
 
-    /**
-     * size</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHLivePhoto_Class/index.html#//apple_ref/occ/instp/PHLivePhoto/size">iOS Dev Center</a>
-     */
     @Generated
     @Selector("size")
     @ByValue

@@ -161,18 +161,10 @@ public class AVAudioSessionDataSourceDescription extends NSObject {
     @NInt
     public static native long version_static();
 
-    /**
-     * dataSourceID</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioSessionDataSourceDescription_class/index.html#//apple_ref/occ/instp/AVAudioSessionDataSourceDescription/dataSourceID">iOS Dev Center</a>
-     */
     @Generated
     @Selector("dataSourceID")
     public native NSNumber dataSourceID();
 
-    /**
-     * dataSourceName</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioSessionDataSourceDescription_class/index.html#//apple_ref/occ/instp/AVAudioSessionDataSourceDescription/dataSourceName">iOS Dev Center</a>
-     */
     @Generated
     @Selector("dataSourceName")
     public native String dataSourceName();
@@ -181,50 +173,26 @@ public class AVAudioSessionDataSourceDescription extends NSObject {
     @Selector("init")
     public native AVAudioSessionDataSourceDescription init();
 
-    /**
-     * location</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioSessionDataSourceDescription_class/index.html#//apple_ref/occ/instp/AVAudioSessionDataSourceDescription/location">iOS Dev Center</a>
-     */
     @Generated
     @Selector("location")
     public native String location();
 
-    /**
-     * orientation</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioSessionDataSourceDescription_class/index.html#//apple_ref/occ/instp/AVAudioSessionDataSourceDescription/orientation">iOS Dev Center</a>
-     */
     @Generated
     @Selector("orientation")
     public native String orientation();
 
-    /**
-     * preferredPolarPattern</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioSessionDataSourceDescription_class/index.html#//apple_ref/occ/instp/AVAudioSessionDataSourceDescription/preferredPolarPattern">iOS Dev Center</a>
-     */
     @Generated
     @Selector("preferredPolarPattern")
     public native String preferredPolarPattern();
 
-    /**
-     * selectedPolarPattern</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioSessionDataSourceDescription_class/index.html#//apple_ref/occ/instp/AVAudioSessionDataSourceDescription/selectedPolarPattern">iOS Dev Center</a>
-     */
     @Generated
     @Selector("selectedPolarPattern")
     public native String selectedPolarPattern();
 
-    /**
-     * setPreferredPolarPattern:error:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioSessionDataSourceDescription_class/index.html#//apple_ref/occ/instm/AVAudioSessionDataSourceDescription/setPreferredPolarPattern:error:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setPreferredPolarPattern:error:")
     public native boolean setPreferredPolarPatternError(String pattern, Ptr<NSError> outError);
 
-    /**
-     * supportedPolarPatterns</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioSessionDataSourceDescription_class/index.html#//apple_ref/occ/instp/AVAudioSessionDataSourceDescription/supportedPolarPatterns">iOS Dev Center</a>
-     */
     @Generated
     @Selector("supportedPolarPatterns")
     public native NSArray<String> supportedPolarPatterns();

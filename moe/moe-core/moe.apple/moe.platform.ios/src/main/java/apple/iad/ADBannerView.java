@@ -70,10 +70,6 @@ public class ADBannerView extends UIView {
     @Selector("alloc")
     public static native ADBannerView alloc();
 
-    /**
-     * sizeFromBannerContentSizeIdentifier:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UserExperience/Reference/ADBannerView_Ref/index.html#//apple_ref/occ/clm/ADBannerView/sizeFromBannerContentSizeIdentifier:">iOS Dev Center</a>
-     */
     @Generated
     @Deprecated
     @Selector("sizeFromBannerContentSizeIdentifier:")
@@ -361,44 +357,24 @@ public class ADBannerView extends UIView {
     @NInt
     public static native long version_static();
 
-    /**
-     * adType</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UserExperience/Reference/ADBannerView_Ref/index.html#//apple_ref/occ/instp/ADBannerView/adType">iOS Dev Center</a>
-     */
     @Generated
     @Selector("adType")
     @NInt
     public native long adType();
 
-    /**
-     * advertisingSection</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UserExperience/Reference/ADBannerView_Ref/index.html#//apple_ref/occ/instp/ADBannerView/advertisingSection">iOS Dev Center</a>
-     */
     @Generated
     @Selector("advertisingSection")
     public native String advertisingSection();
 
-    /**
-     * cancelBannerViewAction</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UserExperience/Reference/ADBannerView_Ref/index.html#//apple_ref/occ/instm/ADBannerView/cancelBannerViewAction">iOS Dev Center</a>
-     */
     @Generated
     @Selector("cancelBannerViewAction")
     public native void cancelBannerViewAction();
 
-    /**
-     * currentContentSizeIdentifier</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UserExperience/Reference/ADBannerView_Ref/index.html#//apple_ref/occ/instp/ADBannerView/currentContentSizeIdentifier">iOS Dev Center</a>
-     */
     @Generated
     @Deprecated
     @Selector("currentContentSizeIdentifier")
     public native String currentContentSizeIdentifier();
 
-    /**
-     * delegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UserExperience/Reference/ADBannerView_Ref/index.html#//apple_ref/occ/instp/ADBannerView/delegate">iOS Dev Center</a>
-     */
     @Generated
     @Selector("delegate")
     @MappedReturn(ObjCObjectMapper.class)
@@ -408,10 +384,6 @@ public class ADBannerView extends UIView {
     @Selector("init")
     public native ADBannerView init();
 
-    /**
-     * initWithAdType:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UserExperience/Reference/ADBannerView_Ref/index.html#//apple_ref/occ/instm/ADBannerView/initWithAdType:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithAdType:")
     public native ADBannerView initWithAdType(@NInt long type);
@@ -420,60 +392,32 @@ public class ADBannerView extends UIView {
     @Selector("initWithFrame:")
     public native ADBannerView initWithFrame(@ByValue CGRect frame);
 
-    /**
-     * bannerLoaded</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UserExperience/Reference/ADBannerView_Ref/index.html#//apple_ref/occ/instp/ADBannerView/bannerLoaded">iOS Dev Center</a>
-     */
     @Generated
     @Selector("isBannerLoaded")
     public native boolean isBannerLoaded();
 
-    /**
-     * bannerViewActionInProgress</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UserExperience/Reference/ADBannerView_Ref/index.html#//apple_ref/occ/instp/ADBannerView/bannerViewActionInProgress">iOS Dev Center</a>
-     */
     @Generated
     @Selector("isBannerViewActionInProgress")
     public native boolean isBannerViewActionInProgress();
 
-    /**
-     * requiredContentSizeIdentifiers</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UserExperience/Reference/ADBannerView_Ref/index.html#//apple_ref/occ/instp/ADBannerView/requiredContentSizeIdentifiers">iOS Dev Center</a>
-     */
     @Generated
     @Deprecated
     @Selector("requiredContentSizeIdentifiers")
     public native NSSet<?> requiredContentSizeIdentifiers();
 
-    /**
-     * advertisingSection</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UserExperience/Reference/ADBannerView_Ref/index.html#//apple_ref/occ/instp/ADBannerView/advertisingSection">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setAdvertisingSection:")
     public native void setAdvertisingSection(String value);
 
-    /**
-     * currentContentSizeIdentifier</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UserExperience/Reference/ADBannerView_Ref/index.html#//apple_ref/occ/instp/ADBannerView/currentContentSizeIdentifier">iOS Dev Center</a>
-     */
     @Generated
     @Deprecated
     @Selector("setCurrentContentSizeIdentifier:")
     public native void setCurrentContentSizeIdentifier(String value);
 
-    /**
-     * delegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UserExperience/Reference/ADBannerView_Ref/index.html#//apple_ref/occ/instp/ADBannerView/delegate">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setDelegate:")
     public native void setDelegate_unsafe(@Mapped(ObjCObjectMapper.class) ADBannerViewDelegate value);
 
-    /**
-     * delegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UserExperience/Reference/ADBannerView_Ref/index.html#//apple_ref/occ/instp/ADBannerView/delegate">iOS Dev Center</a>
-     */
     @Generated
     public void setDelegate(@Mapped(ObjCObjectMapper.class) ADBannerViewDelegate value) {
         Object __old = delegate();
@@ -486,10 +430,6 @@ public class ADBannerView extends UIView {
         }
     }
 
-    /**
-     * requiredContentSizeIdentifiers</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UserExperience/Reference/ADBannerView_Ref/index.html#//apple_ref/occ/instp/ADBannerView/requiredContentSizeIdentifiers">iOS Dev Center</a>
-     */
     @Generated
     @Deprecated
     @Selector("setRequiredContentSizeIdentifiers:")

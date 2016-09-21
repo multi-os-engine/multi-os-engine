@@ -42,10 +42,6 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("UICollectionViewDelegate")
 public interface UICollectionViewDelegate extends UIScrollViewDelegate {
-    /**
-     * collectionView:canPerformAction:forItemAtIndexPath:withSender:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UICollectionViewDelegate_protocol/index.html#//apple_ref/occ/intfm/UICollectionViewDelegate/collectionView:canPerformAction:forItemAtIndexPath:withSender:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("collectionView:canPerformAction:forItemAtIndexPath:withSender:")
@@ -54,10 +50,6 @@ public interface UICollectionViewDelegate extends UIScrollViewDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * collectionView:didDeselectItemAtIndexPath:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UICollectionViewDelegate_protocol/index.html#//apple_ref/occ/intfm/UICollectionViewDelegate/collectionView:didDeselectItemAtIndexPath:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("collectionView:didDeselectItemAtIndexPath:")
@@ -65,10 +57,6 @@ public interface UICollectionViewDelegate extends UIScrollViewDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * collectionView:didEndDisplayingCell:forItemAtIndexPath:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UICollectionViewDelegate_protocol/index.html#//apple_ref/occ/intfm/UICollectionViewDelegate/collectionView:didEndDisplayingCell:forItemAtIndexPath:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("collectionView:didEndDisplayingCell:forItemAtIndexPath:")
@@ -77,10 +65,6 @@ public interface UICollectionViewDelegate extends UIScrollViewDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * collectionView:didEndDisplayingSupplementaryView:forElementOfKind:atIndexPath:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UICollectionViewDelegate_protocol/index.html#//apple_ref/occ/intfm/UICollectionViewDelegate/collectionView:didEndDisplayingSupplementaryView:forElementOfKind:atIndexPath:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("collectionView:didEndDisplayingSupplementaryView:forElementOfKind:atIndexPath:")
@@ -89,10 +73,6 @@ public interface UICollectionViewDelegate extends UIScrollViewDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * collectionView:didHighlightItemAtIndexPath:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UICollectionViewDelegate_protocol/index.html#//apple_ref/occ/intfm/UICollectionViewDelegate/collectionView:didHighlightItemAtIndexPath:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("collectionView:didHighlightItemAtIndexPath:")
@@ -100,10 +80,6 @@ public interface UICollectionViewDelegate extends UIScrollViewDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * collectionView:didSelectItemAtIndexPath:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UICollectionViewDelegate_protocol/index.html#//apple_ref/occ/intfm/UICollectionViewDelegate/collectionView:didSelectItemAtIndexPath:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("collectionView:didSelectItemAtIndexPath:")
@@ -111,10 +87,6 @@ public interface UICollectionViewDelegate extends UIScrollViewDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * collectionView:didUnhighlightItemAtIndexPath:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UICollectionViewDelegate_protocol/index.html#//apple_ref/occ/intfm/UICollectionViewDelegate/collectionView:didUnhighlightItemAtIndexPath:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("collectionView:didUnhighlightItemAtIndexPath:")
@@ -122,10 +94,6 @@ public interface UICollectionViewDelegate extends UIScrollViewDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * collectionView:performAction:forItemAtIndexPath:withSender:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UICollectionViewDelegate_protocol/index.html#//apple_ref/occ/intfm/UICollectionViewDelegate/collectionView:performAction:forItemAtIndexPath:withSender:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("collectionView:performAction:forItemAtIndexPath:withSender:")
@@ -134,10 +102,6 @@ public interface UICollectionViewDelegate extends UIScrollViewDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * collectionView:shouldDeselectItemAtIndexPath:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UICollectionViewDelegate_protocol/index.html#//apple_ref/occ/intfm/UICollectionViewDelegate/collectionView:shouldDeselectItemAtIndexPath:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("collectionView:shouldDeselectItemAtIndexPath:")
@@ -146,10 +110,6 @@ public interface UICollectionViewDelegate extends UIScrollViewDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * collectionView:shouldHighlightItemAtIndexPath:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UICollectionViewDelegate_protocol/index.html#//apple_ref/occ/intfm/UICollectionViewDelegate/collectionView:shouldHighlightItemAtIndexPath:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("collectionView:shouldHighlightItemAtIndexPath:")
@@ -158,10 +118,6 @@ public interface UICollectionViewDelegate extends UIScrollViewDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * collectionView:shouldSelectItemAtIndexPath:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UICollectionViewDelegate_protocol/index.html#//apple_ref/occ/intfm/UICollectionViewDelegate/collectionView:shouldSelectItemAtIndexPath:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("collectionView:shouldSelectItemAtIndexPath:")
@@ -169,10 +125,6 @@ public interface UICollectionViewDelegate extends UIScrollViewDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * collectionView:shouldShowMenuForItemAtIndexPath:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UICollectionViewDelegate_protocol/index.html#//apple_ref/occ/intfm/UICollectionViewDelegate/collectionView:shouldShowMenuForItemAtIndexPath:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("collectionView:shouldShowMenuForItemAtIndexPath:")
@@ -181,10 +133,6 @@ public interface UICollectionViewDelegate extends UIScrollViewDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * collectionView:transitionLayoutForOldLayout:newLayout:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UICollectionViewDelegate_protocol/index.html#//apple_ref/occ/intfm/UICollectionViewDelegate/collectionView:transitionLayoutForOldLayout:newLayout:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("collectionView:transitionLayoutForOldLayout:newLayout:")
@@ -193,10 +141,6 @@ public interface UICollectionViewDelegate extends UIScrollViewDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * collectionView:willDisplayCell:forItemAtIndexPath:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UICollectionViewDelegate_protocol/index.html#//apple_ref/occ/intfm/UICollectionViewDelegate/collectionView:willDisplayCell:forItemAtIndexPath:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("collectionView:willDisplayCell:forItemAtIndexPath:")
@@ -205,10 +149,6 @@ public interface UICollectionViewDelegate extends UIScrollViewDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * collectionView:willDisplaySupplementaryView:forElementKind:atIndexPath:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UICollectionViewDelegate_protocol/index.html#//apple_ref/occ/intfm/UICollectionViewDelegate/collectionView:willDisplaySupplementaryView:forElementKind:atIndexPath:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("collectionView:willDisplaySupplementaryView:forElementKind:atIndexPath:")
@@ -217,10 +157,6 @@ public interface UICollectionViewDelegate extends UIScrollViewDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * collectionView:targetContentOffsetForProposedContentOffset:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UICollectionViewDelegate_protocol/index.html#//apple_ref/occ/intfm/UICollectionViewDelegate/collectionView:targetContentOffsetForProposedContentOffset:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("collectionView:targetContentOffsetForProposedContentOffset:")
@@ -230,10 +166,6 @@ public interface UICollectionViewDelegate extends UIScrollViewDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * collectionView:targetIndexPathForMoveFromItemAtIndexPath:toProposedIndexPath:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UICollectionViewDelegate_protocol/index.html#//apple_ref/occ/intfm/UICollectionViewDelegate/collectionView:targetIndexPathForMoveFromItemAtIndexPath:toProposedIndexPath:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("collectionView:targetIndexPathForMoveFromItemAtIndexPath:toProposedIndexPath:")
@@ -242,10 +174,6 @@ public interface UICollectionViewDelegate extends UIScrollViewDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * collectionView:canFocusItemAtIndexPath:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UICollectionViewDelegate_protocol/index.html#//apple_ref/occ/intfm/UICollectionViewDelegate/collectionView:canFocusItemAtIndexPath:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("collectionView:canFocusItemAtIndexPath:")
@@ -253,10 +181,6 @@ public interface UICollectionViewDelegate extends UIScrollViewDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * collectionView:didUpdateFocusInContext:withAnimationCoordinator:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UICollectionViewDelegate_protocol/index.html#//apple_ref/occ/intfm/UICollectionViewDelegate/collectionView:didUpdateFocusInContext:withAnimationCoordinator:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("collectionView:didUpdateFocusInContext:withAnimationCoordinator:")
@@ -265,10 +189,6 @@ public interface UICollectionViewDelegate extends UIScrollViewDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * collectionView:shouldUpdateFocusInContext:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UICollectionViewDelegate_protocol/index.html#//apple_ref/occ/intfm/UICollectionViewDelegate/collectionView:shouldUpdateFocusInContext:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("collectionView:shouldUpdateFocusInContext:")
@@ -277,10 +197,6 @@ public interface UICollectionViewDelegate extends UIScrollViewDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * indexPathForPreferredFocusedViewInCollectionView:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UICollectionViewDelegate_protocol/index.html#//apple_ref/occ/intfm/UICollectionViewDelegate/indexPathForPreferredFocusedViewInCollectionView:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("indexPathForPreferredFocusedViewInCollectionView:")

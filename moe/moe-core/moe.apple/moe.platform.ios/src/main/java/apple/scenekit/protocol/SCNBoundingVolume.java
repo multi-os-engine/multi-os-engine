@@ -30,26 +30,14 @@ import org.moe.natj.objc.ann.Selector;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("SCNBoundingVolume")
 public interface SCNBoundingVolume {
-    /**
-     * getBoundingBoxMin:max:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNBoundingVolume_Protocol/index.html#//apple_ref/occ/intfm/SCNBoundingVolume/getBoundingBoxMin:max:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("getBoundingBoxMin:max:")
     boolean getBoundingBoxMinMax(SCNVector3 min, SCNVector3 max);
 
-    /**
-     * getBoundingSphereCenter:radius:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNBoundingVolume_Protocol/index.html#//apple_ref/occ/intfm/SCNBoundingVolume/getBoundingSphereCenter:radius:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("getBoundingSphereCenter:radius:")
     boolean getBoundingSphereCenterRadius(SCNVector3 center, NFloatPtr radius);
 
-    /**
-     * setBoundingBoxMin:max:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNBoundingVolume_Protocol/index.html#//apple_ref/occ/intfm/SCNBoundingVolume/setBoundingBoxMin:max:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setBoundingBoxMin:max:")
     void setBoundingBoxMinMax(SCNVector3 min, SCNVector3 max);

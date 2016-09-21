@@ -33,10 +33,6 @@ import org.moe.natj.objc.ann.Selector;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("NCWidgetProviding")
 public interface NCWidgetProviding {
-    /**
-     * widgetMarginInsetsForProposedMarginInsets:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NotificationCenter/Reference/NCWidgetProviding_Protocol/index.html#//apple_ref/occ/intfm/NCWidgetProviding/widgetMarginInsetsForProposedMarginInsets:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("widgetMarginInsetsForProposedMarginInsets:")
@@ -45,10 +41,6 @@ public interface NCWidgetProviding {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * widgetPerformUpdateWithCompletionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NotificationCenter/Reference/NCWidgetProviding_Protocol/index.html#//apple_ref/occ/intfm/NCWidgetProviding/widgetPerformUpdateWithCompletionHandler:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("widgetPerformUpdateWithCompletionHandler:")

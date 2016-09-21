@@ -160,77 +160,41 @@ public final class ImageIO {
     @CFunction
     public static native CGImageMetadataRef CGImageMetadataCreateFromXMPData(CFDataRef data);
 
-    /**
-     * CGImageSourceGetTypeID</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/CGImageSource/index.html#//apple_ref/c/func/CGImageSourceGetTypeID">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @NUInt
     public static native long CGImageSourceGetTypeID();
 
-    /**
-     * CGImageSourceCopyTypeIdentifiers</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/CGImageSource/index.html#//apple_ref/c/func/CGImageSourceCopyTypeIdentifiers">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native CFArrayRef CGImageSourceCopyTypeIdentifiers();
 
-    /**
-     * CGImageSourceCreateWithDataProvider</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/CGImageSource/index.html#//apple_ref/c/func/CGImageSourceCreateWithDataProvider">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native CGImageSourceRef CGImageSourceCreateWithDataProvider(CGDataProviderRef provider,
             CFDictionaryRef options);
 
-    /**
-     * CGImageSourceCreateWithData</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/CGImageSource/index.html#//apple_ref/c/func/CGImageSourceCreateWithData">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native CGImageSourceRef CGImageSourceCreateWithData(CFDataRef data, CFDictionaryRef options);
 
-    /**
-     * CGImageSourceCreateWithURL</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/CGImageSource/index.html#//apple_ref/c/func/CGImageSourceCreateWithURL">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native CGImageSourceRef CGImageSourceCreateWithURL(CFURLRef url, CFDictionaryRef options);
 
-    /**
-     * CGImageSourceGetType</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/CGImageSource/index.html#//apple_ref/c/func/CGImageSourceGetType">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native CFStringRef CGImageSourceGetType(CGImageSourceRef isrc);
 
-    /**
-     * CGImageSourceGetCount</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/CGImageSource/index.html#//apple_ref/c/func/CGImageSourceGetCount">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @NUInt
     public static native long CGImageSourceGetCount(CGImageSourceRef isrc);
 
-    /**
-     * CGImageSourceCopyProperties</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/CGImageSource/index.html#//apple_ref/c/func/CGImageSourceCopyProperties">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native CFDictionaryRef CGImageSourceCopyProperties(CGImageSourceRef isrc, CFDictionaryRef options);
 
-    /**
-     * CGImageSourceCopyPropertiesAtIndex</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/CGImageSource/index.html#//apple_ref/c/func/CGImageSourceCopyPropertiesAtIndex">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native CFDictionaryRef CGImageSourceCopyPropertiesAtIndex(CGImageSourceRef isrc, @NUInt long index,
@@ -241,10 +205,6 @@ public final class ImageIO {
     public static native CGImageMetadataRef CGImageSourceCopyMetadataAtIndex(CGImageSourceRef isrc, @NUInt long index,
             CFDictionaryRef options);
 
-    /**
-     * CGImageSourceCreateImageAtIndex</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/CGImageSource/index.html#//apple_ref/c/func/CGImageSourceCreateImageAtIndex">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native CGImageRef CGImageSourceCreateImageAtIndex(CGImageSourceRef isrc, @NUInt long index,
@@ -254,130 +214,70 @@ public final class ImageIO {
     @CFunction
     public static native void CGImageSourceRemoveCacheAtIndex(CGImageSourceRef isrc, @NUInt long index);
 
-    /**
-     * CGImageSourceCreateThumbnailAtIndex</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/CGImageSource/index.html#//apple_ref/c/func/CGImageSourceCreateThumbnailAtIndex">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native CGImageRef CGImageSourceCreateThumbnailAtIndex(CGImageSourceRef isrc, @NUInt long index,
             CFDictionaryRef options);
 
-    /**
-     * CGImageSourceCreateIncremental</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/CGImageSource/index.html#//apple_ref/c/func/CGImageSourceCreateIncremental">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native CGImageSourceRef CGImageSourceCreateIncremental(CFDictionaryRef options);
 
-    /**
-     * CGImageSourceUpdateData</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/CGImageSource/index.html#//apple_ref/c/func/CGImageSourceUpdateData">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void CGImageSourceUpdateData(CGImageSourceRef isrc, CFDataRef data, boolean final_);
 
-    /**
-     * CGImageSourceUpdateDataProvider</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/CGImageSource/index.html#//apple_ref/c/func/CGImageSourceUpdateDataProvider">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void CGImageSourceUpdateDataProvider(CGImageSourceRef isrc, CGDataProviderRef provider,
             boolean final_);
 
-    /**
-     * CGImageSourceGetStatus</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/CGImageSource/index.html#//apple_ref/c/func/CGImageSourceGetStatus">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native int CGImageSourceGetStatus(CGImageSourceRef isrc);
 
-    /**
-     * CGImageSourceGetStatusAtIndex</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/CGImageSource/index.html#//apple_ref/c/func/CGImageSourceGetStatusAtIndex">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native int CGImageSourceGetStatusAtIndex(CGImageSourceRef isrc, @NUInt long index);
 
-    /**
-     * CGImageDestinationGetTypeID</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/CGImageDestination/index.html#//apple_ref/c/func/CGImageDestinationGetTypeID">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @NUInt
     public static native long CGImageDestinationGetTypeID();
 
-    /**
-     * CGImageDestinationCopyTypeIdentifiers</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/CGImageDestination/index.html#//apple_ref/c/func/CGImageDestinationCopyTypeIdentifiers">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native CFArrayRef CGImageDestinationCopyTypeIdentifiers();
 
-    /**
-     * CGImageDestinationCreateWithDataConsumer</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/CGImageDestination/index.html#//apple_ref/c/func/CGImageDestinationCreateWithDataConsumer">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native CGImageDestinationRef CGImageDestinationCreateWithDataConsumer(CGDataConsumerRef consumer,
             CFStringRef type, @NUInt long count, CFDictionaryRef options);
 
-    /**
-     * CGImageDestinationCreateWithData</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/CGImageDestination/index.html#//apple_ref/c/func/CGImageDestinationCreateWithData">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native CGImageDestinationRef CGImageDestinationCreateWithData(CFMutableDataRef data, CFStringRef type,
             @NUInt long count, CFDictionaryRef options);
 
-    /**
-     * CGImageDestinationCreateWithURL</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/CGImageDestination/index.html#//apple_ref/c/func/CGImageDestinationCreateWithURL">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native CGImageDestinationRef CGImageDestinationCreateWithURL(CFURLRef url, CFStringRef type,
             @NUInt long count, CFDictionaryRef options);
 
-    /**
-     * CGImageDestinationSetProperties</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/CGImageDestination/index.html#//apple_ref/c/func/CGImageDestinationSetProperties">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void CGImageDestinationSetProperties(CGImageDestinationRef idst, CFDictionaryRef properties);
 
-    /**
-     * CGImageDestinationAddImage</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/CGImageDestination/index.html#//apple_ref/c/func/CGImageDestinationAddImage">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void CGImageDestinationAddImage(CGImageDestinationRef idst, CGImageRef image,
             CFDictionaryRef properties);
 
-    /**
-     * CGImageDestinationAddImageFromSource</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/CGImageDestination/index.html#//apple_ref/c/func/CGImageDestinationAddImageFromSource">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void CGImageDestinationAddImageFromSource(CGImageDestinationRef idst, CGImageSourceRef isrc,
             @NUInt long index, CFDictionaryRef properties);
 
-    /**
-     * CGImageDestinationFinalize</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/CGImageDestination/index.html#//apple_ref/c/func/CGImageDestinationFinalize">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native boolean CGImageDestinationFinalize(CGImageDestinationRef idst);

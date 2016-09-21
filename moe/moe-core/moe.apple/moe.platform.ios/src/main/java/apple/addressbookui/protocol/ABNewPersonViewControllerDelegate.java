@@ -30,10 +30,6 @@ import org.moe.natj.objc.ann.Selector;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("ABNewPersonViewControllerDelegate")
 public interface ABNewPersonViewControllerDelegate {
-    /**
-     * newPersonViewController:didCompleteWithNewPerson:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AddressBookUI/Reference/ABNewPersonViewControllerDelegate_Protocol/index.html#//apple_ref/occ/intfm/ABNewPersonViewControllerDelegate/newPersonViewController:didCompleteWithNewPerson:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("newPersonViewController:didCompleteWithNewPerson:")
     void newPersonViewControllerDidCompleteWithNewPerson(ABNewPersonViewController newPersonView, ConstVoidPtr person);

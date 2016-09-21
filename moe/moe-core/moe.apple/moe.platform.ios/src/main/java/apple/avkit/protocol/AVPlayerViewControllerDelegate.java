@@ -40,10 +40,6 @@ public interface AVPlayerViewControllerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * playerViewController:restoreUserInterfaceForPictureInPictureStopWithCompletionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVKit/Reference/AVPlayerViewControllerDelegate_Protocol/index.html#//apple_ref/occ/intfm/AVPlayerViewControllerDelegate/playerViewController:restoreUserInterfaceForPictureInPictureStopWithCompletionHandler:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("playerViewController:restoreUserInterfaceForPictureInPictureStopWithCompletionHandler:")
@@ -53,10 +49,6 @@ public interface AVPlayerViewControllerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * playerViewControllerDidStartPictureInPicture:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVKit/Reference/AVPlayerViewControllerDelegate_Protocol/index.html#//apple_ref/occ/intfm/AVPlayerViewControllerDelegate/playerViewControllerDidStartPictureInPicture:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("playerViewControllerDidStartPictureInPicture:")
@@ -64,10 +56,6 @@ public interface AVPlayerViewControllerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * playerViewControllerDidStopPictureInPicture:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVKit/Reference/AVPlayerViewControllerDelegate_Protocol/index.html#//apple_ref/occ/intfm/AVPlayerViewControllerDelegate/playerViewControllerDidStopPictureInPicture:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("playerViewControllerDidStopPictureInPicture:")
@@ -75,10 +63,6 @@ public interface AVPlayerViewControllerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * playerViewControllerShouldAutomaticallyDismissAtPictureInPictureStart:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVKit/Reference/AVPlayerViewControllerDelegate_Protocol/index.html#//apple_ref/occ/intfm/AVPlayerViewControllerDelegate/playerViewControllerShouldAutomaticallyDismissAtPictureInPictureStart:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("playerViewControllerShouldAutomaticallyDismissAtPictureInPictureStart:")
@@ -87,10 +71,6 @@ public interface AVPlayerViewControllerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * playerViewControllerWillStartPictureInPicture:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVKit/Reference/AVPlayerViewControllerDelegate_Protocol/index.html#//apple_ref/occ/intfm/AVPlayerViewControllerDelegate/playerViewControllerWillStartPictureInPicture:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("playerViewControllerWillStartPictureInPicture:")
@@ -98,10 +78,6 @@ public interface AVPlayerViewControllerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * playerViewControllerWillStopPictureInPicture:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVKit/Reference/AVPlayerViewControllerDelegate_Protocol/index.html#//apple_ref/occ/intfm/AVPlayerViewControllerDelegate/playerViewControllerWillStopPictureInPicture:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("playerViewControllerWillStopPictureInPicture:")

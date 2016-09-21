@@ -39,10 +39,6 @@ import org.moe.natj.objc.ann.Selector;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("CLLocationManagerDelegate")
 public interface CLLocationManagerDelegate {
-    /**
-     * locationManager:didChangeAuthorizationStatus:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreLocation/Reference/CLLocationManagerDelegate_Protocol/index.html#//apple_ref/occ/intfm/CLLocationManagerDelegate/locationManager:didChangeAuthorizationStatus:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("locationManager:didChangeAuthorizationStatus:")
@@ -50,10 +46,6 @@ public interface CLLocationManagerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * locationManager:didDetermineState:forRegion:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreLocation/Reference/CLLocationManagerDelegate_Protocol/index.html#//apple_ref/occ/intfm/CLLocationManagerDelegate/locationManager:didDetermineState:forRegion:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("locationManager:didDetermineState:forRegion:")
@@ -62,10 +54,6 @@ public interface CLLocationManagerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * locationManager:didEnterRegion:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreLocation/Reference/CLLocationManagerDelegate_Protocol/index.html#//apple_ref/occ/intfm/CLLocationManagerDelegate/locationManager:didEnterRegion:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("locationManager:didEnterRegion:")
@@ -73,10 +61,6 @@ public interface CLLocationManagerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * locationManager:didExitRegion:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreLocation/Reference/CLLocationManagerDelegate_Protocol/index.html#//apple_ref/occ/intfm/CLLocationManagerDelegate/locationManager:didExitRegion:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("locationManager:didExitRegion:")
@@ -84,10 +68,6 @@ public interface CLLocationManagerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * locationManager:didFailWithError:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreLocation/Reference/CLLocationManagerDelegate_Protocol/index.html#//apple_ref/occ/intfm/CLLocationManagerDelegate/locationManager:didFailWithError:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("locationManager:didFailWithError:")
@@ -95,10 +75,6 @@ public interface CLLocationManagerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * locationManager:didFinishDeferredUpdatesWithError:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreLocation/Reference/CLLocationManagerDelegate_Protocol/index.html#//apple_ref/occ/intfm/CLLocationManagerDelegate/locationManager:didFinishDeferredUpdatesWithError:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("locationManager:didFinishDeferredUpdatesWithError:")
@@ -106,10 +82,6 @@ public interface CLLocationManagerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * locationManager:didRangeBeacons:inRegion:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreLocation/Reference/CLLocationManagerDelegate_Protocol/index.html#//apple_ref/occ/intfm/CLLocationManagerDelegate/locationManager:didRangeBeacons:inRegion:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("locationManager:didRangeBeacons:inRegion:")
@@ -118,10 +90,6 @@ public interface CLLocationManagerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * locationManager:didStartMonitoringForRegion:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreLocation/Reference/CLLocationManagerDelegate_Protocol/index.html#//apple_ref/occ/intfm/CLLocationManagerDelegate/locationManager:didStartMonitoringForRegion:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("locationManager:didStartMonitoringForRegion:")
@@ -129,10 +97,6 @@ public interface CLLocationManagerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * locationManager:didUpdateHeading:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreLocation/Reference/CLLocationManagerDelegate_Protocol/index.html#//apple_ref/occ/intfm/CLLocationManagerDelegate/locationManager:didUpdateHeading:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("locationManager:didUpdateHeading:")
@@ -140,10 +104,6 @@ public interface CLLocationManagerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * locationManager:didUpdateLocations:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreLocation/Reference/CLLocationManagerDelegate_Protocol/index.html#//apple_ref/occ/intfm/CLLocationManagerDelegate/locationManager:didUpdateLocations:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("locationManager:didUpdateLocations:")
@@ -151,10 +111,6 @@ public interface CLLocationManagerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * locationManager:didUpdateToLocation:fromLocation:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreLocation/Reference/CLLocationManagerDelegate_Protocol/index.html#//apple_ref/occ/intfm/CLLocationManagerDelegate/locationManager:didUpdateToLocation:fromLocation:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Deprecated
@@ -164,10 +120,6 @@ public interface CLLocationManagerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * locationManager:didVisit:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreLocation/Reference/CLLocationManagerDelegate_Protocol/index.html#//apple_ref/occ/intfm/CLLocationManagerDelegate/locationManager:didVisit:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("locationManager:didVisit:")
@@ -175,10 +127,6 @@ public interface CLLocationManagerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * locationManager:monitoringDidFailForRegion:withError:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreLocation/Reference/CLLocationManagerDelegate_Protocol/index.html#//apple_ref/occ/intfm/CLLocationManagerDelegate/locationManager:monitoringDidFailForRegion:withError:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("locationManager:monitoringDidFailForRegion:withError:")
@@ -187,10 +135,6 @@ public interface CLLocationManagerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * locationManager:rangingBeaconsDidFailForRegion:withError:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreLocation/Reference/CLLocationManagerDelegate_Protocol/index.html#//apple_ref/occ/intfm/CLLocationManagerDelegate/locationManager:rangingBeaconsDidFailForRegion:withError:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("locationManager:rangingBeaconsDidFailForRegion:withError:")
@@ -199,10 +143,6 @@ public interface CLLocationManagerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * locationManagerDidPauseLocationUpdates:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreLocation/Reference/CLLocationManagerDelegate_Protocol/index.html#//apple_ref/occ/intfm/CLLocationManagerDelegate/locationManagerDidPauseLocationUpdates:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("locationManagerDidPauseLocationUpdates:")
@@ -210,10 +150,6 @@ public interface CLLocationManagerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * locationManagerDidResumeLocationUpdates:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreLocation/Reference/CLLocationManagerDelegate_Protocol/index.html#//apple_ref/occ/intfm/CLLocationManagerDelegate/locationManagerDidResumeLocationUpdates:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("locationManagerDidResumeLocationUpdates:")
@@ -221,10 +157,6 @@ public interface CLLocationManagerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * locationManagerShouldDisplayHeadingCalibration:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreLocation/Reference/CLLocationManagerDelegate_Protocol/index.html#//apple_ref/occ/intfm/CLLocationManagerDelegate/locationManagerShouldDisplayHeadingCalibration:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("locationManagerShouldDisplayHeadingCalibration:")

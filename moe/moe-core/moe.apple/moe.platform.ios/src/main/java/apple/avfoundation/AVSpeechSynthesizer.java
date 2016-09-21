@@ -159,18 +159,10 @@ public class AVSpeechSynthesizer extends NSObject {
     @NInt
     public static native long version_static();
 
-    /**
-     * continueSpeaking</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVSpeechSynthesizer_Ref/index.html#//apple_ref/occ/instm/AVSpeechSynthesizer/continueSpeaking">iOS Dev Center</a>
-     */
     @Generated
     @Selector("continueSpeaking")
     public native boolean continueSpeaking();
 
-    /**
-     * delegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVSpeechSynthesizer_Ref/index.html#//apple_ref/occ/instp/AVSpeechSynthesizer/delegate">iOS Dev Center</a>
-     */
     @Generated
     @Selector("delegate")
     @MappedReturn(ObjCObjectMapper.class)
@@ -180,42 +172,22 @@ public class AVSpeechSynthesizer extends NSObject {
     @Selector("init")
     public native AVSpeechSynthesizer init();
 
-    /**
-     * paused</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVSpeechSynthesizer_Ref/index.html#//apple_ref/occ/instp/AVSpeechSynthesizer/paused">iOS Dev Center</a>
-     */
     @Generated
     @Selector("isPaused")
     public native boolean isPaused();
 
-    /**
-     * speaking</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVSpeechSynthesizer_Ref/index.html#//apple_ref/occ/instp/AVSpeechSynthesizer/speaking">iOS Dev Center</a>
-     */
     @Generated
     @Selector("isSpeaking")
     public native boolean isSpeaking();
 
-    /**
-     * pauseSpeakingAtBoundary:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVSpeechSynthesizer_Ref/index.html#//apple_ref/occ/instm/AVSpeechSynthesizer/pauseSpeakingAtBoundary:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("pauseSpeakingAtBoundary:")
     public native boolean pauseSpeakingAtBoundary(@NInt long boundary);
 
-    /**
-     * delegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVSpeechSynthesizer_Ref/index.html#//apple_ref/occ/instp/AVSpeechSynthesizer/delegate">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setDelegate:")
     public native void setDelegate_unsafe(@Mapped(ObjCObjectMapper.class) AVSpeechSynthesizerDelegate value);
 
-    /**
-     * delegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVSpeechSynthesizer_Ref/index.html#//apple_ref/occ/instp/AVSpeechSynthesizer/delegate">iOS Dev Center</a>
-     */
     @Generated
     public void setDelegate(@Mapped(ObjCObjectMapper.class) AVSpeechSynthesizerDelegate value) {
         Object __old = delegate();
@@ -228,18 +200,10 @@ public class AVSpeechSynthesizer extends NSObject {
         }
     }
 
-    /**
-     * speakUtterance:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVSpeechSynthesizer_Ref/index.html#//apple_ref/occ/instm/AVSpeechSynthesizer/speakUtterance:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("speakUtterance:")
     public native void speakUtterance(AVSpeechUtterance utterance);
 
-    /**
-     * stopSpeakingAtBoundary:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVSpeechSynthesizer_Ref/index.html#//apple_ref/occ/instm/AVSpeechSynthesizer/stopSpeakingAtBoundary:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("stopSpeakingAtBoundary:")
     public native boolean stopSpeakingAtBoundary(@NInt long boundary);

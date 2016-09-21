@@ -166,101 +166,53 @@ public class AVCaptureFileOutput extends AVCaptureOutput {
     @Selector("init")
     public native AVCaptureFileOutput init();
 
-    /**
-     * recording</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVCaptureFileOutput_Class/index.html#//apple_ref/occ/instp/AVCaptureFileOutput/recording">iOS Dev Center</a>
-     */
     @Generated
     @Selector("isRecording")
     public native boolean isRecording();
 
-    /**
-     * maxRecordedDuration</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVCaptureFileOutput_Class/index.html#//apple_ref/occ/instp/AVCaptureFileOutput/maxRecordedDuration">iOS Dev Center</a>
-     */
     @Generated
     @Selector("maxRecordedDuration")
     @ByValue
     public native CMTime maxRecordedDuration();
 
-    /**
-     * maxRecordedFileSize</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVCaptureFileOutput_Class/index.html#//apple_ref/occ/instp/AVCaptureFileOutput/maxRecordedFileSize">iOS Dev Center</a>
-     */
     @Generated
     @Selector("maxRecordedFileSize")
     public native long maxRecordedFileSize();
 
-    /**
-     * minFreeDiskSpaceLimit</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVCaptureFileOutput_Class/index.html#//apple_ref/occ/instp/AVCaptureFileOutput/minFreeDiskSpaceLimit">iOS Dev Center</a>
-     */
     @Generated
     @Selector("minFreeDiskSpaceLimit")
     public native long minFreeDiskSpaceLimit();
 
-    /**
-     * outputFileURL</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVCaptureFileOutput_Class/index.html#//apple_ref/occ/instp/AVCaptureFileOutput/outputFileURL">iOS Dev Center</a>
-     */
     @Generated
     @Selector("outputFileURL")
     public native NSURL outputFileURL();
 
-    /**
-     * recordedDuration</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVCaptureFileOutput_Class/index.html#//apple_ref/occ/instp/AVCaptureFileOutput/recordedDuration">iOS Dev Center</a>
-     */
     @Generated
     @Selector("recordedDuration")
     @ByValue
     public native CMTime recordedDuration();
 
-    /**
-     * recordedFileSize</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVCaptureFileOutput_Class/index.html#//apple_ref/occ/instp/AVCaptureFileOutput/recordedFileSize">iOS Dev Center</a>
-     */
     @Generated
     @Selector("recordedFileSize")
     public native long recordedFileSize();
 
-    /**
-     * maxRecordedDuration</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVCaptureFileOutput_Class/index.html#//apple_ref/occ/instp/AVCaptureFileOutput/maxRecordedDuration">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setMaxRecordedDuration:")
     public native void setMaxRecordedDuration(@ByValue CMTime value);
 
-    /**
-     * maxRecordedFileSize</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVCaptureFileOutput_Class/index.html#//apple_ref/occ/instp/AVCaptureFileOutput/maxRecordedFileSize">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setMaxRecordedFileSize:")
     public native void setMaxRecordedFileSize(long value);
 
-    /**
-     * minFreeDiskSpaceLimit</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVCaptureFileOutput_Class/index.html#//apple_ref/occ/instp/AVCaptureFileOutput/minFreeDiskSpaceLimit">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setMinFreeDiskSpaceLimit:")
     public native void setMinFreeDiskSpaceLimit(long value);
 
-    /**
-     * startRecordingToOutputFileURL:recordingDelegate:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVCaptureFileOutput_Class/index.html#//apple_ref/occ/instm/AVCaptureFileOutput/startRecordingToOutputFileURL:recordingDelegate:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("startRecordingToOutputFileURL:recordingDelegate:")
     public native void startRecordingToOutputFileURLRecordingDelegate(NSURL outputFileURL,
             @Mapped(ObjCObjectMapper.class) AVCaptureFileOutputRecordingDelegate delegate);
 
-    /**
-     * stopRecording</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVCaptureFileOutput_Class/index.html#//apple_ref/occ/instm/AVCaptureFileOutput/stopRecording">iOS Dev Center</a>
-     */
     @Generated
     @Selector("stopRecording")
     public native void stopRecording();

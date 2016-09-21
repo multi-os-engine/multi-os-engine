@@ -161,27 +161,15 @@ public class MKLocalSearchCompleter extends NSObject {
     @NInt
     public static native long version_static();
 
-    /**
-     * cancel</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKLocalSearchCompleter_class/index.html#//apple_ref/occ/instm/MKLocalSearchCompleter/cancel">iOS Dev Center</a>
-     */
     @Generated
     @Selector("cancel")
     public native void cancel();
 
-    /**
-     * delegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKLocalSearchCompleter_class/index.html#//apple_ref/occ/instp/MKLocalSearchCompleter/delegate">iOS Dev Center</a>
-     */
     @Generated
     @Selector("delegate")
     @MappedReturn(ObjCObjectMapper.class)
     public native MKLocalSearchCompleterDelegate delegate();
 
-    /**
-     * filterType</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKLocalSearchCompleter_class/index.html#//apple_ref/occ/instp/MKLocalSearchCompleter/filterType">iOS Dev Center</a>
-     */
     @Generated
     @Selector("filterType")
     @NInt
@@ -191,51 +179,27 @@ public class MKLocalSearchCompleter extends NSObject {
     @Selector("init")
     public native MKLocalSearchCompleter init();
 
-    /**
-     * searching</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKLocalSearchCompleter_class/index.html#//apple_ref/occ/instp/MKLocalSearchCompleter/searching">iOS Dev Center</a>
-     */
     @Generated
     @Selector("isSearching")
     public native boolean isSearching();
 
-    /**
-     * queryFragment</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKLocalSearchCompleter_class/index.html#//apple_ref/occ/instp/MKLocalSearchCompleter/queryFragment">iOS Dev Center</a>
-     */
     @Generated
     @Selector("queryFragment")
     public native String queryFragment();
 
-    /**
-     * region</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKLocalSearchCompleter_class/index.html#//apple_ref/occ/instp/MKLocalSearchCompleter/region">iOS Dev Center</a>
-     */
     @Generated
     @Selector("region")
     @ByValue
     public native MKCoordinateRegion region();
 
-    /**
-     * results</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKLocalSearchCompleter_class/index.html#//apple_ref/occ/instp/MKLocalSearchCompleter/results">iOS Dev Center</a>
-     */
     @Generated
     @Selector("results")
     public native NSArray<? extends MKLocalSearchCompletion> results();
 
-    /**
-     * delegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKLocalSearchCompleter_class/index.html#//apple_ref/occ/instp/MKLocalSearchCompleter/delegate">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setDelegate:")
     public native void setDelegate_unsafe(@Mapped(ObjCObjectMapper.class) MKLocalSearchCompleterDelegate value);
 
-    /**
-     * delegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKLocalSearchCompleter_class/index.html#//apple_ref/occ/instp/MKLocalSearchCompleter/delegate">iOS Dev Center</a>
-     */
     @Generated
     public void setDelegate(@Mapped(ObjCObjectMapper.class) MKLocalSearchCompleterDelegate value) {
         Object __old = delegate();
@@ -248,26 +212,14 @@ public class MKLocalSearchCompleter extends NSObject {
         }
     }
 
-    /**
-     * filterType</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKLocalSearchCompleter_class/index.html#//apple_ref/occ/instp/MKLocalSearchCompleter/filterType">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setFilterType:")
     public native void setFilterType(@NInt long value);
 
-    /**
-     * queryFragment</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKLocalSearchCompleter_class/index.html#//apple_ref/occ/instp/MKLocalSearchCompleter/queryFragment">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setQueryFragment:")
     public native void setQueryFragment(String value);
 
-    /**
-     * region</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKLocalSearchCompleter_class/index.html#//apple_ref/occ/instp/MKLocalSearchCompleter/region">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setRegion:")
     public native void setRegion(@ByValue MKCoordinateRegion value);

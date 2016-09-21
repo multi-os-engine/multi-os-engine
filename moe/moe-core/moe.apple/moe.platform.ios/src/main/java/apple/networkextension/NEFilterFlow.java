@@ -167,10 +167,6 @@ public class NEFilterFlow extends NSObject implements NSSecureCoding, NSCopying 
     @NInt
     public static native long version_static();
 
-    /**
-     * URL</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEFilterFlowClassRef/index.html#//apple_ref/occ/instp/NEFilterFlow/URL">iOS Dev Center</a>
-     */
     @Generated
     @Selector("URL")
     public native NSURL URL();

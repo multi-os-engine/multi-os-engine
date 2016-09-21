@@ -55,10 +55,6 @@ public class UIPreviewActionGroup extends NSObject implements NSCopying, UIPrevi
         super(peer);
     }
 
-    /**
-     * actionGroupWithTitle:style:actions:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPreviewActionGroup_Class/index.html#//apple_ref/occ/clm/UIPreviewActionGroup/actionGroupWithTitle:style:actions:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("actionGroupWithTitle:style:actions:")
     public static native UIPreviewActionGroup actionGroupWithTitleStyleActions(String title, @NInt long style,

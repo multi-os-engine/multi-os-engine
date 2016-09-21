@@ -164,19 +164,11 @@ public class CKDiscoverAllContactsOperation extends CKOperation {
     @Selector("init")
     public native CKDiscoverAllContactsOperation init();
 
-    /**
-     * discoverAllContactsCompletionBlock</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKDiscoverAllContactsOperation_class/index.html#//apple_ref/occ/instp/CKDiscoverAllContactsOperation/discoverAllContactsCompletionBlock">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setDiscoverAllContactsCompletionBlock:")
     public native void setDiscoverAllContactsCompletionBlock(
             @ObjCBlock(name = "call_setDiscoverAllContactsCompletionBlock") Block_setDiscoverAllContactsCompletionBlock value);
 
-    /**
-     * discoverAllContactsCompletionBlock</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKDiscoverAllContactsOperation_class/index.html#//apple_ref/occ/instp/CKDiscoverAllContactsOperation/discoverAllContactsCompletionBlock">iOS Dev Center</a>
-     */
     @Generated
     @Selector("discoverAllContactsCompletionBlock")
     @ObjCBlock(name = "call_discoverAllContactsCompletionBlock_ret")

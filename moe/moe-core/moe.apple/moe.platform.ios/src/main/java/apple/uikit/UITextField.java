@@ -355,34 +355,18 @@ public class UITextField extends UIControl implements UITextInput, NSCoding {
     @NInt
     public static native long version_static();
 
-    /**
-     * adjustsFontSizeToFitWidth</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITextField_Class/index.html#//apple_ref/occ/instp/UITextField/adjustsFontSizeToFitWidth">iOS Dev Center</a>
-     */
     @Generated
     @Selector("adjustsFontSizeToFitWidth")
     public native boolean adjustsFontSizeToFitWidth();
 
-    /**
-     * allowsEditingTextAttributes</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITextField_Class/index.html#//apple_ref/occ/instp/UITextField/allowsEditingTextAttributes">iOS Dev Center</a>
-     */
     @Generated
     @Selector("allowsEditingTextAttributes")
     public native boolean allowsEditingTextAttributes();
 
-    /**
-     * attributedPlaceholder</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITextField_Class/index.html#//apple_ref/occ/instp/UITextField/attributedPlaceholder">iOS Dev Center</a>
-     */
     @Generated
     @Selector("attributedPlaceholder")
     public native NSAttributedString attributedPlaceholder();
 
-    /**
-     * attributedText</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITextField_Class/index.html#//apple_ref/occ/instp/UITextField/attributedText">iOS Dev Center</a>
-     */
     @Generated
     @Selector("attributedText")
     public native NSAttributedString attributedText();
@@ -399,10 +383,6 @@ public class UITextField extends UIControl implements UITextInput, NSCoding {
     @NInt
     public native long autocorrectionType();
 
-    /**
-     * background</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITextField_Class/index.html#//apple_ref/occ/instp/UITextField/background">iOS Dev Center</a>
-     */
     @Generated
     @Selector("background")
     public native UIImage background();
@@ -416,19 +396,11 @@ public class UITextField extends UIControl implements UITextInput, NSCoding {
     @Selector("beginningOfDocument")
     public native UITextPosition beginningOfDocument();
 
-    /**
-     * borderRectForBounds:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITextField_Class/index.html#//apple_ref/occ/instm/UITextField/borderRectForBounds:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("borderRectForBounds:")
     @ByValue
     public native CGRect borderRectForBounds(@ByValue CGRect bounds);
 
-    /**
-     * borderStyle</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITextField_Class/index.html#//apple_ref/occ/instp/UITextField/borderStyle">iOS Dev Center</a>
-     */
     @Generated
     @Selector("borderStyle")
     @NInt
@@ -454,36 +426,20 @@ public class UITextField extends UIControl implements UITextInput, NSCoding {
     public native UITextRange characterRangeByExtendingPositionInDirection(UITextPosition position,
             @NInt long direction);
 
-    /**
-     * clearButtonMode</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITextField_Class/index.html#//apple_ref/occ/instp/UITextField/clearButtonMode">iOS Dev Center</a>
-     */
     @Generated
     @Selector("clearButtonMode")
     @NInt
     public native long clearButtonMode();
 
-    /**
-     * clearButtonRectForBounds:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITextField_Class/index.html#//apple_ref/occ/instm/UITextField/clearButtonRectForBounds:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("clearButtonRectForBounds:")
     @ByValue
     public native CGRect clearButtonRectForBounds(@ByValue CGRect bounds);
 
-    /**
-     * clearsOnBeginEditing</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITextField_Class/index.html#//apple_ref/occ/instp/UITextField/clearsOnBeginEditing">iOS Dev Center</a>
-     */
     @Generated
     @Selector("clearsOnBeginEditing")
     public native boolean clearsOnBeginEditing();
 
-    /**
-     * clearsOnInsertion</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITextField_Class/index.html#//apple_ref/occ/instp/UITextField/clearsOnInsertion">iOS Dev Center</a>
-     */
     @Generated
     @Selector("clearsOnInsertion")
     public native boolean clearsOnInsertion();
@@ -501,18 +457,10 @@ public class UITextField extends UIControl implements UITextInput, NSCoding {
     @NInt
     public native long comparePositionToPosition(UITextPosition position, UITextPosition other);
 
-    /**
-     * defaultTextAttributes</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITextField_Class/index.html#//apple_ref/occ/instp/UITextField/defaultTextAttributes">iOS Dev Center</a>
-     */
     @Generated
     @Selector("defaultTextAttributes")
     public native NSDictionary<String, ?> defaultTextAttributes();
 
-    /**
-     * delegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITextField_Class/index.html#//apple_ref/occ/instp/UITextField/delegate">iOS Dev Center</a>
-     */
     @Generated
     @Selector("delegate")
     @MappedReturn(ObjCObjectMapper.class)
@@ -532,34 +480,18 @@ public class UITextField extends UIControl implements UITextInput, NSCoding {
     @Selector("dictationRecordingDidEnd")
     public native void dictationRecordingDidEnd();
 
-    /**
-     * disabledBackground</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITextField_Class/index.html#//apple_ref/occ/instp/UITextField/disabledBackground">iOS Dev Center</a>
-     */
     @Generated
     @Selector("disabledBackground")
     public native UIImage disabledBackground();
 
-    /**
-     * drawPlaceholderInRect:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITextField_Class/index.html#//apple_ref/occ/instm/UITextField/drawPlaceholderInRect:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("drawPlaceholderInRect:")
     public native void drawPlaceholderInRect(@ByValue CGRect rect);
 
-    /**
-     * drawTextInRect:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITextField_Class/index.html#//apple_ref/occ/instm/UITextField/drawTextInRect:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("drawTextInRect:")
     public native void drawTextInRect(@ByValue CGRect rect);
 
-    /**
-     * editingRectForBounds:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITextField_Class/index.html#//apple_ref/occ/instm/UITextField/editingRectForBounds:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("editingRectForBounds:")
     @ByValue
@@ -583,10 +515,6 @@ public class UITextField extends UIControl implements UITextInput, NSCoding {
     @ByValue
     public native CGRect firstRectForRange(UITextRange range);
 
-    /**
-     * font</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITextField_Class/index.html#//apple_ref/occ/instp/UITextField/font">iOS Dev Center</a>
-     */
     @Generated
     @Selector("font")
     public native UIFont font();
@@ -613,10 +541,6 @@ public class UITextField extends UIControl implements UITextInput, NSCoding {
     @Selector("initWithFrame:")
     public native UITextField initWithFrame(@ByValue CGRect frame);
 
-    /**
-     * inputAccessoryView</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITextField_Class/index.html#//apple_ref/occ/instp/UITextField/inputAccessoryView">iOS Dev Center</a>
-     */
     @Generated
     @Selector("inputAccessoryView")
     public native UIView inputAccessoryView();
@@ -626,10 +550,6 @@ public class UITextField extends UIControl implements UITextInput, NSCoding {
     @MappedReturn(ObjCObjectMapper.class)
     public native Object inputDelegate();
 
-    /**
-     * inputView</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITextField_Class/index.html#//apple_ref/occ/instp/UITextField/inputView">iOS Dev Center</a>
-     */
     @Generated
     @Selector("inputView")
     public native UIView inputView();
@@ -649,10 +569,6 @@ public class UITextField extends UIControl implements UITextInput, NSCoding {
     @Selector("insertText:")
     public native void insertText(String text);
 
-    /**
-     * editing</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITextField_Class/index.html#//apple_ref/occ/instp/UITextField/editing">iOS Dev Center</a>
-     */
     @Generated
     @Selector("isEditing")
     public native boolean isEditing();
@@ -679,27 +595,15 @@ public class UITextField extends UIControl implements UITextInput, NSCoding {
     @NInt
     public native long keyboardType();
 
-    /**
-     * leftView</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITextField_Class/index.html#//apple_ref/occ/instp/UITextField/leftView">iOS Dev Center</a>
-     */
     @Generated
     @Selector("leftView")
     public native UIView leftView();
 
-    /**
-     * leftViewMode</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITextField_Class/index.html#//apple_ref/occ/instp/UITextField/leftViewMode">iOS Dev Center</a>
-     */
     @Generated
     @Selector("leftViewMode")
     @NInt
     public native long leftViewMode();
 
-    /**
-     * leftViewRectForBounds:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITextField_Class/index.html#//apple_ref/occ/instm/UITextField/leftViewRectForBounds:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("leftViewRectForBounds:")
     @ByValue
@@ -713,10 +617,6 @@ public class UITextField extends UIControl implements UITextInput, NSCoding {
     @Selector("markedTextStyle")
     public native NSDictionary<?, ?> markedTextStyle();
 
-    /**
-     * minimumFontSize</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITextField_Class/index.html#//apple_ref/occ/instp/UITextField/minimumFontSize">iOS Dev Center</a>
-     */
     @Generated
     @Selector("minimumFontSize")
     @NFloat
@@ -727,18 +627,10 @@ public class UITextField extends UIControl implements UITextInput, NSCoding {
     @NInt
     public native long offsetFromPositionToPosition(UITextPosition from, UITextPosition toPosition);
 
-    /**
-     * placeholder</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITextField_Class/index.html#//apple_ref/occ/instp/UITextField/placeholder">iOS Dev Center</a>
-     */
     @Generated
     @Selector("placeholder")
     public native String placeholder();
 
-    /**
-     * placeholderRectForBounds:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITextField_Class/index.html#//apple_ref/occ/instm/UITextField/placeholderRectForBounds:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("placeholderRectForBounds:")
     @ByValue
@@ -778,27 +670,15 @@ public class UITextField extends UIControl implements UITextInput, NSCoding {
     @NInt
     public native long returnKeyType();
 
-    /**
-     * rightView</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITextField_Class/index.html#//apple_ref/occ/instp/UITextField/rightView">iOS Dev Center</a>
-     */
     @Generated
     @Selector("rightView")
     public native UIView rightView();
 
-    /**
-     * rightViewMode</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITextField_Class/index.html#//apple_ref/occ/instp/UITextField/rightViewMode">iOS Dev Center</a>
-     */
     @Generated
     @Selector("rightViewMode")
     @NInt
     public native long rightViewMode();
 
-    /**
-     * rightViewRectForBounds:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITextField_Class/index.html#//apple_ref/occ/instm/UITextField/rightViewRectForBounds:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("rightViewRectForBounds:")
     @ByValue
@@ -818,34 +698,18 @@ public class UITextField extends UIControl implements UITextInput, NSCoding {
     @Selector("selectionRectsForRange:")
     public native NSArray<?> selectionRectsForRange(UITextRange range);
 
-    /**
-     * adjustsFontSizeToFitWidth</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITextField_Class/index.html#//apple_ref/occ/instp/UITextField/adjustsFontSizeToFitWidth">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setAdjustsFontSizeToFitWidth:")
     public native void setAdjustsFontSizeToFitWidth(boolean value);
 
-    /**
-     * allowsEditingTextAttributes</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITextField_Class/index.html#//apple_ref/occ/instp/UITextField/allowsEditingTextAttributes">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setAllowsEditingTextAttributes:")
     public native void setAllowsEditingTextAttributes(boolean value);
 
-    /**
-     * attributedPlaceholder</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITextField_Class/index.html#//apple_ref/occ/instp/UITextField/attributedPlaceholder">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setAttributedPlaceholder:")
     public native void setAttributedPlaceholder(NSAttributedString value);
 
-    /**
-     * attributedText</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITextField_Class/index.html#//apple_ref/occ/instp/UITextField/attributedText">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setAttributedText:")
     public native void setAttributedText(NSAttributedString value);
@@ -860,10 +724,6 @@ public class UITextField extends UIControl implements UITextInput, NSCoding {
     @Selector("setAutocorrectionType:")
     public native void setAutocorrectionType(@NInt long value);
 
-    /**
-     * background</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITextField_Class/index.html#//apple_ref/occ/instp/UITextField/background">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setBackground:")
     public native void setBackground(UIImage value);
@@ -872,58 +732,30 @@ public class UITextField extends UIControl implements UITextInput, NSCoding {
     @Selector("setBaseWritingDirection:forRange:")
     public native void setBaseWritingDirectionForRange(@NInt long writingDirection, UITextRange range);
 
-    /**
-     * borderStyle</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITextField_Class/index.html#//apple_ref/occ/instp/UITextField/borderStyle">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setBorderStyle:")
     public native void setBorderStyle(@NInt long value);
 
-    /**
-     * clearButtonMode</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITextField_Class/index.html#//apple_ref/occ/instp/UITextField/clearButtonMode">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setClearButtonMode:")
     public native void setClearButtonMode(@NInt long value);
 
-    /**
-     * clearsOnBeginEditing</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITextField_Class/index.html#//apple_ref/occ/instp/UITextField/clearsOnBeginEditing">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setClearsOnBeginEditing:")
     public native void setClearsOnBeginEditing(boolean value);
 
-    /**
-     * clearsOnInsertion</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITextField_Class/index.html#//apple_ref/occ/instp/UITextField/clearsOnInsertion">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setClearsOnInsertion:")
     public native void setClearsOnInsertion(boolean value);
 
-    /**
-     * defaultTextAttributes</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITextField_Class/index.html#//apple_ref/occ/instp/UITextField/defaultTextAttributes">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setDefaultTextAttributes:")
     public native void setDefaultTextAttributes(NSDictionary<String, ?> value);
 
-    /**
-     * delegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITextField_Class/index.html#//apple_ref/occ/instp/UITextField/delegate">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setDelegate:")
     public native void setDelegate_unsafe(@Mapped(ObjCObjectMapper.class) UITextFieldDelegate value);
 
-    /**
-     * delegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITextField_Class/index.html#//apple_ref/occ/instp/UITextField/delegate">iOS Dev Center</a>
-     */
     @Generated
     public void setDelegate(@Mapped(ObjCObjectMapper.class) UITextFieldDelegate value) {
         Object __old = delegate();
@@ -936,10 +768,6 @@ public class UITextField extends UIControl implements UITextInput, NSCoding {
         }
     }
 
-    /**
-     * disabledBackground</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITextField_Class/index.html#//apple_ref/occ/instp/UITextField/disabledBackground">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setDisabledBackground:")
     public native void setDisabledBackground(UIImage value);
@@ -949,18 +777,10 @@ public class UITextField extends UIControl implements UITextInput, NSCoding {
     @Selector("setEnablesReturnKeyAutomatically:")
     public native void setEnablesReturnKeyAutomatically(boolean value);
 
-    /**
-     * font</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITextField_Class/index.html#//apple_ref/occ/instp/UITextField/font">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setFont:")
     public native void setFont(UIFont value);
 
-    /**
-     * inputAccessoryView</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITextField_Class/index.html#//apple_ref/occ/instp/UITextField/inputAccessoryView">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setInputAccessoryView:")
     public native void setInputAccessoryView(UIView value);
@@ -981,10 +801,6 @@ public class UITextField extends UIControl implements UITextInput, NSCoding {
         }
     }
 
-    /**
-     * inputView</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITextField_Class/index.html#//apple_ref/occ/instp/UITextField/inputView">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setInputView:")
     public native void setInputView(UIView value);
@@ -999,18 +815,10 @@ public class UITextField extends UIControl implements UITextInput, NSCoding {
     @Selector("setKeyboardType:")
     public native void setKeyboardType(@NInt long value);
 
-    /**
-     * leftView</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITextField_Class/index.html#//apple_ref/occ/instp/UITextField/leftView">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setLeftView:")
     public native void setLeftView(UIView value);
 
-    /**
-     * leftViewMode</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITextField_Class/index.html#//apple_ref/occ/instp/UITextField/leftViewMode">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setLeftViewMode:")
     public native void setLeftViewMode(@NInt long value);
@@ -1023,18 +831,10 @@ public class UITextField extends UIControl implements UITextInput, NSCoding {
     @Selector("setMarkedTextStyle:")
     public native void setMarkedTextStyle(NSDictionary<?, ?> value);
 
-    /**
-     * minimumFontSize</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITextField_Class/index.html#//apple_ref/occ/instp/UITextField/minimumFontSize">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setMinimumFontSize:")
     public native void setMinimumFontSize(@NFloat double value);
 
-    /**
-     * placeholder</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITextField_Class/index.html#//apple_ref/occ/instp/UITextField/placeholder">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setPlaceholder:")
     public native void setPlaceholder(String value);
@@ -1044,18 +844,10 @@ public class UITextField extends UIControl implements UITextInput, NSCoding {
     @Selector("setReturnKeyType:")
     public native void setReturnKeyType(@NInt long value);
 
-    /**
-     * rightView</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITextField_Class/index.html#//apple_ref/occ/instp/UITextField/rightView">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setRightView:")
     public native void setRightView(UIView value);
 
-    /**
-     * rightViewMode</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITextField_Class/index.html#//apple_ref/occ/instp/UITextField/rightViewMode">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setRightViewMode:")
     public native void setRightViewMode(@NInt long value);
@@ -1074,34 +866,18 @@ public class UITextField extends UIControl implements UITextInput, NSCoding {
     @Selector("setSpellCheckingType:")
     public native void setSpellCheckingType(@NInt long value);
 
-    /**
-     * text</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITextField_Class/index.html#//apple_ref/occ/instp/UITextField/text">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setText:")
     public native void setText(String value);
 
-    /**
-     * textAlignment</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITextField_Class/index.html#//apple_ref/occ/instp/UITextField/textAlignment">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setTextAlignment:")
     public native void setTextAlignment(@NInt long value);
 
-    /**
-     * textColor</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITextField_Class/index.html#//apple_ref/occ/instp/UITextField/textColor">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setTextColor:")
     public native void setTextColor(UIColor value);
 
-    /**
-     * typingAttributes</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITextField_Class/index.html#//apple_ref/occ/instp/UITextField/typingAttributes">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setTypingAttributes:")
     public native void setTypingAttributes(NSDictionary<String, ?> value);
@@ -1117,27 +893,15 @@ public class UITextField extends UIControl implements UITextInput, NSCoding {
     @NInt
     public native long spellCheckingType();
 
-    /**
-     * text</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITextField_Class/index.html#//apple_ref/occ/instp/UITextField/text">iOS Dev Center</a>
-     */
     @Generated
     @Selector("text")
     public native String text();
 
-    /**
-     * textAlignment</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITextField_Class/index.html#//apple_ref/occ/instp/UITextField/textAlignment">iOS Dev Center</a>
-     */
     @Generated
     @Selector("textAlignment")
     @NInt
     public native long textAlignment();
 
-    /**
-     * textColor</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITextField_Class/index.html#//apple_ref/occ/instp/UITextField/textColor">iOS Dev Center</a>
-     */
     @Generated
     @Selector("textColor")
     public native UIColor textColor();
@@ -1155,10 +919,6 @@ public class UITextField extends UIControl implements UITextInput, NSCoding {
     @Selector("textRangeFromPosition:toPosition:")
     public native UITextRange textRangeFromPositionToPosition(UITextPosition fromPosition, UITextPosition toPosition);
 
-    /**
-     * textRectForBounds:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITextField_Class/index.html#//apple_ref/occ/instm/UITextField/textRectForBounds:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("textRectForBounds:")
     @ByValue
@@ -1175,10 +935,6 @@ public class UITextField extends UIControl implements UITextInput, NSCoding {
     @MappedReturn(ObjCObjectMapper.class)
     public native Object tokenizer();
 
-    /**
-     * typingAttributes</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITextField_Class/index.html#//apple_ref/occ/instp/UITextField/typingAttributes">iOS Dev Center</a>
-     */
     @Generated
     @Selector("typingAttributes")
     public native NSDictionary<String, ?> typingAttributes();

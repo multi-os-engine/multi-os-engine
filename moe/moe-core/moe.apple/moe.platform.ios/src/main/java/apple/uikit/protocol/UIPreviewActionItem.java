@@ -28,10 +28,6 @@ import org.moe.natj.objc.ann.Selector;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("UIPreviewActionItem")
 public interface UIPreviewActionItem {
-    /**
-     * title</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPreviewActionItem_Protocol/index.html#//apple_ref/occ/intfp/UIPreviewActionItem/title">iOS Dev Center</a>
-     */
     @Generated
     @Selector("title")
     String title();

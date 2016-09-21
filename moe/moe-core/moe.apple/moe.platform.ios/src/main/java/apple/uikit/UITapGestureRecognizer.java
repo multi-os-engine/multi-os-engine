@@ -167,36 +167,20 @@ public class UITapGestureRecognizer extends UIGestureRecognizer {
     public native UITapGestureRecognizer initWithTargetAction(@Mapped(ObjCObjectMapper.class) Object target,
             SEL action);
 
-    /**
-     * numberOfTapsRequired</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITapGestureRecognizer_Class/index.html#//apple_ref/occ/instp/UITapGestureRecognizer/numberOfTapsRequired">iOS Dev Center</a>
-     */
     @Generated
     @Selector("numberOfTapsRequired")
     @NUInt
     public native long numberOfTapsRequired();
 
-    /**
-     * numberOfTouchesRequired</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITapGestureRecognizer_Class/index.html#//apple_ref/occ/instp/UITapGestureRecognizer/numberOfTouchesRequired">iOS Dev Center</a>
-     */
     @Generated
     @Selector("numberOfTouchesRequired")
     @NUInt
     public native long numberOfTouchesRequired();
 
-    /**
-     * numberOfTapsRequired</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITapGestureRecognizer_Class/index.html#//apple_ref/occ/instp/UITapGestureRecognizer/numberOfTapsRequired">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setNumberOfTapsRequired:")
     public native void setNumberOfTapsRequired(@NUInt long value);
 
-    /**
-     * numberOfTouchesRequired</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITapGestureRecognizer_Class/index.html#//apple_ref/occ/instp/UITapGestureRecognizer/numberOfTouchesRequired">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setNumberOfTouchesRequired:")
     public native void setNumberOfTouchesRequired(@NUInt long value);

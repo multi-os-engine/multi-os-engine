@@ -35,35 +35,19 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("GKGameModel")
 public interface GKGameModel extends NSCopying {
-    /**
-     * activePlayer</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameplayKit/Reference/GKGameModel_Protocol/index.html#//apple_ref/occ/intfp/GKGameModel/activePlayer">iOS Dev Center</a>
-     */
     @Generated
     @Selector("activePlayer")
     @MappedReturn(ObjCObjectMapper.class)
     Object activePlayer();
 
-    /**
-     * applyGameModelUpdate:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameplayKit/Reference/GKGameModel_Protocol/index.html#//apple_ref/occ/intfm/GKGameModel/applyGameModelUpdate:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("applyGameModelUpdate:")
     void applyGameModelUpdate(@Mapped(ObjCObjectMapper.class) Object gameModelUpdate);
 
-    /**
-     * gameModelUpdatesForPlayer:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameplayKit/Reference/GKGameModel_Protocol/index.html#//apple_ref/occ/intfm/GKGameModel/gameModelUpdatesForPlayer:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("gameModelUpdatesForPlayer:")
     NSArray<?> gameModelUpdatesForPlayer(@Mapped(ObjCObjectMapper.class) Object player);
 
-    /**
-     * isLossForPlayer:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameplayKit/Reference/GKGameModel_Protocol/index.html#//apple_ref/occ/intfm/GKGameModel/isLossForPlayer:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("isLossForPlayer:")
@@ -71,10 +55,6 @@ public interface GKGameModel extends NSCopying {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * isWinForPlayer:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameplayKit/Reference/GKGameModel_Protocol/index.html#//apple_ref/occ/intfm/GKGameModel/isWinForPlayer:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("isWinForPlayer:")
@@ -82,18 +62,10 @@ public interface GKGameModel extends NSCopying {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * players</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameplayKit/Reference/GKGameModel_Protocol/index.html#//apple_ref/occ/intfp/GKGameModel/players">iOS Dev Center</a>
-     */
     @Generated
     @Selector("players")
     NSArray<?> players();
 
-    /**
-     * scoreForPlayer:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameplayKit/Reference/GKGameModel_Protocol/index.html#//apple_ref/occ/intfm/GKGameModel/scoreForPlayer:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("scoreForPlayer:")
@@ -102,10 +74,6 @@ public interface GKGameModel extends NSCopying {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * setGameModel:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameplayKit/Reference/GKGameModel_Protocol/index.html#//apple_ref/occ/intfm/GKGameModel/setGameModel:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setGameModel:")
     void setGameModel(@Mapped(ObjCObjectMapper.class) Object gameModel);

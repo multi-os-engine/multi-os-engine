@@ -55,50 +55,26 @@ public class NSCharacterSet extends NSObject implements NSCopying, NSMutableCopy
         super(peer);
     }
 
-    /**
-     * URLFragmentAllowedCharacterSet</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSCharacterSet_Class/index.html#//apple_ref/occ/clm/NSCharacterSet/URLFragmentAllowedCharacterSet">iOS Dev Center</a>
-     */
     @Generated
     @Selector("URLFragmentAllowedCharacterSet")
     public static native NSCharacterSet URLFragmentAllowedCharacterSet();
 
-    /**
-     * URLHostAllowedCharacterSet</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSCharacterSet_Class/index.html#//apple_ref/occ/clm/NSCharacterSet/URLHostAllowedCharacterSet">iOS Dev Center</a>
-     */
     @Generated
     @Selector("URLHostAllowedCharacterSet")
     public static native NSCharacterSet URLHostAllowedCharacterSet();
 
-    /**
-     * URLPasswordAllowedCharacterSet</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSCharacterSet_Class/index.html#//apple_ref/occ/clm/NSCharacterSet/URLPasswordAllowedCharacterSet">iOS Dev Center</a>
-     */
     @Generated
     @Selector("URLPasswordAllowedCharacterSet")
     public static native NSCharacterSet URLPasswordAllowedCharacterSet();
 
-    /**
-     * URLPathAllowedCharacterSet</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSCharacterSet_Class/index.html#//apple_ref/occ/clm/NSCharacterSet/URLPathAllowedCharacterSet">iOS Dev Center</a>
-     */
     @Generated
     @Selector("URLPathAllowedCharacterSet")
     public static native NSCharacterSet URLPathAllowedCharacterSet();
 
-    /**
-     * URLQueryAllowedCharacterSet</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSCharacterSet_Class/index.html#//apple_ref/occ/clm/NSCharacterSet/URLQueryAllowedCharacterSet">iOS Dev Center</a>
-     */
     @Generated
     @Selector("URLQueryAllowedCharacterSet")
     public static native NSCharacterSet URLQueryAllowedCharacterSet();
 
-    /**
-     * URLUserAllowedCharacterSet</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSCharacterSet_Class/index.html#//apple_ref/occ/clm/NSCharacterSet/URLUserAllowedCharacterSet">iOS Dev Center</a>
-     */
     @Generated
     @Selector("URLUserAllowedCharacterSet")
     public static native NSCharacterSet URLUserAllowedCharacterSet();
@@ -108,154 +84,78 @@ public class NSCharacterSet extends NSObject implements NSCopying, NSMutableCopy
     @Selector("alloc")
     public static native NSCharacterSet alloc();
 
-    /**
-     * alphanumericCharacterSet</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSCharacterSet_Class/index.html#//apple_ref/occ/clm/NSCharacterSet/alphanumericCharacterSet">iOS Dev Center</a>
-     */
     @Generated
     @Selector("alphanumericCharacterSet")
     public static native NSCharacterSet alphanumericCharacterSet();
 
-    /**
-     * capitalizedLetterCharacterSet</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSCharacterSet_Class/index.html#//apple_ref/occ/clm/NSCharacterSet/capitalizedLetterCharacterSet">iOS Dev Center</a>
-     */
     @Generated
     @Selector("capitalizedLetterCharacterSet")
     public static native NSCharacterSet capitalizedLetterCharacterSet();
 
-    /**
-     * characterSetWithBitmapRepresentation:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSCharacterSet_Class/index.html#//apple_ref/occ/clm/NSCharacterSet/characterSetWithBitmapRepresentation:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("characterSetWithBitmapRepresentation:")
     public static native NSCharacterSet characterSetWithBitmapRepresentation(NSData data);
 
-    /**
-     * characterSetWithCharactersInString:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSCharacterSet_Class/index.html#//apple_ref/occ/clm/NSCharacterSet/characterSetWithCharactersInString:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("characterSetWithCharactersInString:")
     public static native NSCharacterSet characterSetWithCharactersInString(String aString);
 
-    /**
-     * characterSetWithContentsOfFile:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSCharacterSet_Class/index.html#//apple_ref/occ/clm/NSCharacterSet/characterSetWithContentsOfFile:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("characterSetWithContentsOfFile:")
     public static native NSCharacterSet characterSetWithContentsOfFile(String fName);
 
-    /**
-     * characterSetWithRange:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSCharacterSet_Class/index.html#//apple_ref/occ/clm/NSCharacterSet/characterSetWithRange:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("characterSetWithRange:")
     public static native NSCharacterSet characterSetWithRange(@ByValue NSRange aRange);
 
-    /**
-     * controlCharacterSet</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSCharacterSet_Class/index.html#//apple_ref/occ/clm/NSCharacterSet/controlCharacterSet">iOS Dev Center</a>
-     */
     @Generated
     @Selector("controlCharacterSet")
     public static native NSCharacterSet controlCharacterSet();
 
-    /**
-     * decimalDigitCharacterSet</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSCharacterSet_Class/index.html#//apple_ref/occ/clm/NSCharacterSet/decimalDigitCharacterSet">iOS Dev Center</a>
-     */
     @Generated
     @Selector("decimalDigitCharacterSet")
     public static native NSCharacterSet decimalDigitCharacterSet();
 
-    /**
-     * decomposableCharacterSet</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSCharacterSet_Class/index.html#//apple_ref/occ/clm/NSCharacterSet/decomposableCharacterSet">iOS Dev Center</a>
-     */
     @Generated
     @Selector("decomposableCharacterSet")
     public static native NSCharacterSet decomposableCharacterSet();
 
-    /**
-     * illegalCharacterSet</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSCharacterSet_Class/index.html#//apple_ref/occ/clm/NSCharacterSet/illegalCharacterSet">iOS Dev Center</a>
-     */
     @Generated
     @Selector("illegalCharacterSet")
     public static native NSCharacterSet illegalCharacterSet();
 
-    /**
-     * letterCharacterSet</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSCharacterSet_Class/index.html#//apple_ref/occ/clm/NSCharacterSet/letterCharacterSet">iOS Dev Center</a>
-     */
     @Generated
     @Selector("letterCharacterSet")
     public static native NSCharacterSet letterCharacterSet();
 
-    /**
-     * lowercaseLetterCharacterSet</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSCharacterSet_Class/index.html#//apple_ref/occ/clm/NSCharacterSet/lowercaseLetterCharacterSet">iOS Dev Center</a>
-     */
     @Generated
     @Selector("lowercaseLetterCharacterSet")
     public static native NSCharacterSet lowercaseLetterCharacterSet();
 
-    /**
-     * newlineCharacterSet</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSCharacterSet_Class/index.html#//apple_ref/occ/clm/NSCharacterSet/newlineCharacterSet">iOS Dev Center</a>
-     */
     @Generated
     @Selector("newlineCharacterSet")
     public static native NSCharacterSet newlineCharacterSet();
 
-    /**
-     * nonBaseCharacterSet</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSCharacterSet_Class/index.html#//apple_ref/occ/clm/NSCharacterSet/nonBaseCharacterSet">iOS Dev Center</a>
-     */
     @Generated
     @Selector("nonBaseCharacterSet")
     public static native NSCharacterSet nonBaseCharacterSet();
 
-    /**
-     * punctuationCharacterSet</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSCharacterSet_Class/index.html#//apple_ref/occ/clm/NSCharacterSet/punctuationCharacterSet">iOS Dev Center</a>
-     */
     @Generated
     @Selector("punctuationCharacterSet")
     public static native NSCharacterSet punctuationCharacterSet();
 
-    /**
-     * symbolCharacterSet</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSCharacterSet_Class/index.html#//apple_ref/occ/clm/NSCharacterSet/symbolCharacterSet">iOS Dev Center</a>
-     */
     @Generated
     @Selector("symbolCharacterSet")
     public static native NSCharacterSet symbolCharacterSet();
 
-    /**
-     * uppercaseLetterCharacterSet</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSCharacterSet_Class/index.html#//apple_ref/occ/clm/NSCharacterSet/uppercaseLetterCharacterSet">iOS Dev Center</a>
-     */
     @Generated
     @Selector("uppercaseLetterCharacterSet")
     public static native NSCharacterSet uppercaseLetterCharacterSet();
 
-    /**
-     * whitespaceAndNewlineCharacterSet</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSCharacterSet_Class/index.html#//apple_ref/occ/clm/NSCharacterSet/whitespaceAndNewlineCharacterSet">iOS Dev Center</a>
-     */
     @Generated
     @Selector("whitespaceAndNewlineCharacterSet")
     public static native NSCharacterSet whitespaceAndNewlineCharacterSet();
 
-    /**
-     * whitespaceCharacterSet</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSCharacterSet_Class/index.html#//apple_ref/occ/clm/NSCharacterSet/whitespaceCharacterSet">iOS Dev Center</a>
-     */
     @Generated
     @Selector("whitespaceCharacterSet")
     public static native NSCharacterSet whitespaceCharacterSet();
@@ -360,18 +260,10 @@ public class NSCharacterSet extends NSObject implements NSCopying, NSMutableCopy
     @NInt
     public static native long version_static();
 
-    /**
-     * bitmapRepresentation</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSCharacterSet_Class/index.html#//apple_ref/occ/instp/NSCharacterSet/bitmapRepresentation">iOS Dev Center</a>
-     */
     @Generated
     @Selector("bitmapRepresentation")
     public native NSData bitmapRepresentation();
 
-    /**
-     * characterIsMember:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSCharacterSet_Class/index.html#//apple_ref/occ/instm/NSCharacterSet/characterIsMember:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("characterIsMember:")
     public native boolean characterIsMember(char aCharacter);
@@ -386,10 +278,6 @@ public class NSCharacterSet extends NSObject implements NSCopying, NSMutableCopy
     @Selector("encodeWithCoder:")
     public native void encodeWithCoder(NSCoder aCoder);
 
-    /**
-     * hasMemberInPlane:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSCharacterSet_Class/index.html#//apple_ref/occ/instm/NSCharacterSet/hasMemberInPlane:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("hasMemberInPlane:")
     public native boolean hasMemberInPlane(byte thePlane);
@@ -402,26 +290,14 @@ public class NSCharacterSet extends NSObject implements NSCopying, NSMutableCopy
     @Selector("initWithCoder:")
     public native NSCharacterSet initWithCoder(NSCoder aDecoder);
 
-    /**
-     * invertedSet</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSCharacterSet_Class/index.html#//apple_ref/occ/instp/NSCharacterSet/invertedSet">iOS Dev Center</a>
-     */
     @Generated
     @Selector("invertedSet")
     public native NSCharacterSet invertedSet();
 
-    /**
-     * isSupersetOfSet:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSCharacterSet_Class/index.html#//apple_ref/occ/instm/NSCharacterSet/isSupersetOfSet:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("isSupersetOfSet:")
     public native boolean isSupersetOfSet(NSCharacterSet theOtherSet);
 
-    /**
-     * longCharacterIsMember:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSCharacterSet_Class/index.html#//apple_ref/occ/instm/NSCharacterSet/longCharacterIsMember:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("longCharacterIsMember:")
     public native boolean longCharacterIsMember(int theLongChar);

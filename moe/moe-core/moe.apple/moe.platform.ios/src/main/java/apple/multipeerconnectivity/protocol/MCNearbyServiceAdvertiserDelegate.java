@@ -35,10 +35,6 @@ import org.moe.natj.objc.ann.Selector;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("MCNearbyServiceAdvertiserDelegate")
 public interface MCNearbyServiceAdvertiserDelegate {
-    /**
-     * advertiser:didNotStartAdvertisingPeer:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MultipeerConnectivity/Reference/MCNearbyServiceAdvertiserDelegateProtocolRef/index.html#//apple_ref/occ/intfm/MCNearbyServiceAdvertiserDelegate/advertiser:didNotStartAdvertisingPeer:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("advertiser:didNotStartAdvertisingPeer:")
@@ -46,10 +42,6 @@ public interface MCNearbyServiceAdvertiserDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * advertiser:didReceiveInvitationFromPeer:withContext:invitationHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MultipeerConnectivity/Reference/MCNearbyServiceAdvertiserDelegateProtocolRef/index.html#//apple_ref/occ/intfm/MCNearbyServiceAdvertiserDelegate/advertiser:didReceiveInvitationFromPeer:withContext:invitationHandler:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("advertiser:didReceiveInvitationFromPeer:withContext:invitationHandler:")
     void advertiserDidReceiveInvitationFromPeerWithContextInvitationHandler(MCNearbyServiceAdvertiser advertiser,

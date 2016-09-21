@@ -35,161 +35,85 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("MTLCommandBuffer")
 public interface MTLCommandBuffer {
-    /**
-     * addCompletedHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Metal/Reference/MTLCommandBuffer_Ref/index.html#//apple_ref/occ/intfm/MTLCommandBuffer/addCompletedHandler:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("addCompletedHandler:")
     void addCompletedHandler(@ObjCBlock(name = "call_addCompletedHandler") Block_addCompletedHandler block);
 
-    /**
-     * addScheduledHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Metal/Reference/MTLCommandBuffer_Ref/index.html#//apple_ref/occ/intfm/MTLCommandBuffer/addScheduledHandler:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("addScheduledHandler:")
     void addScheduledHandler(@ObjCBlock(name = "call_addScheduledHandler") Block_addScheduledHandler block);
 
-    /**
-     * blitCommandEncoder</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Metal/Reference/MTLCommandBuffer_Ref/index.html#//apple_ref/occ/intfm/MTLCommandBuffer/blitCommandEncoder">iOS Dev Center</a>
-     */
     @Generated
     @Selector("blitCommandEncoder")
     @MappedReturn(ObjCObjectMapper.class)
     Object blitCommandEncoder();
 
-    /**
-     * commandQueue</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Metal/Reference/MTLCommandBuffer_Ref/index.html#//apple_ref/occ/intfp/MTLCommandBuffer/commandQueue">iOS Dev Center</a>
-     */
     @Generated
     @Selector("commandQueue")
     @MappedReturn(ObjCObjectMapper.class)
     Object commandQueue();
 
-    /**
-     * commit</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Metal/Reference/MTLCommandBuffer_Ref/index.html#//apple_ref/occ/intfm/MTLCommandBuffer/commit">iOS Dev Center</a>
-     */
     @Generated
     @Selector("commit")
     void commit();
 
-    /**
-     * computeCommandEncoder</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Metal/Reference/MTLCommandBuffer_Ref/index.html#//apple_ref/occ/intfm/MTLCommandBuffer/computeCommandEncoder">iOS Dev Center</a>
-     */
     @Generated
     @Selector("computeCommandEncoder")
     @MappedReturn(ObjCObjectMapper.class)
     Object computeCommandEncoder();
 
-    /**
-     * device</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Metal/Reference/MTLCommandBuffer_Ref/index.html#//apple_ref/occ/intfp/MTLCommandBuffer/device">iOS Dev Center</a>
-     */
     @Generated
     @Selector("device")
     @MappedReturn(ObjCObjectMapper.class)
     Object device();
 
-    /**
-     * enqueue</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Metal/Reference/MTLCommandBuffer_Ref/index.html#//apple_ref/occ/intfm/MTLCommandBuffer/enqueue">iOS Dev Center</a>
-     */
     @Generated
     @Selector("enqueue")
     void enqueue();
 
-    /**
-     * error</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Metal/Reference/MTLCommandBuffer_Ref/index.html#//apple_ref/occ/intfp/MTLCommandBuffer/error">iOS Dev Center</a>
-     */
     @Generated
     @Selector("error")
     NSError error();
 
-    /**
-     * label</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Metal/Reference/MTLCommandBuffer_Ref/index.html#//apple_ref/occ/intfp/MTLCommandBuffer/label">iOS Dev Center</a>
-     */
     @Generated
     @Selector("label")
     String label();
 
-    /**
-     * parallelRenderCommandEncoderWithDescriptor:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Metal/Reference/MTLCommandBuffer_Ref/index.html#//apple_ref/occ/intfm/MTLCommandBuffer/parallelRenderCommandEncoderWithDescriptor:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("parallelRenderCommandEncoderWithDescriptor:")
     @MappedReturn(ObjCObjectMapper.class)
     Object parallelRenderCommandEncoderWithDescriptor(MTLRenderPassDescriptor renderPassDescriptor);
 
-    /**
-     * presentDrawable:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Metal/Reference/MTLCommandBuffer_Ref/index.html#//apple_ref/occ/intfm/MTLCommandBuffer/presentDrawable:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("presentDrawable:")
     void presentDrawable(@Mapped(ObjCObjectMapper.class) Object drawable);
 
-    /**
-     * presentDrawable:atTime:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Metal/Reference/MTLCommandBuffer_Ref/index.html#//apple_ref/occ/intfm/MTLCommandBuffer/presentDrawable:atTime:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("presentDrawable:atTime:")
     void presentDrawableAtTime(@Mapped(ObjCObjectMapper.class) Object drawable, double presentationTime);
 
-    /**
-     * renderCommandEncoderWithDescriptor:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Metal/Reference/MTLCommandBuffer_Ref/index.html#//apple_ref/occ/intfm/MTLCommandBuffer/renderCommandEncoderWithDescriptor:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("renderCommandEncoderWithDescriptor:")
     @MappedReturn(ObjCObjectMapper.class)
     Object renderCommandEncoderWithDescriptor(MTLRenderPassDescriptor renderPassDescriptor);
 
-    /**
-     * retainedReferences</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Metal/Reference/MTLCommandBuffer_Ref/index.html#//apple_ref/occ/intfp/MTLCommandBuffer/retainedReferences">iOS Dev Center</a>
-     */
     @Generated
     @Selector("retainedReferences")
     boolean retainedReferences();
 
-    /**
-     * label</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Metal/Reference/MTLCommandBuffer_Ref/index.html#//apple_ref/occ/intfp/MTLCommandBuffer/label">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setLabel:")
     void setLabel(String value);
 
-    /**
-     * status</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Metal/Reference/MTLCommandBuffer_Ref/index.html#//apple_ref/occ/intfp/MTLCommandBuffer/status">iOS Dev Center</a>
-     */
     @Generated
     @Selector("status")
     @NUInt
     long status();
 
-    /**
-     * waitUntilCompleted</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Metal/Reference/MTLCommandBuffer_Ref/index.html#//apple_ref/occ/intfm/MTLCommandBuffer/waitUntilCompleted">iOS Dev Center</a>
-     */
     @Generated
     @Selector("waitUntilCompleted")
     void waitUntilCompleted();
 
-    /**
-     * waitUntilScheduled</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Metal/Reference/MTLCommandBuffer_Ref/index.html#//apple_ref/occ/intfm/MTLCommandBuffer/waitUntilScheduled">iOS Dev Center</a>
-     */
     @Generated
     @Selector("waitUntilScheduled")
     void waitUntilScheduled();

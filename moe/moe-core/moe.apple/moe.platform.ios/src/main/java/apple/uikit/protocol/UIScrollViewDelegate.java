@@ -34,10 +34,6 @@ import org.moe.natj.objc.ann.Selector;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("UIScrollViewDelegate")
 public interface UIScrollViewDelegate {
-    /**
-     * scrollViewDidEndDecelerating:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIScrollViewDelegate_Protocol/index.html#//apple_ref/occ/intfm/UIScrollViewDelegate/scrollViewDidEndDecelerating:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("scrollViewDidEndDecelerating:")
@@ -45,10 +41,6 @@ public interface UIScrollViewDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * scrollViewDidEndDragging:willDecelerate:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIScrollViewDelegate_Protocol/index.html#//apple_ref/occ/intfm/UIScrollViewDelegate/scrollViewDidEndDragging:willDecelerate:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("scrollViewDidEndDragging:willDecelerate:")
@@ -56,10 +48,6 @@ public interface UIScrollViewDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * scrollViewDidEndScrollingAnimation:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIScrollViewDelegate_Protocol/index.html#//apple_ref/occ/intfm/UIScrollViewDelegate/scrollViewDidEndScrollingAnimation:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("scrollViewDidEndScrollingAnimation:")
@@ -67,10 +55,6 @@ public interface UIScrollViewDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * scrollViewDidEndZooming:withView:atScale:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIScrollViewDelegate_Protocol/index.html#//apple_ref/occ/intfm/UIScrollViewDelegate/scrollViewDidEndZooming:withView:atScale:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("scrollViewDidEndZooming:withView:atScale:")
@@ -78,10 +62,6 @@ public interface UIScrollViewDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * scrollViewDidScroll:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIScrollViewDelegate_Protocol/index.html#//apple_ref/occ/intfm/UIScrollViewDelegate/scrollViewDidScroll:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("scrollViewDidScroll:")
@@ -89,10 +69,6 @@ public interface UIScrollViewDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * scrollViewDidScrollToTop:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIScrollViewDelegate_Protocol/index.html#//apple_ref/occ/intfm/UIScrollViewDelegate/scrollViewDidScrollToTop:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("scrollViewDidScrollToTop:")
@@ -100,10 +76,6 @@ public interface UIScrollViewDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * scrollViewDidZoom:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIScrollViewDelegate_Protocol/index.html#//apple_ref/occ/intfm/UIScrollViewDelegate/scrollViewDidZoom:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("scrollViewDidZoom:")
@@ -111,10 +83,6 @@ public interface UIScrollViewDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * scrollViewShouldScrollToTop:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIScrollViewDelegate_Protocol/index.html#//apple_ref/occ/intfm/UIScrollViewDelegate/scrollViewShouldScrollToTop:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("scrollViewShouldScrollToTop:")
@@ -122,10 +90,6 @@ public interface UIScrollViewDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * scrollViewWillBeginDecelerating:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIScrollViewDelegate_Protocol/index.html#//apple_ref/occ/intfm/UIScrollViewDelegate/scrollViewWillBeginDecelerating:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("scrollViewWillBeginDecelerating:")
@@ -133,10 +97,6 @@ public interface UIScrollViewDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * scrollViewWillBeginDragging:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIScrollViewDelegate_Protocol/index.html#//apple_ref/occ/intfm/UIScrollViewDelegate/scrollViewWillBeginDragging:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("scrollViewWillBeginDragging:")
@@ -144,10 +104,6 @@ public interface UIScrollViewDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * scrollViewWillBeginZooming:withView:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIScrollViewDelegate_Protocol/index.html#//apple_ref/occ/intfm/UIScrollViewDelegate/scrollViewWillBeginZooming:withView:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("scrollViewWillBeginZooming:withView:")
@@ -155,10 +111,6 @@ public interface UIScrollViewDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * scrollViewWillEndDragging:withVelocity:targetContentOffset:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIScrollViewDelegate_Protocol/index.html#//apple_ref/occ/intfm/UIScrollViewDelegate/scrollViewWillEndDragging:withVelocity:targetContentOffset:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("scrollViewWillEndDragging:withVelocity:targetContentOffset:")
@@ -167,10 +119,6 @@ public interface UIScrollViewDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * viewForZoomingInScrollView:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIScrollViewDelegate_Protocol/index.html#//apple_ref/occ/intfm/UIScrollViewDelegate/viewForZoomingInScrollView:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("viewForZoomingInScrollView:")

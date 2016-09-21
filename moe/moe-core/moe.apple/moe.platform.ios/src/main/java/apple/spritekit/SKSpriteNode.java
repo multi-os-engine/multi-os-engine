@@ -74,50 +74,26 @@ public class SKSpriteNode extends SKNode {
     @Selector("nodeWithFileNamed:")
     public static native SKSpriteNode nodeWithFileNamed(String filename);
 
-    /**
-     * spriteNodeWithColor:size:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKSpriteNode_Ref/index.html#//apple_ref/occ/clm/SKSpriteNode/spriteNodeWithColor:size:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("spriteNodeWithColor:size:")
     public static native SKSpriteNode spriteNodeWithColorSize(UIColor color, @ByValue CGSize size);
 
-    /**
-     * spriteNodeWithImageNamed:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKSpriteNode_Ref/index.html#//apple_ref/occ/clm/SKSpriteNode/spriteNodeWithImageNamed:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("spriteNodeWithImageNamed:")
     public static native SKSpriteNode spriteNodeWithImageNamed(String name);
 
-    /**
-     * spriteNodeWithImageNamed:normalMapped:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKSpriteNode_Ref/index.html#//apple_ref/occ/clm/SKSpriteNode/spriteNodeWithImageNamed:normalMapped:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("spriteNodeWithImageNamed:normalMapped:")
     public static native SKSpriteNode spriteNodeWithImageNamedNormalMapped(String name, boolean generateNormalMap);
 
-    /**
-     * spriteNodeWithTexture:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKSpriteNode_Ref/index.html#//apple_ref/occ/clm/SKSpriteNode/spriteNodeWithTexture:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("spriteNodeWithTexture:")
     public static native SKSpriteNode spriteNodeWithTexture(SKTexture texture);
 
-    /**
-     * spriteNodeWithTexture:normalMap:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKSpriteNode_Ref/index.html#//apple_ref/occ/clm/SKSpriteNode/spriteNodeWithTexture:normalMap:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("spriteNodeWithTexture:normalMap:")
     public static native SKSpriteNode spriteNodeWithTextureNormalMap(SKTexture texture, SKTexture normalMap);
 
-    /**
-     * spriteNodeWithTexture:size:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKSpriteNode_Ref/index.html#//apple_ref/occ/clm/SKSpriteNode/spriteNodeWithTexture:size:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("spriteNodeWithTexture:size:")
     public static native SKSpriteNode spriteNodeWithTextureSize(SKTexture texture, @ByValue CGSize size);
@@ -240,45 +216,25 @@ public class SKSpriteNode extends SKNode {
     @NInt
     public static native long version_static();
 
-    /**
-     * anchorPoint</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKSpriteNode_Ref/index.html#//apple_ref/occ/instp/SKSpriteNode/anchorPoint">iOS Dev Center</a>
-     */
     @Generated
     @Selector("anchorPoint")
     @ByValue
     public native CGPoint anchorPoint();
 
-    /**
-     * blendMode</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKSpriteNode_Ref/index.html#//apple_ref/occ/instp/SKSpriteNode/blendMode">iOS Dev Center</a>
-     */
     @Generated
     @Selector("blendMode")
     @NInt
     public native long blendMode();
 
-    /**
-     * centerRect</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKSpriteNode_Ref/index.html#//apple_ref/occ/instp/SKSpriteNode/centerRect">iOS Dev Center</a>
-     */
     @Generated
     @Selector("centerRect")
     @ByValue
     public native CGRect centerRect();
 
-    /**
-     * color</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKSpriteNode_Ref/index.html#//apple_ref/occ/instp/SKSpriteNode/color">iOS Dev Center</a>
-     */
     @Generated
     @Selector("color")
     public native UIColor color();
 
-    /**
-     * colorBlendFactor</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKSpriteNode_Ref/index.html#//apple_ref/occ/instp/SKSpriteNode/colorBlendFactor">iOS Dev Center</a>
-     */
     @Generated
     @Selector("colorBlendFactor")
     @NFloat
@@ -292,187 +248,95 @@ public class SKSpriteNode extends SKNode {
     @Selector("initWithCoder:")
     public native SKSpriteNode initWithCoder(NSCoder aDecoder);
 
-    /**
-     * initWithColor:size:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKSpriteNode_Ref/index.html#//apple_ref/occ/instm/SKSpriteNode/initWithColor:size:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithColor:size:")
     public native SKSpriteNode initWithColorSize(UIColor color, @ByValue CGSize size);
 
-    /**
-     * initWithImageNamed:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKSpriteNode_Ref/index.html#//apple_ref/occ/instm/SKSpriteNode/initWithImageNamed:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithImageNamed:")
     public native SKSpriteNode initWithImageNamed(String name);
 
-    /**
-     * initWithTexture:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKSpriteNode_Ref/index.html#//apple_ref/occ/instm/SKSpriteNode/initWithTexture:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithTexture:")
     public native SKSpriteNode initWithTexture(SKTexture texture);
 
-    /**
-     * initWithTexture:color:size:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKSpriteNode_Ref/index.html#//apple_ref/occ/instm/SKSpriteNode/initWithTexture:color:size:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithTexture:color:size:")
     public native SKSpriteNode initWithTextureColorSize(SKTexture texture, UIColor color, @ByValue CGSize size);
 
-    /**
-     * lightingBitMask</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKSpriteNode_Ref/index.html#//apple_ref/occ/instp/SKSpriteNode/lightingBitMask">iOS Dev Center</a>
-     */
     @Generated
     @Selector("lightingBitMask")
     public native int lightingBitMask();
 
-    /**
-     * normalTexture</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKSpriteNode_Ref/index.html#//apple_ref/occ/instp/SKSpriteNode/normalTexture">iOS Dev Center</a>
-     */
     @Generated
     @Selector("normalTexture")
     public native SKTexture normalTexture();
 
-    /**
-     * anchorPoint</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKSpriteNode_Ref/index.html#//apple_ref/occ/instp/SKSpriteNode/anchorPoint">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setAnchorPoint:")
     public native void setAnchorPoint(@ByValue CGPoint value);
 
-    /**
-     * blendMode</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKSpriteNode_Ref/index.html#//apple_ref/occ/instp/SKSpriteNode/blendMode">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setBlendMode:")
     public native void setBlendMode(@NInt long value);
 
-    /**
-     * centerRect</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKSpriteNode_Ref/index.html#//apple_ref/occ/instp/SKSpriteNode/centerRect">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setCenterRect:")
     public native void setCenterRect(@ByValue CGRect value);
 
-    /**
-     * color</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKSpriteNode_Ref/index.html#//apple_ref/occ/instp/SKSpriteNode/color">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setColor:")
     public native void setColor(UIColor value);
 
-    /**
-     * colorBlendFactor</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKSpriteNode_Ref/index.html#//apple_ref/occ/instp/SKSpriteNode/colorBlendFactor">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setColorBlendFactor:")
     public native void setColorBlendFactor(@NFloat double value);
 
-    /**
-     * lightingBitMask</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKSpriteNode_Ref/index.html#//apple_ref/occ/instp/SKSpriteNode/lightingBitMask">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setLightingBitMask:")
     public native void setLightingBitMask(int value);
 
-    /**
-     * normalTexture</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKSpriteNode_Ref/index.html#//apple_ref/occ/instp/SKSpriteNode/normalTexture">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setNormalTexture:")
     public native void setNormalTexture(SKTexture value);
 
-    /**
-     * shader</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKSpriteNode_Ref/index.html#//apple_ref/occ/instp/SKSpriteNode/shader">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setShader:")
     public native void setShader(SKShader value);
 
-    /**
-     * shadowCastBitMask</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKSpriteNode_Ref/index.html#//apple_ref/occ/instp/SKSpriteNode/shadowCastBitMask">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setShadowCastBitMask:")
     public native void setShadowCastBitMask(int value);
 
-    /**
-     * shadowedBitMask</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKSpriteNode_Ref/index.html#//apple_ref/occ/instp/SKSpriteNode/shadowedBitMask">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setShadowedBitMask:")
     public native void setShadowedBitMask(int value);
 
-    /**
-     * size</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKSpriteNode_Ref/index.html#//apple_ref/occ/instp/SKSpriteNode/size">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setSize:")
     public native void setSize(@ByValue CGSize value);
 
-    /**
-     * texture</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKSpriteNode_Ref/index.html#//apple_ref/occ/instp/SKSpriteNode/texture">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setTexture:")
     public native void setTexture(SKTexture value);
 
-    /**
-     * shader</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKSpriteNode_Ref/index.html#//apple_ref/occ/instp/SKSpriteNode/shader">iOS Dev Center</a>
-     */
     @Generated
     @Selector("shader")
     public native SKShader shader();
 
-    /**
-     * shadowCastBitMask</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKSpriteNode_Ref/index.html#//apple_ref/occ/instp/SKSpriteNode/shadowCastBitMask">iOS Dev Center</a>
-     */
     @Generated
     @Selector("shadowCastBitMask")
     public native int shadowCastBitMask();
 
-    /**
-     * shadowedBitMask</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKSpriteNode_Ref/index.html#//apple_ref/occ/instp/SKSpriteNode/shadowedBitMask">iOS Dev Center</a>
-     */
     @Generated
     @Selector("shadowedBitMask")
     public native int shadowedBitMask();
 
-    /**
-     * size</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKSpriteNode_Ref/index.html#//apple_ref/occ/instp/SKSpriteNode/size">iOS Dev Center</a>
-     */
     @Generated
     @Selector("size")
     @ByValue
     public native CGSize size();
 
-    /**
-     * texture</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKSpriteNode_Ref/index.html#//apple_ref/occ/instp/SKSpriteNode/texture">iOS Dev Center</a>
-     */
     @Generated
     @Selector("texture")
     public native SKTexture texture();

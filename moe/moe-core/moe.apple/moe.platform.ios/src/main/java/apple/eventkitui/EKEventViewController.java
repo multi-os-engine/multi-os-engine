@@ -175,35 +175,19 @@ public class EKEventViewController extends UIViewController {
     @NInt
     public static native long version_static();
 
-    /**
-     * allowsCalendarPreview</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/EventKitUI/Reference/EKEventViewControllerClassRef/index.html#//apple_ref/occ/instp/EKEventViewController/allowsCalendarPreview">iOS Dev Center</a>
-     */
     @Generated
     @Selector("allowsCalendarPreview")
     public native boolean allowsCalendarPreview();
 
-    /**
-     * allowsEditing</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/EventKitUI/Reference/EKEventViewControllerClassRef/index.html#//apple_ref/occ/instp/EKEventViewController/allowsEditing">iOS Dev Center</a>
-     */
     @Generated
     @Selector("allowsEditing")
     public native boolean allowsEditing();
 
-    /**
-     * delegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/EventKitUI/Reference/EKEventViewControllerClassRef/index.html#//apple_ref/occ/instp/EKEventViewController/delegate">iOS Dev Center</a>
-     */
     @Generated
     @Selector("delegate")
     @MappedReturn(ObjCObjectMapper.class)
     public native EKEventViewDelegate delegate();
 
-    /**
-     * event</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/EventKitUI/Reference/EKEventViewControllerClassRef/index.html#//apple_ref/occ/instp/EKEventViewController/event">iOS Dev Center</a>
-     */
     @Generated
     @Selector("event")
     public native EKEvent event();
@@ -216,34 +200,18 @@ public class EKEventViewController extends UIViewController {
     @Selector("initWithNibName:bundle:")
     public native EKEventViewController initWithNibNameBundle(String nibNameOrNil, NSBundle nibBundleOrNil);
 
-    /**
-     * allowsCalendarPreview</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/EventKitUI/Reference/EKEventViewControllerClassRef/index.html#//apple_ref/occ/instp/EKEventViewController/allowsCalendarPreview">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setAllowsCalendarPreview:")
     public native void setAllowsCalendarPreview(boolean value);
 
-    /**
-     * allowsEditing</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/EventKitUI/Reference/EKEventViewControllerClassRef/index.html#//apple_ref/occ/instp/EKEventViewController/allowsEditing">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setAllowsEditing:")
     public native void setAllowsEditing(boolean value);
 
-    /**
-     * delegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/EventKitUI/Reference/EKEventViewControllerClassRef/index.html#//apple_ref/occ/instp/EKEventViewController/delegate">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setDelegate:")
     public native void setDelegate_unsafe(@Mapped(ObjCObjectMapper.class) EKEventViewDelegate value);
 
-    /**
-     * delegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/EventKitUI/Reference/EKEventViewControllerClassRef/index.html#//apple_ref/occ/instp/EKEventViewController/delegate">iOS Dev Center</a>
-     */
     @Generated
     public void setDelegate(@Mapped(ObjCObjectMapper.class) EKEventViewDelegate value) {
         Object __old = delegate();
@@ -256,10 +224,6 @@ public class EKEventViewController extends UIViewController {
         }
     }
 
-    /**
-     * event</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/EventKitUI/Reference/EKEventViewControllerClassRef/index.html#//apple_ref/occ/instp/EKEventViewController/event">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setEvent:")
     public native void setEvent(EKEvent value);

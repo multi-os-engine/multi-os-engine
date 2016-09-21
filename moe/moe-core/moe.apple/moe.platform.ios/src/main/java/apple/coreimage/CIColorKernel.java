@@ -60,10 +60,6 @@ public class CIColorKernel extends CIKernel {
     @Selector("alloc")
     public static native CIColorKernel alloc();
 
-    /**
-     * kernelWithString:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreImage/Reference/CIColorKernel_Class/index.html#//apple_ref/occ/clm/CIColorKernel/kernelWithString:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("kernelWithString:")
     public static native CIColorKernel kernelWithString(String string);
@@ -172,10 +168,6 @@ public class CIColorKernel extends CIKernel {
     @NInt
     public static native long version();
 
-    /**
-     * applyWithExtent:arguments:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreImage/Reference/CIColorKernel_Class/index.html#//apple_ref/occ/instm/CIColorKernel/applyWithExtent:arguments:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("applyWithExtent:arguments:")
     public native CIImage applyWithExtentArguments(@ByValue CGRect extent, NSArray<?> args);

@@ -162,27 +162,15 @@ public class AVMediaSelectionOption extends NSObject implements NSCopying {
     @NInt
     public static native long version_static();
 
-    /**
-     * associatedMediaSelectionOptionInMediaSelectionGroup:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVMediaSelectionOption_Class/index.html#//apple_ref/occ/instm/AVMediaSelectionOption/associatedMediaSelectionOptionInMediaSelectionGroup:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("associatedMediaSelectionOptionInMediaSelectionGroup:")
     public native AVMediaSelectionOption associatedMediaSelectionOptionInMediaSelectionGroup(
             AVMediaSelectionGroup mediaSelectionGroup);
 
-    /**
-     * availableMetadataFormats</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVMediaSelectionOption_Class/index.html#//apple_ref/occ/instp/AVMediaSelectionOption/availableMetadataFormats">iOS Dev Center</a>
-     */
     @Generated
     @Selector("availableMetadataFormats")
     public native NSArray<String> availableMetadataFormats();
 
-    /**
-     * commonMetadata</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVMediaSelectionOption_Class/index.html#//apple_ref/occ/instp/AVMediaSelectionOption/commonMetadata">iOS Dev Center</a>
-     */
     @Generated
     @Selector("commonMetadata")
     public native NSArray<? extends AVMetadataItem> commonMetadata();
@@ -193,34 +181,18 @@ public class AVMediaSelectionOption extends NSObject implements NSCopying {
     @MappedReturn(ObjCObjectMapper.class)
     public native Object copyWithZone(VoidPtr zone);
 
-    /**
-     * displayName</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVMediaSelectionOption_Class/index.html#//apple_ref/occ/instp/AVMediaSelectionOption/displayName">iOS Dev Center</a>
-     */
     @Generated
     @Selector("displayName")
     public native String displayName();
 
-    /**
-     * displayNameWithLocale:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVMediaSelectionOption_Class/index.html#//apple_ref/occ/instm/AVMediaSelectionOption/displayNameWithLocale:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("displayNameWithLocale:")
     public native String displayNameWithLocale(NSLocale locale);
 
-    /**
-     * extendedLanguageTag</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVMediaSelectionOption_Class/index.html#//apple_ref/occ/instp/AVMediaSelectionOption/extendedLanguageTag">iOS Dev Center</a>
-     */
     @Generated
     @Selector("extendedLanguageTag")
     public native String extendedLanguageTag();
 
-    /**
-     * hasMediaCharacteristic:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVMediaSelectionOption_Class/index.html#//apple_ref/occ/instm/AVMediaSelectionOption/hasMediaCharacteristic:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("hasMediaCharacteristic:")
     public native boolean hasMediaCharacteristic(String mediaCharacteristic);
@@ -229,50 +201,26 @@ public class AVMediaSelectionOption extends NSObject implements NSCopying {
     @Selector("init")
     public native AVMediaSelectionOption init();
 
-    /**
-     * playable</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVMediaSelectionOption_Class/index.html#//apple_ref/occ/instp/AVMediaSelectionOption/playable">iOS Dev Center</a>
-     */
     @Generated
     @Selector("isPlayable")
     public native boolean isPlayable();
 
-    /**
-     * locale</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVMediaSelectionOption_Class/index.html#//apple_ref/occ/instp/AVMediaSelectionOption/locale">iOS Dev Center</a>
-     */
     @Generated
     @Selector("locale")
     public native NSLocale locale();
 
-    /**
-     * mediaSubTypes</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVMediaSelectionOption_Class/index.html#//apple_ref/occ/instp/AVMediaSelectionOption/mediaSubTypes">iOS Dev Center</a>
-     */
     @Generated
     @Selector("mediaSubTypes")
     public native NSArray<? extends NSNumber> mediaSubTypes();
 
-    /**
-     * mediaType</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVMediaSelectionOption_Class/index.html#//apple_ref/occ/instp/AVMediaSelectionOption/mediaType">iOS Dev Center</a>
-     */
     @Generated
     @Selector("mediaType")
     public native String mediaType();
 
-    /**
-     * metadataForFormat:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVMediaSelectionOption_Class/index.html#//apple_ref/occ/instm/AVMediaSelectionOption/metadataForFormat:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("metadataForFormat:")
     public native NSArray<? extends AVMetadataItem> metadataForFormat(String format);
 
-    /**
-     * propertyList</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVMediaSelectionOption_Class/index.html#//apple_ref/occ/instm/AVMediaSelectionOption/propertyList">iOS Dev Center</a>
-     */
     @Generated
     @Selector("propertyList")
     @MappedReturn(ObjCObjectMapper.class)

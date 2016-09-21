@@ -63,10 +63,6 @@ public class MPMediaEntity extends NSObject implements NSSecureCoding {
     @Selector("alloc")
     public static native MPMediaEntity alloc();
 
-    /**
-     * canFilterByProperty:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPMediaEntity_ClassReference/index.html#//apple_ref/occ/clm/MPMediaEntity/canFilterByProperty:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("canFilterByProperty:")
     public static native boolean canFilterByProperty(String property);
@@ -179,10 +175,6 @@ public class MPMediaEntity extends NSObject implements NSSecureCoding {
     @Selector("encodeWithCoder:")
     public native void encodeWithCoder(NSCoder aCoder);
 
-    /**
-     * enumerateValuesForProperties:usingBlock:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPMediaEntity_ClassReference/index.html#//apple_ref/occ/instm/MPMediaEntity/enumerateValuesForProperties:usingBlock:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("enumerateValuesForProperties:usingBlock:")
     public native void enumerateValuesForPropertiesUsingBlock(NSSet<String> properties,
@@ -211,10 +203,6 @@ public class MPMediaEntity extends NSObject implements NSSecureCoding {
         return supportsSecureCoding();
     }
 
-    /**
-     * valueForProperty:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPMediaEntity_ClassReference/index.html#//apple_ref/occ/instm/MPMediaEntity/valueForProperty:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("valueForProperty:")
     @MappedReturn(ObjCObjectMapper.class)

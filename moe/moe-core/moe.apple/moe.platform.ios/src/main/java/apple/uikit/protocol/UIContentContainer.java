@@ -33,54 +33,30 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("UIContentContainer")
 public interface UIContentContainer {
-    /**
-     * preferredContentSize</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIContentContainer_Ref/index.html#//apple_ref/occ/intfp/UIContentContainer/preferredContentSize">iOS Dev Center</a>
-     */
     @Generated
     @Selector("preferredContentSize")
     @ByValue
     CGSize preferredContentSize();
 
-    /**
-     * preferredContentSizeDidChangeForChildContentContainer:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIContentContainer_Ref/index.html#//apple_ref/occ/intfm/UIContentContainer/preferredContentSizeDidChangeForChildContentContainer:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("preferredContentSizeDidChangeForChildContentContainer:")
     void preferredContentSizeDidChangeForChildContentContainer(@Mapped(ObjCObjectMapper.class) Object container);
 
-    /**
-     * sizeForChildContentContainer:withParentContainerSize:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIContentContainer_Ref/index.html#//apple_ref/occ/intfm/UIContentContainer/sizeForChildContentContainer:withParentContainerSize:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("sizeForChildContentContainer:withParentContainerSize:")
     @ByValue
     CGSize sizeForChildContentContainerWithParentContainerSize(@Mapped(ObjCObjectMapper.class) Object container,
             @ByValue CGSize parentSize);
 
-    /**
-     * systemLayoutFittingSizeDidChangeForChildContentContainer:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIContentContainer_Ref/index.html#//apple_ref/occ/intfm/UIContentContainer/systemLayoutFittingSizeDidChangeForChildContentContainer:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("systemLayoutFittingSizeDidChangeForChildContentContainer:")
     void systemLayoutFittingSizeDidChangeForChildContentContainer(@Mapped(ObjCObjectMapper.class) Object container);
 
-    /**
-     * viewWillTransitionToSize:withTransitionCoordinator:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIContentContainer_Ref/index.html#//apple_ref/occ/intfm/UIContentContainer/viewWillTransitionToSize:withTransitionCoordinator:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("viewWillTransitionToSize:withTransitionCoordinator:")
     void viewWillTransitionToSizeWithTransitionCoordinator(@ByValue CGSize size,
             @Mapped(ObjCObjectMapper.class) Object coordinator);
 
-    /**
-     * willTransitionToTraitCollection:withTransitionCoordinator:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIContentContainer_Ref/index.html#//apple_ref/occ/intfm/UIContentContainer/willTransitionToTraitCollection:withTransitionCoordinator:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("willTransitionToTraitCollection:withTransitionCoordinator:")
     void willTransitionToTraitCollectionWithTransitionCoordinator(UITraitCollection newCollection,

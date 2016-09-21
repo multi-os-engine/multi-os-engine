@@ -159,10 +159,6 @@ public class GCControllerDirectionPad extends GCControllerElement {
     @NInt
     public static native long version_static();
 
-    /**
-     * down</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameController/Reference/GCControllerDirectionPad_Ref/index.html#//apple_ref/occ/instp/GCControllerDirectionPad/down">iOS Dev Center</a>
-     */
     @Generated
     @Selector("down")
     public native GCControllerButtonInput down();
@@ -171,59 +167,31 @@ public class GCControllerDirectionPad extends GCControllerElement {
     @Selector("init")
     public native GCControllerDirectionPad init();
 
-    /**
-     * left</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameController/Reference/GCControllerDirectionPad_Ref/index.html#//apple_ref/occ/instp/GCControllerDirectionPad/left">iOS Dev Center</a>
-     */
     @Generated
     @Selector("left")
     public native GCControllerButtonInput left();
 
-    /**
-     * right</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameController/Reference/GCControllerDirectionPad_Ref/index.html#//apple_ref/occ/instp/GCControllerDirectionPad/right">iOS Dev Center</a>
-     */
     @Generated
     @Selector("right")
     public native GCControllerButtonInput right();
 
-    /**
-     * valueChangedHandler</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameController/Reference/GCControllerDirectionPad_Ref/index.html#//apple_ref/occ/instp/GCControllerDirectionPad/valueChangedHandler">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setValueChangedHandler:")
     public native void setValueChangedHandler(
             @ObjCBlock(name = "call_setValueChangedHandler") Block_setValueChangedHandler value);
 
-    /**
-     * up</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameController/Reference/GCControllerDirectionPad_Ref/index.html#//apple_ref/occ/instp/GCControllerDirectionPad/up">iOS Dev Center</a>
-     */
     @Generated
     @Selector("up")
     public native GCControllerButtonInput up();
 
-    /**
-     * xAxis</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameController/Reference/GCControllerDirectionPad_Ref/index.html#//apple_ref/occ/instp/GCControllerDirectionPad/xAxis">iOS Dev Center</a>
-     */
     @Generated
     @Selector("xAxis")
     public native GCControllerAxisInput xAxis();
 
-    /**
-     * yAxis</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameController/Reference/GCControllerDirectionPad_Ref/index.html#//apple_ref/occ/instp/GCControllerDirectionPad/yAxis">iOS Dev Center</a>
-     */
     @Generated
     @Selector("yAxis")
     public native GCControllerAxisInput yAxis();
 
-    /**
-     * valueChangedHandler</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameController/Reference/GCControllerDirectionPad_Ref/index.html#//apple_ref/occ/instp/GCControllerDirectionPad/valueChangedHandler">iOS Dev Center</a>
-     */
     @Generated
     @Selector("valueChangedHandler")
     @ObjCBlock(name = "call_valueChangedHandler_ret")

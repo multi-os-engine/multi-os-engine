@@ -30,10 +30,6 @@ import org.moe.natj.objc.ann.Selector;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("SCNBufferStream")
 public interface SCNBufferStream {
-    /**
-     * writeBytes:length:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNBufferStream_Protocol/index.html#//apple_ref/occ/intfm/SCNBufferStream/writeBytes:length:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("writeBytes:length:")
     void writeBytesLength(VoidPtr bytes, @NUInt long length);

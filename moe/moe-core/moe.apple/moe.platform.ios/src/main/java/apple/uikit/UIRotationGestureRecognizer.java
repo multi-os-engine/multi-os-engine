@@ -168,27 +168,15 @@ public class UIRotationGestureRecognizer extends UIGestureRecognizer {
     public native UIRotationGestureRecognizer initWithTargetAction(@Mapped(ObjCObjectMapper.class) Object target,
             SEL action);
 
-    /**
-     * rotation</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIRotateGestureRecognizer_Class/index.html#//apple_ref/occ/instp/UIRotationGestureRecognizer/rotation">iOS Dev Center</a>
-     */
     @Generated
     @Selector("rotation")
     @NFloat
     public native double rotation();
 
-    /**
-     * rotation</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIRotateGestureRecognizer_Class/index.html#//apple_ref/occ/instp/UIRotationGestureRecognizer/rotation">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setRotation:")
     public native void setRotation(@NFloat double value);
 
-    /**
-     * velocity</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIRotateGestureRecognizer_Class/index.html#//apple_ref/occ/instp/UIRotationGestureRecognizer/velocity">iOS Dev Center</a>
-     */
     @Generated
     @Selector("velocity")
     @NFloat

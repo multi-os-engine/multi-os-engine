@@ -166,51 +166,27 @@ public class UILocalNotification extends NSObject implements NSCopying, NSCoding
     @NInt
     public static native long version_static();
 
-    /**
-     * alertAction</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/iPhone/Reference/UILocalNotification_Class/index.html#//apple_ref/occ/instp/UILocalNotification/alertAction">iOS Dev Center</a>
-     */
     @Generated
     @Selector("alertAction")
     public native String alertAction();
 
-    /**
-     * alertBody</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/iPhone/Reference/UILocalNotification_Class/index.html#//apple_ref/occ/instp/UILocalNotification/alertBody">iOS Dev Center</a>
-     */
     @Generated
     @Selector("alertBody")
     public native String alertBody();
 
-    /**
-     * alertLaunchImage</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/iPhone/Reference/UILocalNotification_Class/index.html#//apple_ref/occ/instp/UILocalNotification/alertLaunchImage">iOS Dev Center</a>
-     */
     @Generated
     @Selector("alertLaunchImage")
     public native String alertLaunchImage();
 
-    /**
-     * alertTitle</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/iPhone/Reference/UILocalNotification_Class/index.html#//apple_ref/occ/instp/UILocalNotification/alertTitle">iOS Dev Center</a>
-     */
     @Generated
     @Selector("alertTitle")
     public native String alertTitle();
 
-    /**
-     * applicationIconBadgeNumber</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/iPhone/Reference/UILocalNotification_Class/index.html#//apple_ref/occ/instp/UILocalNotification/applicationIconBadgeNumber">iOS Dev Center</a>
-     */
     @Generated
     @Selector("applicationIconBadgeNumber")
     @NInt
     public native long applicationIconBadgeNumber();
 
-    /**
-     * category</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/iPhone/Reference/UILocalNotification_Class/index.html#//apple_ref/occ/instp/UILocalNotification/category">iOS Dev Center</a>
-     */
     @Generated
     @Selector("category")
     public native String category();
@@ -225,18 +201,10 @@ public class UILocalNotification extends NSObject implements NSCopying, NSCoding
     @Selector("encodeWithCoder:")
     public native void encodeWithCoder(NSCoder aCoder);
 
-    /**
-     * fireDate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/iPhone/Reference/UILocalNotification_Class/index.html#//apple_ref/occ/instp/UILocalNotification/fireDate">iOS Dev Center</a>
-     */
     @Generated
     @Selector("fireDate")
     public native NSDate fireDate();
 
-    /**
-     * hasAction</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/iPhone/Reference/UILocalNotification_Class/index.html#//apple_ref/occ/instp/UILocalNotification/hasAction">iOS Dev Center</a>
-     */
     @Generated
     @Selector("hasAction")
     public native boolean hasAction();
@@ -249,179 +217,91 @@ public class UILocalNotification extends NSObject implements NSCopying, NSCoding
     @Selector("initWithCoder:")
     public native UILocalNotification initWithCoder(NSCoder aDecoder);
 
-    /**
-     * region</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/iPhone/Reference/UILocalNotification_Class/index.html#//apple_ref/occ/instp/UILocalNotification/region">iOS Dev Center</a>
-     */
     @Generated
     @Selector("region")
     public native CLRegion region();
 
-    /**
-     * regionTriggersOnce</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/iPhone/Reference/UILocalNotification_Class/index.html#//apple_ref/occ/instp/UILocalNotification/regionTriggersOnce">iOS Dev Center</a>
-     */
     @Generated
     @Selector("regionTriggersOnce")
     public native boolean regionTriggersOnce();
 
-    /**
-     * repeatCalendar</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/iPhone/Reference/UILocalNotification_Class/index.html#//apple_ref/occ/instp/UILocalNotification/repeatCalendar">iOS Dev Center</a>
-     */
     @Generated
     @Selector("repeatCalendar")
     public native NSCalendar repeatCalendar();
 
-    /**
-     * repeatInterval</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/iPhone/Reference/UILocalNotification_Class/index.html#//apple_ref/occ/instp/UILocalNotification/repeatInterval">iOS Dev Center</a>
-     */
     @Generated
     @Selector("repeatInterval")
     @NUInt
     public native long repeatInterval();
 
-    /**
-     * alertAction</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/iPhone/Reference/UILocalNotification_Class/index.html#//apple_ref/occ/instp/UILocalNotification/alertAction">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setAlertAction:")
     public native void setAlertAction(String value);
 
-    /**
-     * alertBody</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/iPhone/Reference/UILocalNotification_Class/index.html#//apple_ref/occ/instp/UILocalNotification/alertBody">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setAlertBody:")
     public native void setAlertBody(String value);
 
-    /**
-     * alertLaunchImage</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/iPhone/Reference/UILocalNotification_Class/index.html#//apple_ref/occ/instp/UILocalNotification/alertLaunchImage">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setAlertLaunchImage:")
     public native void setAlertLaunchImage(String value);
 
-    /**
-     * alertTitle</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/iPhone/Reference/UILocalNotification_Class/index.html#//apple_ref/occ/instp/UILocalNotification/alertTitle">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setAlertTitle:")
     public native void setAlertTitle(String value);
 
-    /**
-     * applicationIconBadgeNumber</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/iPhone/Reference/UILocalNotification_Class/index.html#//apple_ref/occ/instp/UILocalNotification/applicationIconBadgeNumber">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setApplicationIconBadgeNumber:")
     public native void setApplicationIconBadgeNumber(@NInt long value);
 
-    /**
-     * category</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/iPhone/Reference/UILocalNotification_Class/index.html#//apple_ref/occ/instp/UILocalNotification/category">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setCategory:")
     public native void setCategory(String value);
 
-    /**
-     * fireDate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/iPhone/Reference/UILocalNotification_Class/index.html#//apple_ref/occ/instp/UILocalNotification/fireDate">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setFireDate:")
     public native void setFireDate(NSDate value);
 
-    /**
-     * hasAction</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/iPhone/Reference/UILocalNotification_Class/index.html#//apple_ref/occ/instp/UILocalNotification/hasAction">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setHasAction:")
     public native void setHasAction(boolean value);
 
-    /**
-     * region</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/iPhone/Reference/UILocalNotification_Class/index.html#//apple_ref/occ/instp/UILocalNotification/region">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setRegion:")
     public native void setRegion(CLRegion value);
 
-    /**
-     * regionTriggersOnce</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/iPhone/Reference/UILocalNotification_Class/index.html#//apple_ref/occ/instp/UILocalNotification/regionTriggersOnce">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setRegionTriggersOnce:")
     public native void setRegionTriggersOnce(boolean value);
 
-    /**
-     * repeatCalendar</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/iPhone/Reference/UILocalNotification_Class/index.html#//apple_ref/occ/instp/UILocalNotification/repeatCalendar">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setRepeatCalendar:")
     public native void setRepeatCalendar(NSCalendar value);
 
-    /**
-     * repeatInterval</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/iPhone/Reference/UILocalNotification_Class/index.html#//apple_ref/occ/instp/UILocalNotification/repeatInterval">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setRepeatInterval:")
     public native void setRepeatInterval(@NUInt long value);
 
-    /**
-     * soundName</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/iPhone/Reference/UILocalNotification_Class/index.html#//apple_ref/occ/instp/UILocalNotification/soundName">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setSoundName:")
     public native void setSoundName(String value);
 
-    /**
-     * timeZone</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/iPhone/Reference/UILocalNotification_Class/index.html#//apple_ref/occ/instp/UILocalNotification/timeZone">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setTimeZone:")
     public native void setTimeZone(NSTimeZone value);
 
-    /**
-     * userInfo</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/iPhone/Reference/UILocalNotification_Class/index.html#//apple_ref/occ/instp/UILocalNotification/userInfo">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setUserInfo:")
     public native void setUserInfo(NSDictionary<?, ?> value);
 
-    /**
-     * soundName</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/iPhone/Reference/UILocalNotification_Class/index.html#//apple_ref/occ/instp/UILocalNotification/soundName">iOS Dev Center</a>
-     */
     @Generated
     @Selector("soundName")
     public native String soundName();
 
-    /**
-     * timeZone</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/iPhone/Reference/UILocalNotification_Class/index.html#//apple_ref/occ/instp/UILocalNotification/timeZone">iOS Dev Center</a>
-     */
     @Generated
     @Selector("timeZone")
     public native NSTimeZone timeZone();
 
-    /**
-     * userInfo</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/iPhone/Reference/UILocalNotification_Class/index.html#//apple_ref/occ/instp/UILocalNotification/userInfo">iOS Dev Center</a>
-     */
     @Generated
     @Selector("userInfo")
     public native NSDictionary<?, ?> userInfo();

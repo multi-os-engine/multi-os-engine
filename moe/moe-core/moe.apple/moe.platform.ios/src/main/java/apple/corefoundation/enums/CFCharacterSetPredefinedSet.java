@@ -36,6 +36,7 @@ public final class CFCharacterSetPredefinedSet {
     @Generated @NInt public static final long Symbol = 0x000000000000000EL;
     @Generated @NInt public static final long Newline = 0x000000000000000FL;
     @Generated @NInt public static final long Illegal = 0x000000000000000CL;
+
     @Generated
     private CFCharacterSetPredefinedSet() {
     }

@@ -33,18 +33,10 @@ import org.moe.natj.objc.ann.Selector;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("GKVoiceChatClient")
 public interface GKVoiceChatClient {
-    /**
-     * participantID</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKVoiceChatClient_Protocol/index.html#//apple_ref/occ/intfm/GKVoiceChatClient/participantID">iOS Dev Center</a>
-     */
     @Generated
     @Selector("participantID")
     String participantID();
 
-    /**
-     * voiceChatService:didNotStartWithParticipantID:error:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKVoiceChatClient_Protocol/index.html#//apple_ref/occ/intfm/GKVoiceChatClient/voiceChatService:didNotStartWithParticipantID:error:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("voiceChatService:didNotStartWithParticipantID:error:")
@@ -53,10 +45,6 @@ public interface GKVoiceChatClient {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * voiceChatService:didReceiveInvitationFromParticipantID:callID:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKVoiceChatClient_Protocol/index.html#//apple_ref/occ/intfm/GKVoiceChatClient/voiceChatService:didReceiveInvitationFromParticipantID:callID:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("voiceChatService:didReceiveInvitationFromParticipantID:callID:")
@@ -65,10 +53,6 @@ public interface GKVoiceChatClient {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * voiceChatService:didStartWithParticipantID:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKVoiceChatClient_Protocol/index.html#//apple_ref/occ/intfm/GKVoiceChatClient/voiceChatService:didStartWithParticipantID:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("voiceChatService:didStartWithParticipantID:")
@@ -76,10 +60,6 @@ public interface GKVoiceChatClient {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * voiceChatService:didStopWithParticipantID:error:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKVoiceChatClient_Protocol/index.html#//apple_ref/occ/intfm/GKVoiceChatClient/voiceChatService:didStopWithParticipantID:error:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("voiceChatService:didStopWithParticipantID:error:")
@@ -88,19 +68,11 @@ public interface GKVoiceChatClient {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * voiceChatService:sendData:toParticipantID:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKVoiceChatClient_Protocol/index.html#//apple_ref/occ/intfm/GKVoiceChatClient/voiceChatService:sendData:toParticipantID:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("voiceChatService:sendData:toParticipantID:")
     void voiceChatServiceSendDataToParticipantID(GKVoiceChatService voiceChatService, NSData data,
             String participantID);
 
-    /**
-     * voiceChatService:sendRealTimeData:toParticipantID:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKVoiceChatClient_Protocol/index.html#//apple_ref/occ/intfm/GKVoiceChatClient/voiceChatService:sendRealTimeData:toParticipantID:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("voiceChatService:sendRealTimeData:toParticipantID:")

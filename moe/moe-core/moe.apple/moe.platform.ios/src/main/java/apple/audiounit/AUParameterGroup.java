@@ -165,18 +165,10 @@ public class AUParameterGroup extends AUParameterNode implements NSSecureCoding 
     @NInt
     public static native long version_static();
 
-    /**
-     * allParameters</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AudioUnit/Reference/AUParameterGroup_ClassReference/index.html#//apple_ref/occ/instp/AUParameterGroup/allParameters">iOS Dev Center</a>
-     */
     @Generated
     @Selector("allParameters")
     public native NSArray<? extends AUParameter> allParameters();
 
-    /**
-     * children</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AudioUnit/Reference/AUParameterGroup_ClassReference/index.html#//apple_ref/occ/instp/AUParameterGroup/children">iOS Dev Center</a>
-     */
     @Generated
     @Selector("children")
     public native NSArray<? extends AUParameterNode> children();

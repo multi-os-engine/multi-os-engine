@@ -158,43 +158,23 @@ public class AVAudioUnitEQFilterParameters extends NSObject {
     @NInt
     public static native long version_static();
 
-    /**
-     * bandwidth</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioUnitEQFilterParameters_Class/index.html#//apple_ref/occ/instp/AVAudioUnitEQFilterParameters/bandwidth">iOS Dev Center</a>
-     */
     @Generated
     @Selector("bandwidth")
     public native float bandwidth();
 
-    /**
-     * bypass</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioUnitEQFilterParameters_Class/index.html#//apple_ref/occ/instp/AVAudioUnitEQFilterParameters/bypass">iOS Dev Center</a>
-     */
     @Generated
     @Selector("bypass")
     public native boolean bypass();
 
-    /**
-     * filterType</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioUnitEQFilterParameters_Class/index.html#//apple_ref/occ/instp/AVAudioUnitEQFilterParameters/filterType">iOS Dev Center</a>
-     */
     @Generated
     @Selector("filterType")
     @NInt
     public native long filterType();
 
-    /**
-     * frequency</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioUnitEQFilterParameters_Class/index.html#//apple_ref/occ/instp/AVAudioUnitEQFilterParameters/frequency">iOS Dev Center</a>
-     */
     @Generated
     @Selector("frequency")
     public native float frequency();
 
-    /**
-     * gain</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioUnitEQFilterParameters_Class/index.html#//apple_ref/occ/instp/AVAudioUnitEQFilterParameters/gain">iOS Dev Center</a>
-     */
     @Generated
     @Selector("gain")
     public native float gain();
@@ -203,42 +183,22 @@ public class AVAudioUnitEQFilterParameters extends NSObject {
     @Selector("init")
     public native AVAudioUnitEQFilterParameters init();
 
-    /**
-     * bandwidth</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioUnitEQFilterParameters_Class/index.html#//apple_ref/occ/instp/AVAudioUnitEQFilterParameters/bandwidth">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setBandwidth:")
     public native void setBandwidth(float value);
 
-    /**
-     * bypass</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioUnitEQFilterParameters_Class/index.html#//apple_ref/occ/instp/AVAudioUnitEQFilterParameters/bypass">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setBypass:")
     public native void setBypass(boolean value);
 
-    /**
-     * filterType</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioUnitEQFilterParameters_Class/index.html#//apple_ref/occ/instp/AVAudioUnitEQFilterParameters/filterType">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setFilterType:")
     public native void setFilterType(@NInt long value);
 
-    /**
-     * frequency</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioUnitEQFilterParameters_Class/index.html#//apple_ref/occ/instp/AVAudioUnitEQFilterParameters/frequency">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setFrequency:")
     public native void setFrequency(float value);
 
-    /**
-     * gain</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioUnitEQFilterParameters_Class/index.html#//apple_ref/occ/instp/AVAudioUnitEQFilterParameters/gain">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setGain:")
     public native void setGain(float value);

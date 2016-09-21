@@ -33,19 +33,11 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("UIViewControllerPreviewingDelegate")
 public interface UIViewControllerPreviewingDelegate {
-    /**
-     * previewingContext:commitViewController:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIViewControllerPreviewingDelegate_Protocol/index.html#//apple_ref/occ/intfm/UIViewControllerPreviewingDelegate/previewingContext:commitViewController:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("previewingContext:commitViewController:")
     void previewingContextCommitViewController(@Mapped(ObjCObjectMapper.class) Object previewingContext,
             UIViewController viewControllerToCommit);
 
-    /**
-     * previewingContext:viewControllerForLocation:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIViewControllerPreviewingDelegate_Protocol/index.html#//apple_ref/occ/intfm/UIViewControllerPreviewingDelegate/previewingContext:viewControllerForLocation:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("previewingContext:viewControllerForLocation:")
     UIViewController previewingContextViewControllerForLocation(

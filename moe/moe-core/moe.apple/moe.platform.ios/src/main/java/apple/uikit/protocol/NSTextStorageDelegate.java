@@ -34,10 +34,6 @@ import org.moe.natj.objc.ann.Selector;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("NSTextStorageDelegate")
 public interface NSTextStorageDelegate {
-    /**
-     * textStorage:didProcessEditing:range:changeInLength:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSTextStorageDelegate_Protocol/index.html#//apple_ref/occ/intfm/NSTextStorageDelegate/textStorage:didProcessEditing:range:changeInLength:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("textStorage:didProcessEditing:range:changeInLength:")
@@ -46,10 +42,6 @@ public interface NSTextStorageDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * textStorage:willProcessEditing:range:changeInLength:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSTextStorageDelegate_Protocol/index.html#//apple_ref/occ/intfm/NSTextStorageDelegate/textStorage:willProcessEditing:range:changeInLength:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("textStorage:willProcessEditing:range:changeInLength:")

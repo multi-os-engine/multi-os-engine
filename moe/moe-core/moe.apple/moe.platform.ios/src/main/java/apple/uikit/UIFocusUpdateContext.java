@@ -158,10 +158,6 @@ public class UIFocusUpdateContext extends NSObject {
     @NInt
     public static native long version_static();
 
-    /**
-     * focusHeading</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIFocusUpdateContext_Class/index.html#//apple_ref/occ/instp/UIFocusUpdateContext/focusHeading">iOS Dev Center</a>
-     */
     @Generated
     @Selector("focusHeading")
     @NUInt
@@ -171,18 +167,10 @@ public class UIFocusUpdateContext extends NSObject {
     @Selector("init")
     public native UIFocusUpdateContext init();
 
-    /**
-     * nextFocusedView</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIFocusUpdateContext_Class/index.html#//apple_ref/occ/instp/UIFocusUpdateContext/nextFocusedView">iOS Dev Center</a>
-     */
     @Generated
     @Selector("nextFocusedView")
     public native UIView nextFocusedView();
 
-    /**
-     * previouslyFocusedView</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIFocusUpdateContext_Class/index.html#//apple_ref/occ/instp/UIFocusUpdateContext/previouslyFocusedView">iOS Dev Center</a>
-     */
     @Generated
     @Selector("previouslyFocusedView")
     public native UIView previouslyFocusedView();

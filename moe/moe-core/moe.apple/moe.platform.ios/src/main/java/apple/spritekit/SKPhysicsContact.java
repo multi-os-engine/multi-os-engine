@@ -162,44 +162,24 @@ public class SKPhysicsContact extends NSObject {
     @NInt
     public static native long version();
 
-    /**
-     * bodyA</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKPhysicsContact/index.html#//apple_ref/occ/instp/SKPhysicsContact/bodyA">iOS Dev Center</a>
-     */
     @Generated
     @Selector("bodyA")
     public native SKPhysicsBody bodyA();
 
-    /**
-     * bodyB</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKPhysicsContact/index.html#//apple_ref/occ/instp/SKPhysicsContact/bodyB">iOS Dev Center</a>
-     */
     @Generated
     @Selector("bodyB")
     public native SKPhysicsBody bodyB();
 
-    /**
-     * collisionImpulse</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKPhysicsContact/index.html#//apple_ref/occ/instp/SKPhysicsContact/collisionImpulse">iOS Dev Center</a>
-     */
     @Generated
     @Selector("collisionImpulse")
     @NFloat
     public native double collisionImpulse();
 
-    /**
-     * contactNormal</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKPhysicsContact/index.html#//apple_ref/occ/instp/SKPhysicsContact/contactNormal">iOS Dev Center</a>
-     */
     @Generated
     @Selector("contactNormal")
     @ByValue
     public native CGVector contactNormal();
 
-    /**
-     * contactPoint</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKPhysicsContact/index.html#//apple_ref/occ/instp/SKPhysicsContact/contactPoint">iOS Dev Center</a>
-     */
     @Generated
     @Selector("contactPoint")
     @ByValue

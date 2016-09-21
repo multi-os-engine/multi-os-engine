@@ -33,10 +33,6 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("NSKeyedArchiverDelegate")
 public interface NSKeyedArchiverDelegate {
-    /**
-     * archiver:didEncodeObject:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSKeyedArchiverDelegate_Protocol/index.html#//apple_ref/occ/intfm/NSKeyedArchiverDelegate/archiver:didEncodeObject:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("archiver:didEncodeObject:")
@@ -44,10 +40,6 @@ public interface NSKeyedArchiverDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * archiver:willEncodeObject:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSKeyedArchiverDelegate_Protocol/index.html#//apple_ref/occ/intfm/NSKeyedArchiverDelegate/archiver:willEncodeObject:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("archiver:willEncodeObject:")
@@ -56,10 +48,6 @@ public interface NSKeyedArchiverDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * archiver:willReplaceObject:withObject:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSKeyedArchiverDelegate_Protocol/index.html#//apple_ref/occ/intfm/NSKeyedArchiverDelegate/archiver:willReplaceObject:withObject:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("archiver:willReplaceObject:withObject:")
@@ -68,10 +56,6 @@ public interface NSKeyedArchiverDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * archiverDidFinish:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSKeyedArchiverDelegate_Protocol/index.html#//apple_ref/occ/intfm/NSKeyedArchiverDelegate/archiverDidFinish:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("archiverDidFinish:")
@@ -79,10 +63,6 @@ public interface NSKeyedArchiverDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * archiverWillFinish:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSKeyedArchiverDelegate_Protocol/index.html#//apple_ref/occ/intfm/NSKeyedArchiverDelegate/archiverWillFinish:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("archiverWillFinish:")

@@ -64,10 +64,6 @@ public class UIDocumentInteractionController extends NSObject implements UIActio
     @Selector("alloc")
     public static native UIDocumentInteractionController alloc();
 
-    /**
-     * interactionControllerWithURL:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIDocumentInteractionController_class/index.html#//apple_ref/occ/clm/UIDocumentInteractionController/interactionControllerWithURL:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("interactionControllerWithURL:")
     public static native UIDocumentInteractionController interactionControllerWithURL(NSURL url);
@@ -172,18 +168,10 @@ public class UIDocumentInteractionController extends NSObject implements UIActio
     @NInt
     public static native long version_static();
 
-    /**
-     * URL</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIDocumentInteractionController_class/index.html#//apple_ref/occ/instp/UIDocumentInteractionController/URL">iOS Dev Center</a>
-     */
     @Generated
     @Selector("URL")
     public native NSURL URL();
 
-    /**
-     * UTI</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIDocumentInteractionController_class/index.html#//apple_ref/occ/instp/UIDocumentInteractionController/UTI">iOS Dev Center</a>
-     */
     @Generated
     @Selector("UTI")
     public native String UTI();
@@ -212,19 +200,11 @@ public class UIDocumentInteractionController extends NSObject implements UIActio
     @Selector("actionSheetCancel:")
     public native void actionSheetCancel(UIActionSheet actionSheet);
 
-    /**
-     * annotation</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIDocumentInteractionController_class/index.html#//apple_ref/occ/instp/UIDocumentInteractionController/annotation">iOS Dev Center</a>
-     */
     @Generated
     @Selector("annotation")
     @MappedReturn(ObjCObjectMapper.class)
     public native Object annotation();
 
-    /**
-     * delegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIDocumentInteractionController_class/index.html#//apple_ref/occ/instp/UIDocumentInteractionController/delegate">iOS Dev Center</a>
-     */
     @Generated
     @Selector("delegate")
     @MappedReturn(ObjCObjectMapper.class)
@@ -236,34 +216,18 @@ public class UIDocumentInteractionController extends NSObject implements UIActio
     @Selector("didPresentActionSheet:")
     public native void didPresentActionSheet(UIActionSheet actionSheet);
 
-    /**
-     * dismissMenuAnimated:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIDocumentInteractionController_class/index.html#//apple_ref/occ/instm/UIDocumentInteractionController/dismissMenuAnimated:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("dismissMenuAnimated:")
     public native void dismissMenuAnimated(boolean animated);
 
-    /**
-     * dismissPreviewAnimated:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIDocumentInteractionController_class/index.html#//apple_ref/occ/instm/UIDocumentInteractionController/dismissPreviewAnimated:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("dismissPreviewAnimated:")
     public native void dismissPreviewAnimated(boolean animated);
 
-    /**
-     * gestureRecognizers</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIDocumentInteractionController_class/index.html#//apple_ref/occ/instp/UIDocumentInteractionController/gestureRecognizers">iOS Dev Center</a>
-     */
     @Generated
     @Selector("gestureRecognizers")
     public native NSArray<? extends UIGestureRecognizer> gestureRecognizers();
 
-    /**
-     * icons</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIDocumentInteractionController_class/index.html#//apple_ref/occ/instp/UIDocumentInteractionController/icons">iOS Dev Center</a>
-     */
     @Generated
     @Selector("icons")
     public native NSArray<? extends UIImage> icons();
@@ -272,75 +236,39 @@ public class UIDocumentInteractionController extends NSObject implements UIActio
     @Selector("init")
     public native UIDocumentInteractionController init();
 
-    /**
-     * name</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIDocumentInteractionController_class/index.html#//apple_ref/occ/instp/UIDocumentInteractionController/name">iOS Dev Center</a>
-     */
     @Generated
     @Selector("name")
     public native String name();
 
-    /**
-     * presentOpenInMenuFromBarButtonItem:animated:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIDocumentInteractionController_class/index.html#//apple_ref/occ/instm/UIDocumentInteractionController/presentOpenInMenuFromBarButtonItem:animated:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("presentOpenInMenuFromBarButtonItem:animated:")
     public native boolean presentOpenInMenuFromBarButtonItemAnimated(UIBarButtonItem item, boolean animated);
 
-    /**
-     * presentOpenInMenuFromRect:inView:animated:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIDocumentInteractionController_class/index.html#//apple_ref/occ/instm/UIDocumentInteractionController/presentOpenInMenuFromRect:inView:animated:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("presentOpenInMenuFromRect:inView:animated:")
     public native boolean presentOpenInMenuFromRectInViewAnimated(@ByValue CGRect rect, UIView view, boolean animated);
 
-    /**
-     * presentOptionsMenuFromBarButtonItem:animated:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIDocumentInteractionController_class/index.html#//apple_ref/occ/instm/UIDocumentInteractionController/presentOptionsMenuFromBarButtonItem:animated:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("presentOptionsMenuFromBarButtonItem:animated:")
     public native boolean presentOptionsMenuFromBarButtonItemAnimated(UIBarButtonItem item, boolean animated);
 
-    /**
-     * presentOptionsMenuFromRect:inView:animated:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIDocumentInteractionController_class/index.html#//apple_ref/occ/instm/UIDocumentInteractionController/presentOptionsMenuFromRect:inView:animated:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("presentOptionsMenuFromRect:inView:animated:")
     public native boolean presentOptionsMenuFromRectInViewAnimated(@ByValue CGRect rect, UIView view, boolean animated);
 
-    /**
-     * presentPreviewAnimated:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIDocumentInteractionController_class/index.html#//apple_ref/occ/instm/UIDocumentInteractionController/presentPreviewAnimated:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("presentPreviewAnimated:")
     public native boolean presentPreviewAnimated(boolean animated);
 
-    /**
-     * annotation</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIDocumentInteractionController_class/index.html#//apple_ref/occ/instp/UIDocumentInteractionController/annotation">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setAnnotation:")
     public native void setAnnotation(@Mapped(ObjCObjectMapper.class) Object value);
 
-    /**
-     * delegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIDocumentInteractionController_class/index.html#//apple_ref/occ/instp/UIDocumentInteractionController/delegate">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setDelegate:")
     public native void setDelegate_unsafe(
             @Mapped(ObjCObjectMapper.class) UIDocumentInteractionControllerDelegate value);
 
-    /**
-     * delegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIDocumentInteractionController_class/index.html#//apple_ref/occ/instp/UIDocumentInteractionController/delegate">iOS Dev Center</a>
-     */
     @Generated
     public void setDelegate(@Mapped(ObjCObjectMapper.class) UIDocumentInteractionControllerDelegate value) {
         Object __old = delegate();
@@ -353,26 +281,14 @@ public class UIDocumentInteractionController extends NSObject implements UIActio
         }
     }
 
-    /**
-     * name</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIDocumentInteractionController_class/index.html#//apple_ref/occ/instp/UIDocumentInteractionController/name">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setName:")
     public native void setName(String value);
 
-    /**
-     * URL</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIDocumentInteractionController_class/index.html#//apple_ref/occ/instp/UIDocumentInteractionController/URL">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setURL:")
     public native void setURL(NSURL value);
 
-    /**
-     * UTI</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIDocumentInteractionController_class/index.html#//apple_ref/occ/instp/UIDocumentInteractionController/UTI">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setUTI:")
     public native void setUTI(String value);

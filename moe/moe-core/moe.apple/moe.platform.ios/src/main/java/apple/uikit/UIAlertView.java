@@ -347,62 +347,34 @@ public class UIAlertView extends UIView {
     @NInt
     public static native long version_static();
 
-    /**
-     * addButtonWithTitle:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIAlertView_Class/index.html#//apple_ref/occ/instm/UIAlertView/addButtonWithTitle:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("addButtonWithTitle:")
     @NInt
     public native long addButtonWithTitle(String title);
 
-    /**
-     * alertViewStyle</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIAlertView_Class/index.html#//apple_ref/occ/instp/UIAlertView/alertViewStyle">iOS Dev Center</a>
-     */
     @Generated
     @Selector("alertViewStyle")
     @NInt
     public native long alertViewStyle();
 
-    /**
-     * buttonTitleAtIndex:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIAlertView_Class/index.html#//apple_ref/occ/instm/UIAlertView/buttonTitleAtIndex:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("buttonTitleAtIndex:")
     public native String buttonTitleAtIndex(@NInt long buttonIndex);
 
-    /**
-     * cancelButtonIndex</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIAlertView_Class/index.html#//apple_ref/occ/instp/UIAlertView/cancelButtonIndex">iOS Dev Center</a>
-     */
     @Generated
     @Selector("cancelButtonIndex")
     @NInt
     public native long cancelButtonIndex();
 
-    /**
-     * delegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIAlertView_Class/index.html#//apple_ref/occ/instp/UIAlertView/delegate">iOS Dev Center</a>
-     */
     @Generated
     @Selector("delegate")
     @MappedReturn(ObjCObjectMapper.class)
     public native Object delegate();
 
-    /**
-     * dismissWithClickedButtonIndex:animated:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIAlertView_Class/index.html#//apple_ref/occ/instm/UIAlertView/dismissWithClickedButtonIndex:animated:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("dismissWithClickedButtonIndex:animated:")
     public native void dismissWithClickedButtonIndexAnimated(@NInt long buttonIndex, boolean animated);
 
-    /**
-     * firstOtherButtonIndex</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIAlertView_Class/index.html#//apple_ref/occ/instp/UIAlertView/firstOtherButtonIndex">iOS Dev Center</a>
-     */
     @Generated
     @Selector("firstOtherButtonIndex")
     @NInt
@@ -416,10 +388,6 @@ public class UIAlertView extends UIView {
     @Selector("initWithFrame:")
     public native UIAlertView initWithFrame(@ByValue CGRect frame);
 
-    /**
-     * initWithTitle:message:delegate:cancelButtonTitle:otherButtonTitles:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIAlertView_Class/index.html#//apple_ref/occ/instm/UIAlertView/initWithTitle:message:delegate:cancelButtonTitle:otherButtonTitles:">iOS Dev Center</a>
-     */
     @Generated
     @Variadic()
     @Selector("initWithTitle:message:delegate:cancelButtonTitle:otherButtonTitles:")
@@ -427,59 +395,31 @@ public class UIAlertView extends UIView {
             String message, @Mapped(ObjCObjectMapper.class) Object delegate, String cancelButtonTitle,
             String otherButtonTitles, Object... varargs);
 
-    /**
-     * visible</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIAlertView_Class/index.html#//apple_ref/occ/instp/UIAlertView/visible">iOS Dev Center</a>
-     */
     @Generated
     @Selector("isVisible")
     public native boolean isVisible();
 
-    /**
-     * message</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIAlertView_Class/index.html#//apple_ref/occ/instp/UIAlertView/message">iOS Dev Center</a>
-     */
     @Generated
     @Selector("message")
     public native String message();
 
-    /**
-     * numberOfButtons</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIAlertView_Class/index.html#//apple_ref/occ/instp/UIAlertView/numberOfButtons">iOS Dev Center</a>
-     */
     @Generated
     @Selector("numberOfButtons")
     @NInt
     public native long numberOfButtons();
 
-    /**
-     * alertViewStyle</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIAlertView_Class/index.html#//apple_ref/occ/instp/UIAlertView/alertViewStyle">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setAlertViewStyle:")
     public native void setAlertViewStyle(@NInt long value);
 
-    /**
-     * cancelButtonIndex</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIAlertView_Class/index.html#//apple_ref/occ/instp/UIAlertView/cancelButtonIndex">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setCancelButtonIndex:")
     public native void setCancelButtonIndex(@NInt long value);
 
-    /**
-     * delegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIAlertView_Class/index.html#//apple_ref/occ/instp/UIAlertView/delegate">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setDelegate:")
     public native void setDelegate_unsafe(@Mapped(ObjCObjectMapper.class) Object value);
 
-    /**
-     * delegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIAlertView_Class/index.html#//apple_ref/occ/instp/UIAlertView/delegate">iOS Dev Center</a>
-     */
     @Generated
     public void setDelegate(@Mapped(ObjCObjectMapper.class) Object value) {
         Object __old = delegate();
@@ -492,42 +432,22 @@ public class UIAlertView extends UIView {
         }
     }
 
-    /**
-     * message</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIAlertView_Class/index.html#//apple_ref/occ/instp/UIAlertView/message">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setMessage:")
     public native void setMessage(String value);
 
-    /**
-     * title</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIAlertView_Class/index.html#//apple_ref/occ/instp/UIAlertView/title">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setTitle:")
     public native void setTitle(String value);
 
-    /**
-     * show</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIAlertView_Class/index.html#//apple_ref/occ/instm/UIAlertView/show">iOS Dev Center</a>
-     */
     @Generated
     @Selector("show")
     public native void show();
 
-    /**
-     * textFieldAtIndex:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIAlertView_Class/index.html#//apple_ref/occ/instm/UIAlertView/textFieldAtIndex:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("textFieldAtIndex:")
     public native UITextField textFieldAtIndex(@NInt long textFieldIndex);
 
-    /**
-     * title</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIAlertView_Class/index.html#//apple_ref/occ/instp/UIAlertView/title">iOS Dev Center</a>
-     */
     @Generated
     @Selector("title")
     public native String title();

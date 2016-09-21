@@ -32,19 +32,11 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("QLPreviewControllerDataSource")
 public interface QLPreviewControllerDataSource {
-    /**
-     * numberOfPreviewItemsInPreviewController:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkingInternet/Reference/QLPreviewControllerDataSource_Protocol/index.html#//apple_ref/occ/intfm/QLPreviewControllerDataSource/numberOfPreviewItemsInPreviewController:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("numberOfPreviewItemsInPreviewController:")
     @NInt
     long numberOfPreviewItemsInPreviewController(QLPreviewController controller);
 
-    /**
-     * previewController:previewItemAtIndex:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkingInternet/Reference/QLPreviewControllerDataSource_Protocol/index.html#//apple_ref/occ/intfm/QLPreviewControllerDataSource/previewController:previewItemAtIndex:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("previewController:previewItemAtIndex:")
     @MappedReturn(ObjCObjectMapper.class)

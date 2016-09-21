@@ -162,26 +162,14 @@ public class AVCaptureVideoDataOutput extends AVCaptureOutput {
     @NInt
     public static native long version_static();
 
-    /**
-     * alwaysDiscardsLateVideoFrames</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVCaptureVideoDataOutput_Class/index.html#//apple_ref/occ/instp/AVCaptureVideoDataOutput/alwaysDiscardsLateVideoFrames">iOS Dev Center</a>
-     */
     @Generated
     @Selector("alwaysDiscardsLateVideoFrames")
     public native boolean alwaysDiscardsLateVideoFrames();
 
-    /**
-     * availableVideoCVPixelFormatTypes</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVCaptureVideoDataOutput_Class/index.html#//apple_ref/occ/instp/AVCaptureVideoDataOutput/availableVideoCVPixelFormatTypes">iOS Dev Center</a>
-     */
     @Generated
     @Selector("availableVideoCVPixelFormatTypes")
     public native NSArray<?> availableVideoCVPixelFormatTypes();
 
-    /**
-     * availableVideoCodecTypes</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVCaptureVideoDataOutput_Class/index.html#//apple_ref/occ/instp/AVCaptureVideoDataOutput/availableVideoCodecTypes">iOS Dev Center</a>
-     */
     @Generated
     @Selector("availableVideoCodecTypes")
     public native NSArray<?> availableVideoCodecTypes();
@@ -190,80 +178,44 @@ public class AVCaptureVideoDataOutput extends AVCaptureOutput {
     @Selector("init")
     public native AVCaptureVideoDataOutput init();
 
-    /**
-     * minFrameDuration</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVCaptureVideoDataOutput_Class/index.html#//apple_ref/occ/instp/AVCaptureVideoDataOutput/minFrameDuration">iOS Dev Center</a>
-     */
     @Generated
     @Deprecated
     @Selector("minFrameDuration")
     @ByValue
     public native CMTime minFrameDuration();
 
-    /**
-     * recommendedVideoSettingsForAssetWriterWithOutputFileType:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVCaptureVideoDataOutput_Class/index.html#//apple_ref/occ/instm/AVCaptureVideoDataOutput/recommendedVideoSettingsForAssetWriterWithOutputFileType:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("recommendedVideoSettingsForAssetWriterWithOutputFileType:")
     public native NSDictionary<?, ?> recommendedVideoSettingsForAssetWriterWithOutputFileType(String outputFileType);
 
-    /**
-     * sampleBufferCallbackQueue</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVCaptureVideoDataOutput_Class/index.html#//apple_ref/occ/instp/AVCaptureVideoDataOutput/sampleBufferCallbackQueue">iOS Dev Center</a>
-     */
     @Generated
     @Selector("sampleBufferCallbackQueue")
     public native NSObject sampleBufferCallbackQueue();
 
-    /**
-     * sampleBufferDelegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVCaptureVideoDataOutput_Class/index.html#//apple_ref/occ/instp/AVCaptureVideoDataOutput/sampleBufferDelegate">iOS Dev Center</a>
-     */
     @Generated
     @Selector("sampleBufferDelegate")
     @MappedReturn(ObjCObjectMapper.class)
     public native AVCaptureVideoDataOutputSampleBufferDelegate sampleBufferDelegate();
 
-    /**
-     * alwaysDiscardsLateVideoFrames</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVCaptureVideoDataOutput_Class/index.html#//apple_ref/occ/instp/AVCaptureVideoDataOutput/alwaysDiscardsLateVideoFrames">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setAlwaysDiscardsLateVideoFrames:")
     public native void setAlwaysDiscardsLateVideoFrames(boolean value);
 
-    /**
-     * minFrameDuration</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVCaptureVideoDataOutput_Class/index.html#//apple_ref/occ/instp/AVCaptureVideoDataOutput/minFrameDuration">iOS Dev Center</a>
-     */
     @Generated
     @Deprecated
     @Selector("setMinFrameDuration:")
     public native void setMinFrameDuration(@ByValue CMTime value);
 
-    /**
-     * setSampleBufferDelegate:queue:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVCaptureVideoDataOutput_Class/index.html#//apple_ref/occ/instm/AVCaptureVideoDataOutput/setSampleBufferDelegate:queue:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setSampleBufferDelegate:queue:")
     public native void setSampleBufferDelegateQueue(
             @Mapped(ObjCObjectMapper.class) AVCaptureVideoDataOutputSampleBufferDelegate sampleBufferDelegate,
             NSObject sampleBufferCallbackQueue);
 
-    /**
-     * videoSettings</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVCaptureVideoDataOutput_Class/index.html#//apple_ref/occ/instp/AVCaptureVideoDataOutput/videoSettings">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setVideoSettings:")
     public native void setVideoSettings(NSDictionary<?, ?> value);
 
-    /**
-     * videoSettings</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVCaptureVideoDataOutput_Class/index.html#//apple_ref/occ/instp/AVCaptureVideoDataOutput/videoSettings">iOS Dev Center</a>
-     */
     @Generated
     @Selector("videoSettings")
     public native NSDictionary<?, ?> videoSettings();

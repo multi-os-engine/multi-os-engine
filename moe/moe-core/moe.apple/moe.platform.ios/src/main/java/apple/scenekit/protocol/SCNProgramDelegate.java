@@ -31,10 +31,6 @@ import org.moe.natj.objc.ann.Selector;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("SCNProgramDelegate")
 public interface SCNProgramDelegate {
-    /**
-     * program:handleError:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNProgramDelegate_Protocol/index.html#//apple_ref/occ/intfm/SCNProgramDelegate/program:handleError:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("program:handleError:")

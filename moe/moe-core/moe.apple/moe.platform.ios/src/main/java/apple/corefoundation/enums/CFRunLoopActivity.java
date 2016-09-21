@@ -28,6 +28,7 @@ public final class CFRunLoopActivity {
     @Generated @NUInt public static final long AfterWaiting = 0x0000000000000040L;
     @Generated @NUInt public static final long Exit = 0x0000000000000080L;
     @Generated @NUInt public static final long AllActivities = 0x000000000FFFFFFFL;
+
     @Generated
     private CFRunLoopActivity() {
     }

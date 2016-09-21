@@ -78,10 +78,6 @@ public class NSMutableData extends NSData {
     public static native NSMutableData dataWithBytesNoCopyLengthFreeWhenDone(VoidPtr bytes, @NUInt long length,
             boolean b);
 
-    /**
-     * dataWithCapacity:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSMutableData_Class/index.html#//apple_ref/occ/clm/NSMutableData/dataWithCapacity:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("dataWithCapacity:")
     public static native NSMutableData dataWithCapacity(@NUInt long aNumItems);
@@ -113,10 +109,6 @@ public class NSMutableData extends NSData {
     @Selector("dataWithData:")
     public static native NSMutableData dataWithData(NSData data);
 
-    /**
-     * dataWithLength:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSMutableData_Class/index.html#//apple_ref/occ/clm/NSMutableData/dataWithLength:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("dataWithLength:")
     public static native NSMutableData dataWithLength(@NUInt long length);
@@ -225,26 +217,14 @@ public class NSMutableData extends NSData {
     @NInt
     public static native long version_static();
 
-    /**
-     * appendBytes:length:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSMutableData_Class/index.html#//apple_ref/occ/instm/NSMutableData/appendBytes:length:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("appendBytes:length:")
     public native void appendBytesLength(ConstVoidPtr bytes, @NUInt long length);
 
-    /**
-     * appendData:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSMutableData_Class/index.html#//apple_ref/occ/instm/NSMutableData/appendData:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("appendData:")
     public native void appendData(NSData other);
 
-    /**
-     * increaseLengthBy:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSMutableData_Class/index.html#//apple_ref/occ/instm/NSMutableData/increaseLengthBy:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("increaseLengthBy:")
     public native void increaseLengthBy(@NUInt long extraLength);
@@ -283,10 +263,6 @@ public class NSMutableData extends NSData {
     @Selector("initWithBytesNoCopy:length:freeWhenDone:")
     public native NSMutableData initWithBytesNoCopyLengthFreeWhenDone(VoidPtr bytes, @NUInt long length, boolean b);
 
-    /**
-     * initWithCapacity:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSMutableData_Class/index.html#//apple_ref/occ/instm/NSMutableData/initWithCapacity:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithCapacity:")
     public native NSMutableData initWithCapacity(@NUInt long capacity);
@@ -318,68 +294,36 @@ public class NSMutableData extends NSData {
     @Selector("initWithData:")
     public native NSMutableData initWithData(NSData data);
 
-    /**
-     * initWithLength:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSMutableData_Class/index.html#//apple_ref/occ/instm/NSMutableData/initWithLength:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithLength:")
     public native NSMutableData initWithLength(@NUInt long length);
 
-    /**
-     * length</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSMutableData_Class/index.html#//apple_ref/occ/instp/NSMutableData/length">iOS Dev Center</a>
-     */
     @Generated
     @Selector("length")
     @NUInt
     public native long length();
 
-    /**
-     * mutableBytes</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSMutableData_Class/index.html#//apple_ref/occ/instp/NSMutableData/mutableBytes">iOS Dev Center</a>
-     */
     @Generated
     @Selector("mutableBytes")
     public native VoidPtr mutableBytes();
 
-    /**
-     * replaceBytesInRange:withBytes:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSMutableData_Class/index.html#//apple_ref/occ/instm/NSMutableData/replaceBytesInRange:withBytes:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("replaceBytesInRange:withBytes:")
     public native void replaceBytesInRangeWithBytes(@ByValue NSRange range, ConstVoidPtr bytes);
 
-    /**
-     * replaceBytesInRange:withBytes:length:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSMutableData_Class/index.html#//apple_ref/occ/instm/NSMutableData/replaceBytesInRange:withBytes:length:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("replaceBytesInRange:withBytes:length:")
     public native void replaceBytesInRangeWithBytesLength(@ByValue NSRange range, ConstVoidPtr replacementBytes,
             @NUInt long replacementLength);
 
-    /**
-     * resetBytesInRange:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSMutableData_Class/index.html#//apple_ref/occ/instm/NSMutableData/resetBytesInRange:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("resetBytesInRange:")
     public native void resetBytesInRange(@ByValue NSRange range);
 
-    /**
-     * setData:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSMutableData_Class/index.html#//apple_ref/occ/instm/NSMutableData/setData:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setData:")
     public native void setData(NSData data);
 
-    /**
-     * length</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSMutableData_Class/index.html#//apple_ref/occ/instp/NSMutableData/length">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setLength:")
     public native void setLength(@NUInt long value);

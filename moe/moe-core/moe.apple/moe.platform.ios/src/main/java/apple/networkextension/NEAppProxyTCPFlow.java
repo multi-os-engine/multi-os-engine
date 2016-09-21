@@ -165,27 +165,15 @@ public class NEAppProxyTCPFlow extends NEAppProxyFlow {
     @Selector("init")
     public native NEAppProxyTCPFlow init();
 
-    /**
-     * readDataWithCompletionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEAppProxyTCPFlowClassRef/index.html#//apple_ref/occ/instm/NEAppProxyTCPFlow/readDataWithCompletionHandler:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("readDataWithCompletionHandler:")
     public native void readDataWithCompletionHandler(
             @ObjCBlock(name = "call_readDataWithCompletionHandler") Block_readDataWithCompletionHandler completionHandler);
 
-    /**
-     * remoteEndpoint</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEAppProxyTCPFlowClassRef/index.html#//apple_ref/occ/instp/NEAppProxyTCPFlow/remoteEndpoint">iOS Dev Center</a>
-     */
     @Generated
     @Selector("remoteEndpoint")
     public native NWEndpoint remoteEndpoint();
 
-    /**
-     * writeData:withCompletionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEAppProxyTCPFlowClassRef/index.html#//apple_ref/occ/instm/NEAppProxyTCPFlow/writeData:withCompletionHandler:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("writeData:withCompletionHandler:")
     public native void writeDataWithCompletionHandler(NSData data,

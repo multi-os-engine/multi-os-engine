@@ -32,37 +32,21 @@ import org.moe.natj.objc.ann.Selector;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("EAWiFiUnconfiguredAccessoryBrowserDelegate")
 public interface EAWiFiUnconfiguredAccessoryBrowserDelegate {
-    /**
-     * accessoryBrowser:didFindUnconfiguredAccessories:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ExternalAccessory/Reference/EAWiFiUnconfiguredAccessoryBrowserDelegate_Protocol/index.html#//apple_ref/occ/intfm/EAWiFiUnconfiguredAccessoryBrowserDelegate/accessoryBrowser:didFindUnconfiguredAccessories:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("accessoryBrowser:didFindUnconfiguredAccessories:")
     void accessoryBrowserDidFindUnconfiguredAccessories(EAWiFiUnconfiguredAccessoryBrowser browser,
             NSSet<? extends EAWiFiUnconfiguredAccessory> accessories);
 
-    /**
-     * accessoryBrowser:didFinishConfiguringAccessory:withStatus:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ExternalAccessory/Reference/EAWiFiUnconfiguredAccessoryBrowserDelegate_Protocol/index.html#//apple_ref/occ/intfm/EAWiFiUnconfiguredAccessoryBrowserDelegate/accessoryBrowser:didFinishConfiguringAccessory:withStatus:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("accessoryBrowser:didFinishConfiguringAccessory:withStatus:")
     void accessoryBrowserDidFinishConfiguringAccessoryWithStatus(EAWiFiUnconfiguredAccessoryBrowser browser,
             EAWiFiUnconfiguredAccessory accessory, @NInt long status);
 
-    /**
-     * accessoryBrowser:didRemoveUnconfiguredAccessories:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ExternalAccessory/Reference/EAWiFiUnconfiguredAccessoryBrowserDelegate_Protocol/index.html#//apple_ref/occ/intfm/EAWiFiUnconfiguredAccessoryBrowserDelegate/accessoryBrowser:didRemoveUnconfiguredAccessories:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("accessoryBrowser:didRemoveUnconfiguredAccessories:")
     void accessoryBrowserDidRemoveUnconfiguredAccessories(EAWiFiUnconfiguredAccessoryBrowser browser,
             NSSet<? extends EAWiFiUnconfiguredAccessory> accessories);
 
-    /**
-     * accessoryBrowser:didUpdateState:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ExternalAccessory/Reference/EAWiFiUnconfiguredAccessoryBrowserDelegate_Protocol/index.html#//apple_ref/occ/intfm/EAWiFiUnconfiguredAccessoryBrowserDelegate/accessoryBrowser:didUpdateState:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("accessoryBrowser:didUpdateState:")
     void accessoryBrowserDidUpdateState(EAWiFiUnconfiguredAccessoryBrowser browser, @NInt long state);

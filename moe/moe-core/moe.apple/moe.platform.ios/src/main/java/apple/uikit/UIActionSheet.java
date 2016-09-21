@@ -348,71 +348,39 @@ public class UIActionSheet extends UIView {
     @NInt
     public static native long version_static();
 
-    /**
-     * actionSheetStyle</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIActionSheet_Class/index.html#//apple_ref/occ/instp/UIActionSheet/actionSheetStyle">iOS Dev Center</a>
-     */
     @Generated
     @Selector("actionSheetStyle")
     @NInt
     public native long actionSheetStyle();
 
-    /**
-     * addButtonWithTitle:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIActionSheet_Class/index.html#//apple_ref/occ/instm/UIActionSheet/addButtonWithTitle:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("addButtonWithTitle:")
     @NInt
     public native long addButtonWithTitle(String title);
 
-    /**
-     * buttonTitleAtIndex:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIActionSheet_Class/index.html#//apple_ref/occ/instm/UIActionSheet/buttonTitleAtIndex:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("buttonTitleAtIndex:")
     public native String buttonTitleAtIndex(@NInt long buttonIndex);
 
-    /**
-     * cancelButtonIndex</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIActionSheet_Class/index.html#//apple_ref/occ/instp/UIActionSheet/cancelButtonIndex">iOS Dev Center</a>
-     */
     @Generated
     @Selector("cancelButtonIndex")
     @NInt
     public native long cancelButtonIndex();
 
-    /**
-     * delegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIActionSheet_Class/index.html#//apple_ref/occ/instp/UIActionSheet/delegate">iOS Dev Center</a>
-     */
     @Generated
     @Selector("delegate")
     @MappedReturn(ObjCObjectMapper.class)
     public native UIActionSheetDelegate delegate();
 
-    /**
-     * destructiveButtonIndex</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIActionSheet_Class/index.html#//apple_ref/occ/instp/UIActionSheet/destructiveButtonIndex">iOS Dev Center</a>
-     */
     @Generated
     @Selector("destructiveButtonIndex")
     @NInt
     public native long destructiveButtonIndex();
 
-    /**
-     * dismissWithClickedButtonIndex:animated:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIActionSheet_Class/index.html#//apple_ref/occ/instm/UIActionSheet/dismissWithClickedButtonIndex:animated:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("dismissWithClickedButtonIndex:animated:")
     public native void dismissWithClickedButtonIndexAnimated(@NInt long buttonIndex, boolean animated);
 
-    /**
-     * firstOtherButtonIndex</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIActionSheet_Class/index.html#//apple_ref/occ/instp/UIActionSheet/firstOtherButtonIndex">iOS Dev Center</a>
-     */
     @Generated
     @Selector("firstOtherButtonIndex")
     @NInt
@@ -426,10 +394,6 @@ public class UIActionSheet extends UIView {
     @Selector("initWithFrame:")
     public native UIActionSheet initWithFrame(@ByValue CGRect frame);
 
-    /**
-     * initWithTitle:delegate:cancelButtonTitle:destructiveButtonTitle:otherButtonTitles:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIActionSheet_Class/index.html#//apple_ref/occ/instm/UIActionSheet/initWithTitle:delegate:cancelButtonTitle:destructiveButtonTitle:otherButtonTitles:">iOS Dev Center</a>
-     */
     @Generated
     @Variadic()
     @Selector("initWithTitle:delegate:cancelButtonTitle:destructiveButtonTitle:otherButtonTitles:")
@@ -437,51 +401,27 @@ public class UIActionSheet extends UIView {
             String title, @Mapped(ObjCObjectMapper.class) UIActionSheetDelegate delegate, String cancelButtonTitle,
             String destructiveButtonTitle, String otherButtonTitles, Object... varargs);
 
-    /**
-     * visible</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIActionSheet_Class/index.html#//apple_ref/occ/instp/UIActionSheet/visible">iOS Dev Center</a>
-     */
     @Generated
     @Selector("isVisible")
     public native boolean isVisible();
 
-    /**
-     * numberOfButtons</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIActionSheet_Class/index.html#//apple_ref/occ/instp/UIActionSheet/numberOfButtons">iOS Dev Center</a>
-     */
     @Generated
     @Selector("numberOfButtons")
     @NInt
     public native long numberOfButtons();
 
-    /**
-     * actionSheetStyle</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIActionSheet_Class/index.html#//apple_ref/occ/instp/UIActionSheet/actionSheetStyle">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setActionSheetStyle:")
     public native void setActionSheetStyle(@NInt long value);
 
-    /**
-     * cancelButtonIndex</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIActionSheet_Class/index.html#//apple_ref/occ/instp/UIActionSheet/cancelButtonIndex">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setCancelButtonIndex:")
     public native void setCancelButtonIndex(@NInt long value);
 
-    /**
-     * delegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIActionSheet_Class/index.html#//apple_ref/occ/instp/UIActionSheet/delegate">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setDelegate:")
     public native void setDelegate_unsafe(@Mapped(ObjCObjectMapper.class) UIActionSheetDelegate value);
 
-    /**
-     * delegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIActionSheet_Class/index.html#//apple_ref/occ/instp/UIActionSheet/delegate">iOS Dev Center</a>
-     */
     @Generated
     public void setDelegate(@Mapped(ObjCObjectMapper.class) UIActionSheetDelegate value) {
         Object __old = delegate();
@@ -494,66 +434,34 @@ public class UIActionSheet extends UIView {
         }
     }
 
-    /**
-     * destructiveButtonIndex</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIActionSheet_Class/index.html#//apple_ref/occ/instp/UIActionSheet/destructiveButtonIndex">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setDestructiveButtonIndex:")
     public native void setDestructiveButtonIndex(@NInt long value);
 
-    /**
-     * title</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIActionSheet_Class/index.html#//apple_ref/occ/instp/UIActionSheet/title">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setTitle:")
     public native void setTitle(String value);
 
-    /**
-     * showFromBarButtonItem:animated:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIActionSheet_Class/index.html#//apple_ref/occ/instm/UIActionSheet/showFromBarButtonItem:animated:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("showFromBarButtonItem:animated:")
     public native void showFromBarButtonItemAnimated(UIBarButtonItem item, boolean animated);
 
-    /**
-     * showFromRect:inView:animated:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIActionSheet_Class/index.html#//apple_ref/occ/instm/UIActionSheet/showFromRect:inView:animated:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("showFromRect:inView:animated:")
     public native void showFromRectInViewAnimated(@ByValue CGRect rect, UIView view, boolean animated);
 
-    /**
-     * showFromTabBar:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIActionSheet_Class/index.html#//apple_ref/occ/instm/UIActionSheet/showFromTabBar:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("showFromTabBar:")
     public native void showFromTabBar(UITabBar view);
 
-    /**
-     * showFromToolbar:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIActionSheet_Class/index.html#//apple_ref/occ/instm/UIActionSheet/showFromToolbar:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("showFromToolbar:")
     public native void showFromToolbar(UIToolbar view);
 
-    /**
-     * showInView:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIActionSheet_Class/index.html#//apple_ref/occ/instm/UIActionSheet/showInView:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("showInView:")
     public native void showInView(UIView view);
 
-    /**
-     * title</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIActionSheet_Class/index.html#//apple_ref/occ/instp/UIActionSheet/title">iOS Dev Center</a>
-     */
     @Generated
     @Selector("title")
     public native String title();

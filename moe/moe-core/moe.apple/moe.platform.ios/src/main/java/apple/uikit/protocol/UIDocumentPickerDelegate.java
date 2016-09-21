@@ -31,18 +31,10 @@ import org.moe.natj.objc.ann.Selector;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("UIDocumentPickerDelegate")
 public interface UIDocumentPickerDelegate {
-    /**
-     * documentPicker:didPickDocumentAtURL:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIDocumentPickerDelegate/index.html#//apple_ref/occ/intfm/UIDocumentPickerDelegate/documentPicker:didPickDocumentAtURL:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("documentPicker:didPickDocumentAtURL:")
     void documentPickerDidPickDocumentAtURL(UIDocumentPickerViewController controller, NSURL url);
 
-    /**
-     * documentPickerWasCancelled:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIDocumentPickerDelegate/index.html#//apple_ref/occ/intfm/UIDocumentPickerDelegate/documentPickerWasCancelled:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("documentPickerWasCancelled:")

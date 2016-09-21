@@ -67,35 +67,19 @@ public class CNContactViewController extends UIViewController {
     @Selector("alloc")
     public static native CNContactViewController alloc();
 
-    /**
-     * descriptorForRequiredKeys</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ContactsUI/Reference/CNContactViewController_Class/index.html#//apple_ref/occ/clm/CNContactViewController/descriptorForRequiredKeys">iOS Dev Center</a>
-     */
     @Generated
     @Selector("descriptorForRequiredKeys")
     @MappedReturn(ObjCObjectMapper.class)
     public static native CNKeyDescriptor descriptorForRequiredKeys();
 
-    /**
-     * viewControllerForContact:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ContactsUI/Reference/CNContactViewController_Class/index.html#//apple_ref/occ/clm/CNContactViewController/viewControllerForContact:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("viewControllerForContact:")
     public static native CNContactViewController viewControllerForContact(CNContact contact);
 
-    /**
-     * viewControllerForNewContact:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ContactsUI/Reference/CNContactViewController_Class/index.html#//apple_ref/occ/clm/CNContactViewController/viewControllerForNewContact:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("viewControllerForNewContact:")
     public static native CNContactViewController viewControllerForNewContact(CNContact contact);
 
-    /**
-     * viewControllerForUnknownContact:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ContactsUI/Reference/CNContactViewController_Class/index.html#//apple_ref/occ/clm/CNContactViewController/viewControllerForUnknownContact:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("viewControllerForUnknownContact:")
     public static native CNContactViewController viewControllerForUnknownContact(CNContact contact);
@@ -212,67 +196,35 @@ public class CNContactViewController extends UIViewController {
     @NInt
     public static native long version_static();
 
-    /**
-     * allowsActions</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ContactsUI/Reference/CNContactViewController_Class/index.html#//apple_ref/occ/instp/CNContactViewController/allowsActions">iOS Dev Center</a>
-     */
     @Generated
     @Selector("allowsActions")
     public native boolean allowsActions();
 
-    /**
-     * allowsEditing</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ContactsUI/Reference/CNContactViewController_Class/index.html#//apple_ref/occ/instp/CNContactViewController/allowsEditing">iOS Dev Center</a>
-     */
     @Generated
     @Selector("allowsEditing")
     public native boolean allowsEditing();
 
-    /**
-     * alternateName</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ContactsUI/Reference/CNContactViewController_Class/index.html#//apple_ref/occ/instp/CNContactViewController/alternateName">iOS Dev Center</a>
-     */
     @Generated
     @Selector("alternateName")
     public native String alternateName();
 
-    /**
-     * contact</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ContactsUI/Reference/CNContactViewController_Class/index.html#//apple_ref/occ/instp/CNContactViewController/contact">iOS Dev Center</a>
-     */
     @Generated
     @Selector("contact")
     public native CNContact contact();
 
-    /**
-     * contactStore</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ContactsUI/Reference/CNContactViewController_Class/index.html#//apple_ref/occ/instp/CNContactViewController/contactStore">iOS Dev Center</a>
-     */
     @Generated
     @Selector("contactStore")
     public native CNContactStore contactStore();
 
-    /**
-     * delegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ContactsUI/Reference/CNContactViewController_Class/index.html#//apple_ref/occ/instp/CNContactViewController/delegate">iOS Dev Center</a>
-     */
     @Generated
     @Selector("delegate")
     @MappedReturn(ObjCObjectMapper.class)
     public native CNContactViewControllerDelegate delegate();
 
-    /**
-     * displayedPropertyKeys</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ContactsUI/Reference/CNContactViewController_Class/index.html#//apple_ref/occ/instp/CNContactViewController/displayedPropertyKeys">iOS Dev Center</a>
-     */
     @Generated
     @Selector("displayedPropertyKeys")
     public native NSArray<?> displayedPropertyKeys();
 
-    /**
-     * highlightPropertyWithKey:identifier:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ContactsUI/Reference/CNContactViewController_Class/index.html#//apple_ref/occ/instm/CNContactViewController/highlightPropertyWithKey:identifier:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("highlightPropertyWithKey:identifier:")
     public native void highlightPropertyWithKeyIdentifier(String key, String identifier);
@@ -289,10 +241,6 @@ public class CNContactViewController extends UIViewController {
     @Selector("initWithNibName:bundle:")
     public native CNContactViewController initWithNibNameBundle(String nibNameOrNil, NSBundle nibBundleOrNil);
 
-    /**
-     * message</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ContactsUI/Reference/CNContactViewController_Class/index.html#//apple_ref/occ/instp/CNContactViewController/message">iOS Dev Center</a>
-     */
     @Generated
     @Selector("message")
     public native String message();
@@ -301,58 +249,30 @@ public class CNContactViewController extends UIViewController {
     @Selector("parentContainer")
     public native CNContainer parentContainer();
 
-    /**
-     * parentGroup</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ContactsUI/Reference/CNContactViewController_Class/index.html#//apple_ref/occ/instp/CNContactViewController/parentGroup">iOS Dev Center</a>
-     */
     @Generated
     @Selector("parentGroup")
     public native CNGroup parentGroup();
 
-    /**
-     * allowsActions</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ContactsUI/Reference/CNContactViewController_Class/index.html#//apple_ref/occ/instp/CNContactViewController/allowsActions">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setAllowsActions:")
     public native void setAllowsActions(boolean value);
 
-    /**
-     * allowsEditing</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ContactsUI/Reference/CNContactViewController_Class/index.html#//apple_ref/occ/instp/CNContactViewController/allowsEditing">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setAllowsEditing:")
     public native void setAllowsEditing(boolean value);
 
-    /**
-     * alternateName</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ContactsUI/Reference/CNContactViewController_Class/index.html#//apple_ref/occ/instp/CNContactViewController/alternateName">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setAlternateName:")
     public native void setAlternateName(String value);
 
-    /**
-     * contactStore</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ContactsUI/Reference/CNContactViewController_Class/index.html#//apple_ref/occ/instp/CNContactViewController/contactStore">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setContactStore:")
     public native void setContactStore(CNContactStore value);
 
-    /**
-     * delegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ContactsUI/Reference/CNContactViewController_Class/index.html#//apple_ref/occ/instp/CNContactViewController/delegate">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setDelegate:")
     public native void setDelegate_unsafe(@Mapped(ObjCObjectMapper.class) CNContactViewControllerDelegate value);
 
-    /**
-     * delegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ContactsUI/Reference/CNContactViewController_Class/index.html#//apple_ref/occ/instp/CNContactViewController/delegate">iOS Dev Center</a>
-     */
     @Generated
     public void setDelegate(@Mapped(ObjCObjectMapper.class) CNContactViewControllerDelegate value) {
         Object __old = delegate();
@@ -365,18 +285,10 @@ public class CNContactViewController extends UIViewController {
         }
     }
 
-    /**
-     * displayedPropertyKeys</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ContactsUI/Reference/CNContactViewController_Class/index.html#//apple_ref/occ/instp/CNContactViewController/displayedPropertyKeys">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setDisplayedPropertyKeys:")
     public native void setDisplayedPropertyKeys(NSArray<?> value);
 
-    /**
-     * message</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ContactsUI/Reference/CNContactViewController_Class/index.html#//apple_ref/occ/instp/CNContactViewController/message">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setMessage:")
     public native void setMessage(String value);
@@ -385,26 +297,14 @@ public class CNContactViewController extends UIViewController {
     @Selector("setParentContainer:")
     public native void setParentContainer(CNContainer value);
 
-    /**
-     * parentGroup</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ContactsUI/Reference/CNContactViewController_Class/index.html#//apple_ref/occ/instp/CNContactViewController/parentGroup">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setParentGroup:")
     public native void setParentGroup(CNGroup value);
 
-    /**
-     * shouldShowLinkedContacts</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ContactsUI/Reference/CNContactViewController_Class/index.html#//apple_ref/occ/instp/CNContactViewController/shouldShowLinkedContacts">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setShouldShowLinkedContacts:")
     public native void setShouldShowLinkedContacts(boolean value);
 
-    /**
-     * shouldShowLinkedContacts</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ContactsUI/Reference/CNContactViewController_Class/index.html#//apple_ref/occ/instp/CNContactViewController/shouldShowLinkedContacts">iOS Dev Center</a>
-     */
     @Generated
     @Selector("shouldShowLinkedContacts")
     public native boolean shouldShowLinkedContacts();

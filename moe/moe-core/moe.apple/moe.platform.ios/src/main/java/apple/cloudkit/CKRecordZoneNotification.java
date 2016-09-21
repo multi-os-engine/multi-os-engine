@@ -168,10 +168,6 @@ public class CKRecordZoneNotification extends CKNotification {
     @Selector("init")
     public native CKRecordZoneNotification init();
 
-    /**
-     * recordZoneID</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKRecordZoneNotification_class/index.html#//apple_ref/occ/instp/CKRecordZoneNotification/recordZoneID">iOS Dev Center</a>
-     */
     @Generated
     @Selector("recordZoneID")
     public native CKRecordZoneID recordZoneID();

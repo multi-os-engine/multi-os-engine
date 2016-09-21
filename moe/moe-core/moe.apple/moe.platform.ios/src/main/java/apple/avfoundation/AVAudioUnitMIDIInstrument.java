@@ -174,99 +174,51 @@ public class AVAudioUnitMIDIInstrument extends AVAudioUnit implements AVAudioMix
     @Selector("init")
     public native AVAudioUnitMIDIInstrument init();
 
-    /**
-     * initWithAudioComponentDescription:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioUnitMIDIInstrument_Class/index.html#//apple_ref/occ/instm/AVAudioUnitMIDIInstrument/initWithAudioComponentDescription:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithAudioComponentDescription:")
     public native AVAudioUnitMIDIInstrument initWithAudioComponentDescription(
             @ByValue AudioComponentDescription description);
 
-    /**
-     * sendController:withValue:onChannel:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioUnitMIDIInstrument_Class/index.html#//apple_ref/occ/instm/AVAudioUnitMIDIInstrument/sendController:withValue:onChannel:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("sendController:withValue:onChannel:")
     public native void sendControllerWithValueOnChannel(byte controller, byte value, byte channel);
 
-    /**
-     * sendMIDIEvent:data1:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioUnitMIDIInstrument_Class/index.html#//apple_ref/occ/instm/AVAudioUnitMIDIInstrument/sendMIDIEvent:data1:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("sendMIDIEvent:data1:")
     public native void sendMIDIEventData1(byte midiStatus, byte data1);
 
-    /**
-     * sendMIDIEvent:data1:data2:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioUnitMIDIInstrument_Class/index.html#//apple_ref/occ/instm/AVAudioUnitMIDIInstrument/sendMIDIEvent:data1:data2:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("sendMIDIEvent:data1:data2:")
     public native void sendMIDIEventData1Data2(byte midiStatus, byte data1, byte data2);
 
-    /**
-     * sendMIDISysExEvent:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioUnitMIDIInstrument_Class/index.html#//apple_ref/occ/instm/AVAudioUnitMIDIInstrument/sendMIDISysExEvent:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("sendMIDISysExEvent:")
     public native void sendMIDISysExEvent(NSData midiData);
 
-    /**
-     * sendPitchBend:onChannel:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioUnitMIDIInstrument_Class/index.html#//apple_ref/occ/instm/AVAudioUnitMIDIInstrument/sendPitchBend:onChannel:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("sendPitchBend:onChannel:")
     public native void sendPitchBendOnChannel(char pitchbend, byte channel);
 
-    /**
-     * sendPressure:onChannel:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioUnitMIDIInstrument_Class/index.html#//apple_ref/occ/instm/AVAudioUnitMIDIInstrument/sendPressure:onChannel:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("sendPressure:onChannel:")
     public native void sendPressureOnChannel(byte pressure, byte channel);
 
-    /**
-     * sendPressureForKey:withValue:onChannel:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioUnitMIDIInstrument_Class/index.html#//apple_ref/occ/instm/AVAudioUnitMIDIInstrument/sendPressureForKey:withValue:onChannel:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("sendPressureForKey:withValue:onChannel:")
     public native void sendPressureForKeyWithValueOnChannel(byte key, byte value, byte channel);
 
-    /**
-     * sendProgramChange:bankMSB:bankLSB:onChannel:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioUnitMIDIInstrument_Class/index.html#//apple_ref/occ/instm/AVAudioUnitMIDIInstrument/sendProgramChange:bankMSB:bankLSB:onChannel:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("sendProgramChange:bankMSB:bankLSB:onChannel:")
     public native void sendProgramChangeBankMSBBankLSBOnChannel(byte program, byte bankMSB, byte bankLSB, byte channel);
 
-    /**
-     * sendProgramChange:onChannel:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioUnitMIDIInstrument_Class/index.html#//apple_ref/occ/instm/AVAudioUnitMIDIInstrument/sendProgramChange:onChannel:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("sendProgramChange:onChannel:")
     public native void sendProgramChangeOnChannel(byte program, byte channel);
 
-    /**
-     * startNote:withVelocity:onChannel:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioUnitMIDIInstrument_Class/index.html#//apple_ref/occ/instm/AVAudioUnitMIDIInstrument/startNote:withVelocity:onChannel:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("startNote:withVelocity:onChannel:")
     public native void startNoteWithVelocityOnChannel(byte note, byte velocity, byte channel);
 
-    /**
-     * stopNote:onChannel:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioUnitMIDIInstrument_Class/index.html#//apple_ref/occ/instm/AVAudioUnitMIDIInstrument/stopNote:onChannel:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("stopNote:onChannel:")
     public native void stopNoteOnChannel(byte note, byte channel);

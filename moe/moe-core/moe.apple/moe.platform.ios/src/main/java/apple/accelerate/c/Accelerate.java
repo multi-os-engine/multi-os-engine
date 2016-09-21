@@ -107,140 +107,72 @@ public final class Accelerate {
     private Accelerate() {
     }
 
-    /**
-     * vDSP_create_fftsetup</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_create_fftsetup">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native FFTSetup vDSP_create_fftsetup(@NUInt long __Log2n, int __Radix);
 
-    /**
-     * vDSP_destroy_fftsetup</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_destroy_fftsetup">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_destroy_fftsetup(FFTSetup __setup);
 
-    /**
-     * vDSP_create_fftsetupD</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_create_fftsetupD">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native FFTSetupD vDSP_create_fftsetupD(@NUInt long __Log2n, int __Radix);
 
-    /**
-     * vDSP_destroy_fftsetupD</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_destroy_fftsetupD">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_destroy_fftsetupD(FFTSetupD __setup);
 
-    /**
-     * vDSP_biquad_CreateSetup</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_biquad_CreateSetup">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native vDSP_biquad_Setup vDSP_biquad_CreateSetup(ConstDoublePtr __Coefficients, @NUInt long __M);
 
-    /**
-     * vDSP_biquad_CreateSetupD</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_biquad_CreateSetupD">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native vDSP_biquad_SetupD vDSP_biquad_CreateSetupD(ConstDoublePtr __Coefficients, @NUInt long __M);
 
-    /**
-     * vDSP_biquad_DestroySetup</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_biquad_DestroySetup">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_biquad_DestroySetup(vDSP_biquad_Setup __setup);
 
-    /**
-     * vDSP_biquad_DestroySetupD</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_biquad_DestroySetupD">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_biquad_DestroySetupD(vDSP_biquad_SetupD __setup);
 
-    /**
-     * vDSP_biquadm_CreateSetup</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_biquadm_CreateSetup">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native vDSP_biquadm_Setup vDSP_biquadm_CreateSetup(ConstDoublePtr __coeffs, @NUInt long __M,
             @NUInt long __N);
 
-    /**
-     * vDSP_biquadm_CreateSetupD</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_biquadm_CreateSetupD">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native vDSP_biquadm_SetupD vDSP_biquadm_CreateSetupD(ConstDoublePtr __coeffs, @NUInt long __M,
             @NUInt long __N);
 
-    /**
-     * vDSP_biquadm_DestroySetup</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_biquadm_DestroySetup">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_biquadm_DestroySetup(vDSP_biquadm_Setup __setup);
 
-    /**
-     * vDSP_biquadm_DestroySetupD</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_biquadm_DestroySetupD">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_biquadm_DestroySetupD(vDSP_biquadm_SetupD __setup);
 
-    /**
-     * vDSP_biquadm_CopyState</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_biquadm_CopyState">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_biquadm_CopyState(vDSP_biquadm_Setup __dest, VoidPtr __src);
 
-    /**
-     * vDSP_biquadm_CopyStateD</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_biquadm_CopyStateD">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_biquadm_CopyStateD(vDSP_biquadm_SetupD __dest, VoidPtr __src);
 
-    /**
-     * vDSP_biquadm_ResetState</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_biquadm_ResetState">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_biquadm_ResetState(vDSP_biquadm_Setup __setup);
 
-    /**
-     * vDSP_biquadm_ResetStateD</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_biquadm_ResetStateD">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_biquadm_ResetStateD(vDSP_biquadm_SetupD __setup);
 
-    /**
-     * vDSP_ctoz</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_ctoz">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_ctoz(
@@ -248,10 +180,6 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __Z, @NInt long __IZ,
             @NUInt long __N);
 
-    /**
-     * vDSP_ctozD</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_ctozD">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_ctozD(
@@ -259,10 +187,6 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __Z,
             @NInt long __IZ, @NUInt long __N);
 
-    /**
-     * vDSP_ztoc</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_ztoc">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_ztoc(
@@ -270,10 +194,6 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") DSPComplex __C, @NInt long __IC,
             @NUInt long __N);
 
-    /**
-     * vDSP_ztocD</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_ztocD">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_ztocD(
@@ -281,30 +201,18 @@ public final class Accelerate {
             @NInt long __IZ, @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleComplex __C,
             @NInt long __IC, @NUInt long __N);
 
-    /**
-     * vDSP_fft_zip</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_fft_zip">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_fft_zip(FFTSetup __Setup,
             @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __C, @NInt long __IC,
             @NUInt long __Log2N, int __Direction);
 
-    /**
-     * vDSP_fft_zipD</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_fft_zipD">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_fft_zipD(FFTSetupD __Setup,
             @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __C,
             @NInt long __IC, @NUInt long __Log2N, int __Direction);
 
-    /**
-     * vDSP_fft_zipt</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_fft_zipt">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_fft_zipt(FFTSetup __Setup,
@@ -312,10 +220,6 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __Buffer,
             @NUInt long __Log2N, int __Direction);
 
-    /**
-     * vDSP_fft_ziptD</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_fft_ziptD">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_fft_ziptD(FFTSetupD __Setup,
@@ -324,10 +228,6 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __Buffer,
             @NUInt long __Log2N, int __Direction);
 
-    /**
-     * vDSP_fft_zop</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_fft_zop">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_fft_zop(FFTSetup __Setup,
@@ -335,10 +235,6 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __C, @NInt long __IC,
             @NUInt long __Log2N, int __Direction);
 
-    /**
-     * vDSP_fft_zopt</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_fft_zopt">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_fft_zopt(FFTSetup __Setup,
@@ -347,10 +243,6 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __Buffer,
             @NUInt long __Log2N, int __Direction);
 
-    /**
-     * vDSP_fft_zopD</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_fft_zopD">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_fft_zopD(FFTSetupD __Setup,
@@ -359,10 +251,6 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __C,
             @NInt long __IC, @NUInt long __Log2N, int __Direction);
 
-    /**
-     * vDSP_fft_zoptD</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_fft_zoptD">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_fft_zoptD(FFTSetupD __Setup,
@@ -373,30 +261,18 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __Buffer,
             @NUInt long __Log2N, int __Direction);
 
-    /**
-     * vDSP_fft_zrip</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_fft_zrip">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_fft_zrip(FFTSetup __Setup,
             @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __C, @NInt long __IC,
             @NUInt long __Log2N, int __Direction);
 
-    /**
-     * vDSP_fft_zripD</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_fft_zripD">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_fft_zripD(FFTSetupD __Setup,
             @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __C,
             @NInt long __IC, @NUInt long __Log2N, int __Direction);
 
-    /**
-     * vDSP_fft_zript</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_fft_zript">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_fft_zript(FFTSetup __Setup,
@@ -404,10 +280,6 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __Buffer,
             @NUInt long __Log2N, int __Direction);
 
-    /**
-     * vDSP_fft_zriptD</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_fft_zriptD">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_fft_zriptD(FFTSetupD __Setup,
@@ -416,10 +288,6 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __Buffer,
             @NUInt long __Log2N, int __Direction);
 
-    /**
-     * vDSP_fft_zrop</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_fft_zrop">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_fft_zrop(FFTSetup __Setup,
@@ -427,10 +295,6 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __C, @NInt long __IC,
             @NUInt long __Log2N, int __Direction);
 
-    /**
-     * vDSP_fft_zropD</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_fft_zropD">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_fft_zropD(FFTSetupD __Setup,
@@ -439,10 +303,6 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __C,
             @NInt long __IC, @NUInt long __Log2N, int __Direction);
 
-    /**
-     * vDSP_fft_zropt</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_fft_zropt">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_fft_zropt(FFTSetup __Setup,
@@ -451,10 +311,6 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __Buffer,
             @NUInt long __Log2N, int __Direction);
 
-    /**
-     * vDSP_fft_zroptD</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_fft_zroptD">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_fft_zroptD(FFTSetupD __Setup,
@@ -465,30 +321,18 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __Buffer,
             @NUInt long __Log2N, int __Direction);
 
-    /**
-     * vDSP_fft2d_zip</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_fft2d_zip">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_fft2d_zip(FFTSetup __Setup,
             @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __C, @NInt long __IC0,
             @NInt long __IC1, @NUInt long __Log2N0, @NUInt long __Log2N1, int __Direction);
 
-    /**
-     * vDSP_fft2d_zipD</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_fft2d_zipD">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_fft2d_zipD(FFTSetupD __Setup,
             @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __C,
             @NInt long __IC0, @NInt long __IC1, @NUInt long __Log2N0, @NUInt long __Log2N1, int __Direction);
 
-    /**
-     * vDSP_fft2d_zipt</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_fft2d_zipt">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_fft2d_zipt(FFTSetup __Setup,
@@ -497,10 +341,6 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __Buffer,
             @NUInt long __Log2N0, @NUInt long __Log2N1, int __Direction);
 
-    /**
-     * vDSP_fft2d_ziptD</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_fft2d_ziptD">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_fft2d_ziptD(FFTSetupD __Setup,
@@ -509,10 +349,6 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __Buffer,
             @NUInt long __Log2N0, @NUInt long __Log2N1, int __Direction);
 
-    /**
-     * vDSP_fft2d_zop</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_fft2d_zop">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_fft2d_zop(FFTSetup __Setup,
@@ -520,10 +356,6 @@ public final class Accelerate {
             @NInt long __IA1, @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __C,
             @NInt long __IC0, @NInt long __IC1, @NUInt long __Log2N0, @NUInt long __Log2N1, int __Direction);
 
-    /**
-     * vDSP_fft2d_zopD</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_fft2d_zopD">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_fft2d_zopD(FFTSetupD __Setup,
@@ -532,10 +364,6 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __C,
             @NInt long __IC0, @NInt long __IC1, @NUInt long __Log2N0, @NUInt long __Log2N1, int __Direction);
 
-    /**
-     * vDSP_fft2d_zopt</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_fft2d_zopt">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_fft2d_zopt(FFTSetup __Setup,
@@ -545,10 +373,6 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __Buffer,
             @NUInt long __Log2N0, @NUInt long __Log2N1, int __Direction);
 
-    /**
-     * vDSP_fft2d_zoptD</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_fft2d_zoptD">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_fft2d_zoptD(FFTSetupD __Setup,
@@ -559,30 +383,18 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __Buffer,
             @NUInt long __Log2N0, @NUInt long __Log2N1, int __Direction);
 
-    /**
-     * vDSP_fft2d_zrip</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_fft2d_zrip">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_fft2d_zrip(FFTSetup __Setup,
             @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __C, @NInt long __IC0,
             @NInt long __IC1, @NUInt long __Log2N0, @NUInt long __Log2N1, int __Direction);
 
-    /**
-     * vDSP_fft2d_zripD</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_fft2d_zripD">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_fft2d_zripD(FFTSetupD __Setup,
             @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __C,
             @NInt long __IC0, @NInt long __IC1, @NUInt long __Log2N0, @NUInt long __Log2N1, int __flag);
 
-    /**
-     * vDSP_fft2d_zript</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_fft2d_zript">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_fft2d_zript(FFTSetup __Setup,
@@ -591,10 +403,6 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __Buffer,
             @NUInt long __Log2N0, @NUInt long __Log2N1, int __Direction);
 
-    /**
-     * vDSP_fft2d_zriptD</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_fft2d_zriptD">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_fft2d_zriptD(FFTSetupD __Setup,
@@ -603,10 +411,6 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __Buffer,
             @NUInt long __Log2N0, @NUInt long __Log2N1, int __flag);
 
-    /**
-     * vDSP_fft2d_zrop</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_fft2d_zrop">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_fft2d_zrop(FFTSetup __Setup,
@@ -614,10 +418,6 @@ public final class Accelerate {
             @NInt long __IA1, @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __C,
             @NInt long __IC0, @NInt long __IC1, @NUInt long __Log2N0, @NUInt long __Log2N1, int __Direction);
 
-    /**
-     * vDSP_fft2d_zropt</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_fft2d_zropt">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_fft2d_zropt(FFTSetup __Setup,
@@ -627,10 +427,6 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __Buffer,
             @NUInt long __Log2N0, @NUInt long __Log2N1, int __Direction);
 
-    /**
-     * vDSP_fft2d_zropD</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_fft2d_zropD">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_fft2d_zropD(FFTSetupD __Setup,
@@ -639,10 +435,6 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __C,
             @NInt long __IC0, @NInt long __IC1, @NUInt long __Log2N0, @NUInt long __Log2N1, int __Direction);
 
-    /**
-     * vDSP_fft2d_zroptD</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_fft2d_zroptD">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_fft2d_zroptD(FFTSetupD __Setup,
@@ -653,30 +445,18 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __Buffer,
             @NUInt long __Log2N0, @NUInt long __Log2N1, int __Direction);
 
-    /**
-     * vDSP_fftm_zip</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_fftm_zip">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_fftm_zip(FFTSetup __Setup,
             @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __C, @NInt long __IC,
             @NInt long __IM, @NUInt long __Log2N, @NUInt long __M, int __Direction);
 
-    /**
-     * vDSP_fftm_zipD</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_fftm_zipD">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_fftm_zipD(FFTSetupD __Setup,
             @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __C,
             @NInt long __IC, @NInt long __IM, @NUInt long __Log2N, @NUInt long __M, int __Direction);
 
-    /**
-     * vDSP_fftm_zipt</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_fftm_zipt">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_fftm_zipt(FFTSetup __Setup,
@@ -685,10 +465,6 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __Buffer,
             @NUInt long __Log2N, @NUInt long __M, int __Direction);
 
-    /**
-     * vDSP_fftm_ziptD</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_fftm_ziptD">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_fftm_ziptD(FFTSetupD __Setup,
@@ -697,10 +473,6 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __Buffer,
             @NUInt long __Log2N, @NUInt long __M, int __Direction);
 
-    /**
-     * vDSP_fftm_zop</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_fftm_zop">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_fftm_zop(FFTSetup __Setup,
@@ -708,10 +480,6 @@ public final class Accelerate {
             @NInt long __IMA, @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __C,
             @NInt long __IC, @NInt long __IMC, @NUInt long __Log2N, @NUInt long __M, int __Direction);
 
-    /**
-     * vDSP_fftm_zopD</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_fftm_zopD">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_fftm_zopD(FFTSetupD __Setup,
@@ -720,10 +488,6 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __C,
             @NInt long __IC, @NInt long __IMC, @NUInt long __Log2N, @NUInt long __M, int __Direction);
 
-    /**
-     * vDSP_fftm_zopt</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_fftm_zopt">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_fftm_zopt(FFTSetup __Setup,
@@ -733,10 +497,6 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __Buffer,
             @NUInt long __Log2N, @NUInt long __M, int __Direction);
 
-    /**
-     * vDSP_fftm_zoptD</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_fftm_zoptD">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_fftm_zoptD(FFTSetupD __Setup,
@@ -747,30 +507,18 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __Buffer,
             @NUInt long __Log2N, @NUInt long __M, int __Direction);
 
-    /**
-     * vDSP_fftm_zrip</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_fftm_zrip">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_fftm_zrip(FFTSetup __Setup,
             @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __C, @NInt long __IC,
             @NInt long __IM, @NUInt long __Log2N, @NUInt long __M, int __Direction);
 
-    /**
-     * vDSP_fftm_zripD</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_fftm_zripD">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_fftm_zripD(FFTSetupD __Setup,
             @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __C,
             @NInt long __IC, @NInt long __IM, @NUInt long __Log2N, @NUInt long __M, int __Direction);
 
-    /**
-     * vDSP_fftm_zript</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_fftm_zript">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_fftm_zript(FFTSetup __Setup,
@@ -779,10 +527,6 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __Buffer,
             @NUInt long __Log2N, @NUInt long __M, int __Direction);
 
-    /**
-     * vDSP_fftm_zriptD</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_fftm_zriptD">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_fftm_zriptD(FFTSetupD __Setup,
@@ -791,10 +535,6 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __Buffer,
             @NUInt long __Log2N, @NUInt long __M, int __Direction);
 
-    /**
-     * vDSP_fftm_zrop</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_fftm_zrop">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_fftm_zrop(FFTSetup __Setup,
@@ -802,10 +542,6 @@ public final class Accelerate {
             @NInt long __IMA, @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __C,
             @NInt long __IC, @NInt long __IMC, @NUInt long __Log2N, @NUInt long __M, int __Direction);
 
-    /**
-     * vDSP_fftm_zropt</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_fftm_zropt">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_fftm_zropt(FFTSetup __Setup,
@@ -815,10 +551,6 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __Buffer,
             @NUInt long __Log2N, @NUInt long __M, int __Direction);
 
-    /**
-     * vDSP_fftm_zropD</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_fftm_zropD">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_fftm_zropD(FFTSetupD __Setup,
@@ -827,10 +559,6 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __C,
             @NInt long __IC, @NInt long __IMC, @NUInt long __Log2N, @NUInt long __M, int __Direction);
 
-    /**
-     * vDSP_fftm_zroptD</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_fftm_zroptD">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_fftm_zroptD(FFTSetupD __Setup,
@@ -841,10 +569,6 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __Buffer,
             @NUInt long __Log2N, @NUInt long __M, int __Direction);
 
-    /**
-     * vDSP_fft3_zop</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_fft3_zop">iOS Dev Center</a>
-     */
     @Deprecated
     @Generated
     @CFunction
@@ -853,10 +577,6 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __C, @NInt long __IC,
             @NUInt long __Log2N, int __Direction);
 
-    /**
-     * vDSP_fft3_zopD</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_fft3_zopD">iOS Dev Center</a>
-     */
     @Deprecated
     @Generated
     @CFunction
@@ -866,10 +586,6 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __C,
             @NInt long __IC, @NUInt long __Log2N, int __Direction);
 
-    /**
-     * vDSP_fft5_zop</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_fft5_zop">iOS Dev Center</a>
-     */
     @Deprecated
     @Generated
     @CFunction
@@ -878,10 +594,6 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __C, @NInt long __IC,
             @NUInt long __Log2N, int __Direction);
 
-    /**
-     * vDSP_fft5_zopD</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_fft5_zopD">iOS Dev Center</a>
-     */
     @Deprecated
     @Generated
     @CFunction
@@ -891,64 +603,36 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __C,
             @NInt long __IC, @NUInt long __Log2N, int __Direction);
 
-    /**
-     * vDSP_biquad</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_biquad">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_biquad(VoidPtr __Setup, FloatPtr __Delay, ConstFloatPtr __X, @NInt long __IX,
             FloatPtr __Y, @NInt long __IY, @NUInt long __N);
 
-    /**
-     * vDSP_biquadD</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_biquadD">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_biquadD(VoidPtr __Setup, DoublePtr __Delay, ConstDoublePtr __X, @NInt long __IX,
             DoublePtr __Y, @NInt long __IY, @NUInt long __N);
 
-    /**
-     * vDSP_biquadm</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_biquadm">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_biquadm(vDSP_biquadm_Setup __Setup, Ptr<ConstFloatPtr> __X, @NInt long __IX,
             Ptr<FloatPtr> __Y, @NInt long __IY, @NUInt long __N);
 
-    /**
-     * vDSP_biquadmD</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_biquadmD">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_biquadmD(vDSP_biquadm_SetupD __Setup, Ptr<ConstDoublePtr> __X, @NInt long __IX,
             Ptr<DoublePtr> __Y, @NInt long __IY, @NUInt long __N);
 
-    /**
-     * vDSP_conv</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_conv">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_conv(ConstFloatPtr __A, @NInt long __IA, ConstFloatPtr __F, @NInt long __IF,
             FloatPtr __C, @NInt long __IC, @NUInt long __N, @NUInt long __P);
 
-    /**
-     * vDSP_convD</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_convD">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_convD(ConstDoublePtr __A, @NInt long __IA, ConstDoublePtr __F, @NInt long __IF,
             DoublePtr __C, @NInt long __IC, @NUInt long __N, @NUInt long __P);
 
-    /**
-     * vDSP_zconv</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_zconv">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_zconv(
@@ -957,10 +641,6 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __C, @NInt long __IC,
             @NUInt long __N, @NUInt long __P);
 
-    /**
-     * vDSP_zconvD</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_zconvD">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_zconvD(
@@ -971,100 +651,56 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __C,
             @NInt long __IC, @NUInt long __N, @NUInt long __P);
 
-    /**
-     * vDSP_f3x3</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_f3x3">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_f3x3(ConstFloatPtr __A, @NUInt long __NR, @NUInt long __NC, ConstFloatPtr __F,
             FloatPtr __C);
 
-    /**
-     * vDSP_f3x3D</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_f3x3D">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_f3x3D(ConstDoublePtr __A, @NUInt long __NR, @NUInt long __NC, ConstDoublePtr __F,
             DoublePtr __C);
 
-    /**
-     * vDSP_f5x5</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_f5x5">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_f5x5(ConstFloatPtr __A, @NUInt long __NR, @NUInt long __NC, ConstFloatPtr __F,
             FloatPtr __C);
 
-    /**
-     * vDSP_f5x5D</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_f5x5D">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_f5x5D(ConstDoublePtr __A, @NUInt long __NR, @NUInt long __NC, ConstDoublePtr __F,
             DoublePtr __C);
 
-    /**
-     * vDSP_imgfir</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_imgfir">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_imgfir(ConstFloatPtr __A, @NUInt long __NR, @NUInt long __NC, ConstFloatPtr __F,
             FloatPtr __C, @NUInt long __P, @NUInt long __Q);
 
-    /**
-     * vDSP_imgfirD</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_imgfirD">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_imgfirD(ConstDoublePtr __A, @NUInt long __NR, @NUInt long __NC, ConstDoublePtr __F,
             DoublePtr __C, @NUInt long __P, @NUInt long __Q);
 
-    /**
-     * vDSP_mtrans</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_mtrans">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_mtrans(ConstFloatPtr __A, @NInt long __IA, FloatPtr __C, @NInt long __IC,
             @NUInt long __M, @NUInt long __N);
 
-    /**
-     * vDSP_mtransD</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_mtransD">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_mtransD(ConstDoublePtr __A, @NInt long __IA, DoublePtr __C, @NInt long __IC,
             @NUInt long __M, @NUInt long __N);
 
-    /**
-     * vDSP_mmul</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_mmul">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_mmul(ConstFloatPtr __A, @NInt long __IA, ConstFloatPtr __B, @NInt long __IB,
             FloatPtr __C, @NInt long __IC, @NUInt long __M, @NUInt long __N, @NUInt long __P);
 
-    /**
-     * vDSP_mmulD</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_mmulD">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_mmulD(ConstDoublePtr __A, @NInt long __IA, ConstDoublePtr __B, @NInt long __IB,
             DoublePtr __C, @NInt long __IC, @NUInt long __M, @NUInt long __N, @NUInt long __P);
 
-    /**
-     * vDSP_zmma</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_zmma">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_zmma(
@@ -1074,10 +710,6 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __D, @NInt long __ID,
             @NUInt long __M, @NUInt long __N, @NUInt long __P);
 
-    /**
-     * vDSP_zmmaD</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_zmmaD">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_zmmaD(
@@ -1090,10 +722,6 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __D,
             @NInt long __ID, @NUInt long __M, @NUInt long __N, @NUInt long __P);
 
-    /**
-     * vDSP_zmms</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_zmms">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_zmms(
@@ -1103,10 +731,6 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __D, @NInt long __ID,
             @NUInt long __M, @NUInt long __N, @NUInt long __P);
 
-    /**
-     * vDSP_zmmsD</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_zmmsD">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_zmmsD(
@@ -1119,10 +743,6 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __D,
             @NInt long __ID, @NUInt long __M, @NUInt long __N, @NUInt long __P);
 
-    /**
-     * vDSP_zvmmaa</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_zvmmaa">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_zvmmaa(
@@ -1134,10 +754,6 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __F, @NInt long __IF,
             @NUInt long __N);
 
-    /**
-     * vDSP_zvmmaaD</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_zvmmaaD">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_zvmmaaD(
@@ -1154,10 +770,6 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __F,
             @NInt long __IF, @NUInt long __N);
 
-    /**
-     * vDSP_zmsm</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_zmsm">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_zmsm(
@@ -1167,10 +779,6 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __D, @NInt long __ID,
             @NUInt long __M, @NUInt long __N, @NUInt long __P);
 
-    /**
-     * vDSP_zmsmD</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_zmsmD">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_zmsmD(
@@ -1183,10 +791,6 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __D,
             @NInt long __ID, @NUInt long __M, @NUInt long __N, @NUInt long __P);
 
-    /**
-     * vDSP_zmmul</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_zmmul">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_zmmul(
@@ -1195,10 +799,6 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __C, @NInt long __IC,
             @NUInt long __M, @NUInt long __N, @NUInt long __P);
 
-    /**
-     * vDSP_zmmulD</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_zmmulD">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_zmmulD(
@@ -1209,37 +809,21 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __C,
             @NInt long __IC, @NUInt long __M, @NUInt long __N, @NUInt long __P);
 
-    /**
-     * vDSP_vadd</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_vadd">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_vadd(ConstFloatPtr __A, @NInt long __IA, ConstFloatPtr __B, @NInt long __IB,
             FloatPtr __C, @NInt long __IC, @NUInt long __N);
 
-    /**
-     * vDSP_vaddD</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_vaddD">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_vaddD(ConstDoublePtr __A, @NInt long __IA, ConstDoublePtr __B, @NInt long __IB,
             DoublePtr __C, @NInt long __IC, @NUInt long __N);
 
-    /**
-     * vDSP_vaddi</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_vaddi">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_vaddi(ConstIntPtr __A, @NInt long __IA, ConstIntPtr __B, @NInt long __IB, IntPtr __C,
             @NInt long __IC, @NUInt long __N);
 
-    /**
-     * vDSP_zvadd</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_zvadd">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_zvadd(
@@ -1248,10 +832,6 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __C, @NInt long __IC,
             @NUInt long __N);
 
-    /**
-     * vDSP_zvaddD</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_zvaddD">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_zvaddD(
@@ -1262,10 +842,6 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __C,
             @NInt long __IC, @NUInt long __N);
 
-    /**
-     * vDSP_zrvadd</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_zrvadd">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_zrvadd(
@@ -1274,10 +850,6 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __C, @NInt long __IC,
             @NUInt long __N);
 
-    /**
-     * vDSP_zrvaddD</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_zrvaddD">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_zrvaddD(
@@ -1286,28 +858,16 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __C,
             @NInt long __IC, @NUInt long __N);
 
-    /**
-     * vDSP_vsub</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_vsub">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_vsub(ConstFloatPtr __B, @NInt long __IB, ConstFloatPtr __A, @NInt long __IA,
             FloatPtr __C, @NInt long __IC, @NUInt long __N);
 
-    /**
-     * vDSP_vsubD</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_vsubD">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_vsubD(ConstDoublePtr __B, @NInt long __IB, ConstDoublePtr __A, @NInt long __IA,
             DoublePtr __C, @NInt long __IC, @NUInt long __N);
 
-    /**
-     * vDSP_zvsub</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_zvsub">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_zvsub(
@@ -1316,10 +876,6 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __C, @NInt long __IC,
             @NUInt long __N);
 
-    /**
-     * vDSP_zvsubD</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_zvsubD">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_zvsubD(
@@ -1330,28 +886,16 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __C,
             @NInt long __IC, @NUInt long __N);
 
-    /**
-     * vDSP_vmul</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_vmul">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_vmul(ConstFloatPtr __A, @NInt long __IA, ConstFloatPtr __B, @NInt long __IB,
             FloatPtr __C, @NInt long __IC, @NUInt long __N);
 
-    /**
-     * vDSP_vmulD</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_vmulD">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_vmulD(ConstDoublePtr __A, @NInt long __IA, ConstDoublePtr __B, @NInt long __IB,
             DoublePtr __C, @NInt long __IC, @NUInt long __N);
 
-    /**
-     * vDSP_zrvmul</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_zrvmul">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_zrvmul(
@@ -1360,10 +904,6 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __C, @NInt long __IC,
             @NUInt long __N);
 
-    /**
-     * vDSP_zrvmulD</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_zrvmulD">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_zrvmulD(
@@ -1372,37 +912,21 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __C,
             @NInt long __IC, @NUInt long __N);
 
-    /**
-     * vDSP_vdiv</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_vdiv">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_vdiv(ConstFloatPtr __B, @NInt long __IB, ConstFloatPtr __A, @NInt long __IA,
             FloatPtr __C, @NInt long __IC, @NUInt long __N);
 
-    /**
-     * vDSP_vdivD</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_vdivD">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_vdivD(ConstDoublePtr __B, @NInt long __IB, ConstDoublePtr __A, @NInt long __IA,
             DoublePtr __C, @NInt long __IC, @NUInt long __N);
 
-    /**
-     * vDSP_vdivi</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_vdivi">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_vdivi(ConstIntPtr __B, @NInt long __IB, ConstIntPtr __A, @NInt long __IA, IntPtr __C,
             @NInt long __IC, @NUInt long __N);
 
-    /**
-     * vDSP_zvdiv</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_zvdiv">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_zvdiv(
@@ -1411,10 +935,6 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __C, @NInt long __IC,
             @NUInt long __N);
 
-    /**
-     * vDSP_zvdivD</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_zvdivD">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_zvdivD(
@@ -1425,10 +945,6 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __C,
             @NInt long __IC, @NUInt long __N);
 
-    /**
-     * vDSP_zrvdiv</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_zrvdiv">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_zrvdiv(
@@ -1437,10 +953,6 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __C, @NInt long __IC,
             @NUInt long __N);
 
-    /**
-     * vDSP_zrvdivD</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_zrvdivD">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_zrvdivD(
@@ -1449,100 +961,56 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __C,
             @NInt long __IC, @NUInt long __N);
 
-    /**
-     * vDSP_vsmul</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_vsmul">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_vsmul(ConstFloatPtr __A, @NInt long __IA, ConstFloatPtr __B, FloatPtr __C,
             @NInt long __IC, @NUInt long __N);
 
-    /**
-     * vDSP_vsmulD</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_vsmulD">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_vsmulD(ConstDoublePtr __A, @NInt long __IA, ConstDoublePtr __B, DoublePtr __C,
             @NInt long __IC, @NUInt long __N);
 
-    /**
-     * vDSP_vsq</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_vsq">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_vsq(ConstFloatPtr __A, @NInt long __IA, FloatPtr __C, @NInt long __IC,
             @NUInt long __N);
 
-    /**
-     * vDSP_vsqD</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_vsqD">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_vsqD(ConstDoublePtr __A, @NInt long __IA, DoublePtr __C, @NInt long __IC,
             @NUInt long __N);
 
-    /**
-     * vDSP_vssq</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_vssq">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_vssq(ConstFloatPtr __A, @NInt long __IA, FloatPtr __C, @NInt long __IC,
             @NUInt long __N);
 
-    /**
-     * vDSP_vssqD</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_vssqD">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_vssqD(ConstDoublePtr __A, @NInt long __IA, DoublePtr __C, @NInt long __IC,
             @NUInt long __N);
 
-    /**
-     * vDSP_distancesq</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_distancesq">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_distancesq(ConstFloatPtr __A, @NInt long __IA, ConstFloatPtr __B, @NInt long __IB,
             FloatPtr __C, @NUInt long __N);
 
-    /**
-     * vDSP_distancesqD</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_distancesqD">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_distancesqD(ConstDoublePtr __A, @NInt long __IA, ConstDoublePtr __B, @NInt long __IB,
             DoublePtr __C, @NUInt long __N);
 
-    /**
-     * vDSP_dotpr</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_dotpr">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_dotpr(ConstFloatPtr __A, @NInt long __IA, ConstFloatPtr __B, @NInt long __IB,
             FloatPtr __C, @NUInt long __N);
 
-    /**
-     * vDSP_dotprD</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_dotprD">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_dotprD(ConstDoublePtr __A, @NInt long __IA, ConstDoublePtr __B, @NInt long __IB,
             DoublePtr __C, @NUInt long __N);
 
-    /**
-     * vDSP_zdotpr</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_zdotpr">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_zdotpr(
@@ -1550,10 +1018,6 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __B, @NInt long __IB,
             @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __C, @NUInt long __N);
 
-    /**
-     * vDSP_zdotprD</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_zdotprD">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_zdotprD(
@@ -1564,10 +1028,6 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __C,
             @NUInt long __N);
 
-    /**
-     * vDSP_zrdotpr</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_zrdotpr">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_zrdotpr(
@@ -1575,10 +1035,6 @@ public final class Accelerate {
             ConstFloatPtr __B, @NInt long __IB,
             @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __C, @NUInt long __N);
 
-    /**
-     * vDSP_zrdotprD</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_zrdotprD">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_zrdotprD(
@@ -1587,46 +1043,26 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __C,
             @NUInt long __N);
 
-    /**
-     * vDSP_vam</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_vam">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_vam(ConstFloatPtr __A, @NInt long __IA, ConstFloatPtr __B, @NInt long __IB,
             ConstFloatPtr __C, @NInt long __IC, FloatPtr __D, @NInt long __ID, @NUInt long __N);
 
-    /**
-     * vDSP_vamD</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_vamD">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_vamD(ConstDoublePtr __A, @NInt long __IA, ConstDoublePtr __B, @NInt long __IB,
             ConstDoublePtr __C, @NInt long __IC, DoublePtr __D, @NInt long __IDD, @NUInt long __N);
 
-    /**
-     * vDSP_vma</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_vma">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_vma(ConstFloatPtr __A, @NInt long __IA, ConstFloatPtr __B, @NInt long __IB,
             ConstFloatPtr __C, @NInt long __IC, FloatPtr __D, @NInt long __ID, @NUInt long __N);
 
-    /**
-     * vDSP_vmaD</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_vmaD">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_vmaD(ConstDoublePtr __A, @NInt long __IA, ConstDoublePtr __B, @NInt long __IB,
             ConstDoublePtr __C, @NInt long __IC, DoublePtr __D, @NInt long __ID, @NUInt long __N);
 
-    /**
-     * vDSP_zvma</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_zvma">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_zvma(
@@ -1636,10 +1072,6 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __D, @NInt long __ID,
             @NUInt long __N);
 
-    /**
-     * vDSP_zvmaD</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_zvmaD">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_zvmaD(
@@ -1652,10 +1084,6 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __D,
             @NInt long __ID, @NUInt long __N);
 
-    /**
-     * vDSP_zvmul</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_zvmul">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_zvmul(
@@ -1664,10 +1092,6 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __C, @NInt long __IC,
             @NUInt long __N, int __Conjugate);
 
-    /**
-     * vDSP_zvmulD</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_zvmulD">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_zvmulD(
@@ -1678,10 +1102,6 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __C,
             @NInt long __IC, @NUInt long __N, int __Conjugate);
 
-    /**
-     * vDSP_zidotpr</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_zidotpr">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_zidotpr(
@@ -1689,10 +1109,6 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __B, @NInt long __IB,
             @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __C, @NUInt long __N);
 
-    /**
-     * vDSP_zidotprD</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_zidotprD">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_zidotprD(
@@ -1703,10 +1119,6 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __C,
             @NUInt long __N);
 
-    /**
-     * vDSP_zvcma</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_zvcma">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_zvcma(
@@ -1716,10 +1128,6 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __D, @NInt long __ID,
             @NUInt long __N);
 
-    /**
-     * vDSP_zvcmaD</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_zvcmaD">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_zvcmaD(
@@ -1732,10 +1140,6 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __D,
             @NInt long __ID, @NUInt long __N);
 
-    /**
-     * vDSP_zrvsub</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_zrvsub">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_zrvsub(
@@ -1744,10 +1148,6 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __C, @NInt long __IC,
             @NUInt long __N);
 
-    /**
-     * vDSP_zrvsubD</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_zrvsubD">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_zrvsubD(
@@ -1756,108 +1156,60 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __C,
             @NInt long __IC, @NUInt long __N);
 
-    /**
-     * vDSP_vdpsp</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_vdpsp">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_vdpsp(ConstDoublePtr __A, @NInt long __IA, FloatPtr __C, @NInt long __IC,
             @NUInt long __N);
 
-    /**
-     * vDSP_vspdp</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_vspdp">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_vspdp(ConstFloatPtr __A, @NInt long __IA, DoublePtr __C, @NInt long __IC,
             @NUInt long __N);
 
-    /**
-     * vDSP_vabs</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_vabs">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_vabs(ConstFloatPtr __A, @NInt long __IA, FloatPtr __C, @NInt long __IC,
             @NUInt long __N);
 
-    /**
-     * vDSP_vabsD</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_vabsD">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_vabsD(ConstDoublePtr __A, @NInt long __IA, DoublePtr __C, @NInt long __IC,
             @NUInt long __N);
 
-    /**
-     * vDSP_vabsi</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_vabsi">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_vabsi(ConstIntPtr __A, @NInt long __IA, IntPtr __C, @NInt long __IC,
             @NUInt long __N);
 
-    /**
-     * vDSP_zvabs</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_zvabs">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_zvabs(
             @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __A, @NInt long __IA,
             FloatPtr __C, @NInt long __IC, @NUInt long __N);
 
-    /**
-     * vDSP_zvabsD</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_zvabsD">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_zvabsD(
             @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __A,
             @NInt long __IA, DoublePtr __C, @NInt long __IC, @NUInt long __N);
 
-    /**
-     * vDSP_veqvi</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_veqvi">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_veqvi(ConstIntPtr __A, @NInt long __IA, ConstIntPtr __B, @NInt long __IB, IntPtr __C,
             @NInt long __IC, @NUInt long __N);
 
-    /**
-     * vDSP_vfill</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_vfill">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_vfill(ConstFloatPtr __A, FloatPtr __C, @NInt long __IA, @NUInt long __N);
 
-    /**
-     * vDSP_vfillD</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_vfillD">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_vfillD(ConstDoublePtr __A, DoublePtr __C, @NInt long __IC, @NUInt long __N);
 
-    /**
-     * vDSP_vfilli</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_vfilli">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_vfilli(ConstIntPtr __A, IntPtr __C, @NInt long __IC, @NUInt long __N);
 
-    /**
-     * vDSP_zvfill</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_zvfill">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_zvfill(
@@ -1865,10 +1217,6 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __C, @NInt long __IC,
             @NUInt long __N);
 
-    /**
-     * vDSP_zvfillD</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_zvfillD">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_zvfillD(
@@ -1876,138 +1224,78 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __C,
             @NInt long __IC, @NUInt long __N);
 
-    /**
-     * vDSP_vsadd</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_vsadd">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_vsadd(ConstFloatPtr __A, @NInt long __IA, ConstFloatPtr __B, FloatPtr __C,
             @NInt long __IC, @NUInt long __N);
 
-    /**
-     * vDSP_vsaddD</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_vsaddD">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_vsaddD(ConstDoublePtr __A, @NInt long __IA, ConstDoublePtr __B, DoublePtr __C,
             @NInt long __IC, @NUInt long __N);
 
-    /**
-     * vDSP_vsaddi</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_vsaddi">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_vsaddi(ConstIntPtr __A, @NInt long __IA, ConstIntPtr __B, IntPtr __C,
             @NInt long __IC, @NUInt long __N);
 
-    /**
-     * vDSP_vsdiv</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_vsdiv">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_vsdiv(ConstFloatPtr __A, @NInt long __IA, ConstFloatPtr __B, FloatPtr __C,
             @NInt long __IC, @NUInt long __N);
 
-    /**
-     * vDSP_vsdivD</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_vsdivD">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_vsdivD(ConstDoublePtr __A, @NInt long __IA, ConstDoublePtr __B, DoublePtr __C,
             @NInt long __IC, @NUInt long __N);
 
-    /**
-     * vDSP_vsdivi</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_vsdivi">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_vsdivi(ConstIntPtr __A, @NInt long __IA, ConstIntPtr __B, IntPtr __C,
             @NInt long __IC, @NUInt long __N);
 
-    /**
-     * vDSP_zaspec</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_zaspec">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_zaspec(
             @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __A, FloatPtr __C,
             @NUInt long __N);
 
-    /**
-     * vDSP_zaspecD</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_zaspecD">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_zaspecD(
             @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __A,
             DoublePtr __C, @NUInt long __N);
 
-    /**
-     * vDSP_blkman_window</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_blkman_window">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_blkman_window(FloatPtr __C, @NUInt long __N, int __Flag);
 
-    /**
-     * vDSP_blkman_windowD</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_blkman_windowD">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_blkman_windowD(DoublePtr __C, @NUInt long __N, int __Flag);
 
-    /**
-     * vDSP_zcoher</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_zcoher">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_zcoher(ConstFloatPtr __A, ConstFloatPtr __B,
             @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __C, FloatPtr __D,
             @NUInt long __N);
 
-    /**
-     * vDSP_zcoherD</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_zcoherD">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_zcoherD(ConstDoublePtr __A, ConstDoublePtr __B,
             @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __C,
             DoublePtr __D, @NUInt long __N);
 
-    /**
-     * vDSP_desamp</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_desamp">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_desamp(ConstFloatPtr __A, @NInt long __DF, ConstFloatPtr __F, FloatPtr __C,
             @NUInt long __N, @NUInt long __P);
 
-    /**
-     * vDSP_desampD</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_desampD">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_desampD(ConstDoublePtr __A, @NInt long __DF, ConstDoublePtr __F, DoublePtr __C,
             @NUInt long __N, @NUInt long __P);
 
-    /**
-     * vDSP_zrdesamp</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_zrdesamp">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_zrdesamp(
@@ -2015,10 +1303,6 @@ public final class Accelerate {
             ConstFloatPtr __F, @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __C,
             @NUInt long __N, @NUInt long __P);
 
-    /**
-     * vDSP_zrdesampD</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_zrdesampD">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_zrdesampD(
@@ -2027,20 +1311,12 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __C,
             @NUInt long __N, @NUInt long __P);
 
-    /**
-     * vDSP_ztrans</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_ztrans">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_ztrans(ConstFloatPtr __A,
             @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __B,
             @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __C, @NUInt long __N);
 
-    /**
-     * vDSP_ztransD</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_ztransD">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_ztransD(ConstDoublePtr __A,
@@ -2048,10 +1324,6 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __C,
             @NUInt long __N);
 
-    /**
-     * vDSP_zcspec</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_zcspec">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_zcspec(
@@ -2059,10 +1331,6 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __B,
             @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __C, @NUInt long __N);
 
-    /**
-     * vDSP_zcspecD</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_zcspecD">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_zcspecD(
@@ -2071,10 +1339,6 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __C,
             @NUInt long __N);
 
-    /**
-     * vDSP_zvcmul</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_zvcmul">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_zvcmul(
@@ -2083,10 +1347,6 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __C, @NInt long __IC,
             @NUInt long __N);
 
-    /**
-     * vDSP_zvcmulD</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_zvcmulD">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_zvcmulD(
@@ -2097,10 +1357,6 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __C,
             @NInt long __iC, @NUInt long __N);
 
-    /**
-     * vDSP_zvconj</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_zvconj">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_zvconj(
@@ -2108,10 +1364,6 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __C, @NInt long __IC,
             @NUInt long __N);
 
-    /**
-     * vDSP_zvconjD</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_zvconjD">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_zvconjD(
@@ -2120,10 +1372,6 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __C,
             @NInt long __IC, @NUInt long __N);
 
-    /**
-     * vDSP_zvzsml</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_zvzsml">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_zvzsml(
@@ -2132,10 +1380,6 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __C, @NInt long __IC,
             @NUInt long __N);
 
-    /**
-     * vDSP_zvzsmlD</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_zvzsmlD">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_zvzsmlD(
@@ -2145,50 +1389,30 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __C,
             @NInt long __IC, @NUInt long __N);
 
-    /**
-     * vDSP_zvmags</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_zvmags">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_zvmags(
             @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __A, @NInt long __IA,
             FloatPtr __C, @NInt long __IC, @NUInt long __N);
 
-    /**
-     * vDSP_zvmagsD</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_zvmagsD">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_zvmagsD(
             @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __A,
             @NInt long __IA, DoublePtr __C, @NInt long __IC, @NUInt long __N);
 
-    /**
-     * vDSP_zvmgsa</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_zvmgsa">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_zvmgsa(
             @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __A, @NInt long __IA,
             ConstFloatPtr __B, @NInt long __IB, FloatPtr __C, @NInt long __IC, @NUInt long __N);
 
-    /**
-     * vDSP_zvmgsaD</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_zvmgsaD">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_zvmgsaD(
             @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __A,
             @NInt long __IA, ConstDoublePtr __B, @NInt long __IB, DoublePtr __C, @NInt long __IC, @NUInt long __N);
 
-    /**
-     * vDSP_zvmov</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_zvmov">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_zvmov(
@@ -2196,10 +1420,6 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __C, @NInt long __IC,
             @NUInt long __N);
 
-    /**
-     * vDSP_zvmovD</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_zvmovD">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_zvmovD(
@@ -2208,10 +1428,6 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __C,
             @NInt long __IC, @NUInt long __N);
 
-    /**
-     * vDSP_zvneg</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_zvneg">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_zvneg(
@@ -2219,10 +1435,6 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __C, @NInt long __IC,
             @NUInt long __N);
 
-    /**
-     * vDSP_zvnegD</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_zvnegD">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_zvnegD(
@@ -2231,30 +1443,18 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __C,
             @NInt long __IC, @NUInt long __N);
 
-    /**
-     * vDSP_zvphas</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_zvphas">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_zvphas(
             @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __A, @NInt long __IA,
             FloatPtr __C, @NInt long __IC, @NUInt long __N);
 
-    /**
-     * vDSP_zvphasD</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_zvphasD">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_zvphasD(
             @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __A,
             @NInt long __IA, DoublePtr __C, @NInt long __IC, @NUInt long __N);
 
-    /**
-     * vDSP_zvsma</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_zvsma">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_zvsma(
@@ -2264,10 +1464,6 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __D, @NInt long __ID,
             @NUInt long __N);
 
-    /**
-     * vDSP_zvsmaD</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_zvsmaD">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_zvsmaD(
@@ -2279,1910 +1475,1054 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __D,
             @NInt long __ID, @NUInt long __N);
 
-    /**
-     * vDSP_deq22</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_deq22">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_deq22(ConstFloatPtr __A, @NInt long __IA, ConstFloatPtr __B, FloatPtr __C,
             @NInt long __IC, @NUInt long __N);
 
-    /**
-     * vDSP_deq22D</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_deq22D">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_deq22D(ConstDoublePtr __A, @NInt long __IA, ConstDoublePtr __B, DoublePtr __C,
             @NInt long __IC, @NUInt long __N);
 
-    /**
-     * vDSP_hamm_window</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_hamm_window">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_hamm_window(FloatPtr __C, @NUInt long __N, int __Flag);
 
-    /**
-     * vDSP_hamm_windowD</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_hamm_windowD">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_hamm_windowD(DoublePtr __C, @NUInt long __N, int __Flag);
 
-    /**
-     * vDSP_hann_window</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_hann_window">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_hann_window(FloatPtr __C, @NUInt long __N, int __Flag);
 
-    /**
-     * vDSP_hann_windowD</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_hann_windowD">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_hann_windowD(DoublePtr __C, @NUInt long __N, int __Flag);
 
-    /**
-     * vDSP_maxmgv</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_maxmgv">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_maxmgv(ConstFloatPtr __A, @NInt long __IA, FloatPtr __C, @NUInt long __N);
 
-    /**
-     * vDSP_maxmgvD</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_maxmgvD">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_maxmgvD(ConstDoublePtr __A, @NInt long __IA, DoublePtr __C, @NUInt long __N);
 
-    /**
-     * vDSP_maxmgvi</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_maxmgvi">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_maxmgvi(ConstFloatPtr __A, @NInt long __IA, FloatPtr __C, NUIntPtr __I,
             @NUInt long __N);
 
-    /**
-     * vDSP_maxmgviD</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_maxmgviD">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_maxmgviD(ConstDoublePtr __A, @NInt long __IA, DoublePtr __C, NUIntPtr __I,
             @NUInt long __N);
 
-    /**
-     * vDSP_maxv</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_maxv">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_maxv(ConstFloatPtr __A, @NInt long __IA, FloatPtr __C, @NUInt long __N);
 
-    /**
-     * vDSP_maxvD</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_maxvD">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_maxvD(ConstDoublePtr __A, @NInt long __I, DoublePtr __C, @NUInt long __N);
 
-    /**
-     * vDSP_maxvi</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_maxvi">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_maxvi(ConstFloatPtr __A, @NInt long __IA, FloatPtr __C, NUIntPtr __I,
             @NUInt long __N);
 
-    /**
-     * vDSP_maxviD</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_maxviD">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_maxviD(ConstDoublePtr __A, @NInt long __IA, DoublePtr __C, NUIntPtr __I,
             @NUInt long __N);
 
-    /**
-     * vDSP_meamgv</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_meamgv">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_meamgv(ConstFloatPtr __A, @NInt long __IA, FloatPtr __C, @NUInt long __N);
 
-    /**
-     * vDSP_meamgvD</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_meamgvD">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_meamgvD(ConstDoublePtr __A, @NInt long __IA, DoublePtr __C, @NUInt long __N);
 
-    /**
-     * vDSP_meanv</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_meanv">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_meanv(ConstFloatPtr __A, @NInt long __IA, FloatPtr __C, @NUInt long __N);
 
-    /**
-     * vDSP_meanvD</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_meanvD">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_meanvD(ConstDoublePtr __A, @NInt long __IA, DoublePtr __C, @NUInt long __N);
 
-    /**
-     * vDSP_measqv</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_measqv">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_measqv(ConstFloatPtr __A, @NInt long __IA, FloatPtr __C, @NUInt long __N);
 
-    /**
-     * vDSP_measqvD</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_measqvD">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_measqvD(ConstDoublePtr __A, @NInt long __I, DoublePtr __C, @NUInt long __N);
 
-    /**
-     * vDSP_minmgv</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_minmgv">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_minmgv(ConstFloatPtr __A, @NInt long __IA, FloatPtr __C, @NUInt long __N);
 
-    /**
-     * vDSP_minmgvD</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_minmgvD">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_minmgvD(ConstDoublePtr __A, @NInt long __IA, DoublePtr __C, @NUInt long __N);
 
-    /**
-     * vDSP_minmgvi</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_minmgvi">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_minmgvi(ConstFloatPtr __A, @NInt long __IA, FloatPtr __C, NUIntPtr __I,
             @NUInt long __N);
 
-    /**
-     * vDSP_minmgviD</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_minmgviD">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_minmgviD(ConstDoublePtr __A, @NInt long __IA, DoublePtr __C, NUIntPtr __I,
             @NUInt long __N);
 
-    /**
-     * vDSP_minv</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_minv">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_minv(ConstFloatPtr __A, @NInt long __IA, FloatPtr __C, @NUInt long __N);
 
-    /**
-     * vDSP_minvD</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_minvD">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_minvD(ConstDoublePtr __A, @NInt long __IA, DoublePtr __C, @NUInt long __N);
 
-    /**
-     * vDSP_minvi</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_minvi">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_minvi(ConstFloatPtr __A, @NInt long __IA, FloatPtr __C, NUIntPtr __I,
             @NUInt long __N);
 
-    /**
-     * vDSP_minviD</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_minviD">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_minviD(ConstDoublePtr __A, @NInt long __IA, DoublePtr __C, NUIntPtr __I,
             @NUInt long __N);
 
-    /**
-     * vDSP_mmov</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_mmov">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_mmov(ConstFloatPtr __A, FloatPtr __C, @NUInt long __M, @NUInt long __N,
             @NUInt long __TA, @NUInt long __TC);
 
-    /**
-     * vDSP_mmovD</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_mmovD">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_mmovD(ConstDoublePtr __A, DoublePtr __C, @NUInt long __M, @NUInt long __N,
             @NUInt long __TA, @NUInt long __TC);
 
-    /**
-     * vDSP_mvessq</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_mvessq">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_mvessq(ConstFloatPtr __A, @NInt long __IA, FloatPtr __C, @NUInt long __N);
 
-    /**
-     * vDSP_mvessqD</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_mvessqD">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_mvessqD(ConstDoublePtr __A, @NInt long __IA, DoublePtr __C, @NUInt long __N);
 
-    /**
-     * vDSP_nzcros</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_nzcros">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_nzcros(ConstFloatPtr __A, @NInt long __IA, @NUInt long __B, NUIntPtr __C,
             NUIntPtr __D, @NUInt long __N);
 
-    /**
-     * vDSP_nzcrosD</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_nzcrosD">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_nzcrosD(ConstDoublePtr __A, @NInt long __IA, @NUInt long __B, NUIntPtr __C,
             NUIntPtr __D, @NUInt long __N);
 
-    /**
-     * vDSP_polar</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_polar">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_polar(ConstFloatPtr __A, @NInt long __IA, FloatPtr __C, @NInt long __IC,
             @NUInt long __N);
 
-    /**
-     * vDSP_polarD</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_polarD">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_polarD(ConstDoublePtr __A, @NInt long __IA, DoublePtr __C, @NInt long __IC,
             @NUInt long __N);
 
-    /**
-     * vDSP_rect</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_rect">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_rect(ConstFloatPtr __A, @NInt long __IA, FloatPtr __C, @NInt long __IC,
             @NUInt long __N);
 
-    /**
-     * vDSP_rectD</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_rectD">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_rectD(ConstDoublePtr __A, @NInt long __IA, DoublePtr __C, @NInt long __IC,
             @NUInt long __N);
 
-    /**
-     * vDSP_rmsqv</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_rmsqv">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_rmsqv(ConstFloatPtr __A, @NInt long __IA, FloatPtr __C, @NUInt long __N);
 
-    /**
-     * vDSP_rmsqvD</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_rmsqvD">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_rmsqvD(ConstDoublePtr __A, @NInt long __IA, DoublePtr __C, @NUInt long __N);
 
-    /**
-     * vDSP_svdiv</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_svdiv">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_svdiv(ConstFloatPtr __A, ConstFloatPtr __B, @NInt long __IB, FloatPtr __C,
             @NInt long __IC, @NUInt long __N);
 
-    /**
-     * vDSP_svdivD</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_svdivD">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_svdivD(ConstDoublePtr __A, ConstDoublePtr __B, @NInt long __IB, DoublePtr __C,
             @NInt long __IC, @NUInt long __N);
 
-    /**
-     * vDSP_sve</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_sve">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_sve(ConstFloatPtr __A, @NInt long __I, FloatPtr __C, @NUInt long __N);
 
-    /**
-     * vDSP_sveD</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_sveD">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_sveD(ConstDoublePtr __A, @NInt long __I, DoublePtr __C, @NUInt long __N);
 
-    /**
-     * vDSP_svemg</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_svemg">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_svemg(ConstFloatPtr __A, @NInt long __IA, FloatPtr __C, @NUInt long __N);
 
-    /**
-     * vDSP_svemgD</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_svemgD">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_svemgD(ConstDoublePtr __A, @NInt long __IA, DoublePtr __C, @NUInt long __N);
 
-    /**
-     * vDSP_svesq</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_svesq">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_svesq(ConstFloatPtr __A, @NInt long __IA, FloatPtr __C, @NUInt long __N);
 
-    /**
-     * vDSP_svesqD</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_svesqD">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_svesqD(ConstDoublePtr __A, @NInt long __IA, DoublePtr __C, @NUInt long __N);
 
-    /**
-     * vDSP_sve_svesq</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_sve_svesq">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_sve_svesq(ConstFloatPtr __A, @NInt long __IA, FloatPtr __Sum,
             FloatPtr __SumOfSquares, @NUInt long __N);
 
-    /**
-     * vDSP_sve_svesqD</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_sve_svesqD">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_sve_svesqD(ConstDoublePtr __A, @NInt long __IA, DoublePtr __Sum,
             DoublePtr __SumOfSquares, @NUInt long __N);
 
-    /**
-     * vDSP_normalize</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_normalize">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_normalize(ConstFloatPtr __A, @NInt long __IA, FloatPtr __C, @NInt long __IC,
             FloatPtr __Mean, FloatPtr __StandardDeviation, @NUInt long __N);
 
-    /**
-     * vDSP_normalizeD</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_normalizeD">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_normalizeD(ConstDoublePtr __A, @NInt long __IA, DoublePtr __C, @NInt long __IC,
             DoublePtr __Mean, DoublePtr __StandardDeviation, @NUInt long __N);
 
-    /**
-     * vDSP_svs</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_svs">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_svs(ConstFloatPtr __A, @NInt long __IA, FloatPtr __C, @NUInt long __N);
 
-    /**
-     * vDSP_svsD</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_svsD">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_svsD(ConstDoublePtr __A, @NInt long __IA, DoublePtr __C, @NUInt long __N);
 
-    /**
-     * vDSP_vaam</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_vaam">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_vaam(ConstFloatPtr __A, @NInt long __IA, ConstFloatPtr __B, @NInt long __IB,
             ConstFloatPtr __C, @NInt long __IC, ConstFloatPtr __D, @NInt long __ID, FloatPtr __E, @NInt long __IE,
             @NUInt long __N);
 
-    /**
-     * vDSP_vaamD</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_vaamD">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_vaamD(ConstDoublePtr __A, @NInt long __IA, ConstDoublePtr __B, @NInt long __IB,
             ConstDoublePtr __C, @NInt long __IC, ConstDoublePtr __D, @NInt long __ID, DoublePtr __E, @NInt long __IE,
             @NUInt long __N);
 
-    /**
-     * vDSP_vasbm</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_vasbm">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_vasbm(ConstFloatPtr __A, @NInt long __IA, ConstFloatPtr __B, @NInt long __IB,
             ConstFloatPtr __C, @NInt long __IC, ConstFloatPtr __D, @NInt long __ID, FloatPtr __E, @NInt long __IE,
             @NUInt long __N);
 
-    /**
-     * vDSP_vasbmD</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_vasbmD">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_vasbmD(ConstDoublePtr __A, @NInt long __IA, ConstDoublePtr __B, @NInt long __IB,
             ConstDoublePtr __C, @NInt long __IC, ConstDoublePtr __D, @NInt long __ID, DoublePtr __E, @NInt long __IE,
             @NUInt long __N);
 
-    /**
-     * vDSP_vasm</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_vasm">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_vasm(ConstFloatPtr __A, @NInt long __IA, ConstFloatPtr __B, @NInt long __IB,
             ConstFloatPtr __C, FloatPtr __D, @NInt long __ID, @NUInt long __N);
 
-    /**
-     * vDSP_vasmD</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_vasmD">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_vasmD(ConstDoublePtr __A, @NInt long __IA, ConstDoublePtr __B, @NInt long __IB,
             ConstDoublePtr __C, DoublePtr __D, @NInt long __ID, @NUInt long __N);
 
-    /**
-     * vDSP_vavlin</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_vavlin">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_vavlin(ConstFloatPtr __A, @NInt long __IA, ConstFloatPtr __B, FloatPtr __C,
             @NInt long __IC, @NUInt long __N);
 
-    /**
-     * vDSP_vavlinD</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_vavlinD">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_vavlinD(ConstDoublePtr __A, @NInt long __IA, ConstDoublePtr __B, DoublePtr __C,
             @NInt long __IC, @NUInt long __N);
 
-    /**
-     * vDSP_vclip</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_vclip">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_vclip(ConstFloatPtr __A, @NInt long __IA, ConstFloatPtr __B, ConstFloatPtr __C,
             FloatPtr __D, @NInt long __ID, @NUInt long __N);
 
-    /**
-     * vDSP_vclipD</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_vclipD">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_vclipD(ConstDoublePtr __A, @NInt long __IA, ConstDoublePtr __B, ConstDoublePtr __C,
             DoublePtr __D, @NInt long __ID, @NUInt long __N);
 
-    /**
-     * vDSP_vclipc</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_vclipc">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_vclipc(ConstFloatPtr __A, @NInt long __IA, ConstFloatPtr __B, ConstFloatPtr __C,
             FloatPtr __D, @NInt long __ID, @NUInt long __N, NUIntPtr __NLow, NUIntPtr __NHigh);
 
-    /**
-     * vDSP_vclipcD</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_vclipcD">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_vclipcD(ConstDoublePtr __A, @NInt long __IA, ConstDoublePtr __B, ConstDoublePtr __C,
             DoublePtr __D, @NInt long __ID, @NUInt long __N, NUIntPtr __NLow, NUIntPtr __NHigh);
 
-    /**
-     * vDSP_vclr</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_vclr">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_vclr(FloatPtr __C, @NInt long __IC, @NUInt long __N);
 
-    /**
-     * vDSP_vclrD</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_vclrD">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_vclrD(DoublePtr __C, @NInt long __IC, @NUInt long __N);
 
-    /**
-     * vDSP_vcmprs</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_vcmprs">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_vcmprs(ConstFloatPtr __A, @NInt long __IA, ConstFloatPtr __B, @NInt long __IB,
             FloatPtr __C, @NInt long __IC, @NUInt long __N);
 
-    /**
-     * vDSP_vcmprsD</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_vcmprsD">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_vcmprsD(ConstDoublePtr __A, @NInt long __IA, ConstDoublePtr __B, @NInt long __IB,
             DoublePtr __C, @NInt long __IC, @NUInt long __N);
 
-    /**
-     * vDSP_vdbcon</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_vdbcon">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_vdbcon(ConstFloatPtr __A, @NInt long __IA, ConstFloatPtr __B, FloatPtr __C,
             @NInt long __IC, @NUInt long __N, int __F);
 
-    /**
-     * vDSP_vdbconD</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_vdbconD">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_vdbconD(ConstDoublePtr __A, @NInt long __IA, ConstDoublePtr __B, DoublePtr __C,
             @NInt long __IC, @NUInt long __N, int __F);
 
-    /**
-     * vDSP_vdist</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_vdist">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_vdist(ConstFloatPtr __A, @NInt long __I, ConstFloatPtr __B, @NInt long __J,
             FloatPtr __C, @NInt long __K, @NUInt long __N);
 
-    /**
-     * vDSP_vdistD</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_vdistD">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_vdistD(ConstDoublePtr __A, @NInt long __I, ConstDoublePtr __B, @NInt long __J,
             DoublePtr __C, @NInt long __K, @NUInt long __N);
 
-    /**
-     * vDSP_venvlp</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_venvlp">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_venvlp(ConstFloatPtr __A, @NInt long __IA, ConstFloatPtr __B, @NInt long __IB,
             ConstFloatPtr __C, @NInt long __IC, FloatPtr __D, @NInt long __ID, @NUInt long __N);
 
-    /**
-     * vDSP_venvlpD</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_venvlpD">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_venvlpD(ConstDoublePtr __A, @NInt long __IA, ConstDoublePtr __B, @NInt long __IB,
             ConstDoublePtr __C, @NInt long __IC, DoublePtr __D, @NInt long __ID, @NUInt long __N);
 
-    /**
-     * vDSP_vfix8</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_vfix8">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_vfix8(ConstFloatPtr __A, @NInt long __IA, BytePtr __C, @NInt long __IC,
             @NUInt long __N);
 
-    /**
-     * vDSP_vfix8D</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_vfix8D">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_vfix8D(ConstDoublePtr __A, @NInt long __IA, BytePtr __C, @NInt long __IC,
             @NUInt long __N);
 
-    /**
-     * vDSP_vfix16</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_vfix16">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_vfix16(ConstFloatPtr __A, @NInt long __IA, ShortPtr __C, @NInt long __IC,
             @NUInt long __N);
 
-    /**
-     * vDSP_vfix16D</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_vfix16D">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_vfix16D(ConstDoublePtr __A, @NInt long __IA, ShortPtr __C, @NInt long __IC,
             @NUInt long __N);
 
-    /**
-     * vDSP_vfix32</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_vfix32">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_vfix32(ConstFloatPtr __A, @NInt long __IA, IntPtr __C, @NInt long __IC,
             @NUInt long __N);
 
-    /**
-     * vDSP_vfix32D</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_vfix32D">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_vfix32D(ConstDoublePtr __A, @NInt long __IA, IntPtr __C, @NInt long __IC,
             @NUInt long __N);
 
-    /**
-     * vDSP_vfixu8</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_vfixu8">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_vfixu8(ConstFloatPtr __A, @NInt long __IA, BytePtr __C, @NInt long __IC,
             @NUInt long __N);
 
-    /**
-     * vDSP_vfixu8D</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_vfixu8D">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_vfixu8D(ConstDoublePtr __A, @NInt long __IA, BytePtr __C, @NInt long __IC,
             @NUInt long __N);
 
-    /**
-     * vDSP_vfixu16</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_vfixu16">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_vfixu16(ConstFloatPtr __A, @NInt long __IA, CharPtr __C, @NInt long __IC,
             @NUInt long __N);
 
-    /**
-     * vDSP_vfixu16D</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_vfixu16D">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_vfixu16D(ConstDoublePtr __A, @NInt long __IA, CharPtr __C, @NInt long __IC,
             @NUInt long __N);
 
-    /**
-     * vDSP_vfixu32</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_vfixu32">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_vfixu32(ConstFloatPtr __A, @NInt long __IA, IntPtr __C, @NInt long __IC,
             @NUInt long __N);
 
-    /**
-     * vDSP_vfixu32D</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_vfixu32D">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_vfixu32D(ConstDoublePtr __A, @NInt long __IA, IntPtr __C, @NInt long __IC,
             @NUInt long __N);
 
-    /**
-     * vDSP_vsmfixu24</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_vsmfixu24">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_vsmfixu24(ConstFloatPtr __A, @NInt long __IA, ConstFloatPtr __B,
             @UncertainArgument("Options: reference, array Fallback: reference") vDSP_uint24 __C, @NInt long __IC,
             @NUInt long __N);
 
-    /**
-     * vDSP_vsmfix24</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_vsmfix24">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_vsmfix24(ConstFloatPtr __A, @NInt long __IA, ConstFloatPtr __B,
             @UncertainArgument("Options: reference, array Fallback: reference") vDSP_int24 __C, @NInt long __IC,
             @NUInt long __N);
 
-    /**
-     * vDSP_vfltu24</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_vfltu24">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_vfltu24(
             @UncertainArgument("Options: reference, array Fallback: reference") vDSP_uint24 __A, @NInt long __IA,
             FloatPtr __C, @NInt long __IC, @NUInt long __N);
 
-    /**
-     * vDSP_vflt24</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_vflt24">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_vflt24(
             @UncertainArgument("Options: reference, array Fallback: reference") vDSP_int24 __A, @NInt long __IA,
             FloatPtr __C, @NInt long __IC, @NUInt long __N);
 
-    /**
-     * vDSP_vfltsmu24</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_vfltsmu24">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_vfltsmu24(
             @UncertainArgument("Options: reference, array Fallback: reference") vDSP_uint24 __A, @NInt long __IA,
             ConstFloatPtr __B, FloatPtr __C, @NInt long __IC, @NUInt long __N);
 
-    /**
-     * vDSP_vfltsm24</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_vfltsm24">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_vfltsm24(
             @UncertainArgument("Options: reference, array Fallback: reference") vDSP_int24 __A, @NInt long __IA,
             ConstFloatPtr __B, FloatPtr __C, @NInt long __IC, @NUInt long __N);
 
-    /**
-     * vDSP_vfixr8</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_vfixr8">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_vfixr8(ConstFloatPtr __A, @NInt long __IA, BytePtr __C, @NInt long __IC,
             @NUInt long __N);
 
-    /**
-     * vDSP_vfixr8D</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_vfixr8D">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_vfixr8D(ConstDoublePtr __A, @NInt long __IA, BytePtr __C, @NInt long __IC,
             @NUInt long __N);
 
-    /**
-     * vDSP_vfixr16</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_vfixr16">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_vfixr16(ConstFloatPtr __A, @NInt long __IA, ShortPtr __C, @NInt long __IC,
             @NUInt long __N);
 
-    /**
-     * vDSP_vfixr16D</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_vfixr16D">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_vfixr16D(ConstDoublePtr __A, @NInt long __IA, ShortPtr __C, @NInt long __IC,
             @NUInt long __N);
 
-    /**
-     * vDSP_vfixr32</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_vfixr32">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_vfixr32(ConstFloatPtr __A, @NInt long __IA, IntPtr __C, @NInt long __IC,
             @NUInt long __N);
 
-    /**
-     * vDSP_vfixr32D</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_vfixr32D">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_vfixr32D(ConstDoublePtr __A, @NInt long __IA, IntPtr __C, @NInt long __IC,
             @NUInt long __N);
 
-    /**
-     * vDSP_vfixru8</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_vfixru8">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_vfixru8(ConstFloatPtr __A, @NInt long __IA, BytePtr __C, @NInt long __IC,
             @NUInt long __N);
 
-    /**
-     * vDSP_vfixru8D</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_vfixru8D">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_vfixru8D(ConstDoublePtr __A, @NInt long __IA, BytePtr __C, @NInt long __IC,
             @NUInt long __N);
 
-    /**
-     * vDSP_vfixru16</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_vfixru16">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_vfixru16(ConstFloatPtr __A, @NInt long __IA, CharPtr __C, @NInt long __IC,
             @NUInt long __N);
 
-    /**
-     * vDSP_vfixru16D</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_vfixru16D">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_vfixru16D(ConstDoublePtr __A, @NInt long __IA, CharPtr __C, @NInt long __IC,
             @NUInt long __N);
 
-    /**
-     * vDSP_vfixru32</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_vfixru32">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_vfixru32(ConstFloatPtr __A, @NInt long __IA, IntPtr __C, @NInt long __IC,
             @NUInt long __N);
 
-    /**
-     * vDSP_vfixru32D</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_vfixru32D">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_vfixru32D(ConstDoublePtr __A, @NInt long __IA, IntPtr __C, @NInt long __IC,
             @NUInt long __N);
 
-    /**
-     * vDSP_vflt8</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_vflt8">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_vflt8(
             @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String __A,
             @NInt long __IA, FloatPtr __C, @NInt long __IC, @NUInt long __N);
 
-    /**
-     * vDSP_vflt8D</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_vflt8D">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_vflt8D(
             @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String __A,
             @NInt long __IA, DoublePtr __C, @NInt long __IC, @NUInt long __N);
 
-    /**
-     * vDSP_vflt16</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_vflt16">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_vflt16(ConstShortPtr __A, @NInt long __IA, FloatPtr __C, @NInt long __IC,
             @NUInt long __N);
 
-    /**
-     * vDSP_vflt16D</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_vflt16D">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_vflt16D(ConstShortPtr __A, @NInt long __IA, DoublePtr __C, @NInt long __IC,
             @NUInt long __N);
 
-    /**
-     * vDSP_vflt32</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_vflt32">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_vflt32(ConstIntPtr __A, @NInt long __IA, FloatPtr __C, @NInt long __IC,
             @NUInt long __N);
 
-    /**
-     * vDSP_vflt32D</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_vflt32D">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_vflt32D(ConstIntPtr __A, @NInt long __IA, DoublePtr __C, @NInt long __IC,
             @NUInt long __N);
 
-    /**
-     * vDSP_vfltu8</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_vfltu8">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_vfltu8(
             @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String __A,
             @NInt long __IA, FloatPtr __C, @NInt long __IC, @NUInt long __N);
 
-    /**
-     * vDSP_vfltu8D</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_vfltu8D">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_vfltu8D(
             @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String __A,
             @NInt long __IA, DoublePtr __C, @NInt long __IC, @NUInt long __N);
 
-    /**
-     * vDSP_vfltu16</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_vfltu16">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_vfltu16(ConstCharPtr __A, @NInt long __IA, FloatPtr __C, @NInt long __IC,
             @NUInt long __N);
 
-    /**
-     * vDSP_vfltu16D</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_vfltu16D">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_vfltu16D(ConstCharPtr __A, @NInt long __IA, DoublePtr __C, @NInt long __IC,
             @NUInt long __N);
 
-    /**
-     * vDSP_vfltu32</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_vfltu32">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_vfltu32(ConstIntPtr __A, @NInt long __IA, FloatPtr __C, @NInt long __IC,
             @NUInt long __N);
 
-    /**
-     * vDSP_vfltu32D</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_vfltu32D">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_vfltu32D(ConstIntPtr __A, @NInt long __IA, DoublePtr __C, @NInt long __IC,
             @NUInt long __N);
 
-    /**
-     * vDSP_vfrac</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_vfrac">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_vfrac(ConstFloatPtr __A, @NInt long __IA, FloatPtr __C, @NInt long __IC,
             @NUInt long __N);
 
-    /**
-     * vDSP_vfracD</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_vfracD">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_vfracD(ConstDoublePtr __A, @NInt long __IA, DoublePtr __C, @NInt long __IC,
             @NUInt long __N);
 
-    /**
-     * vDSP_vgathr</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_vgathr">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_vgathr(ConstFloatPtr __A, ConstNUIntPtr __B, @NInt long __IB, FloatPtr __C,
             @NInt long __IC, @NUInt long __N);
 
-    /**
-     * vDSP_vgathrD</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_vgathrD">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_vgathrD(ConstDoublePtr __A, ConstNUIntPtr __B, @NInt long __IB, DoublePtr __C,
             @NInt long __IC, @NUInt long __N);
 
-    /**
-     * vDSP_vgathra</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_vgathra">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_vgathra(Ptr<ConstFloatPtr> __A, @NInt long __IA, FloatPtr __C, @NInt long __IC,
             @NUInt long __N);
 
-    /**
-     * vDSP_vgathraD</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_vgathraD">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_vgathraD(Ptr<ConstDoublePtr> __A, @NInt long __IA, DoublePtr __C, @NInt long __IC,
             @NUInt long __N);
 
-    /**
-     * vDSP_vgen</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_vgen">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_vgen(ConstFloatPtr __A, ConstFloatPtr __B, FloatPtr __C, @NInt long __IC,
             @NUInt long __N);
 
-    /**
-     * vDSP_vgenD</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_vgenD">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_vgenD(ConstDoublePtr __A, ConstDoublePtr __B, DoublePtr __C, @NInt long __IC,
             @NUInt long __N);
 
-    /**
-     * vDSP_vgenp</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_vgenp">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_vgenp(ConstFloatPtr __A, @NInt long __IA, ConstFloatPtr __B, @NInt long __IB,
             FloatPtr __C, @NInt long __IC, @NUInt long __N, @NUInt long __M);
 
-    /**
-     * vDSP_vgenpD</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_vgenpD">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_vgenpD(ConstDoublePtr __A, @NInt long __IA, ConstDoublePtr __B, @NInt long __IB,
             DoublePtr __C, @NInt long __IC, @NUInt long __N, @NUInt long __M);
 
-    /**
-     * vDSP_viclip</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_viclip">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_viclip(ConstFloatPtr __A, @NInt long __IA, ConstFloatPtr __B, ConstFloatPtr __C,
             FloatPtr __D, @NInt long __ID, @NUInt long __N);
 
-    /**
-     * vDSP_viclipD</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_viclipD">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_viclipD(ConstDoublePtr __A, @NInt long __IA, ConstDoublePtr __B, ConstDoublePtr __C,
             DoublePtr __D, @NInt long __ID, @NUInt long __N);
 
-    /**
-     * vDSP_vindex</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_vindex">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_vindex(ConstFloatPtr __A, ConstFloatPtr __B, @NInt long __IB, FloatPtr __C,
             @NInt long __IC, @NUInt long __N);
 
-    /**
-     * vDSP_vindexD</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_vindexD">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_vindexD(ConstDoublePtr __A, ConstDoublePtr __B, @NInt long __IB, DoublePtr __C,
             @NInt long __IC, @NUInt long __N);
 
-    /**
-     * vDSP_vintb</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_vintb">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_vintb(ConstFloatPtr __A, @NInt long __IA, ConstFloatPtr __B, @NInt long __IB,
             ConstFloatPtr __C, FloatPtr __D, @NInt long __ID, @NUInt long __N);
 
-    /**
-     * vDSP_vintbD</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_vintbD">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_vintbD(ConstDoublePtr __A, @NInt long __IA, ConstDoublePtr __B, @NInt long __IB,
             ConstDoublePtr __C, DoublePtr __D, @NInt long __ID, @NUInt long __N);
 
-    /**
-     * vDSP_vlim</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_vlim">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_vlim(ConstFloatPtr __A, @NInt long __IA, ConstFloatPtr __B, ConstFloatPtr __C,
             FloatPtr __D, @NInt long __ID, @NUInt long __N);
 
-    /**
-     * vDSP_vlimD</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_vlimD">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_vlimD(ConstDoublePtr __A, @NInt long __IA, ConstDoublePtr __B, ConstDoublePtr __C,
             DoublePtr __D, @NInt long __ID, @NUInt long __N);
 
-    /**
-     * vDSP_vlint</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_vlint">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_vlint(ConstFloatPtr __A, ConstFloatPtr __B, @NInt long __IB, FloatPtr __C,
             @NInt long __IC, @NUInt long __N, @NUInt long __M);
 
-    /**
-     * vDSP_vlintD</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_vlintD">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_vlintD(ConstDoublePtr __A, ConstDoublePtr __B, @NInt long __IB, DoublePtr __C,
             @NInt long __IC, @NUInt long __N, @NUInt long __M);
 
-    /**
-     * vDSP_vmax</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_vmax">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_vmax(ConstFloatPtr __A, @NInt long __IA, ConstFloatPtr __B, @NInt long __IB,
             FloatPtr __C, @NInt long __IC, @NUInt long __N);
 
-    /**
-     * vDSP_vmaxD</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_vmaxD">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_vmaxD(ConstDoublePtr __A, @NInt long __IA, ConstDoublePtr __B, @NInt long __IB,
             DoublePtr __C, @NInt long __IC, @NUInt long __N);
 
-    /**
-     * vDSP_vmaxmg</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_vmaxmg">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_vmaxmg(ConstFloatPtr __A, @NInt long __IA, ConstFloatPtr __B, @NInt long __IB,
             FloatPtr __C, @NInt long __IC, @NUInt long __N);
 
-    /**
-     * vDSP_vmaxmgD</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_vmaxmgD">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_vmaxmgD(ConstDoublePtr __A, @NInt long __IA, ConstDoublePtr __B, @NInt long __IB,
             DoublePtr __C, @NInt long __IC, @NUInt long __N);
 
-    /**
-     * vDSP_vswmax</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_vswmax">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_vswmax(ConstFloatPtr __A, @NInt long __IA, FloatPtr __C, @NInt long __IC,
             @NUInt long __N, @NUInt long __WindowLength);
 
-    /**
-     * vDSP_vswmaxD</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_vswmaxD">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_vswmaxD(ConstDoublePtr __A, @NInt long __IA, DoublePtr __C, @NInt long __IC,
             @NUInt long __N, @NUInt long __WindowLength);
 
-    /**
-     * vDSP_vmin</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_vmin">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_vmin(ConstFloatPtr __A, @NInt long __IA, ConstFloatPtr __B, @NInt long __IB,
             FloatPtr __C, @NInt long __IC, @NUInt long __N);
 
-    /**
-     * vDSP_vminD</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_vminD">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_vminD(ConstDoublePtr __A, @NInt long __IA, ConstDoublePtr __B, @NInt long __IB,
             DoublePtr __C, @NInt long __IC, @NUInt long __N);
 
-    /**
-     * vDSP_vminmg</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_vminmg">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_vminmg(ConstFloatPtr __A, @NInt long __IA, ConstFloatPtr __B, @NInt long __IB,
             FloatPtr __C, @NInt long __IC, @NUInt long __N);
 
-    /**
-     * vDSP_vminmgD</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_vminmgD">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_vminmgD(ConstDoublePtr __A, @NInt long __IA, ConstDoublePtr __B, @NInt long __IB,
             DoublePtr __C, @NInt long __IC, @NUInt long __N);
 
-    /**
-     * vDSP_vmma</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_vmma">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_vmma(ConstFloatPtr __A, @NInt long __IA, ConstFloatPtr __B, @NInt long __IB,
             ConstFloatPtr __C, @NInt long __IC, ConstFloatPtr __D, @NInt long __ID, FloatPtr __E, @NInt long __IE,
             @NUInt long __N);
 
-    /**
-     * vDSP_vmmaD</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_vmmaD">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_vmmaD(ConstDoublePtr __A, @NInt long __IA, ConstDoublePtr __B, @NInt long __IB,
             ConstDoublePtr __C, @NInt long __IC, ConstDoublePtr __D, @NInt long __ID, DoublePtr __E, @NInt long __IE,
             @NUInt long __N);
 
-    /**
-     * vDSP_vmmsb</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_vmmsb">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_vmmsb(ConstFloatPtr __A, @NInt long __IA, ConstFloatPtr __B, @NInt long __IB,
             ConstFloatPtr __C, @NInt long __IC, ConstFloatPtr __D, @NInt long __ID, FloatPtr __E, @NInt long __IE,
             @NUInt long __N);
 
-    /**
-     * vDSP_vmmsbD</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_vmmsbD">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_vmmsbD(ConstDoublePtr __A, @NInt long __IA, ConstDoublePtr __B, @NInt long __IB,
             ConstDoublePtr __C, @NInt long __IC, ConstDoublePtr __D, @NInt long __ID, DoublePtr __E, @NInt long __IE,
             @NUInt long __N);
 
-    /**
-     * vDSP_vmsa</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_vmsa">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_vmsa(ConstFloatPtr __A, @NInt long __IA, ConstFloatPtr __B, @NInt long __IB,
             ConstFloatPtr __C, FloatPtr __D, @NInt long __ID, @NUInt long __N);
 
-    /**
-     * vDSP_vmsaD</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_vmsaD">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_vmsaD(ConstDoublePtr __A, @NInt long __IA, ConstDoublePtr __B, @NInt long __IB,
             ConstDoublePtr __C, DoublePtr __D, @NInt long __ID, @NUInt long __N);
 
-    /**
-     * vDSP_vmsb</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_vmsb">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_vmsb(ConstFloatPtr __A, @NInt long __IA, ConstFloatPtr __B, @NInt long __IB,
             ConstFloatPtr __C, @NInt long __IC, FloatPtr __D, @NInt long __ID, @NUInt long __N);
 
-    /**
-     * vDSP_vmsbD</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_vmsbD">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_vmsbD(ConstDoublePtr __A, @NInt long __IA, ConstDoublePtr __B, @NInt long __IB,
             ConstDoublePtr __C, @NInt long __IC, DoublePtr __D, @NInt long __ID, @NUInt long __N);
 
-    /**
-     * vDSP_vnabs</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_vnabs">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_vnabs(ConstFloatPtr __A, @NInt long __IA, FloatPtr __C, @NInt long __IC,
             @NUInt long __N);
 
-    /**
-     * vDSP_vnabsD</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_vnabsD">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_vnabsD(ConstDoublePtr __A, @NInt long __IA, DoublePtr __C, @NInt long __IC,
             @NUInt long __N);
 
-    /**
-     * vDSP_vneg</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_vneg">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_vneg(ConstFloatPtr __A, @NInt long __IA, FloatPtr __C, @NInt long __IC,
             @NUInt long __N);
 
-    /**
-     * vDSP_vnegD</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_vnegD">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_vnegD(ConstDoublePtr __A, @NInt long __IA, DoublePtr __C, @NInt long __IC,
             @NUInt long __N);
 
-    /**
-     * vDSP_vpoly</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_vpoly">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_vpoly(ConstFloatPtr __A, @NInt long __IA, ConstFloatPtr __B, @NInt long __IB,
             FloatPtr __C, @NInt long __IC, @NUInt long __N, @NUInt long __P);
 
-    /**
-     * vDSP_vpolyD</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_vpolyD">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_vpolyD(ConstDoublePtr __A, @NInt long __IA, ConstDoublePtr __B, @NInt long __IB,
             DoublePtr __C, @NInt long __IC, @NUInt long __N, @NUInt long __P);
 
-    /**
-     * vDSP_vpythg</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_vpythg">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_vpythg(ConstFloatPtr __A, @NInt long __IA, ConstFloatPtr __B, @NInt long __IB,
             ConstFloatPtr __C, @NInt long __IC, ConstFloatPtr __D, @NInt long __ID, FloatPtr __E, @NInt long __IE,
             @NUInt long __N);
 
-    /**
-     * vDSP_vpythgD</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_vpythgD">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_vpythgD(ConstDoublePtr __A, @NInt long __IA, ConstDoublePtr __B, @NInt long __IB,
             ConstDoublePtr __C, @NInt long __IC, ConstDoublePtr __D, @NInt long __ID, DoublePtr __E, @NInt long __IE,
             @NUInt long __N);
 
-    /**
-     * vDSP_vqint</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_vqint">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_vqint(ConstFloatPtr __A, ConstFloatPtr __B, @NInt long __IB, FloatPtr __C,
             @NInt long __IC, @NUInt long __N, @NUInt long __M);
 
-    /**
-     * vDSP_vqintD</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_vqintD">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_vqintD(ConstDoublePtr __A, ConstDoublePtr __B, @NInt long __IB, DoublePtr __C,
             @NInt long __IC, @NUInt long __N, @NUInt long __M);
 
-    /**
-     * vDSP_vramp</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_vramp">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_vramp(ConstFloatPtr __A, ConstFloatPtr __B, FloatPtr __C, @NInt long __IC,
             @NUInt long __N);
 
-    /**
-     * vDSP_vrampD</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_vrampD">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_vrampD(ConstDoublePtr __A, ConstDoublePtr __B, DoublePtr __C, @NInt long __IC,
             @NUInt long __N);
 
-    /**
-     * vDSP_vrsum</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_vrsum">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_vrsum(ConstFloatPtr __A, @NInt long __IA, ConstFloatPtr __S, FloatPtr __C,
             @NInt long __IC, @NUInt long __N);
 
-    /**
-     * vDSP_vrsumD</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_vrsumD">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_vrsumD(ConstDoublePtr __A, @NInt long __IA, ConstDoublePtr __S, DoublePtr __C,
             @NInt long __IC, @NUInt long __N);
 
-    /**
-     * vDSP_vrvrs</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_vrvrs">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_vrvrs(FloatPtr __C, @NInt long __IC, @NUInt long __N);
 
-    /**
-     * vDSP_vrvrsD</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_vrvrsD">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_vrvrsD(DoublePtr __C, @NInt long __IC, @NUInt long __N);
 
-    /**
-     * vDSP_vsbm</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_vsbm">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_vsbm(ConstFloatPtr __A, @NInt long __IA, ConstFloatPtr __B, @NInt long __IB,
             ConstFloatPtr __C, @NInt long __IC, FloatPtr __D, @NInt long __ID, @NUInt long __N);
 
-    /**
-     * vDSP_vsbmD</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_vsbmD">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_vsbmD(ConstDoublePtr __A, @NInt long __IA, ConstDoublePtr __B, @NInt long __IB,
             ConstDoublePtr __C, @NInt long __IC, DoublePtr __D, @NInt long __ID, @NUInt long __N);
 
-    /**
-     * vDSP_vsbsbm</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_vsbsbm">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_vsbsbm(ConstFloatPtr __A, @NInt long __IA, ConstFloatPtr __B, @NInt long __IB,
             ConstFloatPtr __C, @NInt long __IC, ConstFloatPtr __D, @NInt long __ID, FloatPtr __E, @NInt long __IE,
             @NUInt long __N);
 
-    /**
-     * vDSP_vsbsbmD</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_vsbsbmD">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_vsbsbmD(ConstDoublePtr __A, @NInt long __IA, ConstDoublePtr __B, @NInt long __IB,
             ConstDoublePtr __C, @NInt long __IC, ConstDoublePtr __D, @NInt long __ID, DoublePtr __E, @NInt long __IE,
             @NUInt long __N);
 
-    /**
-     * vDSP_vsbsm</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_vsbsm">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_vsbsm(ConstFloatPtr __A, @NInt long __IA, ConstFloatPtr __B, @NInt long __IB,
             ConstFloatPtr __C, FloatPtr __D, @NInt long __ID, @NUInt long __N);
 
-    /**
-     * vDSP_vsbsmD</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_vsbsmD">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_vsbsmD(ConstDoublePtr __A, @NInt long __IA, ConstDoublePtr __B, @NInt long __IB,
             ConstDoublePtr __C, DoublePtr __D, @NInt long __ID, @NUInt long __N);
 
-    /**
-     * vDSP_vsimps</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_vsimps">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_vsimps(ConstFloatPtr __A, @NInt long __IA, ConstFloatPtr __B, FloatPtr __C,
             @NInt long __IC, @NUInt long __N);
 
-    /**
-     * vDSP_vsimpsD</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_vsimpsD">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_vsimpsD(ConstDoublePtr __A, @NInt long __IA, ConstDoublePtr __B, DoublePtr __C,
             @NInt long __IC, @NUInt long __N);
 
-    /**
-     * vDSP_vsma</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_vsma">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_vsma(ConstFloatPtr __A, @NInt long __IA, ConstFloatPtr __B, ConstFloatPtr __C,
             @NInt long __IC, FloatPtr __D, @NInt long __ID, @NUInt long __N);
 
-    /**
-     * vDSP_vsmaD</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_vsmaD">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_vsmaD(ConstDoublePtr __A, @NInt long __IA, ConstDoublePtr __B, ConstDoublePtr __C,
             @NInt long __IC, DoublePtr __D, @NInt long __ID, @NUInt long __N);
 
-    /**
-     * vDSP_vsmsa</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_vsmsa">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_vsmsa(ConstFloatPtr __A, @NInt long __IA, ConstFloatPtr __B, ConstFloatPtr __C,
             FloatPtr __D, @NInt long __ID, @NUInt long __N);
 
-    /**
-     * vDSP_vsmsaD</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_vsmsaD">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_vsmsaD(ConstDoublePtr __A, @NInt long __IA, ConstDoublePtr __B, ConstDoublePtr __C,
             DoublePtr __ID, @NInt long __L, @NUInt long __N);
 
-    /**
-     * vDSP_vsmsb</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_vsmsb">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_vsmsb(ConstFloatPtr __A, @NInt long __I, ConstFloatPtr __B, ConstFloatPtr __C,
             @NInt long __K, FloatPtr __D, @NInt long __L, @NUInt long __N);
 
-    /**
-     * vDSP_vsmsbD</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_vsmsbD">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_vsmsbD(ConstDoublePtr __A, @NInt long __I, ConstDoublePtr __B, ConstDoublePtr __C,
             @NInt long __K, DoublePtr __D, @NInt long __L, @NUInt long __N);
 
-    /**
-     * vDSP_vsmsma</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_vsmsma">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_vsmsma(ConstFloatPtr __A, @NInt long __IA, ConstFloatPtr __B, ConstFloatPtr __C,
             @NInt long __IC, ConstFloatPtr __D, FloatPtr __E, @NInt long __IE, @NUInt long __N);
 
-    /**
-     * vDSP_vsmsmaD</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_vsmsmaD">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_vsmsmaD(ConstDoublePtr __A, @NInt long __IA, ConstDoublePtr __B, ConstDoublePtr __C,
             @NInt long __IC, ConstDoublePtr __D, DoublePtr __E, @NInt long __IE, @NUInt long __N);
 
-    /**
-     * vDSP_vsort</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_vsort">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_vsort(FloatPtr __C, @NUInt long __N, int __Order);
 
-    /**
-     * vDSP_vsortD</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_vsortD">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_vsortD(DoublePtr __C, @NUInt long __N, int __Order);
 
-    /**
-     * vDSP_vsorti</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_vsorti">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_vsorti(ConstFloatPtr __C, NUIntPtr __I, NUIntPtr __Temporary, @NUInt long __N,
             int __Order);
 
-    /**
-     * vDSP_vsortiD</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_vsortiD">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_vsortiD(ConstDoublePtr __C, NUIntPtr __I, NUIntPtr __Temporary, @NUInt long __N,
             int __Order);
 
-    /**
-     * vDSP_vswap</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_vswap">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_vswap(FloatPtr __A, @NInt long __IA, FloatPtr __B, @NInt long __IB, @NUInt long __N);
 
-    /**
-     * vDSP_vswapD</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_vswapD">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_vswapD(DoublePtr __A, @NInt long __IA, DoublePtr __B, @NInt long __IB,
             @NUInt long __N);
 
-    /**
-     * vDSP_vswsum</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_vswsum">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_vswsum(ConstFloatPtr __A, @NInt long __IA, FloatPtr __C, @NInt long __IC,
             @NUInt long __N, @NUInt long __P);
 
-    /**
-     * vDSP_vswsumD</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_vswsumD">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_vswsumD(ConstDoublePtr __A, @NInt long __IA, DoublePtr __C, @NInt long __IC,
             @NUInt long __N, @NUInt long __P);
 
-    /**
-     * vDSP_vtabi</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_vtabi">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_vtabi(ConstFloatPtr __A, @NInt long __IA, ConstFloatPtr __S1, ConstFloatPtr __S2,
             ConstFloatPtr __C, @NUInt long __M, FloatPtr __D, @NInt long __ID, @NUInt long __N);
 
-    /**
-     * vDSP_vtabiD</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_vtabiD">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_vtabiD(ConstDoublePtr __A, @NInt long __IA, ConstDoublePtr __S1, ConstDoublePtr __S2,
             ConstDoublePtr __C, @NUInt long __M, DoublePtr __ID, @NInt long __L, @NUInt long __N);
 
-    /**
-     * vDSP_vthr</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_vthr">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_vthr(ConstFloatPtr __A, @NInt long __IA, ConstFloatPtr __B, FloatPtr __C,
             @NInt long __IC, @NUInt long __N);
 
-    /**
-     * vDSP_vthrD</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_vthrD">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_vthrD(ConstDoublePtr __A, @NInt long __IA, ConstDoublePtr __B, DoublePtr __C,
             @NInt long __IC, @NUInt long __N);
 
-    /**
-     * vDSP_vthres</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_vthres">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_vthres(ConstFloatPtr __A, @NInt long __IA, ConstFloatPtr __B, FloatPtr __C,
             @NInt long __IC, @NUInt long __N);
 
-    /**
-     * vDSP_vthresD</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_vthresD">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_vthresD(ConstDoublePtr __A, @NInt long __IA, ConstDoublePtr __B, DoublePtr __C,
             @NInt long __IC, @NUInt long __N);
 
-    /**
-     * vDSP_vthrsc</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_vthrsc">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_vthrsc(ConstFloatPtr __A, @NInt long __IA, ConstFloatPtr __B, ConstFloatPtr __C,
             FloatPtr __D, @NInt long __ID, @NUInt long __N);
 
-    /**
-     * vDSP_vthrscD</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_vthrscD">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_vthrscD(ConstDoublePtr __A, @NInt long __IA, ConstDoublePtr __B, ConstDoublePtr __C,
             DoublePtr __D, @NInt long __ID, @NUInt long __N);
 
-    /**
-     * vDSP_vtmerg</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_vtmerg">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_vtmerg(ConstFloatPtr __A, @NInt long __IA, ConstFloatPtr __B, @NInt long __IB,
             FloatPtr __C, @NInt long __IC, @NUInt long __N);
 
-    /**
-     * vDSP_vtmergD</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_vtmergD">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_vtmergD(ConstDoublePtr __A, @NInt long __IA, ConstDoublePtr __B, @NInt long __IB,
             DoublePtr __C, @NInt long __IC, @NUInt long __N);
 
-    /**
-     * vDSP_vtrapz</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_vtrapz">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_vtrapz(ConstFloatPtr __A, @NInt long __IA, ConstFloatPtr __B, FloatPtr __C,
             @NInt long __IC, @NUInt long __N);
 
-    /**
-     * vDSP_vtrapzD</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_vtrapzD">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_vtrapzD(ConstDoublePtr __A, @NInt long __IA, ConstDoublePtr __B, DoublePtr __C,
             @NInt long __IC, @NUInt long __N);
 
-    /**
-     * vDSP_wiener</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_wiener">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_wiener(@NUInt long __L, ConstFloatPtr __A, ConstFloatPtr __C, FloatPtr __F,
             FloatPtr __P, int __Flag, IntPtr __Error);
 
-    /**
-     * vDSP_wienerD</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_wienerD">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_wienerD(@NUInt long __L, ConstDoublePtr __A, ConstDoublePtr __C, DoublePtr __F,
             DoublePtr __P, int __Flag, IntPtr __Error);
 
-    /**
-     * vDSP_FFT16_copv</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_FFT16_copv">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_FFT16_copv(FloatPtr __Output, ConstFloatPtr __Input, int __Direction);
 
-    /**
-     * vDSP_FFT32_copv</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_FFT32_copv">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_FFT32_copv(FloatPtr __Output, ConstFloatPtr __Input, int __Direction);
 
-    /**
-     * vDSP_FFT16_zopv</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_FFT16_zopv">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_FFT16_zopv(FloatPtr __Or, FloatPtr __Oi, ConstFloatPtr __Ir, ConstFloatPtr __Ii,
             int __Direction);
 
-    /**
-     * vDSP_FFT32_zopv</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_FFT32_zopv">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_FFT32_zopv(FloatPtr __Or, FloatPtr __Oi, ConstFloatPtr __Ir, ConstFloatPtr __Ii,
@@ -4192,54 +2532,30 @@ public final class Accelerate {
     @CFunction
     public static native vDSP_DFT_Setup vDSP_DFT_CreateSetup(vDSP_DFT_Setup __Previous, @NUInt long __Length);
 
-    /**
-     * vDSP_DFT_zop_CreateSetup</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_DFT_zop_CreateSetup">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native vDSP_DFT_Setup vDSP_DFT_zop_CreateSetup(vDSP_DFT_Setup __Previous, @NUInt long __Length,
             int __Direction);
 
-    /**
-     * vDSP_DFT_zop_CreateSetupD</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_DFT_zop_CreateSetupD">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native vDSP_DFT_SetupD vDSP_DFT_zop_CreateSetupD(vDSP_DFT_SetupD __Previous, @NUInt long __Length,
             int __Direction);
 
-    /**
-     * vDSP_DFT_zrop_CreateSetup</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_DFT_zrop_CreateSetup">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native vDSP_DFT_Setup vDSP_DFT_zrop_CreateSetup(vDSP_DFT_Setup __Previous, @NUInt long __Length,
             int __Direction);
 
-    /**
-     * vDSP_DFT_zrop_CreateSetupD</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_DFT_zrop_CreateSetupD">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native vDSP_DFT_SetupD vDSP_DFT_zrop_CreateSetupD(vDSP_DFT_SetupD __Previous, @NUInt long __Length,
             int __Direction);
 
-    /**
-     * vDSP_DFT_DestroySetup</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_DFT_DestroySetup">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_DFT_DestroySetup(vDSP_DFT_Setup __Setup);
 
-    /**
-     * vDSP_DFT_DestroySetupD</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_DFT_DestroySetupD">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_DFT_DestroySetupD(vDSP_DFT_SetupD __Setup);
@@ -4249,1628 +2565,892 @@ public final class Accelerate {
     public static native void vDSP_DFT_zop(VoidPtr __Setup, ConstFloatPtr __Ir, ConstFloatPtr __Ii, @NInt long __Is,
             FloatPtr __Or, FloatPtr __Oi, @NInt long __Os, int __Direction);
 
-    /**
-     * vDSP_DFT_Execute</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_DFT_Execute">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_DFT_Execute(VoidPtr __Setup, ConstFloatPtr __Ir, ConstFloatPtr __Ii, FloatPtr __Or,
             FloatPtr __Oi);
 
-    /**
-     * vDSP_DFT_ExecuteD</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_DFT_ExecuteD">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_DFT_ExecuteD(VoidPtr __Setup, ConstDoublePtr __Ir, ConstDoublePtr __Ii,
             DoublePtr __Or, DoublePtr __Oi);
 
-    /**
-     * vDSP_DCT_CreateSetup</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_DCT_CreateSetup">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native vDSP_DFT_Setup vDSP_DCT_CreateSetup(vDSP_DFT_Setup __Previous, @NUInt long __Length,
             int __Type);
 
-    /**
-     * vDSP_DCT_Execute</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_DCT_Execute">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_DCT_Execute(VoidPtr __Setup, ConstFloatPtr __Input, FloatPtr __Output);
 
-    /**
-     * vDSP_dotpr2</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_dotpr2">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_dotpr2(ConstFloatPtr __A0, @NInt long __A0Stride, ConstFloatPtr __A1,
             @NInt long __A1Stride, ConstFloatPtr __B, @NInt long __BStride, FloatPtr __C0, FloatPtr __C1,
             @NUInt long __Length);
 
-    /**
-     * vDSP_dotpr2D</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_dotpr2D">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_dotpr2D(ConstDoublePtr __A0, @NInt long __A0Stride, ConstDoublePtr __A1,
             @NInt long __A1Stride, ConstDoublePtr __B, @NInt long __BStride, DoublePtr __C0, DoublePtr __C1,
             @NUInt long __Length);
 
-    /**
-     * vDSP_dotpr_s1_15</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_dotpr_s1_15">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_dotpr_s1_15(ConstShortPtr __A, @NInt long __AStride, ConstShortPtr __B,
             @NInt long __BStride, ShortPtr __C, @NUInt long __N);
 
-    /**
-     * vDSP_dotpr2_s1_15</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_dotpr2_s1_15">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_dotpr2_s1_15(ConstShortPtr __A0, @NInt long __A0Stride, ConstShortPtr __A1,
             @NInt long __A1Stride, ConstShortPtr __B, @NInt long __BStride, ShortPtr __C0, ShortPtr __C1,
             @NUInt long __N);
 
-    /**
-     * vDSP_dotpr_s8_24</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_dotpr_s8_24">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_dotpr_s8_24(ConstIntPtr __A, @NInt long __AStride, ConstIntPtr __B,
             @NInt long __BStride, IntPtr __C, @NUInt long __N);
 
-    /**
-     * vDSP_dotpr2_s8_24</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_dotpr2_s8_24">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_dotpr2_s8_24(ConstIntPtr __A0, @NInt long __A0Stride, ConstIntPtr __A1,
             @NInt long __A1Stride, ConstIntPtr __B, @NInt long __BStride, IntPtr __C0, IntPtr __C1, @NUInt long __N);
 
-    /**
-     * vDSP_vaddsub</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_vaddsub">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_vaddsub(ConstFloatPtr __I0, @NInt long __I0S, ConstFloatPtr __I1, @NInt long __I1S,
             FloatPtr __O0, @NInt long __O0S, FloatPtr __O1, @NInt long __O1S, @NUInt long __N);
 
-    /**
-     * vDSP_vaddsubD</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_vaddsubD">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_vaddsubD(ConstDoublePtr __I0, @NInt long __I0S, ConstDoublePtr __I1,
             @NInt long __I1S, DoublePtr __O0, @NInt long __O0S, DoublePtr __O1, @NInt long __O1S, @NUInt long __N);
 
-    /**
-     * vDSP_vrampmul</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_vrampmul">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_vrampmul(ConstFloatPtr __I, @NInt long __IS, FloatPtr __Start, ConstFloatPtr __Step,
             FloatPtr __O, @NInt long __OS, @NUInt long __N);
 
-    /**
-     * vDSP_vrampmulD</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_vrampmulD">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_vrampmulD(ConstDoublePtr __I, @NInt long __IS, DoublePtr __Start,
             ConstDoublePtr __Step, DoublePtr __O, @NInt long __OS, @NUInt long __N);
 
-    /**
-     * vDSP_vrampmuladd</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_vrampmuladd">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_vrampmuladd(ConstFloatPtr __I, @NInt long __IS, FloatPtr __Start,
             ConstFloatPtr __Step, FloatPtr __O, @NInt long __OS, @NUInt long __N);
 
-    /**
-     * vDSP_vrampmuladdD</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_vrampmuladdD">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_vrampmuladdD(ConstDoublePtr __I, @NInt long __IS, DoublePtr __Start,
             ConstDoublePtr __Step, DoublePtr __O, @NInt long __OS, @NUInt long __N);
 
-    /**
-     * vDSP_vrampmul2</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_vrampmul2">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_vrampmul2(ConstFloatPtr __I0, ConstFloatPtr __I1, @NInt long __IS, FloatPtr __Start,
             ConstFloatPtr __Step, FloatPtr __O0, FloatPtr __O1, @NInt long __OS, @NUInt long __N);
 
-    /**
-     * vDSP_vrampmul2D</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_vrampmul2D">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_vrampmul2D(ConstDoublePtr __I0, ConstDoublePtr __I1, @NInt long __IS,
             DoublePtr __Start, ConstDoublePtr __Step, DoublePtr __O0, DoublePtr __O1, @NInt long __OS, @NUInt long __N);
 
-    /**
-     * vDSP_vrampmuladd2</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_vrampmuladd2">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_vrampmuladd2(ConstFloatPtr __I0, ConstFloatPtr __I1, @NInt long __IS,
             FloatPtr __Start, ConstFloatPtr __Step, FloatPtr __O0, FloatPtr __O1, @NInt long __OS, @NUInt long __N);
 
-    /**
-     * vDSP_vrampmuladd2D</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_vrampmuladd2D">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_vrampmuladd2D(ConstDoublePtr __I0, ConstDoublePtr __I1, @NInt long __IS,
             DoublePtr __Start, ConstDoublePtr __Step, DoublePtr __O0, DoublePtr __O1, @NInt long __OS, @NUInt long __N);
 
-    /**
-     * vDSP_vrampmul_s1_15</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_vrampmul_s1_15">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_vrampmul_s1_15(ConstShortPtr __I, @NInt long __IS, ShortPtr __Start,
             ConstShortPtr __Step, ShortPtr __O, @NInt long __OS, @NUInt long __N);
 
-    /**
-     * vDSP_vrampmuladd_s1_15</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_vrampmuladd_s1_15">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_vrampmuladd_s1_15(ConstShortPtr __I, @NInt long __IS, ShortPtr __Start,
             ConstShortPtr __Step, ShortPtr __O, @NInt long __OS, @NUInt long __N);
 
-    /**
-     * vDSP_vrampmul2_s1_15</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_vrampmul2_s1_15">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_vrampmul2_s1_15(ConstShortPtr __I0, ConstShortPtr __I1, @NInt long __IS,
             ShortPtr __Start, ConstShortPtr __Step, ShortPtr __O0, ShortPtr __O1, @NInt long __OS, @NUInt long __N);
 
-    /**
-     * vDSP_vrampmuladd2_s1_15</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_vrampmuladd2_s1_15">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_vrampmuladd2_s1_15(ConstShortPtr __I0, ConstShortPtr __I1, @NInt long __IS,
             ShortPtr __Start, ConstShortPtr __Step, ShortPtr __O0, ShortPtr __O1, @NInt long __OS, @NUInt long __N);
 
-    /**
-     * vDSP_vrampmul_s8_24</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_vrampmul_s8_24">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_vrampmul_s8_24(ConstIntPtr __I, @NInt long __IS, IntPtr __Start, ConstIntPtr __Step,
             IntPtr __O, @NInt long __OS, @NUInt long __N);
 
-    /**
-     * vDSP_vrampmuladd_s8_24</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_vrampmuladd_s8_24">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_vrampmuladd_s8_24(ConstIntPtr __I, @NInt long __IS, IntPtr __Start,
             ConstIntPtr __Step, IntPtr __O, @NInt long __OS, @NUInt long __N);
 
-    /**
-     * vDSP_vrampmul2_s8_24</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_vrampmul2_s8_24">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_vrampmul2_s8_24(ConstIntPtr __I0, ConstIntPtr __I1, @NInt long __IS, IntPtr __Start,
             ConstIntPtr __Step, IntPtr __O0, IntPtr __O1, @NInt long __OS, @NUInt long __N);
 
-    /**
-     * vDSP_vrampmuladd2_s8_24</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_vrampmuladd2_s8_24">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_vrampmuladd2_s8_24(ConstIntPtr __I0, ConstIntPtr __I1, @NInt long __IS,
             IntPtr __Start, ConstIntPtr __Step, IntPtr __O0, IntPtr __O1, @NInt long __OS, @NUInt long __N);
 
-    /**
-     * cblas_errprn</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/BLAS_Ref/index.html#//apple_ref/c/func/cblas_errprn">iOS Dev Center</a>
-     */
     @Generated
     @Variadic()
     @CFunction
     public static native int cblas_errprn(int __ierr, int __info, BytePtr __form, Object... varargs);
 
-    /**
-     * cblas_xerbla</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/BLAS_Ref/index.html#//apple_ref/c/func/cblas_xerbla">iOS Dev Center</a>
-     */
     @Generated
     @Variadic()
     @CFunction
     public static native void cblas_xerbla(int __p, BytePtr __rout, BytePtr __form, Object... varargs);
 
-    /**
-     * cblas_sdsdot</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/BLAS_Ref/index.html#//apple_ref/c/func/cblas_sdsdot">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native float cblas_sdsdot(int __N, float __alpha, ConstFloatPtr __X, int __incX, ConstFloatPtr __Y,
             int __incY);
 
-    /**
-     * cblas_dsdot</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/BLAS_Ref/index.html#//apple_ref/c/func/cblas_dsdot">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native double cblas_dsdot(int __N, ConstFloatPtr __X, int __incX, ConstFloatPtr __Y, int __incY);
 
-    /**
-     * cblas_sdot</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/BLAS_Ref/index.html#//apple_ref/c/func/cblas_sdot">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native float cblas_sdot(int __N, ConstFloatPtr __X, int __incX, ConstFloatPtr __Y, int __incY);
 
-    /**
-     * cblas_ddot</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/BLAS_Ref/index.html#//apple_ref/c/func/cblas_ddot">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native double cblas_ddot(int __N, ConstDoublePtr __X, int __incX, ConstDoublePtr __Y, int __incY);
 
-    /**
-     * cblas_cdotu_sub</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/BLAS_Ref/index.html#//apple_ref/c/func/cblas_cdotu_sub">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void cblas_cdotu_sub(int __N, ConstVoidPtr __X, int __incX, ConstVoidPtr __Y, int __incY,
             VoidPtr __dotu);
 
-    /**
-     * cblas_cdotc_sub</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/BLAS_Ref/index.html#//apple_ref/c/func/cblas_cdotc_sub">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void cblas_cdotc_sub(int __N, ConstVoidPtr __X, int __incX, ConstVoidPtr __Y, int __incY,
             VoidPtr __dotc);
 
-    /**
-     * cblas_zdotu_sub</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/BLAS_Ref/index.html#//apple_ref/c/func/cblas_zdotu_sub">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void cblas_zdotu_sub(int __N, ConstVoidPtr __X, int __incX, ConstVoidPtr __Y, int __incY,
             VoidPtr __dotu);
 
-    /**
-     * cblas_zdotc_sub</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/BLAS_Ref/index.html#//apple_ref/c/func/cblas_zdotc_sub">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void cblas_zdotc_sub(int __N, ConstVoidPtr __X, int __incX, ConstVoidPtr __Y, int __incY,
             VoidPtr __dotc);
 
-    /**
-     * cblas_snrm2</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/BLAS_Ref/index.html#//apple_ref/c/func/cblas_snrm2">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native float cblas_snrm2(int __N, ConstFloatPtr __X, int __incX);
 
-    /**
-     * cblas_sasum</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/BLAS_Ref/index.html#//apple_ref/c/func/cblas_sasum">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native float cblas_sasum(int __N, ConstFloatPtr __X, int __incX);
 
-    /**
-     * cblas_dnrm2</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/BLAS_Ref/index.html#//apple_ref/c/func/cblas_dnrm2">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native double cblas_dnrm2(int __N, ConstDoublePtr __X, int __incX);
 
-    /**
-     * cblas_dasum</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/BLAS_Ref/index.html#//apple_ref/c/func/cblas_dasum">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native double cblas_dasum(int __N, ConstDoublePtr __X, int __incX);
 
-    /**
-     * cblas_scnrm2</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/BLAS_Ref/index.html#//apple_ref/c/func/cblas_scnrm2">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native float cblas_scnrm2(int __N, ConstVoidPtr __X, int __incX);
 
-    /**
-     * cblas_scasum</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/BLAS_Ref/index.html#//apple_ref/c/func/cblas_scasum">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native float cblas_scasum(int __N, ConstVoidPtr __X, int __incX);
 
-    /**
-     * cblas_dznrm2</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/BLAS_Ref/index.html#//apple_ref/c/func/cblas_dznrm2">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native double cblas_dznrm2(int __N, ConstVoidPtr __X, int __incX);
 
-    /**
-     * cblas_dzasum</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/BLAS_Ref/index.html#//apple_ref/c/func/cblas_dzasum">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native double cblas_dzasum(int __N, ConstVoidPtr __X, int __incX);
 
-    /**
-     * cblas_isamax</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/BLAS_Ref/index.html#//apple_ref/c/func/cblas_isamax">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native int cblas_isamax(int __N, ConstFloatPtr __X, int __incX);
 
-    /**
-     * cblas_idamax</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/BLAS_Ref/index.html#//apple_ref/c/func/cblas_idamax">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native int cblas_idamax(int __N, ConstDoublePtr __X, int __incX);
 
-    /**
-     * cblas_icamax</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/BLAS_Ref/index.html#//apple_ref/c/func/cblas_icamax">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native int cblas_icamax(int __N, ConstVoidPtr __X, int __incX);
 
-    /**
-     * cblas_izamax</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/BLAS_Ref/index.html#//apple_ref/c/func/cblas_izamax">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native int cblas_izamax(int __N, ConstVoidPtr __X, int __incX);
 
-    /**
-     * cblas_sswap</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/BLAS_Ref/index.html#//apple_ref/c/func/cblas_sswap">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void cblas_sswap(int __N, FloatPtr __X, int __incX, FloatPtr __Y, int __incY);
 
-    /**
-     * cblas_scopy</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/BLAS_Ref/index.html#//apple_ref/c/func/cblas_scopy">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void cblas_scopy(int __N, ConstFloatPtr __X, int __incX, FloatPtr __Y, int __incY);
 
-    /**
-     * cblas_saxpy</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/BLAS_Ref/index.html#//apple_ref/c/func/cblas_saxpy">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void cblas_saxpy(int __N, float __alpha, ConstFloatPtr __X, int __incX, FloatPtr __Y,
             int __incY);
 
-    /**
-     * catlas_saxpby</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/BLAS_Ref/index.html#//apple_ref/c/func/catlas_saxpby">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void catlas_saxpby(int __N, float __alpha, ConstFloatPtr __X, int __incX, float __beta,
             FloatPtr __Y, int __incY);
 
-    /**
-     * catlas_sset</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/BLAS_Ref/index.html#//apple_ref/c/func/catlas_sset">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void catlas_sset(int __N, float __alpha, FloatPtr __X, int __incX);
 
-    /**
-     * cblas_dswap</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/BLAS_Ref/index.html#//apple_ref/c/func/cblas_dswap">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void cblas_dswap(int __N, DoublePtr __X, int __incX, DoublePtr __Y, int __incY);
 
-    /**
-     * cblas_dcopy</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/BLAS_Ref/index.html#//apple_ref/c/func/cblas_dcopy">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void cblas_dcopy(int __N, ConstDoublePtr __X, int __incX, DoublePtr __Y, int __incY);
 
-    /**
-     * cblas_daxpy</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/BLAS_Ref/index.html#//apple_ref/c/func/cblas_daxpy">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void cblas_daxpy(int __N, double __alpha, ConstDoublePtr __X, int __incX, DoublePtr __Y,
             int __incY);
 
-    /**
-     * catlas_daxpby</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/BLAS_Ref/index.html#//apple_ref/c/func/catlas_daxpby">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void catlas_daxpby(int __N, double __alpha, ConstDoublePtr __X, int __incX, double __beta,
             DoublePtr __Y, int __incY);
 
-    /**
-     * catlas_dset</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/BLAS_Ref/index.html#//apple_ref/c/func/catlas_dset">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void catlas_dset(int __N, double __alpha, DoublePtr __X, int __incX);
 
-    /**
-     * cblas_cswap</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/BLAS_Ref/index.html#//apple_ref/c/func/cblas_cswap">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void cblas_cswap(int __N, VoidPtr __X, int __incX, VoidPtr __Y, int __incY);
 
-    /**
-     * cblas_ccopy</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/BLAS_Ref/index.html#//apple_ref/c/func/cblas_ccopy">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void cblas_ccopy(int __N, ConstVoidPtr __X, int __incX, VoidPtr __Y, int __incY);
 
-    /**
-     * cblas_caxpy</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/BLAS_Ref/index.html#//apple_ref/c/func/cblas_caxpy">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void cblas_caxpy(int __N, ConstVoidPtr __alpha, ConstVoidPtr __X, int __incX, VoidPtr __Y,
             int __incY);
 
-    /**
-     * catlas_caxpby</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/BLAS_Ref/index.html#//apple_ref/c/func/catlas_caxpby">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void catlas_caxpby(int __N, ConstVoidPtr __alpha, ConstVoidPtr __X, int __incX,
             ConstVoidPtr __beta, VoidPtr __Y, int __incY);
 
-    /**
-     * catlas_cset</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/BLAS_Ref/index.html#//apple_ref/c/func/catlas_cset">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void catlas_cset(int __N, ConstVoidPtr __alpha, VoidPtr __X, int __incX);
 
-    /**
-     * cblas_zswap</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/BLAS_Ref/index.html#//apple_ref/c/func/cblas_zswap">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void cblas_zswap(int __N, VoidPtr __X, int __incX, VoidPtr __Y, int __incY);
 
-    /**
-     * cblas_zcopy</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/BLAS_Ref/index.html#//apple_ref/c/func/cblas_zcopy">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void cblas_zcopy(int __N, ConstVoidPtr __X, int __incX, VoidPtr __Y, int __incY);
 
-    /**
-     * cblas_zaxpy</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/BLAS_Ref/index.html#//apple_ref/c/func/cblas_zaxpy">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void cblas_zaxpy(int __N, ConstVoidPtr __alpha, ConstVoidPtr __X, int __incX, VoidPtr __Y,
             int __incY);
 
-    /**
-     * catlas_zaxpby</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/BLAS_Ref/index.html#//apple_ref/c/func/catlas_zaxpby">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void catlas_zaxpby(int __N, ConstVoidPtr __alpha, ConstVoidPtr __X, int __incX,
             ConstVoidPtr __beta, VoidPtr __Y, int __incY);
 
-    /**
-     * catlas_zset</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/BLAS_Ref/index.html#//apple_ref/c/func/catlas_zset">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void catlas_zset(int __N, ConstVoidPtr __alpha, VoidPtr __X, int __incX);
 
-    /**
-     * cblas_srotg</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/BLAS_Ref/index.html#//apple_ref/c/func/cblas_srotg">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void cblas_srotg(FloatPtr __a, FloatPtr __b, FloatPtr __c, FloatPtr __s);
 
-    /**
-     * cblas_srotmg</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/BLAS_Ref/index.html#//apple_ref/c/func/cblas_srotmg">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void cblas_srotmg(FloatPtr __d1, FloatPtr __d2, FloatPtr __b1, float __b2, FloatPtr __P);
 
-    /**
-     * cblas_srot</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/BLAS_Ref/index.html#//apple_ref/c/func/cblas_srot">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void cblas_srot(int __N, FloatPtr __X, int __incX, FloatPtr __Y, int __incY, float __c,
             float __s);
 
-    /**
-     * cblas_srotm</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/BLAS_Ref/index.html#//apple_ref/c/func/cblas_srotm">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void cblas_srotm(int __N, FloatPtr __X, int __incX, FloatPtr __Y, int __incY,
             ConstFloatPtr __P);
 
-    /**
-     * cblas_drotg</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/BLAS_Ref/index.html#//apple_ref/c/func/cblas_drotg">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void cblas_drotg(DoublePtr __a, DoublePtr __b, DoublePtr __c, DoublePtr __s);
 
-    /**
-     * cblas_drotmg</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/BLAS_Ref/index.html#//apple_ref/c/func/cblas_drotmg">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void cblas_drotmg(DoublePtr __d1, DoublePtr __d2, DoublePtr __b1, double __b2, DoublePtr __P);
 
-    /**
-     * cblas_drot</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/BLAS_Ref/index.html#//apple_ref/c/func/cblas_drot">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void cblas_drot(int __N, DoublePtr __X, int __incX, DoublePtr __Y, int __incY, double __c,
             double __s);
 
-    /**
-     * cblas_drotm</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/BLAS_Ref/index.html#//apple_ref/c/func/cblas_drotm">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void cblas_drotm(int __N, DoublePtr __X, int __incX, DoublePtr __Y, int __incY,
             ConstDoublePtr __P);
 
-    /**
-     * cblas_sscal</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/BLAS_Ref/index.html#//apple_ref/c/func/cblas_sscal">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void cblas_sscal(int __N, float __alpha, FloatPtr __X, int __incX);
 
-    /**
-     * cblas_dscal</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/BLAS_Ref/index.html#//apple_ref/c/func/cblas_dscal">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void cblas_dscal(int __N, double __alpha, DoublePtr __X, int __incX);
 
-    /**
-     * cblas_cscal</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/BLAS_Ref/index.html#//apple_ref/c/func/cblas_cscal">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void cblas_cscal(int __N, ConstVoidPtr __alpha, VoidPtr __X, int __incX);
 
-    /**
-     * cblas_zscal</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/BLAS_Ref/index.html#//apple_ref/c/func/cblas_zscal">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void cblas_zscal(int __N, ConstVoidPtr __alpha, VoidPtr __X, int __incX);
 
-    /**
-     * cblas_csscal</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/BLAS_Ref/index.html#//apple_ref/c/func/cblas_csscal">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void cblas_csscal(int __N, float __alpha, VoidPtr __X, int __incX);
 
-    /**
-     * cblas_zdscal</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/BLAS_Ref/index.html#//apple_ref/c/func/cblas_zdscal">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void cblas_zdscal(int __N, double __alpha, VoidPtr __X, int __incX);
 
-    /**
-     * cblas_crotg</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/BLAS_Ref/index.html#//apple_ref/c/func/cblas_crotg">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void cblas_crotg(VoidPtr __a, VoidPtr __b, VoidPtr __c, VoidPtr __s);
 
-    /**
-     * cblas_zrotg</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/BLAS_Ref/index.html#//apple_ref/c/func/cblas_zrotg">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void cblas_zrotg(VoidPtr __a, VoidPtr __b, VoidPtr __c, VoidPtr __s);
 
-    /**
-     * cblas_csrot</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/BLAS_Ref/index.html#//apple_ref/c/func/cblas_csrot">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void cblas_csrot(int __N, VoidPtr __X, int __incX, VoidPtr __Y, int __incY, float __c,
             float __s);
 
-    /**
-     * cblas_zdrot</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/BLAS_Ref/index.html#//apple_ref/c/func/cblas_zdrot">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void cblas_zdrot(int __N, VoidPtr __X, int __incX, VoidPtr __Y, int __incY, double __c,
             double __s);
 
-    /**
-     * cblas_sgemv</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/BLAS_Ref/index.html#//apple_ref/c/func/cblas_sgemv">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void cblas_sgemv(int __Order, int __TransA, int __M, int __N, float __alpha, ConstFloatPtr __A,
             int __lda, ConstFloatPtr __X, int __incX, float __beta, FloatPtr __Y, int __incY);
 
-    /**
-     * cblas_sgbmv</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/BLAS_Ref/index.html#//apple_ref/c/func/cblas_sgbmv">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void cblas_sgbmv(int __Order, int __TransA, int __M, int __N, int __KL, int __KU,
             float __alpha, ConstFloatPtr __A, int __lda, ConstFloatPtr __X, int __incX, float __beta, FloatPtr __Y,
             int __incY);
 
-    /**
-     * cblas_strmv</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/BLAS_Ref/index.html#//apple_ref/c/func/cblas_strmv">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void cblas_strmv(int __Order, int __Uplo, int __TransA, int __Diag, int __N, ConstFloatPtr __A,
             int __lda, FloatPtr __X, int __incX);
 
-    /**
-     * cblas_stbmv</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/BLAS_Ref/index.html#//apple_ref/c/func/cblas_stbmv">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void cblas_stbmv(int __Order, int __Uplo, int __TransA, int __Diag, int __N, int __K,
             ConstFloatPtr __A, int __lda, FloatPtr __X, int __incX);
 
-    /**
-     * cblas_stpmv</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/BLAS_Ref/index.html#//apple_ref/c/func/cblas_stpmv">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void cblas_stpmv(int __Order, int __Uplo, int __TransA, int __Diag, int __N,
             ConstFloatPtr __Ap, FloatPtr __X, int __incX);
 
-    /**
-     * cblas_strsv</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/BLAS_Ref/index.html#//apple_ref/c/func/cblas_strsv">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void cblas_strsv(int __Order, int __Uplo, int __TransA, int __Diag, int __N, ConstFloatPtr __A,
             int __lda, FloatPtr __X, int __incX);
 
-    /**
-     * cblas_stbsv</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/BLAS_Ref/index.html#//apple_ref/c/func/cblas_stbsv">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void cblas_stbsv(int __Order, int __Uplo, int __TransA, int __Diag, int __N, int __K,
             ConstFloatPtr __A, int __lda, FloatPtr __X, int __incX);
 
-    /**
-     * cblas_stpsv</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/BLAS_Ref/index.html#//apple_ref/c/func/cblas_stpsv">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void cblas_stpsv(int __Order, int __Uplo, int __TransA, int __Diag, int __N,
             ConstFloatPtr __Ap, FloatPtr __X, int __incX);
 
-    /**
-     * cblas_dgemv</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/BLAS_Ref/index.html#//apple_ref/c/func/cblas_dgemv">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void cblas_dgemv(int __Order, int __TransA, int __M, int __N, double __alpha,
             ConstDoublePtr __A, int __lda, ConstDoublePtr __X, int __incX, double __beta, DoublePtr __Y, int __incY);
 
-    /**
-     * cblas_dgbmv</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/BLAS_Ref/index.html#//apple_ref/c/func/cblas_dgbmv">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void cblas_dgbmv(int __Order, int __TransA, int __M, int __N, int __KL, int __KU,
             double __alpha, ConstDoublePtr __A, int __lda, ConstDoublePtr __X, int __incX, double __beta, DoublePtr __Y,
             int __incY);
 
-    /**
-     * cblas_dtrmv</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/BLAS_Ref/index.html#//apple_ref/c/func/cblas_dtrmv">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void cblas_dtrmv(int __Order, int __Uplo, int __TransA, int __Diag, int __N,
             ConstDoublePtr __A, int __lda, DoublePtr __X, int __incX);
 
-    /**
-     * cblas_dtbmv</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/BLAS_Ref/index.html#//apple_ref/c/func/cblas_dtbmv">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void cblas_dtbmv(int __Order, int __Uplo, int __TransA, int __Diag, int __N, int __K,
             ConstDoublePtr __A, int __lda, DoublePtr __X, int __incX);
 
-    /**
-     * cblas_dtpmv</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/BLAS_Ref/index.html#//apple_ref/c/func/cblas_dtpmv">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void cblas_dtpmv(int __Order, int __Uplo, int __TransA, int __Diag, int __N,
             ConstDoublePtr __Ap, DoublePtr __X, int __incX);
 
-    /**
-     * cblas_dtrsv</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/BLAS_Ref/index.html#//apple_ref/c/func/cblas_dtrsv">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void cblas_dtrsv(int __Order, int __Uplo, int __TransA, int __Diag, int __N,
             ConstDoublePtr __A, int __lda, DoublePtr __X, int __incX);
 
-    /**
-     * cblas_dtbsv</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/BLAS_Ref/index.html#//apple_ref/c/func/cblas_dtbsv">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void cblas_dtbsv(int __Order, int __Uplo, int __TransA, int __Diag, int __N, int __K,
             ConstDoublePtr __A, int __lda, DoublePtr __X, int __incX);
 
-    /**
-     * cblas_dtpsv</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/BLAS_Ref/index.html#//apple_ref/c/func/cblas_dtpsv">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void cblas_dtpsv(int __Order, int __Uplo, int __TransA, int __Diag, int __N,
             ConstDoublePtr __Ap, DoublePtr __X, int __incX);
 
-    /**
-     * cblas_cgemv</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/BLAS_Ref/index.html#//apple_ref/c/func/cblas_cgemv">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void cblas_cgemv(int __Order, int __TransA, int __M, int __N, ConstVoidPtr __alpha,
             ConstVoidPtr __A, int __lda, ConstVoidPtr __X, int __incX, ConstVoidPtr __beta, VoidPtr __Y, int __incY);
 
-    /**
-     * cblas_cgbmv</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/BLAS_Ref/index.html#//apple_ref/c/func/cblas_cgbmv">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void cblas_cgbmv(int __Order, int __TransA, int __M, int __N, int __KL, int __KU,
             ConstVoidPtr __alpha, ConstVoidPtr __A, int __lda, ConstVoidPtr __X, int __incX, ConstVoidPtr __beta,
             VoidPtr __Y, int __incY);
 
-    /**
-     * cblas_ctrmv</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/BLAS_Ref/index.html#//apple_ref/c/func/cblas_ctrmv">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void cblas_ctrmv(int __Order, int __Uplo, int __TransA, int __Diag, int __N, ConstVoidPtr __A,
             int __lda, VoidPtr __X, int __incX);
 
-    /**
-     * cblas_ctbmv</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/BLAS_Ref/index.html#//apple_ref/c/func/cblas_ctbmv">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void cblas_ctbmv(int __Order, int __Uplo, int __TransA, int __Diag, int __N, int __K,
             ConstVoidPtr __A, int __lda, VoidPtr __X, int __incX);
 
-    /**
-     * cblas_ctpmv</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/BLAS_Ref/index.html#//apple_ref/c/func/cblas_ctpmv">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void cblas_ctpmv(int __Order, int __Uplo, int __TransA, int __Diag, int __N, ConstVoidPtr __Ap,
             VoidPtr __X, int __incX);
 
-    /**
-     * cblas_ctrsv</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/BLAS_Ref/index.html#//apple_ref/c/func/cblas_ctrsv">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void cblas_ctrsv(int __Order, int __Uplo, int __TransA, int __Diag, int __N, ConstVoidPtr __A,
             int __lda, VoidPtr __X, int __incX);
 
-    /**
-     * cblas_ctbsv</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/BLAS_Ref/index.html#//apple_ref/c/func/cblas_ctbsv">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void cblas_ctbsv(int __Order, int __Uplo, int __TransA, int __Diag, int __N, int __K,
             ConstVoidPtr __A, int __lda, VoidPtr __X, int __incX);
 
-    /**
-     * cblas_ctpsv</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/BLAS_Ref/index.html#//apple_ref/c/func/cblas_ctpsv">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void cblas_ctpsv(int __Order, int __Uplo, int __TransA, int __Diag, int __N, ConstVoidPtr __Ap,
             VoidPtr __X, int __incX);
 
-    /**
-     * cblas_zgemv</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/BLAS_Ref/index.html#//apple_ref/c/func/cblas_zgemv">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void cblas_zgemv(int __Order, int __TransA, int __M, int __N, ConstVoidPtr __alpha,
             ConstVoidPtr __A, int __lda, ConstVoidPtr __X, int __incX, ConstVoidPtr __beta, VoidPtr __Y, int __incY);
 
-    /**
-     * cblas_zgbmv</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/BLAS_Ref/index.html#//apple_ref/c/func/cblas_zgbmv">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void cblas_zgbmv(int __Order, int __TransA, int __M, int __N, int __KL, int __KU,
             ConstVoidPtr __alpha, ConstVoidPtr __A, int __lda, ConstVoidPtr __X, int __incX, ConstVoidPtr __beta,
             VoidPtr __Y, int __incY);
 
-    /**
-     * cblas_ztrmv</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/BLAS_Ref/index.html#//apple_ref/c/func/cblas_ztrmv">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void cblas_ztrmv(int __Order, int __Uplo, int __TransA, int __Diag, int __N, ConstVoidPtr __A,
             int __lda, VoidPtr __X, int __incX);
 
-    /**
-     * cblas_ztbmv</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/BLAS_Ref/index.html#//apple_ref/c/func/cblas_ztbmv">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void cblas_ztbmv(int __Order, int __Uplo, int __TransA, int __Diag, int __N, int __K,
             ConstVoidPtr __A, int __lda, VoidPtr __X, int __incX);
 
-    /**
-     * cblas_ztpmv</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/BLAS_Ref/index.html#//apple_ref/c/func/cblas_ztpmv">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void cblas_ztpmv(int __Order, int __Uplo, int __TransA, int __Diag, int __N, ConstVoidPtr __Ap,
             VoidPtr __X, int __incX);
 
-    /**
-     * cblas_ztrsv</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/BLAS_Ref/index.html#//apple_ref/c/func/cblas_ztrsv">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void cblas_ztrsv(int __Order, int __Uplo, int __TransA, int __Diag, int __N, ConstVoidPtr __A,
             int __lda, VoidPtr __X, int __incX);
 
-    /**
-     * cblas_ztbsv</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/BLAS_Ref/index.html#//apple_ref/c/func/cblas_ztbsv">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void cblas_ztbsv(int __Order, int __Uplo, int __TransA, int __Diag, int __N, int __K,
             ConstVoidPtr __A, int __lda, VoidPtr __X, int __incX);
 
-    /**
-     * cblas_ztpsv</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/BLAS_Ref/index.html#//apple_ref/c/func/cblas_ztpsv">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void cblas_ztpsv(int __Order, int __Uplo, int __TransA, int __Diag, int __N, ConstVoidPtr __Ap,
             VoidPtr __X, int __incX);
 
-    /**
-     * cblas_ssymv</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/BLAS_Ref/index.html#//apple_ref/c/func/cblas_ssymv">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void cblas_ssymv(int __Order, int __Uplo, int __N, float __alpha, ConstFloatPtr __A, int __lda,
             ConstFloatPtr __X, int __incX, float __beta, FloatPtr __Y, int __incY);
 
-    /**
-     * cblas_ssbmv</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/BLAS_Ref/index.html#//apple_ref/c/func/cblas_ssbmv">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void cblas_ssbmv(int __Order, int __Uplo, int __N, int __K, float __alpha, ConstFloatPtr __A,
             int __lda, ConstFloatPtr __X, int __incX, float __beta, FloatPtr __Y, int __incY);
 
-    /**
-     * cblas_sspmv</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/BLAS_Ref/index.html#//apple_ref/c/func/cblas_sspmv">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void cblas_sspmv(int __Order, int __Uplo, int __N, float __alpha, ConstFloatPtr __Ap,
             ConstFloatPtr __X, int __incX, float __beta, FloatPtr __Y, int __incY);
 
-    /**
-     * cblas_sger</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/BLAS_Ref/index.html#//apple_ref/c/func/cblas_sger">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void cblas_sger(int __Order, int __M, int __N, float __alpha, ConstFloatPtr __X, int __incX,
             ConstFloatPtr __Y, int __incY, FloatPtr __A, int __lda);
 
-    /**
-     * cblas_ssyr</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/BLAS_Ref/index.html#//apple_ref/c/func/cblas_ssyr">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void cblas_ssyr(int __Order, int __Uplo, int __N, float __alpha, ConstFloatPtr __X, int __incX,
             FloatPtr __A, int __lda);
 
-    /**
-     * cblas_sspr</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/BLAS_Ref/index.html#//apple_ref/c/func/cblas_sspr">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void cblas_sspr(int __Order, int __Uplo, int __N, float __alpha, ConstFloatPtr __X, int __incX,
             FloatPtr __Ap);
 
-    /**
-     * cblas_ssyr2</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/BLAS_Ref/index.html#//apple_ref/c/func/cblas_ssyr2">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void cblas_ssyr2(int __Order, int __Uplo, int __N, float __alpha, ConstFloatPtr __X,
             int __incX, ConstFloatPtr __Y, int __incY, FloatPtr __A, int __lda);
 
-    /**
-     * cblas_sspr2</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/BLAS_Ref/index.html#//apple_ref/c/func/cblas_sspr2">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void cblas_sspr2(int __Order, int __Uplo, int __N, float __alpha, ConstFloatPtr __X,
             int __incX, ConstFloatPtr __Y, int __incY, FloatPtr __A);
 
-    /**
-     * cblas_dsymv</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/BLAS_Ref/index.html#//apple_ref/c/func/cblas_dsymv">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void cblas_dsymv(int __Order, int __Uplo, int __N, double __alpha, ConstDoublePtr __A,
             int __lda, ConstDoublePtr __X, int __incX, double __beta, DoublePtr __Y, int __incY);
 
-    /**
-     * cblas_dsbmv</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/BLAS_Ref/index.html#//apple_ref/c/func/cblas_dsbmv">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void cblas_dsbmv(int __Order, int __Uplo, int __N, int __K, double __alpha, ConstDoublePtr __A,
             int __lda, ConstDoublePtr __X, int __incX, double __beta, DoublePtr __Y, int __incY);
 
-    /**
-     * cblas_dspmv</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/BLAS_Ref/index.html#//apple_ref/c/func/cblas_dspmv">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void cblas_dspmv(int __Order, int __Uplo, int __N, double __alpha, ConstDoublePtr __Ap,
             ConstDoublePtr __X, int __incX, double __beta, DoublePtr __Y, int __incY);
 
-    /**
-     * cblas_dger</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/BLAS_Ref/index.html#//apple_ref/c/func/cblas_dger">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void cblas_dger(int __Order, int __M, int __N, double __alpha, ConstDoublePtr __X, int __incX,
             ConstDoublePtr __Y, int __incY, DoublePtr __A, int __lda);
 
-    /**
-     * cblas_dsyr</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/BLAS_Ref/index.html#//apple_ref/c/func/cblas_dsyr">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void cblas_dsyr(int __Order, int __Uplo, int __N, double __alpha, ConstDoublePtr __X,
             int __incX, DoublePtr __A, int __lda);
 
-    /**
-     * cblas_dspr</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/BLAS_Ref/index.html#//apple_ref/c/func/cblas_dspr">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void cblas_dspr(int __Order, int __Uplo, int __N, double __alpha, ConstDoublePtr __X,
             int __incX, DoublePtr __Ap);
 
-    /**
-     * cblas_dsyr2</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/BLAS_Ref/index.html#//apple_ref/c/func/cblas_dsyr2">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void cblas_dsyr2(int __Order, int __Uplo, int __N, double __alpha, ConstDoublePtr __X,
             int __incX, ConstDoublePtr __Y, int __incY, DoublePtr __A, int __lda);
 
-    /**
-     * cblas_dspr2</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/BLAS_Ref/index.html#//apple_ref/c/func/cblas_dspr2">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void cblas_dspr2(int __Order, int __Uplo, int __N, double __alpha, ConstDoublePtr __X,
             int __incX, ConstDoublePtr __Y, int __incY, DoublePtr __A);
 
-    /**
-     * cblas_chemv</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/BLAS_Ref/index.html#//apple_ref/c/func/cblas_chemv">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void cblas_chemv(int __Order, int __Uplo, int __N, ConstVoidPtr __alpha, ConstVoidPtr __A,
             int __lda, ConstVoidPtr __X, int __incX, ConstVoidPtr __beta, VoidPtr __Y, int __incY);
 
-    /**
-     * cblas_chbmv</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/BLAS_Ref/index.html#//apple_ref/c/func/cblas_chbmv">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void cblas_chbmv(int __Order, int __Uplo, int __N, int __K, ConstVoidPtr __alpha,
             ConstVoidPtr __A, int __lda, ConstVoidPtr __X, int __incX, ConstVoidPtr __beta, VoidPtr __Y, int __incY);
 
-    /**
-     * cblas_chpmv</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/BLAS_Ref/index.html#//apple_ref/c/func/cblas_chpmv">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void cblas_chpmv(int __Order, int __Uplo, int __N, ConstVoidPtr __alpha, ConstVoidPtr __Ap,
             ConstVoidPtr __X, int __incX, ConstVoidPtr __beta, VoidPtr __Y, int __incY);
 
-    /**
-     * cblas_cgeru</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/BLAS_Ref/index.html#//apple_ref/c/func/cblas_cgeru">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void cblas_cgeru(int __Order, int __M, int __N, ConstVoidPtr __alpha, ConstVoidPtr __X,
             int __incX, ConstVoidPtr __Y, int __incY, VoidPtr __A, int __lda);
 
-    /**
-     * cblas_cgerc</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/BLAS_Ref/index.html#//apple_ref/c/func/cblas_cgerc">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void cblas_cgerc(int __Order, int __M, int __N, ConstVoidPtr __alpha, ConstVoidPtr __X,
             int __incX, ConstVoidPtr __Y, int __incY, VoidPtr __A, int __lda);
 
-    /**
-     * cblas_cher</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/BLAS_Ref/index.html#//apple_ref/c/func/cblas_cher">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void cblas_cher(int __Order, int __Uplo, int __N, float __alpha, ConstVoidPtr __X, int __incX,
             VoidPtr __A, int __lda);
 
-    /**
-     * cblas_chpr</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/BLAS_Ref/index.html#//apple_ref/c/func/cblas_chpr">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void cblas_chpr(int __Order, int __Uplo, int __N, float __alpha, ConstVoidPtr __X, int __incX,
             VoidPtr __A);
 
-    /**
-     * cblas_cher2</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/BLAS_Ref/index.html#//apple_ref/c/func/cblas_cher2">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void cblas_cher2(int __Order, int __Uplo, int __N, ConstVoidPtr __alpha, ConstVoidPtr __X,
             int __incX, ConstVoidPtr __Y, int __incY, VoidPtr __A, int __lda);
 
-    /**
-     * cblas_chpr2</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/BLAS_Ref/index.html#//apple_ref/c/func/cblas_chpr2">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void cblas_chpr2(int __Order, int __Uplo, int __N, ConstVoidPtr __alpha, ConstVoidPtr __X,
             int __incX, ConstVoidPtr __Y, int __incY, VoidPtr __Ap);
 
-    /**
-     * cblas_zhemv</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/BLAS_Ref/index.html#//apple_ref/c/func/cblas_zhemv">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void cblas_zhemv(int __Order, int __Uplo, int __N, ConstVoidPtr __alpha, ConstVoidPtr __A,
             int __lda, ConstVoidPtr __X, int __incX, ConstVoidPtr __beta, VoidPtr __Y, int __incY);
 
-    /**
-     * cblas_zhbmv</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/BLAS_Ref/index.html#//apple_ref/c/func/cblas_zhbmv">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void cblas_zhbmv(int __Order, int __Uplo, int __N, int __K, ConstVoidPtr __alpha,
             ConstVoidPtr __A, int __lda, ConstVoidPtr __X, int __incX, ConstVoidPtr __beta, VoidPtr __Y, int __incY);
 
-    /**
-     * cblas_zhpmv</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/BLAS_Ref/index.html#//apple_ref/c/func/cblas_zhpmv">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void cblas_zhpmv(int __Order, int __Uplo, int __N, ConstVoidPtr __alpha, ConstVoidPtr __Ap,
             ConstVoidPtr __X, int __incX, ConstVoidPtr __beta, VoidPtr __Y, int __incY);
 
-    /**
-     * cblas_zgeru</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/BLAS_Ref/index.html#//apple_ref/c/func/cblas_zgeru">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void cblas_zgeru(int __Order, int __M, int __N, ConstVoidPtr __alpha, ConstVoidPtr __X,
             int __incX, ConstVoidPtr __Y, int __incY, VoidPtr __A, int __lda);
 
-    /**
-     * cblas_zgerc</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/BLAS_Ref/index.html#//apple_ref/c/func/cblas_zgerc">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void cblas_zgerc(int __Order, int __M, int __N, ConstVoidPtr __alpha, ConstVoidPtr __X,
             int __incX, ConstVoidPtr __Y, int __incY, VoidPtr __A, int __lda);
 
-    /**
-     * cblas_zher</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/BLAS_Ref/index.html#//apple_ref/c/func/cblas_zher">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void cblas_zher(int __Order, int __Uplo, int __N, double __alpha, ConstVoidPtr __X, int __incX,
             VoidPtr __A, int __lda);
 
-    /**
-     * cblas_zhpr</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/BLAS_Ref/index.html#//apple_ref/c/func/cblas_zhpr">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void cblas_zhpr(int __Order, int __Uplo, int __N, double __alpha, ConstVoidPtr __X, int __incX,
             VoidPtr __A);
 
-    /**
-     * cblas_zher2</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/BLAS_Ref/index.html#//apple_ref/c/func/cblas_zher2">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void cblas_zher2(int __Order, int __Uplo, int __N, ConstVoidPtr __alpha, ConstVoidPtr __X,
             int __incX, ConstVoidPtr __Y, int __incY, VoidPtr __A, int __lda);
 
-    /**
-     * cblas_zhpr2</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/BLAS_Ref/index.html#//apple_ref/c/func/cblas_zhpr2">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void cblas_zhpr2(int __Order, int __Uplo, int __N, ConstVoidPtr __alpha, ConstVoidPtr __X,
             int __incX, ConstVoidPtr __Y, int __incY, VoidPtr __Ap);
 
-    /**
-     * cblas_sgemm</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/BLAS_Ref/index.html#//apple_ref/c/func/cblas_sgemm">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void cblas_sgemm(int __Order, int __TransA, int __TransB, int __M, int __N, int __K,
             float __alpha, ConstFloatPtr __A, int __lda, ConstFloatPtr __B, int __ldb, float __beta, FloatPtr __C,
             int __ldc);
 
-    /**
-     * cblas_ssymm</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/BLAS_Ref/index.html#//apple_ref/c/func/cblas_ssymm">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void cblas_ssymm(int __Order, int __Side, int __Uplo, int __M, int __N, float __alpha,
             ConstFloatPtr __A, int __lda, ConstFloatPtr __B, int __ldb, float __beta, FloatPtr __C, int __ldc);
 
-    /**
-     * cblas_ssyrk</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/BLAS_Ref/index.html#//apple_ref/c/func/cblas_ssyrk">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void cblas_ssyrk(int __Order, int __Uplo, int __Trans, int __N, int __K, float __alpha,
             ConstFloatPtr __A, int __lda, float __beta, FloatPtr __C, int __ldc);
 
-    /**
-     * cblas_ssyr2k</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/BLAS_Ref/index.html#//apple_ref/c/func/cblas_ssyr2k">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void cblas_ssyr2k(int __Order, int __Uplo, int __Trans, int __N, int __K, float __alpha,
             ConstFloatPtr __A, int __lda, ConstFloatPtr __B, int __ldb, float __beta, FloatPtr __C, int __ldc);
 
-    /**
-     * cblas_strmm</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/BLAS_Ref/index.html#//apple_ref/c/func/cblas_strmm">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void cblas_strmm(int __Order, int __Side, int __Uplo, int __TransA, int __Diag, int __M,
             int __N, float __alpha, ConstFloatPtr __A, int __lda, FloatPtr __B, int __ldb);
 
-    /**
-     * cblas_strsm</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/BLAS_Ref/index.html#//apple_ref/c/func/cblas_strsm">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void cblas_strsm(int __Order, int __Side, int __Uplo, int __TransA, int __Diag, int __M,
             int __N, float __alpha, ConstFloatPtr __A, int __lda, FloatPtr __B, int __ldb);
 
-    /**
-     * cblas_dgemm</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/BLAS_Ref/index.html#//apple_ref/c/func/cblas_dgemm">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void cblas_dgemm(int __Order, int __TransA, int __TransB, int __M, int __N, int __K,
             double __alpha, ConstDoublePtr __A, int __lda, ConstDoublePtr __B, int __ldb, double __beta, DoublePtr __C,
             int __ldc);
 
-    /**
-     * cblas_dsymm</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/BLAS_Ref/index.html#//apple_ref/c/func/cblas_dsymm">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void cblas_dsymm(int __Order, int __Side, int __Uplo, int __M, int __N, double __alpha,
             ConstDoublePtr __A, int __lda, ConstDoublePtr __B, int __ldb, double __beta, DoublePtr __C, int __ldc);
 
-    /**
-     * cblas_dsyrk</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/BLAS_Ref/index.html#//apple_ref/c/func/cblas_dsyrk">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void cblas_dsyrk(int __Order, int __Uplo, int __Trans, int __N, int __K, double __alpha,
             ConstDoublePtr __A, int __lda, double __beta, DoublePtr __C, int __ldc);
 
-    /**
-     * cblas_dsyr2k</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/BLAS_Ref/index.html#//apple_ref/c/func/cblas_dsyr2k">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void cblas_dsyr2k(int __Order, int __Uplo, int __Trans, int __N, int __K, double __alpha,
             ConstDoublePtr __A, int __lda, ConstDoublePtr __B, int __ldb, double __beta, DoublePtr __C, int __ldc);
 
-    /**
-     * cblas_dtrmm</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/BLAS_Ref/index.html#//apple_ref/c/func/cblas_dtrmm">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void cblas_dtrmm(int __Order, int __Side, int __Uplo, int __TransA, int __Diag, int __M,
             int __N, double __alpha, ConstDoublePtr __A, int __lda, DoublePtr __B, int __ldb);
 
-    /**
-     * cblas_dtrsm</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/BLAS_Ref/index.html#//apple_ref/c/func/cblas_dtrsm">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void cblas_dtrsm(int __Order, int __Side, int __Uplo, int __TransA, int __Diag, int __M,
             int __N, double __alpha, ConstDoublePtr __A, int __lda, DoublePtr __B, int __ldb);
 
-    /**
-     * cblas_cgemm</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/BLAS_Ref/index.html#//apple_ref/c/func/cblas_cgemm">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void cblas_cgemm(int __Order, int __TransA, int __TransB, int __M, int __N, int __K,
             ConstVoidPtr __alpha, ConstVoidPtr __A, int __lda, ConstVoidPtr __B, int __ldb, ConstVoidPtr __beta,
             VoidPtr __C, int __ldc);
 
-    /**
-     * cblas_csymm</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/BLAS_Ref/index.html#//apple_ref/c/func/cblas_csymm">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void cblas_csymm(int __Order, int __Side, int __Uplo, int __M, int __N, ConstVoidPtr __alpha,
             ConstVoidPtr __A, int __lda, ConstVoidPtr __B, int __ldb, ConstVoidPtr __beta, VoidPtr __C, int __ldc);
 
-    /**
-     * cblas_csyrk</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/BLAS_Ref/index.html#//apple_ref/c/func/cblas_csyrk">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void cblas_csyrk(int __Order, int __Uplo, int __Trans, int __N, int __K, ConstVoidPtr __alpha,
             ConstVoidPtr __A, int __lda, ConstVoidPtr __beta, VoidPtr __C, int __ldc);
 
-    /**
-     * cblas_csyr2k</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/BLAS_Ref/index.html#//apple_ref/c/func/cblas_csyr2k">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void cblas_csyr2k(int __Order, int __Uplo, int __Trans, int __N, int __K, ConstVoidPtr __alpha,
             ConstVoidPtr __A, int __lda, ConstVoidPtr __B, int __ldb, ConstVoidPtr __beta, VoidPtr __C, int __ldc);
 
-    /**
-     * cblas_ctrmm</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/BLAS_Ref/index.html#//apple_ref/c/func/cblas_ctrmm">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void cblas_ctrmm(int __Order, int __Side, int __Uplo, int __TransA, int __Diag, int __M,
             int __N, ConstVoidPtr __alpha, ConstVoidPtr __A, int __lda, VoidPtr __B, int __ldb);
 
-    /**
-     * cblas_ctrsm</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/BLAS_Ref/index.html#//apple_ref/c/func/cblas_ctrsm">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void cblas_ctrsm(int __Order, int __Side, int __Uplo, int __TransA, int __Diag, int __M,
             int __N, ConstVoidPtr __alpha, ConstVoidPtr __A, int __lda, VoidPtr __B, int __ldb);
 
-    /**
-     * cblas_zgemm</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/BLAS_Ref/index.html#//apple_ref/c/func/cblas_zgemm">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void cblas_zgemm(int __Order, int __TransA, int __TransB, int __M, int __N, int __K,
             ConstVoidPtr __alpha, ConstVoidPtr __A, int __lda, ConstVoidPtr __B, int __ldb, ConstVoidPtr __beta,
             VoidPtr __C, int __ldc);
 
-    /**
-     * cblas_zsymm</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/BLAS_Ref/index.html#//apple_ref/c/func/cblas_zsymm">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void cblas_zsymm(int __Order, int __Side, int __Uplo, int __M, int __N, ConstVoidPtr __alpha,
             ConstVoidPtr __A, int __lda, ConstVoidPtr __B, int __ldb, ConstVoidPtr __beta, VoidPtr __C, int __ldc);
 
-    /**
-     * cblas_zsyrk</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/BLAS_Ref/index.html#//apple_ref/c/func/cblas_zsyrk">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void cblas_zsyrk(int __Order, int __Uplo, int __Trans, int __N, int __K, ConstVoidPtr __alpha,
             ConstVoidPtr __A, int __lda, ConstVoidPtr __beta, VoidPtr __C, int __ldc);
 
-    /**
-     * cblas_zsyr2k</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/BLAS_Ref/index.html#//apple_ref/c/func/cblas_zsyr2k">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void cblas_zsyr2k(int __Order, int __Uplo, int __Trans, int __N, int __K, ConstVoidPtr __alpha,
             ConstVoidPtr __A, int __lda, ConstVoidPtr __B, int __ldb, ConstVoidPtr __beta, VoidPtr __C, int __ldc);
 
-    /**
-     * cblas_ztrmm</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/BLAS_Ref/index.html#//apple_ref/c/func/cblas_ztrmm">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void cblas_ztrmm(int __Order, int __Side, int __Uplo, int __TransA, int __Diag, int __M,
             int __N, ConstVoidPtr __alpha, ConstVoidPtr __A, int __lda, VoidPtr __B, int __ldb);
 
-    /**
-     * cblas_ztrsm</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/BLAS_Ref/index.html#//apple_ref/c/func/cblas_ztrsm">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void cblas_ztrsm(int __Order, int __Side, int __Uplo, int __TransA, int __Diag, int __M,
             int __N, ConstVoidPtr __alpha, ConstVoidPtr __A, int __lda, VoidPtr __B, int __ldb);
 
-    /**
-     * cblas_chemm</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/BLAS_Ref/index.html#//apple_ref/c/func/cblas_chemm">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void cblas_chemm(int __Order, int __Side, int __Uplo, int __M, int __N, ConstVoidPtr __alpha,
             ConstVoidPtr __A, int __lda, ConstVoidPtr __B, int __ldb, ConstVoidPtr __beta, VoidPtr __C, int __ldc);
 
-    /**
-     * cblas_cherk</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/BLAS_Ref/index.html#//apple_ref/c/func/cblas_cherk">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void cblas_cherk(int __Order, int __Uplo, int __Trans, int __N, int __K, float __alpha,
             ConstVoidPtr __A, int __lda, float __beta, VoidPtr __C, int __ldc);
 
-    /**
-     * cblas_cher2k</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/BLAS_Ref/index.html#//apple_ref/c/func/cblas_cher2k">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void cblas_cher2k(int __Order, int __Uplo, int __Trans, int __N, int __K, ConstVoidPtr __alpha,
             ConstVoidPtr __A, int __lda, ConstVoidPtr __B, int __ldb, float __beta, VoidPtr __C, int __ldc);
 
-    /**
-     * cblas_zhemm</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/BLAS_Ref/index.html#//apple_ref/c/func/cblas_zhemm">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void cblas_zhemm(int __Order, int __Side, int __Uplo, int __M, int __N, ConstVoidPtr __alpha,
             ConstVoidPtr __A, int __lda, ConstVoidPtr __B, int __ldb, ConstVoidPtr __beta, VoidPtr __C, int __ldc);
 
-    /**
-     * cblas_zherk</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/BLAS_Ref/index.html#//apple_ref/c/func/cblas_zherk">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void cblas_zherk(int __Order, int __Uplo, int __Trans, int __N, int __K, double __alpha,
             ConstVoidPtr __A, int __lda, double __beta, VoidPtr __C, int __ldc);
 
-    /**
-     * cblas_zher2k</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/BLAS_Ref/index.html#//apple_ref/c/func/cblas_zher2k">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void cblas_zher2k(int __Order, int __Uplo, int __Trans, int __N, int __K, ConstVoidPtr __alpha,
@@ -5887,19 +3467,11 @@ public final class Accelerate {
             double __alpha, ConstDoublePtr __A, int __lda, double __beta, ConstDoublePtr __B, int __ldb, DoublePtr __C,
             int __ldc);
 
-    /**
-     * ATLU_DestroyThreadMemory</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/BLAS_Ref/index.html#//apple_ref/c/func/ATLU_DestroyThreadMemory">iOS Dev Center</a>
-     */
     @Generated
     @Deprecated
     @CFunction
     public static native void ATLU_DestroyThreadMemory();
 
-    /**
-     * SetBLASParamErrorProc</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/BLAS_Ref/index.html#//apple_ref/c/func/SetBLASParamErrorProc">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void SetBLASParamErrorProc(
@@ -15861,50 +13433,26 @@ public final class Accelerate {
     @CFunction
     public static native NSObject la_normalized_vector(NSObject vector, @NUInt long vector_norm);
 
-    /**
-     * vvrecf</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Conceptual/vecLib/index.html#//apple_ref/c/func/vvrecf">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vvrecf(FloatPtr arg1, ConstFloatPtr arg2, ConstIntPtr arg3);
 
-    /**
-     * vvrec</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Conceptual/vecLib/index.html#//apple_ref/c/func/vvrec">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vvrec(DoublePtr arg1, ConstDoublePtr arg2, ConstIntPtr arg3);
 
-    /**
-     * vvdivf</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Conceptual/vecLib/index.html#//apple_ref/c/func/vvdivf">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vvdivf(FloatPtr arg1, ConstFloatPtr arg2, ConstFloatPtr arg3, ConstIntPtr arg4);
 
-    /**
-     * vvdiv</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Conceptual/vecLib/index.html#//apple_ref/c/func/vvdiv">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vvdiv(DoublePtr arg1, ConstDoublePtr arg2, ConstDoublePtr arg3, ConstIntPtr arg4);
 
-    /**
-     * vvsqrtf</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Conceptual/vecLib/index.html#//apple_ref/c/func/vvsqrtf">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vvsqrtf(FloatPtr arg1, ConstFloatPtr arg2, ConstIntPtr arg3);
 
-    /**
-     * vvsqrt</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Conceptual/vecLib/index.html#//apple_ref/c/func/vvsqrt">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vvsqrt(DoublePtr arg1, ConstDoublePtr arg2, ConstIntPtr arg3);
@@ -15917,146 +13465,74 @@ public final class Accelerate {
     @CFunction
     public static native void vvcbrt(DoublePtr arg1, ConstDoublePtr arg2, ConstIntPtr arg3);
 
-    /**
-     * vvrsqrtf</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Conceptual/vecLib/index.html#//apple_ref/c/func/vvrsqrtf">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vvrsqrtf(FloatPtr arg1, ConstFloatPtr arg2, ConstIntPtr arg3);
 
-    /**
-     * vvrsqrt</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Conceptual/vecLib/index.html#//apple_ref/c/func/vvrsqrt">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vvrsqrt(DoublePtr arg1, ConstDoublePtr arg2, ConstIntPtr arg3);
 
-    /**
-     * vvexpf</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Conceptual/vecLib/index.html#//apple_ref/c/func/vvexpf">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vvexpf(FloatPtr arg1, ConstFloatPtr arg2, ConstIntPtr arg3);
 
-    /**
-     * vvexp</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Conceptual/vecLib/index.html#//apple_ref/c/func/vvexp">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vvexp(DoublePtr arg1, ConstDoublePtr arg2, ConstIntPtr arg3);
 
-    /**
-     * vvexpm1f</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Conceptual/vecLib/index.html#//apple_ref/c/func/vvexpm1f">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vvexpm1f(FloatPtr arg1, ConstFloatPtr arg2, ConstIntPtr arg3);
 
-    /**
-     * vvexpm1</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Conceptual/vecLib/index.html#//apple_ref/c/func/vvexpm1">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vvexpm1(DoublePtr arg1, ConstDoublePtr arg2, ConstIntPtr arg3);
 
-    /**
-     * vvlogf</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Conceptual/vecLib/index.html#//apple_ref/c/func/vvlogf">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vvlogf(FloatPtr arg1, ConstFloatPtr arg2, ConstIntPtr arg3);
 
-    /**
-     * vvlog</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Conceptual/vecLib/index.html#//apple_ref/c/func/vvlog">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vvlog(DoublePtr arg1, ConstDoublePtr arg2, ConstIntPtr arg3);
 
-    /**
-     * vvlog10f</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Conceptual/vecLib/index.html#//apple_ref/c/func/vvlog10f">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vvlog10f(FloatPtr arg1, ConstFloatPtr arg2, ConstIntPtr arg3);
 
-    /**
-     * vvlog10</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Conceptual/vecLib/index.html#//apple_ref/c/func/vvlog10">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vvlog10(DoublePtr arg1, ConstDoublePtr arg2, ConstIntPtr arg3);
 
-    /**
-     * vvlog1pf</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Conceptual/vecLib/index.html#//apple_ref/c/func/vvlog1pf">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vvlog1pf(FloatPtr arg1, ConstFloatPtr arg2, ConstIntPtr arg3);
 
-    /**
-     * vvlog1p</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Conceptual/vecLib/index.html#//apple_ref/c/func/vvlog1p">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vvlog1p(DoublePtr arg1, ConstDoublePtr arg2, ConstIntPtr arg3);
 
-    /**
-     * vvlogbf</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Conceptual/vecLib/index.html#//apple_ref/c/func/vvlogbf">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vvlogbf(FloatPtr arg1, ConstFloatPtr arg2, ConstIntPtr arg3);
 
-    /**
-     * vvlogb</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Conceptual/vecLib/index.html#//apple_ref/c/func/vvlogb">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vvlogb(DoublePtr arg1, ConstDoublePtr arg2, ConstIntPtr arg3);
 
-    /**
-     * vvfabsf</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Conceptual/vecLib/index.html#//apple_ref/c/func/vvfabsf">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vvfabsf(FloatPtr arg1, ConstFloatPtr arg2, ConstIntPtr arg3);
 
-    /**
-     * vvfabs</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Conceptual/vecLib/index.html#//apple_ref/c/func/vvfabs">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vvfabs(DoublePtr arg1, ConstDoublePtr arg2, ConstIntPtr arg3);
 
-    /**
-     * vvpowf</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Conceptual/vecLib/index.html#//apple_ref/c/func/vvpowf">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vvpowf(FloatPtr arg1, ConstFloatPtr arg2, ConstFloatPtr arg3, ConstIntPtr arg4);
 
-    /**
-     * vvpow</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Conceptual/vecLib/index.html#//apple_ref/c/func/vvpow">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vvpow(DoublePtr arg1, ConstDoublePtr arg2, ConstDoublePtr arg3, ConstIntPtr arg4);
@@ -16069,442 +13545,222 @@ public final class Accelerate {
     @CFunction
     public static native void vvpows(DoublePtr arg1, ConstDoublePtr arg2, ConstDoublePtr arg3, ConstIntPtr arg4);
 
-    /**
-     * vvsinf</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Conceptual/vecLib/index.html#//apple_ref/c/func/vvsinf">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vvsinf(FloatPtr arg1, ConstFloatPtr arg2, ConstIntPtr arg3);
 
-    /**
-     * vvsin</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Conceptual/vecLib/index.html#//apple_ref/c/func/vvsin">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vvsin(DoublePtr arg1, ConstDoublePtr arg2, ConstIntPtr arg3);
 
-    /**
-     * vvcosf</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Conceptual/vecLib/index.html#//apple_ref/c/func/vvcosf">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vvcosf(FloatPtr arg1, ConstFloatPtr arg2, ConstIntPtr arg3);
 
-    /**
-     * vvcos</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Conceptual/vecLib/index.html#//apple_ref/c/func/vvcos">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vvcos(DoublePtr arg1, ConstDoublePtr arg2, ConstIntPtr arg3);
 
-    /**
-     * vvtanf</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Conceptual/vecLib/index.html#//apple_ref/c/func/vvtanf">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vvtanf(FloatPtr arg1, ConstFloatPtr arg2, ConstIntPtr arg3);
 
-    /**
-     * vvtan</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Conceptual/vecLib/index.html#//apple_ref/c/func/vvtan">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vvtan(DoublePtr arg1, ConstDoublePtr arg2, ConstIntPtr arg3);
 
-    /**
-     * vvasinf</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Conceptual/vecLib/index.html#//apple_ref/c/func/vvasinf">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vvasinf(FloatPtr arg1, ConstFloatPtr arg2, ConstIntPtr arg3);
 
-    /**
-     * vvasin</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Conceptual/vecLib/index.html#//apple_ref/c/func/vvasin">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vvasin(DoublePtr arg1, ConstDoublePtr arg2, ConstIntPtr arg3);
 
-    /**
-     * vvacosf</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Conceptual/vecLib/index.html#//apple_ref/c/func/vvacosf">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vvacosf(FloatPtr arg1, ConstFloatPtr arg2, ConstIntPtr arg3);
 
-    /**
-     * vvacos</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Conceptual/vecLib/index.html#//apple_ref/c/func/vvacos">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vvacos(DoublePtr arg1, ConstDoublePtr arg2, ConstIntPtr arg3);
 
-    /**
-     * vvatanf</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Conceptual/vecLib/index.html#//apple_ref/c/func/vvatanf">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vvatanf(FloatPtr arg1, ConstFloatPtr arg2, ConstIntPtr arg3);
 
-    /**
-     * vvatan</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Conceptual/vecLib/index.html#//apple_ref/c/func/vvatan">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vvatan(DoublePtr arg1, ConstDoublePtr arg2, ConstIntPtr arg3);
 
-    /**
-     * vvatan2f</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Conceptual/vecLib/index.html#//apple_ref/c/func/vvatan2f">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vvatan2f(FloatPtr arg1, ConstFloatPtr arg2, ConstFloatPtr arg3, ConstIntPtr arg4);
 
-    /**
-     * vvatan2</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Conceptual/vecLib/index.html#//apple_ref/c/func/vvatan2">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vvatan2(DoublePtr arg1, ConstDoublePtr arg2, ConstDoublePtr arg3, ConstIntPtr arg4);
 
-    /**
-     * vvsincosf</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Conceptual/vecLib/index.html#//apple_ref/c/func/vvsincosf">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vvsincosf(FloatPtr arg1, FloatPtr arg2, ConstFloatPtr arg3, ConstIntPtr arg4);
 
-    /**
-     * vvsincos</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Conceptual/vecLib/index.html#//apple_ref/c/func/vvsincos">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vvsincos(DoublePtr arg1, DoublePtr arg2, ConstDoublePtr arg3, ConstIntPtr arg4);
 
-    /**
-     * vvsinhf</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Conceptual/vecLib/index.html#//apple_ref/c/func/vvsinhf">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vvsinhf(FloatPtr arg1, ConstFloatPtr arg2, ConstIntPtr arg3);
 
-    /**
-     * vvsinh</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Conceptual/vecLib/index.html#//apple_ref/c/func/vvsinh">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vvsinh(DoublePtr arg1, ConstDoublePtr arg2, ConstIntPtr arg3);
 
-    /**
-     * vvcoshf</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Conceptual/vecLib/index.html#//apple_ref/c/func/vvcoshf">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vvcoshf(FloatPtr arg1, ConstFloatPtr arg2, ConstIntPtr arg3);
 
-    /**
-     * vvcosh</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Conceptual/vecLib/index.html#//apple_ref/c/func/vvcosh">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vvcosh(DoublePtr arg1, ConstDoublePtr arg2, ConstIntPtr arg3);
 
-    /**
-     * vvtanhf</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Conceptual/vecLib/index.html#//apple_ref/c/func/vvtanhf">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vvtanhf(FloatPtr arg1, ConstFloatPtr arg2, ConstIntPtr arg3);
 
-    /**
-     * vvtanh</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Conceptual/vecLib/index.html#//apple_ref/c/func/vvtanh">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vvtanh(DoublePtr arg1, ConstDoublePtr arg2, ConstIntPtr arg3);
 
-    /**
-     * vvasinhf</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Conceptual/vecLib/index.html#//apple_ref/c/func/vvasinhf">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vvasinhf(FloatPtr arg1, ConstFloatPtr arg2, ConstIntPtr arg3);
 
-    /**
-     * vvasinh</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Conceptual/vecLib/index.html#//apple_ref/c/func/vvasinh">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vvasinh(DoublePtr arg1, ConstDoublePtr arg2, ConstIntPtr arg3);
 
-    /**
-     * vvacoshf</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Conceptual/vecLib/index.html#//apple_ref/c/func/vvacoshf">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vvacoshf(FloatPtr arg1, ConstFloatPtr arg2, ConstIntPtr arg3);
 
-    /**
-     * vvacosh</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Conceptual/vecLib/index.html#//apple_ref/c/func/vvacosh">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vvacosh(DoublePtr arg1, ConstDoublePtr arg2, ConstIntPtr arg3);
 
-    /**
-     * vvatanhf</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Conceptual/vecLib/index.html#//apple_ref/c/func/vvatanhf">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vvatanhf(FloatPtr arg1, ConstFloatPtr arg2, ConstIntPtr arg3);
 
-    /**
-     * vvatanh</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Conceptual/vecLib/index.html#//apple_ref/c/func/vvatanh">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vvatanh(DoublePtr arg1, ConstDoublePtr arg2, ConstIntPtr arg3);
 
-    /**
-     * vvintf</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Conceptual/vecLib/index.html#//apple_ref/c/func/vvintf">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vvintf(FloatPtr arg1, ConstFloatPtr arg2, ConstIntPtr arg3);
 
-    /**
-     * vvint</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Conceptual/vecLib/index.html#//apple_ref/c/func/vvint">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vvint(DoublePtr arg1, ConstDoublePtr arg2, ConstIntPtr arg3);
 
-    /**
-     * vvnintf</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Conceptual/vecLib/index.html#//apple_ref/c/func/vvnintf">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vvnintf(FloatPtr arg1, ConstFloatPtr arg2, ConstIntPtr arg3);
 
-    /**
-     * vvnint</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Conceptual/vecLib/index.html#//apple_ref/c/func/vvnint">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vvnint(DoublePtr arg1, ConstDoublePtr arg2, ConstIntPtr arg3);
 
-    /**
-     * vvceilf</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Conceptual/vecLib/index.html#//apple_ref/c/func/vvceilf">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vvceilf(FloatPtr arg1, ConstFloatPtr arg2, ConstIntPtr arg3);
 
-    /**
-     * vvceil</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Conceptual/vecLib/index.html#//apple_ref/c/func/vvceil">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vvceil(DoublePtr arg1, ConstDoublePtr arg2, ConstIntPtr arg3);
 
-    /**
-     * vvfloorf</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Conceptual/vecLib/index.html#//apple_ref/c/func/vvfloorf">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vvfloorf(FloatPtr arg1, ConstFloatPtr arg2, ConstIntPtr arg3);
 
-    /**
-     * vvfloor</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Conceptual/vecLib/index.html#//apple_ref/c/func/vvfloor">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vvfloor(DoublePtr arg1, ConstDoublePtr arg2, ConstIntPtr arg3);
 
-    /**
-     * vvfmodf</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Conceptual/vecLib/index.html#//apple_ref/c/func/vvfmodf">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vvfmodf(FloatPtr arg1, ConstFloatPtr arg2, ConstFloatPtr arg3, ConstIntPtr arg4);
 
-    /**
-     * vvfmod</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Conceptual/vecLib/index.html#//apple_ref/c/func/vvfmod">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vvfmod(DoublePtr arg1, ConstDoublePtr arg2, ConstDoublePtr arg3, ConstIntPtr arg4);
 
-    /**
-     * vvremainderf</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Conceptual/vecLib/index.html#//apple_ref/c/func/vvremainderf">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vvremainderf(FloatPtr arg1, ConstFloatPtr arg2, ConstFloatPtr arg3, ConstIntPtr arg4);
 
-    /**
-     * vvremainder</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Conceptual/vecLib/index.html#//apple_ref/c/func/vvremainder">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vvremainder(DoublePtr arg1, ConstDoublePtr arg2, ConstDoublePtr arg3, ConstIntPtr arg4);
 
-    /**
-     * vvcopysignf</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Conceptual/vecLib/index.html#//apple_ref/c/func/vvcopysignf">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vvcopysignf(FloatPtr arg1, ConstFloatPtr arg2, ConstFloatPtr arg3, ConstIntPtr arg4);
 
-    /**
-     * vvcopysign</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Conceptual/vecLib/index.html#//apple_ref/c/func/vvcopysign">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vvcopysign(DoublePtr arg1, ConstDoublePtr arg2, ConstDoublePtr arg3, ConstIntPtr arg4);
 
-    /**
-     * vvnextafterf</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Conceptual/vecLib/index.html#//apple_ref/c/func/vvnextafterf">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vvnextafterf(FloatPtr arg1, ConstFloatPtr arg2, ConstFloatPtr arg3, ConstIntPtr arg4);
 
-    /**
-     * vvnextafter</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Conceptual/vecLib/index.html#//apple_ref/c/func/vvnextafter">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vvnextafter(DoublePtr arg1, ConstDoublePtr arg2, ConstDoublePtr arg3, ConstIntPtr arg4);
 
-    /**
-     * vvlog2f</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Conceptual/vecLib/index.html#//apple_ref/c/func/vvlog2f">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vvlog2f(FloatPtr arg1, ConstFloatPtr arg2, ConstIntPtr arg3);
 
-    /**
-     * vvlog2</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Conceptual/vecLib/index.html#//apple_ref/c/func/vvlog2">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vvlog2(DoublePtr arg1, ConstDoublePtr arg2, ConstIntPtr arg3);
 
-    /**
-     * vvexp2f</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Conceptual/vecLib/index.html#//apple_ref/c/func/vvexp2f">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vvexp2f(FloatPtr arg1, ConstFloatPtr arg2, ConstIntPtr arg3);
 
-    /**
-     * vvexp2</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Conceptual/vecLib/index.html#//apple_ref/c/func/vvexp2">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vvexp2(DoublePtr arg1, ConstDoublePtr arg2, ConstIntPtr arg3);
 
-    /**
-     * vvsinpif</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Conceptual/vecLib/index.html#//apple_ref/c/func/vvsinpif">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vvsinpif(FloatPtr arg1, ConstFloatPtr arg2, ConstIntPtr arg3);
 
-    /**
-     * vvsinpi</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Conceptual/vecLib/index.html#//apple_ref/c/func/vvsinpi">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vvsinpi(DoublePtr arg1, ConstDoublePtr arg2, ConstIntPtr arg3);
 
-    /**
-     * vvcospif</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Conceptual/vecLib/index.html#//apple_ref/c/func/vvcospif">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vvcospif(FloatPtr arg1, ConstFloatPtr arg2, ConstIntPtr arg3);
 
-    /**
-     * vvcospi</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Conceptual/vecLib/index.html#//apple_ref/c/func/vvcospi">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vvcospi(DoublePtr arg1, ConstDoublePtr arg2, ConstIntPtr arg3);
 
-    /**
-     * vvtanpif</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Conceptual/vecLib/index.html#//apple_ref/c/func/vvtanpif">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vvtanpif(FloatPtr arg1, ConstFloatPtr arg2, ConstIntPtr arg3);
 
-    /**
-     * vvtanpi</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Conceptual/vecLib/index.html#//apple_ref/c/func/vvtanpi">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vvtanpi(DoublePtr arg1, ConstDoublePtr arg2, ConstIntPtr arg3);
 
-    /**
-     * vImageAlphaBlend_Planar8</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Reference/vImage_alpha/index.html#//apple_ref/c/func/vImageAlphaBlend_Planar8">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @NInt
@@ -16516,10 +13772,6 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer alpha,
             @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer dest, int flags);
 
-    /**
-     * vImageAlphaBlend_PlanarF</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Reference/vImage_alpha/index.html#//apple_ref/c/func/vImageAlphaBlend_PlanarF">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @NInt
@@ -16531,10 +13783,6 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer alpha,
             @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer dest, int flags);
 
-    /**
-     * vImageAlphaBlend_ARGB8888</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Reference/vImage_alpha/index.html#//apple_ref/c/func/vImageAlphaBlend_ARGB8888">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @NInt
@@ -16543,10 +13791,6 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer srcBottom,
             @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer dest, int flags);
 
-    /**
-     * vImageAlphaBlend_ARGBFFFF</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Reference/vImage_alpha/index.html#//apple_ref/c/func/vImageAlphaBlend_ARGBFFFF">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @NInt
@@ -16555,10 +13799,6 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer srcBottom,
             @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer dest, int flags);
 
-    /**
-     * vImagePremultipliedAlphaBlend_Planar8</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Reference/vImage_alpha/index.html#//apple_ref/c/func/vImagePremultipliedAlphaBlend_Planar8">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @NInt
@@ -16568,10 +13808,6 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer srcBottom,
             @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer dest, int flags);
 
-    /**
-     * vImagePremultipliedAlphaBlend_PlanarF</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Reference/vImage_alpha/index.html#//apple_ref/c/func/vImagePremultipliedAlphaBlend_PlanarF">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @NInt
@@ -16581,10 +13817,6 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer srcBottom,
             @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer dest, int flags);
 
-    /**
-     * vImagePremultipliedAlphaBlend_ARGB8888</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Reference/vImage_alpha/index.html#//apple_ref/c/func/vImagePremultipliedAlphaBlend_ARGB8888">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @NInt
@@ -16593,10 +13825,6 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer srcBottom,
             @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer dest, int flags);
 
-    /**
-     * vImagePremultipliedAlphaBlend_ARGBFFFF</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Reference/vImage_alpha/index.html#//apple_ref/c/func/vImagePremultipliedAlphaBlend_ARGBFFFF">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @NInt
@@ -16605,10 +13833,6 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer srcBottom,
             @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer dest, int flags);
 
-    /**
-     * vImagePremultipliedAlphaBlend_BGRA8888</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Reference/vImage_alpha/index.html#//apple_ref/c/func/vImagePremultipliedAlphaBlend_BGRA8888">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @NInt
@@ -16617,10 +13841,6 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer srcBottom,
             @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer dest, int flags);
 
-    /**
-     * vImagePremultipliedAlphaBlend_BGRAFFFF</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Reference/vImage_alpha/index.html#//apple_ref/c/func/vImagePremultipliedAlphaBlend_BGRAFFFF">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @NInt
@@ -16629,10 +13849,6 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer srcBottom,
             @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer dest, int flags);
 
-    /**
-     * vImagePremultiplyData_Planar8</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Reference/vImage_alpha/index.html#//apple_ref/c/func/vImagePremultiplyData_Planar8">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @NInt
@@ -16641,10 +13857,6 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer alpha,
             @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer dest, int flags);
 
-    /**
-     * vImagePremultiplyData_PlanarF</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Reference/vImage_alpha/index.html#//apple_ref/c/func/vImagePremultiplyData_PlanarF">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @NInt
@@ -16653,10 +13865,6 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer alpha,
             @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer dest, int flags);
 
-    /**
-     * vImagePremultiplyData_ARGB8888</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Reference/vImage_alpha/index.html#//apple_ref/c/func/vImagePremultiplyData_ARGB8888">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @NInt
@@ -16664,10 +13872,6 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer src,
             @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer dest, int flags);
 
-    /**
-     * vImagePremultiplyData_ARGBFFFF</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Reference/vImage_alpha/index.html#//apple_ref/c/func/vImagePremultiplyData_ARGBFFFF">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @NInt
@@ -16675,10 +13879,6 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer src,
             @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer dest, int flags);
 
-    /**
-     * vImagePremultiplyData_RGBA8888</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Reference/vImage_alpha/index.html#//apple_ref/c/func/vImagePremultiplyData_RGBA8888">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @NInt
@@ -16686,10 +13886,6 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer src,
             @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer dest, int flags);
 
-    /**
-     * vImagePremultiplyData_RGBAFFFF</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Reference/vImage_alpha/index.html#//apple_ref/c/func/vImagePremultiplyData_RGBAFFFF">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @NInt
@@ -16725,10 +13921,6 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer src,
             @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer dest, int flags);
 
-    /**
-     * vImageUnpremultiplyData_Planar8</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Reference/vImage_alpha/index.html#//apple_ref/c/func/vImageUnpremultiplyData_Planar8">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @NInt
@@ -16737,10 +13929,6 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer alpha,
             @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer dest, int flags);
 
-    /**
-     * vImageUnpremultiplyData_PlanarF</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Reference/vImage_alpha/index.html#//apple_ref/c/func/vImageUnpremultiplyData_PlanarF">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @NInt
@@ -16749,10 +13937,6 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer alpha,
             @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer dest, int flags);
 
-    /**
-     * vImageUnpremultiplyData_ARGB8888</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Reference/vImage_alpha/index.html#//apple_ref/c/func/vImageUnpremultiplyData_ARGB8888">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @NInt
@@ -16760,10 +13944,6 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer src,
             @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer dest, int flags);
 
-    /**
-     * vImageUnpremultiplyData_ARGBFFFF</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Reference/vImage_alpha/index.html#//apple_ref/c/func/vImageUnpremultiplyData_ARGBFFFF">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @NInt
@@ -16771,10 +13951,6 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer src,
             @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer dest, int flags);
 
-    /**
-     * vImageUnpremultiplyData_RGBA8888</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Reference/vImage_alpha/index.html#//apple_ref/c/func/vImageUnpremultiplyData_RGBA8888">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @NInt
@@ -16782,10 +13958,6 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer src,
             @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer dest, int flags);
 
-    /**
-     * vImageUnpremultiplyData_RGBAFFFF</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Reference/vImage_alpha/index.html#//apple_ref/c/func/vImageUnpremultiplyData_RGBAFFFF">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @NInt
@@ -16821,10 +13993,6 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer src,
             @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer dest, int flags);
 
-    /**
-     * vImagePremultipliedConstAlphaBlend_Planar8</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Reference/vImage_alpha/index.html#//apple_ref/c/func/vImagePremultipliedConstAlphaBlend_Planar8">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @NInt
@@ -16834,10 +14002,6 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer srcBottom,
             @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer dest, int flags);
 
-    /**
-     * vImagePremultipliedConstAlphaBlend_PlanarF</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Reference/vImage_alpha/index.html#//apple_ref/c/func/vImagePremultipliedConstAlphaBlend_PlanarF">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @NInt
@@ -16847,10 +14011,6 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer srcBottom,
             @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer dest, int flags);
 
-    /**
-     * vImagePremultipliedConstAlphaBlend_ARGB8888</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Reference/vImage_alpha/index.html#//apple_ref/c/func/vImagePremultipliedConstAlphaBlend_ARGB8888">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @NInt
@@ -16859,10 +14019,6 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer srcBottom,
             @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer dest, int flags);
 
-    /**
-     * vImagePremultipliedConstAlphaBlend_ARGBFFFF</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Reference/vImage_alpha/index.html#//apple_ref/c/func/vImagePremultipliedConstAlphaBlend_ARGBFFFF">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @NInt
@@ -16871,10 +14027,6 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer srcBottom,
             @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer dest, int flags);
 
-    /**
-     * vImageAlphaBlend_NonpremultipliedToPremultiplied_Planar8</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Reference/vImage_alpha/index.html#//apple_ref/c/func/vImageAlphaBlend_NonpremultipliedToPremultiplied_Planar8">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @NInt
@@ -16884,10 +14036,6 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer srcBottom,
             @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer dest, int flags);
 
-    /**
-     * vImageAlphaBlend_NonpremultipliedToPremultiplied_PlanarF</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Reference/vImage_alpha/index.html#//apple_ref/c/func/vImageAlphaBlend_NonpremultipliedToPremultiplied_PlanarF">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @NInt
@@ -16897,10 +14045,6 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer srcBottom,
             @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer dest, int flags);
 
-    /**
-     * vImageAlphaBlend_NonpremultipliedToPremultiplied_ARGB8888</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Reference/vImage_alpha/index.html#//apple_ref/c/func/vImageAlphaBlend_NonpremultipliedToPremultiplied_ARGB8888">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @NInt
@@ -16909,10 +14053,6 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer srcBottom,
             @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer dest, int flags);
 
-    /**
-     * vImageAlphaBlend_NonpremultipliedToPremultiplied_ARGBFFFF</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Reference/vImage_alpha/index.html#//apple_ref/c/func/vImageAlphaBlend_NonpremultipliedToPremultiplied_ARGBFFFF">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @NInt
@@ -16921,10 +14061,6 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer srcBottom,
             @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer dest, int flags);
 
-    /**
-     * vImageClipToAlpha_Planar8</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Reference/vImage_alpha/index.html#//apple_ref/c/func/vImageClipToAlpha_Planar8">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @NInt
@@ -16933,10 +14069,6 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer alpha,
             @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer dest, int flags);
 
-    /**
-     * vImageClipToAlpha_ARGB8888</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Reference/vImage_alpha/index.html#//apple_ref/c/func/vImageClipToAlpha_ARGB8888">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @NInt
@@ -16944,10 +14076,6 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer src,
             @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer dest, int flags);
 
-    /**
-     * vImageClipToAlpha_PlanarF</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Reference/vImage_alpha/index.html#//apple_ref/c/func/vImageClipToAlpha_PlanarF">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @NInt
@@ -16956,10 +14084,6 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer alpha,
             @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer dest, int flags);
 
-    /**
-     * vImageClipToAlpha_ARGBFFFF</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Reference/vImage_alpha/index.html#//apple_ref/c/func/vImageClipToAlpha_ARGBFFFF">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @NInt
@@ -16981,10 +14105,6 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer src,
             @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer dest, int flags);
 
-    /**
-     * vImageConvolve_Planar8</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Reference/vImage_convolution/index.html#//apple_ref/c/func/vImageConvolve_Planar8">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @NInt
@@ -16994,10 +14114,6 @@ public final class Accelerate {
             @NUInt long srcOffsetToROI_X, @NUInt long srcOffsetToROI_Y, ConstShortPtr kernel, int kernel_height,
             int kernel_width, int divisor, byte backgroundColor, int flags);
 
-    /**
-     * vImageConvolve_PlanarF</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Reference/vImage_convolution/index.html#//apple_ref/c/func/vImageConvolve_PlanarF">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @NInt
@@ -17007,10 +14123,6 @@ public final class Accelerate {
             @NUInt long srcOffsetToROI_X, @NUInt long srcOffsetToROI_Y, ConstFloatPtr kernel, int kernel_height,
             int kernel_width, float backgroundColor, int flags);
 
-    /**
-     * vImageConvolveWithBias_Planar8</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Reference/vImage_convolution/index.html#//apple_ref/c/func/vImageConvolveWithBias_Planar8">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @NInt
@@ -17020,10 +14132,6 @@ public final class Accelerate {
             @NUInt long srcOffsetToROI_X, @NUInt long srcOffsetToROI_Y, ConstShortPtr kernel, int kernel_height,
             int kernel_width, int divisor, int bias, byte backgroundColor, int flags);
 
-    /**
-     * vImageConvolveWithBias_PlanarF</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Reference/vImage_convolution/index.html#//apple_ref/c/func/vImageConvolveWithBias_PlanarF">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @NInt
@@ -17033,10 +14141,6 @@ public final class Accelerate {
             @NUInt long srcOffsetToROI_X, @NUInt long srcOffsetToROI_Y, ConstFloatPtr kernel, int kernel_height,
             int kernel_width, float bias, float backgroundColor, int flags);
 
-    /**
-     * vImageRichardsonLucyDeConvolve_Planar8</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Reference/vImage_convolution/index.html#//apple_ref/c/func/vImageRichardsonLucyDeConvolve_Planar8">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @NInt
@@ -17047,10 +14151,6 @@ public final class Accelerate {
             int kernel_height, int kernel_width, int kernel_height2, int kernel_width2, int divisor, int divisor2,
             byte backgroundColor, int iterationCount, int flags);
 
-    /**
-     * vImageRichardsonLucyDeConvolve_PlanarF</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Reference/vImage_convolution/index.html#//apple_ref/c/func/vImageRichardsonLucyDeConvolve_PlanarF">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @NInt
@@ -17061,10 +14161,6 @@ public final class Accelerate {
             int kernel_height, int kernel_width, int kernel_height2, int kernel_width2, float backgroundColor,
             int iterationCount, int flags);
 
-    /**
-     * vImageBoxConvolve_Planar8</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Reference/vImage_convolution/index.html#//apple_ref/c/func/vImageBoxConvolve_Planar8">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @NInt
@@ -17074,10 +14170,6 @@ public final class Accelerate {
             @NUInt long srcOffsetToROI_X, @NUInt long srcOffsetToROI_Y, int kernel_height, int kernel_width,
             byte backgroundColor, int flags);
 
-    /**
-     * vImageTentConvolve_Planar8</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Reference/vImage_convolution/index.html#//apple_ref/c/func/vImageTentConvolve_Planar8">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @NInt
@@ -17087,10 +14179,6 @@ public final class Accelerate {
             @NUInt long srcOffsetToROI_X, @NUInt long srcOffsetToROI_Y, int kernel_height, int kernel_width,
             byte backgroundColor, int flags);
 
-    /**
-     * vImageClip_PlanarF</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Reference/vImage_conversion/index.html#//apple_ref/c/func/vImageClip_PlanarF">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @NInt
@@ -17099,10 +14187,6 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer dest, float maxFloat,
             float minFloat, int flags);
 
-    /**
-     * vImageConvert_Planar8toPlanarF</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Reference/vImage_conversion/index.html#//apple_ref/c/func/vImageConvert_Planar8toPlanarF">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @NInt
@@ -17111,10 +14195,6 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer dest, float maxFloat,
             float minFloat, int flags);
 
-    /**
-     * vImageConvert_PlanarFtoPlanar8</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Reference/vImage_conversion/index.html#//apple_ref/c/func/vImageConvert_PlanarFtoPlanar8">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @NInt
@@ -17131,10 +14211,6 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer dest, float maxFloat,
             float minFloat, int dither, int flags);
 
-    /**
-     * vImageConvert_Planar8toARGB8888</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Reference/vImage_conversion/index.html#//apple_ref/c/func/vImageConvert_Planar8toARGB8888">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @NInt
@@ -17145,10 +14221,6 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer srcB,
             @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer dest, int flags);
 
-    /**
-     * vImageConvert_PlanarFtoARGBFFFF</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Reference/vImage_conversion/index.html#//apple_ref/c/func/vImageConvert_PlanarFtoARGBFFFF">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @NInt
@@ -17159,10 +14231,6 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer srcB,
             @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer dest, int flags);
 
-    /**
-     * vImageConvert_ARGB8888toPlanar8</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Reference/vImage_conversion/index.html#//apple_ref/c/func/vImageConvert_ARGB8888toPlanar8">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @NInt
@@ -17173,10 +14241,6 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer destG,
             @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer destB, int flags);
 
-    /**
-     * vImageConvert_ARGBFFFFtoPlanarF</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Reference/vImage_conversion/index.html#//apple_ref/c/func/vImageConvert_ARGBFFFFtoPlanarF">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @NInt
@@ -17187,10 +14251,6 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer destG,
             @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer destB, int flags);
 
-    /**
-     * vImageConvert_ChunkyToPlanar8</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Reference/vImage_conversion/index.html#//apple_ref/c/func/vImageConvert_ChunkyToPlanar8">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @NInt
@@ -17198,10 +14258,6 @@ public final class Accelerate {
             Ptr<ConstPtr<vImage_Buffer>> destPlanarBuffers, int channelCount, @NUInt long srcStrideBytes,
             @NUInt long srcWidth, @NUInt long srcHeight, @NUInt long srcRowBytes, int flags);
 
-    /**
-     * vImageConvert_PlanarToChunky8</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Reference/vImage_conversion/index.html#//apple_ref/c/func/vImageConvert_PlanarToChunky8">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @NInt
@@ -17209,10 +14265,6 @@ public final class Accelerate {
             Ptr<VoidPtr> destChannels, int channelCount, @NUInt long destStrideBytes, @NUInt long destWidth,
             @NUInt long destHeight, @NUInt long destRowBytes, int flags);
 
-    /**
-     * vImageConvert_ChunkyToPlanarF</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Reference/vImage_conversion/index.html#//apple_ref/c/func/vImageConvert_ChunkyToPlanarF">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @NInt
@@ -17220,10 +14272,6 @@ public final class Accelerate {
             Ptr<ConstPtr<vImage_Buffer>> destPlanarBuffers, int channelCount, @NUInt long srcStrideBytes,
             @NUInt long srcWidth, @NUInt long srcHeight, @NUInt long srcRowBytes, int flags);
 
-    /**
-     * vImageConvert_PlanarToChunkyF</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Reference/vImage_conversion/index.html#//apple_ref/c/func/vImageConvert_PlanarToChunkyF">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @NInt
@@ -17231,10 +14279,6 @@ public final class Accelerate {
             Ptr<VoidPtr> destChannels, int channelCount, @NUInt long destStrideBytes, @NUInt long destWidth,
             @NUInt long destHeight, @NUInt long destRowBytes, int flags);
 
-    /**
-     * vImageConvert_16SToF</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Reference/vImage_conversion/index.html#//apple_ref/c/func/vImageConvert_16SToF">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @NInt
@@ -17243,10 +14287,6 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer dest, float offset,
             float scale, int flags);
 
-    /**
-     * vImageConvert_16UToF</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Reference/vImage_conversion/index.html#//apple_ref/c/func/vImageConvert_16UToF">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @NInt
@@ -17255,10 +14295,6 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer dest, float offset,
             float scale, int flags);
 
-    /**
-     * vImageConvert_FTo16S</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Reference/vImage_conversion/index.html#//apple_ref/c/func/vImageConvert_FTo16S">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @NInt
@@ -17267,10 +14303,6 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer dest, float offset,
             float scale, int flags);
 
-    /**
-     * vImageConvert_FTo16U</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Reference/vImage_conversion/index.html#//apple_ref/c/func/vImageConvert_FTo16U">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @NInt
@@ -17293,10 +14325,6 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer src,
             @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer dest, int flags);
 
-    /**
-     * vImageOverwriteChannels_ARGB8888</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Reference/vImage_conversion/index.html#//apple_ref/c/func/vImageOverwriteChannels_ARGB8888">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @NInt
@@ -17306,10 +14334,6 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer dest, byte copyMask,
             int flags);
 
-    /**
-     * vImageOverwriteChannels_ARGBFFFF</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Reference/vImage_conversion/index.html#//apple_ref/c/func/vImageOverwriteChannels_ARGBFFFF">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @NInt
@@ -17319,20 +14343,12 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer dest, byte copyMask,
             int flags);
 
-    /**
-     * vImageOverwriteChannelsWithScalar_Planar8</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Reference/vImage_conversion/index.html#//apple_ref/c/func/vImageOverwriteChannelsWithScalar_Planar8">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @NInt
     public static native long vImageOverwriteChannelsWithScalar_Planar8(byte scalar,
             @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer dest, int flags);
 
-    /**
-     * vImageOverwriteChannelsWithScalar_PlanarF</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Reference/vImage_conversion/index.html#//apple_ref/c/func/vImageOverwriteChannelsWithScalar_PlanarF">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @NInt
@@ -17375,10 +14391,6 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer dest,
             @NInt long channelIndex, int flags);
 
-    /**
-     * vImageOverwriteChannelsWithScalar_ARGB8888</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Reference/vImage_conversion/index.html#//apple_ref/c/func/vImageOverwriteChannelsWithScalar_ARGB8888">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @NInt
@@ -17387,10 +14399,6 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer dest, byte copyMask,
             int flags);
 
-    /**
-     * vImageOverwriteChannelsWithScalar_ARGBFFFF</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Reference/vImage_conversion/index.html#//apple_ref/c/func/vImageOverwriteChannelsWithScalar_ARGBFFFF">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @NInt
@@ -17447,10 +14455,6 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer arg4, boolean arg5,
             int flags);
 
-    /**
-     * vImageConvert_ARGB1555toPlanar8</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Reference/vImage_conversion/index.html#//apple_ref/c/func/vImageConvert_ARGB1555toPlanar8">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @NInt
@@ -17461,10 +14465,6 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer destG,
             @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer destB, int flags);
 
-    /**
-     * vImageConvert_ARGB1555toARGB8888</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Reference/vImage_conversion/index.html#//apple_ref/c/func/vImageConvert_ARGB1555toARGB8888">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @NInt
@@ -17472,10 +14472,6 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer src,
             @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer dest, int flags);
 
-    /**
-     * vImageConvert_Planar8toARGB1555</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Reference/vImage_conversion/index.html#//apple_ref/c/func/vImageConvert_Planar8toARGB1555">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @NInt
@@ -17486,10 +14482,6 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer srcB,
             @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer dest, int flags);
 
-    /**
-     * vImageConvert_ARGB8888toARGB1555</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Reference/vImage_conversion/index.html#//apple_ref/c/func/vImageConvert_ARGB8888toARGB1555">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @NInt
@@ -17497,10 +14489,6 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer src,
             @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer dest, int flags);
 
-    /**
-     * vImageConvert_RGB565toARGB8888</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Reference/vImage_conversion/index.html#//apple_ref/c/func/vImageConvert_RGB565toARGB8888">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @NInt
@@ -17529,10 +14517,6 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer src,
             @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer dest, int flags);
 
-    /**
-     * vImageConvert_ARGB8888toRGB565</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Reference/vImage_conversion/index.html#//apple_ref/c/func/vImageConvert_ARGB8888toRGB565">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @NInt
@@ -17554,10 +14538,6 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer src,
             @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer dest, int flags);
 
-    /**
-     * vImageConvert_RGB565toPlanar8</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Reference/vImage_conversion/index.html#//apple_ref/c/func/vImageConvert_RGB565toPlanar8">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @NInt
@@ -17567,10 +14547,6 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer destG,
             @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer destB, int flags);
 
-    /**
-     * vImageConvert_Planar8toRGB565</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Reference/vImage_conversion/index.html#//apple_ref/c/func/vImageConvert_Planar8toRGB565">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @NInt
@@ -17610,10 +14586,6 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer dest, int dither,
             int flags);
 
-    /**
-     * vImageConvert_Planar16FtoPlanarF</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Reference/vImage_conversion/index.html#//apple_ref/c/func/vImageConvert_Planar16FtoPlanarF">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @NInt
@@ -17621,10 +14593,6 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer src,
             @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer dest, int flags);
 
-    /**
-     * vImageConvert_PlanarFtoPlanar16F</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Reference/vImage_conversion/index.html#//apple_ref/c/func/vImageConvert_PlanarFtoPlanar16F">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @NInt
@@ -17646,10 +14614,6 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer src,
             @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer dest, int flags);
 
-    /**
-     * vImageConvert_16UToPlanar8</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Reference/vImage_conversion/index.html#//apple_ref/c/func/vImageConvert_16UToPlanar8">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @NInt
@@ -17657,10 +14621,6 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer src,
             @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer dest, int flags);
 
-    /**
-     * vImageConvert_Planar8To16U</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Reference/vImage_conversion/index.html#//apple_ref/c/func/vImageConvert_Planar8To16U">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @NInt
@@ -17668,10 +14628,6 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer src,
             @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer dest, int flags);
 
-    /**
-     * vImageConvert_RGB888toARGB8888</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Reference/vImage_conversion/index.html#//apple_ref/c/func/vImageConvert_RGB888toARGB8888">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @NInt
@@ -17681,10 +14637,6 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer arg4, boolean arg5,
             int arg6);
 
-    /**
-     * vImageConvert_RGB888toRGBA8888</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Reference/vImage_conversion/index.html#//apple_ref/c/func/vImageConvert_RGB888toRGBA8888">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @NInt
@@ -17694,10 +14646,6 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer arg4, boolean arg5,
             int arg6);
 
-    /**
-     * vImageConvert_RGB888toBGRA8888</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Reference/vImage_conversion/index.html#//apple_ref/c/func/vImageConvert_RGB888toBGRA8888">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @NInt
@@ -17707,10 +14655,6 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer arg4, boolean arg5,
             int arg6);
 
-    /**
-     * vImageConvert_ARGB8888toRGB888</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Reference/vImage_conversion/index.html#//apple_ref/c/func/vImageConvert_ARGB8888toRGB888">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @NInt
@@ -17718,10 +14662,6 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer arg1,
             @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer arg2, int arg3);
 
-    /**
-     * vImageConvert_RGBA8888toRGB888</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Reference/vImage_conversion/index.html#//apple_ref/c/func/vImageConvert_RGBA8888toRGB888">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @NInt
@@ -17729,10 +14669,6 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer arg1,
             @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer arg2, int arg3);
 
-    /**
-     * vImageConvert_BGRA8888toRGB888</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Reference/vImage_conversion/index.html#//apple_ref/c/func/vImageConvert_BGRA8888toRGB888">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @NInt
@@ -17740,10 +14676,6 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer arg1,
             @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer arg2, int arg3);
 
-    /**
-     * vImageConvert_Planar8toRGB888</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Reference/vImage_conversion/index.html#//apple_ref/c/func/vImageConvert_Planar8toRGB888">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @NInt
@@ -17753,10 +14685,6 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer planarBlue,
             @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer rgbDest, int flags);
 
-    /**
-     * vImageConvert_PlanarFtoRGBFFF</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Reference/vImage_conversion/index.html#//apple_ref/c/func/vImageConvert_PlanarFtoRGBFFF">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @NInt
@@ -17766,10 +14694,6 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer planarBlue,
             @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer rgbDest, int flags);
 
-    /**
-     * vImageConvert_RGB888toPlanar8</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Reference/vImage_conversion/index.html#//apple_ref/c/func/vImageConvert_RGB888toPlanar8">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @NInt
@@ -17779,10 +14703,6 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer greenDest,
             @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer blueDest, int flags);
 
-    /**
-     * vImageConvert_RGBFFFtoPlanarF</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Reference/vImage_conversion/index.html#//apple_ref/c/func/vImageConvert_RGBFFFtoPlanarF">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @NInt
@@ -17792,10 +14712,6 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer greenDest,
             @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer blueDest, int flags);
 
-    /**
-     * vImageSelectChannels_ARGB8888</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Reference/vImage_conversion/index.html#//apple_ref/c/func/vImageSelectChannels_ARGB8888">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @NInt
@@ -17805,10 +14721,6 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer dest, byte copyMask,
             int flags);
 
-    /**
-     * vImageSelectChannels_ARGBFFFF</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Reference/vImage_conversion/index.html#//apple_ref/c/func/vImageSelectChannels_ARGBFFFF">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @NInt
@@ -17818,10 +14730,6 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer dest, byte copyMask,
             int flags);
 
-    /**
-     * vImageConvert_Planar8ToXRGB8888</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Reference/vImage_conversion/index.html#//apple_ref/c/func/vImageConvert_Planar8ToXRGB8888">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @NInt
@@ -17831,10 +14739,6 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer blue,
             @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer dest, int flags);
 
-    /**
-     * vImageConvert_Planar8ToBGRX8888</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Reference/vImage_conversion/index.html#//apple_ref/c/func/vImageConvert_Planar8ToBGRX8888">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @NInt
@@ -17844,10 +14748,6 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer red, byte alpha,
             @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer dest, int flags);
 
-    /**
-     * vImageConvert_PlanarFToXRGBFFFF</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Reference/vImage_conversion/index.html#//apple_ref/c/func/vImageConvert_PlanarFToXRGBFFFF">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @NInt
@@ -17857,10 +14757,6 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer blue,
             @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer dest, int flags);
 
-    /**
-     * vImageConvert_PlanarFToBGRXFFFF</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Reference/vImage_conversion/index.html#//apple_ref/c/func/vImageConvert_PlanarFToBGRXFFFF">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @NInt
@@ -18150,10 +15046,6 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer dest,
             @NUInt long pixelSize, int flags);
 
-    /**
-     * vImageRotate_Planar8</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Reference/vImage_geometric/index.html#//apple_ref/c/func/vImageRotate_Planar8">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @NInt
@@ -18162,10 +15054,6 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer dest, VoidPtr tempBuffer,
             float angleInRadians, byte backColor, int flags);
 
-    /**
-     * vImageRotate_PlanarF</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Reference/vImage_geometric/index.html#//apple_ref/c/func/vImageRotate_PlanarF">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @NInt
@@ -18174,10 +15062,6 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer dest, VoidPtr tempBuffer,
             float angleInRadians, float backColor, int flags);
 
-    /**
-     * vImageScale_Planar8</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Reference/vImage_geometric/index.html#//apple_ref/c/func/vImageScale_Planar8">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @NInt
@@ -18202,10 +15086,6 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer dest, VoidPtr tempBuffer,
             int flags);
 
-    /**
-     * vImageScale_PlanarF</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Reference/vImage_geometric/index.html#//apple_ref/c/func/vImageScale_PlanarF">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @NInt
@@ -18214,10 +15094,6 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer dest, VoidPtr tempBuffer,
             int flags);
 
-    /**
-     * vImageScale_ARGB8888</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Reference/vImage_geometric/index.html#//apple_ref/c/func/vImageScale_ARGB8888">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @NInt
@@ -18242,10 +15118,6 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer dest, VoidPtr tempBuffer,
             int flags);
 
-    /**
-     * vImageScale_ARGBFFFF</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Reference/vImage_geometric/index.html#//apple_ref/c/func/vImageScale_ARGBFFFF">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @NInt
@@ -18254,10 +15126,6 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer dest, VoidPtr tempBuffer,
             int flags);
 
-    /**
-     * vImageAffineWarp_Planar8</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Reference/vImage_geometric/index.html#//apple_ref/c/func/vImageAffineWarp_Planar8">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @NInt
@@ -18267,10 +15135,6 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") vImage_AffineTransform transform,
             byte backColor, int flags);
 
-    /**
-     * vImageAffineWarp_PlanarF</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Reference/vImage_geometric/index.html#//apple_ref/c/func/vImageAffineWarp_PlanarF">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @NInt
@@ -18280,10 +15144,6 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") vImage_AffineTransform transform,
             float backColor, int flags);
 
-    /**
-     * vImageAffineWarpD_Planar8</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Reference/vImage_geometric/index.html#//apple_ref/c/func/vImageAffineWarpD_Planar8">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @NInt
@@ -18293,10 +15153,6 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") vImage_AffineTransform_Double transform,
             byte backColor, int flags);
 
-    /**
-     * vImageAffineWarpD_PlanarF</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Reference/vImage_geometric/index.html#//apple_ref/c/func/vImageAffineWarpD_PlanarF">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @NInt
@@ -18306,10 +15162,6 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") vImage_AffineTransform_Double transform,
             float backColor, int flags);
 
-    /**
-     * vImageAffineWarpCG_Planar8</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Reference/vImage_geometric/index.html#//apple_ref/c/func/vImageAffineWarpCG_Planar8">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @NInt
@@ -18319,10 +15171,6 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") vImage_AffineTransform_Double transform,
             byte backColor, int flags);
 
-    /**
-     * vImageAffineWarpCG_PlanarF</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Reference/vImage_geometric/index.html#//apple_ref/c/func/vImageAffineWarpCG_PlanarF">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @NInt
@@ -18332,10 +15180,6 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") vImage_AffineTransform_Double transform,
             float backColor, int flags);
 
-    /**
-     * vImageHorizontalReflect_Planar8</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Reference/vImage_geometric/index.html#//apple_ref/c/func/vImageHorizontalReflect_Planar8">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @NInt
@@ -18350,10 +15194,6 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer src,
             @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer dest, int flags);
 
-    /**
-     * vImageHorizontalReflect_PlanarF</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Reference/vImage_geometric/index.html#//apple_ref/c/func/vImageHorizontalReflect_PlanarF">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @NInt
@@ -18361,10 +15201,6 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer src,
             @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer dest, int flags);
 
-    /**
-     * vImageHorizontalReflect_ARGB8888</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Reference/vImage_geometric/index.html#//apple_ref/c/func/vImageHorizontalReflect_ARGB8888">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @NInt
@@ -18386,10 +15222,6 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer src,
             @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer dest, int flags);
 
-    /**
-     * vImageHorizontalReflect_ARGBFFFF</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Reference/vImage_geometric/index.html#//apple_ref/c/func/vImageHorizontalReflect_ARGBFFFF">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @NInt
@@ -18397,10 +15229,6 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer src,
             @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer dest, int flags);
 
-    /**
-     * vImageVerticalReflect_Planar8</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Reference/vImage_geometric/index.html#//apple_ref/c/func/vImageVerticalReflect_Planar8">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @NInt
@@ -18415,10 +15243,6 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer src,
             @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer dest, int flags);
 
-    /**
-     * vImageVerticalReflect_PlanarF</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Reference/vImage_geometric/index.html#//apple_ref/c/func/vImageVerticalReflect_PlanarF">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @NInt
@@ -18426,10 +15250,6 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer src,
             @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer dest, int flags);
 
-    /**
-     * vImageVerticalReflect_ARGB8888</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Reference/vImage_geometric/index.html#//apple_ref/c/func/vImageVerticalReflect_ARGB8888">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @NInt
@@ -18451,10 +15271,6 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer src,
             @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer dest, int flags);
 
-    /**
-     * vImageVerticalReflect_ARGBFFFF</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Reference/vImage_geometric/index.html#//apple_ref/c/func/vImageVerticalReflect_ARGBFFFF">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @NInt
@@ -18462,10 +15278,6 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer src,
             @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer dest, int flags);
 
-    /**
-     * vImageRotate90_Planar8</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Reference/vImage_geometric/index.html#//apple_ref/c/func/vImageRotate90_Planar8">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @NInt
@@ -18482,10 +15294,6 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer dest,
             byte rotationConstant, char backColor, int flags);
 
-    /**
-     * vImageRotate90_PlanarF</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Reference/vImage_geometric/index.html#//apple_ref/c/func/vImageRotate90_PlanarF">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @NInt
@@ -18494,10 +15302,6 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer dest,
             byte rotationConstant, float backColor, int flags);
 
-    /**
-     * vImageHorizontalShear_Planar8</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Reference/vImage_geometric/index.html#//apple_ref/c/func/vImageHorizontalShear_Planar8">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @NInt
@@ -18525,10 +15329,6 @@ public final class Accelerate {
             @NUInt long srcOffsetToROI_X, @NUInt long srcOffsetToROI_Y, float xTranslate, float shearSlope,
             VoidPtr filter, char backColor, int flags);
 
-    /**
-     * vImageHorizontalShear_PlanarF</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Reference/vImage_geometric/index.html#//apple_ref/c/func/vImageHorizontalShear_PlanarF">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @NInt
@@ -18538,10 +15338,6 @@ public final class Accelerate {
             @NUInt long srcOffsetToROI_X, @NUInt long srcOffsetToROI_Y, float xTranslate, float shearSlope,
             VoidPtr filter, float backColor, int flags);
 
-    /**
-     * vImageVerticalShear_Planar8</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Reference/vImage_geometric/index.html#//apple_ref/c/func/vImageVerticalShear_Planar8">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @NInt
@@ -18569,10 +15365,6 @@ public final class Accelerate {
             @NUInt long srcOffsetToROI_X, @NUInt long srcOffsetToROI_Y, float yTranslate, float shearSlope,
             VoidPtr filter, char backColor, int flags);
 
-    /**
-     * vImageVerticalShear_PlanarF</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Reference/vImage_geometric/index.html#//apple_ref/c/func/vImageVerticalShear_PlanarF">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @NInt
@@ -18582,10 +15374,6 @@ public final class Accelerate {
             @NUInt long srcOffsetToROI_X, @NUInt long srcOffsetToROI_Y, float yTranslate, float shearSlope,
             VoidPtr filter, float backColor, int flags);
 
-    /**
-     * vImageHorizontalShearD_Planar8</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Reference/vImage_geometric/index.html#//apple_ref/c/func/vImageHorizontalShearD_Planar8">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @NInt
@@ -18595,10 +15383,6 @@ public final class Accelerate {
             @NUInt long srcOffsetToROI_X, @NUInt long srcOffsetToROI_Y, double xTranslate, double shearSlope,
             VoidPtr filter, byte backColor, int flags);
 
-    /**
-     * vImageHorizontalShearD_PlanarF</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Reference/vImage_geometric/index.html#//apple_ref/c/func/vImageHorizontalShearD_PlanarF">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @NInt
@@ -18608,10 +15392,6 @@ public final class Accelerate {
             @NUInt long srcOffsetToROI_X, @NUInt long srcOffsetToROI_Y, double xTranslate, double shearSlope,
             VoidPtr filter, float backColor, int flags);
 
-    /**
-     * vImageVerticalShearD_Planar8</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Reference/vImage_geometric/index.html#//apple_ref/c/func/vImageVerticalShearD_Planar8">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @NInt
@@ -18621,10 +15401,6 @@ public final class Accelerate {
             @NUInt long srcOffsetToROI_X, @NUInt long srcOffsetToROI_Y, double yTranslate, double shearSlope,
             VoidPtr filter, byte backColor, int flags);
 
-    /**
-     * vImageVerticalShearD_PlanarF</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Reference/vImage_geometric/index.html#//apple_ref/c/func/vImageVerticalShearD_PlanarF">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @NInt
@@ -18634,26 +15410,14 @@ public final class Accelerate {
             @NUInt long srcOffsetToROI_X, @NUInt long srcOffsetToROI_Y, double yTranslate, double shearSlope,
             VoidPtr filter, float backColor, int flags);
 
-    /**
-     * vImageNewResamplingFilter</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Reference/vImage_geometric/index.html#//apple_ref/c/func/vImageNewResamplingFilter">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native VoidPtr vImageNewResamplingFilter(float scale, int flags);
 
-    /**
-     * vImageDestroyResamplingFilter</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Reference/vImage_geometric/index.html#//apple_ref/c/func/vImageDestroyResamplingFilter">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vImageDestroyResamplingFilter(VoidPtr filter);
 
-    /**
-     * vImageNewResamplingFilterForFunctionUsingBuffer</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Reference/vImage_geometric/index.html#//apple_ref/c/func/vImageNewResamplingFilterForFunctionUsingBuffer">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @NInt
@@ -18661,10 +15425,6 @@ public final class Accelerate {
             @FunctionPtr(name = "call_vImageNewResamplingFilterForFunctionUsingBuffer") Function_vImageNewResamplingFilterForFunctionUsingBuffer kernelFunc,
             float kernelWidth, VoidPtr userData, int flags);
 
-    /**
-     * vImageGetResamplingFilterSize</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Reference/vImage_geometric/index.html#//apple_ref/c/func/vImageGetResamplingFilterSize">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @NUInt
@@ -18677,10 +15437,6 @@ public final class Accelerate {
     @NUInt
     public static native long vImageGetResamplingFilterExtent(VoidPtr filter, int flags);
 
-    /**
-     * vImageHistogramCalculation_Planar8</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Reference/vImage_histogram/index.html#//apple_ref/c/func/vImageHistogramCalculation_Planar8">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @NInt
@@ -18688,10 +15444,6 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer src, NUIntPtr histogram,
             int flags);
 
-    /**
-     * vImageHistogramCalculation_PlanarF</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Reference/vImage_histogram/index.html#//apple_ref/c/func/vImageHistogramCalculation_PlanarF">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @NInt
@@ -18699,10 +15451,6 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer src, NUIntPtr histogram,
             int histogram_entries, float minVal, float maxVal, int flags);
 
-    /**
-     * vImageEqualization_Planar8</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Reference/vImage_histogram/index.html#//apple_ref/c/func/vImageEqualization_Planar8">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @NInt
@@ -18710,10 +15458,6 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer src,
             @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer dest, int flags);
 
-    /**
-     * vImageEqualization_PlanarF</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Reference/vImage_histogram/index.html#//apple_ref/c/func/vImageEqualization_PlanarF">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @NInt
@@ -18722,10 +15466,6 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer dest, VoidPtr tempBuffer,
             int histogram_entries, float minVal, float maxVal, int flags);
 
-    /**
-     * vImageEqualization_ARGB8888</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Reference/vImage_histogram/index.html#//apple_ref/c/func/vImageEqualization_ARGB8888">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @NInt
@@ -18733,10 +15473,6 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer src,
             @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer dest, int flags);
 
-    /**
-     * vImageEqualization_ARGBFFFF</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Reference/vImage_histogram/index.html#//apple_ref/c/func/vImageEqualization_ARGBFFFF">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @NInt
@@ -18745,10 +15481,6 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer dest, VoidPtr tempBuffer,
             int histogram_entries, float minVal, float maxVal, int flags);
 
-    /**
-     * vImageHistogramSpecification_Planar8</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Reference/vImage_histogram/index.html#//apple_ref/c/func/vImageHistogramSpecification_Planar8">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @NInt
@@ -18757,10 +15489,6 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer dest,
             ConstNUIntPtr desired_histogram, int flags);
 
-    /**
-     * vImageHistogramSpecification_PlanarF</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Reference/vImage_histogram/index.html#//apple_ref/c/func/vImageHistogramSpecification_PlanarF">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @NInt
@@ -18769,10 +15497,6 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer dest, VoidPtr tempBuffer,
             ConstNUIntPtr desired_histogram, int histogram_entries, float minVal, float maxVal, int flags);
 
-    /**
-     * vImageContrastStretch_Planar8</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Reference/vImage_histogram/index.html#//apple_ref/c/func/vImageContrastStretch_Planar8">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @NInt
@@ -18780,10 +15504,6 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer src,
             @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer dest, int flags);
 
-    /**
-     * vImageContrastStretch_PlanarF</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Reference/vImage_histogram/index.html#//apple_ref/c/func/vImageContrastStretch_PlanarF">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @NInt
@@ -18792,10 +15512,6 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer dest, VoidPtr tempBuffer,
             int histogram_entries, float minVal, float maxVal, int flags);
 
-    /**
-     * vImageContrastStretch_ARGB8888</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Reference/vImage_histogram/index.html#//apple_ref/c/func/vImageContrastStretch_ARGB8888">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @NInt
@@ -18803,10 +15519,6 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer src,
             @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer dest, int flags);
 
-    /**
-     * vImageContrastStretch_ARGBFFFF</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Reference/vImage_histogram/index.html#//apple_ref/c/func/vImageContrastStretch_ARGBFFFF">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @NInt
@@ -18815,10 +15527,6 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer dest, VoidPtr tempBuffer,
             int histogram_entries, float minVal, float maxVal, int flags);
 
-    /**
-     * vImageEndsInContrastStretch_Planar8</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Reference/vImage_histogram/index.html#//apple_ref/c/func/vImageEndsInContrastStretch_Planar8">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @NInt
@@ -18827,10 +15535,6 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer dest, int percent_low,
             int percent_high, int flags);
 
-    /**
-     * vImageEndsInContrastStretch_PlanarF</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Reference/vImage_histogram/index.html#//apple_ref/c/func/vImageEndsInContrastStretch_PlanarF">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @NInt
@@ -18839,10 +15543,6 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer dest, VoidPtr tempBuffer,
             int percent_low, int percent_high, int histogram_entries, float minVal, float maxVal, int flags);
 
-    /**
-     * vImageDilate_Planar8</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Reference/vImage_morphological/index.html#//apple_ref/c/func/vImageDilate_Planar8">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @NInt
@@ -18853,10 +15553,6 @@ public final class Accelerate {
             @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String kernel,
             @NUInt long kernel_height, @NUInt long kernel_width, int flags);
 
-    /**
-     * vImageDilate_PlanarF</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Reference/vImage_morphological/index.html#//apple_ref/c/func/vImageDilate_PlanarF">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @NInt
@@ -18866,10 +15562,6 @@ public final class Accelerate {
             @NUInt long srcOffsetToROI_X, @NUInt long srcOffsetToROI_Y, ConstFloatPtr kernel, @NUInt long kernel_height,
             @NUInt long kernel_width, int flags);
 
-    /**
-     * vImageDilate_ARGB8888</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Reference/vImage_morphological/index.html#//apple_ref/c/func/vImageDilate_ARGB8888">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @NInt
@@ -18880,10 +15572,6 @@ public final class Accelerate {
             @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String kernel,
             @NUInt long kernel_height, @NUInt long kernel_width, int flags);
 
-    /**
-     * vImageDilate_ARGBFFFF</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Reference/vImage_morphological/index.html#//apple_ref/c/func/vImageDilate_ARGBFFFF">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @NInt
@@ -18893,10 +15581,6 @@ public final class Accelerate {
             @NUInt long srcOffsetToROI_X, @NUInt long srcOffsetToROI_Y, ConstFloatPtr kernel, @NUInt long kernel_height,
             @NUInt long kernel_width, int flags);
 
-    /**
-     * vImageErode_Planar8</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Reference/vImage_morphological/index.html#//apple_ref/c/func/vImageErode_Planar8">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @NInt
@@ -18907,10 +15591,6 @@ public final class Accelerate {
             @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String kernel,
             @NUInt long kernel_height, @NUInt long kernel_width, int flags);
 
-    /**
-     * vImageErode_PlanarF</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Reference/vImage_morphological/index.html#//apple_ref/c/func/vImageErode_PlanarF">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @NInt
@@ -18920,10 +15600,6 @@ public final class Accelerate {
             @NUInt long srcOffsetToROI_X, @NUInt long srcOffsetToROI_Y, ConstFloatPtr kernel, @NUInt long kernel_height,
             @NUInt long kernel_width, int flags);
 
-    /**
-     * vImageErode_ARGB8888</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Reference/vImage_morphological/index.html#//apple_ref/c/func/vImageErode_ARGB8888">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @NInt
@@ -18934,10 +15610,6 @@ public final class Accelerate {
             @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String kernel,
             @NUInt long kernel_height, @NUInt long kernel_width, int flags);
 
-    /**
-     * vImageErode_ARGBFFFF</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Reference/vImage_morphological/index.html#//apple_ref/c/func/vImageErode_ARGBFFFF">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @NInt
@@ -18947,10 +15619,6 @@ public final class Accelerate {
             @NUInt long srcOffsetToROI_X, @NUInt long srcOffsetToROI_Y, ConstFloatPtr kernel, @NUInt long kernel_height,
             @NUInt long kernel_width, int flags);
 
-    /**
-     * vImageMax_Planar8</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Reference/vImage_morphological/index.html#//apple_ref/c/func/vImageMax_Planar8">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @NInt
@@ -18960,10 +15628,6 @@ public final class Accelerate {
             @NUInt long srcOffsetToROI_X, @NUInt long srcOffsetToROI_Y, @NUInt long kernel_height,
             @NUInt long kernel_width, int flags);
 
-    /**
-     * vImageMax_PlanarF</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Reference/vImage_morphological/index.html#//apple_ref/c/func/vImageMax_PlanarF">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @NInt
@@ -18973,10 +15637,6 @@ public final class Accelerate {
             @NUInt long srcOffsetToROI_X, @NUInt long srcOffsetToROI_Y, @NUInt long kernel_height,
             @NUInt long kernel_width, int flags);
 
-    /**
-     * vImageMax_ARGB8888</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Reference/vImage_morphological/index.html#//apple_ref/c/func/vImageMax_ARGB8888">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @NInt
@@ -18986,10 +15646,6 @@ public final class Accelerate {
             @NUInt long srcOffsetToROI_X, @NUInt long srcOffsetToROI_Y, @NUInt long kernel_height,
             @NUInt long kernel_width, int flags);
 
-    /**
-     * vImageMax_ARGBFFFF</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Reference/vImage_morphological/index.html#//apple_ref/c/func/vImageMax_ARGBFFFF">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @NInt
@@ -18999,10 +15655,6 @@ public final class Accelerate {
             @NUInt long srcOffsetToROI_X, @NUInt long srcOffsetToROI_Y, @NUInt long kernel_height,
             @NUInt long kernel_width, int flags);
 
-    /**
-     * vImageMin_Planar8</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Reference/vImage_morphological/index.html#//apple_ref/c/func/vImageMin_Planar8">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @NInt
@@ -19012,10 +15664,6 @@ public final class Accelerate {
             @NUInt long srcOffsetToROI_X, @NUInt long srcOffsetToROI_Y, @NUInt long kernel_height,
             @NUInt long kernel_width, int flags);
 
-    /**
-     * vImageMin_PlanarF</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Reference/vImage_morphological/index.html#//apple_ref/c/func/vImageMin_PlanarF">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @NInt
@@ -19025,10 +15673,6 @@ public final class Accelerate {
             @NUInt long srcOffsetToROI_X, @NUInt long srcOffsetToROI_Y, @NUInt long kernel_height,
             @NUInt long kernel_width, int flags);
 
-    /**
-     * vImageMin_ARGB8888</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Reference/vImage_morphological/index.html#//apple_ref/c/func/vImageMin_ARGB8888">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @NInt
@@ -19038,10 +15682,6 @@ public final class Accelerate {
             @NUInt long srcOffsetToROI_X, @NUInt long srcOffsetToROI_Y, @NUInt long kernel_height,
             @NUInt long kernel_width, int flags);
 
-    /**
-     * vImageMin_ARGBFFFF</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Reference/vImage_morphological/index.html#//apple_ref/c/func/vImageMin_ARGBFFFF">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @NInt
@@ -19051,10 +15691,6 @@ public final class Accelerate {
             @NUInt long srcOffsetToROI_X, @NUInt long srcOffsetToROI_Y, @NUInt long kernel_height,
             @NUInt long kernel_width, int flags);
 
-    /**
-     * vImagePNGDecompressionFilter</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Reference/vImage_decompression/index.html#//apple_ref/c/func/vImagePNGDecompressionFilter">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @NInt
@@ -19070,10 +15706,6 @@ public final class Accelerate {
             Ptr<ConstPtr<vImage_Buffer>> dests, int src_planes, int dest_planes, ConstShortPtr matrix, int divisor,
             ConstShortPtr pre_bias, ConstIntPtr post_bias, int flags);
 
-    /**
-     * vImageMatrixMultiply_Planar8</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Reference/vImage_transform/index.html#//apple_ref/c/func/vImageMatrixMultiply_Planar8">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @NInt
@@ -19081,10 +15713,6 @@ public final class Accelerate {
             Ptr<ConstPtr<vImage_Buffer>> dests, int src_planes, int dest_planes, ConstShortPtr matrix, int divisor,
             ConstShortPtr pre_bias, ConstIntPtr post_bias, int flags);
 
-    /**
-     * vImageMatrixMultiply_PlanarF</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Reference/vImage_transform/index.html#//apple_ref/c/func/vImageMatrixMultiply_PlanarF">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @NInt
@@ -19092,26 +15720,14 @@ public final class Accelerate {
             Ptr<ConstPtr<vImage_Buffer>> dests, int src_planes, int dest_planes, ConstFloatPtr matrix,
             ConstFloatPtr pre_bias, ConstFloatPtr post_bias, int flags);
 
-    /**
-     * vImageCreateGammaFunction</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Reference/vImage_transform/index.html#//apple_ref/c/func/vImageCreateGammaFunction">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native VoidPtr vImageCreateGammaFunction(float gamma, int gamma_type, int flags);
 
-    /**
-     * vImageDestroyGammaFunction</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Reference/vImage_transform/index.html#//apple_ref/c/func/vImageDestroyGammaFunction">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vImageDestroyGammaFunction(VoidPtr f);
 
-    /**
-     * vImageGamma_Planar8toPlanarF</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Reference/vImage_transform/index.html#//apple_ref/c/func/vImageGamma_Planar8toPlanarF">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @NInt
@@ -19120,10 +15736,6 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer dest, VoidPtr gamma,
             int flags);
 
-    /**
-     * vImageGamma_PlanarFtoPlanar8</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Reference/vImage_transform/index.html#//apple_ref/c/func/vImageGamma_PlanarFtoPlanar8">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @NInt
@@ -19132,10 +15744,6 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer dest, VoidPtr gamma,
             int flags);
 
-    /**
-     * vImageGamma_PlanarF</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Reference/vImage_transform/index.html#//apple_ref/c/func/vImageGamma_PlanarF">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @NInt
@@ -19144,10 +15752,6 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer dest, VoidPtr gamma,
             int flags);
 
-    /**
-     * vImagePiecewisePolynomial_PlanarF</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Reference/vImage_transform/index.html#//apple_ref/c/func/vImagePiecewisePolynomial_PlanarF">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @NInt
@@ -19156,10 +15760,6 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer dest,
             Ptr<ConstFloatPtr> coefficients, ConstFloatPtr boundaries, int order, int log2segments, int flags);
 
-    /**
-     * vImagePiecewisePolynomial_Planar8toPlanarF</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Reference/vImage_transform/index.html#//apple_ref/c/func/vImagePiecewisePolynomial_Planar8toPlanarF">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @NInt
@@ -19168,10 +15768,6 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer dest,
             Ptr<ConstFloatPtr> coefficients, ConstFloatPtr boundaries, int order, int log2segments, int flags);
 
-    /**
-     * vImagePiecewisePolynomial_PlanarFtoPlanar8</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Reference/vImage_transform/index.html#//apple_ref/c/func/vImagePiecewisePolynomial_PlanarFtoPlanar8">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @NInt
@@ -19180,10 +15776,6 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer dest,
             Ptr<ConstFloatPtr> coefficients, ConstFloatPtr boundaries, int order, int log2segments, int flags);
 
-    /**
-     * vImagePiecewiseRational_PlanarF</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Reference/vImage_transform/index.html#//apple_ref/c/func/vImagePiecewiseRational_PlanarF">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @NInt
@@ -19193,10 +15785,6 @@ public final class Accelerate {
             Ptr<ConstFloatPtr> topCoefficients, Ptr<ConstFloatPtr> bottomCoefficients, ConstFloatPtr boundaries,
             int topOrder, int bottomOrder, int log2segments, int flags);
 
-    /**
-     * vImageInterpolatedLookupTable_PlanarF</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Reference/vImage_transform/index.html#//apple_ref/c/func/vImageInterpolatedLookupTable_PlanarF">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @NInt
@@ -19501,48 +16089,28 @@ public final class Accelerate {
     @CVariable()
     public static native ConstNFloatPtr kvImageDecodeArray_16Q12Format();
 
-    /**
-     * vDSP_biquadm_SetCoefficientsDouble</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_biquadm_SetCoefficientsDouble">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_biquadm_SetCoefficientsDouble(vDSP_biquadm_Setup __setup, ConstDoublePtr __coeffs,
             @NUInt long __start_sec, @NUInt long __start_chn, @NUInt long __nsec, @NUInt long __nchn);
 
-    /**
-     * vDSP_biquadm_SetTargetsDouble</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_biquadm_SetTargetsDouble">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_biquadm_SetTargetsDouble(vDSP_biquadm_Setup __setup, ConstDoublePtr __targets,
             float __interp_rate, float __interp_threshold, @NUInt long __start_sec, @NUInt long __start_chn,
             @NUInt long __nsec, @NUInt long __nchn);
 
-    /**
-     * vDSP_biquadm_SetCoefficientsSingle</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_biquadm_SetCoefficientsSingle">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_biquadm_SetCoefficientsSingle(vDSP_biquadm_Setup __setup, ConstFloatPtr __coeffs,
             @NUInt long __start_sec, @NUInt long __start_chn, @NUInt long __nsec, @NUInt long __nchn);
 
-    /**
-     * vDSP_biquadm_SetTargetsSingle</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_biquadm_SetTargetsSingle">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_biquadm_SetTargetsSingle(vDSP_biquadm_Setup __setup, ConstFloatPtr __targets,
             float __interp_rate, float __interp_threshold, @NUInt long __start_sec, @NUInt long __start_chn,
             @NUInt long __nsec, @NUInt long __nchn);
 
-    /**
-     * vDSP_biquadm_SetActiveFilters</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/c/func/vDSP_biquadm_SetActiveFilters">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void vDSP_biquadm_SetActiveFilters(vDSP_biquadm_Setup __setup, ConstBoolPtr __filter_states);

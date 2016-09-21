@@ -173,27 +173,15 @@ public class UIDocumentPickerExtensionViewController extends UIViewController {
     @NInt
     public static native long version_static();
 
-    /**
-     * dismissGrantingAccessToURL:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIDocumentPickerExtensionViewController_Class/index.html#//apple_ref/occ/instm/UIDocumentPickerExtensionViewController/dismissGrantingAccessToURL:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("dismissGrantingAccessToURL:")
     public native void dismissGrantingAccessToURL(NSURL url);
 
-    /**
-     * documentPickerMode</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIDocumentPickerExtensionViewController_Class/index.html#//apple_ref/occ/instp/UIDocumentPickerExtensionViewController/documentPickerMode">iOS Dev Center</a>
-     */
     @Generated
     @Selector("documentPickerMode")
     @NUInt
     public native long documentPickerMode();
 
-    /**
-     * documentStorageURL</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIDocumentPickerExtensionViewController_Class/index.html#//apple_ref/occ/instp/UIDocumentPickerExtensionViewController/documentStorageURL">iOS Dev Center</a>
-     */
     @Generated
     @Selector("documentStorageURL")
     public native NSURL documentStorageURL();
@@ -207,34 +195,18 @@ public class UIDocumentPickerExtensionViewController extends UIViewController {
     public native UIDocumentPickerExtensionViewController initWithNibNameBundle(String nibNameOrNil,
             NSBundle nibBundleOrNil);
 
-    /**
-     * originalURL</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIDocumentPickerExtensionViewController_Class/index.html#//apple_ref/occ/instp/UIDocumentPickerExtensionViewController/originalURL">iOS Dev Center</a>
-     */
     @Generated
     @Selector("originalURL")
     public native NSURL originalURL();
 
-    /**
-     * prepareForPresentationInMode:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIDocumentPickerExtensionViewController_Class/index.html#//apple_ref/occ/instm/UIDocumentPickerExtensionViewController/prepareForPresentationInMode:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("prepareForPresentationInMode:")
     public native void prepareForPresentationInMode(@NUInt long mode);
 
-    /**
-     * providerIdentifier</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIDocumentPickerExtensionViewController_Class/index.html#//apple_ref/occ/instp/UIDocumentPickerExtensionViewController/providerIdentifier">iOS Dev Center</a>
-     */
     @Generated
     @Selector("providerIdentifier")
     public native String providerIdentifier();
 
-    /**
-     * validTypes</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIDocumentPickerExtensionViewController_Class/index.html#//apple_ref/occ/instp/UIDocumentPickerExtensionViewController/validTypes">iOS Dev Center</a>
-     */
     @Generated
     @Selector("validTypes")
     public native NSArray<String> validTypes();

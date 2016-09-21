@@ -32,10 +32,6 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("NSCacheDelegate")
 public interface NSCacheDelegate {
-    /**
-     * cache:willEvictObject:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSCacheDelegate_Protocol/index.html#//apple_ref/occ/intfm/NSCacheDelegate/cache:willEvictObject:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("cache:willEvictObject:")

@@ -163,46 +163,26 @@ public class GKMatch extends NSObject {
     @NInt
     public static native long version_static();
 
-    /**
-     * chooseBestHostPlayerWithCompletionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKMatch_Ref/index.html#//apple_ref/occ/instm/GKMatch/chooseBestHostPlayerWithCompletionHandler:">iOS Dev Center</a>
-     */
     @Generated
     @Deprecated
     @Selector("chooseBestHostPlayerWithCompletionHandler:")
     public native void chooseBestHostPlayerWithCompletionHandler(
             @ObjCBlock(name = "call_chooseBestHostPlayerWithCompletionHandler") Block_chooseBestHostPlayerWithCompletionHandler completionHandler);
 
-    /**
-     * chooseBestHostingPlayerWithCompletionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKMatch_Ref/index.html#//apple_ref/occ/instm/GKMatch/chooseBestHostingPlayerWithCompletionHandler:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("chooseBestHostingPlayerWithCompletionHandler:")
     public native void chooseBestHostingPlayerWithCompletionHandler(
             @ObjCBlock(name = "call_chooseBestHostingPlayerWithCompletionHandler") Block_chooseBestHostingPlayerWithCompletionHandler completionHandler);
 
-    /**
-     * delegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKMatch_Ref/index.html#//apple_ref/occ/instp/GKMatch/delegate">iOS Dev Center</a>
-     */
     @Generated
     @Selector("delegate")
     @MappedReturn(ObjCObjectMapper.class)
     public native GKMatchDelegate delegate();
 
-    /**
-     * disconnect</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKMatch_Ref/index.html#//apple_ref/occ/instm/GKMatch/disconnect">iOS Dev Center</a>
-     */
     @Generated
     @Selector("disconnect")
     public native void disconnect();
 
-    /**
-     * expectedPlayerCount</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKMatch_Ref/index.html#//apple_ref/occ/instp/GKMatch/expectedPlayerCount">iOS Dev Center</a>
-     */
     @Generated
     @Selector("expectedPlayerCount")
     @NUInt
@@ -212,71 +192,39 @@ public class GKMatch extends NSObject {
     @Selector("init")
     public native GKMatch init();
 
-    /**
-     * playerIDs</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKMatch_Ref/index.html#//apple_ref/occ/instp/GKMatch/playerIDs">iOS Dev Center</a>
-     */
     @Generated
     @Deprecated
     @Selector("playerIDs")
     public native NSArray<String> playerIDs();
 
-    /**
-     * players</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKMatch_Ref/index.html#//apple_ref/occ/instp/GKMatch/players">iOS Dev Center</a>
-     */
     @Generated
     @Selector("players")
     public native NSArray<? extends GKPlayer> players();
 
-    /**
-     * rematchWithCompletionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKMatch_Ref/index.html#//apple_ref/occ/instm/GKMatch/rematchWithCompletionHandler:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("rematchWithCompletionHandler:")
     public native void rematchWithCompletionHandler(
             @ObjCBlock(name = "call_rematchWithCompletionHandler") Block_rematchWithCompletionHandler completionHandler);
 
-    /**
-     * sendData:toPlayers:dataMode:error:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKMatch_Ref/index.html#//apple_ref/occ/instm/GKMatch/sendData:toPlayers:dataMode:error:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("sendData:toPlayers:dataMode:error:")
     public native boolean sendDataToPlayersDataModeError(NSData data, NSArray<? extends GKPlayer> players,
             @NInt long mode, Ptr<NSError> error);
 
-    /**
-     * sendData:toPlayers:withDataMode:error:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKMatch_Ref/index.html#//apple_ref/occ/instm/GKMatch/sendData:toPlayers:withDataMode:error:">iOS Dev Center</a>
-     */
     @Generated
     @Deprecated
     @Selector("sendData:toPlayers:withDataMode:error:")
     public native boolean sendDataToPlayersWithDataModeError(NSData data, NSArray<String> playerIDs, @NInt long mode,
             Ptr<NSError> error);
 
-    /**
-     * sendDataToAllPlayers:withDataMode:error:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKMatch_Ref/index.html#//apple_ref/occ/instm/GKMatch/sendDataToAllPlayers:withDataMode:error:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("sendDataToAllPlayers:withDataMode:error:")
     public native boolean sendDataToAllPlayersWithDataModeError(NSData data, @NInt long mode, Ptr<NSError> error);
 
-    /**
-     * delegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKMatch_Ref/index.html#//apple_ref/occ/instp/GKMatch/delegate">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setDelegate:")
     public native void setDelegate_unsafe(@Mapped(ObjCObjectMapper.class) GKMatchDelegate value);
 
-    /**
-     * delegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKMatch_Ref/index.html#//apple_ref/occ/instp/GKMatch/delegate">iOS Dev Center</a>
-     */
     @Generated
     public void setDelegate(@Mapped(ObjCObjectMapper.class) GKMatchDelegate value) {
         Object __old = delegate();
@@ -289,10 +237,6 @@ public class GKMatch extends NSObject {
         }
     }
 
-    /**
-     * voiceChatWithName:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKMatch_Ref/index.html#//apple_ref/occ/instm/GKMatch/voiceChatWithName:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("voiceChatWithName:")
     public native GKVoiceChat voiceChatWithName(String name);

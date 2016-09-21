@@ -36,10 +36,6 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("AVVideoCompositionValidationHandling")
 public interface AVVideoCompositionValidationHandling {
-    /**
-     * videoComposition:shouldContinueValidatingAfterFindingEmptyTimeRange:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVVideoCompositionValidationHandling_Protocol/index.html#//apple_ref/occ/intfm/AVVideoCompositionValidationHandling/videoComposition:shouldContinueValidatingAfterFindingEmptyTimeRange:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("videoComposition:shouldContinueValidatingAfterFindingEmptyTimeRange:")
@@ -48,10 +44,6 @@ public interface AVVideoCompositionValidationHandling {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * videoComposition:shouldContinueValidatingAfterFindingInvalidTimeRangeInInstruction:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVVideoCompositionValidationHandling_Protocol/index.html#//apple_ref/occ/intfm/AVVideoCompositionValidationHandling/videoComposition:shouldContinueValidatingAfterFindingInvalidTimeRangeInInstruction:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("videoComposition:shouldContinueValidatingAfterFindingInvalidTimeRangeInInstruction:")
@@ -60,10 +52,6 @@ public interface AVVideoCompositionValidationHandling {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * videoComposition:shouldContinueValidatingAfterFindingInvalidTrackIDInInstruction:layerInstruction:asset:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVVideoCompositionValidationHandling_Protocol/index.html#//apple_ref/occ/intfm/AVVideoCompositionValidationHandling/videoComposition:shouldContinueValidatingAfterFindingInvalidTrackIDInInstruction:layerInstruction:asset:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("videoComposition:shouldContinueValidatingAfterFindingInvalidTrackIDInInstruction:layerInstruction:asset:")
@@ -73,10 +61,6 @@ public interface AVVideoCompositionValidationHandling {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * videoComposition:shouldContinueValidatingAfterFindingInvalidValueForKey:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVVideoCompositionValidationHandling_Protocol/index.html#//apple_ref/occ/intfm/AVVideoCompositionValidationHandling/videoComposition:shouldContinueValidatingAfterFindingInvalidValueForKey:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("videoComposition:shouldContinueValidatingAfterFindingInvalidValueForKey:")

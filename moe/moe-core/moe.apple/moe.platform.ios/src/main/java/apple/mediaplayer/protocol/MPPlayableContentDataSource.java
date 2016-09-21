@@ -34,10 +34,6 @@ import org.moe.natj.objc.ann.Selector;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("MPPlayableContentDataSource")
 public interface MPPlayableContentDataSource {
-    /**
-     * beginLoadingChildItemsAtIndexPath:completionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPPlayableContentDataSource_Ref/index.html#//apple_ref/occ/intfm/MPPlayableContentDataSource/beginLoadingChildItemsAtIndexPath:completionHandler:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("beginLoadingChildItemsAtIndexPath:completionHandler:")
@@ -46,10 +42,6 @@ public interface MPPlayableContentDataSource {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * childItemsDisplayPlaybackProgressAtIndexPath:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPPlayableContentDataSource_Ref/index.html#//apple_ref/occ/intfm/MPPlayableContentDataSource/childItemsDisplayPlaybackProgressAtIndexPath:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("childItemsDisplayPlaybackProgressAtIndexPath:")
@@ -57,18 +49,10 @@ public interface MPPlayableContentDataSource {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * contentItemAtIndexPath:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPPlayableContentDataSource_Ref/index.html#//apple_ref/occ/intfm/MPPlayableContentDataSource/contentItemAtIndexPath:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("contentItemAtIndexPath:")
     MPContentItem contentItemAtIndexPath(NSIndexPath indexPath);
 
-    /**
-     * numberOfChildItemsAtIndexPath:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPPlayableContentDataSource_Ref/index.html#//apple_ref/occ/intfm/MPPlayableContentDataSource/numberOfChildItemsAtIndexPath:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("numberOfChildItemsAtIndexPath:")
     @NInt

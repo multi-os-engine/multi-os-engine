@@ -158,18 +158,10 @@ public class MTLStructMember extends NSObject {
     @NInt
     public static native long version_static();
 
-    /**
-     * arrayType</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Metal/Reference/MTLStructMember_Ref/index.html#//apple_ref/occ/instm/MTLStructMember/arrayType">iOS Dev Center</a>
-     */
     @Generated
     @Selector("arrayType")
     public native MTLArrayType arrayType();
 
-    /**
-     * dataType</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Metal/Reference/MTLStructMember_Ref/index.html#//apple_ref/occ/instp/MTLStructMember/dataType">iOS Dev Center</a>
-     */
     @Generated
     @Selector("dataType")
     @NUInt
@@ -179,27 +171,15 @@ public class MTLStructMember extends NSObject {
     @Selector("init")
     public native MTLStructMember init();
 
-    /**
-     * name</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Metal/Reference/MTLStructMember_Ref/index.html#//apple_ref/occ/instp/MTLStructMember/name">iOS Dev Center</a>
-     */
     @Generated
     @Selector("name")
     public native String name();
 
-    /**
-     * offset</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Metal/Reference/MTLStructMember_Ref/index.html#//apple_ref/occ/instp/MTLStructMember/offset">iOS Dev Center</a>
-     */
     @Generated
     @Selector("offset")
     @NUInt
     public native long offset();
 
-    /**
-     * structType</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Metal/Reference/MTLStructMember_Ref/index.html#//apple_ref/occ/instm/MTLStructMember/structType">iOS Dev Center</a>
-     */
     @Generated
     @Selector("structType")
     public native MTLStructType structType();

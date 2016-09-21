@@ -174,10 +174,6 @@ public class NSShadow extends NSObject implements NSCopying, NSCoding {
     @Selector("encodeWithCoder:")
     public native void encodeWithCoder(NSCoder aCoder);
 
-    /**
-     * init</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/ApplicationKit/Classes/NSShadow_Class/index.html#//apple_ref/occ/instm/NSShadow/init">iOS Dev Center</a>
-     */
     @Generated
     @Selector("init")
     public native NSShadow init();
@@ -186,52 +182,28 @@ public class NSShadow extends NSObject implements NSCopying, NSCoding {
     @Selector("initWithCoder:")
     public native NSShadow initWithCoder(NSCoder aDecoder);
 
-    /**
-     * shadowBlurRadius</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/ApplicationKit/Classes/NSShadow_Class/index.html#//apple_ref/occ/instp/NSShadow/shadowBlurRadius">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setShadowBlurRadius:")
     public native void setShadowBlurRadius(@NFloat double value);
 
-    /**
-     * shadowColor</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/ApplicationKit/Classes/NSShadow_Class/index.html#//apple_ref/occ/instp/NSShadow/shadowColor">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setShadowColor:")
     public native void setShadowColor(@Mapped(ObjCObjectMapper.class) Object value);
 
-    /**
-     * shadowOffset</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/ApplicationKit/Classes/NSShadow_Class/index.html#//apple_ref/occ/instp/NSShadow/shadowOffset">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setShadowOffset:")
     public native void setShadowOffset(@ByValue CGSize value);
 
-    /**
-     * shadowBlurRadius</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/ApplicationKit/Classes/NSShadow_Class/index.html#//apple_ref/occ/instp/NSShadow/shadowBlurRadius">iOS Dev Center</a>
-     */
     @Generated
     @Selector("shadowBlurRadius")
     @NFloat
     public native double shadowBlurRadius();
 
-    /**
-     * shadowColor</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/ApplicationKit/Classes/NSShadow_Class/index.html#//apple_ref/occ/instp/NSShadow/shadowColor">iOS Dev Center</a>
-     */
     @Generated
     @Selector("shadowColor")
     @MappedReturn(ObjCObjectMapper.class)
     public native Object shadowColor();
 
-    /**
-     * shadowOffset</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/ApplicationKit/Classes/NSShadow_Class/index.html#//apple_ref/occ/instp/NSShadow/shadowOffset">iOS Dev Center</a>
-     */
     @Generated
     @Selector("shadowOffset")
     @ByValue

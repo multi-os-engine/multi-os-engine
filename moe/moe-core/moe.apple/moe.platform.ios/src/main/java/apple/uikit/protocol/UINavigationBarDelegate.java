@@ -31,10 +31,6 @@ import org.moe.natj.objc.ann.Selector;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("UINavigationBarDelegate")
 public interface UINavigationBarDelegate extends UIBarPositioningDelegate {
-    /**
-     * navigationBar:didPopItem:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UINavigationBarDelegate_Protocol/index.html#//apple_ref/occ/intfm/UINavigationBarDelegate/navigationBar:didPopItem:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("navigationBar:didPopItem:")
@@ -42,10 +38,6 @@ public interface UINavigationBarDelegate extends UIBarPositioningDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * navigationBar:didPushItem:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UINavigationBarDelegate_Protocol/index.html#//apple_ref/occ/intfm/UINavigationBarDelegate/navigationBar:didPushItem:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("navigationBar:didPushItem:")
@@ -53,10 +45,6 @@ public interface UINavigationBarDelegate extends UIBarPositioningDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * navigationBar:shouldPopItem:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UINavigationBarDelegate_Protocol/index.html#//apple_ref/occ/intfm/UINavigationBarDelegate/navigationBar:shouldPopItem:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("navigationBar:shouldPopItem:")
@@ -64,10 +52,6 @@ public interface UINavigationBarDelegate extends UIBarPositioningDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * navigationBar:shouldPushItem:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UINavigationBarDelegate_Protocol/index.html#//apple_ref/occ/intfm/UINavigationBarDelegate/navigationBar:shouldPushItem:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("navigationBar:shouldPushItem:")

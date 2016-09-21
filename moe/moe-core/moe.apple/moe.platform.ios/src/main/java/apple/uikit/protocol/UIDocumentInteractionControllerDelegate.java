@@ -35,10 +35,6 @@ import org.moe.natj.objc.ann.Selector;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("UIDocumentInteractionControllerDelegate")
 public interface UIDocumentInteractionControllerDelegate {
-    /**
-     * documentInteractionController:canPerformAction:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIDocumentInteractionControllerDelegate_protocol/index.html#//apple_ref/occ/intfm/UIDocumentInteractionControllerDelegate/documentInteractionController:canPerformAction:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Deprecated
@@ -48,10 +44,6 @@ public interface UIDocumentInteractionControllerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * documentInteractionController:didEndSendingToApplication:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIDocumentInteractionControllerDelegate_protocol/index.html#//apple_ref/occ/intfm/UIDocumentInteractionControllerDelegate/documentInteractionController:didEndSendingToApplication:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("documentInteractionController:didEndSendingToApplication:")
@@ -60,10 +52,6 @@ public interface UIDocumentInteractionControllerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * documentInteractionController:performAction:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIDocumentInteractionControllerDelegate_protocol/index.html#//apple_ref/occ/intfm/UIDocumentInteractionControllerDelegate/documentInteractionController:performAction:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Deprecated
@@ -72,10 +60,6 @@ public interface UIDocumentInteractionControllerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * documentInteractionController:willBeginSendingToApplication:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIDocumentInteractionControllerDelegate_protocol/index.html#//apple_ref/occ/intfm/UIDocumentInteractionControllerDelegate/documentInteractionController:willBeginSendingToApplication:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("documentInteractionController:willBeginSendingToApplication:")
@@ -84,10 +68,6 @@ public interface UIDocumentInteractionControllerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * documentInteractionControllerDidDismissOpenInMenu:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIDocumentInteractionControllerDelegate_protocol/index.html#//apple_ref/occ/intfm/UIDocumentInteractionControllerDelegate/documentInteractionControllerDidDismissOpenInMenu:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("documentInteractionControllerDidDismissOpenInMenu:")
@@ -95,10 +75,6 @@ public interface UIDocumentInteractionControllerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * documentInteractionControllerDidDismissOptionsMenu:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIDocumentInteractionControllerDelegate_protocol/index.html#//apple_ref/occ/intfm/UIDocumentInteractionControllerDelegate/documentInteractionControllerDidDismissOptionsMenu:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("documentInteractionControllerDidDismissOptionsMenu:")
@@ -106,10 +82,6 @@ public interface UIDocumentInteractionControllerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * documentInteractionControllerDidEndPreview:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIDocumentInteractionControllerDelegate_protocol/index.html#//apple_ref/occ/intfm/UIDocumentInteractionControllerDelegate/documentInteractionControllerDidEndPreview:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("documentInteractionControllerDidEndPreview:")
@@ -117,10 +89,6 @@ public interface UIDocumentInteractionControllerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * documentInteractionControllerRectForPreview:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIDocumentInteractionControllerDelegate_protocol/index.html#//apple_ref/occ/intfm/UIDocumentInteractionControllerDelegate/documentInteractionControllerRectForPreview:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("documentInteractionControllerRectForPreview:")
@@ -129,10 +97,6 @@ public interface UIDocumentInteractionControllerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * documentInteractionControllerViewControllerForPreview:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIDocumentInteractionControllerDelegate_protocol/index.html#//apple_ref/occ/intfm/UIDocumentInteractionControllerDelegate/documentInteractionControllerViewControllerForPreview:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("documentInteractionControllerViewControllerForPreview:")
@@ -141,10 +105,6 @@ public interface UIDocumentInteractionControllerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * documentInteractionControllerViewForPreview:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIDocumentInteractionControllerDelegate_protocol/index.html#//apple_ref/occ/intfm/UIDocumentInteractionControllerDelegate/documentInteractionControllerViewForPreview:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("documentInteractionControllerViewForPreview:")
@@ -152,10 +112,6 @@ public interface UIDocumentInteractionControllerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * documentInteractionControllerWillBeginPreview:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIDocumentInteractionControllerDelegate_protocol/index.html#//apple_ref/occ/intfm/UIDocumentInteractionControllerDelegate/documentInteractionControllerWillBeginPreview:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("documentInteractionControllerWillBeginPreview:")
@@ -163,10 +119,6 @@ public interface UIDocumentInteractionControllerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * documentInteractionControllerWillPresentOpenInMenu:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIDocumentInteractionControllerDelegate_protocol/index.html#//apple_ref/occ/intfm/UIDocumentInteractionControllerDelegate/documentInteractionControllerWillPresentOpenInMenu:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("documentInteractionControllerWillPresentOpenInMenu:")
@@ -174,10 +126,6 @@ public interface UIDocumentInteractionControllerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * documentInteractionControllerWillPresentOptionsMenu:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIDocumentInteractionControllerDelegate_protocol/index.html#//apple_ref/occ/intfm/UIDocumentInteractionControllerDelegate/documentInteractionControllerWillPresentOptionsMenu:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("documentInteractionControllerWillPresentOptionsMenu:")

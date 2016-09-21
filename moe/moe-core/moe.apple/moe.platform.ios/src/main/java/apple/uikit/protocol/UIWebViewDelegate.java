@@ -33,10 +33,6 @@ import org.moe.natj.objc.ann.Selector;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("UIWebViewDelegate")
 public interface UIWebViewDelegate {
-    /**
-     * webView:didFailLoadWithError:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIWebViewDelegate_Protocol/index.html#//apple_ref/occ/intfm/UIWebViewDelegate/webView:didFailLoadWithError:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("webView:didFailLoadWithError:")
@@ -44,10 +40,6 @@ public interface UIWebViewDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * webView:shouldStartLoadWithRequest:navigationType:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIWebViewDelegate_Protocol/index.html#//apple_ref/occ/intfm/UIWebViewDelegate/webView:shouldStartLoadWithRequest:navigationType:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("webView:shouldStartLoadWithRequest:navigationType:")
@@ -56,10 +48,6 @@ public interface UIWebViewDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * webViewDidFinishLoad:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIWebViewDelegate_Protocol/index.html#//apple_ref/occ/intfm/UIWebViewDelegate/webViewDidFinishLoad:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("webViewDidFinishLoad:")
@@ -67,10 +55,6 @@ public interface UIWebViewDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * webViewDidStartLoad:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIWebViewDelegate_Protocol/index.html#//apple_ref/occ/intfm/UIWebViewDelegate/webViewDidStartLoad:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("webViewDidStartLoad:")

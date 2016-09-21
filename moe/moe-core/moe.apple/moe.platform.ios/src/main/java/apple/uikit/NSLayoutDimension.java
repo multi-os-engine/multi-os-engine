@@ -159,79 +159,43 @@ public class NSLayoutDimension extends NSLayoutAnchor<NSLayoutDimension> {
     @NInt
     public static native long version_static();
 
-    /**
-     * constraintEqualToAnchor:multiplier:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AppKit/Reference/NSLayoutDimension_ClassReference/index.html#//apple_ref/occ/instm/NSLayoutDimension/constraintEqualToAnchor:multiplier:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("constraintEqualToAnchor:multiplier:")
     public native NSLayoutConstraint constraintEqualToAnchorMultiplier(NSLayoutDimension anchor, @NFloat double m);
 
-    /**
-     * constraintEqualToAnchor:multiplier:constant:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AppKit/Reference/NSLayoutDimension_ClassReference/index.html#//apple_ref/occ/instm/NSLayoutDimension/constraintEqualToAnchor:multiplier:constant:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("constraintEqualToAnchor:multiplier:constant:")
     public native NSLayoutConstraint constraintEqualToAnchorMultiplierConstant(NSLayoutDimension anchor,
             @NFloat double m, @NFloat double c);
 
-    /**
-     * constraintEqualToConstant:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AppKit/Reference/NSLayoutDimension_ClassReference/index.html#//apple_ref/occ/instm/NSLayoutDimension/constraintEqualToConstant:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("constraintEqualToConstant:")
     public native NSLayoutConstraint constraintEqualToConstant(@NFloat double c);
 
-    /**
-     * constraintGreaterThanOrEqualToAnchor:multiplier:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AppKit/Reference/NSLayoutDimension_ClassReference/index.html#//apple_ref/occ/instm/NSLayoutDimension/constraintGreaterThanOrEqualToAnchor:multiplier:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("constraintGreaterThanOrEqualToAnchor:multiplier:")
     public native NSLayoutConstraint constraintGreaterThanOrEqualToAnchorMultiplier(NSLayoutDimension anchor,
             @NFloat double m);
 
-    /**
-     * constraintGreaterThanOrEqualToAnchor:multiplier:constant:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AppKit/Reference/NSLayoutDimension_ClassReference/index.html#//apple_ref/occ/instm/NSLayoutDimension/constraintGreaterThanOrEqualToAnchor:multiplier:constant:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("constraintGreaterThanOrEqualToAnchor:multiplier:constant:")
     public native NSLayoutConstraint constraintGreaterThanOrEqualToAnchorMultiplierConstant(NSLayoutDimension anchor,
             @NFloat double m, @NFloat double c);
 
-    /**
-     * constraintGreaterThanOrEqualToConstant:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AppKit/Reference/NSLayoutDimension_ClassReference/index.html#//apple_ref/occ/instm/NSLayoutDimension/constraintGreaterThanOrEqualToConstant:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("constraintGreaterThanOrEqualToConstant:")
     public native NSLayoutConstraint constraintGreaterThanOrEqualToConstant(@NFloat double c);
 
-    /**
-     * constraintLessThanOrEqualToAnchor:multiplier:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AppKit/Reference/NSLayoutDimension_ClassReference/index.html#//apple_ref/occ/instm/NSLayoutDimension/constraintLessThanOrEqualToAnchor:multiplier:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("constraintLessThanOrEqualToAnchor:multiplier:")
     public native NSLayoutConstraint constraintLessThanOrEqualToAnchorMultiplier(NSLayoutDimension anchor,
             @NFloat double m);
 
-    /**
-     * constraintLessThanOrEqualToAnchor:multiplier:constant:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AppKit/Reference/NSLayoutDimension_ClassReference/index.html#//apple_ref/occ/instm/NSLayoutDimension/constraintLessThanOrEqualToAnchor:multiplier:constant:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("constraintLessThanOrEqualToAnchor:multiplier:constant:")
     public native NSLayoutConstraint constraintLessThanOrEqualToAnchorMultiplierConstant(NSLayoutDimension anchor,
             @NFloat double m, @NFloat double c);
 
-    /**
-     * constraintLessThanOrEqualToConstant:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AppKit/Reference/NSLayoutDimension_ClassReference/index.html#//apple_ref/occ/instm/NSLayoutDimension/constraintLessThanOrEqualToConstant:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("constraintLessThanOrEqualToConstant:")
     public native NSLayoutConstraint constraintLessThanOrEqualToConstant(@NFloat double c);

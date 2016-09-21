@@ -64,42 +64,22 @@ public class UIImagePickerController extends UINavigationController implements N
     @Selector("alloc")
     public static native UIImagePickerController alloc();
 
-    /**
-     * availableCaptureModesForCameraDevice:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIImagePickerController_Class/index.html#//apple_ref/occ/clm/UIImagePickerController/availableCaptureModesForCameraDevice:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("availableCaptureModesForCameraDevice:")
     public static native NSArray<? extends NSNumber> availableCaptureModesForCameraDevice(@NInt long cameraDevice);
 
-    /**
-     * availableMediaTypesForSourceType:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIImagePickerController_Class/index.html#//apple_ref/occ/clm/UIImagePickerController/availableMediaTypesForSourceType:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("availableMediaTypesForSourceType:")
     public static native NSArray<String> availableMediaTypesForSourceType(@NInt long sourceType);
 
-    /**
-     * isCameraDeviceAvailable:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIImagePickerController_Class/index.html#//apple_ref/occ/clm/UIImagePickerController/isCameraDeviceAvailable:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("isCameraDeviceAvailable:")
     public static native boolean isCameraDeviceAvailable(@NInt long cameraDevice);
 
-    /**
-     * isFlashAvailableForCameraDevice:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIImagePickerController_Class/index.html#//apple_ref/occ/clm/UIImagePickerController/isFlashAvailableForCameraDevice:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("isFlashAvailableForCameraDevice:")
     public static native boolean isFlashAvailableForCameraDevice(@NInt long cameraDevice);
 
-    /**
-     * isSourceTypeAvailable:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIImagePickerController_Class/index.html#//apple_ref/occ/clm/UIImagePickerController/isSourceTypeAvailable:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("isSourceTypeAvailable:")
     public static native boolean isSourceTypeAvailable(@NInt long sourceType);
@@ -216,71 +196,39 @@ public class UIImagePickerController extends UINavigationController implements N
     @NInt
     public static native long version_static();
 
-    /**
-     * allowsEditing</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIImagePickerController_Class/index.html#//apple_ref/occ/instp/UIImagePickerController/allowsEditing">iOS Dev Center</a>
-     */
     @Generated
     @Selector("allowsEditing")
     public native boolean allowsEditing();
 
-    /**
-     * allowsImageEditing</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIImagePickerController_Class/index.html#//apple_ref/occ/instp/UIImagePickerController/allowsImageEditing">iOS Dev Center</a>
-     */
     @Generated
     @Deprecated
     @Selector("allowsImageEditing")
     public native boolean allowsImageEditing();
 
-    /**
-     * cameraCaptureMode</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIImagePickerController_Class/index.html#//apple_ref/occ/instp/UIImagePickerController/cameraCaptureMode">iOS Dev Center</a>
-     */
     @Generated
     @Selector("cameraCaptureMode")
     @NInt
     public native long cameraCaptureMode();
 
-    /**
-     * cameraDevice</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIImagePickerController_Class/index.html#//apple_ref/occ/instp/UIImagePickerController/cameraDevice">iOS Dev Center</a>
-     */
     @Generated
     @Selector("cameraDevice")
     @NInt
     public native long cameraDevice();
 
-    /**
-     * cameraFlashMode</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIImagePickerController_Class/index.html#//apple_ref/occ/instp/UIImagePickerController/cameraFlashMode">iOS Dev Center</a>
-     */
     @Generated
     @Selector("cameraFlashMode")
     @NInt
     public native long cameraFlashMode();
 
-    /**
-     * cameraOverlayView</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIImagePickerController_Class/index.html#//apple_ref/occ/instp/UIImagePickerController/cameraOverlayView">iOS Dev Center</a>
-     */
     @Generated
     @Selector("cameraOverlayView")
     public native UIView cameraOverlayView();
 
-    /**
-     * cameraViewTransform</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIImagePickerController_Class/index.html#//apple_ref/occ/instp/UIImagePickerController/cameraViewTransform">iOS Dev Center</a>
-     */
     @Generated
     @Selector("cameraViewTransform")
     @ByValue
     public native CGAffineTransform cameraViewTransform();
 
-    /**
-     * delegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIImagePickerController_Class/index.html#//apple_ref/occ/instp/UIImagePickerController/delegate">iOS Dev Center</a>
-     */
     @Generated
     @Selector("delegate")
     @MappedReturn(ObjCObjectMapper.class)
@@ -311,83 +259,43 @@ public class UIImagePickerController extends UINavigationController implements N
     @Selector("initWithRootViewController:")
     public native UIImagePickerController initWithRootViewController(UIViewController rootViewController);
 
-    /**
-     * mediaTypes</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIImagePickerController_Class/index.html#//apple_ref/occ/instp/UIImagePickerController/mediaTypes">iOS Dev Center</a>
-     */
     @Generated
     @Selector("mediaTypes")
     public native NSArray<String> mediaTypes();
 
-    /**
-     * allowsEditing</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIImagePickerController_Class/index.html#//apple_ref/occ/instp/UIImagePickerController/allowsEditing">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setAllowsEditing:")
     public native void setAllowsEditing(boolean value);
 
-    /**
-     * allowsImageEditing</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIImagePickerController_Class/index.html#//apple_ref/occ/instp/UIImagePickerController/allowsImageEditing">iOS Dev Center</a>
-     */
     @Generated
     @Deprecated
     @Selector("setAllowsImageEditing:")
     public native void setAllowsImageEditing(boolean value);
 
-    /**
-     * cameraCaptureMode</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIImagePickerController_Class/index.html#//apple_ref/occ/instp/UIImagePickerController/cameraCaptureMode">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setCameraCaptureMode:")
     public native void setCameraCaptureMode(@NInt long value);
 
-    /**
-     * cameraDevice</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIImagePickerController_Class/index.html#//apple_ref/occ/instp/UIImagePickerController/cameraDevice">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setCameraDevice:")
     public native void setCameraDevice(@NInt long value);
 
-    /**
-     * cameraFlashMode</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIImagePickerController_Class/index.html#//apple_ref/occ/instp/UIImagePickerController/cameraFlashMode">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setCameraFlashMode:")
     public native void setCameraFlashMode(@NInt long value);
 
-    /**
-     * cameraOverlayView</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIImagePickerController_Class/index.html#//apple_ref/occ/instp/UIImagePickerController/cameraOverlayView">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setCameraOverlayView:")
     public native void setCameraOverlayView(UIView value);
 
-    /**
-     * cameraViewTransform</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIImagePickerController_Class/index.html#//apple_ref/occ/instp/UIImagePickerController/cameraViewTransform">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setCameraViewTransform:")
     public native void setCameraViewTransform(@ByValue CGAffineTransform value);
 
-    /**
-     * delegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIImagePickerController_Class/index.html#//apple_ref/occ/instp/UIImagePickerController/delegate">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setDelegate:")
     public native void setDelegate_unsafe(@Mapped(ObjCObjectMapper.class) Object value);
 
-    /**
-     * delegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIImagePickerController_Class/index.html#//apple_ref/occ/instp/UIImagePickerController/delegate">iOS Dev Center</a>
-     */
     @Generated
     public void setDelegate(@Mapped(ObjCObjectMapper.class) Object value) {
         Object __old = delegate();
@@ -400,99 +308,51 @@ public class UIImagePickerController extends UINavigationController implements N
         }
     }
 
-    /**
-     * mediaTypes</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIImagePickerController_Class/index.html#//apple_ref/occ/instp/UIImagePickerController/mediaTypes">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setMediaTypes:")
     public native void setMediaTypes(NSArray<String> value);
 
-    /**
-     * showsCameraControls</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIImagePickerController_Class/index.html#//apple_ref/occ/instp/UIImagePickerController/showsCameraControls">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setShowsCameraControls:")
     public native void setShowsCameraControls(boolean value);
 
-    /**
-     * sourceType</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIImagePickerController_Class/index.html#//apple_ref/occ/instp/UIImagePickerController/sourceType">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setSourceType:")
     public native void setSourceType(@NInt long value);
 
-    /**
-     * videoMaximumDuration</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIImagePickerController_Class/index.html#//apple_ref/occ/instp/UIImagePickerController/videoMaximumDuration">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setVideoMaximumDuration:")
     public native void setVideoMaximumDuration(double value);
 
-    /**
-     * videoQuality</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIImagePickerController_Class/index.html#//apple_ref/occ/instp/UIImagePickerController/videoQuality">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setVideoQuality:")
     public native void setVideoQuality(@NInt long value);
 
-    /**
-     * showsCameraControls</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIImagePickerController_Class/index.html#//apple_ref/occ/instp/UIImagePickerController/showsCameraControls">iOS Dev Center</a>
-     */
     @Generated
     @Selector("showsCameraControls")
     public native boolean showsCameraControls();
 
-    /**
-     * sourceType</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIImagePickerController_Class/index.html#//apple_ref/occ/instp/UIImagePickerController/sourceType">iOS Dev Center</a>
-     */
     @Generated
     @Selector("sourceType")
     @NInt
     public native long sourceType();
 
-    /**
-     * startVideoCapture</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIImagePickerController_Class/index.html#//apple_ref/occ/instm/UIImagePickerController/startVideoCapture">iOS Dev Center</a>
-     */
     @Generated
     @Selector("startVideoCapture")
     public native boolean startVideoCapture();
 
-    /**
-     * stopVideoCapture</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIImagePickerController_Class/index.html#//apple_ref/occ/instm/UIImagePickerController/stopVideoCapture">iOS Dev Center</a>
-     */
     @Generated
     @Selector("stopVideoCapture")
     public native void stopVideoCapture();
 
-    /**
-     * takePicture</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIImagePickerController_Class/index.html#//apple_ref/occ/instm/UIImagePickerController/takePicture">iOS Dev Center</a>
-     */
     @Generated
     @Selector("takePicture")
     public native void takePicture();
 
-    /**
-     * videoMaximumDuration</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIImagePickerController_Class/index.html#//apple_ref/occ/instp/UIImagePickerController/videoMaximumDuration">iOS Dev Center</a>
-     */
     @Generated
     @Selector("videoMaximumDuration")
     public native double videoMaximumDuration();
 
-    /**
-     * videoQuality</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIImagePickerController_Class/index.html#//apple_ref/occ/instp/UIImagePickerController/videoQuality">iOS Dev Center</a>
-     */
     @Generated
     @Selector("videoQuality")
     @NInt

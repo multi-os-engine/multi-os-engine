@@ -163,10 +163,6 @@ public class HMUser extends NSObject {
     @Selector("init")
     public native HMUser init();
 
-    /**
-     * name</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HomeKit/Reference/HMUser_Class/index.html#//apple_ref/occ/instp/HMUser/name">iOS Dev Center</a>
-     */
     @Generated
     @Selector("name")
     public native String name();

@@ -69,88 +69,48 @@ public class NSOrderedSet<_ObjectType> extends NSObject
     @Selector("alloc")
     public static native NSOrderedSet<?> alloc();
 
-    /**
-     * orderedSet</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSOrderedSet_Class/index.html#//apple_ref/occ/clm/NSOrderedSet/orderedSet">iOS Dev Center</a>
-     */
     @Generated
     @Selector("orderedSet")
     public static native <_ObjectType> NSOrderedSet<?> orderedSet();
 
-    /**
-     * orderedSetWithArray:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSOrderedSet_Class/index.html#//apple_ref/occ/clm/NSOrderedSet/orderedSetWithArray:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("orderedSetWithArray:")
     public static native <_ObjectType> NSOrderedSet<?> orderedSetWithArray(NSArray<_ObjectType> array);
 
-    /**
-     * orderedSetWithArray:range:copyItems:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSOrderedSet_Class/index.html#//apple_ref/occ/clm/NSOrderedSet/orderedSetWithArray:range:copyItems:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("orderedSetWithArray:range:copyItems:")
     public static native <_ObjectType> NSOrderedSet<?> orderedSetWithArrayRangeCopyItems(NSArray<_ObjectType> array,
             @ByValue NSRange range, boolean flag);
 
-    /**
-     * orderedSetWithObject:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSOrderedSet_Class/index.html#//apple_ref/occ/clm/NSOrderedSet/orderedSetWithObject:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("orderedSetWithObject:")
     public static native <_ObjectType> NSOrderedSet<?> orderedSetWithObject(
             @Mapped(ObjCObjectMapper.class) _ObjectType object);
 
-    /**
-     * orderedSetWithObjects:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSOrderedSet_Class/index.html#//apple_ref/occ/clm/NSOrderedSet/orderedSetWithObjects:">iOS Dev Center</a>
-     */
     @Generated
     @Variadic()
     @Selector("orderedSetWithObjects:")
     public static native <_ObjectType> NSOrderedSet<?> orderedSetWithObjects(
             @Mapped(ObjCObjectMapper.class) _ObjectType firstObj, Object... varargs);
 
-    /**
-     * orderedSetWithObjects:count:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSOrderedSet_Class/index.html#//apple_ref/occ/clm/NSOrderedSet/orderedSetWithObjects:count:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("orderedSetWithObjects:count:")
     public static native <_ObjectType> NSOrderedSet<?> orderedSetWithObjectsCount(ConstPtr<_ObjectType> objects,
             @NUInt long cnt);
 
-    /**
-     * orderedSetWithOrderedSet:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSOrderedSet_Class/index.html#//apple_ref/occ/clm/NSOrderedSet/orderedSetWithOrderedSet:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("orderedSetWithOrderedSet:")
     public static native <_ObjectType> NSOrderedSet<?> orderedSetWithOrderedSet(NSOrderedSet<_ObjectType> set);
 
-    /**
-     * orderedSetWithOrderedSet:range:copyItems:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSOrderedSet_Class/index.html#//apple_ref/occ/clm/NSOrderedSet/orderedSetWithOrderedSet:range:copyItems:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("orderedSetWithOrderedSet:range:copyItems:")
     public static native <_ObjectType> NSOrderedSet<?> orderedSetWithOrderedSetRangeCopyItems(
             NSOrderedSet<_ObjectType> set, @ByValue NSRange range, boolean flag);
 
-    /**
-     * orderedSetWithSet:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSOrderedSet_Class/index.html#//apple_ref/occ/clm/NSOrderedSet/orderedSetWithSet:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("orderedSetWithSet:")
     public static native <_ObjectType> NSOrderedSet<?> orderedSetWithSet(NSSet<_ObjectType> set);
 
-    /**
-     * orderedSetWithSet:copyItems:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSOrderedSet_Class/index.html#//apple_ref/occ/clm/NSOrderedSet/orderedSetWithSet:copyItems:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("orderedSetWithSet:copyItems:")
     public static native <_ObjectType> NSOrderedSet<?> orderedSetWithSetCopyItems(NSSet<_ObjectType> set, boolean flag);
@@ -255,27 +215,15 @@ public class NSOrderedSet<_ObjectType> extends NSObject
     @NInt
     public static native long version_static();
 
-    /**
-     * addObserver:forKeyPath:options:context:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSOrderedSet_Class/index.html#//apple_ref/occ/instm/NSOrderedSet/addObserver:forKeyPath:options:context:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("addObserver:forKeyPath:options:context:")
     public native void addObserverForKeyPathOptionsContext(NSObject observer, String keyPath, @NUInt long options,
             VoidPtr context);
 
-    /**
-     * array</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSOrderedSet_Class/index.html#//apple_ref/occ/instp/NSOrderedSet/array">iOS Dev Center</a>
-     */
     @Generated
     @Selector("array")
     public native NSArray<_ObjectType> array();
 
-    /**
-     * containsObject:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSOrderedSet_Class/index.html#//apple_ref/occ/instm/NSOrderedSet/containsObject:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("containsObject:")
     public native boolean containsObject(@Mapped(ObjCObjectMapper.class) _ObjectType object);
@@ -286,10 +234,6 @@ public class NSOrderedSet<_ObjectType> extends NSObject
     @MappedReturn(ObjCObjectMapper.class)
     public native Object copyWithZone(VoidPtr zone);
 
-    /**
-     * count</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSOrderedSet_Class/index.html#//apple_ref/occ/instp/NSOrderedSet/count">iOS Dev Center</a>
-     */
     @Generated
     @Selector("count")
     @NUInt
@@ -300,26 +244,14 @@ public class NSOrderedSet<_ObjectType> extends NSObject
     @NUInt
     public native long countByEnumeratingWithStateObjectsCount(VoidPtr state, Ptr<ObjCObject> buffer, @NUInt long len);
 
-    /**
-     * description</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSOrderedSet_Class/index.html#//apple_ref/occ/instp/NSOrderedSet/description">iOS Dev Center</a>
-     */
     @Generated
     @Selector("description")
     public native String description();
 
-    /**
-     * descriptionWithLocale:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSOrderedSet_Class/index.html#//apple_ref/occ/instm/NSOrderedSet/descriptionWithLocale:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("descriptionWithLocale:")
     public native String descriptionWithLocale(@Mapped(ObjCObjectMapper.class) Object locale);
 
-    /**
-     * descriptionWithLocale:indent:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSOrderedSet_Class/index.html#//apple_ref/occ/instm/NSOrderedSet/descriptionWithLocale:indent:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("descriptionWithLocale:indent:")
     public native String descriptionWithLocaleIndent(@Mapped(ObjCObjectMapper.class) Object locale, @NUInt long level);
@@ -328,71 +260,39 @@ public class NSOrderedSet<_ObjectType> extends NSObject
     @Selector("encodeWithCoder:")
     public native void encodeWithCoder(NSCoder aCoder);
 
-    /**
-     * enumerateObjectsAtIndexes:options:usingBlock:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSOrderedSet_Class/index.html#//apple_ref/occ/instm/NSOrderedSet/enumerateObjectsAtIndexes:options:usingBlock:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("enumerateObjectsAtIndexes:options:usingBlock:")
     public native void enumerateObjectsAtIndexesOptionsUsingBlock(NSIndexSet s, @NUInt long opts,
             @ObjCBlock(name = "call_enumerateObjectsAtIndexesOptionsUsingBlock") Block_enumerateObjectsAtIndexesOptionsUsingBlock block);
 
-    /**
-     * enumerateObjectsUsingBlock:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSOrderedSet_Class/index.html#//apple_ref/occ/instm/NSOrderedSet/enumerateObjectsUsingBlock:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("enumerateObjectsUsingBlock:")
     public native void enumerateObjectsUsingBlock(
             @ObjCBlock(name = "call_enumerateObjectsUsingBlock") Block_enumerateObjectsUsingBlock block);
 
-    /**
-     * enumerateObjectsWithOptions:usingBlock:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSOrderedSet_Class/index.html#//apple_ref/occ/instm/NSOrderedSet/enumerateObjectsWithOptions:usingBlock:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("enumerateObjectsWithOptions:usingBlock:")
     public native void enumerateObjectsWithOptionsUsingBlock(@NUInt long opts,
             @ObjCBlock(name = "call_enumerateObjectsWithOptionsUsingBlock") Block_enumerateObjectsWithOptionsUsingBlock block);
 
-    /**
-     * filteredOrderedSetUsingPredicate:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSOrderedSet_Class/index.html#//apple_ref/occ/instm/NSOrderedSet/filteredOrderedSetUsingPredicate:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("filteredOrderedSetUsingPredicate:")
     public native NSOrderedSet<_ObjectType> filteredOrderedSetUsingPredicate(NSPredicate p);
 
-    /**
-     * firstObject</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSOrderedSet_Class/index.html#//apple_ref/occ/instp/NSOrderedSet/firstObject">iOS Dev Center</a>
-     */
     @MappedReturn(ObjCObjectMapper.class)
     @Generated
     @Selector("firstObject")
     public native _ObjectType firstObject();
 
-    /**
-     * getObjects:range:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSOrderedSet_Class/index.html#//apple_ref/occ/instm/NSOrderedSet/getObjects:range:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("getObjects:range:")
     public native void getObjectsRange(Ptr<ObjCObject> objects, @ByValue NSRange range);
 
-    /**
-     * indexOfObject:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSOrderedSet_Class/index.html#//apple_ref/occ/instm/NSOrderedSet/indexOfObject:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("indexOfObject:")
     @NUInt
     public native long indexOfObject(@Mapped(ObjCObjectMapper.class) _ObjectType object);
 
-    /**
-     * indexOfObject:inSortedRange:options:usingComparator:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSOrderedSet_Class/index.html#//apple_ref/occ/instm/NSOrderedSet/indexOfObject:inSortedRange:options:usingComparator:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("indexOfObject:inSortedRange:options:usingComparator:")
     @NUInt
@@ -400,91 +300,51 @@ public class NSOrderedSet<_ObjectType> extends NSObject
             @Mapped(ObjCObjectMapper.class) _ObjectType object, @ByValue NSRange range, @NUInt long opts,
             @ObjCBlock(name = "call_indexOfObjectInSortedRangeOptionsUsingComparator") Block_indexOfObjectInSortedRangeOptionsUsingComparator cmp);
 
-    /**
-     * indexOfObjectAtIndexes:options:passingTest:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSOrderedSet_Class/index.html#//apple_ref/occ/instm/NSOrderedSet/indexOfObjectAtIndexes:options:passingTest:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("indexOfObjectAtIndexes:options:passingTest:")
     @NUInt
     public native long indexOfObjectAtIndexesOptionsPassingTest(NSIndexSet s, @NUInt long opts,
             @ObjCBlock(name = "call_indexOfObjectAtIndexesOptionsPassingTest") Block_indexOfObjectAtIndexesOptionsPassingTest predicate);
 
-    /**
-     * indexOfObjectPassingTest:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSOrderedSet_Class/index.html#//apple_ref/occ/instm/NSOrderedSet/indexOfObjectPassingTest:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("indexOfObjectPassingTest:")
     @NUInt
     public native long indexOfObjectPassingTest(
             @ObjCBlock(name = "call_indexOfObjectPassingTest") Block_indexOfObjectPassingTest predicate);
 
-    /**
-     * indexOfObjectWithOptions:passingTest:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSOrderedSet_Class/index.html#//apple_ref/occ/instm/NSOrderedSet/indexOfObjectWithOptions:passingTest:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("indexOfObjectWithOptions:passingTest:")
     @NUInt
     public native long indexOfObjectWithOptionsPassingTest(@NUInt long opts,
             @ObjCBlock(name = "call_indexOfObjectWithOptionsPassingTest") Block_indexOfObjectWithOptionsPassingTest predicate);
 
-    /**
-     * indexesOfObjectsAtIndexes:options:passingTest:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSOrderedSet_Class/index.html#//apple_ref/occ/instm/NSOrderedSet/indexesOfObjectsAtIndexes:options:passingTest:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("indexesOfObjectsAtIndexes:options:passingTest:")
     public native NSIndexSet indexesOfObjectsAtIndexesOptionsPassingTest(NSIndexSet s, @NUInt long opts,
             @ObjCBlock(name = "call_indexesOfObjectsAtIndexesOptionsPassingTest") Block_indexesOfObjectsAtIndexesOptionsPassingTest predicate);
 
-    /**
-     * indexesOfObjectsPassingTest:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSOrderedSet_Class/index.html#//apple_ref/occ/instm/NSOrderedSet/indexesOfObjectsPassingTest:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("indexesOfObjectsPassingTest:")
     public native NSIndexSet indexesOfObjectsPassingTest(
             @ObjCBlock(name = "call_indexesOfObjectsPassingTest") Block_indexesOfObjectsPassingTest predicate);
 
-    /**
-     * indexesOfObjectsWithOptions:passingTest:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSOrderedSet_Class/index.html#//apple_ref/occ/instm/NSOrderedSet/indexesOfObjectsWithOptions:passingTest:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("indexesOfObjectsWithOptions:passingTest:")
     public native NSIndexSet indexesOfObjectsWithOptionsPassingTest(@NUInt long opts,
             @ObjCBlock(name = "call_indexesOfObjectsWithOptionsPassingTest") Block_indexesOfObjectsWithOptionsPassingTest predicate);
 
-    /**
-     * init</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSOrderedSet_Class/index.html#//apple_ref/occ/instm/NSOrderedSet/init">iOS Dev Center</a>
-     */
     @Generated
     @Selector("init")
     public native NSOrderedSet<?> init();
 
-    /**
-     * initWithArray:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSOrderedSet_Class/index.html#//apple_ref/occ/instm/NSOrderedSet/initWithArray:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithArray:")
     public native NSOrderedSet<?> initWithArray(NSArray<_ObjectType> array);
 
-    /**
-     * initWithArray:copyItems:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSOrderedSet_Class/index.html#//apple_ref/occ/instm/NSOrderedSet/initWithArray:copyItems:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithArray:copyItems:")
     public native NSOrderedSet<?> initWithArrayCopyItems(NSArray<_ObjectType> set, boolean flag);
 
-    /**
-     * initWithArray:range:copyItems:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSOrderedSet_Class/index.html#//apple_ref/occ/instm/NSOrderedSet/initWithArray:range:copyItems:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithArray:range:copyItems:")
     public native NSOrderedSet<?> initWithArrayRangeCopyItems(NSArray<_ObjectType> set, @ByValue NSRange range,
@@ -494,117 +354,61 @@ public class NSOrderedSet<_ObjectType> extends NSObject
     @Selector("initWithCoder:")
     public native NSOrderedSet<?> initWithCoder(NSCoder aDecoder);
 
-    /**
-     * initWithObject:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSOrderedSet_Class/index.html#//apple_ref/occ/instm/NSOrderedSet/initWithObject:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithObject:")
     public native NSOrderedSet<?> initWithObject(@Mapped(ObjCObjectMapper.class) _ObjectType object);
 
-    /**
-     * initWithObjects:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSOrderedSet_Class/index.html#//apple_ref/occ/instm/NSOrderedSet/initWithObjects:">iOS Dev Center</a>
-     */
     @Generated
     @Variadic()
     @Selector("initWithObjects:")
     public native NSOrderedSet<?> initWithObjects(@Mapped(ObjCObjectMapper.class) _ObjectType firstObj,
             Object... varargs);
 
-    /**
-     * initWithObjects:count:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSOrderedSet_Class/index.html#//apple_ref/occ/instm/NSOrderedSet/initWithObjects:count:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithObjects:count:")
     public native NSOrderedSet<?> initWithObjectsCount(ConstPtr<_ObjectType> objects, @NUInt long cnt);
 
-    /**
-     * initWithOrderedSet:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSOrderedSet_Class/index.html#//apple_ref/occ/instm/NSOrderedSet/initWithOrderedSet:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithOrderedSet:")
     public native NSOrderedSet<?> initWithOrderedSet(NSOrderedSet<_ObjectType> set);
 
-    /**
-     * initWithOrderedSet:copyItems:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSOrderedSet_Class/index.html#//apple_ref/occ/instm/NSOrderedSet/initWithOrderedSet:copyItems:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithOrderedSet:copyItems:")
     public native NSOrderedSet<?> initWithOrderedSetCopyItems(NSOrderedSet<_ObjectType> set, boolean flag);
 
-    /**
-     * initWithOrderedSet:range:copyItems:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSOrderedSet_Class/index.html#//apple_ref/occ/instm/NSOrderedSet/initWithOrderedSet:range:copyItems:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithOrderedSet:range:copyItems:")
     public native NSOrderedSet<?> initWithOrderedSetRangeCopyItems(NSOrderedSet<_ObjectType> set,
             @ByValue NSRange range, boolean flag);
 
-    /**
-     * initWithSet:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSOrderedSet_Class/index.html#//apple_ref/occ/instm/NSOrderedSet/initWithSet:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithSet:")
     public native NSOrderedSet<?> initWithSet(NSSet<_ObjectType> set);
 
-    /**
-     * initWithSet:copyItems:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSOrderedSet_Class/index.html#//apple_ref/occ/instm/NSOrderedSet/initWithSet:copyItems:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithSet:copyItems:")
     public native NSOrderedSet<?> initWithSetCopyItems(NSSet<_ObjectType> set, boolean flag);
 
-    /**
-     * intersectsOrderedSet:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSOrderedSet_Class/index.html#//apple_ref/occ/instm/NSOrderedSet/intersectsOrderedSet:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("intersectsOrderedSet:")
     public native boolean intersectsOrderedSet(NSOrderedSet<_ObjectType> other);
 
-    /**
-     * intersectsSet:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSOrderedSet_Class/index.html#//apple_ref/occ/instm/NSOrderedSet/intersectsSet:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("intersectsSet:")
     public native boolean intersectsSet(NSSet<_ObjectType> set);
 
-    /**
-     * isEqualToOrderedSet:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSOrderedSet_Class/index.html#//apple_ref/occ/instm/NSOrderedSet/isEqualToOrderedSet:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("isEqualToOrderedSet:")
     public native boolean isEqualToOrderedSet(NSOrderedSet<_ObjectType> other);
 
-    /**
-     * isSubsetOfOrderedSet:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSOrderedSet_Class/index.html#//apple_ref/occ/instm/NSOrderedSet/isSubsetOfOrderedSet:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("isSubsetOfOrderedSet:")
     public native boolean isSubsetOfOrderedSet(NSOrderedSet<_ObjectType> other);
 
-    /**
-     * isSubsetOfSet:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSOrderedSet_Class/index.html#//apple_ref/occ/instm/NSOrderedSet/isSubsetOfSet:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("isSubsetOfSet:")
     public native boolean isSubsetOfSet(NSSet<_ObjectType> set);
 
-    /**
-     * lastObject</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSOrderedSet_Class/index.html#//apple_ref/occ/instp/NSOrderedSet/lastObject">iOS Dev Center</a>
-     */
     @MappedReturn(ObjCObjectMapper.class)
     @Generated
     @Selector("lastObject")
@@ -615,109 +419,57 @@ public class NSOrderedSet<_ObjectType> extends NSObject
     @MappedReturn(ObjCObjectMapper.class)
     public native Object mutableCopyWithZone(VoidPtr zone);
 
-    /**
-     * objectAtIndex:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSOrderedSet_Class/index.html#//apple_ref/occ/instm/NSOrderedSet/objectAtIndex:">iOS Dev Center</a>
-     */
     @MappedReturn(ObjCObjectMapper.class)
     @Generated
     @Selector("objectAtIndex:")
     public native _ObjectType objectAtIndex(@NUInt long idx);
 
-    /**
-     * objectAtIndexedSubscript:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSOrderedSet_Class/index.html#//apple_ref/occ/instm/NSOrderedSet/objectAtIndexedSubscript:">iOS Dev Center</a>
-     */
     @MappedReturn(ObjCObjectMapper.class)
     @Generated
     @Selector("objectAtIndexedSubscript:")
     public native _ObjectType objectAtIndexedSubscript(@NUInt long idx);
 
-    /**
-     * objectEnumerator</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSOrderedSet_Class/index.html#//apple_ref/occ/instm/NSOrderedSet/objectEnumerator">iOS Dev Center</a>
-     */
     @Generated
     @Selector("objectEnumerator")
     public native NSEnumerator<_ObjectType> objectEnumerator();
 
-    /**
-     * objectsAtIndexes:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSOrderedSet_Class/index.html#//apple_ref/occ/instm/NSOrderedSet/objectsAtIndexes:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("objectsAtIndexes:")
     public native NSArray<_ObjectType> objectsAtIndexes(NSIndexSet indexes);
 
-    /**
-     * removeObserver:forKeyPath:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSOrderedSet_Class/index.html#//apple_ref/occ/instm/NSOrderedSet/removeObserver:forKeyPath:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("removeObserver:forKeyPath:")
     public native void removeObserverForKeyPath(NSObject observer, String keyPath);
 
-    /**
-     * removeObserver:forKeyPath:context:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSOrderedSet_Class/index.html#//apple_ref/occ/instm/NSOrderedSet/removeObserver:forKeyPath:context:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("removeObserver:forKeyPath:context:")
     public native void removeObserverForKeyPathContext(NSObject observer, String keyPath, VoidPtr context);
 
-    /**
-     * reverseObjectEnumerator</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSOrderedSet_Class/index.html#//apple_ref/occ/instm/NSOrderedSet/reverseObjectEnumerator">iOS Dev Center</a>
-     */
     @Generated
     @Selector("reverseObjectEnumerator")
     public native NSEnumerator<_ObjectType> reverseObjectEnumerator();
 
-    /**
-     * reversedOrderedSet</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSOrderedSet_Class/index.html#//apple_ref/occ/instp/NSOrderedSet/reversedOrderedSet">iOS Dev Center</a>
-     */
     @Generated
     @Selector("reversedOrderedSet")
     public native NSOrderedSet<_ObjectType> reversedOrderedSet();
 
-    /**
-     * set</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSOrderedSet_Class/index.html#//apple_ref/occ/instp/NSOrderedSet/set">iOS Dev Center</a>
-     */
     @Generated
     @Selector("set")
     public native NSSet<_ObjectType> set();
 
-    /**
-     * setValue:forKey:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSOrderedSet_Class/index.html#//apple_ref/occ/instm/NSOrderedSet/setValue:forKey:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setValue:forKey:")
     public native void setValueForKey(@Mapped(ObjCObjectMapper.class) Object value, String key);
 
-    /**
-     * sortedArrayUsingComparator:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSOrderedSet_Class/index.html#//apple_ref/occ/instm/NSOrderedSet/sortedArrayUsingComparator:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("sortedArrayUsingComparator:")
     public native NSArray<_ObjectType> sortedArrayUsingComparator(
             @ObjCBlock(name = "call_sortedArrayUsingComparator") Block_sortedArrayUsingComparator cmptr);
 
-    /**
-     * sortedArrayUsingDescriptors:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSOrderedSet_Class/index.html#//apple_ref/occ/instm/NSOrderedSet/sortedArrayUsingDescriptors:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("sortedArrayUsingDescriptors:")
     public native NSArray<_ObjectType> sortedArrayUsingDescriptors(NSArray<? extends NSSortDescriptor> sortDescriptors);
 
-    /**
-     * sortedArrayWithOptions:usingComparator:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSOrderedSet_Class/index.html#//apple_ref/occ/instm/NSOrderedSet/sortedArrayWithOptions:usingComparator:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("sortedArrayWithOptions:usingComparator:")
     public native NSArray<_ObjectType> sortedArrayWithOptionsUsingComparator(@NUInt long opts,
@@ -729,10 +481,6 @@ public class NSOrderedSet<_ObjectType> extends NSObject
         return supportsSecureCoding();
     }
 
-    /**
-     * valueForKey:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSOrderedSet_Class/index.html#//apple_ref/occ/instm/NSOrderedSet/valueForKey:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("valueForKey:")
     @MappedReturn(ObjCObjectMapper.class)

@@ -184,128 +184,68 @@ public class UIDocument extends NSObject implements NSFilePresenter, NSProgressR
     public native void accommodatePresentedSubitemDeletionAtURLCompletionHandler(NSURL url,
             @ObjCBlock(name = "call_accommodatePresentedSubitemDeletionAtURLCompletionHandler") NSFilePresenter.Block_accommodatePresentedSubitemDeletionAtURLCompletionHandler completionHandler);
 
-    /**
-     * autosaveWithCompletionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIDocument_Class/index.html#//apple_ref/occ/instm/UIDocument/autosaveWithCompletionHandler:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("autosaveWithCompletionHandler:")
     public native void autosaveWithCompletionHandler(
             @ObjCBlock(name = "call_autosaveWithCompletionHandler") Block_autosaveWithCompletionHandler completionHandler);
 
-    /**
-     * changeCountTokenForSaveOperation:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIDocument_Class/index.html#//apple_ref/occ/instm/UIDocument/changeCountTokenForSaveOperation:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("changeCountTokenForSaveOperation:")
     @MappedReturn(ObjCObjectMapper.class)
     public native Object changeCountTokenForSaveOperation(@NInt long saveOperation);
 
-    /**
-     * closeWithCompletionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIDocument_Class/index.html#//apple_ref/occ/instm/UIDocument/closeWithCompletionHandler:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("closeWithCompletionHandler:")
     public native void closeWithCompletionHandler(
             @ObjCBlock(name = "call_closeWithCompletionHandler") Block_closeWithCompletionHandler completionHandler);
 
-    /**
-     * contentsForType:error:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIDocument_Class/index.html#//apple_ref/occ/instm/UIDocument/contentsForType:error:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("contentsForType:error:")
     @MappedReturn(ObjCObjectMapper.class)
     public native Object contentsForTypeError(String typeName, Ptr<NSError> outError);
 
-    /**
-     * disableEditing</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIDocument_Class/index.html#//apple_ref/occ/instm/UIDocument/disableEditing">iOS Dev Center</a>
-     */
     @Generated
     @Selector("disableEditing")
     public native void disableEditing();
 
-    /**
-     * documentState</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIDocument_Class/index.html#//apple_ref/occ/instp/UIDocument/documentState">iOS Dev Center</a>
-     */
     @Generated
     @Selector("documentState")
     @NUInt
     public native long documentState();
 
-    /**
-     * enableEditing</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIDocument_Class/index.html#//apple_ref/occ/instm/UIDocument/enableEditing">iOS Dev Center</a>
-     */
     @Generated
     @Selector("enableEditing")
     public native void enableEditing();
 
-    /**
-     * fileAttributesToWriteToURL:forSaveOperation:error:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIDocument_Class/index.html#//apple_ref/occ/instm/UIDocument/fileAttributesToWriteToURL:forSaveOperation:error:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("fileAttributesToWriteToURL:forSaveOperation:error:")
     public native NSDictionary<?, ?> fileAttributesToWriteToURLForSaveOperationError(NSURL url,
             @NInt long saveOperation, Ptr<NSError> outError);
 
-    /**
-     * fileModificationDate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIDocument_Class/index.html#//apple_ref/occ/instp/UIDocument/fileModificationDate">iOS Dev Center</a>
-     */
     @Generated
     @Selector("fileModificationDate")
     public native NSDate fileModificationDate();
 
-    /**
-     * fileNameExtensionForType:saveOperation:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIDocument_Class/index.html#//apple_ref/occ/instm/UIDocument/fileNameExtensionForType:saveOperation:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("fileNameExtensionForType:saveOperation:")
     public native String fileNameExtensionForTypeSaveOperation(String typeName, @NInt long saveOperation);
 
-    /**
-     * fileType</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIDocument_Class/index.html#//apple_ref/occ/instp/UIDocument/fileType">iOS Dev Center</a>
-     */
     @Generated
     @Selector("fileType")
     public native String fileType();
 
-    /**
-     * fileURL</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIDocument_Class/index.html#//apple_ref/occ/instp/UIDocument/fileURL">iOS Dev Center</a>
-     */
     @Generated
     @Selector("fileURL")
     public native NSURL fileURL();
 
-    /**
-     * finishedHandlingError:recovered:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIDocument_Class/index.html#//apple_ref/occ/instm/UIDocument/finishedHandlingError:recovered:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("finishedHandlingError:recovered:")
     public native void finishedHandlingErrorRecovered(NSError error, boolean recovered);
 
-    /**
-     * handleError:userInteractionPermitted:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIDocument_Class/index.html#//apple_ref/occ/instm/UIDocument/handleError:userInteractionPermitted:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("handleError:userInteractionPermitted:")
     public native void handleErrorUserInteractionPermitted(NSError error, boolean userInteractionPermitted);
 
-    /**
-     * hasUnsavedChanges</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIDocument_Class/index.html#//apple_ref/occ/instm/UIDocument/hasUnsavedChanges">iOS Dev Center</a>
-     */
     @Generated
     @Selector("hasUnsavedChanges")
     public native boolean hasUnsavedChanges();
@@ -314,44 +254,24 @@ public class UIDocument extends NSObject implements NSFilePresenter, NSProgressR
     @Selector("init")
     public native UIDocument init();
 
-    /**
-     * initWithFileURL:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIDocument_Class/index.html#//apple_ref/occ/instm/UIDocument/initWithFileURL:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithFileURL:")
     public native UIDocument initWithFileURL(NSURL url);
 
-    /**
-     * loadFromContents:ofType:error:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIDocument_Class/index.html#//apple_ref/occ/instm/UIDocument/loadFromContents:ofType:error:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("loadFromContents:ofType:error:")
     public native boolean loadFromContentsOfTypeError(@Mapped(ObjCObjectMapper.class) Object contents, String typeName,
             Ptr<NSError> outError);
 
-    /**
-     * localizedName</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIDocument_Class/index.html#//apple_ref/occ/instp/UIDocument/localizedName">iOS Dev Center</a>
-     */
     @Generated
     @Selector("localizedName")
     public native String localizedName();
 
-    /**
-     * openWithCompletionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIDocument_Class/index.html#//apple_ref/occ/instm/UIDocument/openWithCompletionHandler:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("openWithCompletionHandler:")
     public native void openWithCompletionHandler(
             @ObjCBlock(name = "call_openWithCompletionHandler") Block_openWithCompletionHandler completionHandler);
 
-    /**
-     * performAsynchronousFileAccessUsingBlock:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIDocument_Class/index.html#//apple_ref/occ/instm/UIDocument/performAsynchronousFileAccessUsingBlock:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("performAsynchronousFileAccessUsingBlock:")
     public native void performAsynchronousFileAccessUsingBlock(
@@ -420,26 +340,14 @@ public class UIDocument extends NSObject implements NSFilePresenter, NSProgressR
     @Selector("presentedSubitemDidChangeAtURL:")
     public native void presentedSubitemDidChangeAtURL(NSURL url);
 
-    /**
-     * readFromURL:error:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIDocument_Class/index.html#//apple_ref/occ/instm/UIDocument/readFromURL:error:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("readFromURL:error:")
     public native boolean readFromURLError(NSURL url, Ptr<NSError> outError);
 
-    /**
-     * restoreUserActivityState:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIDocument_Class/index.html#//apple_ref/occ/instm/UIDocument/restoreUserActivityState:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("restoreUserActivityState:")
     public native void restoreUserActivityState(NSUserActivity userActivity);
 
-    /**
-     * revertToContentsOfURL:completionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIDocument_Class/index.html#//apple_ref/occ/instm/UIDocument/revertToContentsOfURL:completionHandler:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("revertToContentsOfURL:completionHandler:")
     public native void revertToContentsOfURLCompletionHandler(NSURL url,
@@ -451,110 +359,58 @@ public class UIDocument extends NSObject implements NSFilePresenter, NSProgressR
     public native void savePresentedItemChangesWithCompletionHandler(
             @ObjCBlock(name = "call_savePresentedItemChangesWithCompletionHandler") NSFilePresenter.Block_savePresentedItemChangesWithCompletionHandler completionHandler);
 
-    /**
-     * saveToURL:forSaveOperation:completionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIDocument_Class/index.html#//apple_ref/occ/instm/UIDocument/saveToURL:forSaveOperation:completionHandler:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("saveToURL:forSaveOperation:completionHandler:")
     public native void saveToURLForSaveOperationCompletionHandler(NSURL url, @NInt long saveOperation,
             @ObjCBlock(name = "call_saveToURLForSaveOperationCompletionHandler") Block_saveToURLForSaveOperationCompletionHandler completionHandler);
 
-    /**
-     * savingFileType</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIDocument_Class/index.html#//apple_ref/occ/instm/UIDocument/savingFileType">iOS Dev Center</a>
-     */
     @Generated
     @Selector("savingFileType")
     public native String savingFileType();
 
-    /**
-     * fileModificationDate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIDocument_Class/index.html#//apple_ref/occ/instp/UIDocument/fileModificationDate">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setFileModificationDate:")
     public native void setFileModificationDate(NSDate value);
 
-    /**
-     * undoManager</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIDocument_Class/index.html#//apple_ref/occ/instp/UIDocument/undoManager">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setUndoManager:")
     public native void setUndoManager(NSUndoManager value);
 
-    /**
-     * userActivity</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIDocument_Class/index.html#//apple_ref/occ/instp/UIDocument/userActivity">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setUserActivity:")
     public native void setUserActivity(NSUserActivity value);
 
-    /**
-     * undoManager</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIDocument_Class/index.html#//apple_ref/occ/instp/UIDocument/undoManager">iOS Dev Center</a>
-     */
     @Generated
     @Selector("undoManager")
     public native NSUndoManager undoManager();
 
-    /**
-     * updateChangeCount:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIDocument_Class/index.html#//apple_ref/occ/instm/UIDocument/updateChangeCount:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("updateChangeCount:")
     public native void updateChangeCount(@NInt long change);
 
-    /**
-     * updateChangeCountWithToken:forSaveOperation:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIDocument_Class/index.html#//apple_ref/occ/instm/UIDocument/updateChangeCountWithToken:forSaveOperation:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("updateChangeCountWithToken:forSaveOperation:")
     public native void updateChangeCountWithTokenForSaveOperation(
             @Mapped(ObjCObjectMapper.class) Object changeCountToken, @NInt long saveOperation);
 
-    /**
-     * updateUserActivityState:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIDocument_Class/index.html#//apple_ref/occ/instm/UIDocument/updateUserActivityState:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("updateUserActivityState:")
     public native void updateUserActivityState(NSUserActivity userActivity);
 
-    /**
-     * userActivity</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIDocument_Class/index.html#//apple_ref/occ/instp/UIDocument/userActivity">iOS Dev Center</a>
-     */
     @Generated
     @Selector("userActivity")
     public native NSUserActivity userActivity();
 
-    /**
-     * userInteractionNoLongerPermittedForError:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIDocument_Class/index.html#//apple_ref/occ/instm/UIDocument/userInteractionNoLongerPermittedForError:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("userInteractionNoLongerPermittedForError:")
     public native void userInteractionNoLongerPermittedForError(NSError error);
 
-    /**
-     * writeContents:andAttributes:safelyToURL:forSaveOperation:error:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIDocument_Class/index.html#//apple_ref/occ/instm/UIDocument/writeContents:andAttributes:safelyToURL:forSaveOperation:error:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("writeContents:andAttributes:safelyToURL:forSaveOperation:error:")
     public native boolean writeContentsAndAttributesSafelyToURLForSaveOperationError(
             @Mapped(ObjCObjectMapper.class) Object contents, NSDictionary<?, ?> additionalFileAttributes, NSURL url,
             @NInt long saveOperation, Ptr<NSError> outError);
 
-    /**
-     * writeContents:toURL:forSaveOperation:originalContentsURL:error:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIDocument_Class/index.html#//apple_ref/occ/instm/UIDocument/writeContents:toURL:forSaveOperation:originalContentsURL:error:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("writeContents:toURL:forSaveOperation:originalContentsURL:error:")
     public native boolean writeContentsToURLForSaveOperationOriginalContentsURLError(

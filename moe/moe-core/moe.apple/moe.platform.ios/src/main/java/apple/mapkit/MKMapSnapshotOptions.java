@@ -164,10 +164,6 @@ public class MKMapSnapshotOptions extends NSObject implements NSCopying {
     @NInt
     public static native long version_static();
 
-    /**
-     * camera</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKMapSnapshotOptions_class/index.html#//apple_ref/occ/instp/MKMapSnapshotOptions/camera">iOS Dev Center</a>
-     */
     @Generated
     @Selector("camera")
     public native MKMapCamera camera();
@@ -182,126 +178,66 @@ public class MKMapSnapshotOptions extends NSObject implements NSCopying {
     @Selector("init")
     public native MKMapSnapshotOptions init();
 
-    /**
-     * mapRect</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKMapSnapshotOptions_class/index.html#//apple_ref/occ/instp/MKMapSnapshotOptions/mapRect">iOS Dev Center</a>
-     */
     @Generated
     @Selector("mapRect")
     @ByValue
     public native MKMapRect mapRect();
 
-    /**
-     * mapType</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKMapSnapshotOptions_class/index.html#//apple_ref/occ/instp/MKMapSnapshotOptions/mapType">iOS Dev Center</a>
-     */
     @Generated
     @Selector("mapType")
     @NUInt
     public native long mapType();
 
-    /**
-     * region</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKMapSnapshotOptions_class/index.html#//apple_ref/occ/instp/MKMapSnapshotOptions/region">iOS Dev Center</a>
-     */
     @Generated
     @Selector("region")
     @ByValue
     public native MKCoordinateRegion region();
 
-    /**
-     * scale</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKMapSnapshotOptions_class/index.html#//apple_ref/occ/instp/MKMapSnapshotOptions/scale">iOS Dev Center</a>
-     */
     @Generated
     @Selector("scale")
     @NFloat
     public native double scale();
 
-    /**
-     * camera</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKMapSnapshotOptions_class/index.html#//apple_ref/occ/instp/MKMapSnapshotOptions/camera">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setCamera:")
     public native void setCamera(MKMapCamera value);
 
-    /**
-     * mapRect</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKMapSnapshotOptions_class/index.html#//apple_ref/occ/instp/MKMapSnapshotOptions/mapRect">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setMapRect:")
     public native void setMapRect(@ByValue MKMapRect value);
 
-    /**
-     * mapType</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKMapSnapshotOptions_class/index.html#//apple_ref/occ/instp/MKMapSnapshotOptions/mapType">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setMapType:")
     public native void setMapType(@NUInt long value);
 
-    /**
-     * region</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKMapSnapshotOptions_class/index.html#//apple_ref/occ/instp/MKMapSnapshotOptions/region">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setRegion:")
     public native void setRegion(@ByValue MKCoordinateRegion value);
 
-    /**
-     * scale</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKMapSnapshotOptions_class/index.html#//apple_ref/occ/instp/MKMapSnapshotOptions/scale">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setScale:")
     public native void setScale(@NFloat double value);
 
-    /**
-     * showsBuildings</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKMapSnapshotOptions_class/index.html#//apple_ref/occ/instp/MKMapSnapshotOptions/showsBuildings">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setShowsBuildings:")
     public native void setShowsBuildings(boolean value);
 
-    /**
-     * showsPointsOfInterest</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKMapSnapshotOptions_class/index.html#//apple_ref/occ/instp/MKMapSnapshotOptions/showsPointsOfInterest">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setShowsPointsOfInterest:")
     public native void setShowsPointsOfInterest(boolean value);
 
-    /**
-     * size</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKMapSnapshotOptions_class/index.html#//apple_ref/occ/instp/MKMapSnapshotOptions/size">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setSize:")
     public native void setSize(@ByValue CGSize value);
 
-    /**
-     * showsBuildings</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKMapSnapshotOptions_class/index.html#//apple_ref/occ/instp/MKMapSnapshotOptions/showsBuildings">iOS Dev Center</a>
-     */
     @Generated
     @Selector("showsBuildings")
     public native boolean showsBuildings();
 
-    /**
-     * showsPointsOfInterest</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKMapSnapshotOptions_class/index.html#//apple_ref/occ/instp/MKMapSnapshotOptions/showsPointsOfInterest">iOS Dev Center</a>
-     */
     @Generated
     @Selector("showsPointsOfInterest")
     public native boolean showsPointsOfInterest();
 
-    /**
-     * size</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKMapSnapshotOptions_class/index.html#//apple_ref/occ/instp/MKMapSnapshotOptions/size">iOS Dev Center</a>
-     */
     @Generated
     @Selector("size")
     @ByValue

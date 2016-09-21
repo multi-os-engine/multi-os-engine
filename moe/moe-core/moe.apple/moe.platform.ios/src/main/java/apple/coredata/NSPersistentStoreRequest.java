@@ -159,10 +159,6 @@ public class NSPersistentStoreRequest extends NSObject implements NSCopying {
     @NInt
     public static native long version_static();
 
-    /**
-     * affectedStores</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreData/Reference/NSPersistentStoreRequest_Class/index.html#//apple_ref/occ/instp/NSPersistentStoreRequest/affectedStores">iOS Dev Center</a>
-     */
     @Generated
     @Selector("affectedStores")
     public native NSArray<? extends NSPersistentStore> affectedStores();
@@ -177,19 +173,11 @@ public class NSPersistentStoreRequest extends NSObject implements NSCopying {
     @Selector("init")
     public native NSPersistentStoreRequest init();
 
-    /**
-     * requestType</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreData/Reference/NSPersistentStoreRequest_Class/index.html#//apple_ref/occ/instp/NSPersistentStoreRequest/requestType">iOS Dev Center</a>
-     */
     @Generated
     @Selector("requestType")
     @NUInt
     public native long requestType();
 
-    /**
-     * affectedStores</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreData/Reference/NSPersistentStoreRequest_Class/index.html#//apple_ref/occ/instp/NSPersistentStoreRequest/affectedStores">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setAffectedStores:")
     public native void setAffectedStores(NSArray<? extends NSPersistentStore> value);

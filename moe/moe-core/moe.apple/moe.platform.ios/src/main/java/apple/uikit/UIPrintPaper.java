@@ -61,10 +61,6 @@ public class UIPrintPaper extends NSObject {
     @Selector("alloc")
     public static native UIPrintPaper alloc();
 
-    /**
-     * bestPaperForPageSize:withPapersFromArray:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPrintPaper_Class/index.html#//apple_ref/occ/clm/UIPrintPaper/bestPaperForPageSize:withPapersFromArray:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("bestPaperForPageSize:withPapersFromArray:")
     public static native UIPrintPaper bestPaperForPageSizeWithPapersFromArray(@ByValue CGSize contentSize,
@@ -174,10 +170,6 @@ public class UIPrintPaper extends NSObject {
     @Selector("init")
     public native UIPrintPaper init();
 
-    /**
-     * paperSize</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPrintPaper_Class/index.html#//apple_ref/occ/instp/UIPrintPaper/paperSize">iOS Dev Center</a>
-     */
     @Generated
     @Selector("paperSize")
     @ByValue
@@ -188,10 +180,6 @@ public class UIPrintPaper extends NSObject {
     @ByValue
     public native CGRect printRect();
 
-    /**
-     * printableRect</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPrintPaper_Class/index.html#//apple_ref/occ/instp/UIPrintPaper/printableRect">iOS Dev Center</a>
-     */
     @Generated
     @Selector("printableRect")
     @ByValue

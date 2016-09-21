@@ -28,6 +28,7 @@ public final class CFStringTokenizerTokenType {
     @Generated @NUInt public static final long HasHasNumbersMask = 0x0000000000000008L;
     @Generated @NUInt public static final long HasNonLettersMask = 0x0000000000000010L;
     @Generated @NUInt public static final long IsCJWordMask = 0x0000000000000020L;
+
     @Generated
     private CFStringTokenizerTokenType() {
     }

@@ -31,18 +31,10 @@ import org.moe.natj.objc.ann.Selector;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("ADInterstitialAdDelegate")
 public interface ADInterstitialAdDelegate {
-    /**
-     * interstitialAd:didFailWithError:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/iAd/Reference/ADInterstitialAdDelegate_Ref/index.html#//apple_ref/occ/intfm/ADInterstitialAdDelegate/interstitialAd:didFailWithError:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("interstitialAd:didFailWithError:")
     void interstitialAdDidFailWithError(ADInterstitialAd interstitialAd, NSError error);
 
-    /**
-     * interstitialAdActionDidFinish:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/iAd/Reference/ADInterstitialAdDelegate_Ref/index.html#//apple_ref/occ/intfm/ADInterstitialAdDelegate/interstitialAdActionDidFinish:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("interstitialAdActionDidFinish:")
@@ -50,10 +42,6 @@ public interface ADInterstitialAdDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * interstitialAdActionShouldBegin:willLeaveApplication:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/iAd/Reference/ADInterstitialAdDelegate_Ref/index.html#//apple_ref/occ/intfm/ADInterstitialAdDelegate/interstitialAdActionShouldBegin:willLeaveApplication:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("interstitialAdActionShouldBegin:willLeaveApplication:")
@@ -62,10 +50,6 @@ public interface ADInterstitialAdDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * interstitialAdDidLoad:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/iAd/Reference/ADInterstitialAdDelegate_Ref/index.html#//apple_ref/occ/intfm/ADInterstitialAdDelegate/interstitialAdDidLoad:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("interstitialAdDidLoad:")
@@ -73,18 +57,10 @@ public interface ADInterstitialAdDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * interstitialAdDidUnload:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/iAd/Reference/ADInterstitialAdDelegate_Ref/index.html#//apple_ref/occ/intfm/ADInterstitialAdDelegate/interstitialAdDidUnload:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("interstitialAdDidUnload:")
     void interstitialAdDidUnload(ADInterstitialAd interstitialAd);
 
-    /**
-     * interstitialAdWillLoad:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/iAd/Reference/ADInterstitialAdDelegate_Ref/index.html#//apple_ref/occ/intfm/ADInterstitialAdDelegate/interstitialAdWillLoad:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("interstitialAdWillLoad:")

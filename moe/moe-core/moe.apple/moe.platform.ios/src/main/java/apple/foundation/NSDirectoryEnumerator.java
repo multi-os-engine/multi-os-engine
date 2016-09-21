@@ -155,18 +155,10 @@ public class NSDirectoryEnumerator<_ObjectType> extends NSEnumerator<_ObjectType
     @NInt
     public static native long version_static();
 
-    /**
-     * directoryAttributes</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSDirectoryEnumerator_Class/index.html#//apple_ref/occ/instp/NSDirectoryEnumerator/directoryAttributes">iOS Dev Center</a>
-     */
     @Generated
     @Selector("directoryAttributes")
     public native NSDictionary<String, ?> directoryAttributes();
 
-    /**
-     * fileAttributes</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSDirectoryEnumerator_Class/index.html#//apple_ref/occ/instp/NSDirectoryEnumerator/fileAttributes">iOS Dev Center</a>
-     */
     @Generated
     @Selector("fileAttributes")
     public native NSDictionary<String, ?> fileAttributes();
@@ -175,27 +167,15 @@ public class NSDirectoryEnumerator<_ObjectType> extends NSEnumerator<_ObjectType
     @Selector("init")
     public native NSDirectoryEnumerator<?> init();
 
-    /**
-     * level</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSDirectoryEnumerator_Class/index.html#//apple_ref/occ/instp/NSDirectoryEnumerator/level">iOS Dev Center</a>
-     */
     @Generated
     @Selector("level")
     @NUInt
     public native long level();
 
-    /**
-     * skipDescendants</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSDirectoryEnumerator_Class/index.html#//apple_ref/occ/instm/NSDirectoryEnumerator/skipDescendants">iOS Dev Center</a>
-     */
     @Generated
     @Selector("skipDescendants")
     public native void skipDescendants();
 
-    /**
-     * skipDescendents</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSDirectoryEnumerator_Class/index.html#//apple_ref/occ/instm/NSDirectoryEnumerator/skipDescendents">iOS Dev Center</a>
-     */
     @Generated
     @Selector("skipDescendents")
     public native void skipDescendents();

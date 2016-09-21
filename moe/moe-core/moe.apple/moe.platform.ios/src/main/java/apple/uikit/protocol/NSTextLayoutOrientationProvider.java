@@ -29,10 +29,6 @@ import org.moe.natj.objc.ann.Selector;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("NSTextLayoutOrientationProvider")
 public interface NSTextLayoutOrientationProvider {
-    /**
-     * layoutOrientation</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSTextLayoutOrientationProvider_Protocol/index.html#//apple_ref/occ/intfp/NSTextLayoutOrientationProvider/layoutOrientation">iOS Dev Center</a>
-     */
     @Generated
     @Selector("layoutOrientation")
     @NInt

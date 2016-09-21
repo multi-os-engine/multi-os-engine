@@ -62,28 +62,16 @@ public class PHPhotoLibrary extends NSObject {
     @Selector("alloc")
     public static native PHPhotoLibrary alloc();
 
-    /**
-     * authorizationStatus</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHPhotoLibrary_Class/index.html#//apple_ref/occ/clm/PHPhotoLibrary/authorizationStatus">iOS Dev Center</a>
-     */
     @Generated
     @Selector("authorizationStatus")
     @NInt
     public static native long authorizationStatus();
 
-    /**
-     * requestAuthorization:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHPhotoLibrary_Class/index.html#//apple_ref/occ/clm/PHPhotoLibrary/requestAuthorization:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("requestAuthorization:")
     public static native void requestAuthorization(
             @ObjCBlock(name = "call_requestAuthorization") Block_requestAuthorization handler);
 
-    /**
-     * sharedPhotoLibrary</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHPhotoLibrary_Class/index.html#//apple_ref/occ/clm/PHPhotoLibrary/sharedPhotoLibrary">iOS Dev Center</a>
-     */
     @Generated
     @Selector("sharedPhotoLibrary")
     public static native PHPhotoLibrary sharedPhotoLibrary();
@@ -192,38 +180,22 @@ public class PHPhotoLibrary extends NSObject {
     @Selector("init")
     public native PHPhotoLibrary init();
 
-    /**
-     * performChanges:completionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHPhotoLibrary_Class/index.html#//apple_ref/occ/instm/PHPhotoLibrary/performChanges:completionHandler:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("performChanges:completionHandler:")
     public native void performChangesCompletionHandler(
             @ObjCBlock(name = "call_performChangesCompletionHandler_0") Block_performChangesCompletionHandler_0 changeBlock,
             @ObjCBlock(name = "call_performChangesCompletionHandler_1") Block_performChangesCompletionHandler_1 completionHandler);
 
-    /**
-     * performChangesAndWait:error:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHPhotoLibrary_Class/index.html#//apple_ref/occ/instm/PHPhotoLibrary/performChangesAndWait:error:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("performChangesAndWait:error:")
     public native boolean performChangesAndWaitError(
             @ObjCBlock(name = "call_performChangesAndWaitError") Block_performChangesAndWaitError changeBlock,
             Ptr<NSError> error);
 
-    /**
-     * registerChangeObserver:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHPhotoLibrary_Class/index.html#//apple_ref/occ/instm/PHPhotoLibrary/registerChangeObserver:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("registerChangeObserver:")
     public native void registerChangeObserver(@Mapped(ObjCObjectMapper.class) PHPhotoLibraryChangeObserver observer);
 
-    /**
-     * unregisterChangeObserver:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHPhotoLibrary_Class/index.html#//apple_ref/occ/instm/PHPhotoLibrary/unregisterChangeObserver:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("unregisterChangeObserver:")
     public native void unregisterChangeObserver(@Mapped(ObjCObjectMapper.class) PHPhotoLibraryChangeObserver observer);

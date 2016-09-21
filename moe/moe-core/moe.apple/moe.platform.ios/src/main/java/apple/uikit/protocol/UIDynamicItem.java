@@ -35,53 +35,29 @@ import org.moe.natj.objc.ann.Selector;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("UIDynamicItem")
 public interface UIDynamicItem {
-    /**
-     * bounds</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIDynamicItem_Protocol/index.html#//apple_ref/occ/intfp/UIDynamicItem/bounds">iOS Dev Center</a>
-     */
     @Generated
     @Selector("bounds")
     @ByValue
     CGRect bounds();
 
-    /**
-     * center</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIDynamicItem_Protocol/index.html#//apple_ref/occ/intfp/UIDynamicItem/center">iOS Dev Center</a>
-     */
     @Generated
     @Selector("center")
     @ByValue
     CGPoint center();
 
-    /**
-     * center</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIDynamicItem_Protocol/index.html#//apple_ref/occ/intfp/UIDynamicItem/center">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setCenter:")
     void setCenter(@ByValue CGPoint value);
 
-    /**
-     * transform</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIDynamicItem_Protocol/index.html#//apple_ref/occ/intfp/UIDynamicItem/transform">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setTransform:")
     void setTransform(@ByValue CGAffineTransform value);
 
-    /**
-     * transform</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIDynamicItem_Protocol/index.html#//apple_ref/occ/intfp/UIDynamicItem/transform">iOS Dev Center</a>
-     */
     @Generated
     @Selector("transform")
     @ByValue
     CGAffineTransform transform();
 
-    /**
-     * collisionBoundingPath</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIDynamicItem_Protocol/index.html#//apple_ref/occ/intfp/UIDynamicItem/collisionBoundingPath">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("collisionBoundingPath")
@@ -89,10 +65,6 @@ public interface UIDynamicItem {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * collisionBoundsType</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIDynamicItem_Protocol/index.html#//apple_ref/occ/intfp/UIDynamicItem/collisionBoundsType">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("collisionBoundsType")

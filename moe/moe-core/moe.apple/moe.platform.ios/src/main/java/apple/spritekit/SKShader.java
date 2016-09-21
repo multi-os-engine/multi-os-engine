@@ -61,34 +61,18 @@ public class SKShader extends NSObject implements NSCopying, NSCoding {
     @Selector("alloc")
     public static native SKShader alloc();
 
-    /**
-     * shader</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKShader_Ref/index.html#//apple_ref/occ/clm/SKShader/shader">iOS Dev Center</a>
-     */
     @Generated
     @Selector("shader")
     public static native SKShader shader();
 
-    /**
-     * shaderWithFileNamed:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKShader_Ref/index.html#//apple_ref/occ/clm/SKShader/shaderWithFileNamed:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("shaderWithFileNamed:")
     public static native SKShader shaderWithFileNamed(String name);
 
-    /**
-     * shaderWithSource:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKShader_Ref/index.html#//apple_ref/occ/clm/SKShader/shaderWithSource:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("shaderWithSource:")
     public static native SKShader shaderWithSource(String source);
 
-    /**
-     * shaderWithSource:uniforms:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKShader_Ref/index.html#//apple_ref/occ/clm/SKShader/shaderWithSource:uniforms:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("shaderWithSource:uniforms:")
     public static native SKShader shaderWithSourceUniforms(String source, NSArray<? extends SKUniform> uniforms);
@@ -193,10 +177,6 @@ public class SKShader extends NSObject implements NSCopying, NSCoding {
     @NInt
     public static native long version_static();
 
-    /**
-     * addUniform:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKShader_Ref/index.html#//apple_ref/occ/instm/SKShader/addUniform:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("addUniform:")
     public native void addUniform(SKUniform uniform);
@@ -219,66 +199,34 @@ public class SKShader extends NSObject implements NSCopying, NSCoding {
     @Selector("initWithCoder:")
     public native SKShader initWithCoder(NSCoder aDecoder);
 
-    /**
-     * initWithSource:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKShader_Ref/index.html#//apple_ref/occ/instm/SKShader/initWithSource:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithSource:")
     public native SKShader initWithSource(String source);
 
-    /**
-     * initWithSource:uniforms:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKShader_Ref/index.html#//apple_ref/occ/instm/SKShader/initWithSource:uniforms:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithSource:uniforms:")
     public native SKShader initWithSourceUniforms(String source, NSArray<? extends SKUniform> uniforms);
 
-    /**
-     * removeUniformNamed:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKShader_Ref/index.html#//apple_ref/occ/instm/SKShader/removeUniformNamed:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("removeUniformNamed:")
     public native void removeUniformNamed(String name);
 
-    /**
-     * source</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKShader_Ref/index.html#//apple_ref/occ/instp/SKShader/source">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setSource:")
     public native void setSource(String value);
 
-    /**
-     * uniforms</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKShader_Ref/index.html#//apple_ref/occ/instp/SKShader/uniforms">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setUniforms:")
     public native void setUniforms(NSArray<? extends SKUniform> value);
 
-    /**
-     * source</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKShader_Ref/index.html#//apple_ref/occ/instp/SKShader/source">iOS Dev Center</a>
-     */
     @Generated
     @Selector("source")
     public native String source();
 
-    /**
-     * uniformNamed:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKShader_Ref/index.html#//apple_ref/occ/instm/SKShader/uniformNamed:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("uniformNamed:")
     public native SKUniform uniformNamed(String name);
 
-    /**
-     * uniforms</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKShader_Ref/index.html#//apple_ref/occ/instp/SKShader/uniforms">iOS Dev Center</a>
-     */
     @Generated
     @Selector("uniforms")
     public native NSArray<? extends SKUniform> uniforms();

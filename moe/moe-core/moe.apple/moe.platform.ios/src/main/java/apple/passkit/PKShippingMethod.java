@@ -168,18 +168,10 @@ public class PKShippingMethod extends PKPaymentSummaryItem {
     @NInt
     public static native long version_static();
 
-    /**
-     * detail</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/PassKit/Reference/PKShippingMethod_Ref/index.html#//apple_ref/occ/instp/PKShippingMethod/detail">iOS Dev Center</a>
-     */
     @Generated
     @Selector("detail")
     public native String detail();
 
-    /**
-     * identifier</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/PassKit/Reference/PKShippingMethod_Ref/index.html#//apple_ref/occ/instp/PKShippingMethod/identifier">iOS Dev Center</a>
-     */
     @Generated
     @Selector("identifier")
     public native String identifier();
@@ -188,18 +180,10 @@ public class PKShippingMethod extends PKPaymentSummaryItem {
     @Selector("init")
     public native PKShippingMethod init();
 
-    /**
-     * detail</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/PassKit/Reference/PKShippingMethod_Ref/index.html#//apple_ref/occ/instp/PKShippingMethod/detail">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setDetail:")
     public native void setDetail(String value);
 
-    /**
-     * identifier</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/PassKit/Reference/PKShippingMethod_Ref/index.html#//apple_ref/occ/instp/PKShippingMethod/identifier">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setIdentifier:")
     public native void setIdentifier(String value);

@@ -162,10 +162,6 @@ public class AVCompositionTrack extends AVAssetTrack {
     @Selector("init")
     public native AVCompositionTrack init();
 
-    /**
-     * segments</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVCompositionTrack_Class/index.html#//apple_ref/occ/instp/AVCompositionTrack/segments">iOS Dev Center</a>
-     */
     @Generated
     @Selector("segments")
     public native NSArray<? extends AVCompositionTrackSegment> segments();

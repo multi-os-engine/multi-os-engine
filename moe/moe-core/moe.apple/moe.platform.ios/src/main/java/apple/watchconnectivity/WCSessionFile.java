@@ -160,10 +160,6 @@ public class WCSessionFile extends NSObject {
     @NInt
     public static native long version_static();
 
-    /**
-     * fileURL</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WatchConnectivity/Reference/WCSessionFile_class/index.html#//apple_ref/occ/instp/WCSessionFile/fileURL">iOS Dev Center</a>
-     */
     @Generated
     @Selector("fileURL")
     public native NSURL fileURL();
@@ -172,10 +168,6 @@ public class WCSessionFile extends NSObject {
     @Selector("init")
     public native WCSessionFile init();
 
-    /**
-     * metadata</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WatchConnectivity/Reference/WCSessionFile_class/index.html#//apple_ref/occ/instp/WCSessionFile/metadata">iOS Dev Center</a>
-     */
     @Generated
     @Selector("metadata")
     public native NSDictionary<String, ?> metadata();

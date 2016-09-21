@@ -159,19 +159,11 @@ public class HMAccessoryBrowser extends NSObject {
     @NInt
     public static native long version_static();
 
-    /**
-     * delegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HomeKit/Reference/HMAccessoryBrowser_Class/index.html#//apple_ref/occ/instp/HMAccessoryBrowser/delegate">iOS Dev Center</a>
-     */
     @Generated
     @Selector("delegate")
     @MappedReturn(ObjCObjectMapper.class)
     public native HMAccessoryBrowserDelegate delegate();
 
-    /**
-     * discoveredAccessories</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HomeKit/Reference/HMAccessoryBrowser_Class/index.html#//apple_ref/occ/instp/HMAccessoryBrowser/discoveredAccessories">iOS Dev Center</a>
-     */
     @Generated
     @Selector("discoveredAccessories")
     public native NSArray<? extends HMAccessory> discoveredAccessories();
@@ -180,18 +172,10 @@ public class HMAccessoryBrowser extends NSObject {
     @Selector("init")
     public native HMAccessoryBrowser init();
 
-    /**
-     * delegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HomeKit/Reference/HMAccessoryBrowser_Class/index.html#//apple_ref/occ/instp/HMAccessoryBrowser/delegate">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setDelegate:")
     public native void setDelegate_unsafe(@Mapped(ObjCObjectMapper.class) HMAccessoryBrowserDelegate value);
 
-    /**
-     * delegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HomeKit/Reference/HMAccessoryBrowser_Class/index.html#//apple_ref/occ/instp/HMAccessoryBrowser/delegate">iOS Dev Center</a>
-     */
     @Generated
     public void setDelegate(@Mapped(ObjCObjectMapper.class) HMAccessoryBrowserDelegate value) {
         Object __old = delegate();
@@ -204,18 +188,10 @@ public class HMAccessoryBrowser extends NSObject {
         }
     }
 
-    /**
-     * startSearchingForNewAccessories</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HomeKit/Reference/HMAccessoryBrowser_Class/index.html#//apple_ref/occ/instm/HMAccessoryBrowser/startSearchingForNewAccessories">iOS Dev Center</a>
-     */
     @Generated
     @Selector("startSearchingForNewAccessories")
     public native void startSearchingForNewAccessories();
 
-    /**
-     * stopSearchingForNewAccessories</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HomeKit/Reference/HMAccessoryBrowser_Class/index.html#//apple_ref/occ/instm/HMAccessoryBrowser/stopSearchingForNewAccessories">iOS Dev Center</a>
-     */
     @Generated
     @Selector("stopSearchingForNewAccessories")
     public native void stopSearchingForNewAccessories();

@@ -26,6 +26,7 @@ public final class JSType {
     @Generated public static final int kJSTypeNumber = 0x00000003;
     @Generated public static final int kJSTypeString = 0x00000004;
     @Generated public static final int kJSTypeObject = 0x00000005;
+
     @Generated
     private JSType() {
     }

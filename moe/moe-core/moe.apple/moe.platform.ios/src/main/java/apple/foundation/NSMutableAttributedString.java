@@ -168,59 +168,31 @@ public class NSMutableAttributedString extends NSAttributedString {
     @NInt
     public static native long version_static();
 
-    /**
-     * addAttribute:value:range:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSMutableAttributedString_Class/index.html#//apple_ref/occ/instm/NSMutableAttributedString/addAttribute:value:range:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("addAttribute:value:range:")
     public native void addAttributeValueRange(String name, @Mapped(ObjCObjectMapper.class) Object value,
             @ByValue NSRange range);
 
-    /**
-     * addAttributes:range:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSMutableAttributedString_Class/index.html#//apple_ref/occ/instm/NSMutableAttributedString/addAttributes:range:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("addAttributes:range:")
     public native void addAttributesRange(NSDictionary<String, ?> attrs, @ByValue NSRange range);
 
-    /**
-     * appendAttributedString:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSMutableAttributedString_Class/index.html#//apple_ref/occ/instm/NSMutableAttributedString/appendAttributedString:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("appendAttributedString:")
     public native void appendAttributedString(NSAttributedString attrString);
 
-    /**
-     * beginEditing</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSMutableAttributedString_Class/index.html#//apple_ref/occ/instm/NSMutableAttributedString/beginEditing">iOS Dev Center</a>
-     */
     @Generated
     @Selector("beginEditing")
     public native void beginEditing();
 
-    /**
-     * deleteCharactersInRange:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSMutableAttributedString_Class/index.html#//apple_ref/occ/instm/NSMutableAttributedString/deleteCharactersInRange:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("deleteCharactersInRange:")
     public native void deleteCharactersInRange(@ByValue NSRange range);
 
-    /**
-     * endEditing</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSMutableAttributedString_Class/index.html#//apple_ref/occ/instm/NSMutableAttributedString/endEditing">iOS Dev Center</a>
-     */
     @Generated
     @Selector("endEditing")
     public native void endEditing();
 
-    /**
-     * fixAttributesInRange:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSMutableAttributedString_Class/index.html#//apple_ref/occ/instm/NSMutableAttributedString/fixAttributesInRange:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("fixAttributesInRange:")
     public native void fixAttributesInRange(@ByValue NSRange range);
@@ -252,78 +224,42 @@ public class NSMutableAttributedString extends NSAttributedString {
     @Selector("initWithString:attributes:")
     public native NSMutableAttributedString initWithStringAttributes(String str, NSDictionary<String, ?> attrs);
 
-    /**
-     * insertAttributedString:atIndex:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSMutableAttributedString_Class/index.html#//apple_ref/occ/instm/NSMutableAttributedString/insertAttributedString:atIndex:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("insertAttributedString:atIndex:")
     public native void insertAttributedStringAtIndex(NSAttributedString attrString, @NUInt long loc);
 
-    /**
-     * mutableString</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSMutableAttributedString_Class/index.html#//apple_ref/occ/instp/NSMutableAttributedString/mutableString">iOS Dev Center</a>
-     */
     @Generated
     @Selector("mutableString")
     public native NSMutableString mutableString();
 
-    /**
-     * readFromData:options:documentAttributes:error:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSMutableAttributedString_Class/index.html#//apple_ref/occ/instm/NSMutableAttributedString/readFromData:options:documentAttributes:error:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("readFromData:options:documentAttributes:error:")
     public native boolean readFromDataOptionsDocumentAttributesError(NSData data, NSDictionary<String, ?> opts,
             Ptr<NSDictionary<String, ?>> dict, Ptr<NSError> error);
 
-    /**
-     * readFromFileURL:options:documentAttributes:error:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSMutableAttributedString_Class/index.html#//apple_ref/occ/instm/NSMutableAttributedString/readFromFileURL:options:documentAttributes:error:">iOS Dev Center</a>
-     */
     @Deprecated
     @Generated
     @Selector("readFromFileURL:options:documentAttributes:error:")
     public native boolean readFromFileURLOptionsDocumentAttributesError(NSURL url, NSDictionary<?, ?> opts,
             Ptr<NSDictionary<?, ?>> dict, Ptr<NSError> error);
 
-    /**
-     * removeAttribute:range:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSMutableAttributedString_Class/index.html#//apple_ref/occ/instm/NSMutableAttributedString/removeAttribute:range:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("removeAttribute:range:")
     public native void removeAttributeRange(String name, @ByValue NSRange range);
 
-    /**
-     * replaceCharactersInRange:withAttributedString:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSMutableAttributedString_Class/index.html#//apple_ref/occ/instm/NSMutableAttributedString/replaceCharactersInRange:withAttributedString:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("replaceCharactersInRange:withAttributedString:")
     public native void replaceCharactersInRangeWithAttributedString(@ByValue NSRange range,
             NSAttributedString attrString);
 
-    /**
-     * replaceCharactersInRange:withString:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSMutableAttributedString_Class/index.html#//apple_ref/occ/instm/NSMutableAttributedString/replaceCharactersInRange:withString:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("replaceCharactersInRange:withString:")
     public native void replaceCharactersInRangeWithString(@ByValue NSRange range, String str);
 
-    /**
-     * setAttributedString:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSMutableAttributedString_Class/index.html#//apple_ref/occ/instm/NSMutableAttributedString/setAttributedString:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setAttributedString:")
     public native void setAttributedString(NSAttributedString attrString);
 
-    /**
-     * setAttributes:range:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSMutableAttributedString_Class/index.html#//apple_ref/occ/instm/NSMutableAttributedString/setAttributes:range:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setAttributes:range:")
     public native void setAttributesRange(NSDictionary<String, ?> attrs, @ByValue NSRange range);
@@ -333,10 +269,6 @@ public class NSMutableAttributedString extends NSAttributedString {
     public native NSMutableAttributedString initWithURLOptionsDocumentAttributesError(NSURL url,
             NSDictionary<String, ?> options, Ptr<NSDictionary<String, ?>> dict, Ptr<NSError> error);
 
-    /**
-     * readFromURL:options:documentAttributes:error:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSMutableAttributedString_Class/index.html#//apple_ref/occ/instm/NSMutableAttributedString/readFromURL:options:documentAttributes:error:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("readFromURL:options:documentAttributes:error:")
     public native boolean readFromURLOptionsDocumentAttributesError(NSURL url, NSDictionary<String, ?> opts,

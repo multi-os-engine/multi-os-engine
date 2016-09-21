@@ -31,19 +31,11 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("MDLMeshBufferZone")
 public interface MDLMeshBufferZone {
-    /**
-     * allocator</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLMeshBufferZone_Protocol/index.html#//apple_ref/occ/intfp/MDLMeshBufferZone/allocator">iOS Dev Center</a>
-     */
     @Generated
     @Selector("allocator")
     @MappedReturn(ObjCObjectMapper.class)
     Object allocator();
 
-    /**
-     * capacity</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLMeshBufferZone_Protocol/index.html#//apple_ref/occ/intfp/MDLMeshBufferZone/capacity">iOS Dev Center</a>
-     */
     @Generated
     @Selector("capacity")
     @NUInt

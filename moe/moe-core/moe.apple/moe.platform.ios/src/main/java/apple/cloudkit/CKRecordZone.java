@@ -62,10 +62,6 @@ public class CKRecordZone extends NSObject implements NSSecureCoding, NSCopying 
     @Selector("alloc")
     public static native CKRecordZone alloc();
 
-    /**
-     * defaultRecordZone</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKRecordZone_class/index.html#//apple_ref/occ/clm/CKRecordZone/defaultRecordZone">iOS Dev Center</a>
-     */
     @Generated
     @Selector("defaultRecordZone")
     public static native CKRecordZone defaultRecordZone();
@@ -174,10 +170,6 @@ public class CKRecordZone extends NSObject implements NSSecureCoding, NSCopying 
     @NInt
     public static native long version_static();
 
-    /**
-     * capabilities</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKRecordZone_class/index.html#//apple_ref/occ/instp/CKRecordZone/capabilities">iOS Dev Center</a>
-     */
     @Generated
     @Selector("capabilities")
     @NUInt
@@ -201,18 +193,10 @@ public class CKRecordZone extends NSObject implements NSSecureCoding, NSCopying 
     @Selector("initWithCoder:")
     public native CKRecordZone initWithCoder(NSCoder aDecoder);
 
-    /**
-     * initWithZoneID:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKRecordZone_class/index.html#//apple_ref/occ/instm/CKRecordZone/initWithZoneID:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithZoneID:")
     public native CKRecordZone initWithZoneID(CKRecordZoneID zoneID);
 
-    /**
-     * initWithZoneName:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKRecordZone_class/index.html#//apple_ref/occ/instm/CKRecordZone/initWithZoneName:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithZoneName:")
     public native CKRecordZone initWithZoneName(String zoneName);
@@ -223,10 +207,6 @@ public class CKRecordZone extends NSObject implements NSSecureCoding, NSCopying 
         return supportsSecureCoding();
     }
 
-    /**
-     * zoneID</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKRecordZone_class/index.html#//apple_ref/occ/instp/CKRecordZone/zoneID">iOS Dev Center</a>
-     */
     @Generated
     @Selector("zoneID")
     public native CKRecordZoneID zoneID();

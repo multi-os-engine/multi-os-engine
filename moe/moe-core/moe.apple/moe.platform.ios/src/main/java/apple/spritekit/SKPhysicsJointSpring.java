@@ -62,10 +62,6 @@ public class SKPhysicsJointSpring extends SKPhysicsJoint {
     @Selector("alloc")
     public static native SKPhysicsJointSpring alloc();
 
-    /**
-     * jointWithBodyA:bodyB:anchorA:anchorB:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKPhysicsJointSpring_Ref/index.html#//apple_ref/occ/clm/SKPhysicsJointSpring/jointWithBodyA:bodyB:anchorA:anchorB:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("jointWithBodyA:bodyB:anchorA:anchorB:")
     public static native SKPhysicsJointSpring jointWithBodyABodyBAnchorAAnchorB(SKPhysicsBody bodyA,
@@ -171,19 +167,11 @@ public class SKPhysicsJointSpring extends SKPhysicsJoint {
     @NInt
     public static native long version_static();
 
-    /**
-     * damping</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKPhysicsJointSpring_Ref/index.html#//apple_ref/occ/instp/SKPhysicsJointSpring/damping">iOS Dev Center</a>
-     */
     @Generated
     @Selector("damping")
     @NFloat
     public native double damping();
 
-    /**
-     * frequency</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKPhysicsJointSpring_Ref/index.html#//apple_ref/occ/instp/SKPhysicsJointSpring/frequency">iOS Dev Center</a>
-     */
     @Generated
     @Selector("frequency")
     @NFloat
@@ -193,18 +181,10 @@ public class SKPhysicsJointSpring extends SKPhysicsJoint {
     @Selector("init")
     public native SKPhysicsJointSpring init();
 
-    /**
-     * damping</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKPhysicsJointSpring_Ref/index.html#//apple_ref/occ/instp/SKPhysicsJointSpring/damping">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setDamping:")
     public native void setDamping(@NFloat double value);
 
-    /**
-     * frequency</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKPhysicsJointSpring_Ref/index.html#//apple_ref/occ/instp/SKPhysicsJointSpring/frequency">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setFrequency:")
     public native void setFrequency(@NFloat double value);

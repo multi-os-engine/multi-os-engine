@@ -184,66 +184,34 @@ public class NEFilterSocketFlow extends NEFilterFlow implements NSSecureCoding, 
     @Selector("initWithCoder:")
     public native NEFilterSocketFlow initWithCoder(NSCoder aDecoder);
 
-    /**
-     * localEndpoint</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEFilterSocketFlowClassRef/index.html#//apple_ref/occ/instp/NEFilterSocketFlow/localEndpoint">iOS Dev Center</a>
-     */
     @Generated
     @Selector("localEndpoint")
     public native NWEndpoint localEndpoint();
 
-    /**
-     * remoteEndpoint</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEFilterSocketFlowClassRef/index.html#//apple_ref/occ/instp/NEFilterSocketFlow/remoteEndpoint">iOS Dev Center</a>
-     */
     @Generated
     @Selector("remoteEndpoint")
     public native NWEndpoint remoteEndpoint();
 
-    /**
-     * socketFamily</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEFilterSocketFlowClassRef/index.html#//apple_ref/occ/instp/NEFilterSocketFlow/socketFamily">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setSocketFamily:")
     public native void setSocketFamily(int value);
 
-    /**
-     * socketProtocol</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEFilterSocketFlowClassRef/index.html#//apple_ref/occ/instp/NEFilterSocketFlow/socketProtocol">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setSocketProtocol:")
     public native void setSocketProtocol(int value);
 
-    /**
-     * socketType</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEFilterSocketFlowClassRef/index.html#//apple_ref/occ/instp/NEFilterSocketFlow/socketType">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setSocketType:")
     public native void setSocketType(int value);
 
-    /**
-     * socketFamily</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEFilterSocketFlowClassRef/index.html#//apple_ref/occ/instp/NEFilterSocketFlow/socketFamily">iOS Dev Center</a>
-     */
     @Generated
     @Selector("socketFamily")
     public native int socketFamily();
 
-    /**
-     * socketProtocol</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEFilterSocketFlowClassRef/index.html#//apple_ref/occ/instp/NEFilterSocketFlow/socketProtocol">iOS Dev Center</a>
-     */
     @Generated
     @Selector("socketProtocol")
     public native int socketProtocol();
 
-    /**
-     * socketType</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEFilterSocketFlowClassRef/index.html#//apple_ref/occ/instp/NEFilterSocketFlow/socketType">iOS Dev Center</a>
-     */
     @Generated
     @Selector("socketType")
     public native int socketType();

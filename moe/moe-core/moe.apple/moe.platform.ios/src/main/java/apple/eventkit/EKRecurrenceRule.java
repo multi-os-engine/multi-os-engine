@@ -160,10 +160,6 @@ public class EKRecurrenceRule extends EKObject implements NSCopying {
     @NInt
     public static native long version_static();
 
-    /**
-     * calendarIdentifier</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/EventKit/Reference/EKRecurrenceRuleClassRef/index.html#//apple_ref/occ/instp/EKRecurrenceRule/calendarIdentifier">iOS Dev Center</a>
-     */
     @Generated
     @Selector("calendarIdentifier")
     public native String calendarIdentifier();
@@ -174,43 +170,23 @@ public class EKRecurrenceRule extends EKObject implements NSCopying {
     @MappedReturn(ObjCObjectMapper.class)
     public native Object copyWithZone(VoidPtr zone);
 
-    /**
-     * daysOfTheMonth</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/EventKit/Reference/EKRecurrenceRuleClassRef/index.html#//apple_ref/occ/instp/EKRecurrenceRule/daysOfTheMonth">iOS Dev Center</a>
-     */
     @Generated
     @Selector("daysOfTheMonth")
     public native NSArray<? extends NSNumber> daysOfTheMonth();
 
-    /**
-     * daysOfTheWeek</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/EventKit/Reference/EKRecurrenceRuleClassRef/index.html#//apple_ref/occ/instp/EKRecurrenceRule/daysOfTheWeek">iOS Dev Center</a>
-     */
     @Generated
     @Selector("daysOfTheWeek")
     public native NSArray<? extends EKRecurrenceDayOfWeek> daysOfTheWeek();
 
-    /**
-     * daysOfTheYear</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/EventKit/Reference/EKRecurrenceRuleClassRef/index.html#//apple_ref/occ/instp/EKRecurrenceRule/daysOfTheYear">iOS Dev Center</a>
-     */
     @Generated
     @Selector("daysOfTheYear")
     public native NSArray<? extends NSNumber> daysOfTheYear();
 
-    /**
-     * firstDayOfTheWeek</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/EventKit/Reference/EKRecurrenceRuleClassRef/index.html#//apple_ref/occ/instp/EKRecurrenceRule/firstDayOfTheWeek">iOS Dev Center</a>
-     */
     @Generated
     @Selector("firstDayOfTheWeek")
     @NInt
     public native long firstDayOfTheWeek();
 
-    /**
-     * frequency</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/EventKit/Reference/EKRecurrenceRuleClassRef/index.html#//apple_ref/occ/instp/EKRecurrenceRule/frequency">iOS Dev Center</a>
-     */
     @NInt
     @Generated
     @Selector("frequency")
@@ -220,10 +196,6 @@ public class EKRecurrenceRule extends EKObject implements NSCopying {
     @Selector("init")
     public native EKRecurrenceRule init();
 
-    /**
-     * initRecurrenceWithFrequency:interval:daysOfTheWeek:daysOfTheMonth:monthsOfTheYear:weeksOfTheYear:daysOfTheYear:setPositions:end:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/EventKit/Reference/EKRecurrenceRuleClassRef/index.html#//apple_ref/occ/instm/EKRecurrenceRule/initRecurrenceWithFrequency:interval:daysOfTheWeek:daysOfTheMonth:monthsOfTheYear:weeksOfTheYear:daysOfTheYear:setPositions:end:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initRecurrenceWithFrequency:interval:daysOfTheWeek:daysOfTheMonth:monthsOfTheYear:weeksOfTheYear:daysOfTheYear:setPositions:end:")
     public native EKRecurrenceRule initRecurrenceWithFrequencyIntervalDaysOfTheWeekDaysOfTheMonthMonthsOfTheYearWeeksOfTheYearDaysOfTheYearSetPositionsEnd(
@@ -232,60 +204,32 @@ public class EKRecurrenceRule extends EKObject implements NSCopying {
             NSArray<? extends NSNumber> weeksOfTheYear, NSArray<? extends NSNumber> daysOfTheYear,
             NSArray<? extends NSNumber> setPositions, EKRecurrenceEnd end);
 
-    /**
-     * initRecurrenceWithFrequency:interval:end:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/EventKit/Reference/EKRecurrenceRuleClassRef/index.html#//apple_ref/occ/instm/EKRecurrenceRule/initRecurrenceWithFrequency:interval:end:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initRecurrenceWithFrequency:interval:end:")
     public native EKRecurrenceRule initRecurrenceWithFrequencyIntervalEnd(@NInt long type, @NInt long interval,
             EKRecurrenceEnd end);
 
-    /**
-     * interval</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/EventKit/Reference/EKRecurrenceRuleClassRef/index.html#//apple_ref/occ/instp/EKRecurrenceRule/interval">iOS Dev Center</a>
-     */
     @Generated
     @Selector("interval")
     @NInt
     public native long interval();
 
-    /**
-     * monthsOfTheYear</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/EventKit/Reference/EKRecurrenceRuleClassRef/index.html#//apple_ref/occ/instp/EKRecurrenceRule/monthsOfTheYear">iOS Dev Center</a>
-     */
     @Generated
     @Selector("monthsOfTheYear")
     public native NSArray<? extends NSNumber> monthsOfTheYear();
 
-    /**
-     * recurrenceEnd</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/EventKit/Reference/EKRecurrenceRuleClassRef/index.html#//apple_ref/occ/instp/EKRecurrenceRule/recurrenceEnd">iOS Dev Center</a>
-     */
     @Generated
     @Selector("recurrenceEnd")
     public native EKRecurrenceEnd recurrenceEnd();
 
-    /**
-     * setPositions</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/EventKit/Reference/EKRecurrenceRuleClassRef/index.html#//apple_ref/occ/instp/EKRecurrenceRule/setPositions">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setPositions")
     public native NSArray<? extends NSNumber> setPositions();
 
-    /**
-     * recurrenceEnd</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/EventKit/Reference/EKRecurrenceRuleClassRef/index.html#//apple_ref/occ/instp/EKRecurrenceRule/recurrenceEnd">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setRecurrenceEnd:")
     public native void setRecurrenceEnd(EKRecurrenceEnd value);
 
-    /**
-     * weeksOfTheYear</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/EventKit/Reference/EKRecurrenceRuleClassRef/index.html#//apple_ref/occ/instp/EKRecurrenceRule/weeksOfTheYear">iOS Dev Center</a>
-     */
     @Generated
     @Selector("weeksOfTheYear")
     public native NSArray<? extends NSNumber> weeksOfTheYear();

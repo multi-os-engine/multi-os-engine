@@ -158,10 +158,6 @@ public class MKRouteStep extends NSObject {
     @NInt
     public static native long version_static();
 
-    /**
-     * distance</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKRouteStep_class/index.html#//apple_ref/occ/instp/MKRouteStep/distance">iOS Dev Center</a>
-     */
     @Generated
     @Selector("distance")
     public native double distance();
@@ -170,34 +166,18 @@ public class MKRouteStep extends NSObject {
     @Selector("init")
     public native MKRouteStep init();
 
-    /**
-     * instructions</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKRouteStep_class/index.html#//apple_ref/occ/instp/MKRouteStep/instructions">iOS Dev Center</a>
-     */
     @Generated
     @Selector("instructions")
     public native String instructions();
 
-    /**
-     * notice</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKRouteStep_class/index.html#//apple_ref/occ/instp/MKRouteStep/notice">iOS Dev Center</a>
-     */
     @Generated
     @Selector("notice")
     public native String notice();
 
-    /**
-     * polyline</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKRouteStep_class/index.html#//apple_ref/occ/instp/MKRouteStep/polyline">iOS Dev Center</a>
-     */
     @Generated
     @Selector("polyline")
     public native MKPolyline polyline();
 
-    /**
-     * transportType</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKRouteStep_class/index.html#//apple_ref/occ/instp/MKRouteStep/transportType">iOS Dev Center</a>
-     */
     @Generated
     @Selector("transportType")
     @NUInt

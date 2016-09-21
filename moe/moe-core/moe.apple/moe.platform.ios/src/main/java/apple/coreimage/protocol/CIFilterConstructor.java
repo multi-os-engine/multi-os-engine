@@ -29,10 +29,6 @@ import org.moe.natj.objc.ann.Selector;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("CIFilterConstructor")
 public interface CIFilterConstructor {
-    /**
-     * filterWithName:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/QuartzCore/Reference/CIFilterConstructor_Protocol/index.html#//apple_ref/occ/intfm/CIFilterConstructor/filterWithName:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("filterWithName:")
     CIFilter filterWithName(String name);

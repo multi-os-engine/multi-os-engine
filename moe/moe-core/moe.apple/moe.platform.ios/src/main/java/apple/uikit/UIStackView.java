@@ -347,44 +347,24 @@ public class UIStackView extends UIView {
     @NInt
     public static native long version_static();
 
-    /**
-     * addArrangedSubview:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIStackView_Class_Reference/index.html#//apple_ref/occ/instm/UIStackView/addArrangedSubview:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("addArrangedSubview:")
     public native void addArrangedSubview(UIView view);
 
-    /**
-     * alignment</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIStackView_Class_Reference/index.html#//apple_ref/occ/instp/UIStackView/alignment">iOS Dev Center</a>
-     */
     @Generated
     @Selector("alignment")
     @NInt
     public native long alignment();
 
-    /**
-     * arrangedSubviews</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIStackView_Class_Reference/index.html#//apple_ref/occ/instp/UIStackView/arrangedSubviews">iOS Dev Center</a>
-     */
     @Generated
     @Selector("arrangedSubviews")
     public native NSArray<? extends UIView> arrangedSubviews();
 
-    /**
-     * axis</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIStackView_Class_Reference/index.html#//apple_ref/occ/instp/UIStackView/axis">iOS Dev Center</a>
-     */
     @Generated
     @Selector("axis")
     @NInt
     public native long axis();
 
-    /**
-     * distribution</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIStackView_Class_Reference/index.html#//apple_ref/occ/instp/UIStackView/distribution">iOS Dev Center</a>
-     */
     @Generated
     @Selector("distribution")
     @NInt
@@ -394,10 +374,6 @@ public class UIStackView extends UIView {
     @Selector("init")
     public native UIStackView init();
 
-    /**
-     * initWithArrangedSubviews:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIStackView_Class_Reference/index.html#//apple_ref/occ/instm/UIStackView/initWithArrangedSubviews:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithArrangedSubviews:")
     public native UIStackView initWithArrangedSubviews(NSArray<? extends UIView> views);
@@ -410,90 +386,46 @@ public class UIStackView extends UIView {
     @Selector("initWithFrame:")
     public native UIStackView initWithFrame(@ByValue CGRect frame);
 
-    /**
-     * insertArrangedSubview:atIndex:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIStackView_Class_Reference/index.html#//apple_ref/occ/instm/UIStackView/insertArrangedSubview:atIndex:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("insertArrangedSubview:atIndex:")
     public native void insertArrangedSubviewAtIndex(UIView view, @NUInt long stackIndex);
 
-    /**
-     * baselineRelativeArrangement</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIStackView_Class_Reference/index.html#//apple_ref/occ/instp/UIStackView/baselineRelativeArrangement">iOS Dev Center</a>
-     */
     @Generated
     @Selector("isBaselineRelativeArrangement")
     public native boolean isBaselineRelativeArrangement();
 
-    /**
-     * baselineRelativeArrangement</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIStackView_Class_Reference/index.html#//apple_ref/occ/instp/UIStackView/baselineRelativeArrangement">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setBaselineRelativeArrangement:")
     public native void setBaselineRelativeArrangement(boolean value);
 
-    /**
-     * layoutMarginsRelativeArrangement</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIStackView_Class_Reference/index.html#//apple_ref/occ/instp/UIStackView/layoutMarginsRelativeArrangement">iOS Dev Center</a>
-     */
     @Generated
     @Selector("isLayoutMarginsRelativeArrangement")
     public native boolean isLayoutMarginsRelativeArrangement();
 
-    /**
-     * layoutMarginsRelativeArrangement</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIStackView_Class_Reference/index.html#//apple_ref/occ/instp/UIStackView/layoutMarginsRelativeArrangement">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setLayoutMarginsRelativeArrangement:")
     public native void setLayoutMarginsRelativeArrangement(boolean value);
 
-    /**
-     * removeArrangedSubview:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIStackView_Class_Reference/index.html#//apple_ref/occ/instm/UIStackView/removeArrangedSubview:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("removeArrangedSubview:")
     public native void removeArrangedSubview(UIView view);
 
-    /**
-     * alignment</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIStackView_Class_Reference/index.html#//apple_ref/occ/instp/UIStackView/alignment">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setAlignment:")
     public native void setAlignment(@NInt long value);
 
-    /**
-     * axis</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIStackView_Class_Reference/index.html#//apple_ref/occ/instp/UIStackView/axis">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setAxis:")
     public native void setAxis(@NInt long value);
 
-    /**
-     * distribution</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIStackView_Class_Reference/index.html#//apple_ref/occ/instp/UIStackView/distribution">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setDistribution:")
     public native void setDistribution(@NInt long value);
 
-    /**
-     * spacing</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIStackView_Class_Reference/index.html#//apple_ref/occ/instp/UIStackView/spacing">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setSpacing:")
     public native void setSpacing(@NFloat double value);
 
-    /**
-     * spacing</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIStackView_Class_Reference/index.html#//apple_ref/occ/instp/UIStackView/spacing">iOS Dev Center</a>
-     */
     @Generated
     @Selector("spacing")
     @NFloat

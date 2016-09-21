@@ -59,18 +59,10 @@ public class NSURLRequest extends NSObject implements NSSecureCoding, NSCopying,
     @Selector("alloc")
     public static native NSURLRequest alloc();
 
-    /**
-     * requestWithURL:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSURLRequest_Class/index.html#//apple_ref/occ/clm/NSURLRequest/requestWithURL:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("requestWithURL:")
     public static native NSURLRequest requestWithURL(NSURL URL);
 
-    /**
-     * requestWithURL:cachePolicy:timeoutInterval:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSURLRequest_Class/index.html#//apple_ref/occ/clm/NSURLRequest/requestWithURL:cachePolicy:timeoutInterval:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("requestWithURL:cachePolicy:timeoutInterval:")
     public static native NSURLRequest requestWithURLCachePolicyTimeoutInterval(NSURL URL, @NUInt long cachePolicy,
@@ -180,74 +172,38 @@ public class NSURLRequest extends NSObject implements NSSecureCoding, NSCopying,
     @NInt
     public static native long version_static();
 
-    /**
-     * HTTPBody</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSURLRequest_Class/index.html#//apple_ref/occ/instp/NSURLRequest/HTTPBody">iOS Dev Center</a>
-     */
     @Generated
     @Selector("HTTPBody")
     public native NSData HTTPBody();
 
-    /**
-     * HTTPBodyStream</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSURLRequest_Class/index.html#//apple_ref/occ/instp/NSURLRequest/HTTPBodyStream">iOS Dev Center</a>
-     */
     @Generated
     @Selector("HTTPBodyStream")
     public native NSInputStream HTTPBodyStream();
 
-    /**
-     * HTTPMethod</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSURLRequest_Class/index.html#//apple_ref/occ/instp/NSURLRequest/HTTPMethod">iOS Dev Center</a>
-     */
     @Generated
     @Selector("HTTPMethod")
     public native String HTTPMethod();
 
-    /**
-     * HTTPShouldHandleCookies</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSURLRequest_Class/index.html#//apple_ref/occ/instp/NSURLRequest/HTTPShouldHandleCookies">iOS Dev Center</a>
-     */
     @Generated
     @Selector("HTTPShouldHandleCookies")
     public native boolean HTTPShouldHandleCookies();
 
-    /**
-     * HTTPShouldUsePipelining</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSURLRequest_Class/index.html#//apple_ref/occ/instp/NSURLRequest/HTTPShouldUsePipelining">iOS Dev Center</a>
-     */
     @Generated
     @Selector("HTTPShouldUsePipelining")
     public native boolean HTTPShouldUsePipelining();
 
-    /**
-     * URL</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSURLRequest_Class/index.html#//apple_ref/occ/instp/NSURLRequest/URL">iOS Dev Center</a>
-     */
     @Generated
     @Selector("URL")
     public native NSURL URL();
 
-    /**
-     * allHTTPHeaderFields</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSURLRequest_Class/index.html#//apple_ref/occ/instp/NSURLRequest/allHTTPHeaderFields">iOS Dev Center</a>
-     */
     @Generated
     @Selector("allHTTPHeaderFields")
     public native NSDictionary<String, String> allHTTPHeaderFields();
 
-    /**
-     * allowsCellularAccess</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSURLRequest_Class/index.html#//apple_ref/occ/instp/NSURLRequest/allowsCellularAccess">iOS Dev Center</a>
-     */
     @Generated
     @Selector("allowsCellularAccess")
     public native boolean allowsCellularAccess();
 
-    /**
-     * cachePolicy</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSURLRequest_Class/index.html#//apple_ref/occ/instp/NSURLRequest/cachePolicy">iOS Dev Center</a>
-     */
     @Generated
     @Selector("cachePolicy")
     @NUInt
@@ -271,27 +227,15 @@ public class NSURLRequest extends NSObject implements NSSecureCoding, NSCopying,
     @Selector("initWithCoder:")
     public native NSURLRequest initWithCoder(NSCoder aDecoder);
 
-    /**
-     * initWithURL:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSURLRequest_Class/index.html#//apple_ref/occ/instm/NSURLRequest/initWithURL:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithURL:")
     public native NSURLRequest initWithURL(NSURL URL);
 
-    /**
-     * initWithURL:cachePolicy:timeoutInterval:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSURLRequest_Class/index.html#//apple_ref/occ/instm/NSURLRequest/initWithURL:cachePolicy:timeoutInterval:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithURL:cachePolicy:timeoutInterval:")
     public native NSURLRequest initWithURLCachePolicyTimeoutInterval(NSURL URL, @NUInt long cachePolicy,
             double timeoutInterval);
 
-    /**
-     * mainDocumentURL</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSURLRequest_Class/index.html#//apple_ref/occ/instp/NSURLRequest/mainDocumentURL">iOS Dev Center</a>
-     */
     @Generated
     @Selector("mainDocumentURL")
     public native NSURL mainDocumentURL();
@@ -301,10 +245,6 @@ public class NSURLRequest extends NSObject implements NSSecureCoding, NSCopying,
     @MappedReturn(ObjCObjectMapper.class)
     public native Object mutableCopyWithZone(VoidPtr zone);
 
-    /**
-     * networkServiceType</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSURLRequest_Class/index.html#//apple_ref/occ/instp/NSURLRequest/networkServiceType">iOS Dev Center</a>
-     */
     @Generated
     @Selector("networkServiceType")
     @NUInt
@@ -316,18 +256,10 @@ public class NSURLRequest extends NSObject implements NSSecureCoding, NSCopying,
         return supportsSecureCoding();
     }
 
-    /**
-     * timeoutInterval</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSURLRequest_Class/index.html#//apple_ref/occ/instp/NSURLRequest/timeoutInterval">iOS Dev Center</a>
-     */
     @Generated
     @Selector("timeoutInterval")
     public native double timeoutInterval();
 
-    /**
-     * valueForHTTPHeaderField:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSURLRequest_Class/index.html#//apple_ref/occ/instm/NSURLRequest/valueForHTTPHeaderField:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("valueForHTTPHeaderField:")
     public native String valueForHTTPHeaderField(String field);

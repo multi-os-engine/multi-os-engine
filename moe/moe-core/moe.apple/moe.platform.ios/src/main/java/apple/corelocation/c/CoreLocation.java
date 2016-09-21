@@ -40,18 +40,10 @@ public final class CoreLocation {
     private CoreLocation() {
     }
 
-    /**
-     * CLLocationCoordinate2DIsValid</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreLocation/Reference/CoreLocationFunctions/index.html#//apple_ref/c/func/CLLocationCoordinate2DIsValid">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native boolean CLLocationCoordinate2DIsValid(@ByValue CLLocationCoordinate2D coord);
 
-    /**
-     * CLLocationCoordinate2DMake</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreLocation/Reference/CoreLocationFunctions/index.html#//apple_ref/c/func/CLLocationCoordinate2DMake">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @ByValue

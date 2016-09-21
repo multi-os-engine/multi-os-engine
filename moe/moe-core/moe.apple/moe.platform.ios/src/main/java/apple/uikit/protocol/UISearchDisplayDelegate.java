@@ -32,10 +32,6 @@ import org.moe.natj.objc.ann.Selector;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("UISearchDisplayDelegate")
 public interface UISearchDisplayDelegate {
-    /**
-     * searchDisplayController:didHideSearchResultsTableView:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISearchDisplayDelegate_Protocol/index.html#//apple_ref/occ/intfm/UISearchDisplayDelegate/searchDisplayController:didHideSearchResultsTableView:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Deprecated
@@ -45,10 +41,6 @@ public interface UISearchDisplayDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * searchDisplayController:didLoadSearchResultsTableView:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISearchDisplayDelegate_Protocol/index.html#//apple_ref/occ/intfm/UISearchDisplayDelegate/searchDisplayController:didLoadSearchResultsTableView:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Deprecated
@@ -58,10 +50,6 @@ public interface UISearchDisplayDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * searchDisplayController:didShowSearchResultsTableView:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISearchDisplayDelegate_Protocol/index.html#//apple_ref/occ/intfm/UISearchDisplayDelegate/searchDisplayController:didShowSearchResultsTableView:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Deprecated
@@ -71,10 +59,6 @@ public interface UISearchDisplayDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * searchDisplayController:shouldReloadTableForSearchScope:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISearchDisplayDelegate_Protocol/index.html#//apple_ref/occ/intfm/UISearchDisplayDelegate/searchDisplayController:shouldReloadTableForSearchScope:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Deprecated
@@ -84,10 +68,6 @@ public interface UISearchDisplayDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * searchDisplayController:shouldReloadTableForSearchString:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISearchDisplayDelegate_Protocol/index.html#//apple_ref/occ/intfm/UISearchDisplayDelegate/searchDisplayController:shouldReloadTableForSearchString:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Deprecated
@@ -97,10 +77,6 @@ public interface UISearchDisplayDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * searchDisplayController:willHideSearchResultsTableView:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISearchDisplayDelegate_Protocol/index.html#//apple_ref/occ/intfm/UISearchDisplayDelegate/searchDisplayController:willHideSearchResultsTableView:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Deprecated
@@ -110,10 +86,6 @@ public interface UISearchDisplayDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * searchDisplayController:willShowSearchResultsTableView:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISearchDisplayDelegate_Protocol/index.html#//apple_ref/occ/intfm/UISearchDisplayDelegate/searchDisplayController:willShowSearchResultsTableView:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Deprecated
@@ -123,10 +95,6 @@ public interface UISearchDisplayDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * searchDisplayController:willUnloadSearchResultsTableView:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISearchDisplayDelegate_Protocol/index.html#//apple_ref/occ/intfm/UISearchDisplayDelegate/searchDisplayController:willUnloadSearchResultsTableView:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Deprecated
@@ -136,10 +104,6 @@ public interface UISearchDisplayDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * searchDisplayControllerDidBeginSearch:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISearchDisplayDelegate_Protocol/index.html#//apple_ref/occ/intfm/UISearchDisplayDelegate/searchDisplayControllerDidBeginSearch:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Deprecated
@@ -148,10 +112,6 @@ public interface UISearchDisplayDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * searchDisplayControllerDidEndSearch:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISearchDisplayDelegate_Protocol/index.html#//apple_ref/occ/intfm/UISearchDisplayDelegate/searchDisplayControllerDidEndSearch:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Deprecated
@@ -160,10 +120,6 @@ public interface UISearchDisplayDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * searchDisplayControllerWillBeginSearch:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISearchDisplayDelegate_Protocol/index.html#//apple_ref/occ/intfm/UISearchDisplayDelegate/searchDisplayControllerWillBeginSearch:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Deprecated
@@ -172,10 +128,6 @@ public interface UISearchDisplayDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * searchDisplayControllerWillEndSearch:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISearchDisplayDelegate_Protocol/index.html#//apple_ref/occ/intfm/UISearchDisplayDelegate/searchDisplayControllerWillEndSearch:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Deprecated

@@ -60,36 +60,20 @@ public class NSURL extends NSObject implements NSSecureCoding, NSCopying, QLPrev
         super(peer);
     }
 
-    /**
-     * URLByResolvingAliasFileAtURL:options:error:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSURL_Class/index.html#//apple_ref/occ/clm/NSURL/URLByResolvingAliasFileAtURL:options:error:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("URLByResolvingAliasFileAtURL:options:error:")
     public static native NSURL URLByResolvingAliasFileAtURLOptionsError(NSURL url, @NUInt long options,
             Ptr<NSError> error);
 
-    /**
-     * URLByResolvingBookmarkData:options:relativeToURL:bookmarkDataIsStale:error:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSURL_Class/index.html#//apple_ref/occ/clm/NSURL/URLByResolvingBookmarkData:options:relativeToURL:bookmarkDataIsStale:error:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("URLByResolvingBookmarkData:options:relativeToURL:bookmarkDataIsStale:error:")
     public static native NSURL URLByResolvingBookmarkDataOptionsRelativeToURLBookmarkDataIsStaleError(
             NSData bookmarkData, @NUInt long options, NSURL relativeURL, BoolPtr isStale, Ptr<NSError> error);
 
-    /**
-     * URLWithString:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSURL_Class/index.html#//apple_ref/occ/clm/NSURL/URLWithString:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("URLWithString:")
     public static native NSURL URLWithString(String URLString);
 
-    /**
-     * URLWithString:relativeToURL:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSURL_Class/index.html#//apple_ref/occ/clm/NSURL/URLWithString:relativeToURL:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("URLWithString:relativeToURL:")
     public static native NSURL URLWithStringRelativeToURL(String URLString, NSURL baseURL);
@@ -99,51 +83,27 @@ public class NSURL extends NSObject implements NSSecureCoding, NSCopying, QLPrev
     @Selector("alloc")
     public static native NSURL alloc();
 
-    /**
-     * bookmarkDataWithContentsOfURL:error:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSURL_Class/index.html#//apple_ref/occ/clm/NSURL/bookmarkDataWithContentsOfURL:error:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("bookmarkDataWithContentsOfURL:error:")
     public static native NSData bookmarkDataWithContentsOfURLError(NSURL bookmarkFileURL, Ptr<NSError> error);
 
-    /**
-     * fileURLWithFileSystemRepresentation:isDirectory:relativeToURL:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSURL_Class/index.html#//apple_ref/occ/clm/NSURL/fileURLWithFileSystemRepresentation:isDirectory:relativeToURL:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("fileURLWithFileSystemRepresentation:isDirectory:relativeToURL:")
     public static native NSURL fileURLWithFileSystemRepresentationIsDirectoryRelativeToURL(
             @Mapped(CStringMapper.class) String path, boolean isDir, NSURL baseURL);
 
-    /**
-     * fileURLWithPath:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSURL_Class/index.html#//apple_ref/occ/clm/NSURL/fileURLWithPath:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("fileURLWithPath:")
     public static native NSURL fileURLWithPath(String path);
 
-    /**
-     * fileURLWithPath:isDirectory:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSURL_Class/index.html#//apple_ref/occ/clm/NSURL/fileURLWithPath:isDirectory:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("fileURLWithPath:isDirectory:")
     public static native NSURL fileURLWithPathIsDirectory(String path, boolean isDir);
 
-    /**
-     * fileURLWithPathComponents:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSURL_Class/index.html#//apple_ref/occ/clm/NSURL/fileURLWithPathComponents:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("fileURLWithPathComponents:")
     public static native NSURL fileURLWithPathComponents(NSArray<String> components);
 
-    /**
-     * resourceValuesForKeys:fromBookmarkData:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSURL_Class/index.html#//apple_ref/occ/clm/NSURL/resourceValuesForKeys:fromBookmarkData:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("resourceValuesForKeys:fromBookmarkData:")
     public static native NSDictionary<String, ?> resourceValuesForKeysFromBookmarkData(NSArray<String> keys,
@@ -153,10 +113,6 @@ public class NSURL extends NSObject implements NSSecureCoding, NSCopying, QLPrev
     @Selector("supportsSecureCoding")
     public static native boolean supportsSecureCoding();
 
-    /**
-     * writeBookmarkData:toURL:options:error:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSURL_Class/index.html#//apple_ref/occ/clm/NSURL/writeBookmarkData:toURL:options:error:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("writeBookmarkData:toURL:options:error:")
     public static native boolean writeBookmarkDataToURLOptionsError(NSData bookmarkData, NSURL bookmarkFileURL,
@@ -278,107 +234,55 @@ public class NSURL extends NSObject implements NSSecureCoding, NSCopying, QLPrev
     @NInt
     public static native long version_static();
 
-    /**
-     * URLByAppendingPathComponent:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSURL_Class/index.html#//apple_ref/occ/instm/NSURL/URLByAppendingPathComponent:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("URLByAppendingPathComponent:")
     public native NSURL URLByAppendingPathComponent(String pathComponent);
 
-    /**
-     * URLByAppendingPathComponent:isDirectory:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSURL_Class/index.html#//apple_ref/occ/instm/NSURL/URLByAppendingPathComponent:isDirectory:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("URLByAppendingPathComponent:isDirectory:")
     public native NSURL URLByAppendingPathComponentIsDirectory(String pathComponent, boolean isDirectory);
 
-    /**
-     * URLByAppendingPathExtension:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSURL_Class/index.html#//apple_ref/occ/instm/NSURL/URLByAppendingPathExtension:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("URLByAppendingPathExtension:")
     public native NSURL URLByAppendingPathExtension(String pathExtension);
 
-    /**
-     * URLByDeletingLastPathComponent</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSURL_Class/index.html#//apple_ref/occ/instp/NSURL/URLByDeletingLastPathComponent">iOS Dev Center</a>
-     */
     @Generated
     @Selector("URLByDeletingLastPathComponent")
     public native NSURL URLByDeletingLastPathComponent();
 
-    /**
-     * URLByDeletingPathExtension</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSURL_Class/index.html#//apple_ref/occ/instp/NSURL/URLByDeletingPathExtension">iOS Dev Center</a>
-     */
     @Generated
     @Selector("URLByDeletingPathExtension")
     public native NSURL URLByDeletingPathExtension();
 
-    /**
-     * URLByResolvingSymlinksInPath</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSURL_Class/index.html#//apple_ref/occ/instp/NSURL/URLByResolvingSymlinksInPath">iOS Dev Center</a>
-     */
     @Generated
     @Selector("URLByResolvingSymlinksInPath")
     public native NSURL URLByResolvingSymlinksInPath();
 
-    /**
-     * URLByStandardizingPath</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSURL_Class/index.html#//apple_ref/occ/instp/NSURL/URLByStandardizingPath">iOS Dev Center</a>
-     */
     @Generated
     @Selector("URLByStandardizingPath")
     public native NSURL URLByStandardizingPath();
 
-    /**
-     * absoluteString</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSURL_Class/index.html#//apple_ref/occ/instp/NSURL/absoluteString">iOS Dev Center</a>
-     */
     @Generated
     @Selector("absoluteString")
     public native String absoluteString();
 
-    /**
-     * absoluteURL</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSURL_Class/index.html#//apple_ref/occ/instp/NSURL/absoluteURL">iOS Dev Center</a>
-     */
     @Generated
     @Selector("absoluteURL")
     public native NSURL absoluteURL();
 
-    /**
-     * baseURL</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSURL_Class/index.html#//apple_ref/occ/instp/NSURL/baseURL">iOS Dev Center</a>
-     */
     @Generated
     @Selector("baseURL")
     public native NSURL baseURL();
 
-    /**
-     * bookmarkDataWithOptions:includingResourceValuesForKeys:relativeToURL:error:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSURL_Class/index.html#//apple_ref/occ/instm/NSURL/bookmarkDataWithOptions:includingResourceValuesForKeys:relativeToURL:error:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("bookmarkDataWithOptions:includingResourceValuesForKeys:relativeToURL:error:")
     public native NSData bookmarkDataWithOptionsIncludingResourceValuesForKeysRelativeToURLError(@NUInt long options,
             NSArray<String> keys, NSURL relativeURL, Ptr<NSError> error);
 
-    /**
-     * checkPromisedItemIsReachableAndReturnError:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSURL_Class/index.html#//apple_ref/occ/instm/NSURL/checkPromisedItemIsReachableAndReturnError:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("checkPromisedItemIsReachableAndReturnError:")
     public native boolean checkPromisedItemIsReachableAndReturnError(Ptr<NSError> error);
 
-    /**
-     * checkResourceIsReachableAndReturnError:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSURL_Class/index.html#//apple_ref/occ/instm/NSURL/checkResourceIsReachableAndReturnError:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("checkResourceIsReachableAndReturnError:")
     public native boolean checkResourceIsReachableAndReturnError(Ptr<NSError> error);
@@ -393,68 +297,36 @@ public class NSURL extends NSObject implements NSSecureCoding, NSCopying, QLPrev
     @Selector("encodeWithCoder:")
     public native void encodeWithCoder(NSCoder aCoder);
 
-    /**
-     * filePathURL</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSURL_Class/index.html#//apple_ref/occ/instp/NSURL/filePathURL">iOS Dev Center</a>
-     */
     @Generated
     @Selector("filePathURL")
     public native NSURL filePathURL();
 
-    /**
-     * fileReferenceURL</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSURL_Class/index.html#//apple_ref/occ/instm/NSURL/fileReferenceURL">iOS Dev Center</a>
-     */
     @Generated
     @Selector("fileReferenceURL")
     public native NSURL fileReferenceURL();
 
-    /**
-     * fileSystemRepresentation</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSURL_Class/index.html#//apple_ref/occ/instp/NSURL/fileSystemRepresentation">iOS Dev Center</a>
-     */
     @Generated
     @Selector("fileSystemRepresentation")
     @MappedReturn(CStringMapper.class)
     public native String fileSystemRepresentation();
 
-    /**
-     * fragment</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSURL_Class/index.html#//apple_ref/occ/instp/NSURL/fragment">iOS Dev Center</a>
-     */
     @Generated
     @Selector("fragment")
     public native String fragment();
 
-    /**
-     * getFileSystemRepresentation:maxLength:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSURL_Class/index.html#//apple_ref/occ/instm/NSURL/getFileSystemRepresentation:maxLength:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("getFileSystemRepresentation:maxLength:")
     public native boolean getFileSystemRepresentationMaxLength(BytePtr buffer, @NUInt long maxBufferLength);
 
-    /**
-     * getPromisedItemResourceValue:forKey:error:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSURL_Class/index.html#//apple_ref/occ/instm/NSURL/getPromisedItemResourceValue:forKey:error:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("getPromisedItemResourceValue:forKey:error:")
     public native boolean getPromisedItemResourceValueForKeyError(Ptr<ObjCObject> value, String key,
             Ptr<NSError> error);
 
-    /**
-     * getResourceValue:forKey:error:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSURL_Class/index.html#//apple_ref/occ/instm/NSURL/getResourceValue:forKey:error:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("getResourceValue:forKey:error:")
     public native boolean getResourceValueForKeyError(Ptr<ObjCObject> value, String key, Ptr<NSError> error);
 
-    /**
-     * host</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSURL_Class/index.html#//apple_ref/occ/instp/NSURL/host">iOS Dev Center</a>
-     */
     @Generated
     @Selector("host")
     public native String host();
@@ -463,36 +335,20 @@ public class NSURL extends NSObject implements NSSecureCoding, NSCopying, QLPrev
     @Selector("init")
     public native NSURL init();
 
-    /**
-     * initByResolvingBookmarkData:options:relativeToURL:bookmarkDataIsStale:error:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSURL_Class/index.html#//apple_ref/occ/instm/NSURL/initByResolvingBookmarkData:options:relativeToURL:bookmarkDataIsStale:error:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initByResolvingBookmarkData:options:relativeToURL:bookmarkDataIsStale:error:")
     public native NSURL initByResolvingBookmarkDataOptionsRelativeToURLBookmarkDataIsStaleError(NSData bookmarkData,
             @NUInt long options, NSURL relativeURL, BoolPtr isStale, Ptr<NSError> error);
 
-    /**
-     * initFileURLWithFileSystemRepresentation:isDirectory:relativeToURL:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSURL_Class/index.html#//apple_ref/occ/instm/NSURL/initFileURLWithFileSystemRepresentation:isDirectory:relativeToURL:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initFileURLWithFileSystemRepresentation:isDirectory:relativeToURL:")
     public native NSURL initFileURLWithFileSystemRepresentationIsDirectoryRelativeToURL(
             @Mapped(CStringMapper.class) String path, boolean isDir, NSURL baseURL);
 
-    /**
-     * initFileURLWithPath:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSURL_Class/index.html#//apple_ref/occ/instm/NSURL/initFileURLWithPath:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initFileURLWithPath:")
     public native NSURL initFileURLWithPath(String path);
 
-    /**
-     * initFileURLWithPath:isDirectory:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSURL_Class/index.html#//apple_ref/occ/instm/NSURL/initFileURLWithPath:isDirectory:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initFileURLWithPath:isDirectory:")
     public native NSURL initFileURLWithPathIsDirectory(String path, boolean isDir);
@@ -501,99 +357,51 @@ public class NSURL extends NSObject implements NSSecureCoding, NSCopying, QLPrev
     @Selector("initWithCoder:")
     public native NSURL initWithCoder(NSCoder aDecoder);
 
-    /**
-     * initWithScheme:host:path:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSURL_Class/index.html#//apple_ref/occ/instm/NSURL/initWithScheme:host:path:">iOS Dev Center</a>
-     */
     @Deprecated
     @Generated
     @Selector("initWithScheme:host:path:")
     public native NSURL initWithSchemeHostPath(String scheme, String host, String path);
 
-    /**
-     * initWithString:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSURL_Class/index.html#//apple_ref/occ/instm/NSURL/initWithString:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithString:")
     public native NSURL initWithString(String URLString);
 
-    /**
-     * initWithString:relativeToURL:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSURL_Class/index.html#//apple_ref/occ/instm/NSURL/initWithString:relativeToURL:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithString:relativeToURL:")
     public native NSURL initWithStringRelativeToURL(String URLString, NSURL baseURL);
 
-    /**
-     * isFileReferenceURL</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSURL_Class/index.html#//apple_ref/occ/instm/NSURL/isFileReferenceURL">iOS Dev Center</a>
-     */
     @Generated
     @Selector("isFileReferenceURL")
     public native boolean isFileReferenceURL();
 
-    /**
-     * fileURL</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSURL_Class/index.html#//apple_ref/occ/instp/NSURL/fileURL">iOS Dev Center</a>
-     */
     @Generated
     @Selector("isFileURL")
     public native boolean isFileURL();
 
-    /**
-     * lastPathComponent</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSURL_Class/index.html#//apple_ref/occ/instp/NSURL/lastPathComponent">iOS Dev Center</a>
-     */
     @Generated
     @Selector("lastPathComponent")
     public native String lastPathComponent();
 
-    /**
-     * parameterString</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSURL_Class/index.html#//apple_ref/occ/instp/NSURL/parameterString">iOS Dev Center</a>
-     */
     @Generated
     @Selector("parameterString")
     public native String parameterString();
 
-    /**
-     * password</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSURL_Class/index.html#//apple_ref/occ/instp/NSURL/password">iOS Dev Center</a>
-     */
     @Generated
     @Selector("password")
     public native String password();
 
-    /**
-     * path</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSURL_Class/index.html#//apple_ref/occ/instp/NSURL/path">iOS Dev Center</a>
-     */
     @Generated
     @Selector("path")
     public native String path();
 
-    /**
-     * pathComponents</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSURL_Class/index.html#//apple_ref/occ/instp/NSURL/pathComponents">iOS Dev Center</a>
-     */
     @Generated
     @Selector("pathComponents")
     public native NSArray<String> pathComponents();
 
-    /**
-     * pathExtension</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSURL_Class/index.html#//apple_ref/occ/instp/NSURL/pathExtension">iOS Dev Center</a>
-     */
     @Generated
     @Selector("pathExtension")
     public native String pathExtension();
 
-    /**
-     * port</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSURL_Class/index.html#//apple_ref/occ/instp/NSURL/port">iOS Dev Center</a>
-     */
     @Generated
     @Selector("port")
     public native NSNumber port();
@@ -607,124 +415,64 @@ public class NSURL extends NSObject implements NSSecureCoding, NSCopying, QLPrev
     @Selector("previewItemURL")
     public native NSURL previewItemURL();
 
-    /**
-     * promisedItemResourceValuesForKeys:error:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSURL_Class/index.html#//apple_ref/occ/instm/NSURL/promisedItemResourceValuesForKeys:error:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("promisedItemResourceValuesForKeys:error:")
     public native NSDictionary<String, ?> promisedItemResourceValuesForKeysError(NSArray<String> keys,
             Ptr<NSError> error);
 
-    /**
-     * query</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSURL_Class/index.html#//apple_ref/occ/instp/NSURL/query">iOS Dev Center</a>
-     */
     @Generated
     @Selector("query")
     public native String query();
 
-    /**
-     * relativePath</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSURL_Class/index.html#//apple_ref/occ/instp/NSURL/relativePath">iOS Dev Center</a>
-     */
     @Generated
     @Selector("relativePath")
     public native String relativePath();
 
-    /**
-     * relativeString</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSURL_Class/index.html#//apple_ref/occ/instp/NSURL/relativeString">iOS Dev Center</a>
-     */
     @Generated
     @Selector("relativeString")
     public native String relativeString();
 
-    /**
-     * removeAllCachedResourceValues</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSURL_Class/index.html#//apple_ref/occ/instm/NSURL/removeAllCachedResourceValues">iOS Dev Center</a>
-     */
     @Generated
     @Selector("removeAllCachedResourceValues")
     public native void removeAllCachedResourceValues();
 
-    /**
-     * removeCachedResourceValueForKey:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSURL_Class/index.html#//apple_ref/occ/instm/NSURL/removeCachedResourceValueForKey:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("removeCachedResourceValueForKey:")
     public native void removeCachedResourceValueForKey(String key);
 
-    /**
-     * resourceSpecifier</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSURL_Class/index.html#//apple_ref/occ/instp/NSURL/resourceSpecifier">iOS Dev Center</a>
-     */
     @Generated
     @Selector("resourceSpecifier")
     public native String resourceSpecifier();
 
-    /**
-     * resourceValuesForKeys:error:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSURL_Class/index.html#//apple_ref/occ/instm/NSURL/resourceValuesForKeys:error:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("resourceValuesForKeys:error:")
     public native NSDictionary<String, ?> resourceValuesForKeysError(NSArray<String> keys, Ptr<NSError> error);
 
-    /**
-     * scheme</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSURL_Class/index.html#//apple_ref/occ/instp/NSURL/scheme">iOS Dev Center</a>
-     */
     @Generated
     @Selector("scheme")
     public native String scheme();
 
-    /**
-     * setResourceValue:forKey:error:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSURL_Class/index.html#//apple_ref/occ/instm/NSURL/setResourceValue:forKey:error:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setResourceValue:forKey:error:")
     public native boolean setResourceValueForKeyError(@Mapped(ObjCObjectMapper.class) Object value, String key,
             Ptr<NSError> error);
 
-    /**
-     * setResourceValues:error:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSURL_Class/index.html#//apple_ref/occ/instm/NSURL/setResourceValues:error:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setResourceValues:error:")
     public native boolean setResourceValuesError(NSDictionary<String, ?> keyedValues, Ptr<NSError> error);
 
-    /**
-     * setTemporaryResourceValue:forKey:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSURL_Class/index.html#//apple_ref/occ/instm/NSURL/setTemporaryResourceValue:forKey:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setTemporaryResourceValue:forKey:")
     public native void setTemporaryResourceValueForKey(@Mapped(ObjCObjectMapper.class) Object value, String key);
 
-    /**
-     * standardizedURL</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSURL_Class/index.html#//apple_ref/occ/instp/NSURL/standardizedURL">iOS Dev Center</a>
-     */
     @Generated
     @Selector("standardizedURL")
     public native NSURL standardizedURL();
 
-    /**
-     * startAccessingSecurityScopedResource</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSURL_Class/index.html#//apple_ref/occ/instm/NSURL/startAccessingSecurityScopedResource">iOS Dev Center</a>
-     */
     @Generated
     @Selector("startAccessingSecurityScopedResource")
     public native boolean startAccessingSecurityScopedResource();
 
-    /**
-     * stopAccessingSecurityScopedResource</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSURL_Class/index.html#//apple_ref/occ/instm/NSURL/stopAccessingSecurityScopedResource">iOS Dev Center</a>
-     */
     @Generated
     @Selector("stopAccessingSecurityScopedResource")
     public native void stopAccessingSecurityScopedResource();
@@ -735,10 +483,6 @@ public class NSURL extends NSObject implements NSSecureCoding, NSCopying, QLPrev
         return supportsSecureCoding();
     }
 
-    /**
-     * user</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSURL_Class/index.html#//apple_ref/occ/instp/NSURL/user">iOS Dev Center</a>
-     */
     @Generated
     @Selector("user")
     public native String user();

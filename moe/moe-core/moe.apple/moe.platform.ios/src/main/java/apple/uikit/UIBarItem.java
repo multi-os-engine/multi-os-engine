@@ -239,18 +239,10 @@ public class UIBarItem extends NSObject implements NSCoding, UIAppearance, UIAcc
         return appearanceWhenContainedIn(ContainerClass, varargs);
     }
 
-    /**
-     * image</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIBarItem_Class/index.html#//apple_ref/occ/instp/UIBarItem/image">iOS Dev Center</a>
-     */
     @Generated
     @Selector("image")
     public native UIImage image();
 
-    /**
-     * imageInsets</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIBarItem_Class/index.html#//apple_ref/occ/instp/UIBarItem/imageInsets">iOS Dev Center</a>
-     */
     @Generated
     @Selector("imageInsets")
     @ByValue
@@ -260,34 +252,18 @@ public class UIBarItem extends NSObject implements NSCoding, UIAppearance, UIAcc
     @Selector("init")
     public native UIBarItem init();
 
-    /**
-     * enabled</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIBarItem_Class/index.html#//apple_ref/occ/instp/UIBarItem/enabled">iOS Dev Center</a>
-     */
     @Generated
     @Selector("isEnabled")
     public native boolean isEnabled();
 
-    /**
-     * enabled</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIBarItem_Class/index.html#//apple_ref/occ/instp/UIBarItem/enabled">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setEnabled:")
     public native void setEnabled(boolean value);
 
-    /**
-     * landscapeImagePhone</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIBarItem_Class/index.html#//apple_ref/occ/instp/UIBarItem/landscapeImagePhone">iOS Dev Center</a>
-     */
     @Generated
     @Selector("landscapeImagePhone")
     public native UIImage landscapeImagePhone();
 
-    /**
-     * landscapeImagePhoneInsets</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIBarItem_Class/index.html#//apple_ref/occ/instp/UIBarItem/landscapeImagePhoneInsets">iOS Dev Center</a>
-     */
     @Generated
     @Selector("landscapeImagePhoneInsets")
     @ByValue
@@ -297,83 +273,43 @@ public class UIBarItem extends NSObject implements NSCoding, UIAppearance, UIAcc
     @Selector("setAccessibilityIdentifier:")
     public native void setAccessibilityIdentifier(String value);
 
-    /**
-     * image</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIBarItem_Class/index.html#//apple_ref/occ/instp/UIBarItem/image">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setImage:")
     public native void setImage(UIImage value);
 
-    /**
-     * imageInsets</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIBarItem_Class/index.html#//apple_ref/occ/instp/UIBarItem/imageInsets">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setImageInsets:")
     public native void setImageInsets(@ByValue UIEdgeInsets value);
 
-    /**
-     * landscapeImagePhone</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIBarItem_Class/index.html#//apple_ref/occ/instp/UIBarItem/landscapeImagePhone">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setLandscapeImagePhone:")
     public native void setLandscapeImagePhone(UIImage value);
 
-    /**
-     * landscapeImagePhoneInsets</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIBarItem_Class/index.html#//apple_ref/occ/instp/UIBarItem/landscapeImagePhoneInsets">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setLandscapeImagePhoneInsets:")
     public native void setLandscapeImagePhoneInsets(@ByValue UIEdgeInsets value);
 
-    /**
-     * tag</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIBarItem_Class/index.html#//apple_ref/occ/instp/UIBarItem/tag">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setTag:")
     public native void setTag(@NInt long value);
 
-    /**
-     * title</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIBarItem_Class/index.html#//apple_ref/occ/instp/UIBarItem/title">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setTitle:")
     public native void setTitle(String value);
 
-    /**
-     * setTitleTextAttributes:forState:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIBarItem_Class/index.html#//apple_ref/occ/instm/UIBarItem/setTitleTextAttributes:forState:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setTitleTextAttributes:forState:")
     public native void setTitleTextAttributesForState(NSDictionary<String, ?> attributes, @NUInt long state);
 
-    /**
-     * tag</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIBarItem_Class/index.html#//apple_ref/occ/instp/UIBarItem/tag">iOS Dev Center</a>
-     */
     @Generated
     @Selector("tag")
     @NInt
     public native long tag();
 
-    /**
-     * title</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIBarItem_Class/index.html#//apple_ref/occ/instp/UIBarItem/title">iOS Dev Center</a>
-     */
     @Generated
     @Selector("title")
     public native String title();
 
-    /**
-     * titleTextAttributesForState:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIBarItem_Class/index.html#//apple_ref/occ/instm/UIBarItem/titleTextAttributesForState:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("titleTextAttributesForState:")
     public native NSDictionary<String, ?> titleTextAttributesForState(@NUInt long state);

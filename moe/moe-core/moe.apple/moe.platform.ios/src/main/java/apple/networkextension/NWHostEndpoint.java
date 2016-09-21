@@ -58,10 +58,6 @@ public class NWHostEndpoint extends NWEndpoint {
     @Selector("alloc")
     public static native NWHostEndpoint alloc();
 
-    /**
-     * endpointWithHostname:port:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NWHostEndpointClassRef/index.html#//apple_ref/occ/clm/NWHostEndpoint/endpointWithHostname:port:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("endpointWithHostname:port:")
     public static native NWHostEndpoint endpointWithHostnamePort(String hostname, String port);
@@ -166,10 +162,6 @@ public class NWHostEndpoint extends NWEndpoint {
     @NInt
     public static native long version_static();
 
-    /**
-     * hostname</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NWHostEndpointClassRef/index.html#//apple_ref/occ/instp/NWHostEndpoint/hostname">iOS Dev Center</a>
-     */
     @Generated
     @Selector("hostname")
     public native String hostname();
@@ -178,10 +170,6 @@ public class NWHostEndpoint extends NWEndpoint {
     @Selector("init")
     public native NWHostEndpoint init();
 
-    /**
-     * port</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NWHostEndpointClassRef/index.html#//apple_ref/occ/instp/NWHostEndpoint/port">iOS Dev Center</a>
-     */
     @Generated
     @Selector("port")
     public native String port();

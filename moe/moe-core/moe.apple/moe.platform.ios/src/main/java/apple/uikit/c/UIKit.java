@@ -73,38 +73,22 @@ public final class UIKit {
     private UIKit() {
     }
 
-    /**
-     * UIDeviceOrientationIsPortrait</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIKitFunctionReference/index.html#//apple_ref/c/func/UIDeviceOrientationIsPortrait">iOS Dev Center</a>
-     */
     @Generated
     @Inline
     @CFunction
     public static native boolean UIDeviceOrientationIsPortrait(@NInt long orientation);
 
-    /**
-     * UIDeviceOrientationIsLandscape</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIKitFunctionReference/index.html#//apple_ref/c/func/UIDeviceOrientationIsLandscape">iOS Dev Center</a>
-     */
     @Generated
     @Inline
     @CFunction
     public static native boolean UIDeviceOrientationIsLandscape(@NInt long orientation);
 
-    /**
-     * UI_USER_INTERFACE_IDIOM</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIKitFunctionReference/index.html#//apple_ref/c/func/UI_USER_INTERFACE_IDIOM">iOS Dev Center</a>
-     */
     @Generated
     @Inline
     @CFunction
     @NInt
     public static native long UI_USER_INTERFACE_IDIOM();
 
-    /**
-     * UIEdgeInsetsMake</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIKitFunctionReference/index.html#//apple_ref/c/func/UIEdgeInsetsMake">iOS Dev Center</a>
-     */
     @Generated
     @Inline
     @CFunction
@@ -112,166 +96,94 @@ public final class UIKit {
     public static native UIEdgeInsets UIEdgeInsetsMake(@NFloat double top, @NFloat double left, @NFloat double bottom,
             @NFloat double right);
 
-    /**
-     * UIEdgeInsetsInsetRect</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIKitFunctionReference/index.html#//apple_ref/c/func/UIEdgeInsetsInsetRect">iOS Dev Center</a>
-     */
     @Generated
     @Inline
     @CFunction
     @ByValue
     public static native CGRect UIEdgeInsetsInsetRect(@ByValue CGRect rect, @ByValue UIEdgeInsets insets);
 
-    /**
-     * UIOffsetMake</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIKitFunctionReference/index.html#//apple_ref/c/func/UIOffsetMake">iOS Dev Center</a>
-     */
     @Generated
     @Inline
     @CFunction
     @ByValue
     public static native UIOffset UIOffsetMake(@NFloat double horizontal, @NFloat double vertical);
 
-    /**
-     * UIEdgeInsetsEqualToEdgeInsets</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIKitFunctionReference/index.html#//apple_ref/c/func/UIEdgeInsetsEqualToEdgeInsets">iOS Dev Center</a>
-     */
     @Generated
     @Inline
     @CFunction
     public static native boolean UIEdgeInsetsEqualToEdgeInsets(@ByValue UIEdgeInsets insets1,
             @ByValue UIEdgeInsets insets2);
 
-    /**
-     * UIOffsetEqualToOffset</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIKitFunctionReference/index.html#//apple_ref/c/func/UIOffsetEqualToOffset">iOS Dev Center</a>
-     */
     @Generated
     @Inline
     @CFunction
     public static native boolean UIOffsetEqualToOffset(@ByValue UIOffset offset1, @ByValue UIOffset offset2);
 
-    /**
-     * NSStringFromCGPoint</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIKitFunctionReference/index.html#//apple_ref/c/func/NSStringFromCGPoint">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @MappedReturn(ObjCStringMapper.class)
     public static native String NSStringFromCGPoint(@ByValue CGPoint point);
 
-    /**
-     * NSStringFromCGVector</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIKitFunctionReference/index.html#//apple_ref/c/func/NSStringFromCGVector">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @MappedReturn(ObjCStringMapper.class)
     public static native String NSStringFromCGVector(@ByValue CGVector vector);
 
-    /**
-     * NSStringFromCGSize</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIKitFunctionReference/index.html#//apple_ref/c/func/NSStringFromCGSize">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @MappedReturn(ObjCStringMapper.class)
     public static native String NSStringFromCGSize(@ByValue CGSize size);
 
-    /**
-     * NSStringFromCGRect</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIKitFunctionReference/index.html#//apple_ref/c/func/NSStringFromCGRect">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @MappedReturn(ObjCStringMapper.class)
     public static native String NSStringFromCGRect(@ByValue CGRect rect);
 
-    /**
-     * NSStringFromCGAffineTransform</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIKitFunctionReference/index.html#//apple_ref/c/func/NSStringFromCGAffineTransform">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @MappedReturn(ObjCStringMapper.class)
     public static native String NSStringFromCGAffineTransform(@ByValue CGAffineTransform transform);
 
-    /**
-     * NSStringFromUIEdgeInsets</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIKitFunctionReference/index.html#//apple_ref/c/func/NSStringFromUIEdgeInsets">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @MappedReturn(ObjCStringMapper.class)
     public static native String NSStringFromUIEdgeInsets(@ByValue UIEdgeInsets insets);
 
-    /**
-     * NSStringFromUIOffset</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIKitFunctionReference/index.html#//apple_ref/c/func/NSStringFromUIOffset">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @MappedReturn(ObjCStringMapper.class)
     public static native String NSStringFromUIOffset(@ByValue UIOffset offset);
 
-    /**
-     * CGPointFromString</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIKitFunctionReference/index.html#//apple_ref/c/func/CGPointFromString">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @ByValue
     public static native CGPoint CGPointFromString(@Mapped(ObjCStringMapper.class) String string);
 
-    /**
-     * CGVectorFromString</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIKitFunctionReference/index.html#//apple_ref/c/func/CGVectorFromString">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @ByValue
     public static native CGVector CGVectorFromString(@Mapped(ObjCStringMapper.class) String string);
 
-    /**
-     * CGSizeFromString</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIKitFunctionReference/index.html#//apple_ref/c/func/CGSizeFromString">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @ByValue
     public static native CGSize CGSizeFromString(@Mapped(ObjCStringMapper.class) String string);
 
-    /**
-     * CGRectFromString</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIKitFunctionReference/index.html#//apple_ref/c/func/CGRectFromString">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @ByValue
     public static native CGRect CGRectFromString(@Mapped(ObjCStringMapper.class) String string);
 
-    /**
-     * CGAffineTransformFromString</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIKitFunctionReference/index.html#//apple_ref/c/func/CGAffineTransformFromString">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @ByValue
     public static native CGAffineTransform CGAffineTransformFromString(@Mapped(ObjCStringMapper.class) String string);
 
-    /**
-     * UIEdgeInsetsFromString</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIKitFunctionReference/index.html#//apple_ref/c/func/UIEdgeInsetsFromString">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @ByValue
     public static native UIEdgeInsets UIEdgeInsetsFromString(@Mapped(ObjCStringMapper.class) String string);
 
-    /**
-     * UIOffsetFromString</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIKitFunctionReference/index.html#//apple_ref/c/func/UIOffsetFromString">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @ByValue
@@ -284,428 +196,224 @@ public final class UIKit {
             @Mapped(ObjCStringMapper.class) String commaSeparatedKeysString,
             @Mapped(ObjCObjectMapper.class) Object firstValue, Object... varargs);
 
-    /**
-     * NSTextAlignmentToCTTextAlignment</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIKitFunctionReference/index.html#//apple_ref/c/func/NSTextAlignmentToCTTextAlignment">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native byte NSTextAlignmentToCTTextAlignment(@NInt long nsTextAlignment);
 
-    /**
-     * NSTextAlignmentFromCTTextAlignment</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIKitFunctionReference/index.html#//apple_ref/c/func/NSTextAlignmentFromCTTextAlignment">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @NInt
     public static native long NSTextAlignmentFromCTTextAlignment(byte ctTextAlignment);
 
-    /**
-     * UIInterfaceOrientationIsPortrait</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIKitFunctionReference/index.html#//apple_ref/c/func/UIInterfaceOrientationIsPortrait">iOS Dev Center</a>
-     */
     @Generated
     @Inline
     @CFunction
     public static native boolean UIInterfaceOrientationIsPortrait(@NInt long orientation);
 
-    /**
-     * UIInterfaceOrientationIsLandscape</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIKitFunctionReference/index.html#//apple_ref/c/func/UIInterfaceOrientationIsLandscape">iOS Dev Center</a>
-     */
     @Generated
     @Inline
     @CFunction
     public static native boolean UIInterfaceOrientationIsLandscape(@NInt long orientation);
 
-    /**
-     * UIApplicationMain</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIKitFunctionReference/index.html#//apple_ref/c/func/UIApplicationMain">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native int UIApplicationMain(int argc, Ptr<BytePtr> argv,
             @Mapped(ObjCStringMapper.class) String principalClassName,
             @Mapped(ObjCStringMapper.class) String delegateClassName);
 
-    /**
-     * UIImagePNGRepresentation</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIKitFunctionReference/index.html#//apple_ref/c/func/UIImagePNGRepresentation">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native NSData UIImagePNGRepresentation(UIImage image);
 
-    /**
-     * UIImageJPEGRepresentation</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIKitFunctionReference/index.html#//apple_ref/c/func/UIImageJPEGRepresentation">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native NSData UIImageJPEGRepresentation(UIImage image, @NFloat double compressionQuality);
 
-    /**
-     * UIAccessibilityZoomFocusChanged</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIKitFunctionReference/index.html#//apple_ref/c/func/UIAccessibilityZoomFocusChanged">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void UIAccessibilityZoomFocusChanged(@NInt long type, @ByValue CGRect frame, UIView view);
 
-    /**
-     * UIAccessibilityRegisterGestureConflictWithZoom</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIKitFunctionReference/index.html#//apple_ref/c/func/UIAccessibilityRegisterGestureConflictWithZoom">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void UIAccessibilityRegisterGestureConflictWithZoom();
 
-    /**
-     * UIGuidedAccessRestrictionStateForIdentifier</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIKitFunctionReference/index.html#//apple_ref/c/func/UIGuidedAccessRestrictionStateForIdentifier">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @NInt
     public static native long UIGuidedAccessRestrictionStateForIdentifier(
             @Mapped(ObjCStringMapper.class) String restrictionIdentifier);
 
-    /**
-     * UIAccessibilityConvertFrameToScreenCoordinates</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIKitFunctionReference/index.html#//apple_ref/c/func/UIAccessibilityConvertFrameToScreenCoordinates">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @ByValue
     public static native CGRect UIAccessibilityConvertFrameToScreenCoordinates(@ByValue CGRect rect, UIView view);
 
-    /**
-     * UIAccessibilityConvertPathToScreenCoordinates</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIKitFunctionReference/index.html#//apple_ref/c/func/UIAccessibilityConvertPathToScreenCoordinates">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native UIBezierPath UIAccessibilityConvertPathToScreenCoordinates(UIBezierPath path, UIView view);
 
-    /**
-     * UIAccessibilityPostNotification</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIKitFunctionReference/index.html#//apple_ref/c/func/UIAccessibilityPostNotification">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void UIAccessibilityPostNotification(int notification,
             @Mapped(ObjCObjectMapper.class) Object argument);
 
-    /**
-     * UIAccessibilityIsVoiceOverRunning</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIKitFunctionReference/index.html#//apple_ref/c/func/UIAccessibilityIsVoiceOverRunning">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native boolean UIAccessibilityIsVoiceOverRunning();
 
-    /**
-     * UIAccessibilityIsMonoAudioEnabled</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIKitFunctionReference/index.html#//apple_ref/c/func/UIAccessibilityIsMonoAudioEnabled">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native boolean UIAccessibilityIsMonoAudioEnabled();
 
-    /**
-     * UIAccessibilityIsClosedCaptioningEnabled</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIKitFunctionReference/index.html#//apple_ref/c/func/UIAccessibilityIsClosedCaptioningEnabled">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native boolean UIAccessibilityIsClosedCaptioningEnabled();
 
-    /**
-     * UIAccessibilityIsInvertColorsEnabled</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIKitFunctionReference/index.html#//apple_ref/c/func/UIAccessibilityIsInvertColorsEnabled">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native boolean UIAccessibilityIsInvertColorsEnabled();
 
-    /**
-     * UIAccessibilityIsGuidedAccessEnabled</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIKitFunctionReference/index.html#//apple_ref/c/func/UIAccessibilityIsGuidedAccessEnabled">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native boolean UIAccessibilityIsGuidedAccessEnabled();
 
-    /**
-     * UIAccessibilityIsBoldTextEnabled</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIKitFunctionReference/index.html#//apple_ref/c/func/UIAccessibilityIsBoldTextEnabled">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native boolean UIAccessibilityIsBoldTextEnabled();
 
-    /**
-     * UIAccessibilityIsGrayscaleEnabled</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIKitFunctionReference/index.html#//apple_ref/c/func/UIAccessibilityIsGrayscaleEnabled">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native boolean UIAccessibilityIsGrayscaleEnabled();
 
-    /**
-     * UIAccessibilityIsReduceTransparencyEnabled</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIKitFunctionReference/index.html#//apple_ref/c/func/UIAccessibilityIsReduceTransparencyEnabled">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native boolean UIAccessibilityIsReduceTransparencyEnabled();
 
-    /**
-     * UIAccessibilityIsReduceMotionEnabled</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIKitFunctionReference/index.html#//apple_ref/c/func/UIAccessibilityIsReduceMotionEnabled">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native boolean UIAccessibilityIsReduceMotionEnabled();
 
-    /**
-     * UIAccessibilityDarkerSystemColorsEnabled</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIKitFunctionReference/index.html#//apple_ref/c/func/UIAccessibilityDarkerSystemColorsEnabled">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native boolean UIAccessibilityDarkerSystemColorsEnabled();
 
-    /**
-     * UIAccessibilityIsSwitchControlRunning</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIKitFunctionReference/index.html#//apple_ref/c/func/UIAccessibilityIsSwitchControlRunning">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native boolean UIAccessibilityIsSwitchControlRunning();
 
-    /**
-     * UIAccessibilityIsSpeakSelectionEnabled</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIKitFunctionReference/index.html#//apple_ref/c/func/UIAccessibilityIsSpeakSelectionEnabled">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native boolean UIAccessibilityIsSpeakSelectionEnabled();
 
-    /**
-     * UIAccessibilityIsSpeakScreenEnabled</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIKitFunctionReference/index.html#//apple_ref/c/func/UIAccessibilityIsSpeakScreenEnabled">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native boolean UIAccessibilityIsSpeakScreenEnabled();
 
-    /**
-     * UIAccessibilityRequestGuidedAccessSession</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIKitFunctionReference/index.html#//apple_ref/c/func/UIAccessibilityRequestGuidedAccessSession">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void UIAccessibilityRequestGuidedAccessSession(boolean enable,
             @ObjCBlock(name = "call_UIAccessibilityRequestGuidedAccessSession") Block_UIAccessibilityRequestGuidedAccessSession completionHandler);
 
-    /**
-     * UIGraphicsGetCurrentContext</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIKitFunctionReference/index.html#//apple_ref/c/func/UIGraphicsGetCurrentContext">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native CGContextRef UIGraphicsGetCurrentContext();
 
-    /**
-     * UIGraphicsPushContext</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIKitFunctionReference/index.html#//apple_ref/c/func/UIGraphicsPushContext">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void UIGraphicsPushContext(CGContextRef context);
 
-    /**
-     * UIGraphicsPopContext</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIKitFunctionReference/index.html#//apple_ref/c/func/UIGraphicsPopContext">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void UIGraphicsPopContext();
 
-    /**
-     * UIRectFillUsingBlendMode</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIKitFunctionReference/index.html#//apple_ref/c/func/UIRectFillUsingBlendMode">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void UIRectFillUsingBlendMode(@ByValue CGRect rect, int blendMode);
 
-    /**
-     * UIRectFill</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIKitFunctionReference/index.html#//apple_ref/c/func/UIRectFill">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void UIRectFill(@ByValue CGRect rect);
 
-    /**
-     * UIRectFrameUsingBlendMode</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIKitFunctionReference/index.html#//apple_ref/c/func/UIRectFrameUsingBlendMode">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void UIRectFrameUsingBlendMode(@ByValue CGRect rect, int blendMode);
 
-    /**
-     * UIRectFrame</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIKitFunctionReference/index.html#//apple_ref/c/func/UIRectFrame">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void UIRectFrame(@ByValue CGRect rect);
 
-    /**
-     * UIRectClip</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIKitFunctionReference/index.html#//apple_ref/c/func/UIRectClip">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void UIRectClip(@ByValue CGRect rect);
 
-    /**
-     * UIGraphicsBeginImageContext</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIKitFunctionReference/index.html#//apple_ref/c/func/UIGraphicsBeginImageContext">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void UIGraphicsBeginImageContext(@ByValue CGSize size);
 
-    /**
-     * UIGraphicsBeginImageContextWithOptions</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIKitFunctionReference/index.html#//apple_ref/c/func/UIGraphicsBeginImageContextWithOptions">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void UIGraphicsBeginImageContextWithOptions(@ByValue CGSize size, boolean opaque,
             @NFloat double scale);
 
-    /**
-     * UIGraphicsGetImageFromCurrentImageContext</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIKitFunctionReference/index.html#//apple_ref/c/func/UIGraphicsGetImageFromCurrentImageContext">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native UIImage UIGraphicsGetImageFromCurrentImageContext();
 
-    /**
-     * UIGraphicsEndImageContext</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIKitFunctionReference/index.html#//apple_ref/c/func/UIGraphicsEndImageContext">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void UIGraphicsEndImageContext();
 
-    /**
-     * UIGraphicsBeginPDFContextToFile</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIKitFunctionReference/index.html#//apple_ref/c/func/UIGraphicsBeginPDFContextToFile">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native boolean UIGraphicsBeginPDFContextToFile(@Mapped(ObjCStringMapper.class) String path,
             @ByValue CGRect bounds, NSDictionary<?, ?> documentInfo);
 
-    /**
-     * UIGraphicsBeginPDFContextToData</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIKitFunctionReference/index.html#//apple_ref/c/func/UIGraphicsBeginPDFContextToData">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void UIGraphicsBeginPDFContextToData(NSMutableData data, @ByValue CGRect bounds,
             NSDictionary<?, ?> documentInfo);
 
-    /**
-     * UIGraphicsEndPDFContext</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIKitFunctionReference/index.html#//apple_ref/c/func/UIGraphicsEndPDFContext">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void UIGraphicsEndPDFContext();
 
-    /**
-     * UIGraphicsBeginPDFPage</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIKitFunctionReference/index.html#//apple_ref/c/func/UIGraphicsBeginPDFPage">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void UIGraphicsBeginPDFPage();
 
-    /**
-     * UIGraphicsBeginPDFPageWithInfo</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIKitFunctionReference/index.html#//apple_ref/c/func/UIGraphicsBeginPDFPageWithInfo">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void UIGraphicsBeginPDFPageWithInfo(@ByValue CGRect bounds, NSDictionary<?, ?> pageInfo);
 
-    /**
-     * UIGraphicsGetPDFContextBounds</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIKitFunctionReference/index.html#//apple_ref/c/func/UIGraphicsGetPDFContextBounds">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @ByValue
     public static native CGRect UIGraphicsGetPDFContextBounds();
 
-    /**
-     * UIGraphicsSetPDFContextURLForRect</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIKitFunctionReference/index.html#//apple_ref/c/func/UIGraphicsSetPDFContextURLForRect">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void UIGraphicsSetPDFContextURLForRect(NSURL url, @ByValue CGRect rect);
 
-    /**
-     * UIGraphicsAddPDFContextDestinationAtPoint</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIKitFunctionReference/index.html#//apple_ref/c/func/UIGraphicsAddPDFContextDestinationAtPoint">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void UIGraphicsAddPDFContextDestinationAtPoint(@Mapped(ObjCStringMapper.class) String name,
             @ByValue CGPoint point);
 
-    /**
-     * UIGraphicsSetPDFContextDestinationForRect</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIKitFunctionReference/index.html#//apple_ref/c/func/UIGraphicsSetPDFContextDestinationForRect">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void UIGraphicsSetPDFContextDestinationForRect(@Mapped(ObjCStringMapper.class) String name,
             @ByValue CGRect rect);
 
-    /**
-     * UIImageWriteToSavedPhotosAlbum</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIKitFunctionReference/index.html#//apple_ref/c/func/UIImageWriteToSavedPhotosAlbum">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void UIImageWriteToSavedPhotosAlbum(UIImage image,
             @Mapped(ObjCObjectMapper.class) Object completionTarget, SEL completionSelector, VoidPtr contextInfo);
 
-    /**
-     * UIVideoAtPathIsCompatibleWithSavedPhotosAlbum</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIKitFunctionReference/index.html#//apple_ref/c/func/UIVideoAtPathIsCompatibleWithSavedPhotosAlbum">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native boolean UIVideoAtPathIsCompatibleWithSavedPhotosAlbum(
             @Mapped(ObjCStringMapper.class) String videoPath);
 
-    /**
-     * UISaveVideoAtPathToSavedPhotosAlbum</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIKitFunctionReference/index.html#//apple_ref/c/func/UISaveVideoAtPathToSavedPhotosAlbum">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void UISaveVideoAtPathToSavedPhotosAlbum(@Mapped(ObjCStringMapper.class) String videoPath,
@@ -2126,27 +1834,15 @@ public final class UIKit {
     @CFunction
     public static native boolean UIAccessibilityIsShakeToUndoEnabled();
 
-    /**
-     * UIFloatRangeIsInfinite</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIKitFunctionReference/index.html#//apple_ref/c/func/UIFloatRangeIsInfinite">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native boolean UIFloatRangeIsInfinite(@ByValue UIFloatRange range);
 
-    /**
-     * UIFloatRangeIsEqualToRange</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIKitFunctionReference/index.html#//apple_ref/c/func/UIFloatRangeIsEqualToRange">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native boolean UIFloatRangeIsEqualToRange(@ByValue UIFloatRange range,
             @ByValue UIFloatRange otherRange);
 
-    /**
-     * UIFloatRangeMake</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIKitFunctionReference/index.html#//apple_ref/c/func/UIFloatRangeMake">iOS Dev Center</a>
-     */
     @Generated
     @Inline
     @CFunction

@@ -188,10 +188,6 @@ public class HKQuantityType extends HKSampleType {
     @Selector("workoutType")
     public static native HKWorkoutType workoutType();
 
-    /**
-     * aggregationStyle</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HealthKit/Reference/HKQuantityType/index.html#//apple_ref/occ/instp/HKQuantityType/aggregationStyle">iOS Dev Center</a>
-     */
     @Generated
     @Selector("aggregationStyle")
     @NInt
@@ -201,10 +197,6 @@ public class HKQuantityType extends HKSampleType {
     @Selector("init")
     public native HKQuantityType init();
 
-    /**
-     * isCompatibleWithUnit:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HealthKit/Reference/HKQuantityType/index.html#//apple_ref/occ/instm/HKQuantityType/isCompatibleWithUnit:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("isCompatibleWithUnit:")
     public native boolean isCompatibleWithUnit(HKUnit unit);

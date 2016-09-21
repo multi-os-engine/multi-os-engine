@@ -350,10 +350,6 @@ public class MKCircleView extends MKOverlayPathView {
     @NInt
     public static native long version_static();
 
-    /**
-     * circle</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKCircleView_class/index.html#//apple_ref/occ/instp/MKCircleView/circle">iOS Dev Center</a>
-     */
     @Generated
     @Deprecated
     @Selector("circle")
@@ -363,10 +359,6 @@ public class MKCircleView extends MKOverlayPathView {
     @Selector("init")
     public native MKCircleView init();
 
-    /**
-     * initWithCircle:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKCircleView_class/index.html#//apple_ref/occ/instm/MKCircleView/initWithCircle:">iOS Dev Center</a>
-     */
     @Generated
     @Deprecated
     @Selector("initWithCircle:")

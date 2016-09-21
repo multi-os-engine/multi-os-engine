@@ -360,18 +360,10 @@ public class SCNView extends UIView implements SCNSceneRenderer, SCNTechniqueSup
     @NInt
     public static native long version_static();
 
-    /**
-     * allowsCameraControl</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNView_Class/index.html#//apple_ref/occ/instp/SCNView/allowsCameraControl">iOS Dev Center</a>
-     */
     @Generated
     @Selector("allowsCameraControl")
     public native boolean allowsCameraControl();
 
-    /**
-     * antialiasingMode</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNView_Class/index.html#//apple_ref/occ/instp/SCNView/antialiasingMode">iOS Dev Center</a>
-     */
     @Generated
     @Selector("antialiasingMode")
     @NUInt
@@ -390,10 +382,6 @@ public class SCNView extends UIView implements SCNSceneRenderer, SCNTechniqueSup
     @MappedReturn(ObjCObjectMapper.class)
     public native Object delegate();
 
-    /**
-     * eaglContext</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNView_Class/index.html#//apple_ref/occ/instp/SCNView/eaglContext">iOS Dev Center</a>
-     */
     @Generated
     @Selector("eaglContext")
     public native EAGLContext eaglContext();
@@ -411,10 +399,6 @@ public class SCNView extends UIView implements SCNSceneRenderer, SCNTechniqueSup
     @Selector("initWithFrame:")
     public native SCNView initWithFrame(@ByValue CGRect frame);
 
-    /**
-     * initWithFrame:options:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNView_Class/index.html#//apple_ref/occ/instm/SCNView/initWithFrame:options:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithFrame:options:")
     public native SCNView initWithFrameOptions(@ByValue CGRect frame, NSDictionary<String, ?> options);
@@ -447,18 +431,10 @@ public class SCNView extends UIView implements SCNSceneRenderer, SCNTechniqueSup
     @Selector("overlaySKScene")
     public native SKScene overlaySKScene();
 
-    /**
-     * pause:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNView_Class/index.html#//apple_ref/occ/instm/SCNView/pause:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("pause:")
     public native void pause(@Mapped(ObjCObjectMapper.class) Object sender);
 
-    /**
-     * play:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNView_Class/index.html#//apple_ref/occ/instm/SCNView/play:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("play:")
     public native void play(@Mapped(ObjCObjectMapper.class) Object sender);
@@ -467,10 +443,6 @@ public class SCNView extends UIView implements SCNSceneRenderer, SCNTechniqueSup
     @Selector("pointOfView")
     public native SCNNode pointOfView();
 
-    /**
-     * preferredFramesPerSecond</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNView_Class/index.html#//apple_ref/occ/instp/SCNView/preferredFramesPerSecond">iOS Dev Center</a>
-     */
     @Generated
     @Selector("preferredFramesPerSecond")
     @NInt
@@ -499,18 +471,10 @@ public class SCNView extends UIView implements SCNSceneRenderer, SCNTechniqueSup
     @Selector("sceneTime")
     public native double sceneTime();
 
-    /**
-     * allowsCameraControl</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNView_Class/index.html#//apple_ref/occ/instp/SCNView/allowsCameraControl">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setAllowsCameraControl:")
     public native void setAllowsCameraControl(boolean value);
 
-    /**
-     * antialiasingMode</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNView_Class/index.html#//apple_ref/occ/instp/SCNView/antialiasingMode">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setAntialiasingMode:")
     public native void setAntialiasingMode(@NUInt long value);
@@ -535,10 +499,6 @@ public class SCNView extends UIView implements SCNSceneRenderer, SCNTechniqueSup
         }
     }
 
-    /**
-     * eaglContext</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNView_Class/index.html#//apple_ref/occ/instp/SCNView/eaglContext">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setEaglContext:")
     public native void setEaglContext(EAGLContext value);
@@ -555,10 +515,6 @@ public class SCNView extends UIView implements SCNSceneRenderer, SCNTechniqueSup
     @Selector("setPointOfView:")
     public native void setPointOfView(SCNNode value);
 
-    /**
-     * preferredFramesPerSecond</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNView_Class/index.html#//apple_ref/occ/instp/SCNView/preferredFramesPerSecond">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setPreferredFramesPerSecond:")
     public native void setPreferredFramesPerSecond(@NInt long value);
@@ -583,18 +539,10 @@ public class SCNView extends UIView implements SCNSceneRenderer, SCNTechniqueSup
     @Selector("showsStatistics")
     public native boolean showsStatistics();
 
-    /**
-     * snapshot</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNView_Class/index.html#//apple_ref/occ/instm/SCNView/snapshot">iOS Dev Center</a>
-     */
     @Generated
     @Selector("snapshot")
     public native UIImage snapshot();
 
-    /**
-     * stop:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNView_Class/index.html#//apple_ref/occ/instm/SCNView/stop:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("stop:")
     public native void stop(@Mapped(ObjCObjectMapper.class) Object sender);

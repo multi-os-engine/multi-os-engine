@@ -166,65 +166,37 @@ public class ALAssetRepresentation extends NSObject {
     @NInt
     public static native long version_static();
 
-    /**
-     * CGImageWithOptions:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AssetsLibrary/Reference/ALAssetRepresentation_Class/index.html#//apple_ref/occ/instm/ALAssetRepresentation/CGImageWithOptions:">iOS Dev Center</a>
-     */
     @Deprecated
     @Generated
     @Selector("CGImageWithOptions:")
     public native CGImageRef CGImageWithOptions(NSDictionary<?, ?> options);
 
-    /**
-     * UTI</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AssetsLibrary/Reference/ALAssetRepresentation_Class/index.html#//apple_ref/occ/instm/ALAssetRepresentation/UTI">iOS Dev Center</a>
-     */
     @Deprecated
     @Generated
     @Selector("UTI")
     public native String UTI();
 
-    /**
-     * dimensions</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AssetsLibrary/Reference/ALAssetRepresentation_Class/index.html#//apple_ref/occ/instm/ALAssetRepresentation/dimensions">iOS Dev Center</a>
-     */
     @Deprecated
     @Generated
     @Selector("dimensions")
     @ByValue
     public native CGSize dimensions();
 
-    /**
-     * filename</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AssetsLibrary/Reference/ALAssetRepresentation_Class/index.html#//apple_ref/occ/instm/ALAssetRepresentation/filename">iOS Dev Center</a>
-     */
     @Deprecated
     @Generated
     @Selector("filename")
     public native String filename();
 
-    /**
-     * fullResolutionImage</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AssetsLibrary/Reference/ALAssetRepresentation_Class/index.html#//apple_ref/occ/instm/ALAssetRepresentation/fullResolutionImage">iOS Dev Center</a>
-     */
     @Deprecated
     @Generated
     @Selector("fullResolutionImage")
     public native CGImageRef fullResolutionImage();
 
-    /**
-     * fullScreenImage</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AssetsLibrary/Reference/ALAssetRepresentation_Class/index.html#//apple_ref/occ/instm/ALAssetRepresentation/fullScreenImage">iOS Dev Center</a>
-     */
     @Deprecated
     @Generated
     @Selector("fullScreenImage")
     public native CGImageRef fullScreenImage();
 
-    /**
-     * getBytes:fromOffset:length:error:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AssetsLibrary/Reference/ALAssetRepresentation_Class/index.html#//apple_ref/occ/instm/ALAssetRepresentation/getBytes:fromOffset:length:error:">iOS Dev Center</a>
-     */
     @Deprecated
     @Generated
     @Selector("getBytes:fromOffset:length:error:")
@@ -236,47 +208,27 @@ public class ALAssetRepresentation extends NSObject {
     @Selector("init")
     public native ALAssetRepresentation init();
 
-    /**
-     * metadata</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AssetsLibrary/Reference/ALAssetRepresentation_Class/index.html#//apple_ref/occ/instm/ALAssetRepresentation/metadata">iOS Dev Center</a>
-     */
     @Deprecated
     @Generated
     @Selector("metadata")
     public native NSDictionary<?, ?> metadata();
 
-    /**
-     * orientation</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AssetsLibrary/Reference/ALAssetRepresentation_Class/index.html#//apple_ref/occ/instm/ALAssetRepresentation/orientation">iOS Dev Center</a>
-     */
     @Deprecated
     @Generated
     @Selector("orientation")
     @NInt
     public native long orientation();
 
-    /**
-     * scale</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AssetsLibrary/Reference/ALAssetRepresentation_Class/index.html#//apple_ref/occ/instm/ALAssetRepresentation/scale">iOS Dev Center</a>
-     */
     @Deprecated
     @Generated
     @Selector("scale")
     public native float scale();
 
-    /**
-     * size</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AssetsLibrary/Reference/ALAssetRepresentation_Class/index.html#//apple_ref/occ/instm/ALAssetRepresentation/size">iOS Dev Center</a>
-     */
     @Deprecated
     @Generated
     @Selector("size")
     public native long size();
 
-    /**
-     * url</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AssetsLibrary/Reference/ALAssetRepresentation_Class/index.html#//apple_ref/occ/instm/ALAssetRepresentation/url">iOS Dev Center</a>
-     */
     @Deprecated
     @Generated
     @Selector("url")

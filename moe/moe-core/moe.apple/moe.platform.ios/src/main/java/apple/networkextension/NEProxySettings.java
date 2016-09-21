@@ -167,42 +167,22 @@ public class NEProxySettings extends NSObject implements NSSecureCoding, NSCopyi
     @NInt
     public static native long version_static();
 
-    /**
-     * HTTPEnabled</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEProxySettingsClassRef/index.html#//apple_ref/occ/instp/NEProxySettings/HTTPEnabled">iOS Dev Center</a>
-     */
     @Generated
     @Selector("HTTPEnabled")
     public native boolean HTTPEnabled();
 
-    /**
-     * HTTPSEnabled</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEProxySettingsClassRef/index.html#//apple_ref/occ/instp/NEProxySettings/HTTPSEnabled">iOS Dev Center</a>
-     */
     @Generated
     @Selector("HTTPSEnabled")
     public native boolean HTTPSEnabled();
 
-    /**
-     * HTTPSServer</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEProxySettingsClassRef/index.html#//apple_ref/occ/instp/NEProxySettings/HTTPSServer">iOS Dev Center</a>
-     */
     @Generated
     @Selector("HTTPSServer")
     public native NEProxyServer HTTPSServer();
 
-    /**
-     * HTTPServer</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEProxySettingsClassRef/index.html#//apple_ref/occ/instp/NEProxySettings/HTTPServer">iOS Dev Center</a>
-     */
     @Generated
     @Selector("HTTPServer")
     public native NEProxyServer HTTPServer();
 
-    /**
-     * autoProxyConfigurationEnabled</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEProxySettingsClassRef/index.html#//apple_ref/occ/instp/NEProxySettings/autoProxyConfigurationEnabled">iOS Dev Center</a>
-     */
     @Generated
     @Selector("autoProxyConfigurationEnabled")
     public native boolean autoProxyConfigurationEnabled();
@@ -217,18 +197,10 @@ public class NEProxySettings extends NSObject implements NSSecureCoding, NSCopyi
     @Selector("encodeWithCoder:")
     public native void encodeWithCoder(NSCoder aCoder);
 
-    /**
-     * exceptionList</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEProxySettingsClassRef/index.html#//apple_ref/occ/instp/NEProxySettings/exceptionList">iOS Dev Center</a>
-     */
     @Generated
     @Selector("exceptionList")
     public native NSArray<String> exceptionList();
 
-    /**
-     * excludeSimpleHostnames</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEProxySettingsClassRef/index.html#//apple_ref/occ/instp/NEProxySettings/excludeSimpleHostnames">iOS Dev Center</a>
-     */
     @Generated
     @Selector("excludeSimpleHostnames")
     public native boolean excludeSimpleHostnames();
@@ -241,106 +213,54 @@ public class NEProxySettings extends NSObject implements NSSecureCoding, NSCopyi
     @Selector("initWithCoder:")
     public native NEProxySettings initWithCoder(NSCoder aDecoder);
 
-    /**
-     * matchDomains</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEProxySettingsClassRef/index.html#//apple_ref/occ/instp/NEProxySettings/matchDomains">iOS Dev Center</a>
-     */
     @Generated
     @Selector("matchDomains")
     public native NSArray<String> matchDomains();
 
-    /**
-     * proxyAutoConfigurationJavaScript</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEProxySettingsClassRef/index.html#//apple_ref/occ/instp/NEProxySettings/proxyAutoConfigurationJavaScript">iOS Dev Center</a>
-     */
     @Generated
     @Selector("proxyAutoConfigurationJavaScript")
     public native String proxyAutoConfigurationJavaScript();
 
-    /**
-     * proxyAutoConfigurationURL</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEProxySettingsClassRef/index.html#//apple_ref/occ/instp/NEProxySettings/proxyAutoConfigurationURL">iOS Dev Center</a>
-     */
     @Generated
     @Selector("proxyAutoConfigurationURL")
     public native NSURL proxyAutoConfigurationURL();
 
-    /**
-     * autoProxyConfigurationEnabled</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEProxySettingsClassRef/index.html#//apple_ref/occ/instp/NEProxySettings/autoProxyConfigurationEnabled">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setAutoProxyConfigurationEnabled:")
     public native void setAutoProxyConfigurationEnabled(boolean value);
 
-    /**
-     * exceptionList</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEProxySettingsClassRef/index.html#//apple_ref/occ/instp/NEProxySettings/exceptionList">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setExceptionList:")
     public native void setExceptionList(NSArray<String> value);
 
-    /**
-     * excludeSimpleHostnames</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEProxySettingsClassRef/index.html#//apple_ref/occ/instp/NEProxySettings/excludeSimpleHostnames">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setExcludeSimpleHostnames:")
     public native void setExcludeSimpleHostnames(boolean value);
 
-    /**
-     * HTTPEnabled</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEProxySettingsClassRef/index.html#//apple_ref/occ/instp/NEProxySettings/HTTPEnabled">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setHTTPEnabled:")
     public native void setHTTPEnabled(boolean value);
 
-    /**
-     * HTTPSEnabled</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEProxySettingsClassRef/index.html#//apple_ref/occ/instp/NEProxySettings/HTTPSEnabled">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setHTTPSEnabled:")
     public native void setHTTPSEnabled(boolean value);
 
-    /**
-     * HTTPSServer</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEProxySettingsClassRef/index.html#//apple_ref/occ/instp/NEProxySettings/HTTPSServer">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setHTTPSServer:")
     public native void setHTTPSServer(NEProxyServer value);
 
-    /**
-     * HTTPServer</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEProxySettingsClassRef/index.html#//apple_ref/occ/instp/NEProxySettings/HTTPServer">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setHTTPServer:")
     public native void setHTTPServer(NEProxyServer value);
 
-    /**
-     * matchDomains</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEProxySettingsClassRef/index.html#//apple_ref/occ/instp/NEProxySettings/matchDomains">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setMatchDomains:")
     public native void setMatchDomains(NSArray<String> value);
 
-    /**
-     * proxyAutoConfigurationJavaScript</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEProxySettingsClassRef/index.html#//apple_ref/occ/instp/NEProxySettings/proxyAutoConfigurationJavaScript">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setProxyAutoConfigurationJavaScript:")
     public native void setProxyAutoConfigurationJavaScript(String value);
 
-    /**
-     * proxyAutoConfigurationURL</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEProxySettingsClassRef/index.html#//apple_ref/occ/instp/NEProxySettings/proxyAutoConfigurationURL">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setProxyAutoConfigurationURL:")
     public native void setProxyAutoConfigurationURL(NSURL value);

@@ -159,10 +159,6 @@ public class UIFocusAnimationCoordinator extends NSObject {
     @NInt
     public static native long version_static();
 
-    /**
-     * addCoordinatedAnimations:completion:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIFocusAnimationCoordinator_Class/index.html#//apple_ref/occ/instm/UIFocusAnimationCoordinator/addCoordinatedAnimations:completion:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("addCoordinatedAnimations:completion:")
     public native void addCoordinatedAnimationsCompletion(

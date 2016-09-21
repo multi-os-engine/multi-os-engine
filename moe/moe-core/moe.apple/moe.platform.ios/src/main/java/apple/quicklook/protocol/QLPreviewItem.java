@@ -30,10 +30,6 @@ import org.moe.natj.objc.ann.Selector;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("QLPreviewItem")
 public interface QLPreviewItem {
-    /**
-     * previewItemTitle</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Quartz/Reference/QLPreviewItem_Protocol/index.html#//apple_ref/occ/intfp/QLPreviewItem/previewItemTitle">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("previewItemTitle")
@@ -41,10 +37,6 @@ public interface QLPreviewItem {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * previewItemURL</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Quartz/Reference/QLPreviewItem_Protocol/index.html#//apple_ref/occ/intfp/QLPreviewItem/previewItemURL">iOS Dev Center</a>
-     */
     @Generated
     @Selector("previewItemURL")
     NSURL previewItemURL();

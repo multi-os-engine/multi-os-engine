@@ -59,18 +59,10 @@ public class PKPaymentSummaryItem extends NSObject {
     @Selector("alloc")
     public static native PKPaymentSummaryItem alloc();
 
-    /**
-     * summaryItemWithLabel:amount:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/PassKit/Reference/PKPaymentSummaryItem_Ref/index.html#//apple_ref/occ/clm/PKPaymentSummaryItem/summaryItemWithLabel:amount:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("summaryItemWithLabel:amount:")
     public static native PKPaymentSummaryItem summaryItemWithLabelAmount(String label, NSDecimalNumber amount);
 
-    /**
-     * summaryItemWithLabel:amount:type:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/PassKit/Reference/PKPaymentSummaryItem_Ref/index.html#//apple_ref/occ/clm/PKPaymentSummaryItem/summaryItemWithLabel:amount:type:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("summaryItemWithLabel:amount:type:")
     public static native PKPaymentSummaryItem summaryItemWithLabelAmountType(String label, NSDecimalNumber amount,
@@ -176,10 +168,6 @@ public class PKPaymentSummaryItem extends NSObject {
     @NInt
     public static native long version_static();
 
-    /**
-     * amount</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/PassKit/Reference/PKPaymentSummaryItem_Ref/index.html#//apple_ref/occ/instp/PKPaymentSummaryItem/amount">iOS Dev Center</a>
-     */
     @Generated
     @Selector("amount")
     public native NSDecimalNumber amount();
@@ -188,42 +176,22 @@ public class PKPaymentSummaryItem extends NSObject {
     @Selector("init")
     public native PKPaymentSummaryItem init();
 
-    /**
-     * label</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/PassKit/Reference/PKPaymentSummaryItem_Ref/index.html#//apple_ref/occ/instp/PKPaymentSummaryItem/label">iOS Dev Center</a>
-     */
     @Generated
     @Selector("label")
     public native String label();
 
-    /**
-     * amount</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/PassKit/Reference/PKPaymentSummaryItem_Ref/index.html#//apple_ref/occ/instp/PKPaymentSummaryItem/amount">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setAmount:")
     public native void setAmount(NSDecimalNumber value);
 
-    /**
-     * label</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/PassKit/Reference/PKPaymentSummaryItem_Ref/index.html#//apple_ref/occ/instp/PKPaymentSummaryItem/label">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setLabel:")
     public native void setLabel(String value);
 
-    /**
-     * type</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/PassKit/Reference/PKPaymentSummaryItem_Ref/index.html#//apple_ref/occ/instp/PKPaymentSummaryItem/type">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setType:")
     public native void setType(@NUInt long value);
 
-    /**
-     * type</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/PassKit/Reference/PKPaymentSummaryItem_Ref/index.html#//apple_ref/occ/instp/PKPaymentSummaryItem/type">iOS Dev Center</a>
-     */
     @Generated
     @Selector("type")
     @NUInt

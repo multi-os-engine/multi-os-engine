@@ -169,10 +169,6 @@ public class PHLivePhotoRequestOptions extends NSObject implements NSCopying {
     @MappedReturn(ObjCObjectMapper.class)
     public native Object copyWithZone(VoidPtr zone);
 
-    /**
-     * deliveryMode</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHLivePhotoRequestOptions_Class/index.html#//apple_ref/occ/instp/PHLivePhotoRequestOptions/deliveryMode">iOS Dev Center</a>
-     */
     @Generated
     @Selector("deliveryMode")
     @NInt
@@ -182,43 +178,23 @@ public class PHLivePhotoRequestOptions extends NSObject implements NSCopying {
     @Selector("init")
     public native PHLivePhotoRequestOptions init();
 
-    /**
-     * networkAccessAllowed</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHLivePhotoRequestOptions_Class/index.html#//apple_ref/occ/instp/PHLivePhotoRequestOptions/networkAccessAllowed">iOS Dev Center</a>
-     */
     @Generated
     @Selector("isNetworkAccessAllowed")
     public native boolean isNetworkAccessAllowed();
 
-    /**
-     * networkAccessAllowed</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHLivePhotoRequestOptions_Class/index.html#//apple_ref/occ/instp/PHLivePhotoRequestOptions/networkAccessAllowed">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setNetworkAccessAllowed:")
     public native void setNetworkAccessAllowed(boolean value);
 
-    /**
-     * progressHandler</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHLivePhotoRequestOptions_Class/index.html#//apple_ref/occ/instp/PHLivePhotoRequestOptions/progressHandler">iOS Dev Center</a>
-     */
     @Generated
     @Selector("progressHandler")
     @ObjCBlock(name = "call_progressHandler_ret")
     public native Block_progressHandler_ret progressHandler();
 
-    /**
-     * deliveryMode</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHLivePhotoRequestOptions_Class/index.html#//apple_ref/occ/instp/PHLivePhotoRequestOptions/deliveryMode">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setDeliveryMode:")
     public native void setDeliveryMode(@NInt long value);
 
-    /**
-     * progressHandler</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHLivePhotoRequestOptions_Class/index.html#//apple_ref/occ/instp/PHLivePhotoRequestOptions/progressHandler">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setProgressHandler:")
     public native void setProgressHandler(@ObjCBlock(name = "call_setProgressHandler") Block_setProgressHandler value);

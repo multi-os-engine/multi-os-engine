@@ -186,10 +186,6 @@ public class MPMediaQuerySection extends NSObject implements NSSecureCoding, NSC
     @Selector("initWithCoder:")
     public native MPMediaQuerySection initWithCoder(NSCoder aDecoder);
 
-    /**
-     * range</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPMediaQuerySection_ClassReference/index.html#//apple_ref/occ/instp/MPMediaQuerySection/range">iOS Dev Center</a>
-     */
     @Generated
     @Selector("range")
     @ByValue
@@ -201,10 +197,6 @@ public class MPMediaQuerySection extends NSObject implements NSSecureCoding, NSC
         return supportsSecureCoding();
     }
 
-    /**
-     * title</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPMediaQuerySection_ClassReference/index.html#//apple_ref/occ/instp/MPMediaQuerySection/title">iOS Dev Center</a>
-     */
     @Generated
     @Selector("title")
     public native String title();

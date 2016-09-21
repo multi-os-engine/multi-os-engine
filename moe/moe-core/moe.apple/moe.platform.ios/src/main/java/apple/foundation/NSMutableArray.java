@@ -75,26 +75,14 @@ public class NSMutableArray<_ObjectType> extends NSArray<_ObjectType> {
     @Selector("arrayWithArray:")
     public static native <_ObjectType> NSMutableArray<?> arrayWithArray(NSArray<_ObjectType> array);
 
-    /**
-     * arrayWithCapacity:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSMutableArray_Class/index.html#//apple_ref/occ/clm/NSMutableArray/arrayWithCapacity:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("arrayWithCapacity:")
     public static native <_ObjectType> NSMutableArray<?> arrayWithCapacity(@NUInt long numItems);
 
-    /**
-     * arrayWithContentsOfFile:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSMutableArray_Class/index.html#//apple_ref/occ/clm/NSMutableArray/arrayWithContentsOfFile:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("arrayWithContentsOfFile:")
     public static native <_ObjectType> NSMutableArray<_ObjectType> arrayWithContentsOfFile(String path);
 
-    /**
-     * arrayWithContentsOfURL:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSMutableArray_Class/index.html#//apple_ref/occ/clm/NSMutableArray/arrayWithContentsOfURL:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("arrayWithContentsOfURL:")
     public static native <_ObjectType> NSMutableArray<_ObjectType> arrayWithContentsOfURL(NSURL url);
@@ -219,42 +207,22 @@ public class NSMutableArray<_ObjectType> extends NSArray<_ObjectType> {
     @NInt
     public static native long version_static();
 
-    /**
-     * addObject:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSMutableArray_Class/index.html#//apple_ref/occ/instm/NSMutableArray/addObject:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("addObject:")
     public native void addObject(@Mapped(ObjCObjectMapper.class) _ObjectType anObject);
 
-    /**
-     * addObjectsFromArray:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSMutableArray_Class/index.html#//apple_ref/occ/instm/NSMutableArray/addObjectsFromArray:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("addObjectsFromArray:")
     public native void addObjectsFromArray(NSArray<_ObjectType> otherArray);
 
-    /**
-     * exchangeObjectAtIndex:withObjectAtIndex:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSMutableArray_Class/index.html#//apple_ref/occ/instm/NSMutableArray/exchangeObjectAtIndex:withObjectAtIndex:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("exchangeObjectAtIndex:withObjectAtIndex:")
     public native void exchangeObjectAtIndexWithObjectAtIndex(@NUInt long idx1, @NUInt long idx2);
 
-    /**
-     * filterUsingPredicate:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSMutableArray_Class/index.html#//apple_ref/occ/instm/NSMutableArray/filterUsingPredicate:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("filterUsingPredicate:")
     public native void filterUsingPredicate(NSPredicate predicate);
 
-    /**
-     * init</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSMutableArray_Class/index.html#//apple_ref/occ/instm/NSMutableArray/init">iOS Dev Center</a>
-     */
     @Generated
     @Selector("init")
     public native NSMutableArray<?> init();
@@ -267,10 +235,6 @@ public class NSMutableArray<_ObjectType> extends NSArray<_ObjectType> {
     @Selector("initWithArray:copyItems:")
     public native NSMutableArray<?> initWithArrayCopyItems(NSArray<_ObjectType> array, boolean flag);
 
-    /**
-     * initWithCapacity:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSMutableArray_Class/index.html#//apple_ref/occ/instm/NSMutableArray/initWithCapacity:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithCapacity:")
     public native NSMutableArray<?> initWithCapacity(@NUInt long numItems);
@@ -279,18 +243,10 @@ public class NSMutableArray<_ObjectType> extends NSArray<_ObjectType> {
     @Selector("initWithCoder:")
     public native NSMutableArray<?> initWithCoder(NSCoder aDecoder);
 
-    /**
-     * initWithContentsOfFile:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSMutableArray_Class/index.html#//apple_ref/occ/instm/NSMutableArray/initWithContentsOfFile:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithContentsOfFile:")
     public native NSMutableArray<_ObjectType> initWithContentsOfFile(String path);
 
-    /**
-     * initWithContentsOfURL:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSMutableArray_Class/index.html#//apple_ref/occ/instm/NSMutableArray/initWithContentsOfURL:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithContentsOfURL:")
     public native NSMutableArray<_ObjectType> initWithContentsOfURL(NSURL url);
@@ -305,203 +261,107 @@ public class NSMutableArray<_ObjectType> extends NSArray<_ObjectType> {
     @Selector("initWithObjects:count:")
     public native NSMutableArray<?> initWithObjectsCount(ConstPtr<_ObjectType> objects, @NUInt long cnt);
 
-    /**
-     * insertObject:atIndex:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSMutableArray_Class/index.html#//apple_ref/occ/instm/NSMutableArray/insertObject:atIndex:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("insertObject:atIndex:")
     public native void insertObjectAtIndex(@Mapped(ObjCObjectMapper.class) _ObjectType anObject, @NUInt long index);
 
-    /**
-     * insertObjects:atIndexes:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSMutableArray_Class/index.html#//apple_ref/occ/instm/NSMutableArray/insertObjects:atIndexes:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("insertObjects:atIndexes:")
     public native void insertObjectsAtIndexes(NSArray<_ObjectType> objects, NSIndexSet indexes);
 
-    /**
-     * removeAllObjects</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSMutableArray_Class/index.html#//apple_ref/occ/instm/NSMutableArray/removeAllObjects">iOS Dev Center</a>
-     */
     @Generated
     @Selector("removeAllObjects")
     public native void removeAllObjects();
 
-    /**
-     * removeLastObject</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSMutableArray_Class/index.html#//apple_ref/occ/instm/NSMutableArray/removeLastObject">iOS Dev Center</a>
-     */
     @Generated
     @Selector("removeLastObject")
     public native void removeLastObject();
 
-    /**
-     * removeObject:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSMutableArray_Class/index.html#//apple_ref/occ/instm/NSMutableArray/removeObject:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("removeObject:")
     public native void removeObject(@Mapped(ObjCObjectMapper.class) _ObjectType anObject);
 
-    /**
-     * removeObject:inRange:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSMutableArray_Class/index.html#//apple_ref/occ/instm/NSMutableArray/removeObject:inRange:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("removeObject:inRange:")
     public native void removeObjectInRange(@Mapped(ObjCObjectMapper.class) _ObjectType anObject,
             @ByValue NSRange range);
 
-    /**
-     * removeObjectAtIndex:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSMutableArray_Class/index.html#//apple_ref/occ/instm/NSMutableArray/removeObjectAtIndex:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("removeObjectAtIndex:")
     public native void removeObjectAtIndex(@NUInt long index);
 
-    /**
-     * removeObjectIdenticalTo:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSMutableArray_Class/index.html#//apple_ref/occ/instm/NSMutableArray/removeObjectIdenticalTo:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("removeObjectIdenticalTo:")
     public native void removeObjectIdenticalTo(@Mapped(ObjCObjectMapper.class) _ObjectType anObject);
 
-    /**
-     * removeObjectIdenticalTo:inRange:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSMutableArray_Class/index.html#//apple_ref/occ/instm/NSMutableArray/removeObjectIdenticalTo:inRange:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("removeObjectIdenticalTo:inRange:")
     public native void removeObjectIdenticalToInRange(@Mapped(ObjCObjectMapper.class) _ObjectType anObject,
             @ByValue NSRange range);
 
-    /**
-     * removeObjectsAtIndexes:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSMutableArray_Class/index.html#//apple_ref/occ/instm/NSMutableArray/removeObjectsAtIndexes:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("removeObjectsAtIndexes:")
     public native void removeObjectsAtIndexes(NSIndexSet indexes);
 
-    /**
-     * removeObjectsFromIndices:numIndices:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSMutableArray_Class/index.html#//apple_ref/occ/instm/NSMutableArray/removeObjectsFromIndices:numIndices:">iOS Dev Center</a>
-     */
     @Generated
     @Deprecated
     @Selector("removeObjectsFromIndices:numIndices:")
     public native void removeObjectsFromIndicesNumIndices(NUIntPtr indices, @NUInt long cnt);
 
-    /**
-     * removeObjectsInArray:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSMutableArray_Class/index.html#//apple_ref/occ/instm/NSMutableArray/removeObjectsInArray:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("removeObjectsInArray:")
     public native void removeObjectsInArray(NSArray<_ObjectType> otherArray);
 
-    /**
-     * removeObjectsInRange:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSMutableArray_Class/index.html#//apple_ref/occ/instm/NSMutableArray/removeObjectsInRange:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("removeObjectsInRange:")
     public native void removeObjectsInRange(@ByValue NSRange range);
 
-    /**
-     * replaceObjectAtIndex:withObject:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSMutableArray_Class/index.html#//apple_ref/occ/instm/NSMutableArray/replaceObjectAtIndex:withObject:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("replaceObjectAtIndex:withObject:")
     public native void replaceObjectAtIndexWithObject(@NUInt long index,
             @Mapped(ObjCObjectMapper.class) _ObjectType anObject);
 
-    /**
-     * replaceObjectsAtIndexes:withObjects:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSMutableArray_Class/index.html#//apple_ref/occ/instm/NSMutableArray/replaceObjectsAtIndexes:withObjects:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("replaceObjectsAtIndexes:withObjects:")
     public native void replaceObjectsAtIndexesWithObjects(NSIndexSet indexes, NSArray<_ObjectType> objects);
 
-    /**
-     * replaceObjectsInRange:withObjectsFromArray:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSMutableArray_Class/index.html#//apple_ref/occ/instm/NSMutableArray/replaceObjectsInRange:withObjectsFromArray:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("replaceObjectsInRange:withObjectsFromArray:")
     public native void replaceObjectsInRangeWithObjectsFromArray(@ByValue NSRange range,
             NSArray<_ObjectType> otherArray);
 
-    /**
-     * replaceObjectsInRange:withObjectsFromArray:range:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSMutableArray_Class/index.html#//apple_ref/occ/instm/NSMutableArray/replaceObjectsInRange:withObjectsFromArray:range:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("replaceObjectsInRange:withObjectsFromArray:range:")
     public native void replaceObjectsInRangeWithObjectsFromArrayRange(@ByValue NSRange range,
             NSArray<_ObjectType> otherArray, @ByValue NSRange otherRange);
 
-    /**
-     * setArray:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSMutableArray_Class/index.html#//apple_ref/occ/instm/NSMutableArray/setArray:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setArray:")
     public native void setArray(NSArray<_ObjectType> otherArray);
 
-    /**
-     * setObject:atIndexedSubscript:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSMutableArray_Class/index.html#//apple_ref/occ/instm/NSMutableArray/setObject:atIndexedSubscript:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setObject:atIndexedSubscript:")
     public native void setObjectAtIndexedSubscript(@Mapped(ObjCObjectMapper.class) _ObjectType obj, @NUInt long idx);
 
-    /**
-     * sortUsingComparator:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSMutableArray_Class/index.html#//apple_ref/occ/instm/NSMutableArray/sortUsingComparator:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("sortUsingComparator:")
     public native void sortUsingComparator(
             @ObjCBlock(name = "call_sortUsingComparator") Block_sortUsingComparator cmptr);
 
-    /**
-     * sortUsingDescriptors:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSMutableArray_Class/index.html#//apple_ref/occ/instm/NSMutableArray/sortUsingDescriptors:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("sortUsingDescriptors:")
     public native void sortUsingDescriptors(NSArray<? extends NSSortDescriptor> sortDescriptors);
 
-    /**
-     * sortUsingFunction:context:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSMutableArray_Class/index.html#//apple_ref/occ/instm/NSMutableArray/sortUsingFunction:context:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("sortUsingFunction:context:")
     public native void sortUsingFunctionContext(
             @FunctionPtr(name = "call_sortUsingFunctionContext") Function_sortUsingFunctionContext compare,
             VoidPtr context);
 
-    /**
-     * sortUsingSelector:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSMutableArray_Class/index.html#//apple_ref/occ/instm/NSMutableArray/sortUsingSelector:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("sortUsingSelector:")
     public native void sortUsingSelector(SEL comparator);
 
-    /**
-     * sortWithOptions:usingComparator:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSMutableArray_Class/index.html#//apple_ref/occ/instm/NSMutableArray/sortWithOptions:usingComparator:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("sortWithOptions:usingComparator:")
     public native void sortWithOptionsUsingComparator(@NUInt long opts,

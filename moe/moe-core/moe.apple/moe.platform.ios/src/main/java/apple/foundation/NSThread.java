@@ -55,99 +55,51 @@ public class NSThread extends NSObject {
     @Selector("alloc")
     public static native NSThread alloc();
 
-    /**
-     * callStackReturnAddresses</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSThread_Class/index.html#//apple_ref/occ/clm/NSThread/callStackReturnAddresses">iOS Dev Center</a>
-     */
     @Generated
     @Selector("callStackReturnAddresses")
     public static native NSArray<? extends NSNumber> callStackReturnAddresses();
 
-    /**
-     * callStackSymbols</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSThread_Class/index.html#//apple_ref/occ/clm/NSThread/callStackSymbols">iOS Dev Center</a>
-     */
     @Generated
     @Selector("callStackSymbols")
     public static native NSArray<String> callStackSymbols();
 
-    /**
-     * currentThread</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSThread_Class/index.html#//apple_ref/occ/clm/NSThread/currentThread">iOS Dev Center</a>
-     */
     @Generated
     @Selector("currentThread")
     public static native NSThread currentThread();
 
-    /**
-     * detachNewThreadSelector:toTarget:withObject:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSThread_Class/index.html#//apple_ref/occ/clm/NSThread/detachNewThreadSelector:toTarget:withObject:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("detachNewThreadSelector:toTarget:withObject:")
     public static native void detachNewThreadSelectorToTargetWithObject(SEL selector,
             @Mapped(ObjCObjectMapper.class) Object target, @Mapped(ObjCObjectMapper.class) Object argument);
 
-    /**
-     * exit</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSThread_Class/index.html#//apple_ref/occ/clm/NSThread/exit">iOS Dev Center</a>
-     */
     @Generated
     @Selector("exit")
     public static native void exit();
 
-    /**
-     * isMainThread</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSThread_Class/index.html#//apple_ref/occ/clm/NSThread/isMainThread">iOS Dev Center</a>
-     */
     @Generated
     @Selector("isMainThread")
     public static native boolean isMainThread_static();
 
-    /**
-     * isMultiThreaded</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSThread_Class/index.html#//apple_ref/occ/clm/NSThread/isMultiThreaded">iOS Dev Center</a>
-     */
     @Generated
     @Selector("isMultiThreaded")
     public static native boolean isMultiThreaded();
 
-    /**
-     * mainThread</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSThread_Class/index.html#//apple_ref/occ/clm/NSThread/mainThread">iOS Dev Center</a>
-     */
     @Generated
     @Selector("mainThread")
     public static native NSThread mainThread();
 
-    /**
-     * setThreadPriority:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSThread_Class/index.html#//apple_ref/occ/clm/NSThread/setThreadPriority:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setThreadPriority:")
     public static native boolean setThreadPriority_static(double p);
 
-    /**
-     * sleepForTimeInterval:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSThread_Class/index.html#//apple_ref/occ/clm/NSThread/sleepForTimeInterval:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("sleepForTimeInterval:")
     public static native void sleepForTimeInterval(double ti);
 
-    /**
-     * sleepUntilDate:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSThread_Class/index.html#//apple_ref/occ/clm/NSThread/sleepUntilDate:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("sleepUntilDate:")
     public static native void sleepUntilDate(NSDate date);
 
-    /**
-     * threadPriority</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSThread_Class/index.html#//apple_ref/occ/clm/NSThread/threadPriority">iOS Dev Center</a>
-     */
     @Generated
     @Selector("threadPriority")
     public static native double threadPriority_static();
@@ -252,75 +204,39 @@ public class NSThread extends NSObject {
     @NInt
     public static native long version_static();
 
-    /**
-     * cancel</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSThread_Class/index.html#//apple_ref/occ/instm/NSThread/cancel">iOS Dev Center</a>
-     */
     @Generated
     @Selector("cancel")
     public native void cancel();
 
-    /**
-     * init</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSThread_Class/index.html#//apple_ref/occ/instm/NSThread/init">iOS Dev Center</a>
-     */
     @Generated
     @Selector("init")
     public native NSThread init();
 
-    /**
-     * initWithTarget:selector:object:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSThread_Class/index.html#//apple_ref/occ/instm/NSThread/initWithTarget:selector:object:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithTarget:selector:object:")
     public native NSThread initWithTargetSelectorObject(@Mapped(ObjCObjectMapper.class) Object target, SEL selector,
             @Mapped(ObjCObjectMapper.class) Object argument);
 
-    /**
-     * cancelled</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSThread_Class/index.html#//apple_ref/occ/instp/NSThread/cancelled">iOS Dev Center</a>
-     */
     @Generated
     @Selector("isCancelled")
     public native boolean isCancelled();
 
-    /**
-     * executing</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSThread_Class/index.html#//apple_ref/occ/instp/NSThread/executing">iOS Dev Center</a>
-     */
     @Generated
     @Selector("isExecuting")
     public native boolean isExecuting();
 
-    /**
-     * finished</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSThread_Class/index.html#//apple_ref/occ/instp/NSThread/finished">iOS Dev Center</a>
-     */
     @Generated
     @Selector("isFinished")
     public native boolean isFinished();
 
-    /**
-     * isMainThread</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSThread_Class/index.html#//apple_ref/occ/instp/NSThread/isMainThread">iOS Dev Center</a>
-     */
     @Generated
     @Selector("isMainThread")
     public native boolean isMainThread();
 
-    /**
-     * main</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSThread_Class/index.html#//apple_ref/occ/instm/NSThread/main">iOS Dev Center</a>
-     */
     @Generated
     @Selector("main")
     public native void main();
 
-    /**
-     * name</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSThread_Class/index.html#//apple_ref/occ/instp/NSThread/name">iOS Dev Center</a>
-     */
     @Generated
     @Selector("name")
     public native String name();
@@ -330,10 +246,6 @@ public class NSThread extends NSObject {
     @NInt
     public native long qualityOfService();
 
-    /**
-     * name</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSThread_Class/index.html#//apple_ref/occ/instp/NSThread/name">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setName:")
     public native void setName(String value);
@@ -342,51 +254,27 @@ public class NSThread extends NSObject {
     @Selector("setQualityOfService:")
     public native void setQualityOfService(@NInt long value);
 
-    /**
-     * stackSize</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSThread_Class/index.html#//apple_ref/occ/instp/NSThread/stackSize">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setStackSize:")
     public native void setStackSize(@NUInt long value);
 
-    /**
-     * threadPriority</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSThread_Class/index.html#//apple_ref/occ/instp/NSThread/threadPriority">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setThreadPriority:")
     public native void setThreadPriority(double value);
 
-    /**
-     * stackSize</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSThread_Class/index.html#//apple_ref/occ/instp/NSThread/stackSize">iOS Dev Center</a>
-     */
     @Generated
     @Selector("stackSize")
     @NUInt
     public native long stackSize();
 
-    /**
-     * start</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSThread_Class/index.html#//apple_ref/occ/instm/NSThread/start">iOS Dev Center</a>
-     */
     @Generated
     @Selector("start")
     public native void start();
 
-    /**
-     * threadDictionary</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSThread_Class/index.html#//apple_ref/occ/instp/NSThread/threadDictionary">iOS Dev Center</a>
-     */
     @Generated
     @Selector("threadDictionary")
     public native NSMutableDictionary<?, ?> threadDictionary();
 
-    /**
-     * threadPriority</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSThread_Class/index.html#//apple_ref/occ/instp/NSThread/threadPriority">iOS Dev Center</a>
-     */
     @Generated
     @Selector("threadPriority")
     public native double threadPriority();

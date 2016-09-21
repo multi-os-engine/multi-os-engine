@@ -158,26 +158,14 @@ public class AVAudioSessionChannelDescription extends NSObject {
     @NInt
     public static native long version_static();
 
-    /**
-     * channelLabel</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioSessionChannelDescription_class/index.html#//apple_ref/occ/instp/AVAudioSessionChannelDescription/channelLabel">iOS Dev Center</a>
-     */
     @Generated
     @Selector("channelLabel")
     public native int channelLabel();
 
-    /**
-     * channelName</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioSessionChannelDescription_class/index.html#//apple_ref/occ/instp/AVAudioSessionChannelDescription/channelName">iOS Dev Center</a>
-     */
     @Generated
     @Selector("channelName")
     public native String channelName();
 
-    /**
-     * channelNumber</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioSessionChannelDescription_class/index.html#//apple_ref/occ/instp/AVAudioSessionChannelDescription/channelNumber">iOS Dev Center</a>
-     */
     @Generated
     @Selector("channelNumber")
     @NUInt
@@ -187,10 +175,6 @@ public class AVAudioSessionChannelDescription extends NSObject {
     @Selector("init")
     public native AVAudioSessionChannelDescription init();
 
-    /**
-     * owningPortUID</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioSessionChannelDescription_class/index.html#//apple_ref/occ/instp/AVAudioSessionChannelDescription/owningPortUID">iOS Dev Center</a>
-     */
     @Generated
     @Selector("owningPortUID")
     public native String owningPortUID();

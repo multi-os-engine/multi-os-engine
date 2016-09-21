@@ -63,10 +63,6 @@ public class MDLMaterial extends NSObject implements MDLNamed, NSFastEnumeration
     @Selector("alloc")
     public static native MDLMaterial alloc();
 
-    /**
-     * materialWithSCNMaterial:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLMaterial_Class/index.html#//apple_ref/occ/clm/MDLMaterial/materialWithSCNMaterial:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("materialWithSCNMaterial:")
     public static native MDLMaterial materialWithSCNMaterial(SCNMaterial scnMaterial);
@@ -171,18 +167,10 @@ public class MDLMaterial extends NSObject implements MDLNamed, NSFastEnumeration
     @NInt
     public static native long version_static();
 
-    /**
-     * baseMaterial</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLMaterial_Class/index.html#//apple_ref/occ/instp/MDLMaterial/baseMaterial">iOS Dev Center</a>
-     */
     @Generated
     @Selector("baseMaterial")
     public native MDLMaterial baseMaterial();
 
-    /**
-     * count</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLMaterial_Class/index.html#//apple_ref/occ/instp/MDLMaterial/count">iOS Dev Center</a>
-     */
     @Generated
     @Selector("count")
     @NUInt
@@ -197,10 +185,6 @@ public class MDLMaterial extends NSObject implements MDLNamed, NSFastEnumeration
     @Selector("init")
     public native MDLMaterial init();
 
-    /**
-     * initWithName:scatteringFunction:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLMaterial_Class/index.html#//apple_ref/occ/instm/MDLMaterial/initWithName:scatteringFunction:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithName:scatteringFunction:")
     public native MDLMaterial initWithNameScatteringFunction(String name, MDLScatteringFunction scatteringFunction);
@@ -209,66 +193,34 @@ public class MDLMaterial extends NSObject implements MDLNamed, NSFastEnumeration
     @Selector("name")
     public native String name();
 
-    /**
-     * objectAtIndexedSubscript:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLMaterial_Class/index.html#//apple_ref/occ/instm/MDLMaterial/objectAtIndexedSubscript:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("objectAtIndexedSubscript:")
     public native MDLMaterialProperty objectAtIndexedSubscript(@NUInt long idx);
 
-    /**
-     * objectForKeyedSubscript:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLMaterial_Class/index.html#//apple_ref/occ/instm/MDLMaterial/objectForKeyedSubscript:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("objectForKeyedSubscript:")
     public native MDLMaterialProperty objectForKeyedSubscript(String name);
 
-    /**
-     * propertyNamed:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLMaterial_Class/index.html#//apple_ref/occ/instm/MDLMaterial/propertyNamed:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("propertyNamed:")
     public native MDLMaterialProperty propertyNamed(String name);
 
-    /**
-     * propertyWithSemantic:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLMaterial_Class/index.html#//apple_ref/occ/instm/MDLMaterial/propertyWithSemantic:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("propertyWithSemantic:")
     public native MDLMaterialProperty propertyWithSemantic(@NUInt long semantic);
 
-    /**
-     * removeAllProperties</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLMaterial_Class/index.html#//apple_ref/occ/instm/MDLMaterial/removeAllProperties">iOS Dev Center</a>
-     */
     @Generated
     @Selector("removeAllProperties")
     public native void removeAllProperties();
 
-    /**
-     * removeProperty:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLMaterial_Class/index.html#//apple_ref/occ/instm/MDLMaterial/removeProperty:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("removeProperty:")
     public native void removeProperty(MDLMaterialProperty property);
 
-    /**
-     * scatteringFunction</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLMaterial_Class/index.html#//apple_ref/occ/instp/MDLMaterial/scatteringFunction">iOS Dev Center</a>
-     */
     @Generated
     @Selector("scatteringFunction")
     public native MDLScatteringFunction scatteringFunction();
 
-    /**
-     * baseMaterial</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLMaterial_Class/index.html#//apple_ref/occ/instp/MDLMaterial/baseMaterial">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setBaseMaterial:")
     public native void setBaseMaterial(MDLMaterial value);
@@ -277,10 +229,6 @@ public class MDLMaterial extends NSObject implements MDLNamed, NSFastEnumeration
     @Selector("setName:")
     public native void setName(String value);
 
-    /**
-     * setProperty:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLMaterial_Class/index.html#//apple_ref/occ/instm/MDLMaterial/setProperty:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setProperty:")
     public native void setProperty(MDLMaterialProperty property);

@@ -34,10 +34,6 @@ import org.moe.natj.objc.ann.Selector;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("UIPickerViewDelegate")
 public interface UIPickerViewDelegate {
-    /**
-     * pickerView:attributedTitleForRow:forComponent:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPickerViewDelegate_Protocol/index.html#//apple_ref/occ/intfm/UIPickerViewDelegate/pickerView:attributedTitleForRow:forComponent:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("pickerView:attributedTitleForRow:forComponent:")
@@ -46,10 +42,6 @@ public interface UIPickerViewDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * pickerView:didSelectRow:inComponent:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPickerViewDelegate_Protocol/index.html#//apple_ref/occ/intfm/UIPickerViewDelegate/pickerView:didSelectRow:inComponent:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("pickerView:didSelectRow:inComponent:")
@@ -57,10 +49,6 @@ public interface UIPickerViewDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * pickerView:rowHeightForComponent:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPickerViewDelegate_Protocol/index.html#//apple_ref/occ/intfm/UIPickerViewDelegate/pickerView:rowHeightForComponent:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("pickerView:rowHeightForComponent:")
@@ -69,10 +57,6 @@ public interface UIPickerViewDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * pickerView:titleForRow:forComponent:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPickerViewDelegate_Protocol/index.html#//apple_ref/occ/intfm/UIPickerViewDelegate/pickerView:titleForRow:forComponent:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("pickerView:titleForRow:forComponent:")
@@ -80,10 +64,6 @@ public interface UIPickerViewDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * pickerView:viewForRow:forComponent:reusingView:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPickerViewDelegate_Protocol/index.html#//apple_ref/occ/intfm/UIPickerViewDelegate/pickerView:viewForRow:forComponent:reusingView:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("pickerView:viewForRow:forComponent:reusingView:")
@@ -92,10 +72,6 @@ public interface UIPickerViewDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * pickerView:widthForComponent:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPickerViewDelegate_Protocol/index.html#//apple_ref/occ/intfm/UIPickerViewDelegate/pickerView:widthForComponent:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("pickerView:widthForComponent:")

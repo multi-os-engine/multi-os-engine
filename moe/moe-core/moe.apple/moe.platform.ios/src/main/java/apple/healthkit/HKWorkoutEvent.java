@@ -66,10 +66,6 @@ public class HKWorkoutEvent extends NSObject implements NSSecureCoding {
     @Selector("supportsSecureCoding")
     public static native boolean supportsSecureCoding();
 
-    /**
-     * workoutEventWithType:date:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HealthKit/Reference/HKWorkoutEvent_Class/index.html#//apple_ref/occ/clm/HKWorkoutEvent/workoutEventWithType:date:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("workoutEventWithType:date:")
     public static native HKWorkoutEvent workoutEventWithTypeDate(@NInt long type, NSDate date);
@@ -174,10 +170,6 @@ public class HKWorkoutEvent extends NSObject implements NSSecureCoding {
     @NInt
     public static native long version_static();
 
-    /**
-     * date</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HealthKit/Reference/HKWorkoutEvent_Class/index.html#//apple_ref/occ/instp/HKWorkoutEvent/date">iOS Dev Center</a>
-     */
     @Generated
     @Selector("date")
     public native NSDate date();
@@ -200,10 +192,6 @@ public class HKWorkoutEvent extends NSObject implements NSSecureCoding {
         return supportsSecureCoding();
     }
 
-    /**
-     * type</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HealthKit/Reference/HKWorkoutEvent_Class/index.html#//apple_ref/occ/instp/HKWorkoutEvent/type">iOS Dev Center</a>
-     */
     @Generated
     @Selector("type")
     @NInt

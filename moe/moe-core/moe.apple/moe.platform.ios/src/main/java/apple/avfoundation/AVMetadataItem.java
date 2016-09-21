@@ -71,72 +71,40 @@ public class AVMetadataItem extends NSObject implements AVAsynchronousKeyValueLo
     @Selector("alloc")
     public static native AVMetadataItem alloc();
 
-    /**
-     * identifierForKey:keySpace:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVMetadataItem_Class/index.html#//apple_ref/occ/clm/AVMetadataItem/identifierForKey:keySpace:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("identifierForKey:keySpace:")
     public static native String identifierForKeyKeySpace(@Mapped(ObjCObjectMapper.class) Object key, String keySpace);
 
-    /**
-     * keyForIdentifier:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVMetadataItem_Class/index.html#//apple_ref/occ/clm/AVMetadataItem/keyForIdentifier:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("keyForIdentifier:")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object keyForIdentifier(String identifier);
 
-    /**
-     * keySpaceForIdentifier:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVMetadataItem_Class/index.html#//apple_ref/occ/clm/AVMetadataItem/keySpaceForIdentifier:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("keySpaceForIdentifier:")
     public static native String keySpaceForIdentifier(String identifier);
 
-    /**
-     * metadataItemsFromArray:filteredAndSortedAccordingToPreferredLanguages:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVMetadataItem_Class/index.html#//apple_ref/occ/clm/AVMetadataItem/metadataItemsFromArray:filteredAndSortedAccordingToPreferredLanguages:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("metadataItemsFromArray:filteredAndSortedAccordingToPreferredLanguages:")
     public static native NSArray<? extends AVMetadataItem> metadataItemsFromArrayFilteredAndSortedAccordingToPreferredLanguages(
             NSArray<? extends AVMetadataItem> metadataItems, NSArray<String> preferredLanguages);
 
-    /**
-     * metadataItemsFromArray:filteredByIdentifier:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVMetadataItem_Class/index.html#//apple_ref/occ/clm/AVMetadataItem/metadataItemsFromArray:filteredByIdentifier:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("metadataItemsFromArray:filteredByIdentifier:")
     public static native NSArray<? extends AVMetadataItem> metadataItemsFromArrayFilteredByIdentifier(
             NSArray<? extends AVMetadataItem> metadataItems, String identifier);
 
-    /**
-     * metadataItemsFromArray:filteredByMetadataItemFilter:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVMetadataItem_Class/index.html#//apple_ref/occ/clm/AVMetadataItem/metadataItemsFromArray:filteredByMetadataItemFilter:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("metadataItemsFromArray:filteredByMetadataItemFilter:")
     public static native NSArray<? extends AVMetadataItem> metadataItemsFromArrayFilteredByMetadataItemFilter(
             NSArray<? extends AVMetadataItem> metadataItems, AVMetadataItemFilter metadataItemFilter);
 
-    /**
-     * metadataItemsFromArray:withKey:keySpace:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVMetadataItem_Class/index.html#//apple_ref/occ/clm/AVMetadataItem/metadataItemsFromArray:withKey:keySpace:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("metadataItemsFromArray:withKey:keySpace:")
     public static native NSArray<? extends AVMetadataItem> metadataItemsFromArrayWithKeyKeySpace(
             NSArray<? extends AVMetadataItem> metadataItems, @Mapped(ObjCObjectMapper.class) Object key,
             String keySpace);
 
-    /**
-     * metadataItemsFromArray:withLocale:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVMetadataItem_Class/index.html#//apple_ref/occ/clm/AVMetadataItem/metadataItemsFromArray:withLocale:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("metadataItemsFromArray:withLocale:")
     public static native NSArray<? extends AVMetadataItem> metadataItemsFromArrayWithLocale(
@@ -248,10 +216,6 @@ public class AVMetadataItem extends NSObject implements AVAsynchronousKeyValueLo
     @NInt
     public static native long version_static();
 
-    /**
-     * commonKey</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVMetadataItem_Class/index.html#//apple_ref/occ/instp/AVMetadataItem/commonKey">iOS Dev Center</a>
-     */
     @Generated
     @Selector("commonKey")
     public native String commonKey();
@@ -262,59 +226,31 @@ public class AVMetadataItem extends NSObject implements AVAsynchronousKeyValueLo
     @MappedReturn(ObjCObjectMapper.class)
     public native Object copyWithZone(VoidPtr zone);
 
-    /**
-     * dataType</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVMetadataItem_Class/index.html#//apple_ref/occ/instp/AVMetadataItem/dataType">iOS Dev Center</a>
-     */
     @Generated
     @Selector("dataType")
     public native String dataType();
 
-    /**
-     * dataValue</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVMetadataItem_Class/index.html#//apple_ref/occ/instp/AVMetadataItem/dataValue">iOS Dev Center</a>
-     */
     @Generated
     @Selector("dataValue")
     public native NSData dataValue();
 
-    /**
-     * dateValue</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVMetadataItem_Class/index.html#//apple_ref/occ/instp/AVMetadataItem/dateValue">iOS Dev Center</a>
-     */
     @Generated
     @Selector("dateValue")
     public native NSDate dateValue();
 
-    /**
-     * duration</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVMetadataItem_Class/index.html#//apple_ref/occ/instp/AVMetadataItem/duration">iOS Dev Center</a>
-     */
     @Generated
     @Selector("duration")
     @ByValue
     public native CMTime duration();
 
-    /**
-     * extendedLanguageTag</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVMetadataItem_Class/index.html#//apple_ref/occ/instp/AVMetadataItem/extendedLanguageTag">iOS Dev Center</a>
-     */
     @Generated
     @Selector("extendedLanguageTag")
     public native String extendedLanguageTag();
 
-    /**
-     * extraAttributes</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVMetadataItem_Class/index.html#//apple_ref/occ/instp/AVMetadataItem/extraAttributes">iOS Dev Center</a>
-     */
     @Generated
     @Selector("extraAttributes")
     public native NSDictionary<String, ?> extraAttributes();
 
-    /**
-     * identifier</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVMetadataItem_Class/index.html#//apple_ref/occ/instp/AVMetadataItem/identifier">iOS Dev Center</a>
-     */
     @Generated
     @Selector("identifier")
     public native String identifier();
@@ -323,19 +259,11 @@ public class AVMetadataItem extends NSObject implements AVAsynchronousKeyValueLo
     @Selector("init")
     public native AVMetadataItem init();
 
-    /**
-     * key</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVMetadataItem_Class/index.html#//apple_ref/occ/instp/AVMetadataItem/key">iOS Dev Center</a>
-     */
     @Generated
     @Selector("key")
     @MappedReturn(ObjCObjectMapper.class)
     public native Object key();
 
-    /**
-     * keySpace</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVMetadataItem_Class/index.html#//apple_ref/occ/instp/AVMetadataItem/keySpace">iOS Dev Center</a>
-     */
     @Generated
     @Selector("keySpace")
     public native String keySpace();
@@ -345,10 +273,6 @@ public class AVMetadataItem extends NSObject implements AVAsynchronousKeyValueLo
     public native void loadValuesAsynchronouslyForKeysCompletionHandler(NSArray<String> keys,
             @ObjCBlock(name = "call_loadValuesAsynchronouslyForKeysCompletionHandler") AVAsynchronousKeyValueLoading.Block_loadValuesAsynchronouslyForKeysCompletionHandler handler);
 
-    /**
-     * locale</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVMetadataItem_Class/index.html#//apple_ref/occ/instp/AVMetadataItem/locale">iOS Dev Center</a>
-     */
     @Generated
     @Selector("locale")
     public native NSLocale locale();
@@ -358,10 +282,6 @@ public class AVMetadataItem extends NSObject implements AVAsynchronousKeyValueLo
     @MappedReturn(ObjCObjectMapper.class)
     public native Object mutableCopyWithZone(VoidPtr zone);
 
-    /**
-     * numberValue</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVMetadataItem_Class/index.html#//apple_ref/occ/instp/AVMetadataItem/numberValue">iOS Dev Center</a>
-     */
     @Generated
     @Selector("numberValue")
     public native NSNumber numberValue();
@@ -371,27 +291,15 @@ public class AVMetadataItem extends NSObject implements AVAsynchronousKeyValueLo
     @NInt
     public native long statusOfValueForKeyError(String key, Ptr<NSError> outError);
 
-    /**
-     * stringValue</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVMetadataItem_Class/index.html#//apple_ref/occ/instp/AVMetadataItem/stringValue">iOS Dev Center</a>
-     */
     @Generated
     @Selector("stringValue")
     public native String stringValue();
 
-    /**
-     * time</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVMetadataItem_Class/index.html#//apple_ref/occ/instp/AVMetadataItem/time">iOS Dev Center</a>
-     */
     @Generated
     @Selector("time")
     @ByValue
     public native CMTime time();
 
-    /**
-     * value</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVMetadataItem_Class/index.html#//apple_ref/occ/instp/AVMetadataItem/value">iOS Dev Center</a>
-     */
     @Generated
     @Selector("value")
     @MappedReturn(ObjCObjectMapper.class)

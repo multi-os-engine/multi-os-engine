@@ -166,10 +166,6 @@ public class HKDeletedObject extends NSObject implements NSSecureCoding {
     @NInt
     public static native long version_static();
 
-    /**
-     * UUID</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HealthKit/Reference/HKDeletedObject_ClassReference/index.html#//apple_ref/occ/instp/HKDeletedObject/UUID">iOS Dev Center</a>
-     */
     @Generated
     @Selector("UUID")
     public native NSUUID UUID();

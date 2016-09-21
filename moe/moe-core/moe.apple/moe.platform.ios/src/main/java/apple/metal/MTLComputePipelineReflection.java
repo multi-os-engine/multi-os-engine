@@ -158,10 +158,6 @@ public class MTLComputePipelineReflection extends NSObject {
     @NInt
     public static native long version_static();
 
-    /**
-     * arguments</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Metal/Reference/MTLComputePipelineReflection_Ref/index.html#//apple_ref/occ/instp/MTLComputePipelineReflection/arguments">iOS Dev Center</a>
-     */
     @Generated
     @Selector("arguments")
     public native NSArray<? extends MTLArgument> arguments();

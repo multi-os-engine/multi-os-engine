@@ -164,36 +164,20 @@ public class AVPlayerItemOutput extends NSObject {
     @Selector("init")
     public native AVPlayerItemOutput init();
 
-    /**
-     * itemTimeForHostTime:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVPlayerItemOutput_Class/index.html#//apple_ref/occ/instm/AVPlayerItemOutput/itemTimeForHostTime:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("itemTimeForHostTime:")
     @ByValue
     public native CMTime itemTimeForHostTime(double hostTimeInSeconds);
 
-    /**
-     * itemTimeForMachAbsoluteTime:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVPlayerItemOutput_Class/index.html#//apple_ref/occ/instm/AVPlayerItemOutput/itemTimeForMachAbsoluteTime:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("itemTimeForMachAbsoluteTime:")
     @ByValue
     public native CMTime itemTimeForMachAbsoluteTime(long machAbsoluteTime);
 
-    /**
-     * suppressesPlayerRendering</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVPlayerItemOutput_Class/index.html#//apple_ref/occ/instp/AVPlayerItemOutput/suppressesPlayerRendering">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setSuppressesPlayerRendering:")
     public native void setSuppressesPlayerRendering(boolean value);
 
-    /**
-     * suppressesPlayerRendering</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVPlayerItemOutput_Class/index.html#//apple_ref/occ/instp/AVPlayerItemOutput/suppressesPlayerRendering">iOS Dev Center</a>
-     */
     @Generated
     @Selector("suppressesPlayerRendering")
     public native boolean suppressesPlayerRendering();

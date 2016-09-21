@@ -59,10 +59,6 @@ public class NSNull extends NSObject implements NSCopying, NSSecureCoding, CAAct
     @Selector("alloc")
     public static native NSNull alloc();
 
-    /**
-     * null</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSNull_Class/index.html#//apple_ref/occ/clm/NSNull/null">iOS Dev Center</a>
-     */
     @Generated
     @Selector("null")
     public static native NSNull null_objc();

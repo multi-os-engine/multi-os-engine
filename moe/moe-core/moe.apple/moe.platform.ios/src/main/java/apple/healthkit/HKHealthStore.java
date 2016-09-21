@@ -64,10 +64,6 @@ public class HKHealthStore extends NSObject {
     @Selector("alloc")
     public static native HKHealthStore alloc();
 
-    /**
-     * isHealthDataAvailable</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HealthKit/Reference/HKHealthStore_Class/index.html#//apple_ref/occ/clm/HKHealthStore/isHealthDataAvailable">iOS Dev Center</a>
-     */
     @Generated
     @Selector("isHealthDataAvailable")
     public static native boolean isHealthDataAvailable();
@@ -172,88 +168,48 @@ public class HKHealthStore extends NSObject {
     @NInt
     public static native long version();
 
-    /**
-     * addSamples:toWorkout:completion:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HealthKit/Reference/HKHealthStore_Class/index.html#//apple_ref/occ/instm/HKHealthStore/addSamples:toWorkout:completion:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("addSamples:toWorkout:completion:")
     public native void addSamplesToWorkoutCompletion(NSArray<? extends HKSample> samples, HKWorkout workout,
             @ObjCBlock(name = "call_addSamplesToWorkoutCompletion") Block_addSamplesToWorkoutCompletion completion);
 
-    /**
-     * authorizationStatusForType:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HealthKit/Reference/HKHealthStore_Class/index.html#//apple_ref/occ/instm/HKHealthStore/authorizationStatusForType:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("authorizationStatusForType:")
     @NInt
     public native long authorizationStatusForType(HKObjectType type);
 
-    /**
-     * biologicalSexWithError:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HealthKit/Reference/HKHealthStore_Class/index.html#//apple_ref/occ/instm/HKHealthStore/biologicalSexWithError:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("biologicalSexWithError:")
     public native HKBiologicalSexObject biologicalSexWithError(Ptr<NSError> error);
 
-    /**
-     * bloodTypeWithError:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HealthKit/Reference/HKHealthStore_Class/index.html#//apple_ref/occ/instm/HKHealthStore/bloodTypeWithError:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("bloodTypeWithError:")
     public native HKBloodTypeObject bloodTypeWithError(Ptr<NSError> error);
 
-    /**
-     * dateOfBirthWithError:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HealthKit/Reference/HKHealthStore_Class/index.html#//apple_ref/occ/instm/HKHealthStore/dateOfBirthWithError:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("dateOfBirthWithError:")
     public native NSDate dateOfBirthWithError(Ptr<NSError> error);
 
-    /**
-     * deleteObject:withCompletion:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HealthKit/Reference/HKHealthStore_Class/index.html#//apple_ref/occ/instm/HKHealthStore/deleteObject:withCompletion:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("deleteObject:withCompletion:")
     public native void deleteObjectWithCompletion(HKObject object,
             @ObjCBlock(name = "call_deleteObjectWithCompletion") Block_deleteObjectWithCompletion completion);
 
-    /**
-     * disableAllBackgroundDeliveryWithCompletion:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HealthKit/Reference/HKHealthStore_Class/index.html#//apple_ref/occ/instm/HKHealthStore/disableAllBackgroundDeliveryWithCompletion:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("disableAllBackgroundDeliveryWithCompletion:")
     public native void disableAllBackgroundDeliveryWithCompletion(
             @ObjCBlock(name = "call_disableAllBackgroundDeliveryWithCompletion") Block_disableAllBackgroundDeliveryWithCompletion completion);
 
-    /**
-     * disableBackgroundDeliveryForType:withCompletion:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HealthKit/Reference/HKHealthStore_Class/index.html#//apple_ref/occ/instm/HKHealthStore/disableBackgroundDeliveryForType:withCompletion:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("disableBackgroundDeliveryForType:withCompletion:")
     public native void disableBackgroundDeliveryForTypeWithCompletion(HKObjectType type,
             @ObjCBlock(name = "call_disableBackgroundDeliveryForTypeWithCompletion") Block_disableBackgroundDeliveryForTypeWithCompletion completion);
 
-    /**
-     * enableBackgroundDeliveryForType:frequency:withCompletion:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HealthKit/Reference/HKHealthStore_Class/index.html#//apple_ref/occ/instm/HKHealthStore/enableBackgroundDeliveryForType:frequency:withCompletion:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("enableBackgroundDeliveryForType:frequency:withCompletion:")
     public native void enableBackgroundDeliveryForTypeFrequencyWithCompletion(HKObjectType type, @NInt long frequency,
             @ObjCBlock(name = "call_enableBackgroundDeliveryForTypeFrequencyWithCompletion") Block_enableBackgroundDeliveryForTypeFrequencyWithCompletion completion);
 
-    /**
-     * executeQuery:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HealthKit/Reference/HKHealthStore_Class/index.html#//apple_ref/occ/instm/HKHealthStore/executeQuery:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("executeQuery:")
     public native void executeQuery(HKQuery query);
@@ -262,98 +218,54 @@ public class HKHealthStore extends NSObject {
     @Selector("init")
     public native HKHealthStore init();
 
-    /**
-     * preferredUnitsForQuantityTypes:completion:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HealthKit/Reference/HKHealthStore_Class/index.html#//apple_ref/occ/instm/HKHealthStore/preferredUnitsForQuantityTypes:completion:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("preferredUnitsForQuantityTypes:completion:")
     public native void preferredUnitsForQuantityTypesCompletion(NSSet<? extends HKQuantityType> quantityTypes,
             @ObjCBlock(name = "call_preferredUnitsForQuantityTypesCompletion") Block_preferredUnitsForQuantityTypesCompletion completion);
 
-    /**
-     * requestAuthorizationToShareTypes:readTypes:completion:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HealthKit/Reference/HKHealthStore_Class/index.html#//apple_ref/occ/instm/HKHealthStore/requestAuthorizationToShareTypes:readTypes:completion:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("requestAuthorizationToShareTypes:readTypes:completion:")
     public native void requestAuthorizationToShareTypesReadTypesCompletion(NSSet<? extends HKSampleType> typesToShare,
             NSSet<? extends HKObjectType> typesToRead,
             @ObjCBlock(name = "call_requestAuthorizationToShareTypesReadTypesCompletion") Block_requestAuthorizationToShareTypesReadTypesCompletion completion);
 
-    /**
-     * saveObject:withCompletion:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HealthKit/Reference/HKHealthStore_Class/index.html#//apple_ref/occ/instm/HKHealthStore/saveObject:withCompletion:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("saveObject:withCompletion:")
     public native void saveObjectWithCompletion(HKObject object,
             @ObjCBlock(name = "call_saveObjectWithCompletion") Block_saveObjectWithCompletion completion);
 
-    /**
-     * saveObjects:withCompletion:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HealthKit/Reference/HKHealthStore_Class/index.html#//apple_ref/occ/instm/HKHealthStore/saveObjects:withCompletion:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("saveObjects:withCompletion:")
     public native void saveObjectsWithCompletion(NSArray<? extends HKObject> objects,
             @ObjCBlock(name = "call_saveObjectsWithCompletion") Block_saveObjectsWithCompletion completion);
 
-    /**
-     * stopQuery:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HealthKit/Reference/HKHealthStore_Class/index.html#//apple_ref/occ/instm/HKHealthStore/stopQuery:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("stopQuery:")
     public native void stopQuery(HKQuery query);
 
-    /**
-     * deleteObjects:withCompletion:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HealthKit/Reference/HKHealthStore_Class/index.html#//apple_ref/occ/instm/HKHealthStore/deleteObjects:withCompletion:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("deleteObjects:withCompletion:")
     public native void deleteObjectsWithCompletion(NSArray<? extends HKObject> objects,
             @ObjCBlock(name = "call_deleteObjectsWithCompletion") Block_deleteObjectsWithCompletion completion);
 
-    /**
-     * deleteObjectsOfType:predicate:withCompletion:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HealthKit/Reference/HKHealthStore_Class/index.html#//apple_ref/occ/instm/HKHealthStore/deleteObjectsOfType:predicate:withCompletion:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("deleteObjectsOfType:predicate:withCompletion:")
     public native void deleteObjectsOfTypePredicateWithCompletion(HKObjectType objectType, NSPredicate predicate,
             @ObjCBlock(name = "call_deleteObjectsOfTypePredicateWithCompletion") Block_deleteObjectsOfTypePredicateWithCompletion completion);
 
-    /**
-     * earliestPermittedSampleDate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HealthKit/Reference/HKHealthStore_Class/index.html#//apple_ref/occ/instm/HKHealthStore/earliestPermittedSampleDate">iOS Dev Center</a>
-     */
     @Generated
     @Selector("earliestPermittedSampleDate")
     public native NSDate earliestPermittedSampleDate();
 
-    /**
-     * fitzpatrickSkinTypeWithError:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HealthKit/Reference/HKHealthStore_Class/index.html#//apple_ref/occ/instm/HKHealthStore/fitzpatrickSkinTypeWithError:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("fitzpatrickSkinTypeWithError:")
     public native HKFitzpatrickSkinTypeObject fitzpatrickSkinTypeWithError(Ptr<NSError> error);
 
-    /**
-     * handleAuthorizationForExtensionWithCompletion:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HealthKit/Reference/HKHealthStore_Class/index.html#//apple_ref/occ/instm/HKHealthStore/handleAuthorizationForExtensionWithCompletion:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("handleAuthorizationForExtensionWithCompletion:")
     public native void handleAuthorizationForExtensionWithCompletion(
             @ObjCBlock(name = "call_handleAuthorizationForExtensionWithCompletion") Block_handleAuthorizationForExtensionWithCompletion completion);
 
-    /**
-     * splitTotalEnergy:startDate:endDate:resultsHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HealthKit/Reference/HKHealthStore_Class/index.html#//apple_ref/occ/instm/HKHealthStore/splitTotalEnergy:startDate:endDate:resultsHandler:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("splitTotalEnergy:startDate:endDate:resultsHandler:")
     public native void splitTotalEnergyStartDateEndDateResultsHandler(HKQuantity totalEnergy, NSDate startDate,

@@ -33,36 +33,20 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("MTLFunction")
 public interface MTLFunction {
-    /**
-     * device</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Metal/Reference/MTLFunction_Ref/index.html#//apple_ref/occ/intfp/MTLFunction/device">iOS Dev Center</a>
-     */
     @Generated
     @Selector("device")
     @MappedReturn(ObjCObjectMapper.class)
     Object device();
 
-    /**
-     * functionType</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Metal/Reference/MTLFunction_Ref/index.html#//apple_ref/occ/intfp/MTLFunction/functionType">iOS Dev Center</a>
-     */
     @Generated
     @Selector("functionType")
     @NUInt
     long functionType();
 
-    /**
-     * name</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Metal/Reference/MTLFunction_Ref/index.html#//apple_ref/occ/intfp/MTLFunction/name">iOS Dev Center</a>
-     */
     @Generated
     @Selector("name")
     String name();
 
-    /**
-     * vertexAttributes</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Metal/Reference/MTLFunction_Ref/index.html#//apple_ref/occ/intfp/MTLFunction/vertexAttributes">iOS Dev Center</a>
-     */
     @Generated
     @Selector("vertexAttributes")
     NSArray<? extends MTLVertexAttribute> vertexAttributes();

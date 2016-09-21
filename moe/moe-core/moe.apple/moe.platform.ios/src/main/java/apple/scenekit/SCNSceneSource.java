@@ -65,18 +65,10 @@ public class SCNSceneSource extends NSObject {
     @Selector("alloc")
     public static native SCNSceneSource alloc();
 
-    /**
-     * sceneSourceWithData:options:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNSceneSource_Class/index.html#//apple_ref/occ/clm/SCNSceneSource/sceneSourceWithData:options:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("sceneSourceWithData:options:")
     public static native SCNSceneSource sceneSourceWithDataOptions(NSData data, NSDictionary<String, ?> options);
 
-    /**
-     * sceneSourceWithURL:options:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNSceneSource_Class/index.html#//apple_ref/occ/clm/SCNSceneSource/sceneSourceWithURL:options:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("sceneSourceWithURL:options:")
     public static native SCNSceneSource sceneSourceWithURLOptions(NSURL url, NSDictionary<String, ?> options);
@@ -181,36 +173,20 @@ public class SCNSceneSource extends NSObject {
     @NInt
     public static native long version_static();
 
-    /**
-     * data</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNSceneSource_Class/index.html#//apple_ref/occ/instp/SCNSceneSource/data">iOS Dev Center</a>
-     */
     @Generated
     @Selector("data")
     public native NSData data();
 
-    /**
-     * entriesPassingTest:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNSceneSource_Class/index.html#//apple_ref/occ/instm/SCNSceneSource/entriesPassingTest:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("entriesPassingTest:")
     public native NSArray<?> entriesPassingTest(
             @ObjCBlock(name = "call_entriesPassingTest") Block_entriesPassingTest predicate);
 
-    /**
-     * entryWithIdentifier:withClass:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNSceneSource_Class/index.html#//apple_ref/occ/instm/SCNSceneSource/entryWithIdentifier:withClass:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("entryWithIdentifier:withClass:")
     @MappedReturn(ObjCObjectMapper.class)
     public native Object entryWithIdentifierWithClass(String uid, Class entryClass);
 
-    /**
-     * identifiersOfEntriesWithClass:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNSceneSource_Class/index.html#//apple_ref/occ/instm/SCNSceneSource/identifiersOfEntriesWithClass:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("identifiersOfEntriesWithClass:")
     public native NSArray<String> identifiersOfEntriesWithClass(Class entryClass);
@@ -219,52 +195,28 @@ public class SCNSceneSource extends NSObject {
     @Selector("init")
     public native SCNSceneSource init();
 
-    /**
-     * initWithData:options:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNSceneSource_Class/index.html#//apple_ref/occ/instm/SCNSceneSource/initWithData:options:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithData:options:")
     public native SCNSceneSource initWithDataOptions(NSData data, NSDictionary<String, ?> options);
 
-    /**
-     * initWithURL:options:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNSceneSource_Class/index.html#//apple_ref/occ/instm/SCNSceneSource/initWithURL:options:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithURL:options:")
     public native SCNSceneSource initWithURLOptions(NSURL url, NSDictionary<String, ?> options);
 
-    /**
-     * propertyForKey:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNSceneSource_Class/index.html#//apple_ref/occ/instm/SCNSceneSource/propertyForKey:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("propertyForKey:")
     @MappedReturn(ObjCObjectMapper.class)
     public native Object propertyForKey(String key);
 
-    /**
-     * sceneWithOptions:error:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNSceneSource_Class/index.html#//apple_ref/occ/instm/SCNSceneSource/sceneWithOptions:error:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("sceneWithOptions:error:")
     public native SCNScene sceneWithOptionsError(NSDictionary<String, ?> options, Ptr<NSError> error);
 
-    /**
-     * sceneWithOptions:statusHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNSceneSource_Class/index.html#//apple_ref/occ/instm/SCNSceneSource/sceneWithOptions:statusHandler:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("sceneWithOptions:statusHandler:")
     public native SCNScene sceneWithOptionsStatusHandler(NSDictionary<String, ?> options,
             @ObjCBlock(name = "call_sceneWithOptionsStatusHandler") Block_sceneWithOptionsStatusHandler statusHandler);
 
-    /**
-     * url</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNSceneSource_Class/index.html#//apple_ref/occ/instp/SCNSceneSource/url">iOS Dev Center</a>
-     */
     @Generated
     @Selector("url")
     public native NSURL url();

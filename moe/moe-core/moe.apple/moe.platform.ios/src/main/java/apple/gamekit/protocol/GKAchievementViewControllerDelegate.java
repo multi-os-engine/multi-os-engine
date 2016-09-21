@@ -29,10 +29,6 @@ import org.moe.natj.objc.ann.Selector;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("GKAchievementViewControllerDelegate")
 public interface GKAchievementViewControllerDelegate {
-    /**
-     * achievementViewControllerDidFinish:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKAchievementViewControllerDelegate_Ref/index.html#//apple_ref/occ/intfm/GKAchievementViewControllerDelegate/achievementViewControllerDidFinish:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("achievementViewControllerDidFinish:")
     void achievementViewControllerDidFinish(GKAchievementViewController viewController);

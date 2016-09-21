@@ -159,10 +159,6 @@ public class WKWebViewConfiguration extends NSObject implements NSCopying {
     @NInt
     public static native long version_static();
 
-    /**
-     * allowsInlineMediaPlayback</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WebKit/Reference/WKWebViewConfiguration_Ref/index.html#//apple_ref/occ/instp/WKWebViewConfiguration/allowsInlineMediaPlayback">iOS Dev Center</a>
-     */
     @Generated
     @Selector("allowsInlineMediaPlayback")
     public native boolean allowsInlineMediaPlayback();
@@ -177,207 +173,107 @@ public class WKWebViewConfiguration extends NSObject implements NSCopying {
     @Selector("init")
     public native WKWebViewConfiguration init();
 
-    /**
-     * mediaPlaybackAllowsAirPlay</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WebKit/Reference/WKWebViewConfiguration_Ref/index.html#//apple_ref/occ/instp/WKWebViewConfiguration/mediaPlaybackAllowsAirPlay">iOS Dev Center</a>
-     */
     @Deprecated
     @Generated
     @Selector("mediaPlaybackAllowsAirPlay")
     public native boolean mediaPlaybackAllowsAirPlay();
 
-    /**
-     * mediaPlaybackRequiresUserAction</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WebKit/Reference/WKWebViewConfiguration_Ref/index.html#//apple_ref/occ/instp/WKWebViewConfiguration/mediaPlaybackRequiresUserAction">iOS Dev Center</a>
-     */
     @Deprecated
     @Generated
     @Selector("mediaPlaybackRequiresUserAction")
     public native boolean mediaPlaybackRequiresUserAction();
 
-    /**
-     * preferences</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WebKit/Reference/WKWebViewConfiguration_Ref/index.html#//apple_ref/occ/instp/WKWebViewConfiguration/preferences">iOS Dev Center</a>
-     */
     @Generated
     @Selector("preferences")
     public native WKPreferences preferences();
 
-    /**
-     * processPool</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WebKit/Reference/WKWebViewConfiguration_Ref/index.html#//apple_ref/occ/instp/WKWebViewConfiguration/processPool">iOS Dev Center</a>
-     */
     @Generated
     @Selector("processPool")
     public native WKProcessPool processPool();
 
-    /**
-     * selectionGranularity</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WebKit/Reference/WKWebViewConfiguration_Ref/index.html#//apple_ref/occ/instp/WKWebViewConfiguration/selectionGranularity">iOS Dev Center</a>
-     */
     @Generated
     @Selector("selectionGranularity")
     @NInt
     public native long selectionGranularity();
 
-    /**
-     * allowsInlineMediaPlayback</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WebKit/Reference/WKWebViewConfiguration_Ref/index.html#//apple_ref/occ/instp/WKWebViewConfiguration/allowsInlineMediaPlayback">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setAllowsInlineMediaPlayback:")
     public native void setAllowsInlineMediaPlayback(boolean value);
 
-    /**
-     * mediaPlaybackAllowsAirPlay</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WebKit/Reference/WKWebViewConfiguration_Ref/index.html#//apple_ref/occ/instp/WKWebViewConfiguration/mediaPlaybackAllowsAirPlay">iOS Dev Center</a>
-     */
     @Deprecated
     @Generated
     @Selector("setMediaPlaybackAllowsAirPlay:")
     public native void setMediaPlaybackAllowsAirPlay(boolean value);
 
-    /**
-     * mediaPlaybackRequiresUserAction</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WebKit/Reference/WKWebViewConfiguration_Ref/index.html#//apple_ref/occ/instp/WKWebViewConfiguration/mediaPlaybackRequiresUserAction">iOS Dev Center</a>
-     */
     @Deprecated
     @Generated
     @Selector("setMediaPlaybackRequiresUserAction:")
     public native void setMediaPlaybackRequiresUserAction(boolean value);
 
-    /**
-     * preferences</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WebKit/Reference/WKWebViewConfiguration_Ref/index.html#//apple_ref/occ/instp/WKWebViewConfiguration/preferences">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setPreferences:")
     public native void setPreferences(WKPreferences value);
 
-    /**
-     * processPool</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WebKit/Reference/WKWebViewConfiguration_Ref/index.html#//apple_ref/occ/instp/WKWebViewConfiguration/processPool">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setProcessPool:")
     public native void setProcessPool(WKProcessPool value);
 
-    /**
-     * selectionGranularity</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WebKit/Reference/WKWebViewConfiguration_Ref/index.html#//apple_ref/occ/instp/WKWebViewConfiguration/selectionGranularity">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setSelectionGranularity:")
     public native void setSelectionGranularity(@NInt long value);
 
-    /**
-     * suppressesIncrementalRendering</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WebKit/Reference/WKWebViewConfiguration_Ref/index.html#//apple_ref/occ/instp/WKWebViewConfiguration/suppressesIncrementalRendering">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setSuppressesIncrementalRendering:")
     public native void setSuppressesIncrementalRendering(boolean value);
 
-    /**
-     * userContentController</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WebKit/Reference/WKWebViewConfiguration_Ref/index.html#//apple_ref/occ/instp/WKWebViewConfiguration/userContentController">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setUserContentController:")
     public native void setUserContentController(WKUserContentController value);
 
-    /**
-     * suppressesIncrementalRendering</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WebKit/Reference/WKWebViewConfiguration_Ref/index.html#//apple_ref/occ/instp/WKWebViewConfiguration/suppressesIncrementalRendering">iOS Dev Center</a>
-     */
     @Generated
     @Selector("suppressesIncrementalRendering")
     public native boolean suppressesIncrementalRendering();
 
-    /**
-     * userContentController</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WebKit/Reference/WKWebViewConfiguration_Ref/index.html#//apple_ref/occ/instp/WKWebViewConfiguration/userContentController">iOS Dev Center</a>
-     */
     @Generated
     @Selector("userContentController")
     public native WKUserContentController userContentController();
 
-    /**
-     * allowsAirPlayForMediaPlayback</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WebKit/Reference/WKWebViewConfiguration_Ref/index.html#//apple_ref/occ/instp/WKWebViewConfiguration/allowsAirPlayForMediaPlayback">iOS Dev Center</a>
-     */
     @Generated
     @Selector("allowsAirPlayForMediaPlayback")
     public native boolean allowsAirPlayForMediaPlayback();
 
-    /**
-     * allowsPictureInPictureMediaPlayback</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WebKit/Reference/WKWebViewConfiguration_Ref/index.html#//apple_ref/occ/instp/WKWebViewConfiguration/allowsPictureInPictureMediaPlayback">iOS Dev Center</a>
-     */
     @Generated
     @Selector("allowsPictureInPictureMediaPlayback")
     public native boolean allowsPictureInPictureMediaPlayback();
 
-    /**
-     * applicationNameForUserAgent</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WebKit/Reference/WKWebViewConfiguration_Ref/index.html#//apple_ref/occ/instp/WKWebViewConfiguration/applicationNameForUserAgent">iOS Dev Center</a>
-     */
     @Generated
     @Selector("applicationNameForUserAgent")
     public native String applicationNameForUserAgent();
 
-    /**
-     * requiresUserActionForMediaPlayback</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WebKit/Reference/WKWebViewConfiguration_Ref/index.html#//apple_ref/occ/instp/WKWebViewConfiguration/requiresUserActionForMediaPlayback">iOS Dev Center</a>
-     */
     @Generated
     @Selector("requiresUserActionForMediaPlayback")
     public native boolean requiresUserActionForMediaPlayback();
 
-    /**
-     * allowsAirPlayForMediaPlayback</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WebKit/Reference/WKWebViewConfiguration_Ref/index.html#//apple_ref/occ/instp/WKWebViewConfiguration/allowsAirPlayForMediaPlayback">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setAllowsAirPlayForMediaPlayback:")
     public native void setAllowsAirPlayForMediaPlayback(boolean value);
 
-    /**
-     * allowsPictureInPictureMediaPlayback</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WebKit/Reference/WKWebViewConfiguration_Ref/index.html#//apple_ref/occ/instp/WKWebViewConfiguration/allowsPictureInPictureMediaPlayback">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setAllowsPictureInPictureMediaPlayback:")
     public native void setAllowsPictureInPictureMediaPlayback(boolean value);
 
-    /**
-     * applicationNameForUserAgent</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WebKit/Reference/WKWebViewConfiguration_Ref/index.html#//apple_ref/occ/instp/WKWebViewConfiguration/applicationNameForUserAgent">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setApplicationNameForUserAgent:")
     public native void setApplicationNameForUserAgent(String value);
 
-    /**
-     * requiresUserActionForMediaPlayback</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WebKit/Reference/WKWebViewConfiguration_Ref/index.html#//apple_ref/occ/instp/WKWebViewConfiguration/requiresUserActionForMediaPlayback">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setRequiresUserActionForMediaPlayback:")
     public native void setRequiresUserActionForMediaPlayback(boolean value);
 
-    /**
-     * websiteDataStore</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WebKit/Reference/WKWebViewConfiguration_Ref/index.html#//apple_ref/occ/instp/WKWebViewConfiguration/websiteDataStore">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setWebsiteDataStore:")
     public native void setWebsiteDataStore(WKWebsiteDataStore value);
 
-    /**
-     * websiteDataStore</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WebKit/Reference/WKWebViewConfiguration_Ref/index.html#//apple_ref/occ/instp/WKWebViewConfiguration/websiteDataStore">iOS Dev Center</a>
-     */
     @Generated
     @Selector("websiteDataStore")
     public native WKWebsiteDataStore websiteDataStore();

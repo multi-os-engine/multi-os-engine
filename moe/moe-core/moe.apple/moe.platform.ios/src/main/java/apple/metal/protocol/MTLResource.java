@@ -31,53 +31,29 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("MTLResource")
 public interface MTLResource {
-    /**
-     * cpuCacheMode</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Metal/Reference/MTLResource_Ref/index.html#//apple_ref/occ/intfp/MTLResource/cpuCacheMode">iOS Dev Center</a>
-     */
     @Generated
     @Selector("cpuCacheMode")
     @NUInt
     long cpuCacheMode();
 
-    /**
-     * device</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Metal/Reference/MTLResource_Ref/index.html#//apple_ref/occ/intfp/MTLResource/device">iOS Dev Center</a>
-     */
     @Generated
     @Selector("device")
     @MappedReturn(ObjCObjectMapper.class)
     Object device();
 
-    /**
-     * label</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Metal/Reference/MTLResource_Ref/index.html#//apple_ref/occ/intfp/MTLResource/label">iOS Dev Center</a>
-     */
     @Generated
     @Selector("label")
     String label();
 
-    /**
-     * label</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Metal/Reference/MTLResource_Ref/index.html#//apple_ref/occ/intfp/MTLResource/label">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setLabel:")
     void setLabel(String value);
 
-    /**
-     * setPurgeableState:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Metal/Reference/MTLResource_Ref/index.html#//apple_ref/occ/intfm/MTLResource/setPurgeableState:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setPurgeableState:")
     @NUInt
     long setPurgeableState(@NUInt long state);
 
-    /**
-     * storageMode</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Metal/Reference/MTLResource_Ref/index.html#//apple_ref/occ/intfp/MTLResource/storageMode">iOS Dev Center</a>
-     */
     @Generated
     @Selector("storageMode")
     @NUInt

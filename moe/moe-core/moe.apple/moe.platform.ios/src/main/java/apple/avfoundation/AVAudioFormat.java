@@ -168,26 +168,14 @@ public class AVAudioFormat extends NSObject implements NSSecureCoding {
     @NInt
     public static native long version_static();
 
-    /**
-     * channelCount</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioFormat_Class/index.html#//apple_ref/occ/instp/AVAudioFormat/channelCount">iOS Dev Center</a>
-     */
     @Generated
     @Selector("channelCount")
     public native int channelCount();
 
-    /**
-     * channelLayout</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioFormat_Class/index.html#//apple_ref/occ/instp/AVAudioFormat/channelLayout">iOS Dev Center</a>
-     */
     @Generated
     @Selector("channelLayout")
     public native AVAudioChannelLayout channelLayout();
 
-    /**
-     * commonFormat</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioFormat_Class/index.html#//apple_ref/occ/instp/AVAudioFormat/commonFormat">iOS Dev Center</a>
-     */
     @Generated
     @Selector("commonFormat")
     @NUInt
@@ -197,110 +185,58 @@ public class AVAudioFormat extends NSObject implements NSSecureCoding {
     @Selector("init")
     public native AVAudioFormat init();
 
-    /**
-     * initStandardFormatWithSampleRate:channelLayout:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioFormat_Class/index.html#//apple_ref/occ/instm/AVAudioFormat/initStandardFormatWithSampleRate:channelLayout:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initStandardFormatWithSampleRate:channelLayout:")
     public native AVAudioFormat initStandardFormatWithSampleRateChannelLayout(double sampleRate,
             AVAudioChannelLayout layout);
 
-    /**
-     * initStandardFormatWithSampleRate:channels:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioFormat_Class/index.html#//apple_ref/occ/instm/AVAudioFormat/initStandardFormatWithSampleRate:channels:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initStandardFormatWithSampleRate:channels:")
     public native AVAudioFormat initStandardFormatWithSampleRateChannels(double sampleRate, int channels);
 
-    /**
-     * initWithCommonFormat:sampleRate:channels:interleaved:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioFormat_Class/index.html#//apple_ref/occ/instm/AVAudioFormat/initWithCommonFormat:sampleRate:channels:interleaved:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithCommonFormat:sampleRate:channels:interleaved:")
     public native AVAudioFormat initWithCommonFormatSampleRateChannelsInterleaved(@NUInt long format, double sampleRate,
             int channels, boolean interleaved);
 
-    /**
-     * initWithCommonFormat:sampleRate:interleaved:channelLayout:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioFormat_Class/index.html#//apple_ref/occ/instm/AVAudioFormat/initWithCommonFormat:sampleRate:interleaved:channelLayout:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithCommonFormat:sampleRate:interleaved:channelLayout:")
     public native AVAudioFormat initWithCommonFormatSampleRateInterleavedChannelLayout(@NUInt long format,
             double sampleRate, boolean interleaved, AVAudioChannelLayout layout);
 
-    /**
-     * initWithSettings:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioFormat_Class/index.html#//apple_ref/occ/instm/AVAudioFormat/initWithSettings:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithSettings:")
     public native AVAudioFormat initWithSettings(NSDictionary<String, ?> settings);
 
-    /**
-     * initWithStreamDescription:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioFormat_Class/index.html#//apple_ref/occ/instm/AVAudioFormat/initWithStreamDescription:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithStreamDescription:")
     public native AVAudioFormat initWithStreamDescription(AudioStreamBasicDescription asbd);
 
-    /**
-     * initWithStreamDescription:channelLayout:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioFormat_Class/index.html#//apple_ref/occ/instm/AVAudioFormat/initWithStreamDescription:channelLayout:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithStreamDescription:channelLayout:")
     public native AVAudioFormat initWithStreamDescriptionChannelLayout(AudioStreamBasicDescription asbd,
             AVAudioChannelLayout layout);
 
-    /**
-     * isEqual:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioFormat_Class/index.html#//apple_ref/occ/instm/AVAudioFormat/isEqual:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("isEqual:")
     public native boolean isEqual(@Mapped(ObjCObjectMapper.class) Object object);
 
-    /**
-     * interleaved</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioFormat_Class/index.html#//apple_ref/occ/instp/AVAudioFormat/interleaved">iOS Dev Center</a>
-     */
     @Generated
     @Selector("isInterleaved")
     public native boolean isInterleaved();
 
-    /**
-     * standard</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioFormat_Class/index.html#//apple_ref/occ/instp/AVAudioFormat/standard">iOS Dev Center</a>
-     */
     @Generated
     @Selector("isStandard")
     public native boolean isStandard();
 
-    /**
-     * sampleRate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioFormat_Class/index.html#//apple_ref/occ/instp/AVAudioFormat/sampleRate">iOS Dev Center</a>
-     */
     @Generated
     @Selector("sampleRate")
     public native double sampleRate();
 
-    /**
-     * settings</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioFormat_Class/index.html#//apple_ref/occ/instp/AVAudioFormat/settings">iOS Dev Center</a>
-     */
     @Generated
     @Selector("settings")
     public native NSDictionary<String, ?> settings();
 
-    /**
-     * streamDescription</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioFormat_Class/index.html#//apple_ref/occ/instp/AVAudioFormat/streamDescription">iOS Dev Center</a>
-     */
     @Generated
     @Selector("streamDescription")
     public native AudioStreamBasicDescription streamDescription();

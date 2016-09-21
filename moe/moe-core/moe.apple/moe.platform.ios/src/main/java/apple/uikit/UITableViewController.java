@@ -179,10 +179,6 @@ public class UITableViewController extends UIViewController implements UITableVi
     @NInt
     public static native long version_static();
 
-    /**
-     * clearsSelectionOnViewWillAppear</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITableViewController_Class/index.html#//apple_ref/occ/instp/UITableViewController/clearsSelectionOnViewWillAppear">iOS Dev Center</a>
-     */
     @Generated
     @Selector("clearsSelectionOnViewWillAppear")
     public native boolean clearsSelectionOnViewWillAppear();
@@ -199,10 +195,6 @@ public class UITableViewController extends UIViewController implements UITableVi
     @Selector("initWithNibName:bundle:")
     public native UITableViewController initWithNibNameBundle(String nibNameOrNil, NSBundle nibBundleOrNil);
 
-    /**
-     * initWithStyle:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITableViewController_Class/index.html#//apple_ref/occ/instm/UITableViewController/initWithStyle:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithStyle:")
     public native UITableViewController initWithStyle(@NInt long style);
@@ -213,10 +205,6 @@ public class UITableViewController extends UIViewController implements UITableVi
     @NInt
     public native long numberOfSectionsInTableView(UITableView tableView);
 
-    /**
-     * refreshControl</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITableViewController_Class/index.html#//apple_ref/occ/instp/UITableViewController/refreshControl">iOS Dev Center</a>
-     */
     @Generated
     @Selector("refreshControl")
     public native UIRefreshControl refreshControl();
@@ -288,34 +276,18 @@ public class UITableViewController extends UIViewController implements UITableVi
     @Selector("sectionIndexTitlesForTableView:")
     public native NSArray<String> sectionIndexTitlesForTableView(UITableView tableView);
 
-    /**
-     * clearsSelectionOnViewWillAppear</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITableViewController_Class/index.html#//apple_ref/occ/instp/UITableViewController/clearsSelectionOnViewWillAppear">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setClearsSelectionOnViewWillAppear:")
     public native void setClearsSelectionOnViewWillAppear(boolean value);
 
-    /**
-     * refreshControl</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITableViewController_Class/index.html#//apple_ref/occ/instp/UITableViewController/refreshControl">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setRefreshControl:")
     public native void setRefreshControl(UIRefreshControl value);
 
-    /**
-     * tableView</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITableViewController_Class/index.html#//apple_ref/occ/instp/UITableViewController/tableView">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setTableView:")
     public native void setTableView(UITableView value);
 
-    /**
-     * tableView</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITableViewController_Class/index.html#//apple_ref/occ/instp/UITableViewController/tableView">iOS Dev Center</a>
-     */
     @Generated
     @Selector("tableView")
     public native UITableView tableView();

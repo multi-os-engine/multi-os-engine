@@ -166,10 +166,6 @@ public class CNContactProperty extends NSObject implements NSCopying, NSSecureCo
     @NInt
     public static native long version_static();
 
-    /**
-     * contact</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Contacts/Reference/CNContactProperty_Class/index.html#//apple_ref/occ/instp/CNContactProperty/contact">iOS Dev Center</a>
-     */
     @Generated
     @Selector("contact")
     public native CNContact contact();
@@ -184,10 +180,6 @@ public class CNContactProperty extends NSObject implements NSCopying, NSSecureCo
     @Selector("encodeWithCoder:")
     public native void encodeWithCoder(NSCoder aCoder);
 
-    /**
-     * identifier</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Contacts/Reference/CNContactProperty_Class/index.html#//apple_ref/occ/instp/CNContactProperty/identifier">iOS Dev Center</a>
-     */
     @Generated
     @Selector("identifier")
     public native String identifier();
@@ -200,18 +192,10 @@ public class CNContactProperty extends NSObject implements NSCopying, NSSecureCo
     @Selector("initWithCoder:")
     public native CNContactProperty initWithCoder(NSCoder aDecoder);
 
-    /**
-     * key</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Contacts/Reference/CNContactProperty_Class/index.html#//apple_ref/occ/instp/CNContactProperty/key">iOS Dev Center</a>
-     */
     @Generated
     @Selector("key")
     public native String key();
 
-    /**
-     * label</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Contacts/Reference/CNContactProperty_Class/index.html#//apple_ref/occ/instp/CNContactProperty/label">iOS Dev Center</a>
-     */
     @Generated
     @Selector("label")
     public native String label();
@@ -222,10 +206,6 @@ public class CNContactProperty extends NSObject implements NSCopying, NSSecureCo
         return supportsSecureCoding();
     }
 
-    /**
-     * value</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Contacts/Reference/CNContactProperty_Class/index.html#//apple_ref/occ/instp/CNContactProperty/value">iOS Dev Center</a>
-     */
     @Generated
     @Selector("value")
     @MappedReturn(ObjCObjectMapper.class)

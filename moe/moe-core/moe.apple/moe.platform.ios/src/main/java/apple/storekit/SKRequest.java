@@ -158,18 +158,10 @@ public class SKRequest extends NSObject {
     @NInt
     public static native long version_static();
 
-    /**
-     * cancel</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/StoreKit/Reference/SKRequest/index.html#//apple_ref/occ/instm/SKRequest/cancel">iOS Dev Center</a>
-     */
     @Generated
     @Selector("cancel")
     public native void cancel();
 
-    /**
-     * delegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/StoreKit/Reference/SKRequest/index.html#//apple_ref/occ/instp/SKRequest/delegate">iOS Dev Center</a>
-     */
     @Generated
     @Selector("delegate")
     @MappedReturn(ObjCObjectMapper.class)
@@ -179,18 +171,10 @@ public class SKRequest extends NSObject {
     @Selector("init")
     public native SKRequest init();
 
-    /**
-     * delegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/StoreKit/Reference/SKRequest/index.html#//apple_ref/occ/instp/SKRequest/delegate">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setDelegate:")
     public native void setDelegate_unsafe(@Mapped(ObjCObjectMapper.class) Object value);
 
-    /**
-     * delegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/StoreKit/Reference/SKRequest/index.html#//apple_ref/occ/instp/SKRequest/delegate">iOS Dev Center</a>
-     */
     @Generated
     public void setDelegate(@Mapped(ObjCObjectMapper.class) Object value) {
         Object __old = delegate();
@@ -203,10 +187,6 @@ public class SKRequest extends NSObject {
         }
     }
 
-    /**
-     * start</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/StoreKit/Reference/SKRequest/index.html#//apple_ref/occ/instm/SKRequest/start">iOS Dev Center</a>
-     */
     @Generated
     @Selector("start")
     public native void start();

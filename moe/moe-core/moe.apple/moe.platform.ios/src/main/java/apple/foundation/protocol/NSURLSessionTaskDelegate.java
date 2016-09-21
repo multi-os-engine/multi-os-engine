@@ -39,10 +39,6 @@ import org.moe.natj.objc.ann.Selector;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("NSURLSessionTaskDelegate")
 public interface NSURLSessionTaskDelegate extends NSURLSessionDelegate {
-    /**
-     * URLSession:task:didCompleteWithError:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSURLSessionTaskDelegate_protocol/index.html#//apple_ref/occ/intfm/NSURLSessionTaskDelegate/URLSession:task:didCompleteWithError:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("URLSession:task:didCompleteWithError:")
@@ -50,10 +46,6 @@ public interface NSURLSessionTaskDelegate extends NSURLSessionDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * URLSession:task:didReceiveChallenge:completionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSURLSessionTaskDelegate_protocol/index.html#//apple_ref/occ/intfm/NSURLSessionTaskDelegate/URLSession:task:didReceiveChallenge:completionHandler:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("URLSession:task:didReceiveChallenge:completionHandler:")
@@ -63,10 +55,6 @@ public interface NSURLSessionTaskDelegate extends NSURLSessionDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * URLSession:task:didSendBodyData:totalBytesSent:totalBytesExpectedToSend:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSURLSessionTaskDelegate_protocol/index.html#//apple_ref/occ/intfm/NSURLSessionTaskDelegate/URLSession:task:didSendBodyData:totalBytesSent:totalBytesExpectedToSend:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("URLSession:task:didSendBodyData:totalBytesSent:totalBytesExpectedToSend:")
@@ -75,10 +63,6 @@ public interface NSURLSessionTaskDelegate extends NSURLSessionDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * URLSession:task:needNewBodyStream:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSURLSessionTaskDelegate_protocol/index.html#//apple_ref/occ/intfm/NSURLSessionTaskDelegate/URLSession:task:needNewBodyStream:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("URLSession:task:needNewBodyStream:")
@@ -87,10 +71,6 @@ public interface NSURLSessionTaskDelegate extends NSURLSessionDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * URLSession:task:willPerformHTTPRedirection:newRequest:completionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSURLSessionTaskDelegate_protocol/index.html#//apple_ref/occ/intfm/NSURLSessionTaskDelegate/URLSession:task:willPerformHTTPRedirection:newRequest:completionHandler:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("URLSession:task:willPerformHTTPRedirection:newRequest:completionHandler:")

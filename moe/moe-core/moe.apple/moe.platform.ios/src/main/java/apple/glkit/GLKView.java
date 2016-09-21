@@ -353,101 +353,53 @@ public class GLKView extends UIView implements NSCoding {
     @NInt
     public static native long version_static();
 
-    /**
-     * bindDrawable</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GLkit/Reference/GLKView_ClassReference/index.html#//apple_ref/occ/instm/GLKView/bindDrawable">iOS Dev Center</a>
-     */
     @Generated
     @Selector("bindDrawable")
     public native void bindDrawable();
 
-    /**
-     * context</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GLkit/Reference/GLKView_ClassReference/index.html#//apple_ref/occ/instp/GLKView/context">iOS Dev Center</a>
-     */
     @Generated
     @Selector("context")
     public native EAGLContext context();
 
-    /**
-     * delegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GLkit/Reference/GLKView_ClassReference/index.html#//apple_ref/occ/instp/GLKView/delegate">iOS Dev Center</a>
-     */
     @Generated
     @Selector("delegate")
     @MappedReturn(ObjCObjectMapper.class)
     public native GLKViewDelegate delegate();
 
-    /**
-     * deleteDrawable</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GLkit/Reference/GLKView_ClassReference/index.html#//apple_ref/occ/instm/GLKView/deleteDrawable">iOS Dev Center</a>
-     */
     @Generated
     @Selector("deleteDrawable")
     public native void deleteDrawable();
 
-    /**
-     * display</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GLkit/Reference/GLKView_ClassReference/index.html#//apple_ref/occ/instm/GLKView/display">iOS Dev Center</a>
-     */
     @Generated
     @Selector("display")
     public native void display();
 
-    /**
-     * drawableColorFormat</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GLkit/Reference/GLKView_ClassReference/index.html#//apple_ref/occ/instp/GLKView/drawableColorFormat">iOS Dev Center</a>
-     */
     @Generated
     @Selector("drawableColorFormat")
     public native int drawableColorFormat();
 
-    /**
-     * drawableDepthFormat</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GLkit/Reference/GLKView_ClassReference/index.html#//apple_ref/occ/instp/GLKView/drawableDepthFormat">iOS Dev Center</a>
-     */
     @Generated
     @Selector("drawableDepthFormat")
     public native int drawableDepthFormat();
 
-    /**
-     * drawableHeight</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GLkit/Reference/GLKView_ClassReference/index.html#//apple_ref/occ/instp/GLKView/drawableHeight">iOS Dev Center</a>
-     */
     @Generated
     @Selector("drawableHeight")
     @NInt
     public native long drawableHeight();
 
-    /**
-     * drawableMultisample</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GLkit/Reference/GLKView_ClassReference/index.html#//apple_ref/occ/instp/GLKView/drawableMultisample">iOS Dev Center</a>
-     */
     @Generated
     @Selector("drawableMultisample")
     public native int drawableMultisample();
 
-    /**
-     * drawableStencilFormat</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GLkit/Reference/GLKView_ClassReference/index.html#//apple_ref/occ/instp/GLKView/drawableStencilFormat">iOS Dev Center</a>
-     */
     @Generated
     @Selector("drawableStencilFormat")
     public native int drawableStencilFormat();
 
-    /**
-     * drawableWidth</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GLkit/Reference/GLKView_ClassReference/index.html#//apple_ref/occ/instp/GLKView/drawableWidth">iOS Dev Center</a>
-     */
     @Generated
     @Selector("drawableWidth")
     @NInt
     public native long drawableWidth();
 
-    /**
-     * enableSetNeedsDisplay</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GLkit/Reference/GLKView_ClassReference/index.html#//apple_ref/occ/instp/GLKView/enableSetNeedsDisplay">iOS Dev Center</a>
-     */
     @Generated
     @Selector("enableSetNeedsDisplay")
     public native boolean enableSetNeedsDisplay();
@@ -468,34 +420,18 @@ public class GLKView extends UIView implements NSCoding {
     @Selector("initWithFrame:")
     public native GLKView initWithFrame(@ByValue CGRect frame);
 
-    /**
-     * initWithFrame:context:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GLkit/Reference/GLKView_ClassReference/index.html#//apple_ref/occ/instm/GLKView/initWithFrame:context:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithFrame:context:")
     public native GLKView initWithFrameContext(@ByValue CGRect frame, EAGLContext context);
 
-    /**
-     * context</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GLkit/Reference/GLKView_ClassReference/index.html#//apple_ref/occ/instp/GLKView/context">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setContext:")
     public native void setContext(EAGLContext value);
 
-    /**
-     * delegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GLkit/Reference/GLKView_ClassReference/index.html#//apple_ref/occ/instp/GLKView/delegate">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setDelegate:")
     public native void setDelegate_unsafe(@Mapped(ObjCObjectMapper.class) GLKViewDelegate value);
 
-    /**
-     * delegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GLkit/Reference/GLKView_ClassReference/index.html#//apple_ref/occ/instp/GLKView/delegate">iOS Dev Center</a>
-     */
     @Generated
     public void setDelegate(@Mapped(ObjCObjectMapper.class) GLKViewDelegate value) {
         Object __old = delegate();
@@ -508,42 +444,22 @@ public class GLKView extends UIView implements NSCoding {
         }
     }
 
-    /**
-     * drawableColorFormat</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GLkit/Reference/GLKView_ClassReference/index.html#//apple_ref/occ/instp/GLKView/drawableColorFormat">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setDrawableColorFormat:")
     public native void setDrawableColorFormat(int value);
 
-    /**
-     * drawableDepthFormat</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GLkit/Reference/GLKView_ClassReference/index.html#//apple_ref/occ/instp/GLKView/drawableDepthFormat">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setDrawableDepthFormat:")
     public native void setDrawableDepthFormat(int value);
 
-    /**
-     * drawableMultisample</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GLkit/Reference/GLKView_ClassReference/index.html#//apple_ref/occ/instp/GLKView/drawableMultisample">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setDrawableMultisample:")
     public native void setDrawableMultisample(int value);
 
-    /**
-     * drawableStencilFormat</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GLkit/Reference/GLKView_ClassReference/index.html#//apple_ref/occ/instp/GLKView/drawableStencilFormat">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setDrawableStencilFormat:")
     public native void setDrawableStencilFormat(int value);
 
-    /**
-     * enableSetNeedsDisplay</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GLkit/Reference/GLKView_ClassReference/index.html#//apple_ref/occ/instp/GLKView/enableSetNeedsDisplay">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setEnableSetNeedsDisplay:")
     public native void setEnableSetNeedsDisplay(boolean value);

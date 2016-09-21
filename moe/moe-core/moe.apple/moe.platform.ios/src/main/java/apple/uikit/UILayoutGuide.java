@@ -162,26 +162,14 @@ public class UILayoutGuide extends NSObject implements NSCoding {
     @NInt
     public static native long version();
 
-    /**
-     * bottomAnchor</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UILayoutGuide_Class_Reference/index.html#//apple_ref/occ/instp/UILayoutGuide/bottomAnchor">iOS Dev Center</a>
-     */
     @Generated
     @Selector("bottomAnchor")
     public native NSLayoutYAxisAnchor bottomAnchor();
 
-    /**
-     * centerXAnchor</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UILayoutGuide_Class_Reference/index.html#//apple_ref/occ/instp/UILayoutGuide/centerXAnchor">iOS Dev Center</a>
-     */
     @Generated
     @Selector("centerXAnchor")
     public native NSLayoutXAxisAnchor centerXAnchor();
 
-    /**
-     * centerYAnchor</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UILayoutGuide_Class_Reference/index.html#//apple_ref/occ/instp/UILayoutGuide/centerYAnchor">iOS Dev Center</a>
-     */
     @Generated
     @Selector("centerYAnchor")
     public native NSLayoutYAxisAnchor centerYAnchor();
@@ -190,18 +178,10 @@ public class UILayoutGuide extends NSObject implements NSCoding {
     @Selector("encodeWithCoder:")
     public native void encodeWithCoder(NSCoder aCoder);
 
-    /**
-     * heightAnchor</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UILayoutGuide_Class_Reference/index.html#//apple_ref/occ/instp/UILayoutGuide/heightAnchor">iOS Dev Center</a>
-     */
     @Generated
     @Selector("heightAnchor")
     public native NSLayoutDimension heightAnchor();
 
-    /**
-     * identifier</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UILayoutGuide_Class_Reference/index.html#//apple_ref/occ/instp/UILayoutGuide/identifier">iOS Dev Center</a>
-     */
     @Generated
     @Selector("identifier")
     public native String identifier();
@@ -214,67 +194,35 @@ public class UILayoutGuide extends NSObject implements NSCoding {
     @Selector("initWithCoder:")
     public native UILayoutGuide initWithCoder(NSCoder aDecoder);
 
-    /**
-     * layoutFrame</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UILayoutGuide_Class_Reference/index.html#//apple_ref/occ/instp/UILayoutGuide/layoutFrame">iOS Dev Center</a>
-     */
     @Generated
     @Selector("layoutFrame")
     @ByValue
     public native CGRect layoutFrame();
 
-    /**
-     * leadingAnchor</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UILayoutGuide_Class_Reference/index.html#//apple_ref/occ/instp/UILayoutGuide/leadingAnchor">iOS Dev Center</a>
-     */
     @Generated
     @Selector("leadingAnchor")
     public native NSLayoutXAxisAnchor leadingAnchor();
 
-    /**
-     * leftAnchor</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UILayoutGuide_Class_Reference/index.html#//apple_ref/occ/instp/UILayoutGuide/leftAnchor">iOS Dev Center</a>
-     */
     @Generated
     @Selector("leftAnchor")
     public native NSLayoutXAxisAnchor leftAnchor();
 
-    /**
-     * owningView</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UILayoutGuide_Class_Reference/index.html#//apple_ref/occ/instp/UILayoutGuide/owningView">iOS Dev Center</a>
-     */
     @Generated
     @Selector("owningView")
     public native UIView owningView();
 
-    /**
-     * rightAnchor</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UILayoutGuide_Class_Reference/index.html#//apple_ref/occ/instp/UILayoutGuide/rightAnchor">iOS Dev Center</a>
-     */
     @Generated
     @Selector("rightAnchor")
     public native NSLayoutXAxisAnchor rightAnchor();
 
-    /**
-     * identifier</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UILayoutGuide_Class_Reference/index.html#//apple_ref/occ/instp/UILayoutGuide/identifier">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setIdentifier:")
     public native void setIdentifier(String value);
 
-    /**
-     * owningView</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UILayoutGuide_Class_Reference/index.html#//apple_ref/occ/instp/UILayoutGuide/owningView">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setOwningView:")
     public native void setOwningView_unsafe(UIView value);
 
-    /**
-     * owningView</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UILayoutGuide_Class_Reference/index.html#//apple_ref/occ/instp/UILayoutGuide/owningView">iOS Dev Center</a>
-     */
     @Generated
     public void setOwningView(UIView value) {
         Object __old = owningView();
@@ -287,26 +235,14 @@ public class UILayoutGuide extends NSObject implements NSCoding {
         }
     }
 
-    /**
-     * topAnchor</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UILayoutGuide_Class_Reference/index.html#//apple_ref/occ/instp/UILayoutGuide/topAnchor">iOS Dev Center</a>
-     */
     @Generated
     @Selector("topAnchor")
     public native NSLayoutYAxisAnchor topAnchor();
 
-    /**
-     * trailingAnchor</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UILayoutGuide_Class_Reference/index.html#//apple_ref/occ/instp/UILayoutGuide/trailingAnchor">iOS Dev Center</a>
-     */
     @Generated
     @Selector("trailingAnchor")
     public native NSLayoutXAxisAnchor trailingAnchor();
 
-    /**
-     * widthAnchor</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UILayoutGuide_Class_Reference/index.html#//apple_ref/occ/instp/UILayoutGuide/widthAnchor">iOS Dev Center</a>
-     */
     @Generated
     @Selector("widthAnchor")
     public native NSLayoutDimension widthAnchor();

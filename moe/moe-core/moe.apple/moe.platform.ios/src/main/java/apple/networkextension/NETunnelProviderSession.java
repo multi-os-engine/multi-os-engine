@@ -167,27 +167,15 @@ public class NETunnelProviderSession extends NEVPNConnection {
     @Selector("init")
     public native NETunnelProviderSession init();
 
-    /**
-     * sendProviderMessage:returnError:responseHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NETunnelProviderSessionClassRef/index.html#//apple_ref/occ/instm/NETunnelProviderSession/sendProviderMessage:returnError:responseHandler:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("sendProviderMessage:returnError:responseHandler:")
     public native boolean sendProviderMessageReturnErrorResponseHandler(NSData messageData, Ptr<NSError> error,
             @ObjCBlock(name = "call_sendProviderMessageReturnErrorResponseHandler") Block_sendProviderMessageReturnErrorResponseHandler responseHandler);
 
-    /**
-     * startTunnelWithOptions:andReturnError:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NETunnelProviderSessionClassRef/index.html#//apple_ref/occ/instm/NETunnelProviderSession/startTunnelWithOptions:andReturnError:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("startTunnelWithOptions:andReturnError:")
     public native boolean startTunnelWithOptionsAndReturnError(NSDictionary<String, ?> options, Ptr<NSError> error);
 
-    /**
-     * stopTunnel</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NETunnelProviderSessionClassRef/index.html#//apple_ref/occ/instm/NETunnelProviderSession/stopTunnel">iOS Dev Center</a>
-     */
     @Generated
     @Selector("stopTunnel")
     public native void stopTunnel();

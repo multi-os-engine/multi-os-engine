@@ -358,153 +358,81 @@ public class MKMapView extends UIView implements NSCoding {
     @NInt
     public static native long version_static();
 
-    /**
-     * addAnnotation:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKMapView_Class/index.html#//apple_ref/occ/instm/MKMapView/addAnnotation:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("addAnnotation:")
     public native void addAnnotation(@Mapped(ObjCObjectMapper.class) MKAnnotation annotation);
 
-    /**
-     * addAnnotations:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKMapView_Class/index.html#//apple_ref/occ/instm/MKMapView/addAnnotations:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("addAnnotations:")
     public native void addAnnotations(NSArray<?> annotations);
 
-    /**
-     * addOverlay:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKMapView_Class/index.html#//apple_ref/occ/instm/MKMapView/addOverlay:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("addOverlay:")
     public native void addOverlay(@Mapped(ObjCObjectMapper.class) MKOverlay overlay);
 
-    /**
-     * addOverlay:level:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKMapView_Class/index.html#//apple_ref/occ/instm/MKMapView/addOverlay:level:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("addOverlay:level:")
     public native void addOverlayLevel(@Mapped(ObjCObjectMapper.class) MKOverlay overlay, @NInt long level);
 
-    /**
-     * addOverlays:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKMapView_Class/index.html#//apple_ref/occ/instm/MKMapView/addOverlays:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("addOverlays:")
     public native void addOverlays(NSArray<?> overlays);
 
-    /**
-     * addOverlays:level:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKMapView_Class/index.html#//apple_ref/occ/instm/MKMapView/addOverlays:level:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("addOverlays:level:")
     public native void addOverlaysLevel(NSArray<?> overlays, @NInt long level);
 
-    /**
-     * annotationVisibleRect</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKMapView_Class/index.html#//apple_ref/occ/instp/MKMapView/annotationVisibleRect">iOS Dev Center</a>
-     */
     @Generated
     @Selector("annotationVisibleRect")
     @ByValue
     public native CGRect annotationVisibleRect();
 
-    /**
-     * annotations</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKMapView_Class/index.html#//apple_ref/occ/instp/MKMapView/annotations">iOS Dev Center</a>
-     */
     @Generated
     @Selector("annotations")
     public native NSArray<?> annotations();
 
-    /**
-     * annotationsInMapRect:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKMapView_Class/index.html#//apple_ref/occ/instm/MKMapView/annotationsInMapRect:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("annotationsInMapRect:")
     public native NSSet<?> annotationsInMapRect(@ByValue MKMapRect mapRect);
 
-    /**
-     * camera</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKMapView_Class/index.html#//apple_ref/occ/instp/MKMapView/camera">iOS Dev Center</a>
-     */
     @Generated
     @Selector("camera")
     public native MKMapCamera camera();
 
-    /**
-     * centerCoordinate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKMapView_Class/index.html#//apple_ref/occ/instp/MKMapView/centerCoordinate">iOS Dev Center</a>
-     */
     @Generated
     @Selector("centerCoordinate")
     @ByValue
     public native CLLocationCoordinate2D centerCoordinate();
 
-    /**
-     * convertCoordinate:toPointToView:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKMapView_Class/index.html#//apple_ref/occ/instm/MKMapView/convertCoordinate:toPointToView:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("convertCoordinate:toPointToView:")
     @ByValue
     public native CGPoint convertCoordinateToPointToView(@ByValue CLLocationCoordinate2D coordinate, UIView view);
 
-    /**
-     * convertPoint:toCoordinateFromView:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKMapView_Class/index.html#//apple_ref/occ/instm/MKMapView/convertPoint:toCoordinateFromView:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("convertPoint:toCoordinateFromView:")
     @ByValue
     public native CLLocationCoordinate2D convertPointToCoordinateFromView(@ByValue CGPoint point, UIView view);
 
-    /**
-     * convertRect:toRegionFromView:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKMapView_Class/index.html#//apple_ref/occ/instm/MKMapView/convertRect:toRegionFromView:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("convertRect:toRegionFromView:")
     @ByValue
     public native MKCoordinateRegion convertRectToRegionFromView(@ByValue CGRect rect, UIView view);
 
-    /**
-     * convertRegion:toRectToView:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKMapView_Class/index.html#//apple_ref/occ/instm/MKMapView/convertRegion:toRectToView:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("convertRegion:toRectToView:")
     @ByValue
     public native CGRect convertRegionToRectToView(@ByValue MKCoordinateRegion region, UIView view);
 
-    /**
-     * delegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKMapView_Class/index.html#//apple_ref/occ/instp/MKMapView/delegate">iOS Dev Center</a>
-     */
     @Generated
     @Selector("delegate")
     @MappedReturn(ObjCObjectMapper.class)
     public native MKMapViewDelegate delegate();
 
-    /**
-     * dequeueReusableAnnotationViewWithIdentifier:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKMapView_Class/index.html#//apple_ref/occ/instm/MKMapView/dequeueReusableAnnotationViewWithIdentifier:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("dequeueReusableAnnotationViewWithIdentifier:")
     public native MKAnnotationView dequeueReusableAnnotationViewWithIdentifier(String identifier);
 
-    /**
-     * deselectAnnotation:animated:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKMapView_Class/index.html#//apple_ref/occ/instm/MKMapView/deselectAnnotation:animated:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("deselectAnnotation:animated:")
     public native void deselectAnnotationAnimated(@Mapped(ObjCObjectMapper.class) MKAnnotation annotation,
@@ -514,19 +442,11 @@ public class MKMapView extends UIView implements NSCoding {
     @Selector("encodeWithCoder:")
     public native void encodeWithCoder(NSCoder aCoder);
 
-    /**
-     * exchangeOverlay:withOverlay:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKMapView_Class/index.html#//apple_ref/occ/instm/MKMapView/exchangeOverlay:withOverlay:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("exchangeOverlay:withOverlay:")
     public native void exchangeOverlayWithOverlay(@Mapped(ObjCObjectMapper.class) MKOverlay overlay1,
             @Mapped(ObjCObjectMapper.class) MKOverlay overlay2);
 
-    /**
-     * exchangeOverlayAtIndex:withOverlayAtIndex:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKMapView_Class/index.html#//apple_ref/occ/instm/MKMapView/exchangeOverlayAtIndex:withOverlayAtIndex:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("exchangeOverlayAtIndex:withOverlayAtIndex:")
     public native void exchangeOverlayAtIndexWithOverlayAtIndex(@NUInt long index1, @NUInt long index2);
@@ -543,275 +463,143 @@ public class MKMapView extends UIView implements NSCoding {
     @Selector("initWithFrame:")
     public native MKMapView initWithFrame(@ByValue CGRect frame);
 
-    /**
-     * insertOverlay:aboveOverlay:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKMapView_Class/index.html#//apple_ref/occ/instm/MKMapView/insertOverlay:aboveOverlay:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("insertOverlay:aboveOverlay:")
     public native void insertOverlayAboveOverlay(@Mapped(ObjCObjectMapper.class) MKOverlay overlay,
             @Mapped(ObjCObjectMapper.class) MKOverlay sibling);
 
-    /**
-     * insertOverlay:atIndex:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKMapView_Class/index.html#//apple_ref/occ/instm/MKMapView/insertOverlay:atIndex:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("insertOverlay:atIndex:")
     public native void insertOverlayAtIndex(@Mapped(ObjCObjectMapper.class) MKOverlay overlay, @NUInt long index);
 
-    /**
-     * insertOverlay:atIndex:level:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKMapView_Class/index.html#//apple_ref/occ/instm/MKMapView/insertOverlay:atIndex:level:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("insertOverlay:atIndex:level:")
     public native void insertOverlayAtIndexLevel(@Mapped(ObjCObjectMapper.class) MKOverlay overlay, @NUInt long index,
             @NInt long level);
 
-    /**
-     * insertOverlay:belowOverlay:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKMapView_Class/index.html#//apple_ref/occ/instm/MKMapView/insertOverlay:belowOverlay:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("insertOverlay:belowOverlay:")
     public native void insertOverlayBelowOverlay(@Mapped(ObjCObjectMapper.class) MKOverlay overlay,
             @Mapped(ObjCObjectMapper.class) MKOverlay sibling);
 
-    /**
-     * pitchEnabled</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKMapView_Class/index.html#//apple_ref/occ/instp/MKMapView/pitchEnabled">iOS Dev Center</a>
-     */
     @Generated
     @Selector("isPitchEnabled")
     public native boolean isPitchEnabled();
 
-    /**
-     * pitchEnabled</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKMapView_Class/index.html#//apple_ref/occ/instp/MKMapView/pitchEnabled">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setPitchEnabled:")
     public native void setPitchEnabled(boolean value);
 
-    /**
-     * rotateEnabled</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKMapView_Class/index.html#//apple_ref/occ/instp/MKMapView/rotateEnabled">iOS Dev Center</a>
-     */
     @Generated
     @Selector("isRotateEnabled")
     public native boolean isRotateEnabled();
 
-    /**
-     * rotateEnabled</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKMapView_Class/index.html#//apple_ref/occ/instp/MKMapView/rotateEnabled">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setRotateEnabled:")
     public native void setRotateEnabled(boolean value);
 
-    /**
-     * scrollEnabled</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKMapView_Class/index.html#//apple_ref/occ/instp/MKMapView/scrollEnabled">iOS Dev Center</a>
-     */
     @Generated
     @Selector("isScrollEnabled")
     public native boolean isScrollEnabled();
 
-    /**
-     * scrollEnabled</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKMapView_Class/index.html#//apple_ref/occ/instp/MKMapView/scrollEnabled">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setScrollEnabled:")
     public native void setScrollEnabled(boolean value);
 
-    /**
-     * userLocationVisible</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKMapView_Class/index.html#//apple_ref/occ/instp/MKMapView/userLocationVisible">iOS Dev Center</a>
-     */
     @Generated
     @Selector("isUserLocationVisible")
     public native boolean isUserLocationVisible();
 
-    /**
-     * zoomEnabled</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKMapView_Class/index.html#//apple_ref/occ/instp/MKMapView/zoomEnabled">iOS Dev Center</a>
-     */
     @Generated
     @Selector("isZoomEnabled")
     public native boolean isZoomEnabled();
 
-    /**
-     * zoomEnabled</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKMapView_Class/index.html#//apple_ref/occ/instp/MKMapView/zoomEnabled">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setZoomEnabled:")
     public native void setZoomEnabled(boolean value);
 
-    /**
-     * mapRectThatFits:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKMapView_Class/index.html#//apple_ref/occ/instm/MKMapView/mapRectThatFits:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("mapRectThatFits:")
     @ByValue
     public native MKMapRect mapRectThatFits(@ByValue MKMapRect mapRect);
 
-    /**
-     * mapRectThatFits:edgePadding:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKMapView_Class/index.html#//apple_ref/occ/instm/MKMapView/mapRectThatFits:edgePadding:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("mapRectThatFits:edgePadding:")
     @ByValue
     public native MKMapRect mapRectThatFitsEdgePadding(@ByValue MKMapRect mapRect, @ByValue UIEdgeInsets insets);
 
-    /**
-     * mapType</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKMapView_Class/index.html#//apple_ref/occ/instp/MKMapView/mapType">iOS Dev Center</a>
-     */
     @Generated
     @Selector("mapType")
     @NUInt
     public native long mapType();
 
-    /**
-     * overlays</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKMapView_Class/index.html#//apple_ref/occ/instp/MKMapView/overlays">iOS Dev Center</a>
-     */
     @Generated
     @Selector("overlays")
     public native NSArray<?> overlays();
 
-    /**
-     * overlaysInLevel:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKMapView_Class/index.html#//apple_ref/occ/instm/MKMapView/overlaysInLevel:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("overlaysInLevel:")
     public native NSArray<?> overlaysInLevel(@NInt long level);
 
-    /**
-     * region</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKMapView_Class/index.html#//apple_ref/occ/instp/MKMapView/region">iOS Dev Center</a>
-     */
     @Generated
     @Selector("region")
     @ByValue
     public native MKCoordinateRegion region();
 
-    /**
-     * regionThatFits:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKMapView_Class/index.html#//apple_ref/occ/instm/MKMapView/regionThatFits:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("regionThatFits:")
     @ByValue
     public native MKCoordinateRegion regionThatFits(@ByValue MKCoordinateRegion region);
 
-    /**
-     * removeAnnotation:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKMapView_Class/index.html#//apple_ref/occ/instm/MKMapView/removeAnnotation:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("removeAnnotation:")
     public native void removeAnnotation(@Mapped(ObjCObjectMapper.class) MKAnnotation annotation);
 
-    /**
-     * removeAnnotations:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKMapView_Class/index.html#//apple_ref/occ/instm/MKMapView/removeAnnotations:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("removeAnnotations:")
     public native void removeAnnotations(NSArray<?> annotations);
 
-    /**
-     * removeOverlay:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKMapView_Class/index.html#//apple_ref/occ/instm/MKMapView/removeOverlay:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("removeOverlay:")
     public native void removeOverlay(@Mapped(ObjCObjectMapper.class) MKOverlay overlay);
 
-    /**
-     * removeOverlays:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKMapView_Class/index.html#//apple_ref/occ/instm/MKMapView/removeOverlays:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("removeOverlays:")
     public native void removeOverlays(NSArray<?> overlays);
 
-    /**
-     * rendererForOverlay:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKMapView_Class/index.html#//apple_ref/occ/instm/MKMapView/rendererForOverlay:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("rendererForOverlay:")
     public native MKOverlayRenderer rendererForOverlay(@Mapped(ObjCObjectMapper.class) MKOverlay overlay);
 
-    /**
-     * selectAnnotation:animated:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKMapView_Class/index.html#//apple_ref/occ/instm/MKMapView/selectAnnotation:animated:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("selectAnnotation:animated:")
     public native void selectAnnotationAnimated(@Mapped(ObjCObjectMapper.class) MKAnnotation annotation,
             boolean animated);
 
-    /**
-     * selectedAnnotations</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKMapView_Class/index.html#//apple_ref/occ/instp/MKMapView/selectedAnnotations">iOS Dev Center</a>
-     */
     @Generated
     @Selector("selectedAnnotations")
     public native NSArray<?> selectedAnnotations();
 
-    /**
-     * camera</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKMapView_Class/index.html#//apple_ref/occ/instp/MKMapView/camera">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setCamera:")
     public native void setCamera(MKMapCamera value);
 
-    /**
-     * setCamera:animated:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKMapView_Class/index.html#//apple_ref/occ/instm/MKMapView/setCamera:animated:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setCamera:animated:")
     public native void setCameraAnimated(MKMapCamera camera, boolean animated);
 
-    /**
-     * centerCoordinate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKMapView_Class/index.html#//apple_ref/occ/instp/MKMapView/centerCoordinate">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setCenterCoordinate:")
     public native void setCenterCoordinate(@ByValue CLLocationCoordinate2D value);
 
-    /**
-     * setCenterCoordinate:animated:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKMapView_Class/index.html#//apple_ref/occ/instm/MKMapView/setCenterCoordinate:animated:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setCenterCoordinate:animated:")
     public native void setCenterCoordinateAnimated(@ByValue CLLocationCoordinate2D coordinate, boolean animated);
 
-    /**
-     * delegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKMapView_Class/index.html#//apple_ref/occ/instp/MKMapView/delegate">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setDelegate:")
     public native void setDelegate_unsafe(@Mapped(ObjCObjectMapper.class) MKMapViewDelegate value);
 
-    /**
-     * delegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKMapView_Class/index.html#//apple_ref/occ/instp/MKMapView/delegate">iOS Dev Center</a>
-     */
     @Generated
     public void setDelegate(@Mapped(ObjCObjectMapper.class) MKMapViewDelegate value) {
         Object __old = delegate();
@@ -824,222 +612,114 @@ public class MKMapView extends UIView implements NSCoding {
         }
     }
 
-    /**
-     * mapType</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKMapView_Class/index.html#//apple_ref/occ/instp/MKMapView/mapType">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setMapType:")
     public native void setMapType(@NUInt long value);
 
-    /**
-     * region</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKMapView_Class/index.html#//apple_ref/occ/instp/MKMapView/region">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setRegion:")
     public native void setRegion(@ByValue MKCoordinateRegion value);
 
-    /**
-     * setRegion:animated:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKMapView_Class/index.html#//apple_ref/occ/instm/MKMapView/setRegion:animated:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setRegion:animated:")
     public native void setRegionAnimated(@ByValue MKCoordinateRegion region, boolean animated);
 
-    /**
-     * selectedAnnotations</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKMapView_Class/index.html#//apple_ref/occ/instp/MKMapView/selectedAnnotations">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setSelectedAnnotations:")
     public native void setSelectedAnnotations(NSArray<?> value);
 
-    /**
-     * showsBuildings</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKMapView_Class/index.html#//apple_ref/occ/instp/MKMapView/showsBuildings">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setShowsBuildings:")
     public native void setShowsBuildings(boolean value);
 
-    /**
-     * showsPointsOfInterest</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKMapView_Class/index.html#//apple_ref/occ/instp/MKMapView/showsPointsOfInterest">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setShowsPointsOfInterest:")
     public native void setShowsPointsOfInterest(boolean value);
 
-    /**
-     * showsUserLocation</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKMapView_Class/index.html#//apple_ref/occ/instp/MKMapView/showsUserLocation">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setShowsUserLocation:")
     public native void setShowsUserLocation(boolean value);
 
-    /**
-     * userTrackingMode</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKMapView_Class/index.html#//apple_ref/occ/instp/MKMapView/userTrackingMode">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setUserTrackingMode:")
     public native void setUserTrackingMode(@NInt long value);
 
-    /**
-     * setUserTrackingMode:animated:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKMapView_Class/index.html#//apple_ref/occ/instm/MKMapView/setUserTrackingMode:animated:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setUserTrackingMode:animated:")
     public native void setUserTrackingModeAnimated(@NInt long mode, boolean animated);
 
-    /**
-     * visibleMapRect</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKMapView_Class/index.html#//apple_ref/occ/instp/MKMapView/visibleMapRect">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setVisibleMapRect:")
     public native void setVisibleMapRect(@ByValue MKMapRect value);
 
-    /**
-     * setVisibleMapRect:animated:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKMapView_Class/index.html#//apple_ref/occ/instm/MKMapView/setVisibleMapRect:animated:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setVisibleMapRect:animated:")
     public native void setVisibleMapRectAnimated(@ByValue MKMapRect mapRect, boolean animate);
 
-    /**
-     * setVisibleMapRect:edgePadding:animated:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKMapView_Class/index.html#//apple_ref/occ/instm/MKMapView/setVisibleMapRect:edgePadding:animated:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setVisibleMapRect:edgePadding:animated:")
     public native void setVisibleMapRectEdgePaddingAnimated(@ByValue MKMapRect mapRect, @ByValue UIEdgeInsets insets,
             boolean animate);
 
-    /**
-     * showAnnotations:animated:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKMapView_Class/index.html#//apple_ref/occ/instm/MKMapView/showAnnotations:animated:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("showAnnotations:animated:")
     public native void showAnnotationsAnimated(NSArray<?> annotations, boolean animated);
 
-    /**
-     * showsBuildings</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKMapView_Class/index.html#//apple_ref/occ/instp/MKMapView/showsBuildings">iOS Dev Center</a>
-     */
     @Generated
     @Selector("showsBuildings")
     public native boolean showsBuildings();
 
-    /**
-     * showsPointsOfInterest</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKMapView_Class/index.html#//apple_ref/occ/instp/MKMapView/showsPointsOfInterest">iOS Dev Center</a>
-     */
     @Generated
     @Selector("showsPointsOfInterest")
     public native boolean showsPointsOfInterest();
 
-    /**
-     * showsUserLocation</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKMapView_Class/index.html#//apple_ref/occ/instp/MKMapView/showsUserLocation">iOS Dev Center</a>
-     */
     @Generated
     @Selector("showsUserLocation")
     public native boolean showsUserLocation();
 
-    /**
-     * userLocation</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKMapView_Class/index.html#//apple_ref/occ/instp/MKMapView/userLocation">iOS Dev Center</a>
-     */
     @Generated
     @Selector("userLocation")
     public native MKUserLocation userLocation();
 
-    /**
-     * userTrackingMode</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKMapView_Class/index.html#//apple_ref/occ/instp/MKMapView/userTrackingMode">iOS Dev Center</a>
-     */
     @Generated
     @Selector("userTrackingMode")
     @NInt
     public native long userTrackingMode();
 
-    /**
-     * viewForAnnotation:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKMapView_Class/index.html#//apple_ref/occ/instm/MKMapView/viewForAnnotation:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("viewForAnnotation:")
     public native MKAnnotationView viewForAnnotation(@Mapped(ObjCObjectMapper.class) MKAnnotation annotation);
 
-    /**
-     * viewForOverlay:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKMapView_Class/index.html#//apple_ref/occ/instm/MKMapView/viewForOverlay:">iOS Dev Center</a>
-     */
     @Generated
     @Deprecated
     @Selector("viewForOverlay:")
     public native MKOverlayView viewForOverlay(@Mapped(ObjCObjectMapper.class) MKOverlay overlay);
 
-    /**
-     * visibleMapRect</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKMapView_Class/index.html#//apple_ref/occ/instp/MKMapView/visibleMapRect">iOS Dev Center</a>
-     */
     @Generated
     @Selector("visibleMapRect")
     @ByValue
     public native MKMapRect visibleMapRect();
 
-    /**
-     * showsCompass</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKMapView_Class/index.html#//apple_ref/occ/instp/MKMapView/showsCompass">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setShowsCompass:")
     public native void setShowsCompass(boolean value);
 
-    /**
-     * showsScale</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKMapView_Class/index.html#//apple_ref/occ/instp/MKMapView/showsScale">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setShowsScale:")
     public native void setShowsScale(boolean value);
 
-    /**
-     * showsTraffic</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKMapView_Class/index.html#//apple_ref/occ/instp/MKMapView/showsTraffic">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setShowsTraffic:")
     public native void setShowsTraffic(boolean value);
 
-    /**
-     * showsCompass</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKMapView_Class/index.html#//apple_ref/occ/instp/MKMapView/showsCompass">iOS Dev Center</a>
-     */
     @Generated
     @Selector("showsCompass")
     public native boolean showsCompass();
 
-    /**
-     * showsScale</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKMapView_Class/index.html#//apple_ref/occ/instp/MKMapView/showsScale">iOS Dev Center</a>
-     */
     @Generated
     @Selector("showsScale")
     public native boolean showsScale();
 
-    /**
-     * showsTraffic</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKMapView_Class/index.html#//apple_ref/occ/instp/MKMapView/showsTraffic">iOS Dev Center</a>
-     */
     @Generated
     @Selector("showsTraffic")
     public native boolean showsTraffic();

@@ -31,19 +31,11 @@ import org.moe.natj.objc.ann.Selector;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("ABUnknownPersonViewControllerDelegate")
 public interface ABUnknownPersonViewControllerDelegate {
-    /**
-     * unknownPersonViewController:didResolveToPerson:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AddressBookUI/Reference/ABUnknownPersonViewControllerDelegate_Protocol/index.html#//apple_ref/occ/intfm/ABUnknownPersonViewControllerDelegate/unknownPersonViewController:didResolveToPerson:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("unknownPersonViewController:didResolveToPerson:")
     void unknownPersonViewControllerDidResolveToPerson(ABUnknownPersonViewController unknownCardViewController,
             ConstVoidPtr person);
 
-    /**
-     * unknownPersonViewController:shouldPerformDefaultActionForPerson:property:identifier:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AddressBookUI/Reference/ABUnknownPersonViewControllerDelegate_Protocol/index.html#//apple_ref/occ/intfm/ABUnknownPersonViewControllerDelegate/unknownPersonViewController:shouldPerformDefaultActionForPerson:property:identifier:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("unknownPersonViewController:shouldPerformDefaultActionForPerson:property:identifier:")

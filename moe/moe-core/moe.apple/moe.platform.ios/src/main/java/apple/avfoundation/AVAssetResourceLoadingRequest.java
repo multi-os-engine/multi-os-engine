@@ -164,42 +164,22 @@ public class AVAssetResourceLoadingRequest extends NSObject {
     @NInt
     public static native long version_static();
 
-    /**
-     * contentInformationRequest</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAssetResourceLoadingRequest_Class/index.html#//apple_ref/occ/instp/AVAssetResourceLoadingRequest/contentInformationRequest">iOS Dev Center</a>
-     */
     @Generated
     @Selector("contentInformationRequest")
     public native AVAssetResourceLoadingContentInformationRequest contentInformationRequest();
 
-    /**
-     * dataRequest</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAssetResourceLoadingRequest_Class/index.html#//apple_ref/occ/instp/AVAssetResourceLoadingRequest/dataRequest">iOS Dev Center</a>
-     */
     @Generated
     @Selector("dataRequest")
     public native AVAssetResourceLoadingDataRequest dataRequest();
 
-    /**
-     * finishLoading</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAssetResourceLoadingRequest_Class/index.html#//apple_ref/occ/instm/AVAssetResourceLoadingRequest/finishLoading">iOS Dev Center</a>
-     */
     @Generated
     @Selector("finishLoading")
     public native void finishLoading();
 
-    /**
-     * finishLoadingWithError:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAssetResourceLoadingRequest_Class/index.html#//apple_ref/occ/instm/AVAssetResourceLoadingRequest/finishLoadingWithError:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("finishLoadingWithError:")
     public native void finishLoadingWithError(NSError error);
 
-    /**
-     * finishLoadingWithResponse:data:redirect:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAssetResourceLoadingRequest_Class/index.html#//apple_ref/occ/instm/AVAssetResourceLoadingRequest/finishLoadingWithResponse:data:redirect:">iOS Dev Center</a>
-     */
     @Generated
     @Deprecated
     @Selector("finishLoadingWithResponse:data:redirect:")
@@ -210,66 +190,34 @@ public class AVAssetResourceLoadingRequest extends NSObject {
     @Selector("init")
     public native AVAssetResourceLoadingRequest init();
 
-    /**
-     * cancelled</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAssetResourceLoadingRequest_Class/index.html#//apple_ref/occ/instp/AVAssetResourceLoadingRequest/cancelled">iOS Dev Center</a>
-     */
     @Generated
     @Selector("isCancelled")
     public native boolean isCancelled();
 
-    /**
-     * finished</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAssetResourceLoadingRequest_Class/index.html#//apple_ref/occ/instp/AVAssetResourceLoadingRequest/finished">iOS Dev Center</a>
-     */
     @Generated
     @Selector("isFinished")
     public native boolean isFinished();
 
-    /**
-     * redirect</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAssetResourceLoadingRequest_Class/index.html#//apple_ref/occ/instp/AVAssetResourceLoadingRequest/redirect">iOS Dev Center</a>
-     */
     @Generated
     @Selector("redirect")
     public native NSURLRequest redirect();
 
-    /**
-     * request</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAssetResourceLoadingRequest_Class/index.html#//apple_ref/occ/instp/AVAssetResourceLoadingRequest/request">iOS Dev Center</a>
-     */
     @Generated
     @Selector("request")
     public native NSURLRequest request();
 
-    /**
-     * response</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAssetResourceLoadingRequest_Class/index.html#//apple_ref/occ/instp/AVAssetResourceLoadingRequest/response">iOS Dev Center</a>
-     */
     @Generated
     @Selector("response")
     public native NSURLResponse response();
 
-    /**
-     * redirect</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAssetResourceLoadingRequest_Class/index.html#//apple_ref/occ/instp/AVAssetResourceLoadingRequest/redirect">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setRedirect:")
     public native void setRedirect(NSURLRequest value);
 
-    /**
-     * response</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAssetResourceLoadingRequest_Class/index.html#//apple_ref/occ/instp/AVAssetResourceLoadingRequest/response">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setResponse:")
     public native void setResponse(NSURLResponse value);
 
-    /**
-     * streamingContentKeyRequestDataForApp:contentIdentifier:options:error:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAssetResourceLoadingRequest_Class/index.html#//apple_ref/occ/instm/AVAssetResourceLoadingRequest/streamingContentKeyRequestDataForApp:contentIdentifier:options:error:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("streamingContentKeyRequestDataForApp:contentIdentifier:options:error:")
     public native NSData streamingContentKeyRequestDataForAppContentIdentifierOptionsError(NSData appIdentifier,

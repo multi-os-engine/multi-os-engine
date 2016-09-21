@@ -31,10 +31,6 @@ import org.moe.natj.objc.ann.Selector;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("SKRequestDelegate")
 public interface SKRequestDelegate {
-    /**
-     * request:didFailWithError:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/StoreKit/Reference/SKRequestDelegate/index.html#//apple_ref/occ/intfm/SKRequestDelegate/request:didFailWithError:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("request:didFailWithError:")
@@ -42,10 +38,6 @@ public interface SKRequestDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * requestDidFinish:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/StoreKit/Reference/SKRequestDelegate/index.html#//apple_ref/occ/intfm/SKRequestDelegate/requestDidFinish:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("requestDidFinish:")

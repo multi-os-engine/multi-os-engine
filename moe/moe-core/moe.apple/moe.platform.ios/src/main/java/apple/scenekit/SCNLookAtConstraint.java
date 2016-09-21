@@ -60,10 +60,6 @@ public class SCNLookAtConstraint extends SCNConstraint {
     @Selector("alloc")
     public static native SCNLookAtConstraint alloc();
 
-    /**
-     * lookAtConstraintWithTarget:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNLookAtConstraint_Class/index.html#//apple_ref/occ/clm/SCNLookAtConstraint/lookAtConstraintWithTarget:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("lookAtConstraintWithTarget:")
     public static native SCNLookAtConstraint lookAtConstraintWithTarget(SCNNode target);
@@ -172,10 +168,6 @@ public class SCNLookAtConstraint extends SCNConstraint {
     @NInt
     public static native long version_static();
 
-    /**
-     * gimbalLockEnabled</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNLookAtConstraint_Class/index.html#//apple_ref/occ/instp/SCNLookAtConstraint/gimbalLockEnabled">iOS Dev Center</a>
-     */
     @Generated
     @Selector("gimbalLockEnabled")
     public native boolean gimbalLockEnabled();
@@ -184,18 +176,10 @@ public class SCNLookAtConstraint extends SCNConstraint {
     @Selector("init")
     public native SCNLookAtConstraint init();
 
-    /**
-     * gimbalLockEnabled</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNLookAtConstraint_Class/index.html#//apple_ref/occ/instp/SCNLookAtConstraint/gimbalLockEnabled">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setGimbalLockEnabled:")
     public native void setGimbalLockEnabled(boolean value);
 
-    /**
-     * target</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNLookAtConstraint_Class/index.html#//apple_ref/occ/instp/SCNLookAtConstraint/target">iOS Dev Center</a>
-     */
     @Generated
     @Selector("target")
     public native SCNNode target();

@@ -160,10 +160,6 @@ public class MPMovieAccessLogEvent extends NSObject implements NSCopying {
     @NInt
     public static native long version_static();
 
-    /**
-     * URI</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPMovieAccessLogEvent_Class/index.html#//apple_ref/occ/instp/MPMovieAccessLogEvent/URI">iOS Dev Center</a>
-     */
     @Generated
     @Selector("URI")
     public native String URI();
@@ -174,18 +170,10 @@ public class MPMovieAccessLogEvent extends NSObject implements NSCopying {
     @MappedReturn(ObjCObjectMapper.class)
     public native Object copyWithZone(VoidPtr zone);
 
-    /**
-     * durationWatched</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPMovieAccessLogEvent_Class/index.html#//apple_ref/occ/instp/MPMovieAccessLogEvent/durationWatched">iOS Dev Center</a>
-     */
     @Generated
     @Selector("durationWatched")
     public native double durationWatched();
 
-    /**
-     * indicatedBitrate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPMovieAccessLogEvent_Class/index.html#//apple_ref/occ/instp/MPMovieAccessLogEvent/indicatedBitrate">iOS Dev Center</a>
-     */
     @Generated
     @Selector("indicatedBitrate")
     public native double indicatedBitrate();
@@ -194,94 +182,50 @@ public class MPMovieAccessLogEvent extends NSObject implements NSCopying {
     @Selector("init")
     public native MPMovieAccessLogEvent init();
 
-    /**
-     * numberOfBytesTransferred</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPMovieAccessLogEvent_Class/index.html#//apple_ref/occ/instp/MPMovieAccessLogEvent/numberOfBytesTransferred">iOS Dev Center</a>
-     */
     @Generated
     @Selector("numberOfBytesTransferred")
     public native long numberOfBytesTransferred();
 
-    /**
-     * numberOfDroppedVideoFrames</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPMovieAccessLogEvent_Class/index.html#//apple_ref/occ/instp/MPMovieAccessLogEvent/numberOfDroppedVideoFrames">iOS Dev Center</a>
-     */
     @Generated
     @Selector("numberOfDroppedVideoFrames")
     @NInt
     public native long numberOfDroppedVideoFrames();
 
-    /**
-     * numberOfSegmentsDownloaded</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPMovieAccessLogEvent_Class/index.html#//apple_ref/occ/instp/MPMovieAccessLogEvent/numberOfSegmentsDownloaded">iOS Dev Center</a>
-     */
     @Generated
     @Selector("numberOfSegmentsDownloaded")
     @NUInt
     public native long numberOfSegmentsDownloaded();
 
-    /**
-     * numberOfServerAddressChanges</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPMovieAccessLogEvent_Class/index.html#//apple_ref/occ/instp/MPMovieAccessLogEvent/numberOfServerAddressChanges">iOS Dev Center</a>
-     */
     @Generated
     @Selector("numberOfServerAddressChanges")
     @NUInt
     public native long numberOfServerAddressChanges();
 
-    /**
-     * numberOfStalls</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPMovieAccessLogEvent_Class/index.html#//apple_ref/occ/instp/MPMovieAccessLogEvent/numberOfStalls">iOS Dev Center</a>
-     */
     @Generated
     @Selector("numberOfStalls")
     @NInt
     public native long numberOfStalls();
 
-    /**
-     * observedBitrate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPMovieAccessLogEvent_Class/index.html#//apple_ref/occ/instp/MPMovieAccessLogEvent/observedBitrate">iOS Dev Center</a>
-     */
     @Generated
     @Selector("observedBitrate")
     public native double observedBitrate();
 
-    /**
-     * playbackSessionID</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPMovieAccessLogEvent_Class/index.html#//apple_ref/occ/instp/MPMovieAccessLogEvent/playbackSessionID">iOS Dev Center</a>
-     */
     @Generated
     @Selector("playbackSessionID")
     public native String playbackSessionID();
 
-    /**
-     * playbackStartDate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPMovieAccessLogEvent_Class/index.html#//apple_ref/occ/instp/MPMovieAccessLogEvent/playbackStartDate">iOS Dev Center</a>
-     */
     @Generated
     @Selector("playbackStartDate")
     public native NSDate playbackStartDate();
 
-    /**
-     * playbackStartOffset</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPMovieAccessLogEvent_Class/index.html#//apple_ref/occ/instp/MPMovieAccessLogEvent/playbackStartOffset">iOS Dev Center</a>
-     */
     @Generated
     @Selector("playbackStartOffset")
     public native double playbackStartOffset();
 
-    /**
-     * segmentsDownloadedDuration</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPMovieAccessLogEvent_Class/index.html#//apple_ref/occ/instp/MPMovieAccessLogEvent/segmentsDownloadedDuration">iOS Dev Center</a>
-     */
     @Generated
     @Selector("segmentsDownloadedDuration")
     public native double segmentsDownloadedDuration();
 
-    /**
-     * serverAddress</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPMovieAccessLogEvent_Class/index.html#//apple_ref/occ/instp/MPMovieAccessLogEvent/serverAddress">iOS Dev Center</a>
-     */
     @Generated
     @Selector("serverAddress")
     public native String serverAddress();

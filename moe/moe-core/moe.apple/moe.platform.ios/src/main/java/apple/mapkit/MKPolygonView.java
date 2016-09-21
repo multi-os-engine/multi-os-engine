@@ -363,19 +363,11 @@ public class MKPolygonView extends MKOverlayPathView {
     @Selector("initWithOverlay:")
     public native MKPolygonView initWithOverlay(@Mapped(ObjCObjectMapper.class) MKOverlay overlay);
 
-    /**
-     * initWithPolygon:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKPolygonView_class/index.html#//apple_ref/occ/instm/MKPolygonView/initWithPolygon:">iOS Dev Center</a>
-     */
     @Generated
     @Deprecated
     @Selector("initWithPolygon:")
     public native MKPolygonView initWithPolygon(MKPolygon polygon);
 
-    /**
-     * polygon</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKPolygonView_class/index.html#//apple_ref/occ/instp/MKPolygonView/polygon">iOS Dev Center</a>
-     */
     @Generated
     @Deprecated
     @Selector("polygon")

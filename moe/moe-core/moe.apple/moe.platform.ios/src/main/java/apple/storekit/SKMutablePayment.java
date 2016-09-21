@@ -168,10 +168,6 @@ public class SKMutablePayment extends SKPayment {
     @NInt
     public static native long version_static();
 
-    /**
-     * applicationUsername</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/StoreKit/Reference/SKMutablePaymentRequest_Class/index.html#//apple_ref/occ/instp/SKMutablePayment/applicationUsername">iOS Dev Center</a>
-     */
     @Generated
     @Selector("applicationUsername")
     public native String applicationUsername();
@@ -180,75 +176,39 @@ public class SKMutablePayment extends SKPayment {
     @Selector("init")
     public native SKMutablePayment init();
 
-    /**
-     * productIdentifier</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/StoreKit/Reference/SKMutablePaymentRequest_Class/index.html#//apple_ref/occ/instp/SKMutablePayment/productIdentifier">iOS Dev Center</a>
-     */
     @Generated
     @Selector("productIdentifier")
     public native String productIdentifier();
 
-    /**
-     * quantity</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/StoreKit/Reference/SKMutablePaymentRequest_Class/index.html#//apple_ref/occ/instp/SKMutablePayment/quantity">iOS Dev Center</a>
-     */
     @Generated
     @Selector("quantity")
     @NInt
     public native long quantity();
 
-    /**
-     * requestData</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/StoreKit/Reference/SKMutablePaymentRequest_Class/index.html#//apple_ref/occ/instp/SKMutablePayment/requestData">iOS Dev Center</a>
-     */
     @Generated
     @Selector("requestData")
     public native NSData requestData();
 
-    /**
-     * applicationUsername</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/StoreKit/Reference/SKMutablePaymentRequest_Class/index.html#//apple_ref/occ/instp/SKMutablePayment/applicationUsername">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setApplicationUsername:")
     public native void setApplicationUsername(String value);
 
-    /**
-     * productIdentifier</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/StoreKit/Reference/SKMutablePaymentRequest_Class/index.html#//apple_ref/occ/instp/SKMutablePayment/productIdentifier">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setProductIdentifier:")
     public native void setProductIdentifier(String value);
 
-    /**
-     * quantity</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/StoreKit/Reference/SKMutablePaymentRequest_Class/index.html#//apple_ref/occ/instp/SKMutablePayment/quantity">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setQuantity:")
     public native void setQuantity(@NInt long value);
 
-    /**
-     * requestData</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/StoreKit/Reference/SKMutablePaymentRequest_Class/index.html#//apple_ref/occ/instp/SKMutablePayment/requestData">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setRequestData:")
     public native void setRequestData(NSData value);
 
-    /**
-     * simulatesAskToBuyInSandbox</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/StoreKit/Reference/SKMutablePaymentRequest_Class/index.html#//apple_ref/occ/instp/SKMutablePayment/simulatesAskToBuyInSandbox">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setSimulatesAskToBuyInSandbox:")
     public native void setSimulatesAskToBuyInSandbox(boolean value);
 
-    /**
-     * simulatesAskToBuyInSandbox</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/StoreKit/Reference/SKMutablePaymentRequest_Class/index.html#//apple_ref/occ/instp/SKMutablePayment/simulatesAskToBuyInSandbox">iOS Dev Center</a>
-     */
     @Generated
     @Selector("simulatesAskToBuyInSandbox")
     public native boolean simulatesAskToBuyInSandbox();

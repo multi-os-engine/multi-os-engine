@@ -56,18 +56,10 @@ public class NSOperationQueue extends NSObject {
     @Selector("alloc")
     public static native NSOperationQueue alloc();
 
-    /**
-     * currentQueue</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSOperationQueue_class/index.html#//apple_ref/occ/clm/NSOperationQueue/currentQueue">iOS Dev Center</a>
-     */
     @Generated
     @Selector("currentQueue")
     public static native NSOperationQueue currentQueue();
 
-    /**
-     * mainQueue</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSOperationQueue_class/index.html#//apple_ref/occ/clm/NSOperationQueue/mainQueue">iOS Dev Center</a>
-     */
     @Generated
     @Selector("mainQueue")
     public static native NSOperationQueue mainQueue();
@@ -172,35 +164,19 @@ public class NSOperationQueue extends NSObject {
     @NInt
     public static native long version_static();
 
-    /**
-     * addOperation:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSOperationQueue_class/index.html#//apple_ref/occ/instm/NSOperationQueue/addOperation:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("addOperation:")
     public native void addOperation(NSOperation op);
 
-    /**
-     * addOperationWithBlock:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSOperationQueue_class/index.html#//apple_ref/occ/instm/NSOperationQueue/addOperationWithBlock:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("addOperationWithBlock:")
     public native void addOperationWithBlock(
             @ObjCBlock(name = "call_addOperationWithBlock") Block_addOperationWithBlock block);
 
-    /**
-     * addOperations:waitUntilFinished:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSOperationQueue_class/index.html#//apple_ref/occ/instm/NSOperationQueue/addOperations:waitUntilFinished:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("addOperations:waitUntilFinished:")
     public native void addOperationsWaitUntilFinished(NSArray<? extends NSOperation> ops, boolean wait_);
 
-    /**
-     * cancelAllOperations</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSOperationQueue_class/index.html#//apple_ref/occ/instm/NSOperationQueue/cancelAllOperations">iOS Dev Center</a>
-     */
     @Generated
     @Selector("cancelAllOperations")
     public native void cancelAllOperations();
@@ -209,101 +185,53 @@ public class NSOperationQueue extends NSObject {
     @Selector("init")
     public native NSOperationQueue init();
 
-    /**
-     * suspended</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSOperationQueue_class/index.html#//apple_ref/occ/instp/NSOperationQueue/suspended">iOS Dev Center</a>
-     */
     @Generated
     @Selector("isSuspended")
     public native boolean isSuspended();
 
-    /**
-     * suspended</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSOperationQueue_class/index.html#//apple_ref/occ/instp/NSOperationQueue/suspended">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setSuspended:")
     public native void setSuspended(boolean value);
 
-    /**
-     * maxConcurrentOperationCount</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSOperationQueue_class/index.html#//apple_ref/occ/instp/NSOperationQueue/maxConcurrentOperationCount">iOS Dev Center</a>
-     */
     @Generated
     @Selector("maxConcurrentOperationCount")
     @NInt
     public native long maxConcurrentOperationCount();
 
-    /**
-     * name</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSOperationQueue_class/index.html#//apple_ref/occ/instp/NSOperationQueue/name">iOS Dev Center</a>
-     */
     @Generated
     @Selector("name")
     public native String name();
 
-    /**
-     * operationCount</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSOperationQueue_class/index.html#//apple_ref/occ/instp/NSOperationQueue/operationCount">iOS Dev Center</a>
-     */
     @Generated
     @Selector("operationCount")
     @NUInt
     public native long operationCount();
 
-    /**
-     * operations</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSOperationQueue_class/index.html#//apple_ref/occ/instp/NSOperationQueue/operations">iOS Dev Center</a>
-     */
     @Generated
     @Selector("operations")
     public native NSArray<? extends NSOperation> operations();
 
-    /**
-     * qualityOfService</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSOperationQueue_class/index.html#//apple_ref/occ/instp/NSOperationQueue/qualityOfService">iOS Dev Center</a>
-     */
     @Generated
     @Selector("qualityOfService")
     @NInt
     public native long qualityOfService();
 
-    /**
-     * maxConcurrentOperationCount</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSOperationQueue_class/index.html#//apple_ref/occ/instp/NSOperationQueue/maxConcurrentOperationCount">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setMaxConcurrentOperationCount:")
     public native void setMaxConcurrentOperationCount(@NInt long value);
 
-    /**
-     * name</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSOperationQueue_class/index.html#//apple_ref/occ/instp/NSOperationQueue/name">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setName:")
     public native void setName(String value);
 
-    /**
-     * qualityOfService</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSOperationQueue_class/index.html#//apple_ref/occ/instp/NSOperationQueue/qualityOfService">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setQualityOfService:")
     public native void setQualityOfService(@NInt long value);
 
-    /**
-     * underlyingQueue</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSOperationQueue_class/index.html#//apple_ref/occ/instp/NSOperationQueue/underlyingQueue">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setUnderlyingQueue:")
     public native void setUnderlyingQueue_unsafe(NSObject value);
 
-    /**
-     * underlyingQueue</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSOperationQueue_class/index.html#//apple_ref/occ/instp/NSOperationQueue/underlyingQueue">iOS Dev Center</a>
-     */
     @Generated
     public void setUnderlyingQueue(NSObject value) {
         Object __old = underlyingQueue();
@@ -316,18 +244,10 @@ public class NSOperationQueue extends NSObject {
         }
     }
 
-    /**
-     * underlyingQueue</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSOperationQueue_class/index.html#//apple_ref/occ/instp/NSOperationQueue/underlyingQueue">iOS Dev Center</a>
-     */
     @Generated
     @Selector("underlyingQueue")
     public native NSObject underlyingQueue();
 
-    /**
-     * waitUntilAllOperationsAreFinished</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSOperationQueue_class/index.html#//apple_ref/occ/instm/NSOperationQueue/waitUntilAllOperationsAreFinished">iOS Dev Center</a>
-     */
     @Generated
     @Selector("waitUntilAllOperationsAreFinished")
     public native void waitUntilAllOperationsAreFinished();

@@ -55,10 +55,6 @@ public class NSNotificationQueue extends NSObject {
     @Selector("alloc")
     public static native NSNotificationQueue alloc();
 
-    /**
-     * defaultQueue</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSNotificationQueue_Class/index.html#//apple_ref/occ/clm/NSNotificationQueue/defaultQueue">iOS Dev Center</a>
-     */
     @Generated
     @Selector("defaultQueue")
     public static native NSNotificationQueue defaultQueue();
@@ -163,26 +159,14 @@ public class NSNotificationQueue extends NSObject {
     @NInt
     public static native long version_static();
 
-    /**
-     * dequeueNotificationsMatching:coalesceMask:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSNotificationQueue_Class/index.html#//apple_ref/occ/instm/NSNotificationQueue/dequeueNotificationsMatching:coalesceMask:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("dequeueNotificationsMatching:coalesceMask:")
     public native void dequeueNotificationsMatchingCoalesceMask(NSNotification notification, @NUInt long coalesceMask);
 
-    /**
-     * enqueueNotification:postingStyle:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSNotificationQueue_Class/index.html#//apple_ref/occ/instm/NSNotificationQueue/enqueueNotification:postingStyle:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("enqueueNotification:postingStyle:")
     public native void enqueueNotificationPostingStyle(NSNotification notification, @NUInt long postingStyle);
 
-    /**
-     * enqueueNotification:postingStyle:coalesceMask:forModes:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSNotificationQueue_Class/index.html#//apple_ref/occ/instm/NSNotificationQueue/enqueueNotification:postingStyle:coalesceMask:forModes:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("enqueueNotification:postingStyle:coalesceMask:forModes:")
     public native void enqueueNotificationPostingStyleCoalesceMaskForModes(NSNotification notification,
@@ -192,10 +176,6 @@ public class NSNotificationQueue extends NSObject {
     @Selector("init")
     public native NSNotificationQueue init();
 
-    /**
-     * initWithNotificationCenter:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSNotificationQueue_Class/index.html#//apple_ref/occ/instm/NSNotificationQueue/initWithNotificationCenter:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithNotificationCenter:")
     public native NSNotificationQueue initWithNotificationCenter(NSNotificationCenter notificationCenter);

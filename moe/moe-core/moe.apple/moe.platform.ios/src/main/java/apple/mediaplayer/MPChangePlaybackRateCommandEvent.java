@@ -162,10 +162,6 @@ public class MPChangePlaybackRateCommandEvent extends MPRemoteCommandEvent {
     @Selector("init")
     public native MPChangePlaybackRateCommandEvent init();
 
-    /**
-     * playbackRate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPChangePlaybackRateCommandEvent_Ref/index.html#//apple_ref/occ/instp/MPChangePlaybackRateCommandEvent/playbackRate">iOS Dev Center</a>
-     */
     @Generated
     @Selector("playbackRate")
     public native float playbackRate();

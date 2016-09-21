@@ -63,26 +63,14 @@ public class SKTextureAtlas extends NSObject implements NSCoding {
     @Selector("alloc")
     public static native SKTextureAtlas alloc();
 
-    /**
-     * atlasNamed:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKTextureAtlas/index.html#//apple_ref/occ/clm/SKTextureAtlas/atlasNamed:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("atlasNamed:")
     public static native SKTextureAtlas atlasNamed(String name);
 
-    /**
-     * atlasWithDictionary:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKTextureAtlas/index.html#//apple_ref/occ/clm/SKTextureAtlas/atlasWithDictionary:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("atlasWithDictionary:")
     public static native SKTextureAtlas atlasWithDictionary(NSDictionary<String, ?> properties);
 
-    /**
-     * preloadTextureAtlases:withCompletionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKTextureAtlas/index.html#//apple_ref/occ/clm/SKTextureAtlas/preloadTextureAtlases:withCompletionHandler:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("preloadTextureAtlases:withCompletionHandler:")
     public static native void preloadTextureAtlasesWithCompletionHandler(
@@ -206,27 +194,15 @@ public class SKTextureAtlas extends NSObject implements NSCoding {
     @Selector("initWithCoder:")
     public native SKTextureAtlas initWithCoder(NSCoder aDecoder);
 
-    /**
-     * preloadWithCompletionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKTextureAtlas/index.html#//apple_ref/occ/instm/SKTextureAtlas/preloadWithCompletionHandler:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("preloadWithCompletionHandler:")
     public native void preloadWithCompletionHandler(
             @ObjCBlock(name = "call_preloadWithCompletionHandler") Block_preloadWithCompletionHandler completionHandler);
 
-    /**
-     * textureNamed:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKTextureAtlas/index.html#//apple_ref/occ/instm/SKTextureAtlas/textureNamed:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("textureNamed:")
     public native SKTexture textureNamed(String name);
 
-    /**
-     * textureNames</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKTextureAtlas/index.html#//apple_ref/occ/instp/SKTextureAtlas/textureNames">iOS Dev Center</a>
-     */
     @Generated
     @Selector("textureNames")
     public native NSArray<String> textureNames();

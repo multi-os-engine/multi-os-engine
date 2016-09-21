@@ -56,10 +56,6 @@ public class NSHTTPURLResponse extends NSURLResponse {
     @Selector("alloc")
     public static native NSHTTPURLResponse alloc();
 
-    /**
-     * localizedStringForStatusCode:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSHTTPURLResponse_Class/index.html#//apple_ref/occ/clm/NSHTTPURLResponse/localizedStringForStatusCode:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("localizedStringForStatusCode:")
     public static native String localizedStringForStatusCode(@NInt long statusCode);
@@ -168,10 +164,6 @@ public class NSHTTPURLResponse extends NSURLResponse {
     @NInt
     public static native long version_static();
 
-    /**
-     * allHeaderFields</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSHTTPURLResponse_Class/index.html#//apple_ref/occ/instp/NSHTTPURLResponse/allHeaderFields">iOS Dev Center</a>
-     */
     @Generated
     @Selector("allHeaderFields")
     public native NSDictionary<?, ?> allHeaderFields();
@@ -185,19 +177,11 @@ public class NSHTTPURLResponse extends NSURLResponse {
     public native NSHTTPURLResponse initWithURLMIMETypeExpectedContentLengthTextEncodingName(NSURL URL, String MIMEType,
             @NInt long length, String name);
 
-    /**
-     * initWithURL:statusCode:HTTPVersion:headerFields:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSHTTPURLResponse_Class/index.html#//apple_ref/occ/instm/NSHTTPURLResponse/initWithURL:statusCode:HTTPVersion:headerFields:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithURL:statusCode:HTTPVersion:headerFields:")
     public native NSHTTPURLResponse initWithURLStatusCodeHTTPVersionHeaderFields(NSURL url, @NInt long statusCode,
             String HTTPVersion, NSDictionary<String, String> headerFields);
 
-    /**
-     * statusCode</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSHTTPURLResponse_Class/index.html#//apple_ref/occ/instp/NSHTTPURLResponse/statusCode">iOS Dev Center</a>
-     */
     @Generated
     @Selector("statusCode")
     @NInt

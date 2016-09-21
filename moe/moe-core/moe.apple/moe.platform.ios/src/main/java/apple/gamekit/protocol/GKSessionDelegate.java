@@ -31,10 +31,6 @@ import org.moe.natj.objc.ann.Selector;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("GKSessionDelegate")
 public interface GKSessionDelegate {
-    /**
-     * session:connectionWithPeerFailed:withError:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKSessionDelegate_Protocol/index.html#//apple_ref/occ/intfm/GKSessionDelegate/session:connectionWithPeerFailed:withError:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("session:connectionWithPeerFailed:withError:")
@@ -42,10 +38,6 @@ public interface GKSessionDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * session:didFailWithError:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKSessionDelegate_Protocol/index.html#//apple_ref/occ/intfm/GKSessionDelegate/session:didFailWithError:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("session:didFailWithError:")
@@ -53,10 +45,6 @@ public interface GKSessionDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * session:didReceiveConnectionRequestFromPeer:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKSessionDelegate_Protocol/index.html#//apple_ref/occ/intfm/GKSessionDelegate/session:didReceiveConnectionRequestFromPeer:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("session:didReceiveConnectionRequestFromPeer:")
@@ -64,10 +52,6 @@ public interface GKSessionDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * session:peer:didChangeState:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKSessionDelegate_Protocol/index.html#//apple_ref/occ/intfm/GKSessionDelegate/session:peer:didChangeState:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("session:peer:didChangeState:")

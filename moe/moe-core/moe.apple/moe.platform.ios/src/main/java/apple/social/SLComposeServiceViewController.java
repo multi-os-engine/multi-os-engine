@@ -185,58 +185,30 @@ public class SLComposeServiceViewController extends UIViewController implements 
     @NInt
     public static native long version_static();
 
-    /**
-     * autoCompletionViewController</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Social/Reference/SLComposeServiceViewController_Class/index.html#//apple_ref/occ/instp/SLComposeServiceViewController/autoCompletionViewController">iOS Dev Center</a>
-     */
     @Generated
     @Selector("autoCompletionViewController")
     public native UIViewController autoCompletionViewController();
 
-    /**
-     * cancel</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Social/Reference/SLComposeServiceViewController_Class/index.html#//apple_ref/occ/instm/SLComposeServiceViewController/cancel">iOS Dev Center</a>
-     */
     @Generated
     @Selector("cancel")
     public native void cancel();
 
-    /**
-     * charactersRemaining</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Social/Reference/SLComposeServiceViewController_Class/index.html#//apple_ref/occ/instp/SLComposeServiceViewController/charactersRemaining">iOS Dev Center</a>
-     */
     @Generated
     @Selector("charactersRemaining")
     public native NSNumber charactersRemaining();
 
-    /**
-     * configurationItems</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Social/Reference/SLComposeServiceViewController_Class/index.html#//apple_ref/occ/instm/SLComposeServiceViewController/configurationItems">iOS Dev Center</a>
-     */
     @Generated
     @Selector("configurationItems")
     public native NSArray<?> configurationItems();
 
-    /**
-     * contentText</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Social/Reference/SLComposeServiceViewController_Class/index.html#//apple_ref/occ/instp/SLComposeServiceViewController/contentText">iOS Dev Center</a>
-     */
     @Generated
     @Selector("contentText")
     public native String contentText();
 
-    /**
-     * didSelectCancel</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Social/Reference/SLComposeServiceViewController_Class/index.html#//apple_ref/occ/instm/SLComposeServiceViewController/didSelectCancel">iOS Dev Center</a>
-     */
     @Generated
     @Selector("didSelectCancel")
     public native void didSelectCancel();
 
-    /**
-     * didSelectPost</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Social/Reference/SLComposeServiceViewController_Class/index.html#//apple_ref/occ/instm/SLComposeServiceViewController/didSelectPost">iOS Dev Center</a>
-     */
     @Generated
     @Selector("didSelectPost")
     public native void didSelectPost();
@@ -249,58 +221,30 @@ public class SLComposeServiceViewController extends UIViewController implements 
     @Selector("initWithNibName:bundle:")
     public native SLComposeServiceViewController initWithNibNameBundle(String nibNameOrNil, NSBundle nibBundleOrNil);
 
-    /**
-     * isContentValid</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Social/Reference/SLComposeServiceViewController_Class/index.html#//apple_ref/occ/instm/SLComposeServiceViewController/isContentValid">iOS Dev Center</a>
-     */
     @Generated
     @Selector("isContentValid")
     public native boolean isContentValid();
 
-    /**
-     * loadPreviewView</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Social/Reference/SLComposeServiceViewController_Class/index.html#//apple_ref/occ/instm/SLComposeServiceViewController/loadPreviewView">iOS Dev Center</a>
-     */
     @Generated
     @Selector("loadPreviewView")
     public native UIView loadPreviewView();
 
-    /**
-     * placeholder</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Social/Reference/SLComposeServiceViewController_Class/index.html#//apple_ref/occ/instp/SLComposeServiceViewController/placeholder">iOS Dev Center</a>
-     */
     @Generated
     @Selector("placeholder")
     public native String placeholder();
 
-    /**
-     * popConfigurationViewController</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Social/Reference/SLComposeServiceViewController_Class/index.html#//apple_ref/occ/instm/SLComposeServiceViewController/popConfigurationViewController">iOS Dev Center</a>
-     */
     @Generated
     @Selector("popConfigurationViewController")
     public native void popConfigurationViewController();
 
-    /**
-     * presentationAnimationDidFinish</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Social/Reference/SLComposeServiceViewController_Class/index.html#//apple_ref/occ/instm/SLComposeServiceViewController/presentationAnimationDidFinish">iOS Dev Center</a>
-     */
     @Generated
     @Selector("presentationAnimationDidFinish")
     public native void presentationAnimationDidFinish();
 
-    /**
-     * pushConfigurationViewController:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Social/Reference/SLComposeServiceViewController_Class/index.html#//apple_ref/occ/instm/SLComposeServiceViewController/pushConfigurationViewController:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("pushConfigurationViewController:")
     public native void pushConfigurationViewController(UIViewController viewController);
 
-    /**
-     * reloadConfigurationItems</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Social/Reference/SLComposeServiceViewController_Class/index.html#//apple_ref/occ/instm/SLComposeServiceViewController/reloadConfigurationItems">iOS Dev Center</a>
-     */
     @Generated
     @Selector("reloadConfigurationItems")
     public native void reloadConfigurationItems();
@@ -367,34 +311,18 @@ public class SLComposeServiceViewController extends UIViewController implements 
     public native void scrollViewWillEndDraggingWithVelocityTargetContentOffset(UIScrollView scrollView,
             @ByValue CGPoint velocity, CGPoint targetContentOffset);
 
-    /**
-     * autoCompletionViewController</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Social/Reference/SLComposeServiceViewController_Class/index.html#//apple_ref/occ/instp/SLComposeServiceViewController/autoCompletionViewController">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setAutoCompletionViewController:")
     public native void setAutoCompletionViewController(UIViewController value);
 
-    /**
-     * charactersRemaining</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Social/Reference/SLComposeServiceViewController_Class/index.html#//apple_ref/occ/instp/SLComposeServiceViewController/charactersRemaining">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setCharactersRemaining:")
     public native void setCharactersRemaining(NSNumber value);
 
-    /**
-     * placeholder</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Social/Reference/SLComposeServiceViewController_Class/index.html#//apple_ref/occ/instp/SLComposeServiceViewController/placeholder">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setPlaceholder:")
     public native void setPlaceholder(String value);
 
-    /**
-     * textView</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Social/Reference/SLComposeServiceViewController_Class/index.html#//apple_ref/occ/instp/SLComposeServiceViewController/textView">iOS Dev Center</a>
-     */
     @Generated
     @Selector("textView")
     public native UITextView textView();
@@ -447,10 +375,6 @@ public class SLComposeServiceViewController extends UIViewController implements 
     @Selector("textViewShouldEndEditing:")
     public native boolean textViewShouldEndEditing(UITextView textView);
 
-    /**
-     * validateContent</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Social/Reference/SLComposeServiceViewController_Class/index.html#//apple_ref/occ/instm/SLComposeServiceViewController/validateContent">iOS Dev Center</a>
-     */
     @Generated
     @Selector("validateContent")
     public native void validateContent();

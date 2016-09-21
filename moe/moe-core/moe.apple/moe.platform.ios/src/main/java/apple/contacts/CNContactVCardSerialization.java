@@ -62,26 +62,14 @@ public class CNContactVCardSerialization extends NSObject {
     @Selector("alloc")
     public static native CNContactVCardSerialization alloc();
 
-    /**
-     * contactsWithData:error:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Contacts/Reference/CNContactVCardSerialization_Class/index.html#//apple_ref/occ/clm/CNContactVCardSerialization/contactsWithData:error:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("contactsWithData:error:")
     public static native NSArray<?> contactsWithDataError(NSData data, Ptr<NSError> error);
 
-    /**
-     * dataWithContacts:error:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Contacts/Reference/CNContactVCardSerialization_Class/index.html#//apple_ref/occ/clm/CNContactVCardSerialization/dataWithContacts:error:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("dataWithContacts:error:")
     public static native NSData dataWithContactsError(NSArray<?> contacts, Ptr<NSError> error);
 
-    /**
-     * descriptorForRequiredKeys</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Contacts/Reference/CNContactVCardSerialization_Class/index.html#//apple_ref/occ/clm/CNContactVCardSerialization/descriptorForRequiredKeys">iOS Dev Center</a>
-     */
     @Generated
     @Selector("descriptorForRequiredKeys")
     @MappedReturn(ObjCObjectMapper.class)

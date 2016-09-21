@@ -164,19 +164,11 @@ public class ALAsset extends NSObject {
     @NInt
     public static native long version_static();
 
-    /**
-     * aspectRatioThumbnail</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AssetsLibrary/Reference/ALAsset_Class/index.html#//apple_ref/occ/instm/ALAsset/aspectRatioThumbnail">iOS Dev Center</a>
-     */
     @Deprecated
     @Generated
     @Selector("aspectRatioThumbnail")
     public native CGImageRef aspectRatioThumbnail();
 
-    /**
-     * defaultRepresentation</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AssetsLibrary/Reference/ALAsset_Class/index.html#//apple_ref/occ/instm/ALAsset/defaultRepresentation">iOS Dev Center</a>
-     */
     @Deprecated
     @Generated
     @Selector("defaultRepresentation")
@@ -186,76 +178,44 @@ public class ALAsset extends NSObject {
     @Selector("init")
     public native ALAsset init();
 
-    /**
-     * editable</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AssetsLibrary/Reference/ALAsset_Class/index.html#//apple_ref/occ/instp/ALAsset/editable">iOS Dev Center</a>
-     */
     @Deprecated
     @Generated
     @Selector("isEditable")
     public native boolean isEditable();
 
-    /**
-     * originalAsset</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AssetsLibrary/Reference/ALAsset_Class/index.html#//apple_ref/occ/instp/ALAsset/originalAsset">iOS Dev Center</a>
-     */
     @Deprecated
     @Generated
     @Selector("originalAsset")
     public native ALAsset originalAsset();
 
-    /**
-     * representationForUTI:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AssetsLibrary/Reference/ALAsset_Class/index.html#//apple_ref/occ/instm/ALAsset/representationForUTI:">iOS Dev Center</a>
-     */
     @Deprecated
     @Generated
     @Selector("representationForUTI:")
     public native ALAssetRepresentation representationForUTI(String representationUTI);
 
-    /**
-     * setImageData:metadata:completionBlock:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AssetsLibrary/Reference/ALAsset_Class/index.html#//apple_ref/occ/instm/ALAsset/setImageData:metadata:completionBlock:">iOS Dev Center</a>
-     */
     @Deprecated
     @Generated
     @Selector("setImageData:metadata:completionBlock:")
     public native void setImageDataMetadataCompletionBlock(NSData imageData, NSDictionary<?, ?> metadata,
             @ObjCBlock(name = "call_setImageDataMetadataCompletionBlock") Block_setImageDataMetadataCompletionBlock completionBlock);
 
-    /**
-     * setVideoAtPath:completionBlock:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AssetsLibrary/Reference/ALAsset_Class/index.html#//apple_ref/occ/instm/ALAsset/setVideoAtPath:completionBlock:">iOS Dev Center</a>
-     */
     @Deprecated
     @Generated
     @Selector("setVideoAtPath:completionBlock:")
     public native void setVideoAtPathCompletionBlock(NSURL videoPathURL,
             @ObjCBlock(name = "call_setVideoAtPathCompletionBlock") Block_setVideoAtPathCompletionBlock completionBlock);
 
-    /**
-     * thumbnail</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AssetsLibrary/Reference/ALAsset_Class/index.html#//apple_ref/occ/instm/ALAsset/thumbnail">iOS Dev Center</a>
-     */
     @Deprecated
     @Generated
     @Selector("thumbnail")
     public native CGImageRef thumbnail();
 
-    /**
-     * valueForProperty:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AssetsLibrary/Reference/ALAsset_Class/index.html#//apple_ref/occ/instm/ALAsset/valueForProperty:">iOS Dev Center</a>
-     */
     @Deprecated
     @Generated
     @Selector("valueForProperty:")
     @MappedReturn(ObjCObjectMapper.class)
     public native Object valueForProperty(String property);
 
-    /**
-     * writeModifiedImageDataToSavedPhotosAlbum:metadata:completionBlock:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AssetsLibrary/Reference/ALAsset_Class/index.html#//apple_ref/occ/instm/ALAsset/writeModifiedImageDataToSavedPhotosAlbum:metadata:completionBlock:">iOS Dev Center</a>
-     */
     @Deprecated
     @Generated
     @Selector("writeModifiedImageDataToSavedPhotosAlbum:metadata:completionBlock:")
@@ -263,10 +223,6 @@ public class ALAsset extends NSObject {
             NSDictionary<?, ?> metadata,
             @ObjCBlock(name = "call_writeModifiedImageDataToSavedPhotosAlbumMetadataCompletionBlock") Block_writeModifiedImageDataToSavedPhotosAlbumMetadataCompletionBlock completionBlock);
 
-    /**
-     * writeModifiedVideoAtPathToSavedPhotosAlbum:completionBlock:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AssetsLibrary/Reference/ALAsset_Class/index.html#//apple_ref/occ/instm/ALAsset/writeModifiedVideoAtPathToSavedPhotosAlbum:completionBlock:">iOS Dev Center</a>
-     */
     @Deprecated
     @Generated
     @Selector("writeModifiedVideoAtPathToSavedPhotosAlbum:completionBlock:")

@@ -166,10 +166,6 @@ public class CSPerson extends NSObject implements NSSecureCoding, NSCopying {
     @NInt
     public static native long version_static();
 
-    /**
-     * contactIdentifier</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreSpotlight/Reference/CSPerson_Class/index.html#//apple_ref/occ/instp/CSPerson/contactIdentifier">iOS Dev Center</a>
-     */
     @Generated
     @Selector("contactIdentifier")
     public native String contactIdentifier();
@@ -180,10 +176,6 @@ public class CSPerson extends NSObject implements NSSecureCoding, NSCopying {
     @MappedReturn(ObjCObjectMapper.class)
     public native Object copyWithZone(VoidPtr zone);
 
-    /**
-     * displayName</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreSpotlight/Reference/CSPerson_Class/index.html#//apple_ref/occ/instp/CSPerson/displayName">iOS Dev Center</a>
-     */
     @Generated
     @Selector("displayName")
     public native String displayName();
@@ -192,18 +184,10 @@ public class CSPerson extends NSObject implements NSSecureCoding, NSCopying {
     @Selector("encodeWithCoder:")
     public native void encodeWithCoder(NSCoder aCoder);
 
-    /**
-     * handleIdentifier</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreSpotlight/Reference/CSPerson_Class/index.html#//apple_ref/occ/instp/CSPerson/handleIdentifier">iOS Dev Center</a>
-     */
     @Generated
     @Selector("handleIdentifier")
     public native String handleIdentifier();
 
-    /**
-     * handles</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreSpotlight/Reference/CSPerson_Class/index.html#//apple_ref/occ/instp/CSPerson/handles">iOS Dev Center</a>
-     */
     @Generated
     @Selector("handles")
     public native NSArray<String> handles();
@@ -216,19 +200,11 @@ public class CSPerson extends NSObject implements NSSecureCoding, NSCopying {
     @Selector("initWithCoder:")
     public native CSPerson initWithCoder(NSCoder aDecoder);
 
-    /**
-     * initWithDisplayName:handles:handleIdentifier:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreSpotlight/Reference/CSPerson_Class/index.html#//apple_ref/occ/instm/CSPerson/initWithDisplayName:handles:handleIdentifier:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithDisplayName:handles:handleIdentifier:")
     public native CSPerson initWithDisplayNameHandlesHandleIdentifier(String displayName, NSArray<String> handles,
             String handleIdentifier);
 
-    /**
-     * contactIdentifier</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreSpotlight/Reference/CSPerson_Class/index.html#//apple_ref/occ/instp/CSPerson/contactIdentifier">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setContactIdentifier:")
     public native void setContactIdentifier(String value);

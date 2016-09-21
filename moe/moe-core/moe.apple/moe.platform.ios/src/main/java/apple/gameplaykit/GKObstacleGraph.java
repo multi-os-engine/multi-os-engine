@@ -62,10 +62,6 @@ public class GKObstacleGraph extends GKGraph {
     @Selector("graphWithNodes:")
     public static native GKObstacleGraph graphWithNodes(NSArray<? extends GKGraphNode> nodes);
 
-    /**
-     * graphWithObstacles:bufferRadius:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameplayKit/Reference/GKObstacleGraph_Class/index.html#//apple_ref/occ/clm/GKObstacleGraph/graphWithObstacles:bufferRadius:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("graphWithObstacles:bufferRadius:")
     public static native GKObstacleGraph graphWithObstaclesBufferRadius(NSArray<? extends GKPolygonObstacle> obstacles,
@@ -171,43 +167,23 @@ public class GKObstacleGraph extends GKGraph {
     @NInt
     public static native long version_static();
 
-    /**
-     * addObstacles:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameplayKit/Reference/GKObstacleGraph_Class/index.html#//apple_ref/occ/instm/GKObstacleGraph/addObstacles:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("addObstacles:")
     public native void addObstacles(NSArray<? extends GKPolygonObstacle> obstacles);
 
-    /**
-     * bufferRadius</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameplayKit/Reference/GKObstacleGraph_Class/index.html#//apple_ref/occ/instp/GKObstacleGraph/bufferRadius">iOS Dev Center</a>
-     */
     @Generated
     @Selector("bufferRadius")
     public native float bufferRadius();
 
-    /**
-     * connectNodeUsingObstacles:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameplayKit/Reference/GKObstacleGraph_Class/index.html#//apple_ref/occ/instm/GKObstacleGraph/connectNodeUsingObstacles:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("connectNodeUsingObstacles:")
     public native void connectNodeUsingObstacles(GKGraphNode2D node);
 
-    /**
-     * connectNodeUsingObstacles:ignoringBufferRadiusOfObstacles:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameplayKit/Reference/GKObstacleGraph_Class/index.html#//apple_ref/occ/instm/GKObstacleGraph/connectNodeUsingObstacles:ignoringBufferRadiusOfObstacles:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("connectNodeUsingObstacles:ignoringBufferRadiusOfObstacles:")
     public native void connectNodeUsingObstaclesIgnoringBufferRadiusOfObstacles(GKGraphNode2D node,
             NSArray<? extends GKPolygonObstacle> obstaclesBufferRadiusToIgnore);
 
-    /**
-     * connectNodeUsingObstacles:ignoringObstacles:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameplayKit/Reference/GKObstacleGraph_Class/index.html#//apple_ref/occ/instm/GKObstacleGraph/connectNodeUsingObstacles:ignoringObstacles:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("connectNodeUsingObstacles:ignoringObstacles:")
     public native void connectNodeUsingObstaclesIgnoringObstacles(GKGraphNode2D node,
@@ -221,67 +197,35 @@ public class GKObstacleGraph extends GKGraph {
     @Selector("initWithNodes:")
     public native GKObstacleGraph initWithNodes(NSArray<? extends GKGraphNode> nodes);
 
-    /**
-     * initWithObstacles:bufferRadius:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameplayKit/Reference/GKObstacleGraph_Class/index.html#//apple_ref/occ/instm/GKObstacleGraph/initWithObstacles:bufferRadius:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithObstacles:bufferRadius:")
     public native GKObstacleGraph initWithObstaclesBufferRadius(NSArray<? extends GKPolygonObstacle> obstacles,
             float bufferRadius);
 
-    /**
-     * isConnectionLockedFromNode:toNode:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameplayKit/Reference/GKObstacleGraph_Class/index.html#//apple_ref/occ/instm/GKObstacleGraph/isConnectionLockedFromNode:toNode:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("isConnectionLockedFromNode:toNode:")
     public native boolean isConnectionLockedFromNodeToNode(GKGraphNode2D startNode, GKGraphNode2D endNode);
 
-    /**
-     * lockConnectionFromNode:toNode:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameplayKit/Reference/GKObstacleGraph_Class/index.html#//apple_ref/occ/instm/GKObstacleGraph/lockConnectionFromNode:toNode:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("lockConnectionFromNode:toNode:")
     public native void lockConnectionFromNodeToNode(GKGraphNode2D startNode, GKGraphNode2D endNode);
 
-    /**
-     * nodesForObstacle:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameplayKit/Reference/GKObstacleGraph_Class/index.html#//apple_ref/occ/instm/GKObstacleGraph/nodesForObstacle:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("nodesForObstacle:")
     public native NSArray<? extends GKGraphNode2D> nodesForObstacle(GKPolygonObstacle obstacle);
 
-    /**
-     * obstacles</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameplayKit/Reference/GKObstacleGraph_Class/index.html#//apple_ref/occ/instp/GKObstacleGraph/obstacles">iOS Dev Center</a>
-     */
     @Generated
     @Selector("obstacles")
     public native NSArray<? extends GKPolygonObstacle> obstacles();
 
-    /**
-     * removeAllObstacles</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameplayKit/Reference/GKObstacleGraph_Class/index.html#//apple_ref/occ/instm/GKObstacleGraph/removeAllObstacles">iOS Dev Center</a>
-     */
     @Generated
     @Selector("removeAllObstacles")
     public native void removeAllObstacles();
 
-    /**
-     * removeObstacles:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameplayKit/Reference/GKObstacleGraph_Class/index.html#//apple_ref/occ/instm/GKObstacleGraph/removeObstacles:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("removeObstacles:")
     public native void removeObstacles(NSArray<? extends GKPolygonObstacle> obstacles);
 
-    /**
-     * unlockConnectionFromNode:toNode:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameplayKit/Reference/GKObstacleGraph_Class/index.html#//apple_ref/occ/instm/GKObstacleGraph/unlockConnectionFromNode:toNode:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("unlockConnectionFromNode:toNode:")
     public native void unlockConnectionFromNodeToNode(GKGraphNode2D startNode, GKGraphNode2D endNode);

@@ -161,10 +161,6 @@ public class HMRoom extends NSObject {
     @NInt
     public static native long version_static();
 
-    /**
-     * accessories</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HomeKit/Reference/HMRoom_Class/index.html#//apple_ref/occ/instp/HMRoom/accessories">iOS Dev Center</a>
-     */
     @Generated
     @Selector("accessories")
     public native NSArray<? extends HMAccessory> accessories();
@@ -173,18 +169,10 @@ public class HMRoom extends NSObject {
     @Selector("init")
     public native HMRoom init();
 
-    /**
-     * name</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HomeKit/Reference/HMRoom_Class/index.html#//apple_ref/occ/instp/HMRoom/name">iOS Dev Center</a>
-     */
     @Generated
     @Selector("name")
     public native String name();
 
-    /**
-     * updateName:completionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HomeKit/Reference/HMRoom_Class/index.html#//apple_ref/occ/instm/HMRoom/updateName:completionHandler:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("updateName:completionHandler:")
     public native void updateNameCompletionHandler(String name,

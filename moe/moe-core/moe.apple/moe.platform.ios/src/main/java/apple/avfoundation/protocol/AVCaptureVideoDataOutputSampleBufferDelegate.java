@@ -32,10 +32,6 @@ import org.moe.natj.objc.ann.Selector;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("AVCaptureVideoDataOutputSampleBufferDelegate")
 public interface AVCaptureVideoDataOutputSampleBufferDelegate {
-    /**
-     * captureOutput:didDropSampleBuffer:fromConnection:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVCaptureVideoDataOutputSampleBufferDelegate_Protocol/index.html#//apple_ref/occ/intfm/AVCaptureVideoDataOutputSampleBufferDelegate/captureOutput:didDropSampleBuffer:fromConnection:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("captureOutput:didDropSampleBuffer:fromConnection:")
@@ -44,10 +40,6 @@ public interface AVCaptureVideoDataOutputSampleBufferDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * captureOutput:didOutputSampleBuffer:fromConnection:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVCaptureVideoDataOutputSampleBufferDelegate_Protocol/index.html#//apple_ref/occ/intfm/AVCaptureVideoDataOutputSampleBufferDelegate/captureOutput:didOutputSampleBuffer:fromConnection:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("captureOutput:didOutputSampleBuffer:fromConnection:")

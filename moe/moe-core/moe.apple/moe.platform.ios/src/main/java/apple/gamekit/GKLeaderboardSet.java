@@ -65,10 +65,6 @@ public class GKLeaderboardSet extends NSObject implements NSCoding, NSSecureCodi
     @Selector("alloc")
     public static native GKLeaderboardSet alloc();
 
-    /**
-     * loadLeaderboardSetsWithCompletionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKLeaderboardSet/index.html#//apple_ref/occ/clm/GKLeaderboardSet/loadLeaderboardSetsWithCompletionHandler:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("loadLeaderboardSetsWithCompletionHandler:")
     public static native void loadLeaderboardSetsWithCompletionHandler(
@@ -182,18 +178,10 @@ public class GKLeaderboardSet extends NSObject implements NSCoding, NSSecureCodi
     @Selector("encodeWithCoder:")
     public native void encodeWithCoder(NSCoder aCoder);
 
-    /**
-     * groupIdentifier</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKLeaderboardSet/index.html#//apple_ref/occ/instp/GKLeaderboardSet/groupIdentifier">iOS Dev Center</a>
-     */
     @Generated
     @Selector("groupIdentifier")
     public native String groupIdentifier();
 
-    /**
-     * identifier</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKLeaderboardSet/index.html#//apple_ref/occ/instp/GKLeaderboardSet/identifier">iOS Dev Center</a>
-     */
     @Generated
     @Selector("identifier")
     public native String identifier();
@@ -206,28 +194,16 @@ public class GKLeaderboardSet extends NSObject implements NSCoding, NSSecureCodi
     @Selector("initWithCoder:")
     public native GKLeaderboardSet initWithCoder(NSCoder aDecoder);
 
-    /**
-     * loadImageWithCompletionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKLeaderboardSet/index.html#//apple_ref/occ/instm/GKLeaderboardSet/loadImageWithCompletionHandler:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("loadImageWithCompletionHandler:")
     public native void loadImageWithCompletionHandler(
             @ObjCBlock(name = "call_loadImageWithCompletionHandler") Block_loadImageWithCompletionHandler completionHandler);
 
-    /**
-     * loadLeaderboardsWithCompletionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKLeaderboardSet/index.html#//apple_ref/occ/instm/GKLeaderboardSet/loadLeaderboardsWithCompletionHandler:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("loadLeaderboardsWithCompletionHandler:")
     public native void loadLeaderboardsWithCompletionHandler(
             @ObjCBlock(name = "call_loadLeaderboardsWithCompletionHandler") Block_loadLeaderboardsWithCompletionHandler completionHandler);
 
-    /**
-     * identifier</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKLeaderboardSet/index.html#//apple_ref/occ/instp/GKLeaderboardSet/identifier">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setIdentifier:")
     public native void setIdentifier(String value);
@@ -238,10 +214,6 @@ public class GKLeaderboardSet extends NSObject implements NSCoding, NSSecureCodi
         return supportsSecureCoding();
     }
 
-    /**
-     * title</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKLeaderboardSet/index.html#//apple_ref/occ/instp/GKLeaderboardSet/title">iOS Dev Center</a>
-     */
     @Generated
     @Selector("title")
     public native String title();

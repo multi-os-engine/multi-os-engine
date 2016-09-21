@@ -175,10 +175,6 @@ public class MKPlacemark extends CLPlacemark implements MKAnnotation {
     @ByValue
     public native CLLocationCoordinate2D coordinate();
 
-    /**
-     * countryCode</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKPlacemark_Class/index.html#//apple_ref/occ/instp/MKPlacemark/countryCode">iOS Dev Center</a>
-     */
     @Generated
     @Selector("countryCode")
     public native String countryCode();
@@ -187,10 +183,6 @@ public class MKPlacemark extends CLPlacemark implements MKAnnotation {
     @Selector("init")
     public native MKPlacemark init();
 
-    /**
-     * initWithCoordinate:addressDictionary:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKPlacemark_Class/index.html#//apple_ref/occ/instm/MKPlacemark/initWithCoordinate:addressDictionary:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithCoordinate:addressDictionary:")
     public native MKPlacemark initWithCoordinateAddressDictionary(@ByValue CLLocationCoordinate2D coordinate,

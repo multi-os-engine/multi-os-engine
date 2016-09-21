@@ -161,10 +161,6 @@ public class CKFetchRecordChangesOperation extends CKDatabaseOperation {
     @NInt
     public static native long version_static();
 
-    /**
-     * desiredKeys</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKFetchRecordChangesOperation_class/index.html#//apple_ref/occ/instp/CKFetchRecordChangesOperation/desiredKeys">iOS Dev Center</a>
-     */
     @Generated
     @Selector("desiredKeys")
     public native NSArray<String> desiredKeys();
@@ -173,129 +169,69 @@ public class CKFetchRecordChangesOperation extends CKDatabaseOperation {
     @Selector("init")
     public native CKFetchRecordChangesOperation init();
 
-    /**
-     * initWithRecordZoneID:previousServerChangeToken:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKFetchRecordChangesOperation_class/index.html#//apple_ref/occ/instm/CKFetchRecordChangesOperation/initWithRecordZoneID:previousServerChangeToken:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithRecordZoneID:previousServerChangeToken:")
     public native CKFetchRecordChangesOperation initWithRecordZoneIDPreviousServerChangeToken(
             CKRecordZoneID recordZoneID, CKServerChangeToken previousServerChangeToken);
 
-    /**
-     * moreComing</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKFetchRecordChangesOperation_class/index.html#//apple_ref/occ/instp/CKFetchRecordChangesOperation/moreComing">iOS Dev Center</a>
-     */
     @Generated
     @Selector("moreComing")
     public native boolean moreComing();
 
-    /**
-     * previousServerChangeToken</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKFetchRecordChangesOperation_class/index.html#//apple_ref/occ/instp/CKFetchRecordChangesOperation/previousServerChangeToken">iOS Dev Center</a>
-     */
     @Generated
     @Selector("previousServerChangeToken")
     public native CKServerChangeToken previousServerChangeToken();
 
-    /**
-     * recordZoneID</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKFetchRecordChangesOperation_class/index.html#//apple_ref/occ/instp/CKFetchRecordChangesOperation/recordZoneID">iOS Dev Center</a>
-     */
     @Generated
     @Selector("recordZoneID")
     public native CKRecordZoneID recordZoneID();
 
-    /**
-     * resultsLimit</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKFetchRecordChangesOperation_class/index.html#//apple_ref/occ/instp/CKFetchRecordChangesOperation/resultsLimit">iOS Dev Center</a>
-     */
     @Generated
     @Selector("resultsLimit")
     @NUInt
     public native long resultsLimit();
 
-    /**
-     * desiredKeys</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKFetchRecordChangesOperation_class/index.html#//apple_ref/occ/instp/CKFetchRecordChangesOperation/desiredKeys">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setDesiredKeys:")
     public native void setDesiredKeys(NSArray<String> value);
 
-    /**
-     * fetchRecordChangesCompletionBlock</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKFetchRecordChangesOperation_class/index.html#//apple_ref/occ/instp/CKFetchRecordChangesOperation/fetchRecordChangesCompletionBlock">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setFetchRecordChangesCompletionBlock:")
     public native void setFetchRecordChangesCompletionBlock(
             @ObjCBlock(name = "call_setFetchRecordChangesCompletionBlock") Block_setFetchRecordChangesCompletionBlock value);
 
-    /**
-     * previousServerChangeToken</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKFetchRecordChangesOperation_class/index.html#//apple_ref/occ/instp/CKFetchRecordChangesOperation/previousServerChangeToken">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setPreviousServerChangeToken:")
     public native void setPreviousServerChangeToken(CKServerChangeToken value);
 
-    /**
-     * recordChangedBlock</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKFetchRecordChangesOperation_class/index.html#//apple_ref/occ/instp/CKFetchRecordChangesOperation/recordChangedBlock">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setRecordChangedBlock:")
     public native void setRecordChangedBlock(
             @ObjCBlock(name = "call_setRecordChangedBlock") Block_setRecordChangedBlock value);
 
-    /**
-     * recordWithIDWasDeletedBlock</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKFetchRecordChangesOperation_class/index.html#//apple_ref/occ/instp/CKFetchRecordChangesOperation/recordWithIDWasDeletedBlock">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setRecordWithIDWasDeletedBlock:")
     public native void setRecordWithIDWasDeletedBlock(
             @ObjCBlock(name = "call_setRecordWithIDWasDeletedBlock") Block_setRecordWithIDWasDeletedBlock value);
 
-    /**
-     * recordZoneID</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKFetchRecordChangesOperation_class/index.html#//apple_ref/occ/instp/CKFetchRecordChangesOperation/recordZoneID">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setRecordZoneID:")
     public native void setRecordZoneID(CKRecordZoneID value);
 
-    /**
-     * resultsLimit</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKFetchRecordChangesOperation_class/index.html#//apple_ref/occ/instp/CKFetchRecordChangesOperation/resultsLimit">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setResultsLimit:")
     public native void setResultsLimit(@NUInt long value);
 
-    /**
-     * fetchRecordChangesCompletionBlock</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKFetchRecordChangesOperation_class/index.html#//apple_ref/occ/instp/CKFetchRecordChangesOperation/fetchRecordChangesCompletionBlock">iOS Dev Center</a>
-     */
     @Generated
     @Selector("fetchRecordChangesCompletionBlock")
     @ObjCBlock(name = "call_fetchRecordChangesCompletionBlock_ret")
     public native Block_fetchRecordChangesCompletionBlock_ret fetchRecordChangesCompletionBlock();
 
-    /**
-     * recordChangedBlock</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKFetchRecordChangesOperation_class/index.html#//apple_ref/occ/instp/CKFetchRecordChangesOperation/recordChangedBlock">iOS Dev Center</a>
-     */
     @Generated
     @Selector("recordChangedBlock")
     @ObjCBlock(name = "call_recordChangedBlock_ret")
     public native Block_recordChangedBlock_ret recordChangedBlock();
 
-    /**
-     * recordWithIDWasDeletedBlock</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKFetchRecordChangesOperation_class/index.html#//apple_ref/occ/instp/CKFetchRecordChangesOperation/recordWithIDWasDeletedBlock">iOS Dev Center</a>
-     */
     @Generated
     @Selector("recordWithIDWasDeletedBlock")
     @ObjCBlock(name = "call_recordWithIDWasDeletedBlock_ret")

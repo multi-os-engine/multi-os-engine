@@ -76,91 +76,47 @@ public class SKShapeNode extends SKNode {
     @Selector("nodeWithFileNamed:")
     public static native SKShapeNode nodeWithFileNamed(String filename);
 
-    /**
-     * shapeNodeWithCircleOfRadius:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKShapeNode_Ref/index.html#//apple_ref/occ/clm/SKShapeNode/shapeNodeWithCircleOfRadius:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("shapeNodeWithCircleOfRadius:")
     public static native SKShapeNode shapeNodeWithCircleOfRadius(@NFloat double radius);
 
-    /**
-     * shapeNodeWithEllipseInRect:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKShapeNode_Ref/index.html#//apple_ref/occ/clm/SKShapeNode/shapeNodeWithEllipseInRect:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("shapeNodeWithEllipseInRect:")
     public static native SKShapeNode shapeNodeWithEllipseInRect(@ByValue CGRect rect);
 
-    /**
-     * shapeNodeWithEllipseOfSize:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKShapeNode_Ref/index.html#//apple_ref/occ/clm/SKShapeNode/shapeNodeWithEllipseOfSize:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("shapeNodeWithEllipseOfSize:")
     public static native SKShapeNode shapeNodeWithEllipseOfSize(@ByValue CGSize size);
 
-    /**
-     * shapeNodeWithPath:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKShapeNode_Ref/index.html#//apple_ref/occ/clm/SKShapeNode/shapeNodeWithPath:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("shapeNodeWithPath:")
     public static native SKShapeNode shapeNodeWithPath(CGPathRef path);
 
-    /**
-     * shapeNodeWithPath:centered:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKShapeNode_Ref/index.html#//apple_ref/occ/clm/SKShapeNode/shapeNodeWithPath:centered:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("shapeNodeWithPath:centered:")
     public static native SKShapeNode shapeNodeWithPathCentered(CGPathRef path, boolean centered);
 
-    /**
-     * shapeNodeWithPoints:count:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKShapeNode_Ref/index.html#//apple_ref/occ/clm/SKShapeNode/shapeNodeWithPoints:count:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("shapeNodeWithPoints:count:")
     public static native SKShapeNode shapeNodeWithPointsCount(Ptr<CGPoint> points, @NUInt long numPoints);
 
-    /**
-     * shapeNodeWithRect:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKShapeNode_Ref/index.html#//apple_ref/occ/clm/SKShapeNode/shapeNodeWithRect:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("shapeNodeWithRect:")
     public static native SKShapeNode shapeNodeWithRect(@ByValue CGRect rect);
 
-    /**
-     * shapeNodeWithRect:cornerRadius:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKShapeNode_Ref/index.html#//apple_ref/occ/clm/SKShapeNode/shapeNodeWithRect:cornerRadius:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("shapeNodeWithRect:cornerRadius:")
     public static native SKShapeNode shapeNodeWithRectCornerRadius(@ByValue CGRect rect, @NFloat double cornerRadius);
 
-    /**
-     * shapeNodeWithRectOfSize:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKShapeNode_Ref/index.html#//apple_ref/occ/clm/SKShapeNode/shapeNodeWithRectOfSize:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("shapeNodeWithRectOfSize:")
     public static native SKShapeNode shapeNodeWithRectOfSize(@ByValue CGSize size);
 
-    /**
-     * shapeNodeWithRectOfSize:cornerRadius:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKShapeNode_Ref/index.html#//apple_ref/occ/clm/SKShapeNode/shapeNodeWithRectOfSize:cornerRadius:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("shapeNodeWithRectOfSize:cornerRadius:")
     public static native SKShapeNode shapeNodeWithRectOfSizeCornerRadius(@ByValue CGSize size,
             @NFloat double cornerRadius);
 
-    /**
-     * shapeNodeWithSplinePoints:count:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKShapeNode_Ref/index.html#//apple_ref/occ/clm/SKShapeNode/shapeNodeWithSplinePoints:count:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("shapeNodeWithSplinePoints:count:")
     public static native SKShapeNode shapeNodeWithSplinePointsCount(Ptr<CGPoint> points, @NUInt long numPoints);
@@ -283,43 +239,23 @@ public class SKShapeNode extends SKNode {
     @NInt
     public static native long version_static();
 
-    /**
-     * blendMode</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKShapeNode_Ref/index.html#//apple_ref/occ/instp/SKShapeNode/blendMode">iOS Dev Center</a>
-     */
     @Generated
     @Selector("blendMode")
     @NInt
     public native long blendMode();
 
-    /**
-     * fillColor</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKShapeNode_Ref/index.html#//apple_ref/occ/instp/SKShapeNode/fillColor">iOS Dev Center</a>
-     */
     @Generated
     @Selector("fillColor")
     public native UIColor fillColor();
 
-    /**
-     * fillShader</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKShapeNode_Ref/index.html#//apple_ref/occ/instp/SKShapeNode/fillShader">iOS Dev Center</a>
-     */
     @Generated
     @Selector("fillShader")
     public native SKShader fillShader();
 
-    /**
-     * fillTexture</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKShapeNode_Ref/index.html#//apple_ref/occ/instp/SKShapeNode/fillTexture">iOS Dev Center</a>
-     */
     @Generated
     @Selector("fillTexture")
     public native SKTexture fillTexture();
 
-    /**
-     * glowWidth</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKShapeNode_Ref/index.html#//apple_ref/occ/instp/SKShapeNode/glowWidth">iOS Dev Center</a>
-     */
     @Generated
     @Selector("glowWidth")
     @NFloat
@@ -333,197 +269,101 @@ public class SKShapeNode extends SKNode {
     @Selector("initWithCoder:")
     public native SKShapeNode initWithCoder(NSCoder aDecoder);
 
-    /**
-     * antialiased</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKShapeNode_Ref/index.html#//apple_ref/occ/instp/SKShapeNode/antialiased">iOS Dev Center</a>
-     */
     @Generated
     @Selector("isAntialiased")
     public native boolean isAntialiased();
 
-    /**
-     * antialiased</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKShapeNode_Ref/index.html#//apple_ref/occ/instp/SKShapeNode/antialiased">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setAntialiased:")
     public native void setAntialiased(boolean value);
 
-    /**
-     * lineCap</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKShapeNode_Ref/index.html#//apple_ref/occ/instp/SKShapeNode/lineCap">iOS Dev Center</a>
-     */
     @Generated
     @Selector("lineCap")
     public native int lineCap();
 
-    /**
-     * lineJoin</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKShapeNode_Ref/index.html#//apple_ref/occ/instp/SKShapeNode/lineJoin">iOS Dev Center</a>
-     */
     @Generated
     @Selector("lineJoin")
     public native int lineJoin();
 
-    /**
-     * lineLength</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKShapeNode_Ref/index.html#//apple_ref/occ/instp/SKShapeNode/lineLength">iOS Dev Center</a>
-     */
     @Generated
     @Selector("lineLength")
     @NFloat
     public native double lineLength();
 
-    /**
-     * lineWidth</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKShapeNode_Ref/index.html#//apple_ref/occ/instp/SKShapeNode/lineWidth">iOS Dev Center</a>
-     */
     @Generated
     @Selector("lineWidth")
     @NFloat
     public native double lineWidth();
 
-    /**
-     * miterLimit</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKShapeNode_Ref/index.html#//apple_ref/occ/instp/SKShapeNode/miterLimit">iOS Dev Center</a>
-     */
     @Generated
     @Selector("miterLimit")
     @NFloat
     public native double miterLimit();
 
-    /**
-     * path</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKShapeNode_Ref/index.html#//apple_ref/occ/instp/SKShapeNode/path">iOS Dev Center</a>
-     */
     @Generated
     @Selector("path")
     public native CGPathRef path();
 
-    /**
-     * blendMode</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKShapeNode_Ref/index.html#//apple_ref/occ/instp/SKShapeNode/blendMode">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setBlendMode:")
     public native void setBlendMode(@NInt long value);
 
-    /**
-     * fillColor</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKShapeNode_Ref/index.html#//apple_ref/occ/instp/SKShapeNode/fillColor">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setFillColor:")
     public native void setFillColor(UIColor value);
 
-    /**
-     * fillShader</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKShapeNode_Ref/index.html#//apple_ref/occ/instp/SKShapeNode/fillShader">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setFillShader:")
     public native void setFillShader(SKShader value);
 
-    /**
-     * fillTexture</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKShapeNode_Ref/index.html#//apple_ref/occ/instp/SKShapeNode/fillTexture">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setFillTexture:")
     public native void setFillTexture(SKTexture value);
 
-    /**
-     * glowWidth</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKShapeNode_Ref/index.html#//apple_ref/occ/instp/SKShapeNode/glowWidth">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setGlowWidth:")
     public native void setGlowWidth(@NFloat double value);
 
-    /**
-     * lineCap</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKShapeNode_Ref/index.html#//apple_ref/occ/instp/SKShapeNode/lineCap">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setLineCap:")
     public native void setLineCap(int value);
 
-    /**
-     * lineJoin</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKShapeNode_Ref/index.html#//apple_ref/occ/instp/SKShapeNode/lineJoin">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setLineJoin:")
     public native void setLineJoin(int value);
 
-    /**
-     * lineWidth</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKShapeNode_Ref/index.html#//apple_ref/occ/instp/SKShapeNode/lineWidth">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setLineWidth:")
     public native void setLineWidth(@NFloat double value);
 
-    /**
-     * miterLimit</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKShapeNode_Ref/index.html#//apple_ref/occ/instp/SKShapeNode/miterLimit">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setMiterLimit:")
     public native void setMiterLimit(@NFloat double value);
 
-    /**
-     * path</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKShapeNode_Ref/index.html#//apple_ref/occ/instp/SKShapeNode/path">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setPath:")
     public native void setPath(CGPathRef value);
 
-    /**
-     * strokeColor</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKShapeNode_Ref/index.html#//apple_ref/occ/instp/SKShapeNode/strokeColor">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setStrokeColor:")
     public native void setStrokeColor(UIColor value);
 
-    /**
-     * strokeShader</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKShapeNode_Ref/index.html#//apple_ref/occ/instp/SKShapeNode/strokeShader">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setStrokeShader:")
     public native void setStrokeShader(SKShader value);
 
-    /**
-     * strokeTexture</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKShapeNode_Ref/index.html#//apple_ref/occ/instp/SKShapeNode/strokeTexture">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setStrokeTexture:")
     public native void setStrokeTexture(SKTexture value);
 
-    /**
-     * strokeColor</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKShapeNode_Ref/index.html#//apple_ref/occ/instp/SKShapeNode/strokeColor">iOS Dev Center</a>
-     */
     @Generated
     @Selector("strokeColor")
     public native UIColor strokeColor();
 
-    /**
-     * strokeShader</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKShapeNode_Ref/index.html#//apple_ref/occ/instp/SKShapeNode/strokeShader">iOS Dev Center</a>
-     */
     @Generated
     @Selector("strokeShader")
     public native SKShader strokeShader();
 
-    /**
-     * strokeTexture</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKShapeNode_Ref/index.html#//apple_ref/occ/instp/SKShapeNode/strokeTexture">iOS Dev Center</a>
-     */
     @Generated
     @Selector("strokeTexture")
     public native SKTexture strokeTexture();

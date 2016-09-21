@@ -158,54 +158,30 @@ public class MTLArgument extends NSObject {
     @NInt
     public static native long version_static();
 
-    /**
-     * access</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Metal/Reference/MTLArgument_Ref/index.html#//apple_ref/occ/instp/MTLArgument/access">iOS Dev Center</a>
-     */
     @Generated
     @Selector("access")
     @NUInt
     public native long access();
 
-    /**
-     * bufferAlignment</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Metal/Reference/MTLArgument_Ref/index.html#//apple_ref/occ/instp/MTLArgument/bufferAlignment">iOS Dev Center</a>
-     */
     @Generated
     @Selector("bufferAlignment")
     @NUInt
     public native long bufferAlignment();
 
-    /**
-     * bufferDataSize</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Metal/Reference/MTLArgument_Ref/index.html#//apple_ref/occ/instp/MTLArgument/bufferDataSize">iOS Dev Center</a>
-     */
     @Generated
     @Selector("bufferDataSize")
     @NUInt
     public native long bufferDataSize();
 
-    /**
-     * bufferDataType</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Metal/Reference/MTLArgument_Ref/index.html#//apple_ref/occ/instp/MTLArgument/bufferDataType">iOS Dev Center</a>
-     */
     @Generated
     @Selector("bufferDataType")
     @NUInt
     public native long bufferDataType();
 
-    /**
-     * bufferStructType</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Metal/Reference/MTLArgument_Ref/index.html#//apple_ref/occ/instp/MTLArgument/bufferStructType">iOS Dev Center</a>
-     */
     @Generated
     @Selector("bufferStructType")
     public native MTLStructType bufferStructType();
 
-    /**
-     * index</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Metal/Reference/MTLArgument_Ref/index.html#//apple_ref/occ/instp/MTLArgument/index">iOS Dev Center</a>
-     */
     @Generated
     @Selector("index")
     @NUInt
@@ -215,62 +191,34 @@ public class MTLArgument extends NSObject {
     @Selector("init")
     public native MTLArgument init();
 
-    /**
-     * active</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Metal/Reference/MTLArgument_Ref/index.html#//apple_ref/occ/instp/MTLArgument/active">iOS Dev Center</a>
-     */
     @Generated
     @Selector("isActive")
     public native boolean isActive();
 
-    /**
-     * name</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Metal/Reference/MTLArgument_Ref/index.html#//apple_ref/occ/instp/MTLArgument/name">iOS Dev Center</a>
-     */
     @Generated
     @Selector("name")
     public native String name();
 
-    /**
-     * textureDataType</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Metal/Reference/MTLArgument_Ref/index.html#//apple_ref/occ/instp/MTLArgument/textureDataType">iOS Dev Center</a>
-     */
     @Generated
     @Selector("textureDataType")
     @NUInt
     public native long textureDataType();
 
-    /**
-     * textureType</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Metal/Reference/MTLArgument_Ref/index.html#//apple_ref/occ/instp/MTLArgument/textureType">iOS Dev Center</a>
-     */
     @Generated
     @Selector("textureType")
     @NUInt
     public native long textureType();
 
-    /**
-     * threadgroupMemoryAlignment</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Metal/Reference/MTLArgument_Ref/index.html#//apple_ref/occ/instp/MTLArgument/threadgroupMemoryAlignment">iOS Dev Center</a>
-     */
     @Generated
     @Selector("threadgroupMemoryAlignment")
     @NUInt
     public native long threadgroupMemoryAlignment();
 
-    /**
-     * threadgroupMemoryDataSize</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Metal/Reference/MTLArgument_Ref/index.html#//apple_ref/occ/instp/MTLArgument/threadgroupMemoryDataSize">iOS Dev Center</a>
-     */
     @Generated
     @Selector("threadgroupMemoryDataSize")
     @NUInt
     public native long threadgroupMemoryDataSize();
 
-    /**
-     * type</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Metal/Reference/MTLArgument_Ref/index.html#//apple_ref/occ/instp/MTLArgument/type">iOS Dev Center</a>
-     */
     @Generated
     @Selector("type")
     @NUInt

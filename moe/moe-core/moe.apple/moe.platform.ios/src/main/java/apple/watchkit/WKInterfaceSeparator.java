@@ -163,10 +163,6 @@ public class WKInterfaceSeparator extends WKInterfaceObject {
     @Selector("init")
     public native WKInterfaceSeparator init();
 
-    /**
-     * setColor:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WatchKit/Reference/WKInterfaceSeparator_class/index.html#//apple_ref/occ/instm/WKInterfaceSeparator/setColor:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setColor:")
     public native void setColor(UIColor color);

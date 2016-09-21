@@ -166,26 +166,14 @@ public class MPMovieAccessLog extends NSObject implements NSCopying {
     @MappedReturn(ObjCObjectMapper.class)
     public native Object copyWithZone(VoidPtr zone);
 
-    /**
-     * events</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPMovieAccessLog_Class/index.html#//apple_ref/occ/instp/MPMovieAccessLog/events">iOS Dev Center</a>
-     */
     @Generated
     @Selector("events")
     public native NSArray<?> events();
 
-    /**
-     * extendedLogData</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPMovieAccessLog_Class/index.html#//apple_ref/occ/instp/MPMovieAccessLog/extendedLogData">iOS Dev Center</a>
-     */
     @Generated
     @Selector("extendedLogData")
     public native NSData extendedLogData();
 
-    /**
-     * extendedLogDataStringEncoding</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPMovieAccessLog_Class/index.html#//apple_ref/occ/instp/MPMovieAccessLog/extendedLogDataStringEncoding">iOS Dev Center</a>
-     */
     @Generated
     @Selector("extendedLogDataStringEncoding")
     @NUInt

@@ -75,10 +75,6 @@ public class SK3DNode extends SKNode {
     @Selector("nodeWithFileNamed:")
     public static native SK3DNode nodeWithFileNamed(String filename);
 
-    /**
-     * nodeWithViewportSize:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SK3DNode/index.html#//apple_ref/occ/clm/SK3DNode/nodeWithViewportSize:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("nodeWithViewportSize:")
     public static native SK3DNode nodeWithViewportSize(@ByValue CGSize viewportSize);
@@ -201,18 +197,10 @@ public class SK3DNode extends SKNode {
     @NInt
     public static native long version();
 
-    /**
-     * autoenablesDefaultLighting</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SK3DNode/index.html#//apple_ref/occ/instp/SK3DNode/autoenablesDefaultLighting">iOS Dev Center</a>
-     */
     @Generated
     @Selector("autoenablesDefaultLighting")
     public native boolean autoenablesDefaultLighting();
 
-    /**
-     * hitTest:options:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SK3DNode/index.html#//apple_ref/occ/instm/SK3DNode/hitTest:options:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("hitTest:options:")
     public native NSArray<? extends SCNHitTestResult> hitTestOptions(@ByValue CGPoint point,
@@ -226,114 +214,58 @@ public class SK3DNode extends SKNode {
     @Selector("initWithCoder:")
     public native SK3DNode initWithCoder(NSCoder aDecoder);
 
-    /**
-     * initWithViewportSize:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SK3DNode/index.html#//apple_ref/occ/instm/SK3DNode/initWithViewportSize:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithViewportSize:")
     public native SK3DNode initWithViewportSize(@ByValue CGSize viewportSize);
 
-    /**
-     * playing</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SK3DNode/index.html#//apple_ref/occ/instp/SK3DNode/playing">iOS Dev Center</a>
-     */
     @Generated
     @Selector("isPlaying")
     public native boolean isPlaying();
 
-    /**
-     * playing</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SK3DNode/index.html#//apple_ref/occ/instp/SK3DNode/playing">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setPlaying:")
     public native void setPlaying(boolean value);
 
-    /**
-     * loops</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SK3DNode/index.html#//apple_ref/occ/instp/SK3DNode/loops">iOS Dev Center</a>
-     */
     @Generated
     @Selector("loops")
     public native boolean loops();
 
-    /**
-     * pointOfView</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SK3DNode/index.html#//apple_ref/occ/instp/SK3DNode/pointOfView">iOS Dev Center</a>
-     */
     @Generated
     @Selector("pointOfView")
     public native SCNNode pointOfView();
 
-    /**
-     * sceneTime</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SK3DNode/index.html#//apple_ref/occ/instp/SK3DNode/sceneTime">iOS Dev Center</a>
-     */
     @Generated
     @Selector("sceneTime")
     public native double sceneTime();
 
-    /**
-     * scnScene</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SK3DNode/index.html#//apple_ref/occ/instp/SK3DNode/scnScene">iOS Dev Center</a>
-     */
     @Generated
     @Selector("scnScene")
     public native SCNScene scnScene();
 
-    /**
-     * autoenablesDefaultLighting</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SK3DNode/index.html#//apple_ref/occ/instp/SK3DNode/autoenablesDefaultLighting">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setAutoenablesDefaultLighting:")
     public native void setAutoenablesDefaultLighting(boolean value);
 
-    /**
-     * loops</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SK3DNode/index.html#//apple_ref/occ/instp/SK3DNode/loops">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setLoops:")
     public native void setLoops(boolean value);
 
-    /**
-     * pointOfView</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SK3DNode/index.html#//apple_ref/occ/instp/SK3DNode/pointOfView">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setPointOfView:")
     public native void setPointOfView(SCNNode value);
 
-    /**
-     * sceneTime</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SK3DNode/index.html#//apple_ref/occ/instp/SK3DNode/sceneTime">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setSceneTime:")
     public native void setSceneTime(double value);
 
-    /**
-     * scnScene</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SK3DNode/index.html#//apple_ref/occ/instp/SK3DNode/scnScene">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setScnScene:")
     public native void setScnScene(SCNScene value);
 
-    /**
-     * viewportSize</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SK3DNode/index.html#//apple_ref/occ/instp/SK3DNode/viewportSize">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setViewportSize:")
     public native void setViewportSize(@ByValue CGSize value);
 
-    /**
-     * viewportSize</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SK3DNode/index.html#//apple_ref/occ/instp/SK3DNode/viewportSize">iOS Dev Center</a>
-     */
     @Generated
     @Selector("viewportSize")
     @ByValue

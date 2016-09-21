@@ -158,10 +158,6 @@ public class CBDescriptor extends CBAttribute {
     @NInt
     public static native long version_static();
 
-    /**
-     * characteristic</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreBluetooth/Reference/CBDescriptor_Class/index.html#//apple_ref/occ/instp/CBDescriptor/characteristic">iOS Dev Center</a>
-     */
     @Generated
     @Selector("characteristic")
     public native CBCharacteristic characteristic();
@@ -170,10 +166,6 @@ public class CBDescriptor extends CBAttribute {
     @Selector("init")
     public native CBDescriptor init();
 
-    /**
-     * value</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreBluetooth/Reference/CBDescriptor_Class/index.html#//apple_ref/occ/instp/CBDescriptor/value">iOS Dev Center</a>
-     */
     @Generated
     @Selector("value")
     @MappedReturn(ObjCObjectMapper.class)

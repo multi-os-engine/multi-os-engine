@@ -59,27 +59,15 @@ public class NSCompoundPredicate extends NSPredicate {
     @Selector("alloc")
     public static native NSCompoundPredicate alloc();
 
-    /**
-     * andPredicateWithSubpredicates:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSCompoundPredicate_Class/index.html#//apple_ref/occ/clm/NSCompoundPredicate/andPredicateWithSubpredicates:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("andPredicateWithSubpredicates:")
     public static native NSCompoundPredicate andPredicateWithSubpredicates(
             NSArray<? extends NSPredicate> subpredicates);
 
-    /**
-     * notPredicateWithSubpredicate:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSCompoundPredicate_Class/index.html#//apple_ref/occ/clm/NSCompoundPredicate/notPredicateWithSubpredicate:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("notPredicateWithSubpredicate:")
     public static native NSCompoundPredicate notPredicateWithSubpredicate(NSPredicate predicate);
 
-    /**
-     * orPredicateWithSubpredicates:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSCompoundPredicate_Class/index.html#//apple_ref/occ/clm/NSCompoundPredicate/orPredicateWithSubpredicates:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("orPredicateWithSubpredicates:")
     public static native NSCompoundPredicate orPredicateWithSubpredicates(NSArray<? extends NSPredicate> subpredicates);
@@ -210,10 +198,6 @@ public class NSCompoundPredicate extends NSPredicate {
     @NInt
     public static native long version_static();
 
-    /**
-     * compoundPredicateType</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSCompoundPredicate_Class/index.html#//apple_ref/occ/instp/NSCompoundPredicate/compoundPredicateType">iOS Dev Center</a>
-     */
     @Generated
     @Selector("compoundPredicateType")
     @NUInt
@@ -223,19 +207,11 @@ public class NSCompoundPredicate extends NSPredicate {
     @Selector("init")
     public native NSCompoundPredicate init();
 
-    /**
-     * initWithType:subpredicates:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSCompoundPredicate_Class/index.html#//apple_ref/occ/instm/NSCompoundPredicate/initWithType:subpredicates:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithType:subpredicates:")
     public native NSCompoundPredicate initWithTypeSubpredicates(@NUInt long type,
             NSArray<? extends NSPredicate> subpredicates);
 
-    /**
-     * subpredicates</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSCompoundPredicate_Class/index.html#//apple_ref/occ/instp/NSCompoundPredicate/subpredicates">iOS Dev Center</a>
-     */
     @Generated
     @Selector("subpredicates")
     public native NSArray<?> subpredicates();

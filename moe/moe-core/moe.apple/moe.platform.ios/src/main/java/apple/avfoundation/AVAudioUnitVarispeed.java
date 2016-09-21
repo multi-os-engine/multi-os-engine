@@ -176,18 +176,10 @@ public class AVAudioUnitVarispeed extends AVAudioUnitTimeEffect {
     public native AVAudioUnitVarispeed initWithAudioComponentDescription(
             @ByValue AudioComponentDescription audioComponentDescription);
 
-    /**
-     * rate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioUnitVarispeed_Class/index.html#//apple_ref/occ/instp/AVAudioUnitVarispeed/rate">iOS Dev Center</a>
-     */
     @Generated
     @Selector("rate")
     public native float rate();
 
-    /**
-     * rate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioUnitVarispeed_Class/index.html#//apple_ref/occ/instp/AVAudioUnitVarispeed/rate">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setRate:")
     public native void setRate(float value);

@@ -183,42 +183,22 @@ public class AVSampleBufferDisplayLayer extends CALayer {
     @NInt
     public static native long version_static();
 
-    /**
-     * controlTimebase</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVSampleBufferDisplayLayer_Class/index.html#//apple_ref/occ/instp/AVSampleBufferDisplayLayer/controlTimebase">iOS Dev Center</a>
-     */
     @Generated
     @Selector("controlTimebase")
     public native CMTimebaseRef controlTimebase();
 
-    /**
-     * enqueueSampleBuffer:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVSampleBufferDisplayLayer_Class/index.html#//apple_ref/occ/instm/AVSampleBufferDisplayLayer/enqueueSampleBuffer:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("enqueueSampleBuffer:")
     public native void enqueueSampleBuffer(CMSampleBufferRef sampleBuffer);
 
-    /**
-     * error</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVSampleBufferDisplayLayer_Class/index.html#//apple_ref/occ/instp/AVSampleBufferDisplayLayer/error">iOS Dev Center</a>
-     */
     @Generated
     @Selector("error")
     public native NSError error();
 
-    /**
-     * flush</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVSampleBufferDisplayLayer_Class/index.html#//apple_ref/occ/instm/AVSampleBufferDisplayLayer/flush">iOS Dev Center</a>
-     */
     @Generated
     @Selector("flush")
     public native void flush();
 
-    /**
-     * flushAndRemoveImage</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVSampleBufferDisplayLayer_Class/index.html#//apple_ref/occ/instm/AVSampleBufferDisplayLayer/flushAndRemoveImage">iOS Dev Center</a>
-     */
     @Generated
     @Selector("flushAndRemoveImage")
     public native void flushAndRemoveImage();
@@ -231,60 +211,32 @@ public class AVSampleBufferDisplayLayer extends CALayer {
     @Selector("initWithLayer:")
     public native AVSampleBufferDisplayLayer initWithLayer(@Mapped(ObjCObjectMapper.class) Object layer);
 
-    /**
-     * readyForMoreMediaData</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVSampleBufferDisplayLayer_Class/index.html#//apple_ref/occ/instp/AVSampleBufferDisplayLayer/readyForMoreMediaData">iOS Dev Center</a>
-     */
     @Generated
     @Selector("isReadyForMoreMediaData")
     public native boolean isReadyForMoreMediaData();
 
-    /**
-     * requestMediaDataWhenReadyOnQueue:usingBlock:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVSampleBufferDisplayLayer_Class/index.html#//apple_ref/occ/instm/AVSampleBufferDisplayLayer/requestMediaDataWhenReadyOnQueue:usingBlock:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("requestMediaDataWhenReadyOnQueue:usingBlock:")
     public native void requestMediaDataWhenReadyOnQueueUsingBlock(NSObject queue,
             @ObjCBlock(name = "call_requestMediaDataWhenReadyOnQueueUsingBlock") Block_requestMediaDataWhenReadyOnQueueUsingBlock block);
 
-    /**
-     * controlTimebase</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVSampleBufferDisplayLayer_Class/index.html#//apple_ref/occ/instp/AVSampleBufferDisplayLayer/controlTimebase">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setControlTimebase:")
     public native void setControlTimebase(CMTimebaseRef value);
 
-    /**
-     * videoGravity</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVSampleBufferDisplayLayer_Class/index.html#//apple_ref/occ/instp/AVSampleBufferDisplayLayer/videoGravity">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setVideoGravity:")
     public native void setVideoGravity(String value);
 
-    /**
-     * status</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVSampleBufferDisplayLayer_Class/index.html#//apple_ref/occ/instp/AVSampleBufferDisplayLayer/status">iOS Dev Center</a>
-     */
     @Generated
     @Selector("status")
     @NInt
     public native long status();
 
-    /**
-     * stopRequestingMediaData</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVSampleBufferDisplayLayer_Class/index.html#//apple_ref/occ/instm/AVSampleBufferDisplayLayer/stopRequestingMediaData">iOS Dev Center</a>
-     */
     @Generated
     @Selector("stopRequestingMediaData")
     public native void stopRequestingMediaData();
 
-    /**
-     * videoGravity</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVSampleBufferDisplayLayer_Class/index.html#//apple_ref/occ/instp/AVSampleBufferDisplayLayer/videoGravity">iOS Dev Center</a>
-     */
     @Generated
     @Selector("videoGravity")
     public native String videoGravity();

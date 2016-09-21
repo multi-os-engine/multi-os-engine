@@ -32,19 +32,11 @@ import org.moe.natj.objc.ann.Selector;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("GKTurnBasedMatchmakerViewControllerDelegate")
 public interface GKTurnBasedMatchmakerViewControllerDelegate {
-    /**
-     * turnBasedMatchmakerViewController:didFailWithError:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKTurnBasedMatchmakerViewControllerDelegate_Ref/index.html#//apple_ref/occ/intfm/GKTurnBasedMatchmakerViewControllerDelegate/turnBasedMatchmakerViewController:didFailWithError:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("turnBasedMatchmakerViewController:didFailWithError:")
     void turnBasedMatchmakerViewControllerDidFailWithError(GKTurnBasedMatchmakerViewController viewController,
             NSError error);
 
-    /**
-     * turnBasedMatchmakerViewController:didFindMatch:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKTurnBasedMatchmakerViewControllerDelegate_Ref/index.html#//apple_ref/occ/intfm/GKTurnBasedMatchmakerViewControllerDelegate/turnBasedMatchmakerViewController:didFindMatch:">iOS Dev Center</a>
-     */
     @IsOptional
     @Deprecated
     @Generated
@@ -54,10 +46,6 @@ public interface GKTurnBasedMatchmakerViewControllerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * turnBasedMatchmakerViewController:playerQuitForMatch:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKTurnBasedMatchmakerViewControllerDelegate_Ref/index.html#//apple_ref/occ/intfm/GKTurnBasedMatchmakerViewControllerDelegate/turnBasedMatchmakerViewController:playerQuitForMatch:">iOS Dev Center</a>
-     */
     @IsOptional
     @Deprecated
     @Generated
@@ -67,10 +55,6 @@ public interface GKTurnBasedMatchmakerViewControllerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * turnBasedMatchmakerViewControllerWasCancelled:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKTurnBasedMatchmakerViewControllerDelegate_Ref/index.html#//apple_ref/occ/intfm/GKTurnBasedMatchmakerViewControllerDelegate/turnBasedMatchmakerViewControllerWasCancelled:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("turnBasedMatchmakerViewControllerWasCancelled:")
     void turnBasedMatchmakerViewControllerWasCancelled(GKTurnBasedMatchmakerViewController viewController);

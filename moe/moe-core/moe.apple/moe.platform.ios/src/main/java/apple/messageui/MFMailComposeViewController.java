@@ -64,10 +64,6 @@ public class MFMailComposeViewController extends UINavigationController {
     @Selector("alloc")
     public static native MFMailComposeViewController alloc();
 
-    /**
-     * canSendMail</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MessageUI/Reference/MFMailComposeViewController_class/index.html#//apple_ref/occ/clm/MFMailComposeViewController/canSendMail">iOS Dev Center</a>
-     */
     @Generated
     @Selector("canSendMail")
     public static native boolean canSendMail();
@@ -184,10 +180,6 @@ public class MFMailComposeViewController extends UINavigationController {
     @NInt
     public static native long version_static();
 
-    /**
-     * addAttachmentData:mimeType:fileName:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MessageUI/Reference/MFMailComposeViewController_class/index.html#//apple_ref/occ/instm/MFMailComposeViewController/addAttachmentData:mimeType:fileName:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("addAttachmentData:mimeType:fileName:")
     public native void addAttachmentDataMimeTypeFileName(NSData attachment, String mimeType, String filename);
@@ -209,44 +201,24 @@ public class MFMailComposeViewController extends UINavigationController {
     @Selector("initWithRootViewController:")
     public native MFMailComposeViewController initWithRootViewController(UIViewController rootViewController);
 
-    /**
-     * mailComposeDelegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MessageUI/Reference/MFMailComposeViewController_class/index.html#//apple_ref/occ/instp/MFMailComposeViewController/mailComposeDelegate">iOS Dev Center</a>
-     */
     @Generated
     @Selector("mailComposeDelegate")
     @MappedReturn(ObjCObjectMapper.class)
     public native MFMailComposeViewControllerDelegate mailComposeDelegate();
 
-    /**
-     * setBccRecipients:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MessageUI/Reference/MFMailComposeViewController_class/index.html#//apple_ref/occ/instm/MFMailComposeViewController/setBccRecipients:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setBccRecipients:")
     public native void setBccRecipients(NSArray<String> bccRecipients);
 
-    /**
-     * setCcRecipients:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MessageUI/Reference/MFMailComposeViewController_class/index.html#//apple_ref/occ/instm/MFMailComposeViewController/setCcRecipients:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setCcRecipients:")
     public native void setCcRecipients(NSArray<String> ccRecipients);
 
-    /**
-     * mailComposeDelegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MessageUI/Reference/MFMailComposeViewController_class/index.html#//apple_ref/occ/instp/MFMailComposeViewController/mailComposeDelegate">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setMailComposeDelegate:")
     public native void setMailComposeDelegate_unsafe(
             @Mapped(ObjCObjectMapper.class) MFMailComposeViewControllerDelegate value);
 
-    /**
-     * mailComposeDelegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MessageUI/Reference/MFMailComposeViewController_class/index.html#//apple_ref/occ/instp/MFMailComposeViewController/mailComposeDelegate">iOS Dev Center</a>
-     */
     @Generated
     public void setMailComposeDelegate(@Mapped(ObjCObjectMapper.class) MFMailComposeViewControllerDelegate value) {
         Object __old = mailComposeDelegate();
@@ -259,26 +231,14 @@ public class MFMailComposeViewController extends UINavigationController {
         }
     }
 
-    /**
-     * setMessageBody:isHTML:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MessageUI/Reference/MFMailComposeViewController_class/index.html#//apple_ref/occ/instm/MFMailComposeViewController/setMessageBody:isHTML:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setMessageBody:isHTML:")
     public native void setMessageBodyIsHTML(String body, boolean isHTML);
 
-    /**
-     * setSubject:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MessageUI/Reference/MFMailComposeViewController_class/index.html#//apple_ref/occ/instm/MFMailComposeViewController/setSubject:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setSubject:")
     public native void setSubject(String subject);
 
-    /**
-     * setToRecipients:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MessageUI/Reference/MFMailComposeViewController_class/index.html#//apple_ref/occ/instm/MFMailComposeViewController/setToRecipients:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setToRecipients:")
     public native void setToRecipients(NSArray<String> toRecipients);

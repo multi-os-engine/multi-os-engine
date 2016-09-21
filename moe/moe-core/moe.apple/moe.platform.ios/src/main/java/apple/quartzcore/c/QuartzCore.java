@@ -42,128 +42,72 @@ public final class QuartzCore {
     private QuartzCore() {
     }
 
-    /**
-     * CACurrentMediaTime</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/CoreAnimation_functions/index.html#//apple_ref/c/func/CACurrentMediaTime">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native double CACurrentMediaTime();
 
-    /**
-     * CATransform3DIsIdentity</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/CoreAnimation_functions/index.html#//apple_ref/c/func/CATransform3DIsIdentity">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native boolean CATransform3DIsIdentity(@ByValue CATransform3D t);
 
-    /**
-     * CATransform3DEqualToTransform</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/CoreAnimation_functions/index.html#//apple_ref/c/func/CATransform3DEqualToTransform">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native boolean CATransform3DEqualToTransform(@ByValue CATransform3D a, @ByValue CATransform3D b);
 
-    /**
-     * CATransform3DMakeTranslation</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/CoreAnimation_functions/index.html#//apple_ref/c/func/CATransform3DMakeTranslation">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @ByValue
     public static native CATransform3D CATransform3DMakeTranslation(@NFloat double tx, @NFloat double ty,
             @NFloat double tz);
 
-    /**
-     * CATransform3DMakeScale</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/CoreAnimation_functions/index.html#//apple_ref/c/func/CATransform3DMakeScale">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @ByValue
     public static native CATransform3D CATransform3DMakeScale(@NFloat double sx, @NFloat double sy, @NFloat double sz);
 
-    /**
-     * CATransform3DMakeRotation</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/CoreAnimation_functions/index.html#//apple_ref/c/func/CATransform3DMakeRotation">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @ByValue
     public static native CATransform3D CATransform3DMakeRotation(@NFloat double angle, @NFloat double x,
             @NFloat double y, @NFloat double z);
 
-    /**
-     * CATransform3DTranslate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/CoreAnimation_functions/index.html#//apple_ref/c/func/CATransform3DTranslate">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @ByValue
     public static native CATransform3D CATransform3DTranslate(@ByValue CATransform3D t, @NFloat double tx,
             @NFloat double ty, @NFloat double tz);
 
-    /**
-     * CATransform3DScale</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/CoreAnimation_functions/index.html#//apple_ref/c/func/CATransform3DScale">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @ByValue
     public static native CATransform3D CATransform3DScale(@ByValue CATransform3D t, @NFloat double sx,
             @NFloat double sy, @NFloat double sz);
 
-    /**
-     * CATransform3DRotate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/CoreAnimation_functions/index.html#//apple_ref/c/func/CATransform3DRotate">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @ByValue
     public static native CATransform3D CATransform3DRotate(@ByValue CATransform3D t, @NFloat double angle,
             @NFloat double x, @NFloat double y, @NFloat double z);
 
-    /**
-     * CATransform3DConcat</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/CoreAnimation_functions/index.html#//apple_ref/c/func/CATransform3DConcat">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @ByValue
     public static native CATransform3D CATransform3DConcat(@ByValue CATransform3D a, @ByValue CATransform3D b);
 
-    /**
-     * CATransform3DInvert</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/CoreAnimation_functions/index.html#//apple_ref/c/func/CATransform3DInvert">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @ByValue
     public static native CATransform3D CATransform3DInvert(@ByValue CATransform3D t);
 
-    /**
-     * CATransform3DMakeAffineTransform</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/CoreAnimation_functions/index.html#//apple_ref/c/func/CATransform3DMakeAffineTransform">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @ByValue
     public static native CATransform3D CATransform3DMakeAffineTransform(@ByValue CGAffineTransform m);
 
-    /**
-     * CATransform3DIsAffine</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/CoreAnimation_functions/index.html#//apple_ref/c/func/CATransform3DIsAffine">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native boolean CATransform3DIsAffine(@ByValue CATransform3D t);
 
-    /**
-     * CATransform3DGetAffineTransform</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/CoreAnimation_functions/index.html#//apple_ref/c/func/CATransform3DGetAffineTransform">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @ByValue

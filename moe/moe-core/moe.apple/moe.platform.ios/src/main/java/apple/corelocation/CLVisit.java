@@ -169,18 +169,10 @@ public class CLVisit extends NSObject implements NSSecureCoding, NSCopying {
     @NInt
     public static native long version_static();
 
-    /**
-     * arrivalDate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreLocation/Reference/CLVisit_class/index.html#//apple_ref/occ/instp/CLVisit/arrivalDate">iOS Dev Center</a>
-     */
     @Generated
     @Selector("arrivalDate")
     public native NSDate arrivalDate();
 
-    /**
-     * coordinate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreLocation/Reference/CLVisit_class/index.html#//apple_ref/occ/instp/CLVisit/coordinate">iOS Dev Center</a>
-     */
     @Generated
     @Selector("coordinate")
     @ByValue
@@ -192,10 +184,6 @@ public class CLVisit extends NSObject implements NSSecureCoding, NSCopying {
     @MappedReturn(ObjCObjectMapper.class)
     public native Object copyWithZone(VoidPtr zone);
 
-    /**
-     * departureDate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreLocation/Reference/CLVisit_class/index.html#//apple_ref/occ/instp/CLVisit/departureDate">iOS Dev Center</a>
-     */
     @Generated
     @Selector("departureDate")
     public native NSDate departureDate();
@@ -204,10 +192,6 @@ public class CLVisit extends NSObject implements NSSecureCoding, NSCopying {
     @Selector("encodeWithCoder:")
     public native void encodeWithCoder(NSCoder aCoder);
 
-    /**
-     * horizontalAccuracy</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreLocation/Reference/CLVisit_class/index.html#//apple_ref/occ/instp/CLVisit/horizontalAccuracy">iOS Dev Center</a>
-     */
     @Generated
     @Selector("horizontalAccuracy")
     public native double horizontalAccuracy();

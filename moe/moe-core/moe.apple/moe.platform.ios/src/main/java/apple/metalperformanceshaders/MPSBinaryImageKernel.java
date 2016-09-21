@@ -169,19 +169,11 @@ public class MPSBinaryImageKernel extends MPSKernel {
     @NInt
     public static native long version_static();
 
-    /**
-     * clipRect</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MetalPerformanceShaders/Reference/MPSBinaryImageKernel_ClassReference/index.html#//apple_ref/occ/instp/MPSBinaryImageKernel/clipRect">iOS Dev Center</a>
-     */
     @Generated
     @Selector("clipRect")
     @ByValue
     public native MTLRegion clipRect();
 
-    /**
-     * encodeToCommandBuffer:inPlacePrimaryTexture:secondaryTexture:fallbackCopyAllocator:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MetalPerformanceShaders/Reference/MPSBinaryImageKernel_ClassReference/index.html#//apple_ref/occ/instm/MPSBinaryImageKernel/encodeToCommandBuffer:inPlacePrimaryTexture:secondaryTexture:fallbackCopyAllocator:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("encodeToCommandBuffer:inPlacePrimaryTexture:secondaryTexture:fallbackCopyAllocator:")
     public native boolean encodeToCommandBufferInPlacePrimaryTextureSecondaryTextureFallbackCopyAllocator(
@@ -189,10 +181,6 @@ public class MPSBinaryImageKernel extends MPSKernel {
             @Mapped(ObjCObjectMapper.class) MTLTexture secondaryTexture,
             @ObjCBlock(name = "call_encodeToCommandBufferInPlacePrimaryTextureSecondaryTextureFallbackCopyAllocator") Block_encodeToCommandBufferInPlacePrimaryTextureSecondaryTextureFallbackCopyAllocator copyAllocator);
 
-    /**
-     * encodeToCommandBuffer:primaryTexture:inPlaceSecondaryTexture:fallbackCopyAllocator:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MetalPerformanceShaders/Reference/MPSBinaryImageKernel_ClassReference/index.html#//apple_ref/occ/instm/MPSBinaryImageKernel/encodeToCommandBuffer:primaryTexture:inPlaceSecondaryTexture:fallbackCopyAllocator:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("encodeToCommandBuffer:primaryTexture:inPlaceSecondaryTexture:fallbackCopyAllocator:")
     public native boolean encodeToCommandBufferPrimaryTextureInPlaceSecondaryTextureFallbackCopyAllocator(
@@ -200,10 +188,6 @@ public class MPSBinaryImageKernel extends MPSKernel {
             @Mapped(ObjCObjectMapper.class) MTLTexture primaryTexture, Ptr<ObjCObject> inPlaceSecondaryTexture,
             @ObjCBlock(name = "call_encodeToCommandBufferPrimaryTextureInPlaceSecondaryTextureFallbackCopyAllocator") Block_encodeToCommandBufferPrimaryTextureInPlaceSecondaryTextureFallbackCopyAllocator copyAllocator);
 
-    /**
-     * encodeToCommandBuffer:primaryTexture:secondaryTexture:destinationTexture:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MetalPerformanceShaders/Reference/MPSBinaryImageKernel_ClassReference/index.html#//apple_ref/occ/instm/MPSBinaryImageKernel/encodeToCommandBuffer:primaryTexture:secondaryTexture:destinationTexture:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("encodeToCommandBuffer:primaryTexture:secondaryTexture:destinationTexture:")
     public native void encodeToCommandBufferPrimaryTextureSecondaryTextureDestinationTexture(
@@ -220,96 +204,52 @@ public class MPSBinaryImageKernel extends MPSKernel {
     @Selector("initWithDevice:")
     public native MPSBinaryImageKernel initWithDevice(@Mapped(ObjCObjectMapper.class) MTLDevice device);
 
-    /**
-     * primaryEdgeMode</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MetalPerformanceShaders/Reference/MPSBinaryImageKernel_ClassReference/index.html#//apple_ref/occ/instp/MPSBinaryImageKernel/primaryEdgeMode">iOS Dev Center</a>
-     */
     @Generated
     @Selector("primaryEdgeMode")
     @NUInt
     public native long primaryEdgeMode();
 
-    /**
-     * primaryOffset</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MetalPerformanceShaders/Reference/MPSBinaryImageKernel_ClassReference/index.html#//apple_ref/occ/instp/MPSBinaryImageKernel/primaryOffset">iOS Dev Center</a>
-     */
     @Generated
     @Selector("primaryOffset")
     @ByValue
     public native MPSOffset primaryOffset();
 
-    /**
-     * primarySourceRegionForDestinationSize:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MetalPerformanceShaders/Reference/MPSBinaryImageKernel_ClassReference/index.html#//apple_ref/occ/instm/MPSBinaryImageKernel/primarySourceRegionForDestinationSize:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("primarySourceRegionForDestinationSize:")
     @ByValue
     public native MPSRegion primarySourceRegionForDestinationSize(@ByValue MTLSize destinationSize);
 
-    /**
-     * secondaryEdgeMode</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MetalPerformanceShaders/Reference/MPSBinaryImageKernel_ClassReference/index.html#//apple_ref/occ/instp/MPSBinaryImageKernel/secondaryEdgeMode">iOS Dev Center</a>
-     */
     @Generated
     @Selector("secondaryEdgeMode")
     @NUInt
     public native long secondaryEdgeMode();
 
-    /**
-     * secondaryOffset</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MetalPerformanceShaders/Reference/MPSBinaryImageKernel_ClassReference/index.html#//apple_ref/occ/instp/MPSBinaryImageKernel/secondaryOffset">iOS Dev Center</a>
-     */
     @Generated
     @Selector("secondaryOffset")
     @ByValue
     public native MPSOffset secondaryOffset();
 
-    /**
-     * secondarySourceRegionForDestinationSize:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MetalPerformanceShaders/Reference/MPSBinaryImageKernel_ClassReference/index.html#//apple_ref/occ/instm/MPSBinaryImageKernel/secondarySourceRegionForDestinationSize:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("secondarySourceRegionForDestinationSize:")
     @ByValue
     public native MPSRegion secondarySourceRegionForDestinationSize(@ByValue MTLSize destinationSize);
 
-    /**
-     * clipRect</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MetalPerformanceShaders/Reference/MPSBinaryImageKernel_ClassReference/index.html#//apple_ref/occ/instp/MPSBinaryImageKernel/clipRect">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setClipRect:")
     public native void setClipRect(@ByValue MTLRegion value);
 
-    /**
-     * primaryEdgeMode</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MetalPerformanceShaders/Reference/MPSBinaryImageKernel_ClassReference/index.html#//apple_ref/occ/instp/MPSBinaryImageKernel/primaryEdgeMode">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setPrimaryEdgeMode:")
     public native void setPrimaryEdgeMode(@NUInt long value);
 
-    /**
-     * primaryOffset</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MetalPerformanceShaders/Reference/MPSBinaryImageKernel_ClassReference/index.html#//apple_ref/occ/instp/MPSBinaryImageKernel/primaryOffset">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setPrimaryOffset:")
     public native void setPrimaryOffset(@ByValue MPSOffset value);
 
-    /**
-     * secondaryEdgeMode</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MetalPerformanceShaders/Reference/MPSBinaryImageKernel_ClassReference/index.html#//apple_ref/occ/instp/MPSBinaryImageKernel/secondaryEdgeMode">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setSecondaryEdgeMode:")
     public native void setSecondaryEdgeMode(@NUInt long value);
 
-    /**
-     * secondaryOffset</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MetalPerformanceShaders/Reference/MPSBinaryImageKernel_ClassReference/index.html#//apple_ref/occ/instp/MPSBinaryImageKernel/secondaryOffset">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setSecondaryOffset:")
     public native void setSecondaryOffset(@ByValue MPSOffset value);

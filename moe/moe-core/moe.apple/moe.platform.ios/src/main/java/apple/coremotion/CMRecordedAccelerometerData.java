@@ -165,10 +165,6 @@ public class CMRecordedAccelerometerData extends CMAccelerometerData {
     @NInt
     public static native long version_static();
 
-    /**
-     * identifier</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMotion/Reference/CMRecordedAccelerometerData_class/index.html#//apple_ref/occ/instp/CMRecordedAccelerometerData/identifier">iOS Dev Center</a>
-     */
     @Generated
     @Selector("identifier")
     public native long identifier();
@@ -177,10 +173,6 @@ public class CMRecordedAccelerometerData extends CMAccelerometerData {
     @Selector("init")
     public native CMRecordedAccelerometerData init();
 
-    /**
-     * startDate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMotion/Reference/CMRecordedAccelerometerData_class/index.html#//apple_ref/occ/instp/CMRecordedAccelerometerData/startDate">iOS Dev Center</a>
-     */
     @Generated
     @Selector("startDate")
     public native NSDate startDate();

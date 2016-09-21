@@ -172,66 +172,34 @@ public class MDLStereoscopicCamera extends MDLCamera {
     @Selector("init")
     public native MDLStereoscopicCamera init();
 
-    /**
-     * interPupillaryDistance</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLStereoscopicCamera_Class/index.html#//apple_ref/occ/instp/MDLStereoscopicCamera/interPupillaryDistance">iOS Dev Center</a>
-     */
     @Generated
     @Selector("interPupillaryDistance")
     public native float interPupillaryDistance();
 
-    /**
-     * leftVergence</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLStereoscopicCamera_Class/index.html#//apple_ref/occ/instp/MDLStereoscopicCamera/leftVergence">iOS Dev Center</a>
-     */
     @Generated
     @Selector("leftVergence")
     public native float leftVergence();
 
-    /**
-     * overlap</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLStereoscopicCamera_Class/index.html#//apple_ref/occ/instp/MDLStereoscopicCamera/overlap">iOS Dev Center</a>
-     */
     @Generated
     @Selector("overlap")
     public native float overlap();
 
-    /**
-     * rightVergence</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLStereoscopicCamera_Class/index.html#//apple_ref/occ/instp/MDLStereoscopicCamera/rightVergence">iOS Dev Center</a>
-     */
     @Generated
     @Selector("rightVergence")
     public native float rightVergence();
 
-    /**
-     * interPupillaryDistance</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLStereoscopicCamera_Class/index.html#//apple_ref/occ/instp/MDLStereoscopicCamera/interPupillaryDistance">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setInterPupillaryDistance:")
     public native void setInterPupillaryDistance(float value);
 
-    /**
-     * leftVergence</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLStereoscopicCamera_Class/index.html#//apple_ref/occ/instp/MDLStereoscopicCamera/leftVergence">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setLeftVergence:")
     public native void setLeftVergence(float value);
 
-    /**
-     * overlap</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLStereoscopicCamera_Class/index.html#//apple_ref/occ/instp/MDLStereoscopicCamera/overlap">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setOverlap:")
     public native void setOverlap(float value);
 
-    /**
-     * rightVergence</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLStereoscopicCamera_Class/index.html#//apple_ref/occ/instp/MDLStereoscopicCamera/rightVergence">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setRightVergence:")
     public native void setRightVergence(float value);

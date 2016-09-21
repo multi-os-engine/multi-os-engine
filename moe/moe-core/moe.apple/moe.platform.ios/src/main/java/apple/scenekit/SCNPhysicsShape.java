@@ -64,27 +64,15 @@ public class SCNPhysicsShape extends NSObject implements NSCopying, NSSecureCodi
     @Selector("alloc")
     public static native SCNPhysicsShape alloc();
 
-    /**
-     * shapeWithGeometry:options:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNPhysicsShape_Class/index.html#//apple_ref/occ/clm/SCNPhysicsShape/shapeWithGeometry:options:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("shapeWithGeometry:options:")
     public static native SCNPhysicsShape shapeWithGeometryOptions(SCNGeometry geometry,
             NSDictionary<String, ?> options);
 
-    /**
-     * shapeWithNode:options:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNPhysicsShape_Class/index.html#//apple_ref/occ/clm/SCNPhysicsShape/shapeWithNode:options:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("shapeWithNode:options:")
     public static native SCNPhysicsShape shapeWithNodeOptions(SCNNode node, NSDictionary<String, ?> options);
 
-    /**
-     * shapeWithShapes:transforms:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNPhysicsShape_Class/index.html#//apple_ref/occ/clm/SCNPhysicsShape/shapeWithShapes:transforms:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("shapeWithShapes:transforms:")
     public static native SCNPhysicsShape shapeWithShapesTransforms(NSArray<? extends SCNPhysicsShape> shapes,
@@ -218,27 +206,15 @@ public class SCNPhysicsShape extends NSObject implements NSCopying, NSSecureCodi
         return supportsSecureCoding();
     }
 
-    /**
-     * options</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNPhysicsShape_Class/index.html#//apple_ref/occ/instp/SCNPhysicsShape/options">iOS Dev Center</a>
-     */
     @Generated
     @Selector("options")
     public native NSDictionary<String, ?> options();
 
-    /**
-     * sourceObject</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNPhysicsShape_Class/index.html#//apple_ref/occ/instp/SCNPhysicsShape/sourceObject">iOS Dev Center</a>
-     */
     @Generated
     @Selector("sourceObject")
     @MappedReturn(ObjCObjectMapper.class)
     public native Object sourceObject();
 
-    /**
-     * transforms</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNPhysicsShape_Class/index.html#//apple_ref/occ/instp/SCNPhysicsShape/transforms">iOS Dev Center</a>
-     */
     @Generated
     @Selector("transforms")
     public native NSArray<? extends NSValue> transforms();

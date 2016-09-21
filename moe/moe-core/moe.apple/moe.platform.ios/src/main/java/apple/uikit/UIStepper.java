@@ -347,42 +347,22 @@ public class UIStepper extends UIControl {
     @NInt
     public static native long version_static();
 
-    /**
-     * autorepeat</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIStepper_Class/index.html#//apple_ref/occ/instp/UIStepper/autorepeat">iOS Dev Center</a>
-     */
     @Generated
     @Selector("autorepeat")
     public native boolean autorepeat();
 
-    /**
-     * backgroundImageForState:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIStepper_Class/index.html#//apple_ref/occ/instm/UIStepper/backgroundImageForState:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("backgroundImageForState:")
     public native UIImage backgroundImageForState(@NUInt long state);
 
-    /**
-     * decrementImageForState:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIStepper_Class/index.html#//apple_ref/occ/instm/UIStepper/decrementImageForState:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("decrementImageForState:")
     public native UIImage decrementImageForState(@NUInt long state);
 
-    /**
-     * dividerImageForLeftSegmentState:rightSegmentState:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIStepper_Class/index.html#//apple_ref/occ/instm/UIStepper/dividerImageForLeftSegmentState:rightSegmentState:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("dividerImageForLeftSegmentState:rightSegmentState:")
     public native UIImage dividerImageForLeftSegmentStateRightSegmentState(@NUInt long state, @NUInt long state_);
 
-    /**
-     * incrementImageForState:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIStepper_Class/index.html#//apple_ref/occ/instm/UIStepper/incrementImageForState:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("incrementImageForState:")
     public native UIImage incrementImageForState(@NUInt long state);
@@ -395,155 +375,79 @@ public class UIStepper extends UIControl {
     @Selector("initWithFrame:")
     public native UIStepper initWithFrame(@ByValue CGRect frame);
 
-    /**
-     * continuous</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIStepper_Class/index.html#//apple_ref/occ/instp/UIStepper/continuous">iOS Dev Center</a>
-     */
     @Generated
     @Selector("isContinuous")
     public native boolean isContinuous();
 
-    /**
-     * continuous</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIStepper_Class/index.html#//apple_ref/occ/instp/UIStepper/continuous">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setContinuous:")
     public native void setContinuous(boolean value);
 
-    /**
-     * maximumValue</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIStepper_Class/index.html#//apple_ref/occ/instp/UIStepper/maximumValue">iOS Dev Center</a>
-     */
     @Generated
     @Selector("maximumValue")
     public native double maximumValue();
 
-    /**
-     * minimumValue</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIStepper_Class/index.html#//apple_ref/occ/instp/UIStepper/minimumValue">iOS Dev Center</a>
-     */
     @Generated
     @Selector("minimumValue")
     public native double minimumValue();
 
-    /**
-     * autorepeat</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIStepper_Class/index.html#//apple_ref/occ/instp/UIStepper/autorepeat">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setAutorepeat:")
     public native void setAutorepeat(boolean value);
 
-    /**
-     * setBackgroundImage:forState:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIStepper_Class/index.html#//apple_ref/occ/instm/UIStepper/setBackgroundImage:forState:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setBackgroundImage:forState:")
     public native void setBackgroundImageForState(UIImage image, @NUInt long state);
 
-    /**
-     * setDecrementImage:forState:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIStepper_Class/index.html#//apple_ref/occ/instm/UIStepper/setDecrementImage:forState:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setDecrementImage:forState:")
     public native void setDecrementImageForState(UIImage image, @NUInt long state);
 
-    /**
-     * setDividerImage:forLeftSegmentState:rightSegmentState:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIStepper_Class/index.html#//apple_ref/occ/instm/UIStepper/setDividerImage:forLeftSegmentState:rightSegmentState:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setDividerImage:forLeftSegmentState:rightSegmentState:")
     public native void setDividerImageForLeftSegmentStateRightSegmentState(UIImage image, @NUInt long leftState,
             @NUInt long rightState);
 
-    /**
-     * setIncrementImage:forState:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIStepper_Class/index.html#//apple_ref/occ/instm/UIStepper/setIncrementImage:forState:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setIncrementImage:forState:")
     public native void setIncrementImageForState(UIImage image, @NUInt long state);
 
-    /**
-     * maximumValue</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIStepper_Class/index.html#//apple_ref/occ/instp/UIStepper/maximumValue">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setMaximumValue:")
     public native void setMaximumValue(double value);
 
-    /**
-     * minimumValue</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIStepper_Class/index.html#//apple_ref/occ/instp/UIStepper/minimumValue">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setMinimumValue:")
     public native void setMinimumValue(double value);
 
-    /**
-     * stepValue</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIStepper_Class/index.html#//apple_ref/occ/instp/UIStepper/stepValue">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setStepValue:")
     public native void setStepValue(double value);
 
-    /**
-     * tintColor</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIStepper_Class/index.html#//apple_ref/occ/instp/UIStepper/tintColor">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setTintColor:")
     public native void setTintColor(UIColor value);
 
-    /**
-     * value</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIStepper_Class/index.html#//apple_ref/occ/instp/UIStepper/value">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setValue:")
     public native void setValue(double value);
 
-    /**
-     * wraps</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIStepper_Class/index.html#//apple_ref/occ/instp/UIStepper/wraps">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setWraps:")
     public native void setWraps(boolean value);
 
-    /**
-     * stepValue</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIStepper_Class/index.html#//apple_ref/occ/instp/UIStepper/stepValue">iOS Dev Center</a>
-     */
     @Generated
     @Selector("stepValue")
     public native double stepValue();
 
-    /**
-     * tintColor</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIStepper_Class/index.html#//apple_ref/occ/instp/UIStepper/tintColor">iOS Dev Center</a>
-     */
     @Generated
     @Selector("tintColor")
     public native UIColor tintColor();
 
-    /**
-     * value</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIStepper_Class/index.html#//apple_ref/occ/instp/UIStepper/value">iOS Dev Center</a>
-     */
     @Generated
     @Selector("value")
     public native double value();
 
-    /**
-     * wraps</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIStepper_Class/index.html#//apple_ref/occ/instp/UIStepper/wraps">iOS Dev Center</a>
-     */
     @Generated
     @Selector("wraps")
     public native boolean wraps();

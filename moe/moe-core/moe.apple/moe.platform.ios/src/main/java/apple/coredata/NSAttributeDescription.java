@@ -160,35 +160,19 @@ public class NSAttributeDescription extends NSPropertyDescription {
     @NInt
     public static native long version_static();
 
-    /**
-     * allowsExternalBinaryDataStorage</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/CoreDataFramework/Classes/NSAttributeDescription_Class/index.html#//apple_ref/occ/instp/NSAttributeDescription/allowsExternalBinaryDataStorage">iOS Dev Center</a>
-     */
     @Generated
     @Selector("allowsExternalBinaryDataStorage")
     public native boolean allowsExternalBinaryDataStorage();
 
-    /**
-     * attributeType</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/CoreDataFramework/Classes/NSAttributeDescription_Class/index.html#//apple_ref/occ/instp/NSAttributeDescription/attributeType">iOS Dev Center</a>
-     */
     @Generated
     @Selector("attributeType")
     @NUInt
     public native long attributeType();
 
-    /**
-     * attributeValueClassName</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/CoreDataFramework/Classes/NSAttributeDescription_Class/index.html#//apple_ref/occ/instp/NSAttributeDescription/attributeValueClassName">iOS Dev Center</a>
-     */
     @Generated
     @Selector("attributeValueClassName")
     public native String attributeValueClassName();
 
-    /**
-     * defaultValue</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/CoreDataFramework/Classes/NSAttributeDescription_Class/index.html#//apple_ref/occ/instp/NSAttributeDescription/defaultValue">iOS Dev Center</a>
-     */
     @Generated
     @Selector("defaultValue")
     @MappedReturn(ObjCObjectMapper.class)
@@ -198,58 +182,30 @@ public class NSAttributeDescription extends NSPropertyDescription {
     @Selector("init")
     public native NSAttributeDescription init();
 
-    /**
-     * allowsExternalBinaryDataStorage</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/CoreDataFramework/Classes/NSAttributeDescription_Class/index.html#//apple_ref/occ/instp/NSAttributeDescription/allowsExternalBinaryDataStorage">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setAllowsExternalBinaryDataStorage:")
     public native void setAllowsExternalBinaryDataStorage(boolean value);
 
-    /**
-     * attributeType</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/CoreDataFramework/Classes/NSAttributeDescription_Class/index.html#//apple_ref/occ/instp/NSAttributeDescription/attributeType">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setAttributeType:")
     public native void setAttributeType(@NUInt long value);
 
-    /**
-     * attributeValueClassName</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/CoreDataFramework/Classes/NSAttributeDescription_Class/index.html#//apple_ref/occ/instp/NSAttributeDescription/attributeValueClassName">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setAttributeValueClassName:")
     public native void setAttributeValueClassName(String value);
 
-    /**
-     * defaultValue</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/CoreDataFramework/Classes/NSAttributeDescription_Class/index.html#//apple_ref/occ/instp/NSAttributeDescription/defaultValue">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setDefaultValue:")
     public native void setDefaultValue(@Mapped(ObjCObjectMapper.class) Object value);
 
-    /**
-     * valueTransformerName</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/CoreDataFramework/Classes/NSAttributeDescription_Class/index.html#//apple_ref/occ/instp/NSAttributeDescription/valueTransformerName">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setValueTransformerName:")
     public native void setValueTransformerName(String value);
 
-    /**
-     * valueTransformerName</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/CoreDataFramework/Classes/NSAttributeDescription_Class/index.html#//apple_ref/occ/instp/NSAttributeDescription/valueTransformerName">iOS Dev Center</a>
-     */
     @Generated
     @Selector("valueTransformerName")
     public native String valueTransformerName();
 
-    /**
-     * versionHash</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/CoreDataFramework/Classes/NSAttributeDescription_Class/index.html#//apple_ref/occ/instp/NSAttributeDescription/versionHash">iOS Dev Center</a>
-     */
     @Generated
     @Selector("versionHash")
     public native NSData versionHash();

@@ -360,114 +360,58 @@ public class UISwitch extends UIControl implements NSCoding {
     @Selector("initWithCoder:")
     public native UISwitch initWithCoder(NSCoder aDecoder);
 
-    /**
-     * initWithFrame:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISwitch_Class/index.html#//apple_ref/occ/instm/UISwitch/initWithFrame:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithFrame:")
     public native UISwitch initWithFrame(@ByValue CGRect frame);
 
-    /**
-     * on</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISwitch_Class/index.html#//apple_ref/occ/instp/UISwitch/on">iOS Dev Center</a>
-     */
     @Generated
     @Selector("isOn")
     public native boolean isOn();
 
-    /**
-     * on</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISwitch_Class/index.html#//apple_ref/occ/instp/UISwitch/on">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setOn:")
     public native void setOn(boolean value);
 
-    /**
-     * offImage</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISwitch_Class/index.html#//apple_ref/occ/instp/UISwitch/offImage">iOS Dev Center</a>
-     */
     @Generated
     @Selector("offImage")
     public native UIImage offImage();
 
-    /**
-     * onImage</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISwitch_Class/index.html#//apple_ref/occ/instp/UISwitch/onImage">iOS Dev Center</a>
-     */
     @Generated
     @Selector("onImage")
     public native UIImage onImage();
 
-    /**
-     * onTintColor</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISwitch_Class/index.html#//apple_ref/occ/instp/UISwitch/onTintColor">iOS Dev Center</a>
-     */
     @Generated
     @Selector("onTintColor")
     public native UIColor onTintColor();
 
-    /**
-     * offImage</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISwitch_Class/index.html#//apple_ref/occ/instp/UISwitch/offImage">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setOffImage:")
     public native void setOffImage(UIImage value);
 
-    /**
-     * setOn:animated:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISwitch_Class/index.html#//apple_ref/occ/instm/UISwitch/setOn:animated:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setOn:animated:")
     public native void setOnAnimated(boolean on, boolean animated);
 
-    /**
-     * onImage</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISwitch_Class/index.html#//apple_ref/occ/instp/UISwitch/onImage">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setOnImage:")
     public native void setOnImage(UIImage value);
 
-    /**
-     * onTintColor</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISwitch_Class/index.html#//apple_ref/occ/instp/UISwitch/onTintColor">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setOnTintColor:")
     public native void setOnTintColor(UIColor value);
 
-    /**
-     * thumbTintColor</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISwitch_Class/index.html#//apple_ref/occ/instp/UISwitch/thumbTintColor">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setThumbTintColor:")
     public native void setThumbTintColor(UIColor value);
 
-    /**
-     * tintColor</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISwitch_Class/index.html#//apple_ref/occ/instp/UISwitch/tintColor">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setTintColor:")
     public native void setTintColor(UIColor value);
 
-    /**
-     * thumbTintColor</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISwitch_Class/index.html#//apple_ref/occ/instp/UISwitch/thumbTintColor">iOS Dev Center</a>
-     */
     @Generated
     @Selector("thumbTintColor")
     public native UIColor thumbTintColor();
 
-    /**
-     * tintColor</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISwitch_Class/index.html#//apple_ref/occ/instp/UISwitch/tintColor">iOS Dev Center</a>
-     */
     @Generated
     @Selector("tintColor")
     public native UIColor tintColor();

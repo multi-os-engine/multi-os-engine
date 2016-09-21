@@ -200,27 +200,15 @@ public class UISearchController extends UIViewController
     @Selector("animationEnded:")
     public native void animationEnded(boolean transitionCompleted);
 
-    /**
-     * delegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISearchController/index.html#//apple_ref/occ/instp/UISearchController/delegate">iOS Dev Center</a>
-     */
     @Generated
     @Selector("delegate")
     @MappedReturn(ObjCObjectMapper.class)
     public native UISearchControllerDelegate delegate();
 
-    /**
-     * dimsBackgroundDuringPresentation</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISearchController/index.html#//apple_ref/occ/instp/UISearchController/dimsBackgroundDuringPresentation">iOS Dev Center</a>
-     */
     @Generated
     @Selector("dimsBackgroundDuringPresentation")
     public native boolean dimsBackgroundDuringPresentation();
 
-    /**
-     * hidesNavigationBarDuringPresentation</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISearchController/index.html#//apple_ref/occ/instp/UISearchController/hidesNavigationBarDuringPresentation">iOS Dev Center</a>
-     */
     @Generated
     @Selector("hidesNavigationBarDuringPresentation")
     public native boolean hidesNavigationBarDuringPresentation();
@@ -233,10 +221,6 @@ public class UISearchController extends UIViewController
     @Selector("initWithNibName:bundle:")
     public native UISearchController initWithNibNameBundle(String nibNameOrNil, NSBundle nibBundleOrNil);
 
-    /**
-     * initWithSearchResultsController:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISearchController/index.html#//apple_ref/occ/instm/UISearchController/initWithSearchResultsController:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithSearchResultsController:")
     public native UISearchController initWithSearchResultsController(UIViewController searchResultsController);
@@ -253,18 +237,10 @@ public class UISearchController extends UIViewController
     @MappedReturn(ObjCObjectMapper.class)
     public native Object interactionControllerForPresentation(@Mapped(ObjCObjectMapper.class) Object animator);
 
-    /**
-     * active</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISearchController/index.html#//apple_ref/occ/instp/UISearchController/active">iOS Dev Center</a>
-     */
     @Generated
     @Selector("isActive")
     public native boolean isActive();
 
-    /**
-     * active</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISearchController/index.html#//apple_ref/occ/instp/UISearchController/active">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setActive:")
     public native void setActive(boolean value);
@@ -275,43 +251,23 @@ public class UISearchController extends UIViewController
     public native UIPresentationController presentationControllerForPresentedViewControllerPresentingViewControllerSourceViewController(
             UIViewController presented, UIViewController presenting, UIViewController source);
 
-    /**
-     * searchBar</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISearchController/index.html#//apple_ref/occ/instp/UISearchController/searchBar">iOS Dev Center</a>
-     */
     @Generated
     @Selector("searchBar")
     public native UISearchBar searchBar();
 
-    /**
-     * searchResultsController</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISearchController/index.html#//apple_ref/occ/instp/UISearchController/searchResultsController">iOS Dev Center</a>
-     */
     @Generated
     @Selector("searchResultsController")
     public native UIViewController searchResultsController();
 
-    /**
-     * searchResultsUpdater</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISearchController/index.html#//apple_ref/occ/instp/UISearchController/searchResultsUpdater">iOS Dev Center</a>
-     */
     @Generated
     @Selector("searchResultsUpdater")
     @MappedReturn(ObjCObjectMapper.class)
     public native UISearchResultsUpdating searchResultsUpdater();
 
-    /**
-     * delegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISearchController/index.html#//apple_ref/occ/instp/UISearchController/delegate">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setDelegate:")
     public native void setDelegate_unsafe(@Mapped(ObjCObjectMapper.class) UISearchControllerDelegate value);
 
-    /**
-     * delegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISearchController/index.html#//apple_ref/occ/instp/UISearchController/delegate">iOS Dev Center</a>
-     */
     @Generated
     public void setDelegate(@Mapped(ObjCObjectMapper.class) UISearchControllerDelegate value) {
         Object __old = delegate();
@@ -324,34 +280,18 @@ public class UISearchController extends UIViewController
         }
     }
 
-    /**
-     * dimsBackgroundDuringPresentation</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISearchController/index.html#//apple_ref/occ/instp/UISearchController/dimsBackgroundDuringPresentation">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setDimsBackgroundDuringPresentation:")
     public native void setDimsBackgroundDuringPresentation(boolean value);
 
-    /**
-     * hidesNavigationBarDuringPresentation</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISearchController/index.html#//apple_ref/occ/instp/UISearchController/hidesNavigationBarDuringPresentation">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setHidesNavigationBarDuringPresentation:")
     public native void setHidesNavigationBarDuringPresentation(boolean value);
 
-    /**
-     * searchResultsUpdater</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISearchController/index.html#//apple_ref/occ/instp/UISearchController/searchResultsUpdater">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setSearchResultsUpdater:")
     public native void setSearchResultsUpdater_unsafe(@Mapped(ObjCObjectMapper.class) UISearchResultsUpdating value);
 
-    /**
-     * searchResultsUpdater</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISearchController/index.html#//apple_ref/occ/instp/UISearchController/searchResultsUpdater">iOS Dev Center</a>
-     */
     @Generated
     public void setSearchResultsUpdater(@Mapped(ObjCObjectMapper.class) UISearchResultsUpdating value) {
         Object __old = searchResultsUpdater();
@@ -372,18 +312,10 @@ public class UISearchController extends UIViewController
     @Selector("initWithCoder:")
     public native UISearchController initWithCoder(NSCoder aDecoder);
 
-    /**
-     * obscuresBackgroundDuringPresentation</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISearchController/index.html#//apple_ref/occ/instp/UISearchController/obscuresBackgroundDuringPresentation">iOS Dev Center</a>
-     */
     @Generated
     @Selector("obscuresBackgroundDuringPresentation")
     public native boolean obscuresBackgroundDuringPresentation();
 
-    /**
-     * obscuresBackgroundDuringPresentation</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISearchController/index.html#//apple_ref/occ/instp/UISearchController/obscuresBackgroundDuringPresentation">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setObscuresBackgroundDuringPresentation:")
     public native void setObscuresBackgroundDuringPresentation(boolean value);

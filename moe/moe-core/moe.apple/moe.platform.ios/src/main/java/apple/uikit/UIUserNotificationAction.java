@@ -168,10 +168,6 @@ public class UIUserNotificationAction extends NSObject implements NSCopying, NSM
     @NInt
     public static native long version();
 
-    /**
-     * activationMode</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIUserNotificationAction_class/index.html#//apple_ref/occ/instp/UIUserNotificationAction/activationMode">iOS Dev Center</a>
-     */
     @Generated
     @Selector("activationMode")
     @NUInt
@@ -187,10 +183,6 @@ public class UIUserNotificationAction extends NSObject implements NSCopying, NSM
     @Selector("encodeWithCoder:")
     public native void encodeWithCoder(NSCoder aCoder);
 
-    /**
-     * identifier</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIUserNotificationAction_class/index.html#//apple_ref/occ/instp/UIUserNotificationAction/identifier">iOS Dev Center</a>
-     */
     @Generated
     @Selector("identifier")
     public native String identifier();
@@ -203,18 +195,10 @@ public class UIUserNotificationAction extends NSObject implements NSCopying, NSM
     @Selector("initWithCoder:")
     public native UIUserNotificationAction initWithCoder(NSCoder aDecoder);
 
-    /**
-     * authenticationRequired</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIUserNotificationAction_class/index.html#//apple_ref/occ/instp/UIUserNotificationAction/authenticationRequired">iOS Dev Center</a>
-     */
     @Generated
     @Selector("isAuthenticationRequired")
     public native boolean isAuthenticationRequired();
 
-    /**
-     * destructive</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIUserNotificationAction_class/index.html#//apple_ref/occ/instp/UIUserNotificationAction/destructive">iOS Dev Center</a>
-     */
     @Generated
     @Selector("isDestructive")
     public native boolean isDestructive();
@@ -230,27 +214,15 @@ public class UIUserNotificationAction extends NSObject implements NSCopying, NSM
         return supportsSecureCoding();
     }
 
-    /**
-     * title</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIUserNotificationAction_class/index.html#//apple_ref/occ/instp/UIUserNotificationAction/title">iOS Dev Center</a>
-     */
     @Generated
     @Selector("title")
     public native String title();
 
-    /**
-     * behavior</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIUserNotificationAction_class/index.html#//apple_ref/occ/instp/UIUserNotificationAction/behavior">iOS Dev Center</a>
-     */
     @Generated
     @Selector("behavior")
     @NUInt
     public native long behavior();
 
-    /**
-     * parameters</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIUserNotificationAction_class/index.html#//apple_ref/occ/instp/UIUserNotificationAction/parameters">iOS Dev Center</a>
-     */
     @Generated
     @Selector("parameters")
     public native NSDictionary<?, ?> parameters();

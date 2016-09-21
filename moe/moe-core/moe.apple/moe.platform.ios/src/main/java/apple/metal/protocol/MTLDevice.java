@@ -48,93 +48,53 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("MTLDevice")
 public interface MTLDevice {
-    /**
-     * name</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Metal/Reference/MTLDevice_Ref/index.html#//apple_ref/occ/intfp/MTLDevice/name">iOS Dev Center</a>
-     */
     @Generated
     @Selector("name")
     String name();
 
-    /**
-     * newBufferWithBytes:length:options:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Metal/Reference/MTLDevice_Ref/index.html#//apple_ref/occ/intfm/MTLDevice/newBufferWithBytes:length:options:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("newBufferWithBytes:length:options:")
     @MappedReturn(ObjCObjectMapper.class)
     Object newBufferWithBytesLengthOptions(ConstVoidPtr pointer, @NUInt long length, @NUInt long options);
 
-    /**
-     * newBufferWithBytesNoCopy:length:options:deallocator:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Metal/Reference/MTLDevice_Ref/index.html#//apple_ref/occ/intfm/MTLDevice/newBufferWithBytesNoCopy:length:options:deallocator:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("newBufferWithBytesNoCopy:length:options:deallocator:")
     @MappedReturn(ObjCObjectMapper.class)
     Object newBufferWithBytesNoCopyLengthOptionsDeallocator(VoidPtr pointer, @NUInt long length, @NUInt long options,
             @ObjCBlock(name = "call_newBufferWithBytesNoCopyLengthOptionsDeallocator") Block_newBufferWithBytesNoCopyLengthOptionsDeallocator deallocator);
 
-    /**
-     * newBufferWithLength:options:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Metal/Reference/MTLDevice_Ref/index.html#//apple_ref/occ/intfm/MTLDevice/newBufferWithLength:options:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("newBufferWithLength:options:")
     @MappedReturn(ObjCObjectMapper.class)
     Object newBufferWithLengthOptions(@NUInt long length, @NUInt long options);
 
-    /**
-     * newCommandQueue</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Metal/Reference/MTLDevice_Ref/index.html#//apple_ref/occ/intfm/MTLDevice/newCommandQueue">iOS Dev Center</a>
-     */
     @Generated
     @Selector("newCommandQueue")
     @MappedReturn(ObjCObjectMapper.class)
     Object newCommandQueue();
 
-    /**
-     * newCommandQueueWithMaxCommandBufferCount:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Metal/Reference/MTLDevice_Ref/index.html#//apple_ref/occ/intfm/MTLDevice/newCommandQueueWithMaxCommandBufferCount:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("newCommandQueueWithMaxCommandBufferCount:")
     @MappedReturn(ObjCObjectMapper.class)
     Object newCommandQueueWithMaxCommandBufferCount(@NUInt long maxCommandBufferCount);
 
-    /**
-     * newComputePipelineStateWithFunction:completionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Metal/Reference/MTLDevice_Ref/index.html#//apple_ref/occ/intfm/MTLDevice/newComputePipelineStateWithFunction:completionHandler:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("newComputePipelineStateWithFunction:completionHandler:")
     void newComputePipelineStateWithFunctionCompletionHandler(@Mapped(ObjCObjectMapper.class) Object computeFunction,
             @ObjCBlock(name = "call_newComputePipelineStateWithFunctionCompletionHandler") Block_newComputePipelineStateWithFunctionCompletionHandler completionHandler);
 
-    /**
-     * newComputePipelineStateWithFunction:error:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Metal/Reference/MTLDevice_Ref/index.html#//apple_ref/occ/intfm/MTLDevice/newComputePipelineStateWithFunction:error:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("newComputePipelineStateWithFunction:error:")
     @MappedReturn(ObjCObjectMapper.class)
     Object newComputePipelineStateWithFunctionError(@Mapped(ObjCObjectMapper.class) Object computeFunction,
             Ptr<NSError> error);
 
-    /**
-     * newComputePipelineStateWithFunction:options:completionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Metal/Reference/MTLDevice_Ref/index.html#//apple_ref/occ/intfm/MTLDevice/newComputePipelineStateWithFunction:options:completionHandler:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("newComputePipelineStateWithFunction:options:completionHandler:")
     void newComputePipelineStateWithFunctionOptionsCompletionHandler(
             @Mapped(ObjCObjectMapper.class) Object computeFunction, @NUInt long options,
             @ObjCBlock(name = "call_newComputePipelineStateWithFunctionOptionsCompletionHandler") Block_newComputePipelineStateWithFunctionOptionsCompletionHandler completionHandler);
 
-    /**
-     * newComputePipelineStateWithFunction:options:reflection:error:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Metal/Reference/MTLDevice_Ref/index.html#//apple_ref/occ/intfm/MTLDevice/newComputePipelineStateWithFunction:options:reflection:error:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("newComputePipelineStateWithFunction:options:reflection:error:")
     @MappedReturn(ObjCObjectMapper.class)
@@ -142,157 +102,89 @@ public interface MTLDevice {
             @Mapped(ObjCObjectMapper.class) Object computeFunction, @NUInt long options,
             Ptr<MTLComputePipelineReflection> reflection, Ptr<NSError> error);
 
-    /**
-     * newDefaultLibrary</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Metal/Reference/MTLDevice_Ref/index.html#//apple_ref/occ/intfm/MTLDevice/newDefaultLibrary">iOS Dev Center</a>
-     */
     @Generated
     @Selector("newDefaultLibrary")
     @MappedReturn(ObjCObjectMapper.class)
     Object newDefaultLibrary();
 
-    /**
-     * newDepthStencilStateWithDescriptor:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Metal/Reference/MTLDevice_Ref/index.html#//apple_ref/occ/intfm/MTLDevice/newDepthStencilStateWithDescriptor:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("newDepthStencilStateWithDescriptor:")
     @MappedReturn(ObjCObjectMapper.class)
     Object newDepthStencilStateWithDescriptor(MTLDepthStencilDescriptor descriptor);
 
-    /**
-     * newLibraryWithData:error:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Metal/Reference/MTLDevice_Ref/index.html#//apple_ref/occ/intfm/MTLDevice/newLibraryWithData:error:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("newLibraryWithData:error:")
     @MappedReturn(ObjCObjectMapper.class)
     Object newLibraryWithDataError(NSObject data, Ptr<NSError> error);
 
-    /**
-     * newLibraryWithFile:error:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Metal/Reference/MTLDevice_Ref/index.html#//apple_ref/occ/intfm/MTLDevice/newLibraryWithFile:error:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("newLibraryWithFile:error:")
     @MappedReturn(ObjCObjectMapper.class)
     Object newLibraryWithFileError(String filepath, Ptr<NSError> error);
 
-    /**
-     * newLibraryWithSource:options:completionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Metal/Reference/MTLDevice_Ref/index.html#//apple_ref/occ/intfm/MTLDevice/newLibraryWithSource:options:completionHandler:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("newLibraryWithSource:options:completionHandler:")
     void newLibraryWithSourceOptionsCompletionHandler(String source, MTLCompileOptions options,
             @ObjCBlock(name = "call_newLibraryWithSourceOptionsCompletionHandler") Block_newLibraryWithSourceOptionsCompletionHandler completionHandler);
 
-    /**
-     * newLibraryWithSource:options:error:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Metal/Reference/MTLDevice_Ref/index.html#//apple_ref/occ/intfm/MTLDevice/newLibraryWithSource:options:error:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("newLibraryWithSource:options:error:")
     @MappedReturn(ObjCObjectMapper.class)
     Object newLibraryWithSourceOptionsError(String source, MTLCompileOptions options, Ptr<NSError> error);
 
-    /**
-     * newRenderPipelineStateWithDescriptor:completionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Metal/Reference/MTLDevice_Ref/index.html#//apple_ref/occ/intfm/MTLDevice/newRenderPipelineStateWithDescriptor:completionHandler:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("newRenderPipelineStateWithDescriptor:completionHandler:")
     void newRenderPipelineStateWithDescriptorCompletionHandler(MTLRenderPipelineDescriptor descriptor,
             @ObjCBlock(name = "call_newRenderPipelineStateWithDescriptorCompletionHandler") Block_newRenderPipelineStateWithDescriptorCompletionHandler completionHandler);
 
-    /**
-     * newRenderPipelineStateWithDescriptor:error:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Metal/Reference/MTLDevice_Ref/index.html#//apple_ref/occ/intfm/MTLDevice/newRenderPipelineStateWithDescriptor:error:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("newRenderPipelineStateWithDescriptor:error:")
     @MappedReturn(ObjCObjectMapper.class)
     Object newRenderPipelineStateWithDescriptorError(MTLRenderPipelineDescriptor descriptor, Ptr<NSError> error);
 
-    /**
-     * newRenderPipelineStateWithDescriptor:options:completionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Metal/Reference/MTLDevice_Ref/index.html#//apple_ref/occ/intfm/MTLDevice/newRenderPipelineStateWithDescriptor:options:completionHandler:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("newRenderPipelineStateWithDescriptor:options:completionHandler:")
     void newRenderPipelineStateWithDescriptorOptionsCompletionHandler(MTLRenderPipelineDescriptor descriptor,
             @NUInt long options,
             @ObjCBlock(name = "call_newRenderPipelineStateWithDescriptorOptionsCompletionHandler") Block_newRenderPipelineStateWithDescriptorOptionsCompletionHandler completionHandler);
 
-    /**
-     * newRenderPipelineStateWithDescriptor:options:reflection:error:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Metal/Reference/MTLDevice_Ref/index.html#//apple_ref/occ/intfm/MTLDevice/newRenderPipelineStateWithDescriptor:options:reflection:error:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("newRenderPipelineStateWithDescriptor:options:reflection:error:")
     @MappedReturn(ObjCObjectMapper.class)
     Object newRenderPipelineStateWithDescriptorOptionsReflectionError(MTLRenderPipelineDescriptor descriptor,
             @NUInt long options, Ptr<MTLRenderPipelineReflection> reflection, Ptr<NSError> error);
 
-    /**
-     * newSamplerStateWithDescriptor:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Metal/Reference/MTLDevice_Ref/index.html#//apple_ref/occ/intfm/MTLDevice/newSamplerStateWithDescriptor:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("newSamplerStateWithDescriptor:")
     @MappedReturn(ObjCObjectMapper.class)
     Object newSamplerStateWithDescriptor(MTLSamplerDescriptor descriptor);
 
-    /**
-     * newTextureWithDescriptor:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Metal/Reference/MTLDevice_Ref/index.html#//apple_ref/occ/intfm/MTLDevice/newTextureWithDescriptor:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("newTextureWithDescriptor:")
     @MappedReturn(ObjCObjectMapper.class)
     Object newTextureWithDescriptor(MTLTextureDescriptor descriptor);
 
-    /**
-     * supportsFeatureSet:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Metal/Reference/MTLDevice_Ref/index.html#//apple_ref/occ/intfm/MTLDevice/supportsFeatureSet:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("supportsFeatureSet:")
     boolean supportsFeatureSet(@NUInt long featureSet);
 
-    /**
-     * maxThreadsPerThreadgroup</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Metal/Reference/MTLDevice_Ref/index.html#//apple_ref/occ/intfp/MTLDevice/maxThreadsPerThreadgroup">iOS Dev Center</a>
-     */
     @Generated
     @Selector("maxThreadsPerThreadgroup")
     @ByValue
     MTLSize maxThreadsPerThreadgroup();
 
-    /**
-     * newComputePipelineStateWithDescriptor:options:completionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Metal/Reference/MTLDevice_Ref/index.html#//apple_ref/occ/intfm/MTLDevice/newComputePipelineStateWithDescriptor:options:completionHandler:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("newComputePipelineStateWithDescriptor:options:completionHandler:")
     void newComputePipelineStateWithDescriptorOptionsCompletionHandler(MTLComputePipelineDescriptor descriptor,
             @NUInt long options,
             @ObjCBlock(name = "call_newComputePipelineStateWithDescriptorOptionsCompletionHandler") Block_newComputePipelineStateWithDescriptorOptionsCompletionHandler completionHandler);
 
-    /**
-     * newComputePipelineStateWithDescriptor:options:reflection:error:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Metal/Reference/MTLDevice_Ref/index.html#//apple_ref/occ/intfm/MTLDevice/newComputePipelineStateWithDescriptor:options:reflection:error:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("newComputePipelineStateWithDescriptor:options:reflection:error:")
     @MappedReturn(ObjCObjectMapper.class)
     Object newComputePipelineStateWithDescriptorOptionsReflectionError(MTLComputePipelineDescriptor descriptor,
             @NUInt long options, Ptr<MTLComputePipelineReflection> reflection, Ptr<NSError> error);
 
-    /**
-     * supportsTextureSampleCount:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Metal/Reference/MTLDevice_Ref/index.html#//apple_ref/occ/intfm/MTLDevice/supportsTextureSampleCount:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("supportsTextureSampleCount:")
     boolean supportsTextureSampleCount(@NUInt long sampleCount);

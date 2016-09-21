@@ -178,10 +178,6 @@ public class GLKViewController extends UIViewController implements NSCoding, GLK
     @NInt
     public static native long version_static();
 
-    /**
-     * delegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GLkit/Reference/GLKViewController_ClassRef/index.html#//apple_ref/occ/instp/GLKViewController/delegate">iOS Dev Center</a>
-     */
     @Generated
     @Selector("delegate")
     @MappedReturn(ObjCObjectMapper.class)
@@ -191,19 +187,11 @@ public class GLKViewController extends UIViewController implements NSCoding, GLK
     @Selector("encodeWithCoder:")
     public native void encodeWithCoder(NSCoder aCoder);
 
-    /**
-     * framesDisplayed</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GLkit/Reference/GLKViewController_ClassRef/index.html#//apple_ref/occ/instp/GLKViewController/framesDisplayed">iOS Dev Center</a>
-     */
     @Generated
     @Selector("framesDisplayed")
     @NInt
     public native long framesDisplayed();
 
-    /**
-     * framesPerSecond</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GLkit/Reference/GLKViewController_ClassRef/index.html#//apple_ref/occ/instp/GLKViewController/framesPerSecond">iOS Dev Center</a>
-     */
     @Generated
     @Selector("framesPerSecond")
     @NInt
@@ -225,59 +213,31 @@ public class GLKViewController extends UIViewController implements NSCoding, GLK
     @Selector("initWithNibName:bundle:")
     public native GLKViewController initWithNibNameBundle(String nibNameOrNil, NSBundle nibBundleOrNil);
 
-    /**
-     * paused</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GLkit/Reference/GLKViewController_ClassRef/index.html#//apple_ref/occ/instp/GLKViewController/paused">iOS Dev Center</a>
-     */
     @Generated
     @Selector("isPaused")
     public native boolean isPaused();
 
-    /**
-     * paused</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GLkit/Reference/GLKViewController_ClassRef/index.html#//apple_ref/occ/instp/GLKViewController/paused">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setPaused:")
     public native void setPaused(boolean value);
 
-    /**
-     * pauseOnWillResignActive</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GLkit/Reference/GLKViewController_ClassRef/index.html#//apple_ref/occ/instp/GLKViewController/pauseOnWillResignActive">iOS Dev Center</a>
-     */
     @Generated
     @Selector("pauseOnWillResignActive")
     public native boolean pauseOnWillResignActive();
 
-    /**
-     * preferredFramesPerSecond</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GLkit/Reference/GLKViewController_ClassRef/index.html#//apple_ref/occ/instp/GLKViewController/preferredFramesPerSecond">iOS Dev Center</a>
-     */
     @Generated
     @Selector("preferredFramesPerSecond")
     @NInt
     public native long preferredFramesPerSecond();
 
-    /**
-     * resumeOnDidBecomeActive</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GLkit/Reference/GLKViewController_ClassRef/index.html#//apple_ref/occ/instp/GLKViewController/resumeOnDidBecomeActive">iOS Dev Center</a>
-     */
     @Generated
     @Selector("resumeOnDidBecomeActive")
     public native boolean resumeOnDidBecomeActive();
 
-    /**
-     * delegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GLkit/Reference/GLKViewController_ClassRef/index.html#//apple_ref/occ/instp/GLKViewController/delegate">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setDelegate:")
     public native void setDelegate_unsafe(@Mapped(ObjCObjectMapper.class) GLKViewControllerDelegate value);
 
-    /**
-     * delegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GLkit/Reference/GLKViewController_ClassRef/index.html#//apple_ref/occ/instp/GLKViewController/delegate">iOS Dev Center</a>
-     */
     @Generated
     public void setDelegate(@Mapped(ObjCObjectMapper.class) GLKViewControllerDelegate value) {
         Object __old = delegate();
@@ -290,58 +250,30 @@ public class GLKViewController extends UIViewController implements NSCoding, GLK
         }
     }
 
-    /**
-     * pauseOnWillResignActive</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GLkit/Reference/GLKViewController_ClassRef/index.html#//apple_ref/occ/instp/GLKViewController/pauseOnWillResignActive">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setPauseOnWillResignActive:")
     public native void setPauseOnWillResignActive(boolean value);
 
-    /**
-     * preferredFramesPerSecond</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GLkit/Reference/GLKViewController_ClassRef/index.html#//apple_ref/occ/instp/GLKViewController/preferredFramesPerSecond">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setPreferredFramesPerSecond:")
     public native void setPreferredFramesPerSecond(@NInt long value);
 
-    /**
-     * resumeOnDidBecomeActive</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GLkit/Reference/GLKViewController_ClassRef/index.html#//apple_ref/occ/instp/GLKViewController/resumeOnDidBecomeActive">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setResumeOnDidBecomeActive:")
     public native void setResumeOnDidBecomeActive(boolean value);
 
-    /**
-     * timeSinceFirstResume</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GLkit/Reference/GLKViewController_ClassRef/index.html#//apple_ref/occ/instp/GLKViewController/timeSinceFirstResume">iOS Dev Center</a>
-     */
     @Generated
     @Selector("timeSinceFirstResume")
     public native double timeSinceFirstResume();
 
-    /**
-     * timeSinceLastDraw</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GLkit/Reference/GLKViewController_ClassRef/index.html#//apple_ref/occ/instp/GLKViewController/timeSinceLastDraw">iOS Dev Center</a>
-     */
     @Generated
     @Selector("timeSinceLastDraw")
     public native double timeSinceLastDraw();
 
-    /**
-     * timeSinceLastResume</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GLkit/Reference/GLKViewController_ClassRef/index.html#//apple_ref/occ/instp/GLKViewController/timeSinceLastResume">iOS Dev Center</a>
-     */
     @Generated
     @Selector("timeSinceLastResume")
     public native double timeSinceLastResume();
 
-    /**
-     * timeSinceLastUpdate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GLkit/Reference/GLKViewController_ClassRef/index.html#//apple_ref/occ/instp/GLKViewController/timeSinceLastUpdate">iOS Dev Center</a>
-     */
     @Generated
     @Selector("timeSinceLastUpdate")
     public native double timeSinceLastUpdate();

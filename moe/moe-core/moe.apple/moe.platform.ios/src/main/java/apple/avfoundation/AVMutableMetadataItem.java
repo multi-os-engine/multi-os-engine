@@ -64,10 +64,6 @@ public class AVMutableMetadataItem extends AVMetadataItem {
     @Selector("alloc")
     public static native AVMutableMetadataItem alloc();
 
-    /**
-     * metadataItem</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVMutableMetadataItem_Class/index.html#//apple_ref/occ/clm/AVMutableMetadataItem/metadataItem">iOS Dev Center</a>
-     */
     @Generated
     @Selector("metadataItem")
     public static native AVMutableMetadataItem metadataItem();
@@ -217,43 +213,23 @@ public class AVMutableMetadataItem extends AVMetadataItem {
     @NInt
     public static native long version_static();
 
-    /**
-     * dataType</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVMutableMetadataItem_Class/index.html#//apple_ref/occ/instp/AVMutableMetadataItem/dataType">iOS Dev Center</a>
-     */
     @Generated
     @Selector("dataType")
     public native String dataType();
 
-    /**
-     * duration</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVMutableMetadataItem_Class/index.html#//apple_ref/occ/instp/AVMutableMetadataItem/duration">iOS Dev Center</a>
-     */
     @Generated
     @Selector("duration")
     @ByValue
     public native CMTime duration();
 
-    /**
-     * extendedLanguageTag</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVMutableMetadataItem_Class/index.html#//apple_ref/occ/instp/AVMutableMetadataItem/extendedLanguageTag">iOS Dev Center</a>
-     */
     @Generated
     @Selector("extendedLanguageTag")
     public native String extendedLanguageTag();
 
-    /**
-     * extraAttributes</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVMutableMetadataItem_Class/index.html#//apple_ref/occ/instp/AVMutableMetadataItem/extraAttributes">iOS Dev Center</a>
-     */
     @Generated
     @Selector("extraAttributes")
     public native NSDictionary<String, ?> extraAttributes();
 
-    /**
-     * identifier</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVMutableMetadataItem_Class/index.html#//apple_ref/occ/instp/AVMutableMetadataItem/identifier">iOS Dev Center</a>
-     */
     @Generated
     @Selector("identifier")
     public native String identifier();
@@ -262,141 +238,73 @@ public class AVMutableMetadataItem extends AVMetadataItem {
     @Selector("init")
     public native AVMutableMetadataItem init();
 
-    /**
-     * key</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVMutableMetadataItem_Class/index.html#//apple_ref/occ/instp/AVMutableMetadataItem/key">iOS Dev Center</a>
-     */
     @Generated
     @Selector("key")
     @MappedReturn(ObjCObjectMapper.class)
     public native Object key();
 
-    /**
-     * keySpace</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVMutableMetadataItem_Class/index.html#//apple_ref/occ/instp/AVMutableMetadataItem/keySpace">iOS Dev Center</a>
-     */
     @Generated
     @Selector("keySpace")
     public native String keySpace();
 
-    /**
-     * locale</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVMutableMetadataItem_Class/index.html#//apple_ref/occ/instp/AVMutableMetadataItem/locale">iOS Dev Center</a>
-     */
     @Generated
     @Selector("locale")
     public native NSLocale locale();
 
-    /**
-     * dataType</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVMutableMetadataItem_Class/index.html#//apple_ref/occ/instp/AVMutableMetadataItem/dataType">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setDataType:")
     public native void setDataType(String value);
 
-    /**
-     * duration</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVMutableMetadataItem_Class/index.html#//apple_ref/occ/instp/AVMutableMetadataItem/duration">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setDuration:")
     public native void setDuration(@ByValue CMTime value);
 
-    /**
-     * extendedLanguageTag</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVMutableMetadataItem_Class/index.html#//apple_ref/occ/instp/AVMutableMetadataItem/extendedLanguageTag">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setExtendedLanguageTag:")
     public native void setExtendedLanguageTag(String value);
 
-    /**
-     * extraAttributes</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVMutableMetadataItem_Class/index.html#//apple_ref/occ/instp/AVMutableMetadataItem/extraAttributes">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setExtraAttributes:")
     public native void setExtraAttributes(NSDictionary<String, ?> value);
 
-    /**
-     * identifier</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVMutableMetadataItem_Class/index.html#//apple_ref/occ/instp/AVMutableMetadataItem/identifier">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setIdentifier:")
     public native void setIdentifier(String value);
 
-    /**
-     * key</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVMutableMetadataItem_Class/index.html#//apple_ref/occ/instp/AVMutableMetadataItem/key">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setKey:")
     public native void setKey(@Mapped(ObjCObjectMapper.class) Object value);
 
-    /**
-     * keySpace</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVMutableMetadataItem_Class/index.html#//apple_ref/occ/instp/AVMutableMetadataItem/keySpace">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setKeySpace:")
     public native void setKeySpace(String value);
 
-    /**
-     * locale</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVMutableMetadataItem_Class/index.html#//apple_ref/occ/instp/AVMutableMetadataItem/locale">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setLocale:")
     public native void setLocale(NSLocale value);
 
-    /**
-     * time</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVMutableMetadataItem_Class/index.html#//apple_ref/occ/instp/AVMutableMetadataItem/time">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setTime:")
     public native void setTime(@ByValue CMTime value);
 
-    /**
-     * value</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVMutableMetadataItem_Class/index.html#//apple_ref/occ/instp/AVMutableMetadataItem/value">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setValue:")
     public native void setValue(@Mapped(ObjCObjectMapper.class) Object value);
 
-    /**
-     * time</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVMutableMetadataItem_Class/index.html#//apple_ref/occ/instp/AVMutableMetadataItem/time">iOS Dev Center</a>
-     */
     @Generated
     @Selector("time")
     @ByValue
     public native CMTime time();
 
-    /**
-     * value</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVMutableMetadataItem_Class/index.html#//apple_ref/occ/instp/AVMutableMetadataItem/value">iOS Dev Center</a>
-     */
     @Generated
     @Selector("value")
     @MappedReturn(ObjCObjectMapper.class)
     public native Object value();
 
-    /**
-     * startDate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVMutableMetadataItem_Class/index.html#//apple_ref/occ/instp/AVMutableMetadataItem/startDate">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setStartDate:")
     public native void setStartDate(NSDate value);
 
-    /**
-     * startDate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVMutableMetadataItem_Class/index.html#//apple_ref/occ/instp/AVMutableMetadataItem/startDate">iOS Dev Center</a>
-     */
     @Generated
     @Selector("startDate")
     public native NSDate startDate();

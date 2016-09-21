@@ -170,10 +170,6 @@ public class CMMagnetometerData extends CMLogItem {
     @Selector("init")
     public native CMMagnetometerData init();
 
-    /**
-     * magneticField</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMotion/Reference/CMMagnetometerData_Class/index.html#//apple_ref/occ/instp/CMMagnetometerData/magneticField">iOS Dev Center</a>
-     */
     @Generated
     @Selector("magneticField")
     @ByValue

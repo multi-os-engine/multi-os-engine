@@ -59,10 +59,6 @@ public class CIDetector extends NSObject {
     @Selector("alloc")
     public static native CIDetector alloc();
 
-    /**
-     * detectorOfType:context:options:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreImage/Reference/CIDetector_Ref/index.html#//apple_ref/occ/clm/CIDetector/detectorOfType:context:options:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("detectorOfType:context:options:")
     public static native CIDetector detectorOfTypeContextOptions(String type, CIContext context,
@@ -168,18 +164,10 @@ public class CIDetector extends NSObject {
     @NInt
     public static native long version_static();
 
-    /**
-     * featuresInImage:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreImage/Reference/CIDetector_Ref/index.html#//apple_ref/occ/instm/CIDetector/featuresInImage:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("featuresInImage:")
     public native NSArray<? extends CIFeature> featuresInImage(CIImage image);
 
-    /**
-     * featuresInImage:options:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreImage/Reference/CIDetector_Ref/index.html#//apple_ref/occ/instm/CIDetector/featuresInImage:options:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("featuresInImage:options:")
     public native NSArray<? extends CIFeature> featuresInImageOptions(CIImage image, NSDictionary<String, ?> options);

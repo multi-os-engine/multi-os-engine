@@ -164,27 +164,15 @@ public class NSMergePolicy extends NSObject {
     @Selector("init")
     public native NSMergePolicy init();
 
-    /**
-     * initWithMergeType:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreData/Reference/NSMergePolicy_Class/index.html#//apple_ref/occ/instm/NSMergePolicy/initWithMergeType:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithMergeType:")
     public native NSMergePolicy initWithMergeType(@NUInt long ty);
 
-    /**
-     * mergeType</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreData/Reference/NSMergePolicy_Class/index.html#//apple_ref/occ/instp/NSMergePolicy/mergeType">iOS Dev Center</a>
-     */
     @Generated
     @Selector("mergeType")
     @NUInt
     public native long mergeType();
 
-    /**
-     * resolveConflicts:error:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreData/Reference/NSMergePolicy_Class/index.html#//apple_ref/occ/instm/NSMergePolicy/resolveConflicts:error:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("resolveConflicts:error:")
     public native boolean resolveConflictsError(NSArray<?> list, Ptr<NSError> error);

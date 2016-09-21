@@ -62,18 +62,10 @@ public class GKVoiceChatService extends NSObject {
     @Selector("alloc")
     public static native GKVoiceChatService alloc();
 
-    /**
-     * defaultVoiceChatService</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKVoiceChatService_Class/index.html#//apple_ref/occ/clm/GKVoiceChatService/defaultVoiceChatService">iOS Dev Center</a>
-     */
     @Generated
     @Selector("defaultVoiceChatService")
     public static native GKVoiceChatService defaultVoiceChatService();
 
-    /**
-     * isVoIPAllowed</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKVoiceChatService_Class/index.html#//apple_ref/occ/clm/GKVoiceChatService/isVoIPAllowed">iOS Dev Center</a>
-     */
     @Generated
     @Selector("isVoIPAllowed")
     public static native boolean isVoIPAllowed();
@@ -178,27 +170,15 @@ public class GKVoiceChatService extends NSObject {
     @NInt
     public static native long version_static();
 
-    /**
-     * acceptCallID:error:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKVoiceChatService_Class/index.html#//apple_ref/occ/instm/GKVoiceChatService/acceptCallID:error:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("acceptCallID:error:")
     public native boolean acceptCallIDError(@NInt long callID, Ptr<NSError> error);
 
-    /**
-     * client</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKVoiceChatService_Class/index.html#//apple_ref/occ/instp/GKVoiceChatService/client">iOS Dev Center</a>
-     */
     @Generated
     @Selector("client")
     @MappedReturn(ObjCObjectMapper.class)
     public native GKVoiceChatClient client();
 
-    /**
-     * denyCallID:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKVoiceChatService_Class/index.html#//apple_ref/occ/instm/GKVoiceChatService/denyCallID:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("denyCallID:")
     public native void denyCallID(@NInt long callID);
@@ -207,106 +187,54 @@ public class GKVoiceChatService extends NSObject {
     @Selector("init")
     public native GKVoiceChatService init();
 
-    /**
-     * inputMeterLevel</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKVoiceChatService_Class/index.html#//apple_ref/occ/instp/GKVoiceChatService/inputMeterLevel">iOS Dev Center</a>
-     */
     @Generated
     @Selector("inputMeterLevel")
     public native float inputMeterLevel();
 
-    /**
-     * inputMeteringEnabled</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKVoiceChatService_Class/index.html#//apple_ref/occ/instp/GKVoiceChatService/inputMeteringEnabled">iOS Dev Center</a>
-     */
     @Generated
     @Selector("isInputMeteringEnabled")
     public native boolean isInputMeteringEnabled();
 
-    /**
-     * inputMeteringEnabled</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKVoiceChatService_Class/index.html#//apple_ref/occ/instp/GKVoiceChatService/inputMeteringEnabled">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setInputMeteringEnabled:")
     public native void setInputMeteringEnabled(boolean value);
 
-    /**
-     * microphoneMuted</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKVoiceChatService_Class/index.html#//apple_ref/occ/instp/GKVoiceChatService/microphoneMuted">iOS Dev Center</a>
-     */
     @Generated
     @Selector("isMicrophoneMuted")
     public native boolean isMicrophoneMuted();
 
-    /**
-     * microphoneMuted</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKVoiceChatService_Class/index.html#//apple_ref/occ/instp/GKVoiceChatService/microphoneMuted">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setMicrophoneMuted:")
     public native void setMicrophoneMuted(boolean value);
 
-    /**
-     * outputMeteringEnabled</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKVoiceChatService_Class/index.html#//apple_ref/occ/instp/GKVoiceChatService/outputMeteringEnabled">iOS Dev Center</a>
-     */
     @Generated
     @Selector("isOutputMeteringEnabled")
     public native boolean isOutputMeteringEnabled();
 
-    /**
-     * outputMeteringEnabled</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKVoiceChatService_Class/index.html#//apple_ref/occ/instp/GKVoiceChatService/outputMeteringEnabled">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setOutputMeteringEnabled:")
     public native void setOutputMeteringEnabled(boolean value);
 
-    /**
-     * outputMeterLevel</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKVoiceChatService_Class/index.html#//apple_ref/occ/instp/GKVoiceChatService/outputMeterLevel">iOS Dev Center</a>
-     */
     @Generated
     @Selector("outputMeterLevel")
     public native float outputMeterLevel();
 
-    /**
-     * receivedData:fromParticipantID:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKVoiceChatService_Class/index.html#//apple_ref/occ/instm/GKVoiceChatService/receivedData:fromParticipantID:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("receivedData:fromParticipantID:")
     public native void receivedDataFromParticipantID(NSData arbitraryData, String participantID);
 
-    /**
-     * receivedRealTimeData:fromParticipantID:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKVoiceChatService_Class/index.html#//apple_ref/occ/instm/GKVoiceChatService/receivedRealTimeData:fromParticipantID:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("receivedRealTimeData:fromParticipantID:")
     public native void receivedRealTimeDataFromParticipantID(NSData audio, String participantID);
 
-    /**
-     * remoteParticipantVolume</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKVoiceChatService_Class/index.html#//apple_ref/occ/instp/GKVoiceChatService/remoteParticipantVolume">iOS Dev Center</a>
-     */
     @Generated
     @Selector("remoteParticipantVolume")
     public native float remoteParticipantVolume();
 
-    /**
-     * client</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKVoiceChatService_Class/index.html#//apple_ref/occ/instp/GKVoiceChatService/client">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setClient:")
     public native void setClient_unsafe(@Mapped(ObjCObjectMapper.class) GKVoiceChatClient value);
 
-    /**
-     * client</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKVoiceChatService_Class/index.html#//apple_ref/occ/instp/GKVoiceChatService/client">iOS Dev Center</a>
-     */
     @Generated
     public void setClient(@Mapped(ObjCObjectMapper.class) GKVoiceChatClient value) {
         Object __old = client();
@@ -319,26 +247,14 @@ public class GKVoiceChatService extends NSObject {
         }
     }
 
-    /**
-     * remoteParticipantVolume</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKVoiceChatService_Class/index.html#//apple_ref/occ/instp/GKVoiceChatService/remoteParticipantVolume">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setRemoteParticipantVolume:")
     public native void setRemoteParticipantVolume(float value);
 
-    /**
-     * startVoiceChatWithParticipantID:error:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKVoiceChatService_Class/index.html#//apple_ref/occ/instm/GKVoiceChatService/startVoiceChatWithParticipantID:error:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("startVoiceChatWithParticipantID:error:")
     public native boolean startVoiceChatWithParticipantIDError(String participantID, Ptr<NSError> error);
 
-    /**
-     * stopVoiceChatWithParticipantID:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKVoiceChatService_Class/index.html#//apple_ref/occ/instm/GKVoiceChatService/stopVoiceChatWithParticipantID:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("stopVoiceChatWithParticipantID:")
     public native void stopVoiceChatWithParticipantID(String participantID);

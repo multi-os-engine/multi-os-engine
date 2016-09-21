@@ -31,18 +31,10 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("UIViewControllerAnimatedTransitioning")
 public interface UIViewControllerAnimatedTransitioning {
-    /**
-     * animateTransition:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIViewControllerAnimatedTransitioning_Protocol/index.html#//apple_ref/occ/intfm/UIViewControllerAnimatedTransitioning/animateTransition:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("animateTransition:")
     void animateTransition(@Mapped(ObjCObjectMapper.class) Object transitionContext);
 
-    /**
-     * animationEnded:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIViewControllerAnimatedTransitioning_Protocol/index.html#//apple_ref/occ/intfm/UIViewControllerAnimatedTransitioning/animationEnded:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("animationEnded:")
@@ -50,10 +42,6 @@ public interface UIViewControllerAnimatedTransitioning {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * transitionDuration:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIViewControllerAnimatedTransitioning_Protocol/index.html#//apple_ref/occ/intfm/UIViewControllerAnimatedTransitioning/transitionDuration:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("transitionDuration:")
     double transitionDuration(@Mapped(ObjCObjectMapper.class) Object transitionContext);

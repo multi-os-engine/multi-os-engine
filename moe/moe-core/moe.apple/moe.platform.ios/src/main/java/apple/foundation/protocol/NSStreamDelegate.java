@@ -31,10 +31,6 @@ import org.moe.natj.objc.ann.Selector;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("NSStreamDelegate")
 public interface NSStreamDelegate {
-    /**
-     * stream:handleEvent:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSStreamDelegate_Protocol/index.html#//apple_ref/occ/intfm/NSStreamDelegate/stream:handleEvent:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("stream:handleEvent:")

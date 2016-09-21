@@ -33,6 +33,7 @@ public final class CFURLComponentType {
     @Generated @NInt public static final long ParameterString = 0x000000000000000AL;
     @Generated @NInt public static final long Query = 0x000000000000000BL;
     @Generated @NInt public static final long Fragment = 0x000000000000000CL;
+
     @Generated
     private CFURLComponentType() {
     }

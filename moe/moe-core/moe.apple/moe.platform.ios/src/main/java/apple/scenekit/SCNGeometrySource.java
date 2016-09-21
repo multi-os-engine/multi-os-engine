@@ -66,38 +66,22 @@ public class SCNGeometrySource extends NSObject implements NSSecureCoding {
     @Selector("alloc")
     public static native SCNGeometrySource alloc();
 
-    /**
-     * geometrySourceWithData:semantic:vectorCount:floatComponents:componentsPerVector:bytesPerComponent:dataOffset:dataStride:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNGeometrySource_Class/index.html#//apple_ref/occ/clm/SCNGeometrySource/geometrySourceWithData:semantic:vectorCount:floatComponents:componentsPerVector:bytesPerComponent:dataOffset:dataStride:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("geometrySourceWithData:semantic:vectorCount:floatComponents:componentsPerVector:bytesPerComponent:dataOffset:dataStride:")
     public static native SCNGeometrySource geometrySourceWithDataSemanticVectorCountFloatComponentsComponentsPerVectorBytesPerComponentDataOffsetDataStride(
             NSData data, String semantic, @NInt long vectorCount, boolean floatComponents,
             @NInt long componentsPerVector, @NInt long bytesPerComponent, @NInt long offset, @NInt long stride);
 
-    /**
-     * geometrySourceWithNormals:count:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNGeometrySource_Class/index.html#//apple_ref/occ/clm/SCNGeometrySource/geometrySourceWithNormals:count:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("geometrySourceWithNormals:count:")
     public static native SCNGeometrySource geometrySourceWithNormalsCount(ConstPtr<SCNVector3> normals,
             @NInt long count);
 
-    /**
-     * geometrySourceWithTextureCoordinates:count:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNGeometrySource_Class/index.html#//apple_ref/occ/clm/SCNGeometrySource/geometrySourceWithTextureCoordinates:count:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("geometrySourceWithTextureCoordinates:count:")
     public static native SCNGeometrySource geometrySourceWithTextureCoordinatesCount(ConstPtr<CGPoint> texcoord,
             @NInt long count);
 
-    /**
-     * geometrySourceWithVertices:count:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNGeometrySource_Class/index.html#//apple_ref/occ/clm/SCNGeometrySource/geometrySourceWithVertices:count:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("geometrySourceWithVertices:count:")
     public static native SCNGeometrySource geometrySourceWithVerticesCount(ConstPtr<SCNVector3> vertices,
@@ -107,10 +91,6 @@ public class SCNGeometrySource extends NSObject implements NSSecureCoding {
     @Selector("supportsSecureCoding")
     public static native boolean supportsSecureCoding();
 
-    /**
-     * geometrySourceWithBuffer:vertexFormat:semantic:vertexCount:dataOffset:dataStride:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNGeometrySource_Class/index.html#//apple_ref/occ/clm/SCNGeometrySource/geometrySourceWithBuffer:vertexFormat:semantic:vertexCount:dataOffset:dataStride:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("geometrySourceWithBuffer:vertexFormat:semantic:vertexCount:dataOffset:dataStride:")
     public static native SCNGeometrySource geometrySourceWithBufferVertexFormatSemanticVertexCountDataOffsetDataStride(
@@ -217,45 +197,25 @@ public class SCNGeometrySource extends NSObject implements NSSecureCoding {
     @NInt
     public static native long version_static();
 
-    /**
-     * bytesPerComponent</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNGeometrySource_Class/index.html#//apple_ref/occ/instp/SCNGeometrySource/bytesPerComponent">iOS Dev Center</a>
-     */
     @Generated
     @Selector("bytesPerComponent")
     @NInt
     public native long bytesPerComponent();
 
-    /**
-     * componentsPerVector</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNGeometrySource_Class/index.html#//apple_ref/occ/instp/SCNGeometrySource/componentsPerVector">iOS Dev Center</a>
-     */
     @Generated
     @Selector("componentsPerVector")
     @NInt
     public native long componentsPerVector();
 
-    /**
-     * data</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNGeometrySource_Class/index.html#//apple_ref/occ/instp/SCNGeometrySource/data">iOS Dev Center</a>
-     */
     @Generated
     @Selector("data")
     public native NSData data();
 
-    /**
-     * dataOffset</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNGeometrySource_Class/index.html#//apple_ref/occ/instp/SCNGeometrySource/dataOffset">iOS Dev Center</a>
-     */
     @Generated
     @Selector("dataOffset")
     @NInt
     public native long dataOffset();
 
-    /**
-     * dataStride</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNGeometrySource_Class/index.html#//apple_ref/occ/instp/SCNGeometrySource/dataStride">iOS Dev Center</a>
-     */
     @Generated
     @Selector("dataStride")
     @NInt
@@ -265,10 +225,6 @@ public class SCNGeometrySource extends NSObject implements NSSecureCoding {
     @Selector("encodeWithCoder:")
     public native void encodeWithCoder(NSCoder aCoder);
 
-    /**
-     * floatComponents</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNGeometrySource_Class/index.html#//apple_ref/occ/instp/SCNGeometrySource/floatComponents">iOS Dev Center</a>
-     */
     @Generated
     @Selector("floatComponents")
     public native boolean floatComponents();
@@ -281,10 +237,6 @@ public class SCNGeometrySource extends NSObject implements NSSecureCoding {
     @Selector("initWithCoder:")
     public native SCNGeometrySource initWithCoder(NSCoder aDecoder);
 
-    /**
-     * semantic</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNGeometrySource_Class/index.html#//apple_ref/occ/instp/SCNGeometrySource/semantic">iOS Dev Center</a>
-     */
     @Generated
     @Selector("semantic")
     public native String semantic();
@@ -295,10 +247,6 @@ public class SCNGeometrySource extends NSObject implements NSSecureCoding {
         return supportsSecureCoding();
     }
 
-    /**
-     * vectorCount</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNGeometrySource_Class/index.html#//apple_ref/occ/instp/SCNGeometrySource/vectorCount">iOS Dev Center</a>
-     */
     @Generated
     @Selector("vectorCount")
     @NInt

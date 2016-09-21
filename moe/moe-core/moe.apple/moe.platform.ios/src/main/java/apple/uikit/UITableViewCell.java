@@ -351,94 +351,50 @@ public class UITableViewCell extends UIView implements NSCoding, UIGestureRecogn
     @NInt
     public static native long version_static();
 
-    /**
-     * accessoryAction</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITableViewCell_Class/index.html#//apple_ref/occ/instp/UITableViewCell/accessoryAction">iOS Dev Center</a>
-     */
     @Generated
     @Deprecated
     @Selector("accessoryAction")
     public native SEL accessoryAction();
 
-    /**
-     * accessoryType</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITableViewCell_Class/index.html#//apple_ref/occ/instp/UITableViewCell/accessoryType">iOS Dev Center</a>
-     */
     @Generated
     @Selector("accessoryType")
     @NInt
     public native long accessoryType();
 
-    /**
-     * accessoryView</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITableViewCell_Class/index.html#//apple_ref/occ/instp/UITableViewCell/accessoryView">iOS Dev Center</a>
-     */
     @Generated
     @Selector("accessoryView")
     public native UIView accessoryView();
 
-    /**
-     * backgroundView</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITableViewCell_Class/index.html#//apple_ref/occ/instp/UITableViewCell/backgroundView">iOS Dev Center</a>
-     */
     @Generated
     @Selector("backgroundView")
     public native UIView backgroundView();
 
-    /**
-     * contentView</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITableViewCell_Class/index.html#//apple_ref/occ/instp/UITableViewCell/contentView">iOS Dev Center</a>
-     */
     @Generated
     @Selector("contentView")
     public native UIView contentView();
 
-    /**
-     * detailTextLabel</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITableViewCell_Class/index.html#//apple_ref/occ/instp/UITableViewCell/detailTextLabel">iOS Dev Center</a>
-     */
     @Generated
     @Selector("detailTextLabel")
     public native UILabel detailTextLabel();
 
-    /**
-     * didTransitionToState:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITableViewCell_Class/index.html#//apple_ref/occ/instm/UITableViewCell/didTransitionToState:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("didTransitionToState:")
     public native void didTransitionToState(@NUInt long state);
 
-    /**
-     * editAction</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITableViewCell_Class/index.html#//apple_ref/occ/instp/UITableViewCell/editAction">iOS Dev Center</a>
-     */
     @Generated
     @Deprecated
     @Selector("editAction")
     public native SEL editAction();
 
-    /**
-     * editingAccessoryType</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITableViewCell_Class/index.html#//apple_ref/occ/instp/UITableViewCell/editingAccessoryType">iOS Dev Center</a>
-     */
     @Generated
     @Selector("editingAccessoryType")
     @NInt
     public native long editingAccessoryType();
 
-    /**
-     * editingAccessoryView</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITableViewCell_Class/index.html#//apple_ref/occ/instp/UITableViewCell/editingAccessoryView">iOS Dev Center</a>
-     */
     @Generated
     @Selector("editingAccessoryView")
     public native UIView editingAccessoryView();
 
-    /**
-     * editingStyle</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITableViewCell_Class/index.html#//apple_ref/occ/instp/UITableViewCell/editingStyle">iOS Dev Center</a>
-     */
     @Generated
     @Selector("editingStyle")
     @NInt
@@ -448,10 +404,6 @@ public class UITableViewCell extends UIView implements NSCoding, UIGestureRecogn
     @Selector("encodeWithCoder:")
     public native void encodeWithCoder(NSCoder aCoder);
 
-    /**
-     * font</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITableViewCell_Class/index.html#//apple_ref/occ/instp/UITableViewCell/font">iOS Dev Center</a>
-     */
     @Generated
     @Deprecated
     @Selector("font")
@@ -485,45 +437,25 @@ public class UITableViewCell extends UIView implements NSCoding, UIGestureRecogn
     @Selector("gestureRecognizerShouldBegin:")
     public native boolean gestureRecognizerShouldBegin(UIGestureRecognizer gestureRecognizer);
 
-    /**
-     * hidesAccessoryWhenEditing</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITableViewCell_Class/index.html#//apple_ref/occ/instp/UITableViewCell/hidesAccessoryWhenEditing">iOS Dev Center</a>
-     */
     @Generated
     @Deprecated
     @Selector("hidesAccessoryWhenEditing")
     public native boolean hidesAccessoryWhenEditing();
 
-    /**
-     * image</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITableViewCell_Class/index.html#//apple_ref/occ/instp/UITableViewCell/image">iOS Dev Center</a>
-     */
     @Generated
     @Deprecated
     @Selector("image")
     public native UIImage image();
 
-    /**
-     * imageView</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITableViewCell_Class/index.html#//apple_ref/occ/instp/UITableViewCell/imageView">iOS Dev Center</a>
-     */
     @Generated
     @Selector("imageView")
     public native UIImageView imageView();
 
-    /**
-     * indentationLevel</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITableViewCell_Class/index.html#//apple_ref/occ/instp/UITableViewCell/indentationLevel">iOS Dev Center</a>
-     */
     @Generated
     @Selector("indentationLevel")
     @NInt
     public native long indentationLevel();
 
-    /**
-     * indentationWidth</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITableViewCell_Class/index.html#//apple_ref/occ/instp/UITableViewCell/indentationWidth">iOS Dev Center</a>
-     */
     @Generated
     @Selector("indentationWidth")
     @NFloat
@@ -541,362 +473,190 @@ public class UITableViewCell extends UIView implements NSCoding, UIGestureRecogn
     @Selector("initWithFrame:")
     public native UITableViewCell initWithFrame(@ByValue CGRect frame);
 
-    /**
-     * initWithFrame:reuseIdentifier:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITableViewCell_Class/index.html#//apple_ref/occ/instm/UITableViewCell/initWithFrame:reuseIdentifier:">iOS Dev Center</a>
-     */
     @Generated
     @Deprecated
     @Selector("initWithFrame:reuseIdentifier:")
     public native UITableViewCell initWithFrameReuseIdentifier(@ByValue CGRect frame, String reuseIdentifier);
 
-    /**
-     * initWithStyle:reuseIdentifier:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITableViewCell_Class/index.html#//apple_ref/occ/instm/UITableViewCell/initWithStyle:reuseIdentifier:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithStyle:reuseIdentifier:")
     public native UITableViewCell initWithStyleReuseIdentifier(@NInt long style, String reuseIdentifier);
 
-    /**
-     * editing</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITableViewCell_Class/index.html#//apple_ref/occ/instp/UITableViewCell/editing">iOS Dev Center</a>
-     */
     @Generated
     @Selector("isEditing")
     public native boolean isEditing();
 
-    /**
-     * editing</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITableViewCell_Class/index.html#//apple_ref/occ/instp/UITableViewCell/editing">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setEditing:")
     public native void setEditing(boolean value);
 
-    /**
-     * highlighted</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITableViewCell_Class/index.html#//apple_ref/occ/instp/UITableViewCell/highlighted">iOS Dev Center</a>
-     */
     @Generated
     @Selector("isHighlighted")
     public native boolean isHighlighted();
 
-    /**
-     * highlighted</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITableViewCell_Class/index.html#//apple_ref/occ/instp/UITableViewCell/highlighted">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setHighlighted:")
     public native void setHighlighted(boolean value);
 
-    /**
-     * selected</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITableViewCell_Class/index.html#//apple_ref/occ/instp/UITableViewCell/selected">iOS Dev Center</a>
-     */
     @Generated
     @Selector("isSelected")
     public native boolean isSelected();
 
-    /**
-     * selected</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITableViewCell_Class/index.html#//apple_ref/occ/instp/UITableViewCell/selected">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setSelected:")
     public native void setSelected(boolean value);
 
-    /**
-     * lineBreakMode</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITableViewCell_Class/index.html#//apple_ref/occ/instp/UITableViewCell/lineBreakMode">iOS Dev Center</a>
-     */
     @Generated
     @Deprecated
     @Selector("lineBreakMode")
     @NInt
     public native long lineBreakMode();
 
-    /**
-     * multipleSelectionBackgroundView</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITableViewCell_Class/index.html#//apple_ref/occ/instp/UITableViewCell/multipleSelectionBackgroundView">iOS Dev Center</a>
-     */
     @Generated
     @Selector("multipleSelectionBackgroundView")
     public native UIView multipleSelectionBackgroundView();
 
-    /**
-     * prepareForReuse</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITableViewCell_Class/index.html#//apple_ref/occ/instm/UITableViewCell/prepareForReuse">iOS Dev Center</a>
-     */
     @Generated
     @Selector("prepareForReuse")
     public native void prepareForReuse();
 
-    /**
-     * reuseIdentifier</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITableViewCell_Class/index.html#//apple_ref/occ/instp/UITableViewCell/reuseIdentifier">iOS Dev Center</a>
-     */
     @Generated
     @Selector("reuseIdentifier")
     public native String reuseIdentifier();
 
-    /**
-     * selectedBackgroundView</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITableViewCell_Class/index.html#//apple_ref/occ/instp/UITableViewCell/selectedBackgroundView">iOS Dev Center</a>
-     */
     @Generated
     @Selector("selectedBackgroundView")
     public native UIView selectedBackgroundView();
 
-    /**
-     * selectedImage</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITableViewCell_Class/index.html#//apple_ref/occ/instp/UITableViewCell/selectedImage">iOS Dev Center</a>
-     */
     @Generated
     @Deprecated
     @Selector("selectedImage")
     public native UIImage selectedImage();
 
-    /**
-     * selectedTextColor</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITableViewCell_Class/index.html#//apple_ref/occ/instp/UITableViewCell/selectedTextColor">iOS Dev Center</a>
-     */
     @Generated
     @Deprecated
     @Selector("selectedTextColor")
     public native UIColor selectedTextColor();
 
-    /**
-     * selectionStyle</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITableViewCell_Class/index.html#//apple_ref/occ/instp/UITableViewCell/selectionStyle">iOS Dev Center</a>
-     */
     @Generated
     @Selector("selectionStyle")
     @NInt
     public native long selectionStyle();
 
-    /**
-     * separatorInset</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITableViewCell_Class/index.html#//apple_ref/occ/instp/UITableViewCell/separatorInset">iOS Dev Center</a>
-     */
     @Generated
     @Selector("separatorInset")
     @ByValue
     public native UIEdgeInsets separatorInset();
 
-    /**
-     * accessoryAction</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITableViewCell_Class/index.html#//apple_ref/occ/instp/UITableViewCell/accessoryAction">iOS Dev Center</a>
-     */
     @Generated
     @Deprecated
     @Selector("setAccessoryAction:")
     public native void setAccessoryAction(SEL value);
 
-    /**
-     * accessoryType</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITableViewCell_Class/index.html#//apple_ref/occ/instp/UITableViewCell/accessoryType">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setAccessoryType:")
     public native void setAccessoryType(@NInt long value);
 
-    /**
-     * accessoryView</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITableViewCell_Class/index.html#//apple_ref/occ/instp/UITableViewCell/accessoryView">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setAccessoryView:")
     public native void setAccessoryView(UIView value);
 
-    /**
-     * backgroundView</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITableViewCell_Class/index.html#//apple_ref/occ/instp/UITableViewCell/backgroundView">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setBackgroundView:")
     public native void setBackgroundView(UIView value);
 
-    /**
-     * editAction</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITableViewCell_Class/index.html#//apple_ref/occ/instp/UITableViewCell/editAction">iOS Dev Center</a>
-     */
     @Generated
     @Deprecated
     @Selector("setEditAction:")
     public native void setEditAction(SEL value);
 
-    /**
-     * setEditing:animated:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITableViewCell_Class/index.html#//apple_ref/occ/instm/UITableViewCell/setEditing:animated:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setEditing:animated:")
     public native void setEditingAnimated(boolean editing, boolean animated);
 
-    /**
-     * editingAccessoryType</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITableViewCell_Class/index.html#//apple_ref/occ/instp/UITableViewCell/editingAccessoryType">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setEditingAccessoryType:")
     public native void setEditingAccessoryType(@NInt long value);
 
-    /**
-     * editingAccessoryView</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITableViewCell_Class/index.html#//apple_ref/occ/instp/UITableViewCell/editingAccessoryView">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setEditingAccessoryView:")
     public native void setEditingAccessoryView(UIView value);
 
-    /**
-     * font</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITableViewCell_Class/index.html#//apple_ref/occ/instp/UITableViewCell/font">iOS Dev Center</a>
-     */
     @Generated
     @Deprecated
     @Selector("setFont:")
     public native void setFont(UIFont value);
 
-    /**
-     * hidesAccessoryWhenEditing</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITableViewCell_Class/index.html#//apple_ref/occ/instp/UITableViewCell/hidesAccessoryWhenEditing">iOS Dev Center</a>
-     */
     @Generated
     @Deprecated
     @Selector("setHidesAccessoryWhenEditing:")
     public native void setHidesAccessoryWhenEditing(boolean value);
 
-    /**
-     * setHighlighted:animated:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITableViewCell_Class/index.html#//apple_ref/occ/instm/UITableViewCell/setHighlighted:animated:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setHighlighted:animated:")
     public native void setHighlightedAnimated(boolean highlighted, boolean animated);
 
-    /**
-     * image</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITableViewCell_Class/index.html#//apple_ref/occ/instp/UITableViewCell/image">iOS Dev Center</a>
-     */
     @Generated
     @Deprecated
     @Selector("setImage:")
     public native void setImage(UIImage value);
 
-    /**
-     * indentationLevel</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITableViewCell_Class/index.html#//apple_ref/occ/instp/UITableViewCell/indentationLevel">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setIndentationLevel:")
     public native void setIndentationLevel(@NInt long value);
 
-    /**
-     * indentationWidth</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITableViewCell_Class/index.html#//apple_ref/occ/instp/UITableViewCell/indentationWidth">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setIndentationWidth:")
     public native void setIndentationWidth(@NFloat double value);
 
-    /**
-     * lineBreakMode</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITableViewCell_Class/index.html#//apple_ref/occ/instp/UITableViewCell/lineBreakMode">iOS Dev Center</a>
-     */
     @Generated
     @Deprecated
     @Selector("setLineBreakMode:")
     public native void setLineBreakMode(@NInt long value);
 
-    /**
-     * multipleSelectionBackgroundView</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITableViewCell_Class/index.html#//apple_ref/occ/instp/UITableViewCell/multipleSelectionBackgroundView">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setMultipleSelectionBackgroundView:")
     public native void setMultipleSelectionBackgroundView(UIView value);
 
-    /**
-     * setSelected:animated:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITableViewCell_Class/index.html#//apple_ref/occ/instm/UITableViewCell/setSelected:animated:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setSelected:animated:")
     public native void setSelectedAnimated(boolean selected, boolean animated);
 
-    /**
-     * selectedBackgroundView</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITableViewCell_Class/index.html#//apple_ref/occ/instp/UITableViewCell/selectedBackgroundView">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setSelectedBackgroundView:")
     public native void setSelectedBackgroundView(UIView value);
 
-    /**
-     * selectedImage</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITableViewCell_Class/index.html#//apple_ref/occ/instp/UITableViewCell/selectedImage">iOS Dev Center</a>
-     */
     @Generated
     @Deprecated
     @Selector("setSelectedImage:")
     public native void setSelectedImage(UIImage value);
 
-    /**
-     * selectedTextColor</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITableViewCell_Class/index.html#//apple_ref/occ/instp/UITableViewCell/selectedTextColor">iOS Dev Center</a>
-     */
     @Generated
     @Deprecated
     @Selector("setSelectedTextColor:")
     public native void setSelectedTextColor(UIColor value);
 
-    /**
-     * selectionStyle</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITableViewCell_Class/index.html#//apple_ref/occ/instp/UITableViewCell/selectionStyle">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setSelectionStyle:")
     public native void setSelectionStyle(@NInt long value);
 
-    /**
-     * separatorInset</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITableViewCell_Class/index.html#//apple_ref/occ/instp/UITableViewCell/separatorInset">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setSeparatorInset:")
     public native void setSeparatorInset(@ByValue UIEdgeInsets value);
 
-    /**
-     * shouldIndentWhileEditing</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITableViewCell_Class/index.html#//apple_ref/occ/instp/UITableViewCell/shouldIndentWhileEditing">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setShouldIndentWhileEditing:")
     public native void setShouldIndentWhileEditing(boolean value);
 
-    /**
-     * showsReorderControl</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITableViewCell_Class/index.html#//apple_ref/occ/instp/UITableViewCell/showsReorderControl">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setShowsReorderControl:")
     public native void setShowsReorderControl(boolean value);
 
-    /**
-     * target</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITableViewCell_Class/index.html#//apple_ref/occ/instp/UITableViewCell/target">iOS Dev Center</a>
-     */
     @Generated
     @Deprecated
     @Selector("setTarget:")
     public native void setTarget_unsafe(@Mapped(ObjCObjectMapper.class) Object value);
 
-    /**
-     * target</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITableViewCell_Class/index.html#//apple_ref/occ/instp/UITableViewCell/target">iOS Dev Center</a>
-     */
     @Generated
     @Deprecated
     public void setTarget(@Mapped(ObjCObjectMapper.class) Object value) {
@@ -910,115 +670,63 @@ public class UITableViewCell extends UIView implements NSCoding, UIGestureRecogn
         }
     }
 
-    /**
-     * text</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITableViewCell_Class/index.html#//apple_ref/occ/instp/UITableViewCell/text">iOS Dev Center</a>
-     */
     @Generated
     @Deprecated
     @Selector("setText:")
     public native void setText(String value);
 
-    /**
-     * textAlignment</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITableViewCell_Class/index.html#//apple_ref/occ/instp/UITableViewCell/textAlignment">iOS Dev Center</a>
-     */
     @Generated
     @Deprecated
     @Selector("setTextAlignment:")
     public native void setTextAlignment(@NInt long value);
 
-    /**
-     * textColor</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITableViewCell_Class/index.html#//apple_ref/occ/instp/UITableViewCell/textColor">iOS Dev Center</a>
-     */
     @Generated
     @Deprecated
     @Selector("setTextColor:")
     public native void setTextColor(UIColor value);
 
-    /**
-     * shouldIndentWhileEditing</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITableViewCell_Class/index.html#//apple_ref/occ/instp/UITableViewCell/shouldIndentWhileEditing">iOS Dev Center</a>
-     */
     @Generated
     @Selector("shouldIndentWhileEditing")
     public native boolean shouldIndentWhileEditing();
 
-    /**
-     * showingDeleteConfirmation</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITableViewCell_Class/index.html#//apple_ref/occ/instp/UITableViewCell/showingDeleteConfirmation">iOS Dev Center</a>
-     */
     @Generated
     @Selector("showingDeleteConfirmation")
     public native boolean showingDeleteConfirmation();
 
-    /**
-     * showsReorderControl</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITableViewCell_Class/index.html#//apple_ref/occ/instp/UITableViewCell/showsReorderControl">iOS Dev Center</a>
-     */
     @Generated
     @Selector("showsReorderControl")
     public native boolean showsReorderControl();
 
-    /**
-     * target</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITableViewCell_Class/index.html#//apple_ref/occ/instp/UITableViewCell/target">iOS Dev Center</a>
-     */
     @Generated
     @Deprecated
     @Selector("target")
     @MappedReturn(ObjCObjectMapper.class)
     public native Object target();
 
-    /**
-     * text</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITableViewCell_Class/index.html#//apple_ref/occ/instp/UITableViewCell/text">iOS Dev Center</a>
-     */
     @Generated
     @Deprecated
     @Selector("text")
     public native String text();
 
-    /**
-     * textAlignment</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITableViewCell_Class/index.html#//apple_ref/occ/instp/UITableViewCell/textAlignment">iOS Dev Center</a>
-     */
     @Generated
     @Deprecated
     @Selector("textAlignment")
     @NInt
     public native long textAlignment();
 
-    /**
-     * textColor</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITableViewCell_Class/index.html#//apple_ref/occ/instp/UITableViewCell/textColor">iOS Dev Center</a>
-     */
     @Generated
     @Deprecated
     @Selector("textColor")
     public native UIColor textColor();
 
-    /**
-     * textLabel</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITableViewCell_Class/index.html#//apple_ref/occ/instp/UITableViewCell/textLabel">iOS Dev Center</a>
-     */
     @Generated
     @Selector("textLabel")
     public native UILabel textLabel();
 
-    /**
-     * willTransitionToState:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITableViewCell_Class/index.html#//apple_ref/occ/instm/UITableViewCell/willTransitionToState:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("willTransitionToState:")
     public native void willTransitionToState(@NUInt long state);
 
-    /**
-     * focusStyle</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITableViewCell_Class/index.html#//apple_ref/occ/instp/UITableViewCell/focusStyle">iOS Dev Center</a>
-     */
     @Generated
     @Selector("focusStyle")
     @NInt
@@ -1029,10 +737,6 @@ public class UITableViewCell extends UIView implements NSCoding, UIGestureRecogn
     @Selector("gestureRecognizer:shouldReceivePress:")
     public native boolean gestureRecognizerShouldReceivePress(UIGestureRecognizer gestureRecognizer, UIPress press);
 
-    /**
-     * focusStyle</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITableViewCell_Class/index.html#//apple_ref/occ/instp/UITableViewCell/focusStyle">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setFocusStyle:")
     public native void setFocusStyle(@NInt long value);

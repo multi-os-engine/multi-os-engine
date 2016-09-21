@@ -60,10 +60,6 @@ public class AVCaptureManualExposureBracketedStillImageSettings extends AVCaptur
     @Selector("alloc")
     public static native AVCaptureManualExposureBracketedStillImageSettings alloc();
 
-    /**
-     * manualExposureSettingsWithExposureDuration:ISO:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVCaptureManualExposureBracketedStillImageSettings_Class/index.html#//apple_ref/occ/clm/AVCaptureManualExposureBracketedStillImageSettings/manualExposureSettingsWithExposureDuration:ISO:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("manualExposureSettingsWithExposureDuration:ISO:")
     @MappedReturn(ObjCObjectMapper.class)
@@ -169,18 +165,10 @@ public class AVCaptureManualExposureBracketedStillImageSettings extends AVCaptur
     @NInt
     public static native long version_static();
 
-    /**
-     * ISO</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVCaptureManualExposureBracketedStillImageSettings_Class/index.html#//apple_ref/occ/instp/AVCaptureManualExposureBracketedStillImageSettings/ISO">iOS Dev Center</a>
-     */
     @Generated
     @Selector("ISO")
     public native float ISO();
 
-    /**
-     * exposureDuration</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVCaptureManualExposureBracketedStillImageSettings_Class/index.html#//apple_ref/occ/instp/AVCaptureManualExposureBracketedStillImageSettings/exposureDuration">iOS Dev Center</a>
-     */
     @Generated
     @Selector("exposureDuration")
     @ByValue

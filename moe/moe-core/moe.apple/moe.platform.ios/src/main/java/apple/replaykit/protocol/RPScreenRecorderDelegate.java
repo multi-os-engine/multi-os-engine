@@ -32,10 +32,6 @@ import org.moe.natj.objc.ann.Selector;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("RPScreenRecorderDelegate")
 public interface RPScreenRecorderDelegate {
-    /**
-     * screenRecorder:didStopRecordingWithError:previewViewController:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ReplayKit/Reference/RPScreenRecorderDelegate_Ref/index.html#//apple_ref/occ/intfm/RPScreenRecorderDelegate/screenRecorder:didStopRecordingWithError:previewViewController:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("screenRecorder:didStopRecordingWithError:previewViewController:")
@@ -44,10 +40,6 @@ public interface RPScreenRecorderDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * screenRecorderDidChangeAvailability:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ReplayKit/Reference/RPScreenRecorderDelegate_Ref/index.html#//apple_ref/occ/intfm/RPScreenRecorderDelegate/screenRecorderDidChangeAvailability:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("screenRecorderDidChangeAvailability:")

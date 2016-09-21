@@ -38,10 +38,6 @@ import org.moe.natj.objc.ann.Selector;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("NSURLSessionDataDelegate")
 public interface NSURLSessionDataDelegate extends NSURLSessionTaskDelegate {
-    /**
-     * URLSession:dataTask:didBecomeDownloadTask:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSURLSessionDataDelegate_protocol/index.html#//apple_ref/occ/intfm/NSURLSessionDataDelegate/URLSession:dataTask:didBecomeDownloadTask:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("URLSession:dataTask:didBecomeDownloadTask:")
@@ -50,10 +46,6 @@ public interface NSURLSessionDataDelegate extends NSURLSessionTaskDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * URLSession:dataTask:didReceiveData:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSURLSessionDataDelegate_protocol/index.html#//apple_ref/occ/intfm/NSURLSessionDataDelegate/URLSession:dataTask:didReceiveData:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("URLSession:dataTask:didReceiveData:")
@@ -61,10 +53,6 @@ public interface NSURLSessionDataDelegate extends NSURLSessionTaskDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * URLSession:dataTask:didReceiveResponse:completionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSURLSessionDataDelegate_protocol/index.html#//apple_ref/occ/intfm/NSURLSessionDataDelegate/URLSession:dataTask:didReceiveResponse:completionHandler:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("URLSession:dataTask:didReceiveResponse:completionHandler:")
@@ -74,10 +62,6 @@ public interface NSURLSessionDataDelegate extends NSURLSessionTaskDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * URLSession:dataTask:willCacheResponse:completionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSURLSessionDataDelegate_protocol/index.html#//apple_ref/occ/intfm/NSURLSessionDataDelegate/URLSession:dataTask:willCacheResponse:completionHandler:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("URLSession:dataTask:willCacheResponse:completionHandler:")
@@ -87,10 +71,6 @@ public interface NSURLSessionDataDelegate extends NSURLSessionTaskDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * URLSession:dataTask:didBecomeStreamTask:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSURLSessionDataDelegate_protocol/index.html#//apple_ref/occ/intfm/NSURLSessionDataDelegate/URLSession:dataTask:didBecomeStreamTask:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("URLSession:dataTask:didBecomeStreamTask:")

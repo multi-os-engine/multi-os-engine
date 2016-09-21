@@ -176,28 +176,16 @@ public class UIPageViewController extends UIViewController {
     @NInt
     public static native long version_static();
 
-    /**
-     * dataSource</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPageViewControllerClassReferenceClassRef/index.html#//apple_ref/occ/instp/UIPageViewController/dataSource">iOS Dev Center</a>
-     */
     @Generated
     @Selector("dataSource")
     @MappedReturn(ObjCObjectMapper.class)
     public native UIPageViewControllerDataSource dataSource();
 
-    /**
-     * delegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPageViewControllerClassReferenceClassRef/index.html#//apple_ref/occ/instp/UIPageViewController/delegate">iOS Dev Center</a>
-     */
     @Generated
     @Selector("delegate")
     @MappedReturn(ObjCObjectMapper.class)
     public native UIPageViewControllerDelegate delegate();
 
-    /**
-     * gestureRecognizers</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPageViewControllerClassReferenceClassRef/index.html#//apple_ref/occ/instp/UIPageViewController/gestureRecognizers">iOS Dev Center</a>
-     */
     @Generated
     @Selector("gestureRecognizers")
     public native NSArray<? extends UIGestureRecognizer> gestureRecognizers();
@@ -210,52 +198,28 @@ public class UIPageViewController extends UIViewController {
     @Selector("initWithNibName:bundle:")
     public native UIPageViewController initWithNibNameBundle(String nibNameOrNil, NSBundle nibBundleOrNil);
 
-    /**
-     * initWithTransitionStyle:navigationOrientation:options:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPageViewControllerClassReferenceClassRef/index.html#//apple_ref/occ/instm/UIPageViewController/initWithTransitionStyle:navigationOrientation:options:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithTransitionStyle:navigationOrientation:options:")
     public native UIPageViewController initWithTransitionStyleNavigationOrientationOptions(@NInt long style,
             @NInt long navigationOrientation, NSDictionary<String, ?> options);
 
-    /**
-     * doubleSided</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPageViewControllerClassReferenceClassRef/index.html#//apple_ref/occ/instp/UIPageViewController/doubleSided">iOS Dev Center</a>
-     */
     @Generated
     @Selector("isDoubleSided")
     public native boolean isDoubleSided();
 
-    /**
-     * doubleSided</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPageViewControllerClassReferenceClassRef/index.html#//apple_ref/occ/instp/UIPageViewController/doubleSided">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setDoubleSided:")
     public native void setDoubleSided(boolean value);
 
-    /**
-     * navigationOrientation</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPageViewControllerClassReferenceClassRef/index.html#//apple_ref/occ/instp/UIPageViewController/navigationOrientation">iOS Dev Center</a>
-     */
     @Generated
     @Selector("navigationOrientation")
     @NInt
     public native long navigationOrientation();
 
-    /**
-     * dataSource</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPageViewControllerClassReferenceClassRef/index.html#//apple_ref/occ/instp/UIPageViewController/dataSource">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setDataSource:")
     public native void setDataSource_unsafe(@Mapped(ObjCObjectMapper.class) UIPageViewControllerDataSource value);
 
-    /**
-     * dataSource</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPageViewControllerClassReferenceClassRef/index.html#//apple_ref/occ/instp/UIPageViewController/dataSource">iOS Dev Center</a>
-     */
     @Generated
     public void setDataSource(@Mapped(ObjCObjectMapper.class) UIPageViewControllerDataSource value) {
         Object __old = dataSource();
@@ -268,18 +232,10 @@ public class UIPageViewController extends UIViewController {
         }
     }
 
-    /**
-     * delegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPageViewControllerClassReferenceClassRef/index.html#//apple_ref/occ/instp/UIPageViewController/delegate">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setDelegate:")
     public native void setDelegate_unsafe(@Mapped(ObjCObjectMapper.class) UIPageViewControllerDelegate value);
 
-    /**
-     * delegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPageViewControllerClassReferenceClassRef/index.html#//apple_ref/occ/instp/UIPageViewController/delegate">iOS Dev Center</a>
-     */
     @Generated
     public void setDelegate(@Mapped(ObjCObjectMapper.class) UIPageViewControllerDelegate value) {
         Object __old = delegate();
@@ -292,38 +248,22 @@ public class UIPageViewController extends UIViewController {
         }
     }
 
-    /**
-     * setViewControllers:direction:animated:completion:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPageViewControllerClassReferenceClassRef/index.html#//apple_ref/occ/instm/UIPageViewController/setViewControllers:direction:animated:completion:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setViewControllers:direction:animated:completion:")
     public native void setViewControllersDirectionAnimatedCompletion(
             NSArray<? extends UIViewController> viewControllers, @NInt long direction, boolean animated,
             @ObjCBlock(name = "call_setViewControllersDirectionAnimatedCompletion") Block_setViewControllersDirectionAnimatedCompletion completion);
 
-    /**
-     * spineLocation</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPageViewControllerClassReferenceClassRef/index.html#//apple_ref/occ/instp/UIPageViewController/spineLocation">iOS Dev Center</a>
-     */
     @Generated
     @Selector("spineLocation")
     @NInt
     public native long spineLocation();
 
-    /**
-     * transitionStyle</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPageViewControllerClassReferenceClassRef/index.html#//apple_ref/occ/instp/UIPageViewController/transitionStyle">iOS Dev Center</a>
-     */
     @Generated
     @Selector("transitionStyle")
     @NInt
     public native long transitionStyle();
 
-    /**
-     * viewControllers</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPageViewControllerClassReferenceClassRef/index.html#//apple_ref/occ/instp/UIPageViewController/viewControllers">iOS Dev Center</a>
-     */
     @Generated
     @Selector("viewControllers")
     public native NSArray<? extends UIViewController> viewControllers();

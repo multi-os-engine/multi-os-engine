@@ -153,10 +153,6 @@ public class PHVideoRequestOptions extends NSObject {
     @Selector("superclass")
     public static native Class superclass_static();
 
-    /**
-     * deliveryMode</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHVideoRequestOptions_Class/index.html#//apple_ref/occ/instp/PHVideoRequestOptions/deliveryMode">iOS Dev Center</a>
-     */
     @Generated
     @Selector("deliveryMode")
     @NInt
@@ -166,59 +162,31 @@ public class PHVideoRequestOptions extends NSObject {
     @Selector("init")
     public native PHVideoRequestOptions init();
 
-    /**
-     * networkAccessAllowed</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHVideoRequestOptions_Class/index.html#//apple_ref/occ/instp/PHVideoRequestOptions/networkAccessAllowed">iOS Dev Center</a>
-     */
     @Generated
     @Selector("isNetworkAccessAllowed")
     public native boolean isNetworkAccessAllowed();
 
-    /**
-     * networkAccessAllowed</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHVideoRequestOptions_Class/index.html#//apple_ref/occ/instp/PHVideoRequestOptions/networkAccessAllowed">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setNetworkAccessAllowed:")
     public native void setNetworkAccessAllowed(boolean value);
 
-    /**
-     * deliveryMode</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHVideoRequestOptions_Class/index.html#//apple_ref/occ/instp/PHVideoRequestOptions/deliveryMode">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setDeliveryMode:")
     public native void setDeliveryMode(@NInt long value);
 
-    /**
-     * progressHandler</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHVideoRequestOptions_Class/index.html#//apple_ref/occ/instp/PHVideoRequestOptions/progressHandler">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setProgressHandler:")
     public native void setProgressHandler(@ObjCBlock(name = "call_setProgressHandler") Block_setProgressHandler value);
 
-    /**
-     * version</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHVideoRequestOptions_Class/index.html#//apple_ref/occ/instp/PHVideoRequestOptions/version">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setVersion:")
     public native void setVersion(@NInt long value);
 
-    /**
-     * version</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHVideoRequestOptions_Class/index.html#//apple_ref/occ/instp/PHVideoRequestOptions/version">iOS Dev Center</a>
-     */
     @Generated
     @Selector("version")
     @NInt
     public native long version();
 
-    /**
-     * progressHandler</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHVideoRequestOptions_Class/index.html#//apple_ref/occ/instp/PHVideoRequestOptions/progressHandler">iOS Dev Center</a>
-     */
     @Generated
     @Selector("progressHandler")
     @ObjCBlock(name = "call_progressHandler_ret")

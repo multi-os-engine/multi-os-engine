@@ -30,10 +30,6 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("MTLParallelRenderCommandEncoder")
 public interface MTLParallelRenderCommandEncoder extends MTLCommandEncoder {
-    /**
-     * renderCommandEncoder</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Metal/Reference/MTLParallelRenderPassEncoder_Ref/index.html#//apple_ref/occ/intfm/MTLParallelRenderCommandEncoder/renderCommandEncoder">iOS Dev Center</a>
-     */
     @Generated
     @Selector("renderCommandEncoder")
     @MappedReturn(ObjCObjectMapper.class)

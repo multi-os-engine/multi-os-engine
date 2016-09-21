@@ -160,18 +160,10 @@ public class NEAppProxyFlow extends NSObject {
     @NInt
     public static native long version_static();
 
-    /**
-     * closeReadWithError:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEAppProxyFlowClassRef/index.html#//apple_ref/occ/instm/NEAppProxyFlow/closeReadWithError:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("closeReadWithError:")
     public native void closeReadWithError(NSError error);
 
-    /**
-     * closeWriteWithError:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEAppProxyFlowClassRef/index.html#//apple_ref/occ/instm/NEAppProxyFlow/closeWriteWithError:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("closeWriteWithError:")
     public native void closeWriteWithError(NSError error);
@@ -180,18 +172,10 @@ public class NEAppProxyFlow extends NSObject {
     @Selector("init")
     public native NEAppProxyFlow init();
 
-    /**
-     * metaData</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEAppProxyFlowClassRef/index.html#//apple_ref/occ/instp/NEAppProxyFlow/metaData">iOS Dev Center</a>
-     */
     @Generated
     @Selector("metaData")
     public native NEFlowMetaData metaData();
 
-    /**
-     * openWithLocalEndpoint:completionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEAppProxyFlowClassRef/index.html#//apple_ref/occ/instm/NEAppProxyFlow/openWithLocalEndpoint:completionHandler:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("openWithLocalEndpoint:completionHandler:")
     public native void openWithLocalEndpointCompletionHandler(NWHostEndpoint localEndpoint,

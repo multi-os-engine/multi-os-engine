@@ -159,35 +159,19 @@ public class NSInvocationOperation extends NSOperation {
     @Selector("init")
     public native NSInvocationOperation init();
 
-    /**
-     * initWithInvocation:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSInvocationOperation_Class/index.html#//apple_ref/occ/instm/NSInvocationOperation/initWithInvocation:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithInvocation:")
     public native NSInvocationOperation initWithInvocation(NSInvocation inv);
 
-    /**
-     * initWithTarget:selector:object:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSInvocationOperation_Class/index.html#//apple_ref/occ/instm/NSInvocationOperation/initWithTarget:selector:object:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithTarget:selector:object:")
     public native NSInvocationOperation initWithTargetSelectorObject(@Mapped(ObjCObjectMapper.class) Object target,
             SEL sel, @Mapped(ObjCObjectMapper.class) Object arg);
 
-    /**
-     * invocation</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSInvocationOperation_Class/index.html#//apple_ref/occ/instp/NSInvocationOperation/invocation">iOS Dev Center</a>
-     */
     @Generated
     @Selector("invocation")
     public native NSInvocation invocation();
 
-    /**
-     * result</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSInvocationOperation_Class/index.html#//apple_ref/occ/instp/NSInvocationOperation/result">iOS Dev Center</a>
-     */
     @Generated
     @Selector("result")
     @MappedReturn(ObjCObjectMapper.class)

@@ -163,35 +163,19 @@ public class UIDynamicAnimator extends NSObject {
     @NInt
     public static native long version_static();
 
-    /**
-     * addBehavior:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIDynamicAnimator_Class/index.html#//apple_ref/occ/instm/UIDynamicAnimator/addBehavior:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("addBehavior:")
     public native void addBehavior(UIDynamicBehavior behavior);
 
-    /**
-     * behaviors</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIDynamicAnimator_Class/index.html#//apple_ref/occ/instp/UIDynamicAnimator/behaviors">iOS Dev Center</a>
-     */
     @Generated
     @Selector("behaviors")
     public native NSArray<? extends UIDynamicBehavior> behaviors();
 
-    /**
-     * delegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIDynamicAnimator_Class/index.html#//apple_ref/occ/instp/UIDynamicAnimator/delegate">iOS Dev Center</a>
-     */
     @Generated
     @Selector("delegate")
     @MappedReturn(ObjCObjectMapper.class)
     public native UIDynamicAnimatorDelegate delegate();
 
-    /**
-     * elapsedTime</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIDynamicAnimator_Class/index.html#//apple_ref/occ/instm/UIDynamicAnimator/elapsedTime">iOS Dev Center</a>
-     */
     @Generated
     @Selector("elapsedTime")
     public native double elapsedTime();
@@ -200,100 +184,52 @@ public class UIDynamicAnimator extends NSObject {
     @Selector("init")
     public native UIDynamicAnimator init();
 
-    /**
-     * initWithCollectionViewLayout:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIDynamicAnimator_Class/index.html#//apple_ref/occ/instm/UIDynamicAnimator/initWithCollectionViewLayout:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithCollectionViewLayout:")
     public native UIDynamicAnimator initWithCollectionViewLayout(UICollectionViewLayout layout);
 
-    /**
-     * initWithReferenceView:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIDynamicAnimator_Class/index.html#//apple_ref/occ/instm/UIDynamicAnimator/initWithReferenceView:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithReferenceView:")
     public native UIDynamicAnimator initWithReferenceView(UIView view);
 
-    /**
-     * running</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIDynamicAnimator_Class/index.html#//apple_ref/occ/instp/UIDynamicAnimator/running">iOS Dev Center</a>
-     */
     @Generated
     @Selector("isRunning")
     public native boolean isRunning();
 
-    /**
-     * itemsInRect:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIDynamicAnimator_Class/index.html#//apple_ref/occ/instm/UIDynamicAnimator/itemsInRect:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("itemsInRect:")
     public native NSArray<?> itemsInRect(@ByValue CGRect rect);
 
-    /**
-     * layoutAttributesForCellAtIndexPath:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIDynamicAnimator_Class/index.html#//apple_ref/occ/instm/UIDynamicAnimator/layoutAttributesForCellAtIndexPath:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("layoutAttributesForCellAtIndexPath:")
     public native UICollectionViewLayoutAttributes layoutAttributesForCellAtIndexPath(NSIndexPath indexPath);
 
-    /**
-     * layoutAttributesForDecorationViewOfKind:atIndexPath:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIDynamicAnimator_Class/index.html#//apple_ref/occ/instm/UIDynamicAnimator/layoutAttributesForDecorationViewOfKind:atIndexPath:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("layoutAttributesForDecorationViewOfKind:atIndexPath:")
     public native UICollectionViewLayoutAttributes layoutAttributesForDecorationViewOfKindAtIndexPath(
             String decorationViewKind, NSIndexPath indexPath);
 
-    /**
-     * layoutAttributesForSupplementaryViewOfKind:atIndexPath:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIDynamicAnimator_Class/index.html#//apple_ref/occ/instm/UIDynamicAnimator/layoutAttributesForSupplementaryViewOfKind:atIndexPath:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("layoutAttributesForSupplementaryViewOfKind:atIndexPath:")
     public native UICollectionViewLayoutAttributes layoutAttributesForSupplementaryViewOfKindAtIndexPath(String kind,
             NSIndexPath indexPath);
 
-    /**
-     * referenceView</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIDynamicAnimator_Class/index.html#//apple_ref/occ/instp/UIDynamicAnimator/referenceView">iOS Dev Center</a>
-     */
     @Generated
     @Selector("referenceView")
     public native UIView referenceView();
 
-    /**
-     * removeAllBehaviors</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIDynamicAnimator_Class/index.html#//apple_ref/occ/instm/UIDynamicAnimator/removeAllBehaviors">iOS Dev Center</a>
-     */
     @Generated
     @Selector("removeAllBehaviors")
     public native void removeAllBehaviors();
 
-    /**
-     * removeBehavior:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIDynamicAnimator_Class/index.html#//apple_ref/occ/instm/UIDynamicAnimator/removeBehavior:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("removeBehavior:")
     public native void removeBehavior(UIDynamicBehavior behavior);
 
-    /**
-     * delegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIDynamicAnimator_Class/index.html#//apple_ref/occ/instp/UIDynamicAnimator/delegate">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setDelegate:")
     public native void setDelegate_unsafe(@Mapped(ObjCObjectMapper.class) UIDynamicAnimatorDelegate value);
 
-    /**
-     * delegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIDynamicAnimator_Class/index.html#//apple_ref/occ/instp/UIDynamicAnimator/delegate">iOS Dev Center</a>
-     */
     @Generated
     public void setDelegate(@Mapped(ObjCObjectMapper.class) UIDynamicAnimatorDelegate value) {
         Object __old = delegate();
@@ -306,10 +242,6 @@ public class UIDynamicAnimator extends NSObject {
         }
     }
 
-    /**
-     * updateItemUsingCurrentState:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIDynamicAnimator_Class/index.html#//apple_ref/occ/instm/UIDynamicAnimator/updateItemUsingCurrentState:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("updateItemUsingCurrentState:")
     public native void updateItemUsingCurrentState(@Mapped(ObjCObjectMapper.class) UIDynamicItem item);

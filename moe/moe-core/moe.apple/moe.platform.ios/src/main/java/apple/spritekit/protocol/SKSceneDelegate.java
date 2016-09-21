@@ -30,10 +30,6 @@ import org.moe.natj.objc.ann.Selector;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("SKSceneDelegate")
 public interface SKSceneDelegate {
-    /**
-     * didApplyConstraintsForScene:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKSceneDelegate_Ref/index.html#//apple_ref/occ/intfm/SKSceneDelegate/didApplyConstraintsForScene:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("didApplyConstraintsForScene:")
@@ -41,10 +37,6 @@ public interface SKSceneDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * didEvaluateActionsForScene:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKSceneDelegate_Ref/index.html#//apple_ref/occ/intfm/SKSceneDelegate/didEvaluateActionsForScene:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("didEvaluateActionsForScene:")
@@ -52,10 +44,6 @@ public interface SKSceneDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * didFinishUpdateForScene:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKSceneDelegate_Ref/index.html#//apple_ref/occ/intfm/SKSceneDelegate/didFinishUpdateForScene:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("didFinishUpdateForScene:")
@@ -63,10 +51,6 @@ public interface SKSceneDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * didSimulatePhysicsForScene:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKSceneDelegate_Ref/index.html#//apple_ref/occ/intfm/SKSceneDelegate/didSimulatePhysicsForScene:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("didSimulatePhysicsForScene:")
@@ -74,10 +58,6 @@ public interface SKSceneDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * update:forScene:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKSceneDelegate_Ref/index.html#//apple_ref/occ/intfm/SKSceneDelegate/update:forScene:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("update:forScene:")

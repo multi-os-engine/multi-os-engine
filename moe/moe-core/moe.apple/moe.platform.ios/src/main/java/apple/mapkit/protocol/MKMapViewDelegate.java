@@ -41,10 +41,6 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("MKMapViewDelegate")
 public interface MKMapViewDelegate {
-    /**
-     * mapView:annotationView:calloutAccessoryControlTapped:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKMapViewDelegate_Protocol/index.html#//apple_ref/occ/intfm/MKMapViewDelegate/mapView:annotationView:calloutAccessoryControlTapped:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("mapView:annotationView:calloutAccessoryControlTapped:")
@@ -53,10 +49,6 @@ public interface MKMapViewDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * mapView:annotationView:didChangeDragState:fromOldState:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKMapViewDelegate_Protocol/index.html#//apple_ref/occ/intfm/MKMapViewDelegate/mapView:annotationView:didChangeDragState:fromOldState:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("mapView:annotationView:didChangeDragState:fromOldState:")
@@ -65,10 +57,6 @@ public interface MKMapViewDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * mapView:didAddAnnotationViews:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKMapViewDelegate_Protocol/index.html#//apple_ref/occ/intfm/MKMapViewDelegate/mapView:didAddAnnotationViews:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("mapView:didAddAnnotationViews:")
@@ -76,10 +64,6 @@ public interface MKMapViewDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * mapView:didAddOverlayRenderers:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKMapViewDelegate_Protocol/index.html#//apple_ref/occ/intfm/MKMapViewDelegate/mapView:didAddOverlayRenderers:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("mapView:didAddOverlayRenderers:")
@@ -87,10 +71,6 @@ public interface MKMapViewDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * mapView:didAddOverlayViews:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKMapViewDelegate_Protocol/index.html#//apple_ref/occ/intfm/MKMapViewDelegate/mapView:didAddOverlayViews:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Deprecated
@@ -99,10 +79,6 @@ public interface MKMapViewDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * mapView:didChangeUserTrackingMode:animated:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKMapViewDelegate_Protocol/index.html#//apple_ref/occ/intfm/MKMapViewDelegate/mapView:didChangeUserTrackingMode:animated:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("mapView:didChangeUserTrackingMode:animated:")
@@ -110,10 +86,6 @@ public interface MKMapViewDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * mapView:didDeselectAnnotationView:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKMapViewDelegate_Protocol/index.html#//apple_ref/occ/intfm/MKMapViewDelegate/mapView:didDeselectAnnotationView:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("mapView:didDeselectAnnotationView:")
@@ -121,10 +93,6 @@ public interface MKMapViewDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * mapView:didFailToLocateUserWithError:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKMapViewDelegate_Protocol/index.html#//apple_ref/occ/intfm/MKMapViewDelegate/mapView:didFailToLocateUserWithError:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("mapView:didFailToLocateUserWithError:")
@@ -132,10 +100,6 @@ public interface MKMapViewDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * mapView:didSelectAnnotationView:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKMapViewDelegate_Protocol/index.html#//apple_ref/occ/intfm/MKMapViewDelegate/mapView:didSelectAnnotationView:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("mapView:didSelectAnnotationView:")
@@ -143,10 +107,6 @@ public interface MKMapViewDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * mapView:didUpdateUserLocation:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKMapViewDelegate_Protocol/index.html#//apple_ref/occ/intfm/MKMapViewDelegate/mapView:didUpdateUserLocation:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("mapView:didUpdateUserLocation:")
@@ -154,10 +114,6 @@ public interface MKMapViewDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * mapView:regionDidChangeAnimated:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKMapViewDelegate_Protocol/index.html#//apple_ref/occ/intfm/MKMapViewDelegate/mapView:regionDidChangeAnimated:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("mapView:regionDidChangeAnimated:")
@@ -165,10 +121,6 @@ public interface MKMapViewDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * mapView:regionWillChangeAnimated:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKMapViewDelegate_Protocol/index.html#//apple_ref/occ/intfm/MKMapViewDelegate/mapView:regionWillChangeAnimated:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("mapView:regionWillChangeAnimated:")
@@ -176,10 +128,6 @@ public interface MKMapViewDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * mapView:rendererForOverlay:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKMapViewDelegate_Protocol/index.html#//apple_ref/occ/intfm/MKMapViewDelegate/mapView:rendererForOverlay:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("mapView:rendererForOverlay:")
@@ -188,10 +136,6 @@ public interface MKMapViewDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * mapView:viewForAnnotation:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKMapViewDelegate_Protocol/index.html#//apple_ref/occ/intfm/MKMapViewDelegate/mapView:viewForAnnotation:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("mapView:viewForAnnotation:")
@@ -200,10 +144,6 @@ public interface MKMapViewDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * mapView:viewForOverlay:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKMapViewDelegate_Protocol/index.html#//apple_ref/occ/intfm/MKMapViewDelegate/mapView:viewForOverlay:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Deprecated
@@ -212,10 +152,6 @@ public interface MKMapViewDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * mapViewDidFailLoadingMap:withError:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKMapViewDelegate_Protocol/index.html#//apple_ref/occ/intfm/MKMapViewDelegate/mapViewDidFailLoadingMap:withError:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("mapViewDidFailLoadingMap:withError:")
@@ -223,10 +159,6 @@ public interface MKMapViewDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * mapViewDidFinishLoadingMap:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKMapViewDelegate_Protocol/index.html#//apple_ref/occ/intfm/MKMapViewDelegate/mapViewDidFinishLoadingMap:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("mapViewDidFinishLoadingMap:")
@@ -234,10 +166,6 @@ public interface MKMapViewDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * mapViewDidFinishRenderingMap:fullyRendered:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKMapViewDelegate_Protocol/index.html#//apple_ref/occ/intfm/MKMapViewDelegate/mapViewDidFinishRenderingMap:fullyRendered:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("mapViewDidFinishRenderingMap:fullyRendered:")
@@ -245,10 +173,6 @@ public interface MKMapViewDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * mapViewDidStopLocatingUser:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKMapViewDelegate_Protocol/index.html#//apple_ref/occ/intfm/MKMapViewDelegate/mapViewDidStopLocatingUser:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("mapViewDidStopLocatingUser:")
@@ -256,10 +180,6 @@ public interface MKMapViewDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * mapViewWillStartLoadingMap:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKMapViewDelegate_Protocol/index.html#//apple_ref/occ/intfm/MKMapViewDelegate/mapViewWillStartLoadingMap:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("mapViewWillStartLoadingMap:")
@@ -267,10 +187,6 @@ public interface MKMapViewDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * mapViewWillStartLocatingUser:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKMapViewDelegate_Protocol/index.html#//apple_ref/occ/intfm/MKMapViewDelegate/mapViewWillStartLocatingUser:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("mapViewWillStartLocatingUser:")
@@ -278,10 +194,6 @@ public interface MKMapViewDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * mapViewWillStartRenderingMap:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKMapViewDelegate_Protocol/index.html#//apple_ref/occ/intfm/MKMapViewDelegate/mapViewWillStartRenderingMap:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("mapViewWillStartRenderingMap:")

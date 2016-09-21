@@ -162,28 +162,16 @@ public class MPMediaItemArtwork extends NSObject {
     @NInt
     public static native long version_static();
 
-    /**
-     * bounds</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPMediaItemArtwork_ClassReference/index.html#//apple_ref/occ/instp/MPMediaItemArtwork/bounds">iOS Dev Center</a>
-     */
     @Generated
     @Selector("bounds")
     @ByValue
     public native CGRect bounds();
 
-    /**
-     * imageCropRect</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPMediaItemArtwork_ClassReference/index.html#//apple_ref/occ/instp/MPMediaItemArtwork/imageCropRect">iOS Dev Center</a>
-     */
     @Generated
     @Selector("imageCropRect")
     @ByValue
     public native CGRect imageCropRect();
 
-    /**
-     * imageWithSize:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPMediaItemArtwork_ClassReference/index.html#//apple_ref/occ/instm/MPMediaItemArtwork/imageWithSize:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("imageWithSize:")
     public native UIImage imageWithSize(@ByValue CGSize size);
@@ -192,10 +180,6 @@ public class MPMediaItemArtwork extends NSObject {
     @Selector("init")
     public native MPMediaItemArtwork init();
 
-    /**
-     * initWithImage:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPMediaItemArtwork_ClassReference/index.html#//apple_ref/occ/instm/MPMediaItemArtwork/initWithImage:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithImage:")
     public native MPMediaItemArtwork initWithImage(UIImage image);

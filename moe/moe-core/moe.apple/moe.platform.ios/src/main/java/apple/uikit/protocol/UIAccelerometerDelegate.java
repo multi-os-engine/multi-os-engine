@@ -31,10 +31,6 @@ import org.moe.natj.objc.ann.Selector;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("UIAccelerometerDelegate")
 public interface UIAccelerometerDelegate {
-    /**
-     * accelerometer:didAccelerate:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIAccelerometerDelegate_Protocol/index.html#//apple_ref/occ/intfm/UIAccelerometerDelegate/accelerometer:didAccelerate:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Deprecated

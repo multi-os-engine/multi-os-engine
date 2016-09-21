@@ -63,45 +63,25 @@ public class PHAssetChangeRequest extends NSObject {
     @Selector("alloc")
     public static native PHAssetChangeRequest alloc();
 
-    /**
-     * changeRequestForAsset:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHAssetChangeRequest_Class/index.html#//apple_ref/occ/clm/PHAssetChangeRequest/changeRequestForAsset:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("changeRequestForAsset:")
     public static native PHAssetChangeRequest changeRequestForAsset(PHAsset asset);
 
-    /**
-     * creationRequestForAssetFromImage:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHAssetChangeRequest_Class/index.html#//apple_ref/occ/clm/PHAssetChangeRequest/creationRequestForAssetFromImage:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("creationRequestForAssetFromImage:")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object creationRequestForAssetFromImage(UIImage image);
 
-    /**
-     * creationRequestForAssetFromImageAtFileURL:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHAssetChangeRequest_Class/index.html#//apple_ref/occ/clm/PHAssetChangeRequest/creationRequestForAssetFromImageAtFileURL:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("creationRequestForAssetFromImageAtFileURL:")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object creationRequestForAssetFromImageAtFileURL(NSURL fileURL);
 
-    /**
-     * creationRequestForAssetFromVideoAtFileURL:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHAssetChangeRequest_Class/index.html#//apple_ref/occ/clm/PHAssetChangeRequest/creationRequestForAssetFromVideoAtFileURL:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("creationRequestForAssetFromVideoAtFileURL:")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object creationRequestForAssetFromVideoAtFileURL(NSURL fileURL);
 
-    /**
-     * deleteAssets:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHAssetChangeRequest_Class/index.html#//apple_ref/occ/clm/PHAssetChangeRequest/deleteAssets:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("deleteAssets:")
     public static native void deleteAssets(@Mapped(ObjCObjectMapper.class) NSFastEnumeration assets);
@@ -206,18 +186,10 @@ public class PHAssetChangeRequest extends NSObject {
     @NInt
     public static native long version_static();
 
-    /**
-     * contentEditingOutput</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHAssetChangeRequest_Class/index.html#//apple_ref/occ/instp/PHAssetChangeRequest/contentEditingOutput">iOS Dev Center</a>
-     */
     @Generated
     @Selector("contentEditingOutput")
     public native PHContentEditingOutput contentEditingOutput();
 
-    /**
-     * creationDate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHAssetChangeRequest_Class/index.html#//apple_ref/occ/instp/PHAssetChangeRequest/creationDate">iOS Dev Center</a>
-     */
     @Generated
     @Selector("creationDate")
     public native NSDate creationDate();
@@ -226,82 +198,42 @@ public class PHAssetChangeRequest extends NSObject {
     @Selector("init")
     public native PHAssetChangeRequest init();
 
-    /**
-     * favorite</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHAssetChangeRequest_Class/index.html#//apple_ref/occ/instp/PHAssetChangeRequest/favorite">iOS Dev Center</a>
-     */
     @Generated
     @Selector("isFavorite")
     public native boolean isFavorite();
 
-    /**
-     * favorite</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHAssetChangeRequest_Class/index.html#//apple_ref/occ/instp/PHAssetChangeRequest/favorite">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setFavorite:")
     public native void setFavorite(boolean value);
 
-    /**
-     * hidden</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHAssetChangeRequest_Class/index.html#//apple_ref/occ/instp/PHAssetChangeRequest/hidden">iOS Dev Center</a>
-     */
     @Generated
     @Selector("isHidden")
     public native boolean isHidden();
 
-    /**
-     * hidden</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHAssetChangeRequest_Class/index.html#//apple_ref/occ/instp/PHAssetChangeRequest/hidden">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setHidden:")
     public native void setHidden(boolean value);
 
-    /**
-     * location</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHAssetChangeRequest_Class/index.html#//apple_ref/occ/instp/PHAssetChangeRequest/location">iOS Dev Center</a>
-     */
     @Generated
     @Selector("location")
     public native CLLocation location();
 
-    /**
-     * placeholderForCreatedAsset</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHAssetChangeRequest_Class/index.html#//apple_ref/occ/instp/PHAssetChangeRequest/placeholderForCreatedAsset">iOS Dev Center</a>
-     */
     @Generated
     @Selector("placeholderForCreatedAsset")
     public native PHObjectPlaceholder placeholderForCreatedAsset();
 
-    /**
-     * revertAssetContentToOriginal</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHAssetChangeRequest_Class/index.html#//apple_ref/occ/instm/PHAssetChangeRequest/revertAssetContentToOriginal">iOS Dev Center</a>
-     */
     @Generated
     @Selector("revertAssetContentToOriginal")
     public native void revertAssetContentToOriginal();
 
-    /**
-     * contentEditingOutput</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHAssetChangeRequest_Class/index.html#//apple_ref/occ/instp/PHAssetChangeRequest/contentEditingOutput">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setContentEditingOutput:")
     public native void setContentEditingOutput(PHContentEditingOutput value);
 
-    /**
-     * creationDate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHAssetChangeRequest_Class/index.html#//apple_ref/occ/instp/PHAssetChangeRequest/creationDate">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setCreationDate:")
     public native void setCreationDate(NSDate value);
 
-    /**
-     * location</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHAssetChangeRequest_Class/index.html#//apple_ref/occ/instp/PHAssetChangeRequest/location">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setLocation:")
     public native void setLocation(CLLocation value);

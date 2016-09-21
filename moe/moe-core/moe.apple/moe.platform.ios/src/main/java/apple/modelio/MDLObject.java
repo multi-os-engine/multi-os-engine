@@ -62,10 +62,6 @@ public class MDLObject extends NSObject implements MDLNamed {
     @Selector("alloc")
     public static native MDLObject alloc();
 
-    /**
-     * objectWithSCNNode:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLObject_Class/index.html#//apple_ref/occ/clm/MDLObject/objectWithSCNNode:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("objectWithSCNNode:")
     public static native MDLObject objectWithSCNNode(SCNNode scnNode);
@@ -170,18 +166,10 @@ public class MDLObject extends NSObject implements MDLNamed {
     @NInt
     public static native long version_static();
 
-    /**
-     * addChild:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLObject_Class/index.html#//apple_ref/occ/instm/MDLObject/addChild:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("addChild:")
     public native void addChild(MDLObject child);
 
-    /**
-     * children</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLObject_Class/index.html#//apple_ref/occ/instp/MDLObject/children">iOS Dev Center</a>
-     */
     @Generated
     @Selector("children")
     @MappedReturn(ObjCObjectMapper.class)
@@ -195,18 +183,10 @@ public class MDLObject extends NSObject implements MDLNamed {
     @Selector("name")
     public native String name();
 
-    /**
-     * parent</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLObject_Class/index.html#//apple_ref/occ/instp/MDLObject/parent">iOS Dev Center</a>
-     */
     @Generated
     @Selector("parent")
     public native MDLObject parent();
 
-    /**
-     * children</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLObject_Class/index.html#//apple_ref/occ/instp/MDLObject/children">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setChildren:")
     public native void setChildren(@Mapped(ObjCObjectMapper.class) MDLObjectContainerComponent value);
@@ -215,18 +195,10 @@ public class MDLObject extends NSObject implements MDLNamed {
     @Selector("setName:")
     public native void setName(String value);
 
-    /**
-     * parent</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLObject_Class/index.html#//apple_ref/occ/instp/MDLObject/parent">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setParent:")
     public native void setParent_unsafe(MDLObject value);
 
-    /**
-     * parent</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLObject_Class/index.html#//apple_ref/occ/instp/MDLObject/parent">iOS Dev Center</a>
-     */
     @Generated
     public void setParent(MDLObject value) {
         Object __old = parent();
@@ -239,18 +211,10 @@ public class MDLObject extends NSObject implements MDLNamed {
         }
     }
 
-    /**
-     * transform</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLObject_Class/index.html#//apple_ref/occ/instp/MDLObject/transform">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setTransform:")
     public native void setTransform(@Mapped(ObjCObjectMapper.class) MDLTransformComponent value);
 
-    /**
-     * transform</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLObject_Class/index.html#//apple_ref/occ/instp/MDLObject/transform">iOS Dev Center</a>
-     */
     @Generated
     @Selector("transform")
     @MappedReturn(ObjCObjectMapper.class)

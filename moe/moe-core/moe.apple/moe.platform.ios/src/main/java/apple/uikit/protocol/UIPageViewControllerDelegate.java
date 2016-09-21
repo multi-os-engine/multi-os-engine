@@ -34,10 +34,6 @@ import org.moe.natj.objc.ann.Selector;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("UIPageViewControllerDelegate")
 public interface UIPageViewControllerDelegate {
-    /**
-     * pageViewController:didFinishAnimating:previousViewControllers:transitionCompleted:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPageViewControllerDelegateProtocolRef/index.html#//apple_ref/occ/intfm/UIPageViewControllerDelegate/pageViewController:didFinishAnimating:previousViewControllers:transitionCompleted:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("pageViewController:didFinishAnimating:previousViewControllers:transitionCompleted:")
@@ -47,10 +43,6 @@ public interface UIPageViewControllerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * pageViewController:spineLocationForInterfaceOrientation:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPageViewControllerDelegateProtocolRef/index.html#//apple_ref/occ/intfm/UIPageViewControllerDelegate/pageViewController:spineLocationForInterfaceOrientation:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("pageViewController:spineLocationForInterfaceOrientation:")
@@ -60,10 +52,6 @@ public interface UIPageViewControllerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * pageViewController:willTransitionToViewControllers:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPageViewControllerDelegateProtocolRef/index.html#//apple_ref/occ/intfm/UIPageViewControllerDelegate/pageViewController:willTransitionToViewControllers:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("pageViewController:willTransitionToViewControllers:")
@@ -72,10 +60,6 @@ public interface UIPageViewControllerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * pageViewControllerPreferredInterfaceOrientationForPresentation:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPageViewControllerDelegateProtocolRef/index.html#//apple_ref/occ/intfm/UIPageViewControllerDelegate/pageViewControllerPreferredInterfaceOrientationForPresentation:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("pageViewControllerPreferredInterfaceOrientationForPresentation:")
@@ -85,10 +69,6 @@ public interface UIPageViewControllerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * pageViewControllerSupportedInterfaceOrientations:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPageViewControllerDelegateProtocolRef/index.html#//apple_ref/occ/intfm/UIPageViewControllerDelegate/pageViewControllerSupportedInterfaceOrientations:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("pageViewControllerSupportedInterfaceOrientations:")

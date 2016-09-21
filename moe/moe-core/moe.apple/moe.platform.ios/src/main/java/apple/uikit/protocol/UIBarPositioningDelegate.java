@@ -32,10 +32,6 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("UIBarPositioningDelegate")
 public interface UIBarPositioningDelegate {
-    /**
-     * positionForBar:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIBarPositioningDelegate_Protocol/index.html#//apple_ref/occ/intfm/UIBarPositioningDelegate/positionForBar:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("positionForBar:")

@@ -175,19 +175,11 @@ public class UIDocumentMenuViewController extends UIViewController {
     @NInt
     public static native long version_static();
 
-    /**
-     * addOptionWithTitle:image:order:handler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIDocumentMenuViewController_Class/index.html#//apple_ref/occ/instm/UIDocumentMenuViewController/addOptionWithTitle:image:order:handler:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("addOptionWithTitle:image:order:handler:")
     public native void addOptionWithTitleImageOrderHandler(String title, UIImage image, @NUInt long order,
             @ObjCBlock(name = "call_addOptionWithTitleImageOrderHandler") Block_addOptionWithTitleImageOrderHandler handler);
 
-    /**
-     * delegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIDocumentMenuViewController_Class/index.html#//apple_ref/occ/instp/UIDocumentMenuViewController/delegate">iOS Dev Center</a>
-     */
     @Generated
     @Selector("delegate")
     @MappedReturn(ObjCObjectMapper.class)
@@ -197,10 +189,6 @@ public class UIDocumentMenuViewController extends UIViewController {
     @Selector("init")
     public native UIDocumentMenuViewController init();
 
-    /**
-     * initWithDocumentTypes:inMode:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIDocumentMenuViewController_Class/index.html#//apple_ref/occ/instm/UIDocumentMenuViewController/initWithDocumentTypes:inMode:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithDocumentTypes:inMode:")
     public native UIDocumentMenuViewController initWithDocumentTypesInMode(NSArray<String> allowedUTIs,
@@ -210,26 +198,14 @@ public class UIDocumentMenuViewController extends UIViewController {
     @Selector("initWithNibName:bundle:")
     public native UIDocumentMenuViewController initWithNibNameBundle(String nibNameOrNil, NSBundle nibBundleOrNil);
 
-    /**
-     * initWithURL:inMode:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIDocumentMenuViewController_Class/index.html#//apple_ref/occ/instm/UIDocumentMenuViewController/initWithURL:inMode:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithURL:inMode:")
     public native UIDocumentMenuViewController initWithURLInMode(NSURL url, @NUInt long mode);
 
-    /**
-     * delegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIDocumentMenuViewController_Class/index.html#//apple_ref/occ/instp/UIDocumentMenuViewController/delegate">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setDelegate:")
     public native void setDelegate_unsafe(@Mapped(ObjCObjectMapper.class) UIDocumentMenuDelegate value);
 
-    /**
-     * delegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIDocumentMenuViewController_Class/index.html#//apple_ref/occ/instp/UIDocumentMenuViewController/delegate">iOS Dev Center</a>
-     */
     @Generated
     public void setDelegate(@Mapped(ObjCObjectMapper.class) UIDocumentMenuDelegate value) {
         Object __old = delegate();

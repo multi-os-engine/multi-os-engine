@@ -60,10 +60,6 @@ public class EKReminder extends EKCalendarItem {
     @Selector("alloc")
     public static native EKReminder alloc();
 
-    /**
-     * reminderWithEventStore:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/EventKit/Reference/EKReminderClassRef/index.html#//apple_ref/occ/clm/EKReminder/reminderWithEventStore:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("reminderWithEventStore:")
     public static native EKReminder reminderWithEventStore(EKEventStore eventStore);
@@ -168,18 +164,10 @@ public class EKReminder extends EKCalendarItem {
     @NInt
     public static native long version_static();
 
-    /**
-     * completionDate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/EventKit/Reference/EKReminderClassRef/index.html#//apple_ref/occ/instp/EKReminder/completionDate">iOS Dev Center</a>
-     */
     @Generated
     @Selector("completionDate")
     public native NSDate completionDate();
 
-    /**
-     * dueDateComponents</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/EventKit/Reference/EKReminderClassRef/index.html#//apple_ref/occ/instp/EKReminder/dueDateComponents">iOS Dev Center</a>
-     */
     @Generated
     @Selector("dueDateComponents")
     public native NSDateComponents dueDateComponents();
@@ -188,18 +176,10 @@ public class EKReminder extends EKCalendarItem {
     @Selector("init")
     public native EKReminder init();
 
-    /**
-     * completed</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/EventKit/Reference/EKReminderClassRef/index.html#//apple_ref/occ/instp/EKReminder/completed">iOS Dev Center</a>
-     */
     @Generated
     @Selector("isCompleted")
     public native boolean isCompleted();
 
-    /**
-     * completed</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/EventKit/Reference/EKReminderClassRef/index.html#//apple_ref/occ/instp/EKReminder/completed">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setCompleted:")
     public native void setCompleted(boolean value);
@@ -209,18 +189,10 @@ public class EKReminder extends EKCalendarItem {
     @Selector("priority")
     public native long priority();
 
-    /**
-     * completionDate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/EventKit/Reference/EKReminderClassRef/index.html#//apple_ref/occ/instp/EKReminder/completionDate">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setCompletionDate:")
     public native void setCompletionDate(NSDate value);
 
-    /**
-     * dueDateComponents</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/EventKit/Reference/EKReminderClassRef/index.html#//apple_ref/occ/instp/EKReminder/dueDateComponents">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setDueDateComponents:")
     public native void setDueDateComponents(NSDateComponents value);
@@ -229,18 +201,10 @@ public class EKReminder extends EKCalendarItem {
     @Selector("setPriority:")
     public native void setPriority(@NUInt long value);
 
-    /**
-     * startDateComponents</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/EventKit/Reference/EKReminderClassRef/index.html#//apple_ref/occ/instp/EKReminder/startDateComponents">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setStartDateComponents:")
     public native void setStartDateComponents(NSDateComponents value);
 
-    /**
-     * startDateComponents</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/EventKit/Reference/EKReminderClassRef/index.html#//apple_ref/occ/instp/EKReminder/startDateComponents">iOS Dev Center</a>
-     */
     @Generated
     @Selector("startDateComponents")
     public native NSDateComponents startDateComponents();

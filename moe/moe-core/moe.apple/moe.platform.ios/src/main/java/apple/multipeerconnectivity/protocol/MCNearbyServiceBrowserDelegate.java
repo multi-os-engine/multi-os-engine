@@ -33,10 +33,6 @@ import org.moe.natj.objc.ann.Selector;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("MCNearbyServiceBrowserDelegate")
 public interface MCNearbyServiceBrowserDelegate {
-    /**
-     * browser:didNotStartBrowsingForPeers:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MultipeerConnectivity/Reference/MCNearbyServiceBrowserDelegateRef/index.html#//apple_ref/occ/intfm/MCNearbyServiceBrowserDelegate/browser:didNotStartBrowsingForPeers:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("browser:didNotStartBrowsingForPeers:")
@@ -44,19 +40,11 @@ public interface MCNearbyServiceBrowserDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * browser:foundPeer:withDiscoveryInfo:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MultipeerConnectivity/Reference/MCNearbyServiceBrowserDelegateRef/index.html#//apple_ref/occ/intfm/MCNearbyServiceBrowserDelegate/browser:foundPeer:withDiscoveryInfo:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("browser:foundPeer:withDiscoveryInfo:")
     void browserFoundPeerWithDiscoveryInfo(MCNearbyServiceBrowser browser, MCPeerID peerID,
             NSDictionary<String, String> info);
 
-    /**
-     * browser:lostPeer:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MultipeerConnectivity/Reference/MCNearbyServiceBrowserDelegateRef/index.html#//apple_ref/occ/intfm/MCNearbyServiceBrowserDelegate/browser:lostPeer:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("browser:lostPeer:")
     void browserLostPeer(MCNearbyServiceBrowser browser, MCPeerID peerID);

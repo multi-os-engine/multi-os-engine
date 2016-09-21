@@ -62,10 +62,6 @@ public class SCNBox extends SCNGeometry {
     @Selector("alloc")
     public static native SCNBox alloc();
 
-    /**
-     * boxWithWidth:height:length:chamferRadius:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNBox_Class/index.html#//apple_ref/occ/clm/SCNBox/boxWithWidth:height:length:chamferRadius:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("boxWithWidth:height:length:chamferRadius:")
     public static native SCNBox boxWithWidthHeightLengthChamferRadius(@NFloat double width, @NFloat double height,
@@ -188,37 +184,21 @@ public class SCNBox extends SCNGeometry {
     @NInt
     public static native long version_static();
 
-    /**
-     * chamferRadius</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNBox_Class/index.html#//apple_ref/occ/instp/SCNBox/chamferRadius">iOS Dev Center</a>
-     */
     @Generated
     @Selector("chamferRadius")
     @NFloat
     public native double chamferRadius();
 
-    /**
-     * chamferSegmentCount</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNBox_Class/index.html#//apple_ref/occ/instp/SCNBox/chamferSegmentCount">iOS Dev Center</a>
-     */
     @Generated
     @Selector("chamferSegmentCount")
     @NInt
     public native long chamferSegmentCount();
 
-    /**
-     * height</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNBox_Class/index.html#//apple_ref/occ/instp/SCNBox/height">iOS Dev Center</a>
-     */
     @Generated
     @Selector("height")
     @NFloat
     public native double height();
 
-    /**
-     * heightSegmentCount</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNBox_Class/index.html#//apple_ref/occ/instp/SCNBox/heightSegmentCount">iOS Dev Center</a>
-     */
     @Generated
     @Selector("heightSegmentCount")
     @NInt
@@ -228,101 +208,53 @@ public class SCNBox extends SCNGeometry {
     @Selector("init")
     public native SCNBox init();
 
-    /**
-     * length</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNBox_Class/index.html#//apple_ref/occ/instp/SCNBox/length">iOS Dev Center</a>
-     */
     @Generated
     @Selector("length")
     @NFloat
     public native double length();
 
-    /**
-     * lengthSegmentCount</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNBox_Class/index.html#//apple_ref/occ/instp/SCNBox/lengthSegmentCount">iOS Dev Center</a>
-     */
     @Generated
     @Selector("lengthSegmentCount")
     @NInt
     public native long lengthSegmentCount();
 
-    /**
-     * chamferRadius</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNBox_Class/index.html#//apple_ref/occ/instp/SCNBox/chamferRadius">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setChamferRadius:")
     public native void setChamferRadius(@NFloat double value);
 
-    /**
-     * chamferSegmentCount</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNBox_Class/index.html#//apple_ref/occ/instp/SCNBox/chamferSegmentCount">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setChamferSegmentCount:")
     public native void setChamferSegmentCount(@NInt long value);
 
-    /**
-     * height</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNBox_Class/index.html#//apple_ref/occ/instp/SCNBox/height">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setHeight:")
     public native void setHeight(@NFloat double value);
 
-    /**
-     * heightSegmentCount</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNBox_Class/index.html#//apple_ref/occ/instp/SCNBox/heightSegmentCount">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setHeightSegmentCount:")
     public native void setHeightSegmentCount(@NInt long value);
 
-    /**
-     * length</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNBox_Class/index.html#//apple_ref/occ/instp/SCNBox/length">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setLength:")
     public native void setLength(@NFloat double value);
 
-    /**
-     * lengthSegmentCount</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNBox_Class/index.html#//apple_ref/occ/instp/SCNBox/lengthSegmentCount">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setLengthSegmentCount:")
     public native void setLengthSegmentCount(@NInt long value);
 
-    /**
-     * width</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNBox_Class/index.html#//apple_ref/occ/instp/SCNBox/width">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setWidth:")
     public native void setWidth(@NFloat double value);
 
-    /**
-     * widthSegmentCount</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNBox_Class/index.html#//apple_ref/occ/instp/SCNBox/widthSegmentCount">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setWidthSegmentCount:")
     public native void setWidthSegmentCount(@NInt long value);
 
-    /**
-     * width</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNBox_Class/index.html#//apple_ref/occ/instp/SCNBox/width">iOS Dev Center</a>
-     */
     @Generated
     @Selector("width")
     @NFloat
     public native double width();
 
-    /**
-     * widthSegmentCount</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNBox_Class/index.html#//apple_ref/occ/instp/SCNBox/widthSegmentCount">iOS Dev Center</a>
-     */
     @Generated
     @Selector("widthSegmentCount")
     @NInt

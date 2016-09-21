@@ -59,10 +59,6 @@ public class AVAssetReaderAudioMixOutput extends AVAssetReaderOutput {
     @Selector("alloc")
     public static native AVAssetReaderAudioMixOutput alloc();
 
-    /**
-     * assetReaderAudioMixOutputWithAudioTracks:audioSettings:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAssetReaderAudioMixOutput_Class/index.html#//apple_ref/occ/clm/AVAssetReaderAudioMixOutput/assetReaderAudioMixOutputWithAudioTracks:audioSettings:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("assetReaderAudioMixOutputWithAudioTracks:audioSettings:")
     public static native AVAssetReaderAudioMixOutput assetReaderAudioMixOutputWithAudioTracksAudioSettings(
@@ -168,34 +164,18 @@ public class AVAssetReaderAudioMixOutput extends AVAssetReaderOutput {
     @NInt
     public static native long version();
 
-    /**
-     * audioMix</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAssetReaderAudioMixOutput_Class/index.html#//apple_ref/occ/instp/AVAssetReaderAudioMixOutput/audioMix">iOS Dev Center</a>
-     */
     @Generated
     @Selector("audioMix")
     public native AVAudioMix audioMix();
 
-    /**
-     * audioSettings</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAssetReaderAudioMixOutput_Class/index.html#//apple_ref/occ/instp/AVAssetReaderAudioMixOutput/audioSettings">iOS Dev Center</a>
-     */
     @Generated
     @Selector("audioSettings")
     public native NSDictionary<String, ?> audioSettings();
 
-    /**
-     * audioTimePitchAlgorithm</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAssetReaderAudioMixOutput_Class/index.html#//apple_ref/occ/instp/AVAssetReaderAudioMixOutput/audioTimePitchAlgorithm">iOS Dev Center</a>
-     */
     @Generated
     @Selector("audioTimePitchAlgorithm")
     public native String audioTimePitchAlgorithm();
 
-    /**
-     * audioTracks</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAssetReaderAudioMixOutput_Class/index.html#//apple_ref/occ/instp/AVAssetReaderAudioMixOutput/audioTracks">iOS Dev Center</a>
-     */
     @Generated
     @Selector("audioTracks")
     public native NSArray<? extends AVAssetTrack> audioTracks();
@@ -204,27 +184,15 @@ public class AVAssetReaderAudioMixOutput extends AVAssetReaderOutput {
     @Selector("init")
     public native AVAssetReaderAudioMixOutput init();
 
-    /**
-     * initWithAudioTracks:audioSettings:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAssetReaderAudioMixOutput_Class/index.html#//apple_ref/occ/instm/AVAssetReaderAudioMixOutput/initWithAudioTracks:audioSettings:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithAudioTracks:audioSettings:")
     public native AVAssetReaderAudioMixOutput initWithAudioTracksAudioSettings(
             NSArray<? extends AVAssetTrack> audioTracks, NSDictionary<String, ?> audioSettings);
 
-    /**
-     * audioMix</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAssetReaderAudioMixOutput_Class/index.html#//apple_ref/occ/instp/AVAssetReaderAudioMixOutput/audioMix">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setAudioMix:")
     public native void setAudioMix(AVAudioMix value);
 
-    /**
-     * audioTimePitchAlgorithm</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAssetReaderAudioMixOutput_Class/index.html#//apple_ref/occ/instp/AVAssetReaderAudioMixOutput/audioTimePitchAlgorithm">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setAudioTimePitchAlgorithm:")
     public native void setAudioTimePitchAlgorithm(String value);

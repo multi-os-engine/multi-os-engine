@@ -31,6 +31,7 @@ public final class CFNumberFormatterStyle {
     @Generated @NInt public static final long CurrencyISOCodeStyle = 0x0000000000000008L;
     @Generated @NInt public static final long CurrencyPluralStyle = 0x0000000000000009L;
     @Generated @NInt public static final long CurrencyAccountingStyle = 0x000000000000000AL;
+
     @Generated
     private CFNumberFormatterStyle() {
     }

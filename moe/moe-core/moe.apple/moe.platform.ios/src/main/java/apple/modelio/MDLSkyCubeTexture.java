@@ -177,58 +177,30 @@ public class MDLSkyCubeTexture extends MDLTexture {
     @NInt
     public static native long version_static();
 
-    /**
-     * brightness</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLSkyCubeTexture_Class/index.html#//apple_ref/occ/instp/MDLSkyCubeTexture/brightness">iOS Dev Center</a>
-     */
     @Generated
     @Selector("brightness")
     public native float brightness();
 
-    /**
-     * contrast</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLSkyCubeTexture_Class/index.html#//apple_ref/occ/instp/MDLSkyCubeTexture/contrast">iOS Dev Center</a>
-     */
     @Generated
     @Selector("contrast")
     public native float contrast();
 
-    /**
-     * exposure</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLSkyCubeTexture_Class/index.html#//apple_ref/occ/instp/MDLSkyCubeTexture/exposure">iOS Dev Center</a>
-     */
     @Generated
     @Selector("exposure")
     public native float exposure();
 
-    /**
-     * gamma</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLSkyCubeTexture_Class/index.html#//apple_ref/occ/instp/MDLSkyCubeTexture/gamma">iOS Dev Center</a>
-     */
     @Generated
     @Selector("gamma")
     public native float gamma();
 
-    /**
-     * groundAlbedo</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLSkyCubeTexture_Class/index.html#//apple_ref/occ/instp/MDLSkyCubeTexture/groundAlbedo">iOS Dev Center</a>
-     */
     @Generated
     @Selector("groundAlbedo")
     public native float groundAlbedo();
 
-    /**
-     * groundColor</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLSkyCubeTexture_Class/index.html#//apple_ref/occ/instp/MDLSkyCubeTexture/groundColor">iOS Dev Center</a>
-     */
     @Generated
     @Selector("groundColor")
     public native CGColorRef groundColor();
 
-    /**
-     * horizonElevation</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLSkyCubeTexture_Class/index.html#//apple_ref/occ/instp/MDLSkyCubeTexture/horizonElevation">iOS Dev Center</a>
-     */
     @Generated
     @Selector("horizonElevation")
     public native float horizonElevation();
@@ -237,130 +209,66 @@ public class MDLSkyCubeTexture extends MDLTexture {
     @Selector("init")
     public native MDLSkyCubeTexture init();
 
-    /**
-     * saturation</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLSkyCubeTexture_Class/index.html#//apple_ref/occ/instp/MDLSkyCubeTexture/saturation">iOS Dev Center</a>
-     */
     @Generated
     @Selector("saturation")
     public native float saturation();
 
-    /**
-     * brightness</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLSkyCubeTexture_Class/index.html#//apple_ref/occ/instp/MDLSkyCubeTexture/brightness">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setBrightness:")
     public native void setBrightness(float value);
 
-    /**
-     * contrast</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLSkyCubeTexture_Class/index.html#//apple_ref/occ/instp/MDLSkyCubeTexture/contrast">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setContrast:")
     public native void setContrast(float value);
 
-    /**
-     * exposure</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLSkyCubeTexture_Class/index.html#//apple_ref/occ/instp/MDLSkyCubeTexture/exposure">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setExposure:")
     public native void setExposure(float value);
 
-    /**
-     * gamma</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLSkyCubeTexture_Class/index.html#//apple_ref/occ/instp/MDLSkyCubeTexture/gamma">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setGamma:")
     public native void setGamma(float value);
 
-    /**
-     * groundAlbedo</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLSkyCubeTexture_Class/index.html#//apple_ref/occ/instp/MDLSkyCubeTexture/groundAlbedo">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setGroundAlbedo:")
     public native void setGroundAlbedo(float value);
 
-    /**
-     * groundColor</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLSkyCubeTexture_Class/index.html#//apple_ref/occ/instp/MDLSkyCubeTexture/groundColor">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setGroundColor:")
     public native void setGroundColor(CGColorRef value);
 
-    /**
-     * horizonElevation</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLSkyCubeTexture_Class/index.html#//apple_ref/occ/instp/MDLSkyCubeTexture/horizonElevation">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setHorizonElevation:")
     public native void setHorizonElevation(float value);
 
-    /**
-     * saturation</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLSkyCubeTexture_Class/index.html#//apple_ref/occ/instp/MDLSkyCubeTexture/saturation">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setSaturation:")
     public native void setSaturation(float value);
 
-    /**
-     * sunElevation</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLSkyCubeTexture_Class/index.html#//apple_ref/occ/instp/MDLSkyCubeTexture/sunElevation">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setSunElevation:")
     public native void setSunElevation(float value);
 
-    /**
-     * turbidity</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLSkyCubeTexture_Class/index.html#//apple_ref/occ/instp/MDLSkyCubeTexture/turbidity">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setTurbidity:")
     public native void setTurbidity(float value);
 
-    /**
-     * upperAtmosphereScattering</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLSkyCubeTexture_Class/index.html#//apple_ref/occ/instp/MDLSkyCubeTexture/upperAtmosphereScattering">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setUpperAtmosphereScattering:")
     public native void setUpperAtmosphereScattering(float value);
 
-    /**
-     * sunElevation</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLSkyCubeTexture_Class/index.html#//apple_ref/occ/instp/MDLSkyCubeTexture/sunElevation">iOS Dev Center</a>
-     */
     @Generated
     @Selector("sunElevation")
     public native float sunElevation();
 
-    /**
-     * turbidity</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLSkyCubeTexture_Class/index.html#//apple_ref/occ/instp/MDLSkyCubeTexture/turbidity">iOS Dev Center</a>
-     */
     @Generated
     @Selector("turbidity")
     public native float turbidity();
 
-    /**
-     * updateTexture</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLSkyCubeTexture_Class/index.html#//apple_ref/occ/instm/MDLSkyCubeTexture/updateTexture">iOS Dev Center</a>
-     */
     @Generated
     @Selector("updateTexture")
     public native void updateTexture();
 
-    /**
-     * upperAtmosphereScattering</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLSkyCubeTexture_Class/index.html#//apple_ref/occ/instp/MDLSkyCubeTexture/upperAtmosphereScattering">iOS Dev Center</a>
-     */
     @Generated
     @Selector("upperAtmosphereScattering")
     public native float upperAtmosphereScattering();

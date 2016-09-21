@@ -27,6 +27,7 @@ public final class CFSocketCallBackType {
     @Generated @NUInt public static final long DataCallBack = 0x0000000000000003L;
     @Generated @NUInt public static final long ConnectCallBack = 0x0000000000000004L;
     @Generated @NUInt public static final long WriteCallBack = 0x0000000000000008L;
+
     @Generated
     private CFSocketCallBackType() {
     }

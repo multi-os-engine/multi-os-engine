@@ -67,64 +67,36 @@ public class GLKTextureLoader extends NSObject {
     @Selector("alloc")
     public static native GLKTextureLoader alloc();
 
-    /**
-     * cubeMapWithContentsOfFile:options:error:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GLkit/Reference/GLKTextureLoader_ClassRef/index.html#//apple_ref/occ/clm/GLKTextureLoader/cubeMapWithContentsOfFile:options:error:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("cubeMapWithContentsOfFile:options:error:")
     public static native GLKTextureInfo cubeMapWithContentsOfFileOptionsError(String path,
             NSDictionary<String, ? extends NSNumber> options, Ptr<NSError> outError);
 
-    /**
-     * cubeMapWithContentsOfFiles:options:error:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GLkit/Reference/GLKTextureLoader_ClassRef/index.html#//apple_ref/occ/clm/GLKTextureLoader/cubeMapWithContentsOfFiles:options:error:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("cubeMapWithContentsOfFiles:options:error:")
     public static native GLKTextureInfo cubeMapWithContentsOfFilesOptionsError(NSArray<?> paths,
             NSDictionary<String, ? extends NSNumber> options, Ptr<NSError> outError);
 
-    /**
-     * cubeMapWithContentsOfURL:options:error:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GLkit/Reference/GLKTextureLoader_ClassRef/index.html#//apple_ref/occ/clm/GLKTextureLoader/cubeMapWithContentsOfURL:options:error:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("cubeMapWithContentsOfURL:options:error:")
     public static native GLKTextureInfo cubeMapWithContentsOfURLOptionsError(NSURL url,
             NSDictionary<String, ? extends NSNumber> options, Ptr<NSError> outError);
 
-    /**
-     * textureWithCGImage:options:error:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GLkit/Reference/GLKTextureLoader_ClassRef/index.html#//apple_ref/occ/clm/GLKTextureLoader/textureWithCGImage:options:error:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("textureWithCGImage:options:error:")
     public static native GLKTextureInfo textureWithCGImageOptionsError(CGImageRef cgImage,
             NSDictionary<String, ? extends NSNumber> options, Ptr<NSError> outError);
 
-    /**
-     * textureWithContentsOfData:options:error:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GLkit/Reference/GLKTextureLoader_ClassRef/index.html#//apple_ref/occ/clm/GLKTextureLoader/textureWithContentsOfData:options:error:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("textureWithContentsOfData:options:error:")
     public static native GLKTextureInfo textureWithContentsOfDataOptionsError(NSData data,
             NSDictionary<String, ? extends NSNumber> options, Ptr<NSError> outError);
 
-    /**
-     * textureWithContentsOfFile:options:error:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GLkit/Reference/GLKTextureLoader_ClassRef/index.html#//apple_ref/occ/clm/GLKTextureLoader/textureWithContentsOfFile:options:error:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("textureWithContentsOfFile:options:error:")
     public static native GLKTextureInfo textureWithContentsOfFileOptionsError(String path,
             NSDictionary<String, ? extends NSNumber> options, Ptr<NSError> outError);
 
-    /**
-     * textureWithContentsOfURL:options:error:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GLkit/Reference/GLKTextureLoader_ClassRef/index.html#//apple_ref/occ/clm/GLKTextureLoader/textureWithContentsOfURL:options:error:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("textureWithContentsOfURL:options:error:")
     public static native GLKTextureInfo textureWithContentsOfURLOptionsError(NSURL url,
@@ -230,30 +202,18 @@ public class GLKTextureLoader extends NSObject {
     @NInt
     public static native long version_static();
 
-    /**
-     * cubeMapWithContentsOfFile:options:queue:completionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GLkit/Reference/GLKTextureLoader_ClassRef/index.html#//apple_ref/occ/instm/GLKTextureLoader/cubeMapWithContentsOfFile:options:queue:completionHandler:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("cubeMapWithContentsOfFile:options:queue:completionHandler:")
     public native void cubeMapWithContentsOfFileOptionsQueueCompletionHandler(String path,
             NSDictionary<String, ? extends NSNumber> options, NSObject queue,
             @ObjCBlock(name = "call_cubeMapWithContentsOfFileOptionsQueueCompletionHandler") Block_cubeMapWithContentsOfFileOptionsQueueCompletionHandler block);
 
-    /**
-     * cubeMapWithContentsOfFiles:options:queue:completionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GLkit/Reference/GLKTextureLoader_ClassRef/index.html#//apple_ref/occ/instm/GLKTextureLoader/cubeMapWithContentsOfFiles:options:queue:completionHandler:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("cubeMapWithContentsOfFiles:options:queue:completionHandler:")
     public native void cubeMapWithContentsOfFilesOptionsQueueCompletionHandler(NSArray<?> paths,
             NSDictionary<String, ? extends NSNumber> options, NSObject queue,
             @ObjCBlock(name = "call_cubeMapWithContentsOfFilesOptionsQueueCompletionHandler") Block_cubeMapWithContentsOfFilesOptionsQueueCompletionHandler block);
 
-    /**
-     * cubeMapWithContentsOfURL:options:queue:completionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GLkit/Reference/GLKTextureLoader_ClassRef/index.html#//apple_ref/occ/instm/GLKTextureLoader/cubeMapWithContentsOfURL:options:queue:completionHandler:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("cubeMapWithContentsOfURL:options:queue:completionHandler:")
     public native void cubeMapWithContentsOfURLOptionsQueueCompletionHandler(NSURL url,
@@ -264,48 +224,28 @@ public class GLKTextureLoader extends NSObject {
     @Selector("init")
     public native GLKTextureLoader init();
 
-    /**
-     * initWithSharegroup:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GLkit/Reference/GLKTextureLoader_ClassRef/index.html#//apple_ref/occ/instm/GLKTextureLoader/initWithSharegroup:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithSharegroup:")
     public native GLKTextureLoader initWithSharegroup(EAGLSharegroup sharegroup);
 
-    /**
-     * textureWithCGImage:options:queue:completionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GLkit/Reference/GLKTextureLoader_ClassRef/index.html#//apple_ref/occ/instm/GLKTextureLoader/textureWithCGImage:options:queue:completionHandler:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("textureWithCGImage:options:queue:completionHandler:")
     public native void textureWithCGImageOptionsQueueCompletionHandler(CGImageRef cgImage,
             NSDictionary<String, ? extends NSNumber> options, NSObject queue,
             @ObjCBlock(name = "call_textureWithCGImageOptionsQueueCompletionHandler") Block_textureWithCGImageOptionsQueueCompletionHandler block);
 
-    /**
-     * textureWithContentsOfData:options:queue:completionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GLkit/Reference/GLKTextureLoader_ClassRef/index.html#//apple_ref/occ/instm/GLKTextureLoader/textureWithContentsOfData:options:queue:completionHandler:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("textureWithContentsOfData:options:queue:completionHandler:")
     public native void textureWithContentsOfDataOptionsQueueCompletionHandler(NSData data,
             NSDictionary<String, ? extends NSNumber> options, NSObject queue,
             @ObjCBlock(name = "call_textureWithContentsOfDataOptionsQueueCompletionHandler") Block_textureWithContentsOfDataOptionsQueueCompletionHandler block);
 
-    /**
-     * textureWithContentsOfFile:options:queue:completionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GLkit/Reference/GLKTextureLoader_ClassRef/index.html#//apple_ref/occ/instm/GLKTextureLoader/textureWithContentsOfFile:options:queue:completionHandler:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("textureWithContentsOfFile:options:queue:completionHandler:")
     public native void textureWithContentsOfFileOptionsQueueCompletionHandler(String path,
             NSDictionary<String, ? extends NSNumber> options, NSObject queue,
             @ObjCBlock(name = "call_textureWithContentsOfFileOptionsQueueCompletionHandler") Block_textureWithContentsOfFileOptionsQueueCompletionHandler block);
 
-    /**
-     * textureWithContentsOfURL:options:queue:completionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GLkit/Reference/GLKTextureLoader_ClassRef/index.html#//apple_ref/occ/instm/GLKTextureLoader/textureWithContentsOfURL:options:queue:completionHandler:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("textureWithContentsOfURL:options:queue:completionHandler:")
     public native void textureWithContentsOfURLOptionsQueueCompletionHandler(NSURL url,

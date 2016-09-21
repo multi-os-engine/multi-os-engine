@@ -28,18 +28,10 @@ import org.moe.natj.objc.ann.Selector;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("UIAccessibilityIdentification")
 public interface UIAccessibilityIdentification {
-    /**
-     * accessibilityIdentifier</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIAccessibilityIdentification_Protocol/index.html#//apple_ref/occ/intfp/UIAccessibilityIdentification/accessibilityIdentifier">iOS Dev Center</a>
-     */
     @Generated
     @Selector("accessibilityIdentifier")
     String accessibilityIdentifier();
 
-    /**
-     * accessibilityIdentifier</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIAccessibilityIdentification_Protocol/index.html#//apple_ref/occ/intfp/UIAccessibilityIdentification/accessibilityIdentifier">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setAccessibilityIdentifier:")
     void setAccessibilityIdentifier(String value);

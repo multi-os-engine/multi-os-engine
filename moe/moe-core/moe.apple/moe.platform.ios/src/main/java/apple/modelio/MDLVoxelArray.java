@@ -160,19 +160,11 @@ public class MDLVoxelArray extends NSObject {
     @NInt
     public static native long version_static();
 
-    /**
-     * count</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLVoxelArray_Class/index.html#//apple_ref/occ/instp/MDLVoxelArray/count">iOS Dev Center</a>
-     */
     @Generated
     @Selector("count")
     @NUInt
     public native long count();
 
-    /**
-     * differenceWithVoxels:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLVoxelArray_Class/index.html#//apple_ref/occ/instm/MDLVoxelArray/differenceWithVoxels:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("differenceWithVoxels:")
     public native void differenceWithVoxels(MDLVoxelArray voxels);
@@ -181,70 +173,38 @@ public class MDLVoxelArray extends NSObject {
     @Selector("init")
     public native MDLVoxelArray init();
 
-    /**
-     * initWithAsset:divisions:interiorNBWidth:exteriorNBWidth:patchRadius:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLVoxelArray_Class/index.html#//apple_ref/occ/instm/MDLVoxelArray/initWithAsset:divisions:interiorNBWidth:exteriorNBWidth:patchRadius:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithAsset:divisions:interiorNBWidth:exteriorNBWidth:patchRadius:")
     public native MDLVoxelArray initWithAssetDivisionsInteriorNBWidthExteriorNBWidthPatchRadius(MDLAsset asset,
             int divisions, float interiorNBWidth, float exteriorNBWidth, float patchRadius);
 
-    /**
-     * initWithAsset:divisions:interiorShells:exteriorShells:patchRadius:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLVoxelArray_Class/index.html#//apple_ref/occ/instm/MDLVoxelArray/initWithAsset:divisions:interiorShells:exteriorShells:patchRadius:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithAsset:divisions:interiorShells:exteriorShells:patchRadius:")
     public native MDLVoxelArray initWithAssetDivisionsInteriorShellsExteriorShellsPatchRadius(MDLAsset asset,
             int divisions, int interiorShells, int exteriorShells, float patchRadius);
 
-    /**
-     * intersectWithVoxels:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLVoxelArray_Class/index.html#//apple_ref/occ/instm/MDLVoxelArray/intersectWithVoxels:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("intersectWithVoxels:")
     public native void intersectWithVoxels(MDLVoxelArray voxels);
 
-    /**
-     * meshUsingAllocator:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLVoxelArray_Class/index.html#//apple_ref/occ/instm/MDLVoxelArray/meshUsingAllocator:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("meshUsingAllocator:")
     public native MDLMesh meshUsingAllocator(@Mapped(ObjCObjectMapper.class) MDLMeshBufferAllocator allocator);
 
-    /**
-     * setVoxelsForMesh:divisions:interiorNBWidth:exteriorNBWidth:patchRadius:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLVoxelArray_Class/index.html#//apple_ref/occ/instm/MDLVoxelArray/setVoxelsForMesh:divisions:interiorNBWidth:exteriorNBWidth:patchRadius:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setVoxelsForMesh:divisions:interiorNBWidth:exteriorNBWidth:patchRadius:")
     public native void setVoxelsForMeshDivisionsInteriorNBWidthExteriorNBWidthPatchRadius(MDLMesh mesh, int divisions,
             float interiorNBWidth, float exteriorNBWidth, float patchRadius);
 
-    /**
-     * setVoxelsForMesh:divisions:interiorShells:exteriorShells:patchRadius:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLVoxelArray_Class/index.html#//apple_ref/occ/instm/MDLVoxelArray/setVoxelsForMesh:divisions:interiorShells:exteriorShells:patchRadius:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setVoxelsForMesh:divisions:interiorShells:exteriorShells:patchRadius:")
     public native void setVoxelsForMeshDivisionsInteriorShellsExteriorShellsPatchRadius(MDLMesh mesh, int divisions,
             int interiorShells, int exteriorShells, float patchRadius);
 
-    /**
-     * unionWithVoxels:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLVoxelArray_Class/index.html#//apple_ref/occ/instm/MDLVoxelArray/unionWithVoxels:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("unionWithVoxels:")
     public native void unionWithVoxels(MDLVoxelArray voxels);
 
-    /**
-     * voxelIndices</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLVoxelArray_Class/index.html#//apple_ref/occ/instm/MDLVoxelArray/voxelIndices">iOS Dev Center</a>
-     */
     @Generated
     @Selector("voxelIndices")
     public native NSData voxelIndices();

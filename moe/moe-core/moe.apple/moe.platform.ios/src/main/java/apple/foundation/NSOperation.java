@@ -156,198 +156,102 @@ public class NSOperation extends NSObject {
     @NInt
     public static native long version();
 
-    /**
-     * addDependency:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSOperation_class/index.html#//apple_ref/occ/instm/NSOperation/addDependency:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("addDependency:")
     public native void addDependency(NSOperation op);
 
-    /**
-     * cancel</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSOperation_class/index.html#//apple_ref/occ/instm/NSOperation/cancel">iOS Dev Center</a>
-     */
     @Generated
     @Selector("cancel")
     public native void cancel();
 
-    /**
-     * dependencies</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSOperation_class/index.html#//apple_ref/occ/instp/NSOperation/dependencies">iOS Dev Center</a>
-     */
     @Generated
     @Selector("dependencies")
     public native NSArray<? extends NSOperation> dependencies();
 
-    /**
-     * init</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSOperation_class/index.html#//apple_ref/occ/instm/NSOperation/init">iOS Dev Center</a>
-     */
     @Generated
     @Selector("init")
     public native NSOperation init();
 
-    /**
-     * asynchronous</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSOperation_class/index.html#//apple_ref/occ/instp/NSOperation/asynchronous">iOS Dev Center</a>
-     */
     @Generated
     @Selector("isAsynchronous")
     public native boolean isAsynchronous();
 
-    /**
-     * cancelled</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSOperation_class/index.html#//apple_ref/occ/instp/NSOperation/cancelled">iOS Dev Center</a>
-     */
     @Generated
     @Selector("isCancelled")
     public native boolean isCancelled();
 
-    /**
-     * concurrent</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSOperation_class/index.html#//apple_ref/occ/instp/NSOperation/concurrent">iOS Dev Center</a>
-     */
     @Generated
     @Selector("isConcurrent")
     public native boolean isConcurrent();
 
-    /**
-     * executing</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSOperation_class/index.html#//apple_ref/occ/instp/NSOperation/executing">iOS Dev Center</a>
-     */
     @Generated
     @Selector("isExecuting")
     public native boolean isExecuting();
 
-    /**
-     * finished</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSOperation_class/index.html#//apple_ref/occ/instp/NSOperation/finished">iOS Dev Center</a>
-     */
     @Generated
     @Selector("isFinished")
     public native boolean isFinished();
 
-    /**
-     * ready</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSOperation_class/index.html#//apple_ref/occ/instp/NSOperation/ready">iOS Dev Center</a>
-     */
     @Generated
     @Selector("isReady")
     public native boolean isReady();
 
-    /**
-     * main</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSOperation_class/index.html#//apple_ref/occ/instm/NSOperation/main">iOS Dev Center</a>
-     */
     @Generated
     @Selector("main")
     public native void main();
 
-    /**
-     * name</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSOperation_class/index.html#//apple_ref/occ/instp/NSOperation/name">iOS Dev Center</a>
-     */
     @Generated
     @Selector("name")
     public native String name();
 
-    /**
-     * qualityOfService</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSOperation_class/index.html#//apple_ref/occ/instp/NSOperation/qualityOfService">iOS Dev Center</a>
-     */
     @Generated
     @Selector("qualityOfService")
     @NInt
     public native long qualityOfService();
 
-    /**
-     * queuePriority</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSOperation_class/index.html#//apple_ref/occ/instp/NSOperation/queuePriority">iOS Dev Center</a>
-     */
     @Generated
     @Selector("queuePriority")
     @NInt
     public native long queuePriority();
 
-    /**
-     * removeDependency:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSOperation_class/index.html#//apple_ref/occ/instm/NSOperation/removeDependency:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("removeDependency:")
     public native void removeDependency(NSOperation op);
 
-    /**
-     * completionBlock</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSOperation_class/index.html#//apple_ref/occ/instp/NSOperation/completionBlock">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setCompletionBlock:")
     public native void setCompletionBlock(@ObjCBlock(name = "call_setCompletionBlock") Block_setCompletionBlock value);
 
-    /**
-     * name</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSOperation_class/index.html#//apple_ref/occ/instp/NSOperation/name">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setName:")
     public native void setName(String value);
 
-    /**
-     * qualityOfService</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSOperation_class/index.html#//apple_ref/occ/instp/NSOperation/qualityOfService">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setQualityOfService:")
     public native void setQualityOfService(@NInt long value);
 
-    /**
-     * queuePriority</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSOperation_class/index.html#//apple_ref/occ/instp/NSOperation/queuePriority">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setQueuePriority:")
     public native void setQueuePriority(@NInt long value);
 
-    /**
-     * threadPriority</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSOperation_class/index.html#//apple_ref/occ/instp/NSOperation/threadPriority">iOS Dev Center</a>
-     */
     @Generated
     @Deprecated
     @Selector("setThreadPriority:")
     public native void setThreadPriority(double value);
 
-    /**
-     * start</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSOperation_class/index.html#//apple_ref/occ/instm/NSOperation/start">iOS Dev Center</a>
-     */
     @Generated
     @Selector("start")
     public native void start();
 
-    /**
-     * threadPriority</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSOperation_class/index.html#//apple_ref/occ/instp/NSOperation/threadPriority">iOS Dev Center</a>
-     */
     @Generated
     @Deprecated
     @Selector("threadPriority")
     public native double threadPriority();
 
-    /**
-     * waitUntilFinished</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSOperation_class/index.html#//apple_ref/occ/instm/NSOperation/waitUntilFinished">iOS Dev Center</a>
-     */
     @Generated
     @Selector("waitUntilFinished")
     public native void waitUntilFinished();
 
-    /**
-     * completionBlock</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSOperation_class/index.html#//apple_ref/occ/instp/NSOperation/completionBlock">iOS Dev Center</a>
-     */
     @Generated
     @Selector("completionBlock")
     @ObjCBlock(name = "call_completionBlock_ret")

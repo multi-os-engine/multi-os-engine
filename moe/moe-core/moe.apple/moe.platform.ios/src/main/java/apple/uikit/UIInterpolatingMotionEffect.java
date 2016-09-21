@@ -163,60 +163,32 @@ public class UIInterpolatingMotionEffect extends UIMotionEffect {
     @Selector("init")
     public native UIInterpolatingMotionEffect init();
 
-    /**
-     * initWithKeyPath:type:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIInterpolatingMotionEffect_class/index.html#//apple_ref/occ/instm/UIInterpolatingMotionEffect/initWithKeyPath:type:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithKeyPath:type:")
     public native UIInterpolatingMotionEffect initWithKeyPathType(String keyPath, @NInt long type);
 
-    /**
-     * keyPath</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIInterpolatingMotionEffect_class/index.html#//apple_ref/occ/instp/UIInterpolatingMotionEffect/keyPath">iOS Dev Center</a>
-     */
     @Generated
     @Selector("keyPath")
     public native String keyPath();
 
-    /**
-     * maximumRelativeValue</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIInterpolatingMotionEffect_class/index.html#//apple_ref/occ/instp/UIInterpolatingMotionEffect/maximumRelativeValue">iOS Dev Center</a>
-     */
     @Generated
     @Selector("maximumRelativeValue")
     @MappedReturn(ObjCObjectMapper.class)
     public native Object maximumRelativeValue();
 
-    /**
-     * minimumRelativeValue</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIInterpolatingMotionEffect_class/index.html#//apple_ref/occ/instp/UIInterpolatingMotionEffect/minimumRelativeValue">iOS Dev Center</a>
-     */
     @Generated
     @Selector("minimumRelativeValue")
     @MappedReturn(ObjCObjectMapper.class)
     public native Object minimumRelativeValue();
 
-    /**
-     * maximumRelativeValue</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIInterpolatingMotionEffect_class/index.html#//apple_ref/occ/instp/UIInterpolatingMotionEffect/maximumRelativeValue">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setMaximumRelativeValue:")
     public native void setMaximumRelativeValue(@Mapped(ObjCObjectMapper.class) Object value);
 
-    /**
-     * minimumRelativeValue</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIInterpolatingMotionEffect_class/index.html#//apple_ref/occ/instp/UIInterpolatingMotionEffect/minimumRelativeValue">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setMinimumRelativeValue:")
     public native void setMinimumRelativeValue(@Mapped(ObjCObjectMapper.class) Object value);
 
-    /**
-     * type</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIInterpolatingMotionEffect_class/index.html#//apple_ref/occ/instp/UIInterpolatingMotionEffect/type">iOS Dev Center</a>
-     */
     @Generated
     @Selector("type")
     @NInt

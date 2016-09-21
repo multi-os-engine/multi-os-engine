@@ -29,10 +29,6 @@ import org.moe.natj.objc.ann.Selector;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("GKGameModelPlayer")
 public interface GKGameModelPlayer {
-    /**
-     * playerId</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameplayKit/Reference/GKGameModelPlayer_Protocol/index.html#//apple_ref/occ/intfp/GKGameModelPlayer/playerId">iOS Dev Center</a>
-     */
     @Generated
     @Selector("playerId")
     @NInt

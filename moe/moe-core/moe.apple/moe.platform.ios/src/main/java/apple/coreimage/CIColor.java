@@ -67,35 +67,19 @@ public class CIColor extends NSObject implements NSSecureCoding, NSCopying {
     @Selector("alloc")
     public static native CIColor alloc();
 
-    /**
-     * colorWithCGColor:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/QuartzCoreFramework/Classes/CIColor_Class/index.html#//apple_ref/occ/clm/CIColor/colorWithCGColor:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("colorWithCGColor:")
     public static native CIColor colorWithCGColor(CGColorRef c);
 
-    /**
-     * colorWithRed:green:blue:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/QuartzCoreFramework/Classes/CIColor_Class/index.html#//apple_ref/occ/clm/CIColor/colorWithRed:green:blue:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("colorWithRed:green:blue:")
     public static native CIColor colorWithRedGreenBlue(@NFloat double r, @NFloat double g, @NFloat double b);
 
-    /**
-     * colorWithRed:green:blue:alpha:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/QuartzCoreFramework/Classes/CIColor_Class/index.html#//apple_ref/occ/clm/CIColor/colorWithRed:green:blue:alpha:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("colorWithRed:green:blue:alpha:")
     public static native CIColor colorWithRedGreenBlueAlpha(@NFloat double r, @NFloat double g, @NFloat double b,
             @NFloat double a);
 
-    /**
-     * colorWithString:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/QuartzCoreFramework/Classes/CIColor_Class/index.html#//apple_ref/occ/clm/CIColor/colorWithString:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("colorWithString:")
     public static native CIColor colorWithString(String representation);
@@ -204,36 +188,20 @@ public class CIColor extends NSObject implements NSSecureCoding, NSCopying {
     @NInt
     public static native long version_static();
 
-    /**
-     * alpha</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/QuartzCoreFramework/Classes/CIColor_Class/index.html#//apple_ref/occ/instp/CIColor/alpha">iOS Dev Center</a>
-     */
     @Generated
     @Selector("alpha")
     @NFloat
     public native double alpha();
 
-    /**
-     * blue</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/QuartzCoreFramework/Classes/CIColor_Class/index.html#//apple_ref/occ/instp/CIColor/blue">iOS Dev Center</a>
-     */
     @Generated
     @Selector("blue")
     @NFloat
     public native double blue();
 
-    /**
-     * colorSpace</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/QuartzCoreFramework/Classes/CIColor_Class/index.html#//apple_ref/occ/instp/CIColor/colorSpace">iOS Dev Center</a>
-     */
     @Generated
     @Selector("colorSpace")
     public native CGColorSpaceRef colorSpace();
 
-    /**
-     * components</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/QuartzCoreFramework/Classes/CIColor_Class/index.html#//apple_ref/occ/instp/CIColor/components">iOS Dev Center</a>
-     */
     @Generated
     @Selector("components")
     public native ConstNFloatPtr components();
@@ -248,10 +216,6 @@ public class CIColor extends NSObject implements NSSecureCoding, NSCopying {
     @Selector("encodeWithCoder:")
     public native void encodeWithCoder(NSCoder aCoder);
 
-    /**
-     * green</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/QuartzCoreFramework/Classes/CIColor_Class/index.html#//apple_ref/occ/instp/CIColor/green">iOS Dev Center</a>
-     */
     @Generated
     @Selector("green")
     @NFloat
@@ -261,10 +225,6 @@ public class CIColor extends NSObject implements NSSecureCoding, NSCopying {
     @Selector("init")
     public native CIColor init();
 
-    /**
-     * initWithCGColor:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/QuartzCoreFramework/Classes/CIColor_Class/index.html#//apple_ref/occ/instm/CIColor/initWithCGColor:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithCGColor:")
     public native CIColor initWithCGColor(CGColorRef c);
@@ -273,52 +233,28 @@ public class CIColor extends NSObject implements NSSecureCoding, NSCopying {
     @Selector("initWithCoder:")
     public native CIColor initWithCoder(NSCoder aDecoder);
 
-    /**
-     * initWithColor:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/QuartzCoreFramework/Classes/CIColor_Class/index.html#//apple_ref/occ/instm/CIColor/initWithColor:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithColor:")
     public native CIColor initWithColor(UIColor color);
 
-    /**
-     * numberOfComponents</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/QuartzCoreFramework/Classes/CIColor_Class/index.html#//apple_ref/occ/instp/CIColor/numberOfComponents">iOS Dev Center</a>
-     */
     @Generated
     @Selector("numberOfComponents")
     @NUInt
     public native long numberOfComponents();
 
-    /**
-     * red</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/QuartzCoreFramework/Classes/CIColor_Class/index.html#//apple_ref/occ/instp/CIColor/red">iOS Dev Center</a>
-     */
     @Generated
     @Selector("red")
     @NFloat
     public native double red();
 
-    /**
-     * stringRepresentation</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/QuartzCoreFramework/Classes/CIColor_Class/index.html#//apple_ref/occ/instp/CIColor/stringRepresentation">iOS Dev Center</a>
-     */
     @Generated
     @Selector("stringRepresentation")
     public native String stringRepresentation();
 
-    /**
-     * initWithRed:green:blue:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/QuartzCoreFramework/Classes/CIColor_Class/index.html#//apple_ref/occ/instm/CIColor/initWithRed:green:blue:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithRed:green:blue:")
     public native CIColor initWithRedGreenBlue(@NFloat double r, @NFloat double g, @NFloat double b);
 
-    /**
-     * initWithRed:green:blue:alpha:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/QuartzCoreFramework/Classes/CIColor_Class/index.html#//apple_ref/occ/instm/CIColor/initWithRed:green:blue:alpha:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithRed:green:blue:alpha:")
     public native CIColor initWithRedGreenBlueAlpha(@NFloat double r, @NFloat double g, @NFloat double b,

@@ -55,38 +55,22 @@ public class NSTimer extends NSObject {
     @Selector("alloc")
     public static native NSTimer alloc();
 
-    /**
-     * scheduledTimerWithTimeInterval:invocation:repeats:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSTimer_Class/index.html#//apple_ref/occ/clm/NSTimer/scheduledTimerWithTimeInterval:invocation:repeats:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("scheduledTimerWithTimeInterval:invocation:repeats:")
     public static native NSTimer scheduledTimerWithTimeIntervalInvocationRepeats(double ti, NSInvocation invocation,
             boolean yesOrNo);
 
-    /**
-     * scheduledTimerWithTimeInterval:target:selector:userInfo:repeats:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSTimer_Class/index.html#//apple_ref/occ/clm/NSTimer/scheduledTimerWithTimeInterval:target:selector:userInfo:repeats:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("scheduledTimerWithTimeInterval:target:selector:userInfo:repeats:")
     public static native NSTimer scheduledTimerWithTimeIntervalTargetSelectorUserInfoRepeats(double ti,
             @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
             @Mapped(ObjCObjectMapper.class) Object userInfo, boolean yesOrNo);
 
-    /**
-     * timerWithTimeInterval:invocation:repeats:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSTimer_Class/index.html#//apple_ref/occ/clm/NSTimer/timerWithTimeInterval:invocation:repeats:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("timerWithTimeInterval:invocation:repeats:")
     public static native NSTimer timerWithTimeIntervalInvocationRepeats(double ti, NSInvocation invocation,
             boolean yesOrNo);
 
-    /**
-     * timerWithTimeInterval:target:selector:userInfo:repeats:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSTimer_Class/index.html#//apple_ref/occ/clm/NSTimer/timerWithTimeInterval:target:selector:userInfo:repeats:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("timerWithTimeInterval:target:selector:userInfo:repeats:")
     public static native NSTimer timerWithTimeIntervalTargetSelectorUserInfoRepeats(double ti,
@@ -193,18 +177,10 @@ public class NSTimer extends NSObject {
     @NInt
     public static native long version();
 
-    /**
-     * fire</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSTimer_Class/index.html#//apple_ref/occ/instm/NSTimer/fire">iOS Dev Center</a>
-     */
     @Generated
     @Selector("fire")
     public native void fire();
 
-    /**
-     * fireDate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSTimer_Class/index.html#//apple_ref/occ/instp/NSTimer/fireDate">iOS Dev Center</a>
-     */
     @Generated
     @Selector("fireDate")
     public native NSDate fireDate();
@@ -213,67 +189,35 @@ public class NSTimer extends NSObject {
     @Selector("init")
     public native NSTimer init();
 
-    /**
-     * initWithFireDate:interval:target:selector:userInfo:repeats:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSTimer_Class/index.html#//apple_ref/occ/instm/NSTimer/initWithFireDate:interval:target:selector:userInfo:repeats:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithFireDate:interval:target:selector:userInfo:repeats:")
     public native NSTimer initWithFireDateIntervalTargetSelectorUserInfoRepeats(NSDate date, double ti,
             @Mapped(ObjCObjectMapper.class) Object t, SEL s, @Mapped(ObjCObjectMapper.class) Object ui, boolean rep);
 
-    /**
-     * invalidate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSTimer_Class/index.html#//apple_ref/occ/instm/NSTimer/invalidate">iOS Dev Center</a>
-     */
     @Generated
     @Selector("invalidate")
     public native void invalidate();
 
-    /**
-     * valid</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSTimer_Class/index.html#//apple_ref/occ/instp/NSTimer/valid">iOS Dev Center</a>
-     */
     @Generated
     @Selector("isValid")
     public native boolean isValid();
 
-    /**
-     * fireDate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSTimer_Class/index.html#//apple_ref/occ/instp/NSTimer/fireDate">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setFireDate:")
     public native void setFireDate(NSDate value);
 
-    /**
-     * tolerance</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSTimer_Class/index.html#//apple_ref/occ/instp/NSTimer/tolerance">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setTolerance:")
     public native void setTolerance(double value);
 
-    /**
-     * timeInterval</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSTimer_Class/index.html#//apple_ref/occ/instp/NSTimer/timeInterval">iOS Dev Center</a>
-     */
     @Generated
     @Selector("timeInterval")
     public native double timeInterval();
 
-    /**
-     * tolerance</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSTimer_Class/index.html#//apple_ref/occ/instp/NSTimer/tolerance">iOS Dev Center</a>
-     */
     @Generated
     @Selector("tolerance")
     public native double tolerance();
 
-    /**
-     * userInfo</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSTimer_Class/index.html#//apple_ref/occ/instp/NSTimer/userInfo">iOS Dev Center</a>
-     */
     @Generated
     @Selector("userInfo")
     @MappedReturn(ObjCObjectMapper.class)

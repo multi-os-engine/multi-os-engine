@@ -158,10 +158,6 @@ public class UIMenuItem extends NSObject {
     @NInt
     public static native long version_static();
 
-    /**
-     * action</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIMenuItem_Class/index.html#//apple_ref/occ/instp/UIMenuItem/action">iOS Dev Center</a>
-     */
     @Generated
     @Selector("action")
     public native SEL action();
@@ -170,34 +166,18 @@ public class UIMenuItem extends NSObject {
     @Selector("init")
     public native UIMenuItem init();
 
-    /**
-     * initWithTitle:action:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIMenuItem_Class/index.html#//apple_ref/occ/instm/UIMenuItem/initWithTitle:action:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithTitle:action:")
     public native UIMenuItem initWithTitleAction(String title, SEL action);
 
-    /**
-     * action</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIMenuItem_Class/index.html#//apple_ref/occ/instp/UIMenuItem/action">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setAction:")
     public native void setAction(SEL value);
 
-    /**
-     * title</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIMenuItem_Class/index.html#//apple_ref/occ/instp/UIMenuItem/title">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setTitle:")
     public native void setTitle(String value);
 
-    /**
-     * title</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIMenuItem_Class/index.html#//apple_ref/occ/instp/UIMenuItem/title">iOS Dev Center</a>
-     */
     @Generated
     @Selector("title")
     public native String title();

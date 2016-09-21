@@ -89,81 +89,45 @@ public final class CoreMedia {
     private CoreMedia() {
     }
 
-    /**
-     * CMTimeMake</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMedia/Reference/CMTime/index.html#//apple_ref/c/func/CMTimeMake">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @ByValue
     public static native CMTime CMTimeMake(long value, int timescale);
 
-    /**
-     * CMTimeMakeWithEpoch</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMedia/Reference/CMTime/index.html#//apple_ref/c/func/CMTimeMakeWithEpoch">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @ByValue
     public static native CMTime CMTimeMakeWithEpoch(long value, int timescale, long epoch);
 
-    /**
-     * CMTimeMakeWithSeconds</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMedia/Reference/CMTime/index.html#//apple_ref/c/func/CMTimeMakeWithSeconds">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @ByValue
     public static native CMTime CMTimeMakeWithSeconds(double seconds, int preferredTimeScale);
 
-    /**
-     * CMTimeGetSeconds</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMedia/Reference/CMTime/index.html#//apple_ref/c/func/CMTimeGetSeconds">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native double CMTimeGetSeconds(@ByValue CMTime time);
 
-    /**
-     * CMTimeConvertScale</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMedia/Reference/CMTime/index.html#//apple_ref/c/func/CMTimeConvertScale">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @ByValue
     public static native CMTime CMTimeConvertScale(@ByValue CMTime time, int newTimescale, int method);
 
-    /**
-     * CMTimeAdd</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMedia/Reference/CMTime/index.html#//apple_ref/c/func/CMTimeAdd">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @ByValue
     public static native CMTime CMTimeAdd(@ByValue CMTime addend1, @ByValue CMTime addend2);
 
-    /**
-     * CMTimeSubtract</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMedia/Reference/CMTime/index.html#//apple_ref/c/func/CMTimeSubtract">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @ByValue
     public static native CMTime CMTimeSubtract(@ByValue CMTime minuend, @ByValue CMTime subtrahend);
 
-    /**
-     * CMTimeMultiply</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMedia/Reference/CMTime/index.html#//apple_ref/c/func/CMTimeMultiply">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @ByValue
     public static native CMTime CMTimeMultiply(@ByValue CMTime time, int multiplier);
 
-    /**
-     * CMTimeMultiplyByFloat64</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMedia/Reference/CMTime/index.html#//apple_ref/c/func/CMTimeMultiplyByFloat64">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @ByValue
@@ -174,278 +138,150 @@ public final class CoreMedia {
     @ByValue
     public static native CMTime CMTimeMultiplyByRatio(@ByValue CMTime time, int multiplier, int divisor);
 
-    /**
-     * CMTimeCompare</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMedia/Reference/CMTime/index.html#//apple_ref/c/func/CMTimeCompare">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native int CMTimeCompare(@ByValue CMTime time1, @ByValue CMTime time2);
 
-    /**
-     * CMTimeMinimum</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMedia/Reference/CMTime/index.html#//apple_ref/c/func/CMTimeMinimum">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @ByValue
     public static native CMTime CMTimeMinimum(@ByValue CMTime time1, @ByValue CMTime time2);
 
-    /**
-     * CMTimeMaximum</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMedia/Reference/CMTime/index.html#//apple_ref/c/func/CMTimeMaximum">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @ByValue
     public static native CMTime CMTimeMaximum(@ByValue CMTime time1, @ByValue CMTime time2);
 
-    /**
-     * CMTimeAbsoluteValue</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMedia/Reference/CMTime/index.html#//apple_ref/c/func/CMTimeAbsoluteValue">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @ByValue
     public static native CMTime CMTimeAbsoluteValue(@ByValue CMTime time);
 
-    /**
-     * CMTimeCopyAsDictionary</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMedia/Reference/CMTime/index.html#//apple_ref/c/func/CMTimeCopyAsDictionary">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native CFDictionaryRef CMTimeCopyAsDictionary(@ByValue CMTime time, CFAllocatorRef allocator);
 
-    /**
-     * CMTimeMakeFromDictionary</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMedia/Reference/CMTime/index.html#//apple_ref/c/func/CMTimeMakeFromDictionary">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @ByValue
     public static native CMTime CMTimeMakeFromDictionary(CFDictionaryRef dict);
 
-    /**
-     * CMTimeCopyDescription</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMedia/Reference/CMTime/index.html#//apple_ref/c/func/CMTimeCopyDescription">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native CFStringRef CMTimeCopyDescription(CFAllocatorRef allocator, @ByValue CMTime time);
 
-    /**
-     * CMTimeShow</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMedia/Reference/CMTime/index.html#//apple_ref/c/func/CMTimeShow">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void CMTimeShow(@ByValue CMTime time);
 
-    /**
-     * CMTimeRangeMake</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMedia/Reference/CMTimeRange/index.html#//apple_ref/c/func/CMTimeRangeMake">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @ByValue
     public static native CMTimeRange CMTimeRangeMake(@ByValue CMTime start, @ByValue CMTime duration);
 
-    /**
-     * CMTimeRangeGetUnion</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMedia/Reference/CMTimeRange/index.html#//apple_ref/c/func/CMTimeRangeGetUnion">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @ByValue
     public static native CMTimeRange CMTimeRangeGetUnion(@ByValue CMTimeRange range1, @ByValue CMTimeRange range2);
 
-    /**
-     * CMTimeRangeGetIntersection</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMedia/Reference/CMTimeRange/index.html#//apple_ref/c/func/CMTimeRangeGetIntersection">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @ByValue
     public static native CMTimeRange CMTimeRangeGetIntersection(@ByValue CMTimeRange range1,
             @ByValue CMTimeRange range2);
 
-    /**
-     * CMTimeRangeEqual</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMedia/Reference/CMTimeRange/index.html#//apple_ref/c/func/CMTimeRangeEqual">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native byte CMTimeRangeEqual(@ByValue CMTimeRange range1, @ByValue CMTimeRange range2);
 
-    /**
-     * CMTimeRangeContainsTime</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMedia/Reference/CMTimeRange/index.html#//apple_ref/c/func/CMTimeRangeContainsTime">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native byte CMTimeRangeContainsTime(@ByValue CMTimeRange range, @ByValue CMTime time);
 
-    /**
-     * CMTimeRangeContainsTimeRange</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMedia/Reference/CMTimeRange/index.html#//apple_ref/c/func/CMTimeRangeContainsTimeRange">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native byte CMTimeRangeContainsTimeRange(@ByValue CMTimeRange range1, @ByValue CMTimeRange range2);
 
-    /**
-     * CMTimeRangeGetEnd</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMedia/Reference/CMTimeRange/index.html#//apple_ref/c/func/CMTimeRangeGetEnd">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @ByValue
     public static native CMTime CMTimeRangeGetEnd(@ByValue CMTimeRange range);
 
-    /**
-     * CMTimeMapTimeFromRangeToRange</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMedia/Reference/CMTimeRange/index.html#//apple_ref/c/func/CMTimeMapTimeFromRangeToRange">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @ByValue
     public static native CMTime CMTimeMapTimeFromRangeToRange(@ByValue CMTime t, @ByValue CMTimeRange fromRange,
             @ByValue CMTimeRange toRange);
 
-    /**
-     * CMTimeClampToRange</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMedia/Reference/CMTimeRange/index.html#//apple_ref/c/func/CMTimeClampToRange">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @ByValue
     public static native CMTime CMTimeClampToRange(@ByValue CMTime time, @ByValue CMTimeRange range);
 
-    /**
-     * CMTimeMapDurationFromRangeToRange</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMedia/Reference/CMTimeRange/index.html#//apple_ref/c/func/CMTimeMapDurationFromRangeToRange">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @ByValue
     public static native CMTime CMTimeMapDurationFromRangeToRange(@ByValue CMTime dur, @ByValue CMTimeRange fromRange,
             @ByValue CMTimeRange toRange);
 
-    /**
-     * CMTimeRangeFromTimeToTime</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMedia/Reference/CMTimeRange/index.html#//apple_ref/c/func/CMTimeRangeFromTimeToTime">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @ByValue
     public static native CMTimeRange CMTimeRangeFromTimeToTime(@ByValue CMTime start, @ByValue CMTime end);
 
-    /**
-     * CMTimeRangeCopyAsDictionary</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMedia/Reference/CMTimeRange/index.html#//apple_ref/c/func/CMTimeRangeCopyAsDictionary">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native CFDictionaryRef CMTimeRangeCopyAsDictionary(@ByValue CMTimeRange range,
             CFAllocatorRef allocator);
 
-    /**
-     * CMTimeRangeMakeFromDictionary</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMedia/Reference/CMTimeRange/index.html#//apple_ref/c/func/CMTimeRangeMakeFromDictionary">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @ByValue
     public static native CMTimeRange CMTimeRangeMakeFromDictionary(CFDictionaryRef dict);
 
-    /**
-     * CMTimeRangeCopyDescription</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMedia/Reference/CMTimeRange/index.html#//apple_ref/c/func/CMTimeRangeCopyDescription">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native CFStringRef CMTimeRangeCopyDescription(CFAllocatorRef allocator, @ByValue CMTimeRange range);
 
-    /**
-     * CMTimeRangeShow</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMedia/Reference/CMTimeRange/index.html#//apple_ref/c/func/CMTimeRangeShow">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void CMTimeRangeShow(@ByValue CMTimeRange range);
 
-    /**
-     * CMSetAttachment</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMedia/Reference/CMAttachment/index.html#//apple_ref/c/func/CMSetAttachment">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void CMSetAttachment(ConstVoidPtr target, CFStringRef key, ConstVoidPtr value,
             int attachmentMode);
 
-    /**
-     * CMGetAttachment</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMedia/Reference/CMAttachment/index.html#//apple_ref/c/func/CMGetAttachment">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native ConstVoidPtr CMGetAttachment(ConstVoidPtr target, CFStringRef key, IntPtr attachmentModeOut);
 
-    /**
-     * CMRemoveAttachment</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMedia/Reference/CMAttachment/index.html#//apple_ref/c/func/CMRemoveAttachment">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void CMRemoveAttachment(ConstVoidPtr target, CFStringRef key);
 
-    /**
-     * CMRemoveAllAttachments</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMedia/Reference/CMAttachment/index.html#//apple_ref/c/func/CMRemoveAllAttachments">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void CMRemoveAllAttachments(ConstVoidPtr target);
 
-    /**
-     * CMCopyDictionaryOfAttachments</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMedia/Reference/CMAttachment/index.html#//apple_ref/c/func/CMCopyDictionaryOfAttachments">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native CFDictionaryRef CMCopyDictionaryOfAttachments(CFAllocatorRef allocator, ConstVoidPtr target,
             int attachmentMode);
 
-    /**
-     * CMSetAttachments</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMedia/Reference/CMAttachment/index.html#//apple_ref/c/func/CMSetAttachments">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void CMSetAttachments(ConstVoidPtr target, CFDictionaryRef theAttachments, int attachmentMode);
 
-    /**
-     * CMPropagateAttachments</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMedia/Reference/CMAttachment/index.html#//apple_ref/c/func/CMPropagateAttachments">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void CMPropagateAttachments(ConstVoidPtr source, ConstVoidPtr destination);
 
-    /**
-     * CMBlockBufferCreateEmpty</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMedia/Reference/CMBlockBuffer/index.html#//apple_ref/c/func/CMBlockBufferCreateEmpty">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native int CMBlockBufferCreateEmpty(CFAllocatorRef structureAllocator, int subBlockCapacity,
             int flags, Ptr<CMBlockBufferRef> newBBufOut);
 
-    /**
-     * CMBlockBufferCreateWithMemoryBlock</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMedia/Reference/CMBlockBuffer/index.html#//apple_ref/c/func/CMBlockBufferCreateWithMemoryBlock">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native int CMBlockBufferCreateWithMemoryBlock(CFAllocatorRef structureAllocator, VoidPtr memoryBlock,
@@ -453,20 +289,12 @@ public final class CoreMedia {
             @UncertainArgument("Options: reference, array Fallback: reference") CMBlockBufferCustomBlockSource customBlockSource,
             @NUInt long offsetToData, @NUInt long dataLength, int flags, Ptr<CMBlockBufferRef> newBBufOut);
 
-    /**
-     * CMBlockBufferCreateWithBufferReference</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMedia/Reference/CMBlockBuffer/index.html#//apple_ref/c/func/CMBlockBufferCreateWithBufferReference">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native int CMBlockBufferCreateWithBufferReference(CFAllocatorRef structureAllocator,
             CMBlockBufferRef targetBuffer, @NUInt long offsetToData, @NUInt long dataLength, int flags,
             Ptr<CMBlockBufferRef> newBBufOut);
 
-    /**
-     * CMBlockBufferCreateContiguous</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMedia/Reference/CMBlockBuffer/index.html#//apple_ref/c/func/CMBlockBufferCreateContiguous">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native int CMBlockBufferCreateContiguous(CFAllocatorRef structureAllocator,
@@ -474,19 +302,11 @@ public final class CoreMedia {
             @UncertainArgument("Options: reference, array Fallback: reference") CMBlockBufferCustomBlockSource customBlockSource,
             @NUInt long offsetToData, @NUInt long dataLength, int flags, Ptr<CMBlockBufferRef> newBBufOut);
 
-    /**
-     * CMBlockBufferGetTypeID</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMedia/Reference/CMBlockBuffer/index.html#//apple_ref/c/func/CMBlockBufferGetTypeID">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @NUInt
     public static native long CMBlockBufferGetTypeID();
 
-    /**
-     * CMBlockBufferAppendMemoryBlock</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMedia/Reference/CMBlockBuffer/index.html#//apple_ref/c/func/CMBlockBufferAppendMemoryBlock">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native int CMBlockBufferAppendMemoryBlock(CMBlockBufferRef theBuffer, VoidPtr memoryBlock,
@@ -494,116 +314,64 @@ public final class CoreMedia {
             @UncertainArgument("Options: reference, array Fallback: reference") CMBlockBufferCustomBlockSource customBlockSource,
             @NUInt long offsetToData, @NUInt long dataLength, int flags);
 
-    /**
-     * CMBlockBufferAppendBufferReference</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMedia/Reference/CMBlockBuffer/index.html#//apple_ref/c/func/CMBlockBufferAppendBufferReference">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native int CMBlockBufferAppendBufferReference(CMBlockBufferRef theBuffer, CMBlockBufferRef targetBBuf,
             @NUInt long offsetToData, @NUInt long dataLength, int flags);
 
-    /**
-     * CMBlockBufferAssureBlockMemory</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMedia/Reference/CMBlockBuffer/index.html#//apple_ref/c/func/CMBlockBufferAssureBlockMemory">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native int CMBlockBufferAssureBlockMemory(CMBlockBufferRef theBuffer);
 
-    /**
-     * CMBlockBufferAccessDataBytes</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMedia/Reference/CMBlockBuffer/index.html#//apple_ref/c/func/CMBlockBufferAccessDataBytes">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native int CMBlockBufferAccessDataBytes(CMBlockBufferRef theBuffer, @NUInt long offset,
             @NUInt long length, VoidPtr temporaryBlock, Ptr<BytePtr> returnedPointer);
 
-    /**
-     * CMBlockBufferCopyDataBytes</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMedia/Reference/CMBlockBuffer/index.html#//apple_ref/c/func/CMBlockBufferCopyDataBytes">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native int CMBlockBufferCopyDataBytes(CMBlockBufferRef theSourceBuffer, @NUInt long offsetToData,
             @NUInt long dataLength, VoidPtr destination);
 
-    /**
-     * CMBlockBufferReplaceDataBytes</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMedia/Reference/CMBlockBuffer/index.html#//apple_ref/c/func/CMBlockBufferReplaceDataBytes">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native int CMBlockBufferReplaceDataBytes(ConstVoidPtr sourceBytes, CMBlockBufferRef destinationBuffer,
             @NUInt long offsetIntoDestination, @NUInt long dataLength);
 
-    /**
-     * CMBlockBufferFillDataBytes</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMedia/Reference/CMBlockBuffer/index.html#//apple_ref/c/func/CMBlockBufferFillDataBytes">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native int CMBlockBufferFillDataBytes(byte fillByte, CMBlockBufferRef destinationBuffer,
             @NUInt long offsetIntoDestination, @NUInt long dataLength);
 
-    /**
-     * CMBlockBufferGetDataPointer</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMedia/Reference/CMBlockBuffer/index.html#//apple_ref/c/func/CMBlockBufferGetDataPointer">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native int CMBlockBufferGetDataPointer(CMBlockBufferRef theBuffer, @NUInt long offset,
             NUIntPtr lengthAtOffset, NUIntPtr totalLength, Ptr<BytePtr> dataPointer);
 
-    /**
-     * CMBlockBufferGetDataLength</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMedia/Reference/CMBlockBuffer/index.html#//apple_ref/c/func/CMBlockBufferGetDataLength">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @NUInt
     public static native long CMBlockBufferGetDataLength(CMBlockBufferRef theBuffer);
 
-    /**
-     * CMBlockBufferIsRangeContiguous</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMedia/Reference/CMBlockBuffer/index.html#//apple_ref/c/func/CMBlockBufferIsRangeContiguous">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native byte CMBlockBufferIsRangeContiguous(CMBlockBufferRef theBuffer, @NUInt long offset,
             @NUInt long length);
 
-    /**
-     * CMBlockBufferIsEmpty</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMedia/Reference/CMBlockBuffer/index.html#//apple_ref/c/func/CMBlockBufferIsEmpty">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native byte CMBlockBufferIsEmpty(CMBlockBufferRef theBuffer);
 
-    /**
-     * CMFormatDescriptionCreate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMedia/Reference/CMFormatDescription/index.html#//apple_ref/c/func/CMFormatDescriptionCreate">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native int CMFormatDescriptionCreate(CFAllocatorRef allocator, int mediaType, int mediaSubtype,
             CFDictionaryRef extensions, Ptr<CMFormatDescriptionRef> descOut);
 
-    /**
-     * CMFormatDescriptionGetTypeID</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMedia/Reference/CMFormatDescription/index.html#//apple_ref/c/func/CMFormatDescriptionGetTypeID">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @NUInt
     public static native long CMFormatDescriptionGetTypeID();
 
-    /**
-     * CMFormatDescriptionEqual</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMedia/Reference/CMFormatDescription/index.html#//apple_ref/c/func/CMFormatDescriptionEqual">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native byte CMFormatDescriptionEqual(CMFormatDescriptionRef desc1, CMFormatDescriptionRef desc2);
@@ -614,43 +382,23 @@ public final class CoreMedia {
             CMFormatDescriptionRef desc2, ConstVoidPtr formatDescriptionExtensionKeysToIgnore,
             ConstVoidPtr sampleDescriptionExtensionAtomKeysToIgnore);
 
-    /**
-     * CMFormatDescriptionGetMediaType</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMedia/Reference/CMFormatDescription/index.html#//apple_ref/c/func/CMFormatDescriptionGetMediaType">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native int CMFormatDescriptionGetMediaType(CMFormatDescriptionRef desc);
 
-    /**
-     * CMFormatDescriptionGetMediaSubType</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMedia/Reference/CMFormatDescription/index.html#//apple_ref/c/func/CMFormatDescriptionGetMediaSubType">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native int CMFormatDescriptionGetMediaSubType(CMFormatDescriptionRef desc);
 
-    /**
-     * CMFormatDescriptionGetExtensions</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMedia/Reference/CMFormatDescription/index.html#//apple_ref/c/func/CMFormatDescriptionGetExtensions">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native CFDictionaryRef CMFormatDescriptionGetExtensions(CMFormatDescriptionRef desc);
 
-    /**
-     * CMFormatDescriptionGetExtension</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMedia/Reference/CMFormatDescription/index.html#//apple_ref/c/func/CMFormatDescriptionGetExtension">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native ConstVoidPtr CMFormatDescriptionGetExtension(CMFormatDescriptionRef desc,
             CFStringRef extensionKey);
 
-    /**
-     * CMAudioFormatDescriptionCreate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMedia/Reference/CMFormatDescription/index.html#//apple_ref/c/func/CMAudioFormatDescriptionCreate">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native int CMAudioFormatDescriptionCreate(CFAllocatorRef allocator,
@@ -660,59 +408,35 @@ public final class CoreMedia {
             @NUInt long magicCookieSize, ConstVoidPtr magicCookie, CFDictionaryRef extensions,
             Ptr<CMFormatDescriptionRef> outDesc);
 
-    /**
-     * CMAudioFormatDescriptionGetStreamBasicDescription</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMedia/Reference/CMFormatDescription/index.html#//apple_ref/c/func/CMAudioFormatDescriptionGetStreamBasicDescription">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @UncertainReturn("Options: reference, array Fallback: reference")
     public static native AudioStreamBasicDescription CMAudioFormatDescriptionGetStreamBasicDescription(
             CMFormatDescriptionRef desc);
 
-    /**
-     * CMAudioFormatDescriptionGetMagicCookie</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMedia/Reference/CMFormatDescription/index.html#//apple_ref/c/func/CMAudioFormatDescriptionGetMagicCookie">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native ConstVoidPtr CMAudioFormatDescriptionGetMagicCookie(CMFormatDescriptionRef desc,
             NUIntPtr cookieSizeOut);
 
-    /**
-     * CMAudioFormatDescriptionGetChannelLayout</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMedia/Reference/CMFormatDescription/index.html#//apple_ref/c/func/CMAudioFormatDescriptionGetChannelLayout">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @UncertainReturn("Options: reference, array Fallback: reference")
     public static native AudioChannelLayout CMAudioFormatDescriptionGetChannelLayout(CMFormatDescriptionRef desc,
             NUIntPtr layoutSize);
 
-    /**
-     * CMAudioFormatDescriptionGetFormatList</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMedia/Reference/CMFormatDescription/index.html#//apple_ref/c/func/CMAudioFormatDescriptionGetFormatList">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @UncertainReturn("Options: reference, array Fallback: reference")
     public static native AudioFormatListItem CMAudioFormatDescriptionGetFormatList(CMFormatDescriptionRef desc,
             NUIntPtr formatListSize);
 
-    /**
-     * CMAudioFormatDescriptionGetRichestDecodableFormat</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMedia/Reference/CMFormatDescription/index.html#//apple_ref/c/func/CMAudioFormatDescriptionGetRichestDecodableFormat">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @UncertainReturn("Options: reference, array Fallback: reference")
     public static native AudioFormatListItem CMAudioFormatDescriptionGetRichestDecodableFormat(
             CMFormatDescriptionRef desc);
 
-    /**
-     * CMAudioFormatDescriptionGetMostCompatibleFormat</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMedia/Reference/CMFormatDescription/index.html#//apple_ref/c/func/CMAudioFormatDescriptionGetMostCompatibleFormat">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @UncertainReturn("Options: reference, array Fallback: reference")
@@ -724,28 +448,16 @@ public final class CoreMedia {
     public static native int CMAudioFormatDescriptionCreateSummary(CFAllocatorRef allocator,
             CFArrayRef formatDescriptionArray, int flags, Ptr<CMFormatDescriptionRef> summaryFormatDescriptionOut);
 
-    /**
-     * CMAudioFormatDescriptionEqual</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMedia/Reference/CMFormatDescription/index.html#//apple_ref/c/func/CMAudioFormatDescriptionEqual">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native byte CMAudioFormatDescriptionEqual(CMFormatDescriptionRef desc1, CMFormatDescriptionRef desc2,
             int equalityMask, IntPtr equalityMaskOut);
 
-    /**
-     * CMVideoFormatDescriptionCreate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMedia/Reference/CMFormatDescription/index.html#//apple_ref/c/func/CMVideoFormatDescriptionCreate">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native int CMVideoFormatDescriptionCreate(CFAllocatorRef allocator, int codecType, int width,
             int height, CFDictionaryRef extensions, Ptr<CMFormatDescriptionRef> outDesc);
 
-    /**
-     * CMVideoFormatDescriptionCreateForImageBuffer</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMedia/Reference/CMFormatDescription/index.html#//apple_ref/c/func/CMVideoFormatDescriptionCreateForImageBuffer">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native int CMVideoFormatDescriptionCreateForImageBuffer(CFAllocatorRef allocator,
@@ -765,139 +477,79 @@ public final class CoreMedia {
             @UncertainArgument("Options: java.string.array, c.const-byte-ptr-ptr Fallback: java.string.array") @Mapped(CStringArrayMapper.class) String[] parameterSetPointerOut,
             NUIntPtr parameterSetSizeOut, NUIntPtr parameterSetCountOut, IntPtr NALUnitHeaderLengthOut);
 
-    /**
-     * CMVideoFormatDescriptionGetDimensions</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMedia/Reference/CMFormatDescription/index.html#//apple_ref/c/func/CMVideoFormatDescriptionGetDimensions">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @ByValue
     public static native CMVideoDimensions CMVideoFormatDescriptionGetDimensions(CMFormatDescriptionRef videoDesc);
 
-    /**
-     * CMVideoFormatDescriptionGetPresentationDimensions</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMedia/Reference/CMFormatDescription/index.html#//apple_ref/c/func/CMVideoFormatDescriptionGetPresentationDimensions">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @ByValue
     public static native CGSize CMVideoFormatDescriptionGetPresentationDimensions(CMFormatDescriptionRef videoDesc,
             byte usePixelAspectRatio, byte useCleanAperture);
 
-    /**
-     * CMVideoFormatDescriptionGetCleanAperture</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMedia/Reference/CMFormatDescription/index.html#//apple_ref/c/func/CMVideoFormatDescriptionGetCleanAperture">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @ByValue
     public static native CGRect CMVideoFormatDescriptionGetCleanAperture(CMFormatDescriptionRef videoDesc,
             byte originIsAtTopLeft);
 
-    /**
-     * CMVideoFormatDescriptionGetExtensionKeysCommonWithImageBuffers</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMedia/Reference/CMFormatDescription/index.html#//apple_ref/c/func/CMVideoFormatDescriptionGetExtensionKeysCommonWithImageBuffers">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native CFArrayRef CMVideoFormatDescriptionGetExtensionKeysCommonWithImageBuffers();
 
-    /**
-     * CMVideoFormatDescriptionMatchesImageBuffer</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMedia/Reference/CMFormatDescription/index.html#//apple_ref/c/func/CMVideoFormatDescriptionMatchesImageBuffer">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native byte CMVideoFormatDescriptionMatchesImageBuffer(CMFormatDescriptionRef desc,
             CVBufferRef imageBuffer);
 
-    /**
-     * CMMuxedFormatDescriptionCreate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMedia/Reference/CMFormatDescription/index.html#//apple_ref/c/func/CMMuxedFormatDescriptionCreate">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native int CMMuxedFormatDescriptionCreate(CFAllocatorRef allocator, int muxType,
             CFDictionaryRef extensions, Ptr<CMFormatDescriptionRef> outDesc);
 
-    /**
-     * CMTextFormatDescriptionGetDisplayFlags</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMedia/Reference/CMFormatDescription/index.html#//apple_ref/c/func/CMTextFormatDescriptionGetDisplayFlags">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native int CMTextFormatDescriptionGetDisplayFlags(CMFormatDescriptionRef desc,
             IntPtr outDisplayFlags);
 
-    /**
-     * CMTextFormatDescriptionGetJustification</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMedia/Reference/CMFormatDescription/index.html#//apple_ref/c/func/CMTextFormatDescriptionGetJustification">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native int CMTextFormatDescriptionGetJustification(CMFormatDescriptionRef desc,
             BytePtr outHorizontalJust, BytePtr outVerticalJust);
 
-    /**
-     * CMTextFormatDescriptionGetDefaultTextBox</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMedia/Reference/CMFormatDescription/index.html#//apple_ref/c/func/CMTextFormatDescriptionGetDefaultTextBox">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native int CMTextFormatDescriptionGetDefaultTextBox(CMFormatDescriptionRef desc,
             byte originIsAtTopLeft, @NFloat double heightOfTextTrack,
             @UncertainArgument("Options: reference, array Fallback: reference") CGRect outDefaultTextBox);
 
-    /**
-     * CMTextFormatDescriptionGetFontName</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMedia/Reference/CMFormatDescription/index.html#//apple_ref/c/func/CMTextFormatDescriptionGetFontName">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native int CMTextFormatDescriptionGetFontName(CMFormatDescriptionRef desc, char localFontID,
             Ptr<CFStringRef> outFontName);
 
-    /**
-     * CMTimeCodeFormatDescriptionCreate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMedia/Reference/CMFormatDescription/index.html#//apple_ref/c/func/CMTimeCodeFormatDescriptionCreate">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native int CMTimeCodeFormatDescriptionCreate(CFAllocatorRef allocator, int timeCodeFormatType,
             @ByValue CMTime frameDuration, int frameQuanta, int tcFlags, CFDictionaryRef extensions,
             Ptr<CMFormatDescriptionRef> descOut);
 
-    /**
-     * CMTimeCodeFormatDescriptionGetFrameDuration</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMedia/Reference/CMFormatDescription/index.html#//apple_ref/c/func/CMTimeCodeFormatDescriptionGetFrameDuration">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @ByValue
     public static native CMTime CMTimeCodeFormatDescriptionGetFrameDuration(
             CMFormatDescriptionRef timeCodeFormatDescription);
 
-    /**
-     * CMTimeCodeFormatDescriptionGetFrameQuanta</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMedia/Reference/CMFormatDescription/index.html#//apple_ref/c/func/CMTimeCodeFormatDescriptionGetFrameQuanta">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native int CMTimeCodeFormatDescriptionGetFrameQuanta(
             CMFormatDescriptionRef timeCodeFormatDescription);
 
-    /**
-     * CMTimeCodeFormatDescriptionGetTimeCodeFlags</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMedia/Reference/CMFormatDescription/index.html#//apple_ref/c/func/CMTimeCodeFormatDescriptionGetTimeCodeFlags">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native int CMTimeCodeFormatDescriptionGetTimeCodeFlags(CMFormatDescriptionRef desc);
 
-    /**
-     * CMMetadataFormatDescriptionCreateWithKeys</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMedia/Reference/CMFormatDescription/index.html#//apple_ref/c/func/CMMetadataFormatDescriptionCreateWithKeys">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native int CMMetadataFormatDescriptionCreateWithKeys(CFAllocatorRef allocator, int metadataType,
@@ -920,10 +572,6 @@ public final class CoreMedia {
             CFAllocatorRef allocator, CMFormatDescriptionRef srcDesc1, CMFormatDescriptionRef srcDesc2,
             Ptr<CMFormatDescriptionRef> outDesc);
 
-    /**
-     * CMMetadataFormatDescriptionGetKeyWithLocalID</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMedia/Reference/CMFormatDescription/index.html#//apple_ref/c/func/CMMetadataFormatDescriptionGetKeyWithLocalID">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native CFDictionaryRef CMMetadataFormatDescriptionGetKeyWithLocalID(CMFormatDescriptionRef desc,
@@ -933,10 +581,6 @@ public final class CoreMedia {
     @CFunction
     public static native CFArrayRef CMMetadataFormatDescriptionGetIdentifiers(CMFormatDescriptionRef desc);
 
-    /**
-     * CMSampleBufferCreate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMedia/Reference/CMSampleBuffer/index.html#//apple_ref/c/func/CMSampleBufferCreate">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native int CMSampleBufferCreate(CFAllocatorRef allocator, CMBlockBufferRef dataBuffer, byte dataReady,
@@ -953,10 +597,6 @@ public final class CoreMedia {
             @UncertainArgument("Options: reference, array Fallback: reference") CMSampleTimingInfo sampleTimingArray,
             @NInt long numSampleSizeEntries, ConstNUIntPtr sampleSizeArray, Ptr<CMSampleBufferRef> sBufOut);
 
-    /**
-     * CMAudioSampleBufferCreateWithPacketDescriptions</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMedia/Reference/CMSampleBuffer/index.html#//apple_ref/c/func/CMAudioSampleBufferCreateWithPacketDescriptions">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native int CMAudioSampleBufferCreateWithPacketDescriptions(CFAllocatorRef allocator,
@@ -975,10 +615,6 @@ public final class CoreMedia {
             @UncertainArgument("Options: reference, array Fallback: reference") AudioStreamPacketDescription packetDescriptions,
             Ptr<CMSampleBufferRef> sBufOut);
 
-    /**
-     * CMSampleBufferCreateForImageBuffer</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMedia/Reference/CMSampleBuffer/index.html#//apple_ref/c/func/CMSampleBufferCreateForImageBuffer">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native int CMSampleBufferCreateForImageBuffer(CFAllocatorRef allocator, CVBufferRef imageBuffer,
@@ -995,19 +631,11 @@ public final class CoreMedia {
             @UncertainArgument("Options: reference, array Fallback: reference") CMSampleTimingInfo sampleTiming,
             Ptr<CMSampleBufferRef> sBufOut);
 
-    /**
-     * CMSampleBufferCreateCopy</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMedia/Reference/CMSampleBuffer/index.html#//apple_ref/c/func/CMSampleBufferCreateCopy">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native int CMSampleBufferCreateCopy(CFAllocatorRef allocator, CMSampleBufferRef sbuf,
             Ptr<CMSampleBufferRef> sbufCopyOut);
 
-    /**
-     * CMSampleBufferCreateCopyWithNewTiming</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMedia/Reference/CMSampleBuffer/index.html#//apple_ref/c/func/CMSampleBufferCreateCopyWithNewTiming">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native int CMSampleBufferCreateCopyWithNewTiming(CFAllocatorRef allocator,
@@ -1015,62 +643,34 @@ public final class CoreMedia {
             @UncertainArgument("Options: reference, array Fallback: reference") CMSampleTimingInfo sampleTimingArray,
             Ptr<CMSampleBufferRef> sBufCopyOut);
 
-    /**
-     * CMSampleBufferCopySampleBufferForRange</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMedia/Reference/CMSampleBuffer/index.html#//apple_ref/c/func/CMSampleBufferCopySampleBufferForRange">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native int CMSampleBufferCopySampleBufferForRange(CFAllocatorRef allocator, CMSampleBufferRef sbuf,
             @ByValue CFRange sampleRange, Ptr<CMSampleBufferRef> sBufOut);
 
-    /**
-     * CMSampleBufferGetTypeID</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMedia/Reference/CMSampleBuffer/index.html#//apple_ref/c/func/CMSampleBufferGetTypeID">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @NUInt
     public static native long CMSampleBufferGetTypeID();
 
-    /**
-     * CMSampleBufferSetDataBuffer</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMedia/Reference/CMSampleBuffer/index.html#//apple_ref/c/func/CMSampleBufferSetDataBuffer">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native int CMSampleBufferSetDataBuffer(CMSampleBufferRef sbuf, CMBlockBufferRef dataBuffer);
 
-    /**
-     * CMSampleBufferGetDataBuffer</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMedia/Reference/CMSampleBuffer/index.html#//apple_ref/c/func/CMSampleBufferGetDataBuffer">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native CMBlockBufferRef CMSampleBufferGetDataBuffer(CMSampleBufferRef sbuf);
 
-    /**
-     * CMSampleBufferGetImageBuffer</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMedia/Reference/CMSampleBuffer/index.html#//apple_ref/c/func/CMSampleBufferGetImageBuffer">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native CVBufferRef CMSampleBufferGetImageBuffer(CMSampleBufferRef sbuf);
 
-    /**
-     * CMSampleBufferSetDataBufferFromAudioBufferList</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMedia/Reference/CMSampleBuffer/index.html#//apple_ref/c/func/CMSampleBufferSetDataBufferFromAudioBufferList">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native int CMSampleBufferSetDataBufferFromAudioBufferList(CMSampleBufferRef sbuf,
             CFAllocatorRef bbufStructAllocator, CFAllocatorRef bbufMemoryAllocator, int flags,
             @UncertainArgument("Options: reference, array Fallback: reference") AudioBufferList bufferList);
 
-    /**
-     * CMSampleBufferGetAudioBufferListWithRetainedBlockBuffer</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMedia/Reference/CMSampleBuffer/index.html#//apple_ref/c/func/CMSampleBufferGetAudioBufferListWithRetainedBlockBuffer">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native int CMSampleBufferGetAudioBufferListWithRetainedBlockBuffer(CMSampleBufferRef sbuf,
@@ -1079,10 +679,6 @@ public final class CoreMedia {
             @NUInt long bufferListSize, CFAllocatorRef bbufStructAllocator, CFAllocatorRef bbufMemoryAllocator,
             int flags, Ptr<CMBlockBufferRef> blockBufferOut);
 
-    /**
-     * CMSampleBufferGetAudioStreamPacketDescriptions</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMedia/Reference/CMSampleBuffer/index.html#//apple_ref/c/func/CMSampleBufferGetAudioStreamPacketDescriptions">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native int CMSampleBufferGetAudioStreamPacketDescriptions(CMSampleBufferRef sbuf,
@@ -1090,10 +686,6 @@ public final class CoreMedia {
             @UncertainArgument("Options: reference, array Fallback: reference") AudioStreamPacketDescription packetDescriptionsOut,
             NUIntPtr packetDescriptionsSizeNeededOut);
 
-    /**
-     * CMSampleBufferGetAudioStreamPacketDescriptionsPtr</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMedia/Reference/CMSampleBuffer/index.html#//apple_ref/c/func/CMSampleBufferGetAudioStreamPacketDescriptionsPtr">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native int CMSampleBufferGetAudioStreamPacketDescriptionsPtr(CMSampleBufferRef sbuf,
@@ -1105,18 +697,10 @@ public final class CoreMedia {
             int numFrames,
             @UncertainArgument("Options: reference, array Fallback: reference") AudioBufferList bufferList);
 
-    /**
-     * CMSampleBufferSetDataReady</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMedia/Reference/CMSampleBuffer/index.html#//apple_ref/c/func/CMSampleBufferSetDataReady">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native int CMSampleBufferSetDataReady(CMSampleBufferRef sbuf);
 
-    /**
-     * CMSampleBufferDataIsReady</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMedia/Reference/CMSampleBuffer/index.html#//apple_ref/c/func/CMSampleBufferDataIsReady">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native byte CMSampleBufferDataIsReady(CMSampleBufferRef sbuf);
@@ -1129,34 +713,18 @@ public final class CoreMedia {
     @CFunction
     public static native byte CMSampleBufferHasDataFailed(CMSampleBufferRef sbuf, IntPtr statusOut);
 
-    /**
-     * CMSampleBufferMakeDataReady</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMedia/Reference/CMSampleBuffer/index.html#//apple_ref/c/func/CMSampleBufferMakeDataReady">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native int CMSampleBufferMakeDataReady(CMSampleBufferRef sbuf);
 
-    /**
-     * CMSampleBufferTrackDataReadiness</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMedia/Reference/CMSampleBuffer/index.html#//apple_ref/c/func/CMSampleBufferTrackDataReadiness">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native int CMSampleBufferTrackDataReadiness(CMSampleBufferRef sbuf, CMSampleBufferRef sbufToTrack);
 
-    /**
-     * CMSampleBufferInvalidate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMedia/Reference/CMSampleBuffer/index.html#//apple_ref/c/func/CMSampleBufferInvalidate">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native int CMSampleBufferInvalidate(CMSampleBufferRef sbuf);
 
-    /**
-     * CMSampleBufferSetInvalidateCallback</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMedia/Reference/CMSampleBuffer/index.html#//apple_ref/c/func/CMSampleBufferSetInvalidateCallback">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native int CMSampleBufferSetInvalidateCallback(CMSampleBufferRef sbuf,
@@ -1168,90 +736,50 @@ public final class CoreMedia {
     public static native int CMSampleBufferSetInvalidateHandler(CMSampleBufferRef sbuf,
             @ObjCBlock(name = "call_CMSampleBufferSetInvalidateHandler") Block_CMSampleBufferSetInvalidateHandler invalidateHandler);
 
-    /**
-     * CMSampleBufferIsValid</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMedia/Reference/CMSampleBuffer/index.html#//apple_ref/c/func/CMSampleBufferIsValid">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native byte CMSampleBufferIsValid(CMSampleBufferRef sbuf);
 
-    /**
-     * CMSampleBufferGetNumSamples</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMedia/Reference/CMSampleBuffer/index.html#//apple_ref/c/func/CMSampleBufferGetNumSamples">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @NInt
     public static native long CMSampleBufferGetNumSamples(CMSampleBufferRef sbuf);
 
-    /**
-     * CMSampleBufferGetDuration</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMedia/Reference/CMSampleBuffer/index.html#//apple_ref/c/func/CMSampleBufferGetDuration">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @ByValue
     public static native CMTime CMSampleBufferGetDuration(CMSampleBufferRef sbuf);
 
-    /**
-     * CMSampleBufferGetPresentationTimeStamp</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMedia/Reference/CMSampleBuffer/index.html#//apple_ref/c/func/CMSampleBufferGetPresentationTimeStamp">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @ByValue
     public static native CMTime CMSampleBufferGetPresentationTimeStamp(CMSampleBufferRef sbuf);
 
-    /**
-     * CMSampleBufferGetDecodeTimeStamp</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMedia/Reference/CMSampleBuffer/index.html#//apple_ref/c/func/CMSampleBufferGetDecodeTimeStamp">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @ByValue
     public static native CMTime CMSampleBufferGetDecodeTimeStamp(CMSampleBufferRef sbuf);
 
-    /**
-     * CMSampleBufferGetOutputDuration</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMedia/Reference/CMSampleBuffer/index.html#//apple_ref/c/func/CMSampleBufferGetOutputDuration">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @ByValue
     public static native CMTime CMSampleBufferGetOutputDuration(CMSampleBufferRef sbuf);
 
-    /**
-     * CMSampleBufferGetOutputPresentationTimeStamp</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMedia/Reference/CMSampleBuffer/index.html#//apple_ref/c/func/CMSampleBufferGetOutputPresentationTimeStamp">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @ByValue
     public static native CMTime CMSampleBufferGetOutputPresentationTimeStamp(CMSampleBufferRef sbuf);
 
-    /**
-     * CMSampleBufferSetOutputPresentationTimeStamp</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMedia/Reference/CMSampleBuffer/index.html#//apple_ref/c/func/CMSampleBufferSetOutputPresentationTimeStamp">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native int CMSampleBufferSetOutputPresentationTimeStamp(CMSampleBufferRef sbuf,
             @ByValue CMTime outputPresentationTimeStamp);
 
-    /**
-     * CMSampleBufferGetOutputDecodeTimeStamp</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMedia/Reference/CMSampleBuffer/index.html#//apple_ref/c/func/CMSampleBufferGetOutputDecodeTimeStamp">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @ByValue
     public static native CMTime CMSampleBufferGetOutputDecodeTimeStamp(CMSampleBufferRef sbuf);
 
-    /**
-     * CMSampleBufferGetSampleTimingInfoArray</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMedia/Reference/CMSampleBuffer/index.html#//apple_ref/c/func/CMSampleBufferGetSampleTimingInfoArray">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native int CMSampleBufferGetSampleTimingInfoArray(CMSampleBufferRef sbuf,
@@ -1259,10 +787,6 @@ public final class CoreMedia {
             @UncertainArgument("Options: reference, array Fallback: reference") CMSampleTimingInfo timingArrayOut,
             NIntPtr timingArrayEntriesNeededOut);
 
-    /**
-     * CMSampleBufferGetOutputSampleTimingInfoArray</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMedia/Reference/CMSampleBuffer/index.html#//apple_ref/c/func/CMSampleBufferGetOutputSampleTimingInfoArray">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native int CMSampleBufferGetOutputSampleTimingInfoArray(CMSampleBufferRef sbuf,
@@ -1270,63 +794,35 @@ public final class CoreMedia {
             @UncertainArgument("Options: reference, array Fallback: reference") CMSampleTimingInfo timingArrayOut,
             NIntPtr timingArrayEntriesNeededOut);
 
-    /**
-     * CMSampleBufferGetSampleTimingInfo</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMedia/Reference/CMSampleBuffer/index.html#//apple_ref/c/func/CMSampleBufferGetSampleTimingInfo">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native int CMSampleBufferGetSampleTimingInfo(CMSampleBufferRef sbuf, @NInt long sampleIndex,
             @UncertainArgument("Options: reference, array Fallback: reference") CMSampleTimingInfo timingInfoOut);
 
-    /**
-     * CMSampleBufferGetSampleSizeArray</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMedia/Reference/CMSampleBuffer/index.html#//apple_ref/c/func/CMSampleBufferGetSampleSizeArray">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native int CMSampleBufferGetSampleSizeArray(CMSampleBufferRef sbuf, @NInt long sizeArrayEntries,
             NUIntPtr sizeArrayOut, NIntPtr sizeArrayEntriesNeededOut);
 
-    /**
-     * CMSampleBufferGetSampleSize</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMedia/Reference/CMSampleBuffer/index.html#//apple_ref/c/func/CMSampleBufferGetSampleSize">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @NUInt
     public static native long CMSampleBufferGetSampleSize(CMSampleBufferRef sbuf, @NInt long sampleIndex);
 
-    /**
-     * CMSampleBufferGetTotalSampleSize</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMedia/Reference/CMSampleBuffer/index.html#//apple_ref/c/func/CMSampleBufferGetTotalSampleSize">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @NUInt
     public static native long CMSampleBufferGetTotalSampleSize(CMSampleBufferRef sbuf);
 
-    /**
-     * CMSampleBufferGetFormatDescription</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMedia/Reference/CMSampleBuffer/index.html#//apple_ref/c/func/CMSampleBufferGetFormatDescription">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native CMFormatDescriptionRef CMSampleBufferGetFormatDescription(CMSampleBufferRef sbuf);
 
-    /**
-     * CMSampleBufferGetSampleAttachmentsArray</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMedia/Reference/CMSampleBuffer/index.html#//apple_ref/c/func/CMSampleBufferGetSampleAttachmentsArray">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native CFArrayRef CMSampleBufferGetSampleAttachmentsArray(CMSampleBufferRef sbuf,
             byte createIfNecessary);
 
-    /**
-     * CMSampleBufferCallForEachSample</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMedia/Reference/CMSampleBuffer/index.html#//apple_ref/c/func/CMSampleBufferCallForEachSample">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native int CMSampleBufferCallForEachSample(CMSampleBufferRef sbuf,
@@ -1338,295 +834,159 @@ public final class CoreMedia {
     public static native int CMSampleBufferCallBlockForEachSample(CMSampleBufferRef sbuf,
             @ObjCBlock(name = "call_CMSampleBufferCallBlockForEachSample") Block_CMSampleBufferCallBlockForEachSample handler);
 
-    /**
-     * CMClockGetTypeID</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMedia/Reference/CMSync/index.html#//apple_ref/c/func/CMClockGetTypeID">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @NUInt
     public static native long CMClockGetTypeID();
 
-    /**
-     * CMClockGetHostTimeClock</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMedia/Reference/CMSync/index.html#//apple_ref/c/func/CMClockGetHostTimeClock">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native CMClockRef CMClockGetHostTimeClock();
 
-    /**
-     * CMClockConvertHostTimeToSystemUnits</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMedia/Reference/CMSync/index.html#//apple_ref/c/func/CMClockConvertHostTimeToSystemUnits">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native long CMClockConvertHostTimeToSystemUnits(@ByValue CMTime hostTime);
 
-    /**
-     * CMClockMakeHostTimeFromSystemUnits</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMedia/Reference/CMSync/index.html#//apple_ref/c/func/CMClockMakeHostTimeFromSystemUnits">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @ByValue
     public static native CMTime CMClockMakeHostTimeFromSystemUnits(long hostTime);
 
-    /**
-     * CMClockGetTime</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMedia/Reference/CMSync/index.html#//apple_ref/c/func/CMClockGetTime">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @ByValue
     public static native CMTime CMClockGetTime(CMClockRef clock);
 
-    /**
-     * CMClockGetAnchorTime</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMedia/Reference/CMSync/index.html#//apple_ref/c/func/CMClockGetAnchorTime">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native int CMClockGetAnchorTime(CMClockRef clock,
             @UncertainArgument("Options: reference, array Fallback: reference") CMTime outClockTime,
             @UncertainArgument("Options: reference, array Fallback: reference") CMTime outReferenceClockTime);
 
-    /**
-     * CMClockMightDrift</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMedia/Reference/CMSync/index.html#//apple_ref/c/func/CMClockMightDrift">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native byte CMClockMightDrift(CMClockRef clock, CMClockRef otherClock);
 
-    /**
-     * CMClockInvalidate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMedia/Reference/CMSync/index.html#//apple_ref/c/func/CMClockInvalidate">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void CMClockInvalidate(CMClockRef clock);
 
-    /**
-     * CMTimebaseGetTypeID</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMedia/Reference/CMSync/index.html#//apple_ref/c/func/CMTimebaseGetTypeID">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @NUInt
     public static native long CMTimebaseGetTypeID();
 
-    /**
-     * CMTimebaseCreateWithMasterClock</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMedia/Reference/CMSync/index.html#//apple_ref/c/func/CMTimebaseCreateWithMasterClock">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native int CMTimebaseCreateWithMasterClock(CFAllocatorRef allocator, CMClockRef masterClock,
             Ptr<CMTimebaseRef> timebaseOut);
 
-    /**
-     * CMTimebaseCreateWithMasterTimebase</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMedia/Reference/CMSync/index.html#//apple_ref/c/func/CMTimebaseCreateWithMasterTimebase">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native int CMTimebaseCreateWithMasterTimebase(CFAllocatorRef allocator, CMTimebaseRef masterTimebase,
             Ptr<CMTimebaseRef> timebaseOut);
 
-    /**
-     * CMTimebaseGetMasterTimebase</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMedia/Reference/CMSync/index.html#//apple_ref/c/func/CMTimebaseGetMasterTimebase">iOS Dev Center</a>
-     */
     @Deprecated
     @Generated
     @CFunction
     public static native CMTimebaseRef CMTimebaseGetMasterTimebase(CMTimebaseRef timebase);
 
-    /**
-     * CMTimebaseGetMasterClock</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMedia/Reference/CMSync/index.html#//apple_ref/c/func/CMTimebaseGetMasterClock">iOS Dev Center</a>
-     */
     @Deprecated
     @Generated
     @CFunction
     public static native CMClockRef CMTimebaseGetMasterClock(CMTimebaseRef timebase);
 
-    /**
-     * CMTimebaseGetMaster</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMedia/Reference/CMSync/index.html#//apple_ref/c/func/CMTimebaseGetMaster">iOS Dev Center</a>
-     */
     @Deprecated
     @Generated
     @CFunction
     public static native ConstVoidPtr CMTimebaseGetMaster(CMTimebaseRef timebase);
 
-    /**
-     * CMTimebaseGetUltimateMasterClock</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMedia/Reference/CMSync/index.html#//apple_ref/c/func/CMTimebaseGetUltimateMasterClock">iOS Dev Center</a>
-     */
     @Deprecated
     @Generated
     @CFunction
     public static native CMClockRef CMTimebaseGetUltimateMasterClock(CMTimebaseRef timebase);
 
-    /**
-     * CMTimebaseGetTime</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMedia/Reference/CMSync/index.html#//apple_ref/c/func/CMTimebaseGetTime">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @ByValue
     public static native CMTime CMTimebaseGetTime(CMTimebaseRef timebase);
 
-    /**
-     * CMTimebaseGetTimeWithTimeScale</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMedia/Reference/CMSync/index.html#//apple_ref/c/func/CMTimebaseGetTimeWithTimeScale">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @ByValue
     public static native CMTime CMTimebaseGetTimeWithTimeScale(CMTimebaseRef timebase, int timescale, int method);
 
-    /**
-     * CMTimebaseSetTime</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMedia/Reference/CMSync/index.html#//apple_ref/c/func/CMTimebaseSetTime">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native int CMTimebaseSetTime(CMTimebaseRef timebase, @ByValue CMTime time);
 
-    /**
-     * CMTimebaseSetAnchorTime</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMedia/Reference/CMSync/index.html#//apple_ref/c/func/CMTimebaseSetAnchorTime">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native int CMTimebaseSetAnchorTime(CMTimebaseRef timebase, @ByValue CMTime timebaseTime,
             @ByValue CMTime immediateMasterTime);
 
-    /**
-     * CMTimebaseGetRate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMedia/Reference/CMSync/index.html#//apple_ref/c/func/CMTimebaseGetRate">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native double CMTimebaseGetRate(CMTimebaseRef timebase);
 
-    /**
-     * CMTimebaseGetTimeAndRate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMedia/Reference/CMSync/index.html#//apple_ref/c/func/CMTimebaseGetTimeAndRate">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native int CMTimebaseGetTimeAndRate(CMTimebaseRef timebase,
             @UncertainArgument("Options: reference, array Fallback: reference") CMTime outTime, DoublePtr outRate);
 
-    /**
-     * CMTimebaseSetRate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMedia/Reference/CMSync/index.html#//apple_ref/c/func/CMTimebaseSetRate">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native int CMTimebaseSetRate(CMTimebaseRef timebase, double rate);
 
-    /**
-     * CMTimebaseSetRateAndAnchorTime</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMedia/Reference/CMSync/index.html#//apple_ref/c/func/CMTimebaseSetRateAndAnchorTime">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native int CMTimebaseSetRateAndAnchorTime(CMTimebaseRef timebase, double rate,
             @ByValue CMTime timebaseTime, @ByValue CMTime immediateMasterTime);
 
-    /**
-     * CMTimebaseGetEffectiveRate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMedia/Reference/CMSync/index.html#//apple_ref/c/func/CMTimebaseGetEffectiveRate">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native double CMTimebaseGetEffectiveRate(CMTimebaseRef timebase);
 
-    /**
-     * CMTimebaseAddTimer</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMedia/Reference/CMSync/index.html#//apple_ref/c/func/CMTimebaseAddTimer">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native int CMTimebaseAddTimer(CMTimebaseRef timebase, CFRunLoopTimerRef timer, CFRunLoopRef runloop);
 
-    /**
-     * CMTimebaseRemoveTimer</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMedia/Reference/CMSync/index.html#//apple_ref/c/func/CMTimebaseRemoveTimer">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native int CMTimebaseRemoveTimer(CMTimebaseRef timebase, CFRunLoopTimerRef timer);
 
-    /**
-     * CMTimebaseSetTimerNextFireTime</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMedia/Reference/CMSync/index.html#//apple_ref/c/func/CMTimebaseSetTimerNextFireTime">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native int CMTimebaseSetTimerNextFireTime(CMTimebaseRef timebase, CFRunLoopTimerRef timer,
             @ByValue CMTime fireTime, int flags);
 
-    /**
-     * CMTimebaseSetTimerToFireImmediately</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMedia/Reference/CMSync/index.html#//apple_ref/c/func/CMTimebaseSetTimerToFireImmediately">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native int CMTimebaseSetTimerToFireImmediately(CMTimebaseRef timebase, CFRunLoopTimerRef timer);
 
-    /**
-     * CMTimebaseAddTimerDispatchSource</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMedia/Reference/CMSync/index.html#//apple_ref/c/func/CMTimebaseAddTimerDispatchSource">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native int CMTimebaseAddTimerDispatchSource(CMTimebaseRef timebase, NSObject timerSource);
 
-    /**
-     * CMTimebaseRemoveTimerDispatchSource</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMedia/Reference/CMSync/index.html#//apple_ref/c/func/CMTimebaseRemoveTimerDispatchSource">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native int CMTimebaseRemoveTimerDispatchSource(CMTimebaseRef timebase, NSObject timerSource);
 
-    /**
-     * CMTimebaseSetTimerDispatchSourceNextFireTime</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMedia/Reference/CMSync/index.html#//apple_ref/c/func/CMTimebaseSetTimerDispatchSourceNextFireTime">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native int CMTimebaseSetTimerDispatchSourceNextFireTime(CMTimebaseRef timebase, NSObject timerSource,
             @ByValue CMTime fireTime, int flags);
 
-    /**
-     * CMTimebaseSetTimerDispatchSourceToFireImmediately</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMedia/Reference/CMSync/index.html#//apple_ref/c/func/CMTimebaseSetTimerDispatchSourceToFireImmediately">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native int CMTimebaseSetTimerDispatchSourceToFireImmediately(CMTimebaseRef timebase,
             NSObject timerSource);
 
-    /**
-     * CMSyncGetRelativeRate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMedia/Reference/CMSync/index.html#//apple_ref/c/func/CMSyncGetRelativeRate">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native double CMSyncGetRelativeRate(ConstVoidPtr ofClockOrTimebase,
             ConstVoidPtr relativeToClockOrTimebase);
 
-    /**
-     * CMSyncGetRelativeRateAndAnchorTime</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMedia/Reference/CMSync/index.html#//apple_ref/c/func/CMSyncGetRelativeRateAndAnchorTime">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native int CMSyncGetRelativeRateAndAnchorTime(ConstVoidPtr ofClockOrTimebase,
@@ -1634,37 +994,21 @@ public final class CoreMedia {
             @UncertainArgument("Options: reference, array Fallback: reference") CMTime outOfClockOrTimebaseAnchorTime,
             @UncertainArgument("Options: reference, array Fallback: reference") CMTime outRelativeToClockOrTimebaseAnchorTime);
 
-    /**
-     * CMSyncConvertTime</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMedia/Reference/CMSync/index.html#//apple_ref/c/func/CMSyncConvertTime">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @ByValue
     public static native CMTime CMSyncConvertTime(@ByValue CMTime time, ConstVoidPtr fromClockOrTimebase,
             ConstVoidPtr toClockOrTimebase);
 
-    /**
-     * CMSyncMightDrift</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMedia/Reference/CMSync/index.html#//apple_ref/c/func/CMSyncMightDrift">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native byte CMSyncMightDrift(ConstVoidPtr clockOrTimebase1, ConstVoidPtr clockOrTimebase2);
 
-    /**
-     * CMSyncGetTime</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMedia/Reference/CMSync/index.html#//apple_ref/c/func/CMSyncGetTime">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @ByValue
     public static native CMTime CMSyncGetTime(ConstVoidPtr clockOrTimebase);
 
-    /**
-     * CMTimebaseNotificationBarrier</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMedia/Reference/CMSync/index.html#//apple_ref/c/func/CMTimebaseNotificationBarrier">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native int CMTimebaseNotificationBarrier(CMTimebaseRef timebase);
@@ -1851,10 +1195,6 @@ public final class CoreMedia {
     public static native int CMSwapHostEndianMetadataDescriptionToBig(BytePtr metadataDescriptionData,
             @NUInt long metadataDescriptionSize);
 
-    /**
-     * CMBufferQueueGetCallbacksForUnsortedSampleBuffers</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMedia/Reference/CMBufferQueue/index.html#//apple_ref/c/func/CMBufferQueueGetCallbacksForUnsortedSampleBuffers">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @UncertainReturn("Options: reference, array Fallback: reference")
@@ -1865,174 +1205,94 @@ public final class CoreMedia {
     @UncertainReturn("Options: reference, array Fallback: reference")
     public static native CMBufferCallbacks CMBufferQueueGetCallbacksForSampleBuffersSortedByOutputPTS();
 
-    /**
-     * CMBufferQueueCreate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMedia/Reference/CMBufferQueue/index.html#//apple_ref/c/func/CMBufferQueueCreate">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native int CMBufferQueueCreate(CFAllocatorRef allocator, @NInt long capacity,
             @UncertainArgument("Options: reference, array Fallback: reference") CMBufferCallbacks callbacks,
             Ptr<CMBufferQueueRef> queueOut);
 
-    /**
-     * CMBufferQueueGetTypeID</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMedia/Reference/CMBufferQueue/index.html#//apple_ref/c/func/CMBufferQueueGetTypeID">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @NUInt
     public static native long CMBufferQueueGetTypeID();
 
-    /**
-     * CMBufferQueueEnqueue</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMedia/Reference/CMBufferQueue/index.html#//apple_ref/c/func/CMBufferQueueEnqueue">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native int CMBufferQueueEnqueue(CMBufferQueueRef queue, ConstVoidPtr buf);
 
-    /**
-     * CMBufferQueueDequeueAndRetain</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMedia/Reference/CMBufferQueue/index.html#//apple_ref/c/func/CMBufferQueueDequeueAndRetain">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native ConstVoidPtr CMBufferQueueDequeueAndRetain(CMBufferQueueRef queue);
 
-    /**
-     * CMBufferQueueDequeueIfDataReadyAndRetain</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMedia/Reference/CMBufferQueue/index.html#//apple_ref/c/func/CMBufferQueueDequeueIfDataReadyAndRetain">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native ConstVoidPtr CMBufferQueueDequeueIfDataReadyAndRetain(CMBufferQueueRef queue);
 
-    /**
-     * CMBufferQueueGetHead</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMedia/Reference/CMBufferQueue/index.html#//apple_ref/c/func/CMBufferQueueGetHead">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native ConstVoidPtr CMBufferQueueGetHead(CMBufferQueueRef queue);
 
-    /**
-     * CMBufferQueueIsEmpty</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMedia/Reference/CMBufferQueue/index.html#//apple_ref/c/func/CMBufferQueueIsEmpty">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native byte CMBufferQueueIsEmpty(CMBufferQueueRef queue);
 
-    /**
-     * CMBufferQueueMarkEndOfData</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMedia/Reference/CMBufferQueue/index.html#//apple_ref/c/func/CMBufferQueueMarkEndOfData">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native int CMBufferQueueMarkEndOfData(CMBufferQueueRef queue);
 
-    /**
-     * CMBufferQueueContainsEndOfData</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMedia/Reference/CMBufferQueue/index.html#//apple_ref/c/func/CMBufferQueueContainsEndOfData">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native byte CMBufferQueueContainsEndOfData(CMBufferQueueRef queue);
 
-    /**
-     * CMBufferQueueIsAtEndOfData</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMedia/Reference/CMBufferQueue/index.html#//apple_ref/c/func/CMBufferQueueIsAtEndOfData">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native byte CMBufferQueueIsAtEndOfData(CMBufferQueueRef queue);
 
-    /**
-     * CMBufferQueueReset</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMedia/Reference/CMBufferQueue/index.html#//apple_ref/c/func/CMBufferQueueReset">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native int CMBufferQueueReset(CMBufferQueueRef queue);
 
-    /**
-     * CMBufferQueueResetWithCallback</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMedia/Reference/CMBufferQueue/index.html#//apple_ref/c/func/CMBufferQueueResetWithCallback">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native int CMBufferQueueResetWithCallback(CMBufferQueueRef queue,
             @FunctionPtr(name = "call_CMBufferQueueResetWithCallback") Function_CMBufferQueueResetWithCallback callback,
             VoidPtr refcon);
 
-    /**
-     * CMBufferQueueGetBufferCount</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMedia/Reference/CMBufferQueue/index.html#//apple_ref/c/func/CMBufferQueueGetBufferCount">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @NInt
     public static native long CMBufferQueueGetBufferCount(CMBufferQueueRef queue);
 
-    /**
-     * CMBufferQueueGetDuration</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMedia/Reference/CMBufferQueue/index.html#//apple_ref/c/func/CMBufferQueueGetDuration">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @ByValue
     public static native CMTime CMBufferQueueGetDuration(CMBufferQueueRef queue);
 
-    /**
-     * CMBufferQueueGetMinDecodeTimeStamp</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMedia/Reference/CMBufferQueue/index.html#//apple_ref/c/func/CMBufferQueueGetMinDecodeTimeStamp">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @ByValue
     public static native CMTime CMBufferQueueGetMinDecodeTimeStamp(CMBufferQueueRef queue);
 
-    /**
-     * CMBufferQueueGetFirstDecodeTimeStamp</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMedia/Reference/CMBufferQueue/index.html#//apple_ref/c/func/CMBufferQueueGetFirstDecodeTimeStamp">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @ByValue
     public static native CMTime CMBufferQueueGetFirstDecodeTimeStamp(CMBufferQueueRef queue);
 
-    /**
-     * CMBufferQueueGetMinPresentationTimeStamp</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMedia/Reference/CMBufferQueue/index.html#//apple_ref/c/func/CMBufferQueueGetMinPresentationTimeStamp">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @ByValue
     public static native CMTime CMBufferQueueGetMinPresentationTimeStamp(CMBufferQueueRef queue);
 
-    /**
-     * CMBufferQueueGetFirstPresentationTimeStamp</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMedia/Reference/CMBufferQueue/index.html#//apple_ref/c/func/CMBufferQueueGetFirstPresentationTimeStamp">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @ByValue
     public static native CMTime CMBufferQueueGetFirstPresentationTimeStamp(CMBufferQueueRef queue);
 
-    /**
-     * CMBufferQueueGetMaxPresentationTimeStamp</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMedia/Reference/CMBufferQueue/index.html#//apple_ref/c/func/CMBufferQueueGetMaxPresentationTimeStamp">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @ByValue
     public static native CMTime CMBufferQueueGetMaxPresentationTimeStamp(CMBufferQueueRef queue);
 
-    /**
-     * CMBufferQueueGetEndPresentationTimeStamp</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMedia/Reference/CMBufferQueue/index.html#//apple_ref/c/func/CMBufferQueueGetEndPresentationTimeStamp">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @ByValue
@@ -2043,10 +1303,6 @@ public final class CoreMedia {
     @NUInt
     public static native long CMBufferQueueGetTotalSize(CMBufferQueueRef queue);
 
-    /**
-     * CMBufferQueueInstallTrigger</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMedia/Reference/CMBufferQueue/index.html#//apple_ref/c/func/CMBufferQueueInstallTrigger">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native int CMBufferQueueInstallTrigger(CMBufferQueueRef queue,
@@ -2054,10 +1310,6 @@ public final class CoreMedia {
             VoidPtr triggerRefcon, int triggerCondition, @ByValue CMTime triggerTime,
             Ptr<CMBufferQueueTriggerToken> triggerTokenOut);
 
-    /**
-     * CMBufferQueueInstallTriggerWithIntegerThreshold</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMedia/Reference/CMBufferQueue/index.html#//apple_ref/c/func/CMBufferQueueInstallTriggerWithIntegerThreshold">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native int CMBufferQueueInstallTriggerWithIntegerThreshold(CMBufferQueueRef queue,
@@ -2065,55 +1317,31 @@ public final class CoreMedia {
             VoidPtr triggerRefcon, int triggerCondition, @NInt long triggerThreshold,
             Ptr<CMBufferQueueTriggerToken> triggerTokenOut);
 
-    /**
-     * CMBufferQueueRemoveTrigger</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMedia/Reference/CMBufferQueue/index.html#//apple_ref/c/func/CMBufferQueueRemoveTrigger">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native int CMBufferQueueRemoveTrigger(CMBufferQueueRef queue, CMBufferQueueTriggerToken triggerToken);
 
-    /**
-     * CMBufferQueueTestTrigger</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMedia/Reference/CMBufferQueue/index.html#//apple_ref/c/func/CMBufferQueueTestTrigger">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native byte CMBufferQueueTestTrigger(CMBufferQueueRef queue, CMBufferQueueTriggerToken triggerToken);
 
-    /**
-     * CMBufferQueueCallForEachBuffer</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMedia/Reference/CMBufferQueue/index.html#//apple_ref/c/func/CMBufferQueueCallForEachBuffer">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native int CMBufferQueueCallForEachBuffer(CMBufferQueueRef queue,
             @FunctionPtr(name = "call_CMBufferQueueCallForEachBuffer") Function_CMBufferQueueCallForEachBuffer callback,
             VoidPtr refcon);
 
-    /**
-     * CMBufferQueueSetValidationCallback</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMedia/Reference/CMBufferQueue/index.html#//apple_ref/c/func/CMBufferQueueSetValidationCallback">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native int CMBufferQueueSetValidationCallback(CMBufferQueueRef queue,
             @FunctionPtr(name = "call_CMBufferQueueSetValidationCallback") Function_CMBufferQueueSetValidationCallback validationCallback,
             VoidPtr validationRefCon);
 
-    /**
-     * CMSimpleQueueGetTypeID</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMedia/Reference/CMSimpleQueue/index.html#//apple_ref/c/func/CMSimpleQueueGetTypeID">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @NUInt
     public static native long CMSimpleQueueGetTypeID();
 
-    /**
-     * CMSimpleQueueCreate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMedia/Reference/CMSimpleQueue/index.html#//apple_ref/c/func/CMSimpleQueueCreate">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native int CMSimpleQueueCreate(CFAllocatorRef allocator, int capacity,
@@ -2123,194 +1351,102 @@ public final class CoreMedia {
     @CFunction
     public static native int CMSimpleQueueEnqueue(CMSimpleQueueRef queue, ConstVoidPtr element);
 
-    /**
-     * CMSimpleQueueDequeue</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMedia/Reference/CMSimpleQueue/index.html#//apple_ref/c/func/CMSimpleQueueDequeue">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native ConstVoidPtr CMSimpleQueueDequeue(CMSimpleQueueRef queue);
 
-    /**
-     * CMSimpleQueueGetHead</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMedia/Reference/CMSimpleQueue/index.html#//apple_ref/c/func/CMSimpleQueueGetHead">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native ConstVoidPtr CMSimpleQueueGetHead(CMSimpleQueueRef queue);
 
-    /**
-     * CMSimpleQueueReset</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMedia/Reference/CMSimpleQueue/index.html#//apple_ref/c/func/CMSimpleQueueReset">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native int CMSimpleQueueReset(CMSimpleQueueRef queue);
 
-    /**
-     * CMSimpleQueueGetCapacity</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMedia/Reference/CMSimpleQueue/index.html#//apple_ref/c/func/CMSimpleQueueGetCapacity">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native int CMSimpleQueueGetCapacity(CMSimpleQueueRef queue);
 
-    /**
-     * CMSimpleQueueGetCount</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMedia/Reference/CMSimpleQueue/index.html#//apple_ref/c/func/CMSimpleQueueGetCount">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native int CMSimpleQueueGetCount(CMSimpleQueueRef queue);
 
-    /**
-     * CMMemoryPoolGetTypeID</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMedia/Reference/CMMemoryPool/index.html#//apple_ref/c/func/CMMemoryPoolGetTypeID">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @NUInt
     public static native long CMMemoryPoolGetTypeID();
 
-    /**
-     * CMMemoryPoolCreate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMedia/Reference/CMMemoryPool/index.html#//apple_ref/c/func/CMMemoryPoolCreate">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native CMMemoryPoolRef CMMemoryPoolCreate(CFDictionaryRef options);
 
-    /**
-     * CMMemoryPoolGetAllocator</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMedia/Reference/CMMemoryPool/index.html#//apple_ref/c/func/CMMemoryPoolGetAllocator">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native CFAllocatorRef CMMemoryPoolGetAllocator(CMMemoryPoolRef pool);
 
-    /**
-     * CMMemoryPoolFlush</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMedia/Reference/CMMemoryPool/index.html#//apple_ref/c/func/CMMemoryPoolFlush">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void CMMemoryPoolFlush(CMMemoryPoolRef pool);
 
-    /**
-     * CMMemoryPoolInvalidate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMedia/Reference/CMMemoryPool/index.html#//apple_ref/c/func/CMMemoryPoolInvalidate">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void CMMemoryPoolInvalidate(CMMemoryPoolRef pool);
 
-    /**
-     * CMMetadataCreateIdentifierForKeyAndKeySpace</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMedia/Reference/CMMetadata/index.html#//apple_ref/c/func/CMMetadataCreateIdentifierForKeyAndKeySpace">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native int CMMetadataCreateIdentifierForKeyAndKeySpace(CFAllocatorRef allocator, ConstVoidPtr key,
             CFStringRef keySpace, Ptr<CFStringRef> identifierOut);
 
-    /**
-     * CMMetadataCreateKeyFromIdentifier</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMedia/Reference/CMMetadata/index.html#//apple_ref/c/func/CMMetadataCreateKeyFromIdentifier">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native int CMMetadataCreateKeyFromIdentifier(CFAllocatorRef allocator, CFStringRef identifier,
             Ptr<ConstVoidPtr> keyOut);
 
-    /**
-     * CMMetadataCreateKeyFromIdentifierAsCFData</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMedia/Reference/CMMetadata/index.html#//apple_ref/c/func/CMMetadataCreateKeyFromIdentifierAsCFData">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native int CMMetadataCreateKeyFromIdentifierAsCFData(CFAllocatorRef allocator, CFStringRef identifier,
             Ptr<CFDataRef> keyOut);
 
-    /**
-     * CMMetadataCreateKeySpaceFromIdentifier</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMedia/Reference/CMMetadata/index.html#//apple_ref/c/func/CMMetadataCreateKeySpaceFromIdentifier">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native int CMMetadataCreateKeySpaceFromIdentifier(CFAllocatorRef allocator, CFStringRef identifier,
             Ptr<CFStringRef> keySpaceOut);
 
-    /**
-     * CMMetadataDataTypeRegistryRegisterDataType</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMedia/Reference/CMMetadata/index.html#//apple_ref/c/func/CMMetadataDataTypeRegistryRegisterDataType">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native int CMMetadataDataTypeRegistryRegisterDataType(CFStringRef dataType, CFStringRef description,
             CFArrayRef conformingDataTypes);
 
-    /**
-     * CMMetadataDataTypeRegistryDataTypeIsRegistered</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMedia/Reference/CMMetadata/index.html#//apple_ref/c/func/CMMetadataDataTypeRegistryDataTypeIsRegistered">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native byte CMMetadataDataTypeRegistryDataTypeIsRegistered(CFStringRef dataType);
 
-    /**
-     * CMMetadataDataTypeRegistryGetDataTypeDescription</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMedia/Reference/CMMetadata/index.html#//apple_ref/c/func/CMMetadataDataTypeRegistryGetDataTypeDescription">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native CFStringRef CMMetadataDataTypeRegistryGetDataTypeDescription(CFStringRef dataType);
 
-    /**
-     * CMMetadataDataTypeRegistryGetConformingDataTypes</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMedia/Reference/CMMetadata/index.html#//apple_ref/c/func/CMMetadataDataTypeRegistryGetConformingDataTypes">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native CFArrayRef CMMetadataDataTypeRegistryGetConformingDataTypes(CFStringRef dataType);
 
-    /**
-     * CMMetadataDataTypeRegistryDataTypeConformsToDataType</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMedia/Reference/CMMetadata/index.html#//apple_ref/c/func/CMMetadataDataTypeRegistryDataTypeConformsToDataType">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native byte CMMetadataDataTypeRegistryDataTypeConformsToDataType(CFStringRef dataType,
             CFStringRef conformsToDataType);
 
-    /**
-     * CMMetadataDataTypeRegistryGetBaseDataTypes</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMedia/Reference/CMMetadata/index.html#//apple_ref/c/func/CMMetadataDataTypeRegistryGetBaseDataTypes">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native CFArrayRef CMMetadataDataTypeRegistryGetBaseDataTypes();
 
-    /**
-     * CMMetadataDataTypeRegistryDataTypeIsBaseDataType</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMedia/Reference/CMMetadata/index.html#//apple_ref/c/func/CMMetadataDataTypeRegistryDataTypeIsBaseDataType">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native byte CMMetadataDataTypeRegistryDataTypeIsBaseDataType(CFStringRef dataType);
 
-    /**
-     * CMMetadataDataTypeRegistryGetBaseDataTypeForConformingDataType</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMedia/Reference/CMMetadata/index.html#//apple_ref/c/func/CMMetadataDataTypeRegistryGetBaseDataTypeForConformingDataType">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native CFStringRef CMMetadataDataTypeRegistryGetBaseDataTypeForConformingDataType(
             CFStringRef dataType);
 
-    /**
-     * CMAudioClockCreate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMedia/Reference/CMAudioClock/index.html#//apple_ref/c/func/CMAudioClockCreate">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native int CMAudioClockCreate(CFAllocatorRef allocator, Ptr<CMClockRef> clockOut);

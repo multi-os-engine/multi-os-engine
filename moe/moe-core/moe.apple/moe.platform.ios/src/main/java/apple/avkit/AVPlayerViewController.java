@@ -188,10 +188,6 @@ public class AVPlayerViewController extends UIViewController {
     @Selector("cancelPreroll")
     public native void cancelPreroll();
 
-    /**
-     * contentOverlayView</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVPlayerViewController_Class/index.html#//apple_ref/occ/instp/AVPlayerViewController/contentOverlayView">iOS Dev Center</a>
-     */
     @Generated
     @Selector("contentOverlayView")
     public native UIView contentOverlayView();
@@ -204,10 +200,6 @@ public class AVPlayerViewController extends UIViewController {
     @Selector("initWithNibName:bundle:")
     public native AVPlayerViewController initWithNibNameBundle(String nibNameOrNil, NSBundle nibBundleOrNil);
 
-    /**
-     * readyForDisplay</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVPlayerViewController_Class/index.html#//apple_ref/occ/instp/AVPlayerViewController/readyForDisplay">iOS Dev Center</a>
-     */
     @Generated
     @Selector("isReadyForDisplay")
     public native boolean isReadyForDisplay();
@@ -217,75 +209,39 @@ public class AVPlayerViewController extends UIViewController {
     public native void playPrerollAdWithCompletionHandler(
             @ObjCBlock(name = "call_playPrerollAdWithCompletionHandler") Block_playPrerollAdWithCompletionHandler completionHandler);
 
-    /**
-     * player</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVPlayerViewController_Class/index.html#//apple_ref/occ/instp/AVPlayerViewController/player">iOS Dev Center</a>
-     */
     @Generated
     @Selector("player")
     public native AVPlayer player();
 
-    /**
-     * player</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVPlayerViewController_Class/index.html#//apple_ref/occ/instp/AVPlayerViewController/player">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setPlayer:")
     public native void setPlayer(AVPlayer value);
 
-    /**
-     * showsPlaybackControls</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVPlayerViewController_Class/index.html#//apple_ref/occ/instp/AVPlayerViewController/showsPlaybackControls">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setShowsPlaybackControls:")
     public native void setShowsPlaybackControls(boolean value);
 
-    /**
-     * videoGravity</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVPlayerViewController_Class/index.html#//apple_ref/occ/instp/AVPlayerViewController/videoGravity">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setVideoGravity:")
     public native void setVideoGravity(String value);
 
-    /**
-     * showsPlaybackControls</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVPlayerViewController_Class/index.html#//apple_ref/occ/instp/AVPlayerViewController/showsPlaybackControls">iOS Dev Center</a>
-     */
     @Generated
     @Selector("showsPlaybackControls")
     public native boolean showsPlaybackControls();
 
-    /**
-     * videoBounds</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVPlayerViewController_Class/index.html#//apple_ref/occ/instp/AVPlayerViewController/videoBounds">iOS Dev Center</a>
-     */
     @Generated
     @Selector("videoBounds")
     @ByValue
     public native CGRect videoBounds();
 
-    /**
-     * videoGravity</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVPlayerViewController_Class/index.html#//apple_ref/occ/instp/AVPlayerViewController/videoGravity">iOS Dev Center</a>
-     */
     @Generated
     @Selector("videoGravity")
     public native String videoGravity();
 
-    /**
-     * allowsPictureInPicturePlayback</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVPlayerViewController_Class/index.html#//apple_ref/occ/instp/AVPlayerViewController/allowsPictureInPicturePlayback">iOS Dev Center</a>
-     */
     @Generated
     @Selector("allowsPictureInPicturePlayback")
     public native boolean allowsPictureInPicturePlayback();
 
-    /**
-     * delegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVPlayerViewController_Class/index.html#//apple_ref/occ/instp/AVPlayerViewController/delegate">iOS Dev Center</a>
-     */
     @Generated
     @Selector("delegate")
     @MappedReturn(ObjCObjectMapper.class)
@@ -295,26 +251,14 @@ public class AVPlayerViewController extends UIViewController {
     @Selector("initWithCoder:")
     public native AVPlayerViewController initWithCoder(NSCoder aDecoder);
 
-    /**
-     * allowsPictureInPicturePlayback</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVPlayerViewController_Class/index.html#//apple_ref/occ/instp/AVPlayerViewController/allowsPictureInPicturePlayback">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setAllowsPictureInPicturePlayback:")
     public native void setAllowsPictureInPicturePlayback(boolean value);
 
-    /**
-     * delegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVPlayerViewController_Class/index.html#//apple_ref/occ/instp/AVPlayerViewController/delegate">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setDelegate:")
     public native void setDelegate_unsafe(@Mapped(ObjCObjectMapper.class) AVPlayerViewControllerDelegate value);
 
-    /**
-     * delegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVPlayerViewController_Class/index.html#//apple_ref/occ/instp/AVPlayerViewController/delegate">iOS Dev Center</a>
-     */
     @Generated
     public void setDelegate(@Mapped(ObjCObjectMapper.class) AVPlayerViewControllerDelegate value) {
         Object __old = delegate();

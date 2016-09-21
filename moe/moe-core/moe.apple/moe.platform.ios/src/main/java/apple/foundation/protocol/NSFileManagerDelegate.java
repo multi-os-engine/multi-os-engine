@@ -32,10 +32,6 @@ import org.moe.natj.objc.ann.Selector;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("NSFileManagerDelegate")
 public interface NSFileManagerDelegate {
-    /**
-     * fileManager:shouldCopyItemAtPath:toPath:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSFileManagerDelegate_Protocol/index.html#//apple_ref/occ/intfm/NSFileManagerDelegate/fileManager:shouldCopyItemAtPath:toPath:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("fileManager:shouldCopyItemAtPath:toPath:")
@@ -43,10 +39,6 @@ public interface NSFileManagerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * fileManager:shouldCopyItemAtURL:toURL:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSFileManagerDelegate_Protocol/index.html#//apple_ref/occ/intfm/NSFileManagerDelegate/fileManager:shouldCopyItemAtURL:toURL:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("fileManager:shouldCopyItemAtURL:toURL:")
@@ -54,10 +46,6 @@ public interface NSFileManagerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * fileManager:shouldLinkItemAtPath:toPath:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSFileManagerDelegate_Protocol/index.html#//apple_ref/occ/intfm/NSFileManagerDelegate/fileManager:shouldLinkItemAtPath:toPath:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("fileManager:shouldLinkItemAtPath:toPath:")
@@ -65,10 +53,6 @@ public interface NSFileManagerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * fileManager:shouldLinkItemAtURL:toURL:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSFileManagerDelegate_Protocol/index.html#//apple_ref/occ/intfm/NSFileManagerDelegate/fileManager:shouldLinkItemAtURL:toURL:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("fileManager:shouldLinkItemAtURL:toURL:")
@@ -76,10 +60,6 @@ public interface NSFileManagerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * fileManager:shouldMoveItemAtPath:toPath:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSFileManagerDelegate_Protocol/index.html#//apple_ref/occ/intfm/NSFileManagerDelegate/fileManager:shouldMoveItemAtPath:toPath:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("fileManager:shouldMoveItemAtPath:toPath:")
@@ -87,10 +67,6 @@ public interface NSFileManagerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * fileManager:shouldMoveItemAtURL:toURL:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSFileManagerDelegate_Protocol/index.html#//apple_ref/occ/intfm/NSFileManagerDelegate/fileManager:shouldMoveItemAtURL:toURL:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("fileManager:shouldMoveItemAtURL:toURL:")
@@ -98,10 +74,6 @@ public interface NSFileManagerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * fileManager:shouldProceedAfterError:copyingItemAtPath:toPath:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSFileManagerDelegate_Protocol/index.html#//apple_ref/occ/intfm/NSFileManagerDelegate/fileManager:shouldProceedAfterError:copyingItemAtPath:toPath:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("fileManager:shouldProceedAfterError:copyingItemAtPath:toPath:")
@@ -110,10 +82,6 @@ public interface NSFileManagerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * fileManager:shouldProceedAfterError:copyingItemAtURL:toURL:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSFileManagerDelegate_Protocol/index.html#//apple_ref/occ/intfm/NSFileManagerDelegate/fileManager:shouldProceedAfterError:copyingItemAtURL:toURL:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("fileManager:shouldProceedAfterError:copyingItemAtURL:toURL:")
@@ -122,10 +90,6 @@ public interface NSFileManagerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * fileManager:shouldProceedAfterError:linkingItemAtPath:toPath:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSFileManagerDelegate_Protocol/index.html#//apple_ref/occ/intfm/NSFileManagerDelegate/fileManager:shouldProceedAfterError:linkingItemAtPath:toPath:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("fileManager:shouldProceedAfterError:linkingItemAtPath:toPath:")
@@ -134,10 +98,6 @@ public interface NSFileManagerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * fileManager:shouldProceedAfterError:linkingItemAtURL:toURL:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSFileManagerDelegate_Protocol/index.html#//apple_ref/occ/intfm/NSFileManagerDelegate/fileManager:shouldProceedAfterError:linkingItemAtURL:toURL:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("fileManager:shouldProceedAfterError:linkingItemAtURL:toURL:")
@@ -146,10 +106,6 @@ public interface NSFileManagerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * fileManager:shouldProceedAfterError:movingItemAtPath:toPath:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSFileManagerDelegate_Protocol/index.html#//apple_ref/occ/intfm/NSFileManagerDelegate/fileManager:shouldProceedAfterError:movingItemAtPath:toPath:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("fileManager:shouldProceedAfterError:movingItemAtPath:toPath:")
@@ -158,10 +114,6 @@ public interface NSFileManagerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * fileManager:shouldProceedAfterError:movingItemAtURL:toURL:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSFileManagerDelegate_Protocol/index.html#//apple_ref/occ/intfm/NSFileManagerDelegate/fileManager:shouldProceedAfterError:movingItemAtURL:toURL:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("fileManager:shouldProceedAfterError:movingItemAtURL:toURL:")
@@ -170,10 +122,6 @@ public interface NSFileManagerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * fileManager:shouldProceedAfterError:removingItemAtPath:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSFileManagerDelegate_Protocol/index.html#//apple_ref/occ/intfm/NSFileManagerDelegate/fileManager:shouldProceedAfterError:removingItemAtPath:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("fileManager:shouldProceedAfterError:removingItemAtPath:")
@@ -182,10 +130,6 @@ public interface NSFileManagerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * fileManager:shouldProceedAfterError:removingItemAtURL:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSFileManagerDelegate_Protocol/index.html#//apple_ref/occ/intfm/NSFileManagerDelegate/fileManager:shouldProceedAfterError:removingItemAtURL:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("fileManager:shouldProceedAfterError:removingItemAtURL:")
@@ -194,10 +138,6 @@ public interface NSFileManagerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * fileManager:shouldRemoveItemAtPath:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSFileManagerDelegate_Protocol/index.html#//apple_ref/occ/intfm/NSFileManagerDelegate/fileManager:shouldRemoveItemAtPath:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("fileManager:shouldRemoveItemAtPath:")
@@ -205,10 +145,6 @@ public interface NSFileManagerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * fileManager:shouldRemoveItemAtURL:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSFileManagerDelegate_Protocol/index.html#//apple_ref/occ/intfm/NSFileManagerDelegate/fileManager:shouldRemoveItemAtURL:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("fileManager:shouldRemoveItemAtURL:")

@@ -31,10 +31,6 @@ import org.moe.natj.objc.ann.Selector;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("MKLocalSearchCompleterDelegate")
 public interface MKLocalSearchCompleterDelegate {
-    /**
-     * completer:didFailWithError:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKLocalSearchCompleterDelegate_protocol/index.html#//apple_ref/occ/intfm/MKLocalSearchCompleterDelegate/completer:didFailWithError:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("completer:didFailWithError:")
@@ -42,10 +38,6 @@ public interface MKLocalSearchCompleterDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * completerDidUpdateResults:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKLocalSearchCompleterDelegate_protocol/index.html#//apple_ref/occ/intfm/MKLocalSearchCompleterDelegate/completerDidUpdateResults:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("completerDidUpdateResults:")

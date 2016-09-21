@@ -32,10 +32,6 @@ import org.moe.natj.objc.ann.Selector;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("AVAudioRecorderDelegate")
 public interface AVAudioRecorderDelegate {
-    /**
-     * audioRecorderBeginInterruption:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioRecorderDelegate_ProtocolReference/index.html#//apple_ref/occ/intfm/AVAudioRecorderDelegate/audioRecorderBeginInterruption:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Deprecated
@@ -44,10 +40,6 @@ public interface AVAudioRecorderDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * audioRecorderDidFinishRecording:successfully:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioRecorderDelegate_ProtocolReference/index.html#//apple_ref/occ/intfm/AVAudioRecorderDelegate/audioRecorderDidFinishRecording:successfully:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("audioRecorderDidFinishRecording:successfully:")
@@ -55,10 +47,6 @@ public interface AVAudioRecorderDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * audioRecorderEncodeErrorDidOccur:error:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioRecorderDelegate_ProtocolReference/index.html#//apple_ref/occ/intfm/AVAudioRecorderDelegate/audioRecorderEncodeErrorDidOccur:error:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("audioRecorderEncodeErrorDidOccur:error:")
@@ -66,10 +54,6 @@ public interface AVAudioRecorderDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * audioRecorderEndInterruption:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioRecorderDelegate_ProtocolReference/index.html#//apple_ref/occ/intfm/AVAudioRecorderDelegate/audioRecorderEndInterruption:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Deprecated
@@ -78,10 +62,6 @@ public interface AVAudioRecorderDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * audioRecorderEndInterruption:withFlags:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioRecorderDelegate_ProtocolReference/index.html#//apple_ref/occ/intfm/AVAudioRecorderDelegate/audioRecorderEndInterruption:withFlags:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Deprecated
@@ -90,10 +70,6 @@ public interface AVAudioRecorderDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * audioRecorderEndInterruption:withOptions:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioRecorderDelegate_ProtocolReference/index.html#//apple_ref/occ/intfm/AVAudioRecorderDelegate/audioRecorderEndInterruption:withOptions:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Deprecated

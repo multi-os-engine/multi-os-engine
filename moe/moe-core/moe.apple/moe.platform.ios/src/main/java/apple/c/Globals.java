@@ -89,9 +89,6 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @Generated
 @Runtime(CRuntime.class)
 public final class Globals {
-    @Generated public static final int OS_ACTIVITY_FLAG_DEFAULT = 0x00000000;
-    @Generated public static final int OS_ACTIVITY_FLAG_DETACHED = 0x00000001;
-
     static {
         NatJ.register();
     }
@@ -966,37 +963,21 @@ public final class Globals {
     @CFunction
     public static native void OSWriteSwapInt64(VoidPtr base, @NUInt long offset, long data);
 
-    /**
-     * sel_getName</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/ObjCRuntimeRef/index.html#//apple_ref/c/func/sel_getName">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @UncertainReturn("Options: java.string, c.const-byte-ptr Fallback: java.string")
     public static native String sel_getName(SEL sel);
 
-    /**
-     * sel_registerName</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/ObjCRuntimeRef/index.html#//apple_ref/c/func/sel_registerName">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native SEL sel_registerName(
             @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String str);
 
-    /**
-     * object_getClassName</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/ObjCRuntimeRef/index.html#//apple_ref/c/func/object_getClassName">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @UncertainReturn("Options: java.string, c.const-byte-ptr Fallback: java.string")
     public static native String object_getClassName(@Mapped(ObjCObjectMapper.class) Object obj);
 
-    /**
-     * object_getIndexedIvars</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/ObjCRuntimeRef/index.html#//apple_ref/c/func/object_getIndexedIvars">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native VoidPtr object_getIndexedIvars(@Mapped(ObjCObjectMapper.class) Object obj);
@@ -1005,10 +986,6 @@ public final class Globals {
     @CFunction
     public static native boolean sel_isMapped(SEL sel);
 
-    /**
-     * sel_getUid</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/ObjCRuntimeRef/index.html#//apple_ref/c/func/sel_getUid">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native SEL sel_getUid(
@@ -1022,18 +999,10 @@ public final class Globals {
     @CFunction
     public static native void os_release(VoidPtr object);
 
-    /**
-     * dispatch_time</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Reference/GCD_libdispatch_Ref/index.html#//apple_ref/c/func/dispatch_time">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native long dispatch_time(long when, long delta);
 
-    /**
-     * dispatch_walltime</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Reference/GCD_libdispatch_Ref/index.html#//apple_ref/c/func/dispatch_walltime">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native long dispatch_walltime(
@@ -1044,67 +1013,35 @@ public final class Globals {
     @CFunction
     public static native void _dispatch_object_validate(NSObject object);
 
-    /**
-     * dispatch_retain</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Reference/GCD_libdispatch_Ref/index.html#//apple_ref/c/func/dispatch_retain">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void dispatch_retain(NSObject object);
 
-    /**
-     * dispatch_release</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Reference/GCD_libdispatch_Ref/index.html#//apple_ref/c/func/dispatch_release">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void dispatch_release(NSObject object);
 
-    /**
-     * dispatch_get_context</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Reference/GCD_libdispatch_Ref/index.html#//apple_ref/c/func/dispatch_get_context">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native VoidPtr dispatch_get_context(NSObject object);
 
-    /**
-     * dispatch_set_context</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Reference/GCD_libdispatch_Ref/index.html#//apple_ref/c/func/dispatch_set_context">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void dispatch_set_context(NSObject object, VoidPtr context);
 
-    /**
-     * dispatch_set_finalizer_f</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Reference/GCD_libdispatch_Ref/index.html#//apple_ref/c/func/dispatch_set_finalizer_f">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void dispatch_set_finalizer_f(NSObject object,
             @FunctionPtr(name = "call_dispatch_set_finalizer_f") Function_dispatch_set_finalizer_f finalizer);
 
-    /**
-     * dispatch_suspend</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Reference/GCD_libdispatch_Ref/index.html#//apple_ref/c/func/dispatch_suspend">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void dispatch_suspend(NSObject object);
 
-    /**
-     * dispatch_resume</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Reference/GCD_libdispatch_Ref/index.html#//apple_ref/c/func/dispatch_resume">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void dispatch_resume(NSObject object);
 
-    /**
-     * dispatch_debug</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Reference/GCD_libdispatch_Ref/index.html#//apple_ref/c/func/dispatch_debug">iOS Dev Center</a>
-     */
     @Generated
     @Variadic()
     @Deprecated
@@ -1120,73 +1057,41 @@ public final class Globals {
             @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String message,
             BytePtr ap);
 
-    /**
-     * dispatch_async</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Reference/GCD_libdispatch_Ref/index.html#//apple_ref/c/func/dispatch_async">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void dispatch_async(NSObject queue,
             @ObjCBlock(name = "call_dispatch_async") Block_dispatch_async block);
 
-    /**
-     * dispatch_async_f</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Reference/GCD_libdispatch_Ref/index.html#//apple_ref/c/func/dispatch_async_f">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void dispatch_async_f(NSObject queue, VoidPtr context,
             @FunctionPtr(name = "call_dispatch_async_f") Function_dispatch_async_f work);
 
-    /**
-     * dispatch_sync</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Reference/GCD_libdispatch_Ref/index.html#//apple_ref/c/func/dispatch_sync">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void dispatch_sync(NSObject queue,
             @ObjCBlock(name = "call_dispatch_sync") Block_dispatch_sync block);
 
-    /**
-     * dispatch_sync_f</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Reference/GCD_libdispatch_Ref/index.html#//apple_ref/c/func/dispatch_sync_f">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void dispatch_sync_f(NSObject queue, VoidPtr context,
             @FunctionPtr(name = "call_dispatch_sync_f") Function_dispatch_sync_f work);
 
-    /**
-     * dispatch_apply</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Reference/GCD_libdispatch_Ref/index.html#//apple_ref/c/func/dispatch_apply">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void dispatch_apply(@NUInt long iterations, NSObject queue,
             @ObjCBlock(name = "call_dispatch_apply") Block_dispatch_apply block);
 
-    /**
-     * dispatch_apply_f</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Reference/GCD_libdispatch_Ref/index.html#//apple_ref/c/func/dispatch_apply_f">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void dispatch_apply_f(@NUInt long iterations, NSObject queue, VoidPtr context,
             @FunctionPtr(name = "call_dispatch_apply_f") Function_dispatch_apply_f work);
 
-    /**
-     * dispatch_get_current_queue</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Reference/GCD_libdispatch_Ref/index.html#//apple_ref/c/func/dispatch_get_current_queue">iOS Dev Center</a>
-     */
     @Generated
     @Deprecated
     @CFunction
     public static native NSObject dispatch_get_current_queue();
 
-    /**
-     * dispatch_get_main_queue</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Reference/GCD_libdispatch_Ref/index.html#//apple_ref/c/func/dispatch_get_main_queue">iOS Dev Center</a>
-     */
     @Generated
     @Inline
     @CFunction
@@ -1200,37 +1105,21 @@ public final class Globals {
     @CFunction
     public static native int qos_class_main();
 
-    /**
-     * dispatch_get_global_queue</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Reference/GCD_libdispatch_Ref/index.html#//apple_ref/c/func/dispatch_get_global_queue">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native NSObject dispatch_get_global_queue(@NInt long identifier, @NUInt long flags);
 
-    /**
-     * dispatch_queue_attr_make_with_qos_class</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Reference/GCD_libdispatch_Ref/index.html#//apple_ref/c/func/dispatch_queue_attr_make_with_qos_class">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native NSObject dispatch_queue_attr_make_with_qos_class(NSObject attr, int qos_class,
             int relative_priority);
 
-    /**
-     * dispatch_queue_create</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Reference/GCD_libdispatch_Ref/index.html#//apple_ref/c/func/dispatch_queue_create">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native NSObject dispatch_queue_create(
             @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String label,
             NSObject attr);
 
-    /**
-     * dispatch_queue_get_label</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Reference/GCD_libdispatch_Ref/index.html#//apple_ref/c/func/dispatch_queue_get_label">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @UncertainReturn("Options: java.string, c.const-byte-ptr Fallback: java.string")
@@ -1240,97 +1129,53 @@ public final class Globals {
     @CFunction
     public static native int dispatch_queue_get_qos_class(NSObject queue, IntPtr relative_priority_ptr);
 
-    /**
-     * dispatch_set_target_queue</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Reference/GCD_libdispatch_Ref/index.html#//apple_ref/c/func/dispatch_set_target_queue">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void dispatch_set_target_queue(NSObject object, NSObject queue);
 
-    /**
-     * dispatch_main</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Reference/GCD_libdispatch_Ref/index.html#//apple_ref/c/func/dispatch_main">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void dispatch_main();
 
-    /**
-     * dispatch_after</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Reference/GCD_libdispatch_Ref/index.html#//apple_ref/c/func/dispatch_after">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void dispatch_after(long when, NSObject queue,
             @ObjCBlock(name = "call_dispatch_after") Block_dispatch_after block);
 
-    /**
-     * dispatch_after_f</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Reference/GCD_libdispatch_Ref/index.html#//apple_ref/c/func/dispatch_after_f">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void dispatch_after_f(long when, NSObject queue, VoidPtr context,
             @FunctionPtr(name = "call_dispatch_after_f") Function_dispatch_after_f work);
 
-    /**
-     * dispatch_barrier_async</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Reference/GCD_libdispatch_Ref/index.html#//apple_ref/c/func/dispatch_barrier_async">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void dispatch_barrier_async(NSObject queue,
             @ObjCBlock(name = "call_dispatch_barrier_async") Block_dispatch_barrier_async block);
 
-    /**
-     * dispatch_barrier_async_f</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Reference/GCD_libdispatch_Ref/index.html#//apple_ref/c/func/dispatch_barrier_async_f">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void dispatch_barrier_async_f(NSObject queue, VoidPtr context,
             @FunctionPtr(name = "call_dispatch_barrier_async_f") Function_dispatch_barrier_async_f work);
 
-    /**
-     * dispatch_barrier_sync</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Reference/GCD_libdispatch_Ref/index.html#//apple_ref/c/func/dispatch_barrier_sync">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void dispatch_barrier_sync(NSObject queue,
             @ObjCBlock(name = "call_dispatch_barrier_sync") Block_dispatch_barrier_sync block);
 
-    /**
-     * dispatch_barrier_sync_f</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Reference/GCD_libdispatch_Ref/index.html#//apple_ref/c/func/dispatch_barrier_sync_f">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void dispatch_barrier_sync_f(NSObject queue, VoidPtr context,
             @FunctionPtr(name = "call_dispatch_barrier_sync_f") Function_dispatch_barrier_sync_f work);
 
-    /**
-     * dispatch_queue_set_specific</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Reference/GCD_libdispatch_Ref/index.html#//apple_ref/c/func/dispatch_queue_set_specific">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void dispatch_queue_set_specific(NSObject queue, ConstVoidPtr key, VoidPtr context,
             @FunctionPtr(name = "call_dispatch_queue_set_specific") Function_dispatch_queue_set_specific destructor);
 
-    /**
-     * dispatch_queue_get_specific</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Reference/GCD_libdispatch_Ref/index.html#//apple_ref/c/func/dispatch_queue_get_specific">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native VoidPtr dispatch_queue_get_specific(NSObject queue, ConstVoidPtr key);
 
-    /**
-     * dispatch_get_specific</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Reference/GCD_libdispatch_Ref/index.html#//apple_ref/c/func/dispatch_get_specific">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native VoidPtr dispatch_get_specific(ConstVoidPtr key);
@@ -1381,228 +1226,124 @@ public final class Globals {
     @CFunction
     public static native int mach_voucher_deallocate(int voucher);
 
-    /**
-     * dispatch_source_create</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Reference/GCD_libdispatch_Ref/index.html#//apple_ref/c/func/dispatch_source_create">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native NSObject dispatch_source_create(dispatch_source_type_t type, @NUInt long handle,
             @NUInt long mask, NSObject queue);
 
-    /**
-     * dispatch_source_set_event_handler</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Reference/GCD_libdispatch_Ref/index.html#//apple_ref/c/func/dispatch_source_set_event_handler">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void dispatch_source_set_event_handler(NSObject source,
             @ObjCBlock(name = "call_dispatch_source_set_event_handler") Block_dispatch_source_set_event_handler handler);
 
-    /**
-     * dispatch_source_set_event_handler_f</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Reference/GCD_libdispatch_Ref/index.html#//apple_ref/c/func/dispatch_source_set_event_handler_f">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void dispatch_source_set_event_handler_f(NSObject source,
             @FunctionPtr(name = "call_dispatch_source_set_event_handler_f") Function_dispatch_source_set_event_handler_f handler);
 
-    /**
-     * dispatch_source_set_cancel_handler</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Reference/GCD_libdispatch_Ref/index.html#//apple_ref/c/func/dispatch_source_set_cancel_handler">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void dispatch_source_set_cancel_handler(NSObject source,
             @ObjCBlock(name = "call_dispatch_source_set_cancel_handler") Block_dispatch_source_set_cancel_handler handler);
 
-    /**
-     * dispatch_source_set_cancel_handler_f</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Reference/GCD_libdispatch_Ref/index.html#//apple_ref/c/func/dispatch_source_set_cancel_handler_f">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void dispatch_source_set_cancel_handler_f(NSObject source,
             @FunctionPtr(name = "call_dispatch_source_set_cancel_handler_f") Function_dispatch_source_set_cancel_handler_f handler);
 
-    /**
-     * dispatch_source_cancel</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Reference/GCD_libdispatch_Ref/index.html#//apple_ref/c/func/dispatch_source_cancel">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void dispatch_source_cancel(NSObject source);
 
-    /**
-     * dispatch_source_testcancel</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Reference/GCD_libdispatch_Ref/index.html#//apple_ref/c/func/dispatch_source_testcancel">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @NInt
     public static native long dispatch_source_testcancel(NSObject source);
 
-    /**
-     * dispatch_source_get_handle</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Reference/GCD_libdispatch_Ref/index.html#//apple_ref/c/func/dispatch_source_get_handle">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @NUInt
     public static native long dispatch_source_get_handle(NSObject source);
 
-    /**
-     * dispatch_source_get_mask</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Reference/GCD_libdispatch_Ref/index.html#//apple_ref/c/func/dispatch_source_get_mask">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @NUInt
     public static native long dispatch_source_get_mask(NSObject source);
 
-    /**
-     * dispatch_source_get_data</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Reference/GCD_libdispatch_Ref/index.html#//apple_ref/c/func/dispatch_source_get_data">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @NUInt
     public static native long dispatch_source_get_data(NSObject source);
 
-    /**
-     * dispatch_source_merge_data</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Reference/GCD_libdispatch_Ref/index.html#//apple_ref/c/func/dispatch_source_merge_data">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void dispatch_source_merge_data(NSObject source, @NUInt long value);
 
-    /**
-     * dispatch_source_set_timer</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Reference/GCD_libdispatch_Ref/index.html#//apple_ref/c/func/dispatch_source_set_timer">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void dispatch_source_set_timer(NSObject source, long start, long interval, long leeway);
 
-    /**
-     * dispatch_source_set_registration_handler</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Reference/GCD_libdispatch_Ref/index.html#//apple_ref/c/func/dispatch_source_set_registration_handler">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void dispatch_source_set_registration_handler(NSObject source,
             @ObjCBlock(name = "call_dispatch_source_set_registration_handler") Block_dispatch_source_set_registration_handler handler);
 
-    /**
-     * dispatch_source_set_registration_handler_f</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Reference/GCD_libdispatch_Ref/index.html#//apple_ref/c/func/dispatch_source_set_registration_handler_f">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void dispatch_source_set_registration_handler_f(NSObject source,
             @FunctionPtr(name = "call_dispatch_source_set_registration_handler_f") Function_dispatch_source_set_registration_handler_f handler);
 
-    /**
-     * dispatch_group_create</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Reference/GCD_libdispatch_Ref/index.html#//apple_ref/c/func/dispatch_group_create">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native NSObject dispatch_group_create();
 
-    /**
-     * dispatch_group_async</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Reference/GCD_libdispatch_Ref/index.html#//apple_ref/c/func/dispatch_group_async">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void dispatch_group_async(NSObject group, NSObject queue,
             @ObjCBlock(name = "call_dispatch_group_async") Block_dispatch_group_async block);
 
-    /**
-     * dispatch_group_async_f</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Reference/GCD_libdispatch_Ref/index.html#//apple_ref/c/func/dispatch_group_async_f">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void dispatch_group_async_f(NSObject group, NSObject queue, VoidPtr context,
             @FunctionPtr(name = "call_dispatch_group_async_f") Function_dispatch_group_async_f work);
 
-    /**
-     * dispatch_group_wait</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Reference/GCD_libdispatch_Ref/index.html#//apple_ref/c/func/dispatch_group_wait">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @NInt
     public static native long dispatch_group_wait(NSObject group, long timeout);
 
-    /**
-     * dispatch_group_notify</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Reference/GCD_libdispatch_Ref/index.html#//apple_ref/c/func/dispatch_group_notify">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void dispatch_group_notify(NSObject group, NSObject queue,
             @ObjCBlock(name = "call_dispatch_group_notify") Block_dispatch_group_notify block);
 
-    /**
-     * dispatch_group_notify_f</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Reference/GCD_libdispatch_Ref/index.html#//apple_ref/c/func/dispatch_group_notify_f">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void dispatch_group_notify_f(NSObject group, NSObject queue, VoidPtr context,
             @FunctionPtr(name = "call_dispatch_group_notify_f") Function_dispatch_group_notify_f work);
 
-    /**
-     * dispatch_group_enter</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Reference/GCD_libdispatch_Ref/index.html#//apple_ref/c/func/dispatch_group_enter">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void dispatch_group_enter(NSObject group);
 
-    /**
-     * dispatch_group_leave</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Reference/GCD_libdispatch_Ref/index.html#//apple_ref/c/func/dispatch_group_leave">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void dispatch_group_leave(NSObject group);
 
-    /**
-     * dispatch_semaphore_create</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Reference/GCD_libdispatch_Ref/index.html#//apple_ref/c/func/dispatch_semaphore_create">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native NSObject dispatch_semaphore_create(@NInt long value);
 
-    /**
-     * dispatch_semaphore_wait</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Reference/GCD_libdispatch_Ref/index.html#//apple_ref/c/func/dispatch_semaphore_wait">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @NInt
     public static native long dispatch_semaphore_wait(NSObject dsema, long timeout);
 
-    /**
-     * dispatch_semaphore_signal</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Reference/GCD_libdispatch_Ref/index.html#//apple_ref/c/func/dispatch_semaphore_signal">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @NInt
     public static native long dispatch_semaphore_signal(NSObject dsema);
 
-    /**
-     * dispatch_once</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Reference/GCD_libdispatch_Ref/index.html#//apple_ref/c/func/dispatch_once">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void dispatch_once(NIntPtr predicate,
@@ -1614,10 +1355,6 @@ public final class Globals {
     public static native void _dispatch_once(NIntPtr predicate,
             @ObjCBlock(name = "call__dispatch_once") Block__dispatch_once block);
 
-    /**
-     * dispatch_once_f</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Reference/GCD_libdispatch_Ref/index.html#//apple_ref/c/func/dispatch_once_f">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void dispatch_once_f(NIntPtr predicate, VoidPtr context,
@@ -1629,97 +1366,53 @@ public final class Globals {
     public static native void _dispatch_once_f(NIntPtr predicate, VoidPtr context,
             @FunctionPtr(name = "call__dispatch_once_f") Function__dispatch_once_f function);
 
-    /**
-     * dispatch_data_create</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Reference/GCD_libdispatch_Ref/index.html#//apple_ref/c/func/dispatch_data_create">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native NSObject dispatch_data_create(ConstVoidPtr buffer, @NUInt long size, NSObject queue,
             @ObjCBlock(name = "call_dispatch_data_create") Block_dispatch_data_create destructor);
 
-    /**
-     * dispatch_data_get_size</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Reference/GCD_libdispatch_Ref/index.html#//apple_ref/c/func/dispatch_data_get_size">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @NUInt
     public static native long dispatch_data_get_size(NSObject data);
 
-    /**
-     * dispatch_data_create_map</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Reference/GCD_libdispatch_Ref/index.html#//apple_ref/c/func/dispatch_data_create_map">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native NSObject dispatch_data_create_map(NSObject data, Ptr<ConstVoidPtr> buffer_ptr,
             NUIntPtr size_ptr);
 
-    /**
-     * dispatch_data_create_concat</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Reference/GCD_libdispatch_Ref/index.html#//apple_ref/c/func/dispatch_data_create_concat">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native NSObject dispatch_data_create_concat(NSObject data1, NSObject data2);
 
-    /**
-     * dispatch_data_create_subrange</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Reference/GCD_libdispatch_Ref/index.html#//apple_ref/c/func/dispatch_data_create_subrange">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native NSObject dispatch_data_create_subrange(NSObject data, @NUInt long offset, @NUInt long length);
 
-    /**
-     * dispatch_data_apply</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Reference/GCD_libdispatch_Ref/index.html#//apple_ref/c/func/dispatch_data_apply">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native boolean dispatch_data_apply(NSObject data,
             @ObjCBlock(name = "call_dispatch_data_apply") Block_dispatch_data_apply applier);
 
-    /**
-     * dispatch_data_copy_region</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Reference/GCD_libdispatch_Ref/index.html#//apple_ref/c/func/dispatch_data_copy_region">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native NSObject dispatch_data_copy_region(NSObject data, @NUInt long location, NUIntPtr offset_ptr);
 
-    /**
-     * dispatch_read</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Reference/GCD_libdispatch_Ref/index.html#//apple_ref/c/func/dispatch_read">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void dispatch_read(int fd, @NUInt long length, NSObject queue,
             @ObjCBlock(name = "call_dispatch_read") Block_dispatch_read handler);
 
-    /**
-     * dispatch_write</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Reference/GCD_libdispatch_Ref/index.html#//apple_ref/c/func/dispatch_write">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void dispatch_write(int fd, NSObject data, NSObject queue,
             @ObjCBlock(name = "call_dispatch_write") Block_dispatch_write handler);
 
-    /**
-     * dispatch_io_create</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Reference/GCD_libdispatch_Ref/index.html#//apple_ref/c/func/dispatch_io_create">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native NSObject dispatch_io_create(@NUInt long type, int fd, NSObject queue,
             @ObjCBlock(name = "call_dispatch_io_create") Block_dispatch_io_create cleanup_handler);
 
-    /**
-     * dispatch_io_create_with_path</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Reference/GCD_libdispatch_Ref/index.html#//apple_ref/c/func/dispatch_io_create_with_path">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native NSObject dispatch_io_create_with_path(@NUInt long type,
@@ -1727,78 +1420,42 @@ public final class Globals {
             char mode, NSObject queue,
             @ObjCBlock(name = "call_dispatch_io_create_with_path") Block_dispatch_io_create_with_path cleanup_handler);
 
-    /**
-     * dispatch_io_create_with_io</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Reference/GCD_libdispatch_Ref/index.html#//apple_ref/c/func/dispatch_io_create_with_io">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native NSObject dispatch_io_create_with_io(@NUInt long type, NSObject io, NSObject queue,
             @ObjCBlock(name = "call_dispatch_io_create_with_io") Block_dispatch_io_create_with_io cleanup_handler);
 
-    /**
-     * dispatch_io_read</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Reference/GCD_libdispatch_Ref/index.html#//apple_ref/c/func/dispatch_io_read">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void dispatch_io_read(NSObject channel, long offset, @NUInt long length, NSObject queue,
             @ObjCBlock(name = "call_dispatch_io_read") Block_dispatch_io_read io_handler);
 
-    /**
-     * dispatch_io_write</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Reference/GCD_libdispatch_Ref/index.html#//apple_ref/c/func/dispatch_io_write">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void dispatch_io_write(NSObject channel, long offset, NSObject data, NSObject queue,
             @ObjCBlock(name = "call_dispatch_io_write") Block_dispatch_io_write io_handler);
 
-    /**
-     * dispatch_io_close</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Reference/GCD_libdispatch_Ref/index.html#//apple_ref/c/func/dispatch_io_close">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void dispatch_io_close(NSObject channel, @NUInt long flags);
 
-    /**
-     * dispatch_io_barrier</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Reference/GCD_libdispatch_Ref/index.html#//apple_ref/c/func/dispatch_io_barrier">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void dispatch_io_barrier(NSObject channel,
             @ObjCBlock(name = "call_dispatch_io_barrier") Block_dispatch_io_barrier barrier);
 
-    /**
-     * dispatch_io_get_descriptor</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Reference/GCD_libdispatch_Ref/index.html#//apple_ref/c/func/dispatch_io_get_descriptor">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native int dispatch_io_get_descriptor(NSObject channel);
 
-    /**
-     * dispatch_io_set_high_water</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Reference/GCD_libdispatch_Ref/index.html#//apple_ref/c/func/dispatch_io_set_high_water">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void dispatch_io_set_high_water(NSObject channel, @NUInt long high_water);
 
-    /**
-     * dispatch_io_set_low_water</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Reference/GCD_libdispatch_Ref/index.html#//apple_ref/c/func/dispatch_io_set_low_water">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void dispatch_io_set_low_water(NSObject channel, @NUInt long low_water);
 
-    /**
-     * dispatch_io_set_interval</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Reference/GCD_libdispatch_Ref/index.html#//apple_ref/c/func/dispatch_io_set_interval">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void dispatch_io_set_interval(NSObject channel, long interval, @NUInt long flags);
@@ -4593,38 +4250,6 @@ public final class Globals {
 
     @Generated
     @CFunction
-    public static native void os_activity_end(long activity_id);
-
-    @Generated
-    @CFunction
-    public static native int os_activity_get_active(LongPtr entries, IntPtr count);
-
-    @Generated
-    @CFunction
-    public static native void _os_activity_set_breadcrumb(VoidPtr dso,
-            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String name);
-
-    @Generated
-    @CFunction
-    public static native long _os_activity_start(VoidPtr dso,
-            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String description,
-            int flags);
-
-    @Generated
-    @CFunction
-    public static native void _os_activity_initiate(VoidPtr dso,
-            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String description,
-            int flags, @ObjCBlock(name = "call__os_activity_initiate") Block__os_activity_initiate activity_block);
-
-    @Generated
-    @CFunction
-    public static native void _os_activity_initiate_f(VoidPtr dso,
-            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String description,
-            int flags, VoidPtr context,
-            @FunctionPtr(name = "call__os_activity_initiate_f") Function__os_activity_initiate_f activity_func);
-
-    @Generated
-    @CFunction
     public static native int connectx(int arg1,
             @UncertainArgument("Options: reference, array Fallback: reference") sa_endpoints arg2, int arg3, int arg4,
             @UncertainArgument("Options: reference, array Fallback: reference") iovec arg5, int arg6, NUIntPtr arg7,
@@ -4635,8 +4260,835 @@ public final class Globals {
     public static native int disconnectx(int arg1, int arg2, int arg3);
 
     @Generated
-    @CVariable()
-    public static native VoidPtr __dso_handle();
+    @CFunction
+    public static native int setjmp(IntPtr arg1);
+
+    @Generated
+    @CFunction
+    public static native void longjmp(IntPtr arg1, int arg2);
+
+    @Generated
+    @CFunction
+    public static native int _setjmp(IntPtr arg1);
+
+    @Generated
+    @CFunction
+    public static native int sigsetjmp(IntPtr arg1, int arg2);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native int vsha1h_u32(int __p0);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native double vabdd_f64(double __p0, double __p1);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native float vabds_f32(float __p0, float __p1);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native long vabsd_s64(long __p0);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native long vaddd_u64(long __p0, long __p1);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native long vaddd_s64(long __p0, long __p1);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native long vcaged_f64(double __p0, double __p1);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native int vcages_f32(float __p0, float __p1);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native long vcagtd_f64(double __p0, double __p1);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native int vcagts_f32(float __p0, float __p1);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native long vcaled_f64(double __p0, double __p1);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native int vcales_f32(float __p0, float __p1);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native long vcaltd_f64(double __p0, double __p1);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native int vcalts_f32(float __p0, float __p1);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native long vceqd_u64(long __p0, long __p1);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native long vceqd_s64(long __p0, long __p1);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native long vceqd_f64(double __p0, double __p1);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native int vceqs_f32(float __p0, float __p1);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native long vceqzd_u64(long __p0);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native long vceqzd_s64(long __p0);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native long vceqzd_f64(double __p0);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native int vceqzs_f32(float __p0);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native long vcged_s64(long __p0, long __p1);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native long vcged_u64(long __p0, long __p1);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native long vcged_f64(double __p0, double __p1);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native int vcges_f32(float __p0, float __p1);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native long vcgezd_s64(long __p0);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native long vcgezd_f64(double __p0);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native int vcgezs_f32(float __p0);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native long vcgtd_s64(long __p0, long __p1);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native long vcgtd_u64(long __p0, long __p1);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native long vcgtd_f64(double __p0, double __p1);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native int vcgts_f32(float __p0, float __p1);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native long vcgtzd_s64(long __p0);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native long vcgtzd_f64(double __p0);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native int vcgtzs_f32(float __p0);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native long vcled_u64(long __p0, long __p1);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native long vcled_s64(long __p0, long __p1);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native long vcled_f64(double __p0, double __p1);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native int vcles_f32(float __p0, float __p1);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native long vclezd_s64(long __p0);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native long vclezd_f64(double __p0);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native int vclezs_f32(float __p0);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native long vcltd_u64(long __p0, long __p1);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native long vcltd_s64(long __p0, long __p1);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native long vcltd_f64(double __p0, double __p1);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native int vclts_f32(float __p0, float __p1);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native long vcltzd_s64(long __p0);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native long vcltzd_f64(double __p0);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native int vcltzs_f32(float __p0);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native float vcvts_f32_s32(int __p0);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native float vcvts_f32_u32(int __p0);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native double vcvtd_f64_s64(long __p0);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native double vcvtd_f64_u64(long __p0);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native int vcvts_s32_f32(float __p0);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native long vcvtd_s64_f64(double __p0);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native int vcvts_u32_f32(float __p0);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native long vcvtd_u64_f64(double __p0);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native int vcvtas_s32_f32(float __p0);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native long vcvtad_s64_f64(double __p0);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native int vcvtas_u32_f32(float __p0);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native long vcvtad_u64_f64(double __p0);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native int vcvtms_s32_f32(float __p0);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native long vcvtmd_s64_f64(double __p0);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native int vcvtms_u32_f32(float __p0);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native long vcvtmd_u64_f64(double __p0);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native int vcvtns_s32_f32(float __p0);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native long vcvtnd_s64_f64(double __p0);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native int vcvtns_u32_f32(float __p0);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native long vcvtnd_u64_f64(double __p0);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native int vcvtps_s32_f32(float __p0);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native long vcvtpd_s64_f64(double __p0);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native int vcvtps_u32_f32(float __p0);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native long vcvtpd_u64_f64(double __p0);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native float vcvtxd_f32_f64(double __p0);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native double vmulxd_f64(double __p0, double __p1);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native float vmulxs_f32(float __p0, float __p1);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native long vnegd_s64(long __p0);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native byte vqabsb_s8(byte __p0);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native int vqabss_s32(int __p0);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native long vqabsd_s64(long __p0);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native short vqabsh_s16(short __p0);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native byte vqaddb_u8(byte __p0, byte __p1);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native int vqadds_u32(int __p0, int __p1);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native long vqaddd_u64(long __p0, long __p1);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native char vqaddh_u16(char __p0, char __p1);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native byte vqaddb_s8(byte __p0, byte __p1);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native int vqadds_s32(int __p0, int __p1);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native long vqaddd_s64(long __p0, long __p1);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native short vqaddh_s16(short __p0, short __p1);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native long vqdmlals_s32(long __p0, int __p1, int __p2);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native int vqdmlalh_s16(int __p0, short __p1, short __p2);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native long vqdmlsls_s32(long __p0, int __p1, int __p2);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native int vqdmlslh_s16(int __p0, short __p1, short __p2);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native int vqdmulhs_s32(int __p0, int __p1);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native short vqdmulhh_s16(short __p0, short __p1);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native long vqdmulls_s32(int __p0, int __p1);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native int vqdmullh_s16(short __p0, short __p1);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native short vqmovns_s32(int __p0);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native int vqmovnd_s64(long __p0);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native byte vqmovnh_s16(short __p0);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native char vqmovns_u32(int __p0);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native int vqmovnd_u64(long __p0);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native byte vqmovnh_u16(char __p0);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native short vqmovuns_s32(int __p0);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native int vqmovund_s64(long __p0);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native byte vqmovunh_s16(short __p0);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native byte vqnegb_s8(byte __p0);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native int vqnegs_s32(int __p0);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native long vqnegd_s64(long __p0);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native short vqnegh_s16(short __p0);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native int vqrdmulhs_s32(int __p0, int __p1);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native short vqrdmulhh_s16(short __p0, short __p1);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native byte vqrshlb_u8(byte __p0, byte __p1);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native int vqrshls_u32(int __p0, int __p1);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native long vqrshld_u64(long __p0, long __p1);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native char vqrshlh_u16(char __p0, char __p1);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native byte vqrshlb_s8(byte __p0, byte __p1);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native int vqrshls_s32(int __p0, int __p1);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native long vqrshld_s64(long __p0, long __p1);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native short vqrshlh_s16(short __p0, short __p1);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native byte vqshlb_u8(byte __p0, byte __p1);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native int vqshls_u32(int __p0, int __p1);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native long vqshld_u64(long __p0, long __p1);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native char vqshlh_u16(char __p0, char __p1);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native byte vqshlb_s8(byte __p0, byte __p1);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native int vqshls_s32(int __p0, int __p1);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native long vqshld_s64(long __p0, long __p1);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native short vqshlh_s16(short __p0, short __p1);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native byte vqsubb_u8(byte __p0, byte __p1);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native int vqsubs_u32(int __p0, int __p1);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native long vqsubd_u64(long __p0, long __p1);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native char vqsubh_u16(char __p0, char __p1);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native byte vqsubb_s8(byte __p0, byte __p1);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native int vqsubs_s32(int __p0, int __p1);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native long vqsubd_s64(long __p0, long __p1);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native short vqsubh_s16(short __p0, short __p1);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native double vrecped_f64(double __p0);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native float vrecpes_f32(float __p0);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native double vrecpsd_f64(double __p0, double __p1);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native float vrecpss_f32(float __p0, float __p1);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native double vrecpxd_f64(double __p0);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native float vrecpxs_f32(float __p0);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native long vrshld_u64(long __p0, long __p1);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native long vrshld_s64(long __p0, long __p1);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native double vrsqrted_f64(double __p0);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native float vrsqrtes_f32(float __p0);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native double vrsqrtsd_f64(double __p0, double __p1);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native float vrsqrtss_f32(float __p0, float __p1);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native long vshld_u64(long __p0, long __p1);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native long vshld_s64(long __p0, long __p1);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native byte vsqaddb_u8(byte __p0, byte __p1);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native int vsqadds_u32(int __p0, int __p1);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native long vsqaddd_u64(long __p0, long __p1);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native char vsqaddh_u16(char __p0, char __p1);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native long vsubd_u64(long __p0, long __p1);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native long vsubd_s64(long __p0, long __p1);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native long vtstd_u64(long __p0, long __p1);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native long vtstd_s64(long __p0, long __p1);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native byte vuqaddb_s8(byte __p0, byte __p1);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native int vuqadds_s32(int __p0, int __p1);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native long vuqaddd_s64(long __p0, long __p1);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native short vuqaddh_s16(short __p0, short __p1);
 
     @Runtime(CRuntime.class)
     @Generated
@@ -5142,19 +5594,5 @@ public final class Globals {
     public interface Function_sigset {
         @Generated
         void call_sigset(int arg0);
-    }
-
-    @Runtime(CRuntime.class)
-    @Generated
-    public interface Block__os_activity_initiate {
-        @Generated
-        void call__os_activity_initiate();
-    }
-
-    @Runtime(CRuntime.class)
-    @Generated
-    public interface Function__os_activity_initiate_f {
-        @Generated
-        void call__os_activity_initiate_f(VoidPtr arg0);
     }
 }

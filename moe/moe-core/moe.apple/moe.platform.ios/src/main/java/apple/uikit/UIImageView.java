@@ -339,51 +339,27 @@ public class UIImageView extends UIView {
     @NInt
     public static native long version_static();
 
-    /**
-     * animationDuration</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIImageView_Class/index.html#//apple_ref/occ/instp/UIImageView/animationDuration">iOS Dev Center</a>
-     */
     @Generated
     @Selector("animationDuration")
     public native double animationDuration();
 
-    /**
-     * animationImages</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIImageView_Class/index.html#//apple_ref/occ/instp/UIImageView/animationImages">iOS Dev Center</a>
-     */
     @Generated
     @Selector("animationImages")
     public native NSArray<? extends UIImage> animationImages();
 
-    /**
-     * animationRepeatCount</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIImageView_Class/index.html#//apple_ref/occ/instp/UIImageView/animationRepeatCount">iOS Dev Center</a>
-     */
     @Generated
     @Selector("animationRepeatCount")
     @NInt
     public native long animationRepeatCount();
 
-    /**
-     * highlightedAnimationImages</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIImageView_Class/index.html#//apple_ref/occ/instp/UIImageView/highlightedAnimationImages">iOS Dev Center</a>
-     */
     @Generated
     @Selector("highlightedAnimationImages")
     public native NSArray<? extends UIImage> highlightedAnimationImages();
 
-    /**
-     * highlightedImage</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIImageView_Class/index.html#//apple_ref/occ/instp/UIImageView/highlightedImage">iOS Dev Center</a>
-     */
     @Generated
     @Selector("highlightedImage")
     public native UIImage highlightedImage();
 
-    /**
-     * image</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIImageView_Class/index.html#//apple_ref/occ/instp/UIImageView/image">iOS Dev Center</a>
-     */
     @Generated
     @Selector("image")
     public native UIImage image();
@@ -396,138 +372,70 @@ public class UIImageView extends UIView {
     @Selector("initWithFrame:")
     public native UIImageView initWithFrame(@ByValue CGRect frame);
 
-    /**
-     * initWithImage:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIImageView_Class/index.html#//apple_ref/occ/instm/UIImageView/initWithImage:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithImage:")
     public native UIImageView initWithImage(UIImage image);
 
-    /**
-     * initWithImage:highlightedImage:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIImageView_Class/index.html#//apple_ref/occ/instm/UIImageView/initWithImage:highlightedImage:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithImage:highlightedImage:")
     public native UIImageView initWithImageHighlightedImage(UIImage image, UIImage highlightedImage);
 
-    /**
-     * isAnimating</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIImageView_Class/index.html#//apple_ref/occ/instm/UIImageView/isAnimating">iOS Dev Center</a>
-     */
     @Generated
     @Selector("isAnimating")
     public native boolean isAnimating();
 
-    /**
-     * highlighted</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIImageView_Class/index.html#//apple_ref/occ/instp/UIImageView/highlighted">iOS Dev Center</a>
-     */
     @Generated
     @Selector("isHighlighted")
     public native boolean isHighlighted();
 
-    /**
-     * highlighted</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIImageView_Class/index.html#//apple_ref/occ/instp/UIImageView/highlighted">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setHighlighted:")
     public native void setHighlighted(boolean value);
 
-    /**
-     * userInteractionEnabled</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIImageView_Class/index.html#//apple_ref/occ/instp/UIImageView/userInteractionEnabled">iOS Dev Center</a>
-     */
     @Generated
     @Selector("isUserInteractionEnabled")
     public native boolean isUserInteractionEnabled();
 
-    /**
-     * userInteractionEnabled</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIImageView_Class/index.html#//apple_ref/occ/instp/UIImageView/userInteractionEnabled">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setUserInteractionEnabled:")
     public native void setUserInteractionEnabled(boolean value);
 
-    /**
-     * animationDuration</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIImageView_Class/index.html#//apple_ref/occ/instp/UIImageView/animationDuration">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setAnimationDuration:")
     public native void setAnimationDuration(double value);
 
-    /**
-     * animationImages</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIImageView_Class/index.html#//apple_ref/occ/instp/UIImageView/animationImages">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setAnimationImages:")
     public native void setAnimationImages(NSArray<? extends UIImage> value);
 
-    /**
-     * animationRepeatCount</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIImageView_Class/index.html#//apple_ref/occ/instp/UIImageView/animationRepeatCount">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setAnimationRepeatCount:")
     public native void setAnimationRepeatCount(@NInt long value);
 
-    /**
-     * highlightedAnimationImages</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIImageView_Class/index.html#//apple_ref/occ/instp/UIImageView/highlightedAnimationImages">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setHighlightedAnimationImages:")
     public native void setHighlightedAnimationImages(NSArray<? extends UIImage> value);
 
-    /**
-     * highlightedImage</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIImageView_Class/index.html#//apple_ref/occ/instp/UIImageView/highlightedImage">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setHighlightedImage:")
     public native void setHighlightedImage(UIImage value);
 
-    /**
-     * image</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIImageView_Class/index.html#//apple_ref/occ/instp/UIImageView/image">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setImage:")
     public native void setImage(UIImage value);
 
-    /**
-     * tintColor</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIImageView_Class/index.html#//apple_ref/occ/instp/UIImageView/tintColor">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setTintColor:")
     public native void setTintColor(UIColor value);
 
-    /**
-     * startAnimating</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIImageView_Class/index.html#//apple_ref/occ/instm/UIImageView/startAnimating">iOS Dev Center</a>
-     */
     @Generated
     @Selector("startAnimating")
     public native void startAnimating();
 
-    /**
-     * stopAnimating</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIImageView_Class/index.html#//apple_ref/occ/instm/UIImageView/stopAnimating">iOS Dev Center</a>
-     */
     @Generated
     @Selector("stopAnimating")
     public native void stopAnimating();
 
-    /**
-     * tintColor</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIImageView_Class/index.html#//apple_ref/occ/instp/UIImageView/tintColor">iOS Dev Center</a>
-     */
     @Generated
     @Selector("tintColor")
     public native UIColor tintColor();

@@ -74,18 +74,10 @@ public class SCNRenderer extends NSObject implements SCNSceneRenderer, SCNTechni
     @Selector("alloc")
     public static native SCNRenderer alloc();
 
-    /**
-     * rendererWithContext:options:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNRenderer_Class/index.html#//apple_ref/occ/clm/SCNRenderer/rendererWithContext:options:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("rendererWithContext:options:")
     public static native SCNRenderer rendererWithContextOptions(EAGLContext context, NSDictionary<?, ?> options);
 
-    /**
-     * rendererWithDevice:options:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNRenderer_Class/index.html#//apple_ref/occ/clm/SCNRenderer/rendererWithDevice:options:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("rendererWithDevice:options:")
     public static native SCNRenderer rendererWithDeviceOptions(@Mapped(ObjCObjectMapper.class) MTLDevice device,
@@ -237,10 +229,6 @@ public class SCNRenderer extends NSObject implements SCNSceneRenderer, SCNTechni
     @Selector("loops")
     public native boolean loops();
 
-    /**
-     * nextFrameTime</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNRenderer_Class/index.html#//apple_ref/occ/instp/SCNRenderer/nextFrameTime">iOS Dev Center</a>
-     */
     @Generated
     @Selector("nextFrameTime")
     public native double nextFrameTime();
@@ -268,19 +256,11 @@ public class SCNRenderer extends NSObject implements SCNSceneRenderer, SCNTechni
     @ByValue
     public native SCNVector3 projectPoint(@ByValue SCNVector3 point);
 
-    /**
-     * render</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNRenderer_Class/index.html#//apple_ref/occ/instm/SCNRenderer/render">iOS Dev Center</a>
-     */
     @Deprecated
     @Generated
     @Selector("render")
     public native void render();
 
-    /**
-     * renderAtTime:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNRenderer_Class/index.html#//apple_ref/occ/instm/SCNRenderer/renderAtTime:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("renderAtTime:")
     public native void renderAtTime(double time);
@@ -406,10 +386,6 @@ public class SCNRenderer extends NSObject implements SCNSceneRenderer, SCNTechni
             SKTransition transition, SCNNode pointOfView,
             @ObjCBlock(name = "call_presentSceneWithTransitionIncomingPointOfViewCompletionHandler") SCNSceneRenderer.Block_presentSceneWithTransitionIncomingPointOfViewCompletionHandler completionHandler);
 
-    /**
-     * renderAtTime:viewport:commandBuffer:passDescriptor:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNRenderer_Class/index.html#//apple_ref/occ/instm/SCNRenderer/renderAtTime:viewport:commandBuffer:passDescriptor:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("renderAtTime:viewport:commandBuffer:passDescriptor:")
     public native void renderAtTimeViewportCommandBufferPassDescriptor(double time, @ByValue CGRect viewport,

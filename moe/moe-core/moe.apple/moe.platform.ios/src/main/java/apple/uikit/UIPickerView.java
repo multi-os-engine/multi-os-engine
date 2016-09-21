@@ -354,19 +354,11 @@ public class UIPickerView extends UIView implements NSCoding, UITableViewDataSou
     @NInt
     public static native long version_static();
 
-    /**
-     * dataSource</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPickerView_Class/index.html#//apple_ref/occ/instp/UIPickerView/dataSource">iOS Dev Center</a>
-     */
     @Generated
     @Selector("dataSource")
     @MappedReturn(ObjCObjectMapper.class)
     public native UIPickerViewDataSource dataSource();
 
-    /**
-     * delegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPickerView_Class/index.html#//apple_ref/occ/instp/UIPickerView/delegate">iOS Dev Center</a>
-     */
     @Generated
     @Selector("delegate")
     @MappedReturn(ObjCObjectMapper.class)
@@ -388,19 +380,11 @@ public class UIPickerView extends UIView implements NSCoding, UITableViewDataSou
     @Selector("initWithFrame:")
     public native UIPickerView initWithFrame(@ByValue CGRect frame);
 
-    /**
-     * numberOfComponents</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPickerView_Class/index.html#//apple_ref/occ/instp/UIPickerView/numberOfComponents">iOS Dev Center</a>
-     */
     @Generated
     @Selector("numberOfComponents")
     @NInt
     public native long numberOfComponents();
 
-    /**
-     * numberOfRowsInComponent:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPickerView_Class/index.html#//apple_ref/occ/instm/UIPickerView/numberOfRowsInComponent:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("numberOfRowsInComponent:")
     @NInt
@@ -412,26 +396,14 @@ public class UIPickerView extends UIView implements NSCoding, UITableViewDataSou
     @NInt
     public native long numberOfSectionsInTableView(UITableView tableView);
 
-    /**
-     * reloadAllComponents</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPickerView_Class/index.html#//apple_ref/occ/instm/UIPickerView/reloadAllComponents">iOS Dev Center</a>
-     */
     @Generated
     @Selector("reloadAllComponents")
     public native void reloadAllComponents();
 
-    /**
-     * reloadComponent:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPickerView_Class/index.html#//apple_ref/occ/instm/UIPickerView/reloadComponent:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("reloadComponent:")
     public native void reloadComponent(@NInt long component);
 
-    /**
-     * rowSizeForComponent:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPickerView_Class/index.html#//apple_ref/occ/instm/UIPickerView/rowSizeForComponent:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("rowSizeForComponent:")
     @ByValue
@@ -442,35 +414,19 @@ public class UIPickerView extends UIView implements NSCoding, UITableViewDataSou
     @Selector("sectionIndexTitlesForTableView:")
     public native NSArray<String> sectionIndexTitlesForTableView(UITableView tableView);
 
-    /**
-     * selectRow:inComponent:animated:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPickerView_Class/index.html#//apple_ref/occ/instm/UIPickerView/selectRow:inComponent:animated:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("selectRow:inComponent:animated:")
     public native void selectRowInComponentAnimated(@NInt long row, @NInt long component, boolean animated);
 
-    /**
-     * selectedRowInComponent:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPickerView_Class/index.html#//apple_ref/occ/instm/UIPickerView/selectedRowInComponent:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("selectedRowInComponent:")
     @NInt
     public native long selectedRowInComponent(@NInt long component);
 
-    /**
-     * dataSource</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPickerView_Class/index.html#//apple_ref/occ/instp/UIPickerView/dataSource">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setDataSource:")
     public native void setDataSource_unsafe(@Mapped(ObjCObjectMapper.class) UIPickerViewDataSource value);
 
-    /**
-     * dataSource</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPickerView_Class/index.html#//apple_ref/occ/instp/UIPickerView/dataSource">iOS Dev Center</a>
-     */
     @Generated
     public void setDataSource(@Mapped(ObjCObjectMapper.class) UIPickerViewDataSource value) {
         Object __old = dataSource();
@@ -483,18 +439,10 @@ public class UIPickerView extends UIView implements NSCoding, UITableViewDataSou
         }
     }
 
-    /**
-     * delegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPickerView_Class/index.html#//apple_ref/occ/instp/UIPickerView/delegate">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setDelegate:")
     public native void setDelegate_unsafe(@Mapped(ObjCObjectMapper.class) UIPickerViewDelegate value);
 
-    /**
-     * delegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPickerView_Class/index.html#//apple_ref/occ/instp/UIPickerView/delegate">iOS Dev Center</a>
-     */
     @Generated
     public void setDelegate(@Mapped(ObjCObjectMapper.class) UIPickerViewDelegate value) {
         Object __old = delegate();
@@ -507,18 +455,10 @@ public class UIPickerView extends UIView implements NSCoding, UITableViewDataSou
         }
     }
 
-    /**
-     * showsSelectionIndicator</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPickerView_Class/index.html#//apple_ref/occ/instp/UIPickerView/showsSelectionIndicator">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setShowsSelectionIndicator:")
     public native void setShowsSelectionIndicator(boolean value);
 
-    /**
-     * showsSelectionIndicator</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPickerView_Class/index.html#//apple_ref/occ/instp/UIPickerView/showsSelectionIndicator">iOS Dev Center</a>
-     */
     @Generated
     @Selector("showsSelectionIndicator")
     public native boolean showsSelectionIndicator();
@@ -571,10 +511,6 @@ public class UIPickerView extends UIView implements NSCoding, UITableViewDataSou
     @Selector("tableView:titleForHeaderInSection:")
     public native String tableViewTitleForHeaderInSection(UITableView tableView, @NInt long section);
 
-    /**
-     * viewForRow:forComponent:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPickerView_Class/index.html#//apple_ref/occ/instm/UIPickerView/viewForRow:forComponent:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("viewForRow:forComponent:")
     public native UIView viewForRowForComponent(@NInt long row, @NInt long component);

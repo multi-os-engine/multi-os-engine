@@ -57,10 +57,6 @@ public class MPMediaQuery extends NSObject implements NSSecureCoding, NSCopying 
         super(peer);
     }
 
-    /**
-     * albumsQuery</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPMediaQuery_ClassReference/index.html#//apple_ref/occ/clm/MPMediaQuery/albumsQuery">iOS Dev Center</a>
-     */
     @Generated
     @Selector("albumsQuery")
     public static native MPMediaQuery albumsQuery();
@@ -70,66 +66,34 @@ public class MPMediaQuery extends NSObject implements NSSecureCoding, NSCopying 
     @Selector("alloc")
     public static native MPMediaQuery alloc();
 
-    /**
-     * artistsQuery</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPMediaQuery_ClassReference/index.html#//apple_ref/occ/clm/MPMediaQuery/artistsQuery">iOS Dev Center</a>
-     */
     @Generated
     @Selector("artistsQuery")
     public static native MPMediaQuery artistsQuery();
 
-    /**
-     * audiobooksQuery</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPMediaQuery_ClassReference/index.html#//apple_ref/occ/clm/MPMediaQuery/audiobooksQuery">iOS Dev Center</a>
-     */
     @Generated
     @Selector("audiobooksQuery")
     public static native MPMediaQuery audiobooksQuery();
 
-    /**
-     * compilationsQuery</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPMediaQuery_ClassReference/index.html#//apple_ref/occ/clm/MPMediaQuery/compilationsQuery">iOS Dev Center</a>
-     */
     @Generated
     @Selector("compilationsQuery")
     public static native MPMediaQuery compilationsQuery();
 
-    /**
-     * composersQuery</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPMediaQuery_ClassReference/index.html#//apple_ref/occ/clm/MPMediaQuery/composersQuery">iOS Dev Center</a>
-     */
     @Generated
     @Selector("composersQuery")
     public static native MPMediaQuery composersQuery();
 
-    /**
-     * genresQuery</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPMediaQuery_ClassReference/index.html#//apple_ref/occ/clm/MPMediaQuery/genresQuery">iOS Dev Center</a>
-     */
     @Generated
     @Selector("genresQuery")
     public static native MPMediaQuery genresQuery();
 
-    /**
-     * playlistsQuery</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPMediaQuery_ClassReference/index.html#//apple_ref/occ/clm/MPMediaQuery/playlistsQuery">iOS Dev Center</a>
-     */
     @Generated
     @Selector("playlistsQuery")
     public static native MPMediaQuery playlistsQuery();
 
-    /**
-     * podcastsQuery</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPMediaQuery_ClassReference/index.html#//apple_ref/occ/clm/MPMediaQuery/podcastsQuery">iOS Dev Center</a>
-     */
     @Generated
     @Selector("podcastsQuery")
     public static native MPMediaQuery podcastsQuery();
 
-    /**
-     * songsQuery</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPMediaQuery_ClassReference/index.html#//apple_ref/occ/clm/MPMediaQuery/songsQuery">iOS Dev Center</a>
-     */
     @Generated
     @Selector("songsQuery")
     public static native MPMediaQuery songsQuery();
@@ -238,26 +202,14 @@ public class MPMediaQuery extends NSObject implements NSSecureCoding, NSCopying 
     @NInt
     public static native long version_static();
 
-    /**
-     * addFilterPredicate:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPMediaQuery_ClassReference/index.html#//apple_ref/occ/instm/MPMediaQuery/addFilterPredicate:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("addFilterPredicate:")
     public native void addFilterPredicate(MPMediaPredicate predicate);
 
-    /**
-     * collectionSections</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPMediaQuery_ClassReference/index.html#//apple_ref/occ/instp/MPMediaQuery/collectionSections">iOS Dev Center</a>
-     */
     @Generated
     @Selector("collectionSections")
     public native NSArray<? extends MPMediaQuerySection> collectionSections();
 
-    /**
-     * collections</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPMediaQuery_ClassReference/index.html#//apple_ref/occ/instp/MPMediaQuery/collections">iOS Dev Center</a>
-     */
     @Generated
     @Selector("collections")
     public native NSArray<? extends MPMediaItemCollection> collections();
@@ -272,27 +224,15 @@ public class MPMediaQuery extends NSObject implements NSSecureCoding, NSCopying 
     @Selector("encodeWithCoder:")
     public native void encodeWithCoder(NSCoder aCoder);
 
-    /**
-     * filterPredicates</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPMediaQuery_ClassReference/index.html#//apple_ref/occ/instp/MPMediaQuery/filterPredicates">iOS Dev Center</a>
-     */
     @Generated
     @Selector("filterPredicates")
     public native NSSet<? extends MPMediaPredicate> filterPredicates();
 
-    /**
-     * groupingType</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPMediaQuery_ClassReference/index.html#//apple_ref/occ/instp/MPMediaQuery/groupingType">iOS Dev Center</a>
-     */
     @Generated
     @Selector("groupingType")
     @NInt
     public native long groupingType();
 
-    /**
-     * init</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPMediaQuery_ClassReference/index.html#//apple_ref/occ/instm/MPMediaQuery/init">iOS Dev Center</a>
-     */
     @Generated
     @Selector("init")
     public native MPMediaQuery init();
@@ -301,50 +241,26 @@ public class MPMediaQuery extends NSObject implements NSSecureCoding, NSCopying 
     @Selector("initWithCoder:")
     public native MPMediaQuery initWithCoder(NSCoder aDecoder);
 
-    /**
-     * initWithFilterPredicates:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPMediaQuery_ClassReference/index.html#//apple_ref/occ/instm/MPMediaQuery/initWithFilterPredicates:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithFilterPredicates:")
     public native MPMediaQuery initWithFilterPredicates(NSSet<? extends MPMediaPredicate> filterPredicates);
 
-    /**
-     * itemSections</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPMediaQuery_ClassReference/index.html#//apple_ref/occ/instp/MPMediaQuery/itemSections">iOS Dev Center</a>
-     */
     @Generated
     @Selector("itemSections")
     public native NSArray<? extends MPMediaQuerySection> itemSections();
 
-    /**
-     * items</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPMediaQuery_ClassReference/index.html#//apple_ref/occ/instp/MPMediaQuery/items">iOS Dev Center</a>
-     */
     @Generated
     @Selector("items")
     public native NSArray<? extends MPMediaItem> items();
 
-    /**
-     * removeFilterPredicate:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPMediaQuery_ClassReference/index.html#//apple_ref/occ/instm/MPMediaQuery/removeFilterPredicate:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("removeFilterPredicate:")
     public native void removeFilterPredicate(MPMediaPredicate predicate);
 
-    /**
-     * filterPredicates</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPMediaQuery_ClassReference/index.html#//apple_ref/occ/instp/MPMediaQuery/filterPredicates">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setFilterPredicates:")
     public native void setFilterPredicates(NSSet<? extends MPMediaPredicate> value);
 
-    /**
-     * groupingType</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPMediaQuery_ClassReference/index.html#//apple_ref/occ/instp/MPMediaQuery/groupingType">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setGroupingType:")
     public native void setGroupingType(@NInt long value);

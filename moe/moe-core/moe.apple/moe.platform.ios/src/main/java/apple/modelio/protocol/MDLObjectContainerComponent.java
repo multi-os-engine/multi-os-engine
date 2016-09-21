@@ -31,26 +31,14 @@ import org.moe.natj.objc.ann.Selector;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("MDLObjectContainerComponent")
 public interface MDLObjectContainerComponent extends MDLComponent, NSFastEnumeration {
-    /**
-     * addObject:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLObjectContainerComponent_Protocol/index.html#//apple_ref/occ/intfm/MDLObjectContainerComponent/addObject:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("addObject:")
     void addObject(MDLObject object);
 
-    /**
-     * objects</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLObjectContainerComponent_Protocol/index.html#//apple_ref/occ/intfp/MDLObjectContainerComponent/objects">iOS Dev Center</a>
-     */
     @Generated
     @Selector("objects")
     NSArray<? extends MDLObject> objects();
 
-    /**
-     * removeObject:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLObjectContainerComponent_Protocol/index.html#//apple_ref/occ/intfm/MDLObjectContainerComponent/removeObject:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("removeObject:")
     void removeObject(MDLObject object);

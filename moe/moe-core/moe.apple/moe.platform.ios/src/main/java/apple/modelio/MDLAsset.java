@@ -66,26 +66,14 @@ public class MDLAsset extends NSObject implements NSCopying, NSFastEnumeration {
     @Selector("alloc")
     public static native MDLAsset alloc();
 
-    /**
-     * assetWithSCNScene:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLAsset_Class/index.html#//apple_ref/occ/clm/MDLAsset/assetWithSCNScene:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("assetWithSCNScene:")
     public static native MDLAsset assetWithSCNScene(SCNScene scnScene);
 
-    /**
-     * canExportFileExtension:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLAsset_Class/index.html#//apple_ref/occ/clm/MDLAsset/canExportFileExtension:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("canExportFileExtension:")
     public static native boolean canExportFileExtension(String extension);
 
-    /**
-     * canImportFileExtension:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLAsset_Class/index.html#//apple_ref/occ/clm/MDLAsset/canImportFileExtension:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("canImportFileExtension:")
     public static native boolean canImportFileExtension(String extension);
@@ -190,26 +178,14 @@ public class MDLAsset extends NSObject implements NSCopying, NSFastEnumeration {
     @NInt
     public static native long version_static();
 
-    /**
-     * URL</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLAsset_Class/index.html#//apple_ref/occ/instp/MDLAsset/URL">iOS Dev Center</a>
-     */
     @Generated
     @Selector("URL")
     public native NSURL URL();
 
-    /**
-     * addObject:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLAsset_Class/index.html#//apple_ref/occ/instm/MDLAsset/addObject:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("addObject:")
     public native void addObject(MDLObject object);
 
-    /**
-     * bufferAllocator</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLAsset_Class/index.html#//apple_ref/occ/instp/MDLAsset/bufferAllocator">iOS Dev Center</a>
-     */
     @Generated
     @Selector("bufferAllocator")
     @MappedReturn(ObjCObjectMapper.class)
@@ -221,10 +197,6 @@ public class MDLAsset extends NSObject implements NSCopying, NSFastEnumeration {
     @MappedReturn(ObjCObjectMapper.class)
     public native Object copyWithZone(VoidPtr zone);
 
-    /**
-     * count</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLAsset_Class/index.html#//apple_ref/occ/instp/MDLAsset/count">iOS Dev Center</a>
-     */
     @Generated
     @Selector("count")
     @NUInt
@@ -235,34 +207,18 @@ public class MDLAsset extends NSObject implements NSCopying, NSFastEnumeration {
     @NUInt
     public native long countByEnumeratingWithStateObjectsCount(VoidPtr state, Ptr<ObjCObject> buffer, @NUInt long len);
 
-    /**
-     * endTime</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLAsset_Class/index.html#//apple_ref/occ/instp/MDLAsset/endTime">iOS Dev Center</a>
-     */
     @Generated
     @Selector("endTime")
     public native double endTime();
 
-    /**
-     * exportAssetToURL:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLAsset_Class/index.html#//apple_ref/occ/instm/MDLAsset/exportAssetToURL:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("exportAssetToURL:")
     public native boolean exportAssetToURL(NSURL URL);
 
-    /**
-     * exportAssetToURL:error:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLAsset_Class/index.html#//apple_ref/occ/instm/MDLAsset/exportAssetToURL:error:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("exportAssetToURL:error:")
     public native boolean exportAssetToURLError(NSURL URL, Ptr<NSError> error);
 
-    /**
-     * frameInterval</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLAsset_Class/index.html#//apple_ref/occ/instp/MDLAsset/frameInterval">iOS Dev Center</a>
-     */
     @Generated
     @Selector("frameInterval")
     public native double frameInterval();
@@ -271,27 +227,15 @@ public class MDLAsset extends NSObject implements NSCopying, NSFastEnumeration {
     @Selector("init")
     public native MDLAsset init();
 
-    /**
-     * initWithURL:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLAsset_Class/index.html#//apple_ref/occ/instm/MDLAsset/initWithURL:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithURL:")
     public native MDLAsset initWithURL(NSURL URL);
 
-    /**
-     * initWithURL:vertexDescriptor:bufferAllocator:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLAsset_Class/index.html#//apple_ref/occ/instm/MDLAsset/initWithURL:vertexDescriptor:bufferAllocator:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithURL:vertexDescriptor:bufferAllocator:")
     public native MDLAsset initWithURLVertexDescriptorBufferAllocator(NSURL URL, MDLVertexDescriptor vertexDescriptor,
             @Mapped(ObjCObjectMapper.class) MDLMeshBufferAllocator bufferAllocator);
 
-    /**
-     * initWithURL:vertexDescriptor:bufferAllocator:preserveTopology:error:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLAsset_Class/index.html#//apple_ref/occ/instm/MDLAsset/initWithURL:vertexDescriptor:bufferAllocator:preserveTopology:error:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithURL:vertexDescriptor:bufferAllocator:preserveTopology:error:")
     public native MDLAsset initWithURLVertexDescriptorBufferAllocatorPreserveTopologyError(NSURL URL,
@@ -299,66 +243,34 @@ public class MDLAsset extends NSObject implements NSCopying, NSFastEnumeration {
             @Mapped(ObjCObjectMapper.class) MDLMeshBufferAllocator bufferAllocator, boolean preserveTopology,
             Ptr<NSError> error);
 
-    /**
-     * objectAtIndex:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLAsset_Class/index.html#//apple_ref/occ/instm/MDLAsset/objectAtIndex:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("objectAtIndex:")
     public native MDLObject objectAtIndex(@NUInt long index);
 
-    /**
-     * objectAtIndexedSubscript:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLAsset_Class/index.html#//apple_ref/occ/instm/MDLAsset/objectAtIndexedSubscript:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("objectAtIndexedSubscript:")
     public native MDLObject objectAtIndexedSubscript(@NUInt long index);
 
-    /**
-     * removeObject:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLAsset_Class/index.html#//apple_ref/occ/instm/MDLAsset/removeObject:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("removeObject:")
     public native void removeObject(MDLObject object);
 
-    /**
-     * endTime</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLAsset_Class/index.html#//apple_ref/occ/instp/MDLAsset/endTime">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setEndTime:")
     public native void setEndTime(double value);
 
-    /**
-     * frameInterval</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLAsset_Class/index.html#//apple_ref/occ/instp/MDLAsset/frameInterval">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setFrameInterval:")
     public native void setFrameInterval(double value);
 
-    /**
-     * startTime</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLAsset_Class/index.html#//apple_ref/occ/instp/MDLAsset/startTime">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setStartTime:")
     public native void setStartTime(double value);
 
-    /**
-     * startTime</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLAsset_Class/index.html#//apple_ref/occ/instp/MDLAsset/startTime">iOS Dev Center</a>
-     */
     @Generated
     @Selector("startTime")
     public native double startTime();
 
-    /**
-     * vertexDescriptor</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLAsset_Class/index.html#//apple_ref/occ/instp/MDLAsset/vertexDescriptor">iOS Dev Center</a>
-     */
     @Generated
     @Selector("vertexDescriptor")
     public native MDLVertexDescriptor vertexDescriptor();

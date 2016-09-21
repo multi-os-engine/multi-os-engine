@@ -62,18 +62,10 @@ public class MPMediaItem extends MPMediaEntity {
     @Selector("alloc")
     public static native MPMediaItem alloc();
 
-    /**
-     * persistentIDPropertyForGroupingType:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPMediaItem_ClassReference/index.html#//apple_ref/occ/clm/MPMediaItem/persistentIDPropertyForGroupingType:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("persistentIDPropertyForGroupingType:")
     public static native String persistentIDPropertyForGroupingType(@NInt long groupingType);
 
-    /**
-     * titlePropertyForGroupingType:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPMediaItem_ClassReference/index.html#//apple_ref/occ/clm/MPMediaItem/titlePropertyForGroupingType:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("titlePropertyForGroupingType:")
     public static native String titlePropertyForGroupingType(@NInt long groupingType);

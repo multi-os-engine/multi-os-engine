@@ -32,10 +32,6 @@ import org.moe.natj.objc.ann.Selector;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("UITextFieldDelegate")
 public interface UITextFieldDelegate {
-    /**
-     * textField:shouldChangeCharactersInRange:replacementString:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITextFieldDelegate_Protocol/index.html#//apple_ref/occ/intfm/UITextFieldDelegate/textField:shouldChangeCharactersInRange:replacementString:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("textField:shouldChangeCharactersInRange:replacementString:")
@@ -44,10 +40,6 @@ public interface UITextFieldDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * textFieldDidBeginEditing:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITextFieldDelegate_Protocol/index.html#//apple_ref/occ/intfm/UITextFieldDelegate/textFieldDidBeginEditing:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("textFieldDidBeginEditing:")
@@ -55,10 +47,6 @@ public interface UITextFieldDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * textFieldDidEndEditing:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITextFieldDelegate_Protocol/index.html#//apple_ref/occ/intfm/UITextFieldDelegate/textFieldDidEndEditing:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("textFieldDidEndEditing:")
@@ -66,10 +54,6 @@ public interface UITextFieldDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * textFieldShouldBeginEditing:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITextFieldDelegate_Protocol/index.html#//apple_ref/occ/intfm/UITextFieldDelegate/textFieldShouldBeginEditing:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("textFieldShouldBeginEditing:")
@@ -77,10 +61,6 @@ public interface UITextFieldDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * textFieldShouldClear:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITextFieldDelegate_Protocol/index.html#//apple_ref/occ/intfm/UITextFieldDelegate/textFieldShouldClear:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("textFieldShouldClear:")
@@ -88,10 +68,6 @@ public interface UITextFieldDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * textFieldShouldEndEditing:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITextFieldDelegate_Protocol/index.html#//apple_ref/occ/intfm/UITextFieldDelegate/textFieldShouldEndEditing:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("textFieldShouldEndEditing:")
@@ -99,10 +75,6 @@ public interface UITextFieldDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * textFieldShouldReturn:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITextFieldDelegate_Protocol/index.html#//apple_ref/occ/intfm/UITextFieldDelegate/textFieldShouldReturn:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("textFieldShouldReturn:")

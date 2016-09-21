@@ -168,34 +168,18 @@ public class WKInterfaceImage extends WKInterfaceObject implements WKImageAnimat
     @Selector("init")
     public native WKInterfaceImage init();
 
-    /**
-     * setImage:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WatchKit/Reference/WKInterfaceImage_class/index.html#//apple_ref/occ/instm/WKInterfaceImage/setImage:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setImage:")
     public native void setImage(UIImage image);
 
-    /**
-     * setImageData:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WatchKit/Reference/WKInterfaceImage_class/index.html#//apple_ref/occ/instm/WKInterfaceImage/setImageData:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setImageData:")
     public native void setImageData(NSData imageData);
 
-    /**
-     * setImageNamed:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WatchKit/Reference/WKInterfaceImage_class/index.html#//apple_ref/occ/instm/WKInterfaceImage/setImageNamed:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setImageNamed:")
     public native void setImageNamed(String imageName);
 
-    /**
-     * setTintColor:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WatchKit/Reference/WKInterfaceImage_class/index.html#//apple_ref/occ/instm/WKInterfaceImage/setTintColor:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setTintColor:")
     public native void setTintColor(UIColor tintColor);

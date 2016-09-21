@@ -160,10 +160,6 @@ public class CKAsset extends NSObject implements CKRecordValue {
     @NInt
     public static native long version_static();
 
-    /**
-     * fileURL</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKAsset_class/index.html#//apple_ref/occ/instp/CKAsset/fileURL">iOS Dev Center</a>
-     */
     @Generated
     @Selector("fileURL")
     public native NSURL fileURL();
@@ -172,10 +168,6 @@ public class CKAsset extends NSObject implements CKRecordValue {
     @Selector("init")
     public native CKAsset init();
 
-    /**
-     * initWithFileURL:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKAsset_class/index.html#//apple_ref/occ/instm/CKAsset/initWithFileURL:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithFileURL:")
     public native CKAsset initWithFileURL(NSURL fileURL);

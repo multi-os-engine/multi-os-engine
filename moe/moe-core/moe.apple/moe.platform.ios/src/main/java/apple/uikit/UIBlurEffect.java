@@ -60,10 +60,6 @@ public class UIBlurEffect extends UIVisualEffect {
     @Selector("alloc")
     public static native UIBlurEffect alloc();
 
-    /**
-     * effectWithStyle:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIBlurEffect_Ref/index.html#//apple_ref/occ/clm/UIBlurEffect/effectWithStyle:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("effectWithStyle:")
     public static native UIBlurEffect effectWithStyle(@NInt long style);

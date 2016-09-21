@@ -159,64 +159,36 @@ public class MDLSubmeshTopology extends NSObject {
     @NInt
     public static native long version_static();
 
-    /**
-     * edgeCreaseCount</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLSubmeshTopology_Class/index.html#//apple_ref/occ/instp/MDLSubmeshTopology/edgeCreaseCount">iOS Dev Center</a>
-     */
     @Generated
     @Selector("edgeCreaseCount")
     @NUInt
     public native long edgeCreaseCount();
 
-    /**
-     * edgeCreaseIndices</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLSubmeshTopology_Class/index.html#//apple_ref/occ/instp/MDLSubmeshTopology/edgeCreaseIndices">iOS Dev Center</a>
-     */
     @Generated
     @Selector("edgeCreaseIndices")
     @MappedReturn(ObjCObjectMapper.class)
     public native MDLMeshBuffer edgeCreaseIndices();
 
-    /**
-     * edgeCreases</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLSubmeshTopology_Class/index.html#//apple_ref/occ/instp/MDLSubmeshTopology/edgeCreases">iOS Dev Center</a>
-     */
     @Generated
     @Selector("edgeCreases")
     @MappedReturn(ObjCObjectMapper.class)
     public native MDLMeshBuffer edgeCreases();
 
-    /**
-     * faceCount</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLSubmeshTopology_Class/index.html#//apple_ref/occ/instp/MDLSubmeshTopology/faceCount">iOS Dev Center</a>
-     */
     @Generated
     @Selector("faceCount")
     @NUInt
     public native long faceCount();
 
-    /**
-     * faceTopology</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLSubmeshTopology_Class/index.html#//apple_ref/occ/instp/MDLSubmeshTopology/faceTopology">iOS Dev Center</a>
-     */
     @Generated
     @Selector("faceTopology")
     @MappedReturn(ObjCObjectMapper.class)
     public native MDLMeshBuffer faceTopology();
 
-    /**
-     * holeCount</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLSubmeshTopology_Class/index.html#//apple_ref/occ/instp/MDLSubmeshTopology/holeCount">iOS Dev Center</a>
-     */
     @Generated
     @Selector("holeCount")
     @NUInt
     public native long holeCount();
 
-    /**
-     * holes</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLSubmeshTopology_Class/index.html#//apple_ref/occ/instp/MDLSubmeshTopology/holes">iOS Dev Center</a>
-     */
     @Generated
     @Selector("holes")
     @MappedReturn(ObjCObjectMapper.class)
@@ -226,108 +198,56 @@ public class MDLSubmeshTopology extends NSObject {
     @Selector("init")
     public native MDLSubmeshTopology init();
 
-    /**
-     * edgeCreaseCount</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLSubmeshTopology_Class/index.html#//apple_ref/occ/instp/MDLSubmeshTopology/edgeCreaseCount">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setEdgeCreaseCount:")
     public native void setEdgeCreaseCount(@NUInt long value);
 
-    /**
-     * edgeCreaseIndices</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLSubmeshTopology_Class/index.html#//apple_ref/occ/instp/MDLSubmeshTopology/edgeCreaseIndices">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setEdgeCreaseIndices:")
     public native void setEdgeCreaseIndices(@Mapped(ObjCObjectMapper.class) MDLMeshBuffer value);
 
-    /**
-     * edgeCreases</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLSubmeshTopology_Class/index.html#//apple_ref/occ/instp/MDLSubmeshTopology/edgeCreases">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setEdgeCreases:")
     public native void setEdgeCreases(@Mapped(ObjCObjectMapper.class) MDLMeshBuffer value);
 
-    /**
-     * faceCount</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLSubmeshTopology_Class/index.html#//apple_ref/occ/instp/MDLSubmeshTopology/faceCount">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setFaceCount:")
     public native void setFaceCount(@NUInt long value);
 
-    /**
-     * faceTopology</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLSubmeshTopology_Class/index.html#//apple_ref/occ/instp/MDLSubmeshTopology/faceTopology">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setFaceTopology:")
     public native void setFaceTopology(@Mapped(ObjCObjectMapper.class) MDLMeshBuffer value);
 
-    /**
-     * holeCount</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLSubmeshTopology_Class/index.html#//apple_ref/occ/instp/MDLSubmeshTopology/holeCount">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setHoleCount:")
     public native void setHoleCount(@NUInt long value);
 
-    /**
-     * holes</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLSubmeshTopology_Class/index.html#//apple_ref/occ/instp/MDLSubmeshTopology/holes">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setHoles:")
     public native void setHoles(@Mapped(ObjCObjectMapper.class) MDLMeshBuffer value);
 
-    /**
-     * vertexCreaseCount</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLSubmeshTopology_Class/index.html#//apple_ref/occ/instp/MDLSubmeshTopology/vertexCreaseCount">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setVertexCreaseCount:")
     public native void setVertexCreaseCount(@NUInt long value);
 
-    /**
-     * vertexCreaseIndices</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLSubmeshTopology_Class/index.html#//apple_ref/occ/instp/MDLSubmeshTopology/vertexCreaseIndices">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setVertexCreaseIndices:")
     public native void setVertexCreaseIndices(@Mapped(ObjCObjectMapper.class) MDLMeshBuffer value);
 
-    /**
-     * vertexCreases</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLSubmeshTopology_Class/index.html#//apple_ref/occ/instp/MDLSubmeshTopology/vertexCreases">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setVertexCreases:")
     public native void setVertexCreases(@Mapped(ObjCObjectMapper.class) MDLMeshBuffer value);
 
-    /**
-     * vertexCreaseCount</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLSubmeshTopology_Class/index.html#//apple_ref/occ/instp/MDLSubmeshTopology/vertexCreaseCount">iOS Dev Center</a>
-     */
     @Generated
     @Selector("vertexCreaseCount")
     @NUInt
     public native long vertexCreaseCount();
 
-    /**
-     * vertexCreaseIndices</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLSubmeshTopology_Class/index.html#//apple_ref/occ/instp/MDLSubmeshTopology/vertexCreaseIndices">iOS Dev Center</a>
-     */
     @Generated
     @Selector("vertexCreaseIndices")
     @MappedReturn(ObjCObjectMapper.class)
     public native MDLMeshBuffer vertexCreaseIndices();
 
-    /**
-     * vertexCreases</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLSubmeshTopology_Class/index.html#//apple_ref/occ/instp/MDLSubmeshTopology/vertexCreases">iOS Dev Center</a>
-     */
     @Generated
     @Selector("vertexCreases")
     @MappedReturn(ObjCObjectMapper.class)

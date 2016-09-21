@@ -168,50 +168,26 @@ public class HKActivitySummary extends NSObject implements NSSecureCoding, NSCop
     @NInt
     public static native long version_static();
 
-    /**
-     * activeEnergyBurned</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HealthKit/Reference/HKActivitySummary_Class/index.html#//apple_ref/occ/instp/HKActivitySummary/activeEnergyBurned">iOS Dev Center</a>
-     */
     @Generated
     @Selector("activeEnergyBurned")
     public native HKQuantity activeEnergyBurned();
 
-    /**
-     * activeEnergyBurnedGoal</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HealthKit/Reference/HKActivitySummary_Class/index.html#//apple_ref/occ/instp/HKActivitySummary/activeEnergyBurnedGoal">iOS Dev Center</a>
-     */
     @Generated
     @Selector("activeEnergyBurnedGoal")
     public native HKQuantity activeEnergyBurnedGoal();
 
-    /**
-     * appleExerciseTime</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HealthKit/Reference/HKActivitySummary_Class/index.html#//apple_ref/occ/instp/HKActivitySummary/appleExerciseTime">iOS Dev Center</a>
-     */
     @Generated
     @Selector("appleExerciseTime")
     public native HKQuantity appleExerciseTime();
 
-    /**
-     * appleExerciseTimeGoal</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HealthKit/Reference/HKActivitySummary_Class/index.html#//apple_ref/occ/instp/HKActivitySummary/appleExerciseTimeGoal">iOS Dev Center</a>
-     */
     @Generated
     @Selector("appleExerciseTimeGoal")
     public native HKQuantity appleExerciseTimeGoal();
 
-    /**
-     * appleStandHours</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HealthKit/Reference/HKActivitySummary_Class/index.html#//apple_ref/occ/instp/HKActivitySummary/appleStandHours">iOS Dev Center</a>
-     */
     @Generated
     @Selector("appleStandHours")
     public native HKQuantity appleStandHours();
 
-    /**
-     * appleStandHoursGoal</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HealthKit/Reference/HKActivitySummary_Class/index.html#//apple_ref/occ/instp/HKActivitySummary/appleStandHoursGoal">iOS Dev Center</a>
-     */
     @Generated
     @Selector("appleStandHoursGoal")
     public native HKQuantity appleStandHoursGoal();
@@ -222,10 +198,6 @@ public class HKActivitySummary extends NSObject implements NSSecureCoding, NSCop
     @MappedReturn(ObjCObjectMapper.class)
     public native Object copyWithZone(VoidPtr zone);
 
-    /**
-     * dateComponentsForCalendar:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HealthKit/Reference/HKActivitySummary_Class/index.html#//apple_ref/occ/instm/HKActivitySummary/dateComponentsForCalendar:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("dateComponentsForCalendar:")
     public native NSDateComponents dateComponentsForCalendar(NSCalendar calendar);
@@ -242,50 +214,26 @@ public class HKActivitySummary extends NSObject implements NSSecureCoding, NSCop
     @Selector("initWithCoder:")
     public native HKActivitySummary initWithCoder(NSCoder aDecoder);
 
-    /**
-     * activeEnergyBurned</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HealthKit/Reference/HKActivitySummary_Class/index.html#//apple_ref/occ/instp/HKActivitySummary/activeEnergyBurned">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setActiveEnergyBurned:")
     public native void setActiveEnergyBurned(HKQuantity value);
 
-    /**
-     * activeEnergyBurnedGoal</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HealthKit/Reference/HKActivitySummary_Class/index.html#//apple_ref/occ/instp/HKActivitySummary/activeEnergyBurnedGoal">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setActiveEnergyBurnedGoal:")
     public native void setActiveEnergyBurnedGoal(HKQuantity value);
 
-    /**
-     * appleExerciseTime</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HealthKit/Reference/HKActivitySummary_Class/index.html#//apple_ref/occ/instp/HKActivitySummary/appleExerciseTime">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setAppleExerciseTime:")
     public native void setAppleExerciseTime(HKQuantity value);
 
-    /**
-     * appleExerciseTimeGoal</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HealthKit/Reference/HKActivitySummary_Class/index.html#//apple_ref/occ/instp/HKActivitySummary/appleExerciseTimeGoal">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setAppleExerciseTimeGoal:")
     public native void setAppleExerciseTimeGoal(HKQuantity value);
 
-    /**
-     * appleStandHours</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HealthKit/Reference/HKActivitySummary_Class/index.html#//apple_ref/occ/instp/HKActivitySummary/appleStandHours">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setAppleStandHours:")
     public native void setAppleStandHours(HKQuantity value);
 
-    /**
-     * appleStandHoursGoal</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HealthKit/Reference/HKActivitySummary_Class/index.html#//apple_ref/occ/instp/HKActivitySummary/appleStandHoursGoal">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setAppleStandHoursGoal:")
     public native void setAppleStandHoursGoal(HKQuantity value);

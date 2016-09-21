@@ -61,18 +61,10 @@ public class AVCompositionTrackSegment extends AVAssetTrackSegment {
     @Selector("alloc")
     public static native AVCompositionTrackSegment alloc();
 
-    /**
-     * compositionTrackSegmentWithTimeRange:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVCompositionTrackSegment_Class/index.html#//apple_ref/occ/clm/AVCompositionTrackSegment/compositionTrackSegmentWithTimeRange:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("compositionTrackSegmentWithTimeRange:")
     public static native AVCompositionTrackSegment compositionTrackSegmentWithTimeRange(@ByValue CMTimeRange timeRange);
 
-    /**
-     * compositionTrackSegmentWithURL:trackID:sourceTimeRange:targetTimeRange:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVCompositionTrackSegment_Class/index.html#//apple_ref/occ/clm/AVCompositionTrackSegment/compositionTrackSegmentWithURL:trackID:sourceTimeRange:targetTimeRange:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("compositionTrackSegmentWithURL:trackID:sourceTimeRange:targetTimeRange:")
     public static native AVCompositionTrackSegment compositionTrackSegmentWithURLTrackIDSourceTimeRangeTargetTimeRange(
@@ -182,43 +174,23 @@ public class AVCompositionTrackSegment extends AVAssetTrackSegment {
     @Selector("init")
     public native AVCompositionTrackSegment init();
 
-    /**
-     * initWithTimeRange:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVCompositionTrackSegment_Class/index.html#//apple_ref/occ/instm/AVCompositionTrackSegment/initWithTimeRange:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithTimeRange:")
     public native AVCompositionTrackSegment initWithTimeRange(@ByValue CMTimeRange timeRange);
 
-    /**
-     * initWithURL:trackID:sourceTimeRange:targetTimeRange:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVCompositionTrackSegment_Class/index.html#//apple_ref/occ/instm/AVCompositionTrackSegment/initWithURL:trackID:sourceTimeRange:targetTimeRange:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithURL:trackID:sourceTimeRange:targetTimeRange:")
     public native AVCompositionTrackSegment initWithURLTrackIDSourceTimeRangeTargetTimeRange(NSURL URL, int trackID,
             @ByValue CMTimeRange sourceTimeRange, @ByValue CMTimeRange targetTimeRange);
 
-    /**
-     * empty</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVCompositionTrackSegment_Class/index.html#//apple_ref/occ/instp/AVCompositionTrackSegment/empty">iOS Dev Center</a>
-     */
     @Generated
     @Selector("isEmpty")
     public native boolean isEmpty();
 
-    /**
-     * sourceTrackID</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVCompositionTrackSegment_Class/index.html#//apple_ref/occ/instp/AVCompositionTrackSegment/sourceTrackID">iOS Dev Center</a>
-     */
     @Generated
     @Selector("sourceTrackID")
     public native int sourceTrackID();
 
-    /**
-     * sourceURL</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVCompositionTrackSegment_Class/index.html#//apple_ref/occ/instp/AVCompositionTrackSegment/sourceURL">iOS Dev Center</a>
-     */
     @Generated
     @Selector("sourceURL")
     public native NSURL sourceURL();

@@ -31,28 +31,16 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("MTLComputePipelineState")
 public interface MTLComputePipelineState {
-    /**
-     * device</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Metal/Reference/MTLComputePipelineState_Ref/index.html#//apple_ref/occ/intfp/MTLComputePipelineState/device">iOS Dev Center</a>
-     */
     @Generated
     @Selector("device")
     @MappedReturn(ObjCObjectMapper.class)
     Object device();
 
-    /**
-     * maxTotalThreadsPerThreadgroup</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Metal/Reference/MTLComputePipelineState_Ref/index.html#//apple_ref/occ/intfp/MTLComputePipelineState/maxTotalThreadsPerThreadgroup">iOS Dev Center</a>
-     */
     @Generated
     @Selector("maxTotalThreadsPerThreadgroup")
     @NUInt
     long maxTotalThreadsPerThreadgroup();
 
-    /**
-     * threadExecutionWidth</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Metal/Reference/MTLComputePipelineState_Ref/index.html#//apple_ref/occ/intfp/MTLComputePipelineState/threadExecutionWidth">iOS Dev Center</a>
-     */
     @Generated
     @Selector("threadExecutionWidth")
     @NUInt

@@ -163,19 +163,11 @@ public class UICollectionViewLayoutInvalidationContext extends NSObject {
     @NInt
     public static native long version_static();
 
-    /**
-     * contentOffsetAdjustment</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UICollectionViewLayoutInvalidationContext_class/index.html#//apple_ref/occ/instp/UICollectionViewLayoutInvalidationContext/contentOffsetAdjustment">iOS Dev Center</a>
-     */
     @Generated
     @Selector("contentOffsetAdjustment")
     @ByValue
     public native CGPoint contentOffsetAdjustment();
 
-    /**
-     * contentSizeAdjustment</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UICollectionViewLayoutInvalidationContext_class/index.html#//apple_ref/occ/instp/UICollectionViewLayoutInvalidationContext/contentSizeAdjustment">iOS Dev Center</a>
-     */
     @Generated
     @Selector("contentSizeAdjustment")
     @ByValue
@@ -185,109 +177,57 @@ public class UICollectionViewLayoutInvalidationContext extends NSObject {
     @Selector("init")
     public native UICollectionViewLayoutInvalidationContext init();
 
-    /**
-     * invalidateDataSourceCounts</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UICollectionViewLayoutInvalidationContext_class/index.html#//apple_ref/occ/instp/UICollectionViewLayoutInvalidationContext/invalidateDataSourceCounts">iOS Dev Center</a>
-     */
     @Generated
     @Selector("invalidateDataSourceCounts")
     public native boolean invalidateDataSourceCounts();
 
-    /**
-     * invalidateDecorationElementsOfKind:atIndexPaths:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UICollectionViewLayoutInvalidationContext_class/index.html#//apple_ref/occ/instm/UICollectionViewLayoutInvalidationContext/invalidateDecorationElementsOfKind:atIndexPaths:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("invalidateDecorationElementsOfKind:atIndexPaths:")
     public native void invalidateDecorationElementsOfKindAtIndexPaths(String elementKind,
             NSArray<? extends NSIndexPath> indexPaths);
 
-    /**
-     * invalidateEverything</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UICollectionViewLayoutInvalidationContext_class/index.html#//apple_ref/occ/instp/UICollectionViewLayoutInvalidationContext/invalidateEverything">iOS Dev Center</a>
-     */
     @Generated
     @Selector("invalidateEverything")
     public native boolean invalidateEverything();
 
-    /**
-     * invalidateItemsAtIndexPaths:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UICollectionViewLayoutInvalidationContext_class/index.html#//apple_ref/occ/instm/UICollectionViewLayoutInvalidationContext/invalidateItemsAtIndexPaths:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("invalidateItemsAtIndexPaths:")
     public native void invalidateItemsAtIndexPaths(NSArray<? extends NSIndexPath> indexPaths);
 
-    /**
-     * invalidateSupplementaryElementsOfKind:atIndexPaths:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UICollectionViewLayoutInvalidationContext_class/index.html#//apple_ref/occ/instm/UICollectionViewLayoutInvalidationContext/invalidateSupplementaryElementsOfKind:atIndexPaths:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("invalidateSupplementaryElementsOfKind:atIndexPaths:")
     public native void invalidateSupplementaryElementsOfKindAtIndexPaths(String elementKind,
             NSArray<? extends NSIndexPath> indexPaths);
 
-    /**
-     * invalidatedDecorationIndexPaths</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UICollectionViewLayoutInvalidationContext_class/index.html#//apple_ref/occ/instp/UICollectionViewLayoutInvalidationContext/invalidatedDecorationIndexPaths">iOS Dev Center</a>
-     */
     @Generated
     @Selector("invalidatedDecorationIndexPaths")
     public native NSDictionary<String, ? extends NSArray<? extends NSIndexPath>> invalidatedDecorationIndexPaths();
 
-    /**
-     * invalidatedItemIndexPaths</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UICollectionViewLayoutInvalidationContext_class/index.html#//apple_ref/occ/instp/UICollectionViewLayoutInvalidationContext/invalidatedItemIndexPaths">iOS Dev Center</a>
-     */
     @Generated
     @Selector("invalidatedItemIndexPaths")
     public native NSArray<? extends NSIndexPath> invalidatedItemIndexPaths();
 
-    /**
-     * invalidatedSupplementaryIndexPaths</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UICollectionViewLayoutInvalidationContext_class/index.html#//apple_ref/occ/instp/UICollectionViewLayoutInvalidationContext/invalidatedSupplementaryIndexPaths">iOS Dev Center</a>
-     */
     @Generated
     @Selector("invalidatedSupplementaryIndexPaths")
     public native NSDictionary<String, ? extends NSArray<? extends NSIndexPath>> invalidatedSupplementaryIndexPaths();
 
-    /**
-     * contentOffsetAdjustment</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UICollectionViewLayoutInvalidationContext_class/index.html#//apple_ref/occ/instp/UICollectionViewLayoutInvalidationContext/contentOffsetAdjustment">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setContentOffsetAdjustment:")
     public native void setContentOffsetAdjustment(@ByValue CGPoint value);
 
-    /**
-     * contentSizeAdjustment</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UICollectionViewLayoutInvalidationContext_class/index.html#//apple_ref/occ/instp/UICollectionViewLayoutInvalidationContext/contentSizeAdjustment">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setContentSizeAdjustment:")
     public native void setContentSizeAdjustment(@ByValue CGSize value);
 
-    /**
-     * interactiveMovementTarget</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UICollectionViewLayoutInvalidationContext_class/index.html#//apple_ref/occ/instp/UICollectionViewLayoutInvalidationContext/interactiveMovementTarget">iOS Dev Center</a>
-     */
     @Generated
     @Selector("interactiveMovementTarget")
     @ByValue
     public native CGPoint interactiveMovementTarget();
 
-    /**
-     * previousIndexPathsForInteractivelyMovingItems</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UICollectionViewLayoutInvalidationContext_class/index.html#//apple_ref/occ/instp/UICollectionViewLayoutInvalidationContext/previousIndexPathsForInteractivelyMovingItems">iOS Dev Center</a>
-     */
     @Generated
     @Selector("previousIndexPathsForInteractivelyMovingItems")
     public native NSArray<? extends NSIndexPath> previousIndexPathsForInteractivelyMovingItems();
 
-    /**
-     * targetIndexPathsForInteractivelyMovingItems</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UICollectionViewLayoutInvalidationContext_class/index.html#//apple_ref/occ/instp/UICollectionViewLayoutInvalidationContext/targetIndexPathsForInteractivelyMovingItems">iOS Dev Center</a>
-     */
     @Generated
     @Selector("targetIndexPathsForInteractivelyMovingItems")
     public native NSArray<? extends NSIndexPath> targetIndexPathsForInteractivelyMovingItems();

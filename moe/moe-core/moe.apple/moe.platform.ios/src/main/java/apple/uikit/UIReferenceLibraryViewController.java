@@ -60,10 +60,6 @@ public class UIReferenceLibraryViewController extends UIViewController {
     @Selector("alloc")
     public static native UIReferenceLibraryViewController alloc();
 
-    /**
-     * dictionaryHasDefinitionForTerm:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIReferenceLibraryViewControllerClassRef/index.html#//apple_ref/occ/clm/UIReferenceLibraryViewController/dictionaryHasDefinitionForTerm:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("dictionaryHasDefinitionForTerm:")
     public static native boolean dictionaryHasDefinitionForTerm(String term);
@@ -188,10 +184,6 @@ public class UIReferenceLibraryViewController extends UIViewController {
     @Selector("initWithNibName:bundle:")
     public native UIReferenceLibraryViewController initWithNibNameBundle(String nibNameOrNil, NSBundle nibBundleOrNil);
 
-    /**
-     * initWithTerm:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIReferenceLibraryViewControllerClassRef/index.html#//apple_ref/occ/instm/UIReferenceLibraryViewController/initWithTerm:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithTerm:")
     public native UIReferenceLibraryViewController initWithTerm(String term);

@@ -92,10 +92,6 @@ public class NSMutableString extends NSString {
     @Selector("stringWithCString:length:")
     public static native NSMutableString stringWithCStringLength(ConstBytePtr bytes, @NUInt long length);
 
-    /**
-     * stringWithCapacity:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSMutableString_Class/index.html#//apple_ref/occ/clm/NSMutableString/stringWithCapacity:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("stringWithCapacity:")
     public static native NSMutableString stringWithCapacity(@NUInt long capacity);
@@ -274,27 +270,15 @@ public class NSMutableString extends NSString {
     @NInt
     public static native long version();
 
-    /**
-     * appendFormat:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSMutableString_Class/index.html#//apple_ref/occ/instm/NSMutableString/appendFormat:">iOS Dev Center</a>
-     */
     @Generated
     @Variadic()
     @Selector("appendFormat:")
     public native void appendFormat(String format, Object... varargs);
 
-    /**
-     * appendString:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSMutableString_Class/index.html#//apple_ref/occ/instm/NSMutableString/appendString:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("appendString:")
     public native void appendString(String aString);
 
-    /**
-     * deleteCharactersInRange:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSMutableString_Class/index.html#//apple_ref/occ/instm/NSMutableString/deleteCharactersInRange:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("deleteCharactersInRange:")
     public native void deleteCharactersInRange(@ByValue NSRange range);
@@ -333,10 +317,6 @@ public class NSMutableString extends NSString {
     public native NSMutableString initWithCStringNoCopyLengthFreeWhenDone(BytePtr bytes, @NUInt long length,
             boolean freeBuffer);
 
-    /**
-     * initWithCapacity:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSMutableString_Class/index.html#//apple_ref/occ/instm/NSMutableString/initWithCapacity:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithCapacity:")
     public native NSMutableString initWithCapacity(@NUInt long capacity);
@@ -413,44 +393,24 @@ public class NSMutableString extends NSString {
     @Selector("initWithUTF8String:")
     public native NSMutableString initWithUTF8String(ConstBytePtr nullTerminatedCString);
 
-    /**
-     * insertString:atIndex:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSMutableString_Class/index.html#//apple_ref/occ/instm/NSMutableString/insertString:atIndex:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("insertString:atIndex:")
     public native void insertStringAtIndex(String aString, @NUInt long loc);
 
-    /**
-     * replaceCharactersInRange:withString:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSMutableString_Class/index.html#//apple_ref/occ/instm/NSMutableString/replaceCharactersInRange:withString:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("replaceCharactersInRange:withString:")
     public native void replaceCharactersInRangeWithString(@ByValue NSRange range, String aString);
 
-    /**
-     * replaceOccurrencesOfString:withString:options:range:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSMutableString_Class/index.html#//apple_ref/occ/instm/NSMutableString/replaceOccurrencesOfString:withString:options:range:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("replaceOccurrencesOfString:withString:options:range:")
     @NUInt
     public native long replaceOccurrencesOfStringWithStringOptionsRange(String target, String replacement,
             @NUInt long options, @ByValue NSRange searchRange);
 
-    /**
-     * setString:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSMutableString_Class/index.html#//apple_ref/occ/instm/NSMutableString/setString:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setString:")
     public native void setString(String aString);
 
-    /**
-     * applyTransform:reverse:range:updatedRange:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSMutableString_Class/index.html#//apple_ref/occ/instm/NSMutableString/applyTransform:reverse:range:updatedRange:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("applyTransform:reverse:range:updatedRange:")
     public native boolean applyTransformReverseRangeUpdatedRange(String transform, boolean reverse,

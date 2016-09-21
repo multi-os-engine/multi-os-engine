@@ -46,50 +46,30 @@ public final class Metal {
     private Metal() {
     }
 
-    /**
-     * MTLOriginMake</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Metal/Reference/MTLFunctions_Ref/index.html#//apple_ref/c/func/MTLOriginMake">iOS Dev Center</a>
-     */
     @Generated
     @Inline
     @CFunction
     @ByValue
     public static native MTLOrigin MTLOriginMake(@NUInt long x, @NUInt long y, @NUInt long z);
 
-    /**
-     * MTLSizeMake</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Metal/Reference/MTLFunctions_Ref/index.html#//apple_ref/c/func/MTLSizeMake">iOS Dev Center</a>
-     */
     @Generated
     @Inline
     @CFunction
     @ByValue
     public static native MTLSize MTLSizeMake(@NUInt long width, @NUInt long height, @NUInt long depth);
 
-    /**
-     * MTLRegionMake1D</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Metal/Reference/MTLFunctions_Ref/index.html#//apple_ref/c/func/MTLRegionMake1D">iOS Dev Center</a>
-     */
     @Generated
     @Inline
     @CFunction
     @ByValue
     public static native MTLRegion MTLRegionMake1D(@NUInt long x, @NUInt long width);
 
-    /**
-     * MTLRegionMake2D</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Metal/Reference/MTLFunctions_Ref/index.html#//apple_ref/c/func/MTLRegionMake2D">iOS Dev Center</a>
-     */
     @Generated
     @Inline
     @CFunction
     @ByValue
     public static native MTLRegion MTLRegionMake2D(@NUInt long x, @NUInt long y, @NUInt long width, @NUInt long height);
 
-    /**
-     * MTLRegionMake3D</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Metal/Reference/MTLFunctions_Ref/index.html#//apple_ref/c/func/MTLRegionMake3D">iOS Dev Center</a>
-     */
     @Generated
     @Inline
     @CFunction
@@ -97,19 +77,11 @@ public final class Metal {
     public static native MTLRegion MTLRegionMake3D(@NUInt long x, @NUInt long y, @NUInt long z, @NUInt long width,
             @NUInt long height, @NUInt long depth);
 
-    /**
-     * MTLCreateSystemDefaultDevice</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Metal/Reference/MTLFunctions_Ref/index.html#//apple_ref/c/func/MTLCreateSystemDefaultDevice">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object MTLCreateSystemDefaultDevice();
 
-    /**
-     * MTLClearColorMake</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Metal/Reference/MTLFunctions_Ref/index.html#//apple_ref/c/func/MTLClearColorMake">iOS Dev Center</a>
-     */
     @Generated
     @Inline
     @CFunction

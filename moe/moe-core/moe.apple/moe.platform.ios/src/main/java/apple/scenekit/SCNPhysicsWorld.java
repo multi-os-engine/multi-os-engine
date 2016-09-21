@@ -171,53 +171,29 @@ public class SCNPhysicsWorld extends NSObject implements NSSecureCoding {
     @NInt
     public static native long version_static();
 
-    /**
-     * addBehavior:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNPhysicsWorld_Class/index.html#//apple_ref/occ/instm/SCNPhysicsWorld/addBehavior:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("addBehavior:")
     public native void addBehavior(SCNPhysicsBehavior behavior);
 
-    /**
-     * allBehaviors</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNPhysicsWorld_Class/index.html#//apple_ref/occ/instp/SCNPhysicsWorld/allBehaviors">iOS Dev Center</a>
-     */
     @Generated
     @Selector("allBehaviors")
     public native NSArray<? extends SCNPhysicsBehavior> allBehaviors();
 
-    /**
-     * contactDelegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNPhysicsWorld_Class/index.html#//apple_ref/occ/instp/SCNPhysicsWorld/contactDelegate">iOS Dev Center</a>
-     */
     @Generated
     @Selector("contactDelegate")
     @MappedReturn(ObjCObjectMapper.class)
     public native SCNPhysicsContactDelegate contactDelegate();
 
-    /**
-     * contactTestBetweenBody:andBody:options:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNPhysicsWorld_Class/index.html#//apple_ref/occ/instm/SCNPhysicsWorld/contactTestBetweenBody:andBody:options:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("contactTestBetweenBody:andBody:options:")
     public native NSArray<? extends SCNPhysicsContact> contactTestBetweenBodyAndBodyOptions(SCNPhysicsBody bodyA,
             SCNPhysicsBody bodyB, NSDictionary<String, ?> options);
 
-    /**
-     * contactTestWithBody:options:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNPhysicsWorld_Class/index.html#//apple_ref/occ/instm/SCNPhysicsWorld/contactTestWithBody:options:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("contactTestWithBody:options:")
     public native NSArray<? extends SCNPhysicsContact> contactTestWithBodyOptions(SCNPhysicsBody body,
             NSDictionary<String, ?> options);
 
-    /**
-     * convexSweepTestWithShape:fromTransform:toTransform:options:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNPhysicsWorld_Class/index.html#//apple_ref/occ/instm/SCNPhysicsWorld/convexSweepTestWithShape:fromTransform:toTransform:options:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("convexSweepTestWithShape:fromTransform:toTransform:options:")
     public native NSArray<? extends SCNPhysicsContact> convexSweepTestWithShapeFromTransformToTransformOptions(
@@ -227,10 +203,6 @@ public class SCNPhysicsWorld extends NSObject implements NSSecureCoding {
     @Selector("encodeWithCoder:")
     public native void encodeWithCoder(NSCoder aCoder);
 
-    /**
-     * gravity</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNPhysicsWorld_Class/index.html#//apple_ref/occ/instp/SCNPhysicsWorld/gravity">iOS Dev Center</a>
-     */
     @Generated
     @Selector("gravity")
     @ByValue
@@ -244,43 +216,23 @@ public class SCNPhysicsWorld extends NSObject implements NSSecureCoding {
     @Selector("initWithCoder:")
     public native SCNPhysicsWorld initWithCoder(NSCoder aDecoder);
 
-    /**
-     * rayTestWithSegmentFromPoint:toPoint:options:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNPhysicsWorld_Class/index.html#//apple_ref/occ/instm/SCNPhysicsWorld/rayTestWithSegmentFromPoint:toPoint:options:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("rayTestWithSegmentFromPoint:toPoint:options:")
     public native NSArray<? extends SCNHitTestResult> rayTestWithSegmentFromPointToPointOptions(
             @ByValue SCNVector3 origin, @ByValue SCNVector3 dest, NSDictionary<String, ?> options);
 
-    /**
-     * removeAllBehaviors</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNPhysicsWorld_Class/index.html#//apple_ref/occ/instm/SCNPhysicsWorld/removeAllBehaviors">iOS Dev Center</a>
-     */
     @Generated
     @Selector("removeAllBehaviors")
     public native void removeAllBehaviors();
 
-    /**
-     * removeBehavior:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNPhysicsWorld_Class/index.html#//apple_ref/occ/instm/SCNPhysicsWorld/removeBehavior:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("removeBehavior:")
     public native void removeBehavior(SCNPhysicsBehavior behavior);
 
-    /**
-     * contactDelegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNPhysicsWorld_Class/index.html#//apple_ref/occ/instp/SCNPhysicsWorld/contactDelegate">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setContactDelegate:")
     public native void setContactDelegate_unsafe(@Mapped(ObjCObjectMapper.class) SCNPhysicsContactDelegate value);
 
-    /**
-     * contactDelegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNPhysicsWorld_Class/index.html#//apple_ref/occ/instp/SCNPhysicsWorld/contactDelegate">iOS Dev Center</a>
-     */
     @Generated
     public void setContactDelegate(@Mapped(ObjCObjectMapper.class) SCNPhysicsContactDelegate value) {
         Object __old = contactDelegate();
@@ -293,34 +245,18 @@ public class SCNPhysicsWorld extends NSObject implements NSSecureCoding {
         }
     }
 
-    /**
-     * gravity</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNPhysicsWorld_Class/index.html#//apple_ref/occ/instp/SCNPhysicsWorld/gravity">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setGravity:")
     public native void setGravity(@ByValue SCNVector3 value);
 
-    /**
-     * speed</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNPhysicsWorld_Class/index.html#//apple_ref/occ/instp/SCNPhysicsWorld/speed">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setSpeed:")
     public native void setSpeed(@NFloat double value);
 
-    /**
-     * timeStep</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNPhysicsWorld_Class/index.html#//apple_ref/occ/instp/SCNPhysicsWorld/timeStep">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setTimeStep:")
     public native void setTimeStep(double value);
 
-    /**
-     * speed</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNPhysicsWorld_Class/index.html#//apple_ref/occ/instp/SCNPhysicsWorld/speed">iOS Dev Center</a>
-     */
     @Generated
     @Selector("speed")
     @NFloat
@@ -332,18 +268,10 @@ public class SCNPhysicsWorld extends NSObject implements NSSecureCoding {
         return supportsSecureCoding();
     }
 
-    /**
-     * timeStep</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNPhysicsWorld_Class/index.html#//apple_ref/occ/instp/SCNPhysicsWorld/timeStep">iOS Dev Center</a>
-     */
     @Generated
     @Selector("timeStep")
     public native double timeStep();
 
-    /**
-     * updateCollisionPairs</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNPhysicsWorld_Class/index.html#//apple_ref/occ/instm/SCNPhysicsWorld/updateCollisionPairs">iOS Dev Center</a>
-     */
     @Generated
     @Selector("updateCollisionPairs")
     public native void updateCollisionPairs();

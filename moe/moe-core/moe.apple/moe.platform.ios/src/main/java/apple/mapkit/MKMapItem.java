@@ -61,18 +61,10 @@ public class MKMapItem extends NSObject {
     @Selector("alloc")
     public static native MKMapItem alloc();
 
-    /**
-     * mapItemForCurrentLocation</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKMapItem_class/index.html#//apple_ref/occ/clm/MKMapItem/mapItemForCurrentLocation">iOS Dev Center</a>
-     */
     @Generated
     @Selector("mapItemForCurrentLocation")
     public static native MKMapItem mapItemForCurrentLocation();
 
-    /**
-     * openMapsWithItems:launchOptions:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKMapItem_class/index.html#//apple_ref/occ/clm/MKMapItem/openMapsWithItems:launchOptions:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("openMapsWithItems:launchOptions:")
     public static native boolean openMapsWithItemsLaunchOptions(NSArray<? extends MKMapItem> mapItems,
@@ -182,98 +174,50 @@ public class MKMapItem extends NSObject {
     @Selector("init")
     public native MKMapItem init();
 
-    /**
-     * initWithPlacemark:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKMapItem_class/index.html#//apple_ref/occ/instm/MKMapItem/initWithPlacemark:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithPlacemark:")
     public native MKMapItem initWithPlacemark(MKPlacemark placemark);
 
-    /**
-     * isCurrentLocation</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKMapItem_class/index.html#//apple_ref/occ/instp/MKMapItem/isCurrentLocation">iOS Dev Center</a>
-     */
     @Generated
     @Selector("isCurrentLocation")
     public native boolean isCurrentLocation();
 
-    /**
-     * name</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKMapItem_class/index.html#//apple_ref/occ/instp/MKMapItem/name">iOS Dev Center</a>
-     */
     @Generated
     @Selector("name")
     public native String name();
 
-    /**
-     * openInMapsWithLaunchOptions:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKMapItem_class/index.html#//apple_ref/occ/instm/MKMapItem/openInMapsWithLaunchOptions:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("openInMapsWithLaunchOptions:")
     public native boolean openInMapsWithLaunchOptions(NSDictionary<String, ?> launchOptions);
 
-    /**
-     * phoneNumber</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKMapItem_class/index.html#//apple_ref/occ/instp/MKMapItem/phoneNumber">iOS Dev Center</a>
-     */
     @Generated
     @Selector("phoneNumber")
     public native String phoneNumber();
 
-    /**
-     * placemark</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKMapItem_class/index.html#//apple_ref/occ/instp/MKMapItem/placemark">iOS Dev Center</a>
-     */
     @Generated
     @Selector("placemark")
     public native MKPlacemark placemark();
 
-    /**
-     * name</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKMapItem_class/index.html#//apple_ref/occ/instp/MKMapItem/name">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setName:")
     public native void setName(String value);
 
-    /**
-     * phoneNumber</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKMapItem_class/index.html#//apple_ref/occ/instp/MKMapItem/phoneNumber">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setPhoneNumber:")
     public native void setPhoneNumber(String value);
 
-    /**
-     * url</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKMapItem_class/index.html#//apple_ref/occ/instp/MKMapItem/url">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setUrl:")
     public native void setUrl(NSURL value);
 
-    /**
-     * url</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKMapItem_class/index.html#//apple_ref/occ/instp/MKMapItem/url">iOS Dev Center</a>
-     */
     @Generated
     @Selector("url")
     public native NSURL url();
 
-    /**
-     * timeZone</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKMapItem_class/index.html#//apple_ref/occ/instp/MKMapItem/timeZone">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setTimeZone:")
     public native void setTimeZone(NSTimeZone value);
 
-    /**
-     * timeZone</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKMapItem_class/index.html#//apple_ref/occ/instp/MKMapItem/timeZone">iOS Dev Center</a>
-     */
     @Generated
     @Selector("timeZone")
     public native NSTimeZone timeZone();

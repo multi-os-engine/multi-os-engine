@@ -24,6 +24,7 @@ public final class NETunnelProviderError {
     @Generated @NInt public static final long Invalid = 0x0000000000000001L;
     @Generated @NInt public static final long Canceled = 0x0000000000000002L;
     @Generated @NInt public static final long Failed = 0x0000000000000003L;
+
     @Generated
     private NETunnelProviderError() {
     }

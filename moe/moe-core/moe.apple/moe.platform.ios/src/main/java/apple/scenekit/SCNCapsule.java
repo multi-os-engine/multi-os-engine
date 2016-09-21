@@ -62,10 +62,6 @@ public class SCNCapsule extends SCNGeometry {
     @Selector("alloc")
     public static native SCNCapsule alloc();
 
-    /**
-     * capsuleWithCapRadius:height:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNCapsule_Class/index.html#//apple_ref/occ/clm/SCNCapsule/capsuleWithCapRadius:height:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("capsuleWithCapRadius:height:")
     public static native SCNCapsule capsuleWithCapRadiusHeight(@NFloat double capRadius, @NFloat double height);
@@ -187,37 +183,21 @@ public class SCNCapsule extends SCNGeometry {
     @NInt
     public static native long version_static();
 
-    /**
-     * capRadius</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNCapsule_Class/index.html#//apple_ref/occ/instp/SCNCapsule/capRadius">iOS Dev Center</a>
-     */
     @Generated
     @Selector("capRadius")
     @NFloat
     public native double capRadius();
 
-    /**
-     * capSegmentCount</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNCapsule_Class/index.html#//apple_ref/occ/instp/SCNCapsule/capSegmentCount">iOS Dev Center</a>
-     */
     @Generated
     @Selector("capSegmentCount")
     @NInt
     public native long capSegmentCount();
 
-    /**
-     * height</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNCapsule_Class/index.html#//apple_ref/occ/instp/SCNCapsule/height">iOS Dev Center</a>
-     */
     @Generated
     @Selector("height")
     @NFloat
     public native double height();
 
-    /**
-     * heightSegmentCount</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNCapsule_Class/index.html#//apple_ref/occ/instp/SCNCapsule/heightSegmentCount">iOS Dev Center</a>
-     */
     @Generated
     @Selector("heightSegmentCount")
     @NInt
@@ -227,51 +207,27 @@ public class SCNCapsule extends SCNGeometry {
     @Selector("init")
     public native SCNCapsule init();
 
-    /**
-     * radialSegmentCount</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNCapsule_Class/index.html#//apple_ref/occ/instp/SCNCapsule/radialSegmentCount">iOS Dev Center</a>
-     */
     @Generated
     @Selector("radialSegmentCount")
     @NInt
     public native long radialSegmentCount();
 
-    /**
-     * capRadius</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNCapsule_Class/index.html#//apple_ref/occ/instp/SCNCapsule/capRadius">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setCapRadius:")
     public native void setCapRadius(@NFloat double value);
 
-    /**
-     * capSegmentCount</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNCapsule_Class/index.html#//apple_ref/occ/instp/SCNCapsule/capSegmentCount">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setCapSegmentCount:")
     public native void setCapSegmentCount(@NInt long value);
 
-    /**
-     * height</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNCapsule_Class/index.html#//apple_ref/occ/instp/SCNCapsule/height">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setHeight:")
     public native void setHeight(@NFloat double value);
 
-    /**
-     * heightSegmentCount</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNCapsule_Class/index.html#//apple_ref/occ/instp/SCNCapsule/heightSegmentCount">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setHeightSegmentCount:")
     public native void setHeightSegmentCount(@NInt long value);
 
-    /**
-     * radialSegmentCount</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNCapsule_Class/index.html#//apple_ref/occ/instp/SCNCapsule/radialSegmentCount">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setRadialSegmentCount:")
     public native void setRadialSegmentCount(@NInt long value);

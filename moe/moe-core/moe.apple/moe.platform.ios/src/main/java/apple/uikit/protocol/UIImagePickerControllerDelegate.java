@@ -32,10 +32,6 @@ import org.moe.natj.objc.ann.Selector;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("UIImagePickerControllerDelegate")
 public interface UIImagePickerControllerDelegate {
-    /**
-     * imagePickerController:didFinishPickingImage:editingInfo:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIImagePickerControllerDelegate_Protocol/index.html#//apple_ref/occ/intfm/UIImagePickerControllerDelegate/imagePickerController:didFinishPickingImage:editingInfo:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Deprecated
@@ -45,10 +41,6 @@ public interface UIImagePickerControllerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * imagePickerController:didFinishPickingMediaWithInfo:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIImagePickerControllerDelegate_Protocol/index.html#//apple_ref/occ/intfm/UIImagePickerControllerDelegate/imagePickerController:didFinishPickingMediaWithInfo:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("imagePickerController:didFinishPickingMediaWithInfo:")
@@ -57,10 +49,6 @@ public interface UIImagePickerControllerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * imagePickerControllerDidCancel:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIImagePickerControllerDelegate_Protocol/index.html#//apple_ref/occ/intfm/UIImagePickerControllerDelegate/imagePickerControllerDidCancel:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("imagePickerControllerDidCancel:")

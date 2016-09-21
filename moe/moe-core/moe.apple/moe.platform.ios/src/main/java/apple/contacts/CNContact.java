@@ -68,60 +68,32 @@ public class CNContact extends NSObject implements NSCopying, NSMutableCopying, 
     @Selector("alloc")
     public static native CNContact alloc();
 
-    /**
-     * comparatorForNameSortOrder:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Contacts/Reference/CNContact_Class/index.html#//apple_ref/occ/clm/CNContact/comparatorForNameSortOrder:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("comparatorForNameSortOrder:")
     @ObjCBlock(name = "call_comparatorForNameSortOrder_ret")
     public static native Block_comparatorForNameSortOrder_ret comparatorForNameSortOrder(@NInt long sortOrder);
 
-    /**
-     * descriptorForAllComparatorKeys</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Contacts/Reference/CNContact_Class/index.html#//apple_ref/occ/clm/CNContact/descriptorForAllComparatorKeys">iOS Dev Center</a>
-     */
     @Generated
     @Selector("descriptorForAllComparatorKeys")
     @MappedReturn(ObjCObjectMapper.class)
     public static native CNKeyDescriptor descriptorForAllComparatorKeys();
 
-    /**
-     * localizedStringForKey:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Contacts/Reference/CNContact_Class/index.html#//apple_ref/occ/clm/CNContact/localizedStringForKey:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("localizedStringForKey:")
     public static native String localizedStringForKey(String key);
 
-    /**
-     * predicateForContactsInContainerWithIdentifier:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Contacts/Reference/CNContact_Class/index.html#//apple_ref/occ/clm/CNContact/predicateForContactsInContainerWithIdentifier:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("predicateForContactsInContainerWithIdentifier:")
     public static native NSPredicate predicateForContactsInContainerWithIdentifier(String containerIdentifier);
 
-    /**
-     * predicateForContactsInGroupWithIdentifier:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Contacts/Reference/CNContact_Class/index.html#//apple_ref/occ/clm/CNContact/predicateForContactsInGroupWithIdentifier:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("predicateForContactsInGroupWithIdentifier:")
     public static native NSPredicate predicateForContactsInGroupWithIdentifier(String groupIdentifier);
 
-    /**
-     * predicateForContactsMatchingName:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Contacts/Reference/CNContact_Class/index.html#//apple_ref/occ/clm/CNContact/predicateForContactsMatchingName:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("predicateForContactsMatchingName:")
     public static native NSPredicate predicateForContactsMatchingName(String name);
 
-    /**
-     * predicateForContactsWithIdentifiers:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Contacts/Reference/CNContact_Class/index.html#//apple_ref/occ/clm/CNContact/predicateForContactsWithIdentifiers:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("predicateForContactsWithIdentifiers:")
     public static native NSPredicate predicateForContactsWithIdentifiers(NSArray<String> identifiers);
@@ -230,34 +202,18 @@ public class CNContact extends NSObject implements NSCopying, NSMutableCopying, 
     @NInt
     public static native long version_static();
 
-    /**
-     * areKeysAvailable:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Contacts/Reference/CNContact_Class/index.html#//apple_ref/occ/instm/CNContact/areKeysAvailable:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("areKeysAvailable:")
     public native boolean areKeysAvailable(NSArray<?> keyDescriptors);
 
-    /**
-     * birthday</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Contacts/Reference/CNContact_Class/index.html#//apple_ref/occ/instp/CNContact/birthday">iOS Dev Center</a>
-     */
     @Generated
     @Selector("birthday")
     public native NSDateComponents birthday();
 
-    /**
-     * contactRelations</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Contacts/Reference/CNContact_Class/index.html#//apple_ref/occ/instp/CNContact/contactRelations">iOS Dev Center</a>
-     */
     @Generated
     @Selector("contactRelations")
     public native NSArray<? extends CNLabeledValue<CNContactRelation>> contactRelations();
 
-    /**
-     * contactType</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Contacts/Reference/CNContact_Class/index.html#//apple_ref/occ/instp/CNContact/contactType">iOS Dev Center</a>
-     */
     @Generated
     @Selector("contactType")
     @NInt
@@ -269,26 +225,14 @@ public class CNContact extends NSObject implements NSCopying, NSMutableCopying, 
     @MappedReturn(ObjCObjectMapper.class)
     public native Object copyWithZone(VoidPtr zone);
 
-    /**
-     * dates</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Contacts/Reference/CNContact_Class/index.html#//apple_ref/occ/instp/CNContact/dates">iOS Dev Center</a>
-     */
     @Generated
     @Selector("dates")
     public native NSArray<? extends CNLabeledValue<NSDateComponents>> dates();
 
-    /**
-     * departmentName</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Contacts/Reference/CNContact_Class/index.html#//apple_ref/occ/instp/CNContact/departmentName">iOS Dev Center</a>
-     */
     @Generated
     @Selector("departmentName")
     public native String departmentName();
 
-    /**
-     * emailAddresses</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Contacts/Reference/CNContact_Class/index.html#//apple_ref/occ/instp/CNContact/emailAddresses">iOS Dev Center</a>
-     */
     @Generated
     @Selector("emailAddresses")
     public native NSArray<? extends CNLabeledValue<String>> emailAddresses();
@@ -297,42 +241,22 @@ public class CNContact extends NSObject implements NSCopying, NSMutableCopying, 
     @Selector("encodeWithCoder:")
     public native void encodeWithCoder(NSCoder aCoder);
 
-    /**
-     * familyName</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Contacts/Reference/CNContact_Class/index.html#//apple_ref/occ/instp/CNContact/familyName">iOS Dev Center</a>
-     */
     @Generated
     @Selector("familyName")
     public native String familyName();
 
-    /**
-     * givenName</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Contacts/Reference/CNContact_Class/index.html#//apple_ref/occ/instp/CNContact/givenName">iOS Dev Center</a>
-     */
     @Generated
     @Selector("givenName")
     public native String givenName();
 
-    /**
-     * identifier</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Contacts/Reference/CNContact_Class/index.html#//apple_ref/occ/instp/CNContact/identifier">iOS Dev Center</a>
-     */
     @Generated
     @Selector("identifier")
     public native String identifier();
 
-    /**
-     * imageData</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Contacts/Reference/CNContact_Class/index.html#//apple_ref/occ/instp/CNContact/imageData">iOS Dev Center</a>
-     */
     @Generated
     @Selector("imageData")
     public native NSData imageData();
 
-    /**
-     * imageDataAvailable</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Contacts/Reference/CNContact_Class/index.html#//apple_ref/occ/instp/CNContact/imageDataAvailable">iOS Dev Center</a>
-     */
     @Generated
     @Selector("imageDataAvailable")
     public native boolean imageDataAvailable();
@@ -345,18 +269,10 @@ public class CNContact extends NSObject implements NSCopying, NSMutableCopying, 
     @Selector("initWithCoder:")
     public native CNContact initWithCoder(NSCoder aDecoder);
 
-    /**
-     * instantMessageAddresses</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Contacts/Reference/CNContact_Class/index.html#//apple_ref/occ/instp/CNContact/instantMessageAddresses">iOS Dev Center</a>
-     */
     @Generated
     @Selector("instantMessageAddresses")
     public native NSArray<? extends CNLabeledValue<CNInstantMessageAddress>> instantMessageAddresses();
 
-    /**
-     * isKeyAvailable:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Contacts/Reference/CNContact_Class/index.html#//apple_ref/occ/instm/CNContact/isKeyAvailable:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("isKeyAvailable:")
     public native boolean isKeyAvailable(String key);
@@ -365,18 +281,10 @@ public class CNContact extends NSObject implements NSCopying, NSMutableCopying, 
     @Selector("isUnifiedWithContactWithIdentifier:")
     public native boolean isUnifiedWithContactWithIdentifier(String contactIdentifier);
 
-    /**
-     * jobTitle</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Contacts/Reference/CNContact_Class/index.html#//apple_ref/occ/instp/CNContact/jobTitle">iOS Dev Center</a>
-     */
     @Generated
     @Selector("jobTitle")
     public native String jobTitle();
 
-    /**
-     * middleName</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Contacts/Reference/CNContact_Class/index.html#//apple_ref/occ/instp/CNContact/middleName">iOS Dev Center</a>
-     */
     @Generated
     @Selector("middleName")
     public native String middleName();
@@ -386,106 +294,54 @@ public class CNContact extends NSObject implements NSCopying, NSMutableCopying, 
     @MappedReturn(ObjCObjectMapper.class)
     public native Object mutableCopyWithZone(VoidPtr zone);
 
-    /**
-     * namePrefix</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Contacts/Reference/CNContact_Class/index.html#//apple_ref/occ/instp/CNContact/namePrefix">iOS Dev Center</a>
-     */
     @Generated
     @Selector("namePrefix")
     public native String namePrefix();
 
-    /**
-     * nameSuffix</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Contacts/Reference/CNContact_Class/index.html#//apple_ref/occ/instp/CNContact/nameSuffix">iOS Dev Center</a>
-     */
     @Generated
     @Selector("nameSuffix")
     public native String nameSuffix();
 
-    /**
-     * nickname</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Contacts/Reference/CNContact_Class/index.html#//apple_ref/occ/instp/CNContact/nickname">iOS Dev Center</a>
-     */
     @Generated
     @Selector("nickname")
     public native String nickname();
 
-    /**
-     * nonGregorianBirthday</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Contacts/Reference/CNContact_Class/index.html#//apple_ref/occ/instp/CNContact/nonGregorianBirthday">iOS Dev Center</a>
-     */
     @Generated
     @Selector("nonGregorianBirthday")
     public native NSDateComponents nonGregorianBirthday();
 
-    /**
-     * note</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Contacts/Reference/CNContact_Class/index.html#//apple_ref/occ/instp/CNContact/note">iOS Dev Center</a>
-     */
     @Generated
     @Selector("note")
     public native String note();
 
-    /**
-     * organizationName</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Contacts/Reference/CNContact_Class/index.html#//apple_ref/occ/instp/CNContact/organizationName">iOS Dev Center</a>
-     */
     @Generated
     @Selector("organizationName")
     public native String organizationName();
 
-    /**
-     * phoneNumbers</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Contacts/Reference/CNContact_Class/index.html#//apple_ref/occ/instp/CNContact/phoneNumbers">iOS Dev Center</a>
-     */
     @Generated
     @Selector("phoneNumbers")
     public native NSArray<? extends CNLabeledValue<CNPhoneNumber>> phoneNumbers();
 
-    /**
-     * phoneticFamilyName</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Contacts/Reference/CNContact_Class/index.html#//apple_ref/occ/instp/CNContact/phoneticFamilyName">iOS Dev Center</a>
-     */
     @Generated
     @Selector("phoneticFamilyName")
     public native String phoneticFamilyName();
 
-    /**
-     * phoneticGivenName</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Contacts/Reference/CNContact_Class/index.html#//apple_ref/occ/instp/CNContact/phoneticGivenName">iOS Dev Center</a>
-     */
     @Generated
     @Selector("phoneticGivenName")
     public native String phoneticGivenName();
 
-    /**
-     * phoneticMiddleName</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Contacts/Reference/CNContact_Class/index.html#//apple_ref/occ/instp/CNContact/phoneticMiddleName">iOS Dev Center</a>
-     */
     @Generated
     @Selector("phoneticMiddleName")
     public native String phoneticMiddleName();
 
-    /**
-     * postalAddresses</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Contacts/Reference/CNContact_Class/index.html#//apple_ref/occ/instp/CNContact/postalAddresses">iOS Dev Center</a>
-     */
     @Generated
     @Selector("postalAddresses")
     public native NSArray<? extends CNLabeledValue<CNPostalAddress>> postalAddresses();
 
-    /**
-     * previousFamilyName</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Contacts/Reference/CNContact_Class/index.html#//apple_ref/occ/instp/CNContact/previousFamilyName">iOS Dev Center</a>
-     */
     @Generated
     @Selector("previousFamilyName")
     public native String previousFamilyName();
 
-    /**
-     * socialProfiles</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Contacts/Reference/CNContact_Class/index.html#//apple_ref/occ/instp/CNContact/socialProfiles">iOS Dev Center</a>
-     */
     @Generated
     @Selector("socialProfiles")
     public native NSArray<? extends CNLabeledValue<CNSocialProfile>> socialProfiles();
@@ -496,18 +352,10 @@ public class CNContact extends NSObject implements NSCopying, NSMutableCopying, 
         return supportsSecureCoding();
     }
 
-    /**
-     * thumbnailImageData</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Contacts/Reference/CNContact_Class/index.html#//apple_ref/occ/instp/CNContact/thumbnailImageData">iOS Dev Center</a>
-     */
     @Generated
     @Selector("thumbnailImageData")
     public native NSData thumbnailImageData();
 
-    /**
-     * urlAddresses</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Contacts/Reference/CNContact_Class/index.html#//apple_ref/occ/instp/CNContact/urlAddresses">iOS Dev Center</a>
-     */
     @Generated
     @Selector("urlAddresses")
     public native NSArray<? extends CNLabeledValue<String>> urlAddresses();

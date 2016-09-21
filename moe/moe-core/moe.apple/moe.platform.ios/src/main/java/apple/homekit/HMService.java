@@ -161,26 +161,14 @@ public class HMService extends NSObject {
     @NInt
     public static native long version_static();
 
-    /**
-     * accessory</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HomeKit/Reference/HMService_Class/index.html#//apple_ref/occ/instp/HMService/accessory">iOS Dev Center</a>
-     */
     @Generated
     @Selector("accessory")
     public native HMAccessory accessory();
 
-    /**
-     * associatedServiceType</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HomeKit/Reference/HMService_Class/index.html#//apple_ref/occ/instp/HMService/associatedServiceType">iOS Dev Center</a>
-     */
     @Generated
     @Selector("associatedServiceType")
     public native String associatedServiceType();
 
-    /**
-     * characteristics</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HomeKit/Reference/HMService_Class/index.html#//apple_ref/occ/instp/HMService/characteristics">iOS Dev Center</a>
-     */
     @Generated
     @Selector("characteristics")
     public native NSArray<? extends HMCharacteristic> characteristics();
@@ -189,35 +177,19 @@ public class HMService extends NSObject {
     @Selector("init")
     public native HMService init();
 
-    /**
-     * name</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HomeKit/Reference/HMService_Class/index.html#//apple_ref/occ/instp/HMService/name">iOS Dev Center</a>
-     */
     @Generated
     @Selector("name")
     public native String name();
 
-    /**
-     * serviceType</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HomeKit/Reference/HMService_Class/index.html#//apple_ref/occ/instp/HMService/serviceType">iOS Dev Center</a>
-     */
     @Generated
     @Selector("serviceType")
     public native String serviceType();
 
-    /**
-     * updateAssociatedServiceType:completionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HomeKit/Reference/HMService_Class/index.html#//apple_ref/occ/instm/HMService/updateAssociatedServiceType:completionHandler:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("updateAssociatedServiceType:completionHandler:")
     public native void updateAssociatedServiceTypeCompletionHandler(String serviceType,
             @ObjCBlock(name = "call_updateAssociatedServiceTypeCompletionHandler") Block_updateAssociatedServiceTypeCompletionHandler completion);
 
-    /**
-     * updateName:completionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HomeKit/Reference/HMService_Class/index.html#//apple_ref/occ/instm/HMService/updateName:completionHandler:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("updateName:completionHandler:")
     public native void updateNameCompletionHandler(String name,

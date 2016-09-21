@@ -31,19 +31,11 @@ import org.moe.natj.objc.ann.Selector;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("MKReverseGeocoderDelegate")
 public interface MKReverseGeocoderDelegate {
-    /**
-     * reverseGeocoder:didFailWithError:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKReverseGeocoderDelegate_Protocol/index.html#//apple_ref/occ/intfm/MKReverseGeocoderDelegate/reverseGeocoder:didFailWithError:">iOS Dev Center</a>
-     */
     @Generated
     @Deprecated
     @Selector("reverseGeocoder:didFailWithError:")
     void reverseGeocoderDidFailWithError(MKReverseGeocoder geocoder, NSError error);
 
-    /**
-     * reverseGeocoder:didFindPlacemark:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKReverseGeocoderDelegate_Protocol/index.html#//apple_ref/occ/intfm/MKReverseGeocoderDelegate/reverseGeocoder:didFindPlacemark:">iOS Dev Center</a>
-     */
     @Generated
     @Deprecated
     @Selector("reverseGeocoder:didFindPlacemark:")

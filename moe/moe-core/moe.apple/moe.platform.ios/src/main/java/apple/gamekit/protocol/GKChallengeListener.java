@@ -31,10 +31,6 @@ import org.moe.natj.objc.ann.Selector;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("GKChallengeListener")
 public interface GKChallengeListener {
-    /**
-     * player:didCompleteChallenge:issuedByFriend:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKEventListener_Ref/index.html#//apple_ref/occ/intfm/GKChallengeListener/player:didCompleteChallenge:issuedByFriend:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("player:didCompleteChallenge:issuedByFriend:")
@@ -43,10 +39,6 @@ public interface GKChallengeListener {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * player:didReceiveChallenge:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKEventListener_Ref/index.html#//apple_ref/occ/intfm/GKChallengeListener/player:didReceiveChallenge:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("player:didReceiveChallenge:")
@@ -54,10 +46,6 @@ public interface GKChallengeListener {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * player:issuedChallengeWasCompleted:byFriend:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKEventListener_Ref/index.html#//apple_ref/occ/intfm/GKChallengeListener/player:issuedChallengeWasCompleted:byFriend:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("player:issuedChallengeWasCompleted:byFriend:")
@@ -66,10 +54,6 @@ public interface GKChallengeListener {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * player:wantsToPlayChallenge:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKEventListener_Ref/index.html#//apple_ref/occ/intfm/GKChallengeListener/player:wantsToPlayChallenge:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("player:wantsToPlayChallenge:")

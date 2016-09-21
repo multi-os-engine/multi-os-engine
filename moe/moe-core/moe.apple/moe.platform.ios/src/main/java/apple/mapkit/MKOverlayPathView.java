@@ -353,46 +353,26 @@ public class MKOverlayPathView extends MKOverlayView {
     @NInt
     public static native long version_static();
 
-    /**
-     * applyFillPropertiesToContext:atZoomScale:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKOverlayPathView_class/index.html#//apple_ref/occ/instm/MKOverlayPathView/applyFillPropertiesToContext:atZoomScale:">iOS Dev Center</a>
-     */
     @Generated
     @Deprecated
     @Selector("applyFillPropertiesToContext:atZoomScale:")
     public native void applyFillPropertiesToContextAtZoomScale(CGContextRef context, @NFloat double zoomScale);
 
-    /**
-     * applyStrokePropertiesToContext:atZoomScale:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKOverlayPathView_class/index.html#//apple_ref/occ/instm/MKOverlayPathView/applyStrokePropertiesToContext:atZoomScale:">iOS Dev Center</a>
-     */
     @Generated
     @Deprecated
     @Selector("applyStrokePropertiesToContext:atZoomScale:")
     public native void applyStrokePropertiesToContextAtZoomScale(CGContextRef context, @NFloat double zoomScale);
 
-    /**
-     * createPath</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKOverlayPathView_class/index.html#//apple_ref/occ/instm/MKOverlayPathView/createPath">iOS Dev Center</a>
-     */
     @Generated
     @Deprecated
     @Selector("createPath")
     public native void createPath();
 
-    /**
-     * fillColor</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKOverlayPathView_class/index.html#//apple_ref/occ/instp/MKOverlayPathView/fillColor">iOS Dev Center</a>
-     */
     @Generated
     @Deprecated
     @Selector("fillColor")
     public native UIColor fillColor();
 
-    /**
-     * fillPath:inContext:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKOverlayPathView_class/index.html#//apple_ref/occ/instm/MKOverlayPathView/fillPath:inContext:">iOS Dev Center</a>
-     */
     @Generated
     @Deprecated
     @Selector("fillPath:inContext:")
@@ -411,175 +391,99 @@ public class MKOverlayPathView extends MKOverlayView {
     @Selector("initWithOverlay:")
     public native MKOverlayPathView initWithOverlay(@Mapped(ObjCObjectMapper.class) MKOverlay overlay);
 
-    /**
-     * invalidatePath</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKOverlayPathView_class/index.html#//apple_ref/occ/instm/MKOverlayPathView/invalidatePath">iOS Dev Center</a>
-     */
     @Generated
     @Deprecated
     @Selector("invalidatePath")
     public native void invalidatePath();
 
-    /**
-     * lineCap</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKOverlayPathView_class/index.html#//apple_ref/occ/instp/MKOverlayPathView/lineCap">iOS Dev Center</a>
-     */
     @Generated
     @Deprecated
     @Selector("lineCap")
     public native int lineCap();
 
-    /**
-     * lineDashPattern</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKOverlayPathView_class/index.html#//apple_ref/occ/instp/MKOverlayPathView/lineDashPattern">iOS Dev Center</a>
-     */
     @Generated
     @Deprecated
     @Selector("lineDashPattern")
     public native NSArray<?> lineDashPattern();
 
-    /**
-     * lineDashPhase</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKOverlayPathView_class/index.html#//apple_ref/occ/instp/MKOverlayPathView/lineDashPhase">iOS Dev Center</a>
-     */
     @Generated
     @Deprecated
     @Selector("lineDashPhase")
     @NFloat
     public native double lineDashPhase();
 
-    /**
-     * lineJoin</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKOverlayPathView_class/index.html#//apple_ref/occ/instp/MKOverlayPathView/lineJoin">iOS Dev Center</a>
-     */
     @Generated
     @Deprecated
     @Selector("lineJoin")
     public native int lineJoin();
 
-    /**
-     * lineWidth</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKOverlayPathView_class/index.html#//apple_ref/occ/instp/MKOverlayPathView/lineWidth">iOS Dev Center</a>
-     */
     @Generated
     @Deprecated
     @Selector("lineWidth")
     @NFloat
     public native double lineWidth();
 
-    /**
-     * miterLimit</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKOverlayPathView_class/index.html#//apple_ref/occ/instp/MKOverlayPathView/miterLimit">iOS Dev Center</a>
-     */
     @Generated
     @Deprecated
     @Selector("miterLimit")
     @NFloat
     public native double miterLimit();
 
-    /**
-     * path</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKOverlayPathView_class/index.html#//apple_ref/occ/instp/MKOverlayPathView/path">iOS Dev Center</a>
-     */
     @Generated
     @Deprecated
     @Selector("path")
     public native CGPathRef path();
 
-    /**
-     * fillColor</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKOverlayPathView_class/index.html#//apple_ref/occ/instp/MKOverlayPathView/fillColor">iOS Dev Center</a>
-     */
     @Generated
     @Deprecated
     @Selector("setFillColor:")
     public native void setFillColor(UIColor value);
 
-    /**
-     * lineCap</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKOverlayPathView_class/index.html#//apple_ref/occ/instp/MKOverlayPathView/lineCap">iOS Dev Center</a>
-     */
     @Generated
     @Deprecated
     @Selector("setLineCap:")
     public native void setLineCap(int value);
 
-    /**
-     * lineDashPattern</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKOverlayPathView_class/index.html#//apple_ref/occ/instp/MKOverlayPathView/lineDashPattern">iOS Dev Center</a>
-     */
     @Generated
     @Deprecated
     @Selector("setLineDashPattern:")
     public native void setLineDashPattern(NSArray<?> value);
 
-    /**
-     * lineDashPhase</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKOverlayPathView_class/index.html#//apple_ref/occ/instp/MKOverlayPathView/lineDashPhase">iOS Dev Center</a>
-     */
     @Generated
     @Deprecated
     @Selector("setLineDashPhase:")
     public native void setLineDashPhase(@NFloat double value);
 
-    /**
-     * lineJoin</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKOverlayPathView_class/index.html#//apple_ref/occ/instp/MKOverlayPathView/lineJoin">iOS Dev Center</a>
-     */
     @Generated
     @Deprecated
     @Selector("setLineJoin:")
     public native void setLineJoin(int value);
 
-    /**
-     * lineWidth</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKOverlayPathView_class/index.html#//apple_ref/occ/instp/MKOverlayPathView/lineWidth">iOS Dev Center</a>
-     */
     @Generated
     @Deprecated
     @Selector("setLineWidth:")
     public native void setLineWidth(@NFloat double value);
 
-    /**
-     * miterLimit</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKOverlayPathView_class/index.html#//apple_ref/occ/instp/MKOverlayPathView/miterLimit">iOS Dev Center</a>
-     */
     @Generated
     @Deprecated
     @Selector("setMiterLimit:")
     public native void setMiterLimit(@NFloat double value);
 
-    /**
-     * path</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKOverlayPathView_class/index.html#//apple_ref/occ/instp/MKOverlayPathView/path">iOS Dev Center</a>
-     */
     @Generated
     @Deprecated
     @Selector("setPath:")
     public native void setPath(CGPathRef value);
 
-    /**
-     * strokeColor</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKOverlayPathView_class/index.html#//apple_ref/occ/instp/MKOverlayPathView/strokeColor">iOS Dev Center</a>
-     */
     @Generated
     @Deprecated
     @Selector("setStrokeColor:")
     public native void setStrokeColor(UIColor value);
 
-    /**
-     * strokeColor</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKOverlayPathView_class/index.html#//apple_ref/occ/instp/MKOverlayPathView/strokeColor">iOS Dev Center</a>
-     */
     @Generated
     @Deprecated
     @Selector("strokeColor")
     public native UIColor strokeColor();
 
-    /**
-     * strokePath:inContext:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKOverlayPathView_class/index.html#//apple_ref/occ/instm/MKOverlayPathView/strokePath:inContext:">iOS Dev Center</a>
-     */
     @Generated
     @Deprecated
     @Selector("strokePath:inContext:")

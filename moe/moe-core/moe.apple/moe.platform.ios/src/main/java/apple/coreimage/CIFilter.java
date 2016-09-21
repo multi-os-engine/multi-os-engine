@@ -71,102 +71,54 @@ public class CIFilter extends NSObject implements NSSecureCoding, NSCopying {
     @Selector("alloc")
     public static native CIFilter alloc();
 
-    /**
-     * filterArrayFromSerializedXMP:inputImageExtent:error:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/QuartzCoreFramework/Classes/CIFilter_Class/index.html#//apple_ref/occ/clm/CIFilter/filterArrayFromSerializedXMP:inputImageExtent:error:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("filterArrayFromSerializedXMP:inputImageExtent:error:")
     public static native NSArray<? extends CIFilter> filterArrayFromSerializedXMPInputImageExtentError(NSData xmpData,
             @ByValue CGRect extent, Ptr<NSError> outError);
 
-    /**
-     * filterNamesInCategories:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/QuartzCoreFramework/Classes/CIFilter_Class/index.html#//apple_ref/occ/clm/CIFilter/filterNamesInCategories:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("filterNamesInCategories:")
     public static native NSArray<String> filterNamesInCategories(NSArray<String> categories);
 
-    /**
-     * filterNamesInCategory:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/QuartzCoreFramework/Classes/CIFilter_Class/index.html#//apple_ref/occ/clm/CIFilter/filterNamesInCategory:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("filterNamesInCategory:")
     public static native NSArray<String> filterNamesInCategory(String category);
 
-    /**
-     * filterWithName:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/QuartzCoreFramework/Classes/CIFilter_Class/index.html#//apple_ref/occ/clm/CIFilter/filterWithName:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("filterWithName:")
     public static native CIFilter filterWithName(String name);
 
-    /**
-     * filterWithName:keysAndValues:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/QuartzCoreFramework/Classes/CIFilter_Class/index.html#//apple_ref/occ/clm/CIFilter/filterWithName:keysAndValues:">iOS Dev Center</a>
-     */
     @Generated
     @Variadic()
     @Selector("filterWithName:keysAndValues:")
     public static native CIFilter filterWithNameKeysAndValues(String name, @Mapped(ObjCObjectMapper.class) Object key0,
             Object... varargs);
 
-    /**
-     * filterWithName:withInputParameters:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/QuartzCoreFramework/Classes/CIFilter_Class/index.html#//apple_ref/occ/clm/CIFilter/filterWithName:withInputParameters:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("filterWithName:withInputParameters:")
     public static native CIFilter filterWithNameWithInputParameters(String name, NSDictionary<String, ?> params);
 
-    /**
-     * serializedXMPFromFilters:inputImageExtent:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/QuartzCoreFramework/Classes/CIFilter_Class/index.html#//apple_ref/occ/clm/CIFilter/serializedXMPFromFilters:inputImageExtent:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("serializedXMPFromFilters:inputImageExtent:")
     public static native NSData serializedXMPFromFiltersInputImageExtent(NSArray<? extends CIFilter> filters,
             @ByValue CGRect extent);
 
-    /**
-     * localizedDescriptionForFilterName:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/QuartzCoreFramework/Classes/CIFilter_Class/index.html#//apple_ref/occ/clm/CIFilter/localizedDescriptionForFilterName:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("localizedDescriptionForFilterName:")
     public static native String localizedDescriptionForFilterName(String filterName);
 
-    /**
-     * localizedNameForCategory:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/QuartzCoreFramework/Classes/CIFilter_Class/index.html#//apple_ref/occ/clm/CIFilter/localizedNameForCategory:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("localizedNameForCategory:")
     public static native String localizedNameForCategory(String category);
 
-    /**
-     * localizedNameForFilterName:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/QuartzCoreFramework/Classes/CIFilter_Class/index.html#//apple_ref/occ/clm/CIFilter/localizedNameForFilterName:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("localizedNameForFilterName:")
     public static native String localizedNameForFilterName(String filterName);
 
-    /**
-     * localizedReferenceDocumentationForFilterName:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/QuartzCoreFramework/Classes/CIFilter_Class/index.html#//apple_ref/occ/clm/CIFilter/localizedReferenceDocumentationForFilterName:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("localizedReferenceDocumentationForFilterName:")
     public static native NSURL localizedReferenceDocumentationForFilterName(String filterName);
 
-    /**
-     * registerFilterName:constructor:classAttributes:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/QuartzCoreFramework/Classes/CIFilter_Class/index.html#//apple_ref/occ/clm/CIFilter/registerFilterName:constructor:classAttributes:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("registerFilterName:constructor:classAttributes:")
     public static native void registerFilterNameConstructorClassAttributes(String name,
@@ -276,10 +228,6 @@ public class CIFilter extends NSObject implements NSSecureCoding, NSCopying {
     @NInt
     public static native long version();
 
-    /**
-     * attributes</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/QuartzCoreFramework/Classes/CIFilter_Class/index.html#//apple_ref/occ/instp/CIFilter/attributes">iOS Dev Center</a>
-     */
     @Generated
     @Selector("attributes")
     public native NSDictionary<String, ?> attributes();
@@ -302,42 +250,22 @@ public class CIFilter extends NSObject implements NSSecureCoding, NSCopying {
     @Selector("initWithCoder:")
     public native CIFilter initWithCoder(NSCoder aDecoder);
 
-    /**
-     * inputKeys</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/QuartzCoreFramework/Classes/CIFilter_Class/index.html#//apple_ref/occ/instp/CIFilter/inputKeys">iOS Dev Center</a>
-     */
     @Generated
     @Selector("inputKeys")
     public native NSArray<String> inputKeys();
 
-    /**
-     * name</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/QuartzCoreFramework/Classes/CIFilter_Class/index.html#//apple_ref/occ/instp/CIFilter/name">iOS Dev Center</a>
-     */
     @Generated
     @Selector("name")
     public native String name();
 
-    /**
-     * outputImage</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/QuartzCoreFramework/Classes/CIFilter_Class/index.html#//apple_ref/occ/instp/CIFilter/outputImage">iOS Dev Center</a>
-     */
     @Generated
     @Selector("outputImage")
     public native CIImage outputImage();
 
-    /**
-     * outputKeys</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/QuartzCoreFramework/Classes/CIFilter_Class/index.html#//apple_ref/occ/instp/CIFilter/outputKeys">iOS Dev Center</a>
-     */
     @Generated
     @Selector("outputKeys")
     public native NSArray<String> outputKeys();
 
-    /**
-     * setDefaults</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/QuartzCoreFramework/Classes/CIFilter_Class/index.html#//apple_ref/occ/instm/CIFilter/setDefaults">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setDefaults")
     public native void setDefaults();

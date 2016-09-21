@@ -170,10 +170,6 @@ public class GKAchievementChallenge extends GKChallenge {
     @NInt
     public static native long version_static();
 
-    /**
-     * achievement</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKAchievementChallenge_Ref/index.html#//apple_ref/occ/instp/GKAchievementChallenge/achievement">iOS Dev Center</a>
-     */
     @Generated
     @Selector("achievement")
     public native GKAchievement achievement();

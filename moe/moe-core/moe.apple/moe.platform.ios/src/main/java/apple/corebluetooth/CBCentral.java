@@ -162,10 +162,6 @@ public class CBCentral extends CBPeer {
     @Selector("init")
     public native CBCentral init();
 
-    /**
-     * maximumUpdateValueLength</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreBluetooth/Reference/CBCentral_Class/index.html#//apple_ref/occ/instp/CBCentral/maximumUpdateValueLength">iOS Dev Center</a>
-     */
     @Generated
     @Selector("maximumUpdateValueLength")
     @NUInt

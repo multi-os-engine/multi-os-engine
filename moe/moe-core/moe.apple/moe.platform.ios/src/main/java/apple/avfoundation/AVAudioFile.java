@@ -162,18 +162,10 @@ public class AVAudioFile extends NSObject {
     @NInt
     public static native long version_static();
 
-    /**
-     * fileFormat</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioFile_Class/index.html#//apple_ref/occ/instp/AVAudioFile/fileFormat">iOS Dev Center</a>
-     */
     @Generated
     @Selector("fileFormat")
     public native AVAudioFormat fileFormat();
 
-    /**
-     * framePosition</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioFile_Class/index.html#//apple_ref/occ/instp/AVAudioFile/framePosition">iOS Dev Center</a>
-     */
     @Generated
     @Selector("framePosition")
     public native long framePosition();
@@ -182,93 +174,49 @@ public class AVAudioFile extends NSObject {
     @Selector("init")
     public native AVAudioFile init();
 
-    /**
-     * initForReading:commonFormat:interleaved:error:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioFile_Class/index.html#//apple_ref/occ/instm/AVAudioFile/initForReading:commonFormat:interleaved:error:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initForReading:commonFormat:interleaved:error:")
     public native AVAudioFile initForReadingCommonFormatInterleavedError(NSURL fileURL, @NUInt long format,
             boolean interleaved, Ptr<NSError> outError);
 
-    /**
-     * initForReading:error:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioFile_Class/index.html#//apple_ref/occ/instm/AVAudioFile/initForReading:error:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initForReading:error:")
     public native AVAudioFile initForReadingError(NSURL fileURL, Ptr<NSError> outError);
 
-    /**
-     * initForWriting:settings:commonFormat:interleaved:error:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioFile_Class/index.html#//apple_ref/occ/instm/AVAudioFile/initForWriting:settings:commonFormat:interleaved:error:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initForWriting:settings:commonFormat:interleaved:error:")
     public native AVAudioFile initForWritingSettingsCommonFormatInterleavedError(NSURL fileURL,
             NSDictionary<String, ?> settings, @NUInt long format, boolean interleaved, Ptr<NSError> outError);
 
-    /**
-     * initForWriting:settings:error:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioFile_Class/index.html#//apple_ref/occ/instm/AVAudioFile/initForWriting:settings:error:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initForWriting:settings:error:")
     public native AVAudioFile initForWritingSettingsError(NSURL fileURL, NSDictionary<String, ?> settings,
             Ptr<NSError> outError);
 
-    /**
-     * length</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioFile_Class/index.html#//apple_ref/occ/instp/AVAudioFile/length">iOS Dev Center</a>
-     */
     @Generated
     @Selector("length")
     public native long length();
 
-    /**
-     * processingFormat</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioFile_Class/index.html#//apple_ref/occ/instp/AVAudioFile/processingFormat">iOS Dev Center</a>
-     */
     @Generated
     @Selector("processingFormat")
     public native AVAudioFormat processingFormat();
 
-    /**
-     * readIntoBuffer:error:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioFile_Class/index.html#//apple_ref/occ/instm/AVAudioFile/readIntoBuffer:error:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("readIntoBuffer:error:")
     public native boolean readIntoBufferError(AVAudioPCMBuffer buffer, Ptr<NSError> outError);
 
-    /**
-     * readIntoBuffer:frameCount:error:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioFile_Class/index.html#//apple_ref/occ/instm/AVAudioFile/readIntoBuffer:frameCount:error:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("readIntoBuffer:frameCount:error:")
     public native boolean readIntoBufferFrameCountError(AVAudioPCMBuffer buffer, int frames, Ptr<NSError> outError);
 
-    /**
-     * framePosition</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioFile_Class/index.html#//apple_ref/occ/instp/AVAudioFile/framePosition">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setFramePosition:")
     public native void setFramePosition(long value);
 
-    /**
-     * url</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioFile_Class/index.html#//apple_ref/occ/instp/AVAudioFile/url">iOS Dev Center</a>
-     */
     @Generated
     @Selector("url")
     public native NSURL url();
 
-    /**
-     * writeFromBuffer:error:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioFile_Class/index.html#//apple_ref/occ/instm/AVAudioFile/writeFromBuffer:error:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("writeFromBuffer:error:")
     public native boolean writeFromBufferError(AVAudioPCMBuffer buffer, Ptr<NSError> outError);

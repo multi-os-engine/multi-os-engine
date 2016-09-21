@@ -167,18 +167,10 @@ public class HKStatistics extends NSObject implements NSSecureCoding, NSCopying 
     @NInt
     public static native long version_static();
 
-    /**
-     * averageQuantity</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HealthKit/Reference/HKStatistics_Class/index.html#//apple_ref/occ/instm/HKStatistics/averageQuantity">iOS Dev Center</a>
-     */
     @Generated
     @Selector("averageQuantity")
     public native HKQuantity averageQuantity();
 
-    /**
-     * averageQuantityForSource:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HealthKit/Reference/HKStatistics_Class/index.html#//apple_ref/occ/instm/HKStatistics/averageQuantityForSource:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("averageQuantityForSource:")
     public native HKQuantity averageQuantityForSource(HKSource source);
@@ -193,10 +185,6 @@ public class HKStatistics extends NSObject implements NSSecureCoding, NSCopying 
     @Selector("encodeWithCoder:")
     public native void encodeWithCoder(NSCoder aCoder);
 
-    /**
-     * endDate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HealthKit/Reference/HKStatistics_Class/index.html#//apple_ref/occ/instp/HKStatistics/endDate">iOS Dev Center</a>
-     */
     @Generated
     @Selector("endDate")
     public native NSDate endDate();
@@ -209,74 +197,38 @@ public class HKStatistics extends NSObject implements NSSecureCoding, NSCopying 
     @Selector("initWithCoder:")
     public native HKStatistics initWithCoder(NSCoder aDecoder);
 
-    /**
-     * maximumQuantity</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HealthKit/Reference/HKStatistics_Class/index.html#//apple_ref/occ/instm/HKStatistics/maximumQuantity">iOS Dev Center</a>
-     */
     @Generated
     @Selector("maximumQuantity")
     public native HKQuantity maximumQuantity();
 
-    /**
-     * maximumQuantityForSource:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HealthKit/Reference/HKStatistics_Class/index.html#//apple_ref/occ/instm/HKStatistics/maximumQuantityForSource:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("maximumQuantityForSource:")
     public native HKQuantity maximumQuantityForSource(HKSource source);
 
-    /**
-     * minimumQuantity</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HealthKit/Reference/HKStatistics_Class/index.html#//apple_ref/occ/instm/HKStatistics/minimumQuantity">iOS Dev Center</a>
-     */
     @Generated
     @Selector("minimumQuantity")
     public native HKQuantity minimumQuantity();
 
-    /**
-     * minimumQuantityForSource:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HealthKit/Reference/HKStatistics_Class/index.html#//apple_ref/occ/instm/HKStatistics/minimumQuantityForSource:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("minimumQuantityForSource:")
     public native HKQuantity minimumQuantityForSource(HKSource source);
 
-    /**
-     * quantityType</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HealthKit/Reference/HKStatistics_Class/index.html#//apple_ref/occ/instp/HKStatistics/quantityType">iOS Dev Center</a>
-     */
     @Generated
     @Selector("quantityType")
     public native HKQuantityType quantityType();
 
-    /**
-     * sources</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HealthKit/Reference/HKStatistics_Class/index.html#//apple_ref/occ/instp/HKStatistics/sources">iOS Dev Center</a>
-     */
     @Generated
     @Selector("sources")
     public native NSArray<? extends HKSource> sources();
 
-    /**
-     * startDate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HealthKit/Reference/HKStatistics_Class/index.html#//apple_ref/occ/instp/HKStatistics/startDate">iOS Dev Center</a>
-     */
     @Generated
     @Selector("startDate")
     public native NSDate startDate();
 
-    /**
-     * sumQuantity</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HealthKit/Reference/HKStatistics_Class/index.html#//apple_ref/occ/instm/HKStatistics/sumQuantity">iOS Dev Center</a>
-     */
     @Generated
     @Selector("sumQuantity")
     public native HKQuantity sumQuantity();
 
-    /**
-     * sumQuantityForSource:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HealthKit/Reference/HKStatistics_Class/index.html#//apple_ref/occ/instm/HKStatistics/sumQuantityForSource:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("sumQuantityForSource:")
     public native HKQuantity sumQuantityForSource(HKSource source);

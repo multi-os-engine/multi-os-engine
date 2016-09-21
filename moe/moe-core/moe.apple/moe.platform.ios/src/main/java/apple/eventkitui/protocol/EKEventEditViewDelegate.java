@@ -32,18 +32,10 @@ import org.moe.natj.objc.ann.Selector;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("EKEventEditViewDelegate")
 public interface EKEventEditViewDelegate {
-    /**
-     * eventEditViewController:didCompleteWithAction:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/EventKitUI/Reference/EKEventEditViewDelegateRef/index.html#//apple_ref/occ/intfm/EKEventEditViewDelegate/eventEditViewController:didCompleteWithAction:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("eventEditViewController:didCompleteWithAction:")
     void eventEditViewControllerDidCompleteWithAction(EKEventEditViewController controller, @NInt long action);
 
-    /**
-     * eventEditViewControllerDefaultCalendarForNewEvents:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/EventKitUI/Reference/EKEventEditViewDelegateRef/index.html#//apple_ref/occ/intfm/EKEventEditViewDelegate/eventEditViewControllerDefaultCalendarForNewEvents:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("eventEditViewControllerDefaultCalendarForNewEvents:")

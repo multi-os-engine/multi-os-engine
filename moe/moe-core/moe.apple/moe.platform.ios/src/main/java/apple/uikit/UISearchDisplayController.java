@@ -161,19 +161,11 @@ public class UISearchDisplayController extends NSObject {
     @NInt
     public static native long version_static();
 
-    /**
-     * delegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISearchDisplayController_Class/index.html#//apple_ref/occ/instp/UISearchDisplayController/delegate">iOS Dev Center</a>
-     */
     @Generated
     @Selector("delegate")
     @MappedReturn(ObjCObjectMapper.class)
     public native UISearchDisplayDelegate delegate();
 
-    /**
-     * displaysSearchBarInNavigationBar</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISearchDisplayController_Class/index.html#//apple_ref/occ/instp/UISearchDisplayController/displaysSearchBarInNavigationBar">iOS Dev Center</a>
-     */
     @Generated
     @Selector("displaysSearchBarInNavigationBar")
     public native boolean displaysSearchBarInNavigationBar();
@@ -182,109 +174,57 @@ public class UISearchDisplayController extends NSObject {
     @Selector("init")
     public native UISearchDisplayController init();
 
-    /**
-     * initWithSearchBar:contentsController:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISearchDisplayController_Class/index.html#//apple_ref/occ/instm/UISearchDisplayController/initWithSearchBar:contentsController:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithSearchBar:contentsController:")
     public native UISearchDisplayController initWithSearchBarContentsController(UISearchBar searchBar,
             UIViewController viewController);
 
-    /**
-     * active</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISearchDisplayController_Class/index.html#//apple_ref/occ/instp/UISearchDisplayController/active">iOS Dev Center</a>
-     */
     @Generated
     @Selector("isActive")
     public native boolean isActive();
 
-    /**
-     * active</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISearchDisplayController_Class/index.html#//apple_ref/occ/instp/UISearchDisplayController/active">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setActive:")
     public native void setActive(boolean value);
 
-    /**
-     * navigationItem</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISearchDisplayController_Class/index.html#//apple_ref/occ/instp/UISearchDisplayController/navigationItem">iOS Dev Center</a>
-     */
     @Generated
     @Selector("navigationItem")
     public native UINavigationItem navigationItem();
 
-    /**
-     * searchBar</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISearchDisplayController_Class/index.html#//apple_ref/occ/instp/UISearchDisplayController/searchBar">iOS Dev Center</a>
-     */
     @Generated
     @Selector("searchBar")
     public native UISearchBar searchBar();
 
-    /**
-     * searchContentsController</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISearchDisplayController_Class/index.html#//apple_ref/occ/instp/UISearchDisplayController/searchContentsController">iOS Dev Center</a>
-     */
     @Generated
     @Selector("searchContentsController")
     public native UIViewController searchContentsController();
 
-    /**
-     * searchResultsDataSource</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISearchDisplayController_Class/index.html#//apple_ref/occ/instp/UISearchDisplayController/searchResultsDataSource">iOS Dev Center</a>
-     */
     @Generated
     @Selector("searchResultsDataSource")
     @MappedReturn(ObjCObjectMapper.class)
     public native UITableViewDataSource searchResultsDataSource();
 
-    /**
-     * searchResultsDelegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISearchDisplayController_Class/index.html#//apple_ref/occ/instp/UISearchDisplayController/searchResultsDelegate">iOS Dev Center</a>
-     */
     @Generated
     @Selector("searchResultsDelegate")
     @MappedReturn(ObjCObjectMapper.class)
     public native UITableViewDelegate searchResultsDelegate();
 
-    /**
-     * searchResultsTableView</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISearchDisplayController_Class/index.html#//apple_ref/occ/instp/UISearchDisplayController/searchResultsTableView">iOS Dev Center</a>
-     */
     @Generated
     @Selector("searchResultsTableView")
     public native UITableView searchResultsTableView();
 
-    /**
-     * searchResultsTitle</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISearchDisplayController_Class/index.html#//apple_ref/occ/instp/UISearchDisplayController/searchResultsTitle">iOS Dev Center</a>
-     */
     @Generated
     @Selector("searchResultsTitle")
     public native String searchResultsTitle();
 
-    /**
-     * setActive:animated:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISearchDisplayController_Class/index.html#//apple_ref/occ/instm/UISearchDisplayController/setActive:animated:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setActive:animated:")
     public native void setActiveAnimated(boolean visible, boolean animated);
 
-    /**
-     * delegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISearchDisplayController_Class/index.html#//apple_ref/occ/instp/UISearchDisplayController/delegate">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setDelegate:")
     public native void setDelegate_unsafe(@Mapped(ObjCObjectMapper.class) UISearchDisplayDelegate value);
 
-    /**
-     * delegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISearchDisplayController_Class/index.html#//apple_ref/occ/instp/UISearchDisplayController/delegate">iOS Dev Center</a>
-     */
     @Generated
     public void setDelegate(@Mapped(ObjCObjectMapper.class) UISearchDisplayDelegate value) {
         Object __old = delegate();
@@ -297,26 +237,14 @@ public class UISearchDisplayController extends NSObject {
         }
     }
 
-    /**
-     * displaysSearchBarInNavigationBar</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISearchDisplayController_Class/index.html#//apple_ref/occ/instp/UISearchDisplayController/displaysSearchBarInNavigationBar">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setDisplaysSearchBarInNavigationBar:")
     public native void setDisplaysSearchBarInNavigationBar(boolean value);
 
-    /**
-     * searchResultsDataSource</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISearchDisplayController_Class/index.html#//apple_ref/occ/instp/UISearchDisplayController/searchResultsDataSource">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setSearchResultsDataSource:")
     public native void setSearchResultsDataSource_unsafe(@Mapped(ObjCObjectMapper.class) UITableViewDataSource value);
 
-    /**
-     * searchResultsDataSource</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISearchDisplayController_Class/index.html#//apple_ref/occ/instp/UISearchDisplayController/searchResultsDataSource">iOS Dev Center</a>
-     */
     @Generated
     public void setSearchResultsDataSource(@Mapped(ObjCObjectMapper.class) UITableViewDataSource value) {
         Object __old = searchResultsDataSource();
@@ -329,18 +257,10 @@ public class UISearchDisplayController extends NSObject {
         }
     }
 
-    /**
-     * searchResultsDelegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISearchDisplayController_Class/index.html#//apple_ref/occ/instp/UISearchDisplayController/searchResultsDelegate">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setSearchResultsDelegate:")
     public native void setSearchResultsDelegate_unsafe(@Mapped(ObjCObjectMapper.class) UITableViewDelegate value);
 
-    /**
-     * searchResultsDelegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISearchDisplayController_Class/index.html#//apple_ref/occ/instp/UISearchDisplayController/searchResultsDelegate">iOS Dev Center</a>
-     */
     @Generated
     public void setSearchResultsDelegate(@Mapped(ObjCObjectMapper.class) UITableViewDelegate value) {
         Object __old = searchResultsDelegate();
@@ -353,10 +273,6 @@ public class UISearchDisplayController extends NSObject {
         }
     }
 
-    /**
-     * searchResultsTitle</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISearchDisplayController_Class/index.html#//apple_ref/occ/instp/UISearchDisplayController/searchResultsTitle">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setSearchResultsTitle:")
     public native void setSearchResultsTitle(String value);

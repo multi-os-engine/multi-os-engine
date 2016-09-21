@@ -160,10 +160,6 @@ public class UIPercentDrivenInteractiveTransition extends NSObject implements UI
     @NInt
     public static native long version_static();
 
-    /**
-     * cancelInteractiveTransition</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPercentDrivenInteractiveTransition_class/index.html#//apple_ref/occ/instm/UIPercentDrivenInteractiveTransition/cancelInteractiveTransition">iOS Dev Center</a>
-     */
     @Generated
     @Selector("cancelInteractiveTransition")
     public native void cancelInteractiveTransition();
@@ -178,19 +174,11 @@ public class UIPercentDrivenInteractiveTransition extends NSObject implements UI
     @NFloat
     public native double completionSpeed();
 
-    /**
-     * duration</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPercentDrivenInteractiveTransition_class/index.html#//apple_ref/occ/instp/UIPercentDrivenInteractiveTransition/duration">iOS Dev Center</a>
-     */
     @Generated
     @Selector("duration")
     @NFloat
     public native double duration();
 
-    /**
-     * finishInteractiveTransition</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPercentDrivenInteractiveTransition_class/index.html#//apple_ref/occ/instm/UIPercentDrivenInteractiveTransition/finishInteractiveTransition">iOS Dev Center</a>
-     */
     @Generated
     @Selector("finishInteractiveTransition")
     public native void finishInteractiveTransition();
@@ -199,27 +187,15 @@ public class UIPercentDrivenInteractiveTransition extends NSObject implements UI
     @Selector("init")
     public native UIPercentDrivenInteractiveTransition init();
 
-    /**
-     * percentComplete</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPercentDrivenInteractiveTransition_class/index.html#//apple_ref/occ/instp/UIPercentDrivenInteractiveTransition/percentComplete">iOS Dev Center</a>
-     */
     @Generated
     @Selector("percentComplete")
     @NFloat
     public native double percentComplete();
 
-    /**
-     * completionCurve</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPercentDrivenInteractiveTransition_class/index.html#//apple_ref/occ/instp/UIPercentDrivenInteractiveTransition/completionCurve">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setCompletionCurve:")
     public native void setCompletionCurve(@NInt long value);
 
-    /**
-     * completionSpeed</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPercentDrivenInteractiveTransition_class/index.html#//apple_ref/occ/instp/UIPercentDrivenInteractiveTransition/completionSpeed">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setCompletionSpeed:")
     public native void setCompletionSpeed(@NFloat double value);
@@ -228,10 +204,6 @@ public class UIPercentDrivenInteractiveTransition extends NSObject implements UI
     @Selector("startInteractiveTransition:")
     public native void startInteractiveTransition(@Mapped(ObjCObjectMapper.class) Object transitionContext);
 
-    /**
-     * updateInteractiveTransition:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPercentDrivenInteractiveTransition_class/index.html#//apple_ref/occ/instm/UIPercentDrivenInteractiveTransition/updateInteractiveTransition:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("updateInteractiveTransition:")
     public native void updateInteractiveTransition(@NFloat double percentComplete);

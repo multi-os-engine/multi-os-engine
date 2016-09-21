@@ -166,26 +166,14 @@ public class TWRequest extends NSObject {
     @NInt
     public static native long version_static();
 
-    /**
-     * URL</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Twitter/Reference/TWRequestClassRef/index.html#//apple_ref/occ/instp/TWRequest/URL">iOS Dev Center</a>
-     */
     @Generated
     @Selector("URL")
     public native NSURL URL();
 
-    /**
-     * account</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Twitter/Reference/TWRequestClassRef/index.html#//apple_ref/occ/instp/TWRequest/account">iOS Dev Center</a>
-     */
     @Generated
     @Selector("account")
     public native ACAccount account();
 
-    /**
-     * addMultiPartData:withName:type:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Twitter/Reference/TWRequestClassRef/index.html#//apple_ref/occ/instm/TWRequest/addMultiPartData:withName:type:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("addMultiPartData:withName:type:")
     public native void addMultiPartDataWithNameType(NSData data, String name, String type);
@@ -194,53 +182,29 @@ public class TWRequest extends NSObject {
     @Selector("init")
     public native TWRequest init();
 
-    /**
-     * initWithURL:parameters:requestMethod:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Twitter/Reference/TWRequestClassRef/index.html#//apple_ref/occ/instm/TWRequest/initWithURL:parameters:requestMethod:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithURL:parameters:requestMethod:")
     public native TWRequest initWithURLParametersRequestMethod(NSURL url, NSDictionary<?, ?> parameters,
             @NInt long requestMethod);
 
-    /**
-     * parameters</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Twitter/Reference/TWRequestClassRef/index.html#//apple_ref/occ/instp/TWRequest/parameters">iOS Dev Center</a>
-     */
     @Generated
     @Selector("parameters")
     public native NSDictionary<?, ?> parameters();
 
-    /**
-     * performRequestWithHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Twitter/Reference/TWRequestClassRef/index.html#//apple_ref/occ/instm/TWRequest/performRequestWithHandler:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("performRequestWithHandler:")
     public native void performRequestWithHandler(
             @ObjCBlock(name = "call_performRequestWithHandler") Block_performRequestWithHandler handler);
 
-    /**
-     * requestMethod</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Twitter/Reference/TWRequestClassRef/index.html#//apple_ref/occ/instp/TWRequest/requestMethod">iOS Dev Center</a>
-     */
     @Generated
     @Selector("requestMethod")
     @NInt
     public native long requestMethod();
 
-    /**
-     * account</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Twitter/Reference/TWRequestClassRef/index.html#//apple_ref/occ/instp/TWRequest/account">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setAccount:")
     public native void setAccount(ACAccount value);
 
-    /**
-     * signedURLRequest</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Twitter/Reference/TWRequestClassRef/index.html#//apple_ref/occ/instm/TWRequest/signedURLRequest">iOS Dev Center</a>
-     */
     @Generated
     @Selector("signedURLRequest")
     public native NSURLRequest signedURLRequest();

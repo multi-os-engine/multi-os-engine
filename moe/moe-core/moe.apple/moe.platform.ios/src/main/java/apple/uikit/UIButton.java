@@ -70,10 +70,6 @@ public class UIButton extends UIControl implements NSCoding {
     @Selector("alloc")
     public static native UIButton alloc();
 
-    /**
-     * buttonWithType:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIButton_Class/index.html#//apple_ref/occ/clm/UIButton/buttonWithType:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("buttonWithType:")
     public static native UIButton buttonWithType(@NInt long buttonType);
@@ -359,118 +355,62 @@ public class UIButton extends UIControl implements NSCoding {
     @NInt
     public static native long version_static();
 
-    /**
-     * adjustsImageWhenDisabled</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIButton_Class/index.html#//apple_ref/occ/instp/UIButton/adjustsImageWhenDisabled">iOS Dev Center</a>
-     */
     @Generated
     @Selector("adjustsImageWhenDisabled")
     public native boolean adjustsImageWhenDisabled();
 
-    /**
-     * adjustsImageWhenHighlighted</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIButton_Class/index.html#//apple_ref/occ/instp/UIButton/adjustsImageWhenHighlighted">iOS Dev Center</a>
-     */
     @Generated
     @Selector("adjustsImageWhenHighlighted")
     public native boolean adjustsImageWhenHighlighted();
 
-    /**
-     * attributedTitleForState:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIButton_Class/index.html#//apple_ref/occ/instm/UIButton/attributedTitleForState:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("attributedTitleForState:")
     public native NSAttributedString attributedTitleForState(@NUInt long state);
 
-    /**
-     * backgroundImageForState:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIButton_Class/index.html#//apple_ref/occ/instm/UIButton/backgroundImageForState:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("backgroundImageForState:")
     public native UIImage backgroundImageForState(@NUInt long state);
 
-    /**
-     * backgroundRectForBounds:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIButton_Class/index.html#//apple_ref/occ/instm/UIButton/backgroundRectForBounds:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("backgroundRectForBounds:")
     @ByValue
     public native CGRect backgroundRectForBounds(@ByValue CGRect bounds);
 
-    /**
-     * buttonType</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIButton_Class/index.html#//apple_ref/occ/instp/UIButton/buttonType">iOS Dev Center</a>
-     */
     @Generated
     @Selector("buttonType")
     @NInt
     public native long buttonType();
 
-    /**
-     * contentEdgeInsets</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIButton_Class/index.html#//apple_ref/occ/instp/UIButton/contentEdgeInsets">iOS Dev Center</a>
-     */
     @Generated
     @Selector("contentEdgeInsets")
     @ByValue
     public native UIEdgeInsets contentEdgeInsets();
 
-    /**
-     * contentRectForBounds:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIButton_Class/index.html#//apple_ref/occ/instm/UIButton/contentRectForBounds:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("contentRectForBounds:")
     @ByValue
     public native CGRect contentRectForBounds(@ByValue CGRect bounds);
 
-    /**
-     * currentAttributedTitle</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIButton_Class/index.html#//apple_ref/occ/instp/UIButton/currentAttributedTitle">iOS Dev Center</a>
-     */
     @Generated
     @Selector("currentAttributedTitle")
     public native NSAttributedString currentAttributedTitle();
 
-    /**
-     * currentBackgroundImage</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIButton_Class/index.html#//apple_ref/occ/instp/UIButton/currentBackgroundImage">iOS Dev Center</a>
-     */
     @Generated
     @Selector("currentBackgroundImage")
     public native UIImage currentBackgroundImage();
 
-    /**
-     * currentImage</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIButton_Class/index.html#//apple_ref/occ/instp/UIButton/currentImage">iOS Dev Center</a>
-     */
     @Generated
     @Selector("currentImage")
     public native UIImage currentImage();
 
-    /**
-     * currentTitle</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIButton_Class/index.html#//apple_ref/occ/instp/UIButton/currentTitle">iOS Dev Center</a>
-     */
     @Generated
     @Selector("currentTitle")
     public native String currentTitle();
 
-    /**
-     * currentTitleColor</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIButton_Class/index.html#//apple_ref/occ/instp/UIButton/currentTitleColor">iOS Dev Center</a>
-     */
     @Generated
     @Selector("currentTitleColor")
     public native UIColor currentTitleColor();
 
-    /**
-     * currentTitleShadowColor</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIButton_Class/index.html#//apple_ref/occ/instp/UIButton/currentTitleShadowColor">iOS Dev Center</a>
-     */
     @Generated
     @Selector("currentTitleShadowColor")
     public native UIColor currentTitleShadowColor();
@@ -479,45 +419,25 @@ public class UIButton extends UIControl implements NSCoding {
     @Selector("encodeWithCoder:")
     public native void encodeWithCoder(NSCoder aCoder);
 
-    /**
-     * font</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIButton_Class/index.html#//apple_ref/occ/instp/UIButton/font">iOS Dev Center</a>
-     */
     @Generated
     @Deprecated
     @Selector("font")
     public native UIFont font();
 
-    /**
-     * imageEdgeInsets</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIButton_Class/index.html#//apple_ref/occ/instp/UIButton/imageEdgeInsets">iOS Dev Center</a>
-     */
     @Generated
     @Selector("imageEdgeInsets")
     @ByValue
     public native UIEdgeInsets imageEdgeInsets();
 
-    /**
-     * imageForState:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIButton_Class/index.html#//apple_ref/occ/instm/UIButton/imageForState:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("imageForState:")
     public native UIImage imageForState(@NUInt long state);
 
-    /**
-     * imageRectForContentRect:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIButton_Class/index.html#//apple_ref/occ/instm/UIButton/imageRectForContentRect:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("imageRectForContentRect:")
     @ByValue
     public native CGRect imageRectForContentRect(@ByValue CGRect contentRect);
 
-    /**
-     * imageView</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIButton_Class/index.html#//apple_ref/occ/instp/UIButton/imageView">iOS Dev Center</a>
-     */
     @Generated
     @Selector("imageView")
     public native UIImageView imageView();
@@ -534,233 +454,121 @@ public class UIButton extends UIControl implements NSCoding {
     @Selector("initWithFrame:")
     public native UIButton initWithFrame(@ByValue CGRect frame);
 
-    /**
-     * lineBreakMode</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIButton_Class/index.html#//apple_ref/occ/instp/UIButton/lineBreakMode">iOS Dev Center</a>
-     */
     @Generated
     @Deprecated
     @Selector("lineBreakMode")
     @NInt
     public native long lineBreakMode();
 
-    /**
-     * reversesTitleShadowWhenHighlighted</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIButton_Class/index.html#//apple_ref/occ/instp/UIButton/reversesTitleShadowWhenHighlighted">iOS Dev Center</a>
-     */
     @Generated
     @Selector("reversesTitleShadowWhenHighlighted")
     public native boolean reversesTitleShadowWhenHighlighted();
 
-    /**
-     * adjustsImageWhenDisabled</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIButton_Class/index.html#//apple_ref/occ/instp/UIButton/adjustsImageWhenDisabled">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setAdjustsImageWhenDisabled:")
     public native void setAdjustsImageWhenDisabled(boolean value);
 
-    /**
-     * adjustsImageWhenHighlighted</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIButton_Class/index.html#//apple_ref/occ/instp/UIButton/adjustsImageWhenHighlighted">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setAdjustsImageWhenHighlighted:")
     public native void setAdjustsImageWhenHighlighted(boolean value);
 
-    /**
-     * setAttributedTitle:forState:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIButton_Class/index.html#//apple_ref/occ/instm/UIButton/setAttributedTitle:forState:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setAttributedTitle:forState:")
     public native void setAttributedTitleForState(NSAttributedString title, @NUInt long state);
 
-    /**
-     * setBackgroundImage:forState:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIButton_Class/index.html#//apple_ref/occ/instm/UIButton/setBackgroundImage:forState:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setBackgroundImage:forState:")
     public native void setBackgroundImageForState(UIImage image, @NUInt long state);
 
-    /**
-     * contentEdgeInsets</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIButton_Class/index.html#//apple_ref/occ/instp/UIButton/contentEdgeInsets">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setContentEdgeInsets:")
     public native void setContentEdgeInsets(@ByValue UIEdgeInsets value);
 
-    /**
-     * font</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIButton_Class/index.html#//apple_ref/occ/instp/UIButton/font">iOS Dev Center</a>
-     */
     @Generated
     @Deprecated
     @Selector("setFont:")
     public native void setFont(UIFont value);
 
-    /**
-     * setImage:forState:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIButton_Class/index.html#//apple_ref/occ/instm/UIButton/setImage:forState:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setImage:forState:")
     public native void setImageForState(UIImage image, @NUInt long state);
 
-    /**
-     * imageEdgeInsets</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIButton_Class/index.html#//apple_ref/occ/instp/UIButton/imageEdgeInsets">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setImageEdgeInsets:")
     public native void setImageEdgeInsets(@ByValue UIEdgeInsets value);
 
-    /**
-     * lineBreakMode</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIButton_Class/index.html#//apple_ref/occ/instp/UIButton/lineBreakMode">iOS Dev Center</a>
-     */
     @Generated
     @Deprecated
     @Selector("setLineBreakMode:")
     public native void setLineBreakMode(@NInt long value);
 
-    /**
-     * reversesTitleShadowWhenHighlighted</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIButton_Class/index.html#//apple_ref/occ/instp/UIButton/reversesTitleShadowWhenHighlighted">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setReversesTitleShadowWhenHighlighted:")
     public native void setReversesTitleShadowWhenHighlighted(boolean value);
 
-    /**
-     * showsTouchWhenHighlighted</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIButton_Class/index.html#//apple_ref/occ/instp/UIButton/showsTouchWhenHighlighted">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setShowsTouchWhenHighlighted:")
     public native void setShowsTouchWhenHighlighted(boolean value);
 
-    /**
-     * tintColor</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIButton_Class/index.html#//apple_ref/occ/instp/UIButton/tintColor">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setTintColor:")
     public native void setTintColor(UIColor value);
 
-    /**
-     * setTitle:forState:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIButton_Class/index.html#//apple_ref/occ/instm/UIButton/setTitle:forState:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setTitle:forState:")
     public native void setTitleForState(String title, @NUInt long state);
 
-    /**
-     * setTitleColor:forState:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIButton_Class/index.html#//apple_ref/occ/instm/UIButton/setTitleColor:forState:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setTitleColor:forState:")
     public native void setTitleColorForState(UIColor color, @NUInt long state);
 
-    /**
-     * titleEdgeInsets</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIButton_Class/index.html#//apple_ref/occ/instp/UIButton/titleEdgeInsets">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setTitleEdgeInsets:")
     public native void setTitleEdgeInsets(@ByValue UIEdgeInsets value);
 
-    /**
-     * setTitleShadowColor:forState:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIButton_Class/index.html#//apple_ref/occ/instm/UIButton/setTitleShadowColor:forState:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setTitleShadowColor:forState:")
     public native void setTitleShadowColorForState(UIColor color, @NUInt long state);
 
-    /**
-     * titleShadowOffset</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIButton_Class/index.html#//apple_ref/occ/instp/UIButton/titleShadowOffset">iOS Dev Center</a>
-     */
     @Generated
     @Deprecated
     @Selector("setTitleShadowOffset:")
     public native void setTitleShadowOffset(@ByValue CGSize value);
 
-    /**
-     * showsTouchWhenHighlighted</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIButton_Class/index.html#//apple_ref/occ/instp/UIButton/showsTouchWhenHighlighted">iOS Dev Center</a>
-     */
     @Generated
     @Selector("showsTouchWhenHighlighted")
     public native boolean showsTouchWhenHighlighted();
 
-    /**
-     * tintColor</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIButton_Class/index.html#//apple_ref/occ/instp/UIButton/tintColor">iOS Dev Center</a>
-     */
     @Generated
     @Selector("tintColor")
     public native UIColor tintColor();
 
-    /**
-     * titleColorForState:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIButton_Class/index.html#//apple_ref/occ/instm/UIButton/titleColorForState:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("titleColorForState:")
     public native UIColor titleColorForState(@NUInt long state);
 
-    /**
-     * titleEdgeInsets</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIButton_Class/index.html#//apple_ref/occ/instp/UIButton/titleEdgeInsets">iOS Dev Center</a>
-     */
     @Generated
     @Selector("titleEdgeInsets")
     @ByValue
     public native UIEdgeInsets titleEdgeInsets();
 
-    /**
-     * titleForState:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIButton_Class/index.html#//apple_ref/occ/instm/UIButton/titleForState:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("titleForState:")
     public native String titleForState(@NUInt long state);
 
-    /**
-     * titleLabel</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIButton_Class/index.html#//apple_ref/occ/instp/UIButton/titleLabel">iOS Dev Center</a>
-     */
     @Generated
     @Selector("titleLabel")
     public native UILabel titleLabel();
 
-    /**
-     * titleRectForContentRect:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIButton_Class/index.html#//apple_ref/occ/instm/UIButton/titleRectForContentRect:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("titleRectForContentRect:")
     @ByValue
     public native CGRect titleRectForContentRect(@ByValue CGRect contentRect);
 
-    /**
-     * titleShadowColorForState:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIButton_Class/index.html#//apple_ref/occ/instm/UIButton/titleShadowColorForState:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("titleShadowColorForState:")
     public native UIColor titleShadowColorForState(@NUInt long state);
 
-    /**
-     * titleShadowOffset</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIButton_Class/index.html#//apple_ref/occ/instp/UIButton/titleShadowOffset">iOS Dev Center</a>
-     */
     @Generated
     @Deprecated
     @Selector("titleShadowOffset")

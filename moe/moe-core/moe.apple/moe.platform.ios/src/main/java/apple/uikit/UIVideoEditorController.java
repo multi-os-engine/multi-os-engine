@@ -60,10 +60,6 @@ public class UIVideoEditorController extends UINavigationController {
     @Selector("alloc")
     public static native UIVideoEditorController alloc();
 
-    /**
-     * canEditVideoAtPath:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIVideoEditorController_ClassReference/index.html#//apple_ref/occ/clm/UIVideoEditorController/canEditVideoAtPath:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("canEditVideoAtPath:")
     public static native boolean canEditVideoAtPath(String videoPath);
@@ -180,10 +176,6 @@ public class UIVideoEditorController extends UINavigationController {
     @NInt
     public static native long version_static();
 
-    /**
-     * delegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIVideoEditorController_ClassReference/index.html#//apple_ref/occ/instp/UIVideoEditorController/delegate">iOS Dev Center</a>
-     */
     @Generated
     @Selector("delegate")
     @MappedReturn(ObjCObjectMapper.class)
@@ -206,18 +198,10 @@ public class UIVideoEditorController extends UINavigationController {
     @Selector("initWithRootViewController:")
     public native UIVideoEditorController initWithRootViewController(UIViewController rootViewController);
 
-    /**
-     * delegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIVideoEditorController_ClassReference/index.html#//apple_ref/occ/instp/UIVideoEditorController/delegate">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setDelegate:")
     public native void setDelegate_unsafe(@Mapped(ObjCObjectMapper.class) Object value);
 
-    /**
-     * delegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIVideoEditorController_ClassReference/index.html#//apple_ref/occ/instp/UIVideoEditorController/delegate">iOS Dev Center</a>
-     */
     @Generated
     public void setDelegate(@Mapped(ObjCObjectMapper.class) Object value) {
         Object __old = delegate();
@@ -230,50 +214,26 @@ public class UIVideoEditorController extends UINavigationController {
         }
     }
 
-    /**
-     * videoMaximumDuration</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIVideoEditorController_ClassReference/index.html#//apple_ref/occ/instp/UIVideoEditorController/videoMaximumDuration">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setVideoMaximumDuration:")
     public native void setVideoMaximumDuration(double value);
 
-    /**
-     * videoPath</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIVideoEditorController_ClassReference/index.html#//apple_ref/occ/instp/UIVideoEditorController/videoPath">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setVideoPath:")
     public native void setVideoPath(String value);
 
-    /**
-     * videoQuality</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIVideoEditorController_ClassReference/index.html#//apple_ref/occ/instp/UIVideoEditorController/videoQuality">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setVideoQuality:")
     public native void setVideoQuality(@NInt long value);
 
-    /**
-     * videoMaximumDuration</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIVideoEditorController_ClassReference/index.html#//apple_ref/occ/instp/UIVideoEditorController/videoMaximumDuration">iOS Dev Center</a>
-     */
     @Generated
     @Selector("videoMaximumDuration")
     public native double videoMaximumDuration();
 
-    /**
-     * videoPath</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIVideoEditorController_ClassReference/index.html#//apple_ref/occ/instp/UIVideoEditorController/videoPath">iOS Dev Center</a>
-     */
     @Generated
     @Selector("videoPath")
     public native String videoPath();
 
-    /**
-     * videoQuality</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIVideoEditorController_ClassReference/index.html#//apple_ref/occ/instp/UIVideoEditorController/videoQuality">iOS Dev Center</a>
-     */
     @Generated
     @Selector("videoQuality")
     @NInt

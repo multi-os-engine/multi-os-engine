@@ -167,10 +167,6 @@ public class UIUserNotificationCategory extends NSObject implements NSCopying, N
     @NInt
     public static native long version_static();
 
-    /**
-     * actionsForContext:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIUserNotificationCategory_class/index.html#//apple_ref/occ/instm/UIUserNotificationCategory/actionsForContext:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("actionsForContext:")
     public native NSArray<? extends UIUserNotificationAction> actionsForContext(@NUInt long context);
@@ -185,10 +181,6 @@ public class UIUserNotificationCategory extends NSObject implements NSCopying, N
     @Selector("encodeWithCoder:")
     public native void encodeWithCoder(NSCoder aCoder);
 
-    /**
-     * identifier</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIUserNotificationCategory_class/index.html#//apple_ref/occ/instp/UIUserNotificationCategory/identifier">iOS Dev Center</a>
-     */
     @Generated
     @Selector("identifier")
     public native String identifier();

@@ -30,10 +30,6 @@ import org.moe.natj.objc.ann.Selector;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("GLKViewControllerDelegate")
 public interface GLKViewControllerDelegate {
-    /**
-     * glkViewController:willPause:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GLkit/Reference/GLKViewControllerDelegate_ProtocolRef/index.html#//apple_ref/occ/intfm/GLKViewControllerDelegate/glkViewController:willPause:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("glkViewController:willPause:")
@@ -41,10 +37,6 @@ public interface GLKViewControllerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * glkViewControllerUpdate:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GLkit/Reference/GLKViewControllerDelegate_ProtocolRef/index.html#//apple_ref/occ/intfm/GLKViewControllerDelegate/glkViewControllerUpdate:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("glkViewControllerUpdate:")
     void glkViewControllerUpdate(GLKViewController controller);

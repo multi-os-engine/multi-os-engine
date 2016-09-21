@@ -164,19 +164,11 @@ public class MPSImageHistogram extends MPSKernel {
     @NInt
     public static native long version_static();
 
-    /**
-     * clipRectSource</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MetalPerformanceShaders/Reference/MPSImageHistogram_ClassReference/index.html#//apple_ref/occ/instp/MPSImageHistogram/clipRectSource">iOS Dev Center</a>
-     */
     @Generated
     @Selector("clipRectSource")
     @ByValue
     public native MTLRegion clipRectSource();
 
-    /**
-     * encodeToCommandBuffer:sourceTexture:histogram:histogramOffset:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MetalPerformanceShaders/Reference/MPSImageHistogram_ClassReference/index.html#//apple_ref/occ/instm/MPSImageHistogram/encodeToCommandBuffer:sourceTexture:histogram:histogramOffset:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("encodeToCommandBuffer:sourceTexture:histogram:histogramOffset:")
     public native void encodeToCommandBufferSourceTextureHistogramHistogramOffset(
@@ -184,10 +176,6 @@ public class MPSImageHistogram extends MPSKernel {
             @Mapped(ObjCObjectMapper.class) MTLTexture source, @Mapped(ObjCObjectMapper.class) MTLBuffer histogram,
             @NUInt long histogramOffset);
 
-    /**
-     * histogramSizeForSourceFormat:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MetalPerformanceShaders/Reference/MPSImageHistogram_ClassReference/index.html#//apple_ref/occ/instm/MPSImageHistogram/histogramSizeForSourceFormat:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("histogramSizeForSourceFormat:")
     @NUInt
@@ -201,35 +189,19 @@ public class MPSImageHistogram extends MPSKernel {
     @Selector("initWithDevice:")
     public native MPSImageHistogram initWithDevice(@Mapped(ObjCObjectMapper.class) MTLDevice device);
 
-    /**
-     * initWithDevice:histogramInfo:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MetalPerformanceShaders/Reference/MPSImageHistogram_ClassReference/index.html#//apple_ref/occ/instm/MPSImageHistogram/initWithDevice:histogramInfo:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithDevice:histogramInfo:")
     public native MPSImageHistogram initWithDeviceHistogramInfo(@Mapped(ObjCObjectMapper.class) MTLDevice device,
             VoidPtr histogramInfo);
 
-    /**
-     * clipRectSource</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MetalPerformanceShaders/Reference/MPSImageHistogram_ClassReference/index.html#//apple_ref/occ/instp/MPSImageHistogram/clipRectSource">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setClipRectSource:")
     public native void setClipRectSource(@ByValue MTLRegion value);
 
-    /**
-     * zeroHistogram</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MetalPerformanceShaders/Reference/MPSImageHistogram_ClassReference/index.html#//apple_ref/occ/instp/MPSImageHistogram/zeroHistogram">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setZeroHistogram:")
     public native void setZeroHistogram(boolean value);
 
-    /**
-     * zeroHistogram</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MetalPerformanceShaders/Reference/MPSImageHistogram_ClassReference/index.html#//apple_ref/occ/instp/MPSImageHistogram/zeroHistogram">iOS Dev Center</a>
-     */
     @Generated
     @Selector("zeroHistogram")
     public native boolean zeroHistogram();

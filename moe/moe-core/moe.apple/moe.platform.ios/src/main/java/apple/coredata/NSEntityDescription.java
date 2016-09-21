@@ -66,19 +66,11 @@ public class NSEntityDescription extends NSObject implements NSCoding, NSCopying
     @Selector("alloc")
     public static native NSEntityDescription alloc();
 
-    /**
-     * entityForName:inManagedObjectContext:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/CoreDataFramework/Classes/NSEntityDescription_Class/index.html#//apple_ref/occ/clm/NSEntityDescription/entityForName:inManagedObjectContext:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("entityForName:inManagedObjectContext:")
     public static native NSEntityDescription entityForNameInManagedObjectContext(String entityName,
             NSManagedObjectContext context);
 
-    /**
-     * insertNewObjectForEntityForName:inManagedObjectContext:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/CoreDataFramework/Classes/NSEntityDescription_Class/index.html#//apple_ref/occ/clm/NSEntityDescription/insertNewObjectForEntityForName:inManagedObjectContext:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("insertNewObjectForEntityForName:inManagedObjectContext:")
     public static native NSManagedObject insertNewObjectForEntityForNameInManagedObjectContext(String entityName,
@@ -184,18 +176,10 @@ public class NSEntityDescription extends NSObject implements NSCoding, NSCopying
     @NInt
     public static native long version_static();
 
-    /**
-     * attributesByName</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/CoreDataFramework/Classes/NSEntityDescription_Class/index.html#//apple_ref/occ/instp/NSEntityDescription/attributesByName">iOS Dev Center</a>
-     */
     @Generated
     @Selector("attributesByName")
     public native NSDictionary<String, ? extends NSAttributeDescription> attributesByName();
 
-    /**
-     * compoundIndexes</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/CoreDataFramework/Classes/NSEntityDescription_Class/index.html#//apple_ref/occ/instp/NSEntityDescription/compoundIndexes">iOS Dev Center</a>
-     */
     @Generated
     @Selector("compoundIndexes")
     public native NSArray<? extends NSArray<?>> compoundIndexes();
@@ -223,203 +207,103 @@ public class NSEntityDescription extends NSObject implements NSCoding, NSCopying
     @Selector("initWithCoder:")
     public native NSEntityDescription initWithCoder(NSCoder aDecoder);
 
-    /**
-     * abstract</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/CoreDataFramework/Classes/NSEntityDescription_Class/index.html#//apple_ref/occ/instp/NSEntityDescription/abstract">iOS Dev Center</a>
-     */
     @Generated
     @Selector("isAbstract")
     public native boolean isAbstract();
 
-    /**
-     * abstract</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/CoreDataFramework/Classes/NSEntityDescription_Class/index.html#//apple_ref/occ/instp/NSEntityDescription/abstract">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setAbstract:")
     public native void setAbstract(boolean value);
 
-    /**
-     * isKindOfEntity:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/CoreDataFramework/Classes/NSEntityDescription_Class/index.html#//apple_ref/occ/instm/NSEntityDescription/isKindOfEntity:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("isKindOfEntity:")
     public native boolean isKindOfEntity(NSEntityDescription entity);
 
-    /**
-     * managedObjectClassName</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/CoreDataFramework/Classes/NSEntityDescription_Class/index.html#//apple_ref/occ/instp/NSEntityDescription/managedObjectClassName">iOS Dev Center</a>
-     */
     @Generated
     @Selector("managedObjectClassName")
     public native String managedObjectClassName();
 
-    /**
-     * managedObjectModel</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/CoreDataFramework/Classes/NSEntityDescription_Class/index.html#//apple_ref/occ/instp/NSEntityDescription/managedObjectModel">iOS Dev Center</a>
-     */
     @Generated
     @Selector("managedObjectModel")
     public native NSManagedObjectModel managedObjectModel();
 
-    /**
-     * name</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/CoreDataFramework/Classes/NSEntityDescription_Class/index.html#//apple_ref/occ/instp/NSEntityDescription/name">iOS Dev Center</a>
-     */
     @Generated
     @Selector("name")
     public native String name();
 
-    /**
-     * properties</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/CoreDataFramework/Classes/NSEntityDescription_Class/index.html#//apple_ref/occ/instp/NSEntityDescription/properties">iOS Dev Center</a>
-     */
     @Generated
     @Selector("properties")
     public native NSArray<? extends NSPropertyDescription> properties();
 
-    /**
-     * propertiesByName</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/CoreDataFramework/Classes/NSEntityDescription_Class/index.html#//apple_ref/occ/instp/NSEntityDescription/propertiesByName">iOS Dev Center</a>
-     */
     @Generated
     @Selector("propertiesByName")
     public native NSDictionary<String, ? extends NSPropertyDescription> propertiesByName();
 
-    /**
-     * relationshipsByName</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/CoreDataFramework/Classes/NSEntityDescription_Class/index.html#//apple_ref/occ/instp/NSEntityDescription/relationshipsByName">iOS Dev Center</a>
-     */
     @Generated
     @Selector("relationshipsByName")
     public native NSDictionary<String, ? extends NSRelationshipDescription> relationshipsByName();
 
-    /**
-     * relationshipsWithDestinationEntity:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/CoreDataFramework/Classes/NSEntityDescription_Class/index.html#//apple_ref/occ/instm/NSEntityDescription/relationshipsWithDestinationEntity:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("relationshipsWithDestinationEntity:")
     public native NSArray<? extends NSRelationshipDescription> relationshipsWithDestinationEntity(
             NSEntityDescription entity);
 
-    /**
-     * renamingIdentifier</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/CoreDataFramework/Classes/NSEntityDescription_Class/index.html#//apple_ref/occ/instp/NSEntityDescription/renamingIdentifier">iOS Dev Center</a>
-     */
     @Generated
     @Selector("renamingIdentifier")
     public native String renamingIdentifier();
 
-    /**
-     * compoundIndexes</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/CoreDataFramework/Classes/NSEntityDescription_Class/index.html#//apple_ref/occ/instp/NSEntityDescription/compoundIndexes">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setCompoundIndexes:")
     public native void setCompoundIndexes(NSArray<? extends NSArray<?>> value);
 
-    /**
-     * managedObjectClassName</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/CoreDataFramework/Classes/NSEntityDescription_Class/index.html#//apple_ref/occ/instp/NSEntityDescription/managedObjectClassName">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setManagedObjectClassName:")
     public native void setManagedObjectClassName(String value);
 
-    /**
-     * name</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/CoreDataFramework/Classes/NSEntityDescription_Class/index.html#//apple_ref/occ/instp/NSEntityDescription/name">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setName:")
     public native void setName(String value);
 
-    /**
-     * properties</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/CoreDataFramework/Classes/NSEntityDescription_Class/index.html#//apple_ref/occ/instp/NSEntityDescription/properties">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setProperties:")
     public native void setProperties(NSArray<? extends NSPropertyDescription> value);
 
-    /**
-     * renamingIdentifier</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/CoreDataFramework/Classes/NSEntityDescription_Class/index.html#//apple_ref/occ/instp/NSEntityDescription/renamingIdentifier">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setRenamingIdentifier:")
     public native void setRenamingIdentifier(String value);
 
-    /**
-     * subentities</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/CoreDataFramework/Classes/NSEntityDescription_Class/index.html#//apple_ref/occ/instp/NSEntityDescription/subentities">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setSubentities:")
     public native void setSubentities(NSArray<? extends NSEntityDescription> value);
 
-    /**
-     * userInfo</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/CoreDataFramework/Classes/NSEntityDescription_Class/index.html#//apple_ref/occ/instp/NSEntityDescription/userInfo">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setUserInfo:")
     public native void setUserInfo(NSDictionary<?, ?> value);
 
-    /**
-     * versionHashModifier</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/CoreDataFramework/Classes/NSEntityDescription_Class/index.html#//apple_ref/occ/instp/NSEntityDescription/versionHashModifier">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setVersionHashModifier:")
     public native void setVersionHashModifier(String value);
 
-    /**
-     * subentities</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/CoreDataFramework/Classes/NSEntityDescription_Class/index.html#//apple_ref/occ/instp/NSEntityDescription/subentities">iOS Dev Center</a>
-     */
     @Generated
     @Selector("subentities")
     public native NSArray<? extends NSEntityDescription> subentities();
 
-    /**
-     * subentitiesByName</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/CoreDataFramework/Classes/NSEntityDescription_Class/index.html#//apple_ref/occ/instp/NSEntityDescription/subentitiesByName">iOS Dev Center</a>
-     */
     @Generated
     @Selector("subentitiesByName")
     public native NSDictionary<String, ? extends NSEntityDescription> subentitiesByName();
 
-    /**
-     * superentity</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/CoreDataFramework/Classes/NSEntityDescription_Class/index.html#//apple_ref/occ/instp/NSEntityDescription/superentity">iOS Dev Center</a>
-     */
     @Generated
     @Selector("superentity")
     public native NSEntityDescription superentity();
 
-    /**
-     * userInfo</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/CoreDataFramework/Classes/NSEntityDescription_Class/index.html#//apple_ref/occ/instp/NSEntityDescription/userInfo">iOS Dev Center</a>
-     */
     @Generated
     @Selector("userInfo")
     public native NSDictionary<?, ?> userInfo();
 
-    /**
-     * versionHash</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/CoreDataFramework/Classes/NSEntityDescription_Class/index.html#//apple_ref/occ/instp/NSEntityDescription/versionHash">iOS Dev Center</a>
-     */
     @Generated
     @Selector("versionHash")
     public native NSData versionHash();
 
-    /**
-     * versionHashModifier</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/CoreDataFramework/Classes/NSEntityDescription_Class/index.html#//apple_ref/occ/instp/NSEntityDescription/versionHashModifier">iOS Dev Center</a>
-     */
     @Generated
     @Selector("versionHashModifier")
     public native String versionHashModifier();

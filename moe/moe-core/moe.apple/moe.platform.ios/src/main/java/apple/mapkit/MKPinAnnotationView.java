@@ -70,26 +70,14 @@ public class MKPinAnnotationView extends MKAnnotationView {
     @Selector("alloc")
     public static native MKPinAnnotationView alloc();
 
-    /**
-     * greenPinColor</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKPinAnnotationView_Class/index.html#//apple_ref/occ/clm/MKPinAnnotationView/greenPinColor">iOS Dev Center</a>
-     */
     @Generated
     @Selector("greenPinColor")
     public static native UIColor greenPinColor();
 
-    /**
-     * purplePinColor</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKPinAnnotationView_Class/index.html#//apple_ref/occ/clm/MKPinAnnotationView/purplePinColor">iOS Dev Center</a>
-     */
     @Generated
     @Selector("purplePinColor")
     public static native UIColor purplePinColor();
 
-    /**
-     * redPinColor</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKPinAnnotationView_Class/index.html#//apple_ref/occ/clm/MKPinAnnotationView/redPinColor">iOS Dev Center</a>
-     */
     @Generated
     @Selector("redPinColor")
     public static native UIColor redPinColor();
@@ -375,10 +363,6 @@ public class MKPinAnnotationView extends MKAnnotationView {
     @NInt
     public static native long version_static();
 
-    /**
-     * animatesDrop</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKPinAnnotationView_Class/index.html#//apple_ref/occ/instp/MKPinAnnotationView/animatesDrop">iOS Dev Center</a>
-     */
     @Generated
     @Selector("animatesDrop")
     public native boolean animatesDrop();
@@ -396,28 +380,16 @@ public class MKPinAnnotationView extends MKAnnotationView {
     @Selector("initWithFrame:")
     public native MKPinAnnotationView initWithFrame(@ByValue CGRect frame);
 
-    /**
-     * pinColor</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKPinAnnotationView_Class/index.html#//apple_ref/occ/instp/MKPinAnnotationView/pinColor">iOS Dev Center</a>
-     */
     @Deprecated
     @Generated
     @Selector("pinColor")
     @NUInt
     public native long pinColor();
 
-    /**
-     * animatesDrop</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKPinAnnotationView_Class/index.html#//apple_ref/occ/instp/MKPinAnnotationView/animatesDrop">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setAnimatesDrop:")
     public native void setAnimatesDrop(boolean value);
 
-    /**
-     * pinColor</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKPinAnnotationView_Class/index.html#//apple_ref/occ/instp/MKPinAnnotationView/pinColor">iOS Dev Center</a>
-     */
     @Deprecated
     @Generated
     @Selector("setPinColor:")
@@ -427,18 +399,10 @@ public class MKPinAnnotationView extends MKAnnotationView {
     @Selector("initWithCoder:")
     public native MKPinAnnotationView initWithCoder(NSCoder aDecoder);
 
-    /**
-     * pinTintColor</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKPinAnnotationView_Class/index.html#//apple_ref/occ/instp/MKPinAnnotationView/pinTintColor">iOS Dev Center</a>
-     */
     @Generated
     @Selector("pinTintColor")
     public native UIColor pinTintColor();
 
-    /**
-     * pinTintColor</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKPinAnnotationView_Class/index.html#//apple_ref/occ/instp/MKPinAnnotationView/pinTintColor">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setPinTintColor:")
     public native void setPinTintColor(UIColor value);

@@ -56,10 +56,6 @@ public class NSBlockOperation extends NSOperation {
     @Selector("alloc")
     public static native NSBlockOperation alloc();
 
-    /**
-     * blockOperationWithBlock:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSBlockOperation_class/index.html#//apple_ref/occ/clm/NSBlockOperation/blockOperationWithBlock:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("blockOperationWithBlock:")
     public static native NSBlockOperation blockOperationWithBlock(
@@ -165,18 +161,10 @@ public class NSBlockOperation extends NSOperation {
     @NInt
     public static native long version_static();
 
-    /**
-     * addExecutionBlock:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSBlockOperation_class/index.html#//apple_ref/occ/instm/NSBlockOperation/addExecutionBlock:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("addExecutionBlock:")
     public native void addExecutionBlock(@ObjCBlock(name = "call_addExecutionBlock") Block_addExecutionBlock block);
 
-    /**
-     * executionBlocks</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSBlockOperation_class/index.html#//apple_ref/occ/instp/NSBlockOperation/executionBlocks">iOS Dev Center</a>
-     */
     @Generated
     @Selector("executionBlocks")
     public native NSArray<?> executionBlocks();

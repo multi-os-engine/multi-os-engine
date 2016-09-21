@@ -64,10 +64,6 @@ public class TWTweetComposeViewController extends UIViewController {
     @Selector("alloc")
     public static native TWTweetComposeViewController alloc();
 
-    /**
-     * canSendTweet</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Twitter/Reference/TWTweetSheetViewControllerClassRef/index.html#//apple_ref/occ/clm/TWTweetComposeViewController/canSendTweet">iOS Dev Center</a>
-     */
     @Generated
     @Selector("canSendTweet")
     public static native boolean canSendTweet();
@@ -184,18 +180,10 @@ public class TWTweetComposeViewController extends UIViewController {
     @NInt
     public static native long version_static();
 
-    /**
-     * addImage:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Twitter/Reference/TWTweetSheetViewControllerClassRef/index.html#//apple_ref/occ/instm/TWTweetComposeViewController/addImage:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("addImage:")
     public native boolean addImage(UIImage image);
 
-    /**
-     * addURL:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Twitter/Reference/TWTweetSheetViewControllerClassRef/index.html#//apple_ref/occ/instm/TWTweetComposeViewController/addURL:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("addURL:")
     public native boolean addURL(NSURL url);
@@ -208,43 +196,23 @@ public class TWTweetComposeViewController extends UIViewController {
     @Selector("initWithNibName:bundle:")
     public native TWTweetComposeViewController initWithNibNameBundle(String nibNameOrNil, NSBundle nibBundleOrNil);
 
-    /**
-     * removeAllImages</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Twitter/Reference/TWTweetSheetViewControllerClassRef/index.html#//apple_ref/occ/instm/TWTweetComposeViewController/removeAllImages">iOS Dev Center</a>
-     */
     @Generated
     @Selector("removeAllImages")
     public native boolean removeAllImages();
 
-    /**
-     * removeAllURLs</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Twitter/Reference/TWTweetSheetViewControllerClassRef/index.html#//apple_ref/occ/instm/TWTweetComposeViewController/removeAllURLs">iOS Dev Center</a>
-     */
     @Generated
     @Selector("removeAllURLs")
     public native boolean removeAllURLs();
 
-    /**
-     * completionHandler</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Twitter/Reference/TWTweetSheetViewControllerClassRef/index.html#//apple_ref/occ/instp/TWTweetComposeViewController/completionHandler">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setCompletionHandler:")
     public native void setCompletionHandler(
             @ObjCBlock(name = "call_setCompletionHandler") Block_setCompletionHandler value);
 
-    /**
-     * setInitialText:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Twitter/Reference/TWTweetSheetViewControllerClassRef/index.html#//apple_ref/occ/instm/TWTweetComposeViewController/setInitialText:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setInitialText:")
     public native boolean setInitialText(String text);
 
-    /**
-     * completionHandler</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Twitter/Reference/TWTweetSheetViewControllerClassRef/index.html#//apple_ref/occ/instp/TWTweetComposeViewController/completionHandler">iOS Dev Center</a>
-     */
     @Generated
     @Selector("completionHandler")
     @ObjCBlock(name = "call_completionHandler_ret")

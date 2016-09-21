@@ -59,27 +59,15 @@ public class GCController extends NSObject {
     @Selector("alloc")
     public static native GCController alloc();
 
-    /**
-     * controllers</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameController/Reference/GCController_Ref/index.html#//apple_ref/occ/clm/GCController/controllers">iOS Dev Center</a>
-     */
     @Generated
     @Selector("controllers")
     public static native NSArray<? extends GCController> controllers();
 
-    /**
-     * startWirelessControllerDiscoveryWithCompletionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameController/Reference/GCController_Ref/index.html#//apple_ref/occ/clm/GCController/startWirelessControllerDiscoveryWithCompletionHandler:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("startWirelessControllerDiscoveryWithCompletionHandler:")
     public static native void startWirelessControllerDiscoveryWithCompletionHandler(
             @ObjCBlock(name = "call_startWirelessControllerDiscoveryWithCompletionHandler") Block_startWirelessControllerDiscoveryWithCompletionHandler completionHandler);
 
-    /**
-     * stopWirelessControllerDiscovery</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameController/Reference/GCController_Ref/index.html#//apple_ref/occ/clm/GCController/stopWirelessControllerDiscovery">iOS Dev Center</a>
-     */
     @Generated
     @Selector("stopWirelessControllerDiscovery")
     public static native void stopWirelessControllerDiscovery();
@@ -184,18 +172,10 @@ public class GCController extends NSObject {
     @NInt
     public static native long version_static();
 
-    /**
-     * extendedGamepad</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameController/Reference/GCController_Ref/index.html#//apple_ref/occ/instp/GCController/extendedGamepad">iOS Dev Center</a>
-     */
     @Generated
     @Selector("extendedGamepad")
     public native GCExtendedGamepad extendedGamepad();
 
-    /**
-     * gamepad</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameController/Reference/GCController_Ref/index.html#//apple_ref/occ/instp/GCController/gamepad">iOS Dev Center</a>
-     */
     @Generated
     @Selector("gamepad")
     public native GCGamepad gamepad();
@@ -204,77 +184,41 @@ public class GCController extends NSObject {
     @Selector("init")
     public native GCController init();
 
-    /**
-     * attachedToDevice</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameController/Reference/GCController_Ref/index.html#//apple_ref/occ/instp/GCController/attachedToDevice">iOS Dev Center</a>
-     */
     @Generated
     @Selector("isAttachedToDevice")
     public native boolean isAttachedToDevice();
 
-    /**
-     * motion</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameController/Reference/GCController_Ref/index.html#//apple_ref/occ/instp/GCController/motion">iOS Dev Center</a>
-     */
     @Generated
     @Selector("motion")
     public native GCMotion motion();
 
-    /**
-     * playerIndex</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameController/Reference/GCController_Ref/index.html#//apple_ref/occ/instp/GCController/playerIndex">iOS Dev Center</a>
-     */
     @Generated
     @Selector("playerIndex")
     @NInt
     public native long playerIndex();
 
-    /**
-     * controllerPausedHandler</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameController/Reference/GCController_Ref/index.html#//apple_ref/occ/instp/GCController/controllerPausedHandler">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setControllerPausedHandler:")
     public native void setControllerPausedHandler(
             @ObjCBlock(name = "call_setControllerPausedHandler") Block_setControllerPausedHandler value);
 
-    /**
-     * playerIndex</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameController/Reference/GCController_Ref/index.html#//apple_ref/occ/instp/GCController/playerIndex">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setPlayerIndex:")
     public native void setPlayerIndex(@NInt long value);
 
-    /**
-     * vendorName</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameController/Reference/GCController_Ref/index.html#//apple_ref/occ/instp/GCController/vendorName">iOS Dev Center</a>
-     */
     @Generated
     @Selector("vendorName")
     public native String vendorName();
 
-    /**
-     * controllerPausedHandler</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameController/Reference/GCController_Ref/index.html#//apple_ref/occ/instp/GCController/controllerPausedHandler">iOS Dev Center</a>
-     */
     @Generated
     @Selector("controllerPausedHandler")
     @ObjCBlock(name = "call_controllerPausedHandler_ret")
     public native Block_controllerPausedHandler_ret controllerPausedHandler();
 
-    /**
-     * handlerQueue</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameController/Reference/GCController_Ref/index.html#//apple_ref/occ/instp/GCController/handlerQueue">iOS Dev Center</a>
-     */
     @Generated
     @Selector("handlerQueue")
     public native NSObject handlerQueue();
 
-    /**
-     * handlerQueue</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameController/Reference/GCController_Ref/index.html#//apple_ref/occ/instp/GCController/handlerQueue">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setHandlerQueue:")
     public native void setHandlerQueue(NSObject value);

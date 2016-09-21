@@ -60,124 +60,64 @@ public class SCNTransaction extends NSObject {
     @Selector("alloc")
     public static native SCNTransaction alloc();
 
-    /**
-     * animationDuration</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNTransaction_Class/index.html#//apple_ref/occ/clm/SCNTransaction/animationDuration">iOS Dev Center</a>
-     */
     @Generated
     @Selector("animationDuration")
     public static native double animationDuration();
 
-    /**
-     * animationTimingFunction</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNTransaction_Class/index.html#//apple_ref/occ/clm/SCNTransaction/animationTimingFunction">iOS Dev Center</a>
-     */
     @Generated
     @Selector("animationTimingFunction")
     public static native CAMediaTimingFunction animationTimingFunction();
 
-    /**
-     * begin</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNTransaction_Class/index.html#//apple_ref/occ/clm/SCNTransaction/begin">iOS Dev Center</a>
-     */
     @Generated
     @Selector("begin")
     public static native void begin();
 
-    /**
-     * commit</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNTransaction_Class/index.html#//apple_ref/occ/clm/SCNTransaction/commit">iOS Dev Center</a>
-     */
     @Generated
     @Selector("commit")
     public static native void commit();
 
-    /**
-     * disableActions</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNTransaction_Class/index.html#//apple_ref/occ/clm/SCNTransaction/disableActions">iOS Dev Center</a>
-     */
     @Generated
     @Selector("disableActions")
     public static native boolean disableActions();
 
-    /**
-     * flush</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNTransaction_Class/index.html#//apple_ref/occ/clm/SCNTransaction/flush">iOS Dev Center</a>
-     */
     @Generated
     @Selector("flush")
     public static native void flush();
 
-    /**
-     * lock</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNTransaction_Class/index.html#//apple_ref/occ/clm/SCNTransaction/lock">iOS Dev Center</a>
-     */
     @Generated
     @Selector("lock")
     public static native void lock();
 
-    /**
-     * setAnimationDuration:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNTransaction_Class/index.html#//apple_ref/occ/clm/SCNTransaction/setAnimationDuration:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setAnimationDuration:")
     public static native void setAnimationDuration(double duration);
 
-    /**
-     * setAnimationTimingFunction:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNTransaction_Class/index.html#//apple_ref/occ/clm/SCNTransaction/setAnimationTimingFunction:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setAnimationTimingFunction:")
     public static native void setAnimationTimingFunction(CAMediaTimingFunction animationTimingFunction);
 
-    /**
-     * setCompletionBlock:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNTransaction_Class/index.html#//apple_ref/occ/clm/SCNTransaction/setCompletionBlock:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setCompletionBlock:")
     public static native void setCompletionBlock(
             @ObjCBlock(name = "call_setCompletionBlock") Block_setCompletionBlock block);
 
-    /**
-     * setDisableActions:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNTransaction_Class/index.html#//apple_ref/occ/clm/SCNTransaction/setDisableActions:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setDisableActions:")
     public static native void setDisableActions(boolean flag);
 
-    /**
-     * setValue:forKey:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNTransaction_Class/index.html#//apple_ref/occ/clm/SCNTransaction/setValue:forKey:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setValue:forKey:")
     public static native void setValueForKey_static(@Mapped(ObjCObjectMapper.class) Object value, String key);
 
-    /**
-     * unlock</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNTransaction_Class/index.html#//apple_ref/occ/clm/SCNTransaction/unlock">iOS Dev Center</a>
-     */
     @Generated
     @Selector("unlock")
     public static native void unlock();
 
-    /**
-     * valueForKey:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNTransaction_Class/index.html#//apple_ref/occ/clm/SCNTransaction/valueForKey:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("valueForKey:")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object valueForKey_static(String key);
 
-    /**
-     * completionBlock</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNTransaction_Class/index.html#//apple_ref/occ/clm/SCNTransaction/completionBlock">iOS Dev Center</a>
-     */
     @Generated
     @Selector("completionBlock")
     @ObjCBlock(name = "call_completionBlock_ret")

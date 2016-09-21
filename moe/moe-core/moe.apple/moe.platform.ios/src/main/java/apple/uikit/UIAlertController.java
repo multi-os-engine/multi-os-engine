@@ -56,10 +56,6 @@ public class UIAlertController extends UIViewController {
         super(peer);
     }
 
-    /**
-     * alertControllerWithTitle:message:preferredStyle:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIAlertController_class/index.html#//apple_ref/occ/clm/UIAlertController/alertControllerWithTitle:message:preferredStyle:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("alertControllerWithTitle:message:preferredStyle:")
     public static native UIAlertController alertControllerWithTitleMessagePreferredStyle(String title, String message,
@@ -182,26 +178,14 @@ public class UIAlertController extends UIViewController {
     @NInt
     public static native long version();
 
-    /**
-     * actions</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIAlertController_class/index.html#//apple_ref/occ/instp/UIAlertController/actions">iOS Dev Center</a>
-     */
     @Generated
     @Selector("actions")
     public native NSArray<? extends UIAlertAction> actions();
 
-    /**
-     * addAction:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIAlertController_class/index.html#//apple_ref/occ/instm/UIAlertController/addAction:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("addAction:")
     public native void addAction(UIAlertAction action);
 
-    /**
-     * addTextFieldWithConfigurationHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIAlertController_class/index.html#//apple_ref/occ/instm/UIAlertController/addTextFieldWithConfigurationHandler:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("addTextFieldWithConfigurationHandler:")
     public native void addTextFieldWithConfigurationHandler(
@@ -215,51 +199,27 @@ public class UIAlertController extends UIViewController {
     @Selector("initWithNibName:bundle:")
     public native UIAlertController initWithNibNameBundle(String nibNameOrNil, NSBundle nibBundleOrNil);
 
-    /**
-     * message</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIAlertController_class/index.html#//apple_ref/occ/instp/UIAlertController/message">iOS Dev Center</a>
-     */
     @Generated
     @Selector("message")
     public native String message();
 
-    /**
-     * preferredStyle</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIAlertController_class/index.html#//apple_ref/occ/instp/UIAlertController/preferredStyle">iOS Dev Center</a>
-     */
     @Generated
     @Selector("preferredStyle")
     @NInt
     public native long preferredStyle();
 
-    /**
-     * message</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIAlertController_class/index.html#//apple_ref/occ/instp/UIAlertController/message">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setMessage:")
     public native void setMessage(String value);
 
-    /**
-     * title</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIAlertController_class/index.html#//apple_ref/occ/instp/UIAlertController/title">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setTitle:")
     public native void setTitle(String value);
 
-    /**
-     * textFields</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIAlertController_class/index.html#//apple_ref/occ/instp/UIAlertController/textFields">iOS Dev Center</a>
-     */
     @Generated
     @Selector("textFields")
     public native NSArray<? extends UITextField> textFields();
 
-    /**
-     * title</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIAlertController_class/index.html#//apple_ref/occ/instp/UIAlertController/title">iOS Dev Center</a>
-     */
     @Generated
     @Selector("title")
     public native String title();
@@ -268,18 +228,10 @@ public class UIAlertController extends UIViewController {
     @Selector("initWithCoder:")
     public native UIAlertController initWithCoder(NSCoder aDecoder);
 
-    /**
-     * preferredAction</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIAlertController_class/index.html#//apple_ref/occ/instp/UIAlertController/preferredAction">iOS Dev Center</a>
-     */
     @Generated
     @Selector("preferredAction")
     public native UIAlertAction preferredAction();
 
-    /**
-     * preferredAction</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIAlertController_class/index.html#//apple_ref/occ/instp/UIAlertController/preferredAction">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setPreferredAction:")
     public native void setPreferredAction(UIAlertAction value);

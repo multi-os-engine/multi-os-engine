@@ -71,10 +71,6 @@ public class SCNPyramid extends SCNGeometry {
     public static native SCNPyramid geometryWithSourcesElements(NSArray<? extends SCNGeometrySource> sources,
             NSArray<? extends SCNGeometryElement> elements);
 
-    /**
-     * pyramidWithWidth:height:length:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNPyramid_Class/index.html#//apple_ref/occ/clm/SCNPyramid/pyramidWithWidth:height:length:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("pyramidWithWidth:height:length:")
     public static native SCNPyramid pyramidWithWidthHeightLength(@NFloat double width, @NFloat double height,
@@ -188,19 +184,11 @@ public class SCNPyramid extends SCNGeometry {
     @NInt
     public static native long version_static();
 
-    /**
-     * height</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNPyramid_Class/index.html#//apple_ref/occ/instp/SCNPyramid/height">iOS Dev Center</a>
-     */
     @Generated
     @Selector("height")
     @NFloat
     public native double height();
 
-    /**
-     * heightSegmentCount</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNPyramid_Class/index.html#//apple_ref/occ/instp/SCNPyramid/heightSegmentCount">iOS Dev Center</a>
-     */
     @Generated
     @Selector("heightSegmentCount")
     @NInt
@@ -210,85 +198,45 @@ public class SCNPyramid extends SCNGeometry {
     @Selector("init")
     public native SCNPyramid init();
 
-    /**
-     * length</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNPyramid_Class/index.html#//apple_ref/occ/instp/SCNPyramid/length">iOS Dev Center</a>
-     */
     @Generated
     @Selector("length")
     @NFloat
     public native double length();
 
-    /**
-     * lengthSegmentCount</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNPyramid_Class/index.html#//apple_ref/occ/instp/SCNPyramid/lengthSegmentCount">iOS Dev Center</a>
-     */
     @Generated
     @Selector("lengthSegmentCount")
     @NInt
     public native long lengthSegmentCount();
 
-    /**
-     * height</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNPyramid_Class/index.html#//apple_ref/occ/instp/SCNPyramid/height">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setHeight:")
     public native void setHeight(@NFloat double value);
 
-    /**
-     * heightSegmentCount</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNPyramid_Class/index.html#//apple_ref/occ/instp/SCNPyramid/heightSegmentCount">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setHeightSegmentCount:")
     public native void setHeightSegmentCount(@NInt long value);
 
-    /**
-     * length</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNPyramid_Class/index.html#//apple_ref/occ/instp/SCNPyramid/length">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setLength:")
     public native void setLength(@NFloat double value);
 
-    /**
-     * lengthSegmentCount</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNPyramid_Class/index.html#//apple_ref/occ/instp/SCNPyramid/lengthSegmentCount">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setLengthSegmentCount:")
     public native void setLengthSegmentCount(@NInt long value);
 
-    /**
-     * width</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNPyramid_Class/index.html#//apple_ref/occ/instp/SCNPyramid/width">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setWidth:")
     public native void setWidth(@NFloat double value);
 
-    /**
-     * widthSegmentCount</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNPyramid_Class/index.html#//apple_ref/occ/instp/SCNPyramid/widthSegmentCount">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setWidthSegmentCount:")
     public native void setWidthSegmentCount(@NInt long value);
 
-    /**
-     * width</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNPyramid_Class/index.html#//apple_ref/occ/instp/SCNPyramid/width">iOS Dev Center</a>
-     */
     @Generated
     @Selector("width")
     @NFloat
     public native double width();
 
-    /**
-     * widthSegmentCount</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNPyramid_Class/index.html#//apple_ref/occ/instp/SCNPyramid/widthSegmentCount">iOS Dev Center</a>
-     */
     @Generated
     @Selector("widthSegmentCount")
     @NInt

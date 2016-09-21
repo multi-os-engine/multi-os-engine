@@ -28,98 +28,50 @@ import org.moe.natj.objc.ann.Selector;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("MPMediaPlayback")
 public interface MPMediaPlayback {
-    /**
-     * beginSeekingBackward</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPMediaPlayback_protocol/index.html#//apple_ref/occ/intfm/MPMediaPlayback/beginSeekingBackward">iOS Dev Center</a>
-     */
     @Generated
     @Selector("beginSeekingBackward")
     void beginSeekingBackward();
 
-    /**
-     * beginSeekingForward</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPMediaPlayback_protocol/index.html#//apple_ref/occ/intfm/MPMediaPlayback/beginSeekingForward">iOS Dev Center</a>
-     */
     @Generated
     @Selector("beginSeekingForward")
     void beginSeekingForward();
 
-    /**
-     * currentPlaybackRate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPMediaPlayback_protocol/index.html#//apple_ref/occ/intfp/MPMediaPlayback/currentPlaybackRate">iOS Dev Center</a>
-     */
     @Generated
     @Selector("currentPlaybackRate")
     float currentPlaybackRate();
 
-    /**
-     * currentPlaybackTime</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPMediaPlayback_protocol/index.html#//apple_ref/occ/intfp/MPMediaPlayback/currentPlaybackTime">iOS Dev Center</a>
-     */
     @Generated
     @Selector("currentPlaybackTime")
     double currentPlaybackTime();
 
-    /**
-     * endSeeking</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPMediaPlayback_protocol/index.html#//apple_ref/occ/intfm/MPMediaPlayback/endSeeking">iOS Dev Center</a>
-     */
     @Generated
     @Selector("endSeeking")
     void endSeeking();
 
-    /**
-     * isPreparedToPlay</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPMediaPlayback_protocol/index.html#//apple_ref/occ/intfp/MPMediaPlayback/isPreparedToPlay">iOS Dev Center</a>
-     */
     @Generated
     @Selector("isPreparedToPlay")
     boolean isPreparedToPlay();
 
-    /**
-     * pause</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPMediaPlayback_protocol/index.html#//apple_ref/occ/intfm/MPMediaPlayback/pause">iOS Dev Center</a>
-     */
     @Generated
     @Selector("pause")
     void pause();
 
-    /**
-     * play</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPMediaPlayback_protocol/index.html#//apple_ref/occ/intfm/MPMediaPlayback/play">iOS Dev Center</a>
-     */
     @Generated
     @Selector("play")
     void play();
 
-    /**
-     * prepareToPlay</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPMediaPlayback_protocol/index.html#//apple_ref/occ/intfm/MPMediaPlayback/prepareToPlay">iOS Dev Center</a>
-     */
     @Generated
     @Selector("prepareToPlay")
     void prepareToPlay();
 
-    /**
-     * currentPlaybackRate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPMediaPlayback_protocol/index.html#//apple_ref/occ/intfp/MPMediaPlayback/currentPlaybackRate">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setCurrentPlaybackRate:")
     void setCurrentPlaybackRate(float value);
 
-    /**
-     * currentPlaybackTime</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPMediaPlayback_protocol/index.html#//apple_ref/occ/intfp/MPMediaPlayback/currentPlaybackTime">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setCurrentPlaybackTime:")
     void setCurrentPlaybackTime(double value);
 
-    /**
-     * stop</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPMediaPlayback_protocol/index.html#//apple_ref/occ/intfm/MPMediaPlayback/stop">iOS Dev Center</a>
-     */
     @Generated
     @Selector("stop")
     void stop();

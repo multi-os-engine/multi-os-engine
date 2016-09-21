@@ -32,10 +32,6 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("UIStateRestoring")
 public interface UIStateRestoring {
-    /**
-     * applicationFinishedRestoringState</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIStateRestoring_protocol/index.html#//apple_ref/occ/intfm/UIStateRestoring/applicationFinishedRestoringState">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("applicationFinishedRestoringState")
@@ -43,10 +39,6 @@ public interface UIStateRestoring {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * decodeRestorableStateWithCoder:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIStateRestoring_protocol/index.html#//apple_ref/occ/intfm/UIStateRestoring/decodeRestorableStateWithCoder:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("decodeRestorableStateWithCoder:")
@@ -54,10 +46,6 @@ public interface UIStateRestoring {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * encodeRestorableStateWithCoder:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIStateRestoring_protocol/index.html#//apple_ref/occ/intfm/UIStateRestoring/encodeRestorableStateWithCoder:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("encodeRestorableStateWithCoder:")
@@ -65,10 +53,6 @@ public interface UIStateRestoring {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * objectRestorationClass</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIStateRestoring_protocol/index.html#//apple_ref/occ/intfp/UIStateRestoring/objectRestorationClass">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("objectRestorationClass")
@@ -77,10 +61,6 @@ public interface UIStateRestoring {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * restorationParent</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIStateRestoring_protocol/index.html#//apple_ref/occ/intfp/UIStateRestoring/restorationParent">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("restorationParent")

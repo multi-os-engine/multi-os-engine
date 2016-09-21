@@ -36,6 +36,7 @@ public final class NEProviderStopReason {
     @Generated @NInt public static final long UserLogout = 0x000000000000000CL;
     @Generated @NInt public static final long UserSwitch = 0x000000000000000DL;
     @Generated @NInt public static final long ConnectionFailed = 0x000000000000000EL;
+
     @Generated
     private NEProviderStopReason() {
     }

@@ -158,10 +158,6 @@ public class AVMetadataMachineReadableCodeObject extends AVMetadataObject {
     @NInt
     public static native long version_static();
 
-    /**
-     * corners</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVMetadataMachineReadableCodeObject_Class/index.html#//apple_ref/occ/instp/AVMetadataMachineReadableCodeObject/corners">iOS Dev Center</a>
-     */
     @Generated
     @Selector("corners")
     public native NSArray<?> corners();
@@ -170,10 +166,6 @@ public class AVMetadataMachineReadableCodeObject extends AVMetadataObject {
     @Selector("init")
     public native AVMetadataMachineReadableCodeObject init();
 
-    /**
-     * stringValue</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVMetadataMachineReadableCodeObject_Class/index.html#//apple_ref/occ/instp/AVMetadataMachineReadableCodeObject/stringValue">iOS Dev Center</a>
-     */
     @Generated
     @Selector("stringValue")
     public native String stringValue();

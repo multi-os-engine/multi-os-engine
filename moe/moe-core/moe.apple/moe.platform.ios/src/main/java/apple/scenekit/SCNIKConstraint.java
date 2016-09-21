@@ -63,10 +63,6 @@ public class SCNIKConstraint extends SCNConstraint {
     @Selector("alloc")
     public static native SCNIKConstraint alloc();
 
-    /**
-     * inverseKinematicsConstraintWithChainRootNode:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNIKConstraint_Class/index.html#//apple_ref/occ/clm/SCNIKConstraint/inverseKinematicsConstraintWithChainRootNode:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("inverseKinematicsConstraintWithChainRootNode:")
     @MappedReturn(ObjCObjectMapper.class)
@@ -176,10 +172,6 @@ public class SCNIKConstraint extends SCNConstraint {
     @NInt
     public static native long version_static();
 
-    /**
-     * chainRootNode</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNIKConstraint_Class/index.html#//apple_ref/occ/instp/SCNIKConstraint/chainRootNode">iOS Dev Center</a>
-     */
     @Generated
     @Selector("chainRootNode")
     public native SCNNode chainRootNode();
@@ -188,44 +180,24 @@ public class SCNIKConstraint extends SCNConstraint {
     @Selector("init")
     public native SCNIKConstraint init();
 
-    /**
-     * maxAllowedRotationAngleForJoint:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNIKConstraint_Class/index.html#//apple_ref/occ/instm/SCNIKConstraint/maxAllowedRotationAngleForJoint:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("maxAllowedRotationAngleForJoint:")
     @NFloat
     public native double maxAllowedRotationAngleForJoint(SCNNode node);
 
-    /**
-     * setMaxAllowedRotationAngle:forJoint:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNIKConstraint_Class/index.html#//apple_ref/occ/instm/SCNIKConstraint/setMaxAllowedRotationAngle:forJoint:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setMaxAllowedRotationAngle:forJoint:")
     public native void setMaxAllowedRotationAngleForJoint(@NFloat double angle, SCNNode node);
 
-    /**
-     * targetPosition</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNIKConstraint_Class/index.html#//apple_ref/occ/instp/SCNIKConstraint/targetPosition">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setTargetPosition:")
     public native void setTargetPosition(@ByValue SCNVector3 value);
 
-    /**
-     * targetPosition</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNIKConstraint_Class/index.html#//apple_ref/occ/instp/SCNIKConstraint/targetPosition">iOS Dev Center</a>
-     */
     @Generated
     @Selector("targetPosition")
     @ByValue
     public native SCNVector3 targetPosition();
 
-    /**
-     * initWithChainRootNode:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNIKConstraint_Class/index.html#//apple_ref/occ/instm/SCNIKConstraint/initWithChainRootNode:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithChainRootNode:")
     public native SCNIKConstraint initWithChainRootNode(SCNNode chainRootNode);

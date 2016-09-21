@@ -59,19 +59,11 @@ public class GKNotificationBanner extends NSObject {
     @Selector("alloc")
     public static native GKNotificationBanner alloc();
 
-    /**
-     * showBannerWithTitle:message:completionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKNotificationBanner_Ref/index.html#//apple_ref/occ/clm/GKNotificationBanner/showBannerWithTitle:message:completionHandler:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("showBannerWithTitle:message:completionHandler:")
     public static native void showBannerWithTitleMessageCompletionHandler(String title, String message,
             @ObjCBlock(name = "call_showBannerWithTitleMessageCompletionHandler") Block_showBannerWithTitleMessageCompletionHandler completionHandler);
 
-    /**
-     * showBannerWithTitle:message:duration:completionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKNotificationBanner_Ref/index.html#//apple_ref/occ/clm/GKNotificationBanner/showBannerWithTitle:message:duration:completionHandler:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("showBannerWithTitle:message:duration:completionHandler:")
     public static native void showBannerWithTitleMessageDurationCompletionHandler(String title, String message,

@@ -165,27 +165,15 @@ public class NEAppProxyUDPFlow extends NEAppProxyFlow {
     @Selector("init")
     public native NEAppProxyUDPFlow init();
 
-    /**
-     * localEndpoint</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEAppProxyUDPFlowClassRef/index.html#//apple_ref/occ/instp/NEAppProxyUDPFlow/localEndpoint">iOS Dev Center</a>
-     */
     @Generated
     @Selector("localEndpoint")
     public native NWEndpoint localEndpoint();
 
-    /**
-     * readDatagramsWithCompletionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEAppProxyUDPFlowClassRef/index.html#//apple_ref/occ/instm/NEAppProxyUDPFlow/readDatagramsWithCompletionHandler:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("readDatagramsWithCompletionHandler:")
     public native void readDatagramsWithCompletionHandler(
             @ObjCBlock(name = "call_readDatagramsWithCompletionHandler") Block_readDatagramsWithCompletionHandler completionHandler);
 
-    /**
-     * writeDatagrams:sentByEndpoints:completionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEAppProxyUDPFlowClassRef/index.html#//apple_ref/occ/instm/NEAppProxyUDPFlow/writeDatagrams:sentByEndpoints:completionHandler:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("writeDatagrams:sentByEndpoints:completionHandler:")
     public native void writeDatagramsSentByEndpointsCompletionHandler(NSArray<? extends NSData> datagrams,

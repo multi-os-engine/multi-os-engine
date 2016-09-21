@@ -174,10 +174,6 @@ public class GKScoreChallenge extends GKChallenge {
     @Selector("init")
     public native GKScoreChallenge init();
 
-    /**
-     * score</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKScoreChallenge_Ref/index.html#//apple_ref/occ/instp/GKScoreChallenge/score">iOS Dev Center</a>
-     */
     @Generated
     @Selector("score")
     public native GKScore score();

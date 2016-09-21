@@ -28,34 +28,18 @@ import org.moe.natj.objc.ann.Selector;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("NSDiscardableContent")
 public interface NSDiscardableContent {
-    /**
-     * beginContentAccess</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSDiscardableContent_Protocol/index.html#//apple_ref/occ/intfm/NSDiscardableContent/beginContentAccess">iOS Dev Center</a>
-     */
     @Generated
     @Selector("beginContentAccess")
     boolean beginContentAccess();
 
-    /**
-     * discardContentIfPossible</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSDiscardableContent_Protocol/index.html#//apple_ref/occ/intfm/NSDiscardableContent/discardContentIfPossible">iOS Dev Center</a>
-     */
     @Generated
     @Selector("discardContentIfPossible")
     void discardContentIfPossible();
 
-    /**
-     * endContentAccess</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSDiscardableContent_Protocol/index.html#//apple_ref/occ/intfm/NSDiscardableContent/endContentAccess">iOS Dev Center</a>
-     */
     @Generated
     @Selector("endContentAccess")
     void endContentAccess();
 
-    /**
-     * isContentDiscarded</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSDiscardableContent_Protocol/index.html#//apple_ref/occ/intfm/NSDiscardableContent/isContentDiscarded">iOS Dev Center</a>
-     */
     @Generated
     @Selector("isContentDiscarded")
     boolean isContentDiscarded();

@@ -29,10 +29,6 @@ import org.moe.natj.objc.ann.Selector;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("MFMessageComposeViewControllerDelegate")
 public interface MFMessageComposeViewControllerDelegate {
-    /**
-     * messageComposeViewController:didFinishWithResult:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MessageUI/Reference/MFMessageComposeViewControllerDelegate_protocol/index.html#//apple_ref/occ/intfm/MFMessageComposeViewControllerDelegate/messageComposeViewController:didFinishWithResult:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("messageComposeViewController:didFinishWithResult:")
     void messageComposeViewControllerDidFinishWithResult(MFMessageComposeViewController controller, int result);

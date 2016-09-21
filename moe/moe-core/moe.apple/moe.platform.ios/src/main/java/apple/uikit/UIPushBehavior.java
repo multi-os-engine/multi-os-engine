@@ -163,26 +163,14 @@ public class UIPushBehavior extends UIDynamicBehavior {
     @NInt
     public static native long version_static();
 
-    /**
-     * active</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPushBehavior_Class/index.html#//apple_ref/occ/instp/UIPushBehavior/active">iOS Dev Center</a>
-     */
     @Generated
     @Selector("active")
     public native boolean active();
 
-    /**
-     * addItem:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPushBehavior_Class/index.html#//apple_ref/occ/instm/UIPushBehavior/addItem:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("addItem:")
     public native void addItem(@Mapped(ObjCObjectMapper.class) UIDynamicItem item);
 
-    /**
-     * angle</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPushBehavior_Class/index.html#//apple_ref/occ/instp/UIPushBehavior/angle">iOS Dev Center</a>
-     */
     @Generated
     @Selector("angle")
     @NFloat
@@ -192,110 +180,58 @@ public class UIPushBehavior extends UIDynamicBehavior {
     @Selector("init")
     public native UIPushBehavior init();
 
-    /**
-     * initWithItems:mode:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPushBehavior_Class/index.html#//apple_ref/occ/instm/UIPushBehavior/initWithItems:mode:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithItems:mode:")
     public native UIPushBehavior initWithItemsMode(NSArray<?> items, @NInt long mode);
 
-    /**
-     * items</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPushBehavior_Class/index.html#//apple_ref/occ/instp/UIPushBehavior/items">iOS Dev Center</a>
-     */
     @Generated
     @Selector("items")
     public native NSArray<?> items();
 
-    /**
-     * magnitude</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPushBehavior_Class/index.html#//apple_ref/occ/instp/UIPushBehavior/magnitude">iOS Dev Center</a>
-     */
     @Generated
     @Selector("magnitude")
     @NFloat
     public native double magnitude();
 
-    /**
-     * mode</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPushBehavior_Class/index.html#//apple_ref/occ/instp/UIPushBehavior/mode">iOS Dev Center</a>
-     */
     @Generated
     @Selector("mode")
     @NInt
     public native long mode();
 
-    /**
-     * pushDirection</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPushBehavior_Class/index.html#//apple_ref/occ/instp/UIPushBehavior/pushDirection">iOS Dev Center</a>
-     */
     @Generated
     @Selector("pushDirection")
     @ByValue
     public native CGVector pushDirection();
 
-    /**
-     * removeItem:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPushBehavior_Class/index.html#//apple_ref/occ/instm/UIPushBehavior/removeItem:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("removeItem:")
     public native void removeItem(@Mapped(ObjCObjectMapper.class) UIDynamicItem item);
 
-    /**
-     * active</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPushBehavior_Class/index.html#//apple_ref/occ/instp/UIPushBehavior/active">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setActive:")
     public native void setActive(boolean value);
 
-    /**
-     * angle</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPushBehavior_Class/index.html#//apple_ref/occ/instp/UIPushBehavior/angle">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setAngle:")
     public native void setAngle(@NFloat double value);
 
-    /**
-     * setAngle:magnitude:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPushBehavior_Class/index.html#//apple_ref/occ/instm/UIPushBehavior/setAngle:magnitude:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setAngle:magnitude:")
     public native void setAngleMagnitude(@NFloat double angle, @NFloat double magnitude);
 
-    /**
-     * magnitude</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPushBehavior_Class/index.html#//apple_ref/occ/instp/UIPushBehavior/magnitude">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setMagnitude:")
     public native void setMagnitude(@NFloat double value);
 
-    /**
-     * pushDirection</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPushBehavior_Class/index.html#//apple_ref/occ/instp/UIPushBehavior/pushDirection">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setPushDirection:")
     public native void setPushDirection(@ByValue CGVector value);
 
-    /**
-     * setTargetOffsetFromCenter:forItem:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPushBehavior_Class/index.html#//apple_ref/occ/instm/UIPushBehavior/setTargetOffsetFromCenter:forItem:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setTargetOffsetFromCenter:forItem:")
     public native void setTargetOffsetFromCenterForItem(@ByValue UIOffset o,
             @Mapped(ObjCObjectMapper.class) UIDynamicItem item);
 
-    /**
-     * targetOffsetFromCenterForItem:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPushBehavior_Class/index.html#//apple_ref/occ/instm/UIPushBehavior/targetOffsetFromCenterForItem:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("targetOffsetFromCenterForItem:")
     @ByValue

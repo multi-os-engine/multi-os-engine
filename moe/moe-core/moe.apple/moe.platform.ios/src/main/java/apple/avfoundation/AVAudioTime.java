@@ -60,51 +60,27 @@ public class AVAudioTime extends NSObject {
     @Selector("alloc")
     public static native AVAudioTime alloc();
 
-    /**
-     * hostTimeForSeconds:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioTime_Class/index.html#//apple_ref/occ/clm/AVAudioTime/hostTimeForSeconds:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("hostTimeForSeconds:")
     public static native long hostTimeForSeconds(double seconds);
 
-    /**
-     * secondsForHostTime:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioTime_Class/index.html#//apple_ref/occ/clm/AVAudioTime/secondsForHostTime:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("secondsForHostTime:")
     public static native double secondsForHostTime(long hostTime);
 
-    /**
-     * timeWithAudioTimeStamp:sampleRate:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioTime_Class/index.html#//apple_ref/occ/clm/AVAudioTime/timeWithAudioTimeStamp:sampleRate:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("timeWithAudioTimeStamp:sampleRate:")
     public static native AVAudioTime timeWithAudioTimeStampSampleRate(AudioTimeStamp ts, double sampleRate);
 
-    /**
-     * timeWithHostTime:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioTime_Class/index.html#//apple_ref/occ/clm/AVAudioTime/timeWithHostTime:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("timeWithHostTime:")
     public static native AVAudioTime timeWithHostTime(long hostTime);
 
-    /**
-     * timeWithHostTime:sampleTime:atRate:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioTime_Class/index.html#//apple_ref/occ/clm/AVAudioTime/timeWithHostTime:sampleTime:atRate:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("timeWithHostTime:sampleTime:atRate:")
     public static native AVAudioTime timeWithHostTimeSampleTimeAtRate(long hostTime, long sampleTime,
             double sampleRate);
 
-    /**
-     * timeWithSampleTime:atRate:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioTime_Class/index.html#//apple_ref/occ/clm/AVAudioTime/timeWithSampleTime:atRate:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("timeWithSampleTime:atRate:")
     public static native AVAudioTime timeWithSampleTimeAtRate(long sampleTime, double sampleRate);
@@ -209,27 +185,15 @@ public class AVAudioTime extends NSObject {
     @NInt
     public static native long version_static();
 
-    /**
-     * audioTimeStamp</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioTime_Class/index.html#//apple_ref/occ/instp/AVAudioTime/audioTimeStamp">iOS Dev Center</a>
-     */
     @Generated
     @Selector("audioTimeStamp")
     @ByValue
     public native AudioTimeStamp audioTimeStamp();
 
-    /**
-     * extrapolateTimeFromAnchor:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioTime_Class/index.html#//apple_ref/occ/instm/AVAudioTime/extrapolateTimeFromAnchor:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("extrapolateTimeFromAnchor:")
     public native AVAudioTime extrapolateTimeFromAnchor(AVAudioTime anchorTime);
 
-    /**
-     * hostTime</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioTime_Class/index.html#//apple_ref/occ/instp/AVAudioTime/hostTime">iOS Dev Center</a>
-     */
     @Generated
     @Selector("hostTime")
     public native long hostTime();
@@ -238,66 +202,34 @@ public class AVAudioTime extends NSObject {
     @Selector("init")
     public native AVAudioTime init();
 
-    /**
-     * initWithAudioTimeStamp:sampleRate:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioTime_Class/index.html#//apple_ref/occ/instm/AVAudioTime/initWithAudioTimeStamp:sampleRate:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithAudioTimeStamp:sampleRate:")
     public native AVAudioTime initWithAudioTimeStampSampleRate(AudioTimeStamp ts, double sampleRate);
 
-    /**
-     * initWithHostTime:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioTime_Class/index.html#//apple_ref/occ/instm/AVAudioTime/initWithHostTime:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithHostTime:")
     public native AVAudioTime initWithHostTime(long hostTime);
 
-    /**
-     * initWithHostTime:sampleTime:atRate:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioTime_Class/index.html#//apple_ref/occ/instm/AVAudioTime/initWithHostTime:sampleTime:atRate:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithHostTime:sampleTime:atRate:")
     public native AVAudioTime initWithHostTimeSampleTimeAtRate(long hostTime, long sampleTime, double sampleRate);
 
-    /**
-     * initWithSampleTime:atRate:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioTime_Class/index.html#//apple_ref/occ/instm/AVAudioTime/initWithSampleTime:atRate:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithSampleTime:atRate:")
     public native AVAudioTime initWithSampleTimeAtRate(long sampleTime, double sampleRate);
 
-    /**
-     * hostTimeValid</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioTime_Class/index.html#//apple_ref/occ/instp/AVAudioTime/hostTimeValid">iOS Dev Center</a>
-     */
     @Generated
     @Selector("isHostTimeValid")
     public native boolean isHostTimeValid();
 
-    /**
-     * sampleTimeValid</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioTime_Class/index.html#//apple_ref/occ/instp/AVAudioTime/sampleTimeValid">iOS Dev Center</a>
-     */
     @Generated
     @Selector("isSampleTimeValid")
     public native boolean isSampleTimeValid();
 
-    /**
-     * sampleRate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioTime_Class/index.html#//apple_ref/occ/instp/AVAudioTime/sampleRate">iOS Dev Center</a>
-     */
     @Generated
     @Selector("sampleRate")
     public native double sampleRate();
 
-    /**
-     * sampleTime</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioTime_Class/index.html#//apple_ref/occ/instp/AVAudioTime/sampleTime">iOS Dev Center</a>
-     */
     @Generated
     @Selector("sampleTime")
     public native long sampleTime();

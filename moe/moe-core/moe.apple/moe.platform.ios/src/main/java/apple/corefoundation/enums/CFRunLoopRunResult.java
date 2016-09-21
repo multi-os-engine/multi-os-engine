@@ -24,6 +24,7 @@ public final class CFRunLoopRunResult {
     @Generated public static final int Stopped = 0x00000002;
     @Generated public static final int TimedOut = 0x00000003;
     @Generated public static final int HandledSource = 0x00000004;
+
     @Generated
     private CFRunLoopRunResult() {
     }

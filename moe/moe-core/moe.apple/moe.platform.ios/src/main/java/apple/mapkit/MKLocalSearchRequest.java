@@ -171,43 +171,23 @@ public class MKLocalSearchRequest extends NSObject implements NSCopying {
     @Selector("init")
     public native MKLocalSearchRequest init();
 
-    /**
-     * naturalLanguageQuery</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKLocalSearchRequest_class/index.html#//apple_ref/occ/instp/MKLocalSearchRequest/naturalLanguageQuery">iOS Dev Center</a>
-     */
     @Generated
     @Selector("naturalLanguageQuery")
     public native String naturalLanguageQuery();
 
-    /**
-     * region</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKLocalSearchRequest_class/index.html#//apple_ref/occ/instp/MKLocalSearchRequest/region">iOS Dev Center</a>
-     */
     @Generated
     @Selector("region")
     @ByValue
     public native MKCoordinateRegion region();
 
-    /**
-     * naturalLanguageQuery</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKLocalSearchRequest_class/index.html#//apple_ref/occ/instp/MKLocalSearchRequest/naturalLanguageQuery">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setNaturalLanguageQuery:")
     public native void setNaturalLanguageQuery(String value);
 
-    /**
-     * region</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKLocalSearchRequest_class/index.html#//apple_ref/occ/instp/MKLocalSearchRequest/region">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setRegion:")
     public native void setRegion(@ByValue MKCoordinateRegion value);
 
-    /**
-     * initWithCompletion:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKLocalSearchRequest_class/index.html#//apple_ref/occ/instm/MKLocalSearchRequest/initWithCompletion:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithCompletion:")
     public native MKLocalSearchRequest initWithCompletion(MKLocalSearchCompletion completion);

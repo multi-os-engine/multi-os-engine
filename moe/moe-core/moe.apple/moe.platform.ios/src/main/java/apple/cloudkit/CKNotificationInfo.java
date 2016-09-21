@@ -166,42 +166,22 @@ public class CKNotificationInfo extends NSObject implements NSSecureCoding, NSCo
     @NInt
     public static native long version_static();
 
-    /**
-     * alertActionLocalizationKey</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKNotificationInfo_class/index.html#//apple_ref/occ/instp/CKNotificationInfo/alertActionLocalizationKey">iOS Dev Center</a>
-     */
     @Generated
     @Selector("alertActionLocalizationKey")
     public native String alertActionLocalizationKey();
 
-    /**
-     * alertBody</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKNotificationInfo_class/index.html#//apple_ref/occ/instp/CKNotificationInfo/alertBody">iOS Dev Center</a>
-     */
     @Generated
     @Selector("alertBody")
     public native String alertBody();
 
-    /**
-     * alertLaunchImage</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKNotificationInfo_class/index.html#//apple_ref/occ/instp/CKNotificationInfo/alertLaunchImage">iOS Dev Center</a>
-     */
     @Generated
     @Selector("alertLaunchImage")
     public native String alertLaunchImage();
 
-    /**
-     * alertLocalizationArgs</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKNotificationInfo_class/index.html#//apple_ref/occ/instp/CKNotificationInfo/alertLocalizationArgs">iOS Dev Center</a>
-     */
     @Generated
     @Selector("alertLocalizationArgs")
     public native NSArray<String> alertLocalizationArgs();
 
-    /**
-     * alertLocalizationKey</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKNotificationInfo_class/index.html#//apple_ref/occ/instp/CKNotificationInfo/alertLocalizationKey">iOS Dev Center</a>
-     */
     @Generated
     @Selector("alertLocalizationKey")
     public native String alertLocalizationKey();
@@ -212,10 +192,6 @@ public class CKNotificationInfo extends NSObject implements NSSecureCoding, NSCo
     @MappedReturn(ObjCObjectMapper.class)
     public native Object copyWithZone(VoidPtr zone);
 
-    /**
-     * desiredKeys</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKNotificationInfo_class/index.html#//apple_ref/occ/instp/CKNotificationInfo/desiredKeys">iOS Dev Center</a>
-     */
     @Generated
     @Selector("desiredKeys")
     public native NSArray<String> desiredKeys();
@@ -232,98 +208,50 @@ public class CKNotificationInfo extends NSObject implements NSSecureCoding, NSCo
     @Selector("initWithCoder:")
     public native CKNotificationInfo initWithCoder(NSCoder aDecoder);
 
-    /**
-     * alertActionLocalizationKey</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKNotificationInfo_class/index.html#//apple_ref/occ/instp/CKNotificationInfo/alertActionLocalizationKey">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setAlertActionLocalizationKey:")
     public native void setAlertActionLocalizationKey(String value);
 
-    /**
-     * alertBody</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKNotificationInfo_class/index.html#//apple_ref/occ/instp/CKNotificationInfo/alertBody">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setAlertBody:")
     public native void setAlertBody(String value);
 
-    /**
-     * alertLaunchImage</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKNotificationInfo_class/index.html#//apple_ref/occ/instp/CKNotificationInfo/alertLaunchImage">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setAlertLaunchImage:")
     public native void setAlertLaunchImage(String value);
 
-    /**
-     * alertLocalizationArgs</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKNotificationInfo_class/index.html#//apple_ref/occ/instp/CKNotificationInfo/alertLocalizationArgs">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setAlertLocalizationArgs:")
     public native void setAlertLocalizationArgs(NSArray<String> value);
 
-    /**
-     * alertLocalizationKey</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKNotificationInfo_class/index.html#//apple_ref/occ/instp/CKNotificationInfo/alertLocalizationKey">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setAlertLocalizationKey:")
     public native void setAlertLocalizationKey(String value);
 
-    /**
-     * desiredKeys</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKNotificationInfo_class/index.html#//apple_ref/occ/instp/CKNotificationInfo/desiredKeys">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setDesiredKeys:")
     public native void setDesiredKeys(NSArray<String> value);
 
-    /**
-     * shouldBadge</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKNotificationInfo_class/index.html#//apple_ref/occ/instp/CKNotificationInfo/shouldBadge">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setShouldBadge:")
     public native void setShouldBadge(boolean value);
 
-    /**
-     * shouldSendContentAvailable</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKNotificationInfo_class/index.html#//apple_ref/occ/instp/CKNotificationInfo/shouldSendContentAvailable">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setShouldSendContentAvailable:")
     public native void setShouldSendContentAvailable(boolean value);
 
-    /**
-     * soundName</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKNotificationInfo_class/index.html#//apple_ref/occ/instp/CKNotificationInfo/soundName">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setSoundName:")
     public native void setSoundName(String value);
 
-    /**
-     * shouldBadge</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKNotificationInfo_class/index.html#//apple_ref/occ/instp/CKNotificationInfo/shouldBadge">iOS Dev Center</a>
-     */
     @Generated
     @Selector("shouldBadge")
     public native boolean shouldBadge();
 
-    /**
-     * shouldSendContentAvailable</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKNotificationInfo_class/index.html#//apple_ref/occ/instp/CKNotificationInfo/shouldSendContentAvailable">iOS Dev Center</a>
-     */
     @Generated
     @Selector("shouldSendContentAvailable")
     public native boolean shouldSendContentAvailable();
 
-    /**
-     * soundName</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKNotificationInfo_class/index.html#//apple_ref/occ/instp/CKNotificationInfo/soundName">iOS Dev Center</a>
-     */
     @Generated
     @Selector("soundName")
     public native String soundName();
@@ -334,18 +262,10 @@ public class CKNotificationInfo extends NSObject implements NSSecureCoding, NSCo
         return supportsSecureCoding();
     }
 
-    /**
-     * category</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKNotificationInfo_class/index.html#//apple_ref/occ/instp/CKNotificationInfo/category">iOS Dev Center</a>
-     */
     @Generated
     @Selector("category")
     public native String category();
 
-    /**
-     * category</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKNotificationInfo_class/index.html#//apple_ref/occ/instp/CKNotificationInfo/category">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setCategory:")
     public native void setCategory(String value);

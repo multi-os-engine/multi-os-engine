@@ -174,53 +174,29 @@ public class NSManagedObjectContext extends NSObject implements NSCoding, NSLock
     @NInt
     public static native long version_static();
 
-    /**
-     * assignObject:toPersistentStore:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/CoreDataFramework/Classes/NSManagedObjectContext_Class/index.html#//apple_ref/occ/instm/NSManagedObjectContext/assignObject:toPersistentStore:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("assignObject:toPersistentStore:")
     public native void assignObjectToPersistentStore(@Mapped(ObjCObjectMapper.class) Object object,
             NSPersistentStore store);
 
-    /**
-     * concurrencyType</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/CoreDataFramework/Classes/NSManagedObjectContext_Class/index.html#//apple_ref/occ/instp/NSManagedObjectContext/concurrencyType">iOS Dev Center</a>
-     */
     @Generated
     @Selector("concurrencyType")
     @NUInt
     public native long concurrencyType();
 
-    /**
-     * countForFetchRequest:error:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/CoreDataFramework/Classes/NSManagedObjectContext_Class/index.html#//apple_ref/occ/instm/NSManagedObjectContext/countForFetchRequest:error:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("countForFetchRequest:error:")
     @NUInt
     public native long countForFetchRequestError(NSFetchRequest request, Ptr<NSError> error);
 
-    /**
-     * deleteObject:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/CoreDataFramework/Classes/NSManagedObjectContext_Class/index.html#//apple_ref/occ/instm/NSManagedObjectContext/deleteObject:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("deleteObject:")
     public native void deleteObject(NSManagedObject object);
 
-    /**
-     * deletedObjects</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/CoreDataFramework/Classes/NSManagedObjectContext_Class/index.html#//apple_ref/occ/instp/NSManagedObjectContext/deletedObjects">iOS Dev Center</a>
-     */
     @Generated
     @Selector("deletedObjects")
     public native NSSet<? extends NSManagedObject> deletedObjects();
 
-    /**
-     * detectConflictsForObject:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/CoreDataFramework/Classes/NSManagedObjectContext_Class/index.html#//apple_ref/occ/instm/NSManagedObjectContext/detectConflictsForObject:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("detectConflictsForObject:")
     public native void detectConflictsForObject(NSManagedObject object);
@@ -229,10 +205,6 @@ public class NSManagedObjectContext extends NSObject implements NSCoding, NSLock
     @Selector("encodeWithCoder:")
     public native void encodeWithCoder(NSCoder aCoder);
 
-    /**
-     * executeFetchRequest:error:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/CoreDataFramework/Classes/NSManagedObjectContext_Class/index.html#//apple_ref/occ/instm/NSManagedObjectContext/executeFetchRequest:error:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("executeFetchRequest:error:")
     public native NSArray<?> executeFetchRequestError(NSFetchRequest request, Ptr<NSError> error);
@@ -241,18 +213,10 @@ public class NSManagedObjectContext extends NSObject implements NSCoding, NSLock
     @Selector("executeRequest:error:")
     public native NSPersistentStoreResult executeRequestError(NSPersistentStoreRequest request, Ptr<NSError> error);
 
-    /**
-     * existingObjectWithID:error:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/CoreDataFramework/Classes/NSManagedObjectContext_Class/index.html#//apple_ref/occ/instm/NSManagedObjectContext/existingObjectWithID:error:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("existingObjectWithID:error:")
     public native NSManagedObject existingObjectWithIDError(NSManagedObjectID objectID, Ptr<NSError> error);
 
-    /**
-     * hasChanges</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/CoreDataFramework/Classes/NSManagedObjectContext_Class/index.html#//apple_ref/occ/instp/NSManagedObjectContext/hasChanges">iOS Dev Center</a>
-     */
     @Generated
     @Selector("hasChanges")
     public native boolean hasChanges();
@@ -266,26 +230,14 @@ public class NSManagedObjectContext extends NSObject implements NSCoding, NSLock
     @Selector("initWithCoder:")
     public native NSManagedObjectContext initWithCoder(NSCoder aDecoder);
 
-    /**
-     * initWithConcurrencyType:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/CoreDataFramework/Classes/NSManagedObjectContext_Class/index.html#//apple_ref/occ/instm/NSManagedObjectContext/initWithConcurrencyType:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithConcurrencyType:")
     public native NSManagedObjectContext initWithConcurrencyType(@NUInt long ct);
 
-    /**
-     * insertObject:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/CoreDataFramework/Classes/NSManagedObjectContext_Class/index.html#//apple_ref/occ/instm/NSManagedObjectContext/insertObject:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("insertObject:")
     public native void insertObject(NSManagedObject object);
 
-    /**
-     * insertedObjects</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/CoreDataFramework/Classes/NSManagedObjectContext_Class/index.html#//apple_ref/occ/instp/NSManagedObjectContext/insertedObjects">iOS Dev Center</a>
-     */
     @Generated
     @Selector("insertedObjects")
     public native NSSet<? extends NSManagedObject> insertedObjects();
@@ -295,18 +247,10 @@ public class NSManagedObjectContext extends NSObject implements NSCoding, NSLock
     @Selector("lock")
     public native void lock();
 
-    /**
-     * mergeChangesFromContextDidSaveNotification:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/CoreDataFramework/Classes/NSManagedObjectContext_Class/index.html#//apple_ref/occ/instm/NSManagedObjectContext/mergeChangesFromContextDidSaveNotification:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("mergeChangesFromContextDidSaveNotification:")
     public native void mergeChangesFromContextDidSaveNotification(NSNotification notification);
 
-    /**
-     * mergePolicy</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/CoreDataFramework/Classes/NSManagedObjectContext_Class/index.html#//apple_ref/occ/instp/NSManagedObjectContext/mergePolicy">iOS Dev Center</a>
-     */
     @Generated
     @Selector("mergePolicy")
     @MappedReturn(ObjCObjectMapper.class)
@@ -316,18 +260,10 @@ public class NSManagedObjectContext extends NSObject implements NSCoding, NSLock
     @Selector("name")
     public native String name();
 
-    /**
-     * objectRegisteredForID:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/CoreDataFramework/Classes/NSManagedObjectContext_Class/index.html#//apple_ref/occ/instm/NSManagedObjectContext/objectRegisteredForID:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("objectRegisteredForID:")
     public native NSManagedObject objectRegisteredForID(NSManagedObjectID objectID);
 
-    /**
-     * objectWithID:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/CoreDataFramework/Classes/NSManagedObjectContext_Class/index.html#//apple_ref/occ/instm/NSManagedObjectContext/objectWithID:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("objectWithID:")
     public native NSManagedObject objectWithID(NSManagedObjectID objectID);
@@ -337,124 +273,64 @@ public class NSManagedObjectContext extends NSObject implements NSCoding, NSLock
     public native void observeValueForKeyPathOfObjectChangeContext(String keyPath,
             @Mapped(ObjCObjectMapper.class) Object object, NSDictionary<String, ?> change, VoidPtr context);
 
-    /**
-     * obtainPermanentIDsForObjects:error:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/CoreDataFramework/Classes/NSManagedObjectContext_Class/index.html#//apple_ref/occ/instm/NSManagedObjectContext/obtainPermanentIDsForObjects:error:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("obtainPermanentIDsForObjects:error:")
     public native boolean obtainPermanentIDsForObjectsError(NSArray<? extends NSManagedObject> objects,
             Ptr<NSError> error);
 
-    /**
-     * parentContext</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/CoreDataFramework/Classes/NSManagedObjectContext_Class/index.html#//apple_ref/occ/instp/NSManagedObjectContext/parentContext">iOS Dev Center</a>
-     */
     @Generated
     @Selector("parentContext")
     public native NSManagedObjectContext parentContext();
 
-    /**
-     * performBlock:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/CoreDataFramework/Classes/NSManagedObjectContext_Class/index.html#//apple_ref/occ/instm/NSManagedObjectContext/performBlock:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("performBlock:")
     public native void performBlock(@ObjCBlock(name = "call_performBlock") Block_performBlock block);
 
-    /**
-     * performBlockAndWait:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/CoreDataFramework/Classes/NSManagedObjectContext_Class/index.html#//apple_ref/occ/instm/NSManagedObjectContext/performBlockAndWait:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("performBlockAndWait:")
     public native void performBlockAndWait(
             @ObjCBlock(name = "call_performBlockAndWait") Block_performBlockAndWait block);
 
-    /**
-     * persistentStoreCoordinator</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/CoreDataFramework/Classes/NSManagedObjectContext_Class/index.html#//apple_ref/occ/instp/NSManagedObjectContext/persistentStoreCoordinator">iOS Dev Center</a>
-     */
     @Generated
     @Selector("persistentStoreCoordinator")
     public native NSPersistentStoreCoordinator persistentStoreCoordinator();
 
-    /**
-     * processPendingChanges</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/CoreDataFramework/Classes/NSManagedObjectContext_Class/index.html#//apple_ref/occ/instm/NSManagedObjectContext/processPendingChanges">iOS Dev Center</a>
-     */
     @Generated
     @Selector("processPendingChanges")
     public native void processPendingChanges();
 
-    /**
-     * propagatesDeletesAtEndOfEvent</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/CoreDataFramework/Classes/NSManagedObjectContext_Class/index.html#//apple_ref/occ/instp/NSManagedObjectContext/propagatesDeletesAtEndOfEvent">iOS Dev Center</a>
-     */
     @Generated
     @Selector("propagatesDeletesAtEndOfEvent")
     public native boolean propagatesDeletesAtEndOfEvent();
 
-    /**
-     * redo</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/CoreDataFramework/Classes/NSManagedObjectContext_Class/index.html#//apple_ref/occ/instm/NSManagedObjectContext/redo">iOS Dev Center</a>
-     */
     @Generated
     @Selector("redo")
     public native void redo();
 
-    /**
-     * refreshObject:mergeChanges:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/CoreDataFramework/Classes/NSManagedObjectContext_Class/index.html#//apple_ref/occ/instm/NSManagedObjectContext/refreshObject:mergeChanges:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("refreshObject:mergeChanges:")
     public native void refreshObjectMergeChanges(NSManagedObject object, boolean flag);
 
-    /**
-     * registeredObjects</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/CoreDataFramework/Classes/NSManagedObjectContext_Class/index.html#//apple_ref/occ/instp/NSManagedObjectContext/registeredObjects">iOS Dev Center</a>
-     */
     @Generated
     @Selector("registeredObjects")
     public native NSSet<? extends NSManagedObject> registeredObjects();
 
-    /**
-     * reset</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/CoreDataFramework/Classes/NSManagedObjectContext_Class/index.html#//apple_ref/occ/instm/NSManagedObjectContext/reset">iOS Dev Center</a>
-     */
     @Generated
     @Selector("reset")
     public native void reset();
 
-    /**
-     * retainsRegisteredObjects</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/CoreDataFramework/Classes/NSManagedObjectContext_Class/index.html#//apple_ref/occ/instp/NSManagedObjectContext/retainsRegisteredObjects">iOS Dev Center</a>
-     */
     @Generated
     @Selector("retainsRegisteredObjects")
     public native boolean retainsRegisteredObjects();
 
-    /**
-     * rollback</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/CoreDataFramework/Classes/NSManagedObjectContext_Class/index.html#//apple_ref/occ/instm/NSManagedObjectContext/rollback">iOS Dev Center</a>
-     */
     @Generated
     @Selector("rollback")
     public native void rollback();
 
-    /**
-     * save:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/CoreDataFramework/Classes/NSManagedObjectContext_Class/index.html#//apple_ref/occ/instm/NSManagedObjectContext/save:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("save:")
     public native boolean save(Ptr<NSError> error);
 
-    /**
-     * mergePolicy</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/CoreDataFramework/Classes/NSManagedObjectContext_Class/index.html#//apple_ref/occ/instp/NSManagedObjectContext/mergePolicy">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setMergePolicy:")
     public native void setMergePolicy(@Mapped(ObjCObjectMapper.class) Object value);
@@ -463,83 +339,43 @@ public class NSManagedObjectContext extends NSObject implements NSCoding, NSLock
     @Selector("setName:")
     public native void setName(String value);
 
-    /**
-     * parentContext</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/CoreDataFramework/Classes/NSManagedObjectContext_Class/index.html#//apple_ref/occ/instp/NSManagedObjectContext/parentContext">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setParentContext:")
     public native void setParentContext(NSManagedObjectContext value);
 
-    /**
-     * persistentStoreCoordinator</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/CoreDataFramework/Classes/NSManagedObjectContext_Class/index.html#//apple_ref/occ/instp/NSManagedObjectContext/persistentStoreCoordinator">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setPersistentStoreCoordinator:")
     public native void setPersistentStoreCoordinator(NSPersistentStoreCoordinator value);
 
-    /**
-     * propagatesDeletesAtEndOfEvent</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/CoreDataFramework/Classes/NSManagedObjectContext_Class/index.html#//apple_ref/occ/instp/NSManagedObjectContext/propagatesDeletesAtEndOfEvent">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setPropagatesDeletesAtEndOfEvent:")
     public native void setPropagatesDeletesAtEndOfEvent(boolean value);
 
-    /**
-     * retainsRegisteredObjects</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/CoreDataFramework/Classes/NSManagedObjectContext_Class/index.html#//apple_ref/occ/instp/NSManagedObjectContext/retainsRegisteredObjects">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setRetainsRegisteredObjects:")
     public native void setRetainsRegisteredObjects(boolean value);
 
-    /**
-     * stalenessInterval</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/CoreDataFramework/Classes/NSManagedObjectContext_Class/index.html#//apple_ref/occ/instp/NSManagedObjectContext/stalenessInterval">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setStalenessInterval:")
     public native void setStalenessInterval(double value);
 
-    /**
-     * undoManager</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/CoreDataFramework/Classes/NSManagedObjectContext_Class/index.html#//apple_ref/occ/instp/NSManagedObjectContext/undoManager">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setUndoManager:")
     public native void setUndoManager(NSUndoManager value);
 
-    /**
-     * stalenessInterval</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/CoreDataFramework/Classes/NSManagedObjectContext_Class/index.html#//apple_ref/occ/instp/NSManagedObjectContext/stalenessInterval">iOS Dev Center</a>
-     */
     @Generated
     @Selector("stalenessInterval")
     public native double stalenessInterval();
 
-    /**
-     * tryLock</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/CoreDataFramework/Classes/NSManagedObjectContext_Class/index.html#//apple_ref/occ/instm/NSManagedObjectContext/tryLock">iOS Dev Center</a>
-     */
     @Generated
     @Deprecated
     @Selector("tryLock")
     public native boolean tryLock();
 
-    /**
-     * undo</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/CoreDataFramework/Classes/NSManagedObjectContext_Class/index.html#//apple_ref/occ/instm/NSManagedObjectContext/undo">iOS Dev Center</a>
-     */
     @Generated
     @Selector("undo")
     public native void undo();
 
-    /**
-     * undoManager</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/CoreDataFramework/Classes/NSManagedObjectContext_Class/index.html#//apple_ref/occ/instp/NSManagedObjectContext/undoManager">iOS Dev Center</a>
-     */
     @Generated
     @Selector("undoManager")
     public native NSUndoManager undoManager();
@@ -549,18 +385,10 @@ public class NSManagedObjectContext extends NSObject implements NSCoding, NSLock
     @Selector("unlock")
     public native void unlock();
 
-    /**
-     * updatedObjects</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/CoreDataFramework/Classes/NSManagedObjectContext_Class/index.html#//apple_ref/occ/instp/NSManagedObjectContext/updatedObjects">iOS Dev Center</a>
-     */
     @Generated
     @Selector("updatedObjects")
     public native NSSet<? extends NSManagedObject> updatedObjects();
 
-    /**
-     * userInfo</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/CoreDataFramework/Classes/NSManagedObjectContext_Class/index.html#//apple_ref/occ/instp/NSManagedObjectContext/userInfo">iOS Dev Center</a>
-     */
     @Generated
     @Selector("userInfo")
     public native NSMutableDictionary<?, ?> userInfo();

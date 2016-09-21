@@ -167,10 +167,6 @@ public class AVAudioUnitTimeEffect extends AVAudioUnit {
     @NInt
     public static native long version_static();
 
-    /**
-     * bypass</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioUnitTimeEffect_Class/index.html#//apple_ref/occ/instp/AVAudioUnitTimeEffect/bypass">iOS Dev Center</a>
-     */
     @Generated
     @Selector("bypass")
     public native boolean bypass();
@@ -179,19 +175,11 @@ public class AVAudioUnitTimeEffect extends AVAudioUnit {
     @Selector("init")
     public native AVAudioUnitTimeEffect init();
 
-    /**
-     * initWithAudioComponentDescription:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioUnitTimeEffect_Class/index.html#//apple_ref/occ/instm/AVAudioUnitTimeEffect/initWithAudioComponentDescription:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithAudioComponentDescription:")
     public native AVAudioUnitTimeEffect initWithAudioComponentDescription(
             @ByValue AudioComponentDescription audioComponentDescription);
 
-    /**
-     * bypass</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioUnitTimeEffect_Class/index.html#//apple_ref/occ/instp/AVAudioUnitTimeEffect/bypass">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setBypass:")
     public native void setBypass(boolean value);

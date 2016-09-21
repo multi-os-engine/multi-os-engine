@@ -33,10 +33,6 @@ import org.moe.natj.objc.ann.Selector;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("UISearchBarDelegate")
 public interface UISearchBarDelegate extends UIBarPositioningDelegate {
-    /**
-     * searchBar:selectedScopeButtonIndexDidChange:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISearchBarDelegate_Protocol/index.html#//apple_ref/occ/intfm/UISearchBarDelegate/searchBar:selectedScopeButtonIndexDidChange:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("searchBar:selectedScopeButtonIndexDidChange:")
@@ -44,10 +40,6 @@ public interface UISearchBarDelegate extends UIBarPositioningDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * searchBar:shouldChangeTextInRange:replacementText:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISearchBarDelegate_Protocol/index.html#//apple_ref/occ/intfm/UISearchBarDelegate/searchBar:shouldChangeTextInRange:replacementText:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("searchBar:shouldChangeTextInRange:replacementText:")
@@ -56,10 +48,6 @@ public interface UISearchBarDelegate extends UIBarPositioningDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * searchBar:textDidChange:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISearchBarDelegate_Protocol/index.html#//apple_ref/occ/intfm/UISearchBarDelegate/searchBar:textDidChange:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("searchBar:textDidChange:")
@@ -67,10 +55,6 @@ public interface UISearchBarDelegate extends UIBarPositioningDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * searchBarBookmarkButtonClicked:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISearchBarDelegate_Protocol/index.html#//apple_ref/occ/intfm/UISearchBarDelegate/searchBarBookmarkButtonClicked:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("searchBarBookmarkButtonClicked:")
@@ -78,10 +62,6 @@ public interface UISearchBarDelegate extends UIBarPositioningDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * searchBarCancelButtonClicked:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISearchBarDelegate_Protocol/index.html#//apple_ref/occ/intfm/UISearchBarDelegate/searchBarCancelButtonClicked:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("searchBarCancelButtonClicked:")
@@ -89,10 +69,6 @@ public interface UISearchBarDelegate extends UIBarPositioningDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * searchBarResultsListButtonClicked:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISearchBarDelegate_Protocol/index.html#//apple_ref/occ/intfm/UISearchBarDelegate/searchBarResultsListButtonClicked:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("searchBarResultsListButtonClicked:")
@@ -100,10 +76,6 @@ public interface UISearchBarDelegate extends UIBarPositioningDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * searchBarSearchButtonClicked:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISearchBarDelegate_Protocol/index.html#//apple_ref/occ/intfm/UISearchBarDelegate/searchBarSearchButtonClicked:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("searchBarSearchButtonClicked:")
@@ -111,10 +83,6 @@ public interface UISearchBarDelegate extends UIBarPositioningDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * searchBarShouldBeginEditing:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISearchBarDelegate_Protocol/index.html#//apple_ref/occ/intfm/UISearchBarDelegate/searchBarShouldBeginEditing:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("searchBarShouldBeginEditing:")
@@ -122,10 +90,6 @@ public interface UISearchBarDelegate extends UIBarPositioningDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * searchBarShouldEndEditing:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISearchBarDelegate_Protocol/index.html#//apple_ref/occ/intfm/UISearchBarDelegate/searchBarShouldEndEditing:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("searchBarShouldEndEditing:")
@@ -133,10 +97,6 @@ public interface UISearchBarDelegate extends UIBarPositioningDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * searchBarTextDidBeginEditing:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISearchBarDelegate_Protocol/index.html#//apple_ref/occ/intfm/UISearchBarDelegate/searchBarTextDidBeginEditing:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("searchBarTextDidBeginEditing:")
@@ -144,10 +104,6 @@ public interface UISearchBarDelegate extends UIBarPositioningDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * searchBarTextDidEndEditing:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISearchBarDelegate_Protocol/index.html#//apple_ref/occ/intfm/UISearchBarDelegate/searchBarTextDidEndEditing:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("searchBarTextDidEndEditing:")

@@ -159,50 +159,26 @@ public class GCExtendedGamepad extends NSObject {
     @NInt
     public static native long version_static();
 
-    /**
-     * buttonA</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameController/Reference/GCExtendedGamePad_Ref/index.html#//apple_ref/occ/instp/GCExtendedGamepad/buttonA">iOS Dev Center</a>
-     */
     @Generated
     @Selector("buttonA")
     public native GCControllerButtonInput buttonA();
 
-    /**
-     * buttonB</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameController/Reference/GCExtendedGamePad_Ref/index.html#//apple_ref/occ/instp/GCExtendedGamepad/buttonB">iOS Dev Center</a>
-     */
     @Generated
     @Selector("buttonB")
     public native GCControllerButtonInput buttonB();
 
-    /**
-     * buttonX</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameController/Reference/GCExtendedGamePad_Ref/index.html#//apple_ref/occ/instp/GCExtendedGamepad/buttonX">iOS Dev Center</a>
-     */
     @Generated
     @Selector("buttonX")
     public native GCControllerButtonInput buttonX();
 
-    /**
-     * buttonY</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameController/Reference/GCExtendedGamePad_Ref/index.html#//apple_ref/occ/instp/GCExtendedGamepad/buttonY">iOS Dev Center</a>
-     */
     @Generated
     @Selector("buttonY")
     public native GCControllerButtonInput buttonY();
 
-    /**
-     * controller</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameController/Reference/GCExtendedGamePad_Ref/index.html#//apple_ref/occ/instp/GCExtendedGamepad/controller">iOS Dev Center</a>
-     */
     @Generated
     @Selector("controller")
     public native GCController controller();
 
-    /**
-     * dpad</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameController/Reference/GCExtendedGamePad_Ref/index.html#//apple_ref/occ/instp/GCExtendedGamepad/dpad">iOS Dev Center</a>
-     */
     @Generated
     @Selector("dpad")
     public native GCControllerDirectionPad dpad();
@@ -211,75 +187,39 @@ public class GCExtendedGamepad extends NSObject {
     @Selector("init")
     public native GCExtendedGamepad init();
 
-    /**
-     * leftShoulder</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameController/Reference/GCExtendedGamePad_Ref/index.html#//apple_ref/occ/instp/GCExtendedGamepad/leftShoulder">iOS Dev Center</a>
-     */
     @Generated
     @Selector("leftShoulder")
     public native GCControllerButtonInput leftShoulder();
 
-    /**
-     * leftThumbstick</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameController/Reference/GCExtendedGamePad_Ref/index.html#//apple_ref/occ/instp/GCExtendedGamepad/leftThumbstick">iOS Dev Center</a>
-     */
     @Generated
     @Selector("leftThumbstick")
     public native GCControllerDirectionPad leftThumbstick();
 
-    /**
-     * leftTrigger</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameController/Reference/GCExtendedGamePad_Ref/index.html#//apple_ref/occ/instp/GCExtendedGamepad/leftTrigger">iOS Dev Center</a>
-     */
     @Generated
     @Selector("leftTrigger")
     public native GCControllerButtonInput leftTrigger();
 
-    /**
-     * rightShoulder</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameController/Reference/GCExtendedGamePad_Ref/index.html#//apple_ref/occ/instp/GCExtendedGamepad/rightShoulder">iOS Dev Center</a>
-     */
     @Generated
     @Selector("rightShoulder")
     public native GCControllerButtonInput rightShoulder();
 
-    /**
-     * rightThumbstick</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameController/Reference/GCExtendedGamePad_Ref/index.html#//apple_ref/occ/instp/GCExtendedGamepad/rightThumbstick">iOS Dev Center</a>
-     */
     @Generated
     @Selector("rightThumbstick")
     public native GCControllerDirectionPad rightThumbstick();
 
-    /**
-     * rightTrigger</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameController/Reference/GCExtendedGamePad_Ref/index.html#//apple_ref/occ/instp/GCExtendedGamepad/rightTrigger">iOS Dev Center</a>
-     */
     @Generated
     @Selector("rightTrigger")
     public native GCControllerButtonInput rightTrigger();
 
-    /**
-     * saveSnapshot</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameController/Reference/GCExtendedGamePad_Ref/index.html#//apple_ref/occ/instm/GCExtendedGamepad/saveSnapshot">iOS Dev Center</a>
-     */
     @Generated
     @Selector("saveSnapshot")
     public native GCExtendedGamepadSnapshot saveSnapshot();
 
-    /**
-     * valueChangedHandler</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameController/Reference/GCExtendedGamePad_Ref/index.html#//apple_ref/occ/instp/GCExtendedGamepad/valueChangedHandler">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setValueChangedHandler:")
     public native void setValueChangedHandler(
             @ObjCBlock(name = "call_setValueChangedHandler") Block_setValueChangedHandler value);
 
-    /**
-     * valueChangedHandler</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameController/Reference/GCExtendedGamePad_Ref/index.html#//apple_ref/occ/instp/GCExtendedGamepad/valueChangedHandler">iOS Dev Center</a>
-     */
     @Generated
     @Selector("valueChangedHandler")
     @ObjCBlock(name = "call_valueChangedHandler_ret")

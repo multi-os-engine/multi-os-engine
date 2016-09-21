@@ -159,26 +159,14 @@ public class UIDynamicBehavior extends NSObject {
     @NInt
     public static native long version();
 
-    /**
-     * addChildBehavior:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIDynamicBehavior_Class/index.html#//apple_ref/occ/instm/UIDynamicBehavior/addChildBehavior:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("addChildBehavior:")
     public native void addChildBehavior(UIDynamicBehavior behavior);
 
-    /**
-     * childBehaviors</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIDynamicBehavior_Class/index.html#//apple_ref/occ/instp/UIDynamicBehavior/childBehaviors">iOS Dev Center</a>
-     */
     @Generated
     @Selector("childBehaviors")
     public native NSArray<? extends UIDynamicBehavior> childBehaviors();
 
-    /**
-     * dynamicAnimator</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIDynamicBehavior_Class/index.html#//apple_ref/occ/instp/UIDynamicBehavior/dynamicAnimator">iOS Dev Center</a>
-     */
     @Generated
     @Selector("dynamicAnimator")
     public native UIDynamicAnimator dynamicAnimator();
@@ -187,34 +175,18 @@ public class UIDynamicBehavior extends NSObject {
     @Selector("init")
     public native UIDynamicBehavior init();
 
-    /**
-     * removeChildBehavior:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIDynamicBehavior_Class/index.html#//apple_ref/occ/instm/UIDynamicBehavior/removeChildBehavior:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("removeChildBehavior:")
     public native void removeChildBehavior(UIDynamicBehavior behavior);
 
-    /**
-     * action</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIDynamicBehavior_Class/index.html#//apple_ref/occ/instp/UIDynamicBehavior/action">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setAction:")
     public native void setAction(@ObjCBlock(name = "call_setAction") Block_setAction value);
 
-    /**
-     * willMoveToAnimator:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIDynamicBehavior_Class/index.html#//apple_ref/occ/instm/UIDynamicBehavior/willMoveToAnimator:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("willMoveToAnimator:")
     public native void willMoveToAnimator(UIDynamicAnimator dynamicAnimator);
 
-    /**
-     * action</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIDynamicBehavior_Class/index.html#//apple_ref/occ/instp/UIDynamicBehavior/action">iOS Dev Center</a>
-     */
     @Generated
     @Selector("action")
     @ObjCBlock(name = "call_action_ret")

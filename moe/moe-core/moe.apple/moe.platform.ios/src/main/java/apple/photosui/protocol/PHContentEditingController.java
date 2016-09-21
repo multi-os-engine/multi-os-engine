@@ -33,43 +33,23 @@ import org.moe.natj.objc.ann.Selector;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("PHContentEditingController")
 public interface PHContentEditingController {
-    /**
-     * canHandleAdjustmentData:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/PhotosUI/Reference/PHContentEditingController_Protocol/index.html#//apple_ref/occ/intfm/PHContentEditingController/canHandleAdjustmentData:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("canHandleAdjustmentData:")
     boolean canHandleAdjustmentData(PHAdjustmentData adjustmentData);
 
-    /**
-     * cancelContentEditing</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/PhotosUI/Reference/PHContentEditingController_Protocol/index.html#//apple_ref/occ/intfm/PHContentEditingController/cancelContentEditing">iOS Dev Center</a>
-     */
     @Generated
     @Selector("cancelContentEditing")
     void cancelContentEditing();
 
-    /**
-     * finishContentEditingWithCompletionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/PhotosUI/Reference/PHContentEditingController_Protocol/index.html#//apple_ref/occ/intfm/PHContentEditingController/finishContentEditingWithCompletionHandler:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("finishContentEditingWithCompletionHandler:")
     void finishContentEditingWithCompletionHandler(
             @ObjCBlock(name = "call_finishContentEditingWithCompletionHandler") Block_finishContentEditingWithCompletionHandler completionHandler);
 
-    /**
-     * shouldShowCancelConfirmation</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/PhotosUI/Reference/PHContentEditingController_Protocol/index.html#//apple_ref/occ/intfp/PHContentEditingController/shouldShowCancelConfirmation">iOS Dev Center</a>
-     */
     @Generated
     @Selector("shouldShowCancelConfirmation")
     boolean shouldShowCancelConfirmation();
 
-    /**
-     * startContentEditingWithInput:placeholderImage:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/PhotosUI/Reference/PHContentEditingController_Protocol/index.html#//apple_ref/occ/intfm/PHContentEditingController/startContentEditingWithInput:placeholderImage:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("startContentEditingWithInput:placeholderImage:")
     void startContentEditingWithInputPlaceholderImage(PHContentEditingInput contentEditingInput,

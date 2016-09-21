@@ -171,10 +171,6 @@ public class MDLMeshBufferData extends NSObject implements MDLMeshBuffer {
     @MappedReturn(ObjCObjectMapper.class)
     public native Object copyWithZone(VoidPtr zone);
 
-    /**
-     * data</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLMeshBufferData_Class/index.html#//apple_ref/occ/instp/MDLMeshBufferData/data">iOS Dev Center</a>
-     */
     @Generated
     @Selector("data")
     public native NSData data();
@@ -187,18 +183,10 @@ public class MDLMeshBufferData extends NSObject implements MDLMeshBuffer {
     @Selector("init")
     public native MDLMeshBufferData init();
 
-    /**
-     * initWithType:data:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLMeshBufferData_Class/index.html#//apple_ref/occ/instm/MDLMeshBufferData/initWithType:data:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithType:data:")
     public native MDLMeshBufferData initWithTypeData(@NUInt long type, NSData data);
 
-    /**
-     * initWithType:length:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLMeshBufferData_Class/index.html#//apple_ref/occ/instm/MDLMeshBufferData/initWithType:length:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithType:length:")
     public native MDLMeshBufferData initWithTypeLength(@NUInt long type, @NUInt long length);

@@ -31,35 +31,19 @@ import org.moe.natj.objc.ann.Selector;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("UITextInputTokenizer")
 public interface UITextInputTokenizer {
-    /**
-     * isPosition:atBoundary:inDirection:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITextInputTokenizer_Protocol/index.html#//apple_ref/occ/intfm/UITextInputTokenizer/isPosition:atBoundary:inDirection:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("isPosition:atBoundary:inDirection:")
     boolean isPositionAtBoundaryInDirection(UITextPosition position, @NInt long granularity, @NInt long direction);
 
-    /**
-     * isPosition:withinTextUnit:inDirection:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITextInputTokenizer_Protocol/index.html#//apple_ref/occ/intfm/UITextInputTokenizer/isPosition:withinTextUnit:inDirection:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("isPosition:withinTextUnit:inDirection:")
     boolean isPositionWithinTextUnitInDirection(UITextPosition position, @NInt long granularity, @NInt long direction);
 
-    /**
-     * positionFromPosition:toBoundary:inDirection:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITextInputTokenizer_Protocol/index.html#//apple_ref/occ/intfm/UITextInputTokenizer/positionFromPosition:toBoundary:inDirection:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("positionFromPosition:toBoundary:inDirection:")
     UITextPosition positionFromPositionToBoundaryInDirection(UITextPosition position, @NInt long granularity,
             @NInt long direction);
 
-    /**
-     * rangeEnclosingPosition:withGranularity:inDirection:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITextInputTokenizer_Protocol/index.html#//apple_ref/occ/intfm/UITextInputTokenizer/rangeEnclosingPosition:withGranularity:inDirection:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("rangeEnclosingPosition:withGranularity:inDirection:")
     UITextRange rangeEnclosingPositionWithGranularityInDirection(UITextPosition position, @NInt long granularity,

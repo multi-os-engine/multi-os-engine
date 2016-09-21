@@ -31,10 +31,6 @@ import org.moe.natj.objc.ann.Selector;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("UIPickerViewAccessibilityDelegate")
 public interface UIPickerViewAccessibilityDelegate extends UIPickerViewDelegate {
-    /**
-     * pickerView:accessibilityHintForComponent:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPickerViewAccessibilityDelegate_Protocol/index.html#//apple_ref/occ/intfm/UIPickerViewAccessibilityDelegate/pickerView:accessibilityHintForComponent:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("pickerView:accessibilityHintForComponent:")
@@ -42,10 +38,6 @@ public interface UIPickerViewAccessibilityDelegate extends UIPickerViewDelegate 
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * pickerView:accessibilityLabelForComponent:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPickerViewAccessibilityDelegate_Protocol/index.html#//apple_ref/occ/intfm/UIPickerViewAccessibilityDelegate/pickerView:accessibilityLabelForComponent:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("pickerView:accessibilityLabelForComponent:")

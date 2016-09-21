@@ -29,18 +29,10 @@ import org.moe.natj.objc.ann.Selector;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("GKGameModelUpdate")
 public interface GKGameModelUpdate {
-    /**
-     * value</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameplayKit/Reference/GKGameModelUpdate_Protocol/index.html#//apple_ref/occ/intfp/GKGameModelUpdate/value">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setValue:")
     void setValue(@NInt long value);
 
-    /**
-     * value</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameplayKit/Reference/GKGameModelUpdate_Protocol/index.html#//apple_ref/occ/intfp/GKGameModelUpdate/value">iOS Dev Center</a>
-     */
     @Generated
     @Selector("value")
     @NInt

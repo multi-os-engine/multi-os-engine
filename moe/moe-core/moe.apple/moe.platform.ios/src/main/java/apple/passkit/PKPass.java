@@ -165,18 +165,10 @@ public class PKPass extends PKObject {
     @NInt
     public static native long version();
 
-    /**
-     * authenticationToken</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/PassKit/Reference/PKPass_Ref/index.html#//apple_ref/occ/instp/PKPass/authenticationToken">iOS Dev Center</a>
-     */
     @Generated
     @Selector("authenticationToken")
     public native String authenticationToken();
 
-    /**
-     * icon</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/PassKit/Reference/PKPass_Ref/index.html#//apple_ref/occ/instp/PKPass/icon">iOS Dev Center</a>
-     */
     @Generated
     @Selector("icon")
     public native UIImage icon();
@@ -185,124 +177,64 @@ public class PKPass extends PKObject {
     @Selector("init")
     public native PKPass init();
 
-    /**
-     * initWithData:error:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/PassKit/Reference/PKPass_Ref/index.html#//apple_ref/occ/instm/PKPass/initWithData:error:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithData:error:")
     public native PKPass initWithDataError(NSData data, Ptr<NSError> error);
 
-    /**
-     * localizedDescription</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/PassKit/Reference/PKPass_Ref/index.html#//apple_ref/occ/instp/PKPass/localizedDescription">iOS Dev Center</a>
-     */
     @Generated
     @Selector("localizedDescription")
     public native String localizedDescription();
 
-    /**
-     * localizedName</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/PassKit/Reference/PKPass_Ref/index.html#//apple_ref/occ/instp/PKPass/localizedName">iOS Dev Center</a>
-     */
     @Generated
     @Selector("localizedName")
     public native String localizedName();
 
-    /**
-     * localizedValueForFieldKey:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/PassKit/Reference/PKPass_Ref/index.html#//apple_ref/occ/instm/PKPass/localizedValueForFieldKey:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("localizedValueForFieldKey:")
     @MappedReturn(ObjCObjectMapper.class)
     public native Object localizedValueForFieldKey(String key);
 
-    /**
-     * organizationName</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/PassKit/Reference/PKPass_Ref/index.html#//apple_ref/occ/instp/PKPass/organizationName">iOS Dev Center</a>
-     */
     @Generated
     @Selector("organizationName")
     public native String organizationName();
 
-    /**
-     * passType</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/PassKit/Reference/PKPass_Ref/index.html#//apple_ref/occ/instp/PKPass/passType">iOS Dev Center</a>
-     */
     @Generated
     @Selector("passType")
     @NUInt
     public native long passType();
 
-    /**
-     * passTypeIdentifier</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/PassKit/Reference/PKPass_Ref/index.html#//apple_ref/occ/instp/PKPass/passTypeIdentifier">iOS Dev Center</a>
-     */
     @Generated
     @Selector("passTypeIdentifier")
     public native String passTypeIdentifier();
 
-    /**
-     * passURL</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/PassKit/Reference/PKPass_Ref/index.html#//apple_ref/occ/instp/PKPass/passURL">iOS Dev Center</a>
-     */
     @Generated
     @Selector("passURL")
     public native NSURL passURL();
 
-    /**
-     * paymentPass</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/PassKit/Reference/PKPass_Ref/index.html#//apple_ref/occ/instp/PKPass/paymentPass">iOS Dev Center</a>
-     */
     @Generated
     @Selector("paymentPass")
     public native PKPaymentPass paymentPass();
 
-    /**
-     * relevantDate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/PassKit/Reference/PKPass_Ref/index.html#//apple_ref/occ/instp/PKPass/relevantDate">iOS Dev Center</a>
-     */
     @Generated
     @Selector("relevantDate")
     public native NSDate relevantDate();
 
-    /**
-     * serialNumber</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/PassKit/Reference/PKPass_Ref/index.html#//apple_ref/occ/instp/PKPass/serialNumber">iOS Dev Center</a>
-     */
     @Generated
     @Selector("serialNumber")
     public native String serialNumber();
 
-    /**
-     * userInfo</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/PassKit/Reference/PKPass_Ref/index.html#//apple_ref/occ/instp/PKPass/userInfo">iOS Dev Center</a>
-     */
     @Generated
     @Selector("userInfo")
     public native NSDictionary<?, ?> userInfo();
 
-    /**
-     * webServiceURL</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/PassKit/Reference/PKPass_Ref/index.html#//apple_ref/occ/instp/PKPass/webServiceURL">iOS Dev Center</a>
-     */
     @Generated
     @Selector("webServiceURL")
     public native NSURL webServiceURL();
 
-    /**
-     * deviceName</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/PassKit/Reference/PKPass_Ref/index.html#//apple_ref/occ/instp/PKPass/deviceName">iOS Dev Center</a>
-     */
     @Generated
     @Selector("deviceName")
     public native String deviceName();
 
-    /**
-     * remotePass</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/PassKit/Reference/PKPass_Ref/index.html#//apple_ref/occ/instp/PKPass/remotePass">iOS Dev Center</a>
-     */
     @Generated
     @Selector("isRemotePass")
     public native boolean isRemotePass();

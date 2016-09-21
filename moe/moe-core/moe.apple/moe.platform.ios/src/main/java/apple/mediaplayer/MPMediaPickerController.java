@@ -174,35 +174,19 @@ public class MPMediaPickerController extends UIViewController {
     @NInt
     public static native long version_static();
 
-    /**
-     * allowsPickingMultipleItems</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPMediaPickerController_ClassReference/index.html#//apple_ref/occ/instp/MPMediaPickerController/allowsPickingMultipleItems">iOS Dev Center</a>
-     */
     @Generated
     @Selector("allowsPickingMultipleItems")
     public native boolean allowsPickingMultipleItems();
 
-    /**
-     * delegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPMediaPickerController_ClassReference/index.html#//apple_ref/occ/instp/MPMediaPickerController/delegate">iOS Dev Center</a>
-     */
     @Generated
     @Selector("delegate")
     @MappedReturn(ObjCObjectMapper.class)
     public native MPMediaPickerControllerDelegate delegate();
 
-    /**
-     * init</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPMediaPickerController_ClassReference/index.html#//apple_ref/occ/instm/MPMediaPickerController/init">iOS Dev Center</a>
-     */
     @Generated
     @Selector("init")
     public native MPMediaPickerController init();
 
-    /**
-     * initWithMediaTypes:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPMediaPickerController_ClassReference/index.html#//apple_ref/occ/instm/MPMediaPickerController/initWithMediaTypes:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithMediaTypes:")
     public native MPMediaPickerController initWithMediaTypes(@NUInt long mediaTypes);
@@ -211,43 +195,23 @@ public class MPMediaPickerController extends UIViewController {
     @Selector("initWithNibName:bundle:")
     public native MPMediaPickerController initWithNibNameBundle(String nibNameOrNil, NSBundle nibBundleOrNil);
 
-    /**
-     * mediaTypes</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPMediaPickerController_ClassReference/index.html#//apple_ref/occ/instp/MPMediaPickerController/mediaTypes">iOS Dev Center</a>
-     */
     @Generated
     @Selector("mediaTypes")
     @NUInt
     public native long mediaTypes();
 
-    /**
-     * prompt</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPMediaPickerController_ClassReference/index.html#//apple_ref/occ/instp/MPMediaPickerController/prompt">iOS Dev Center</a>
-     */
     @Generated
     @Selector("prompt")
     public native String prompt();
 
-    /**
-     * allowsPickingMultipleItems</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPMediaPickerController_ClassReference/index.html#//apple_ref/occ/instp/MPMediaPickerController/allowsPickingMultipleItems">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setAllowsPickingMultipleItems:")
     public native void setAllowsPickingMultipleItems(boolean value);
 
-    /**
-     * delegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPMediaPickerController_ClassReference/index.html#//apple_ref/occ/instp/MPMediaPickerController/delegate">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setDelegate:")
     public native void setDelegate_unsafe(@Mapped(ObjCObjectMapper.class) MPMediaPickerControllerDelegate value);
 
-    /**
-     * delegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPMediaPickerController_ClassReference/index.html#//apple_ref/occ/instp/MPMediaPickerController/delegate">iOS Dev Center</a>
-     */
     @Generated
     public void setDelegate(@Mapped(ObjCObjectMapper.class) MPMediaPickerControllerDelegate value) {
         Object __old = delegate();
@@ -260,26 +224,14 @@ public class MPMediaPickerController extends UIViewController {
         }
     }
 
-    /**
-     * prompt</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPMediaPickerController_ClassReference/index.html#//apple_ref/occ/instp/MPMediaPickerController/prompt">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setPrompt:")
     public native void setPrompt(String value);
 
-    /**
-     * showsCloudItems</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPMediaPickerController_ClassReference/index.html#//apple_ref/occ/instp/MPMediaPickerController/showsCloudItems">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setShowsCloudItems:")
     public native void setShowsCloudItems(boolean value);
 
-    /**
-     * showsCloudItems</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPMediaPickerController_ClassReference/index.html#//apple_ref/occ/instp/MPMediaPickerController/showsCloudItems">iOS Dev Center</a>
-     */
     @Generated
     @Selector("showsCloudItems")
     public native boolean showsCloudItems();

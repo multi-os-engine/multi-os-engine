@@ -158,19 +158,11 @@ public class WKScriptMessage extends NSObject {
     @NInt
     public static native long version_static();
 
-    /**
-     * body</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WebKit/Reference/WKScriptMessage/index.html#//apple_ref/occ/instp/WKScriptMessage/body">iOS Dev Center</a>
-     */
     @Generated
     @Selector("body")
     @MappedReturn(ObjCObjectMapper.class)
     public native Object body();
 
-    /**
-     * frameInfo</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WebKit/Reference/WKScriptMessage/index.html#//apple_ref/occ/instp/WKScriptMessage/frameInfo">iOS Dev Center</a>
-     */
     @Generated
     @Selector("frameInfo")
     public native WKFrameInfo frameInfo();
@@ -179,18 +171,10 @@ public class WKScriptMessage extends NSObject {
     @Selector("init")
     public native WKScriptMessage init();
 
-    /**
-     * name</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WebKit/Reference/WKScriptMessage/index.html#//apple_ref/occ/instp/WKScriptMessage/name">iOS Dev Center</a>
-     */
     @Generated
     @Selector("name")
     public native String name();
 
-    /**
-     * webView</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WebKit/Reference/WKScriptMessage/index.html#//apple_ref/occ/instp/WKScriptMessage/webView">iOS Dev Center</a>
-     */
     @Generated
     @Selector("webView")
     public native WKWebView webView();

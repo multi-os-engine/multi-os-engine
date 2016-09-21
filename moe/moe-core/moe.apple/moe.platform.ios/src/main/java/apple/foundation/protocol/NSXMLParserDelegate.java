@@ -33,10 +33,6 @@ import org.moe.natj.objc.ann.Selector;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("NSXMLParserDelegate")
 public interface NSXMLParserDelegate {
-    /**
-     * parser:didEndElement:namespaceURI:qualifiedName:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSXMLParserDelegate_Protocol/index.html#//apple_ref/occ/intfm/NSXMLParserDelegate/parser:didEndElement:namespaceURI:qualifiedName:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("parser:didEndElement:namespaceURI:qualifiedName:")
@@ -45,10 +41,6 @@ public interface NSXMLParserDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * parser:didEndMappingPrefix:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSXMLParserDelegate_Protocol/index.html#//apple_ref/occ/intfm/NSXMLParserDelegate/parser:didEndMappingPrefix:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("parser:didEndMappingPrefix:")
@@ -56,10 +48,6 @@ public interface NSXMLParserDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * parser:didStartElement:namespaceURI:qualifiedName:attributes:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSXMLParserDelegate_Protocol/index.html#//apple_ref/occ/intfm/NSXMLParserDelegate/parser:didStartElement:namespaceURI:qualifiedName:attributes:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("parser:didStartElement:namespaceURI:qualifiedName:attributes:")
@@ -68,10 +56,6 @@ public interface NSXMLParserDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * parser:didStartMappingPrefix:toURI:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSXMLParserDelegate_Protocol/index.html#//apple_ref/occ/intfm/NSXMLParserDelegate/parser:didStartMappingPrefix:toURI:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("parser:didStartMappingPrefix:toURI:")
@@ -79,10 +63,6 @@ public interface NSXMLParserDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * parser:foundAttributeDeclarationWithName:forElement:type:defaultValue:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSXMLParserDelegate_Protocol/index.html#//apple_ref/occ/intfm/NSXMLParserDelegate/parser:foundAttributeDeclarationWithName:forElement:type:defaultValue:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("parser:foundAttributeDeclarationWithName:forElement:type:defaultValue:")
@@ -91,10 +71,6 @@ public interface NSXMLParserDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * parser:foundCDATA:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSXMLParserDelegate_Protocol/index.html#//apple_ref/occ/intfm/NSXMLParserDelegate/parser:foundCDATA:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("parser:foundCDATA:")
@@ -102,10 +78,6 @@ public interface NSXMLParserDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * parser:foundCharacters:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSXMLParserDelegate_Protocol/index.html#//apple_ref/occ/intfm/NSXMLParserDelegate/parser:foundCharacters:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("parser:foundCharacters:")
@@ -113,10 +85,6 @@ public interface NSXMLParserDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * parser:foundComment:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSXMLParserDelegate_Protocol/index.html#//apple_ref/occ/intfm/NSXMLParserDelegate/parser:foundComment:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("parser:foundComment:")
@@ -124,10 +92,6 @@ public interface NSXMLParserDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * parser:foundElementDeclarationWithName:model:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSXMLParserDelegate_Protocol/index.html#//apple_ref/occ/intfm/NSXMLParserDelegate/parser:foundElementDeclarationWithName:model:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("parser:foundElementDeclarationWithName:model:")
@@ -135,10 +99,6 @@ public interface NSXMLParserDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * parser:foundExternalEntityDeclarationWithName:publicID:systemID:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSXMLParserDelegate_Protocol/index.html#//apple_ref/occ/intfm/NSXMLParserDelegate/parser:foundExternalEntityDeclarationWithName:publicID:systemID:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("parser:foundExternalEntityDeclarationWithName:publicID:systemID:")
@@ -147,10 +107,6 @@ public interface NSXMLParserDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * parser:foundIgnorableWhitespace:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSXMLParserDelegate_Protocol/index.html#//apple_ref/occ/intfm/NSXMLParserDelegate/parser:foundIgnorableWhitespace:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("parser:foundIgnorableWhitespace:")
@@ -158,10 +114,6 @@ public interface NSXMLParserDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * parser:foundInternalEntityDeclarationWithName:value:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSXMLParserDelegate_Protocol/index.html#//apple_ref/occ/intfm/NSXMLParserDelegate/parser:foundInternalEntityDeclarationWithName:value:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("parser:foundInternalEntityDeclarationWithName:value:")
@@ -169,10 +121,6 @@ public interface NSXMLParserDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * parser:foundNotationDeclarationWithName:publicID:systemID:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSXMLParserDelegate_Protocol/index.html#//apple_ref/occ/intfm/NSXMLParserDelegate/parser:foundNotationDeclarationWithName:publicID:systemID:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("parser:foundNotationDeclarationWithName:publicID:systemID:")
@@ -181,10 +129,6 @@ public interface NSXMLParserDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * parser:foundProcessingInstructionWithTarget:data:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSXMLParserDelegate_Protocol/index.html#//apple_ref/occ/intfm/NSXMLParserDelegate/parser:foundProcessingInstructionWithTarget:data:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("parser:foundProcessingInstructionWithTarget:data:")
@@ -192,10 +136,6 @@ public interface NSXMLParserDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * parser:foundUnparsedEntityDeclarationWithName:publicID:systemID:notationName:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSXMLParserDelegate_Protocol/index.html#//apple_ref/occ/intfm/NSXMLParserDelegate/parser:foundUnparsedEntityDeclarationWithName:publicID:systemID:notationName:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("parser:foundUnparsedEntityDeclarationWithName:publicID:systemID:notationName:")
@@ -204,10 +144,6 @@ public interface NSXMLParserDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * parser:parseErrorOccurred:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSXMLParserDelegate_Protocol/index.html#//apple_ref/occ/intfm/NSXMLParserDelegate/parser:parseErrorOccurred:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("parser:parseErrorOccurred:")
@@ -215,10 +151,6 @@ public interface NSXMLParserDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * parser:resolveExternalEntityName:systemID:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSXMLParserDelegate_Protocol/index.html#//apple_ref/occ/intfm/NSXMLParserDelegate/parser:resolveExternalEntityName:systemID:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("parser:resolveExternalEntityName:systemID:")
@@ -226,10 +158,6 @@ public interface NSXMLParserDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * parser:validationErrorOccurred:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSXMLParserDelegate_Protocol/index.html#//apple_ref/occ/intfm/NSXMLParserDelegate/parser:validationErrorOccurred:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("parser:validationErrorOccurred:")
@@ -237,10 +165,6 @@ public interface NSXMLParserDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * parserDidEndDocument:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSXMLParserDelegate_Protocol/index.html#//apple_ref/occ/intfm/NSXMLParserDelegate/parserDidEndDocument:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("parserDidEndDocument:")
@@ -248,10 +172,6 @@ public interface NSXMLParserDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * parserDidStartDocument:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSXMLParserDelegate_Protocol/index.html#//apple_ref/occ/intfm/NSXMLParserDelegate/parserDidStartDocument:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("parserDidStartDocument:")

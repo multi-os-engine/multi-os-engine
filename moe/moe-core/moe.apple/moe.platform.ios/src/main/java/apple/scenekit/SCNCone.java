@@ -62,10 +62,6 @@ public class SCNCone extends SCNGeometry {
     @Selector("alloc")
     public static native SCNCone alloc();
 
-    /**
-     * coneWithTopRadius:bottomRadius:height:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNCone_Class/index.html#//apple_ref/occ/clm/SCNCone/coneWithTopRadius:bottomRadius:height:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("coneWithTopRadius:bottomRadius:height:")
     public static native SCNCone coneWithTopRadiusBottomRadiusHeight(@NFloat double topRadius,
@@ -188,28 +184,16 @@ public class SCNCone extends SCNGeometry {
     @NInt
     public static native long version_static();
 
-    /**
-     * bottomRadius</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNCone_Class/index.html#//apple_ref/occ/instp/SCNCone/bottomRadius">iOS Dev Center</a>
-     */
     @Generated
     @Selector("bottomRadius")
     @NFloat
     public native double bottomRadius();
 
-    /**
-     * height</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNCone_Class/index.html#//apple_ref/occ/instp/SCNCone/height">iOS Dev Center</a>
-     */
     @Generated
     @Selector("height")
     @NFloat
     public native double height();
 
-    /**
-     * heightSegmentCount</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNCone_Class/index.html#//apple_ref/occ/instp/SCNCone/heightSegmentCount">iOS Dev Center</a>
-     */
     @Generated
     @Selector("heightSegmentCount")
     @NInt
@@ -219,59 +203,31 @@ public class SCNCone extends SCNGeometry {
     @Selector("init")
     public native SCNCone init();
 
-    /**
-     * radialSegmentCount</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNCone_Class/index.html#//apple_ref/occ/instp/SCNCone/radialSegmentCount">iOS Dev Center</a>
-     */
     @Generated
     @Selector("radialSegmentCount")
     @NInt
     public native long radialSegmentCount();
 
-    /**
-     * bottomRadius</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNCone_Class/index.html#//apple_ref/occ/instp/SCNCone/bottomRadius">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setBottomRadius:")
     public native void setBottomRadius(@NFloat double value);
 
-    /**
-     * height</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNCone_Class/index.html#//apple_ref/occ/instp/SCNCone/height">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setHeight:")
     public native void setHeight(@NFloat double value);
 
-    /**
-     * heightSegmentCount</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNCone_Class/index.html#//apple_ref/occ/instp/SCNCone/heightSegmentCount">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setHeightSegmentCount:")
     public native void setHeightSegmentCount(@NInt long value);
 
-    /**
-     * radialSegmentCount</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNCone_Class/index.html#//apple_ref/occ/instp/SCNCone/radialSegmentCount">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setRadialSegmentCount:")
     public native void setRadialSegmentCount(@NInt long value);
 
-    /**
-     * topRadius</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNCone_Class/index.html#//apple_ref/occ/instp/SCNCone/topRadius">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setTopRadius:")
     public native void setTopRadius(@NFloat double value);
 
-    /**
-     * topRadius</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNCone_Class/index.html#//apple_ref/occ/instp/SCNCone/topRadius">iOS Dev Center</a>
-     */
     @Generated
     @Selector("topRadius")
     @NFloat

@@ -162,80 +162,44 @@ public class UIDynamicItemBehavior extends UIDynamicBehavior {
     @NInt
     public static native long version_static();
 
-    /**
-     * addAngularVelocity:forItem:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIDynamicItemBehavior_Class/index.html#//apple_ref/occ/instm/UIDynamicItemBehavior/addAngularVelocity:forItem:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("addAngularVelocity:forItem:")
     public native void addAngularVelocityForItem(@NFloat double velocity,
             @Mapped(ObjCObjectMapper.class) UIDynamicItem item);
 
-    /**
-     * addItem:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIDynamicItemBehavior_Class/index.html#//apple_ref/occ/instm/UIDynamicItemBehavior/addItem:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("addItem:")
     public native void addItem(@Mapped(ObjCObjectMapper.class) UIDynamicItem item);
 
-    /**
-     * addLinearVelocity:forItem:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIDynamicItemBehavior_Class/index.html#//apple_ref/occ/instm/UIDynamicItemBehavior/addLinearVelocity:forItem:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("addLinearVelocity:forItem:")
     public native void addLinearVelocityForItem(@ByValue CGPoint velocity,
             @Mapped(ObjCObjectMapper.class) UIDynamicItem item);
 
-    /**
-     * allowsRotation</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIDynamicItemBehavior_Class/index.html#//apple_ref/occ/instp/UIDynamicItemBehavior/allowsRotation">iOS Dev Center</a>
-     */
     @Generated
     @Selector("allowsRotation")
     public native boolean allowsRotation();
 
-    /**
-     * angularResistance</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIDynamicItemBehavior_Class/index.html#//apple_ref/occ/instp/UIDynamicItemBehavior/angularResistance">iOS Dev Center</a>
-     */
     @Generated
     @Selector("angularResistance")
     @NFloat
     public native double angularResistance();
 
-    /**
-     * angularVelocityForItem:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIDynamicItemBehavior_Class/index.html#//apple_ref/occ/instm/UIDynamicItemBehavior/angularVelocityForItem:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("angularVelocityForItem:")
     @NFloat
     public native double angularVelocityForItem(@Mapped(ObjCObjectMapper.class) UIDynamicItem item);
 
-    /**
-     * density</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIDynamicItemBehavior_Class/index.html#//apple_ref/occ/instp/UIDynamicItemBehavior/density">iOS Dev Center</a>
-     */
     @Generated
     @Selector("density")
     @NFloat
     public native double density();
 
-    /**
-     * elasticity</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIDynamicItemBehavior_Class/index.html#//apple_ref/occ/instp/UIDynamicItemBehavior/elasticity">iOS Dev Center</a>
-     */
     @Generated
     @Selector("elasticity")
     @NFloat
     public native double elasticity();
 
-    /**
-     * friction</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIDynamicItemBehavior_Class/index.html#//apple_ref/occ/instp/UIDynamicItemBehavior/friction">iOS Dev Center</a>
-     */
     @Generated
     @Selector("friction")
     @NFloat
@@ -245,125 +209,65 @@ public class UIDynamicItemBehavior extends UIDynamicBehavior {
     @Selector("init")
     public native UIDynamicItemBehavior init();
 
-    /**
-     * initWithItems:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIDynamicItemBehavior_Class/index.html#//apple_ref/occ/instm/UIDynamicItemBehavior/initWithItems:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithItems:")
     public native UIDynamicItemBehavior initWithItems(NSArray<?> items);
 
-    /**
-     * items</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIDynamicItemBehavior_Class/index.html#//apple_ref/occ/instp/UIDynamicItemBehavior/items">iOS Dev Center</a>
-     */
     @Generated
     @Selector("items")
     public native NSArray<?> items();
 
-    /**
-     * linearVelocityForItem:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIDynamicItemBehavior_Class/index.html#//apple_ref/occ/instm/UIDynamicItemBehavior/linearVelocityForItem:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("linearVelocityForItem:")
     @ByValue
     public native CGPoint linearVelocityForItem(@Mapped(ObjCObjectMapper.class) UIDynamicItem item);
 
-    /**
-     * removeItem:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIDynamicItemBehavior_Class/index.html#//apple_ref/occ/instm/UIDynamicItemBehavior/removeItem:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("removeItem:")
     public native void removeItem(@Mapped(ObjCObjectMapper.class) UIDynamicItem item);
 
-    /**
-     * resistance</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIDynamicItemBehavior_Class/index.html#//apple_ref/occ/instp/UIDynamicItemBehavior/resistance">iOS Dev Center</a>
-     */
     @Generated
     @Selector("resistance")
     @NFloat
     public native double resistance();
 
-    /**
-     * allowsRotation</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIDynamicItemBehavior_Class/index.html#//apple_ref/occ/instp/UIDynamicItemBehavior/allowsRotation">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setAllowsRotation:")
     public native void setAllowsRotation(boolean value);
 
-    /**
-     * angularResistance</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIDynamicItemBehavior_Class/index.html#//apple_ref/occ/instp/UIDynamicItemBehavior/angularResistance">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setAngularResistance:")
     public native void setAngularResistance(@NFloat double value);
 
-    /**
-     * density</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIDynamicItemBehavior_Class/index.html#//apple_ref/occ/instp/UIDynamicItemBehavior/density">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setDensity:")
     public native void setDensity(@NFloat double value);
 
-    /**
-     * elasticity</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIDynamicItemBehavior_Class/index.html#//apple_ref/occ/instp/UIDynamicItemBehavior/elasticity">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setElasticity:")
     public native void setElasticity(@NFloat double value);
 
-    /**
-     * friction</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIDynamicItemBehavior_Class/index.html#//apple_ref/occ/instp/UIDynamicItemBehavior/friction">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setFriction:")
     public native void setFriction(@NFloat double value);
 
-    /**
-     * resistance</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIDynamicItemBehavior_Class/index.html#//apple_ref/occ/instp/UIDynamicItemBehavior/resistance">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setResistance:")
     public native void setResistance(@NFloat double value);
 
-    /**
-     * charge</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIDynamicItemBehavior_Class/index.html#//apple_ref/occ/instp/UIDynamicItemBehavior/charge">iOS Dev Center</a>
-     */
     @Generated
     @Selector("charge")
     @NFloat
     public native double charge();
 
-    /**
-     * anchored</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIDynamicItemBehavior_Class/index.html#//apple_ref/occ/instp/UIDynamicItemBehavior/anchored">iOS Dev Center</a>
-     */
     @Generated
     @Selector("isAnchored")
     public native boolean isAnchored();
 
-    /**
-     * anchored</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIDynamicItemBehavior_Class/index.html#//apple_ref/occ/instp/UIDynamicItemBehavior/anchored">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setAnchored:")
     public native void setAnchored(boolean value);
 
-    /**
-     * charge</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIDynamicItemBehavior_Class/index.html#//apple_ref/occ/instp/UIDynamicItemBehavior/charge">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setCharge:")
     public native void setCharge(@NFloat double value);

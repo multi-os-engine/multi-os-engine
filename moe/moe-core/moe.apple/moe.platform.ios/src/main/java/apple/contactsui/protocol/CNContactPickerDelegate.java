@@ -33,10 +33,6 @@ import org.moe.natj.objc.ann.Selector;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("CNContactPickerDelegate")
 public interface CNContactPickerDelegate {
-    /**
-     * contactPicker:didSelectContact:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ContactsUI/Reference/CNContactPickerDelegate_Protocol/index.html#//apple_ref/occ/intfm/CNContactPickerDelegate/contactPicker:didSelectContact:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("contactPicker:didSelectContact:")
@@ -44,10 +40,6 @@ public interface CNContactPickerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * contactPicker:didSelectContactProperties:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ContactsUI/Reference/CNContactPickerDelegate_Protocol/index.html#//apple_ref/occ/intfm/CNContactPickerDelegate/contactPicker:didSelectContactProperties:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("contactPicker:didSelectContactProperties:")
@@ -56,10 +48,6 @@ public interface CNContactPickerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * contactPicker:didSelectContactProperty:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ContactsUI/Reference/CNContactPickerDelegate_Protocol/index.html#//apple_ref/occ/intfm/CNContactPickerDelegate/contactPicker:didSelectContactProperty:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("contactPicker:didSelectContactProperty:")
@@ -68,10 +56,6 @@ public interface CNContactPickerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * contactPicker:didSelectContacts:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ContactsUI/Reference/CNContactPickerDelegate_Protocol/index.html#//apple_ref/occ/intfm/CNContactPickerDelegate/contactPicker:didSelectContacts:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("contactPicker:didSelectContacts:")
@@ -80,10 +64,6 @@ public interface CNContactPickerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * contactPickerDidCancel:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ContactsUI/Reference/CNContactPickerDelegate_Protocol/index.html#//apple_ref/occ/intfm/CNContactPickerDelegate/contactPickerDidCancel:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("contactPickerDidCancel:")

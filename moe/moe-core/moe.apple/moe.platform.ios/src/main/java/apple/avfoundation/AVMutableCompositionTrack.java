@@ -165,10 +165,6 @@ public class AVMutableCompositionTrack extends AVCompositionTrack {
     @NInt
     public static native long version_static();
 
-    /**
-     * extendedLanguageTag</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVMutableCompositionTrack_Class/index.html#//apple_ref/occ/instp/AVMutableCompositionTrack/extendedLanguageTag">iOS Dev Center</a>
-     */
     @Generated
     @Selector("extendedLanguageTag")
     public native String extendedLanguageTag();
@@ -177,141 +173,73 @@ public class AVMutableCompositionTrack extends AVCompositionTrack {
     @Selector("init")
     public native AVMutableCompositionTrack init();
 
-    /**
-     * insertEmptyTimeRange:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVMutableCompositionTrack_Class/index.html#//apple_ref/occ/instm/AVMutableCompositionTrack/insertEmptyTimeRange:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("insertEmptyTimeRange:")
     public native void insertEmptyTimeRange(@ByValue CMTimeRange timeRange);
 
-    /**
-     * insertTimeRange:ofTrack:atTime:error:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVMutableCompositionTrack_Class/index.html#//apple_ref/occ/instm/AVMutableCompositionTrack/insertTimeRange:ofTrack:atTime:error:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("insertTimeRange:ofTrack:atTime:error:")
     public native boolean insertTimeRangeOfTrackAtTimeError(@ByValue CMTimeRange timeRange, AVAssetTrack track,
             @ByValue CMTime startTime, Ptr<NSError> outError);
 
-    /**
-     * insertTimeRanges:ofTracks:atTime:error:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVMutableCompositionTrack_Class/index.html#//apple_ref/occ/instm/AVMutableCompositionTrack/insertTimeRanges:ofTracks:atTime:error:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("insertTimeRanges:ofTracks:atTime:error:")
     public native boolean insertTimeRangesOfTracksAtTimeError(NSArray<? extends NSValue> timeRanges,
             NSArray<? extends AVAssetTrack> tracks, @ByValue CMTime startTime, Ptr<NSError> outError);
 
-    /**
-     * languageCode</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVMutableCompositionTrack_Class/index.html#//apple_ref/occ/instp/AVMutableCompositionTrack/languageCode">iOS Dev Center</a>
-     */
     @Generated
     @Selector("languageCode")
     public native String languageCode();
 
-    /**
-     * naturalTimeScale</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVMutableCompositionTrack_Class/index.html#//apple_ref/occ/instp/AVMutableCompositionTrack/naturalTimeScale">iOS Dev Center</a>
-     */
     @Generated
     @Selector("naturalTimeScale")
     public native int naturalTimeScale();
 
-    /**
-     * preferredTransform</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVMutableCompositionTrack_Class/index.html#//apple_ref/occ/instp/AVMutableCompositionTrack/preferredTransform">iOS Dev Center</a>
-     */
     @Generated
     @Selector("preferredTransform")
     @ByValue
     public native CGAffineTransform preferredTransform();
 
-    /**
-     * preferredVolume</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVMutableCompositionTrack_Class/index.html#//apple_ref/occ/instp/AVMutableCompositionTrack/preferredVolume">iOS Dev Center</a>
-     */
     @Generated
     @Selector("preferredVolume")
     public native float preferredVolume();
 
-    /**
-     * removeTimeRange:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVMutableCompositionTrack_Class/index.html#//apple_ref/occ/instm/AVMutableCompositionTrack/removeTimeRange:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("removeTimeRange:")
     public native void removeTimeRange(@ByValue CMTimeRange timeRange);
 
-    /**
-     * scaleTimeRange:toDuration:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVMutableCompositionTrack_Class/index.html#//apple_ref/occ/instm/AVMutableCompositionTrack/scaleTimeRange:toDuration:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("scaleTimeRange:toDuration:")
     public native void scaleTimeRangeToDuration(@ByValue CMTimeRange timeRange, @ByValue CMTime duration);
 
-    /**
-     * segments</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVMutableCompositionTrack_Class/index.html#//apple_ref/occ/instp/AVMutableCompositionTrack/segments">iOS Dev Center</a>
-     */
     @Generated
     @Selector("segments")
     public native NSArray<? extends AVCompositionTrackSegment> segments();
 
-    /**
-     * extendedLanguageTag</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVMutableCompositionTrack_Class/index.html#//apple_ref/occ/instp/AVMutableCompositionTrack/extendedLanguageTag">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setExtendedLanguageTag:")
     public native void setExtendedLanguageTag(String value);
 
-    /**
-     * languageCode</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVMutableCompositionTrack_Class/index.html#//apple_ref/occ/instp/AVMutableCompositionTrack/languageCode">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setLanguageCode:")
     public native void setLanguageCode(String value);
 
-    /**
-     * naturalTimeScale</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVMutableCompositionTrack_Class/index.html#//apple_ref/occ/instp/AVMutableCompositionTrack/naturalTimeScale">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setNaturalTimeScale:")
     public native void setNaturalTimeScale(int value);
 
-    /**
-     * preferredTransform</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVMutableCompositionTrack_Class/index.html#//apple_ref/occ/instp/AVMutableCompositionTrack/preferredTransform">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setPreferredTransform:")
     public native void setPreferredTransform(@ByValue CGAffineTransform value);
 
-    /**
-     * preferredVolume</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVMutableCompositionTrack_Class/index.html#//apple_ref/occ/instp/AVMutableCompositionTrack/preferredVolume">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setPreferredVolume:")
     public native void setPreferredVolume(float value);
 
-    /**
-     * segments</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVMutableCompositionTrack_Class/index.html#//apple_ref/occ/instp/AVMutableCompositionTrack/segments">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setSegments:")
     public native void setSegments(NSArray<? extends AVCompositionTrackSegment> value);
 
-    /**
-     * validateTrackSegments:error:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVMutableCompositionTrack_Class/index.html#//apple_ref/occ/instm/AVMutableCompositionTrack/validateTrackSegments:error:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("validateTrackSegments:error:")
     public native boolean validateTrackSegmentsError(NSArray<? extends AVCompositionTrackSegment> trackSegments,

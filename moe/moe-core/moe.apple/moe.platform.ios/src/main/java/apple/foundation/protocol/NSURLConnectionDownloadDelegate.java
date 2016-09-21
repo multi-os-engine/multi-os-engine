@@ -31,10 +31,6 @@ import org.moe.natj.objc.ann.Selector;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("NSURLConnectionDownloadDelegate")
 public interface NSURLConnectionDownloadDelegate extends NSURLConnectionDelegate {
-    /**
-     * connection:didWriteData:totalBytesWritten:expectedTotalBytes:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSURLConnectionDownloadDelegate_Protocol/index.html#//apple_ref/occ/intfm/NSURLConnectionDownloadDelegate/connection:didWriteData:totalBytesWritten:expectedTotalBytes:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("connection:didWriteData:totalBytesWritten:expectedTotalBytes:")
@@ -43,18 +39,10 @@ public interface NSURLConnectionDownloadDelegate extends NSURLConnectionDelegate
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * connectionDidFinishDownloading:destinationURL:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSURLConnectionDownloadDelegate_Protocol/index.html#//apple_ref/occ/intfm/NSURLConnectionDownloadDelegate/connectionDidFinishDownloading:destinationURL:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("connectionDidFinishDownloading:destinationURL:")
     void connectionDidFinishDownloadingDestinationURL(NSURLConnection connection, NSURL destinationURL);
 
-    /**
-     * connectionDidResumeDownloading:totalBytesWritten:expectedTotalBytes:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSURLConnectionDownloadDelegate_Protocol/index.html#//apple_ref/occ/intfm/NSURLConnectionDownloadDelegate/connectionDidResumeDownloading:totalBytesWritten:expectedTotalBytes:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("connectionDidResumeDownloading:totalBytesWritten:expectedTotalBytes:")

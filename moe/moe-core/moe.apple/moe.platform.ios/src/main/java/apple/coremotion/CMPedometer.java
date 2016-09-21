@@ -61,42 +61,22 @@ public class CMPedometer extends NSObject {
     @Selector("alloc")
     public static native CMPedometer alloc();
 
-    /**
-     * isDistanceAvailable</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMotion/Reference/CMPedometer_class/index.html#//apple_ref/occ/clm/CMPedometer/isDistanceAvailable">iOS Dev Center</a>
-     */
     @Generated
     @Selector("isDistanceAvailable")
     public static native boolean isDistanceAvailable();
 
-    /**
-     * isFloorCountingAvailable</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMotion/Reference/CMPedometer_class/index.html#//apple_ref/occ/clm/CMPedometer/isFloorCountingAvailable">iOS Dev Center</a>
-     */
     @Generated
     @Selector("isFloorCountingAvailable")
     public static native boolean isFloorCountingAvailable();
 
-    /**
-     * isStepCountingAvailable</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMotion/Reference/CMPedometer_class/index.html#//apple_ref/occ/clm/CMPedometer/isStepCountingAvailable">iOS Dev Center</a>
-     */
     @Generated
     @Selector("isStepCountingAvailable")
     public static native boolean isStepCountingAvailable();
 
-    /**
-     * isCadenceAvailable</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMotion/Reference/CMPedometer_class/index.html#//apple_ref/occ/clm/CMPedometer/isCadenceAvailable">iOS Dev Center</a>
-     */
     @Generated
     @Selector("isCadenceAvailable")
     public static native boolean isCadenceAvailable();
 
-    /**
-     * isPaceAvailable</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMotion/Reference/CMPedometer_class/index.html#//apple_ref/occ/clm/CMPedometer/isPaceAvailable">iOS Dev Center</a>
-     */
     @Generated
     @Selector("isPaceAvailable")
     public static native boolean isPaceAvailable();
@@ -205,28 +185,16 @@ public class CMPedometer extends NSObject {
     @Selector("init")
     public native CMPedometer init();
 
-    /**
-     * queryPedometerDataFromDate:toDate:withHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMotion/Reference/CMPedometer_class/index.html#//apple_ref/occ/instm/CMPedometer/queryPedometerDataFromDate:toDate:withHandler:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("queryPedometerDataFromDate:toDate:withHandler:")
     public native void queryPedometerDataFromDateToDateWithHandler(NSDate start, NSDate end,
             @ObjCBlock(name = "call_queryPedometerDataFromDateToDateWithHandler") Block_queryPedometerDataFromDateToDateWithHandler handler);
 
-    /**
-     * startPedometerUpdatesFromDate:withHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMotion/Reference/CMPedometer_class/index.html#//apple_ref/occ/instm/CMPedometer/startPedometerUpdatesFromDate:withHandler:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("startPedometerUpdatesFromDate:withHandler:")
     public native void startPedometerUpdatesFromDateWithHandler(NSDate start,
             @ObjCBlock(name = "call_startPedometerUpdatesFromDateWithHandler") Block_startPedometerUpdatesFromDateWithHandler handler);
 
-    /**
-     * stopPedometerUpdates</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMotion/Reference/CMPedometer_class/index.html#//apple_ref/occ/instm/CMPedometer/stopPedometerUpdates">iOS Dev Center</a>
-     */
     @Generated
     @Selector("stopPedometerUpdates")
     public native void stopPedometerUpdates();

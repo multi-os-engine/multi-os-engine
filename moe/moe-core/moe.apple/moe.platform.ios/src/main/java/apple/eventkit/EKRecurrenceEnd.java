@@ -60,18 +60,10 @@ public class EKRecurrenceEnd extends NSObject implements NSCopying {
     @Selector("alloc")
     public static native EKRecurrenceEnd alloc();
 
-    /**
-     * recurrenceEndWithEndDate:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/EventKit/Reference/EKRecurrenceEndClassRef/index.html#//apple_ref/occ/clm/EKRecurrenceEnd/recurrenceEndWithEndDate:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("recurrenceEndWithEndDate:")
     public static native EKRecurrenceEnd recurrenceEndWithEndDate(NSDate endDate);
 
-    /**
-     * recurrenceEndWithOccurrenceCount:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/EventKit/Reference/EKRecurrenceEndClassRef/index.html#//apple_ref/occ/clm/EKRecurrenceEnd/recurrenceEndWithOccurrenceCount:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("recurrenceEndWithOccurrenceCount:")
     public static native EKRecurrenceEnd recurrenceEndWithOccurrenceCount(@NUInt long occurrenceCount);
@@ -182,10 +174,6 @@ public class EKRecurrenceEnd extends NSObject implements NSCopying {
     @MappedReturn(ObjCObjectMapper.class)
     public native Object copyWithZone(VoidPtr zone);
 
-    /**
-     * endDate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/EventKit/Reference/EKRecurrenceEndClassRef/index.html#//apple_ref/occ/instp/EKRecurrenceEnd/endDate">iOS Dev Center</a>
-     */
     @Generated
     @Selector("endDate")
     public native NSDate endDate();
@@ -194,10 +182,6 @@ public class EKRecurrenceEnd extends NSObject implements NSCopying {
     @Selector("init")
     public native EKRecurrenceEnd init();
 
-    /**
-     * occurrenceCount</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/EventKit/Reference/EKRecurrenceEndClassRef/index.html#//apple_ref/occ/instp/EKRecurrenceEnd/occurrenceCount">iOS Dev Center</a>
-     */
     @Generated
     @Selector("occurrenceCount")
     @NUInt

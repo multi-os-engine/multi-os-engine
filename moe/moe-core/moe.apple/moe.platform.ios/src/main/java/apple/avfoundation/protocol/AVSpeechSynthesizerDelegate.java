@@ -33,10 +33,6 @@ import org.moe.natj.objc.ann.Selector;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("AVSpeechSynthesizerDelegate")
 public interface AVSpeechSynthesizerDelegate {
-    /**
-     * speechSynthesizer:didCancelSpeechUtterance:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVSpeechSynthesizerDelegate_Ref/index.html#//apple_ref/occ/intfm/AVSpeechSynthesizerDelegate/speechSynthesizer:didCancelSpeechUtterance:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("speechSynthesizer:didCancelSpeechUtterance:")
@@ -45,10 +41,6 @@ public interface AVSpeechSynthesizerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * speechSynthesizer:didContinueSpeechUtterance:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVSpeechSynthesizerDelegate_Ref/index.html#//apple_ref/occ/intfm/AVSpeechSynthesizerDelegate/speechSynthesizer:didContinueSpeechUtterance:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("speechSynthesizer:didContinueSpeechUtterance:")
@@ -57,10 +49,6 @@ public interface AVSpeechSynthesizerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * speechSynthesizer:didFinishSpeechUtterance:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVSpeechSynthesizerDelegate_Ref/index.html#//apple_ref/occ/intfm/AVSpeechSynthesizerDelegate/speechSynthesizer:didFinishSpeechUtterance:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("speechSynthesizer:didFinishSpeechUtterance:")
@@ -69,10 +57,6 @@ public interface AVSpeechSynthesizerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * speechSynthesizer:didPauseSpeechUtterance:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVSpeechSynthesizerDelegate_Ref/index.html#//apple_ref/occ/intfm/AVSpeechSynthesizerDelegate/speechSynthesizer:didPauseSpeechUtterance:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("speechSynthesizer:didPauseSpeechUtterance:")
@@ -81,10 +65,6 @@ public interface AVSpeechSynthesizerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * speechSynthesizer:didStartSpeechUtterance:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVSpeechSynthesizerDelegate_Ref/index.html#//apple_ref/occ/intfm/AVSpeechSynthesizerDelegate/speechSynthesizer:didStartSpeechUtterance:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("speechSynthesizer:didStartSpeechUtterance:")
@@ -93,10 +73,6 @@ public interface AVSpeechSynthesizerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * speechSynthesizer:willSpeakRangeOfSpeechString:utterance:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVSpeechSynthesizerDelegate_Ref/index.html#//apple_ref/occ/intfm/AVSpeechSynthesizerDelegate/speechSynthesizer:willSpeakRangeOfSpeechString:utterance:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("speechSynthesizer:willSpeakRangeOfSpeechString:utterance:")

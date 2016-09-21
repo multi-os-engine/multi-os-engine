@@ -161,10 +161,6 @@ public class HMZone extends NSObject {
     @NInt
     public static native long version_static();
 
-    /**
-     * addRoom:completionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HomeKit/Reference/HMZone_Class/index.html#//apple_ref/occ/instm/HMZone/addRoom:completionHandler:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("addRoom:completionHandler:")
     public native void addRoomCompletionHandler(HMRoom room,
@@ -174,35 +170,19 @@ public class HMZone extends NSObject {
     @Selector("init")
     public native HMZone init();
 
-    /**
-     * name</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HomeKit/Reference/HMZone_Class/index.html#//apple_ref/occ/instp/HMZone/name">iOS Dev Center</a>
-     */
     @Generated
     @Selector("name")
     public native String name();
 
-    /**
-     * removeRoom:completionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HomeKit/Reference/HMZone_Class/index.html#//apple_ref/occ/instm/HMZone/removeRoom:completionHandler:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("removeRoom:completionHandler:")
     public native void removeRoomCompletionHandler(HMRoom room,
             @ObjCBlock(name = "call_removeRoomCompletionHandler") Block_removeRoomCompletionHandler completion);
 
-    /**
-     * rooms</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HomeKit/Reference/HMZone_Class/index.html#//apple_ref/occ/instp/HMZone/rooms">iOS Dev Center</a>
-     */
     @Generated
     @Selector("rooms")
     public native NSArray<? extends HMRoom> rooms();
 
-    /**
-     * updateName:completionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HomeKit/Reference/HMZone_Class/index.html#//apple_ref/occ/instm/HMZone/updateName:completionHandler:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("updateName:completionHandler:")
     public native void updateNameCompletionHandler(String name,

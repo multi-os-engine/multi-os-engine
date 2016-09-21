@@ -60,10 +60,6 @@ public class MPPlayableContentManager extends NSObject {
     @Selector("alloc")
     public static native MPPlayableContentManager alloc();
 
-    /**
-     * sharedContentManager</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPPlayableContentManager_Ref/index.html#//apple_ref/occ/clm/MPPlayableContentManager/sharedContentManager">iOS Dev Center</a>
-     */
     @Generated
     @Selector("sharedContentManager")
     @MappedReturn(ObjCObjectMapper.class)
@@ -169,36 +165,20 @@ public class MPPlayableContentManager extends NSObject {
     @NInt
     public static native long version();
 
-    /**
-     * beginUpdates</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPPlayableContentManager_Ref/index.html#//apple_ref/occ/instm/MPPlayableContentManager/beginUpdates">iOS Dev Center</a>
-     */
     @Generated
     @Selector("beginUpdates")
     public native void beginUpdates();
 
-    /**
-     * dataSource</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPPlayableContentManager_Ref/index.html#//apple_ref/occ/instp/MPPlayableContentManager/dataSource">iOS Dev Center</a>
-     */
     @Generated
     @Selector("dataSource")
     @MappedReturn(ObjCObjectMapper.class)
     public native MPPlayableContentDataSource dataSource();
 
-    /**
-     * delegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPPlayableContentManager_Ref/index.html#//apple_ref/occ/instp/MPPlayableContentManager/delegate">iOS Dev Center</a>
-     */
     @Generated
     @Selector("delegate")
     @MappedReturn(ObjCObjectMapper.class)
     public native MPPlayableContentDelegate delegate();
 
-    /**
-     * endUpdates</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPPlayableContentManager_Ref/index.html#//apple_ref/occ/instm/MPPlayableContentManager/endUpdates">iOS Dev Center</a>
-     */
     @Generated
     @Selector("endUpdates")
     public native void endUpdates();
@@ -207,26 +187,14 @@ public class MPPlayableContentManager extends NSObject {
     @Selector("init")
     public native MPPlayableContentManager init();
 
-    /**
-     * reloadData</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPPlayableContentManager_Ref/index.html#//apple_ref/occ/instm/MPPlayableContentManager/reloadData">iOS Dev Center</a>
-     */
     @Generated
     @Selector("reloadData")
     public native void reloadData();
 
-    /**
-     * dataSource</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPPlayableContentManager_Ref/index.html#//apple_ref/occ/instp/MPPlayableContentManager/dataSource">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setDataSource:")
     public native void setDataSource_unsafe(@Mapped(ObjCObjectMapper.class) MPPlayableContentDataSource value);
 
-    /**
-     * dataSource</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPPlayableContentManager_Ref/index.html#//apple_ref/occ/instp/MPPlayableContentManager/dataSource">iOS Dev Center</a>
-     */
     @Generated
     public void setDataSource(@Mapped(ObjCObjectMapper.class) MPPlayableContentDataSource value) {
         Object __old = dataSource();
@@ -239,18 +207,10 @@ public class MPPlayableContentManager extends NSObject {
         }
     }
 
-    /**
-     * delegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPPlayableContentManager_Ref/index.html#//apple_ref/occ/instp/MPPlayableContentManager/delegate">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setDelegate:")
     public native void setDelegate_unsafe(@Mapped(ObjCObjectMapper.class) MPPlayableContentDelegate value);
 
-    /**
-     * delegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPPlayableContentManager_Ref/index.html#//apple_ref/occ/instp/MPPlayableContentManager/delegate">iOS Dev Center</a>
-     */
     @Generated
     public void setDelegate(@Mapped(ObjCObjectMapper.class) MPPlayableContentDelegate value) {
         Object __old = delegate();

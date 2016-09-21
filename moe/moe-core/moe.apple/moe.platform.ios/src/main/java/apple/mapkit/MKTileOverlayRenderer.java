@@ -167,18 +167,10 @@ public class MKTileOverlayRenderer extends MKOverlayRenderer {
     @Selector("initWithOverlay:")
     public native MKTileOverlayRenderer initWithOverlay(@Mapped(ObjCObjectMapper.class) MKOverlay overlay);
 
-    /**
-     * initWithTileOverlay:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKTileOverlayRenderer_class/index.html#//apple_ref/occ/instm/MKTileOverlayRenderer/initWithTileOverlay:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithTileOverlay:")
     public native MKTileOverlayRenderer initWithTileOverlay(MKTileOverlay overlay);
 
-    /**
-     * reloadData</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKTileOverlayRenderer_class/index.html#//apple_ref/occ/instm/MKTileOverlayRenderer/reloadData">iOS Dev Center</a>
-     */
     @Generated
     @Selector("reloadData")
     public native void reloadData();

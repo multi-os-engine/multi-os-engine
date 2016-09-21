@@ -23,6 +23,7 @@ public final class __CFByteOrder {
     @Generated public static final int Unknown = 0x00000000;
     @Generated public static final int LittleEndian = 0x00000001;
     @Generated public static final int BigEndian = 0x00000002;
+
     @Generated
     private __CFByteOrder() {
     }

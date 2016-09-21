@@ -162,26 +162,14 @@ public class NWPath extends NSObject {
     @Selector("init")
     public native NWPath init();
 
-    /**
-     * isEqualToPath:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NWPathClassRef/index.html#//apple_ref/occ/instm/NWPath/isEqualToPath:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("isEqualToPath:")
     public native boolean isEqualToPath(NWPath path);
 
-    /**
-     * expensive</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NWPathClassRef/index.html#//apple_ref/occ/instp/NWPath/expensive">iOS Dev Center</a>
-     */
     @Generated
     @Selector("isExpensive")
     public native boolean isExpensive();
 
-    /**
-     * status</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NWPathClassRef/index.html#//apple_ref/occ/instp/NWPath/status">iOS Dev Center</a>
-     */
     @Generated
     @Selector("status")
     @NInt

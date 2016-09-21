@@ -164,19 +164,11 @@ public class AVVideoCompositionRenderContext extends NSObject {
     @NInt
     public static native long version_static();
 
-    /**
-     * edgeWidths</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVVideoCompositionRenderContext_Class/index.html#//apple_ref/occ/instp/AVVideoCompositionRenderContext/edgeWidths">iOS Dev Center</a>
-     */
     @Generated
     @Selector("edgeWidths")
     @ByValue
     public native AVEdgeWidths edgeWidths();
 
-    /**
-     * highQualityRendering</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVVideoCompositionRenderContext_Class/index.html#//apple_ref/occ/instp/AVVideoCompositionRenderContext/highQualityRendering">iOS Dev Center</a>
-     */
     @Generated
     @Selector("highQualityRendering")
     public native boolean highQualityRendering();
@@ -185,53 +177,29 @@ public class AVVideoCompositionRenderContext extends NSObject {
     @Selector("init")
     public native AVVideoCompositionRenderContext init();
 
-    /**
-     * newPixelBuffer</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVVideoCompositionRenderContext_Class/index.html#//apple_ref/occ/instm/AVVideoCompositionRenderContext/newPixelBuffer">iOS Dev Center</a>
-     */
     @Generated
     @Selector("newPixelBuffer")
     public native CVBufferRef newPixelBuffer();
 
-    /**
-     * pixelAspectRatio</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVVideoCompositionRenderContext_Class/index.html#//apple_ref/occ/instp/AVVideoCompositionRenderContext/pixelAspectRatio">iOS Dev Center</a>
-     */
     @Generated
     @Selector("pixelAspectRatio")
     @ByValue
     public native AVPixelAspectRatio pixelAspectRatio();
 
-    /**
-     * renderScale</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVVideoCompositionRenderContext_Class/index.html#//apple_ref/occ/instp/AVVideoCompositionRenderContext/renderScale">iOS Dev Center</a>
-     */
     @Generated
     @Selector("renderScale")
     public native float renderScale();
 
-    /**
-     * renderTransform</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVVideoCompositionRenderContext_Class/index.html#//apple_ref/occ/instp/AVVideoCompositionRenderContext/renderTransform">iOS Dev Center</a>
-     */
     @Generated
     @Selector("renderTransform")
     @ByValue
     public native CGAffineTransform renderTransform();
 
-    /**
-     * size</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVVideoCompositionRenderContext_Class/index.html#//apple_ref/occ/instp/AVVideoCompositionRenderContext/size">iOS Dev Center</a>
-     */
     @Generated
     @Selector("size")
     @ByValue
     public native CGSize size();
 
-    /**
-     * videoComposition</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVVideoCompositionRenderContext_Class/index.html#//apple_ref/occ/instp/AVVideoCompositionRenderContext/videoComposition">iOS Dev Center</a>
-     */
     @Generated
     @Selector("videoComposition")
     public native AVVideoComposition videoComposition();

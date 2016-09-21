@@ -39,20 +39,12 @@ import org.moe.natj.objc.ann.Selector;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("PKPaymentAuthorizationViewControllerDelegate")
 public interface PKPaymentAuthorizationViewControllerDelegate {
-    /**
-     * paymentAuthorizationViewController:didAuthorizePayment:completion:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/PassKit/Reference/PKPaymentAuthorizationViewControllerDelegate_Ref/index.html#//apple_ref/occ/intfm/PKPaymentAuthorizationViewControllerDelegate/paymentAuthorizationViewController:didAuthorizePayment:completion:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("paymentAuthorizationViewController:didAuthorizePayment:completion:")
     void paymentAuthorizationViewControllerDidAuthorizePaymentCompletion(
             PKPaymentAuthorizationViewController controller, PKPayment payment,
             @ObjCBlock(name = "call_paymentAuthorizationViewControllerDidAuthorizePaymentCompletion") Block_paymentAuthorizationViewControllerDidAuthorizePaymentCompletion completion);
 
-    /**
-     * paymentAuthorizationViewController:didSelectShippingAddress:completion:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/PassKit/Reference/PKPaymentAuthorizationViewControllerDelegate_Ref/index.html#//apple_ref/occ/intfm/PKPaymentAuthorizationViewControllerDelegate/paymentAuthorizationViewController:didSelectShippingAddress:completion:">iOS Dev Center</a>
-     */
     @Deprecated
     @Generated
     @IsOptional
@@ -63,10 +55,6 @@ public interface PKPaymentAuthorizationViewControllerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * paymentAuthorizationViewController:didSelectShippingMethod:completion:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/PassKit/Reference/PKPaymentAuthorizationViewControllerDelegate_Ref/index.html#//apple_ref/occ/intfm/PKPaymentAuthorizationViewControllerDelegate/paymentAuthorizationViewController:didSelectShippingMethod:completion:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("paymentAuthorizationViewController:didSelectShippingMethod:completion:")
@@ -76,18 +64,10 @@ public interface PKPaymentAuthorizationViewControllerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * paymentAuthorizationViewControllerDidFinish:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/PassKit/Reference/PKPaymentAuthorizationViewControllerDelegate_Ref/index.html#//apple_ref/occ/intfm/PKPaymentAuthorizationViewControllerDelegate/paymentAuthorizationViewControllerDidFinish:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("paymentAuthorizationViewControllerDidFinish:")
     void paymentAuthorizationViewControllerDidFinish(PKPaymentAuthorizationViewController controller);
 
-    /**
-     * paymentAuthorizationViewControllerWillAuthorizePayment:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/PassKit/Reference/PKPaymentAuthorizationViewControllerDelegate_Ref/index.html#//apple_ref/occ/intfm/PKPaymentAuthorizationViewControllerDelegate/paymentAuthorizationViewControllerWillAuthorizePayment:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("paymentAuthorizationViewControllerWillAuthorizePayment:")
@@ -96,10 +76,6 @@ public interface PKPaymentAuthorizationViewControllerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * paymentAuthorizationViewController:didSelectPaymentMethod:completion:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/PassKit/Reference/PKPaymentAuthorizationViewControllerDelegate_Ref/index.html#//apple_ref/occ/intfm/PKPaymentAuthorizationViewControllerDelegate/paymentAuthorizationViewController:didSelectPaymentMethod:completion:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("paymentAuthorizationViewController:didSelectPaymentMethod:completion:")
@@ -109,10 +85,6 @@ public interface PKPaymentAuthorizationViewControllerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * paymentAuthorizationViewController:didSelectShippingContact:completion:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/PassKit/Reference/PKPaymentAuthorizationViewControllerDelegate_Ref/index.html#//apple_ref/occ/intfm/PKPaymentAuthorizationViewControllerDelegate/paymentAuthorizationViewController:didSelectShippingContact:completion:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("paymentAuthorizationViewController:didSelectShippingContact:completion:")

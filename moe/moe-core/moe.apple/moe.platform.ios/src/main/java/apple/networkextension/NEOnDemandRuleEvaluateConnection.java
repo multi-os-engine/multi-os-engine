@@ -164,10 +164,6 @@ public class NEOnDemandRuleEvaluateConnection extends NEOnDemandRule {
     @NInt
     public static native long version_static();
 
-    /**
-     * connectionRules</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEOnDemandRuleEvaluateConnectionClassRef/index.html#//apple_ref/occ/instp/NEOnDemandRuleEvaluateConnection/connectionRules">iOS Dev Center</a>
-     */
     @Generated
     @Selector("connectionRules")
     public native NSArray<? extends NEEvaluateConnectionRule> connectionRules();
@@ -176,10 +172,6 @@ public class NEOnDemandRuleEvaluateConnection extends NEOnDemandRule {
     @Selector("init")
     public native NEOnDemandRuleEvaluateConnection init();
 
-    /**
-     * connectionRules</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEOnDemandRuleEvaluateConnectionClassRef/index.html#//apple_ref/occ/instp/NEOnDemandRuleEvaluateConnection/connectionRules">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setConnectionRules:")
     public native void setConnectionRules(NSArray<? extends NEEvaluateConnectionRule> value);

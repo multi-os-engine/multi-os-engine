@@ -24,6 +24,7 @@ public final class CFURLBookmarkCreationOptions {
     @Generated @NUInt public static final long MinimalBookmarkMask = 0x0000000000000200L;
     @Generated @NUInt public static final long SuitableForBookmarkFile = 0x0000000000000400L;
     @Generated @NUInt public static final long PreferFileIDResolutionMask = 0x0000000000000100L;
+
     @Generated
     private CFURLBookmarkCreationOptions() {
     }

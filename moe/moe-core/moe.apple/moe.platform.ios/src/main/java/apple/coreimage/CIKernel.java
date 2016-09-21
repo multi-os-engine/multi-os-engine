@@ -61,18 +61,10 @@ public class CIKernel extends NSObject {
     @Selector("alloc")
     public static native CIKernel alloc();
 
-    /**
-     * kernelWithString:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/QuartzCoreFramework/Classes/CIKernel_Class/index.html#//apple_ref/occ/clm/CIKernel/kernelWithString:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("kernelWithString:")
     public static native CIKernel kernelWithString(String string);
 
-    /**
-     * kernelsWithString:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/QuartzCoreFramework/Classes/CIKernel_Class/index.html#//apple_ref/occ/clm/CIKernel/kernelsWithString:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("kernelsWithString:")
     public static native NSArray<? extends CIKernel> kernelsWithString(String string);
@@ -177,10 +169,6 @@ public class CIKernel extends NSObject {
     @NInt
     public static native long version();
 
-    /**
-     * applyWithExtent:roiCallback:arguments:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/QuartzCoreFramework/Classes/CIKernel_Class/index.html#//apple_ref/occ/instm/CIKernel/applyWithExtent:roiCallback:arguments:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("applyWithExtent:roiCallback:arguments:")
     public native CIImage applyWithExtentRoiCallbackArguments(@ByValue CGRect extent,
@@ -191,18 +179,10 @@ public class CIKernel extends NSObject {
     @Selector("init")
     public native CIKernel init();
 
-    /**
-     * name</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/QuartzCoreFramework/Classes/CIKernel_Class/index.html#//apple_ref/occ/instp/CIKernel/name">iOS Dev Center</a>
-     */
     @Generated
     @Selector("name")
     public native String name();
 
-    /**
-     * setROISelector:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/QuartzCoreFramework/Classes/CIKernel_Class/index.html#//apple_ref/occ/instm/CIKernel/setROISelector:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setROISelector:")
     public native void setROISelector(SEL method);

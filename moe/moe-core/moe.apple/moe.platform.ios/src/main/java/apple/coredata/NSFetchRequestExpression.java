@@ -87,10 +87,6 @@ public class NSFetchRequestExpression extends NSExpression {
     @Selector("expressionForEvaluatedObject")
     public static native NSExpression expressionForEvaluatedObject();
 
-    /**
-     * expressionForFetch:context:countOnly:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSFetchRequestExpression_class/index.html#//apple_ref/occ/clm/NSFetchRequestExpression/expressionForFetch:context:countOnly:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("expressionForFetch:context:countOnly:")
     public static native NSExpression expressionForFetchContextCountOnly(NSExpression fetch, NSExpression context,
@@ -252,10 +248,6 @@ public class NSFetchRequestExpression extends NSExpression {
     @NInt
     public static native long version_static();
 
-    /**
-     * contextExpression</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSFetchRequestExpression_class/index.html#//apple_ref/occ/instp/NSFetchRequestExpression/contextExpression">iOS Dev Center</a>
-     */
     @Generated
     @Selector("contextExpression")
     public native NSExpression contextExpression();
@@ -268,18 +260,10 @@ public class NSFetchRequestExpression extends NSExpression {
     @Selector("initWithExpressionType:")
     public native NSFetchRequestExpression initWithExpressionType(@NUInt long type);
 
-    /**
-     * countOnlyRequest</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSFetchRequestExpression_class/index.html#//apple_ref/occ/instp/NSFetchRequestExpression/countOnlyRequest">iOS Dev Center</a>
-     */
     @Generated
     @Selector("isCountOnlyRequest")
     public native boolean isCountOnlyRequest();
 
-    /**
-     * requestExpression</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSFetchRequestExpression_class/index.html#//apple_ref/occ/instp/NSFetchRequestExpression/requestExpression">iOS Dev Center</a>
-     */
     @Generated
     @Selector("requestExpression")
     public native NSExpression requestExpression();

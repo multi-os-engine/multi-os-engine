@@ -162,10 +162,6 @@ public class MPSkipIntervalCommandEvent extends MPRemoteCommandEvent {
     @Selector("init")
     public native MPSkipIntervalCommandEvent init();
 
-    /**
-     * interval</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPSkipIntervalCommandEvent_Ref/index.html#//apple_ref/occ/instp/MPSkipIntervalCommandEvent/interval">iOS Dev Center</a>
-     */
     @Generated
     @Selector("interval")
     public native double interval();

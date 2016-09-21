@@ -24,6 +24,7 @@ public final class CFStreamErrorDomain {
     @Generated @NInt public static final long Custom = 0xFFFFFFFFFFFFFFFFL;
     @Generated @NInt public static final long POSIX = 0x0000000000000001L;
     @Generated @NInt public static final long MacOSStatus = 0x0000000000000002L;
+
     @Generated
     private CFStreamErrorDomain() {
     }

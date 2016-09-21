@@ -177,18 +177,10 @@ public class CNMutableGroup extends CNGroup {
     @Selector("init")
     public native CNMutableGroup init();
 
-    /**
-     * name</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Contacts/Reference/CNMutableGroup_Class/index.html#//apple_ref/occ/instp/CNMutableGroup/name">iOS Dev Center</a>
-     */
     @Generated
     @Selector("name")
     public native String name();
 
-    /**
-     * name</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Contacts/Reference/CNMutableGroup_Class/index.html#//apple_ref/occ/instp/CNMutableGroup/name">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setName:")
     public native void setName(String value);

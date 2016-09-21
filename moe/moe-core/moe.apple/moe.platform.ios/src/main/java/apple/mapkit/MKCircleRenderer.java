@@ -159,10 +159,6 @@ public class MKCircleRenderer extends MKOverlayPathRenderer {
     @NInt
     public static native long version();
 
-    /**
-     * circle</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKCircleRenderer_class/index.html#//apple_ref/occ/instp/MKCircleRenderer/circle">iOS Dev Center</a>
-     */
     @Generated
     @Selector("circle")
     public native MKCircle circle();
@@ -171,10 +167,6 @@ public class MKCircleRenderer extends MKOverlayPathRenderer {
     @Selector("init")
     public native MKCircleRenderer init();
 
-    /**
-     * initWithCircle:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKCircleRenderer_class/index.html#//apple_ref/occ/instm/MKCircleRenderer/initWithCircle:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithCircle:")
     public native MKCircleRenderer initWithCircle(MKCircle circle);

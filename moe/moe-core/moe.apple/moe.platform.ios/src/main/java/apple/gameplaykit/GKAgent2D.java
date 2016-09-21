@@ -162,26 +162,14 @@ public class GKAgent2D extends GKAgent {
     @Selector("init")
     public native GKAgent2D init();
 
-    /**
-     * rotation</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameplayKit/Reference/GKAgent2D_Class/index.html#//apple_ref/occ/instp/GKAgent2D/rotation">iOS Dev Center</a>
-     */
     @Generated
     @Selector("rotation")
     public native float rotation();
 
-    /**
-     * rotation</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameplayKit/Reference/GKAgent2D_Class/index.html#//apple_ref/occ/instp/GKAgent2D/rotation">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setRotation:")
     public native void setRotation(float value);
 
-    /**
-     * updateWithDeltaTime:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameplayKit/Reference/GKAgent2D_Class/index.html#//apple_ref/occ/instm/GKAgent2D/updateWithDeltaTime:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("updateWithDeltaTime:")
     public native void updateWithDeltaTime(double seconds);

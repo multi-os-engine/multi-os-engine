@@ -183,42 +183,22 @@ public class ABPersonViewController extends UIViewController implements UIViewCo
     @NInt
     public static native long version_static();
 
-    /**
-     * addressBook</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AddressBookUI/Reference/ABPersonViewController_Class/index.html#//apple_ref/occ/instp/ABPersonViewController/addressBook">iOS Dev Center</a>
-     */
     @Generated
     @Selector("addressBook")
     public native ConstVoidPtr addressBook();
 
-    /**
-     * allowsActions</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AddressBookUI/Reference/ABPersonViewController_Class/index.html#//apple_ref/occ/instp/ABPersonViewController/allowsActions">iOS Dev Center</a>
-     */
     @Generated
     @Selector("allowsActions")
     public native boolean allowsActions();
 
-    /**
-     * allowsEditing</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AddressBookUI/Reference/ABPersonViewController_Class/index.html#//apple_ref/occ/instp/ABPersonViewController/allowsEditing">iOS Dev Center</a>
-     */
     @Generated
     @Selector("allowsEditing")
     public native boolean allowsEditing();
 
-    /**
-     * displayedPerson</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AddressBookUI/Reference/ABPersonViewController_Class/index.html#//apple_ref/occ/instp/ABPersonViewController/displayedPerson">iOS Dev Center</a>
-     */
     @Generated
     @Selector("displayedPerson")
     public native ConstVoidPtr displayedPerson();
 
-    /**
-     * displayedProperties</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AddressBookUI/Reference/ABPersonViewController_Class/index.html#//apple_ref/occ/instp/ABPersonViewController/displayedProperties">iOS Dev Center</a>
-     */
     @Generated
     @Selector("displayedProperties")
     public native NSArray<? extends NSNumber> displayedProperties();
@@ -231,76 +211,40 @@ public class ABPersonViewController extends UIViewController implements UIViewCo
     @Selector("initWithNibName:bundle:")
     public native ABPersonViewController initWithNibNameBundle(String nibNameOrNil, NSBundle nibBundleOrNil);
 
-    /**
-     * personViewDelegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AddressBookUI/Reference/ABPersonViewController_Class/index.html#//apple_ref/occ/instp/ABPersonViewController/personViewDelegate">iOS Dev Center</a>
-     */
     @Generated
     @Selector("personViewDelegate")
     @MappedReturn(ObjCObjectMapper.class)
     public native ABPersonViewControllerDelegate personViewDelegate();
 
-    /**
-     * addressBook</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AddressBookUI/Reference/ABPersonViewController_Class/index.html#//apple_ref/occ/instp/ABPersonViewController/addressBook">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setAddressBook:")
     public native void setAddressBook(ConstVoidPtr value);
 
-    /**
-     * allowsActions</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AddressBookUI/Reference/ABPersonViewController_Class/index.html#//apple_ref/occ/instp/ABPersonViewController/allowsActions">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setAllowsActions:")
     public native void setAllowsActions(boolean value);
 
-    /**
-     * allowsEditing</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AddressBookUI/Reference/ABPersonViewController_Class/index.html#//apple_ref/occ/instp/ABPersonViewController/allowsEditing">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setAllowsEditing:")
     public native void setAllowsEditing(boolean value);
 
-    /**
-     * displayedPerson</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AddressBookUI/Reference/ABPersonViewController_Class/index.html#//apple_ref/occ/instp/ABPersonViewController/displayedPerson">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setDisplayedPerson:")
     public native void setDisplayedPerson(ConstVoidPtr value);
 
-    /**
-     * displayedProperties</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AddressBookUI/Reference/ABPersonViewController_Class/index.html#//apple_ref/occ/instp/ABPersonViewController/displayedProperties">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setDisplayedProperties:")
     public native void setDisplayedProperties(NSArray<? extends NSNumber> value);
 
-    /**
-     * setHighlightedItemForProperty:withIdentifier:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AddressBookUI/Reference/ABPersonViewController_Class/index.html#//apple_ref/occ/instm/ABPersonViewController/setHighlightedItemForProperty:withIdentifier:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setHighlightedItemForProperty:withIdentifier:")
     public native void setHighlightedItemForPropertyWithIdentifier(int property, int identifier);
 
-    /**
-     * personViewDelegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AddressBookUI/Reference/ABPersonViewController_Class/index.html#//apple_ref/occ/instp/ABPersonViewController/personViewDelegate">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setPersonViewDelegate:")
     public native void setPersonViewDelegate_unsafe(
             @Mapped(ObjCObjectMapper.class) ABPersonViewControllerDelegate value);
 
-    /**
-     * personViewDelegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AddressBookUI/Reference/ABPersonViewController_Class/index.html#//apple_ref/occ/instp/ABPersonViewController/personViewDelegate">iOS Dev Center</a>
-     */
     @Generated
     public void setPersonViewDelegate(@Mapped(ObjCObjectMapper.class) ABPersonViewControllerDelegate value) {
         Object __old = personViewDelegate();
@@ -313,18 +257,10 @@ public class ABPersonViewController extends UIViewController implements UIViewCo
         }
     }
 
-    /**
-     * shouldShowLinkedPeople</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AddressBookUI/Reference/ABPersonViewController_Class/index.html#//apple_ref/occ/instp/ABPersonViewController/shouldShowLinkedPeople">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setShouldShowLinkedPeople:")
     public native void setShouldShowLinkedPeople(boolean value);
 
-    /**
-     * shouldShowLinkedPeople</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AddressBookUI/Reference/ABPersonViewController_Class/index.html#//apple_ref/occ/instp/ABPersonViewController/shouldShowLinkedPeople">iOS Dev Center</a>
-     */
     @Generated
     @Selector("shouldShowLinkedPeople")
     public native boolean shouldShowLinkedPeople();

@@ -66,10 +66,6 @@ public class SCNMaterialProperty extends NSObject implements SCNAnimatable, NSSe
     @Selector("alloc")
     public static native SCNMaterialProperty alloc();
 
-    /**
-     * materialPropertyWithContents:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNMaterialProperty_Class/index.html#//apple_ref/occ/clm/SCNMaterialProperty/materialPropertyWithContents:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("materialPropertyWithContents:")
     public static native SCNMaterialProperty materialPropertyWithContents(
@@ -191,28 +187,16 @@ public class SCNMaterialProperty extends NSObject implements SCNAnimatable, NSSe
     @Selector("animationKeys")
     public native NSArray<String> animationKeys();
 
-    /**
-     * borderColor</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNMaterialProperty_Class/index.html#//apple_ref/occ/instp/SCNMaterialProperty/borderColor">iOS Dev Center</a>
-     */
     @Generated
     @Selector("borderColor")
     @MappedReturn(ObjCObjectMapper.class)
     public native Object borderColor();
 
-    /**
-     * contents</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNMaterialProperty_Class/index.html#//apple_ref/occ/instp/SCNMaterialProperty/contents">iOS Dev Center</a>
-     */
     @Generated
     @Selector("contents")
     @MappedReturn(ObjCObjectMapper.class)
     public native Object contents();
 
-    /**
-     * contentsTransform</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNMaterialProperty_Class/index.html#//apple_ref/occ/instp/SCNMaterialProperty/contentsTransform">iOS Dev Center</a>
-     */
     @Generated
     @Selector("contentsTransform")
     @ByValue
@@ -230,10 +214,6 @@ public class SCNMaterialProperty extends NSObject implements SCNAnimatable, NSSe
     @Selector("initWithCoder:")
     public native SCNMaterialProperty initWithCoder(NSCoder aDecoder);
 
-    /**
-     * intensity</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNMaterialProperty_Class/index.html#//apple_ref/occ/instp/SCNMaterialProperty/intensity">iOS Dev Center</a>
-     */
     @Generated
     @Selector("intensity")
     @NFloat
@@ -243,46 +223,26 @@ public class SCNMaterialProperty extends NSObject implements SCNAnimatable, NSSe
     @Selector("isAnimationForKeyPaused:")
     public native boolean isAnimationForKeyPaused(String key);
 
-    /**
-     * magnificationFilter</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNMaterialProperty_Class/index.html#//apple_ref/occ/instp/SCNMaterialProperty/magnificationFilter">iOS Dev Center</a>
-     */
     @Generated
     @Selector("magnificationFilter")
     @NInt
     public native long magnificationFilter();
 
-    /**
-     * mappingChannel</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNMaterialProperty_Class/index.html#//apple_ref/occ/instp/SCNMaterialProperty/mappingChannel">iOS Dev Center</a>
-     */
     @Generated
     @Selector("mappingChannel")
     @NInt
     public native long mappingChannel();
 
-    /**
-     * maxAnisotropy</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNMaterialProperty_Class/index.html#//apple_ref/occ/instp/SCNMaterialProperty/maxAnisotropy">iOS Dev Center</a>
-     */
     @Generated
     @Selector("maxAnisotropy")
     @NFloat
     public native double maxAnisotropy();
 
-    /**
-     * minificationFilter</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNMaterialProperty_Class/index.html#//apple_ref/occ/instp/SCNMaterialProperty/minificationFilter">iOS Dev Center</a>
-     */
     @Generated
     @Selector("minificationFilter")
     @NInt
     public native long minificationFilter();
 
-    /**
-     * mipFilter</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNMaterialProperty_Class/index.html#//apple_ref/occ/instp/SCNMaterialProperty/mipFilter">iOS Dev Center</a>
-     */
     @Generated
     @Selector("mipFilter")
     @NInt
@@ -308,90 +268,46 @@ public class SCNMaterialProperty extends NSObject implements SCNAnimatable, NSSe
     @Selector("resumeAnimationForKey:")
     public native void resumeAnimationForKey(String key);
 
-    /**
-     * borderColor</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNMaterialProperty_Class/index.html#//apple_ref/occ/instp/SCNMaterialProperty/borderColor">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setBorderColor:")
     public native void setBorderColor(@Mapped(ObjCObjectMapper.class) Object value);
 
-    /**
-     * contents</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNMaterialProperty_Class/index.html#//apple_ref/occ/instp/SCNMaterialProperty/contents">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setContents:")
     public native void setContents(@Mapped(ObjCObjectMapper.class) Object value);
 
-    /**
-     * contentsTransform</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNMaterialProperty_Class/index.html#//apple_ref/occ/instp/SCNMaterialProperty/contentsTransform">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setContentsTransform:")
     public native void setContentsTransform(@ByValue SCNMatrix4 value);
 
-    /**
-     * intensity</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNMaterialProperty_Class/index.html#//apple_ref/occ/instp/SCNMaterialProperty/intensity">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setIntensity:")
     public native void setIntensity(@NFloat double value);
 
-    /**
-     * magnificationFilter</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNMaterialProperty_Class/index.html#//apple_ref/occ/instp/SCNMaterialProperty/magnificationFilter">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setMagnificationFilter:")
     public native void setMagnificationFilter(@NInt long value);
 
-    /**
-     * mappingChannel</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNMaterialProperty_Class/index.html#//apple_ref/occ/instp/SCNMaterialProperty/mappingChannel">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setMappingChannel:")
     public native void setMappingChannel(@NInt long value);
 
-    /**
-     * maxAnisotropy</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNMaterialProperty_Class/index.html#//apple_ref/occ/instp/SCNMaterialProperty/maxAnisotropy">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setMaxAnisotropy:")
     public native void setMaxAnisotropy(@NFloat double value);
 
-    /**
-     * minificationFilter</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNMaterialProperty_Class/index.html#//apple_ref/occ/instp/SCNMaterialProperty/minificationFilter">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setMinificationFilter:")
     public native void setMinificationFilter(@NInt long value);
 
-    /**
-     * mipFilter</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNMaterialProperty_Class/index.html#//apple_ref/occ/instp/SCNMaterialProperty/mipFilter">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setMipFilter:")
     public native void setMipFilter(@NInt long value);
 
-    /**
-     * wrapS</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNMaterialProperty_Class/index.html#//apple_ref/occ/instp/SCNMaterialProperty/wrapS">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setWrapS:")
     public native void setWrapS(@NInt long value);
 
-    /**
-     * wrapT</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNMaterialProperty_Class/index.html#//apple_ref/occ/instp/SCNMaterialProperty/wrapT">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setWrapT:")
     public native void setWrapT(@NInt long value);
@@ -402,19 +318,11 @@ public class SCNMaterialProperty extends NSObject implements SCNAnimatable, NSSe
         return supportsSecureCoding();
     }
 
-    /**
-     * wrapS</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNMaterialProperty_Class/index.html#//apple_ref/occ/instp/SCNMaterialProperty/wrapS">iOS Dev Center</a>
-     */
     @Generated
     @Selector("wrapS")
     @NInt
     public native long wrapS();
 
-    /**
-     * wrapT</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNMaterialProperty_Class/index.html#//apple_ref/occ/instp/SCNMaterialProperty/wrapT">iOS Dev Center</a>
-     */
     @Generated
     @Selector("wrapT")
     @NInt

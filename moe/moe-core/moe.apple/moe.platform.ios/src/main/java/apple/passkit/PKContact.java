@@ -161,10 +161,6 @@ public class PKContact extends NSObject {
     @NInt
     public static native long version_static();
 
-    /**
-     * emailAddress</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/PassKit/Reference/PKContact_Class/index.html#//apple_ref/occ/instp/PKContact/emailAddress">iOS Dev Center</a>
-     */
     @Generated
     @Selector("emailAddress")
     public native String emailAddress();
@@ -173,74 +169,38 @@ public class PKContact extends NSObject {
     @Selector("init")
     public native PKContact init();
 
-    /**
-     * name</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/PassKit/Reference/PKContact_Class/index.html#//apple_ref/occ/instp/PKContact/name">iOS Dev Center</a>
-     */
     @Generated
     @Selector("name")
     public native NSPersonNameComponents name();
 
-    /**
-     * phoneNumber</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/PassKit/Reference/PKContact_Class/index.html#//apple_ref/occ/instp/PKContact/phoneNumber">iOS Dev Center</a>
-     */
     @Generated
     @Selector("phoneNumber")
     public native CNPhoneNumber phoneNumber();
 
-    /**
-     * postalAddress</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/PassKit/Reference/PKContact_Class/index.html#//apple_ref/occ/instp/PKContact/postalAddress">iOS Dev Center</a>
-     */
     @Generated
     @Selector("postalAddress")
     public native CNPostalAddress postalAddress();
 
-    /**
-     * emailAddress</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/PassKit/Reference/PKContact_Class/index.html#//apple_ref/occ/instp/PKContact/emailAddress">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setEmailAddress:")
     public native void setEmailAddress(String value);
 
-    /**
-     * name</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/PassKit/Reference/PKContact_Class/index.html#//apple_ref/occ/instp/PKContact/name">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setName:")
     public native void setName(NSPersonNameComponents value);
 
-    /**
-     * phoneNumber</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/PassKit/Reference/PKContact_Class/index.html#//apple_ref/occ/instp/PKContact/phoneNumber">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setPhoneNumber:")
     public native void setPhoneNumber(CNPhoneNumber value);
 
-    /**
-     * postalAddress</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/PassKit/Reference/PKContact_Class/index.html#//apple_ref/occ/instp/PKContact/postalAddress">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setPostalAddress:")
     public native void setPostalAddress(CNPostalAddress value);
 
-    /**
-     * supplementarySubLocality</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/PassKit/Reference/PKContact_Class/index.html#//apple_ref/occ/instp/PKContact/supplementarySubLocality">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setSupplementarySubLocality:")
     public native void setSupplementarySubLocality(String value);
 
-    /**
-     * supplementarySubLocality</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/PassKit/Reference/PKContact_Class/index.html#//apple_ref/occ/instp/PKContact/supplementarySubLocality">iOS Dev Center</a>
-     */
     @Generated
     @Selector("supplementarySubLocality")
     public native String supplementarySubLocality();

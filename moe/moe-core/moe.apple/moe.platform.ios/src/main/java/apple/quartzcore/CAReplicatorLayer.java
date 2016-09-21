@@ -189,148 +189,76 @@ public class CAReplicatorLayer extends CALayer {
     @Selector("initWithLayer:")
     public native CAReplicatorLayer initWithLayer(@Mapped(ObjCObjectMapper.class) Object layer);
 
-    /**
-     * instanceAlphaOffset</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/CAReplicatorLayer_class/index.html#//apple_ref/occ/instp/CAReplicatorLayer/instanceAlphaOffset">iOS Dev Center</a>
-     */
     @Generated
     @Selector("instanceAlphaOffset")
     public native float instanceAlphaOffset();
 
-    /**
-     * instanceBlueOffset</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/CAReplicatorLayer_class/index.html#//apple_ref/occ/instp/CAReplicatorLayer/instanceBlueOffset">iOS Dev Center</a>
-     */
     @Generated
     @Selector("instanceBlueOffset")
     public native float instanceBlueOffset();
 
-    /**
-     * instanceColor</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/CAReplicatorLayer_class/index.html#//apple_ref/occ/instp/CAReplicatorLayer/instanceColor">iOS Dev Center</a>
-     */
     @Generated
     @Selector("instanceColor")
     public native CGColorRef instanceColor();
 
-    /**
-     * instanceCount</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/CAReplicatorLayer_class/index.html#//apple_ref/occ/instp/CAReplicatorLayer/instanceCount">iOS Dev Center</a>
-     */
     @Generated
     @Selector("instanceCount")
     @NInt
     public native long instanceCount();
 
-    /**
-     * instanceDelay</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/CAReplicatorLayer_class/index.html#//apple_ref/occ/instp/CAReplicatorLayer/instanceDelay">iOS Dev Center</a>
-     */
     @Generated
     @Selector("instanceDelay")
     public native double instanceDelay();
 
-    /**
-     * instanceGreenOffset</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/CAReplicatorLayer_class/index.html#//apple_ref/occ/instp/CAReplicatorLayer/instanceGreenOffset">iOS Dev Center</a>
-     */
     @Generated
     @Selector("instanceGreenOffset")
     public native float instanceGreenOffset();
 
-    /**
-     * instanceRedOffset</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/CAReplicatorLayer_class/index.html#//apple_ref/occ/instp/CAReplicatorLayer/instanceRedOffset">iOS Dev Center</a>
-     */
     @Generated
     @Selector("instanceRedOffset")
     public native float instanceRedOffset();
 
-    /**
-     * instanceTransform</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/CAReplicatorLayer_class/index.html#//apple_ref/occ/instp/CAReplicatorLayer/instanceTransform">iOS Dev Center</a>
-     */
     @Generated
     @Selector("instanceTransform")
     @ByValue
     public native CATransform3D instanceTransform();
 
-    /**
-     * preservesDepth</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/CAReplicatorLayer_class/index.html#//apple_ref/occ/instp/CAReplicatorLayer/preservesDepth">iOS Dev Center</a>
-     */
     @Generated
     @Selector("preservesDepth")
     public native boolean preservesDepth();
 
-    /**
-     * instanceAlphaOffset</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/CAReplicatorLayer_class/index.html#//apple_ref/occ/instp/CAReplicatorLayer/instanceAlphaOffset">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setInstanceAlphaOffset:")
     public native void setInstanceAlphaOffset(float value);
 
-    /**
-     * instanceBlueOffset</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/CAReplicatorLayer_class/index.html#//apple_ref/occ/instp/CAReplicatorLayer/instanceBlueOffset">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setInstanceBlueOffset:")
     public native void setInstanceBlueOffset(float value);
 
-    /**
-     * instanceColor</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/CAReplicatorLayer_class/index.html#//apple_ref/occ/instp/CAReplicatorLayer/instanceColor">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setInstanceColor:")
     public native void setInstanceColor(CGColorRef value);
 
-    /**
-     * instanceCount</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/CAReplicatorLayer_class/index.html#//apple_ref/occ/instp/CAReplicatorLayer/instanceCount">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setInstanceCount:")
     public native void setInstanceCount(@NInt long value);
 
-    /**
-     * instanceDelay</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/CAReplicatorLayer_class/index.html#//apple_ref/occ/instp/CAReplicatorLayer/instanceDelay">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setInstanceDelay:")
     public native void setInstanceDelay(double value);
 
-    /**
-     * instanceGreenOffset</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/CAReplicatorLayer_class/index.html#//apple_ref/occ/instp/CAReplicatorLayer/instanceGreenOffset">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setInstanceGreenOffset:")
     public native void setInstanceGreenOffset(float value);
 
-    /**
-     * instanceRedOffset</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/CAReplicatorLayer_class/index.html#//apple_ref/occ/instp/CAReplicatorLayer/instanceRedOffset">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setInstanceRedOffset:")
     public native void setInstanceRedOffset(float value);
 
-    /**
-     * instanceTransform</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/CAReplicatorLayer_class/index.html#//apple_ref/occ/instp/CAReplicatorLayer/instanceTransform">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setInstanceTransform:")
     public native void setInstanceTransform(@ByValue CATransform3D value);
 
-    /**
-     * preservesDepth</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/CAReplicatorLayer_class/index.html#//apple_ref/occ/instp/CAReplicatorLayer/preservesDepth">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setPreservesDepth:")
     public native void setPreservesDepth(boolean value);

@@ -194,18 +194,10 @@ public class SKCropNode extends SKNode {
     @Selector("initWithCoder:")
     public native SKCropNode initWithCoder(NSCoder aDecoder);
 
-    /**
-     * maskNode</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKCropNode_Ref/index.html#//apple_ref/occ/instp/SKCropNode/maskNode">iOS Dev Center</a>
-     */
     @Generated
     @Selector("maskNode")
     public native SKNode maskNode();
 
-    /**
-     * maskNode</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKCropNode_Ref/index.html#//apple_ref/occ/instp/SKCropNode/maskNode">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setMaskNode:")
     public native void setMaskNode(SKNode value);

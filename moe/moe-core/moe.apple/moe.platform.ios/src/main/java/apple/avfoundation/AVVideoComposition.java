@@ -67,10 +67,6 @@ public class AVVideoComposition extends NSObject implements NSCopying, NSMutable
     @Selector("alloc")
     public static native AVVideoComposition alloc();
 
-    /**
-     * videoCompositionWithPropertiesOfAsset:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVVideoComposition_Class/index.html#//apple_ref/occ/clm/AVVideoComposition/videoCompositionWithPropertiesOfAsset:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("videoCompositionWithPropertiesOfAsset:")
     public static native AVVideoComposition videoCompositionWithPropertiesOfAsset(AVAsset asset);
@@ -180,10 +176,6 @@ public class AVVideoComposition extends NSObject implements NSCopying, NSMutable
     @NInt
     public static native long version_static();
 
-    /**
-     * animationTool</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVVideoComposition_Class/index.html#//apple_ref/occ/instp/AVVideoComposition/animationTool">iOS Dev Center</a>
-     */
     @Generated
     @Selector("animationTool")
     public native AVVideoCompositionCoreAnimationTool animationTool();
@@ -194,19 +186,11 @@ public class AVVideoComposition extends NSObject implements NSCopying, NSMutable
     @MappedReturn(ObjCObjectMapper.class)
     public native Object copyWithZone(VoidPtr zone);
 
-    /**
-     * customVideoCompositorClass</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVVideoComposition_Class/index.html#//apple_ref/occ/instp/AVVideoComposition/customVideoCompositorClass">iOS Dev Center</a>
-     */
     @Generated
     @Selector("customVideoCompositorClass")
     @MappedReturn(ObjCObjectMapper.class)
     public native AVVideoCompositing customVideoCompositorClass();
 
-    /**
-     * frameDuration</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVVideoComposition_Class/index.html#//apple_ref/occ/instp/AVVideoComposition/frameDuration">iOS Dev Center</a>
-     */
     @Generated
     @Selector("frameDuration")
     @ByValue
@@ -216,18 +200,10 @@ public class AVVideoComposition extends NSObject implements NSCopying, NSMutable
     @Selector("init")
     public native AVVideoComposition init();
 
-    /**
-     * instructions</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVVideoComposition_Class/index.html#//apple_ref/occ/instp/AVVideoComposition/instructions">iOS Dev Center</a>
-     */
     @Generated
     @Selector("instructions")
     public native NSArray<?> instructions();
 
-    /**
-     * isValidForAsset:timeRange:validationDelegate:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVVideoComposition_Class/index.html#//apple_ref/occ/instm/AVVideoComposition/isValidForAsset:timeRange:validationDelegate:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("isValidForAsset:timeRange:validationDelegate:")
     public native boolean isValidForAssetTimeRangeValidationDelegate(AVAsset asset, @ByValue CMTimeRange timeRange,
@@ -238,18 +214,10 @@ public class AVVideoComposition extends NSObject implements NSCopying, NSMutable
     @MappedReturn(ObjCObjectMapper.class)
     public native Object mutableCopyWithZone(VoidPtr zone);
 
-    /**
-     * renderScale</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVVideoComposition_Class/index.html#//apple_ref/occ/instp/AVVideoComposition/renderScale">iOS Dev Center</a>
-     */
     @Generated
     @Selector("renderScale")
     public native float renderScale();
 
-    /**
-     * renderSize</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVVideoComposition_Class/index.html#//apple_ref/occ/instp/AVVideoComposition/renderSize">iOS Dev Center</a>
-     */
     @Generated
     @Selector("renderSize")
     @ByValue

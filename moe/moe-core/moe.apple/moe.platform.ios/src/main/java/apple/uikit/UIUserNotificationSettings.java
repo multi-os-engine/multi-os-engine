@@ -58,10 +58,6 @@ public class UIUserNotificationSettings extends NSObject {
     @Selector("alloc")
     public static native UIUserNotificationSettings alloc();
 
-    /**
-     * settingsForTypes:categories:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIUserNotificationSettings_class/index.html#//apple_ref/occ/clm/UIUserNotificationSettings/settingsForTypes:categories:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("settingsForTypes:categories:")
     public static native UIUserNotificationSettings settingsForTypesCategories(@NUInt long types,
@@ -167,10 +163,6 @@ public class UIUserNotificationSettings extends NSObject {
     @NInt
     public static native long version_static();
 
-    /**
-     * categories</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIUserNotificationSettings_class/index.html#//apple_ref/occ/instp/UIUserNotificationSettings/categories">iOS Dev Center</a>
-     */
     @Generated
     @Selector("categories")
     public native NSSet<? extends UIUserNotificationCategory> categories();
@@ -179,10 +171,6 @@ public class UIUserNotificationSettings extends NSObject {
     @Selector("init")
     public native UIUserNotificationSettings init();
 
-    /**
-     * types</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIUserNotificationSettings_class/index.html#//apple_ref/occ/instp/UIUserNotificationSettings/types">iOS Dev Center</a>
-     */
     @Generated
     @Selector("types")
     @NUInt

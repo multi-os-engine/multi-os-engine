@@ -30,10 +30,6 @@ import org.moe.natj.objc.ann.Selector;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("UIDynamicAnimatorDelegate")
 public interface UIDynamicAnimatorDelegate {
-    /**
-     * dynamicAnimatorDidPause:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIDynamicAnimatorDelegate_Protocol/index.html#//apple_ref/occ/intfm/UIDynamicAnimatorDelegate/dynamicAnimatorDidPause:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("dynamicAnimatorDidPause:")
@@ -41,10 +37,6 @@ public interface UIDynamicAnimatorDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * dynamicAnimatorWillResume:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIDynamicAnimatorDelegate_Protocol/index.html#//apple_ref/occ/intfm/UIDynamicAnimatorDelegate/dynamicAnimatorWillResume:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("dynamicAnimatorWillResume:")

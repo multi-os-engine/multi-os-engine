@@ -62,26 +62,14 @@ public class NSPersistentStore extends NSObject {
     @Selector("alloc")
     public static native NSPersistentStore alloc();
 
-    /**
-     * metadataForPersistentStoreWithURL:error:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSPersistentStore_Class/index.html#//apple_ref/occ/clm/NSPersistentStore/metadataForPersistentStoreWithURL:error:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("metadataForPersistentStoreWithURL:error:")
     public static native NSDictionary<String, ?> metadataForPersistentStoreWithURLError(NSURL url, Ptr<NSError> error);
 
-    /**
-     * migrationManagerClass</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSPersistentStore_Class/index.html#//apple_ref/occ/clm/NSPersistentStore/migrationManagerClass">iOS Dev Center</a>
-     */
     @Generated
     @Selector("migrationManagerClass")
     public static native Class migrationManagerClass();
 
-    /**
-     * setMetadata:forPersistentStoreWithURL:error:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSPersistentStore_Class/index.html#//apple_ref/occ/clm/NSPersistentStore/setMetadata:forPersistentStoreWithURL:error:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setMetadata:forPersistentStoreWithURL:error:")
     public static native boolean setMetadataForPersistentStoreWithURLError(NSDictionary<String, ?> metadata, NSURL url,
@@ -187,34 +175,18 @@ public class NSPersistentStore extends NSObject {
     @NInt
     public static native long version_static();
 
-    /**
-     * URL</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSPersistentStore_Class/index.html#//apple_ref/occ/instp/NSPersistentStore/URL">iOS Dev Center</a>
-     */
     @Generated
     @Selector("URL")
     public native NSURL URL();
 
-    /**
-     * configurationName</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSPersistentStore_Class/index.html#//apple_ref/occ/instp/NSPersistentStore/configurationName">iOS Dev Center</a>
-     */
     @Generated
     @Selector("configurationName")
     public native String configurationName();
 
-    /**
-     * didAddToPersistentStoreCoordinator:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSPersistentStore_Class/index.html#//apple_ref/occ/instm/NSPersistentStore/didAddToPersistentStoreCoordinator:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("didAddToPersistentStoreCoordinator:")
     public native void didAddToPersistentStoreCoordinator(NSPersistentStoreCoordinator coordinator);
 
-    /**
-     * identifier</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSPersistentStore_Class/index.html#//apple_ref/occ/instp/NSPersistentStore/identifier">iOS Dev Center</a>
-     */
     @Generated
     @Selector("identifier")
     public native String identifier();
@@ -223,99 +195,51 @@ public class NSPersistentStore extends NSObject {
     @Selector("init")
     public native NSPersistentStore init();
 
-    /**
-     * initWithPersistentStoreCoordinator:configurationName:URL:options:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSPersistentStore_Class/index.html#//apple_ref/occ/instm/NSPersistentStore/initWithPersistentStoreCoordinator:configurationName:URL:options:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithPersistentStoreCoordinator:configurationName:URL:options:")
     public native NSPersistentStore initWithPersistentStoreCoordinatorConfigurationNameURLOptions(
             NSPersistentStoreCoordinator root, String name, NSURL url, NSDictionary<?, ?> options);
 
-    /**
-     * readOnly</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSPersistentStore_Class/index.html#//apple_ref/occ/instp/NSPersistentStore/readOnly">iOS Dev Center</a>
-     */
     @Generated
     @Selector("isReadOnly")
     public native boolean isReadOnly();
 
-    /**
-     * readOnly</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSPersistentStore_Class/index.html#//apple_ref/occ/instp/NSPersistentStore/readOnly">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setReadOnly:")
     public native void setReadOnly(boolean value);
 
-    /**
-     * loadMetadata:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSPersistentStore_Class/index.html#//apple_ref/occ/instm/NSPersistentStore/loadMetadata:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("loadMetadata:")
     public native boolean loadMetadata(Ptr<NSError> error);
 
-    /**
-     * metadata</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSPersistentStore_Class/index.html#//apple_ref/occ/instp/NSPersistentStore/metadata">iOS Dev Center</a>
-     */
     @Generated
     @Selector("metadata")
     public native NSDictionary<String, ?> metadata();
 
-    /**
-     * options</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSPersistentStore_Class/index.html#//apple_ref/occ/instp/NSPersistentStore/options">iOS Dev Center</a>
-     */
     @Generated
     @Selector("options")
     public native NSDictionary<?, ?> options();
 
-    /**
-     * persistentStoreCoordinator</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSPersistentStore_Class/index.html#//apple_ref/occ/instp/NSPersistentStore/persistentStoreCoordinator">iOS Dev Center</a>
-     */
     @Generated
     @Selector("persistentStoreCoordinator")
     public native NSPersistentStoreCoordinator persistentStoreCoordinator();
 
-    /**
-     * identifier</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSPersistentStore_Class/index.html#//apple_ref/occ/instp/NSPersistentStore/identifier">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setIdentifier:")
     public native void setIdentifier(String value);
 
-    /**
-     * metadata</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSPersistentStore_Class/index.html#//apple_ref/occ/instp/NSPersistentStore/metadata">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setMetadata:")
     public native void setMetadata(NSDictionary<String, ?> value);
 
-    /**
-     * URL</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSPersistentStore_Class/index.html#//apple_ref/occ/instp/NSPersistentStore/URL">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setURL:")
     public native void setURL(NSURL value);
 
-    /**
-     * type</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSPersistentStore_Class/index.html#//apple_ref/occ/instp/NSPersistentStore/type">iOS Dev Center</a>
-     */
     @Generated
     @Selector("type")
     public native String type();
 
-    /**
-     * willRemoveFromPersistentStoreCoordinator:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSPersistentStore_Class/index.html#//apple_ref/occ/instm/NSPersistentStore/willRemoveFromPersistentStoreCoordinator:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("willRemoveFromPersistentStoreCoordinator:")
     public native void willRemoveFromPersistentStoreCoordinator(NSPersistentStoreCoordinator coordinator);

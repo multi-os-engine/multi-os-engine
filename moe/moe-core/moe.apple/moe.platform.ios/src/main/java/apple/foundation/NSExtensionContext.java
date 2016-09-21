@@ -156,18 +156,10 @@ public class NSExtensionContext extends NSObject {
     @NInt
     public static native long version_static();
 
-    /**
-     * cancelRequestWithError:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSExtensionContext_Class/index.html#//apple_ref/occ/instm/NSExtensionContext/cancelRequestWithError:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("cancelRequestWithError:")
     public native void cancelRequestWithError(NSError error);
 
-    /**
-     * completeRequestReturningItems:completionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSExtensionContext_Class/index.html#//apple_ref/occ/instm/NSExtensionContext/completeRequestReturningItems:completionHandler:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("completeRequestReturningItems:completionHandler:")
     public native void completeRequestReturningItemsCompletionHandler(NSArray<?> items,
@@ -177,18 +169,10 @@ public class NSExtensionContext extends NSObject {
     @Selector("init")
     public native NSExtensionContext init();
 
-    /**
-     * inputItems</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSExtensionContext_Class/index.html#//apple_ref/occ/instp/NSExtensionContext/inputItems">iOS Dev Center</a>
-     */
     @Generated
     @Selector("inputItems")
     public native NSArray<?> inputItems();
 
-    /**
-     * openURL:completionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSExtensionContext_Class/index.html#//apple_ref/occ/instm/NSExtensionContext/openURL:completionHandler:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("openURL:completionHandler:")
     public native void openURLCompletionHandler(NSURL URL,

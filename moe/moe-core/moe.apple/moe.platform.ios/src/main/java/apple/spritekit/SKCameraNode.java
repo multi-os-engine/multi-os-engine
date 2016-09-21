@@ -186,18 +186,10 @@ public class SKCameraNode extends SKNode {
     @NInt
     public static native long version_static();
 
-    /**
-     * containedNodeSet</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKCameraNode/index.html#//apple_ref/occ/instm/SKCameraNode/containedNodeSet">iOS Dev Center</a>
-     */
     @Generated
     @Selector("containedNodeSet")
     public native NSSet<? extends SKNode> containedNodeSet();
 
-    /**
-     * containsNode:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKCameraNode/index.html#//apple_ref/occ/instm/SKCameraNode/containsNode:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("containsNode:")
     public native boolean containsNode(SKNode node);

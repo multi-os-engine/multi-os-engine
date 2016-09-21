@@ -61,10 +61,6 @@ public class CIWarpKernel extends CIKernel {
     @Selector("alloc")
     public static native CIWarpKernel alloc();
 
-    /**
-     * kernelWithString:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreImage/Reference/CIWarpKernel_Class/index.html#//apple_ref/occ/clm/CIWarpKernel/kernelWithString:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("kernelWithString:")
     public static native CIWarpKernel kernelWithString(String string);
@@ -173,10 +169,6 @@ public class CIWarpKernel extends CIKernel {
     @NInt
     public static native long version_static();
 
-    /**
-     * applyWithExtent:roiCallback:inputImage:arguments:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreImage/Reference/CIWarpKernel_Class/index.html#//apple_ref/occ/instm/CIWarpKernel/applyWithExtent:roiCallback:inputImage:arguments:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("applyWithExtent:roiCallback:inputImage:arguments:")
     public native CIImage applyWithExtentRoiCallbackInputImageArguments(@ByValue CGRect extent,

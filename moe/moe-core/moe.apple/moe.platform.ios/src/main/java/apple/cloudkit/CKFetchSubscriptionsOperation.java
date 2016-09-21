@@ -61,10 +61,6 @@ public class CKFetchSubscriptionsOperation extends CKDatabaseOperation {
     @Selector("alloc")
     public static native CKFetchSubscriptionsOperation alloc();
 
-    /**
-     * fetchAllSubscriptionsOperation</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKFetchSubscriptionsOperation_class/index.html#//apple_ref/occ/clm/CKFetchSubscriptionsOperation/fetchAllSubscriptionsOperation">iOS Dev Center</a>
-     */
     @Generated
     @Selector("fetchAllSubscriptionsOperation")
     @MappedReturn(ObjCObjectMapper.class)
@@ -174,43 +170,23 @@ public class CKFetchSubscriptionsOperation extends CKDatabaseOperation {
     @Selector("init")
     public native CKFetchSubscriptionsOperation init();
 
-    /**
-     * initWithSubscriptionIDs:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKFetchSubscriptionsOperation_class/index.html#//apple_ref/occ/instm/CKFetchSubscriptionsOperation/initWithSubscriptionIDs:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithSubscriptionIDs:")
     public native CKFetchSubscriptionsOperation initWithSubscriptionIDs(NSArray<String> subscriptionIDs);
 
-    /**
-     * fetchSubscriptionCompletionBlock</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKFetchSubscriptionsOperation_class/index.html#//apple_ref/occ/instp/CKFetchSubscriptionsOperation/fetchSubscriptionCompletionBlock">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setFetchSubscriptionCompletionBlock:")
     public native void setFetchSubscriptionCompletionBlock(
             @ObjCBlock(name = "call_setFetchSubscriptionCompletionBlock") Block_setFetchSubscriptionCompletionBlock value);
 
-    /**
-     * subscriptionIDs</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKFetchSubscriptionsOperation_class/index.html#//apple_ref/occ/instp/CKFetchSubscriptionsOperation/subscriptionIDs">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setSubscriptionIDs:")
     public native void setSubscriptionIDs(NSArray<String> value);
 
-    /**
-     * subscriptionIDs</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKFetchSubscriptionsOperation_class/index.html#//apple_ref/occ/instp/CKFetchSubscriptionsOperation/subscriptionIDs">iOS Dev Center</a>
-     */
     @Generated
     @Selector("subscriptionIDs")
     public native NSArray<String> subscriptionIDs();
 
-    /**
-     * fetchSubscriptionCompletionBlock</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKFetchSubscriptionsOperation_class/index.html#//apple_ref/occ/instp/CKFetchSubscriptionsOperation/fetchSubscriptionCompletionBlock">iOS Dev Center</a>
-     */
     @Generated
     @Selector("fetchSubscriptionCompletionBlock")
     @ObjCBlock(name = "call_fetchSubscriptionCompletionBlock_ret")

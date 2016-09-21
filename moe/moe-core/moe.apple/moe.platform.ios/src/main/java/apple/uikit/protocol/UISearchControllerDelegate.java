@@ -30,10 +30,6 @@ import org.moe.natj.objc.ann.Selector;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("UISearchControllerDelegate")
 public interface UISearchControllerDelegate {
-    /**
-     * didDismissSearchController:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISearchControllerDelegate_Ref/index.html#//apple_ref/occ/intfm/UISearchControllerDelegate/didDismissSearchController:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("didDismissSearchController:")
@@ -41,10 +37,6 @@ public interface UISearchControllerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * didPresentSearchController:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISearchControllerDelegate_Ref/index.html#//apple_ref/occ/intfm/UISearchControllerDelegate/didPresentSearchController:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("didPresentSearchController:")
@@ -52,10 +44,6 @@ public interface UISearchControllerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * presentSearchController:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISearchControllerDelegate_Ref/index.html#//apple_ref/occ/intfm/UISearchControllerDelegate/presentSearchController:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("presentSearchController:")
@@ -63,10 +51,6 @@ public interface UISearchControllerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * willDismissSearchController:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISearchControllerDelegate_Ref/index.html#//apple_ref/occ/intfm/UISearchControllerDelegate/willDismissSearchController:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("willDismissSearchController:")
@@ -74,10 +58,6 @@ public interface UISearchControllerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * willPresentSearchController:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISearchControllerDelegate_Ref/index.html#//apple_ref/occ/intfm/UISearchControllerDelegate/willPresentSearchController:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("willPresentSearchController:")

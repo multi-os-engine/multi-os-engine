@@ -162,10 +162,6 @@ public class MPRatingCommandEvent extends MPRemoteCommandEvent {
     @Selector("init")
     public native MPRatingCommandEvent init();
 
-    /**
-     * rating</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPRatingCommandEvent_Ref/index.html#//apple_ref/occ/instp/MPRatingCommandEvent/rating">iOS Dev Center</a>
-     */
     @Generated
     @Selector("rating")
     public native float rating();

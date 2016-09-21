@@ -29,10 +29,6 @@ import org.moe.natj.objc.ann.Selector;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("NSProgressReporting")
 public interface NSProgressReporting {
-    /**
-     * progress</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSProgressReporting_Protocol/index.html#//apple_ref/occ/intfp/NSProgressReporting/progress">iOS Dev Center</a>
-     */
     @Generated
     @Selector("progress")
     NSProgress progress();

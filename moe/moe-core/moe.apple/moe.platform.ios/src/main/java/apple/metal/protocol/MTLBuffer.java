@@ -33,27 +33,15 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("MTLBuffer")
 public interface MTLBuffer extends MTLResource {
-    /**
-     * contents</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Metal/Reference/MTLBuffer_Ref/index.html#//apple_ref/occ/intfm/MTLBuffer/contents">iOS Dev Center</a>
-     */
     @Generated
     @Selector("contents")
     VoidPtr contents();
 
-    /**
-     * length</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Metal/Reference/MTLBuffer_Ref/index.html#//apple_ref/occ/intfp/MTLBuffer/length">iOS Dev Center</a>
-     */
     @Generated
     @Selector("length")
     @NUInt
     long length();
 
-    /**
-     * newTextureWithDescriptor:offset:bytesPerRow:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Metal/Reference/MTLBuffer_Ref/index.html#//apple_ref/occ/intfm/MTLBuffer/newTextureWithDescriptor:offset:bytesPerRow:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("newTextureWithDescriptor:offset:bytesPerRow:")
     @MappedReturn(ObjCObjectMapper.class)

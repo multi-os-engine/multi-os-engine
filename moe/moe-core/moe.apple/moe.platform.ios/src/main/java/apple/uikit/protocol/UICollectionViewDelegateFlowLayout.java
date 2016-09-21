@@ -37,10 +37,6 @@ import org.moe.natj.objc.ann.Selector;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("UICollectionViewDelegateFlowLayout")
 public interface UICollectionViewDelegateFlowLayout extends UICollectionViewDelegate {
-    /**
-     * collectionView:layout:insetForSectionAtIndex:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UICollectionViewDelegateFlowLayout_protocol/index.html#//apple_ref/occ/intfm/UICollectionViewDelegateFlowLayout/collectionView:layout:insetForSectionAtIndex:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("collectionView:layout:insetForSectionAtIndex:")
@@ -50,10 +46,6 @@ public interface UICollectionViewDelegateFlowLayout extends UICollectionViewDele
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * collectionView:layout:minimumInteritemSpacingForSectionAtIndex:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UICollectionViewDelegateFlowLayout_protocol/index.html#//apple_ref/occ/intfm/UICollectionViewDelegateFlowLayout/collectionView:layout:minimumInteritemSpacingForSectionAtIndex:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("collectionView:layout:minimumInteritemSpacingForSectionAtIndex:")
@@ -63,10 +55,6 @@ public interface UICollectionViewDelegateFlowLayout extends UICollectionViewDele
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * collectionView:layout:minimumLineSpacingForSectionAtIndex:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UICollectionViewDelegateFlowLayout_protocol/index.html#//apple_ref/occ/intfm/UICollectionViewDelegateFlowLayout/collectionView:layout:minimumLineSpacingForSectionAtIndex:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("collectionView:layout:minimumLineSpacingForSectionAtIndex:")
@@ -76,10 +64,6 @@ public interface UICollectionViewDelegateFlowLayout extends UICollectionViewDele
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * collectionView:layout:referenceSizeForFooterInSection:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UICollectionViewDelegateFlowLayout_protocol/index.html#//apple_ref/occ/intfm/UICollectionViewDelegateFlowLayout/collectionView:layout:referenceSizeForFooterInSection:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("collectionView:layout:referenceSizeForFooterInSection:")
@@ -89,10 +73,6 @@ public interface UICollectionViewDelegateFlowLayout extends UICollectionViewDele
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * collectionView:layout:referenceSizeForHeaderInSection:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UICollectionViewDelegateFlowLayout_protocol/index.html#//apple_ref/occ/intfm/UICollectionViewDelegateFlowLayout/collectionView:layout:referenceSizeForHeaderInSection:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("collectionView:layout:referenceSizeForHeaderInSection:")
@@ -102,10 +82,6 @@ public interface UICollectionViewDelegateFlowLayout extends UICollectionViewDele
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * collectionView:layout:sizeForItemAtIndexPath:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UICollectionViewDelegateFlowLayout_protocol/index.html#//apple_ref/occ/intfm/UICollectionViewDelegateFlowLayout/collectionView:layout:sizeForItemAtIndexPath:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("collectionView:layout:sizeForItemAtIndexPath:")

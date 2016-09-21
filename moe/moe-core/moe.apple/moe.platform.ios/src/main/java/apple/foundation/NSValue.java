@@ -82,170 +82,86 @@ public class NSValue extends NSObject implements NSCopying, NSSecureCoding {
     @Selector("supportsSecureCoding")
     public static native boolean supportsSecureCoding();
 
-    /**
-     * value:withObjCType:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSValue_Class/index.html#//apple_ref/occ/clm/NSValue/value:withObjCType:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("value:withObjCType:")
     public static native NSValue valueWithObjCType(ConstVoidPtr value, @Mapped(CStringMapper.class) String type);
 
-    /**
-     * valueWithBytes:objCType:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSValue_Class/index.html#//apple_ref/occ/clm/NSValue/valueWithBytes:objCType:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("valueWithBytes:objCType:")
     public static native NSValue valueWithBytesObjCType(ConstVoidPtr value, @Mapped(CStringMapper.class) String type);
 
-    /**
-     * valueWithCATransform3D:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSValue_Class/index.html#//apple_ref/occ/clm/NSValue/valueWithCATransform3D:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("valueWithCATransform3D:")
     public static native NSValue valueWithCATransform3D(@ByValue CATransform3D t);
 
-    /**
-     * valueWithCGAffineTransform:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSValue_Class/index.html#//apple_ref/occ/clm/NSValue/valueWithCGAffineTransform:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("valueWithCGAffineTransform:")
     public static native NSValue valueWithCGAffineTransform(@ByValue CGAffineTransform transform);
 
-    /**
-     * valueWithCGPoint:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSValue_Class/index.html#//apple_ref/occ/clm/NSValue/valueWithCGPoint:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("valueWithCGPoint:")
     public static native NSValue valueWithCGPoint(@ByValue CGPoint point);
 
-    /**
-     * valueWithCGRect:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSValue_Class/index.html#//apple_ref/occ/clm/NSValue/valueWithCGRect:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("valueWithCGRect:")
     public static native NSValue valueWithCGRect(@ByValue CGRect rect);
 
-    /**
-     * valueWithCGSize:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSValue_Class/index.html#//apple_ref/occ/clm/NSValue/valueWithCGSize:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("valueWithCGSize:")
     public static native NSValue valueWithCGSize(@ByValue CGSize size);
 
-    /**
-     * valueWithCGVector:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSValue_Class/index.html#//apple_ref/occ/clm/NSValue/valueWithCGVector:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("valueWithCGVector:")
     public static native NSValue valueWithCGVector(@ByValue CGVector vector);
 
-    /**
-     * valueWithCMTime:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSValue_Class/index.html#//apple_ref/occ/clm/NSValue/valueWithCMTime:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("valueWithCMTime:")
     public static native NSValue valueWithCMTime(@ByValue CMTime time);
 
-    /**
-     * valueWithCMTimeMapping:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSValue_Class/index.html#//apple_ref/occ/clm/NSValue/valueWithCMTimeMapping:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("valueWithCMTimeMapping:")
     public static native NSValue valueWithCMTimeMapping(@ByValue CMTimeMapping timeMapping);
 
-    /**
-     * valueWithCMTimeRange:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSValue_Class/index.html#//apple_ref/occ/clm/NSValue/valueWithCMTimeRange:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("valueWithCMTimeRange:")
     public static native NSValue valueWithCMTimeRange(@ByValue CMTimeRange timeRange);
 
-    /**
-     * valueWithMKCoordinate:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSValue_Class/index.html#//apple_ref/occ/clm/NSValue/valueWithMKCoordinate:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("valueWithMKCoordinate:")
     public static native NSValue valueWithMKCoordinate(@ByValue CLLocationCoordinate2D coordinate);
 
-    /**
-     * valueWithMKCoordinateSpan:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSValue_Class/index.html#//apple_ref/occ/clm/NSValue/valueWithMKCoordinateSpan:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("valueWithMKCoordinateSpan:")
     public static native NSValue valueWithMKCoordinateSpan(@ByValue MKCoordinateSpan span);
 
-    /**
-     * valueWithNonretainedObject:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSValue_Class/index.html#//apple_ref/occ/clm/NSValue/valueWithNonretainedObject:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("valueWithNonretainedObject:")
     public static native NSValue valueWithNonretainedObject(@Mapped(ObjCObjectMapper.class) Object anObject);
 
-    /**
-     * valueWithPointer:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSValue_Class/index.html#//apple_ref/occ/clm/NSValue/valueWithPointer:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("valueWithPointer:")
     public static native NSValue valueWithPointer(ConstVoidPtr pointer);
 
-    /**
-     * valueWithRange:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSValue_Class/index.html#//apple_ref/occ/clm/NSValue/valueWithRange:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("valueWithRange:")
     public static native NSValue valueWithRange(@ByValue NSRange range);
 
-    /**
-     * valueWithSCNMatrix4:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSValue_Class/index.html#//apple_ref/occ/clm/NSValue/valueWithSCNMatrix4:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("valueWithSCNMatrix4:")
     public static native NSValue valueWithSCNMatrix4(@ByValue SCNMatrix4 v);
 
-    /**
-     * valueWithSCNVector3:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSValue_Class/index.html#//apple_ref/occ/clm/NSValue/valueWithSCNVector3:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("valueWithSCNVector3:")
     public static native NSValue valueWithSCNVector3(@ByValue SCNVector3 v);
 
-    /**
-     * valueWithSCNVector4:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSValue_Class/index.html#//apple_ref/occ/clm/NSValue/valueWithSCNVector4:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("valueWithSCNVector4:")
     public static native NSValue valueWithSCNVector4(@ByValue SCNVector4 v);
 
-    /**
-     * valueWithUIEdgeInsets:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSValue_Class/index.html#//apple_ref/occ/clm/NSValue/valueWithUIEdgeInsets:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("valueWithUIEdgeInsets:")
     public static native NSValue valueWithUIEdgeInsets(@ByValue UIEdgeInsets insets);
 
-    /**
-     * valueWithUIOffset:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSValue_Class/index.html#//apple_ref/occ/clm/NSValue/valueWithUIOffset:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("valueWithUIOffset:")
     public static native NSValue valueWithUIOffset(@ByValue UIOffset insets);
@@ -350,145 +266,81 @@ public class NSValue extends NSObject implements NSCopying, NSSecureCoding {
     @NInt
     public static native long version_static();
 
-    /**
-     * CATransform3DValue</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSValue_Class/index.html#//apple_ref/occ/instp/NSValue/CATransform3DValue">iOS Dev Center</a>
-     */
     @Generated
     @Selector("CATransform3DValue")
     @ByValue
     public native CATransform3D CATransform3DValue();
 
-    /**
-     * CGAffineTransformValue</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSValue_Class/index.html#//apple_ref/occ/instm/NSValue/CGAffineTransformValue">iOS Dev Center</a>
-     */
     @Generated
     @Selector("CGAffineTransformValue")
     @ByValue
     public native CGAffineTransform CGAffineTransformValue();
 
-    /**
-     * CGPointValue</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSValue_Class/index.html#//apple_ref/occ/instm/NSValue/CGPointValue">iOS Dev Center</a>
-     */
     @Generated
     @Selector("CGPointValue")
     @ByValue
     public native CGPoint CGPointValue();
 
-    /**
-     * CGRectValue</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSValue_Class/index.html#//apple_ref/occ/instm/NSValue/CGRectValue">iOS Dev Center</a>
-     */
     @Generated
     @Selector("CGRectValue")
     @ByValue
     public native CGRect CGRectValue();
 
-    /**
-     * CGSizeValue</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSValue_Class/index.html#//apple_ref/occ/instm/NSValue/CGSizeValue">iOS Dev Center</a>
-     */
     @Generated
     @Selector("CGSizeValue")
     @ByValue
     public native CGSize CGSizeValue();
 
-    /**
-     * CGVectorValue</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSValue_Class/index.html#//apple_ref/occ/instm/NSValue/CGVectorValue">iOS Dev Center</a>
-     */
     @Generated
     @Selector("CGVectorValue")
     @ByValue
     public native CGVector CGVectorValue();
 
-    /**
-     * CMTimeMappingValue</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSValue_Class/index.html#//apple_ref/occ/instp/NSValue/CMTimeMappingValue">iOS Dev Center</a>
-     */
     @Generated
     @Selector("CMTimeMappingValue")
     @ByValue
     public native CMTimeMapping CMTimeMappingValue();
 
-    /**
-     * CMTimeRangeValue</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSValue_Class/index.html#//apple_ref/occ/instp/NSValue/CMTimeRangeValue">iOS Dev Center</a>
-     */
     @Generated
     @Selector("CMTimeRangeValue")
     @ByValue
     public native CMTimeRange CMTimeRangeValue();
 
-    /**
-     * CMTimeValue</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSValue_Class/index.html#//apple_ref/occ/instp/NSValue/CMTimeValue">iOS Dev Center</a>
-     */
     @Generated
     @Selector("CMTimeValue")
     @ByValue
     public native CMTime CMTimeValue();
 
-    /**
-     * MKCoordinateSpanValue</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSValue_Class/index.html#//apple_ref/occ/instp/NSValue/MKCoordinateSpanValue">iOS Dev Center</a>
-     */
     @Generated
     @Selector("MKCoordinateSpanValue")
     @ByValue
     public native MKCoordinateSpan MKCoordinateSpanValue();
 
-    /**
-     * MKCoordinateValue</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSValue_Class/index.html#//apple_ref/occ/instp/NSValue/MKCoordinateValue">iOS Dev Center</a>
-     */
     @Generated
     @Selector("MKCoordinateValue")
     @ByValue
     public native CLLocationCoordinate2D MKCoordinateValue();
 
-    /**
-     * SCNMatrix4Value</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSValue_Class/index.html#//apple_ref/occ/instp/NSValue/SCNMatrix4Value">iOS Dev Center</a>
-     */
     @Generated
     @Selector("SCNMatrix4Value")
     @ByValue
     public native SCNMatrix4 SCNMatrix4Value();
 
-    /**
-     * SCNVector3Value</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSValue_Class/index.html#//apple_ref/occ/instp/NSValue/SCNVector3Value">iOS Dev Center</a>
-     */
     @Generated
     @Selector("SCNVector3Value")
     @ByValue
     public native SCNVector3 SCNVector3Value();
 
-    /**
-     * SCNVector4Value</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSValue_Class/index.html#//apple_ref/occ/instp/NSValue/SCNVector4Value">iOS Dev Center</a>
-     */
     @Generated
     @Selector("SCNVector4Value")
     @ByValue
     public native SCNVector4 SCNVector4Value();
 
-    /**
-     * UIEdgeInsetsValue</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSValue_Class/index.html#//apple_ref/occ/instm/NSValue/UIEdgeInsetsValue">iOS Dev Center</a>
-     */
     @Generated
     @Selector("UIEdgeInsetsValue")
     @ByValue
     public native UIEdgeInsets UIEdgeInsetsValue();
 
-    /**
-     * UIOffsetValue</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSValue_Class/index.html#//apple_ref/occ/instm/NSValue/UIOffsetValue">iOS Dev Center</a>
-     */
     @Generated
     @Selector("UIOffsetValue")
     @ByValue
@@ -504,10 +356,6 @@ public class NSValue extends NSObject implements NSCopying, NSSecureCoding {
     @Selector("encodeWithCoder:")
     public native void encodeWithCoder(NSCoder aCoder);
 
-    /**
-     * getValue:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSValue_Class/index.html#//apple_ref/occ/instm/NSValue/getValue:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("getValue:")
     public native void getValue(VoidPtr value);
@@ -516,10 +364,6 @@ public class NSValue extends NSObject implements NSCopying, NSSecureCoding {
     @Selector("init")
     public native NSValue init();
 
-    /**
-     * initWithBytes:objCType:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSValue_Class/index.html#//apple_ref/occ/instm/NSValue/initWithBytes:objCType:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithBytes:objCType:")
     public native NSValue initWithBytesObjCType(ConstVoidPtr value, @Mapped(CStringMapper.class) String type);
@@ -528,27 +372,15 @@ public class NSValue extends NSObject implements NSCopying, NSSecureCoding {
     @Selector("initWithCoder:")
     public native NSValue initWithCoder(NSCoder aDecoder);
 
-    /**
-     * isEqualToValue:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSValue_Class/index.html#//apple_ref/occ/instm/NSValue/isEqualToValue:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("isEqualToValue:")
     public native boolean isEqualToValue(NSValue value);
 
-    /**
-     * nonretainedObjectValue</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSValue_Class/index.html#//apple_ref/occ/instp/NSValue/nonretainedObjectValue">iOS Dev Center</a>
-     */
     @Generated
     @Selector("nonretainedObjectValue")
     @MappedReturn(ObjCObjectMapper.class)
     public native Object nonretainedObjectValue();
 
-    /**
-     * objCType</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSValue_Class/index.html#//apple_ref/occ/instp/NSValue/objCType">iOS Dev Center</a>
-     */
     @Generated
     @Selector("objCType")
     @MappedReturn(CStringMapper.class)
@@ -558,10 +390,6 @@ public class NSValue extends NSObject implements NSCopying, NSSecureCoding {
     @Selector("pointerValue")
     public native VoidPtr pointerValue();
 
-    /**
-     * rangeValue</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSValue_Class/index.html#//apple_ref/occ/instp/NSValue/rangeValue">iOS Dev Center</a>
-     */
     @Generated
     @Selector("rangeValue")
     @ByValue

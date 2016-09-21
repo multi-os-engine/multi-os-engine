@@ -69,27 +69,15 @@ public class UICollectionViewLayoutAttributes extends NSObject implements NSCopy
     @Selector("alloc")
     public static native UICollectionViewLayoutAttributes alloc();
 
-    /**
-     * layoutAttributesForCellWithIndexPath:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UICollectionViewLayoutAttributes_class/index.html#//apple_ref/occ/clm/UICollectionViewLayoutAttributes/layoutAttributesForCellWithIndexPath:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("layoutAttributesForCellWithIndexPath:")
     public static native UICollectionViewLayoutAttributes layoutAttributesForCellWithIndexPath(NSIndexPath indexPath);
 
-    /**
-     * layoutAttributesForDecorationViewOfKind:withIndexPath:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UICollectionViewLayoutAttributes_class/index.html#//apple_ref/occ/clm/UICollectionViewLayoutAttributes/layoutAttributesForDecorationViewOfKind:withIndexPath:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("layoutAttributesForDecorationViewOfKind:withIndexPath:")
     public static native UICollectionViewLayoutAttributes layoutAttributesForDecorationViewOfKindWithIndexPath(
             String decorationViewKind, NSIndexPath indexPath);
 
-    /**
-     * layoutAttributesForSupplementaryViewOfKind:withIndexPath:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UICollectionViewLayoutAttributes_class/index.html#//apple_ref/occ/clm/UICollectionViewLayoutAttributes/layoutAttributesForSupplementaryViewOfKind:withIndexPath:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("layoutAttributesForSupplementaryViewOfKind:withIndexPath:")
     public static native UICollectionViewLayoutAttributes layoutAttributesForSupplementaryViewOfKindWithIndexPath(
@@ -195,10 +183,6 @@ public class UICollectionViewLayoutAttributes extends NSObject implements NSCopy
     @NInt
     public static native long version();
 
-    /**
-     * alpha</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UICollectionViewLayoutAttributes_class/index.html#//apple_ref/occ/instp/UICollectionViewLayoutAttributes/alpha">iOS Dev Center</a>
-     */
     @Generated
     @Selector("alpha")
     @NFloat
@@ -220,19 +204,11 @@ public class UICollectionViewLayoutAttributes extends NSObject implements NSCopy
     @MappedReturn(ObjCObjectMapper.class)
     public native Object copyWithZone(VoidPtr zone);
 
-    /**
-     * frame</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UICollectionViewLayoutAttributes_class/index.html#//apple_ref/occ/instp/UICollectionViewLayoutAttributes/frame">iOS Dev Center</a>
-     */
     @Generated
     @Selector("frame")
     @ByValue
     public native CGRect frame();
 
-    /**
-     * indexPath</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UICollectionViewLayoutAttributes_class/index.html#//apple_ref/occ/instp/UICollectionViewLayoutAttributes/indexPath">iOS Dev Center</a>
-     */
     @Generated
     @Selector("indexPath")
     public native NSIndexPath indexPath();
@@ -241,51 +217,27 @@ public class UICollectionViewLayoutAttributes extends NSObject implements NSCopy
     @Selector("init")
     public native UICollectionViewLayoutAttributes init();
 
-    /**
-     * hidden</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UICollectionViewLayoutAttributes_class/index.html#//apple_ref/occ/instp/UICollectionViewLayoutAttributes/hidden">iOS Dev Center</a>
-     */
     @Generated
     @Selector("isHidden")
     public native boolean isHidden();
 
-    /**
-     * hidden</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UICollectionViewLayoutAttributes_class/index.html#//apple_ref/occ/instp/UICollectionViewLayoutAttributes/hidden">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setHidden:")
     public native void setHidden(boolean value);
 
-    /**
-     * representedElementCategory</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UICollectionViewLayoutAttributes_class/index.html#//apple_ref/occ/instp/UICollectionViewLayoutAttributes/representedElementCategory">iOS Dev Center</a>
-     */
     @Generated
     @Selector("representedElementCategory")
     @NUInt
     public native long representedElementCategory();
 
-    /**
-     * representedElementKind</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UICollectionViewLayoutAttributes_class/index.html#//apple_ref/occ/instp/UICollectionViewLayoutAttributes/representedElementKind">iOS Dev Center</a>
-     */
     @Generated
     @Selector("representedElementKind")
     public native String representedElementKind();
 
-    /**
-     * alpha</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UICollectionViewLayoutAttributes_class/index.html#//apple_ref/occ/instp/UICollectionViewLayoutAttributes/alpha">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setAlpha:")
     public native void setAlpha(@NFloat double value);
 
-    /**
-     * bounds</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UICollectionViewLayoutAttributes_class/index.html#//apple_ref/occ/instp/UICollectionViewLayoutAttributes/bounds">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setBounds:")
     public native void setBounds(@ByValue CGRect value);
@@ -294,34 +246,18 @@ public class UICollectionViewLayoutAttributes extends NSObject implements NSCopy
     @Selector("setCenter:")
     public native void setCenter(@ByValue CGPoint value);
 
-    /**
-     * frame</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UICollectionViewLayoutAttributes_class/index.html#//apple_ref/occ/instp/UICollectionViewLayoutAttributes/frame">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setFrame:")
     public native void setFrame(@ByValue CGRect value);
 
-    /**
-     * indexPath</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UICollectionViewLayoutAttributes_class/index.html#//apple_ref/occ/instp/UICollectionViewLayoutAttributes/indexPath">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setIndexPath:")
     public native void setIndexPath(NSIndexPath value);
 
-    /**
-     * size</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UICollectionViewLayoutAttributes_class/index.html#//apple_ref/occ/instp/UICollectionViewLayoutAttributes/size">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setSize:")
     public native void setSize(@ByValue CGSize value);
 
-    /**
-     * transform3D</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UICollectionViewLayoutAttributes_class/index.html#//apple_ref/occ/instp/UICollectionViewLayoutAttributes/transform3D">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setTransform3D:")
     public native void setTransform3D(@ByValue CATransform3D value);
@@ -330,18 +266,10 @@ public class UICollectionViewLayoutAttributes extends NSObject implements NSCopy
     @Selector("setTransform:")
     public native void setTransform(@ByValue CGAffineTransform value);
 
-    /**
-     * zIndex</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UICollectionViewLayoutAttributes_class/index.html#//apple_ref/occ/instp/UICollectionViewLayoutAttributes/zIndex">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setZIndex:")
     public native void setZIndex(@NInt long value);
 
-    /**
-     * size</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UICollectionViewLayoutAttributes_class/index.html#//apple_ref/occ/instp/UICollectionViewLayoutAttributes/size">iOS Dev Center</a>
-     */
     @Generated
     @Selector("size")
     @ByValue
@@ -352,19 +280,11 @@ public class UICollectionViewLayoutAttributes extends NSObject implements NSCopy
     @ByValue
     public native CGAffineTransform transform();
 
-    /**
-     * transform3D</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UICollectionViewLayoutAttributes_class/index.html#//apple_ref/occ/instp/UICollectionViewLayoutAttributes/transform3D">iOS Dev Center</a>
-     */
     @Generated
     @Selector("transform3D")
     @ByValue
     public native CATransform3D transform3D();
 
-    /**
-     * zIndex</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UICollectionViewLayoutAttributes_class/index.html#//apple_ref/occ/instp/UICollectionViewLayoutAttributes/zIndex">iOS Dev Center</a>
-     */
     @Generated
     @Selector("zIndex")
     @NInt

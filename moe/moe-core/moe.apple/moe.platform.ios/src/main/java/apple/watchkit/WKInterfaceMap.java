@@ -164,28 +164,16 @@ public class WKInterfaceMap extends WKInterfaceObject {
     @NInt
     public static native long version_static();
 
-    /**
-     * addAnnotation:withImage:centerOffset:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WatchKit/Reference/WKInterfaceMap_class/index.html#//apple_ref/occ/instm/WKInterfaceMap/addAnnotation:withImage:centerOffset:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("addAnnotation:withImage:centerOffset:")
     public native void addAnnotationWithImageCenterOffset(@ByValue CLLocationCoordinate2D location, UIImage image,
             @ByValue CGPoint offset);
 
-    /**
-     * addAnnotation:withImageNamed:centerOffset:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WatchKit/Reference/WKInterfaceMap_class/index.html#//apple_ref/occ/instm/WKInterfaceMap/addAnnotation:withImageNamed:centerOffset:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("addAnnotation:withImageNamed:centerOffset:")
     public native void addAnnotationWithImageNamedCenterOffset(@ByValue CLLocationCoordinate2D location, String name,
             @ByValue CGPoint offset);
 
-    /**
-     * addAnnotation:withPinColor:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WatchKit/Reference/WKInterfaceMap_class/index.html#//apple_ref/occ/instm/WKInterfaceMap/addAnnotation:withPinColor:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("addAnnotation:withPinColor:")
     public native void addAnnotationWithPinColor(@ByValue CLLocationCoordinate2D location, @NInt long pinColor);
@@ -194,26 +182,14 @@ public class WKInterfaceMap extends WKInterfaceObject {
     @Selector("init")
     public native WKInterfaceMap init();
 
-    /**
-     * removeAllAnnotations</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WatchKit/Reference/WKInterfaceMap_class/index.html#//apple_ref/occ/instm/WKInterfaceMap/removeAllAnnotations">iOS Dev Center</a>
-     */
     @Generated
     @Selector("removeAllAnnotations")
     public native void removeAllAnnotations();
 
-    /**
-     * setRegion:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WatchKit/Reference/WKInterfaceMap_class/index.html#//apple_ref/occ/instm/WKInterfaceMap/setRegion:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setRegion:")
     public native void setRegion(@ByValue MKCoordinateRegion coordinateRegion);
 
-    /**
-     * setVisibleMapRect:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WatchKit/Reference/WKInterfaceMap_class/index.html#//apple_ref/occ/instm/WKInterfaceMap/setVisibleMapRect:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setVisibleMapRect:")
     public native void setVisibleMapRect(@ByValue MKMapRect mapRect);

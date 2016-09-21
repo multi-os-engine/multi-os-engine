@@ -34,6 +34,7 @@ public final class SCNetworkConnectionPPPStatus {
     @Generated public static final int HoldingLinkOff = 0x0000000B;
     @Generated public static final int Suspended = 0x0000000C;
     @Generated public static final int WaitingForRedial = 0x0000000D;
+
     @Generated
     private SCNetworkConnectionPPPStatus() {
     }

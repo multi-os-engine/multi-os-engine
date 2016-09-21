@@ -177,26 +177,14 @@ public class MDLCheckerboardTexture extends MDLTexture {
     @NInt
     public static native long version();
 
-    /**
-     * color1</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLCheckerboardTexture_Class/index.html#//apple_ref/occ/instp/MDLCheckerboardTexture/color1">iOS Dev Center</a>
-     */
     @Generated
     @Selector("color1")
     public native CGColorRef color1();
 
-    /**
-     * color2</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLCheckerboardTexture_Class/index.html#//apple_ref/occ/instp/MDLCheckerboardTexture/color2">iOS Dev Center</a>
-     */
     @Generated
     @Selector("color2")
     public native CGColorRef color2();
 
-    /**
-     * divisions</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLCheckerboardTexture_Class/index.html#//apple_ref/occ/instp/MDLCheckerboardTexture/divisions">iOS Dev Center</a>
-     */
     @Generated
     @Selector("divisions")
     public native float divisions();
@@ -205,26 +193,14 @@ public class MDLCheckerboardTexture extends MDLTexture {
     @Selector("init")
     public native MDLCheckerboardTexture init();
 
-    /**
-     * color1</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLCheckerboardTexture_Class/index.html#//apple_ref/occ/instp/MDLCheckerboardTexture/color1">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setColor1:")
     public native void setColor1(CGColorRef value);
 
-    /**
-     * color2</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLCheckerboardTexture_Class/index.html#//apple_ref/occ/instp/MDLCheckerboardTexture/color2">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setColor2:")
     public native void setColor2(CGColorRef value);
 
-    /**
-     * divisions</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLCheckerboardTexture_Class/index.html#//apple_ref/occ/instp/MDLCheckerboardTexture/divisions">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setDivisions:")
     public native void setDivisions(float value);

@@ -31,28 +31,16 @@ import org.moe.natj.objc.ann.Selector;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("NSDecimalNumberBehaviors")
 public interface NSDecimalNumberBehaviors {
-    /**
-     * exceptionDuringOperation:error:leftOperand:rightOperand:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Protocols/NSDecimalNumberBehaviors_Protocol/index.html#//apple_ref/occ/intfm/NSDecimalNumberBehaviors/exceptionDuringOperation:error:leftOperand:rightOperand:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("exceptionDuringOperation:error:leftOperand:rightOperand:")
     NSDecimalNumber exceptionDuringOperationErrorLeftOperandRightOperand(SEL operation, @NUInt long error,
             NSDecimalNumber leftOperand, NSDecimalNumber rightOperand);
 
-    /**
-     * roundingMode</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Protocols/NSDecimalNumberBehaviors_Protocol/index.html#//apple_ref/occ/intfm/NSDecimalNumberBehaviors/roundingMode">iOS Dev Center</a>
-     */
     @Generated
     @Selector("roundingMode")
     @NUInt
     long roundingMode();
 
-    /**
-     * scale</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Protocols/NSDecimalNumberBehaviors_Protocol/index.html#//apple_ref/occ/intfm/NSDecimalNumberBehaviors/scale">iOS Dev Center</a>
-     */
     @Generated
     @Selector("scale")
     short scale();

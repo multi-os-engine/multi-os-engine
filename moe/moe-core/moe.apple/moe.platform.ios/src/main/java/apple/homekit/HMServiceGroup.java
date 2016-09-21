@@ -161,10 +161,6 @@ public class HMServiceGroup extends NSObject {
     @NInt
     public static native long version_static();
 
-    /**
-     * addService:completionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HomeKit/Reference/HMServiceGroup_Class/index.html#//apple_ref/occ/instm/HMServiceGroup/addService:completionHandler:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("addService:completionHandler:")
     public native void addServiceCompletionHandler(HMService service,
@@ -174,35 +170,19 @@ public class HMServiceGroup extends NSObject {
     @Selector("init")
     public native HMServiceGroup init();
 
-    /**
-     * name</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HomeKit/Reference/HMServiceGroup_Class/index.html#//apple_ref/occ/instp/HMServiceGroup/name">iOS Dev Center</a>
-     */
     @Generated
     @Selector("name")
     public native String name();
 
-    /**
-     * removeService:completionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HomeKit/Reference/HMServiceGroup_Class/index.html#//apple_ref/occ/instm/HMServiceGroup/removeService:completionHandler:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("removeService:completionHandler:")
     public native void removeServiceCompletionHandler(HMService service,
             @ObjCBlock(name = "call_removeServiceCompletionHandler") Block_removeServiceCompletionHandler completion);
 
-    /**
-     * services</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HomeKit/Reference/HMServiceGroup_Class/index.html#//apple_ref/occ/instp/HMServiceGroup/services">iOS Dev Center</a>
-     */
     @Generated
     @Selector("services")
     public native NSArray<? extends HMService> services();
 
-    /**
-     * updateName:completionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HomeKit/Reference/HMServiceGroup_Class/index.html#//apple_ref/occ/instm/HMServiceGroup/updateName:completionHandler:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("updateName:completionHandler:")
     public native void updateNameCompletionHandler(String name,

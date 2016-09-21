@@ -161,10 +161,6 @@ public class MKDistanceFormatter extends NSFormatter {
     @NInt
     public static native long version_static();
 
-    /**
-     * distanceFromString:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKDistanceFormatter_class/index.html#//apple_ref/occ/instm/MKDistanceFormatter/distanceFromString:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("distanceFromString:")
     public native double distanceFromString(String distance);
@@ -173,59 +169,31 @@ public class MKDistanceFormatter extends NSFormatter {
     @Selector("init")
     public native MKDistanceFormatter init();
 
-    /**
-     * locale</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKDistanceFormatter_class/index.html#//apple_ref/occ/instp/MKDistanceFormatter/locale">iOS Dev Center</a>
-     */
     @Generated
     @Selector("locale")
     public native NSLocale locale();
 
-    /**
-     * locale</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKDistanceFormatter_class/index.html#//apple_ref/occ/instp/MKDistanceFormatter/locale">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setLocale:")
     public native void setLocale(NSLocale value);
 
-    /**
-     * unitStyle</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKDistanceFormatter_class/index.html#//apple_ref/occ/instp/MKDistanceFormatter/unitStyle">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setUnitStyle:")
     public native void setUnitStyle(@NUInt long value);
 
-    /**
-     * units</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKDistanceFormatter_class/index.html#//apple_ref/occ/instp/MKDistanceFormatter/units">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setUnits:")
     public native void setUnits(@NUInt long value);
 
-    /**
-     * stringFromDistance:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKDistanceFormatter_class/index.html#//apple_ref/occ/instm/MKDistanceFormatter/stringFromDistance:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("stringFromDistance:")
     public native String stringFromDistance(double distance);
 
-    /**
-     * unitStyle</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKDistanceFormatter_class/index.html#//apple_ref/occ/instp/MKDistanceFormatter/unitStyle">iOS Dev Center</a>
-     */
     @Generated
     @Selector("unitStyle")
     @NUInt
     public native long unitStyle();
 
-    /**
-     * units</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKDistanceFormatter_class/index.html#//apple_ref/occ/instp/MKDistanceFormatter/units">iOS Dev Center</a>
-     */
     @Generated
     @Selector("units")
     @NUInt

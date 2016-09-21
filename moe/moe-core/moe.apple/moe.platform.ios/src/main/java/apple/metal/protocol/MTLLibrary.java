@@ -31,44 +31,24 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("MTLLibrary")
 public interface MTLLibrary {
-    /**
-     * device</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Metal/Reference/MTLLibrary_Ref/index.html#//apple_ref/occ/intfp/MTLLibrary/device">iOS Dev Center</a>
-     */
     @Generated
     @Selector("device")
     @MappedReturn(ObjCObjectMapper.class)
     Object device();
 
-    /**
-     * functionNames</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Metal/Reference/MTLLibrary_Ref/index.html#//apple_ref/occ/intfp/MTLLibrary/functionNames">iOS Dev Center</a>
-     */
     @Generated
     @Selector("functionNames")
     NSArray<String> functionNames();
 
-    /**
-     * label</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Metal/Reference/MTLLibrary_Ref/index.html#//apple_ref/occ/intfp/MTLLibrary/label">iOS Dev Center</a>
-     */
     @Generated
     @Selector("label")
     String label();
 
-    /**
-     * newFunctionWithName:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Metal/Reference/MTLLibrary_Ref/index.html#//apple_ref/occ/intfm/MTLLibrary/newFunctionWithName:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("newFunctionWithName:")
     @MappedReturn(ObjCObjectMapper.class)
     Object newFunctionWithName(String functionName);
 
-    /**
-     * label</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Metal/Reference/MTLLibrary_Ref/index.html#//apple_ref/occ/intfp/MTLLibrary/label">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setLabel:")
     void setLabel(String value);

@@ -158,44 +158,24 @@ public class NSIncrementalStoreNode extends NSObject {
     @Selector("init")
     public native NSIncrementalStoreNode init();
 
-    /**
-     * initWithObjectID:withValues:version:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreData/Reference/NSIncrementalStoreNode_Class/index.html#//apple_ref/occ/instm/NSIncrementalStoreNode/initWithObjectID:withValues:version:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithObjectID:withValues:version:")
     public native NSIncrementalStoreNode initWithObjectIDWithValuesVersion(NSManagedObjectID objectID,
             NSDictionary<String, ?> values, long version);
 
-    /**
-     * objectID</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreData/Reference/NSIncrementalStoreNode_Class/index.html#//apple_ref/occ/instp/NSIncrementalStoreNode/objectID">iOS Dev Center</a>
-     */
     @Generated
     @Selector("objectID")
     public native NSManagedObjectID objectID();
 
-    /**
-     * updateWithValues:version:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreData/Reference/NSIncrementalStoreNode_Class/index.html#//apple_ref/occ/instm/NSIncrementalStoreNode/updateWithValues:version:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("updateWithValues:version:")
     public native void updateWithValuesVersion(NSDictionary<String, ?> values, long version);
 
-    /**
-     * valueForPropertyDescription:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreData/Reference/NSIncrementalStoreNode_Class/index.html#//apple_ref/occ/instm/NSIncrementalStoreNode/valueForPropertyDescription:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("valueForPropertyDescription:")
     @MappedReturn(ObjCObjectMapper.class)
     public native Object valueForPropertyDescription(NSPropertyDescription prop);
 
-    /**
-     * version</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreData/Reference/NSIncrementalStoreNode_Class/index.html#//apple_ref/occ/instp/NSIncrementalStoreNode/version">iOS Dev Center</a>
-     */
     @Generated
     @Selector("version")
     public native long version();

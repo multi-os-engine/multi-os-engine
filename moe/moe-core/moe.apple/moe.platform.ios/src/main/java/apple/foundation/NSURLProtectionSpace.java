@@ -163,10 +163,6 @@ public class NSURLProtectionSpace extends NSObject implements NSSecureCoding, NS
     @NInt
     public static native long version_static();
 
-    /**
-     * authenticationMethod</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSURLProtectionSpace_Class/index.html#//apple_ref/occ/instp/NSURLProtectionSpace/authenticationMethod">iOS Dev Center</a>
-     */
     @Generated
     @Selector("authenticationMethod")
     public native String authenticationMethod();
@@ -177,10 +173,6 @@ public class NSURLProtectionSpace extends NSObject implements NSSecureCoding, NS
     @MappedReturn(ObjCObjectMapper.class)
     public native Object copyWithZone(VoidPtr zone);
 
-    /**
-     * distinguishedNames</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSURLProtectionSpace_Class/index.html#//apple_ref/occ/instp/NSURLProtectionSpace/distinguishedNames">iOS Dev Center</a>
-     */
     @Generated
     @Selector("distinguishedNames")
     public native NSArray<? extends NSData> distinguishedNames();
@@ -189,10 +181,6 @@ public class NSURLProtectionSpace extends NSObject implements NSSecureCoding, NS
     @Selector("encodeWithCoder:")
     public native void encodeWithCoder(NSCoder aCoder);
 
-    /**
-     * host</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSURLProtectionSpace_Class/index.html#//apple_ref/occ/instp/NSURLProtectionSpace/host">iOS Dev Center</a>
-     */
     @Generated
     @Selector("host")
     public native String host();
@@ -205,77 +193,41 @@ public class NSURLProtectionSpace extends NSObject implements NSSecureCoding, NS
     @Selector("initWithCoder:")
     public native NSURLProtectionSpace initWithCoder(NSCoder aDecoder);
 
-    /**
-     * initWithHost:port:protocol:realm:authenticationMethod:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSURLProtectionSpace_Class/index.html#//apple_ref/occ/instm/NSURLProtectionSpace/initWithHost:port:protocol:realm:authenticationMethod:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithHost:port:protocol:realm:authenticationMethod:")
     public native NSURLProtectionSpace initWithHostPortProtocolRealmAuthenticationMethod(String host, @NInt long port,
             String protocol, String realm, String authenticationMethod);
 
-    /**
-     * initWithProxyHost:port:type:realm:authenticationMethod:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSURLProtectionSpace_Class/index.html#//apple_ref/occ/instm/NSURLProtectionSpace/initWithProxyHost:port:type:realm:authenticationMethod:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithProxyHost:port:type:realm:authenticationMethod:")
     public native NSURLProtectionSpace initWithProxyHostPortTypeRealmAuthenticationMethod(String host, @NInt long port,
             String type, String realm, String authenticationMethod);
 
-    /**
-     * isProxy</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSURLProtectionSpace_Class/index.html#//apple_ref/occ/instp/NSURLProtectionSpace/isProxy">iOS Dev Center</a>
-     */
     @Generated
     @Selector("isProxy")
     public native boolean isProxy();
 
-    /**
-     * port</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSURLProtectionSpace_Class/index.html#//apple_ref/occ/instp/NSURLProtectionSpace/port">iOS Dev Center</a>
-     */
     @Generated
     @Selector("port")
     @NInt
     public native long port();
 
-    /**
-     * protocol</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSURLProtectionSpace_Class/index.html#//apple_ref/occ/instp/NSURLProtectionSpace/protocol">iOS Dev Center</a>
-     */
     @Generated
     @Selector("protocol")
     public native String protocol();
 
-    /**
-     * proxyType</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSURLProtectionSpace_Class/index.html#//apple_ref/occ/instp/NSURLProtectionSpace/proxyType">iOS Dev Center</a>
-     */
     @Generated
     @Selector("proxyType")
     public native String proxyType();
 
-    /**
-     * realm</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSURLProtectionSpace_Class/index.html#//apple_ref/occ/instp/NSURLProtectionSpace/realm">iOS Dev Center</a>
-     */
     @Generated
     @Selector("realm")
     public native String realm();
 
-    /**
-     * receivesCredentialSecurely</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSURLProtectionSpace_Class/index.html#//apple_ref/occ/instp/NSURLProtectionSpace/receivesCredentialSecurely">iOS Dev Center</a>
-     */
     @Generated
     @Selector("receivesCredentialSecurely")
     public native boolean receivesCredentialSecurely();
 
-    /**
-     * serverTrust</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSURLProtectionSpace_Class/index.html#//apple_ref/occ/instp/NSURLProtectionSpace/serverTrust">iOS Dev Center</a>
-     */
     @Generated
     @Selector("serverTrust")
     public native SecTrustRef serverTrust();

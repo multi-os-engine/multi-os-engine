@@ -29,18 +29,10 @@ import org.moe.natj.objc.ann.Selector;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("SCNTechniqueSupport")
 public interface SCNTechniqueSupport {
-    /**
-     * technique</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNTechniqueSupport_Protocol/index.html#//apple_ref/occ/intfp/SCNTechniqueSupport/technique">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setTechnique:")
     void setTechnique(SCNTechnique value);
 
-    /**
-     * technique</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNTechniqueSupport_Protocol/index.html#//apple_ref/occ/intfp/SCNTechniqueSupport/technique">iOS Dev Center</a>
-     */
     @Generated
     @Selector("technique")
     SCNTechnique technique();

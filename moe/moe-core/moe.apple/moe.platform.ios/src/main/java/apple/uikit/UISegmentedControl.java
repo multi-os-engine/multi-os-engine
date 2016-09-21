@@ -351,45 +351,25 @@ public class UISegmentedControl extends UIControl implements NSCoding {
     @NInt
     public static native long version_static();
 
-    /**
-     * apportionsSegmentWidthsByContent</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISegmentedControl_Class/index.html#//apple_ref/occ/instp/UISegmentedControl/apportionsSegmentWidthsByContent">iOS Dev Center</a>
-     */
     @Generated
     @Selector("apportionsSegmentWidthsByContent")
     public native boolean apportionsSegmentWidthsByContent();
 
-    /**
-     * backgroundImageForState:barMetrics:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISegmentedControl_Class/index.html#//apple_ref/occ/instm/UISegmentedControl/backgroundImageForState:barMetrics:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("backgroundImageForState:barMetrics:")
     public native UIImage backgroundImageForStateBarMetrics(@NUInt long state, @NInt long barMetrics);
 
-    /**
-     * contentOffsetForSegmentAtIndex:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISegmentedControl_Class/index.html#//apple_ref/occ/instm/UISegmentedControl/contentOffsetForSegmentAtIndex:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("contentOffsetForSegmentAtIndex:")
     @ByValue
     public native CGSize contentOffsetForSegmentAtIndex(@NUInt long segment);
 
-    /**
-     * contentPositionAdjustmentForSegmentType:barMetrics:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISegmentedControl_Class/index.html#//apple_ref/occ/instm/UISegmentedControl/contentPositionAdjustmentForSegmentType:barMetrics:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("contentPositionAdjustmentForSegmentType:barMetrics:")
     @ByValue
     public native UIOffset contentPositionAdjustmentForSegmentTypeBarMetrics(@NInt long leftCenterRightOrAlone,
             @NInt long barMetrics);
 
-    /**
-     * dividerImageForLeftSegmentState:rightSegmentState:barMetrics:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISegmentedControl_Class/index.html#//apple_ref/occ/instm/UISegmentedControl/dividerImageForLeftSegmentState:rightSegmentState:barMetrics:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("dividerImageForLeftSegmentState:rightSegmentState:barMetrics:")
     public native UIImage dividerImageForLeftSegmentStateRightSegmentStateBarMetrics(@NUInt long leftState,
@@ -399,10 +379,6 @@ public class UISegmentedControl extends UIControl implements NSCoding {
     @Selector("encodeWithCoder:")
     public native void encodeWithCoder(NSCoder aCoder);
 
-    /**
-     * imageForSegmentAtIndex:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISegmentedControl_Class/index.html#//apple_ref/occ/instm/UISegmentedControl/imageForSegmentAtIndex:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("imageForSegmentAtIndex:")
     public native UIImage imageForSegmentAtIndex(@NUInt long segment);
@@ -419,234 +395,122 @@ public class UISegmentedControl extends UIControl implements NSCoding {
     @Selector("initWithFrame:")
     public native UISegmentedControl initWithFrame(@ByValue CGRect frame);
 
-    /**
-     * initWithItems:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISegmentedControl_Class/index.html#//apple_ref/occ/instm/UISegmentedControl/initWithItems:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithItems:")
     public native UISegmentedControl initWithItems(NSArray<?> items);
 
-    /**
-     * insertSegmentWithImage:atIndex:animated:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISegmentedControl_Class/index.html#//apple_ref/occ/instm/UISegmentedControl/insertSegmentWithImage:atIndex:animated:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("insertSegmentWithImage:atIndex:animated:")
     public native void insertSegmentWithImageAtIndexAnimated(UIImage image, @NUInt long segment, boolean animated);
 
-    /**
-     * insertSegmentWithTitle:atIndex:animated:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISegmentedControl_Class/index.html#//apple_ref/occ/instm/UISegmentedControl/insertSegmentWithTitle:atIndex:animated:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("insertSegmentWithTitle:atIndex:animated:")
     public native void insertSegmentWithTitleAtIndexAnimated(String title, @NUInt long segment, boolean animated);
 
-    /**
-     * isEnabledForSegmentAtIndex:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISegmentedControl_Class/index.html#//apple_ref/occ/instm/UISegmentedControl/isEnabledForSegmentAtIndex:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("isEnabledForSegmentAtIndex:")
     public native boolean isEnabledForSegmentAtIndex(@NUInt long segment);
 
-    /**
-     * momentary</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISegmentedControl_Class/index.html#//apple_ref/occ/instp/UISegmentedControl/momentary">iOS Dev Center</a>
-     */
     @Generated
     @Selector("isMomentary")
     public native boolean isMomentary();
 
-    /**
-     * momentary</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISegmentedControl_Class/index.html#//apple_ref/occ/instp/UISegmentedControl/momentary">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setMomentary:")
     public native void setMomentary(boolean value);
 
-    /**
-     * numberOfSegments</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISegmentedControl_Class/index.html#//apple_ref/occ/instp/UISegmentedControl/numberOfSegments">iOS Dev Center</a>
-     */
     @Generated
     @Selector("numberOfSegments")
     @NUInt
     public native long numberOfSegments();
 
-    /**
-     * removeAllSegments</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISegmentedControl_Class/index.html#//apple_ref/occ/instm/UISegmentedControl/removeAllSegments">iOS Dev Center</a>
-     */
     @Generated
     @Selector("removeAllSegments")
     public native void removeAllSegments();
 
-    /**
-     * removeSegmentAtIndex:animated:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISegmentedControl_Class/index.html#//apple_ref/occ/instm/UISegmentedControl/removeSegmentAtIndex:animated:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("removeSegmentAtIndex:animated:")
     public native void removeSegmentAtIndexAnimated(@NUInt long segment, boolean animated);
 
-    /**
-     * segmentedControlStyle</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISegmentedControl_Class/index.html#//apple_ref/occ/instp/UISegmentedControl/segmentedControlStyle">iOS Dev Center</a>
-     */
     @Generated
     @Deprecated
     @Selector("segmentedControlStyle")
     @NInt
     public native long segmentedControlStyle();
 
-    /**
-     * selectedSegmentIndex</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISegmentedControl_Class/index.html#//apple_ref/occ/instp/UISegmentedControl/selectedSegmentIndex">iOS Dev Center</a>
-     */
     @Generated
     @Selector("selectedSegmentIndex")
     @NInt
     public native long selectedSegmentIndex();
 
-    /**
-     * apportionsSegmentWidthsByContent</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISegmentedControl_Class/index.html#//apple_ref/occ/instp/UISegmentedControl/apportionsSegmentWidthsByContent">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setApportionsSegmentWidthsByContent:")
     public native void setApportionsSegmentWidthsByContent(boolean value);
 
-    /**
-     * setBackgroundImage:forState:barMetrics:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISegmentedControl_Class/index.html#//apple_ref/occ/instm/UISegmentedControl/setBackgroundImage:forState:barMetrics:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setBackgroundImage:forState:barMetrics:")
     public native void setBackgroundImageForStateBarMetrics(UIImage backgroundImage, @NUInt long state,
             @NInt long barMetrics);
 
-    /**
-     * setContentOffset:forSegmentAtIndex:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISegmentedControl_Class/index.html#//apple_ref/occ/instm/UISegmentedControl/setContentOffset:forSegmentAtIndex:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setContentOffset:forSegmentAtIndex:")
     public native void setContentOffsetForSegmentAtIndex(@ByValue CGSize offset, @NUInt long segment);
 
-    /**
-     * setContentPositionAdjustment:forSegmentType:barMetrics:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISegmentedControl_Class/index.html#//apple_ref/occ/instm/UISegmentedControl/setContentPositionAdjustment:forSegmentType:barMetrics:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setContentPositionAdjustment:forSegmentType:barMetrics:")
     public native void setContentPositionAdjustmentForSegmentTypeBarMetrics(@ByValue UIOffset adjustment,
             @NInt long leftCenterRightOrAlone, @NInt long barMetrics);
 
-    /**
-     * setDividerImage:forLeftSegmentState:rightSegmentState:barMetrics:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISegmentedControl_Class/index.html#//apple_ref/occ/instm/UISegmentedControl/setDividerImage:forLeftSegmentState:rightSegmentState:barMetrics:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setDividerImage:forLeftSegmentState:rightSegmentState:barMetrics:")
     public native void setDividerImageForLeftSegmentStateRightSegmentStateBarMetrics(UIImage dividerImage,
             @NUInt long leftState, @NUInt long rightState, @NInt long barMetrics);
 
-    /**
-     * setEnabled:forSegmentAtIndex:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISegmentedControl_Class/index.html#//apple_ref/occ/instm/UISegmentedControl/setEnabled:forSegmentAtIndex:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setEnabled:forSegmentAtIndex:")
     public native void setEnabledForSegmentAtIndex(boolean enabled, @NUInt long segment);
 
-    /**
-     * setImage:forSegmentAtIndex:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISegmentedControl_Class/index.html#//apple_ref/occ/instm/UISegmentedControl/setImage:forSegmentAtIndex:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setImage:forSegmentAtIndex:")
     public native void setImageForSegmentAtIndex(UIImage image, @NUInt long segment);
 
-    /**
-     * segmentedControlStyle</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISegmentedControl_Class/index.html#//apple_ref/occ/instp/UISegmentedControl/segmentedControlStyle">iOS Dev Center</a>
-     */
     @Generated
     @Deprecated
     @Selector("setSegmentedControlStyle:")
     public native void setSegmentedControlStyle(@NInt long value);
 
-    /**
-     * selectedSegmentIndex</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISegmentedControl_Class/index.html#//apple_ref/occ/instp/UISegmentedControl/selectedSegmentIndex">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setSelectedSegmentIndex:")
     public native void setSelectedSegmentIndex(@NInt long value);
 
-    /**
-     * tintColor</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISegmentedControl_Class/index.html#//apple_ref/occ/instp/UISegmentedControl/tintColor">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setTintColor:")
     public native void setTintColor(UIColor value);
 
-    /**
-     * setTitle:forSegmentAtIndex:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISegmentedControl_Class/index.html#//apple_ref/occ/instm/UISegmentedControl/setTitle:forSegmentAtIndex:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setTitle:forSegmentAtIndex:")
     public native void setTitleForSegmentAtIndex(String title, @NUInt long segment);
 
-    /**
-     * setTitleTextAttributes:forState:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISegmentedControl_Class/index.html#//apple_ref/occ/instm/UISegmentedControl/setTitleTextAttributes:forState:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setTitleTextAttributes:forState:")
     public native void setTitleTextAttributesForState(NSDictionary<?, ?> attributes, @NUInt long state);
 
-    /**
-     * setWidth:forSegmentAtIndex:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISegmentedControl_Class/index.html#//apple_ref/occ/instm/UISegmentedControl/setWidth:forSegmentAtIndex:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setWidth:forSegmentAtIndex:")
     public native void setWidthForSegmentAtIndex(@NFloat double width, @NUInt long segment);
 
-    /**
-     * tintColor</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISegmentedControl_Class/index.html#//apple_ref/occ/instp/UISegmentedControl/tintColor">iOS Dev Center</a>
-     */
     @Generated
     @Selector("tintColor")
     public native UIColor tintColor();
 
-    /**
-     * titleForSegmentAtIndex:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISegmentedControl_Class/index.html#//apple_ref/occ/instm/UISegmentedControl/titleForSegmentAtIndex:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("titleForSegmentAtIndex:")
     public native String titleForSegmentAtIndex(@NUInt long segment);
 
-    /**
-     * titleTextAttributesForState:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISegmentedControl_Class/index.html#//apple_ref/occ/instm/UISegmentedControl/titleTextAttributesForState:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("titleTextAttributesForState:")
     public native NSDictionary<?, ?> titleTextAttributesForState(@NUInt long state);
 
-    /**
-     * widthForSegmentAtIndex:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISegmentedControl_Class/index.html#//apple_ref/occ/instm/UISegmentedControl/widthForSegmentAtIndex:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("widthForSegmentAtIndex:")
     @NFloat

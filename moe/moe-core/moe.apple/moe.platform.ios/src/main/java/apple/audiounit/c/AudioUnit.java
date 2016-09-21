@@ -55,78 +55,42 @@ public final class AudioUnit {
     private AudioUnit() {
     }
 
-    /**
-     * AudioComponentFindNext</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AudioUnit/Reference/AudioComponentServicesReference/index.html#//apple_ref/c/func/AudioComponentFindNext">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native AudioComponent AudioComponentFindNext(AudioComponent inComponent,
             @UncertainArgument("Options: reference, array Fallback: reference") AudioComponentDescription inDesc);
 
-    /**
-     * AudioComponentCount</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AudioUnit/Reference/AudioComponentServicesReference/index.html#//apple_ref/c/func/AudioComponentCount">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native int AudioComponentCount(
             @UncertainArgument("Options: reference, array Fallback: reference") AudioComponentDescription inDesc);
 
-    /**
-     * AudioComponentCopyName</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AudioUnit/Reference/AudioComponentServicesReference/index.html#//apple_ref/c/func/AudioComponentCopyName">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native int AudioComponentCopyName(AudioComponent inComponent, Ptr<CFStringRef> outName);
 
-    /**
-     * AudioComponentGetDescription</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AudioUnit/Reference/AudioComponentServicesReference/index.html#//apple_ref/c/func/AudioComponentGetDescription">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native int AudioComponentGetDescription(AudioComponent inComponent,
             @UncertainArgument("Options: reference, array Fallback: reference") AudioComponentDescription outDesc);
 
-    /**
-     * AudioComponentGetVersion</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AudioUnit/Reference/AudioComponentServicesReference/index.html#//apple_ref/c/func/AudioComponentGetVersion">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native int AudioComponentGetVersion(AudioComponent inComponent, IntPtr outVersion);
 
-    /**
-     * AudioComponentInstanceNew</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AudioUnit/Reference/AudioComponentServicesReference/index.html#//apple_ref/c/func/AudioComponentInstanceNew">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native int AudioComponentInstanceNew(AudioComponent inComponent,
             Ptr<AudioComponentInstance> outInstance);
 
-    /**
-     * AudioComponentInstanceDispose</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AudioUnit/Reference/AudioComponentServicesReference/index.html#//apple_ref/c/func/AudioComponentInstanceDispose">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native int AudioComponentInstanceDispose(AudioComponentInstance inInstance);
 
-    /**
-     * AudioComponentInstanceGetComponent</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AudioUnit/Reference/AudioComponentServicesReference/index.html#//apple_ref/c/func/AudioComponentInstanceGetComponent">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native AudioComponent AudioComponentInstanceGetComponent(AudioComponentInstance inInstance);
 
-    /**
-     * AudioComponentInstanceCanDo</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AudioUnit/Reference/AudioComponentServicesReference/index.html#//apple_ref/c/func/AudioComponentInstanceCanDo">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native byte AudioComponentInstanceCanDo(AudioComponentInstance inInstance, short inSelectorID);
@@ -138,120 +102,68 @@ public final class AudioUnit {
             CFStringRef inName, int inVersion,
             @FunctionPtr(name = "call_AudioComponentRegister") Function_AudioComponentRegister inFactory);
 
-    /**
-     * AudioUnitInitialize</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AudioUnit/Reference/AUComponentServicesReference/index.html#//apple_ref/c/func/AudioUnitInitialize">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native int AudioUnitInitialize(AudioComponentInstance inUnit);
 
-    /**
-     * AudioUnitUninitialize</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AudioUnit/Reference/AUComponentServicesReference/index.html#//apple_ref/c/func/AudioUnitUninitialize">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native int AudioUnitUninitialize(AudioComponentInstance inUnit);
 
-    /**
-     * AudioUnitGetPropertyInfo</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AudioUnit/Reference/AUComponentServicesReference/index.html#//apple_ref/c/func/AudioUnitGetPropertyInfo">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native int AudioUnitGetPropertyInfo(AudioComponentInstance inUnit, int inID, int inScope,
             int inElement, IntPtr outDataSize, BytePtr outWritable);
 
-    /**
-     * AudioUnitGetProperty</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AudioUnit/Reference/AUComponentServicesReference/index.html#//apple_ref/c/func/AudioUnitGetProperty">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native int AudioUnitGetProperty(AudioComponentInstance inUnit, int inID, int inScope, int inElement,
             VoidPtr outData, IntPtr ioDataSize);
 
-    /**
-     * AudioUnitSetProperty</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AudioUnit/Reference/AUComponentServicesReference/index.html#//apple_ref/c/func/AudioUnitSetProperty">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native int AudioUnitSetProperty(AudioComponentInstance inUnit, int inID, int inScope, int inElement,
             ConstVoidPtr inData, int inDataSize);
 
-    /**
-     * AudioUnitAddPropertyListener</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AudioUnit/Reference/AUComponentServicesReference/index.html#//apple_ref/c/func/AudioUnitAddPropertyListener">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native int AudioUnitAddPropertyListener(AudioComponentInstance inUnit, int inID,
             @FunctionPtr(name = "call_AudioUnitAddPropertyListener") Function_AudioUnitAddPropertyListener inProc,
             VoidPtr inProcUserData);
 
-    /**
-     * AudioUnitRemovePropertyListenerWithUserData</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AudioUnit/Reference/AUComponentServicesReference/index.html#//apple_ref/c/func/AudioUnitRemovePropertyListenerWithUserData">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native int AudioUnitRemovePropertyListenerWithUserData(AudioComponentInstance inUnit, int inID,
             @FunctionPtr(name = "call_AudioUnitRemovePropertyListenerWithUserData") Function_AudioUnitRemovePropertyListenerWithUserData inProc,
             VoidPtr inProcUserData);
 
-    /**
-     * AudioUnitAddRenderNotify</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AudioUnit/Reference/AUComponentServicesReference/index.html#//apple_ref/c/func/AudioUnitAddRenderNotify">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native int AudioUnitAddRenderNotify(AudioComponentInstance inUnit,
             @FunctionPtr(name = "call_AudioUnitAddRenderNotify") Function_AudioUnitAddRenderNotify inProc,
             VoidPtr inProcUserData);
 
-    /**
-     * AudioUnitRemoveRenderNotify</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AudioUnit/Reference/AUComponentServicesReference/index.html#//apple_ref/c/func/AudioUnitRemoveRenderNotify">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native int AudioUnitRemoveRenderNotify(AudioComponentInstance inUnit,
             @FunctionPtr(name = "call_AudioUnitRemoveRenderNotify") Function_AudioUnitRemoveRenderNotify inProc,
             VoidPtr inProcUserData);
 
-    /**
-     * AudioUnitGetParameter</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AudioUnit/Reference/AUComponentServicesReference/index.html#//apple_ref/c/func/AudioUnitGetParameter">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native int AudioUnitGetParameter(AudioComponentInstance inUnit, int inID, int inScope, int inElement,
             FloatPtr outValue);
 
-    /**
-     * AudioUnitSetParameter</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AudioUnit/Reference/AUComponentServicesReference/index.html#//apple_ref/c/func/AudioUnitSetParameter">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native int AudioUnitSetParameter(AudioComponentInstance inUnit, int inID, int inScope, int inElement,
             float inValue, int inBufferOffsetInFrames);
 
-    /**
-     * AudioUnitScheduleParameters</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AudioUnit/Reference/AUComponentServicesReference/index.html#//apple_ref/c/func/AudioUnitScheduleParameters">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native int AudioUnitScheduleParameters(AudioComponentInstance inUnit, VoidPtr inParameterEvent,
             int inNumParamEvents);
 
-    /**
-     * AudioUnitRender</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AudioUnit/Reference/AUComponentServicesReference/index.html#//apple_ref/c/func/AudioUnitRender">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native int AudioUnitRender(AudioComponentInstance inUnit, IntPtr ioActionFlags,
@@ -273,10 +185,6 @@ public final class AudioUnit {
             int inNumberFrames, int inNumberInputBufferLists, Ptr<ConstPtr<AudioBufferList>> inInputBufferLists,
             int inNumberOutputBufferLists, Ptr<Ptr<AudioBufferList>> ioOutputBufferLists);
 
-    /**
-     * AudioUnitReset</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AudioUnit/Reference/AUComponentServicesReference/index.html#//apple_ref/c/func/AudioUnitReset">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native int AudioUnitReset(AudioComponentInstance inUnit, int inScope, int inElement);
@@ -299,18 +207,10 @@ public final class AudioUnit {
     @CFunction
     public static native double AudioComponentGetLastActiveTime(AudioComponent comp);
 
-    /**
-     * AudioOutputUnitStart</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AudioUnit/Reference/AudioOutputUnitServicesReference/index.html#//apple_ref/c/func/AudioOutputUnitStart">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native int AudioOutputUnitStart(AudioComponentInstance ci);
 
-    /**
-     * AudioOutputUnitStop</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AudioUnit/Reference/AudioOutputUnitServicesReference/index.html#//apple_ref/c/func/AudioOutputUnitStop">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native int AudioOutputUnitStop(AudioComponentInstance ci);

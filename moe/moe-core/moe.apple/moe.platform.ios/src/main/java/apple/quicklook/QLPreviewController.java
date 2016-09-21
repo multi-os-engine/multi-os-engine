@@ -64,10 +64,6 @@ public class QLPreviewController extends UIViewController {
     @Selector("alloc")
     public static native QLPreviewController alloc();
 
-    /**
-     * canPreviewItem:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkingInternet/Reference/QLPreviewController_Class/index.html#//apple_ref/occ/clm/QLPreviewController/canPreviewItem:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("canPreviewItem:")
     public static native boolean canPreviewItem(@Mapped(ObjCObjectMapper.class) QLPreviewItem item);
@@ -184,37 +180,21 @@ public class QLPreviewController extends UIViewController {
     @NInt
     public static native long version_static();
 
-    /**
-     * currentPreviewItem</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkingInternet/Reference/QLPreviewController_Class/index.html#//apple_ref/occ/instp/QLPreviewController/currentPreviewItem">iOS Dev Center</a>
-     */
     @Generated
     @Selector("currentPreviewItem")
     @MappedReturn(ObjCObjectMapper.class)
     public native QLPreviewItem currentPreviewItem();
 
-    /**
-     * currentPreviewItemIndex</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkingInternet/Reference/QLPreviewController_Class/index.html#//apple_ref/occ/instp/QLPreviewController/currentPreviewItemIndex">iOS Dev Center</a>
-     */
     @Generated
     @Selector("currentPreviewItemIndex")
     @NInt
     public native long currentPreviewItemIndex();
 
-    /**
-     * dataSource</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkingInternet/Reference/QLPreviewController_Class/index.html#//apple_ref/occ/instp/QLPreviewController/dataSource">iOS Dev Center</a>
-     */
     @Generated
     @Selector("dataSource")
     @MappedReturn(ObjCObjectMapper.class)
     public native QLPreviewControllerDataSource dataSource();
 
-    /**
-     * delegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkingInternet/Reference/QLPreviewController_Class/index.html#//apple_ref/occ/instp/QLPreviewController/delegate">iOS Dev Center</a>
-     */
     @Generated
     @Selector("delegate")
     @MappedReturn(ObjCObjectMapper.class)
@@ -228,42 +208,22 @@ public class QLPreviewController extends UIViewController {
     @Selector("initWithNibName:bundle:")
     public native QLPreviewController initWithNibNameBundle(String nibNameOrNil, NSBundle nibBundleOrNil);
 
-    /**
-     * refreshCurrentPreviewItem</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkingInternet/Reference/QLPreviewController_Class/index.html#//apple_ref/occ/instm/QLPreviewController/refreshCurrentPreviewItem">iOS Dev Center</a>
-     */
     @Generated
     @Selector("refreshCurrentPreviewItem")
     public native void refreshCurrentPreviewItem();
 
-    /**
-     * reloadData</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkingInternet/Reference/QLPreviewController_Class/index.html#//apple_ref/occ/instm/QLPreviewController/reloadData">iOS Dev Center</a>
-     */
     @Generated
     @Selector("reloadData")
     public native void reloadData();
 
-    /**
-     * currentPreviewItemIndex</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkingInternet/Reference/QLPreviewController_Class/index.html#//apple_ref/occ/instp/QLPreviewController/currentPreviewItemIndex">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setCurrentPreviewItemIndex:")
     public native void setCurrentPreviewItemIndex(@NInt long value);
 
-    /**
-     * dataSource</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkingInternet/Reference/QLPreviewController_Class/index.html#//apple_ref/occ/instp/QLPreviewController/dataSource">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setDataSource:")
     public native void setDataSource_unsafe(@Mapped(ObjCObjectMapper.class) QLPreviewControllerDataSource value);
 
-    /**
-     * dataSource</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkingInternet/Reference/QLPreviewController_Class/index.html#//apple_ref/occ/instp/QLPreviewController/dataSource">iOS Dev Center</a>
-     */
     @Generated
     public void setDataSource(@Mapped(ObjCObjectMapper.class) QLPreviewControllerDataSource value) {
         Object __old = dataSource();
@@ -276,18 +236,10 @@ public class QLPreviewController extends UIViewController {
         }
     }
 
-    /**
-     * delegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkingInternet/Reference/QLPreviewController_Class/index.html#//apple_ref/occ/instp/QLPreviewController/delegate">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setDelegate:")
     public native void setDelegate_unsafe(@Mapped(ObjCObjectMapper.class) QLPreviewControllerDelegate value);
 
-    /**
-     * delegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkingInternet/Reference/QLPreviewController_Class/index.html#//apple_ref/occ/instp/QLPreviewController/delegate">iOS Dev Center</a>
-     */
     @Generated
     public void setDelegate(@Mapped(ObjCObjectMapper.class) QLPreviewControllerDelegate value) {
         Object __old = delegate();

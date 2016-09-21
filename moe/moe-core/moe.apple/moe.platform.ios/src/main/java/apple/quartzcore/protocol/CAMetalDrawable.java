@@ -32,18 +32,10 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("CAMetalDrawable")
 public interface CAMetalDrawable extends MTLDrawable {
-    /**
-     * layer</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Animation/Reference/CAMetalDrawable_Ref/index.html#//apple_ref/occ/intfp/CAMetalDrawable/layer">iOS Dev Center</a>
-     */
     @Generated
     @Selector("layer")
     CAMetalLayer layer();
 
-    /**
-     * texture</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Animation/Reference/CAMetalDrawable_Ref/index.html#//apple_ref/occ/intfp/CAMetalDrawable/texture">iOS Dev Center</a>
-     */
     @Generated
     @Selector("texture")
     @MappedReturn(ObjCObjectMapper.class)

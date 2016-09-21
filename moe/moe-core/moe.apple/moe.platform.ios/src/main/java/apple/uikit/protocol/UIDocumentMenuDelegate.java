@@ -31,19 +31,11 @@ import org.moe.natj.objc.ann.Selector;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("UIDocumentMenuDelegate")
 public interface UIDocumentMenuDelegate {
-    /**
-     * documentMenu:didPickDocumentPicker:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIDocumentMenuDelegate_Protocol/index.html#//apple_ref/occ/intfm/UIDocumentMenuDelegate/documentMenu:didPickDocumentPicker:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("documentMenu:didPickDocumentPicker:")
     void documentMenuDidPickDocumentPicker(UIDocumentMenuViewController documentMenu,
             UIDocumentPickerViewController documentPicker);
 
-    /**
-     * documentMenuWasCancelled:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIDocumentMenuDelegate_Protocol/index.html#//apple_ref/occ/intfm/UIDocumentMenuDelegate/documentMenuWasCancelled:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("documentMenuWasCancelled:")

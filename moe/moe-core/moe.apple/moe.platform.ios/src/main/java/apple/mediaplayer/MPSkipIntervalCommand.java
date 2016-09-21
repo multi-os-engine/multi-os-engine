@@ -162,18 +162,10 @@ public class MPSkipIntervalCommand extends MPRemoteCommand {
     @Selector("init")
     public native MPSkipIntervalCommand init();
 
-    /**
-     * preferredIntervals</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPSkipIntervalCommand_Ref/index.html#//apple_ref/occ/instp/MPSkipIntervalCommand/preferredIntervals">iOS Dev Center</a>
-     */
     @Generated
     @Selector("preferredIntervals")
     public native NSArray<?> preferredIntervals();
 
-    /**
-     * preferredIntervals</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPSkipIntervalCommand_Ref/index.html#//apple_ref/occ/instp/MPSkipIntervalCommand/preferredIntervals">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setPreferredIntervals:")
     public native void setPreferredIntervals(NSArray<?> value);

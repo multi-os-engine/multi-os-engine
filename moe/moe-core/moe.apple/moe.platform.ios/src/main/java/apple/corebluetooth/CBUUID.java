@@ -57,35 +57,19 @@ public class CBUUID extends NSObject implements NSCopying {
         super(peer);
     }
 
-    /**
-     * UUIDWithCFUUID:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreBluetooth/Reference/CBUUID_Class/index.html#//apple_ref/occ/clm/CBUUID/UUIDWithCFUUID:">iOS Dev Center</a>
-     */
     @Deprecated
     @Generated
     @Selector("UUIDWithCFUUID:")
     public static native CBUUID UUIDWithCFUUID(CFUUIDRef theUUID);
 
-    /**
-     * UUIDWithData:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreBluetooth/Reference/CBUUID_Class/index.html#//apple_ref/occ/clm/CBUUID/UUIDWithData:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("UUIDWithData:")
     public static native CBUUID UUIDWithData(NSData theData);
 
-    /**
-     * UUIDWithNSUUID:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreBluetooth/Reference/CBUUID_Class/index.html#//apple_ref/occ/clm/CBUUID/UUIDWithNSUUID:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("UUIDWithNSUUID:")
     public static native CBUUID UUIDWithNSUUID(NSUUID theUUID);
 
-    /**
-     * UUIDWithString:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreBluetooth/Reference/CBUUID_Class/index.html#//apple_ref/occ/clm/CBUUID/UUIDWithString:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("UUIDWithString:")
     public static native CBUUID UUIDWithString(String theString);
@@ -195,10 +179,6 @@ public class CBUUID extends NSObject implements NSCopying {
     @NInt
     public static native long version_static();
 
-    /**
-     * UUIDString</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreBluetooth/Reference/CBUUID_Class/index.html#//apple_ref/occ/instp/CBUUID/UUIDString">iOS Dev Center</a>
-     */
     @Generated
     @Selector("UUIDString")
     public native String UUIDString();
@@ -209,10 +189,6 @@ public class CBUUID extends NSObject implements NSCopying {
     @MappedReturn(ObjCObjectMapper.class)
     public native Object copyWithZone(VoidPtr zone);
 
-    /**
-     * data</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreBluetooth/Reference/CBUUID_Class/index.html#//apple_ref/occ/instp/CBUUID/data">iOS Dev Center</a>
-     */
     @Generated
     @Selector("data")
     public native NSData data();

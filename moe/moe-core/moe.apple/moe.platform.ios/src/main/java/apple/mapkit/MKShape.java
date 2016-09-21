@@ -176,18 +176,10 @@ public class MKShape extends NSObject implements MKAnnotation {
     @Selector("setCoordinate:")
     public native void setCoordinate(@ByValue CLLocationCoordinate2D newCoordinate);
 
-    /**
-     * subtitle</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKShape_class/index.html#//apple_ref/occ/instp/MKShape/subtitle">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setSubtitle:")
     public native void setSubtitle(String value);
 
-    /**
-     * title</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKShape_class/index.html#//apple_ref/occ/instp/MKShape/title">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setTitle:")
     public native void setTitle(String value);

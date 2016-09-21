@@ -163,10 +163,6 @@ public class UIActivityItemProvider extends NSOperation implements UIActivityIte
     @NInt
     public static native long version();
 
-    /**
-     * activityType</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIActivityItemProvider_Class/index.html#//apple_ref/occ/instp/UIActivityItemProvider/activityType">iOS Dev Center</a>
-     */
     @Generated
     @Selector("activityType")
     public native String activityType();
@@ -204,28 +200,16 @@ public class UIActivityItemProvider extends NSOperation implements UIActivityIte
     @Selector("init")
     public native UIActivityItemProvider init();
 
-    /**
-     * initWithPlaceholderItem:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIActivityItemProvider_Class/index.html#//apple_ref/occ/instm/UIActivityItemProvider/initWithPlaceholderItem:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithPlaceholderItem:")
     public native UIActivityItemProvider initWithPlaceholderItem(
             @Mapped(ObjCObjectMapper.class) Object placeholderItem);
 
-    /**
-     * item</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIActivityItemProvider_Class/index.html#//apple_ref/occ/instm/UIActivityItemProvider/item">iOS Dev Center</a>
-     */
     @Generated
     @Selector("item")
     @MappedReturn(ObjCObjectMapper.class)
     public native Object item();
 
-    /**
-     * placeholderItem</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIActivityItemProvider_Class/index.html#//apple_ref/occ/instp/UIActivityItemProvider/placeholderItem">iOS Dev Center</a>
-     */
     @Generated
     @Selector("placeholderItem")
     @MappedReturn(ObjCObjectMapper.class)

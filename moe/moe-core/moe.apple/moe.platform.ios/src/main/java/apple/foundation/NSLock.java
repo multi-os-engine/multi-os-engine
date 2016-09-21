@@ -164,34 +164,18 @@ public class NSLock extends NSObject implements NSLocking {
     @Selector("lock")
     public native void lock();
 
-    /**
-     * lockBeforeDate:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSLock_Class/index.html#//apple_ref/occ/instm/NSLock/lockBeforeDate:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("lockBeforeDate:")
     public native boolean lockBeforeDate(NSDate limit);
 
-    /**
-     * name</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSLock_Class/index.html#//apple_ref/occ/instp/NSLock/name">iOS Dev Center</a>
-     */
     @Generated
     @Selector("name")
     public native String name();
 
-    /**
-     * name</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSLock_Class/index.html#//apple_ref/occ/instp/NSLock/name">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setName:")
     public native void setName(String value);
 
-    /**
-     * tryLock</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSLock_Class/index.html#//apple_ref/occ/instm/NSLock/tryLock">iOS Dev Center</a>
-     */
     @Generated
     @Selector("tryLock")
     public native boolean tryLock();

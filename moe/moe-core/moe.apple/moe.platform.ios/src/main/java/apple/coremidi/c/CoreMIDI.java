@@ -60,373 +60,197 @@ public final class CoreMIDI {
     private CoreMIDI() {
     }
 
-    /**
-     * MIDIClientCreate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMidi/Reference/MIDIServices_Reference/index.html#//apple_ref/c/func/MIDIClientCreate">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native int MIDIClientCreate(CFStringRef name,
             @FunctionPtr(name = "call_MIDIClientCreate") Function_MIDIClientCreate notifyProc, VoidPtr notifyRefCon,
             IntPtr outClient);
 
-    /**
-     * MIDIClientDispose</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMidi/Reference/MIDIServices_Reference/index.html#//apple_ref/c/func/MIDIClientDispose">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native int MIDIClientDispose(int client);
 
-    /**
-     * MIDIInputPortCreate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMidi/Reference/MIDIServices_Reference/index.html#//apple_ref/c/func/MIDIInputPortCreate">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native int MIDIInputPortCreate(int client, CFStringRef portName,
             @FunctionPtr(name = "call_MIDIInputPortCreate") Function_MIDIInputPortCreate readProc, VoidPtr refCon,
             IntPtr outPort);
 
-    /**
-     * MIDIOutputPortCreate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMidi/Reference/MIDIServices_Reference/index.html#//apple_ref/c/func/MIDIOutputPortCreate">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native int MIDIOutputPortCreate(int client, CFStringRef portName, IntPtr outPort);
 
-    /**
-     * MIDIPortDispose</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMidi/Reference/MIDIServices_Reference/index.html#//apple_ref/c/func/MIDIPortDispose">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native int MIDIPortDispose(int port);
 
-    /**
-     * MIDIPortConnectSource</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMidi/Reference/MIDIServices_Reference/index.html#//apple_ref/c/func/MIDIPortConnectSource">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native int MIDIPortConnectSource(int port, int source, VoidPtr connRefCon);
 
-    /**
-     * MIDIPortDisconnectSource</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMidi/Reference/MIDIServices_Reference/index.html#//apple_ref/c/func/MIDIPortDisconnectSource">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native int MIDIPortDisconnectSource(int port, int source);
 
-    /**
-     * MIDIGetNumberOfDevices</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMidi/Reference/MIDIServices_Reference/index.html#//apple_ref/c/func/MIDIGetNumberOfDevices">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @NUInt
     public static native long MIDIGetNumberOfDevices();
 
-    /**
-     * MIDIGetDevice</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMidi/Reference/MIDIServices_Reference/index.html#//apple_ref/c/func/MIDIGetDevice">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native int MIDIGetDevice(@NUInt long deviceIndex0);
 
-    /**
-     * MIDIDeviceGetNumberOfEntities</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMidi/Reference/MIDIServices_Reference/index.html#//apple_ref/c/func/MIDIDeviceGetNumberOfEntities">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @NUInt
     public static native long MIDIDeviceGetNumberOfEntities(int device);
 
-    /**
-     * MIDIDeviceGetEntity</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMidi/Reference/MIDIServices_Reference/index.html#//apple_ref/c/func/MIDIDeviceGetEntity">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native int MIDIDeviceGetEntity(int device, @NUInt long entityIndex0);
 
-    /**
-     * MIDIEntityGetNumberOfSources</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMidi/Reference/MIDIServices_Reference/index.html#//apple_ref/c/func/MIDIEntityGetNumberOfSources">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @NUInt
     public static native long MIDIEntityGetNumberOfSources(int entity);
 
-    /**
-     * MIDIEntityGetSource</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMidi/Reference/MIDIServices_Reference/index.html#//apple_ref/c/func/MIDIEntityGetSource">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native int MIDIEntityGetSource(int entity, @NUInt long sourceIndex0);
 
-    /**
-     * MIDIEntityGetNumberOfDestinations</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMidi/Reference/MIDIServices_Reference/index.html#//apple_ref/c/func/MIDIEntityGetNumberOfDestinations">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @NUInt
     public static native long MIDIEntityGetNumberOfDestinations(int entity);
 
-    /**
-     * MIDIEntityGetDestination</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMidi/Reference/MIDIServices_Reference/index.html#//apple_ref/c/func/MIDIEntityGetDestination">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native int MIDIEntityGetDestination(int entity, @NUInt long destIndex0);
 
-    /**
-     * MIDIEntityGetDevice</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMidi/Reference/MIDIServices_Reference/index.html#//apple_ref/c/func/MIDIEntityGetDevice">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native int MIDIEntityGetDevice(int inEntity, IntPtr outDevice);
 
-    /**
-     * MIDIGetNumberOfSources</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMidi/Reference/MIDIServices_Reference/index.html#//apple_ref/c/func/MIDIGetNumberOfSources">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @NUInt
     public static native long MIDIGetNumberOfSources();
 
-    /**
-     * MIDIGetSource</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMidi/Reference/MIDIServices_Reference/index.html#//apple_ref/c/func/MIDIGetSource">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native int MIDIGetSource(@NUInt long sourceIndex0);
 
-    /**
-     * MIDIGetNumberOfDestinations</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMidi/Reference/MIDIServices_Reference/index.html#//apple_ref/c/func/MIDIGetNumberOfDestinations">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @NUInt
     public static native long MIDIGetNumberOfDestinations();
 
-    /**
-     * MIDIGetDestination</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMidi/Reference/MIDIServices_Reference/index.html#//apple_ref/c/func/MIDIGetDestination">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native int MIDIGetDestination(@NUInt long destIndex0);
 
-    /**
-     * MIDIEndpointGetEntity</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMidi/Reference/MIDIServices_Reference/index.html#//apple_ref/c/func/MIDIEndpointGetEntity">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native int MIDIEndpointGetEntity(int inEndpoint, IntPtr outEntity);
 
-    /**
-     * MIDIDestinationCreate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMidi/Reference/MIDIServices_Reference/index.html#//apple_ref/c/func/MIDIDestinationCreate">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native int MIDIDestinationCreate(int client, CFStringRef name,
             @FunctionPtr(name = "call_MIDIDestinationCreate") Function_MIDIDestinationCreate readProc, VoidPtr refCon,
             IntPtr outDest);
 
-    /**
-     * MIDISourceCreate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMidi/Reference/MIDIServices_Reference/index.html#//apple_ref/c/func/MIDISourceCreate">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native int MIDISourceCreate(int client, CFStringRef name, IntPtr outSrc);
 
-    /**
-     * MIDIEndpointDispose</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMidi/Reference/MIDIServices_Reference/index.html#//apple_ref/c/func/MIDIEndpointDispose">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native int MIDIEndpointDispose(int endpt);
 
-    /**
-     * MIDIGetNumberOfExternalDevices</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMidi/Reference/MIDIServices_Reference/index.html#//apple_ref/c/func/MIDIGetNumberOfExternalDevices">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @NUInt
     public static native long MIDIGetNumberOfExternalDevices();
 
-    /**
-     * MIDIGetExternalDevice</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMidi/Reference/MIDIServices_Reference/index.html#//apple_ref/c/func/MIDIGetExternalDevice">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native int MIDIGetExternalDevice(@NUInt long deviceIndex0);
 
-    /**
-     * MIDIObjectGetIntegerProperty</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMidi/Reference/MIDIServices_Reference/index.html#//apple_ref/c/func/MIDIObjectGetIntegerProperty">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native int MIDIObjectGetIntegerProperty(int obj, CFStringRef propertyID, IntPtr outValue);
 
-    /**
-     * MIDIObjectSetIntegerProperty</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMidi/Reference/MIDIServices_Reference/index.html#//apple_ref/c/func/MIDIObjectSetIntegerProperty">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native int MIDIObjectSetIntegerProperty(int obj, CFStringRef propertyID, int value);
 
-    /**
-     * MIDIObjectGetStringProperty</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMidi/Reference/MIDIServices_Reference/index.html#//apple_ref/c/func/MIDIObjectGetStringProperty">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native int MIDIObjectGetStringProperty(int obj, CFStringRef propertyID, Ptr<CFStringRef> str);
 
-    /**
-     * MIDIObjectSetStringProperty</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMidi/Reference/MIDIServices_Reference/index.html#//apple_ref/c/func/MIDIObjectSetStringProperty">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native int MIDIObjectSetStringProperty(int obj, CFStringRef propertyID, CFStringRef str);
 
-    /**
-     * MIDIObjectGetDataProperty</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMidi/Reference/MIDIServices_Reference/index.html#//apple_ref/c/func/MIDIObjectGetDataProperty">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native int MIDIObjectGetDataProperty(int obj, CFStringRef propertyID, Ptr<CFDataRef> outData);
 
-    /**
-     * MIDIObjectSetDataProperty</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMidi/Reference/MIDIServices_Reference/index.html#//apple_ref/c/func/MIDIObjectSetDataProperty">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native int MIDIObjectSetDataProperty(int obj, CFStringRef propertyID, CFDataRef data);
 
-    /**
-     * MIDIObjectGetDictionaryProperty</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMidi/Reference/MIDIServices_Reference/index.html#//apple_ref/c/func/MIDIObjectGetDictionaryProperty">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native int MIDIObjectGetDictionaryProperty(int obj, CFStringRef propertyID,
             Ptr<CFDictionaryRef> outDict);
 
-    /**
-     * MIDIObjectSetDictionaryProperty</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMidi/Reference/MIDIServices_Reference/index.html#//apple_ref/c/func/MIDIObjectSetDictionaryProperty">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native int MIDIObjectSetDictionaryProperty(int obj, CFStringRef propertyID, CFDictionaryRef dict);
 
-    /**
-     * MIDIObjectGetProperties</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMidi/Reference/MIDIServices_Reference/index.html#//apple_ref/c/func/MIDIObjectGetProperties">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native int MIDIObjectGetProperties(int obj, Ptr<ConstVoidPtr> outProperties, byte deep);
 
-    /**
-     * MIDIObjectRemoveProperty</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMidi/Reference/MIDIServices_Reference/index.html#//apple_ref/c/func/MIDIObjectRemoveProperty">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native int MIDIObjectRemoveProperty(int obj, CFStringRef propertyID);
 
-    /**
-     * MIDIObjectFindByUniqueID</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMidi/Reference/MIDIServices_Reference/index.html#//apple_ref/c/func/MIDIObjectFindByUniqueID">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native int MIDIObjectFindByUniqueID(int inUniqueID, IntPtr outObject, IntPtr outObjectType);
 
-    /**
-     * MIDISend</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMidi/Reference/MIDIServices_Reference/index.html#//apple_ref/c/func/MIDISend">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native int MIDISend(int port, int dest,
             @UncertainArgument("Options: reference, array Fallback: reference") MIDIPacketList pktlist);
 
-    /**
-     * MIDISendSysex</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMidi/Reference/MIDIServices_Reference/index.html#//apple_ref/c/func/MIDISendSysex">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native int MIDISendSysex(
             @UncertainArgument("Options: reference, array Fallback: reference") MIDISysexSendRequest request);
 
-    /**
-     * MIDIReceived</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMidi/Reference/MIDIServices_Reference/index.html#//apple_ref/c/func/MIDIReceived">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native int MIDIReceived(int src,
             @UncertainArgument("Options: reference, array Fallback: reference") MIDIPacketList pktlist);
 
-    /**
-     * MIDIFlushOutput</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMidi/Reference/MIDIServices_Reference/index.html#//apple_ref/c/func/MIDIFlushOutput">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native int MIDIFlushOutput(int dest);
 
-    /**
-     * MIDIRestart</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMidi/Reference/MIDIServices_Reference/index.html#//apple_ref/c/func/MIDIRestart">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native int MIDIRestart();
 
-    /**
-     * MIDIPacketListInit</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMidi/Reference/MIDIServices_Reference/index.html#//apple_ref/c/func/MIDIPacketListInit">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @UncertainReturn("Options: reference, array Fallback: reference")
     public static native MIDIPacket MIDIPacketListInit(
             @UncertainArgument("Options: reference, array Fallback: reference") MIDIPacketList pktlist);
 
-    /**
-     * MIDIPacketListAdd</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMidi/Reference/MIDIServices_Reference/index.html#//apple_ref/c/func/MIDIPacketListAdd">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @UncertainReturn("Options: reference, array Fallback: reference")
@@ -437,119 +261,63 @@ public final class CoreMIDI {
             @NUInt long nData,
             @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String data);
 
-    /**
-     * MIDIDeviceAddEntity</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMidi/Reference/MIDISetup_Reference/index.html#//apple_ref/c/func/MIDIDeviceAddEntity">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native int MIDIDeviceAddEntity(int device, CFStringRef name, byte embedded,
             @NUInt long numSourceEndpoints, @NUInt long numDestinationEndpoints, IntPtr newEntity);
 
-    /**
-     * MIDIDeviceRemoveEntity</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMidi/Reference/MIDISetup_Reference/index.html#//apple_ref/c/func/MIDIDeviceRemoveEntity">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native int MIDIDeviceRemoveEntity(int device, int entity);
 
-    /**
-     * MIDIEntityAddOrRemoveEndpoints</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMidi/Reference/MIDISetup_Reference/index.html#//apple_ref/c/func/MIDIEntityAddOrRemoveEndpoints">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native int MIDIEntityAddOrRemoveEndpoints(int entity, @NUInt long numSourceEndpoints,
             @NUInt long numDestinationEndpoints);
 
-    /**
-     * MIDISetupAddDevice</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMidi/Reference/MIDISetup_Reference/index.html#//apple_ref/c/func/MIDISetupAddDevice">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native int MIDISetupAddDevice(int device);
 
-    /**
-     * MIDISetupRemoveDevice</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMidi/Reference/MIDISetup_Reference/index.html#//apple_ref/c/func/MIDISetupRemoveDevice">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native int MIDISetupRemoveDevice(int device);
 
-    /**
-     * MIDISetupAddExternalDevice</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMidi/Reference/MIDISetup_Reference/index.html#//apple_ref/c/func/MIDISetupAddExternalDevice">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native int MIDISetupAddExternalDevice(int device);
 
-    /**
-     * MIDISetupRemoveExternalDevice</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMidi/Reference/MIDISetup_Reference/index.html#//apple_ref/c/func/MIDISetupRemoveExternalDevice">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native int MIDISetupRemoveExternalDevice(int device);
 
-    /**
-     * MIDIExternalDeviceCreate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMidi/Reference/MIDISetup_Reference/index.html#//apple_ref/c/func/MIDIExternalDeviceCreate">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native int MIDIExternalDeviceCreate(CFStringRef name, CFStringRef manufacturer, CFStringRef model,
             IntPtr outDevice);
 
-    /**
-     * MIDIThruConnectionParamsInitialize</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMidi/Reference/MIDIThruConnection_Reference/index.html#//apple_ref/c/func/MIDIThruConnectionParamsInitialize">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void MIDIThruConnectionParamsInitialize(
             @UncertainArgument("Options: reference, array Fallback: reference") MIDIThruConnectionParams inConnectionParams);
 
-    /**
-     * MIDIThruConnectionCreate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMidi/Reference/MIDIThruConnection_Reference/index.html#//apple_ref/c/func/MIDIThruConnectionCreate">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native int MIDIThruConnectionCreate(CFStringRef inPersistentOwnerID, CFDataRef inConnectionParams,
             IntPtr outConnection);
 
-    /**
-     * MIDIThruConnectionDispose</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMidi/Reference/MIDIThruConnection_Reference/index.html#//apple_ref/c/func/MIDIThruConnectionDispose">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native int MIDIThruConnectionDispose(int connection);
 
-    /**
-     * MIDIThruConnectionGetParams</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMidi/Reference/MIDIThruConnection_Reference/index.html#//apple_ref/c/func/MIDIThruConnectionGetParams">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native int MIDIThruConnectionGetParams(int connection, Ptr<CFDataRef> outConnectionParams);
 
-    /**
-     * MIDIThruConnectionSetParams</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMidi/Reference/MIDIThruConnection_Reference/index.html#//apple_ref/c/func/MIDIThruConnectionSetParams">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native int MIDIThruConnectionSetParams(int connection, CFDataRef inConnectionParams);
 
-    /**
-     * MIDIThruConnectionFind</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMidi/Reference/MIDIThruConnection_Reference/index.html#//apple_ref/c/func/MIDIThruConnectionFind">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native int MIDIThruConnectionFind(CFStringRef inPersistentOwnerID, Ptr<CFDataRef> outConnectionList);
@@ -802,10 +570,6 @@ public final class CoreMIDI {
     public static native int MIDIDestinationCreateWithBlock(int client, CFStringRef name, IntPtr outDest,
             @ObjCBlock(name = "call_MIDIDestinationCreateWithBlock") Block_MIDIDestinationCreateWithBlock readBlock);
 
-    /**
-     * MIDIPacketNext</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMidi/Reference/MIDIServices_Reference/index.html#//apple_ref/c/func/MIDIPacketNext">iOS Dev Center</a>
-     */
     @Generated
     @Inline
     @CFunction

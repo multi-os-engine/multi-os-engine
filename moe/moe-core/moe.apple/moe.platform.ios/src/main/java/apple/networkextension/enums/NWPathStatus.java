@@ -25,6 +25,7 @@ public final class NWPathStatus {
     @Generated @NInt public static final long Satisfied = 0x0000000000000001L;
     @Generated @NInt public static final long Unsatisfied = 0x0000000000000002L;
     @Generated @NInt public static final long Satisfiable = 0x0000000000000003L;
+
     @Generated
     private NWPathStatus() {
     }

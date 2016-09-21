@@ -178,26 +178,14 @@ public class NEFilterProviderConfiguration extends NSObject implements NSSecureC
     @Selector("encodeWithCoder:")
     public native void encodeWithCoder(NSCoder aCoder);
 
-    /**
-     * filterBrowsers</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEFilterProviderConfigurationClassRef/index.html#//apple_ref/occ/instp/NEFilterProviderConfiguration/filterBrowsers">iOS Dev Center</a>
-     */
     @Generated
     @Selector("filterBrowsers")
     public native boolean filterBrowsers();
 
-    /**
-     * filterSockets</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEFilterProviderConfigurationClassRef/index.html#//apple_ref/occ/instp/NEFilterProviderConfiguration/filterSockets">iOS Dev Center</a>
-     */
     @Generated
     @Selector("filterSockets")
     public native boolean filterSockets();
 
-    /**
-     * identityReference</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEFilterProviderConfigurationClassRef/index.html#//apple_ref/occ/instp/NEFilterProviderConfiguration/identityReference">iOS Dev Center</a>
-     */
     @Generated
     @Selector("identityReference")
     public native NSData identityReference();
@@ -210,90 +198,46 @@ public class NEFilterProviderConfiguration extends NSObject implements NSSecureC
     @Selector("initWithCoder:")
     public native NEFilterProviderConfiguration initWithCoder(NSCoder aDecoder);
 
-    /**
-     * organization</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEFilterProviderConfigurationClassRef/index.html#//apple_ref/occ/instp/NEFilterProviderConfiguration/organization">iOS Dev Center</a>
-     */
     @Generated
     @Selector("organization")
     public native String organization();
 
-    /**
-     * passwordReference</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEFilterProviderConfigurationClassRef/index.html#//apple_ref/occ/instp/NEFilterProviderConfiguration/passwordReference">iOS Dev Center</a>
-     */
     @Generated
     @Selector("passwordReference")
     public native NSData passwordReference();
 
-    /**
-     * serverAddress</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEFilterProviderConfigurationClassRef/index.html#//apple_ref/occ/instp/NEFilterProviderConfiguration/serverAddress">iOS Dev Center</a>
-     */
     @Generated
     @Selector("serverAddress")
     public native String serverAddress();
 
-    /**
-     * filterBrowsers</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEFilterProviderConfigurationClassRef/index.html#//apple_ref/occ/instp/NEFilterProviderConfiguration/filterBrowsers">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setFilterBrowsers:")
     public native void setFilterBrowsers(boolean value);
 
-    /**
-     * filterSockets</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEFilterProviderConfigurationClassRef/index.html#//apple_ref/occ/instp/NEFilterProviderConfiguration/filterSockets">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setFilterSockets:")
     public native void setFilterSockets(boolean value);
 
-    /**
-     * identityReference</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEFilterProviderConfigurationClassRef/index.html#//apple_ref/occ/instp/NEFilterProviderConfiguration/identityReference">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setIdentityReference:")
     public native void setIdentityReference(NSData value);
 
-    /**
-     * organization</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEFilterProviderConfigurationClassRef/index.html#//apple_ref/occ/instp/NEFilterProviderConfiguration/organization">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setOrganization:")
     public native void setOrganization(String value);
 
-    /**
-     * passwordReference</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEFilterProviderConfigurationClassRef/index.html#//apple_ref/occ/instp/NEFilterProviderConfiguration/passwordReference">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setPasswordReference:")
     public native void setPasswordReference(NSData value);
 
-    /**
-     * serverAddress</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEFilterProviderConfigurationClassRef/index.html#//apple_ref/occ/instp/NEFilterProviderConfiguration/serverAddress">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setServerAddress:")
     public native void setServerAddress(String value);
 
-    /**
-     * username</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEFilterProviderConfigurationClassRef/index.html#//apple_ref/occ/instp/NEFilterProviderConfiguration/username">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setUsername:")
     public native void setUsername(String value);
 
-    /**
-     * vendorConfiguration</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEFilterProviderConfigurationClassRef/index.html#//apple_ref/occ/instp/NEFilterProviderConfiguration/vendorConfiguration">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setVendorConfiguration:")
     public native void setVendorConfiguration(NSDictionary<String, ?> value);
@@ -304,18 +248,10 @@ public class NEFilterProviderConfiguration extends NSObject implements NSSecureC
         return supportsSecureCoding();
     }
 
-    /**
-     * username</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEFilterProviderConfigurationClassRef/index.html#//apple_ref/occ/instp/NEFilterProviderConfiguration/username">iOS Dev Center</a>
-     */
     @Generated
     @Selector("username")
     public native String username();
 
-    /**
-     * vendorConfiguration</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEFilterProviderConfigurationClassRef/index.html#//apple_ref/occ/instp/NEFilterProviderConfiguration/vendorConfiguration">iOS Dev Center</a>
-     */
     @Generated
     @Selector("vendorConfiguration")
     public native NSDictionary<String, ?> vendorConfiguration();

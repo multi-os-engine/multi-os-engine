@@ -62,18 +62,10 @@ public class CNInstantMessageAddress extends NSObject implements NSCopying, NSSe
     @Selector("alloc")
     public static native CNInstantMessageAddress alloc();
 
-    /**
-     * localizedStringForKey:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Contacts/Reference/CNInstantMessageAddress_Class/index.html#//apple_ref/occ/clm/CNInstantMessageAddress/localizedStringForKey:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("localizedStringForKey:")
     public static native String localizedStringForKey(String key);
 
-    /**
-     * localizedStringForService:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Contacts/Reference/CNInstantMessageAddress_Class/index.html#//apple_ref/occ/clm/CNInstantMessageAddress/localizedStringForService:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("localizedStringForService:")
     public static native String localizedStringForService(String service);
@@ -200,18 +192,10 @@ public class CNInstantMessageAddress extends NSObject implements NSCopying, NSSe
     @Selector("initWithCoder:")
     public native CNInstantMessageAddress initWithCoder(NSCoder aDecoder);
 
-    /**
-     * initWithUsername:service:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Contacts/Reference/CNInstantMessageAddress_Class/index.html#//apple_ref/occ/instm/CNInstantMessageAddress/initWithUsername:service:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithUsername:service:")
     public native CNInstantMessageAddress initWithUsernameService(String username, String service);
 
-    /**
-     * service</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Contacts/Reference/CNInstantMessageAddress_Class/index.html#//apple_ref/occ/instp/CNInstantMessageAddress/service">iOS Dev Center</a>
-     */
     @Generated
     @Selector("service")
     public native String service();
@@ -222,10 +206,6 @@ public class CNInstantMessageAddress extends NSObject implements NSCopying, NSSe
         return supportsSecureCoding();
     }
 
-    /**
-     * username</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Contacts/Reference/CNInstantMessageAddress_Class/index.html#//apple_ref/occ/instp/CNInstantMessageAddress/username">iOS Dev Center</a>
-     */
     @Generated
     @Selector("username")
     public native String username();

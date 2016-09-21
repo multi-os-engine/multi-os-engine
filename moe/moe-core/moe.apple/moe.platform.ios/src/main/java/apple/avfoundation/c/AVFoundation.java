@@ -74,10 +74,6 @@ public final class AVFoundation {
     public static native AVAudio3DAngularOrientation AVAudioMake3DAngularOrientation(float yaw, float pitch,
             float roll);
 
-    /**
-     * AVMakeRectWithAspectRatioInsideRect</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVFoundation_Functions/index.html#//apple_ref/c/func/AVMakeRectWithAspectRatioInsideRect">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @ByValue

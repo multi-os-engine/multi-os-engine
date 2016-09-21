@@ -168,27 +168,15 @@ public class MPSImageThresholdToZero extends MPSUnaryImageKernel {
     @Selector("initWithDevice:")
     public native MPSImageThresholdToZero initWithDevice(@Mapped(ObjCObjectMapper.class) MTLDevice device);
 
-    /**
-     * initWithDevice:thresholdValue:linearGrayColorTransform:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MetalPerformanceShaders/Reference/MPSImageThresholdToZero_ClassReference/index.html#//apple_ref/occ/instm/MPSImageThresholdToZero/initWithDevice:thresholdValue:linearGrayColorTransform:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithDevice:thresholdValue:linearGrayColorTransform:")
     public native MPSImageThresholdToZero initWithDeviceThresholdValueLinearGrayColorTransform(
             @Mapped(ObjCObjectMapper.class) MTLDevice device, float thresholdValue, ConstFloatPtr transform);
 
-    /**
-     * thresholdValue</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MetalPerformanceShaders/Reference/MPSImageThresholdToZero_ClassReference/index.html#//apple_ref/occ/instp/MPSImageThresholdToZero/thresholdValue">iOS Dev Center</a>
-     */
     @Generated
     @Selector("thresholdValue")
     public native float thresholdValue();
 
-    /**
-     * transform</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MetalPerformanceShaders/Reference/MPSImageThresholdToZero_ClassReference/index.html#//apple_ref/occ/instp/MPSImageThresholdToZero/transform">iOS Dev Center</a>
-     */
     @Generated
     @Selector("transform")
     public native ConstFloatPtr transform();

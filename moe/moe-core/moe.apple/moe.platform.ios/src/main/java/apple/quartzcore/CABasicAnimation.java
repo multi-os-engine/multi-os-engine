@@ -172,19 +172,11 @@ public class CABasicAnimation extends CAPropertyAnimation {
     @NInt
     public static native long version_static();
 
-    /**
-     * byValue</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/CABasicAnimation_class/index.html#//apple_ref/occ/instp/CABasicAnimation/byValue">iOS Dev Center</a>
-     */
     @Generated
     @Selector("byValue")
     @MappedReturn(ObjCObjectMapper.class)
     public native Object byValue();
 
-    /**
-     * fromValue</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/CABasicAnimation_class/index.html#//apple_ref/occ/instp/CABasicAnimation/fromValue">iOS Dev Center</a>
-     */
     @Generated
     @Selector("fromValue")
     @MappedReturn(ObjCObjectMapper.class)
@@ -194,34 +186,18 @@ public class CABasicAnimation extends CAPropertyAnimation {
     @Selector("init")
     public native CABasicAnimation init();
 
-    /**
-     * byValue</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/CABasicAnimation_class/index.html#//apple_ref/occ/instp/CABasicAnimation/byValue">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setByValue:")
     public native void setByValue(@Mapped(ObjCObjectMapper.class) Object value);
 
-    /**
-     * fromValue</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/CABasicAnimation_class/index.html#//apple_ref/occ/instp/CABasicAnimation/fromValue">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setFromValue:")
     public native void setFromValue(@Mapped(ObjCObjectMapper.class) Object value);
 
-    /**
-     * toValue</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/CABasicAnimation_class/index.html#//apple_ref/occ/instp/CABasicAnimation/toValue">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setToValue:")
     public native void setToValue(@Mapped(ObjCObjectMapper.class) Object value);
 
-    /**
-     * toValue</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/CABasicAnimation_class/index.html#//apple_ref/occ/instp/CABasicAnimation/toValue">iOS Dev Center</a>
-     */
     @Generated
     @Selector("toValue")
     @MappedReturn(ObjCObjectMapper.class)

@@ -159,26 +159,14 @@ public class PHAdjustmentData extends NSObject {
     @NInt
     public static native long version_static();
 
-    /**
-     * data</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHAdjustmentData_Class/index.html#//apple_ref/occ/instp/PHAdjustmentData/data">iOS Dev Center</a>
-     */
     @Generated
     @Selector("data")
     public native NSData data();
 
-    /**
-     * formatIdentifier</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHAdjustmentData_Class/index.html#//apple_ref/occ/instp/PHAdjustmentData/formatIdentifier">iOS Dev Center</a>
-     */
     @Generated
     @Selector("formatIdentifier")
     public native String formatIdentifier();
 
-    /**
-     * formatVersion</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHAdjustmentData_Class/index.html#//apple_ref/occ/instp/PHAdjustmentData/formatVersion">iOS Dev Center</a>
-     */
     @Generated
     @Selector("formatVersion")
     public native String formatVersion();
@@ -187,10 +175,6 @@ public class PHAdjustmentData extends NSObject {
     @Selector("init")
     public native PHAdjustmentData init();
 
-    /**
-     * initWithFormatIdentifier:formatVersion:data:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHAdjustmentData_Class/index.html#//apple_ref/occ/instm/PHAdjustmentData/initWithFormatIdentifier:formatVersion:data:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithFormatIdentifier:formatVersion:data:")
     public native PHAdjustmentData initWithFormatIdentifierFormatVersionData(String formatIdentifier,

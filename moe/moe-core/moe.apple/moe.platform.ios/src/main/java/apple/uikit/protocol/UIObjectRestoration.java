@@ -33,10 +33,6 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("UIObjectRestoration")
 public interface UIObjectRestoration {
-    /**
-     * objectWithRestorationIdentifierPath:coder:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIObjectRestoration_protocol/index.html#//apple_ref/occ/intfcm/UIObjectRestoration/objectWithRestorationIdentifierPath:coder:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("objectWithRestorationIdentifierPath:coder:")
     @ProtocolClassMethod("objectWithRestorationIdentifierPathCoder")

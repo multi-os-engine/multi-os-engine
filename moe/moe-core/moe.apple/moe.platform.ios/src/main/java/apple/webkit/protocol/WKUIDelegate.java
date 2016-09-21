@@ -35,10 +35,6 @@ import org.moe.natj.objc.ann.Selector;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("WKUIDelegate")
 public interface WKUIDelegate {
-    /**
-     * webView:createWebViewWithConfiguration:forNavigationAction:windowFeatures:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WebKit/Reference/WKUIDelegate_Ref/index.html#//apple_ref/occ/intfm/WKUIDelegate/webView:createWebViewWithConfiguration:forNavigationAction:windowFeatures:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("webView:createWebViewWithConfiguration:forNavigationAction:windowFeatures:")
@@ -48,10 +44,6 @@ public interface WKUIDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * webView:runJavaScriptAlertPanelWithMessage:initiatedByFrame:completionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WebKit/Reference/WKUIDelegate_Ref/index.html#//apple_ref/occ/intfm/WKUIDelegate/webView:runJavaScriptAlertPanelWithMessage:initiatedByFrame:completionHandler:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("webView:runJavaScriptAlertPanelWithMessage:initiatedByFrame:completionHandler:")
@@ -61,10 +53,6 @@ public interface WKUIDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * webView:runJavaScriptConfirmPanelWithMessage:initiatedByFrame:completionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WebKit/Reference/WKUIDelegate_Ref/index.html#//apple_ref/occ/intfm/WKUIDelegate/webView:runJavaScriptConfirmPanelWithMessage:initiatedByFrame:completionHandler:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("webView:runJavaScriptConfirmPanelWithMessage:initiatedByFrame:completionHandler:")
@@ -74,10 +62,6 @@ public interface WKUIDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * webView:runJavaScriptTextInputPanelWithPrompt:defaultText:initiatedByFrame:completionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WebKit/Reference/WKUIDelegate_Ref/index.html#//apple_ref/occ/intfm/WKUIDelegate/webView:runJavaScriptTextInputPanelWithPrompt:defaultText:initiatedByFrame:completionHandler:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("webView:runJavaScriptTextInputPanelWithPrompt:defaultText:initiatedByFrame:completionHandler:")
@@ -87,10 +71,6 @@ public interface WKUIDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * webViewDidClose:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WebKit/Reference/WKUIDelegate_Ref/index.html#//apple_ref/occ/intfm/WKUIDelegate/webViewDidClose:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("webViewDidClose:")

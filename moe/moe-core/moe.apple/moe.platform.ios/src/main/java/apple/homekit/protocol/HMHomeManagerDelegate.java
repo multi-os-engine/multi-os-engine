@@ -31,10 +31,6 @@ import org.moe.natj.objc.ann.Selector;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("HMHomeManagerDelegate")
 public interface HMHomeManagerDelegate {
-    /**
-     * homeManager:didAddHome:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HomeKit/Reference/HMHomeManagerDelegate_Protocol/index.html#//apple_ref/occ/intfm/HMHomeManagerDelegate/homeManager:didAddHome:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("homeManager:didAddHome:")
@@ -42,10 +38,6 @@ public interface HMHomeManagerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * homeManager:didRemoveHome:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HomeKit/Reference/HMHomeManagerDelegate_Protocol/index.html#//apple_ref/occ/intfm/HMHomeManagerDelegate/homeManager:didRemoveHome:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("homeManager:didRemoveHome:")
@@ -53,10 +45,6 @@ public interface HMHomeManagerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * homeManagerDidUpdateHomes:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HomeKit/Reference/HMHomeManagerDelegate_Protocol/index.html#//apple_ref/occ/intfm/HMHomeManagerDelegate/homeManagerDidUpdateHomes:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("homeManagerDidUpdateHomes:")
@@ -64,10 +52,6 @@ public interface HMHomeManagerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * homeManagerDidUpdatePrimaryHome:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HomeKit/Reference/HMHomeManagerDelegate_Protocol/index.html#//apple_ref/occ/intfm/HMHomeManagerDelegate/homeManagerDidUpdatePrimaryHome:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("homeManagerDidUpdatePrimaryHome:")

@@ -167,10 +167,6 @@ public class MTKMeshBuffer extends NSObject implements MDLMeshBuffer {
     @Selector("allocator")
     public native MTKMeshBufferAllocator allocator();
 
-    /**
-     * buffer</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MetalKit/Reference/MTKMeshBuffer_ClassReference/index.html#//apple_ref/occ/instp/MTKMeshBuffer/buffer">iOS Dev Center</a>
-     */
     @Generated
     @Selector("buffer")
     @MappedReturn(ObjCObjectMapper.class)
@@ -199,10 +195,6 @@ public class MTKMeshBuffer extends NSObject implements MDLMeshBuffer {
     @Selector("map")
     public native MDLMeshBufferMap map();
 
-    /**
-     * offset</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MetalKit/Reference/MTKMeshBuffer_ClassReference/index.html#//apple_ref/occ/instp/MTKMeshBuffer/offset">iOS Dev Center</a>
-     */
     @Generated
     @Selector("offset")
     @NUInt

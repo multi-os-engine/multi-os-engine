@@ -169,10 +169,6 @@ public class GKSavedGame extends NSObject implements NSCopying {
     @MappedReturn(ObjCObjectMapper.class)
     public native Object copyWithZone(VoidPtr zone);
 
-    /**
-     * deviceName</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKSavedGame_Ref/index.html#//apple_ref/occ/instp/GKSavedGame/deviceName">iOS Dev Center</a>
-     */
     @Generated
     @Selector("deviceName")
     public native String deviceName();
@@ -181,27 +177,15 @@ public class GKSavedGame extends NSObject implements NSCopying {
     @Selector("init")
     public native GKSavedGame init();
 
-    /**
-     * loadDataWithCompletionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKSavedGame_Ref/index.html#//apple_ref/occ/instm/GKSavedGame/loadDataWithCompletionHandler:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("loadDataWithCompletionHandler:")
     public native void loadDataWithCompletionHandler(
             @ObjCBlock(name = "call_loadDataWithCompletionHandler") Block_loadDataWithCompletionHandler handler);
 
-    /**
-     * modificationDate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKSavedGame_Ref/index.html#//apple_ref/occ/instp/GKSavedGame/modificationDate">iOS Dev Center</a>
-     */
     @Generated
     @Selector("modificationDate")
     public native NSDate modificationDate();
 
-    /**
-     * name</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKSavedGame_Ref/index.html#//apple_ref/occ/instp/GKSavedGame/name">iOS Dev Center</a>
-     */
     @Generated
     @Selector("name")
     public native String name();

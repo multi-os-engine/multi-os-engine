@@ -164,10 +164,6 @@ public class NSItemProvider extends NSObject implements NSCopying {
     @MappedReturn(ObjCObjectMapper.class)
     public native Object copyWithZone(VoidPtr zone);
 
-    /**
-     * hasItemConformingToTypeIdentifier:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSItemProvider_Class/index.html#//apple_ref/occ/instm/NSItemProvider/hasItemConformingToTypeIdentifier:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("hasItemConformingToTypeIdentifier:")
     public native boolean hasItemConformingToTypeIdentifier(String typeIdentifier);
@@ -176,46 +172,26 @@ public class NSItemProvider extends NSObject implements NSCopying {
     @Selector("init")
     public native NSItemProvider init();
 
-    /**
-     * initWithContentsOfURL:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSItemProvider_Class/index.html#//apple_ref/occ/instm/NSItemProvider/initWithContentsOfURL:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithContentsOfURL:")
     public native NSItemProvider initWithContentsOfURL(NSURL fileURL);
 
-    /**
-     * initWithItem:typeIdentifier:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSItemProvider_Class/index.html#//apple_ref/occ/instm/NSItemProvider/initWithItem:typeIdentifier:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithItem:typeIdentifier:")
     public native NSItemProvider initWithItemTypeIdentifier(@Mapped(ObjCObjectMapper.class) NSSecureCoding item,
             String typeIdentifier);
 
-    /**
-     * loadItemForTypeIdentifier:options:completionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSItemProvider_Class/index.html#//apple_ref/occ/instm/NSItemProvider/loadItemForTypeIdentifier:options:completionHandler:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("loadItemForTypeIdentifier:options:completionHandler:")
     public native void loadItemForTypeIdentifierOptionsCompletionHandler(String typeIdentifier,
             NSDictionary<?, ?> options,
             @ObjCBlock(name = "call_loadItemForTypeIdentifierOptionsCompletionHandler") Block_loadItemForTypeIdentifierOptionsCompletionHandler completionHandler);
 
-    /**
-     * loadPreviewImageWithOptions:completionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSItemProvider_Class/index.html#//apple_ref/occ/instm/NSItemProvider/loadPreviewImageWithOptions:completionHandler:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("loadPreviewImageWithOptions:completionHandler:")
     public native void loadPreviewImageWithOptionsCompletionHandler(NSDictionary<?, ?> options,
             @ObjCBlock(name = "call_loadPreviewImageWithOptionsCompletionHandler") Block_loadPreviewImageWithOptionsCompletionHandler completionHandler);
 
-    /**
-     * registeredTypeIdentifiers</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSItemProvider_Class/index.html#//apple_ref/occ/instp/NSItemProvider/registeredTypeIdentifiers">iOS Dev Center</a>
-     */
     @Generated
     @Selector("registeredTypeIdentifiers")
     public native NSArray<?> registeredTypeIdentifiers();

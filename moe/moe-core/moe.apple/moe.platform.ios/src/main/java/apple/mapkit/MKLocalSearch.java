@@ -160,10 +160,6 @@ public class MKLocalSearch extends NSObject {
     @NInt
     public static native long version_static();
 
-    /**
-     * cancel</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKLocalSearch/index.html#//apple_ref/occ/instm/MKLocalSearch/cancel">iOS Dev Center</a>
-     */
     @Generated
     @Selector("cancel")
     public native void cancel();
@@ -172,26 +168,14 @@ public class MKLocalSearch extends NSObject {
     @Selector("init")
     public native MKLocalSearch init();
 
-    /**
-     * initWithRequest:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKLocalSearch/index.html#//apple_ref/occ/instm/MKLocalSearch/initWithRequest:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithRequest:")
     public native MKLocalSearch initWithRequest(MKLocalSearchRequest request);
 
-    /**
-     * searching</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKLocalSearch/index.html#//apple_ref/occ/instp/MKLocalSearch/searching">iOS Dev Center</a>
-     */
     @Generated
     @Selector("isSearching")
     public native boolean isSearching();
 
-    /**
-     * startWithCompletionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKLocalSearch/index.html#//apple_ref/occ/instm/MKLocalSearch/startWithCompletionHandler:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("startWithCompletionHandler:")
     public native void startWithCompletionHandler(

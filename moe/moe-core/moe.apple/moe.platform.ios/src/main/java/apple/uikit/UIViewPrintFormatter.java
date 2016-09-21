@@ -162,10 +162,6 @@ public class UIViewPrintFormatter extends UIPrintFormatter {
     @Selector("init")
     public native UIViewPrintFormatter init();
 
-    /**
-     * view</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIViewPrintFormatter_Class/index.html#//apple_ref/occ/instp/UIViewPrintFormatter/view">iOS Dev Center</a>
-     */
     @Generated
     @Selector("view")
     public native UIView view();

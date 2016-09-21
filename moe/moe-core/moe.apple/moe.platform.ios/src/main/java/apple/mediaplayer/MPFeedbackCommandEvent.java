@@ -162,10 +162,6 @@ public class MPFeedbackCommandEvent extends MPRemoteCommandEvent {
     @Selector("init")
     public native MPFeedbackCommandEvent init();
 
-    /**
-     * negative</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPFeedbackCommandEvent_Ref/index.html#//apple_ref/occ/instp/MPFeedbackCommandEvent/negative">iOS Dev Center</a>
-     */
     @Generated
     @Selector("isNegative")
     public native boolean isNegative();

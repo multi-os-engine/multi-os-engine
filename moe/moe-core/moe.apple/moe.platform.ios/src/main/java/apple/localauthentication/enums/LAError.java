@@ -31,6 +31,7 @@ public final class LAError {
     @Generated @NInt public static final long TouchIDLockout = 0xFFFFFFFFFFFFFFF8L;
     @Generated @NInt public static final long AppCancel = 0xFFFFFFFFFFFFFFF7L;
     @Generated @NInt public static final long InvalidContext = 0xFFFFFFFFFFFFFFF6L;
+
     @Generated
     private LAError() {
     }

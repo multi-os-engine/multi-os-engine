@@ -59,26 +59,14 @@ public class MIDINetworkHost extends NSObject {
     @Selector("alloc")
     public static native MIDINetworkHost alloc();
 
-    /**
-     * hostWithName:address:port:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMidi/Reference/MIDINetworkHost_ClassReference/index.html#//apple_ref/occ/clm/MIDINetworkHost/hostWithName:address:port:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("hostWithName:address:port:")
     public static native MIDINetworkHost hostWithNameAddressPort(String name, String address, @NUInt long port);
 
-    /**
-     * hostWithName:netService:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMidi/Reference/MIDINetworkHost_ClassReference/index.html#//apple_ref/occ/clm/MIDINetworkHost/hostWithName:netService:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("hostWithName:netService:")
     public static native MIDINetworkHost hostWithNameNetService(String name, NSNetService netService);
 
-    /**
-     * hostWithName:netServiceName:netServiceDomain:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMidi/Reference/MIDINetworkHost_ClassReference/index.html#//apple_ref/occ/clm/MIDINetworkHost/hostWithName:netServiceName:netServiceDomain:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("hostWithName:netServiceName:netServiceDomain:")
     public static native MIDINetworkHost hostWithNameNetServiceNameNetServiceDomain(String name, String netServiceName,
@@ -184,18 +172,10 @@ public class MIDINetworkHost extends NSObject {
     @NInt
     public static native long version();
 
-    /**
-     * address</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMidi/Reference/MIDINetworkHost_ClassReference/index.html#//apple_ref/occ/instp/MIDINetworkHost/address">iOS Dev Center</a>
-     */
     @Generated
     @Selector("address")
     public native String address();
 
-    /**
-     * hasSameAddressAs:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMidi/Reference/MIDINetworkHost_ClassReference/index.html#//apple_ref/occ/instm/MIDINetworkHost/hasSameAddressAs:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("hasSameAddressAs:")
     public native boolean hasSameAddressAs(MIDINetworkHost other);
@@ -204,34 +184,18 @@ public class MIDINetworkHost extends NSObject {
     @Selector("init")
     public native MIDINetworkHost init();
 
-    /**
-     * name</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMidi/Reference/MIDINetworkHost_ClassReference/index.html#//apple_ref/occ/instp/MIDINetworkHost/name">iOS Dev Center</a>
-     */
     @Generated
     @Selector("name")
     public native String name();
 
-    /**
-     * netServiceDomain</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMidi/Reference/MIDINetworkHost_ClassReference/index.html#//apple_ref/occ/instp/MIDINetworkHost/netServiceDomain">iOS Dev Center</a>
-     */
     @Generated
     @Selector("netServiceDomain")
     public native String netServiceDomain();
 
-    /**
-     * netServiceName</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMidi/Reference/MIDINetworkHost_ClassReference/index.html#//apple_ref/occ/instp/MIDINetworkHost/netServiceName">iOS Dev Center</a>
-     */
     @Generated
     @Selector("netServiceName")
     public native String netServiceName();
 
-    /**
-     * port</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMidi/Reference/MIDINetworkHost_ClassReference/index.html#//apple_ref/occ/instp/MIDINetworkHost/port">iOS Dev Center</a>
-     */
     @Generated
     @Selector("port")
     @NUInt

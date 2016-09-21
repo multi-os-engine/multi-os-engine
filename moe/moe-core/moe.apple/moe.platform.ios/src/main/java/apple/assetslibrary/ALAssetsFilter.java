@@ -53,26 +53,14 @@ public class ALAssetsFilter extends NSObject {
         super(peer);
     }
 
-    /**
-     * allAssets</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AssetsLibrary/Reference/ALAssetsFilter_Class/index.html#//apple_ref/occ/clm/ALAssetsFilter/allAssets">iOS Dev Center</a>
-     */
     @Generated
     @Selector("allAssets")
     public static native ALAssetsFilter allAssets();
 
-    /**
-     * allPhotos</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AssetsLibrary/Reference/ALAssetsFilter_Class/index.html#//apple_ref/occ/clm/ALAssetsFilter/allPhotos">iOS Dev Center</a>
-     */
     @Generated
     @Selector("allPhotos")
     public static native ALAssetsFilter allPhotos();
 
-    /**
-     * allVideos</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AssetsLibrary/Reference/ALAssetsFilter_Class/index.html#//apple_ref/occ/clm/ALAssetsFilter/allVideos">iOS Dev Center</a>
-     */
     @Generated
     @Selector("allVideos")
     public static native ALAssetsFilter allVideos();

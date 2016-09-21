@@ -65,18 +65,10 @@ public class MKMapCamera extends NSObject implements NSSecureCoding, NSCopying {
     @Selector("alloc")
     public static native MKMapCamera alloc();
 
-    /**
-     * camera</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKMapCamera_class/index.html#//apple_ref/occ/clm/MKMapCamera/camera">iOS Dev Center</a>
-     */
     @Generated
     @Selector("camera")
     public static native MKMapCamera camera();
 
-    /**
-     * cameraLookingAtCenterCoordinate:fromEyeCoordinate:eyeAltitude:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKMapCamera_class/index.html#//apple_ref/occ/clm/MKMapCamera/cameraLookingAtCenterCoordinate:fromEyeCoordinate:eyeAltitude:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("cameraLookingAtCenterCoordinate:fromEyeCoordinate:eyeAltitude:")
     public static native MKMapCamera cameraLookingAtCenterCoordinateFromEyeCoordinateEyeAltitude(
@@ -87,10 +79,6 @@ public class MKMapCamera extends NSObject implements NSSecureCoding, NSCopying {
     @Selector("supportsSecureCoding")
     public static native boolean supportsSecureCoding();
 
-    /**
-     * cameraLookingAtCenterCoordinate:fromDistance:pitch:heading:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKMapCamera_class/index.html#//apple_ref/occ/clm/MKMapCamera/cameraLookingAtCenterCoordinate:fromDistance:pitch:heading:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("cameraLookingAtCenterCoordinate:fromDistance:pitch:heading:")
     public static native MKMapCamera cameraLookingAtCenterCoordinateFromDistancePitchHeading(
@@ -196,18 +184,10 @@ public class MKMapCamera extends NSObject implements NSSecureCoding, NSCopying {
     @NInt
     public static native long version_static();
 
-    /**
-     * altitude</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKMapCamera_class/index.html#//apple_ref/occ/instp/MKMapCamera/altitude">iOS Dev Center</a>
-     */
     @Generated
     @Selector("altitude")
     public native double altitude();
 
-    /**
-     * centerCoordinate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKMapCamera_class/index.html#//apple_ref/occ/instp/MKMapCamera/centerCoordinate">iOS Dev Center</a>
-     */
     @Generated
     @Selector("centerCoordinate")
     @ByValue
@@ -223,10 +203,6 @@ public class MKMapCamera extends NSObject implements NSSecureCoding, NSCopying {
     @Selector("encodeWithCoder:")
     public native void encodeWithCoder(NSCoder aCoder);
 
-    /**
-     * heading</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKMapCamera_class/index.html#//apple_ref/occ/instp/MKMapCamera/heading">iOS Dev Center</a>
-     */
     @Generated
     @Selector("heading")
     public native double heading();
@@ -239,43 +215,23 @@ public class MKMapCamera extends NSObject implements NSSecureCoding, NSCopying {
     @Selector("initWithCoder:")
     public native MKMapCamera initWithCoder(NSCoder aDecoder);
 
-    /**
-     * pitch</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKMapCamera_class/index.html#//apple_ref/occ/instp/MKMapCamera/pitch">iOS Dev Center</a>
-     */
     @Generated
     @Selector("pitch")
     @NFloat
     public native double pitch();
 
-    /**
-     * altitude</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKMapCamera_class/index.html#//apple_ref/occ/instp/MKMapCamera/altitude">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setAltitude:")
     public native void setAltitude(double value);
 
-    /**
-     * centerCoordinate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKMapCamera_class/index.html#//apple_ref/occ/instp/MKMapCamera/centerCoordinate">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setCenterCoordinate:")
     public native void setCenterCoordinate(@ByValue CLLocationCoordinate2D value);
 
-    /**
-     * heading</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKMapCamera_class/index.html#//apple_ref/occ/instp/MKMapCamera/heading">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setHeading:")
     public native void setHeading(double value);
 
-    /**
-     * pitch</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKMapCamera_class/index.html#//apple_ref/occ/instp/MKMapCamera/pitch">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setPitch:")
     public native void setPitch(@NFloat double value);

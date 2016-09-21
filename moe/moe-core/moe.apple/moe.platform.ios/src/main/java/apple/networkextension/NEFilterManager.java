@@ -60,10 +60,6 @@ public class NEFilterManager extends NSObject {
     @Selector("alloc")
     public static native NEFilterManager alloc();
 
-    /**
-     * sharedManager</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEFilterManagerClassRef/index.html#//apple_ref/occ/clm/NEFilterManager/sharedManager">iOS Dev Center</a>
-     */
     @Generated
     @Selector("sharedManager")
     public static native NEFilterManager sharedManager();
@@ -172,77 +168,41 @@ public class NEFilterManager extends NSObject {
     @Selector("init")
     public native NEFilterManager init();
 
-    /**
-     * enabled</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEFilterManagerClassRef/index.html#//apple_ref/occ/instp/NEFilterManager/enabled">iOS Dev Center</a>
-     */
     @Generated
     @Selector("isEnabled")
     public native boolean isEnabled();
 
-    /**
-     * enabled</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEFilterManagerClassRef/index.html#//apple_ref/occ/instp/NEFilterManager/enabled">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setEnabled:")
     public native void setEnabled(boolean value);
 
-    /**
-     * loadFromPreferencesWithCompletionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEFilterManagerClassRef/index.html#//apple_ref/occ/instm/NEFilterManager/loadFromPreferencesWithCompletionHandler:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("loadFromPreferencesWithCompletionHandler:")
     public native void loadFromPreferencesWithCompletionHandler(
             @ObjCBlock(name = "call_loadFromPreferencesWithCompletionHandler") Block_loadFromPreferencesWithCompletionHandler completionHandler);
 
-    /**
-     * localizedDescription</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEFilterManagerClassRef/index.html#//apple_ref/occ/instp/NEFilterManager/localizedDescription">iOS Dev Center</a>
-     */
     @Generated
     @Selector("localizedDescription")
     public native String localizedDescription();
 
-    /**
-     * providerConfiguration</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEFilterManagerClassRef/index.html#//apple_ref/occ/instp/NEFilterManager/providerConfiguration">iOS Dev Center</a>
-     */
     @Generated
     @Selector("providerConfiguration")
     public native NEFilterProviderConfiguration providerConfiguration();
 
-    /**
-     * removeFromPreferencesWithCompletionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEFilterManagerClassRef/index.html#//apple_ref/occ/instm/NEFilterManager/removeFromPreferencesWithCompletionHandler:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("removeFromPreferencesWithCompletionHandler:")
     public native void removeFromPreferencesWithCompletionHandler(
             @ObjCBlock(name = "call_removeFromPreferencesWithCompletionHandler") Block_removeFromPreferencesWithCompletionHandler completionHandler);
 
-    /**
-     * saveToPreferencesWithCompletionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEFilterManagerClassRef/index.html#//apple_ref/occ/instm/NEFilterManager/saveToPreferencesWithCompletionHandler:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("saveToPreferencesWithCompletionHandler:")
     public native void saveToPreferencesWithCompletionHandler(
             @ObjCBlock(name = "call_saveToPreferencesWithCompletionHandler") Block_saveToPreferencesWithCompletionHandler completionHandler);
 
-    /**
-     * localizedDescription</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEFilterManagerClassRef/index.html#//apple_ref/occ/instp/NEFilterManager/localizedDescription">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setLocalizedDescription:")
     public native void setLocalizedDescription(String value);
 
-    /**
-     * providerConfiguration</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEFilterManagerClassRef/index.html#//apple_ref/occ/instp/NEFilterManager/providerConfiguration">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setProviderConfiguration:")
     public native void setProviderConfiguration(NEFilterProviderConfiguration value);

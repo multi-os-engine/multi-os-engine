@@ -24,6 +24,7 @@ public final class MCSessionState {
     @Generated @NInt public static final long NotConnected = 0x0000000000000000L;
     @Generated @NInt public static final long Connecting = 0x0000000000000001L;
     @Generated @NInt public static final long Connected = 0x0000000000000002L;
+
     @Generated
     private MCSessionState() {
     }

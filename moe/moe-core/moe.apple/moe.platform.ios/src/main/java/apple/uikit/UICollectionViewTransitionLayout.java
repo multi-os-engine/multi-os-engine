@@ -168,10 +168,6 @@ public class UICollectionViewTransitionLayout extends UICollectionViewLayout {
     @NInt
     public static native long version_static();
 
-    /**
-     * currentLayout</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UICollectionViewTransitionLayout_class/index.html#//apple_ref/occ/instp/UICollectionViewTransitionLayout/currentLayout">iOS Dev Center</a>
-     */
     @Generated
     @Selector("currentLayout")
     public native UICollectionViewLayout currentLayout();
@@ -180,52 +176,28 @@ public class UICollectionViewTransitionLayout extends UICollectionViewLayout {
     @Selector("init")
     public native UICollectionViewTransitionLayout init();
 
-    /**
-     * initWithCurrentLayout:nextLayout:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UICollectionViewTransitionLayout_class/index.html#//apple_ref/occ/instm/UICollectionViewTransitionLayout/initWithCurrentLayout:nextLayout:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithCurrentLayout:nextLayout:")
     public native UICollectionViewTransitionLayout initWithCurrentLayoutNextLayout(UICollectionViewLayout currentLayout,
             UICollectionViewLayout newLayout);
 
-    /**
-     * nextLayout</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UICollectionViewTransitionLayout_class/index.html#//apple_ref/occ/instp/UICollectionViewTransitionLayout/nextLayout">iOS Dev Center</a>
-     */
     @Generated
     @Selector("nextLayout")
     public native UICollectionViewLayout nextLayout();
 
-    /**
-     * transitionProgress</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UICollectionViewTransitionLayout_class/index.html#//apple_ref/occ/instp/UICollectionViewTransitionLayout/transitionProgress">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setTransitionProgress:")
     public native void setTransitionProgress(@NFloat double value);
 
-    /**
-     * transitionProgress</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UICollectionViewTransitionLayout_class/index.html#//apple_ref/occ/instp/UICollectionViewTransitionLayout/transitionProgress">iOS Dev Center</a>
-     */
     @Generated
     @Selector("transitionProgress")
     @NFloat
     public native double transitionProgress();
 
-    /**
-     * updateValue:forAnimatedKey:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UICollectionViewTransitionLayout_class/index.html#//apple_ref/occ/instm/UICollectionViewTransitionLayout/updateValue:forAnimatedKey:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("updateValue:forAnimatedKey:")
     public native void updateValueForAnimatedKey(@NFloat double value, String key);
 
-    /**
-     * valueForAnimatedKey:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UICollectionViewTransitionLayout_class/index.html#//apple_ref/occ/instm/UICollectionViewTransitionLayout/valueForAnimatedKey:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("valueForAnimatedKey:")
     @NFloat

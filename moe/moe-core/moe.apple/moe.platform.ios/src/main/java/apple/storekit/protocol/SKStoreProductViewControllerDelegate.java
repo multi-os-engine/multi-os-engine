@@ -30,10 +30,6 @@ import org.moe.natj.objc.ann.Selector;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("SKStoreProductViewControllerDelegate")
 public interface SKStoreProductViewControllerDelegate {
-    /**
-     * productViewControllerDidFinish:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/StoreKit/Reference/SKITunesProductViewControllerDelegate_ProtocolRef/index.html#//apple_ref/occ/intfm/SKStoreProductViewControllerDelegate/productViewControllerDidFinish:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("productViewControllerDidFinish:")

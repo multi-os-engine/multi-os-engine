@@ -174,10 +174,6 @@ public class GKAchievementViewController extends GKGameCenterViewController {
     @NInt
     public static native long version_static();
 
-    /**
-     * achievementDelegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKAchievementViewController_Ref/index.html#//apple_ref/occ/instp/GKAchievementViewController/achievementDelegate">iOS Dev Center</a>
-     */
     @Generated
     @Selector("achievementDelegate")
     @MappedReturn(ObjCObjectMapper.class)
@@ -200,19 +196,11 @@ public class GKAchievementViewController extends GKGameCenterViewController {
     @Selector("initWithRootViewController:")
     public native GKAchievementViewController initWithRootViewController(UIViewController rootViewController);
 
-    /**
-     * achievementDelegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKAchievementViewController_Ref/index.html#//apple_ref/occ/instp/GKAchievementViewController/achievementDelegate">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setAchievementDelegate:")
     public native void setAchievementDelegate_unsafe(
             @Mapped(ObjCObjectMapper.class) GKAchievementViewControllerDelegate value);
 
-    /**
-     * achievementDelegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKAchievementViewController_Ref/index.html#//apple_ref/occ/instp/GKAchievementViewController/achievementDelegate">iOS Dev Center</a>
-     */
     @Generated
     public void setAchievementDelegate(@Mapped(ObjCObjectMapper.class) GKAchievementViewControllerDelegate value) {
         Object __old = achievementDelegate();

@@ -27,6 +27,7 @@ public final class CFFileSecurityClearOptions {
     @Generated @NUInt public static final long OwnerUUID = 0x0000000000000008L;
     @Generated @NUInt public static final long GroupUUID = 0x0000000000000010L;
     @Generated @NUInt public static final long AccessControlList = 0x0000000000000020L;
+
     @Generated
     private CFFileSecurityClearOptions() {
     }

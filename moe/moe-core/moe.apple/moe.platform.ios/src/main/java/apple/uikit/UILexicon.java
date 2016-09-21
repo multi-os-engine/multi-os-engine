@@ -165,10 +165,6 @@ public class UILexicon extends NSObject implements NSCopying {
     @MappedReturn(ObjCObjectMapper.class)
     public native Object copyWithZone(VoidPtr zone);
 
-    /**
-     * entries</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UILexicon_Class/index.html#//apple_ref/occ/instp/UILexicon/entries">iOS Dev Center</a>
-     */
     @Generated
     @Selector("entries")
     public native NSArray<? extends UILexiconEntry> entries();

@@ -25,6 +25,7 @@ public final class NEVPNIKEv2CertificateType {
     @Generated @NInt public static final long ECDSA256 = 0x0000000000000002L;
     @Generated @NInt public static final long ECDSA384 = 0x0000000000000003L;
     @Generated @NInt public static final long ECDSA521 = 0x0000000000000004L;
+
     @Generated
     private NEVPNIKEv2CertificateType() {
     }

@@ -35,10 +35,6 @@ import org.moe.natj.objc.ann.Selector;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("NSURLSessionDelegate")
 public interface NSURLSessionDelegate {
-    /**
-     * URLSession:didBecomeInvalidWithError:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSURLSessionDelegate_protocol/index.html#//apple_ref/occ/intfm/NSURLSessionDelegate/URLSession:didBecomeInvalidWithError:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("URLSession:didBecomeInvalidWithError:")
@@ -46,10 +42,6 @@ public interface NSURLSessionDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * URLSession:didReceiveChallenge:completionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSURLSessionDelegate_protocol/index.html#//apple_ref/occ/intfm/NSURLSessionDelegate/URLSession:didReceiveChallenge:completionHandler:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("URLSession:didReceiveChallenge:completionHandler:")
@@ -59,10 +51,6 @@ public interface NSURLSessionDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * URLSessionDidFinishEventsForBackgroundURLSession:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSURLSessionDelegate_protocol/index.html#//apple_ref/occ/intfm/NSURLSessionDelegate/URLSessionDidFinishEventsForBackgroundURLSession:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("URLSessionDidFinishEventsForBackgroundURLSession:")

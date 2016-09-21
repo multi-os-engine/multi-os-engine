@@ -189,34 +189,18 @@ public class CAScrollLayer extends CALayer {
     @Selector("initWithLayer:")
     public native CAScrollLayer initWithLayer(@Mapped(ObjCObjectMapper.class) Object layer);
 
-    /**
-     * scrollMode</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/CAScrollLayer_class/index.html#//apple_ref/occ/instp/CAScrollLayer/scrollMode">iOS Dev Center</a>
-     */
     @Generated
     @Selector("scrollMode")
     public native String scrollMode();
 
-    /**
-     * scrollToPoint:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/CAScrollLayer_class/index.html#//apple_ref/occ/instm/CAScrollLayer/scrollToPoint:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("scrollToPoint:")
     public native void scrollToPoint(@ByValue CGPoint p);
 
-    /**
-     * scrollToRect:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/CAScrollLayer_class/index.html#//apple_ref/occ/instm/CAScrollLayer/scrollToRect:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("scrollToRect:")
     public native void scrollToRect(@ByValue CGRect r);
 
-    /**
-     * scrollMode</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/CAScrollLayer_class/index.html#//apple_ref/occ/instp/CAScrollLayer/scrollMode">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setScrollMode:")
     public native void setScrollMode(String value);

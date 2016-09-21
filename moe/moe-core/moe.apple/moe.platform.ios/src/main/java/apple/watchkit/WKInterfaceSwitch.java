@@ -164,42 +164,22 @@ public class WKInterfaceSwitch extends WKInterfaceObject {
     @Selector("init")
     public native WKInterfaceSwitch init();
 
-    /**
-     * setAttributedTitle:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WatchKit/Reference/WKInterfaceSwitch_class/index.html#//apple_ref/occ/instm/WKInterfaceSwitch/setAttributedTitle:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setAttributedTitle:")
     public native void setAttributedTitle(NSAttributedString attributedTitle);
 
-    /**
-     * setColor:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WatchKit/Reference/WKInterfaceSwitch_class/index.html#//apple_ref/occ/instm/WKInterfaceSwitch/setColor:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setColor:")
     public native void setColor(UIColor color);
 
-    /**
-     * setEnabled:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WatchKit/Reference/WKInterfaceSwitch_class/index.html#//apple_ref/occ/instm/WKInterfaceSwitch/setEnabled:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setEnabled:")
     public native void setEnabled(boolean enabled);
 
-    /**
-     * setOn:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WatchKit/Reference/WKInterfaceSwitch_class/index.html#//apple_ref/occ/instm/WKInterfaceSwitch/setOn:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setOn:")
     public native void setOn(boolean on);
 
-    /**
-     * setTitle:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WatchKit/Reference/WKInterfaceSwitch_class/index.html#//apple_ref/occ/instm/WKInterfaceSwitch/setTitle:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setTitle:")
     public native void setTitle(String title);

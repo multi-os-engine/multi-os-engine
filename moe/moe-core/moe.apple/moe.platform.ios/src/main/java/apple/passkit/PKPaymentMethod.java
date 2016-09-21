@@ -158,10 +158,6 @@ public class PKPaymentMethod extends NSObject {
     @NInt
     public static native long version_static();
 
-    /**
-     * displayName</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/PassKit/Reference/PKPaymentMethod_Class/index.html#//apple_ref/occ/instp/PKPaymentMethod/displayName">iOS Dev Center</a>
-     */
     @Generated
     @Selector("displayName")
     public native String displayName();
@@ -170,26 +166,14 @@ public class PKPaymentMethod extends NSObject {
     @Selector("init")
     public native PKPaymentMethod init();
 
-    /**
-     * network</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/PassKit/Reference/PKPaymentMethod_Class/index.html#//apple_ref/occ/instp/PKPaymentMethod/network">iOS Dev Center</a>
-     */
     @Generated
     @Selector("network")
     public native String network();
 
-    /**
-     * paymentPass</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/PassKit/Reference/PKPaymentMethod_Class/index.html#//apple_ref/occ/instp/PKPaymentMethod/paymentPass">iOS Dev Center</a>
-     */
     @Generated
     @Selector("paymentPass")
     public native PKPaymentPass paymentPass();
 
-    /**
-     * type</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/PassKit/Reference/PKPaymentMethod_Class/index.html#//apple_ref/occ/instp/PKPaymentMethod/type">iOS Dev Center</a>
-     */
     @Generated
     @Selector("type")
     @NUInt

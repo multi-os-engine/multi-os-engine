@@ -61,10 +61,6 @@ public class SKPhysicsJointFixed extends SKPhysicsJoint {
     @Selector("alloc")
     public static native SKPhysicsJointFixed alloc();
 
-    /**
-     * jointWithBodyA:bodyB:anchor:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKPhysicsJointFixed_Ref/index.html#//apple_ref/occ/clm/SKPhysicsJointFixed/jointWithBodyA:bodyB:anchor:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("jointWithBodyA:bodyB:anchor:")
     public static native SKPhysicsJointFixed jointWithBodyABodyBAnchor(SKPhysicsBody bodyA, SKPhysicsBody bodyB,

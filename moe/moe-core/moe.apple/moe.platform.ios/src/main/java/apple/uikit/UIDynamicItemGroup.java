@@ -189,18 +189,10 @@ public class UIDynamicItemGroup extends NSObject implements UIDynamicItem {
     @Selector("init")
     public native UIDynamicItemGroup init();
 
-    /**
-     * initWithItems:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIDynamicItemGroup_class/index.html#//apple_ref/occ/instm/UIDynamicItemGroup/initWithItems:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithItems:")
     public native UIDynamicItemGroup initWithItems(NSArray<?> items);
 
-    /**
-     * items</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIDynamicItemGroup_class/index.html#//apple_ref/occ/instp/UIDynamicItemGroup/items">iOS Dev Center</a>
-     */
     @Generated
     @Selector("items")
     public native NSArray<?> items();

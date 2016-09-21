@@ -164,35 +164,19 @@ public class UIPopoverController extends NSObject implements UIAppearanceContain
     @NInt
     public static native long version_static();
 
-    /**
-     * backgroundColor</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPopoverController_class/index.html#//apple_ref/occ/instp/UIPopoverController/backgroundColor">iOS Dev Center</a>
-     */
     @Generated
     @Selector("backgroundColor")
     public native UIColor backgroundColor();
 
-    /**
-     * contentViewController</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPopoverController_class/index.html#//apple_ref/occ/instp/UIPopoverController/contentViewController">iOS Dev Center</a>
-     */
     @Generated
     @Selector("contentViewController")
     public native UIViewController contentViewController();
 
-    /**
-     * delegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPopoverController_class/index.html#//apple_ref/occ/instp/UIPopoverController/delegate">iOS Dev Center</a>
-     */
     @Generated
     @Selector("delegate")
     @MappedReturn(ObjCObjectMapper.class)
     public native UIPopoverControllerDelegate delegate();
 
-    /**
-     * dismissPopoverAnimated:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPopoverController_class/index.html#//apple_ref/occ/instm/UIPopoverController/dismissPopoverAnimated:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("dismissPopoverAnimated:")
     public native void dismissPopoverAnimated(boolean animated);
@@ -201,119 +185,63 @@ public class UIPopoverController extends NSObject implements UIAppearanceContain
     @Selector("init")
     public native UIPopoverController init();
 
-    /**
-     * initWithContentViewController:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPopoverController_class/index.html#//apple_ref/occ/instm/UIPopoverController/initWithContentViewController:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithContentViewController:")
     public native UIPopoverController initWithContentViewController(UIViewController viewController);
 
-    /**
-     * popoverVisible</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPopoverController_class/index.html#//apple_ref/occ/instp/UIPopoverController/popoverVisible">iOS Dev Center</a>
-     */
     @Generated
     @Selector("isPopoverVisible")
     public native boolean isPopoverVisible();
 
-    /**
-     * passthroughViews</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPopoverController_class/index.html#//apple_ref/occ/instp/UIPopoverController/passthroughViews">iOS Dev Center</a>
-     */
     @Generated
     @Selector("passthroughViews")
     public native NSArray<? extends UIView> passthroughViews();
 
-    /**
-     * popoverArrowDirection</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPopoverController_class/index.html#//apple_ref/occ/instp/UIPopoverController/popoverArrowDirection">iOS Dev Center</a>
-     */
     @Generated
     @Selector("popoverArrowDirection")
     @NUInt
     public native long popoverArrowDirection();
 
-    /**
-     * popoverBackgroundViewClass</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPopoverController_class/index.html#//apple_ref/occ/instp/UIPopoverController/popoverBackgroundViewClass">iOS Dev Center</a>
-     */
     @Generated
     @Selector("popoverBackgroundViewClass")
     public native Class popoverBackgroundViewClass();
 
-    /**
-     * popoverContentSize</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPopoverController_class/index.html#//apple_ref/occ/instp/UIPopoverController/popoverContentSize">iOS Dev Center</a>
-     */
     @Generated
     @Selector("popoverContentSize")
     @ByValue
     public native CGSize popoverContentSize();
 
-    /**
-     * popoverLayoutMargins</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPopoverController_class/index.html#//apple_ref/occ/instp/UIPopoverController/popoverLayoutMargins">iOS Dev Center</a>
-     */
     @Generated
     @Selector("popoverLayoutMargins")
     @ByValue
     public native UIEdgeInsets popoverLayoutMargins();
 
-    /**
-     * presentPopoverFromBarButtonItem:permittedArrowDirections:animated:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPopoverController_class/index.html#//apple_ref/occ/instm/UIPopoverController/presentPopoverFromBarButtonItem:permittedArrowDirections:animated:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("presentPopoverFromBarButtonItem:permittedArrowDirections:animated:")
     public native void presentPopoverFromBarButtonItemPermittedArrowDirectionsAnimated(UIBarButtonItem item,
             @NUInt long arrowDirections, boolean animated);
 
-    /**
-     * presentPopoverFromRect:inView:permittedArrowDirections:animated:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPopoverController_class/index.html#//apple_ref/occ/instm/UIPopoverController/presentPopoverFromRect:inView:permittedArrowDirections:animated:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("presentPopoverFromRect:inView:permittedArrowDirections:animated:")
     public native void presentPopoverFromRectInViewPermittedArrowDirectionsAnimated(@ByValue CGRect rect, UIView view,
             @NUInt long arrowDirections, boolean animated);
 
-    /**
-     * backgroundColor</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPopoverController_class/index.html#//apple_ref/occ/instp/UIPopoverController/backgroundColor">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setBackgroundColor:")
     public native void setBackgroundColor(UIColor value);
 
-    /**
-     * contentViewController</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPopoverController_class/index.html#//apple_ref/occ/instp/UIPopoverController/contentViewController">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setContentViewController:")
     public native void setContentViewController(UIViewController value);
 
-    /**
-     * setContentViewController:animated:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPopoverController_class/index.html#//apple_ref/occ/instm/UIPopoverController/setContentViewController:animated:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setContentViewController:animated:")
     public native void setContentViewControllerAnimated(UIViewController viewController, boolean animated);
 
-    /**
-     * delegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPopoverController_class/index.html#//apple_ref/occ/instp/UIPopoverController/delegate">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setDelegate:")
     public native void setDelegate_unsafe(@Mapped(ObjCObjectMapper.class) UIPopoverControllerDelegate value);
 
-    /**
-     * delegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPopoverController_class/index.html#//apple_ref/occ/instp/UIPopoverController/delegate">iOS Dev Center</a>
-     */
     @Generated
     public void setDelegate(@Mapped(ObjCObjectMapper.class) UIPopoverControllerDelegate value) {
         Object __old = delegate();
@@ -326,42 +254,22 @@ public class UIPopoverController extends NSObject implements UIAppearanceContain
         }
     }
 
-    /**
-     * passthroughViews</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPopoverController_class/index.html#//apple_ref/occ/instp/UIPopoverController/passthroughViews">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setPassthroughViews:")
     public native void setPassthroughViews(NSArray<? extends UIView> value);
 
-    /**
-     * popoverBackgroundViewClass</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPopoverController_class/index.html#//apple_ref/occ/instp/UIPopoverController/popoverBackgroundViewClass">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setPopoverBackgroundViewClass:")
     public native void setPopoverBackgroundViewClass(Class value);
 
-    /**
-     * popoverContentSize</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPopoverController_class/index.html#//apple_ref/occ/instp/UIPopoverController/popoverContentSize">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setPopoverContentSize:")
     public native void setPopoverContentSize(@ByValue CGSize value);
 
-    /**
-     * setPopoverContentSize:animated:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPopoverController_class/index.html#//apple_ref/occ/instm/UIPopoverController/setPopoverContentSize:animated:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setPopoverContentSize:animated:")
     public native void setPopoverContentSizeAnimated(@ByValue CGSize size, boolean animated);
 
-    /**
-     * popoverLayoutMargins</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPopoverController_class/index.html#//apple_ref/occ/instp/UIPopoverController/popoverLayoutMargins">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setPopoverLayoutMargins:")
     public native void setPopoverLayoutMargins(@ByValue UIEdgeInsets value);

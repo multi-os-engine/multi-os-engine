@@ -32,19 +32,11 @@ import org.moe.natj.objc.ann.Selector;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("GKTurnBasedEventHandlerDelegate")
 public interface GKTurnBasedEventHandlerDelegate {
-    /**
-     * handleInviteFromGameCenter:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKTurnBasedEventHandlerDelegate_Ref/index.html#//apple_ref/occ/intfm/GKTurnBasedEventHandlerDelegate/handleInviteFromGameCenter:">iOS Dev Center</a>
-     */
     @Generated
     @Deprecated
     @Selector("handleInviteFromGameCenter:")
     void handleInviteFromGameCenter(NSArray<? extends GKPlayer> playersToInvite);
 
-    /**
-     * handleMatchEnded:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKTurnBasedEventHandlerDelegate_Ref/index.html#//apple_ref/occ/intfm/GKTurnBasedEventHandlerDelegate/handleMatchEnded:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Deprecated
@@ -53,10 +45,6 @@ public interface GKTurnBasedEventHandlerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * handleTurnEventForMatch:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKTurnBasedEventHandlerDelegate_Ref/index.html#//apple_ref/occ/intfm/GKTurnBasedEventHandlerDelegate/handleTurnEventForMatch:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Deprecated
@@ -65,10 +53,6 @@ public interface GKTurnBasedEventHandlerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * handleTurnEventForMatch:didBecomeActive:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKTurnBasedEventHandlerDelegate_Ref/index.html#//apple_ref/occ/intfm/GKTurnBasedEventHandlerDelegate/handleTurnEventForMatch:didBecomeActive:">iOS Dev Center</a>
-     */
     @Generated
     @Deprecated
     @Selector("handleTurnEventForMatch:didBecomeActive:")

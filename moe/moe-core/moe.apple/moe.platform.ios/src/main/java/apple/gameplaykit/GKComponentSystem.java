@@ -161,34 +161,18 @@ public class GKComponentSystem<_ComponentType> extends NSObject implements NSFas
     @NInt
     public static native long version_static();
 
-    /**
-     * addComponent:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameplayKit/Reference/GKComponentSystem_Class/index.html#//apple_ref/occ/instm/GKComponentSystem/addComponent:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("addComponent:")
     public native void addComponent(GKComponent component);
 
-    /**
-     * addComponentWithEntity:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameplayKit/Reference/GKComponentSystem_Class/index.html#//apple_ref/occ/instm/GKComponentSystem/addComponentWithEntity:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("addComponentWithEntity:")
     public native void addComponentWithEntity(GKEntity entity);
 
-    /**
-     * componentClass</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameplayKit/Reference/GKComponentSystem_Class/index.html#//apple_ref/occ/instp/GKComponentSystem/componentClass">iOS Dev Center</a>
-     */
     @Generated
     @Selector("componentClass")
     public native Class componentClass();
 
-    /**
-     * components</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameplayKit/Reference/GKComponentSystem_Class/index.html#//apple_ref/occ/instp/GKComponentSystem/components">iOS Dev Center</a>
-     */
     @Generated
     @Selector("components")
     public native NSArray<? extends GKComponent> components();
@@ -202,42 +186,22 @@ public class GKComponentSystem<_ComponentType> extends NSObject implements NSFas
     @Selector("init")
     public native GKComponentSystem<?> init();
 
-    /**
-     * initWithComponentClass:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameplayKit/Reference/GKComponentSystem_Class/index.html#//apple_ref/occ/instm/GKComponentSystem/initWithComponentClass:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithComponentClass:")
     public native GKComponentSystem<?> initWithComponentClass(Class cls);
 
-    /**
-     * objectAtIndexedSubscript:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameplayKit/Reference/GKComponentSystem_Class/index.html#//apple_ref/occ/instm/GKComponentSystem/objectAtIndexedSubscript:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("objectAtIndexedSubscript:")
     public native GKComponent objectAtIndexedSubscript(@NUInt long idx);
 
-    /**
-     * removeComponent:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameplayKit/Reference/GKComponentSystem_Class/index.html#//apple_ref/occ/instm/GKComponentSystem/removeComponent:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("removeComponent:")
     public native void removeComponent(GKComponent component);
 
-    /**
-     * removeComponentWithEntity:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameplayKit/Reference/GKComponentSystem_Class/index.html#//apple_ref/occ/instm/GKComponentSystem/removeComponentWithEntity:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("removeComponentWithEntity:")
     public native void removeComponentWithEntity(GKEntity entity);
 
-    /**
-     * updateWithDeltaTime:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameplayKit/Reference/GKComponentSystem_Class/index.html#//apple_ref/occ/instm/GKComponentSystem/updateWithDeltaTime:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("updateWithDeltaTime:")
     public native void updateWithDeltaTime(double seconds);

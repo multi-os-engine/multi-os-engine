@@ -59,28 +59,16 @@ public class NSException extends NSObject implements NSCopying, NSCoding {
     @Selector("alloc")
     public static native NSException alloc();
 
-    /**
-     * exceptionWithName:reason:userInfo:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSException_Class/index.html#//apple_ref/occ/clm/NSException/exceptionWithName:reason:userInfo:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("exceptionWithName:reason:userInfo:")
     public static native NSException exceptionWithNameReasonUserInfo(String name, String reason,
             NSDictionary<?, ?> userInfo);
 
-    /**
-     * raise:format:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSException_Class/index.html#//apple_ref/occ/clm/NSException/raise:format:">iOS Dev Center</a>
-     */
     @Generated
     @Variadic()
     @Selector("raise:format:")
     public static native void raiseFormat(String name, String format, Object... varargs);
 
-    /**
-     * raise:format:arguments:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSException_Class/index.html#//apple_ref/occ/clm/NSException/raise:format:arguments:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("raise:format:arguments:")
     public static native void raiseFormatArguments(String name, String format, BytePtr argList);
@@ -185,18 +173,10 @@ public class NSException extends NSObject implements NSCopying, NSCoding {
     @NInt
     public static native long version_static();
 
-    /**
-     * callStackReturnAddresses</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSException_Class/index.html#//apple_ref/occ/instp/NSException/callStackReturnAddresses">iOS Dev Center</a>
-     */
     @Generated
     @Selector("callStackReturnAddresses")
     public native NSArray<? extends NSNumber> callStackReturnAddresses();
 
-    /**
-     * callStackSymbols</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSException_Class/index.html#//apple_ref/occ/instp/NSException/callStackSymbols">iOS Dev Center</a>
-     */
     @Generated
     @Selector("callStackSymbols")
     public native NSArray<String> callStackSymbols();
@@ -219,42 +199,22 @@ public class NSException extends NSObject implements NSCopying, NSCoding {
     @Selector("initWithCoder:")
     public native NSException initWithCoder(NSCoder aDecoder);
 
-    /**
-     * initWithName:reason:userInfo:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSException_Class/index.html#//apple_ref/occ/instm/NSException/initWithName:reason:userInfo:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithName:reason:userInfo:")
     public native NSException initWithNameReasonUserInfo(String aName, String aReason, NSDictionary<?, ?> aUserInfo);
 
-    /**
-     * name</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSException_Class/index.html#//apple_ref/occ/instp/NSException/name">iOS Dev Center</a>
-     */
     @Generated
     @Selector("name")
     public native String name();
 
-    /**
-     * raise</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSException_Class/index.html#//apple_ref/occ/instm/NSException/raise">iOS Dev Center</a>
-     */
     @Generated
     @Selector("raise")
     public native void raise();
 
-    /**
-     * reason</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSException_Class/index.html#//apple_ref/occ/instp/NSException/reason">iOS Dev Center</a>
-     */
     @Generated
     @Selector("reason")
     public native String reason();
 
-    /**
-     * userInfo</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSException_Class/index.html#//apple_ref/occ/instp/NSException/userInfo">iOS Dev Center</a>
-     */
     @Generated
     @Selector("userInfo")
     public native NSDictionary<?, ?> userInfo();

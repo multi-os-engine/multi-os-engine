@@ -167,18 +167,10 @@ public class AVAudioUnitDelay extends AVAudioUnitEffect {
     @NInt
     public static native long version_static();
 
-    /**
-     * delayTime</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioUnitDelay_Class/index.html#//apple_ref/occ/instp/AVAudioUnitDelay/delayTime">iOS Dev Center</a>
-     */
     @Generated
     @Selector("delayTime")
     public native double delayTime();
 
-    /**
-     * feedback</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioUnitDelay_Class/index.html#//apple_ref/occ/instp/AVAudioUnitDelay/feedback">iOS Dev Center</a>
-     */
     @Generated
     @Selector("feedback")
     public native float feedback();
@@ -192,50 +184,26 @@ public class AVAudioUnitDelay extends AVAudioUnitEffect {
     public native AVAudioUnitDelay initWithAudioComponentDescription(
             @ByValue AudioComponentDescription audioComponentDescription);
 
-    /**
-     * lowPassCutoff</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioUnitDelay_Class/index.html#//apple_ref/occ/instp/AVAudioUnitDelay/lowPassCutoff">iOS Dev Center</a>
-     */
     @Generated
     @Selector("lowPassCutoff")
     public native float lowPassCutoff();
 
-    /**
-     * delayTime</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioUnitDelay_Class/index.html#//apple_ref/occ/instp/AVAudioUnitDelay/delayTime">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setDelayTime:")
     public native void setDelayTime(double value);
 
-    /**
-     * feedback</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioUnitDelay_Class/index.html#//apple_ref/occ/instp/AVAudioUnitDelay/feedback">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setFeedback:")
     public native void setFeedback(float value);
 
-    /**
-     * lowPassCutoff</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioUnitDelay_Class/index.html#//apple_ref/occ/instp/AVAudioUnitDelay/lowPassCutoff">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setLowPassCutoff:")
     public native void setLowPassCutoff(float value);
 
-    /**
-     * wetDryMix</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioUnitDelay_Class/index.html#//apple_ref/occ/instp/AVAudioUnitDelay/wetDryMix">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setWetDryMix:")
     public native void setWetDryMix(float value);
 
-    /**
-     * wetDryMix</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioUnitDelay_Class/index.html#//apple_ref/occ/instp/AVAudioUnitDelay/wetDryMix">iOS Dev Center</a>
-     */
     @Generated
     @Selector("wetDryMix")
     public native float wetDryMix();

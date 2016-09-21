@@ -57,20 +57,12 @@ public class NSDecimalNumberHandler extends NSObject implements NSDecimalNumberB
     @Selector("alloc")
     public static native NSDecimalNumberHandler alloc();
 
-    /**
-     * decimalNumberHandlerWithRoundingMode:scale:raiseOnExactness:raiseOnOverflow:raiseOnUnderflow:raiseOnDivideByZero:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSDecimalNumberHandler_Class/index.html#//apple_ref/occ/clm/NSDecimalNumberHandler/decimalNumberHandlerWithRoundingMode:scale:raiseOnExactness:raiseOnOverflow:raiseOnUnderflow:raiseOnDivideByZero:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("decimalNumberHandlerWithRoundingMode:scale:raiseOnExactness:raiseOnOverflow:raiseOnUnderflow:raiseOnDivideByZero:")
     public static native NSDecimalNumberHandler decimalNumberHandlerWithRoundingModeScaleRaiseOnExactnessRaiseOnOverflowRaiseOnUnderflowRaiseOnDivideByZero(
             @NUInt long roundingMode, short scale, boolean exact, boolean overflow, boolean underflow,
             boolean divideByZero);
 
-    /**
-     * defaultDecimalNumberHandler</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSDecimalNumberHandler_Class/index.html#//apple_ref/occ/clm/NSDecimalNumberHandler/defaultDecimalNumberHandler">iOS Dev Center</a>
-     */
     @Generated
     @Selector("defaultDecimalNumberHandler")
     public static native NSDecimalNumberHandler defaultDecimalNumberHandler();
@@ -192,10 +184,6 @@ public class NSDecimalNumberHandler extends NSObject implements NSDecimalNumberB
     @Selector("initWithCoder:")
     public native NSDecimalNumberHandler initWithCoder(NSCoder aDecoder);
 
-    /**
-     * initWithRoundingMode:scale:raiseOnExactness:raiseOnOverflow:raiseOnUnderflow:raiseOnDivideByZero:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSDecimalNumberHandler_Class/index.html#//apple_ref/occ/instm/NSDecimalNumberHandler/initWithRoundingMode:scale:raiseOnExactness:raiseOnOverflow:raiseOnUnderflow:raiseOnDivideByZero:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithRoundingMode:scale:raiseOnExactness:raiseOnOverflow:raiseOnUnderflow:raiseOnDivideByZero:")
     public native NSDecimalNumberHandler initWithRoundingModeScaleRaiseOnExactnessRaiseOnOverflowRaiseOnUnderflowRaiseOnDivideByZero(

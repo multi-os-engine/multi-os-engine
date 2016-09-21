@@ -60,10 +60,6 @@ public class MKDirectionsRequest extends NSObject {
     @Selector("alloc")
     public static native MKDirectionsRequest alloc();
 
-    /**
-     * isDirectionsRequestURL:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKDirectionsRequest_class/index.html#//apple_ref/occ/clm/MKDirectionsRequest/isDirectionsRequestURL:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("isDirectionsRequestURL:")
     public static native boolean isDirectionsRequestURL(NSURL url);
@@ -168,26 +164,14 @@ public class MKDirectionsRequest extends NSObject {
     @NInt
     public static native long version_static();
 
-    /**
-     * arrivalDate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKDirectionsRequest_class/index.html#//apple_ref/occ/instp/MKDirectionsRequest/arrivalDate">iOS Dev Center</a>
-     */
     @Generated
     @Selector("arrivalDate")
     public native NSDate arrivalDate();
 
-    /**
-     * departureDate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKDirectionsRequest_class/index.html#//apple_ref/occ/instp/MKDirectionsRequest/departureDate">iOS Dev Center</a>
-     */
     @Generated
     @Selector("departureDate")
     public native NSDate departureDate();
 
-    /**
-     * destination</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKDirectionsRequest_class/index.html#//apple_ref/occ/instp/MKDirectionsRequest/destination">iOS Dev Center</a>
-     */
     @Generated
     @Selector("destination")
     public native MKMapItem destination();
@@ -196,82 +180,42 @@ public class MKDirectionsRequest extends NSObject {
     @Selector("init")
     public native MKDirectionsRequest init();
 
-    /**
-     * initWithContentsOfURL:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKDirectionsRequest_class/index.html#//apple_ref/occ/instm/MKDirectionsRequest/initWithContentsOfURL:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithContentsOfURL:")
     public native MKDirectionsRequest initWithContentsOfURL(NSURL url);
 
-    /**
-     * requestsAlternateRoutes</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKDirectionsRequest_class/index.html#//apple_ref/occ/instp/MKDirectionsRequest/requestsAlternateRoutes">iOS Dev Center</a>
-     */
     @Generated
     @Selector("requestsAlternateRoutes")
     public native boolean requestsAlternateRoutes();
 
-    /**
-     * arrivalDate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKDirectionsRequest_class/index.html#//apple_ref/occ/instp/MKDirectionsRequest/arrivalDate">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setArrivalDate:")
     public native void setArrivalDate(NSDate value);
 
-    /**
-     * departureDate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKDirectionsRequest_class/index.html#//apple_ref/occ/instp/MKDirectionsRequest/departureDate">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setDepartureDate:")
     public native void setDepartureDate(NSDate value);
 
-    /**
-     * setDestination:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKDirectionsRequest_class/index.html#//apple_ref/occ/instm/MKDirectionsRequest/setDestination:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setDestination:")
     public native void setDestination(MKMapItem destination);
 
-    /**
-     * requestsAlternateRoutes</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKDirectionsRequest_class/index.html#//apple_ref/occ/instp/MKDirectionsRequest/requestsAlternateRoutes">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setRequestsAlternateRoutes:")
     public native void setRequestsAlternateRoutes(boolean value);
 
-    /**
-     * setSource:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKDirectionsRequest_class/index.html#//apple_ref/occ/instm/MKDirectionsRequest/setSource:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setSource:")
     public native void setSource(MKMapItem source);
 
-    /**
-     * transportType</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKDirectionsRequest_class/index.html#//apple_ref/occ/instp/MKDirectionsRequest/transportType">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setTransportType:")
     public native void setTransportType(@NUInt long value);
 
-    /**
-     * source</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKDirectionsRequest_class/index.html#//apple_ref/occ/instp/MKDirectionsRequest/source">iOS Dev Center</a>
-     */
     @Generated
     @Selector("source")
     public native MKMapItem source();
 
-    /**
-     * transportType</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKDirectionsRequest_class/index.html#//apple_ref/occ/instp/MKDirectionsRequest/transportType">iOS Dev Center</a>
-     */
     @Generated
     @Selector("transportType")
     @NUInt

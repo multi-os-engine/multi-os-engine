@@ -65,10 +65,6 @@ public class AVAssetWriter extends NSObject {
     @Selector("alloc")
     public static native AVAssetWriter alloc();
 
-    /**
-     * assetWriterWithURL:fileType:error:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAssetWriter_Class/index.html#//apple_ref/occ/clm/AVAssetWriter/assetWriterWithURL:fileType:error:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("assetWriterWithURL:fileType:error:")
     public static native AVAssetWriter assetWriterWithURLFileTypeError(NSURL outputURL, String outputFileType,
@@ -174,99 +170,51 @@ public class AVAssetWriter extends NSObject {
     @NInt
     public static native long version_static();
 
-    /**
-     * addInput:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAssetWriter_Class/index.html#//apple_ref/occ/instm/AVAssetWriter/addInput:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("addInput:")
     public native void addInput(AVAssetWriterInput input);
 
-    /**
-     * addInputGroup:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAssetWriter_Class/index.html#//apple_ref/occ/instm/AVAssetWriter/addInputGroup:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("addInputGroup:")
     public native void addInputGroup(AVAssetWriterInputGroup inputGroup);
 
-    /**
-     * availableMediaTypes</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAssetWriter_Class/index.html#//apple_ref/occ/instp/AVAssetWriter/availableMediaTypes">iOS Dev Center</a>
-     */
     @Generated
     @Selector("availableMediaTypes")
     public native NSArray<String> availableMediaTypes();
 
-    /**
-     * canAddInput:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAssetWriter_Class/index.html#//apple_ref/occ/instm/AVAssetWriter/canAddInput:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("canAddInput:")
     public native boolean canAddInput(AVAssetWriterInput input);
 
-    /**
-     * canAddInputGroup:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAssetWriter_Class/index.html#//apple_ref/occ/instm/AVAssetWriter/canAddInputGroup:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("canAddInputGroup:")
     public native boolean canAddInputGroup(AVAssetWriterInputGroup inputGroup);
 
-    /**
-     * canApplyOutputSettings:forMediaType:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAssetWriter_Class/index.html#//apple_ref/occ/instm/AVAssetWriter/canApplyOutputSettings:forMediaType:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("canApplyOutputSettings:forMediaType:")
     public native boolean canApplyOutputSettingsForMediaType(NSDictionary<String, ?> outputSettings, String mediaType);
 
-    /**
-     * cancelWriting</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAssetWriter_Class/index.html#//apple_ref/occ/instm/AVAssetWriter/cancelWriting">iOS Dev Center</a>
-     */
     @Generated
     @Selector("cancelWriting")
     public native void cancelWriting();
 
-    /**
-     * directoryForTemporaryFiles</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAssetWriter_Class/index.html#//apple_ref/occ/instp/AVAssetWriter/directoryForTemporaryFiles">iOS Dev Center</a>
-     */
     @Generated
     @Selector("directoryForTemporaryFiles")
     public native NSURL directoryForTemporaryFiles();
 
-    /**
-     * endSessionAtSourceTime:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAssetWriter_Class/index.html#//apple_ref/occ/instm/AVAssetWriter/endSessionAtSourceTime:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("endSessionAtSourceTime:")
     public native void endSessionAtSourceTime(@ByValue CMTime endTime);
 
-    /**
-     * error</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAssetWriter_Class/index.html#//apple_ref/occ/instp/AVAssetWriter/error">iOS Dev Center</a>
-     */
     @Generated
     @Selector("error")
     public native NSError error();
 
-    /**
-     * finishWriting</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAssetWriter_Class/index.html#//apple_ref/occ/instm/AVAssetWriter/finishWriting">iOS Dev Center</a>
-     */
     @Generated
     @Deprecated
     @Selector("finishWriting")
     public native boolean finishWriting();
 
-    /**
-     * finishWritingWithCompletionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAssetWriter_Class/index.html#//apple_ref/occ/instm/AVAssetWriter/finishWritingWithCompletionHandler:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("finishWritingWithCompletionHandler:")
     public native void finishWritingWithCompletionHandler(
@@ -276,139 +224,71 @@ public class AVAssetWriter extends NSObject {
     @Selector("init")
     public native AVAssetWriter init();
 
-    /**
-     * initWithURL:fileType:error:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAssetWriter_Class/index.html#//apple_ref/occ/instm/AVAssetWriter/initWithURL:fileType:error:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithURL:fileType:error:")
     public native AVAssetWriter initWithURLFileTypeError(NSURL outputURL, String outputFileType, Ptr<NSError> outError);
 
-    /**
-     * inputGroups</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAssetWriter_Class/index.html#//apple_ref/occ/instp/AVAssetWriter/inputGroups">iOS Dev Center</a>
-     */
     @Generated
     @Selector("inputGroups")
     public native NSArray<? extends AVAssetWriterInputGroup> inputGroups();
 
-    /**
-     * inputs</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAssetWriter_Class/index.html#//apple_ref/occ/instp/AVAssetWriter/inputs">iOS Dev Center</a>
-     */
     @Generated
     @Selector("inputs")
     public native NSArray<? extends AVAssetWriterInput> inputs();
 
-    /**
-     * metadata</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAssetWriter_Class/index.html#//apple_ref/occ/instp/AVAssetWriter/metadata">iOS Dev Center</a>
-     */
     @Generated
     @Selector("metadata")
     public native NSArray<? extends AVMetadataItem> metadata();
 
-    /**
-     * movieFragmentInterval</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAssetWriter_Class/index.html#//apple_ref/occ/instp/AVAssetWriter/movieFragmentInterval">iOS Dev Center</a>
-     */
     @Generated
     @Selector("movieFragmentInterval")
     @ByValue
     public native CMTime movieFragmentInterval();
 
-    /**
-     * movieTimeScale</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAssetWriter_Class/index.html#//apple_ref/occ/instp/AVAssetWriter/movieTimeScale">iOS Dev Center</a>
-     */
     @Generated
     @Selector("movieTimeScale")
     public native int movieTimeScale();
 
-    /**
-     * outputFileType</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAssetWriter_Class/index.html#//apple_ref/occ/instp/AVAssetWriter/outputFileType">iOS Dev Center</a>
-     */
     @Generated
     @Selector("outputFileType")
     public native String outputFileType();
 
-    /**
-     * outputURL</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAssetWriter_Class/index.html#//apple_ref/occ/instp/AVAssetWriter/outputURL">iOS Dev Center</a>
-     */
     @Generated
     @Selector("outputURL")
     public native NSURL outputURL();
 
-    /**
-     * directoryForTemporaryFiles</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAssetWriter_Class/index.html#//apple_ref/occ/instp/AVAssetWriter/directoryForTemporaryFiles">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setDirectoryForTemporaryFiles:")
     public native void setDirectoryForTemporaryFiles(NSURL value);
 
-    /**
-     * metadata</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAssetWriter_Class/index.html#//apple_ref/occ/instp/AVAssetWriter/metadata">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setMetadata:")
     public native void setMetadata(NSArray<? extends AVMetadataItem> value);
 
-    /**
-     * movieFragmentInterval</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAssetWriter_Class/index.html#//apple_ref/occ/instp/AVAssetWriter/movieFragmentInterval">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setMovieFragmentInterval:")
     public native void setMovieFragmentInterval(@ByValue CMTime value);
 
-    /**
-     * movieTimeScale</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAssetWriter_Class/index.html#//apple_ref/occ/instp/AVAssetWriter/movieTimeScale">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setMovieTimeScale:")
     public native void setMovieTimeScale(int value);
 
-    /**
-     * shouldOptimizeForNetworkUse</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAssetWriter_Class/index.html#//apple_ref/occ/instp/AVAssetWriter/shouldOptimizeForNetworkUse">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setShouldOptimizeForNetworkUse:")
     public native void setShouldOptimizeForNetworkUse(boolean value);
 
-    /**
-     * shouldOptimizeForNetworkUse</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAssetWriter_Class/index.html#//apple_ref/occ/instp/AVAssetWriter/shouldOptimizeForNetworkUse">iOS Dev Center</a>
-     */
     @Generated
     @Selector("shouldOptimizeForNetworkUse")
     public native boolean shouldOptimizeForNetworkUse();
 
-    /**
-     * startSessionAtSourceTime:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAssetWriter_Class/index.html#//apple_ref/occ/instm/AVAssetWriter/startSessionAtSourceTime:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("startSessionAtSourceTime:")
     public native void startSessionAtSourceTime(@ByValue CMTime startTime);
 
-    /**
-     * startWriting</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAssetWriter_Class/index.html#//apple_ref/occ/instm/AVAssetWriter/startWriting">iOS Dev Center</a>
-     */
     @Generated
     @Selector("startWriting")
     public native boolean startWriting();
 
-    /**
-     * status</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAssetWriter_Class/index.html#//apple_ref/occ/instp/AVAssetWriter/status">iOS Dev Center</a>
-     */
     @Generated
     @Selector("status")
     @NInt

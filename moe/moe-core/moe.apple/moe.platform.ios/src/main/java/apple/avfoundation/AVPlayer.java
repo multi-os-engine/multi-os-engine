@@ -66,18 +66,10 @@ public class AVPlayer extends NSObject {
     @Selector("alloc")
     public static native AVPlayer alloc();
 
-    /**
-     * playerWithPlayerItem:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVPlayer_Class/index.html#//apple_ref/occ/clm/AVPlayer/playerWithPlayerItem:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("playerWithPlayerItem:")
     public static native AVPlayer playerWithPlayerItem(AVPlayerItem item);
 
-    /**
-     * playerWithURL:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVPlayer_Class/index.html#//apple_ref/occ/clm/AVPlayer/playerWithURL:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("playerWithURL:")
     public static native AVPlayer playerWithURL(NSURL URL);
@@ -182,19 +174,11 @@ public class AVPlayer extends NSObject {
     @NInt
     public static native long version_static();
 
-    /**
-     * actionAtItemEnd</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVPlayer_Class/index.html#//apple_ref/occ/instp/AVPlayer/actionAtItemEnd">iOS Dev Center</a>
-     */
     @Generated
     @Selector("actionAtItemEnd")
     @NInt
     public native long actionAtItemEnd();
 
-    /**
-     * addBoundaryTimeObserverForTimes:queue:usingBlock:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVPlayer_Class/index.html#//apple_ref/occ/instm/AVPlayer/addBoundaryTimeObserverForTimes:queue:usingBlock:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("addBoundaryTimeObserverForTimes:queue:usingBlock:")
     @MappedReturn(ObjCObjectMapper.class)
@@ -202,78 +186,42 @@ public class AVPlayer extends NSObject {
             NSObject queue,
             @ObjCBlock(name = "call_addBoundaryTimeObserverForTimesQueueUsingBlock") Block_addBoundaryTimeObserverForTimesQueueUsingBlock block);
 
-    /**
-     * addPeriodicTimeObserverForInterval:queue:usingBlock:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVPlayer_Class/index.html#//apple_ref/occ/instm/AVPlayer/addPeriodicTimeObserverForInterval:queue:usingBlock:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("addPeriodicTimeObserverForInterval:queue:usingBlock:")
     @MappedReturn(ObjCObjectMapper.class)
     public native Object addPeriodicTimeObserverForIntervalQueueUsingBlock(@ByValue CMTime interval, NSObject queue,
             @ObjCBlock(name = "call_addPeriodicTimeObserverForIntervalQueueUsingBlock") Block_addPeriodicTimeObserverForIntervalQueueUsingBlock block);
 
-    /**
-     * allowsAirPlayVideo</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVPlayer_Class/index.html#//apple_ref/occ/instp/AVPlayer/allowsAirPlayVideo">iOS Dev Center</a>
-     */
     @Generated
     @Deprecated
     @Selector("allowsAirPlayVideo")
     public native boolean allowsAirPlayVideo();
 
-    /**
-     * allowsExternalPlayback</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVPlayer_Class/index.html#//apple_ref/occ/instp/AVPlayer/allowsExternalPlayback">iOS Dev Center</a>
-     */
     @Generated
     @Selector("allowsExternalPlayback")
     public native boolean allowsExternalPlayback();
 
-    /**
-     * appliesMediaSelectionCriteriaAutomatically</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVPlayer_Class/index.html#//apple_ref/occ/instp/AVPlayer/appliesMediaSelectionCriteriaAutomatically">iOS Dev Center</a>
-     */
     @Generated
     @Selector("appliesMediaSelectionCriteriaAutomatically")
     public native boolean appliesMediaSelectionCriteriaAutomatically();
 
-    /**
-     * cancelPendingPrerolls</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVPlayer_Class/index.html#//apple_ref/occ/instm/AVPlayer/cancelPendingPrerolls">iOS Dev Center</a>
-     */
     @Generated
     @Selector("cancelPendingPrerolls")
     public native void cancelPendingPrerolls();
 
-    /**
-     * currentItem</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVPlayer_Class/index.html#//apple_ref/occ/instp/AVPlayer/currentItem">iOS Dev Center</a>
-     */
     @Generated
     @Selector("currentItem")
     public native AVPlayerItem currentItem();
 
-    /**
-     * currentTime</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVPlayer_Class/index.html#//apple_ref/occ/instm/AVPlayer/currentTime">iOS Dev Center</a>
-     */
     @Generated
     @Selector("currentTime")
     @ByValue
     public native CMTime currentTime();
 
-    /**
-     * error</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVPlayer_Class/index.html#//apple_ref/occ/instp/AVPlayer/error">iOS Dev Center</a>
-     */
     @Generated
     @Selector("error")
     public native NSError error();
 
-    /**
-     * externalPlaybackVideoGravity</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVPlayer_Class/index.html#//apple_ref/occ/instp/AVPlayer/externalPlaybackVideoGravity">iOS Dev Center</a>
-     */
     @Generated
     @Selector("externalPlaybackVideoGravity")
     public native String externalPlaybackVideoGravity();
@@ -282,327 +230,171 @@ public class AVPlayer extends NSObject {
     @Selector("init")
     public native AVPlayer init();
 
-    /**
-     * initWithPlayerItem:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVPlayer_Class/index.html#//apple_ref/occ/instm/AVPlayer/initWithPlayerItem:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithPlayerItem:")
     public native AVPlayer initWithPlayerItem(AVPlayerItem item);
 
-    /**
-     * initWithURL:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVPlayer_Class/index.html#//apple_ref/occ/instm/AVPlayer/initWithURL:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithURL:")
     public native AVPlayer initWithURL(NSURL URL);
 
-    /**
-     * airPlayVideoActive</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVPlayer_Class/index.html#//apple_ref/occ/instp/AVPlayer/airPlayVideoActive">iOS Dev Center</a>
-     */
     @Generated
     @Deprecated
     @Selector("isAirPlayVideoActive")
     public native boolean isAirPlayVideoActive();
 
-    /**
-     * closedCaptionDisplayEnabled</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVPlayer_Class/index.html#//apple_ref/occ/instp/AVPlayer/closedCaptionDisplayEnabled">iOS Dev Center</a>
-     */
     @Generated
     @Selector("isClosedCaptionDisplayEnabled")
     public native boolean isClosedCaptionDisplayEnabled();
 
-    /**
-     * closedCaptionDisplayEnabled</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVPlayer_Class/index.html#//apple_ref/occ/instp/AVPlayer/closedCaptionDisplayEnabled">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setClosedCaptionDisplayEnabled:")
     public native void setClosedCaptionDisplayEnabled(boolean value);
 
-    /**
-     * externalPlaybackActive</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVPlayer_Class/index.html#//apple_ref/occ/instp/AVPlayer/externalPlaybackActive">iOS Dev Center</a>
-     */
     @Generated
     @Selector("isExternalPlaybackActive")
     public native boolean isExternalPlaybackActive();
 
-    /**
-     * muted</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVPlayer_Class/index.html#//apple_ref/occ/instp/AVPlayer/muted">iOS Dev Center</a>
-     */
     @Generated
     @Selector("isMuted")
     public native boolean isMuted();
 
-    /**
-     * muted</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVPlayer_Class/index.html#//apple_ref/occ/instp/AVPlayer/muted">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setMuted:")
     public native void setMuted(boolean value);
 
-    /**
-     * masterClock</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVPlayer_Class/index.html#//apple_ref/occ/instp/AVPlayer/masterClock">iOS Dev Center</a>
-     */
     @Generated
     @Selector("masterClock")
     public native CMClockRef masterClock();
 
-    /**
-     * mediaSelectionCriteriaForMediaCharacteristic:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVPlayer_Class/index.html#//apple_ref/occ/instm/AVPlayer/mediaSelectionCriteriaForMediaCharacteristic:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("mediaSelectionCriteriaForMediaCharacteristic:")
     public native AVPlayerMediaSelectionCriteria mediaSelectionCriteriaForMediaCharacteristic(
             String mediaCharacteristic);
 
-    /**
-     * outputObscuredDueToInsufficientExternalProtection</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVPlayer_Class/index.html#//apple_ref/occ/instp/AVPlayer/outputObscuredDueToInsufficientExternalProtection">iOS Dev Center</a>
-     */
     @Generated
     @Selector("outputObscuredDueToInsufficientExternalProtection")
     public native boolean outputObscuredDueToInsufficientExternalProtection();
 
-    /**
-     * pause</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVPlayer_Class/index.html#//apple_ref/occ/instm/AVPlayer/pause">iOS Dev Center</a>
-     */
     @Generated
     @Selector("pause")
     public native void pause();
 
-    /**
-     * play</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVPlayer_Class/index.html#//apple_ref/occ/instm/AVPlayer/play">iOS Dev Center</a>
-     */
     @Generated
     @Selector("play")
     public native void play();
 
-    /**
-     * prerollAtRate:completionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVPlayer_Class/index.html#//apple_ref/occ/instm/AVPlayer/prerollAtRate:completionHandler:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("prerollAtRate:completionHandler:")
     public native void prerollAtRateCompletionHandler(float rate,
             @ObjCBlock(name = "call_prerollAtRateCompletionHandler") Block_prerollAtRateCompletionHandler completionHandler);
 
-    /**
-     * rate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVPlayer_Class/index.html#//apple_ref/occ/instp/AVPlayer/rate">iOS Dev Center</a>
-     */
     @Generated
     @Selector("rate")
     public native float rate();
 
-    /**
-     * removeTimeObserver:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVPlayer_Class/index.html#//apple_ref/occ/instm/AVPlayer/removeTimeObserver:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("removeTimeObserver:")
     public native void removeTimeObserver(@Mapped(ObjCObjectMapper.class) Object observer);
 
-    /**
-     * replaceCurrentItemWithPlayerItem:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVPlayer_Class/index.html#//apple_ref/occ/instm/AVPlayer/replaceCurrentItemWithPlayerItem:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("replaceCurrentItemWithPlayerItem:")
     public native void replaceCurrentItemWithPlayerItem(AVPlayerItem item);
 
-    /**
-     * seekToDate:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVPlayer_Class/index.html#//apple_ref/occ/instm/AVPlayer/seekToDate:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("seekToDate:")
     public native void seekToDate(NSDate date);
 
-    /**
-     * seekToDate:completionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVPlayer_Class/index.html#//apple_ref/occ/instm/AVPlayer/seekToDate:completionHandler:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("seekToDate:completionHandler:")
     public native void seekToDateCompletionHandler(NSDate date,
             @ObjCBlock(name = "call_seekToDateCompletionHandler") Block_seekToDateCompletionHandler completionHandler);
 
-    /**
-     * seekToTime:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVPlayer_Class/index.html#//apple_ref/occ/instm/AVPlayer/seekToTime:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("seekToTime:")
     public native void seekToTime(@ByValue CMTime time);
 
-    /**
-     * seekToTime:completionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVPlayer_Class/index.html#//apple_ref/occ/instm/AVPlayer/seekToTime:completionHandler:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("seekToTime:completionHandler:")
     public native void seekToTimeCompletionHandler(@ByValue CMTime time,
             @ObjCBlock(name = "call_seekToTimeCompletionHandler") Block_seekToTimeCompletionHandler completionHandler);
 
-    /**
-     * seekToTime:toleranceBefore:toleranceAfter:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVPlayer_Class/index.html#//apple_ref/occ/instm/AVPlayer/seekToTime:toleranceBefore:toleranceAfter:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("seekToTime:toleranceBefore:toleranceAfter:")
     public native void seekToTimeToleranceBeforeToleranceAfter(@ByValue CMTime time, @ByValue CMTime toleranceBefore,
             @ByValue CMTime toleranceAfter);
 
-    /**
-     * seekToTime:toleranceBefore:toleranceAfter:completionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVPlayer_Class/index.html#//apple_ref/occ/instm/AVPlayer/seekToTime:toleranceBefore:toleranceAfter:completionHandler:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("seekToTime:toleranceBefore:toleranceAfter:completionHandler:")
     public native void seekToTimeToleranceBeforeToleranceAfterCompletionHandler(@ByValue CMTime time,
             @ByValue CMTime toleranceBefore, @ByValue CMTime toleranceAfter,
             @ObjCBlock(name = "call_seekToTimeToleranceBeforeToleranceAfterCompletionHandler") Block_seekToTimeToleranceBeforeToleranceAfterCompletionHandler completionHandler);
 
-    /**
-     * actionAtItemEnd</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVPlayer_Class/index.html#//apple_ref/occ/instp/AVPlayer/actionAtItemEnd">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setActionAtItemEnd:")
     public native void setActionAtItemEnd(@NInt long value);
 
-    /**
-     * allowsAirPlayVideo</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVPlayer_Class/index.html#//apple_ref/occ/instp/AVPlayer/allowsAirPlayVideo">iOS Dev Center</a>
-     */
     @Generated
     @Deprecated
     @Selector("setAllowsAirPlayVideo:")
     public native void setAllowsAirPlayVideo(boolean value);
 
-    /**
-     * allowsExternalPlayback</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVPlayer_Class/index.html#//apple_ref/occ/instp/AVPlayer/allowsExternalPlayback">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setAllowsExternalPlayback:")
     public native void setAllowsExternalPlayback(boolean value);
 
-    /**
-     * appliesMediaSelectionCriteriaAutomatically</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVPlayer_Class/index.html#//apple_ref/occ/instp/AVPlayer/appliesMediaSelectionCriteriaAutomatically">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setAppliesMediaSelectionCriteriaAutomatically:")
     public native void setAppliesMediaSelectionCriteriaAutomatically(boolean value);
 
-    /**
-     * externalPlaybackVideoGravity</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVPlayer_Class/index.html#//apple_ref/occ/instp/AVPlayer/externalPlaybackVideoGravity">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setExternalPlaybackVideoGravity:")
     public native void setExternalPlaybackVideoGravity(String value);
 
-    /**
-     * masterClock</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVPlayer_Class/index.html#//apple_ref/occ/instp/AVPlayer/masterClock">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setMasterClock:")
     public native void setMasterClock(CMClockRef value);
 
-    /**
-     * setMediaSelectionCriteria:forMediaCharacteristic:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVPlayer_Class/index.html#//apple_ref/occ/instm/AVPlayer/setMediaSelectionCriteria:forMediaCharacteristic:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setMediaSelectionCriteria:forMediaCharacteristic:")
     public native void setMediaSelectionCriteriaForMediaCharacteristic(AVPlayerMediaSelectionCriteria criteria,
             String mediaCharacteristic);
 
-    /**
-     * rate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVPlayer_Class/index.html#//apple_ref/occ/instp/AVPlayer/rate">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setRate:")
     public native void setRate(float value);
 
-    /**
-     * setRate:time:atHostTime:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVPlayer_Class/index.html#//apple_ref/occ/instm/AVPlayer/setRate:time:atHostTime:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setRate:time:atHostTime:")
     public native void setRateTimeAtHostTime(float rate, @ByValue CMTime itemTime, @ByValue CMTime hostClockTime);
 
-    /**
-     * usesAirPlayVideoWhileAirPlayScreenIsActive</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVPlayer_Class/index.html#//apple_ref/occ/instp/AVPlayer/usesAirPlayVideoWhileAirPlayScreenIsActive">iOS Dev Center</a>
-     */
     @Generated
     @Deprecated
     @Selector("setUsesAirPlayVideoWhileAirPlayScreenIsActive:")
     public native void setUsesAirPlayVideoWhileAirPlayScreenIsActive(boolean value);
 
-    /**
-     * usesExternalPlaybackWhileExternalScreenIsActive</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVPlayer_Class/index.html#//apple_ref/occ/instp/AVPlayer/usesExternalPlaybackWhileExternalScreenIsActive">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setUsesExternalPlaybackWhileExternalScreenIsActive:")
     public native void setUsesExternalPlaybackWhileExternalScreenIsActive(boolean value);
 
-    /**
-     * volume</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVPlayer_Class/index.html#//apple_ref/occ/instp/AVPlayer/volume">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setVolume:")
     public native void setVolume(float value);
 
-    /**
-     * status</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVPlayer_Class/index.html#//apple_ref/occ/instp/AVPlayer/status">iOS Dev Center</a>
-     */
     @Generated
     @Selector("status")
     @NInt
     public native long status();
 
-    /**
-     * usesAirPlayVideoWhileAirPlayScreenIsActive</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVPlayer_Class/index.html#//apple_ref/occ/instp/AVPlayer/usesAirPlayVideoWhileAirPlayScreenIsActive">iOS Dev Center</a>
-     */
     @Generated
     @Deprecated
     @Selector("usesAirPlayVideoWhileAirPlayScreenIsActive")
     public native boolean usesAirPlayVideoWhileAirPlayScreenIsActive();
 
-    /**
-     * usesExternalPlaybackWhileExternalScreenIsActive</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVPlayer_Class/index.html#//apple_ref/occ/instp/AVPlayer/usesExternalPlaybackWhileExternalScreenIsActive">iOS Dev Center</a>
-     */
     @Generated
     @Selector("usesExternalPlaybackWhileExternalScreenIsActive")
     public native boolean usesExternalPlaybackWhileExternalScreenIsActive();
 
-    /**
-     * volume</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVPlayer_Class/index.html#//apple_ref/occ/instp/AVPlayer/volume">iOS Dev Center</a>
-     */
     @Generated
     @Selector("volume")
     public native float volume();

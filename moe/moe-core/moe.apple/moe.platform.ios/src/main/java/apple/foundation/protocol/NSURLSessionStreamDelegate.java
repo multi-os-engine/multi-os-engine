@@ -33,10 +33,6 @@ import org.moe.natj.objc.ann.Selector;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("NSURLSessionStreamDelegate")
 public interface NSURLSessionStreamDelegate extends NSURLSessionTaskDelegate {
-    /**
-     * URLSession:betterRouteDiscoveredForStreamTask:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSURLSessionStreamDelegate_Protocol/index.html#//apple_ref/occ/intfm/NSURLSessionStreamDelegate/URLSession:betterRouteDiscoveredForStreamTask:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("URLSession:betterRouteDiscoveredForStreamTask:")
@@ -44,10 +40,6 @@ public interface NSURLSessionStreamDelegate extends NSURLSessionTaskDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * URLSession:readClosedForStreamTask:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSURLSessionStreamDelegate_Protocol/index.html#//apple_ref/occ/intfm/NSURLSessionStreamDelegate/URLSession:readClosedForStreamTask:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("URLSession:readClosedForStreamTask:")
@@ -55,10 +47,6 @@ public interface NSURLSessionStreamDelegate extends NSURLSessionTaskDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * URLSession:streamTask:didBecomeInputStream:outputStream:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSURLSessionStreamDelegate_Protocol/index.html#//apple_ref/occ/intfm/NSURLSessionStreamDelegate/URLSession:streamTask:didBecomeInputStream:outputStream:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("URLSession:streamTask:didBecomeInputStream:outputStream:")
@@ -67,10 +55,6 @@ public interface NSURLSessionStreamDelegate extends NSURLSessionTaskDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * URLSession:writeClosedForStreamTask:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSURLSessionStreamDelegate_Protocol/index.html#//apple_ref/occ/intfm/NSURLSessionStreamDelegate/URLSession:writeClosedForStreamTask:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("URLSession:writeClosedForStreamTask:")

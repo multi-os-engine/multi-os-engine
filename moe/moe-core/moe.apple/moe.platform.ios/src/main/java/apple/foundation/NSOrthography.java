@@ -58,10 +58,6 @@ public class NSOrthography extends NSObject implements NSCopying, NSSecureCoding
     @Selector("alloc")
     public static native NSOrthography alloc();
 
-    /**
-     * orthographyWithDominantScript:languageMap:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSOrthography_Class/index.html#//apple_ref/occ/clm/NSOrthography/orthographyWithDominantScript:languageMap:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("orthographyWithDominantScript:languageMap:")
     public static native NSOrthography orthographyWithDominantScriptLanguageMap(String script,
@@ -171,18 +167,10 @@ public class NSOrthography extends NSObject implements NSCopying, NSSecureCoding
     @NInt
     public static native long version_static();
 
-    /**
-     * allLanguages</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSOrthography_Class/index.html#//apple_ref/occ/instp/NSOrthography/allLanguages">iOS Dev Center</a>
-     */
     @Generated
     @Selector("allLanguages")
     public native NSArray<String> allLanguages();
 
-    /**
-     * allScripts</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSOrthography_Class/index.html#//apple_ref/occ/instp/NSOrthography/allScripts">iOS Dev Center</a>
-     */
     @Generated
     @Selector("allScripts")
     public native NSArray<String> allScripts();
@@ -193,26 +181,14 @@ public class NSOrthography extends NSObject implements NSCopying, NSSecureCoding
     @MappedReturn(ObjCObjectMapper.class)
     public native Object copyWithZone(VoidPtr zone);
 
-    /**
-     * dominantLanguage</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSOrthography_Class/index.html#//apple_ref/occ/instp/NSOrthography/dominantLanguage">iOS Dev Center</a>
-     */
     @Generated
     @Selector("dominantLanguage")
     public native String dominantLanguage();
 
-    /**
-     * dominantLanguageForScript:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSOrthography_Class/index.html#//apple_ref/occ/instm/NSOrthography/dominantLanguageForScript:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("dominantLanguageForScript:")
     public native String dominantLanguageForScript(String script);
 
-    /**
-     * dominantScript</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSOrthography_Class/index.html#//apple_ref/occ/instp/NSOrthography/dominantScript">iOS Dev Center</a>
-     */
     @Generated
     @Selector("dominantScript")
     public native String dominantScript();
@@ -229,27 +205,15 @@ public class NSOrthography extends NSObject implements NSCopying, NSSecureCoding
     @Selector("initWithCoder:")
     public native NSOrthography initWithCoder(NSCoder aDecoder);
 
-    /**
-     * initWithDominantScript:languageMap:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSOrthography_Class/index.html#//apple_ref/occ/instm/NSOrthography/initWithDominantScript:languageMap:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithDominantScript:languageMap:")
     public native NSOrthography initWithDominantScriptLanguageMap(String script,
             NSDictionary<String, ? extends NSArray<String>> map);
 
-    /**
-     * languageMap</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSOrthography_Class/index.html#//apple_ref/occ/instp/NSOrthography/languageMap">iOS Dev Center</a>
-     */
     @Generated
     @Selector("languageMap")
     public native NSDictionary<String, ? extends NSArray<String>> languageMap();
 
-    /**
-     * languagesForScript:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSOrthography_Class/index.html#//apple_ref/occ/instm/NSOrthography/languagesForScript:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("languagesForScript:")
     public native NSArray<String> languagesForScript(String script);

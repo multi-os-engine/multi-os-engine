@@ -166,10 +166,6 @@ public class HKBiologicalSexObject extends NSObject implements NSCopying, NSSecu
     @NInt
     public static native long version();
 
-    /**
-     * biologicalSex</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HealthKit/Reference/HKBiologicalSexObject_Class/index.html#//apple_ref/occ/instp/HKBiologicalSexObject/biologicalSex">iOS Dev Center</a>
-     */
     @Generated
     @Selector("biologicalSex")
     @NInt

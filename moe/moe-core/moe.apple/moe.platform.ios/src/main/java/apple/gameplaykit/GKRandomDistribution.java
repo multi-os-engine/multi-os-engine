@@ -59,36 +59,20 @@ public class GKRandomDistribution extends NSObject implements GKRandom {
     @Selector("alloc")
     public static native GKRandomDistribution alloc();
 
-    /**
-     * d20</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameplayKit/Reference/GKRandomDistribution_Class/index.html#//apple_ref/occ/clm/GKRandomDistribution/d20">iOS Dev Center</a>
-     */
     @Generated
     @Selector("d20")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object d20();
 
-    /**
-     * d6</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameplayKit/Reference/GKRandomDistribution_Class/index.html#//apple_ref/occ/clm/GKRandomDistribution/d6">iOS Dev Center</a>
-     */
     @Generated
     @Selector("d6")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object d6();
 
-    /**
-     * distributionForDieWithSideCount:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameplayKit/Reference/GKRandomDistribution_Class/index.html#//apple_ref/occ/clm/GKRandomDistribution/distributionForDieWithSideCount:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("distributionForDieWithSideCount:")
     public static native GKRandomDistribution distributionForDieWithSideCount(@NInt long sideCount);
 
-    /**
-     * distributionWithLowestValue:highestValue:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameplayKit/Reference/GKRandomDistribution_Class/index.html#//apple_ref/occ/clm/GKRandomDistribution/distributionWithLowestValue:highestValue:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("distributionWithLowestValue:highestValue:")
     public static native GKRandomDistribution distributionWithLowestValueHighestValue(@NInt long lowestInclusive,
@@ -194,10 +178,6 @@ public class GKRandomDistribution extends NSObject implements GKRandom {
     @NInt
     public static native long version_static();
 
-    /**
-     * highestValue</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameplayKit/Reference/GKRandomDistribution_Class/index.html#//apple_ref/occ/instp/GKRandomDistribution/highestValue">iOS Dev Center</a>
-     */
     @Generated
     @Selector("highestValue")
     @NInt
@@ -207,19 +187,11 @@ public class GKRandomDistribution extends NSObject implements GKRandom {
     @Selector("init")
     public native GKRandomDistribution init();
 
-    /**
-     * initWithRandomSource:lowestValue:highestValue:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameplayKit/Reference/GKRandomDistribution_Class/index.html#//apple_ref/occ/instm/GKRandomDistribution/initWithRandomSource:lowestValue:highestValue:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithRandomSource:lowestValue:highestValue:")
     public native GKRandomDistribution initWithRandomSourceLowestValueHighestValue(
             @Mapped(ObjCObjectMapper.class) GKRandom source, @NInt long lowestInclusive, @NInt long highestInclusive);
 
-    /**
-     * lowestValue</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameplayKit/Reference/GKRandomDistribution_Class/index.html#//apple_ref/occ/instp/GKRandomDistribution/lowestValue">iOS Dev Center</a>
-     */
     @Generated
     @Selector("lowestValue")
     @NInt
@@ -243,10 +215,6 @@ public class GKRandomDistribution extends NSObject implements GKRandom {
     @Selector("nextUniform")
     public native float nextUniform();
 
-    /**
-     * numberOfPossibleOutcomes</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameplayKit/Reference/GKRandomDistribution_Class/index.html#//apple_ref/occ/instp/GKRandomDistribution/numberOfPossibleOutcomes">iOS Dev Center</a>
-     */
     @Generated
     @Selector("numberOfPossibleOutcomes")
     @NUInt

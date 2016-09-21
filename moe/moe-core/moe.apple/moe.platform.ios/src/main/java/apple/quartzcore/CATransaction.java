@@ -59,124 +59,64 @@ public class CATransaction extends NSObject {
     @Selector("alloc")
     public static native CATransaction alloc();
 
-    /**
-     * animationDuration</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/CATransaction_class/index.html#//apple_ref/occ/clm/CATransaction/animationDuration">iOS Dev Center</a>
-     */
     @Generated
     @Selector("animationDuration")
     public static native double animationDuration();
 
-    /**
-     * animationTimingFunction</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/CATransaction_class/index.html#//apple_ref/occ/clm/CATransaction/animationTimingFunction">iOS Dev Center</a>
-     */
     @Generated
     @Selector("animationTimingFunction")
     public static native CAMediaTimingFunction animationTimingFunction();
 
-    /**
-     * begin</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/CATransaction_class/index.html#//apple_ref/occ/clm/CATransaction/begin">iOS Dev Center</a>
-     */
     @Generated
     @Selector("begin")
     public static native void begin();
 
-    /**
-     * commit</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/CATransaction_class/index.html#//apple_ref/occ/clm/CATransaction/commit">iOS Dev Center</a>
-     */
     @Generated
     @Selector("commit")
     public static native void commit();
 
-    /**
-     * disableActions</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/CATransaction_class/index.html#//apple_ref/occ/clm/CATransaction/disableActions">iOS Dev Center</a>
-     */
     @Generated
     @Selector("disableActions")
     public static native boolean disableActions();
 
-    /**
-     * flush</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/CATransaction_class/index.html#//apple_ref/occ/clm/CATransaction/flush">iOS Dev Center</a>
-     */
     @Generated
     @Selector("flush")
     public static native void flush();
 
-    /**
-     * lock</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/CATransaction_class/index.html#//apple_ref/occ/clm/CATransaction/lock">iOS Dev Center</a>
-     */
     @Generated
     @Selector("lock")
     public static native void lock();
 
-    /**
-     * setAnimationDuration:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/CATransaction_class/index.html#//apple_ref/occ/clm/CATransaction/setAnimationDuration:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setAnimationDuration:")
     public static native void setAnimationDuration(double dur);
 
-    /**
-     * setAnimationTimingFunction:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/CATransaction_class/index.html#//apple_ref/occ/clm/CATransaction/setAnimationTimingFunction:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setAnimationTimingFunction:")
     public static native void setAnimationTimingFunction(CAMediaTimingFunction function);
 
-    /**
-     * setCompletionBlock:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/CATransaction_class/index.html#//apple_ref/occ/clm/CATransaction/setCompletionBlock:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setCompletionBlock:")
     public static native void setCompletionBlock(
             @ObjCBlock(name = "call_setCompletionBlock") Block_setCompletionBlock block);
 
-    /**
-     * setDisableActions:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/CATransaction_class/index.html#//apple_ref/occ/clm/CATransaction/setDisableActions:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setDisableActions:")
     public static native void setDisableActions(boolean flag);
 
-    /**
-     * setValue:forKey:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/CATransaction_class/index.html#//apple_ref/occ/clm/CATransaction/setValue:forKey:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setValue:forKey:")
     public static native void setValueForKey_static(@Mapped(ObjCObjectMapper.class) Object anObject, String key);
 
-    /**
-     * unlock</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/CATransaction_class/index.html#//apple_ref/occ/clm/CATransaction/unlock">iOS Dev Center</a>
-     */
     @Generated
     @Selector("unlock")
     public static native void unlock();
 
-    /**
-     * valueForKey:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/CATransaction_class/index.html#//apple_ref/occ/clm/CATransaction/valueForKey:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("valueForKey:")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object valueForKey_static(String key);
 
-    /**
-     * completionBlock</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/CATransaction_class/index.html#//apple_ref/occ/clm/CATransaction/completionBlock">iOS Dev Center</a>
-     */
     @Generated
     @Selector("completionBlock")
     @ObjCBlock(name = "call_completionBlock_ret")

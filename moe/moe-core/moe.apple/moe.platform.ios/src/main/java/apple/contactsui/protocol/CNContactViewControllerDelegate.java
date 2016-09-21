@@ -32,10 +32,6 @@ import org.moe.natj.objc.ann.Selector;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("CNContactViewControllerDelegate")
 public interface CNContactViewControllerDelegate {
-    /**
-     * contactViewController:didCompleteWithContact:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ContactsUI/Reference/CNContactViewControllerDelegate_Protocol/index.html#//apple_ref/occ/intfm/CNContactViewControllerDelegate/contactViewController:didCompleteWithContact:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("contactViewController:didCompleteWithContact:")
@@ -44,10 +40,6 @@ public interface CNContactViewControllerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * contactViewController:shouldPerformDefaultActionForContactProperty:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ContactsUI/Reference/CNContactViewControllerDelegate_Protocol/index.html#//apple_ref/occ/intfm/CNContactViewControllerDelegate/contactViewController:shouldPerformDefaultActionForContactProperty:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("contactViewController:shouldPerformDefaultActionForContactProperty:")

@@ -163,27 +163,15 @@ public class AVCaptureDeviceFormat extends NSObject {
     @NInt
     public static native long version_static();
 
-    /**
-     * autoFocusSystem</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVCaptureDeviceFormat_Class/index.html#//apple_ref/occ/instp/AVCaptureDeviceFormat/autoFocusSystem">iOS Dev Center</a>
-     */
     @Generated
     @Selector("autoFocusSystem")
     @NInt
     public native long autoFocusSystem();
 
-    /**
-     * formatDescription</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVCaptureDeviceFormat_Class/index.html#//apple_ref/occ/instp/AVCaptureDeviceFormat/formatDescription">iOS Dev Center</a>
-     */
     @Generated
     @Selector("formatDescription")
     public native CMFormatDescriptionRef formatDescription();
 
-    /**
-     * highResolutionStillImageDimensions</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVCaptureDeviceFormat_Class/index.html#//apple_ref/occ/instp/AVCaptureDeviceFormat/highResolutionStillImageDimensions">iOS Dev Center</a>
-     */
     @Generated
     @Selector("highResolutionStillImageDimensions")
     @ByValue
@@ -193,110 +181,58 @@ public class AVCaptureDeviceFormat extends NSObject {
     @Selector("init")
     public native AVCaptureDeviceFormat init();
 
-    /**
-     * videoBinned</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVCaptureDeviceFormat_Class/index.html#//apple_ref/occ/instp/AVCaptureDeviceFormat/videoBinned">iOS Dev Center</a>
-     */
     @Generated
     @Selector("isVideoBinned")
     public native boolean isVideoBinned();
 
-    /**
-     * videoHDRSupported</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVCaptureDeviceFormat_Class/index.html#//apple_ref/occ/instp/AVCaptureDeviceFormat/videoHDRSupported">iOS Dev Center</a>
-     */
     @Generated
     @Selector("isVideoHDRSupported")
     public native boolean isVideoHDRSupported();
 
-    /**
-     * isVideoStabilizationModeSupported:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVCaptureDeviceFormat_Class/index.html#//apple_ref/occ/instm/AVCaptureDeviceFormat/isVideoStabilizationModeSupported:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("isVideoStabilizationModeSupported:")
     public native boolean isVideoStabilizationModeSupported(@NInt long videoStabilizationMode);
 
-    /**
-     * videoStabilizationSupported</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVCaptureDeviceFormat_Class/index.html#//apple_ref/occ/instp/AVCaptureDeviceFormat/videoStabilizationSupported">iOS Dev Center</a>
-     */
     @Generated
     @Deprecated
     @Selector("isVideoStabilizationSupported")
     public native boolean isVideoStabilizationSupported();
 
-    /**
-     * maxExposureDuration</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVCaptureDeviceFormat_Class/index.html#//apple_ref/occ/instp/AVCaptureDeviceFormat/maxExposureDuration">iOS Dev Center</a>
-     */
     @Generated
     @Selector("maxExposureDuration")
     @ByValue
     public native CMTime maxExposureDuration();
 
-    /**
-     * maxISO</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVCaptureDeviceFormat_Class/index.html#//apple_ref/occ/instp/AVCaptureDeviceFormat/maxISO">iOS Dev Center</a>
-     */
     @Generated
     @Selector("maxISO")
     public native float maxISO();
 
-    /**
-     * mediaType</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVCaptureDeviceFormat_Class/index.html#//apple_ref/occ/instp/AVCaptureDeviceFormat/mediaType">iOS Dev Center</a>
-     */
     @Generated
     @Selector("mediaType")
     public native String mediaType();
 
-    /**
-     * minExposureDuration</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVCaptureDeviceFormat_Class/index.html#//apple_ref/occ/instp/AVCaptureDeviceFormat/minExposureDuration">iOS Dev Center</a>
-     */
     @Generated
     @Selector("minExposureDuration")
     @ByValue
     public native CMTime minExposureDuration();
 
-    /**
-     * minISO</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVCaptureDeviceFormat_Class/index.html#//apple_ref/occ/instp/AVCaptureDeviceFormat/minISO">iOS Dev Center</a>
-     */
     @Generated
     @Selector("minISO")
     public native float minISO();
 
-    /**
-     * videoFieldOfView</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVCaptureDeviceFormat_Class/index.html#//apple_ref/occ/instp/AVCaptureDeviceFormat/videoFieldOfView">iOS Dev Center</a>
-     */
     @Generated
     @Selector("videoFieldOfView")
     public native float videoFieldOfView();
 
-    /**
-     * videoMaxZoomFactor</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVCaptureDeviceFormat_Class/index.html#//apple_ref/occ/instp/AVCaptureDeviceFormat/videoMaxZoomFactor">iOS Dev Center</a>
-     */
     @Generated
     @Selector("videoMaxZoomFactor")
     @NFloat
     public native double videoMaxZoomFactor();
 
-    /**
-     * videoSupportedFrameRateRanges</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVCaptureDeviceFormat_Class/index.html#//apple_ref/occ/instp/AVCaptureDeviceFormat/videoSupportedFrameRateRanges">iOS Dev Center</a>
-     */
     @Generated
     @Selector("videoSupportedFrameRateRanges")
     public native NSArray<?> videoSupportedFrameRateRanges();
 
-    /**
-     * videoZoomFactorUpscaleThreshold</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVCaptureDeviceFormat_Class/index.html#//apple_ref/occ/instp/AVCaptureDeviceFormat/videoZoomFactorUpscaleThreshold">iOS Dev Center</a>
-     */
     @Generated
     @Selector("videoZoomFactorUpscaleThreshold")
     @NFloat

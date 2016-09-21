@@ -160,10 +160,6 @@ public class MKLocalSearchResponse extends NSObject {
     @NInt
     public static native long version_static();
 
-    /**
-     * boundingRegion</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKLocalSearchResponse_class/index.html#//apple_ref/occ/instp/MKLocalSearchResponse/boundingRegion">iOS Dev Center</a>
-     */
     @Generated
     @Selector("boundingRegion")
     @ByValue
@@ -173,10 +169,6 @@ public class MKLocalSearchResponse extends NSObject {
     @Selector("init")
     public native MKLocalSearchResponse init();
 
-    /**
-     * mapItems</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKLocalSearchResponse_class/index.html#//apple_ref/occ/instp/MKLocalSearchResponse/mapItems">iOS Dev Center</a>
-     */
     @Generated
     @Selector("mapItems")
     public native NSArray<? extends MKMapItem> mapItems();

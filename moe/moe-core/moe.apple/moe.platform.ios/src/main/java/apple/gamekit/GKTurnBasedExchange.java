@@ -162,35 +162,19 @@ public class GKTurnBasedExchange extends NSObject {
     @NInt
     public static native long version_static();
 
-    /**
-     * cancelWithLocalizableMessageKey:arguments:completionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKTurnBasedExchange_Ref/index.html#//apple_ref/occ/instm/GKTurnBasedExchange/cancelWithLocalizableMessageKey:arguments:completionHandler:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("cancelWithLocalizableMessageKey:arguments:completionHandler:")
     public native void cancelWithLocalizableMessageKeyArgumentsCompletionHandler(String key, NSArray<String> arguments,
             @ObjCBlock(name = "call_cancelWithLocalizableMessageKeyArgumentsCompletionHandler") Block_cancelWithLocalizableMessageKeyArgumentsCompletionHandler completionHandler);
 
-    /**
-     * completionDate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKTurnBasedExchange_Ref/index.html#//apple_ref/occ/instp/GKTurnBasedExchange/completionDate">iOS Dev Center</a>
-     */
     @Generated
     @Selector("completionDate")
     public native NSDate completionDate();
 
-    /**
-     * data</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKTurnBasedExchange_Ref/index.html#//apple_ref/occ/instp/GKTurnBasedExchange/data">iOS Dev Center</a>
-     */
     @Generated
     @Selector("data")
     public native NSData data();
 
-    /**
-     * exchangeID</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKTurnBasedExchange_Ref/index.html#//apple_ref/occ/instp/GKTurnBasedExchange/exchangeID">iOS Dev Center</a>
-     */
     @Generated
     @Selector("exchangeID")
     public native String exchangeID();
@@ -199,68 +183,36 @@ public class GKTurnBasedExchange extends NSObject {
     @Selector("init")
     public native GKTurnBasedExchange init();
 
-    /**
-     * message</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKTurnBasedExchange_Ref/index.html#//apple_ref/occ/instp/GKTurnBasedExchange/message">iOS Dev Center</a>
-     */
     @Generated
     @Selector("message")
     public native String message();
 
-    /**
-     * recipients</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKTurnBasedExchange_Ref/index.html#//apple_ref/occ/instp/GKTurnBasedExchange/recipients">iOS Dev Center</a>
-     */
     @Generated
     @Selector("recipients")
     public native NSArray<? extends GKTurnBasedParticipant> recipients();
 
-    /**
-     * replies</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKTurnBasedExchange_Ref/index.html#//apple_ref/occ/instp/GKTurnBasedExchange/replies">iOS Dev Center</a>
-     */
     @Generated
     @Selector("replies")
     public native NSArray<? extends GKTurnBasedExchangeReply> replies();
 
-    /**
-     * replyWithLocalizableMessageKey:arguments:data:completionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKTurnBasedExchange_Ref/index.html#//apple_ref/occ/instm/GKTurnBasedExchange/replyWithLocalizableMessageKey:arguments:data:completionHandler:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("replyWithLocalizableMessageKey:arguments:data:completionHandler:")
     public native void replyWithLocalizableMessageKeyArgumentsDataCompletionHandler(String key,
             NSArray<String> arguments, NSData data,
             @ObjCBlock(name = "call_replyWithLocalizableMessageKeyArgumentsDataCompletionHandler") Block_replyWithLocalizableMessageKeyArgumentsDataCompletionHandler completionHandler);
 
-    /**
-     * sendDate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKTurnBasedExchange_Ref/index.html#//apple_ref/occ/instp/GKTurnBasedExchange/sendDate">iOS Dev Center</a>
-     */
     @Generated
     @Selector("sendDate")
     public native NSDate sendDate();
 
-    /**
-     * sender</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKTurnBasedExchange_Ref/index.html#//apple_ref/occ/instp/GKTurnBasedExchange/sender">iOS Dev Center</a>
-     */
     @Generated
     @Selector("sender")
     public native GKTurnBasedParticipant sender();
 
-    /**
-     * status</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKTurnBasedExchange_Ref/index.html#//apple_ref/occ/instp/GKTurnBasedExchange/status">iOS Dev Center</a>
-     */
     @Generated
     @Selector("status")
     public native byte status();
 
-    /**
-     * timeoutDate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKTurnBasedExchange_Ref/index.html#//apple_ref/occ/instp/GKTurnBasedExchange/timeoutDate">iOS Dev Center</a>
-     */
     @Generated
     @Selector("timeoutDate")
     public native NSDate timeoutDate();

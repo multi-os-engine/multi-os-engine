@@ -41,35 +41,19 @@ public final class MetalKit {
     private MetalKit() {
     }
 
-    /**
-     * MTKModelIOVertexDescriptorFromMetal</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MetalKit/Reference/MTKFrameworkFunctions_Reference/index.html#//apple_ref/c/func/MTKModelIOVertexDescriptorFromMetal">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native MDLVertexDescriptor MTKModelIOVertexDescriptorFromMetal(MTLVertexDescriptor metalDescriptor);
 
-    /**
-     * MTKMetalVertexDescriptorFromModelIO</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MetalKit/Reference/MTKFrameworkFunctions_Reference/index.html#//apple_ref/c/func/MTKMetalVertexDescriptorFromModelIO">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native MTLVertexDescriptor MTKMetalVertexDescriptorFromModelIO(MDLVertexDescriptor modelIODescriptor);
 
-    /**
-     * MTKModelIOVertexFormatFromMetal</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MetalKit/Reference/MTKFrameworkFunctions_Reference/index.html#//apple_ref/c/func/MTKModelIOVertexFormatFromMetal">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @NUInt
     public static native long MTKModelIOVertexFormatFromMetal(@NUInt long vertexFormat);
 
-    /**
-     * MTKMetalVertexFormatFromModelIO</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MetalKit/Reference/MTKFrameworkFunctions_Reference/index.html#//apple_ref/c/func/MTKMetalVertexFormatFromModelIO">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @NUInt

@@ -35,10 +35,6 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("UIActivityItemSource")
 public interface UIActivityItemSource {
-    /**
-     * activityViewController:dataTypeIdentifierForActivityType:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIActivityItemSource_protocol/index.html#//apple_ref/occ/intfm/UIActivityItemSource/activityViewController:dataTypeIdentifierForActivityType:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("activityViewController:dataTypeIdentifierForActivityType:")
@@ -47,20 +43,12 @@ public interface UIActivityItemSource {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * activityViewController:itemForActivityType:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIActivityItemSource_protocol/index.html#//apple_ref/occ/intfm/UIActivityItemSource/activityViewController:itemForActivityType:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("activityViewController:itemForActivityType:")
     @MappedReturn(ObjCObjectMapper.class)
     Object activityViewControllerItemForActivityType(UIActivityViewController activityViewController,
             String activityType);
 
-    /**
-     * activityViewController:subjectForActivityType:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIActivityItemSource_protocol/index.html#//apple_ref/occ/intfm/UIActivityItemSource/activityViewController:subjectForActivityType:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("activityViewController:subjectForActivityType:")
@@ -69,10 +57,6 @@ public interface UIActivityItemSource {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * activityViewController:thumbnailImageForActivityType:suggestedSize:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIActivityItemSource_protocol/index.html#//apple_ref/occ/intfm/UIActivityItemSource/activityViewController:thumbnailImageForActivityType:suggestedSize:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("activityViewController:thumbnailImageForActivityType:suggestedSize:")
@@ -81,10 +65,6 @@ public interface UIActivityItemSource {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * activityViewControllerPlaceholderItem:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIActivityItemSource_protocol/index.html#//apple_ref/occ/intfm/UIActivityItemSource/activityViewControllerPlaceholderItem:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("activityViewControllerPlaceholderItem:")
     @MappedReturn(ObjCObjectMapper.class)

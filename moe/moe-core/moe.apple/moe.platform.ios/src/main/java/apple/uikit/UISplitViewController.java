@@ -174,28 +174,16 @@ public class UISplitViewController extends UIViewController {
     @NInt
     public static native long version_static();
 
-    /**
-     * delegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISplitViewController_class/index.html#//apple_ref/occ/instp/UISplitViewController/delegate">iOS Dev Center</a>
-     */
     @Generated
     @Selector("delegate")
     @MappedReturn(ObjCObjectMapper.class)
     public native UISplitViewControllerDelegate delegate();
 
-    /**
-     * displayMode</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISplitViewController_class/index.html#//apple_ref/occ/instp/UISplitViewController/displayMode">iOS Dev Center</a>
-     */
     @Generated
     @Selector("displayMode")
     @NInt
     public native long displayMode();
 
-    /**
-     * displayModeButtonItem</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISplitViewController_class/index.html#//apple_ref/occ/instm/UISplitViewController/displayModeButtonItem">iOS Dev Center</a>
-     */
     @Generated
     @Selector("displayModeButtonItem")
     public native UIBarButtonItem displayModeButtonItem();
@@ -208,79 +196,43 @@ public class UISplitViewController extends UIViewController {
     @Selector("initWithNibName:bundle:")
     public native UISplitViewController initWithNibNameBundle(String nibNameOrNil, NSBundle nibBundleOrNil);
 
-    /**
-     * collapsed</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISplitViewController_class/index.html#//apple_ref/occ/instp/UISplitViewController/collapsed">iOS Dev Center</a>
-     */
     @Generated
     @Selector("isCollapsed")
     public native boolean isCollapsed();
 
-    /**
-     * maximumPrimaryColumnWidth</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISplitViewController_class/index.html#//apple_ref/occ/instp/UISplitViewController/maximumPrimaryColumnWidth">iOS Dev Center</a>
-     */
     @Generated
     @Selector("maximumPrimaryColumnWidth")
     @NFloat
     public native double maximumPrimaryColumnWidth();
 
-    /**
-     * minimumPrimaryColumnWidth</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISplitViewController_class/index.html#//apple_ref/occ/instp/UISplitViewController/minimumPrimaryColumnWidth">iOS Dev Center</a>
-     */
     @Generated
     @Selector("minimumPrimaryColumnWidth")
     @NFloat
     public native double minimumPrimaryColumnWidth();
 
-    /**
-     * preferredDisplayMode</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISplitViewController_class/index.html#//apple_ref/occ/instp/UISplitViewController/preferredDisplayMode">iOS Dev Center</a>
-     */
     @Generated
     @Selector("preferredDisplayMode")
     @NInt
     public native long preferredDisplayMode();
 
-    /**
-     * preferredPrimaryColumnWidthFraction</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISplitViewController_class/index.html#//apple_ref/occ/instp/UISplitViewController/preferredPrimaryColumnWidthFraction">iOS Dev Center</a>
-     */
     @Generated
     @Selector("preferredPrimaryColumnWidthFraction")
     @NFloat
     public native double preferredPrimaryColumnWidthFraction();
 
-    /**
-     * presentsWithGesture</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISplitViewController_class/index.html#//apple_ref/occ/instp/UISplitViewController/presentsWithGesture">iOS Dev Center</a>
-     */
     @Generated
     @Selector("presentsWithGesture")
     public native boolean presentsWithGesture();
 
-    /**
-     * primaryColumnWidth</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISplitViewController_class/index.html#//apple_ref/occ/instp/UISplitViewController/primaryColumnWidth">iOS Dev Center</a>
-     */
     @Generated
     @Selector("primaryColumnWidth")
     @NFloat
     public native double primaryColumnWidth();
 
-    /**
-     * delegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISplitViewController_class/index.html#//apple_ref/occ/instp/UISplitViewController/delegate">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setDelegate:")
     public native void setDelegate_unsafe(@Mapped(ObjCObjectMapper.class) UISplitViewControllerDelegate value);
 
-    /**
-     * delegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISplitViewController_class/index.html#//apple_ref/occ/instp/UISplitViewController/delegate">iOS Dev Center</a>
-     */
     @Generated
     public void setDelegate(@Mapped(ObjCObjectMapper.class) UISplitViewControllerDelegate value) {
         Object __old = delegate();
@@ -293,75 +245,39 @@ public class UISplitViewController extends UIViewController {
         }
     }
 
-    /**
-     * maximumPrimaryColumnWidth</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISplitViewController_class/index.html#//apple_ref/occ/instp/UISplitViewController/maximumPrimaryColumnWidth">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setMaximumPrimaryColumnWidth:")
     public native void setMaximumPrimaryColumnWidth(@NFloat double value);
 
-    /**
-     * minimumPrimaryColumnWidth</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISplitViewController_class/index.html#//apple_ref/occ/instp/UISplitViewController/minimumPrimaryColumnWidth">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setMinimumPrimaryColumnWidth:")
     public native void setMinimumPrimaryColumnWidth(@NFloat double value);
 
-    /**
-     * preferredDisplayMode</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISplitViewController_class/index.html#//apple_ref/occ/instp/UISplitViewController/preferredDisplayMode">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setPreferredDisplayMode:")
     public native void setPreferredDisplayMode(@NInt long value);
 
-    /**
-     * preferredPrimaryColumnWidthFraction</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISplitViewController_class/index.html#//apple_ref/occ/instp/UISplitViewController/preferredPrimaryColumnWidthFraction">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setPreferredPrimaryColumnWidthFraction:")
     public native void setPreferredPrimaryColumnWidthFraction(@NFloat double value);
 
-    /**
-     * presentsWithGesture</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISplitViewController_class/index.html#//apple_ref/occ/instp/UISplitViewController/presentsWithGesture">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setPresentsWithGesture:")
     public native void setPresentsWithGesture(boolean value);
 
-    /**
-     * viewControllers</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISplitViewController_class/index.html#//apple_ref/occ/instp/UISplitViewController/viewControllers">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setViewControllers:")
     public native void setViewControllers(NSArray<? extends UIViewController> value);
 
-    /**
-     * showDetailViewController:sender:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISplitViewController_class/index.html#//apple_ref/occ/instm/UISplitViewController/showDetailViewController:sender:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("showDetailViewController:sender:")
     public native void showDetailViewControllerSender(UIViewController vc,
             @Mapped(ObjCObjectMapper.class) Object sender);
 
-    /**
-     * showViewController:sender:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISplitViewController_class/index.html#//apple_ref/occ/instm/UISplitViewController/showViewController:sender:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("showViewController:sender:")
     public native void showViewControllerSender(UIViewController vc, @Mapped(ObjCObjectMapper.class) Object sender);
 
-    /**
-     * viewControllers</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISplitViewController_class/index.html#//apple_ref/occ/instp/UISplitViewController/viewControllers">iOS Dev Center</a>
-     */
     @Generated
     @Selector("viewControllers")
     public native NSArray<? extends UIViewController> viewControllers();

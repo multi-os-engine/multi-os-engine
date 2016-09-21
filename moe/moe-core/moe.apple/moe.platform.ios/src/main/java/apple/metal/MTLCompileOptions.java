@@ -166,10 +166,6 @@ public class MTLCompileOptions extends NSObject implements NSCopying {
     @MappedReturn(ObjCObjectMapper.class)
     public native Object copyWithZone(VoidPtr zone);
 
-    /**
-     * fastMathEnabled</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Metal/Reference/MTLCompileOptions_Ref/index.html#//apple_ref/occ/instp/MTLCompileOptions/fastMathEnabled">iOS Dev Center</a>
-     */
     @Generated
     @Selector("fastMathEnabled")
     public native boolean fastMathEnabled();
@@ -178,43 +174,23 @@ public class MTLCompileOptions extends NSObject implements NSCopying {
     @Selector("init")
     public native MTLCompileOptions init();
 
-    /**
-     * preprocessorMacros</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Metal/Reference/MTLCompileOptions_Ref/index.html#//apple_ref/occ/instp/MTLCompileOptions/preprocessorMacros">iOS Dev Center</a>
-     */
     @Generated
     @Selector("preprocessorMacros")
     public native NSDictionary<String, ? extends NSObject> preprocessorMacros();
 
-    /**
-     * fastMathEnabled</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Metal/Reference/MTLCompileOptions_Ref/index.html#//apple_ref/occ/instp/MTLCompileOptions/fastMathEnabled">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setFastMathEnabled:")
     public native void setFastMathEnabled(boolean value);
 
-    /**
-     * preprocessorMacros</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Metal/Reference/MTLCompileOptions_Ref/index.html#//apple_ref/occ/instp/MTLCompileOptions/preprocessorMacros">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setPreprocessorMacros:")
     public native void setPreprocessorMacros(NSDictionary<String, ? extends NSObject> value);
 
-    /**
-     * languageVersion</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Metal/Reference/MTLCompileOptions_Ref/index.html#//apple_ref/occ/instp/MTLCompileOptions/languageVersion">iOS Dev Center</a>
-     */
     @Generated
     @Selector("languageVersion")
     @NUInt
     public native long languageVersion();
 
-    /**
-     * languageVersion</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Metal/Reference/MTLCompileOptions_Ref/index.html#//apple_ref/occ/instp/MTLCompileOptions/languageVersion">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setLanguageVersion:")
     public native void setLanguageVersion(@NUInt long value);

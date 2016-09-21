@@ -158,10 +158,6 @@ public class CKDatabaseOperation extends CKOperation {
     @NInt
     public static native long version();
 
-    /**
-     * database</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKDatabaseOperation_class/index.html#//apple_ref/occ/instp/CKDatabaseOperation/database">iOS Dev Center</a>
-     */
     @Generated
     @Selector("database")
     public native CKDatabase database();
@@ -170,10 +166,6 @@ public class CKDatabaseOperation extends CKOperation {
     @Selector("init")
     public native CKDatabaseOperation init();
 
-    /**
-     * database</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKDatabaseOperation_class/index.html#//apple_ref/occ/instp/CKDatabaseOperation/database">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setDatabase:")
     public native void setDatabase(CKDatabase value);

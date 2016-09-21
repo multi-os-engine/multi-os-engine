@@ -167,10 +167,6 @@ public class PHFetchResult<_ObjectType> extends NSObject implements NSCopying, N
     @NInt
     public static native long version_static();
 
-    /**
-     * containsObject:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHFetchResult_Class/index.html#//apple_ref/occ/instm/PHFetchResult/containsObject:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("containsObject:")
     public native boolean containsObject(@Mapped(ObjCObjectMapper.class) _ObjectType anObject);
@@ -181,10 +177,6 @@ public class PHFetchResult<_ObjectType> extends NSObject implements NSCopying, N
     @MappedReturn(ObjCObjectMapper.class)
     public native Object copyWithZone(VoidPtr zone);
 
-    /**
-     * count</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHFetchResult_Class/index.html#//apple_ref/occ/instp/PHFetchResult/count">iOS Dev Center</a>
-     */
     @Generated
     @Selector("count")
     @NUInt
@@ -195,64 +187,36 @@ public class PHFetchResult<_ObjectType> extends NSObject implements NSCopying, N
     @NUInt
     public native long countByEnumeratingWithStateObjectsCount(VoidPtr state, Ptr<ObjCObject> buffer, @NUInt long len);
 
-    /**
-     * countOfAssetsWithMediaType:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHFetchResult_Class/index.html#//apple_ref/occ/instm/PHFetchResult/countOfAssetsWithMediaType:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("countOfAssetsWithMediaType:")
     @NUInt
     public native long countOfAssetsWithMediaType(@NInt long mediaType);
 
-    /**
-     * enumerateObjectsAtIndexes:options:usingBlock:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHFetchResult_Class/index.html#//apple_ref/occ/instm/PHFetchResult/enumerateObjectsAtIndexes:options:usingBlock:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("enumerateObjectsAtIndexes:options:usingBlock:")
     public native void enumerateObjectsAtIndexesOptionsUsingBlock(NSIndexSet s, @NUInt long opts,
             @ObjCBlock(name = "call_enumerateObjectsAtIndexesOptionsUsingBlock") Block_enumerateObjectsAtIndexesOptionsUsingBlock block);
 
-    /**
-     * enumerateObjectsUsingBlock:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHFetchResult_Class/index.html#//apple_ref/occ/instm/PHFetchResult/enumerateObjectsUsingBlock:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("enumerateObjectsUsingBlock:")
     public native void enumerateObjectsUsingBlock(
             @ObjCBlock(name = "call_enumerateObjectsUsingBlock") Block_enumerateObjectsUsingBlock block);
 
-    /**
-     * enumerateObjectsWithOptions:usingBlock:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHFetchResult_Class/index.html#//apple_ref/occ/instm/PHFetchResult/enumerateObjectsWithOptions:usingBlock:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("enumerateObjectsWithOptions:usingBlock:")
     public native void enumerateObjectsWithOptionsUsingBlock(@NUInt long opts,
             @ObjCBlock(name = "call_enumerateObjectsWithOptionsUsingBlock") Block_enumerateObjectsWithOptionsUsingBlock block);
 
-    /**
-     * firstObject</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHFetchResult_Class/index.html#//apple_ref/occ/instp/PHFetchResult/firstObject">iOS Dev Center</a>
-     */
     @MappedReturn(ObjCObjectMapper.class)
     @Generated
     @Selector("firstObject")
     public native _ObjectType firstObject();
 
-    /**
-     * indexOfObject:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHFetchResult_Class/index.html#//apple_ref/occ/instm/PHFetchResult/indexOfObject:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("indexOfObject:")
     @NUInt
     public native long indexOfObject(@Mapped(ObjCObjectMapper.class) _ObjectType anObject);
 
-    /**
-     * indexOfObject:inRange:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHFetchResult_Class/index.html#//apple_ref/occ/instm/PHFetchResult/indexOfObject:inRange:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("indexOfObject:inRange:")
     @NUInt
@@ -263,37 +227,21 @@ public class PHFetchResult<_ObjectType> extends NSObject implements NSCopying, N
     @Selector("init")
     public native PHFetchResult<?> init();
 
-    /**
-     * lastObject</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHFetchResult_Class/index.html#//apple_ref/occ/instp/PHFetchResult/lastObject">iOS Dev Center</a>
-     */
     @MappedReturn(ObjCObjectMapper.class)
     @Generated
     @Selector("lastObject")
     public native _ObjectType lastObject();
 
-    /**
-     * objectAtIndex:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHFetchResult_Class/index.html#//apple_ref/occ/instm/PHFetchResult/objectAtIndex:">iOS Dev Center</a>
-     */
     @MappedReturn(ObjCObjectMapper.class)
     @Generated
     @Selector("objectAtIndex:")
     public native _ObjectType objectAtIndex(@NUInt long index);
 
-    /**
-     * objectAtIndexedSubscript:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHFetchResult_Class/index.html#//apple_ref/occ/instm/PHFetchResult/objectAtIndexedSubscript:">iOS Dev Center</a>
-     */
     @MappedReturn(ObjCObjectMapper.class)
     @Generated
     @Selector("objectAtIndexedSubscript:")
     public native _ObjectType objectAtIndexedSubscript(@NUInt long idx);
 
-    /**
-     * objectsAtIndexes:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHFetchResult_Class/index.html#//apple_ref/occ/instm/PHFetchResult/objectsAtIndexes:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("objectsAtIndexes:")
     public native NSArray<_ObjectType> objectsAtIndexes(NSIndexSet indexes);

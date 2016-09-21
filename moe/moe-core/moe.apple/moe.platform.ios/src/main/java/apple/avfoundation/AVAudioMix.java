@@ -170,10 +170,6 @@ public class AVAudioMix extends NSObject implements NSCopying, NSMutableCopying 
     @Selector("init")
     public native AVAudioMix init();
 
-    /**
-     * inputParameters</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioMix_Class/index.html#//apple_ref/occ/instp/AVAudioMix/inputParameters">iOS Dev Center</a>
-     */
     @Generated
     @Selector("inputParameters")
     public native NSArray<? extends AVAudioMixInputParameters> inputParameters();

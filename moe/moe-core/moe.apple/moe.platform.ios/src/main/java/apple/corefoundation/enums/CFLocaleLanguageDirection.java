@@ -26,6 +26,7 @@ public final class CFLocaleLanguageDirection {
     @Generated @NInt public static final long RightToLeft = 0x0000000000000002L;
     @Generated @NInt public static final long TopToBottom = 0x0000000000000003L;
     @Generated @NInt public static final long BottomToTop = 0x0000000000000004L;
+
     @Generated
     private CFLocaleLanguageDirection() {
     }

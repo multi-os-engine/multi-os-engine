@@ -162,10 +162,6 @@ public class AVCaptureInput extends NSObject {
     @Selector("init")
     public native AVCaptureInput init();
 
-    /**
-     * ports</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVCaptureInput_Class/index.html#//apple_ref/occ/instp/AVCaptureInput/ports">iOS Dev Center</a>
-     */
     @Generated
     @Selector("ports")
     public native NSArray<?> ports();

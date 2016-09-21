@@ -62,10 +62,6 @@ public class HKSource extends NSObject implements NSSecureCoding, NSCopying {
     @Selector("alloc")
     public static native HKSource alloc();
 
-    /**
-     * defaultSource</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HealthKit/Reference/HKSource_Class/index.html#//apple_ref/occ/clm/HKSource/defaultSource">iOS Dev Center</a>
-     */
     @Generated
     @Selector("defaultSource")
     public static native HKSource defaultSource();
@@ -174,10 +170,6 @@ public class HKSource extends NSObject implements NSSecureCoding, NSCopying {
     @NInt
     public static native long version_static();
 
-    /**
-     * bundleIdentifier</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HealthKit/Reference/HKSource_Class/index.html#//apple_ref/occ/instp/HKSource/bundleIdentifier">iOS Dev Center</a>
-     */
     @Generated
     @Selector("bundleIdentifier")
     public native String bundleIdentifier();
@@ -200,10 +192,6 @@ public class HKSource extends NSObject implements NSSecureCoding, NSCopying {
     @Selector("initWithCoder:")
     public native HKSource initWithCoder(NSCoder aDecoder);
 
-    /**
-     * name</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HealthKit/Reference/HKSource_Class/index.html#//apple_ref/occ/instp/HKSource/name">iOS Dev Center</a>
-     */
     @Generated
     @Selector("name")
     public native String name();

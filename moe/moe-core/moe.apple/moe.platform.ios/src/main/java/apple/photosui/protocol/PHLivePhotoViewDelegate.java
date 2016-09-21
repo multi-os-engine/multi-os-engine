@@ -31,10 +31,6 @@ import org.moe.natj.objc.ann.Selector;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("PHLivePhotoViewDelegate")
 public interface PHLivePhotoViewDelegate {
-    /**
-     * livePhotoView:didEndPlaybackWithStyle:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/PhotosUI/Reference/PHLivePhotoViewDelegate_Protocol/index.html#//apple_ref/occ/intfm/PHLivePhotoViewDelegate/livePhotoView:didEndPlaybackWithStyle:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("livePhotoView:didEndPlaybackWithStyle:")
@@ -42,10 +38,6 @@ public interface PHLivePhotoViewDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * livePhotoView:willBeginPlaybackWithStyle:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/PhotosUI/Reference/PHLivePhotoViewDelegate_Protocol/index.html#//apple_ref/occ/intfm/PHLivePhotoViewDelegate/livePhotoView:willBeginPlaybackWithStyle:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("livePhotoView:willBeginPlaybackWithStyle:")

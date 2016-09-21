@@ -176,19 +176,11 @@ public class AVComposition extends AVAsset implements NSMutableCopying {
     @MappedReturn(ObjCObjectMapper.class)
     public native Object mutableCopyWithZone(VoidPtr zone);
 
-    /**
-     * naturalSize</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVComposition_Class/index.html#//apple_ref/occ/instp/AVComposition/naturalSize">iOS Dev Center</a>
-     */
     @Generated
     @Selector("naturalSize")
     @ByValue
     public native CGSize naturalSize();
 
-    /**
-     * tracks</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVComposition_Class/index.html#//apple_ref/occ/instp/AVComposition/tracks">iOS Dev Center</a>
-     */
     @Generated
     @Selector("tracks")
     public native NSArray<? extends AVCompositionTrack> tracks();

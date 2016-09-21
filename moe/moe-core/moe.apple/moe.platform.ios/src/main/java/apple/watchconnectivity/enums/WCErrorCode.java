@@ -38,6 +38,7 @@ public final class WCErrorCode {
     @Generated @NInt public static final long InsufficientSpace = 0x0000000000001B67L;
     @Generated @NInt public static final long SessionInactive = 0x0000000000001B68L;
     @Generated @NInt public static final long TransferTimedOut = 0x0000000000001B69L;
+
     @Generated
     private WCErrorCode() {
     }

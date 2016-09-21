@@ -160,18 +160,10 @@ public class NWTLSParameters extends NSObject {
     @NInt
     public static native long version_static();
 
-    /**
-     * SSLCipherSuites</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NWTLSParametersClassRef/index.html#//apple_ref/occ/instp/NWTLSParameters/SSLCipherSuites">iOS Dev Center</a>
-     */
     @Generated
     @Selector("SSLCipherSuites")
     public native NSSet<? extends NSNumber> SSLCipherSuites();
 
-    /**
-     * TLSSessionID</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NWTLSParametersClassRef/index.html#//apple_ref/occ/instp/NWTLSParameters/TLSSessionID">iOS Dev Center</a>
-     */
     @Generated
     @Selector("TLSSessionID")
     public native NSData TLSSessionID();
@@ -180,52 +172,28 @@ public class NWTLSParameters extends NSObject {
     @Selector("init")
     public native NWTLSParameters init();
 
-    /**
-     * maximumSSLProtocolVersion</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NWTLSParametersClassRef/index.html#//apple_ref/occ/instp/NWTLSParameters/maximumSSLProtocolVersion">iOS Dev Center</a>
-     */
     @Generated
     @Selector("maximumSSLProtocolVersion")
     @NUInt
     public native long maximumSSLProtocolVersion();
 
-    /**
-     * minimumSSLProtocolVersion</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NWTLSParametersClassRef/index.html#//apple_ref/occ/instp/NWTLSParameters/minimumSSLProtocolVersion">iOS Dev Center</a>
-     */
     @Generated
     @Selector("minimumSSLProtocolVersion")
     @NUInt
     public native long minimumSSLProtocolVersion();
 
-    /**
-     * maximumSSLProtocolVersion</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NWTLSParametersClassRef/index.html#//apple_ref/occ/instp/NWTLSParameters/maximumSSLProtocolVersion">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setMaximumSSLProtocolVersion:")
     public native void setMaximumSSLProtocolVersion(@NUInt long value);
 
-    /**
-     * minimumSSLProtocolVersion</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NWTLSParametersClassRef/index.html#//apple_ref/occ/instp/NWTLSParameters/minimumSSLProtocolVersion">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setMinimumSSLProtocolVersion:")
     public native void setMinimumSSLProtocolVersion(@NUInt long value);
 
-    /**
-     * SSLCipherSuites</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NWTLSParametersClassRef/index.html#//apple_ref/occ/instp/NWTLSParameters/SSLCipherSuites">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setSSLCipherSuites:")
     public native void setSSLCipherSuites(NSSet<? extends NSNumber> value);
 
-    /**
-     * TLSSessionID</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NWTLSParametersClassRef/index.html#//apple_ref/occ/instp/NWTLSParameters/TLSSessionID">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setTLSSessionID:")
     public native void setTLSSessionID(NSData value);

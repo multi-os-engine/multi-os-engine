@@ -166,58 +166,30 @@ public class WKInterfaceButton extends WKInterfaceObject {
     @Selector("init")
     public native WKInterfaceButton init();
 
-    /**
-     * setAttributedTitle:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WatchKit/Reference/WKInterfaceButton_class/index.html#//apple_ref/occ/instm/WKInterfaceButton/setAttributedTitle:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setAttributedTitle:")
     public native void setAttributedTitle(NSAttributedString attributedTitle);
 
-    /**
-     * setBackgroundColor:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WatchKit/Reference/WKInterfaceButton_class/index.html#//apple_ref/occ/instm/WKInterfaceButton/setBackgroundColor:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setBackgroundColor:")
     public native void setBackgroundColor(UIColor color);
 
-    /**
-     * setBackgroundImage:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WatchKit/Reference/WKInterfaceButton_class/index.html#//apple_ref/occ/instm/WKInterfaceButton/setBackgroundImage:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setBackgroundImage:")
     public native void setBackgroundImage(UIImage image);
 
-    /**
-     * setBackgroundImageData:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WatchKit/Reference/WKInterfaceButton_class/index.html#//apple_ref/occ/instm/WKInterfaceButton/setBackgroundImageData:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setBackgroundImageData:")
     public native void setBackgroundImageData(NSData imageData);
 
-    /**
-     * setBackgroundImageNamed:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WatchKit/Reference/WKInterfaceButton_class/index.html#//apple_ref/occ/instm/WKInterfaceButton/setBackgroundImageNamed:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setBackgroundImageNamed:")
     public native void setBackgroundImageNamed(String imageName);
 
-    /**
-     * setEnabled:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WatchKit/Reference/WKInterfaceButton_class/index.html#//apple_ref/occ/instm/WKInterfaceButton/setEnabled:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setEnabled:")
     public native void setEnabled(boolean enabled);
 
-    /**
-     * setTitle:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WatchKit/Reference/WKInterfaceButton_class/index.html#//apple_ref/occ/instm/WKInterfaceButton/setTitle:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setTitle:")
     public native void setTitle(String title);

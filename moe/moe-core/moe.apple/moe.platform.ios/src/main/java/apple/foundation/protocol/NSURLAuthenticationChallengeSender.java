@@ -31,26 +31,14 @@ import org.moe.natj.objc.ann.Selector;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("NSURLAuthenticationChallengeSender")
 public interface NSURLAuthenticationChallengeSender {
-    /**
-     * cancelAuthenticationChallenge:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Protocols/NSURLAuthenticationChallengeSender_Protocol/index.html#//apple_ref/occ/intfm/NSURLAuthenticationChallengeSender/cancelAuthenticationChallenge:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("cancelAuthenticationChallenge:")
     void cancelAuthenticationChallenge(NSURLAuthenticationChallenge challenge);
 
-    /**
-     * continueWithoutCredentialForAuthenticationChallenge:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Protocols/NSURLAuthenticationChallengeSender_Protocol/index.html#//apple_ref/occ/intfm/NSURLAuthenticationChallengeSender/continueWithoutCredentialForAuthenticationChallenge:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("continueWithoutCredentialForAuthenticationChallenge:")
     void continueWithoutCredentialForAuthenticationChallenge(NSURLAuthenticationChallenge challenge);
 
-    /**
-     * performDefaultHandlingForAuthenticationChallenge:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Protocols/NSURLAuthenticationChallengeSender_Protocol/index.html#//apple_ref/occ/intfm/NSURLAuthenticationChallengeSender/performDefaultHandlingForAuthenticationChallenge:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("performDefaultHandlingForAuthenticationChallenge:")
@@ -58,10 +46,6 @@ public interface NSURLAuthenticationChallengeSender {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * rejectProtectionSpaceAndContinueWithChallenge:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Protocols/NSURLAuthenticationChallengeSender_Protocol/index.html#//apple_ref/occ/intfm/NSURLAuthenticationChallengeSender/rejectProtectionSpaceAndContinueWithChallenge:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("rejectProtectionSpaceAndContinueWithChallenge:")
@@ -69,10 +53,6 @@ public interface NSURLAuthenticationChallengeSender {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * useCredential:forAuthenticationChallenge:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Protocols/NSURLAuthenticationChallengeSender_Protocol/index.html#//apple_ref/occ/intfm/NSURLAuthenticationChallengeSender/useCredential:forAuthenticationChallenge:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("useCredential:forAuthenticationChallenge:")
     void useCredentialForAuthenticationChallenge(NSURLCredential credential, NSURLAuthenticationChallenge challenge);

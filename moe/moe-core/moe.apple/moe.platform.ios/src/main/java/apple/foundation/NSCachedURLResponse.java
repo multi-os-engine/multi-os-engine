@@ -168,10 +168,6 @@ public class NSCachedURLResponse extends NSObject implements NSSecureCoding, NSC
     @MappedReturn(ObjCObjectMapper.class)
     public native Object copyWithZone(VoidPtr zone);
 
-    /**
-     * data</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSCachedURLResponse_Class/index.html#//apple_ref/occ/instp/NSCachedURLResponse/data">iOS Dev Center</a>
-     */
     @Generated
     @Selector("data")
     public native NSData data();
@@ -188,35 +184,19 @@ public class NSCachedURLResponse extends NSObject implements NSSecureCoding, NSC
     @Selector("initWithCoder:")
     public native NSCachedURLResponse initWithCoder(NSCoder aDecoder);
 
-    /**
-     * initWithResponse:data:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSCachedURLResponse_Class/index.html#//apple_ref/occ/instm/NSCachedURLResponse/initWithResponse:data:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithResponse:data:")
     public native NSCachedURLResponse initWithResponseData(NSURLResponse response, NSData data);
 
-    /**
-     * initWithResponse:data:userInfo:storagePolicy:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSCachedURLResponse_Class/index.html#//apple_ref/occ/instm/NSCachedURLResponse/initWithResponse:data:userInfo:storagePolicy:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithResponse:data:userInfo:storagePolicy:")
     public native NSCachedURLResponse initWithResponseDataUserInfoStoragePolicy(NSURLResponse response, NSData data,
             NSDictionary<?, ?> userInfo, @NUInt long storagePolicy);
 
-    /**
-     * response</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSCachedURLResponse_Class/index.html#//apple_ref/occ/instp/NSCachedURLResponse/response">iOS Dev Center</a>
-     */
     @Generated
     @Selector("response")
     public native NSURLResponse response();
 
-    /**
-     * storagePolicy</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSCachedURLResponse_Class/index.html#//apple_ref/occ/instp/NSCachedURLResponse/storagePolicy">iOS Dev Center</a>
-     */
     @Generated
     @Selector("storagePolicy")
     @NUInt
@@ -228,10 +208,6 @@ public class NSCachedURLResponse extends NSObject implements NSSecureCoding, NSC
         return supportsSecureCoding();
     }
 
-    /**
-     * userInfo</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSCachedURLResponse_Class/index.html#//apple_ref/occ/instp/NSCachedURLResponse/userInfo">iOS Dev Center</a>
-     */
     @Generated
     @Selector("userInfo")
     public native NSDictionary<?, ?> userInfo();

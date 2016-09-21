@@ -44,10 +44,6 @@ import org.moe.natj.objc.ann.Selector;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("NSLayoutManagerDelegate")
 public interface NSLayoutManagerDelegate {
-    /**
-     * layoutManager:boundingBoxForControlGlyphAtIndex:forTextContainer:proposedLineFragment:glyphPosition:characterIndex:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSLayoutManagerDelegate_Protocol/index.html#//apple_ref/occ/intfm/NSLayoutManagerDelegate/layoutManager:boundingBoxForControlGlyphAtIndex:forTextContainer:proposedLineFragment:glyphPosition:characterIndex:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("layoutManager:boundingBoxForControlGlyphAtIndex:forTextContainer:proposedLineFragment:glyphPosition:characterIndex:")
@@ -58,10 +54,6 @@ public interface NSLayoutManagerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * layoutManager:didCompleteLayoutForTextContainer:atEnd:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSLayoutManagerDelegate_Protocol/index.html#//apple_ref/occ/intfm/NSLayoutManagerDelegate/layoutManager:didCompleteLayoutForTextContainer:atEnd:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("layoutManager:didCompleteLayoutForTextContainer:atEnd:")
@@ -70,10 +62,6 @@ public interface NSLayoutManagerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * layoutManager:lineSpacingAfterGlyphAtIndex:withProposedLineFragmentRect:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSLayoutManagerDelegate_Protocol/index.html#//apple_ref/occ/intfm/NSLayoutManagerDelegate/layoutManager:lineSpacingAfterGlyphAtIndex:withProposedLineFragmentRect:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("layoutManager:lineSpacingAfterGlyphAtIndex:withProposedLineFragmentRect:")
@@ -83,10 +71,6 @@ public interface NSLayoutManagerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * layoutManager:paragraphSpacingAfterGlyphAtIndex:withProposedLineFragmentRect:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSLayoutManagerDelegate_Protocol/index.html#//apple_ref/occ/intfm/NSLayoutManagerDelegate/layoutManager:paragraphSpacingAfterGlyphAtIndex:withProposedLineFragmentRect:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("layoutManager:paragraphSpacingAfterGlyphAtIndex:withProposedLineFragmentRect:")
@@ -96,10 +80,6 @@ public interface NSLayoutManagerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * layoutManager:paragraphSpacingBeforeGlyphAtIndex:withProposedLineFragmentRect:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSLayoutManagerDelegate_Protocol/index.html#//apple_ref/occ/intfm/NSLayoutManagerDelegate/layoutManager:paragraphSpacingBeforeGlyphAtIndex:withProposedLineFragmentRect:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("layoutManager:paragraphSpacingBeforeGlyphAtIndex:withProposedLineFragmentRect:")
@@ -109,10 +89,6 @@ public interface NSLayoutManagerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * layoutManager:shouldBreakLineByHyphenatingBeforeCharacterAtIndex:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSLayoutManagerDelegate_Protocol/index.html#//apple_ref/occ/intfm/NSLayoutManagerDelegate/layoutManager:shouldBreakLineByHyphenatingBeforeCharacterAtIndex:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("layoutManager:shouldBreakLineByHyphenatingBeforeCharacterAtIndex:")
@@ -121,10 +97,6 @@ public interface NSLayoutManagerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * layoutManager:shouldBreakLineByWordBeforeCharacterAtIndex:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSLayoutManagerDelegate_Protocol/index.html#//apple_ref/occ/intfm/NSLayoutManagerDelegate/layoutManager:shouldBreakLineByWordBeforeCharacterAtIndex:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("layoutManager:shouldBreakLineByWordBeforeCharacterAtIndex:")
@@ -133,10 +105,6 @@ public interface NSLayoutManagerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * layoutManager:shouldGenerateGlyphs:properties:characterIndexes:font:forGlyphRange:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSLayoutManagerDelegate_Protocol/index.html#//apple_ref/occ/intfm/NSLayoutManagerDelegate/layoutManager:shouldGenerateGlyphs:properties:characterIndexes:font:forGlyphRange:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("layoutManager:shouldGenerateGlyphs:properties:characterIndexes:font:forGlyphRange:")
@@ -147,10 +115,6 @@ public interface NSLayoutManagerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * layoutManager:shouldUseAction:forControlCharacterAtIndex:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSLayoutManagerDelegate_Protocol/index.html#//apple_ref/occ/intfm/NSLayoutManagerDelegate/layoutManager:shouldUseAction:forControlCharacterAtIndex:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("layoutManager:shouldUseAction:forControlCharacterAtIndex:")
@@ -160,10 +124,6 @@ public interface NSLayoutManagerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * layoutManager:textContainer:didChangeGeometryFromSize:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSLayoutManagerDelegate_Protocol/index.html#//apple_ref/occ/intfm/NSLayoutManagerDelegate/layoutManager:textContainer:didChangeGeometryFromSize:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("layoutManager:textContainer:didChangeGeometryFromSize:")
@@ -172,10 +132,6 @@ public interface NSLayoutManagerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * layoutManagerDidInvalidateLayout:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSLayoutManagerDelegate_Protocol/index.html#//apple_ref/occ/intfm/NSLayoutManagerDelegate/layoutManagerDidInvalidateLayout:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("layoutManagerDidInvalidateLayout:")

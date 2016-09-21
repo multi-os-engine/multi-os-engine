@@ -33,10 +33,6 @@ import org.moe.natj.objc.ann.Selector;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("AVAssetResourceLoaderDelegate")
 public interface AVAssetResourceLoaderDelegate {
-    /**
-     * resourceLoader:didCancelAuthenticationChallenge:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAssetResourceLoaderDelegate_Protocol/index.html#//apple_ref/occ/intfm/AVAssetResourceLoaderDelegate/resourceLoader:didCancelAuthenticationChallenge:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("resourceLoader:didCancelAuthenticationChallenge:")
@@ -45,10 +41,6 @@ public interface AVAssetResourceLoaderDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * resourceLoader:didCancelLoadingRequest:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAssetResourceLoaderDelegate_Protocol/index.html#//apple_ref/occ/intfm/AVAssetResourceLoaderDelegate/resourceLoader:didCancelLoadingRequest:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("resourceLoader:didCancelLoadingRequest:")
@@ -57,10 +49,6 @@ public interface AVAssetResourceLoaderDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * resourceLoader:shouldWaitForLoadingOfRequestedResource:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAssetResourceLoaderDelegate_Protocol/index.html#//apple_ref/occ/intfm/AVAssetResourceLoaderDelegate/resourceLoader:shouldWaitForLoadingOfRequestedResource:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("resourceLoader:shouldWaitForLoadingOfRequestedResource:")
@@ -69,10 +57,6 @@ public interface AVAssetResourceLoaderDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * resourceLoader:shouldWaitForRenewalOfRequestedResource:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAssetResourceLoaderDelegate_Protocol/index.html#//apple_ref/occ/intfm/AVAssetResourceLoaderDelegate/resourceLoader:shouldWaitForRenewalOfRequestedResource:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("resourceLoader:shouldWaitForRenewalOfRequestedResource:")
@@ -81,10 +65,6 @@ public interface AVAssetResourceLoaderDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * resourceLoader:shouldWaitForResponseToAuthenticationChallenge:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAssetResourceLoaderDelegate_Protocol/index.html#//apple_ref/occ/intfm/AVAssetResourceLoaderDelegate/resourceLoader:shouldWaitForResponseToAuthenticationChallenge:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("resourceLoader:shouldWaitForResponseToAuthenticationChallenge:")

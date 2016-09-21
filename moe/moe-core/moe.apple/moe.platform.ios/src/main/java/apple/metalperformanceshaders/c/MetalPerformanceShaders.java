@@ -40,10 +40,6 @@ public final class MetalPerformanceShaders {
     private MetalPerformanceShaders() {
     }
 
-    /**
-     * MPSSupportsMTLDevice</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MetalPerformanceShaders/Reference/MPSFunctions/index.html#//apple_ref/c/func/MPSSupportsMTLDevice">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native boolean MPSSupportsMTLDevice(@Mapped(ObjCObjectMapper.class) Object device);

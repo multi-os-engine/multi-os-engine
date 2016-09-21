@@ -59,27 +59,15 @@ public class MPMusicPlayerController extends NSObject implements MPMediaPlayback
     @Selector("alloc")
     public static native MPMusicPlayerController alloc();
 
-    /**
-     * applicationMusicPlayer</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPMusicPlayerController_ClassReference/index.html#//apple_ref/occ/clm/MPMusicPlayerController/applicationMusicPlayer">iOS Dev Center</a>
-     */
     @Generated
     @Selector("applicationMusicPlayer")
     public static native MPMusicPlayerController applicationMusicPlayer();
 
-    /**
-     * iPodMusicPlayer</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPMusicPlayerController_ClassReference/index.html#//apple_ref/occ/clm/MPMusicPlayerController/iPodMusicPlayer">iOS Dev Center</a>
-     */
     @Generated
     @Deprecated
     @Selector("iPodMusicPlayer")
     public static native MPMusicPlayerController iPodMusicPlayer();
 
-    /**
-     * systemMusicPlayer</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPMusicPlayerController_ClassReference/index.html#//apple_ref/occ/clm/MPMusicPlayerController/systemMusicPlayer">iOS Dev Center</a>
-     */
     @Generated
     @Selector("systemMusicPlayer")
     public static native MPMusicPlayerController systemMusicPlayer();
@@ -184,10 +172,6 @@ public class MPMusicPlayerController extends NSObject implements MPMediaPlayback
     @NInt
     public static native long version_static();
 
-    /**
-     * beginGeneratingPlaybackNotifications</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPMusicPlayerController_ClassReference/index.html#//apple_ref/occ/instm/MPMusicPlayerController/beginGeneratingPlaybackNotifications">iOS Dev Center</a>
-     */
     @Generated
     @Selector("beginGeneratingPlaybackNotifications")
     public native void beginGeneratingPlaybackNotifications();
@@ -208,10 +192,6 @@ public class MPMusicPlayerController extends NSObject implements MPMediaPlayback
     @Selector("currentPlaybackTime")
     public native double currentPlaybackTime();
 
-    /**
-     * endGeneratingPlaybackNotifications</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPMusicPlayerController_ClassReference/index.html#//apple_ref/occ/instm/MPMusicPlayerController/endGeneratingPlaybackNotifications">iOS Dev Center</a>
-     */
     @Generated
     @Selector("endGeneratingPlaybackNotifications")
     public native void endGeneratingPlaybackNotifications();
@@ -220,10 +200,6 @@ public class MPMusicPlayerController extends NSObject implements MPMediaPlayback
     @Selector("endSeeking")
     public native void endSeeking();
 
-    /**
-     * indexOfNowPlayingItem</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPMusicPlayerController_ClassReference/index.html#//apple_ref/occ/instp/MPMusicPlayerController/indexOfNowPlayingItem">iOS Dev Center</a>
-     */
     @Generated
     @Selector("indexOfNowPlayingItem")
     @NUInt
@@ -237,10 +213,6 @@ public class MPMusicPlayerController extends NSObject implements MPMediaPlayback
     @Selector("isPreparedToPlay")
     public native boolean isPreparedToPlay();
 
-    /**
-     * nowPlayingItem</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPMusicPlayerController_ClassReference/index.html#//apple_ref/occ/instp/MPMusicPlayerController/nowPlayingItem">iOS Dev Center</a>
-     */
     @Generated
     @Selector("nowPlayingItem")
     public native MPMediaItem nowPlayingItem();
@@ -253,10 +225,6 @@ public class MPMusicPlayerController extends NSObject implements MPMediaPlayback
     @Selector("play")
     public native void play();
 
-    /**
-     * playbackState</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPMusicPlayerController_ClassReference/index.html#//apple_ref/occ/instp/MPMusicPlayerController/playbackState">iOS Dev Center</a>
-     */
     @Generated
     @Selector("playbackState")
     @NInt
@@ -266,10 +234,6 @@ public class MPMusicPlayerController extends NSObject implements MPMediaPlayback
     @Selector("prepareToPlay")
     public native void prepareToPlay();
 
-    /**
-     * repeatMode</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPMusicPlayerController_ClassReference/index.html#//apple_ref/occ/instp/MPMusicPlayerController/repeatMode">iOS Dev Center</a>
-     */
     @Generated
     @Selector("repeatMode")
     @NInt
@@ -283,84 +247,44 @@ public class MPMusicPlayerController extends NSObject implements MPMediaPlayback
     @Selector("setCurrentPlaybackTime:")
     public native void setCurrentPlaybackTime(double value);
 
-    /**
-     * nowPlayingItem</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPMusicPlayerController_ClassReference/index.html#//apple_ref/occ/instp/MPMusicPlayerController/nowPlayingItem">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setNowPlayingItem:")
     public native void setNowPlayingItem(MPMediaItem value);
 
-    /**
-     * setQueueWithItemCollection:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPMusicPlayerController_ClassReference/index.html#//apple_ref/occ/instm/MPMusicPlayerController/setQueueWithItemCollection:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setQueueWithItemCollection:")
     public native void setQueueWithItemCollection(MPMediaItemCollection itemCollection);
 
-    /**
-     * setQueueWithQuery:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPMusicPlayerController_ClassReference/index.html#//apple_ref/occ/instm/MPMusicPlayerController/setQueueWithQuery:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setQueueWithQuery:")
     public native void setQueueWithQuery(MPMediaQuery query);
 
-    /**
-     * repeatMode</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPMusicPlayerController_ClassReference/index.html#//apple_ref/occ/instp/MPMusicPlayerController/repeatMode">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setRepeatMode:")
     public native void setRepeatMode(@NInt long value);
 
-    /**
-     * shuffleMode</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPMusicPlayerController_ClassReference/index.html#//apple_ref/occ/instp/MPMusicPlayerController/shuffleMode">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setShuffleMode:")
     public native void setShuffleMode(@NInt long value);
 
-    /**
-     * volume</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPMusicPlayerController_ClassReference/index.html#//apple_ref/occ/instp/MPMusicPlayerController/volume">iOS Dev Center</a>
-     */
     @Generated
     @Deprecated
     @Selector("setVolume:")
     public native void setVolume(float value);
 
-    /**
-     * shuffleMode</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPMusicPlayerController_ClassReference/index.html#//apple_ref/occ/instp/MPMusicPlayerController/shuffleMode">iOS Dev Center</a>
-     */
     @Generated
     @Selector("shuffleMode")
     @NInt
     public native long shuffleMode();
 
-    /**
-     * skipToBeginning</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPMusicPlayerController_ClassReference/index.html#//apple_ref/occ/instm/MPMusicPlayerController/skipToBeginning">iOS Dev Center</a>
-     */
     @Generated
     @Selector("skipToBeginning")
     public native void skipToBeginning();
 
-    /**
-     * skipToNextItem</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPMusicPlayerController_ClassReference/index.html#//apple_ref/occ/instm/MPMusicPlayerController/skipToNextItem">iOS Dev Center</a>
-     */
     @Generated
     @Selector("skipToNextItem")
     public native void skipToNextItem();
 
-    /**
-     * skipToPreviousItem</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPMusicPlayerController_ClassReference/index.html#//apple_ref/occ/instm/MPMusicPlayerController/skipToPreviousItem">iOS Dev Center</a>
-     */
     @Generated
     @Selector("skipToPreviousItem")
     public native void skipToPreviousItem();
@@ -369,10 +293,6 @@ public class MPMusicPlayerController extends NSObject implements MPMediaPlayback
     @Selector("stop")
     public native void stop();
 
-    /**
-     * volume</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPMusicPlayerController_ClassReference/index.html#//apple_ref/occ/instp/MPMusicPlayerController/volume">iOS Dev Center</a>
-     */
     @Generated
     @Deprecated
     @Selector("volume")

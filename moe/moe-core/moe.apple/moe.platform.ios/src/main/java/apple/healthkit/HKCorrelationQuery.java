@@ -260,10 +260,6 @@ public class HKCorrelationQuery extends HKQuery {
     @NInt
     public static native long version_static();
 
-    /**
-     * correlationType</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HealthKit/Reference/HKCorrelationQuery_Class/index.html#//apple_ref/occ/instp/HKCorrelationQuery/correlationType">iOS Dev Center</a>
-     */
     @Generated
     @Selector("correlationType")
     public native HKCorrelationType correlationType();
@@ -272,20 +268,12 @@ public class HKCorrelationQuery extends HKQuery {
     @Selector("init")
     public native HKCorrelationQuery init();
 
-    /**
-     * initWithType:predicate:samplePredicates:completion:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HealthKit/Reference/HKCorrelationQuery_Class/index.html#//apple_ref/occ/instm/HKCorrelationQuery/initWithType:predicate:samplePredicates:completion:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithType:predicate:samplePredicates:completion:")
     public native HKCorrelationQuery initWithTypePredicateSamplePredicatesCompletion(HKCorrelationType correlationType,
             NSPredicate predicate, NSDictionary<? extends HKSampleType, ? extends NSPredicate> samplePredicates,
             @ObjCBlock(name = "call_initWithTypePredicateSamplePredicatesCompletion") Block_initWithTypePredicateSamplePredicatesCompletion completion);
 
-    /**
-     * samplePredicates</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HealthKit/Reference/HKCorrelationQuery_Class/index.html#//apple_ref/occ/instp/HKCorrelationQuery/samplePredicates">iOS Dev Center</a>
-     */
     @Generated
     @Selector("samplePredicates")
     public native NSDictionary<? extends HKSampleType, ? extends NSPredicate> samplePredicates();

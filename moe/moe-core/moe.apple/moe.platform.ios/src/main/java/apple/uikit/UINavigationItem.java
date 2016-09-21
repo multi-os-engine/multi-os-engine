@@ -160,10 +160,6 @@ public class UINavigationItem extends NSObject implements NSCoding {
     @NInt
     public static native long version_static();
 
-    /**
-     * backBarButtonItem</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UINavigationItem_Class/index.html#//apple_ref/occ/instp/UINavigationItem/backBarButtonItem">iOS Dev Center</a>
-     */
     @Generated
     @Selector("backBarButtonItem")
     public native UIBarButtonItem backBarButtonItem();
@@ -172,10 +168,6 @@ public class UINavigationItem extends NSObject implements NSCoding {
     @Selector("encodeWithCoder:")
     public native void encodeWithCoder(NSCoder aCoder);
 
-    /**
-     * hidesBackButton</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UINavigationItem_Class/index.html#//apple_ref/occ/instp/UINavigationItem/hidesBackButton">iOS Dev Center</a>
-     */
     @Generated
     @Selector("hidesBackButton")
     public native boolean hidesBackButton();
@@ -188,194 +180,98 @@ public class UINavigationItem extends NSObject implements NSCoding {
     @Selector("initWithCoder:")
     public native UINavigationItem initWithCoder(NSCoder coder);
 
-    /**
-     * initWithTitle:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UINavigationItem_Class/index.html#//apple_ref/occ/instm/UINavigationItem/initWithTitle:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithTitle:")
     public native UINavigationItem initWithTitle(String title);
 
-    /**
-     * leftBarButtonItem</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UINavigationItem_Class/index.html#//apple_ref/occ/instp/UINavigationItem/leftBarButtonItem">iOS Dev Center</a>
-     */
     @Generated
     @Selector("leftBarButtonItem")
     public native UIBarButtonItem leftBarButtonItem();
 
-    /**
-     * leftBarButtonItems</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UINavigationItem_Class/index.html#//apple_ref/occ/instp/UINavigationItem/leftBarButtonItems">iOS Dev Center</a>
-     */
     @Generated
     @Selector("leftBarButtonItems")
     public native NSArray<? extends UIBarButtonItem> leftBarButtonItems();
 
-    /**
-     * leftItemsSupplementBackButton</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UINavigationItem_Class/index.html#//apple_ref/occ/instp/UINavigationItem/leftItemsSupplementBackButton">iOS Dev Center</a>
-     */
     @Generated
     @Selector("leftItemsSupplementBackButton")
     public native boolean leftItemsSupplementBackButton();
 
-    /**
-     * prompt</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UINavigationItem_Class/index.html#//apple_ref/occ/instp/UINavigationItem/prompt">iOS Dev Center</a>
-     */
     @Generated
     @Selector("prompt")
     public native String prompt();
 
-    /**
-     * rightBarButtonItem</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UINavigationItem_Class/index.html#//apple_ref/occ/instp/UINavigationItem/rightBarButtonItem">iOS Dev Center</a>
-     */
     @Generated
     @Selector("rightBarButtonItem")
     public native UIBarButtonItem rightBarButtonItem();
 
-    /**
-     * rightBarButtonItems</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UINavigationItem_Class/index.html#//apple_ref/occ/instp/UINavigationItem/rightBarButtonItems">iOS Dev Center</a>
-     */
     @Generated
     @Selector("rightBarButtonItems")
     public native NSArray<? extends UIBarButtonItem> rightBarButtonItems();
 
-    /**
-     * backBarButtonItem</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UINavigationItem_Class/index.html#//apple_ref/occ/instp/UINavigationItem/backBarButtonItem">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setBackBarButtonItem:")
     public native void setBackBarButtonItem(UIBarButtonItem value);
 
-    /**
-     * hidesBackButton</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UINavigationItem_Class/index.html#//apple_ref/occ/instp/UINavigationItem/hidesBackButton">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setHidesBackButton:")
     public native void setHidesBackButton(boolean value);
 
-    /**
-     * setHidesBackButton:animated:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UINavigationItem_Class/index.html#//apple_ref/occ/instm/UINavigationItem/setHidesBackButton:animated:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setHidesBackButton:animated:")
     public native void setHidesBackButtonAnimated(boolean hidesBackButton, boolean animated);
 
-    /**
-     * leftBarButtonItem</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UINavigationItem_Class/index.html#//apple_ref/occ/instp/UINavigationItem/leftBarButtonItem">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setLeftBarButtonItem:")
     public native void setLeftBarButtonItem(UIBarButtonItem value);
 
-    /**
-     * setLeftBarButtonItem:animated:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UINavigationItem_Class/index.html#//apple_ref/occ/instm/UINavigationItem/setLeftBarButtonItem:animated:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setLeftBarButtonItem:animated:")
     public native void setLeftBarButtonItemAnimated(UIBarButtonItem item, boolean animated);
 
-    /**
-     * leftBarButtonItems</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UINavigationItem_Class/index.html#//apple_ref/occ/instp/UINavigationItem/leftBarButtonItems">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setLeftBarButtonItems:")
     public native void setLeftBarButtonItems(NSArray<? extends UIBarButtonItem> value);
 
-    /**
-     * setLeftBarButtonItems:animated:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UINavigationItem_Class/index.html#//apple_ref/occ/instm/UINavigationItem/setLeftBarButtonItems:animated:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setLeftBarButtonItems:animated:")
     public native void setLeftBarButtonItemsAnimated(NSArray<? extends UIBarButtonItem> items, boolean animated);
 
-    /**
-     * leftItemsSupplementBackButton</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UINavigationItem_Class/index.html#//apple_ref/occ/instp/UINavigationItem/leftItemsSupplementBackButton">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setLeftItemsSupplementBackButton:")
     public native void setLeftItemsSupplementBackButton(boolean value);
 
-    /**
-     * prompt</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UINavigationItem_Class/index.html#//apple_ref/occ/instp/UINavigationItem/prompt">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setPrompt:")
     public native void setPrompt(String value);
 
-    /**
-     * rightBarButtonItem</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UINavigationItem_Class/index.html#//apple_ref/occ/instp/UINavigationItem/rightBarButtonItem">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setRightBarButtonItem:")
     public native void setRightBarButtonItem(UIBarButtonItem value);
 
-    /**
-     * setRightBarButtonItem:animated:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UINavigationItem_Class/index.html#//apple_ref/occ/instm/UINavigationItem/setRightBarButtonItem:animated:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setRightBarButtonItem:animated:")
     public native void setRightBarButtonItemAnimated(UIBarButtonItem item, boolean animated);
 
-    /**
-     * rightBarButtonItems</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UINavigationItem_Class/index.html#//apple_ref/occ/instp/UINavigationItem/rightBarButtonItems">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setRightBarButtonItems:")
     public native void setRightBarButtonItems(NSArray<? extends UIBarButtonItem> value);
 
-    /**
-     * setRightBarButtonItems:animated:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UINavigationItem_Class/index.html#//apple_ref/occ/instm/UINavigationItem/setRightBarButtonItems:animated:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setRightBarButtonItems:animated:")
     public native void setRightBarButtonItemsAnimated(NSArray<? extends UIBarButtonItem> items, boolean animated);
 
-    /**
-     * title</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UINavigationItem_Class/index.html#//apple_ref/occ/instp/UINavigationItem/title">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setTitle:")
     public native void setTitle(String value);
 
-    /**
-     * titleView</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UINavigationItem_Class/index.html#//apple_ref/occ/instp/UINavigationItem/titleView">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setTitleView:")
     public native void setTitleView(UIView value);
 
-    /**
-     * title</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UINavigationItem_Class/index.html#//apple_ref/occ/instp/UINavigationItem/title">iOS Dev Center</a>
-     */
     @Generated
     @Selector("title")
     public native String title();
 
-    /**
-     * titleView</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UINavigationItem_Class/index.html#//apple_ref/occ/instp/UINavigationItem/titleView">iOS Dev Center</a>
-     */
     @Generated
     @Selector("titleView")
     public native UIView titleView();

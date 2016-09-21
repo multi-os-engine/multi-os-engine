@@ -177,35 +177,19 @@ public class EKEventEditViewController extends UINavigationController {
     @NInt
     public static native long version();
 
-    /**
-     * cancelEditing</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/EventKitUI/Reference/EKEventEditViewControllerClassRef/index.html#//apple_ref/occ/instm/EKEventEditViewController/cancelEditing">iOS Dev Center</a>
-     */
     @Generated
     @Selector("cancelEditing")
     public native void cancelEditing();
 
-    /**
-     * editViewDelegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/EventKitUI/Reference/EKEventEditViewControllerClassRef/index.html#//apple_ref/occ/instp/EKEventEditViewController/editViewDelegate">iOS Dev Center</a>
-     */
     @Generated
     @Selector("editViewDelegate")
     @MappedReturn(ObjCObjectMapper.class)
     public native EKEventEditViewDelegate editViewDelegate();
 
-    /**
-     * event</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/EventKitUI/Reference/EKEventEditViewControllerClassRef/index.html#//apple_ref/occ/instp/EKEventEditViewController/event">iOS Dev Center</a>
-     */
     @Generated
     @Selector("event")
     public native EKEvent event();
 
-    /**
-     * eventStore</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/EventKitUI/Reference/EKEventEditViewControllerClassRef/index.html#//apple_ref/occ/instp/EKEventEditViewController/eventStore">iOS Dev Center</a>
-     */
     @Generated
     @Selector("eventStore")
     public native EKEventStore eventStore();
@@ -227,18 +211,10 @@ public class EKEventEditViewController extends UINavigationController {
     @Selector("initWithRootViewController:")
     public native EKEventEditViewController initWithRootViewController(UIViewController rootViewController);
 
-    /**
-     * editViewDelegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/EventKitUI/Reference/EKEventEditViewControllerClassRef/index.html#//apple_ref/occ/instp/EKEventEditViewController/editViewDelegate">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setEditViewDelegate:")
     public native void setEditViewDelegate_unsafe(@Mapped(ObjCObjectMapper.class) EKEventEditViewDelegate value);
 
-    /**
-     * editViewDelegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/EventKitUI/Reference/EKEventEditViewControllerClassRef/index.html#//apple_ref/occ/instp/EKEventEditViewController/editViewDelegate">iOS Dev Center</a>
-     */
     @Generated
     public void setEditViewDelegate(@Mapped(ObjCObjectMapper.class) EKEventEditViewDelegate value) {
         Object __old = editViewDelegate();
@@ -251,18 +227,10 @@ public class EKEventEditViewController extends UINavigationController {
         }
     }
 
-    /**
-     * event</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/EventKitUI/Reference/EKEventEditViewControllerClassRef/index.html#//apple_ref/occ/instp/EKEventEditViewController/event">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setEvent:")
     public native void setEvent(EKEvent value);
 
-    /**
-     * eventStore</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/EventKitUI/Reference/EKEventEditViewControllerClassRef/index.html#//apple_ref/occ/instp/EKEventEditViewController/eventStore">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setEventStore:")
     public native void setEventStore(EKEventStore value);

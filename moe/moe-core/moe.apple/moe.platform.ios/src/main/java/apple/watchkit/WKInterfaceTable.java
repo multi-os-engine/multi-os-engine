@@ -163,60 +163,32 @@ public class WKInterfaceTable extends WKInterfaceObject {
     @Selector("init")
     public native WKInterfaceTable init();
 
-    /**
-     * insertRowsAtIndexes:withRowType:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WatchKit/Reference/WKInterfaceTable_class/index.html#//apple_ref/occ/instm/WKInterfaceTable/insertRowsAtIndexes:withRowType:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("insertRowsAtIndexes:withRowType:")
     public native void insertRowsAtIndexesWithRowType(NSIndexSet rows, String rowType);
 
-    /**
-     * numberOfRows</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WatchKit/Reference/WKInterfaceTable_class/index.html#//apple_ref/occ/instp/WKInterfaceTable/numberOfRows">iOS Dev Center</a>
-     */
     @Generated
     @Selector("numberOfRows")
     @NInt
     public native long numberOfRows();
 
-    /**
-     * removeRowsAtIndexes:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WatchKit/Reference/WKInterfaceTable_class/index.html#//apple_ref/occ/instm/WKInterfaceTable/removeRowsAtIndexes:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("removeRowsAtIndexes:")
     public native void removeRowsAtIndexes(NSIndexSet rows);
 
-    /**
-     * rowControllerAtIndex:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WatchKit/Reference/WKInterfaceTable_class/index.html#//apple_ref/occ/instm/WKInterfaceTable/rowControllerAtIndex:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("rowControllerAtIndex:")
     @MappedReturn(ObjCObjectMapper.class)
     public native Object rowControllerAtIndex(@NInt long index);
 
-    /**
-     * scrollToRowAtIndex:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WatchKit/Reference/WKInterfaceTable_class/index.html#//apple_ref/occ/instm/WKInterfaceTable/scrollToRowAtIndex:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("scrollToRowAtIndex:")
     public native void scrollToRowAtIndex(@NInt long index);
 
-    /**
-     * setNumberOfRows:withRowType:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WatchKit/Reference/WKInterfaceTable_class/index.html#//apple_ref/occ/instm/WKInterfaceTable/setNumberOfRows:withRowType:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setNumberOfRows:withRowType:")
     public native void setNumberOfRowsWithRowType(@NInt long numberOfRows, String rowType);
 
-    /**
-     * setRowTypes:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WatchKit/Reference/WKInterfaceTable_class/index.html#//apple_ref/occ/instm/WKInterfaceTable/setRowTypes:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setRowTypes:")
     public native void setRowTypes(NSArray<String> rowTypes);

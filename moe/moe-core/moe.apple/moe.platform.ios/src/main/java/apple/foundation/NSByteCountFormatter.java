@@ -55,10 +55,6 @@ public class NSByteCountFormatter extends NSFormatter {
     @Selector("alloc")
     public static native NSByteCountFormatter alloc();
 
-    /**
-     * stringFromByteCount:countStyle:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSByteCountFormatter_Class/index.html#//apple_ref/occ/clm/NSByteCountFormatter/stringFromByteCount:countStyle:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("stringFromByteCount:countStyle:")
     public static native String stringFromByteCountCountStyle(long byteCount, @NInt long countStyle);
@@ -163,61 +159,33 @@ public class NSByteCountFormatter extends NSFormatter {
     @NInt
     public static native long version_static();
 
-    /**
-     * allowedUnits</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSByteCountFormatter_Class/index.html#//apple_ref/occ/instp/NSByteCountFormatter/allowedUnits">iOS Dev Center</a>
-     */
     @Generated
     @Selector("allowedUnits")
     @NUInt
     public native long allowedUnits();
 
-    /**
-     * allowsNonnumericFormatting</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSByteCountFormatter_Class/index.html#//apple_ref/occ/instp/NSByteCountFormatter/allowsNonnumericFormatting">iOS Dev Center</a>
-     */
     @Generated
     @Selector("allowsNonnumericFormatting")
     public native boolean allowsNonnumericFormatting();
 
-    /**
-     * countStyle</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSByteCountFormatter_Class/index.html#//apple_ref/occ/instp/NSByteCountFormatter/countStyle">iOS Dev Center</a>
-     */
     @Generated
     @Selector("countStyle")
     @NInt
     public native long countStyle();
 
-    /**
-     * formattingContext</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSByteCountFormatter_Class/index.html#//apple_ref/occ/instp/NSByteCountFormatter/formattingContext">iOS Dev Center</a>
-     */
     @Generated
     @Selector("formattingContext")
     @NInt
     public native long formattingContext();
 
-    /**
-     * includesActualByteCount</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSByteCountFormatter_Class/index.html#//apple_ref/occ/instp/NSByteCountFormatter/includesActualByteCount">iOS Dev Center</a>
-     */
     @Generated
     @Selector("includesActualByteCount")
     public native boolean includesActualByteCount();
 
-    /**
-     * includesCount</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSByteCountFormatter_Class/index.html#//apple_ref/occ/instp/NSByteCountFormatter/includesCount">iOS Dev Center</a>
-     */
     @Generated
     @Selector("includesCount")
     public native boolean includesCount();
 
-    /**
-     * includesUnit</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSByteCountFormatter_Class/index.html#//apple_ref/occ/instp/NSByteCountFormatter/includesUnit">iOS Dev Center</a>
-     */
     @Generated
     @Selector("includesUnit")
     public native boolean includesUnit();
@@ -226,98 +194,50 @@ public class NSByteCountFormatter extends NSFormatter {
     @Selector("init")
     public native NSByteCountFormatter init();
 
-    /**
-     * adaptive</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSByteCountFormatter_Class/index.html#//apple_ref/occ/instp/NSByteCountFormatter/adaptive">iOS Dev Center</a>
-     */
     @Generated
     @Selector("isAdaptive")
     public native boolean isAdaptive();
 
-    /**
-     * adaptive</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSByteCountFormatter_Class/index.html#//apple_ref/occ/instp/NSByteCountFormatter/adaptive">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setAdaptive:")
     public native void setAdaptive(boolean value);
 
-    /**
-     * allowedUnits</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSByteCountFormatter_Class/index.html#//apple_ref/occ/instp/NSByteCountFormatter/allowedUnits">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setAllowedUnits:")
     public native void setAllowedUnits(@NUInt long value);
 
-    /**
-     * allowsNonnumericFormatting</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSByteCountFormatter_Class/index.html#//apple_ref/occ/instp/NSByteCountFormatter/allowsNonnumericFormatting">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setAllowsNonnumericFormatting:")
     public native void setAllowsNonnumericFormatting(boolean value);
 
-    /**
-     * countStyle</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSByteCountFormatter_Class/index.html#//apple_ref/occ/instp/NSByteCountFormatter/countStyle">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setCountStyle:")
     public native void setCountStyle(@NInt long value);
 
-    /**
-     * formattingContext</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSByteCountFormatter_Class/index.html#//apple_ref/occ/instp/NSByteCountFormatter/formattingContext">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setFormattingContext:")
     public native void setFormattingContext(@NInt long value);
 
-    /**
-     * includesActualByteCount</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSByteCountFormatter_Class/index.html#//apple_ref/occ/instp/NSByteCountFormatter/includesActualByteCount">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setIncludesActualByteCount:")
     public native void setIncludesActualByteCount(boolean value);
 
-    /**
-     * includesCount</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSByteCountFormatter_Class/index.html#//apple_ref/occ/instp/NSByteCountFormatter/includesCount">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setIncludesCount:")
     public native void setIncludesCount(boolean value);
 
-    /**
-     * includesUnit</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSByteCountFormatter_Class/index.html#//apple_ref/occ/instp/NSByteCountFormatter/includesUnit">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setIncludesUnit:")
     public native void setIncludesUnit(boolean value);
 
-    /**
-     * zeroPadsFractionDigits</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSByteCountFormatter_Class/index.html#//apple_ref/occ/instp/NSByteCountFormatter/zeroPadsFractionDigits">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setZeroPadsFractionDigits:")
     public native void setZeroPadsFractionDigits(boolean value);
 
-    /**
-     * stringFromByteCount:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSByteCountFormatter_Class/index.html#//apple_ref/occ/instm/NSByteCountFormatter/stringFromByteCount:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("stringFromByteCount:")
     public native String stringFromByteCount(long byteCount);
 
-    /**
-     * zeroPadsFractionDigits</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSByteCountFormatter_Class/index.html#//apple_ref/occ/instp/NSByteCountFormatter/zeroPadsFractionDigits">iOS Dev Center</a>
-     */
     @Generated
     @Selector("zeroPadsFractionDigits")
     public native boolean zeroPadsFractionDigits();

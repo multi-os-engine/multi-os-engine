@@ -170,10 +170,6 @@ public class AVAssetTrackGroup extends NSObject implements NSCopying {
     @Selector("init")
     public native AVAssetTrackGroup init();
 
-    /**
-     * trackIDs</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAssetTrackGroup_Class/index.html#//apple_ref/occ/instp/AVAssetTrackGroup/trackIDs">iOS Dev Center</a>
-     */
     @Generated
     @Selector("trackIDs")
     public native NSArray<? extends NSNumber> trackIDs();

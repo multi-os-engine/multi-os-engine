@@ -60,37 +60,21 @@ public class PHAssetCollectionChangeRequest extends NSObject {
     @Selector("alloc")
     public static native PHAssetCollectionChangeRequest alloc();
 
-    /**
-     * changeRequestForAssetCollection:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHAssetCollectionChangeRequest_Class/index.html#//apple_ref/occ/clm/PHAssetCollectionChangeRequest/changeRequestForAssetCollection:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("changeRequestForAssetCollection:")
     public static native PHAssetCollectionChangeRequest changeRequestForAssetCollection(
             PHAssetCollection assetCollection);
 
-    /**
-     * changeRequestForAssetCollection:assets:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHAssetCollectionChangeRequest_Class/index.html#//apple_ref/occ/clm/PHAssetCollectionChangeRequest/changeRequestForAssetCollection:assets:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("changeRequestForAssetCollection:assets:")
     public static native PHAssetCollectionChangeRequest changeRequestForAssetCollectionAssets(
             PHAssetCollection assetCollection, PHFetchResult<?> assets);
 
-    /**
-     * creationRequestForAssetCollectionWithTitle:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHAssetCollectionChangeRequest_Class/index.html#//apple_ref/occ/clm/PHAssetCollectionChangeRequest/creationRequestForAssetCollectionWithTitle:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("creationRequestForAssetCollectionWithTitle:")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object creationRequestForAssetCollectionWithTitle(String title);
 
-    /**
-     * deleteAssetCollections:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHAssetCollectionChangeRequest_Class/index.html#//apple_ref/occ/clm/PHAssetCollectionChangeRequest/deleteAssetCollections:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("deleteAssetCollections:")
     public static native void deleteAssetCollections(
@@ -196,10 +180,6 @@ public class PHAssetCollectionChangeRequest extends NSObject {
     @NInt
     public static native long version_static();
 
-    /**
-     * addAssets:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHAssetCollectionChangeRequest_Class/index.html#//apple_ref/occ/instm/PHAssetCollectionChangeRequest/addAssets:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("addAssets:")
     public native void addAssets(@Mapped(ObjCObjectMapper.class) NSFastEnumeration assets);
@@ -208,68 +188,36 @@ public class PHAssetCollectionChangeRequest extends NSObject {
     @Selector("init")
     public native PHAssetCollectionChangeRequest init();
 
-    /**
-     * insertAssets:atIndexes:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHAssetCollectionChangeRequest_Class/index.html#//apple_ref/occ/instm/PHAssetCollectionChangeRequest/insertAssets:atIndexes:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("insertAssets:atIndexes:")
     public native void insertAssetsAtIndexes(@Mapped(ObjCObjectMapper.class) NSFastEnumeration assets,
             NSIndexSet indexes);
 
-    /**
-     * moveAssetsAtIndexes:toIndex:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHAssetCollectionChangeRequest_Class/index.html#//apple_ref/occ/instm/PHAssetCollectionChangeRequest/moveAssetsAtIndexes:toIndex:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("moveAssetsAtIndexes:toIndex:")
     public native void moveAssetsAtIndexesToIndex(NSIndexSet fromIndexes, @NUInt long toIndex);
 
-    /**
-     * placeholderForCreatedAssetCollection</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHAssetCollectionChangeRequest_Class/index.html#//apple_ref/occ/instp/PHAssetCollectionChangeRequest/placeholderForCreatedAssetCollection">iOS Dev Center</a>
-     */
     @Generated
     @Selector("placeholderForCreatedAssetCollection")
     public native PHObjectPlaceholder placeholderForCreatedAssetCollection();
 
-    /**
-     * removeAssets:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHAssetCollectionChangeRequest_Class/index.html#//apple_ref/occ/instm/PHAssetCollectionChangeRequest/removeAssets:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("removeAssets:")
     public native void removeAssets(@Mapped(ObjCObjectMapper.class) NSFastEnumeration assets);
 
-    /**
-     * removeAssetsAtIndexes:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHAssetCollectionChangeRequest_Class/index.html#//apple_ref/occ/instm/PHAssetCollectionChangeRequest/removeAssetsAtIndexes:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("removeAssetsAtIndexes:")
     public native void removeAssetsAtIndexes(NSIndexSet indexes);
 
-    /**
-     * replaceAssetsAtIndexes:withAssets:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHAssetCollectionChangeRequest_Class/index.html#//apple_ref/occ/instm/PHAssetCollectionChangeRequest/replaceAssetsAtIndexes:withAssets:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("replaceAssetsAtIndexes:withAssets:")
     public native void replaceAssetsAtIndexesWithAssets(NSIndexSet indexes,
             @Mapped(ObjCObjectMapper.class) NSFastEnumeration assets);
 
-    /**
-     * title</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHAssetCollectionChangeRequest_Class/index.html#//apple_ref/occ/instp/PHAssetCollectionChangeRequest/title">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setTitle:")
     public native void setTitle(String value);
 
-    /**
-     * title</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHAssetCollectionChangeRequest_Class/index.html#//apple_ref/occ/instp/PHAssetCollectionChangeRequest/title">iOS Dev Center</a>
-     */
     @Generated
     @Selector("title")
     public native String title();

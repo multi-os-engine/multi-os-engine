@@ -348,35 +348,19 @@ public class UIPageControl extends UIControl {
     @NInt
     public static native long version_static();
 
-    /**
-     * currentPage</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPageControl_Class/index.html#//apple_ref/occ/instp/UIPageControl/currentPage">iOS Dev Center</a>
-     */
     @Generated
     @Selector("currentPage")
     @NInt
     public native long currentPage();
 
-    /**
-     * currentPageIndicatorTintColor</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPageControl_Class/index.html#//apple_ref/occ/instp/UIPageControl/currentPageIndicatorTintColor">iOS Dev Center</a>
-     */
     @Generated
     @Selector("currentPageIndicatorTintColor")
     public native UIColor currentPageIndicatorTintColor();
 
-    /**
-     * defersCurrentPageDisplay</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPageControl_Class/index.html#//apple_ref/occ/instp/UIPageControl/defersCurrentPageDisplay">iOS Dev Center</a>
-     */
     @Generated
     @Selector("defersCurrentPageDisplay")
     public native boolean defersCurrentPageDisplay();
 
-    /**
-     * hidesForSinglePage</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPageControl_Class/index.html#//apple_ref/occ/instp/UIPageControl/hidesForSinglePage">iOS Dev Center</a>
-     */
     @Generated
     @Selector("hidesForSinglePage")
     public native boolean hidesForSinglePage();
@@ -389,84 +373,44 @@ public class UIPageControl extends UIControl {
     @Selector("initWithFrame:")
     public native UIPageControl initWithFrame(@ByValue CGRect frame);
 
-    /**
-     * numberOfPages</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPageControl_Class/index.html#//apple_ref/occ/instp/UIPageControl/numberOfPages">iOS Dev Center</a>
-     */
     @Generated
     @Selector("numberOfPages")
     @NInt
     public native long numberOfPages();
 
-    /**
-     * pageIndicatorTintColor</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPageControl_Class/index.html#//apple_ref/occ/instp/UIPageControl/pageIndicatorTintColor">iOS Dev Center</a>
-     */
     @Generated
     @Selector("pageIndicatorTintColor")
     public native UIColor pageIndicatorTintColor();
 
-    /**
-     * currentPage</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPageControl_Class/index.html#//apple_ref/occ/instp/UIPageControl/currentPage">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setCurrentPage:")
     public native void setCurrentPage(@NInt long value);
 
-    /**
-     * currentPageIndicatorTintColor</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPageControl_Class/index.html#//apple_ref/occ/instp/UIPageControl/currentPageIndicatorTintColor">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setCurrentPageIndicatorTintColor:")
     public native void setCurrentPageIndicatorTintColor(UIColor value);
 
-    /**
-     * defersCurrentPageDisplay</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPageControl_Class/index.html#//apple_ref/occ/instp/UIPageControl/defersCurrentPageDisplay">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setDefersCurrentPageDisplay:")
     public native void setDefersCurrentPageDisplay(boolean value);
 
-    /**
-     * hidesForSinglePage</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPageControl_Class/index.html#//apple_ref/occ/instp/UIPageControl/hidesForSinglePage">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setHidesForSinglePage:")
     public native void setHidesForSinglePage(boolean value);
 
-    /**
-     * numberOfPages</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPageControl_Class/index.html#//apple_ref/occ/instp/UIPageControl/numberOfPages">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setNumberOfPages:")
     public native void setNumberOfPages(@NInt long value);
 
-    /**
-     * pageIndicatorTintColor</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPageControl_Class/index.html#//apple_ref/occ/instp/UIPageControl/pageIndicatorTintColor">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setPageIndicatorTintColor:")
     public native void setPageIndicatorTintColor(UIColor value);
 
-    /**
-     * sizeForNumberOfPages:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPageControl_Class/index.html#//apple_ref/occ/instm/UIPageControl/sizeForNumberOfPages:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("sizeForNumberOfPages:")
     @ByValue
     public native CGSize sizeForNumberOfPages(@NInt long pageCount);
 
-    /**
-     * updateCurrentPageDisplay</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPageControl_Class/index.html#//apple_ref/occ/instm/UIPageControl/updateCurrentPageDisplay">iOS Dev Center</a>
-     */
     @Generated
     @Selector("updateCurrentPageDisplay")
     public native void updateCurrentPageDisplay();

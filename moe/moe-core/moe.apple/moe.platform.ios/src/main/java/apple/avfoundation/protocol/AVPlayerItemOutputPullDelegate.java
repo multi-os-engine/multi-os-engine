@@ -30,10 +30,6 @@ import org.moe.natj.objc.ann.Selector;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("AVPlayerItemOutputPullDelegate")
 public interface AVPlayerItemOutputPullDelegate {
-    /**
-     * outputMediaDataWillChange:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVPlayerItemOutputPullDelegate_Protocol/index.html#//apple_ref/occ/intfm/AVPlayerItemOutputPullDelegate/outputMediaDataWillChange:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("outputMediaDataWillChange:")
@@ -41,10 +37,6 @@ public interface AVPlayerItemOutputPullDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * outputSequenceWasFlushed:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVPlayerItemOutputPullDelegate_Protocol/index.html#//apple_ref/occ/intfm/AVPlayerItemOutputPullDelegate/outputSequenceWasFlushed:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("outputSequenceWasFlushed:")

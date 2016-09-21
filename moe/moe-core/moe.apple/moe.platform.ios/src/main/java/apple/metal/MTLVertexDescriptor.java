@@ -59,10 +59,6 @@ public class MTLVertexDescriptor extends NSObject implements NSCopying {
     @Selector("alloc")
     public static native MTLVertexDescriptor alloc();
 
-    /**
-     * vertexDescriptor</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Metal/Reference/MTLVertexDescriptor_Ref/index.html#//apple_ref/occ/clm/MTLVertexDescriptor/vertexDescriptor">iOS Dev Center</a>
-     */
     @Generated
     @Selector("vertexDescriptor")
     public static native MTLVertexDescriptor vertexDescriptor();
@@ -167,10 +163,6 @@ public class MTLVertexDescriptor extends NSObject implements NSCopying {
     @NInt
     public static native long version_static();
 
-    /**
-     * attributes</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Metal/Reference/MTLVertexDescriptor_Ref/index.html#//apple_ref/occ/instp/MTLVertexDescriptor/attributes">iOS Dev Center</a>
-     */
     @Generated
     @Selector("attributes")
     public native MTLVertexAttributeDescriptorArray attributes();
@@ -185,18 +177,10 @@ public class MTLVertexDescriptor extends NSObject implements NSCopying {
     @Selector("init")
     public native MTLVertexDescriptor init();
 
-    /**
-     * layouts</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Metal/Reference/MTLVertexDescriptor_Ref/index.html#//apple_ref/occ/instp/MTLVertexDescriptor/layouts">iOS Dev Center</a>
-     */
     @Generated
     @Selector("layouts")
     public native MTLVertexBufferLayoutDescriptorArray layouts();
 
-    /**
-     * reset</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Metal/Reference/MTLVertexDescriptor_Ref/index.html#//apple_ref/occ/instm/MTLVertexDescriptor/reset">iOS Dev Center</a>
-     */
     @Generated
     @Selector("reset")
     public native void reset();

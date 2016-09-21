@@ -166,26 +166,14 @@ public class AVPlayerItemAccessLog extends NSObject implements NSCopying {
     @MappedReturn(ObjCObjectMapper.class)
     public native Object copyWithZone(VoidPtr zone);
 
-    /**
-     * events</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVPlayerItemAccessLog_Class/index.html#//apple_ref/occ/instp/AVPlayerItemAccessLog/events">iOS Dev Center</a>
-     */
     @Generated
     @Selector("events")
     public native NSArray<? extends AVPlayerItemAccessLogEvent> events();
 
-    /**
-     * extendedLogData</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVPlayerItemAccessLog_Class/index.html#//apple_ref/occ/instm/AVPlayerItemAccessLog/extendedLogData">iOS Dev Center</a>
-     */
     @Generated
     @Selector("extendedLogData")
     public native NSData extendedLogData();
 
-    /**
-     * extendedLogDataStringEncoding</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVPlayerItemAccessLog_Class/index.html#//apple_ref/occ/instp/AVPlayerItemAccessLog/extendedLogDataStringEncoding">iOS Dev Center</a>
-     */
     @Generated
     @Selector("extendedLogDataStringEncoding")
     @NUInt

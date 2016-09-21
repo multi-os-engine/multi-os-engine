@@ -35,56 +35,32 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("MDLMeshBufferAllocator")
 public interface MDLMeshBufferAllocator {
-    /**
-     * newBuffer:type:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLMeshBufferAllocator_Protocol/index.html#//apple_ref/occ/intfm/MDLMeshBufferAllocator/newBuffer:type:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("newBuffer:type:")
     @MappedReturn(ObjCObjectMapper.class)
     Object newBufferType(@NUInt long length, @NUInt long type);
 
-    /**
-     * newBufferFromZone:data:type:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLMeshBufferAllocator_Protocol/index.html#//apple_ref/occ/intfm/MDLMeshBufferAllocator/newBufferFromZone:data:type:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("newBufferFromZone:data:type:")
     @MappedReturn(ObjCObjectMapper.class)
     Object newBufferFromZoneDataType(@Mapped(ObjCObjectMapper.class) Object zone, NSData data, @NUInt long type);
 
-    /**
-     * newBufferFromZone:length:type:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLMeshBufferAllocator_Protocol/index.html#//apple_ref/occ/intfm/MDLMeshBufferAllocator/newBufferFromZone:length:type:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("newBufferFromZone:length:type:")
     @MappedReturn(ObjCObjectMapper.class)
     Object newBufferFromZoneLengthType(@Mapped(ObjCObjectMapper.class) Object zone, @NUInt long length,
             @NUInt long type);
 
-    /**
-     * newBufferWithData:type:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLMeshBufferAllocator_Protocol/index.html#//apple_ref/occ/intfm/MDLMeshBufferAllocator/newBufferWithData:type:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("newBufferWithData:type:")
     @MappedReturn(ObjCObjectMapper.class)
     Object newBufferWithDataType(NSData data, @NUInt long type);
 
-    /**
-     * newZone:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLMeshBufferAllocator_Protocol/index.html#//apple_ref/occ/intfm/MDLMeshBufferAllocator/newZone:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("newZone:")
     @MappedReturn(ObjCObjectMapper.class)
     Object newZone(@NUInt long capacity);
 
-    /**
-     * newZoneForBuffersWithSize:andType:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLMeshBufferAllocator_Protocol/index.html#//apple_ref/occ/intfm/MDLMeshBufferAllocator/newZoneForBuffersWithSize:andType:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("newZoneForBuffersWithSize:andType:")
     @MappedReturn(ObjCObjectMapper.class)

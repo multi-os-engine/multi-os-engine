@@ -175,18 +175,10 @@ public class GKMatchmakerViewController extends UINavigationController {
     @NInt
     public static native long version_static();
 
-    /**
-     * addPlayersToMatch:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKMatchmakerViewController_Ref/index.html#//apple_ref/occ/instm/GKMatchmakerViewController/addPlayersToMatch:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("addPlayersToMatch:")
     public native void addPlayersToMatch(GKMatch match);
 
-    /**
-     * defaultInvitationMessage</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKMatchmakerViewController_Ref/index.html#//apple_ref/occ/instp/GKMatchmakerViewController/defaultInvitationMessage">iOS Dev Center</a>
-     */
     @Generated
     @Deprecated
     @Selector("defaultInvitationMessage")
@@ -196,18 +188,10 @@ public class GKMatchmakerViewController extends UINavigationController {
     @Selector("init")
     public native GKMatchmakerViewController init();
 
-    /**
-     * initWithInvite:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKMatchmakerViewController_Ref/index.html#//apple_ref/occ/instm/GKMatchmakerViewController/initWithInvite:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithInvite:")
     public native GKMatchmakerViewController initWithInvite(GKInvite invite);
 
-    /**
-     * initWithMatchRequest:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKMatchmakerViewController_Ref/index.html#//apple_ref/occ/instm/GKMatchmakerViewController/initWithMatchRequest:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithMatchRequest:")
     public native GKMatchmakerViewController initWithMatchRequest(GKMatchRequest request);
@@ -225,87 +209,47 @@ public class GKMatchmakerViewController extends UINavigationController {
     @Selector("initWithRootViewController:")
     public native GKMatchmakerViewController initWithRootViewController(UIViewController rootViewController);
 
-    /**
-     * hosted</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKMatchmakerViewController_Ref/index.html#//apple_ref/occ/instp/GKMatchmakerViewController/hosted">iOS Dev Center</a>
-     */
     @Generated
     @Selector("isHosted")
     public native boolean isHosted();
 
-    /**
-     * hosted</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKMatchmakerViewController_Ref/index.html#//apple_ref/occ/instp/GKMatchmakerViewController/hosted">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setHosted:")
     public native void setHosted(boolean value);
 
-    /**
-     * matchRequest</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKMatchmakerViewController_Ref/index.html#//apple_ref/occ/instp/GKMatchmakerViewController/matchRequest">iOS Dev Center</a>
-     */
     @Generated
     @Selector("matchRequest")
     public native GKMatchRequest matchRequest();
 
-    /**
-     * matchmakerDelegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKMatchmakerViewController_Ref/index.html#//apple_ref/occ/instp/GKMatchmakerViewController/matchmakerDelegate">iOS Dev Center</a>
-     */
     @Generated
     @Selector("matchmakerDelegate")
     @MappedReturn(ObjCObjectMapper.class)
     public native GKMatchmakerViewControllerDelegate matchmakerDelegate();
 
-    /**
-     * defaultInvitationMessage</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKMatchmakerViewController_Ref/index.html#//apple_ref/occ/instp/GKMatchmakerViewController/defaultInvitationMessage">iOS Dev Center</a>
-     */
     @Generated
     @Deprecated
     @Selector("setDefaultInvitationMessage:")
     public native void setDefaultInvitationMessage(String value);
 
-    /**
-     * setHostedPlayer:connected:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKMatchmakerViewController_Ref/index.html#//apple_ref/occ/instm/GKMatchmakerViewController/setHostedPlayer:connected:">iOS Dev Center</a>
-     */
     @Generated
     @Deprecated
     @Selector("setHostedPlayer:connected:")
     public native void setHostedPlayerConnected(String playerID, boolean connected);
 
-    /**
-     * setHostedPlayer:didConnect:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKMatchmakerViewController_Ref/index.html#//apple_ref/occ/instm/GKMatchmakerViewController/setHostedPlayer:didConnect:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setHostedPlayer:didConnect:")
     public native void setHostedPlayerDidConnect(GKPlayer player, boolean connected);
 
-    /**
-     * setHostedPlayerReady:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKMatchmakerViewController_Ref/index.html#//apple_ref/occ/instm/GKMatchmakerViewController/setHostedPlayerReady:">iOS Dev Center</a>
-     */
     @Generated
     @Deprecated
     @Selector("setHostedPlayerReady:")
     public native void setHostedPlayerReady(String playerID);
 
-    /**
-     * matchmakerDelegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKMatchmakerViewController_Ref/index.html#//apple_ref/occ/instp/GKMatchmakerViewController/matchmakerDelegate">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setMatchmakerDelegate:")
     public native void setMatchmakerDelegate_unsafe(
             @Mapped(ObjCObjectMapper.class) GKMatchmakerViewControllerDelegate value);
 
-    /**
-     * matchmakerDelegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKMatchmakerViewController_Ref/index.html#//apple_ref/occ/instp/GKMatchmakerViewController/matchmakerDelegate">iOS Dev Center</a>
-     */
     @Generated
     public void setMatchmakerDelegate(@Mapped(ObjCObjectMapper.class) GKMatchmakerViewControllerDelegate value) {
         Object __old = matchmakerDelegate();

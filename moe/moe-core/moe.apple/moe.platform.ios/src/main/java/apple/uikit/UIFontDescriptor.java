@@ -66,35 +66,19 @@ public class UIFontDescriptor extends NSObject implements NSCopying, NSSecureCod
     @Selector("alloc")
     public static native UIFontDescriptor alloc();
 
-    /**
-     * fontDescriptorWithFontAttributes:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIFontDescriptor_Class/index.html#//apple_ref/occ/clm/UIFontDescriptor/fontDescriptorWithFontAttributes:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("fontDescriptorWithFontAttributes:")
     public static native UIFontDescriptor fontDescriptorWithFontAttributes(NSDictionary<String, ?> attributes);
 
-    /**
-     * fontDescriptorWithName:matrix:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIFontDescriptor_Class/index.html#//apple_ref/occ/clm/UIFontDescriptor/fontDescriptorWithName:matrix:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("fontDescriptorWithName:matrix:")
     public static native UIFontDescriptor fontDescriptorWithNameMatrix(String fontName,
             @ByValue CGAffineTransform matrix);
 
-    /**
-     * fontDescriptorWithName:size:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIFontDescriptor_Class/index.html#//apple_ref/occ/clm/UIFontDescriptor/fontDescriptorWithName:size:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("fontDescriptorWithName:size:")
     public static native UIFontDescriptor fontDescriptorWithNameSize(String fontName, @NFloat double size);
 
-    /**
-     * preferredFontDescriptorWithTextStyle:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIFontDescriptor_Class/index.html#//apple_ref/occ/clm/UIFontDescriptor/preferredFontDescriptorWithTextStyle:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("preferredFontDescriptorWithTextStyle:")
     public static native UIFontDescriptor preferredFontDescriptorWithTextStyle(String style);
@@ -213,58 +197,30 @@ public class UIFontDescriptor extends NSObject implements NSCopying, NSSecureCod
     @Selector("encodeWithCoder:")
     public native void encodeWithCoder(NSCoder aCoder);
 
-    /**
-     * fontAttributes</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIFontDescriptor_Class/index.html#//apple_ref/occ/instm/UIFontDescriptor/fontAttributes">iOS Dev Center</a>
-     */
     @Generated
     @Selector("fontAttributes")
     public native NSDictionary<String, ?> fontAttributes();
 
-    /**
-     * fontDescriptorByAddingAttributes:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIFontDescriptor_Class/index.html#//apple_ref/occ/instm/UIFontDescriptor/fontDescriptorByAddingAttributes:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("fontDescriptorByAddingAttributes:")
     public native UIFontDescriptor fontDescriptorByAddingAttributes(NSDictionary<String, ?> attributes);
 
-    /**
-     * fontDescriptorWithFace:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIFontDescriptor_Class/index.html#//apple_ref/occ/instm/UIFontDescriptor/fontDescriptorWithFace:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("fontDescriptorWithFace:")
     public native UIFontDescriptor fontDescriptorWithFace(String newFace);
 
-    /**
-     * fontDescriptorWithFamily:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIFontDescriptor_Class/index.html#//apple_ref/occ/instm/UIFontDescriptor/fontDescriptorWithFamily:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("fontDescriptorWithFamily:")
     public native UIFontDescriptor fontDescriptorWithFamily(String newFamily);
 
-    /**
-     * fontDescriptorWithMatrix:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIFontDescriptor_Class/index.html#//apple_ref/occ/instm/UIFontDescriptor/fontDescriptorWithMatrix:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("fontDescriptorWithMatrix:")
     public native UIFontDescriptor fontDescriptorWithMatrix(@ByValue CGAffineTransform matrix);
 
-    /**
-     * fontDescriptorWithSize:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIFontDescriptor_Class/index.html#//apple_ref/occ/instm/UIFontDescriptor/fontDescriptorWithSize:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("fontDescriptorWithSize:")
     public native UIFontDescriptor fontDescriptorWithSize(@NFloat double newPointSize);
 
-    /**
-     * fontDescriptorWithSymbolicTraits:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIFontDescriptor_Class/index.html#//apple_ref/occ/instm/UIFontDescriptor/fontDescriptorWithSymbolicTraits:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("fontDescriptorWithSymbolicTraits:")
     public native UIFontDescriptor fontDescriptorWithSymbolicTraits(int symbolicTraits);
@@ -277,62 +233,34 @@ public class UIFontDescriptor extends NSObject implements NSCopying, NSSecureCod
     @Selector("initWithCoder:")
     public native UIFontDescriptor initWithCoder(NSCoder aDecoder);
 
-    /**
-     * initWithFontAttributes:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIFontDescriptor_Class/index.html#//apple_ref/occ/instm/UIFontDescriptor/initWithFontAttributes:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithFontAttributes:")
     public native UIFontDescriptor initWithFontAttributes(NSDictionary<String, ?> attributes);
 
-    /**
-     * matchingFontDescriptorsWithMandatoryKeys:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIFontDescriptor_Class/index.html#//apple_ref/occ/instm/UIFontDescriptor/matchingFontDescriptorsWithMandatoryKeys:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("matchingFontDescriptorsWithMandatoryKeys:")
     public native NSArray<? extends UIFontDescriptor> matchingFontDescriptorsWithMandatoryKeys(
             NSSet<String> mandatoryKeys);
 
-    /**
-     * matrix</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIFontDescriptor_Class/index.html#//apple_ref/occ/instp/UIFontDescriptor/matrix">iOS Dev Center</a>
-     */
     @Generated
     @Selector("matrix")
     @ByValue
     public native CGAffineTransform matrix();
 
-    /**
-     * objectForKey:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIFontDescriptor_Class/index.html#//apple_ref/occ/instm/UIFontDescriptor/objectForKey:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("objectForKey:")
     @MappedReturn(ObjCObjectMapper.class)
     public native Object objectForKey(String anAttribute);
 
-    /**
-     * pointSize</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIFontDescriptor_Class/index.html#//apple_ref/occ/instp/UIFontDescriptor/pointSize">iOS Dev Center</a>
-     */
     @Generated
     @Selector("pointSize")
     @NFloat
     public native double pointSize();
 
-    /**
-     * postscriptName</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIFontDescriptor_Class/index.html#//apple_ref/occ/instp/UIFontDescriptor/postscriptName">iOS Dev Center</a>
-     */
     @Generated
     @Selector("postscriptName")
     public native String postscriptName();
 
-    /**
-     * symbolicTraits</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIFontDescriptor_Class/index.html#//apple_ref/occ/instp/UIFontDescriptor/symbolicTraits">iOS Dev Center</a>
-     */
     @Generated
     @Selector("symbolicTraits")
     public native int symbolicTraits();

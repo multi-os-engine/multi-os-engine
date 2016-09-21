@@ -166,18 +166,10 @@ public class CLLocation extends NSObject implements NSCopying, NSSecureCoding, C
     @NInt
     public static native long version_static();
 
-    /**
-     * altitude</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreLocation/Reference/CLLocation_Class/index.html#//apple_ref/occ/instp/CLLocation/altitude">iOS Dev Center</a>
-     */
     @Generated
     @Selector("altitude")
     public native double altitude();
 
-    /**
-     * coordinate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreLocation/Reference/CLLocation_Class/index.html#//apple_ref/occ/instp/CLLocation/coordinate">iOS Dev Center</a>
-     */
     @Generated
     @Selector("coordinate")
     @ByValue
@@ -189,26 +181,14 @@ public class CLLocation extends NSObject implements NSCopying, NSSecureCoding, C
     @MappedReturn(ObjCObjectMapper.class)
     public native Object copyWithZone(VoidPtr zone);
 
-    /**
-     * course</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreLocation/Reference/CLLocation_Class/index.html#//apple_ref/occ/instp/CLLocation/course">iOS Dev Center</a>
-     */
     @Generated
     @Selector("course")
     public native double course();
 
-    /**
-     * description</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreLocation/Reference/CLLocation_Class/index.html#//apple_ref/occ/instp/CLLocation/description">iOS Dev Center</a>
-     */
     @Generated
     @Selector("description")
     public native String description();
 
-    /**
-     * distanceFromLocation:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreLocation/Reference/CLLocation_Class/index.html#//apple_ref/occ/instm/CLLocation/distanceFromLocation:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("distanceFromLocation:")
     public native double distanceFromLocation(CLLocation location);
@@ -217,27 +197,15 @@ public class CLLocation extends NSObject implements NSCopying, NSSecureCoding, C
     @Selector("encodeWithCoder:")
     public native void encodeWithCoder(NSCoder aCoder);
 
-    /**
-     * floor</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreLocation/Reference/CLLocation_Class/index.html#//apple_ref/occ/instp/CLLocation/floor">iOS Dev Center</a>
-     */
     @Generated
     @Selector("floor")
     public native CLFloor floor();
 
-    /**
-     * getDistanceFrom:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreLocation/Reference/CLLocation_Class/index.html#//apple_ref/occ/instm/CLLocation/getDistanceFrom:">iOS Dev Center</a>
-     */
     @Generated
     @Deprecated
     @Selector("getDistanceFrom:")
     public native double getDistanceFrom(CLLocation location);
 
-    /**
-     * horizontalAccuracy</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreLocation/Reference/CLLocation_Class/index.html#//apple_ref/occ/instp/CLLocation/horizontalAccuracy">iOS Dev Center</a>
-     */
     @Generated
     @Selector("horizontalAccuracy")
     public native double horizontalAccuracy();
@@ -250,38 +218,22 @@ public class CLLocation extends NSObject implements NSCopying, NSSecureCoding, C
     @Selector("initWithCoder:")
     public native CLLocation initWithCoder(NSCoder aDecoder);
 
-    /**
-     * initWithCoordinate:altitude:horizontalAccuracy:verticalAccuracy:course:speed:timestamp:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreLocation/Reference/CLLocation_Class/index.html#//apple_ref/occ/instm/CLLocation/initWithCoordinate:altitude:horizontalAccuracy:verticalAccuracy:course:speed:timestamp:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithCoordinate:altitude:horizontalAccuracy:verticalAccuracy:course:speed:timestamp:")
     public native CLLocation initWithCoordinateAltitudeHorizontalAccuracyVerticalAccuracyCourseSpeedTimestamp(
             @ByValue CLLocationCoordinate2D coordinate, double altitude, double hAccuracy, double vAccuracy,
             double course, double speed, NSDate timestamp);
 
-    /**
-     * initWithCoordinate:altitude:horizontalAccuracy:verticalAccuracy:timestamp:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreLocation/Reference/CLLocation_Class/index.html#//apple_ref/occ/instm/CLLocation/initWithCoordinate:altitude:horizontalAccuracy:verticalAccuracy:timestamp:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithCoordinate:altitude:horizontalAccuracy:verticalAccuracy:timestamp:")
     public native CLLocation initWithCoordinateAltitudeHorizontalAccuracyVerticalAccuracyTimestamp(
             @ByValue CLLocationCoordinate2D coordinate, double altitude, double hAccuracy, double vAccuracy,
             NSDate timestamp);
 
-    /**
-     * initWithLatitude:longitude:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreLocation/Reference/CLLocation_Class/index.html#//apple_ref/occ/instm/CLLocation/initWithLatitude:longitude:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithLatitude:longitude:")
     public native CLLocation initWithLatitudeLongitude(double latitude, double longitude);
 
-    /**
-     * speed</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreLocation/Reference/CLLocation_Class/index.html#//apple_ref/occ/instp/CLLocation/speed">iOS Dev Center</a>
-     */
     @Generated
     @Selector("speed")
     public native double speed();
@@ -292,18 +244,10 @@ public class CLLocation extends NSObject implements NSCopying, NSSecureCoding, C
         return supportsSecureCoding();
     }
 
-    /**
-     * timestamp</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreLocation/Reference/CLLocation_Class/index.html#//apple_ref/occ/instp/CLLocation/timestamp">iOS Dev Center</a>
-     */
     @Generated
     @Selector("timestamp")
     public native NSDate timestamp();
 
-    /**
-     * verticalAccuracy</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreLocation/Reference/CLLocation_Class/index.html#//apple_ref/occ/instp/CLLocation/verticalAccuracy">iOS Dev Center</a>
-     */
     @Generated
     @Selector("verticalAccuracy")
     public native double verticalAccuracy();

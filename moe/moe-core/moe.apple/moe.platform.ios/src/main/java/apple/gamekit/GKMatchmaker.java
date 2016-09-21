@@ -60,10 +60,6 @@ public class GKMatchmaker extends NSObject {
     @Selector("alloc")
     public static native GKMatchmaker alloc();
 
-    /**
-     * sharedMatchmaker</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKMatchmaker_Ref/index.html#//apple_ref/occ/clm/GKMatchmaker/sharedMatchmaker">iOS Dev Center</a>
-     */
     @Generated
     @Selector("sharedMatchmaker")
     public static native GKMatchmaker sharedMatchmaker();
@@ -168,72 +164,40 @@ public class GKMatchmaker extends NSObject {
     @NInt
     public static native long version_static();
 
-    /**
-     * addPlayersToMatch:matchRequest:completionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKMatchmaker_Ref/index.html#//apple_ref/occ/instm/GKMatchmaker/addPlayersToMatch:matchRequest:completionHandler:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("addPlayersToMatch:matchRequest:completionHandler:")
     public native void addPlayersToMatchMatchRequestCompletionHandler(GKMatch match, GKMatchRequest matchRequest,
             @ObjCBlock(name = "call_addPlayersToMatchMatchRequestCompletionHandler") Block_addPlayersToMatchMatchRequestCompletionHandler completionHandler);
 
-    /**
-     * cancel</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKMatchmaker_Ref/index.html#//apple_ref/occ/instm/GKMatchmaker/cancel">iOS Dev Center</a>
-     */
     @Generated
     @Selector("cancel")
     public native void cancel();
 
-    /**
-     * cancelInviteToPlayer:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKMatchmaker_Ref/index.html#//apple_ref/occ/instm/GKMatchmaker/cancelInviteToPlayer:">iOS Dev Center</a>
-     */
     @Generated
     @Deprecated
     @Selector("cancelInviteToPlayer:")
     public native void cancelInviteToPlayer(String playerID);
 
-    /**
-     * cancelPendingInviteToPlayer:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKMatchmaker_Ref/index.html#//apple_ref/occ/instm/GKMatchmaker/cancelPendingInviteToPlayer:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("cancelPendingInviteToPlayer:")
     public native void cancelPendingInviteToPlayer(GKPlayer player);
 
-    /**
-     * findMatchForRequest:withCompletionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKMatchmaker_Ref/index.html#//apple_ref/occ/instm/GKMatchmaker/findMatchForRequest:withCompletionHandler:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("findMatchForRequest:withCompletionHandler:")
     public native void findMatchForRequestWithCompletionHandler(GKMatchRequest request,
             @ObjCBlock(name = "call_findMatchForRequestWithCompletionHandler") Block_findMatchForRequestWithCompletionHandler completionHandler);
 
-    /**
-     * findPlayersForHostedMatchRequest:withCompletionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKMatchmaker_Ref/index.html#//apple_ref/occ/instm/GKMatchmaker/findPlayersForHostedMatchRequest:withCompletionHandler:">iOS Dev Center</a>
-     */
     @Generated
     @Deprecated
     @Selector("findPlayersForHostedMatchRequest:withCompletionHandler:")
     public native void findPlayersForHostedMatchRequestWithCompletionHandler(GKMatchRequest request,
             @ObjCBlock(name = "call_findPlayersForHostedMatchRequestWithCompletionHandler") Block_findPlayersForHostedMatchRequestWithCompletionHandler completionHandler);
 
-    /**
-     * findPlayersForHostedRequest:withCompletionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKMatchmaker_Ref/index.html#//apple_ref/occ/instm/GKMatchmaker/findPlayersForHostedRequest:withCompletionHandler:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("findPlayersForHostedRequest:withCompletionHandler:")
     public native void findPlayersForHostedRequestWithCompletionHandler(GKMatchRequest request,
             @ObjCBlock(name = "call_findPlayersForHostedRequestWithCompletionHandler") Block_findPlayersForHostedRequestWithCompletionHandler completionHandler);
 
-    /**
-     * finishMatchmakingForMatch:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKMatchmaker_Ref/index.html#//apple_ref/occ/instm/GKMatchmaker/finishMatchmakingForMatch:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("finishMatchmakingForMatch:")
     public native void finishMatchmakingForMatch(GKMatch match);
@@ -242,73 +206,41 @@ public class GKMatchmaker extends NSObject {
     @Selector("init")
     public native GKMatchmaker init();
 
-    /**
-     * matchForInvite:completionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKMatchmaker_Ref/index.html#//apple_ref/occ/instm/GKMatchmaker/matchForInvite:completionHandler:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("matchForInvite:completionHandler:")
     public native void matchForInviteCompletionHandler(GKInvite invite,
             @ObjCBlock(name = "call_matchForInviteCompletionHandler") Block_matchForInviteCompletionHandler completionHandler);
 
-    /**
-     * queryActivityWithCompletionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKMatchmaker_Ref/index.html#//apple_ref/occ/instm/GKMatchmaker/queryActivityWithCompletionHandler:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("queryActivityWithCompletionHandler:")
     public native void queryActivityWithCompletionHandler(
             @ObjCBlock(name = "call_queryActivityWithCompletionHandler") Block_queryActivityWithCompletionHandler completionHandler);
 
-    /**
-     * queryPlayerGroupActivity:withCompletionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKMatchmaker_Ref/index.html#//apple_ref/occ/instm/GKMatchmaker/queryPlayerGroupActivity:withCompletionHandler:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("queryPlayerGroupActivity:withCompletionHandler:")
     public native void queryPlayerGroupActivityWithCompletionHandler(@NUInt long playerGroup,
             @ObjCBlock(name = "call_queryPlayerGroupActivityWithCompletionHandler") Block_queryPlayerGroupActivityWithCompletionHandler completionHandler);
 
-    /**
-     * inviteHandler</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKMatchmaker_Ref/index.html#//apple_ref/occ/instp/GKMatchmaker/inviteHandler">iOS Dev Center</a>
-     */
     @Generated
     @Deprecated
     @Selector("setInviteHandler:")
     public native void setInviteHandler(@ObjCBlock(name = "call_setInviteHandler") Block_setInviteHandler value);
 
-    /**
-     * startBrowsingForNearbyPlayersWithHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKMatchmaker_Ref/index.html#//apple_ref/occ/instm/GKMatchmaker/startBrowsingForNearbyPlayersWithHandler:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("startBrowsingForNearbyPlayersWithHandler:")
     public native void startBrowsingForNearbyPlayersWithHandler(
             @ObjCBlock(name = "call_startBrowsingForNearbyPlayersWithHandler") Block_startBrowsingForNearbyPlayersWithHandler reachableHandler);
 
-    /**
-     * startBrowsingForNearbyPlayersWithReachableHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKMatchmaker_Ref/index.html#//apple_ref/occ/instm/GKMatchmaker/startBrowsingForNearbyPlayersWithReachableHandler:">iOS Dev Center</a>
-     */
     @Generated
     @Deprecated
     @Selector("startBrowsingForNearbyPlayersWithReachableHandler:")
     public native void startBrowsingForNearbyPlayersWithReachableHandler(
             @ObjCBlock(name = "call_startBrowsingForNearbyPlayersWithReachableHandler") Block_startBrowsingForNearbyPlayersWithReachableHandler reachableHandler);
 
-    /**
-     * stopBrowsingForNearbyPlayers</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKMatchmaker_Ref/index.html#//apple_ref/occ/instm/GKMatchmaker/stopBrowsingForNearbyPlayers">iOS Dev Center</a>
-     */
     @Generated
     @Selector("stopBrowsingForNearbyPlayers")
     public native void stopBrowsingForNearbyPlayers();
 
-    /**
-     * inviteHandler</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKMatchmaker_Ref/index.html#//apple_ref/occ/instp/GKMatchmaker/inviteHandler">iOS Dev Center</a>
-     */
     @Generated
     @Deprecated
     @Selector("inviteHandler")

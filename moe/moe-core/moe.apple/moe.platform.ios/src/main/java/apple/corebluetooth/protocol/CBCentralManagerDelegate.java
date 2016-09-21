@@ -34,10 +34,6 @@ import org.moe.natj.objc.ann.Selector;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("CBCentralManagerDelegate")
 public interface CBCentralManagerDelegate {
-    /**
-     * centralManager:didConnectPeripheral:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreBluetooth/Reference/CBCentralManagerDelegate_Protocol/index.html#//apple_ref/occ/intfm/CBCentralManagerDelegate/centralManager:didConnectPeripheral:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("centralManager:didConnectPeripheral:")
@@ -45,10 +41,6 @@ public interface CBCentralManagerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * centralManager:didDisconnectPeripheral:error:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreBluetooth/Reference/CBCentralManagerDelegate_Protocol/index.html#//apple_ref/occ/intfm/CBCentralManagerDelegate/centralManager:didDisconnectPeripheral:error:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("centralManager:didDisconnectPeripheral:error:")
@@ -57,10 +49,6 @@ public interface CBCentralManagerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * centralManager:didDiscoverPeripheral:advertisementData:RSSI:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreBluetooth/Reference/CBCentralManagerDelegate_Protocol/index.html#//apple_ref/occ/intfm/CBCentralManagerDelegate/centralManager:didDiscoverPeripheral:advertisementData:RSSI:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("centralManager:didDiscoverPeripheral:advertisementData:RSSI:")
@@ -69,10 +57,6 @@ public interface CBCentralManagerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * centralManager:didFailToConnectPeripheral:error:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreBluetooth/Reference/CBCentralManagerDelegate_Protocol/index.html#//apple_ref/occ/intfm/CBCentralManagerDelegate/centralManager:didFailToConnectPeripheral:error:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("centralManager:didFailToConnectPeripheral:error:")
@@ -81,10 +65,6 @@ public interface CBCentralManagerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * centralManager:willRestoreState:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreBluetooth/Reference/CBCentralManagerDelegate_Protocol/index.html#//apple_ref/occ/intfm/CBCentralManagerDelegate/centralManager:willRestoreState:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("centralManager:willRestoreState:")
@@ -92,10 +72,6 @@ public interface CBCentralManagerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * centralManagerDidUpdateState:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreBluetooth/Reference/CBCentralManagerDelegate_Protocol/index.html#//apple_ref/occ/intfm/CBCentralManagerDelegate/centralManagerDidUpdateState:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("centralManagerDidUpdateState:")
     void centralManagerDidUpdateState(CBCentralManager central);

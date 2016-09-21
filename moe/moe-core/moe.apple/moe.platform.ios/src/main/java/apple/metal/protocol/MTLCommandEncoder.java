@@ -30,59 +30,31 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("MTLCommandEncoder")
 public interface MTLCommandEncoder {
-    /**
-     * device</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Metal/Reference/MTLCommandEncoder_Ref/index.html#//apple_ref/occ/intfp/MTLCommandEncoder/device">iOS Dev Center</a>
-     */
     @Generated
     @Selector("device")
     @MappedReturn(ObjCObjectMapper.class)
     Object device();
 
-    /**
-     * endEncoding</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Metal/Reference/MTLCommandEncoder_Ref/index.html#//apple_ref/occ/intfm/MTLCommandEncoder/endEncoding">iOS Dev Center</a>
-     */
     @Generated
     @Selector("endEncoding")
     void endEncoding();
 
-    /**
-     * insertDebugSignpost:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Metal/Reference/MTLCommandEncoder_Ref/index.html#//apple_ref/occ/intfm/MTLCommandEncoder/insertDebugSignpost:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("insertDebugSignpost:")
     void insertDebugSignpost(String string);
 
-    /**
-     * label</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Metal/Reference/MTLCommandEncoder_Ref/index.html#//apple_ref/occ/intfp/MTLCommandEncoder/label">iOS Dev Center</a>
-     */
     @Generated
     @Selector("label")
     String label();
 
-    /**
-     * popDebugGroup</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Metal/Reference/MTLCommandEncoder_Ref/index.html#//apple_ref/occ/intfm/MTLCommandEncoder/popDebugGroup">iOS Dev Center</a>
-     */
     @Generated
     @Selector("popDebugGroup")
     void popDebugGroup();
 
-    /**
-     * pushDebugGroup:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Metal/Reference/MTLCommandEncoder_Ref/index.html#//apple_ref/occ/intfm/MTLCommandEncoder/pushDebugGroup:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("pushDebugGroup:")
     void pushDebugGroup(String string);
 
-    /**
-     * label</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Metal/Reference/MTLCommandEncoder_Ref/index.html#//apple_ref/occ/intfp/MTLCommandEncoder/label">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setLabel:")
     void setLabel(String value);

@@ -31,18 +31,10 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("NSCoding")
 public interface NSCoding {
-    /**
-     * encodeWithCoder:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Protocols/NSCoding_Protocol/index.html#//apple_ref/occ/intfm/NSCoding/encodeWithCoder:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("encodeWithCoder:")
     void encodeWithCoder(NSCoder aCoder);
 
-    /**
-     * initWithCoder:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Protocols/NSCoding_Protocol/index.html#//apple_ref/occ/intfm/NSCoding/initWithCoder:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithCoder:")
     @MappedReturn(ObjCObjectMapper.class)

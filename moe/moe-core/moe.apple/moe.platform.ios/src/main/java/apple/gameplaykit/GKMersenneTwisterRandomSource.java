@@ -168,10 +168,6 @@ public class GKMersenneTwisterRandomSource extends GKRandomSource {
     @NInt
     public static native long version_static();
 
-    /**
-     * init</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameplayKit/Reference/GKMersenneTwisterRandomSource_Class/index.html#//apple_ref/occ/instm/GKMersenneTwisterRandomSource/init">iOS Dev Center</a>
-     */
     @Generated
     @Selector("init")
     public native GKMersenneTwisterRandomSource init();
@@ -180,26 +176,14 @@ public class GKMersenneTwisterRandomSource extends GKRandomSource {
     @Selector("initWithCoder:")
     public native GKMersenneTwisterRandomSource initWithCoder(NSCoder aDecoder);
 
-    /**
-     * initWithSeed:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameplayKit/Reference/GKMersenneTwisterRandomSource_Class/index.html#//apple_ref/occ/instm/GKMersenneTwisterRandomSource/initWithSeed:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithSeed:")
     public native GKMersenneTwisterRandomSource initWithSeed(long seed);
 
-    /**
-     * seed</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameplayKit/Reference/GKMersenneTwisterRandomSource_Class/index.html#//apple_ref/occ/instp/GKMersenneTwisterRandomSource/seed">iOS Dev Center</a>
-     */
     @Generated
     @Selector("seed")
     public native long seed();
 
-    /**
-     * seed</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameplayKit/Reference/GKMersenneTwisterRandomSource_Class/index.html#//apple_ref/occ/instp/GKMersenneTwisterRandomSource/seed">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setSeed:")
     public native void setSeed(long value);

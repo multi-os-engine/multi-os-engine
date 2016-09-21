@@ -178,10 +178,6 @@ public class GKGaussianDistribution extends GKRandomDistribution {
     @NInt
     public static native long version_static();
 
-    /**
-     * deviation</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameplayKit/Reference/GKGaussianDistribution_Class/index.html#//apple_ref/occ/instp/GKGaussianDistribution/deviation">iOS Dev Center</a>
-     */
     @Generated
     @Selector("deviation")
     public native float deviation();
@@ -190,28 +186,16 @@ public class GKGaussianDistribution extends GKRandomDistribution {
     @Selector("init")
     public native GKGaussianDistribution init();
 
-    /**
-     * initWithRandomSource:lowestValue:highestValue:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameplayKit/Reference/GKGaussianDistribution_Class/index.html#//apple_ref/occ/instm/GKGaussianDistribution/initWithRandomSource:lowestValue:highestValue:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithRandomSource:lowestValue:highestValue:")
     public native GKGaussianDistribution initWithRandomSourceLowestValueHighestValue(
             @Mapped(ObjCObjectMapper.class) GKRandom source, @NInt long lowestInclusive, @NInt long highestInclusive);
 
-    /**
-     * initWithRandomSource:mean:deviation:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameplayKit/Reference/GKGaussianDistribution_Class/index.html#//apple_ref/occ/instm/GKGaussianDistribution/initWithRandomSource:mean:deviation:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithRandomSource:mean:deviation:")
     public native GKGaussianDistribution initWithRandomSourceMeanDeviation(
             @Mapped(ObjCObjectMapper.class) GKRandom source, float mean, float deviation);
 
-    /**
-     * mean</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameplayKit/Reference/GKGaussianDistribution_Class/index.html#//apple_ref/occ/instp/GKGaussianDistribution/mean">iOS Dev Center</a>
-     */
     @Generated
     @Selector("mean")
     public native float mean();

@@ -31,10 +31,6 @@ import org.moe.natj.objc.ann.Selector;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("UIGuidedAccessRestrictionDelegate")
 public interface UIGuidedAccessRestrictionDelegate {
-    /**
-     * detailTextForGuidedAccessRestrictionWithIdentifier:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIGuidedAccessRestrictionsDelegate_Protocol/index.html#//apple_ref/occ/intfm/UIGuidedAccessRestrictionDelegate/detailTextForGuidedAccessRestrictionWithIdentifier:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("detailTextForGuidedAccessRestrictionWithIdentifier:")
@@ -42,27 +38,15 @@ public interface UIGuidedAccessRestrictionDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * guidedAccessRestrictionIdentifiers</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIGuidedAccessRestrictionsDelegate_Protocol/index.html#//apple_ref/occ/intfm/UIGuidedAccessRestrictionDelegate/guidedAccessRestrictionIdentifiers">iOS Dev Center</a>
-     */
     @Generated
     @Selector("guidedAccessRestrictionIdentifiers")
     NSArray<String> guidedAccessRestrictionIdentifiers();
 
-    /**
-     * guidedAccessRestrictionWithIdentifier:didChangeState:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIGuidedAccessRestrictionsDelegate_Protocol/index.html#//apple_ref/occ/intfm/UIGuidedAccessRestrictionDelegate/guidedAccessRestrictionWithIdentifier:didChangeState:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("guidedAccessRestrictionWithIdentifier:didChangeState:")
     void guidedAccessRestrictionWithIdentifierDidChangeState(String restrictionIdentifier,
             @NInt long newRestrictionState);
 
-    /**
-     * textForGuidedAccessRestrictionWithIdentifier:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIGuidedAccessRestrictionsDelegate_Protocol/index.html#//apple_ref/occ/intfm/UIGuidedAccessRestrictionDelegate/textForGuidedAccessRestrictionWithIdentifier:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("textForGuidedAccessRestrictionWithIdentifier:")
     String textForGuidedAccessRestrictionWithIdentifier(String restrictionIdentifier);

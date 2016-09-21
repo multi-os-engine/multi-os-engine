@@ -263,10 +263,6 @@ public class HKAnchoredObjectQuery extends HKQuery {
     @Selector("init")
     public native HKAnchoredObjectQuery init();
 
-    /**
-     * initWithType:predicate:anchor:limit:completionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HealthKit/Reference/HKAnchoredObjectQuery_Class/index.html#//apple_ref/occ/instm/HKAnchoredObjectQuery/initWithType:predicate:anchor:limit:completionHandler:">iOS Dev Center</a>
-     */
     @Deprecated
     @Generated
     @Selector("initWithType:predicate:anchor:limit:completionHandler:")
@@ -274,28 +270,16 @@ public class HKAnchoredObjectQuery extends HKQuery {
             NSPredicate predicate, @NUInt long anchor, @NUInt long limit,
             @ObjCBlock(name = "call_initWithTypePredicateAnchorLimitCompletionHandler") Block_initWithTypePredicateAnchorLimitCompletionHandler handler);
 
-    /**
-     * initWithType:predicate:anchor:limit:resultsHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HealthKit/Reference/HKAnchoredObjectQuery_Class/index.html#//apple_ref/occ/instm/HKAnchoredObjectQuery/initWithType:predicate:anchor:limit:resultsHandler:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithType:predicate:anchor:limit:resultsHandler:")
     public native HKAnchoredObjectQuery initWithTypePredicateAnchorLimitResultsHandler(HKSampleType type,
             NSPredicate predicate, HKQueryAnchor anchor, @NUInt long limit,
             @ObjCBlock(name = "call_initWithTypePredicateAnchorLimitResultsHandler") Block_initWithTypePredicateAnchorLimitResultsHandler handler);
 
-    /**
-     * updateHandler</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HealthKit/Reference/HKAnchoredObjectQuery_Class/index.html#//apple_ref/occ/instp/HKAnchoredObjectQuery/updateHandler">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setUpdateHandler:")
     public native void setUpdateHandler(@ObjCBlock(name = "call_setUpdateHandler") Block_setUpdateHandler value);
 
-    /**
-     * updateHandler</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HealthKit/Reference/HKAnchoredObjectQuery_Class/index.html#//apple_ref/occ/instp/HKAnchoredObjectQuery/updateHandler">iOS Dev Center</a>
-     */
     @Generated
     @Selector("updateHandler")
     @ObjCBlock(name = "call_updateHandler_ret")

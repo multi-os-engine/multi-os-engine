@@ -166,18 +166,10 @@ public class NSURLAuthenticationChallenge extends NSObject implements NSSecureCo
     @Selector("encodeWithCoder:")
     public native void encodeWithCoder(NSCoder aCoder);
 
-    /**
-     * error</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSURLAuthenticationChallenge_Class/index.html#//apple_ref/occ/instp/NSURLAuthenticationChallenge/error">iOS Dev Center</a>
-     */
     @Generated
     @Selector("error")
     public native NSError error();
 
-    /**
-     * failureResponse</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSURLAuthenticationChallenge_Class/index.html#//apple_ref/occ/instp/NSURLAuthenticationChallenge/failureResponse">iOS Dev Center</a>
-     */
     @Generated
     @Selector("failureResponse")
     public native NSURLResponse failureResponse();
@@ -186,10 +178,6 @@ public class NSURLAuthenticationChallenge extends NSObject implements NSSecureCo
     @Selector("init")
     public native NSURLAuthenticationChallenge init();
 
-    /**
-     * initWithAuthenticationChallenge:sender:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSURLAuthenticationChallenge_Class/index.html#//apple_ref/occ/instm/NSURLAuthenticationChallenge/initWithAuthenticationChallenge:sender:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithAuthenticationChallenge:sender:")
     public native NSURLAuthenticationChallenge initWithAuthenticationChallengeSender(
@@ -200,10 +188,6 @@ public class NSURLAuthenticationChallenge extends NSObject implements NSSecureCo
     @Selector("initWithCoder:")
     public native NSURLAuthenticationChallenge initWithCoder(NSCoder aDecoder);
 
-    /**
-     * initWithProtectionSpace:proposedCredential:previousFailureCount:failureResponse:error:sender:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSURLAuthenticationChallenge_Class/index.html#//apple_ref/occ/instm/NSURLAuthenticationChallenge/initWithProtectionSpace:proposedCredential:previousFailureCount:failureResponse:error:sender:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithProtectionSpace:proposedCredential:previousFailureCount:failureResponse:error:sender:")
     public native NSURLAuthenticationChallenge initWithProtectionSpaceProposedCredentialPreviousFailureCountFailureResponseErrorSender(
@@ -211,35 +195,19 @@ public class NSURLAuthenticationChallenge extends NSObject implements NSSecureCo
             NSURLResponse response, NSError error,
             @Mapped(ObjCObjectMapper.class) NSURLAuthenticationChallengeSender sender);
 
-    /**
-     * previousFailureCount</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSURLAuthenticationChallenge_Class/index.html#//apple_ref/occ/instp/NSURLAuthenticationChallenge/previousFailureCount">iOS Dev Center</a>
-     */
     @Generated
     @Selector("previousFailureCount")
     @NInt
     public native long previousFailureCount();
 
-    /**
-     * proposedCredential</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSURLAuthenticationChallenge_Class/index.html#//apple_ref/occ/instp/NSURLAuthenticationChallenge/proposedCredential">iOS Dev Center</a>
-     */
     @Generated
     @Selector("proposedCredential")
     public native NSURLCredential proposedCredential();
 
-    /**
-     * protectionSpace</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSURLAuthenticationChallenge_Class/index.html#//apple_ref/occ/instp/NSURLAuthenticationChallenge/protectionSpace">iOS Dev Center</a>
-     */
     @Generated
     @Selector("protectionSpace")
     public native NSURLProtectionSpace protectionSpace();
 
-    /**
-     * sender</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSURLAuthenticationChallenge_Class/index.html#//apple_ref/occ/instp/NSURLAuthenticationChallenge/sender">iOS Dev Center</a>
-     */
     @Generated
     @Selector("sender")
     @MappedReturn(ObjCObjectMapper.class)

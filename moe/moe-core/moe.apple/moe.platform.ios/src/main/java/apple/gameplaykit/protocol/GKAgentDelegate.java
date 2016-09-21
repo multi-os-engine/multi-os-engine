@@ -30,10 +30,6 @@ import org.moe.natj.objc.ann.Selector;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("GKAgentDelegate")
 public interface GKAgentDelegate {
-    /**
-     * agentDidUpdate:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameplayKit/Reference/GKAgentDelegate_Protocol/index.html#//apple_ref/occ/intfm/GKAgentDelegate/agentDidUpdate:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("agentDidUpdate:")
@@ -41,10 +37,6 @@ public interface GKAgentDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * agentWillUpdate:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameplayKit/Reference/GKAgentDelegate_Protocol/index.html#//apple_ref/occ/intfm/GKAgentDelegate/agentWillUpdate:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("agentWillUpdate:")

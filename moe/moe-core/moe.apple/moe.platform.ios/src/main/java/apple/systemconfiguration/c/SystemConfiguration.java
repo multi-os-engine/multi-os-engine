@@ -50,107 +50,59 @@ public final class SystemConfiguration {
     private SystemConfiguration() {
     }
 
-    /**
-     * SCNetworkReachabilityCreateWithAddress</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SystemConfiguration/Reference/SCNetworkReachabilityRef/index.html#//apple_ref/c/func/SCNetworkReachabilityCreateWithAddress">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native SCNetworkReachabilityRef SCNetworkReachabilityCreateWithAddress(CFAllocatorRef allocator,
             @UncertainArgument("Options: reference, array Fallback: reference") sockaddr address);
 
-    /**
-     * SCNetworkReachabilityCreateWithAddressPair</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SystemConfiguration/Reference/SCNetworkReachabilityRef/index.html#//apple_ref/c/func/SCNetworkReachabilityCreateWithAddressPair">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native SCNetworkReachabilityRef SCNetworkReachabilityCreateWithAddressPair(CFAllocatorRef allocator,
             @UncertainArgument("Options: reference, array Fallback: reference") sockaddr localAddress,
             @UncertainArgument("Options: reference, array Fallback: reference") sockaddr remoteAddress);
 
-    /**
-     * SCNetworkReachabilityCreateWithName</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SystemConfiguration/Reference/SCNetworkReachabilityRef/index.html#//apple_ref/c/func/SCNetworkReachabilityCreateWithName">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native SCNetworkReachabilityRef SCNetworkReachabilityCreateWithName(CFAllocatorRef allocator,
             @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String nodename);
 
-    /**
-     * SCNetworkReachabilityGetTypeID</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SystemConfiguration/Reference/SCNetworkReachabilityRef/index.html#//apple_ref/c/func/SCNetworkReachabilityGetTypeID">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @NUInt
     public static native long SCNetworkReachabilityGetTypeID();
 
-    /**
-     * SCNetworkReachabilityGetFlags</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SystemConfiguration/Reference/SCNetworkReachabilityRef/index.html#//apple_ref/c/func/SCNetworkReachabilityGetFlags">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native byte SCNetworkReachabilityGetFlags(SCNetworkReachabilityRef target, IntPtr flags);
 
-    /**
-     * SCNetworkReachabilitySetCallback</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SystemConfiguration/Reference/SCNetworkReachabilityRef/index.html#//apple_ref/c/func/SCNetworkReachabilitySetCallback">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native byte SCNetworkReachabilitySetCallback(SCNetworkReachabilityRef target,
             @FunctionPtr(name = "call_SCNetworkReachabilitySetCallback") Function_SCNetworkReachabilitySetCallback callout,
             @UncertainArgument("Options: reference, array Fallback: reference") SCNetworkReachabilityContext context);
 
-    /**
-     * SCNetworkReachabilityScheduleWithRunLoop</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SystemConfiguration/Reference/SCNetworkReachabilityRef/index.html#//apple_ref/c/func/SCNetworkReachabilityScheduleWithRunLoop">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native byte SCNetworkReachabilityScheduleWithRunLoop(SCNetworkReachabilityRef target,
             CFRunLoopRef runLoop, CFStringRef runLoopMode);
 
-    /**
-     * SCNetworkReachabilityUnscheduleFromRunLoop</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SystemConfiguration/Reference/SCNetworkReachabilityRef/index.html#//apple_ref/c/func/SCNetworkReachabilityUnscheduleFromRunLoop">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native byte SCNetworkReachabilityUnscheduleFromRunLoop(SCNetworkReachabilityRef target,
             CFRunLoopRef runLoop, CFStringRef runLoopMode);
 
-    /**
-     * SCNetworkReachabilitySetDispatchQueue</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SystemConfiguration/Reference/SCNetworkReachabilityRef/index.html#//apple_ref/c/func/SCNetworkReachabilitySetDispatchQueue">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native byte SCNetworkReachabilitySetDispatchQueue(SCNetworkReachabilityRef target, NSObject queue);
 
-    /**
-     * SCCopyLastError</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SystemConfiguration/Reference/SystemConfiguration_Utilities/index.html#//apple_ref/c/func/SCCopyLastError">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native CFErrorRef SCCopyLastError();
 
-    /**
-     * SCError</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SystemConfiguration/Reference/SystemConfiguration_Utilities/index.html#//apple_ref/c/func/SCError">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native int SCError();
 
-    /**
-     * SCErrorString</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SystemConfiguration/Reference/SystemConfiguration_Utilities/index.html#//apple_ref/c/func/SCErrorString">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @UncertainReturn("Options: java.string, c.const-byte-ptr Fallback: java.string")

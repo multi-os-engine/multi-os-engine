@@ -263,10 +263,6 @@ public class HKStatisticsQuery extends HKQuery {
     @Selector("init")
     public native HKStatisticsQuery init();
 
-    /**
-     * initWithQuantityType:quantitySamplePredicate:options:completionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HealthKit/Reference/HKStatisticsQuery_Class/index.html#//apple_ref/occ/instm/HKStatisticsQuery/initWithQuantityType:quantitySamplePredicate:options:completionHandler:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithQuantityType:quantitySamplePredicate:options:completionHandler:")
     public native HKStatisticsQuery initWithQuantityTypeQuantitySamplePredicateOptionsCompletionHandler(

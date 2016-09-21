@@ -31,10 +31,6 @@ import org.moe.natj.objc.ann.Selector;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("SCNPhysicsContactDelegate")
 public interface SCNPhysicsContactDelegate {
-    /**
-     * physicsWorld:didBeginContact:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNPhysicsContactDelegate_Protocol/index.html#//apple_ref/occ/intfm/SCNPhysicsContactDelegate/physicsWorld:didBeginContact:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("physicsWorld:didBeginContact:")
@@ -42,10 +38,6 @@ public interface SCNPhysicsContactDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * physicsWorld:didEndContact:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNPhysicsContactDelegate_Protocol/index.html#//apple_ref/occ/intfm/SCNPhysicsContactDelegate/physicsWorld:didEndContact:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("physicsWorld:didEndContact:")
@@ -53,10 +45,6 @@ public interface SCNPhysicsContactDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * physicsWorld:didUpdateContact:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNPhysicsContactDelegate_Protocol/index.html#//apple_ref/occ/intfm/SCNPhysicsContactDelegate/physicsWorld:didUpdateContact:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("physicsWorld:didUpdateContact:")

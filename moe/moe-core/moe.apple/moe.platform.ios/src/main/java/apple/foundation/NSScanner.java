@@ -62,19 +62,11 @@ public class NSScanner extends NSObject implements NSCopying {
     @Selector("alloc")
     public static native NSScanner alloc();
 
-    /**
-     * localizedScannerWithString:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSScanner_Class/index.html#//apple_ref/occ/clm/NSScanner/localizedScannerWithString:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("localizedScannerWithString:")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object localizedScannerWithString(String string);
 
-    /**
-     * scannerWithString:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSScanner_Class/index.html#//apple_ref/occ/clm/NSScanner/scannerWithString:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("scannerWithString:")
     public static native NSScanner scannerWithString(String string);
@@ -179,18 +171,10 @@ public class NSScanner extends NSObject implements NSCopying {
     @NInt
     public static native long version_static();
 
-    /**
-     * caseSensitive</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSScanner_Class/index.html#//apple_ref/occ/instp/NSScanner/caseSensitive">iOS Dev Center</a>
-     */
     @Generated
     @Selector("caseSensitive")
     public native boolean caseSensitive();
 
-    /**
-     * charactersToBeSkipped</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSScanner_Class/index.html#//apple_ref/occ/instp/NSScanner/charactersToBeSkipped">iOS Dev Center</a>
-     */
     @Generated
     @Selector("charactersToBeSkipped")
     public native NSCharacterSet charactersToBeSkipped();
@@ -205,196 +189,100 @@ public class NSScanner extends NSObject implements NSCopying {
     @Selector("init")
     public native NSScanner init();
 
-    /**
-     * initWithString:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSScanner_Class/index.html#//apple_ref/occ/instm/NSScanner/initWithString:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithString:")
     public native NSScanner initWithString(String string);
 
-    /**
-     * atEnd</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSScanner_Class/index.html#//apple_ref/occ/instp/NSScanner/atEnd">iOS Dev Center</a>
-     */
     @Generated
     @Selector("isAtEnd")
     public native boolean isAtEnd();
 
-    /**
-     * locale</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSScanner_Class/index.html#//apple_ref/occ/instp/NSScanner/locale">iOS Dev Center</a>
-     */
     @Generated
     @Selector("locale")
     @MappedReturn(ObjCObjectMapper.class)
     public native Object locale();
 
-    /**
-     * scanCharactersFromSet:intoString:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSScanner_Class/index.html#//apple_ref/occ/instm/NSScanner/scanCharactersFromSet:intoString:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("scanCharactersFromSet:intoString:")
     public native boolean scanCharactersFromSetIntoString(NSCharacterSet set, Ptr<NSString> result);
 
-    /**
-     * scanDecimal:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSScanner_Class/index.html#//apple_ref/occ/instm/NSScanner/scanDecimal:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("scanDecimal:")
     public native boolean scanDecimal(VoidPtr dcm);
 
-    /**
-     * scanDouble:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSScanner_Class/index.html#//apple_ref/occ/instm/NSScanner/scanDouble:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("scanDouble:")
     public native boolean scanDouble(DoublePtr result);
 
-    /**
-     * scanFloat:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSScanner_Class/index.html#//apple_ref/occ/instm/NSScanner/scanFloat:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("scanFloat:")
     public native boolean scanFloat(FloatPtr result);
 
-    /**
-     * scanHexDouble:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSScanner_Class/index.html#//apple_ref/occ/instm/NSScanner/scanHexDouble:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("scanHexDouble:")
     public native boolean scanHexDouble(DoublePtr result);
 
-    /**
-     * scanHexFloat:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSScanner_Class/index.html#//apple_ref/occ/instm/NSScanner/scanHexFloat:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("scanHexFloat:")
     public native boolean scanHexFloat(FloatPtr result);
 
-    /**
-     * scanHexInt:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSScanner_Class/index.html#//apple_ref/occ/instm/NSScanner/scanHexInt:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("scanHexInt:")
     public native boolean scanHexInt(IntPtr result);
 
-    /**
-     * scanHexLongLong:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSScanner_Class/index.html#//apple_ref/occ/instm/NSScanner/scanHexLongLong:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("scanHexLongLong:")
     public native boolean scanHexLongLong(LongPtr result);
 
-    /**
-     * scanInt:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSScanner_Class/index.html#//apple_ref/occ/instm/NSScanner/scanInt:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("scanInt:")
     public native boolean scanInt(IntPtr result);
 
-    /**
-     * scanInteger:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSScanner_Class/index.html#//apple_ref/occ/instm/NSScanner/scanInteger:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("scanInteger:")
     public native boolean scanInteger(NIntPtr result);
 
-    /**
-     * scanLocation</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSScanner_Class/index.html#//apple_ref/occ/instp/NSScanner/scanLocation">iOS Dev Center</a>
-     */
     @Generated
     @Selector("scanLocation")
     @NUInt
     public native long scanLocation();
 
-    /**
-     * scanLongLong:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSScanner_Class/index.html#//apple_ref/occ/instm/NSScanner/scanLongLong:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("scanLongLong:")
     public native boolean scanLongLong(LongPtr result);
 
-    /**
-     * scanString:intoString:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSScanner_Class/index.html#//apple_ref/occ/instm/NSScanner/scanString:intoString:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("scanString:intoString:")
     public native boolean scanStringIntoString(String string, Ptr<NSString> result);
 
-    /**
-     * scanUnsignedLongLong:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSScanner_Class/index.html#//apple_ref/occ/instm/NSScanner/scanUnsignedLongLong:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("scanUnsignedLongLong:")
     public native boolean scanUnsignedLongLong(LongPtr result);
 
-    /**
-     * scanUpToCharactersFromSet:intoString:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSScanner_Class/index.html#//apple_ref/occ/instm/NSScanner/scanUpToCharactersFromSet:intoString:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("scanUpToCharactersFromSet:intoString:")
     public native boolean scanUpToCharactersFromSetIntoString(NSCharacterSet set, Ptr<NSString> result);
 
-    /**
-     * scanUpToString:intoString:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSScanner_Class/index.html#//apple_ref/occ/instm/NSScanner/scanUpToString:intoString:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("scanUpToString:intoString:")
     public native boolean scanUpToStringIntoString(String string, Ptr<NSString> result);
 
-    /**
-     * caseSensitive</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSScanner_Class/index.html#//apple_ref/occ/instp/NSScanner/caseSensitive">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setCaseSensitive:")
     public native void setCaseSensitive(boolean value);
 
-    /**
-     * charactersToBeSkipped</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSScanner_Class/index.html#//apple_ref/occ/instp/NSScanner/charactersToBeSkipped">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setCharactersToBeSkipped:")
     public native void setCharactersToBeSkipped(NSCharacterSet value);
 
-    /**
-     * locale</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSScanner_Class/index.html#//apple_ref/occ/instp/NSScanner/locale">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setLocale:")
     public native void setLocale(@Mapped(ObjCObjectMapper.class) Object value);
 
-    /**
-     * scanLocation</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSScanner_Class/index.html#//apple_ref/occ/instp/NSScanner/scanLocation">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setScanLocation:")
     public native void setScanLocation(@NUInt long value);
 
-    /**
-     * string</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSScanner_Class/index.html#//apple_ref/occ/instp/NSScanner/string">iOS Dev Center</a>
-     */
     @Generated
     @Selector("string")
     public native String string();

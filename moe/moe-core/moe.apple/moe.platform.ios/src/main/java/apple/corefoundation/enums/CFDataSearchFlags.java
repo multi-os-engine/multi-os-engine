@@ -23,6 +23,7 @@ import org.moe.natj.general.ann.NUInt;
 public final class CFDataSearchFlags {
     @Generated @NUInt public static final long Backwards = 0x0000000000000001L;
     @Generated @NUInt public static final long Anchored = 0x0000000000000002L;
+
     @Generated
     private CFDataSearchFlags() {
     }

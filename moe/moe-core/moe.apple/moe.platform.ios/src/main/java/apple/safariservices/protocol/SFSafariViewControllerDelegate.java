@@ -33,10 +33,6 @@ import org.moe.natj.objc.ann.Selector;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("SFSafariViewControllerDelegate")
 public interface SFSafariViewControllerDelegate {
-    /**
-     * safariViewController:activityItemsForURL:title:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SafariServices/Reference/SFSafariViewControllerDelegate/index.html#//apple_ref/occ/intfm/SFSafariViewControllerDelegate/safariViewController:activityItemsForURL:title:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("safariViewController:activityItemsForURL:title:")
@@ -45,10 +41,6 @@ public interface SFSafariViewControllerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * safariViewController:didCompleteInitialLoad:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SafariServices/Reference/SFSafariViewControllerDelegate/index.html#//apple_ref/occ/intfm/SFSafariViewControllerDelegate/safariViewController:didCompleteInitialLoad:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("safariViewController:didCompleteInitialLoad:")
@@ -57,10 +49,6 @@ public interface SFSafariViewControllerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * safariViewControllerDidFinish:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SafariServices/Reference/SFSafariViewControllerDelegate/index.html#//apple_ref/occ/intfm/SFSafariViewControllerDelegate/safariViewControllerDidFinish:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("safariViewControllerDidFinish:")

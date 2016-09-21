@@ -161,26 +161,14 @@ public class MDLMaterialProperty extends NSObject implements MDLNamed {
     @NInt
     public static native long version_static();
 
-    /**
-     * URLValue</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLMaterialProperty_Class/index.html#//apple_ref/occ/instp/MDLMaterialProperty/URLValue">iOS Dev Center</a>
-     */
     @Generated
     @Selector("URLValue")
     public native NSURL URLValue();
 
-    /**
-     * color</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLMaterialProperty_Class/index.html#//apple_ref/occ/instp/MDLMaterialProperty/color">iOS Dev Center</a>
-     */
     @Generated
     @Selector("color")
     public native CGColorRef color();
 
-    /**
-     * floatValue</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLMaterialProperty_Class/index.html#//apple_ref/occ/instp/MDLMaterialProperty/floatValue">iOS Dev Center</a>
-     */
     @Generated
     @Selector("floatValue")
     public native float floatValue();
@@ -189,50 +177,26 @@ public class MDLMaterialProperty extends NSObject implements MDLNamed {
     @Selector("init")
     public native MDLMaterialProperty init();
 
-    /**
-     * initWithName:semantic:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLMaterialProperty_Class/index.html#//apple_ref/occ/instm/MDLMaterialProperty/initWithName:semantic:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithName:semantic:")
     public native MDLMaterialProperty initWithNameSemantic(String name, @NUInt long semantic);
 
-    /**
-     * initWithName:semantic:URL:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLMaterialProperty_Class/index.html#//apple_ref/occ/instm/MDLMaterialProperty/initWithName:semantic:URL:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithName:semantic:URL:")
     public native MDLMaterialProperty initWithNameSemanticURL(String name, @NUInt long semantic, NSURL URL);
 
-    /**
-     * initWithName:semantic:color:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLMaterialProperty_Class/index.html#//apple_ref/occ/instm/MDLMaterialProperty/initWithName:semantic:color:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithName:semantic:color:")
     public native MDLMaterialProperty initWithNameSemanticColor(String name, @NUInt long semantic, CGColorRef color);
 
-    /**
-     * initWithName:semantic:float:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLMaterialProperty_Class/index.html#//apple_ref/occ/instm/MDLMaterialProperty/initWithName:semantic:float:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithName:semantic:float:")
     public native MDLMaterialProperty initWithNameSemanticFloat(String name, @NUInt long semantic, float value);
 
-    /**
-     * initWithName:semantic:string:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLMaterialProperty_Class/index.html#//apple_ref/occ/instm/MDLMaterialProperty/initWithName:semantic:string:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithName:semantic:string:")
     public native MDLMaterialProperty initWithNameSemanticString(String name, @NUInt long semantic, String string);
 
-    /**
-     * initWithName:semantic:textureSampler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLMaterialProperty_Class/index.html#//apple_ref/occ/instm/MDLMaterialProperty/initWithName:semantic:textureSampler:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithName:semantic:textureSampler:")
     public native MDLMaterialProperty initWithNameSemanticTextureSampler(String name, @NUInt long semantic,
@@ -242,27 +206,15 @@ public class MDLMaterialProperty extends NSObject implements MDLNamed {
     @Selector("name")
     public native String name();
 
-    /**
-     * semantic</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLMaterialProperty_Class/index.html#//apple_ref/occ/instp/MDLMaterialProperty/semantic">iOS Dev Center</a>
-     */
     @Generated
     @Selector("semantic")
     @NUInt
     public native long semantic();
 
-    /**
-     * color</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLMaterialProperty_Class/index.html#//apple_ref/occ/instp/MDLMaterialProperty/color">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setColor:")
     public native void setColor(CGColorRef value);
 
-    /**
-     * floatValue</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLMaterialProperty_Class/index.html#//apple_ref/occ/instp/MDLMaterialProperty/floatValue">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setFloatValue:")
     public native void setFloatValue(float value);
@@ -271,66 +223,34 @@ public class MDLMaterialProperty extends NSObject implements MDLNamed {
     @Selector("setName:")
     public native void setName(String value);
 
-    /**
-     * setProperties:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLMaterialProperty_Class/index.html#//apple_ref/occ/instm/MDLMaterialProperty/setProperties:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setProperties:")
     public native void setProperties(MDLMaterialProperty property);
 
-    /**
-     * semantic</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLMaterialProperty_Class/index.html#//apple_ref/occ/instp/MDLMaterialProperty/semantic">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setSemantic:")
     public native void setSemantic(@NUInt long value);
 
-    /**
-     * stringValue</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLMaterialProperty_Class/index.html#//apple_ref/occ/instp/MDLMaterialProperty/stringValue">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setStringValue:")
     public native void setStringValue(String value);
 
-    /**
-     * textureSamplerValue</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLMaterialProperty_Class/index.html#//apple_ref/occ/instp/MDLMaterialProperty/textureSamplerValue">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setTextureSamplerValue:")
     public native void setTextureSamplerValue(MDLTextureSampler value);
 
-    /**
-     * URLValue</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLMaterialProperty_Class/index.html#//apple_ref/occ/instp/MDLMaterialProperty/URLValue">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setURLValue:")
     public native void setURLValue(NSURL value);
 
-    /**
-     * stringValue</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLMaterialProperty_Class/index.html#//apple_ref/occ/instp/MDLMaterialProperty/stringValue">iOS Dev Center</a>
-     */
     @Generated
     @Selector("stringValue")
     public native String stringValue();
 
-    /**
-     * textureSamplerValue</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLMaterialProperty_Class/index.html#//apple_ref/occ/instp/MDLMaterialProperty/textureSamplerValue">iOS Dev Center</a>
-     */
     @Generated
     @Selector("textureSamplerValue")
     public native MDLTextureSampler textureSamplerValue();
 
-    /**
-     * type</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLMaterialProperty_Class/index.html#//apple_ref/occ/instp/MDLMaterialProperty/type">iOS Dev Center</a>
-     */
     @Generated
     @Selector("type")
     @NUInt

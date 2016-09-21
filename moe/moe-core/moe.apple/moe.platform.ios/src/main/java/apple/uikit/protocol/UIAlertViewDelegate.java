@@ -31,10 +31,6 @@ import org.moe.natj.objc.ann.Selector;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("UIAlertViewDelegate")
 public interface UIAlertViewDelegate {
-    /**
-     * alertView:clickedButtonAtIndex:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIAlertViewDelegate_Protocol/index.html#//apple_ref/occ/intfm/UIAlertViewDelegate/alertView:clickedButtonAtIndex:">iOS Dev Center</a>
-     */
     @Deprecated
     @Generated
     @IsOptional
@@ -43,10 +39,6 @@ public interface UIAlertViewDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * alertView:didDismissWithButtonIndex:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIAlertViewDelegate_Protocol/index.html#//apple_ref/occ/intfm/UIAlertViewDelegate/alertView:didDismissWithButtonIndex:">iOS Dev Center</a>
-     */
     @Deprecated
     @Generated
     @IsOptional
@@ -55,10 +47,6 @@ public interface UIAlertViewDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * alertView:willDismissWithButtonIndex:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIAlertViewDelegate_Protocol/index.html#//apple_ref/occ/intfm/UIAlertViewDelegate/alertView:willDismissWithButtonIndex:">iOS Dev Center</a>
-     */
     @Deprecated
     @Generated
     @IsOptional
@@ -67,10 +55,6 @@ public interface UIAlertViewDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * alertViewCancel:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIAlertViewDelegate_Protocol/index.html#//apple_ref/occ/intfm/UIAlertViewDelegate/alertViewCancel:">iOS Dev Center</a>
-     */
     @Deprecated
     @Generated
     @IsOptional
@@ -79,10 +63,6 @@ public interface UIAlertViewDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * alertViewShouldEnableFirstOtherButton:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIAlertViewDelegate_Protocol/index.html#//apple_ref/occ/intfm/UIAlertViewDelegate/alertViewShouldEnableFirstOtherButton:">iOS Dev Center</a>
-     */
     @Deprecated
     @Generated
     @IsOptional
@@ -91,10 +71,6 @@ public interface UIAlertViewDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * didPresentAlertView:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIAlertViewDelegate_Protocol/index.html#//apple_ref/occ/intfm/UIAlertViewDelegate/didPresentAlertView:">iOS Dev Center</a>
-     */
     @Deprecated
     @Generated
     @IsOptional
@@ -103,10 +79,6 @@ public interface UIAlertViewDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * willPresentAlertView:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIAlertViewDelegate_Protocol/index.html#//apple_ref/occ/intfm/UIAlertViewDelegate/willPresentAlertView:">iOS Dev Center</a>
-     */
     @Deprecated
     @Generated
     @IsOptional

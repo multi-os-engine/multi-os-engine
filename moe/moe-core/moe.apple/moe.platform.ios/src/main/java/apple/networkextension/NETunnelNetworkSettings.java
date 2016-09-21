@@ -166,10 +166,6 @@ public class NETunnelNetworkSettings extends NSObject implements NSSecureCoding,
     @NInt
     public static native long version_static();
 
-    /**
-     * DNSSettings</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NETunnelNetworkSettingsClassRef/index.html#//apple_ref/occ/instp/NETunnelNetworkSettings/DNSSettings">iOS Dev Center</a>
-     */
     @Generated
     @Selector("DNSSettings")
     public native NEDNSSettings DNSSettings();
@@ -192,34 +188,18 @@ public class NETunnelNetworkSettings extends NSObject implements NSSecureCoding,
     @Selector("initWithCoder:")
     public native NETunnelNetworkSettings initWithCoder(NSCoder aDecoder);
 
-    /**
-     * initWithTunnelRemoteAddress:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NETunnelNetworkSettingsClassRef/index.html#//apple_ref/occ/instm/NETunnelNetworkSettings/initWithTunnelRemoteAddress:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithTunnelRemoteAddress:")
     public native NETunnelNetworkSettings initWithTunnelRemoteAddress(String address);
 
-    /**
-     * proxySettings</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NETunnelNetworkSettingsClassRef/index.html#//apple_ref/occ/instp/NETunnelNetworkSettings/proxySettings">iOS Dev Center</a>
-     */
     @Generated
     @Selector("proxySettings")
     public native NEProxySettings proxySettings();
 
-    /**
-     * DNSSettings</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NETunnelNetworkSettingsClassRef/index.html#//apple_ref/occ/instp/NETunnelNetworkSettings/DNSSettings">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setDNSSettings:")
     public native void setDNSSettings(NEDNSSettings value);
 
-    /**
-     * proxySettings</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NETunnelNetworkSettingsClassRef/index.html#//apple_ref/occ/instp/NETunnelNetworkSettings/proxySettings">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setProxySettings:")
     public native void setProxySettings(NEProxySettings value);
@@ -230,10 +210,6 @@ public class NETunnelNetworkSettings extends NSObject implements NSSecureCoding,
         return supportsSecureCoding();
     }
 
-    /**
-     * tunnelRemoteAddress</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NETunnelNetworkSettingsClassRef/index.html#//apple_ref/occ/instp/NETunnelNetworkSettings/tunnelRemoteAddress">iOS Dev Center</a>
-     */
     @Generated
     @Selector("tunnelRemoteAddress")
     public native String tunnelRemoteAddress();

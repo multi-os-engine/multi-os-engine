@@ -160,35 +160,19 @@ public class PKPaymentRequest extends NSObject {
     @NInt
     public static native long version_static();
 
-    /**
-     * applicationData</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/PassKit/Reference/PKPaymentRequest_Ref/index.html#//apple_ref/occ/instp/PKPaymentRequest/applicationData">iOS Dev Center</a>
-     */
     @Generated
     @Selector("applicationData")
     public native NSData applicationData();
 
-    /**
-     * billingAddress</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/PassKit/Reference/PKPaymentRequest_Ref/index.html#//apple_ref/occ/instp/PKPaymentRequest/billingAddress">iOS Dev Center</a>
-     */
     @Deprecated
     @Generated
     @Selector("billingAddress")
     public native ConstVoidPtr billingAddress();
 
-    /**
-     * countryCode</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/PassKit/Reference/PKPaymentRequest_Ref/index.html#//apple_ref/occ/instp/PKPaymentRequest/countryCode">iOS Dev Center</a>
-     */
     @Generated
     @Selector("countryCode")
     public native String countryCode();
 
-    /**
-     * currencyCode</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/PassKit/Reference/PKPaymentRequest_Ref/index.html#//apple_ref/occ/instp/PKPaymentRequest/currencyCode">iOS Dev Center</a>
-     */
     @Generated
     @Selector("currencyCode")
     public native String currencyCode();
@@ -197,217 +181,113 @@ public class PKPaymentRequest extends NSObject {
     @Selector("init")
     public native PKPaymentRequest init();
 
-    /**
-     * merchantCapabilities</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/PassKit/Reference/PKPaymentRequest_Ref/index.html#//apple_ref/occ/instp/PKPaymentRequest/merchantCapabilities">iOS Dev Center</a>
-     */
     @Generated
     @Selector("merchantCapabilities")
     @NUInt
     public native long merchantCapabilities();
 
-    /**
-     * merchantIdentifier</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/PassKit/Reference/PKPaymentRequest_Ref/index.html#//apple_ref/occ/instp/PKPaymentRequest/merchantIdentifier">iOS Dev Center</a>
-     */
     @Generated
     @Selector("merchantIdentifier")
     public native String merchantIdentifier();
 
-    /**
-     * paymentSummaryItems</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/PassKit/Reference/PKPaymentRequest_Ref/index.html#//apple_ref/occ/instp/PKPaymentRequest/paymentSummaryItems">iOS Dev Center</a>
-     */
     @Generated
     @Selector("paymentSummaryItems")
     public native NSArray<? extends PKPaymentSummaryItem> paymentSummaryItems();
 
-    /**
-     * requiredBillingAddressFields</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/PassKit/Reference/PKPaymentRequest_Ref/index.html#//apple_ref/occ/instp/PKPaymentRequest/requiredBillingAddressFields">iOS Dev Center</a>
-     */
     @Generated
     @Selector("requiredBillingAddressFields")
     @NUInt
     public native long requiredBillingAddressFields();
 
-    /**
-     * requiredShippingAddressFields</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/PassKit/Reference/PKPaymentRequest_Ref/index.html#//apple_ref/occ/instp/PKPaymentRequest/requiredShippingAddressFields">iOS Dev Center</a>
-     */
     @Generated
     @Selector("requiredShippingAddressFields")
     @NUInt
     public native long requiredShippingAddressFields();
 
-    /**
-     * applicationData</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/PassKit/Reference/PKPaymentRequest_Ref/index.html#//apple_ref/occ/instp/PKPaymentRequest/applicationData">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setApplicationData:")
     public native void setApplicationData(NSData value);
 
-    /**
-     * billingAddress</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/PassKit/Reference/PKPaymentRequest_Ref/index.html#//apple_ref/occ/instp/PKPaymentRequest/billingAddress">iOS Dev Center</a>
-     */
     @Deprecated
     @Generated
     @Selector("setBillingAddress:")
     public native void setBillingAddress(ConstVoidPtr value);
 
-    /**
-     * countryCode</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/PassKit/Reference/PKPaymentRequest_Ref/index.html#//apple_ref/occ/instp/PKPaymentRequest/countryCode">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setCountryCode:")
     public native void setCountryCode(String value);
 
-    /**
-     * currencyCode</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/PassKit/Reference/PKPaymentRequest_Ref/index.html#//apple_ref/occ/instp/PKPaymentRequest/currencyCode">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setCurrencyCode:")
     public native void setCurrencyCode(String value);
 
-    /**
-     * merchantCapabilities</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/PassKit/Reference/PKPaymentRequest_Ref/index.html#//apple_ref/occ/instp/PKPaymentRequest/merchantCapabilities">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setMerchantCapabilities:")
     public native void setMerchantCapabilities(@NUInt long value);
 
-    /**
-     * merchantIdentifier</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/PassKit/Reference/PKPaymentRequest_Ref/index.html#//apple_ref/occ/instp/PKPaymentRequest/merchantIdentifier">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setMerchantIdentifier:")
     public native void setMerchantIdentifier(String value);
 
-    /**
-     * paymentSummaryItems</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/PassKit/Reference/PKPaymentRequest_Ref/index.html#//apple_ref/occ/instp/PKPaymentRequest/paymentSummaryItems">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setPaymentSummaryItems:")
     public native void setPaymentSummaryItems(NSArray<? extends PKPaymentSummaryItem> value);
 
-    /**
-     * requiredBillingAddressFields</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/PassKit/Reference/PKPaymentRequest_Ref/index.html#//apple_ref/occ/instp/PKPaymentRequest/requiredBillingAddressFields">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setRequiredBillingAddressFields:")
     public native void setRequiredBillingAddressFields(@NUInt long value);
 
-    /**
-     * requiredShippingAddressFields</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/PassKit/Reference/PKPaymentRequest_Ref/index.html#//apple_ref/occ/instp/PKPaymentRequest/requiredShippingAddressFields">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setRequiredShippingAddressFields:")
     public native void setRequiredShippingAddressFields(@NUInt long value);
 
-    /**
-     * shippingAddress</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/PassKit/Reference/PKPaymentRequest_Ref/index.html#//apple_ref/occ/instp/PKPaymentRequest/shippingAddress">iOS Dev Center</a>
-     */
     @Deprecated
     @Generated
     @Selector("setShippingAddress:")
     public native void setShippingAddress(ConstVoidPtr value);
 
-    /**
-     * shippingMethods</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/PassKit/Reference/PKPaymentRequest_Ref/index.html#//apple_ref/occ/instp/PKPaymentRequest/shippingMethods">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setShippingMethods:")
     public native void setShippingMethods(NSArray<? extends PKShippingMethod> value);
 
-    /**
-     * shippingType</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/PassKit/Reference/PKPaymentRequest_Ref/index.html#//apple_ref/occ/instp/PKPaymentRequest/shippingType">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setShippingType:")
     public native void setShippingType(@NUInt long value);
 
-    /**
-     * supportedNetworks</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/PassKit/Reference/PKPaymentRequest_Ref/index.html#//apple_ref/occ/instp/PKPaymentRequest/supportedNetworks">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setSupportedNetworks:")
     public native void setSupportedNetworks(NSArray<String> value);
 
-    /**
-     * shippingAddress</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/PassKit/Reference/PKPaymentRequest_Ref/index.html#//apple_ref/occ/instp/PKPaymentRequest/shippingAddress">iOS Dev Center</a>
-     */
     @Deprecated
     @Generated
     @Selector("shippingAddress")
     public native ConstVoidPtr shippingAddress();
 
-    /**
-     * shippingMethods</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/PassKit/Reference/PKPaymentRequest_Ref/index.html#//apple_ref/occ/instp/PKPaymentRequest/shippingMethods">iOS Dev Center</a>
-     */
     @Generated
     @Selector("shippingMethods")
     public native NSArray<? extends PKShippingMethod> shippingMethods();
 
-    /**
-     * shippingType</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/PassKit/Reference/PKPaymentRequest_Ref/index.html#//apple_ref/occ/instp/PKPaymentRequest/shippingType">iOS Dev Center</a>
-     */
     @Generated
     @Selector("shippingType")
     @NUInt
     public native long shippingType();
 
-    /**
-     * supportedNetworks</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/PassKit/Reference/PKPaymentRequest_Ref/index.html#//apple_ref/occ/instp/PKPaymentRequest/supportedNetworks">iOS Dev Center</a>
-     */
     @Generated
     @Selector("supportedNetworks")
     public native NSArray<String> supportedNetworks();
 
-    /**
-     * billingContact</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/PassKit/Reference/PKPaymentRequest_Ref/index.html#//apple_ref/occ/instp/PKPaymentRequest/billingContact">iOS Dev Center</a>
-     */
     @Generated
     @Selector("billingContact")
     public native PKContact billingContact();
 
-    /**
-     * billingContact</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/PassKit/Reference/PKPaymentRequest_Ref/index.html#//apple_ref/occ/instp/PKPaymentRequest/billingContact">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setBillingContact:")
     public native void setBillingContact(PKContact value);
 
-    /**
-     * shippingContact</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/PassKit/Reference/PKPaymentRequest_Ref/index.html#//apple_ref/occ/instp/PKPaymentRequest/shippingContact">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setShippingContact:")
     public native void setShippingContact(PKContact value);
 
-    /**
-     * shippingContact</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/PassKit/Reference/PKPaymentRequest_Ref/index.html#//apple_ref/occ/instp/PKPaymentRequest/shippingContact">iOS Dev Center</a>
-     */
     @Generated
     @Selector("shippingContact")
     public native PKContact shippingContact();

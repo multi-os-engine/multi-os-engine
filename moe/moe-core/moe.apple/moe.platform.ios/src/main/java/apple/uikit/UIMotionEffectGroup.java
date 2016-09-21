@@ -163,18 +163,10 @@ public class UIMotionEffectGroup extends UIMotionEffect {
     @Selector("init")
     public native UIMotionEffectGroup init();
 
-    /**
-     * motionEffects</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIMotionEffectGroup_class/index.html#//apple_ref/occ/instp/UIMotionEffectGroup/motionEffects">iOS Dev Center</a>
-     */
     @Generated
     @Selector("motionEffects")
     public native NSArray<? extends UIMotionEffect> motionEffects();
 
-    /**
-     * motionEffects</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIMotionEffectGroup_class/index.html#//apple_ref/occ/instp/UIMotionEffectGroup/motionEffects">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setMotionEffects:")
     public native void setMotionEffects(NSArray<? extends UIMotionEffect> value);

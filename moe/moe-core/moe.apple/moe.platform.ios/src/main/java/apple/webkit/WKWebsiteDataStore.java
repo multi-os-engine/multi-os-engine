@@ -55,10 +55,6 @@ public class WKWebsiteDataStore extends NSObject {
         super(peer);
     }
 
-    /**
-     * allWebsiteDataTypes</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WebKit/Reference/WKWebsiteDataStore_Class_Ref/index.html#//apple_ref/occ/clm/WKWebsiteDataStore/allWebsiteDataTypes">iOS Dev Center</a>
-     */
     @Generated
     @Selector("allWebsiteDataTypes")
     public static native NSSet<String> allWebsiteDataTypes();
@@ -68,18 +64,10 @@ public class WKWebsiteDataStore extends NSObject {
     @Selector("alloc")
     public static native WKWebsiteDataStore alloc();
 
-    /**
-     * defaultDataStore</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WebKit/Reference/WKWebsiteDataStore_Class_Ref/index.html#//apple_ref/occ/clm/WKWebsiteDataStore/defaultDataStore">iOS Dev Center</a>
-     */
     @Generated
     @Selector("defaultDataStore")
     public static native WKWebsiteDataStore defaultDataStore();
 
-    /**
-     * nonPersistentDataStore</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WebKit/Reference/WKWebsiteDataStore_Class_Ref/index.html#//apple_ref/occ/clm/WKWebsiteDataStore/nonPersistentDataStore">iOS Dev Center</a>
-     */
     @Generated
     @Selector("nonPersistentDataStore")
     public static native WKWebsiteDataStore nonPersistentDataStore();
@@ -184,10 +172,6 @@ public class WKWebsiteDataStore extends NSObject {
     @NInt
     public static native long version_static();
 
-    /**
-     * fetchDataRecordsOfTypes:completionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WebKit/Reference/WKWebsiteDataStore_Class_Ref/index.html#//apple_ref/occ/instm/WKWebsiteDataStore/fetchDataRecordsOfTypes:completionHandler:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("fetchDataRecordsOfTypes:completionHandler:")
     public native void fetchDataRecordsOfTypesCompletionHandler(NSSet<String> dataTypes,
@@ -197,28 +181,16 @@ public class WKWebsiteDataStore extends NSObject {
     @Selector("init")
     public native WKWebsiteDataStore init();
 
-    /**
-     * persistent</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WebKit/Reference/WKWebsiteDataStore_Class_Ref/index.html#//apple_ref/occ/instp/WKWebsiteDataStore/persistent">iOS Dev Center</a>
-     */
     @Generated
     @Selector("isPersistent")
     public native boolean isPersistent();
 
-    /**
-     * removeDataOfTypes:forDataRecords:completionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WebKit/Reference/WKWebsiteDataStore_Class_Ref/index.html#//apple_ref/occ/instm/WKWebsiteDataStore/removeDataOfTypes:forDataRecords:completionHandler:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("removeDataOfTypes:forDataRecords:completionHandler:")
     public native void removeDataOfTypesForDataRecordsCompletionHandler(NSSet<String> dataTypes,
             NSArray<? extends WKWebsiteDataRecord> dataRecords,
             @ObjCBlock(name = "call_removeDataOfTypesForDataRecordsCompletionHandler") Block_removeDataOfTypesForDataRecordsCompletionHandler completionHandler);
 
-    /**
-     * removeDataOfTypes:modifiedSince:completionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WebKit/Reference/WKWebsiteDataStore_Class_Ref/index.html#//apple_ref/occ/instm/WKWebsiteDataStore/removeDataOfTypes:modifiedSince:completionHandler:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("removeDataOfTypes:modifiedSince:completionHandler:")
     public native void removeDataOfTypesModifiedSinceCompletionHandler(NSSet<String> websiteDataTypes, NSDate date,

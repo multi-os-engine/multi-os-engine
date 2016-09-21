@@ -38,10 +38,6 @@ import org.moe.natj.objc.ann.Selector;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("WCSessionDelegate")
 public interface WCSessionDelegate {
-    /**
-     * session:didFinishFileTransfer:error:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WatchConnectivity/Reference/WCSessionDelegate_protocol/index.html#//apple_ref/occ/intfm/WCSessionDelegate/session:didFinishFileTransfer:error:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("session:didFinishFileTransfer:error:")
@@ -50,10 +46,6 @@ public interface WCSessionDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * session:didFinishUserInfoTransfer:error:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WatchConnectivity/Reference/WCSessionDelegate_protocol/index.html#//apple_ref/occ/intfm/WCSessionDelegate/session:didFinishUserInfoTransfer:error:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("session:didFinishUserInfoTransfer:error:")
@@ -62,10 +54,6 @@ public interface WCSessionDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * session:didReceiveApplicationContext:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WatchConnectivity/Reference/WCSessionDelegate_protocol/index.html#//apple_ref/occ/intfm/WCSessionDelegate/session:didReceiveApplicationContext:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("session:didReceiveApplicationContext:")
@@ -73,10 +61,6 @@ public interface WCSessionDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * session:didReceiveFile:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WatchConnectivity/Reference/WCSessionDelegate_protocol/index.html#//apple_ref/occ/intfm/WCSessionDelegate/session:didReceiveFile:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("session:didReceiveFile:")
@@ -84,10 +68,6 @@ public interface WCSessionDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * session:didReceiveMessage:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WatchConnectivity/Reference/WCSessionDelegate_protocol/index.html#//apple_ref/occ/intfm/WCSessionDelegate/session:didReceiveMessage:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("session:didReceiveMessage:")
@@ -95,10 +75,6 @@ public interface WCSessionDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * session:didReceiveMessage:replyHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WatchConnectivity/Reference/WCSessionDelegate_protocol/index.html#//apple_ref/occ/intfm/WCSessionDelegate/session:didReceiveMessage:replyHandler:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("session:didReceiveMessage:replyHandler:")
@@ -107,10 +83,6 @@ public interface WCSessionDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * session:didReceiveMessageData:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WatchConnectivity/Reference/WCSessionDelegate_protocol/index.html#//apple_ref/occ/intfm/WCSessionDelegate/session:didReceiveMessageData:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("session:didReceiveMessageData:")
@@ -118,10 +90,6 @@ public interface WCSessionDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * session:didReceiveMessageData:replyHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WatchConnectivity/Reference/WCSessionDelegate_protocol/index.html#//apple_ref/occ/intfm/WCSessionDelegate/session:didReceiveMessageData:replyHandler:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("session:didReceiveMessageData:replyHandler:")
@@ -130,10 +98,6 @@ public interface WCSessionDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * session:didReceiveUserInfo:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WatchConnectivity/Reference/WCSessionDelegate_protocol/index.html#//apple_ref/occ/intfm/WCSessionDelegate/session:didReceiveUserInfo:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("session:didReceiveUserInfo:")
@@ -141,10 +105,6 @@ public interface WCSessionDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * sessionReachabilityDidChange:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WatchConnectivity/Reference/WCSessionDelegate_protocol/index.html#//apple_ref/occ/intfm/WCSessionDelegate/sessionReachabilityDidChange:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("sessionReachabilityDidChange:")
@@ -152,10 +112,6 @@ public interface WCSessionDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * sessionWatchStateDidChange:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WatchConnectivity/Reference/WCSessionDelegate_protocol/index.html#//apple_ref/occ/intfm/WCSessionDelegate/sessionWatchStateDidChange:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("sessionWatchStateDidChange:")
@@ -163,10 +119,6 @@ public interface WCSessionDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * session:activationDidCompleteWithState:error:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WatchConnectivity/Reference/WCSessionDelegate_protocol/index.html#//apple_ref/occ/intfm/WCSessionDelegate/session:activationDidCompleteWithState:error:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("session:activationDidCompleteWithState:error:")
@@ -175,10 +127,6 @@ public interface WCSessionDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * sessionDidBecomeInactive:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WatchConnectivity/Reference/WCSessionDelegate_protocol/index.html#//apple_ref/occ/intfm/WCSessionDelegate/sessionDidBecomeInactive:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("sessionDidBecomeInactive:")
@@ -186,10 +134,6 @@ public interface WCSessionDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * sessionDidDeactivate:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WatchConnectivity/Reference/WCSessionDelegate_protocol/index.html#//apple_ref/occ/intfm/WCSessionDelegate/sessionDidDeactivate:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("sessionDidDeactivate:")

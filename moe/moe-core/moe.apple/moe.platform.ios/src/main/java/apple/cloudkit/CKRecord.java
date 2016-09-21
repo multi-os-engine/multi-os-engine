@@ -168,26 +168,14 @@ public class CKRecord extends NSObject implements NSSecureCoding, NSCopying {
     @NInt
     public static native long version_static();
 
-    /**
-     * allKeys</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKRecord_class/index.html#//apple_ref/occ/instm/CKRecord/allKeys">iOS Dev Center</a>
-     */
     @Generated
     @Selector("allKeys")
     public native NSArray<String> allKeys();
 
-    /**
-     * allTokens</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKRecord_class/index.html#//apple_ref/occ/instm/CKRecord/allTokens">iOS Dev Center</a>
-     */
     @Generated
     @Selector("allTokens")
     public native NSArray<String> allTokens();
 
-    /**
-     * changedKeys</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKRecord_class/index.html#//apple_ref/occ/instm/CKRecord/changedKeys">iOS Dev Center</a>
-     */
     @Generated
     @Selector("changedKeys")
     public native NSArray<String> changedKeys();
@@ -198,26 +186,14 @@ public class CKRecord extends NSObject implements NSSecureCoding, NSCopying {
     @MappedReturn(ObjCObjectMapper.class)
     public native Object copyWithZone(VoidPtr zone);
 
-    /**
-     * creationDate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKRecord_class/index.html#//apple_ref/occ/instp/CKRecord/creationDate">iOS Dev Center</a>
-     */
     @Generated
     @Selector("creationDate")
     public native NSDate creationDate();
 
-    /**
-     * creatorUserRecordID</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKRecord_class/index.html#//apple_ref/occ/instp/CKRecord/creatorUserRecordID">iOS Dev Center</a>
-     */
     @Generated
     @Selector("creatorUserRecordID")
     public native CKRecordID creatorUserRecordID();
 
-    /**
-     * encodeSystemFieldsWithCoder:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKRecord_class/index.html#//apple_ref/occ/instm/CKRecord/encodeSystemFieldsWithCoder:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("encodeSystemFieldsWithCoder:")
     public native void encodeSystemFieldsWithCoder(NSCoder coder);
@@ -234,100 +210,52 @@ public class CKRecord extends NSObject implements NSSecureCoding, NSCopying {
     @Selector("initWithCoder:")
     public native CKRecord initWithCoder(NSCoder aDecoder);
 
-    /**
-     * initWithRecordType:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKRecord_class/index.html#//apple_ref/occ/instm/CKRecord/initWithRecordType:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithRecordType:")
     public native CKRecord initWithRecordType(String recordType);
 
-    /**
-     * initWithRecordType:recordID:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKRecord_class/index.html#//apple_ref/occ/instm/CKRecord/initWithRecordType:recordID:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithRecordType:recordID:")
     public native CKRecord initWithRecordTypeRecordID(String recordType, CKRecordID recordID);
 
-    /**
-     * initWithRecordType:zoneID:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKRecord_class/index.html#//apple_ref/occ/instm/CKRecord/initWithRecordType:zoneID:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithRecordType:zoneID:")
     public native CKRecord initWithRecordTypeZoneID(String recordType, CKRecordZoneID zoneID);
 
-    /**
-     * lastModifiedUserRecordID</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKRecord_class/index.html#//apple_ref/occ/instp/CKRecord/lastModifiedUserRecordID">iOS Dev Center</a>
-     */
     @Generated
     @Selector("lastModifiedUserRecordID")
     public native CKRecordID lastModifiedUserRecordID();
 
-    /**
-     * modificationDate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKRecord_class/index.html#//apple_ref/occ/instp/CKRecord/modificationDate">iOS Dev Center</a>
-     */
     @Generated
     @Selector("modificationDate")
     public native NSDate modificationDate();
 
-    /**
-     * objectForKey:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKRecord_class/index.html#//apple_ref/occ/instm/CKRecord/objectForKey:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("objectForKey:")
     @MappedReturn(ObjCObjectMapper.class)
     public native CKRecordValue objectForKey(String key);
 
-    /**
-     * objectForKeyedSubscript:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKRecord_class/index.html#//apple_ref/occ/instm/CKRecord/objectForKeyedSubscript:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("objectForKeyedSubscript:")
     @MappedReturn(ObjCObjectMapper.class)
     public native CKRecordValue objectForKeyedSubscript(String key);
 
-    /**
-     * recordChangeTag</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKRecord_class/index.html#//apple_ref/occ/instp/CKRecord/recordChangeTag">iOS Dev Center</a>
-     */
     @Generated
     @Selector("recordChangeTag")
     public native String recordChangeTag();
 
-    /**
-     * recordID</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKRecord_class/index.html#//apple_ref/occ/instp/CKRecord/recordID">iOS Dev Center</a>
-     */
     @Generated
     @Selector("recordID")
     public native CKRecordID recordID();
 
-    /**
-     * recordType</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKRecord_class/index.html#//apple_ref/occ/instp/CKRecord/recordType">iOS Dev Center</a>
-     */
     @Generated
     @Selector("recordType")
     public native String recordType();
 
-    /**
-     * setObject:forKey:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKRecord_class/index.html#//apple_ref/occ/instm/CKRecord/setObject:forKey:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setObject:forKey:")
     public native void setObjectForKey(@Mapped(ObjCObjectMapper.class) CKRecordValue object, String key);
 
-    /**
-     * setObject:forKeyedSubscript:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKRecord_class/index.html#//apple_ref/occ/instm/CKRecord/setObject:forKeyedSubscript:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setObject:forKeyedSubscript:")
     public native void setObjectForKeyedSubscript(@Mapped(ObjCObjectMapper.class) CKRecordValue object, String key);

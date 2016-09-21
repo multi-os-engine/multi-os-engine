@@ -61,18 +61,10 @@ public class CIImageAccumulator extends NSObject {
     @Selector("alloc")
     public static native CIImageAccumulator alloc();
 
-    /**
-     * imageAccumulatorWithExtent:format:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/QuartzCoreFramework/Classes/CIImageAccumulator_Class/index.html#//apple_ref/occ/clm/CIImageAccumulator/imageAccumulatorWithExtent:format:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("imageAccumulatorWithExtent:format:")
     public static native CIImageAccumulator imageAccumulatorWithExtentFormat(@ByValue CGRect extent, int format);
 
-    /**
-     * imageAccumulatorWithExtent:format:colorSpace:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/QuartzCoreFramework/Classes/CIImageAccumulator_Class/index.html#//apple_ref/occ/clm/CIImageAccumulator/imageAccumulatorWithExtent:format:colorSpace:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("imageAccumulatorWithExtent:format:colorSpace:")
     public static native CIImageAccumulator imageAccumulatorWithExtentFormatColorSpace(@ByValue CGRect extent,
@@ -178,35 +170,19 @@ public class CIImageAccumulator extends NSObject {
     @NInt
     public static native long version_static();
 
-    /**
-     * clear</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/QuartzCoreFramework/Classes/CIImageAccumulator_Class/index.html#//apple_ref/occ/instm/CIImageAccumulator/clear">iOS Dev Center</a>
-     */
     @Generated
     @Selector("clear")
     public native void clear();
 
-    /**
-     * extent</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/QuartzCoreFramework/Classes/CIImageAccumulator_Class/index.html#//apple_ref/occ/instp/CIImageAccumulator/extent">iOS Dev Center</a>
-     */
     @Generated
     @Selector("extent")
     @ByValue
     public native CGRect extent();
 
-    /**
-     * format</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/QuartzCoreFramework/Classes/CIImageAccumulator_Class/index.html#//apple_ref/occ/instp/CIImageAccumulator/format">iOS Dev Center</a>
-     */
     @Generated
     @Selector("format")
     public native int format();
 
-    /**
-     * image</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/QuartzCoreFramework/Classes/CIImageAccumulator_Class/index.html#//apple_ref/occ/instm/CIImageAccumulator/image">iOS Dev Center</a>
-     */
     @Generated
     @Selector("image")
     public native CIImage image();
@@ -215,35 +191,19 @@ public class CIImageAccumulator extends NSObject {
     @Selector("init")
     public native CIImageAccumulator init();
 
-    /**
-     * initWithExtent:format:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/QuartzCoreFramework/Classes/CIImageAccumulator_Class/index.html#//apple_ref/occ/instm/CIImageAccumulator/initWithExtent:format:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithExtent:format:")
     public native CIImageAccumulator initWithExtentFormat(@ByValue CGRect extent, int format);
 
-    /**
-     * initWithExtent:format:colorSpace:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/QuartzCoreFramework/Classes/CIImageAccumulator_Class/index.html#//apple_ref/occ/instm/CIImageAccumulator/initWithExtent:format:colorSpace:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithExtent:format:colorSpace:")
     public native CIImageAccumulator initWithExtentFormatColorSpace(@ByValue CGRect extent, int format,
             CGColorSpaceRef colorSpace);
 
-    /**
-     * setImage:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/QuartzCoreFramework/Classes/CIImageAccumulator_Class/index.html#//apple_ref/occ/instm/CIImageAccumulator/setImage:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setImage:")
     public native void setImage(CIImage image);
 
-    /**
-     * setImage:dirtyRect:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/QuartzCoreFramework/Classes/CIImageAccumulator_Class/index.html#//apple_ref/occ/instm/CIImageAccumulator/setImage:dirtyRect:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setImage:dirtyRect:")
     public native void setImageDirtyRect(CIImage image, @ByValue CGRect dirtyRect);

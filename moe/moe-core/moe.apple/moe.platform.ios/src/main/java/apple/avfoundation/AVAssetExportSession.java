@@ -60,10 +60,6 @@ public class AVAssetExportSession extends NSObject {
         super(peer);
     }
 
-    /**
-     * allExportPresets</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAssetExportSession_Class/index.html#//apple_ref/occ/clm/AVAssetExportSession/allExportPresets">iOS Dev Center</a>
-     */
     @Generated
     @Selector("allExportPresets")
     public static native NSArray<String> allExportPresets();
@@ -73,28 +69,16 @@ public class AVAssetExportSession extends NSObject {
     @Selector("alloc")
     public static native AVAssetExportSession alloc();
 
-    /**
-     * determineCompatibilityOfExportPreset:withAsset:outputFileType:completionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAssetExportSession_Class/index.html#//apple_ref/occ/clm/AVAssetExportSession/determineCompatibilityOfExportPreset:withAsset:outputFileType:completionHandler:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("determineCompatibilityOfExportPreset:withAsset:outputFileType:completionHandler:")
     public static native void determineCompatibilityOfExportPresetWithAssetOutputFileTypeCompletionHandler(
             String presetName, AVAsset asset, String outputFileType,
             @ObjCBlock(name = "call_determineCompatibilityOfExportPresetWithAssetOutputFileTypeCompletionHandler") Block_determineCompatibilityOfExportPresetWithAssetOutputFileTypeCompletionHandler handler);
 
-    /**
-     * exportPresetsCompatibleWithAsset:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAssetExportSession_Class/index.html#//apple_ref/occ/clm/AVAssetExportSession/exportPresetsCompatibleWithAsset:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("exportPresetsCompatibleWithAsset:")
     public static native NSArray<String> exportPresetsCompatibleWithAsset(AVAsset asset);
 
-    /**
-     * exportSessionWithAsset:presetName:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAssetExportSession_Class/index.html#//apple_ref/occ/clm/AVAssetExportSession/exportSessionWithAsset:presetName:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("exportSessionWithAsset:presetName:")
     public static native AVAssetExportSession exportSessionWithAssetPresetName(AVAsset asset, String presetName);
@@ -199,101 +183,53 @@ public class AVAssetExportSession extends NSObject {
     @NInt
     public static native long version_static();
 
-    /**
-     * asset</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAssetExportSession_Class/index.html#//apple_ref/occ/instp/AVAssetExportSession/asset">iOS Dev Center</a>
-     */
     @Generated
     @Selector("asset")
     public native AVAsset asset();
 
-    /**
-     * audioMix</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAssetExportSession_Class/index.html#//apple_ref/occ/instp/AVAssetExportSession/audioMix">iOS Dev Center</a>
-     */
     @Generated
     @Selector("audioMix")
     public native AVAudioMix audioMix();
 
-    /**
-     * audioTimePitchAlgorithm</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAssetExportSession_Class/index.html#//apple_ref/occ/instp/AVAssetExportSession/audioTimePitchAlgorithm">iOS Dev Center</a>
-     */
     @Generated
     @Selector("audioTimePitchAlgorithm")
     public native String audioTimePitchAlgorithm();
 
-    /**
-     * canPerformMultiplePassesOverSourceMediaData</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAssetExportSession_Class/index.html#//apple_ref/occ/instp/AVAssetExportSession/canPerformMultiplePassesOverSourceMediaData">iOS Dev Center</a>
-     */
     @Generated
     @Selector("canPerformMultiplePassesOverSourceMediaData")
     public native boolean canPerformMultiplePassesOverSourceMediaData();
 
-    /**
-     * cancelExport</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAssetExportSession_Class/index.html#//apple_ref/occ/instm/AVAssetExportSession/cancelExport">iOS Dev Center</a>
-     */
     @Generated
     @Selector("cancelExport")
     public native void cancelExport();
 
-    /**
-     * customVideoCompositor</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAssetExportSession_Class/index.html#//apple_ref/occ/instp/AVAssetExportSession/customVideoCompositor">iOS Dev Center</a>
-     */
     @Generated
     @Selector("customVideoCompositor")
     @MappedReturn(ObjCObjectMapper.class)
     public native AVVideoCompositing customVideoCompositor();
 
-    /**
-     * determineCompatibleFileTypesWithCompletionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAssetExportSession_Class/index.html#//apple_ref/occ/instm/AVAssetExportSession/determineCompatibleFileTypesWithCompletionHandler:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("determineCompatibleFileTypesWithCompletionHandler:")
     public native void determineCompatibleFileTypesWithCompletionHandler(
             @ObjCBlock(name = "call_determineCompatibleFileTypesWithCompletionHandler") Block_determineCompatibleFileTypesWithCompletionHandler handler);
 
-    /**
-     * directoryForTemporaryFiles</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAssetExportSession_Class/index.html#//apple_ref/occ/instp/AVAssetExportSession/directoryForTemporaryFiles">iOS Dev Center</a>
-     */
     @Generated
     @Selector("directoryForTemporaryFiles")
     public native NSURL directoryForTemporaryFiles();
 
-    /**
-     * error</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAssetExportSession_Class/index.html#//apple_ref/occ/instp/AVAssetExportSession/error">iOS Dev Center</a>
-     */
     @Generated
     @Selector("error")
     public native NSError error();
 
-    /**
-     * estimatedOutputFileLength</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAssetExportSession_Class/index.html#//apple_ref/occ/instp/AVAssetExportSession/estimatedOutputFileLength">iOS Dev Center</a>
-     */
     @Generated
     @Selector("estimatedOutputFileLength")
     public native long estimatedOutputFileLength();
 
-    /**
-     * exportAsynchronouslyWithCompletionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAssetExportSession_Class/index.html#//apple_ref/occ/instm/AVAssetExportSession/exportAsynchronouslyWithCompletionHandler:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("exportAsynchronouslyWithCompletionHandler:")
     public native void exportAsynchronouslyWithCompletionHandler(
             @ObjCBlock(name = "call_exportAsynchronouslyWithCompletionHandler") Block_exportAsynchronouslyWithCompletionHandler handler);
 
-    /**
-     * fileLengthLimit</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAssetExportSession_Class/index.html#//apple_ref/occ/instp/AVAssetExportSession/fileLengthLimit">iOS Dev Center</a>
-     */
     @Generated
     @Selector("fileLengthLimit")
     public native long fileLengthLimit();
@@ -302,205 +238,105 @@ public class AVAssetExportSession extends NSObject {
     @Selector("init")
     public native AVAssetExportSession init();
 
-    /**
-     * initWithAsset:presetName:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAssetExportSession_Class/index.html#//apple_ref/occ/instm/AVAssetExportSession/initWithAsset:presetName:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithAsset:presetName:")
     public native AVAssetExportSession initWithAssetPresetName(AVAsset asset, String presetName);
 
-    /**
-     * maxDuration</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAssetExportSession_Class/index.html#//apple_ref/occ/instp/AVAssetExportSession/maxDuration">iOS Dev Center</a>
-     */
     @Generated
     @Selector("maxDuration")
     @ByValue
     public native CMTime maxDuration();
 
-    /**
-     * metadata</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAssetExportSession_Class/index.html#//apple_ref/occ/instp/AVAssetExportSession/metadata">iOS Dev Center</a>
-     */
     @Generated
     @Selector("metadata")
     public native NSArray<? extends AVMetadataItem> metadata();
 
-    /**
-     * metadataItemFilter</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAssetExportSession_Class/index.html#//apple_ref/occ/instp/AVAssetExportSession/metadataItemFilter">iOS Dev Center</a>
-     */
     @Generated
     @Selector("metadataItemFilter")
     public native AVMetadataItemFilter metadataItemFilter();
 
-    /**
-     * outputFileType</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAssetExportSession_Class/index.html#//apple_ref/occ/instp/AVAssetExportSession/outputFileType">iOS Dev Center</a>
-     */
     @Generated
     @Selector("outputFileType")
     public native String outputFileType();
 
-    /**
-     * outputURL</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAssetExportSession_Class/index.html#//apple_ref/occ/instp/AVAssetExportSession/outputURL">iOS Dev Center</a>
-     */
     @Generated
     @Selector("outputURL")
     public native NSURL outputURL();
 
-    /**
-     * presetName</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAssetExportSession_Class/index.html#//apple_ref/occ/instp/AVAssetExportSession/presetName">iOS Dev Center</a>
-     */
     @Generated
     @Selector("presetName")
     public native String presetName();
 
-    /**
-     * progress</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAssetExportSession_Class/index.html#//apple_ref/occ/instp/AVAssetExportSession/progress">iOS Dev Center</a>
-     */
     @Generated
     @Selector("progress")
     public native float progress();
 
-    /**
-     * audioMix</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAssetExportSession_Class/index.html#//apple_ref/occ/instp/AVAssetExportSession/audioMix">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setAudioMix:")
     public native void setAudioMix(AVAudioMix value);
 
-    /**
-     * audioTimePitchAlgorithm</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAssetExportSession_Class/index.html#//apple_ref/occ/instp/AVAssetExportSession/audioTimePitchAlgorithm">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setAudioTimePitchAlgorithm:")
     public native void setAudioTimePitchAlgorithm(String value);
 
-    /**
-     * canPerformMultiplePassesOverSourceMediaData</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAssetExportSession_Class/index.html#//apple_ref/occ/instp/AVAssetExportSession/canPerformMultiplePassesOverSourceMediaData">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setCanPerformMultiplePassesOverSourceMediaData:")
     public native void setCanPerformMultiplePassesOverSourceMediaData(boolean value);
 
-    /**
-     * directoryForTemporaryFiles</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAssetExportSession_Class/index.html#//apple_ref/occ/instp/AVAssetExportSession/directoryForTemporaryFiles">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setDirectoryForTemporaryFiles:")
     public native void setDirectoryForTemporaryFiles(NSURL value);
 
-    /**
-     * fileLengthLimit</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAssetExportSession_Class/index.html#//apple_ref/occ/instp/AVAssetExportSession/fileLengthLimit">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setFileLengthLimit:")
     public native void setFileLengthLimit(long value);
 
-    /**
-     * metadata</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAssetExportSession_Class/index.html#//apple_ref/occ/instp/AVAssetExportSession/metadata">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setMetadata:")
     public native void setMetadata(NSArray<? extends AVMetadataItem> value);
 
-    /**
-     * metadataItemFilter</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAssetExportSession_Class/index.html#//apple_ref/occ/instp/AVAssetExportSession/metadataItemFilter">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setMetadataItemFilter:")
     public native void setMetadataItemFilter(AVMetadataItemFilter value);
 
-    /**
-     * outputFileType</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAssetExportSession_Class/index.html#//apple_ref/occ/instp/AVAssetExportSession/outputFileType">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setOutputFileType:")
     public native void setOutputFileType(String value);
 
-    /**
-     * outputURL</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAssetExportSession_Class/index.html#//apple_ref/occ/instp/AVAssetExportSession/outputURL">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setOutputURL:")
     public native void setOutputURL(NSURL value);
 
-    /**
-     * shouldOptimizeForNetworkUse</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAssetExportSession_Class/index.html#//apple_ref/occ/instp/AVAssetExportSession/shouldOptimizeForNetworkUse">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setShouldOptimizeForNetworkUse:")
     public native void setShouldOptimizeForNetworkUse(boolean value);
 
-    /**
-     * timeRange</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAssetExportSession_Class/index.html#//apple_ref/occ/instp/AVAssetExportSession/timeRange">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setTimeRange:")
     public native void setTimeRange(@ByValue CMTimeRange value);
 
-    /**
-     * videoComposition</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAssetExportSession_Class/index.html#//apple_ref/occ/instp/AVAssetExportSession/videoComposition">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setVideoComposition:")
     public native void setVideoComposition(AVVideoComposition value);
 
-    /**
-     * shouldOptimizeForNetworkUse</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAssetExportSession_Class/index.html#//apple_ref/occ/instp/AVAssetExportSession/shouldOptimizeForNetworkUse">iOS Dev Center</a>
-     */
     @Generated
     @Selector("shouldOptimizeForNetworkUse")
     public native boolean shouldOptimizeForNetworkUse();
 
-    /**
-     * status</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAssetExportSession_Class/index.html#//apple_ref/occ/instp/AVAssetExportSession/status">iOS Dev Center</a>
-     */
     @Generated
     @Selector("status")
     @NInt
     public native long status();
 
-    /**
-     * supportedFileTypes</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAssetExportSession_Class/index.html#//apple_ref/occ/instp/AVAssetExportSession/supportedFileTypes">iOS Dev Center</a>
-     */
     @Generated
     @Selector("supportedFileTypes")
     public native NSArray<String> supportedFileTypes();
 
-    /**
-     * timeRange</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAssetExportSession_Class/index.html#//apple_ref/occ/instp/AVAssetExportSession/timeRange">iOS Dev Center</a>
-     */
     @Generated
     @Selector("timeRange")
     @ByValue
     public native CMTimeRange timeRange();
 
-    /**
-     * videoComposition</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAssetExportSession_Class/index.html#//apple_ref/occ/instp/AVAssetExportSession/videoComposition">iOS Dev Center</a>
-     */
     @Generated
     @Selector("videoComposition")
     public native AVVideoComposition videoComposition();

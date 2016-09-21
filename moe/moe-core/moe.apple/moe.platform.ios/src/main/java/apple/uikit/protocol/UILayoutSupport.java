@@ -31,35 +31,19 @@ import org.moe.natj.objc.ann.Selector;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("UILayoutSupport")
 public interface UILayoutSupport {
-    /**
-     * length</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UILayoutSupport_Protocol/index.html#//apple_ref/occ/intfp/UILayoutSupport/length">iOS Dev Center</a>
-     */
     @Generated
     @Selector("length")
     @NFloat
     double length();
 
-    /**
-     * bottomAnchor</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UILayoutSupport_Protocol/index.html#//apple_ref/occ/intfp/UILayoutSupport/bottomAnchor">iOS Dev Center</a>
-     */
     @Generated
     @Selector("bottomAnchor")
     NSLayoutYAxisAnchor bottomAnchor();
 
-    /**
-     * heightAnchor</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UILayoutSupport_Protocol/index.html#//apple_ref/occ/intfp/UILayoutSupport/heightAnchor">iOS Dev Center</a>
-     */
     @Generated
     @Selector("heightAnchor")
     NSLayoutDimension heightAnchor();
 
-    /**
-     * topAnchor</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UILayoutSupport_Protocol/index.html#//apple_ref/occ/intfp/UILayoutSupport/topAnchor">iOS Dev Center</a>
-     */
     @Generated
     @Selector("topAnchor")
     NSLayoutYAxisAnchor topAnchor();

@@ -172,19 +172,11 @@ public class AVAudioUnit extends AVAudioNode {
     @NInt
     public static native long version_static();
 
-    /**
-     * audioComponentDescription</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioUnit_Class/index.html#//apple_ref/occ/instp/AVAudioUnit/audioComponentDescription">iOS Dev Center</a>
-     */
     @Generated
     @Selector("audioComponentDescription")
     @ByValue
     public native AudioComponentDescription audioComponentDescription();
 
-    /**
-     * audioUnit</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioUnit_Class/index.html#//apple_ref/occ/instp/AVAudioUnit/audioUnit">iOS Dev Center</a>
-     */
     @Generated
     @Selector("audioUnit")
     public native AudioComponentInstance audioUnit();
@@ -193,34 +185,18 @@ public class AVAudioUnit extends AVAudioNode {
     @Selector("init")
     public native AVAudioUnit init();
 
-    /**
-     * loadAudioUnitPresetAtURL:error:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioUnit_Class/index.html#//apple_ref/occ/instm/AVAudioUnit/loadAudioUnitPresetAtURL:error:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("loadAudioUnitPresetAtURL:error:")
     public native boolean loadAudioUnitPresetAtURLError(NSURL url, Ptr<NSError> outError);
 
-    /**
-     * manufacturerName</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioUnit_Class/index.html#//apple_ref/occ/instp/AVAudioUnit/manufacturerName">iOS Dev Center</a>
-     */
     @Generated
     @Selector("manufacturerName")
     public native String manufacturerName();
 
-    /**
-     * name</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioUnit_Class/index.html#//apple_ref/occ/instp/AVAudioUnit/name">iOS Dev Center</a>
-     */
     @Generated
     @Selector("name")
     public native String name();
 
-    /**
-     * version</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioUnit_Class/index.html#//apple_ref/occ/instp/AVAudioUnit/version">iOS Dev Center</a>
-     */
     @Generated
     @Selector("version")
     @NUInt

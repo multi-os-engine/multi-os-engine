@@ -175,10 +175,6 @@ public class GKGameCenterViewController extends UINavigationController {
     @NInt
     public static native long version_static();
 
-    /**
-     * gameCenterDelegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKGameCenterViewController_Ref/index.html#//apple_ref/occ/instp/GKGameCenterViewController/gameCenterDelegate">iOS Dev Center</a>
-     */
     @Generated
     @Selector("gameCenterDelegate")
     @MappedReturn(ObjCObjectMapper.class)
@@ -201,45 +197,25 @@ public class GKGameCenterViewController extends UINavigationController {
     @Selector("initWithRootViewController:")
     public native GKGameCenterViewController initWithRootViewController(UIViewController rootViewController);
 
-    /**
-     * leaderboardCategory</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKGameCenterViewController_Ref/index.html#//apple_ref/occ/instp/GKGameCenterViewController/leaderboardCategory">iOS Dev Center</a>
-     */
     @Generated
     @Deprecated
     @Selector("leaderboardCategory")
     public native String leaderboardCategory();
 
-    /**
-     * leaderboardIdentifier</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKGameCenterViewController_Ref/index.html#//apple_ref/occ/instp/GKGameCenterViewController/leaderboardIdentifier">iOS Dev Center</a>
-     */
     @Generated
     @Selector("leaderboardIdentifier")
     public native String leaderboardIdentifier();
 
-    /**
-     * leaderboardTimeScope</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKGameCenterViewController_Ref/index.html#//apple_ref/occ/instp/GKGameCenterViewController/leaderboardTimeScope">iOS Dev Center</a>
-     */
     @Generated
     @Selector("leaderboardTimeScope")
     @NInt
     public native long leaderboardTimeScope();
 
-    /**
-     * gameCenterDelegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKGameCenterViewController_Ref/index.html#//apple_ref/occ/instp/GKGameCenterViewController/gameCenterDelegate">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setGameCenterDelegate:")
     public native void setGameCenterDelegate_unsafe(
             @Mapped(ObjCObjectMapper.class) GKGameCenterControllerDelegate value);
 
-    /**
-     * gameCenterDelegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKGameCenterViewController_Ref/index.html#//apple_ref/occ/instp/GKGameCenterViewController/gameCenterDelegate">iOS Dev Center</a>
-     */
     @Generated
     public void setGameCenterDelegate(@Mapped(ObjCObjectMapper.class) GKGameCenterControllerDelegate value) {
         Object __old = gameCenterDelegate();
@@ -252,43 +228,23 @@ public class GKGameCenterViewController extends UINavigationController {
         }
     }
 
-    /**
-     * leaderboardCategory</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKGameCenterViewController_Ref/index.html#//apple_ref/occ/instp/GKGameCenterViewController/leaderboardCategory">iOS Dev Center</a>
-     */
     @Generated
     @Deprecated
     @Selector("setLeaderboardCategory:")
     public native void setLeaderboardCategory(String value);
 
-    /**
-     * leaderboardIdentifier</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKGameCenterViewController_Ref/index.html#//apple_ref/occ/instp/GKGameCenterViewController/leaderboardIdentifier">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setLeaderboardIdentifier:")
     public native void setLeaderboardIdentifier(String value);
 
-    /**
-     * leaderboardTimeScope</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKGameCenterViewController_Ref/index.html#//apple_ref/occ/instp/GKGameCenterViewController/leaderboardTimeScope">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setLeaderboardTimeScope:")
     public native void setLeaderboardTimeScope(@NInt long value);
 
-    /**
-     * viewState</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKGameCenterViewController_Ref/index.html#//apple_ref/occ/instp/GKGameCenterViewController/viewState">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setViewState:")
     public native void setViewState(@NInt long value);
 
-    /**
-     * viewState</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKGameCenterViewController_Ref/index.html#//apple_ref/occ/instp/GKGameCenterViewController/viewState">iOS Dev Center</a>
-     */
     @Generated
     @Selector("viewState")
     @NInt

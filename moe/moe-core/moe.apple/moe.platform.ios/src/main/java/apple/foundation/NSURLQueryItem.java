@@ -58,10 +58,6 @@ public class NSURLQueryItem extends NSObject implements NSSecureCoding, NSCopyin
     @Selector("alloc")
     public static native NSURLQueryItem alloc();
 
-    /**
-     * queryItemWithName:value:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSURLQueryItem_Class/index.html#//apple_ref/occ/clm/NSURLQueryItem/queryItemWithName:value:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("queryItemWithName:value:")
     public static native NSURLQueryItem queryItemWithNameValue(String name, String value);
@@ -188,18 +184,10 @@ public class NSURLQueryItem extends NSObject implements NSSecureCoding, NSCopyin
     @Selector("initWithCoder:")
     public native NSURLQueryItem initWithCoder(NSCoder aDecoder);
 
-    /**
-     * initWithName:value:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSURLQueryItem_Class/index.html#//apple_ref/occ/instm/NSURLQueryItem/initWithName:value:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithName:value:")
     public native NSURLQueryItem initWithNameValue(String name, String value);
 
-    /**
-     * name</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSURLQueryItem_Class/index.html#//apple_ref/occ/instp/NSURLQueryItem/name">iOS Dev Center</a>
-     */
     @Generated
     @Selector("name")
     public native String name();
@@ -210,10 +198,6 @@ public class NSURLQueryItem extends NSObject implements NSSecureCoding, NSCopyin
         return supportsSecureCoding();
     }
 
-    /**
-     * value</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSURLQueryItem_Class/index.html#//apple_ref/occ/instp/NSURLQueryItem/value">iOS Dev Center</a>
-     */
     @Generated
     @Selector("value")
     public native String value();

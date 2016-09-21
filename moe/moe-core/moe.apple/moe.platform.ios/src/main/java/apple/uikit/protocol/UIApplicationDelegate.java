@@ -49,10 +49,6 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("UIApplicationDelegate")
 public interface UIApplicationDelegate {
-    /**
-     * application:continueUserActivity:restorationHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIApplicationDelegate_Protocol/index.html#//apple_ref/occ/intfm/UIApplicationDelegate/application:continueUserActivity:restorationHandler:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("application:continueUserActivity:restorationHandler:")
@@ -62,10 +58,6 @@ public interface UIApplicationDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * application:didChangeStatusBarFrame:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIApplicationDelegate_Protocol/index.html#//apple_ref/occ/intfm/UIApplicationDelegate/application:didChangeStatusBarFrame:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("application:didChangeStatusBarFrame:")
@@ -73,10 +65,6 @@ public interface UIApplicationDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * application:didChangeStatusBarOrientation:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIApplicationDelegate_Protocol/index.html#//apple_ref/occ/intfm/UIApplicationDelegate/application:didChangeStatusBarOrientation:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("application:didChangeStatusBarOrientation:")
@@ -85,10 +73,6 @@ public interface UIApplicationDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * application:didDecodeRestorableStateWithCoder:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIApplicationDelegate_Protocol/index.html#//apple_ref/occ/intfm/UIApplicationDelegate/application:didDecodeRestorableStateWithCoder:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("application:didDecodeRestorableStateWithCoder:")
@@ -96,10 +80,6 @@ public interface UIApplicationDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * application:didFailToContinueUserActivityWithType:error:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIApplicationDelegate_Protocol/index.html#//apple_ref/occ/intfm/UIApplicationDelegate/application:didFailToContinueUserActivityWithType:error:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("application:didFailToContinueUserActivityWithType:error:")
@@ -108,10 +88,6 @@ public interface UIApplicationDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * application:didFailToRegisterForRemoteNotificationsWithError:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIApplicationDelegate_Protocol/index.html#//apple_ref/occ/intfm/UIApplicationDelegate/application:didFailToRegisterForRemoteNotificationsWithError:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("application:didFailToRegisterForRemoteNotificationsWithError:")
@@ -119,10 +95,6 @@ public interface UIApplicationDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * application:didFinishLaunchingWithOptions:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIApplicationDelegate_Protocol/index.html#//apple_ref/occ/intfm/UIApplicationDelegate/application:didFinishLaunchingWithOptions:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("application:didFinishLaunchingWithOptions:")
@@ -131,10 +103,6 @@ public interface UIApplicationDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * application:didReceiveLocalNotification:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIApplicationDelegate_Protocol/index.html#//apple_ref/occ/intfm/UIApplicationDelegate/application:didReceiveLocalNotification:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("application:didReceiveLocalNotification:")
@@ -142,10 +110,6 @@ public interface UIApplicationDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * application:didReceiveRemoteNotification:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIApplicationDelegate_Protocol/index.html#//apple_ref/occ/intfm/UIApplicationDelegate/application:didReceiveRemoteNotification:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("application:didReceiveRemoteNotification:")
@@ -153,10 +117,6 @@ public interface UIApplicationDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * application:didReceiveRemoteNotification:fetchCompletionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIApplicationDelegate_Protocol/index.html#//apple_ref/occ/intfm/UIApplicationDelegate/application:didReceiveRemoteNotification:fetchCompletionHandler:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("application:didReceiveRemoteNotification:fetchCompletionHandler:")
@@ -166,10 +126,6 @@ public interface UIApplicationDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * application:didRegisterForRemoteNotificationsWithDeviceToken:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIApplicationDelegate_Protocol/index.html#//apple_ref/occ/intfm/UIApplicationDelegate/application:didRegisterForRemoteNotificationsWithDeviceToken:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("application:didRegisterForRemoteNotificationsWithDeviceToken:")
@@ -178,10 +134,6 @@ public interface UIApplicationDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * application:didRegisterUserNotificationSettings:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIApplicationDelegate_Protocol/index.html#//apple_ref/occ/intfm/UIApplicationDelegate/application:didRegisterUserNotificationSettings:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("application:didRegisterUserNotificationSettings:")
@@ -190,10 +142,6 @@ public interface UIApplicationDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * application:didUpdateUserActivity:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIApplicationDelegate_Protocol/index.html#//apple_ref/occ/intfm/UIApplicationDelegate/application:didUpdateUserActivity:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("application:didUpdateUserActivity:")
@@ -201,10 +149,6 @@ public interface UIApplicationDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * application:handleActionWithIdentifier:forLocalNotification:completionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIApplicationDelegate_Protocol/index.html#//apple_ref/occ/intfm/UIApplicationDelegate/application:handleActionWithIdentifier:forLocalNotification:completionHandler:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("application:handleActionWithIdentifier:forLocalNotification:completionHandler:")
@@ -214,10 +158,6 @@ public interface UIApplicationDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * application:handleActionWithIdentifier:forRemoteNotification:completionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIApplicationDelegate_Protocol/index.html#//apple_ref/occ/intfm/UIApplicationDelegate/application:handleActionWithIdentifier:forRemoteNotification:completionHandler:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("application:handleActionWithIdentifier:forRemoteNotification:completionHandler:")
@@ -227,10 +167,6 @@ public interface UIApplicationDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * application:handleEventsForBackgroundURLSession:completionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIApplicationDelegate_Protocol/index.html#//apple_ref/occ/intfm/UIApplicationDelegate/application:handleEventsForBackgroundURLSession:completionHandler:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("application:handleEventsForBackgroundURLSession:completionHandler:")
@@ -240,10 +176,6 @@ public interface UIApplicationDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * application:handleOpenURL:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIApplicationDelegate_Protocol/index.html#//apple_ref/occ/intfm/UIApplicationDelegate/application:handleOpenURL:">iOS Dev Center</a>
-     */
     @Deprecated
     @Generated
     @IsOptional
@@ -252,10 +184,6 @@ public interface UIApplicationDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * application:handleWatchKitExtensionRequest:reply:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIApplicationDelegate_Protocol/index.html#//apple_ref/occ/intfm/UIApplicationDelegate/application:handleWatchKitExtensionRequest:reply:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("application:handleWatchKitExtensionRequest:reply:")
@@ -264,10 +192,6 @@ public interface UIApplicationDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * application:openURL:sourceApplication:annotation:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIApplicationDelegate_Protocol/index.html#//apple_ref/occ/intfm/UIApplicationDelegate/application:openURL:sourceApplication:annotation:">iOS Dev Center</a>
-     */
     @Deprecated
     @Generated
     @IsOptional
@@ -277,10 +201,6 @@ public interface UIApplicationDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * application:performFetchWithCompletionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIApplicationDelegate_Protocol/index.html#//apple_ref/occ/intfm/UIApplicationDelegate/application:performFetchWithCompletionHandler:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("application:performFetchWithCompletionHandler:")
@@ -289,10 +209,6 @@ public interface UIApplicationDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * application:shouldAllowExtensionPointIdentifier:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIApplicationDelegate_Protocol/index.html#//apple_ref/occ/intfm/UIApplicationDelegate/application:shouldAllowExtensionPointIdentifier:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("application:shouldAllowExtensionPointIdentifier:")
@@ -301,10 +217,6 @@ public interface UIApplicationDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * application:shouldRestoreApplicationState:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIApplicationDelegate_Protocol/index.html#//apple_ref/occ/intfm/UIApplicationDelegate/application:shouldRestoreApplicationState:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("application:shouldRestoreApplicationState:")
@@ -312,10 +224,6 @@ public interface UIApplicationDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * application:shouldSaveApplicationState:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIApplicationDelegate_Protocol/index.html#//apple_ref/occ/intfm/UIApplicationDelegate/application:shouldSaveApplicationState:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("application:shouldSaveApplicationState:")
@@ -323,10 +231,6 @@ public interface UIApplicationDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * application:supportedInterfaceOrientationsForWindow:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIApplicationDelegate_Protocol/index.html#//apple_ref/occ/intfm/UIApplicationDelegate/application:supportedInterfaceOrientationsForWindow:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("application:supportedInterfaceOrientationsForWindow:")
@@ -335,10 +239,6 @@ public interface UIApplicationDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * application:viewControllerWithRestorationIdentifierPath:coder:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIApplicationDelegate_Protocol/index.html#//apple_ref/occ/intfm/UIApplicationDelegate/application:viewControllerWithRestorationIdentifierPath:coder:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("application:viewControllerWithRestorationIdentifierPath:coder:")
@@ -347,10 +247,6 @@ public interface UIApplicationDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * application:willChangeStatusBarFrame:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIApplicationDelegate_Protocol/index.html#//apple_ref/occ/intfm/UIApplicationDelegate/application:willChangeStatusBarFrame:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("application:willChangeStatusBarFrame:")
@@ -358,10 +254,6 @@ public interface UIApplicationDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * application:willChangeStatusBarOrientation:duration:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIApplicationDelegate_Protocol/index.html#//apple_ref/occ/intfm/UIApplicationDelegate/application:willChangeStatusBarOrientation:duration:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("application:willChangeStatusBarOrientation:duration:")
@@ -370,10 +262,6 @@ public interface UIApplicationDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * application:willContinueUserActivityWithType:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIApplicationDelegate_Protocol/index.html#//apple_ref/occ/intfm/UIApplicationDelegate/application:willContinueUserActivityWithType:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("application:willContinueUserActivityWithType:")
@@ -381,10 +269,6 @@ public interface UIApplicationDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * application:willEncodeRestorableStateWithCoder:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIApplicationDelegate_Protocol/index.html#//apple_ref/occ/intfm/UIApplicationDelegate/application:willEncodeRestorableStateWithCoder:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("application:willEncodeRestorableStateWithCoder:")
@@ -392,10 +276,6 @@ public interface UIApplicationDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * application:willFinishLaunchingWithOptions:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIApplicationDelegate_Protocol/index.html#//apple_ref/occ/intfm/UIApplicationDelegate/application:willFinishLaunchingWithOptions:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("application:willFinishLaunchingWithOptions:")
@@ -404,10 +284,6 @@ public interface UIApplicationDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * applicationDidBecomeActive:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIApplicationDelegate_Protocol/index.html#//apple_ref/occ/intfm/UIApplicationDelegate/applicationDidBecomeActive:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("applicationDidBecomeActive:")
@@ -415,10 +291,6 @@ public interface UIApplicationDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * applicationDidEnterBackground:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIApplicationDelegate_Protocol/index.html#//apple_ref/occ/intfm/UIApplicationDelegate/applicationDidEnterBackground:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("applicationDidEnterBackground:")
@@ -426,10 +298,6 @@ public interface UIApplicationDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * applicationDidFinishLaunching:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIApplicationDelegate_Protocol/index.html#//apple_ref/occ/intfm/UIApplicationDelegate/applicationDidFinishLaunching:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("applicationDidFinishLaunching:")
@@ -437,10 +305,6 @@ public interface UIApplicationDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * applicationDidReceiveMemoryWarning:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIApplicationDelegate_Protocol/index.html#//apple_ref/occ/intfm/UIApplicationDelegate/applicationDidReceiveMemoryWarning:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("applicationDidReceiveMemoryWarning:")
@@ -448,10 +312,6 @@ public interface UIApplicationDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * applicationProtectedDataDidBecomeAvailable:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIApplicationDelegate_Protocol/index.html#//apple_ref/occ/intfm/UIApplicationDelegate/applicationProtectedDataDidBecomeAvailable:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("applicationProtectedDataDidBecomeAvailable:")
@@ -459,10 +319,6 @@ public interface UIApplicationDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * applicationProtectedDataWillBecomeUnavailable:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIApplicationDelegate_Protocol/index.html#//apple_ref/occ/intfm/UIApplicationDelegate/applicationProtectedDataWillBecomeUnavailable:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("applicationProtectedDataWillBecomeUnavailable:")
@@ -470,10 +326,6 @@ public interface UIApplicationDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * applicationSignificantTimeChange:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIApplicationDelegate_Protocol/index.html#//apple_ref/occ/intfm/UIApplicationDelegate/applicationSignificantTimeChange:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("applicationSignificantTimeChange:")
@@ -481,10 +333,6 @@ public interface UIApplicationDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * applicationWillEnterForeground:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIApplicationDelegate_Protocol/index.html#//apple_ref/occ/intfm/UIApplicationDelegate/applicationWillEnterForeground:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("applicationWillEnterForeground:")
@@ -492,10 +340,6 @@ public interface UIApplicationDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * applicationWillResignActive:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIApplicationDelegate_Protocol/index.html#//apple_ref/occ/intfm/UIApplicationDelegate/applicationWillResignActive:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("applicationWillResignActive:")
@@ -503,10 +347,6 @@ public interface UIApplicationDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * applicationWillTerminate:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIApplicationDelegate_Protocol/index.html#//apple_ref/occ/intfm/UIApplicationDelegate/applicationWillTerminate:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("applicationWillTerminate:")
@@ -514,10 +354,6 @@ public interface UIApplicationDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * window</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIApplicationDelegate_Protocol/index.html#//apple_ref/occ/intfp/UIApplicationDelegate/window">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("setWindow:")
@@ -525,10 +361,6 @@ public interface UIApplicationDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * window</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIApplicationDelegate_Protocol/index.html#//apple_ref/occ/intfp/UIApplicationDelegate/window">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("window")
@@ -536,10 +368,6 @@ public interface UIApplicationDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * application:handleActionWithIdentifier:forLocalNotification:withResponseInfo:completionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIApplicationDelegate_Protocol/index.html#//apple_ref/occ/intfm/UIApplicationDelegate/application:handleActionWithIdentifier:forLocalNotification:withResponseInfo:completionHandler:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("application:handleActionWithIdentifier:forLocalNotification:withResponseInfo:completionHandler:")
@@ -550,10 +378,6 @@ public interface UIApplicationDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * application:handleActionWithIdentifier:forRemoteNotification:withResponseInfo:completionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIApplicationDelegate_Protocol/index.html#//apple_ref/occ/intfm/UIApplicationDelegate/application:handleActionWithIdentifier:forRemoteNotification:withResponseInfo:completionHandler:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("application:handleActionWithIdentifier:forRemoteNotification:withResponseInfo:completionHandler:")
@@ -563,10 +387,6 @@ public interface UIApplicationDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * application:openURL:options:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIApplicationDelegate_Protocol/index.html#//apple_ref/occ/intfm/UIApplicationDelegate/application:openURL:options:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("application:openURL:options:")
@@ -574,10 +394,6 @@ public interface UIApplicationDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * applicationShouldRequestHealthAuthorization:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIApplicationDelegate_Protocol/index.html#//apple_ref/occ/intfm/UIApplicationDelegate/applicationShouldRequestHealthAuthorization:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("applicationShouldRequestHealthAuthorization:")
@@ -585,10 +401,6 @@ public interface UIApplicationDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * application:performActionForShortcutItem:completionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIApplicationDelegate_Protocol/index.html#//apple_ref/occ/intfm/UIApplicationDelegate/application:performActionForShortcutItem:completionHandler:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("application:performActionForShortcutItem:completionHandler:")

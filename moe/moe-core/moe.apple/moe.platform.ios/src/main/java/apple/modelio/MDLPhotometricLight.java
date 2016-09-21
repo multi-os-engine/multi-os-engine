@@ -170,18 +170,10 @@ public class MDLPhotometricLight extends MDLPhysicallyPlausibleLight {
     @NInt
     public static native long version_static();
 
-    /**
-     * generateCubemapFromLight:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLPhotometricLight_Class/index.html#//apple_ref/occ/instm/MDLPhotometricLight/generateCubemapFromLight:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("generateCubemapFromLight:")
     public native void generateCubemapFromLight(@NUInt long textureSize);
 
-    /**
-     * generateSphericalHarmonicsFromLight:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLPhotometricLight_Class/index.html#//apple_ref/occ/instm/MDLPhotometricLight/generateSphericalHarmonicsFromLight:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("generateSphericalHarmonicsFromLight:")
     public native void generateSphericalHarmonicsFromLight(@NUInt long sphericalHarmonicsLevel);
@@ -190,34 +182,18 @@ public class MDLPhotometricLight extends MDLPhysicallyPlausibleLight {
     @Selector("init")
     public native MDLPhotometricLight init();
 
-    /**
-     * initWithIESProfile:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLPhotometricLight_Class/index.html#//apple_ref/occ/instm/MDLPhotometricLight/initWithIESProfile:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithIESProfile:")
     public native MDLPhotometricLight initWithIESProfile(NSURL URL);
 
-    /**
-     * lightCubeMap</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLPhotometricLight_Class/index.html#//apple_ref/occ/instp/MDLPhotometricLight/lightCubeMap">iOS Dev Center</a>
-     */
     @Generated
     @Selector("lightCubeMap")
     public native MDLTexture lightCubeMap();
 
-    /**
-     * sphericalHarmonicsCoefficients</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLPhotometricLight_Class/index.html#//apple_ref/occ/instp/MDLPhotometricLight/sphericalHarmonicsCoefficients">iOS Dev Center</a>
-     */
     @Generated
     @Selector("sphericalHarmonicsCoefficients")
     public native NSData sphericalHarmonicsCoefficients();
 
-    /**
-     * sphericalHarmonicsLevel</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLPhotometricLight_Class/index.html#//apple_ref/occ/instp/MDLPhotometricLight/sphericalHarmonicsLevel">iOS Dev Center</a>
-     */
     @Generated
     @Selector("sphericalHarmonicsLevel")
     @NUInt

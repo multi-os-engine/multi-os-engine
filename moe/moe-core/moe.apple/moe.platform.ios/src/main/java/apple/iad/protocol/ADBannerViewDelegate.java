@@ -31,10 +31,6 @@ import org.moe.natj.objc.ann.Selector;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("ADBannerViewDelegate")
 public interface ADBannerViewDelegate {
-    /**
-     * bannerView:didFailToReceiveAdWithError:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UserExperience/Reference/ADBannerViewDelegate_Ref/index.html#//apple_ref/occ/intfm/ADBannerViewDelegate/bannerView:didFailToReceiveAdWithError:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("bannerView:didFailToReceiveAdWithError:")
@@ -42,10 +38,6 @@ public interface ADBannerViewDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * bannerViewActionDidFinish:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UserExperience/Reference/ADBannerViewDelegate_Ref/index.html#//apple_ref/occ/intfm/ADBannerViewDelegate/bannerViewActionDidFinish:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("bannerViewActionDidFinish:")
@@ -53,10 +45,6 @@ public interface ADBannerViewDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * bannerViewActionShouldBegin:willLeaveApplication:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UserExperience/Reference/ADBannerViewDelegate_Ref/index.html#//apple_ref/occ/intfm/ADBannerViewDelegate/bannerViewActionShouldBegin:willLeaveApplication:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("bannerViewActionShouldBegin:willLeaveApplication:")
@@ -64,10 +52,6 @@ public interface ADBannerViewDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * bannerViewDidLoadAd:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UserExperience/Reference/ADBannerViewDelegate_Ref/index.html#//apple_ref/occ/intfm/ADBannerViewDelegate/bannerViewDidLoadAd:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("bannerViewDidLoadAd:")
@@ -75,10 +59,6 @@ public interface ADBannerViewDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * bannerViewWillLoadAd:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UserExperience/Reference/ADBannerViewDelegate_Ref/index.html#//apple_ref/occ/intfm/ADBannerViewDelegate/bannerViewWillLoadAd:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("bannerViewWillLoadAd:")

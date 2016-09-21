@@ -158,18 +158,10 @@ public class MDLVertexAttributeData extends NSObject {
     @NInt
     public static native long version_static();
 
-    /**
-     * dataStart</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLVertexAttributeData_Class/index.html#//apple_ref/occ/instp/MDLVertexAttributeData/dataStart">iOS Dev Center</a>
-     */
     @Generated
     @Selector("dataStart")
     public native VoidPtr dataStart();
 
-    /**
-     * format</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLVertexAttributeData_Class/index.html#//apple_ref/occ/instp/MDLVertexAttributeData/format">iOS Dev Center</a>
-     */
     @Generated
     @Selector("format")
     @NUInt
@@ -183,18 +175,10 @@ public class MDLVertexAttributeData extends NSObject {
     @Selector("map")
     public native MDLMeshBufferMap map();
 
-    /**
-     * dataStart</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLVertexAttributeData_Class/index.html#//apple_ref/occ/instp/MDLVertexAttributeData/dataStart">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setDataStart:")
     public native void setDataStart(VoidPtr value);
 
-    /**
-     * format</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLVertexAttributeData_Class/index.html#//apple_ref/occ/instp/MDLVertexAttributeData/format">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setFormat:")
     public native void setFormat(@NUInt long value);
@@ -203,18 +187,10 @@ public class MDLVertexAttributeData extends NSObject {
     @Selector("setMap:")
     public native void setMap(MDLMeshBufferMap value);
 
-    /**
-     * stride</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLVertexAttributeData_Class/index.html#//apple_ref/occ/instp/MDLVertexAttributeData/stride">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setStride:")
     public native void setStride(@NUInt long value);
 
-    /**
-     * stride</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLVertexAttributeData_Class/index.html#//apple_ref/occ/instp/MDLVertexAttributeData/stride">iOS Dev Center</a>
-     */
     @Generated
     @Selector("stride")
     @NUInt

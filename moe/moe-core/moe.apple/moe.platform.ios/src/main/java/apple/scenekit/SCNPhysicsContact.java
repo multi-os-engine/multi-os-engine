@@ -161,28 +161,16 @@ public class SCNPhysicsContact extends NSObject {
     @NInt
     public static native long version_static();
 
-    /**
-     * collisionImpulse</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNPhysicsContact_Class/index.html#//apple_ref/occ/instp/SCNPhysicsContact/collisionImpulse">iOS Dev Center</a>
-     */
     @Generated
     @Selector("collisionImpulse")
     @NFloat
     public native double collisionImpulse();
 
-    /**
-     * contactNormal</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNPhysicsContact_Class/index.html#//apple_ref/occ/instp/SCNPhysicsContact/contactNormal">iOS Dev Center</a>
-     */
     @Generated
     @Selector("contactNormal")
     @ByValue
     public native SCNVector3 contactNormal();
 
-    /**
-     * contactPoint</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNPhysicsContact_Class/index.html#//apple_ref/occ/instp/SCNPhysicsContact/contactPoint">iOS Dev Center</a>
-     */
     @Generated
     @Selector("contactPoint")
     @ByValue
@@ -192,26 +180,14 @@ public class SCNPhysicsContact extends NSObject {
     @Selector("init")
     public native SCNPhysicsContact init();
 
-    /**
-     * nodeA</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNPhysicsContact_Class/index.html#//apple_ref/occ/instp/SCNPhysicsContact/nodeA">iOS Dev Center</a>
-     */
     @Generated
     @Selector("nodeA")
     public native SCNNode nodeA();
 
-    /**
-     * nodeB</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNPhysicsContact_Class/index.html#//apple_ref/occ/instp/SCNPhysicsContact/nodeB">iOS Dev Center</a>
-     */
     @Generated
     @Selector("nodeB")
     public native SCNNode nodeB();
 
-    /**
-     * penetrationDistance</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNPhysicsContact_Class/index.html#//apple_ref/occ/instp/SCNPhysicsContact/penetrationDistance">iOS Dev Center</a>
-     */
     @Generated
     @Selector("penetrationDistance")
     @NFloat

@@ -33,10 +33,6 @@ import org.moe.natj.objc.ann.Selector;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("NSURLConnectionDelegate")
 public interface NSURLConnectionDelegate {
-    /**
-     * connection:canAuthenticateAgainstProtectionSpace:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSURLConnectionDelegate_Protocol/index.html#//apple_ref/occ/intfm/NSURLConnectionDelegate/connection:canAuthenticateAgainstProtectionSpace:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Deprecated
@@ -46,10 +42,6 @@ public interface NSURLConnectionDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * connection:didCancelAuthenticationChallenge:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSURLConnectionDelegate_Protocol/index.html#//apple_ref/occ/intfm/NSURLConnectionDelegate/connection:didCancelAuthenticationChallenge:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Deprecated
@@ -59,10 +51,6 @@ public interface NSURLConnectionDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * connection:didFailWithError:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSURLConnectionDelegate_Protocol/index.html#//apple_ref/occ/intfm/NSURLConnectionDelegate/connection:didFailWithError:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("connection:didFailWithError:")
@@ -70,10 +58,6 @@ public interface NSURLConnectionDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * connection:didReceiveAuthenticationChallenge:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSURLConnectionDelegate_Protocol/index.html#//apple_ref/occ/intfm/NSURLConnectionDelegate/connection:didReceiveAuthenticationChallenge:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Deprecated
@@ -83,10 +67,6 @@ public interface NSURLConnectionDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * connection:willSendRequestForAuthenticationChallenge:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSURLConnectionDelegate_Protocol/index.html#//apple_ref/occ/intfm/NSURLConnectionDelegate/connection:willSendRequestForAuthenticationChallenge:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("connection:willSendRequestForAuthenticationChallenge:")
@@ -95,10 +75,6 @@ public interface NSURLConnectionDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * connectionShouldUseCredentialStorage:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSURLConnectionDelegate_Protocol/index.html#//apple_ref/occ/intfm/NSURLConnectionDelegate/connectionShouldUseCredentialStorage:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("connectionShouldUseCredentialStorage:")

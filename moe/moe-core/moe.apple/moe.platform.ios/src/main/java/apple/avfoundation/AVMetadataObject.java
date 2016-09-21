@@ -161,19 +161,11 @@ public class AVMetadataObject extends NSObject {
     @NInt
     public static native long version_static();
 
-    /**
-     * bounds</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVMetadataObject_Class/index.html#//apple_ref/occ/instp/AVMetadataObject/bounds">iOS Dev Center</a>
-     */
     @Generated
     @Selector("bounds")
     @ByValue
     public native CGRect bounds();
 
-    /**
-     * duration</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVMetadataObject_Class/index.html#//apple_ref/occ/instp/AVMetadataObject/duration">iOS Dev Center</a>
-     */
     @Generated
     @Selector("duration")
     @ByValue
@@ -183,19 +175,11 @@ public class AVMetadataObject extends NSObject {
     @Selector("init")
     public native AVMetadataObject init();
 
-    /**
-     * time</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVMetadataObject_Class/index.html#//apple_ref/occ/instp/AVMetadataObject/time">iOS Dev Center</a>
-     */
     @Generated
     @Selector("time")
     @ByValue
     public native CMTime time();
 
-    /**
-     * type</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVMetadataObject_Class/index.html#//apple_ref/occ/instp/AVMetadataObject/type">iOS Dev Center</a>
-     */
     @Generated
     @Selector("type")
     public native String type();

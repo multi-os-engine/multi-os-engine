@@ -60,10 +60,6 @@ public class MDLLight extends MDLObject {
     @Selector("alloc")
     public static native MDLLight alloc();
 
-    /**
-     * lightWithSCNLight:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLLight_Class/index.html#//apple_ref/occ/clm/MDLLight/lightWithSCNLight:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("lightWithSCNLight:")
     public static native MDLLight lightWithSCNLight(SCNLight scnLight);
@@ -176,19 +172,11 @@ public class MDLLight extends MDLObject {
     @Selector("init")
     public native MDLLight init();
 
-    /**
-     * lightType</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLLight_Class/index.html#//apple_ref/occ/instp/MDLLight/lightType">iOS Dev Center</a>
-     */
     @Generated
     @Selector("lightType")
     @NUInt
     public native long lightType();
 
-    /**
-     * lightType</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLLight_Class/index.html#//apple_ref/occ/instp/MDLLight/lightType">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setLightType:")
     public native void setLightType(@NUInt long value);

@@ -29,10 +29,6 @@ import org.moe.natj.objc.ann.Selector;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("UIBarPositioning")
 public interface UIBarPositioning {
-    /**
-     * barPosition</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIBarPositioning_Protocol/index.html#//apple_ref/occ/intfp/UIBarPositioning/barPosition">iOS Dev Center</a>
-     */
     @Generated
     @Selector("barPosition")
     @NInt

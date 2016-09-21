@@ -159,10 +159,6 @@ public class AVAudioNode extends NSObject {
     @NInt
     public static native long version_static();
 
-    /**
-     * engine</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioNode_Class/index.html#//apple_ref/occ/instp/AVAudioNode/engine">iOS Dev Center</a>
-     */
     @Generated
     @Selector("engine")
     public native AVAudioEngine engine();
@@ -171,85 +167,45 @@ public class AVAudioNode extends NSObject {
     @Selector("init")
     public native AVAudioNode init();
 
-    /**
-     * inputFormatForBus:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioNode_Class/index.html#//apple_ref/occ/instm/AVAudioNode/inputFormatForBus:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("inputFormatForBus:")
     public native AVAudioFormat inputFormatForBus(@NUInt long bus);
 
-    /**
-     * installTapOnBus:bufferSize:format:block:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioNode_Class/index.html#//apple_ref/occ/instm/AVAudioNode/installTapOnBus:bufferSize:format:block:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("installTapOnBus:bufferSize:format:block:")
     public native void installTapOnBusBufferSizeFormatBlock(@NUInt long bus, int bufferSize, AVAudioFormat format,
             @ObjCBlock(name = "call_installTapOnBusBufferSizeFormatBlock") Block_installTapOnBusBufferSizeFormatBlock tapBlock);
 
-    /**
-     * lastRenderTime</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioNode_Class/index.html#//apple_ref/occ/instp/AVAudioNode/lastRenderTime">iOS Dev Center</a>
-     */
     @Generated
     @Selector("lastRenderTime")
     public native AVAudioTime lastRenderTime();
 
-    /**
-     * nameForInputBus:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioNode_Class/index.html#//apple_ref/occ/instm/AVAudioNode/nameForInputBus:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("nameForInputBus:")
     public native String nameForInputBus(@NUInt long bus);
 
-    /**
-     * nameForOutputBus:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioNode_Class/index.html#//apple_ref/occ/instm/AVAudioNode/nameForOutputBus:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("nameForOutputBus:")
     public native String nameForOutputBus(@NUInt long bus);
 
-    /**
-     * numberOfInputs</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioNode_Class/index.html#//apple_ref/occ/instp/AVAudioNode/numberOfInputs">iOS Dev Center</a>
-     */
     @Generated
     @Selector("numberOfInputs")
     @NUInt
     public native long numberOfInputs();
 
-    /**
-     * numberOfOutputs</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioNode_Class/index.html#//apple_ref/occ/instp/AVAudioNode/numberOfOutputs">iOS Dev Center</a>
-     */
     @Generated
     @Selector("numberOfOutputs")
     @NUInt
     public native long numberOfOutputs();
 
-    /**
-     * outputFormatForBus:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioNode_Class/index.html#//apple_ref/occ/instm/AVAudioNode/outputFormatForBus:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("outputFormatForBus:")
     public native AVAudioFormat outputFormatForBus(@NUInt long bus);
 
-    /**
-     * removeTapOnBus:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioNode_Class/index.html#//apple_ref/occ/instm/AVAudioNode/removeTapOnBus:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("removeTapOnBus:")
     public native void removeTapOnBus(@NUInt long bus);
 
-    /**
-     * reset</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioNode_Class/index.html#//apple_ref/occ/instm/AVAudioNode/reset">iOS Dev Center</a>
-     */
     @Generated
     @Selector("reset")
     public native void reset();

@@ -162,18 +162,10 @@ public class AVAudioSessionRouteDescription extends NSObject {
     @Selector("init")
     public native AVAudioSessionRouteDescription init();
 
-    /**
-     * inputs</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioSessionRouteDescription_class/index.html#//apple_ref/occ/instp/AVAudioSessionRouteDescription/inputs">iOS Dev Center</a>
-     */
     @Generated
     @Selector("inputs")
     public native NSArray<? extends AVAudioSessionPortDescription> inputs();
 
-    /**
-     * outputs</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioSessionRouteDescription_class/index.html#//apple_ref/occ/instp/AVAudioSessionRouteDescription/outputs">iOS Dev Center</a>
-     */
     @Generated
     @Selector("outputs")
     public native NSArray<? extends AVAudioSessionPortDescription> outputs();

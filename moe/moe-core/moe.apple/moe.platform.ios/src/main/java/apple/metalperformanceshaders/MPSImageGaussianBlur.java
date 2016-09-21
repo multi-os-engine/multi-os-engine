@@ -167,19 +167,11 @@ public class MPSImageGaussianBlur extends MPSUnaryImageKernel {
     @Selector("initWithDevice:")
     public native MPSImageGaussianBlur initWithDevice(@Mapped(ObjCObjectMapper.class) MTLDevice device);
 
-    /**
-     * initWithDevice:sigma:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MetalPerformanceShaders/Reference/MPSImageGaussianBlur_ClassReference/index.html#//apple_ref/occ/instm/MPSImageGaussianBlur/initWithDevice:sigma:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithDevice:sigma:")
     public native MPSImageGaussianBlur initWithDeviceSigma(@Mapped(ObjCObjectMapper.class) MTLDevice device,
             float sigma);
 
-    /**
-     * sigma</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MetalPerformanceShaders/Reference/MPSImageGaussianBlur_ClassReference/index.html#//apple_ref/occ/instp/MPSImageGaussianBlur/sigma">iOS Dev Center</a>
-     */
     @Generated
     @Selector("sigma")
     public native float sigma();

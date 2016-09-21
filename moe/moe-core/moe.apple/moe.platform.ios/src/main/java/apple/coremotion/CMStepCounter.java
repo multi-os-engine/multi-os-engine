@@ -62,10 +62,6 @@ public class CMStepCounter extends NSObject {
     @Selector("alloc")
     public static native CMStepCounter alloc();
 
-    /**
-     * isStepCountingAvailable</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMotion/Reference/CMStepCounter_class/index.html#//apple_ref/occ/clm/CMStepCounter/isStepCountingAvailable">iOS Dev Center</a>
-     */
     @Generated
     @Selector("isStepCountingAvailable")
     public static native boolean isStepCountingAvailable();
@@ -174,28 +170,16 @@ public class CMStepCounter extends NSObject {
     @Selector("init")
     public native CMStepCounter init();
 
-    /**
-     * queryStepCountStartingFrom:to:toQueue:withHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMotion/Reference/CMStepCounter_class/index.html#//apple_ref/occ/instm/CMStepCounter/queryStepCountStartingFrom:to:toQueue:withHandler:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("queryStepCountStartingFrom:to:toQueue:withHandler:")
     public native void queryStepCountStartingFromToToQueueWithHandler(NSDate start, NSDate end, NSOperationQueue queue,
             @ObjCBlock(name = "call_queryStepCountStartingFromToToQueueWithHandler") Block_queryStepCountStartingFromToToQueueWithHandler handler);
 
-    /**
-     * startStepCountingUpdatesToQueue:updateOn:withHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMotion/Reference/CMStepCounter_class/index.html#//apple_ref/occ/instm/CMStepCounter/startStepCountingUpdatesToQueue:updateOn:withHandler:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("startStepCountingUpdatesToQueue:updateOn:withHandler:")
     public native void startStepCountingUpdatesToQueueUpdateOnWithHandler(NSOperationQueue queue, @NInt long stepCounts,
             @ObjCBlock(name = "call_startStepCountingUpdatesToQueueUpdateOnWithHandler") Block_startStepCountingUpdatesToQueueUpdateOnWithHandler handler);
 
-    /**
-     * stopStepCountingUpdates</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMotion/Reference/CMStepCounter_class/index.html#//apple_ref/occ/instm/CMStepCounter/stopStepCountingUpdates">iOS Dev Center</a>
-     */
     @Generated
     @Selector("stopStepCountingUpdates")
     public native void stopStepCountingUpdates();

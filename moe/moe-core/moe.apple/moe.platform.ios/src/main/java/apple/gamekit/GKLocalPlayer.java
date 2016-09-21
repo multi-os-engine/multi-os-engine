@@ -66,10 +66,6 @@ public class GKLocalPlayer extends GKPlayer implements GKSavedGameListener {
     @Selector("alloc")
     public static native GKLocalPlayer alloc();
 
-    /**
-     * localPlayer</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKLocalPlayer_Ref/index.html#//apple_ref/occ/clm/GKLocalPlayer/localPlayer">iOS Dev Center</a>
-     */
     @Generated
     @Selector("localPlayer")
     public static native GKLocalPlayer localPlayer();
@@ -184,47 +180,27 @@ public class GKLocalPlayer extends GKPlayer implements GKSavedGameListener {
     @NInt
     public static native long version_static();
 
-    /**
-     * authenticateWithCompletionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKLocalPlayer_Ref/index.html#//apple_ref/occ/instm/GKLocalPlayer/authenticateWithCompletionHandler:">iOS Dev Center</a>
-     */
     @Generated
     @Deprecated
     @Selector("authenticateWithCompletionHandler:")
     public native void authenticateWithCompletionHandler(
             @ObjCBlock(name = "call_authenticateWithCompletionHandler") Block_authenticateWithCompletionHandler completionHandler);
 
-    /**
-     * deleteSavedGamesWithName:completionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKLocalPlayer_Ref/index.html#//apple_ref/occ/instm/GKLocalPlayer/deleteSavedGamesWithName:completionHandler:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("deleteSavedGamesWithName:completionHandler:")
     public native void deleteSavedGamesWithNameCompletionHandler(String name,
             @ObjCBlock(name = "call_deleteSavedGamesWithNameCompletionHandler") Block_deleteSavedGamesWithNameCompletionHandler handler);
 
-    /**
-     * fetchSavedGamesWithCompletionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKLocalPlayer_Ref/index.html#//apple_ref/occ/instm/GKLocalPlayer/fetchSavedGamesWithCompletionHandler:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("fetchSavedGamesWithCompletionHandler:")
     public native void fetchSavedGamesWithCompletionHandler(
             @ObjCBlock(name = "call_fetchSavedGamesWithCompletionHandler") Block_fetchSavedGamesWithCompletionHandler handler);
 
-    /**
-     * friends</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKLocalPlayer_Ref/index.html#//apple_ref/occ/instp/GKLocalPlayer/friends">iOS Dev Center</a>
-     */
     @Generated
     @Deprecated
     @Selector("friends")
     public native NSArray<String> friends();
 
-    /**
-     * generateIdentityVerificationSignatureWithCompletionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKLocalPlayer_Ref/index.html#//apple_ref/occ/instm/GKLocalPlayer/generateIdentityVerificationSignatureWithCompletionHandler:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("generateIdentityVerificationSignatureWithCompletionHandler:")
     public native void generateIdentityVerificationSignatureWithCompletionHandler(
@@ -234,54 +210,30 @@ public class GKLocalPlayer extends GKPlayer implements GKSavedGameListener {
     @Selector("init")
     public native GKLocalPlayer init();
 
-    /**
-     * authenticated</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKLocalPlayer_Ref/index.html#//apple_ref/occ/instp/GKLocalPlayer/authenticated">iOS Dev Center</a>
-     */
     @Generated
     @Selector("isAuthenticated")
     public native boolean isAuthenticated();
 
-    /**
-     * underage</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKLocalPlayer_Ref/index.html#//apple_ref/occ/instp/GKLocalPlayer/underage">iOS Dev Center</a>
-     */
     @Generated
     @Selector("isUnderage")
     public native boolean isUnderage();
 
-    /**
-     * loadDefaultLeaderboardCategoryIDWithCompletionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKLocalPlayer_Ref/index.html#//apple_ref/occ/instm/GKLocalPlayer/loadDefaultLeaderboardCategoryIDWithCompletionHandler:">iOS Dev Center</a>
-     */
     @Generated
     @Deprecated
     @Selector("loadDefaultLeaderboardCategoryIDWithCompletionHandler:")
     public native void loadDefaultLeaderboardCategoryIDWithCompletionHandler(
             @ObjCBlock(name = "call_loadDefaultLeaderboardCategoryIDWithCompletionHandler") Block_loadDefaultLeaderboardCategoryIDWithCompletionHandler completionHandler);
 
-    /**
-     * loadDefaultLeaderboardIdentifierWithCompletionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKLocalPlayer_Ref/index.html#//apple_ref/occ/instm/GKLocalPlayer/loadDefaultLeaderboardIdentifierWithCompletionHandler:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("loadDefaultLeaderboardIdentifierWithCompletionHandler:")
     public native void loadDefaultLeaderboardIdentifierWithCompletionHandler(
             @ObjCBlock(name = "call_loadDefaultLeaderboardIdentifierWithCompletionHandler") Block_loadDefaultLeaderboardIdentifierWithCompletionHandler completionHandler);
 
-    /**
-     * loadFriendPlayersWithCompletionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKLocalPlayer_Ref/index.html#//apple_ref/occ/instm/GKLocalPlayer/loadFriendPlayersWithCompletionHandler:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("loadFriendPlayersWithCompletionHandler:")
     public native void loadFriendPlayersWithCompletionHandler(
             @ObjCBlock(name = "call_loadFriendPlayersWithCompletionHandler") Block_loadFriendPlayersWithCompletionHandler completionHandler);
 
-    /**
-     * loadFriendsWithCompletionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKLocalPlayer_Ref/index.html#//apple_ref/occ/instm/GKLocalPlayer/loadFriendsWithCompletionHandler:">iOS Dev Center</a>
-     */
     @Generated
     @Deprecated
     @Selector("loadFriendsWithCompletionHandler:")
@@ -298,81 +250,45 @@ public class GKLocalPlayer extends GKPlayer implements GKSavedGameListener {
     @Selector("player:hasConflictingSavedGames:")
     public native void playerHasConflictingSavedGames(GKPlayer player, NSArray<? extends GKSavedGame> savedGames);
 
-    /**
-     * registerListener:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKLocalPlayer_Ref/index.html#//apple_ref/occ/instm/GKLocalPlayer/registerListener:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("registerListener:")
     public native void registerListener(@Mapped(ObjCObjectMapper.class) GKLocalPlayerListener listener);
 
-    /**
-     * resolveConflictingSavedGames:withData:completionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKLocalPlayer_Ref/index.html#//apple_ref/occ/instm/GKLocalPlayer/resolveConflictingSavedGames:withData:completionHandler:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("resolveConflictingSavedGames:withData:completionHandler:")
     public native void resolveConflictingSavedGamesWithDataCompletionHandler(
             NSArray<? extends GKSavedGame> conflictingSavedGames, NSData data,
             @ObjCBlock(name = "call_resolveConflictingSavedGamesWithDataCompletionHandler") Block_resolveConflictingSavedGamesWithDataCompletionHandler handler);
 
-    /**
-     * saveGameData:withName:completionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKLocalPlayer_Ref/index.html#//apple_ref/occ/instm/GKLocalPlayer/saveGameData:withName:completionHandler:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("saveGameData:withName:completionHandler:")
     public native void saveGameDataWithNameCompletionHandler(NSData data, String name,
             @ObjCBlock(name = "call_saveGameDataWithNameCompletionHandler") Block_saveGameDataWithNameCompletionHandler handler);
 
-    /**
-     * authenticateHandler</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKLocalPlayer_Ref/index.html#//apple_ref/occ/instp/GKLocalPlayer/authenticateHandler">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setAuthenticateHandler:")
     public native void setAuthenticateHandler(
             @ObjCBlock(name = "call_setAuthenticateHandler") Block_setAuthenticateHandler value);
 
-    /**
-     * setDefaultLeaderboardCategoryID:completionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKLocalPlayer_Ref/index.html#//apple_ref/occ/instm/GKLocalPlayer/setDefaultLeaderboardCategoryID:completionHandler:">iOS Dev Center</a>
-     */
     @Generated
     @Deprecated
     @Selector("setDefaultLeaderboardCategoryID:completionHandler:")
     public native void setDefaultLeaderboardCategoryIDCompletionHandler(String categoryID,
             @ObjCBlock(name = "call_setDefaultLeaderboardCategoryIDCompletionHandler") Block_setDefaultLeaderboardCategoryIDCompletionHandler completionHandler);
 
-    /**
-     * setDefaultLeaderboardIdentifier:completionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKLocalPlayer_Ref/index.html#//apple_ref/occ/instm/GKLocalPlayer/setDefaultLeaderboardIdentifier:completionHandler:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setDefaultLeaderboardIdentifier:completionHandler:")
     public native void setDefaultLeaderboardIdentifierCompletionHandler(String leaderboardIdentifier,
             @ObjCBlock(name = "call_setDefaultLeaderboardIdentifierCompletionHandler") Block_setDefaultLeaderboardIdentifierCompletionHandler completionHandler);
 
-    /**
-     * unregisterAllListeners</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKLocalPlayer_Ref/index.html#//apple_ref/occ/instm/GKLocalPlayer/unregisterAllListeners">iOS Dev Center</a>
-     */
     @Generated
     @Selector("unregisterAllListeners")
     public native void unregisterAllListeners();
 
-    /**
-     * unregisterListener:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKLocalPlayer_Ref/index.html#//apple_ref/occ/instm/GKLocalPlayer/unregisterListener:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("unregisterListener:")
     public native void unregisterListener(@Mapped(ObjCObjectMapper.class) GKLocalPlayerListener listener);
 
-    /**
-     * authenticateHandler</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKLocalPlayer_Ref/index.html#//apple_ref/occ/instp/GKLocalPlayer/authenticateHandler">iOS Dev Center</a>
-     */
     @Generated
     @Selector("authenticateHandler")
     @ObjCBlock(name = "call_authenticateHandler_ret")

@@ -159,10 +159,6 @@ public class MTLRenderPipelineColorAttachmentDescriptor extends NSObject impleme
     @NInt
     public static native long version_static();
 
-    /**
-     * alphaBlendOperation</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Metal/Reference/MTLRenderPipelineColorAttachmentDescriptor_Ref/index.html#//apple_ref/occ/instp/MTLRenderPipelineColorAttachmentDescriptor/alphaBlendOperation">iOS Dev Center</a>
-     */
     @Generated
     @Selector("alphaBlendOperation")
     @NUInt
@@ -174,19 +170,11 @@ public class MTLRenderPipelineColorAttachmentDescriptor extends NSObject impleme
     @MappedReturn(ObjCObjectMapper.class)
     public native Object copyWithZone(VoidPtr zone);
 
-    /**
-     * destinationAlphaBlendFactor</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Metal/Reference/MTLRenderPipelineColorAttachmentDescriptor_Ref/index.html#//apple_ref/occ/instp/MTLRenderPipelineColorAttachmentDescriptor/destinationAlphaBlendFactor">iOS Dev Center</a>
-     */
     @Generated
     @Selector("destinationAlphaBlendFactor")
     @NUInt
     public native long destinationAlphaBlendFactor();
 
-    /**
-     * destinationRGBBlendFactor</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Metal/Reference/MTLRenderPipelineColorAttachmentDescriptor_Ref/index.html#//apple_ref/occ/instp/MTLRenderPipelineColorAttachmentDescriptor/destinationRGBBlendFactor">iOS Dev Center</a>
-     */
     @Generated
     @Selector("destinationRGBBlendFactor")
     @NUInt
@@ -196,126 +184,66 @@ public class MTLRenderPipelineColorAttachmentDescriptor extends NSObject impleme
     @Selector("init")
     public native MTLRenderPipelineColorAttachmentDescriptor init();
 
-    /**
-     * blendingEnabled</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Metal/Reference/MTLRenderPipelineColorAttachmentDescriptor_Ref/index.html#//apple_ref/occ/instp/MTLRenderPipelineColorAttachmentDescriptor/blendingEnabled">iOS Dev Center</a>
-     */
     @Generated
     @Selector("isBlendingEnabled")
     public native boolean isBlendingEnabled();
 
-    /**
-     * blendingEnabled</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Metal/Reference/MTLRenderPipelineColorAttachmentDescriptor_Ref/index.html#//apple_ref/occ/instp/MTLRenderPipelineColorAttachmentDescriptor/blendingEnabled">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setBlendingEnabled:")
     public native void setBlendingEnabled(boolean value);
 
-    /**
-     * pixelFormat</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Metal/Reference/MTLRenderPipelineColorAttachmentDescriptor_Ref/index.html#//apple_ref/occ/instp/MTLRenderPipelineColorAttachmentDescriptor/pixelFormat">iOS Dev Center</a>
-     */
     @Generated
     @Selector("pixelFormat")
     @NUInt
     public native long pixelFormat();
 
-    /**
-     * rgbBlendOperation</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Metal/Reference/MTLRenderPipelineColorAttachmentDescriptor_Ref/index.html#//apple_ref/occ/instp/MTLRenderPipelineColorAttachmentDescriptor/rgbBlendOperation">iOS Dev Center</a>
-     */
     @Generated
     @Selector("rgbBlendOperation")
     @NUInt
     public native long rgbBlendOperation();
 
-    /**
-     * alphaBlendOperation</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Metal/Reference/MTLRenderPipelineColorAttachmentDescriptor_Ref/index.html#//apple_ref/occ/instp/MTLRenderPipelineColorAttachmentDescriptor/alphaBlendOperation">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setAlphaBlendOperation:")
     public native void setAlphaBlendOperation(@NUInt long value);
 
-    /**
-     * destinationAlphaBlendFactor</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Metal/Reference/MTLRenderPipelineColorAttachmentDescriptor_Ref/index.html#//apple_ref/occ/instp/MTLRenderPipelineColorAttachmentDescriptor/destinationAlphaBlendFactor">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setDestinationAlphaBlendFactor:")
     public native void setDestinationAlphaBlendFactor(@NUInt long value);
 
-    /**
-     * destinationRGBBlendFactor</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Metal/Reference/MTLRenderPipelineColorAttachmentDescriptor_Ref/index.html#//apple_ref/occ/instp/MTLRenderPipelineColorAttachmentDescriptor/destinationRGBBlendFactor">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setDestinationRGBBlendFactor:")
     public native void setDestinationRGBBlendFactor(@NUInt long value);
 
-    /**
-     * pixelFormat</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Metal/Reference/MTLRenderPipelineColorAttachmentDescriptor_Ref/index.html#//apple_ref/occ/instp/MTLRenderPipelineColorAttachmentDescriptor/pixelFormat">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setPixelFormat:")
     public native void setPixelFormat(@NUInt long value);
 
-    /**
-     * rgbBlendOperation</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Metal/Reference/MTLRenderPipelineColorAttachmentDescriptor_Ref/index.html#//apple_ref/occ/instp/MTLRenderPipelineColorAttachmentDescriptor/rgbBlendOperation">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setRgbBlendOperation:")
     public native void setRgbBlendOperation(@NUInt long value);
 
-    /**
-     * sourceAlphaBlendFactor</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Metal/Reference/MTLRenderPipelineColorAttachmentDescriptor_Ref/index.html#//apple_ref/occ/instp/MTLRenderPipelineColorAttachmentDescriptor/sourceAlphaBlendFactor">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setSourceAlphaBlendFactor:")
     public native void setSourceAlphaBlendFactor(@NUInt long value);
 
-    /**
-     * sourceRGBBlendFactor</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Metal/Reference/MTLRenderPipelineColorAttachmentDescriptor_Ref/index.html#//apple_ref/occ/instp/MTLRenderPipelineColorAttachmentDescriptor/sourceRGBBlendFactor">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setSourceRGBBlendFactor:")
     public native void setSourceRGBBlendFactor(@NUInt long value);
 
-    /**
-     * writeMask</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Metal/Reference/MTLRenderPipelineColorAttachmentDescriptor_Ref/index.html#//apple_ref/occ/instp/MTLRenderPipelineColorAttachmentDescriptor/writeMask">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setWriteMask:")
     public native void setWriteMask(@NUInt long value);
 
-    /**
-     * sourceAlphaBlendFactor</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Metal/Reference/MTLRenderPipelineColorAttachmentDescriptor_Ref/index.html#//apple_ref/occ/instp/MTLRenderPipelineColorAttachmentDescriptor/sourceAlphaBlendFactor">iOS Dev Center</a>
-     */
     @Generated
     @Selector("sourceAlphaBlendFactor")
     @NUInt
     public native long sourceAlphaBlendFactor();
 
-    /**
-     * sourceRGBBlendFactor</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Metal/Reference/MTLRenderPipelineColorAttachmentDescriptor_Ref/index.html#//apple_ref/occ/instp/MTLRenderPipelineColorAttachmentDescriptor/sourceRGBBlendFactor">iOS Dev Center</a>
-     */
     @Generated
     @Selector("sourceRGBBlendFactor")
     @NUInt
     public native long sourceRGBBlendFactor();
 
-    /**
-     * writeMask</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Metal/Reference/MTLRenderPipelineColorAttachmentDescriptor_Ref/index.html#//apple_ref/occ/instp/MTLRenderPipelineColorAttachmentDescriptor/writeMask">iOS Dev Center</a>
-     */
     @Generated
     @Selector("writeMask")
     @NUInt

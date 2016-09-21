@@ -58,10 +58,6 @@ public class CNContactsUserDefaults extends NSObject {
     @Selector("alloc")
     public static native CNContactsUserDefaults alloc();
 
-    /**
-     * sharedDefaults</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Contacts/Reference/CNContactsUserDefaults_Class/index.html#//apple_ref/occ/clm/CNContactsUserDefaults/sharedDefaults">iOS Dev Center</a>
-     */
     @Generated
     @Selector("sharedDefaults")
     @MappedReturn(ObjCObjectMapper.class)
@@ -167,10 +163,6 @@ public class CNContactsUserDefaults extends NSObject {
     @NInt
     public static native long version_static();
 
-    /**
-     * countryCode</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Contacts/Reference/CNContactsUserDefaults_Class/index.html#//apple_ref/occ/instp/CNContactsUserDefaults/countryCode">iOS Dev Center</a>
-     */
     @Generated
     @Selector("countryCode")
     public native String countryCode();
@@ -179,10 +171,6 @@ public class CNContactsUserDefaults extends NSObject {
     @Selector("init")
     public native CNContactsUserDefaults init();
 
-    /**
-     * sortOrder</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Contacts/Reference/CNContactsUserDefaults_Class/index.html#//apple_ref/occ/instp/CNContactsUserDefaults/sortOrder">iOS Dev Center</a>
-     */
     @Generated
     @Selector("sortOrder")
     @NInt

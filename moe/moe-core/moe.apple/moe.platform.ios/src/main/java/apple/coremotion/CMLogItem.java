@@ -190,10 +190,6 @@ public class CMLogItem extends NSObject implements NSSecureCoding, NSCopying {
         return supportsSecureCoding();
     }
 
-    /**
-     * timestamp</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMotion/Reference/CMLogItem_Class/index.html#//apple_ref/occ/instp/CMLogItem/timestamp">iOS Dev Center</a>
-     */
     @Generated
     @Selector("timestamp")
     public native double timestamp();

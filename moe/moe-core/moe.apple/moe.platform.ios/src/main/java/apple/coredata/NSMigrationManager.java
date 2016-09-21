@@ -162,60 +162,32 @@ public class NSMigrationManager extends NSObject {
     @NInt
     public static native long version();
 
-    /**
-     * associateSourceInstance:withDestinationInstance:forEntityMapping:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSMigrationManager_class/index.html#//apple_ref/occ/instm/NSMigrationManager/associateSourceInstance:withDestinationInstance:forEntityMapping:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("associateSourceInstance:withDestinationInstance:forEntityMapping:")
     public native void associateSourceInstanceWithDestinationInstanceForEntityMapping(NSManagedObject sourceInstance,
             NSManagedObject destinationInstance, NSEntityMapping entityMapping);
 
-    /**
-     * cancelMigrationWithError:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSMigrationManager_class/index.html#//apple_ref/occ/instm/NSMigrationManager/cancelMigrationWithError:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("cancelMigrationWithError:")
     public native void cancelMigrationWithError(NSError error);
 
-    /**
-     * currentEntityMapping</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSMigrationManager_class/index.html#//apple_ref/occ/instp/NSMigrationManager/currentEntityMapping">iOS Dev Center</a>
-     */
     @Generated
     @Selector("currentEntityMapping")
     public native NSEntityMapping currentEntityMapping();
 
-    /**
-     * destinationContext</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSMigrationManager_class/index.html#//apple_ref/occ/instp/NSMigrationManager/destinationContext">iOS Dev Center</a>
-     */
     @Generated
     @Selector("destinationContext")
     public native NSManagedObjectContext destinationContext();
 
-    /**
-     * destinationEntityForEntityMapping:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSMigrationManager_class/index.html#//apple_ref/occ/instm/NSMigrationManager/destinationEntityForEntityMapping:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("destinationEntityForEntityMapping:")
     public native NSEntityDescription destinationEntityForEntityMapping(NSEntityMapping mEntity);
 
-    /**
-     * destinationInstancesForEntityMappingNamed:sourceInstances:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSMigrationManager_class/index.html#//apple_ref/occ/instm/NSMigrationManager/destinationInstancesForEntityMappingNamed:sourceInstances:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("destinationInstancesForEntityMappingNamed:sourceInstances:")
     public native NSArray<? extends NSManagedObject> destinationInstancesForEntityMappingNamedSourceInstances(
             String mappingName, NSArray<? extends NSManagedObject> sourceInstances);
 
-    /**
-     * destinationModel</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSMigrationManager_class/index.html#//apple_ref/occ/instp/NSMigrationManager/destinationModel">iOS Dev Center</a>
-     */
     @Generated
     @Selector("destinationModel")
     public native NSManagedObjectModel destinationModel();
@@ -224,110 +196,58 @@ public class NSMigrationManager extends NSObject {
     @Selector("init")
     public native NSMigrationManager init();
 
-    /**
-     * initWithSourceModel:destinationModel:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSMigrationManager_class/index.html#//apple_ref/occ/instm/NSMigrationManager/initWithSourceModel:destinationModel:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithSourceModel:destinationModel:")
     public native NSMigrationManager initWithSourceModelDestinationModel(NSManagedObjectModel sourceModel,
             NSManagedObjectModel destinationModel);
 
-    /**
-     * mappingModel</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSMigrationManager_class/index.html#//apple_ref/occ/instp/NSMigrationManager/mappingModel">iOS Dev Center</a>
-     */
     @Generated
     @Selector("mappingModel")
     public native NSMappingModel mappingModel();
 
-    /**
-     * migrateStoreFromURL:type:options:withMappingModel:toDestinationURL:destinationType:destinationOptions:error:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSMigrationManager_class/index.html#//apple_ref/occ/instm/NSMigrationManager/migrateStoreFromURL:type:options:withMappingModel:toDestinationURL:destinationType:destinationOptions:error:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("migrateStoreFromURL:type:options:withMappingModel:toDestinationURL:destinationType:destinationOptions:error:")
     public native boolean migrateStoreFromURLTypeOptionsWithMappingModelToDestinationURLDestinationTypeDestinationOptionsError(
             NSURL sourceURL, String sStoreType, NSDictionary<?, ?> sOptions, NSMappingModel mappings, NSURL dURL,
             String dStoreType, NSDictionary<?, ?> dOptions, Ptr<NSError> error);
 
-    /**
-     * migrationProgress</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSMigrationManager_class/index.html#//apple_ref/occ/instp/NSMigrationManager/migrationProgress">iOS Dev Center</a>
-     */
     @Generated
     @Selector("migrationProgress")
     public native float migrationProgress();
 
-    /**
-     * reset</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSMigrationManager_class/index.html#//apple_ref/occ/instm/NSMigrationManager/reset">iOS Dev Center</a>
-     */
     @Generated
     @Selector("reset")
     public native void reset();
 
-    /**
-     * userInfo</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSMigrationManager_class/index.html#//apple_ref/occ/instp/NSMigrationManager/userInfo">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setUserInfo:")
     public native void setUserInfo(NSDictionary<?, ?> value);
 
-    /**
-     * usesStoreSpecificMigrationManager</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSMigrationManager_class/index.html#//apple_ref/occ/instp/NSMigrationManager/usesStoreSpecificMigrationManager">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setUsesStoreSpecificMigrationManager:")
     public native void setUsesStoreSpecificMigrationManager(boolean value);
 
-    /**
-     * sourceContext</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSMigrationManager_class/index.html#//apple_ref/occ/instp/NSMigrationManager/sourceContext">iOS Dev Center</a>
-     */
     @Generated
     @Selector("sourceContext")
     public native NSManagedObjectContext sourceContext();
 
-    /**
-     * sourceEntityForEntityMapping:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSMigrationManager_class/index.html#//apple_ref/occ/instm/NSMigrationManager/sourceEntityForEntityMapping:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("sourceEntityForEntityMapping:")
     public native NSEntityDescription sourceEntityForEntityMapping(NSEntityMapping mEntity);
 
-    /**
-     * sourceInstancesForEntityMappingNamed:destinationInstances:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSMigrationManager_class/index.html#//apple_ref/occ/instm/NSMigrationManager/sourceInstancesForEntityMappingNamed:destinationInstances:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("sourceInstancesForEntityMappingNamed:destinationInstances:")
     public native NSArray<? extends NSManagedObject> sourceInstancesForEntityMappingNamedDestinationInstances(
             String mappingName, NSArray<? extends NSManagedObject> destinationInstances);
 
-    /**
-     * sourceModel</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSMigrationManager_class/index.html#//apple_ref/occ/instp/NSMigrationManager/sourceModel">iOS Dev Center</a>
-     */
     @Generated
     @Selector("sourceModel")
     public native NSManagedObjectModel sourceModel();
 
-    /**
-     * userInfo</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSMigrationManager_class/index.html#//apple_ref/occ/instp/NSMigrationManager/userInfo">iOS Dev Center</a>
-     */
     @Generated
     @Selector("userInfo")
     public native NSDictionary<?, ?> userInfo();
 
-    /**
-     * usesStoreSpecificMigrationManager</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSMigrationManager_class/index.html#//apple_ref/occ/instp/NSMigrationManager/usesStoreSpecificMigrationManager">iOS Dev Center</a>
-     */
     @Generated
     @Selector("usesStoreSpecificMigrationManager")
     public native boolean usesStoreSpecificMigrationManager();

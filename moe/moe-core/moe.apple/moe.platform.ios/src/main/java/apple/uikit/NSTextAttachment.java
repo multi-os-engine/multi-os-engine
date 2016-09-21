@@ -172,19 +172,11 @@ public class NSTextAttachment extends NSObject implements NSTextAttachmentContai
     public native CGRect attachmentBoundsForTextContainerProposedLineFragmentGlyphPositionCharacterIndex(
             NSTextContainer textContainer, @ByValue CGRect lineFrag, @ByValue CGPoint position, @NUInt long charIndex);
 
-    /**
-     * bounds</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/ApplicationKit/Classes/NSTextAttachment_Class/index.html#//apple_ref/occ/instp/NSTextAttachment/bounds">iOS Dev Center</a>
-     */
     @Generated
     @Selector("bounds")
     @ByValue
     public native CGRect bounds();
 
-    /**
-     * contents</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/ApplicationKit/Classes/NSTextAttachment_Class/index.html#//apple_ref/occ/instp/NSTextAttachment/contents">iOS Dev Center</a>
-     */
     @Generated
     @Selector("contents")
     public native NSData contents();
@@ -193,26 +185,14 @@ public class NSTextAttachment extends NSObject implements NSTextAttachmentContai
     @Selector("encodeWithCoder:")
     public native void encodeWithCoder(NSCoder aCoder);
 
-    /**
-     * fileType</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/ApplicationKit/Classes/NSTextAttachment_Class/index.html#//apple_ref/occ/instp/NSTextAttachment/fileType">iOS Dev Center</a>
-     */
     @Generated
     @Selector("fileType")
     public native String fileType();
 
-    /**
-     * fileWrapper</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/ApplicationKit/Classes/NSTextAttachment_Class/index.html#//apple_ref/occ/instp/NSTextAttachment/fileWrapper">iOS Dev Center</a>
-     */
     @Generated
     @Selector("fileWrapper")
     public native NSFileWrapper fileWrapper();
 
-    /**
-     * image</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/ApplicationKit/Classes/NSTextAttachment_Class/index.html#//apple_ref/occ/instp/NSTextAttachment/image">iOS Dev Center</a>
-     */
     @Generated
     @Selector("image")
     public native UIImage image();
@@ -230,50 +210,26 @@ public class NSTextAttachment extends NSObject implements NSTextAttachmentContai
     @Selector("initWithCoder:")
     public native NSTextAttachment initWithCoder(NSCoder aDecoder);
 
-    /**
-     * initWithData:ofType:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/ApplicationKit/Classes/NSTextAttachment_Class/index.html#//apple_ref/occ/instm/NSTextAttachment/initWithData:ofType:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithData:ofType:")
     public native NSTextAttachment initWithDataOfType(NSData contentData, String uti);
 
-    /**
-     * bounds</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/ApplicationKit/Classes/NSTextAttachment_Class/index.html#//apple_ref/occ/instp/NSTextAttachment/bounds">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setBounds:")
     public native void setBounds(@ByValue CGRect value);
 
-    /**
-     * contents</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/ApplicationKit/Classes/NSTextAttachment_Class/index.html#//apple_ref/occ/instp/NSTextAttachment/contents">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setContents:")
     public native void setContents(NSData value);
 
-    /**
-     * fileType</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/ApplicationKit/Classes/NSTextAttachment_Class/index.html#//apple_ref/occ/instp/NSTextAttachment/fileType">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setFileType:")
     public native void setFileType(String value);
 
-    /**
-     * fileWrapper</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/ApplicationKit/Classes/NSTextAttachment_Class/index.html#//apple_ref/occ/instp/NSTextAttachment/fileWrapper">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setFileWrapper:")
     public native void setFileWrapper(NSFileWrapper value);
 
-    /**
-     * image</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/ApplicationKit/Classes/NSTextAttachment_Class/index.html#//apple_ref/occ/instp/NSTextAttachment/image">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setImage:")
     public native void setImage(UIImage value);

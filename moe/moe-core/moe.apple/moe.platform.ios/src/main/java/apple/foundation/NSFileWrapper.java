@@ -157,18 +157,10 @@ public class NSFileWrapper extends NSObject implements NSCoding {
     @NInt
     public static native long version_static();
 
-    /**
-     * addFileWrapper:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/ApplicationKit/Classes/NSFileWrapper_Class/index.html#//apple_ref/occ/instm/NSFileWrapper/addFileWrapper:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("addFileWrapper:")
     public native String addFileWrapper(NSFileWrapper child);
 
-    /**
-     * addRegularFileWithContents:preferredFilename:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/ApplicationKit/Classes/NSFileWrapper_Class/index.html#//apple_ref/occ/instm/NSFileWrapper/addRegularFileWithContents:preferredFilename:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("addRegularFileWithContents:preferredFilename:")
     public native String addRegularFileWithContentsPreferredFilename(NSData data, String fileName);
@@ -177,26 +169,14 @@ public class NSFileWrapper extends NSObject implements NSCoding {
     @Selector("encodeWithCoder:")
     public native void encodeWithCoder(NSCoder aCoder);
 
-    /**
-     * fileAttributes</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/ApplicationKit/Classes/NSFileWrapper_Class/index.html#//apple_ref/occ/instp/NSFileWrapper/fileAttributes">iOS Dev Center</a>
-     */
     @Generated
     @Selector("fileAttributes")
     public native NSDictionary<String, ?> fileAttributes();
 
-    /**
-     * fileWrappers</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/ApplicationKit/Classes/NSFileWrapper_Class/index.html#//apple_ref/occ/instp/NSFileWrapper/fileWrappers">iOS Dev Center</a>
-     */
     @Generated
     @Selector("fileWrappers")
     public native NSDictionary<String, ? extends NSFileWrapper> fileWrappers();
 
-    /**
-     * filename</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/ApplicationKit/Classes/NSFileWrapper_Class/index.html#//apple_ref/occ/instp/NSFileWrapper/filename">iOS Dev Center</a>
-     */
     @Generated
     @Selector("filename")
     public native String filename();
@@ -205,27 +185,15 @@ public class NSFileWrapper extends NSObject implements NSCoding {
     @Selector("init")
     public native NSFileWrapper init();
 
-    /**
-     * initDirectoryWithFileWrappers:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/ApplicationKit/Classes/NSFileWrapper_Class/index.html#//apple_ref/occ/instm/NSFileWrapper/initDirectoryWithFileWrappers:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initDirectoryWithFileWrappers:")
     public native NSFileWrapper initDirectoryWithFileWrappers(
             NSDictionary<String, ? extends NSFileWrapper> childrenByPreferredName);
 
-    /**
-     * initRegularFileWithContents:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/ApplicationKit/Classes/NSFileWrapper_Class/index.html#//apple_ref/occ/instm/NSFileWrapper/initRegularFileWithContents:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initRegularFileWithContents:")
     public native NSFileWrapper initRegularFileWithContents(NSData contents);
 
-    /**
-     * initSymbolicLinkWithDestinationURL:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/ApplicationKit/Classes/NSFileWrapper_Class/index.html#//apple_ref/occ/instm/NSFileWrapper/initSymbolicLinkWithDestinationURL:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initSymbolicLinkWithDestinationURL:")
     public native NSFileWrapper initSymbolicLinkWithDestinationURL(NSURL url);
@@ -234,138 +202,70 @@ public class NSFileWrapper extends NSObject implements NSCoding {
     @Selector("initWithCoder:")
     public native NSFileWrapper initWithCoder(NSCoder inCoder);
 
-    /**
-     * initWithSerializedRepresentation:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/ApplicationKit/Classes/NSFileWrapper_Class/index.html#//apple_ref/occ/instm/NSFileWrapper/initWithSerializedRepresentation:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithSerializedRepresentation:")
     public native NSFileWrapper initWithSerializedRepresentation(NSData serializeRepresentation);
 
-    /**
-     * initWithURL:options:error:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/ApplicationKit/Classes/NSFileWrapper_Class/index.html#//apple_ref/occ/instm/NSFileWrapper/initWithURL:options:error:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithURL:options:error:")
     public native NSFileWrapper initWithURLOptionsError(NSURL url, @NUInt long options, Ptr<NSError> outError);
 
-    /**
-     * directory</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/ApplicationKit/Classes/NSFileWrapper_Class/index.html#//apple_ref/occ/instp/NSFileWrapper/directory">iOS Dev Center</a>
-     */
     @Generated
     @Selector("isDirectory")
     public native boolean isDirectory();
 
-    /**
-     * regularFile</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/ApplicationKit/Classes/NSFileWrapper_Class/index.html#//apple_ref/occ/instp/NSFileWrapper/regularFile">iOS Dev Center</a>
-     */
     @Generated
     @Selector("isRegularFile")
     public native boolean isRegularFile();
 
-    /**
-     * symbolicLink</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/ApplicationKit/Classes/NSFileWrapper_Class/index.html#//apple_ref/occ/instp/NSFileWrapper/symbolicLink">iOS Dev Center</a>
-     */
     @Generated
     @Selector("isSymbolicLink")
     public native boolean isSymbolicLink();
 
-    /**
-     * keyForFileWrapper:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/ApplicationKit/Classes/NSFileWrapper_Class/index.html#//apple_ref/occ/instm/NSFileWrapper/keyForFileWrapper:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("keyForFileWrapper:")
     public native String keyForFileWrapper(NSFileWrapper child);
 
-    /**
-     * matchesContentsOfURL:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/ApplicationKit/Classes/NSFileWrapper_Class/index.html#//apple_ref/occ/instm/NSFileWrapper/matchesContentsOfURL:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("matchesContentsOfURL:")
     public native boolean matchesContentsOfURL(NSURL url);
 
-    /**
-     * preferredFilename</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/ApplicationKit/Classes/NSFileWrapper_Class/index.html#//apple_ref/occ/instp/NSFileWrapper/preferredFilename">iOS Dev Center</a>
-     */
     @Generated
     @Selector("preferredFilename")
     public native String preferredFilename();
 
-    /**
-     * readFromURL:options:error:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/ApplicationKit/Classes/NSFileWrapper_Class/index.html#//apple_ref/occ/instm/NSFileWrapper/readFromURL:options:error:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("readFromURL:options:error:")
     public native boolean readFromURLOptionsError(NSURL url, @NUInt long options, Ptr<NSError> outError);
 
-    /**
-     * regularFileContents</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/ApplicationKit/Classes/NSFileWrapper_Class/index.html#//apple_ref/occ/instp/NSFileWrapper/regularFileContents">iOS Dev Center</a>
-     */
     @Generated
     @Selector("regularFileContents")
     public native NSData regularFileContents();
 
-    /**
-     * removeFileWrapper:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/ApplicationKit/Classes/NSFileWrapper_Class/index.html#//apple_ref/occ/instm/NSFileWrapper/removeFileWrapper:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("removeFileWrapper:")
     public native void removeFileWrapper(NSFileWrapper child);
 
-    /**
-     * serializedRepresentation</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/ApplicationKit/Classes/NSFileWrapper_Class/index.html#//apple_ref/occ/instp/NSFileWrapper/serializedRepresentation">iOS Dev Center</a>
-     */
     @Generated
     @Selector("serializedRepresentation")
     public native NSData serializedRepresentation();
 
-    /**
-     * fileAttributes</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/ApplicationKit/Classes/NSFileWrapper_Class/index.html#//apple_ref/occ/instp/NSFileWrapper/fileAttributes">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setFileAttributes:")
     public native void setFileAttributes(NSDictionary<String, ?> value);
 
-    /**
-     * filename</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/ApplicationKit/Classes/NSFileWrapper_Class/index.html#//apple_ref/occ/instp/NSFileWrapper/filename">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setFilename:")
     public native void setFilename(String value);
 
-    /**
-     * preferredFilename</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/ApplicationKit/Classes/NSFileWrapper_Class/index.html#//apple_ref/occ/instp/NSFileWrapper/preferredFilename">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setPreferredFilename:")
     public native void setPreferredFilename(String value);
 
-    /**
-     * symbolicLinkDestinationURL</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/ApplicationKit/Classes/NSFileWrapper_Class/index.html#//apple_ref/occ/instp/NSFileWrapper/symbolicLinkDestinationURL">iOS Dev Center</a>
-     */
     @Generated
     @Selector("symbolicLinkDestinationURL")
     public native NSURL symbolicLinkDestinationURL();
 
-    /**
-     * writeToURL:options:originalContentsURL:error:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/ApplicationKit/Classes/NSFileWrapper_Class/index.html#//apple_ref/occ/instm/NSFileWrapper/writeToURL:options:originalContentsURL:error:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("writeToURL:options:originalContentsURL:error:")
     public native boolean writeToURLOptionsOriginalContentsURLError(NSURL url, @NUInt long options,

@@ -34,44 +34,24 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("UIViewControllerPreviewing")
 public interface UIViewControllerPreviewing {
-    /**
-     * delegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIViewControllerPreviewing_Protocol/index.html#//apple_ref/occ/intfp/UIViewControllerPreviewing/delegate">iOS Dev Center</a>
-     */
     @Generated
     @Selector("delegate")
     @MappedReturn(ObjCObjectMapper.class)
     Object delegate();
 
-    /**
-     * previewingGestureRecognizerForFailureRelationship</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIViewControllerPreviewing_Protocol/index.html#//apple_ref/occ/intfp/UIViewControllerPreviewing/previewingGestureRecognizerForFailureRelationship">iOS Dev Center</a>
-     */
     @Generated
     @Selector("previewingGestureRecognizerForFailureRelationship")
     UIGestureRecognizer previewingGestureRecognizerForFailureRelationship();
 
-    /**
-     * sourceRect</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIViewControllerPreviewing_Protocol/index.html#//apple_ref/occ/intfp/UIViewControllerPreviewing/sourceRect">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setSourceRect:")
     void setSourceRect(@ByValue CGRect value);
 
-    /**
-     * sourceRect</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIViewControllerPreviewing_Protocol/index.html#//apple_ref/occ/intfp/UIViewControllerPreviewing/sourceRect">iOS Dev Center</a>
-     */
     @Generated
     @Selector("sourceRect")
     @ByValue
     CGRect sourceRect();
 
-    /**
-     * sourceView</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIViewControllerPreviewing_Protocol/index.html#//apple_ref/occ/intfp/UIViewControllerPreviewing/sourceView">iOS Dev Center</a>
-     */
     @Generated
     @Selector("sourceView")
     UIView sourceView();

@@ -159,10 +159,6 @@ public class CTSubscriber extends NSObject {
     @NInt
     public static native long version_static();
 
-    /**
-     * carrierToken</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreTelephony/Reference/CTSubscriber/index.html#//apple_ref/occ/instp/CTSubscriber/carrierToken">iOS Dev Center</a>
-     */
     @Generated
     @Selector("carrierToken")
     public native NSData carrierToken();

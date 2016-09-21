@@ -63,10 +63,6 @@ public class NEIPv6Route extends NSObject implements NSSecureCoding, NSCopying {
     @Selector("alloc")
     public static native NEIPv6Route alloc();
 
-    /**
-     * defaultRoute</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEIPv6RouteClassRef/index.html#//apple_ref/occ/clm/NEIPv6Route/defaultRoute">iOS Dev Center</a>
-     */
     @Generated
     @Selector("defaultRoute")
     public static native NEIPv6Route defaultRoute();
@@ -181,18 +177,10 @@ public class NEIPv6Route extends NSObject implements NSSecureCoding, NSCopying {
     @MappedReturn(ObjCObjectMapper.class)
     public native Object copyWithZone(VoidPtr zone);
 
-    /**
-     * destinationAddress</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEIPv6RouteClassRef/index.html#//apple_ref/occ/instp/NEIPv6Route/destinationAddress">iOS Dev Center</a>
-     */
     @Generated
     @Selector("destinationAddress")
     public native String destinationAddress();
 
-    /**
-     * destinationNetworkPrefixLength</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEIPv6RouteClassRef/index.html#//apple_ref/occ/instp/NEIPv6Route/destinationNetworkPrefixLength">iOS Dev Center</a>
-     */
     @Generated
     @Selector("destinationNetworkPrefixLength")
     public native NSNumber destinationNetworkPrefixLength();
@@ -201,10 +189,6 @@ public class NEIPv6Route extends NSObject implements NSSecureCoding, NSCopying {
     @Selector("encodeWithCoder:")
     public native void encodeWithCoder(NSCoder aCoder);
 
-    /**
-     * gatewayAddress</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEIPv6RouteClassRef/index.html#//apple_ref/occ/instp/NEIPv6Route/gatewayAddress">iOS Dev Center</a>
-     */
     @Generated
     @Selector("gatewayAddress")
     public native String gatewayAddress();
@@ -217,19 +201,11 @@ public class NEIPv6Route extends NSObject implements NSSecureCoding, NSCopying {
     @Selector("initWithCoder:")
     public native NEIPv6Route initWithCoder(NSCoder aDecoder);
 
-    /**
-     * initWithDestinationAddress:networkPrefixLength:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEIPv6RouteClassRef/index.html#//apple_ref/occ/instm/NEIPv6Route/initWithDestinationAddress:networkPrefixLength:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithDestinationAddress:networkPrefixLength:")
     public native NEIPv6Route initWithDestinationAddressNetworkPrefixLength(String address,
             NSNumber networkPrefixLength);
 
-    /**
-     * gatewayAddress</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEIPv6RouteClassRef/index.html#//apple_ref/occ/instp/NEIPv6Route/gatewayAddress">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setGatewayAddress:")
     public native void setGatewayAddress(String value);

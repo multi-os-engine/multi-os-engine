@@ -30,10 +30,6 @@ import org.moe.natj.objc.ann.Selector;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("PKAddPassesViewControllerDelegate")
 public interface PKAddPassesViewControllerDelegate {
-    /**
-     * addPassesViewControllerDidFinish:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/PassKit/Reference/PKAddPassesViewControllerDelegate_Ref/index.html#//apple_ref/occ/intfm/PKAddPassesViewControllerDelegate/addPassesViewControllerDidFinish:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("addPassesViewControllerDidFinish:")

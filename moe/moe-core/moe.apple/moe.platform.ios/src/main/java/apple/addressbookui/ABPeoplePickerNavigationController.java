@@ -178,18 +178,10 @@ public class ABPeoplePickerNavigationController extends UINavigationController {
     @NInt
     public static native long version_static();
 
-    /**
-     * addressBook</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AddressBookUI/Reference/ABPeoplePickerNavigationController_Class/index.html#//apple_ref/occ/instp/ABPeoplePickerNavigationController/addressBook">iOS Dev Center</a>
-     */
     @Generated
     @Selector("addressBook")
     public native ConstVoidPtr addressBook();
 
-    /**
-     * displayedProperties</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AddressBookUI/Reference/ABPeoplePickerNavigationController_Class/index.html#//apple_ref/occ/instp/ABPeoplePickerNavigationController/displayedProperties">iOS Dev Center</a>
-     */
     @Generated
     @Selector("displayedProperties")
     public native NSArray<? extends NSNumber> displayedProperties();
@@ -212,68 +204,36 @@ public class ABPeoplePickerNavigationController extends UINavigationController {
     @Selector("initWithRootViewController:")
     public native ABPeoplePickerNavigationController initWithRootViewController(UIViewController rootViewController);
 
-    /**
-     * peoplePickerDelegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AddressBookUI/Reference/ABPeoplePickerNavigationController_Class/index.html#//apple_ref/occ/instp/ABPeoplePickerNavigationController/peoplePickerDelegate">iOS Dev Center</a>
-     */
     @Generated
     @Selector("peoplePickerDelegate")
     @MappedReturn(ObjCObjectMapper.class)
     public native ABPeoplePickerNavigationControllerDelegate peoplePickerDelegate();
 
-    /**
-     * predicateForEnablingPerson</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AddressBookUI/Reference/ABPeoplePickerNavigationController_Class/index.html#//apple_ref/occ/instp/ABPeoplePickerNavigationController/predicateForEnablingPerson">iOS Dev Center</a>
-     */
     @Generated
     @Selector("predicateForEnablingPerson")
     public native NSPredicate predicateForEnablingPerson();
 
-    /**
-     * predicateForSelectionOfPerson</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AddressBookUI/Reference/ABPeoplePickerNavigationController_Class/index.html#//apple_ref/occ/instp/ABPeoplePickerNavigationController/predicateForSelectionOfPerson">iOS Dev Center</a>
-     */
     @Generated
     @Selector("predicateForSelectionOfPerson")
     public native NSPredicate predicateForSelectionOfPerson();
 
-    /**
-     * predicateForSelectionOfProperty</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AddressBookUI/Reference/ABPeoplePickerNavigationController_Class/index.html#//apple_ref/occ/instp/ABPeoplePickerNavigationController/predicateForSelectionOfProperty">iOS Dev Center</a>
-     */
     @Generated
     @Selector("predicateForSelectionOfProperty")
     public native NSPredicate predicateForSelectionOfProperty();
 
-    /**
-     * addressBook</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AddressBookUI/Reference/ABPeoplePickerNavigationController_Class/index.html#//apple_ref/occ/instp/ABPeoplePickerNavigationController/addressBook">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setAddressBook:")
     public native void setAddressBook(ConstVoidPtr value);
 
-    /**
-     * displayedProperties</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AddressBookUI/Reference/ABPeoplePickerNavigationController_Class/index.html#//apple_ref/occ/instp/ABPeoplePickerNavigationController/displayedProperties">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setDisplayedProperties:")
     public native void setDisplayedProperties(NSArray<? extends NSNumber> value);
 
-    /**
-     * peoplePickerDelegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AddressBookUI/Reference/ABPeoplePickerNavigationController_Class/index.html#//apple_ref/occ/instp/ABPeoplePickerNavigationController/peoplePickerDelegate">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setPeoplePickerDelegate:")
     public native void setPeoplePickerDelegate_unsafe(
             @Mapped(ObjCObjectMapper.class) ABPeoplePickerNavigationControllerDelegate value);
 
-    /**
-     * peoplePickerDelegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AddressBookUI/Reference/ABPeoplePickerNavigationController_Class/index.html#//apple_ref/occ/instp/ABPeoplePickerNavigationController/peoplePickerDelegate">iOS Dev Center</a>
-     */
     @Generated
     public void setPeoplePickerDelegate(
             @Mapped(ObjCObjectMapper.class) ABPeoplePickerNavigationControllerDelegate value) {
@@ -287,26 +247,14 @@ public class ABPeoplePickerNavigationController extends UINavigationController {
         }
     }
 
-    /**
-     * predicateForEnablingPerson</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AddressBookUI/Reference/ABPeoplePickerNavigationController_Class/index.html#//apple_ref/occ/instp/ABPeoplePickerNavigationController/predicateForEnablingPerson">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setPredicateForEnablingPerson:")
     public native void setPredicateForEnablingPerson(NSPredicate value);
 
-    /**
-     * predicateForSelectionOfPerson</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AddressBookUI/Reference/ABPeoplePickerNavigationController_Class/index.html#//apple_ref/occ/instp/ABPeoplePickerNavigationController/predicateForSelectionOfPerson">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setPredicateForSelectionOfPerson:")
     public native void setPredicateForSelectionOfPerson(NSPredicate value);
 
-    /**
-     * predicateForSelectionOfProperty</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AddressBookUI/Reference/ABPeoplePickerNavigationController_Class/index.html#//apple_ref/occ/instp/ABPeoplePickerNavigationController/predicateForSelectionOfProperty">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setPredicateForSelectionOfProperty:")
     public native void setPredicateForSelectionOfProperty(NSPredicate value);

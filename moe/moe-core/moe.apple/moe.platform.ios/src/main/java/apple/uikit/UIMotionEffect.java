@@ -182,10 +182,6 @@ public class UIMotionEffect extends NSObject implements NSCopying, NSCoding {
     @Selector("initWithCoder:")
     public native UIMotionEffect initWithCoder(NSCoder aDecoder);
 
-    /**
-     * keyPathsAndRelativeValuesForViewerOffset:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIMotionEffect_class/index.html#//apple_ref/occ/instm/UIMotionEffect/keyPathsAndRelativeValuesForViewerOffset:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("keyPathsAndRelativeValuesForViewerOffset:")
     public native NSDictionary<String, ?> keyPathsAndRelativeValuesForViewerOffset(@ByValue UIOffset viewerOffset);

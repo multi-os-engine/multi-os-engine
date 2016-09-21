@@ -57,38 +57,22 @@ public class NSPropertyListSerialization extends NSObject {
     @Selector("alloc")
     public static native NSPropertyListSerialization alloc();
 
-    /**
-     * dataFromPropertyList:format:errorDescription:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSPropertyListSerialization_Class/index.html#//apple_ref/occ/clm/NSPropertyListSerialization/dataFromPropertyList:format:errorDescription:">iOS Dev Center</a>
-     */
     @Generated
     @Deprecated
     @Selector("dataFromPropertyList:format:errorDescription:")
     public static native NSData dataFromPropertyListFormatErrorDescription(@Mapped(ObjCObjectMapper.class) Object plist,
             @NUInt long format, Ptr<NSString> errorString);
 
-    /**
-     * dataWithPropertyList:format:options:error:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSPropertyListSerialization_Class/index.html#//apple_ref/occ/clm/NSPropertyListSerialization/dataWithPropertyList:format:options:error:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("dataWithPropertyList:format:options:error:")
     public static native NSData dataWithPropertyListFormatOptionsError(@Mapped(ObjCObjectMapper.class) Object plist,
             @NUInt long format, @NUInt long opt, Ptr<NSError> error);
 
-    /**
-     * propertyList:isValidForFormat:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSPropertyListSerialization_Class/index.html#//apple_ref/occ/clm/NSPropertyListSerialization/propertyList:isValidForFormat:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("propertyList:isValidForFormat:")
     public static native boolean propertyListIsValidForFormat(@Mapped(ObjCObjectMapper.class) Object plist,
             @NUInt long format);
 
-    /**
-     * propertyListFromData:mutabilityOption:format:errorDescription:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSPropertyListSerialization_Class/index.html#//apple_ref/occ/clm/NSPropertyListSerialization/propertyListFromData:mutabilityOption:format:errorDescription:">iOS Dev Center</a>
-     */
     @Generated
     @Deprecated
     @Selector("propertyListFromData:mutabilityOption:format:errorDescription:")
@@ -96,30 +80,18 @@ public class NSPropertyListSerialization extends NSObject {
     public static native Object propertyListFromDataMutabilityOptionFormatErrorDescription(NSData data, @NUInt long opt,
             NUIntPtr format, Ptr<NSString> errorString);
 
-    /**
-     * propertyListWithData:options:format:error:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSPropertyListSerialization_Class/index.html#//apple_ref/occ/clm/NSPropertyListSerialization/propertyListWithData:options:format:error:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("propertyListWithData:options:format:error:")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object propertyListWithDataOptionsFormatError(NSData data, @NUInt long opt, NUIntPtr format,
             Ptr<NSError> error);
 
-    /**
-     * propertyListWithStream:options:format:error:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSPropertyListSerialization_Class/index.html#//apple_ref/occ/clm/NSPropertyListSerialization/propertyListWithStream:options:format:error:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("propertyListWithStream:options:format:error:")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object propertyListWithStreamOptionsFormatError(NSInputStream stream, @NUInt long opt,
             NUIntPtr format, Ptr<NSError> error);
 
-    /**
-     * writePropertyList:toStream:format:options:error:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSPropertyListSerialization_Class/index.html#//apple_ref/occ/clm/NSPropertyListSerialization/writePropertyList:toStream:format:options:error:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("writePropertyList:toStream:format:options:error:")
     @NInt

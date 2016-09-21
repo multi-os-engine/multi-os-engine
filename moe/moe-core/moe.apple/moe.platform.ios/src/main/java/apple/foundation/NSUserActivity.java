@@ -158,92 +158,48 @@ public class NSUserActivity extends NSObject {
     @NInt
     public static native long version_static();
 
-    /**
-     * activityType</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSUserActivity_Class/index.html#//apple_ref/occ/instp/NSUserActivity/activityType">iOS Dev Center</a>
-     */
     @Generated
     @Selector("activityType")
     public native String activityType();
 
-    /**
-     * addUserInfoEntriesFromDictionary:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSUserActivity_Class/index.html#//apple_ref/occ/instm/NSUserActivity/addUserInfoEntriesFromDictionary:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("addUserInfoEntriesFromDictionary:")
     public native void addUserInfoEntriesFromDictionary(NSDictionary<?, ?> otherDictionary);
 
-    /**
-     * becomeCurrent</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSUserActivity_Class/index.html#//apple_ref/occ/instm/NSUserActivity/becomeCurrent">iOS Dev Center</a>
-     */
     @Generated
     @Selector("becomeCurrent")
     public native void becomeCurrent();
 
-    /**
-     * delegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSUserActivity_Class/index.html#//apple_ref/occ/instp/NSUserActivity/delegate">iOS Dev Center</a>
-     */
     @Generated
     @Selector("delegate")
     @MappedReturn(ObjCObjectMapper.class)
     public native NSUserActivityDelegate delegate();
 
-    /**
-     * getContinuationStreamsWithCompletionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSUserActivity_Class/index.html#//apple_ref/occ/instm/NSUserActivity/getContinuationStreamsWithCompletionHandler:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("getContinuationStreamsWithCompletionHandler:")
     public native void getContinuationStreamsWithCompletionHandler(
             @ObjCBlock(name = "call_getContinuationStreamsWithCompletionHandler") Block_getContinuationStreamsWithCompletionHandler completionHandler);
 
-    /**
-     * init</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSUserActivity_Class/index.html#//apple_ref/occ/instm/NSUserActivity/init">iOS Dev Center</a>
-     */
     @Generated
     @Selector("init")
     public native NSUserActivity init();
 
-    /**
-     * initWithActivityType:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSUserActivity_Class/index.html#//apple_ref/occ/instm/NSUserActivity/initWithActivityType:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithActivityType:")
     public native NSUserActivity initWithActivityType(String activityType);
 
-    /**
-     * invalidate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSUserActivity_Class/index.html#//apple_ref/occ/instm/NSUserActivity/invalidate">iOS Dev Center</a>
-     */
     @Generated
     @Selector("invalidate")
     public native void invalidate();
 
-    /**
-     * needsSave</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSUserActivity_Class/index.html#//apple_ref/occ/instp/NSUserActivity/needsSave">iOS Dev Center</a>
-     */
     @Generated
     @Selector("needsSave")
     public native boolean needsSave();
 
-    /**
-     * delegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSUserActivity_Class/index.html#//apple_ref/occ/instp/NSUserActivity/delegate">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setDelegate:")
     public native void setDelegate_unsafe(@Mapped(ObjCObjectMapper.class) NSUserActivityDelegate value);
 
-    /**
-     * delegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSUserActivity_Class/index.html#//apple_ref/occ/instp/NSUserActivity/delegate">iOS Dev Center</a>
-     */
     @Generated
     public void setDelegate(@Mapped(ObjCObjectMapper.class) NSUserActivityDelegate value) {
         Object __old = delegate();
@@ -256,194 +212,98 @@ public class NSUserActivity extends NSObject {
         }
     }
 
-    /**
-     * needsSave</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSUserActivity_Class/index.html#//apple_ref/occ/instp/NSUserActivity/needsSave">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setNeedsSave:")
     public native void setNeedsSave(boolean value);
 
-    /**
-     * supportsContinuationStreams</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSUserActivity_Class/index.html#//apple_ref/occ/instp/NSUserActivity/supportsContinuationStreams">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setSupportsContinuationStreams:")
     public native void setSupportsContinuationStreams(boolean value);
 
-    /**
-     * title</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSUserActivity_Class/index.html#//apple_ref/occ/instp/NSUserActivity/title">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setTitle:")
     public native void setTitle(String value);
 
-    /**
-     * userInfo</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSUserActivity_Class/index.html#//apple_ref/occ/instp/NSUserActivity/userInfo">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setUserInfo:")
     public native void setUserInfo(NSDictionary<?, ?> value);
 
-    /**
-     * webpageURL</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSUserActivity_Class/index.html#//apple_ref/occ/instp/NSUserActivity/webpageURL">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setWebpageURL:")
     public native void setWebpageURL(NSURL value);
 
-    /**
-     * supportsContinuationStreams</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSUserActivity_Class/index.html#//apple_ref/occ/instp/NSUserActivity/supportsContinuationStreams">iOS Dev Center</a>
-     */
     @Generated
     @Selector("supportsContinuationStreams")
     public native boolean supportsContinuationStreams();
 
-    /**
-     * title</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSUserActivity_Class/index.html#//apple_ref/occ/instp/NSUserActivity/title">iOS Dev Center</a>
-     */
     @Generated
     @Selector("title")
     public native String title();
 
-    /**
-     * userInfo</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSUserActivity_Class/index.html#//apple_ref/occ/instp/NSUserActivity/userInfo">iOS Dev Center</a>
-     */
     @Generated
     @Selector("userInfo")
     public native NSDictionary<?, ?> userInfo();
 
-    /**
-     * webpageURL</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSUserActivity_Class/index.html#//apple_ref/occ/instp/NSUserActivity/webpageURL">iOS Dev Center</a>
-     */
     @Generated
     @Selector("webpageURL")
     public native NSURL webpageURL();
 
-    /**
-     * contentAttributeSet</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSUserActivity_Class/index.html#//apple_ref/occ/instp/NSUserActivity/contentAttributeSet">iOS Dev Center</a>
-     */
     @Generated
     @Selector("contentAttributeSet")
     public native CSSearchableItemAttributeSet contentAttributeSet();
 
-    /**
-     * expirationDate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSUserActivity_Class/index.html#//apple_ref/occ/instp/NSUserActivity/expirationDate">iOS Dev Center</a>
-     */
     @Generated
     @Selector("expirationDate")
     public native NSDate expirationDate();
 
-    /**
-     * eligibleForHandoff</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSUserActivity_Class/index.html#//apple_ref/occ/instp/NSUserActivity/eligibleForHandoff">iOS Dev Center</a>
-     */
     @Generated
     @Selector("isEligibleForHandoff")
     public native boolean isEligibleForHandoff();
 
-    /**
-     * eligibleForHandoff</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSUserActivity_Class/index.html#//apple_ref/occ/instp/NSUserActivity/eligibleForHandoff">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setEligibleForHandoff:")
     public native void setEligibleForHandoff(boolean value);
 
-    /**
-     * eligibleForPublicIndexing</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSUserActivity_Class/index.html#//apple_ref/occ/instp/NSUserActivity/eligibleForPublicIndexing">iOS Dev Center</a>
-     */
     @Generated
     @Selector("isEligibleForPublicIndexing")
     public native boolean isEligibleForPublicIndexing();
 
-    /**
-     * eligibleForPublicIndexing</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSUserActivity_Class/index.html#//apple_ref/occ/instp/NSUserActivity/eligibleForPublicIndexing">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setEligibleForPublicIndexing:")
     public native void setEligibleForPublicIndexing(boolean value);
 
-    /**
-     * eligibleForSearch</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSUserActivity_Class/index.html#//apple_ref/occ/instp/NSUserActivity/eligibleForSearch">iOS Dev Center</a>
-     */
     @Generated
     @Selector("isEligibleForSearch")
     public native boolean isEligibleForSearch();
 
-    /**
-     * eligibleForSearch</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSUserActivity_Class/index.html#//apple_ref/occ/instp/NSUserActivity/eligibleForSearch">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setEligibleForSearch:")
     public native void setEligibleForSearch(boolean value);
 
-    /**
-     * keywords</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSUserActivity_Class/index.html#//apple_ref/occ/instp/NSUserActivity/keywords">iOS Dev Center</a>
-     */
     @Generated
     @Selector("keywords")
     public native NSSet<String> keywords();
 
-    /**
-     * requiredUserInfoKeys</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSUserActivity_Class/index.html#//apple_ref/occ/instp/NSUserActivity/requiredUserInfoKeys">iOS Dev Center</a>
-     */
     @Generated
     @Selector("requiredUserInfoKeys")
     public native NSSet<String> requiredUserInfoKeys();
 
-    /**
-     * resignCurrent</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSUserActivity_Class/index.html#//apple_ref/occ/instm/NSUserActivity/resignCurrent">iOS Dev Center</a>
-     */
     @Generated
     @Selector("resignCurrent")
     public native void resignCurrent();
 
-    /**
-     * contentAttributeSet</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSUserActivity_Class/index.html#//apple_ref/occ/instp/NSUserActivity/contentAttributeSet">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setContentAttributeSet:")
     public native void setContentAttributeSet(CSSearchableItemAttributeSet value);
 
-    /**
-     * expirationDate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSUserActivity_Class/index.html#//apple_ref/occ/instp/NSUserActivity/expirationDate">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setExpirationDate:")
     public native void setExpirationDate(NSDate value);
 
-    /**
-     * keywords</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSUserActivity_Class/index.html#//apple_ref/occ/instp/NSUserActivity/keywords">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setKeywords:")
     public native void setKeywords(NSSet<String> value);
 
-    /**
-     * requiredUserInfoKeys</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSUserActivity_Class/index.html#//apple_ref/occ/instp/NSUserActivity/requiredUserInfoKeys">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setRequiredUserInfoKeys:")
     public native void setRequiredUserInfoKeys(NSSet<String> value);

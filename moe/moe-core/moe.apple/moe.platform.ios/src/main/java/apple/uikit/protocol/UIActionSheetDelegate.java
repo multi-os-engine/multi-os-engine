@@ -31,10 +31,6 @@ import org.moe.natj.objc.ann.Selector;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("UIActionSheetDelegate")
 public interface UIActionSheetDelegate {
-    /**
-     * actionSheet:clickedButtonAtIndex:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIModalViewDelegate_Protocol/index.html#//apple_ref/occ/intfm/UIActionSheetDelegate/actionSheet:clickedButtonAtIndex:">iOS Dev Center</a>
-     */
     @Deprecated
     @Generated
     @IsOptional
@@ -43,10 +39,6 @@ public interface UIActionSheetDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * actionSheet:didDismissWithButtonIndex:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIModalViewDelegate_Protocol/index.html#//apple_ref/occ/intfm/UIActionSheetDelegate/actionSheet:didDismissWithButtonIndex:">iOS Dev Center</a>
-     */
     @Deprecated
     @Generated
     @IsOptional
@@ -55,10 +47,6 @@ public interface UIActionSheetDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * actionSheet:willDismissWithButtonIndex:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIModalViewDelegate_Protocol/index.html#//apple_ref/occ/intfm/UIActionSheetDelegate/actionSheet:willDismissWithButtonIndex:">iOS Dev Center</a>
-     */
     @Deprecated
     @Generated
     @IsOptional
@@ -67,10 +55,6 @@ public interface UIActionSheetDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * actionSheetCancel:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIModalViewDelegate_Protocol/index.html#//apple_ref/occ/intfm/UIActionSheetDelegate/actionSheetCancel:">iOS Dev Center</a>
-     */
     @Deprecated
     @Generated
     @IsOptional
@@ -79,10 +63,6 @@ public interface UIActionSheetDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * didPresentActionSheet:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIModalViewDelegate_Protocol/index.html#//apple_ref/occ/intfm/UIActionSheetDelegate/didPresentActionSheet:">iOS Dev Center</a>
-     */
     @Deprecated
     @Generated
     @IsOptional
@@ -91,10 +71,6 @@ public interface UIActionSheetDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * willPresentActionSheet:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIModalViewDelegate_Protocol/index.html#//apple_ref/occ/intfm/UIActionSheetDelegate/willPresentActionSheet:">iOS Dev Center</a>
-     */
     @Deprecated
     @Generated
     @IsOptional

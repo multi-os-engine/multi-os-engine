@@ -32,10 +32,6 @@ import org.moe.natj.objc.ann.Selector;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("UITabBarDelegate")
 public interface UITabBarDelegate {
-    /**
-     * tabBar:didBeginCustomizingItems:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITabBarDelegate_Protocol/index.html#//apple_ref/occ/intfm/UITabBarDelegate/tabBar:didBeginCustomizingItems:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("tabBar:didBeginCustomizingItems:")
@@ -43,10 +39,6 @@ public interface UITabBarDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * tabBar:didEndCustomizingItems:changed:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITabBarDelegate_Protocol/index.html#//apple_ref/occ/intfm/UITabBarDelegate/tabBar:didEndCustomizingItems:changed:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("tabBar:didEndCustomizingItems:changed:")
@@ -55,10 +47,6 @@ public interface UITabBarDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * tabBar:didSelectItem:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITabBarDelegate_Protocol/index.html#//apple_ref/occ/intfm/UITabBarDelegate/tabBar:didSelectItem:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("tabBar:didSelectItem:")
@@ -66,10 +54,6 @@ public interface UITabBarDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * tabBar:willBeginCustomizingItems:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITabBarDelegate_Protocol/index.html#//apple_ref/occ/intfm/UITabBarDelegate/tabBar:willBeginCustomizingItems:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("tabBar:willBeginCustomizingItems:")
@@ -77,10 +61,6 @@ public interface UITabBarDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * tabBar:willEndCustomizingItems:changed:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITabBarDelegate_Protocol/index.html#//apple_ref/occ/intfm/UITabBarDelegate/tabBar:willEndCustomizingItems:changed:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("tabBar:willEndCustomizingItems:changed:")

@@ -65,69 +65,37 @@ public final class Security {
     private Security() {
     }
 
-    /**
-     * SecCertificateGetTypeID</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Security/Reference/certifkeytrustservices/index.html#//apple_ref/c/func/SecCertificateGetTypeID">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @NUInt
     public static native long SecCertificateGetTypeID();
 
-    /**
-     * SecCertificateCreateWithData</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Security/Reference/certifkeytrustservices/index.html#//apple_ref/c/func/SecCertificateCreateWithData">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native SecCertificateRef SecCertificateCreateWithData(CFAllocatorRef allocator, CFDataRef data);
 
-    /**
-     * SecCertificateCopyData</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Security/Reference/certifkeytrustservices/index.html#//apple_ref/c/func/SecCertificateCopyData">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native CFDataRef SecCertificateCopyData(SecCertificateRef certificate);
 
-    /**
-     * SecCertificateCopySubjectSummary</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Security/Reference/certifkeytrustservices/index.html#//apple_ref/c/func/SecCertificateCopySubjectSummary">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native CFStringRef SecCertificateCopySubjectSummary(SecCertificateRef certificate);
 
-    /**
-     * SecIdentityGetTypeID</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Security/Reference/certifkeytrustservices/index.html#//apple_ref/c/func/SecIdentityGetTypeID">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @NUInt
     public static native long SecIdentityGetTypeID();
 
-    /**
-     * SecIdentityCopyCertificate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Security/Reference/certifkeytrustservices/index.html#//apple_ref/c/func/SecIdentityCopyCertificate">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native int SecIdentityCopyCertificate(SecIdentityRef identityRef,
             Ptr<SecCertificateRef> certificateRef);
 
-    /**
-     * SecIdentityCopyPrivateKey</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Security/Reference/certifkeytrustservices/index.html#//apple_ref/c/func/SecIdentityCopyPrivateKey">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native int SecIdentityCopyPrivateKey(SecIdentityRef identityRef, Ptr<SecKeyRef> privateKeyRef);
 
-    /**
-     * SecPKCS12Import</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Security/Reference/certifkeytrustservices/index.html#//apple_ref/c/func/SecPKCS12Import">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native int SecPKCS12Import(CFDataRef pkcs12_data, CFDictionaryRef options, Ptr<CFArrayRef> items);
@@ -137,79 +105,43 @@ public final class Security {
     @NUInt
     public static native long SecAccessControlGetTypeID();
 
-    /**
-     * SecAccessControlCreateWithFlags</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Security/Reference/keychainservices/index.html#//apple_ref/c/func/SecAccessControlCreateWithFlags">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native SecAccessControlRef SecAccessControlCreateWithFlags(CFAllocatorRef allocator,
             ConstVoidPtr protection, @NInt long flags, Ptr<CFErrorRef> error);
 
-    /**
-     * SecItemCopyMatching</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Security/Reference/keychainservices/index.html#//apple_ref/c/func/SecItemCopyMatching">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native int SecItemCopyMatching(CFDictionaryRef query, Ptr<ConstVoidPtr> result);
 
-    /**
-     * SecItemAdd</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Security/Reference/keychainservices/index.html#//apple_ref/c/func/SecItemAdd">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native int SecItemAdd(CFDictionaryRef attributes, Ptr<ConstVoidPtr> result);
 
-    /**
-     * SecItemUpdate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Security/Reference/keychainservices/index.html#//apple_ref/c/func/SecItemUpdate">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native int SecItemUpdate(CFDictionaryRef query, CFDictionaryRef attributesToUpdate);
 
-    /**
-     * SecItemDelete</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Security/Reference/keychainservices/index.html#//apple_ref/c/func/SecItemDelete">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native int SecItemDelete(CFDictionaryRef query);
 
-    /**
-     * SecKeyGetTypeID</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Security/Reference/certifkeytrustservices/index.html#//apple_ref/c/func/SecKeyGetTypeID">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @NUInt
     public static native long SecKeyGetTypeID();
 
-    /**
-     * SecKeyGeneratePair</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Security/Reference/certifkeytrustservices/index.html#//apple_ref/c/func/SecKeyGeneratePair">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native int SecKeyGeneratePair(CFDictionaryRef parameters, Ptr<SecKeyRef> publicKey,
             Ptr<SecKeyRef> privateKey);
 
-    /**
-     * SecKeyRawSign</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Security/Reference/certifkeytrustservices/index.html#//apple_ref/c/func/SecKeyRawSign">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native int SecKeyRawSign(SecKeyRef key, int padding,
             @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String dataToSign,
             @NUInt long dataToSignLen, BytePtr sig, NUIntPtr sigLen);
 
-    /**
-     * SecKeyRawVerify</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Security/Reference/certifkeytrustservices/index.html#//apple_ref/c/func/SecKeyRawVerify">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native int SecKeyRawVerify(SecKeyRef key, int padding,
@@ -218,64 +150,36 @@ public final class Security {
             @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String sig,
             @NUInt long sigLen);
 
-    /**
-     * SecKeyEncrypt</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Security/Reference/certifkeytrustservices/index.html#//apple_ref/c/func/SecKeyEncrypt">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native int SecKeyEncrypt(SecKeyRef key, int padding,
             @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String plainText,
             @NUInt long plainTextLen, BytePtr cipherText, NUIntPtr cipherTextLen);
 
-    /**
-     * SecKeyDecrypt</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Security/Reference/certifkeytrustservices/index.html#//apple_ref/c/func/SecKeyDecrypt">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native int SecKeyDecrypt(SecKeyRef key, int padding,
             @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String cipherText,
             @NUInt long cipherTextLen, BytePtr plainText, NUIntPtr plainTextLen);
 
-    /**
-     * SecKeyGetBlockSize</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Security/Reference/certifkeytrustservices/index.html#//apple_ref/c/func/SecKeyGetBlockSize">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @NUInt
     public static native long SecKeyGetBlockSize(SecKeyRef key);
 
-    /**
-     * SecPolicyGetTypeID</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Security/Reference/certifkeytrustservices/index.html#//apple_ref/c/func/SecPolicyGetTypeID">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @NUInt
     public static native long SecPolicyGetTypeID();
 
-    /**
-     * SecPolicyCopyProperties</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Security/Reference/certifkeytrustservices/index.html#//apple_ref/c/func/SecPolicyCopyProperties">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native CFDictionaryRef SecPolicyCopyProperties(SecPolicyRef policyRef);
 
-    /**
-     * SecPolicyCreateBasicX509</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Security/Reference/certifkeytrustservices/index.html#//apple_ref/c/func/SecPolicyCreateBasicX509">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native SecPolicyRef SecPolicyCreateBasicX509();
 
-    /**
-     * SecPolicyCreateSSL</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Security/Reference/certifkeytrustservices/index.html#//apple_ref/c/func/SecPolicyCreateSSL">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native SecPolicyRef SecPolicyCreateSSL(byte server, CFStringRef hostname);
@@ -289,70 +193,38 @@ public final class Security {
     public static native SecPolicyRef SecPolicyCreateWithProperties(ConstVoidPtr policyIdentifier,
             CFDictionaryRef properties);
 
-    /**
-     * SecRandomCopyBytes</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Security/Reference/RandomizationReference/index.html#//apple_ref/c/func/SecRandomCopyBytes">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native int SecRandomCopyBytes(SecRandomRef rnd, @NUInt long count, BytePtr bytes);
 
-    /**
-     * SecAddSharedWebCredential</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Security/Reference/SharedWebCredentialsRef/index.html#//apple_ref/c/func/SecAddSharedWebCredential">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void SecAddSharedWebCredential(CFStringRef fqdn, CFStringRef account, CFStringRef password,
             @ObjCBlock(name = "call_SecAddSharedWebCredential") Block_SecAddSharedWebCredential completionHandler);
 
-    /**
-     * SecRequestSharedWebCredential</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Security/Reference/SharedWebCredentialsRef/index.html#//apple_ref/c/func/SecRequestSharedWebCredential">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void SecRequestSharedWebCredential(CFStringRef fqdn, CFStringRef account,
             @ObjCBlock(name = "call_SecRequestSharedWebCredential") Block_SecRequestSharedWebCredential completionHandler);
 
-    /**
-     * SecCreateSharedWebCredentialPassword</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Security/Reference/SharedWebCredentialsRef/index.html#//apple_ref/c/func/SecCreateSharedWebCredentialPassword">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native CFStringRef SecCreateSharedWebCredentialPassword();
 
-    /**
-     * SecTrustGetTypeID</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Security/Reference/certifkeytrustservices/index.html#//apple_ref/c/func/SecTrustGetTypeID">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @NUInt
     public static native long SecTrustGetTypeID();
 
-    /**
-     * SecTrustCreateWithCertificates</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Security/Reference/certifkeytrustservices/index.html#//apple_ref/c/func/SecTrustCreateWithCertificates">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native int SecTrustCreateWithCertificates(ConstVoidPtr certificates, ConstVoidPtr policies,
             Ptr<SecTrustRef> trust);
 
-    /**
-     * SecTrustSetPolicies</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Security/Reference/certifkeytrustservices/index.html#//apple_ref/c/func/SecTrustSetPolicies">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native int SecTrustSetPolicies(SecTrustRef trust, ConstVoidPtr policies);
 
-    /**
-     * SecTrustCopyPolicies</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Security/Reference/certifkeytrustservices/index.html#//apple_ref/c/func/SecTrustCopyPolicies">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native int SecTrustCopyPolicies(SecTrustRef trust, Ptr<CFArrayRef> policies);
@@ -365,116 +237,60 @@ public final class Security {
     @CFunction
     public static native int SecTrustGetNetworkFetchAllowed(SecTrustRef trust, BytePtr allowFetch);
 
-    /**
-     * SecTrustSetAnchorCertificates</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Security/Reference/certifkeytrustservices/index.html#//apple_ref/c/func/SecTrustSetAnchorCertificates">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native int SecTrustSetAnchorCertificates(SecTrustRef trust, CFArrayRef anchorCertificates);
 
-    /**
-     * SecTrustSetAnchorCertificatesOnly</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Security/Reference/certifkeytrustservices/index.html#//apple_ref/c/func/SecTrustSetAnchorCertificatesOnly">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native int SecTrustSetAnchorCertificatesOnly(SecTrustRef trust, byte anchorCertificatesOnly);
 
-    /**
-     * SecTrustCopyCustomAnchorCertificates</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Security/Reference/certifkeytrustservices/index.html#//apple_ref/c/func/SecTrustCopyCustomAnchorCertificates">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native int SecTrustCopyCustomAnchorCertificates(SecTrustRef trust, Ptr<CFArrayRef> anchors);
 
-    /**
-     * SecTrustSetVerifyDate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Security/Reference/certifkeytrustservices/index.html#//apple_ref/c/func/SecTrustSetVerifyDate">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native int SecTrustSetVerifyDate(SecTrustRef trust, CFDateRef verifyDate);
 
-    /**
-     * SecTrustGetVerifyTime</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Security/Reference/certifkeytrustservices/index.html#//apple_ref/c/func/SecTrustGetVerifyTime">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native double SecTrustGetVerifyTime(SecTrustRef trust);
 
-    /**
-     * SecTrustEvaluate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Security/Reference/certifkeytrustservices/index.html#//apple_ref/c/func/SecTrustEvaluate">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native int SecTrustEvaluate(SecTrustRef trust, IntPtr result);
 
-    /**
-     * SecTrustEvaluateAsync</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Security/Reference/certifkeytrustservices/index.html#//apple_ref/c/func/SecTrustEvaluateAsync">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native int SecTrustEvaluateAsync(SecTrustRef trust, NSObject queue,
             @ObjCBlock(name = "call_SecTrustEvaluateAsync") Block_SecTrustEvaluateAsync result);
 
-    /**
-     * SecTrustGetTrustResult</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Security/Reference/certifkeytrustservices/index.html#//apple_ref/c/func/SecTrustGetTrustResult">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native int SecTrustGetTrustResult(SecTrustRef trust, IntPtr result);
 
-    /**
-     * SecTrustCopyPublicKey</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Security/Reference/certifkeytrustservices/index.html#//apple_ref/c/func/SecTrustCopyPublicKey">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native SecKeyRef SecTrustCopyPublicKey(SecTrustRef trust);
 
-    /**
-     * SecTrustGetCertificateCount</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Security/Reference/certifkeytrustservices/index.html#//apple_ref/c/func/SecTrustGetCertificateCount">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @NInt
     public static native long SecTrustGetCertificateCount(SecTrustRef trust);
 
-    /**
-     * SecTrustGetCertificateAtIndex</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Security/Reference/certifkeytrustservices/index.html#//apple_ref/c/func/SecTrustGetCertificateAtIndex">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native SecCertificateRef SecTrustGetCertificateAtIndex(SecTrustRef trust, @NInt long ix);
 
-    /**
-     * SecTrustCopyExceptions</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Security/Reference/certifkeytrustservices/index.html#//apple_ref/c/func/SecTrustCopyExceptions">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native CFDataRef SecTrustCopyExceptions(SecTrustRef trust);
 
-    /**
-     * SecTrustSetExceptions</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Security/Reference/certifkeytrustservices/index.html#//apple_ref/c/func/SecTrustSetExceptions">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native boolean SecTrustSetExceptions(SecTrustRef trust, CFDataRef exceptions);
 
-    /**
-     * SecTrustCopyProperties</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Security/Reference/certifkeytrustservices/index.html#//apple_ref/c/func/SecTrustCopyProperties">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native CFArrayRef SecTrustCopyProperties(SecTrustRef trust);
@@ -487,330 +303,170 @@ public final class Security {
     @CFunction
     public static native int SecTrustSetOCSPResponse(SecTrustRef trust, ConstVoidPtr responseData);
 
-    /**
-     * SSLContextGetTypeID</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Security/Reference/secureTransportRef/index.html#//apple_ref/c/func/SSLContextGetTypeID">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @NUInt
     public static native long SSLContextGetTypeID();
 
-    /**
-     * SSLCreateContext</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Security/Reference/secureTransportRef/index.html#//apple_ref/c/func/SSLCreateContext">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native SSLContextRef SSLCreateContext(CFAllocatorRef alloc, int protocolSide, int connectionType);
 
-    /**
-     * SSLGetSessionState</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Security/Reference/secureTransportRef/index.html#//apple_ref/c/func/SSLGetSessionState">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native int SSLGetSessionState(SSLContextRef context, IntPtr state);
 
-    /**
-     * SSLSetSessionOption</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Security/Reference/secureTransportRef/index.html#//apple_ref/c/func/SSLSetSessionOption">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native int SSLSetSessionOption(SSLContextRef context, int option, byte value);
 
-    /**
-     * SSLGetSessionOption</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Security/Reference/secureTransportRef/index.html#//apple_ref/c/func/SSLGetSessionOption">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native int SSLGetSessionOption(SSLContextRef context, int option, BytePtr value);
 
-    /**
-     * SSLSetIOFuncs</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Security/Reference/secureTransportRef/index.html#//apple_ref/c/func/SSLSetIOFuncs">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native int SSLSetIOFuncs(SSLContextRef context,
             @FunctionPtr(name = "call_SSLSetIOFuncs_1") Function_SSLSetIOFuncs_1 readFunc,
             @FunctionPtr(name = "call_SSLSetIOFuncs_2") Function_SSLSetIOFuncs_2 writeFunc);
 
-    /**
-     * SSLSetProtocolVersionMin</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Security/Reference/secureTransportRef/index.html#//apple_ref/c/func/SSLSetProtocolVersionMin">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native int SSLSetProtocolVersionMin(SSLContextRef context, int minVersion);
 
-    /**
-     * SSLGetProtocolVersionMin</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Security/Reference/secureTransportRef/index.html#//apple_ref/c/func/SSLGetProtocolVersionMin">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native int SSLGetProtocolVersionMin(SSLContextRef context, IntPtr minVersion);
 
-    /**
-     * SSLSetProtocolVersionMax</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Security/Reference/secureTransportRef/index.html#//apple_ref/c/func/SSLSetProtocolVersionMax">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native int SSLSetProtocolVersionMax(SSLContextRef context, int maxVersion);
 
-    /**
-     * SSLGetProtocolVersionMax</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Security/Reference/secureTransportRef/index.html#//apple_ref/c/func/SSLGetProtocolVersionMax">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native int SSLGetProtocolVersionMax(SSLContextRef context, IntPtr maxVersion);
 
-    /**
-     * SSLSetCertificate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Security/Reference/secureTransportRef/index.html#//apple_ref/c/func/SSLSetCertificate">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native int SSLSetCertificate(SSLContextRef context, CFArrayRef certRefs);
 
-    /**
-     * SSLSetConnection</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Security/Reference/secureTransportRef/index.html#//apple_ref/c/func/SSLSetConnection">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native int SSLSetConnection(SSLContextRef context, ConstVoidPtr connection);
 
-    /**
-     * SSLGetConnection</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Security/Reference/secureTransportRef/index.html#//apple_ref/c/func/SSLGetConnection">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native int SSLGetConnection(SSLContextRef context, Ptr<ConstVoidPtr> connection);
 
-    /**
-     * SSLSetPeerDomainName</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Security/Reference/secureTransportRef/index.html#//apple_ref/c/func/SSLSetPeerDomainName">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native int SSLSetPeerDomainName(SSLContextRef context,
             @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String peerName,
             @NUInt long peerNameLen);
 
-    /**
-     * SSLGetPeerDomainNameLength</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Security/Reference/secureTransportRef/index.html#//apple_ref/c/func/SSLGetPeerDomainNameLength">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native int SSLGetPeerDomainNameLength(SSLContextRef context, NUIntPtr peerNameLen);
 
-    /**
-     * SSLGetPeerDomainName</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Security/Reference/secureTransportRef/index.html#//apple_ref/c/func/SSLGetPeerDomainName">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native int SSLGetPeerDomainName(SSLContextRef context, BytePtr peerName, NUIntPtr peerNameLen);
 
-    /**
-     * SSLSetDatagramHelloCookie</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Security/Reference/secureTransportRef/index.html#//apple_ref/c/func/SSLSetDatagramHelloCookie">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native int SSLSetDatagramHelloCookie(SSLContextRef dtlsContext, ConstVoidPtr cookie,
             @NUInt long cookieLen);
 
-    /**
-     * SSLSetMaxDatagramRecordSize</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Security/Reference/secureTransportRef/index.html#//apple_ref/c/func/SSLSetMaxDatagramRecordSize">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native int SSLSetMaxDatagramRecordSize(SSLContextRef dtlsContext, @NUInt long maxSize);
 
-    /**
-     * SSLGetMaxDatagramRecordSize</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Security/Reference/secureTransportRef/index.html#//apple_ref/c/func/SSLGetMaxDatagramRecordSize">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native int SSLGetMaxDatagramRecordSize(SSLContextRef dtlsContext, NUIntPtr maxSize);
 
-    /**
-     * SSLGetNegotiatedProtocolVersion</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Security/Reference/secureTransportRef/index.html#//apple_ref/c/func/SSLGetNegotiatedProtocolVersion">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native int SSLGetNegotiatedProtocolVersion(SSLContextRef context, IntPtr protocol);
 
-    /**
-     * SSLGetNumberSupportedCiphers</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Security/Reference/secureTransportRef/index.html#//apple_ref/c/func/SSLGetNumberSupportedCiphers">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native int SSLGetNumberSupportedCiphers(SSLContextRef context, NUIntPtr numCiphers);
 
-    /**
-     * SSLGetSupportedCiphers</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Security/Reference/secureTransportRef/index.html#//apple_ref/c/func/SSLGetSupportedCiphers">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native int SSLGetSupportedCiphers(SSLContextRef context, CharPtr ciphers, NUIntPtr numCiphers);
 
-    /**
-     * SSLSetEnabledCiphers</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Security/Reference/secureTransportRef/index.html#//apple_ref/c/func/SSLSetEnabledCiphers">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native int SSLSetEnabledCiphers(SSLContextRef context, ConstCharPtr ciphers, @NUInt long numCiphers);
 
-    /**
-     * SSLGetNumberEnabledCiphers</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Security/Reference/secureTransportRef/index.html#//apple_ref/c/func/SSLGetNumberEnabledCiphers">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native int SSLGetNumberEnabledCiphers(SSLContextRef context, NUIntPtr numCiphers);
 
-    /**
-     * SSLGetEnabledCiphers</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Security/Reference/secureTransportRef/index.html#//apple_ref/c/func/SSLGetEnabledCiphers">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native int SSLGetEnabledCiphers(SSLContextRef context, CharPtr ciphers, NUIntPtr numCiphers);
 
-    /**
-     * SSLCopyPeerTrust</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Security/Reference/secureTransportRef/index.html#//apple_ref/c/func/SSLCopyPeerTrust">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native int SSLCopyPeerTrust(SSLContextRef context, Ptr<SecTrustRef> trust);
 
-    /**
-     * SSLSetPeerID</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Security/Reference/secureTransportRef/index.html#//apple_ref/c/func/SSLSetPeerID">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native int SSLSetPeerID(SSLContextRef context, ConstVoidPtr peerID, @NUInt long peerIDLen);
 
-    /**
-     * SSLGetPeerID</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Security/Reference/secureTransportRef/index.html#//apple_ref/c/func/SSLGetPeerID">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native int SSLGetPeerID(SSLContextRef context, Ptr<ConstVoidPtr> peerID, NUIntPtr peerIDLen);
 
-    /**
-     * SSLGetNegotiatedCipher</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Security/Reference/secureTransportRef/index.html#//apple_ref/c/func/SSLGetNegotiatedCipher">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native int SSLGetNegotiatedCipher(SSLContextRef context, CharPtr cipherSuite);
 
-    /**
-     * SSLSetEncryptionCertificate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Security/Reference/secureTransportRef/index.html#//apple_ref/c/func/SSLSetEncryptionCertificate">iOS Dev Center</a>
-     */
     @Deprecated
     @Generated
     @CFunction
     public static native int SSLSetEncryptionCertificate(SSLContextRef context, CFArrayRef certRefs);
 
-    /**
-     * SSLSetClientSideAuthenticate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Security/Reference/secureTransportRef/index.html#//apple_ref/c/func/SSLSetClientSideAuthenticate">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native int SSLSetClientSideAuthenticate(SSLContextRef context, int auth);
 
-    /**
-     * SSLAddDistinguishedName</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Security/Reference/secureTransportRef/index.html#//apple_ref/c/func/SSLAddDistinguishedName">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native int SSLAddDistinguishedName(SSLContextRef context, ConstVoidPtr derDN, @NUInt long derDNLen);
 
-    /**
-     * SSLCopyDistinguishedNames</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Security/Reference/secureTransportRef/index.html#//apple_ref/c/func/SSLCopyDistinguishedNames">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native int SSLCopyDistinguishedNames(SSLContextRef context, Ptr<CFArrayRef> names);
 
-    /**
-     * SSLGetClientCertificateState</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Security/Reference/secureTransportRef/index.html#//apple_ref/c/func/SSLGetClientCertificateState">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native int SSLGetClientCertificateState(SSLContextRef context, IntPtr clientState);
 
-    /**
-     * SSLHandshake</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Security/Reference/secureTransportRef/index.html#//apple_ref/c/func/SSLHandshake">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native int SSLHandshake(SSLContextRef context);
 
-    /**
-     * SSLWrite</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Security/Reference/secureTransportRef/index.html#//apple_ref/c/func/SSLWrite">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native int SSLWrite(SSLContextRef context, ConstVoidPtr data, @NUInt long dataLength,
             NUIntPtr processed);
 
-    /**
-     * SSLRead</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Security/Reference/secureTransportRef/index.html#//apple_ref/c/func/SSLRead">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native int SSLRead(SSLContextRef context, VoidPtr data, @NUInt long dataLength, NUIntPtr processed);
 
-    /**
-     * SSLGetBufferedReadSize</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Security/Reference/secureTransportRef/index.html#//apple_ref/c/func/SSLGetBufferedReadSize">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native int SSLGetBufferedReadSize(SSLContextRef context, NUIntPtr bufSize);
 
-    /**
-     * SSLGetDatagramWriteSize</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Security/Reference/secureTransportRef/index.html#//apple_ref/c/func/SSLGetDatagramWriteSize">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native int SSLGetDatagramWriteSize(SSLContextRef dtlsContext, NUIntPtr bufSize);
 
-    /**
-     * SSLClose</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Security/Reference/secureTransportRef/index.html#//apple_ref/c/func/SSLClose">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native int SSLClose(SSLContextRef context);

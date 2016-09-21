@@ -34,18 +34,10 @@ import org.moe.natj.objc.ann.Selector;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("GKMatchmakerViewControllerDelegate")
 public interface GKMatchmakerViewControllerDelegate {
-    /**
-     * matchmakerViewController:didFailWithError:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKMatchmakerViewControllerDelegate_Ref/index.html#//apple_ref/occ/intfm/GKMatchmakerViewControllerDelegate/matchmakerViewController:didFailWithError:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("matchmakerViewController:didFailWithError:")
     void matchmakerViewControllerDidFailWithError(GKMatchmakerViewController viewController, NSError error);
 
-    /**
-     * matchmakerViewController:didFindHostedPlayers:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKMatchmakerViewControllerDelegate_Ref/index.html#//apple_ref/occ/intfm/GKMatchmakerViewControllerDelegate/matchmakerViewController:didFindHostedPlayers:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("matchmakerViewController:didFindHostedPlayers:")
@@ -54,10 +46,6 @@ public interface GKMatchmakerViewControllerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * matchmakerViewController:didFindMatch:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKMatchmakerViewControllerDelegate_Ref/index.html#//apple_ref/occ/intfm/GKMatchmakerViewControllerDelegate/matchmakerViewController:didFindMatch:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("matchmakerViewController:didFindMatch:")
@@ -65,10 +53,6 @@ public interface GKMatchmakerViewControllerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * matchmakerViewController:didFindPlayers:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKMatchmakerViewControllerDelegate_Ref/index.html#//apple_ref/occ/intfm/GKMatchmakerViewControllerDelegate/matchmakerViewController:didFindPlayers:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Deprecated
@@ -78,10 +62,6 @@ public interface GKMatchmakerViewControllerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * matchmakerViewController:didReceiveAcceptFromHostedPlayer:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKMatchmakerViewControllerDelegate_Ref/index.html#//apple_ref/occ/intfm/GKMatchmakerViewControllerDelegate/matchmakerViewController:didReceiveAcceptFromHostedPlayer:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Deprecated
@@ -91,10 +71,6 @@ public interface GKMatchmakerViewControllerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * matchmakerViewController:hostedPlayerDidAccept:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKMatchmakerViewControllerDelegate_Ref/index.html#//apple_ref/occ/intfm/GKMatchmakerViewControllerDelegate/matchmakerViewController:hostedPlayerDidAccept:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("matchmakerViewController:hostedPlayerDidAccept:")
@@ -103,10 +79,6 @@ public interface GKMatchmakerViewControllerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * matchmakerViewControllerWasCancelled:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKMatchmakerViewControllerDelegate_Ref/index.html#//apple_ref/occ/intfm/GKMatchmakerViewControllerDelegate/matchmakerViewControllerWasCancelled:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("matchmakerViewControllerWasCancelled:")
     void matchmakerViewControllerWasCancelled(GKMatchmakerViewController viewController);

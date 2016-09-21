@@ -73,10 +73,6 @@ public class PKPaymentButton extends UIButton {
     @Selector("buttonWithType:")
     public static native PKPaymentButton buttonWithType(@NInt long buttonType);
 
-    /**
-     * buttonWithType:style:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/PassKit/Reference/PKPaymentButton_Class/index.html#//apple_ref/occ/clm/PKPaymentButton/buttonWithType:style:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("buttonWithType:style:")
     public static native PKPaymentButton buttonWithTypeStyle(@NInt long buttonType, @NInt long buttonStyle);
@@ -374,10 +370,6 @@ public class PKPaymentButton extends UIButton {
     @Selector("initWithCoder:")
     public native PKPaymentButton initWithCoder(NSCoder aDecoder);
 
-    /**
-     * initWithPaymentButtonType:paymentButtonStyle:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/PassKit/Reference/PKPaymentButton_Class/index.html#//apple_ref/occ/instm/PKPaymentButton/initWithPaymentButtonType:paymentButtonStyle:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithPaymentButtonType:paymentButtonStyle:")
     public native PKPaymentButton initWithPaymentButtonTypePaymentButtonStyle(@NInt long type, @NInt long style);

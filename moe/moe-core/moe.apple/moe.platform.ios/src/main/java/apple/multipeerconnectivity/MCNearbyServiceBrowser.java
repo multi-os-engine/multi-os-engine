@@ -160,10 +160,6 @@ public class MCNearbyServiceBrowser extends NSObject {
     @NInt
     public static native long version_static();
 
-    /**
-     * delegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MultipeerConnectivity/Reference/MCNearbyServiceBrowserClassRef/index.html#//apple_ref/occ/instp/MCNearbyServiceBrowser/delegate">iOS Dev Center</a>
-     */
     @Generated
     @Selector("delegate")
     @MappedReturn(ObjCObjectMapper.class)
@@ -173,51 +169,27 @@ public class MCNearbyServiceBrowser extends NSObject {
     @Selector("init")
     public native MCNearbyServiceBrowser init();
 
-    /**
-     * initWithPeer:serviceType:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MultipeerConnectivity/Reference/MCNearbyServiceBrowserClassRef/index.html#//apple_ref/occ/instm/MCNearbyServiceBrowser/initWithPeer:serviceType:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithPeer:serviceType:")
     public native MCNearbyServiceBrowser initWithPeerServiceType(MCPeerID myPeerID, String serviceType);
 
-    /**
-     * invitePeer:toSession:withContext:timeout:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MultipeerConnectivity/Reference/MCNearbyServiceBrowserClassRef/index.html#//apple_ref/occ/instm/MCNearbyServiceBrowser/invitePeer:toSession:withContext:timeout:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("invitePeer:toSession:withContext:timeout:")
     public native void invitePeerToSessionWithContextTimeout(MCPeerID peerID, MCSession session, NSData context,
             double timeout);
 
-    /**
-     * myPeerID</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MultipeerConnectivity/Reference/MCNearbyServiceBrowserClassRef/index.html#//apple_ref/occ/instp/MCNearbyServiceBrowser/myPeerID">iOS Dev Center</a>
-     */
     @Generated
     @Selector("myPeerID")
     public native MCPeerID myPeerID();
 
-    /**
-     * serviceType</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MultipeerConnectivity/Reference/MCNearbyServiceBrowserClassRef/index.html#//apple_ref/occ/instp/MCNearbyServiceBrowser/serviceType">iOS Dev Center</a>
-     */
     @Generated
     @Selector("serviceType")
     public native String serviceType();
 
-    /**
-     * delegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MultipeerConnectivity/Reference/MCNearbyServiceBrowserClassRef/index.html#//apple_ref/occ/instp/MCNearbyServiceBrowser/delegate">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setDelegate:")
     public native void setDelegate_unsafe(@Mapped(ObjCObjectMapper.class) MCNearbyServiceBrowserDelegate value);
 
-    /**
-     * delegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MultipeerConnectivity/Reference/MCNearbyServiceBrowserClassRef/index.html#//apple_ref/occ/instp/MCNearbyServiceBrowser/delegate">iOS Dev Center</a>
-     */
     @Generated
     public void setDelegate(@Mapped(ObjCObjectMapper.class) MCNearbyServiceBrowserDelegate value) {
         Object __old = delegate();
@@ -230,18 +202,10 @@ public class MCNearbyServiceBrowser extends NSObject {
         }
     }
 
-    /**
-     * startBrowsingForPeers</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MultipeerConnectivity/Reference/MCNearbyServiceBrowserClassRef/index.html#//apple_ref/occ/instm/MCNearbyServiceBrowser/startBrowsingForPeers">iOS Dev Center</a>
-     */
     @Generated
     @Selector("startBrowsingForPeers")
     public native void startBrowsingForPeers();
 
-    /**
-     * stopBrowsingForPeers</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MultipeerConnectivity/Reference/MCNearbyServiceBrowserClassRef/index.html#//apple_ref/occ/instm/MCNearbyServiceBrowser/stopBrowsingForPeers">iOS Dev Center</a>
-     */
     @Generated
     @Selector("stopBrowsingForPeers")
     public native void stopBrowsingForPeers();

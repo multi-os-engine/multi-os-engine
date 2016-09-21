@@ -163,10 +163,6 @@ public class SKKeyframeSequence extends NSObject implements NSCoding, NSCopying 
     @NInt
     public static native long version_static();
 
-    /**
-     * addKeyframeValue:time:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKKeyframeSequence_Ref/index.html#//apple_ref/occ/instm/SKKeyframeSequence/addKeyframeValue:time:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("addKeyframeValue:time:")
     public native void addKeyframeValueTime(@Mapped(ObjCObjectMapper.class) Object value, @NFloat double time);
@@ -177,10 +173,6 @@ public class SKKeyframeSequence extends NSObject implements NSCoding, NSCopying 
     @MappedReturn(ObjCObjectMapper.class)
     public native Object copyWithZone(VoidPtr zone);
 
-    /**
-     * count</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKKeyframeSequence_Ref/index.html#//apple_ref/occ/instm/SKKeyframeSequence/count">iOS Dev Center</a>
-     */
     @Generated
     @Selector("count")
     @NUInt
@@ -190,19 +182,11 @@ public class SKKeyframeSequence extends NSObject implements NSCoding, NSCopying 
     @Selector("encodeWithCoder:")
     public native void encodeWithCoder(NSCoder aCoder);
 
-    /**
-     * getKeyframeTimeForIndex:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKKeyframeSequence_Ref/index.html#//apple_ref/occ/instm/SKKeyframeSequence/getKeyframeTimeForIndex:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("getKeyframeTimeForIndex:")
     @NFloat
     public native double getKeyframeTimeForIndex(@NUInt long index);
 
-    /**
-     * getKeyframeValueForIndex:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKKeyframeSequence_Ref/index.html#//apple_ref/occ/instm/SKKeyframeSequence/getKeyframeValueForIndex:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("getKeyframeValueForIndex:")
     @MappedReturn(ObjCObjectMapper.class)
@@ -212,10 +196,6 @@ public class SKKeyframeSequence extends NSObject implements NSCoding, NSCopying 
     @Selector("init")
     public native SKKeyframeSequence init();
 
-    /**
-     * initWithCapacity:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKKeyframeSequence_Ref/index.html#//apple_ref/occ/instm/SKKeyframeSequence/initWithCapacity:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithCapacity:")
     public native SKKeyframeSequence initWithCapacity(@NUInt long numItems);
@@ -224,94 +204,50 @@ public class SKKeyframeSequence extends NSObject implements NSCoding, NSCopying 
     @Selector("initWithCoder:")
     public native SKKeyframeSequence initWithCoder(NSCoder aDecoder);
 
-    /**
-     * initWithKeyframeValues:times:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKKeyframeSequence_Ref/index.html#//apple_ref/occ/instm/SKKeyframeSequence/initWithKeyframeValues:times:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithKeyframeValues:times:")
     public native SKKeyframeSequence initWithKeyframeValuesTimes(NSArray<?> values, NSArray<? extends NSNumber> times);
 
-    /**
-     * interpolationMode</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKKeyframeSequence_Ref/index.html#//apple_ref/occ/instp/SKKeyframeSequence/interpolationMode">iOS Dev Center</a>
-     */
     @Generated
     @Selector("interpolationMode")
     @NInt
     public native long interpolationMode();
 
-    /**
-     * removeKeyframeAtIndex:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKKeyframeSequence_Ref/index.html#//apple_ref/occ/instm/SKKeyframeSequence/removeKeyframeAtIndex:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("removeKeyframeAtIndex:")
     public native void removeKeyframeAtIndex(@NUInt long index);
 
-    /**
-     * removeLastKeyframe</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKKeyframeSequence_Ref/index.html#//apple_ref/occ/instm/SKKeyframeSequence/removeLastKeyframe">iOS Dev Center</a>
-     */
     @Generated
     @Selector("removeLastKeyframe")
     public native void removeLastKeyframe();
 
-    /**
-     * repeatMode</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKKeyframeSequence_Ref/index.html#//apple_ref/occ/instp/SKKeyframeSequence/repeatMode">iOS Dev Center</a>
-     */
     @Generated
     @Selector("repeatMode")
     @NInt
     public native long repeatMode();
 
-    /**
-     * sampleAtTime:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKKeyframeSequence_Ref/index.html#//apple_ref/occ/instm/SKKeyframeSequence/sampleAtTime:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("sampleAtTime:")
     @MappedReturn(ObjCObjectMapper.class)
     public native Object sampleAtTime(@NFloat double time);
 
-    /**
-     * interpolationMode</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKKeyframeSequence_Ref/index.html#//apple_ref/occ/instp/SKKeyframeSequence/interpolationMode">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setInterpolationMode:")
     public native void setInterpolationMode(@NInt long value);
 
-    /**
-     * setKeyframeTime:forIndex:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKKeyframeSequence_Ref/index.html#//apple_ref/occ/instm/SKKeyframeSequence/setKeyframeTime:forIndex:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setKeyframeTime:forIndex:")
     public native void setKeyframeTimeForIndex(@NFloat double time, @NUInt long index);
 
-    /**
-     * setKeyframeValue:forIndex:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKKeyframeSequence_Ref/index.html#//apple_ref/occ/instm/SKKeyframeSequence/setKeyframeValue:forIndex:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setKeyframeValue:forIndex:")
     public native void setKeyframeValueForIndex(@Mapped(ObjCObjectMapper.class) Object value, @NUInt long index);
 
-    /**
-     * setKeyframeValue:time:forIndex:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKKeyframeSequence_Ref/index.html#//apple_ref/occ/instm/SKKeyframeSequence/setKeyframeValue:time:forIndex:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setKeyframeValue:time:forIndex:")
     public native void setKeyframeValueTimeForIndex(@Mapped(ObjCObjectMapper.class) Object value, @NFloat double time,
             @NUInt long index);
 
-    /**
-     * repeatMode</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKKeyframeSequence_Ref/index.html#//apple_ref/occ/instp/SKKeyframeSequence/repeatMode">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setRepeatMode:")
     public native void setRepeatMode(@NInt long value);

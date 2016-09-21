@@ -53,26 +53,14 @@ public class NSLocale extends NSObject implements NSCopying, NSSecureCoding {
         super(peer);
     }
 
-    /**
-     * ISOCountryCodes</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSLocale_Class/index.html#//apple_ref/occ/clm/NSLocale/ISOCountryCodes">iOS Dev Center</a>
-     */
     @Generated
     @Selector("ISOCountryCodes")
     public static native NSArray<String> ISOCountryCodes();
 
-    /**
-     * ISOCurrencyCodes</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSLocale_Class/index.html#//apple_ref/occ/clm/NSLocale/ISOCurrencyCodes">iOS Dev Center</a>
-     */
     @Generated
     @Selector("ISOCurrencyCodes")
     public static native NSArray<String> ISOCurrencyCodes();
 
-    /**
-     * ISOLanguageCodes</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSLocale_Class/index.html#//apple_ref/occ/clm/NSLocale/ISOLanguageCodes">iOS Dev Center</a>
-     */
     @Generated
     @Selector("ISOLanguageCodes")
     public static native NSArray<String> ISOLanguageCodes();
@@ -82,108 +70,56 @@ public class NSLocale extends NSObject implements NSCopying, NSSecureCoding {
     @Selector("alloc")
     public static native NSLocale alloc();
 
-    /**
-     * autoupdatingCurrentLocale</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSLocale_Class/index.html#//apple_ref/occ/clm/NSLocale/autoupdatingCurrentLocale">iOS Dev Center</a>
-     */
     @Generated
     @Selector("autoupdatingCurrentLocale")
     public static native NSLocale autoupdatingCurrentLocale();
 
-    /**
-     * availableLocaleIdentifiers</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSLocale_Class/index.html#//apple_ref/occ/clm/NSLocale/availableLocaleIdentifiers">iOS Dev Center</a>
-     */
     @Generated
     @Selector("availableLocaleIdentifiers")
     public static native NSArray<String> availableLocaleIdentifiers();
 
-    /**
-     * canonicalLanguageIdentifierFromString:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSLocale_Class/index.html#//apple_ref/occ/clm/NSLocale/canonicalLanguageIdentifierFromString:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("canonicalLanguageIdentifierFromString:")
     public static native String canonicalLanguageIdentifierFromString(String string);
 
-    /**
-     * canonicalLocaleIdentifierFromString:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSLocale_Class/index.html#//apple_ref/occ/clm/NSLocale/canonicalLocaleIdentifierFromString:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("canonicalLocaleIdentifierFromString:")
     public static native String canonicalLocaleIdentifierFromString(String string);
 
-    /**
-     * characterDirectionForLanguage:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSLocale_Class/index.html#//apple_ref/occ/clm/NSLocale/characterDirectionForLanguage:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("characterDirectionForLanguage:")
     @NUInt
     public static native long characterDirectionForLanguage(String isoLangCode);
 
-    /**
-     * commonISOCurrencyCodes</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSLocale_Class/index.html#//apple_ref/occ/clm/NSLocale/commonISOCurrencyCodes">iOS Dev Center</a>
-     */
     @Generated
     @Selector("commonISOCurrencyCodes")
     public static native NSArray<String> commonISOCurrencyCodes();
 
-    /**
-     * componentsFromLocaleIdentifier:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSLocale_Class/index.html#//apple_ref/occ/clm/NSLocale/componentsFromLocaleIdentifier:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("componentsFromLocaleIdentifier:")
     public static native NSDictionary<String, String> componentsFromLocaleIdentifier(String string);
 
-    /**
-     * currentLocale</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSLocale_Class/index.html#//apple_ref/occ/clm/NSLocale/currentLocale">iOS Dev Center</a>
-     */
     @Generated
     @Selector("currentLocale")
     public static native NSLocale currentLocale();
 
-    /**
-     * lineDirectionForLanguage:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSLocale_Class/index.html#//apple_ref/occ/clm/NSLocale/lineDirectionForLanguage:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("lineDirectionForLanguage:")
     @NUInt
     public static native long lineDirectionForLanguage(String isoLangCode);
 
-    /**
-     * localeIdentifierFromComponents:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSLocale_Class/index.html#//apple_ref/occ/clm/NSLocale/localeIdentifierFromComponents:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("localeIdentifierFromComponents:")
     public static native String localeIdentifierFromComponents(NSDictionary<String, String> dict);
 
-    /**
-     * localeIdentifierFromWindowsLocaleCode:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSLocale_Class/index.html#//apple_ref/occ/clm/NSLocale/localeIdentifierFromWindowsLocaleCode:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("localeIdentifierFromWindowsLocaleCode:")
     public static native String localeIdentifierFromWindowsLocaleCode(int lcid);
 
-    /**
-     * localeWithLocaleIdentifier:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSLocale_Class/index.html#//apple_ref/occ/clm/NSLocale/localeWithLocaleIdentifier:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("localeWithLocaleIdentifier:")
     public static native NSLocale localeWithLocaleIdentifier(String ident);
 
-    /**
-     * preferredLanguages</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSLocale_Class/index.html#//apple_ref/occ/clm/NSLocale/preferredLanguages">iOS Dev Center</a>
-     */
     @Generated
     @Selector("preferredLanguages")
     public static native NSArray<String> preferredLanguages();
@@ -192,18 +128,10 @@ public class NSLocale extends NSObject implements NSCopying, NSSecureCoding {
     @Selector("supportsSecureCoding")
     public static native boolean supportsSecureCoding();
 
-    /**
-     * systemLocale</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSLocale_Class/index.html#//apple_ref/occ/clm/NSLocale/systemLocale">iOS Dev Center</a>
-     */
     @Generated
     @Selector("systemLocale")
     public static native NSLocale systemLocale();
 
-    /**
-     * windowsLocaleCodeFromLocaleIdentifier:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSLocale_Class/index.html#//apple_ref/occ/clm/NSLocale/windowsLocaleCodeFromLocaleIdentifier:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("windowsLocaleCodeFromLocaleIdentifier:")
     public static native int windowsLocaleCodeFromLocaleIdentifier(String localeIdentifier);
@@ -314,10 +242,6 @@ public class NSLocale extends NSObject implements NSCopying, NSSecureCoding {
     @MappedReturn(ObjCObjectMapper.class)
     public native Object copyWithZone(VoidPtr zone);
 
-    /**
-     * displayNameForKey:value:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSLocale_Class/index.html#//apple_ref/occ/instm/NSLocale/displayNameForKey:value:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("displayNameForKey:value:")
     public native String displayNameForKeyValue(@Mapped(ObjCObjectMapper.class) Object key,
@@ -335,26 +259,14 @@ public class NSLocale extends NSObject implements NSCopying, NSSecureCoding {
     @Selector("initWithCoder:")
     public native NSLocale initWithCoder(NSCoder aDecoder);
 
-    /**
-     * initWithLocaleIdentifier:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSLocale_Class/index.html#//apple_ref/occ/instm/NSLocale/initWithLocaleIdentifier:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithLocaleIdentifier:")
     public native NSLocale initWithLocaleIdentifier(String string);
 
-    /**
-     * localeIdentifier</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSLocale_Class/index.html#//apple_ref/occ/instp/NSLocale/localeIdentifier">iOS Dev Center</a>
-     */
     @Generated
     @Selector("localeIdentifier")
     public native String localeIdentifier();
 
-    /**
-     * objectForKey:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSLocale_Class/index.html#//apple_ref/occ/instm/NSLocale/objectForKey:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("objectForKey:")
     @MappedReturn(ObjCObjectMapper.class)

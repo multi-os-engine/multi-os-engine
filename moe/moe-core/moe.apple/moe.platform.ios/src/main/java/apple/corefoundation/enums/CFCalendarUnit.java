@@ -35,6 +35,7 @@ public final class CFCalendarUnit {
     @Generated @NUInt public static final long WeekOfMonth = 0x0000000000001000L;
     @Generated @NUInt public static final long WeekOfYear = 0x0000000000002000L;
     @Generated @NUInt public static final long YearForWeekOfYear = 0x0000000000004000L;
+
     @Generated
     private CFCalendarUnit() {
     }

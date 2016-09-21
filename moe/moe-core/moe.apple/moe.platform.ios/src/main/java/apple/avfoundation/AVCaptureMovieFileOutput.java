@@ -164,35 +164,19 @@ public class AVCaptureMovieFileOutput extends AVCaptureFileOutput {
     @Selector("init")
     public native AVCaptureMovieFileOutput init();
 
-    /**
-     * metadata</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVCaptureMovieFileOutput_Class/index.html#//apple_ref/occ/instp/AVCaptureMovieFileOutput/metadata">iOS Dev Center</a>
-     */
     @Generated
     @Selector("metadata")
     public native NSArray<?> metadata();
 
-    /**
-     * movieFragmentInterval</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVCaptureMovieFileOutput_Class/index.html#//apple_ref/occ/instp/AVCaptureMovieFileOutput/movieFragmentInterval">iOS Dev Center</a>
-     */
     @Generated
     @Selector("movieFragmentInterval")
     @ByValue
     public native CMTime movieFragmentInterval();
 
-    /**
-     * metadata</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVCaptureMovieFileOutput_Class/index.html#//apple_ref/occ/instp/AVCaptureMovieFileOutput/metadata">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setMetadata:")
     public native void setMetadata(NSArray<?> value);
 
-    /**
-     * movieFragmentInterval</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVCaptureMovieFileOutput_Class/index.html#//apple_ref/occ/instp/AVCaptureMovieFileOutput/movieFragmentInterval">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setMovieFragmentInterval:")
     public native void setMovieFragmentInterval(@ByValue CMTime value);

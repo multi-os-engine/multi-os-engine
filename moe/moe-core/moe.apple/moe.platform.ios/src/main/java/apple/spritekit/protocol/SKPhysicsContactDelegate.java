@@ -30,10 +30,6 @@ import org.moe.natj.objc.ann.Selector;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("SKPhysicsContactDelegate")
 public interface SKPhysicsContactDelegate {
-    /**
-     * didBeginContact:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKPhysicsContactDelegate_Ref/index.html#//apple_ref/occ/intfm/SKPhysicsContactDelegate/didBeginContact:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("didBeginContact:")
@@ -41,10 +37,6 @@ public interface SKPhysicsContactDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * didEndContact:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKPhysicsContactDelegate_Ref/index.html#//apple_ref/occ/intfm/SKPhysicsContactDelegate/didEndContact:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("didEndContact:")

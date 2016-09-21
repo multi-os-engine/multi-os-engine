@@ -62,18 +62,10 @@ public class AVMutableAudioMixInputParameters extends AVAudioMixInputParameters 
     @Selector("alloc")
     public static native AVMutableAudioMixInputParameters alloc();
 
-    /**
-     * audioMixInputParameters</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVMutableAudioMixInputParameters_Class/index.html#//apple_ref/occ/clm/AVMutableAudioMixInputParameters/audioMixInputParameters">iOS Dev Center</a>
-     */
     @Generated
     @Selector("audioMixInputParameters")
     public static native AVMutableAudioMixInputParameters audioMixInputParameters();
 
-    /**
-     * audioMixInputParametersWithTrack:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVMutableAudioMixInputParameters_Class/index.html#//apple_ref/occ/clm/AVMutableAudioMixInputParameters/audioMixInputParametersWithTrack:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("audioMixInputParametersWithTrack:")
     public static native AVMutableAudioMixInputParameters audioMixInputParametersWithTrack(AVAssetTrack track);
@@ -178,18 +170,10 @@ public class AVMutableAudioMixInputParameters extends AVAudioMixInputParameters 
     @NInt
     public static native long version_static();
 
-    /**
-     * audioTapProcessor</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVMutableAudioMixInputParameters_Class/index.html#//apple_ref/occ/instp/AVMutableAudioMixInputParameters/audioTapProcessor">iOS Dev Center</a>
-     */
     @Generated
     @Selector("audioTapProcessor")
     public native MTAudioProcessingTapRef audioTapProcessor();
 
-    /**
-     * audioTimePitchAlgorithm</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVMutableAudioMixInputParameters_Class/index.html#//apple_ref/occ/instp/AVMutableAudioMixInputParameters/audioTimePitchAlgorithm">iOS Dev Center</a>
-     */
     @Generated
     @Selector("audioTimePitchAlgorithm")
     public native String audioTimePitchAlgorithm();
@@ -198,51 +182,27 @@ public class AVMutableAudioMixInputParameters extends AVAudioMixInputParameters 
     @Selector("init")
     public native AVMutableAudioMixInputParameters init();
 
-    /**
-     * audioTapProcessor</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVMutableAudioMixInputParameters_Class/index.html#//apple_ref/occ/instp/AVMutableAudioMixInputParameters/audioTapProcessor">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setAudioTapProcessor:")
     public native void setAudioTapProcessor(MTAudioProcessingTapRef value);
 
-    /**
-     * audioTimePitchAlgorithm</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVMutableAudioMixInputParameters_Class/index.html#//apple_ref/occ/instp/AVMutableAudioMixInputParameters/audioTimePitchAlgorithm">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setAudioTimePitchAlgorithm:")
     public native void setAudioTimePitchAlgorithm(String value);
 
-    /**
-     * trackID</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVMutableAudioMixInputParameters_Class/index.html#//apple_ref/occ/instp/AVMutableAudioMixInputParameters/trackID">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setTrackID:")
     public native void setTrackID(int value);
 
-    /**
-     * setVolume:atTime:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVMutableAudioMixInputParameters_Class/index.html#//apple_ref/occ/instm/AVMutableAudioMixInputParameters/setVolume:atTime:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setVolume:atTime:")
     public native void setVolumeAtTime(float volume, @ByValue CMTime time);
 
-    /**
-     * setVolumeRampFromStartVolume:toEndVolume:timeRange:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVMutableAudioMixInputParameters_Class/index.html#//apple_ref/occ/instm/AVMutableAudioMixInputParameters/setVolumeRampFromStartVolume:toEndVolume:timeRange:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setVolumeRampFromStartVolume:toEndVolume:timeRange:")
     public native void setVolumeRampFromStartVolumeToEndVolumeTimeRange(float startVolume, float endVolume,
             @ByValue CMTimeRange timeRange);
 
-    /**
-     * trackID</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVMutableAudioMixInputParameters_Class/index.html#//apple_ref/occ/instp/AVMutableAudioMixInputParameters/trackID">iOS Dev Center</a>
-     */
     @Generated
     @Selector("trackID")
     public native int trackID();

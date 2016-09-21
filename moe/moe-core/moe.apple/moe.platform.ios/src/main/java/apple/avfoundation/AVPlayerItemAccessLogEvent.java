@@ -160,10 +160,6 @@ public class AVPlayerItemAccessLogEvent extends NSObject implements NSCopying {
     @NInt
     public static native long version();
 
-    /**
-     * URI</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVPlayerItemAccessLogEvent_Class/index.html#//apple_ref/occ/instp/AVPlayerItemAccessLogEvent/URI">iOS Dev Center</a>
-     */
     @Generated
     @Selector("URI")
     public native String URI();
@@ -174,27 +170,15 @@ public class AVPlayerItemAccessLogEvent extends NSObject implements NSCopying {
     @MappedReturn(ObjCObjectMapper.class)
     public native Object copyWithZone(VoidPtr zone);
 
-    /**
-     * downloadOverdue</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVPlayerItemAccessLogEvent_Class/index.html#//apple_ref/occ/instp/AVPlayerItemAccessLogEvent/downloadOverdue">iOS Dev Center</a>
-     */
     @Generated
     @Selector("downloadOverdue")
     @NInt
     public native long downloadOverdue();
 
-    /**
-     * durationWatched</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVPlayerItemAccessLogEvent_Class/index.html#//apple_ref/occ/instp/AVPlayerItemAccessLogEvent/durationWatched">iOS Dev Center</a>
-     */
     @Generated
     @Selector("durationWatched")
     public native double durationWatched();
 
-    /**
-     * indicatedBitrate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVPlayerItemAccessLogEvent_Class/index.html#//apple_ref/occ/instp/AVPlayerItemAccessLogEvent/indicatedBitrate">iOS Dev Center</a>
-     */
     @Generated
     @Selector("indicatedBitrate")
     public native double indicatedBitrate();
@@ -203,169 +187,89 @@ public class AVPlayerItemAccessLogEvent extends NSObject implements NSCopying {
     @Selector("init")
     public native AVPlayerItemAccessLogEvent init();
 
-    /**
-     * mediaRequestsWWAN</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVPlayerItemAccessLogEvent_Class/index.html#//apple_ref/occ/instp/AVPlayerItemAccessLogEvent/mediaRequestsWWAN">iOS Dev Center</a>
-     */
     @Generated
     @Selector("mediaRequestsWWAN")
     @NInt
     public native long mediaRequestsWWAN();
 
-    /**
-     * numberOfBytesTransferred</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVPlayerItemAccessLogEvent_Class/index.html#//apple_ref/occ/instp/AVPlayerItemAccessLogEvent/numberOfBytesTransferred">iOS Dev Center</a>
-     */
     @Generated
     @Selector("numberOfBytesTransferred")
     public native long numberOfBytesTransferred();
 
-    /**
-     * numberOfDroppedVideoFrames</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVPlayerItemAccessLogEvent_Class/index.html#//apple_ref/occ/instp/AVPlayerItemAccessLogEvent/numberOfDroppedVideoFrames">iOS Dev Center</a>
-     */
     @Generated
     @Selector("numberOfDroppedVideoFrames")
     @NInt
     public native long numberOfDroppedVideoFrames();
 
-    /**
-     * numberOfMediaRequests</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVPlayerItemAccessLogEvent_Class/index.html#//apple_ref/occ/instp/AVPlayerItemAccessLogEvent/numberOfMediaRequests">iOS Dev Center</a>
-     */
     @Generated
     @Selector("numberOfMediaRequests")
     @NInt
     public native long numberOfMediaRequests();
 
-    /**
-     * numberOfSegmentsDownloaded</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVPlayerItemAccessLogEvent_Class/index.html#//apple_ref/occ/instp/AVPlayerItemAccessLogEvent/numberOfSegmentsDownloaded">iOS Dev Center</a>
-     */
     @Generated
     @Deprecated
     @Selector("numberOfSegmentsDownloaded")
     @NInt
     public native long numberOfSegmentsDownloaded();
 
-    /**
-     * numberOfServerAddressChanges</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVPlayerItemAccessLogEvent_Class/index.html#//apple_ref/occ/instp/AVPlayerItemAccessLogEvent/numberOfServerAddressChanges">iOS Dev Center</a>
-     */
     @Generated
     @Selector("numberOfServerAddressChanges")
     @NInt
     public native long numberOfServerAddressChanges();
 
-    /**
-     * numberOfStalls</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVPlayerItemAccessLogEvent_Class/index.html#//apple_ref/occ/instp/AVPlayerItemAccessLogEvent/numberOfStalls">iOS Dev Center</a>
-     */
     @Generated
     @Selector("numberOfStalls")
     @NInt
     public native long numberOfStalls();
 
-    /**
-     * observedBitrate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVPlayerItemAccessLogEvent_Class/index.html#//apple_ref/occ/instp/AVPlayerItemAccessLogEvent/observedBitrate">iOS Dev Center</a>
-     */
     @Generated
     @Selector("observedBitrate")
     public native double observedBitrate();
 
-    /**
-     * observedBitrateStandardDeviation</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVPlayerItemAccessLogEvent_Class/index.html#//apple_ref/occ/instp/AVPlayerItemAccessLogEvent/observedBitrateStandardDeviation">iOS Dev Center</a>
-     */
     @Generated
     @Selector("observedBitrateStandardDeviation")
     public native double observedBitrateStandardDeviation();
 
-    /**
-     * observedMaxBitrate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVPlayerItemAccessLogEvent_Class/index.html#//apple_ref/occ/instp/AVPlayerItemAccessLogEvent/observedMaxBitrate">iOS Dev Center</a>
-     */
     @Generated
     @Selector("observedMaxBitrate")
     public native double observedMaxBitrate();
 
-    /**
-     * observedMinBitrate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVPlayerItemAccessLogEvent_Class/index.html#//apple_ref/occ/instp/AVPlayerItemAccessLogEvent/observedMinBitrate">iOS Dev Center</a>
-     */
     @Generated
     @Selector("observedMinBitrate")
     public native double observedMinBitrate();
 
-    /**
-     * playbackSessionID</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVPlayerItemAccessLogEvent_Class/index.html#//apple_ref/occ/instp/AVPlayerItemAccessLogEvent/playbackSessionID">iOS Dev Center</a>
-     */
     @Generated
     @Selector("playbackSessionID")
     public native String playbackSessionID();
 
-    /**
-     * playbackStartDate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVPlayerItemAccessLogEvent_Class/index.html#//apple_ref/occ/instp/AVPlayerItemAccessLogEvent/playbackStartDate">iOS Dev Center</a>
-     */
     @Generated
     @Selector("playbackStartDate")
     public native NSDate playbackStartDate();
 
-    /**
-     * playbackStartOffset</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVPlayerItemAccessLogEvent_Class/index.html#//apple_ref/occ/instp/AVPlayerItemAccessLogEvent/playbackStartOffset">iOS Dev Center</a>
-     */
     @Generated
     @Selector("playbackStartOffset")
     public native double playbackStartOffset();
 
-    /**
-     * playbackType</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVPlayerItemAccessLogEvent_Class/index.html#//apple_ref/occ/instp/AVPlayerItemAccessLogEvent/playbackType">iOS Dev Center</a>
-     */
     @Generated
     @Selector("playbackType")
     public native String playbackType();
 
-    /**
-     * segmentsDownloadedDuration</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVPlayerItemAccessLogEvent_Class/index.html#//apple_ref/occ/instp/AVPlayerItemAccessLogEvent/segmentsDownloadedDuration">iOS Dev Center</a>
-     */
     @Generated
     @Selector("segmentsDownloadedDuration")
     public native double segmentsDownloadedDuration();
 
-    /**
-     * serverAddress</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVPlayerItemAccessLogEvent_Class/index.html#//apple_ref/occ/instp/AVPlayerItemAccessLogEvent/serverAddress">iOS Dev Center</a>
-     */
     @Generated
     @Selector("serverAddress")
     public native String serverAddress();
 
-    /**
-     * startupTime</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVPlayerItemAccessLogEvent_Class/index.html#//apple_ref/occ/instp/AVPlayerItemAccessLogEvent/startupTime">iOS Dev Center</a>
-     */
     @Generated
     @Selector("startupTime")
     public native double startupTime();
 
-    /**
-     * switchBitrate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVPlayerItemAccessLogEvent_Class/index.html#//apple_ref/occ/instp/AVPlayerItemAccessLogEvent/switchBitrate">iOS Dev Center</a>
-     */
     @Generated
     @Selector("switchBitrate")
     public native double switchBitrate();
 
-    /**
-     * transferDuration</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVPlayerItemAccessLogEvent_Class/index.html#//apple_ref/occ/instp/AVPlayerItemAccessLogEvent/transferDuration">iOS Dev Center</a>
-     */
     @Generated
     @Selector("transferDuration")
     public native double transferDuration();

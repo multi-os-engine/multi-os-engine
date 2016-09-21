@@ -159,10 +159,6 @@ public class WKBackForwardListItem extends NSObject {
     @NInt
     public static native long version_static();
 
-    /**
-     * URL</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WebKit/Reference/WKBackForwardListItem_Ref/index.html#//apple_ref/occ/instp/WKBackForwardListItem/URL">iOS Dev Center</a>
-     */
     @Generated
     @Selector("URL")
     public native NSURL URL();
@@ -171,18 +167,10 @@ public class WKBackForwardListItem extends NSObject {
     @Selector("init")
     public native WKBackForwardListItem init();
 
-    /**
-     * initialURL</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WebKit/Reference/WKBackForwardListItem_Ref/index.html#//apple_ref/occ/instp/WKBackForwardListItem/initialURL">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initialURL")
     public native NSURL initialURL();
 
-    /**
-     * title</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WebKit/Reference/WKBackForwardListItem_Ref/index.html#//apple_ref/occ/instp/WKBackForwardListItem/title">iOS Dev Center</a>
-     */
     @Generated
     @Selector("title")
     public native String title();

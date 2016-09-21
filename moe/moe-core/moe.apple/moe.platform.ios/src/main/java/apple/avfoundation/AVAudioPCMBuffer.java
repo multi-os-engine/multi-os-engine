@@ -163,27 +163,15 @@ public class AVAudioPCMBuffer extends AVAudioBuffer {
     @NInt
     public static native long version_static();
 
-    /**
-     * floatChannelData</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioPCMBuffer_Class/index.html#//apple_ref/occ/instp/AVAudioPCMBuffer/floatChannelData">iOS Dev Center</a>
-     */
     @Generated
     @Selector("floatChannelData")
     @ReferenceInfo(type = Float.class, depth = 2)
     public native ConstPtr<FloatPtr> floatChannelData();
 
-    /**
-     * frameCapacity</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioPCMBuffer_Class/index.html#//apple_ref/occ/instp/AVAudioPCMBuffer/frameCapacity">iOS Dev Center</a>
-     */
     @Generated
     @Selector("frameCapacity")
     public native int frameCapacity();
 
-    /**
-     * frameLength</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioPCMBuffer_Class/index.html#//apple_ref/occ/instp/AVAudioPCMBuffer/frameLength">iOS Dev Center</a>
-     */
     @Generated
     @Selector("frameLength")
     public native int frameLength();
@@ -192,44 +180,24 @@ public class AVAudioPCMBuffer extends AVAudioBuffer {
     @Selector("init")
     public native AVAudioPCMBuffer init();
 
-    /**
-     * initWithPCMFormat:frameCapacity:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioPCMBuffer_Class/index.html#//apple_ref/occ/instm/AVAudioPCMBuffer/initWithPCMFormat:frameCapacity:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithPCMFormat:frameCapacity:")
     public native AVAudioPCMBuffer initWithPCMFormatFrameCapacity(AVAudioFormat format, int frameCapacity);
 
-    /**
-     * int16ChannelData</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioPCMBuffer_Class/index.html#//apple_ref/occ/instp/AVAudioPCMBuffer/int16ChannelData">iOS Dev Center</a>
-     */
     @Generated
     @Selector("int16ChannelData")
     @ReferenceInfo(type = Short.class, depth = 2)
     public native ConstPtr<ShortPtr> int16ChannelData();
 
-    /**
-     * int32ChannelData</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioPCMBuffer_Class/index.html#//apple_ref/occ/instp/AVAudioPCMBuffer/int32ChannelData">iOS Dev Center</a>
-     */
     @Generated
     @Selector("int32ChannelData")
     @ReferenceInfo(type = Integer.class, depth = 2)
     public native ConstPtr<IntPtr> int32ChannelData();
 
-    /**
-     * frameLength</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioPCMBuffer_Class/index.html#//apple_ref/occ/instp/AVAudioPCMBuffer/frameLength">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setFrameLength:")
     public native void setFrameLength(int value);
 
-    /**
-     * stride</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioPCMBuffer_Class/index.html#//apple_ref/occ/instp/AVAudioPCMBuffer/stride">iOS Dev Center</a>
-     */
     @Generated
     @Selector("stride")
     @NUInt

@@ -59,18 +59,10 @@ public class EKCalendar extends EKObject {
     @Selector("alloc")
     public static native EKCalendar alloc();
 
-    /**
-     * calendarForEntityType:eventStore:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/DataManagement/Reference/EKCalendarClassRef/index.html#//apple_ref/occ/clm/EKCalendar/calendarForEntityType:eventStore:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("calendarForEntityType:eventStore:")
     public static native EKCalendar calendarForEntityTypeEventStore(@NUInt long entityType, EKEventStore eventStore);
 
-    /**
-     * calendarWithEventStore:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/DataManagement/Reference/EKCalendarClassRef/index.html#//apple_ref/occ/clm/EKCalendar/calendarWithEventStore:">iOS Dev Center</a>
-     */
     @Generated
     @Deprecated
     @Selector("calendarWithEventStore:")
@@ -176,35 +168,19 @@ public class EKCalendar extends EKObject {
     @NInt
     public static native long version_static();
 
-    /**
-     * CGColor</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/DataManagement/Reference/EKCalendarClassRef/index.html#//apple_ref/occ/instp/EKCalendar/CGColor">iOS Dev Center</a>
-     */
     @Generated
     @Selector("CGColor")
     public native CGColorRef CGColor();
 
-    /**
-     * allowedEntityTypes</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/DataManagement/Reference/EKCalendarClassRef/index.html#//apple_ref/occ/instp/EKCalendar/allowedEntityTypes">iOS Dev Center</a>
-     */
     @Generated
     @Selector("allowedEntityTypes")
     @NUInt
     public native long allowedEntityTypes();
 
-    /**
-     * allowsContentModifications</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/DataManagement/Reference/EKCalendarClassRef/index.html#//apple_ref/occ/instp/EKCalendar/allowsContentModifications">iOS Dev Center</a>
-     */
     @Generated
     @Selector("allowsContentModifications")
     public native boolean allowsContentModifications();
 
-    /**
-     * calendarIdentifier</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/DataManagement/Reference/EKCalendarClassRef/index.html#//apple_ref/occ/instp/EKCalendar/calendarIdentifier">iOS Dev Center</a>
-     */
     @Generated
     @Selector("calendarIdentifier")
     public native String calendarIdentifier();
@@ -213,75 +189,39 @@ public class EKCalendar extends EKObject {
     @Selector("init")
     public native EKCalendar init();
 
-    /**
-     * immutable</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/DataManagement/Reference/EKCalendarClassRef/index.html#//apple_ref/occ/instp/EKCalendar/immutable">iOS Dev Center</a>
-     */
     @Generated
     @Selector("isImmutable")
     public native boolean isImmutable();
 
-    /**
-     * subscribed</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/DataManagement/Reference/EKCalendarClassRef/index.html#//apple_ref/occ/instp/EKCalendar/subscribed">iOS Dev Center</a>
-     */
     @Generated
     @Selector("isSubscribed")
     public native boolean isSubscribed();
 
-    /**
-     * CGColor</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/DataManagement/Reference/EKCalendarClassRef/index.html#//apple_ref/occ/instp/EKCalendar/CGColor">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setCGColor:")
     public native void setCGColor(CGColorRef value);
 
-    /**
-     * source</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/DataManagement/Reference/EKCalendarClassRef/index.html#//apple_ref/occ/instp/EKCalendar/source">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setSource:")
     public native void setSource(EKSource value);
 
-    /**
-     * title</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/DataManagement/Reference/EKCalendarClassRef/index.html#//apple_ref/occ/instp/EKCalendar/title">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setTitle:")
     public native void setTitle(String value);
 
-    /**
-     * source</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/DataManagement/Reference/EKCalendarClassRef/index.html#//apple_ref/occ/instp/EKCalendar/source">iOS Dev Center</a>
-     */
     @Generated
     @Selector("source")
     public native EKSource source();
 
-    /**
-     * supportedEventAvailabilities</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/DataManagement/Reference/EKCalendarClassRef/index.html#//apple_ref/occ/instp/EKCalendar/supportedEventAvailabilities">iOS Dev Center</a>
-     */
     @Generated
     @Selector("supportedEventAvailabilities")
     @NUInt
     public native long supportedEventAvailabilities();
 
-    /**
-     * title</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/DataManagement/Reference/EKCalendarClassRef/index.html#//apple_ref/occ/instp/EKCalendar/title">iOS Dev Center</a>
-     */
     @Generated
     @Selector("title")
     public native String title();
 
-    /**
-     * type</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/DataManagement/Reference/EKCalendarClassRef/index.html#//apple_ref/occ/instp/EKCalendar/type">iOS Dev Center</a>
-     */
     @NInt
     @Generated
     @Selector("type")

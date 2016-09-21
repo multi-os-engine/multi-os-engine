@@ -162,10 +162,6 @@ public class NSDateComponents extends NSObject implements NSCopying, NSSecureCod
     @NInt
     public static native long version_static();
 
-    /**
-     * calendar</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSDateComponents_Class/index.html#//apple_ref/occ/instp/NSDateComponents/calendar">iOS Dev Center</a>
-     */
     @Generated
     @Selector("calendar")
     public native NSCalendar calendar();
@@ -176,18 +172,10 @@ public class NSDateComponents extends NSObject implements NSCopying, NSSecureCod
     @MappedReturn(ObjCObjectMapper.class)
     public native Object copyWithZone(VoidPtr zone);
 
-    /**
-     * date</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSDateComponents_Class/index.html#//apple_ref/occ/instp/NSDateComponents/date">iOS Dev Center</a>
-     */
     @Generated
     @Selector("date")
     public native NSDate date();
 
-    /**
-     * day</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSDateComponents_Class/index.html#//apple_ref/occ/instp/NSDateComponents/day">iOS Dev Center</a>
-     */
     @Generated
     @Selector("day")
     @NInt
@@ -197,19 +185,11 @@ public class NSDateComponents extends NSObject implements NSCopying, NSSecureCod
     @Selector("encodeWithCoder:")
     public native void encodeWithCoder(NSCoder aCoder);
 
-    /**
-     * era</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSDateComponents_Class/index.html#//apple_ref/occ/instp/NSDateComponents/era">iOS Dev Center</a>
-     */
     @Generated
     @Selector("era")
     @NInt
     public native long era();
 
-    /**
-     * hour</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSDateComponents_Class/index.html#//apple_ref/occ/instp/NSDateComponents/hour">iOS Dev Center</a>
-     */
     @Generated
     @Selector("hour")
     @NInt
@@ -223,224 +203,116 @@ public class NSDateComponents extends NSObject implements NSCopying, NSSecureCod
     @Selector("initWithCoder:")
     public native NSDateComponents initWithCoder(NSCoder aDecoder);
 
-    /**
-     * leapMonth</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSDateComponents_Class/index.html#//apple_ref/occ/instp/NSDateComponents/leapMonth">iOS Dev Center</a>
-     */
     @Generated
     @Selector("isLeapMonth")
     public native boolean isLeapMonth();
 
-    /**
-     * leapMonth</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSDateComponents_Class/index.html#//apple_ref/occ/instp/NSDateComponents/leapMonth">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setLeapMonth:")
     public native void setLeapMonth(boolean value);
 
-    /**
-     * validDate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSDateComponents_Class/index.html#//apple_ref/occ/instp/NSDateComponents/validDate">iOS Dev Center</a>
-     */
     @Generated
     @Selector("isValidDate")
     public native boolean isValidDate();
 
-    /**
-     * isValidDateInCalendar:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSDateComponents_Class/index.html#//apple_ref/occ/instm/NSDateComponents/isValidDateInCalendar:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("isValidDateInCalendar:")
     public native boolean isValidDateInCalendar(NSCalendar calendar);
 
-    /**
-     * minute</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSDateComponents_Class/index.html#//apple_ref/occ/instp/NSDateComponents/minute">iOS Dev Center</a>
-     */
     @Generated
     @Selector("minute")
     @NInt
     public native long minute();
 
-    /**
-     * month</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSDateComponents_Class/index.html#//apple_ref/occ/instp/NSDateComponents/month">iOS Dev Center</a>
-     */
     @Generated
     @Selector("month")
     @NInt
     public native long month();
 
-    /**
-     * nanosecond</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSDateComponents_Class/index.html#//apple_ref/occ/instp/NSDateComponents/nanosecond">iOS Dev Center</a>
-     */
     @Generated
     @Selector("nanosecond")
     @NInt
     public native long nanosecond();
 
-    /**
-     * quarter</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSDateComponents_Class/index.html#//apple_ref/occ/instp/NSDateComponents/quarter">iOS Dev Center</a>
-     */
     @Generated
     @Selector("quarter")
     @NInt
     public native long quarter();
 
-    /**
-     * second</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSDateComponents_Class/index.html#//apple_ref/occ/instp/NSDateComponents/second">iOS Dev Center</a>
-     */
     @Generated
     @Selector("second")
     @NInt
     public native long second();
 
-    /**
-     * calendar</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSDateComponents_Class/index.html#//apple_ref/occ/instp/NSDateComponents/calendar">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setCalendar:")
     public native void setCalendar(NSCalendar value);
 
-    /**
-     * day</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSDateComponents_Class/index.html#//apple_ref/occ/instp/NSDateComponents/day">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setDay:")
     public native void setDay(@NInt long value);
 
-    /**
-     * era</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSDateComponents_Class/index.html#//apple_ref/occ/instp/NSDateComponents/era">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setEra:")
     public native void setEra(@NInt long value);
 
-    /**
-     * hour</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSDateComponents_Class/index.html#//apple_ref/occ/instp/NSDateComponents/hour">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setHour:")
     public native void setHour(@NInt long value);
 
-    /**
-     * minute</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSDateComponents_Class/index.html#//apple_ref/occ/instp/NSDateComponents/minute">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setMinute:")
     public native void setMinute(@NInt long value);
 
-    /**
-     * month</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSDateComponents_Class/index.html#//apple_ref/occ/instp/NSDateComponents/month">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setMonth:")
     public native void setMonth(@NInt long value);
 
-    /**
-     * nanosecond</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSDateComponents_Class/index.html#//apple_ref/occ/instp/NSDateComponents/nanosecond">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setNanosecond:")
     public native void setNanosecond(@NInt long value);
 
-    /**
-     * quarter</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSDateComponents_Class/index.html#//apple_ref/occ/instp/NSDateComponents/quarter">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setQuarter:")
     public native void setQuarter(@NInt long value);
 
-    /**
-     * second</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSDateComponents_Class/index.html#//apple_ref/occ/instp/NSDateComponents/second">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setSecond:")
     public native void setSecond(@NInt long value);
 
-    /**
-     * timeZone</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSDateComponents_Class/index.html#//apple_ref/occ/instp/NSDateComponents/timeZone">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setTimeZone:")
     public native void setTimeZone(NSTimeZone value);
 
-    /**
-     * setValue:forComponent:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSDateComponents_Class/index.html#//apple_ref/occ/instm/NSDateComponents/setValue:forComponent:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setValue:forComponent:")
     public native void setValueForComponent(@NInt long value, @NUInt long unit);
 
-    /**
-     * setWeek:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSDateComponents_Class/index.html#//apple_ref/occ/instm/NSDateComponents/setWeek:">iOS Dev Center</a>
-     */
     @Generated
     @Deprecated
     @Selector("setWeek:")
     public native void setWeek(@NInt long v);
 
-    /**
-     * weekOfMonth</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSDateComponents_Class/index.html#//apple_ref/occ/instp/NSDateComponents/weekOfMonth">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setWeekOfMonth:")
     public native void setWeekOfMonth(@NInt long value);
 
-    /**
-     * weekOfYear</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSDateComponents_Class/index.html#//apple_ref/occ/instp/NSDateComponents/weekOfYear">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setWeekOfYear:")
     public native void setWeekOfYear(@NInt long value);
 
-    /**
-     * weekday</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSDateComponents_Class/index.html#//apple_ref/occ/instp/NSDateComponents/weekday">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setWeekday:")
     public native void setWeekday(@NInt long value);
 
-    /**
-     * weekdayOrdinal</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSDateComponents_Class/index.html#//apple_ref/occ/instp/NSDateComponents/weekdayOrdinal">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setWeekdayOrdinal:")
     public native void setWeekdayOrdinal(@NInt long value);
 
-    /**
-     * year</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSDateComponents_Class/index.html#//apple_ref/occ/instp/NSDateComponents/year">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setYear:")
     public native void setYear(@NInt long value);
 
-    /**
-     * yearForWeekOfYear</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSDateComponents_Class/index.html#//apple_ref/occ/instp/NSDateComponents/yearForWeekOfYear">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setYearForWeekOfYear:")
     public native void setYearForWeekOfYear(@NInt long value);
@@ -451,82 +323,46 @@ public class NSDateComponents extends NSObject implements NSCopying, NSSecureCod
         return supportsSecureCoding();
     }
 
-    /**
-     * timeZone</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSDateComponents_Class/index.html#//apple_ref/occ/instp/NSDateComponents/timeZone">iOS Dev Center</a>
-     */
     @Generated
     @Selector("timeZone")
     public native NSTimeZone timeZone();
 
-    /**
-     * valueForComponent:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSDateComponents_Class/index.html#//apple_ref/occ/instm/NSDateComponents/valueForComponent:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("valueForComponent:")
     @NInt
     public native long valueForComponent(@NUInt long unit);
 
-    /**
-     * week</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSDateComponents_Class/index.html#//apple_ref/occ/instm/NSDateComponents/week">iOS Dev Center</a>
-     */
     @Generated
     @Deprecated
     @Selector("week")
     @NInt
     public native long week();
 
-    /**
-     * weekOfMonth</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSDateComponents_Class/index.html#//apple_ref/occ/instp/NSDateComponents/weekOfMonth">iOS Dev Center</a>
-     */
     @Generated
     @Selector("weekOfMonth")
     @NInt
     public native long weekOfMonth();
 
-    /**
-     * weekOfYear</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSDateComponents_Class/index.html#//apple_ref/occ/instp/NSDateComponents/weekOfYear">iOS Dev Center</a>
-     */
     @Generated
     @Selector("weekOfYear")
     @NInt
     public native long weekOfYear();
 
-    /**
-     * weekday</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSDateComponents_Class/index.html#//apple_ref/occ/instp/NSDateComponents/weekday">iOS Dev Center</a>
-     */
     @Generated
     @Selector("weekday")
     @NInt
     public native long weekday();
 
-    /**
-     * weekdayOrdinal</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSDateComponents_Class/index.html#//apple_ref/occ/instp/NSDateComponents/weekdayOrdinal">iOS Dev Center</a>
-     */
     @Generated
     @Selector("weekdayOrdinal")
     @NInt
     public native long weekdayOrdinal();
 
-    /**
-     * year</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSDateComponents_Class/index.html#//apple_ref/occ/instp/NSDateComponents/year">iOS Dev Center</a>
-     */
     @Generated
     @Selector("year")
     @NInt
     public native long year();
 
-    /**
-     * yearForWeekOfYear</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSDateComponents_Class/index.html#//apple_ref/occ/instp/NSDateComponents/yearForWeekOfYear">iOS Dev Center</a>
-     */
     @Generated
     @Selector("yearForWeekOfYear")
     @NInt

@@ -171,28 +171,16 @@ public class UICollectionViewFlowLayout extends UICollectionViewLayout {
     @NInt
     public static native long version();
 
-    /**
-     * estimatedItemSize</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UICollectionViewFlowLayout_class/index.html#//apple_ref/occ/instp/UICollectionViewFlowLayout/estimatedItemSize">iOS Dev Center</a>
-     */
     @Generated
     @Selector("estimatedItemSize")
     @ByValue
     public native CGSize estimatedItemSize();
 
-    /**
-     * footerReferenceSize</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UICollectionViewFlowLayout_class/index.html#//apple_ref/occ/instp/UICollectionViewFlowLayout/footerReferenceSize">iOS Dev Center</a>
-     */
     @Generated
     @Selector("footerReferenceSize")
     @ByValue
     public native CGSize footerReferenceSize();
 
-    /**
-     * headerReferenceSize</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UICollectionViewFlowLayout_class/index.html#//apple_ref/occ/instp/UICollectionViewFlowLayout/headerReferenceSize">iOS Dev Center</a>
-     */
     @Generated
     @Selector("headerReferenceSize")
     @ByValue
@@ -202,111 +190,59 @@ public class UICollectionViewFlowLayout extends UICollectionViewLayout {
     @Selector("init")
     public native UICollectionViewFlowLayout init();
 
-    /**
-     * itemSize</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UICollectionViewFlowLayout_class/index.html#//apple_ref/occ/instp/UICollectionViewFlowLayout/itemSize">iOS Dev Center</a>
-     */
     @Generated
     @Selector("itemSize")
     @ByValue
     public native CGSize itemSize();
 
-    /**
-     * minimumInteritemSpacing</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UICollectionViewFlowLayout_class/index.html#//apple_ref/occ/instp/UICollectionViewFlowLayout/minimumInteritemSpacing">iOS Dev Center</a>
-     */
     @Generated
     @Selector("minimumInteritemSpacing")
     @NFloat
     public native double minimumInteritemSpacing();
 
-    /**
-     * minimumLineSpacing</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UICollectionViewFlowLayout_class/index.html#//apple_ref/occ/instp/UICollectionViewFlowLayout/minimumLineSpacing">iOS Dev Center</a>
-     */
     @Generated
     @Selector("minimumLineSpacing")
     @NFloat
     public native double minimumLineSpacing();
 
-    /**
-     * scrollDirection</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UICollectionViewFlowLayout_class/index.html#//apple_ref/occ/instp/UICollectionViewFlowLayout/scrollDirection">iOS Dev Center</a>
-     */
     @Generated
     @Selector("scrollDirection")
     @NInt
     public native long scrollDirection();
 
-    /**
-     * sectionInset</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UICollectionViewFlowLayout_class/index.html#//apple_ref/occ/instp/UICollectionViewFlowLayout/sectionInset">iOS Dev Center</a>
-     */
     @Generated
     @Selector("sectionInset")
     @ByValue
     public native UIEdgeInsets sectionInset();
 
-    /**
-     * estimatedItemSize</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UICollectionViewFlowLayout_class/index.html#//apple_ref/occ/instp/UICollectionViewFlowLayout/estimatedItemSize">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setEstimatedItemSize:")
     public native void setEstimatedItemSize(@ByValue CGSize value);
 
-    /**
-     * footerReferenceSize</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UICollectionViewFlowLayout_class/index.html#//apple_ref/occ/instp/UICollectionViewFlowLayout/footerReferenceSize">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setFooterReferenceSize:")
     public native void setFooterReferenceSize(@ByValue CGSize value);
 
-    /**
-     * headerReferenceSize</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UICollectionViewFlowLayout_class/index.html#//apple_ref/occ/instp/UICollectionViewFlowLayout/headerReferenceSize">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setHeaderReferenceSize:")
     public native void setHeaderReferenceSize(@ByValue CGSize value);
 
-    /**
-     * itemSize</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UICollectionViewFlowLayout_class/index.html#//apple_ref/occ/instp/UICollectionViewFlowLayout/itemSize">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setItemSize:")
     public native void setItemSize(@ByValue CGSize value);
 
-    /**
-     * minimumInteritemSpacing</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UICollectionViewFlowLayout_class/index.html#//apple_ref/occ/instp/UICollectionViewFlowLayout/minimumInteritemSpacing">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setMinimumInteritemSpacing:")
     public native void setMinimumInteritemSpacing(@NFloat double value);
 
-    /**
-     * minimumLineSpacing</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UICollectionViewFlowLayout_class/index.html#//apple_ref/occ/instp/UICollectionViewFlowLayout/minimumLineSpacing">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setMinimumLineSpacing:")
     public native void setMinimumLineSpacing(@NFloat double value);
 
-    /**
-     * scrollDirection</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UICollectionViewFlowLayout_class/index.html#//apple_ref/occ/instp/UICollectionViewFlowLayout/scrollDirection">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setScrollDirection:")
     public native void setScrollDirection(@NInt long value);
 
-    /**
-     * sectionInset</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UICollectionViewFlowLayout_class/index.html#//apple_ref/occ/instp/UICollectionViewFlowLayout/sectionInset">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setSectionInset:")
     public native void setSectionInset(@ByValue UIEdgeInsets value);
@@ -315,34 +251,18 @@ public class UICollectionViewFlowLayout extends UICollectionViewLayout {
     @Selector("initWithCoder:")
     public native UICollectionViewFlowLayout initWithCoder(NSCoder aDecoder);
 
-    /**
-     * sectionFootersPinToVisibleBounds</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UICollectionViewFlowLayout_class/index.html#//apple_ref/occ/instp/UICollectionViewFlowLayout/sectionFootersPinToVisibleBounds">iOS Dev Center</a>
-     */
     @Generated
     @Selector("sectionFootersPinToVisibleBounds")
     public native boolean sectionFootersPinToVisibleBounds();
 
-    /**
-     * sectionHeadersPinToVisibleBounds</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UICollectionViewFlowLayout_class/index.html#//apple_ref/occ/instp/UICollectionViewFlowLayout/sectionHeadersPinToVisibleBounds">iOS Dev Center</a>
-     */
     @Generated
     @Selector("sectionHeadersPinToVisibleBounds")
     public native boolean sectionHeadersPinToVisibleBounds();
 
-    /**
-     * sectionFootersPinToVisibleBounds</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UICollectionViewFlowLayout_class/index.html#//apple_ref/occ/instp/UICollectionViewFlowLayout/sectionFootersPinToVisibleBounds">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setSectionFootersPinToVisibleBounds:")
     public native void setSectionFootersPinToVisibleBounds(boolean value);
 
-    /**
-     * sectionHeadersPinToVisibleBounds</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UICollectionViewFlowLayout_class/index.html#//apple_ref/occ/instp/UICollectionViewFlowLayout/sectionHeadersPinToVisibleBounds">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setSectionHeadersPinToVisibleBounds:")
     public native void setSectionHeadersPinToVisibleBounds(boolean value);

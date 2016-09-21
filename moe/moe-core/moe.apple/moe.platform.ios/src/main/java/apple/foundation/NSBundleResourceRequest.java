@@ -157,36 +157,20 @@ public class NSBundleResourceRequest extends NSObject implements NSProgressRepor
     @NInt
     public static native long version_static();
 
-    /**
-     * beginAccessingResourcesWithCompletionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSBundleResourceRequest_Class/index.html#//apple_ref/occ/instm/NSBundleResourceRequest/beginAccessingResourcesWithCompletionHandler:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("beginAccessingResourcesWithCompletionHandler:")
     public native void beginAccessingResourcesWithCompletionHandler(
             @ObjCBlock(name = "call_beginAccessingResourcesWithCompletionHandler") Block_beginAccessingResourcesWithCompletionHandler completionHandler);
 
-    /**
-     * bundle</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSBundleResourceRequest_Class/index.html#//apple_ref/occ/instp/NSBundleResourceRequest/bundle">iOS Dev Center</a>
-     */
     @Generated
     @Selector("bundle")
     public native NSBundle bundle();
 
-    /**
-     * conditionallyBeginAccessingResourcesWithCompletionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSBundleResourceRequest_Class/index.html#//apple_ref/occ/instm/NSBundleResourceRequest/conditionallyBeginAccessingResourcesWithCompletionHandler:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("conditionallyBeginAccessingResourcesWithCompletionHandler:")
     public native void conditionallyBeginAccessingResourcesWithCompletionHandler(
             @ObjCBlock(name = "call_conditionallyBeginAccessingResourcesWithCompletionHandler") Block_conditionallyBeginAccessingResourcesWithCompletionHandler completionHandler);
 
-    /**
-     * endAccessingResources</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSBundleResourceRequest_Class/index.html#//apple_ref/occ/instm/NSBundleResourceRequest/endAccessingResources">iOS Dev Center</a>
-     */
     @Generated
     @Selector("endAccessingResources")
     public native void endAccessingResources();
@@ -195,26 +179,14 @@ public class NSBundleResourceRequest extends NSObject implements NSProgressRepor
     @Selector("init")
     public native NSBundleResourceRequest init();
 
-    /**
-     * initWithTags:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSBundleResourceRequest_Class/index.html#//apple_ref/occ/instm/NSBundleResourceRequest/initWithTags:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithTags:")
     public native NSBundleResourceRequest initWithTags(NSSet<String> tags);
 
-    /**
-     * initWithTags:bundle:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSBundleResourceRequest_Class/index.html#//apple_ref/occ/instm/NSBundleResourceRequest/initWithTags:bundle:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithTags:bundle:")
     public native NSBundleResourceRequest initWithTagsBundle(NSSet<String> tags, NSBundle bundle);
 
-    /**
-     * loadingPriority</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSBundleResourceRequest_Class/index.html#//apple_ref/occ/instp/NSBundleResourceRequest/loadingPriority">iOS Dev Center</a>
-     */
     @Generated
     @Selector("loadingPriority")
     public native double loadingPriority();
@@ -223,18 +195,10 @@ public class NSBundleResourceRequest extends NSObject implements NSProgressRepor
     @Selector("progress")
     public native NSProgress progress();
 
-    /**
-     * loadingPriority</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSBundleResourceRequest_Class/index.html#//apple_ref/occ/instp/NSBundleResourceRequest/loadingPriority">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setLoadingPriority:")
     public native void setLoadingPriority(double value);
 
-    /**
-     * tags</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSBundleResourceRequest_Class/index.html#//apple_ref/occ/instp/NSBundleResourceRequest/tags">iOS Dev Center</a>
-     */
     @Generated
     @Selector("tags")
     public native NSSet<String> tags();

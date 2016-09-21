@@ -60,26 +60,14 @@ public class UIApplicationShortcutIcon extends NSObject implements NSCopying {
     @Selector("alloc")
     public static native UIApplicationShortcutIcon alloc();
 
-    /**
-     * iconWithContact:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIApplicationShortcutIcon_Class/index.html#//apple_ref/occ/clm/UIApplicationShortcutIcon/iconWithContact:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("iconWithContact:")
     public static native UIApplicationShortcutIcon iconWithContact(CNContact contact);
 
-    /**
-     * iconWithTemplateImageName:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIApplicationShortcutIcon_Class/index.html#//apple_ref/occ/clm/UIApplicationShortcutIcon/iconWithTemplateImageName:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("iconWithTemplateImageName:")
     public static native UIApplicationShortcutIcon iconWithTemplateImageName(String templateImageName);
 
-    /**
-     * iconWithType:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIApplicationShortcutIcon_Class/index.html#//apple_ref/occ/clm/UIApplicationShortcutIcon/iconWithType:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("iconWithType:")
     public static native UIApplicationShortcutIcon iconWithType(@NInt long type);

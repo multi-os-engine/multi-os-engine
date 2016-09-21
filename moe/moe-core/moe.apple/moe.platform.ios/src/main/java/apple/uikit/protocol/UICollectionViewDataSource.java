@@ -34,27 +34,15 @@ import org.moe.natj.objc.ann.Selector;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("UICollectionViewDataSource")
 public interface UICollectionViewDataSource {
-    /**
-     * collectionView:cellForItemAtIndexPath:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UICollectionViewDataSource_protocol/index.html#//apple_ref/occ/intfm/UICollectionViewDataSource/collectionView:cellForItemAtIndexPath:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("collectionView:cellForItemAtIndexPath:")
     UICollectionViewCell collectionViewCellForItemAtIndexPath(UICollectionView collectionView, NSIndexPath indexPath);
 
-    /**
-     * collectionView:numberOfItemsInSection:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UICollectionViewDataSource_protocol/index.html#//apple_ref/occ/intfm/UICollectionViewDataSource/collectionView:numberOfItemsInSection:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("collectionView:numberOfItemsInSection:")
     @NInt
     long collectionViewNumberOfItemsInSection(UICollectionView collectionView, @NInt long section);
 
-    /**
-     * collectionView:viewForSupplementaryElementOfKind:atIndexPath:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UICollectionViewDataSource_protocol/index.html#//apple_ref/occ/intfm/UICollectionViewDataSource/collectionView:viewForSupplementaryElementOfKind:atIndexPath:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("collectionView:viewForSupplementaryElementOfKind:atIndexPath:")
@@ -63,10 +51,6 @@ public interface UICollectionViewDataSource {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * numberOfSectionsInCollectionView:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UICollectionViewDataSource_protocol/index.html#//apple_ref/occ/intfm/UICollectionViewDataSource/numberOfSectionsInCollectionView:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("numberOfSectionsInCollectionView:")
@@ -75,10 +59,6 @@ public interface UICollectionViewDataSource {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * collectionView:canMoveItemAtIndexPath:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UICollectionViewDataSource_protocol/index.html#//apple_ref/occ/intfm/UICollectionViewDataSource/collectionView:canMoveItemAtIndexPath:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("collectionView:canMoveItemAtIndexPath:")
@@ -86,10 +66,6 @@ public interface UICollectionViewDataSource {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * collectionView:moveItemAtIndexPath:toIndexPath:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UICollectionViewDataSource_protocol/index.html#//apple_ref/occ/intfm/UICollectionViewDataSource/collectionView:moveItemAtIndexPath:toIndexPath:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("collectionView:moveItemAtIndexPath:toIndexPath:")

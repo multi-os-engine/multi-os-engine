@@ -60,18 +60,10 @@ public class CKContainer extends NSObject {
     @Selector("alloc")
     public static native CKContainer alloc();
 
-    /**
-     * containerWithIdentifier:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKContainer_class/index.html#//apple_ref/occ/clm/CKContainer/containerWithIdentifier:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("containerWithIdentifier:")
     public static native CKContainer containerWithIdentifier(String containerIdentifier);
 
-    /**
-     * defaultContainer</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKContainer_class/index.html#//apple_ref/occ/clm/CKContainer/defaultContainer">iOS Dev Center</a>
-     */
     @Generated
     @Selector("defaultContainer")
     public static native CKContainer defaultContainer();
@@ -176,62 +168,34 @@ public class CKContainer extends NSObject {
     @NInt
     public static native long version_static();
 
-    /**
-     * accountStatusWithCompletionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKContainer_class/index.html#//apple_ref/occ/instm/CKContainer/accountStatusWithCompletionHandler:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("accountStatusWithCompletionHandler:")
     public native void accountStatusWithCompletionHandler(
             @ObjCBlock(name = "call_accountStatusWithCompletionHandler") Block_accountStatusWithCompletionHandler completionHandler);
 
-    /**
-     * addOperation:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKContainer_class/index.html#//apple_ref/occ/instm/CKContainer/addOperation:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("addOperation:")
     public native void addOperation(CKOperation operation);
 
-    /**
-     * containerIdentifier</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKContainer_class/index.html#//apple_ref/occ/instp/CKContainer/containerIdentifier">iOS Dev Center</a>
-     */
     @Generated
     @Selector("containerIdentifier")
     public native String containerIdentifier();
 
-    /**
-     * discoverAllContactUserInfosWithCompletionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKContainer_class/index.html#//apple_ref/occ/instm/CKContainer/discoverAllContactUserInfosWithCompletionHandler:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("discoverAllContactUserInfosWithCompletionHandler:")
     public native void discoverAllContactUserInfosWithCompletionHandler(
             @ObjCBlock(name = "call_discoverAllContactUserInfosWithCompletionHandler") Block_discoverAllContactUserInfosWithCompletionHandler completionHandler);
 
-    /**
-     * discoverUserInfoWithEmailAddress:completionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKContainer_class/index.html#//apple_ref/occ/instm/CKContainer/discoverUserInfoWithEmailAddress:completionHandler:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("discoverUserInfoWithEmailAddress:completionHandler:")
     public native void discoverUserInfoWithEmailAddressCompletionHandler(String email,
             @ObjCBlock(name = "call_discoverUserInfoWithEmailAddressCompletionHandler") Block_discoverUserInfoWithEmailAddressCompletionHandler completionHandler);
 
-    /**
-     * discoverUserInfoWithUserRecordID:completionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKContainer_class/index.html#//apple_ref/occ/instm/CKContainer/discoverUserInfoWithUserRecordID:completionHandler:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("discoverUserInfoWithUserRecordID:completionHandler:")
     public native void discoverUserInfoWithUserRecordIDCompletionHandler(CKRecordID userRecordID,
             @ObjCBlock(name = "call_discoverUserInfoWithUserRecordIDCompletionHandler") Block_discoverUserInfoWithUserRecordIDCompletionHandler completionHandler);
 
-    /**
-     * fetchUserRecordIDWithCompletionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKContainer_class/index.html#//apple_ref/occ/instm/CKContainer/fetchUserRecordIDWithCompletionHandler:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("fetchUserRecordIDWithCompletionHandler:")
     public native void fetchUserRecordIDWithCompletionHandler(
@@ -241,53 +205,29 @@ public class CKContainer extends NSObject {
     @Selector("init")
     public native CKContainer init();
 
-    /**
-     * privateCloudDatabase</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKContainer_class/index.html#//apple_ref/occ/instp/CKContainer/privateCloudDatabase">iOS Dev Center</a>
-     */
     @Generated
     @Selector("privateCloudDatabase")
     public native CKDatabase privateCloudDatabase();
 
-    /**
-     * publicCloudDatabase</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKContainer_class/index.html#//apple_ref/occ/instp/CKContainer/publicCloudDatabase">iOS Dev Center</a>
-     */
     @Generated
     @Selector("publicCloudDatabase")
     public native CKDatabase publicCloudDatabase();
 
-    /**
-     * requestApplicationPermission:completionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKContainer_class/index.html#//apple_ref/occ/instm/CKContainer/requestApplicationPermission:completionHandler:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("requestApplicationPermission:completionHandler:")
     public native void requestApplicationPermissionCompletionHandler(@NUInt long applicationPermission,
             @ObjCBlock(name = "call_requestApplicationPermissionCompletionHandler") Block_requestApplicationPermissionCompletionHandler completionHandler);
 
-    /**
-     * statusForApplicationPermission:completionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKContainer_class/index.html#//apple_ref/occ/instm/CKContainer/statusForApplicationPermission:completionHandler:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("statusForApplicationPermission:completionHandler:")
     public native void statusForApplicationPermissionCompletionHandler(@NUInt long applicationPermission,
             @ObjCBlock(name = "call_statusForApplicationPermissionCompletionHandler") Block_statusForApplicationPermissionCompletionHandler completionHandler);
 
-    /**
-     * fetchAllLongLivedOperationIDsWithCompletionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKContainer_class/index.html#//apple_ref/occ/instm/CKContainer/fetchAllLongLivedOperationIDsWithCompletionHandler:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("fetchAllLongLivedOperationIDsWithCompletionHandler:")
     public native void fetchAllLongLivedOperationIDsWithCompletionHandler(
             @ObjCBlock(name = "call_fetchAllLongLivedOperationIDsWithCompletionHandler") Block_fetchAllLongLivedOperationIDsWithCompletionHandler completionHandler);
 
-    /**
-     * fetchLongLivedOperationWithID:completionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKContainer_class/index.html#//apple_ref/occ/instm/CKContainer/fetchLongLivedOperationWithID:completionHandler:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("fetchLongLivedOperationWithID:completionHandler:")
     public native void fetchLongLivedOperationWithIDCompletionHandler(String operationID,

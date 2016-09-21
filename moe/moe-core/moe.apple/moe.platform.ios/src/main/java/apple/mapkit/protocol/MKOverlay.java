@@ -32,19 +32,11 @@ import org.moe.natj.objc.ann.Selector;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("MKOverlay")
 public interface MKOverlay extends MKAnnotation {
-    /**
-     * boundingMapRect</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKOverlay_protocol/index.html#//apple_ref/occ/intfp/MKOverlay/boundingMapRect">iOS Dev Center</a>
-     */
     @Generated
     @Selector("boundingMapRect")
     @ByValue
     MKMapRect boundingMapRect();
 
-    /**
-     * canReplaceMapContent</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKOverlay_protocol/index.html#//apple_ref/occ/intfm/MKOverlay/canReplaceMapContent">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("canReplaceMapContent")
@@ -52,19 +44,11 @@ public interface MKOverlay extends MKAnnotation {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * coordinate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKOverlay_protocol/index.html#//apple_ref/occ/intfp/MKOverlay/coordinate">iOS Dev Center</a>
-     */
     @Generated
     @Selector("coordinate")
     @ByValue
     CLLocationCoordinate2D coordinate();
 
-    /**
-     * intersectsMapRect:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKOverlay_protocol/index.html#//apple_ref/occ/intfm/MKOverlay/intersectsMapRect:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("intersectsMapRect:")

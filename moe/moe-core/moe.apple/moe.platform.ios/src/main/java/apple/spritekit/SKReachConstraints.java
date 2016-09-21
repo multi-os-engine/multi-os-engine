@@ -173,44 +173,24 @@ public class SKReachConstraints extends NSObject implements NSCoding {
     @Selector("initWithCoder:")
     public native SKReachConstraints initWithCoder(NSCoder aDecoder);
 
-    /**
-     * initWithLowerAngleLimit:upperAngleLimit:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKReachConstraints_Ref/index.html#//apple_ref/occ/instm/SKReachConstraints/initWithLowerAngleLimit:upperAngleLimit:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithLowerAngleLimit:upperAngleLimit:")
     public native SKReachConstraints initWithLowerAngleLimitUpperAngleLimit(@NFloat double lowerAngleLimit,
             @NFloat double upperAngleLimit);
 
-    /**
-     * lowerAngleLimit</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKReachConstraints_Ref/index.html#//apple_ref/occ/instp/SKReachConstraints/lowerAngleLimit">iOS Dev Center</a>
-     */
     @Generated
     @Selector("lowerAngleLimit")
     @NFloat
     public native double lowerAngleLimit();
 
-    /**
-     * lowerAngleLimit</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKReachConstraints_Ref/index.html#//apple_ref/occ/instp/SKReachConstraints/lowerAngleLimit">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setLowerAngleLimit:")
     public native void setLowerAngleLimit(@NFloat double value);
 
-    /**
-     * upperAngleLimit</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKReachConstraints_Ref/index.html#//apple_ref/occ/instp/SKReachConstraints/upperAngleLimit">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setUpperAngleLimit:")
     public native void setUpperAngleLimit(@NFloat double value);
 
-    /**
-     * upperAngleLimit</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKReachConstraints_Ref/index.html#//apple_ref/occ/instp/SKReachConstraints/upperAngleLimit">iOS Dev Center</a>
-     */
     @Generated
     @Selector("upperAngleLimit")
     @NFloat

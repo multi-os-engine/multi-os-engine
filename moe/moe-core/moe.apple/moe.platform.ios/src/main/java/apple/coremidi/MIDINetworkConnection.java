@@ -58,10 +58,6 @@ public class MIDINetworkConnection extends NSObject {
     @Selector("alloc")
     public static native MIDINetworkConnection alloc();
 
-    /**
-     * connectionWithHost:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMidi/Reference/MIDINetworkConnection_ClassReference/index.html#//apple_ref/occ/clm/MIDINetworkConnection/connectionWithHost:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("connectionWithHost:")
     public static native MIDINetworkConnection connectionWithHost(MIDINetworkHost host);
@@ -166,10 +162,6 @@ public class MIDINetworkConnection extends NSObject {
     @NInt
     public static native long version_static();
 
-    /**
-     * host</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMidi/Reference/MIDINetworkConnection_ClassReference/index.html#//apple_ref/occ/instp/MIDINetworkConnection/host">iOS Dev Center</a>
-     */
     @Generated
     @Selector("host")
     public native MIDINetworkHost host();

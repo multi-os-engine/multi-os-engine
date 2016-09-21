@@ -161,18 +161,10 @@ public class SKPaymentTransaction extends NSObject {
     @NInt
     public static native long version();
 
-    /**
-     * downloads</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/StoreKit/Reference/SKPaymentTransaction_Class/index.html#//apple_ref/occ/instp/SKPaymentTransaction/downloads">iOS Dev Center</a>
-     */
     @Generated
     @Selector("downloads")
     public native NSArray<? extends SKDownload> downloads();
 
-    /**
-     * error</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/StoreKit/Reference/SKPaymentTransaction_Class/index.html#//apple_ref/occ/instp/SKPaymentTransaction/error">iOS Dev Center</a>
-     */
     @Generated
     @Selector("error")
     public native NSError error();
@@ -181,51 +173,27 @@ public class SKPaymentTransaction extends NSObject {
     @Selector("init")
     public native SKPaymentTransaction init();
 
-    /**
-     * originalTransaction</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/StoreKit/Reference/SKPaymentTransaction_Class/index.html#//apple_ref/occ/instp/SKPaymentTransaction/originalTransaction">iOS Dev Center</a>
-     */
     @Generated
     @Selector("originalTransaction")
     public native SKPaymentTransaction originalTransaction();
 
-    /**
-     * payment</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/StoreKit/Reference/SKPaymentTransaction_Class/index.html#//apple_ref/occ/instp/SKPaymentTransaction/payment">iOS Dev Center</a>
-     */
     @Generated
     @Selector("payment")
     public native SKPayment payment();
 
-    /**
-     * transactionDate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/StoreKit/Reference/SKPaymentTransaction_Class/index.html#//apple_ref/occ/instp/SKPaymentTransaction/transactionDate">iOS Dev Center</a>
-     */
     @Generated
     @Selector("transactionDate")
     public native NSDate transactionDate();
 
-    /**
-     * transactionIdentifier</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/StoreKit/Reference/SKPaymentTransaction_Class/index.html#//apple_ref/occ/instp/SKPaymentTransaction/transactionIdentifier">iOS Dev Center</a>
-     */
     @Generated
     @Selector("transactionIdentifier")
     public native String transactionIdentifier();
 
-    /**
-     * transactionReceipt</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/StoreKit/Reference/SKPaymentTransaction_Class/index.html#//apple_ref/occ/instp/SKPaymentTransaction/transactionReceipt">iOS Dev Center</a>
-     */
     @Generated
     @Deprecated
     @Selector("transactionReceipt")
     public native NSData transactionReceipt();
 
-    /**
-     * transactionState</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/StoreKit/Reference/SKPaymentTransaction_Class/index.html#//apple_ref/occ/instp/SKPaymentTransaction/transactionState">iOS Dev Center</a>
-     */
     @Generated
     @Selector("transactionState")
     @NInt

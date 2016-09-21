@@ -64,10 +64,6 @@ public class PKAddPassButton extends UIButton {
         super(peer);
     }
 
-    /**
-     * addPassButtonWithStyle:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/PassKit/Reference/PKAddPassButton_Class/index.html#//apple_ref/occ/clm/PKAddPassButton/addPassButtonWithStyle:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("addPassButtonWithStyle:")
     public static native PKAddPassButton addPassButtonWithStyle(@NInt long addPassButtonStyle);
@@ -362,10 +358,6 @@ public class PKAddPassButton extends UIButton {
     @NInt
     public static native long version_static();
 
-    /**
-     * addPassButtonStyle</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/PassKit/Reference/PKAddPassButton_Class/index.html#//apple_ref/occ/instp/PKAddPassButton/addPassButtonStyle">iOS Dev Center</a>
-     */
     @Generated
     @Selector("addPassButtonStyle")
     @NInt
@@ -375,10 +367,6 @@ public class PKAddPassButton extends UIButton {
     @Selector("init")
     public native PKAddPassButton init();
 
-    /**
-     * initWithAddPassButtonStyle:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/PassKit/Reference/PKAddPassButton_Class/index.html#//apple_ref/occ/instm/PKAddPassButton/initWithAddPassButtonStyle:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithAddPassButtonStyle:")
     public native PKAddPassButton initWithAddPassButtonStyle(@NInt long style);
@@ -391,10 +379,6 @@ public class PKAddPassButton extends UIButton {
     @Selector("initWithFrame:")
     public native PKAddPassButton initWithFrame(@ByValue CGRect frame);
 
-    /**
-     * addPassButtonStyle</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/PassKit/Reference/PKAddPassButton_Class/index.html#//apple_ref/occ/instp/PKAddPassButton/addPassButtonStyle">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setAddPassButtonStyle:")
     public native void setAddPassButtonStyle(@NInt long value);

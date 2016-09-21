@@ -164,44 +164,24 @@ public class CKMarkNotificationsReadOperation extends CKOperation {
     @Selector("init")
     public native CKMarkNotificationsReadOperation init();
 
-    /**
-     * initWithNotificationIDsToMarkRead:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKMarkNotificationsReadOperation_class/index.html#//apple_ref/occ/instm/CKMarkNotificationsReadOperation/initWithNotificationIDsToMarkRead:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithNotificationIDsToMarkRead:")
     public native CKMarkNotificationsReadOperation initWithNotificationIDsToMarkRead(
             NSArray<? extends CKNotificationID> notificationIDs);
 
-    /**
-     * notificationIDs</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKMarkNotificationsReadOperation_class/index.html#//apple_ref/occ/instp/CKMarkNotificationsReadOperation/notificationIDs">iOS Dev Center</a>
-     */
     @Generated
     @Selector("notificationIDs")
     public native NSArray<? extends CKNotificationID> notificationIDs();
 
-    /**
-     * markNotificationsReadCompletionBlock</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKMarkNotificationsReadOperation_class/index.html#//apple_ref/occ/instp/CKMarkNotificationsReadOperation/markNotificationsReadCompletionBlock">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setMarkNotificationsReadCompletionBlock:")
     public native void setMarkNotificationsReadCompletionBlock(
             @ObjCBlock(name = "call_setMarkNotificationsReadCompletionBlock") Block_setMarkNotificationsReadCompletionBlock value);
 
-    /**
-     * notificationIDs</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKMarkNotificationsReadOperation_class/index.html#//apple_ref/occ/instp/CKMarkNotificationsReadOperation/notificationIDs">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setNotificationIDs:")
     public native void setNotificationIDs(NSArray<? extends CKNotificationID> value);
 
-    /**
-     * markNotificationsReadCompletionBlock</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKMarkNotificationsReadOperation_class/index.html#//apple_ref/occ/instp/CKMarkNotificationsReadOperation/markNotificationsReadCompletionBlock">iOS Dev Center</a>
-     */
     @Generated
     @Selector("markNotificationsReadCompletionBlock")
     @ObjCBlock(name = "call_markNotificationsReadCompletionBlock_ret")

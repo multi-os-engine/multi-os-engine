@@ -162,35 +162,19 @@ public class UIPopoverPresentationController extends UIPresentationController {
     @NInt
     public static native long version_static();
 
-    /**
-     * arrowDirection</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPopoverPresentationController_class/index.html#//apple_ref/occ/instp/UIPopoverPresentationController/arrowDirection">iOS Dev Center</a>
-     */
     @Generated
     @Selector("arrowDirection")
     @NUInt
     public native long arrowDirection();
 
-    /**
-     * backgroundColor</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPopoverPresentationController_class/index.html#//apple_ref/occ/instp/UIPopoverPresentationController/backgroundColor">iOS Dev Center</a>
-     */
     @Generated
     @Selector("backgroundColor")
     public native UIColor backgroundColor();
 
-    /**
-     * barButtonItem</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPopoverPresentationController_class/index.html#//apple_ref/occ/instp/UIPopoverPresentationController/barButtonItem">iOS Dev Center</a>
-     */
     @Generated
     @Selector("barButtonItem")
     public native UIBarButtonItem barButtonItem();
 
-    /**
-     * delegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPopoverPresentationController_class/index.html#//apple_ref/occ/instp/UIPopoverPresentationController/delegate">iOS Dev Center</a>
-     */
     @Generated
     @Selector("delegate")
     @MappedReturn(ObjCObjectMapper.class)
@@ -205,69 +189,37 @@ public class UIPopoverPresentationController extends UIPresentationController {
     public native UIPopoverPresentationController initWithPresentedViewControllerPresentingViewController(
             UIViewController presentedViewController, UIViewController presentingViewController);
 
-    /**
-     * passthroughViews</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPopoverPresentationController_class/index.html#//apple_ref/occ/instp/UIPopoverPresentationController/passthroughViews">iOS Dev Center</a>
-     */
     @Generated
     @Selector("passthroughViews")
     public native NSArray<? extends UIView> passthroughViews();
 
-    /**
-     * permittedArrowDirections</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPopoverPresentationController_class/index.html#//apple_ref/occ/instp/UIPopoverPresentationController/permittedArrowDirections">iOS Dev Center</a>
-     */
     @Generated
     @Selector("permittedArrowDirections")
     @NUInt
     public native long permittedArrowDirections();
 
-    /**
-     * popoverBackgroundViewClass</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPopoverPresentationController_class/index.html#//apple_ref/occ/instp/UIPopoverPresentationController/popoverBackgroundViewClass">iOS Dev Center</a>
-     */
     @Generated
     @Selector("popoverBackgroundViewClass")
     @MappedReturn(ObjCObjectMapper.class)
     public native UIPopoverBackgroundViewMethods popoverBackgroundViewClass();
 
-    /**
-     * popoverLayoutMargins</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPopoverPresentationController_class/index.html#//apple_ref/occ/instp/UIPopoverPresentationController/popoverLayoutMargins">iOS Dev Center</a>
-     */
     @Generated
     @Selector("popoverLayoutMargins")
     @ByValue
     public native UIEdgeInsets popoverLayoutMargins();
 
-    /**
-     * backgroundColor</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPopoverPresentationController_class/index.html#//apple_ref/occ/instp/UIPopoverPresentationController/backgroundColor">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setBackgroundColor:")
     public native void setBackgroundColor(UIColor value);
 
-    /**
-     * barButtonItem</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPopoverPresentationController_class/index.html#//apple_ref/occ/instp/UIPopoverPresentationController/barButtonItem">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setBarButtonItem:")
     public native void setBarButtonItem(UIBarButtonItem value);
 
-    /**
-     * delegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPopoverPresentationController_class/index.html#//apple_ref/occ/instp/UIPopoverPresentationController/delegate">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setDelegate:")
     public native void setDelegate_unsafe(@Mapped(ObjCObjectMapper.class) Object value);
 
-    /**
-     * delegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPopoverPresentationController_class/index.html#//apple_ref/occ/instp/UIPopoverPresentationController/delegate">iOS Dev Center</a>
-     */
     @Generated
     public void setDelegate(@Mapped(ObjCObjectMapper.class) Object value) {
         Object __old = delegate();
@@ -280,68 +232,36 @@ public class UIPopoverPresentationController extends UIPresentationController {
         }
     }
 
-    /**
-     * passthroughViews</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPopoverPresentationController_class/index.html#//apple_ref/occ/instp/UIPopoverPresentationController/passthroughViews">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setPassthroughViews:")
     public native void setPassthroughViews(NSArray<? extends UIView> value);
 
-    /**
-     * permittedArrowDirections</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPopoverPresentationController_class/index.html#//apple_ref/occ/instp/UIPopoverPresentationController/permittedArrowDirections">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setPermittedArrowDirections:")
     public native void setPermittedArrowDirections(@NUInt long value);
 
-    /**
-     * popoverBackgroundViewClass</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPopoverPresentationController_class/index.html#//apple_ref/occ/instp/UIPopoverPresentationController/popoverBackgroundViewClass">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setPopoverBackgroundViewClass:")
     public native void setPopoverBackgroundViewClass(
             @Mapped(ObjCObjectMapper.class) UIPopoverBackgroundViewMethods value);
 
-    /**
-     * popoverLayoutMargins</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPopoverPresentationController_class/index.html#//apple_ref/occ/instp/UIPopoverPresentationController/popoverLayoutMargins">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setPopoverLayoutMargins:")
     public native void setPopoverLayoutMargins(@ByValue UIEdgeInsets value);
 
-    /**
-     * sourceRect</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPopoverPresentationController_class/index.html#//apple_ref/occ/instp/UIPopoverPresentationController/sourceRect">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setSourceRect:")
     public native void setSourceRect(@ByValue CGRect value);
 
-    /**
-     * sourceView</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPopoverPresentationController_class/index.html#//apple_ref/occ/instp/UIPopoverPresentationController/sourceView">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setSourceView:")
     public native void setSourceView(UIView value);
 
-    /**
-     * sourceRect</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPopoverPresentationController_class/index.html#//apple_ref/occ/instp/UIPopoverPresentationController/sourceRect">iOS Dev Center</a>
-     */
     @Generated
     @Selector("sourceRect")
     @ByValue
     public native CGRect sourceRect();
 
-    /**
-     * sourceView</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPopoverPresentationController_class/index.html#//apple_ref/occ/instp/UIPopoverPresentationController/sourceView">iOS Dev Center</a>
-     */
     @Generated
     @Selector("sourceView")
     public native UIView sourceView();

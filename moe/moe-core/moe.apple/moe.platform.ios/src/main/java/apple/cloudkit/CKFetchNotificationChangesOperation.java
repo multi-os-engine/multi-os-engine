@@ -164,87 +164,47 @@ public class CKFetchNotificationChangesOperation extends CKOperation {
     @Selector("init")
     public native CKFetchNotificationChangesOperation init();
 
-    /**
-     * initWithPreviousServerChangeToken:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKFetchNotificationChangesOperation_class/index.html#//apple_ref/occ/instm/CKFetchNotificationChangesOperation/initWithPreviousServerChangeToken:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithPreviousServerChangeToken:")
     public native CKFetchNotificationChangesOperation initWithPreviousServerChangeToken(
             CKServerChangeToken previousServerChangeToken);
 
-    /**
-     * moreComing</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKFetchNotificationChangesOperation_class/index.html#//apple_ref/occ/instp/CKFetchNotificationChangesOperation/moreComing">iOS Dev Center</a>
-     */
     @Generated
     @Selector("moreComing")
     public native boolean moreComing();
 
-    /**
-     * previousServerChangeToken</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKFetchNotificationChangesOperation_class/index.html#//apple_ref/occ/instp/CKFetchNotificationChangesOperation/previousServerChangeToken">iOS Dev Center</a>
-     */
     @Generated
     @Selector("previousServerChangeToken")
     public native CKServerChangeToken previousServerChangeToken();
 
-    /**
-     * resultsLimit</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKFetchNotificationChangesOperation_class/index.html#//apple_ref/occ/instp/CKFetchNotificationChangesOperation/resultsLimit">iOS Dev Center</a>
-     */
     @Generated
     @Selector("resultsLimit")
     @NUInt
     public native long resultsLimit();
 
-    /**
-     * fetchNotificationChangesCompletionBlock</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKFetchNotificationChangesOperation_class/index.html#//apple_ref/occ/instp/CKFetchNotificationChangesOperation/fetchNotificationChangesCompletionBlock">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setFetchNotificationChangesCompletionBlock:")
     public native void setFetchNotificationChangesCompletionBlock(
             @ObjCBlock(name = "call_setFetchNotificationChangesCompletionBlock") Block_setFetchNotificationChangesCompletionBlock value);
 
-    /**
-     * notificationChangedBlock</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKFetchNotificationChangesOperation_class/index.html#//apple_ref/occ/instp/CKFetchNotificationChangesOperation/notificationChangedBlock">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setNotificationChangedBlock:")
     public native void setNotificationChangedBlock(
             @ObjCBlock(name = "call_setNotificationChangedBlock") Block_setNotificationChangedBlock value);
 
-    /**
-     * previousServerChangeToken</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKFetchNotificationChangesOperation_class/index.html#//apple_ref/occ/instp/CKFetchNotificationChangesOperation/previousServerChangeToken">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setPreviousServerChangeToken:")
     public native void setPreviousServerChangeToken(CKServerChangeToken value);
 
-    /**
-     * resultsLimit</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKFetchNotificationChangesOperation_class/index.html#//apple_ref/occ/instp/CKFetchNotificationChangesOperation/resultsLimit">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setResultsLimit:")
     public native void setResultsLimit(@NUInt long value);
 
-    /**
-     * fetchNotificationChangesCompletionBlock</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKFetchNotificationChangesOperation_class/index.html#//apple_ref/occ/instp/CKFetchNotificationChangesOperation/fetchNotificationChangesCompletionBlock">iOS Dev Center</a>
-     */
     @Generated
     @Selector("fetchNotificationChangesCompletionBlock")
     @ObjCBlock(name = "call_fetchNotificationChangesCompletionBlock_ret")
     public native Block_fetchNotificationChangesCompletionBlock_ret fetchNotificationChangesCompletionBlock();
 
-    /**
-     * notificationChangedBlock</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKFetchNotificationChangesOperation_class/index.html#//apple_ref/occ/instp/CKFetchNotificationChangesOperation/notificationChangedBlock">iOS Dev Center</a>
-     */
     @Generated
     @Selector("notificationChangedBlock")
     @ObjCBlock(name = "call_notificationChangedBlock_ret")

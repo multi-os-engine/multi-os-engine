@@ -38,10 +38,6 @@ import org.moe.natj.objc.ann.Selector;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("WKNavigationDelegate")
 public interface WKNavigationDelegate {
-    /**
-     * webView:decidePolicyForNavigationAction:decisionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WebKit/Reference/WKNavigationDelegate_Ref/index.html#//apple_ref/occ/intfm/WKNavigationDelegate/webView:decidePolicyForNavigationAction:decisionHandler:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("webView:decidePolicyForNavigationAction:decisionHandler:")
@@ -51,10 +47,6 @@ public interface WKNavigationDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * webView:decidePolicyForNavigationResponse:decisionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WebKit/Reference/WKNavigationDelegate_Ref/index.html#//apple_ref/occ/intfm/WKNavigationDelegate/webView:decidePolicyForNavigationResponse:decisionHandler:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("webView:decidePolicyForNavigationResponse:decisionHandler:")
@@ -64,10 +56,6 @@ public interface WKNavigationDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * webView:didCommitNavigation:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WebKit/Reference/WKNavigationDelegate_Ref/index.html#//apple_ref/occ/intfm/WKNavigationDelegate/webView:didCommitNavigation:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("webView:didCommitNavigation:")
@@ -75,10 +63,6 @@ public interface WKNavigationDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * webView:didFailNavigation:withError:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WebKit/Reference/WKNavigationDelegate_Ref/index.html#//apple_ref/occ/intfm/WKNavigationDelegate/webView:didFailNavigation:withError:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("webView:didFailNavigation:withError:")
@@ -86,10 +70,6 @@ public interface WKNavigationDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * webView:didFailProvisionalNavigation:withError:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WebKit/Reference/WKNavigationDelegate_Ref/index.html#//apple_ref/occ/intfm/WKNavigationDelegate/webView:didFailProvisionalNavigation:withError:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("webView:didFailProvisionalNavigation:withError:")
@@ -98,10 +78,6 @@ public interface WKNavigationDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * webView:didFinishNavigation:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WebKit/Reference/WKNavigationDelegate_Ref/index.html#//apple_ref/occ/intfm/WKNavigationDelegate/webView:didFinishNavigation:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("webView:didFinishNavigation:")
@@ -109,10 +85,6 @@ public interface WKNavigationDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * webView:didReceiveAuthenticationChallenge:completionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WebKit/Reference/WKNavigationDelegate_Ref/index.html#//apple_ref/occ/intfm/WKNavigationDelegate/webView:didReceiveAuthenticationChallenge:completionHandler:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("webView:didReceiveAuthenticationChallenge:completionHandler:")
@@ -122,10 +94,6 @@ public interface WKNavigationDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * webView:didReceiveServerRedirectForProvisionalNavigation:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WebKit/Reference/WKNavigationDelegate_Ref/index.html#//apple_ref/occ/intfm/WKNavigationDelegate/webView:didReceiveServerRedirectForProvisionalNavigation:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("webView:didReceiveServerRedirectForProvisionalNavigation:")
@@ -133,10 +101,6 @@ public interface WKNavigationDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * webView:didStartProvisionalNavigation:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WebKit/Reference/WKNavigationDelegate_Ref/index.html#//apple_ref/occ/intfm/WKNavigationDelegate/webView:didStartProvisionalNavigation:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("webView:didStartProvisionalNavigation:")

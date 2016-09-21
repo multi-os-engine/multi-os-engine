@@ -40,10 +40,6 @@ public interface AVPictureInPictureControllerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * pictureInPictureController:restoreUserInterfaceForPictureInPictureStopWithCompletionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVKit/Reference/AVPictureInPictureControllerDelegate_Protocol/index.html#//apple_ref/occ/intfm/AVPictureInPictureControllerDelegate/pictureInPictureController:restoreUserInterfaceForPictureInPictureStopWithCompletionHandler:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("pictureInPictureController:restoreUserInterfaceForPictureInPictureStopWithCompletionHandler:")
@@ -53,10 +49,6 @@ public interface AVPictureInPictureControllerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * pictureInPictureControllerDidStartPictureInPicture:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVKit/Reference/AVPictureInPictureControllerDelegate_Protocol/index.html#//apple_ref/occ/intfm/AVPictureInPictureControllerDelegate/pictureInPictureControllerDidStartPictureInPicture:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("pictureInPictureControllerDidStartPictureInPicture:")
@@ -65,10 +57,6 @@ public interface AVPictureInPictureControllerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * pictureInPictureControllerDidStopPictureInPicture:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVKit/Reference/AVPictureInPictureControllerDelegate_Protocol/index.html#//apple_ref/occ/intfm/AVPictureInPictureControllerDelegate/pictureInPictureControllerDidStopPictureInPicture:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("pictureInPictureControllerDidStopPictureInPicture:")
@@ -77,10 +65,6 @@ public interface AVPictureInPictureControllerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * pictureInPictureControllerWillStartPictureInPicture:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVKit/Reference/AVPictureInPictureControllerDelegate_Protocol/index.html#//apple_ref/occ/intfm/AVPictureInPictureControllerDelegate/pictureInPictureControllerWillStartPictureInPicture:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("pictureInPictureControllerWillStartPictureInPicture:")
@@ -89,10 +73,6 @@ public interface AVPictureInPictureControllerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * pictureInPictureControllerWillStopPictureInPicture:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVKit/Reference/AVPictureInPictureControllerDelegate_Protocol/index.html#//apple_ref/occ/intfm/AVPictureInPictureControllerDelegate/pictureInPictureControllerWillStopPictureInPicture:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("pictureInPictureControllerWillStopPictureInPicture:")

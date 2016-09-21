@@ -162,10 +162,6 @@ public class CBMutableDescriptor extends CBDescriptor {
     @Selector("init")
     public native CBMutableDescriptor init();
 
-    /**
-     * initWithType:value:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreBluetooth/Reference/CBMutableDescriptor_Class/index.html#//apple_ref/occ/instm/CBMutableDescriptor/initWithType:value:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithType:value:")
     public native CBMutableDescriptor initWithTypeValue(CBUUID UUID, @Mapped(ObjCObjectMapper.class) Object value);

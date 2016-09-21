@@ -161,163 +161,83 @@ public class AVAudioEngine extends NSObject {
     @NInt
     public static native long version_static();
 
-    /**
-     * attachNode:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioEngine_Class/index.html#//apple_ref/occ/instm/AVAudioEngine/attachNode:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("attachNode:")
     public native void attachNode(AVAudioNode node);
 
-    /**
-     * connect:to:format:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioEngine_Class/index.html#//apple_ref/occ/instm/AVAudioEngine/connect:to:format:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("connect:to:format:")
     public native void connectToFormat(AVAudioNode node1, AVAudioNode node2, AVAudioFormat format);
 
-    /**
-     * connect:to:fromBus:toBus:format:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioEngine_Class/index.html#//apple_ref/occ/instm/AVAudioEngine/connect:to:fromBus:toBus:format:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("connect:to:fromBus:toBus:format:")
     public native void connectToFromBusToBusFormat(AVAudioNode node1, AVAudioNode node2, @NUInt long bus1,
             @NUInt long bus2, AVAudioFormat format);
 
-    /**
-     * detachNode:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioEngine_Class/index.html#//apple_ref/occ/instm/AVAudioEngine/detachNode:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("detachNode:")
     public native void detachNode(AVAudioNode node);
 
-    /**
-     * disconnectNodeInput:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioEngine_Class/index.html#//apple_ref/occ/instm/AVAudioEngine/disconnectNodeInput:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("disconnectNodeInput:")
     public native void disconnectNodeInput(AVAudioNode node);
 
-    /**
-     * disconnectNodeInput:bus:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioEngine_Class/index.html#//apple_ref/occ/instm/AVAudioEngine/disconnectNodeInput:bus:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("disconnectNodeInput:bus:")
     public native void disconnectNodeInputBus(AVAudioNode node, @NUInt long bus);
 
-    /**
-     * disconnectNodeOutput:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioEngine_Class/index.html#//apple_ref/occ/instm/AVAudioEngine/disconnectNodeOutput:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("disconnectNodeOutput:")
     public native void disconnectNodeOutput(AVAudioNode node);
 
-    /**
-     * disconnectNodeOutput:bus:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioEngine_Class/index.html#//apple_ref/occ/instm/AVAudioEngine/disconnectNodeOutput:bus:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("disconnectNodeOutput:bus:")
     public native void disconnectNodeOutputBus(AVAudioNode node, @NUInt long bus);
 
-    /**
-     * init</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioEngine_Class/index.html#//apple_ref/occ/instm/AVAudioEngine/init">iOS Dev Center</a>
-     */
     @Generated
     @Selector("init")
     public native AVAudioEngine init();
 
-    /**
-     * inputNode</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioEngine_Class/index.html#//apple_ref/occ/instp/AVAudioEngine/inputNode">iOS Dev Center</a>
-     */
     @Generated
     @Selector("inputNode")
     public native AVAudioInputNode inputNode();
 
-    /**
-     * running</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioEngine_Class/index.html#//apple_ref/occ/instp/AVAudioEngine/running">iOS Dev Center</a>
-     */
     @Generated
     @Selector("isRunning")
     public native boolean isRunning();
 
-    /**
-     * mainMixerNode</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioEngine_Class/index.html#//apple_ref/occ/instp/AVAudioEngine/mainMixerNode">iOS Dev Center</a>
-     */
     @Generated
     @Selector("mainMixerNode")
     public native AVAudioMixerNode mainMixerNode();
 
-    /**
-     * musicSequence</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioEngine_Class/index.html#//apple_ref/occ/instp/AVAudioEngine/musicSequence">iOS Dev Center</a>
-     */
     @Generated
     @Selector("musicSequence")
     public native MusicSequence musicSequence();
 
-    /**
-     * outputNode</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioEngine_Class/index.html#//apple_ref/occ/instp/AVAudioEngine/outputNode">iOS Dev Center</a>
-     */
     @Generated
     @Selector("outputNode")
     public native AVAudioOutputNode outputNode();
 
-    /**
-     * pause</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioEngine_Class/index.html#//apple_ref/occ/instm/AVAudioEngine/pause">iOS Dev Center</a>
-     */
     @Generated
     @Selector("pause")
     public native void pause();
 
-    /**
-     * prepare</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioEngine_Class/index.html#//apple_ref/occ/instm/AVAudioEngine/prepare">iOS Dev Center</a>
-     */
     @Generated
     @Selector("prepare")
     public native void prepare();
 
-    /**
-     * reset</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioEngine_Class/index.html#//apple_ref/occ/instm/AVAudioEngine/reset">iOS Dev Center</a>
-     */
     @Generated
     @Selector("reset")
     public native void reset();
 
-    /**
-     * musicSequence</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioEngine_Class/index.html#//apple_ref/occ/instp/AVAudioEngine/musicSequence">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setMusicSequence:")
     public native void setMusicSequence(MusicSequence value);
 
-    /**
-     * startAndReturnError:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioEngine_Class/index.html#//apple_ref/occ/instm/AVAudioEngine/startAndReturnError:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("startAndReturnError:")
     public native boolean startAndReturnError(Ptr<NSError> outError);
 
-    /**
-     * stop</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioEngine_Class/index.html#//apple_ref/occ/instm/AVAudioEngine/stop">iOS Dev Center</a>
-     */
     @Generated
     @Selector("stop")
     public native void stop();

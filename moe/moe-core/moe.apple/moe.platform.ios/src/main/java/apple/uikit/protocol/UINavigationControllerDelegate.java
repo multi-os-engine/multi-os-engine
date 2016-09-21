@@ -36,10 +36,6 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("UINavigationControllerDelegate")
 public interface UINavigationControllerDelegate {
-    /**
-     * navigationController:animationControllerForOperation:fromViewController:toViewController:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UINavigationControllerDelegate_Protocol/index.html#//apple_ref/occ/intfm/UINavigationControllerDelegate/navigationController:animationControllerForOperation:fromViewController:toViewController:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("navigationController:animationControllerForOperation:fromViewController:toViewController:")
@@ -50,10 +46,6 @@ public interface UINavigationControllerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * navigationController:didShowViewController:animated:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UINavigationControllerDelegate_Protocol/index.html#//apple_ref/occ/intfm/UINavigationControllerDelegate/navigationController:didShowViewController:animated:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("navigationController:didShowViewController:animated:")
@@ -62,10 +54,6 @@ public interface UINavigationControllerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * navigationController:interactionControllerForAnimationController:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UINavigationControllerDelegate_Protocol/index.html#//apple_ref/occ/intfm/UINavigationControllerDelegate/navigationController:interactionControllerForAnimationController:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("navigationController:interactionControllerForAnimationController:")
@@ -75,10 +63,6 @@ public interface UINavigationControllerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * navigationController:willShowViewController:animated:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UINavigationControllerDelegate_Protocol/index.html#//apple_ref/occ/intfm/UINavigationControllerDelegate/navigationController:willShowViewController:animated:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("navigationController:willShowViewController:animated:")
@@ -87,10 +71,6 @@ public interface UINavigationControllerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * navigationControllerPreferredInterfaceOrientationForPresentation:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UINavigationControllerDelegate_Protocol/index.html#//apple_ref/occ/intfm/UINavigationControllerDelegate/navigationControllerPreferredInterfaceOrientationForPresentation:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("navigationControllerPreferredInterfaceOrientationForPresentation:")
@@ -100,10 +80,6 @@ public interface UINavigationControllerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * navigationControllerSupportedInterfaceOrientations:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UINavigationControllerDelegate_Protocol/index.html#//apple_ref/occ/intfm/UINavigationControllerDelegate/navigationControllerSupportedInterfaceOrientations:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("navigationControllerSupportedInterfaceOrientations:")

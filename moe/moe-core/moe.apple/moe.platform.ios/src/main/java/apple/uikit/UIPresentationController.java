@@ -166,77 +166,41 @@ public class UIPresentationController extends NSObject
     @NInt
     public static native long version_static();
 
-    /**
-     * adaptivePresentationStyle</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPresentationController_class/index.html#//apple_ref/occ/instm/UIPresentationController/adaptivePresentationStyle">iOS Dev Center</a>
-     */
     @Generated
     @Selector("adaptivePresentationStyle")
     @NInt
     public native long adaptivePresentationStyle();
 
-    /**
-     * adaptivePresentationStyleForTraitCollection:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPresentationController_class/index.html#//apple_ref/occ/instm/UIPresentationController/adaptivePresentationStyleForTraitCollection:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("adaptivePresentationStyleForTraitCollection:")
     @NInt
     public native long adaptivePresentationStyleForTraitCollection(UITraitCollection traitCollection);
 
-    /**
-     * containerView</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPresentationController_class/index.html#//apple_ref/occ/instp/UIPresentationController/containerView">iOS Dev Center</a>
-     */
     @Generated
     @Selector("containerView")
     public native UIView containerView();
 
-    /**
-     * containerViewDidLayoutSubviews</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPresentationController_class/index.html#//apple_ref/occ/instm/UIPresentationController/containerViewDidLayoutSubviews">iOS Dev Center</a>
-     */
     @Generated
     @Selector("containerViewDidLayoutSubviews")
     public native void containerViewDidLayoutSubviews();
 
-    /**
-     * containerViewWillLayoutSubviews</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPresentationController_class/index.html#//apple_ref/occ/instm/UIPresentationController/containerViewWillLayoutSubviews">iOS Dev Center</a>
-     */
     @Generated
     @Selector("containerViewWillLayoutSubviews")
     public native void containerViewWillLayoutSubviews();
 
-    /**
-     * delegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPresentationController_class/index.html#//apple_ref/occ/instp/UIPresentationController/delegate">iOS Dev Center</a>
-     */
     @Generated
     @Selector("delegate")
     @MappedReturn(ObjCObjectMapper.class)
     public native Object delegate();
 
-    /**
-     * dismissalTransitionDidEnd:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPresentationController_class/index.html#//apple_ref/occ/instm/UIPresentationController/dismissalTransitionDidEnd:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("dismissalTransitionDidEnd:")
     public native void dismissalTransitionDidEnd(boolean completed);
 
-    /**
-     * dismissalTransitionWillBegin</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPresentationController_class/index.html#//apple_ref/occ/instm/UIPresentationController/dismissalTransitionWillBegin">iOS Dev Center</a>
-     */
     @Generated
     @Selector("dismissalTransitionWillBegin")
     public native void dismissalTransitionWillBegin();
 
-    /**
-     * frameOfPresentedViewInContainerView</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPresentationController_class/index.html#//apple_ref/occ/instm/UIPresentationController/frameOfPresentedViewInContainerView">iOS Dev Center</a>
-     */
     @Generated
     @Selector("frameOfPresentedViewInContainerView")
     @ByValue
@@ -246,19 +210,11 @@ public class UIPresentationController extends NSObject
     @Selector("init")
     public native UIPresentationController init();
 
-    /**
-     * initWithPresentedViewController:presentingViewController:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPresentationController_class/index.html#//apple_ref/occ/instm/UIPresentationController/initWithPresentedViewController:presentingViewController:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithPresentedViewController:presentingViewController:")
     public native UIPresentationController initWithPresentedViewControllerPresentingViewController(
             UIViewController presentedViewController, UIViewController presentingViewController);
 
-    /**
-     * overrideTraitCollection</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPresentationController_class/index.html#//apple_ref/occ/instp/UIPresentationController/overrideTraitCollection">iOS Dev Center</a>
-     */
     @Generated
     @Selector("overrideTraitCollection")
     public native UITraitCollection overrideTraitCollection();
@@ -273,67 +229,35 @@ public class UIPresentationController extends NSObject
     public native void preferredContentSizeDidChangeForChildContentContainer(
             @Mapped(ObjCObjectMapper.class) Object container);
 
-    /**
-     * presentationStyle</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPresentationController_class/index.html#//apple_ref/occ/instp/UIPresentationController/presentationStyle">iOS Dev Center</a>
-     */
     @Generated
     @Selector("presentationStyle")
     @NInt
     public native long presentationStyle();
 
-    /**
-     * presentationTransitionDidEnd:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPresentationController_class/index.html#//apple_ref/occ/instm/UIPresentationController/presentationTransitionDidEnd:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("presentationTransitionDidEnd:")
     public native void presentationTransitionDidEnd(boolean completed);
 
-    /**
-     * presentationTransitionWillBegin</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPresentationController_class/index.html#//apple_ref/occ/instm/UIPresentationController/presentationTransitionWillBegin">iOS Dev Center</a>
-     */
     @Generated
     @Selector("presentationTransitionWillBegin")
     public native void presentationTransitionWillBegin();
 
-    /**
-     * presentedView</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPresentationController_class/index.html#//apple_ref/occ/instm/UIPresentationController/presentedView">iOS Dev Center</a>
-     */
     @Generated
     @Selector("presentedView")
     public native UIView presentedView();
 
-    /**
-     * presentedViewController</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPresentationController_class/index.html#//apple_ref/occ/instp/UIPresentationController/presentedViewController">iOS Dev Center</a>
-     */
     @Generated
     @Selector("presentedViewController")
     public native UIViewController presentedViewController();
 
-    /**
-     * presentingViewController</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPresentationController_class/index.html#//apple_ref/occ/instp/UIPresentationController/presentingViewController">iOS Dev Center</a>
-     */
     @Generated
     @Selector("presentingViewController")
     public native UIViewController presentingViewController();
 
-    /**
-     * delegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPresentationController_class/index.html#//apple_ref/occ/instp/UIPresentationController/delegate">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setDelegate:")
     public native void setDelegate_unsafe(@Mapped(ObjCObjectMapper.class) Object value);
 
-    /**
-     * delegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPresentationController_class/index.html#//apple_ref/occ/instp/UIPresentationController/delegate">iOS Dev Center</a>
-     */
     @Generated
     public void setDelegate(@Mapped(ObjCObjectMapper.class) Object value) {
         Object __old = delegate();
@@ -346,26 +270,14 @@ public class UIPresentationController extends NSObject
         }
     }
 
-    /**
-     * overrideTraitCollection</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPresentationController_class/index.html#//apple_ref/occ/instp/UIPresentationController/overrideTraitCollection">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setOverrideTraitCollection:")
     public native void setOverrideTraitCollection(UITraitCollection value);
 
-    /**
-     * shouldPresentInFullscreen</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPresentationController_class/index.html#//apple_ref/occ/instm/UIPresentationController/shouldPresentInFullscreen">iOS Dev Center</a>
-     */
     @Generated
     @Selector("shouldPresentInFullscreen")
     public native boolean shouldPresentInFullscreen();
 
-    /**
-     * shouldRemovePresentersView</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPresentationController_class/index.html#//apple_ref/occ/instm/UIPresentationController/shouldRemovePresentersView">iOS Dev Center</a>
-     */
     @Generated
     @Selector("shouldRemovePresentersView")
     public native boolean shouldRemovePresentersView();

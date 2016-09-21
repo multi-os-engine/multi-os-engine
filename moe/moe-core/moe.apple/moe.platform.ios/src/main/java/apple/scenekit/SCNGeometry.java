@@ -74,18 +74,10 @@ public class SCNGeometry extends NSObject
     @Selector("alloc")
     public static native SCNGeometry alloc();
 
-    /**
-     * geometry</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNGeometry_Class/index.html#//apple_ref/occ/clm/SCNGeometry/geometry">iOS Dev Center</a>
-     */
     @Generated
     @Selector("geometry")
     public static native SCNGeometry geometry();
 
-    /**
-     * geometryWithSources:elements:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNGeometry_Class/index.html#//apple_ref/occ/clm/SCNGeometry/geometryWithSources:elements:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("geometryWithSources:elements:")
     public static native SCNGeometry geometryWithSourcesElements(NSArray<? extends SCNGeometrySource> sources,
@@ -95,10 +87,6 @@ public class SCNGeometry extends NSObject
     @Selector("supportsSecureCoding")
     public static native boolean supportsSecureCoding();
 
-    /**
-     * geometryWithMDLMesh:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNGeometry_Class/index.html#//apple_ref/occ/clm/SCNGeometry/geometryWithMDLMesh:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("geometryWithMDLMesh:")
     public static native SCNGeometry geometryWithMDLMesh(MDLMesh mdlMesh);
@@ -221,18 +209,10 @@ public class SCNGeometry extends NSObject
     @MappedReturn(ObjCObjectMapper.class)
     public native Object copyWithZone(VoidPtr zone);
 
-    /**
-     * edgeCreasesElement</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNGeometry_Class/index.html#//apple_ref/occ/instp/SCNGeometry/edgeCreasesElement">iOS Dev Center</a>
-     */
     @Generated
     @Selector("edgeCreasesElement")
     public native SCNGeometryElement edgeCreasesElement();
 
-    /**
-     * edgeCreasesSource</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNGeometry_Class/index.html#//apple_ref/occ/instp/SCNGeometry/edgeCreasesSource">iOS Dev Center</a>
-     */
     @Generated
     @Selector("edgeCreasesSource")
     public native SCNGeometrySource edgeCreasesSource();
@@ -241,35 +221,19 @@ public class SCNGeometry extends NSObject
     @Selector("encodeWithCoder:")
     public native void encodeWithCoder(NSCoder aCoder);
 
-    /**
-     * firstMaterial</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNGeometry_Class/index.html#//apple_ref/occ/instp/SCNGeometry/firstMaterial">iOS Dev Center</a>
-     */
     @Generated
     @Selector("firstMaterial")
     public native SCNMaterial firstMaterial();
 
-    /**
-     * geometryElementAtIndex:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNGeometry_Class/index.html#//apple_ref/occ/instm/SCNGeometry/geometryElementAtIndex:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("geometryElementAtIndex:")
     public native SCNGeometryElement geometryElementAtIndex(@NInt long elementIndex);
 
-    /**
-     * geometryElementCount</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNGeometry_Class/index.html#//apple_ref/occ/instp/SCNGeometry/geometryElementCount">iOS Dev Center</a>
-     */
     @Generated
     @Selector("geometryElementCount")
     @NInt
     public native long geometryElementCount();
 
-    /**
-     * geometrySourcesForSemantic:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNGeometry_Class/index.html#//apple_ref/occ/instm/SCNGeometry/geometrySourcesForSemantic:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("geometrySourcesForSemantic:")
     public native NSArray<? extends SCNGeometrySource> geometrySourcesForSemantic(String semantic);
@@ -302,10 +266,6 @@ public class SCNGeometry extends NSObject
     @Selector("initWithCoder:")
     public native SCNGeometry initWithCoder(NSCoder aDecoder);
 
-    /**
-     * insertMaterial:atIndex:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNGeometry_Class/index.html#//apple_ref/occ/instm/SCNGeometry/insertMaterial:atIndex:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("insertMaterial:atIndex:")
     public native void insertMaterialAtIndex(SCNMaterial material, @NUInt long index);
@@ -314,34 +274,18 @@ public class SCNGeometry extends NSObject
     @Selector("isAnimationForKeyPaused:")
     public native boolean isAnimationForKeyPaused(String key);
 
-    /**
-     * levelsOfDetail</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNGeometry_Class/index.html#//apple_ref/occ/instp/SCNGeometry/levelsOfDetail">iOS Dev Center</a>
-     */
     @Generated
     @Selector("levelsOfDetail")
     public native NSArray<? extends SCNLevelOfDetail> levelsOfDetail();
 
-    /**
-     * materialWithName:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNGeometry_Class/index.html#//apple_ref/occ/instm/SCNGeometry/materialWithName:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("materialWithName:")
     public native SCNMaterial materialWithName(String name);
 
-    /**
-     * materials</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNGeometry_Class/index.html#//apple_ref/occ/instp/SCNGeometry/materials">iOS Dev Center</a>
-     */
     @Generated
     @Selector("materials")
     public native NSArray<? extends SCNMaterial> materials();
 
-    /**
-     * name</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNGeometry_Class/index.html#//apple_ref/occ/instp/SCNGeometry/name">iOS Dev Center</a>
-     */
     @Generated
     @Selector("name")
     public native String name();
@@ -367,18 +311,10 @@ public class SCNGeometry extends NSObject
     @Selector("removeAnimationForKey:fadeOutDuration:")
     public native void removeAnimationForKeyFadeOutDuration(String key, @NFloat double duration);
 
-    /**
-     * removeMaterialAtIndex:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNGeometry_Class/index.html#//apple_ref/occ/instm/SCNGeometry/removeMaterialAtIndex:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("removeMaterialAtIndex:")
     public native void removeMaterialAtIndex(@NUInt long index);
 
-    /**
-     * replaceMaterialAtIndex:withMaterial:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNGeometry_Class/index.html#//apple_ref/occ/instm/SCNGeometry/replaceMaterialAtIndex:withMaterial:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("replaceMaterialAtIndex:withMaterial:")
     public native void replaceMaterialAtIndexWithMaterial(@NUInt long index, SCNMaterial material);
@@ -391,50 +327,26 @@ public class SCNGeometry extends NSObject
     @Selector("setBoundingBoxMin:max:")
     public native void setBoundingBoxMinMax(SCNVector3 min, SCNVector3 max);
 
-    /**
-     * edgeCreasesElement</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNGeometry_Class/index.html#//apple_ref/occ/instp/SCNGeometry/edgeCreasesElement">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setEdgeCreasesElement:")
     public native void setEdgeCreasesElement(SCNGeometryElement value);
 
-    /**
-     * edgeCreasesSource</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNGeometry_Class/index.html#//apple_ref/occ/instp/SCNGeometry/edgeCreasesSource">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setEdgeCreasesSource:")
     public native void setEdgeCreasesSource(SCNGeometrySource value);
 
-    /**
-     * firstMaterial</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNGeometry_Class/index.html#//apple_ref/occ/instp/SCNGeometry/firstMaterial">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setFirstMaterial:")
     public native void setFirstMaterial(SCNMaterial value);
 
-    /**
-     * levelsOfDetail</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNGeometry_Class/index.html#//apple_ref/occ/instp/SCNGeometry/levelsOfDetail">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setLevelsOfDetail:")
     public native void setLevelsOfDetail(NSArray<? extends SCNLevelOfDetail> value);
 
-    /**
-     * materials</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNGeometry_Class/index.html#//apple_ref/occ/instp/SCNGeometry/materials">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setMaterials:")
     public native void setMaterials(NSArray<? extends SCNMaterial> value);
 
-    /**
-     * name</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNGeometry_Class/index.html#//apple_ref/occ/instp/SCNGeometry/name">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setName:")
     public native void setName(String value);
@@ -449,10 +361,6 @@ public class SCNGeometry extends NSObject
     @Selector("setShaderModifiers:")
     public native void setShaderModifiers(NSDictionary<String, String> value);
 
-    /**
-     * subdivisionLevel</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNGeometry_Class/index.html#//apple_ref/occ/instp/SCNGeometry/subdivisionLevel">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setSubdivisionLevel:")
     public native void setSubdivisionLevel(@NUInt long value);
@@ -462,10 +370,6 @@ public class SCNGeometry extends NSObject
     @Selector("shaderModifiers")
     public native NSDictionary<String, String> shaderModifiers();
 
-    /**
-     * subdivisionLevel</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNGeometry_Class/index.html#//apple_ref/occ/instp/SCNGeometry/subdivisionLevel">iOS Dev Center</a>
-     */
     @Generated
     @Selector("subdivisionLevel")
     @NUInt
@@ -477,18 +381,10 @@ public class SCNGeometry extends NSObject
         return supportsSecureCoding();
     }
 
-    /**
-     * geometryElements</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNGeometry_Class/index.html#//apple_ref/occ/instp/SCNGeometry/geometryElements">iOS Dev Center</a>
-     */
     @Generated
     @Selector("geometryElements")
     public native NSArray<? extends SCNGeometryElement> geometryElements();
 
-    /**
-     * geometrySources</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNGeometry_Class/index.html#//apple_ref/occ/instp/SCNGeometry/geometrySources">iOS Dev Center</a>
-     */
     @Generated
     @Selector("geometrySources")
     public native NSArray<? extends SCNGeometrySource> geometrySources();

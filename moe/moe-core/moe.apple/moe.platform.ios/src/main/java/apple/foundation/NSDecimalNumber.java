@@ -77,61 +77,33 @@ public class NSDecimalNumber extends NSNumber {
     @Selector("alloc")
     public static native NSDecimalNumber alloc();
 
-    /**
-     * decimalNumberWithMantissa:exponent:isNegative:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSDecimalNumber_Class/index.html#//apple_ref/occ/clm/NSDecimalNumber/decimalNumberWithMantissa:exponent:isNegative:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("decimalNumberWithMantissa:exponent:isNegative:")
     public static native NSDecimalNumber decimalNumberWithMantissaExponentIsNegative(long mantissa, short exponent,
             boolean flag);
 
-    /**
-     * decimalNumberWithString:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSDecimalNumber_Class/index.html#//apple_ref/occ/clm/NSDecimalNumber/decimalNumberWithString:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("decimalNumberWithString:")
     public static native NSDecimalNumber decimalNumberWithString(String numberValue);
 
-    /**
-     * decimalNumberWithString:locale:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSDecimalNumber_Class/index.html#//apple_ref/occ/clm/NSDecimalNumber/decimalNumberWithString:locale:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("decimalNumberWithString:locale:")
     public static native NSDecimalNumber decimalNumberWithStringLocale(String numberValue,
             @Mapped(ObjCObjectMapper.class) Object locale);
 
-    /**
-     * defaultBehavior</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSDecimalNumber_Class/index.html#//apple_ref/occ/clm/NSDecimalNumber/defaultBehavior">iOS Dev Center</a>
-     */
     @Generated
     @Selector("defaultBehavior")
     @MappedReturn(ObjCObjectMapper.class)
     public static native NSDecimalNumberBehaviors defaultBehavior();
 
-    /**
-     * maximumDecimalNumber</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSDecimalNumber_Class/index.html#//apple_ref/occ/clm/NSDecimalNumber/maximumDecimalNumber">iOS Dev Center</a>
-     */
     @Generated
     @Selector("maximumDecimalNumber")
     public static native NSDecimalNumber maximumDecimalNumber();
 
-    /**
-     * minimumDecimalNumber</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSDecimalNumber_Class/index.html#//apple_ref/occ/clm/NSDecimalNumber/minimumDecimalNumber">iOS Dev Center</a>
-     */
     @Generated
     @Selector("minimumDecimalNumber")
     public static native NSDecimalNumber minimumDecimalNumber();
 
-    /**
-     * notANumber</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSDecimalNumber_Class/index.html#//apple_ref/occ/clm/NSDecimalNumber/notANumber">iOS Dev Center</a>
-     */
     @Generated
     @Selector("notANumber")
     public static native NSDecimalNumber notANumber();
@@ -196,18 +168,10 @@ public class NSDecimalNumber extends NSNumber {
     @Selector("numberWithUnsignedShort:")
     public static native NSNumber numberWithUnsignedShort(char value);
 
-    /**
-     * one</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSDecimalNumber_Class/index.html#//apple_ref/occ/clm/NSDecimalNumber/one">iOS Dev Center</a>
-     */
     @Generated
     @Selector("one")
     public static native NSDecimalNumber one();
 
-    /**
-     * setDefaultBehavior:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSDecimalNumber_Class/index.html#//apple_ref/occ/clm/NSDecimalNumber/setDefaultBehavior:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setDefaultBehavior:")
     public static native void setDefaultBehavior(@Mapped(ObjCObjectMapper.class) NSDecimalNumberBehaviors behavior);
@@ -296,10 +260,6 @@ public class NSDecimalNumber extends NSNumber {
     @Selector("valueWithUIOffset:")
     public static native NSValue valueWithUIOffset(@ByValue UIOffset insets);
 
-    /**
-     * zero</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSDecimalNumber_Class/index.html#//apple_ref/occ/clm/NSDecimalNumber/zero">iOS Dev Center</a>
-     */
     @Generated
     @Selector("zero")
     public static native NSDecimalNumber zero();
@@ -408,138 +368,74 @@ public class NSDecimalNumber extends NSNumber {
     @NInt
     public static native long version_static();
 
-    /**
-     * compare:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSDecimalNumber_Class/index.html#//apple_ref/occ/instm/NSDecimalNumber/compare:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("compare:")
     @NInt
     public native long compare(NSNumber decimalNumber);
 
-    /**
-     * decimalNumberByAdding:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSDecimalNumber_Class/index.html#//apple_ref/occ/instm/NSDecimalNumber/decimalNumberByAdding:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("decimalNumberByAdding:")
     public native NSDecimalNumber decimalNumberByAdding(NSDecimalNumber decimalNumber);
 
-    /**
-     * decimalNumberByAdding:withBehavior:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSDecimalNumber_Class/index.html#//apple_ref/occ/instm/NSDecimalNumber/decimalNumberByAdding:withBehavior:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("decimalNumberByAdding:withBehavior:")
     public native NSDecimalNumber decimalNumberByAddingWithBehavior(NSDecimalNumber decimalNumber,
             @Mapped(ObjCObjectMapper.class) NSDecimalNumberBehaviors behavior);
 
-    /**
-     * decimalNumberByDividingBy:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSDecimalNumber_Class/index.html#//apple_ref/occ/instm/NSDecimalNumber/decimalNumberByDividingBy:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("decimalNumberByDividingBy:")
     public native NSDecimalNumber decimalNumberByDividingBy(NSDecimalNumber decimalNumber);
 
-    /**
-     * decimalNumberByDividingBy:withBehavior:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSDecimalNumber_Class/index.html#//apple_ref/occ/instm/NSDecimalNumber/decimalNumberByDividingBy:withBehavior:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("decimalNumberByDividingBy:withBehavior:")
     public native NSDecimalNumber decimalNumberByDividingByWithBehavior(NSDecimalNumber decimalNumber,
             @Mapped(ObjCObjectMapper.class) NSDecimalNumberBehaviors behavior);
 
-    /**
-     * decimalNumberByMultiplyingBy:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSDecimalNumber_Class/index.html#//apple_ref/occ/instm/NSDecimalNumber/decimalNumberByMultiplyingBy:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("decimalNumberByMultiplyingBy:")
     public native NSDecimalNumber decimalNumberByMultiplyingBy(NSDecimalNumber decimalNumber);
 
-    /**
-     * decimalNumberByMultiplyingBy:withBehavior:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSDecimalNumber_Class/index.html#//apple_ref/occ/instm/NSDecimalNumber/decimalNumberByMultiplyingBy:withBehavior:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("decimalNumberByMultiplyingBy:withBehavior:")
     public native NSDecimalNumber decimalNumberByMultiplyingByWithBehavior(NSDecimalNumber decimalNumber,
             @Mapped(ObjCObjectMapper.class) NSDecimalNumberBehaviors behavior);
 
-    /**
-     * decimalNumberByMultiplyingByPowerOf10:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSDecimalNumber_Class/index.html#//apple_ref/occ/instm/NSDecimalNumber/decimalNumberByMultiplyingByPowerOf10:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("decimalNumberByMultiplyingByPowerOf10:")
     public native NSDecimalNumber decimalNumberByMultiplyingByPowerOf10(short power);
 
-    /**
-     * decimalNumberByMultiplyingByPowerOf10:withBehavior:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSDecimalNumber_Class/index.html#//apple_ref/occ/instm/NSDecimalNumber/decimalNumberByMultiplyingByPowerOf10:withBehavior:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("decimalNumberByMultiplyingByPowerOf10:withBehavior:")
     public native NSDecimalNumber decimalNumberByMultiplyingByPowerOf10WithBehavior(short power,
             @Mapped(ObjCObjectMapper.class) NSDecimalNumberBehaviors behavior);
 
-    /**
-     * decimalNumberByRaisingToPower:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSDecimalNumber_Class/index.html#//apple_ref/occ/instm/NSDecimalNumber/decimalNumberByRaisingToPower:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("decimalNumberByRaisingToPower:")
     public native NSDecimalNumber decimalNumberByRaisingToPower(@NUInt long power);
 
-    /**
-     * decimalNumberByRaisingToPower:withBehavior:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSDecimalNumber_Class/index.html#//apple_ref/occ/instm/NSDecimalNumber/decimalNumberByRaisingToPower:withBehavior:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("decimalNumberByRaisingToPower:withBehavior:")
     public native NSDecimalNumber decimalNumberByRaisingToPowerWithBehavior(@NUInt long power,
             @Mapped(ObjCObjectMapper.class) NSDecimalNumberBehaviors behavior);
 
-    /**
-     * decimalNumberByRoundingAccordingToBehavior:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSDecimalNumber_Class/index.html#//apple_ref/occ/instm/NSDecimalNumber/decimalNumberByRoundingAccordingToBehavior:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("decimalNumberByRoundingAccordingToBehavior:")
     public native NSDecimalNumber decimalNumberByRoundingAccordingToBehavior(
             @Mapped(ObjCObjectMapper.class) NSDecimalNumberBehaviors behavior);
 
-    /**
-     * decimalNumberBySubtracting:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSDecimalNumber_Class/index.html#//apple_ref/occ/instm/NSDecimalNumber/decimalNumberBySubtracting:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("decimalNumberBySubtracting:")
     public native NSDecimalNumber decimalNumberBySubtracting(NSDecimalNumber decimalNumber);
 
-    /**
-     * decimalNumberBySubtracting:withBehavior:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSDecimalNumber_Class/index.html#//apple_ref/occ/instm/NSDecimalNumber/decimalNumberBySubtracting:withBehavior:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("decimalNumberBySubtracting:withBehavior:")
     public native NSDecimalNumber decimalNumberBySubtractingWithBehavior(NSDecimalNumber decimalNumber,
             @Mapped(ObjCObjectMapper.class) NSDecimalNumberBehaviors behavior);
 
-    /**
-     * descriptionWithLocale:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSDecimalNumber_Class/index.html#//apple_ref/occ/instm/NSDecimalNumber/descriptionWithLocale:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("descriptionWithLocale:")
     public native String descriptionWithLocale(@Mapped(ObjCObjectMapper.class) Object locale);
 
-    /**
-     * doubleValue</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSDecimalNumber_Class/index.html#//apple_ref/occ/instp/NSDecimalNumber/doubleValue">iOS Dev Center</a>
-     */
     @Generated
     @Selector("doubleValue")
     public native double doubleValue();
@@ -588,10 +484,6 @@ public class NSDecimalNumber extends NSNumber {
     @Selector("initWithLongLong:")
     public native NSNumber initWithLongLong(long value);
 
-    /**
-     * initWithMantissa:exponent:isNegative:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSDecimalNumber_Class/index.html#//apple_ref/occ/instm/NSDecimalNumber/initWithMantissa:exponent:isNegative:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithMantissa:exponent:isNegative:")
     public native NSDecimalNumber initWithMantissaExponentIsNegative(long mantissa, short exponent, boolean flag);
@@ -600,18 +492,10 @@ public class NSDecimalNumber extends NSNumber {
     @Selector("initWithShort:")
     public native NSNumber initWithShort(short value);
 
-    /**
-     * initWithString:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSDecimalNumber_Class/index.html#//apple_ref/occ/instm/NSDecimalNumber/initWithString:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithString:")
     public native NSDecimalNumber initWithString(String numberValue);
 
-    /**
-     * initWithString:locale:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSDecimalNumber_Class/index.html#//apple_ref/occ/instm/NSDecimalNumber/initWithString:locale:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithString:locale:")
     public native NSDecimalNumber initWithStringLocale(String numberValue,
@@ -641,10 +525,6 @@ public class NSDecimalNumber extends NSNumber {
     @Selector("initWithUnsignedShort:")
     public native NSNumber initWithUnsignedShort(char value);
 
-    /**
-     * objCType</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSDecimalNumber_Class/index.html#//apple_ref/occ/instp/NSDecimalNumber/objCType">iOS Dev Center</a>
-     */
     @Generated
     @Selector("objCType")
     @MappedReturn(CStringMapper.class)

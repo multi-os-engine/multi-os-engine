@@ -166,20 +166,12 @@ public class MPSKernel extends NSObject implements NSCopying {
     @MappedReturn(ObjCObjectMapper.class)
     public native Object copyWithZone(VoidPtr zone);
 
-    /**
-     * copyWithZone:device:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MetalPerformanceShaders/Reference/MPSKernel_ClassReference/index.html#//apple_ref/occ/instm/MPSKernel/copyWithZone:device:">iOS Dev Center</a>
-     */
     @Generated
     @Owned
     @Selector("copyWithZone:device:")
     @MappedReturn(ObjCObjectMapper.class)
     public native Object copyWithZoneDevice(VoidPtr zone, @Mapped(ObjCObjectMapper.class) MTLDevice device);
 
-    /**
-     * device</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MetalPerformanceShaders/Reference/MPSKernel_ClassReference/index.html#//apple_ref/occ/instp/MPSKernel/device">iOS Dev Center</a>
-     */
     @Generated
     @Selector("device")
     @MappedReturn(ObjCObjectMapper.class)
@@ -189,43 +181,23 @@ public class MPSKernel extends NSObject implements NSCopying {
     @Selector("init")
     public native MPSKernel init();
 
-    /**
-     * initWithDevice:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MetalPerformanceShaders/Reference/MPSKernel_ClassReference/index.html#//apple_ref/occ/instm/MPSKernel/initWithDevice:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithDevice:")
     public native MPSKernel initWithDevice(@Mapped(ObjCObjectMapper.class) MTLDevice device);
 
-    /**
-     * label</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MetalPerformanceShaders/Reference/MPSKernel_ClassReference/index.html#//apple_ref/occ/instp/MPSKernel/label">iOS Dev Center</a>
-     */
     @Generated
     @Selector("label")
     public native String label();
 
-    /**
-     * options</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MetalPerformanceShaders/Reference/MPSKernel_ClassReference/index.html#//apple_ref/occ/instp/MPSKernel/options">iOS Dev Center</a>
-     */
     @Generated
     @Selector("options")
     @NUInt
     public native long options();
 
-    /**
-     * label</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MetalPerformanceShaders/Reference/MPSKernel_ClassReference/index.html#//apple_ref/occ/instp/MPSKernel/label">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setLabel:")
     public native void setLabel(String value);
 
-    /**
-     * options</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MetalPerformanceShaders/Reference/MPSKernel_ClassReference/index.html#//apple_ref/occ/instp/MPSKernel/options">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setOptions:")
     public native void setOptions(@NUInt long value);

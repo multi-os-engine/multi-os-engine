@@ -72,10 +72,6 @@ public class PHLivePhotoView extends UIView {
     @Selector("alloc")
     public static native PHLivePhotoView alloc();
 
-    /**
-     * livePhotoBadgeImageWithOptions:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/PhotosUI/Reference/PHLivePhotoView_Class/index.html#//apple_ref/occ/clm/PHLivePhotoView/livePhotoBadgeImageWithOptions:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("livePhotoBadgeImageWithOptions:")
     public static native UIImage livePhotoBadgeImageWithOptions(@NUInt long badgeOptions);
@@ -361,10 +357,6 @@ public class PHLivePhotoView extends UIView {
     @NInt
     public static native long version_static();
 
-    /**
-     * delegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/PhotosUI/Reference/PHLivePhotoView_Class/index.html#//apple_ref/occ/instp/PHLivePhotoView/delegate">iOS Dev Center</a>
-     */
     @Generated
     @Selector("delegate")
     @MappedReturn(ObjCObjectMapper.class)
@@ -382,50 +374,26 @@ public class PHLivePhotoView extends UIView {
     @Selector("initWithFrame:")
     public native PHLivePhotoView initWithFrame(@ByValue CGRect frame);
 
-    /**
-     * muted</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/PhotosUI/Reference/PHLivePhotoView_Class/index.html#//apple_ref/occ/instp/PHLivePhotoView/muted">iOS Dev Center</a>
-     */
     @Generated
     @Selector("isMuted")
     public native boolean isMuted();
 
-    /**
-     * muted</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/PhotosUI/Reference/PHLivePhotoView_Class/index.html#//apple_ref/occ/instp/PHLivePhotoView/muted">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setMuted:")
     public native void setMuted(boolean value);
 
-    /**
-     * livePhoto</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/PhotosUI/Reference/PHLivePhotoView_Class/index.html#//apple_ref/occ/instp/PHLivePhotoView/livePhoto">iOS Dev Center</a>
-     */
     @Generated
     @Selector("livePhoto")
     public native PHLivePhoto livePhoto();
 
-    /**
-     * playbackGestureRecognizer</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/PhotosUI/Reference/PHLivePhotoView_Class/index.html#//apple_ref/occ/instp/PHLivePhotoView/playbackGestureRecognizer">iOS Dev Center</a>
-     */
     @Generated
     @Selector("playbackGestureRecognizer")
     public native UIGestureRecognizer playbackGestureRecognizer();
 
-    /**
-     * delegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/PhotosUI/Reference/PHLivePhotoView_Class/index.html#//apple_ref/occ/instp/PHLivePhotoView/delegate">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setDelegate:")
     public native void setDelegate_unsafe(@Mapped(ObjCObjectMapper.class) PHLivePhotoViewDelegate value);
 
-    /**
-     * delegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/PhotosUI/Reference/PHLivePhotoView_Class/index.html#//apple_ref/occ/instp/PHLivePhotoView/delegate">iOS Dev Center</a>
-     */
     @Generated
     public void setDelegate(@Mapped(ObjCObjectMapper.class) PHLivePhotoViewDelegate value) {
         Object __old = delegate();
@@ -438,26 +406,14 @@ public class PHLivePhotoView extends UIView {
         }
     }
 
-    /**
-     * livePhoto</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/PhotosUI/Reference/PHLivePhotoView_Class/index.html#//apple_ref/occ/instp/PHLivePhotoView/livePhoto">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setLivePhoto:")
     public native void setLivePhoto(PHLivePhoto value);
 
-    /**
-     * startPlaybackWithStyle:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/PhotosUI/Reference/PHLivePhotoView_Class/index.html#//apple_ref/occ/instm/PHLivePhotoView/startPlaybackWithStyle:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("startPlaybackWithStyle:")
     public native void startPlaybackWithStyle(@NInt long playbackStyle);
 
-    /**
-     * stopPlayback</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/PhotosUI/Reference/PHLivePhotoView_Class/index.html#//apple_ref/occ/instm/PHLivePhotoView/stopPlayback">iOS Dev Center</a>
-     */
     @Generated
     @Selector("stopPlayback")
     public native void stopPlayback();

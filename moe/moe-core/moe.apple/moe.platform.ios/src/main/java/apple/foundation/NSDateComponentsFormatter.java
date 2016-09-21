@@ -57,10 +57,6 @@ public class NSDateComponentsFormatter extends NSFormatter {
     @Selector("alloc")
     public static native NSDateComponentsFormatter alloc();
 
-    /**
-     * localizedStringFromDateComponents:unitsStyle:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSDateComponentsFormatter_class/index.html#//apple_ref/occ/clm/NSDateComponentsFormatter/localizedStringFromDateComponents:unitsStyle:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("localizedStringFromDateComponents:unitsStyle:")
     public static native String localizedStringFromDateComponentsUnitsStyle(NSDateComponents components,
@@ -166,35 +162,19 @@ public class NSDateComponentsFormatter extends NSFormatter {
     @NInt
     public static native long version_static();
 
-    /**
-     * allowedUnits</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSDateComponentsFormatter_class/index.html#//apple_ref/occ/instp/NSDateComponentsFormatter/allowedUnits">iOS Dev Center</a>
-     */
     @Generated
     @Selector("allowedUnits")
     @NUInt
     public native long allowedUnits();
 
-    /**
-     * allowsFractionalUnits</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSDateComponentsFormatter_class/index.html#//apple_ref/occ/instp/NSDateComponentsFormatter/allowsFractionalUnits">iOS Dev Center</a>
-     */
     @Generated
     @Selector("allowsFractionalUnits")
     public native boolean allowsFractionalUnits();
 
-    /**
-     * calendar</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSDateComponentsFormatter_class/index.html#//apple_ref/occ/instp/NSDateComponentsFormatter/calendar">iOS Dev Center</a>
-     */
     @Generated
     @Selector("calendar")
     public native NSCalendar calendar();
 
-    /**
-     * collapsesLargestUnit</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSDateComponentsFormatter_class/index.html#//apple_ref/occ/instp/NSDateComponentsFormatter/collapsesLargestUnit">iOS Dev Center</a>
-     */
     @Generated
     @Selector("collapsesLargestUnit")
     public native boolean collapsesLargestUnit();
@@ -209,18 +189,10 @@ public class NSDateComponentsFormatter extends NSFormatter {
     public native boolean getObjectValueForStringErrorDescription(Ptr<ObjCObject> obj, String string,
             Ptr<NSString> error);
 
-    /**
-     * includesApproximationPhrase</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSDateComponentsFormatter_class/index.html#//apple_ref/occ/instp/NSDateComponentsFormatter/includesApproximationPhrase">iOS Dev Center</a>
-     */
     @Generated
     @Selector("includesApproximationPhrase")
     public native boolean includesApproximationPhrase();
 
-    /**
-     * includesTimeRemainingPhrase</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSDateComponentsFormatter_class/index.html#//apple_ref/occ/instp/NSDateComponentsFormatter/includesTimeRemainingPhrase">iOS Dev Center</a>
-     */
     @Generated
     @Selector("includesTimeRemainingPhrase")
     public native boolean includesTimeRemainingPhrase();
@@ -229,43 +201,23 @@ public class NSDateComponentsFormatter extends NSFormatter {
     @Selector("init")
     public native NSDateComponentsFormatter init();
 
-    /**
-     * maximumUnitCount</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSDateComponentsFormatter_class/index.html#//apple_ref/occ/instp/NSDateComponentsFormatter/maximumUnitCount">iOS Dev Center</a>
-     */
     @Generated
     @Selector("maximumUnitCount")
     @NInt
     public native long maximumUnitCount();
 
-    /**
-     * allowedUnits</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSDateComponentsFormatter_class/index.html#//apple_ref/occ/instp/NSDateComponentsFormatter/allowedUnits">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setAllowedUnits:")
     public native void setAllowedUnits(@NUInt long value);
 
-    /**
-     * allowsFractionalUnits</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSDateComponentsFormatter_class/index.html#//apple_ref/occ/instp/NSDateComponentsFormatter/allowsFractionalUnits">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setAllowsFractionalUnits:")
     public native void setAllowsFractionalUnits(boolean value);
 
-    /**
-     * calendar</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSDateComponentsFormatter_class/index.html#//apple_ref/occ/instp/NSDateComponentsFormatter/calendar">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setCalendar:")
     public native void setCalendar(NSCalendar value);
 
-    /**
-     * collapsesLargestUnit</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSDateComponentsFormatter_class/index.html#//apple_ref/occ/instp/NSDateComponentsFormatter/collapsesLargestUnit">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setCollapsesLargestUnit:")
     public native void setCollapsesLargestUnit(boolean value);
@@ -274,91 +226,47 @@ public class NSDateComponentsFormatter extends NSFormatter {
     @Selector("setFormattingContext:")
     public native void setFormattingContext(@NInt long value);
 
-    /**
-     * includesApproximationPhrase</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSDateComponentsFormatter_class/index.html#//apple_ref/occ/instp/NSDateComponentsFormatter/includesApproximationPhrase">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setIncludesApproximationPhrase:")
     public native void setIncludesApproximationPhrase(boolean value);
 
-    /**
-     * includesTimeRemainingPhrase</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSDateComponentsFormatter_class/index.html#//apple_ref/occ/instp/NSDateComponentsFormatter/includesTimeRemainingPhrase">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setIncludesTimeRemainingPhrase:")
     public native void setIncludesTimeRemainingPhrase(boolean value);
 
-    /**
-     * maximumUnitCount</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSDateComponentsFormatter_class/index.html#//apple_ref/occ/instp/NSDateComponentsFormatter/maximumUnitCount">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setMaximumUnitCount:")
     public native void setMaximumUnitCount(@NInt long value);
 
-    /**
-     * unitsStyle</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSDateComponentsFormatter_class/index.html#//apple_ref/occ/instp/NSDateComponentsFormatter/unitsStyle">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setUnitsStyle:")
     public native void setUnitsStyle(@NInt long value);
 
-    /**
-     * zeroFormattingBehavior</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSDateComponentsFormatter_class/index.html#//apple_ref/occ/instp/NSDateComponentsFormatter/zeroFormattingBehavior">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setZeroFormattingBehavior:")
     public native void setZeroFormattingBehavior(@NUInt long value);
 
-    /**
-     * stringForObjectValue:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSDateComponentsFormatter_class/index.html#//apple_ref/occ/instm/NSDateComponentsFormatter/stringForObjectValue:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("stringForObjectValue:")
     public native String stringForObjectValue(@Mapped(ObjCObjectMapper.class) Object obj);
 
-    /**
-     * stringFromDate:toDate:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSDateComponentsFormatter_class/index.html#//apple_ref/occ/instm/NSDateComponentsFormatter/stringFromDate:toDate:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("stringFromDate:toDate:")
     public native String stringFromDateToDate(NSDate startDate, NSDate endDate);
 
-    /**
-     * stringFromDateComponents:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSDateComponentsFormatter_class/index.html#//apple_ref/occ/instm/NSDateComponentsFormatter/stringFromDateComponents:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("stringFromDateComponents:")
     public native String stringFromDateComponents(NSDateComponents components);
 
-    /**
-     * stringFromTimeInterval:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSDateComponentsFormatter_class/index.html#//apple_ref/occ/instm/NSDateComponentsFormatter/stringFromTimeInterval:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("stringFromTimeInterval:")
     public native String stringFromTimeInterval(double ti);
 
-    /**
-     * unitsStyle</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSDateComponentsFormatter_class/index.html#//apple_ref/occ/instp/NSDateComponentsFormatter/unitsStyle">iOS Dev Center</a>
-     */
     @Generated
     @Selector("unitsStyle")
     @NInt
     public native long unitsStyle();
 
-    /**
-     * zeroFormattingBehavior</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSDateComponentsFormatter_class/index.html#//apple_ref/occ/instp/NSDateComponentsFormatter/zeroFormattingBehavior">iOS Dev Center</a>
-     */
     @Generated
     @Selector("zeroFormattingBehavior")
     @NUInt

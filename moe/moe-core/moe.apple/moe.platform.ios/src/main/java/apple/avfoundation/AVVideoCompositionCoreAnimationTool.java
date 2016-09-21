@@ -59,28 +59,16 @@ public class AVVideoCompositionCoreAnimationTool extends NSObject {
     @Selector("alloc")
     public static native AVVideoCompositionCoreAnimationTool alloc();
 
-    /**
-     * videoCompositionCoreAnimationToolWithAdditionalLayer:asTrackID:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVVideoCompositionCoreAnimationTool_Class/index.html#//apple_ref/occ/clm/AVVideoCompositionCoreAnimationTool/videoCompositionCoreAnimationToolWithAdditionalLayer:asTrackID:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("videoCompositionCoreAnimationToolWithAdditionalLayer:asTrackID:")
     public static native AVVideoCompositionCoreAnimationTool videoCompositionCoreAnimationToolWithAdditionalLayerAsTrackID(
             CALayer layer, int trackID);
 
-    /**
-     * videoCompositionCoreAnimationToolWithPostProcessingAsVideoLayer:inLayer:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVVideoCompositionCoreAnimationTool_Class/index.html#//apple_ref/occ/clm/AVVideoCompositionCoreAnimationTool/videoCompositionCoreAnimationToolWithPostProcessingAsVideoLayer:inLayer:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("videoCompositionCoreAnimationToolWithPostProcessingAsVideoLayer:inLayer:")
     public static native AVVideoCompositionCoreAnimationTool videoCompositionCoreAnimationToolWithPostProcessingAsVideoLayerInLayer(
             CALayer videoLayer, CALayer animationLayer);
 
-    /**
-     * videoCompositionCoreAnimationToolWithPostProcessingAsVideoLayers:inLayer:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVVideoCompositionCoreAnimationTool_Class/index.html#//apple_ref/occ/clm/AVVideoCompositionCoreAnimationTool/videoCompositionCoreAnimationToolWithPostProcessingAsVideoLayers:inLayer:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("videoCompositionCoreAnimationToolWithPostProcessingAsVideoLayers:inLayer:")
     public static native AVVideoCompositionCoreAnimationTool videoCompositionCoreAnimationToolWithPostProcessingAsVideoLayersInLayer(

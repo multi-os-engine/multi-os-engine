@@ -32,28 +32,16 @@ import org.moe.natj.objc.ann.Selector;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("UIPageViewControllerDataSource")
 public interface UIPageViewControllerDataSource {
-    /**
-     * pageViewController:viewControllerAfterViewController:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPageViewControllerDataSourceProtocolRef/index.html#//apple_ref/occ/intfm/UIPageViewControllerDataSource/pageViewController:viewControllerAfterViewController:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("pageViewController:viewControllerAfterViewController:")
     UIViewController pageViewControllerViewControllerAfterViewController(UIPageViewController pageViewController,
             UIViewController viewController);
 
-    /**
-     * pageViewController:viewControllerBeforeViewController:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPageViewControllerDataSourceProtocolRef/index.html#//apple_ref/occ/intfm/UIPageViewControllerDataSource/pageViewController:viewControllerBeforeViewController:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("pageViewController:viewControllerBeforeViewController:")
     UIViewController pageViewControllerViewControllerBeforeViewController(UIPageViewController pageViewController,
             UIViewController viewController);
 
-    /**
-     * presentationCountForPageViewController:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPageViewControllerDataSourceProtocolRef/index.html#//apple_ref/occ/intfm/UIPageViewControllerDataSource/presentationCountForPageViewController:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("presentationCountForPageViewController:")
@@ -62,10 +50,6 @@ public interface UIPageViewControllerDataSource {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * presentationIndexForPageViewController:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPageViewControllerDataSourceProtocolRef/index.html#//apple_ref/occ/intfm/UIPageViewControllerDataSource/presentationIndexForPageViewController:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("presentationIndexForPageViewController:")

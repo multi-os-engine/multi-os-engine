@@ -58,10 +58,6 @@ public class NSFileVersion extends NSObject {
     @Selector("alloc")
     public static native NSFileVersion alloc();
 
-    /**
-     * currentVersionOfItemAtURL:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSFileVersion_Class/index.html#//apple_ref/occ/clm/NSFileVersion/currentVersionOfItemAtURL:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("currentVersionOfItemAtURL:")
     public static native NSFileVersion currentVersionOfItemAtURL(NSURL url);
@@ -71,34 +67,18 @@ public class NSFileVersion extends NSObject {
     public static native void getNonlocalVersionsOfItemAtURLCompletionHandler(NSURL url,
             @ObjCBlock(name = "call_getNonlocalVersionsOfItemAtURLCompletionHandler") Block_getNonlocalVersionsOfItemAtURLCompletionHandler completionHandler);
 
-    /**
-     * otherVersionsOfItemAtURL:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSFileVersion_Class/index.html#//apple_ref/occ/clm/NSFileVersion/otherVersionsOfItemAtURL:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("otherVersionsOfItemAtURL:")
     public static native NSArray<? extends NSFileVersion> otherVersionsOfItemAtURL(NSURL url);
 
-    /**
-     * removeOtherVersionsOfItemAtURL:error:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSFileVersion_Class/index.html#//apple_ref/occ/clm/NSFileVersion/removeOtherVersionsOfItemAtURL:error:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("removeOtherVersionsOfItemAtURL:error:")
     public static native boolean removeOtherVersionsOfItemAtURLError(NSURL url, Ptr<NSError> outError);
 
-    /**
-     * unresolvedConflictVersionsOfItemAtURL:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSFileVersion_Class/index.html#//apple_ref/occ/clm/NSFileVersion/unresolvedConflictVersionsOfItemAtURL:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("unresolvedConflictVersionsOfItemAtURL:")
     public static native NSArray<? extends NSFileVersion> unresolvedConflictVersionsOfItemAtURL(NSURL url);
 
-    /**
-     * versionOfItemAtURL:forPersistentIdentifier:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSFileVersion_Class/index.html#//apple_ref/occ/clm/NSFileVersion/versionOfItemAtURL:forPersistentIdentifier:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("versionOfItemAtURL:forPersistentIdentifier:")
     public static native NSFileVersion versionOfItemAtURLForPersistentIdentifier(NSURL url,
@@ -204,10 +184,6 @@ public class NSFileVersion extends NSObject {
     @NInt
     public static native long version_static();
 
-    /**
-     * URL</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSFileVersion_Class/index.html#//apple_ref/occ/instp/NSFileVersion/URL">iOS Dev Center</a>
-     */
     @Generated
     @Selector("URL")
     public native NSURL URL();
@@ -224,75 +200,39 @@ public class NSFileVersion extends NSObject {
     @Selector("init")
     public native NSFileVersion init();
 
-    /**
-     * conflict</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSFileVersion_Class/index.html#//apple_ref/occ/instp/NSFileVersion/conflict">iOS Dev Center</a>
-     */
     @Generated
     @Selector("isConflict")
     public native boolean isConflict();
 
-    /**
-     * resolved</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSFileVersion_Class/index.html#//apple_ref/occ/instp/NSFileVersion/resolved">iOS Dev Center</a>
-     */
     @Generated
     @Selector("isResolved")
     public native boolean isResolved();
 
-    /**
-     * resolved</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSFileVersion_Class/index.html#//apple_ref/occ/instp/NSFileVersion/resolved">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setResolved:")
     public native void setResolved(boolean value);
 
-    /**
-     * localizedName</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSFileVersion_Class/index.html#//apple_ref/occ/instp/NSFileVersion/localizedName">iOS Dev Center</a>
-     */
     @Generated
     @Selector("localizedName")
     public native String localizedName();
 
-    /**
-     * localizedNameOfSavingComputer</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSFileVersion_Class/index.html#//apple_ref/occ/instp/NSFileVersion/localizedNameOfSavingComputer">iOS Dev Center</a>
-     */
     @Generated
     @Selector("localizedNameOfSavingComputer")
     public native String localizedNameOfSavingComputer();
 
-    /**
-     * modificationDate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSFileVersion_Class/index.html#//apple_ref/occ/instp/NSFileVersion/modificationDate">iOS Dev Center</a>
-     */
     @Generated
     @Selector("modificationDate")
     public native NSDate modificationDate();
 
-    /**
-     * persistentIdentifier</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSFileVersion_Class/index.html#//apple_ref/occ/instp/NSFileVersion/persistentIdentifier">iOS Dev Center</a>
-     */
     @Generated
     @Selector("persistentIdentifier")
     @MappedReturn(ObjCObjectMapper.class)
     public native NSCoding persistentIdentifier();
 
-    /**
-     * removeAndReturnError:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSFileVersion_Class/index.html#//apple_ref/occ/instm/NSFileVersion/removeAndReturnError:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("removeAndReturnError:")
     public native boolean removeAndReturnError(Ptr<NSError> outError);
 
-    /**
-     * replaceItemAtURL:options:error:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSFileVersion_Class/index.html#//apple_ref/occ/instm/NSFileVersion/replaceItemAtURL:options:error:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("replaceItemAtURL:options:error:")
     public native NSURL replaceItemAtURLOptionsError(NSURL url, @NUInt long options, Ptr<NSError> error);

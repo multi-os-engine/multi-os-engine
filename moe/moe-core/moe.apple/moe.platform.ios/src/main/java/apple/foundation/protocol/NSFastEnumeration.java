@@ -32,10 +32,6 @@ import org.moe.natj.objc.ann.Selector;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("NSFastEnumeration")
 public interface NSFastEnumeration {
-    /**
-     * countByEnumeratingWithState:objects:count:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSFastEnumeration_protocol/index.html#//apple_ref/occ/intfm/NSFastEnumeration/countByEnumeratingWithState:objects:count:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("countByEnumeratingWithState:objects:count:")
     @NUInt

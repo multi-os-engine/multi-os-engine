@@ -162,18 +162,10 @@ public class SKProductsResponse extends NSObject {
     @Selector("init")
     public native SKProductsResponse init();
 
-    /**
-     * invalidProductIdentifiers</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/StoreKit/Reference/SKProductsResponse/index.html#//apple_ref/occ/instp/SKProductsResponse/invalidProductIdentifiers">iOS Dev Center</a>
-     */
     @Generated
     @Selector("invalidProductIdentifiers")
     public native NSArray<String> invalidProductIdentifiers();
 
-    /**
-     * products</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/StoreKit/Reference/SKProductsResponse/index.html#//apple_ref/occ/instp/SKProductsResponse/products">iOS Dev Center</a>
-     */
     @Generated
     @Selector("products")
     public native NSArray<? extends SKProduct> products();

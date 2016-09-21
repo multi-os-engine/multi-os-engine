@@ -355,52 +355,28 @@ public class UIWebView extends UIView implements NSCoding, UIScrollViewDelegate 
     @NInt
     public static native long version_static();
 
-    /**
-     * allowsInlineMediaPlayback</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIWebView_Class/index.html#//apple_ref/occ/instp/UIWebView/allowsInlineMediaPlayback">iOS Dev Center</a>
-     */
     @Generated
     @Selector("allowsInlineMediaPlayback")
     public native boolean allowsInlineMediaPlayback();
 
-    /**
-     * canGoBack</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIWebView_Class/index.html#//apple_ref/occ/instp/UIWebView/canGoBack">iOS Dev Center</a>
-     */
     @Generated
     @Selector("canGoBack")
     public native boolean canGoBack();
 
-    /**
-     * canGoForward</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIWebView_Class/index.html#//apple_ref/occ/instp/UIWebView/canGoForward">iOS Dev Center</a>
-     */
     @Generated
     @Selector("canGoForward")
     public native boolean canGoForward();
 
-    /**
-     * dataDetectorTypes</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIWebView_Class/index.html#//apple_ref/occ/instp/UIWebView/dataDetectorTypes">iOS Dev Center</a>
-     */
     @Generated
     @Selector("dataDetectorTypes")
     @NUInt
     public native long dataDetectorTypes();
 
-    /**
-     * delegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIWebView_Class/index.html#//apple_ref/occ/instp/UIWebView/delegate">iOS Dev Center</a>
-     */
     @Generated
     @Selector("delegate")
     @MappedReturn(ObjCObjectMapper.class)
     public native UIWebViewDelegate delegate();
 
-    /**
-     * detectsPhoneNumbers</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIWebView_Class/index.html#//apple_ref/occ/instp/UIWebView/detectsPhoneNumbers">iOS Dev Center</a>
-     */
     @Generated
     @Deprecated
     @Selector("detectsPhoneNumbers")
@@ -410,27 +386,15 @@ public class UIWebView extends UIView implements NSCoding, UIScrollViewDelegate 
     @Selector("encodeWithCoder:")
     public native void encodeWithCoder(NSCoder aCoder);
 
-    /**
-     * gapBetweenPages</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIWebView_Class/index.html#//apple_ref/occ/instp/UIWebView/gapBetweenPages">iOS Dev Center</a>
-     */
     @Generated
     @Selector("gapBetweenPages")
     @NFloat
     public native double gapBetweenPages();
 
-    /**
-     * goBack</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIWebView_Class/index.html#//apple_ref/occ/instm/UIWebView/goBack">iOS Dev Center</a>
-     */
     @Generated
     @Selector("goBack")
     public native void goBack();
 
-    /**
-     * goForward</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIWebView_Class/index.html#//apple_ref/occ/instm/UIWebView/goForward">iOS Dev Center</a>
-     */
     @Generated
     @Selector("goForward")
     public native void goForward();
@@ -447,127 +411,67 @@ public class UIWebView extends UIView implements NSCoding, UIScrollViewDelegate 
     @Selector("initWithFrame:")
     public native UIWebView initWithFrame(@ByValue CGRect frame);
 
-    /**
-     * loading</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIWebView_Class/index.html#//apple_ref/occ/instp/UIWebView/loading">iOS Dev Center</a>
-     */
     @Generated
     @Selector("isLoading")
     public native boolean isLoading();
 
-    /**
-     * keyboardDisplayRequiresUserAction</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIWebView_Class/index.html#//apple_ref/occ/instp/UIWebView/keyboardDisplayRequiresUserAction">iOS Dev Center</a>
-     */
     @Generated
     @Selector("keyboardDisplayRequiresUserAction")
     public native boolean keyboardDisplayRequiresUserAction();
 
-    /**
-     * loadData:MIMEType:textEncodingName:baseURL:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIWebView_Class/index.html#//apple_ref/occ/instm/UIWebView/loadData:MIMEType:textEncodingName:baseURL:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("loadData:MIMEType:textEncodingName:baseURL:")
     public native void loadDataMIMETypeTextEncodingNameBaseURL(NSData data, String MIMEType, String textEncodingName,
             NSURL baseURL);
 
-    /**
-     * loadHTMLString:baseURL:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIWebView_Class/index.html#//apple_ref/occ/instm/UIWebView/loadHTMLString:baseURL:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("loadHTMLString:baseURL:")
     public native void loadHTMLStringBaseURL(String string, NSURL baseURL);
 
-    /**
-     * loadRequest:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIWebView_Class/index.html#//apple_ref/occ/instm/UIWebView/loadRequest:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("loadRequest:")
     public native void loadRequest(NSURLRequest request);
 
-    /**
-     * mediaPlaybackAllowsAirPlay</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIWebView_Class/index.html#//apple_ref/occ/instp/UIWebView/mediaPlaybackAllowsAirPlay">iOS Dev Center</a>
-     */
     @Generated
     @Selector("mediaPlaybackAllowsAirPlay")
     public native boolean mediaPlaybackAllowsAirPlay();
 
-    /**
-     * mediaPlaybackRequiresUserAction</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIWebView_Class/index.html#//apple_ref/occ/instp/UIWebView/mediaPlaybackRequiresUserAction">iOS Dev Center</a>
-     */
     @Generated
     @Selector("mediaPlaybackRequiresUserAction")
     public native boolean mediaPlaybackRequiresUserAction();
 
-    /**
-     * pageCount</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIWebView_Class/index.html#//apple_ref/occ/instp/UIWebView/pageCount">iOS Dev Center</a>
-     */
     @Generated
     @Selector("pageCount")
     @NUInt
     public native long pageCount();
 
-    /**
-     * pageLength</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIWebView_Class/index.html#//apple_ref/occ/instp/UIWebView/pageLength">iOS Dev Center</a>
-     */
     @Generated
     @Selector("pageLength")
     @NFloat
     public native double pageLength();
 
-    /**
-     * paginationBreakingMode</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIWebView_Class/index.html#//apple_ref/occ/instp/UIWebView/paginationBreakingMode">iOS Dev Center</a>
-     */
     @Generated
     @Selector("paginationBreakingMode")
     @NInt
     public native long paginationBreakingMode();
 
-    /**
-     * paginationMode</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIWebView_Class/index.html#//apple_ref/occ/instp/UIWebView/paginationMode">iOS Dev Center</a>
-     */
     @Generated
     @Selector("paginationMode")
     @NInt
     public native long paginationMode();
 
-    /**
-     * reload</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIWebView_Class/index.html#//apple_ref/occ/instm/UIWebView/reload">iOS Dev Center</a>
-     */
     @Generated
     @Selector("reload")
     public native void reload();
 
-    /**
-     * request</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIWebView_Class/index.html#//apple_ref/occ/instp/UIWebView/request">iOS Dev Center</a>
-     */
     @Generated
     @Selector("request")
     public native NSURLRequest request();
 
-    /**
-     * scalesPageToFit</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIWebView_Class/index.html#//apple_ref/occ/instp/UIWebView/scalesPageToFit">iOS Dev Center</a>
-     */
     @Generated
     @Selector("scalesPageToFit")
     public native boolean scalesPageToFit();
 
-    /**
-     * scrollView</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIWebView_Class/index.html#//apple_ref/occ/instp/UIWebView/scrollView">iOS Dev Center</a>
-     */
     @Generated
     @Selector("scrollView")
     public native UIScrollView scrollView();
@@ -634,34 +538,18 @@ public class UIWebView extends UIView implements NSCoding, UIScrollViewDelegate 
     public native void scrollViewWillEndDraggingWithVelocityTargetContentOffset(UIScrollView scrollView,
             @ByValue CGPoint velocity, CGPoint targetContentOffset);
 
-    /**
-     * allowsInlineMediaPlayback</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIWebView_Class/index.html#//apple_ref/occ/instp/UIWebView/allowsInlineMediaPlayback">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setAllowsInlineMediaPlayback:")
     public native void setAllowsInlineMediaPlayback(boolean value);
 
-    /**
-     * dataDetectorTypes</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIWebView_Class/index.html#//apple_ref/occ/instp/UIWebView/dataDetectorTypes">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setDataDetectorTypes:")
     public native void setDataDetectorTypes(@NUInt long value);
 
-    /**
-     * delegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIWebView_Class/index.html#//apple_ref/occ/instp/UIWebView/delegate">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setDelegate:")
     public native void setDelegate_unsafe(@Mapped(ObjCObjectMapper.class) UIWebViewDelegate value);
 
-    /**
-     * delegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIWebView_Class/index.html#//apple_ref/occ/instp/UIWebView/delegate">iOS Dev Center</a>
-     */
     @Generated
     public void setDelegate(@Mapped(ObjCObjectMapper.class) UIWebViewDelegate value) {
         Object __old = delegate();
@@ -674,107 +562,55 @@ public class UIWebView extends UIView implements NSCoding, UIScrollViewDelegate 
         }
     }
 
-    /**
-     * detectsPhoneNumbers</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIWebView_Class/index.html#//apple_ref/occ/instp/UIWebView/detectsPhoneNumbers">iOS Dev Center</a>
-     */
     @Generated
     @Deprecated
     @Selector("setDetectsPhoneNumbers:")
     public native void setDetectsPhoneNumbers(boolean value);
 
-    /**
-     * gapBetweenPages</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIWebView_Class/index.html#//apple_ref/occ/instp/UIWebView/gapBetweenPages">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setGapBetweenPages:")
     public native void setGapBetweenPages(@NFloat double value);
 
-    /**
-     * keyboardDisplayRequiresUserAction</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIWebView_Class/index.html#//apple_ref/occ/instp/UIWebView/keyboardDisplayRequiresUserAction">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setKeyboardDisplayRequiresUserAction:")
     public native void setKeyboardDisplayRequiresUserAction(boolean value);
 
-    /**
-     * mediaPlaybackAllowsAirPlay</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIWebView_Class/index.html#//apple_ref/occ/instp/UIWebView/mediaPlaybackAllowsAirPlay">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setMediaPlaybackAllowsAirPlay:")
     public native void setMediaPlaybackAllowsAirPlay(boolean value);
 
-    /**
-     * mediaPlaybackRequiresUserAction</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIWebView_Class/index.html#//apple_ref/occ/instp/UIWebView/mediaPlaybackRequiresUserAction">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setMediaPlaybackRequiresUserAction:")
     public native void setMediaPlaybackRequiresUserAction(boolean value);
 
-    /**
-     * pageLength</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIWebView_Class/index.html#//apple_ref/occ/instp/UIWebView/pageLength">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setPageLength:")
     public native void setPageLength(@NFloat double value);
 
-    /**
-     * paginationBreakingMode</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIWebView_Class/index.html#//apple_ref/occ/instp/UIWebView/paginationBreakingMode">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setPaginationBreakingMode:")
     public native void setPaginationBreakingMode(@NInt long value);
 
-    /**
-     * paginationMode</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIWebView_Class/index.html#//apple_ref/occ/instp/UIWebView/paginationMode">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setPaginationMode:")
     public native void setPaginationMode(@NInt long value);
 
-    /**
-     * scalesPageToFit</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIWebView_Class/index.html#//apple_ref/occ/instp/UIWebView/scalesPageToFit">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setScalesPageToFit:")
     public native void setScalesPageToFit(boolean value);
 
-    /**
-     * suppressesIncrementalRendering</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIWebView_Class/index.html#//apple_ref/occ/instp/UIWebView/suppressesIncrementalRendering">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setSuppressesIncrementalRendering:")
     public native void setSuppressesIncrementalRendering(boolean value);
 
-    /**
-     * stopLoading</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIWebView_Class/index.html#//apple_ref/occ/instm/UIWebView/stopLoading">iOS Dev Center</a>
-     */
     @Generated
     @Selector("stopLoading")
     public native void stopLoading();
 
-    /**
-     * stringByEvaluatingJavaScriptFromString:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIWebView_Class/index.html#//apple_ref/occ/instm/UIWebView/stringByEvaluatingJavaScriptFromString:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("stringByEvaluatingJavaScriptFromString:")
     public native String stringByEvaluatingJavaScriptFromString(String script);
 
-    /**
-     * suppressesIncrementalRendering</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIWebView_Class/index.html#//apple_ref/occ/instp/UIWebView/suppressesIncrementalRendering">iOS Dev Center</a>
-     */
     @Generated
     @Selector("suppressesIncrementalRendering")
     public native boolean suppressesIncrementalRendering();
@@ -784,34 +620,18 @@ public class UIWebView extends UIView implements NSCoding, UIScrollViewDelegate 
     @Selector("viewForZoomingInScrollView:")
     public native UIView viewForZoomingInScrollView(UIScrollView scrollView);
 
-    /**
-     * allowsPictureInPictureMediaPlayback</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIWebView_Class/index.html#//apple_ref/occ/instp/UIWebView/allowsPictureInPictureMediaPlayback">iOS Dev Center</a>
-     */
     @Generated
     @Selector("allowsPictureInPictureMediaPlayback")
     public native boolean allowsPictureInPictureMediaPlayback();
 
-    /**
-     * allowsPictureInPictureMediaPlayback</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIWebView_Class/index.html#//apple_ref/occ/instp/UIWebView/allowsPictureInPictureMediaPlayback">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setAllowsPictureInPictureMediaPlayback:")
     public native void setAllowsPictureInPictureMediaPlayback(boolean value);
 
-    /**
-     * allowsLinkPreview</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIWebView_Class/index.html#//apple_ref/occ/instp/UIWebView/allowsLinkPreview">iOS Dev Center</a>
-     */
     @Generated
     @Selector("allowsLinkPreview")
     public native boolean allowsLinkPreview();
 
-    /**
-     * allowsLinkPreview</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIWebView_Class/index.html#//apple_ref/occ/instp/UIWebView/allowsLinkPreview">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setAllowsLinkPreview:")
     public native void setAllowsLinkPreview(boolean value);

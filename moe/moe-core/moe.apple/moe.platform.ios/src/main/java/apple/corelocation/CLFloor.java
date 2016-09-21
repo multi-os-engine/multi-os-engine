@@ -184,10 +184,6 @@ public class CLFloor extends NSObject implements NSCopying, NSSecureCoding {
     @Selector("initWithCoder:")
     public native CLFloor initWithCoder(NSCoder aDecoder);
 
-    /**
-     * level</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreLocation/Reference/CLFloor_class/index.html#//apple_ref/occ/instp/CLFloor/level">iOS Dev Center</a>
-     */
     @Generated
     @Selector("level")
     @NInt

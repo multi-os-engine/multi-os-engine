@@ -159,18 +159,10 @@ public class GKAgent extends GKComponent {
     @NInt
     public static native long version_static();
 
-    /**
-     * behavior</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameplayKit/Reference/GKAgent_Class/index.html#//apple_ref/occ/instp/GKAgent/behavior">iOS Dev Center</a>
-     */
     @Generated
     @Selector("behavior")
     public native GKBehavior behavior();
 
-    /**
-     * delegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameplayKit/Reference/GKAgent_Class/index.html#//apple_ref/occ/instp/GKAgent/delegate">iOS Dev Center</a>
-     */
     @Generated
     @Selector("delegate")
     @MappedReturn(ObjCObjectMapper.class)
@@ -180,58 +172,30 @@ public class GKAgent extends GKComponent {
     @Selector("init")
     public native GKAgent init();
 
-    /**
-     * mass</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameplayKit/Reference/GKAgent_Class/index.html#//apple_ref/occ/instp/GKAgent/mass">iOS Dev Center</a>
-     */
     @Generated
     @Selector("mass")
     public native float mass();
 
-    /**
-     * maxAcceleration</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameplayKit/Reference/GKAgent_Class/index.html#//apple_ref/occ/instp/GKAgent/maxAcceleration">iOS Dev Center</a>
-     */
     @Generated
     @Selector("maxAcceleration")
     public native float maxAcceleration();
 
-    /**
-     * maxSpeed</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameplayKit/Reference/GKAgent_Class/index.html#//apple_ref/occ/instp/GKAgent/maxSpeed">iOS Dev Center</a>
-     */
     @Generated
     @Selector("maxSpeed")
     public native float maxSpeed();
 
-    /**
-     * radius</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameplayKit/Reference/GKAgent_Class/index.html#//apple_ref/occ/instp/GKAgent/radius">iOS Dev Center</a>
-     */
     @Generated
     @Selector("radius")
     public native float radius();
 
-    /**
-     * behavior</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameplayKit/Reference/GKAgent_Class/index.html#//apple_ref/occ/instp/GKAgent/behavior">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setBehavior:")
     public native void setBehavior(GKBehavior value);
 
-    /**
-     * delegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameplayKit/Reference/GKAgent_Class/index.html#//apple_ref/occ/instp/GKAgent/delegate">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setDelegate:")
     public native void setDelegate_unsafe(@Mapped(ObjCObjectMapper.class) GKAgentDelegate value);
 
-    /**
-     * delegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameplayKit/Reference/GKAgent_Class/index.html#//apple_ref/occ/instp/GKAgent/delegate">iOS Dev Center</a>
-     */
     @Generated
     public void setDelegate(@Mapped(ObjCObjectMapper.class) GKAgentDelegate value) {
         Object __old = delegate();
@@ -244,42 +208,22 @@ public class GKAgent extends GKComponent {
         }
     }
 
-    /**
-     * mass</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameplayKit/Reference/GKAgent_Class/index.html#//apple_ref/occ/instp/GKAgent/mass">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setMass:")
     public native void setMass(float value);
 
-    /**
-     * maxAcceleration</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameplayKit/Reference/GKAgent_Class/index.html#//apple_ref/occ/instp/GKAgent/maxAcceleration">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setMaxAcceleration:")
     public native void setMaxAcceleration(float value);
 
-    /**
-     * maxSpeed</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameplayKit/Reference/GKAgent_Class/index.html#//apple_ref/occ/instp/GKAgent/maxSpeed">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setMaxSpeed:")
     public native void setMaxSpeed(float value);
 
-    /**
-     * radius</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameplayKit/Reference/GKAgent_Class/index.html#//apple_ref/occ/instp/GKAgent/radius">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setRadius:")
     public native void setRadius(float value);
 
-    /**
-     * speed</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameplayKit/Reference/GKAgent_Class/index.html#//apple_ref/occ/instp/GKAgent/speed">iOS Dev Center</a>
-     */
     @Generated
     @Selector("speed")
     public native float speed();

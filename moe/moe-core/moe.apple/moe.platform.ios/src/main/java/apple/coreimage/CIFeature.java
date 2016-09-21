@@ -160,10 +160,6 @@ public class CIFeature extends NSObject {
     @NInt
     public static native long version();
 
-    /**
-     * bounds</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreImage/Reference/CIFeature_Ref/index.html#//apple_ref/occ/instp/CIFeature/bounds">iOS Dev Center</a>
-     */
     @Generated
     @Selector("bounds")
     @ByValue
@@ -173,10 +169,6 @@ public class CIFeature extends NSObject {
     @Selector("init")
     public native CIFeature init();
 
-    /**
-     * type</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreImage/Reference/CIFeature_Ref/index.html#//apple_ref/occ/instp/CIFeature/type">iOS Dev Center</a>
-     */
     @Generated
     @Selector("type")
     public native String type();

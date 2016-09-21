@@ -28,6 +28,7 @@ public final class CFNumberFormatterRoundingMode {
     @Generated @NInt public static final long HalfEven = 0x0000000000000004L;
     @Generated @NInt public static final long HalfDown = 0x0000000000000005L;
     @Generated @NInt public static final long HalfUp = 0x0000000000000006L;
+
     @Generated
     private CFNumberFormatterRoundingMode() {
     }

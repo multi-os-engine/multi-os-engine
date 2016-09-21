@@ -162,18 +162,10 @@ public class MTLStructType extends NSObject {
     @Selector("init")
     public native MTLStructType init();
 
-    /**
-     * memberByName:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Metal/Reference/MTLStructType_Ref/index.html#//apple_ref/occ/instm/MTLStructType/memberByName:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("memberByName:")
     public native MTLStructMember memberByName(String name);
 
-    /**
-     * members</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Metal/Reference/MTLStructType_Ref/index.html#//apple_ref/occ/instp/MTLStructType/members">iOS Dev Center</a>
-     */
     @Generated
     @Selector("members")
     public native NSArray<? extends MTLStructMember> members();

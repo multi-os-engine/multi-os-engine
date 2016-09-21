@@ -31,45 +31,25 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("GKStrategist")
 public interface GKStrategist {
-    /**
-     * bestMoveForActivePlayer</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameplayKit/Reference/GKStrategist_Protocol/index.html#//apple_ref/occ/intfm/GKStrategist/bestMoveForActivePlayer">iOS Dev Center</a>
-     */
     @Generated
     @Selector("bestMoveForActivePlayer")
     @MappedReturn(ObjCObjectMapper.class)
     Object bestMoveForActivePlayer();
 
-    /**
-     * gameModel</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameplayKit/Reference/GKStrategist_Protocol/index.html#//apple_ref/occ/intfp/GKStrategist/gameModel">iOS Dev Center</a>
-     */
     @Generated
     @Selector("gameModel")
     @MappedReturn(ObjCObjectMapper.class)
     Object gameModel();
 
-    /**
-     * randomSource</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameplayKit/Reference/GKStrategist_Protocol/index.html#//apple_ref/occ/intfp/GKStrategist/randomSource">iOS Dev Center</a>
-     */
     @Generated
     @Selector("randomSource")
     @MappedReturn(ObjCObjectMapper.class)
     Object randomSource();
 
-    /**
-     * gameModel</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameplayKit/Reference/GKStrategist_Protocol/index.html#//apple_ref/occ/intfp/GKStrategist/gameModel">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setGameModel:")
     void setGameModel(@Mapped(ObjCObjectMapper.class) Object value);
 
-    /**
-     * randomSource</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameplayKit/Reference/GKStrategist_Protocol/index.html#//apple_ref/occ/intfp/GKStrategist/randomSource">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setRandomSource:")
     void setRandomSource(@Mapped(ObjCObjectMapper.class) Object value);

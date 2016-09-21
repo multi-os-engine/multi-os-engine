@@ -156,67 +156,35 @@ public class NSUndoManager extends NSObject {
     @NInt
     public static native long version_static();
 
-    /**
-     * beginUndoGrouping</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSUndoManager_Class/index.html#//apple_ref/occ/instm/NSUndoManager/beginUndoGrouping">iOS Dev Center</a>
-     */
     @Generated
     @Selector("beginUndoGrouping")
     public native void beginUndoGrouping();
 
-    /**
-     * canRedo</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSUndoManager_Class/index.html#//apple_ref/occ/instp/NSUndoManager/canRedo">iOS Dev Center</a>
-     */
     @Generated
     @Selector("canRedo")
     public native boolean canRedo();
 
-    /**
-     * canUndo</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSUndoManager_Class/index.html#//apple_ref/occ/instp/NSUndoManager/canUndo">iOS Dev Center</a>
-     */
     @Generated
     @Selector("canUndo")
     public native boolean canUndo();
 
-    /**
-     * disableUndoRegistration</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSUndoManager_Class/index.html#//apple_ref/occ/instm/NSUndoManager/disableUndoRegistration">iOS Dev Center</a>
-     */
     @Generated
     @Selector("disableUndoRegistration")
     public native void disableUndoRegistration();
 
-    /**
-     * enableUndoRegistration</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSUndoManager_Class/index.html#//apple_ref/occ/instm/NSUndoManager/enableUndoRegistration">iOS Dev Center</a>
-     */
     @Generated
     @Selector("enableUndoRegistration")
     public native void enableUndoRegistration();
 
-    /**
-     * endUndoGrouping</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSUndoManager_Class/index.html#//apple_ref/occ/instm/NSUndoManager/endUndoGrouping">iOS Dev Center</a>
-     */
     @Generated
     @Selector("endUndoGrouping")
     public native void endUndoGrouping();
 
-    /**
-     * groupingLevel</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSUndoManager_Class/index.html#//apple_ref/occ/instp/NSUndoManager/groupingLevel">iOS Dev Center</a>
-     */
     @Generated
     @Selector("groupingLevel")
     @NInt
     public native long groupingLevel();
 
-    /**
-     * groupsByEvent</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSUndoManager_Class/index.html#//apple_ref/occ/instp/NSUndoManager/groupsByEvent">iOS Dev Center</a>
-     */
     @Generated
     @Selector("groupsByEvent")
     public native boolean groupsByEvent();
@@ -225,205 +193,105 @@ public class NSUndoManager extends NSObject {
     @Selector("init")
     public native NSUndoManager init();
 
-    /**
-     * redoing</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSUndoManager_Class/index.html#//apple_ref/occ/instp/NSUndoManager/redoing">iOS Dev Center</a>
-     */
     @Generated
     @Selector("isRedoing")
     public native boolean isRedoing();
 
-    /**
-     * undoRegistrationEnabled</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSUndoManager_Class/index.html#//apple_ref/occ/instp/NSUndoManager/undoRegistrationEnabled">iOS Dev Center</a>
-     */
     @Generated
     @Selector("isUndoRegistrationEnabled")
     public native boolean isUndoRegistrationEnabled();
 
-    /**
-     * undoing</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSUndoManager_Class/index.html#//apple_ref/occ/instp/NSUndoManager/undoing">iOS Dev Center</a>
-     */
     @Generated
     @Selector("isUndoing")
     public native boolean isUndoing();
 
-    /**
-     * levelsOfUndo</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSUndoManager_Class/index.html#//apple_ref/occ/instp/NSUndoManager/levelsOfUndo">iOS Dev Center</a>
-     */
     @Generated
     @Selector("levelsOfUndo")
     @NUInt
     public native long levelsOfUndo();
 
-    /**
-     * prepareWithInvocationTarget:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSUndoManager_Class/index.html#//apple_ref/occ/instm/NSUndoManager/prepareWithInvocationTarget:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("prepareWithInvocationTarget:")
     @MappedReturn(ObjCObjectMapper.class)
     public native Object prepareWithInvocationTarget(@Mapped(ObjCObjectMapper.class) Object target);
 
-    /**
-     * redo</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSUndoManager_Class/index.html#//apple_ref/occ/instm/NSUndoManager/redo">iOS Dev Center</a>
-     */
     @Generated
     @Selector("redo")
     public native void redo();
 
-    /**
-     * redoActionIsDiscardable</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSUndoManager_Class/index.html#//apple_ref/occ/instp/NSUndoManager/redoActionIsDiscardable">iOS Dev Center</a>
-     */
     @Generated
     @Selector("redoActionIsDiscardable")
     public native boolean redoActionIsDiscardable();
 
-    /**
-     * redoActionName</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSUndoManager_Class/index.html#//apple_ref/occ/instp/NSUndoManager/redoActionName">iOS Dev Center</a>
-     */
     @Generated
     @Selector("redoActionName")
     public native String redoActionName();
 
-    /**
-     * redoMenuItemTitle</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSUndoManager_Class/index.html#//apple_ref/occ/instp/NSUndoManager/redoMenuItemTitle">iOS Dev Center</a>
-     */
     @Generated
     @Selector("redoMenuItemTitle")
     public native String redoMenuItemTitle();
 
-    /**
-     * redoMenuTitleForUndoActionName:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSUndoManager_Class/index.html#//apple_ref/occ/instm/NSUndoManager/redoMenuTitleForUndoActionName:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("redoMenuTitleForUndoActionName:")
     public native String redoMenuTitleForUndoActionName(String actionName);
 
-    /**
-     * registerUndoWithTarget:selector:object:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSUndoManager_Class/index.html#//apple_ref/occ/instm/NSUndoManager/registerUndoWithTarget:selector:object:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("registerUndoWithTarget:selector:object:")
     public native void registerUndoWithTargetSelectorObject(@Mapped(ObjCObjectMapper.class) Object target, SEL selector,
             @Mapped(ObjCObjectMapper.class) Object anObject);
 
-    /**
-     * removeAllActions</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSUndoManager_Class/index.html#//apple_ref/occ/instm/NSUndoManager/removeAllActions">iOS Dev Center</a>
-     */
     @Generated
     @Selector("removeAllActions")
     public native void removeAllActions();
 
-    /**
-     * removeAllActionsWithTarget:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSUndoManager_Class/index.html#//apple_ref/occ/instm/NSUndoManager/removeAllActionsWithTarget:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("removeAllActionsWithTarget:")
     public native void removeAllActionsWithTarget(@Mapped(ObjCObjectMapper.class) Object target);
 
-    /**
-     * runLoopModes</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSUndoManager_Class/index.html#//apple_ref/occ/instp/NSUndoManager/runLoopModes">iOS Dev Center</a>
-     */
     @Generated
     @Selector("runLoopModes")
     public native NSArray<String> runLoopModes();
 
-    /**
-     * setActionIsDiscardable:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSUndoManager_Class/index.html#//apple_ref/occ/instm/NSUndoManager/setActionIsDiscardable:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setActionIsDiscardable:")
     public native void setActionIsDiscardable(boolean discardable);
 
-    /**
-     * setActionName:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSUndoManager_Class/index.html#//apple_ref/occ/instm/NSUndoManager/setActionName:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setActionName:")
     public native void setActionName(String actionName);
 
-    /**
-     * groupsByEvent</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSUndoManager_Class/index.html#//apple_ref/occ/instp/NSUndoManager/groupsByEvent">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setGroupsByEvent:")
     public native void setGroupsByEvent(boolean value);
 
-    /**
-     * levelsOfUndo</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSUndoManager_Class/index.html#//apple_ref/occ/instp/NSUndoManager/levelsOfUndo">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setLevelsOfUndo:")
     public native void setLevelsOfUndo(@NUInt long value);
 
-    /**
-     * runLoopModes</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSUndoManager_Class/index.html#//apple_ref/occ/instp/NSUndoManager/runLoopModes">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setRunLoopModes:")
     public native void setRunLoopModes(NSArray<String> value);
 
-    /**
-     * undo</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSUndoManager_Class/index.html#//apple_ref/occ/instm/NSUndoManager/undo">iOS Dev Center</a>
-     */
     @Generated
     @Selector("undo")
     public native void undo();
 
-    /**
-     * undoActionIsDiscardable</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSUndoManager_Class/index.html#//apple_ref/occ/instp/NSUndoManager/undoActionIsDiscardable">iOS Dev Center</a>
-     */
     @Generated
     @Selector("undoActionIsDiscardable")
     public native boolean undoActionIsDiscardable();
 
-    /**
-     * undoActionName</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSUndoManager_Class/index.html#//apple_ref/occ/instp/NSUndoManager/undoActionName">iOS Dev Center</a>
-     */
     @Generated
     @Selector("undoActionName")
     public native String undoActionName();
 
-    /**
-     * undoMenuItemTitle</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSUndoManager_Class/index.html#//apple_ref/occ/instp/NSUndoManager/undoMenuItemTitle">iOS Dev Center</a>
-     */
     @Generated
     @Selector("undoMenuItemTitle")
     public native String undoMenuItemTitle();
 
-    /**
-     * undoMenuTitleForUndoActionName:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSUndoManager_Class/index.html#//apple_ref/occ/instm/NSUndoManager/undoMenuTitleForUndoActionName:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("undoMenuTitleForUndoActionName:")
     public native String undoMenuTitleForUndoActionName(String actionName);
 
-    /**
-     * undoNestedGroup</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSUndoManager_Class/index.html#//apple_ref/occ/instm/NSUndoManager/undoNestedGroup">iOS Dev Center</a>
-     */
     @Generated
     @Selector("undoNestedGroup")
     public native void undoNestedGroup();

@@ -161,10 +161,6 @@ public class AVAudioBuffer extends NSObject implements NSCopying, NSMutableCopyi
     @NInt
     public static native long version_static();
 
-    /**
-     * audioBufferList</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioBuffer_Class/index.html#//apple_ref/occ/instp/AVAudioBuffer/audioBufferList">iOS Dev Center</a>
-     */
     @Generated
     @Selector("audioBufferList")
     public native AudioBufferList audioBufferList();
@@ -175,10 +171,6 @@ public class AVAudioBuffer extends NSObject implements NSCopying, NSMutableCopyi
     @MappedReturn(ObjCObjectMapper.class)
     public native Object copyWithZone(VoidPtr zone);
 
-    /**
-     * format</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioBuffer_Class/index.html#//apple_ref/occ/instp/AVAudioBuffer/format">iOS Dev Center</a>
-     */
     @Generated
     @Selector("format")
     public native AVAudioFormat format();
@@ -187,10 +179,6 @@ public class AVAudioBuffer extends NSObject implements NSCopying, NSMutableCopyi
     @Selector("init")
     public native AVAudioBuffer init();
 
-    /**
-     * mutableAudioBufferList</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioBuffer_Class/index.html#//apple_ref/occ/instp/AVAudioBuffer/mutableAudioBufferList">iOS Dev Center</a>
-     */
     @Generated
     @Selector("mutableAudioBufferList")
     public native AudioBufferList mutableAudioBufferList();

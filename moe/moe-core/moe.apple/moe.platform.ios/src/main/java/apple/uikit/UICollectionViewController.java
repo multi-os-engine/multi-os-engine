@@ -180,18 +180,10 @@ public class UICollectionViewController extends UIViewController
     @NInt
     public static native long version_static();
 
-    /**
-     * clearsSelectionOnViewWillAppear</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UICollectionViewController_clas/index.html#//apple_ref/occ/instp/UICollectionViewController/clearsSelectionOnViewWillAppear">iOS Dev Center</a>
-     */
     @Generated
     @Selector("clearsSelectionOnViewWillAppear")
     public native boolean clearsSelectionOnViewWillAppear();
 
-    /**
-     * collectionView</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UICollectionViewController_clas/index.html#//apple_ref/occ/instp/UICollectionViewController/collectionView">iOS Dev Center</a>
-     */
     @Generated
     @Selector("collectionView")
     public native UICollectionView collectionView();
@@ -300,10 +292,6 @@ public class UICollectionViewController extends UIViewController
     public native void collectionViewWillDisplaySupplementaryViewForElementKindAtIndexPath(
             UICollectionView collectionView, UICollectionReusableView view, String elementKind, NSIndexPath indexPath);
 
-    /**
-     * collectionViewLayout</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UICollectionViewController_clas/index.html#//apple_ref/occ/instp/UICollectionViewController/collectionViewLayout">iOS Dev Center</a>
-     */
     @Generated
     @Selector("collectionViewLayout")
     public native UICollectionViewLayout collectionViewLayout();
@@ -312,10 +300,6 @@ public class UICollectionViewController extends UIViewController
     @Selector("init")
     public native UICollectionViewController init();
 
-    /**
-     * initWithCollectionViewLayout:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UICollectionViewController_clas/index.html#//apple_ref/occ/instm/UICollectionViewController/initWithCollectionViewLayout:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithCollectionViewLayout:")
     public native UICollectionViewController initWithCollectionViewLayout(UICollectionViewLayout layout);
@@ -392,34 +376,18 @@ public class UICollectionViewController extends UIViewController
     public native void scrollViewWillEndDraggingWithVelocityTargetContentOffset(UIScrollView scrollView,
             @ByValue CGPoint velocity, CGPoint targetContentOffset);
 
-    /**
-     * clearsSelectionOnViewWillAppear</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UICollectionViewController_clas/index.html#//apple_ref/occ/instp/UICollectionViewController/clearsSelectionOnViewWillAppear">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setClearsSelectionOnViewWillAppear:")
     public native void setClearsSelectionOnViewWillAppear(boolean value);
 
-    /**
-     * collectionView</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UICollectionViewController_clas/index.html#//apple_ref/occ/instp/UICollectionViewController/collectionView">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setCollectionView:")
     public native void setCollectionView(UICollectionView value);
 
-    /**
-     * useLayoutToLayoutNavigationTransitions</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UICollectionViewController_clas/index.html#//apple_ref/occ/instp/UICollectionViewController/useLayoutToLayoutNavigationTransitions">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setUseLayoutToLayoutNavigationTransitions:")
     public native void setUseLayoutToLayoutNavigationTransitions(boolean value);
 
-    /**
-     * useLayoutToLayoutNavigationTransitions</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UICollectionViewController_clas/index.html#//apple_ref/occ/instp/UICollectionViewController/useLayoutToLayoutNavigationTransitions">iOS Dev Center</a>
-     */
     @Generated
     @Selector("useLayoutToLayoutNavigationTransitions")
     public native boolean useLayoutToLayoutNavigationTransitions();
@@ -457,18 +425,10 @@ public class UICollectionViewController extends UIViewController
     @Selector("initWithCoder:")
     public native UICollectionViewController initWithCoder(NSCoder aDecoder);
 
-    /**
-     * installsStandardGestureForInteractiveMovement</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UICollectionViewController_clas/index.html#//apple_ref/occ/instp/UICollectionViewController/installsStandardGestureForInteractiveMovement">iOS Dev Center</a>
-     */
     @Generated
     @Selector("installsStandardGestureForInteractiveMovement")
     public native boolean installsStandardGestureForInteractiveMovement();
 
-    /**
-     * installsStandardGestureForInteractiveMovement</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UICollectionViewController_clas/index.html#//apple_ref/occ/instp/UICollectionViewController/installsStandardGestureForInteractiveMovement">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setInstallsStandardGestureForInteractiveMovement:")
     public native void setInstallsStandardGestureForInteractiveMovement(boolean value);

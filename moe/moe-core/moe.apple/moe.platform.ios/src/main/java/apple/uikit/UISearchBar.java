@@ -365,18 +365,10 @@ public class UISearchBar extends UIView implements UIBarPositioning, UITextInput
     @NInt
     public native long autocorrectionType();
 
-    /**
-     * backgroundImage</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISearchBar_Class/index.html#//apple_ref/occ/instp/UISearchBar/backgroundImage">iOS Dev Center</a>
-     */
     @Generated
     @Selector("backgroundImage")
     public native UIImage backgroundImage();
 
-    /**
-     * backgroundImageForBarPosition:barMetrics:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISearchBar_Class/index.html#//apple_ref/occ/instm/UISearchBar/backgroundImageForBarPosition:barMetrics:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("backgroundImageForBarPosition:barMetrics:")
     public native UIImage backgroundImageForBarPositionBarMetrics(@NInt long barPosition, @NInt long barMetrics);
@@ -386,27 +378,15 @@ public class UISearchBar extends UIView implements UIBarPositioning, UITextInput
     @NInt
     public native long barPosition();
 
-    /**
-     * barStyle</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISearchBar_Class/index.html#//apple_ref/occ/instp/UISearchBar/barStyle">iOS Dev Center</a>
-     */
     @Generated
     @Selector("barStyle")
     @NInt
     public native long barStyle();
 
-    /**
-     * barTintColor</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISearchBar_Class/index.html#//apple_ref/occ/instp/UISearchBar/barTintColor">iOS Dev Center</a>
-     */
     @Generated
     @Selector("barTintColor")
     public native UIColor barTintColor();
 
-    /**
-     * delegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISearchBar_Class/index.html#//apple_ref/occ/instp/UISearchBar/delegate">iOS Dev Center</a>
-     */
     @Generated
     @Selector("delegate")
     @MappedReturn(ObjCObjectMapper.class)
@@ -417,10 +397,6 @@ public class UISearchBar extends UIView implements UIBarPositioning, UITextInput
     @Selector("enablesReturnKeyAutomatically")
     public native boolean enablesReturnKeyAutomatically();
 
-    /**
-     * imageForSearchBarIcon:state:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISearchBar_Class/index.html#//apple_ref/occ/instm/UISearchBar/imageForSearchBarIcon:state:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("imageForSearchBarIcon:state:")
     public native UIImage imageForSearchBarIconState(@NInt long icon, @NUInt long state);
@@ -433,26 +409,14 @@ public class UISearchBar extends UIView implements UIBarPositioning, UITextInput
     @Selector("initWithFrame:")
     public native UISearchBar initWithFrame(@ByValue CGRect frame);
 
-    /**
-     * inputAccessoryView</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISearchBar_Class/index.html#//apple_ref/occ/instp/UISearchBar/inputAccessoryView">iOS Dev Center</a>
-     */
     @Generated
     @Selector("inputAccessoryView")
     public native UIView inputAccessoryView();
 
-    /**
-     * searchResultsButtonSelected</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISearchBar_Class/index.html#//apple_ref/occ/instp/UISearchBar/searchResultsButtonSelected">iOS Dev Center</a>
-     */
     @Generated
     @Selector("isSearchResultsButtonSelected")
     public native boolean isSearchResultsButtonSelected();
 
-    /**
-     * searchResultsButtonSelected</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISearchBar_Class/index.html#//apple_ref/occ/instp/UISearchBar/searchResultsButtonSelected">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setSearchResultsButtonSelected:")
     public native void setSearchResultsButtonSelected(boolean value);
@@ -467,18 +431,10 @@ public class UISearchBar extends UIView implements UIBarPositioning, UITextInput
     @Selector("setSecureTextEntry:")
     public native void setSecureTextEntry(boolean value);
 
-    /**
-     * translucent</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISearchBar_Class/index.html#//apple_ref/occ/instp/UISearchBar/translucent">iOS Dev Center</a>
-     */
     @Generated
     @Selector("isTranslucent")
     public native boolean isTranslucent();
 
-    /**
-     * translucent</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISearchBar_Class/index.html#//apple_ref/occ/instp/UISearchBar/translucent">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setTranslucent:")
     public native void setTranslucent(boolean value);
@@ -495,27 +451,15 @@ public class UISearchBar extends UIView implements UIBarPositioning, UITextInput
     @NInt
     public native long keyboardType();
 
-    /**
-     * placeholder</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISearchBar_Class/index.html#//apple_ref/occ/instp/UISearchBar/placeholder">iOS Dev Center</a>
-     */
     @Generated
     @Selector("placeholder")
     public native String placeholder();
 
-    /**
-     * positionAdjustmentForSearchBarIcon:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISearchBar_Class/index.html#//apple_ref/occ/instm/UISearchBar/positionAdjustmentForSearchBarIcon:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("positionAdjustmentForSearchBarIcon:")
     @ByValue
     public native UIOffset positionAdjustmentForSearchBarIcon(@NInt long icon);
 
-    /**
-     * prompt</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISearchBar_Class/index.html#//apple_ref/occ/instp/UISearchBar/prompt">iOS Dev Center</a>
-     */
     @Generated
     @Selector("prompt")
     public native String prompt();
@@ -526,86 +470,46 @@ public class UISearchBar extends UIView implements UIBarPositioning, UITextInput
     @NInt
     public native long returnKeyType();
 
-    /**
-     * scopeBarBackgroundImage</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISearchBar_Class/index.html#//apple_ref/occ/instp/UISearchBar/scopeBarBackgroundImage">iOS Dev Center</a>
-     */
     @Generated
     @Selector("scopeBarBackgroundImage")
     public native UIImage scopeBarBackgroundImage();
 
-    /**
-     * scopeBarButtonBackgroundImageForState:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISearchBar_Class/index.html#//apple_ref/occ/instm/UISearchBar/scopeBarButtonBackgroundImageForState:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("scopeBarButtonBackgroundImageForState:")
     public native UIImage scopeBarButtonBackgroundImageForState(@NUInt long state);
 
-    /**
-     * scopeBarButtonDividerImageForLeftSegmentState:rightSegmentState:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISearchBar_Class/index.html#//apple_ref/occ/instm/UISearchBar/scopeBarButtonDividerImageForLeftSegmentState:rightSegmentState:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("scopeBarButtonDividerImageForLeftSegmentState:rightSegmentState:")
     public native UIImage scopeBarButtonDividerImageForLeftSegmentStateRightSegmentState(@NUInt long leftState,
             @NUInt long rightState);
 
-    /**
-     * scopeBarButtonTitleTextAttributesForState:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISearchBar_Class/index.html#//apple_ref/occ/instm/UISearchBar/scopeBarButtonTitleTextAttributesForState:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("scopeBarButtonTitleTextAttributesForState:")
     public native NSDictionary<String, ?> scopeBarButtonTitleTextAttributesForState(@NUInt long state);
 
-    /**
-     * scopeButtonTitles</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISearchBar_Class/index.html#//apple_ref/occ/instp/UISearchBar/scopeButtonTitles">iOS Dev Center</a>
-     */
     @Generated
     @Selector("scopeButtonTitles")
     public native NSArray<String> scopeButtonTitles();
 
-    /**
-     * searchBarStyle</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISearchBar_Class/index.html#//apple_ref/occ/instp/UISearchBar/searchBarStyle">iOS Dev Center</a>
-     */
     @Generated
     @Selector("searchBarStyle")
     @NUInt
     public native long searchBarStyle();
 
-    /**
-     * searchFieldBackgroundImageForState:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISearchBar_Class/index.html#//apple_ref/occ/instm/UISearchBar/searchFieldBackgroundImageForState:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("searchFieldBackgroundImageForState:")
     public native UIImage searchFieldBackgroundImageForState(@NUInt long state);
 
-    /**
-     * searchFieldBackgroundPositionAdjustment</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISearchBar_Class/index.html#//apple_ref/occ/instp/UISearchBar/searchFieldBackgroundPositionAdjustment">iOS Dev Center</a>
-     */
     @Generated
     @Selector("searchFieldBackgroundPositionAdjustment")
     @ByValue
     public native UIOffset searchFieldBackgroundPositionAdjustment();
 
-    /**
-     * searchTextPositionAdjustment</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISearchBar_Class/index.html#//apple_ref/occ/instp/UISearchBar/searchTextPositionAdjustment">iOS Dev Center</a>
-     */
     @Generated
     @Selector("searchTextPositionAdjustment")
     @ByValue
     public native UIOffset searchTextPositionAdjustment();
 
-    /**
-     * selectedScopeButtonIndex</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISearchBar_Class/index.html#//apple_ref/occ/instp/UISearchBar/selectedScopeButtonIndex">iOS Dev Center</a>
-     */
     @Generated
     @Selector("selectedScopeButtonIndex")
     @NInt
@@ -621,51 +525,27 @@ public class UISearchBar extends UIView implements UIBarPositioning, UITextInput
     @Selector("setAutocorrectionType:")
     public native void setAutocorrectionType(@NInt long value);
 
-    /**
-     * backgroundImage</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISearchBar_Class/index.html#//apple_ref/occ/instp/UISearchBar/backgroundImage">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setBackgroundImage:")
     public native void setBackgroundImage(UIImage value);
 
-    /**
-     * setBackgroundImage:forBarPosition:barMetrics:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISearchBar_Class/index.html#//apple_ref/occ/instm/UISearchBar/setBackgroundImage:forBarPosition:barMetrics:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setBackgroundImage:forBarPosition:barMetrics:")
     public native void setBackgroundImageForBarPositionBarMetrics(UIImage backgroundImage, @NInt long barPosition,
             @NInt long barMetrics);
 
-    /**
-     * barStyle</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISearchBar_Class/index.html#//apple_ref/occ/instp/UISearchBar/barStyle">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setBarStyle:")
     public native void setBarStyle(@NInt long value);
 
-    /**
-     * barTintColor</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISearchBar_Class/index.html#//apple_ref/occ/instp/UISearchBar/barTintColor">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setBarTintColor:")
     public native void setBarTintColor(UIColor value);
 
-    /**
-     * delegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISearchBar_Class/index.html#//apple_ref/occ/instp/UISearchBar/delegate">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setDelegate:")
     public native void setDelegate_unsafe(@Mapped(ObjCObjectMapper.class) UISearchBarDelegate value);
 
-    /**
-     * delegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISearchBar_Class/index.html#//apple_ref/occ/instp/UISearchBar/delegate">iOS Dev Center</a>
-     */
     @Generated
     public void setDelegate(@Mapped(ObjCObjectMapper.class) UISearchBarDelegate value) {
         Object __old = delegate();
@@ -683,18 +563,10 @@ public class UISearchBar extends UIView implements UIBarPositioning, UITextInput
     @Selector("setEnablesReturnKeyAutomatically:")
     public native void setEnablesReturnKeyAutomatically(boolean value);
 
-    /**
-     * setImage:forSearchBarIcon:state:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISearchBar_Class/index.html#//apple_ref/occ/instm/UISearchBar/setImage:forSearchBarIcon:state:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setImage:forSearchBarIcon:state:")
     public native void setImageForSearchBarIconState(UIImage iconImage, @NInt long icon, @NUInt long state);
 
-    /**
-     * inputAccessoryView</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISearchBar_Class/index.html#//apple_ref/occ/instp/UISearchBar/inputAccessoryView">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setInputAccessoryView:")
     public native void setInputAccessoryView(UIView value);
@@ -709,26 +581,14 @@ public class UISearchBar extends UIView implements UIBarPositioning, UITextInput
     @Selector("setKeyboardType:")
     public native void setKeyboardType(@NInt long value);
 
-    /**
-     * placeholder</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISearchBar_Class/index.html#//apple_ref/occ/instp/UISearchBar/placeholder">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setPlaceholder:")
     public native void setPlaceholder(String value);
 
-    /**
-     * setPositionAdjustment:forSearchBarIcon:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISearchBar_Class/index.html#//apple_ref/occ/instm/UISearchBar/setPositionAdjustment:forSearchBarIcon:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setPositionAdjustment:forSearchBarIcon:")
     public native void setPositionAdjustmentForSearchBarIcon(@ByValue UIOffset adjustment, @NInt long icon);
 
-    /**
-     * prompt</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISearchBar_Class/index.html#//apple_ref/occ/instp/UISearchBar/prompt">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setPrompt:")
     public native void setPrompt(String value);
@@ -738,124 +598,64 @@ public class UISearchBar extends UIView implements UIBarPositioning, UITextInput
     @Selector("setReturnKeyType:")
     public native void setReturnKeyType(@NInt long value);
 
-    /**
-     * scopeBarBackgroundImage</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISearchBar_Class/index.html#//apple_ref/occ/instp/UISearchBar/scopeBarBackgroundImage">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setScopeBarBackgroundImage:")
     public native void setScopeBarBackgroundImage(UIImage value);
 
-    /**
-     * setScopeBarButtonBackgroundImage:forState:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISearchBar_Class/index.html#//apple_ref/occ/instm/UISearchBar/setScopeBarButtonBackgroundImage:forState:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setScopeBarButtonBackgroundImage:forState:")
     public native void setScopeBarButtonBackgroundImageForState(UIImage backgroundImage, @NUInt long state);
 
-    /**
-     * setScopeBarButtonDividerImage:forLeftSegmentState:rightSegmentState:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISearchBar_Class/index.html#//apple_ref/occ/instm/UISearchBar/setScopeBarButtonDividerImage:forLeftSegmentState:rightSegmentState:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setScopeBarButtonDividerImage:forLeftSegmentState:rightSegmentState:")
     public native void setScopeBarButtonDividerImageForLeftSegmentStateRightSegmentState(UIImage dividerImage,
             @NUInt long leftState, @NUInt long rightState);
 
-    /**
-     * setScopeBarButtonTitleTextAttributes:forState:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISearchBar_Class/index.html#//apple_ref/occ/instm/UISearchBar/setScopeBarButtonTitleTextAttributes:forState:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setScopeBarButtonTitleTextAttributes:forState:")
     public native void setScopeBarButtonTitleTextAttributesForState(NSDictionary<String, ?> attributes,
             @NUInt long state);
 
-    /**
-     * scopeButtonTitles</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISearchBar_Class/index.html#//apple_ref/occ/instp/UISearchBar/scopeButtonTitles">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setScopeButtonTitles:")
     public native void setScopeButtonTitles(NSArray<String> value);
 
-    /**
-     * searchBarStyle</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISearchBar_Class/index.html#//apple_ref/occ/instp/UISearchBar/searchBarStyle">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setSearchBarStyle:")
     public native void setSearchBarStyle(@NUInt long value);
 
-    /**
-     * setSearchFieldBackgroundImage:forState:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISearchBar_Class/index.html#//apple_ref/occ/instm/UISearchBar/setSearchFieldBackgroundImage:forState:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setSearchFieldBackgroundImage:forState:")
     public native void setSearchFieldBackgroundImageForState(UIImage backgroundImage, @NUInt long state);
 
-    /**
-     * searchFieldBackgroundPositionAdjustment</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISearchBar_Class/index.html#//apple_ref/occ/instp/UISearchBar/searchFieldBackgroundPositionAdjustment">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setSearchFieldBackgroundPositionAdjustment:")
     public native void setSearchFieldBackgroundPositionAdjustment(@ByValue UIOffset value);
 
-    /**
-     * searchTextPositionAdjustment</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISearchBar_Class/index.html#//apple_ref/occ/instp/UISearchBar/searchTextPositionAdjustment">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setSearchTextPositionAdjustment:")
     public native void setSearchTextPositionAdjustment(@ByValue UIOffset value);
 
-    /**
-     * selectedScopeButtonIndex</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISearchBar_Class/index.html#//apple_ref/occ/instp/UISearchBar/selectedScopeButtonIndex">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setSelectedScopeButtonIndex:")
     public native void setSelectedScopeButtonIndex(@NInt long value);
 
-    /**
-     * showsBookmarkButton</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISearchBar_Class/index.html#//apple_ref/occ/instp/UISearchBar/showsBookmarkButton">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setShowsBookmarkButton:")
     public native void setShowsBookmarkButton(boolean value);
 
-    /**
-     * showsCancelButton</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISearchBar_Class/index.html#//apple_ref/occ/instp/UISearchBar/showsCancelButton">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setShowsCancelButton:")
     public native void setShowsCancelButton(boolean value);
 
-    /**
-     * setShowsCancelButton:animated:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISearchBar_Class/index.html#//apple_ref/occ/instm/UISearchBar/setShowsCancelButton:animated:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setShowsCancelButton:animated:")
     public native void setShowsCancelButtonAnimated(boolean showsCancelButton, boolean animated);
 
-    /**
-     * showsScopeBar</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISearchBar_Class/index.html#//apple_ref/occ/instp/UISearchBar/showsScopeBar">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setShowsScopeBar:")
     public native void setShowsScopeBar(boolean value);
 
-    /**
-     * showsSearchResultsButton</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISearchBar_Class/index.html#//apple_ref/occ/instp/UISearchBar/showsSearchResultsButton">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setShowsSearchResultsButton:")
     public native void setShowsSearchResultsButton(boolean value);
@@ -865,50 +665,26 @@ public class UISearchBar extends UIView implements UIBarPositioning, UITextInput
     @Selector("setSpellCheckingType:")
     public native void setSpellCheckingType(@NInt long value);
 
-    /**
-     * text</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISearchBar_Class/index.html#//apple_ref/occ/instp/UISearchBar/text">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setText:")
     public native void setText(String value);
 
-    /**
-     * tintColor</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISearchBar_Class/index.html#//apple_ref/occ/instp/UISearchBar/tintColor">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setTintColor:")
     public native void setTintColor(UIColor value);
 
-    /**
-     * showsBookmarkButton</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISearchBar_Class/index.html#//apple_ref/occ/instp/UISearchBar/showsBookmarkButton">iOS Dev Center</a>
-     */
     @Generated
     @Selector("showsBookmarkButton")
     public native boolean showsBookmarkButton();
 
-    /**
-     * showsCancelButton</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISearchBar_Class/index.html#//apple_ref/occ/instp/UISearchBar/showsCancelButton">iOS Dev Center</a>
-     */
     @Generated
     @Selector("showsCancelButton")
     public native boolean showsCancelButton();
 
-    /**
-     * showsScopeBar</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISearchBar_Class/index.html#//apple_ref/occ/instp/UISearchBar/showsScopeBar">iOS Dev Center</a>
-     */
     @Generated
     @Selector("showsScopeBar")
     public native boolean showsScopeBar();
 
-    /**
-     * showsSearchResultsButton</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISearchBar_Class/index.html#//apple_ref/occ/instp/UISearchBar/showsSearchResultsButton">iOS Dev Center</a>
-     */
     @Generated
     @Selector("showsSearchResultsButton")
     public native boolean showsSearchResultsButton();
@@ -919,18 +695,10 @@ public class UISearchBar extends UIView implements UIBarPositioning, UITextInput
     @NInt
     public native long spellCheckingType();
 
-    /**
-     * text</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISearchBar_Class/index.html#//apple_ref/occ/instp/UISearchBar/text">iOS Dev Center</a>
-     */
     @Generated
     @Selector("text")
     public native String text();
 
-    /**
-     * tintColor</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISearchBar_Class/index.html#//apple_ref/occ/instp/UISearchBar/tintColor">iOS Dev Center</a>
-     */
     @Generated
     @Selector("tintColor")
     public native UIColor tintColor();
@@ -939,10 +707,6 @@ public class UISearchBar extends UIView implements UIBarPositioning, UITextInput
     @Selector("initWithCoder:")
     public native UISearchBar initWithCoder(NSCoder aDecoder);
 
-    /**
-     * inputAssistantItem</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISearchBar_Class/index.html#//apple_ref/occ/instp/UISearchBar/inputAssistantItem">iOS Dev Center</a>
-     */
     @Generated
     @Selector("inputAssistantItem")
     public native UITextInputAssistantItem inputAssistantItem();

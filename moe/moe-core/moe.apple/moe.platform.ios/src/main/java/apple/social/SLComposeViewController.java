@@ -64,18 +64,10 @@ public class SLComposeViewController extends UIViewController {
     @Selector("alloc")
     public static native SLComposeViewController alloc();
 
-    /**
-     * composeViewControllerForServiceType:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkingInternet/Reference/SLComposeViewController_Class/index.html#//apple_ref/occ/clm/SLComposeViewController/composeViewControllerForServiceType:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("composeViewControllerForServiceType:")
     public static native SLComposeViewController composeViewControllerForServiceType(String serviceType);
 
-    /**
-     * isAvailableForServiceType:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkingInternet/Reference/SLComposeViewController_Class/index.html#//apple_ref/occ/clm/SLComposeViewController/isAvailableForServiceType:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("isAvailableForServiceType:")
     public static native boolean isAvailableForServiceType(String serviceType);
@@ -192,18 +184,10 @@ public class SLComposeViewController extends UIViewController {
     @NInt
     public static native long version_static();
 
-    /**
-     * addImage:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkingInternet/Reference/SLComposeViewController_Class/index.html#//apple_ref/occ/instm/SLComposeViewController/addImage:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("addImage:")
     public native boolean addImage(UIImage image);
 
-    /**
-     * addURL:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkingInternet/Reference/SLComposeViewController_Class/index.html#//apple_ref/occ/instm/SLComposeViewController/addURL:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("addURL:")
     public native boolean addURL(NSURL url);
@@ -216,51 +200,27 @@ public class SLComposeViewController extends UIViewController {
     @Selector("initWithNibName:bundle:")
     public native SLComposeViewController initWithNibNameBundle(String nibNameOrNil, NSBundle nibBundleOrNil);
 
-    /**
-     * removeAllImages</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkingInternet/Reference/SLComposeViewController_Class/index.html#//apple_ref/occ/instm/SLComposeViewController/removeAllImages">iOS Dev Center</a>
-     */
     @Generated
     @Selector("removeAllImages")
     public native boolean removeAllImages();
 
-    /**
-     * removeAllURLs</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkingInternet/Reference/SLComposeViewController_Class/index.html#//apple_ref/occ/instm/SLComposeViewController/removeAllURLs">iOS Dev Center</a>
-     */
     @Generated
     @Selector("removeAllURLs")
     public native boolean removeAllURLs();
 
-    /**
-     * serviceType</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkingInternet/Reference/SLComposeViewController_Class/index.html#//apple_ref/occ/instp/SLComposeViewController/serviceType">iOS Dev Center</a>
-     */
     @Generated
     @Selector("serviceType")
     public native String serviceType();
 
-    /**
-     * completionHandler</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkingInternet/Reference/SLComposeViewController_Class/index.html#//apple_ref/occ/instp/SLComposeViewController/completionHandler">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setCompletionHandler:")
     public native void setCompletionHandler(
             @ObjCBlock(name = "call_setCompletionHandler") Block_setCompletionHandler value);
 
-    /**
-     * setInitialText:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkingInternet/Reference/SLComposeViewController_Class/index.html#//apple_ref/occ/instm/SLComposeViewController/setInitialText:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setInitialText:")
     public native boolean setInitialText(String text);
 
-    /**
-     * completionHandler</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkingInternet/Reference/SLComposeViewController_Class/index.html#//apple_ref/occ/instp/SLComposeViewController/completionHandler">iOS Dev Center</a>
-     */
     @Generated
     @Selector("completionHandler")
     @ObjCBlock(name = "call_completionHandler_ret")

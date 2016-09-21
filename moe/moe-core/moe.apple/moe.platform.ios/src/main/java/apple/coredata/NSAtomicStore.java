@@ -175,26 +175,14 @@ public class NSAtomicStore extends NSPersistentStore {
     @NInt
     public static native long version_static();
 
-    /**
-     * addCacheNodes:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSAtomicStore_class/index.html#//apple_ref/occ/instm/NSAtomicStore/addCacheNodes:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("addCacheNodes:")
     public native void addCacheNodes(NSSet<? extends NSAtomicStoreCacheNode> cacheNodes);
 
-    /**
-     * cacheNodeForObjectID:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSAtomicStore_class/index.html#//apple_ref/occ/instm/NSAtomicStore/cacheNodeForObjectID:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("cacheNodeForObjectID:")
     public native NSAtomicStoreCacheNode cacheNodeForObjectID(NSManagedObjectID objectID);
 
-    /**
-     * cacheNodes</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSAtomicStore_class/index.html#//apple_ref/occ/instm/NSAtomicStore/cacheNodes">iOS Dev Center</a>
-     */
     @Generated
     @Selector("cacheNodes")
     public native NSSet<? extends NSAtomicStoreCacheNode> cacheNodes();
@@ -203,78 +191,42 @@ public class NSAtomicStore extends NSPersistentStore {
     @Selector("init")
     public native NSAtomicStore init();
 
-    /**
-     * initWithPersistentStoreCoordinator:configurationName:URL:options:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSAtomicStore_class/index.html#//apple_ref/occ/instm/NSAtomicStore/initWithPersistentStoreCoordinator:configurationName:URL:options:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithPersistentStoreCoordinator:configurationName:URL:options:")
     public native NSAtomicStore initWithPersistentStoreCoordinatorConfigurationNameURLOptions(
             NSPersistentStoreCoordinator coordinator, String configurationName, NSURL url, NSDictionary<?, ?> options);
 
-    /**
-     * load:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSAtomicStore_class/index.html#//apple_ref/occ/instm/NSAtomicStore/load:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("load:")
     public native boolean load_objc(Ptr<NSError> error);
 
-    /**
-     * newCacheNodeForManagedObject:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSAtomicStore_class/index.html#//apple_ref/occ/instm/NSAtomicStore/newCacheNodeForManagedObject:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("newCacheNodeForManagedObject:")
     public native NSAtomicStoreCacheNode newCacheNodeForManagedObject(NSManagedObject managedObject);
 
-    /**
-     * newReferenceObjectForManagedObject:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSAtomicStore_class/index.html#//apple_ref/occ/instm/NSAtomicStore/newReferenceObjectForManagedObject:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("newReferenceObjectForManagedObject:")
     @MappedReturn(ObjCObjectMapper.class)
     public native Object newReferenceObjectForManagedObject(NSManagedObject managedObject);
 
-    /**
-     * objectIDForEntity:referenceObject:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSAtomicStore_class/index.html#//apple_ref/occ/instm/NSAtomicStore/objectIDForEntity:referenceObject:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("objectIDForEntity:referenceObject:")
     public native NSManagedObjectID objectIDForEntityReferenceObject(NSEntityDescription entity,
             @Mapped(ObjCObjectMapper.class) Object data);
 
-    /**
-     * referenceObjectForObjectID:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSAtomicStore_class/index.html#//apple_ref/occ/instm/NSAtomicStore/referenceObjectForObjectID:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("referenceObjectForObjectID:")
     @MappedReturn(ObjCObjectMapper.class)
     public native Object referenceObjectForObjectID(NSManagedObjectID objectID);
 
-    /**
-     * save:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSAtomicStore_class/index.html#//apple_ref/occ/instm/NSAtomicStore/save:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("save:")
     public native boolean save(Ptr<NSError> error);
 
-    /**
-     * updateCacheNode:fromManagedObject:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSAtomicStore_class/index.html#//apple_ref/occ/instm/NSAtomicStore/updateCacheNode:fromManagedObject:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("updateCacheNode:fromManagedObject:")
     public native void updateCacheNodeFromManagedObject(NSAtomicStoreCacheNode node, NSManagedObject managedObject);
 
-    /**
-     * willRemoveCacheNodes:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSAtomicStore_class/index.html#//apple_ref/occ/instm/NSAtomicStore/willRemoveCacheNodes:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("willRemoveCacheNodes:")
     public native void willRemoveCacheNodes(NSSet<? extends NSAtomicStoreCacheNode> cacheNodes);

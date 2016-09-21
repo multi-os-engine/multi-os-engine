@@ -169,36 +169,20 @@ public class WKUserScript extends NSObject implements NSCopying {
     @Selector("init")
     public native WKUserScript init();
 
-    /**
-     * initWithSource:injectionTime:forMainFrameOnly:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WebKit/Reference/WKUserScript_Ref/index.html#//apple_ref/occ/instm/WKUserScript/initWithSource:injectionTime:forMainFrameOnly:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithSource:injectionTime:forMainFrameOnly:")
     public native WKUserScript initWithSourceInjectionTimeForMainFrameOnly(String source, @NInt long injectionTime,
             boolean forMainFrameOnly);
 
-    /**
-     * injectionTime</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WebKit/Reference/WKUserScript_Ref/index.html#//apple_ref/occ/instp/WKUserScript/injectionTime">iOS Dev Center</a>
-     */
     @Generated
     @Selector("injectionTime")
     @NInt
     public native long injectionTime();
 
-    /**
-     * forMainFrameOnly</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WebKit/Reference/WKUserScript_Ref/index.html#//apple_ref/occ/instp/WKUserScript/forMainFrameOnly">iOS Dev Center</a>
-     */
     @Generated
     @Selector("isForMainFrameOnly")
     public native boolean isForMainFrameOnly();
 
-    /**
-     * source</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WebKit/Reference/WKUserScript_Ref/index.html#//apple_ref/occ/instp/WKUserScript/source">iOS Dev Center</a>
-     */
     @Generated
     @Selector("source")
     public native String source();

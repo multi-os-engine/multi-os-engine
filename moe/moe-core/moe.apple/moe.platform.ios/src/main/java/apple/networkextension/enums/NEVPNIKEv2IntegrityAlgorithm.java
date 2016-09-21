@@ -26,6 +26,7 @@ public final class NEVPNIKEv2IntegrityAlgorithm {
     @Generated @NInt public static final long SHA256 = 0x0000000000000003L;
     @Generated @NInt public static final long SHA384 = 0x0000000000000004L;
     @Generated @NInt public static final long SHA512 = 0x0000000000000005L;
+
     @Generated
     private NEVPNIKEv2IntegrityAlgorithm() {
     }

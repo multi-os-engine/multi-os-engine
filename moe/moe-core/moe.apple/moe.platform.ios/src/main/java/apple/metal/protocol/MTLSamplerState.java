@@ -30,19 +30,11 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("MTLSamplerState")
 public interface MTLSamplerState {
-    /**
-     * device</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Metal/Reference/MTLSamplerState_Ref/index.html#//apple_ref/occ/intfp/MTLSamplerState/device">iOS Dev Center</a>
-     */
     @Generated
     @Selector("device")
     @MappedReturn(ObjCObjectMapper.class)
     Object device();
 
-    /**
-     * label</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Metal/Reference/MTLSamplerState_Ref/index.html#//apple_ref/occ/intfp/MTLSamplerState/label">iOS Dev Center</a>
-     */
     @Generated
     @Selector("label")
     String label();

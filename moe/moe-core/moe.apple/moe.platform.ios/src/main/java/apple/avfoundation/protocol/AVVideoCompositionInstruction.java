@@ -32,42 +32,22 @@ import org.moe.natj.objc.ann.Selector;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("AVVideoCompositionInstruction")
 public interface AVVideoCompositionInstruction {
-    /**
-     * containsTweening</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVVideoCompositionInstruction_Protocol/index.html#//apple_ref/occ/intfp/AVVideoCompositionInstruction/containsTweening">iOS Dev Center</a>
-     */
     @Generated
     @Selector("containsTweening")
     boolean containsTweening();
 
-    /**
-     * enablePostProcessing</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVVideoCompositionInstruction_Protocol/index.html#//apple_ref/occ/intfp/AVVideoCompositionInstruction/enablePostProcessing">iOS Dev Center</a>
-     */
     @Generated
     @Selector("enablePostProcessing")
     boolean enablePostProcessing();
 
-    /**
-     * passthroughTrackID</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVVideoCompositionInstruction_Protocol/index.html#//apple_ref/occ/intfp/AVVideoCompositionInstruction/passthroughTrackID">iOS Dev Center</a>
-     */
     @Generated
     @Selector("passthroughTrackID")
     int passthroughTrackID();
 
-    /**
-     * requiredSourceTrackIDs</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVVideoCompositionInstruction_Protocol/index.html#//apple_ref/occ/intfp/AVVideoCompositionInstruction/requiredSourceTrackIDs">iOS Dev Center</a>
-     */
     @Generated
     @Selector("requiredSourceTrackIDs")
     NSArray<? extends NSValue> requiredSourceTrackIDs();
 
-    /**
-     * timeRange</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVVideoCompositionInstruction_Protocol/index.html#//apple_ref/occ/intfp/AVVideoCompositionInstruction/timeRange">iOS Dev Center</a>
-     */
     @Generated
     @Selector("timeRange")
     @ByValue

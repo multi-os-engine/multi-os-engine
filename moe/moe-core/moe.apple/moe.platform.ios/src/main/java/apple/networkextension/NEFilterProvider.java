@@ -160,10 +160,6 @@ public class NEFilterProvider extends NEProvider {
     @NInt
     public static native long version_static();
 
-    /**
-     * filterConfiguration</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEFilterProviderClassRef/index.html#//apple_ref/occ/instp/NEFilterProvider/filterConfiguration">iOS Dev Center</a>
-     */
     @Generated
     @Selector("filterConfiguration")
     public native NEFilterProviderConfiguration filterConfiguration();
@@ -172,19 +168,11 @@ public class NEFilterProvider extends NEProvider {
     @Selector("init")
     public native NEFilterProvider init();
 
-    /**
-     * startFilterWithCompletionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEFilterProviderClassRef/index.html#//apple_ref/occ/instm/NEFilterProvider/startFilterWithCompletionHandler:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("startFilterWithCompletionHandler:")
     public native void startFilterWithCompletionHandler(
             @ObjCBlock(name = "call_startFilterWithCompletionHandler") Block_startFilterWithCompletionHandler completionHandler);
 
-    /**
-     * stopFilterWithReason:completionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEFilterProviderClassRef/index.html#//apple_ref/occ/instm/NEFilterProvider/stopFilterWithReason:completionHandler:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("stopFilterWithReason:completionHandler:")
     public native void stopFilterWithReasonCompletionHandler(@NInt long reason,

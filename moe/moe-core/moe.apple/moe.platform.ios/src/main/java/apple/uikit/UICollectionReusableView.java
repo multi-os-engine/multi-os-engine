@@ -347,18 +347,10 @@ public class UICollectionReusableView extends UIView {
     @NInt
     public static native long version();
 
-    /**
-     * applyLayoutAttributes:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UICollectionReusableView_class/index.html#//apple_ref/occ/instm/UICollectionReusableView/applyLayoutAttributes:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("applyLayoutAttributes:")
     public native void applyLayoutAttributes(UICollectionViewLayoutAttributes layoutAttributes);
 
-    /**
-     * didTransitionFromLayout:toLayout:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UICollectionReusableView_class/index.html#//apple_ref/occ/instm/UICollectionReusableView/didTransitionFromLayout:toLayout:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("didTransitionFromLayout:toLayout:")
     public native void didTransitionFromLayoutToLayout(UICollectionViewLayout oldLayout,
@@ -372,35 +364,19 @@ public class UICollectionReusableView extends UIView {
     @Selector("initWithFrame:")
     public native UICollectionReusableView initWithFrame(@ByValue CGRect frame);
 
-    /**
-     * preferredLayoutAttributesFittingAttributes:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UICollectionReusableView_class/index.html#//apple_ref/occ/instm/UICollectionReusableView/preferredLayoutAttributesFittingAttributes:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("preferredLayoutAttributesFittingAttributes:")
     public native UICollectionViewLayoutAttributes preferredLayoutAttributesFittingAttributes(
             UICollectionViewLayoutAttributes layoutAttributes);
 
-    /**
-     * prepareForReuse</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UICollectionReusableView_class/index.html#//apple_ref/occ/instm/UICollectionReusableView/prepareForReuse">iOS Dev Center</a>
-     */
     @Generated
     @Selector("prepareForReuse")
     public native void prepareForReuse();
 
-    /**
-     * reuseIdentifier</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UICollectionReusableView_class/index.html#//apple_ref/occ/instp/UICollectionReusableView/reuseIdentifier">iOS Dev Center</a>
-     */
     @Generated
     @Selector("reuseIdentifier")
     public native String reuseIdentifier();
 
-    /**
-     * willTransitionFromLayout:toLayout:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UICollectionReusableView_class/index.html#//apple_ref/occ/instm/UICollectionReusableView/willTransitionFromLayout:toLayout:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("willTransitionFromLayout:toLayout:")
     public native void willTransitionFromLayoutToLayout(UICollectionViewLayout oldLayout,

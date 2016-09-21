@@ -162,83 +162,43 @@ public class GKSession extends NSObject {
     @NInt
     public static native long version_static();
 
-    /**
-     * acceptConnectionFromPeer:error:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKSession_Class/index.html#//apple_ref/occ/instm/GKSession/acceptConnectionFromPeer:error:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("acceptConnectionFromPeer:error:")
     public native boolean acceptConnectionFromPeerError(String peerID, Ptr<NSError> error);
 
-    /**
-     * cancelConnectToPeer:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKSession_Class/index.html#//apple_ref/occ/instm/GKSession/cancelConnectToPeer:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("cancelConnectToPeer:")
     public native void cancelConnectToPeer(String peerID);
 
-    /**
-     * connectToPeer:withTimeout:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKSession_Class/index.html#//apple_ref/occ/instm/GKSession/connectToPeer:withTimeout:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("connectToPeer:withTimeout:")
     public native void connectToPeerWithTimeout(String peerID, double timeout);
 
-    /**
-     * delegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKSession_Class/index.html#//apple_ref/occ/instp/GKSession/delegate">iOS Dev Center</a>
-     */
     @Generated
     @Selector("delegate")
     @MappedReturn(ObjCObjectMapper.class)
     public native GKSessionDelegate delegate();
 
-    /**
-     * denyConnectionFromPeer:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKSession_Class/index.html#//apple_ref/occ/instm/GKSession/denyConnectionFromPeer:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("denyConnectionFromPeer:")
     public native void denyConnectionFromPeer(String peerID);
 
-    /**
-     * disconnectFromAllPeers</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKSession_Class/index.html#//apple_ref/occ/instm/GKSession/disconnectFromAllPeers">iOS Dev Center</a>
-     */
     @Generated
     @Selector("disconnectFromAllPeers")
     public native void disconnectFromAllPeers();
 
-    /**
-     * disconnectPeerFromAllPeers:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKSession_Class/index.html#//apple_ref/occ/instm/GKSession/disconnectPeerFromAllPeers:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("disconnectPeerFromAllPeers:")
     public native void disconnectPeerFromAllPeers(String peerID);
 
-    /**
-     * disconnectTimeout</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKSession_Class/index.html#//apple_ref/occ/instp/GKSession/disconnectTimeout">iOS Dev Center</a>
-     */
     @Generated
     @Selector("disconnectTimeout")
     public native double disconnectTimeout();
 
-    /**
-     * displayName</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKSession_Class/index.html#//apple_ref/occ/instp/GKSession/displayName">iOS Dev Center</a>
-     */
     @Generated
     @Selector("displayName")
     public native String displayName();
 
-    /**
-     * displayNameForPeer:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKSession_Class/index.html#//apple_ref/occ/instm/GKSession/displayNameForPeer:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("displayNameForPeer:")
     public native String displayNameForPeer(String peerID);
@@ -247,104 +207,56 @@ public class GKSession extends NSObject {
     @Selector("init")
     public native GKSession init();
 
-    /**
-     * initWithSessionID:displayName:sessionMode:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKSession_Class/index.html#//apple_ref/occ/instm/GKSession/initWithSessionID:displayName:sessionMode:">iOS Dev Center</a>
-     */
     @Generated
     @Deprecated
     @Selector("initWithSessionID:displayName:sessionMode:")
     public native GKSession initWithSessionIDDisplayNameSessionMode(String sessionID, String name, int mode);
 
-    /**
-     * available</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKSession_Class/index.html#//apple_ref/occ/instp/GKSession/available">iOS Dev Center</a>
-     */
     @Generated
     @Selector("isAvailable")
     public native boolean isAvailable();
 
-    /**
-     * available</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKSession_Class/index.html#//apple_ref/occ/instp/GKSession/available">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setAvailable:")
     public native void setAvailable(boolean value);
 
-    /**
-     * peerID</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKSession_Class/index.html#//apple_ref/occ/instp/GKSession/peerID">iOS Dev Center</a>
-     */
     @Generated
     @Selector("peerID")
     public native String peerID();
 
-    /**
-     * peersWithConnectionState:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKSession_Class/index.html#//apple_ref/occ/instm/GKSession/peersWithConnectionState:">iOS Dev Center</a>
-     */
     @Generated
     @Deprecated
     @Selector("peersWithConnectionState:")
     public native NSArray<?> peersWithConnectionState(int state);
 
-    /**
-     * sendData:toPeers:withDataMode:error:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKSession_Class/index.html#//apple_ref/occ/instm/GKSession/sendData:toPeers:withDataMode:error:">iOS Dev Center</a>
-     */
     @Generated
     @Deprecated
     @Selector("sendData:toPeers:withDataMode:error:")
     public native boolean sendDataToPeersWithDataModeError(NSData data, NSArray<?> peers, int mode, Ptr<NSError> error);
 
-    /**
-     * sendDataToAllPeers:withDataMode:error:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKSession_Class/index.html#//apple_ref/occ/instm/GKSession/sendDataToAllPeers:withDataMode:error:">iOS Dev Center</a>
-     */
     @Generated
     @Deprecated
     @Selector("sendDataToAllPeers:withDataMode:error:")
     public native boolean sendDataToAllPeersWithDataModeError(NSData data, int mode, Ptr<NSError> error);
 
-    /**
-     * sessionID</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKSession_Class/index.html#//apple_ref/occ/instp/GKSession/sessionID">iOS Dev Center</a>
-     */
     @Generated
     @Selector("sessionID")
     public native String sessionID();
 
-    /**
-     * sessionMode</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKSession_Class/index.html#//apple_ref/occ/instp/GKSession/sessionMode">iOS Dev Center</a>
-     */
     @Generated
     @Deprecated
     @Selector("sessionMode")
     public native int sessionMode();
 
-    /**
-     * setDataReceiveHandler:withContext:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKSession_Class/index.html#//apple_ref/occ/instm/GKSession/setDataReceiveHandler:withContext:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setDataReceiveHandler:withContext:")
     public native void setDataReceiveHandlerWithContext(@Mapped(ObjCObjectMapper.class) Object handler,
             VoidPtr context);
 
-    /**
-     * delegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKSession_Class/index.html#//apple_ref/occ/instp/GKSession/delegate">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setDelegate:")
     public native void setDelegate_unsafe(@Mapped(ObjCObjectMapper.class) GKSessionDelegate value);
 
-    /**
-     * delegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKSession_Class/index.html#//apple_ref/occ/instp/GKSession/delegate">iOS Dev Center</a>
-     */
     @Generated
     public void setDelegate(@Mapped(ObjCObjectMapper.class) GKSessionDelegate value) {
         Object __old = delegate();
@@ -357,10 +269,6 @@ public class GKSession extends NSObject {
         }
     }
 
-    /**
-     * disconnectTimeout</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKSession_Class/index.html#//apple_ref/occ/instp/GKSession/disconnectTimeout">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setDisconnectTimeout:")
     public native void setDisconnectTimeout(double value);

@@ -83,10 +83,6 @@ public class UIPopoverBackgroundView extends UIView implements UIPopoverBackgrou
     @ByValue
     public static native UIEdgeInsets contentViewInsets();
 
-    /**
-     * wantsDefaultContentAppearance</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPopoverBackgroundView_class/index.html#//apple_ref/occ/clm/UIPopoverBackgroundView/wantsDefaultContentAppearance">iOS Dev Center</a>
-     */
     @Generated
     @Selector("wantsDefaultContentAppearance")
     public static native boolean wantsDefaultContentAppearance();
@@ -379,10 +375,6 @@ public class UIPopoverBackgroundView extends UIView implements UIPopoverBackgrou
         return arrowBase();
     }
 
-    /**
-     * arrowDirection</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPopoverBackgroundView_class/index.html#//apple_ref/occ/instp/UIPopoverBackgroundView/arrowDirection">iOS Dev Center</a>
-     */
     @Generated
     @Selector("arrowDirection")
     @NUInt
@@ -395,10 +387,6 @@ public class UIPopoverBackgroundView extends UIView implements UIPopoverBackgrou
         return arrowHeight();
     }
 
-    /**
-     * arrowOffset</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPopoverBackgroundView_class/index.html#//apple_ref/occ/instp/UIPopoverBackgroundView/arrowOffset">iOS Dev Center</a>
-     */
     @Generated
     @Selector("arrowOffset")
     @NFloat
@@ -419,18 +407,10 @@ public class UIPopoverBackgroundView extends UIView implements UIPopoverBackgrou
     @Selector("initWithFrame:")
     public native UIPopoverBackgroundView initWithFrame(@ByValue CGRect frame);
 
-    /**
-     * arrowDirection</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPopoverBackgroundView_class/index.html#//apple_ref/occ/instp/UIPopoverBackgroundView/arrowDirection">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setArrowDirection:")
     public native void setArrowDirection(@NUInt long value);
 
-    /**
-     * arrowOffset</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPopoverBackgroundView_class/index.html#//apple_ref/occ/instp/UIPopoverBackgroundView/arrowOffset">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setArrowOffset:")
     public native void setArrowOffset(@NFloat double value);

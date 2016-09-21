@@ -163,53 +163,29 @@ public class GCControllerButtonInput extends GCControllerElement {
     @Selector("init")
     public native GCControllerButtonInput init();
 
-    /**
-     * pressed</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameController/Reference/GCControllerButtonInput_Ref/index.html#//apple_ref/occ/instp/GCControllerButtonInput/pressed">iOS Dev Center</a>
-     */
     @Generated
     @Selector("isPressed")
     public native boolean isPressed();
 
-    /**
-     * pressedChangedHandler</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameController/Reference/GCControllerButtonInput_Ref/index.html#//apple_ref/occ/instp/GCControllerButtonInput/pressedChangedHandler">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setPressedChangedHandler:")
     public native void setPressedChangedHandler(
             @ObjCBlock(name = "call_setPressedChangedHandler") Block_setPressedChangedHandler value);
 
-    /**
-     * valueChangedHandler</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameController/Reference/GCControllerButtonInput_Ref/index.html#//apple_ref/occ/instp/GCControllerButtonInput/valueChangedHandler">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setValueChangedHandler:")
     public native void setValueChangedHandler(
             @ObjCBlock(name = "call_setValueChangedHandler") Block_setValueChangedHandler value);
 
-    /**
-     * value</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameController/Reference/GCControllerButtonInput_Ref/index.html#//apple_ref/occ/instp/GCControllerButtonInput/value">iOS Dev Center</a>
-     */
     @Generated
     @Selector("value")
     public native float value();
 
-    /**
-     * pressedChangedHandler</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameController/Reference/GCControllerButtonInput_Ref/index.html#//apple_ref/occ/instp/GCControllerButtonInput/pressedChangedHandler">iOS Dev Center</a>
-     */
     @Generated
     @Selector("pressedChangedHandler")
     @ObjCBlock(name = "call_pressedChangedHandler_ret")
     public native Block_pressedChangedHandler_ret pressedChangedHandler();
 
-    /**
-     * valueChangedHandler</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameController/Reference/GCControllerButtonInput_Ref/index.html#//apple_ref/occ/instp/GCControllerButtonInput/valueChangedHandler">iOS Dev Center</a>
-     */
     @Generated
     @Selector("valueChangedHandler")
     @ObjCBlock(name = "call_valueChangedHandler_ret")

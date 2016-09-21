@@ -165,27 +165,15 @@ public class CMMotionActivity extends CMLogItem {
     @NInt
     public static native long version();
 
-    /**
-     * automotive</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMotion/Reference/CMMotionActivity_class/index.html#//apple_ref/occ/instp/CMMotionActivity/automotive">iOS Dev Center</a>
-     */
     @Generated
     @Selector("automotive")
     public native boolean automotive();
 
-    /**
-     * confidence</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMotion/Reference/CMMotionActivity_class/index.html#//apple_ref/occ/instp/CMMotionActivity/confidence">iOS Dev Center</a>
-     */
     @Generated
     @Selector("confidence")
     @NInt
     public native long confidence();
 
-    /**
-     * cycling</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMotion/Reference/CMMotionActivity_class/index.html#//apple_ref/occ/instp/CMMotionActivity/cycling">iOS Dev Center</a>
-     */
     @Generated
     @Selector("cycling")
     public native boolean cycling();
@@ -194,42 +182,22 @@ public class CMMotionActivity extends CMLogItem {
     @Selector("init")
     public native CMMotionActivity init();
 
-    /**
-     * running</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMotion/Reference/CMMotionActivity_class/index.html#//apple_ref/occ/instp/CMMotionActivity/running">iOS Dev Center</a>
-     */
     @Generated
     @Selector("running")
     public native boolean running();
 
-    /**
-     * startDate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMotion/Reference/CMMotionActivity_class/index.html#//apple_ref/occ/instp/CMMotionActivity/startDate">iOS Dev Center</a>
-     */
     @Generated
     @Selector("startDate")
     public native NSDate startDate();
 
-    /**
-     * stationary</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMotion/Reference/CMMotionActivity_class/index.html#//apple_ref/occ/instp/CMMotionActivity/stationary">iOS Dev Center</a>
-     */
     @Generated
     @Selector("stationary")
     public native boolean stationary();
 
-    /**
-     * unknown</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMotion/Reference/CMMotionActivity_class/index.html#//apple_ref/occ/instp/CMMotionActivity/unknown">iOS Dev Center</a>
-     */
     @Generated
     @Selector("unknown")
     public native boolean unknown();
 
-    /**
-     * walking</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMotion/Reference/CMMotionActivity_class/index.html#//apple_ref/occ/instp/CMMotionActivity/walking">iOS Dev Center</a>
-     */
     @Generated
     @Selector("walking")
     public native boolean walking();

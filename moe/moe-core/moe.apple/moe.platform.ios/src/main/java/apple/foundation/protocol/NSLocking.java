@@ -28,18 +28,10 @@ import org.moe.natj.objc.ann.Selector;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("NSLocking")
 public interface NSLocking {
-    /**
-     * lock</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Protocols/NSLocking_Protocol/index.html#//apple_ref/occ/intfm/NSLocking/lock">iOS Dev Center</a>
-     */
     @Generated
     @Selector("lock")
     void lock();
 
-    /**
-     * unlock</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Protocols/NSLocking_Protocol/index.html#//apple_ref/occ/intfm/NSLocking/unlock">iOS Dev Center</a>
-     */
     @Generated
     @Selector("unlock")
     void unlock();

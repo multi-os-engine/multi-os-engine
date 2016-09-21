@@ -58,10 +58,6 @@ public class GKState extends NSObject {
     @Selector("alloc")
     public static native GKState alloc();
 
-    /**
-     * state</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameplayKit/Reference/GKState_Class/index.html#//apple_ref/occ/clm/GKState/state">iOS Dev Center</a>
-     */
     @Generated
     @Selector("state")
     public static native GKState state();
@@ -166,50 +162,26 @@ public class GKState extends NSObject {
     @NInt
     public static native long version_static();
 
-    /**
-     * didEnterWithPreviousState:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameplayKit/Reference/GKState_Class/index.html#//apple_ref/occ/instm/GKState/didEnterWithPreviousState:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("didEnterWithPreviousState:")
     public native void didEnterWithPreviousState(GKState previousState);
 
-    /**
-     * init</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameplayKit/Reference/GKState_Class/index.html#//apple_ref/occ/instm/GKState/init">iOS Dev Center</a>
-     */
     @Generated
     @Selector("init")
     public native GKState init();
 
-    /**
-     * isValidNextState:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameplayKit/Reference/GKState_Class/index.html#//apple_ref/occ/instm/GKState/isValidNextState:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("isValidNextState:")
     public native boolean isValidNextState(Class stateClass);
 
-    /**
-     * stateMachine</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameplayKit/Reference/GKState_Class/index.html#//apple_ref/occ/instp/GKState/stateMachine">iOS Dev Center</a>
-     */
     @Generated
     @Selector("stateMachine")
     public native GKStateMachine stateMachine();
 
-    /**
-     * updateWithDeltaTime:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameplayKit/Reference/GKState_Class/index.html#//apple_ref/occ/instm/GKState/updateWithDeltaTime:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("updateWithDeltaTime:")
     public native void updateWithDeltaTime(double seconds);
 
-    /**
-     * willExitWithNextState:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameplayKit/Reference/GKState_Class/index.html#//apple_ref/occ/instm/GKState/willExitWithNextState:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("willExitWithNextState:")
     public native void willExitWithNextState(GKState nextState);

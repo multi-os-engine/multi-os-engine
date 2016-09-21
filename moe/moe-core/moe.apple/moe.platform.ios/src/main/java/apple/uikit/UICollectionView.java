@@ -351,150 +351,78 @@ public class UICollectionView extends UIScrollView {
     @NInt
     public static native long version_static();
 
-    /**
-     * allowsMultipleSelection</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UICollectionView_class/index.html#//apple_ref/occ/instp/UICollectionView/allowsMultipleSelection">iOS Dev Center</a>
-     */
     @Generated
     @Selector("allowsMultipleSelection")
     public native boolean allowsMultipleSelection();
 
-    /**
-     * allowsSelection</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UICollectionView_class/index.html#//apple_ref/occ/instp/UICollectionView/allowsSelection">iOS Dev Center</a>
-     */
     @Generated
     @Selector("allowsSelection")
     public native boolean allowsSelection();
 
-    /**
-     * backgroundView</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UICollectionView_class/index.html#//apple_ref/occ/instp/UICollectionView/backgroundView">iOS Dev Center</a>
-     */
     @Generated
     @Selector("backgroundView")
     public native UIView backgroundView();
 
-    /**
-     * cancelInteractiveTransition</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UICollectionView_class/index.html#//apple_ref/occ/instm/UICollectionView/cancelInteractiveTransition">iOS Dev Center</a>
-     */
     @Generated
     @Selector("cancelInteractiveTransition")
     public native void cancelInteractiveTransition();
 
-    /**
-     * cellForItemAtIndexPath:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UICollectionView_class/index.html#//apple_ref/occ/instm/UICollectionView/cellForItemAtIndexPath:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("cellForItemAtIndexPath:")
     public native UICollectionViewCell cellForItemAtIndexPath(NSIndexPath indexPath);
 
-    /**
-     * collectionViewLayout</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UICollectionView_class/index.html#//apple_ref/occ/instp/UICollectionView/collectionViewLayout">iOS Dev Center</a>
-     */
     @Generated
     @Selector("collectionViewLayout")
     public native UICollectionViewLayout collectionViewLayout();
 
-    /**
-     * dataSource</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UICollectionView_class/index.html#//apple_ref/occ/instp/UICollectionView/dataSource">iOS Dev Center</a>
-     */
     @Generated
     @Selector("dataSource")
     @MappedReturn(ObjCObjectMapper.class)
     public native UICollectionViewDataSource dataSource();
 
-    /**
-     * delegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UICollectionView_class/index.html#//apple_ref/occ/instp/UICollectionView/delegate">iOS Dev Center</a>
-     */
     @Generated
     @Selector("delegate")
     @MappedReturn(ObjCObjectMapper.class)
     public native Object delegate();
 
-    /**
-     * deleteItemsAtIndexPaths:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UICollectionView_class/index.html#//apple_ref/occ/instm/UICollectionView/deleteItemsAtIndexPaths:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("deleteItemsAtIndexPaths:")
     public native void deleteItemsAtIndexPaths(NSArray<? extends NSIndexPath> indexPaths);
 
-    /**
-     * deleteSections:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UICollectionView_class/index.html#//apple_ref/occ/instm/UICollectionView/deleteSections:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("deleteSections:")
     public native void deleteSections(NSIndexSet sections);
 
-    /**
-     * dequeueReusableCellWithReuseIdentifier:forIndexPath:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UICollectionView_class/index.html#//apple_ref/occ/instm/UICollectionView/dequeueReusableCellWithReuseIdentifier:forIndexPath:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("dequeueReusableCellWithReuseIdentifier:forIndexPath:")
     public native UICollectionViewCell dequeueReusableCellWithReuseIdentifierForIndexPath(String identifier,
             NSIndexPath indexPath);
 
-    /**
-     * dequeueReusableSupplementaryViewOfKind:withReuseIdentifier:forIndexPath:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UICollectionView_class/index.html#//apple_ref/occ/instm/UICollectionView/dequeueReusableSupplementaryViewOfKind:withReuseIdentifier:forIndexPath:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("dequeueReusableSupplementaryViewOfKind:withReuseIdentifier:forIndexPath:")
     public native UICollectionReusableView dequeueReusableSupplementaryViewOfKindWithReuseIdentifierForIndexPath(
             String elementKind, String identifier, NSIndexPath indexPath);
 
-    /**
-     * deselectItemAtIndexPath:animated:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UICollectionView_class/index.html#//apple_ref/occ/instm/UICollectionView/deselectItemAtIndexPath:animated:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("deselectItemAtIndexPath:animated:")
     public native void deselectItemAtIndexPathAnimated(NSIndexPath indexPath, boolean animated);
 
-    /**
-     * finishInteractiveTransition</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UICollectionView_class/index.html#//apple_ref/occ/instm/UICollectionView/finishInteractiveTransition">iOS Dev Center</a>
-     */
     @Generated
     @Selector("finishInteractiveTransition")
     public native void finishInteractiveTransition();
 
-    /**
-     * indexPathForCell:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UICollectionView_class/index.html#//apple_ref/occ/instm/UICollectionView/indexPathForCell:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("indexPathForCell:")
     public native NSIndexPath indexPathForCell(UICollectionViewCell cell);
 
-    /**
-     * indexPathForItemAtPoint:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UICollectionView_class/index.html#//apple_ref/occ/instm/UICollectionView/indexPathForItemAtPoint:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("indexPathForItemAtPoint:")
     public native NSIndexPath indexPathForItemAtPoint(@ByValue CGPoint point);
 
-    /**
-     * indexPathsForSelectedItems</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UICollectionView_class/index.html#//apple_ref/occ/instm/UICollectionView/indexPathsForSelectedItems">iOS Dev Center</a>
-     */
     @Generated
     @Selector("indexPathsForSelectedItems")
     public native NSArray<? extends NSIndexPath> indexPathsForSelectedItems();
 
-    /**
-     * indexPathsForVisibleItems</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UICollectionView_class/index.html#//apple_ref/occ/instm/UICollectionView/indexPathsForVisibleItems">iOS Dev Center</a>
-     */
     @Generated
     @Selector("indexPathsForVisibleItems")
     public native NSArray<? extends NSIndexPath> indexPathsForVisibleItems();
@@ -507,229 +435,121 @@ public class UICollectionView extends UIScrollView {
     @Selector("initWithFrame:")
     public native UICollectionView initWithFrame(@ByValue CGRect frame);
 
-    /**
-     * initWithFrame:collectionViewLayout:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UICollectionView_class/index.html#//apple_ref/occ/instm/UICollectionView/initWithFrame:collectionViewLayout:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithFrame:collectionViewLayout:")
     public native UICollectionView initWithFrameCollectionViewLayout(@ByValue CGRect frame,
             UICollectionViewLayout layout);
 
-    /**
-     * insertItemsAtIndexPaths:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UICollectionView_class/index.html#//apple_ref/occ/instm/UICollectionView/insertItemsAtIndexPaths:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("insertItemsAtIndexPaths:")
     public native void insertItemsAtIndexPaths(NSArray<? extends NSIndexPath> indexPaths);
 
-    /**
-     * insertSections:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UICollectionView_class/index.html#//apple_ref/occ/instm/UICollectionView/insertSections:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("insertSections:")
     public native void insertSections(NSIndexSet sections);
 
-    /**
-     * layoutAttributesForItemAtIndexPath:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UICollectionView_class/index.html#//apple_ref/occ/instm/UICollectionView/layoutAttributesForItemAtIndexPath:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("layoutAttributesForItemAtIndexPath:")
     public native UICollectionViewLayoutAttributes layoutAttributesForItemAtIndexPath(NSIndexPath indexPath);
 
-    /**
-     * layoutAttributesForSupplementaryElementOfKind:atIndexPath:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UICollectionView_class/index.html#//apple_ref/occ/instm/UICollectionView/layoutAttributesForSupplementaryElementOfKind:atIndexPath:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("layoutAttributesForSupplementaryElementOfKind:atIndexPath:")
     public native UICollectionViewLayoutAttributes layoutAttributesForSupplementaryElementOfKindAtIndexPath(String kind,
             NSIndexPath indexPath);
 
-    /**
-     * moveItemAtIndexPath:toIndexPath:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UICollectionView_class/index.html#//apple_ref/occ/instm/UICollectionView/moveItemAtIndexPath:toIndexPath:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("moveItemAtIndexPath:toIndexPath:")
     public native void moveItemAtIndexPathToIndexPath(NSIndexPath indexPath, NSIndexPath newIndexPath);
 
-    /**
-     * moveSection:toSection:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UICollectionView_class/index.html#//apple_ref/occ/instm/UICollectionView/moveSection:toSection:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("moveSection:toSection:")
     public native void moveSectionToSection(@NInt long section, @NInt long newSection);
 
-    /**
-     * numberOfItemsInSection:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UICollectionView_class/index.html#//apple_ref/occ/instm/UICollectionView/numberOfItemsInSection:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("numberOfItemsInSection:")
     @NInt
     public native long numberOfItemsInSection(@NInt long section);
 
-    /**
-     * numberOfSections</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UICollectionView_class/index.html#//apple_ref/occ/instm/UICollectionView/numberOfSections">iOS Dev Center</a>
-     */
     @Generated
     @Selector("numberOfSections")
     @NInt
     public native long numberOfSections();
 
-    /**
-     * performBatchUpdates:completion:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UICollectionView_class/index.html#//apple_ref/occ/instm/UICollectionView/performBatchUpdates:completion:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("performBatchUpdates:completion:")
     public native void performBatchUpdatesCompletion(
             @ObjCBlock(name = "call_performBatchUpdatesCompletion_0") Block_performBatchUpdatesCompletion_0 updates,
             @ObjCBlock(name = "call_performBatchUpdatesCompletion_1") Block_performBatchUpdatesCompletion_1 completion);
 
-    /**
-     * registerClass:forCellWithReuseIdentifier:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UICollectionView_class/index.html#//apple_ref/occ/instm/UICollectionView/registerClass:forCellWithReuseIdentifier:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("registerClass:forCellWithReuseIdentifier:")
     public native void registerClassForCellWithReuseIdentifier(Class cellClass, String identifier);
 
-    /**
-     * registerClass:forSupplementaryViewOfKind:withReuseIdentifier:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UICollectionView_class/index.html#//apple_ref/occ/instm/UICollectionView/registerClass:forSupplementaryViewOfKind:withReuseIdentifier:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("registerClass:forSupplementaryViewOfKind:withReuseIdentifier:")
     public native void registerClassForSupplementaryViewOfKindWithReuseIdentifier(Class viewClass, String elementKind,
             String identifier);
 
-    /**
-     * registerNib:forCellWithReuseIdentifier:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UICollectionView_class/index.html#//apple_ref/occ/instm/UICollectionView/registerNib:forCellWithReuseIdentifier:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("registerNib:forCellWithReuseIdentifier:")
     public native void registerNibForCellWithReuseIdentifier(UINib nib, String identifier);
 
-    /**
-     * registerNib:forSupplementaryViewOfKind:withReuseIdentifier:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UICollectionView_class/index.html#//apple_ref/occ/instm/UICollectionView/registerNib:forSupplementaryViewOfKind:withReuseIdentifier:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("registerNib:forSupplementaryViewOfKind:withReuseIdentifier:")
     public native void registerNibForSupplementaryViewOfKindWithReuseIdentifier(UINib nib, String kind,
             String identifier);
 
-    /**
-     * reloadData</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UICollectionView_class/index.html#//apple_ref/occ/instm/UICollectionView/reloadData">iOS Dev Center</a>
-     */
     @Generated
     @Selector("reloadData")
     public native void reloadData();
 
-    /**
-     * reloadItemsAtIndexPaths:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UICollectionView_class/index.html#//apple_ref/occ/instm/UICollectionView/reloadItemsAtIndexPaths:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("reloadItemsAtIndexPaths:")
     public native void reloadItemsAtIndexPaths(NSArray<? extends NSIndexPath> indexPaths);
 
-    /**
-     * reloadSections:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UICollectionView_class/index.html#//apple_ref/occ/instm/UICollectionView/reloadSections:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("reloadSections:")
     public native void reloadSections(NSIndexSet sections);
 
-    /**
-     * scrollToItemAtIndexPath:atScrollPosition:animated:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UICollectionView_class/index.html#//apple_ref/occ/instm/UICollectionView/scrollToItemAtIndexPath:atScrollPosition:animated:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("scrollToItemAtIndexPath:atScrollPosition:animated:")
     public native void scrollToItemAtIndexPathAtScrollPositionAnimated(NSIndexPath indexPath,
             @NUInt long scrollPosition, boolean animated);
 
-    /**
-     * selectItemAtIndexPath:animated:scrollPosition:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UICollectionView_class/index.html#//apple_ref/occ/instm/UICollectionView/selectItemAtIndexPath:animated:scrollPosition:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("selectItemAtIndexPath:animated:scrollPosition:")
     public native void selectItemAtIndexPathAnimatedScrollPosition(NSIndexPath indexPath, boolean animated,
             @NUInt long scrollPosition);
 
-    /**
-     * allowsMultipleSelection</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UICollectionView_class/index.html#//apple_ref/occ/instp/UICollectionView/allowsMultipleSelection">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setAllowsMultipleSelection:")
     public native void setAllowsMultipleSelection(boolean value);
 
-    /**
-     * allowsSelection</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UICollectionView_class/index.html#//apple_ref/occ/instp/UICollectionView/allowsSelection">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setAllowsSelection:")
     public native void setAllowsSelection(boolean value);
 
-    /**
-     * backgroundView</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UICollectionView_class/index.html#//apple_ref/occ/instp/UICollectionView/backgroundView">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setBackgroundView:")
     public native void setBackgroundView(UIView value);
 
-    /**
-     * collectionViewLayout</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UICollectionView_class/index.html#//apple_ref/occ/instp/UICollectionView/collectionViewLayout">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setCollectionViewLayout:")
     public native void setCollectionViewLayout(UICollectionViewLayout value);
 
-    /**
-     * setCollectionViewLayout:animated:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UICollectionView_class/index.html#//apple_ref/occ/instm/UICollectionView/setCollectionViewLayout:animated:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setCollectionViewLayout:animated:")
     public native void setCollectionViewLayoutAnimated(UICollectionViewLayout layout, boolean animated);
 
-    /**
-     * setCollectionViewLayout:animated:completion:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UICollectionView_class/index.html#//apple_ref/occ/instm/UICollectionView/setCollectionViewLayout:animated:completion:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setCollectionViewLayout:animated:completion:")
     public native void setCollectionViewLayoutAnimatedCompletion(UICollectionViewLayout layout, boolean animated,
             @ObjCBlock(name = "call_setCollectionViewLayoutAnimatedCompletion") Block_setCollectionViewLayoutAnimatedCompletion completion);
 
-    /**
-     * dataSource</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UICollectionView_class/index.html#//apple_ref/occ/instp/UICollectionView/dataSource">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setDataSource:")
     public native void setDataSource_unsafe(@Mapped(ObjCObjectMapper.class) UICollectionViewDataSource value);
 
-    /**
-     * dataSource</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UICollectionView_class/index.html#//apple_ref/occ/instp/UICollectionView/dataSource">iOS Dev Center</a>
-     */
     @Generated
     public void setDataSource(@Mapped(ObjCObjectMapper.class) UICollectionViewDataSource value) {
         Object __old = dataSource();
@@ -742,18 +562,10 @@ public class UICollectionView extends UIScrollView {
         }
     }
 
-    /**
-     * delegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UICollectionView_class/index.html#//apple_ref/occ/instp/UICollectionView/delegate">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setDelegate:")
     public native void setDelegate_unsafe(@Mapped(ObjCObjectMapper.class) Object value);
 
-    /**
-     * delegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UICollectionView_class/index.html#//apple_ref/occ/instp/UICollectionView/delegate">iOS Dev Center</a>
-     */
     @Generated
     public void setDelegate(@Mapped(ObjCObjectMapper.class) Object value) {
         Object __old = delegate();
@@ -766,52 +578,28 @@ public class UICollectionView extends UIScrollView {
         }
     }
 
-    /**
-     * startInteractiveTransitionToCollectionViewLayout:completion:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UICollectionView_class/index.html#//apple_ref/occ/instm/UICollectionView/startInteractiveTransitionToCollectionViewLayout:completion:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("startInteractiveTransitionToCollectionViewLayout:completion:")
     public native UICollectionViewTransitionLayout startInteractiveTransitionToCollectionViewLayoutCompletion(
             UICollectionViewLayout layout,
             @ObjCBlock(name = "call_startInteractiveTransitionToCollectionViewLayoutCompletion") Block_startInteractiveTransitionToCollectionViewLayoutCompletion completion);
 
-    /**
-     * visibleCells</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UICollectionView_class/index.html#//apple_ref/occ/instm/UICollectionView/visibleCells">iOS Dev Center</a>
-     */
     @Generated
     @Selector("visibleCells")
     public native NSArray<? extends UICollectionViewCell> visibleCells();
 
-    /**
-     * beginInteractiveMovementForItemAtIndexPath:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UICollectionView_class/index.html#//apple_ref/occ/instm/UICollectionView/beginInteractiveMovementForItemAtIndexPath:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("beginInteractiveMovementForItemAtIndexPath:")
     public native boolean beginInteractiveMovementForItemAtIndexPath(NSIndexPath indexPath);
 
-    /**
-     * cancelInteractiveMovement</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UICollectionView_class/index.html#//apple_ref/occ/instm/UICollectionView/cancelInteractiveMovement">iOS Dev Center</a>
-     */
     @Generated
     @Selector("cancelInteractiveMovement")
     public native void cancelInteractiveMovement();
 
-    /**
-     * endInteractiveMovement</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UICollectionView_class/index.html#//apple_ref/occ/instm/UICollectionView/endInteractiveMovement">iOS Dev Center</a>
-     */
     @Generated
     @Selector("endInteractiveMovement")
     public native void endInteractiveMovement();
 
-    /**
-     * indexPathsForVisibleSupplementaryElementsOfKind:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UICollectionView_class/index.html#//apple_ref/occ/instm/UICollectionView/indexPathsForVisibleSupplementaryElementsOfKind:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("indexPathsForVisibleSupplementaryElementsOfKind:")
     public native NSArray<? extends NSIndexPath> indexPathsForVisibleSupplementaryElementsOfKind(String elementKind);
@@ -820,43 +608,23 @@ public class UICollectionView extends UIScrollView {
     @Selector("initWithCoder:")
     public native UICollectionView initWithCoder(NSCoder aDecoder);
 
-    /**
-     * supplementaryViewForElementKind:atIndexPath:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UICollectionView_class/index.html#//apple_ref/occ/instm/UICollectionView/supplementaryViewForElementKind:atIndexPath:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("supplementaryViewForElementKind:atIndexPath:")
     public native UICollectionReusableView supplementaryViewForElementKindAtIndexPath(String elementKind,
             NSIndexPath indexPath);
 
-    /**
-     * updateInteractiveMovementTargetPosition:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UICollectionView_class/index.html#//apple_ref/occ/instm/UICollectionView/updateInteractiveMovementTargetPosition:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("updateInteractiveMovementTargetPosition:")
     public native void updateInteractiveMovementTargetPosition(@ByValue CGPoint targetPosition);
 
-    /**
-     * visibleSupplementaryViewsOfKind:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UICollectionView_class/index.html#//apple_ref/occ/instm/UICollectionView/visibleSupplementaryViewsOfKind:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("visibleSupplementaryViewsOfKind:")
     public native NSArray<? extends UICollectionReusableView> visibleSupplementaryViewsOfKind(String elementKind);
 
-    /**
-     * remembersLastFocusedIndexPath</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UICollectionView_class/index.html#//apple_ref/occ/instp/UICollectionView/remembersLastFocusedIndexPath">iOS Dev Center</a>
-     */
     @Generated
     @Selector("remembersLastFocusedIndexPath")
     public native boolean remembersLastFocusedIndexPath();
 
-    /**
-     * remembersLastFocusedIndexPath</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UICollectionView_class/index.html#//apple_ref/occ/instp/UICollectionView/remembersLastFocusedIndexPath">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setRemembersLastFocusedIndexPath:")
     public native void setRemembersLastFocusedIndexPath(boolean value);

@@ -162,27 +162,15 @@ public class UIGravityBehavior extends UIDynamicBehavior {
     @NInt
     public static native long version_static();
 
-    /**
-     * addItem:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIGravityBehavior_Class/index.html#//apple_ref/occ/instm/UIGravityBehavior/addItem:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("addItem:")
     public native void addItem(@Mapped(ObjCObjectMapper.class) UIDynamicItem item);
 
-    /**
-     * angle</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIGravityBehavior_Class/index.html#//apple_ref/occ/instp/UIGravityBehavior/angle">iOS Dev Center</a>
-     */
     @Generated
     @Selector("angle")
     @NFloat
     public native double angle();
 
-    /**
-     * gravityDirection</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIGravityBehavior_Class/index.html#//apple_ref/occ/instp/UIGravityBehavior/gravityDirection">iOS Dev Center</a>
-     */
     @Generated
     @Selector("gravityDirection")
     @ByValue
@@ -192,67 +180,35 @@ public class UIGravityBehavior extends UIDynamicBehavior {
     @Selector("init")
     public native UIGravityBehavior init();
 
-    /**
-     * initWithItems:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIGravityBehavior_Class/index.html#//apple_ref/occ/instm/UIGravityBehavior/initWithItems:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithItems:")
     public native UIGravityBehavior initWithItems(NSArray<?> items);
 
-    /**
-     * items</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIGravityBehavior_Class/index.html#//apple_ref/occ/instp/UIGravityBehavior/items">iOS Dev Center</a>
-     */
     @Generated
     @Selector("items")
     public native NSArray<?> items();
 
-    /**
-     * magnitude</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIGravityBehavior_Class/index.html#//apple_ref/occ/instp/UIGravityBehavior/magnitude">iOS Dev Center</a>
-     */
     @Generated
     @Selector("magnitude")
     @NFloat
     public native double magnitude();
 
-    /**
-     * removeItem:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIGravityBehavior_Class/index.html#//apple_ref/occ/instm/UIGravityBehavior/removeItem:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("removeItem:")
     public native void removeItem(@Mapped(ObjCObjectMapper.class) UIDynamicItem item);
 
-    /**
-     * angle</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIGravityBehavior_Class/index.html#//apple_ref/occ/instp/UIGravityBehavior/angle">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setAngle:")
     public native void setAngle(@NFloat double value);
 
-    /**
-     * setAngle:magnitude:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIGravityBehavior_Class/index.html#//apple_ref/occ/instm/UIGravityBehavior/setAngle:magnitude:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setAngle:magnitude:")
     public native void setAngleMagnitude(@NFloat double angle, @NFloat double magnitude);
 
-    /**
-     * gravityDirection</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIGravityBehavior_Class/index.html#//apple_ref/occ/instp/UIGravityBehavior/gravityDirection">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setGravityDirection:")
     public native void setGravityDirection(@ByValue CGVector value);
 
-    /**
-     * magnitude</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIGravityBehavior_Class/index.html#//apple_ref/occ/instp/UIGravityBehavior/magnitude">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setMagnitude:")
     public native void setMagnitude(@NFloat double value);

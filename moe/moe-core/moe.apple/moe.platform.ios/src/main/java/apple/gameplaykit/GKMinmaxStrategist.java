@@ -161,10 +161,6 @@ public class GKMinmaxStrategist extends NSObject implements GKStrategist {
     @NInt
     public static native long version_static();
 
-    /**
-     * bestMoveForPlayer:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameplayKit/Reference/GKMinmaxStrategist_Class/index.html#//apple_ref/occ/instm/GKMinmaxStrategist/bestMoveForPlayer:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("bestMoveForPlayer:")
     @MappedReturn(ObjCObjectMapper.class)
@@ -183,19 +179,11 @@ public class GKMinmaxStrategist extends NSObject implements GKStrategist {
     @Selector("init")
     public native GKMinmaxStrategist init();
 
-    /**
-     * maxLookAheadDepth</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameplayKit/Reference/GKMinmaxStrategist_Class/index.html#//apple_ref/occ/instp/GKMinmaxStrategist/maxLookAheadDepth">iOS Dev Center</a>
-     */
     @Generated
     @Selector("maxLookAheadDepth")
     @NInt
     public native long maxLookAheadDepth();
 
-    /**
-     * randomMoveForPlayer:fromNumberOfBestMoves:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameplayKit/Reference/GKMinmaxStrategist_Class/index.html#//apple_ref/occ/instm/GKMinmaxStrategist/randomMoveForPlayer:fromNumberOfBestMoves:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("randomMoveForPlayer:fromNumberOfBestMoves:")
     @MappedReturn(ObjCObjectMapper.class)
@@ -219,10 +207,6 @@ public class GKMinmaxStrategist extends NSObject implements GKStrategist {
     @Selector("setGameModel:")
     public native void setGameModel(@Mapped(ObjCObjectMapper.class) Object value);
 
-    /**
-     * maxLookAheadDepth</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameplayKit/Reference/GKMinmaxStrategist_Class/index.html#//apple_ref/occ/instp/GKMinmaxStrategist/maxLookAheadDepth">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setMaxLookAheadDepth:")
     public native void setMaxLookAheadDepth(@NInt long value);

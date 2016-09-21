@@ -347,26 +347,14 @@ public class UITableViewHeaderFooterView extends UIView {
     @NInt
     public static native long version_static();
 
-    /**
-     * backgroundView</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITableViewHeaderFooterView_class/index.html#//apple_ref/occ/instp/UITableViewHeaderFooterView/backgroundView">iOS Dev Center</a>
-     */
     @Generated
     @Selector("backgroundView")
     public native UIView backgroundView();
 
-    /**
-     * contentView</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITableViewHeaderFooterView_class/index.html#//apple_ref/occ/instp/UITableViewHeaderFooterView/contentView">iOS Dev Center</a>
-     */
     @Generated
     @Selector("contentView")
     public native UIView contentView();
 
-    /**
-     * detailTextLabel</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITableViewHeaderFooterView_class/index.html#//apple_ref/occ/instp/UITableViewHeaderFooterView/detailTextLabel">iOS Dev Center</a>
-     */
     @Generated
     @Selector("detailTextLabel")
     public native UILabel detailTextLabel();
@@ -379,58 +367,30 @@ public class UITableViewHeaderFooterView extends UIView {
     @Selector("initWithFrame:")
     public native UITableViewHeaderFooterView initWithFrame(@ByValue CGRect frame);
 
-    /**
-     * initWithReuseIdentifier:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITableViewHeaderFooterView_class/index.html#//apple_ref/occ/instm/UITableViewHeaderFooterView/initWithReuseIdentifier:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithReuseIdentifier:")
     public native UITableViewHeaderFooterView initWithReuseIdentifier(String reuseIdentifier);
 
-    /**
-     * prepareForReuse</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITableViewHeaderFooterView_class/index.html#//apple_ref/occ/instm/UITableViewHeaderFooterView/prepareForReuse">iOS Dev Center</a>
-     */
     @Generated
     @Selector("prepareForReuse")
     public native void prepareForReuse();
 
-    /**
-     * reuseIdentifier</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITableViewHeaderFooterView_class/index.html#//apple_ref/occ/instp/UITableViewHeaderFooterView/reuseIdentifier">iOS Dev Center</a>
-     */
     @Generated
     @Selector("reuseIdentifier")
     public native String reuseIdentifier();
 
-    /**
-     * backgroundView</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITableViewHeaderFooterView_class/index.html#//apple_ref/occ/instp/UITableViewHeaderFooterView/backgroundView">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setBackgroundView:")
     public native void setBackgroundView(UIView value);
 
-    /**
-     * tintColor</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITableViewHeaderFooterView_class/index.html#//apple_ref/occ/instp/UITableViewHeaderFooterView/tintColor">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setTintColor:")
     public native void setTintColor(UIColor value);
 
-    /**
-     * textLabel</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITableViewHeaderFooterView_class/index.html#//apple_ref/occ/instp/UITableViewHeaderFooterView/textLabel">iOS Dev Center</a>
-     */
     @Generated
     @Selector("textLabel")
     public native UILabel textLabel();
 
-    /**
-     * tintColor</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITableViewHeaderFooterView_class/index.html#//apple_ref/occ/instp/UITableViewHeaderFooterView/tintColor">iOS Dev Center</a>
-     */
     @Generated
     @Selector("tintColor")
     public native UIColor tintColor();

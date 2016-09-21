@@ -28,18 +28,10 @@ import org.moe.natj.objc.ann.Selector;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("MDLNamed")
 public interface MDLNamed {
-    /**
-     * name</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLNamed_Protocol/index.html#//apple_ref/occ/intfp/MDLNamed/name">iOS Dev Center</a>
-     */
     @Generated
     @Selector("name")
     String name();
 
-    /**
-     * name</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLNamed_Protocol/index.html#//apple_ref/occ/intfp/MDLNamed/name">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setName:")
     void setName(String value);

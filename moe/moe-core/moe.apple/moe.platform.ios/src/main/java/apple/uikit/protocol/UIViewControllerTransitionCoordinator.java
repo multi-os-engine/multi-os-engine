@@ -32,30 +32,18 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("UIViewControllerTransitionCoordinator")
 public interface UIViewControllerTransitionCoordinator extends UIViewControllerTransitionCoordinatorContext {
-    /**
-     * animateAlongsideTransition:completion:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIViewControllerTransitionCoordinator_Protocol/index.html#//apple_ref/occ/intfm/UIViewControllerTransitionCoordinator/animateAlongsideTransition:completion:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("animateAlongsideTransition:completion:")
     boolean animateAlongsideTransitionCompletion(
             @ObjCBlock(name = "call_animateAlongsideTransitionCompletion_0") Block_animateAlongsideTransitionCompletion_0 animation,
             @ObjCBlock(name = "call_animateAlongsideTransitionCompletion_1") Block_animateAlongsideTransitionCompletion_1 completion);
 
-    /**
-     * animateAlongsideTransitionInView:animation:completion:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIViewControllerTransitionCoordinator_Protocol/index.html#//apple_ref/occ/intfm/UIViewControllerTransitionCoordinator/animateAlongsideTransitionInView:animation:completion:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("animateAlongsideTransitionInView:animation:completion:")
     boolean animateAlongsideTransitionInViewAnimationCompletion(UIView view,
             @ObjCBlock(name = "call_animateAlongsideTransitionInViewAnimationCompletion_1") Block_animateAlongsideTransitionInViewAnimationCompletion_1 animation,
             @ObjCBlock(name = "call_animateAlongsideTransitionInViewAnimationCompletion_2") Block_animateAlongsideTransitionInViewAnimationCompletion_2 completion);
 
-    /**
-     * notifyWhenInteractionEndsUsingBlock:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIViewControllerTransitionCoordinator_Protocol/index.html#//apple_ref/occ/intfm/UIViewControllerTransitionCoordinator/notifyWhenInteractionEndsUsingBlock:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("notifyWhenInteractionEndsUsingBlock:")
     void notifyWhenInteractionEndsUsingBlock(

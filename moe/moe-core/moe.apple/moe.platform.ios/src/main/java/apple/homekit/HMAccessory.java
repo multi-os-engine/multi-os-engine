@@ -162,37 +162,21 @@ public class HMAccessory extends NSObject {
     @NInt
     public static native long version();
 
-    /**
-     * delegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HomeKit/Reference/HMAccessory_Class/index.html#//apple_ref/occ/instp/HMAccessory/delegate">iOS Dev Center</a>
-     */
     @Generated
     @Selector("delegate")
     @MappedReturn(ObjCObjectMapper.class)
     public native HMAccessoryDelegate delegate();
 
-    /**
-     * identifier</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HomeKit/Reference/HMAccessory_Class/index.html#//apple_ref/occ/instp/HMAccessory/identifier">iOS Dev Center</a>
-     */
     @Deprecated
     @Generated
     @Selector("identifier")
     public native NSUUID identifier();
 
-    /**
-     * identifiersForBridgedAccessories</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HomeKit/Reference/HMAccessory_Class/index.html#//apple_ref/occ/instp/HMAccessory/identifiersForBridgedAccessories">iOS Dev Center</a>
-     */
     @Deprecated
     @Generated
     @Selector("identifiersForBridgedAccessories")
     public native NSArray<? extends NSUUID> identifiersForBridgedAccessories();
 
-    /**
-     * identifyWithCompletionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HomeKit/Reference/HMAccessory_Class/index.html#//apple_ref/occ/instm/HMAccessory/identifyWithCompletionHandler:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("identifyWithCompletionHandler:")
     public native void identifyWithCompletionHandler(
@@ -202,66 +186,34 @@ public class HMAccessory extends NSObject {
     @Selector("init")
     public native HMAccessory init();
 
-    /**
-     * blocked</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HomeKit/Reference/HMAccessory_Class/index.html#//apple_ref/occ/instp/HMAccessory/blocked">iOS Dev Center</a>
-     */
     @Generated
     @Selector("isBlocked")
     public native boolean isBlocked();
 
-    /**
-     * bridged</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HomeKit/Reference/HMAccessory_Class/index.html#//apple_ref/occ/instp/HMAccessory/bridged">iOS Dev Center</a>
-     */
     @Generated
     @Selector("isBridged")
     public native boolean isBridged();
 
-    /**
-     * reachable</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HomeKit/Reference/HMAccessory_Class/index.html#//apple_ref/occ/instp/HMAccessory/reachable">iOS Dev Center</a>
-     */
     @Generated
     @Selector("isReachable")
     public native boolean isReachable();
 
-    /**
-     * name</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HomeKit/Reference/HMAccessory_Class/index.html#//apple_ref/occ/instp/HMAccessory/name">iOS Dev Center</a>
-     */
     @Generated
     @Selector("name")
     public native String name();
 
-    /**
-     * room</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HomeKit/Reference/HMAccessory_Class/index.html#//apple_ref/occ/instp/HMAccessory/room">iOS Dev Center</a>
-     */
     @Generated
     @Selector("room")
     public native HMRoom room();
 
-    /**
-     * services</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HomeKit/Reference/HMAccessory_Class/index.html#//apple_ref/occ/instp/HMAccessory/services">iOS Dev Center</a>
-     */
     @Generated
     @Selector("services")
     public native NSArray<? extends HMService> services();
 
-    /**
-     * delegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HomeKit/Reference/HMAccessory_Class/index.html#//apple_ref/occ/instp/HMAccessory/delegate">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setDelegate:")
     public native void setDelegate_unsafe(@Mapped(ObjCObjectMapper.class) HMAccessoryDelegate value);
 
-    /**
-     * delegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HomeKit/Reference/HMAccessory_Class/index.html#//apple_ref/occ/instp/HMAccessory/delegate">iOS Dev Center</a>
-     */
     @Generated
     public void setDelegate(@Mapped(ObjCObjectMapper.class) HMAccessoryDelegate value) {
         Object __old = delegate();
@@ -274,10 +226,6 @@ public class HMAccessory extends NSObject {
         }
     }
 
-    /**
-     * updateName:completionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HomeKit/Reference/HMAccessory_Class/index.html#//apple_ref/occ/instm/HMAccessory/updateName:completionHandler:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("updateName:completionHandler:")
     public native void updateNameCompletionHandler(String name,

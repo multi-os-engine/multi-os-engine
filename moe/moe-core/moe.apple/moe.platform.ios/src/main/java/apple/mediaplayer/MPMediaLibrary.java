@@ -65,10 +65,6 @@ public class MPMediaLibrary extends NSObject implements NSSecureCoding {
     @Selector("alloc")
     public static native MPMediaLibrary alloc();
 
-    /**
-     * defaultMediaLibrary</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPMediaLibrary_ClassReference/index.html#//apple_ref/occ/clm/MPMediaLibrary/defaultMediaLibrary">iOS Dev Center</a>
-     */
     @Generated
     @Selector("defaultMediaLibrary")
     public static native MPMediaLibrary defaultMediaLibrary();
@@ -187,10 +183,6 @@ public class MPMediaLibrary extends NSObject implements NSSecureCoding {
     @NInt
     public static native long version_static();
 
-    /**
-     * beginGeneratingLibraryChangeNotifications</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPMediaLibrary_ClassReference/index.html#//apple_ref/occ/instm/MPMediaLibrary/beginGeneratingLibraryChangeNotifications">iOS Dev Center</a>
-     */
     @Generated
     @Selector("beginGeneratingLibraryChangeNotifications")
     public native void beginGeneratingLibraryChangeNotifications();
@@ -199,10 +191,6 @@ public class MPMediaLibrary extends NSObject implements NSSecureCoding {
     @Selector("encodeWithCoder:")
     public native void encodeWithCoder(NSCoder aCoder);
 
-    /**
-     * endGeneratingLibraryChangeNotifications</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPMediaLibrary_ClassReference/index.html#//apple_ref/occ/instm/MPMediaLibrary/endGeneratingLibraryChangeNotifications">iOS Dev Center</a>
-     */
     @Generated
     @Selector("endGeneratingLibraryChangeNotifications")
     public native void endGeneratingLibraryChangeNotifications();
@@ -215,10 +203,6 @@ public class MPMediaLibrary extends NSObject implements NSSecureCoding {
     @Selector("initWithCoder:")
     public native MPMediaLibrary initWithCoder(NSCoder aDecoder);
 
-    /**
-     * lastModifiedDate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPMediaLibrary_ClassReference/index.html#//apple_ref/occ/instp/MPMediaLibrary/lastModifiedDate">iOS Dev Center</a>
-     */
     @Generated
     @Selector("lastModifiedDate")
     public native NSDate lastModifiedDate();

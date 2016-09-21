@@ -60,10 +60,6 @@ public class UIPrinter extends NSObject {
     @Selector("alloc")
     public static native UIPrinter alloc();
 
-    /**
-     * printerWithURL:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPrinter_class/index.html#//apple_ref/occ/clm/UIPrinter/printerWithURL:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("printerWithURL:")
     public static native UIPrinter printerWithURL(NSURL url);
@@ -168,34 +164,18 @@ public class UIPrinter extends NSObject {
     @NInt
     public static native long version_static();
 
-    /**
-     * URL</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPrinter_class/index.html#//apple_ref/occ/instp/UIPrinter/URL">iOS Dev Center</a>
-     */
     @Generated
     @Selector("URL")
     public native NSURL URL();
 
-    /**
-     * contactPrinter:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPrinter_class/index.html#//apple_ref/occ/instm/UIPrinter/contactPrinter:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("contactPrinter:")
     public native void contactPrinter(@ObjCBlock(name = "call_contactPrinter") Block_contactPrinter completionHandler);
 
-    /**
-     * displayLocation</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPrinter_class/index.html#//apple_ref/occ/instp/UIPrinter/displayLocation">iOS Dev Center</a>
-     */
     @Generated
     @Selector("displayLocation")
     public native String displayLocation();
 
-    /**
-     * displayName</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPrinter_class/index.html#//apple_ref/occ/instp/UIPrinter/displayName">iOS Dev Center</a>
-     */
     @Generated
     @Selector("displayName")
     public native String displayName();
@@ -204,35 +184,19 @@ public class UIPrinter extends NSObject {
     @Selector("init")
     public native UIPrinter init();
 
-    /**
-     * makeAndModel</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPrinter_class/index.html#//apple_ref/occ/instp/UIPrinter/makeAndModel">iOS Dev Center</a>
-     */
     @Generated
     @Selector("makeAndModel")
     public native String makeAndModel();
 
-    /**
-     * supportedJobTypes</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPrinter_class/index.html#//apple_ref/occ/instp/UIPrinter/supportedJobTypes">iOS Dev Center</a>
-     */
     @Generated
     @Selector("supportedJobTypes")
     @NInt
     public native long supportedJobTypes();
 
-    /**
-     * supportsColor</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPrinter_class/index.html#//apple_ref/occ/instp/UIPrinter/supportsColor">iOS Dev Center</a>
-     */
     @Generated
     @Selector("supportsColor")
     public native boolean supportsColor();
 
-    /**
-     * supportsDuplex</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPrinter_class/index.html#//apple_ref/occ/instp/UIPrinter/supportsDuplex">iOS Dev Center</a>
-     */
     @Generated
     @Selector("supportsDuplex")
     public native boolean supportsDuplex();

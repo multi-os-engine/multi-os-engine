@@ -34,10 +34,6 @@ import org.moe.natj.objc.ann.Selector;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("GKTurnBasedEventListener")
 public interface GKTurnBasedEventListener {
-    /**
-     * player:didRequestMatchWithOtherPlayers:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKTurnBasedEventListener_Ref/index.html#//apple_ref/occ/intfm/GKTurnBasedEventListener/player:didRequestMatchWithOtherPlayers:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("player:didRequestMatchWithOtherPlayers:")
@@ -45,10 +41,6 @@ public interface GKTurnBasedEventListener {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * player:didRequestMatchWithPlayers:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKTurnBasedEventListener_Ref/index.html#//apple_ref/occ/intfm/GKTurnBasedEventListener/player:didRequestMatchWithPlayers:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Deprecated
@@ -57,10 +49,6 @@ public interface GKTurnBasedEventListener {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * player:matchEnded:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKTurnBasedEventListener_Ref/index.html#//apple_ref/occ/intfm/GKTurnBasedEventListener/player:matchEnded:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("player:matchEnded:")
@@ -68,10 +56,6 @@ public interface GKTurnBasedEventListener {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * player:receivedExchangeCancellation:forMatch:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKTurnBasedEventListener_Ref/index.html#//apple_ref/occ/intfm/GKTurnBasedEventListener/player:receivedExchangeCancellation:forMatch:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("player:receivedExchangeCancellation:forMatch:")
@@ -80,10 +64,6 @@ public interface GKTurnBasedEventListener {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * player:receivedExchangeReplies:forCompletedExchange:forMatch:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKTurnBasedEventListener_Ref/index.html#//apple_ref/occ/intfm/GKTurnBasedEventListener/player:receivedExchangeReplies:forCompletedExchange:forMatch:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("player:receivedExchangeReplies:forCompletedExchange:forMatch:")
@@ -92,10 +72,6 @@ public interface GKTurnBasedEventListener {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * player:receivedExchangeRequest:forMatch:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKTurnBasedEventListener_Ref/index.html#//apple_ref/occ/intfm/GKTurnBasedEventListener/player:receivedExchangeRequest:forMatch:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("player:receivedExchangeRequest:forMatch:")
@@ -104,10 +80,6 @@ public interface GKTurnBasedEventListener {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * player:receivedTurnEventForMatch:didBecomeActive:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKTurnBasedEventListener_Ref/index.html#//apple_ref/occ/intfm/GKTurnBasedEventListener/player:receivedTurnEventForMatch:didBecomeActive:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("player:receivedTurnEventForMatch:didBecomeActive:")
@@ -116,10 +88,6 @@ public interface GKTurnBasedEventListener {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * player:wantsToQuitMatch:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKTurnBasedEventListener_Ref/index.html#//apple_ref/occ/intfm/GKTurnBasedEventListener/player:wantsToQuitMatch:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("player:wantsToQuitMatch:")

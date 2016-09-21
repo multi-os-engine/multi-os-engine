@@ -55,19 +55,11 @@ public class NSFileAccessIntent extends NSObject {
     @Selector("alloc")
     public static native NSFileAccessIntent alloc();
 
-    /**
-     * readingIntentWithURL:options:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSFileAccessIntent_Class/index.html#//apple_ref/occ/clm/NSFileAccessIntent/readingIntentWithURL:options:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("readingIntentWithURL:options:")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object readingIntentWithURLOptions(NSURL url, @NUInt long options);
 
-    /**
-     * writingIntentWithURL:options:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSFileAccessIntent_Class/index.html#//apple_ref/occ/clm/NSFileAccessIntent/writingIntentWithURL:options:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("writingIntentWithURL:options:")
     @MappedReturn(ObjCObjectMapper.class)
@@ -173,10 +165,6 @@ public class NSFileAccessIntent extends NSObject {
     @NInt
     public static native long version_static();
 
-    /**
-     * URL</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSFileAccessIntent_Class/index.html#//apple_ref/occ/instp/NSFileAccessIntent/URL">iOS Dev Center</a>
-     */
     @Generated
     @Selector("URL")
     public native NSURL URL();

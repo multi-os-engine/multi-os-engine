@@ -34,10 +34,6 @@ import org.moe.natj.objc.ann.Selector;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("MPPlayableContentDelegate")
 public interface MPPlayableContentDelegate {
-    /**
-     * playableContentManager:initiatePlaybackOfContentItemAtIndexPath:completionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPPlayableContentDelegate_Ref/index.html#//apple_ref/occ/intfm/MPPlayableContentDelegate/playableContentManager:initiatePlaybackOfContentItemAtIndexPath:completionHandler:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("playableContentManager:initiatePlaybackOfContentItemAtIndexPath:completionHandler:")
@@ -47,10 +43,6 @@ public interface MPPlayableContentDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * playableContentManager:didUpdateContext:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPPlayableContentDelegate_Ref/index.html#//apple_ref/occ/intfm/MPPlayableContentDelegate/playableContentManager:didUpdateContext:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("playableContentManager:didUpdateContext:")
@@ -59,10 +51,6 @@ public interface MPPlayableContentDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * playableContentManager:initializePlaybackQueueWithCompletionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPPlayableContentDelegate_Ref/index.html#//apple_ref/occ/intfm/MPPlayableContentDelegate/playableContentManager:initializePlaybackQueueWithCompletionHandler:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("playableContentManager:initializePlaybackQueueWithCompletionHandler:")

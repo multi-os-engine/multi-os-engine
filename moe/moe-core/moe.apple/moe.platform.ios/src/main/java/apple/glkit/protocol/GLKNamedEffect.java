@@ -28,10 +28,6 @@ import org.moe.natj.objc.ann.Selector;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("GLKNamedEffect")
 public interface GLKNamedEffect {
-    /**
-     * prepareToDraw</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GLkit/Reference/GLKNamedEffect_ProtocolRef/index.html#//apple_ref/occ/intfm/GLKNamedEffect/prepareToDraw">iOS Dev Center</a>
-     */
     @Generated
     @Selector("prepareToDraw")
     void prepareToDraw();

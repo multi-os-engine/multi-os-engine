@@ -162,18 +162,10 @@ public class MTLVertexAttributeDescriptorArray extends NSObject {
     @Selector("init")
     public native MTLVertexAttributeDescriptorArray init();
 
-    /**
-     * objectAtIndexedSubscript:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Metal/Reference/MTLVertexAttributeDescriptorArray_Ref/index.html#//apple_ref/occ/instm/MTLVertexAttributeDescriptorArray/objectAtIndexedSubscript:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("objectAtIndexedSubscript:")
     public native MTLVertexAttributeDescriptor objectAtIndexedSubscript(@NUInt long index);
 
-    /**
-     * setObject:atIndexedSubscript:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Metal/Reference/MTLVertexAttributeDescriptorArray_Ref/index.html#//apple_ref/occ/instm/MTLVertexAttributeDescriptorArray/setObject:atIndexedSubscript:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setObject:atIndexedSubscript:")
     public native void setObjectAtIndexedSubscript(MTLVertexAttributeDescriptor attributeDesc, @NUInt long index);

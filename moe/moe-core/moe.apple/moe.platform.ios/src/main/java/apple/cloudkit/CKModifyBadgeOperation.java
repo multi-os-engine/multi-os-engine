@@ -160,10 +160,6 @@ public class CKModifyBadgeOperation extends CKOperation {
     @NInt
     public static native long version_static();
 
-    /**
-     * badgeValue</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKModifyBadgeOperation_class/index.html#//apple_ref/occ/instp/CKModifyBadgeOperation/badgeValue">iOS Dev Center</a>
-     */
     @Generated
     @Selector("badgeValue")
     @NUInt
@@ -173,35 +169,19 @@ public class CKModifyBadgeOperation extends CKOperation {
     @Selector("init")
     public native CKModifyBadgeOperation init();
 
-    /**
-     * initWithBadgeValue:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKModifyBadgeOperation_class/index.html#//apple_ref/occ/instm/CKModifyBadgeOperation/initWithBadgeValue:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithBadgeValue:")
     public native CKModifyBadgeOperation initWithBadgeValue(@NUInt long badgeValue);
 
-    /**
-     * badgeValue</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKModifyBadgeOperation_class/index.html#//apple_ref/occ/instp/CKModifyBadgeOperation/badgeValue">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setBadgeValue:")
     public native void setBadgeValue(@NUInt long value);
 
-    /**
-     * modifyBadgeCompletionBlock</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKModifyBadgeOperation_class/index.html#//apple_ref/occ/instp/CKModifyBadgeOperation/modifyBadgeCompletionBlock">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setModifyBadgeCompletionBlock:")
     public native void setModifyBadgeCompletionBlock(
             @ObjCBlock(name = "call_setModifyBadgeCompletionBlock") Block_setModifyBadgeCompletionBlock value);
 
-    /**
-     * modifyBadgeCompletionBlock</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKModifyBadgeOperation_class/index.html#//apple_ref/occ/instp/CKModifyBadgeOperation/modifyBadgeCompletionBlock">iOS Dev Center</a>
-     */
     @Generated
     @Selector("modifyBadgeCompletionBlock")
     @ObjCBlock(name = "call_modifyBadgeCompletionBlock_ret")

@@ -66,34 +66,18 @@ public class MFMessageComposeViewController extends UINavigationController {
     @Selector("alloc")
     public static native MFMessageComposeViewController alloc();
 
-    /**
-     * canSendAttachments</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MessageUI/Reference/MFMessageComposeViewController_class/index.html#//apple_ref/occ/clm/MFMessageComposeViewController/canSendAttachments">iOS Dev Center</a>
-     */
     @Generated
     @Selector("canSendAttachments")
     public static native boolean canSendAttachments();
 
-    /**
-     * canSendSubject</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MessageUI/Reference/MFMessageComposeViewController_class/index.html#//apple_ref/occ/clm/MFMessageComposeViewController/canSendSubject">iOS Dev Center</a>
-     */
     @Generated
     @Selector("canSendSubject")
     public static native boolean canSendSubject();
 
-    /**
-     * canSendText</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MessageUI/Reference/MFMessageComposeViewController_class/index.html#//apple_ref/occ/clm/MFMessageComposeViewController/canSendText">iOS Dev Center</a>
-     */
     @Generated
     @Selector("canSendText")
     public static native boolean canSendText();
 
-    /**
-     * isSupportedAttachmentUTI:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MessageUI/Reference/MFMessageComposeViewController_class/index.html#//apple_ref/occ/clm/MFMessageComposeViewController/isSupportedAttachmentUTI:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("isSupportedAttachmentUTI:")
     public static native boolean isSupportedAttachmentUTI(String uti);
@@ -210,42 +194,22 @@ public class MFMessageComposeViewController extends UINavigationController {
     @NInt
     public static native long version_static();
 
-    /**
-     * addAttachmentData:typeIdentifier:filename:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MessageUI/Reference/MFMessageComposeViewController_class/index.html#//apple_ref/occ/instm/MFMessageComposeViewController/addAttachmentData:typeIdentifier:filename:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("addAttachmentData:typeIdentifier:filename:")
     public native boolean addAttachmentDataTypeIdentifierFilename(NSData attachmentData, String uti, String filename);
 
-    /**
-     * addAttachmentURL:withAlternateFilename:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MessageUI/Reference/MFMessageComposeViewController_class/index.html#//apple_ref/occ/instm/MFMessageComposeViewController/addAttachmentURL:withAlternateFilename:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("addAttachmentURL:withAlternateFilename:")
     public native boolean addAttachmentURLWithAlternateFilename(NSURL attachmentURL, String alternateFilename);
 
-    /**
-     * attachments</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MessageUI/Reference/MFMessageComposeViewController_class/index.html#//apple_ref/occ/instp/MFMessageComposeViewController/attachments">iOS Dev Center</a>
-     */
     @Generated
     @Selector("attachments")
     public native NSArray<? extends NSDictionary<?, ?>> attachments();
 
-    /**
-     * body</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MessageUI/Reference/MFMessageComposeViewController_class/index.html#//apple_ref/occ/instp/MFMessageComposeViewController/body">iOS Dev Center</a>
-     */
     @Generated
     @Selector("body")
     public native String body();
 
-    /**
-     * disableUserAttachments</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MessageUI/Reference/MFMessageComposeViewController_class/index.html#//apple_ref/occ/instm/MFMessageComposeViewController/disableUserAttachments">iOS Dev Center</a>
-     */
     @Generated
     @Selector("disableUserAttachments")
     public native void disableUserAttachments();
@@ -267,44 +231,24 @@ public class MFMessageComposeViewController extends UINavigationController {
     @Selector("initWithRootViewController:")
     public native MFMessageComposeViewController initWithRootViewController(UIViewController rootViewController);
 
-    /**
-     * messageComposeDelegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MessageUI/Reference/MFMessageComposeViewController_class/index.html#//apple_ref/occ/instp/MFMessageComposeViewController/messageComposeDelegate">iOS Dev Center</a>
-     */
     @Generated
     @Selector("messageComposeDelegate")
     @MappedReturn(ObjCObjectMapper.class)
     public native MFMessageComposeViewControllerDelegate messageComposeDelegate();
 
-    /**
-     * recipients</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MessageUI/Reference/MFMessageComposeViewController_class/index.html#//apple_ref/occ/instp/MFMessageComposeViewController/recipients">iOS Dev Center</a>
-     */
     @Generated
     @Selector("recipients")
     public native NSArray<String> recipients();
 
-    /**
-     * body</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MessageUI/Reference/MFMessageComposeViewController_class/index.html#//apple_ref/occ/instp/MFMessageComposeViewController/body">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setBody:")
     public native void setBody(String value);
 
-    /**
-     * messageComposeDelegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MessageUI/Reference/MFMessageComposeViewController_class/index.html#//apple_ref/occ/instp/MFMessageComposeViewController/messageComposeDelegate">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setMessageComposeDelegate:")
     public native void setMessageComposeDelegate_unsafe(
             @Mapped(ObjCObjectMapper.class) MFMessageComposeViewControllerDelegate value);
 
-    /**
-     * messageComposeDelegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MessageUI/Reference/MFMessageComposeViewController_class/index.html#//apple_ref/occ/instp/MFMessageComposeViewController/messageComposeDelegate">iOS Dev Center</a>
-     */
     @Generated
     public void setMessageComposeDelegate(
             @Mapped(ObjCObjectMapper.class) MFMessageComposeViewControllerDelegate value) {
@@ -318,26 +262,14 @@ public class MFMessageComposeViewController extends UINavigationController {
         }
     }
 
-    /**
-     * recipients</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MessageUI/Reference/MFMessageComposeViewController_class/index.html#//apple_ref/occ/instp/MFMessageComposeViewController/recipients">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setRecipients:")
     public native void setRecipients(NSArray<String> value);
 
-    /**
-     * subject</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MessageUI/Reference/MFMessageComposeViewController_class/index.html#//apple_ref/occ/instp/MFMessageComposeViewController/subject">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setSubject:")
     public native void setSubject(String value);
 
-    /**
-     * subject</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MessageUI/Reference/MFMessageComposeViewController_class/index.html#//apple_ref/occ/instp/MFMessageComposeViewController/subject">iOS Dev Center</a>
-     */
     @Generated
     @Selector("subject")
     public native String subject();

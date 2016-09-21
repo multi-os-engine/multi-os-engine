@@ -347,87 +347,47 @@ public class UIControl extends UIView {
     @NInt
     public static native long version_static();
 
-    /**
-     * actionsForTarget:forControlEvent:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIControl_Class/index.html#//apple_ref/occ/instm/UIControl/actionsForTarget:forControlEvent:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("actionsForTarget:forControlEvent:")
     public native NSArray<String> actionsForTargetForControlEvent(@Mapped(ObjCObjectMapper.class) Object target,
             @NUInt long controlEvent);
 
-    /**
-     * addTarget:action:forControlEvents:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIControl_Class/index.html#//apple_ref/occ/instm/UIControl/addTarget:action:forControlEvents:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("addTarget:action:forControlEvents:")
     public native void addTargetActionForControlEvents(@Mapped(ObjCObjectMapper.class) Object target, SEL action,
             @NUInt long controlEvents);
 
-    /**
-     * allControlEvents</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIControl_Class/index.html#//apple_ref/occ/instm/UIControl/allControlEvents">iOS Dev Center</a>
-     */
     @Generated
     @Selector("allControlEvents")
     @NUInt
     public native long allControlEvents();
 
-    /**
-     * allTargets</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIControl_Class/index.html#//apple_ref/occ/instm/UIControl/allTargets">iOS Dev Center</a>
-     */
     @Generated
     @Selector("allTargets")
     public native NSSet<?> allTargets();
 
-    /**
-     * beginTrackingWithTouch:withEvent:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIControl_Class/index.html#//apple_ref/occ/instm/UIControl/beginTrackingWithTouch:withEvent:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("beginTrackingWithTouch:withEvent:")
     public native boolean beginTrackingWithTouchWithEvent(UITouch touch, UIEvent event);
 
-    /**
-     * cancelTrackingWithEvent:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIControl_Class/index.html#//apple_ref/occ/instm/UIControl/cancelTrackingWithEvent:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("cancelTrackingWithEvent:")
     public native void cancelTrackingWithEvent(UIEvent event);
 
-    /**
-     * contentHorizontalAlignment</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIControl_Class/index.html#//apple_ref/occ/instp/UIControl/contentHorizontalAlignment">iOS Dev Center</a>
-     */
     @Generated
     @Selector("contentHorizontalAlignment")
     @NInt
     public native long contentHorizontalAlignment();
 
-    /**
-     * contentVerticalAlignment</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIControl_Class/index.html#//apple_ref/occ/instp/UIControl/contentVerticalAlignment">iOS Dev Center</a>
-     */
     @Generated
     @Selector("contentVerticalAlignment")
     @NInt
     public native long contentVerticalAlignment();
 
-    /**
-     * continueTrackingWithTouch:withEvent:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIControl_Class/index.html#//apple_ref/occ/instm/UIControl/continueTrackingWithTouch:withEvent:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("continueTrackingWithTouch:withEvent:")
     public native boolean continueTrackingWithTouchWithEvent(UITouch touch, UIEvent event);
 
-    /**
-     * endTrackingWithTouch:withEvent:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIControl_Class/index.html#//apple_ref/occ/instm/UIControl/endTrackingWithTouch:withEvent:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("endTrackingWithTouch:withEvent:")
     public native void endTrackingWithTouchWithEvent(UITouch touch, UIEvent event);
@@ -440,115 +400,59 @@ public class UIControl extends UIView {
     @Selector("initWithFrame:")
     public native UIControl initWithFrame(@ByValue CGRect frame);
 
-    /**
-     * enabled</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIControl_Class/index.html#//apple_ref/occ/instp/UIControl/enabled">iOS Dev Center</a>
-     */
     @Generated
     @Selector("isEnabled")
     public native boolean isEnabled();
 
-    /**
-     * enabled</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIControl_Class/index.html#//apple_ref/occ/instp/UIControl/enabled">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setEnabled:")
     public native void setEnabled(boolean value);
 
-    /**
-     * highlighted</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIControl_Class/index.html#//apple_ref/occ/instp/UIControl/highlighted">iOS Dev Center</a>
-     */
     @Generated
     @Selector("isHighlighted")
     public native boolean isHighlighted();
 
-    /**
-     * highlighted</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIControl_Class/index.html#//apple_ref/occ/instp/UIControl/highlighted">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setHighlighted:")
     public native void setHighlighted(boolean value);
 
-    /**
-     * selected</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIControl_Class/index.html#//apple_ref/occ/instp/UIControl/selected">iOS Dev Center</a>
-     */
     @Generated
     @Selector("isSelected")
     public native boolean isSelected();
 
-    /**
-     * selected</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIControl_Class/index.html#//apple_ref/occ/instp/UIControl/selected">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setSelected:")
     public native void setSelected(boolean value);
 
-    /**
-     * touchInside</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIControl_Class/index.html#//apple_ref/occ/instp/UIControl/touchInside">iOS Dev Center</a>
-     */
     @Generated
     @Selector("isTouchInside")
     public native boolean isTouchInside();
 
-    /**
-     * tracking</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIControl_Class/index.html#//apple_ref/occ/instp/UIControl/tracking">iOS Dev Center</a>
-     */
     @Generated
     @Selector("isTracking")
     public native boolean isTracking();
 
-    /**
-     * removeTarget:action:forControlEvents:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIControl_Class/index.html#//apple_ref/occ/instm/UIControl/removeTarget:action:forControlEvents:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("removeTarget:action:forControlEvents:")
     public native void removeTargetActionForControlEvents(@Mapped(ObjCObjectMapper.class) Object target, SEL action,
             @NUInt long controlEvents);
 
-    /**
-     * sendAction:to:forEvent:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIControl_Class/index.html#//apple_ref/occ/instm/UIControl/sendAction:to:forEvent:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("sendAction:to:forEvent:")
     public native void sendActionToForEvent(SEL action, @Mapped(ObjCObjectMapper.class) Object target, UIEvent event);
 
-    /**
-     * sendActionsForControlEvents:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIControl_Class/index.html#//apple_ref/occ/instm/UIControl/sendActionsForControlEvents:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("sendActionsForControlEvents:")
     public native void sendActionsForControlEvents(@NUInt long controlEvents);
 
-    /**
-     * contentHorizontalAlignment</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIControl_Class/index.html#//apple_ref/occ/instp/UIControl/contentHorizontalAlignment">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setContentHorizontalAlignment:")
     public native void setContentHorizontalAlignment(@NInt long value);
 
-    /**
-     * contentVerticalAlignment</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIControl_Class/index.html#//apple_ref/occ/instp/UIControl/contentVerticalAlignment">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setContentVerticalAlignment:")
     public native void setContentVerticalAlignment(@NInt long value);
 
-    /**
-     * state</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIControl_Class/index.html#//apple_ref/occ/instp/UIControl/state">iOS Dev Center</a>
-     */
     @Generated
     @Selector("state")
     @NUInt

@@ -163,10 +163,6 @@ public class UIPrintFormatter extends NSObject implements NSCopying {
     @NInt
     public static native long version_static();
 
-    /**
-     * contentInsets</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPrintFormatter_Class/index.html#//apple_ref/occ/instp/UIPrintFormatter/contentInsets">iOS Dev Center</a>
-     */
     @Generated
     @Selector("contentInsets")
     @ByValue
@@ -178,10 +174,6 @@ public class UIPrintFormatter extends NSObject implements NSCopying {
     @MappedReturn(ObjCObjectMapper.class)
     public native Object copyWithZone(VoidPtr zone);
 
-    /**
-     * drawInRect:forPageAtIndex:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPrintFormatter_Class/index.html#//apple_ref/occ/instm/UIPrintFormatter/drawInRect:forPageAtIndex:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("drawInRect:forPageAtIndex:")
     public native void drawInRectForPageAtIndex(@ByValue CGRect rect, @NInt long pageIndex);
@@ -190,111 +182,59 @@ public class UIPrintFormatter extends NSObject implements NSCopying {
     @Selector("init")
     public native UIPrintFormatter init();
 
-    /**
-     * maximumContentHeight</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPrintFormatter_Class/index.html#//apple_ref/occ/instp/UIPrintFormatter/maximumContentHeight">iOS Dev Center</a>
-     */
     @Generated
     @Selector("maximumContentHeight")
     @NFloat
     public native double maximumContentHeight();
 
-    /**
-     * maximumContentWidth</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPrintFormatter_Class/index.html#//apple_ref/occ/instp/UIPrintFormatter/maximumContentWidth">iOS Dev Center</a>
-     */
     @Generated
     @Selector("maximumContentWidth")
     @NFloat
     public native double maximumContentWidth();
 
-    /**
-     * pageCount</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPrintFormatter_Class/index.html#//apple_ref/occ/instp/UIPrintFormatter/pageCount">iOS Dev Center</a>
-     */
     @Generated
     @Selector("pageCount")
     @NInt
     public native long pageCount();
 
-    /**
-     * perPageContentInsets</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPrintFormatter_Class/index.html#//apple_ref/occ/instp/UIPrintFormatter/perPageContentInsets">iOS Dev Center</a>
-     */
     @Generated
     @Selector("perPageContentInsets")
     @ByValue
     public native UIEdgeInsets perPageContentInsets();
 
-    /**
-     * printPageRenderer</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPrintFormatter_Class/index.html#//apple_ref/occ/instp/UIPrintFormatter/printPageRenderer">iOS Dev Center</a>
-     */
     @Generated
     @Selector("printPageRenderer")
     public native UIPrintPageRenderer printPageRenderer();
 
-    /**
-     * rectForPageAtIndex:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPrintFormatter_Class/index.html#//apple_ref/occ/instm/UIPrintFormatter/rectForPageAtIndex:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("rectForPageAtIndex:")
     @ByValue
     public native CGRect rectForPageAtIndex(@NInt long pageIndex);
 
-    /**
-     * removeFromPrintPageRenderer</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPrintFormatter_Class/index.html#//apple_ref/occ/instm/UIPrintFormatter/removeFromPrintPageRenderer">iOS Dev Center</a>
-     */
     @Generated
     @Selector("removeFromPrintPageRenderer")
     public native void removeFromPrintPageRenderer();
 
-    /**
-     * contentInsets</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPrintFormatter_Class/index.html#//apple_ref/occ/instp/UIPrintFormatter/contentInsets">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setContentInsets:")
     public native void setContentInsets(@ByValue UIEdgeInsets value);
 
-    /**
-     * maximumContentHeight</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPrintFormatter_Class/index.html#//apple_ref/occ/instp/UIPrintFormatter/maximumContentHeight">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setMaximumContentHeight:")
     public native void setMaximumContentHeight(@NFloat double value);
 
-    /**
-     * maximumContentWidth</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPrintFormatter_Class/index.html#//apple_ref/occ/instp/UIPrintFormatter/maximumContentWidth">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setMaximumContentWidth:")
     public native void setMaximumContentWidth(@NFloat double value);
 
-    /**
-     * perPageContentInsets</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPrintFormatter_Class/index.html#//apple_ref/occ/instp/UIPrintFormatter/perPageContentInsets">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setPerPageContentInsets:")
     public native void setPerPageContentInsets(@ByValue UIEdgeInsets value);
 
-    /**
-     * startPage</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPrintFormatter_Class/index.html#//apple_ref/occ/instp/UIPrintFormatter/startPage">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setStartPage:")
     public native void setStartPage(@NInt long value);
 
-    /**
-     * startPage</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPrintFormatter_Class/index.html#//apple_ref/occ/instp/UIPrintFormatter/startPage">iOS Dev Center</a>
-     */
     @Generated
     @Selector("startPage")
     @NInt

@@ -59,104 +59,56 @@ public class GKGoal extends NSObject implements NSCopying {
     @Selector("alloc")
     public static native GKGoal alloc();
 
-    /**
-     * goalToAlignWithAgents:maxDistance:maxAngle:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameplayKit/Reference/GKGoal_Class/index.html#//apple_ref/occ/clm/GKGoal/goalToAlignWithAgents:maxDistance:maxAngle:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("goalToAlignWithAgents:maxDistance:maxAngle:")
     public static native GKGoal goalToAlignWithAgentsMaxDistanceMaxAngle(NSArray<? extends GKAgent> agents,
             float maxDistance, float maxAngle);
 
-    /**
-     * goalToAvoidAgents:maxPredictionTime:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameplayKit/Reference/GKGoal_Class/index.html#//apple_ref/occ/clm/GKGoal/goalToAvoidAgents:maxPredictionTime:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("goalToAvoidAgents:maxPredictionTime:")
     public static native GKGoal goalToAvoidAgentsMaxPredictionTime(NSArray<? extends GKAgent> agents,
             double maxPredictionTime);
 
-    /**
-     * goalToAvoidObstacles:maxPredictionTime:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameplayKit/Reference/GKGoal_Class/index.html#//apple_ref/occ/clm/GKGoal/goalToAvoidObstacles:maxPredictionTime:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("goalToAvoidObstacles:maxPredictionTime:")
     public static native GKGoal goalToAvoidObstaclesMaxPredictionTime(NSArray<? extends GKObstacle> obstacles,
             double maxPredictionTime);
 
-    /**
-     * goalToCohereWithAgents:maxDistance:maxAngle:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameplayKit/Reference/GKGoal_Class/index.html#//apple_ref/occ/clm/GKGoal/goalToCohereWithAgents:maxDistance:maxAngle:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("goalToCohereWithAgents:maxDistance:maxAngle:")
     public static native GKGoal goalToCohereWithAgentsMaxDistanceMaxAngle(NSArray<? extends GKAgent> agents,
             float maxDistance, float maxAngle);
 
-    /**
-     * goalToFleeAgent:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameplayKit/Reference/GKGoal_Class/index.html#//apple_ref/occ/clm/GKGoal/goalToFleeAgent:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("goalToFleeAgent:")
     public static native GKGoal goalToFleeAgent(GKAgent agent);
 
-    /**
-     * goalToFollowPath:maxPredictionTime:forward:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameplayKit/Reference/GKGoal_Class/index.html#//apple_ref/occ/clm/GKGoal/goalToFollowPath:maxPredictionTime:forward:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("goalToFollowPath:maxPredictionTime:forward:")
     public static native GKGoal goalToFollowPathMaxPredictionTimeForward(GKPath path, double maxPredictionTime,
             boolean forward);
 
-    /**
-     * goalToInterceptAgent:maxPredictionTime:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameplayKit/Reference/GKGoal_Class/index.html#//apple_ref/occ/clm/GKGoal/goalToInterceptAgent:maxPredictionTime:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("goalToInterceptAgent:maxPredictionTime:")
     public static native GKGoal goalToInterceptAgentMaxPredictionTime(GKAgent target, double maxPredictionTime);
 
-    /**
-     * goalToReachTargetSpeed:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameplayKit/Reference/GKGoal_Class/index.html#//apple_ref/occ/clm/GKGoal/goalToReachTargetSpeed:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("goalToReachTargetSpeed:")
     public static native GKGoal goalToReachTargetSpeed(float targetSpeed);
 
-    /**
-     * goalToSeekAgent:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameplayKit/Reference/GKGoal_Class/index.html#//apple_ref/occ/clm/GKGoal/goalToSeekAgent:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("goalToSeekAgent:")
     public static native GKGoal goalToSeekAgent(GKAgent agent);
 
-    /**
-     * goalToSeparateFromAgents:maxDistance:maxAngle:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameplayKit/Reference/GKGoal_Class/index.html#//apple_ref/occ/clm/GKGoal/goalToSeparateFromAgents:maxDistance:maxAngle:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("goalToSeparateFromAgents:maxDistance:maxAngle:")
     public static native GKGoal goalToSeparateFromAgentsMaxDistanceMaxAngle(NSArray<? extends GKAgent> agents,
             float maxDistance, float maxAngle);
 
-    /**
-     * goalToStayOnPath:maxPredictionTime:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameplayKit/Reference/GKGoal_Class/index.html#//apple_ref/occ/clm/GKGoal/goalToStayOnPath:maxPredictionTime:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("goalToStayOnPath:maxPredictionTime:")
     public static native GKGoal goalToStayOnPathMaxPredictionTime(GKPath path, double maxPredictionTime);
 
-    /**
-     * goalToWander:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameplayKit/Reference/GKGoal_Class/index.html#//apple_ref/occ/clm/GKGoal/goalToWander:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("goalToWander:")
     public static native GKGoal goalToWander(float speed);

@@ -32,10 +32,6 @@ import org.moe.natj.objc.ann.Selector;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("UIGestureRecognizerDelegate")
 public interface UIGestureRecognizerDelegate {
-    /**
-     * gestureRecognizer:shouldBeRequiredToFailByGestureRecognizer:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIGestureRecognizerDelegate_Protocol/index.html#//apple_ref/occ/intfm/UIGestureRecognizerDelegate/gestureRecognizer:shouldBeRequiredToFailByGestureRecognizer:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("gestureRecognizer:shouldBeRequiredToFailByGestureRecognizer:")
@@ -44,10 +40,6 @@ public interface UIGestureRecognizerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * gestureRecognizer:shouldReceiveTouch:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIGestureRecognizerDelegate_Protocol/index.html#//apple_ref/occ/intfm/UIGestureRecognizerDelegate/gestureRecognizer:shouldReceiveTouch:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("gestureRecognizer:shouldReceiveTouch:")
@@ -55,10 +47,6 @@ public interface UIGestureRecognizerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * gestureRecognizer:shouldRecognizeSimultaneouslyWithGestureRecognizer:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIGestureRecognizerDelegate_Protocol/index.html#//apple_ref/occ/intfm/UIGestureRecognizerDelegate/gestureRecognizer:shouldRecognizeSimultaneouslyWithGestureRecognizer:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("gestureRecognizer:shouldRecognizeSimultaneouslyWithGestureRecognizer:")
@@ -67,10 +55,6 @@ public interface UIGestureRecognizerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * gestureRecognizer:shouldRequireFailureOfGestureRecognizer:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIGestureRecognizerDelegate_Protocol/index.html#//apple_ref/occ/intfm/UIGestureRecognizerDelegate/gestureRecognizer:shouldRequireFailureOfGestureRecognizer:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("gestureRecognizer:shouldRequireFailureOfGestureRecognizer:")
@@ -79,10 +63,6 @@ public interface UIGestureRecognizerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * gestureRecognizerShouldBegin:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIGestureRecognizerDelegate_Protocol/index.html#//apple_ref/occ/intfm/UIGestureRecognizerDelegate/gestureRecognizerShouldBegin:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("gestureRecognizerShouldBegin:")

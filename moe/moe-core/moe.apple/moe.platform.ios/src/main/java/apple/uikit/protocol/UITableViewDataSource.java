@@ -34,10 +34,6 @@ import org.moe.natj.objc.ann.Selector;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("UITableViewDataSource")
 public interface UITableViewDataSource {
-    /**
-     * numberOfSectionsInTableView:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITableViewDataSource_Protocol/index.html#//apple_ref/occ/intfm/UITableViewDataSource/numberOfSectionsInTableView:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("numberOfSectionsInTableView:")
@@ -46,10 +42,6 @@ public interface UITableViewDataSource {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * sectionIndexTitlesForTableView:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITableViewDataSource_Protocol/index.html#//apple_ref/occ/intfm/UITableViewDataSource/sectionIndexTitlesForTableView:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("sectionIndexTitlesForTableView:")
@@ -57,10 +49,6 @@ public interface UITableViewDataSource {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * tableView:canEditRowAtIndexPath:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITableViewDataSource_Protocol/index.html#//apple_ref/occ/intfm/UITableViewDataSource/tableView:canEditRowAtIndexPath:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("tableView:canEditRowAtIndexPath:")
@@ -68,10 +56,6 @@ public interface UITableViewDataSource {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * tableView:canMoveRowAtIndexPath:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITableViewDataSource_Protocol/index.html#//apple_ref/occ/intfm/UITableViewDataSource/tableView:canMoveRowAtIndexPath:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("tableView:canMoveRowAtIndexPath:")
@@ -79,18 +63,10 @@ public interface UITableViewDataSource {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * tableView:cellForRowAtIndexPath:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITableViewDataSource_Protocol/index.html#//apple_ref/occ/intfm/UITableViewDataSource/tableView:cellForRowAtIndexPath:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("tableView:cellForRowAtIndexPath:")
     UITableViewCell tableViewCellForRowAtIndexPath(UITableView tableView, NSIndexPath indexPath);
 
-    /**
-     * tableView:commitEditingStyle:forRowAtIndexPath:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITableViewDataSource_Protocol/index.html#//apple_ref/occ/intfm/UITableViewDataSource/tableView:commitEditingStyle:forRowAtIndexPath:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("tableView:commitEditingStyle:forRowAtIndexPath:")
@@ -99,10 +75,6 @@ public interface UITableViewDataSource {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * tableView:moveRowAtIndexPath:toIndexPath:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITableViewDataSource_Protocol/index.html#//apple_ref/occ/intfm/UITableViewDataSource/tableView:moveRowAtIndexPath:toIndexPath:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("tableView:moveRowAtIndexPath:toIndexPath:")
@@ -111,19 +83,11 @@ public interface UITableViewDataSource {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * tableView:numberOfRowsInSection:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITableViewDataSource_Protocol/index.html#//apple_ref/occ/intfm/UITableViewDataSource/tableView:numberOfRowsInSection:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("tableView:numberOfRowsInSection:")
     @NInt
     long tableViewNumberOfRowsInSection(UITableView tableView, @NInt long section);
 
-    /**
-     * tableView:sectionForSectionIndexTitle:atIndex:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITableViewDataSource_Protocol/index.html#//apple_ref/occ/intfm/UITableViewDataSource/tableView:sectionForSectionIndexTitle:atIndex:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("tableView:sectionForSectionIndexTitle:atIndex:")
@@ -132,10 +96,6 @@ public interface UITableViewDataSource {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * tableView:titleForFooterInSection:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITableViewDataSource_Protocol/index.html#//apple_ref/occ/intfm/UITableViewDataSource/tableView:titleForFooterInSection:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("tableView:titleForFooterInSection:")
@@ -143,10 +103,6 @@ public interface UITableViewDataSource {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * tableView:titleForHeaderInSection:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITableViewDataSource_Protocol/index.html#//apple_ref/occ/intfm/UITableViewDataSource/tableView:titleForHeaderInSection:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("tableView:titleForHeaderInSection:")

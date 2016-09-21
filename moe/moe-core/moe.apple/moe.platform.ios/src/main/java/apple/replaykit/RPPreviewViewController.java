@@ -186,28 +186,16 @@ public class RPPreviewViewController extends UIViewController {
     @Selector("initWithNibName:bundle:")
     public native RPPreviewViewController initWithNibNameBundle(String nibNameOrNil, NSBundle nibBundleOrNil);
 
-    /**
-     * previewControllerDelegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ReplayKit/Reference/RPPreviewViewController_Ref/index.html#//apple_ref/occ/instp/RPPreviewViewController/previewControllerDelegate">iOS Dev Center</a>
-     */
     @Generated
     @Selector("previewControllerDelegate")
     @MappedReturn(ObjCObjectMapper.class)
     public native RPPreviewViewControllerDelegate previewControllerDelegate();
 
-    /**
-     * previewControllerDelegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ReplayKit/Reference/RPPreviewViewController_Ref/index.html#//apple_ref/occ/instp/RPPreviewViewController/previewControllerDelegate">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setPreviewControllerDelegate:")
     public native void setPreviewControllerDelegate_unsafe(
             @Mapped(ObjCObjectMapper.class) RPPreviewViewControllerDelegate value);
 
-    /**
-     * previewControllerDelegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ReplayKit/Reference/RPPreviewViewController_Ref/index.html#//apple_ref/occ/instp/RPPreviewViewController/previewControllerDelegate">iOS Dev Center</a>
-     */
     @Generated
     public void setPreviewControllerDelegate(@Mapped(ObjCObjectMapper.class) RPPreviewViewControllerDelegate value) {
         Object __old = previewControllerDelegate();

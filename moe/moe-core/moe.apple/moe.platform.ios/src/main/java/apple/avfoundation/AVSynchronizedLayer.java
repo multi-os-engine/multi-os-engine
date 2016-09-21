@@ -65,10 +65,6 @@ public class AVSynchronizedLayer extends CALayer {
     @Selector("layer")
     public static native AVSynchronizedLayer layer();
 
-    /**
-     * synchronizedLayerWithPlayerItem:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVSynchronizedLayer_Class/index.html#//apple_ref/occ/clm/AVSynchronizedLayer/synchronizedLayerWithPlayerItem:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("synchronizedLayerWithPlayerItem:")
     public static native AVSynchronizedLayer synchronizedLayerWithPlayerItem(AVPlayerItem playerItem);
@@ -195,18 +191,10 @@ public class AVSynchronizedLayer extends CALayer {
     @Selector("initWithLayer:")
     public native AVSynchronizedLayer initWithLayer(@Mapped(ObjCObjectMapper.class) Object layer);
 
-    /**
-     * playerItem</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVSynchronizedLayer_Class/index.html#//apple_ref/occ/instp/AVSynchronizedLayer/playerItem">iOS Dev Center</a>
-     */
     @Generated
     @Selector("playerItem")
     public native AVPlayerItem playerItem();
 
-    /**
-     * playerItem</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVSynchronizedLayer_Class/index.html#//apple_ref/occ/instp/AVSynchronizedLayer/playerItem">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setPlayerItem:")
     public native void setPlayerItem(AVPlayerItem value);

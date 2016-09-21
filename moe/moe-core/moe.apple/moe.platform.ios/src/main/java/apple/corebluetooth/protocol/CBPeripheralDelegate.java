@@ -36,10 +36,6 @@ import org.moe.natj.objc.ann.Selector;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("CBPeripheralDelegate")
 public interface CBPeripheralDelegate {
-    /**
-     * peripheral:didDiscoverCharacteristicsForService:error:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreBluetooth/Reference/CBPeripheralDelegate_Protocol/index.html#//apple_ref/occ/intfm/CBPeripheralDelegate/peripheral:didDiscoverCharacteristicsForService:error:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("peripheral:didDiscoverCharacteristicsForService:error:")
@@ -48,10 +44,6 @@ public interface CBPeripheralDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * peripheral:didDiscoverDescriptorsForCharacteristic:error:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreBluetooth/Reference/CBPeripheralDelegate_Protocol/index.html#//apple_ref/occ/intfm/CBPeripheralDelegate/peripheral:didDiscoverDescriptorsForCharacteristic:error:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("peripheral:didDiscoverDescriptorsForCharacteristic:error:")
@@ -60,10 +52,6 @@ public interface CBPeripheralDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * peripheral:didDiscoverIncludedServicesForService:error:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreBluetooth/Reference/CBPeripheralDelegate_Protocol/index.html#//apple_ref/occ/intfm/CBPeripheralDelegate/peripheral:didDiscoverIncludedServicesForService:error:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("peripheral:didDiscoverIncludedServicesForService:error:")
@@ -72,10 +60,6 @@ public interface CBPeripheralDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * peripheral:didDiscoverServices:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreBluetooth/Reference/CBPeripheralDelegate_Protocol/index.html#//apple_ref/occ/intfm/CBPeripheralDelegate/peripheral:didDiscoverServices:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("peripheral:didDiscoverServices:")
@@ -83,10 +67,6 @@ public interface CBPeripheralDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * peripheral:didModifyServices:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreBluetooth/Reference/CBPeripheralDelegate_Protocol/index.html#//apple_ref/occ/intfm/CBPeripheralDelegate/peripheral:didModifyServices:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("peripheral:didModifyServices:")
@@ -102,10 +82,6 @@ public interface CBPeripheralDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * peripheral:didUpdateNotificationStateForCharacteristic:error:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreBluetooth/Reference/CBPeripheralDelegate_Protocol/index.html#//apple_ref/occ/intfm/CBPeripheralDelegate/peripheral:didUpdateNotificationStateForCharacteristic:error:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("peripheral:didUpdateNotificationStateForCharacteristic:error:")
@@ -114,10 +90,6 @@ public interface CBPeripheralDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * peripheral:didUpdateValueForCharacteristic:error:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreBluetooth/Reference/CBPeripheralDelegate_Protocol/index.html#//apple_ref/occ/intfm/CBPeripheralDelegate/peripheral:didUpdateValueForCharacteristic:error:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("peripheral:didUpdateValueForCharacteristic:error:")
@@ -126,10 +98,6 @@ public interface CBPeripheralDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * peripheral:didUpdateValueForDescriptor:error:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreBluetooth/Reference/CBPeripheralDelegate_Protocol/index.html#//apple_ref/occ/intfm/CBPeripheralDelegate/peripheral:didUpdateValueForDescriptor:error:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("peripheral:didUpdateValueForDescriptor:error:")
@@ -138,10 +106,6 @@ public interface CBPeripheralDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * peripheral:didWriteValueForCharacteristic:error:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreBluetooth/Reference/CBPeripheralDelegate_Protocol/index.html#//apple_ref/occ/intfm/CBPeripheralDelegate/peripheral:didWriteValueForCharacteristic:error:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("peripheral:didWriteValueForCharacteristic:error:")
@@ -150,10 +114,6 @@ public interface CBPeripheralDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * peripheral:didWriteValueForDescriptor:error:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreBluetooth/Reference/CBPeripheralDelegate_Protocol/index.html#//apple_ref/occ/intfm/CBPeripheralDelegate/peripheral:didWriteValueForDescriptor:error:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("peripheral:didWriteValueForDescriptor:error:")
@@ -162,10 +122,6 @@ public interface CBPeripheralDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * peripheralDidUpdateName:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreBluetooth/Reference/CBPeripheralDelegate_Protocol/index.html#//apple_ref/occ/intfm/CBPeripheralDelegate/peripheralDidUpdateName:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("peripheralDidUpdateName:")
@@ -173,10 +129,6 @@ public interface CBPeripheralDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * peripheralDidUpdateRSSI:error:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreBluetooth/Reference/CBPeripheralDelegate_Protocol/index.html#//apple_ref/occ/intfm/CBPeripheralDelegate/peripheralDidUpdateRSSI:error:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Deprecated

@@ -158,10 +158,6 @@ public class NSLengthFormatter extends NSFormatter {
     @NInt
     public static native long version_static();
 
-    /**
-     * getObjectValue:forString:errorDescription:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Miscellaneous/Reference/NSLengthFormatter_Class/index.html#//apple_ref/occ/instm/NSLengthFormatter/getObjectValue:forString:errorDescription:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("getObjectValue:forString:errorDescription:")
     public native boolean getObjectValueForStringErrorDescription(Ptr<ObjCObject> obj, String string,
@@ -171,82 +167,42 @@ public class NSLengthFormatter extends NSFormatter {
     @Selector("init")
     public native NSLengthFormatter init();
 
-    /**
-     * forPersonHeightUse</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Miscellaneous/Reference/NSLengthFormatter_Class/index.html#//apple_ref/occ/instp/NSLengthFormatter/forPersonHeightUse">iOS Dev Center</a>
-     */
     @Generated
     @Selector("isForPersonHeightUse")
     public native boolean isForPersonHeightUse();
 
-    /**
-     * forPersonHeightUse</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Miscellaneous/Reference/NSLengthFormatter_Class/index.html#//apple_ref/occ/instp/NSLengthFormatter/forPersonHeightUse">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setForPersonHeightUse:")
     public native void setForPersonHeightUse(boolean value);
 
-    /**
-     * numberFormatter</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Miscellaneous/Reference/NSLengthFormatter_Class/index.html#//apple_ref/occ/instp/NSLengthFormatter/numberFormatter">iOS Dev Center</a>
-     */
     @Generated
     @Selector("numberFormatter")
     public native NSNumberFormatter numberFormatter();
 
-    /**
-     * numberFormatter</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Miscellaneous/Reference/NSLengthFormatter_Class/index.html#//apple_ref/occ/instp/NSLengthFormatter/numberFormatter">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setNumberFormatter:")
     public native void setNumberFormatter(NSNumberFormatter value);
 
-    /**
-     * unitStyle</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Miscellaneous/Reference/NSLengthFormatter_Class/index.html#//apple_ref/occ/instp/NSLengthFormatter/unitStyle">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setUnitStyle:")
     public native void setUnitStyle(@NInt long value);
 
-    /**
-     * stringFromMeters:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Miscellaneous/Reference/NSLengthFormatter_Class/index.html#//apple_ref/occ/instm/NSLengthFormatter/stringFromMeters:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("stringFromMeters:")
     public native String stringFromMeters(double numberInMeters);
 
-    /**
-     * stringFromValue:unit:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Miscellaneous/Reference/NSLengthFormatter_Class/index.html#//apple_ref/occ/instm/NSLengthFormatter/stringFromValue:unit:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("stringFromValue:unit:")
     public native String stringFromValueUnit(double value, @NInt long unit);
 
-    /**
-     * unitStringFromMeters:usedUnit:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Miscellaneous/Reference/NSLengthFormatter_Class/index.html#//apple_ref/occ/instm/NSLengthFormatter/unitStringFromMeters:usedUnit:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("unitStringFromMeters:usedUnit:")
     public native String unitStringFromMetersUsedUnit(double numberInMeters, NIntPtr unitp);
 
-    /**
-     * unitStringFromValue:unit:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Miscellaneous/Reference/NSLengthFormatter_Class/index.html#//apple_ref/occ/instm/NSLengthFormatter/unitStringFromValue:unit:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("unitStringFromValue:unit:")
     public native String unitStringFromValueUnit(double value, @NInt long unit);
 
-    /**
-     * unitStyle</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Miscellaneous/Reference/NSLengthFormatter_Class/index.html#//apple_ref/occ/instp/NSLengthFormatter/unitStyle">iOS Dev Center</a>
-     */
     @Generated
     @Selector("unitStyle")
     @NInt

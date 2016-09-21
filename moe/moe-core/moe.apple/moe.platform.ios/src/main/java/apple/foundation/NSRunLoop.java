@@ -56,18 +56,10 @@ public class NSRunLoop extends NSObject {
     @Selector("alloc")
     public static native NSRunLoop alloc();
 
-    /**
-     * currentRunLoop</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSRunLoop_Class/index.html#//apple_ref/occ/clm/NSRunLoop/currentRunLoop">iOS Dev Center</a>
-     */
     @Generated
     @Selector("currentRunLoop")
     public static native NSRunLoop currentRunLoop();
 
-    /**
-     * mainRunLoop</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSRunLoop_Class/index.html#//apple_ref/occ/clm/NSRunLoop/mainRunLoop">iOS Dev Center</a>
-     */
     @Generated
     @Selector("mainRunLoop")
     public static native NSRunLoop mainRunLoop();
@@ -172,59 +164,31 @@ public class NSRunLoop extends NSObject {
     @NInt
     public static native long version_static();
 
-    /**
-     * acceptInputForMode:beforeDate:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSRunLoop_Class/index.html#//apple_ref/occ/instm/NSRunLoop/acceptInputForMode:beforeDate:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("acceptInputForMode:beforeDate:")
     public native void acceptInputForModeBeforeDate(String mode, NSDate limitDate);
 
-    /**
-     * addPort:forMode:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSRunLoop_Class/index.html#//apple_ref/occ/instm/NSRunLoop/addPort:forMode:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("addPort:forMode:")
     public native void addPortForMode(NSPort aPort, String mode);
 
-    /**
-     * addTimer:forMode:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSRunLoop_Class/index.html#//apple_ref/occ/instm/NSRunLoop/addTimer:forMode:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("addTimer:forMode:")
     public native void addTimerForMode(NSTimer timer, String mode);
 
-    /**
-     * cancelPerformSelector:target:argument:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSRunLoop_Class/index.html#//apple_ref/occ/instm/NSRunLoop/cancelPerformSelector:target:argument:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("cancelPerformSelector:target:argument:")
     public native void cancelPerformSelectorTargetArgument(SEL aSelector, @Mapped(ObjCObjectMapper.class) Object target,
             @Mapped(ObjCObjectMapper.class) Object arg);
 
-    /**
-     * cancelPerformSelectorsWithTarget:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSRunLoop_Class/index.html#//apple_ref/occ/instm/NSRunLoop/cancelPerformSelectorsWithTarget:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("cancelPerformSelectorsWithTarget:")
     public native void cancelPerformSelectorsWithTarget(@Mapped(ObjCObjectMapper.class) Object target);
 
-    /**
-     * currentMode</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSRunLoop_Class/index.html#//apple_ref/occ/instp/NSRunLoop/currentMode">iOS Dev Center</a>
-     */
     @Generated
     @Selector("currentMode")
     public native String currentMode();
 
-    /**
-     * getCFRunLoop</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSRunLoop_Class/index.html#//apple_ref/occ/instm/NSRunLoop/getCFRunLoop">iOS Dev Center</a>
-     */
     @Generated
     @Selector("getCFRunLoop")
     public native CFRunLoopRef getCFRunLoop();
@@ -233,52 +197,28 @@ public class NSRunLoop extends NSObject {
     @Selector("init")
     public native NSRunLoop init();
 
-    /**
-     * limitDateForMode:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSRunLoop_Class/index.html#//apple_ref/occ/instm/NSRunLoop/limitDateForMode:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("limitDateForMode:")
     public native NSDate limitDateForMode(String mode);
 
-    /**
-     * performSelector:target:argument:order:modes:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSRunLoop_Class/index.html#//apple_ref/occ/instm/NSRunLoop/performSelector:target:argument:order:modes:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("performSelector:target:argument:order:modes:")
     public native void performSelectorTargetArgumentOrderModes(SEL aSelector,
             @Mapped(ObjCObjectMapper.class) Object target, @Mapped(ObjCObjectMapper.class) Object arg,
             @NUInt long order, NSArray<String> modes);
 
-    /**
-     * removePort:forMode:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSRunLoop_Class/index.html#//apple_ref/occ/instm/NSRunLoop/removePort:forMode:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("removePort:forMode:")
     public native void removePortForMode(NSPort aPort, String mode);
 
-    /**
-     * run</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSRunLoop_Class/index.html#//apple_ref/occ/instm/NSRunLoop/run">iOS Dev Center</a>
-     */
     @Generated
     @Selector("run")
     public native void run();
 
-    /**
-     * runMode:beforeDate:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSRunLoop_Class/index.html#//apple_ref/occ/instm/NSRunLoop/runMode:beforeDate:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("runMode:beforeDate:")
     public native boolean runModeBeforeDate(String mode, NSDate limitDate);
 
-    /**
-     * runUntilDate:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSRunLoop_Class/index.html#//apple_ref/occ/instm/NSRunLoop/runUntilDate:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("runUntilDate:")
     public native void runUntilDate(NSDate limitDate);

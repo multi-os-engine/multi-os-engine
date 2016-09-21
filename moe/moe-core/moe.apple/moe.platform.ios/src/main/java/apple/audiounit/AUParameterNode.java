@@ -161,70 +161,38 @@ public class AUParameterNode extends NSObject {
     @NInt
     public static native long version_static();
 
-    /**
-     * displayName</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AudioUnit/Reference/AUParameterNode_ClassReference/index.html#//apple_ref/occ/instp/AUParameterNode/displayName">iOS Dev Center</a>
-     */
     @Generated
     @Selector("displayName")
     public native String displayName();
 
-    /**
-     * displayNameWithLength:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AudioUnit/Reference/AUParameterNode_ClassReference/index.html#//apple_ref/occ/instm/AUParameterNode/displayNameWithLength:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("displayNameWithLength:")
     public native String displayNameWithLength(@NInt long maximumLength);
 
-    /**
-     * identifier</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AudioUnit/Reference/AUParameterNode_ClassReference/index.html#//apple_ref/occ/instp/AUParameterNode/identifier">iOS Dev Center</a>
-     */
     @Generated
     @Selector("identifier")
     public native String identifier();
 
-    /**
-     * implementorDisplayNameWithLengthCallback</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AudioUnit/Reference/AUParameterNode_ClassReference/index.html#//apple_ref/occ/instp/AUParameterNode/implementorDisplayNameWithLengthCallback">iOS Dev Center</a>
-     */
     @Generated
     @Selector("implementorDisplayNameWithLengthCallback")
     @ObjCBlock(name = "call_implementorDisplayNameWithLengthCallback_ret")
     public native Block_implementorDisplayNameWithLengthCallback_ret implementorDisplayNameWithLengthCallback();
 
-    /**
-     * implementorStringFromValueCallback</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AudioUnit/Reference/AUParameterNode_ClassReference/index.html#//apple_ref/occ/instp/AUParameterNode/implementorStringFromValueCallback">iOS Dev Center</a>
-     */
     @Generated
     @Selector("implementorStringFromValueCallback")
     @ObjCBlock(name = "call_implementorStringFromValueCallback_ret")
     public native Block_implementorStringFromValueCallback_ret implementorStringFromValueCallback();
 
-    /**
-     * implementorValueFromStringCallback</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AudioUnit/Reference/AUParameterNode_ClassReference/index.html#//apple_ref/occ/instp/AUParameterNode/implementorValueFromStringCallback">iOS Dev Center</a>
-     */
     @Generated
     @Selector("implementorValueFromStringCallback")
     @ObjCBlock(name = "call_implementorValueFromStringCallback_ret")
     public native Block_implementorValueFromStringCallback_ret implementorValueFromStringCallback();
 
-    /**
-     * implementorValueObserver</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AudioUnit/Reference/AUParameterNode_ClassReference/index.html#//apple_ref/occ/instp/AUParameterNode/implementorValueObserver">iOS Dev Center</a>
-     */
     @Generated
     @Selector("implementorValueObserver")
     @ObjCBlock(name = "call_implementorValueObserver_ret")
     public native Block_implementorValueObserver_ret implementorValueObserver();
 
-    /**
-     * implementorValueProvider</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AudioUnit/Reference/AUParameterNode_ClassReference/index.html#//apple_ref/occ/instp/AUParameterNode/implementorValueProvider">iOS Dev Center</a>
-     */
     @Generated
     @Selector("implementorValueProvider")
     @ObjCBlock(name = "call_implementorValueProvider_ret")
@@ -234,80 +202,44 @@ public class AUParameterNode extends NSObject {
     @Selector("init")
     public native AUParameterNode init();
 
-    /**
-     * keyPath</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AudioUnit/Reference/AUParameterNode_ClassReference/index.html#//apple_ref/occ/instp/AUParameterNode/keyPath">iOS Dev Center</a>
-     */
     @Generated
     @Selector("keyPath")
     public native String keyPath();
 
-    /**
-     * removeParameterObserver:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AudioUnit/Reference/AUParameterNode_ClassReference/index.html#//apple_ref/occ/instm/AUParameterNode/removeParameterObserver:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("removeParameterObserver:")
     public native void removeParameterObserver(VoidPtr token);
 
-    /**
-     * implementorDisplayNameWithLengthCallback</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AudioUnit/Reference/AUParameterNode_ClassReference/index.html#//apple_ref/occ/instp/AUParameterNode/implementorDisplayNameWithLengthCallback">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setImplementorDisplayNameWithLengthCallback:")
     public native void setImplementorDisplayNameWithLengthCallback(
             @ObjCBlock(name = "call_setImplementorDisplayNameWithLengthCallback") Block_setImplementorDisplayNameWithLengthCallback value);
 
-    /**
-     * implementorStringFromValueCallback</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AudioUnit/Reference/AUParameterNode_ClassReference/index.html#//apple_ref/occ/instp/AUParameterNode/implementorStringFromValueCallback">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setImplementorStringFromValueCallback:")
     public native void setImplementorStringFromValueCallback(
             @ObjCBlock(name = "call_setImplementorStringFromValueCallback") Block_setImplementorStringFromValueCallback value);
 
-    /**
-     * implementorValueFromStringCallback</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AudioUnit/Reference/AUParameterNode_ClassReference/index.html#//apple_ref/occ/instp/AUParameterNode/implementorValueFromStringCallback">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setImplementorValueFromStringCallback:")
     public native void setImplementorValueFromStringCallback(
             @ObjCBlock(name = "call_setImplementorValueFromStringCallback") Block_setImplementorValueFromStringCallback value);
 
-    /**
-     * implementorValueObserver</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AudioUnit/Reference/AUParameterNode_ClassReference/index.html#//apple_ref/occ/instp/AUParameterNode/implementorValueObserver">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setImplementorValueObserver:")
     public native void setImplementorValueObserver(
             @ObjCBlock(name = "call_setImplementorValueObserver") Block_setImplementorValueObserver value);
 
-    /**
-     * implementorValueProvider</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AudioUnit/Reference/AUParameterNode_ClassReference/index.html#//apple_ref/occ/instp/AUParameterNode/implementorValueProvider">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setImplementorValueProvider:")
     public native void setImplementorValueProvider(
             @ObjCBlock(name = "call_setImplementorValueProvider") Block_setImplementorValueProvider value);
 
-    /**
-     * tokenByAddingParameterObserver:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AudioUnit/Reference/AUParameterNode_ClassReference/index.html#//apple_ref/occ/instm/AUParameterNode/tokenByAddingParameterObserver:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("tokenByAddingParameterObserver:")
     public native VoidPtr tokenByAddingParameterObserver(
             @ObjCBlock(name = "call_tokenByAddingParameterObserver") Block_tokenByAddingParameterObserver observer);
 
-    /**
-     * tokenByAddingParameterRecordingObserver:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AudioUnit/Reference/AUParameterNode_ClassReference/index.html#//apple_ref/occ/instm/AUParameterNode/tokenByAddingParameterRecordingObserver:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("tokenByAddingParameterRecordingObserver:")
     public native VoidPtr tokenByAddingParameterRecordingObserver(

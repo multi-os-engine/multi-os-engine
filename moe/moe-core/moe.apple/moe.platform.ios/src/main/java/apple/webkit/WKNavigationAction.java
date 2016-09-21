@@ -163,35 +163,19 @@ public class WKNavigationAction extends NSObject {
     @Selector("init")
     public native WKNavigationAction init();
 
-    /**
-     * navigationType</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WebKit/Reference/WKNavigationAction_Ref/index.html#//apple_ref/occ/instp/WKNavigationAction/navigationType">iOS Dev Center</a>
-     */
     @Generated
     @Selector("navigationType")
     @NInt
     public native long navigationType();
 
-    /**
-     * request</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WebKit/Reference/WKNavigationAction_Ref/index.html#//apple_ref/occ/instp/WKNavigationAction/request">iOS Dev Center</a>
-     */
     @Generated
     @Selector("request")
     public native NSURLRequest request();
 
-    /**
-     * sourceFrame</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WebKit/Reference/WKNavigationAction_Ref/index.html#//apple_ref/occ/instp/WKNavigationAction/sourceFrame">iOS Dev Center</a>
-     */
     @Generated
     @Selector("sourceFrame")
     public native WKFrameInfo sourceFrame();
 
-    /**
-     * targetFrame</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WebKit/Reference/WKNavigationAction_Ref/index.html#//apple_ref/occ/instp/WKNavigationAction/targetFrame">iOS Dev Center</a>
-     */
     @Generated
     @Selector("targetFrame")
     public native WKFrameInfo targetFrame();

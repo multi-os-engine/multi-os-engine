@@ -158,10 +158,6 @@ public class NSEnumerator<_ObjectType> extends NSObject implements NSFastEnumera
     @NInt
     public static native long version_static();
 
-    /**
-     * allObjects</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSEnumerator_Class/index.html#//apple_ref/occ/instp/NSEnumerator/allObjects">iOS Dev Center</a>
-     */
     @Generated
     @Selector("allObjects")
     public native NSArray<_ObjectType> allObjects();
@@ -175,10 +171,6 @@ public class NSEnumerator<_ObjectType> extends NSObject implements NSFastEnumera
     @Selector("init")
     public native NSEnumerator<?> init();
 
-    /**
-     * nextObject</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSEnumerator_Class/index.html#//apple_ref/occ/instm/NSEnumerator/nextObject">iOS Dev Center</a>
-     */
     @MappedReturn(ObjCObjectMapper.class)
     @Generated
     @Selector("nextObject")

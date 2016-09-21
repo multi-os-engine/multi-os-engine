@@ -65,18 +65,10 @@ public class AVMutableVideoCompositionLayerInstruction extends AVVideoCompositio
     @Selector("alloc")
     public static native AVMutableVideoCompositionLayerInstruction alloc();
 
-    /**
-     * videoCompositionLayerInstruction</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVMutableVideoCompositionLayerInstruction_Class/index.html#//apple_ref/occ/clm/AVMutableVideoCompositionLayerInstruction/videoCompositionLayerInstruction">iOS Dev Center</a>
-     */
     @Generated
     @Selector("videoCompositionLayerInstruction")
     public static native AVMutableVideoCompositionLayerInstruction videoCompositionLayerInstruction();
 
-    /**
-     * videoCompositionLayerInstructionWithAssetTrack:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVMutableVideoCompositionLayerInstruction_Class/index.html#//apple_ref/occ/clm/AVMutableVideoCompositionLayerInstruction/videoCompositionLayerInstructionWithAssetTrack:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("videoCompositionLayerInstructionWithAssetTrack:")
     public static native AVMutableVideoCompositionLayerInstruction videoCompositionLayerInstructionWithAssetTrack(
@@ -190,70 +182,38 @@ public class AVMutableVideoCompositionLayerInstruction extends AVVideoCompositio
     @Selector("init")
     public native AVMutableVideoCompositionLayerInstruction init();
 
-    /**
-     * setCropRectangle:atTime:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVMutableVideoCompositionLayerInstruction_Class/index.html#//apple_ref/occ/instm/AVMutableVideoCompositionLayerInstruction/setCropRectangle:atTime:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setCropRectangle:atTime:")
     public native void setCropRectangleAtTime(@ByValue CGRect cropRectangle, @ByValue CMTime time);
 
-    /**
-     * setCropRectangleRampFromStartCropRectangle:toEndCropRectangle:timeRange:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVMutableVideoCompositionLayerInstruction_Class/index.html#//apple_ref/occ/instm/AVMutableVideoCompositionLayerInstruction/setCropRectangleRampFromStartCropRectangle:toEndCropRectangle:timeRange:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setCropRectangleRampFromStartCropRectangle:toEndCropRectangle:timeRange:")
     public native void setCropRectangleRampFromStartCropRectangleToEndCropRectangleTimeRange(
             @ByValue CGRect startCropRectangle, @ByValue CGRect endCropRectangle, @ByValue CMTimeRange timeRange);
 
-    /**
-     * setOpacity:atTime:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVMutableVideoCompositionLayerInstruction_Class/index.html#//apple_ref/occ/instm/AVMutableVideoCompositionLayerInstruction/setOpacity:atTime:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setOpacity:atTime:")
     public native void setOpacityAtTime(float opacity, @ByValue CMTime time);
 
-    /**
-     * setOpacityRampFromStartOpacity:toEndOpacity:timeRange:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVMutableVideoCompositionLayerInstruction_Class/index.html#//apple_ref/occ/instm/AVMutableVideoCompositionLayerInstruction/setOpacityRampFromStartOpacity:toEndOpacity:timeRange:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setOpacityRampFromStartOpacity:toEndOpacity:timeRange:")
     public native void setOpacityRampFromStartOpacityToEndOpacityTimeRange(float startOpacity, float endOpacity,
             @ByValue CMTimeRange timeRange);
 
-    /**
-     * trackID</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVMutableVideoCompositionLayerInstruction_Class/index.html#//apple_ref/occ/instp/AVMutableVideoCompositionLayerInstruction/trackID">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setTrackID:")
     public native void setTrackID(int value);
 
-    /**
-     * setTransform:atTime:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVMutableVideoCompositionLayerInstruction_Class/index.html#//apple_ref/occ/instm/AVMutableVideoCompositionLayerInstruction/setTransform:atTime:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setTransform:atTime:")
     public native void setTransformAtTime(@ByValue CGAffineTransform transform, @ByValue CMTime time);
 
-    /**
-     * setTransformRampFromStartTransform:toEndTransform:timeRange:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVMutableVideoCompositionLayerInstruction_Class/index.html#//apple_ref/occ/instm/AVMutableVideoCompositionLayerInstruction/setTransformRampFromStartTransform:toEndTransform:timeRange:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setTransformRampFromStartTransform:toEndTransform:timeRange:")
     public native void setTransformRampFromStartTransformToEndTransformTimeRange(
             @ByValue CGAffineTransform startTransform, @ByValue CGAffineTransform endTransform,
             @ByValue CMTimeRange timeRange);
 
-    /**
-     * trackID</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVMutableVideoCompositionLayerInstruction_Class/index.html#//apple_ref/occ/instp/AVMutableVideoCompositionLayerInstruction/trackID">iOS Dev Center</a>
-     */
     @Generated
     @Selector("trackID")
     public native int trackID();

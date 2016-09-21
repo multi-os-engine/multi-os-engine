@@ -161,28 +161,16 @@ public class CIRectangleFeature extends CIFeature {
     @NInt
     public static native long version_static();
 
-    /**
-     * bottomLeft</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/QuartzCore/Reference/CIRectangleFeature/index.html#//apple_ref/occ/instp/CIRectangleFeature/bottomLeft">iOS Dev Center</a>
-     */
     @Generated
     @Selector("bottomLeft")
     @ByValue
     public native CGPoint bottomLeft();
 
-    /**
-     * bottomRight</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/QuartzCore/Reference/CIRectangleFeature/index.html#//apple_ref/occ/instp/CIRectangleFeature/bottomRight">iOS Dev Center</a>
-     */
     @Generated
     @Selector("bottomRight")
     @ByValue
     public native CGPoint bottomRight();
 
-    /**
-     * bounds</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/QuartzCore/Reference/CIRectangleFeature/index.html#//apple_ref/occ/instp/CIRectangleFeature/bounds">iOS Dev Center</a>
-     */
     @Generated
     @Selector("bounds")
     @ByValue
@@ -192,19 +180,11 @@ public class CIRectangleFeature extends CIFeature {
     @Selector("init")
     public native CIRectangleFeature init();
 
-    /**
-     * topLeft</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/QuartzCore/Reference/CIRectangleFeature/index.html#//apple_ref/occ/instp/CIRectangleFeature/topLeft">iOS Dev Center</a>
-     */
     @Generated
     @Selector("topLeft")
     @ByValue
     public native CGPoint topLeft();
 
-    /**
-     * topRight</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/QuartzCore/Reference/CIRectangleFeature/index.html#//apple_ref/occ/instp/CIRectangleFeature/topRight">iOS Dev Center</a>
-     */
     @Generated
     @Selector("topRight")
     @ByValue

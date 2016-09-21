@@ -59,10 +59,6 @@ public class GKMatchRequest extends NSObject {
     @Selector("alloc")
     public static native GKMatchRequest alloc();
 
-    /**
-     * maxPlayersAllowedForMatchOfType:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKMatchRequest_Ref/index.html#//apple_ref/occ/clm/GKMatchRequest/maxPlayersAllowedForMatchOfType:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("maxPlayersAllowedForMatchOfType:")
     @NUInt
@@ -168,10 +164,6 @@ public class GKMatchRequest extends NSObject {
     @NInt
     public static native long version_static();
 
-    /**
-     * defaultNumberOfPlayers</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKMatchRequest_Ref/index.html#//apple_ref/occ/instp/GKMatchRequest/defaultNumberOfPlayers">iOS Dev Center</a>
-     */
     @Generated
     @Selector("defaultNumberOfPlayers")
     @NUInt
@@ -181,164 +173,88 @@ public class GKMatchRequest extends NSObject {
     @Selector("init")
     public native GKMatchRequest init();
 
-    /**
-     * inviteMessage</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKMatchRequest_Ref/index.html#//apple_ref/occ/instp/GKMatchRequest/inviteMessage">iOS Dev Center</a>
-     */
     @Generated
     @Selector("inviteMessage")
     public native String inviteMessage();
 
-    /**
-     * maxPlayers</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKMatchRequest_Ref/index.html#//apple_ref/occ/instp/GKMatchRequest/maxPlayers">iOS Dev Center</a>
-     */
     @Generated
     @Selector("maxPlayers")
     @NUInt
     public native long maxPlayers();
 
-    /**
-     * minPlayers</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKMatchRequest_Ref/index.html#//apple_ref/occ/instp/GKMatchRequest/minPlayers">iOS Dev Center</a>
-     */
     @Generated
     @Selector("minPlayers")
     @NUInt
     public native long minPlayers();
 
-    /**
-     * playerAttributes</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKMatchRequest_Ref/index.html#//apple_ref/occ/instp/GKMatchRequest/playerAttributes">iOS Dev Center</a>
-     */
     @Generated
     @Selector("playerAttributes")
     public native int playerAttributes();
 
-    /**
-     * playerGroup</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKMatchRequest_Ref/index.html#//apple_ref/occ/instp/GKMatchRequest/playerGroup">iOS Dev Center</a>
-     */
     @Generated
     @Selector("playerGroup")
     @NUInt
     public native long playerGroup();
 
-    /**
-     * playersToInvite</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKMatchRequest_Ref/index.html#//apple_ref/occ/instp/GKMatchRequest/playersToInvite">iOS Dev Center</a>
-     */
     @Generated
     @Deprecated
     @Selector("playersToInvite")
     public native NSArray<String> playersToInvite();
 
-    /**
-     * recipients</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKMatchRequest_Ref/index.html#//apple_ref/occ/instp/GKMatchRequest/recipients">iOS Dev Center</a>
-     */
     @Generated
     @Selector("recipients")
     public native NSArray<? extends GKPlayer> recipients();
 
-    /**
-     * defaultNumberOfPlayers</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKMatchRequest_Ref/index.html#//apple_ref/occ/instp/GKMatchRequest/defaultNumberOfPlayers">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setDefaultNumberOfPlayers:")
     public native void setDefaultNumberOfPlayers(@NUInt long value);
 
-    /**
-     * inviteMessage</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKMatchRequest_Ref/index.html#//apple_ref/occ/instp/GKMatchRequest/inviteMessage">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setInviteMessage:")
     public native void setInviteMessage(String value);
 
-    /**
-     * inviteeResponseHandler</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKMatchRequest_Ref/index.html#//apple_ref/occ/instp/GKMatchRequest/inviteeResponseHandler">iOS Dev Center</a>
-     */
     @Generated
     @Deprecated
     @Selector("setInviteeResponseHandler:")
     public native void setInviteeResponseHandler(
             @ObjCBlock(name = "call_setInviteeResponseHandler") Block_setInviteeResponseHandler value);
 
-    /**
-     * maxPlayers</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKMatchRequest_Ref/index.html#//apple_ref/occ/instp/GKMatchRequest/maxPlayers">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setMaxPlayers:")
     public native void setMaxPlayers(@NUInt long value);
 
-    /**
-     * minPlayers</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKMatchRequest_Ref/index.html#//apple_ref/occ/instp/GKMatchRequest/minPlayers">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setMinPlayers:")
     public native void setMinPlayers(@NUInt long value);
 
-    /**
-     * playerAttributes</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKMatchRequest_Ref/index.html#//apple_ref/occ/instp/GKMatchRequest/playerAttributes">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setPlayerAttributes:")
     public native void setPlayerAttributes(int value);
 
-    /**
-     * playerGroup</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKMatchRequest_Ref/index.html#//apple_ref/occ/instp/GKMatchRequest/playerGroup">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setPlayerGroup:")
     public native void setPlayerGroup(@NUInt long value);
 
-    /**
-     * playersToInvite</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKMatchRequest_Ref/index.html#//apple_ref/occ/instp/GKMatchRequest/playersToInvite">iOS Dev Center</a>
-     */
     @Generated
     @Deprecated
     @Selector("setPlayersToInvite:")
     public native void setPlayersToInvite(NSArray<String> value);
 
-    /**
-     * recipientResponseHandler</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKMatchRequest_Ref/index.html#//apple_ref/occ/instp/GKMatchRequest/recipientResponseHandler">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setRecipientResponseHandler:")
     public native void setRecipientResponseHandler(
             @ObjCBlock(name = "call_setRecipientResponseHandler") Block_setRecipientResponseHandler value);
 
-    /**
-     * recipients</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKMatchRequest_Ref/index.html#//apple_ref/occ/instp/GKMatchRequest/recipients">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setRecipients:")
     public native void setRecipients(NSArray<? extends GKPlayer> value);
 
-    /**
-     * inviteeResponseHandler</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKMatchRequest_Ref/index.html#//apple_ref/occ/instp/GKMatchRequest/inviteeResponseHandler">iOS Dev Center</a>
-     */
     @Generated
     @Deprecated
     @Selector("inviteeResponseHandler")
     @ObjCBlock(name = "call_inviteeResponseHandler_ret")
     public native Block_inviteeResponseHandler_ret inviteeResponseHandler();
 
-    /**
-     * recipientResponseHandler</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKMatchRequest_Ref/index.html#//apple_ref/occ/instp/GKMatchRequest/recipientResponseHandler">iOS Dev Center</a>
-     */
     @Generated
     @Selector("recipientResponseHandler")
     @ObjCBlock(name = "call_recipientResponseHandler_ret")

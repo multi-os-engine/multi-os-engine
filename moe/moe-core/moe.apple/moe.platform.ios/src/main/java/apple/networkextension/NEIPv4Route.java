@@ -62,10 +62,6 @@ public class NEIPv4Route extends NSObject implements NSSecureCoding, NSCopying {
     @Selector("alloc")
     public static native NEIPv4Route alloc();
 
-    /**
-     * defaultRoute</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEIPv4RouteClassRef/index.html#//apple_ref/occ/clm/NEIPv4Route/defaultRoute">iOS Dev Center</a>
-     */
     @Generated
     @Selector("defaultRoute")
     public static native NEIPv4Route defaultRoute();
@@ -180,18 +176,10 @@ public class NEIPv4Route extends NSObject implements NSSecureCoding, NSCopying {
     @MappedReturn(ObjCObjectMapper.class)
     public native Object copyWithZone(VoidPtr zone);
 
-    /**
-     * destinationAddress</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEIPv4RouteClassRef/index.html#//apple_ref/occ/instp/NEIPv4Route/destinationAddress">iOS Dev Center</a>
-     */
     @Generated
     @Selector("destinationAddress")
     public native String destinationAddress();
 
-    /**
-     * destinationSubnetMask</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEIPv4RouteClassRef/index.html#//apple_ref/occ/instp/NEIPv4Route/destinationSubnetMask">iOS Dev Center</a>
-     */
     @Generated
     @Selector("destinationSubnetMask")
     public native String destinationSubnetMask();
@@ -200,10 +188,6 @@ public class NEIPv4Route extends NSObject implements NSSecureCoding, NSCopying {
     @Selector("encodeWithCoder:")
     public native void encodeWithCoder(NSCoder aCoder);
 
-    /**
-     * gatewayAddress</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEIPv4RouteClassRef/index.html#//apple_ref/occ/instp/NEIPv4Route/gatewayAddress">iOS Dev Center</a>
-     */
     @Generated
     @Selector("gatewayAddress")
     public native String gatewayAddress();
@@ -216,18 +200,10 @@ public class NEIPv4Route extends NSObject implements NSSecureCoding, NSCopying {
     @Selector("initWithCoder:")
     public native NEIPv4Route initWithCoder(NSCoder aDecoder);
 
-    /**
-     * initWithDestinationAddress:subnetMask:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEIPv4RouteClassRef/index.html#//apple_ref/occ/instm/NEIPv4Route/initWithDestinationAddress:subnetMask:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithDestinationAddress:subnetMask:")
     public native NEIPv4Route initWithDestinationAddressSubnetMask(String address, String subnetMask);
 
-    /**
-     * gatewayAddress</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEIPv4RouteClassRef/index.html#//apple_ref/occ/instp/NEIPv4Route/gatewayAddress">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setGatewayAddress:")
     public native void setGatewayAddress(String value);

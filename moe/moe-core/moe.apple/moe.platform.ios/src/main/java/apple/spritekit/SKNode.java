@@ -70,43 +70,23 @@ public class SKNode extends UIResponder implements NSCopying, NSCoding {
     @Selector("alloc")
     public static native SKNode alloc();
 
-    /**
-     * node</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKNode_Ref/index.html#//apple_ref/occ/clm/SKNode/node">iOS Dev Center</a>
-     */
     @Generated
     @Selector("node")
     public static native SKNode node();
 
-    /**
-     * nodeWithFileNamed:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKNode_Ref/index.html#//apple_ref/occ/clm/SKNode/nodeWithFileNamed:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("nodeWithFileNamed:")
     public static native SKNode nodeWithFileNamed(String filename);
 
-    /**
-     * obstaclesFromNodeBounds:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKNode_Ref/index.html#//apple_ref/occ/clm/SKNode/obstaclesFromNodeBounds:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("obstaclesFromNodeBounds:")
     public static native NSArray<? extends GKPolygonObstacle> obstaclesFromNodeBounds(NSArray<? extends SKNode> nodes);
 
-    /**
-     * obstaclesFromNodePhysicsBodies:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKNode_Ref/index.html#//apple_ref/occ/clm/SKNode/obstaclesFromNodePhysicsBodies:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("obstaclesFromNodePhysicsBodies:")
     public static native NSArray<? extends GKPolygonObstacle> obstaclesFromNodePhysicsBodies(
             NSArray<? extends SKNode> nodes);
 
-    /**
-     * obstaclesFromSpriteTextures:accuracy:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKNode_Ref/index.html#//apple_ref/occ/clm/SKNode/obstaclesFromSpriteTextures:accuracy:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("obstaclesFromSpriteTextures:accuracy:")
     public static native NSArray<? extends GKPolygonObstacle> obstaclesFromSpriteTexturesAccuracy(
@@ -216,85 +196,45 @@ public class SKNode extends UIResponder implements NSCopying, NSCoding {
     @NInt
     public static native long version();
 
-    /**
-     * actionForKey:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKNode_Ref/index.html#//apple_ref/occ/instm/SKNode/actionForKey:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("actionForKey:")
     public native SKAction actionForKey(String key);
 
-    /**
-     * addChild:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKNode_Ref/index.html#//apple_ref/occ/instm/SKNode/addChild:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("addChild:")
     public native void addChild(SKNode node);
 
-    /**
-     * alpha</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKNode_Ref/index.html#//apple_ref/occ/instp/SKNode/alpha">iOS Dev Center</a>
-     */
     @Generated
     @Selector("alpha")
     @NFloat
     public native double alpha();
 
-    /**
-     * calculateAccumulatedFrame</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKNode_Ref/index.html#//apple_ref/occ/instm/SKNode/calculateAccumulatedFrame">iOS Dev Center</a>
-     */
     @Generated
     @Selector("calculateAccumulatedFrame")
     @ByValue
     public native CGRect calculateAccumulatedFrame();
 
-    /**
-     * childNodeWithName:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKNode_Ref/index.html#//apple_ref/occ/instm/SKNode/childNodeWithName:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("childNodeWithName:")
     public native SKNode childNodeWithName(String name);
 
-    /**
-     * children</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKNode_Ref/index.html#//apple_ref/occ/instp/SKNode/children">iOS Dev Center</a>
-     */
     @Generated
     @Selector("children")
     public native NSArray<? extends SKNode> children();
 
-    /**
-     * constraints</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKNode_Ref/index.html#//apple_ref/occ/instp/SKNode/constraints">iOS Dev Center</a>
-     */
     @Generated
     @Selector("constraints")
     public native NSArray<? extends SKConstraint> constraints();
 
-    /**
-     * containsPoint:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKNode_Ref/index.html#//apple_ref/occ/instm/SKNode/containsPoint:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("containsPoint:")
     public native boolean containsPoint(@ByValue CGPoint p);
 
-    /**
-     * convertPoint:fromNode:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKNode_Ref/index.html#//apple_ref/occ/instm/SKNode/convertPoint:fromNode:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("convertPoint:fromNode:")
     @ByValue
     public native CGPoint convertPointFromNode(@ByValue CGPoint point, SKNode node);
 
-    /**
-     * convertPoint:toNode:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKNode_Ref/index.html#//apple_ref/occ/instm/SKNode/convertPoint:toNode:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("convertPoint:toNode:")
     @ByValue
@@ -310,36 +250,20 @@ public class SKNode extends UIResponder implements NSCopying, NSCoding {
     @Selector("encodeWithCoder:")
     public native void encodeWithCoder(NSCoder aCoder);
 
-    /**
-     * enumerateChildNodesWithName:usingBlock:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKNode_Ref/index.html#//apple_ref/occ/instm/SKNode/enumerateChildNodesWithName:usingBlock:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("enumerateChildNodesWithName:usingBlock:")
     public native void enumerateChildNodesWithNameUsingBlock(String name,
             @ObjCBlock(name = "call_enumerateChildNodesWithNameUsingBlock") Block_enumerateChildNodesWithNameUsingBlock block);
 
-    /**
-     * frame</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKNode_Ref/index.html#//apple_ref/occ/instp/SKNode/frame">iOS Dev Center</a>
-     */
     @Generated
     @Selector("frame")
     @ByValue
     public native CGRect frame();
 
-    /**
-     * hasActions</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKNode_Ref/index.html#//apple_ref/occ/instm/SKNode/hasActions">iOS Dev Center</a>
-     */
     @Generated
     @Selector("hasActions")
     public native boolean hasActions();
 
-    /**
-     * inParentHierarchy:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKNode_Ref/index.html#//apple_ref/occ/instm/SKNode/inParentHierarchy:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("inParentHierarchy:")
     public native boolean inParentHierarchy(SKNode parent);
@@ -352,377 +276,193 @@ public class SKNode extends UIResponder implements NSCopying, NSCoding {
     @Selector("initWithCoder:")
     public native SKNode initWithCoder(NSCoder aDecoder);
 
-    /**
-     * insertChild:atIndex:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKNode_Ref/index.html#//apple_ref/occ/instm/SKNode/insertChild:atIndex:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("insertChild:atIndex:")
     public native void insertChildAtIndex(SKNode node, @NInt long index);
 
-    /**
-     * intersectsNode:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKNode_Ref/index.html#//apple_ref/occ/instm/SKNode/intersectsNode:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("intersectsNode:")
     public native boolean intersectsNode(SKNode node);
 
-    /**
-     * isEqualToNode:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKNode_Ref/index.html#//apple_ref/occ/instm/SKNode/isEqualToNode:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("isEqualToNode:")
     public native boolean isEqualToNode(SKNode node);
 
-    /**
-     * hidden</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKNode_Ref/index.html#//apple_ref/occ/instp/SKNode/hidden">iOS Dev Center</a>
-     */
     @Generated
     @Selector("isHidden")
     public native boolean isHidden();
 
-    /**
-     * hidden</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKNode_Ref/index.html#//apple_ref/occ/instp/SKNode/hidden">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setHidden:")
     public native void setHidden(boolean value);
 
-    /**
-     * paused</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKNode_Ref/index.html#//apple_ref/occ/instp/SKNode/paused">iOS Dev Center</a>
-     */
     @Generated
     @Selector("isPaused")
     public native boolean isPaused();
 
-    /**
-     * paused</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKNode_Ref/index.html#//apple_ref/occ/instp/SKNode/paused">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setPaused:")
     public native void setPaused(boolean value);
 
-    /**
-     * userInteractionEnabled</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKNode_Ref/index.html#//apple_ref/occ/instp/SKNode/userInteractionEnabled">iOS Dev Center</a>
-     */
     @Generated
     @Selector("isUserInteractionEnabled")
     public native boolean isUserInteractionEnabled();
 
-    /**
-     * userInteractionEnabled</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKNode_Ref/index.html#//apple_ref/occ/instp/SKNode/userInteractionEnabled">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setUserInteractionEnabled:")
     public native void setUserInteractionEnabled(boolean value);
 
-    /**
-     * name</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKNode_Ref/index.html#//apple_ref/occ/instp/SKNode/name">iOS Dev Center</a>
-     */
     @Generated
     @Selector("name")
     public native String name();
 
-    /**
-     * nodeAtPoint:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKNode_Ref/index.html#//apple_ref/occ/instm/SKNode/nodeAtPoint:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("nodeAtPoint:")
     public native SKNode nodeAtPoint(@ByValue CGPoint p);
 
-    /**
-     * nodesAtPoint:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKNode_Ref/index.html#//apple_ref/occ/instm/SKNode/nodesAtPoint:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("nodesAtPoint:")
     public native NSArray<? extends SKNode> nodesAtPoint(@ByValue CGPoint p);
 
-    /**
-     * objectForKeyedSubscript:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKNode_Ref/index.html#//apple_ref/occ/instm/SKNode/objectForKeyedSubscript:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("objectForKeyedSubscript:")
     public native NSArray<? extends SKNode> objectForKeyedSubscript(String name);
 
-    /**
-     * parent</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKNode_Ref/index.html#//apple_ref/occ/instp/SKNode/parent">iOS Dev Center</a>
-     */
     @Generated
     @Selector("parent")
     public native SKNode parent();
 
-    /**
-     * physicsBody</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKNode_Ref/index.html#//apple_ref/occ/instp/SKNode/physicsBody">iOS Dev Center</a>
-     */
     @Generated
     @Selector("physicsBody")
     public native SKPhysicsBody physicsBody();
 
-    /**
-     * position</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKNode_Ref/index.html#//apple_ref/occ/instp/SKNode/position">iOS Dev Center</a>
-     */
     @Generated
     @Selector("position")
     @ByValue
     public native CGPoint position();
 
-    /**
-     * reachConstraints</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKNode_Ref/index.html#//apple_ref/occ/instp/SKNode/reachConstraints">iOS Dev Center</a>
-     */
     @Generated
     @Selector("reachConstraints")
     public native SKReachConstraints reachConstraints();
 
-    /**
-     * removeActionForKey:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKNode_Ref/index.html#//apple_ref/occ/instm/SKNode/removeActionForKey:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("removeActionForKey:")
     public native void removeActionForKey(String key);
 
-    /**
-     * removeAllActions</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKNode_Ref/index.html#//apple_ref/occ/instm/SKNode/removeAllActions">iOS Dev Center</a>
-     */
     @Generated
     @Selector("removeAllActions")
     public native void removeAllActions();
 
-    /**
-     * removeAllChildren</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKNode_Ref/index.html#//apple_ref/occ/instm/SKNode/removeAllChildren">iOS Dev Center</a>
-     */
     @Generated
     @Selector("removeAllChildren")
     public native void removeAllChildren();
 
-    /**
-     * removeChildrenInArray:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKNode_Ref/index.html#//apple_ref/occ/instm/SKNode/removeChildrenInArray:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("removeChildrenInArray:")
     public native void removeChildrenInArray(NSArray<? extends SKNode> nodes);
 
-    /**
-     * removeFromParent</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKNode_Ref/index.html#//apple_ref/occ/instm/SKNode/removeFromParent">iOS Dev Center</a>
-     */
     @Generated
     @Selector("removeFromParent")
     public native void removeFromParent();
 
-    /**
-     * runAction:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKNode_Ref/index.html#//apple_ref/occ/instm/SKNode/runAction:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("runAction:")
     public native void runAction(SKAction action);
 
-    /**
-     * runAction:completion:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKNode_Ref/index.html#//apple_ref/occ/instm/SKNode/runAction:completion:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("runAction:completion:")
     public native void runActionCompletion(SKAction action,
             @ObjCBlock(name = "call_runActionCompletion") Block_runActionCompletion block);
 
-    /**
-     * runAction:withKey:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKNode_Ref/index.html#//apple_ref/occ/instm/SKNode/runAction:withKey:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("runAction:withKey:")
     public native void runActionWithKey(SKAction action, String key);
 
-    /**
-     * scene</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKNode_Ref/index.html#//apple_ref/occ/instp/SKNode/scene">iOS Dev Center</a>
-     */
     @Generated
     @Selector("scene")
     public native SKScene scene();
 
-    /**
-     * alpha</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKNode_Ref/index.html#//apple_ref/occ/instp/SKNode/alpha">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setAlpha:")
     public native void setAlpha(@NFloat double value);
 
-    /**
-     * constraints</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKNode_Ref/index.html#//apple_ref/occ/instp/SKNode/constraints">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setConstraints:")
     public native void setConstraints(NSArray<? extends SKConstraint> value);
 
-    /**
-     * name</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKNode_Ref/index.html#//apple_ref/occ/instp/SKNode/name">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setName:")
     public native void setName(String value);
 
-    /**
-     * physicsBody</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKNode_Ref/index.html#//apple_ref/occ/instp/SKNode/physicsBody">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setPhysicsBody:")
     public native void setPhysicsBody(SKPhysicsBody value);
 
-    /**
-     * position</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKNode_Ref/index.html#//apple_ref/occ/instp/SKNode/position">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setPosition:")
     public native void setPosition(@ByValue CGPoint value);
 
-    /**
-     * reachConstraints</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKNode_Ref/index.html#//apple_ref/occ/instp/SKNode/reachConstraints">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setReachConstraints:")
     public native void setReachConstraints(SKReachConstraints value);
 
-    /**
-     * setScale:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKNode_Ref/index.html#//apple_ref/occ/instm/SKNode/setScale:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setScale:")
     public native void setScale(@NFloat double scale);
 
-    /**
-     * speed</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKNode_Ref/index.html#//apple_ref/occ/instp/SKNode/speed">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setSpeed:")
     public native void setSpeed(@NFloat double value);
 
-    /**
-     * userData</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKNode_Ref/index.html#//apple_ref/occ/instp/SKNode/userData">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setUserData:")
     public native void setUserData(NSMutableDictionary<?, ?> value);
 
-    /**
-     * xScale</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKNode_Ref/index.html#//apple_ref/occ/instp/SKNode/xScale">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setXScale:")
     public native void setXScale(@NFloat double value);
 
-    /**
-     * yScale</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKNode_Ref/index.html#//apple_ref/occ/instp/SKNode/yScale">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setYScale:")
     public native void setYScale(@NFloat double value);
 
-    /**
-     * zPosition</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKNode_Ref/index.html#//apple_ref/occ/instp/SKNode/zPosition">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setZPosition:")
     public native void setZPosition(@NFloat double value);
 
-    /**
-     * zRotation</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKNode_Ref/index.html#//apple_ref/occ/instp/SKNode/zRotation">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setZRotation:")
     public native void setZRotation(@NFloat double value);
 
-    /**
-     * speed</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKNode_Ref/index.html#//apple_ref/occ/instp/SKNode/speed">iOS Dev Center</a>
-     */
     @Generated
     @Selector("speed")
     @NFloat
     public native double speed();
 
-    /**
-     * userData</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKNode_Ref/index.html#//apple_ref/occ/instp/SKNode/userData">iOS Dev Center</a>
-     */
     @Generated
     @Selector("userData")
     public native NSMutableDictionary<?, ?> userData();
 
-    /**
-     * xScale</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKNode_Ref/index.html#//apple_ref/occ/instp/SKNode/xScale">iOS Dev Center</a>
-     */
     @Generated
     @Selector("xScale")
     @NFloat
     public native double xScale();
 
-    /**
-     * yScale</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKNode_Ref/index.html#//apple_ref/occ/instp/SKNode/yScale">iOS Dev Center</a>
-     */
     @Generated
     @Selector("yScale")
     @NFloat
     public native double yScale();
 
-    /**
-     * zPosition</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKNode_Ref/index.html#//apple_ref/occ/instp/SKNode/zPosition">iOS Dev Center</a>
-     */
     @Generated
     @Selector("zPosition")
     @NFloat
     public native double zPosition();
 
-    /**
-     * zRotation</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKNode_Ref/index.html#//apple_ref/occ/instp/SKNode/zRotation">iOS Dev Center</a>
-     */
     @Generated
     @Selector("zRotation")
     @NFloat
     public native double zRotation();
 
-    /**
-     * moveToParent:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKNode_Ref/index.html#//apple_ref/occ/instm/SKNode/moveToParent:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("moveToParent:")
     public native void moveToParent(SKNode parent);

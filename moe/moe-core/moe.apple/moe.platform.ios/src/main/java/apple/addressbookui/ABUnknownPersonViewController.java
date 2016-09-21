@@ -175,42 +175,22 @@ public class ABUnknownPersonViewController extends UIViewController {
     @NInt
     public static native long version_static();
 
-    /**
-     * addressBook</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AddressBookUI/Reference/ABUnknownPersonViewController_Class/index.html#//apple_ref/occ/instp/ABUnknownPersonViewController/addressBook">iOS Dev Center</a>
-     */
     @Generated
     @Selector("addressBook")
     public native ConstVoidPtr addressBook();
 
-    /**
-     * allowsActions</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AddressBookUI/Reference/ABUnknownPersonViewController_Class/index.html#//apple_ref/occ/instp/ABUnknownPersonViewController/allowsActions">iOS Dev Center</a>
-     */
     @Generated
     @Selector("allowsActions")
     public native boolean allowsActions();
 
-    /**
-     * allowsAddingToAddressBook</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AddressBookUI/Reference/ABUnknownPersonViewController_Class/index.html#//apple_ref/occ/instp/ABUnknownPersonViewController/allowsAddingToAddressBook">iOS Dev Center</a>
-     */
     @Generated
     @Selector("allowsAddingToAddressBook")
     public native boolean allowsAddingToAddressBook();
 
-    /**
-     * alternateName</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AddressBookUI/Reference/ABUnknownPersonViewController_Class/index.html#//apple_ref/occ/instp/ABUnknownPersonViewController/alternateName">iOS Dev Center</a>
-     */
     @Generated
     @Selector("alternateName")
     public native String alternateName();
 
-    /**
-     * displayedPerson</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AddressBookUI/Reference/ABUnknownPersonViewController_Class/index.html#//apple_ref/occ/instp/ABUnknownPersonViewController/displayedPerson">iOS Dev Center</a>
-     */
     @Generated
     @Selector("displayedPerson")
     public native ConstVoidPtr displayedPerson();
@@ -223,75 +203,39 @@ public class ABUnknownPersonViewController extends UIViewController {
     @Selector("initWithNibName:bundle:")
     public native ABUnknownPersonViewController initWithNibNameBundle(String nibNameOrNil, NSBundle nibBundleOrNil);
 
-    /**
-     * message</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AddressBookUI/Reference/ABUnknownPersonViewController_Class/index.html#//apple_ref/occ/instp/ABUnknownPersonViewController/message">iOS Dev Center</a>
-     */
     @Generated
     @Selector("message")
     public native String message();
 
-    /**
-     * addressBook</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AddressBookUI/Reference/ABUnknownPersonViewController_Class/index.html#//apple_ref/occ/instp/ABUnknownPersonViewController/addressBook">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setAddressBook:")
     public native void setAddressBook(ConstVoidPtr value);
 
-    /**
-     * allowsActions</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AddressBookUI/Reference/ABUnknownPersonViewController_Class/index.html#//apple_ref/occ/instp/ABUnknownPersonViewController/allowsActions">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setAllowsActions:")
     public native void setAllowsActions(boolean value);
 
-    /**
-     * allowsAddingToAddressBook</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AddressBookUI/Reference/ABUnknownPersonViewController_Class/index.html#//apple_ref/occ/instp/ABUnknownPersonViewController/allowsAddingToAddressBook">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setAllowsAddingToAddressBook:")
     public native void setAllowsAddingToAddressBook(boolean value);
 
-    /**
-     * alternateName</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AddressBookUI/Reference/ABUnknownPersonViewController_Class/index.html#//apple_ref/occ/instp/ABUnknownPersonViewController/alternateName">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setAlternateName:")
     public native void setAlternateName(String value);
 
-    /**
-     * displayedPerson</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AddressBookUI/Reference/ABUnknownPersonViewController_Class/index.html#//apple_ref/occ/instp/ABUnknownPersonViewController/displayedPerson">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setDisplayedPerson:")
     public native void setDisplayedPerson(ConstVoidPtr value);
 
-    /**
-     * message</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AddressBookUI/Reference/ABUnknownPersonViewController_Class/index.html#//apple_ref/occ/instp/ABUnknownPersonViewController/message">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setMessage:")
     public native void setMessage(String value);
 
-    /**
-     * unknownPersonViewDelegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AddressBookUI/Reference/ABUnknownPersonViewController_Class/index.html#//apple_ref/occ/instp/ABUnknownPersonViewController/unknownPersonViewDelegate">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setUnknownPersonViewDelegate:")
     public native void setUnknownPersonViewDelegate_unsafe(
             @Mapped(ObjCObjectMapper.class) ABUnknownPersonViewControllerDelegate value);
 
-    /**
-     * unknownPersonViewDelegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AddressBookUI/Reference/ABUnknownPersonViewController_Class/index.html#//apple_ref/occ/instp/ABUnknownPersonViewController/unknownPersonViewDelegate">iOS Dev Center</a>
-     */
     @Generated
     public void setUnknownPersonViewDelegate(
             @Mapped(ObjCObjectMapper.class) ABUnknownPersonViewControllerDelegate value) {
@@ -305,10 +249,6 @@ public class ABUnknownPersonViewController extends UIViewController {
         }
     }
 
-    /**
-     * unknownPersonViewDelegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AddressBookUI/Reference/ABUnknownPersonViewController_Class/index.html#//apple_ref/occ/instp/ABUnknownPersonViewController/unknownPersonViewDelegate">iOS Dev Center</a>
-     */
     @Generated
     @Selector("unknownPersonViewDelegate")
     @MappedReturn(ObjCObjectMapper.class)

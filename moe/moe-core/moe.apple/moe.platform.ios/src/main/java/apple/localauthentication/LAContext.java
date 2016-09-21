@@ -164,18 +164,10 @@ public class LAContext extends NSObject {
     @NInt
     public static native long version_static();
 
-    /**
-     * canEvaluatePolicy:error:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/LocalAuthentication/Reference/LAContext_Class/index.html#//apple_ref/occ/instm/LAContext/canEvaluatePolicy:error:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("canEvaluatePolicy:error:")
     public native boolean canEvaluatePolicyError(@NInt long policy, Ptr<NSError> error);
 
-    /**
-     * evaluatePolicy:localizedReason:reply:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/LocalAuthentication/Reference/LAContext_Class/index.html#//apple_ref/occ/instm/LAContext/evaluatePolicy:localizedReason:reply:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("evaluatePolicy:localizedReason:reply:")
     public native void evaluatePolicyLocalizedReasonReply(@NInt long policy, String localizedReason,

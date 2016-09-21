@@ -58,10 +58,6 @@ public class NSProcessInfo extends NSObject {
     @Selector("alloc")
     public static native NSProcessInfo alloc();
 
-    /**
-     * processInfo</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSProcessInfo_Class/index.html#//apple_ref/occ/clm/NSProcessInfo/processInfo">iOS Dev Center</a>
-     */
     @Generated
     @Selector("processInfo")
     public static native NSProcessInfo processInfo();
@@ -166,60 +162,32 @@ public class NSProcessInfo extends NSObject {
     @NInt
     public static native long version_static();
 
-    /**
-     * activeProcessorCount</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSProcessInfo_Class/index.html#//apple_ref/occ/instp/NSProcessInfo/activeProcessorCount">iOS Dev Center</a>
-     */
     @Generated
     @Selector("activeProcessorCount")
     @NUInt
     public native long activeProcessorCount();
 
-    /**
-     * arguments</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSProcessInfo_Class/index.html#//apple_ref/occ/instp/NSProcessInfo/arguments">iOS Dev Center</a>
-     */
     @Generated
     @Selector("arguments")
     public native NSArray<String> arguments();
 
-    /**
-     * beginActivityWithOptions:reason:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSProcessInfo_Class/index.html#//apple_ref/occ/instm/NSProcessInfo/beginActivityWithOptions:reason:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("beginActivityWithOptions:reason:")
     @MappedReturn(ObjCObjectMapper.class)
     public native apple.protocol.NSObject beginActivityWithOptionsReason(long options, String reason);
 
-    /**
-     * endActivity:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSProcessInfo_Class/index.html#//apple_ref/occ/instm/NSProcessInfo/endActivity:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("endActivity:")
     public native void endActivity(@Mapped(ObjCObjectMapper.class) apple.protocol.NSObject activity);
 
-    /**
-     * environment</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSProcessInfo_Class/index.html#//apple_ref/occ/instp/NSProcessInfo/environment">iOS Dev Center</a>
-     */
     @Generated
     @Selector("environment")
     public native NSDictionary<String, String> environment();
 
-    /**
-     * globallyUniqueString</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSProcessInfo_Class/index.html#//apple_ref/occ/instp/NSProcessInfo/globallyUniqueString">iOS Dev Center</a>
-     */
     @Generated
     @Selector("globallyUniqueString")
     public native String globallyUniqueString();
 
-    /**
-     * hostName</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSProcessInfo_Class/index.html#//apple_ref/occ/instp/NSProcessInfo/hostName">iOS Dev Center</a>
-     */
     @Generated
     @Selector("hostName")
     public native String hostName();
@@ -228,121 +196,65 @@ public class NSProcessInfo extends NSObject {
     @Selector("init")
     public native NSProcessInfo init();
 
-    /**
-     * isOperatingSystemAtLeastVersion:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSProcessInfo_Class/index.html#//apple_ref/occ/instm/NSProcessInfo/isOperatingSystemAtLeastVersion:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("isOperatingSystemAtLeastVersion:")
     public native boolean isOperatingSystemAtLeastVersion(@ByValue NSOperatingSystemVersion version);
 
-    /**
-     * operatingSystem</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSProcessInfo_Class/index.html#//apple_ref/occ/instm/NSProcessInfo/operatingSystem">iOS Dev Center</a>
-     */
     @Generated
     @Deprecated
     @Selector("operatingSystem")
     @NUInt
     public native long operatingSystem();
 
-    /**
-     * operatingSystemName</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSProcessInfo_Class/index.html#//apple_ref/occ/instm/NSProcessInfo/operatingSystemName">iOS Dev Center</a>
-     */
     @Generated
     @Deprecated
     @Selector("operatingSystemName")
     public native String operatingSystemName();
 
-    /**
-     * operatingSystemVersion</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSProcessInfo_Class/index.html#//apple_ref/occ/instp/NSProcessInfo/operatingSystemVersion">iOS Dev Center</a>
-     */
     @Generated
     @Selector("operatingSystemVersion")
     @ByValue
     public native NSOperatingSystemVersion operatingSystemVersion();
 
-    /**
-     * operatingSystemVersionString</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSProcessInfo_Class/index.html#//apple_ref/occ/instp/NSProcessInfo/operatingSystemVersionString">iOS Dev Center</a>
-     */
     @Generated
     @Selector("operatingSystemVersionString")
     public native String operatingSystemVersionString();
 
-    /**
-     * performActivityWithOptions:reason:usingBlock:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSProcessInfo_Class/index.html#//apple_ref/occ/instm/NSProcessInfo/performActivityWithOptions:reason:usingBlock:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("performActivityWithOptions:reason:usingBlock:")
     public native void performActivityWithOptionsReasonUsingBlock(long options, String reason,
             @ObjCBlock(name = "call_performActivityWithOptionsReasonUsingBlock") Block_performActivityWithOptionsReasonUsingBlock block);
 
-    /**
-     * performExpiringActivityWithReason:usingBlock:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSProcessInfo_Class/index.html#//apple_ref/occ/instm/NSProcessInfo/performExpiringActivityWithReason:usingBlock:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("performExpiringActivityWithReason:usingBlock:")
     public native void performExpiringActivityWithReasonUsingBlock(String reason,
             @ObjCBlock(name = "call_performExpiringActivityWithReasonUsingBlock") Block_performExpiringActivityWithReasonUsingBlock block);
 
-    /**
-     * physicalMemory</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSProcessInfo_Class/index.html#//apple_ref/occ/instp/NSProcessInfo/physicalMemory">iOS Dev Center</a>
-     */
     @Generated
     @Selector("physicalMemory")
     public native long physicalMemory();
 
-    /**
-     * processIdentifier</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSProcessInfo_Class/index.html#//apple_ref/occ/instp/NSProcessInfo/processIdentifier">iOS Dev Center</a>
-     */
     @Generated
     @Selector("processIdentifier")
     public native int processIdentifier();
 
-    /**
-     * processName</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSProcessInfo_Class/index.html#//apple_ref/occ/instp/NSProcessInfo/processName">iOS Dev Center</a>
-     */
     @Generated
     @Selector("processName")
     public native String processName();
 
-    /**
-     * processorCount</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSProcessInfo_Class/index.html#//apple_ref/occ/instp/NSProcessInfo/processorCount">iOS Dev Center</a>
-     */
     @Generated
     @Selector("processorCount")
     @NUInt
     public native long processorCount();
 
-    /**
-     * processName</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSProcessInfo_Class/index.html#//apple_ref/occ/instp/NSProcessInfo/processName">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setProcessName:")
     public native void setProcessName(String value);
 
-    /**
-     * systemUptime</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSProcessInfo_Class/index.html#//apple_ref/occ/instp/NSProcessInfo/systemUptime">iOS Dev Center</a>
-     */
     @Generated
     @Selector("systemUptime")
     public native double systemUptime();
 
-    /**
-     * lowPowerModeEnabled</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSProcessInfo_Class/index.html#//apple_ref/occ/instp/NSProcessInfo/lowPowerModeEnabled">iOS Dev Center</a>
-     */
     @Generated
     @Selector("isLowPowerModeEnabled")
     public native boolean isLowPowerModeEnabled();

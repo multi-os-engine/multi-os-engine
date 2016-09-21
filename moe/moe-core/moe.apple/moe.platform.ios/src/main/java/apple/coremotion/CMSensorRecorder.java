@@ -59,18 +59,10 @@ public class CMSensorRecorder extends NSObject {
     @Selector("alloc")
     public static native CMSensorRecorder alloc();
 
-    /**
-     * isAccelerometerRecordingAvailable</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMotion/Reference/CMSensorRecorder_class/index.html#//apple_ref/occ/clm/CMSensorRecorder/isAccelerometerRecordingAvailable">iOS Dev Center</a>
-     */
     @Generated
     @Selector("isAccelerometerRecordingAvailable")
     public static native boolean isAccelerometerRecordingAvailable();
 
-    /**
-     * isAuthorizedForRecording</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMotion/Reference/CMSensorRecorder_class/index.html#//apple_ref/occ/clm/CMSensorRecorder/isAuthorizedForRecording">iOS Dev Center</a>
-     */
     @Generated
     @Selector("isAuthorizedForRecording")
     public static native boolean isAuthorizedForRecording();
@@ -179,18 +171,10 @@ public class CMSensorRecorder extends NSObject {
     @Selector("init")
     public native CMSensorRecorder init();
 
-    /**
-     * accelerometerDataFromDate:toDate:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMotion/Reference/CMSensorRecorder_class/index.html#//apple_ref/occ/instm/CMSensorRecorder/accelerometerDataFromDate:toDate:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("accelerometerDataFromDate:toDate:")
     public native CMSensorDataList accelerometerDataFromDateToDate(NSDate fromDate, NSDate toDate);
 
-    /**
-     * recordAccelerometerForDuration:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMotion/Reference/CMSensorRecorder_class/index.html#//apple_ref/occ/instm/CMSensorRecorder/recordAccelerometerForDuration:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("recordAccelerometerForDuration:")
     public native void recordAccelerometerForDuration(double duration);

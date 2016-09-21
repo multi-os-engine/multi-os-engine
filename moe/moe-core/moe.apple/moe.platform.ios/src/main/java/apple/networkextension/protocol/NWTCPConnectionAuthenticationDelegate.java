@@ -34,10 +34,6 @@ import org.moe.natj.objc.ann.Selector;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("NWTCPConnectionAuthenticationDelegate")
 public interface NWTCPConnectionAuthenticationDelegate {
-    /**
-     * evaluateTrustForConnection:peerCertificateChain:completionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NWTCPConnectionAuthenticationDelegateClassRef/index.html#//apple_ref/occ/intfm/NWTCPConnectionAuthenticationDelegate/evaluateTrustForConnection:peerCertificateChain:completionHandler:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("evaluateTrustForConnection:peerCertificateChain:completionHandler:")
@@ -47,10 +43,6 @@ public interface NWTCPConnectionAuthenticationDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * provideIdentityForConnection:completionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NWTCPConnectionAuthenticationDelegateClassRef/index.html#//apple_ref/occ/intfm/NWTCPConnectionAuthenticationDelegate/provideIdentityForConnection:completionHandler:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("provideIdentityForConnection:completionHandler:")
@@ -59,10 +51,6 @@ public interface NWTCPConnectionAuthenticationDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * shouldEvaluateTrustForConnection:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NWTCPConnectionAuthenticationDelegateClassRef/index.html#//apple_ref/occ/intfm/NWTCPConnectionAuthenticationDelegate/shouldEvaluateTrustForConnection:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("shouldEvaluateTrustForConnection:")
@@ -70,10 +58,6 @@ public interface NWTCPConnectionAuthenticationDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * shouldProvideIdentityForConnection:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NWTCPConnectionAuthenticationDelegateClassRef/index.html#//apple_ref/occ/intfm/NWTCPConnectionAuthenticationDelegate/shouldProvideIdentityForConnection:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("shouldProvideIdentityForConnection:")

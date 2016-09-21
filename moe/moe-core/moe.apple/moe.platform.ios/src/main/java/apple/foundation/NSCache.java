@@ -156,28 +156,16 @@ public class NSCache<_KeyType, _ObjectType> extends NSObject {
     @NInt
     public static native long version_static();
 
-    /**
-     * countLimit</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSCache_Class/index.html#//apple_ref/occ/instp/NSCache/countLimit">iOS Dev Center</a>
-     */
     @Generated
     @Selector("countLimit")
     @NUInt
     public native long countLimit();
 
-    /**
-     * delegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSCache_Class/index.html#//apple_ref/occ/instp/NSCache/delegate">iOS Dev Center</a>
-     */
     @Generated
     @Selector("delegate")
     @MappedReturn(ObjCObjectMapper.class)
     public native NSCacheDelegate delegate();
 
-    /**
-     * evictsObjectsWithDiscardedContent</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSCache_Class/index.html#//apple_ref/occ/instp/NSCache/evictsObjectsWithDiscardedContent">iOS Dev Center</a>
-     */
     @Generated
     @Selector("evictsObjectsWithDiscardedContent")
     public native boolean evictsObjectsWithDiscardedContent();
@@ -186,59 +174,31 @@ public class NSCache<_KeyType, _ObjectType> extends NSObject {
     @Selector("init")
     public native NSCache<?, ?> init();
 
-    /**
-     * name</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSCache_Class/index.html#//apple_ref/occ/instp/NSCache/name">iOS Dev Center</a>
-     */
     @Generated
     @Selector("name")
     public native String name();
 
-    /**
-     * objectForKey:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSCache_Class/index.html#//apple_ref/occ/instm/NSCache/objectForKey:">iOS Dev Center</a>
-     */
     @MappedReturn(ObjCObjectMapper.class)
     @Generated
     @Selector("objectForKey:")
     public native _ObjectType objectForKey(@Mapped(ObjCObjectMapper.class) _KeyType key);
 
-    /**
-     * removeAllObjects</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSCache_Class/index.html#//apple_ref/occ/instm/NSCache/removeAllObjects">iOS Dev Center</a>
-     */
     @Generated
     @Selector("removeAllObjects")
     public native void removeAllObjects();
 
-    /**
-     * removeObjectForKey:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSCache_Class/index.html#//apple_ref/occ/instm/NSCache/removeObjectForKey:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("removeObjectForKey:")
     public native void removeObjectForKey(@Mapped(ObjCObjectMapper.class) _KeyType key);
 
-    /**
-     * countLimit</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSCache_Class/index.html#//apple_ref/occ/instp/NSCache/countLimit">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setCountLimit:")
     public native void setCountLimit(@NUInt long value);
 
-    /**
-     * delegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSCache_Class/index.html#//apple_ref/occ/instp/NSCache/delegate">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setDelegate:")
     public native void setDelegate_unsafe(@Mapped(ObjCObjectMapper.class) NSCacheDelegate value);
 
-    /**
-     * delegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSCache_Class/index.html#//apple_ref/occ/instp/NSCache/delegate">iOS Dev Center</a>
-     */
     @Generated
     public void setDelegate(@Mapped(ObjCObjectMapper.class) NSCacheDelegate value) {
         Object __old = delegate();
@@ -251,52 +211,28 @@ public class NSCache<_KeyType, _ObjectType> extends NSObject {
         }
     }
 
-    /**
-     * evictsObjectsWithDiscardedContent</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSCache_Class/index.html#//apple_ref/occ/instp/NSCache/evictsObjectsWithDiscardedContent">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setEvictsObjectsWithDiscardedContent:")
     public native void setEvictsObjectsWithDiscardedContent(boolean value);
 
-    /**
-     * name</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSCache_Class/index.html#//apple_ref/occ/instp/NSCache/name">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setName:")
     public native void setName(String value);
 
-    /**
-     * setObject:forKey:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSCache_Class/index.html#//apple_ref/occ/instm/NSCache/setObject:forKey:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setObject:forKey:")
     public native void setObjectForKey(@Mapped(ObjCObjectMapper.class) _ObjectType obj,
             @Mapped(ObjCObjectMapper.class) _KeyType key);
 
-    /**
-     * setObject:forKey:cost:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSCache_Class/index.html#//apple_ref/occ/instm/NSCache/setObject:forKey:cost:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setObject:forKey:cost:")
     public native void setObjectForKeyCost(@Mapped(ObjCObjectMapper.class) _ObjectType obj,
             @Mapped(ObjCObjectMapper.class) _KeyType key, @NUInt long g);
 
-    /**
-     * totalCostLimit</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSCache_Class/index.html#//apple_ref/occ/instp/NSCache/totalCostLimit">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setTotalCostLimit:")
     public native void setTotalCostLimit(@NUInt long value);
 
-    /**
-     * totalCostLimit</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSCache_Class/index.html#//apple_ref/occ/instp/NSCache/totalCostLimit">iOS Dev Center</a>
-     */
     @Generated
     @Selector("totalCostLimit")
     @NUInt

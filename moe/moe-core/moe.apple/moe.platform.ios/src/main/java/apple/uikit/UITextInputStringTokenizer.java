@@ -163,10 +163,6 @@ public class UITextInputStringTokenizer extends NSObject implements UITextInputT
     @Selector("init")
     public native UITextInputStringTokenizer init();
 
-    /**
-     * initWithTextInput:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITextInputStringTokenizer_Class/index.html#//apple_ref/occ/instm/UITextInputStringTokenizer/initWithTextInput:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithTextInput:")
     public native UITextInputStringTokenizer initWithTextInput(UIResponder textInput);

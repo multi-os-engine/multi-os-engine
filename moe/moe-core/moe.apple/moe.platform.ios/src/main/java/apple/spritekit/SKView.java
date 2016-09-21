@@ -350,45 +350,25 @@ public class SKView extends UIView {
     @NInt
     public static native long version_static();
 
-    /**
-     * allowsTransparency</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKView/index.html#//apple_ref/occ/instp/SKView/allowsTransparency">iOS Dev Center</a>
-     */
     @Generated
     @Selector("allowsTransparency")
     public native boolean allowsTransparency();
 
-    /**
-     * convertPoint:fromScene:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKView/index.html#//apple_ref/occ/instm/SKView/convertPoint:fromScene:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("convertPoint:fromScene:")
     @ByValue
     public native CGPoint convertPointFromScene(@ByValue CGPoint point, SKScene scene);
 
-    /**
-     * convertPoint:toScene:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKView/index.html#//apple_ref/occ/instm/SKView/convertPoint:toScene:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("convertPoint:toScene:")
     @ByValue
     public native CGPoint convertPointToScene(@ByValue CGPoint point, SKScene scene);
 
-    /**
-     * frameInterval</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKView/index.html#//apple_ref/occ/instp/SKView/frameInterval">iOS Dev Center</a>
-     */
     @Generated
     @Selector("frameInterval")
     @NInt
     public native long frameInterval();
 
-    /**
-     * ignoresSiblingOrder</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKView/index.html#//apple_ref/occ/instp/SKView/ignoresSiblingOrder">iOS Dev Center</a>
-     */
     @Generated
     @Selector("ignoresSiblingOrder")
     public native boolean ignoresSiblingOrder();
@@ -401,210 +381,106 @@ public class SKView extends UIView {
     @Selector("initWithFrame:")
     public native SKView initWithFrame(@ByValue CGRect frame);
 
-    /**
-     * asynchronous</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKView/index.html#//apple_ref/occ/instp/SKView/asynchronous">iOS Dev Center</a>
-     */
     @Generated
     @Selector("isAsynchronous")
     public native boolean isAsynchronous();
 
-    /**
-     * asynchronous</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKView/index.html#//apple_ref/occ/instp/SKView/asynchronous">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setAsynchronous:")
     public native void setAsynchronous(boolean value);
 
-    /**
-     * paused</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKView/index.html#//apple_ref/occ/instp/SKView/paused">iOS Dev Center</a>
-     */
     @Generated
     @Selector("isPaused")
     public native boolean isPaused();
 
-    /**
-     * paused</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKView/index.html#//apple_ref/occ/instp/SKView/paused">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setPaused:")
     public native void setPaused(boolean value);
 
-    /**
-     * presentScene:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKView/index.html#//apple_ref/occ/instm/SKView/presentScene:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("presentScene:")
     public native void presentScene(SKScene scene);
 
-    /**
-     * presentScene:transition:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKView/index.html#//apple_ref/occ/instm/SKView/presentScene:transition:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("presentScene:transition:")
     public native void presentSceneTransition(SKScene scene, SKTransition transition);
 
-    /**
-     * scene</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKView/index.html#//apple_ref/occ/instp/SKView/scene">iOS Dev Center</a>
-     */
     @Generated
     @Selector("scene")
     public native SKScene scene();
 
-    /**
-     * allowsTransparency</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKView/index.html#//apple_ref/occ/instp/SKView/allowsTransparency">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setAllowsTransparency:")
     public native void setAllowsTransparency(boolean value);
 
-    /**
-     * frameInterval</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKView/index.html#//apple_ref/occ/instp/SKView/frameInterval">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setFrameInterval:")
     public native void setFrameInterval(@NInt long value);
 
-    /**
-     * ignoresSiblingOrder</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKView/index.html#//apple_ref/occ/instp/SKView/ignoresSiblingOrder">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setIgnoresSiblingOrder:")
     public native void setIgnoresSiblingOrder(boolean value);
 
-    /**
-     * shouldCullNonVisibleNodes</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKView/index.html#//apple_ref/occ/instp/SKView/shouldCullNonVisibleNodes">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setShouldCullNonVisibleNodes:")
     public native void setShouldCullNonVisibleNodes(boolean value);
 
-    /**
-     * showsDrawCount</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKView/index.html#//apple_ref/occ/instp/SKView/showsDrawCount">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setShowsDrawCount:")
     public native void setShowsDrawCount(boolean value);
 
-    /**
-     * showsFPS</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKView/index.html#//apple_ref/occ/instp/SKView/showsFPS">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setShowsFPS:")
     public native void setShowsFPS(boolean value);
 
-    /**
-     * showsFields</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKView/index.html#//apple_ref/occ/instp/SKView/showsFields">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setShowsFields:")
     public native void setShowsFields(boolean value);
 
-    /**
-     * showsNodeCount</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKView/index.html#//apple_ref/occ/instp/SKView/showsNodeCount">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setShowsNodeCount:")
     public native void setShowsNodeCount(boolean value);
 
-    /**
-     * showsPhysics</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKView/index.html#//apple_ref/occ/instp/SKView/showsPhysics">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setShowsPhysics:")
     public native void setShowsPhysics(boolean value);
 
-    /**
-     * showsQuadCount</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKView/index.html#//apple_ref/occ/instp/SKView/showsQuadCount">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setShowsQuadCount:")
     public native void setShowsQuadCount(boolean value);
 
-    /**
-     * shouldCullNonVisibleNodes</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKView/index.html#//apple_ref/occ/instp/SKView/shouldCullNonVisibleNodes">iOS Dev Center</a>
-     */
     @Generated
     @Selector("shouldCullNonVisibleNodes")
     public native boolean shouldCullNonVisibleNodes();
 
-    /**
-     * showsDrawCount</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKView/index.html#//apple_ref/occ/instp/SKView/showsDrawCount">iOS Dev Center</a>
-     */
     @Generated
     @Selector("showsDrawCount")
     public native boolean showsDrawCount();
 
-    /**
-     * showsFPS</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKView/index.html#//apple_ref/occ/instp/SKView/showsFPS">iOS Dev Center</a>
-     */
     @Generated
     @Selector("showsFPS")
     public native boolean showsFPS();
 
-    /**
-     * showsFields</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKView/index.html#//apple_ref/occ/instp/SKView/showsFields">iOS Dev Center</a>
-     */
     @Generated
     @Selector("showsFields")
     public native boolean showsFields();
 
-    /**
-     * showsNodeCount</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKView/index.html#//apple_ref/occ/instp/SKView/showsNodeCount">iOS Dev Center</a>
-     */
     @Generated
     @Selector("showsNodeCount")
     public native boolean showsNodeCount();
 
-    /**
-     * showsPhysics</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKView/index.html#//apple_ref/occ/instp/SKView/showsPhysics">iOS Dev Center</a>
-     */
     @Generated
     @Selector("showsPhysics")
     public native boolean showsPhysics();
 
-    /**
-     * showsQuadCount</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKView/index.html#//apple_ref/occ/instp/SKView/showsQuadCount">iOS Dev Center</a>
-     */
     @Generated
     @Selector("showsQuadCount")
     public native boolean showsQuadCount();
 
-    /**
-     * textureFromNode:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKView/index.html#//apple_ref/occ/instm/SKView/textureFromNode:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("textureFromNode:")
     public native SKTexture textureFromNode(SKNode node);
 
-    /**
-     * textureFromNode:crop:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKView/index.html#//apple_ref/occ/instm/SKView/textureFromNode:crop:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("textureFromNode:crop:")
     public native SKTexture textureFromNodeCrop(SKNode node, @ByValue CGRect crop);

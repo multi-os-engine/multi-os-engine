@@ -169,218 +169,114 @@ public class MTLSamplerDescriptor extends NSObject implements NSCopying {
     @Selector("init")
     public native MTLSamplerDescriptor init();
 
-    /**
-     * label</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Metal/Reference/MTLSamplerDescriptor_Ref/index.html#//apple_ref/occ/instp/MTLSamplerDescriptor/label">iOS Dev Center</a>
-     */
     @Generated
     @Selector("label")
     public native String label();
 
-    /**
-     * lodMaxClamp</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Metal/Reference/MTLSamplerDescriptor_Ref/index.html#//apple_ref/occ/instp/MTLSamplerDescriptor/lodMaxClamp">iOS Dev Center</a>
-     */
     @Generated
     @Selector("lodMaxClamp")
     public native float lodMaxClamp();
 
-    /**
-     * lodMinClamp</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Metal/Reference/MTLSamplerDescriptor_Ref/index.html#//apple_ref/occ/instp/MTLSamplerDescriptor/lodMinClamp">iOS Dev Center</a>
-     */
     @Generated
     @Selector("lodMinClamp")
     public native float lodMinClamp();
 
-    /**
-     * magFilter</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Metal/Reference/MTLSamplerDescriptor_Ref/index.html#//apple_ref/occ/instp/MTLSamplerDescriptor/magFilter">iOS Dev Center</a>
-     */
     @Generated
     @Selector("magFilter")
     @NUInt
     public native long magFilter();
 
-    /**
-     * maxAnisotropy</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Metal/Reference/MTLSamplerDescriptor_Ref/index.html#//apple_ref/occ/instp/MTLSamplerDescriptor/maxAnisotropy">iOS Dev Center</a>
-     */
     @Generated
     @Selector("maxAnisotropy")
     @NUInt
     public native long maxAnisotropy();
 
-    /**
-     * minFilter</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Metal/Reference/MTLSamplerDescriptor_Ref/index.html#//apple_ref/occ/instp/MTLSamplerDescriptor/minFilter">iOS Dev Center</a>
-     */
     @Generated
     @Selector("minFilter")
     @NUInt
     public native long minFilter();
 
-    /**
-     * mipFilter</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Metal/Reference/MTLSamplerDescriptor_Ref/index.html#//apple_ref/occ/instp/MTLSamplerDescriptor/mipFilter">iOS Dev Center</a>
-     */
     @Generated
     @Selector("mipFilter")
     @NUInt
     public native long mipFilter();
 
-    /**
-     * normalizedCoordinates</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Metal/Reference/MTLSamplerDescriptor_Ref/index.html#//apple_ref/occ/instp/MTLSamplerDescriptor/normalizedCoordinates">iOS Dev Center</a>
-     */
     @Generated
     @Selector("normalizedCoordinates")
     public native boolean normalizedCoordinates();
 
-    /**
-     * rAddressMode</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Metal/Reference/MTLSamplerDescriptor_Ref/index.html#//apple_ref/occ/instp/MTLSamplerDescriptor/rAddressMode">iOS Dev Center</a>
-     */
     @Generated
     @Selector("rAddressMode")
     @NUInt
     public native long rAddressMode();
 
-    /**
-     * sAddressMode</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Metal/Reference/MTLSamplerDescriptor_Ref/index.html#//apple_ref/occ/instp/MTLSamplerDescriptor/sAddressMode">iOS Dev Center</a>
-     */
     @Generated
     @Selector("sAddressMode")
     @NUInt
     public native long sAddressMode();
 
-    /**
-     * label</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Metal/Reference/MTLSamplerDescriptor_Ref/index.html#//apple_ref/occ/instp/MTLSamplerDescriptor/label">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setLabel:")
     public native void setLabel(String value);
 
-    /**
-     * lodMaxClamp</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Metal/Reference/MTLSamplerDescriptor_Ref/index.html#//apple_ref/occ/instp/MTLSamplerDescriptor/lodMaxClamp">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setLodMaxClamp:")
     public native void setLodMaxClamp(float value);
 
-    /**
-     * lodMinClamp</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Metal/Reference/MTLSamplerDescriptor_Ref/index.html#//apple_ref/occ/instp/MTLSamplerDescriptor/lodMinClamp">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setLodMinClamp:")
     public native void setLodMinClamp(float value);
 
-    /**
-     * magFilter</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Metal/Reference/MTLSamplerDescriptor_Ref/index.html#//apple_ref/occ/instp/MTLSamplerDescriptor/magFilter">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setMagFilter:")
     public native void setMagFilter(@NUInt long value);
 
-    /**
-     * maxAnisotropy</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Metal/Reference/MTLSamplerDescriptor_Ref/index.html#//apple_ref/occ/instp/MTLSamplerDescriptor/maxAnisotropy">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setMaxAnisotropy:")
     public native void setMaxAnisotropy(@NUInt long value);
 
-    /**
-     * minFilter</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Metal/Reference/MTLSamplerDescriptor_Ref/index.html#//apple_ref/occ/instp/MTLSamplerDescriptor/minFilter">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setMinFilter:")
     public native void setMinFilter(@NUInt long value);
 
-    /**
-     * mipFilter</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Metal/Reference/MTLSamplerDescriptor_Ref/index.html#//apple_ref/occ/instp/MTLSamplerDescriptor/mipFilter">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setMipFilter:")
     public native void setMipFilter(@NUInt long value);
 
-    /**
-     * normalizedCoordinates</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Metal/Reference/MTLSamplerDescriptor_Ref/index.html#//apple_ref/occ/instp/MTLSamplerDescriptor/normalizedCoordinates">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setNormalizedCoordinates:")
     public native void setNormalizedCoordinates(boolean value);
 
-    /**
-     * rAddressMode</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Metal/Reference/MTLSamplerDescriptor_Ref/index.html#//apple_ref/occ/instp/MTLSamplerDescriptor/rAddressMode">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setRAddressMode:")
     public native void setRAddressMode(@NUInt long value);
 
-    /**
-     * sAddressMode</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Metal/Reference/MTLSamplerDescriptor_Ref/index.html#//apple_ref/occ/instp/MTLSamplerDescriptor/sAddressMode">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setSAddressMode:")
     public native void setSAddressMode(@NUInt long value);
 
-    /**
-     * tAddressMode</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Metal/Reference/MTLSamplerDescriptor_Ref/index.html#//apple_ref/occ/instp/MTLSamplerDescriptor/tAddressMode">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setTAddressMode:")
     public native void setTAddressMode(@NUInt long value);
 
-    /**
-     * tAddressMode</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Metal/Reference/MTLSamplerDescriptor_Ref/index.html#//apple_ref/occ/instp/MTLSamplerDescriptor/tAddressMode">iOS Dev Center</a>
-     */
     @Generated
     @Selector("tAddressMode")
     @NUInt
     public native long tAddressMode();
 
-    /**
-     * compareFunction</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Metal/Reference/MTLSamplerDescriptor_Ref/index.html#//apple_ref/occ/instp/MTLSamplerDescriptor/compareFunction">iOS Dev Center</a>
-     */
     @Generated
     @Selector("compareFunction")
     @NUInt
     public native long compareFunction();
 
-    /**
-     * lodAverage</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Metal/Reference/MTLSamplerDescriptor_Ref/index.html#//apple_ref/occ/instp/MTLSamplerDescriptor/lodAverage">iOS Dev Center</a>
-     */
     @Generated
     @Selector("lodAverage")
     public native boolean lodAverage();
 
-    /**
-     * compareFunction</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Metal/Reference/MTLSamplerDescriptor_Ref/index.html#//apple_ref/occ/instp/MTLSamplerDescriptor/compareFunction">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setCompareFunction:")
     public native void setCompareFunction(@NUInt long value);
 
-    /**
-     * lodAverage</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Metal/Reference/MTLSamplerDescriptor_Ref/index.html#//apple_ref/occ/instp/MTLSamplerDescriptor/lodAverage">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setLodAverage:")
     public native void setLodAverage(boolean value);

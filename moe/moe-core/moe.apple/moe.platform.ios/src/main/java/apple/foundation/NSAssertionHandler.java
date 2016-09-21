@@ -56,10 +56,6 @@ public class NSAssertionHandler extends NSObject {
     @Selector("alloc")
     public static native NSAssertionHandler alloc();
 
-    /**
-     * currentHandler</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSAssertionHandler_Class/index.html#//apple_ref/occ/clm/NSAssertionHandler/currentHandler">iOS Dev Center</a>
-     */
     @Generated
     @Selector("currentHandler")
     public static native NSAssertionHandler currentHandler();
@@ -164,20 +160,12 @@ public class NSAssertionHandler extends NSObject {
     @NInt
     public static native long version_static();
 
-    /**
-     * handleFailureInFunction:file:lineNumber:description:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSAssertionHandler_Class/index.html#//apple_ref/occ/instm/NSAssertionHandler/handleFailureInFunction:file:lineNumber:description:">iOS Dev Center</a>
-     */
     @Generated
     @Variadic()
     @Selector("handleFailureInFunction:file:lineNumber:description:")
     public native void handleFailureInFunctionFileLineNumberDescription(String functionName, String fileName,
             @NInt long line, String format, Object... varargs);
 
-    /**
-     * handleFailureInMethod:object:file:lineNumber:description:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSAssertionHandler_Class/index.html#//apple_ref/occ/instm/NSAssertionHandler/handleFailureInMethod:object:file:lineNumber:description:">iOS Dev Center</a>
-     */
     @Generated
     @Variadic()
     @Selector("handleFailureInMethod:object:file:lineNumber:description:")

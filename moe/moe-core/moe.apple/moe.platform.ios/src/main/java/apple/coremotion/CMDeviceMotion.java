@@ -168,18 +168,10 @@ public class CMDeviceMotion extends CMLogItem {
     @NInt
     public static native long version_static();
 
-    /**
-     * attitude</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMotion/Reference/CMDeviceMotion_Class/index.html#//apple_ref/occ/instp/CMDeviceMotion/attitude">iOS Dev Center</a>
-     */
     @Generated
     @Selector("attitude")
     public native CMAttitude attitude();
 
-    /**
-     * gravity</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMotion/Reference/CMDeviceMotion_Class/index.html#//apple_ref/occ/instp/CMDeviceMotion/gravity">iOS Dev Center</a>
-     */
     @Generated
     @Selector("gravity")
     @ByValue
@@ -189,28 +181,16 @@ public class CMDeviceMotion extends CMLogItem {
     @Selector("init")
     public native CMDeviceMotion init();
 
-    /**
-     * magneticField</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMotion/Reference/CMDeviceMotion_Class/index.html#//apple_ref/occ/instp/CMDeviceMotion/magneticField">iOS Dev Center</a>
-     */
     @Generated
     @Selector("magneticField")
     @ByValue
     public native CMCalibratedMagneticField magneticField();
 
-    /**
-     * rotationRate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMotion/Reference/CMDeviceMotion_Class/index.html#//apple_ref/occ/instp/CMDeviceMotion/rotationRate">iOS Dev Center</a>
-     */
     @Generated
     @Selector("rotationRate")
     @ByValue
     public native CMRotationRate rotationRate();
 
-    /**
-     * userAcceleration</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMotion/Reference/CMDeviceMotion_Class/index.html#//apple_ref/occ/instp/CMDeviceMotion/userAcceleration">iOS Dev Center</a>
-     */
     @Generated
     @Selector("userAcceleration")
     @ByValue

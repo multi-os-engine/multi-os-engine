@@ -60,10 +60,6 @@ public class SCNBillboardConstraint extends SCNConstraint {
     @Selector("alloc")
     public static native SCNBillboardConstraint alloc();
 
-    /**
-     * billboardConstraint</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNBillboardConstraint_Class/index.html#//apple_ref/occ/clm/SCNBillboardConstraint/billboardConstraint">iOS Dev Center</a>
-     */
     @Generated
     @Selector("billboardConstraint")
     public static native SCNBillboardConstraint billboardConstraint();
@@ -172,10 +168,6 @@ public class SCNBillboardConstraint extends SCNConstraint {
     @NInt
     public static native long version_static();
 
-    /**
-     * freeAxes</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNBillboardConstraint_Class/index.html#//apple_ref/occ/instp/SCNBillboardConstraint/freeAxes">iOS Dev Center</a>
-     */
     @Generated
     @Selector("freeAxes")
     @NUInt
@@ -185,10 +177,6 @@ public class SCNBillboardConstraint extends SCNConstraint {
     @Selector("init")
     public native SCNBillboardConstraint init();
 
-    /**
-     * freeAxes</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNBillboardConstraint_Class/index.html#//apple_ref/occ/instp/SCNBillboardConstraint/freeAxes">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setFreeAxes:")
     public native void setFreeAxes(@NUInt long value);

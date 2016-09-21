@@ -25,6 +25,7 @@ public final class CFStringNormalizationForm {
     @Generated @NInt public static final long KD = 0x0000000000000001L;
     @Generated @NInt public static final long C = 0x0000000000000002L;
     @Generated @NInt public static final long KC = 0x0000000000000003L;
+
     @Generated
     private CFStringNormalizationForm() {
     }

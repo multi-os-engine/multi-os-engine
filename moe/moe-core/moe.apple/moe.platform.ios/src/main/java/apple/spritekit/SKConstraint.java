@@ -63,91 +63,51 @@ public class SKConstraint extends NSObject implements NSCoding, NSCopying {
     @Selector("alloc")
     public static native SKConstraint alloc();
 
-    /**
-     * distance:toNode:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKConstraint_Ref/index.html#//apple_ref/occ/clm/SKConstraint/distance:toNode:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("distance:toNode:")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object distanceToNode(SKRange range, SKNode node);
 
-    /**
-     * distance:toPoint:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKConstraint_Ref/index.html#//apple_ref/occ/clm/SKConstraint/distance:toPoint:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("distance:toPoint:")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object distanceToPoint(SKRange range, @ByValue CGPoint point);
 
-    /**
-     * distance:toPoint:inNode:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKConstraint_Ref/index.html#//apple_ref/occ/clm/SKConstraint/distance:toPoint:inNode:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("distance:toPoint:inNode:")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object distanceToPointInNode(SKRange range, @ByValue CGPoint point, SKNode node);
 
-    /**
-     * orientToNode:offset:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKConstraint_Ref/index.html#//apple_ref/occ/clm/SKConstraint/orientToNode:offset:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("orientToNode:offset:")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object orientToNodeOffset(SKNode node, SKRange radians);
 
-    /**
-     * orientToPoint:inNode:offset:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKConstraint_Ref/index.html#//apple_ref/occ/clm/SKConstraint/orientToPoint:inNode:offset:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("orientToPoint:inNode:offset:")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object orientToPointInNodeOffset(@ByValue CGPoint point, SKNode node, SKRange radians);
 
-    /**
-     * orientToPoint:offset:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKConstraint_Ref/index.html#//apple_ref/occ/clm/SKConstraint/orientToPoint:offset:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("orientToPoint:offset:")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object orientToPointOffset(@ByValue CGPoint point, SKRange radians);
 
-    /**
-     * positionX:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKConstraint_Ref/index.html#//apple_ref/occ/clm/SKConstraint/positionX:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("positionX:")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object positionX(SKRange range);
 
-    /**
-     * positionX:Y:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKConstraint_Ref/index.html#//apple_ref/occ/clm/SKConstraint/positionX:Y:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("positionX:Y:")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object positionXY(SKRange xRange, SKRange yRange);
 
-    /**
-     * positionY:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKConstraint_Ref/index.html#//apple_ref/occ/clm/SKConstraint/positionY:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("positionY:")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object positionY(SKRange range);
 
-    /**
-     * zRotation:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKConstraint_Ref/index.html#//apple_ref/occ/clm/SKConstraint/zRotation:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("zRotation:")
     @MappedReturn(ObjCObjectMapper.class)
@@ -259,10 +219,6 @@ public class SKConstraint extends NSObject implements NSCoding, NSCopying {
     @MappedReturn(ObjCObjectMapper.class)
     public native Object copyWithZone(VoidPtr zone);
 
-    /**
-     * enabled</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKConstraint_Ref/index.html#//apple_ref/occ/instp/SKConstraint/enabled">iOS Dev Center</a>
-     */
     @Generated
     @Selector("enabled")
     public native boolean enabled();
@@ -279,26 +235,14 @@ public class SKConstraint extends NSObject implements NSCoding, NSCopying {
     @Selector("initWithCoder:")
     public native SKConstraint initWithCoder(NSCoder aDecoder);
 
-    /**
-     * referenceNode</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKConstraint_Ref/index.html#//apple_ref/occ/instp/SKConstraint/referenceNode">iOS Dev Center</a>
-     */
     @Generated
     @Selector("referenceNode")
     public native SKNode referenceNode();
 
-    /**
-     * enabled</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKConstraint_Ref/index.html#//apple_ref/occ/instp/SKConstraint/enabled">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setEnabled:")
     public native void setEnabled(boolean value);
 
-    /**
-     * referenceNode</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKConstraint_Ref/index.html#//apple_ref/occ/instp/SKConstraint/referenceNode">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setReferenceNode:")
     public native void setReferenceNode(SKNode value);

@@ -159,19 +159,11 @@ public class CTCallCenter extends NSObject {
     @NInt
     public static native long version();
 
-    /**
-     * callEventHandler</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkingInternet/Reference/CTCallCenter/index.html#//apple_ref/occ/instp/CTCallCenter/callEventHandler">iOS Dev Center</a>
-     */
     @Generated
     @Selector("callEventHandler")
     @ObjCBlock(name = "call_callEventHandler_ret")
     public native Block_callEventHandler_ret callEventHandler();
 
-    /**
-     * currentCalls</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkingInternet/Reference/CTCallCenter/index.html#//apple_ref/occ/instp/CTCallCenter/currentCalls">iOS Dev Center</a>
-     */
     @Generated
     @Selector("currentCalls")
     public native NSSet<? extends CTCall> currentCalls();
@@ -180,10 +172,6 @@ public class CTCallCenter extends NSObject {
     @Selector("init")
     public native CTCallCenter init();
 
-    /**
-     * callEventHandler</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkingInternet/Reference/CTCallCenter/index.html#//apple_ref/occ/instp/CTCallCenter/callEventHandler">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setCallEventHandler:")
     public native void setCallEventHandler(

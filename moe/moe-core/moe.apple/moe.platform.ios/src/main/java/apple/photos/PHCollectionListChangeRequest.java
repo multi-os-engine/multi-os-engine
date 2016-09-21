@@ -60,36 +60,20 @@ public class PHCollectionListChangeRequest extends NSObject {
     @Selector("alloc")
     public static native PHCollectionListChangeRequest alloc();
 
-    /**
-     * changeRequestForCollectionList:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHCollectionListChangeRequest_Class/index.html#//apple_ref/occ/clm/PHCollectionListChangeRequest/changeRequestForCollectionList:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("changeRequestForCollectionList:")
     public static native PHCollectionListChangeRequest changeRequestForCollectionList(PHCollectionList collectionList);
 
-    /**
-     * changeRequestForCollectionList:childCollections:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHCollectionListChangeRequest_Class/index.html#//apple_ref/occ/clm/PHCollectionListChangeRequest/changeRequestForCollectionList:childCollections:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("changeRequestForCollectionList:childCollections:")
     public static native PHCollectionListChangeRequest changeRequestForCollectionListChildCollections(
             PHCollectionList collectionList, PHFetchResult<?> childCollections);
 
-    /**
-     * creationRequestForCollectionListWithTitle:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHCollectionListChangeRequest_Class/index.html#//apple_ref/occ/clm/PHCollectionListChangeRequest/creationRequestForCollectionListWithTitle:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("creationRequestForCollectionListWithTitle:")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object creationRequestForCollectionListWithTitle(String title);
 
-    /**
-     * deleteCollectionLists:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHCollectionListChangeRequest_Class/index.html#//apple_ref/occ/clm/PHCollectionListChangeRequest/deleteCollectionLists:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("deleteCollectionLists:")
     public static native void deleteCollectionLists(@Mapped(ObjCObjectMapper.class) NSFastEnumeration collectionLists);
@@ -194,10 +178,6 @@ public class PHCollectionListChangeRequest extends NSObject {
     @NInt
     public static native long version_static();
 
-    /**
-     * addChildCollections:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHCollectionListChangeRequest_Class/index.html#//apple_ref/occ/instm/PHCollectionListChangeRequest/addChildCollections:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("addChildCollections:")
     public native void addChildCollections(@Mapped(ObjCObjectMapper.class) NSFastEnumeration collections);
@@ -206,68 +186,36 @@ public class PHCollectionListChangeRequest extends NSObject {
     @Selector("init")
     public native PHCollectionListChangeRequest init();
 
-    /**
-     * insertChildCollections:atIndexes:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHCollectionListChangeRequest_Class/index.html#//apple_ref/occ/instm/PHCollectionListChangeRequest/insertChildCollections:atIndexes:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("insertChildCollections:atIndexes:")
     public native void insertChildCollectionsAtIndexes(@Mapped(ObjCObjectMapper.class) NSFastEnumeration collections,
             NSIndexSet indexes);
 
-    /**
-     * moveChildCollectionsAtIndexes:toIndex:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHCollectionListChangeRequest_Class/index.html#//apple_ref/occ/instm/PHCollectionListChangeRequest/moveChildCollectionsAtIndexes:toIndex:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("moveChildCollectionsAtIndexes:toIndex:")
     public native void moveChildCollectionsAtIndexesToIndex(NSIndexSet indexes, @NUInt long toIndex);
 
-    /**
-     * placeholderForCreatedCollectionList</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHCollectionListChangeRequest_Class/index.html#//apple_ref/occ/instp/PHCollectionListChangeRequest/placeholderForCreatedCollectionList">iOS Dev Center</a>
-     */
     @Generated
     @Selector("placeholderForCreatedCollectionList")
     public native PHObjectPlaceholder placeholderForCreatedCollectionList();
 
-    /**
-     * removeChildCollections:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHCollectionListChangeRequest_Class/index.html#//apple_ref/occ/instm/PHCollectionListChangeRequest/removeChildCollections:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("removeChildCollections:")
     public native void removeChildCollections(@Mapped(ObjCObjectMapper.class) NSFastEnumeration collections);
 
-    /**
-     * removeChildCollectionsAtIndexes:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHCollectionListChangeRequest_Class/index.html#//apple_ref/occ/instm/PHCollectionListChangeRequest/removeChildCollectionsAtIndexes:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("removeChildCollectionsAtIndexes:")
     public native void removeChildCollectionsAtIndexes(NSIndexSet indexes);
 
-    /**
-     * replaceChildCollectionsAtIndexes:withChildCollections:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHCollectionListChangeRequest_Class/index.html#//apple_ref/occ/instm/PHCollectionListChangeRequest/replaceChildCollectionsAtIndexes:withChildCollections:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("replaceChildCollectionsAtIndexes:withChildCollections:")
     public native void replaceChildCollectionsAtIndexesWithChildCollections(NSIndexSet indexes,
             @Mapped(ObjCObjectMapper.class) NSFastEnumeration collections);
 
-    /**
-     * title</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHCollectionListChangeRequest_Class/index.html#//apple_ref/occ/instp/PHCollectionListChangeRequest/title">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setTitle:")
     public native void setTitle(String value);
 
-    /**
-     * title</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHCollectionListChangeRequest_Class/index.html#//apple_ref/occ/instp/PHCollectionListChangeRequest/title">iOS Dev Center</a>
-     */
     @Generated
     @Selector("title")
     public native String title();

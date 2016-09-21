@@ -74,10 +74,6 @@ public class SKScene extends SKEffectNode {
     @Selector("nodeWithFileNamed:")
     public static native SKScene nodeWithFileNamed(String filename);
 
-    /**
-     * sceneWithSize:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKScene_Ref/index.html#//apple_ref/occ/clm/SKScene/sceneWithSize:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("sceneWithSize:")
     public static native SKScene sceneWithSize(@ByValue CGSize size);
@@ -200,94 +196,50 @@ public class SKScene extends SKEffectNode {
     @NInt
     public static native long version_static();
 
-    /**
-     * anchorPoint</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKScene_Ref/index.html#//apple_ref/occ/instp/SKScene/anchorPoint">iOS Dev Center</a>
-     */
     @Generated
     @Selector("anchorPoint")
     @ByValue
     public native CGPoint anchorPoint();
 
-    /**
-     * backgroundColor</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKScene_Ref/index.html#//apple_ref/occ/instp/SKScene/backgroundColor">iOS Dev Center</a>
-     */
     @Generated
     @Selector("backgroundColor")
     public native UIColor backgroundColor();
 
-    /**
-     * convertPointFromView:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKScene_Ref/index.html#//apple_ref/occ/instm/SKScene/convertPointFromView:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("convertPointFromView:")
     @ByValue
     public native CGPoint convertPointFromView(@ByValue CGPoint point);
 
-    /**
-     * convertPointToView:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKScene_Ref/index.html#//apple_ref/occ/instm/SKScene/convertPointToView:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("convertPointToView:")
     @ByValue
     public native CGPoint convertPointToView(@ByValue CGPoint point);
 
-    /**
-     * delegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKScene_Ref/index.html#//apple_ref/occ/instp/SKScene/delegate">iOS Dev Center</a>
-     */
     @Generated
     @Selector("delegate")
     @MappedReturn(ObjCObjectMapper.class)
     public native SKSceneDelegate delegate();
 
-    /**
-     * didApplyConstraints</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKScene_Ref/index.html#//apple_ref/occ/instm/SKScene/didApplyConstraints">iOS Dev Center</a>
-     */
     @Generated
     @Selector("didApplyConstraints")
     public native void didApplyConstraints();
 
-    /**
-     * didChangeSize:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKScene_Ref/index.html#//apple_ref/occ/instm/SKScene/didChangeSize:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("didChangeSize:")
     public native void didChangeSize(@ByValue CGSize oldSize);
 
-    /**
-     * didEvaluateActions</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKScene_Ref/index.html#//apple_ref/occ/instm/SKScene/didEvaluateActions">iOS Dev Center</a>
-     */
     @Generated
     @Selector("didEvaluateActions")
     public native void didEvaluateActions();
 
-    /**
-     * didFinishUpdate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKScene_Ref/index.html#//apple_ref/occ/instm/SKScene/didFinishUpdate">iOS Dev Center</a>
-     */
     @Generated
     @Selector("didFinishUpdate")
     public native void didFinishUpdate();
 
-    /**
-     * didMoveToView:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKScene_Ref/index.html#//apple_ref/occ/instm/SKScene/didMoveToView:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("didMoveToView:")
     public native void didMoveToView(SKView view);
 
-    /**
-     * didSimulatePhysics</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKScene_Ref/index.html#//apple_ref/occ/instm/SKScene/didSimulatePhysics">iOS Dev Center</a>
-     */
     @Generated
     @Selector("didSimulatePhysics")
     public native void didSimulatePhysics();
@@ -300,59 +252,31 @@ public class SKScene extends SKEffectNode {
     @Selector("initWithCoder:")
     public native SKScene initWithCoder(NSCoder aDecoder);
 
-    /**
-     * initWithSize:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKScene_Ref/index.html#//apple_ref/occ/instm/SKScene/initWithSize:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithSize:")
     public native SKScene initWithSize(@ByValue CGSize size);
 
-    /**
-     * physicsWorld</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKScene_Ref/index.html#//apple_ref/occ/instp/SKScene/physicsWorld">iOS Dev Center</a>
-     */
     @Generated
     @Selector("physicsWorld")
     public native SKPhysicsWorld physicsWorld();
 
-    /**
-     * scaleMode</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKScene_Ref/index.html#//apple_ref/occ/instp/SKScene/scaleMode">iOS Dev Center</a>
-     */
     @Generated
     @Selector("scaleMode")
     @NInt
     public native long scaleMode();
 
-    /**
-     * anchorPoint</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKScene_Ref/index.html#//apple_ref/occ/instp/SKScene/anchorPoint">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setAnchorPoint:")
     public native void setAnchorPoint(@ByValue CGPoint value);
 
-    /**
-     * backgroundColor</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKScene_Ref/index.html#//apple_ref/occ/instp/SKScene/backgroundColor">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setBackgroundColor:")
     public native void setBackgroundColor(UIColor value);
 
-    /**
-     * delegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKScene_Ref/index.html#//apple_ref/occ/instp/SKScene/delegate">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setDelegate:")
     public native void setDelegate_unsafe(@Mapped(ObjCObjectMapper.class) SKSceneDelegate value);
 
-    /**
-     * delegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKScene_Ref/index.html#//apple_ref/occ/instp/SKScene/delegate">iOS Dev Center</a>
-     */
     @Generated
     public void setDelegate(@Mapped(ObjCObjectMapper.class) SKSceneDelegate value) {
         Object __old = delegate();
@@ -365,91 +289,47 @@ public class SKScene extends SKEffectNode {
         }
     }
 
-    /**
-     * scaleMode</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKScene_Ref/index.html#//apple_ref/occ/instp/SKScene/scaleMode">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setScaleMode:")
     public native void setScaleMode(@NInt long value);
 
-    /**
-     * size</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKScene_Ref/index.html#//apple_ref/occ/instp/SKScene/size">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setSize:")
     public native void setSize(@ByValue CGSize value);
 
-    /**
-     * size</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKScene_Ref/index.html#//apple_ref/occ/instp/SKScene/size">iOS Dev Center</a>
-     */
     @Generated
     @Selector("size")
     @ByValue
     public native CGSize size();
 
-    /**
-     * update:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKScene_Ref/index.html#//apple_ref/occ/instm/SKScene/update:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("update:")
     public native void update(double currentTime);
 
-    /**
-     * view</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKScene_Ref/index.html#//apple_ref/occ/instp/SKScene/view">iOS Dev Center</a>
-     */
     @Generated
     @Selector("view")
     public native SKView view();
 
-    /**
-     * willMoveFromView:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKScene_Ref/index.html#//apple_ref/occ/instm/SKScene/willMoveFromView:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("willMoveFromView:")
     public native void willMoveFromView(SKView view);
 
-    /**
-     * audioEngine</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKScene_Ref/index.html#//apple_ref/occ/instp/SKScene/audioEngine">iOS Dev Center</a>
-     */
     @Generated
     @Selector("audioEngine")
     public native AVAudioEngine audioEngine();
 
-    /**
-     * camera</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKScene_Ref/index.html#//apple_ref/occ/instp/SKScene/camera">iOS Dev Center</a>
-     */
     @Generated
     @Selector("camera")
     public native SKCameraNode camera();
 
-    /**
-     * listener</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKScene_Ref/index.html#//apple_ref/occ/instp/SKScene/listener">iOS Dev Center</a>
-     */
     @Generated
     @Selector("listener")
     public native SKNode listener();
 
-    /**
-     * camera</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKScene_Ref/index.html#//apple_ref/occ/instp/SKScene/camera">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setCamera:")
     public native void setCamera_unsafe(SKCameraNode value);
 
-    /**
-     * camera</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKScene_Ref/index.html#//apple_ref/occ/instp/SKScene/camera">iOS Dev Center</a>
-     */
     @Generated
     public void setCamera(SKCameraNode value) {
         Object __old = camera();
@@ -462,18 +342,10 @@ public class SKScene extends SKEffectNode {
         }
     }
 
-    /**
-     * listener</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKScene_Ref/index.html#//apple_ref/occ/instp/SKScene/listener">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setListener:")
     public native void setListener_unsafe(SKNode value);
 
-    /**
-     * listener</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKScene_Ref/index.html#//apple_ref/occ/instp/SKScene/listener">iOS Dev Center</a>
-     */
     @Generated
     public void setListener(SKNode value) {
         Object __old = listener();

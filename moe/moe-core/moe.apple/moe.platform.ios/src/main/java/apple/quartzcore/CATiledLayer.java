@@ -62,10 +62,6 @@ public class CATiledLayer extends CALayer {
     @Selector("alloc")
     public static native CATiledLayer alloc();
 
-    /**
-     * fadeDuration</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/CATiledLayer_class/index.html#//apple_ref/occ/clm/CATiledLayer/fadeDuration">iOS Dev Center</a>
-     */
     @Generated
     @Selector("fadeDuration")
     public static native double fadeDuration();
@@ -196,52 +192,28 @@ public class CATiledLayer extends CALayer {
     @Selector("initWithLayer:")
     public native CATiledLayer initWithLayer(@Mapped(ObjCObjectMapper.class) Object layer);
 
-    /**
-     * levelsOfDetail</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/CATiledLayer_class/index.html#//apple_ref/occ/instp/CATiledLayer/levelsOfDetail">iOS Dev Center</a>
-     */
     @Generated
     @Selector("levelsOfDetail")
     @NUInt
     public native long levelsOfDetail();
 
-    /**
-     * levelsOfDetailBias</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/CATiledLayer_class/index.html#//apple_ref/occ/instp/CATiledLayer/levelsOfDetailBias">iOS Dev Center</a>
-     */
     @Generated
     @Selector("levelsOfDetailBias")
     @NUInt
     public native long levelsOfDetailBias();
 
-    /**
-     * levelsOfDetail</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/CATiledLayer_class/index.html#//apple_ref/occ/instp/CATiledLayer/levelsOfDetail">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setLevelsOfDetail:")
     public native void setLevelsOfDetail(@NUInt long value);
 
-    /**
-     * levelsOfDetailBias</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/CATiledLayer_class/index.html#//apple_ref/occ/instp/CATiledLayer/levelsOfDetailBias">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setLevelsOfDetailBias:")
     public native void setLevelsOfDetailBias(@NUInt long value);
 
-    /**
-     * tileSize</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/CATiledLayer_class/index.html#//apple_ref/occ/instp/CATiledLayer/tileSize">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setTileSize:")
     public native void setTileSize(@ByValue CGSize value);
 
-    /**
-     * tileSize</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/CATiledLayer_class/index.html#//apple_ref/occ/instp/CATiledLayer/tileSize">iOS Dev Center</a>
-     */
     @Generated
     @Selector("tileSize")
     @ByValue

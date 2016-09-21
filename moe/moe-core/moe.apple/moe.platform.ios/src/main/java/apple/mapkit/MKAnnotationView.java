@@ -352,54 +352,30 @@ public class MKAnnotationView extends UIView {
     @NInt
     public static native long version_static();
 
-    /**
-     * annotation</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKAnnotationView_Class/index.html#//apple_ref/occ/instp/MKAnnotationView/annotation">iOS Dev Center</a>
-     */
     @Generated
     @Selector("annotation")
     @MappedReturn(ObjCObjectMapper.class)
     public native MKAnnotation annotation();
 
-    /**
-     * calloutOffset</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKAnnotationView_Class/index.html#//apple_ref/occ/instp/MKAnnotationView/calloutOffset">iOS Dev Center</a>
-     */
     @Generated
     @Selector("calloutOffset")
     @ByValue
     public native CGPoint calloutOffset();
 
-    /**
-     * canShowCallout</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKAnnotationView_Class/index.html#//apple_ref/occ/instp/MKAnnotationView/canShowCallout">iOS Dev Center</a>
-     */
     @Generated
     @Selector("canShowCallout")
     public native boolean canShowCallout();
 
-    /**
-     * centerOffset</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKAnnotationView_Class/index.html#//apple_ref/occ/instp/MKAnnotationView/centerOffset">iOS Dev Center</a>
-     */
     @Generated
     @Selector("centerOffset")
     @ByValue
     public native CGPoint centerOffset();
 
-    /**
-     * dragState</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKAnnotationView_Class/index.html#//apple_ref/occ/instp/MKAnnotationView/dragState">iOS Dev Center</a>
-     */
     @Generated
     @Selector("dragState")
     @NUInt
     public native long dragState();
 
-    /**
-     * image</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKAnnotationView_Class/index.html#//apple_ref/occ/instp/MKAnnotationView/image">iOS Dev Center</a>
-     */
     @Generated
     @Selector("image")
     public native UIImage image();
@@ -408,10 +384,6 @@ public class MKAnnotationView extends UIView {
     @Selector("init")
     public native MKAnnotationView init();
 
-    /**
-     * initWithAnnotation:reuseIdentifier:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKAnnotationView_Class/index.html#//apple_ref/occ/instm/MKAnnotationView/initWithAnnotation:reuseIdentifier:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithAnnotation:reuseIdentifier:")
     public native MKAnnotationView initWithAnnotationReuseIdentifier(
@@ -421,186 +393,94 @@ public class MKAnnotationView extends UIView {
     @Selector("initWithFrame:")
     public native MKAnnotationView initWithFrame(@ByValue CGRect frame);
 
-    /**
-     * draggable</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKAnnotationView_Class/index.html#//apple_ref/occ/instp/MKAnnotationView/draggable">iOS Dev Center</a>
-     */
     @Generated
     @Selector("isDraggable")
     public native boolean isDraggable();
 
-    /**
-     * draggable</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKAnnotationView_Class/index.html#//apple_ref/occ/instp/MKAnnotationView/draggable">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setDraggable:")
     public native void setDraggable(boolean value);
 
-    /**
-     * enabled</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKAnnotationView_Class/index.html#//apple_ref/occ/instp/MKAnnotationView/enabled">iOS Dev Center</a>
-     */
     @Generated
     @Selector("isEnabled")
     public native boolean isEnabled();
 
-    /**
-     * enabled</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKAnnotationView_Class/index.html#//apple_ref/occ/instp/MKAnnotationView/enabled">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setEnabled:")
     public native void setEnabled(boolean value);
 
-    /**
-     * highlighted</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKAnnotationView_Class/index.html#//apple_ref/occ/instp/MKAnnotationView/highlighted">iOS Dev Center</a>
-     */
     @Generated
     @Selector("isHighlighted")
     public native boolean isHighlighted();
 
-    /**
-     * highlighted</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKAnnotationView_Class/index.html#//apple_ref/occ/instp/MKAnnotationView/highlighted">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setHighlighted:")
     public native void setHighlighted(boolean value);
 
-    /**
-     * selected</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKAnnotationView_Class/index.html#//apple_ref/occ/instp/MKAnnotationView/selected">iOS Dev Center</a>
-     */
     @Generated
     @Selector("isSelected")
     public native boolean isSelected();
 
-    /**
-     * selected</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKAnnotationView_Class/index.html#//apple_ref/occ/instp/MKAnnotationView/selected">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setSelected:")
     public native void setSelected(boolean value);
 
-    /**
-     * leftCalloutAccessoryView</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKAnnotationView_Class/index.html#//apple_ref/occ/instp/MKAnnotationView/leftCalloutAccessoryView">iOS Dev Center</a>
-     */
     @Generated
     @Selector("leftCalloutAccessoryView")
     public native UIView leftCalloutAccessoryView();
 
-    /**
-     * prepareForReuse</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKAnnotationView_Class/index.html#//apple_ref/occ/instm/MKAnnotationView/prepareForReuse">iOS Dev Center</a>
-     */
     @Generated
     @Selector("prepareForReuse")
     public native void prepareForReuse();
 
-    /**
-     * reuseIdentifier</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKAnnotationView_Class/index.html#//apple_ref/occ/instp/MKAnnotationView/reuseIdentifier">iOS Dev Center</a>
-     */
     @Generated
     @Selector("reuseIdentifier")
     public native String reuseIdentifier();
 
-    /**
-     * rightCalloutAccessoryView</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKAnnotationView_Class/index.html#//apple_ref/occ/instp/MKAnnotationView/rightCalloutAccessoryView">iOS Dev Center</a>
-     */
     @Generated
     @Selector("rightCalloutAccessoryView")
     public native UIView rightCalloutAccessoryView();
 
-    /**
-     * annotation</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKAnnotationView_Class/index.html#//apple_ref/occ/instp/MKAnnotationView/annotation">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setAnnotation:")
     public native void setAnnotation(@Mapped(ObjCObjectMapper.class) MKAnnotation value);
 
-    /**
-     * calloutOffset</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKAnnotationView_Class/index.html#//apple_ref/occ/instp/MKAnnotationView/calloutOffset">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setCalloutOffset:")
     public native void setCalloutOffset(@ByValue CGPoint value);
 
-    /**
-     * canShowCallout</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKAnnotationView_Class/index.html#//apple_ref/occ/instp/MKAnnotationView/canShowCallout">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setCanShowCallout:")
     public native void setCanShowCallout(boolean value);
 
-    /**
-     * centerOffset</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKAnnotationView_Class/index.html#//apple_ref/occ/instp/MKAnnotationView/centerOffset">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setCenterOffset:")
     public native void setCenterOffset(@ByValue CGPoint value);
 
-    /**
-     * dragState</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKAnnotationView_Class/index.html#//apple_ref/occ/instp/MKAnnotationView/dragState">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setDragState:")
     public native void setDragState(@NUInt long value);
 
-    /**
-     * setDragState:animated:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKAnnotationView_Class/index.html#//apple_ref/occ/instm/MKAnnotationView/setDragState:animated:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setDragState:animated:")
     public native void setDragStateAnimated(@NUInt long newDragState, boolean animated);
 
-    /**
-     * image</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKAnnotationView_Class/index.html#//apple_ref/occ/instp/MKAnnotationView/image">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setImage:")
     public native void setImage(UIImage value);
 
-    /**
-     * leftCalloutAccessoryView</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKAnnotationView_Class/index.html#//apple_ref/occ/instp/MKAnnotationView/leftCalloutAccessoryView">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setLeftCalloutAccessoryView:")
     public native void setLeftCalloutAccessoryView(UIView value);
 
-    /**
-     * rightCalloutAccessoryView</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKAnnotationView_Class/index.html#//apple_ref/occ/instp/MKAnnotationView/rightCalloutAccessoryView">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setRightCalloutAccessoryView:")
     public native void setRightCalloutAccessoryView(UIView value);
 
-    /**
-     * setSelected:animated:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKAnnotationView_Class/index.html#//apple_ref/occ/instm/MKAnnotationView/setSelected:animated:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setSelected:animated:")
     public native void setSelectedAnimated(boolean selected, boolean animated);
 
-    /**
-     * detailCalloutAccessoryView</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKAnnotationView_Class/index.html#//apple_ref/occ/instp/MKAnnotationView/detailCalloutAccessoryView">iOS Dev Center</a>
-     */
     @Generated
     @Selector("detailCalloutAccessoryView")
     public native UIView detailCalloutAccessoryView();
@@ -609,10 +489,6 @@ public class MKAnnotationView extends UIView {
     @Selector("initWithCoder:")
     public native MKAnnotationView initWithCoder(NSCoder aDecoder);
 
-    /**
-     * detailCalloutAccessoryView</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKAnnotationView_Class/index.html#//apple_ref/occ/instp/MKAnnotationView/detailCalloutAccessoryView">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setDetailCalloutAccessoryView:")
     public native void setDetailCalloutAccessoryView(UIView value);

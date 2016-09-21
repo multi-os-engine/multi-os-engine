@@ -159,36 +159,20 @@ public class EAAccessory extends NSObject {
     @NInt
     public static native long version_static();
 
-    /**
-     * connectionID</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ExternalAccessory/Reference/EAAccessory_class/index.html#//apple_ref/occ/instp/EAAccessory/connectionID">iOS Dev Center</a>
-     */
     @Generated
     @Selector("connectionID")
     @NUInt
     public native long connectionID();
 
-    /**
-     * delegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ExternalAccessory/Reference/EAAccessory_class/index.html#//apple_ref/occ/instp/EAAccessory/delegate">iOS Dev Center</a>
-     */
     @Generated
     @Selector("delegate")
     @MappedReturn(ObjCObjectMapper.class)
     public native EAAccessoryDelegate delegate();
 
-    /**
-     * firmwareRevision</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ExternalAccessory/Reference/EAAccessory_class/index.html#//apple_ref/occ/instp/EAAccessory/firmwareRevision">iOS Dev Center</a>
-     */
     @Generated
     @Selector("firmwareRevision")
     public native String firmwareRevision();
 
-    /**
-     * hardwareRevision</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ExternalAccessory/Reference/EAAccessory_class/index.html#//apple_ref/occ/instp/EAAccessory/hardwareRevision">iOS Dev Center</a>
-     */
     @Generated
     @Selector("hardwareRevision")
     public native String hardwareRevision();
@@ -197,66 +181,34 @@ public class EAAccessory extends NSObject {
     @Selector("init")
     public native EAAccessory init();
 
-    /**
-     * connected</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ExternalAccessory/Reference/EAAccessory_class/index.html#//apple_ref/occ/instp/EAAccessory/connected">iOS Dev Center</a>
-     */
     @Generated
     @Selector("isConnected")
     public native boolean isConnected();
 
-    /**
-     * manufacturer</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ExternalAccessory/Reference/EAAccessory_class/index.html#//apple_ref/occ/instp/EAAccessory/manufacturer">iOS Dev Center</a>
-     */
     @Generated
     @Selector("manufacturer")
     public native String manufacturer();
 
-    /**
-     * modelNumber</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ExternalAccessory/Reference/EAAccessory_class/index.html#//apple_ref/occ/instp/EAAccessory/modelNumber">iOS Dev Center</a>
-     */
     @Generated
     @Selector("modelNumber")
     public native String modelNumber();
 
-    /**
-     * name</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ExternalAccessory/Reference/EAAccessory_class/index.html#//apple_ref/occ/instp/EAAccessory/name">iOS Dev Center</a>
-     */
     @Generated
     @Selector("name")
     public native String name();
 
-    /**
-     * protocolStrings</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ExternalAccessory/Reference/EAAccessory_class/index.html#//apple_ref/occ/instp/EAAccessory/protocolStrings">iOS Dev Center</a>
-     */
     @Generated
     @Selector("protocolStrings")
     public native NSArray<String> protocolStrings();
 
-    /**
-     * serialNumber</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ExternalAccessory/Reference/EAAccessory_class/index.html#//apple_ref/occ/instp/EAAccessory/serialNumber">iOS Dev Center</a>
-     */
     @Generated
     @Selector("serialNumber")
     public native String serialNumber();
 
-    /**
-     * delegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ExternalAccessory/Reference/EAAccessory_class/index.html#//apple_ref/occ/instp/EAAccessory/delegate">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setDelegate:")
     public native void setDelegate_unsafe(@Mapped(ObjCObjectMapper.class) EAAccessoryDelegate value);
 
-    /**
-     * delegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ExternalAccessory/Reference/EAAccessory_class/index.html#//apple_ref/occ/instp/EAAccessory/delegate">iOS Dev Center</a>
-     */
     @Generated
     public void setDelegate(@Mapped(ObjCObjectMapper.class) EAAccessoryDelegate value) {
         Object __old = delegate();

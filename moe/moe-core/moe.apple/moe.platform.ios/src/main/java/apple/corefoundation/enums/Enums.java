@@ -54,6 +54,7 @@ public final class Enums {
     @Generated public static final int kCFMessagePortIsInvalid = 0xFFFFFFFD;
     @Generated public static final int kCFMessagePortTransportError = 0xFFFFFFFC;
     @Generated public static final int kCFMessagePortBecameInvalidError = 0xFFFFFFFB;
+
     @Generated
     private Enums() {
     }

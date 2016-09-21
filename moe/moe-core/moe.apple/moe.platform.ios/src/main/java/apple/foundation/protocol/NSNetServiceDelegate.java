@@ -35,10 +35,6 @@ import org.moe.natj.objc.ann.Selector;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("NSNetServiceDelegate")
 public interface NSNetServiceDelegate {
-    /**
-     * netService:didAcceptConnectionWithInputStream:outputStream:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSNetServiceDelegate_Protocol/index.html#//apple_ref/occ/intfm/NSNetServiceDelegate/netService:didAcceptConnectionWithInputStream:outputStream:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("netService:didAcceptConnectionWithInputStream:outputStream:")
@@ -47,10 +43,6 @@ public interface NSNetServiceDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * netService:didNotPublish:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSNetServiceDelegate_Protocol/index.html#//apple_ref/occ/intfm/NSNetServiceDelegate/netService:didNotPublish:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("netService:didNotPublish:")
@@ -58,10 +50,6 @@ public interface NSNetServiceDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * netService:didNotResolve:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSNetServiceDelegate_Protocol/index.html#//apple_ref/occ/intfm/NSNetServiceDelegate/netService:didNotResolve:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("netService:didNotResolve:")
@@ -69,10 +57,6 @@ public interface NSNetServiceDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * netService:didUpdateTXTRecordData:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSNetServiceDelegate_Protocol/index.html#//apple_ref/occ/intfm/NSNetServiceDelegate/netService:didUpdateTXTRecordData:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("netService:didUpdateTXTRecordData:")
@@ -80,10 +64,6 @@ public interface NSNetServiceDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * netServiceDidPublish:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSNetServiceDelegate_Protocol/index.html#//apple_ref/occ/intfm/NSNetServiceDelegate/netServiceDidPublish:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("netServiceDidPublish:")
@@ -91,10 +71,6 @@ public interface NSNetServiceDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * netServiceDidResolveAddress:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSNetServiceDelegate_Protocol/index.html#//apple_ref/occ/intfm/NSNetServiceDelegate/netServiceDidResolveAddress:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("netServiceDidResolveAddress:")
@@ -102,10 +78,6 @@ public interface NSNetServiceDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * netServiceDidStop:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSNetServiceDelegate_Protocol/index.html#//apple_ref/occ/intfm/NSNetServiceDelegate/netServiceDidStop:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("netServiceDidStop:")
@@ -113,10 +85,6 @@ public interface NSNetServiceDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * netServiceWillPublish:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSNetServiceDelegate_Protocol/index.html#//apple_ref/occ/intfm/NSNetServiceDelegate/netServiceWillPublish:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("netServiceWillPublish:")
@@ -124,10 +92,6 @@ public interface NSNetServiceDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * netServiceWillResolve:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSNetServiceDelegate_Protocol/index.html#//apple_ref/occ/intfm/NSNetServiceDelegate/netServiceWillResolve:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("netServiceWillResolve:")

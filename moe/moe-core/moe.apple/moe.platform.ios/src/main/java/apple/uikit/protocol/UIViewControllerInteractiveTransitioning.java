@@ -33,10 +33,6 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("UIViewControllerInteractiveTransitioning")
 public interface UIViewControllerInteractiveTransitioning {
-    /**
-     * completionCurve</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIViewControllerInteractiveTransitioning_protocol/index.html#//apple_ref/occ/intfm/UIViewControllerInteractiveTransitioning/completionCurve">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("completionCurve")
@@ -45,10 +41,6 @@ public interface UIViewControllerInteractiveTransitioning {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * completionSpeed</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIViewControllerInteractiveTransitioning_protocol/index.html#//apple_ref/occ/intfm/UIViewControllerInteractiveTransitioning/completionSpeed">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("completionSpeed")
@@ -57,10 +49,6 @@ public interface UIViewControllerInteractiveTransitioning {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * startInteractiveTransition:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIViewControllerInteractiveTransitioning_protocol/index.html#//apple_ref/occ/intfm/UIViewControllerInteractiveTransitioning/startInteractiveTransition:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("startInteractiveTransition:")
     void startInteractiveTransition(@Mapped(ObjCObjectMapper.class) Object transitionContext);

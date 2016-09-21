@@ -158,10 +158,6 @@ public class WKSecurityOrigin extends NSObject {
     @NInt
     public static native long version_static();
 
-    /**
-     * host</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WebKit/Reference/WKSecurityOrigin_Class_Ref/index.html#//apple_ref/occ/instp/WKSecurityOrigin/host">iOS Dev Center</a>
-     */
     @Generated
     @Selector("host")
     public native String host();
@@ -170,19 +166,11 @@ public class WKSecurityOrigin extends NSObject {
     @Selector("init")
     public native WKSecurityOrigin init();
 
-    /**
-     * port</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WebKit/Reference/WKSecurityOrigin_Class_Ref/index.html#//apple_ref/occ/instp/WKSecurityOrigin/port">iOS Dev Center</a>
-     */
     @Generated
     @Selector("port")
     @NInt
     public native long port();
 
-    /**
-     * protocol</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WebKit/Reference/WKSecurityOrigin_Class_Ref/index.html#//apple_ref/occ/instp/WKSecurityOrigin/protocol">iOS Dev Center</a>
-     */
     @Generated
     @Selector("protocol")
     public native String protocol();

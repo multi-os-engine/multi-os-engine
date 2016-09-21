@@ -34,10 +34,6 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("NSMetadataQueryDelegate")
 public interface NSMetadataQueryDelegate {
-    /**
-     * metadataQuery:replacementObjectForResultObject:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSMetadataQueryDelegate_Protocol/index.html#//apple_ref/occ/intfm/NSMetadataQueryDelegate/metadataQuery:replacementObjectForResultObject:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("metadataQuery:replacementObjectForResultObject:")
@@ -46,10 +42,6 @@ public interface NSMetadataQueryDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * metadataQuery:replacementValueForAttribute:value:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSMetadataQueryDelegate_Protocol/index.html#//apple_ref/occ/intfm/NSMetadataQueryDelegate/metadataQuery:replacementValueForAttribute:value:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("metadataQuery:replacementValueForAttribute:value:")

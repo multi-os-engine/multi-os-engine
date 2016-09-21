@@ -181,18 +181,10 @@ public class CAGradientLayer extends CALayer {
     @NInt
     public static native long version_static();
 
-    /**
-     * colors</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/CAGradientLayer_class/index.html#//apple_ref/occ/instp/CAGradientLayer/colors">iOS Dev Center</a>
-     */
     @Generated
     @Selector("colors")
     public native NSArray<?> colors();
 
-    /**
-     * endPoint</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/CAGradientLayer_class/index.html#//apple_ref/occ/instp/CAGradientLayer/endPoint">iOS Dev Center</a>
-     */
     @Generated
     @Selector("endPoint")
     @ByValue
@@ -206,67 +198,35 @@ public class CAGradientLayer extends CALayer {
     @Selector("initWithLayer:")
     public native CAGradientLayer initWithLayer(@Mapped(ObjCObjectMapper.class) Object layer);
 
-    /**
-     * locations</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/CAGradientLayer_class/index.html#//apple_ref/occ/instp/CAGradientLayer/locations">iOS Dev Center</a>
-     */
     @Generated
     @Selector("locations")
     public native NSArray<? extends NSNumber> locations();
 
-    /**
-     * colors</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/CAGradientLayer_class/index.html#//apple_ref/occ/instp/CAGradientLayer/colors">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setColors:")
     public native void setColors(NSArray<?> value);
 
-    /**
-     * endPoint</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/CAGradientLayer_class/index.html#//apple_ref/occ/instp/CAGradientLayer/endPoint">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setEndPoint:")
     public native void setEndPoint(@ByValue CGPoint value);
 
-    /**
-     * locations</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/CAGradientLayer_class/index.html#//apple_ref/occ/instp/CAGradientLayer/locations">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setLocations:")
     public native void setLocations(NSArray<? extends NSNumber> value);
 
-    /**
-     * startPoint</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/CAGradientLayer_class/index.html#//apple_ref/occ/instp/CAGradientLayer/startPoint">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setStartPoint:")
     public native void setStartPoint(@ByValue CGPoint value);
 
-    /**
-     * type</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/CAGradientLayer_class/index.html#//apple_ref/occ/instp/CAGradientLayer/type">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setType:")
     public native void setType(String value);
 
-    /**
-     * startPoint</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/CAGradientLayer_class/index.html#//apple_ref/occ/instp/CAGradientLayer/startPoint">iOS Dev Center</a>
-     */
     @Generated
     @Selector("startPoint")
     @ByValue
     public native CGPoint startPoint();
 
-    /**
-     * type</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/CAGradientLayer_class/index.html#//apple_ref/occ/instp/CAGradientLayer/type">iOS Dev Center</a>
-     */
     @Generated
     @Selector("type")
     public native String type();

@@ -30,10 +30,6 @@ import org.moe.natj.objc.ann.Selector;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("UIScrollViewAccessibilityDelegate")
 public interface UIScrollViewAccessibilityDelegate extends UIScrollViewDelegate {
-    /**
-     * accessibilityScrollStatusForScrollView:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIScrollViewAccessibilityDelegate_Protocol/index.html#//apple_ref/occ/intfm/UIScrollViewAccessibilityDelegate/accessibilityScrollStatusForScrollView:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("accessibilityScrollStatusForScrollView:")

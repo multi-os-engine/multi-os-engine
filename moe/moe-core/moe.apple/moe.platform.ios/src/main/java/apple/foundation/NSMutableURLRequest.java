@@ -170,82 +170,42 @@ public class NSMutableURLRequest extends NSURLRequest {
     @NInt
     public static native long version_static();
 
-    /**
-     * HTTPBody</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSMutableURLRequest_Class/index.html#//apple_ref/occ/instp/NSMutableURLRequest/HTTPBody">iOS Dev Center</a>
-     */
     @Generated
     @Selector("HTTPBody")
     public native NSData HTTPBody();
 
-    /**
-     * HTTPBodyStream</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSMutableURLRequest_Class/index.html#//apple_ref/occ/instp/NSMutableURLRequest/HTTPBodyStream">iOS Dev Center</a>
-     */
     @Generated
     @Selector("HTTPBodyStream")
     public native NSInputStream HTTPBodyStream();
 
-    /**
-     * HTTPMethod</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSMutableURLRequest_Class/index.html#//apple_ref/occ/instp/NSMutableURLRequest/HTTPMethod">iOS Dev Center</a>
-     */
     @Generated
     @Selector("HTTPMethod")
     public native String HTTPMethod();
 
-    /**
-     * HTTPShouldHandleCookies</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSMutableURLRequest_Class/index.html#//apple_ref/occ/instp/NSMutableURLRequest/HTTPShouldHandleCookies">iOS Dev Center</a>
-     */
     @Generated
     @Selector("HTTPShouldHandleCookies")
     public native boolean HTTPShouldHandleCookies();
 
-    /**
-     * HTTPShouldUsePipelining</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSMutableURLRequest_Class/index.html#//apple_ref/occ/instp/NSMutableURLRequest/HTTPShouldUsePipelining">iOS Dev Center</a>
-     */
     @Generated
     @Selector("HTTPShouldUsePipelining")
     public native boolean HTTPShouldUsePipelining();
 
-    /**
-     * URL</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSMutableURLRequest_Class/index.html#//apple_ref/occ/instp/NSMutableURLRequest/URL">iOS Dev Center</a>
-     */
     @Generated
     @Selector("URL")
     public native NSURL URL();
 
-    /**
-     * addValue:forHTTPHeaderField:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSMutableURLRequest_Class/index.html#//apple_ref/occ/instm/NSMutableURLRequest/addValue:forHTTPHeaderField:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("addValue:forHTTPHeaderField:")
     public native void addValueForHTTPHeaderField(String value, String field);
 
-    /**
-     * allHTTPHeaderFields</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSMutableURLRequest_Class/index.html#//apple_ref/occ/instp/NSMutableURLRequest/allHTTPHeaderFields">iOS Dev Center</a>
-     */
     @Generated
     @Selector("allHTTPHeaderFields")
     public native NSDictionary<String, String> allHTTPHeaderFields();
 
-    /**
-     * allowsCellularAccess</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSMutableURLRequest_Class/index.html#//apple_ref/occ/instp/NSMutableURLRequest/allowsCellularAccess">iOS Dev Center</a>
-     */
     @Generated
     @Selector("allowsCellularAccess")
     public native boolean allowsCellularAccess();
 
-    /**
-     * cachePolicy</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSMutableURLRequest_Class/index.html#//apple_ref/occ/instp/NSMutableURLRequest/cachePolicy">iOS Dev Center</a>
-     */
     @Generated
     @Selector("cachePolicy")
     @NUInt
@@ -264,131 +224,67 @@ public class NSMutableURLRequest extends NSURLRequest {
     public native NSMutableURLRequest initWithURLCachePolicyTimeoutInterval(NSURL URL, @NUInt long cachePolicy,
             double timeoutInterval);
 
-    /**
-     * mainDocumentURL</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSMutableURLRequest_Class/index.html#//apple_ref/occ/instp/NSMutableURLRequest/mainDocumentURL">iOS Dev Center</a>
-     */
     @Generated
     @Selector("mainDocumentURL")
     public native NSURL mainDocumentURL();
 
-    /**
-     * networkServiceType</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSMutableURLRequest_Class/index.html#//apple_ref/occ/instp/NSMutableURLRequest/networkServiceType">iOS Dev Center</a>
-     */
     @Generated
     @Selector("networkServiceType")
     @NUInt
     public native long networkServiceType();
 
-    /**
-     * allHTTPHeaderFields</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSMutableURLRequest_Class/index.html#//apple_ref/occ/instp/NSMutableURLRequest/allHTTPHeaderFields">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setAllHTTPHeaderFields:")
     public native void setAllHTTPHeaderFields(NSDictionary<String, String> value);
 
-    /**
-     * allowsCellularAccess</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSMutableURLRequest_Class/index.html#//apple_ref/occ/instp/NSMutableURLRequest/allowsCellularAccess">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setAllowsCellularAccess:")
     public native void setAllowsCellularAccess(boolean value);
 
-    /**
-     * cachePolicy</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSMutableURLRequest_Class/index.html#//apple_ref/occ/instp/NSMutableURLRequest/cachePolicy">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setCachePolicy:")
     public native void setCachePolicy(@NUInt long value);
 
-    /**
-     * HTTPBody</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSMutableURLRequest_Class/index.html#//apple_ref/occ/instp/NSMutableURLRequest/HTTPBody">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setHTTPBody:")
     public native void setHTTPBody(NSData value);
 
-    /**
-     * HTTPBodyStream</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSMutableURLRequest_Class/index.html#//apple_ref/occ/instp/NSMutableURLRequest/HTTPBodyStream">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setHTTPBodyStream:")
     public native void setHTTPBodyStream(NSInputStream value);
 
-    /**
-     * HTTPMethod</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSMutableURLRequest_Class/index.html#//apple_ref/occ/instp/NSMutableURLRequest/HTTPMethod">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setHTTPMethod:")
     public native void setHTTPMethod(String value);
 
-    /**
-     * HTTPShouldHandleCookies</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSMutableURLRequest_Class/index.html#//apple_ref/occ/instp/NSMutableURLRequest/HTTPShouldHandleCookies">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setHTTPShouldHandleCookies:")
     public native void setHTTPShouldHandleCookies(boolean value);
 
-    /**
-     * HTTPShouldUsePipelining</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSMutableURLRequest_Class/index.html#//apple_ref/occ/instp/NSMutableURLRequest/HTTPShouldUsePipelining">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setHTTPShouldUsePipelining:")
     public native void setHTTPShouldUsePipelining(boolean value);
 
-    /**
-     * mainDocumentURL</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSMutableURLRequest_Class/index.html#//apple_ref/occ/instp/NSMutableURLRequest/mainDocumentURL">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setMainDocumentURL:")
     public native void setMainDocumentURL(NSURL value);
 
-    /**
-     * networkServiceType</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSMutableURLRequest_Class/index.html#//apple_ref/occ/instp/NSMutableURLRequest/networkServiceType">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setNetworkServiceType:")
     public native void setNetworkServiceType(@NUInt long value);
 
-    /**
-     * timeoutInterval</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSMutableURLRequest_Class/index.html#//apple_ref/occ/instp/NSMutableURLRequest/timeoutInterval">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setTimeoutInterval:")
     public native void setTimeoutInterval(double value);
 
-    /**
-     * URL</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSMutableURLRequest_Class/index.html#//apple_ref/occ/instp/NSMutableURLRequest/URL">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setURL:")
     public native void setURL(NSURL value);
 
-    /**
-     * setValue:forHTTPHeaderField:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSMutableURLRequest_Class/index.html#//apple_ref/occ/instm/NSMutableURLRequest/setValue:forHTTPHeaderField:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setValue:forHTTPHeaderField:")
     public native void setValueForHTTPHeaderField(String value, String field);
 
-    /**
-     * timeoutInterval</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSMutableURLRequest_Class/index.html#//apple_ref/occ/instp/NSMutableURLRequest/timeoutInterval">iOS Dev Center</a>
-     */
     @Generated
     @Selector("timeoutInterval")
     public native double timeoutInterval();

@@ -163,61 +163,33 @@ public class GKTurnBasedParticipant extends NSObject {
     @Selector("init")
     public native GKTurnBasedParticipant init();
 
-    /**
-     * lastTurnDate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKTurnBasedParticipant_Ref/index.html#//apple_ref/occ/instp/GKTurnBasedParticipant/lastTurnDate">iOS Dev Center</a>
-     */
     @Generated
     @Selector("lastTurnDate")
     public native NSDate lastTurnDate();
 
-    /**
-     * matchOutcome</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKTurnBasedParticipant_Ref/index.html#//apple_ref/occ/instp/GKTurnBasedParticipant/matchOutcome">iOS Dev Center</a>
-     */
     @Generated
     @Selector("matchOutcome")
     @NInt
     public native long matchOutcome();
 
-    /**
-     * player</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKTurnBasedParticipant_Ref/index.html#//apple_ref/occ/instp/GKTurnBasedParticipant/player">iOS Dev Center</a>
-     */
     @Generated
     @Selector("player")
     public native GKPlayer player();
 
-    /**
-     * playerID</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKTurnBasedParticipant_Ref/index.html#//apple_ref/occ/instp/GKTurnBasedParticipant/playerID">iOS Dev Center</a>
-     */
     @Generated
     @Deprecated
     @Selector("playerID")
     public native String playerID();
 
-    /**
-     * matchOutcome</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKTurnBasedParticipant_Ref/index.html#//apple_ref/occ/instp/GKTurnBasedParticipant/matchOutcome">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setMatchOutcome:")
     public native void setMatchOutcome(@NInt long value);
 
-    /**
-     * status</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKTurnBasedParticipant_Ref/index.html#//apple_ref/occ/instp/GKTurnBasedParticipant/status">iOS Dev Center</a>
-     */
     @Generated
     @Selector("status")
     @NInt
     public native long status();
 
-    /**
-     * timeoutDate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKTurnBasedParticipant_Ref/index.html#//apple_ref/occ/instp/GKTurnBasedParticipant/timeoutDate">iOS Dev Center</a>
-     */
     @Generated
     @Selector("timeoutDate")
     public native NSDate timeoutDate();

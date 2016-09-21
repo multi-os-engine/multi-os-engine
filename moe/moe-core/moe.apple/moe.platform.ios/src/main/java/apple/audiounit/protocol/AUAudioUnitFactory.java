@@ -34,10 +34,6 @@ import org.moe.natj.objc.ann.Selector;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("AUAudioUnitFactory")
 public interface AUAudioUnitFactory extends NSExtensionRequestHandling {
-    /**
-     * createAudioUnitWithComponentDescription:error:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AudioUnit/Reference/AUAudioUnitFactory_ProtocolReference/index.html#//apple_ref/occ/intfm/AUAudioUnitFactory/createAudioUnitWithComponentDescription:error:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("createAudioUnitWithComponentDescription:error:")
     AUAudioUnit createAudioUnitWithComponentDescriptionError(@ByValue AudioComponentDescription desc,

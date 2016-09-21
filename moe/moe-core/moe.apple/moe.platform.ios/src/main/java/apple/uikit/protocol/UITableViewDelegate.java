@@ -42,10 +42,6 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("UITableViewDelegate")
 public interface UITableViewDelegate extends UIScrollViewDelegate {
-    /**
-     * tableView:accessoryButtonTappedForRowWithIndexPath:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITableViewDelegate_Protocol/index.html#//apple_ref/occ/intfm/UITableViewDelegate/tableView:accessoryButtonTappedForRowWithIndexPath:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("tableView:accessoryButtonTappedForRowWithIndexPath:")
@@ -53,10 +49,6 @@ public interface UITableViewDelegate extends UIScrollViewDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * tableView:accessoryTypeForRowWithIndexPath:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITableViewDelegate_Protocol/index.html#//apple_ref/occ/intfm/UITableViewDelegate/tableView:accessoryTypeForRowWithIndexPath:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Deprecated
@@ -66,10 +58,6 @@ public interface UITableViewDelegate extends UIScrollViewDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * tableView:canPerformAction:forRowAtIndexPath:withSender:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITableViewDelegate_Protocol/index.html#//apple_ref/occ/intfm/UITableViewDelegate/tableView:canPerformAction:forRowAtIndexPath:withSender:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("tableView:canPerformAction:forRowAtIndexPath:withSender:")
@@ -78,10 +66,6 @@ public interface UITableViewDelegate extends UIScrollViewDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * tableView:didDeselectRowAtIndexPath:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITableViewDelegate_Protocol/index.html#//apple_ref/occ/intfm/UITableViewDelegate/tableView:didDeselectRowAtIndexPath:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("tableView:didDeselectRowAtIndexPath:")
@@ -89,10 +73,6 @@ public interface UITableViewDelegate extends UIScrollViewDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * tableView:didEndDisplayingCell:forRowAtIndexPath:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITableViewDelegate_Protocol/index.html#//apple_ref/occ/intfm/UITableViewDelegate/tableView:didEndDisplayingCell:forRowAtIndexPath:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("tableView:didEndDisplayingCell:forRowAtIndexPath:")
@@ -101,10 +81,6 @@ public interface UITableViewDelegate extends UIScrollViewDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * tableView:didEndDisplayingFooterView:forSection:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITableViewDelegate_Protocol/index.html#//apple_ref/occ/intfm/UITableViewDelegate/tableView:didEndDisplayingFooterView:forSection:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("tableView:didEndDisplayingFooterView:forSection:")
@@ -112,10 +88,6 @@ public interface UITableViewDelegate extends UIScrollViewDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * tableView:didEndDisplayingHeaderView:forSection:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITableViewDelegate_Protocol/index.html#//apple_ref/occ/intfm/UITableViewDelegate/tableView:didEndDisplayingHeaderView:forSection:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("tableView:didEndDisplayingHeaderView:forSection:")
@@ -123,10 +95,6 @@ public interface UITableViewDelegate extends UIScrollViewDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * tableView:didEndEditingRowAtIndexPath:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITableViewDelegate_Protocol/index.html#//apple_ref/occ/intfm/UITableViewDelegate/tableView:didEndEditingRowAtIndexPath:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("tableView:didEndEditingRowAtIndexPath:")
@@ -134,10 +102,6 @@ public interface UITableViewDelegate extends UIScrollViewDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * tableView:didHighlightRowAtIndexPath:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITableViewDelegate_Protocol/index.html#//apple_ref/occ/intfm/UITableViewDelegate/tableView:didHighlightRowAtIndexPath:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("tableView:didHighlightRowAtIndexPath:")
@@ -145,10 +109,6 @@ public interface UITableViewDelegate extends UIScrollViewDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * tableView:didSelectRowAtIndexPath:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITableViewDelegate_Protocol/index.html#//apple_ref/occ/intfm/UITableViewDelegate/tableView:didSelectRowAtIndexPath:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("tableView:didSelectRowAtIndexPath:")
@@ -156,10 +116,6 @@ public interface UITableViewDelegate extends UIScrollViewDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * tableView:didUnhighlightRowAtIndexPath:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITableViewDelegate_Protocol/index.html#//apple_ref/occ/intfm/UITableViewDelegate/tableView:didUnhighlightRowAtIndexPath:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("tableView:didUnhighlightRowAtIndexPath:")
@@ -167,10 +123,6 @@ public interface UITableViewDelegate extends UIScrollViewDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * tableView:editActionsForRowAtIndexPath:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITableViewDelegate_Protocol/index.html#//apple_ref/occ/intfm/UITableViewDelegate/tableView:editActionsForRowAtIndexPath:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("tableView:editActionsForRowAtIndexPath:")
@@ -179,10 +131,6 @@ public interface UITableViewDelegate extends UIScrollViewDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * tableView:editingStyleForRowAtIndexPath:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITableViewDelegate_Protocol/index.html#//apple_ref/occ/intfm/UITableViewDelegate/tableView:editingStyleForRowAtIndexPath:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("tableView:editingStyleForRowAtIndexPath:")
@@ -191,10 +139,6 @@ public interface UITableViewDelegate extends UIScrollViewDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * tableView:estimatedHeightForFooterInSection:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITableViewDelegate_Protocol/index.html#//apple_ref/occ/intfm/UITableViewDelegate/tableView:estimatedHeightForFooterInSection:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("tableView:estimatedHeightForFooterInSection:")
@@ -203,10 +147,6 @@ public interface UITableViewDelegate extends UIScrollViewDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * tableView:estimatedHeightForHeaderInSection:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITableViewDelegate_Protocol/index.html#//apple_ref/occ/intfm/UITableViewDelegate/tableView:estimatedHeightForHeaderInSection:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("tableView:estimatedHeightForHeaderInSection:")
@@ -215,10 +155,6 @@ public interface UITableViewDelegate extends UIScrollViewDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * tableView:estimatedHeightForRowAtIndexPath:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITableViewDelegate_Protocol/index.html#//apple_ref/occ/intfm/UITableViewDelegate/tableView:estimatedHeightForRowAtIndexPath:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("tableView:estimatedHeightForRowAtIndexPath:")
@@ -227,10 +163,6 @@ public interface UITableViewDelegate extends UIScrollViewDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * tableView:heightForFooterInSection:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITableViewDelegate_Protocol/index.html#//apple_ref/occ/intfm/UITableViewDelegate/tableView:heightForFooterInSection:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("tableView:heightForFooterInSection:")
@@ -239,10 +171,6 @@ public interface UITableViewDelegate extends UIScrollViewDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * tableView:heightForHeaderInSection:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITableViewDelegate_Protocol/index.html#//apple_ref/occ/intfm/UITableViewDelegate/tableView:heightForHeaderInSection:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("tableView:heightForHeaderInSection:")
@@ -251,10 +179,6 @@ public interface UITableViewDelegate extends UIScrollViewDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * tableView:heightForRowAtIndexPath:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITableViewDelegate_Protocol/index.html#//apple_ref/occ/intfm/UITableViewDelegate/tableView:heightForRowAtIndexPath:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("tableView:heightForRowAtIndexPath:")
@@ -263,10 +187,6 @@ public interface UITableViewDelegate extends UIScrollViewDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * tableView:indentationLevelForRowAtIndexPath:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITableViewDelegate_Protocol/index.html#//apple_ref/occ/intfm/UITableViewDelegate/tableView:indentationLevelForRowAtIndexPath:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("tableView:indentationLevelForRowAtIndexPath:")
@@ -275,10 +195,6 @@ public interface UITableViewDelegate extends UIScrollViewDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * tableView:performAction:forRowAtIndexPath:withSender:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITableViewDelegate_Protocol/index.html#//apple_ref/occ/intfm/UITableViewDelegate/tableView:performAction:forRowAtIndexPath:withSender:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("tableView:performAction:forRowAtIndexPath:withSender:")
@@ -287,10 +203,6 @@ public interface UITableViewDelegate extends UIScrollViewDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * tableView:shouldHighlightRowAtIndexPath:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITableViewDelegate_Protocol/index.html#//apple_ref/occ/intfm/UITableViewDelegate/tableView:shouldHighlightRowAtIndexPath:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("tableView:shouldHighlightRowAtIndexPath:")
@@ -298,10 +210,6 @@ public interface UITableViewDelegate extends UIScrollViewDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * tableView:shouldIndentWhileEditingRowAtIndexPath:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITableViewDelegate_Protocol/index.html#//apple_ref/occ/intfm/UITableViewDelegate/tableView:shouldIndentWhileEditingRowAtIndexPath:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("tableView:shouldIndentWhileEditingRowAtIndexPath:")
@@ -309,10 +217,6 @@ public interface UITableViewDelegate extends UIScrollViewDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * tableView:shouldShowMenuForRowAtIndexPath:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITableViewDelegate_Protocol/index.html#//apple_ref/occ/intfm/UITableViewDelegate/tableView:shouldShowMenuForRowAtIndexPath:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("tableView:shouldShowMenuForRowAtIndexPath:")
@@ -320,10 +224,6 @@ public interface UITableViewDelegate extends UIScrollViewDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * tableView:targetIndexPathForMoveFromRowAtIndexPath:toProposedIndexPath:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITableViewDelegate_Protocol/index.html#//apple_ref/occ/intfm/UITableViewDelegate/tableView:targetIndexPathForMoveFromRowAtIndexPath:toProposedIndexPath:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("tableView:targetIndexPathForMoveFromRowAtIndexPath:toProposedIndexPath:")
@@ -332,10 +232,6 @@ public interface UITableViewDelegate extends UIScrollViewDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * tableView:titleForDeleteConfirmationButtonForRowAtIndexPath:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITableViewDelegate_Protocol/index.html#//apple_ref/occ/intfm/UITableViewDelegate/tableView:titleForDeleteConfirmationButtonForRowAtIndexPath:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("tableView:titleForDeleteConfirmationButtonForRowAtIndexPath:")
@@ -344,10 +240,6 @@ public interface UITableViewDelegate extends UIScrollViewDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * tableView:viewForFooterInSection:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITableViewDelegate_Protocol/index.html#//apple_ref/occ/intfm/UITableViewDelegate/tableView:viewForFooterInSection:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("tableView:viewForFooterInSection:")
@@ -355,10 +247,6 @@ public interface UITableViewDelegate extends UIScrollViewDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * tableView:viewForHeaderInSection:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITableViewDelegate_Protocol/index.html#//apple_ref/occ/intfm/UITableViewDelegate/tableView:viewForHeaderInSection:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("tableView:viewForHeaderInSection:")
@@ -366,10 +254,6 @@ public interface UITableViewDelegate extends UIScrollViewDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * tableView:willBeginEditingRowAtIndexPath:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITableViewDelegate_Protocol/index.html#//apple_ref/occ/intfm/UITableViewDelegate/tableView:willBeginEditingRowAtIndexPath:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("tableView:willBeginEditingRowAtIndexPath:")
@@ -377,10 +261,6 @@ public interface UITableViewDelegate extends UIScrollViewDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * tableView:willDeselectRowAtIndexPath:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITableViewDelegate_Protocol/index.html#//apple_ref/occ/intfm/UITableViewDelegate/tableView:willDeselectRowAtIndexPath:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("tableView:willDeselectRowAtIndexPath:")
@@ -388,10 +268,6 @@ public interface UITableViewDelegate extends UIScrollViewDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * tableView:willDisplayCell:forRowAtIndexPath:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITableViewDelegate_Protocol/index.html#//apple_ref/occ/intfm/UITableViewDelegate/tableView:willDisplayCell:forRowAtIndexPath:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("tableView:willDisplayCell:forRowAtIndexPath:")
@@ -400,10 +276,6 @@ public interface UITableViewDelegate extends UIScrollViewDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * tableView:willDisplayFooterView:forSection:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITableViewDelegate_Protocol/index.html#//apple_ref/occ/intfm/UITableViewDelegate/tableView:willDisplayFooterView:forSection:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("tableView:willDisplayFooterView:forSection:")
@@ -411,10 +283,6 @@ public interface UITableViewDelegate extends UIScrollViewDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * tableView:willDisplayHeaderView:forSection:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITableViewDelegate_Protocol/index.html#//apple_ref/occ/intfm/UITableViewDelegate/tableView:willDisplayHeaderView:forSection:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("tableView:willDisplayHeaderView:forSection:")
@@ -422,10 +290,6 @@ public interface UITableViewDelegate extends UIScrollViewDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * tableView:willSelectRowAtIndexPath:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITableViewDelegate_Protocol/index.html#//apple_ref/occ/intfm/UITableViewDelegate/tableView:willSelectRowAtIndexPath:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("tableView:willSelectRowAtIndexPath:")
@@ -433,10 +297,6 @@ public interface UITableViewDelegate extends UIScrollViewDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * indexPathForPreferredFocusedViewInTableView:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITableViewDelegate_Protocol/index.html#//apple_ref/occ/intfm/UITableViewDelegate/indexPathForPreferredFocusedViewInTableView:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("indexPathForPreferredFocusedViewInTableView:")
@@ -444,10 +304,6 @@ public interface UITableViewDelegate extends UIScrollViewDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * tableView:canFocusRowAtIndexPath:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITableViewDelegate_Protocol/index.html#//apple_ref/occ/intfm/UITableViewDelegate/tableView:canFocusRowAtIndexPath:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("tableView:canFocusRowAtIndexPath:")
@@ -455,10 +311,6 @@ public interface UITableViewDelegate extends UIScrollViewDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * tableView:didUpdateFocusInContext:withAnimationCoordinator:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITableViewDelegate_Protocol/index.html#//apple_ref/occ/intfm/UITableViewDelegate/tableView:didUpdateFocusInContext:withAnimationCoordinator:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("tableView:didUpdateFocusInContext:withAnimationCoordinator:")
@@ -467,10 +319,6 @@ public interface UITableViewDelegate extends UIScrollViewDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * tableView:shouldUpdateFocusInContext:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITableViewDelegate_Protocol/index.html#//apple_ref/occ/intfm/UITableViewDelegate/tableView:shouldUpdateFocusInContext:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("tableView:shouldUpdateFocusInContext:")

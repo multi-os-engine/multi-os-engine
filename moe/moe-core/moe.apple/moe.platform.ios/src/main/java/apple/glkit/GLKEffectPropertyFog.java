@@ -160,35 +160,19 @@ public class GLKEffectPropertyFog extends GLKEffectProperty {
     @NInt
     public static native long version_static();
 
-    /**
-     * color</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GLkit/Reference/GLKEffectPropertyFog_ClassRef/index.html#//apple_ref/occ/instp/GLKEffectPropertyFog/color">iOS Dev Center</a>
-     */
     @Generated
     @Selector("color")
     @ByValue
     public native GLKVector4 color();
 
-    /**
-     * density</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GLkit/Reference/GLKEffectPropertyFog_ClassRef/index.html#//apple_ref/occ/instp/GLKEffectPropertyFog/density">iOS Dev Center</a>
-     */
     @Generated
     @Selector("density")
     public native float density();
 
-    /**
-     * enabled</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GLkit/Reference/GLKEffectPropertyFog_ClassRef/index.html#//apple_ref/occ/instp/GLKEffectPropertyFog/enabled">iOS Dev Center</a>
-     */
     @Generated
     @Selector("enabled")
     public native byte enabled();
 
-    /**
-     * end</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GLkit/Reference/GLKEffectPropertyFog_ClassRef/index.html#//apple_ref/occ/instp/GLKEffectPropertyFog/end">iOS Dev Center</a>
-     */
     @Generated
     @Selector("end")
     public native float end();
@@ -197,66 +181,34 @@ public class GLKEffectPropertyFog extends GLKEffectProperty {
     @Selector("init")
     public native GLKEffectPropertyFog init();
 
-    /**
-     * mode</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GLkit/Reference/GLKEffectPropertyFog_ClassRef/index.html#//apple_ref/occ/instp/GLKEffectPropertyFog/mode">iOS Dev Center</a>
-     */
     @Generated
     @Selector("mode")
     public native int mode();
 
-    /**
-     * color</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GLkit/Reference/GLKEffectPropertyFog_ClassRef/index.html#//apple_ref/occ/instp/GLKEffectPropertyFog/color">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setColor:")
     public native void setColor(@ByValue GLKVector4 value);
 
-    /**
-     * density</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GLkit/Reference/GLKEffectPropertyFog_ClassRef/index.html#//apple_ref/occ/instp/GLKEffectPropertyFog/density">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setDensity:")
     public native void setDensity(float value);
 
-    /**
-     * enabled</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GLkit/Reference/GLKEffectPropertyFog_ClassRef/index.html#//apple_ref/occ/instp/GLKEffectPropertyFog/enabled">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setEnabled:")
     public native void setEnabled(byte value);
 
-    /**
-     * end</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GLkit/Reference/GLKEffectPropertyFog_ClassRef/index.html#//apple_ref/occ/instp/GLKEffectPropertyFog/end">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setEnd:")
     public native void setEnd(float value);
 
-    /**
-     * mode</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GLkit/Reference/GLKEffectPropertyFog_ClassRef/index.html#//apple_ref/occ/instp/GLKEffectPropertyFog/mode">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setMode:")
     public native void setMode(int value);
 
-    /**
-     * start</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GLkit/Reference/GLKEffectPropertyFog_ClassRef/index.html#//apple_ref/occ/instp/GLKEffectPropertyFog/start">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setStart:")
     public native void setStart(float value);
 
-    /**
-     * start</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GLkit/Reference/GLKEffectPropertyFog_ClassRef/index.html#//apple_ref/occ/instp/GLKEffectPropertyFog/start">iOS Dev Center</a>
-     */
     @Generated
     @Selector("start")
     public native float start();

@@ -174,10 +174,6 @@ public class NSPropertyDescription extends NSObject implements NSCoding, NSCopyi
     @Selector("encodeWithCoder:")
     public native void encodeWithCoder(NSCoder aCoder);
 
-    /**
-     * entity</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/CoreDataFramework/Classes/NSPropertyDescription_Class/index.html#//apple_ref/occ/instp/NSPropertyDescription/entity">iOS Dev Center</a>
-     */
     @Generated
     @Selector("entity")
     public native NSEntityDescription entity();
@@ -190,179 +186,91 @@ public class NSPropertyDescription extends NSObject implements NSCoding, NSCopyi
     @Selector("initWithCoder:")
     public native NSPropertyDescription initWithCoder(NSCoder aDecoder);
 
-    /**
-     * indexed</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/CoreDataFramework/Classes/NSPropertyDescription_Class/index.html#//apple_ref/occ/instp/NSPropertyDescription/indexed">iOS Dev Center</a>
-     */
     @Generated
     @Selector("isIndexed")
     public native boolean isIndexed();
 
-    /**
-     * indexed</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/CoreDataFramework/Classes/NSPropertyDescription_Class/index.html#//apple_ref/occ/instp/NSPropertyDescription/indexed">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setIndexed:")
     public native void setIndexed(boolean value);
 
-    /**
-     * indexedBySpotlight</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/CoreDataFramework/Classes/NSPropertyDescription_Class/index.html#//apple_ref/occ/instp/NSPropertyDescription/indexedBySpotlight">iOS Dev Center</a>
-     */
     @Generated
     @Selector("isIndexedBySpotlight")
     public native boolean isIndexedBySpotlight();
 
-    /**
-     * indexedBySpotlight</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/CoreDataFramework/Classes/NSPropertyDescription_Class/index.html#//apple_ref/occ/instp/NSPropertyDescription/indexedBySpotlight">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setIndexedBySpotlight:")
     public native void setIndexedBySpotlight(boolean value);
 
-    /**
-     * optional</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/CoreDataFramework/Classes/NSPropertyDescription_Class/index.html#//apple_ref/occ/instp/NSPropertyDescription/optional">iOS Dev Center</a>
-     */
     @Generated
     @Selector("isOptional")
     public native boolean isOptional();
 
-    /**
-     * optional</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/CoreDataFramework/Classes/NSPropertyDescription_Class/index.html#//apple_ref/occ/instp/NSPropertyDescription/optional">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setOptional:")
     public native void setOptional(boolean value);
 
-    /**
-     * storedInExternalRecord</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/CoreDataFramework/Classes/NSPropertyDescription_Class/index.html#//apple_ref/occ/instp/NSPropertyDescription/storedInExternalRecord">iOS Dev Center</a>
-     */
     @Generated
     @Selector("isStoredInExternalRecord")
     public native boolean isStoredInExternalRecord();
 
-    /**
-     * storedInExternalRecord</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/CoreDataFramework/Classes/NSPropertyDescription_Class/index.html#//apple_ref/occ/instp/NSPropertyDescription/storedInExternalRecord">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setStoredInExternalRecord:")
     public native void setStoredInExternalRecord(boolean value);
 
-    /**
-     * transient</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/CoreDataFramework/Classes/NSPropertyDescription_Class/index.html#//apple_ref/occ/instp/NSPropertyDescription/transient">iOS Dev Center</a>
-     */
     @Generated
     @Selector("isTransient")
     public native boolean isTransient();
 
-    /**
-     * transient</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/CoreDataFramework/Classes/NSPropertyDescription_Class/index.html#//apple_ref/occ/instp/NSPropertyDescription/transient">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setTransient:")
     public native void setTransient(boolean value);
 
-    /**
-     * name</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/CoreDataFramework/Classes/NSPropertyDescription_Class/index.html#//apple_ref/occ/instp/NSPropertyDescription/name">iOS Dev Center</a>
-     */
     @Generated
     @Selector("name")
     public native String name();
 
-    /**
-     * renamingIdentifier</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/CoreDataFramework/Classes/NSPropertyDescription_Class/index.html#//apple_ref/occ/instp/NSPropertyDescription/renamingIdentifier">iOS Dev Center</a>
-     */
     @Generated
     @Selector("renamingIdentifier")
     public native String renamingIdentifier();
 
-    /**
-     * name</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/CoreDataFramework/Classes/NSPropertyDescription_Class/index.html#//apple_ref/occ/instp/NSPropertyDescription/name">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setName:")
     public native void setName(String value);
 
-    /**
-     * renamingIdentifier</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/CoreDataFramework/Classes/NSPropertyDescription_Class/index.html#//apple_ref/occ/instp/NSPropertyDescription/renamingIdentifier">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setRenamingIdentifier:")
     public native void setRenamingIdentifier(String value);
 
-    /**
-     * userInfo</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/CoreDataFramework/Classes/NSPropertyDescription_Class/index.html#//apple_ref/occ/instp/NSPropertyDescription/userInfo">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setUserInfo:")
     public native void setUserInfo(NSDictionary<?, ?> value);
 
-    /**
-     * setValidationPredicates:withValidationWarnings:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/CoreDataFramework/Classes/NSPropertyDescription_Class/index.html#//apple_ref/occ/instm/NSPropertyDescription/setValidationPredicates:withValidationWarnings:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setValidationPredicates:withValidationWarnings:")
     public native void setValidationPredicatesWithValidationWarnings(
             NSArray<? extends NSPredicate> validationPredicates, NSArray<String> validationWarnings);
 
-    /**
-     * versionHashModifier</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/CoreDataFramework/Classes/NSPropertyDescription_Class/index.html#//apple_ref/occ/instp/NSPropertyDescription/versionHashModifier">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setVersionHashModifier:")
     public native void setVersionHashModifier(String value);
 
-    /**
-     * userInfo</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/CoreDataFramework/Classes/NSPropertyDescription_Class/index.html#//apple_ref/occ/instp/NSPropertyDescription/userInfo">iOS Dev Center</a>
-     */
     @Generated
     @Selector("userInfo")
     public native NSDictionary<?, ?> userInfo();
 
-    /**
-     * validationPredicates</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/CoreDataFramework/Classes/NSPropertyDescription_Class/index.html#//apple_ref/occ/instp/NSPropertyDescription/validationPredicates">iOS Dev Center</a>
-     */
     @Generated
     @Selector("validationPredicates")
     public native NSArray<? extends NSPredicate> validationPredicates();
 
-    /**
-     * validationWarnings</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/CoreDataFramework/Classes/NSPropertyDescription_Class/index.html#//apple_ref/occ/instp/NSPropertyDescription/validationWarnings">iOS Dev Center</a>
-     */
     @Generated
     @Selector("validationWarnings")
     public native NSArray<?> validationWarnings();
 
-    /**
-     * versionHash</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/CoreDataFramework/Classes/NSPropertyDescription_Class/index.html#//apple_ref/occ/instp/NSPropertyDescription/versionHash">iOS Dev Center</a>
-     */
     @Generated
     @Selector("versionHash")
     public native NSData versionHash();
 
-    /**
-     * versionHashModifier</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/CoreDataFramework/Classes/NSPropertyDescription_Class/index.html#//apple_ref/occ/instp/NSPropertyDescription/versionHashModifier">iOS Dev Center</a>
-     */
     @Generated
     @Selector("versionHashModifier")
     public native String versionHashModifier();

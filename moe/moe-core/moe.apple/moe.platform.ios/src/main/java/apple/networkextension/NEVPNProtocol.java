@@ -173,10 +173,6 @@ public class NEVPNProtocol extends NSObject implements NSCopying, NSSecureCoding
     @MappedReturn(ObjCObjectMapper.class)
     public native Object copyWithZone(VoidPtr zone);
 
-    /**
-     * disconnectOnSleep</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEVPNProtocolClassRef/index.html#//apple_ref/occ/instp/NEVPNProtocol/disconnectOnSleep">iOS Dev Center</a>
-     */
     @Generated
     @Selector("disconnectOnSleep")
     public native boolean disconnectOnSleep();
@@ -185,18 +181,10 @@ public class NEVPNProtocol extends NSObject implements NSCopying, NSSecureCoding
     @Selector("encodeWithCoder:")
     public native void encodeWithCoder(NSCoder aCoder);
 
-    /**
-     * identityData</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEVPNProtocolClassRef/index.html#//apple_ref/occ/instp/NEVPNProtocol/identityData">iOS Dev Center</a>
-     */
     @Generated
     @Selector("identityData")
     public native NSData identityData();
 
-    /**
-     * identityDataPassword</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEVPNProtocolClassRef/index.html#//apple_ref/occ/instp/NEVPNProtocol/identityDataPassword">iOS Dev Center</a>
-     */
     @Generated
     @Selector("identityDataPassword")
     public native String identityDataPassword();
@@ -209,66 +197,34 @@ public class NEVPNProtocol extends NSObject implements NSCopying, NSSecureCoding
     @Selector("initWithCoder:")
     public native NEVPNProtocol initWithCoder(NSCoder aDecoder);
 
-    /**
-     * passwordReference</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEVPNProtocolClassRef/index.html#//apple_ref/occ/instp/NEVPNProtocol/passwordReference">iOS Dev Center</a>
-     */
     @Generated
     @Selector("passwordReference")
     public native NSData passwordReference();
 
-    /**
-     * serverAddress</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEVPNProtocolClassRef/index.html#//apple_ref/occ/instp/NEVPNProtocol/serverAddress">iOS Dev Center</a>
-     */
     @Generated
     @Selector("serverAddress")
     public native String serverAddress();
 
-    /**
-     * disconnectOnSleep</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEVPNProtocolClassRef/index.html#//apple_ref/occ/instp/NEVPNProtocol/disconnectOnSleep">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setDisconnectOnSleep:")
     public native void setDisconnectOnSleep(boolean value);
 
-    /**
-     * identityData</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEVPNProtocolClassRef/index.html#//apple_ref/occ/instp/NEVPNProtocol/identityData">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setIdentityData:")
     public native void setIdentityData(NSData value);
 
-    /**
-     * identityDataPassword</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEVPNProtocolClassRef/index.html#//apple_ref/occ/instp/NEVPNProtocol/identityDataPassword">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setIdentityDataPassword:")
     public native void setIdentityDataPassword(String value);
 
-    /**
-     * passwordReference</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEVPNProtocolClassRef/index.html#//apple_ref/occ/instp/NEVPNProtocol/passwordReference">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setPasswordReference:")
     public native void setPasswordReference(NSData value);
 
-    /**
-     * serverAddress</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEVPNProtocolClassRef/index.html#//apple_ref/occ/instp/NEVPNProtocol/serverAddress">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setServerAddress:")
     public native void setServerAddress(String value);
 
-    /**
-     * username</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEVPNProtocolClassRef/index.html#//apple_ref/occ/instp/NEVPNProtocol/username">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setUsername:")
     public native void setUsername(String value);
@@ -279,42 +235,22 @@ public class NEVPNProtocol extends NSObject implements NSCopying, NSSecureCoding
         return supportsSecureCoding();
     }
 
-    /**
-     * username</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEVPNProtocolClassRef/index.html#//apple_ref/occ/instp/NEVPNProtocol/username">iOS Dev Center</a>
-     */
     @Generated
     @Selector("username")
     public native String username();
 
-    /**
-     * identityReference</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEVPNProtocolClassRef/index.html#//apple_ref/occ/instp/NEVPNProtocol/identityReference">iOS Dev Center</a>
-     */
     @Generated
     @Selector("identityReference")
     public native NSData identityReference();
 
-    /**
-     * proxySettings</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEVPNProtocolClassRef/index.html#//apple_ref/occ/instp/NEVPNProtocol/proxySettings">iOS Dev Center</a>
-     */
     @Generated
     @Selector("proxySettings")
     public native NEProxySettings proxySettings();
 
-    /**
-     * identityReference</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEVPNProtocolClassRef/index.html#//apple_ref/occ/instp/NEVPNProtocol/identityReference">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setIdentityReference:")
     public native void setIdentityReference(NSData value);
 
-    /**
-     * proxySettings</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEVPNProtocolClassRef/index.html#//apple_ref/occ/instp/NEVPNProtocol/proxySettings">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setProxySettings:")
     public native void setProxySettings(NEProxySettings value);

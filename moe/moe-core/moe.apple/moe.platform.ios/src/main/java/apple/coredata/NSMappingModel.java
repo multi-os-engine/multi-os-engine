@@ -63,19 +63,11 @@ public class NSMappingModel extends NSObject {
     @Selector("alloc")
     public static native NSMappingModel alloc();
 
-    /**
-     * inferredMappingModelForSourceModel:destinationModel:error:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSMappingModel_class/index.html#//apple_ref/occ/clm/NSMappingModel/inferredMappingModelForSourceModel:destinationModel:error:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("inferredMappingModelForSourceModel:destinationModel:error:")
     public static native NSMappingModel inferredMappingModelForSourceModelDestinationModelError(
             NSManagedObjectModel sourceModel, NSManagedObjectModel destinationModel, Ptr<NSError> error);
 
-    /**
-     * mappingModelFromBundles:forSourceModel:destinationModel:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSMappingModel_class/index.html#//apple_ref/occ/clm/NSMappingModel/mappingModelFromBundles:forSourceModel:destinationModel:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("mappingModelFromBundles:forSourceModel:destinationModel:")
     public static native NSMappingModel mappingModelFromBundlesForSourceModelDestinationModel(
@@ -182,18 +174,10 @@ public class NSMappingModel extends NSObject {
     @NInt
     public static native long version_static();
 
-    /**
-     * entityMappings</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSMappingModel_class/index.html#//apple_ref/occ/instp/NSMappingModel/entityMappings">iOS Dev Center</a>
-     */
     @Generated
     @Selector("entityMappings")
     public native NSArray<? extends NSEntityMapping> entityMappings();
 
-    /**
-     * entityMappingsByName</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSMappingModel_class/index.html#//apple_ref/occ/instp/NSMappingModel/entityMappingsByName">iOS Dev Center</a>
-     */
     @Generated
     @Selector("entityMappingsByName")
     public native NSDictionary<String, ? extends NSEntityMapping> entityMappingsByName();
@@ -202,18 +186,10 @@ public class NSMappingModel extends NSObject {
     @Selector("init")
     public native NSMappingModel init();
 
-    /**
-     * initWithContentsOfURL:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSMappingModel_class/index.html#//apple_ref/occ/instm/NSMappingModel/initWithContentsOfURL:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithContentsOfURL:")
     public native NSMappingModel initWithContentsOfURL(NSURL url);
 
-    /**
-     * entityMappings</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSMappingModel_class/index.html#//apple_ref/occ/instp/NSMappingModel/entityMappings">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setEntityMappings:")
     public native void setEntityMappings(NSArray<? extends NSEntityMapping> value);

@@ -30,10 +30,6 @@ import org.moe.natj.objc.ann.Selector;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("MCAdvertiserAssistantDelegate")
 public interface MCAdvertiserAssistantDelegate {
-    /**
-     * advertiserAssistantDidDismissInvitation:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MultipeerConnectivity/Reference/MCAdvertiserAssistantDelegate_class/index.html#//apple_ref/occ/intfm/MCAdvertiserAssistantDelegate/advertiserAssistantDidDismissInvitation:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("advertiserAssistantDidDismissInvitation:")

@@ -24,6 +24,7 @@ public final class MACaptionAppearanceDisplayType {
     @Generated @NInt public static final long ForcedOnly = 0x0000000000000000L;
     @Generated @NInt public static final long Automatic = 0x0000000000000001L;
     @Generated @NInt public static final long AlwaysOn = 0x0000000000000002L;
+
     @Generated
     private MACaptionAppearanceDisplayType() {
     }

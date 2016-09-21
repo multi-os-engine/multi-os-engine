@@ -169,18 +169,10 @@ public class NSTextContainer extends NSObject implements NSCoding, NSTextLayoutO
     @Selector("encodeWithCoder:")
     public native void encodeWithCoder(NSCoder aCoder);
 
-    /**
-     * exclusionPaths</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/ApplicationKit/Classes/NSTextContainer_Class/index.html#//apple_ref/occ/instp/NSTextContainer/exclusionPaths">iOS Dev Center</a>
-     */
     @Generated
     @Selector("exclusionPaths")
     public native NSArray<? extends UIBezierPath> exclusionPaths();
 
-    /**
-     * heightTracksTextView</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/ApplicationKit/Classes/NSTextContainer_Class/index.html#//apple_ref/occ/instp/NSTextContainer/heightTracksTextView">iOS Dev Center</a>
-     */
     @Generated
     @Selector("heightTracksTextView")
     public native boolean heightTracksTextView();
@@ -193,18 +185,10 @@ public class NSTextContainer extends NSObject implements NSCoding, NSTextLayoutO
     @Selector("initWithCoder:")
     public native NSTextContainer initWithCoder(NSCoder coder);
 
-    /**
-     * initWithSize:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/ApplicationKit/Classes/NSTextContainer_Class/index.html#//apple_ref/occ/instm/NSTextContainer/initWithSize:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithSize:")
     public native NSTextContainer initWithSize(@ByValue CGSize size);
 
-    /**
-     * layoutManager</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/ApplicationKit/Classes/NSTextContainer_Class/index.html#//apple_ref/occ/instp/NSTextContainer/layoutManager">iOS Dev Center</a>
-     */
     @Generated
     @Selector("layoutManager")
     public native NSLayoutManager layoutManager();
@@ -214,28 +198,16 @@ public class NSTextContainer extends NSObject implements NSCoding, NSTextLayoutO
     @NInt
     public native long layoutOrientation();
 
-    /**
-     * lineBreakMode</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/ApplicationKit/Classes/NSTextContainer_Class/index.html#//apple_ref/occ/instp/NSTextContainer/lineBreakMode">iOS Dev Center</a>
-     */
     @Generated
     @Selector("lineBreakMode")
     @NInt
     public native long lineBreakMode();
 
-    /**
-     * lineFragmentPadding</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/ApplicationKit/Classes/NSTextContainer_Class/index.html#//apple_ref/occ/instp/NSTextContainer/lineFragmentPadding">iOS Dev Center</a>
-     */
     @Generated
     @Selector("lineFragmentPadding")
     @NFloat
     public native double lineFragmentPadding();
 
-    /**
-     * lineFragmentRectForProposedRect:atIndex:writingDirection:remainingRect:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/ApplicationKit/Classes/NSTextContainer_Class/index.html#//apple_ref/occ/instm/NSTextContainer/lineFragmentRectForProposedRect:atIndex:writingDirection:remainingRect:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("lineFragmentRectForProposedRect:atIndex:writingDirection:remainingRect:")
     @ByValue
@@ -243,43 +215,23 @@ public class NSTextContainer extends NSObject implements NSCoding, NSTextLayoutO
             @ByValue CGRect proposedRect, @NUInt long characterIndex, @NInt long baseWritingDirection,
             CGRect remainingRect);
 
-    /**
-     * maximumNumberOfLines</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/ApplicationKit/Classes/NSTextContainer_Class/index.html#//apple_ref/occ/instp/NSTextContainer/maximumNumberOfLines">iOS Dev Center</a>
-     */
     @Generated
     @Selector("maximumNumberOfLines")
     @NUInt
     public native long maximumNumberOfLines();
 
-    /**
-     * exclusionPaths</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/ApplicationKit/Classes/NSTextContainer_Class/index.html#//apple_ref/occ/instp/NSTextContainer/exclusionPaths">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setExclusionPaths:")
     public native void setExclusionPaths(NSArray<? extends UIBezierPath> value);
 
-    /**
-     * heightTracksTextView</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/ApplicationKit/Classes/NSTextContainer_Class/index.html#//apple_ref/occ/instp/NSTextContainer/heightTracksTextView">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setHeightTracksTextView:")
     public native void setHeightTracksTextView(boolean value);
 
-    /**
-     * layoutManager</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/ApplicationKit/Classes/NSTextContainer_Class/index.html#//apple_ref/occ/instp/NSTextContainer/layoutManager">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setLayoutManager:")
     public native void setLayoutManager_unsafe(NSLayoutManager value);
 
-    /**
-     * layoutManager</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/ApplicationKit/Classes/NSTextContainer_Class/index.html#//apple_ref/occ/instp/NSTextContainer/layoutManager">iOS Dev Center</a>
-     */
     @Generated
     public void setLayoutManager(NSLayoutManager value) {
         Object __old = layoutManager();
@@ -292,75 +244,39 @@ public class NSTextContainer extends NSObject implements NSCoding, NSTextLayoutO
         }
     }
 
-    /**
-     * lineBreakMode</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/ApplicationKit/Classes/NSTextContainer_Class/index.html#//apple_ref/occ/instp/NSTextContainer/lineBreakMode">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setLineBreakMode:")
     public native void setLineBreakMode(@NInt long value);
 
-    /**
-     * lineFragmentPadding</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/ApplicationKit/Classes/NSTextContainer_Class/index.html#//apple_ref/occ/instp/NSTextContainer/lineFragmentPadding">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setLineFragmentPadding:")
     public native void setLineFragmentPadding(@NFloat double value);
 
-    /**
-     * maximumNumberOfLines</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/ApplicationKit/Classes/NSTextContainer_Class/index.html#//apple_ref/occ/instp/NSTextContainer/maximumNumberOfLines">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setMaximumNumberOfLines:")
     public native void setMaximumNumberOfLines(@NUInt long value);
 
-    /**
-     * size</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/ApplicationKit/Classes/NSTextContainer_Class/index.html#//apple_ref/occ/instp/NSTextContainer/size">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setSize:")
     public native void setSize(@ByValue CGSize value);
 
-    /**
-     * widthTracksTextView</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/ApplicationKit/Classes/NSTextContainer_Class/index.html#//apple_ref/occ/instp/NSTextContainer/widthTracksTextView">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setWidthTracksTextView:")
     public native void setWidthTracksTextView(boolean value);
 
-    /**
-     * size</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/ApplicationKit/Classes/NSTextContainer_Class/index.html#//apple_ref/occ/instp/NSTextContainer/size">iOS Dev Center</a>
-     */
     @Generated
     @Selector("size")
     @ByValue
     public native CGSize size();
 
-    /**
-     * widthTracksTextView</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/ApplicationKit/Classes/NSTextContainer_Class/index.html#//apple_ref/occ/instp/NSTextContainer/widthTracksTextView">iOS Dev Center</a>
-     */
     @Generated
     @Selector("widthTracksTextView")
     public native boolean widthTracksTextView();
 
-    /**
-     * simpleRectangularTextContainer</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/ApplicationKit/Classes/NSTextContainer_Class/index.html#//apple_ref/occ/instp/NSTextContainer/simpleRectangularTextContainer">iOS Dev Center</a>
-     */
     @Generated
     @Selector("isSimpleRectangularTextContainer")
     public native boolean isSimpleRectangularTextContainer();
 
-    /**
-     * replaceLayoutManager:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/ApplicationKit/Classes/NSTextContainer_Class/index.html#//apple_ref/occ/instm/NSTextContainer/replaceLayoutManager:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("replaceLayoutManager:")
     public native void replaceLayoutManager(NSLayoutManager newLayoutManager);

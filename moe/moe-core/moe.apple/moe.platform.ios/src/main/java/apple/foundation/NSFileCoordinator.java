@@ -53,10 +53,6 @@ public class NSFileCoordinator extends NSObject {
         super(peer);
     }
 
-    /**
-     * addFilePresenter:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSFileCoordinator_class/index.html#//apple_ref/occ/clm/NSFileCoordinator/addFilePresenter:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("addFilePresenter:")
     public static native void addFilePresenter(@Mapped(ObjCObjectMapper.class) NSFilePresenter filePresenter);
@@ -66,18 +62,10 @@ public class NSFileCoordinator extends NSObject {
     @Selector("alloc")
     public static native NSFileCoordinator alloc();
 
-    /**
-     * filePresenters</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSFileCoordinator_class/index.html#//apple_ref/occ/clm/NSFileCoordinator/filePresenters">iOS Dev Center</a>
-     */
     @Generated
     @Selector("filePresenters")
     public static native NSArray<?> filePresenters();
 
-    /**
-     * removeFilePresenter:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSFileCoordinator_class/index.html#//apple_ref/occ/clm/NSFileCoordinator/removeFilePresenter:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("removeFilePresenter:")
     public static native void removeFilePresenter(@Mapped(ObjCObjectMapper.class) NSFilePresenter filePresenter);
@@ -182,58 +170,34 @@ public class NSFileCoordinator extends NSObject {
     @NInt
     public static native long version_static();
 
-    /**
-     * cancel</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSFileCoordinator_class/index.html#//apple_ref/occ/instm/NSFileCoordinator/cancel">iOS Dev Center</a>
-     */
     @Generated
     @Selector("cancel")
     public native void cancel();
 
-    /**
-     * coordinateAccessWithIntents:queue:byAccessor:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSFileCoordinator_class/index.html#//apple_ref/occ/instm/NSFileCoordinator/coordinateAccessWithIntents:queue:byAccessor:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("coordinateAccessWithIntents:queue:byAccessor:")
     public native void coordinateAccessWithIntentsQueueByAccessor(NSArray<? extends NSFileAccessIntent> intents,
             NSOperationQueue queue,
             @ObjCBlock(name = "call_coordinateAccessWithIntentsQueueByAccessor") Block_coordinateAccessWithIntentsQueueByAccessor accessor);
 
-    /**
-     * coordinateReadingItemAtURL:options:error:byAccessor:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSFileCoordinator_class/index.html#//apple_ref/occ/instm/NSFileCoordinator/coordinateReadingItemAtURL:options:error:byAccessor:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("coordinateReadingItemAtURL:options:error:byAccessor:")
     public native void coordinateReadingItemAtURLOptionsErrorByAccessor(NSURL url, @NUInt long options,
             Ptr<NSError> outError,
             @ObjCBlock(name = "call_coordinateReadingItemAtURLOptionsErrorByAccessor") Block_coordinateReadingItemAtURLOptionsErrorByAccessor reader);
 
-    /**
-     * coordinateReadingItemAtURL:options:writingItemAtURL:options:error:byAccessor:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSFileCoordinator_class/index.html#//apple_ref/occ/instm/NSFileCoordinator/coordinateReadingItemAtURL:options:writingItemAtURL:options:error:byAccessor:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("coordinateReadingItemAtURL:options:writingItemAtURL:options:error:byAccessor:")
     public native void coordinateReadingItemAtURLOptionsWritingItemAtURLOptionsErrorByAccessor(NSURL readingURL,
             @NUInt long readingOptions, NSURL writingURL, @NUInt long writingOptions, Ptr<NSError> outError,
             @ObjCBlock(name = "call_coordinateReadingItemAtURLOptionsWritingItemAtURLOptionsErrorByAccessor") Block_coordinateReadingItemAtURLOptionsWritingItemAtURLOptionsErrorByAccessor readerWriter);
 
-    /**
-     * coordinateWritingItemAtURL:options:error:byAccessor:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSFileCoordinator_class/index.html#//apple_ref/occ/instm/NSFileCoordinator/coordinateWritingItemAtURL:options:error:byAccessor:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("coordinateWritingItemAtURL:options:error:byAccessor:")
     public native void coordinateWritingItemAtURLOptionsErrorByAccessor(NSURL url, @NUInt long options,
             Ptr<NSError> outError,
             @ObjCBlock(name = "call_coordinateWritingItemAtURLOptionsErrorByAccessor") Block_coordinateWritingItemAtURLOptionsErrorByAccessor writer);
 
-    /**
-     * coordinateWritingItemAtURL:options:writingItemAtURL:options:error:byAccessor:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSFileCoordinator_class/index.html#//apple_ref/occ/instm/NSFileCoordinator/coordinateWritingItemAtURL:options:writingItemAtURL:options:error:byAccessor:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("coordinateWritingItemAtURL:options:writingItemAtURL:options:error:byAccessor:")
     public native void coordinateWritingItemAtURLOptionsWritingItemAtURLOptionsErrorByAccessor(NSURL url1,
@@ -244,43 +208,23 @@ public class NSFileCoordinator extends NSObject {
     @Selector("init")
     public native NSFileCoordinator init();
 
-    /**
-     * initWithFilePresenter:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSFileCoordinator_class/index.html#//apple_ref/occ/instm/NSFileCoordinator/initWithFilePresenter:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithFilePresenter:")
     public native NSFileCoordinator initWithFilePresenter(
             @Mapped(ObjCObjectMapper.class) NSFilePresenter filePresenterOrNil);
 
-    /**
-     * itemAtURL:didMoveToURL:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSFileCoordinator_class/index.html#//apple_ref/occ/instm/NSFileCoordinator/itemAtURL:didMoveToURL:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("itemAtURL:didMoveToURL:")
     public native void itemAtURLDidMoveToURL(NSURL oldURL, NSURL newURL);
 
-    /**
-     * itemAtURL:willMoveToURL:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSFileCoordinator_class/index.html#//apple_ref/occ/instm/NSFileCoordinator/itemAtURL:willMoveToURL:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("itemAtURL:willMoveToURL:")
     public native void itemAtURLWillMoveToURL(NSURL oldURL, NSURL newURL);
 
-    /**
-     * purposeIdentifier</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSFileCoordinator_class/index.html#//apple_ref/occ/instp/NSFileCoordinator/purposeIdentifier">iOS Dev Center</a>
-     */
     @Generated
     @Selector("purposeIdentifier")
     public native String purposeIdentifier();
 
-    /**
-     * purposeIdentifier</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSFileCoordinator_class/index.html#//apple_ref/occ/instp/NSFileCoordinator/purposeIdentifier">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setPurposeIdentifier:")
     public native void setPurposeIdentifier(String value);

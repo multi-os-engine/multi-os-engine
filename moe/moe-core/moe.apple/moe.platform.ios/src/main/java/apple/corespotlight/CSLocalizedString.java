@@ -372,10 +372,6 @@ public class CSLocalizedString extends NSString {
     public native CSLocalizedString initWithFormatLocaleArguments(String format,
             @Mapped(ObjCObjectMapper.class) Object locale, BytePtr argList);
 
-    /**
-     * initWithLocalizedStrings:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreSpotlight/Reference/CSLocalizedString_Class/index.html#//apple_ref/occ/instm/CSLocalizedString/initWithLocalizedStrings:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithLocalizedStrings:")
     public native CSLocalizedString initWithLocalizedStrings(NSDictionary<?, ?> localizedStrings);
@@ -388,10 +384,6 @@ public class CSLocalizedString extends NSString {
     @Selector("initWithUTF8String:")
     public native CSLocalizedString initWithUTF8String(ConstBytePtr nullTerminatedCString);
 
-    /**
-     * localizedString</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreSpotlight/Reference/CSLocalizedString_Class/index.html#//apple_ref/occ/instm/CSLocalizedString/localizedString">iOS Dev Center</a>
-     */
     @Generated
     @Selector("localizedString")
     public native String localizedString();

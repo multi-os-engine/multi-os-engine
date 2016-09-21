@@ -33,10 +33,6 @@ import org.moe.natj.objc.ann.Selector;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("SCNNodeRendererDelegate")
 public interface SCNNodeRendererDelegate {
-    /**
-     * renderNode:renderer:arguments:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNNodeRendererDelegate_Protocol/index.html#//apple_ref/occ/intfm/SCNNodeRendererDelegate/renderNode:renderer:arguments:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("renderNode:renderer:arguments:")

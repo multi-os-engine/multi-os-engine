@@ -164,60 +164,32 @@ public class CKModifySubscriptionsOperation extends CKDatabaseOperation {
     @Selector("init")
     public native CKModifySubscriptionsOperation init();
 
-    /**
-     * initWithSubscriptionsToSave:subscriptionIDsToDelete:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKModifySubscriptionsOperation_class/index.html#//apple_ref/occ/instm/CKModifySubscriptionsOperation/initWithSubscriptionsToSave:subscriptionIDsToDelete:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithSubscriptionsToSave:subscriptionIDsToDelete:")
     public native CKModifySubscriptionsOperation initWithSubscriptionsToSaveSubscriptionIDsToDelete(
             NSArray<? extends CKSubscription> subscriptionsToSave, NSArray<String> subscriptionIDsToDelete);
 
-    /**
-     * modifySubscriptionsCompletionBlock</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKModifySubscriptionsOperation_class/index.html#//apple_ref/occ/instp/CKModifySubscriptionsOperation/modifySubscriptionsCompletionBlock">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setModifySubscriptionsCompletionBlock:")
     public native void setModifySubscriptionsCompletionBlock(
             @ObjCBlock(name = "call_setModifySubscriptionsCompletionBlock") Block_setModifySubscriptionsCompletionBlock value);
 
-    /**
-     * subscriptionIDsToDelete</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKModifySubscriptionsOperation_class/index.html#//apple_ref/occ/instp/CKModifySubscriptionsOperation/subscriptionIDsToDelete">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setSubscriptionIDsToDelete:")
     public native void setSubscriptionIDsToDelete(NSArray<String> value);
 
-    /**
-     * subscriptionsToSave</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKModifySubscriptionsOperation_class/index.html#//apple_ref/occ/instp/CKModifySubscriptionsOperation/subscriptionsToSave">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setSubscriptionsToSave:")
     public native void setSubscriptionsToSave(NSArray<? extends CKSubscription> value);
 
-    /**
-     * subscriptionIDsToDelete</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKModifySubscriptionsOperation_class/index.html#//apple_ref/occ/instp/CKModifySubscriptionsOperation/subscriptionIDsToDelete">iOS Dev Center</a>
-     */
     @Generated
     @Selector("subscriptionIDsToDelete")
     public native NSArray<String> subscriptionIDsToDelete();
 
-    /**
-     * subscriptionsToSave</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKModifySubscriptionsOperation_class/index.html#//apple_ref/occ/instp/CKModifySubscriptionsOperation/subscriptionsToSave">iOS Dev Center</a>
-     */
     @Generated
     @Selector("subscriptionsToSave")
     public native NSArray<? extends CKSubscription> subscriptionsToSave();
 
-    /**
-     * modifySubscriptionsCompletionBlock</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKModifySubscriptionsOperation_class/index.html#//apple_ref/occ/instp/CKModifySubscriptionsOperation/modifySubscriptionsCompletionBlock">iOS Dev Center</a>
-     */
     @Generated
     @Selector("modifySubscriptionsCompletionBlock")
     @ObjCBlock(name = "call_modifySubscriptionsCompletionBlock_ret")

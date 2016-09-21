@@ -161,19 +161,11 @@ public class GLKSkyboxEffect extends NSObject implements GLKNamedEffect {
     @NInt
     public static native long version_static();
 
-    /**
-     * center</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GLkit/Reference/GLKSkyboxEffect_ClassRef/index.html#//apple_ref/occ/instp/GLKSkyboxEffect/center">iOS Dev Center</a>
-     */
     @Generated
     @Selector("center")
     @ByValue
     public native GLKVector3 center();
 
-    /**
-     * draw</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GLkit/Reference/GLKSkyboxEffect_ClassRef/index.html#//apple_ref/occ/instm/GLKSkyboxEffect/draw">iOS Dev Center</a>
-     */
     @Generated
     @Selector("draw")
     public native void draw();
@@ -182,10 +174,6 @@ public class GLKSkyboxEffect extends NSObject implements GLKNamedEffect {
     @Selector("init")
     public native GLKSkyboxEffect init();
 
-    /**
-     * label</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GLkit/Reference/GLKSkyboxEffect_ClassRef/index.html#//apple_ref/occ/instp/GLKSkyboxEffect/label">iOS Dev Center</a>
-     */
     @Generated
     @Selector("label")
     public native String label();
@@ -194,82 +182,42 @@ public class GLKSkyboxEffect extends NSObject implements GLKNamedEffect {
     @Selector("prepareToDraw")
     public native void prepareToDraw();
 
-    /**
-     * center</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GLkit/Reference/GLKSkyboxEffect_ClassRef/index.html#//apple_ref/occ/instp/GLKSkyboxEffect/center">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setCenter:")
     public native void setCenter(@ByValue GLKVector3 value);
 
-    /**
-     * label</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GLkit/Reference/GLKSkyboxEffect_ClassRef/index.html#//apple_ref/occ/instp/GLKSkyboxEffect/label">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setLabel:")
     public native void setLabel(String value);
 
-    /**
-     * xSize</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GLkit/Reference/GLKSkyboxEffect_ClassRef/index.html#//apple_ref/occ/instp/GLKSkyboxEffect/xSize">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setXSize:")
     public native void setXSize(float value);
 
-    /**
-     * ySize</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GLkit/Reference/GLKSkyboxEffect_ClassRef/index.html#//apple_ref/occ/instp/GLKSkyboxEffect/ySize">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setYSize:")
     public native void setYSize(float value);
 
-    /**
-     * zSize</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GLkit/Reference/GLKSkyboxEffect_ClassRef/index.html#//apple_ref/occ/instp/GLKSkyboxEffect/zSize">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setZSize:")
     public native void setZSize(float value);
 
-    /**
-     * textureCubeMap</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GLkit/Reference/GLKSkyboxEffect_ClassRef/index.html#//apple_ref/occ/instp/GLKSkyboxEffect/textureCubeMap">iOS Dev Center</a>
-     */
     @Generated
     @Selector("textureCubeMap")
     public native GLKEffectPropertyTexture textureCubeMap();
 
-    /**
-     * transform</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GLkit/Reference/GLKSkyboxEffect_ClassRef/index.html#//apple_ref/occ/instp/GLKSkyboxEffect/transform">iOS Dev Center</a>
-     */
     @Generated
     @Selector("transform")
     public native GLKEffectPropertyTransform transform();
 
-    /**
-     * xSize</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GLkit/Reference/GLKSkyboxEffect_ClassRef/index.html#//apple_ref/occ/instp/GLKSkyboxEffect/xSize">iOS Dev Center</a>
-     */
     @Generated
     @Selector("xSize")
     public native float xSize();
 
-    /**
-     * ySize</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GLkit/Reference/GLKSkyboxEffect_ClassRef/index.html#//apple_ref/occ/instp/GLKSkyboxEffect/ySize">iOS Dev Center</a>
-     */
     @Generated
     @Selector("ySize")
     public native float ySize();
 
-    /**
-     * zSize</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GLkit/Reference/GLKSkyboxEffect_ClassRef/index.html#//apple_ref/occ/instp/GLKSkyboxEffect/zSize">iOS Dev Center</a>
-     */
     @Generated
     @Selector("zSize")
     public native float zSize();

@@ -162,103 +162,55 @@ public class MDLTextureFilter extends NSObject {
     @Selector("init")
     public native MDLTextureFilter init();
 
-    /**
-     * magFilter</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLTextureFilter_Class/index.html#//apple_ref/occ/instp/MDLTextureFilter/magFilter">iOS Dev Center</a>
-     */
     @Generated
     @Selector("magFilter")
     @NUInt
     public native long magFilter();
 
-    /**
-     * minFilter</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLTextureFilter_Class/index.html#//apple_ref/occ/instp/MDLTextureFilter/minFilter">iOS Dev Center</a>
-     */
     @Generated
     @Selector("minFilter")
     @NUInt
     public native long minFilter();
 
-    /**
-     * mipFilter</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLTextureFilter_Class/index.html#//apple_ref/occ/instp/MDLTextureFilter/mipFilter">iOS Dev Center</a>
-     */
     @Generated
     @Selector("mipFilter")
     @NUInt
     public native long mipFilter();
 
-    /**
-     * rWrapMode</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLTextureFilter_Class/index.html#//apple_ref/occ/instp/MDLTextureFilter/rWrapMode">iOS Dev Center</a>
-     */
     @Generated
     @Selector("rWrapMode")
     @NUInt
     public native long rWrapMode();
 
-    /**
-     * sWrapMode</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLTextureFilter_Class/index.html#//apple_ref/occ/instp/MDLTextureFilter/sWrapMode">iOS Dev Center</a>
-     */
     @Generated
     @Selector("sWrapMode")
     @NUInt
     public native long sWrapMode();
 
-    /**
-     * magFilter</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLTextureFilter_Class/index.html#//apple_ref/occ/instp/MDLTextureFilter/magFilter">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setMagFilter:")
     public native void setMagFilter(@NUInt long value);
 
-    /**
-     * minFilter</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLTextureFilter_Class/index.html#//apple_ref/occ/instp/MDLTextureFilter/minFilter">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setMinFilter:")
     public native void setMinFilter(@NUInt long value);
 
-    /**
-     * mipFilter</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLTextureFilter_Class/index.html#//apple_ref/occ/instp/MDLTextureFilter/mipFilter">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setMipFilter:")
     public native void setMipFilter(@NUInt long value);
 
-    /**
-     * rWrapMode</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLTextureFilter_Class/index.html#//apple_ref/occ/instp/MDLTextureFilter/rWrapMode">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setRWrapMode:")
     public native void setRWrapMode(@NUInt long value);
 
-    /**
-     * sWrapMode</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLTextureFilter_Class/index.html#//apple_ref/occ/instp/MDLTextureFilter/sWrapMode">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setSWrapMode:")
     public native void setSWrapMode(@NUInt long value);
 
-    /**
-     * tWrapMode</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLTextureFilter_Class/index.html#//apple_ref/occ/instp/MDLTextureFilter/tWrapMode">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setTWrapMode:")
     public native void setTWrapMode(@NUInt long value);
 
-    /**
-     * tWrapMode</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLTextureFilter_Class/index.html#//apple_ref/occ/instp/MDLTextureFilter/tWrapMode">iOS Dev Center</a>
-     */
     @Generated
     @Selector("tWrapMode")
     @NUInt

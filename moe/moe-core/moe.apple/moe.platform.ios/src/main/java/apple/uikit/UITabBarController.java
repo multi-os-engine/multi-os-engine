@@ -176,18 +176,10 @@ public class UITabBarController extends UIViewController implements UITabBarDele
     @NInt
     public static native long version_static();
 
-    /**
-     * customizableViewControllers</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITabBarController_Class/index.html#//apple_ref/occ/instp/UITabBarController/customizableViewControllers">iOS Dev Center</a>
-     */
     @Generated
     @Selector("customizableViewControllers")
     public native NSArray<? extends UIViewController> customizableViewControllers();
 
-    /**
-     * delegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITabBarController_Class/index.html#//apple_ref/occ/instp/UITabBarController/delegate">iOS Dev Center</a>
-     */
     @Generated
     @Selector("delegate")
     @MappedReturn(ObjCObjectMapper.class)
@@ -209,51 +201,27 @@ public class UITabBarController extends UIViewController implements UITabBarDele
     @Selector("initWithNibName:bundle:")
     public native UITabBarController initWithNibNameBundle(String nibNameOrNil, NSBundle nibBundleOrNil);
 
-    /**
-     * moreNavigationController</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITabBarController_Class/index.html#//apple_ref/occ/instp/UITabBarController/moreNavigationController">iOS Dev Center</a>
-     */
     @Generated
     @Selector("moreNavigationController")
     public native UINavigationController moreNavigationController();
 
-    /**
-     * selectedIndex</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITabBarController_Class/index.html#//apple_ref/occ/instp/UITabBarController/selectedIndex">iOS Dev Center</a>
-     */
     @Generated
     @Selector("selectedIndex")
     @NUInt
     public native long selectedIndex();
 
-    /**
-     * selectedViewController</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITabBarController_Class/index.html#//apple_ref/occ/instp/UITabBarController/selectedViewController">iOS Dev Center</a>
-     */
     @Generated
     @Selector("selectedViewController")
     public native UIViewController selectedViewController();
 
-    /**
-     * customizableViewControllers</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITabBarController_Class/index.html#//apple_ref/occ/instp/UITabBarController/customizableViewControllers">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setCustomizableViewControllers:")
     public native void setCustomizableViewControllers(NSArray<? extends UIViewController> value);
 
-    /**
-     * delegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITabBarController_Class/index.html#//apple_ref/occ/instp/UITabBarController/delegate">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setDelegate:")
     public native void setDelegate_unsafe(@Mapped(ObjCObjectMapper.class) UITabBarControllerDelegate value);
 
-    /**
-     * delegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITabBarController_Class/index.html#//apple_ref/occ/instp/UITabBarController/delegate">iOS Dev Center</a>
-     */
     @Generated
     public void setDelegate(@Mapped(ObjCObjectMapper.class) UITabBarControllerDelegate value) {
         Object __old = delegate();
@@ -266,26 +234,14 @@ public class UITabBarController extends UIViewController implements UITabBarDele
         }
     }
 
-    /**
-     * selectedIndex</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITabBarController_Class/index.html#//apple_ref/occ/instp/UITabBarController/selectedIndex">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setSelectedIndex:")
     public native void setSelectedIndex(@NUInt long value);
 
-    /**
-     * selectedViewController</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITabBarController_Class/index.html#//apple_ref/occ/instp/UITabBarController/selectedViewController">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setSelectedViewController:")
     public native void setSelectedViewController_unsafe(UIViewController value);
 
-    /**
-     * selectedViewController</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITabBarController_Class/index.html#//apple_ref/occ/instp/UITabBarController/selectedViewController">iOS Dev Center</a>
-     */
     @Generated
     public void setSelectedViewController(UIViewController value) {
         Object __old = selectedViewController();
@@ -298,27 +254,15 @@ public class UITabBarController extends UIViewController implements UITabBarDele
         }
     }
 
-    /**
-     * viewControllers</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITabBarController_Class/index.html#//apple_ref/occ/instp/UITabBarController/viewControllers">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setViewControllers:")
     public native void setViewControllers(NSArray<? extends UIViewController> value);
 
-    /**
-     * setViewControllers:animated:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITabBarController_Class/index.html#//apple_ref/occ/instm/UITabBarController/setViewControllers:animated:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setViewControllers:animated:")
     public native void setViewControllersAnimated(NSArray<? extends UIViewController> viewControllers,
             boolean animated);
 
-    /**
-     * tabBar</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITabBarController_Class/index.html#//apple_ref/occ/instp/UITabBarController/tabBar">iOS Dev Center</a>
-     */
     @Generated
     @Selector("tabBar")
     public native UITabBar tabBar();
@@ -350,10 +294,6 @@ public class UITabBarController extends UIViewController implements UITabBarDele
     public native void tabBarWillEndCustomizingItemsChanged(UITabBar tabBar, NSArray<? extends UITabBarItem> items,
             boolean changed);
 
-    /**
-     * viewControllers</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITabBarController_Class/index.html#//apple_ref/occ/instp/UITabBarController/viewControllers">iOS Dev Center</a>
-     */
     @Generated
     @Selector("viewControllers")
     public native NSArray<? extends UIViewController> viewControllers();

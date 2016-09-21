@@ -32,10 +32,6 @@ import org.moe.natj.objc.ann.Selector;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("GKPeerPickerControllerDelegate")
 public interface GKPeerPickerControllerDelegate {
-    /**
-     * peerPickerController:didConnectPeer:toSession:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKPeerPickerControllerDelegate_Protocol/index.html#//apple_ref/occ/intfm/GKPeerPickerControllerDelegate/peerPickerController:didConnectPeer:toSession:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("peerPickerController:didConnectPeer:toSession:")
@@ -44,10 +40,6 @@ public interface GKPeerPickerControllerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * peerPickerController:didSelectConnectionType:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKPeerPickerControllerDelegate_Protocol/index.html#//apple_ref/occ/intfm/GKPeerPickerControllerDelegate/peerPickerController:didSelectConnectionType:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("peerPickerController:didSelectConnectionType:")
@@ -55,10 +47,6 @@ public interface GKPeerPickerControllerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * peerPickerController:sessionForConnectionType:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKPeerPickerControllerDelegate_Protocol/index.html#//apple_ref/occ/intfm/GKPeerPickerControllerDelegate/peerPickerController:sessionForConnectionType:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("peerPickerController:sessionForConnectionType:")
@@ -66,10 +54,6 @@ public interface GKPeerPickerControllerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * peerPickerControllerDidCancel:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKPeerPickerControllerDelegate_Protocol/index.html#//apple_ref/occ/intfm/GKPeerPickerControllerDelegate/peerPickerControllerDidCancel:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("peerPickerControllerDidCancel:")

@@ -168,20 +168,12 @@ public class CLRegion extends NSObject implements NSCopying, NSSecureCoding {
     @NInt
     public static native long version_static();
 
-    /**
-     * center</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreLocation/Reference/CLRegion_class/index.html#//apple_ref/occ/instp/CLRegion/center">iOS Dev Center</a>
-     */
     @Generated
     @Deprecated
     @Selector("center")
     @ByValue
     public native CLLocationCoordinate2D center();
 
-    /**
-     * containsCoordinate:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreLocation/Reference/CLRegion_class/index.html#//apple_ref/occ/instm/CLRegion/containsCoordinate:">iOS Dev Center</a>
-     */
     @Generated
     @Deprecated
     @Selector("containsCoordinate:")
@@ -197,10 +189,6 @@ public class CLRegion extends NSObject implements NSCopying, NSSecureCoding {
     @Selector("encodeWithCoder:")
     public native void encodeWithCoder(NSCoder aCoder);
 
-    /**
-     * identifier</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreLocation/Reference/CLRegion_class/index.html#//apple_ref/occ/instp/CLRegion/identifier">iOS Dev Center</a>
-     */
     @Generated
     @Selector("identifier")
     public native String identifier();
@@ -209,10 +197,6 @@ public class CLRegion extends NSObject implements NSCopying, NSSecureCoding {
     @Selector("init")
     public native CLRegion init();
 
-    /**
-     * initCircularRegionWithCenter:radius:identifier:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreLocation/Reference/CLRegion_class/index.html#//apple_ref/occ/instm/CLRegion/initCircularRegionWithCenter:radius:identifier:">iOS Dev Center</a>
-     */
     @Generated
     @Deprecated
     @Selector("initCircularRegionWithCenter:radius:identifier:")
@@ -223,43 +207,23 @@ public class CLRegion extends NSObject implements NSCopying, NSSecureCoding {
     @Selector("initWithCoder:")
     public native CLRegion initWithCoder(NSCoder aDecoder);
 
-    /**
-     * notifyOnEntry</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreLocation/Reference/CLRegion_class/index.html#//apple_ref/occ/instp/CLRegion/notifyOnEntry">iOS Dev Center</a>
-     */
     @Generated
     @Selector("notifyOnEntry")
     public native boolean notifyOnEntry();
 
-    /**
-     * notifyOnExit</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreLocation/Reference/CLRegion_class/index.html#//apple_ref/occ/instp/CLRegion/notifyOnExit">iOS Dev Center</a>
-     */
     @Generated
     @Selector("notifyOnExit")
     public native boolean notifyOnExit();
 
-    /**
-     * radius</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreLocation/Reference/CLRegion_class/index.html#//apple_ref/occ/instp/CLRegion/radius">iOS Dev Center</a>
-     */
     @Generated
     @Deprecated
     @Selector("radius")
     public native double radius();
 
-    /**
-     * notifyOnEntry</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreLocation/Reference/CLRegion_class/index.html#//apple_ref/occ/instp/CLRegion/notifyOnEntry">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setNotifyOnEntry:")
     public native void setNotifyOnEntry(boolean value);
 
-    /**
-     * notifyOnExit</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreLocation/Reference/CLRegion_class/index.html#//apple_ref/occ/instp/CLRegion/notifyOnExit">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setNotifyOnExit:")
     public native void setNotifyOnExit(boolean value);

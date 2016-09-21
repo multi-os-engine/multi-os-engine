@@ -30,10 +30,6 @@ import org.moe.natj.objc.ann.Selector;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("UITextInputTraits")
 public interface UITextInputTraits {
-    /**
-     * autocapitalizationType</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITextInputTraits_Protocol/index.html#//apple_ref/occ/intfp/UITextInputTraits/autocapitalizationType">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("autocapitalizationType")
@@ -42,10 +38,6 @@ public interface UITextInputTraits {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * autocorrectionType</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITextInputTraits_Protocol/index.html#//apple_ref/occ/intfp/UITextInputTraits/autocorrectionType">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("autocorrectionType")
@@ -54,10 +46,6 @@ public interface UITextInputTraits {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * enablesReturnKeyAutomatically</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITextInputTraits_Protocol/index.html#//apple_ref/occ/intfp/UITextInputTraits/enablesReturnKeyAutomatically">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("enablesReturnKeyAutomatically")
@@ -65,10 +53,6 @@ public interface UITextInputTraits {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * secureTextEntry</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITextInputTraits_Protocol/index.html#//apple_ref/occ/intfp/UITextInputTraits/secureTextEntry">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("isSecureTextEntry")
@@ -76,10 +60,6 @@ public interface UITextInputTraits {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * secureTextEntry</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITextInputTraits_Protocol/index.html#//apple_ref/occ/intfp/UITextInputTraits/secureTextEntry">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("setSecureTextEntry:")
@@ -87,10 +67,6 @@ public interface UITextInputTraits {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * keyboardAppearance</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITextInputTraits_Protocol/index.html#//apple_ref/occ/intfp/UITextInputTraits/keyboardAppearance">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("keyboardAppearance")
@@ -99,10 +75,6 @@ public interface UITextInputTraits {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * keyboardType</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITextInputTraits_Protocol/index.html#//apple_ref/occ/intfp/UITextInputTraits/keyboardType">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("keyboardType")
@@ -111,10 +83,6 @@ public interface UITextInputTraits {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * returnKeyType</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITextInputTraits_Protocol/index.html#//apple_ref/occ/intfp/UITextInputTraits/returnKeyType">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("returnKeyType")
@@ -123,10 +91,6 @@ public interface UITextInputTraits {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * autocapitalizationType</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITextInputTraits_Protocol/index.html#//apple_ref/occ/intfp/UITextInputTraits/autocapitalizationType">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("setAutocapitalizationType:")
@@ -134,10 +98,6 @@ public interface UITextInputTraits {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * autocorrectionType</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITextInputTraits_Protocol/index.html#//apple_ref/occ/intfp/UITextInputTraits/autocorrectionType">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("setAutocorrectionType:")
@@ -145,10 +105,6 @@ public interface UITextInputTraits {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * enablesReturnKeyAutomatically</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITextInputTraits_Protocol/index.html#//apple_ref/occ/intfp/UITextInputTraits/enablesReturnKeyAutomatically">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("setEnablesReturnKeyAutomatically:")
@@ -156,10 +112,6 @@ public interface UITextInputTraits {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * keyboardAppearance</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITextInputTraits_Protocol/index.html#//apple_ref/occ/intfp/UITextInputTraits/keyboardAppearance">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("setKeyboardAppearance:")
@@ -167,10 +119,6 @@ public interface UITextInputTraits {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * keyboardType</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITextInputTraits_Protocol/index.html#//apple_ref/occ/intfp/UITextInputTraits/keyboardType">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("setKeyboardType:")
@@ -178,10 +126,6 @@ public interface UITextInputTraits {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * returnKeyType</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITextInputTraits_Protocol/index.html#//apple_ref/occ/intfp/UITextInputTraits/returnKeyType">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("setReturnKeyType:")
@@ -189,10 +133,6 @@ public interface UITextInputTraits {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * spellCheckingType</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITextInputTraits_Protocol/index.html#//apple_ref/occ/intfp/UITextInputTraits/spellCheckingType">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("setSpellCheckingType:")
@@ -200,10 +140,6 @@ public interface UITextInputTraits {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * spellCheckingType</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITextInputTraits_Protocol/index.html#//apple_ref/occ/intfp/UITextInputTraits/spellCheckingType">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("spellCheckingType")

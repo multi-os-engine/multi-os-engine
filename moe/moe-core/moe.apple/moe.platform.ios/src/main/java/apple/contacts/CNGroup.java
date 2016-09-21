@@ -64,18 +64,10 @@ public class CNGroup extends NSObject implements NSCopying, NSMutableCopying, NS
     @Selector("alloc")
     public static native CNGroup alloc();
 
-    /**
-     * predicateForGroupsInContainerWithIdentifier:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Contacts/Reference/CNGroup_Class/index.html#//apple_ref/occ/clm/CNGroup/predicateForGroupsInContainerWithIdentifier:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("predicateForGroupsInContainerWithIdentifier:")
     public static native NSPredicate predicateForGroupsInContainerWithIdentifier(String containerIdentifier);
 
-    /**
-     * predicateForGroupsWithIdentifiers:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Contacts/Reference/CNGroup_Class/index.html#//apple_ref/occ/clm/CNGroup/predicateForGroupsWithIdentifiers:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("predicateForGroupsWithIdentifiers:")
     public static native NSPredicate predicateForGroupsWithIdentifiers(NSArray<String> identifiers);
@@ -194,10 +186,6 @@ public class CNGroup extends NSObject implements NSCopying, NSMutableCopying, NS
     @Selector("encodeWithCoder:")
     public native void encodeWithCoder(NSCoder aCoder);
 
-    /**
-     * identifier</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Contacts/Reference/CNGroup_Class/index.html#//apple_ref/occ/instp/CNGroup/identifier">iOS Dev Center</a>
-     */
     @Generated
     @Selector("identifier")
     public native String identifier();
@@ -215,10 +203,6 @@ public class CNGroup extends NSObject implements NSCopying, NSMutableCopying, NS
     @MappedReturn(ObjCObjectMapper.class)
     public native Object mutableCopyWithZone(VoidPtr zone);
 
-    /**
-     * name</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Contacts/Reference/CNGroup_Class/index.html#//apple_ref/occ/instp/CNGroup/name">iOS Dev Center</a>
-     */
     @Generated
     @Selector("name")
     public native String name();

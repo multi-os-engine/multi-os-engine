@@ -30,10 +30,6 @@ import org.moe.natj.objc.ann.Selector;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("SKProductsRequestDelegate")
 public interface SKProductsRequestDelegate extends SKRequestDelegate {
-    /**
-     * productsRequest:didReceiveResponse:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/StoreKit/Reference/SKProductsRequestDelegate/index.html#//apple_ref/occ/intfm/SKProductsRequestDelegate/productsRequest:didReceiveResponse:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("productsRequest:didReceiveResponse:")
     void productsRequestDidReceiveResponse(SKProductsRequest request, SKProductsResponse response);

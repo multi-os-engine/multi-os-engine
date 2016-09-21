@@ -164,18 +164,10 @@ public class AVAssetTrackSegment extends NSObject {
     @Selector("init")
     public native AVAssetTrackSegment init();
 
-    /**
-     * empty</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAssetTrackSegment_Class/index.html#//apple_ref/occ/instp/AVAssetTrackSegment/empty">iOS Dev Center</a>
-     */
     @Generated
     @Selector("isEmpty")
     public native boolean isEmpty();
 
-    /**
-     * timeMapping</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAssetTrackSegment_Class/index.html#//apple_ref/occ/instp/AVAssetTrackSegment/timeMapping">iOS Dev Center</a>
-     */
     @Generated
     @Selector("timeMapping")
     @ByValue

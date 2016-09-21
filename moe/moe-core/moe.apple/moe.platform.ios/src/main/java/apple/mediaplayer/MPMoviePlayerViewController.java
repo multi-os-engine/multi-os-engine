@@ -178,10 +178,6 @@ public class MPMoviePlayerViewController extends UIViewController {
     @Selector("init")
     public native MPMoviePlayerViewController init();
 
-    /**
-     * initWithContentURL:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPMoviePlayerViewController_class/index.html#//apple_ref/occ/instm/MPMoviePlayerViewController/initWithContentURL:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithContentURL:")
     public native MPMoviePlayerViewController initWithContentURL(NSURL contentURL);
@@ -190,10 +186,6 @@ public class MPMoviePlayerViewController extends UIViewController {
     @Selector("initWithNibName:bundle:")
     public native MPMoviePlayerViewController initWithNibNameBundle(String nibNameOrNil, NSBundle nibBundleOrNil);
 
-    /**
-     * moviePlayer</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPMoviePlayerViewController_class/index.html#//apple_ref/occ/instp/MPMoviePlayerViewController/moviePlayer">iOS Dev Center</a>
-     */
     @Generated
     @Selector("moviePlayer")
     public native MPMoviePlayerController moviePlayer();

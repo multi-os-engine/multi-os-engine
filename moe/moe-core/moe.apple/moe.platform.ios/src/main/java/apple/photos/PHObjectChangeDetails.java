@@ -158,10 +158,6 @@ public class PHObjectChangeDetails extends NSObject {
     @NInt
     public static native long version_static();
 
-    /**
-     * assetContentChanged</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHObjectChangeDetails_Class/index.html#//apple_ref/occ/instp/PHObjectChangeDetails/assetContentChanged">iOS Dev Center</a>
-     */
     @Generated
     @Selector("assetContentChanged")
     public native boolean assetContentChanged();
@@ -170,26 +166,14 @@ public class PHObjectChangeDetails extends NSObject {
     @Selector("init")
     public native PHObjectChangeDetails init();
 
-    /**
-     * objectAfterChanges</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHObjectChangeDetails_Class/index.html#//apple_ref/occ/instp/PHObjectChangeDetails/objectAfterChanges">iOS Dev Center</a>
-     */
     @Generated
     @Selector("objectAfterChanges")
     public native PHObject objectAfterChanges();
 
-    /**
-     * objectBeforeChanges</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHObjectChangeDetails_Class/index.html#//apple_ref/occ/instp/PHObjectChangeDetails/objectBeforeChanges">iOS Dev Center</a>
-     */
     @Generated
     @Selector("objectBeforeChanges")
     public native PHObject objectBeforeChanges();
 
-    /**
-     * objectWasDeleted</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHObjectChangeDetails_Class/index.html#//apple_ref/occ/instp/PHObjectChangeDetails/objectWasDeleted">iOS Dev Center</a>
-     */
     @Generated
     @Selector("objectWasDeleted")
     public native boolean objectWasDeleted();

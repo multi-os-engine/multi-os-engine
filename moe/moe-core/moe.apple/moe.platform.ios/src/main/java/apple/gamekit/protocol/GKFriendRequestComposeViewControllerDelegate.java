@@ -29,10 +29,6 @@ import org.moe.natj.objc.ann.Selector;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("GKFriendRequestComposeViewControllerDelegate")
 public interface GKFriendRequestComposeViewControllerDelegate {
-    /**
-     * friendRequestComposeViewControllerDidFinish:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKFriendRequestComposeViewControllerDelegate_Ref/index.html#//apple_ref/occ/intfm/GKFriendRequestComposeViewControllerDelegate/friendRequestComposeViewControllerDidFinish:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("friendRequestComposeViewControllerDidFinish:")
     void friendRequestComposeViewControllerDidFinish(GKFriendRequestComposeViewController viewController);

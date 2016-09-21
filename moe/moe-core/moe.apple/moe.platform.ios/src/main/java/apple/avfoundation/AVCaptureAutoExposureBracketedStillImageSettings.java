@@ -58,10 +58,6 @@ public class AVCaptureAutoExposureBracketedStillImageSettings extends AVCaptureB
     @Selector("alloc")
     public static native AVCaptureAutoExposureBracketedStillImageSettings alloc();
 
-    /**
-     * autoExposureSettingsWithExposureTargetBias:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVCaptureAutoExposureBracketedStillImageSettings_Class/index.html#//apple_ref/occ/clm/AVCaptureAutoExposureBracketedStillImageSettings/autoExposureSettingsWithExposureTargetBias:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("autoExposureSettingsWithExposureTargetBias:")
     @MappedReturn(ObjCObjectMapper.class)
@@ -167,10 +163,6 @@ public class AVCaptureAutoExposureBracketedStillImageSettings extends AVCaptureB
     @NInt
     public static native long version();
 
-    /**
-     * exposureTargetBias</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVCaptureAutoExposureBracketedStillImageSettings_Class/index.html#//apple_ref/occ/instp/AVCaptureAutoExposureBracketedStillImageSettings/exposureTargetBias">iOS Dev Center</a>
-     */
     @Generated
     @Selector("exposureTargetBias")
     public native float exposureTargetBias();

@@ -32,19 +32,11 @@ import org.moe.natj.objc.ann.Selector;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("CSSearchableIndexDelegate")
 public interface CSSearchableIndexDelegate {
-    /**
-     * searchableIndex:reindexAllSearchableItemsWithAcknowledgementHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreSpotlight/Reference/CSSearchableIndexDelegate_Protocol/index.html#//apple_ref/occ/intfm/CSSearchableIndexDelegate/searchableIndex:reindexAllSearchableItemsWithAcknowledgementHandler:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("searchableIndex:reindexAllSearchableItemsWithAcknowledgementHandler:")
     void searchableIndexReindexAllSearchableItemsWithAcknowledgementHandler(CSSearchableIndex searchableIndex,
             @ObjCBlock(name = "call_searchableIndexReindexAllSearchableItemsWithAcknowledgementHandler") Block_searchableIndexReindexAllSearchableItemsWithAcknowledgementHandler acknowledgementHandler);
 
-    /**
-     * searchableIndex:reindexSearchableItemsWithIdentifiers:acknowledgementHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreSpotlight/Reference/CSSearchableIndexDelegate_Protocol/index.html#//apple_ref/occ/intfm/CSSearchableIndexDelegate/searchableIndex:reindexSearchableItemsWithIdentifiers:acknowledgementHandler:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("searchableIndex:reindexSearchableItemsWithIdentifiers:acknowledgementHandler:")
     void searchableIndexReindexSearchableItemsWithIdentifiersAcknowledgementHandler(CSSearchableIndex searchableIndex,

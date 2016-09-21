@@ -348,34 +348,18 @@ public class UIRefreshControl extends UIControl {
     @NInt
     public static native long version_static();
 
-    /**
-     * attributedTitle</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIRefreshControl_class/index.html#//apple_ref/occ/instp/UIRefreshControl/attributedTitle">iOS Dev Center</a>
-     */
     @Generated
     @Selector("attributedTitle")
     public native NSAttributedString attributedTitle();
 
-    /**
-     * beginRefreshing</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIRefreshControl_class/index.html#//apple_ref/occ/instm/UIRefreshControl/beginRefreshing">iOS Dev Center</a>
-     */
     @Generated
     @Selector("beginRefreshing")
     public native void beginRefreshing();
 
-    /**
-     * endRefreshing</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIRefreshControl_class/index.html#//apple_ref/occ/instm/UIRefreshControl/endRefreshing">iOS Dev Center</a>
-     */
     @Generated
     @Selector("endRefreshing")
     public native void endRefreshing();
 
-    /**
-     * init</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIRefreshControl_class/index.html#//apple_ref/occ/instm/UIRefreshControl/init">iOS Dev Center</a>
-     */
     @Generated
     @Selector("init")
     public native UIRefreshControl init();
@@ -384,34 +368,18 @@ public class UIRefreshControl extends UIControl {
     @Selector("initWithFrame:")
     public native UIRefreshControl initWithFrame(@ByValue CGRect frame);
 
-    /**
-     * refreshing</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIRefreshControl_class/index.html#//apple_ref/occ/instp/UIRefreshControl/refreshing">iOS Dev Center</a>
-     */
     @Generated
     @Selector("isRefreshing")
     public native boolean isRefreshing();
 
-    /**
-     * attributedTitle</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIRefreshControl_class/index.html#//apple_ref/occ/instp/UIRefreshControl/attributedTitle">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setAttributedTitle:")
     public native void setAttributedTitle(NSAttributedString value);
 
-    /**
-     * tintColor</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIRefreshControl_class/index.html#//apple_ref/occ/instp/UIRefreshControl/tintColor">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setTintColor:")
     public native void setTintColor(UIColor value);
 
-    /**
-     * tintColor</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIRefreshControl_class/index.html#//apple_ref/occ/instp/UIRefreshControl/tintColor">iOS Dev Center</a>
-     */
     @Generated
     @Selector("tintColor")
     public native UIColor tintColor();

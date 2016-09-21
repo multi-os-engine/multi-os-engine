@@ -29,10 +29,6 @@ import org.moe.natj.objc.ann.Selector;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("GKGameCenterControllerDelegate")
 public interface GKGameCenterControllerDelegate {
-    /**
-     * gameCenterViewControllerDidFinish:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKGameCenterViewControllerDelegate_Ref/index.html#//apple_ref/occ/intfm/GKGameCenterControllerDelegate/gameCenterViewControllerDidFinish:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("gameCenterViewControllerDidFinish:")
     void gameCenterViewControllerDidFinish(GKGameCenterViewController gameCenterViewController);

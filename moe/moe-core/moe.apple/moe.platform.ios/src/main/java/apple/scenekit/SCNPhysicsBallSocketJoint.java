@@ -62,18 +62,10 @@ public class SCNPhysicsBallSocketJoint extends SCNPhysicsBehavior {
     @Selector("alloc")
     public static native SCNPhysicsBallSocketJoint alloc();
 
-    /**
-     * jointWithBody:anchor:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNPhysicsBallSocketJoint_Class/index.html#//apple_ref/occ/clm/SCNPhysicsBallSocketJoint/jointWithBody:anchor:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("jointWithBody:anchor:")
     public static native SCNPhysicsBallSocketJoint jointWithBodyAnchor(SCNPhysicsBody body, @ByValue SCNVector3 anchor);
 
-    /**
-     * jointWithBodyA:anchorA:bodyB:anchorB:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNPhysicsBallSocketJoint_Class/index.html#//apple_ref/occ/clm/SCNPhysicsBallSocketJoint/jointWithBodyA:anchorA:bodyB:anchorB:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("jointWithBodyA:anchorA:bodyB:anchorB:")
     public static native SCNPhysicsBallSocketJoint jointWithBodyAAnchorABodyBAnchorB(SCNPhysicsBody bodyA,
@@ -183,36 +175,20 @@ public class SCNPhysicsBallSocketJoint extends SCNPhysicsBehavior {
     @NInt
     public static native long version_static();
 
-    /**
-     * anchorA</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNPhysicsBallSocketJoint_Class/index.html#//apple_ref/occ/instp/SCNPhysicsBallSocketJoint/anchorA">iOS Dev Center</a>
-     */
     @Generated
     @Selector("anchorA")
     @ByValue
     public native SCNVector3 anchorA();
 
-    /**
-     * anchorB</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNPhysicsBallSocketJoint_Class/index.html#//apple_ref/occ/instp/SCNPhysicsBallSocketJoint/anchorB">iOS Dev Center</a>
-     */
     @Generated
     @Selector("anchorB")
     @ByValue
     public native SCNVector3 anchorB();
 
-    /**
-     * bodyA</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNPhysicsBallSocketJoint_Class/index.html#//apple_ref/occ/instp/SCNPhysicsBallSocketJoint/bodyA">iOS Dev Center</a>
-     */
     @Generated
     @Selector("bodyA")
     public native SCNPhysicsBody bodyA();
 
-    /**
-     * bodyB</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNPhysicsBallSocketJoint_Class/index.html#//apple_ref/occ/instp/SCNPhysicsBallSocketJoint/bodyB">iOS Dev Center</a>
-     */
     @Generated
     @Selector("bodyB")
     public native SCNPhysicsBody bodyB();
@@ -221,18 +197,10 @@ public class SCNPhysicsBallSocketJoint extends SCNPhysicsBehavior {
     @Selector("init")
     public native SCNPhysicsBallSocketJoint init();
 
-    /**
-     * anchorA</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNPhysicsBallSocketJoint_Class/index.html#//apple_ref/occ/instp/SCNPhysicsBallSocketJoint/anchorA">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setAnchorA:")
     public native void setAnchorA(@ByValue SCNVector3 value);
 
-    /**
-     * anchorB</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNPhysicsBallSocketJoint_Class/index.html#//apple_ref/occ/instp/SCNPhysicsBallSocketJoint/anchorB">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setAnchorB:")
     public native void setAnchorB(@ByValue SCNVector3 value);

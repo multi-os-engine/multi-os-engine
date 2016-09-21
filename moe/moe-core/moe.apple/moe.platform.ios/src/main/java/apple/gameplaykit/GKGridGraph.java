@@ -162,35 +162,19 @@ public class GKGridGraph extends GKGraph {
     @NInt
     public static native long version_static();
 
-    /**
-     * connectNodeToAdjacentNodes:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameplayKit/Reference/GKGridGraph_Class/index.html#//apple_ref/occ/instm/GKGridGraph/connectNodeToAdjacentNodes:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("connectNodeToAdjacentNodes:")
     public native void connectNodeToAdjacentNodes(GKGridGraphNode node);
 
-    /**
-     * diagonalsAllowed</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameplayKit/Reference/GKGridGraph_Class/index.html#//apple_ref/occ/instp/GKGridGraph/diagonalsAllowed">iOS Dev Center</a>
-     */
     @Generated
     @Selector("diagonalsAllowed")
     public native boolean diagonalsAllowed();
 
-    /**
-     * gridHeight</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameplayKit/Reference/GKGridGraph_Class/index.html#//apple_ref/occ/instp/GKGridGraph/gridHeight">iOS Dev Center</a>
-     */
     @Generated
     @Selector("gridHeight")
     @NUInt
     public native long gridHeight();
 
-    /**
-     * gridWidth</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameplayKit/Reference/GKGridGraph_Class/index.html#//apple_ref/occ/instp/GKGridGraph/gridWidth">iOS Dev Center</a>
-     */
     @Generated
     @Selector("gridWidth")
     @NUInt

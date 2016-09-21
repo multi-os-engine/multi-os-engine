@@ -168,42 +168,22 @@ public class AVAssetTrack extends NSObject implements NSCopying, AVAsynchronousK
     @NInt
     public static native long version_static();
 
-    /**
-     * asset</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAssetTrack_Class/index.html#//apple_ref/occ/instp/AVAssetTrack/asset">iOS Dev Center</a>
-     */
     @Generated
     @Selector("asset")
     public native AVAsset asset();
 
-    /**
-     * associatedTracksOfType:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAssetTrack_Class/index.html#//apple_ref/occ/instm/AVAssetTrack/associatedTracksOfType:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("associatedTracksOfType:")
     public native NSArray<? extends AVAssetTrack> associatedTracksOfType(String trackAssociationType);
 
-    /**
-     * availableMetadataFormats</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAssetTrack_Class/index.html#//apple_ref/occ/instp/AVAssetTrack/availableMetadataFormats">iOS Dev Center</a>
-     */
     @Generated
     @Selector("availableMetadataFormats")
     public native NSArray<String> availableMetadataFormats();
 
-    /**
-     * availableTrackAssociationTypes</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAssetTrack_Class/index.html#//apple_ref/occ/instp/AVAssetTrack/availableTrackAssociationTypes">iOS Dev Center</a>
-     */
     @Generated
     @Selector("availableTrackAssociationTypes")
     public native NSArray<String> availableTrackAssociationTypes();
 
-    /**
-     * commonMetadata</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAssetTrack_Class/index.html#//apple_ref/occ/instp/AVAssetTrack/commonMetadata">iOS Dev Center</a>
-     */
     @Generated
     @Selector("commonMetadata")
     public native NSArray<? extends AVMetadataItem> commonMetadata();
@@ -214,34 +194,18 @@ public class AVAssetTrack extends NSObject implements NSCopying, AVAsynchronousK
     @MappedReturn(ObjCObjectMapper.class)
     public native Object copyWithZone(VoidPtr zone);
 
-    /**
-     * estimatedDataRate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAssetTrack_Class/index.html#//apple_ref/occ/instp/AVAssetTrack/estimatedDataRate">iOS Dev Center</a>
-     */
     @Generated
     @Selector("estimatedDataRate")
     public native float estimatedDataRate();
 
-    /**
-     * extendedLanguageTag</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAssetTrack_Class/index.html#//apple_ref/occ/instp/AVAssetTrack/extendedLanguageTag">iOS Dev Center</a>
-     */
     @Generated
     @Selector("extendedLanguageTag")
     public native String extendedLanguageTag();
 
-    /**
-     * formatDescriptions</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAssetTrack_Class/index.html#//apple_ref/occ/instp/AVAssetTrack/formatDescriptions">iOS Dev Center</a>
-     */
     @Generated
     @Selector("formatDescriptions")
     public native NSArray<?> formatDescriptions();
 
-    /**
-     * hasMediaCharacteristic:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAssetTrack_Class/index.html#//apple_ref/occ/instm/AVAssetTrack/hasMediaCharacteristic:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("hasMediaCharacteristic:")
     public native boolean hasMediaCharacteristic(String mediaCharacteristic);
@@ -250,34 +214,18 @@ public class AVAssetTrack extends NSObject implements NSCopying, AVAsynchronousK
     @Selector("init")
     public native AVAssetTrack init();
 
-    /**
-     * enabled</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAssetTrack_Class/index.html#//apple_ref/occ/instp/AVAssetTrack/enabled">iOS Dev Center</a>
-     */
     @Generated
     @Selector("isEnabled")
     public native boolean isEnabled();
 
-    /**
-     * playable</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAssetTrack_Class/index.html#//apple_ref/occ/instp/AVAssetTrack/playable">iOS Dev Center</a>
-     */
     @Generated
     @Selector("isPlayable")
     public native boolean isPlayable();
 
-    /**
-     * selfContained</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAssetTrack_Class/index.html#//apple_ref/occ/instp/AVAssetTrack/selfContained">iOS Dev Center</a>
-     */
     @Generated
     @Selector("isSelfContained")
     public native boolean isSelfContained();
 
-    /**
-     * languageCode</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAssetTrack_Class/index.html#//apple_ref/occ/instp/AVAssetTrack/languageCode">iOS Dev Center</a>
-     */
     @Generated
     @Selector("languageCode")
     public native String languageCode();
@@ -287,110 +235,58 @@ public class AVAssetTrack extends NSObject implements NSCopying, AVAsynchronousK
     public native void loadValuesAsynchronouslyForKeysCompletionHandler(NSArray<String> keys,
             @ObjCBlock(name = "call_loadValuesAsynchronouslyForKeysCompletionHandler") AVAsynchronousKeyValueLoading.Block_loadValuesAsynchronouslyForKeysCompletionHandler handler);
 
-    /**
-     * mediaType</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAssetTrack_Class/index.html#//apple_ref/occ/instp/AVAssetTrack/mediaType">iOS Dev Center</a>
-     */
     @Generated
     @Selector("mediaType")
     public native String mediaType();
 
-    /**
-     * metadata</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAssetTrack_Class/index.html#//apple_ref/occ/instp/AVAssetTrack/metadata">iOS Dev Center</a>
-     */
     @Generated
     @Selector("metadata")
     public native NSArray<? extends AVMetadataItem> metadata();
 
-    /**
-     * metadataForFormat:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAssetTrack_Class/index.html#//apple_ref/occ/instm/AVAssetTrack/metadataForFormat:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("metadataForFormat:")
     public native NSArray<? extends AVMetadataItem> metadataForFormat(String format);
 
-    /**
-     * minFrameDuration</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAssetTrack_Class/index.html#//apple_ref/occ/instp/AVAssetTrack/minFrameDuration">iOS Dev Center</a>
-     */
     @Generated
     @Selector("minFrameDuration")
     @ByValue
     public native CMTime minFrameDuration();
 
-    /**
-     * naturalSize</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAssetTrack_Class/index.html#//apple_ref/occ/instp/AVAssetTrack/naturalSize">iOS Dev Center</a>
-     */
     @Generated
     @Selector("naturalSize")
     @ByValue
     public native CGSize naturalSize();
 
-    /**
-     * naturalTimeScale</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAssetTrack_Class/index.html#//apple_ref/occ/instp/AVAssetTrack/naturalTimeScale">iOS Dev Center</a>
-     */
     @Generated
     @Selector("naturalTimeScale")
     public native int naturalTimeScale();
 
-    /**
-     * nominalFrameRate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAssetTrack_Class/index.html#//apple_ref/occ/instp/AVAssetTrack/nominalFrameRate">iOS Dev Center</a>
-     */
     @Generated
     @Selector("nominalFrameRate")
     public native float nominalFrameRate();
 
-    /**
-     * preferredTransform</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAssetTrack_Class/index.html#//apple_ref/occ/instp/AVAssetTrack/preferredTransform">iOS Dev Center</a>
-     */
     @Generated
     @Selector("preferredTransform")
     @ByValue
     public native CGAffineTransform preferredTransform();
 
-    /**
-     * preferredVolume</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAssetTrack_Class/index.html#//apple_ref/occ/instp/AVAssetTrack/preferredVolume">iOS Dev Center</a>
-     */
     @Generated
     @Selector("preferredVolume")
     public native float preferredVolume();
 
-    /**
-     * requiresFrameReordering</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAssetTrack_Class/index.html#//apple_ref/occ/instp/AVAssetTrack/requiresFrameReordering">iOS Dev Center</a>
-     */
     @Generated
     @Selector("requiresFrameReordering")
     public native boolean requiresFrameReordering();
 
-    /**
-     * samplePresentationTimeForTrackTime:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAssetTrack_Class/index.html#//apple_ref/occ/instm/AVAssetTrack/samplePresentationTimeForTrackTime:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("samplePresentationTimeForTrackTime:")
     @ByValue
     public native CMTime samplePresentationTimeForTrackTime(@ByValue CMTime trackTime);
 
-    /**
-     * segmentForTrackTime:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAssetTrack_Class/index.html#//apple_ref/occ/instm/AVAssetTrack/segmentForTrackTime:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("segmentForTrackTime:")
     public native AVAssetTrackSegment segmentForTrackTime(@ByValue CMTime trackTime);
 
-    /**
-     * segments</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAssetTrack_Class/index.html#//apple_ref/occ/instp/AVAssetTrack/segments">iOS Dev Center</a>
-     */
     @Generated
     @Selector("segments")
     public native NSArray<? extends AVAssetTrackSegment> segments();
@@ -400,27 +296,15 @@ public class AVAssetTrack extends NSObject implements NSCopying, AVAsynchronousK
     @NInt
     public native long statusOfValueForKeyError(String key, Ptr<NSError> outError);
 
-    /**
-     * timeRange</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAssetTrack_Class/index.html#//apple_ref/occ/instp/AVAssetTrack/timeRange">iOS Dev Center</a>
-     */
     @Generated
     @Selector("timeRange")
     @ByValue
     public native CMTimeRange timeRange();
 
-    /**
-     * totalSampleDataLength</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAssetTrack_Class/index.html#//apple_ref/occ/instp/AVAssetTrack/totalSampleDataLength">iOS Dev Center</a>
-     */
     @Generated
     @Selector("totalSampleDataLength")
     public native long totalSampleDataLength();
 
-    /**
-     * trackID</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAssetTrack_Class/index.html#//apple_ref/occ/instp/AVAssetTrack/trackID">iOS Dev Center</a>
-     */
     @Generated
     @Selector("trackID")
     public native int trackID();

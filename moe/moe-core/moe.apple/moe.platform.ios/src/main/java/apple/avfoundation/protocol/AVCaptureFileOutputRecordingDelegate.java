@@ -33,19 +33,11 @@ import org.moe.natj.objc.ann.Selector;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("AVCaptureFileOutputRecordingDelegate")
 public interface AVCaptureFileOutputRecordingDelegate {
-    /**
-     * captureOutput:didFinishRecordingToOutputFileAtURL:fromConnections:error:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVCaptureFileOutputRecordingDelegate_Protocol/index.html#//apple_ref/occ/intfm/AVCaptureFileOutputRecordingDelegate/captureOutput:didFinishRecordingToOutputFileAtURL:fromConnections:error:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("captureOutput:didFinishRecordingToOutputFileAtURL:fromConnections:error:")
     void captureOutputDidFinishRecordingToOutputFileAtURLFromConnectionsError(AVCaptureFileOutput captureOutput,
             NSURL outputFileURL, NSArray<?> connections, NSError error);
 
-    /**
-     * captureOutput:didStartRecordingToOutputFileAtURL:fromConnections:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVCaptureFileOutputRecordingDelegate_Protocol/index.html#//apple_ref/occ/intfm/AVCaptureFileOutputRecordingDelegate/captureOutput:didStartRecordingToOutputFileAtURL:fromConnections:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("captureOutput:didStartRecordingToOutputFileAtURL:fromConnections:")

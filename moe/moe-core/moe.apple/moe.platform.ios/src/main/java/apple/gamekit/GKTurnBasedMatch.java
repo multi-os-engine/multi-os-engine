@@ -62,28 +62,16 @@ public class GKTurnBasedMatch extends NSObject {
     @Selector("alloc")
     public static native GKTurnBasedMatch alloc();
 
-    /**
-     * findMatchForRequest:withCompletionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKTurnBasedMatch_Ref/index.html#//apple_ref/occ/clm/GKTurnBasedMatch/findMatchForRequest:withCompletionHandler:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("findMatchForRequest:withCompletionHandler:")
     public static native void findMatchForRequestWithCompletionHandler(GKMatchRequest request,
             @ObjCBlock(name = "call_findMatchForRequestWithCompletionHandler") Block_findMatchForRequestWithCompletionHandler completionHandler);
 
-    /**
-     * loadMatchWithID:withCompletionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKTurnBasedMatch_Ref/index.html#//apple_ref/occ/clm/GKTurnBasedMatch/loadMatchWithID:withCompletionHandler:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("loadMatchWithID:withCompletionHandler:")
     public static native void loadMatchWithIDWithCompletionHandler(String matchID,
             @ObjCBlock(name = "call_loadMatchWithIDWithCompletionHandler") Block_loadMatchWithIDWithCompletionHandler completionHandler);
 
-    /**
-     * loadMatchesWithCompletionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKTurnBasedMatch_Ref/index.html#//apple_ref/occ/clm/GKTurnBasedMatch/loadMatchesWithCompletionHandler:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("loadMatchesWithCompletionHandler:")
     public static native void loadMatchesWithCompletionHandler(
@@ -189,79 +177,43 @@ public class GKTurnBasedMatch extends NSObject {
     @NInt
     public static native long version_static();
 
-    /**
-     * acceptInviteWithCompletionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKTurnBasedMatch_Ref/index.html#//apple_ref/occ/instm/GKTurnBasedMatch/acceptInviteWithCompletionHandler:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("acceptInviteWithCompletionHandler:")
     public native void acceptInviteWithCompletionHandler(
             @ObjCBlock(name = "call_acceptInviteWithCompletionHandler") Block_acceptInviteWithCompletionHandler completionHandler);
 
-    /**
-     * activeExchanges</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKTurnBasedMatch_Ref/index.html#//apple_ref/occ/instp/GKTurnBasedMatch/activeExchanges">iOS Dev Center</a>
-     */
     @Generated
     @Selector("activeExchanges")
     public native NSArray<? extends GKTurnBasedExchange> activeExchanges();
 
-    /**
-     * completedExchanges</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKTurnBasedMatch_Ref/index.html#//apple_ref/occ/instp/GKTurnBasedMatch/completedExchanges">iOS Dev Center</a>
-     */
     @Generated
     @Selector("completedExchanges")
     public native NSArray<? extends GKTurnBasedExchange> completedExchanges();
 
-    /**
-     * creationDate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKTurnBasedMatch_Ref/index.html#//apple_ref/occ/instp/GKTurnBasedMatch/creationDate">iOS Dev Center</a>
-     */
     @Generated
     @Selector("creationDate")
     public native NSDate creationDate();
 
-    /**
-     * currentParticipant</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKTurnBasedMatch_Ref/index.html#//apple_ref/occ/instp/GKTurnBasedMatch/currentParticipant">iOS Dev Center</a>
-     */
     @Generated
     @Selector("currentParticipant")
     public native GKTurnBasedParticipant currentParticipant();
 
-    /**
-     * declineInviteWithCompletionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKTurnBasedMatch_Ref/index.html#//apple_ref/occ/instm/GKTurnBasedMatch/declineInviteWithCompletionHandler:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("declineInviteWithCompletionHandler:")
     public native void declineInviteWithCompletionHandler(
             @ObjCBlock(name = "call_declineInviteWithCompletionHandler") Block_declineInviteWithCompletionHandler completionHandler);
 
-    /**
-     * endMatchInTurnWithMatchData:completionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKTurnBasedMatch_Ref/index.html#//apple_ref/occ/instm/GKTurnBasedMatch/endMatchInTurnWithMatchData:completionHandler:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("endMatchInTurnWithMatchData:completionHandler:")
     public native void endMatchInTurnWithMatchDataCompletionHandler(NSData matchData,
             @ObjCBlock(name = "call_endMatchInTurnWithMatchDataCompletionHandler") Block_endMatchInTurnWithMatchDataCompletionHandler completionHandler);
 
-    /**
-     * endMatchInTurnWithMatchData:scores:achievements:completionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKTurnBasedMatch_Ref/index.html#//apple_ref/occ/instm/GKTurnBasedMatch/endMatchInTurnWithMatchData:scores:achievements:completionHandler:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("endMatchInTurnWithMatchData:scores:achievements:completionHandler:")
     public native void endMatchInTurnWithMatchDataScoresAchievementsCompletionHandler(NSData matchData,
             NSArray<? extends GKScore> scores, NSArray<? extends GKAchievement> achievements,
             @ObjCBlock(name = "call_endMatchInTurnWithMatchDataScoresAchievementsCompletionHandler") Block_endMatchInTurnWithMatchDataScoresAchievementsCompletionHandler completionHandler);
 
-    /**
-     * endTurnWithNextParticipant:matchData:completionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKTurnBasedMatch_Ref/index.html#//apple_ref/occ/instm/GKTurnBasedMatch/endTurnWithNextParticipant:matchData:completionHandler:">iOS Dev Center</a>
-     */
     @Generated
     @Deprecated
     @Selector("endTurnWithNextParticipant:matchData:completionHandler:")
@@ -269,38 +221,22 @@ public class GKTurnBasedMatch extends NSObject {
             NSData matchData,
             @ObjCBlock(name = "call_endTurnWithNextParticipantMatchDataCompletionHandler") Block_endTurnWithNextParticipantMatchDataCompletionHandler completionHandler);
 
-    /**
-     * endTurnWithNextParticipants:turnTimeout:matchData:completionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKTurnBasedMatch_Ref/index.html#//apple_ref/occ/instm/GKTurnBasedMatch/endTurnWithNextParticipants:turnTimeout:matchData:completionHandler:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("endTurnWithNextParticipants:turnTimeout:matchData:completionHandler:")
     public native void endTurnWithNextParticipantsTurnTimeoutMatchDataCompletionHandler(
             NSArray<? extends GKTurnBasedParticipant> nextParticipants, double timeout, NSData matchData,
             @ObjCBlock(name = "call_endTurnWithNextParticipantsTurnTimeoutMatchDataCompletionHandler") Block_endTurnWithNextParticipantsTurnTimeoutMatchDataCompletionHandler completionHandler);
 
-    /**
-     * exchangeDataMaximumSize</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKTurnBasedMatch_Ref/index.html#//apple_ref/occ/instp/GKTurnBasedMatch/exchangeDataMaximumSize">iOS Dev Center</a>
-     */
     @Generated
     @Selector("exchangeDataMaximumSize")
     @NUInt
     public native long exchangeDataMaximumSize();
 
-    /**
-     * exchangeMaxInitiatedExchangesPerPlayer</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKTurnBasedMatch_Ref/index.html#//apple_ref/occ/instp/GKTurnBasedMatch/exchangeMaxInitiatedExchangesPerPlayer">iOS Dev Center</a>
-     */
     @Generated
     @Selector("exchangeMaxInitiatedExchangesPerPlayer")
     @NUInt
     public native long exchangeMaxInitiatedExchangesPerPlayer();
 
-    /**
-     * exchanges</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKTurnBasedMatch_Ref/index.html#//apple_ref/occ/instp/GKTurnBasedMatch/exchanges">iOS Dev Center</a>
-     */
     @Generated
     @Selector("exchanges")
     public native NSArray<? extends GKTurnBasedExchange> exchanges();
@@ -309,52 +245,28 @@ public class GKTurnBasedMatch extends NSObject {
     @Selector("init")
     public native GKTurnBasedMatch init();
 
-    /**
-     * loadMatchDataWithCompletionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKTurnBasedMatch_Ref/index.html#//apple_ref/occ/instm/GKTurnBasedMatch/loadMatchDataWithCompletionHandler:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("loadMatchDataWithCompletionHandler:")
     public native void loadMatchDataWithCompletionHandler(
             @ObjCBlock(name = "call_loadMatchDataWithCompletionHandler") Block_loadMatchDataWithCompletionHandler completionHandler);
 
-    /**
-     * matchData</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKTurnBasedMatch_Ref/index.html#//apple_ref/occ/instp/GKTurnBasedMatch/matchData">iOS Dev Center</a>
-     */
     @Generated
     @Selector("matchData")
     public native NSData matchData();
 
-    /**
-     * matchDataMaximumSize</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKTurnBasedMatch_Ref/index.html#//apple_ref/occ/instp/GKTurnBasedMatch/matchDataMaximumSize">iOS Dev Center</a>
-     */
     @Generated
     @Selector("matchDataMaximumSize")
     @NUInt
     public native long matchDataMaximumSize();
 
-    /**
-     * matchID</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKTurnBasedMatch_Ref/index.html#//apple_ref/occ/instp/GKTurnBasedMatch/matchID">iOS Dev Center</a>
-     */
     @Generated
     @Selector("matchID")
     public native String matchID();
 
-    /**
-     * message</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKTurnBasedMatch_Ref/index.html#//apple_ref/occ/instp/GKTurnBasedMatch/message">iOS Dev Center</a>
-     */
     @Generated
     @Selector("message")
     public native String message();
 
-    /**
-     * participantQuitInTurnWithOutcome:nextParticipant:matchData:completionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKTurnBasedMatch_Ref/index.html#//apple_ref/occ/instm/GKTurnBasedMatch/participantQuitInTurnWithOutcome:nextParticipant:matchData:completionHandler:">iOS Dev Center</a>
-     */
     @Generated
     @Deprecated
     @Selector("participantQuitInTurnWithOutcome:nextParticipant:matchData:completionHandler:")
@@ -362,10 +274,6 @@ public class GKTurnBasedMatch extends NSObject {
             @NInt long matchOutcome, GKTurnBasedParticipant nextParticipant, NSData matchData,
             @ObjCBlock(name = "call_participantQuitInTurnWithOutcomeNextParticipantMatchDataCompletionHandler") Block_participantQuitInTurnWithOutcomeNextParticipantMatchDataCompletionHandler completionHandler);
 
-    /**
-     * participantQuitInTurnWithOutcome:nextParticipants:turnTimeout:matchData:completionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKTurnBasedMatch_Ref/index.html#//apple_ref/occ/instm/GKTurnBasedMatch/participantQuitInTurnWithOutcome:nextParticipants:turnTimeout:matchData:completionHandler:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("participantQuitInTurnWithOutcome:nextParticipants:turnTimeout:matchData:completionHandler:")
     public native void participantQuitInTurnWithOutcomeNextParticipantsTurnTimeoutMatchDataCompletionHandler(
@@ -373,64 +281,36 @@ public class GKTurnBasedMatch extends NSObject {
             NSData matchData,
             @ObjCBlock(name = "call_participantQuitInTurnWithOutcomeNextParticipantsTurnTimeoutMatchDataCompletionHandler") Block_participantQuitInTurnWithOutcomeNextParticipantsTurnTimeoutMatchDataCompletionHandler completionHandler);
 
-    /**
-     * participantQuitOutOfTurnWithOutcome:withCompletionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKTurnBasedMatch_Ref/index.html#//apple_ref/occ/instm/GKTurnBasedMatch/participantQuitOutOfTurnWithOutcome:withCompletionHandler:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("participantQuitOutOfTurnWithOutcome:withCompletionHandler:")
     public native void participantQuitOutOfTurnWithOutcomeWithCompletionHandler(@NInt long matchOutcome,
             @ObjCBlock(name = "call_participantQuitOutOfTurnWithOutcomeWithCompletionHandler") Block_participantQuitOutOfTurnWithOutcomeWithCompletionHandler completionHandler);
 
-    /**
-     * participants</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKTurnBasedMatch_Ref/index.html#//apple_ref/occ/instp/GKTurnBasedMatch/participants">iOS Dev Center</a>
-     */
     @Generated
     @Selector("participants")
     public native NSArray<? extends GKTurnBasedParticipant> participants();
 
-    /**
-     * rematchWithCompletionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKTurnBasedMatch_Ref/index.html#//apple_ref/occ/instm/GKTurnBasedMatch/rematchWithCompletionHandler:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("rematchWithCompletionHandler:")
     public native void rematchWithCompletionHandler(
             @ObjCBlock(name = "call_rematchWithCompletionHandler") Block_rematchWithCompletionHandler completionHandler);
 
-    /**
-     * removeWithCompletionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKTurnBasedMatch_Ref/index.html#//apple_ref/occ/instm/GKTurnBasedMatch/removeWithCompletionHandler:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("removeWithCompletionHandler:")
     public native void removeWithCompletionHandler(
             @ObjCBlock(name = "call_removeWithCompletionHandler") Block_removeWithCompletionHandler completionHandler);
 
-    /**
-     * saveCurrentTurnWithMatchData:completionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKTurnBasedMatch_Ref/index.html#//apple_ref/occ/instm/GKTurnBasedMatch/saveCurrentTurnWithMatchData:completionHandler:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("saveCurrentTurnWithMatchData:completionHandler:")
     public native void saveCurrentTurnWithMatchDataCompletionHandler(NSData matchData,
             @ObjCBlock(name = "call_saveCurrentTurnWithMatchDataCompletionHandler") Block_saveCurrentTurnWithMatchDataCompletionHandler completionHandler);
 
-    /**
-     * saveMergedMatchData:withResolvedExchanges:completionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKTurnBasedMatch_Ref/index.html#//apple_ref/occ/instm/GKTurnBasedMatch/saveMergedMatchData:withResolvedExchanges:completionHandler:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("saveMergedMatchData:withResolvedExchanges:completionHandler:")
     public native void saveMergedMatchDataWithResolvedExchangesCompletionHandler(NSData matchData,
             NSArray<? extends GKTurnBasedExchange> exchanges,
             @ObjCBlock(name = "call_saveMergedMatchDataWithResolvedExchangesCompletionHandler") Block_saveMergedMatchDataWithResolvedExchangesCompletionHandler completionHandler);
 
-    /**
-     * sendExchangeToParticipants:data:localizableMessageKey:arguments:timeout:completionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKTurnBasedMatch_Ref/index.html#//apple_ref/occ/instm/GKTurnBasedMatch/sendExchangeToParticipants:data:localizableMessageKey:arguments:timeout:completionHandler:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("sendExchangeToParticipants:data:localizableMessageKey:arguments:timeout:completionHandler:")
     public native void sendExchangeToParticipantsDataLocalizableMessageKeyArgumentsTimeoutCompletionHandler(
@@ -438,36 +318,20 @@ public class GKTurnBasedMatch extends NSObject {
             double timeout,
             @ObjCBlock(name = "call_sendExchangeToParticipantsDataLocalizableMessageKeyArgumentsTimeoutCompletionHandler") Block_sendExchangeToParticipantsDataLocalizableMessageKeyArgumentsTimeoutCompletionHandler completionHandler);
 
-    /**
-     * sendReminderToParticipants:localizableMessageKey:arguments:completionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKTurnBasedMatch_Ref/index.html#//apple_ref/occ/instm/GKTurnBasedMatch/sendReminderToParticipants:localizableMessageKey:arguments:completionHandler:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("sendReminderToParticipants:localizableMessageKey:arguments:completionHandler:")
     public native void sendReminderToParticipantsLocalizableMessageKeyArgumentsCompletionHandler(
             NSArray<? extends GKTurnBasedParticipant> participants, String key, NSArray<String> arguments,
             @ObjCBlock(name = "call_sendReminderToParticipantsLocalizableMessageKeyArgumentsCompletionHandler") Block_sendReminderToParticipantsLocalizableMessageKeyArgumentsCompletionHandler completionHandler);
 
-    /**
-     * setLocalizableMessageWithKey:arguments:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKTurnBasedMatch_Ref/index.html#//apple_ref/occ/instm/GKTurnBasedMatch/setLocalizableMessageWithKey:arguments:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setLocalizableMessageWithKey:arguments:")
     public native void setLocalizableMessageWithKeyArguments(String key, NSArray<String> arguments);
 
-    /**
-     * message</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKTurnBasedMatch_Ref/index.html#//apple_ref/occ/instp/GKTurnBasedMatch/message">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setMessage:")
     public native void setMessage(String value);
 
-    /**
-     * status</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKTurnBasedMatch_Ref/index.html#//apple_ref/occ/instp/GKTurnBasedMatch/status">iOS Dev Center</a>
-     */
     @Generated
     @Selector("status")
     @NInt

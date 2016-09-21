@@ -58,10 +58,6 @@ public class MPRemoteCommandCenter extends NSObject {
     @Selector("alloc")
     public static native MPRemoteCommandCenter alloc();
 
-    /**
-     * sharedCommandCenter</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPRemoteCommandCenter_Ref/index.html#//apple_ref/occ/clm/MPRemoteCommandCenter/sharedCommandCenter">iOS Dev Center</a>
-     */
     @Generated
     @Selector("sharedCommandCenter")
     public static native MPRemoteCommandCenter sharedCommandCenter();
@@ -166,26 +162,14 @@ public class MPRemoteCommandCenter extends NSObject {
     @NInt
     public static native long version_static();
 
-    /**
-     * bookmarkCommand</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPRemoteCommandCenter_Ref/index.html#//apple_ref/occ/instp/MPRemoteCommandCenter/bookmarkCommand">iOS Dev Center</a>
-     */
     @Generated
     @Selector("bookmarkCommand")
     public native MPFeedbackCommand bookmarkCommand();
 
-    /**
-     * changePlaybackRateCommand</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPRemoteCommandCenter_Ref/index.html#//apple_ref/occ/instp/MPRemoteCommandCenter/changePlaybackRateCommand">iOS Dev Center</a>
-     */
     @Generated
     @Selector("changePlaybackRateCommand")
     public native MPChangePlaybackRateCommand changePlaybackRateCommand();
 
-    /**
-     * dislikeCommand</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPRemoteCommandCenter_Ref/index.html#//apple_ref/occ/instp/MPRemoteCommandCenter/dislikeCommand">iOS Dev Center</a>
-     */
     @Generated
     @Selector("dislikeCommand")
     public native MPFeedbackCommand dislikeCommand();
@@ -194,98 +178,50 @@ public class MPRemoteCommandCenter extends NSObject {
     @Selector("init")
     public native MPRemoteCommandCenter init();
 
-    /**
-     * likeCommand</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPRemoteCommandCenter_Ref/index.html#//apple_ref/occ/instp/MPRemoteCommandCenter/likeCommand">iOS Dev Center</a>
-     */
     @Generated
     @Selector("likeCommand")
     public native MPFeedbackCommand likeCommand();
 
-    /**
-     * nextTrackCommand</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPRemoteCommandCenter_Ref/index.html#//apple_ref/occ/instp/MPRemoteCommandCenter/nextTrackCommand">iOS Dev Center</a>
-     */
     @Generated
     @Selector("nextTrackCommand")
     public native MPRemoteCommand nextTrackCommand();
 
-    /**
-     * pauseCommand</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPRemoteCommandCenter_Ref/index.html#//apple_ref/occ/instp/MPRemoteCommandCenter/pauseCommand">iOS Dev Center</a>
-     */
     @Generated
     @Selector("pauseCommand")
     public native MPRemoteCommand pauseCommand();
 
-    /**
-     * playCommand</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPRemoteCommandCenter_Ref/index.html#//apple_ref/occ/instp/MPRemoteCommandCenter/playCommand">iOS Dev Center</a>
-     */
     @Generated
     @Selector("playCommand")
     public native MPRemoteCommand playCommand();
 
-    /**
-     * previousTrackCommand</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPRemoteCommandCenter_Ref/index.html#//apple_ref/occ/instp/MPRemoteCommandCenter/previousTrackCommand">iOS Dev Center</a>
-     */
     @Generated
     @Selector("previousTrackCommand")
     public native MPRemoteCommand previousTrackCommand();
 
-    /**
-     * ratingCommand</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPRemoteCommandCenter_Ref/index.html#//apple_ref/occ/instp/MPRemoteCommandCenter/ratingCommand">iOS Dev Center</a>
-     */
     @Generated
     @Selector("ratingCommand")
     public native MPRatingCommand ratingCommand();
 
-    /**
-     * seekBackwardCommand</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPRemoteCommandCenter_Ref/index.html#//apple_ref/occ/instp/MPRemoteCommandCenter/seekBackwardCommand">iOS Dev Center</a>
-     */
     @Generated
     @Selector("seekBackwardCommand")
     public native MPRemoteCommand seekBackwardCommand();
 
-    /**
-     * seekForwardCommand</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPRemoteCommandCenter_Ref/index.html#//apple_ref/occ/instp/MPRemoteCommandCenter/seekForwardCommand">iOS Dev Center</a>
-     */
     @Generated
     @Selector("seekForwardCommand")
     public native MPRemoteCommand seekForwardCommand();
 
-    /**
-     * skipBackwardCommand</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPRemoteCommandCenter_Ref/index.html#//apple_ref/occ/instp/MPRemoteCommandCenter/skipBackwardCommand">iOS Dev Center</a>
-     */
     @Generated
     @Selector("skipBackwardCommand")
     public native MPSkipIntervalCommand skipBackwardCommand();
 
-    /**
-     * skipForwardCommand</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPRemoteCommandCenter_Ref/index.html#//apple_ref/occ/instp/MPRemoteCommandCenter/skipForwardCommand">iOS Dev Center</a>
-     */
     @Generated
     @Selector("skipForwardCommand")
     public native MPSkipIntervalCommand skipForwardCommand();
 
-    /**
-     * stopCommand</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPRemoteCommandCenter_Ref/index.html#//apple_ref/occ/instp/MPRemoteCommandCenter/stopCommand">iOS Dev Center</a>
-     */
     @Generated
     @Selector("stopCommand")
     public native MPRemoteCommand stopCommand();
 
-    /**
-     * togglePlayPauseCommand</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPRemoteCommandCenter_Ref/index.html#//apple_ref/occ/instp/MPRemoteCommandCenter/togglePlayPauseCommand">iOS Dev Center</a>
-     */
     @Generated
     @Selector("togglePlayPauseCommand")
     public native MPRemoteCommand togglePlayPauseCommand();

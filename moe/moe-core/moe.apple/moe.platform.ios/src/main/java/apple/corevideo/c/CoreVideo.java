@@ -60,162 +60,86 @@ public final class CoreVideo {
     private CoreVideo() {
     }
 
-    /**
-     * CVBufferRetain</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/QuartzCore/Reference/CVBufferRef/index.html#//apple_ref/c/func/CVBufferRetain">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native CVBufferRef CVBufferRetain(CVBufferRef buffer);
 
-    /**
-     * CVBufferRelease</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/QuartzCore/Reference/CVBufferRef/index.html#//apple_ref/c/func/CVBufferRelease">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void CVBufferRelease(CVBufferRef buffer);
 
-    /**
-     * CVBufferSetAttachment</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/QuartzCore/Reference/CVBufferRef/index.html#//apple_ref/c/func/CVBufferSetAttachment">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void CVBufferSetAttachment(CVBufferRef buffer, CFStringRef key, ConstVoidPtr value,
             int attachmentMode);
 
-    /**
-     * CVBufferGetAttachment</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/QuartzCore/Reference/CVBufferRef/index.html#//apple_ref/c/func/CVBufferGetAttachment">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native ConstVoidPtr CVBufferGetAttachment(CVBufferRef buffer, CFStringRef key, IntPtr attachmentMode);
 
-    /**
-     * CVBufferRemoveAttachment</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/QuartzCore/Reference/CVBufferRef/index.html#//apple_ref/c/func/CVBufferRemoveAttachment">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void CVBufferRemoveAttachment(CVBufferRef buffer, CFStringRef key);
 
-    /**
-     * CVBufferRemoveAllAttachments</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/QuartzCore/Reference/CVBufferRef/index.html#//apple_ref/c/func/CVBufferRemoveAllAttachments">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void CVBufferRemoveAllAttachments(CVBufferRef buffer);
 
-    /**
-     * CVBufferGetAttachments</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/QuartzCore/Reference/CVBufferRef/index.html#//apple_ref/c/func/CVBufferGetAttachments">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native CFDictionaryRef CVBufferGetAttachments(CVBufferRef buffer, int attachmentMode);
 
-    /**
-     * CVBufferSetAttachments</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/QuartzCore/Reference/CVBufferRef/index.html#//apple_ref/c/func/CVBufferSetAttachments">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void CVBufferSetAttachments(CVBufferRef buffer, CFDictionaryRef theAttachments,
             int attachmentMode);
 
-    /**
-     * CVBufferPropagateAttachments</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/QuartzCore/Reference/CVBufferRef/index.html#//apple_ref/c/func/CVBufferPropagateAttachments">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void CVBufferPropagateAttachments(CVBufferRef sourceBuffer, CVBufferRef destinationBuffer);
 
-    /**
-     * CVImageBufferGetEncodedSize</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/QuartzCore/Reference/CVImageBufferRef/index.html#//apple_ref/c/func/CVImageBufferGetEncodedSize">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @ByValue
     public static native CGSize CVImageBufferGetEncodedSize(CVBufferRef imageBuffer);
 
-    /**
-     * CVImageBufferGetDisplaySize</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/QuartzCore/Reference/CVImageBufferRef/index.html#//apple_ref/c/func/CVImageBufferGetDisplaySize">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @ByValue
     public static native CGSize CVImageBufferGetDisplaySize(CVBufferRef imageBuffer);
 
-    /**
-     * CVImageBufferGetCleanRect</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/QuartzCore/Reference/CVImageBufferRef/index.html#//apple_ref/c/func/CVImageBufferGetCleanRect">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @ByValue
     public static native CGRect CVImageBufferGetCleanRect(CVBufferRef imageBuffer);
 
-    /**
-     * CVImageBufferIsFlipped</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/QuartzCore/Reference/CVImageBufferRef/index.html#//apple_ref/c/func/CVImageBufferIsFlipped">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native byte CVImageBufferIsFlipped(CVBufferRef imageBuffer);
 
-    /**
-     * CVPixelBufferGetTypeID</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/QuartzCore/Reference/CVPixelBufferRef/index.html#//apple_ref/c/func/CVPixelBufferGetTypeID">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @NUInt
     public static native long CVPixelBufferGetTypeID();
 
-    /**
-     * CVPixelBufferRetain</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/QuartzCore/Reference/CVPixelBufferRef/index.html#//apple_ref/c/func/CVPixelBufferRetain">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native CVBufferRef CVPixelBufferRetain(CVBufferRef texture);
 
-    /**
-     * CVPixelBufferRelease</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/QuartzCore/Reference/CVPixelBufferRef/index.html#//apple_ref/c/func/CVPixelBufferRelease">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void CVPixelBufferRelease(CVBufferRef texture);
 
-    /**
-     * CVPixelBufferCreateResolvedAttributesDictionary</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/QuartzCore/Reference/CVPixelBufferRef/index.html#//apple_ref/c/func/CVPixelBufferCreateResolvedAttributesDictionary">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native int CVPixelBufferCreateResolvedAttributesDictionary(CFAllocatorRef allocator,
             CFArrayRef attributes, Ptr<CFDictionaryRef> resolvedDictionaryOut);
 
-    /**
-     * CVPixelBufferCreate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/QuartzCore/Reference/CVPixelBufferRef/index.html#//apple_ref/c/func/CVPixelBufferCreate">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native int CVPixelBufferCreate(CFAllocatorRef allocator, @NUInt long width, @NUInt long height,
             int pixelFormatType, CFDictionaryRef pixelBufferAttributes, Ptr<CVBufferRef> pixelBufferOut);
 
-    /**
-     * CVPixelBufferCreateWithBytes</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/QuartzCore/Reference/CVPixelBufferRef/index.html#//apple_ref/c/func/CVPixelBufferCreateWithBytes">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native int CVPixelBufferCreateWithBytes(CFAllocatorRef allocator, @NUInt long width,
@@ -223,10 +147,6 @@ public final class CoreVideo {
             @FunctionPtr(name = "call_CVPixelBufferCreateWithBytes") Function_CVPixelBufferCreateWithBytes releaseCallback,
             VoidPtr releaseRefCon, CFDictionaryRef pixelBufferAttributes, Ptr<CVBufferRef> pixelBufferOut);
 
-    /**
-     * CVPixelBufferCreateWithPlanarBytes</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/QuartzCore/Reference/CVPixelBufferRef/index.html#//apple_ref/c/func/CVPixelBufferCreateWithPlanarBytes">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native int CVPixelBufferCreateWithPlanarBytes(CFAllocatorRef allocator, @NUInt long width,
@@ -235,266 +155,142 @@ public final class CoreVideo {
             @FunctionPtr(name = "call_CVPixelBufferCreateWithPlanarBytes") Function_CVPixelBufferCreateWithPlanarBytes releaseCallback,
             VoidPtr releaseRefCon, CFDictionaryRef pixelBufferAttributes, Ptr<CVBufferRef> pixelBufferOut);
 
-    /**
-     * CVPixelBufferLockBaseAddress</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/QuartzCore/Reference/CVPixelBufferRef/index.html#//apple_ref/c/func/CVPixelBufferLockBaseAddress">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native int CVPixelBufferLockBaseAddress(CVBufferRef pixelBuffer, long lockFlags);
 
-    /**
-     * CVPixelBufferUnlockBaseAddress</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/QuartzCore/Reference/CVPixelBufferRef/index.html#//apple_ref/c/func/CVPixelBufferUnlockBaseAddress">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native int CVPixelBufferUnlockBaseAddress(CVBufferRef pixelBuffer, long unlockFlags);
 
-    /**
-     * CVPixelBufferGetWidth</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/QuartzCore/Reference/CVPixelBufferRef/index.html#//apple_ref/c/func/CVPixelBufferGetWidth">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @NUInt
     public static native long CVPixelBufferGetWidth(CVBufferRef pixelBuffer);
 
-    /**
-     * CVPixelBufferGetHeight</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/QuartzCore/Reference/CVPixelBufferRef/index.html#//apple_ref/c/func/CVPixelBufferGetHeight">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @NUInt
     public static native long CVPixelBufferGetHeight(CVBufferRef pixelBuffer);
 
-    /**
-     * CVPixelBufferGetPixelFormatType</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/QuartzCore/Reference/CVPixelBufferRef/index.html#//apple_ref/c/func/CVPixelBufferGetPixelFormatType">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native int CVPixelBufferGetPixelFormatType(CVBufferRef pixelBuffer);
 
-    /**
-     * CVPixelBufferGetBaseAddress</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/QuartzCore/Reference/CVPixelBufferRef/index.html#//apple_ref/c/func/CVPixelBufferGetBaseAddress">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native VoidPtr CVPixelBufferGetBaseAddress(CVBufferRef pixelBuffer);
 
-    /**
-     * CVPixelBufferGetBytesPerRow</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/QuartzCore/Reference/CVPixelBufferRef/index.html#//apple_ref/c/func/CVPixelBufferGetBytesPerRow">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @NUInt
     public static native long CVPixelBufferGetBytesPerRow(CVBufferRef pixelBuffer);
 
-    /**
-     * CVPixelBufferGetDataSize</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/QuartzCore/Reference/CVPixelBufferRef/index.html#//apple_ref/c/func/CVPixelBufferGetDataSize">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @NUInt
     public static native long CVPixelBufferGetDataSize(CVBufferRef pixelBuffer);
 
-    /**
-     * CVPixelBufferIsPlanar</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/QuartzCore/Reference/CVPixelBufferRef/index.html#//apple_ref/c/func/CVPixelBufferIsPlanar">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native byte CVPixelBufferIsPlanar(CVBufferRef pixelBuffer);
 
-    /**
-     * CVPixelBufferGetPlaneCount</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/QuartzCore/Reference/CVPixelBufferRef/index.html#//apple_ref/c/func/CVPixelBufferGetPlaneCount">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @NUInt
     public static native long CVPixelBufferGetPlaneCount(CVBufferRef pixelBuffer);
 
-    /**
-     * CVPixelBufferGetWidthOfPlane</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/QuartzCore/Reference/CVPixelBufferRef/index.html#//apple_ref/c/func/CVPixelBufferGetWidthOfPlane">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @NUInt
     public static native long CVPixelBufferGetWidthOfPlane(CVBufferRef pixelBuffer, @NUInt long planeIndex);
 
-    /**
-     * CVPixelBufferGetHeightOfPlane</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/QuartzCore/Reference/CVPixelBufferRef/index.html#//apple_ref/c/func/CVPixelBufferGetHeightOfPlane">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @NUInt
     public static native long CVPixelBufferGetHeightOfPlane(CVBufferRef pixelBuffer, @NUInt long planeIndex);
 
-    /**
-     * CVPixelBufferGetBaseAddressOfPlane</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/QuartzCore/Reference/CVPixelBufferRef/index.html#//apple_ref/c/func/CVPixelBufferGetBaseAddressOfPlane">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native VoidPtr CVPixelBufferGetBaseAddressOfPlane(CVBufferRef pixelBuffer, @NUInt long planeIndex);
 
-    /**
-     * CVPixelBufferGetBytesPerRowOfPlane</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/QuartzCore/Reference/CVPixelBufferRef/index.html#//apple_ref/c/func/CVPixelBufferGetBytesPerRowOfPlane">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @NUInt
     public static native long CVPixelBufferGetBytesPerRowOfPlane(CVBufferRef pixelBuffer, @NUInt long planeIndex);
 
-    /**
-     * CVPixelBufferGetExtendedPixels</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/QuartzCore/Reference/CVPixelBufferRef/index.html#//apple_ref/c/func/CVPixelBufferGetExtendedPixels">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void CVPixelBufferGetExtendedPixels(CVBufferRef pixelBuffer, NUIntPtr extraColumnsOnLeft,
             NUIntPtr extraColumnsOnRight, NUIntPtr extraRowsOnTop, NUIntPtr extraRowsOnBottom);
 
-    /**
-     * CVPixelBufferFillExtendedPixels</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/QuartzCore/Reference/CVPixelBufferRef/index.html#//apple_ref/c/func/CVPixelBufferFillExtendedPixels">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native int CVPixelBufferFillExtendedPixels(CVBufferRef pixelBuffer);
 
-    /**
-     * CVPixelBufferPoolGetTypeID</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/QuartzCore/Reference/CVPixelBufferPoolRef/index.html#//apple_ref/c/func/CVPixelBufferPoolGetTypeID">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @NUInt
     public static native long CVPixelBufferPoolGetTypeID();
 
-    /**
-     * CVPixelBufferPoolRetain</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/QuartzCore/Reference/CVPixelBufferPoolRef/index.html#//apple_ref/c/func/CVPixelBufferPoolRetain">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native CVPixelBufferPoolRef CVPixelBufferPoolRetain(CVPixelBufferPoolRef pixelBufferPool);
 
-    /**
-     * CVPixelBufferPoolRelease</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/QuartzCore/Reference/CVPixelBufferPoolRef/index.html#//apple_ref/c/func/CVPixelBufferPoolRelease">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void CVPixelBufferPoolRelease(CVPixelBufferPoolRef pixelBufferPool);
 
-    /**
-     * CVPixelBufferPoolCreate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/QuartzCore/Reference/CVPixelBufferPoolRef/index.html#//apple_ref/c/func/CVPixelBufferPoolCreate">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native int CVPixelBufferPoolCreate(CFAllocatorRef allocator, CFDictionaryRef poolAttributes,
             CFDictionaryRef pixelBufferAttributes, Ptr<CVPixelBufferPoolRef> poolOut);
 
-    /**
-     * CVPixelBufferPoolGetAttributes</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/QuartzCore/Reference/CVPixelBufferPoolRef/index.html#//apple_ref/c/func/CVPixelBufferPoolGetAttributes">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native CFDictionaryRef CVPixelBufferPoolGetAttributes(CVPixelBufferPoolRef pool);
 
-    /**
-     * CVPixelBufferPoolGetPixelBufferAttributes</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/QuartzCore/Reference/CVPixelBufferPoolRef/index.html#//apple_ref/c/func/CVPixelBufferPoolGetPixelBufferAttributes">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native CFDictionaryRef CVPixelBufferPoolGetPixelBufferAttributes(CVPixelBufferPoolRef pool);
 
-    /**
-     * CVPixelBufferPoolCreatePixelBuffer</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/QuartzCore/Reference/CVPixelBufferPoolRef/index.html#//apple_ref/c/func/CVPixelBufferPoolCreatePixelBuffer">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native int CVPixelBufferPoolCreatePixelBuffer(CFAllocatorRef allocator,
             CVPixelBufferPoolRef pixelBufferPool, Ptr<CVBufferRef> pixelBufferOut);
 
-    /**
-     * CVPixelBufferPoolCreatePixelBufferWithAuxAttributes</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/QuartzCore/Reference/CVPixelBufferPoolRef/index.html#//apple_ref/c/func/CVPixelBufferPoolCreatePixelBufferWithAuxAttributes">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native int CVPixelBufferPoolCreatePixelBufferWithAuxAttributes(CFAllocatorRef allocator,
             CVPixelBufferPoolRef pixelBufferPool, CFDictionaryRef auxAttributes, Ptr<CVBufferRef> pixelBufferOut);
 
-    /**
-     * CVOpenGLESTextureGetTypeID</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreVideo/Reference/CVOpenGLESTextureRef/index.html#//apple_ref/c/func/CVOpenGLESTextureGetTypeID">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @NUInt
     public static native long CVOpenGLESTextureGetTypeID();
 
-    /**
-     * CVOpenGLESTextureGetTarget</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreVideo/Reference/CVOpenGLESTextureRef/index.html#//apple_ref/c/func/CVOpenGLESTextureGetTarget">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native int CVOpenGLESTextureGetTarget(CVBufferRef image);
 
-    /**
-     * CVOpenGLESTextureGetName</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreVideo/Reference/CVOpenGLESTextureRef/index.html#//apple_ref/c/func/CVOpenGLESTextureGetName">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native int CVOpenGLESTextureGetName(CVBufferRef image);
 
-    /**
-     * CVOpenGLESTextureIsFlipped</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreVideo/Reference/CVOpenGLESTextureRef/index.html#//apple_ref/c/func/CVOpenGLESTextureIsFlipped">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native byte CVOpenGLESTextureIsFlipped(CVBufferRef image);
 
-    /**
-     * CVOpenGLESTextureCacheGetTypeID</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreVideo/Reference/CVOpenGLESTextureCacheRef/index.html#//apple_ref/c/func/CVOpenGLESTextureCacheGetTypeID">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @NUInt
     public static native long CVOpenGLESTextureCacheGetTypeID();
 
-    /**
-     * CVOpenGLESTextureCacheCreate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreVideo/Reference/CVOpenGLESTextureCacheRef/index.html#//apple_ref/c/func/CVOpenGLESTextureCacheCreate">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native int CVOpenGLESTextureCacheCreate(CFAllocatorRef allocator, CFDictionaryRef cacheAttributes,
             EAGLContext eaglContext, CFDictionaryRef textureAttributes, Ptr<CVOpenGLESTextureCacheRef> cacheOut);
 
-    /**
-     * CVOpenGLESTextureCacheCreateTextureFromImage</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreVideo/Reference/CVOpenGLESTextureCacheRef/index.html#//apple_ref/c/func/CVOpenGLESTextureCacheCreateTextureFromImage">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native int CVOpenGLESTextureCacheCreateTextureFromImage(CFAllocatorRef allocator,
@@ -502,90 +298,50 @@ public final class CoreVideo {
             int target, int internalFormat, int width, int height, int format, int type, @NUInt long planeIndex,
             Ptr<CVBufferRef> textureOut);
 
-    /**
-     * CVOpenGLESTextureCacheFlush</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreVideo/Reference/CVOpenGLESTextureCacheRef/index.html#//apple_ref/c/func/CVOpenGLESTextureCacheFlush">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void CVOpenGLESTextureCacheFlush(CVOpenGLESTextureCacheRef textureCache, long options);
 
-    /**
-     * CVPixelFormatDescriptionCreateWithPixelFormatType</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/QuartzCore/Reference/CVPixelFormatDescriptionRef/index.html#//apple_ref/c/func/CVPixelFormatDescriptionCreateWithPixelFormatType">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native CFDictionaryRef CVPixelFormatDescriptionCreateWithPixelFormatType(CFAllocatorRef allocator,
             int pixelFormat);
 
-    /**
-     * CVPixelFormatDescriptionArrayCreateWithAllPixelFormatTypes</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/QuartzCore/Reference/CVPixelFormatDescriptionRef/index.html#//apple_ref/c/func/CVPixelFormatDescriptionArrayCreateWithAllPixelFormatTypes">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native CFArrayRef CVPixelFormatDescriptionArrayCreateWithAllPixelFormatTypes(
             CFAllocatorRef allocator);
 
-    /**
-     * CVPixelFormatDescriptionRegisterDescriptionWithPixelFormatType</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/QuartzCore/Reference/CVPixelFormatDescriptionRef/index.html#//apple_ref/c/func/CVPixelFormatDescriptionRegisterDescriptionWithPixelFormatType">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void CVPixelFormatDescriptionRegisterDescriptionWithPixelFormatType(
             CFDictionaryRef description, int pixelFormat);
 
-    /**
-     * CVMetalTextureGetTypeID</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreVideo/Reference/CVMetalTextureRef/index.html#//apple_ref/c/func/CVMetalTextureGetTypeID">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @NUInt
     public static native long CVMetalTextureGetTypeID();
 
-    /**
-     * CVMetalTextureGetTexture</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreVideo/Reference/CVMetalTextureRef/index.html#//apple_ref/c/func/CVMetalTextureGetTexture">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object CVMetalTextureGetTexture(CVBufferRef image);
 
-    /**
-     * CVMetalTextureIsFlipped</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreVideo/Reference/CVMetalTextureRef/index.html#//apple_ref/c/func/CVMetalTextureIsFlipped">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native byte CVMetalTextureIsFlipped(CVBufferRef image);
 
-    /**
-     * CVMetalTextureCacheGetTypeID</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreVideo/Reference/CVMetalTextureCacheRef/index.html#//apple_ref/c/func/CVMetalTextureCacheGetTypeID">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @NUInt
     public static native long CVMetalTextureCacheGetTypeID();
 
-    /**
-     * CVMetalTextureCacheCreate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreVideo/Reference/CVMetalTextureCacheRef/index.html#//apple_ref/c/func/CVMetalTextureCacheCreate">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native int CVMetalTextureCacheCreate(CFAllocatorRef allocator, CFDictionaryRef cacheAttributes,
             @Mapped(ObjCObjectMapper.class) Object metalDevice, CFDictionaryRef textureAttributes,
             Ptr<CVMetalTextureCacheRef> cacheOut);
 
-    /**
-     * CVMetalTextureCacheCreateTextureFromImage</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreVideo/Reference/CVMetalTextureCacheRef/index.html#//apple_ref/c/func/CVMetalTextureCacheCreateTextureFromImage">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native int CVMetalTextureCacheCreateTextureFromImage(CFAllocatorRef allocator,
@@ -593,10 +349,6 @@ public final class CoreVideo {
             @NUInt long pixelFormat, @NUInt long width, @NUInt long height, @NUInt long planeIndex,
             Ptr<CVBufferRef> textureOut);
 
-    /**
-     * CVMetalTextureCacheFlush</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreVideo/Reference/CVMetalTextureCacheRef/index.html#//apple_ref/c/func/CVMetalTextureCacheFlush">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void CVMetalTextureCacheFlush(CVMetalTextureCacheRef textureCache, long options);

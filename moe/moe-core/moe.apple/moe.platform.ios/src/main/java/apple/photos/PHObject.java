@@ -169,10 +169,6 @@ public class PHObject extends NSObject implements NSCopying {
     @Selector("init")
     public native PHObject init();
 
-    /**
-     * localIdentifier</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHObject_Class/index.html#//apple_ref/occ/instp/PHObject/localIdentifier">iOS Dev Center</a>
-     */
     @Generated
     @Selector("localIdentifier")
     public native String localIdentifier();

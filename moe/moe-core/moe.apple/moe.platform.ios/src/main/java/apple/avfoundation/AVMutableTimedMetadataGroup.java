@@ -174,34 +174,18 @@ public class AVMutableTimedMetadataGroup extends AVTimedMetadataGroup {
     @Selector("initWithSampleBuffer:")
     public native AVMutableTimedMetadataGroup initWithSampleBuffer(CMSampleBufferRef sampleBuffer);
 
-    /**
-     * items</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVMutableTimedMetadataGroup_Class/index.html#//apple_ref/occ/instp/AVMutableTimedMetadataGroup/items">iOS Dev Center</a>
-     */
     @Generated
     @Selector("items")
     public native NSArray<? extends AVMetadataItem> items();
 
-    /**
-     * items</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVMutableTimedMetadataGroup_Class/index.html#//apple_ref/occ/instp/AVMutableTimedMetadataGroup/items">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setItems:")
     public native void setItems(NSArray<? extends AVMetadataItem> value);
 
-    /**
-     * timeRange</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVMutableTimedMetadataGroup_Class/index.html#//apple_ref/occ/instp/AVMutableTimedMetadataGroup/timeRange">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setTimeRange:")
     public native void setTimeRange(@ByValue CMTimeRange value);
 
-    /**
-     * timeRange</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVMutableTimedMetadataGroup_Class/index.html#//apple_ref/occ/instp/AVMutableTimedMetadataGroup/timeRange">iOS Dev Center</a>
-     */
     @Generated
     @Selector("timeRange")
     @ByValue

@@ -24,6 +24,7 @@ public final class SFContentBlockerErrorCode {
     @Generated @NInt public static final long NoExtensionFound = 0x0000000000000001L;
     @Generated @NInt public static final long NoAttachmentFound = 0x0000000000000002L;
     @Generated @NInt public static final long LoadingInterrupted = 0x0000000000000003L;
+
     @Generated
     private SFContentBlockerErrorCode() {
     }

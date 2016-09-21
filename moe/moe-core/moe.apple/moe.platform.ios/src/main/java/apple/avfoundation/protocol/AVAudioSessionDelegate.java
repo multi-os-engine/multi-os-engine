@@ -30,10 +30,6 @@ import org.moe.natj.objc.ann.Selector;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("AVAudioSessionDelegate")
 public interface AVAudioSessionDelegate {
-    /**
-     * beginInterruption</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioSessionDelegate_ProtocolReference/index.html#//apple_ref/occ/intfm/AVAudioSessionDelegate/beginInterruption">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("beginInterruption")
@@ -41,10 +37,6 @@ public interface AVAudioSessionDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * endInterruption</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioSessionDelegate_ProtocolReference/index.html#//apple_ref/occ/intfm/AVAudioSessionDelegate/endInterruption">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("endInterruption")
@@ -52,10 +44,6 @@ public interface AVAudioSessionDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * endInterruptionWithFlags:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioSessionDelegate_ProtocolReference/index.html#//apple_ref/occ/intfm/AVAudioSessionDelegate/endInterruptionWithFlags:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("endInterruptionWithFlags:")
@@ -63,10 +51,6 @@ public interface AVAudioSessionDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * inputIsAvailableChanged:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioSessionDelegate_ProtocolReference/index.html#//apple_ref/occ/intfm/AVAudioSessionDelegate/inputIsAvailableChanged:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("inputIsAvailableChanged:")

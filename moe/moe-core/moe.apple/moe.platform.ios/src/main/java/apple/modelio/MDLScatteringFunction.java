@@ -159,34 +159,18 @@ public class MDLScatteringFunction extends NSObject implements MDLNamed {
     @NInt
     public static native long version_static();
 
-    /**
-     * ambientOcclusion</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLScatteringFunction_Class/index.html#//apple_ref/occ/instp/MDLScatteringFunction/ambientOcclusion">iOS Dev Center</a>
-     */
     @Generated
     @Selector("ambientOcclusion")
     public native MDLMaterialProperty ambientOcclusion();
 
-    /**
-     * ambientOcclusionScale</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLScatteringFunction_Class/index.html#//apple_ref/occ/instp/MDLScatteringFunction/ambientOcclusionScale">iOS Dev Center</a>
-     */
     @Generated
     @Selector("ambientOcclusionScale")
     public native MDLMaterialProperty ambientOcclusionScale();
 
-    /**
-     * baseColor</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLScatteringFunction_Class/index.html#//apple_ref/occ/instp/MDLScatteringFunction/baseColor">iOS Dev Center</a>
-     */
     @Generated
     @Selector("baseColor")
     public native MDLMaterialProperty baseColor();
 
-    /**
-     * emission</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLScatteringFunction_Class/index.html#//apple_ref/occ/instp/MDLScatteringFunction/emission">iOS Dev Center</a>
-     */
     @Generated
     @Selector("emission")
     public native MDLMaterialProperty emission();
@@ -195,18 +179,10 @@ public class MDLScatteringFunction extends NSObject implements MDLNamed {
     @Selector("init")
     public native MDLScatteringFunction init();
 
-    /**
-     * interfaceIndexOfRefraction</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLScatteringFunction_Class/index.html#//apple_ref/occ/instp/MDLScatteringFunction/interfaceIndexOfRefraction">iOS Dev Center</a>
-     */
     @Generated
     @Selector("interfaceIndexOfRefraction")
     public native MDLMaterialProperty interfaceIndexOfRefraction();
 
-    /**
-     * materialIndexOfRefraction</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLScatteringFunction_Class/index.html#//apple_ref/occ/instp/MDLScatteringFunction/materialIndexOfRefraction">iOS Dev Center</a>
-     */
     @Generated
     @Selector("materialIndexOfRefraction")
     public native MDLMaterialProperty materialIndexOfRefraction();
@@ -215,10 +191,6 @@ public class MDLScatteringFunction extends NSObject implements MDLNamed {
     @Selector("name")
     public native String name();
 
-    /**
-     * normal</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLScatteringFunction_Class/index.html#//apple_ref/occ/instp/MDLScatteringFunction/normal">iOS Dev Center</a>
-     */
     @Generated
     @Selector("normal")
     public native MDLMaterialProperty normal();
@@ -227,10 +199,6 @@ public class MDLScatteringFunction extends NSObject implements MDLNamed {
     @Selector("setName:")
     public native void setName(String value);
 
-    /**
-     * specular</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLScatteringFunction_Class/index.html#//apple_ref/occ/instp/MDLScatteringFunction/specular">iOS Dev Center</a>
-     */
     @Generated
     @Selector("specular")
     public native MDLMaterialProperty specular();

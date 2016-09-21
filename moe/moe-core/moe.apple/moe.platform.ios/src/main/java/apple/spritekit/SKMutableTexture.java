@@ -67,10 +67,6 @@ public class SKMutableTexture extends SKTexture {
     @Selector("alloc")
     public static native SKMutableTexture alloc();
 
-    /**
-     * mutableTextureWithSize:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKMutableTexture_Ref/index.html#//apple_ref/occ/clm/SKMutableTexture/mutableTextureWithSize:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("mutableTextureWithSize:")
     public static native SKMutableTexture mutableTextureWithSize(@ByValue CGSize size);
@@ -224,26 +220,14 @@ public class SKMutableTexture extends SKTexture {
     @Selector("init")
     public native SKMutableTexture init();
 
-    /**
-     * initWithSize:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKMutableTexture_Ref/index.html#//apple_ref/occ/instm/SKMutableTexture/initWithSize:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithSize:")
     public native SKMutableTexture initWithSize(@ByValue CGSize size);
 
-    /**
-     * initWithSize:pixelFormat:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKMutableTexture_Ref/index.html#//apple_ref/occ/instm/SKMutableTexture/initWithSize:pixelFormat:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithSize:pixelFormat:")
     public native SKMutableTexture initWithSizePixelFormat(@ByValue CGSize size, int format);
 
-    /**
-     * modifyPixelDataWithBlock:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKMutableTexture_Ref/index.html#//apple_ref/occ/instm/SKMutableTexture/modifyPixelDataWithBlock:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("modifyPixelDataWithBlock:")
     public native void modifyPixelDataWithBlock(

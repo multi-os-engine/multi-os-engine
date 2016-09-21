@@ -174,10 +174,6 @@ public class UIStoryboardPopoverSegue extends UIStoryboardSegue {
     public native UIStoryboardPopoverSegue initWithIdentifierSourceDestination(String identifier,
             UIViewController source, UIViewController destination);
 
-    /**
-     * popoverController</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIStoryboardPopoverSegue_Class/index.html#//apple_ref/occ/instp/UIStoryboardPopoverSegue/popoverController">iOS Dev Center</a>
-     */
     @Generated
     @Selector("popoverController")
     public native UIPopoverController popoverController();

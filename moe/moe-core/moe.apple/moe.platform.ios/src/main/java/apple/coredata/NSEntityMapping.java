@@ -161,34 +161,18 @@ public class NSEntityMapping extends NSObject {
     @NInt
     public static native long version_static();
 
-    /**
-     * attributeMappings</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSEntityMapping_class/index.html#//apple_ref/occ/instp/NSEntityMapping/attributeMappings">iOS Dev Center</a>
-     */
     @Generated
     @Selector("attributeMappings")
     public native NSArray<? extends NSPropertyMapping> attributeMappings();
 
-    /**
-     * destinationEntityName</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSEntityMapping_class/index.html#//apple_ref/occ/instp/NSEntityMapping/destinationEntityName">iOS Dev Center</a>
-     */
     @Generated
     @Selector("destinationEntityName")
     public native String destinationEntityName();
 
-    /**
-     * destinationEntityVersionHash</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSEntityMapping_class/index.html#//apple_ref/occ/instp/NSEntityMapping/destinationEntityVersionHash">iOS Dev Center</a>
-     */
     @Generated
     @Selector("destinationEntityVersionHash")
     public native NSData destinationEntityVersionHash();
 
-    /**
-     * entityMigrationPolicyClassName</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSEntityMapping_class/index.html#//apple_ref/occ/instp/NSEntityMapping/entityMigrationPolicyClassName">iOS Dev Center</a>
-     */
     @Generated
     @Selector("entityMigrationPolicyClassName")
     public native String entityMigrationPolicyClassName();
@@ -197,147 +181,75 @@ public class NSEntityMapping extends NSObject {
     @Selector("init")
     public native NSEntityMapping init();
 
-    /**
-     * mappingType</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSEntityMapping_class/index.html#//apple_ref/occ/instp/NSEntityMapping/mappingType">iOS Dev Center</a>
-     */
     @Generated
     @Selector("mappingType")
     @NUInt
     public native long mappingType();
 
-    /**
-     * name</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSEntityMapping_class/index.html#//apple_ref/occ/instp/NSEntityMapping/name">iOS Dev Center</a>
-     */
     @Generated
     @Selector("name")
     public native String name();
 
-    /**
-     * relationshipMappings</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSEntityMapping_class/index.html#//apple_ref/occ/instp/NSEntityMapping/relationshipMappings">iOS Dev Center</a>
-     */
     @Generated
     @Selector("relationshipMappings")
     public native NSArray<? extends NSPropertyMapping> relationshipMappings();
 
-    /**
-     * attributeMappings</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSEntityMapping_class/index.html#//apple_ref/occ/instp/NSEntityMapping/attributeMappings">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setAttributeMappings:")
     public native void setAttributeMappings(NSArray<? extends NSPropertyMapping> value);
 
-    /**
-     * destinationEntityName</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSEntityMapping_class/index.html#//apple_ref/occ/instp/NSEntityMapping/destinationEntityName">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setDestinationEntityName:")
     public native void setDestinationEntityName(String value);
 
-    /**
-     * destinationEntityVersionHash</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSEntityMapping_class/index.html#//apple_ref/occ/instp/NSEntityMapping/destinationEntityVersionHash">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setDestinationEntityVersionHash:")
     public native void setDestinationEntityVersionHash(NSData value);
 
-    /**
-     * entityMigrationPolicyClassName</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSEntityMapping_class/index.html#//apple_ref/occ/instp/NSEntityMapping/entityMigrationPolicyClassName">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setEntityMigrationPolicyClassName:")
     public native void setEntityMigrationPolicyClassName(String value);
 
-    /**
-     * mappingType</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSEntityMapping_class/index.html#//apple_ref/occ/instp/NSEntityMapping/mappingType">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setMappingType:")
     public native void setMappingType(@NUInt long value);
 
-    /**
-     * name</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSEntityMapping_class/index.html#//apple_ref/occ/instp/NSEntityMapping/name">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setName:")
     public native void setName(String value);
 
-    /**
-     * relationshipMappings</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSEntityMapping_class/index.html#//apple_ref/occ/instp/NSEntityMapping/relationshipMappings">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setRelationshipMappings:")
     public native void setRelationshipMappings(NSArray<? extends NSPropertyMapping> value);
 
-    /**
-     * sourceEntityName</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSEntityMapping_class/index.html#//apple_ref/occ/instp/NSEntityMapping/sourceEntityName">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setSourceEntityName:")
     public native void setSourceEntityName(String value);
 
-    /**
-     * sourceEntityVersionHash</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSEntityMapping_class/index.html#//apple_ref/occ/instp/NSEntityMapping/sourceEntityVersionHash">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setSourceEntityVersionHash:")
     public native void setSourceEntityVersionHash(NSData value);
 
-    /**
-     * sourceExpression</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSEntityMapping_class/index.html#//apple_ref/occ/instp/NSEntityMapping/sourceExpression">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setSourceExpression:")
     public native void setSourceExpression(NSExpression value);
 
-    /**
-     * userInfo</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSEntityMapping_class/index.html#//apple_ref/occ/instp/NSEntityMapping/userInfo">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setUserInfo:")
     public native void setUserInfo(NSDictionary<?, ?> value);
 
-    /**
-     * sourceEntityName</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSEntityMapping_class/index.html#//apple_ref/occ/instp/NSEntityMapping/sourceEntityName">iOS Dev Center</a>
-     */
     @Generated
     @Selector("sourceEntityName")
     public native String sourceEntityName();
 
-    /**
-     * sourceEntityVersionHash</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSEntityMapping_class/index.html#//apple_ref/occ/instp/NSEntityMapping/sourceEntityVersionHash">iOS Dev Center</a>
-     */
     @Generated
     @Selector("sourceEntityVersionHash")
     public native NSData sourceEntityVersionHash();
 
-    /**
-     * sourceExpression</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSEntityMapping_class/index.html#//apple_ref/occ/instp/NSEntityMapping/sourceExpression">iOS Dev Center</a>
-     */
     @Generated
     @Selector("sourceExpression")
     public native NSExpression sourceExpression();
 
-    /**
-     * userInfo</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSEntityMapping_class/index.html#//apple_ref/occ/instp/NSEntityMapping/userInfo">iOS Dev Center</a>
-     */
     @Generated
     @Selector("userInfo")
     public native NSDictionary<?, ?> userInfo();

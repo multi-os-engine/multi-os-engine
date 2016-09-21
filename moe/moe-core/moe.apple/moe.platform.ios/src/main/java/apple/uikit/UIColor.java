@@ -66,188 +66,96 @@ public class UIColor extends NSObject implements NSSecureCoding, NSCopying {
     @Selector("alloc")
     public static native UIColor alloc();
 
-    /**
-     * blackColor</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIColor_Class/index.html#//apple_ref/occ/clm/UIColor/blackColor">iOS Dev Center</a>
-     */
     @Generated
     @Selector("blackColor")
     public static native UIColor blackColor();
 
-    /**
-     * blueColor</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIColor_Class/index.html#//apple_ref/occ/clm/UIColor/blueColor">iOS Dev Center</a>
-     */
     @Generated
     @Selector("blueColor")
     public static native UIColor blueColor();
 
-    /**
-     * brownColor</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIColor_Class/index.html#//apple_ref/occ/clm/UIColor/brownColor">iOS Dev Center</a>
-     */
     @Generated
     @Selector("brownColor")
     public static native UIColor brownColor();
 
-    /**
-     * clearColor</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIColor_Class/index.html#//apple_ref/occ/clm/UIColor/clearColor">iOS Dev Center</a>
-     */
     @Generated
     @Selector("clearColor")
     public static native UIColor clearColor();
 
-    /**
-     * colorWithCGColor:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIColor_Class/index.html#//apple_ref/occ/clm/UIColor/colorWithCGColor:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("colorWithCGColor:")
     public static native UIColor colorWithCGColor(CGColorRef cgColor);
 
-    /**
-     * colorWithCIColor:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIColor_Class/index.html#//apple_ref/occ/clm/UIColor/colorWithCIColor:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("colorWithCIColor:")
     public static native UIColor colorWithCIColor(CIColor ciColor);
 
-    /**
-     * colorWithHue:saturation:brightness:alpha:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIColor_Class/index.html#//apple_ref/occ/clm/UIColor/colorWithHue:saturation:brightness:alpha:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("colorWithHue:saturation:brightness:alpha:")
     public static native UIColor colorWithHueSaturationBrightnessAlpha(@NFloat double hue, @NFloat double saturation,
             @NFloat double brightness, @NFloat double alpha);
 
-    /**
-     * colorWithPatternImage:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIColor_Class/index.html#//apple_ref/occ/clm/UIColor/colorWithPatternImage:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("colorWithPatternImage:")
     public static native UIColor colorWithPatternImage(UIImage image);
 
-    /**
-     * colorWithRed:green:blue:alpha:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIColor_Class/index.html#//apple_ref/occ/clm/UIColor/colorWithRed:green:blue:alpha:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("colorWithRed:green:blue:alpha:")
     public static native UIColor colorWithRedGreenBlueAlpha(@NFloat double red, @NFloat double green,
             @NFloat double blue, @NFloat double alpha);
 
-    /**
-     * colorWithWhite:alpha:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIColor_Class/index.html#//apple_ref/occ/clm/UIColor/colorWithWhite:alpha:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("colorWithWhite:alpha:")
     public static native UIColor colorWithWhiteAlpha(@NFloat double white, @NFloat double alpha);
 
-    /**
-     * cyanColor</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIColor_Class/index.html#//apple_ref/occ/clm/UIColor/cyanColor">iOS Dev Center</a>
-     */
     @Generated
     @Selector("cyanColor")
     public static native UIColor cyanColor();
 
-    /**
-     * darkGrayColor</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIColor_Class/index.html#//apple_ref/occ/clm/UIColor/darkGrayColor">iOS Dev Center</a>
-     */
     @Generated
     @Selector("darkGrayColor")
     public static native UIColor darkGrayColor();
 
-    /**
-     * darkTextColor</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIColor_Class/index.html#//apple_ref/occ/clm/UIColor/darkTextColor">iOS Dev Center</a>
-     */
     @Generated
     @Selector("darkTextColor")
     public static native UIColor darkTextColor();
 
-    /**
-     * grayColor</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIColor_Class/index.html#//apple_ref/occ/clm/UIColor/grayColor">iOS Dev Center</a>
-     */
     @Generated
     @Selector("grayColor")
     public static native UIColor grayColor();
 
-    /**
-     * greenColor</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIColor_Class/index.html#//apple_ref/occ/clm/UIColor/greenColor">iOS Dev Center</a>
-     */
     @Generated
     @Selector("greenColor")
     public static native UIColor greenColor();
 
-    /**
-     * groupTableViewBackgroundColor</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIColor_Class/index.html#//apple_ref/occ/clm/UIColor/groupTableViewBackgroundColor">iOS Dev Center</a>
-     */
     @Generated
     @Selector("groupTableViewBackgroundColor")
     public static native UIColor groupTableViewBackgroundColor();
 
-    /**
-     * lightGrayColor</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIColor_Class/index.html#//apple_ref/occ/clm/UIColor/lightGrayColor">iOS Dev Center</a>
-     */
     @Generated
     @Selector("lightGrayColor")
     public static native UIColor lightGrayColor();
 
-    /**
-     * lightTextColor</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIColor_Class/index.html#//apple_ref/occ/clm/UIColor/lightTextColor">iOS Dev Center</a>
-     */
     @Generated
     @Selector("lightTextColor")
     public static native UIColor lightTextColor();
 
-    /**
-     * magentaColor</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIColor_Class/index.html#//apple_ref/occ/clm/UIColor/magentaColor">iOS Dev Center</a>
-     */
     @Generated
     @Selector("magentaColor")
     public static native UIColor magentaColor();
 
-    /**
-     * orangeColor</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIColor_Class/index.html#//apple_ref/occ/clm/UIColor/orangeColor">iOS Dev Center</a>
-     */
     @Generated
     @Selector("orangeColor")
     public static native UIColor orangeColor();
 
-    /**
-     * purpleColor</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIColor_Class/index.html#//apple_ref/occ/clm/UIColor/purpleColor">iOS Dev Center</a>
-     */
     @Generated
     @Selector("purpleColor")
     public static native UIColor purpleColor();
 
-    /**
-     * redColor</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIColor_Class/index.html#//apple_ref/occ/clm/UIColor/redColor">iOS Dev Center</a>
-     */
     @Generated
     @Selector("redColor")
     public static native UIColor redColor();
 
-    /**
-     * scrollViewTexturedBackgroundColor</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIColor_Class/index.html#//apple_ref/occ/clm/UIColor/scrollViewTexturedBackgroundColor">iOS Dev Center</a>
-     */
     @Generated
     @Deprecated
     @Selector("scrollViewTexturedBackgroundColor")
@@ -257,36 +165,20 @@ public class UIColor extends NSObject implements NSSecureCoding, NSCopying {
     @Selector("supportsSecureCoding")
     public static native boolean supportsSecureCoding();
 
-    /**
-     * underPageBackgroundColor</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIColor_Class/index.html#//apple_ref/occ/clm/UIColor/underPageBackgroundColor">iOS Dev Center</a>
-     */
     @Generated
     @Deprecated
     @Selector("underPageBackgroundColor")
     public static native UIColor underPageBackgroundColor();
 
-    /**
-     * viewFlipsideBackgroundColor</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIColor_Class/index.html#//apple_ref/occ/clm/UIColor/viewFlipsideBackgroundColor">iOS Dev Center</a>
-     */
     @Generated
     @Deprecated
     @Selector("viewFlipsideBackgroundColor")
     public static native UIColor viewFlipsideBackgroundColor();
 
-    /**
-     * whiteColor</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIColor_Class/index.html#//apple_ref/occ/clm/UIColor/whiteColor">iOS Dev Center</a>
-     */
     @Generated
     @Selector("whiteColor")
     public static native UIColor whiteColor();
 
-    /**
-     * yellowColor</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIColor_Class/index.html#//apple_ref/occ/clm/UIColor/yellowColor">iOS Dev Center</a>
-     */
     @Generated
     @Selector("yellowColor")
     public static native UIColor yellowColor();
@@ -391,26 +283,14 @@ public class UIColor extends NSObject implements NSSecureCoding, NSCopying {
     @NInt
     public static native long version_static();
 
-    /**
-     * CGColor</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIColor_Class/index.html#//apple_ref/occ/instm/UIColor/CGColor">iOS Dev Center</a>
-     */
     @Generated
     @Selector("CGColor")
     public native CGColorRef CGColor();
 
-    /**
-     * CIColor</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIColor_Class/index.html#//apple_ref/occ/instp/UIColor/CIColor">iOS Dev Center</a>
-     */
     @Generated
     @Selector("CIColor")
     public native CIColor CIColor();
 
-    /**
-     * colorWithAlphaComponent:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIColor_Class/index.html#//apple_ref/occ/instm/UIColor/colorWithAlphaComponent:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("colorWithAlphaComponent:")
     public native UIColor colorWithAlphaComponent(@NFloat double alpha);
@@ -425,27 +305,15 @@ public class UIColor extends NSObject implements NSSecureCoding, NSCopying {
     @Selector("encodeWithCoder:")
     public native void encodeWithCoder(NSCoder aCoder);
 
-    /**
-     * getHue:saturation:brightness:alpha:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIColor_Class/index.html#//apple_ref/occ/instm/UIColor/getHue:saturation:brightness:alpha:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("getHue:saturation:brightness:alpha:")
     public native boolean getHueSaturationBrightnessAlpha(NFloatPtr hue, NFloatPtr saturation, NFloatPtr brightness,
             NFloatPtr alpha);
 
-    /**
-     * getRed:green:blue:alpha:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIColor_Class/index.html#//apple_ref/occ/instm/UIColor/getRed:green:blue:alpha:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("getRed:green:blue:alpha:")
     public native boolean getRedGreenBlueAlpha(NFloatPtr red, NFloatPtr green, NFloatPtr blue, NFloatPtr alpha);
 
-    /**
-     * getWhite:alpha:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIColor_Class/index.html#//apple_ref/occ/instm/UIColor/getWhite:alpha:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("getWhite:alpha:")
     public native boolean getWhiteAlpha(NFloatPtr white, NFloatPtr alpha);
@@ -454,18 +322,10 @@ public class UIColor extends NSObject implements NSSecureCoding, NSCopying {
     @Selector("init")
     public native UIColor init();
 
-    /**
-     * initWithCGColor:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIColor_Class/index.html#//apple_ref/occ/instm/UIColor/initWithCGColor:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithCGColor:")
     public native UIColor initWithCGColor(CGColorRef cgColor);
 
-    /**
-     * initWithCIColor:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIColor_Class/index.html#//apple_ref/occ/instm/UIColor/initWithCIColor:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithCIColor:")
     public native UIColor initWithCIColor(CIColor ciColor);
@@ -474,60 +334,32 @@ public class UIColor extends NSObject implements NSSecureCoding, NSCopying {
     @Selector("initWithCoder:")
     public native UIColor initWithCoder(NSCoder aDecoder);
 
-    /**
-     * initWithHue:saturation:brightness:alpha:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIColor_Class/index.html#//apple_ref/occ/instm/UIColor/initWithHue:saturation:brightness:alpha:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithHue:saturation:brightness:alpha:")
     public native UIColor initWithHueSaturationBrightnessAlpha(@NFloat double hue, @NFloat double saturation,
             @NFloat double brightness, @NFloat double alpha);
 
-    /**
-     * initWithPatternImage:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIColor_Class/index.html#//apple_ref/occ/instm/UIColor/initWithPatternImage:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithPatternImage:")
     public native UIColor initWithPatternImage(UIImage image);
 
-    /**
-     * initWithRed:green:blue:alpha:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIColor_Class/index.html#//apple_ref/occ/instm/UIColor/initWithRed:green:blue:alpha:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithRed:green:blue:alpha:")
     public native UIColor initWithRedGreenBlueAlpha(@NFloat double red, @NFloat double green, @NFloat double blue,
             @NFloat double alpha);
 
-    /**
-     * initWithWhite:alpha:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIColor_Class/index.html#//apple_ref/occ/instm/UIColor/initWithWhite:alpha:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithWhite:alpha:")
     public native UIColor initWithWhiteAlpha(@NFloat double white, @NFloat double alpha);
 
-    /**
-     * set</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIColor_Class/index.html#//apple_ref/occ/instm/UIColor/set">iOS Dev Center</a>
-     */
     @Generated
     @Selector("set")
     public native void set();
 
-    /**
-     * setFill</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIColor_Class/index.html#//apple_ref/occ/instm/UIColor/setFill">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setFill")
     public native void setFill();
 
-    /**
-     * setStroke</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIColor_Class/index.html#//apple_ref/occ/instm/UIColor/setStroke">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setStroke")
     public native void setStroke();

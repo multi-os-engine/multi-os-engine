@@ -59,82 +59,42 @@ public class NSFileHandle extends NSObject implements NSSecureCoding {
     @Selector("alloc")
     public static native NSFileHandle alloc();
 
-    /**
-     * fileHandleForReadingAtPath:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSFileHandle_Class/index.html#//apple_ref/occ/clm/NSFileHandle/fileHandleForReadingAtPath:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("fileHandleForReadingAtPath:")
     public static native NSFileHandle fileHandleForReadingAtPath(String path);
 
-    /**
-     * fileHandleForReadingFromURL:error:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSFileHandle_Class/index.html#//apple_ref/occ/clm/NSFileHandle/fileHandleForReadingFromURL:error:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("fileHandleForReadingFromURL:error:")
     public static native NSFileHandle fileHandleForReadingFromURLError(NSURL url, Ptr<NSError> error);
 
-    /**
-     * fileHandleForUpdatingAtPath:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSFileHandle_Class/index.html#//apple_ref/occ/clm/NSFileHandle/fileHandleForUpdatingAtPath:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("fileHandleForUpdatingAtPath:")
     public static native NSFileHandle fileHandleForUpdatingAtPath(String path);
 
-    /**
-     * fileHandleForUpdatingURL:error:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSFileHandle_Class/index.html#//apple_ref/occ/clm/NSFileHandle/fileHandleForUpdatingURL:error:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("fileHandleForUpdatingURL:error:")
     public static native NSFileHandle fileHandleForUpdatingURLError(NSURL url, Ptr<NSError> error);
 
-    /**
-     * fileHandleForWritingAtPath:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSFileHandle_Class/index.html#//apple_ref/occ/clm/NSFileHandle/fileHandleForWritingAtPath:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("fileHandleForWritingAtPath:")
     public static native NSFileHandle fileHandleForWritingAtPath(String path);
 
-    /**
-     * fileHandleForWritingToURL:error:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSFileHandle_Class/index.html#//apple_ref/occ/clm/NSFileHandle/fileHandleForWritingToURL:error:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("fileHandleForWritingToURL:error:")
     public static native NSFileHandle fileHandleForWritingToURLError(NSURL url, Ptr<NSError> error);
 
-    /**
-     * fileHandleWithNullDevice</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSFileHandle_Class/index.html#//apple_ref/occ/clm/NSFileHandle/fileHandleWithNullDevice">iOS Dev Center</a>
-     */
     @Generated
     @Selector("fileHandleWithNullDevice")
     public static native NSFileHandle fileHandleWithNullDevice();
 
-    /**
-     * fileHandleWithStandardError</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSFileHandle_Class/index.html#//apple_ref/occ/clm/NSFileHandle/fileHandleWithStandardError">iOS Dev Center</a>
-     */
     @Generated
     @Selector("fileHandleWithStandardError")
     public static native NSFileHandle fileHandleWithStandardError();
 
-    /**
-     * fileHandleWithStandardInput</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSFileHandle_Class/index.html#//apple_ref/occ/clm/NSFileHandle/fileHandleWithStandardInput">iOS Dev Center</a>
-     */
     @Generated
     @Selector("fileHandleWithStandardInput")
     public static native NSFileHandle fileHandleWithStandardInput();
 
-    /**
-     * fileHandleWithStandardOutput</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSFileHandle_Class/index.html#//apple_ref/occ/clm/NSFileHandle/fileHandleWithStandardOutput">iOS Dev Center</a>
-     */
     @Generated
     @Selector("fileHandleWithStandardOutput")
     public static native NSFileHandle fileHandleWithStandardOutput();
@@ -243,34 +203,18 @@ public class NSFileHandle extends NSObject implements NSSecureCoding {
     @NInt
     public static native long version_static();
 
-    /**
-     * acceptConnectionInBackgroundAndNotify</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSFileHandle_Class/index.html#//apple_ref/occ/instm/NSFileHandle/acceptConnectionInBackgroundAndNotify">iOS Dev Center</a>
-     */
     @Generated
     @Selector("acceptConnectionInBackgroundAndNotify")
     public native void acceptConnectionInBackgroundAndNotify();
 
-    /**
-     * acceptConnectionInBackgroundAndNotifyForModes:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSFileHandle_Class/index.html#//apple_ref/occ/instm/NSFileHandle/acceptConnectionInBackgroundAndNotifyForModes:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("acceptConnectionInBackgroundAndNotifyForModes:")
     public native void acceptConnectionInBackgroundAndNotifyForModes(NSArray<String> modes);
 
-    /**
-     * availableData</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSFileHandle_Class/index.html#//apple_ref/occ/instp/NSFileHandle/availableData">iOS Dev Center</a>
-     */
     @Generated
     @Selector("availableData")
     public native NSData availableData();
 
-    /**
-     * closeFile</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSFileHandle_Class/index.html#//apple_ref/occ/instm/NSFileHandle/closeFile">iOS Dev Center</a>
-     */
     @Generated
     @Selector("closeFile")
     public native void closeFile();
@@ -279,10 +223,6 @@ public class NSFileHandle extends NSObject implements NSSecureCoding {
     @Selector("encodeWithCoder:")
     public native void encodeWithCoder(NSCoder aCoder);
 
-    /**
-     * fileDescriptor</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSFileHandle_Class/index.html#//apple_ref/occ/instp/NSFileHandle/fileDescriptor">iOS Dev Center</a>
-     */
     @Generated
     @Selector("fileDescriptor")
     public native int fileDescriptor();
@@ -295,107 +235,55 @@ public class NSFileHandle extends NSObject implements NSSecureCoding {
     @Selector("initWithCoder:")
     public native NSFileHandle initWithCoder(NSCoder coder);
 
-    /**
-     * initWithFileDescriptor:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSFileHandle_Class/index.html#//apple_ref/occ/instm/NSFileHandle/initWithFileDescriptor:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithFileDescriptor:")
     public native NSFileHandle initWithFileDescriptor(int fd);
 
-    /**
-     * initWithFileDescriptor:closeOnDealloc:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSFileHandle_Class/index.html#//apple_ref/occ/instm/NSFileHandle/initWithFileDescriptor:closeOnDealloc:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithFileDescriptor:closeOnDealloc:")
     public native NSFileHandle initWithFileDescriptorCloseOnDealloc(int fd, boolean closeopt);
 
-    /**
-     * offsetInFile</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSFileHandle_Class/index.html#//apple_ref/occ/instp/NSFileHandle/offsetInFile">iOS Dev Center</a>
-     */
     @Generated
     @Selector("offsetInFile")
     public native long offsetInFile();
 
-    /**
-     * readDataOfLength:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSFileHandle_Class/index.html#//apple_ref/occ/instm/NSFileHandle/readDataOfLength:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("readDataOfLength:")
     public native NSData readDataOfLength(@NUInt long length);
 
-    /**
-     * readDataToEndOfFile</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSFileHandle_Class/index.html#//apple_ref/occ/instm/NSFileHandle/readDataToEndOfFile">iOS Dev Center</a>
-     */
     @Generated
     @Selector("readDataToEndOfFile")
     public native NSData readDataToEndOfFile();
 
-    /**
-     * readInBackgroundAndNotify</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSFileHandle_Class/index.html#//apple_ref/occ/instm/NSFileHandle/readInBackgroundAndNotify">iOS Dev Center</a>
-     */
     @Generated
     @Selector("readInBackgroundAndNotify")
     public native void readInBackgroundAndNotify();
 
-    /**
-     * readInBackgroundAndNotifyForModes:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSFileHandle_Class/index.html#//apple_ref/occ/instm/NSFileHandle/readInBackgroundAndNotifyForModes:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("readInBackgroundAndNotifyForModes:")
     public native void readInBackgroundAndNotifyForModes(NSArray<String> modes);
 
-    /**
-     * readToEndOfFileInBackgroundAndNotify</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSFileHandle_Class/index.html#//apple_ref/occ/instm/NSFileHandle/readToEndOfFileInBackgroundAndNotify">iOS Dev Center</a>
-     */
     @Generated
     @Selector("readToEndOfFileInBackgroundAndNotify")
     public native void readToEndOfFileInBackgroundAndNotify();
 
-    /**
-     * readToEndOfFileInBackgroundAndNotifyForModes:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSFileHandle_Class/index.html#//apple_ref/occ/instm/NSFileHandle/readToEndOfFileInBackgroundAndNotifyForModes:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("readToEndOfFileInBackgroundAndNotifyForModes:")
     public native void readToEndOfFileInBackgroundAndNotifyForModes(NSArray<String> modes);
 
-    /**
-     * seekToEndOfFile</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSFileHandle_Class/index.html#//apple_ref/occ/instm/NSFileHandle/seekToEndOfFile">iOS Dev Center</a>
-     */
     @Generated
     @Selector("seekToEndOfFile")
     public native long seekToEndOfFile();
 
-    /**
-     * seekToFileOffset:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSFileHandle_Class/index.html#//apple_ref/occ/instm/NSFileHandle/seekToFileOffset:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("seekToFileOffset:")
     public native void seekToFileOffset(long offset);
 
-    /**
-     * readabilityHandler</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSFileHandle_Class/index.html#//apple_ref/occ/instp/NSFileHandle/readabilityHandler">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setReadabilityHandler:")
     public native void setReadabilityHandler(
             @ObjCBlock(name = "call_setReadabilityHandler") Block_setReadabilityHandler value);
 
-    /**
-     * writeabilityHandler</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSFileHandle_Class/index.html#//apple_ref/occ/instp/NSFileHandle/writeabilityHandler">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setWriteabilityHandler:")
     public native void setWriteabilityHandler(
@@ -407,59 +295,31 @@ public class NSFileHandle extends NSObject implements NSSecureCoding {
         return supportsSecureCoding();
     }
 
-    /**
-     * synchronizeFile</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSFileHandle_Class/index.html#//apple_ref/occ/instm/NSFileHandle/synchronizeFile">iOS Dev Center</a>
-     */
     @Generated
     @Selector("synchronizeFile")
     public native void synchronizeFile();
 
-    /**
-     * truncateFileAtOffset:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSFileHandle_Class/index.html#//apple_ref/occ/instm/NSFileHandle/truncateFileAtOffset:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("truncateFileAtOffset:")
     public native void truncateFileAtOffset(long offset);
 
-    /**
-     * waitForDataInBackgroundAndNotify</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSFileHandle_Class/index.html#//apple_ref/occ/instm/NSFileHandle/waitForDataInBackgroundAndNotify">iOS Dev Center</a>
-     */
     @Generated
     @Selector("waitForDataInBackgroundAndNotify")
     public native void waitForDataInBackgroundAndNotify();
 
-    /**
-     * waitForDataInBackgroundAndNotifyForModes:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSFileHandle_Class/index.html#//apple_ref/occ/instm/NSFileHandle/waitForDataInBackgroundAndNotifyForModes:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("waitForDataInBackgroundAndNotifyForModes:")
     public native void waitForDataInBackgroundAndNotifyForModes(NSArray<String> modes);
 
-    /**
-     * writeData:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSFileHandle_Class/index.html#//apple_ref/occ/instm/NSFileHandle/writeData:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("writeData:")
     public native void writeData(NSData data);
 
-    /**
-     * readabilityHandler</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSFileHandle_Class/index.html#//apple_ref/occ/instp/NSFileHandle/readabilityHandler">iOS Dev Center</a>
-     */
     @Generated
     @Selector("readabilityHandler")
     @ObjCBlock(name = "call_readabilityHandler_ret")
     public native Block_readabilityHandler_ret readabilityHandler();
 
-    /**
-     * writeabilityHandler</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSFileHandle_Class/index.html#//apple_ref/occ/instp/NSFileHandle/writeabilityHandler">iOS Dev Center</a>
-     */
     @Generated
     @Selector("writeabilityHandler")
     @ObjCBlock(name = "call_writeabilityHandler_ret")

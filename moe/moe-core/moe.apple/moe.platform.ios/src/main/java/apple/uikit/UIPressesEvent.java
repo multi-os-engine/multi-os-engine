@@ -158,10 +158,6 @@ public class UIPressesEvent extends UIEvent {
     @NInt
     public static native long version_static();
 
-    /**
-     * allPresses</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPressesEvent_Ref/index.html#//apple_ref/occ/instm/UIPressesEvent/allPresses">iOS Dev Center</a>
-     */
     @Generated
     @Selector("allPresses")
     public native NSSet<? extends UIPress> allPresses();
@@ -170,10 +166,6 @@ public class UIPressesEvent extends UIEvent {
     @Selector("init")
     public native UIPressesEvent init();
 
-    /**
-     * pressesForGestureRecognizer:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPressesEvent_Ref/index.html#//apple_ref/occ/instm/UIPressesEvent/pressesForGestureRecognizer:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("pressesForGestureRecognizer:")
     public native NSSet<? extends UIPress> pressesForGestureRecognizer(UIGestureRecognizer gesture);

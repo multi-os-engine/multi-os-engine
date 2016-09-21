@@ -30,35 +30,19 @@ import org.moe.natj.objc.ann.Selector;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("NSFetchedResultsSectionInfo")
 public interface NSFetchedResultsSectionInfo {
-    /**
-     * indexTitle</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreData/Reference/NSFetchedResultsSectionInfo_Protocol/index.html#//apple_ref/occ/intfp/NSFetchedResultsSectionInfo/indexTitle">iOS Dev Center</a>
-     */
     @Generated
     @Selector("indexTitle")
     String indexTitle();
 
-    /**
-     * name</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreData/Reference/NSFetchedResultsSectionInfo_Protocol/index.html#//apple_ref/occ/intfp/NSFetchedResultsSectionInfo/name">iOS Dev Center</a>
-     */
     @Generated
     @Selector("name")
     String name();
 
-    /**
-     * numberOfObjects</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreData/Reference/NSFetchedResultsSectionInfo_Protocol/index.html#//apple_ref/occ/intfp/NSFetchedResultsSectionInfo/numberOfObjects">iOS Dev Center</a>
-     */
     @Generated
     @Selector("numberOfObjects")
     @NUInt
     long numberOfObjects();
 
-    /**
-     * objects</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreData/Reference/NSFetchedResultsSectionInfo_Protocol/index.html#//apple_ref/occ/intfp/NSFetchedResultsSectionInfo/objects">iOS Dev Center</a>
-     */
     @Generated
     @Selector("objects")
     NSArray<?> objects();

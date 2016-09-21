@@ -57,35 +57,19 @@ public class NSKeyedArchiver extends NSCoder {
     @Selector("alloc")
     public static native NSKeyedArchiver alloc();
 
-    /**
-     * archiveRootObject:toFile:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSKeyedArchiver_Class/index.html#//apple_ref/occ/clm/NSKeyedArchiver/archiveRootObject:toFile:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("archiveRootObject:toFile:")
     public static native boolean archiveRootObjectToFile(@Mapped(ObjCObjectMapper.class) Object rootObject,
             String path);
 
-    /**
-     * archivedDataWithRootObject:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSKeyedArchiver_Class/index.html#//apple_ref/occ/clm/NSKeyedArchiver/archivedDataWithRootObject:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("archivedDataWithRootObject:")
     public static native NSData archivedDataWithRootObject(@Mapped(ObjCObjectMapper.class) Object rootObject);
 
-    /**
-     * classNameForClass:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSKeyedArchiver_Class/index.html#//apple_ref/occ/clm/NSKeyedArchiver/classNameForClass:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("classNameForClass:")
     public static native String classNameForClass_static(Class cls);
 
-    /**
-     * setClassName:forClass:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSKeyedArchiver_Class/index.html#//apple_ref/occ/clm/NSKeyedArchiver/setClassName:forClass:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setClassName:forClass:")
     public static native void setClassNameForClass_static(String codedName, Class cls);
@@ -190,99 +174,51 @@ public class NSKeyedArchiver extends NSCoder {
     @NInt
     public static native long version_static();
 
-    /**
-     * classNameForClass:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSKeyedArchiver_Class/index.html#//apple_ref/occ/instm/NSKeyedArchiver/classNameForClass:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("classNameForClass:")
     public native String classNameForClass(Class cls);
 
-    /**
-     * delegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSKeyedArchiver_Class/index.html#//apple_ref/occ/instp/NSKeyedArchiver/delegate">iOS Dev Center</a>
-     */
     @Generated
     @Selector("delegate")
     @MappedReturn(ObjCObjectMapper.class)
     public native NSKeyedArchiverDelegate delegate();
 
-    /**
-     * encodeBool:forKey:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSKeyedArchiver_Class/index.html#//apple_ref/occ/instm/NSKeyedArchiver/encodeBool:forKey:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("encodeBool:forKey:")
     public native void encodeBoolForKey(boolean boolv, String key);
 
-    /**
-     * encodeBytes:length:forKey:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSKeyedArchiver_Class/index.html#//apple_ref/occ/instm/NSKeyedArchiver/encodeBytes:length:forKey:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("encodeBytes:length:forKey:")
     public native void encodeBytesLengthForKey(ConstBytePtr bytesp, @NUInt long lenv, String key);
 
-    /**
-     * encodeConditionalObject:forKey:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSKeyedArchiver_Class/index.html#//apple_ref/occ/instm/NSKeyedArchiver/encodeConditionalObject:forKey:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("encodeConditionalObject:forKey:")
     public native void encodeConditionalObjectForKey(@Mapped(ObjCObjectMapper.class) Object objv, String key);
 
-    /**
-     * encodeDouble:forKey:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSKeyedArchiver_Class/index.html#//apple_ref/occ/instm/NSKeyedArchiver/encodeDouble:forKey:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("encodeDouble:forKey:")
     public native void encodeDoubleForKey(double realv, String key);
 
-    /**
-     * encodeFloat:forKey:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSKeyedArchiver_Class/index.html#//apple_ref/occ/instm/NSKeyedArchiver/encodeFloat:forKey:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("encodeFloat:forKey:")
     public native void encodeFloatForKey(float realv, String key);
 
-    /**
-     * encodeInt32:forKey:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSKeyedArchiver_Class/index.html#//apple_ref/occ/instm/NSKeyedArchiver/encodeInt32:forKey:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("encodeInt32:forKey:")
     public native void encodeInt32ForKey(int intv, String key);
 
-    /**
-     * encodeInt64:forKey:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSKeyedArchiver_Class/index.html#//apple_ref/occ/instm/NSKeyedArchiver/encodeInt64:forKey:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("encodeInt64:forKey:")
     public native void encodeInt64ForKey(long intv, String key);
 
-    /**
-     * encodeInt:forKey:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSKeyedArchiver_Class/index.html#//apple_ref/occ/instm/NSKeyedArchiver/encodeInt:forKey:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("encodeInt:forKey:")
     public native void encodeIntForKey(int intv, String key);
 
-    /**
-     * encodeObject:forKey:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSKeyedArchiver_Class/index.html#//apple_ref/occ/instm/NSKeyedArchiver/encodeObject:forKey:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("encodeObject:forKey:")
     public native void encodeObjectForKey(@Mapped(ObjCObjectMapper.class) Object objv, String key);
 
-    /**
-     * finishEncoding</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSKeyedArchiver_Class/index.html#//apple_ref/occ/instm/NSKeyedArchiver/finishEncoding">iOS Dev Center</a>
-     */
     @Generated
     @Selector("finishEncoding")
     public native void finishEncoding();
@@ -291,43 +227,23 @@ public class NSKeyedArchiver extends NSCoder {
     @Selector("init")
     public native NSKeyedArchiver init();
 
-    /**
-     * initForWritingWithMutableData:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSKeyedArchiver_Class/index.html#//apple_ref/occ/instm/NSKeyedArchiver/initForWritingWithMutableData:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initForWritingWithMutableData:")
     public native NSKeyedArchiver initForWritingWithMutableData(NSMutableData data);
 
-    /**
-     * outputFormat</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSKeyedArchiver_Class/index.html#//apple_ref/occ/instp/NSKeyedArchiver/outputFormat">iOS Dev Center</a>
-     */
     @Generated
     @Selector("outputFormat")
     @NUInt
     public native long outputFormat();
 
-    /**
-     * setClassName:forClass:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSKeyedArchiver_Class/index.html#//apple_ref/occ/instm/NSKeyedArchiver/setClassName:forClass:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setClassName:forClass:")
     public native void setClassNameForClass(String codedName, Class cls);
 
-    /**
-     * delegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSKeyedArchiver_Class/index.html#//apple_ref/occ/instp/NSKeyedArchiver/delegate">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setDelegate:")
     public native void setDelegate_unsafe(@Mapped(ObjCObjectMapper.class) NSKeyedArchiverDelegate value);
 
-    /**
-     * delegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSKeyedArchiver_Class/index.html#//apple_ref/occ/instp/NSKeyedArchiver/delegate">iOS Dev Center</a>
-     */
     @Generated
     public void setDelegate(@Mapped(ObjCObjectMapper.class) NSKeyedArchiverDelegate value) {
         Object __old = delegate();
@@ -340,10 +256,6 @@ public class NSKeyedArchiver extends NSCoder {
         }
     }
 
-    /**
-     * outputFormat</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSKeyedArchiver_Class/index.html#//apple_ref/occ/instp/NSKeyedArchiver/outputFormat">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setOutputFormat:")
     public native void setOutputFormat(@NUInt long value);

@@ -58,10 +58,6 @@ public class AVMetadataItemFilter extends NSObject {
     @Selector("alloc")
     public static native AVMetadataItemFilter alloc();
 
-    /**
-     * metadataItemFilterForSharing</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVMetadataItemFilter_Class/index.html#//apple_ref/occ/clm/AVMetadataItemFilter/metadataItemFilterForSharing">iOS Dev Center</a>
-     */
     @Generated
     @Selector("metadataItemFilterForSharing")
     public static native AVMetadataItemFilter metadataItemFilterForSharing();

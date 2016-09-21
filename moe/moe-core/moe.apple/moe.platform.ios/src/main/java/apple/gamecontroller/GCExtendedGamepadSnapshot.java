@@ -163,34 +163,18 @@ public class GCExtendedGamepadSnapshot extends GCExtendedGamepad {
     @Selector("init")
     public native GCExtendedGamepadSnapshot init();
 
-    /**
-     * initWithController:snapshotData:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameController/Reference/GCExtendedGamePadSnapshot_Ref/index.html#//apple_ref/occ/instm/GCExtendedGamepadSnapshot/initWithController:snapshotData:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithController:snapshotData:")
     public native GCExtendedGamepadSnapshot initWithControllerSnapshotData(GCController controller, NSData data);
 
-    /**
-     * initWithSnapshotData:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameController/Reference/GCExtendedGamePadSnapshot_Ref/index.html#//apple_ref/occ/instm/GCExtendedGamepadSnapshot/initWithSnapshotData:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithSnapshotData:")
     public native GCExtendedGamepadSnapshot initWithSnapshotData(NSData data);
 
-    /**
-     * snapshotData</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameController/Reference/GCExtendedGamePadSnapshot_Ref/index.html#//apple_ref/occ/instp/GCExtendedGamepadSnapshot/snapshotData">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setSnapshotData:")
     public native void setSnapshotData(NSData value);
 
-    /**
-     * snapshotData</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameController/Reference/GCExtendedGamePadSnapshot_Ref/index.html#//apple_ref/occ/instp/GCExtendedGamepadSnapshot/snapshotData">iOS Dev Center</a>
-     */
     @Generated
     @Selector("snapshotData")
     public native NSData snapshotData();

@@ -164,35 +164,19 @@ public class NEVPNProtocolIKEv2 extends NEVPNProtocolIPSec {
     @NInt
     public static native long version_static();
 
-    /**
-     * IKESecurityAssociationParameters</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEVPNProtocolIKEv2ClassRef/index.html#//apple_ref/occ/instp/NEVPNProtocolIKEv2/IKESecurityAssociationParameters">iOS Dev Center</a>
-     */
     @Generated
     @Selector("IKESecurityAssociationParameters")
     public native NEVPNIKEv2SecurityAssociationParameters IKESecurityAssociationParameters();
 
-    /**
-     * certificateType</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEVPNProtocolIKEv2ClassRef/index.html#//apple_ref/occ/instp/NEVPNProtocolIKEv2/certificateType">iOS Dev Center</a>
-     */
     @Generated
     @Selector("certificateType")
     @NInt
     public native long certificateType();
 
-    /**
-     * childSecurityAssociationParameters</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEVPNProtocolIKEv2ClassRef/index.html#//apple_ref/occ/instp/NEVPNProtocolIKEv2/childSecurityAssociationParameters">iOS Dev Center</a>
-     */
     @Generated
     @Selector("childSecurityAssociationParameters")
     public native NEVPNIKEv2SecurityAssociationParameters childSecurityAssociationParameters();
 
-    /**
-     * deadPeerDetectionRate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEVPNProtocolIKEv2ClassRef/index.html#//apple_ref/occ/instp/NEVPNProtocolIKEv2/deadPeerDetectionRate">iOS Dev Center</a>
-     */
     @Generated
     @Selector("deadPeerDetectionRate")
     @NInt
@@ -202,146 +186,74 @@ public class NEVPNProtocolIKEv2 extends NEVPNProtocolIPSec {
     @Selector("init")
     public native NEVPNProtocolIKEv2 init();
 
-    /**
-     * serverCertificateCommonName</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEVPNProtocolIKEv2ClassRef/index.html#//apple_ref/occ/instp/NEVPNProtocolIKEv2/serverCertificateCommonName">iOS Dev Center</a>
-     */
     @Generated
     @Selector("serverCertificateCommonName")
     public native String serverCertificateCommonName();
 
-    /**
-     * serverCertificateIssuerCommonName</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEVPNProtocolIKEv2ClassRef/index.html#//apple_ref/occ/instp/NEVPNProtocolIKEv2/serverCertificateIssuerCommonName">iOS Dev Center</a>
-     */
     @Generated
     @Selector("serverCertificateIssuerCommonName")
     public native String serverCertificateIssuerCommonName();
 
-    /**
-     * certificateType</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEVPNProtocolIKEv2ClassRef/index.html#//apple_ref/occ/instp/NEVPNProtocolIKEv2/certificateType">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setCertificateType:")
     public native void setCertificateType(@NInt long value);
 
-    /**
-     * deadPeerDetectionRate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEVPNProtocolIKEv2ClassRef/index.html#//apple_ref/occ/instp/NEVPNProtocolIKEv2/deadPeerDetectionRate">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setDeadPeerDetectionRate:")
     public native void setDeadPeerDetectionRate(@NInt long value);
 
-    /**
-     * serverCertificateCommonName</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEVPNProtocolIKEv2ClassRef/index.html#//apple_ref/occ/instp/NEVPNProtocolIKEv2/serverCertificateCommonName">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setServerCertificateCommonName:")
     public native void setServerCertificateCommonName(String value);
 
-    /**
-     * serverCertificateIssuerCommonName</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEVPNProtocolIKEv2ClassRef/index.html#//apple_ref/occ/instp/NEVPNProtocolIKEv2/serverCertificateIssuerCommonName">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setServerCertificateIssuerCommonName:")
     public native void setServerCertificateIssuerCommonName(String value);
 
-    /**
-     * disableMOBIKE</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEVPNProtocolIKEv2ClassRef/index.html#//apple_ref/occ/instp/NEVPNProtocolIKEv2/disableMOBIKE">iOS Dev Center</a>
-     */
     @Generated
     @Selector("disableMOBIKE")
     public native boolean disableMOBIKE();
 
-    /**
-     * disableRedirect</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEVPNProtocolIKEv2ClassRef/index.html#//apple_ref/occ/instp/NEVPNProtocolIKEv2/disableRedirect">iOS Dev Center</a>
-     */
     @Generated
     @Selector("disableRedirect")
     public native boolean disableRedirect();
 
-    /**
-     * enablePFS</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEVPNProtocolIKEv2ClassRef/index.html#//apple_ref/occ/instp/NEVPNProtocolIKEv2/enablePFS">iOS Dev Center</a>
-     */
     @Generated
     @Selector("enablePFS")
     public native boolean enablePFS();
 
-    /**
-     * enableRevocationCheck</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEVPNProtocolIKEv2ClassRef/index.html#//apple_ref/occ/instp/NEVPNProtocolIKEv2/enableRevocationCheck">iOS Dev Center</a>
-     */
     @Generated
     @Selector("enableRevocationCheck")
     public native boolean enableRevocationCheck();
 
-    /**
-     * disableMOBIKE</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEVPNProtocolIKEv2ClassRef/index.html#//apple_ref/occ/instp/NEVPNProtocolIKEv2/disableMOBIKE">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setDisableMOBIKE:")
     public native void setDisableMOBIKE(boolean value);
 
-    /**
-     * disableRedirect</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEVPNProtocolIKEv2ClassRef/index.html#//apple_ref/occ/instp/NEVPNProtocolIKEv2/disableRedirect">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setDisableRedirect:")
     public native void setDisableRedirect(boolean value);
 
-    /**
-     * enablePFS</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEVPNProtocolIKEv2ClassRef/index.html#//apple_ref/occ/instp/NEVPNProtocolIKEv2/enablePFS">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setEnablePFS:")
     public native void setEnablePFS(boolean value);
 
-    /**
-     * enableRevocationCheck</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEVPNProtocolIKEv2ClassRef/index.html#//apple_ref/occ/instp/NEVPNProtocolIKEv2/enableRevocationCheck">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setEnableRevocationCheck:")
     public native void setEnableRevocationCheck(boolean value);
 
-    /**
-     * strictRevocationCheck</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEVPNProtocolIKEv2ClassRef/index.html#//apple_ref/occ/instp/NEVPNProtocolIKEv2/strictRevocationCheck">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setStrictRevocationCheck:")
     public native void setStrictRevocationCheck(boolean value);
 
-    /**
-     * useConfigurationAttributeInternalIPSubnet</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEVPNProtocolIKEv2ClassRef/index.html#//apple_ref/occ/instp/NEVPNProtocolIKEv2/useConfigurationAttributeInternalIPSubnet">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setUseConfigurationAttributeInternalIPSubnet:")
     public native void setUseConfigurationAttributeInternalIPSubnet(boolean value);
 
-    /**
-     * strictRevocationCheck</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEVPNProtocolIKEv2ClassRef/index.html#//apple_ref/occ/instp/NEVPNProtocolIKEv2/strictRevocationCheck">iOS Dev Center</a>
-     */
     @Generated
     @Selector("strictRevocationCheck")
     public native boolean strictRevocationCheck();
 
-    /**
-     * useConfigurationAttributeInternalIPSubnet</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEVPNProtocolIKEv2ClassRef/index.html#//apple_ref/occ/instp/NEVPNProtocolIKEv2/useConfigurationAttributeInternalIPSubnet">iOS Dev Center</a>
-     */
     @Generated
     @Selector("useConfigurationAttributeInternalIPSubnet")
     public native boolean useConfigurationAttributeInternalIPSubnet();

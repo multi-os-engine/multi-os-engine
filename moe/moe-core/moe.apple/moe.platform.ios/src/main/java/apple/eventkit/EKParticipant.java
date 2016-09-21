@@ -162,19 +162,11 @@ public class EKParticipant extends EKObject implements NSCopying {
     @NInt
     public static native long version_static();
 
-    /**
-     * ABRecordWithAddressBook:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/EventKit/Reference/EKParticipantClassRef/index.html#//apple_ref/occ/instm/EKParticipant/ABRecordWithAddressBook:">iOS Dev Center</a>
-     */
     @Deprecated
     @Generated
     @Selector("ABRecordWithAddressBook:")
     public native ConstVoidPtr ABRecordWithAddressBook(ConstVoidPtr addressBook);
 
-    /**
-     * URL</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/EventKit/Reference/EKParticipantClassRef/index.html#//apple_ref/occ/instp/EKParticipant/URL">iOS Dev Center</a>
-     */
     @Generated
     @Selector("URL")
     public native NSURL URL();
@@ -193,36 +185,20 @@ public class EKParticipant extends EKObject implements NSCopying {
     @Selector("isCurrentUser")
     public native boolean isCurrentUser();
 
-    /**
-     * name</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/EventKit/Reference/EKParticipantClassRef/index.html#//apple_ref/occ/instp/EKParticipant/name">iOS Dev Center</a>
-     */
     @Generated
     @Selector("name")
     public native String name();
 
-    /**
-     * participantRole</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/EventKit/Reference/EKParticipantClassRef/index.html#//apple_ref/occ/instp/EKParticipant/participantRole">iOS Dev Center</a>
-     */
     @NInt
     @Generated
     @Selector("participantRole")
     public native long participantRole();
 
-    /**
-     * participantStatus</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/EventKit/Reference/EKParticipantClassRef/index.html#//apple_ref/occ/instp/EKParticipant/participantStatus">iOS Dev Center</a>
-     */
     @NInt
     @Generated
     @Selector("participantStatus")
     public native long participantStatus();
 
-    /**
-     * participantType</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/EventKit/Reference/EKParticipantClassRef/index.html#//apple_ref/occ/instp/EKParticipant/participantType">iOS Dev Center</a>
-     */
     @NInt
     @Generated
     @Selector("participantType")

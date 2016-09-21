@@ -61,43 +61,23 @@ public class PKPassLibrary extends NSObject {
     @Selector("alloc")
     public static native PKPassLibrary alloc();
 
-    /**
-     * isPassLibraryAvailable</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/PassKit/Reference/PKPassLibrary_Ref/index.html#//apple_ref/occ/clm/PKPassLibrary/isPassLibraryAvailable">iOS Dev Center</a>
-     */
     @Generated
     @Selector("isPassLibraryAvailable")
     public static native boolean isPassLibraryAvailable();
 
-    /**
-     * isPaymentPassActivationAvailable</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/PassKit/Reference/PKPassLibrary_Ref/index.html#//apple_ref/occ/clm/PKPassLibrary/isPaymentPassActivationAvailable">iOS Dev Center</a>
-     */
     @Deprecated
     @Generated
     @Selector("isPaymentPassActivationAvailable")
     public static native boolean isPaymentPassActivationAvailable_static();
 
-    /**
-     * endAutomaticPassPresentationSuppressionWithRequestToken:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/PassKit/Reference/PKPassLibrary_Ref/index.html#//apple_ref/occ/clm/PKPassLibrary/endAutomaticPassPresentationSuppressionWithRequestToken:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("endAutomaticPassPresentationSuppressionWithRequestToken:")
     public static native void endAutomaticPassPresentationSuppressionWithRequestToken(@NUInt long requestToken);
 
-    /**
-     * isSuppressingAutomaticPassPresentation</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/PassKit/Reference/PKPassLibrary_Ref/index.html#//apple_ref/occ/clm/PKPassLibrary/isSuppressingAutomaticPassPresentation">iOS Dev Center</a>
-     */
     @Generated
     @Selector("isSuppressingAutomaticPassPresentation")
     public static native boolean isSuppressingAutomaticPassPresentation();
 
-    /**
-     * requestAutomaticPassPresentationSuppressionWithResponseHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/PassKit/Reference/PKPassLibrary_Ref/index.html#//apple_ref/occ/clm/PKPassLibrary/requestAutomaticPassPresentationSuppressionWithResponseHandler:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("requestAutomaticPassPresentationSuppressionWithResponseHandler:")
     @NUInt
@@ -204,38 +184,22 @@ public class PKPassLibrary extends NSObject {
     @NInt
     public static native long version_static();
 
-    /**
-     * activatePaymentPass:withActivationCode:completion:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/PassKit/Reference/PKPassLibrary_Ref/index.html#//apple_ref/occ/instm/PKPassLibrary/activatePaymentPass:withActivationCode:completion:">iOS Dev Center</a>
-     */
     @Deprecated
     @Generated
     @Selector("activatePaymentPass:withActivationCode:completion:")
     public native void activatePaymentPassWithActivationCodeCompletion(PKPaymentPass paymentPass, String activationCode,
             @ObjCBlock(name = "call_activatePaymentPassWithActivationCodeCompletion") Block_activatePaymentPassWithActivationCodeCompletion completion);
 
-    /**
-     * activatePaymentPass:withActivationData:completion:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/PassKit/Reference/PKPassLibrary_Ref/index.html#//apple_ref/occ/instm/PKPassLibrary/activatePaymentPass:withActivationData:completion:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("activatePaymentPass:withActivationData:completion:")
     public native void activatePaymentPassWithActivationDataCompletion(PKPaymentPass paymentPass, NSData activationData,
             @ObjCBlock(name = "call_activatePaymentPassWithActivationDataCompletion") Block_activatePaymentPassWithActivationDataCompletion completion);
 
-    /**
-     * addPasses:withCompletionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/PassKit/Reference/PKPassLibrary_Ref/index.html#//apple_ref/occ/instm/PKPassLibrary/addPasses:withCompletionHandler:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("addPasses:withCompletionHandler:")
     public native void addPassesWithCompletionHandler(NSArray<? extends PKPass> passes,
             @ObjCBlock(name = "call_addPassesWithCompletionHandler") Block_addPassesWithCompletionHandler completion);
 
-    /**
-     * containsPass:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/PassKit/Reference/PKPassLibrary_Ref/index.html#//apple_ref/occ/instm/PKPassLibrary/containsPass:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("containsPass:")
     public native boolean containsPass(PKPass pass);
@@ -244,74 +208,38 @@ public class PKPassLibrary extends NSObject {
     @Selector("init")
     public native PKPassLibrary init();
 
-    /**
-     * openPaymentSetup</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/PassKit/Reference/PKPassLibrary_Ref/index.html#//apple_ref/occ/instm/PKPassLibrary/openPaymentSetup">iOS Dev Center</a>
-     */
     @Generated
     @Selector("openPaymentSetup")
     public native void openPaymentSetup();
 
-    /**
-     * passWithPassTypeIdentifier:serialNumber:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/PassKit/Reference/PKPassLibrary_Ref/index.html#//apple_ref/occ/instm/PKPassLibrary/passWithPassTypeIdentifier:serialNumber:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("passWithPassTypeIdentifier:serialNumber:")
     public native PKPass passWithPassTypeIdentifierSerialNumber(String identifier, String serialNumber);
 
-    /**
-     * passes</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/PassKit/Reference/PKPassLibrary_Ref/index.html#//apple_ref/occ/instm/PKPassLibrary/passes">iOS Dev Center</a>
-     */
     @Generated
     @Selector("passes")
     public native NSArray<? extends PKPass> passes();
 
-    /**
-     * passesOfType:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/PassKit/Reference/PKPassLibrary_Ref/index.html#//apple_ref/occ/instm/PKPassLibrary/passesOfType:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("passesOfType:")
     public native NSArray<? extends PKPass> passesOfType(@NUInt long passType);
 
-    /**
-     * removePass:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/PassKit/Reference/PKPassLibrary_Ref/index.html#//apple_ref/occ/instm/PKPassLibrary/removePass:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("removePass:")
     public native void removePass(PKPass pass);
 
-    /**
-     * replacePassWithPass:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/PassKit/Reference/PKPassLibrary_Ref/index.html#//apple_ref/occ/instm/PKPassLibrary/replacePassWithPass:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("replacePassWithPass:")
     public native boolean replacePassWithPass(PKPass pass);
 
-    /**
-     * canAddPaymentPassWithPrimaryAccountIdentifier:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/PassKit/Reference/PKPassLibrary_Ref/index.html#//apple_ref/occ/instm/PKPassLibrary/canAddPaymentPassWithPrimaryAccountIdentifier:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("canAddPaymentPassWithPrimaryAccountIdentifier:")
     public native boolean canAddPaymentPassWithPrimaryAccountIdentifier(String primaryAccountIdentifier);
 
-    /**
-     * isPaymentPassActivationAvailable</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/PassKit/Reference/PKPassLibrary_Ref/index.html#//apple_ref/occ/instm/PKPassLibrary/isPaymentPassActivationAvailable">iOS Dev Center</a>
-     */
     @Generated
     @Selector("isPaymentPassActivationAvailable")
     public native boolean isPaymentPassActivationAvailable();
 
-    /**
-     * remotePaymentPasses</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/PassKit/Reference/PKPassLibrary_Ref/index.html#//apple_ref/occ/instm/PKPassLibrary/remotePaymentPasses">iOS Dev Center</a>
-     */
     @Generated
     @Selector("remotePaymentPasses")
     public native NSArray<? extends PKPaymentPass> remotePaymentPasses();

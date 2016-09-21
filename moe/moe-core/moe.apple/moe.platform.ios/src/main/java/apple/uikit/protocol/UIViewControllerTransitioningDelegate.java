@@ -34,10 +34,6 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("UIViewControllerTransitioningDelegate")
 public interface UIViewControllerTransitioningDelegate {
-    /**
-     * animationControllerForDismissedController:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIViewControllerTransitioningDelegate_protocol/index.html#//apple_ref/occ/intfm/UIViewControllerTransitioningDelegate/animationControllerForDismissedController:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("animationControllerForDismissedController:")
@@ -46,10 +42,6 @@ public interface UIViewControllerTransitioningDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * animationControllerForPresentedController:presentingController:sourceController:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIViewControllerTransitioningDelegate_protocol/index.html#//apple_ref/occ/intfm/UIViewControllerTransitioningDelegate/animationControllerForPresentedController:presentingController:sourceController:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("animationControllerForPresentedController:presentingController:sourceController:")
@@ -59,10 +51,6 @@ public interface UIViewControllerTransitioningDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * interactionControllerForDismissal:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIViewControllerTransitioningDelegate_protocol/index.html#//apple_ref/occ/intfm/UIViewControllerTransitioningDelegate/interactionControllerForDismissal:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("interactionControllerForDismissal:")
@@ -71,10 +59,6 @@ public interface UIViewControllerTransitioningDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * interactionControllerForPresentation:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIViewControllerTransitioningDelegate_protocol/index.html#//apple_ref/occ/intfm/UIViewControllerTransitioningDelegate/interactionControllerForPresentation:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("interactionControllerForPresentation:")
@@ -83,10 +67,6 @@ public interface UIViewControllerTransitioningDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * presentationControllerForPresentedViewController:presentingViewController:sourceViewController:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIViewControllerTransitioningDelegate_protocol/index.html#//apple_ref/occ/intfm/UIViewControllerTransitioningDelegate/presentationControllerForPresentedViewController:presentingViewController:sourceViewController:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("presentationControllerForPresentedViewController:presentingViewController:sourceViewController:")

@@ -72,10 +72,6 @@ public class SCNShape extends SCNGeometry {
     public static native SCNShape geometryWithSourcesElements(NSArray<? extends SCNGeometrySource> sources,
             NSArray<? extends SCNGeometryElement> elements);
 
-    /**
-     * shapeWithPath:extrusionDepth:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNShape_Class/index.html#//apple_ref/occ/clm/SCNShape/shapeWithPath:extrusionDepth:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("shapeWithPath:extrusionDepth:")
     public static native SCNShape shapeWithPathExtrusionDepth(UIBezierPath path, @NFloat double extrusionDepth);
@@ -188,36 +184,20 @@ public class SCNShape extends SCNGeometry {
     @NInt
     public static native long version_static();
 
-    /**
-     * chamferMode</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNShape_Class/index.html#//apple_ref/occ/instp/SCNShape/chamferMode">iOS Dev Center</a>
-     */
     @Generated
     @Selector("chamferMode")
     @NInt
     public native long chamferMode();
 
-    /**
-     * chamferProfile</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNShape_Class/index.html#//apple_ref/occ/instp/SCNShape/chamferProfile">iOS Dev Center</a>
-     */
     @Generated
     @Selector("chamferProfile")
     public native UIBezierPath chamferProfile();
 
-    /**
-     * chamferRadius</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNShape_Class/index.html#//apple_ref/occ/instp/SCNShape/chamferRadius">iOS Dev Center</a>
-     */
     @Generated
     @Selector("chamferRadius")
     @NFloat
     public native double chamferRadius();
 
-    /**
-     * extrusionDepth</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNShape_Class/index.html#//apple_ref/occ/instp/SCNShape/extrusionDepth">iOS Dev Center</a>
-     */
     @Generated
     @Selector("extrusionDepth")
     @NFloat
@@ -227,50 +207,26 @@ public class SCNShape extends SCNGeometry {
     @Selector("init")
     public native SCNShape init();
 
-    /**
-     * path</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNShape_Class/index.html#//apple_ref/occ/instp/SCNShape/path">iOS Dev Center</a>
-     */
     @Generated
     @Selector("path")
     public native UIBezierPath path();
 
-    /**
-     * chamferMode</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNShape_Class/index.html#//apple_ref/occ/instp/SCNShape/chamferMode">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setChamferMode:")
     public native void setChamferMode(@NInt long value);
 
-    /**
-     * chamferProfile</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNShape_Class/index.html#//apple_ref/occ/instp/SCNShape/chamferProfile">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setChamferProfile:")
     public native void setChamferProfile(UIBezierPath value);
 
-    /**
-     * chamferRadius</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNShape_Class/index.html#//apple_ref/occ/instp/SCNShape/chamferRadius">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setChamferRadius:")
     public native void setChamferRadius(@NFloat double value);
 
-    /**
-     * extrusionDepth</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNShape_Class/index.html#//apple_ref/occ/instp/SCNShape/extrusionDepth">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setExtrusionDepth:")
     public native void setExtrusionDepth(@NFloat double value);
 
-    /**
-     * path</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNShape_Class/index.html#//apple_ref/occ/instp/SCNShape/path">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setPath:")
     public native void setPath(UIBezierPath value);

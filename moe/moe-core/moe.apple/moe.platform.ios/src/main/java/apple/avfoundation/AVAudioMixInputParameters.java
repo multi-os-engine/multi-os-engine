@@ -165,18 +165,10 @@ public class AVAudioMixInputParameters extends NSObject implements NSCopying, NS
     @NInt
     public static native long version_static();
 
-    /**
-     * audioTapProcessor</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioMixInputParameters_Class/index.html#//apple_ref/occ/instp/AVAudioMixInputParameters/audioTapProcessor">iOS Dev Center</a>
-     */
     @Generated
     @Selector("audioTapProcessor")
     public native MTAudioProcessingTapRef audioTapProcessor();
 
-    /**
-     * audioTimePitchAlgorithm</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioMixInputParameters_Class/index.html#//apple_ref/occ/instp/AVAudioMixInputParameters/audioTimePitchAlgorithm">iOS Dev Center</a>
-     */
     @Generated
     @Selector("audioTimePitchAlgorithm")
     public native String audioTimePitchAlgorithm();
@@ -187,10 +179,6 @@ public class AVAudioMixInputParameters extends NSObject implements NSCopying, NS
     @MappedReturn(ObjCObjectMapper.class)
     public native Object copyWithZone(VoidPtr zone);
 
-    /**
-     * getVolumeRampForTime:startVolume:endVolume:timeRange:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioMixInputParameters_Class/index.html#//apple_ref/occ/instm/AVAudioMixInputParameters/getVolumeRampForTime:startVolume:endVolume:timeRange:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("getVolumeRampForTime:startVolume:endVolume:timeRange:")
     public native boolean getVolumeRampForTimeStartVolumeEndVolumeTimeRange(@ByValue CMTime time, FloatPtr startVolume,
@@ -205,10 +193,6 @@ public class AVAudioMixInputParameters extends NSObject implements NSCopying, NS
     @MappedReturn(ObjCObjectMapper.class)
     public native Object mutableCopyWithZone(VoidPtr zone);
 
-    /**
-     * trackID</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioMixInputParameters_Class/index.html#//apple_ref/occ/instp/AVAudioMixInputParameters/trackID">iOS Dev Center</a>
-     */
     @Generated
     @Selector("trackID")
     public native int trackID();

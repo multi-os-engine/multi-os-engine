@@ -34,10 +34,6 @@ import org.moe.natj.objc.ann.Selector;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("NSFilePresenter")
 public interface NSFilePresenter {
-    /**
-     * accommodatePresentedItemDeletionWithCompletionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSFilePresenter_protocol/index.html#//apple_ref/occ/intfm/NSFilePresenter/accommodatePresentedItemDeletionWithCompletionHandler:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("accommodatePresentedItemDeletionWithCompletionHandler:")
@@ -46,10 +42,6 @@ public interface NSFilePresenter {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * accommodatePresentedSubitemDeletionAtURL:completionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSFilePresenter_protocol/index.html#//apple_ref/occ/intfm/NSFilePresenter/accommodatePresentedSubitemDeletionAtURL:completionHandler:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("accommodatePresentedSubitemDeletionAtURL:completionHandler:")
@@ -58,10 +50,6 @@ public interface NSFilePresenter {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * presentedItemDidChange</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSFilePresenter_protocol/index.html#//apple_ref/occ/intfm/NSFilePresenter/presentedItemDidChange">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("presentedItemDidChange")
@@ -69,10 +57,6 @@ public interface NSFilePresenter {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * presentedItemDidGainVersion:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSFilePresenter_protocol/index.html#//apple_ref/occ/intfm/NSFilePresenter/presentedItemDidGainVersion:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("presentedItemDidGainVersion:")
@@ -80,10 +64,6 @@ public interface NSFilePresenter {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * presentedItemDidLoseVersion:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSFilePresenter_protocol/index.html#//apple_ref/occ/intfm/NSFilePresenter/presentedItemDidLoseVersion:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("presentedItemDidLoseVersion:")
@@ -91,10 +71,6 @@ public interface NSFilePresenter {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * presentedItemDidMoveToURL:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSFilePresenter_protocol/index.html#//apple_ref/occ/intfm/NSFilePresenter/presentedItemDidMoveToURL:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("presentedItemDidMoveToURL:")
@@ -102,10 +78,6 @@ public interface NSFilePresenter {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * presentedItemDidResolveConflictVersion:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSFilePresenter_protocol/index.html#//apple_ref/occ/intfm/NSFilePresenter/presentedItemDidResolveConflictVersion:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("presentedItemDidResolveConflictVersion:")
@@ -113,26 +85,14 @@ public interface NSFilePresenter {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * presentedItemOperationQueue</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSFilePresenter_protocol/index.html#//apple_ref/occ/intfp/NSFilePresenter/presentedItemOperationQueue">iOS Dev Center</a>
-     */
     @Generated
     @Selector("presentedItemOperationQueue")
     NSOperationQueue presentedItemOperationQueue();
 
-    /**
-     * presentedItemURL</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSFilePresenter_protocol/index.html#//apple_ref/occ/intfp/NSFilePresenter/presentedItemURL">iOS Dev Center</a>
-     */
     @Generated
     @Selector("presentedItemURL")
     NSURL presentedItemURL();
 
-    /**
-     * presentedSubitemAtURL:didGainVersion:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSFilePresenter_protocol/index.html#//apple_ref/occ/intfm/NSFilePresenter/presentedSubitemAtURL:didGainVersion:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("presentedSubitemAtURL:didGainVersion:")
@@ -140,10 +100,6 @@ public interface NSFilePresenter {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * presentedSubitemAtURL:didLoseVersion:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSFilePresenter_protocol/index.html#//apple_ref/occ/intfm/NSFilePresenter/presentedSubitemAtURL:didLoseVersion:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("presentedSubitemAtURL:didLoseVersion:")
@@ -151,10 +107,6 @@ public interface NSFilePresenter {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * presentedSubitemAtURL:didMoveToURL:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSFilePresenter_protocol/index.html#//apple_ref/occ/intfm/NSFilePresenter/presentedSubitemAtURL:didMoveToURL:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("presentedSubitemAtURL:didMoveToURL:")
@@ -162,10 +114,6 @@ public interface NSFilePresenter {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * presentedSubitemAtURL:didResolveConflictVersion:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSFilePresenter_protocol/index.html#//apple_ref/occ/intfm/NSFilePresenter/presentedSubitemAtURL:didResolveConflictVersion:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("presentedSubitemAtURL:didResolveConflictVersion:")
@@ -173,10 +121,6 @@ public interface NSFilePresenter {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * presentedSubitemDidAppearAtURL:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSFilePresenter_protocol/index.html#//apple_ref/occ/intfm/NSFilePresenter/presentedSubitemDidAppearAtURL:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("presentedSubitemDidAppearAtURL:")
@@ -184,10 +128,6 @@ public interface NSFilePresenter {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * presentedSubitemDidChangeAtURL:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSFilePresenter_protocol/index.html#//apple_ref/occ/intfm/NSFilePresenter/presentedSubitemDidChangeAtURL:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("presentedSubitemDidChangeAtURL:")
@@ -195,10 +135,6 @@ public interface NSFilePresenter {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * savePresentedItemChangesWithCompletionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSFilePresenter_protocol/index.html#//apple_ref/occ/intfm/NSFilePresenter/savePresentedItemChangesWithCompletionHandler:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("savePresentedItemChangesWithCompletionHandler:")

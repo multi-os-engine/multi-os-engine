@@ -263,27 +263,15 @@ public class HKActivitySummaryQuery extends HKQuery {
     @Selector("init")
     public native HKActivitySummaryQuery init();
 
-    /**
-     * initWithPredicate:resultsHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HealthKit/Reference/HKActivitySummaryQuery_Class/index.html#//apple_ref/occ/instm/HKActivitySummaryQuery/initWithPredicate:resultsHandler:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithPredicate:resultsHandler:")
     public native HKActivitySummaryQuery initWithPredicateResultsHandler(NSPredicate predicate,
             @ObjCBlock(name = "call_initWithPredicateResultsHandler") Block_initWithPredicateResultsHandler handler);
 
-    /**
-     * updateHandler</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HealthKit/Reference/HKActivitySummaryQuery_Class/index.html#//apple_ref/occ/instp/HKActivitySummaryQuery/updateHandler">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setUpdateHandler:")
     public native void setUpdateHandler(@ObjCBlock(name = "call_setUpdateHandler") Block_setUpdateHandler value);
 
-    /**
-     * updateHandler</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HealthKit/Reference/HKActivitySummaryQuery_Class/index.html#//apple_ref/occ/instp/HKActivitySummaryQuery/updateHandler">iOS Dev Center</a>
-     */
     @Generated
     @Selector("updateHandler")
     @ObjCBlock(name = "call_updateHandler_ret")

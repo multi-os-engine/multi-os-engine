@@ -162,10 +162,6 @@ public class GKPolygonObstacle extends GKObstacle {
     @Selector("init")
     public native GKPolygonObstacle init();
 
-    /**
-     * vertexCount</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameplayKit/Reference/GKPolygonObstacle_Class/index.html#//apple_ref/occ/instp/GKPolygonObstacle/vertexCount">iOS Dev Center</a>
-     */
     @Generated
     @Selector("vertexCount")
     @NUInt

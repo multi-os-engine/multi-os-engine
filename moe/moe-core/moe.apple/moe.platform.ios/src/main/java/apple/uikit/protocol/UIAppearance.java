@@ -35,30 +35,18 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("UIAppearance")
 public interface UIAppearance {
-    /**
-     * appearance</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIAppearance_Protocol/index.html#//apple_ref/occ/intfcm/UIAppearance/appearance">iOS Dev Center</a>
-     */
     @Generated
     @Selector("appearance")
     @ProtocolClassMethod("appearance")
     @MappedReturn(ObjCObjectMapper.class)
     Object _appearance();
 
-    /**
-     * appearanceForTraitCollection:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIAppearance_Protocol/index.html#//apple_ref/occ/intfcm/UIAppearance/appearanceForTraitCollection:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("appearanceForTraitCollection:")
     @ProtocolClassMethod("appearanceForTraitCollection")
     @MappedReturn(ObjCObjectMapper.class)
     Object _appearanceForTraitCollection(UITraitCollection trait);
 
-    /**
-     * appearanceForTraitCollection:whenContainedIn:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIAppearance_Protocol/index.html#//apple_ref/occ/intfcm/UIAppearance/appearanceForTraitCollection:whenContainedIn:">iOS Dev Center</a>
-     */
     @Deprecated
     @Generated
     @Variadic()
@@ -68,10 +56,6 @@ public interface UIAppearance {
     Object _appearanceForTraitCollectionWhenContainedIn(UITraitCollection trait,
             @Mapped(ObjCObjectMapper.class) Object ContainerClass, Object... varargs);
 
-    /**
-     * appearanceWhenContainedIn:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIAppearance_Protocol/index.html#//apple_ref/occ/intfcm/UIAppearance/appearanceWhenContainedIn:">iOS Dev Center</a>
-     */
     @Deprecated
     @Generated
     @Variadic()

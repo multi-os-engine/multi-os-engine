@@ -28,18 +28,10 @@ import org.moe.natj.objc.ann.Selector;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("MDLTransformComponent")
 public interface MDLTransformComponent extends MDLComponent {
-    /**
-     * maximumTime</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLTransformComponent_Protocol/index.html#//apple_ref/occ/intfp/MDLTransformComponent/maximumTime">iOS Dev Center</a>
-     */
     @Generated
     @Selector("maximumTime")
     double maximumTime();
 
-    /**
-     * minimumTime</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLTransformComponent_Protocol/index.html#//apple_ref/occ/intfp/MDLTransformComponent/minimumTime">iOS Dev Center</a>
-     */
     @Generated
     @Selector("minimumTime")
     double minimumTime();

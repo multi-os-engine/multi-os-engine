@@ -160,19 +160,11 @@ public class PKPushRegistry extends NSObject {
     @NInt
     public static native long version_static();
 
-    /**
-     * delegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/PushKit/Reference/PKPushRegistry_Class/index.html#//apple_ref/occ/instp/PKPushRegistry/delegate">iOS Dev Center</a>
-     */
     @Generated
     @Selector("delegate")
     @MappedReturn(ObjCObjectMapper.class)
     public native PKPushRegistryDelegate delegate();
 
-    /**
-     * desiredPushTypes</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/PushKit/Reference/PKPushRegistry_Class/index.html#//apple_ref/occ/instp/PKPushRegistry/desiredPushTypes">iOS Dev Center</a>
-     */
     @Generated
     @Selector("desiredPushTypes")
     public native NSSet<?> desiredPushTypes();
@@ -181,34 +173,18 @@ public class PKPushRegistry extends NSObject {
     @Selector("init")
     public native PKPushRegistry init();
 
-    /**
-     * initWithQueue:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/PushKit/Reference/PKPushRegistry_Class/index.html#//apple_ref/occ/instm/PKPushRegistry/initWithQueue:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithQueue:")
     public native PKPushRegistry initWithQueue(NSObject queue);
 
-    /**
-     * pushTokenForType:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/PushKit/Reference/PKPushRegistry_Class/index.html#//apple_ref/occ/instm/PKPushRegistry/pushTokenForType:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("pushTokenForType:")
     public native NSData pushTokenForType(String type);
 
-    /**
-     * delegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/PushKit/Reference/PKPushRegistry_Class/index.html#//apple_ref/occ/instp/PKPushRegistry/delegate">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setDelegate:")
     public native void setDelegate_unsafe(@Mapped(ObjCObjectMapper.class) PKPushRegistryDelegate value);
 
-    /**
-     * delegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/PushKit/Reference/PKPushRegistry_Class/index.html#//apple_ref/occ/instp/PKPushRegistry/delegate">iOS Dev Center</a>
-     */
     @Generated
     public void setDelegate(@Mapped(ObjCObjectMapper.class) PKPushRegistryDelegate value) {
         Object __old = delegate();
@@ -221,10 +197,6 @@ public class PKPushRegistry extends NSObject {
         }
     }
 
-    /**
-     * desiredPushTypes</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/PushKit/Reference/PKPushRegistry_Class/index.html#//apple_ref/occ/instp/PKPushRegistry/desiredPushTypes">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setDesiredPushTypes:")
     public native void setDesiredPushTypes(NSSet<?> value);

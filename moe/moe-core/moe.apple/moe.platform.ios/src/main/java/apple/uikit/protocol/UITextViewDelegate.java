@@ -34,10 +34,6 @@ import org.moe.natj.objc.ann.Selector;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("UITextViewDelegate")
 public interface UITextViewDelegate extends UIScrollViewDelegate {
-    /**
-     * textView:shouldChangeTextInRange:replacementText:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITextViewDelegate_Protocol/index.html#//apple_ref/occ/intfm/UITextViewDelegate/textView:shouldChangeTextInRange:replacementText:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("textView:shouldChangeTextInRange:replacementText:")
@@ -46,10 +42,6 @@ public interface UITextViewDelegate extends UIScrollViewDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * textView:shouldInteractWithTextAttachment:inRange:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITextViewDelegate_Protocol/index.html#//apple_ref/occ/intfm/UITextViewDelegate/textView:shouldInteractWithTextAttachment:inRange:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("textView:shouldInteractWithTextAttachment:inRange:")
@@ -58,10 +50,6 @@ public interface UITextViewDelegate extends UIScrollViewDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * textView:shouldInteractWithURL:inRange:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITextViewDelegate_Protocol/index.html#//apple_ref/occ/intfm/UITextViewDelegate/textView:shouldInteractWithURL:inRange:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("textView:shouldInteractWithURL:inRange:")
@@ -70,10 +58,6 @@ public interface UITextViewDelegate extends UIScrollViewDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * textViewDidBeginEditing:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITextViewDelegate_Protocol/index.html#//apple_ref/occ/intfm/UITextViewDelegate/textViewDidBeginEditing:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("textViewDidBeginEditing:")
@@ -81,10 +65,6 @@ public interface UITextViewDelegate extends UIScrollViewDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * textViewDidChange:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITextViewDelegate_Protocol/index.html#//apple_ref/occ/intfm/UITextViewDelegate/textViewDidChange:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("textViewDidChange:")
@@ -92,10 +72,6 @@ public interface UITextViewDelegate extends UIScrollViewDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * textViewDidChangeSelection:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITextViewDelegate_Protocol/index.html#//apple_ref/occ/intfm/UITextViewDelegate/textViewDidChangeSelection:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("textViewDidChangeSelection:")
@@ -103,10 +79,6 @@ public interface UITextViewDelegate extends UIScrollViewDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * textViewDidEndEditing:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITextViewDelegate_Protocol/index.html#//apple_ref/occ/intfm/UITextViewDelegate/textViewDidEndEditing:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("textViewDidEndEditing:")
@@ -114,10 +86,6 @@ public interface UITextViewDelegate extends UIScrollViewDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * textViewShouldBeginEditing:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITextViewDelegate_Protocol/index.html#//apple_ref/occ/intfm/UITextViewDelegate/textViewShouldBeginEditing:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("textViewShouldBeginEditing:")
@@ -125,10 +93,6 @@ public interface UITextViewDelegate extends UIScrollViewDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * textViewShouldEndEditing:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITextViewDelegate_Protocol/index.html#//apple_ref/occ/intfm/UITextViewDelegate/textViewShouldEndEditing:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("textViewShouldEndEditing:")

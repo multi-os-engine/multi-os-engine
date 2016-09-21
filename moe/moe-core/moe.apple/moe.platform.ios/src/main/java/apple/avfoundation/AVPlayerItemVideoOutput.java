@@ -163,36 +163,20 @@ public class AVPlayerItemVideoOutput extends AVPlayerItemOutput {
     @NInt
     public static native long version_static();
 
-    /**
-     * copyPixelBufferForItemTime:itemTimeForDisplay:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVPlayerItemVideoOutput_Class/index.html#//apple_ref/occ/instm/AVPlayerItemVideoOutput/copyPixelBufferForItemTime:itemTimeForDisplay:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("copyPixelBufferForItemTime:itemTimeForDisplay:")
     public native CVBufferRef copyPixelBufferForItemTimeItemTimeForDisplay(@ByValue CMTime itemTime,
             CMTime outItemTimeForDisplay);
 
-    /**
-     * delegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVPlayerItemVideoOutput_Class/index.html#//apple_ref/occ/instp/AVPlayerItemVideoOutput/delegate">iOS Dev Center</a>
-     */
     @Generated
     @Selector("delegate")
     @MappedReturn(ObjCObjectMapper.class)
     public native AVPlayerItemOutputPullDelegate delegate();
 
-    /**
-     * delegateQueue</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVPlayerItemVideoOutput_Class/index.html#//apple_ref/occ/instp/AVPlayerItemVideoOutput/delegateQueue">iOS Dev Center</a>
-     */
     @Generated
     @Selector("delegateQueue")
     public native NSObject delegateQueue();
 
-    /**
-     * hasNewPixelBufferForItemTime:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVPlayerItemVideoOutput_Class/index.html#//apple_ref/occ/instm/AVPlayerItemVideoOutput/hasNewPixelBufferForItemTime:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("hasNewPixelBufferForItemTime:")
     public native boolean hasNewPixelBufferForItemTime(@ByValue CMTime itemTime);
@@ -201,26 +185,14 @@ public class AVPlayerItemVideoOutput extends AVPlayerItemOutput {
     @Selector("init")
     public native AVPlayerItemVideoOutput init();
 
-    /**
-     * initWithPixelBufferAttributes:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVPlayerItemVideoOutput_Class/index.html#//apple_ref/occ/instm/AVPlayerItemVideoOutput/initWithPixelBufferAttributes:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithPixelBufferAttributes:")
     public native AVPlayerItemVideoOutput initWithPixelBufferAttributes(NSDictionary<String, ?> pixelBufferAttributes);
 
-    /**
-     * requestNotificationOfMediaDataChangeWithAdvanceInterval:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVPlayerItemVideoOutput_Class/index.html#//apple_ref/occ/instm/AVPlayerItemVideoOutput/requestNotificationOfMediaDataChangeWithAdvanceInterval:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("requestNotificationOfMediaDataChangeWithAdvanceInterval:")
     public native void requestNotificationOfMediaDataChangeWithAdvanceInterval(double interval);
 
-    /**
-     * setDelegate:queue:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVPlayerItemVideoOutput_Class/index.html#//apple_ref/occ/instm/AVPlayerItemVideoOutput/setDelegate:queue:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setDelegate:queue:")
     public native void setDelegateQueue(@Mapped(ObjCObjectMapper.class) AVPlayerItemOutputPullDelegate delegate,

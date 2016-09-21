@@ -60,10 +60,6 @@ public class MTLRenderPassDescriptor extends NSObject implements NSCopying {
     @Selector("alloc")
     public static native MTLRenderPassDescriptor alloc();
 
-    /**
-     * renderPassDescriptor</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Metal/Reference/MTLRenderPassDescriptor_Ref/index.html#//apple_ref/occ/clm/MTLRenderPassDescriptor/renderPassDescriptor">iOS Dev Center</a>
-     */
     @Generated
     @Selector("renderPassDescriptor")
     public static native MTLRenderPassDescriptor renderPassDescriptor();
@@ -168,10 +164,6 @@ public class MTLRenderPassDescriptor extends NSObject implements NSCopying {
     @NInt
     public static native long version_static();
 
-    /**
-     * colorAttachments</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Metal/Reference/MTLRenderPassDescriptor_Ref/index.html#//apple_ref/occ/instp/MTLRenderPassDescriptor/colorAttachments">iOS Dev Center</a>
-     */
     @Generated
     @Selector("colorAttachments")
     public native MTLRenderPassColorAttachmentDescriptorArray colorAttachments();
@@ -182,10 +174,6 @@ public class MTLRenderPassDescriptor extends NSObject implements NSCopying {
     @MappedReturn(ObjCObjectMapper.class)
     public native Object copyWithZone(VoidPtr zone);
 
-    /**
-     * depthAttachment</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Metal/Reference/MTLRenderPassDescriptor_Ref/index.html#//apple_ref/occ/instp/MTLRenderPassDescriptor/depthAttachment">iOS Dev Center</a>
-     */
     @Generated
     @Selector("depthAttachment")
     public native MTLRenderPassDepthAttachmentDescriptor depthAttachment();
@@ -194,42 +182,22 @@ public class MTLRenderPassDescriptor extends NSObject implements NSCopying {
     @Selector("init")
     public native MTLRenderPassDescriptor init();
 
-    /**
-     * depthAttachment</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Metal/Reference/MTLRenderPassDescriptor_Ref/index.html#//apple_ref/occ/instp/MTLRenderPassDescriptor/depthAttachment">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setDepthAttachment:")
     public native void setDepthAttachment(MTLRenderPassDepthAttachmentDescriptor value);
 
-    /**
-     * stencilAttachment</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Metal/Reference/MTLRenderPassDescriptor_Ref/index.html#//apple_ref/occ/instp/MTLRenderPassDescriptor/stencilAttachment">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setStencilAttachment:")
     public native void setStencilAttachment(MTLRenderPassStencilAttachmentDescriptor value);
 
-    /**
-     * visibilityResultBuffer</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Metal/Reference/MTLRenderPassDescriptor_Ref/index.html#//apple_ref/occ/instp/MTLRenderPassDescriptor/visibilityResultBuffer">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setVisibilityResultBuffer:")
     public native void setVisibilityResultBuffer(@Mapped(ObjCObjectMapper.class) MTLBuffer value);
 
-    /**
-     * stencilAttachment</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Metal/Reference/MTLRenderPassDescriptor_Ref/index.html#//apple_ref/occ/instp/MTLRenderPassDescriptor/stencilAttachment">iOS Dev Center</a>
-     */
     @Generated
     @Selector("stencilAttachment")
     public native MTLRenderPassStencilAttachmentDescriptor stencilAttachment();
 
-    /**
-     * visibilityResultBuffer</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Metal/Reference/MTLRenderPassDescriptor_Ref/index.html#//apple_ref/occ/instp/MTLRenderPassDescriptor/visibilityResultBuffer">iOS Dev Center</a>
-     */
     @Generated
     @Selector("visibilityResultBuffer")
     @MappedReturn(ObjCObjectMapper.class)

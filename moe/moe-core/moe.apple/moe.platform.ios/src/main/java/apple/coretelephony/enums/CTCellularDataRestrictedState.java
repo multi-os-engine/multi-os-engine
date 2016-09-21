@@ -24,6 +24,7 @@ public final class CTCellularDataRestrictedState {
     @Generated @NUInt public static final long RestrictedStateUnknown = 0x0000000000000000L;
     @Generated @NUInt public static final long Restricted = 0x0000000000000001L;
     @Generated @NUInt public static final long NotRestricted = 0x0000000000000002L;
+
     @Generated
     private CTCellularDataRestrictedState() {
     }

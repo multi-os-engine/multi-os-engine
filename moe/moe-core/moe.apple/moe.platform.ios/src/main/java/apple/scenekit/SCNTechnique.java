@@ -71,18 +71,10 @@ public class SCNTechnique extends NSObject implements SCNAnimatable, NSCopying, 
     @Selector("supportsSecureCoding")
     public static native boolean supportsSecureCoding();
 
-    /**
-     * techniqueBySequencingTechniques:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNTechnique_Class/index.html#//apple_ref/occ/clm/SCNTechnique/techniqueBySequencingTechniques:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("techniqueBySequencingTechniques:")
     public static native SCNTechnique techniqueBySequencingTechniques(NSArray<? extends SCNTechnique> techniques);
 
-    /**
-     * techniqueWithDictionary:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNTechnique_Class/index.html#//apple_ref/occ/clm/SCNTechnique/techniqueWithDictionary:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("techniqueWithDictionary:")
     public static native SCNTechnique techniqueWithDictionary(NSDictionary<String, ?> dictionary);
@@ -205,10 +197,6 @@ public class SCNTechnique extends NSObject implements SCNAnimatable, NSCopying, 
     @MappedReturn(ObjCObjectMapper.class)
     public native Object copyWithZone(VoidPtr zone);
 
-    /**
-     * dictionaryRepresentation</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNTechnique_Class/index.html#//apple_ref/occ/instp/SCNTechnique/dictionaryRepresentation">iOS Dev Center</a>
-     */
     @Generated
     @Selector("dictionaryRepresentation")
     public native NSDictionary<String, ?> dictionaryRepresentation();
@@ -217,10 +205,6 @@ public class SCNTechnique extends NSObject implements SCNAnimatable, NSCopying, 
     @Selector("encodeWithCoder:")
     public native void encodeWithCoder(NSCoder aCoder);
 
-    /**
-     * handleBindingOfSymbol:usingBlock:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNTechnique_Class/index.html#//apple_ref/occ/instm/SCNTechnique/handleBindingOfSymbol:usingBlock:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("handleBindingOfSymbol:usingBlock:")
     public native void handleBindingOfSymbolUsingBlock(String symbol,
@@ -264,19 +248,11 @@ public class SCNTechnique extends NSObject implements SCNAnimatable, NSCopying, 
         return supportsSecureCoding();
     }
 
-    /**
-     * objectForKeyedSubscript:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNTechnique_Class/index.html#//apple_ref/occ/instm/SCNTechnique/objectForKeyedSubscript:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("objectForKeyedSubscript:")
     @MappedReturn(ObjCObjectMapper.class)
     public native Object objectForKeyedSubscript(@Mapped(ObjCObjectMapper.class) Object key);
 
-    /**
-     * setObject:forKeyedSubscript:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNTechnique_Class/index.html#//apple_ref/occ/instm/SCNTechnique/setObject:forKeyedSubscript:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setObject:forKeyedSubscript:")
     public native void setObjectForKeyedSubscript(@Mapped(ObjCObjectMapper.class) Object obj,

@@ -158,18 +158,10 @@ public class PHChange extends NSObject {
     @NInt
     public static native long version();
 
-    /**
-     * changeDetailsForFetchResult:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHChange_Class/index.html#//apple_ref/occ/instm/PHChange/changeDetailsForFetchResult:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("changeDetailsForFetchResult:")
     public native PHFetchResultChangeDetails changeDetailsForFetchResult(PHFetchResult<?> object);
 
-    /**
-     * changeDetailsForObject:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHChange_Class/index.html#//apple_ref/occ/instm/PHChange/changeDetailsForObject:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("changeDetailsForObject:")
     public native PHObjectChangeDetails changeDetailsForObject(PHObject object);

@@ -161,36 +161,20 @@ public class GLKEffectPropertyLight extends GLKEffectProperty {
     @NInt
     public static native long version_static();
 
-    /**
-     * ambientColor</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GLkit/Reference/GLKEffectPropertyLight_ClassRef/index.html#//apple_ref/occ/instp/GLKEffectPropertyLight/ambientColor">iOS Dev Center</a>
-     */
     @Generated
     @Selector("ambientColor")
     @ByValue
     public native GLKVector4 ambientColor();
 
-    /**
-     * constantAttenuation</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GLkit/Reference/GLKEffectPropertyLight_ClassRef/index.html#//apple_ref/occ/instp/GLKEffectPropertyLight/constantAttenuation">iOS Dev Center</a>
-     */
     @Generated
     @Selector("constantAttenuation")
     public native float constantAttenuation();
 
-    /**
-     * diffuseColor</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GLkit/Reference/GLKEffectPropertyLight_ClassRef/index.html#//apple_ref/occ/instp/GLKEffectPropertyLight/diffuseColor">iOS Dev Center</a>
-     */
     @Generated
     @Selector("diffuseColor")
     @ByValue
     public native GLKVector4 diffuseColor();
 
-    /**
-     * enabled</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GLkit/Reference/GLKEffectPropertyLight_ClassRef/index.html#//apple_ref/occ/instp/GLKEffectPropertyLight/enabled">iOS Dev Center</a>
-     */
     @Generated
     @Selector("enabled")
     public native byte enabled();
@@ -199,165 +183,85 @@ public class GLKEffectPropertyLight extends GLKEffectProperty {
     @Selector("init")
     public native GLKEffectPropertyLight init();
 
-    /**
-     * linearAttenuation</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GLkit/Reference/GLKEffectPropertyLight_ClassRef/index.html#//apple_ref/occ/instp/GLKEffectPropertyLight/linearAttenuation">iOS Dev Center</a>
-     */
     @Generated
     @Selector("linearAttenuation")
     public native float linearAttenuation();
 
-    /**
-     * position</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GLkit/Reference/GLKEffectPropertyLight_ClassRef/index.html#//apple_ref/occ/instp/GLKEffectPropertyLight/position">iOS Dev Center</a>
-     */
     @Generated
     @Selector("position")
     @ByValue
     public native GLKVector4 position();
 
-    /**
-     * quadraticAttenuation</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GLkit/Reference/GLKEffectPropertyLight_ClassRef/index.html#//apple_ref/occ/instp/GLKEffectPropertyLight/quadraticAttenuation">iOS Dev Center</a>
-     */
     @Generated
     @Selector("quadraticAttenuation")
     public native float quadraticAttenuation();
 
-    /**
-     * ambientColor</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GLkit/Reference/GLKEffectPropertyLight_ClassRef/index.html#//apple_ref/occ/instp/GLKEffectPropertyLight/ambientColor">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setAmbientColor:")
     public native void setAmbientColor(@ByValue GLKVector4 value);
 
-    /**
-     * constantAttenuation</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GLkit/Reference/GLKEffectPropertyLight_ClassRef/index.html#//apple_ref/occ/instp/GLKEffectPropertyLight/constantAttenuation">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setConstantAttenuation:")
     public native void setConstantAttenuation(float value);
 
-    /**
-     * diffuseColor</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GLkit/Reference/GLKEffectPropertyLight_ClassRef/index.html#//apple_ref/occ/instp/GLKEffectPropertyLight/diffuseColor">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setDiffuseColor:")
     public native void setDiffuseColor(@ByValue GLKVector4 value);
 
-    /**
-     * enabled</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GLkit/Reference/GLKEffectPropertyLight_ClassRef/index.html#//apple_ref/occ/instp/GLKEffectPropertyLight/enabled">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setEnabled:")
     public native void setEnabled(byte value);
 
-    /**
-     * linearAttenuation</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GLkit/Reference/GLKEffectPropertyLight_ClassRef/index.html#//apple_ref/occ/instp/GLKEffectPropertyLight/linearAttenuation">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setLinearAttenuation:")
     public native void setLinearAttenuation(float value);
 
-    /**
-     * position</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GLkit/Reference/GLKEffectPropertyLight_ClassRef/index.html#//apple_ref/occ/instp/GLKEffectPropertyLight/position">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setPosition:")
     public native void setPosition(@ByValue GLKVector4 value);
 
-    /**
-     * quadraticAttenuation</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GLkit/Reference/GLKEffectPropertyLight_ClassRef/index.html#//apple_ref/occ/instp/GLKEffectPropertyLight/quadraticAttenuation">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setQuadraticAttenuation:")
     public native void setQuadraticAttenuation(float value);
 
-    /**
-     * specularColor</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GLkit/Reference/GLKEffectPropertyLight_ClassRef/index.html#//apple_ref/occ/instp/GLKEffectPropertyLight/specularColor">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setSpecularColor:")
     public native void setSpecularColor(@ByValue GLKVector4 value);
 
-    /**
-     * spotCutoff</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GLkit/Reference/GLKEffectPropertyLight_ClassRef/index.html#//apple_ref/occ/instp/GLKEffectPropertyLight/spotCutoff">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setSpotCutoff:")
     public native void setSpotCutoff(float value);
 
-    /**
-     * spotDirection</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GLkit/Reference/GLKEffectPropertyLight_ClassRef/index.html#//apple_ref/occ/instp/GLKEffectPropertyLight/spotDirection">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setSpotDirection:")
     public native void setSpotDirection(@ByValue GLKVector3 value);
 
-    /**
-     * spotExponent</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GLkit/Reference/GLKEffectPropertyLight_ClassRef/index.html#//apple_ref/occ/instp/GLKEffectPropertyLight/spotExponent">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setSpotExponent:")
     public native void setSpotExponent(float value);
 
-    /**
-     * transform</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GLkit/Reference/GLKEffectPropertyLight_ClassRef/index.html#//apple_ref/occ/instp/GLKEffectPropertyLight/transform">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setTransform:")
     public native void setTransform(GLKEffectPropertyTransform value);
 
-    /**
-     * specularColor</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GLkit/Reference/GLKEffectPropertyLight_ClassRef/index.html#//apple_ref/occ/instp/GLKEffectPropertyLight/specularColor">iOS Dev Center</a>
-     */
     @Generated
     @Selector("specularColor")
     @ByValue
     public native GLKVector4 specularColor();
 
-    /**
-     * spotCutoff</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GLkit/Reference/GLKEffectPropertyLight_ClassRef/index.html#//apple_ref/occ/instp/GLKEffectPropertyLight/spotCutoff">iOS Dev Center</a>
-     */
     @Generated
     @Selector("spotCutoff")
     public native float spotCutoff();
 
-    /**
-     * spotDirection</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GLkit/Reference/GLKEffectPropertyLight_ClassRef/index.html#//apple_ref/occ/instp/GLKEffectPropertyLight/spotDirection">iOS Dev Center</a>
-     */
     @Generated
     @Selector("spotDirection")
     @ByValue
     public native GLKVector3 spotDirection();
 
-    /**
-     * spotExponent</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GLkit/Reference/GLKEffectPropertyLight_ClassRef/index.html#//apple_ref/occ/instp/GLKEffectPropertyLight/spotExponent">iOS Dev Center</a>
-     */
     @Generated
     @Selector("spotExponent")
     public native float spotExponent();
 
-    /**
-     * transform</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GLkit/Reference/GLKEffectPropertyLight_ClassRef/index.html#//apple_ref/occ/instp/GLKEffectPropertyLight/transform">iOS Dev Center</a>
-     */
     @Generated
     @Selector("transform")
     public native GLKEffectPropertyTransform transform();

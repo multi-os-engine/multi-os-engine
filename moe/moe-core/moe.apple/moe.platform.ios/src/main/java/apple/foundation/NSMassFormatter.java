@@ -158,10 +158,6 @@ public class NSMassFormatter extends NSFormatter {
     @NInt
     public static native long version_static();
 
-    /**
-     * getObjectValue:forString:errorDescription:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Miscellaneous/Reference/NSMassFormatter_Class/index.html#//apple_ref/occ/instm/NSMassFormatter/getObjectValue:forString:errorDescription:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("getObjectValue:forString:errorDescription:")
     public native boolean getObjectValueForStringErrorDescription(Ptr<ObjCObject> obj, String string,
@@ -171,82 +167,42 @@ public class NSMassFormatter extends NSFormatter {
     @Selector("init")
     public native NSMassFormatter init();
 
-    /**
-     * forPersonMassUse</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Miscellaneous/Reference/NSMassFormatter_Class/index.html#//apple_ref/occ/instp/NSMassFormatter/forPersonMassUse">iOS Dev Center</a>
-     */
     @Generated
     @Selector("isForPersonMassUse")
     public native boolean isForPersonMassUse();
 
-    /**
-     * forPersonMassUse</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Miscellaneous/Reference/NSMassFormatter_Class/index.html#//apple_ref/occ/instp/NSMassFormatter/forPersonMassUse">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setForPersonMassUse:")
     public native void setForPersonMassUse(boolean value);
 
-    /**
-     * numberFormatter</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Miscellaneous/Reference/NSMassFormatter_Class/index.html#//apple_ref/occ/instp/NSMassFormatter/numberFormatter">iOS Dev Center</a>
-     */
     @Generated
     @Selector("numberFormatter")
     public native NSNumberFormatter numberFormatter();
 
-    /**
-     * numberFormatter</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Miscellaneous/Reference/NSMassFormatter_Class/index.html#//apple_ref/occ/instp/NSMassFormatter/numberFormatter">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setNumberFormatter:")
     public native void setNumberFormatter(NSNumberFormatter value);
 
-    /**
-     * unitStyle</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Miscellaneous/Reference/NSMassFormatter_Class/index.html#//apple_ref/occ/instp/NSMassFormatter/unitStyle">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setUnitStyle:")
     public native void setUnitStyle(@NInt long value);
 
-    /**
-     * stringFromKilograms:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Miscellaneous/Reference/NSMassFormatter_Class/index.html#//apple_ref/occ/instm/NSMassFormatter/stringFromKilograms:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("stringFromKilograms:")
     public native String stringFromKilograms(double numberInKilograms);
 
-    /**
-     * stringFromValue:unit:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Miscellaneous/Reference/NSMassFormatter_Class/index.html#//apple_ref/occ/instm/NSMassFormatter/stringFromValue:unit:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("stringFromValue:unit:")
     public native String stringFromValueUnit(double value, @NInt long unit);
 
-    /**
-     * unitStringFromKilograms:usedUnit:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Miscellaneous/Reference/NSMassFormatter_Class/index.html#//apple_ref/occ/instm/NSMassFormatter/unitStringFromKilograms:usedUnit:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("unitStringFromKilograms:usedUnit:")
     public native String unitStringFromKilogramsUsedUnit(double numberInKilograms, NIntPtr unitp);
 
-    /**
-     * unitStringFromValue:unit:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Miscellaneous/Reference/NSMassFormatter_Class/index.html#//apple_ref/occ/instm/NSMassFormatter/unitStringFromValue:unit:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("unitStringFromValue:unit:")
     public native String unitStringFromValueUnit(double value, @NInt long unit);
 
-    /**
-     * unitStyle</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Miscellaneous/Reference/NSMassFormatter_Class/index.html#//apple_ref/occ/instp/NSMassFormatter/unitStyle">iOS Dev Center</a>
-     */
     @Generated
     @Selector("unitStyle")
     @NInt

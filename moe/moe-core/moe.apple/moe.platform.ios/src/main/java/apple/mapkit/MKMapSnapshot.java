@@ -162,10 +162,6 @@ public class MKMapSnapshot extends NSObject {
     @NInt
     public static native long version_static();
 
-    /**
-     * image</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKMapSnapshot_class/index.html#//apple_ref/occ/instp/MKMapSnapshot/image">iOS Dev Center</a>
-     */
     @Generated
     @Selector("image")
     public native UIImage image();
@@ -174,10 +170,6 @@ public class MKMapSnapshot extends NSObject {
     @Selector("init")
     public native MKMapSnapshot init();
 
-    /**
-     * pointForCoordinate:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKMapSnapshot_class/index.html#//apple_ref/occ/instm/MKMapSnapshot/pointForCoordinate:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("pointForCoordinate:")
     @ByValue

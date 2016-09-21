@@ -63,26 +63,14 @@ public class CNContainer extends NSObject implements NSCopying, NSSecureCoding {
     @Selector("alloc")
     public static native CNContainer alloc();
 
-    /**
-     * predicateForContainerOfContactWithIdentifier:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Contacts/Reference/CNContainer_Class/index.html#//apple_ref/occ/clm/CNContainer/predicateForContainerOfContactWithIdentifier:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("predicateForContainerOfContactWithIdentifier:")
     public static native NSPredicate predicateForContainerOfContactWithIdentifier(String contactIdentifier);
 
-    /**
-     * predicateForContainerOfGroupWithIdentifier:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Contacts/Reference/CNContainer_Class/index.html#//apple_ref/occ/clm/CNContainer/predicateForContainerOfGroupWithIdentifier:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("predicateForContainerOfGroupWithIdentifier:")
     public static native NSPredicate predicateForContainerOfGroupWithIdentifier(String groupIdentifier);
 
-    /**
-     * predicateForContainersWithIdentifiers:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Contacts/Reference/CNContainer_Class/index.html#//apple_ref/occ/clm/CNContainer/predicateForContainersWithIdentifiers:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("predicateForContainersWithIdentifiers:")
     public static native NSPredicate predicateForContainersWithIdentifiers(NSArray<String> identifiers);
@@ -201,10 +189,6 @@ public class CNContainer extends NSObject implements NSCopying, NSSecureCoding {
     @Selector("encodeWithCoder:")
     public native void encodeWithCoder(NSCoder aCoder);
 
-    /**
-     * identifier</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Contacts/Reference/CNContainer_Class/index.html#//apple_ref/occ/instp/CNContainer/identifier">iOS Dev Center</a>
-     */
     @Generated
     @Selector("identifier")
     public native String identifier();
@@ -217,10 +201,6 @@ public class CNContainer extends NSObject implements NSCopying, NSSecureCoding {
     @Selector("initWithCoder:")
     public native CNContainer initWithCoder(NSCoder aDecoder);
 
-    /**
-     * name</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Contacts/Reference/CNContainer_Class/index.html#//apple_ref/occ/instp/CNContainer/name">iOS Dev Center</a>
-     */
     @Generated
     @Selector("name")
     public native String name();
@@ -231,10 +211,6 @@ public class CNContainer extends NSObject implements NSCopying, NSSecureCoding {
         return supportsSecureCoding();
     }
 
-    /**
-     * type</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Contacts/Reference/CNContainer_Class/index.html#//apple_ref/occ/instp/CNContainer/type">iOS Dev Center</a>
-     */
     @Generated
     @Selector("type")
     @NInt

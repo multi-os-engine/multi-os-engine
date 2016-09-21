@@ -163,27 +163,15 @@ public class GCMotion extends NSObject {
     @NInt
     public static native long version_static();
 
-    /**
-     * attitude</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameController/Reference/GCMotion_Ref/index.html#//apple_ref/occ/instp/GCMotion/attitude">iOS Dev Center</a>
-     */
     @Generated
     @Selector("attitude")
     @ByValue
     public native GCQuaternion attitude();
 
-    /**
-     * controller</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameController/Reference/GCMotion_Ref/index.html#//apple_ref/occ/instp/GCMotion/controller">iOS Dev Center</a>
-     */
     @Generated
     @Selector("controller")
     public native GCController controller();
 
-    /**
-     * gravity</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameController/Reference/GCMotion_Ref/index.html#//apple_ref/occ/instp/GCMotion/gravity">iOS Dev Center</a>
-     */
     @Generated
     @Selector("gravity")
     @ByValue
@@ -193,37 +181,21 @@ public class GCMotion extends NSObject {
     @Selector("init")
     public native GCMotion init();
 
-    /**
-     * rotationRate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameController/Reference/GCMotion_Ref/index.html#//apple_ref/occ/instp/GCMotion/rotationRate">iOS Dev Center</a>
-     */
     @Generated
     @Selector("rotationRate")
     @ByValue
     public native GCRotationRate rotationRate();
 
-    /**
-     * valueChangedHandler</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameController/Reference/GCMotion_Ref/index.html#//apple_ref/occ/instp/GCMotion/valueChangedHandler">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setValueChangedHandler:")
     public native void setValueChangedHandler(
             @ObjCBlock(name = "call_setValueChangedHandler") Block_setValueChangedHandler value);
 
-    /**
-     * userAcceleration</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameController/Reference/GCMotion_Ref/index.html#//apple_ref/occ/instp/GCMotion/userAcceleration">iOS Dev Center</a>
-     */
     @Generated
     @Selector("userAcceleration")
     @ByValue
     public native GCAcceleration userAcceleration();
 
-    /**
-     * valueChangedHandler</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameController/Reference/GCMotion_Ref/index.html#//apple_ref/occ/instp/GCMotion/valueChangedHandler">iOS Dev Center</a>
-     */
     @Generated
     @Selector("valueChangedHandler")
     @ObjCBlock(name = "call_valueChangedHandler_ret")

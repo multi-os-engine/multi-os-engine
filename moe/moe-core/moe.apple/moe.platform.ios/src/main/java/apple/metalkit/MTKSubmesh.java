@@ -158,27 +158,15 @@ public class MTKSubmesh extends NSObject {
     @NInt
     public static native long version_static();
 
-    /**
-     * indexBuffer</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MetalKit/Reference/MTKSubmesh_ClassReference/index.html#//apple_ref/occ/instp/MTKSubmesh/indexBuffer">iOS Dev Center</a>
-     */
     @Generated
     @Selector("indexBuffer")
     public native MTKMeshBuffer indexBuffer();
 
-    /**
-     * indexCount</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MetalKit/Reference/MTKSubmesh_ClassReference/index.html#//apple_ref/occ/instp/MTKSubmesh/indexCount">iOS Dev Center</a>
-     */
     @Generated
     @Selector("indexCount")
     @NUInt
     public native long indexCount();
 
-    /**
-     * indexType</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MetalKit/Reference/MTKSubmesh_ClassReference/index.html#//apple_ref/occ/instp/MTKSubmesh/indexType">iOS Dev Center</a>
-     */
     @Generated
     @Selector("indexType")
     @NUInt
@@ -188,35 +176,19 @@ public class MTKSubmesh extends NSObject {
     @Selector("init")
     public native MTKSubmesh init();
 
-    /**
-     * mesh</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MetalKit/Reference/MTKSubmesh_ClassReference/index.html#//apple_ref/occ/instp/MTKSubmesh/mesh">iOS Dev Center</a>
-     */
     @Generated
     @Selector("mesh")
     public native MTKMesh mesh();
 
-    /**
-     * name</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MetalKit/Reference/MTKSubmesh_ClassReference/index.html#//apple_ref/occ/instp/MTKSubmesh/name">iOS Dev Center</a>
-     */
     @Generated
     @Selector("name")
     public native String name();
 
-    /**
-     * primitiveType</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MetalKit/Reference/MTKSubmesh_ClassReference/index.html#//apple_ref/occ/instp/MTKSubmesh/primitiveType">iOS Dev Center</a>
-     */
     @Generated
     @Selector("primitiveType")
     @NUInt
     public native long primitiveType();
 
-    /**
-     * name</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MetalKit/Reference/MTKSubmesh_ClassReference/index.html#//apple_ref/occ/instp/MTKSubmesh/name">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setName:")
     public native void setName(String value);

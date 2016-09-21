@@ -33,10 +33,6 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("NSObject")
 public interface NSObject {
-    /**
-     * class</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Protocols/NSObject_Protocol/index.html#//apple_ref/occ/intfm/NSObject/class">iOS Dev Center</a>
-     */
     @Generated
     @Selector("class")
     Class class_objc();
@@ -57,78 +53,42 @@ public interface NSObject {
     @NUInt
     long hash();
 
-    /**
-     * isEqual:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Protocols/NSObject_Protocol/index.html#//apple_ref/occ/intfm/NSObject/isEqual:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("isEqual:")
     boolean isEqual(@Mapped(ObjCObjectMapper.class) Object object);
 
-    /**
-     * isKindOfClass:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Protocols/NSObject_Protocol/index.html#//apple_ref/occ/intfm/NSObject/isKindOfClass:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("isKindOfClass:")
     boolean isKindOfClass(Class aClass);
 
-    /**
-     * isMemberOfClass:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Protocols/NSObject_Protocol/index.html#//apple_ref/occ/intfm/NSObject/isMemberOfClass:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("isMemberOfClass:")
     boolean isMemberOfClass(Class aClass);
 
-    /**
-     * isProxy</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Protocols/NSObject_Protocol/index.html#//apple_ref/occ/intfm/NSObject/isProxy">iOS Dev Center</a>
-     */
     @Generated
     @Selector("isProxy")
     boolean isProxy();
 
-    /**
-     * performSelector:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Protocols/NSObject_Protocol/index.html#//apple_ref/occ/intfm/NSObject/performSelector:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("performSelector:")
     @MappedReturn(ObjCObjectMapper.class)
     Object performSelector(SEL aSelector);
 
-    /**
-     * performSelector:withObject:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Protocols/NSObject_Protocol/index.html#//apple_ref/occ/intfm/NSObject/performSelector:withObject:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("performSelector:withObject:")
     @MappedReturn(ObjCObjectMapper.class)
     Object performSelectorWithObject(SEL aSelector, @Mapped(ObjCObjectMapper.class) Object object);
 
-    /**
-     * performSelector:withObject:withObject:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Protocols/NSObject_Protocol/index.html#//apple_ref/occ/intfm/NSObject/performSelector:withObject:withObject:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("performSelector:withObject:withObject:")
     @MappedReturn(ObjCObjectMapper.class)
     Object performSelectorWithObjectWithObject(SEL aSelector, @Mapped(ObjCObjectMapper.class) Object object1,
             @Mapped(ObjCObjectMapper.class) Object object2);
 
-    /**
-     * respondsToSelector:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Protocols/NSObject_Protocol/index.html#//apple_ref/occ/intfm/NSObject/respondsToSelector:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("respondsToSelector:")
     boolean respondsToSelector(SEL aSelector);
 
-    /**
-     * self</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Protocols/NSObject_Protocol/index.html#//apple_ref/occ/intfm/NSObject/self">iOS Dev Center</a>
-     */
     @Generated
     @Selector("self")
     @MappedReturn(ObjCObjectMapper.class)

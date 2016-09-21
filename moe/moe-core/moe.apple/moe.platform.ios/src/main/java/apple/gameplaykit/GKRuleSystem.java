@@ -159,146 +159,74 @@ public class GKRuleSystem extends NSObject {
     @NInt
     public static native long version_static();
 
-    /**
-     * addRule:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameplayKit/Reference/GKRuleSystem_Class/index.html#//apple_ref/occ/instm/GKRuleSystem/addRule:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("addRule:")
     public native void addRule(GKRule rule);
 
-    /**
-     * addRulesFromArray:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameplayKit/Reference/GKRuleSystem_Class/index.html#//apple_ref/occ/instm/GKRuleSystem/addRulesFromArray:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("addRulesFromArray:")
     public native void addRulesFromArray(NSArray<? extends GKRule> rules);
 
-    /**
-     * agenda</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameplayKit/Reference/GKRuleSystem_Class/index.html#//apple_ref/occ/instp/GKRuleSystem/agenda">iOS Dev Center</a>
-     */
     @Generated
     @Selector("agenda")
     public native NSArray<? extends GKRule> agenda();
 
-    /**
-     * assertFact:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameplayKit/Reference/GKRuleSystem_Class/index.html#//apple_ref/occ/instm/GKRuleSystem/assertFact:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("assertFact:")
     public native void assertFact(@Mapped(ObjCObjectMapper.class) apple.protocol.NSObject fact);
 
-    /**
-     * assertFact:grade:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameplayKit/Reference/GKRuleSystem_Class/index.html#//apple_ref/occ/instm/GKRuleSystem/assertFact:grade:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("assertFact:grade:")
     public native void assertFactGrade(@Mapped(ObjCObjectMapper.class) apple.protocol.NSObject fact, float grade);
 
-    /**
-     * evaluate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameplayKit/Reference/GKRuleSystem_Class/index.html#//apple_ref/occ/instm/GKRuleSystem/evaluate">iOS Dev Center</a>
-     */
     @Generated
     @Selector("evaluate")
     public native void evaluate();
 
-    /**
-     * executed</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameplayKit/Reference/GKRuleSystem_Class/index.html#//apple_ref/occ/instp/GKRuleSystem/executed">iOS Dev Center</a>
-     */
     @Generated
     @Selector("executed")
     public native NSArray<? extends GKRule> executed();
 
-    /**
-     * facts</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameplayKit/Reference/GKRuleSystem_Class/index.html#//apple_ref/occ/instp/GKRuleSystem/facts">iOS Dev Center</a>
-     */
     @Generated
     @Selector("facts")
     public native NSArray<?> facts();
 
-    /**
-     * gradeForFact:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameplayKit/Reference/GKRuleSystem_Class/index.html#//apple_ref/occ/instm/GKRuleSystem/gradeForFact:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("gradeForFact:")
     public native float gradeForFact(@Mapped(ObjCObjectMapper.class) apple.protocol.NSObject fact);
 
-    /**
-     * init</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameplayKit/Reference/GKRuleSystem_Class/index.html#//apple_ref/occ/instm/GKRuleSystem/init">iOS Dev Center</a>
-     */
     @Generated
     @Selector("init")
     public native GKRuleSystem init();
 
-    /**
-     * maximumGradeForFacts:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameplayKit/Reference/GKRuleSystem_Class/index.html#//apple_ref/occ/instm/GKRuleSystem/maximumGradeForFacts:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("maximumGradeForFacts:")
     public native float maximumGradeForFacts(NSArray<?> facts);
 
-    /**
-     * minimumGradeForFacts:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameplayKit/Reference/GKRuleSystem_Class/index.html#//apple_ref/occ/instm/GKRuleSystem/minimumGradeForFacts:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("minimumGradeForFacts:")
     public native float minimumGradeForFacts(NSArray<?> facts);
 
-    /**
-     * removeAllRules</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameplayKit/Reference/GKRuleSystem_Class/index.html#//apple_ref/occ/instm/GKRuleSystem/removeAllRules">iOS Dev Center</a>
-     */
     @Generated
     @Selector("removeAllRules")
     public native void removeAllRules();
 
-    /**
-     * reset</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameplayKit/Reference/GKRuleSystem_Class/index.html#//apple_ref/occ/instm/GKRuleSystem/reset">iOS Dev Center</a>
-     */
     @Generated
     @Selector("reset")
     public native void reset();
 
-    /**
-     * retractFact:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameplayKit/Reference/GKRuleSystem_Class/index.html#//apple_ref/occ/instm/GKRuleSystem/retractFact:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("retractFact:")
     public native void retractFact(@Mapped(ObjCObjectMapper.class) apple.protocol.NSObject fact);
 
-    /**
-     * retractFact:grade:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameplayKit/Reference/GKRuleSystem_Class/index.html#//apple_ref/occ/instm/GKRuleSystem/retractFact:grade:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("retractFact:grade:")
     public native void retractFactGrade(@Mapped(ObjCObjectMapper.class) apple.protocol.NSObject fact, float grade);
 
-    /**
-     * rules</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameplayKit/Reference/GKRuleSystem_Class/index.html#//apple_ref/occ/instp/GKRuleSystem/rules">iOS Dev Center</a>
-     */
     @Generated
     @Selector("rules")
     public native NSArray<? extends GKRule> rules();
 
-    /**
-     * state</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameplayKit/Reference/GKRuleSystem_Class/index.html#//apple_ref/occ/instp/GKRuleSystem/state">iOS Dev Center</a>
-     */
     @Generated
     @Selector("state")
     public native NSMutableDictionary<?, ?> state();

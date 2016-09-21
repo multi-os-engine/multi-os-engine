@@ -66,18 +66,10 @@ public class CAAnimation extends NSObject implements NSCoding, NSCopying, CAMedi
     @Selector("alloc")
     public static native CAAnimation alloc();
 
-    /**
-     * animation</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/CAAnimation_class/index.html#//apple_ref/occ/clm/CAAnimation/animation">iOS Dev Center</a>
-     */
     @Generated
     @Selector("animation")
     public static native CAAnimation animation();
 
-    /**
-     * defaultValueForKey:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/CAAnimation_class/index.html#//apple_ref/occ/clm/CAAnimation/defaultValueForKey:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("defaultValueForKey:")
     @MappedReturn(ObjCObjectMapper.class)
@@ -183,10 +175,6 @@ public class CAAnimation extends NSObject implements NSCoding, NSCopying, CAMedi
     @NInt
     public static native long version_static();
 
-    /**
-     * animationEvents</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/CAAnimation_class/index.html#//apple_ref/occ/instp/CAAnimation/animationEvents">iOS Dev Center</a>
-     */
     @Generated
     @Selector("animationEvents")
     public native NSArray<? extends SCNAnimationEvent> animationEvents();
@@ -205,10 +193,6 @@ public class CAAnimation extends NSObject implements NSCoding, NSCopying, CAMedi
     @MappedReturn(ObjCObjectMapper.class)
     public native Object copyWithZone(VoidPtr zone);
 
-    /**
-     * delegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/CAAnimation_class/index.html#//apple_ref/occ/instp/CAAnimation/delegate">iOS Dev Center</a>
-     */
     @Generated
     @Selector("delegate")
     @MappedReturn(ObjCObjectMapper.class)
@@ -222,19 +206,11 @@ public class CAAnimation extends NSObject implements NSCoding, NSCopying, CAMedi
     @Selector("encodeWithCoder:")
     public native void encodeWithCoder(NSCoder aCoder);
 
-    /**
-     * fadeInDuration</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/CAAnimation_class/index.html#//apple_ref/occ/instp/CAAnimation/fadeInDuration">iOS Dev Center</a>
-     */
     @Generated
     @Selector("fadeInDuration")
     @NFloat
     public native double fadeInDuration();
 
-    /**
-     * fadeOutDuration</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/CAAnimation_class/index.html#//apple_ref/occ/instp/CAAnimation/fadeOutDuration">iOS Dev Center</a>
-     */
     @Generated
     @Selector("fadeOutDuration")
     @NFloat
@@ -252,18 +228,10 @@ public class CAAnimation extends NSObject implements NSCoding, NSCopying, CAMedi
     @Selector("initWithCoder:")
     public native CAAnimation initWithCoder(NSCoder aDecoder);
 
-    /**
-     * removedOnCompletion</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/CAAnimation_class/index.html#//apple_ref/occ/instp/CAAnimation/removedOnCompletion">iOS Dev Center</a>
-     */
     @Generated
     @Selector("isRemovedOnCompletion")
     public native boolean isRemovedOnCompletion();
 
-    /**
-     * removedOnCompletion</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/CAAnimation_class/index.html#//apple_ref/occ/instp/CAAnimation/removedOnCompletion">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setRemovedOnCompletion:")
     public native void setRemovedOnCompletion(boolean value);
@@ -281,10 +249,6 @@ public class CAAnimation extends NSObject implements NSCoding, NSCopying, CAMedi
     public native void runActionForKeyObjectArguments(String event, @Mapped(ObjCObjectMapper.class) Object anObject,
             NSDictionary<?, ?> dict);
 
-    /**
-     * animationEvents</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/CAAnimation_class/index.html#//apple_ref/occ/instp/CAAnimation/animationEvents">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setAnimationEvents:")
     public native void setAnimationEvents(NSArray<? extends SCNAnimationEvent> value);
@@ -297,10 +261,6 @@ public class CAAnimation extends NSObject implements NSCoding, NSCopying, CAMedi
     @Selector("setBeginTime:")
     public native void setBeginTime(double value);
 
-    /**
-     * delegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/CAAnimation_class/index.html#//apple_ref/occ/instp/CAAnimation/delegate">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setDelegate:")
     public native void setDelegate(@Mapped(ObjCObjectMapper.class) Object value);
@@ -309,18 +269,10 @@ public class CAAnimation extends NSObject implements NSCoding, NSCopying, CAMedi
     @Selector("setDuration:")
     public native void setDuration(double value);
 
-    /**
-     * fadeInDuration</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/CAAnimation_class/index.html#//apple_ref/occ/instp/CAAnimation/fadeInDuration">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setFadeInDuration:")
     public native void setFadeInDuration(@NFloat double value);
 
-    /**
-     * fadeOutDuration</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/CAAnimation_class/index.html#//apple_ref/occ/instp/CAAnimation/fadeOutDuration">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setFadeOutDuration:")
     public native void setFadeOutDuration(@NFloat double value);
@@ -345,26 +297,14 @@ public class CAAnimation extends NSObject implements NSCoding, NSCopying, CAMedi
     @Selector("setTimeOffset:")
     public native void setTimeOffset(double value);
 
-    /**
-     * timingFunction</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/CAAnimation_class/index.html#//apple_ref/occ/instp/CAAnimation/timingFunction">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setTimingFunction:")
     public native void setTimingFunction(CAMediaTimingFunction value);
 
-    /**
-     * usesSceneTimeBase</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/CAAnimation_class/index.html#//apple_ref/occ/instp/CAAnimation/usesSceneTimeBase">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setUsesSceneTimeBase:")
     public native void setUsesSceneTimeBase(boolean value);
 
-    /**
-     * shouldArchiveValueForKey:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/CAAnimation_class/index.html#//apple_ref/occ/instm/CAAnimation/shouldArchiveValueForKey:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("shouldArchiveValueForKey:")
     public native boolean shouldArchiveValueForKey(String key);
@@ -377,18 +317,10 @@ public class CAAnimation extends NSObject implements NSCoding, NSCopying, CAMedi
     @Selector("timeOffset")
     public native double timeOffset();
 
-    /**
-     * timingFunction</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/CAAnimation_class/index.html#//apple_ref/occ/instp/CAAnimation/timingFunction">iOS Dev Center</a>
-     */
     @Generated
     @Selector("timingFunction")
     public native CAMediaTimingFunction timingFunction();
 
-    /**
-     * usesSceneTimeBase</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/CAAnimation_class/index.html#//apple_ref/occ/instp/CAAnimation/usesSceneTimeBase">iOS Dev Center</a>
-     */
     @Generated
     @Selector("usesSceneTimeBase")
     public native boolean usesSceneTimeBase();

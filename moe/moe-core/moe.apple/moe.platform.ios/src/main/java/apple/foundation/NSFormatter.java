@@ -161,10 +161,6 @@ public class NSFormatter extends NSObject implements NSCopying, NSCoding {
     @NInt
     public static native long version();
 
-    /**
-     * attributedStringForObjectValue:withDefaultAttributes:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSFormatter_Class/index.html#//apple_ref/occ/instm/NSFormatter/attributedStringForObjectValue:withDefaultAttributes:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("attributedStringForObjectValue:withDefaultAttributes:")
     public native NSAttributedString attributedStringForObjectValueWithDefaultAttributes(
@@ -176,10 +172,6 @@ public class NSFormatter extends NSObject implements NSCopying, NSCoding {
     @MappedReturn(ObjCObjectMapper.class)
     public native Object copyWithZone(VoidPtr zone);
 
-    /**
-     * editingStringForObjectValue:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSFormatter_Class/index.html#//apple_ref/occ/instm/NSFormatter/editingStringForObjectValue:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("editingStringForObjectValue:")
     public native String editingStringForObjectValue(@Mapped(ObjCObjectMapper.class) Object obj);
@@ -188,10 +180,6 @@ public class NSFormatter extends NSObject implements NSCopying, NSCoding {
     @Selector("encodeWithCoder:")
     public native void encodeWithCoder(NSCoder aCoder);
 
-    /**
-     * getObjectValue:forString:errorDescription:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSFormatter_Class/index.html#//apple_ref/occ/instm/NSFormatter/getObjectValue:forString:errorDescription:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("getObjectValue:forString:errorDescription:")
     public native boolean getObjectValueForStringErrorDescription(Ptr<ObjCObject> obj, String string,
@@ -205,29 +193,17 @@ public class NSFormatter extends NSObject implements NSCopying, NSCoding {
     @Selector("initWithCoder:")
     public native NSFormatter initWithCoder(NSCoder aDecoder);
 
-    /**
-     * isPartialStringValid:newEditingString:errorDescription:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSFormatter_Class/index.html#//apple_ref/occ/instm/NSFormatter/isPartialStringValid:newEditingString:errorDescription:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("isPartialStringValid:newEditingString:errorDescription:")
     public native boolean isPartialStringValidNewEditingStringErrorDescription(String partialString,
             Ptr<NSString> newString, Ptr<NSString> error);
 
-    /**
-     * isPartialStringValid:proposedSelectedRange:originalString:originalSelectedRange:errorDescription:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSFormatter_Class/index.html#//apple_ref/occ/instm/NSFormatter/isPartialStringValid:proposedSelectedRange:originalString:originalSelectedRange:errorDescription:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("isPartialStringValid:proposedSelectedRange:originalString:originalSelectedRange:errorDescription:")
     public native boolean isPartialStringValidProposedSelectedRangeOriginalStringOriginalSelectedRangeErrorDescription(
             Ptr<NSString> partialStringPtr, NSRange proposedSelRangePtr, String origString,
             @ByValue NSRange origSelRange, Ptr<NSString> error);
 
-    /**
-     * stringForObjectValue:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSFormatter_Class/index.html#//apple_ref/occ/instm/NSFormatter/stringForObjectValue:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("stringForObjectValue:")
     public native String stringForObjectValue(@Mapped(ObjCObjectMapper.class) Object obj);

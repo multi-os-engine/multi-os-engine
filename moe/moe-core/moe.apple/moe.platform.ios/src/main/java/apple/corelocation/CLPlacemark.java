@@ -168,34 +168,18 @@ public class CLPlacemark extends NSObject implements NSCopying, NSSecureCoding {
     @NInt
     public static native long version_static();
 
-    /**
-     * ISOcountryCode</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreLocation/Reference/CLPlacemark_class/index.html#//apple_ref/occ/instp/CLPlacemark/ISOcountryCode">iOS Dev Center</a>
-     */
     @Generated
     @Selector("ISOcountryCode")
     public native String ISOcountryCode();
 
-    /**
-     * addressDictionary</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreLocation/Reference/CLPlacemark_class/index.html#//apple_ref/occ/instp/CLPlacemark/addressDictionary">iOS Dev Center</a>
-     */
     @Generated
     @Selector("addressDictionary")
     public native NSDictionary<?, ?> addressDictionary();
 
-    /**
-     * administrativeArea</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreLocation/Reference/CLPlacemark_class/index.html#//apple_ref/occ/instp/CLPlacemark/administrativeArea">iOS Dev Center</a>
-     */
     @Generated
     @Selector("administrativeArea")
     public native String administrativeArea();
 
-    /**
-     * areasOfInterest</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreLocation/Reference/CLPlacemark_class/index.html#//apple_ref/occ/instp/CLPlacemark/areasOfInterest">iOS Dev Center</a>
-     */
     @Generated
     @Selector("areasOfInterest")
     public native NSArray<String> areasOfInterest();
@@ -206,10 +190,6 @@ public class CLPlacemark extends NSObject implements NSCopying, NSSecureCoding {
     @MappedReturn(ObjCObjectMapper.class)
     public native Object copyWithZone(VoidPtr zone);
 
-    /**
-     * country</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreLocation/Reference/CLPlacemark_class/index.html#//apple_ref/occ/instp/CLPlacemark/country">iOS Dev Center</a>
-     */
     @Generated
     @Selector("country")
     public native String country();
@@ -226,90 +206,46 @@ public class CLPlacemark extends NSObject implements NSCopying, NSSecureCoding {
     @Selector("initWithCoder:")
     public native CLPlacemark initWithCoder(NSCoder aDecoder);
 
-    /**
-     * initWithPlacemark:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreLocation/Reference/CLPlacemark_class/index.html#//apple_ref/occ/instm/CLPlacemark/initWithPlacemark:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithPlacemark:")
     public native CLPlacemark initWithPlacemark(CLPlacemark placemark);
 
-    /**
-     * inlandWater</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreLocation/Reference/CLPlacemark_class/index.html#//apple_ref/occ/instp/CLPlacemark/inlandWater">iOS Dev Center</a>
-     */
     @Generated
     @Selector("inlandWater")
     public native String inlandWater();
 
-    /**
-     * locality</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreLocation/Reference/CLPlacemark_class/index.html#//apple_ref/occ/instp/CLPlacemark/locality">iOS Dev Center</a>
-     */
     @Generated
     @Selector("locality")
     public native String locality();
 
-    /**
-     * location</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreLocation/Reference/CLPlacemark_class/index.html#//apple_ref/occ/instp/CLPlacemark/location">iOS Dev Center</a>
-     */
     @Generated
     @Selector("location")
     public native CLLocation location();
 
-    /**
-     * name</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreLocation/Reference/CLPlacemark_class/index.html#//apple_ref/occ/instp/CLPlacemark/name">iOS Dev Center</a>
-     */
     @Generated
     @Selector("name")
     public native String name();
 
-    /**
-     * ocean</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreLocation/Reference/CLPlacemark_class/index.html#//apple_ref/occ/instp/CLPlacemark/ocean">iOS Dev Center</a>
-     */
     @Generated
     @Selector("ocean")
     public native String ocean();
 
-    /**
-     * postalCode</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreLocation/Reference/CLPlacemark_class/index.html#//apple_ref/occ/instp/CLPlacemark/postalCode">iOS Dev Center</a>
-     */
     @Generated
     @Selector("postalCode")
     public native String postalCode();
 
-    /**
-     * region</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreLocation/Reference/CLPlacemark_class/index.html#//apple_ref/occ/instp/CLPlacemark/region">iOS Dev Center</a>
-     */
     @Generated
     @Selector("region")
     public native CLRegion region();
 
-    /**
-     * subAdministrativeArea</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreLocation/Reference/CLPlacemark_class/index.html#//apple_ref/occ/instp/CLPlacemark/subAdministrativeArea">iOS Dev Center</a>
-     */
     @Generated
     @Selector("subAdministrativeArea")
     public native String subAdministrativeArea();
 
-    /**
-     * subLocality</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreLocation/Reference/CLPlacemark_class/index.html#//apple_ref/occ/instp/CLPlacemark/subLocality">iOS Dev Center</a>
-     */
     @Generated
     @Selector("subLocality")
     public native String subLocality();
 
-    /**
-     * subThoroughfare</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreLocation/Reference/CLPlacemark_class/index.html#//apple_ref/occ/instp/CLPlacemark/subThoroughfare">iOS Dev Center</a>
-     */
     @Generated
     @Selector("subThoroughfare")
     public native String subThoroughfare();
@@ -320,18 +256,10 @@ public class CLPlacemark extends NSObject implements NSCopying, NSSecureCoding {
         return supportsSecureCoding();
     }
 
-    /**
-     * thoroughfare</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreLocation/Reference/CLPlacemark_class/index.html#//apple_ref/occ/instp/CLPlacemark/thoroughfare">iOS Dev Center</a>
-     */
     @Generated
     @Selector("thoroughfare")
     public native String thoroughfare();
 
-    /**
-     * timeZone</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreLocation/Reference/CLPlacemark_class/index.html#//apple_ref/occ/instp/CLPlacemark/timeZone">iOS Dev Center</a>
-     */
     @Generated
     @Selector("timeZone")
     public native NSTimeZone timeZone();

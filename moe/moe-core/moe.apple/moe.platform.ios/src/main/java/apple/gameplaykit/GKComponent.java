@@ -165,10 +165,6 @@ public class GKComponent extends NSObject implements NSCopying {
     @MappedReturn(ObjCObjectMapper.class)
     public native Object copyWithZone(VoidPtr zone);
 
-    /**
-     * entity</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameplayKit/Reference/GKComponent_Class/index.html#//apple_ref/occ/instp/GKComponent/entity">iOS Dev Center</a>
-     */
     @Generated
     @Selector("entity")
     public native GKEntity entity();
@@ -177,10 +173,6 @@ public class GKComponent extends NSObject implements NSCopying {
     @Selector("init")
     public native GKComponent init();
 
-    /**
-     * updateWithDeltaTime:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameplayKit/Reference/GKComponent_Class/index.html#//apple_ref/occ/instm/GKComponent/updateWithDeltaTime:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("updateWithDeltaTime:")
     public native void updateWithDeltaTime(double seconds);

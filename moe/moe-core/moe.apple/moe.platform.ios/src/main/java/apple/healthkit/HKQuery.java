@@ -62,181 +62,97 @@ public class HKQuery extends NSObject {
     @Selector("alloc")
     public static native HKQuery alloc();
 
-    /**
-     * predicateForCategorySamplesWithOperatorType:value:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HealthKit/Reference/HKQuery_Class/index.html#//apple_ref/occ/clm/HKQuery/predicateForCategorySamplesWithOperatorType:value:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("predicateForCategorySamplesWithOperatorType:value:")
     public static native NSPredicate predicateForCategorySamplesWithOperatorTypeValue(@NUInt long operatorType,
             @NInt long value);
 
-    /**
-     * predicateForObjectWithUUID:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HealthKit/Reference/HKQuery_Class/index.html#//apple_ref/occ/clm/HKQuery/predicateForObjectWithUUID:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("predicateForObjectWithUUID:")
     public static native NSPredicate predicateForObjectWithUUID(NSUUID UUID);
 
-    /**
-     * predicateForObjectsFromSource:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HealthKit/Reference/HKQuery_Class/index.html#//apple_ref/occ/clm/HKQuery/predicateForObjectsFromSource:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("predicateForObjectsFromSource:")
     public static native NSPredicate predicateForObjectsFromSource(HKSource source);
 
-    /**
-     * predicateForObjectsFromSources:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HealthKit/Reference/HKQuery_Class/index.html#//apple_ref/occ/clm/HKQuery/predicateForObjectsFromSources:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("predicateForObjectsFromSources:")
     public static native NSPredicate predicateForObjectsFromSources(NSSet<? extends HKSource> sources);
 
-    /**
-     * predicateForObjectsFromWorkout:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HealthKit/Reference/HKQuery_Class/index.html#//apple_ref/occ/clm/HKQuery/predicateForObjectsFromWorkout:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("predicateForObjectsFromWorkout:")
     public static native NSPredicate predicateForObjectsFromWorkout(HKWorkout workout);
 
-    /**
-     * predicateForObjectsWithMetadataKey:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HealthKit/Reference/HKQuery_Class/index.html#//apple_ref/occ/clm/HKQuery/predicateForObjectsWithMetadataKey:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("predicateForObjectsWithMetadataKey:")
     public static native NSPredicate predicateForObjectsWithMetadataKey(String key);
 
-    /**
-     * predicateForObjectsWithMetadataKey:allowedValues:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HealthKit/Reference/HKQuery_Class/index.html#//apple_ref/occ/clm/HKQuery/predicateForObjectsWithMetadataKey:allowedValues:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("predicateForObjectsWithMetadataKey:allowedValues:")
     public static native NSPredicate predicateForObjectsWithMetadataKeyAllowedValues(String key,
             NSArray<?> allowedValues);
 
-    /**
-     * predicateForObjectsWithMetadataKey:operatorType:value:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HealthKit/Reference/HKQuery_Class/index.html#//apple_ref/occ/clm/HKQuery/predicateForObjectsWithMetadataKey:operatorType:value:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("predicateForObjectsWithMetadataKey:operatorType:value:")
     public static native NSPredicate predicateForObjectsWithMetadataKeyOperatorTypeValue(String key,
             @NUInt long operatorType, @Mapped(ObjCObjectMapper.class) Object value);
 
-    /**
-     * predicateForObjectsWithNoCorrelation</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HealthKit/Reference/HKQuery_Class/index.html#//apple_ref/occ/clm/HKQuery/predicateForObjectsWithNoCorrelation">iOS Dev Center</a>
-     */
     @Generated
     @Selector("predicateForObjectsWithNoCorrelation")
     public static native NSPredicate predicateForObjectsWithNoCorrelation();
 
-    /**
-     * predicateForObjectsWithUUIDs:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HealthKit/Reference/HKQuery_Class/index.html#//apple_ref/occ/clm/HKQuery/predicateForObjectsWithUUIDs:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("predicateForObjectsWithUUIDs:")
     public static native NSPredicate predicateForObjectsWithUUIDs(NSSet<? extends NSUUID> UUIDs);
 
-    /**
-     * predicateForQuantitySamplesWithOperatorType:quantity:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HealthKit/Reference/HKQuery_Class/index.html#//apple_ref/occ/clm/HKQuery/predicateForQuantitySamplesWithOperatorType:quantity:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("predicateForQuantitySamplesWithOperatorType:quantity:")
     public static native NSPredicate predicateForQuantitySamplesWithOperatorTypeQuantity(@NUInt long operatorType,
             HKQuantity quantity);
 
-    /**
-     * predicateForSamplesWithStartDate:endDate:options:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HealthKit/Reference/HKQuery_Class/index.html#//apple_ref/occ/clm/HKQuery/predicateForSamplesWithStartDate:endDate:options:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("predicateForSamplesWithStartDate:endDate:options:")
     public static native NSPredicate predicateForSamplesWithStartDateEndDateOptions(NSDate startDate, NSDate endDate,
             @NUInt long options);
 
-    /**
-     * predicateForWorkoutsWithOperatorType:duration:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HealthKit/Reference/HKQuery_Class/index.html#//apple_ref/occ/clm/HKQuery/predicateForWorkoutsWithOperatorType:duration:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("predicateForWorkoutsWithOperatorType:duration:")
     public static native NSPredicate predicateForWorkoutsWithOperatorTypeDuration(@NUInt long operatorType,
             double duration);
 
-    /**
-     * predicateForWorkoutsWithOperatorType:totalDistance:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HealthKit/Reference/HKQuery_Class/index.html#//apple_ref/occ/clm/HKQuery/predicateForWorkoutsWithOperatorType:totalDistance:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("predicateForWorkoutsWithOperatorType:totalDistance:")
     public static native NSPredicate predicateForWorkoutsWithOperatorTypeTotalDistance(@NUInt long operatorType,
             HKQuantity totalDistance);
 
-    /**
-     * predicateForWorkoutsWithOperatorType:totalEnergyBurned:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HealthKit/Reference/HKQuery_Class/index.html#//apple_ref/occ/clm/HKQuery/predicateForWorkoutsWithOperatorType:totalEnergyBurned:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("predicateForWorkoutsWithOperatorType:totalEnergyBurned:")
     public static native NSPredicate predicateForWorkoutsWithOperatorTypeTotalEnergyBurned(@NUInt long operatorType,
             HKQuantity totalEnergyBurned);
 
-    /**
-     * predicateForWorkoutsWithWorkoutActivityType:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HealthKit/Reference/HKQuery_Class/index.html#//apple_ref/occ/clm/HKQuery/predicateForWorkoutsWithWorkoutActivityType:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("predicateForWorkoutsWithWorkoutActivityType:")
     public static native NSPredicate predicateForWorkoutsWithWorkoutActivityType(@NUInt long workoutActivityType);
 
-    /**
-     * predicateForObjectsFromDevices:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HealthKit/Reference/HKQuery_Class/index.html#//apple_ref/occ/clm/HKQuery/predicateForObjectsFromDevices:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("predicateForObjectsFromDevices:")
     public static native NSPredicate predicateForObjectsFromDevices(NSSet<? extends HKDevice> devices);
 
-    /**
-     * predicateForObjectsFromSourceRevisions:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HealthKit/Reference/HKQuery_Class/index.html#//apple_ref/occ/clm/HKQuery/predicateForObjectsFromSourceRevisions:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("predicateForObjectsFromSourceRevisions:")
     public static native NSPredicate predicateForObjectsFromSourceRevisions(
             NSSet<? extends HKSourceRevision> sourceRevisions);
 
-    /**
-     * predicateForObjectsWithDeviceProperty:allowedValues:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HealthKit/Reference/HKQuery_Class/index.html#//apple_ref/occ/clm/HKQuery/predicateForObjectsWithDeviceProperty:allowedValues:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("predicateForObjectsWithDeviceProperty:allowedValues:")
     public static native NSPredicate predicateForObjectsWithDevicePropertyAllowedValues(String key,
             NSSet<String> allowedValues);
 
-    /**
-     * predicateForActivitySummariesBetweenStartDateComponents:endDateComponents:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HealthKit/Reference/HKQuery_Class/index.html#//apple_ref/occ/clm/HKQuery/predicateForActivitySummariesBetweenStartDateComponents:endDateComponents:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("predicateForActivitySummariesBetweenStartDateComponents:endDateComponents:")
     public static native NSPredicate predicateForActivitySummariesBetweenStartDateComponentsEndDateComponents(
             NSDateComponents startDateComponents, NSDateComponents endDateComponents);
 
-    /**
-     * predicateForActivitySummaryWithDateComponents:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HealthKit/Reference/HKQuery_Class/index.html#//apple_ref/occ/clm/HKQuery/predicateForActivitySummaryWithDateComponents:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("predicateForActivitySummaryWithDateComponents:")
     public static native NSPredicate predicateForActivitySummaryWithDateComponents(NSDateComponents dateComponents);
@@ -345,26 +261,14 @@ public class HKQuery extends NSObject {
     @Selector("init")
     public native HKQuery init();
 
-    /**
-     * predicate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HealthKit/Reference/HKQuery_Class/index.html#//apple_ref/occ/instp/HKQuery/predicate">iOS Dev Center</a>
-     */
     @Generated
     @Selector("predicate")
     public native NSPredicate predicate();
 
-    /**
-     * sampleType</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HealthKit/Reference/HKQuery_Class/index.html#//apple_ref/occ/instp/HKQuery/sampleType">iOS Dev Center</a>
-     */
     @Generated
     @Selector("sampleType")
     public native HKSampleType sampleType();
 
-    /**
-     * objectType</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HealthKit/Reference/HKQuery_Class/index.html#//apple_ref/occ/instp/HKQuery/objectType">iOS Dev Center</a>
-     */
     @Generated
     @Selector("objectType")
     public native HKObjectType objectType();

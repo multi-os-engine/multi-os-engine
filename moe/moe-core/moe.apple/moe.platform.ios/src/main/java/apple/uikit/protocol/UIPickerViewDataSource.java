@@ -30,19 +30,11 @@ import org.moe.natj.objc.ann.Selector;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("UIPickerViewDataSource")
 public interface UIPickerViewDataSource {
-    /**
-     * numberOfComponentsInPickerView:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/iPhone/Reference/UIPickerViewDataSource_Protocol/index.html#//apple_ref/occ/intfm/UIPickerViewDataSource/numberOfComponentsInPickerView:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("numberOfComponentsInPickerView:")
     @NInt
     long numberOfComponentsInPickerView(UIPickerView pickerView);
 
-    /**
-     * pickerView:numberOfRowsInComponent:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/iPhone/Reference/UIPickerViewDataSource_Protocol/index.html#//apple_ref/occ/intfm/UIPickerViewDataSource/pickerView:numberOfRowsInComponent:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("pickerView:numberOfRowsInComponent:")
     @NInt

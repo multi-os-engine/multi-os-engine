@@ -158,10 +158,6 @@ public class UIDictationPhrase extends NSObject {
     @NInt
     public static native long version_static();
 
-    /**
-     * alternativeInterpretations</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIDictationPhraseClass/index.html#//apple_ref/occ/instp/UIDictationPhrase/alternativeInterpretations">iOS Dev Center</a>
-     */
     @Generated
     @Selector("alternativeInterpretations")
     public native NSArray<String> alternativeInterpretations();
@@ -170,10 +166,6 @@ public class UIDictationPhrase extends NSObject {
     @Selector("init")
     public native UIDictationPhrase init();
 
-    /**
-     * text</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIDictationPhraseClass/index.html#//apple_ref/occ/instp/UIDictationPhrase/text">iOS Dev Center</a>
-     */
     @Generated
     @Selector("text")
     public native String text();

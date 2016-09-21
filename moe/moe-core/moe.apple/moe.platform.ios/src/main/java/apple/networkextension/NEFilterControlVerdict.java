@@ -62,18 +62,10 @@ public class NEFilterControlVerdict extends NEFilterNewFlowVerdict implements NS
     @Selector("alloc")
     public static native NEFilterControlVerdict alloc();
 
-    /**
-     * allowVerdictWithUpdateRules:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEFilterControlVerdictClassRef/index.html#//apple_ref/occ/clm/NEFilterControlVerdict/allowVerdictWithUpdateRules:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("allowVerdictWithUpdateRules:")
     public static native NEFilterControlVerdict allowVerdictWithUpdateRules(boolean updateRules);
 
-    /**
-     * dropVerdictWithUpdateRules:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEFilterControlVerdictClassRef/index.html#//apple_ref/occ/clm/NEFilterControlVerdict/dropVerdictWithUpdateRules:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("dropVerdictWithUpdateRules:")
     public static native NEFilterControlVerdict dropVerdictWithUpdateRules(boolean updateRules);
@@ -82,10 +74,6 @@ public class NEFilterControlVerdict extends NEFilterNewFlowVerdict implements NS
     @Selector("supportsSecureCoding")
     public static native boolean supportsSecureCoding();
 
-    /**
-     * updateRules</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEFilterControlVerdictClassRef/index.html#//apple_ref/occ/clm/NEFilterControlVerdict/updateRules">iOS Dev Center</a>
-     */
     @Generated
     @Selector("updateRules")
     public static native NEFilterControlVerdict updateRules();

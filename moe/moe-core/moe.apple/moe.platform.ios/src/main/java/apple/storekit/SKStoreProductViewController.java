@@ -177,10 +177,6 @@ public class SKStoreProductViewController extends UIViewController {
     @NInt
     public static native long version_static();
 
-    /**
-     * delegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/StoreKit/Reference/SKITunesProductViewController_Ref/index.html#//apple_ref/occ/instp/SKStoreProductViewController/delegate">iOS Dev Center</a>
-     */
     @Generated
     @Selector("delegate")
     @MappedReturn(ObjCObjectMapper.class)
@@ -194,27 +190,15 @@ public class SKStoreProductViewController extends UIViewController {
     @Selector("initWithNibName:bundle:")
     public native SKStoreProductViewController initWithNibNameBundle(String nibNameOrNil, NSBundle nibBundleOrNil);
 
-    /**
-     * loadProductWithParameters:completionBlock:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/StoreKit/Reference/SKITunesProductViewController_Ref/index.html#//apple_ref/occ/instm/SKStoreProductViewController/loadProductWithParameters:completionBlock:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("loadProductWithParameters:completionBlock:")
     public native void loadProductWithParametersCompletionBlock(NSDictionary<String, ?> parameters,
             @ObjCBlock(name = "call_loadProductWithParametersCompletionBlock") Block_loadProductWithParametersCompletionBlock block);
 
-    /**
-     * delegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/StoreKit/Reference/SKITunesProductViewController_Ref/index.html#//apple_ref/occ/instp/SKStoreProductViewController/delegate">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setDelegate:")
     public native void setDelegate_unsafe(@Mapped(ObjCObjectMapper.class) SKStoreProductViewControllerDelegate value);
 
-    /**
-     * delegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/StoreKit/Reference/SKITunesProductViewController_Ref/index.html#//apple_ref/occ/instp/SKStoreProductViewController/delegate">iOS Dev Center</a>
-     */
     @Generated
     public void setDelegate(@Mapped(ObjCObjectMapper.class) SKStoreProductViewControllerDelegate value) {
         Object __old = delegate();

@@ -161,18 +161,10 @@ public class NEAppProxyProvider extends NETunnelProvider {
     @NInt
     public static native long version_static();
 
-    /**
-     * cancelProxyWithError:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEAppProxyProviderClassRef/index.html#//apple_ref/occ/instm/NEAppProxyProvider/cancelProxyWithError:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("cancelProxyWithError:")
     public native void cancelProxyWithError(NSError error);
 
-    /**
-     * handleNewFlow:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEAppProxyProviderClassRef/index.html#//apple_ref/occ/instm/NEAppProxyProvider/handleNewFlow:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("handleNewFlow:")
     public native boolean handleNewFlow(NEAppProxyFlow flow);
@@ -181,19 +173,11 @@ public class NEAppProxyProvider extends NETunnelProvider {
     @Selector("init")
     public native NEAppProxyProvider init();
 
-    /**
-     * startProxyWithOptions:completionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEAppProxyProviderClassRef/index.html#//apple_ref/occ/instm/NEAppProxyProvider/startProxyWithOptions:completionHandler:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("startProxyWithOptions:completionHandler:")
     public native void startProxyWithOptionsCompletionHandler(NSDictionary<String, ?> options,
             @ObjCBlock(name = "call_startProxyWithOptionsCompletionHandler") Block_startProxyWithOptionsCompletionHandler completionHandler);
 
-    /**
-     * stopProxyWithReason:completionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEAppProxyProviderClassRef/index.html#//apple_ref/occ/instm/NEAppProxyProvider/stopProxyWithReason:completionHandler:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("stopProxyWithReason:completionHandler:")
     public native void stopProxyWithReasonCompletionHandler(@NInt long reason,

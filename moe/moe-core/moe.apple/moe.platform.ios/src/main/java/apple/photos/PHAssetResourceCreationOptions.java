@@ -169,50 +169,26 @@ public class PHAssetResourceCreationOptions extends NSObject implements NSCopyin
     @Selector("init")
     public native PHAssetResourceCreationOptions init();
 
-    /**
-     * originalFilename</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHAssetResourceCreationOptions_Class/index.html#//apple_ref/occ/instp/PHAssetResourceCreationOptions/originalFilename">iOS Dev Center</a>
-     */
     @Generated
     @Selector("originalFilename")
     public native String originalFilename();
 
-    /**
-     * originalFilename</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHAssetResourceCreationOptions_Class/index.html#//apple_ref/occ/instp/PHAssetResourceCreationOptions/originalFilename">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setOriginalFilename:")
     public native void setOriginalFilename(String value);
 
-    /**
-     * shouldMoveFile</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHAssetResourceCreationOptions_Class/index.html#//apple_ref/occ/instp/PHAssetResourceCreationOptions/shouldMoveFile">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setShouldMoveFile:")
     public native void setShouldMoveFile(boolean value);
 
-    /**
-     * uniformTypeIdentifier</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHAssetResourceCreationOptions_Class/index.html#//apple_ref/occ/instp/PHAssetResourceCreationOptions/uniformTypeIdentifier">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setUniformTypeIdentifier:")
     public native void setUniformTypeIdentifier(String value);
 
-    /**
-     * shouldMoveFile</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHAssetResourceCreationOptions_Class/index.html#//apple_ref/occ/instp/PHAssetResourceCreationOptions/shouldMoveFile">iOS Dev Center</a>
-     */
     @Generated
     @Selector("shouldMoveFile")
     public native boolean shouldMoveFile();
 
-    /**
-     * uniformTypeIdentifier</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHAssetResourceCreationOptions_Class/index.html#//apple_ref/occ/instp/PHAssetResourceCreationOptions/uniformTypeIdentifier">iOS Dev Center</a>
-     */
     @Generated
     @Selector("uniformTypeIdentifier")
     public native String uniformTypeIdentifier();

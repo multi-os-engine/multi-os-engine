@@ -62,19 +62,11 @@ public class CSSearchableIndex extends NSObject {
     @Selector("alloc")
     public static native CSSearchableIndex alloc();
 
-    /**
-     * defaultSearchableIndex</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreSpotlight/Reference/CSSearchableIndex_Class/index.html#//apple_ref/occ/clm/CSSearchableIndex/defaultSearchableIndex">iOS Dev Center</a>
-     */
     @Generated
     @Selector("defaultSearchableIndex")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object defaultSearchableIndex();
 
-    /**
-     * isIndexingAvailable</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreSpotlight/Reference/CSSearchableIndex_Class/index.html#//apple_ref/occ/clm/CSSearchableIndex/isIndexingAvailable">iOS Dev Center</a>
-     */
     @Generated
     @Selector("isIndexingAvailable")
     public static native boolean isIndexingAvailable();
@@ -179,72 +171,40 @@ public class CSSearchableIndex extends NSObject {
     @NInt
     public static native long version_static();
 
-    /**
-     * beginIndexBatch</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreSpotlight/Reference/CSSearchableIndex_Class/index.html#//apple_ref/occ/instm/CSSearchableIndex/beginIndexBatch">iOS Dev Center</a>
-     */
     @Generated
     @Selector("beginIndexBatch")
     public native void beginIndexBatch();
 
-    /**
-     * deleteAllSearchableItemsWithCompletionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreSpotlight/Reference/CSSearchableIndex_Class/index.html#//apple_ref/occ/instm/CSSearchableIndex/deleteAllSearchableItemsWithCompletionHandler:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("deleteAllSearchableItemsWithCompletionHandler:")
     public native void deleteAllSearchableItemsWithCompletionHandler(
             @ObjCBlock(name = "call_deleteAllSearchableItemsWithCompletionHandler") Block_deleteAllSearchableItemsWithCompletionHandler completionHandler);
 
-    /**
-     * deleteSearchableItemsWithDomainIdentifiers:completionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreSpotlight/Reference/CSSearchableIndex_Class/index.html#//apple_ref/occ/instm/CSSearchableIndex/deleteSearchableItemsWithDomainIdentifiers:completionHandler:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("deleteSearchableItemsWithDomainIdentifiers:completionHandler:")
     public native void deleteSearchableItemsWithDomainIdentifiersCompletionHandler(NSArray<String> domainIdentifiers,
             @ObjCBlock(name = "call_deleteSearchableItemsWithDomainIdentifiersCompletionHandler") Block_deleteSearchableItemsWithDomainIdentifiersCompletionHandler completionHandler);
 
-    /**
-     * deleteSearchableItemsWithIdentifiers:completionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreSpotlight/Reference/CSSearchableIndex_Class/index.html#//apple_ref/occ/instm/CSSearchableIndex/deleteSearchableItemsWithIdentifiers:completionHandler:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("deleteSearchableItemsWithIdentifiers:completionHandler:")
     public native void deleteSearchableItemsWithIdentifiersCompletionHandler(NSArray<String> identifiers,
             @ObjCBlock(name = "call_deleteSearchableItemsWithIdentifiersCompletionHandler") Block_deleteSearchableItemsWithIdentifiersCompletionHandler completionHandler);
 
-    /**
-     * endIndexBatchWithClientState:completionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreSpotlight/Reference/CSSearchableIndex_Class/index.html#//apple_ref/occ/instm/CSSearchableIndex/endIndexBatchWithClientState:completionHandler:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("endIndexBatchWithClientState:completionHandler:")
     public native void endIndexBatchWithClientStateCompletionHandler(NSData clientState,
             @ObjCBlock(name = "call_endIndexBatchWithClientStateCompletionHandler") Block_endIndexBatchWithClientStateCompletionHandler completionHandler);
 
-    /**
-     * fetchLastClientStateWithCompletionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreSpotlight/Reference/CSSearchableIndex_Class/index.html#//apple_ref/occ/instm/CSSearchableIndex/fetchLastClientStateWithCompletionHandler:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("fetchLastClientStateWithCompletionHandler:")
     public native void fetchLastClientStateWithCompletionHandler(
             @ObjCBlock(name = "call_fetchLastClientStateWithCompletionHandler") Block_fetchLastClientStateWithCompletionHandler completionHandler);
 
-    /**
-     * indexDelegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreSpotlight/Reference/CSSearchableIndex_Class/index.html#//apple_ref/occ/instp/CSSearchableIndex/indexDelegate">iOS Dev Center</a>
-     */
     @Generated
     @Selector("indexDelegate")
     @MappedReturn(ObjCObjectMapper.class)
     public native CSSearchableIndexDelegate indexDelegate();
 
-    /**
-     * indexSearchableItems:completionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreSpotlight/Reference/CSSearchableIndex_Class/index.html#//apple_ref/occ/instm/CSSearchableIndex/indexSearchableItems:completionHandler:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("indexSearchableItems:completionHandler:")
     public native void indexSearchableItemsCompletionHandler(NSArray<? extends CSSearchableItem> items,
@@ -254,34 +214,18 @@ public class CSSearchableIndex extends NSObject {
     @Selector("init")
     public native CSSearchableIndex init();
 
-    /**
-     * initWithName:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreSpotlight/Reference/CSSearchableIndex_Class/index.html#//apple_ref/occ/instm/CSSearchableIndex/initWithName:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithName:")
     public native CSSearchableIndex initWithName(String name);
 
-    /**
-     * initWithName:protectionClass:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreSpotlight/Reference/CSSearchableIndex_Class/index.html#//apple_ref/occ/instm/CSSearchableIndex/initWithName:protectionClass:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithName:protectionClass:")
     public native CSSearchableIndex initWithNameProtectionClass(String name, String protectionClass);
 
-    /**
-     * indexDelegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreSpotlight/Reference/CSSearchableIndex_Class/index.html#//apple_ref/occ/instp/CSSearchableIndex/indexDelegate">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setIndexDelegate:")
     public native void setIndexDelegate_unsafe(@Mapped(ObjCObjectMapper.class) CSSearchableIndexDelegate value);
 
-    /**
-     * indexDelegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreSpotlight/Reference/CSSearchableIndex_Class/index.html#//apple_ref/occ/instp/CSSearchableIndex/indexDelegate">iOS Dev Center</a>
-     */
     @Generated
     public void setIndexDelegate(@Mapped(ObjCObjectMapper.class) CSSearchableIndexDelegate value) {
         Object __old = indexDelegate();

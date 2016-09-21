@@ -61,19 +61,11 @@ public class MKGeodesicPolyline extends MKPolyline {
     @Selector("alloc")
     public static native MKGeodesicPolyline alloc();
 
-    /**
-     * polylineWithCoordinates:count:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKGeodesicPolyline_class/index.html#//apple_ref/occ/clm/MKGeodesicPolyline/polylineWithCoordinates:count:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("polylineWithCoordinates:count:")
     public static native MKGeodesicPolyline polylineWithCoordinatesCount(Ptr<CLLocationCoordinate2D> coords,
             @NUInt long count);
 
-    /**
-     * polylineWithPoints:count:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKGeodesicPolyline_class/index.html#//apple_ref/occ/clm/MKGeodesicPolyline/polylineWithPoints:count:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("polylineWithPoints:count:")
     public static native MKGeodesicPolyline polylineWithPointsCount(Ptr<MKMapPoint> points, @NUInt long count);

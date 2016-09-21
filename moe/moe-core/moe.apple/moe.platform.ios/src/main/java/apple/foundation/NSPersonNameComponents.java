@@ -172,18 +172,10 @@ public class NSPersonNameComponents extends NSObject implements NSCopying, NSSec
     @Selector("encodeWithCoder:")
     public native void encodeWithCoder(NSCoder aCoder);
 
-    /**
-     * familyName</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Miscellaneous/Reference/NSPersonNameComponents_Class/index.html#//apple_ref/occ/instp/NSPersonNameComponents/familyName">iOS Dev Center</a>
-     */
     @Generated
     @Selector("familyName")
     public native String familyName();
 
-    /**
-     * givenName</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Miscellaneous/Reference/NSPersonNameComponents_Class/index.html#//apple_ref/occ/instp/NSPersonNameComponents/givenName">iOS Dev Center</a>
-     */
     @Generated
     @Selector("givenName")
     public native String givenName();
@@ -196,98 +188,50 @@ public class NSPersonNameComponents extends NSObject implements NSCopying, NSSec
     @Selector("initWithCoder:")
     public native NSPersonNameComponents initWithCoder(NSCoder aDecoder);
 
-    /**
-     * middleName</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Miscellaneous/Reference/NSPersonNameComponents_Class/index.html#//apple_ref/occ/instp/NSPersonNameComponents/middleName">iOS Dev Center</a>
-     */
     @Generated
     @Selector("middleName")
     public native String middleName();
 
-    /**
-     * namePrefix</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Miscellaneous/Reference/NSPersonNameComponents_Class/index.html#//apple_ref/occ/instp/NSPersonNameComponents/namePrefix">iOS Dev Center</a>
-     */
     @Generated
     @Selector("namePrefix")
     public native String namePrefix();
 
-    /**
-     * nameSuffix</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Miscellaneous/Reference/NSPersonNameComponents_Class/index.html#//apple_ref/occ/instp/NSPersonNameComponents/nameSuffix">iOS Dev Center</a>
-     */
     @Generated
     @Selector("nameSuffix")
     public native String nameSuffix();
 
-    /**
-     * nickname</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Miscellaneous/Reference/NSPersonNameComponents_Class/index.html#//apple_ref/occ/instp/NSPersonNameComponents/nickname">iOS Dev Center</a>
-     */
     @Generated
     @Selector("nickname")
     public native String nickname();
 
-    /**
-     * phoneticRepresentation</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Miscellaneous/Reference/NSPersonNameComponents_Class/index.html#//apple_ref/occ/instp/NSPersonNameComponents/phoneticRepresentation">iOS Dev Center</a>
-     */
     @Generated
     @Selector("phoneticRepresentation")
     public native NSPersonNameComponents phoneticRepresentation();
 
-    /**
-     * familyName</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Miscellaneous/Reference/NSPersonNameComponents_Class/index.html#//apple_ref/occ/instp/NSPersonNameComponents/familyName">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setFamilyName:")
     public native void setFamilyName(String value);
 
-    /**
-     * givenName</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Miscellaneous/Reference/NSPersonNameComponents_Class/index.html#//apple_ref/occ/instp/NSPersonNameComponents/givenName">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setGivenName:")
     public native void setGivenName(String value);
 
-    /**
-     * middleName</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Miscellaneous/Reference/NSPersonNameComponents_Class/index.html#//apple_ref/occ/instp/NSPersonNameComponents/middleName">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setMiddleName:")
     public native void setMiddleName(String value);
 
-    /**
-     * namePrefix</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Miscellaneous/Reference/NSPersonNameComponents_Class/index.html#//apple_ref/occ/instp/NSPersonNameComponents/namePrefix">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setNamePrefix:")
     public native void setNamePrefix(String value);
 
-    /**
-     * nameSuffix</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Miscellaneous/Reference/NSPersonNameComponents_Class/index.html#//apple_ref/occ/instp/NSPersonNameComponents/nameSuffix">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setNameSuffix:")
     public native void setNameSuffix(String value);
 
-    /**
-     * nickname</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Miscellaneous/Reference/NSPersonNameComponents_Class/index.html#//apple_ref/occ/instp/NSPersonNameComponents/nickname">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setNickname:")
     public native void setNickname(String value);
 
-    /**
-     * phoneticRepresentation</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Miscellaneous/Reference/NSPersonNameComponents_Class/index.html#//apple_ref/occ/instp/NSPersonNameComponents/phoneticRepresentation">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setPhoneticRepresentation:")
     public native void setPhoneticRepresentation(NSPersonNameComponents value);

@@ -62,26 +62,14 @@ public class NEFilterRemediationVerdict extends NEFilterVerdict implements NSSec
     @Selector("alloc")
     public static native NEFilterRemediationVerdict alloc();
 
-    /**
-     * allowVerdict</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEFilterRemediationVerdictClassRef/index.html#//apple_ref/occ/clm/NEFilterRemediationVerdict/allowVerdict">iOS Dev Center</a>
-     */
     @Generated
     @Selector("allowVerdict")
     public static native NEFilterRemediationVerdict allowVerdict();
 
-    /**
-     * dropVerdict</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEFilterRemediationVerdictClassRef/index.html#//apple_ref/occ/clm/NEFilterRemediationVerdict/dropVerdict">iOS Dev Center</a>
-     */
     @Generated
     @Selector("dropVerdict")
     public static native NEFilterRemediationVerdict dropVerdict();
 
-    /**
-     * needRulesVerdict</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEFilterRemediationVerdictClassRef/index.html#//apple_ref/occ/clm/NEFilterRemediationVerdict/needRulesVerdict">iOS Dev Center</a>
-     */
     @Generated
     @Selector("needRulesVerdict")
     public static native NEFilterRemediationVerdict needRulesVerdict();

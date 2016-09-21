@@ -169,52 +169,28 @@ public class MTLVertexBufferLayoutDescriptor extends NSObject implements NSCopyi
     @Selector("init")
     public native MTLVertexBufferLayoutDescriptor init();
 
-    /**
-     * stepFunction</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Metal/Reference/MTLVertexBufferLayoutDescriptor_Ref/index.html#//apple_ref/occ/instp/MTLVertexBufferLayoutDescriptor/stepFunction">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setStepFunction:")
     public native void setStepFunction(@NUInt long value);
 
-    /**
-     * stepRate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Metal/Reference/MTLVertexBufferLayoutDescriptor_Ref/index.html#//apple_ref/occ/instp/MTLVertexBufferLayoutDescriptor/stepRate">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setStepRate:")
     public native void setStepRate(@NUInt long value);
 
-    /**
-     * stride</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Metal/Reference/MTLVertexBufferLayoutDescriptor_Ref/index.html#//apple_ref/occ/instp/MTLVertexBufferLayoutDescriptor/stride">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setStride:")
     public native void setStride(@NUInt long value);
 
-    /**
-     * stepFunction</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Metal/Reference/MTLVertexBufferLayoutDescriptor_Ref/index.html#//apple_ref/occ/instp/MTLVertexBufferLayoutDescriptor/stepFunction">iOS Dev Center</a>
-     */
     @Generated
     @Selector("stepFunction")
     @NUInt
     public native long stepFunction();
 
-    /**
-     * stepRate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Metal/Reference/MTLVertexBufferLayoutDescriptor_Ref/index.html#//apple_ref/occ/instp/MTLVertexBufferLayoutDescriptor/stepRate">iOS Dev Center</a>
-     */
     @Generated
     @Selector("stepRate")
     @NUInt
     public native long stepRate();
 
-    /**
-     * stride</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Metal/Reference/MTLVertexBufferLayoutDescriptor_Ref/index.html#//apple_ref/occ/instp/MTLVertexBufferLayoutDescriptor/stride">iOS Dev Center</a>
-     */
     @Generated
     @Selector("stride")
     @NUInt

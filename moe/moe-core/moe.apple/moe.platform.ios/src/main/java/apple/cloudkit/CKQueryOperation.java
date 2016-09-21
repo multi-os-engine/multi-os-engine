@@ -160,18 +160,10 @@ public class CKQueryOperation extends CKDatabaseOperation {
     @NInt
     public static native long version_static();
 
-    /**
-     * cursor</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKQueryOperation_class/index.html#//apple_ref/occ/instp/CKQueryOperation/cursor">iOS Dev Center</a>
-     */
     @Generated
     @Selector("cursor")
     public native CKQueryCursor cursor();
 
-    /**
-     * desiredKeys</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKQueryOperation_class/index.html#//apple_ref/occ/instp/CKQueryOperation/desiredKeys">iOS Dev Center</a>
-     */
     @Generated
     @Selector("desiredKeys")
     public native NSArray<String> desiredKeys();
@@ -180,118 +172,62 @@ public class CKQueryOperation extends CKDatabaseOperation {
     @Selector("init")
     public native CKQueryOperation init();
 
-    /**
-     * initWithCursor:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKQueryOperation_class/index.html#//apple_ref/occ/instm/CKQueryOperation/initWithCursor:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithCursor:")
     public native CKQueryOperation initWithCursor(CKQueryCursor cursor);
 
-    /**
-     * initWithQuery:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKQueryOperation_class/index.html#//apple_ref/occ/instm/CKQueryOperation/initWithQuery:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithQuery:")
     public native CKQueryOperation initWithQuery(CKQuery query);
 
-    /**
-     * query</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKQueryOperation_class/index.html#//apple_ref/occ/instp/CKQueryOperation/query">iOS Dev Center</a>
-     */
     @Generated
     @Selector("query")
     public native CKQuery query();
 
-    /**
-     * resultsLimit</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKQueryOperation_class/index.html#//apple_ref/occ/instp/CKQueryOperation/resultsLimit">iOS Dev Center</a>
-     */
     @Generated
     @Selector("resultsLimit")
     @NUInt
     public native long resultsLimit();
 
-    /**
-     * cursor</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKQueryOperation_class/index.html#//apple_ref/occ/instp/CKQueryOperation/cursor">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setCursor:")
     public native void setCursor(CKQueryCursor value);
 
-    /**
-     * desiredKeys</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKQueryOperation_class/index.html#//apple_ref/occ/instp/CKQueryOperation/desiredKeys">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setDesiredKeys:")
     public native void setDesiredKeys(NSArray<String> value);
 
-    /**
-     * query</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKQueryOperation_class/index.html#//apple_ref/occ/instp/CKQueryOperation/query">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setQuery:")
     public native void setQuery(CKQuery value);
 
-    /**
-     * queryCompletionBlock</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKQueryOperation_class/index.html#//apple_ref/occ/instp/CKQueryOperation/queryCompletionBlock">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setQueryCompletionBlock:")
     public native void setQueryCompletionBlock(
             @ObjCBlock(name = "call_setQueryCompletionBlock") Block_setQueryCompletionBlock value);
 
-    /**
-     * recordFetchedBlock</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKQueryOperation_class/index.html#//apple_ref/occ/instp/CKQueryOperation/recordFetchedBlock">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setRecordFetchedBlock:")
     public native void setRecordFetchedBlock(
             @ObjCBlock(name = "call_setRecordFetchedBlock") Block_setRecordFetchedBlock value);
 
-    /**
-     * resultsLimit</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKQueryOperation_class/index.html#//apple_ref/occ/instp/CKQueryOperation/resultsLimit">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setResultsLimit:")
     public native void setResultsLimit(@NUInt long value);
 
-    /**
-     * zoneID</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKQueryOperation_class/index.html#//apple_ref/occ/instp/CKQueryOperation/zoneID">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setZoneID:")
     public native void setZoneID(CKRecordZoneID value);
 
-    /**
-     * zoneID</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKQueryOperation_class/index.html#//apple_ref/occ/instp/CKQueryOperation/zoneID">iOS Dev Center</a>
-     */
     @Generated
     @Selector("zoneID")
     public native CKRecordZoneID zoneID();
 
-    /**
-     * queryCompletionBlock</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKQueryOperation_class/index.html#//apple_ref/occ/instp/CKQueryOperation/queryCompletionBlock">iOS Dev Center</a>
-     */
     @Generated
     @Selector("queryCompletionBlock")
     @ObjCBlock(name = "call_queryCompletionBlock_ret")
     public native Block_queryCompletionBlock_ret queryCompletionBlock();
 
-    /**
-     * recordFetchedBlock</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKQueryOperation_class/index.html#//apple_ref/occ/instp/CKQueryOperation/recordFetchedBlock">iOS Dev Center</a>
-     */
     @Generated
     @Selector("recordFetchedBlock")
     @ObjCBlock(name = "call_recordFetchedBlock_ret")

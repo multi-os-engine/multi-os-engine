@@ -159,26 +159,14 @@ public class PKAddPaymentPassRequest extends NSObject {
     @NInt
     public static native long version_static();
 
-    /**
-     * activationData</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/PassKit/Reference/PKAddPaymentPassRequest_Class/index.html#//apple_ref/occ/instp/PKAddPaymentPassRequest/activationData">iOS Dev Center</a>
-     */
     @Generated
     @Selector("activationData")
     public native NSData activationData();
 
-    /**
-     * encryptedPassData</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/PassKit/Reference/PKAddPaymentPassRequest_Class/index.html#//apple_ref/occ/instp/PKAddPaymentPassRequest/encryptedPassData">iOS Dev Center</a>
-     */
     @Generated
     @Selector("encryptedPassData")
     public native NSData encryptedPassData();
 
-    /**
-     * ephemeralPublicKey</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/PassKit/Reference/PKAddPaymentPassRequest_Class/index.html#//apple_ref/occ/instp/PKAddPaymentPassRequest/ephemeralPublicKey">iOS Dev Center</a>
-     */
     @Generated
     @Selector("ephemeralPublicKey")
     public native NSData ephemeralPublicKey();
@@ -187,26 +175,14 @@ public class PKAddPaymentPassRequest extends NSObject {
     @Selector("init")
     public native PKAddPaymentPassRequest init();
 
-    /**
-     * activationData</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/PassKit/Reference/PKAddPaymentPassRequest_Class/index.html#//apple_ref/occ/instp/PKAddPaymentPassRequest/activationData">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setActivationData:")
     public native void setActivationData(NSData value);
 
-    /**
-     * encryptedPassData</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/PassKit/Reference/PKAddPaymentPassRequest_Class/index.html#//apple_ref/occ/instp/PKAddPaymentPassRequest/encryptedPassData">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setEncryptedPassData:")
     public native void setEncryptedPassData(NSData value);
 
-    /**
-     * ephemeralPublicKey</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/PassKit/Reference/PKAddPaymentPassRequest_Class/index.html#//apple_ref/occ/instp/PKAddPaymentPassRequest/ephemeralPublicKey">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setEphemeralPublicKey:")
     public native void setEphemeralPublicKey(NSData value);

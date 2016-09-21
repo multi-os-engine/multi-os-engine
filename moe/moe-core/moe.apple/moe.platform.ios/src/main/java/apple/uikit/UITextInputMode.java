@@ -56,10 +56,6 @@ public class UITextInputMode extends NSObject implements NSSecureCoding {
         super(peer);
     }
 
-    /**
-     * activeInputModes</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITextInputMode_Class/index.html#//apple_ref/occ/clm/UITextInputMode/activeInputModes">iOS Dev Center</a>
-     */
     @Generated
     @Selector("activeInputModes")
     public static native NSArray<String> activeInputModes();
@@ -69,10 +65,6 @@ public class UITextInputMode extends NSObject implements NSSecureCoding {
     @Selector("alloc")
     public static native UITextInputMode alloc();
 
-    /**
-     * currentInputMode</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITextInputMode_Class/index.html#//apple_ref/occ/clm/UITextInputMode/currentInputMode">iOS Dev Center</a>
-     */
     @Generated
     @Deprecated
     @Selector("currentInputMode")
@@ -194,10 +186,6 @@ public class UITextInputMode extends NSObject implements NSSecureCoding {
     @Selector("initWithCoder:")
     public native UITextInputMode initWithCoder(NSCoder aDecoder);
 
-    /**
-     * primaryLanguage</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITextInputMode_Class/index.html#//apple_ref/occ/instp/UITextInputMode/primaryLanguage">iOS Dev Center</a>
-     */
     @Generated
     @Selector("primaryLanguage")
     public native String primaryLanguage();

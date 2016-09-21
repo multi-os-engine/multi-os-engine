@@ -191,10 +191,6 @@ public class SCNConstraint extends NSObject implements NSCopying, NSSecureCoding
     @Selector("encodeWithCoder:")
     public native void encodeWithCoder(NSCoder aCoder);
 
-    /**
-     * influenceFactor</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNConstraint_Class/index.html#//apple_ref/occ/instp/SCNConstraint/influenceFactor">iOS Dev Center</a>
-     */
     @Generated
     @Selector("influenceFactor")
     @NFloat
@@ -232,10 +228,6 @@ public class SCNConstraint extends NSObject implements NSCopying, NSSecureCoding
     @Selector("resumeAnimationForKey:")
     public native void resumeAnimationForKey(String key);
 
-    /**
-     * influenceFactor</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNConstraint_Class/index.html#//apple_ref/occ/instp/SCNConstraint/influenceFactor">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setInfluenceFactor:")
     public native void setInfluenceFactor(@NFloat double value);

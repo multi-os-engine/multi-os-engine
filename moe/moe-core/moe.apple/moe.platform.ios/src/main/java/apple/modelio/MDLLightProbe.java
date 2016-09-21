@@ -61,10 +61,6 @@ public class MDLLightProbe extends MDLLight {
     @Selector("alloc")
     public static native MDLLightProbe alloc();
 
-    /**
-     * lightProbeWithTextureSize:forLocation:lightsToConsider:objectsToConsider:reflectiveCubemap:irradianceCubemap:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLLightProbe_Class/index.html#//apple_ref/occ/clm/MDLLightProbe/lightProbeWithTextureSize:forLocation:lightsToConsider:objectsToConsider:reflectiveCubemap:irradianceCubemap:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("lightProbeWithTextureSize:forLocation:lightsToConsider:objectsToConsider:reflectiveCubemap:irradianceCubemap:")
     public static native MDLLightProbe lightProbeWithTextureSizeForLocationLightsToConsiderObjectsToConsiderReflectiveCubemapIrradianceCubemap(
@@ -179,10 +175,6 @@ public class MDLLightProbe extends MDLLight {
     @NInt
     public static native long version_static();
 
-    /**
-     * generateSphericalHarmonicsFromIrradiance:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLLightProbe_Class/index.html#//apple_ref/occ/instm/MDLLightProbe/generateSphericalHarmonicsFromIrradiance:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("generateSphericalHarmonicsFromIrradiance:")
     public native void generateSphericalHarmonicsFromIrradiance(@NUInt long sphericalHarmonicsLevel);
@@ -191,43 +183,23 @@ public class MDLLightProbe extends MDLLight {
     @Selector("init")
     public native MDLLightProbe init();
 
-    /**
-     * initWithReflectiveTexture:irradianceTexture:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLLightProbe_Class/index.html#//apple_ref/occ/instm/MDLLightProbe/initWithReflectiveTexture:irradianceTexture:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithReflectiveTexture:irradianceTexture:")
     public native MDLLightProbe initWithReflectiveTextureIrradianceTexture(MDLTexture reflectiveTexture,
             MDLTexture irradianceTexture);
 
-    /**
-     * irradianceTexture</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLLightProbe_Class/index.html#//apple_ref/occ/instp/MDLLightProbe/irradianceTexture">iOS Dev Center</a>
-     */
     @Generated
     @Selector("irradianceTexture")
     public native MDLTexture irradianceTexture();
 
-    /**
-     * reflectiveTexture</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLLightProbe_Class/index.html#//apple_ref/occ/instp/MDLLightProbe/reflectiveTexture">iOS Dev Center</a>
-     */
     @Generated
     @Selector("reflectiveTexture")
     public native MDLTexture reflectiveTexture();
 
-    /**
-     * sphericalHarmonicsCoefficients</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLLightProbe_Class/index.html#//apple_ref/occ/instp/MDLLightProbe/sphericalHarmonicsCoefficients">iOS Dev Center</a>
-     */
     @Generated
     @Selector("sphericalHarmonicsCoefficients")
     public native NSData sphericalHarmonicsCoefficients();
 
-    /**
-     * sphericalHarmonicsLevel</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLLightProbe_Class/index.html#//apple_ref/occ/instp/MDLLightProbe/sphericalHarmonicsLevel">iOS Dev Center</a>
-     */
     @Generated
     @Selector("sphericalHarmonicsLevel")
     @NUInt

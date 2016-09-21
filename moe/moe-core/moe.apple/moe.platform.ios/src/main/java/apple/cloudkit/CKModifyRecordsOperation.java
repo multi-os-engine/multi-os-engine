@@ -161,18 +161,10 @@ public class CKModifyRecordsOperation extends CKDatabaseOperation {
     @NInt
     public static native long version_static();
 
-    /**
-     * atomic</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKModifyRecordsOperation_class/index.html#//apple_ref/occ/instp/CKModifyRecordsOperation/atomic">iOS Dev Center</a>
-     */
     @Generated
     @Selector("atomic")
     public native boolean atomic();
 
-    /**
-     * clientChangeTokenData</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKModifyRecordsOperation_class/index.html#//apple_ref/occ/instp/CKModifyRecordsOperation/clientChangeTokenData">iOS Dev Center</a>
-     */
     @Generated
     @Selector("clientChangeTokenData")
     public native NSData clientChangeTokenData();
@@ -181,129 +173,69 @@ public class CKModifyRecordsOperation extends CKDatabaseOperation {
     @Selector("init")
     public native CKModifyRecordsOperation init();
 
-    /**
-     * initWithRecordsToSave:recordIDsToDelete:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKModifyRecordsOperation_class/index.html#//apple_ref/occ/instm/CKModifyRecordsOperation/initWithRecordsToSave:recordIDsToDelete:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithRecordsToSave:recordIDsToDelete:")
     public native CKModifyRecordsOperation initWithRecordsToSaveRecordIDsToDelete(NSArray<? extends CKRecord> records,
             NSArray<? extends CKRecordID> recordIDs);
 
-    /**
-     * recordIDsToDelete</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKModifyRecordsOperation_class/index.html#//apple_ref/occ/instp/CKModifyRecordsOperation/recordIDsToDelete">iOS Dev Center</a>
-     */
     @Generated
     @Selector("recordIDsToDelete")
     public native NSArray<? extends CKRecordID> recordIDsToDelete();
 
-    /**
-     * recordsToSave</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKModifyRecordsOperation_class/index.html#//apple_ref/occ/instp/CKModifyRecordsOperation/recordsToSave">iOS Dev Center</a>
-     */
     @Generated
     @Selector("recordsToSave")
     public native NSArray<? extends CKRecord> recordsToSave();
 
-    /**
-     * savePolicy</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKModifyRecordsOperation_class/index.html#//apple_ref/occ/instp/CKModifyRecordsOperation/savePolicy">iOS Dev Center</a>
-     */
     @Generated
     @Selector("savePolicy")
     @NInt
     public native long savePolicy();
 
-    /**
-     * atomic</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKModifyRecordsOperation_class/index.html#//apple_ref/occ/instp/CKModifyRecordsOperation/atomic">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setAtomic:")
     public native void setAtomic(boolean value);
 
-    /**
-     * clientChangeTokenData</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKModifyRecordsOperation_class/index.html#//apple_ref/occ/instp/CKModifyRecordsOperation/clientChangeTokenData">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setClientChangeTokenData:")
     public native void setClientChangeTokenData(NSData value);
 
-    /**
-     * modifyRecordsCompletionBlock</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKModifyRecordsOperation_class/index.html#//apple_ref/occ/instp/CKModifyRecordsOperation/modifyRecordsCompletionBlock">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setModifyRecordsCompletionBlock:")
     public native void setModifyRecordsCompletionBlock(
             @ObjCBlock(name = "call_setModifyRecordsCompletionBlock") Block_setModifyRecordsCompletionBlock value);
 
-    /**
-     * perRecordCompletionBlock</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKModifyRecordsOperation_class/index.html#//apple_ref/occ/instp/CKModifyRecordsOperation/perRecordCompletionBlock">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setPerRecordCompletionBlock:")
     public native void setPerRecordCompletionBlock(
             @ObjCBlock(name = "call_setPerRecordCompletionBlock") Block_setPerRecordCompletionBlock value);
 
-    /**
-     * perRecordProgressBlock</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKModifyRecordsOperation_class/index.html#//apple_ref/occ/instp/CKModifyRecordsOperation/perRecordProgressBlock">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setPerRecordProgressBlock:")
     public native void setPerRecordProgressBlock(
             @ObjCBlock(name = "call_setPerRecordProgressBlock") Block_setPerRecordProgressBlock value);
 
-    /**
-     * recordIDsToDelete</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKModifyRecordsOperation_class/index.html#//apple_ref/occ/instp/CKModifyRecordsOperation/recordIDsToDelete">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setRecordIDsToDelete:")
     public native void setRecordIDsToDelete(NSArray<? extends CKRecordID> value);
 
-    /**
-     * recordsToSave</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKModifyRecordsOperation_class/index.html#//apple_ref/occ/instp/CKModifyRecordsOperation/recordsToSave">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setRecordsToSave:")
     public native void setRecordsToSave(NSArray<? extends CKRecord> value);
 
-    /**
-     * savePolicy</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKModifyRecordsOperation_class/index.html#//apple_ref/occ/instp/CKModifyRecordsOperation/savePolicy">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setSavePolicy:")
     public native void setSavePolicy(@NInt long value);
 
-    /**
-     * modifyRecordsCompletionBlock</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKModifyRecordsOperation_class/index.html#//apple_ref/occ/instp/CKModifyRecordsOperation/modifyRecordsCompletionBlock">iOS Dev Center</a>
-     */
     @Generated
     @Selector("modifyRecordsCompletionBlock")
     @ObjCBlock(name = "call_modifyRecordsCompletionBlock_ret")
     public native Block_modifyRecordsCompletionBlock_ret modifyRecordsCompletionBlock();
 
-    /**
-     * perRecordCompletionBlock</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKModifyRecordsOperation_class/index.html#//apple_ref/occ/instp/CKModifyRecordsOperation/perRecordCompletionBlock">iOS Dev Center</a>
-     */
     @Generated
     @Selector("perRecordCompletionBlock")
     @ObjCBlock(name = "call_perRecordCompletionBlock_ret")
     public native Block_perRecordCompletionBlock_ret perRecordCompletionBlock();
 
-    /**
-     * perRecordProgressBlock</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKModifyRecordsOperation_class/index.html#//apple_ref/occ/instp/CKModifyRecordsOperation/perRecordProgressBlock">iOS Dev Center</a>
-     */
     @Generated
     @Selector("perRecordProgressBlock")
     @ObjCBlock(name = "call_perRecordProgressBlock_ret")

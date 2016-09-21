@@ -60,28 +60,16 @@ public class NEHotspotHelper extends NSObject {
     @Selector("alloc")
     public static native NEHotspotHelper alloc();
 
-    /**
-     * logoff:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEHotspotHelperClassRef/index.html#//apple_ref/occ/clm/NEHotspotHelper/logoff:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("logoff:")
     public static native boolean logoff(NEHotspotNetwork network);
 
-    /**
-     * registerWithOptions:queue:handler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEHotspotHelperClassRef/index.html#//apple_ref/occ/clm/NEHotspotHelper/registerWithOptions:queue:handler:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("registerWithOptions:queue:handler:")
     public static native boolean registerWithOptionsQueueHandler(NSDictionary<String, ? extends NSObject> options,
             NSObject queue,
             @ObjCBlock(name = "call_registerWithOptionsQueueHandler") Block_registerWithOptionsQueueHandler handler);
 
-    /**
-     * supportedNetworkInterfaces</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEHotspotHelperClassRef/index.html#//apple_ref/occ/clm/NEHotspotHelper/supportedNetworkInterfaces">iOS Dev Center</a>
-     */
     @Generated
     @Selector("supportedNetworkInterfaces")
     public static native NSArray<?> supportedNetworkInterfaces();

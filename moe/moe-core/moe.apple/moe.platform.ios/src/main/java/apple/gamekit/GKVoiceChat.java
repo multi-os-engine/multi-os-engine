@@ -59,10 +59,6 @@ public class GKVoiceChat extends NSObject {
     @Selector("alloc")
     public static native GKVoiceChat alloc();
 
-    /**
-     * isVoIPAllowed</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKVoiceChat_Ref/index.html#//apple_ref/occ/clm/GKVoiceChat/isVoIPAllowed">iOS Dev Center</a>
-     */
     @Generated
     @Selector("isVoIPAllowed")
     public static native boolean isVoIPAllowed();
@@ -171,129 +167,69 @@ public class GKVoiceChat extends NSObject {
     @Selector("init")
     public native GKVoiceChat init();
 
-    /**
-     * active</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKVoiceChat_Ref/index.html#//apple_ref/occ/instp/GKVoiceChat/active">iOS Dev Center</a>
-     */
     @Generated
     @Selector("isActive")
     public native boolean isActive();
 
-    /**
-     * active</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKVoiceChat_Ref/index.html#//apple_ref/occ/instp/GKVoiceChat/active">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setActive:")
     public native void setActive(boolean value);
 
-    /**
-     * name</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKVoiceChat_Ref/index.html#//apple_ref/occ/instp/GKVoiceChat/name">iOS Dev Center</a>
-     */
     @Generated
     @Selector("name")
     public native String name();
 
-    /**
-     * playerIDs</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKVoiceChat_Ref/index.html#//apple_ref/occ/instp/GKVoiceChat/playerIDs">iOS Dev Center</a>
-     */
     @Generated
     @Deprecated
     @Selector("playerIDs")
     public native NSArray<String> playerIDs();
 
-    /**
-     * players</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKVoiceChat_Ref/index.html#//apple_ref/occ/instp/GKVoiceChat/players">iOS Dev Center</a>
-     */
     @Generated
     @Selector("players")
     public native NSArray<? extends GKPlayer> players();
 
-    /**
-     * setMute:forPlayer:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKVoiceChat_Ref/index.html#//apple_ref/occ/instm/GKVoiceChat/setMute:forPlayer:">iOS Dev Center</a>
-     */
     @Generated
     @Deprecated
     @Selector("setMute:forPlayer:")
     public native void setMuteForPlayer(boolean isMuted, String playerID);
 
-    /**
-     * setPlayer:muted:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKVoiceChat_Ref/index.html#//apple_ref/occ/instm/GKVoiceChat/setPlayer:muted:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setPlayer:muted:")
     public native void setPlayerMuted(GKPlayer player, boolean isMuted);
 
-    /**
-     * playerStateUpdateHandler</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKVoiceChat_Ref/index.html#//apple_ref/occ/instp/GKVoiceChat/playerStateUpdateHandler">iOS Dev Center</a>
-     */
     @Generated
     @Deprecated
     @Selector("setPlayerStateUpdateHandler:")
     public native void setPlayerStateUpdateHandler(
             @ObjCBlock(name = "call_setPlayerStateUpdateHandler") Block_setPlayerStateUpdateHandler value);
 
-    /**
-     * playerVoiceChatStateDidChangeHandler</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKVoiceChat_Ref/index.html#//apple_ref/occ/instp/GKVoiceChat/playerVoiceChatStateDidChangeHandler">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setPlayerVoiceChatStateDidChangeHandler:")
     public native void setPlayerVoiceChatStateDidChangeHandler(
             @ObjCBlock(name = "call_setPlayerVoiceChatStateDidChangeHandler") Block_setPlayerVoiceChatStateDidChangeHandler value);
 
-    /**
-     * volume</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKVoiceChat_Ref/index.html#//apple_ref/occ/instp/GKVoiceChat/volume">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setVolume:")
     public native void setVolume(float value);
 
-    /**
-     * start</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKVoiceChat_Ref/index.html#//apple_ref/occ/instm/GKVoiceChat/start">iOS Dev Center</a>
-     */
     @Generated
     @Selector("start")
     public native void start();
 
-    /**
-     * stop</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKVoiceChat_Ref/index.html#//apple_ref/occ/instm/GKVoiceChat/stop">iOS Dev Center</a>
-     */
     @Generated
     @Selector("stop")
     public native void stop();
 
-    /**
-     * volume</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKVoiceChat_Ref/index.html#//apple_ref/occ/instp/GKVoiceChat/volume">iOS Dev Center</a>
-     */
     @Generated
     @Selector("volume")
     public native float volume();
 
-    /**
-     * playerStateUpdateHandler</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKVoiceChat_Ref/index.html#//apple_ref/occ/instp/GKVoiceChat/playerStateUpdateHandler">iOS Dev Center</a>
-     */
     @Generated
     @Deprecated
     @Selector("playerStateUpdateHandler")
     @ObjCBlock(name = "call_playerStateUpdateHandler_ret")
     public native Block_playerStateUpdateHandler_ret playerStateUpdateHandler();
 
-    /**
-     * playerVoiceChatStateDidChangeHandler</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKVoiceChat_Ref/index.html#//apple_ref/occ/instp/GKVoiceChat/playerVoiceChatStateDidChangeHandler">iOS Dev Center</a>
-     */
     @Generated
     @Selector("playerVoiceChatStateDidChangeHandler")
     @ObjCBlock(name = "call_playerVoiceChatStateDidChangeHandler_ret")

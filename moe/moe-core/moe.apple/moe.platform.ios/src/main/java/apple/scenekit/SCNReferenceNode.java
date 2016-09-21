@@ -74,10 +74,6 @@ public class SCNReferenceNode extends SCNNode {
     @Selector("nodeWithMDLObject:")
     public static native SCNReferenceNode nodeWithMDLObject(MDLObject mdlObject);
 
-    /**
-     * referenceNodeWithURL:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNReferenceNode_Class/index.html#//apple_ref/occ/clm/SCNReferenceNode/referenceNodeWithURL:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("referenceNodeWithURL:")
     public static native SCNReferenceNode referenceNodeWithURL(NSURL referenceURL);
@@ -194,67 +190,35 @@ public class SCNReferenceNode extends SCNNode {
     @Selector("initWithCoder:")
     public native SCNReferenceNode initWithCoder(NSCoder aDecoder);
 
-    /**
-     * initWithURL:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNReferenceNode_Class/index.html#//apple_ref/occ/instm/SCNReferenceNode/initWithURL:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithURL:")
     public native SCNReferenceNode initWithURL(NSURL referenceURL);
 
-    /**
-     * loaded</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNReferenceNode_Class/index.html#//apple_ref/occ/instp/SCNReferenceNode/loaded">iOS Dev Center</a>
-     */
     @Generated
     @Selector("isLoaded")
     public native boolean isLoaded();
 
-    /**
-     * load</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNReferenceNode_Class/index.html#//apple_ref/occ/instm/SCNReferenceNode/load">iOS Dev Center</a>
-     */
     @Generated
     @Selector("load")
     public native void load_objc();
 
-    /**
-     * loadingPolicy</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNReferenceNode_Class/index.html#//apple_ref/occ/instp/SCNReferenceNode/loadingPolicy">iOS Dev Center</a>
-     */
     @Generated
     @Selector("loadingPolicy")
     @NInt
     public native long loadingPolicy();
 
-    /**
-     * referenceURL</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNReferenceNode_Class/index.html#//apple_ref/occ/instp/SCNReferenceNode/referenceURL">iOS Dev Center</a>
-     */
     @Generated
     @Selector("referenceURL")
     public native NSURL referenceURL();
 
-    /**
-     * loadingPolicy</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNReferenceNode_Class/index.html#//apple_ref/occ/instp/SCNReferenceNode/loadingPolicy">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setLoadingPolicy:")
     public native void setLoadingPolicy(@NInt long value);
 
-    /**
-     * referenceURL</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNReferenceNode_Class/index.html#//apple_ref/occ/instp/SCNReferenceNode/referenceURL">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setReferenceURL:")
     public native void setReferenceURL(NSURL value);
 
-    /**
-     * unload</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNReferenceNode_Class/index.html#//apple_ref/occ/instm/SCNReferenceNode/unload">iOS Dev Center</a>
-     */
     @Generated
     @Selector("unload")
     public native void unload();

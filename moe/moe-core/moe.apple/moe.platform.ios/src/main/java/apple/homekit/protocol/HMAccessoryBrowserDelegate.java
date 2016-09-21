@@ -31,10 +31,6 @@ import org.moe.natj.objc.ann.Selector;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("HMAccessoryBrowserDelegate")
 public interface HMAccessoryBrowserDelegate {
-    /**
-     * accessoryBrowser:didFindNewAccessory:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HomeKit/Reference/HMAccessoryBrowserDelegate_Protocol/index.html#//apple_ref/occ/intfm/HMAccessoryBrowserDelegate/accessoryBrowser:didFindNewAccessory:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("accessoryBrowser:didFindNewAccessory:")
@@ -42,10 +38,6 @@ public interface HMAccessoryBrowserDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * accessoryBrowser:didRemoveNewAccessory:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HomeKit/Reference/HMAccessoryBrowserDelegate_Protocol/index.html#//apple_ref/occ/intfm/HMAccessoryBrowserDelegate/accessoryBrowser:didRemoveNewAccessory:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("accessoryBrowser:didRemoveNewAccessory:")

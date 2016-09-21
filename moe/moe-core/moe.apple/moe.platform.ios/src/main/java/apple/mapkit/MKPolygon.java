@@ -65,35 +65,19 @@ public class MKPolygon extends MKMultiPoint implements MKOverlay {
     @Selector("alloc")
     public static native MKPolygon alloc();
 
-    /**
-     * polygonWithCoordinates:count:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKPolygon_class/index.html#//apple_ref/occ/clm/MKPolygon/polygonWithCoordinates:count:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("polygonWithCoordinates:count:")
     public static native MKPolygon polygonWithCoordinatesCount(Ptr<CLLocationCoordinate2D> coords, @NUInt long count);
 
-    /**
-     * polygonWithCoordinates:count:interiorPolygons:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKPolygon_class/index.html#//apple_ref/occ/clm/MKPolygon/polygonWithCoordinates:count:interiorPolygons:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("polygonWithCoordinates:count:interiorPolygons:")
     public static native MKPolygon polygonWithCoordinatesCountInteriorPolygons(Ptr<CLLocationCoordinate2D> coords,
             @NUInt long count, NSArray<? extends MKPolygon> interiorPolygons);
 
-    /**
-     * polygonWithPoints:count:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKPolygon_class/index.html#//apple_ref/occ/clm/MKPolygon/polygonWithPoints:count:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("polygonWithPoints:count:")
     public static native MKPolygon polygonWithPointsCount(Ptr<MKMapPoint> points, @NUInt long count);
 
-    /**
-     * polygonWithPoints:count:interiorPolygons:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKPolygon_class/index.html#//apple_ref/occ/clm/MKPolygon/polygonWithPoints:count:interiorPolygons:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("polygonWithPoints:count:interiorPolygons:")
     public static native MKPolygon polygonWithPointsCountInteriorPolygons(Ptr<MKMapPoint> points, @NUInt long count,
@@ -218,10 +202,6 @@ public class MKPolygon extends MKMultiPoint implements MKOverlay {
     @Selector("init")
     public native MKPolygon init();
 
-    /**
-     * interiorPolygons</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKPolygon_class/index.html#//apple_ref/occ/instp/MKPolygon/interiorPolygons">iOS Dev Center</a>
-     */
     @Generated
     @Selector("interiorPolygons")
     public native NSArray<? extends MKPolygon> interiorPolygons();

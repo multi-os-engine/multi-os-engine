@@ -168,10 +168,6 @@ public class AVAudioEnvironmentNode extends AVAudioNode implements AVAudioMixing
     @Selector("applicableRenderingAlgorithms")
     public native NSArray<? extends NSNumber> applicableRenderingAlgorithms();
 
-    /**
-     * distanceAttenuationParameters</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioEnvironmentNode_Class/index.html#//apple_ref/occ/instp/AVAudioEnvironmentNode/distanceAttenuationParameters">iOS Dev Center</a>
-     */
     @Generated
     @Selector("distanceAttenuationParameters")
     public native AVAudioEnvironmentDistanceAttenuationParameters distanceAttenuationParameters();
@@ -180,37 +176,21 @@ public class AVAudioEnvironmentNode extends AVAudioNode implements AVAudioMixing
     @Selector("init")
     public native AVAudioEnvironmentNode init();
 
-    /**
-     * listenerAngularOrientation</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioEnvironmentNode_Class/index.html#//apple_ref/occ/instp/AVAudioEnvironmentNode/listenerAngularOrientation">iOS Dev Center</a>
-     */
     @Generated
     @Selector("listenerAngularOrientation")
     @ByValue
     public native AVAudio3DAngularOrientation listenerAngularOrientation();
 
-    /**
-     * listenerPosition</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioEnvironmentNode_Class/index.html#//apple_ref/occ/instp/AVAudioEnvironmentNode/listenerPosition">iOS Dev Center</a>
-     */
     @Generated
     @Selector("listenerPosition")
     @ByValue
     public native AVAudio3DPoint listenerPosition();
 
-    /**
-     * listenerVectorOrientation</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioEnvironmentNode_Class/index.html#//apple_ref/occ/instp/AVAudioEnvironmentNode/listenerVectorOrientation">iOS Dev Center</a>
-     */
     @Generated
     @Selector("listenerVectorOrientation")
     @ByValue
     public native AVAudio3DVectorOrientation listenerVectorOrientation();
 
-    /**
-     * nextAvailableInputBus</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioEnvironmentNode_Class/index.html#//apple_ref/occ/instp/AVAudioEnvironmentNode/nextAvailableInputBus">iOS Dev Center</a>
-     */
     @Generated
     @Selector("nextAvailableInputBus")
     @NUInt
@@ -250,34 +230,18 @@ public class AVAudioEnvironmentNode extends AVAudioNode implements AVAudioMixing
     @Selector("reverbBlend")
     public native float reverbBlend();
 
-    /**
-     * reverbParameters</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioEnvironmentNode_Class/index.html#//apple_ref/occ/instp/AVAudioEnvironmentNode/reverbParameters">iOS Dev Center</a>
-     */
     @Generated
     @Selector("reverbParameters")
     public native AVAudioEnvironmentReverbParameters reverbParameters();
 
-    /**
-     * listenerAngularOrientation</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioEnvironmentNode_Class/index.html#//apple_ref/occ/instp/AVAudioEnvironmentNode/listenerAngularOrientation">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setListenerAngularOrientation:")
     public native void setListenerAngularOrientation(@ByValue AVAudio3DAngularOrientation value);
 
-    /**
-     * listenerPosition</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioEnvironmentNode_Class/index.html#//apple_ref/occ/instp/AVAudioEnvironmentNode/listenerPosition">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setListenerPosition:")
     public native void setListenerPosition(@ByValue AVAudio3DPoint value);
 
-    /**
-     * listenerVectorOrientation</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioEnvironmentNode_Class/index.html#//apple_ref/occ/instp/AVAudioEnvironmentNode/listenerVectorOrientation">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setListenerVectorOrientation:")
     public native void setListenerVectorOrientation(@ByValue AVAudio3DVectorOrientation value);

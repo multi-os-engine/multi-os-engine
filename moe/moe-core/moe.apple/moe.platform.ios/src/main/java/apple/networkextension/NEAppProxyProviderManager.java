@@ -60,10 +60,6 @@ public class NEAppProxyProviderManager extends NETunnelProviderManager {
     @Selector("alloc")
     public static native NEAppProxyProviderManager alloc();
 
-    /**
-     * loadAllFromPreferencesWithCompletionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEAppProxyProviderManagerClassRef/index.html#//apple_ref/occ/clm/NEAppProxyProviderManager/loadAllFromPreferencesWithCompletionHandler:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("loadAllFromPreferencesWithCompletionHandler:")
     public static native void loadAllFromPreferencesWithCompletionHandler(

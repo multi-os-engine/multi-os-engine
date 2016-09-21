@@ -59,10 +59,6 @@ public class AVAssetReaderTrackOutput extends AVAssetReaderOutput {
     @Selector("alloc")
     public static native AVAssetReaderTrackOutput alloc();
 
-    /**
-     * assetReaderTrackOutputWithTrack:outputSettings:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAssetReaderTrackOutput_Class/index.html#//apple_ref/occ/clm/AVAssetReaderTrackOutput/assetReaderTrackOutputWithTrack:outputSettings:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("assetReaderTrackOutputWithTrack:outputSettings:")
     public static native AVAssetReaderTrackOutput assetReaderTrackOutputWithTrackOutputSettings(AVAssetTrack track,
@@ -168,10 +164,6 @@ public class AVAssetReaderTrackOutput extends AVAssetReaderOutput {
     @NInt
     public static native long version_static();
 
-    /**
-     * audioTimePitchAlgorithm</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAssetReaderTrackOutput_Class/index.html#//apple_ref/occ/instp/AVAssetReaderTrackOutput/audioTimePitchAlgorithm">iOS Dev Center</a>
-     */
     @Generated
     @Selector("audioTimePitchAlgorithm")
     public native String audioTimePitchAlgorithm();
@@ -180,35 +172,19 @@ public class AVAssetReaderTrackOutput extends AVAssetReaderOutput {
     @Selector("init")
     public native AVAssetReaderTrackOutput init();
 
-    /**
-     * initWithTrack:outputSettings:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAssetReaderTrackOutput_Class/index.html#//apple_ref/occ/instm/AVAssetReaderTrackOutput/initWithTrack:outputSettings:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithTrack:outputSettings:")
     public native AVAssetReaderTrackOutput initWithTrackOutputSettings(AVAssetTrack track,
             NSDictionary<String, ?> outputSettings);
 
-    /**
-     * outputSettings</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAssetReaderTrackOutput_Class/index.html#//apple_ref/occ/instp/AVAssetReaderTrackOutput/outputSettings">iOS Dev Center</a>
-     */
     @Generated
     @Selector("outputSettings")
     public native NSDictionary<String, ?> outputSettings();
 
-    /**
-     * audioTimePitchAlgorithm</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAssetReaderTrackOutput_Class/index.html#//apple_ref/occ/instp/AVAssetReaderTrackOutput/audioTimePitchAlgorithm">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setAudioTimePitchAlgorithm:")
     public native void setAudioTimePitchAlgorithm(String value);
 
-    /**
-     * track</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAssetReaderTrackOutput_Class/index.html#//apple_ref/occ/instp/AVAssetReaderTrackOutput/track">iOS Dev Center</a>
-     */
     @Generated
     @Selector("track")
     public native AVAssetTrack track();

@@ -163,61 +163,33 @@ public class UICollisionBehavior extends UIDynamicBehavior {
     @NInt
     public static native long version_static();
 
-    /**
-     * addBoundaryWithIdentifier:forPath:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UICollisionBehavior_Class/index.html#//apple_ref/occ/instm/UICollisionBehavior/addBoundaryWithIdentifier:forPath:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("addBoundaryWithIdentifier:forPath:")
     public native void addBoundaryWithIdentifierForPath(@Mapped(ObjCObjectMapper.class) Object identifier,
             UIBezierPath bezierPath);
 
-    /**
-     * addBoundaryWithIdentifier:fromPoint:toPoint:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UICollisionBehavior_Class/index.html#//apple_ref/occ/instm/UICollisionBehavior/addBoundaryWithIdentifier:fromPoint:toPoint:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("addBoundaryWithIdentifier:fromPoint:toPoint:")
     public native void addBoundaryWithIdentifierFromPointToPoint(@Mapped(ObjCObjectMapper.class) Object identifier,
             @ByValue CGPoint p1, @ByValue CGPoint p2);
 
-    /**
-     * addItem:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UICollisionBehavior_Class/index.html#//apple_ref/occ/instm/UICollisionBehavior/addItem:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("addItem:")
     public native void addItem(@Mapped(ObjCObjectMapper.class) UIDynamicItem item);
 
-    /**
-     * boundaryIdentifiers</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UICollisionBehavior_Class/index.html#//apple_ref/occ/instp/UICollisionBehavior/boundaryIdentifiers">iOS Dev Center</a>
-     */
     @Generated
     @Selector("boundaryIdentifiers")
     public native NSArray<?> boundaryIdentifiers();
 
-    /**
-     * boundaryWithIdentifier:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UICollisionBehavior_Class/index.html#//apple_ref/occ/instm/UICollisionBehavior/boundaryWithIdentifier:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("boundaryWithIdentifier:")
     public native UIBezierPath boundaryWithIdentifier(@Mapped(ObjCObjectMapper.class) Object identifier);
 
-    /**
-     * collisionDelegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UICollisionBehavior_Class/index.html#//apple_ref/occ/instp/UICollisionBehavior/collisionDelegate">iOS Dev Center</a>
-     */
     @Generated
     @Selector("collisionDelegate")
     @MappedReturn(ObjCObjectMapper.class)
     public native UICollisionBehaviorDelegate collisionDelegate();
 
-    /**
-     * collisionMode</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UICollisionBehavior_Class/index.html#//apple_ref/occ/instp/UICollisionBehavior/collisionMode">iOS Dev Center</a>
-     */
     @Generated
     @Selector("collisionMode")
     @NUInt
@@ -227,58 +199,30 @@ public class UICollisionBehavior extends UIDynamicBehavior {
     @Selector("init")
     public native UICollisionBehavior init();
 
-    /**
-     * initWithItems:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UICollisionBehavior_Class/index.html#//apple_ref/occ/instm/UICollisionBehavior/initWithItems:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithItems:")
     public native UICollisionBehavior initWithItems(NSArray<?> items);
 
-    /**
-     * items</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UICollisionBehavior_Class/index.html#//apple_ref/occ/instp/UICollisionBehavior/items">iOS Dev Center</a>
-     */
     @Generated
     @Selector("items")
     public native NSArray<?> items();
 
-    /**
-     * removeAllBoundaries</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UICollisionBehavior_Class/index.html#//apple_ref/occ/instm/UICollisionBehavior/removeAllBoundaries">iOS Dev Center</a>
-     */
     @Generated
     @Selector("removeAllBoundaries")
     public native void removeAllBoundaries();
 
-    /**
-     * removeBoundaryWithIdentifier:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UICollisionBehavior_Class/index.html#//apple_ref/occ/instm/UICollisionBehavior/removeBoundaryWithIdentifier:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("removeBoundaryWithIdentifier:")
     public native void removeBoundaryWithIdentifier(@Mapped(ObjCObjectMapper.class) Object identifier);
 
-    /**
-     * removeItem:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UICollisionBehavior_Class/index.html#//apple_ref/occ/instm/UICollisionBehavior/removeItem:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("removeItem:")
     public native void removeItem(@Mapped(ObjCObjectMapper.class) UIDynamicItem item);
 
-    /**
-     * collisionDelegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UICollisionBehavior_Class/index.html#//apple_ref/occ/instp/UICollisionBehavior/collisionDelegate">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setCollisionDelegate:")
     public native void setCollisionDelegate_unsafe(@Mapped(ObjCObjectMapper.class) UICollisionBehaviorDelegate value);
 
-    /**
-     * collisionDelegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UICollisionBehavior_Class/index.html#//apple_ref/occ/instp/UICollisionBehavior/collisionDelegate">iOS Dev Center</a>
-     */
     @Generated
     public void setCollisionDelegate(@Mapped(ObjCObjectMapper.class) UICollisionBehaviorDelegate value) {
         Object __old = collisionDelegate();
@@ -291,34 +235,18 @@ public class UICollisionBehavior extends UIDynamicBehavior {
         }
     }
 
-    /**
-     * collisionMode</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UICollisionBehavior_Class/index.html#//apple_ref/occ/instp/UICollisionBehavior/collisionMode">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setCollisionMode:")
     public native void setCollisionMode(@NUInt long value);
 
-    /**
-     * translatesReferenceBoundsIntoBoundary</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UICollisionBehavior_Class/index.html#//apple_ref/occ/instp/UICollisionBehavior/translatesReferenceBoundsIntoBoundary">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setTranslatesReferenceBoundsIntoBoundary:")
     public native void setTranslatesReferenceBoundsIntoBoundary(boolean value);
 
-    /**
-     * setTranslatesReferenceBoundsIntoBoundaryWithInsets:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UICollisionBehavior_Class/index.html#//apple_ref/occ/instm/UICollisionBehavior/setTranslatesReferenceBoundsIntoBoundaryWithInsets:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setTranslatesReferenceBoundsIntoBoundaryWithInsets:")
     public native void setTranslatesReferenceBoundsIntoBoundaryWithInsets(@ByValue UIEdgeInsets insets);
 
-    /**
-     * translatesReferenceBoundsIntoBoundary</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UICollisionBehavior_Class/index.html#//apple_ref/occ/instp/UICollisionBehavior/translatesReferenceBoundsIntoBoundary">iOS Dev Center</a>
-     */
     @Generated
     @Selector("translatesReferenceBoundsIntoBoundary")
     public native boolean translatesReferenceBoundsIntoBoundary();

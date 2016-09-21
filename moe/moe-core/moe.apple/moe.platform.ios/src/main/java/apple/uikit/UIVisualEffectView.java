@@ -352,18 +352,10 @@ public class UIVisualEffectView extends UIView implements NSSecureCoding {
     @NInt
     public static native long version_static();
 
-    /**
-     * contentView</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIVisualEffectView/index.html#//apple_ref/occ/instp/UIVisualEffectView/contentView">iOS Dev Center</a>
-     */
     @Generated
     @Selector("contentView")
     public native UIView contentView();
 
-    /**
-     * effect</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIVisualEffectView/index.html#//apple_ref/occ/instp/UIVisualEffectView/effect">iOS Dev Center</a>
-     */
     @Generated
     @Selector("effect")
     public native UIVisualEffect effect();
@@ -380,10 +372,6 @@ public class UIVisualEffectView extends UIView implements NSSecureCoding {
     @Selector("initWithCoder:")
     public native UIVisualEffectView initWithCoder(NSCoder aDecoder);
 
-    /**
-     * initWithEffect:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIVisualEffectView/index.html#//apple_ref/occ/instm/UIVisualEffectView/initWithEffect:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithEffect:")
     public native UIVisualEffectView initWithEffect(UIVisualEffect effect);
@@ -398,10 +386,6 @@ public class UIVisualEffectView extends UIView implements NSSecureCoding {
         return supportsSecureCoding();
     }
 
-    /**
-     * effect</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIVisualEffectView/index.html#//apple_ref/occ/instp/UIVisualEffectView/effect">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setEffect:")
     public native void setEffect(UIVisualEffect value);

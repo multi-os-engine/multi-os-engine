@@ -32,19 +32,11 @@ import org.moe.natj.objc.ann.Selector;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("NSURLSessionDownloadDelegate")
 public interface NSURLSessionDownloadDelegate extends NSURLSessionTaskDelegate {
-    /**
-     * URLSession:downloadTask:didFinishDownloadingToURL:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSURLSessionDownloadDelegate_protocol/index.html#//apple_ref/occ/intfm/NSURLSessionDownloadDelegate/URLSession:downloadTask:didFinishDownloadingToURL:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("URLSession:downloadTask:didFinishDownloadingToURL:")
     void URLSessionDownloadTaskDidFinishDownloadingToURL(NSURLSession session, NSURLSessionDownloadTask downloadTask,
             NSURL location);
 
-    /**
-     * URLSession:downloadTask:didResumeAtOffset:expectedTotalBytes:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSURLSessionDownloadDelegate_protocol/index.html#//apple_ref/occ/intfm/NSURLSessionDownloadDelegate/URLSession:downloadTask:didResumeAtOffset:expectedTotalBytes:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("URLSession:downloadTask:didResumeAtOffset:expectedTotalBytes:")
@@ -53,10 +45,6 @@ public interface NSURLSessionDownloadDelegate extends NSURLSessionTaskDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * URLSession:downloadTask:didWriteData:totalBytesWritten:totalBytesExpectedToWrite:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSURLSessionDownloadDelegate_protocol/index.html#//apple_ref/occ/intfm/NSURLSessionDownloadDelegate/URLSession:downloadTask:didWriteData:totalBytesWritten:totalBytesExpectedToWrite:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("URLSession:downloadTask:didWriteData:totalBytesWritten:totalBytesExpectedToWrite:")

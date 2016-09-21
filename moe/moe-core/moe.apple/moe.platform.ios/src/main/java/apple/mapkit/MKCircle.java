@@ -63,19 +63,11 @@ public class MKCircle extends MKShape implements MKOverlay {
     @Selector("alloc")
     public static native MKCircle alloc();
 
-    /**
-     * circleWithCenterCoordinate:radius:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKCircle_class/index.html#//apple_ref/occ/clm/MKCircle/circleWithCenterCoordinate:radius:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("circleWithCenterCoordinate:radius:")
     public static native MKCircle circleWithCenterCoordinateRadius(@ByValue CLLocationCoordinate2D coord,
             double radius);
 
-    /**
-     * circleWithMapRect:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKCircle_class/index.html#//apple_ref/occ/clm/MKCircle/circleWithMapRect:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("circleWithMapRect:")
     public static native MKCircle circleWithMapRect(@ByValue MKMapRect mapRect);
@@ -204,10 +196,6 @@ public class MKCircle extends MKShape implements MKOverlay {
     @Selector("intersectsMapRect:")
     public native boolean intersectsMapRect(@ByValue MKMapRect mapRect);
 
-    /**
-     * radius</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKCircle_class/index.html#//apple_ref/occ/instp/MKCircle/radius">iOS Dev Center</a>
-     */
     @Generated
     @Selector("radius")
     public native double radius();

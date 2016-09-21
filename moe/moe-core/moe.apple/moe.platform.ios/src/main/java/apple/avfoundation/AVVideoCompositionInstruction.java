@@ -172,10 +172,6 @@ public class AVVideoCompositionInstruction extends NSObject implements NSSecureC
     @NInt
     public static native long version();
 
-    /**
-     * backgroundColor</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVVideoCompositionInstruction_Class/index.html#//apple_ref/occ/instp/AVVideoCompositionInstruction/backgroundColor">iOS Dev Center</a>
-     */
     @Generated
     @Selector("backgroundColor")
     public native CGColorRef backgroundColor();
@@ -206,10 +202,6 @@ public class AVVideoCompositionInstruction extends NSObject implements NSSecureC
     @Selector("initWithCoder:")
     public native AVVideoCompositionInstruction initWithCoder(NSCoder aDecoder);
 
-    /**
-     * layerInstructions</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVVideoCompositionInstruction_Class/index.html#//apple_ref/occ/instp/AVVideoCompositionInstruction/layerInstructions">iOS Dev Center</a>
-     */
     @Generated
     @Selector("layerInstructions")
     public native NSArray<? extends AVVideoCompositionLayerInstruction> layerInstructions();

@@ -33,10 +33,6 @@ import org.moe.natj.objc.ann.Selector;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("AVPlayerItemMetadataOutputPushDelegate")
 public interface AVPlayerItemMetadataOutputPushDelegate extends AVPlayerItemOutputPushDelegate {
-    /**
-     * metadataOutput:didOutputTimedMetadataGroups:fromPlayerItemTrack:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVPlayerItemMetadataOutputPushDelegate_Protocol/index.html#//apple_ref/occ/intfm/AVPlayerItemMetadataOutputPushDelegate/metadataOutput:didOutputTimedMetadataGroups:fromPlayerItemTrack:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("metadataOutput:didOutputTimedMetadataGroups:fromPlayerItemTrack:")

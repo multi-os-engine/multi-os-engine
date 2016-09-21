@@ -172,10 +172,6 @@ public class NEVPNIKEv2SecurityAssociationParameters extends NSObject implements
     @MappedReturn(ObjCObjectMapper.class)
     public native Object copyWithZone(VoidPtr zone);
 
-    /**
-     * diffieHellmanGroup</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEVPNIKEv2SecurityAssociationParametersClassRef/index.html#//apple_ref/occ/instp/NEVPNIKEv2SecurityAssociationParameters/diffieHellmanGroup">iOS Dev Center</a>
-     */
     @Generated
     @Selector("diffieHellmanGroup")
     @NInt
@@ -185,10 +181,6 @@ public class NEVPNIKEv2SecurityAssociationParameters extends NSObject implements
     @Selector("encodeWithCoder:")
     public native void encodeWithCoder(NSCoder aCoder);
 
-    /**
-     * encryptionAlgorithm</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEVPNIKEv2SecurityAssociationParametersClassRef/index.html#//apple_ref/occ/instp/NEVPNIKEv2SecurityAssociationParameters/encryptionAlgorithm">iOS Dev Center</a>
-     */
     @Generated
     @Selector("encryptionAlgorithm")
     @NInt
@@ -202,51 +194,27 @@ public class NEVPNIKEv2SecurityAssociationParameters extends NSObject implements
     @Selector("initWithCoder:")
     public native NEVPNIKEv2SecurityAssociationParameters initWithCoder(NSCoder aDecoder);
 
-    /**
-     * integrityAlgorithm</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEVPNIKEv2SecurityAssociationParametersClassRef/index.html#//apple_ref/occ/instp/NEVPNIKEv2SecurityAssociationParameters/integrityAlgorithm">iOS Dev Center</a>
-     */
     @Generated
     @Selector("integrityAlgorithm")
     @NInt
     public native long integrityAlgorithm();
 
-    /**
-     * lifetimeMinutes</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEVPNIKEv2SecurityAssociationParametersClassRef/index.html#//apple_ref/occ/instp/NEVPNIKEv2SecurityAssociationParameters/lifetimeMinutes">iOS Dev Center</a>
-     */
     @Generated
     @Selector("lifetimeMinutes")
     public native int lifetimeMinutes();
 
-    /**
-     * diffieHellmanGroup</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEVPNIKEv2SecurityAssociationParametersClassRef/index.html#//apple_ref/occ/instp/NEVPNIKEv2SecurityAssociationParameters/diffieHellmanGroup">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setDiffieHellmanGroup:")
     public native void setDiffieHellmanGroup(@NInt long value);
 
-    /**
-     * encryptionAlgorithm</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEVPNIKEv2SecurityAssociationParametersClassRef/index.html#//apple_ref/occ/instp/NEVPNIKEv2SecurityAssociationParameters/encryptionAlgorithm">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setEncryptionAlgorithm:")
     public native void setEncryptionAlgorithm(@NInt long value);
 
-    /**
-     * integrityAlgorithm</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEVPNIKEv2SecurityAssociationParametersClassRef/index.html#//apple_ref/occ/instp/NEVPNIKEv2SecurityAssociationParameters/integrityAlgorithm">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setIntegrityAlgorithm:")
     public native void setIntegrityAlgorithm(@NInt long value);
 
-    /**
-     * lifetimeMinutes</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEVPNIKEv2SecurityAssociationParametersClassRef/index.html#//apple_ref/occ/instp/NEVPNIKEv2SecurityAssociationParameters/lifetimeMinutes">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setLifetimeMinutes:")
     public native void setLifetimeMinutes(int value);

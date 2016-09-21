@@ -159,10 +159,6 @@ public class PKPayment extends NSObject {
     @NInt
     public static native long version_static();
 
-    /**
-     * billingAddress</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/PassKit/Reference/PKPayment_Ref/index.html#//apple_ref/occ/instp/PKPayment/billingAddress">iOS Dev Center</a>
-     */
     @Deprecated
     @Generated
     @Selector("billingAddress")
@@ -172,43 +168,23 @@ public class PKPayment extends NSObject {
     @Selector("init")
     public native PKPayment init();
 
-    /**
-     * shippingAddress</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/PassKit/Reference/PKPayment_Ref/index.html#//apple_ref/occ/instp/PKPayment/shippingAddress">iOS Dev Center</a>
-     */
     @Deprecated
     @Generated
     @Selector("shippingAddress")
     public native ConstVoidPtr shippingAddress();
 
-    /**
-     * shippingMethod</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/PassKit/Reference/PKPayment_Ref/index.html#//apple_ref/occ/instp/PKPayment/shippingMethod">iOS Dev Center</a>
-     */
     @Generated
     @Selector("shippingMethod")
     public native PKShippingMethod shippingMethod();
 
-    /**
-     * token</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/PassKit/Reference/PKPayment_Ref/index.html#//apple_ref/occ/instp/PKPayment/token">iOS Dev Center</a>
-     */
     @Generated
     @Selector("token")
     public native PKPaymentToken token();
 
-    /**
-     * billingContact</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/PassKit/Reference/PKPayment_Ref/index.html#//apple_ref/occ/instp/PKPayment/billingContact">iOS Dev Center</a>
-     */
     @Generated
     @Selector("billingContact")
     public native PKContact billingContact();
 
-    /**
-     * shippingContact</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/PassKit/Reference/PKPayment_Ref/index.html#//apple_ref/occ/instp/PKPayment/shippingContact">iOS Dev Center</a>
-     */
     @Generated
     @Selector("shippingContact")
     public native PKContact shippingContact();

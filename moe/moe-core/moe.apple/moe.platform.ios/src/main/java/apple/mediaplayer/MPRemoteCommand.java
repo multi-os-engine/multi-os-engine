@@ -159,18 +159,10 @@ public class MPRemoteCommand extends NSObject {
     @NInt
     public static native long version();
 
-    /**
-     * addTarget:action:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPRemoteCommand_Ref/index.html#//apple_ref/occ/instm/MPRemoteCommand/addTarget:action:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("addTarget:action:")
     public native void addTargetAction(@Mapped(ObjCObjectMapper.class) Object target, SEL action);
 
-    /**
-     * addTargetWithHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPRemoteCommand_Ref/index.html#//apple_ref/occ/instm/MPRemoteCommand/addTargetWithHandler:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("addTargetWithHandler:")
     @MappedReturn(ObjCObjectMapper.class)
@@ -181,34 +173,18 @@ public class MPRemoteCommand extends NSObject {
     @Selector("init")
     public native MPRemoteCommand init();
 
-    /**
-     * enabled</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPRemoteCommand_Ref/index.html#//apple_ref/occ/instp/MPRemoteCommand/enabled">iOS Dev Center</a>
-     */
     @Generated
     @Selector("isEnabled")
     public native boolean isEnabled();
 
-    /**
-     * enabled</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPRemoteCommand_Ref/index.html#//apple_ref/occ/instp/MPRemoteCommand/enabled">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setEnabled:")
     public native void setEnabled(boolean value);
 
-    /**
-     * removeTarget:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPRemoteCommand_Ref/index.html#//apple_ref/occ/instm/MPRemoteCommand/removeTarget:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("removeTarget:")
     public native void removeTarget(@Mapped(ObjCObjectMapper.class) Object target);
 
-    /**
-     * removeTarget:action:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPRemoteCommand_Ref/index.html#//apple_ref/occ/instm/MPRemoteCommand/removeTarget:action:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("removeTarget:action:")
     public native void removeTargetAction(@Mapped(ObjCObjectMapper.class) Object target, SEL action);

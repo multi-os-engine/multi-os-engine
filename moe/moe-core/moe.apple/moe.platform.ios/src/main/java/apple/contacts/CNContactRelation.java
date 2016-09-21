@@ -62,10 +62,6 @@ public class CNContactRelation extends NSObject implements NSCopying, NSSecureCo
     @Selector("alloc")
     public static native CNContactRelation alloc();
 
-    /**
-     * contactRelationWithName:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Contacts/Reference/CNContactRelation_Class/index.html#//apple_ref/occ/clm/CNContactRelation/contactRelationWithName:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("contactRelationWithName:")
     public static native CNContactRelation contactRelationWithName(String name);
@@ -192,18 +188,10 @@ public class CNContactRelation extends NSObject implements NSCopying, NSSecureCo
     @Selector("initWithCoder:")
     public native CNContactRelation initWithCoder(NSCoder aDecoder);
 
-    /**
-     * initWithName:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Contacts/Reference/CNContactRelation_Class/index.html#//apple_ref/occ/instm/CNContactRelation/initWithName:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithName:")
     public native CNContactRelation initWithName(String name);
 
-    /**
-     * name</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Contacts/Reference/CNContactRelation_Class/index.html#//apple_ref/occ/instp/CNContactRelation/name">iOS Dev Center</a>
-     */
     @Generated
     @Selector("name")
     public native String name();

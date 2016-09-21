@@ -162,19 +162,11 @@ public class SCNHitTestResult extends NSObject {
     @NInt
     public static native long version_static();
 
-    /**
-     * faceIndex</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNHitTestResult_Class/index.html#//apple_ref/occ/instp/SCNHitTestResult/faceIndex">iOS Dev Center</a>
-     */
     @Generated
     @Selector("faceIndex")
     @NInt
     public native long faceIndex();
 
-    /**
-     * geometryIndex</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNHitTestResult_Class/index.html#//apple_ref/occ/instp/SCNHitTestResult/geometryIndex">iOS Dev Center</a>
-     */
     @Generated
     @Selector("geometryIndex")
     @NInt
@@ -184,63 +176,35 @@ public class SCNHitTestResult extends NSObject {
     @Selector("init")
     public native SCNHitTestResult init();
 
-    /**
-     * localCoordinates</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNHitTestResult_Class/index.html#//apple_ref/occ/instp/SCNHitTestResult/localCoordinates">iOS Dev Center</a>
-     */
     @Generated
     @Selector("localCoordinates")
     @ByValue
     public native SCNVector3 localCoordinates();
 
-    /**
-     * localNormal</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNHitTestResult_Class/index.html#//apple_ref/occ/instp/SCNHitTestResult/localNormal">iOS Dev Center</a>
-     */
     @Generated
     @Selector("localNormal")
     @ByValue
     public native SCNVector3 localNormal();
 
-    /**
-     * modelTransform</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNHitTestResult_Class/index.html#//apple_ref/occ/instp/SCNHitTestResult/modelTransform">iOS Dev Center</a>
-     */
     @Generated
     @Selector("modelTransform")
     @ByValue
     public native SCNMatrix4 modelTransform();
 
-    /**
-     * node</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNHitTestResult_Class/index.html#//apple_ref/occ/instp/SCNHitTestResult/node">iOS Dev Center</a>
-     */
     @Generated
     @Selector("node")
     public native SCNNode node();
 
-    /**
-     * textureCoordinatesWithMappingChannel:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNHitTestResult_Class/index.html#//apple_ref/occ/instm/SCNHitTestResult/textureCoordinatesWithMappingChannel:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("textureCoordinatesWithMappingChannel:")
     @ByValue
     public native CGPoint textureCoordinatesWithMappingChannel(@NInt long channel);
 
-    /**
-     * worldCoordinates</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNHitTestResult_Class/index.html#//apple_ref/occ/instp/SCNHitTestResult/worldCoordinates">iOS Dev Center</a>
-     */
     @Generated
     @Selector("worldCoordinates")
     @ByValue
     public native SCNVector3 worldCoordinates();
 
-    /**
-     * worldNormal</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNHitTestResult_Class/index.html#//apple_ref/occ/instp/SCNHitTestResult/worldNormal">iOS Dev Center</a>
-     */
     @Generated
     @Selector("worldNormal")
     @ByValue

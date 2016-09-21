@@ -184,10 +184,6 @@ public class HKFitzpatrickSkinTypeObject extends NSObject implements NSCopying, 
     @Selector("initWithCoder:")
     public native HKFitzpatrickSkinTypeObject initWithCoder(NSCoder aDecoder);
 
-    /**
-     * skinType</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HealthKit/Reference/HKFitzpatrickSkinTypeObject_ClassReference/index.html#//apple_ref/occ/instp/HKFitzpatrickSkinTypeObject/skinType">iOS Dev Center</a>
-     */
     @Generated
     @Selector("skinType")
     @NInt

@@ -34,20 +34,12 @@ import org.moe.natj.objc.ann.Selector;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("NSTextAttachmentContainer")
 public interface NSTextAttachmentContainer {
-    /**
-     * attachmentBoundsForTextContainer:proposedLineFragment:glyphPosition:characterIndex:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/NSTextAttachmentContainer_Protocol/index.html#//apple_ref/occ/intfm/NSTextAttachmentContainer/attachmentBoundsForTextContainer:proposedLineFragment:glyphPosition:characterIndex:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("attachmentBoundsForTextContainer:proposedLineFragment:glyphPosition:characterIndex:")
     @ByValue
     CGRect attachmentBoundsForTextContainerProposedLineFragmentGlyphPositionCharacterIndex(
             NSTextContainer textContainer, @ByValue CGRect lineFrag, @ByValue CGPoint position, @NUInt long charIndex);
 
-    /**
-     * imageForBounds:textContainer:characterIndex:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/NSTextAttachmentContainer_Protocol/index.html#//apple_ref/occ/intfm/NSTextAttachmentContainer/imageForBounds:textContainer:characterIndex:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("imageForBounds:textContainer:characterIndex:")
     UIImage imageForBoundsTextContainerCharacterIndex(@ByValue CGRect imageBounds, NSTextContainer textContainer,

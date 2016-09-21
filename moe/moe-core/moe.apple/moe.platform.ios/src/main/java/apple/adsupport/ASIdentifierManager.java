@@ -59,10 +59,6 @@ public class ASIdentifierManager extends NSObject {
     @Selector("alloc")
     public static native ASIdentifierManager alloc();
 
-    /**
-     * sharedManager</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AdSupport/Reference/ASIdentifierManager_Ref/index.html#//apple_ref/occ/clm/ASIdentifierManager/sharedManager">iOS Dev Center</a>
-     */
     @Generated
     @Selector("sharedManager")
     public static native ASIdentifierManager sharedManager();
@@ -167,10 +163,6 @@ public class ASIdentifierManager extends NSObject {
     @NInt
     public static native long version_static();
 
-    /**
-     * advertisingIdentifier</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AdSupport/Reference/ASIdentifierManager_Ref/index.html#//apple_ref/occ/instp/ASIdentifierManager/advertisingIdentifier">iOS Dev Center</a>
-     */
     @Generated
     @Selector("advertisingIdentifier")
     public native NSUUID advertisingIdentifier();
@@ -179,10 +171,6 @@ public class ASIdentifierManager extends NSObject {
     @Selector("init")
     public native ASIdentifierManager init();
 
-    /**
-     * advertisingTrackingEnabled</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AdSupport/Reference/ASIdentifierManager_Ref/index.html#//apple_ref/occ/instp/ASIdentifierManager/advertisingTrackingEnabled">iOS Dev Center</a>
-     */
     @Generated
     @Selector("isAdvertisingTrackingEnabled")
     public native boolean isAdvertisingTrackingEnabled();

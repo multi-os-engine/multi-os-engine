@@ -51,19 +51,11 @@ public class NSJSONSerialization extends NSObject {
         super(peer);
     }
 
-    /**
-     * JSONObjectWithData:options:error:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSJSONSerialization_Class/index.html#//apple_ref/occ/clm/NSJSONSerialization/JSONObjectWithData:options:error:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("JSONObjectWithData:options:error:")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object JSONObjectWithDataOptionsError(NSData data, @NUInt long opt, Ptr<NSError> error);
 
-    /**
-     * JSONObjectWithStream:options:error:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSJSONSerialization_Class/index.html#//apple_ref/occ/clm/NSJSONSerialization/JSONObjectWithStream:options:error:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("JSONObjectWithStream:options:error:")
     @MappedReturn(ObjCObjectMapper.class)
@@ -75,27 +67,15 @@ public class NSJSONSerialization extends NSObject {
     @Selector("alloc")
     public static native NSJSONSerialization alloc();
 
-    /**
-     * dataWithJSONObject:options:error:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSJSONSerialization_Class/index.html#//apple_ref/occ/clm/NSJSONSerialization/dataWithJSONObject:options:error:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("dataWithJSONObject:options:error:")
     public static native NSData dataWithJSONObjectOptionsError(@Mapped(ObjCObjectMapper.class) Object obj,
             @NUInt long opt, Ptr<NSError> error);
 
-    /**
-     * isValidJSONObject:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSJSONSerialization_Class/index.html#//apple_ref/occ/clm/NSJSONSerialization/isValidJSONObject:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("isValidJSONObject:")
     public static native boolean isValidJSONObject(@Mapped(ObjCObjectMapper.class) Object obj);
 
-    /**
-     * writeJSONObject:toStream:options:error:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSJSONSerialization_Class/index.html#//apple_ref/occ/clm/NSJSONSerialization/writeJSONObject:toStream:options:error:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("writeJSONObject:toStream:options:error:")
     @NInt

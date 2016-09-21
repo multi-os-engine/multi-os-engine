@@ -162,18 +162,10 @@ public class HMCharacteristic extends NSObject {
     @NInt
     public static native long version();
 
-    /**
-     * characteristicType</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HomeKit/Reference/HMCharacteristic_Class/index.html#//apple_ref/occ/instp/HMCharacteristic/characteristicType">iOS Dev Center</a>
-     */
     @Generated
     @Selector("characteristicType")
     public native String characteristicType();
 
-    /**
-     * enableNotification:completionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HomeKit/Reference/HMCharacteristic_Class/index.html#//apple_ref/occ/instm/HMCharacteristic/enableNotification:completionHandler:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("enableNotification:completionHandler:")
     public native void enableNotificationCompletionHandler(boolean enable,
@@ -183,86 +175,46 @@ public class HMCharacteristic extends NSObject {
     @Selector("init")
     public native HMCharacteristic init();
 
-    /**
-     * notificationEnabled</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HomeKit/Reference/HMCharacteristic_Class/index.html#//apple_ref/occ/instp/HMCharacteristic/notificationEnabled">iOS Dev Center</a>
-     */
     @Generated
     @Selector("isNotificationEnabled")
     public native boolean isNotificationEnabled();
 
-    /**
-     * metadata</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HomeKit/Reference/HMCharacteristic_Class/index.html#//apple_ref/occ/instp/HMCharacteristic/metadata">iOS Dev Center</a>
-     */
     @Generated
     @Selector("metadata")
     public native HMCharacteristicMetadata metadata();
 
-    /**
-     * properties</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HomeKit/Reference/HMCharacteristic_Class/index.html#//apple_ref/occ/instp/HMCharacteristic/properties">iOS Dev Center</a>
-     */
     @Generated
     @Selector("properties")
     public native NSArray<String> properties();
 
-    /**
-     * readValueWithCompletionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HomeKit/Reference/HMCharacteristic_Class/index.html#//apple_ref/occ/instm/HMCharacteristic/readValueWithCompletionHandler:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("readValueWithCompletionHandler:")
     public native void readValueWithCompletionHandler(
             @ObjCBlock(name = "call_readValueWithCompletionHandler") Block_readValueWithCompletionHandler completion);
 
-    /**
-     * service</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HomeKit/Reference/HMCharacteristic_Class/index.html#//apple_ref/occ/instp/HMCharacteristic/service">iOS Dev Center</a>
-     */
     @Generated
     @Selector("service")
     public native HMService service();
 
-    /**
-     * updateAuthorizationData:completionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HomeKit/Reference/HMCharacteristic_Class/index.html#//apple_ref/occ/instm/HMCharacteristic/updateAuthorizationData:completionHandler:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("updateAuthorizationData:completionHandler:")
     public native void updateAuthorizationDataCompletionHandler(NSData data,
             @ObjCBlock(name = "call_updateAuthorizationDataCompletionHandler") Block_updateAuthorizationDataCompletionHandler completion);
 
-    /**
-     * value</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HomeKit/Reference/HMCharacteristic_Class/index.html#//apple_ref/occ/instp/HMCharacteristic/value">iOS Dev Center</a>
-     */
     @Generated
     @Selector("value")
     @MappedReturn(ObjCObjectMapper.class)
     public native Object value();
 
-    /**
-     * writeValue:completionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HomeKit/Reference/HMCharacteristic_Class/index.html#//apple_ref/occ/instm/HMCharacteristic/writeValue:completionHandler:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("writeValue:completionHandler:")
     public native void writeValueCompletionHandler(@Mapped(ObjCObjectMapper.class) Object value,
             @ObjCBlock(name = "call_writeValueCompletionHandler") Block_writeValueCompletionHandler completion);
 
-    /**
-     * localizedDescription</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HomeKit/Reference/HMCharacteristic_Class/index.html#//apple_ref/occ/instp/HMCharacteristic/localizedDescription">iOS Dev Center</a>
-     */
     @Generated
     @Selector("localizedDescription")
     public native String localizedDescription();
 
-    /**
-     * uniqueIdentifier</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HomeKit/Reference/HMCharacteristic_Class/index.html#//apple_ref/occ/instp/HMCharacteristic/uniqueIdentifier">iOS Dev Center</a>
-     */
     @Generated
     @Selector("uniqueIdentifier")
     public native NSUUID uniqueIdentifier();

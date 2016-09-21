@@ -57,10 +57,6 @@ public class NSPersonNameComponentsFormatter extends NSFormatter {
     @Selector("alloc")
     public static native NSPersonNameComponentsFormatter alloc();
 
-    /**
-     * localizedStringFromPersonNameComponents:style:options:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Miscellaneous/Reference/NSPersonNameComponentsFormatter_Class/index.html#//apple_ref/occ/clm/NSPersonNameComponentsFormatter/localizedStringFromPersonNameComponents:style:options:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("localizedStringFromPersonNameComponents:style:options:")
     public static native String localizedStringFromPersonNameComponentsStyleOptions(NSPersonNameComponents components,
@@ -166,18 +162,10 @@ public class NSPersonNameComponentsFormatter extends NSFormatter {
     @NInt
     public static native long version_static();
 
-    /**
-     * annotatedStringFromPersonNameComponents:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Miscellaneous/Reference/NSPersonNameComponentsFormatter_Class/index.html#//apple_ref/occ/instm/NSPersonNameComponentsFormatter/annotatedStringFromPersonNameComponents:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("annotatedStringFromPersonNameComponents:")
     public native NSAttributedString annotatedStringFromPersonNameComponents(NSPersonNameComponents components);
 
-    /**
-     * getObjectValue:forString:errorDescription:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Miscellaneous/Reference/NSPersonNameComponentsFormatter_Class/index.html#//apple_ref/occ/instm/NSPersonNameComponentsFormatter/getObjectValue:forString:errorDescription:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("getObjectValue:forString:errorDescription:")
     public native boolean getObjectValueForStringErrorDescription(Ptr<ObjCObject> obj, String string,
@@ -187,42 +175,22 @@ public class NSPersonNameComponentsFormatter extends NSFormatter {
     @Selector("init")
     public native NSPersonNameComponentsFormatter init();
 
-    /**
-     * phonetic</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Miscellaneous/Reference/NSPersonNameComponentsFormatter_Class/index.html#//apple_ref/occ/instp/NSPersonNameComponentsFormatter/phonetic">iOS Dev Center</a>
-     */
     @Generated
     @Selector("isPhonetic")
     public native boolean isPhonetic();
 
-    /**
-     * phonetic</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Miscellaneous/Reference/NSPersonNameComponentsFormatter_Class/index.html#//apple_ref/occ/instp/NSPersonNameComponentsFormatter/phonetic">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setPhonetic:")
     public native void setPhonetic(boolean value);
 
-    /**
-     * style</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Miscellaneous/Reference/NSPersonNameComponentsFormatter_Class/index.html#//apple_ref/occ/instp/NSPersonNameComponentsFormatter/style">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setStyle:")
     public native void setStyle(@NInt long value);
 
-    /**
-     * stringFromPersonNameComponents:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Miscellaneous/Reference/NSPersonNameComponentsFormatter_Class/index.html#//apple_ref/occ/instm/NSPersonNameComponentsFormatter/stringFromPersonNameComponents:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("stringFromPersonNameComponents:")
     public native String stringFromPersonNameComponents(NSPersonNameComponents components);
 
-    /**
-     * style</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Miscellaneous/Reference/NSPersonNameComponentsFormatter_Class/index.html#//apple_ref/occ/instp/NSPersonNameComponentsFormatter/style">iOS Dev Center</a>
-     */
     @Generated
     @Selector("style")
     @NInt

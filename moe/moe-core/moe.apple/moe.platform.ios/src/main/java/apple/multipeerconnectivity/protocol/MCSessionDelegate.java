@@ -39,19 +39,11 @@ import org.moe.natj.objc.ann.Selector;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("MCSessionDelegate")
 public interface MCSessionDelegate {
-    /**
-     * session:didFinishReceivingResourceWithName:fromPeer:atURL:withError:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MultipeerConnectivity/Reference/MCSessionDelegateRef/index.html#//apple_ref/occ/intfm/MCSessionDelegate/session:didFinishReceivingResourceWithName:fromPeer:atURL:withError:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("session:didFinishReceivingResourceWithName:fromPeer:atURL:withError:")
     void sessionDidFinishReceivingResourceWithNameFromPeerAtURLWithError(MCSession session, String resourceName,
             MCPeerID peerID, NSURL localURL, NSError error);
 
-    /**
-     * session:didReceiveCertificate:fromPeer:certificateHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MultipeerConnectivity/Reference/MCSessionDelegateRef/index.html#//apple_ref/occ/intfm/MCSessionDelegate/session:didReceiveCertificate:fromPeer:certificateHandler:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("session:didReceiveCertificate:fromPeer:certificateHandler:")
@@ -61,36 +53,20 @@ public interface MCSessionDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * session:didReceiveData:fromPeer:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MultipeerConnectivity/Reference/MCSessionDelegateRef/index.html#//apple_ref/occ/intfm/MCSessionDelegate/session:didReceiveData:fromPeer:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("session:didReceiveData:fromPeer:")
     void sessionDidReceiveDataFromPeer(MCSession session, NSData data, MCPeerID peerID);
 
-    /**
-     * session:didReceiveStream:withName:fromPeer:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MultipeerConnectivity/Reference/MCSessionDelegateRef/index.html#//apple_ref/occ/intfm/MCSessionDelegate/session:didReceiveStream:withName:fromPeer:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("session:didReceiveStream:withName:fromPeer:")
     void sessionDidReceiveStreamWithNameFromPeer(MCSession session, NSInputStream stream, String streamName,
             MCPeerID peerID);
 
-    /**
-     * session:didStartReceivingResourceWithName:fromPeer:withProgress:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MultipeerConnectivity/Reference/MCSessionDelegateRef/index.html#//apple_ref/occ/intfm/MCSessionDelegate/session:didStartReceivingResourceWithName:fromPeer:withProgress:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("session:didStartReceivingResourceWithName:fromPeer:withProgress:")
     void sessionDidStartReceivingResourceWithNameFromPeerWithProgress(MCSession session, String resourceName,
             MCPeerID peerID, NSProgress progress);
 
-    /**
-     * session:peer:didChangeState:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MultipeerConnectivity/Reference/MCSessionDelegateRef/index.html#//apple_ref/occ/intfm/MCSessionDelegate/session:peer:didChangeState:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("session:peer:didChangeState:")
     void sessionPeerDidChangeState(MCSession session, MCPeerID peerID, @NInt long state);

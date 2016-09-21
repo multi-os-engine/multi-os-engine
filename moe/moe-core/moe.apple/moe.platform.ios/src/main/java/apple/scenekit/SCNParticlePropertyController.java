@@ -64,10 +64,6 @@ public class SCNParticlePropertyController extends NSObject implements NSSecureC
     @Selector("alloc")
     public static native SCNParticlePropertyController alloc();
 
-    /**
-     * controllerWithAnimation:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNParticlePropertyController_Class/index.html#//apple_ref/occ/clm/SCNParticlePropertyController/controllerWithAnimation:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("controllerWithAnimation:")
     public static native SCNParticlePropertyController controllerWithAnimation(CAAnimation animation);
@@ -176,10 +172,6 @@ public class SCNParticlePropertyController extends NSObject implements NSSecureC
     @NInt
     public static native long version_static();
 
-    /**
-     * animation</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNParticlePropertyController_Class/index.html#//apple_ref/occ/instp/SCNParticlePropertyController/animation">iOS Dev Center</a>
-     */
     @Generated
     @Selector("animation")
     public native CAAnimation animation();
@@ -202,85 +194,45 @@ public class SCNParticlePropertyController extends NSObject implements NSSecureC
     @Selector("initWithCoder:")
     public native SCNParticlePropertyController initWithCoder(NSCoder aDecoder);
 
-    /**
-     * inputBias</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNParticlePropertyController_Class/index.html#//apple_ref/occ/instp/SCNParticlePropertyController/inputBias">iOS Dev Center</a>
-     */
     @Generated
     @Selector("inputBias")
     @NFloat
     public native double inputBias();
 
-    /**
-     * inputMode</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNParticlePropertyController_Class/index.html#//apple_ref/occ/instp/SCNParticlePropertyController/inputMode">iOS Dev Center</a>
-     */
     @Generated
     @Selector("inputMode")
     @NInt
     public native long inputMode();
 
-    /**
-     * inputOrigin</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNParticlePropertyController_Class/index.html#//apple_ref/occ/instp/SCNParticlePropertyController/inputOrigin">iOS Dev Center</a>
-     */
     @Generated
     @Selector("inputOrigin")
     public native SCNNode inputOrigin();
 
-    /**
-     * inputProperty</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNParticlePropertyController_Class/index.html#//apple_ref/occ/instp/SCNParticlePropertyController/inputProperty">iOS Dev Center</a>
-     */
     @Generated
     @Selector("inputProperty")
     public native String inputProperty();
 
-    /**
-     * inputScale</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNParticlePropertyController_Class/index.html#//apple_ref/occ/instp/SCNParticlePropertyController/inputScale">iOS Dev Center</a>
-     */
     @Generated
     @Selector("inputScale")
     @NFloat
     public native double inputScale();
 
-    /**
-     * animation</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNParticlePropertyController_Class/index.html#//apple_ref/occ/instp/SCNParticlePropertyController/animation">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setAnimation:")
     public native void setAnimation(CAAnimation value);
 
-    /**
-     * inputBias</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNParticlePropertyController_Class/index.html#//apple_ref/occ/instp/SCNParticlePropertyController/inputBias">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setInputBias:")
     public native void setInputBias(@NFloat double value);
 
-    /**
-     * inputMode</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNParticlePropertyController_Class/index.html#//apple_ref/occ/instp/SCNParticlePropertyController/inputMode">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setInputMode:")
     public native void setInputMode(@NInt long value);
 
-    /**
-     * inputOrigin</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNParticlePropertyController_Class/index.html#//apple_ref/occ/instp/SCNParticlePropertyController/inputOrigin">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setInputOrigin:")
     public native void setInputOrigin_unsafe(SCNNode value);
 
-    /**
-     * inputOrigin</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNParticlePropertyController_Class/index.html#//apple_ref/occ/instp/SCNParticlePropertyController/inputOrigin">iOS Dev Center</a>
-     */
     @Generated
     public void setInputOrigin(SCNNode value) {
         Object __old = inputOrigin();
@@ -293,18 +245,10 @@ public class SCNParticlePropertyController extends NSObject implements NSSecureC
         }
     }
 
-    /**
-     * inputProperty</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNParticlePropertyController_Class/index.html#//apple_ref/occ/instp/SCNParticlePropertyController/inputProperty">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setInputProperty:")
     public native void setInputProperty(String value);
 
-    /**
-     * inputScale</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNParticlePropertyController_Class/index.html#//apple_ref/occ/instp/SCNParticlePropertyController/inputScale">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setInputScale:")
     public native void setInputScale(@NFloat double value);

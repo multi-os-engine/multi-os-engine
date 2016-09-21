@@ -162,18 +162,10 @@ public class MTLRenderPipelineColorAttachmentDescriptorArray extends NSObject {
     @Selector("init")
     public native MTLRenderPipelineColorAttachmentDescriptorArray init();
 
-    /**
-     * objectAtIndexedSubscript:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Metal/Reference/MTLRenderPipelineColorAttachmentDescriptorArray_Ref/index.html#//apple_ref/occ/instm/MTLRenderPipelineColorAttachmentDescriptorArray/objectAtIndexedSubscript:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("objectAtIndexedSubscript:")
     public native MTLRenderPipelineColorAttachmentDescriptor objectAtIndexedSubscript(@NUInt long attachmentIndex);
 
-    /**
-     * setObject:atIndexedSubscript:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Metal/Reference/MTLRenderPipelineColorAttachmentDescriptorArray_Ref/index.html#//apple_ref/occ/instm/MTLRenderPipelineColorAttachmentDescriptorArray/setObject:atIndexedSubscript:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setObject:atIndexedSubscript:")
     public native void setObjectAtIndexedSubscript(MTLRenderPipelineColorAttachmentDescriptor attachment,

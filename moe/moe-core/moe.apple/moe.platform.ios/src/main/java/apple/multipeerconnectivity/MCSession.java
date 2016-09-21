@@ -166,51 +166,27 @@ public class MCSession extends NSObject {
     @NInt
     public static native long version_static();
 
-    /**
-     * cancelConnectPeer:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MultipeerConnectivity/Reference/MCSessionClassRef/index.html#//apple_ref/occ/instm/MCSession/cancelConnectPeer:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("cancelConnectPeer:")
     public native void cancelConnectPeer(MCPeerID peerID);
 
-    /**
-     * connectPeer:withNearbyConnectionData:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MultipeerConnectivity/Reference/MCSessionClassRef/index.html#//apple_ref/occ/instm/MCSession/connectPeer:withNearbyConnectionData:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("connectPeer:withNearbyConnectionData:")
     public native void connectPeerWithNearbyConnectionData(MCPeerID peerID, NSData data);
 
-    /**
-     * connectedPeers</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MultipeerConnectivity/Reference/MCSessionClassRef/index.html#//apple_ref/occ/instp/MCSession/connectedPeers">iOS Dev Center</a>
-     */
     @Generated
     @Selector("connectedPeers")
     public native NSArray<? extends MCPeerID> connectedPeers();
 
-    /**
-     * delegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MultipeerConnectivity/Reference/MCSessionClassRef/index.html#//apple_ref/occ/instp/MCSession/delegate">iOS Dev Center</a>
-     */
     @Generated
     @Selector("delegate")
     @MappedReturn(ObjCObjectMapper.class)
     public native MCSessionDelegate delegate();
 
-    /**
-     * disconnect</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MultipeerConnectivity/Reference/MCSessionClassRef/index.html#//apple_ref/occ/instm/MCSession/disconnect">iOS Dev Center</a>
-     */
     @Generated
     @Selector("disconnect")
     public native void disconnect();
 
-    /**
-     * encryptionPreference</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MultipeerConnectivity/Reference/MCSessionClassRef/index.html#//apple_ref/occ/instp/MCSession/encryptionPreference">iOS Dev Center</a>
-     */
     @Generated
     @Selector("encryptionPreference")
     @NInt
@@ -220,79 +196,43 @@ public class MCSession extends NSObject {
     @Selector("init")
     public native MCSession init();
 
-    /**
-     * initWithPeer:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MultipeerConnectivity/Reference/MCSessionClassRef/index.html#//apple_ref/occ/instm/MCSession/initWithPeer:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithPeer:")
     public native MCSession initWithPeer(MCPeerID myPeerID);
 
-    /**
-     * initWithPeer:securityIdentity:encryptionPreference:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MultipeerConnectivity/Reference/MCSessionClassRef/index.html#//apple_ref/occ/instm/MCSession/initWithPeer:securityIdentity:encryptionPreference:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithPeer:securityIdentity:encryptionPreference:")
     public native MCSession initWithPeerSecurityIdentityEncryptionPreference(MCPeerID myPeerID, NSArray<?> identity,
             @NInt long encryptionPreference);
 
-    /**
-     * myPeerID</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MultipeerConnectivity/Reference/MCSessionClassRef/index.html#//apple_ref/occ/instp/MCSession/myPeerID">iOS Dev Center</a>
-     */
     @Generated
     @Selector("myPeerID")
     public native MCPeerID myPeerID();
 
-    /**
-     * nearbyConnectionDataForPeer:withCompletionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MultipeerConnectivity/Reference/MCSessionClassRef/index.html#//apple_ref/occ/instm/MCSession/nearbyConnectionDataForPeer:withCompletionHandler:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("nearbyConnectionDataForPeer:withCompletionHandler:")
     public native void nearbyConnectionDataForPeerWithCompletionHandler(MCPeerID peerID,
             @ObjCBlock(name = "call_nearbyConnectionDataForPeerWithCompletionHandler") Block_nearbyConnectionDataForPeerWithCompletionHandler completionHandler);
 
-    /**
-     * securityIdentity</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MultipeerConnectivity/Reference/MCSessionClassRef/index.html#//apple_ref/occ/instp/MCSession/securityIdentity">iOS Dev Center</a>
-     */
     @Generated
     @Selector("securityIdentity")
     public native NSArray<?> securityIdentity();
 
-    /**
-     * sendData:toPeers:withMode:error:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MultipeerConnectivity/Reference/MCSessionClassRef/index.html#//apple_ref/occ/instm/MCSession/sendData:toPeers:withMode:error:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("sendData:toPeers:withMode:error:")
     public native boolean sendDataToPeersWithModeError(NSData data, NSArray<? extends MCPeerID> peerIDs,
             @NInt long mode, Ptr<NSError> error);
 
-    /**
-     * sendResourceAtURL:withName:toPeer:withCompletionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MultipeerConnectivity/Reference/MCSessionClassRef/index.html#//apple_ref/occ/instm/MCSession/sendResourceAtURL:withName:toPeer:withCompletionHandler:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("sendResourceAtURL:withName:toPeer:withCompletionHandler:")
     public native NSProgress sendResourceAtURLWithNameToPeerWithCompletionHandler(NSURL resourceURL,
             String resourceName, MCPeerID peerID,
             @ObjCBlock(name = "call_sendResourceAtURLWithNameToPeerWithCompletionHandler") Block_sendResourceAtURLWithNameToPeerWithCompletionHandler completionHandler);
 
-    /**
-     * delegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MultipeerConnectivity/Reference/MCSessionClassRef/index.html#//apple_ref/occ/instp/MCSession/delegate">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setDelegate:")
     public native void setDelegate_unsafe(@Mapped(ObjCObjectMapper.class) MCSessionDelegate value);
 
-    /**
-     * delegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MultipeerConnectivity/Reference/MCSessionClassRef/index.html#//apple_ref/occ/instp/MCSession/delegate">iOS Dev Center</a>
-     */
     @Generated
     public void setDelegate(@Mapped(ObjCObjectMapper.class) MCSessionDelegate value) {
         Object __old = delegate();
@@ -305,10 +245,6 @@ public class MCSession extends NSObject {
         }
     }
 
-    /**
-     * startStreamWithName:toPeer:error:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MultipeerConnectivity/Reference/MCSessionClassRef/index.html#//apple_ref/occ/instm/MCSession/startStreamWithName:toPeer:error:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("startStreamWithName:toPeer:error:")
     public native NSOutputStream startStreamWithNameToPeerError(String streamName, MCPeerID peerID, Ptr<NSError> error);

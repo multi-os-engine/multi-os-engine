@@ -62,29 +62,17 @@ public class HKWorkout extends HKSample {
     @Selector("alloc")
     public static native HKWorkout alloc();
 
-    /**
-     * workoutWithActivityType:startDate:endDate:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HealthKit/Reference/HKWorkout_Class/index.html#//apple_ref/occ/clm/HKWorkout/workoutWithActivityType:startDate:endDate:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("workoutWithActivityType:startDate:endDate:")
     public static native HKWorkout workoutWithActivityTypeStartDateEndDate(@NUInt long workoutActivityType,
             NSDate startDate, NSDate endDate);
 
-    /**
-     * workoutWithActivityType:startDate:endDate:duration:totalEnergyBurned:totalDistance:metadata:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HealthKit/Reference/HKWorkout_Class/index.html#//apple_ref/occ/clm/HKWorkout/workoutWithActivityType:startDate:endDate:duration:totalEnergyBurned:totalDistance:metadata:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("workoutWithActivityType:startDate:endDate:duration:totalEnergyBurned:totalDistance:metadata:")
     public static native HKWorkout workoutWithActivityTypeStartDateEndDateDurationTotalEnergyBurnedTotalDistanceMetadata(
             @NUInt long workoutActivityType, NSDate startDate, NSDate endDate, double duration,
             HKQuantity totalEnergyBurned, HKQuantity totalDistance, NSDictionary<String, ?> metadata);
 
-    /**
-     * workoutWithActivityType:startDate:endDate:workoutEvents:totalEnergyBurned:totalDistance:metadata:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HealthKit/Reference/HKWorkout_Class/index.html#//apple_ref/occ/clm/HKWorkout/workoutWithActivityType:startDate:endDate:workoutEvents:totalEnergyBurned:totalDistance:metadata:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("workoutWithActivityType:startDate:endDate:workoutEvents:totalEnergyBurned:totalDistance:metadata:")
     public static native HKWorkout workoutWithActivityTypeStartDateEndDateWorkoutEventsTotalEnergyBurnedTotalDistanceMetadata(
@@ -92,20 +80,12 @@ public class HKWorkout extends HKSample {
             NSArray<? extends HKWorkoutEvent> workoutEvents, HKQuantity totalEnergyBurned, HKQuantity totalDistance,
             NSDictionary<String, ?> metadata);
 
-    /**
-     * workoutWithActivityType:startDate:endDate:duration:totalEnergyBurned:totalDistance:device:metadata:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HealthKit/Reference/HKWorkout_Class/index.html#//apple_ref/occ/clm/HKWorkout/workoutWithActivityType:startDate:endDate:duration:totalEnergyBurned:totalDistance:device:metadata:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("workoutWithActivityType:startDate:endDate:duration:totalEnergyBurned:totalDistance:device:metadata:")
     public static native HKWorkout workoutWithActivityTypeStartDateEndDateDurationTotalEnergyBurnedTotalDistanceDeviceMetadata(
             @NUInt long workoutActivityType, NSDate startDate, NSDate endDate, double duration,
             HKQuantity totalEnergyBurned, HKQuantity totalDistance, HKDevice device, NSDictionary<String, ?> metadata);
 
-    /**
-     * workoutWithActivityType:startDate:endDate:workoutEvents:totalEnergyBurned:totalDistance:device:metadata:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HealthKit/Reference/HKWorkout_Class/index.html#//apple_ref/occ/clm/HKWorkout/workoutWithActivityType:startDate:endDate:workoutEvents:totalEnergyBurned:totalDistance:device:metadata:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("workoutWithActivityType:startDate:endDate:workoutEvents:totalEnergyBurned:totalDistance:device:metadata:")
     public static native HKWorkout workoutWithActivityTypeStartDateEndDateWorkoutEventsTotalEnergyBurnedTotalDistanceDeviceMetadata(
@@ -217,10 +197,6 @@ public class HKWorkout extends HKSample {
     @NInt
     public static native long version();
 
-    /**
-     * duration</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HealthKit/Reference/HKWorkout_Class/index.html#//apple_ref/occ/instp/HKWorkout/duration">iOS Dev Center</a>
-     */
     @Generated
     @Selector("duration")
     public native double duration();
@@ -229,35 +205,19 @@ public class HKWorkout extends HKSample {
     @Selector("init")
     public native HKWorkout init();
 
-    /**
-     * totalDistance</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HealthKit/Reference/HKWorkout_Class/index.html#//apple_ref/occ/instp/HKWorkout/totalDistance">iOS Dev Center</a>
-     */
     @Generated
     @Selector("totalDistance")
     public native HKQuantity totalDistance();
 
-    /**
-     * totalEnergyBurned</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HealthKit/Reference/HKWorkout_Class/index.html#//apple_ref/occ/instp/HKWorkout/totalEnergyBurned">iOS Dev Center</a>
-     */
     @Generated
     @Selector("totalEnergyBurned")
     public native HKQuantity totalEnergyBurned();
 
-    /**
-     * workoutActivityType</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HealthKit/Reference/HKWorkout_Class/index.html#//apple_ref/occ/instp/HKWorkout/workoutActivityType">iOS Dev Center</a>
-     */
     @Generated
     @Selector("workoutActivityType")
     @NUInt
     public native long workoutActivityType();
 
-    /**
-     * workoutEvents</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HealthKit/Reference/HKWorkout_Class/index.html#//apple_ref/occ/instp/HKWorkout/workoutEvents">iOS Dev Center</a>
-     */
     @Generated
     @Selector("workoutEvents")
     public native NSArray<? extends HKWorkoutEvent> workoutEvents();

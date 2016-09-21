@@ -170,26 +170,14 @@ public class EKObject extends NSObject {
     @Selector("isNew")
     public native boolean isNew();
 
-    /**
-     * refresh</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/EventKit/Reference/EKObjectClassRef/index.html#//apple_ref/occ/instm/EKObject/refresh">iOS Dev Center</a>
-     */
     @Generated
     @Selector("refresh")
     public native boolean refresh();
 
-    /**
-     * reset</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/EventKit/Reference/EKObjectClassRef/index.html#//apple_ref/occ/instm/EKObject/reset">iOS Dev Center</a>
-     */
     @Generated
     @Selector("reset")
     public native void reset();
 
-    /**
-     * rollback</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/EventKit/Reference/EKObjectClassRef/index.html#//apple_ref/occ/instm/EKObject/rollback">iOS Dev Center</a>
-     */
     @Generated
     @Selector("rollback")
     public native void rollback();

@@ -31,6 +31,7 @@ public final class CBCharacteristicProperties {
     @Generated @NUInt public static final long ExtendedProperties = 0x0000000000000080L;
     @Generated @NUInt public static final long NotifyEncryptionRequired = 0x0000000000000100L;
     @Generated @NUInt public static final long IndicateEncryptionRequired = 0x0000000000000200L;
+
     @Generated
     private CBCharacteristicProperties() {
     }

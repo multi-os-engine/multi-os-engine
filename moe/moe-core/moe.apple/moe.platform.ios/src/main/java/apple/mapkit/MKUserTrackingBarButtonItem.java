@@ -225,10 +225,6 @@ public class MKUserTrackingBarButtonItem extends UIBarButtonItem {
     public native MKUserTrackingBarButtonItem initWithImageStyleTargetAction(UIImage image, @NInt long style,
             @Mapped(ObjCObjectMapper.class) Object target, SEL action);
 
-    /**
-     * initWithMapView:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKUserTrackingBarButtonItemClassRef/index.html#//apple_ref/occ/instm/MKUserTrackingBarButtonItem/initWithMapView:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithMapView:")
     public native MKUserTrackingBarButtonItem initWithMapView(MKMapView mapView);
@@ -238,18 +234,10 @@ public class MKUserTrackingBarButtonItem extends UIBarButtonItem {
     public native MKUserTrackingBarButtonItem initWithTitleStyleTargetAction(String title, @NInt long style,
             @Mapped(ObjCObjectMapper.class) Object target, SEL action);
 
-    /**
-     * mapView</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKUserTrackingBarButtonItemClassRef/index.html#//apple_ref/occ/instp/MKUserTrackingBarButtonItem/mapView">iOS Dev Center</a>
-     */
     @Generated
     @Selector("mapView")
     public native MKMapView mapView();
 
-    /**
-     * mapView</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKUserTrackingBarButtonItemClassRef/index.html#//apple_ref/occ/instp/MKUserTrackingBarButtonItem/mapView">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setMapView:")
     public native void setMapView(MKMapView value);

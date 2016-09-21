@@ -30,10 +30,6 @@ import org.moe.natj.objc.ann.Selector;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("AVPlayerItemOutputPushDelegate")
 public interface AVPlayerItemOutputPushDelegate {
-    /**
-     * outputSequenceWasFlushed:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVPlayerItemOutputPushDelegate_Protocol/index.html#//apple_ref/occ/intfm/AVPlayerItemOutputPushDelegate/outputSequenceWasFlushed:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("outputSequenceWasFlushed:")

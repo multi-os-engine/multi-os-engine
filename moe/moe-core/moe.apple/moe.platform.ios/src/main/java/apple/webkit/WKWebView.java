@@ -356,108 +356,56 @@ public class WKWebView extends UIView {
     @NInt
     public static native long version_static();
 
-    /**
-     * UIDelegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WebKit/Reference/WKWebView_Ref/index.html#//apple_ref/occ/instp/WKWebView/UIDelegate">iOS Dev Center</a>
-     */
     @Generated
     @Selector("UIDelegate")
     @MappedReturn(ObjCObjectMapper.class)
     public native WKUIDelegate UIDelegate();
 
-    /**
-     * URL</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WebKit/Reference/WKWebView_Ref/index.html#//apple_ref/occ/instp/WKWebView/URL">iOS Dev Center</a>
-     */
     @Generated
     @Selector("URL")
     public native NSURL URL();
 
-    /**
-     * allowsBackForwardNavigationGestures</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WebKit/Reference/WKWebView_Ref/index.html#//apple_ref/occ/instp/WKWebView/allowsBackForwardNavigationGestures">iOS Dev Center</a>
-     */
     @Generated
     @Selector("allowsBackForwardNavigationGestures")
     public native boolean allowsBackForwardNavigationGestures();
 
-    /**
-     * backForwardList</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WebKit/Reference/WKWebView_Ref/index.html#//apple_ref/occ/instp/WKWebView/backForwardList">iOS Dev Center</a>
-     */
     @Generated
     @Selector("backForwardList")
     public native WKBackForwardList backForwardList();
 
-    /**
-     * canGoBack</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WebKit/Reference/WKWebView_Ref/index.html#//apple_ref/occ/instp/WKWebView/canGoBack">iOS Dev Center</a>
-     */
     @Generated
     @Selector("canGoBack")
     public native boolean canGoBack();
 
-    /**
-     * canGoForward</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WebKit/Reference/WKWebView_Ref/index.html#//apple_ref/occ/instp/WKWebView/canGoForward">iOS Dev Center</a>
-     */
     @Generated
     @Selector("canGoForward")
     public native boolean canGoForward();
 
-    /**
-     * configuration</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WebKit/Reference/WKWebView_Ref/index.html#//apple_ref/occ/instp/WKWebView/configuration">iOS Dev Center</a>
-     */
     @Generated
     @Selector("configuration")
     public native WKWebViewConfiguration configuration();
 
-    /**
-     * estimatedProgress</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WebKit/Reference/WKWebView_Ref/index.html#//apple_ref/occ/instp/WKWebView/estimatedProgress">iOS Dev Center</a>
-     */
     @Generated
     @Selector("estimatedProgress")
     public native double estimatedProgress();
 
-    /**
-     * evaluateJavaScript:completionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WebKit/Reference/WKWebView_Ref/index.html#//apple_ref/occ/instm/WKWebView/evaluateJavaScript:completionHandler:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("evaluateJavaScript:completionHandler:")
     public native void evaluateJavaScriptCompletionHandler(String javaScriptString,
             @ObjCBlock(name = "call_evaluateJavaScriptCompletionHandler") Block_evaluateJavaScriptCompletionHandler completionHandler);
 
-    /**
-     * goBack</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WebKit/Reference/WKWebView_Ref/index.html#//apple_ref/occ/instm/WKWebView/goBack">iOS Dev Center</a>
-     */
     @Generated
     @Selector("goBack")
     public native WKNavigation goBack();
 
-    /**
-     * goForward</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WebKit/Reference/WKWebView_Ref/index.html#//apple_ref/occ/instm/WKWebView/goForward">iOS Dev Center</a>
-     */
     @Generated
     @Selector("goForward")
     public native WKNavigation goForward();
 
-    /**
-     * goToBackForwardListItem:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WebKit/Reference/WKWebView_Ref/index.html#//apple_ref/occ/instm/WKWebView/goToBackForwardListItem:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("goToBackForwardListItem:")
     public native WKNavigation goToBackForwardListItem(WKBackForwardListItem item);
 
-    /**
-     * hasOnlySecureContent</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WebKit/Reference/WKWebView_Ref/index.html#//apple_ref/occ/instp/WKWebView/hasOnlySecureContent">iOS Dev Center</a>
-     */
     @Generated
     @Selector("hasOnlySecureContent")
     public native boolean hasOnlySecureContent();
@@ -470,91 +418,47 @@ public class WKWebView extends UIView {
     @Selector("initWithFrame:")
     public native WKWebView initWithFrame(@ByValue CGRect frame);
 
-    /**
-     * initWithFrame:configuration:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WebKit/Reference/WKWebView_Ref/index.html#//apple_ref/occ/instm/WKWebView/initWithFrame:configuration:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithFrame:configuration:")
     public native WKWebView initWithFrameConfiguration(@ByValue CGRect frame, WKWebViewConfiguration configuration);
 
-    /**
-     * loading</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WebKit/Reference/WKWebView_Ref/index.html#//apple_ref/occ/instp/WKWebView/loading">iOS Dev Center</a>
-     */
     @Generated
     @Selector("isLoading")
     public native boolean isLoading();
 
-    /**
-     * loadHTMLString:baseURL:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WebKit/Reference/WKWebView_Ref/index.html#//apple_ref/occ/instm/WKWebView/loadHTMLString:baseURL:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("loadHTMLString:baseURL:")
     public native WKNavigation loadHTMLStringBaseURL(String string, NSURL baseURL);
 
-    /**
-     * loadRequest:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WebKit/Reference/WKWebView_Ref/index.html#//apple_ref/occ/instm/WKWebView/loadRequest:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("loadRequest:")
     public native WKNavigation loadRequest(NSURLRequest request);
 
-    /**
-     * navigationDelegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WebKit/Reference/WKWebView_Ref/index.html#//apple_ref/occ/instp/WKWebView/navigationDelegate">iOS Dev Center</a>
-     */
     @Generated
     @Selector("navigationDelegate")
     @MappedReturn(ObjCObjectMapper.class)
     public native WKNavigationDelegate navigationDelegate();
 
-    /**
-     * reload</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WebKit/Reference/WKWebView_Ref/index.html#//apple_ref/occ/instm/WKWebView/reload">iOS Dev Center</a>
-     */
     @Generated
     @Selector("reload")
     public native WKNavigation reload();
 
-    /**
-     * reloadFromOrigin</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WebKit/Reference/WKWebView_Ref/index.html#//apple_ref/occ/instm/WKWebView/reloadFromOrigin">iOS Dev Center</a>
-     */
     @Generated
     @Selector("reloadFromOrigin")
     public native WKNavigation reloadFromOrigin();
 
-    /**
-     * scrollView</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WebKit/Reference/WKWebView_Ref/index.html#//apple_ref/occ/instp/WKWebView/scrollView">iOS Dev Center</a>
-     */
     @Generated
     @Selector("scrollView")
     public native UIScrollView scrollView();
 
-    /**
-     * allowsBackForwardNavigationGestures</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WebKit/Reference/WKWebView_Ref/index.html#//apple_ref/occ/instp/WKWebView/allowsBackForwardNavigationGestures">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setAllowsBackForwardNavigationGestures:")
     public native void setAllowsBackForwardNavigationGestures(boolean value);
 
-    /**
-     * navigationDelegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WebKit/Reference/WKWebView_Ref/index.html#//apple_ref/occ/instp/WKWebView/navigationDelegate">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setNavigationDelegate:")
     public native void setNavigationDelegate_unsafe(@Mapped(ObjCObjectMapper.class) WKNavigationDelegate value);
 
-    /**
-     * navigationDelegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WebKit/Reference/WKWebView_Ref/index.html#//apple_ref/occ/instp/WKWebView/navigationDelegate">iOS Dev Center</a>
-     */
     @Generated
     public void setNavigationDelegate(@Mapped(ObjCObjectMapper.class) WKNavigationDelegate value) {
         Object __old = navigationDelegate();
@@ -567,18 +471,10 @@ public class WKWebView extends UIView {
         }
     }
 
-    /**
-     * UIDelegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WebKit/Reference/WKWebView_Ref/index.html#//apple_ref/occ/instp/WKWebView/UIDelegate">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setUIDelegate:")
     public native void setUIDelegate_unsafe(@Mapped(ObjCObjectMapper.class) WKUIDelegate value);
 
-    /**
-     * UIDelegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WebKit/Reference/WKWebView_Ref/index.html#//apple_ref/occ/instp/WKWebView/UIDelegate">iOS Dev Center</a>
-     */
     @Generated
     public void setUIDelegate(@Mapped(ObjCObjectMapper.class) WKUIDelegate value) {
         Object __old = UIDelegate();
@@ -591,34 +487,18 @@ public class WKWebView extends UIView {
         }
     }
 
-    /**
-     * stopLoading</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WebKit/Reference/WKWebView_Ref/index.html#//apple_ref/occ/instm/WKWebView/stopLoading">iOS Dev Center</a>
-     */
     @Generated
     @Selector("stopLoading")
     public native void stopLoading();
 
-    /**
-     * title</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WebKit/Reference/WKWebView_Ref/index.html#//apple_ref/occ/instp/WKWebView/title">iOS Dev Center</a>
-     */
     @Generated
     @Selector("title")
     public native String title();
 
-    /**
-     * certificateChain</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WebKit/Reference/WKWebView_Ref/index.html#//apple_ref/occ/instp/WKWebView/certificateChain">iOS Dev Center</a>
-     */
     @Generated
     @Selector("certificateChain")
     public native NSArray<?> certificateChain();
 
-    /**
-     * customUserAgent</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WebKit/Reference/WKWebView_Ref/index.html#//apple_ref/occ/instp/WKWebView/customUserAgent">iOS Dev Center</a>
-     */
     @Generated
     @Selector("customUserAgent")
     public native String customUserAgent();
@@ -627,43 +507,23 @@ public class WKWebView extends UIView {
     @Selector("initWithCoder:")
     public native WKWebView initWithCoder(NSCoder aDecoder);
 
-    /**
-     * loadData:MIMEType:characterEncodingName:baseURL:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WebKit/Reference/WKWebView_Ref/index.html#//apple_ref/occ/instm/WKWebView/loadData:MIMEType:characterEncodingName:baseURL:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("loadData:MIMEType:characterEncodingName:baseURL:")
     public native WKNavigation loadDataMIMETypeCharacterEncodingNameBaseURL(NSData data, String MIMEType,
             String characterEncodingName, NSURL baseURL);
 
-    /**
-     * loadFileURL:allowingReadAccessToURL:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WebKit/Reference/WKWebView_Ref/index.html#//apple_ref/occ/instm/WKWebView/loadFileURL:allowingReadAccessToURL:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("loadFileURL:allowingReadAccessToURL:")
     public native WKNavigation loadFileURLAllowingReadAccessToURL(NSURL URL, NSURL readAccessURL);
 
-    /**
-     * customUserAgent</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WebKit/Reference/WKWebView_Ref/index.html#//apple_ref/occ/instp/WKWebView/customUserAgent">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setCustomUserAgent:")
     public native void setCustomUserAgent(String value);
 
-    /**
-     * allowsLinkPreview</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WebKit/Reference/WKWebView_Ref/index.html#//apple_ref/occ/instp/WKWebView/allowsLinkPreview">iOS Dev Center</a>
-     */
     @Generated
     @Selector("allowsLinkPreview")
     public native boolean allowsLinkPreview();
 
-    /**
-     * allowsLinkPreview</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WebKit/Reference/WKWebView_Ref/index.html#//apple_ref/occ/instp/WKWebView/allowsLinkPreview">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setAllowsLinkPreview:")
     public native void setAllowsLinkPreview(boolean value);

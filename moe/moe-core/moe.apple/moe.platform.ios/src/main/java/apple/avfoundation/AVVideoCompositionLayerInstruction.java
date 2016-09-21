@@ -184,28 +184,16 @@ public class AVVideoCompositionLayerInstruction extends NSObject
     @Selector("encodeWithCoder:")
     public native void encodeWithCoder(NSCoder aCoder);
 
-    /**
-     * getCropRectangleRampForTime:startCropRectangle:endCropRectangle:timeRange:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVVideoCompositionLayerInstruction_Class/index.html#//apple_ref/occ/instm/AVVideoCompositionLayerInstruction/getCropRectangleRampForTime:startCropRectangle:endCropRectangle:timeRange:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("getCropRectangleRampForTime:startCropRectangle:endCropRectangle:timeRange:")
     public native boolean getCropRectangleRampForTimeStartCropRectangleEndCropRectangleTimeRange(@ByValue CMTime time,
             CGRect startCropRectangle, CGRect endCropRectangle, CMTimeRange timeRange);
 
-    /**
-     * getOpacityRampForTime:startOpacity:endOpacity:timeRange:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVVideoCompositionLayerInstruction_Class/index.html#//apple_ref/occ/instm/AVVideoCompositionLayerInstruction/getOpacityRampForTime:startOpacity:endOpacity:timeRange:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("getOpacityRampForTime:startOpacity:endOpacity:timeRange:")
     public native boolean getOpacityRampForTimeStartOpacityEndOpacityTimeRange(@ByValue CMTime time,
             FloatPtr startOpacity, FloatPtr endOpacity, CMTimeRange timeRange);
 
-    /**
-     * getTransformRampForTime:startTransform:endTransform:timeRange:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVVideoCompositionLayerInstruction_Class/index.html#//apple_ref/occ/instm/AVVideoCompositionLayerInstruction/getTransformRampForTime:startTransform:endTransform:timeRange:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("getTransformRampForTime:startTransform:endTransform:timeRange:")
     public native boolean getTransformRampForTimeStartTransformEndTransformTimeRange(@ByValue CMTime time,
@@ -230,10 +218,6 @@ public class AVVideoCompositionLayerInstruction extends NSObject
         return supportsSecureCoding();
     }
 
-    /**
-     * trackID</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVVideoCompositionLayerInstruction_Class/index.html#//apple_ref/occ/instp/AVVideoCompositionLayerInstruction/trackID">iOS Dev Center</a>
-     */
     @Generated
     @Selector("trackID")
     public native int trackID();

@@ -25,6 +25,7 @@ public final class NEOnDemandRuleAction {
     @Generated @NInt public static final long Disconnect = 0x0000000000000002L;
     @Generated @NInt public static final long EvaluateConnection = 0x0000000000000003L;
     @Generated @NInt public static final long Ignore = 0x0000000000000004L;
+
     @Generated
     private NEOnDemandRuleAction() {
     }

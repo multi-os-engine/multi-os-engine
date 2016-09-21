@@ -71,10 +71,6 @@ public class NSMutableDictionary<_KeyType, _ObjectType> extends NSDictionary<_Ke
     @Selector("dictionary")
     public static native <_KeyType, _ObjectType> NSMutableDictionary<?, ?> dictionary();
 
-    /**
-     * dictionaryWithCapacity:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSMutableDictionary_Class/index.html#//apple_ref/occ/clm/NSMutableDictionary/dictionaryWithCapacity:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("dictionaryWithCapacity:")
     public static native <_KeyType, _ObjectType> NSMutableDictionary<?, ?> dictionaryWithCapacity(@NUInt long numItems);
@@ -115,10 +111,6 @@ public class NSMutableDictionary<_KeyType, _ObjectType> extends NSDictionary<_Ke
     public static native <_KeyType, _ObjectType> NSMutableDictionary<?, ?> dictionaryWithObjectsAndKeys(
             @Mapped(ObjCObjectMapper.class) Object firstObject, Object... varargs);
 
-    /**
-     * dictionaryWithSharedKeySet:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSMutableDictionary_Class/index.html#//apple_ref/occ/clm/NSMutableDictionary/dictionaryWithSharedKeySet:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("dictionaryWithSharedKeySet:")
     public static native <_KeyType, _ObjectType> NSMutableDictionary<_KeyType, _ObjectType> dictionaryWithSharedKeySet(
@@ -233,26 +225,14 @@ public class NSMutableDictionary<_KeyType, _ObjectType> extends NSDictionary<_Ke
     @NInt
     public static native long version_static();
 
-    /**
-     * addEntriesFromDictionary:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSMutableDictionary_Class/index.html#//apple_ref/occ/instm/NSMutableDictionary/addEntriesFromDictionary:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("addEntriesFromDictionary:")
     public native void addEntriesFromDictionary(NSDictionary<_KeyType, _ObjectType> otherDictionary);
 
-    /**
-     * init</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSMutableDictionary_Class/index.html#//apple_ref/occ/instm/NSMutableDictionary/init">iOS Dev Center</a>
-     */
     @Generated
     @Selector("init")
     public native NSMutableDictionary<?, ?> init();
 
-    /**
-     * initWithCapacity:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSMutableDictionary_Class/index.html#//apple_ref/occ/instm/NSMutableDictionary/initWithCapacity:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithCapacity:")
     public native NSMutableDictionary<?, ?> initWithCapacity(@NUInt long numItems);
@@ -293,51 +273,27 @@ public class NSMutableDictionary<_KeyType, _ObjectType> extends NSDictionary<_Ke
     public native NSMutableDictionary<?, ?> initWithObjectsAndKeys(@Mapped(ObjCObjectMapper.class) Object firstObject,
             Object... varargs);
 
-    /**
-     * removeAllObjects</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSMutableDictionary_Class/index.html#//apple_ref/occ/instm/NSMutableDictionary/removeAllObjects">iOS Dev Center</a>
-     */
     @Generated
     @Selector("removeAllObjects")
     public native void removeAllObjects();
 
-    /**
-     * removeObjectForKey:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSMutableDictionary_Class/index.html#//apple_ref/occ/instm/NSMutableDictionary/removeObjectForKey:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("removeObjectForKey:")
     public native void removeObjectForKey(@Mapped(ObjCObjectMapper.class) _KeyType aKey);
 
-    /**
-     * removeObjectsForKeys:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSMutableDictionary_Class/index.html#//apple_ref/occ/instm/NSMutableDictionary/removeObjectsForKeys:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("removeObjectsForKeys:")
     public native void removeObjectsForKeys(NSArray<_KeyType> keyArray);
 
-    /**
-     * setDictionary:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSMutableDictionary_Class/index.html#//apple_ref/occ/instm/NSMutableDictionary/setDictionary:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setDictionary:")
     public native void setDictionary(NSDictionary<_KeyType, _ObjectType> otherDictionary);
 
-    /**
-     * setObject:forKey:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSMutableDictionary_Class/index.html#//apple_ref/occ/instm/NSMutableDictionary/setObject:forKey:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setObject:forKey:")
     public native void setObjectForKey(@Mapped(ObjCObjectMapper.class) _ObjectType anObject,
             @Mapped(ObjCObjectMapper.class) Object aKey);
 
-    /**
-     * setObject:forKeyedSubscript:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSMutableDictionary_Class/index.html#//apple_ref/occ/instm/NSMutableDictionary/setObject:forKeyedSubscript:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setObject:forKeyedSubscript:")
     public native void setObjectForKeyedSubscript(@Mapped(ObjCObjectMapper.class) _ObjectType obj,

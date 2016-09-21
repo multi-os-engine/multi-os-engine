@@ -161,10 +161,6 @@ public class AVCaptureMetadataOutput extends AVCaptureOutput {
     @NInt
     public static native long version_static();
 
-    /**
-     * availableMetadataObjectTypes</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVCaptureMetadataOutput/index.html#//apple_ref/occ/instp/AVCaptureMetadataOutput/availableMetadataObjectTypes">iOS Dev Center</a>
-     */
     @Generated
     @Selector("availableMetadataObjectTypes")
     public native NSArray<?> availableMetadataObjectTypes();
@@ -173,62 +169,34 @@ public class AVCaptureMetadataOutput extends AVCaptureOutput {
     @Selector("init")
     public native AVCaptureMetadataOutput init();
 
-    /**
-     * metadataObjectTypes</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVCaptureMetadataOutput/index.html#//apple_ref/occ/instp/AVCaptureMetadataOutput/metadataObjectTypes">iOS Dev Center</a>
-     */
     @Generated
     @Selector("metadataObjectTypes")
     public native NSArray<?> metadataObjectTypes();
 
-    /**
-     * metadataObjectsCallbackQueue</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVCaptureMetadataOutput/index.html#//apple_ref/occ/instp/AVCaptureMetadataOutput/metadataObjectsCallbackQueue">iOS Dev Center</a>
-     */
     @Generated
     @Selector("metadataObjectsCallbackQueue")
     public native NSObject metadataObjectsCallbackQueue();
 
-    /**
-     * metadataObjectsDelegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVCaptureMetadataOutput/index.html#//apple_ref/occ/instp/AVCaptureMetadataOutput/metadataObjectsDelegate">iOS Dev Center</a>
-     */
     @Generated
     @Selector("metadataObjectsDelegate")
     @MappedReturn(ObjCObjectMapper.class)
     public native AVCaptureMetadataOutputObjectsDelegate metadataObjectsDelegate();
 
-    /**
-     * rectOfInterest</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVCaptureMetadataOutput/index.html#//apple_ref/occ/instp/AVCaptureMetadataOutput/rectOfInterest">iOS Dev Center</a>
-     */
     @Generated
     @Selector("rectOfInterest")
     @ByValue
     public native CGRect rectOfInterest();
 
-    /**
-     * metadataObjectTypes</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVCaptureMetadataOutput/index.html#//apple_ref/occ/instp/AVCaptureMetadataOutput/metadataObjectTypes">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setMetadataObjectTypes:")
     public native void setMetadataObjectTypes(NSArray<?> value);
 
-    /**
-     * setMetadataObjectsDelegate:queue:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVCaptureMetadataOutput/index.html#//apple_ref/occ/instm/AVCaptureMetadataOutput/setMetadataObjectsDelegate:queue:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setMetadataObjectsDelegate:queue:")
     public native void setMetadataObjectsDelegateQueue(
             @Mapped(ObjCObjectMapper.class) AVCaptureMetadataOutputObjectsDelegate objectsDelegate,
             NSObject objectsCallbackQueue);
 
-    /**
-     * rectOfInterest</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVCaptureMetadataOutput/index.html#//apple_ref/occ/instp/AVCaptureMetadataOutput/rectOfInterest">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setRectOfInterest:")
     public native void setRectOfInterest(@ByValue CGRect value);

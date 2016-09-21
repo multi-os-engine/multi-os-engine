@@ -30,10 +30,6 @@ import org.moe.natj.objc.ann.Selector;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("EKEventViewDelegate")
 public interface EKEventViewDelegate {
-    /**
-     * eventViewController:didCompleteWithAction:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/EventKitUI/Reference/EKEventViewDelegateProtocolRef/index.html#//apple_ref/occ/intfm/EKEventViewDelegate/eventViewController:didCompleteWithAction:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("eventViewController:didCompleteWithAction:")
     void eventViewControllerDidCompleteWithAction(EKEventViewController controller, @NInt long action);

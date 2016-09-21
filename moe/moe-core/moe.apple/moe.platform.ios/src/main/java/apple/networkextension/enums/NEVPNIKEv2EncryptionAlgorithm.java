@@ -27,6 +27,7 @@ public final class NEVPNIKEv2EncryptionAlgorithm {
     @Generated @NInt public static final long AlgorithmAES256 = 0x0000000000000004L;
     @Generated @NInt public static final long AlgorithmAES128GCM = 0x0000000000000005L;
     @Generated @NInt public static final long AlgorithmAES256GCM = 0x0000000000000006L;
+
     @Generated
     private NEVPNIKEv2EncryptionAlgorithm() {
     }

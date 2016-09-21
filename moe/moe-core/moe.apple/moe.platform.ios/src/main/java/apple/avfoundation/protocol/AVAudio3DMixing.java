@@ -31,100 +31,52 @@ import org.moe.natj.objc.ann.Selector;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("AVAudio3DMixing")
 public interface AVAudio3DMixing {
-    /**
-     * obstruction</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudio3DMixing_Protocol/index.html#//apple_ref/occ/intfp/AVAudio3DMixing/obstruction">iOS Dev Center</a>
-     */
     @Generated
     @Selector("obstruction")
     float obstruction();
 
-    /**
-     * occlusion</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudio3DMixing_Protocol/index.html#//apple_ref/occ/intfp/AVAudio3DMixing/occlusion">iOS Dev Center</a>
-     */
     @Generated
     @Selector("occlusion")
     float occlusion();
 
-    /**
-     * position</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudio3DMixing_Protocol/index.html#//apple_ref/occ/intfp/AVAudio3DMixing/position">iOS Dev Center</a>
-     */
     @Generated
     @Selector("position")
     @ByValue
     AVAudio3DPoint position();
 
-    /**
-     * rate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudio3DMixing_Protocol/index.html#//apple_ref/occ/intfp/AVAudio3DMixing/rate">iOS Dev Center</a>
-     */
     @Generated
     @Selector("rate")
     float rate();
 
-    /**
-     * renderingAlgorithm</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudio3DMixing_Protocol/index.html#//apple_ref/occ/intfp/AVAudio3DMixing/renderingAlgorithm">iOS Dev Center</a>
-     */
     @Generated
     @Selector("renderingAlgorithm")
     @NInt
     long renderingAlgorithm();
 
-    /**
-     * reverbBlend</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudio3DMixing_Protocol/index.html#//apple_ref/occ/intfp/AVAudio3DMixing/reverbBlend">iOS Dev Center</a>
-     */
     @Generated
     @Selector("reverbBlend")
     float reverbBlend();
 
-    /**
-     * obstruction</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudio3DMixing_Protocol/index.html#//apple_ref/occ/intfp/AVAudio3DMixing/obstruction">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setObstruction:")
     void setObstruction(float value);
 
-    /**
-     * occlusion</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudio3DMixing_Protocol/index.html#//apple_ref/occ/intfp/AVAudio3DMixing/occlusion">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setOcclusion:")
     void setOcclusion(float value);
 
-    /**
-     * position</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudio3DMixing_Protocol/index.html#//apple_ref/occ/intfp/AVAudio3DMixing/position">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setPosition:")
     void setPosition(@ByValue AVAudio3DPoint value);
 
-    /**
-     * rate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudio3DMixing_Protocol/index.html#//apple_ref/occ/intfp/AVAudio3DMixing/rate">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setRate:")
     void setRate(float value);
 
-    /**
-     * renderingAlgorithm</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudio3DMixing_Protocol/index.html#//apple_ref/occ/intfp/AVAudio3DMixing/renderingAlgorithm">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setRenderingAlgorithm:")
     void setRenderingAlgorithm(@NInt long value);
 
-    /**
-     * reverbBlend</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudio3DMixing_Protocol/index.html#//apple_ref/occ/intfp/AVAudio3DMixing/reverbBlend">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setReverbBlend:")
     void setReverbBlend(float value);

@@ -162,108 +162,60 @@ public class HMHome extends NSObject {
     @NInt
     public static native long version_static();
 
-    /**
-     * accessories</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HomeKit/Reference/HMHome_Class/index.html#//apple_ref/occ/instp/HMHome/accessories">iOS Dev Center</a>
-     */
     @Generated
     @Selector("accessories")
     public native NSArray<? extends HMAccessory> accessories();
 
-    /**
-     * actionSets</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HomeKit/Reference/HMHome_Class/index.html#//apple_ref/occ/instp/HMHome/actionSets">iOS Dev Center</a>
-     */
     @Generated
     @Selector("actionSets")
     public native NSArray<? extends HMActionSet> actionSets();
 
-    /**
-     * addAccessory:completionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HomeKit/Reference/HMHome_Class/index.html#//apple_ref/occ/instm/HMHome/addAccessory:completionHandler:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("addAccessory:completionHandler:")
     public native void addAccessoryCompletionHandler(HMAccessory accessory,
             @ObjCBlock(name = "call_addAccessoryCompletionHandler") Block_addAccessoryCompletionHandler completion);
 
-    /**
-     * addActionSetWithName:completionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HomeKit/Reference/HMHome_Class/index.html#//apple_ref/occ/instm/HMHome/addActionSetWithName:completionHandler:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("addActionSetWithName:completionHandler:")
     public native void addActionSetWithNameCompletionHandler(String actionSetName,
             @ObjCBlock(name = "call_addActionSetWithNameCompletionHandler") Block_addActionSetWithNameCompletionHandler completion);
 
-    /**
-     * addRoomWithName:completionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HomeKit/Reference/HMHome_Class/index.html#//apple_ref/occ/instm/HMHome/addRoomWithName:completionHandler:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("addRoomWithName:completionHandler:")
     public native void addRoomWithNameCompletionHandler(String roomName,
             @ObjCBlock(name = "call_addRoomWithNameCompletionHandler") Block_addRoomWithNameCompletionHandler completion);
 
-    /**
-     * addServiceGroupWithName:completionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HomeKit/Reference/HMHome_Class/index.html#//apple_ref/occ/instm/HMHome/addServiceGroupWithName:completionHandler:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("addServiceGroupWithName:completionHandler:")
     public native void addServiceGroupWithNameCompletionHandler(String serviceGroupName,
             @ObjCBlock(name = "call_addServiceGroupWithNameCompletionHandler") Block_addServiceGroupWithNameCompletionHandler completion);
 
-    /**
-     * addTrigger:completionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HomeKit/Reference/HMHome_Class/index.html#//apple_ref/occ/instm/HMHome/addTrigger:completionHandler:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("addTrigger:completionHandler:")
     public native void addTriggerCompletionHandler(HMTrigger trigger,
             @ObjCBlock(name = "call_addTriggerCompletionHandler") Block_addTriggerCompletionHandler completion);
 
-    /**
-     * addUserWithCompletionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HomeKit/Reference/HMHome_Class/index.html#//apple_ref/occ/instm/HMHome/addUserWithCompletionHandler:">iOS Dev Center</a>
-     */
     @Deprecated
     @Generated
     @Selector("addUserWithCompletionHandler:")
     public native void addUserWithCompletionHandler(
             @ObjCBlock(name = "call_addUserWithCompletionHandler") Block_addUserWithCompletionHandler completion);
 
-    /**
-     * addZoneWithName:completionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HomeKit/Reference/HMHome_Class/index.html#//apple_ref/occ/instm/HMHome/addZoneWithName:completionHandler:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("addZoneWithName:completionHandler:")
     public native void addZoneWithNameCompletionHandler(String zoneName,
             @ObjCBlock(name = "call_addZoneWithNameCompletionHandler") Block_addZoneWithNameCompletionHandler completion);
 
-    /**
-     * assignAccessory:toRoom:completionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HomeKit/Reference/HMHome_Class/index.html#//apple_ref/occ/instm/HMHome/assignAccessory:toRoom:completionHandler:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("assignAccessory:toRoom:completionHandler:")
     public native void assignAccessoryToRoomCompletionHandler(HMAccessory accessory, HMRoom room,
             @ObjCBlock(name = "call_assignAccessoryToRoomCompletionHandler") Block_assignAccessoryToRoomCompletionHandler completion);
 
-    /**
-     * delegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HomeKit/Reference/HMHome_Class/index.html#//apple_ref/occ/instp/HMHome/delegate">iOS Dev Center</a>
-     */
     @Generated
     @Selector("delegate")
     @MappedReturn(ObjCObjectMapper.class)
     public native HMHomeDelegate delegate();
 
-    /**
-     * executeActionSet:completionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HomeKit/Reference/HMHome_Class/index.html#//apple_ref/occ/instm/HMHome/executeActionSet:completionHandler:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("executeActionSet:completionHandler:")
     public native void executeActionSetCompletionHandler(HMActionSet actionSet,
@@ -273,130 +225,70 @@ public class HMHome extends NSObject {
     @Selector("init")
     public native HMHome init();
 
-    /**
-     * primary</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HomeKit/Reference/HMHome_Class/index.html#//apple_ref/occ/instp/HMHome/primary">iOS Dev Center</a>
-     */
     @Generated
     @Selector("isPrimary")
     public native boolean isPrimary();
 
-    /**
-     * name</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HomeKit/Reference/HMHome_Class/index.html#//apple_ref/occ/instp/HMHome/name">iOS Dev Center</a>
-     */
     @Generated
     @Selector("name")
     public native String name();
 
-    /**
-     * removeAccessory:completionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HomeKit/Reference/HMHome_Class/index.html#//apple_ref/occ/instm/HMHome/removeAccessory:completionHandler:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("removeAccessory:completionHandler:")
     public native void removeAccessoryCompletionHandler(HMAccessory accessory,
             @ObjCBlock(name = "call_removeAccessoryCompletionHandler") Block_removeAccessoryCompletionHandler completion);
 
-    /**
-     * removeActionSet:completionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HomeKit/Reference/HMHome_Class/index.html#//apple_ref/occ/instm/HMHome/removeActionSet:completionHandler:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("removeActionSet:completionHandler:")
     public native void removeActionSetCompletionHandler(HMActionSet actionSet,
             @ObjCBlock(name = "call_removeActionSetCompletionHandler") Block_removeActionSetCompletionHandler completion);
 
-    /**
-     * removeRoom:completionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HomeKit/Reference/HMHome_Class/index.html#//apple_ref/occ/instm/HMHome/removeRoom:completionHandler:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("removeRoom:completionHandler:")
     public native void removeRoomCompletionHandler(HMRoom room,
             @ObjCBlock(name = "call_removeRoomCompletionHandler") Block_removeRoomCompletionHandler completion);
 
-    /**
-     * removeServiceGroup:completionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HomeKit/Reference/HMHome_Class/index.html#//apple_ref/occ/instm/HMHome/removeServiceGroup:completionHandler:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("removeServiceGroup:completionHandler:")
     public native void removeServiceGroupCompletionHandler(HMServiceGroup group,
             @ObjCBlock(name = "call_removeServiceGroupCompletionHandler") Block_removeServiceGroupCompletionHandler completion);
 
-    /**
-     * removeTrigger:completionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HomeKit/Reference/HMHome_Class/index.html#//apple_ref/occ/instm/HMHome/removeTrigger:completionHandler:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("removeTrigger:completionHandler:")
     public native void removeTriggerCompletionHandler(HMTrigger trigger,
             @ObjCBlock(name = "call_removeTriggerCompletionHandler") Block_removeTriggerCompletionHandler completion);
 
-    /**
-     * removeUser:completionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HomeKit/Reference/HMHome_Class/index.html#//apple_ref/occ/instm/HMHome/removeUser:completionHandler:">iOS Dev Center</a>
-     */
     @Deprecated
     @Generated
     @Selector("removeUser:completionHandler:")
     public native void removeUserCompletionHandler(HMUser user,
             @ObjCBlock(name = "call_removeUserCompletionHandler") Block_removeUserCompletionHandler completion);
 
-    /**
-     * removeZone:completionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HomeKit/Reference/HMHome_Class/index.html#//apple_ref/occ/instm/HMHome/removeZone:completionHandler:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("removeZone:completionHandler:")
     public native void removeZoneCompletionHandler(HMZone zone,
             @ObjCBlock(name = "call_removeZoneCompletionHandler") Block_removeZoneCompletionHandler completion);
 
-    /**
-     * roomForEntireHome</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HomeKit/Reference/HMHome_Class/index.html#//apple_ref/occ/instm/HMHome/roomForEntireHome">iOS Dev Center</a>
-     */
     @Generated
     @Selector("roomForEntireHome")
     public native HMRoom roomForEntireHome();
 
-    /**
-     * rooms</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HomeKit/Reference/HMHome_Class/index.html#//apple_ref/occ/instp/HMHome/rooms">iOS Dev Center</a>
-     */
     @Generated
     @Selector("rooms")
     public native NSArray<? extends HMRoom> rooms();
 
-    /**
-     * serviceGroups</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HomeKit/Reference/HMHome_Class/index.html#//apple_ref/occ/instp/HMHome/serviceGroups">iOS Dev Center</a>
-     */
     @Generated
     @Selector("serviceGroups")
     public native NSArray<? extends HMServiceGroup> serviceGroups();
 
-    /**
-     * servicesWithTypes:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HomeKit/Reference/HMHome_Class/index.html#//apple_ref/occ/instm/HMHome/servicesWithTypes:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("servicesWithTypes:")
     public native NSArray<? extends HMService> servicesWithTypes(NSArray<String> serviceTypes);
 
-    /**
-     * delegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HomeKit/Reference/HMHome_Class/index.html#//apple_ref/occ/instp/HMHome/delegate">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setDelegate:")
     public native void setDelegate_unsafe(@Mapped(ObjCObjectMapper.class) HMHomeDelegate value);
 
-    /**
-     * delegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HomeKit/Reference/HMHome_Class/index.html#//apple_ref/occ/instp/HMHome/delegate">iOS Dev Center</a>
-     */
     @Generated
     public void setDelegate(@Mapped(ObjCObjectMapper.class) HMHomeDelegate value) {
         Object __old = delegate();
@@ -409,45 +301,25 @@ public class HMHome extends NSObject {
         }
     }
 
-    /**
-     * triggers</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HomeKit/Reference/HMHome_Class/index.html#//apple_ref/occ/instp/HMHome/triggers">iOS Dev Center</a>
-     */
     @Generated
     @Selector("triggers")
     public native NSArray<? extends HMTrigger> triggers();
 
-    /**
-     * unblockAccessory:completionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HomeKit/Reference/HMHome_Class/index.html#//apple_ref/occ/instm/HMHome/unblockAccessory:completionHandler:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("unblockAccessory:completionHandler:")
     public native void unblockAccessoryCompletionHandler(HMAccessory accessory,
             @ObjCBlock(name = "call_unblockAccessoryCompletionHandler") Block_unblockAccessoryCompletionHandler completion);
 
-    /**
-     * updateName:completionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HomeKit/Reference/HMHome_Class/index.html#//apple_ref/occ/instm/HMHome/updateName:completionHandler:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("updateName:completionHandler:")
     public native void updateNameCompletionHandler(String name,
             @ObjCBlock(name = "call_updateNameCompletionHandler") Block_updateNameCompletionHandler completion);
 
-    /**
-     * users</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HomeKit/Reference/HMHome_Class/index.html#//apple_ref/occ/instp/HMHome/users">iOS Dev Center</a>
-     */
     @Deprecated
     @Generated
     @Selector("users")
     public native NSArray<? extends HMUser> users();
 
-    /**
-     * zones</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HomeKit/Reference/HMHome_Class/index.html#//apple_ref/occ/instp/HMHome/zones">iOS Dev Center</a>
-     */
     @Generated
     @Selector("zones")
     public native NSArray<? extends HMZone> zones();

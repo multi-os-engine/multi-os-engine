@@ -348,52 +348,28 @@ public class UITabBar extends UIView {
     @NInt
     public static native long version_static();
 
-    /**
-     * backgroundImage</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITabBar_Class/index.html#//apple_ref/occ/instp/UITabBar/backgroundImage">iOS Dev Center</a>
-     */
     @Generated
     @Selector("backgroundImage")
     public native UIImage backgroundImage();
 
-    /**
-     * barStyle</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITabBar_Class/index.html#//apple_ref/occ/instp/UITabBar/barStyle">iOS Dev Center</a>
-     */
     @Generated
     @Selector("barStyle")
     @NInt
     public native long barStyle();
 
-    /**
-     * barTintColor</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITabBar_Class/index.html#//apple_ref/occ/instp/UITabBar/barTintColor">iOS Dev Center</a>
-     */
     @Generated
     @Selector("barTintColor")
     public native UIColor barTintColor();
 
-    /**
-     * beginCustomizingItems:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITabBar_Class/index.html#//apple_ref/occ/instm/UITabBar/beginCustomizingItems:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("beginCustomizingItems:")
     public native void beginCustomizingItems(NSArray<? extends UITabBarItem> items);
 
-    /**
-     * delegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITabBar_Class/index.html#//apple_ref/occ/instp/UITabBar/delegate">iOS Dev Center</a>
-     */
     @Generated
     @Selector("delegate")
     @MappedReturn(ObjCObjectMapper.class)
     public native UITabBarDelegate delegate();
 
-    /**
-     * endCustomizingAnimated:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITabBar_Class/index.html#//apple_ref/occ/instm/UITabBar/endCustomizingAnimated:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("endCustomizingAnimated:")
     public native boolean endCustomizingAnimated(boolean animated);
@@ -406,126 +382,66 @@ public class UITabBar extends UIView {
     @Selector("initWithFrame:")
     public native UITabBar initWithFrame(@ByValue CGRect frame);
 
-    /**
-     * isCustomizing</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITabBar_Class/index.html#//apple_ref/occ/instm/UITabBar/isCustomizing">iOS Dev Center</a>
-     */
     @Generated
     @Selector("isCustomizing")
     public native boolean isCustomizing();
 
-    /**
-     * translucent</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITabBar_Class/index.html#//apple_ref/occ/instp/UITabBar/translucent">iOS Dev Center</a>
-     */
     @Generated
     @Selector("isTranslucent")
     public native boolean isTranslucent();
 
-    /**
-     * translucent</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITabBar_Class/index.html#//apple_ref/occ/instp/UITabBar/translucent">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setTranslucent:")
     public native void setTranslucent(boolean value);
 
-    /**
-     * itemPositioning</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITabBar_Class/index.html#//apple_ref/occ/instp/UITabBar/itemPositioning">iOS Dev Center</a>
-     */
     @Generated
     @Selector("itemPositioning")
     @NInt
     public native long itemPositioning();
 
-    /**
-     * itemSpacing</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITabBar_Class/index.html#//apple_ref/occ/instp/UITabBar/itemSpacing">iOS Dev Center</a>
-     */
     @Generated
     @Selector("itemSpacing")
     @NFloat
     public native double itemSpacing();
 
-    /**
-     * itemWidth</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITabBar_Class/index.html#//apple_ref/occ/instp/UITabBar/itemWidth">iOS Dev Center</a>
-     */
     @Generated
     @Selector("itemWidth")
     @NFloat
     public native double itemWidth();
 
-    /**
-     * items</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITabBar_Class/index.html#//apple_ref/occ/instp/UITabBar/items">iOS Dev Center</a>
-     */
     @Generated
     @Selector("items")
     public native NSArray<? extends UITabBarItem> items();
 
-    /**
-     * selectedImageTintColor</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITabBar_Class/index.html#//apple_ref/occ/instp/UITabBar/selectedImageTintColor">iOS Dev Center</a>
-     */
     @Generated
     @Deprecated
     @Selector("selectedImageTintColor")
     public native UIColor selectedImageTintColor();
 
-    /**
-     * selectedItem</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITabBar_Class/index.html#//apple_ref/occ/instp/UITabBar/selectedItem">iOS Dev Center</a>
-     */
     @Generated
     @Selector("selectedItem")
     public native UITabBarItem selectedItem();
 
-    /**
-     * selectionIndicatorImage</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITabBar_Class/index.html#//apple_ref/occ/instp/UITabBar/selectionIndicatorImage">iOS Dev Center</a>
-     */
     @Generated
     @Selector("selectionIndicatorImage")
     public native UIImage selectionIndicatorImage();
 
-    /**
-     * backgroundImage</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITabBar_Class/index.html#//apple_ref/occ/instp/UITabBar/backgroundImage">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setBackgroundImage:")
     public native void setBackgroundImage(UIImage value);
 
-    /**
-     * barStyle</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITabBar_Class/index.html#//apple_ref/occ/instp/UITabBar/barStyle">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setBarStyle:")
     public native void setBarStyle(@NInt long value);
 
-    /**
-     * barTintColor</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITabBar_Class/index.html#//apple_ref/occ/instp/UITabBar/barTintColor">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setBarTintColor:")
     public native void setBarTintColor(UIColor value);
 
-    /**
-     * delegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITabBar_Class/index.html#//apple_ref/occ/instp/UITabBar/delegate">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setDelegate:")
     public native void setDelegate_unsafe(@Mapped(ObjCObjectMapper.class) UITabBarDelegate value);
 
-    /**
-     * delegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITabBar_Class/index.html#//apple_ref/occ/instp/UITabBar/delegate">iOS Dev Center</a>
-     */
     @Generated
     public void setDelegate(@Mapped(ObjCObjectMapper.class) UITabBarDelegate value) {
         Object __old = delegate();
@@ -538,67 +454,35 @@ public class UITabBar extends UIView {
         }
     }
 
-    /**
-     * itemPositioning</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITabBar_Class/index.html#//apple_ref/occ/instp/UITabBar/itemPositioning">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setItemPositioning:")
     public native void setItemPositioning(@NInt long value);
 
-    /**
-     * itemSpacing</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITabBar_Class/index.html#//apple_ref/occ/instp/UITabBar/itemSpacing">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setItemSpacing:")
     public native void setItemSpacing(@NFloat double value);
 
-    /**
-     * itemWidth</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITabBar_Class/index.html#//apple_ref/occ/instp/UITabBar/itemWidth">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setItemWidth:")
     public native void setItemWidth(@NFloat double value);
 
-    /**
-     * items</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITabBar_Class/index.html#//apple_ref/occ/instp/UITabBar/items">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setItems:")
     public native void setItems(NSArray<? extends UITabBarItem> value);
 
-    /**
-     * setItems:animated:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITabBar_Class/index.html#//apple_ref/occ/instm/UITabBar/setItems:animated:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setItems:animated:")
     public native void setItemsAnimated(NSArray<? extends UITabBarItem> items, boolean animated);
 
-    /**
-     * selectedImageTintColor</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITabBar_Class/index.html#//apple_ref/occ/instp/UITabBar/selectedImageTintColor">iOS Dev Center</a>
-     */
     @Generated
     @Deprecated
     @Selector("setSelectedImageTintColor:")
     public native void setSelectedImageTintColor(UIColor value);
 
-    /**
-     * selectedItem</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITabBar_Class/index.html#//apple_ref/occ/instp/UITabBar/selectedItem">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setSelectedItem:")
     public native void setSelectedItem_unsafe(UITabBarItem value);
 
-    /**
-     * selectedItem</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITabBar_Class/index.html#//apple_ref/occ/instp/UITabBar/selectedItem">iOS Dev Center</a>
-     */
     @Generated
     public void setSelectedItem(UITabBarItem value) {
         Object __old = selectedItem();
@@ -611,42 +495,22 @@ public class UITabBar extends UIView {
         }
     }
 
-    /**
-     * selectionIndicatorImage</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITabBar_Class/index.html#//apple_ref/occ/instp/UITabBar/selectionIndicatorImage">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setSelectionIndicatorImage:")
     public native void setSelectionIndicatorImage(UIImage value);
 
-    /**
-     * shadowImage</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITabBar_Class/index.html#//apple_ref/occ/instp/UITabBar/shadowImage">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setShadowImage:")
     public native void setShadowImage(UIImage value);
 
-    /**
-     * tintColor</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITabBar_Class/index.html#//apple_ref/occ/instp/UITabBar/tintColor">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setTintColor:")
     public native void setTintColor(UIColor value);
 
-    /**
-     * shadowImage</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITabBar_Class/index.html#//apple_ref/occ/instp/UITabBar/shadowImage">iOS Dev Center</a>
-     */
     @Generated
     @Selector("shadowImage")
     public native UIImage shadowImage();
 
-    /**
-     * tintColor</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITabBar_Class/index.html#//apple_ref/occ/instp/UITabBar/tintColor">iOS Dev Center</a>
-     */
     @Generated
     @Selector("tintColor")
     public native UIColor tintColor();

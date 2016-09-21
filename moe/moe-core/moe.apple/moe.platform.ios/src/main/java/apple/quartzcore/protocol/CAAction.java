@@ -31,10 +31,6 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("CAAction")
 public interface CAAction {
-    /**
-     * runActionForKey:object:arguments:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/CAAction_protocol/index.html#//apple_ref/occ/intfm/CAAction/runActionForKey:object:arguments:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("runActionForKey:object:arguments:")
     void runActionForKeyObjectArguments(String event, @Mapped(ObjCObjectMapper.class) Object anObject,

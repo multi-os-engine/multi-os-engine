@@ -61,46 +61,26 @@ public class AVMediaSelectionGroup extends NSObject implements NSCopying {
     @Selector("alloc")
     public static native AVMediaSelectionGroup alloc();
 
-    /**
-     * mediaSelectionOptionsFromArray:filteredAndSortedAccordingToPreferredLanguages:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVMediaSelectionGroup_Class/index.html#//apple_ref/occ/clm/AVMediaSelectionGroup/mediaSelectionOptionsFromArray:filteredAndSortedAccordingToPreferredLanguages:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("mediaSelectionOptionsFromArray:filteredAndSortedAccordingToPreferredLanguages:")
     public static native NSArray<? extends AVMediaSelectionOption> mediaSelectionOptionsFromArrayFilteredAndSortedAccordingToPreferredLanguages(
             NSArray<? extends AVMediaSelectionOption> mediaSelectionOptions, NSArray<String> preferredLanguages);
 
-    /**
-     * mediaSelectionOptionsFromArray:withLocale:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVMediaSelectionGroup_Class/index.html#//apple_ref/occ/clm/AVMediaSelectionGroup/mediaSelectionOptionsFromArray:withLocale:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("mediaSelectionOptionsFromArray:withLocale:")
     public static native NSArray<? extends AVMediaSelectionOption> mediaSelectionOptionsFromArrayWithLocale(
             NSArray<? extends AVMediaSelectionOption> mediaSelectionOptions, NSLocale locale);
 
-    /**
-     * mediaSelectionOptionsFromArray:withMediaCharacteristics:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVMediaSelectionGroup_Class/index.html#//apple_ref/occ/clm/AVMediaSelectionGroup/mediaSelectionOptionsFromArray:withMediaCharacteristics:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("mediaSelectionOptionsFromArray:withMediaCharacteristics:")
     public static native NSArray<? extends AVMediaSelectionOption> mediaSelectionOptionsFromArrayWithMediaCharacteristics(
             NSArray<? extends AVMediaSelectionOption> mediaSelectionOptions, NSArray<String> mediaCharacteristics);
 
-    /**
-     * mediaSelectionOptionsFromArray:withoutMediaCharacteristics:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVMediaSelectionGroup_Class/index.html#//apple_ref/occ/clm/AVMediaSelectionGroup/mediaSelectionOptionsFromArray:withoutMediaCharacteristics:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("mediaSelectionOptionsFromArray:withoutMediaCharacteristics:")
     public static native NSArray<? extends AVMediaSelectionOption> mediaSelectionOptionsFromArrayWithoutMediaCharacteristics(
             NSArray<? extends AVMediaSelectionOption> mediaSelectionOptions, NSArray<String> mediaCharacteristics);
 
-    /**
-     * playableMediaSelectionOptionsFromArray:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVMediaSelectionGroup_Class/index.html#//apple_ref/occ/clm/AVMediaSelectionGroup/playableMediaSelectionOptionsFromArray:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("playableMediaSelectionOptionsFromArray:")
     public static native NSArray<? extends AVMediaSelectionOption> playableMediaSelectionOptionsFromArray(
@@ -206,10 +186,6 @@ public class AVMediaSelectionGroup extends NSObject implements NSCopying {
     @NInt
     public static native long version_static();
 
-    /**
-     * allowsEmptySelection</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVMediaSelectionGroup_Class/index.html#//apple_ref/occ/instp/AVMediaSelectionGroup/allowsEmptySelection">iOS Dev Center</a>
-     */
     @Generated
     @Selector("allowsEmptySelection")
     public native boolean allowsEmptySelection();
@@ -220,10 +196,6 @@ public class AVMediaSelectionGroup extends NSObject implements NSCopying {
     @MappedReturn(ObjCObjectMapper.class)
     public native Object copyWithZone(VoidPtr zone);
 
-    /**
-     * defaultOption</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVMediaSelectionGroup_Class/index.html#//apple_ref/occ/instp/AVMediaSelectionGroup/defaultOption">iOS Dev Center</a>
-     */
     @Generated
     @Selector("defaultOption")
     public native AVMediaSelectionOption defaultOption();
@@ -232,19 +204,11 @@ public class AVMediaSelectionGroup extends NSObject implements NSCopying {
     @Selector("init")
     public native AVMediaSelectionGroup init();
 
-    /**
-     * mediaSelectionOptionWithPropertyList:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVMediaSelectionGroup_Class/index.html#//apple_ref/occ/instm/AVMediaSelectionGroup/mediaSelectionOptionWithPropertyList:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("mediaSelectionOptionWithPropertyList:")
     public native AVMediaSelectionOption mediaSelectionOptionWithPropertyList(
             @Mapped(ObjCObjectMapper.class) Object plist);
 
-    /**
-     * options</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVMediaSelectionGroup_Class/index.html#//apple_ref/occ/instp/AVMediaSelectionGroup/options">iOS Dev Center</a>
-     */
     @Generated
     @Selector("options")
     public native NSArray<? extends AVMediaSelectionOption> options();

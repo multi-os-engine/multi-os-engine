@@ -158,35 +158,19 @@ public class NEHotspotHelperCommand extends NSObject {
     @NInt
     public static native long version_static();
 
-    /**
-     * commandType</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEHotspotHelperCommandClassRef/index.html#//apple_ref/occ/instp/NEHotspotHelperCommand/commandType">iOS Dev Center</a>
-     */
     @Generated
     @Selector("commandType")
     @NInt
     public native long commandType();
 
-    /**
-     * createResponse:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEHotspotHelperCommandClassRef/index.html#//apple_ref/occ/instm/NEHotspotHelperCommand/createResponse:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("createResponse:")
     public native NEHotspotHelperResponse createResponse(@NInt long result);
 
-    /**
-     * createTCPConnection:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEHotspotHelperCommandClassRef/index.html#//apple_ref/occ/instm/NEHotspotHelperCommand/createTCPConnection:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("createTCPConnection:")
     public native NWTCPConnection createTCPConnection(NWEndpoint endpoint);
 
-    /**
-     * createUDPSession:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEHotspotHelperCommandClassRef/index.html#//apple_ref/occ/instm/NEHotspotHelperCommand/createUDPSession:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("createUDPSession:")
     public native NWUDPSession createUDPSession(NWEndpoint endpoint);
@@ -195,18 +179,10 @@ public class NEHotspotHelperCommand extends NSObject {
     @Selector("init")
     public native NEHotspotHelperCommand init();
 
-    /**
-     * network</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEHotspotHelperCommandClassRef/index.html#//apple_ref/occ/instp/NEHotspotHelperCommand/network">iOS Dev Center</a>
-     */
     @Generated
     @Selector("network")
     public native NEHotspotNetwork network();
 
-    /**
-     * networkList</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEHotspotHelperCommandClassRef/index.html#//apple_ref/occ/instp/NEHotspotHelperCommand/networkList">iOS Dev Center</a>
-     */
     @Generated
     @Selector("networkList")
     public native NSArray<? extends NEHotspotNetwork> networkList();

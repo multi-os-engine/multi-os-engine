@@ -71,10 +71,6 @@ public class SCNTube extends SCNGeometry {
     public static native SCNTube geometryWithSourcesElements(NSArray<? extends SCNGeometrySource> sources,
             NSArray<? extends SCNGeometryElement> elements);
 
-    /**
-     * tubeWithInnerRadius:outerRadius:height:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNTube_Class/index.html#//apple_ref/occ/clm/SCNTube/tubeWithInnerRadius:outerRadius:height:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("tubeWithInnerRadius:outerRadius:height:")
     public static native SCNTube tubeWithInnerRadiusOuterRadiusHeight(@NFloat double innerRadius,
@@ -188,19 +184,11 @@ public class SCNTube extends SCNGeometry {
     @NInt
     public static native long version_static();
 
-    /**
-     * height</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNTube_Class/index.html#//apple_ref/occ/instp/SCNTube/height">iOS Dev Center</a>
-     */
     @Generated
     @Selector("height")
     @NFloat
     public native double height();
 
-    /**
-     * heightSegmentCount</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNTube_Class/index.html#//apple_ref/occ/instp/SCNTube/heightSegmentCount">iOS Dev Center</a>
-     */
     @Generated
     @Selector("heightSegmentCount")
     @NInt
@@ -210,69 +198,37 @@ public class SCNTube extends SCNGeometry {
     @Selector("init")
     public native SCNTube init();
 
-    /**
-     * innerRadius</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNTube_Class/index.html#//apple_ref/occ/instp/SCNTube/innerRadius">iOS Dev Center</a>
-     */
     @Generated
     @Selector("innerRadius")
     @NFloat
     public native double innerRadius();
 
-    /**
-     * outerRadius</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNTube_Class/index.html#//apple_ref/occ/instp/SCNTube/outerRadius">iOS Dev Center</a>
-     */
     @Generated
     @Selector("outerRadius")
     @NFloat
     public native double outerRadius();
 
-    /**
-     * radialSegmentCount</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNTube_Class/index.html#//apple_ref/occ/instp/SCNTube/radialSegmentCount">iOS Dev Center</a>
-     */
     @Generated
     @Selector("radialSegmentCount")
     @NInt
     public native long radialSegmentCount();
 
-    /**
-     * height</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNTube_Class/index.html#//apple_ref/occ/instp/SCNTube/height">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setHeight:")
     public native void setHeight(@NFloat double value);
 
-    /**
-     * heightSegmentCount</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNTube_Class/index.html#//apple_ref/occ/instp/SCNTube/heightSegmentCount">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setHeightSegmentCount:")
     public native void setHeightSegmentCount(@NInt long value);
 
-    /**
-     * innerRadius</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNTube_Class/index.html#//apple_ref/occ/instp/SCNTube/innerRadius">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setInnerRadius:")
     public native void setInnerRadius(@NFloat double value);
 
-    /**
-     * outerRadius</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNTube_Class/index.html#//apple_ref/occ/instp/SCNTube/outerRadius">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setOuterRadius:")
     public native void setOuterRadius(@NFloat double value);
 
-    /**
-     * radialSegmentCount</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNTube_Class/index.html#//apple_ref/occ/instp/SCNTube/radialSegmentCount">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setRadialSegmentCount:")
     public native void setRadialSegmentCount(@NInt long value);

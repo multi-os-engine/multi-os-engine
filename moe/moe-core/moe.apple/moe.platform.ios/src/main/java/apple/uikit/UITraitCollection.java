@@ -67,51 +67,27 @@ public class UITraitCollection extends NSObject implements NSCopying, NSSecureCo
     @Selector("supportsSecureCoding")
     public static native boolean supportsSecureCoding();
 
-    /**
-     * traitCollectionWithDisplayScale:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITraitCollection_ClassReference/index.html#//apple_ref/occ/clm/UITraitCollection/traitCollectionWithDisplayScale:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("traitCollectionWithDisplayScale:")
     public static native UITraitCollection traitCollectionWithDisplayScale(@NFloat double scale);
 
-    /**
-     * traitCollectionWithHorizontalSizeClass:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITraitCollection_ClassReference/index.html#//apple_ref/occ/clm/UITraitCollection/traitCollectionWithHorizontalSizeClass:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("traitCollectionWithHorizontalSizeClass:")
     public static native UITraitCollection traitCollectionWithHorizontalSizeClass(@NInt long horizontalSizeClass);
 
-    /**
-     * traitCollectionWithTraitsFromCollections:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITraitCollection_ClassReference/index.html#//apple_ref/occ/clm/UITraitCollection/traitCollectionWithTraitsFromCollections:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("traitCollectionWithTraitsFromCollections:")
     public static native UITraitCollection traitCollectionWithTraitsFromCollections(
             NSArray<? extends UITraitCollection> traitCollections);
 
-    /**
-     * traitCollectionWithUserInterfaceIdiom:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITraitCollection_ClassReference/index.html#//apple_ref/occ/clm/UITraitCollection/traitCollectionWithUserInterfaceIdiom:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("traitCollectionWithUserInterfaceIdiom:")
     public static native UITraitCollection traitCollectionWithUserInterfaceIdiom(@NInt long idiom);
 
-    /**
-     * traitCollectionWithVerticalSizeClass:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITraitCollection_ClassReference/index.html#//apple_ref/occ/clm/UITraitCollection/traitCollectionWithVerticalSizeClass:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("traitCollectionWithVerticalSizeClass:")
     public static native UITraitCollection traitCollectionWithVerticalSizeClass(@NInt long verticalSizeClass);
 
-    /**
-     * traitCollectionWithForceTouchCapability:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITraitCollection_ClassReference/index.html#//apple_ref/occ/clm/UITraitCollection/traitCollectionWithForceTouchCapability:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("traitCollectionWithForceTouchCapability:")
     public static native UITraitCollection traitCollectionWithForceTouchCapability(@NInt long capability);
@@ -216,10 +192,6 @@ public class UITraitCollection extends NSObject implements NSCopying, NSSecureCo
     @NInt
     public static native long version_static();
 
-    /**
-     * containsTraitsInCollection:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITraitCollection_ClassReference/index.html#//apple_ref/occ/instm/UITraitCollection/containsTraitsInCollection:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("containsTraitsInCollection:")
     public native boolean containsTraitsInCollection(UITraitCollection trait);
@@ -230,10 +202,6 @@ public class UITraitCollection extends NSObject implements NSCopying, NSSecureCo
     @MappedReturn(ObjCObjectMapper.class)
     public native Object copyWithZone(VoidPtr zone);
 
-    /**
-     * displayScale</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITraitCollection_ClassReference/index.html#//apple_ref/occ/instp/UITraitCollection/displayScale">iOS Dev Center</a>
-     */
     @Generated
     @Selector("displayScale")
     @NFloat
@@ -243,10 +211,6 @@ public class UITraitCollection extends NSObject implements NSCopying, NSSecureCo
     @Selector("encodeWithCoder:")
     public native void encodeWithCoder(NSCoder aCoder);
 
-    /**
-     * horizontalSizeClass</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITraitCollection_ClassReference/index.html#//apple_ref/occ/instp/UITraitCollection/horizontalSizeClass">iOS Dev Center</a>
-     */
     @Generated
     @Selector("horizontalSizeClass")
     @NInt
@@ -266,28 +230,16 @@ public class UITraitCollection extends NSObject implements NSCopying, NSSecureCo
         return supportsSecureCoding();
     }
 
-    /**
-     * userInterfaceIdiom</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITraitCollection_ClassReference/index.html#//apple_ref/occ/instp/UITraitCollection/userInterfaceIdiom">iOS Dev Center</a>
-     */
     @Generated
     @Selector("userInterfaceIdiom")
     @NInt
     public native long userInterfaceIdiom();
 
-    /**
-     * verticalSizeClass</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITraitCollection_ClassReference/index.html#//apple_ref/occ/instp/UITraitCollection/verticalSizeClass">iOS Dev Center</a>
-     */
     @Generated
     @Selector("verticalSizeClass")
     @NInt
     public native long verticalSizeClass();
 
-    /**
-     * forceTouchCapability</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITraitCollection_ClassReference/index.html#//apple_ref/occ/instp/UITraitCollection/forceTouchCapability">iOS Dev Center</a>
-     */
     @Generated
     @Selector("forceTouchCapability")
     @NInt

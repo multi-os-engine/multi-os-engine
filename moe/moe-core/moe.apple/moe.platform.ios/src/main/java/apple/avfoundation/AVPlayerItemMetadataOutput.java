@@ -159,27 +159,15 @@ public class AVPlayerItemMetadataOutput extends AVPlayerItemOutput {
     @NInt
     public static native long version_static();
 
-    /**
-     * advanceIntervalForDelegateInvocation</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVPlayerItemMetadataOutput_Class/index.html#//apple_ref/occ/instp/AVPlayerItemMetadataOutput/advanceIntervalForDelegateInvocation">iOS Dev Center</a>
-     */
     @Generated
     @Selector("advanceIntervalForDelegateInvocation")
     public native double advanceIntervalForDelegateInvocation();
 
-    /**
-     * delegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVPlayerItemMetadataOutput_Class/index.html#//apple_ref/occ/instp/AVPlayerItemMetadataOutput/delegate">iOS Dev Center</a>
-     */
     @Generated
     @Selector("delegate")
     @MappedReturn(ObjCObjectMapper.class)
     public native AVPlayerItemMetadataOutputPushDelegate delegate();
 
-    /**
-     * delegateQueue</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVPlayerItemMetadataOutput_Class/index.html#//apple_ref/occ/instp/AVPlayerItemMetadataOutput/delegateQueue">iOS Dev Center</a>
-     */
     @Generated
     @Selector("delegateQueue")
     public native NSObject delegateQueue();
@@ -188,26 +176,14 @@ public class AVPlayerItemMetadataOutput extends AVPlayerItemOutput {
     @Selector("init")
     public native AVPlayerItemMetadataOutput init();
 
-    /**
-     * initWithIdentifiers:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVPlayerItemMetadataOutput_Class/index.html#//apple_ref/occ/instm/AVPlayerItemMetadataOutput/initWithIdentifiers:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithIdentifiers:")
     public native AVPlayerItemMetadataOutput initWithIdentifiers(NSArray<String> identifiers);
 
-    /**
-     * advanceIntervalForDelegateInvocation</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVPlayerItemMetadataOutput_Class/index.html#//apple_ref/occ/instp/AVPlayerItemMetadataOutput/advanceIntervalForDelegateInvocation">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setAdvanceIntervalForDelegateInvocation:")
     public native void setAdvanceIntervalForDelegateInvocation(double value);
 
-    /**
-     * setDelegate:queue:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVPlayerItemMetadataOutput_Class/index.html#//apple_ref/occ/instm/AVPlayerItemMetadataOutput/setDelegate:queue:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setDelegate:queue:")
     public native void setDelegateQueue(@Mapped(ObjCObjectMapper.class) AVPlayerItemMetadataOutputPushDelegate delegate,

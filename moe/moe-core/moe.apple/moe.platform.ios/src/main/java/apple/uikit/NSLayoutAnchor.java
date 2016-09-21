@@ -159,52 +159,28 @@ public class NSLayoutAnchor<_AnchorType> extends NSObject {
     @NInt
     public static native long version();
 
-    /**
-     * constraintEqualToAnchor:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AppKit/Reference/NSLayoutAnchor_ClassReference/index.html#//apple_ref/occ/instm/NSLayoutAnchor/constraintEqualToAnchor:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("constraintEqualToAnchor:")
     public native NSLayoutConstraint constraintEqualToAnchor(NSLayoutAnchor<_AnchorType> anchor);
 
-    /**
-     * constraintEqualToAnchor:constant:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AppKit/Reference/NSLayoutAnchor_ClassReference/index.html#//apple_ref/occ/instm/NSLayoutAnchor/constraintEqualToAnchor:constant:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("constraintEqualToAnchor:constant:")
     public native NSLayoutConstraint constraintEqualToAnchorConstant(NSLayoutAnchor<_AnchorType> anchor,
             @NFloat double c);
 
-    /**
-     * constraintGreaterThanOrEqualToAnchor:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AppKit/Reference/NSLayoutAnchor_ClassReference/index.html#//apple_ref/occ/instm/NSLayoutAnchor/constraintGreaterThanOrEqualToAnchor:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("constraintGreaterThanOrEqualToAnchor:")
     public native NSLayoutConstraint constraintGreaterThanOrEqualToAnchor(NSLayoutAnchor<_AnchorType> anchor);
 
-    /**
-     * constraintGreaterThanOrEqualToAnchor:constant:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AppKit/Reference/NSLayoutAnchor_ClassReference/index.html#//apple_ref/occ/instm/NSLayoutAnchor/constraintGreaterThanOrEqualToAnchor:constant:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("constraintGreaterThanOrEqualToAnchor:constant:")
     public native NSLayoutConstraint constraintGreaterThanOrEqualToAnchorConstant(NSLayoutAnchor<_AnchorType> anchor,
             @NFloat double c);
 
-    /**
-     * constraintLessThanOrEqualToAnchor:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AppKit/Reference/NSLayoutAnchor_ClassReference/index.html#//apple_ref/occ/instm/NSLayoutAnchor/constraintLessThanOrEqualToAnchor:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("constraintLessThanOrEqualToAnchor:")
     public native NSLayoutConstraint constraintLessThanOrEqualToAnchor(NSLayoutAnchor<_AnchorType> anchor);
 
-    /**
-     * constraintLessThanOrEqualToAnchor:constant:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AppKit/Reference/NSLayoutAnchor_ClassReference/index.html#//apple_ref/occ/instm/NSLayoutAnchor/constraintLessThanOrEqualToAnchor:constant:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("constraintLessThanOrEqualToAnchor:constant:")
     public native NSLayoutConstraint constraintLessThanOrEqualToAnchorConstant(NSLayoutAnchor<_AnchorType> anchor,

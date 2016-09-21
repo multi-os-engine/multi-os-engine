@@ -348,19 +348,11 @@ public class UIActivityIndicatorView extends UIView implements NSCoding {
     @NInt
     public static native long version_static();
 
-    /**
-     * activityIndicatorViewStyle</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIActivityIndicatorView_Class/index.html#//apple_ref/occ/instp/UIActivityIndicatorView/activityIndicatorViewStyle">iOS Dev Center</a>
-     */
     @Generated
     @Selector("activityIndicatorViewStyle")
     @NInt
     public native long activityIndicatorViewStyle();
 
-    /**
-     * color</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIActivityIndicatorView_Class/index.html#//apple_ref/occ/instp/UIActivityIndicatorView/color">iOS Dev Center</a>
-     */
     @Generated
     @Selector("color")
     public native UIColor color();
@@ -369,10 +361,6 @@ public class UIActivityIndicatorView extends UIView implements NSCoding {
     @Selector("encodeWithCoder:")
     public native void encodeWithCoder(NSCoder aCoder);
 
-    /**
-     * hidesWhenStopped</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIActivityIndicatorView_Class/index.html#//apple_ref/occ/instp/UIActivityIndicatorView/hidesWhenStopped">iOS Dev Center</a>
-     */
     @Generated
     @Selector("hidesWhenStopped")
     public native boolean hidesWhenStopped();
@@ -381,10 +369,6 @@ public class UIActivityIndicatorView extends UIView implements NSCoding {
     @Selector("init")
     public native UIActivityIndicatorView init();
 
-    /**
-     * initWithActivityIndicatorStyle:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIActivityIndicatorView_Class/index.html#//apple_ref/occ/instm/UIActivityIndicatorView/initWithActivityIndicatorStyle:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithActivityIndicatorStyle:")
     public native UIActivityIndicatorView initWithActivityIndicatorStyle(@NInt long style);
@@ -397,50 +381,26 @@ public class UIActivityIndicatorView extends UIView implements NSCoding {
     @Selector("initWithFrame:")
     public native UIActivityIndicatorView initWithFrame(@ByValue CGRect frame);
 
-    /**
-     * isAnimating</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIActivityIndicatorView_Class/index.html#//apple_ref/occ/instm/UIActivityIndicatorView/isAnimating">iOS Dev Center</a>
-     */
     @Generated
     @Selector("isAnimating")
     public native boolean isAnimating();
 
-    /**
-     * activityIndicatorViewStyle</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIActivityIndicatorView_Class/index.html#//apple_ref/occ/instp/UIActivityIndicatorView/activityIndicatorViewStyle">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setActivityIndicatorViewStyle:")
     public native void setActivityIndicatorViewStyle(@NInt long value);
 
-    /**
-     * color</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIActivityIndicatorView_Class/index.html#//apple_ref/occ/instp/UIActivityIndicatorView/color">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setColor:")
     public native void setColor(UIColor value);
 
-    /**
-     * hidesWhenStopped</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIActivityIndicatorView_Class/index.html#//apple_ref/occ/instp/UIActivityIndicatorView/hidesWhenStopped">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setHidesWhenStopped:")
     public native void setHidesWhenStopped(boolean value);
 
-    /**
-     * startAnimating</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIActivityIndicatorView_Class/index.html#//apple_ref/occ/instm/UIActivityIndicatorView/startAnimating">iOS Dev Center</a>
-     */
     @Generated
     @Selector("startAnimating")
     public native void startAnimating();
 
-    /**
-     * stopAnimating</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIActivityIndicatorView_Class/index.html#//apple_ref/occ/instm/UIActivityIndicatorView/stopAnimating">iOS Dev Center</a>
-     */
     @Generated
     @Selector("stopAnimating")
     public native void stopAnimating();

@@ -158,10 +158,6 @@ public class UIScreenEdgePanGestureRecognizer extends UIPanGestureRecognizer {
     @NInt
     public static native long version_static();
 
-    /**
-     * edges</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIScreenEdgePanGestureRecognizer_class/index.html#//apple_ref/occ/instp/UIScreenEdgePanGestureRecognizer/edges">iOS Dev Center</a>
-     */
     @Generated
     @Selector("edges")
     @NUInt
@@ -176,10 +172,6 @@ public class UIScreenEdgePanGestureRecognizer extends UIPanGestureRecognizer {
     public native UIScreenEdgePanGestureRecognizer initWithTargetAction(@Mapped(ObjCObjectMapper.class) Object target,
             SEL action);
 
-    /**
-     * edges</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIScreenEdgePanGestureRecognizer_class/index.html#//apple_ref/occ/instp/UIScreenEdgePanGestureRecognizer/edges">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setEdges:")
     public native void setEdges(@NUInt long value);

@@ -65,27 +65,15 @@ public class GKAchievementDescription extends NSObject implements NSCoding, NSSe
     @Selector("alloc")
     public static native GKAchievementDescription alloc();
 
-    /**
-     * incompleteAchievementImage</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKAchievementDescription_Ref/index.html#//apple_ref/occ/clm/GKAchievementDescription/incompleteAchievementImage">iOS Dev Center</a>
-     */
     @Generated
     @Selector("incompleteAchievementImage")
     public static native UIImage incompleteAchievementImage();
 
-    /**
-     * loadAchievementDescriptionsWithCompletionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKAchievementDescription_Ref/index.html#//apple_ref/occ/clm/GKAchievementDescription/loadAchievementDescriptionsWithCompletionHandler:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("loadAchievementDescriptionsWithCompletionHandler:")
     public static native void loadAchievementDescriptionsWithCompletionHandler(
             @ObjCBlock(name = "call_loadAchievementDescriptionsWithCompletionHandler") Block_loadAchievementDescriptionsWithCompletionHandler completionHandler);
 
-    /**
-     * placeholderCompletedAchievementImage</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKAchievementDescription_Ref/index.html#//apple_ref/occ/clm/GKAchievementDescription/placeholderCompletedAchievementImage">iOS Dev Center</a>
-     */
     @Generated
     @Selector("placeholderCompletedAchievementImage")
     public static native UIImage placeholderCompletedAchievementImage();
@@ -194,10 +182,6 @@ public class GKAchievementDescription extends NSObject implements NSCoding, NSSe
     @NInt
     public static native long version();
 
-    /**
-     * achievedDescription</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKAchievementDescription_Ref/index.html#//apple_ref/occ/instp/GKAchievementDescription/achievedDescription">iOS Dev Center</a>
-     */
     @Generated
     @Selector("achievedDescription")
     public native String achievedDescription();
@@ -206,26 +190,14 @@ public class GKAchievementDescription extends NSObject implements NSCoding, NSSe
     @Selector("encodeWithCoder:")
     public native void encodeWithCoder(NSCoder aCoder);
 
-    /**
-     * groupIdentifier</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKAchievementDescription_Ref/index.html#//apple_ref/occ/instp/GKAchievementDescription/groupIdentifier">iOS Dev Center</a>
-     */
     @Generated
     @Selector("groupIdentifier")
     public native String groupIdentifier();
 
-    /**
-     * identifier</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKAchievementDescription_Ref/index.html#//apple_ref/occ/instp/GKAchievementDescription/identifier">iOS Dev Center</a>
-     */
     @Generated
     @Selector("identifier")
     public native String identifier();
 
-    /**
-     * image</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKAchievementDescription_Ref/index.html#//apple_ref/occ/instp/GKAchievementDescription/image">iOS Dev Center</a>
-     */
     @Generated
     @Deprecated
     @Selector("image")
@@ -239,35 +211,19 @@ public class GKAchievementDescription extends NSObject implements NSCoding, NSSe
     @Selector("initWithCoder:")
     public native GKAchievementDescription initWithCoder(NSCoder aDecoder);
 
-    /**
-     * hidden</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKAchievementDescription_Ref/index.html#//apple_ref/occ/instp/GKAchievementDescription/hidden">iOS Dev Center</a>
-     */
     @Generated
     @Selector("isHidden")
     public native boolean isHidden();
 
-    /**
-     * replayable</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKAchievementDescription_Ref/index.html#//apple_ref/occ/instp/GKAchievementDescription/replayable">iOS Dev Center</a>
-     */
     @Generated
     @Selector("isReplayable")
     public native boolean isReplayable();
 
-    /**
-     * loadImageWithCompletionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKAchievementDescription_Ref/index.html#//apple_ref/occ/instm/GKAchievementDescription/loadImageWithCompletionHandler:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("loadImageWithCompletionHandler:")
     public native void loadImageWithCompletionHandler(
             @ObjCBlock(name = "call_loadImageWithCompletionHandler") Block_loadImageWithCompletionHandler completionHandler);
 
-    /**
-     * maximumPoints</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKAchievementDescription_Ref/index.html#//apple_ref/occ/instp/GKAchievementDescription/maximumPoints">iOS Dev Center</a>
-     */
     @Generated
     @Selector("maximumPoints")
     @NInt
@@ -279,18 +235,10 @@ public class GKAchievementDescription extends NSObject implements NSCoding, NSSe
         return supportsSecureCoding();
     }
 
-    /**
-     * title</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKAchievementDescription_Ref/index.html#//apple_ref/occ/instp/GKAchievementDescription/title">iOS Dev Center</a>
-     */
     @Generated
     @Selector("title")
     public native String title();
 
-    /**
-     * unachievedDescription</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKAchievementDescription_Ref/index.html#//apple_ref/occ/instp/GKAchievementDescription/unachievedDescription">iOS Dev Center</a>
-     */
     @Generated
     @Selector("unachievedDescription")
     public native String unachievedDescription();

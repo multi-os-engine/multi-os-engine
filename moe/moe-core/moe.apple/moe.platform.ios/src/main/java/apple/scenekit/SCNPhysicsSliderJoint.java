@@ -63,19 +63,11 @@ public class SCNPhysicsSliderJoint extends SCNPhysicsBehavior {
     @Selector("alloc")
     public static native SCNPhysicsSliderJoint alloc();
 
-    /**
-     * jointWithBody:axis:anchor:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNPhysicsSliderJoint_Class/index.html#//apple_ref/occ/clm/SCNPhysicsSliderJoint/jointWithBody:axis:anchor:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("jointWithBody:axis:anchor:")
     public static native SCNPhysicsSliderJoint jointWithBodyAxisAnchor(SCNPhysicsBody body, @ByValue SCNVector3 axis,
             @ByValue SCNVector3 anchor);
 
-    /**
-     * jointWithBodyA:axisA:anchorA:bodyB:axisB:anchorB:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNPhysicsSliderJoint_Class/index.html#//apple_ref/occ/clm/SCNPhysicsSliderJoint/jointWithBodyA:axisA:anchorA:bodyB:axisB:anchorB:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("jointWithBodyA:axisA:anchorA:bodyB:axisB:anchorB:")
     public static native SCNPhysicsSliderJoint jointWithBodyAAxisAAnchorABodyBAxisBAnchorB(SCNPhysicsBody bodyA,
@@ -186,54 +178,30 @@ public class SCNPhysicsSliderJoint extends SCNPhysicsBehavior {
     @NInt
     public static native long version_static();
 
-    /**
-     * anchorA</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNPhysicsSliderJoint_Class/index.html#//apple_ref/occ/instp/SCNPhysicsSliderJoint/anchorA">iOS Dev Center</a>
-     */
     @Generated
     @Selector("anchorA")
     @ByValue
     public native SCNVector3 anchorA();
 
-    /**
-     * anchorB</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNPhysicsSliderJoint_Class/index.html#//apple_ref/occ/instp/SCNPhysicsSliderJoint/anchorB">iOS Dev Center</a>
-     */
     @Generated
     @Selector("anchorB")
     @ByValue
     public native SCNVector3 anchorB();
 
-    /**
-     * axisA</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNPhysicsSliderJoint_Class/index.html#//apple_ref/occ/instp/SCNPhysicsSliderJoint/axisA">iOS Dev Center</a>
-     */
     @Generated
     @Selector("axisA")
     @ByValue
     public native SCNVector3 axisA();
 
-    /**
-     * axisB</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNPhysicsSliderJoint_Class/index.html#//apple_ref/occ/instp/SCNPhysicsSliderJoint/axisB">iOS Dev Center</a>
-     */
     @Generated
     @Selector("axisB")
     @ByValue
     public native SCNVector3 axisB();
 
-    /**
-     * bodyA</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNPhysicsSliderJoint_Class/index.html#//apple_ref/occ/instp/SCNPhysicsSliderJoint/bodyA">iOS Dev Center</a>
-     */
     @Generated
     @Selector("bodyA")
     public native SCNPhysicsBody bodyA();
 
-    /**
-     * bodyB</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNPhysicsSliderJoint_Class/index.html#//apple_ref/occ/instp/SCNPhysicsSliderJoint/bodyB">iOS Dev Center</a>
-     */
     @Generated
     @Selector("bodyB")
     public native SCNPhysicsBody bodyB();
@@ -242,170 +210,90 @@ public class SCNPhysicsSliderJoint extends SCNPhysicsBehavior {
     @Selector("init")
     public native SCNPhysicsSliderJoint init();
 
-    /**
-     * maximumAngularLimit</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNPhysicsSliderJoint_Class/index.html#//apple_ref/occ/instp/SCNPhysicsSliderJoint/maximumAngularLimit">iOS Dev Center</a>
-     */
     @Generated
     @Selector("maximumAngularLimit")
     @NFloat
     public native double maximumAngularLimit();
 
-    /**
-     * maximumLinearLimit</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNPhysicsSliderJoint_Class/index.html#//apple_ref/occ/instp/SCNPhysicsSliderJoint/maximumLinearLimit">iOS Dev Center</a>
-     */
     @Generated
     @Selector("maximumLinearLimit")
     @NFloat
     public native double maximumLinearLimit();
 
-    /**
-     * minimumAngularLimit</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNPhysicsSliderJoint_Class/index.html#//apple_ref/occ/instp/SCNPhysicsSliderJoint/minimumAngularLimit">iOS Dev Center</a>
-     */
     @Generated
     @Selector("minimumAngularLimit")
     @NFloat
     public native double minimumAngularLimit();
 
-    /**
-     * minimumLinearLimit</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNPhysicsSliderJoint_Class/index.html#//apple_ref/occ/instp/SCNPhysicsSliderJoint/minimumLinearLimit">iOS Dev Center</a>
-     */
     @Generated
     @Selector("minimumLinearLimit")
     @NFloat
     public native double minimumLinearLimit();
 
-    /**
-     * motorMaximumForce</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNPhysicsSliderJoint_Class/index.html#//apple_ref/occ/instp/SCNPhysicsSliderJoint/motorMaximumForce">iOS Dev Center</a>
-     */
     @Generated
     @Selector("motorMaximumForce")
     @NFloat
     public native double motorMaximumForce();
 
-    /**
-     * motorMaximumTorque</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNPhysicsSliderJoint_Class/index.html#//apple_ref/occ/instp/SCNPhysicsSliderJoint/motorMaximumTorque">iOS Dev Center</a>
-     */
     @Generated
     @Selector("motorMaximumTorque")
     @NFloat
     public native double motorMaximumTorque();
 
-    /**
-     * motorTargetAngularVelocity</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNPhysicsSliderJoint_Class/index.html#//apple_ref/occ/instp/SCNPhysicsSliderJoint/motorTargetAngularVelocity">iOS Dev Center</a>
-     */
     @Generated
     @Selector("motorTargetAngularVelocity")
     @NFloat
     public native double motorTargetAngularVelocity();
 
-    /**
-     * motorTargetLinearVelocity</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNPhysicsSliderJoint_Class/index.html#//apple_ref/occ/instp/SCNPhysicsSliderJoint/motorTargetLinearVelocity">iOS Dev Center</a>
-     */
     @Generated
     @Selector("motorTargetLinearVelocity")
     @NFloat
     public native double motorTargetLinearVelocity();
 
-    /**
-     * anchorA</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNPhysicsSliderJoint_Class/index.html#//apple_ref/occ/instp/SCNPhysicsSliderJoint/anchorA">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setAnchorA:")
     public native void setAnchorA(@ByValue SCNVector3 value);
 
-    /**
-     * anchorB</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNPhysicsSliderJoint_Class/index.html#//apple_ref/occ/instp/SCNPhysicsSliderJoint/anchorB">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setAnchorB:")
     public native void setAnchorB(@ByValue SCNVector3 value);
 
-    /**
-     * axisA</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNPhysicsSliderJoint_Class/index.html#//apple_ref/occ/instp/SCNPhysicsSliderJoint/axisA">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setAxisA:")
     public native void setAxisA(@ByValue SCNVector3 value);
 
-    /**
-     * axisB</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNPhysicsSliderJoint_Class/index.html#//apple_ref/occ/instp/SCNPhysicsSliderJoint/axisB">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setAxisB:")
     public native void setAxisB(@ByValue SCNVector3 value);
 
-    /**
-     * maximumAngularLimit</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNPhysicsSliderJoint_Class/index.html#//apple_ref/occ/instp/SCNPhysicsSliderJoint/maximumAngularLimit">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setMaximumAngularLimit:")
     public native void setMaximumAngularLimit(@NFloat double value);
 
-    /**
-     * maximumLinearLimit</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNPhysicsSliderJoint_Class/index.html#//apple_ref/occ/instp/SCNPhysicsSliderJoint/maximumLinearLimit">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setMaximumLinearLimit:")
     public native void setMaximumLinearLimit(@NFloat double value);
 
-    /**
-     * minimumAngularLimit</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNPhysicsSliderJoint_Class/index.html#//apple_ref/occ/instp/SCNPhysicsSliderJoint/minimumAngularLimit">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setMinimumAngularLimit:")
     public native void setMinimumAngularLimit(@NFloat double value);
 
-    /**
-     * minimumLinearLimit</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNPhysicsSliderJoint_Class/index.html#//apple_ref/occ/instp/SCNPhysicsSliderJoint/minimumLinearLimit">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setMinimumLinearLimit:")
     public native void setMinimumLinearLimit(@NFloat double value);
 
-    /**
-     * motorMaximumForce</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNPhysicsSliderJoint_Class/index.html#//apple_ref/occ/instp/SCNPhysicsSliderJoint/motorMaximumForce">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setMotorMaximumForce:")
     public native void setMotorMaximumForce(@NFloat double value);
 
-    /**
-     * motorMaximumTorque</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNPhysicsSliderJoint_Class/index.html#//apple_ref/occ/instp/SCNPhysicsSliderJoint/motorMaximumTorque">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setMotorMaximumTorque:")
     public native void setMotorMaximumTorque(@NFloat double value);
 
-    /**
-     * motorTargetAngularVelocity</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNPhysicsSliderJoint_Class/index.html#//apple_ref/occ/instp/SCNPhysicsSliderJoint/motorTargetAngularVelocity">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setMotorTargetAngularVelocity:")
     public native void setMotorTargetAngularVelocity(@NFloat double value);
 
-    /**
-     * motorTargetLinearVelocity</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNPhysicsSliderJoint_Class/index.html#//apple_ref/occ/instp/SCNPhysicsSliderJoint/motorTargetLinearVelocity">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setMotorTargetLinearVelocity:")
     public native void setMotorTargetLinearVelocity(@NFloat double value);

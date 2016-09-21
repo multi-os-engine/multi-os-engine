@@ -178,71 +178,39 @@ public class NSTextStorage extends NSMutableAttributedString {
     @NInt
     public static native long version_static();
 
-    /**
-     * addLayoutManager:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/ApplicationKit/Classes/NSTextStorage_Class/index.html#//apple_ref/occ/instm/NSTextStorage/addLayoutManager:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("addLayoutManager:")
     public native void addLayoutManager(NSLayoutManager aLayoutManager);
 
-    /**
-     * changeInLength</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/ApplicationKit/Classes/NSTextStorage_Class/index.html#//apple_ref/occ/instp/NSTextStorage/changeInLength">iOS Dev Center</a>
-     */
     @Generated
     @Selector("changeInLength")
     @NInt
     public native long changeInLength();
 
-    /**
-     * delegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/ApplicationKit/Classes/NSTextStorage_Class/index.html#//apple_ref/occ/instp/NSTextStorage/delegate">iOS Dev Center</a>
-     */
     @Generated
     @Selector("delegate")
     @MappedReturn(ObjCObjectMapper.class)
     public native NSTextStorageDelegate delegate();
 
-    /**
-     * edited:range:changeInLength:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/ApplicationKit/Classes/NSTextStorage_Class/index.html#//apple_ref/occ/instm/NSTextStorage/edited:range:changeInLength:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("edited:range:changeInLength:")
     public native void editedRangeChangeInLength(@NUInt long editedMask, @ByValue NSRange editedRange,
             @NInt long delta);
 
-    /**
-     * editedMask</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/ApplicationKit/Classes/NSTextStorage_Class/index.html#//apple_ref/occ/instp/NSTextStorage/editedMask">iOS Dev Center</a>
-     */
     @Generated
     @Selector("editedMask")
     @NUInt
     public native long editedMask();
 
-    /**
-     * editedRange</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/ApplicationKit/Classes/NSTextStorage_Class/index.html#//apple_ref/occ/instp/NSTextStorage/editedRange">iOS Dev Center</a>
-     */
     @Generated
     @Selector("editedRange")
     @ByValue
     public native NSRange editedRange();
 
-    /**
-     * ensureAttributesAreFixedInRange:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/ApplicationKit/Classes/NSTextStorage_Class/index.html#//apple_ref/occ/instm/NSTextStorage/ensureAttributesAreFixedInRange:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("ensureAttributesAreFixedInRange:")
     public native void ensureAttributesAreFixedInRange(@ByValue NSRange range);
 
-    /**
-     * fixesAttributesLazily</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/ApplicationKit/Classes/NSTextStorage_Class/index.html#//apple_ref/occ/instp/NSTextStorage/fixesAttributesLazily">iOS Dev Center</a>
-     */
     @Generated
     @Selector("fixesAttributesLazily")
     public native boolean fixesAttributesLazily();
@@ -274,50 +242,26 @@ public class NSTextStorage extends NSMutableAttributedString {
     @Selector("initWithString:attributes:")
     public native NSTextStorage initWithStringAttributes(String str, NSDictionary<String, ?> attrs);
 
-    /**
-     * invalidateAttributesInRange:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/ApplicationKit/Classes/NSTextStorage_Class/index.html#//apple_ref/occ/instm/NSTextStorage/invalidateAttributesInRange:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("invalidateAttributesInRange:")
     public native void invalidateAttributesInRange(@ByValue NSRange range);
 
-    /**
-     * layoutManagers</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/ApplicationKit/Classes/NSTextStorage_Class/index.html#//apple_ref/occ/instp/NSTextStorage/layoutManagers">iOS Dev Center</a>
-     */
     @Generated
     @Selector("layoutManagers")
     public native NSArray<? extends NSLayoutManager> layoutManagers();
 
-    /**
-     * processEditing</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/ApplicationKit/Classes/NSTextStorage_Class/index.html#//apple_ref/occ/instm/NSTextStorage/processEditing">iOS Dev Center</a>
-     */
     @Generated
     @Selector("processEditing")
     public native void processEditing();
 
-    /**
-     * removeLayoutManager:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/ApplicationKit/Classes/NSTextStorage_Class/index.html#//apple_ref/occ/instm/NSTextStorage/removeLayoutManager:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("removeLayoutManager:")
     public native void removeLayoutManager(NSLayoutManager aLayoutManager);
 
-    /**
-     * delegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/ApplicationKit/Classes/NSTextStorage_Class/index.html#//apple_ref/occ/instp/NSTextStorage/delegate">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setDelegate:")
     public native void setDelegate_unsafe(@Mapped(ObjCObjectMapper.class) NSTextStorageDelegate value);
 
-    /**
-     * delegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/ApplicationKit/Classes/NSTextStorage_Class/index.html#//apple_ref/occ/instp/NSTextStorage/delegate">iOS Dev Center</a>
-     */
     @Generated
     public void setDelegate(@Mapped(ObjCObjectMapper.class) NSTextStorageDelegate value) {
         Object __old = delegate();

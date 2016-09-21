@@ -62,29 +62,17 @@ public class HKQuantitySample extends HKSample {
     @Selector("alloc")
     public static native HKQuantitySample alloc();
 
-    /**
-     * quantitySampleWithType:quantity:startDate:endDate:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HealthKit/Reference/HKQuantitySample_Class/index.html#//apple_ref/occ/clm/HKQuantitySample/quantitySampleWithType:quantity:startDate:endDate:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("quantitySampleWithType:quantity:startDate:endDate:")
     public static native HKQuantitySample quantitySampleWithTypeQuantityStartDateEndDate(HKQuantityType quantityType,
             HKQuantity quantity, NSDate startDate, NSDate endDate);
 
-    /**
-     * quantitySampleWithType:quantity:startDate:endDate:metadata:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HealthKit/Reference/HKQuantitySample_Class/index.html#//apple_ref/occ/clm/HKQuantitySample/quantitySampleWithType:quantity:startDate:endDate:metadata:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("quantitySampleWithType:quantity:startDate:endDate:metadata:")
     public static native HKQuantitySample quantitySampleWithTypeQuantityStartDateEndDateMetadata(
             HKQuantityType quantityType, HKQuantity quantity, NSDate startDate, NSDate endDate,
             NSDictionary<String, ?> metadata);
 
-    /**
-     * quantitySampleWithType:quantity:startDate:endDate:device:metadata:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HealthKit/Reference/HKQuantitySample_Class/index.html#//apple_ref/occ/clm/HKQuantitySample/quantitySampleWithType:quantity:startDate:endDate:device:metadata:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("quantitySampleWithType:quantity:startDate:endDate:device:metadata:")
     public static native HKQuantitySample quantitySampleWithTypeQuantityStartDateEndDateDeviceMetadata(
@@ -199,18 +187,10 @@ public class HKQuantitySample extends HKSample {
     @Selector("init")
     public native HKQuantitySample init();
 
-    /**
-     * quantity</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HealthKit/Reference/HKQuantitySample_Class/index.html#//apple_ref/occ/instp/HKQuantitySample/quantity">iOS Dev Center</a>
-     */
     @Generated
     @Selector("quantity")
     public native HKQuantity quantity();
 
-    /**
-     * quantityType</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HealthKit/Reference/HKQuantitySample_Class/index.html#//apple_ref/occ/instp/HKQuantitySample/quantityType">iOS Dev Center</a>
-     */
     @Generated
     @Selector("quantityType")
     public native HKQuantityType quantityType();

@@ -158,10 +158,6 @@ public class UITextInputAssistantItem extends NSObject {
     @NInt
     public static native long version_static();
 
-    /**
-     * allowsHidingShortcuts</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITextInputAssistantItem_class/index.html#//apple_ref/occ/instp/UITextInputAssistantItem/allowsHidingShortcuts">iOS Dev Center</a>
-     */
     @Generated
     @Selector("allowsHidingShortcuts")
     public native boolean allowsHidingShortcuts();
@@ -170,42 +166,22 @@ public class UITextInputAssistantItem extends NSObject {
     @Selector("init")
     public native UITextInputAssistantItem init();
 
-    /**
-     * leadingBarButtonGroups</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITextInputAssistantItem_class/index.html#//apple_ref/occ/instp/UITextInputAssistantItem/leadingBarButtonGroups">iOS Dev Center</a>
-     */
     @Generated
     @Selector("leadingBarButtonGroups")
     public native NSArray<? extends UIBarButtonItemGroup> leadingBarButtonGroups();
 
-    /**
-     * allowsHidingShortcuts</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITextInputAssistantItem_class/index.html#//apple_ref/occ/instp/UITextInputAssistantItem/allowsHidingShortcuts">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setAllowsHidingShortcuts:")
     public native void setAllowsHidingShortcuts(boolean value);
 
-    /**
-     * leadingBarButtonGroups</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITextInputAssistantItem_class/index.html#//apple_ref/occ/instp/UITextInputAssistantItem/leadingBarButtonGroups">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setLeadingBarButtonGroups:")
     public native void setLeadingBarButtonGroups(NSArray<? extends UIBarButtonItemGroup> value);
 
-    /**
-     * trailingBarButtonGroups</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITextInputAssistantItem_class/index.html#//apple_ref/occ/instp/UITextInputAssistantItem/trailingBarButtonGroups">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setTrailingBarButtonGroups:")
     public native void setTrailingBarButtonGroups(NSArray<? extends UIBarButtonItemGroup> value);
 
-    /**
-     * trailingBarButtonGroups</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITextInputAssistantItem_class/index.html#//apple_ref/occ/instp/UITextInputAssistantItem/trailingBarButtonGroups">iOS Dev Center</a>
-     */
     @Generated
     @Selector("trailingBarButtonGroups")
     public native NSArray<? extends UIBarButtonItemGroup> trailingBarButtonGroups();

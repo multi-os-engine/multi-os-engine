@@ -164,10 +164,6 @@ public class HMTimerTrigger extends HMTrigger {
     @NInt
     public static native long version();
 
-    /**
-     * fireDate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HomeKit/Reference/HMTimerTrigger_Class/index.html#//apple_ref/occ/instp/HMTimerTrigger/fireDate">iOS Dev Center</a>
-     */
     @Generated
     @Selector("fireDate")
     public native NSDate fireDate();
@@ -176,61 +172,33 @@ public class HMTimerTrigger extends HMTrigger {
     @Selector("init")
     public native HMTimerTrigger init();
 
-    /**
-     * initWithName:fireDate:timeZone:recurrence:recurrenceCalendar:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HomeKit/Reference/HMTimerTrigger_Class/index.html#//apple_ref/occ/instm/HMTimerTrigger/initWithName:fireDate:timeZone:recurrence:recurrenceCalendar:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithName:fireDate:timeZone:recurrence:recurrenceCalendar:")
     public native HMTimerTrigger initWithNameFireDateTimeZoneRecurrenceRecurrenceCalendar(String name, NSDate fireDate,
             NSTimeZone timeZone, NSDateComponents recurrence, NSCalendar recurrenceCalendar);
 
-    /**
-     * recurrence</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HomeKit/Reference/HMTimerTrigger_Class/index.html#//apple_ref/occ/instp/HMTimerTrigger/recurrence">iOS Dev Center</a>
-     */
     @Generated
     @Selector("recurrence")
     public native NSDateComponents recurrence();
 
-    /**
-     * recurrenceCalendar</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HomeKit/Reference/HMTimerTrigger_Class/index.html#//apple_ref/occ/instp/HMTimerTrigger/recurrenceCalendar">iOS Dev Center</a>
-     */
     @Generated
     @Selector("recurrenceCalendar")
     public native NSCalendar recurrenceCalendar();
 
-    /**
-     * timeZone</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HomeKit/Reference/HMTimerTrigger_Class/index.html#//apple_ref/occ/instp/HMTimerTrigger/timeZone">iOS Dev Center</a>
-     */
     @Generated
     @Selector("timeZone")
     public native NSTimeZone timeZone();
 
-    /**
-     * updateFireDate:completionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HomeKit/Reference/HMTimerTrigger_Class/index.html#//apple_ref/occ/instm/HMTimerTrigger/updateFireDate:completionHandler:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("updateFireDate:completionHandler:")
     public native void updateFireDateCompletionHandler(NSDate fireDate,
             @ObjCBlock(name = "call_updateFireDateCompletionHandler") Block_updateFireDateCompletionHandler completion);
 
-    /**
-     * updateRecurrence:completionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HomeKit/Reference/HMTimerTrigger_Class/index.html#//apple_ref/occ/instm/HMTimerTrigger/updateRecurrence:completionHandler:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("updateRecurrence:completionHandler:")
     public native void updateRecurrenceCompletionHandler(NSDateComponents recurrence,
             @ObjCBlock(name = "call_updateRecurrenceCompletionHandler") Block_updateRecurrenceCompletionHandler completion);
 
-    /**
-     * updateTimeZone:completionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HomeKit/Reference/HMTimerTrigger_Class/index.html#//apple_ref/occ/instm/HMTimerTrigger/updateTimeZone:completionHandler:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("updateTimeZone:completionHandler:")
     public native void updateTimeZoneCompletionHandler(NSTimeZone timeZone,

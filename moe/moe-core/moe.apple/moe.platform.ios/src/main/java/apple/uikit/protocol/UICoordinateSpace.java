@@ -33,48 +33,28 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("UICoordinateSpace")
 public interface UICoordinateSpace {
-    /**
-     * bounds</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UICoordinateSpace_protocol/index.html#//apple_ref/occ/intfp/UICoordinateSpace/bounds">iOS Dev Center</a>
-     */
     @Generated
     @Selector("bounds")
     @ByValue
     CGRect bounds();
 
-    /**
-     * convertPoint:fromCoordinateSpace:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UICoordinateSpace_protocol/index.html#//apple_ref/occ/intfm/UICoordinateSpace/convertPoint:fromCoordinateSpace:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("convertPoint:fromCoordinateSpace:")
     @ByValue
     CGPoint convertPointFromCoordinateSpace(@ByValue CGPoint point,
             @Mapped(ObjCObjectMapper.class) Object coordinateSpace);
 
-    /**
-     * convertPoint:toCoordinateSpace:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UICoordinateSpace_protocol/index.html#//apple_ref/occ/intfm/UICoordinateSpace/convertPoint:toCoordinateSpace:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("convertPoint:toCoordinateSpace:")
     @ByValue
     CGPoint convertPointToCoordinateSpace(@ByValue CGPoint point,
             @Mapped(ObjCObjectMapper.class) Object coordinateSpace);
 
-    /**
-     * convertRect:fromCoordinateSpace:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UICoordinateSpace_protocol/index.html#//apple_ref/occ/intfm/UICoordinateSpace/convertRect:fromCoordinateSpace:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("convertRect:fromCoordinateSpace:")
     @ByValue
     CGRect convertRectFromCoordinateSpace(@ByValue CGRect rect, @Mapped(ObjCObjectMapper.class) Object coordinateSpace);
 
-    /**
-     * convertRect:toCoordinateSpace:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UICoordinateSpace_protocol/index.html#//apple_ref/occ/intfm/UICoordinateSpace/convertRect:toCoordinateSpace:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("convertRect:toCoordinateSpace:")
     @ByValue

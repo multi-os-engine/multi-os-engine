@@ -62,18 +62,10 @@ public class AVOutputSettingsAssistant extends NSObject {
     @Selector("alloc")
     public static native AVOutputSettingsAssistant alloc();
 
-    /**
-     * availableOutputSettingsPresets</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVOutputSettingsAssistant_Class/index.html#//apple_ref/occ/clm/AVOutputSettingsAssistant/availableOutputSettingsPresets">iOS Dev Center</a>
-     */
     @Generated
     @Selector("availableOutputSettingsPresets")
     public static native NSArray<String> availableOutputSettingsPresets();
 
-    /**
-     * outputSettingsAssistantWithPreset:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVOutputSettingsAssistant_Class/index.html#//apple_ref/occ/clm/AVOutputSettingsAssistant/outputSettingsAssistantWithPreset:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("outputSettingsAssistantWithPreset:")
     public static native AVOutputSettingsAssistant outputSettingsAssistantWithPreset(String presetIdentifier);
@@ -178,10 +170,6 @@ public class AVOutputSettingsAssistant extends NSObject {
     @NInt
     public static native long version_static();
 
-    /**
-     * audioSettings</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVOutputSettingsAssistant_Class/index.html#//apple_ref/occ/instp/AVOutputSettingsAssistant/audioSettings">iOS Dev Center</a>
-     */
     @Generated
     @Selector("audioSettings")
     public native NSDictionary<String, ?> audioSettings();
@@ -190,84 +178,44 @@ public class AVOutputSettingsAssistant extends NSObject {
     @Selector("init")
     public native AVOutputSettingsAssistant init();
 
-    /**
-     * outputFileType</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVOutputSettingsAssistant_Class/index.html#//apple_ref/occ/instp/AVOutputSettingsAssistant/outputFileType">iOS Dev Center</a>
-     */
     @Generated
     @Selector("outputFileType")
     public native String outputFileType();
 
-    /**
-     * sourceAudioFormat</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVOutputSettingsAssistant_Class/index.html#//apple_ref/occ/instp/AVOutputSettingsAssistant/sourceAudioFormat">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setSourceAudioFormat:")
     public native void setSourceAudioFormat(CMFormatDescriptionRef value);
 
-    /**
-     * sourceVideoAverageFrameDuration</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVOutputSettingsAssistant_Class/index.html#//apple_ref/occ/instp/AVOutputSettingsAssistant/sourceVideoAverageFrameDuration">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setSourceVideoAverageFrameDuration:")
     public native void setSourceVideoAverageFrameDuration(@ByValue CMTime value);
 
-    /**
-     * sourceVideoFormat</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVOutputSettingsAssistant_Class/index.html#//apple_ref/occ/instp/AVOutputSettingsAssistant/sourceVideoFormat">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setSourceVideoFormat:")
     public native void setSourceVideoFormat(CMFormatDescriptionRef value);
 
-    /**
-     * sourceVideoMinFrameDuration</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVOutputSettingsAssistant_Class/index.html#//apple_ref/occ/instp/AVOutputSettingsAssistant/sourceVideoMinFrameDuration">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setSourceVideoMinFrameDuration:")
     public native void setSourceVideoMinFrameDuration(@ByValue CMTime value);
 
-    /**
-     * sourceAudioFormat</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVOutputSettingsAssistant_Class/index.html#//apple_ref/occ/instp/AVOutputSettingsAssistant/sourceAudioFormat">iOS Dev Center</a>
-     */
     @Generated
     @Selector("sourceAudioFormat")
     public native CMFormatDescriptionRef sourceAudioFormat();
 
-    /**
-     * sourceVideoAverageFrameDuration</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVOutputSettingsAssistant_Class/index.html#//apple_ref/occ/instp/AVOutputSettingsAssistant/sourceVideoAverageFrameDuration">iOS Dev Center</a>
-     */
     @Generated
     @Selector("sourceVideoAverageFrameDuration")
     @ByValue
     public native CMTime sourceVideoAverageFrameDuration();
 
-    /**
-     * sourceVideoFormat</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVOutputSettingsAssistant_Class/index.html#//apple_ref/occ/instp/AVOutputSettingsAssistant/sourceVideoFormat">iOS Dev Center</a>
-     */
     @Generated
     @Selector("sourceVideoFormat")
     public native CMFormatDescriptionRef sourceVideoFormat();
 
-    /**
-     * sourceVideoMinFrameDuration</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVOutputSettingsAssistant_Class/index.html#//apple_ref/occ/instp/AVOutputSettingsAssistant/sourceVideoMinFrameDuration">iOS Dev Center</a>
-     */
     @Generated
     @Selector("sourceVideoMinFrameDuration")
     @ByValue
     public native CMTime sourceVideoMinFrameDuration();
 
-    /**
-     * videoSettings</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVOutputSettingsAssistant_Class/index.html#//apple_ref/occ/instp/AVOutputSettingsAssistant/videoSettings">iOS Dev Center</a>
-     */
     @Generated
     @Selector("videoSettings")
     public native NSDictionary<String, ?> videoSettings();

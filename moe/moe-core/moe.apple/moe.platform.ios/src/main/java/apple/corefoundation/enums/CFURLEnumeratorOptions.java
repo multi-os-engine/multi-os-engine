@@ -28,6 +28,7 @@ public final class CFURLEnumeratorOptions {
     @Generated @NUInt public static final long SkipPackageContents = 0x0000000000000008L;
     @Generated @NUInt public static final long IncludeDirectoriesPreOrder = 0x0000000000000010L;
     @Generated @NUInt public static final long IncludeDirectoriesPostOrder = 0x0000000000000020L;
+
     @Generated
     private CFURLEnumeratorOptions() {
     }

@@ -32,30 +32,18 @@ import org.moe.natj.objc.ann.Selector;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("UIPopoverBackgroundViewMethods")
 public interface UIPopoverBackgroundViewMethods {
-    /**
-     * arrowBase</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPopoverBackgroundViewMethods_protocol/index.html#//apple_ref/occ/intfcm/UIPopoverBackgroundViewMethods/arrowBase">iOS Dev Center</a>
-     */
     @Generated
     @Selector("arrowBase")
     @ProtocolClassMethod("arrowBase")
     @NFloat
     double _arrowBase();
 
-    /**
-     * arrowHeight</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPopoverBackgroundViewMethods_protocol/index.html#//apple_ref/occ/intfcm/UIPopoverBackgroundViewMethods/arrowHeight">iOS Dev Center</a>
-     */
     @Generated
     @Selector("arrowHeight")
     @ProtocolClassMethod("arrowHeight")
     @NFloat
     double _arrowHeight();
 
-    /**
-     * contentViewInsets</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPopoverBackgroundViewMethods_protocol/index.html#//apple_ref/occ/intfcm/UIPopoverBackgroundViewMethods/contentViewInsets">iOS Dev Center</a>
-     */
     @Generated
     @Selector("contentViewInsets")
     @ProtocolClassMethod("contentViewInsets")

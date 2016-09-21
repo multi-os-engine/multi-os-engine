@@ -30,6 +30,7 @@ public final class SCNetworkReachabilityFlags {
     @Generated public static final int IsDirect = 0x00020000;
     @Generated public static final int IsWWAN = 0x00040000;
     @Generated public static final int ConnectionAutomatic = 0x00000008;
+
     @Generated
     private SCNetworkReachabilityFlags() {
     }

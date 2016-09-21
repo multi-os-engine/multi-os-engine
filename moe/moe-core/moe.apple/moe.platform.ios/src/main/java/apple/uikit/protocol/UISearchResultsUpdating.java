@@ -29,10 +29,6 @@ import org.moe.natj.objc.ann.Selector;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("UISearchResultsUpdating")
 public interface UISearchResultsUpdating {
-    /**
-     * updateSearchResultsForSearchController:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISearchResultsUpdating_ClassRef/index.html#//apple_ref/occ/intfm/UISearchResultsUpdating/updateSearchResultsForSearchController:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("updateSearchResultsForSearchController:")
     void updateSearchResultsForSearchController(UISearchController searchController);

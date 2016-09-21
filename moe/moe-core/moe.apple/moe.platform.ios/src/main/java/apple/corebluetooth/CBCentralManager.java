@@ -161,26 +161,14 @@ public class CBCentralManager extends NSObject {
     @NInt
     public static native long version_static();
 
-    /**
-     * cancelPeripheralConnection:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreBluetooth/Reference/CBCentralManager_Class/index.html#//apple_ref/occ/instm/CBCentralManager/cancelPeripheralConnection:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("cancelPeripheralConnection:")
     public native void cancelPeripheralConnection(CBPeripheral peripheral);
 
-    /**
-     * connectPeripheral:options:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreBluetooth/Reference/CBCentralManager_Class/index.html#//apple_ref/occ/instm/CBCentralManager/connectPeripheral:options:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("connectPeripheral:options:")
     public native void connectPeripheralOptions(CBPeripheral peripheral, NSDictionary<String, ?> options);
 
-    /**
-     * delegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreBluetooth/Reference/CBCentralManager_Class/index.html#//apple_ref/occ/instp/CBCentralManager/delegate">iOS Dev Center</a>
-     */
     @Generated
     @Selector("delegate")
     @MappedReturn(ObjCObjectMapper.class)
@@ -190,64 +178,36 @@ public class CBCentralManager extends NSObject {
     @Selector("init")
     public native CBCentralManager init();
 
-    /**
-     * initWithDelegate:queue:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreBluetooth/Reference/CBCentralManager_Class/index.html#//apple_ref/occ/instm/CBCentralManager/initWithDelegate:queue:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithDelegate:queue:")
     public native CBCentralManager initWithDelegateQueue(
             @Mapped(ObjCObjectMapper.class) CBCentralManagerDelegate delegate, NSObject queue);
 
-    /**
-     * initWithDelegate:queue:options:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreBluetooth/Reference/CBCentralManager_Class/index.html#//apple_ref/occ/instm/CBCentralManager/initWithDelegate:queue:options:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithDelegate:queue:options:")
     public native CBCentralManager initWithDelegateQueueOptions(
             @Mapped(ObjCObjectMapper.class) CBCentralManagerDelegate delegate, NSObject queue,
             NSDictionary<String, ?> options);
 
-    /**
-     * retrieveConnectedPeripheralsWithServices:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreBluetooth/Reference/CBCentralManager_Class/index.html#//apple_ref/occ/instm/CBCentralManager/retrieveConnectedPeripheralsWithServices:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("retrieveConnectedPeripheralsWithServices:")
     public native NSArray<? extends CBPeripheral> retrieveConnectedPeripheralsWithServices(
             NSArray<? extends CBUUID> serviceUUIDs);
 
-    /**
-     * retrievePeripheralsWithIdentifiers:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreBluetooth/Reference/CBCentralManager_Class/index.html#//apple_ref/occ/instm/CBCentralManager/retrievePeripheralsWithIdentifiers:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("retrievePeripheralsWithIdentifiers:")
     public native NSArray<? extends CBPeripheral> retrievePeripheralsWithIdentifiers(
             NSArray<? extends NSUUID> identifiers);
 
-    /**
-     * scanForPeripheralsWithServices:options:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreBluetooth/Reference/CBCentralManager_Class/index.html#//apple_ref/occ/instm/CBCentralManager/scanForPeripheralsWithServices:options:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("scanForPeripheralsWithServices:options:")
     public native void scanForPeripheralsWithServicesOptions(NSArray<? extends CBUUID> serviceUUIDs,
             NSDictionary<String, ?> options);
 
-    /**
-     * delegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreBluetooth/Reference/CBCentralManager_Class/index.html#//apple_ref/occ/instp/CBCentralManager/delegate">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setDelegate:")
     public native void setDelegate_unsafe(@Mapped(ObjCObjectMapper.class) CBCentralManagerDelegate value);
 
-    /**
-     * delegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreBluetooth/Reference/CBCentralManager_Class/index.html#//apple_ref/occ/instp/CBCentralManager/delegate">iOS Dev Center</a>
-     */
     @Generated
     public void setDelegate(@Mapped(ObjCObjectMapper.class) CBCentralManagerDelegate value) {
         Object __old = delegate();
@@ -260,19 +220,11 @@ public class CBCentralManager extends NSObject {
         }
     }
 
-    /**
-     * state</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreBluetooth/Reference/CBCentralManager_Class/index.html#//apple_ref/occ/instp/CBCentralManager/state">iOS Dev Center</a>
-     */
     @Generated
     @Selector("state")
     @NInt
     public native long state();
 
-    /**
-     * stopScan</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreBluetooth/Reference/CBCentralManager_Class/index.html#//apple_ref/occ/instm/CBCentralManager/stopScan">iOS Dev Center</a>
-     */
     @Generated
     @Selector("stopScan")
     public native void stopScan();

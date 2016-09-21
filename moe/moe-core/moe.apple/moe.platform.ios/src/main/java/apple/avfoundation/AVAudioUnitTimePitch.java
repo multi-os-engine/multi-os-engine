@@ -176,50 +176,26 @@ public class AVAudioUnitTimePitch extends AVAudioUnitTimeEffect {
     public native AVAudioUnitTimePitch initWithAudioComponentDescription(
             @ByValue AudioComponentDescription audioComponentDescription);
 
-    /**
-     * overlap</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioUnitTimePitch_Class/index.html#//apple_ref/occ/instp/AVAudioUnitTimePitch/overlap">iOS Dev Center</a>
-     */
     @Generated
     @Selector("overlap")
     public native float overlap();
 
-    /**
-     * pitch</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioUnitTimePitch_Class/index.html#//apple_ref/occ/instp/AVAudioUnitTimePitch/pitch">iOS Dev Center</a>
-     */
     @Generated
     @Selector("pitch")
     public native float pitch();
 
-    /**
-     * rate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioUnitTimePitch_Class/index.html#//apple_ref/occ/instp/AVAudioUnitTimePitch/rate">iOS Dev Center</a>
-     */
     @Generated
     @Selector("rate")
     public native float rate();
 
-    /**
-     * overlap</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioUnitTimePitch_Class/index.html#//apple_ref/occ/instp/AVAudioUnitTimePitch/overlap">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setOverlap:")
     public native void setOverlap(float value);
 
-    /**
-     * pitch</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioUnitTimePitch_Class/index.html#//apple_ref/occ/instp/AVAudioUnitTimePitch/pitch">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setPitch:")
     public native void setPitch(float value);
 
-    /**
-     * rate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioUnitTimePitch_Class/index.html#//apple_ref/occ/instp/AVAudioUnitTimePitch/rate">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setRate:")
     public native void setRate(float value);

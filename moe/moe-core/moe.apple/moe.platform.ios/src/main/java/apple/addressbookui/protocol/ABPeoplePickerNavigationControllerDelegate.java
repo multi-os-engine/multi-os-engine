@@ -31,10 +31,6 @@ import org.moe.natj.objc.ann.Selector;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("ABPeoplePickerNavigationControllerDelegate")
 public interface ABPeoplePickerNavigationControllerDelegate {
-    /**
-     * peoplePickerNavigationController:didSelectPerson:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AddressBookUI/Reference/ABPeoplePickerNavigationControllerDelegate_Protocol/index.html#//apple_ref/occ/intfm/ABPeoplePickerNavigationControllerDelegate/peoplePickerNavigationController:didSelectPerson:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("peoplePickerNavigationController:didSelectPerson:")
@@ -43,10 +39,6 @@ public interface ABPeoplePickerNavigationControllerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * peoplePickerNavigationController:didSelectPerson:property:identifier:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AddressBookUI/Reference/ABPeoplePickerNavigationControllerDelegate_Protocol/index.html#//apple_ref/occ/intfm/ABPeoplePickerNavigationControllerDelegate/peoplePickerNavigationController:didSelectPerson:property:identifier:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("peoplePickerNavigationController:didSelectPerson:property:identifier:")
@@ -55,10 +47,6 @@ public interface ABPeoplePickerNavigationControllerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * peoplePickerNavigationController:shouldContinueAfterSelectingPerson:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AddressBookUI/Reference/ABPeoplePickerNavigationControllerDelegate_Protocol/index.html#//apple_ref/occ/intfm/ABPeoplePickerNavigationControllerDelegate/peoplePickerNavigationController:shouldContinueAfterSelectingPerson:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Deprecated
@@ -68,10 +56,6 @@ public interface ABPeoplePickerNavigationControllerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * peoplePickerNavigationController:shouldContinueAfterSelectingPerson:property:identifier:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AddressBookUI/Reference/ABPeoplePickerNavigationControllerDelegate_Protocol/index.html#//apple_ref/occ/intfm/ABPeoplePickerNavigationControllerDelegate/peoplePickerNavigationController:shouldContinueAfterSelectingPerson:property:identifier:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Deprecated
@@ -81,10 +65,6 @@ public interface ABPeoplePickerNavigationControllerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * peoplePickerNavigationControllerDidCancel:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AddressBookUI/Reference/ABPeoplePickerNavigationControllerDelegate_Protocol/index.html#//apple_ref/occ/intfm/ABPeoplePickerNavigationControllerDelegate/peoplePickerNavigationControllerDidCancel:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("peoplePickerNavigationControllerDidCancel:")

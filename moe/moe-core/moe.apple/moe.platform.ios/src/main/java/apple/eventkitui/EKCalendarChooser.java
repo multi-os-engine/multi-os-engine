@@ -176,10 +176,6 @@ public class EKCalendarChooser extends UIViewController {
     @NInt
     public static native long version_static();
 
-    /**
-     * delegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/EventKitUI/Reference/EKCalendarChooserClassRef/index.html#//apple_ref/occ/instp/EKCalendarChooser/delegate">iOS Dev Center</a>
-     */
     @Generated
     @Selector("delegate")
     @MappedReturn(ObjCObjectMapper.class)
@@ -193,53 +189,29 @@ public class EKCalendarChooser extends UIViewController {
     @Selector("initWithNibName:bundle:")
     public native EKCalendarChooser initWithNibNameBundle(String nibNameOrNil, NSBundle nibBundleOrNil);
 
-    /**
-     * initWithSelectionStyle:displayStyle:entityType:eventStore:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/EventKitUI/Reference/EKCalendarChooserClassRef/index.html#//apple_ref/occ/instm/EKCalendarChooser/initWithSelectionStyle:displayStyle:entityType:eventStore:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithSelectionStyle:displayStyle:entityType:eventStore:")
     public native EKCalendarChooser initWithSelectionStyleDisplayStyleEntityTypeEventStore(@NInt long style,
             @NInt long displayStyle, @NUInt long entityType, EKEventStore eventStore);
 
-    /**
-     * initWithSelectionStyle:displayStyle:eventStore:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/EventKitUI/Reference/EKCalendarChooserClassRef/index.html#//apple_ref/occ/instm/EKCalendarChooser/initWithSelectionStyle:displayStyle:eventStore:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithSelectionStyle:displayStyle:eventStore:")
     public native EKCalendarChooser initWithSelectionStyleDisplayStyleEventStore(@NInt long selectionStyle,
             @NInt long displayStyle, EKEventStore eventStore);
 
-    /**
-     * selectedCalendars</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/EventKitUI/Reference/EKCalendarChooserClassRef/index.html#//apple_ref/occ/instp/EKCalendarChooser/selectedCalendars">iOS Dev Center</a>
-     */
     @Generated
     @Selector("selectedCalendars")
     public native NSSet<? extends EKCalendar> selectedCalendars();
 
-    /**
-     * selectionStyle</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/EventKitUI/Reference/EKCalendarChooserClassRef/index.html#//apple_ref/occ/instp/EKCalendarChooser/selectionStyle">iOS Dev Center</a>
-     */
     @NInt
     @Generated
     @Selector("selectionStyle")
     public native long selectionStyle();
 
-    /**
-     * delegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/EventKitUI/Reference/EKCalendarChooserClassRef/index.html#//apple_ref/occ/instp/EKCalendarChooser/delegate">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setDelegate:")
     public native void setDelegate_unsafe(@Mapped(ObjCObjectMapper.class) EKCalendarChooserDelegate value);
 
-    /**
-     * delegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/EventKitUI/Reference/EKCalendarChooserClassRef/index.html#//apple_ref/occ/instp/EKCalendarChooser/delegate">iOS Dev Center</a>
-     */
     @Generated
     public void setDelegate(@Mapped(ObjCObjectMapper.class) EKCalendarChooserDelegate value) {
         Object __old = delegate();
@@ -252,42 +224,22 @@ public class EKCalendarChooser extends UIViewController {
         }
     }
 
-    /**
-     * selectedCalendars</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/EventKitUI/Reference/EKCalendarChooserClassRef/index.html#//apple_ref/occ/instp/EKCalendarChooser/selectedCalendars">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setSelectedCalendars:")
     public native void setSelectedCalendars(NSSet<? extends EKCalendar> value);
 
-    /**
-     * showsCancelButton</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/EventKitUI/Reference/EKCalendarChooserClassRef/index.html#//apple_ref/occ/instp/EKCalendarChooser/showsCancelButton">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setShowsCancelButton:")
     public native void setShowsCancelButton(boolean value);
 
-    /**
-     * showsDoneButton</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/EventKitUI/Reference/EKCalendarChooserClassRef/index.html#//apple_ref/occ/instp/EKCalendarChooser/showsDoneButton">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setShowsDoneButton:")
     public native void setShowsDoneButton(boolean value);
 
-    /**
-     * showsCancelButton</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/EventKitUI/Reference/EKCalendarChooserClassRef/index.html#//apple_ref/occ/instp/EKCalendarChooser/showsCancelButton">iOS Dev Center</a>
-     */
     @Generated
     @Selector("showsCancelButton")
     public native boolean showsCancelButton();
 
-    /**
-     * showsDoneButton</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/EventKitUI/Reference/EKCalendarChooserClassRef/index.html#//apple_ref/occ/instp/EKCalendarChooser/showsDoneButton">iOS Dev Center</a>
-     */
     @Generated
     @Selector("showsDoneButton")
     public native boolean showsDoneButton();

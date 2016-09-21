@@ -29,10 +29,6 @@ import org.moe.natj.objc.ann.Selector;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("PHPhotoLibraryChangeObserver")
 public interface PHPhotoLibraryChangeObserver {
-    /**
-     * photoLibraryDidChange:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHPhotoLibraryChangeObserver_Protocol/index.html#//apple_ref/occ/intfm/PHPhotoLibraryChangeObserver/photoLibraryDidChange:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("photoLibraryDidChange:")
     void photoLibraryDidChange(PHChange changeInstance);

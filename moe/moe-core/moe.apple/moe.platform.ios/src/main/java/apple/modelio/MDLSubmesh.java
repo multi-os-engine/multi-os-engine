@@ -61,10 +61,6 @@ public class MDLSubmesh extends NSObject implements MDLNamed {
     @Selector("alloc")
     public static native MDLSubmesh alloc();
 
-    /**
-     * submeshWithSCNGeometryElement:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLSubmesh_Class/index.html#//apple_ref/occ/clm/MDLSubmesh/submeshWithSCNGeometryElement:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("submeshWithSCNGeometryElement:")
     public static native MDLSubmesh submeshWithSCNGeometryElement(SCNGeometryElement scnGeometryElement);
@@ -169,37 +165,21 @@ public class MDLSubmesh extends NSObject implements MDLNamed {
     @NInt
     public static native long version_static();
 
-    /**
-     * geometryType</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLSubmesh_Class/index.html#//apple_ref/occ/instp/MDLSubmesh/geometryType">iOS Dev Center</a>
-     */
     @Generated
     @Selector("geometryType")
     @NInt
     public native long geometryType();
 
-    /**
-     * indexBuffer</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLSubmesh_Class/index.html#//apple_ref/occ/instp/MDLSubmesh/indexBuffer">iOS Dev Center</a>
-     */
     @Generated
     @Selector("indexBuffer")
     @MappedReturn(ObjCObjectMapper.class)
     public native MDLMeshBuffer indexBuffer();
 
-    /**
-     * indexCount</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLSubmesh_Class/index.html#//apple_ref/occ/instp/MDLSubmesh/indexCount">iOS Dev Center</a>
-     */
     @Generated
     @Selector("indexCount")
     @NUInt
     public native long indexCount();
 
-    /**
-     * indexType</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLSubmesh_Class/index.html#//apple_ref/occ/instp/MDLSubmesh/indexType">iOS Dev Center</a>
-     */
     @Generated
     @Selector("indexType")
     @NUInt
@@ -209,49 +189,29 @@ public class MDLSubmesh extends NSObject implements MDLNamed {
     @Selector("init")
     public native MDLSubmesh init();
 
-    /**
-     * initWithIndexBuffer:indexCount:indexType:geometryType:material:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLSubmesh_Class/index.html#//apple_ref/occ/instm/MDLSubmesh/initWithIndexBuffer:indexCount:indexType:geometryType:material:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithIndexBuffer:indexCount:indexType:geometryType:material:")
     public native MDLSubmesh initWithIndexBufferIndexCountIndexTypeGeometryTypeMaterial(
             @Mapped(ObjCObjectMapper.class) MDLMeshBuffer indexBuffer, @NUInt long indexCount, @NUInt long indexType,
             @NInt long geometryType, MDLMaterial material);
 
-    /**
-     * initWithMDLSubmesh:indexType:geometryType:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLSubmesh_Class/index.html#//apple_ref/occ/instm/MDLSubmesh/initWithMDLSubmesh:indexType:geometryType:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithMDLSubmesh:indexType:geometryType:")
     public native MDLSubmesh initWithMDLSubmeshIndexTypeGeometryType(MDLSubmesh submesh, @NUInt long indexType,
             @NInt long geometryType);
 
-    /**
-     * initWithName:indexBuffer:indexCount:indexType:geometryType:material:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLSubmesh_Class/index.html#//apple_ref/occ/instm/MDLSubmesh/initWithName:indexBuffer:indexCount:indexType:geometryType:material:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithName:indexBuffer:indexCount:indexType:geometryType:material:")
     public native MDLSubmesh initWithNameIndexBufferIndexCountIndexTypeGeometryTypeMaterial(String name,
             @Mapped(ObjCObjectMapper.class) MDLMeshBuffer indexBuffer, @NUInt long indexCount, @NUInt long indexType,
             @NInt long geometryType, MDLMaterial material);
 
-    /**
-     * initWithName:indexBuffer:indexCount:indexType:geometryType:material:topology:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLSubmesh_Class/index.html#//apple_ref/occ/instm/MDLSubmesh/initWithName:indexBuffer:indexCount:indexType:geometryType:material:topology:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithName:indexBuffer:indexCount:indexType:geometryType:material:topology:")
     public native MDLSubmesh initWithNameIndexBufferIndexCountIndexTypeGeometryTypeMaterialTopology(String name,
             @Mapped(ObjCObjectMapper.class) MDLMeshBuffer indexBuffer, @NUInt long indexCount, @NUInt long indexType,
             @NInt long geometryType, MDLMaterial material, MDLSubmeshTopology topology);
 
-    /**
-     * material</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLSubmesh_Class/index.html#//apple_ref/occ/instp/MDLSubmesh/material">iOS Dev Center</a>
-     */
     @Generated
     @Selector("material")
     public native MDLMaterial material();
@@ -260,10 +220,6 @@ public class MDLSubmesh extends NSObject implements MDLNamed {
     @Selector("name")
     public native String name();
 
-    /**
-     * material</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLSubmesh_Class/index.html#//apple_ref/occ/instp/MDLSubmesh/material">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setMaterial:")
     public native void setMaterial(MDLMaterial value);
@@ -272,10 +228,6 @@ public class MDLSubmesh extends NSObject implements MDLNamed {
     @Selector("setName:")
     public native void setName(String value);
 
-    /**
-     * topology</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLSubmesh_Class/index.html#//apple_ref/occ/instp/MDLSubmesh/topology">iOS Dev Center</a>
-     */
     @Generated
     @Selector("topology")
     public native MDLSubmeshTopology topology();

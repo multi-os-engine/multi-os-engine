@@ -167,27 +167,15 @@ public class CTTelephonyNetworkInfo extends NSObject {
     @Selector("init")
     public native CTTelephonyNetworkInfo init();
 
-    /**
-     * subscriberCellularProviderDidUpdateNotifier</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkingInternet/Reference/CTTelephonyNetworkInfo/index.html#//apple_ref/occ/instp/CTTelephonyNetworkInfo/subscriberCellularProviderDidUpdateNotifier">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setSubscriberCellularProviderDidUpdateNotifier:")
     public native void setSubscriberCellularProviderDidUpdateNotifier(
             @ObjCBlock(name = "call_setSubscriberCellularProviderDidUpdateNotifier") Block_setSubscriberCellularProviderDidUpdateNotifier value);
 
-    /**
-     * subscriberCellularProvider</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkingInternet/Reference/CTTelephonyNetworkInfo/index.html#//apple_ref/occ/instp/CTTelephonyNetworkInfo/subscriberCellularProvider">iOS Dev Center</a>
-     */
     @Generated
     @Selector("subscriberCellularProvider")
     public native CTCarrier subscriberCellularProvider();
 
-    /**
-     * subscriberCellularProviderDidUpdateNotifier</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkingInternet/Reference/CTTelephonyNetworkInfo/index.html#//apple_ref/occ/instp/CTTelephonyNetworkInfo/subscriberCellularProviderDidUpdateNotifier">iOS Dev Center</a>
-     */
     @Generated
     @Selector("subscriberCellularProviderDidUpdateNotifier")
     @ObjCBlock(name = "call_subscriberCellularProviderDidUpdateNotifier_ret")

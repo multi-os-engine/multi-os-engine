@@ -174,10 +174,6 @@ public class CMPedometerData extends NSObject implements NSSecureCoding, NSCopyi
     @MappedReturn(ObjCObjectMapper.class)
     public native Object copyWithZone(VoidPtr zone);
 
-    /**
-     * distance</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMotion/Reference/CMPedometerData_class/index.html#//apple_ref/occ/instp/CMPedometerData/distance">iOS Dev Center</a>
-     */
     @Generated
     @Selector("distance")
     public native NSNumber distance();
@@ -186,26 +182,14 @@ public class CMPedometerData extends NSObject implements NSSecureCoding, NSCopyi
     @Selector("encodeWithCoder:")
     public native void encodeWithCoder(NSCoder aCoder);
 
-    /**
-     * endDate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMotion/Reference/CMPedometerData_class/index.html#//apple_ref/occ/instp/CMPedometerData/endDate">iOS Dev Center</a>
-     */
     @Generated
     @Selector("endDate")
     public native NSDate endDate();
 
-    /**
-     * floorsAscended</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMotion/Reference/CMPedometerData_class/index.html#//apple_ref/occ/instp/CMPedometerData/floorsAscended">iOS Dev Center</a>
-     */
     @Generated
     @Selector("floorsAscended")
     public native NSNumber floorsAscended();
 
-    /**
-     * floorsDescended</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMotion/Reference/CMPedometerData_class/index.html#//apple_ref/occ/instp/CMPedometerData/floorsDescended">iOS Dev Center</a>
-     */
     @Generated
     @Selector("floorsDescended")
     public native NSNumber floorsDescended();
@@ -218,18 +202,10 @@ public class CMPedometerData extends NSObject implements NSSecureCoding, NSCopyi
     @Selector("initWithCoder:")
     public native CMPedometerData initWithCoder(NSCoder aDecoder);
 
-    /**
-     * numberOfSteps</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMotion/Reference/CMPedometerData_class/index.html#//apple_ref/occ/instp/CMPedometerData/numberOfSteps">iOS Dev Center</a>
-     */
     @Generated
     @Selector("numberOfSteps")
     public native NSNumber numberOfSteps();
 
-    /**
-     * startDate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMotion/Reference/CMPedometerData_class/index.html#//apple_ref/occ/instp/CMPedometerData/startDate">iOS Dev Center</a>
-     */
     @Generated
     @Selector("startDate")
     public native NSDate startDate();
@@ -240,18 +216,10 @@ public class CMPedometerData extends NSObject implements NSSecureCoding, NSCopyi
         return supportsSecureCoding();
     }
 
-    /**
-     * currentCadence</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMotion/Reference/CMPedometerData_class/index.html#//apple_ref/occ/instp/CMPedometerData/currentCadence">iOS Dev Center</a>
-     */
     @Generated
     @Selector("currentCadence")
     public native NSNumber currentCadence();
 
-    /**
-     * currentPace</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMotion/Reference/CMPedometerData_class/index.html#//apple_ref/occ/instp/CMPedometerData/currentPace">iOS Dev Center</a>
-     */
     @Generated
     @Selector("currentPace")
     public native NSNumber currentPace();

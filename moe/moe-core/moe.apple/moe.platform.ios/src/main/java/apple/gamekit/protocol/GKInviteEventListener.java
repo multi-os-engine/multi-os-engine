@@ -32,10 +32,6 @@ import org.moe.natj.objc.ann.Selector;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("GKInviteEventListener")
 public interface GKInviteEventListener {
-    /**
-     * player:didAcceptInvite:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKInviteEventHandler_ref/index.html#//apple_ref/occ/intfm/GKInviteEventListener/player:didAcceptInvite:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("player:didAcceptInvite:")
@@ -43,10 +39,6 @@ public interface GKInviteEventListener {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * player:didRequestMatchWithPlayers:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKInviteEventHandler_ref/index.html#//apple_ref/occ/intfm/GKInviteEventListener/player:didRequestMatchWithPlayers:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Deprecated
@@ -55,10 +47,6 @@ public interface GKInviteEventListener {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * player:didRequestMatchWithRecipients:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKInviteEventHandler_ref/index.html#//apple_ref/occ/intfm/GKInviteEventListener/player:didRequestMatchWithRecipients:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("player:didRequestMatchWithRecipients:")

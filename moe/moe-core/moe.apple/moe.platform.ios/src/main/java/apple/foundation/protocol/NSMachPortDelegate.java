@@ -30,10 +30,6 @@ import org.moe.natj.objc.ann.Selector;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("NSMachPortDelegate")
 public interface NSMachPortDelegate extends NSPortDelegate {
-    /**
-     * handleMachMessage:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSMachPortDelegate_Protocol/index.html#//apple_ref/occ/intfm/NSMachPortDelegate/handleMachMessage:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("handleMachMessage:")

@@ -348,45 +348,25 @@ public class UIWindow extends UIView {
     @NInt
     public static native long version_static();
 
-    /**
-     * becomeKeyWindow</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIWindow_Class/index.html#//apple_ref/occ/instm/UIWindow/becomeKeyWindow">iOS Dev Center</a>
-     */
     @Generated
     @Selector("becomeKeyWindow")
     public native void becomeKeyWindow();
 
-    /**
-     * convertPoint:fromWindow:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIWindow_Class/index.html#//apple_ref/occ/instm/UIWindow/convertPoint:fromWindow:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("convertPoint:fromWindow:")
     @ByValue
     public native CGPoint convertPointFromWindow(@ByValue CGPoint point, UIWindow window);
 
-    /**
-     * convertPoint:toWindow:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIWindow_Class/index.html#//apple_ref/occ/instm/UIWindow/convertPoint:toWindow:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("convertPoint:toWindow:")
     @ByValue
     public native CGPoint convertPointToWindow(@ByValue CGPoint point, UIWindow window);
 
-    /**
-     * convertRect:fromWindow:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIWindow_Class/index.html#//apple_ref/occ/instm/UIWindow/convertRect:fromWindow:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("convertRect:fromWindow:")
     @ByValue
     public native CGRect convertRectFromWindow(@ByValue CGRect rect, UIWindow window);
 
-    /**
-     * convertRect:toWindow:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIWindow_Class/index.html#//apple_ref/occ/instm/UIWindow/convertRect:toWindow:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("convertRect:toWindow:")
     @ByValue
@@ -400,90 +380,46 @@ public class UIWindow extends UIView {
     @Selector("initWithFrame:")
     public native UIWindow initWithFrame(@ByValue CGRect frame);
 
-    /**
-     * keyWindow</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIWindow_Class/index.html#//apple_ref/occ/instp/UIWindow/keyWindow">iOS Dev Center</a>
-     */
     @Generated
     @Selector("isKeyWindow")
     public native boolean isKeyWindow();
 
-    /**
-     * makeKeyAndVisible</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIWindow_Class/index.html#//apple_ref/occ/instm/UIWindow/makeKeyAndVisible">iOS Dev Center</a>
-     */
     @Generated
     @Selector("makeKeyAndVisible")
     public native void makeKeyAndVisible();
 
-    /**
-     * makeKeyWindow</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIWindow_Class/index.html#//apple_ref/occ/instm/UIWindow/makeKeyWindow">iOS Dev Center</a>
-     */
     @Generated
     @Selector("makeKeyWindow")
     public native void makeKeyWindow();
 
-    /**
-     * resignKeyWindow</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIWindow_Class/index.html#//apple_ref/occ/instm/UIWindow/resignKeyWindow">iOS Dev Center</a>
-     */
     @Generated
     @Selector("resignKeyWindow")
     public native void resignKeyWindow();
 
-    /**
-     * rootViewController</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIWindow_Class/index.html#//apple_ref/occ/instp/UIWindow/rootViewController">iOS Dev Center</a>
-     */
     @Generated
     @Selector("rootViewController")
     public native UIViewController rootViewController();
 
-    /**
-     * screen</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIWindow_Class/index.html#//apple_ref/occ/instp/UIWindow/screen">iOS Dev Center</a>
-     */
     @Generated
     @Selector("screen")
     public native UIScreen screen();
 
-    /**
-     * sendEvent:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIWindow_Class/index.html#//apple_ref/occ/instm/UIWindow/sendEvent:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("sendEvent:")
     public native void sendEvent(UIEvent event);
 
-    /**
-     * rootViewController</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIWindow_Class/index.html#//apple_ref/occ/instp/UIWindow/rootViewController">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setRootViewController:")
     public native void setRootViewController(UIViewController value);
 
-    /**
-     * screen</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIWindow_Class/index.html#//apple_ref/occ/instp/UIWindow/screen">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setScreen:")
     public native void setScreen(UIScreen value);
 
-    /**
-     * windowLevel</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIWindow_Class/index.html#//apple_ref/occ/instp/UIWindow/windowLevel">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setWindowLevel:")
     public native void setWindowLevel(@NFloat double value);
 
-    /**
-     * windowLevel</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIWindow_Class/index.html#//apple_ref/occ/instp/UIWindow/windowLevel">iOS Dev Center</a>
-     */
     @Generated
     @Selector("windowLevel")
     @NFloat

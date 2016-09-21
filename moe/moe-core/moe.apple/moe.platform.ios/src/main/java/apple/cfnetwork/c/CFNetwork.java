@@ -67,292 +67,156 @@ public final class CFNetwork {
     private CFNetwork() {
     }
 
-    /**
-     * CFHostGetTypeID</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreFoundation/Reference/CFHostRef/index.html#//apple_ref/c/func/CFHostGetTypeID">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @NUInt
     public static native long CFHostGetTypeID();
 
-    /**
-     * CFHostCreateWithName</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreFoundation/Reference/CFHostRef/index.html#//apple_ref/c/func/CFHostCreateWithName">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native CFHostRef CFHostCreateWithName(CFAllocatorRef allocator, CFStringRef hostname);
 
-    /**
-     * CFHostCreateWithAddress</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreFoundation/Reference/CFHostRef/index.html#//apple_ref/c/func/CFHostCreateWithAddress">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native CFHostRef CFHostCreateWithAddress(CFAllocatorRef allocator, CFDataRef addr);
 
-    /**
-     * CFHostCreateCopy</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreFoundation/Reference/CFHostRef/index.html#//apple_ref/c/func/CFHostCreateCopy">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native CFHostRef CFHostCreateCopy(CFAllocatorRef alloc, CFHostRef host);
 
-    /**
-     * CFHostStartInfoResolution</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreFoundation/Reference/CFHostRef/index.html#//apple_ref/c/func/CFHostStartInfoResolution">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native byte CFHostStartInfoResolution(CFHostRef theHost, int info,
             @UncertainArgument("Options: reference, array Fallback: reference") CFStreamError error);
 
-    /**
-     * CFHostGetAddressing</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreFoundation/Reference/CFHostRef/index.html#//apple_ref/c/func/CFHostGetAddressing">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native CFArrayRef CFHostGetAddressing(CFHostRef theHost, BytePtr hasBeenResolved);
 
-    /**
-     * CFHostGetNames</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreFoundation/Reference/CFHostRef/index.html#//apple_ref/c/func/CFHostGetNames">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native CFArrayRef CFHostGetNames(CFHostRef theHost, BytePtr hasBeenResolved);
 
-    /**
-     * CFHostGetReachability</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreFoundation/Reference/CFHostRef/index.html#//apple_ref/c/func/CFHostGetReachability">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native CFDataRef CFHostGetReachability(CFHostRef theHost, BytePtr hasBeenResolved);
 
-    /**
-     * CFHostCancelInfoResolution</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreFoundation/Reference/CFHostRef/index.html#//apple_ref/c/func/CFHostCancelInfoResolution">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void CFHostCancelInfoResolution(CFHostRef theHost, int info);
 
-    /**
-     * CFHostSetClient</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreFoundation/Reference/CFHostRef/index.html#//apple_ref/c/func/CFHostSetClient">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native byte CFHostSetClient(CFHostRef theHost,
             @FunctionPtr(name = "call_CFHostSetClient") Function_CFHostSetClient clientCB,
             @UncertainArgument("Options: reference, array Fallback: reference") CFHostClientContext clientContext);
 
-    /**
-     * CFHostScheduleWithRunLoop</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreFoundation/Reference/CFHostRef/index.html#//apple_ref/c/func/CFHostScheduleWithRunLoop">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void CFHostScheduleWithRunLoop(CFHostRef theHost, CFRunLoopRef runLoop,
             CFStringRef runLoopMode);
 
-    /**
-     * CFHostUnscheduleFromRunLoop</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreFoundation/Reference/CFHostRef/index.html#//apple_ref/c/func/CFHostUnscheduleFromRunLoop">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void CFHostUnscheduleFromRunLoop(CFHostRef theHost, CFRunLoopRef runLoop,
             CFStringRef runLoopMode);
 
-    /**
-     * CFNetServiceGetTypeID</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreFoundation/Reference/CFNetServiceRef/index.html#//apple_ref/c/func/CFNetServiceGetTypeID">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @NUInt
     public static native long CFNetServiceGetTypeID();
 
-    /**
-     * CFNetServiceMonitorGetTypeID</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreFoundation/Reference/CFNetServiceRef/index.html#//apple_ref/c/func/CFNetServiceMonitorGetTypeID">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @NUInt
     public static native long CFNetServiceMonitorGetTypeID();
 
-    /**
-     * CFNetServiceBrowserGetTypeID</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreFoundation/Reference/CFNetServiceRef/index.html#//apple_ref/c/func/CFNetServiceBrowserGetTypeID">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @NUInt
     public static native long CFNetServiceBrowserGetTypeID();
 
-    /**
-     * CFNetServiceCreate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreFoundation/Reference/CFNetServiceRef/index.html#//apple_ref/c/func/CFNetServiceCreate">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native CFNetServiceRef CFNetServiceCreate(CFAllocatorRef alloc, CFStringRef domain,
             CFStringRef serviceType, CFStringRef name, int port);
 
-    /**
-     * CFNetServiceCreateCopy</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreFoundation/Reference/CFNetServiceRef/index.html#//apple_ref/c/func/CFNetServiceCreateCopy">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native CFNetServiceRef CFNetServiceCreateCopy(CFAllocatorRef alloc, CFNetServiceRef service);
 
-    /**
-     * CFNetServiceGetDomain</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreFoundation/Reference/CFNetServiceRef/index.html#//apple_ref/c/func/CFNetServiceGetDomain">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native CFStringRef CFNetServiceGetDomain(CFNetServiceRef theService);
 
-    /**
-     * CFNetServiceGetType</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreFoundation/Reference/CFNetServiceRef/index.html#//apple_ref/c/func/CFNetServiceGetType">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native CFStringRef CFNetServiceGetType(CFNetServiceRef theService);
 
-    /**
-     * CFNetServiceGetName</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreFoundation/Reference/CFNetServiceRef/index.html#//apple_ref/c/func/CFNetServiceGetName">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native CFStringRef CFNetServiceGetName(CFNetServiceRef theService);
 
-    /**
-     * CFNetServiceRegisterWithOptions</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreFoundation/Reference/CFNetServiceRef/index.html#//apple_ref/c/func/CFNetServiceRegisterWithOptions">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native byte CFNetServiceRegisterWithOptions(CFNetServiceRef theService, @NUInt long options,
             @UncertainArgument("Options: reference, array Fallback: reference") CFStreamError error);
 
-    /**
-     * CFNetServiceResolveWithTimeout</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreFoundation/Reference/CFNetServiceRef/index.html#//apple_ref/c/func/CFNetServiceResolveWithTimeout">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native byte CFNetServiceResolveWithTimeout(CFNetServiceRef theService, double timeout,
             @UncertainArgument("Options: reference, array Fallback: reference") CFStreamError error);
 
-    /**
-     * CFNetServiceCancel</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreFoundation/Reference/CFNetServiceRef/index.html#//apple_ref/c/func/CFNetServiceCancel">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void CFNetServiceCancel(CFNetServiceRef theService);
 
-    /**
-     * CFNetServiceGetTargetHost</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreFoundation/Reference/CFNetServiceRef/index.html#//apple_ref/c/func/CFNetServiceGetTargetHost">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native CFStringRef CFNetServiceGetTargetHost(CFNetServiceRef theService);
 
-    /**
-     * CFNetServiceGetPortNumber</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreFoundation/Reference/CFNetServiceRef/index.html#//apple_ref/c/func/CFNetServiceGetPortNumber">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native int CFNetServiceGetPortNumber(CFNetServiceRef theService);
 
-    /**
-     * CFNetServiceGetAddressing</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreFoundation/Reference/CFNetServiceRef/index.html#//apple_ref/c/func/CFNetServiceGetAddressing">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native CFArrayRef CFNetServiceGetAddressing(CFNetServiceRef theService);
 
-    /**
-     * CFNetServiceGetTXTData</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreFoundation/Reference/CFNetServiceRef/index.html#//apple_ref/c/func/CFNetServiceGetTXTData">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native CFDataRef CFNetServiceGetTXTData(CFNetServiceRef theService);
 
-    /**
-     * CFNetServiceSetTXTData</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreFoundation/Reference/CFNetServiceRef/index.html#//apple_ref/c/func/CFNetServiceSetTXTData">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native byte CFNetServiceSetTXTData(CFNetServiceRef theService, CFDataRef txtRecord);
 
-    /**
-     * CFNetServiceCreateDictionaryWithTXTData</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreFoundation/Reference/CFNetServiceRef/index.html#//apple_ref/c/func/CFNetServiceCreateDictionaryWithTXTData">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native CFDictionaryRef CFNetServiceCreateDictionaryWithTXTData(CFAllocatorRef alloc,
             CFDataRef txtRecord);
 
-    /**
-     * CFNetServiceCreateTXTDataWithDictionary</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreFoundation/Reference/CFNetServiceRef/index.html#//apple_ref/c/func/CFNetServiceCreateTXTDataWithDictionary">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native CFDataRef CFNetServiceCreateTXTDataWithDictionary(CFAllocatorRef alloc,
             CFDictionaryRef keyValuePairs);
 
-    /**
-     * CFNetServiceSetClient</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreFoundation/Reference/CFNetServiceRef/index.html#//apple_ref/c/func/CFNetServiceSetClient">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native byte CFNetServiceSetClient(CFNetServiceRef theService,
             @FunctionPtr(name = "call_CFNetServiceSetClient") Function_CFNetServiceSetClient clientCB,
             @UncertainArgument("Options: reference, array Fallback: reference") CFNetServiceClientContext clientContext);
 
-    /**
-     * CFNetServiceScheduleWithRunLoop</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreFoundation/Reference/CFNetServiceRef/index.html#//apple_ref/c/func/CFNetServiceScheduleWithRunLoop">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void CFNetServiceScheduleWithRunLoop(CFNetServiceRef theService, CFRunLoopRef runLoop,
             CFStringRef runLoopMode);
 
-    /**
-     * CFNetServiceUnscheduleFromRunLoop</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreFoundation/Reference/CFNetServiceRef/index.html#//apple_ref/c/func/CFNetServiceUnscheduleFromRunLoop">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void CFNetServiceUnscheduleFromRunLoop(CFNetServiceRef theService, CFRunLoopRef runLoop,
             CFStringRef runLoopMode);
 
-    /**
-     * CFNetServiceMonitorCreate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreFoundation/Reference/CFNetServiceRef/index.html#//apple_ref/c/func/CFNetServiceMonitorCreate">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native CFNetServiceMonitorRef CFNetServiceMonitorCreate(CFAllocatorRef alloc,
@@ -360,166 +224,94 @@ public final class CFNetwork {
             @FunctionPtr(name = "call_CFNetServiceMonitorCreate") Function_CFNetServiceMonitorCreate clientCB,
             @UncertainArgument("Options: reference, array Fallback: reference") CFNetServiceClientContext clientContext);
 
-    /**
-     * CFNetServiceMonitorInvalidate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreFoundation/Reference/CFNetServiceRef/index.html#//apple_ref/c/func/CFNetServiceMonitorInvalidate">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void CFNetServiceMonitorInvalidate(CFNetServiceMonitorRef monitor);
 
-    /**
-     * CFNetServiceMonitorStart</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreFoundation/Reference/CFNetServiceRef/index.html#//apple_ref/c/func/CFNetServiceMonitorStart">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native byte CFNetServiceMonitorStart(CFNetServiceMonitorRef monitor, int recordType,
             @UncertainArgument("Options: reference, array Fallback: reference") CFStreamError error);
 
-    /**
-     * CFNetServiceMonitorStop</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreFoundation/Reference/CFNetServiceRef/index.html#//apple_ref/c/func/CFNetServiceMonitorStop">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void CFNetServiceMonitorStop(CFNetServiceMonitorRef monitor,
             @UncertainArgument("Options: reference, array Fallback: reference") CFStreamError error);
 
-    /**
-     * CFNetServiceMonitorScheduleWithRunLoop</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreFoundation/Reference/CFNetServiceRef/index.html#//apple_ref/c/func/CFNetServiceMonitorScheduleWithRunLoop">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void CFNetServiceMonitorScheduleWithRunLoop(CFNetServiceMonitorRef monitor,
             CFRunLoopRef runLoop, CFStringRef runLoopMode);
 
-    /**
-     * CFNetServiceMonitorUnscheduleFromRunLoop</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreFoundation/Reference/CFNetServiceRef/index.html#//apple_ref/c/func/CFNetServiceMonitorUnscheduleFromRunLoop">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void CFNetServiceMonitorUnscheduleFromRunLoop(CFNetServiceMonitorRef monitor,
             CFRunLoopRef runLoop, CFStringRef runLoopMode);
 
-    /**
-     * CFNetServiceBrowserCreate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreFoundation/Reference/CFNetServiceRef/index.html#//apple_ref/c/func/CFNetServiceBrowserCreate">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native CFNetServiceBrowserRef CFNetServiceBrowserCreate(CFAllocatorRef alloc,
             @FunctionPtr(name = "call_CFNetServiceBrowserCreate") Function_CFNetServiceBrowserCreate clientCB,
             @UncertainArgument("Options: reference, array Fallback: reference") CFNetServiceClientContext clientContext);
 
-    /**
-     * CFNetServiceBrowserInvalidate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreFoundation/Reference/CFNetServiceRef/index.html#//apple_ref/c/func/CFNetServiceBrowserInvalidate">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void CFNetServiceBrowserInvalidate(CFNetServiceBrowserRef browser);
 
-    /**
-     * CFNetServiceBrowserSearchForDomains</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreFoundation/Reference/CFNetServiceRef/index.html#//apple_ref/c/func/CFNetServiceBrowserSearchForDomains">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native byte CFNetServiceBrowserSearchForDomains(CFNetServiceBrowserRef browser,
             byte registrationDomains,
             @UncertainArgument("Options: reference, array Fallback: reference") CFStreamError error);
 
-    /**
-     * CFNetServiceBrowserSearchForServices</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreFoundation/Reference/CFNetServiceRef/index.html#//apple_ref/c/func/CFNetServiceBrowserSearchForServices">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native byte CFNetServiceBrowserSearchForServices(CFNetServiceBrowserRef browser, CFStringRef domain,
             CFStringRef serviceType,
             @UncertainArgument("Options: reference, array Fallback: reference") CFStreamError error);
 
-    /**
-     * CFNetServiceBrowserStopSearch</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreFoundation/Reference/CFNetServiceRef/index.html#//apple_ref/c/func/CFNetServiceBrowserStopSearch">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void CFNetServiceBrowserStopSearch(CFNetServiceBrowserRef browser,
             @UncertainArgument("Options: reference, array Fallback: reference") CFStreamError error);
 
-    /**
-     * CFNetServiceBrowserScheduleWithRunLoop</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreFoundation/Reference/CFNetServiceRef/index.html#//apple_ref/c/func/CFNetServiceBrowserScheduleWithRunLoop">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void CFNetServiceBrowserScheduleWithRunLoop(CFNetServiceBrowserRef browser,
             CFRunLoopRef runLoop, CFStringRef runLoopMode);
 
-    /**
-     * CFNetServiceBrowserUnscheduleFromRunLoop</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreFoundation/Reference/CFNetServiceRef/index.html#//apple_ref/c/func/CFNetServiceBrowserUnscheduleFromRunLoop">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void CFNetServiceBrowserUnscheduleFromRunLoop(CFNetServiceBrowserRef browser,
             CFRunLoopRef runLoop, CFStringRef runLoopMode);
 
-    /**
-     * CFSocketStreamSOCKSGetErrorSubdomain</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreFoundation/Reference/CFStreamConstants/index.html#//apple_ref/c/func/CFSocketStreamSOCKSGetErrorSubdomain">iOS Dev Center</a>
-     */
     @Generated
     @Inline
     @CFunction
     public static native int CFSocketStreamSOCKSGetErrorSubdomain(
             @UncertainArgument("Options: reference, array Fallback: reference") CFStreamError error);
 
-    /**
-     * CFSocketStreamSOCKSGetError</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreFoundation/Reference/CFStreamConstants/index.html#//apple_ref/c/func/CFSocketStreamSOCKSGetError">iOS Dev Center</a>
-     */
     @Generated
     @Inline
     @CFunction
     public static native int CFSocketStreamSOCKSGetError(
             @UncertainArgument("Options: reference, array Fallback: reference") CFStreamError error);
 
-    /**
-     * CFStreamCreatePairWithSocketToCFHost</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreFoundation/Reference/CFStreamConstants/index.html#//apple_ref/c/func/CFStreamCreatePairWithSocketToCFHost">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void CFStreamCreatePairWithSocketToCFHost(CFAllocatorRef alloc, CFHostRef host, int port,
             Ptr<CFReadStreamRef> readStream, Ptr<CFWriteStreamRef> writeStream);
 
-    /**
-     * CFStreamCreatePairWithSocketToNetService</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreFoundation/Reference/CFStreamConstants/index.html#//apple_ref/c/func/CFStreamCreatePairWithSocketToNetService">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void CFStreamCreatePairWithSocketToNetService(CFAllocatorRef alloc, CFNetServiceRef service,
             Ptr<CFReadStreamRef> readStream, Ptr<CFWriteStreamRef> writeStream);
 
-    /**
-     * CFReadStreamCreateWithFTPURL</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreFoundation/Reference/CFFTPStreamRef/index.html#//apple_ref/c/func/CFReadStreamCreateWithFTPURL">iOS Dev Center</a>
-     */
     @Deprecated
     @Generated
     @CFunction
     public static native CFReadStreamRef CFReadStreamCreateWithFTPURL(CFAllocatorRef alloc, CFURLRef ftpURL);
 
-    /**
-     * CFFTPCreateParsedResourceListing</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreFoundation/Reference/CFFTPStreamRef/index.html#//apple_ref/c/func/CFFTPCreateParsedResourceListing">iOS Dev Center</a>
-     */
     @Deprecated
     @Generated
     @CFunction
@@ -528,382 +320,206 @@ public final class CFNetwork {
             @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String buffer,
             @NInt long bufferLength, Ptr<CFDictionaryRef> parsed);
 
-    /**
-     * CFWriteStreamCreateWithFTPURL</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreFoundation/Reference/CFFTPStreamRef/index.html#//apple_ref/c/func/CFWriteStreamCreateWithFTPURL">iOS Dev Center</a>
-     */
     @Deprecated
     @Generated
     @CFunction
     public static native CFWriteStreamRef CFWriteStreamCreateWithFTPURL(CFAllocatorRef alloc, CFURLRef ftpURL);
 
-    /**
-     * CFHTTPMessageGetTypeID</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreFoundation/Reference/CFMessageRef/index.html#//apple_ref/c/func/CFHTTPMessageGetTypeID">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @NUInt
     public static native long CFHTTPMessageGetTypeID();
 
-    /**
-     * CFHTTPMessageCreateRequest</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreFoundation/Reference/CFMessageRef/index.html#//apple_ref/c/func/CFHTTPMessageCreateRequest">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native CFHTTPMessageRef CFHTTPMessageCreateRequest(CFAllocatorRef alloc, CFStringRef requestMethod,
             CFURLRef url, CFStringRef httpVersion);
 
-    /**
-     * CFHTTPMessageCreateResponse</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreFoundation/Reference/CFMessageRef/index.html#//apple_ref/c/func/CFHTTPMessageCreateResponse">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native CFHTTPMessageRef CFHTTPMessageCreateResponse(CFAllocatorRef alloc, @NInt long statusCode,
             CFStringRef statusDescription, CFStringRef httpVersion);
 
-    /**
-     * CFHTTPMessageCreateEmpty</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreFoundation/Reference/CFMessageRef/index.html#//apple_ref/c/func/CFHTTPMessageCreateEmpty">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native CFHTTPMessageRef CFHTTPMessageCreateEmpty(CFAllocatorRef alloc, byte isRequest);
 
-    /**
-     * CFHTTPMessageCreateCopy</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreFoundation/Reference/CFMessageRef/index.html#//apple_ref/c/func/CFHTTPMessageCreateCopy">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native CFHTTPMessageRef CFHTTPMessageCreateCopy(CFAllocatorRef alloc, CFHTTPMessageRef message);
 
-    /**
-     * CFHTTPMessageIsRequest</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreFoundation/Reference/CFMessageRef/index.html#//apple_ref/c/func/CFHTTPMessageIsRequest">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native byte CFHTTPMessageIsRequest(CFHTTPMessageRef message);
 
-    /**
-     * CFHTTPMessageCopyVersion</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreFoundation/Reference/CFMessageRef/index.html#//apple_ref/c/func/CFHTTPMessageCopyVersion">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native CFStringRef CFHTTPMessageCopyVersion(CFHTTPMessageRef message);
 
-    /**
-     * CFHTTPMessageCopyBody</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreFoundation/Reference/CFMessageRef/index.html#//apple_ref/c/func/CFHTTPMessageCopyBody">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native CFDataRef CFHTTPMessageCopyBody(CFHTTPMessageRef message);
 
-    /**
-     * CFHTTPMessageSetBody</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreFoundation/Reference/CFMessageRef/index.html#//apple_ref/c/func/CFHTTPMessageSetBody">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void CFHTTPMessageSetBody(CFHTTPMessageRef message, CFDataRef bodyData);
 
-    /**
-     * CFHTTPMessageCopyHeaderFieldValue</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreFoundation/Reference/CFMessageRef/index.html#//apple_ref/c/func/CFHTTPMessageCopyHeaderFieldValue">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native CFStringRef CFHTTPMessageCopyHeaderFieldValue(CFHTTPMessageRef message,
             CFStringRef headerField);
 
-    /**
-     * CFHTTPMessageCopyAllHeaderFields</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreFoundation/Reference/CFMessageRef/index.html#//apple_ref/c/func/CFHTTPMessageCopyAllHeaderFields">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native CFDictionaryRef CFHTTPMessageCopyAllHeaderFields(CFHTTPMessageRef message);
 
-    /**
-     * CFHTTPMessageSetHeaderFieldValue</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreFoundation/Reference/CFMessageRef/index.html#//apple_ref/c/func/CFHTTPMessageSetHeaderFieldValue">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void CFHTTPMessageSetHeaderFieldValue(CFHTTPMessageRef message, CFStringRef headerField,
             CFStringRef value);
 
-    /**
-     * CFHTTPMessageAppendBytes</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreFoundation/Reference/CFMessageRef/index.html#//apple_ref/c/func/CFHTTPMessageAppendBytes">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native byte CFHTTPMessageAppendBytes(CFHTTPMessageRef message,
             @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String newBytes,
             @NInt long numBytes);
 
-    /**
-     * CFHTTPMessageIsHeaderComplete</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreFoundation/Reference/CFMessageRef/index.html#//apple_ref/c/func/CFHTTPMessageIsHeaderComplete">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native byte CFHTTPMessageIsHeaderComplete(CFHTTPMessageRef message);
 
-    /**
-     * CFHTTPMessageCopySerializedMessage</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreFoundation/Reference/CFMessageRef/index.html#//apple_ref/c/func/CFHTTPMessageCopySerializedMessage">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native CFDataRef CFHTTPMessageCopySerializedMessage(CFHTTPMessageRef message);
 
-    /**
-     * CFHTTPMessageCopyRequestURL</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreFoundation/Reference/CFMessageRef/index.html#//apple_ref/c/func/CFHTTPMessageCopyRequestURL">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native CFURLRef CFHTTPMessageCopyRequestURL(CFHTTPMessageRef request);
 
-    /**
-     * CFHTTPMessageCopyRequestMethod</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreFoundation/Reference/CFMessageRef/index.html#//apple_ref/c/func/CFHTTPMessageCopyRequestMethod">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native CFStringRef CFHTTPMessageCopyRequestMethod(CFHTTPMessageRef request);
 
-    /**
-     * CFHTTPMessageAddAuthentication</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreFoundation/Reference/CFMessageRef/index.html#//apple_ref/c/func/CFHTTPMessageAddAuthentication">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native byte CFHTTPMessageAddAuthentication(CFHTTPMessageRef request,
             CFHTTPMessageRef authenticationFailureResponse, CFStringRef username, CFStringRef password,
             CFStringRef authenticationScheme, byte forProxy);
 
-    /**
-     * CFHTTPMessageGetResponseStatusCode</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreFoundation/Reference/CFMessageRef/index.html#//apple_ref/c/func/CFHTTPMessageGetResponseStatusCode">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @NInt
     public static native long CFHTTPMessageGetResponseStatusCode(CFHTTPMessageRef response);
 
-    /**
-     * CFHTTPMessageCopyResponseStatusLine</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreFoundation/Reference/CFMessageRef/index.html#//apple_ref/c/func/CFHTTPMessageCopyResponseStatusLine">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native CFStringRef CFHTTPMessageCopyResponseStatusLine(CFHTTPMessageRef response);
 
-    /**
-     * CFReadStreamCreateForHTTPRequest</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreFoundation/Reference/CFHTTPStreamRef/index.html#//apple_ref/c/func/CFReadStreamCreateForHTTPRequest">iOS Dev Center</a>
-     */
     @Deprecated
     @Generated
     @CFunction
     public static native CFReadStreamRef CFReadStreamCreateForHTTPRequest(CFAllocatorRef alloc,
             CFHTTPMessageRef request);
 
-    /**
-     * CFReadStreamCreateForStreamedHTTPRequest</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreFoundation/Reference/CFHTTPStreamRef/index.html#//apple_ref/c/func/CFReadStreamCreateForStreamedHTTPRequest">iOS Dev Center</a>
-     */
     @Deprecated
     @Generated
     @CFunction
     public static native CFReadStreamRef CFReadStreamCreateForStreamedHTTPRequest(CFAllocatorRef alloc,
             CFHTTPMessageRef requestHeaders, CFReadStreamRef requestBody);
 
-    /**
-     * CFHTTPAuthenticationGetTypeID</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreFoundation/Reference/CFHTTPAuthenticationRef/index.html#//apple_ref/c/func/CFHTTPAuthenticationGetTypeID">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @NUInt
     public static native long CFHTTPAuthenticationGetTypeID();
 
-    /**
-     * CFHTTPAuthenticationCreateFromResponse</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreFoundation/Reference/CFHTTPAuthenticationRef/index.html#//apple_ref/c/func/CFHTTPAuthenticationCreateFromResponse">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native CFHTTPAuthenticationRef CFHTTPAuthenticationCreateFromResponse(CFAllocatorRef alloc,
             CFHTTPMessageRef response);
 
-    /**
-     * CFHTTPAuthenticationIsValid</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreFoundation/Reference/CFHTTPAuthenticationRef/index.html#//apple_ref/c/func/CFHTTPAuthenticationIsValid">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native byte CFHTTPAuthenticationIsValid(CFHTTPAuthenticationRef auth,
             @UncertainArgument("Options: reference, array Fallback: reference") CFStreamError error);
 
-    /**
-     * CFHTTPAuthenticationAppliesToRequest</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreFoundation/Reference/CFHTTPAuthenticationRef/index.html#//apple_ref/c/func/CFHTTPAuthenticationAppliesToRequest">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native byte CFHTTPAuthenticationAppliesToRequest(CFHTTPAuthenticationRef auth,
             CFHTTPMessageRef request);
 
-    /**
-     * CFHTTPAuthenticationRequiresOrderedRequests</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreFoundation/Reference/CFHTTPAuthenticationRef/index.html#//apple_ref/c/func/CFHTTPAuthenticationRequiresOrderedRequests">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native byte CFHTTPAuthenticationRequiresOrderedRequests(CFHTTPAuthenticationRef auth);
 
-    /**
-     * CFHTTPMessageApplyCredentials</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreFoundation/Reference/CFMessageRef/index.html#//apple_ref/c/func/CFHTTPMessageApplyCredentials">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native byte CFHTTPMessageApplyCredentials(CFHTTPMessageRef request, CFHTTPAuthenticationRef auth,
             CFStringRef username, CFStringRef password,
             @UncertainArgument("Options: reference, array Fallback: reference") CFStreamError error);
 
-    /**
-     * CFHTTPMessageApplyCredentialDictionary</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreFoundation/Reference/CFMessageRef/index.html#//apple_ref/c/func/CFHTTPMessageApplyCredentialDictionary">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native byte CFHTTPMessageApplyCredentialDictionary(CFHTTPMessageRef request,
             CFHTTPAuthenticationRef auth, CFDictionaryRef dict,
             @UncertainArgument("Options: reference, array Fallback: reference") CFStreamError error);
 
-    /**
-     * CFHTTPAuthenticationCopyRealm</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreFoundation/Reference/CFHTTPAuthenticationRef/index.html#//apple_ref/c/func/CFHTTPAuthenticationCopyRealm">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native CFStringRef CFHTTPAuthenticationCopyRealm(CFHTTPAuthenticationRef auth);
 
-    /**
-     * CFHTTPAuthenticationCopyDomains</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreFoundation/Reference/CFHTTPAuthenticationRef/index.html#//apple_ref/c/func/CFHTTPAuthenticationCopyDomains">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native CFArrayRef CFHTTPAuthenticationCopyDomains(CFHTTPAuthenticationRef auth);
 
-    /**
-     * CFHTTPAuthenticationCopyMethod</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreFoundation/Reference/CFHTTPAuthenticationRef/index.html#//apple_ref/c/func/CFHTTPAuthenticationCopyMethod">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native CFStringRef CFHTTPAuthenticationCopyMethod(CFHTTPAuthenticationRef auth);
 
-    /**
-     * CFHTTPAuthenticationRequiresUserNameAndPassword</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreFoundation/Reference/CFHTTPAuthenticationRef/index.html#//apple_ref/c/func/CFHTTPAuthenticationRequiresUserNameAndPassword">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native byte CFHTTPAuthenticationRequiresUserNameAndPassword(CFHTTPAuthenticationRef auth);
 
-    /**
-     * CFHTTPAuthenticationRequiresAccountDomain</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreFoundation/Reference/CFHTTPAuthenticationRef/index.html#//apple_ref/c/func/CFHTTPAuthenticationRequiresAccountDomain">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native byte CFHTTPAuthenticationRequiresAccountDomain(CFHTTPAuthenticationRef auth);
 
-    /**
-     * CFNetDiagnosticCreateWithStreams</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreFoundation/Reference/CFNetDiagnosticsRef/index.html#//apple_ref/c/func/CFNetDiagnosticCreateWithStreams">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native CFNetDiagnosticRef CFNetDiagnosticCreateWithStreams(CFAllocatorRef alloc,
             CFReadStreamRef readStream, CFWriteStreamRef writeStream);
 
-    /**
-     * CFNetDiagnosticCreateWithURL</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreFoundation/Reference/CFNetDiagnosticsRef/index.html#//apple_ref/c/func/CFNetDiagnosticCreateWithURL">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native CFNetDiagnosticRef CFNetDiagnosticCreateWithURL(CFAllocatorRef alloc, CFURLRef url);
 
-    /**
-     * CFNetDiagnosticSetName</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreFoundation/Reference/CFNetDiagnosticsRef/index.html#//apple_ref/c/func/CFNetDiagnosticSetName">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native void CFNetDiagnosticSetName(CFNetDiagnosticRef details, CFStringRef name);
 
-    /**
-     * CFNetDiagnosticDiagnoseProblemInteractively</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreFoundation/Reference/CFNetDiagnosticsRef/index.html#//apple_ref/c/func/CFNetDiagnosticDiagnoseProblemInteractively">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @NInt
     public static native long CFNetDiagnosticDiagnoseProblemInteractively(CFNetDiagnosticRef details);
 
-    /**
-     * CFNetDiagnosticCopyNetworkStatusPassively</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreFoundation/Reference/CFNetDiagnosticsRef/index.html#//apple_ref/c/func/CFNetDiagnosticCopyNetworkStatusPassively">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     @NInt
     public static native long CFNetDiagnosticCopyNetworkStatusPassively(CFNetDiagnosticRef details,
             Ptr<CFStringRef> description);
 
-    /**
-     * CFNetworkCopySystemProxySettings</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreFoundation/Reference/CFProxySupport/index.html#//apple_ref/c/func/CFNetworkCopySystemProxySettings">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native CFDictionaryRef CFNetworkCopySystemProxySettings();
 
-    /**
-     * CFNetworkCopyProxiesForURL</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreFoundation/Reference/CFProxySupport/index.html#//apple_ref/c/func/CFNetworkCopyProxiesForURL">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native CFArrayRef CFNetworkCopyProxiesForURL(CFURLRef url, CFDictionaryRef proxySettings);
 
-    /**
-     * CFNetworkCopyProxiesForAutoConfigurationScript</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreFoundation/Reference/CFProxySupport/index.html#//apple_ref/c/func/CFNetworkCopyProxiesForAutoConfigurationScript">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native CFArrayRef CFNetworkCopyProxiesForAutoConfigurationScript(
             CFStringRef proxyAutoConfigurationScript, CFURLRef targetURL, Ptr<CFErrorRef> error);
 
-    /**
-     * CFNetworkExecuteProxyAutoConfigurationScript</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreFoundation/Reference/CFProxySupport/index.html#//apple_ref/c/func/CFNetworkExecuteProxyAutoConfigurationScript">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native CFRunLoopSourceRef CFNetworkExecuteProxyAutoConfigurationScript(
@@ -911,10 +527,6 @@ public final class CFNetwork {
             @FunctionPtr(name = "call_CFNetworkExecuteProxyAutoConfigurationScript") Function_CFNetworkExecuteProxyAutoConfigurationScript cb,
             @UncertainArgument("Options: reference, array Fallback: reference") CFStreamClientContext clientContext);
 
-    /**
-     * CFNetworkExecuteProxyAutoConfigurationURL</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreFoundation/Reference/CFProxySupport/index.html#//apple_ref/c/func/CFNetworkExecuteProxyAutoConfigurationURL">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native CFRunLoopSourceRef CFNetworkExecuteProxyAutoConfigurationURL(CFURLRef proxyAutoConfigURL,

@@ -166,18 +166,10 @@ public class AVAudioPlayerNode extends AVAudioNode implements AVAudioMixing {
     @Selector("init")
     public native AVAudioPlayerNode init();
 
-    /**
-     * playing</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioPlayerNode_Class/index.html#//apple_ref/occ/instp/AVAudioPlayerNode/playing">iOS Dev Center</a>
-     */
     @Generated
     @Selector("isPlaying")
     public native boolean isPlaying();
 
-    /**
-     * nodeTimeForPlayerTime:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioPlayerNode_Class/index.html#//apple_ref/occ/instm/AVAudioPlayerNode/nodeTimeForPlayerTime:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("nodeTimeForPlayerTime:")
     public native AVAudioTime nodeTimeForPlayerTime(AVAudioTime playerTime);
@@ -194,34 +186,18 @@ public class AVAudioPlayerNode extends AVAudioNode implements AVAudioMixing {
     @Selector("pan")
     public native float pan();
 
-    /**
-     * pause</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioPlayerNode_Class/index.html#//apple_ref/occ/instm/AVAudioPlayerNode/pause">iOS Dev Center</a>
-     */
     @Generated
     @Selector("pause")
     public native void pause();
 
-    /**
-     * play</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioPlayerNode_Class/index.html#//apple_ref/occ/instm/AVAudioPlayerNode/play">iOS Dev Center</a>
-     */
     @Generated
     @Selector("play")
     public native void play();
 
-    /**
-     * playAtTime:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioPlayerNode_Class/index.html#//apple_ref/occ/instm/AVAudioPlayerNode/playAtTime:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("playAtTime:")
     public native void playAtTime(AVAudioTime when);
 
-    /**
-     * playerTimeForNodeTime:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioPlayerNode_Class/index.html#//apple_ref/occ/instm/AVAudioPlayerNode/playerTimeForNodeTime:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("playerTimeForNodeTime:")
     public native AVAudioTime playerTimeForNodeTime(AVAudioTime nodeTime);
@@ -231,10 +207,6 @@ public class AVAudioPlayerNode extends AVAudioNode implements AVAudioMixing {
     @ByValue
     public native AVAudio3DPoint position();
 
-    /**
-     * prepareWithFrameCount:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioPlayerNode_Class/index.html#//apple_ref/occ/instm/AVAudioPlayerNode/prepareWithFrameCount:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("prepareWithFrameCount:")
     public native void prepareWithFrameCount(int frameCount);
@@ -252,38 +224,22 @@ public class AVAudioPlayerNode extends AVAudioNode implements AVAudioMixing {
     @Selector("reverbBlend")
     public native float reverbBlend();
 
-    /**
-     * scheduleBuffer:atTime:options:completionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioPlayerNode_Class/index.html#//apple_ref/occ/instm/AVAudioPlayerNode/scheduleBuffer:atTime:options:completionHandler:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("scheduleBuffer:atTime:options:completionHandler:")
     public native void scheduleBufferAtTimeOptionsCompletionHandler(AVAudioPCMBuffer buffer, AVAudioTime when,
             @NUInt long options,
             @ObjCBlock(name = "call_scheduleBufferAtTimeOptionsCompletionHandler") Block_scheduleBufferAtTimeOptionsCompletionHandler completionHandler);
 
-    /**
-     * scheduleBuffer:completionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioPlayerNode_Class/index.html#//apple_ref/occ/instm/AVAudioPlayerNode/scheduleBuffer:completionHandler:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("scheduleBuffer:completionHandler:")
     public native void scheduleBufferCompletionHandler(AVAudioPCMBuffer buffer,
             @ObjCBlock(name = "call_scheduleBufferCompletionHandler") Block_scheduleBufferCompletionHandler completionHandler);
 
-    /**
-     * scheduleFile:atTime:completionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioPlayerNode_Class/index.html#//apple_ref/occ/instm/AVAudioPlayerNode/scheduleFile:atTime:completionHandler:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("scheduleFile:atTime:completionHandler:")
     public native void scheduleFileAtTimeCompletionHandler(AVAudioFile file, AVAudioTime when,
             @ObjCBlock(name = "call_scheduleFileAtTimeCompletionHandler") Block_scheduleFileAtTimeCompletionHandler completionHandler);
 
-    /**
-     * scheduleSegment:startingFrame:frameCount:atTime:completionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioPlayerNode_Class/index.html#//apple_ref/occ/instm/AVAudioPlayerNode/scheduleSegment:startingFrame:frameCount:atTime:completionHandler:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("scheduleSegment:startingFrame:frameCount:atTime:completionHandler:")
     public native void scheduleSegmentStartingFrameFrameCountAtTimeCompletionHandler(AVAudioFile file, long startFrame,
@@ -322,10 +278,6 @@ public class AVAudioPlayerNode extends AVAudioNode implements AVAudioMixing {
     @Selector("setVolume:")
     public native void setVolume(float value);
 
-    /**
-     * stop</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioPlayerNode_Class/index.html#//apple_ref/occ/instm/AVAudioPlayerNode/stop">iOS Dev Center</a>
-     */
     @Generated
     @Selector("stop")
     public native void stop();

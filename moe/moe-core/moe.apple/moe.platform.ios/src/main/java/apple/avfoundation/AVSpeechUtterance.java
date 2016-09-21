@@ -62,10 +62,6 @@ public class AVSpeechUtterance extends NSObject implements NSCopying, NSSecureCo
     @Selector("alloc")
     public static native AVSpeechUtterance alloc();
 
-    /**
-     * speechUtteranceWithString:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVSpeechUtterance_Ref/index.html#//apple_ref/occ/clm/AVSpeechUtterance/speechUtteranceWithString:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("speechUtteranceWithString:")
     public static native AVSpeechUtterance speechUtteranceWithString(String string);
@@ -192,98 +188,50 @@ public class AVSpeechUtterance extends NSObject implements NSCopying, NSSecureCo
     @Selector("initWithCoder:")
     public native AVSpeechUtterance initWithCoder(NSCoder aDecoder);
 
-    /**
-     * initWithString:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVSpeechUtterance_Ref/index.html#//apple_ref/occ/instm/AVSpeechUtterance/initWithString:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithString:")
     public native AVSpeechUtterance initWithString(String string);
 
-    /**
-     * pitchMultiplier</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVSpeechUtterance_Ref/index.html#//apple_ref/occ/instp/AVSpeechUtterance/pitchMultiplier">iOS Dev Center</a>
-     */
     @Generated
     @Selector("pitchMultiplier")
     public native float pitchMultiplier();
 
-    /**
-     * postUtteranceDelay</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVSpeechUtterance_Ref/index.html#//apple_ref/occ/instp/AVSpeechUtterance/postUtteranceDelay">iOS Dev Center</a>
-     */
     @Generated
     @Selector("postUtteranceDelay")
     public native double postUtteranceDelay();
 
-    /**
-     * preUtteranceDelay</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVSpeechUtterance_Ref/index.html#//apple_ref/occ/instp/AVSpeechUtterance/preUtteranceDelay">iOS Dev Center</a>
-     */
     @Generated
     @Selector("preUtteranceDelay")
     public native double preUtteranceDelay();
 
-    /**
-     * rate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVSpeechUtterance_Ref/index.html#//apple_ref/occ/instp/AVSpeechUtterance/rate">iOS Dev Center</a>
-     */
     @Generated
     @Selector("rate")
     public native float rate();
 
-    /**
-     * pitchMultiplier</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVSpeechUtterance_Ref/index.html#//apple_ref/occ/instp/AVSpeechUtterance/pitchMultiplier">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setPitchMultiplier:")
     public native void setPitchMultiplier(float value);
 
-    /**
-     * postUtteranceDelay</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVSpeechUtterance_Ref/index.html#//apple_ref/occ/instp/AVSpeechUtterance/postUtteranceDelay">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setPostUtteranceDelay:")
     public native void setPostUtteranceDelay(double value);
 
-    /**
-     * preUtteranceDelay</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVSpeechUtterance_Ref/index.html#//apple_ref/occ/instp/AVSpeechUtterance/preUtteranceDelay">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setPreUtteranceDelay:")
     public native void setPreUtteranceDelay(double value);
 
-    /**
-     * rate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVSpeechUtterance_Ref/index.html#//apple_ref/occ/instp/AVSpeechUtterance/rate">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setRate:")
     public native void setRate(float value);
 
-    /**
-     * voice</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVSpeechUtterance_Ref/index.html#//apple_ref/occ/instp/AVSpeechUtterance/voice">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setVoice:")
     public native void setVoice(AVSpeechSynthesisVoice value);
 
-    /**
-     * volume</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVSpeechUtterance_Ref/index.html#//apple_ref/occ/instp/AVSpeechUtterance/volume">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setVolume:")
     public native void setVolume(float value);
 
-    /**
-     * speechString</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVSpeechUtterance_Ref/index.html#//apple_ref/occ/instp/AVSpeechUtterance/speechString">iOS Dev Center</a>
-     */
     @Generated
     @Selector("speechString")
     public native String speechString();
@@ -294,18 +242,10 @@ public class AVSpeechUtterance extends NSObject implements NSCopying, NSSecureCo
         return supportsSecureCoding();
     }
 
-    /**
-     * voice</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVSpeechUtterance_Ref/index.html#//apple_ref/occ/instp/AVSpeechUtterance/voice">iOS Dev Center</a>
-     */
     @Generated
     @Selector("voice")
     public native AVSpeechSynthesisVoice voice();
 
-    /**
-     * volume</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVSpeechUtterance_Ref/index.html#//apple_ref/occ/instp/AVSpeechUtterance/volume">iOS Dev Center</a>
-     */
     @Generated
     @Selector("volume")
     public native float volume();

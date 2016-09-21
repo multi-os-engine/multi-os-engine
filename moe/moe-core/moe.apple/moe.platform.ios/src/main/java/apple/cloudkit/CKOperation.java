@@ -160,18 +160,10 @@ public class CKOperation extends NSOperation {
     @NInt
     public static native long version();
 
-    /**
-     * allowsCellularAccess</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKOperation_class/index.html#//apple_ref/occ/instp/CKOperation/allowsCellularAccess">iOS Dev Center</a>
-     */
     @Generated
     @Selector("allowsCellularAccess")
     public native boolean allowsCellularAccess();
 
-    /**
-     * container</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKOperation_class/index.html#//apple_ref/occ/instp/CKOperation/container">iOS Dev Center</a>
-     */
     @Generated
     @Selector("container")
     public native CKContainer container();
@@ -180,77 +172,41 @@ public class CKOperation extends NSOperation {
     @Selector("init")
     public native CKOperation init();
 
-    /**
-     * allowsCellularAccess</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKOperation_class/index.html#//apple_ref/occ/instp/CKOperation/allowsCellularAccess">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setAllowsCellularAccess:")
     public native void setAllowsCellularAccess(boolean value);
 
-    /**
-     * container</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKOperation_class/index.html#//apple_ref/occ/instp/CKOperation/container">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setContainer:")
     public native void setContainer(CKContainer value);
 
-    /**
-     * usesBackgroundSession</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKOperation_class/index.html#//apple_ref/occ/instp/CKOperation/usesBackgroundSession">iOS Dev Center</a>
-     */
     @Deprecated
     @Generated
     @Selector("setUsesBackgroundSession:")
     public native void setUsesBackgroundSession(boolean value);
 
-    /**
-     * usesBackgroundSession</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKOperation_class/index.html#//apple_ref/occ/instp/CKOperation/usesBackgroundSession">iOS Dev Center</a>
-     */
     @Deprecated
     @Generated
     @Selector("usesBackgroundSession")
     public native boolean usesBackgroundSession();
 
-    /**
-     * longLived</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKOperation_class/index.html#//apple_ref/occ/instp/CKOperation/longLived">iOS Dev Center</a>
-     */
     @Generated
     @Selector("isLongLived")
     public native boolean isLongLived();
 
-    /**
-     * longLived</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKOperation_class/index.html#//apple_ref/occ/instp/CKOperation/longLived">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setLongLived:")
     public native void setLongLived(boolean value);
 
-    /**
-     * longLivedOperationWasPersistedBlock</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKOperation_class/index.html#//apple_ref/occ/instp/CKOperation/longLivedOperationWasPersistedBlock">iOS Dev Center</a>
-     */
     @Generated
     @Selector("longLivedOperationWasPersistedBlock")
     @ObjCBlock(name = "call_longLivedOperationWasPersistedBlock_ret")
     public native Block_longLivedOperationWasPersistedBlock_ret longLivedOperationWasPersistedBlock();
 
-    /**
-     * operationID</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKOperation_class/index.html#//apple_ref/occ/instp/CKOperation/operationID">iOS Dev Center</a>
-     */
     @Generated
     @Selector("operationID")
     public native String operationID();
 
-    /**
-     * longLivedOperationWasPersistedBlock</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKOperation_class/index.html#//apple_ref/occ/instp/CKOperation/longLivedOperationWasPersistedBlock">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setLongLivedOperationWasPersistedBlock:")
     public native void setLongLivedOperationWasPersistedBlock(

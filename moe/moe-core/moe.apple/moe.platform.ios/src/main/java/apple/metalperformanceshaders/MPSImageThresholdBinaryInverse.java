@@ -168,36 +168,20 @@ public class MPSImageThresholdBinaryInverse extends MPSUnaryImageKernel {
     @Selector("initWithDevice:")
     public native MPSImageThresholdBinaryInverse initWithDevice(@Mapped(ObjCObjectMapper.class) MTLDevice device);
 
-    /**
-     * initWithDevice:thresholdValue:maximumValue:linearGrayColorTransform:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MetalPerformanceShaders/Reference/MPSImageThresholdBinaryInverse_ClassReference/index.html#//apple_ref/occ/instm/MPSImageThresholdBinaryInverse/initWithDevice:thresholdValue:maximumValue:linearGrayColorTransform:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithDevice:thresholdValue:maximumValue:linearGrayColorTransform:")
     public native MPSImageThresholdBinaryInverse initWithDeviceThresholdValueMaximumValueLinearGrayColorTransform(
             @Mapped(ObjCObjectMapper.class) MTLDevice device, float thresholdValue, float maximumValue,
             ConstFloatPtr transform);
 
-    /**
-     * maximumValue</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MetalPerformanceShaders/Reference/MPSImageThresholdBinaryInverse_ClassReference/index.html#//apple_ref/occ/instp/MPSImageThresholdBinaryInverse/maximumValue">iOS Dev Center</a>
-     */
     @Generated
     @Selector("maximumValue")
     public native float maximumValue();
 
-    /**
-     * thresholdValue</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MetalPerformanceShaders/Reference/MPSImageThresholdBinaryInverse_ClassReference/index.html#//apple_ref/occ/instp/MPSImageThresholdBinaryInverse/thresholdValue">iOS Dev Center</a>
-     */
     @Generated
     @Selector("thresholdValue")
     public native float thresholdValue();
 
-    /**
-     * transform</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MetalPerformanceShaders/Reference/MPSImageThresholdBinaryInverse_ClassReference/index.html#//apple_ref/occ/instp/MPSImageThresholdBinaryInverse/transform">iOS Dev Center</a>
-     */
     @Generated
     @Selector("transform")
     public native ConstFloatPtr transform();

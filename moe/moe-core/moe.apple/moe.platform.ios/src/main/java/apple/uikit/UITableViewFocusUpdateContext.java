@@ -163,18 +163,10 @@ public class UITableViewFocusUpdateContext extends UIFocusUpdateContext {
     @Selector("init")
     public native UITableViewFocusUpdateContext init();
 
-    /**
-     * nextFocusedIndexPath</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITableViewFocusUpdateContext_Class/index.html#//apple_ref/occ/instp/UITableViewFocusUpdateContext/nextFocusedIndexPath">iOS Dev Center</a>
-     */
     @Generated
     @Selector("nextFocusedIndexPath")
     public native NSIndexPath nextFocusedIndexPath();
 
-    /**
-     * previouslyFocusedIndexPath</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITableViewFocusUpdateContext_Class/index.html#//apple_ref/occ/instp/UITableViewFocusUpdateContext/previouslyFocusedIndexPath">iOS Dev Center</a>
-     */
     @Generated
     @Selector("previouslyFocusedIndexPath")
     public native NSIndexPath previouslyFocusedIndexPath();

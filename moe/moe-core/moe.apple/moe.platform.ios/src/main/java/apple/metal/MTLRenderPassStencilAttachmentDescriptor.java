@@ -158,10 +158,6 @@ public class MTLRenderPassStencilAttachmentDescriptor extends MTLRenderPassAttac
     @NInt
     public static native long version_static();
 
-    /**
-     * clearStencil</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/help/MTLRenderPassStencilAttachmentDescriptor_Ref/index.html#//apple_ref/occ/instp/MTLRenderPassStencilAttachmentDescriptor/clearStencil">iOS Dev Center</a>
-     */
     @Generated
     @Selector("clearStencil")
     public native int clearStencil();
@@ -170,10 +166,6 @@ public class MTLRenderPassStencilAttachmentDescriptor extends MTLRenderPassAttac
     @Selector("init")
     public native MTLRenderPassStencilAttachmentDescriptor init();
 
-    /**
-     * clearStencil</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/help/MTLRenderPassStencilAttachmentDescriptor_Ref/index.html#//apple_ref/occ/instp/MTLRenderPassStencilAttachmentDescriptor/clearStencil">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setClearStencil:")
     public native void setClearStencil(int value);

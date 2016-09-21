@@ -34,10 +34,6 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("NSFetchedResultsControllerDelegate")
 public interface NSFetchedResultsControllerDelegate {
-    /**
-     * controller:didChangeObject:atIndexPath:forChangeType:newIndexPath:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreData/Reference/NSFetchedResultsControllerDelegate_Protocol/index.html#//apple_ref/occ/intfm/NSFetchedResultsControllerDelegate/controller:didChangeObject:atIndexPath:forChangeType:newIndexPath:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("controller:didChangeObject:atIndexPath:forChangeType:newIndexPath:")
@@ -47,10 +43,6 @@ public interface NSFetchedResultsControllerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * controller:didChangeSection:atIndex:forChangeType:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreData/Reference/NSFetchedResultsControllerDelegate_Protocol/index.html#//apple_ref/occ/intfm/NSFetchedResultsControllerDelegate/controller:didChangeSection:atIndex:forChangeType:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("controller:didChangeSection:atIndex:forChangeType:")
@@ -59,10 +51,6 @@ public interface NSFetchedResultsControllerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * controller:sectionIndexTitleForSectionName:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreData/Reference/NSFetchedResultsControllerDelegate_Protocol/index.html#//apple_ref/occ/intfm/NSFetchedResultsControllerDelegate/controller:sectionIndexTitleForSectionName:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("controller:sectionIndexTitleForSectionName:")
@@ -71,10 +59,6 @@ public interface NSFetchedResultsControllerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * controllerDidChangeContent:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreData/Reference/NSFetchedResultsControllerDelegate_Protocol/index.html#//apple_ref/occ/intfm/NSFetchedResultsControllerDelegate/controllerDidChangeContent:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("controllerDidChangeContent:")
@@ -82,10 +66,6 @@ public interface NSFetchedResultsControllerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * controllerWillChangeContent:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreData/Reference/NSFetchedResultsControllerDelegate_Protocol/index.html#//apple_ref/occ/intfm/NSFetchedResultsControllerDelegate/controllerWillChangeContent:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("controllerWillChangeContent:")

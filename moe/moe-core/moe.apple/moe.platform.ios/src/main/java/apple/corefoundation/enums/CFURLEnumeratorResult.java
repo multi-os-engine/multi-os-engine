@@ -25,6 +25,7 @@ public final class CFURLEnumeratorResult {
     @Generated @NInt public static final long End = 0x0000000000000002L;
     @Generated @NInt public static final long Error = 0x0000000000000003L;
     @Generated @NInt public static final long DirectoryPostOrderSuccess = 0x0000000000000004L;
+
     @Generated
     private CFURLEnumeratorResult() {
     }

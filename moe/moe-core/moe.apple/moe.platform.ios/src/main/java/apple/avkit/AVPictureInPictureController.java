@@ -62,10 +62,6 @@ public class AVPictureInPictureController extends NSObject {
     @Selector("alloc")
     public static native AVPictureInPictureController alloc();
 
-    /**
-     * isPictureInPictureSupported</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVKit/Reference/AVPictureInPictureController_Class/index.html#//apple_ref/occ/clm/AVPictureInPictureController/isPictureInPictureSupported">iOS Dev Center</a>
-     */
     @Generated
     @Selector("isPictureInPictureSupported")
     public static native boolean isPictureInPictureSupported();
@@ -180,10 +176,6 @@ public class AVPictureInPictureController extends NSObject {
     @NInt
     public static native long version_static();
 
-    /**
-     * delegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVKit/Reference/AVPictureInPictureController_Class/index.html#//apple_ref/occ/instp/AVPictureInPictureController/delegate">iOS Dev Center</a>
-     */
     @Generated
     @Selector("delegate")
     @MappedReturn(ObjCObjectMapper.class)
@@ -193,58 +185,30 @@ public class AVPictureInPictureController extends NSObject {
     @Selector("init")
     public native AVPictureInPictureController init();
 
-    /**
-     * initWithPlayerLayer:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVKit/Reference/AVPictureInPictureController_Class/index.html#//apple_ref/occ/instm/AVPictureInPictureController/initWithPlayerLayer:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithPlayerLayer:")
     public native AVPictureInPictureController initWithPlayerLayer(AVPlayerLayer playerLayer);
 
-    /**
-     * pictureInPictureActive</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVKit/Reference/AVPictureInPictureController_Class/index.html#//apple_ref/occ/instp/AVPictureInPictureController/pictureInPictureActive">iOS Dev Center</a>
-     */
     @Generated
     @Selector("isPictureInPictureActive")
     public native boolean isPictureInPictureActive();
 
-    /**
-     * pictureInPicturePossible</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVKit/Reference/AVPictureInPictureController_Class/index.html#//apple_ref/occ/instp/AVPictureInPictureController/pictureInPicturePossible">iOS Dev Center</a>
-     */
     @Generated
     @Selector("isPictureInPicturePossible")
     public native boolean isPictureInPicturePossible();
 
-    /**
-     * pictureInPictureSuspended</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVKit/Reference/AVPictureInPictureController_Class/index.html#//apple_ref/occ/instp/AVPictureInPictureController/pictureInPictureSuspended">iOS Dev Center</a>
-     */
     @Generated
     @Selector("isPictureInPictureSuspended")
     public native boolean isPictureInPictureSuspended();
 
-    /**
-     * playerLayer</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVKit/Reference/AVPictureInPictureController_Class/index.html#//apple_ref/occ/instp/AVPictureInPictureController/playerLayer">iOS Dev Center</a>
-     */
     @Generated
     @Selector("playerLayer")
     public native AVPlayerLayer playerLayer();
 
-    /**
-     * delegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVKit/Reference/AVPictureInPictureController_Class/index.html#//apple_ref/occ/instp/AVPictureInPictureController/delegate">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setDelegate:")
     public native void setDelegate_unsafe(@Mapped(ObjCObjectMapper.class) AVPictureInPictureControllerDelegate value);
 
-    /**
-     * delegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVKit/Reference/AVPictureInPictureController_Class/index.html#//apple_ref/occ/instp/AVPictureInPictureController/delegate">iOS Dev Center</a>
-     */
     @Generated
     public void setDelegate(@Mapped(ObjCObjectMapper.class) AVPictureInPictureControllerDelegate value) {
         Object __old = delegate();
@@ -257,18 +221,10 @@ public class AVPictureInPictureController extends NSObject {
         }
     }
 
-    /**
-     * startPictureInPicture</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVKit/Reference/AVPictureInPictureController_Class/index.html#//apple_ref/occ/instm/AVPictureInPictureController/startPictureInPicture">iOS Dev Center</a>
-     */
     @Generated
     @Selector("startPictureInPicture")
     public native void startPictureInPicture();
 
-    /**
-     * stopPictureInPicture</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVKit/Reference/AVPictureInPictureController_Class/index.html#//apple_ref/occ/instm/AVPictureInPictureController/stopPictureInPicture">iOS Dev Center</a>
-     */
     @Generated
     @Selector("stopPictureInPicture")
     public native void stopPictureInPicture();

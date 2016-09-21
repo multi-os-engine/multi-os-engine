@@ -160,10 +160,6 @@ public class MKPointAnnotation extends MKShape {
     @NInt
     public static native long version_static();
 
-    /**
-     * coordinate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKPointAnnotation_class/index.html#//apple_ref/occ/instp/MKPointAnnotation/coordinate">iOS Dev Center</a>
-     */
     @Generated
     @Selector("coordinate")
     @ByValue
@@ -173,10 +169,6 @@ public class MKPointAnnotation extends MKShape {
     @Selector("init")
     public native MKPointAnnotation init();
 
-    /**
-     * coordinate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKPointAnnotation_class/index.html#//apple_ref/occ/instp/MKPointAnnotation/coordinate">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setCoordinate:")
     public native void setCoordinate(@ByValue CLLocationCoordinate2D value);

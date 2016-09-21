@@ -33,10 +33,6 @@ import org.moe.natj.objc.ann.Selector;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("UIPopoverPresentationControllerDelegate")
 public interface UIPopoverPresentationControllerDelegate extends UIAdaptivePresentationControllerDelegate {
-    /**
-     * popoverPresentationController:willRepositionPopoverToRect:inView:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPopoverPresentationControllerDelegate_protocol/index.html#//apple_ref/occ/intfm/UIPopoverPresentationControllerDelegate/popoverPresentationController:willRepositionPopoverToRect:inView:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("popoverPresentationController:willRepositionPopoverToRect:inView:")
@@ -45,10 +41,6 @@ public interface UIPopoverPresentationControllerDelegate extends UIAdaptivePrese
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * popoverPresentationControllerDidDismissPopover:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPopoverPresentationControllerDelegate_protocol/index.html#//apple_ref/occ/intfm/UIPopoverPresentationControllerDelegate/popoverPresentationControllerDidDismissPopover:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("popoverPresentationControllerDidDismissPopover:")
@@ -57,10 +49,6 @@ public interface UIPopoverPresentationControllerDelegate extends UIAdaptivePrese
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * popoverPresentationControllerShouldDismissPopover:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPopoverPresentationControllerDelegate_protocol/index.html#//apple_ref/occ/intfm/UIPopoverPresentationControllerDelegate/popoverPresentationControllerShouldDismissPopover:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("popoverPresentationControllerShouldDismissPopover:")
@@ -69,10 +57,6 @@ public interface UIPopoverPresentationControllerDelegate extends UIAdaptivePrese
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * prepareForPopoverPresentation:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPopoverPresentationControllerDelegate_protocol/index.html#//apple_ref/occ/intfm/UIPopoverPresentationControllerDelegate/prepareForPopoverPresentation:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("prepareForPopoverPresentation:")

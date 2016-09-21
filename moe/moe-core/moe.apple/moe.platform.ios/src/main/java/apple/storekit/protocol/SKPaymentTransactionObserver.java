@@ -34,10 +34,6 @@ import org.moe.natj.objc.ann.Selector;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("SKPaymentTransactionObserver")
 public interface SKPaymentTransactionObserver {
-    /**
-     * paymentQueue:removedTransactions:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/StoreKit/Reference/SKPaymentTransactionObserver_Protocol/index.html#//apple_ref/occ/intfm/SKPaymentTransactionObserver/paymentQueue:removedTransactions:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("paymentQueue:removedTransactions:")
@@ -46,10 +42,6 @@ public interface SKPaymentTransactionObserver {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * paymentQueue:restoreCompletedTransactionsFailedWithError:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/StoreKit/Reference/SKPaymentTransactionObserver_Protocol/index.html#//apple_ref/occ/intfm/SKPaymentTransactionObserver/paymentQueue:restoreCompletedTransactionsFailedWithError:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("paymentQueue:restoreCompletedTransactionsFailedWithError:")
@@ -57,10 +49,6 @@ public interface SKPaymentTransactionObserver {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * paymentQueue:updatedDownloads:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/StoreKit/Reference/SKPaymentTransactionObserver_Protocol/index.html#//apple_ref/occ/intfm/SKPaymentTransactionObserver/paymentQueue:updatedDownloads:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("paymentQueue:updatedDownloads:")
@@ -68,18 +56,10 @@ public interface SKPaymentTransactionObserver {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * paymentQueue:updatedTransactions:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/StoreKit/Reference/SKPaymentTransactionObserver_Protocol/index.html#//apple_ref/occ/intfm/SKPaymentTransactionObserver/paymentQueue:updatedTransactions:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("paymentQueue:updatedTransactions:")
     void paymentQueueUpdatedTransactions(SKPaymentQueue queue, NSArray<? extends SKPaymentTransaction> transactions);
 
-    /**
-     * paymentQueueRestoreCompletedTransactionsFinished:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/StoreKit/Reference/SKPaymentTransactionObserver_Protocol/index.html#//apple_ref/occ/intfm/SKPaymentTransactionObserver/paymentQueueRestoreCompletedTransactionsFinished:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("paymentQueueRestoreCompletedTransactionsFinished:")

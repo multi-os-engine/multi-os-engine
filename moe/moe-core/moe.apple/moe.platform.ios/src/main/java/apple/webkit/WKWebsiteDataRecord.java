@@ -158,18 +158,10 @@ public class WKWebsiteDataRecord extends NSObject {
     @NInt
     public static native long version();
 
-    /**
-     * dataTypes</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WebKit/Reference/WKWebsiteDataRecord_Class_Ref/index.html#//apple_ref/occ/instp/WKWebsiteDataRecord/dataTypes">iOS Dev Center</a>
-     */
     @Generated
     @Selector("dataTypes")
     public native NSSet<String> dataTypes();
 
-    /**
-     * displayName</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WebKit/Reference/WKWebsiteDataRecord_Class_Ref/index.html#//apple_ref/occ/instp/WKWebsiteDataRecord/displayName">iOS Dev Center</a>
-     */
     @Generated
     @Selector("displayName")
     public native String displayName();

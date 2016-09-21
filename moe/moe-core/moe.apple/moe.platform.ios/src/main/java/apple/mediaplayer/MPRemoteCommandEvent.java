@@ -158,10 +158,6 @@ public class MPRemoteCommandEvent extends NSObject {
     @NInt
     public static native long version();
 
-    /**
-     * command</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPRemoteCommandEvent_Ref/index.html#//apple_ref/occ/instp/MPRemoteCommandEvent/command">iOS Dev Center</a>
-     */
     @Generated
     @Selector("command")
     public native MPRemoteCommand command();
@@ -170,10 +166,6 @@ public class MPRemoteCommandEvent extends NSObject {
     @Selector("init")
     public native MPRemoteCommandEvent init();
 
-    /**
-     * timestamp</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPRemoteCommandEvent_Ref/index.html#//apple_ref/occ/instp/MPRemoteCommandEvent/timestamp">iOS Dev Center</a>
-     */
     @Generated
     @Selector("timestamp")
     public native double timestamp();

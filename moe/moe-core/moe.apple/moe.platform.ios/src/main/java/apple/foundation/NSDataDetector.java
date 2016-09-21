@@ -57,10 +57,6 @@ public class NSDataDetector extends NSRegularExpression {
     @Selector("alloc")
     public static native NSDataDetector alloc();
 
-    /**
-     * dataDetectorWithTypes:error:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSDataDetector_Class/index.html#//apple_ref/occ/clm/NSDataDetector/dataDetectorWithTypes:error:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("dataDetectorWithTypes:error:")
     public static native NSDataDetector dataDetectorWithTypesError(long checkingTypes, Ptr<NSError> error);
@@ -182,10 +178,6 @@ public class NSDataDetector extends NSRegularExpression {
     @NInt
     public static native long version_static();
 
-    /**
-     * checkingTypes</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSDataDetector_Class/index.html#//apple_ref/occ/instp/NSDataDetector/checkingTypes">iOS Dev Center</a>
-     */
     @Generated
     @Selector("checkingTypes")
     public native long checkingTypes();
@@ -198,10 +190,6 @@ public class NSDataDetector extends NSRegularExpression {
     @Selector("initWithPattern:options:error:")
     public native NSDataDetector initWithPatternOptionsError(String pattern, @NUInt long options, Ptr<NSError> error);
 
-    /**
-     * initWithTypes:error:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSDataDetector_Class/index.html#//apple_ref/occ/instm/NSDataDetector/initWithTypes:error:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithTypes:error:")
     public native NSDataDetector initWithTypesError(long checkingTypes, Ptr<NSError> error);

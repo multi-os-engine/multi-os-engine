@@ -62,43 +62,23 @@ public class NEFilterDataVerdict extends NEFilterVerdict implements NSSecureCodi
     @Selector("alloc")
     public static native NEFilterDataVerdict alloc();
 
-    /**
-     * allowVerdict</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEFilterDataVerdictClassRef/index.html#//apple_ref/occ/clm/NEFilterDataVerdict/allowVerdict">iOS Dev Center</a>
-     */
     @Generated
     @Selector("allowVerdict")
     public static native NEFilterDataVerdict allowVerdict();
 
-    /**
-     * dataVerdictWithPassBytes:peekBytes:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEFilterDataVerdictClassRef/index.html#//apple_ref/occ/clm/NEFilterDataVerdict/dataVerdictWithPassBytes:peekBytes:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("dataVerdictWithPassBytes:peekBytes:")
     public static native NEFilterDataVerdict dataVerdictWithPassBytesPeekBytes(@NUInt long passBytes,
             @NUInt long peekBytes);
 
-    /**
-     * dropVerdict</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEFilterDataVerdictClassRef/index.html#//apple_ref/occ/clm/NEFilterDataVerdict/dropVerdict">iOS Dev Center</a>
-     */
     @Generated
     @Selector("dropVerdict")
     public static native NEFilterDataVerdict dropVerdict();
 
-    /**
-     * needRulesVerdict</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEFilterDataVerdictClassRef/index.html#//apple_ref/occ/clm/NEFilterDataVerdict/needRulesVerdict">iOS Dev Center</a>
-     */
     @Generated
     @Selector("needRulesVerdict")
     public static native NEFilterDataVerdict needRulesVerdict();
 
-    /**
-     * remediateVerdictWithRemediationURLMapKey:remediationButtonTextMapKey:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEFilterDataVerdictClassRef/index.html#//apple_ref/occ/clm/NEFilterDataVerdict/remediateVerdictWithRemediationURLMapKey:remediationButtonTextMapKey:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("remediateVerdictWithRemediationURLMapKey:remediationButtonTextMapKey:")
     public static native NEFilterDataVerdict remediateVerdictWithRemediationURLMapKeyRemediationButtonTextMapKey(

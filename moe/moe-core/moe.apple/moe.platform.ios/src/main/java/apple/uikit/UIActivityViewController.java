@@ -174,10 +174,6 @@ public class UIActivityViewController extends UIViewController {
     @NInt
     public static native long version_static();
 
-    /**
-     * excludedActivityTypes</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIActivityViewController_Class/index.html#//apple_ref/occ/instp/UIActivityViewController/excludedActivityTypes">iOS Dev Center</a>
-     */
     @Generated
     @Selector("excludedActivityTypes")
     public native NSArray<String> excludedActivityTypes();
@@ -186,10 +182,6 @@ public class UIActivityViewController extends UIViewController {
     @Selector("init")
     public native UIActivityViewController init();
 
-    /**
-     * initWithActivityItems:applicationActivities:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIActivityViewController_Class/index.html#//apple_ref/occ/instm/UIActivityViewController/initWithActivityItems:applicationActivities:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithActivityItems:applicationActivities:")
     public native UIActivityViewController initWithActivityItemsApplicationActivities(NSArray<?> activityItems,
@@ -199,47 +191,27 @@ public class UIActivityViewController extends UIViewController {
     @Selector("initWithNibName:bundle:")
     public native UIActivityViewController initWithNibNameBundle(String nibNameOrNil, NSBundle nibBundleOrNil);
 
-    /**
-     * completionHandler</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIActivityViewController_Class/index.html#//apple_ref/occ/instp/UIActivityViewController/completionHandler">iOS Dev Center</a>
-     */
     @Generated
     @Deprecated
     @Selector("setCompletionHandler:")
     public native void setCompletionHandler(
             @ObjCBlock(name = "call_setCompletionHandler") Block_setCompletionHandler value);
 
-    /**
-     * completionWithItemsHandler</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIActivityViewController_Class/index.html#//apple_ref/occ/instp/UIActivityViewController/completionWithItemsHandler">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setCompletionWithItemsHandler:")
     public native void setCompletionWithItemsHandler(
             @ObjCBlock(name = "call_setCompletionWithItemsHandler") Block_setCompletionWithItemsHandler value);
 
-    /**
-     * excludedActivityTypes</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIActivityViewController_Class/index.html#//apple_ref/occ/instp/UIActivityViewController/excludedActivityTypes">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setExcludedActivityTypes:")
     public native void setExcludedActivityTypes(NSArray<String> value);
 
-    /**
-     * completionHandler</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIActivityViewController_Class/index.html#//apple_ref/occ/instp/UIActivityViewController/completionHandler">iOS Dev Center</a>
-     */
     @Generated
     @Deprecated
     @Selector("completionHandler")
     @ObjCBlock(name = "call_completionHandler_ret")
     public native Block_completionHandler_ret completionHandler();
 
-    /**
-     * completionWithItemsHandler</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIActivityViewController_Class/index.html#//apple_ref/occ/instp/UIActivityViewController/completionWithItemsHandler">iOS Dev Center</a>
-     */
     @Generated
     @Selector("completionWithItemsHandler")
     @ObjCBlock(name = "call_completionWithItemsHandler_ret")

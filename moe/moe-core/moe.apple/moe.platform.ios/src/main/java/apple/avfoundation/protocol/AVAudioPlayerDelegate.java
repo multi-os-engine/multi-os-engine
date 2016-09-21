@@ -32,10 +32,6 @@ import org.moe.natj.objc.ann.Selector;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("AVAudioPlayerDelegate")
 public interface AVAudioPlayerDelegate {
-    /**
-     * audioPlayerBeginInterruption:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioPlayerDelegateProtocolReference/index.html#//apple_ref/occ/intfm/AVAudioPlayerDelegate/audioPlayerBeginInterruption:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Deprecated
@@ -44,10 +40,6 @@ public interface AVAudioPlayerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * audioPlayerDecodeErrorDidOccur:error:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioPlayerDelegateProtocolReference/index.html#//apple_ref/occ/intfm/AVAudioPlayerDelegate/audioPlayerDecodeErrorDidOccur:error:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("audioPlayerDecodeErrorDidOccur:error:")
@@ -55,10 +47,6 @@ public interface AVAudioPlayerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * audioPlayerDidFinishPlaying:successfully:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioPlayerDelegateProtocolReference/index.html#//apple_ref/occ/intfm/AVAudioPlayerDelegate/audioPlayerDidFinishPlaying:successfully:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("audioPlayerDidFinishPlaying:successfully:")
@@ -66,10 +54,6 @@ public interface AVAudioPlayerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * audioPlayerEndInterruption:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioPlayerDelegateProtocolReference/index.html#//apple_ref/occ/intfm/AVAudioPlayerDelegate/audioPlayerEndInterruption:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Deprecated
@@ -78,10 +62,6 @@ public interface AVAudioPlayerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * audioPlayerEndInterruption:withFlags:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioPlayerDelegateProtocolReference/index.html#//apple_ref/occ/intfm/AVAudioPlayerDelegate/audioPlayerEndInterruption:withFlags:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Deprecated
@@ -90,10 +70,6 @@ public interface AVAudioPlayerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * audioPlayerEndInterruption:withOptions:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioPlayerDelegateProtocolReference/index.html#//apple_ref/occ/intfm/AVAudioPlayerDelegate/audioPlayerEndInterruption:withOptions:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Deprecated

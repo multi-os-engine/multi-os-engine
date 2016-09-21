@@ -64,102 +64,58 @@ public class UIFieldBehavior extends UIDynamicBehavior {
     @Selector("alloc")
     public static native UIFieldBehavior alloc();
 
-    /**
-     * dragField</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIFieldBehavior_class/index.html#//apple_ref/occ/clm/UIFieldBehavior/dragField">iOS Dev Center</a>
-     */
     @Generated
     @Selector("dragField")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object dragField();
 
-    /**
-     * electricField</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIFieldBehavior_class/index.html#//apple_ref/occ/clm/UIFieldBehavior/electricField">iOS Dev Center</a>
-     */
     @Generated
     @Selector("electricField")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object electricField();
 
-    /**
-     * fieldWithEvaluationBlock:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIFieldBehavior_class/index.html#//apple_ref/occ/clm/UIFieldBehavior/fieldWithEvaluationBlock:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("fieldWithEvaluationBlock:")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object fieldWithEvaluationBlock(
             @ObjCBlock(name = "call_fieldWithEvaluationBlock") Block_fieldWithEvaluationBlock block);
 
-    /**
-     * linearGravityFieldWithVector:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIFieldBehavior_class/index.html#//apple_ref/occ/clm/UIFieldBehavior/linearGravityFieldWithVector:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("linearGravityFieldWithVector:")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object linearGravityFieldWithVector(@ByValue CGVector direction);
 
-    /**
-     * magneticField</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIFieldBehavior_class/index.html#//apple_ref/occ/clm/UIFieldBehavior/magneticField">iOS Dev Center</a>
-     */
     @Generated
     @Selector("magneticField")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object magneticField();
 
-    /**
-     * noiseFieldWithSmoothness:animationSpeed:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIFieldBehavior_class/index.html#//apple_ref/occ/clm/UIFieldBehavior/noiseFieldWithSmoothness:animationSpeed:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("noiseFieldWithSmoothness:animationSpeed:")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object noiseFieldWithSmoothnessAnimationSpeed(@NFloat double smoothness, @NFloat double speed);
 
-    /**
-     * radialGravityFieldWithPosition:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIFieldBehavior_class/index.html#//apple_ref/occ/clm/UIFieldBehavior/radialGravityFieldWithPosition:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("radialGravityFieldWithPosition:")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object radialGravityFieldWithPosition(@ByValue CGPoint position);
 
-    /**
-     * springField</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIFieldBehavior_class/index.html#//apple_ref/occ/clm/UIFieldBehavior/springField">iOS Dev Center</a>
-     */
     @Generated
     @Selector("springField")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object springField();
 
-    /**
-     * turbulenceFieldWithSmoothness:animationSpeed:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIFieldBehavior_class/index.html#//apple_ref/occ/clm/UIFieldBehavior/turbulenceFieldWithSmoothness:animationSpeed:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("turbulenceFieldWithSmoothness:animationSpeed:")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object turbulenceFieldWithSmoothnessAnimationSpeed(@NFloat double smoothness,
             @NFloat double speed);
 
-    /**
-     * velocityFieldWithVector:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIFieldBehavior_class/index.html#//apple_ref/occ/clm/UIFieldBehavior/velocityFieldWithVector:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("velocityFieldWithVector:")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object velocityFieldWithVector(@ByValue CGVector direction);
 
-    /**
-     * vortexField</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIFieldBehavior_class/index.html#//apple_ref/occ/clm/UIFieldBehavior/vortexField">iOS Dev Center</a>
-     */
     @Generated
     @Selector("vortexField")
     @MappedReturn(ObjCObjectMapper.class)
@@ -265,36 +221,20 @@ public class UIFieldBehavior extends UIDynamicBehavior {
     @NInt
     public static native long version();
 
-    /**
-     * addItem:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIFieldBehavior_class/index.html#//apple_ref/occ/instm/UIFieldBehavior/addItem:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("addItem:")
     public native void addItem(@Mapped(ObjCObjectMapper.class) UIDynamicItem item);
 
-    /**
-     * animationSpeed</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIFieldBehavior_class/index.html#//apple_ref/occ/instp/UIFieldBehavior/animationSpeed">iOS Dev Center</a>
-     */
     @Generated
     @Selector("animationSpeed")
     @NFloat
     public native double animationSpeed();
 
-    /**
-     * direction</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIFieldBehavior_class/index.html#//apple_ref/occ/instp/UIFieldBehavior/direction">iOS Dev Center</a>
-     */
     @Generated
     @Selector("direction")
     @ByValue
     public native CGVector direction();
 
-    /**
-     * falloff</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIFieldBehavior_class/index.html#//apple_ref/occ/instp/UIFieldBehavior/falloff">iOS Dev Center</a>
-     */
     @Generated
     @Selector("falloff")
     @NFloat
@@ -304,125 +244,65 @@ public class UIFieldBehavior extends UIDynamicBehavior {
     @Selector("init")
     public native UIFieldBehavior init();
 
-    /**
-     * items</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIFieldBehavior_class/index.html#//apple_ref/occ/instp/UIFieldBehavior/items">iOS Dev Center</a>
-     */
     @Generated
     @Selector("items")
     public native NSArray<?> items();
 
-    /**
-     * minimumRadius</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIFieldBehavior_class/index.html#//apple_ref/occ/instp/UIFieldBehavior/minimumRadius">iOS Dev Center</a>
-     */
     @Generated
     @Selector("minimumRadius")
     @NFloat
     public native double minimumRadius();
 
-    /**
-     * position</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIFieldBehavior_class/index.html#//apple_ref/occ/instp/UIFieldBehavior/position">iOS Dev Center</a>
-     */
     @Generated
     @Selector("position")
     @ByValue
     public native CGPoint position();
 
-    /**
-     * region</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIFieldBehavior_class/index.html#//apple_ref/occ/instp/UIFieldBehavior/region">iOS Dev Center</a>
-     */
     @Generated
     @Selector("region")
     public native UIRegion region();
 
-    /**
-     * removeItem:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIFieldBehavior_class/index.html#//apple_ref/occ/instm/UIFieldBehavior/removeItem:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("removeItem:")
     public native void removeItem(@Mapped(ObjCObjectMapper.class) UIDynamicItem item);
 
-    /**
-     * animationSpeed</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIFieldBehavior_class/index.html#//apple_ref/occ/instp/UIFieldBehavior/animationSpeed">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setAnimationSpeed:")
     public native void setAnimationSpeed(@NFloat double value);
 
-    /**
-     * direction</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIFieldBehavior_class/index.html#//apple_ref/occ/instp/UIFieldBehavior/direction">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setDirection:")
     public native void setDirection(@ByValue CGVector value);
 
-    /**
-     * falloff</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIFieldBehavior_class/index.html#//apple_ref/occ/instp/UIFieldBehavior/falloff">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setFalloff:")
     public native void setFalloff(@NFloat double value);
 
-    /**
-     * minimumRadius</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIFieldBehavior_class/index.html#//apple_ref/occ/instp/UIFieldBehavior/minimumRadius">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setMinimumRadius:")
     public native void setMinimumRadius(@NFloat double value);
 
-    /**
-     * position</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIFieldBehavior_class/index.html#//apple_ref/occ/instp/UIFieldBehavior/position">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setPosition:")
     public native void setPosition(@ByValue CGPoint value);
 
-    /**
-     * region</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIFieldBehavior_class/index.html#//apple_ref/occ/instp/UIFieldBehavior/region">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setRegion:")
     public native void setRegion(UIRegion value);
 
-    /**
-     * smoothness</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIFieldBehavior_class/index.html#//apple_ref/occ/instp/UIFieldBehavior/smoothness">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setSmoothness:")
     public native void setSmoothness(@NFloat double value);
 
-    /**
-     * strength</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIFieldBehavior_class/index.html#//apple_ref/occ/instp/UIFieldBehavior/strength">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setStrength:")
     public native void setStrength(@NFloat double value);
 
-    /**
-     * smoothness</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIFieldBehavior_class/index.html#//apple_ref/occ/instp/UIFieldBehavior/smoothness">iOS Dev Center</a>
-     */
     @Generated
     @Selector("smoothness")
     @NFloat
     public native double smoothness();
 
-    /**
-     * strength</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIFieldBehavior_class/index.html#//apple_ref/occ/instp/UIFieldBehavior/strength">iOS Dev Center</a>
-     */
     @Generated
     @Selector("strength")
     @NFloat

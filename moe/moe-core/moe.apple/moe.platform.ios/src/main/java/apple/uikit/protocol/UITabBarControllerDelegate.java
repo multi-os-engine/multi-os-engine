@@ -37,10 +37,6 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("UITabBarControllerDelegate")
 public interface UITabBarControllerDelegate {
-    /**
-     * tabBarController:animationControllerForTransitionFromViewController:toViewController:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITabBarControllerDelegate_Protocol/index.html#//apple_ref/occ/intfm/UITabBarControllerDelegate/tabBarController:animationControllerForTransitionFromViewController:toViewController:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("tabBarController:animationControllerForTransitionFromViewController:toViewController:")
@@ -50,10 +46,6 @@ public interface UITabBarControllerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * tabBarController:didEndCustomizingViewControllers:changed:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITabBarControllerDelegate_Protocol/index.html#//apple_ref/occ/intfm/UITabBarControllerDelegate/tabBarController:didEndCustomizingViewControllers:changed:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("tabBarController:didEndCustomizingViewControllers:changed:")
@@ -62,10 +54,6 @@ public interface UITabBarControllerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * tabBarController:didSelectViewController:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITabBarControllerDelegate_Protocol/index.html#//apple_ref/occ/intfm/UITabBarControllerDelegate/tabBarController:didSelectViewController:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("tabBarController:didSelectViewController:")
@@ -74,10 +62,6 @@ public interface UITabBarControllerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * tabBarController:interactionControllerForAnimationController:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITabBarControllerDelegate_Protocol/index.html#//apple_ref/occ/intfm/UITabBarControllerDelegate/tabBarController:interactionControllerForAnimationController:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("tabBarController:interactionControllerForAnimationController:")
@@ -87,10 +71,6 @@ public interface UITabBarControllerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * tabBarController:shouldSelectViewController:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITabBarControllerDelegate_Protocol/index.html#//apple_ref/occ/intfm/UITabBarControllerDelegate/tabBarController:shouldSelectViewController:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("tabBarController:shouldSelectViewController:")
@@ -99,10 +79,6 @@ public interface UITabBarControllerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * tabBarController:willBeginCustomizingViewControllers:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITabBarControllerDelegate_Protocol/index.html#//apple_ref/occ/intfm/UITabBarControllerDelegate/tabBarController:willBeginCustomizingViewControllers:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("tabBarController:willBeginCustomizingViewControllers:")
@@ -111,10 +87,6 @@ public interface UITabBarControllerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * tabBarController:willEndCustomizingViewControllers:changed:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITabBarControllerDelegate_Protocol/index.html#//apple_ref/occ/intfm/UITabBarControllerDelegate/tabBarController:willEndCustomizingViewControllers:changed:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("tabBarController:willEndCustomizingViewControllers:changed:")
@@ -123,10 +95,6 @@ public interface UITabBarControllerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * tabBarControllerPreferredInterfaceOrientationForPresentation:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITabBarControllerDelegate_Protocol/index.html#//apple_ref/occ/intfm/UITabBarControllerDelegate/tabBarControllerPreferredInterfaceOrientationForPresentation:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("tabBarControllerPreferredInterfaceOrientationForPresentation:")
@@ -135,10 +103,6 @@ public interface UITabBarControllerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * tabBarControllerSupportedInterfaceOrientations:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITabBarControllerDelegate_Protocol/index.html#//apple_ref/occ/intfm/UITabBarControllerDelegate/tabBarControllerSupportedInterfaceOrientations:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("tabBarControllerSupportedInterfaceOrientations:")

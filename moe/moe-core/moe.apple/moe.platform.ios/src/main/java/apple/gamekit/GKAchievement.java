@@ -66,38 +66,22 @@ public class GKAchievement extends NSObject implements NSCoding, NSSecureCoding 
     @Selector("alloc")
     public static native GKAchievement alloc();
 
-    /**
-     * loadAchievementsWithCompletionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKAchievement_Ref/index.html#//apple_ref/occ/clm/GKAchievement/loadAchievementsWithCompletionHandler:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("loadAchievementsWithCompletionHandler:")
     public static native void loadAchievementsWithCompletionHandler(
             @ObjCBlock(name = "call_loadAchievementsWithCompletionHandler") Block_loadAchievementsWithCompletionHandler completionHandler);
 
-    /**
-     * reportAchievements:withCompletionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKAchievement_Ref/index.html#//apple_ref/occ/clm/GKAchievement/reportAchievements:withCompletionHandler:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("reportAchievements:withCompletionHandler:")
     public static native void reportAchievementsWithCompletionHandler(NSArray<? extends GKAchievement> achievements,
             @ObjCBlock(name = "call_reportAchievementsWithCompletionHandler") Block_reportAchievementsWithCompletionHandler completionHandler);
 
-    /**
-     * reportAchievements:withEligibleChallenges:withCompletionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKAchievement_Ref/index.html#//apple_ref/occ/clm/GKAchievement/reportAchievements:withEligibleChallenges:withCompletionHandler:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("reportAchievements:withEligibleChallenges:withCompletionHandler:")
     public static native void reportAchievementsWithEligibleChallengesWithCompletionHandler(
             NSArray<? extends GKAchievement> achievements, NSArray<? extends GKChallenge> challenges,
             @ObjCBlock(name = "call_reportAchievementsWithEligibleChallengesWithCompletionHandler") Block_reportAchievementsWithEligibleChallengesWithCompletionHandler completionHandler);
 
-    /**
-     * resetAchievementsWithCompletionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKAchievement_Ref/index.html#//apple_ref/occ/clm/GKAchievement/resetAchievementsWithCompletionHandler:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("resetAchievementsWithCompletionHandler:")
     public static native void resetAchievementsWithCompletionHandler(
@@ -207,20 +191,12 @@ public class GKAchievement extends NSObject implements NSCoding, NSSecureCoding 
     @NInt
     public static native long version_static();
 
-    /**
-     * challengeComposeControllerWithMessage:players:completionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKAchievement_Ref/index.html#//apple_ref/occ/instm/GKAchievement/challengeComposeControllerWithMessage:players:completionHandler:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("challengeComposeControllerWithMessage:players:completionHandler:")
     public native UIViewController challengeComposeControllerWithMessagePlayersCompletionHandler(String message,
             NSArray<? extends GKPlayer> players,
             @ObjCBlock(name = "call_challengeComposeControllerWithMessagePlayersCompletionHandler") Block_challengeComposeControllerWithMessagePlayersCompletionHandler completionHandler);
 
-    /**
-     * challengeComposeControllerWithPlayers:message:completionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKAchievement_Ref/index.html#//apple_ref/occ/instm/GKAchievement/challengeComposeControllerWithPlayers:message:completionHandler:">iOS Dev Center</a>
-     */
     @Generated
     @Deprecated
     @Selector("challengeComposeControllerWithPlayers:message:completionHandler:")
@@ -232,10 +208,6 @@ public class GKAchievement extends NSObject implements NSCoding, NSSecureCoding 
     @Selector("encodeWithCoder:")
     public native void encodeWithCoder(NSCoder aCoder);
 
-    /**
-     * identifier</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKAchievement_Ref/index.html#//apple_ref/occ/instp/GKAchievement/identifier">iOS Dev Center</a>
-     */
     @Generated
     @Selector("identifier")
     public native String identifier();
@@ -248,147 +220,79 @@ public class GKAchievement extends NSObject implements NSCoding, NSSecureCoding 
     @Selector("initWithCoder:")
     public native GKAchievement initWithCoder(NSCoder aDecoder);
 
-    /**
-     * initWithIdentifier:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKAchievement_Ref/index.html#//apple_ref/occ/instm/GKAchievement/initWithIdentifier:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithIdentifier:")
     public native GKAchievement initWithIdentifier(String identifier);
 
-    /**
-     * initWithIdentifier:forPlayer:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKAchievement_Ref/index.html#//apple_ref/occ/instm/GKAchievement/initWithIdentifier:forPlayer:">iOS Dev Center</a>
-     */
     @Generated
     @Deprecated
     @Selector("initWithIdentifier:forPlayer:")
     public native GKAchievement initWithIdentifierForPlayer(String identifier, String playerID);
 
-    /**
-     * initWithIdentifier:player:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKAchievement_Ref/index.html#//apple_ref/occ/instm/GKAchievement/initWithIdentifier:player:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithIdentifier:player:")
     public native GKAchievement initWithIdentifierPlayer(String identifier, GKPlayer player);
 
-    /**
-     * completed</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKAchievement_Ref/index.html#//apple_ref/occ/instp/GKAchievement/completed">iOS Dev Center</a>
-     */
     @Generated
     @Selector("isCompleted")
     public native boolean isCompleted();
 
-    /**
-     * hidden</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKAchievement_Ref/index.html#//apple_ref/occ/instp/GKAchievement/hidden">iOS Dev Center</a>
-     */
     @Generated
     @Deprecated
     @Selector("isHidden")
     public native boolean isHidden();
 
-    /**
-     * issueChallengeToPlayers:message:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKAchievement_Ref/index.html#//apple_ref/occ/instm/GKAchievement/issueChallengeToPlayers:message:">iOS Dev Center</a>
-     */
     @Generated
     @Deprecated
     @Selector("issueChallengeToPlayers:message:")
     public native void issueChallengeToPlayersMessage(NSArray<String> playerIDs, String message);
 
-    /**
-     * lastReportedDate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKAchievement_Ref/index.html#//apple_ref/occ/instp/GKAchievement/lastReportedDate">iOS Dev Center</a>
-     */
     @Generated
     @Selector("lastReportedDate")
     public native NSDate lastReportedDate();
 
-    /**
-     * percentComplete</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKAchievement_Ref/index.html#//apple_ref/occ/instp/GKAchievement/percentComplete">iOS Dev Center</a>
-     */
     @Generated
     @Selector("percentComplete")
     public native double percentComplete();
 
-    /**
-     * player</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKAchievement_Ref/index.html#//apple_ref/occ/instp/GKAchievement/player">iOS Dev Center</a>
-     */
     @Generated
     @Selector("player")
     public native GKPlayer player();
 
-    /**
-     * playerID</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKAchievement_Ref/index.html#//apple_ref/occ/instp/GKAchievement/playerID">iOS Dev Center</a>
-     */
     @Generated
     @Deprecated
     @Selector("playerID")
     public native String playerID();
 
-    /**
-     * reportAchievementWithCompletionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKAchievement_Ref/index.html#//apple_ref/occ/instm/GKAchievement/reportAchievementWithCompletionHandler:">iOS Dev Center</a>
-     */
     @Generated
     @Deprecated
     @Selector("reportAchievementWithCompletionHandler:")
     public native void reportAchievementWithCompletionHandler(
             @ObjCBlock(name = "call_reportAchievementWithCompletionHandler") Block_reportAchievementWithCompletionHandler completionHandler);
 
-    /**
-     * selectChallengeablePlayerIDs:withCompletionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKAchievement_Ref/index.html#//apple_ref/occ/instm/GKAchievement/selectChallengeablePlayerIDs:withCompletionHandler:">iOS Dev Center</a>
-     */
     @Generated
     @Deprecated
     @Selector("selectChallengeablePlayerIDs:withCompletionHandler:")
     public native void selectChallengeablePlayerIDsWithCompletionHandler(NSArray<String> playerIDs,
             @ObjCBlock(name = "call_selectChallengeablePlayerIDsWithCompletionHandler") Block_selectChallengeablePlayerIDsWithCompletionHandler completionHandler);
 
-    /**
-     * selectChallengeablePlayers:withCompletionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKAchievement_Ref/index.html#//apple_ref/occ/instm/GKAchievement/selectChallengeablePlayers:withCompletionHandler:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("selectChallengeablePlayers:withCompletionHandler:")
     public native void selectChallengeablePlayersWithCompletionHandler(NSArray<? extends GKPlayer> players,
             @ObjCBlock(name = "call_selectChallengeablePlayersWithCompletionHandler") Block_selectChallengeablePlayersWithCompletionHandler completionHandler);
 
-    /**
-     * identifier</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKAchievement_Ref/index.html#//apple_ref/occ/instp/GKAchievement/identifier">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setIdentifier:")
     public native void setIdentifier(String value);
 
-    /**
-     * percentComplete</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKAchievement_Ref/index.html#//apple_ref/occ/instp/GKAchievement/percentComplete">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setPercentComplete:")
     public native void setPercentComplete(double value);
 
-    /**
-     * showsCompletionBanner</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKAchievement_Ref/index.html#//apple_ref/occ/instp/GKAchievement/showsCompletionBanner">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setShowsCompletionBanner:")
     public native void setShowsCompletionBanner(boolean value);
 
-    /**
-     * showsCompletionBanner</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKAchievement_Ref/index.html#//apple_ref/occ/instp/GKAchievement/showsCompletionBanner">iOS Dev Center</a>
-     */
     @Generated
     @Selector("showsCompletionBanner")
     public native boolean showsCompletionBanner();

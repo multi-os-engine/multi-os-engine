@@ -60,10 +60,6 @@ public class AVCaptureDeviceInput extends AVCaptureInput {
     @Selector("alloc")
     public static native AVCaptureDeviceInput alloc();
 
-    /**
-     * deviceInputWithDevice:error:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVCaptureDeviceInput_Class/index.html#//apple_ref/occ/clm/AVCaptureDeviceInput/deviceInputWithDevice:error:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("deviceInputWithDevice:error:")
     public static native AVCaptureDeviceInput deviceInputWithDeviceError(AVCaptureDevice device, Ptr<NSError> outError);
@@ -168,10 +164,6 @@ public class AVCaptureDeviceInput extends AVCaptureInput {
     @NInt
     public static native long version();
 
-    /**
-     * device</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVCaptureDeviceInput_Class/index.html#//apple_ref/occ/instp/AVCaptureDeviceInput/device">iOS Dev Center</a>
-     */
     @Generated
     @Selector("device")
     public native AVCaptureDevice device();
@@ -180,10 +172,6 @@ public class AVCaptureDeviceInput extends AVCaptureInput {
     @Selector("init")
     public native AVCaptureDeviceInput init();
 
-    /**
-     * initWithDevice:error:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVCaptureDeviceInput_Class/index.html#//apple_ref/occ/instm/AVCaptureDeviceInput/initWithDevice:error:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithDevice:error:")
     public native AVCaptureDeviceInput initWithDeviceError(AVCaptureDevice device, Ptr<NSError> outError);

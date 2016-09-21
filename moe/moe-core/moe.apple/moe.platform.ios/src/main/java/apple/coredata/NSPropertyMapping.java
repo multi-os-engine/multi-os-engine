@@ -164,50 +164,26 @@ public class NSPropertyMapping extends NSObject {
     @Selector("init")
     public native NSPropertyMapping init();
 
-    /**
-     * name</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSPropertyMapping_class/index.html#//apple_ref/occ/instp/NSPropertyMapping/name">iOS Dev Center</a>
-     */
     @Generated
     @Selector("name")
     public native String name();
 
-    /**
-     * name</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSPropertyMapping_class/index.html#//apple_ref/occ/instp/NSPropertyMapping/name">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setName:")
     public native void setName(String value);
 
-    /**
-     * userInfo</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSPropertyMapping_class/index.html#//apple_ref/occ/instp/NSPropertyMapping/userInfo">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setUserInfo:")
     public native void setUserInfo(NSDictionary<?, ?> value);
 
-    /**
-     * valueExpression</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSPropertyMapping_class/index.html#//apple_ref/occ/instp/NSPropertyMapping/valueExpression">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setValueExpression:")
     public native void setValueExpression(NSExpression value);
 
-    /**
-     * userInfo</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSPropertyMapping_class/index.html#//apple_ref/occ/instp/NSPropertyMapping/userInfo">iOS Dev Center</a>
-     */
     @Generated
     @Selector("userInfo")
     public native NSDictionary<?, ?> userInfo();
 
-    /**
-     * valueExpression</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSPropertyMapping_class/index.html#//apple_ref/occ/instp/NSPropertyMapping/valueExpression">iOS Dev Center</a>
-     */
     @Generated
     @Selector("valueExpression")
     public native NSExpression valueExpression();

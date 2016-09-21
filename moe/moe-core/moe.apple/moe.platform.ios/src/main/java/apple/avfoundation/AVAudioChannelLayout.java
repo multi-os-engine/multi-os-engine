@@ -62,18 +62,10 @@ public class AVAudioChannelLayout extends NSObject implements NSSecureCoding {
     @Selector("alloc")
     public static native AVAudioChannelLayout alloc();
 
-    /**
-     * layoutWithLayout:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioChannelLayout_Class/index.html#//apple_ref/occ/clm/AVAudioChannelLayout/layoutWithLayout:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("layoutWithLayout:")
     public static native AVAudioChannelLayout layoutWithLayout(AudioChannelLayout layout);
 
-    /**
-     * layoutWithLayoutTag:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioChannelLayout_Class/index.html#//apple_ref/occ/clm/AVAudioChannelLayout/layoutWithLayoutTag:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("layoutWithLayoutTag:")
     public static native AVAudioChannelLayout layoutWithLayoutTag(int layoutTag);
@@ -182,10 +174,6 @@ public class AVAudioChannelLayout extends NSObject implements NSSecureCoding {
     @NInt
     public static native long version_static();
 
-    /**
-     * channelCount</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioChannelLayout_Class/index.html#//apple_ref/occ/instp/AVAudioChannelLayout/channelCount">iOS Dev Center</a>
-     */
     @Generated
     @Selector("channelCount")
     public native int channelCount();
@@ -194,42 +182,22 @@ public class AVAudioChannelLayout extends NSObject implements NSSecureCoding {
     @Selector("init")
     public native AVAudioChannelLayout init();
 
-    /**
-     * initWithLayout:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioChannelLayout_Class/index.html#//apple_ref/occ/instm/AVAudioChannelLayout/initWithLayout:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithLayout:")
     public native AVAudioChannelLayout initWithLayout(AudioChannelLayout layout);
 
-    /**
-     * initWithLayoutTag:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioChannelLayout_Class/index.html#//apple_ref/occ/instm/AVAudioChannelLayout/initWithLayoutTag:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithLayoutTag:")
     public native AVAudioChannelLayout initWithLayoutTag(int layoutTag);
 
-    /**
-     * isEqual:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioChannelLayout_Class/index.html#//apple_ref/occ/instm/AVAudioChannelLayout/isEqual:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("isEqual:")
     public native boolean isEqual(@Mapped(ObjCObjectMapper.class) Object object);
 
-    /**
-     * layout</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioChannelLayout_Class/index.html#//apple_ref/occ/instp/AVAudioChannelLayout/layout">iOS Dev Center</a>
-     */
     @Generated
     @Selector("layout")
     public native AudioChannelLayout layout();
 
-    /**
-     * layoutTag</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioChannelLayout_Class/index.html#//apple_ref/occ/instp/AVAudioChannelLayout/layoutTag">iOS Dev Center</a>
-     */
     @Generated
     @Selector("layoutTag")
     public native int layoutTag();

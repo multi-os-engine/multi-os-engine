@@ -32,10 +32,6 @@ import org.moe.natj.objc.ann.Selector;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("AVCaptureMetadataOutputObjectsDelegate")
 public interface AVCaptureMetadataOutputObjectsDelegate {
-    /**
-     * captureOutput:didOutputMetadataObjects:fromConnection:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVCaptureMetadataOutputObjectsDelegate_Protocol/index.html#//apple_ref/occ/intfm/AVCaptureMetadataOutputObjectsDelegate/captureOutput:didOutputMetadataObjects:fromConnection:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("captureOutput:didOutputMetadataObjects:fromConnection:")

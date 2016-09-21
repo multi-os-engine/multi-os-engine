@@ -59,10 +59,6 @@ public class MPNowPlayingInfoCenter extends NSObject {
     @Selector("alloc")
     public static native MPNowPlayingInfoCenter alloc();
 
-    /**
-     * defaultCenter</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPNowPlayingInfoCenter_Class/index.html#//apple_ref/occ/clm/MPNowPlayingInfoCenter/defaultCenter">iOS Dev Center</a>
-     */
     @Generated
     @Selector("defaultCenter")
     public static native MPNowPlayingInfoCenter defaultCenter();
@@ -171,18 +167,10 @@ public class MPNowPlayingInfoCenter extends NSObject {
     @Selector("init")
     public native MPNowPlayingInfoCenter init();
 
-    /**
-     * nowPlayingInfo</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPNowPlayingInfoCenter_Class/index.html#//apple_ref/occ/instp/MPNowPlayingInfoCenter/nowPlayingInfo">iOS Dev Center</a>
-     */
     @Generated
     @Selector("nowPlayingInfo")
     public native NSDictionary<String, ?> nowPlayingInfo();
 
-    /**
-     * nowPlayingInfo</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPNowPlayingInfoCenter_Class/index.html#//apple_ref/occ/instp/MPNowPlayingInfoCenter/nowPlayingInfo">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setNowPlayingInfo:")
     public native void setNowPlayingInfo(NSDictionary<String, ?> value);

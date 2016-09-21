@@ -32,10 +32,6 @@ import org.moe.natj.objc.ann.Selector;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("UIViewControllerRestoration")
 public interface UIViewControllerRestoration {
-    /**
-     * viewControllerWithRestorationIdentifierPath:coder:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIViewControllerRestoration_protocol/index.html#//apple_ref/occ/intfcm/UIViewControllerRestoration/viewControllerWithRestorationIdentifierPath:coder:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("viewControllerWithRestorationIdentifierPath:coder:")
     @ProtocolClassMethod("viewControllerWithRestorationIdentifierPathCoder")

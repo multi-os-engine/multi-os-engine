@@ -175,18 +175,10 @@ public class UIInputViewController extends UIViewController implements UITextInp
     @NInt
     public static native long version_static();
 
-    /**
-     * advanceToNextInputMode</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIInputViewController_Class/index.html#//apple_ref/occ/instm/UIInputViewController/advanceToNextInputMode">iOS Dev Center</a>
-     */
     @Generated
     @Selector("advanceToNextInputMode")
     public native void advanceToNextInputMode();
 
-    /**
-     * dismissKeyboard</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIInputViewController_Class/index.html#//apple_ref/occ/instm/UIInputViewController/dismissKeyboard">iOS Dev Center</a>
-     */
     @Generated
     @Selector("dismissKeyboard")
     public native void dismissKeyboard();
@@ -199,26 +191,14 @@ public class UIInputViewController extends UIViewController implements UITextInp
     @Selector("initWithNibName:bundle:")
     public native UIInputViewController initWithNibNameBundle(String nibNameOrNil, NSBundle nibBundleOrNil);
 
-    /**
-     * inputView</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIInputViewController_Class/index.html#//apple_ref/occ/instp/UIInputViewController/inputView">iOS Dev Center</a>
-     */
     @Generated
     @Selector("inputView")
     public native UIInputView inputView();
 
-    /**
-     * primaryLanguage</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIInputViewController_Class/index.html#//apple_ref/occ/instp/UIInputViewController/primaryLanguage">iOS Dev Center</a>
-     */
     @Generated
     @Selector("primaryLanguage")
     public native String primaryLanguage();
 
-    /**
-     * requestSupplementaryLexiconWithCompletion:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIInputViewController_Class/index.html#//apple_ref/occ/instm/UIInputViewController/requestSupplementaryLexiconWithCompletion:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("requestSupplementaryLexiconWithCompletion:")
     public native void requestSupplementaryLexiconWithCompletion(
@@ -232,18 +212,10 @@ public class UIInputViewController extends UIViewController implements UITextInp
     @Selector("selectionWillChange:")
     public native void selectionWillChange(@Mapped(ObjCObjectMapper.class) Object textInput);
 
-    /**
-     * inputView</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIInputViewController_Class/index.html#//apple_ref/occ/instp/UIInputViewController/inputView">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setInputView:")
     public native void setInputView(UIInputView value);
 
-    /**
-     * primaryLanguage</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIInputViewController_Class/index.html#//apple_ref/occ/instp/UIInputViewController/primaryLanguage">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setPrimaryLanguage:")
     public native void setPrimaryLanguage(String value);
@@ -252,10 +224,6 @@ public class UIInputViewController extends UIViewController implements UITextInp
     @Selector("textDidChange:")
     public native void textDidChange(@Mapped(ObjCObjectMapper.class) Object textInput);
 
-    /**
-     * textDocumentProxy</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIInputViewController_Class/index.html#//apple_ref/occ/instp/UIInputViewController/textDocumentProxy">iOS Dev Center</a>
-     */
     @Generated
     @Selector("textDocumentProxy")
     @MappedReturn(ObjCObjectMapper.class)

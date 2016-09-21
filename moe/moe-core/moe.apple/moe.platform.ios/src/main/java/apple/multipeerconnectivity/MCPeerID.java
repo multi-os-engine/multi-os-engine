@@ -172,10 +172,6 @@ public class MCPeerID extends NSObject implements NSCopying, NSSecureCoding {
     @MappedReturn(ObjCObjectMapper.class)
     public native Object copyWithZone(VoidPtr zone);
 
-    /**
-     * displayName</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MultipeerConnectivity/Reference/MCPeerID_class/index.html#//apple_ref/occ/instp/MCPeerID/displayName">iOS Dev Center</a>
-     */
     @Generated
     @Selector("displayName")
     public native String displayName();
@@ -192,10 +188,6 @@ public class MCPeerID extends NSObject implements NSCopying, NSSecureCoding {
     @Selector("initWithCoder:")
     public native MCPeerID initWithCoder(NSCoder aDecoder);
 
-    /**
-     * initWithDisplayName:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MultipeerConnectivity/Reference/MCPeerID_class/index.html#//apple_ref/occ/instm/MCPeerID/initWithDisplayName:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithDisplayName:")
     public native MCPeerID initWithDisplayName(String myDisplayName);

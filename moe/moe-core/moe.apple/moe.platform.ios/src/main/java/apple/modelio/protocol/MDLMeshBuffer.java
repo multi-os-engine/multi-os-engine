@@ -34,53 +34,29 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("MDLMeshBuffer")
 public interface MDLMeshBuffer extends NSCopying {
-    /**
-     * allocator</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLMeshBuffer_Protocol/index.html#//apple_ref/occ/intfp/MDLMeshBuffer/allocator">iOS Dev Center</a>
-     */
     @Generated
     @Selector("allocator")
     @MappedReturn(ObjCObjectMapper.class)
     Object allocator();
 
-    /**
-     * fillData:offset:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLMeshBuffer_Protocol/index.html#//apple_ref/occ/intfm/MDLMeshBuffer/fillData:offset:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("fillData:offset:")
     void fillDataOffset(NSData data, @NUInt long offset);
 
-    /**
-     * length</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLMeshBuffer_Protocol/index.html#//apple_ref/occ/intfp/MDLMeshBuffer/length">iOS Dev Center</a>
-     */
     @Generated
     @Selector("length")
     @NUInt
     long length();
 
-    /**
-     * map</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLMeshBuffer_Protocol/index.html#//apple_ref/occ/intfm/MDLMeshBuffer/map">iOS Dev Center</a>
-     */
     @Generated
     @Selector("map")
     MDLMeshBufferMap map();
 
-    /**
-     * type</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLMeshBuffer_Protocol/index.html#//apple_ref/occ/intfp/MDLMeshBuffer/type">iOS Dev Center</a>
-     */
     @Generated
     @Selector("type")
     @NUInt
     long type();
 
-    /**
-     * zone</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLMeshBuffer_Protocol/index.html#//apple_ref/occ/intfp/MDLMeshBuffer/zone">iOS Dev Center</a>
-     */
     @Generated
     @Selector("zone")
     @MappedReturn(ObjCObjectMapper.class)

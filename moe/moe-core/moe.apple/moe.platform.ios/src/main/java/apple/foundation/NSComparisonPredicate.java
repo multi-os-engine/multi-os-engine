@@ -77,19 +77,11 @@ public class NSComparisonPredicate extends NSPredicate {
     @Selector("predicateWithFormat:arguments:")
     public static native NSPredicate predicateWithFormatArguments(String predicateFormat, BytePtr argList);
 
-    /**
-     * predicateWithLeftExpression:rightExpression:customSelector:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSComparisonPredicate_Class/index.html#//apple_ref/occ/clm/NSComparisonPredicate/predicateWithLeftExpression:rightExpression:customSelector:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("predicateWithLeftExpression:rightExpression:customSelector:")
     public static native NSComparisonPredicate predicateWithLeftExpressionRightExpressionCustomSelector(
             NSExpression lhs, NSExpression rhs, SEL selector);
 
-    /**
-     * predicateWithLeftExpression:rightExpression:modifier:type:options:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSComparisonPredicate_Class/index.html#//apple_ref/occ/clm/NSComparisonPredicate/predicateWithLeftExpression:rightExpression:modifier:type:options:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("predicateWithLeftExpression:rightExpression:modifier:type:options:")
     public static native NSComparisonPredicate predicateWithLeftExpressionRightExpressionModifierTypeOptions(
@@ -203,19 +195,11 @@ public class NSComparisonPredicate extends NSPredicate {
     @NInt
     public static native long version_static();
 
-    /**
-     * comparisonPredicateModifier</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSComparisonPredicate_Class/index.html#//apple_ref/occ/instp/NSComparisonPredicate/comparisonPredicateModifier">iOS Dev Center</a>
-     */
     @Generated
     @Selector("comparisonPredicateModifier")
     @NUInt
     public native long comparisonPredicateModifier();
 
-    /**
-     * customSelector</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSComparisonPredicate_Class/index.html#//apple_ref/occ/instp/NSComparisonPredicate/customSelector">iOS Dev Center</a>
-     */
     @Generated
     @Selector("customSelector")
     public native SEL customSelector();
@@ -224,54 +208,30 @@ public class NSComparisonPredicate extends NSPredicate {
     @Selector("init")
     public native NSComparisonPredicate init();
 
-    /**
-     * initWithLeftExpression:rightExpression:customSelector:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSComparisonPredicate_Class/index.html#//apple_ref/occ/instm/NSComparisonPredicate/initWithLeftExpression:rightExpression:customSelector:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithLeftExpression:rightExpression:customSelector:")
     public native NSComparisonPredicate initWithLeftExpressionRightExpressionCustomSelector(NSExpression lhs,
             NSExpression rhs, SEL selector);
 
-    /**
-     * initWithLeftExpression:rightExpression:modifier:type:options:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSComparisonPredicate_Class/index.html#//apple_ref/occ/instm/NSComparisonPredicate/initWithLeftExpression:rightExpression:modifier:type:options:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithLeftExpression:rightExpression:modifier:type:options:")
     public native NSComparisonPredicate initWithLeftExpressionRightExpressionModifierTypeOptions(NSExpression lhs,
             NSExpression rhs, @NUInt long modifier, @NUInt long type, @NUInt long options);
 
-    /**
-     * leftExpression</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSComparisonPredicate_Class/index.html#//apple_ref/occ/instp/NSComparisonPredicate/leftExpression">iOS Dev Center</a>
-     */
     @Generated
     @Selector("leftExpression")
     public native NSExpression leftExpression();
 
-    /**
-     * options</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSComparisonPredicate_Class/index.html#//apple_ref/occ/instp/NSComparisonPredicate/options">iOS Dev Center</a>
-     */
     @Generated
     @Selector("options")
     @NUInt
     public native long options();
 
-    /**
-     * predicateOperatorType</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSComparisonPredicate_Class/index.html#//apple_ref/occ/instp/NSComparisonPredicate/predicateOperatorType">iOS Dev Center</a>
-     */
     @Generated
     @Selector("predicateOperatorType")
     @NUInt
     public native long predicateOperatorType();
 
-    /**
-     * rightExpression</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSComparisonPredicate_Class/index.html#//apple_ref/occ/instp/NSComparisonPredicate/rightExpression">iOS Dev Center</a>
-     */
     @Generated
     @Selector("rightExpression")
     public native NSExpression rightExpression();

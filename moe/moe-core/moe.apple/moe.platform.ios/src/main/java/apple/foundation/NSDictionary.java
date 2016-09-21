@@ -73,82 +73,46 @@ public class NSDictionary<_KeyType, _ObjectType> extends NSObject
     @Selector("alloc")
     public static native NSDictionary<?, ?> alloc();
 
-    /**
-     * dictionary</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSDictionary_Class/index.html#//apple_ref/occ/clm/NSDictionary/dictionary">iOS Dev Center</a>
-     */
     @Generated
     @Selector("dictionary")
     public static native <_KeyType, _ObjectType> NSDictionary<?, ?> dictionary();
 
-    /**
-     * dictionaryWithContentsOfFile:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSDictionary_Class/index.html#//apple_ref/occ/clm/NSDictionary/dictionaryWithContentsOfFile:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("dictionaryWithContentsOfFile:")
     public static native <_KeyType, _ObjectType> NSDictionary<_KeyType, _ObjectType> dictionaryWithContentsOfFile(
             String path);
 
-    /**
-     * dictionaryWithContentsOfURL:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSDictionary_Class/index.html#//apple_ref/occ/clm/NSDictionary/dictionaryWithContentsOfURL:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("dictionaryWithContentsOfURL:")
     public static native <_KeyType, _ObjectType> NSDictionary<_KeyType, _ObjectType> dictionaryWithContentsOfURL(
             NSURL url);
 
-    /**
-     * dictionaryWithDictionary:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSDictionary_Class/index.html#//apple_ref/occ/clm/NSDictionary/dictionaryWithDictionary:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("dictionaryWithDictionary:")
     public static native <_KeyType, _ObjectType> NSDictionary<?, ?> dictionaryWithDictionary(
             NSDictionary<_KeyType, _ObjectType> dict);
 
-    /**
-     * dictionaryWithObject:forKey:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSDictionary_Class/index.html#//apple_ref/occ/clm/NSDictionary/dictionaryWithObject:forKey:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("dictionaryWithObject:forKey:")
     public static native <_KeyType, _ObjectType> NSDictionary<?, ?> dictionaryWithObjectForKey(
             @Mapped(ObjCObjectMapper.class) _ObjectType object, @Mapped(ObjCObjectMapper.class) Object key);
 
-    /**
-     * dictionaryWithObjects:forKeys:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSDictionary_Class/index.html#//apple_ref/occ/clm/NSDictionary/dictionaryWithObjects:forKeys:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("dictionaryWithObjects:forKeys:")
     public static native <_KeyType, _ObjectType> NSDictionary<?, ?> dictionaryWithObjectsForKeys(
             NSArray<_ObjectType> objects, NSArray<?> keys);
 
-    /**
-     * dictionaryWithObjects:forKeys:count:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSDictionary_Class/index.html#//apple_ref/occ/clm/NSDictionary/dictionaryWithObjects:forKeys:count:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("dictionaryWithObjects:forKeys:count:")
     public static native <_KeyType, _ObjectType> NSDictionary<?, ?> dictionaryWithObjectsForKeysCount(
             ConstPtr<_ObjectType> objects, ConstPtr<ObjCObject> keys, @NUInt long cnt);
 
-    /**
-     * dictionaryWithObjectsAndKeys:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSDictionary_Class/index.html#//apple_ref/occ/clm/NSDictionary/dictionaryWithObjectsAndKeys:">iOS Dev Center</a>
-     */
     @Generated
     @Variadic()
     @Selector("dictionaryWithObjectsAndKeys:")
     public static native <_KeyType, _ObjectType> NSDictionary<?, ?> dictionaryWithObjectsAndKeys(
             @Mapped(ObjCObjectMapper.class) Object firstObject, Object... varargs);
 
-    /**
-     * sharedKeySetForKeys:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSDictionary_Class/index.html#//apple_ref/occ/clm/NSDictionary/sharedKeySetForKeys:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("sharedKeySetForKeys:")
     @MappedReturn(ObjCObjectMapper.class)
@@ -254,26 +218,14 @@ public class NSDictionary<_KeyType, _ObjectType> extends NSObject
     @NInt
     public static native long version_static();
 
-    /**
-     * allKeys</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSDictionary_Class/index.html#//apple_ref/occ/instp/NSDictionary/allKeys">iOS Dev Center</a>
-     */
     @Generated
     @Selector("allKeys")
     public native NSArray<_KeyType> allKeys();
 
-    /**
-     * allKeysForObject:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSDictionary_Class/index.html#//apple_ref/occ/instm/NSDictionary/allKeysForObject:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("allKeysForObject:")
     public native NSArray<_KeyType> allKeysForObject(@Mapped(ObjCObjectMapper.class) _ObjectType anObject);
 
-    /**
-     * allValues</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSDictionary_Class/index.html#//apple_ref/occ/instp/NSDictionary/allValues">iOS Dev Center</a>
-     */
     @Generated
     @Selector("allValues")
     public native NSArray<_ObjectType> allValues();
@@ -284,10 +236,6 @@ public class NSDictionary<_KeyType, _ObjectType> extends NSObject
     @MappedReturn(ObjCObjectMapper.class)
     public native Object copyWithZone(VoidPtr zone);
 
-    /**
-     * count</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSDictionary_Class/index.html#//apple_ref/occ/instp/NSDictionary/count">iOS Dev Center</a>
-     */
     @Generated
     @Selector("count")
     @NUInt
@@ -298,34 +246,18 @@ public class NSDictionary<_KeyType, _ObjectType> extends NSObject
     @NUInt
     public native long countByEnumeratingWithStateObjectsCount(VoidPtr state, Ptr<ObjCObject> buffer, @NUInt long len);
 
-    /**
-     * description</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSDictionary_Class/index.html#//apple_ref/occ/instp/NSDictionary/description">iOS Dev Center</a>
-     */
     @Generated
     @Selector("description")
     public native String description();
 
-    /**
-     * descriptionInStringsFileFormat</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSDictionary_Class/index.html#//apple_ref/occ/instp/NSDictionary/descriptionInStringsFileFormat">iOS Dev Center</a>
-     */
     @Generated
     @Selector("descriptionInStringsFileFormat")
     public native String descriptionInStringsFileFormat();
 
-    /**
-     * descriptionWithLocale:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSDictionary_Class/index.html#//apple_ref/occ/instm/NSDictionary/descriptionWithLocale:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("descriptionWithLocale:")
     public native String descriptionWithLocale(@Mapped(ObjCObjectMapper.class) Object locale);
 
-    /**
-     * descriptionWithLocale:indent:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSDictionary_Class/index.html#//apple_ref/occ/instm/NSDictionary/descriptionWithLocale:indent:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("descriptionWithLocale:indent:")
     public native String descriptionWithLocaleIndent(@Mapped(ObjCObjectMapper.class) Object locale, @NUInt long level);
@@ -334,167 +266,87 @@ public class NSDictionary<_KeyType, _ObjectType> extends NSObject
     @Selector("encodeWithCoder:")
     public native void encodeWithCoder(NSCoder aCoder);
 
-    /**
-     * enumerateKeysAndObjectsUsingBlock:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSDictionary_Class/index.html#//apple_ref/occ/instm/NSDictionary/enumerateKeysAndObjectsUsingBlock:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("enumerateKeysAndObjectsUsingBlock:")
     public native void enumerateKeysAndObjectsUsingBlock(
             @ObjCBlock(name = "call_enumerateKeysAndObjectsUsingBlock") Block_enumerateKeysAndObjectsUsingBlock block);
 
-    /**
-     * enumerateKeysAndObjectsWithOptions:usingBlock:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSDictionary_Class/index.html#//apple_ref/occ/instm/NSDictionary/enumerateKeysAndObjectsWithOptions:usingBlock:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("enumerateKeysAndObjectsWithOptions:usingBlock:")
     public native void enumerateKeysAndObjectsWithOptionsUsingBlock(@NUInt long opts,
             @ObjCBlock(name = "call_enumerateKeysAndObjectsWithOptionsUsingBlock") Block_enumerateKeysAndObjectsWithOptionsUsingBlock block);
 
-    /**
-     * fileCreationDate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSDictionary_Class/index.html#//apple_ref/occ/instm/NSDictionary/fileCreationDate">iOS Dev Center</a>
-     */
     @Generated
     @Selector("fileCreationDate")
     public native NSDate fileCreationDate();
 
-    /**
-     * fileExtensionHidden</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSDictionary_Class/index.html#//apple_ref/occ/instm/NSDictionary/fileExtensionHidden">iOS Dev Center</a>
-     */
     @Generated
     @Selector("fileExtensionHidden")
     public native boolean fileExtensionHidden();
 
-    /**
-     * fileGroupOwnerAccountID</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSDictionary_Class/index.html#//apple_ref/occ/instm/NSDictionary/fileGroupOwnerAccountID">iOS Dev Center</a>
-     */
     @Generated
     @Selector("fileGroupOwnerAccountID")
     public native NSNumber fileGroupOwnerAccountID();
 
-    /**
-     * fileGroupOwnerAccountName</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSDictionary_Class/index.html#//apple_ref/occ/instm/NSDictionary/fileGroupOwnerAccountName">iOS Dev Center</a>
-     */
     @Generated
     @Selector("fileGroupOwnerAccountName")
     public native String fileGroupOwnerAccountName();
 
-    /**
-     * fileHFSCreatorCode</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSDictionary_Class/index.html#//apple_ref/occ/instm/NSDictionary/fileHFSCreatorCode">iOS Dev Center</a>
-     */
     @Generated
     @Selector("fileHFSCreatorCode")
     public native int fileHFSCreatorCode();
 
-    /**
-     * fileHFSTypeCode</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSDictionary_Class/index.html#//apple_ref/occ/instm/NSDictionary/fileHFSTypeCode">iOS Dev Center</a>
-     */
     @Generated
     @Selector("fileHFSTypeCode")
     public native int fileHFSTypeCode();
 
-    /**
-     * fileIsAppendOnly</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSDictionary_Class/index.html#//apple_ref/occ/instm/NSDictionary/fileIsAppendOnly">iOS Dev Center</a>
-     */
     @Generated
     @Selector("fileIsAppendOnly")
     public native boolean fileIsAppendOnly();
 
-    /**
-     * fileIsImmutable</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSDictionary_Class/index.html#//apple_ref/occ/instm/NSDictionary/fileIsImmutable">iOS Dev Center</a>
-     */
     @Generated
     @Selector("fileIsImmutable")
     public native boolean fileIsImmutable();
 
-    /**
-     * fileModificationDate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSDictionary_Class/index.html#//apple_ref/occ/instm/NSDictionary/fileModificationDate">iOS Dev Center</a>
-     */
     @Generated
     @Selector("fileModificationDate")
     public native NSDate fileModificationDate();
 
-    /**
-     * fileOwnerAccountID</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSDictionary_Class/index.html#//apple_ref/occ/instm/NSDictionary/fileOwnerAccountID">iOS Dev Center</a>
-     */
     @Generated
     @Selector("fileOwnerAccountID")
     public native NSNumber fileOwnerAccountID();
 
-    /**
-     * fileOwnerAccountName</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSDictionary_Class/index.html#//apple_ref/occ/instm/NSDictionary/fileOwnerAccountName">iOS Dev Center</a>
-     */
     @Generated
     @Selector("fileOwnerAccountName")
     public native String fileOwnerAccountName();
 
-    /**
-     * filePosixPermissions</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSDictionary_Class/index.html#//apple_ref/occ/instm/NSDictionary/filePosixPermissions">iOS Dev Center</a>
-     */
     @Generated
     @Selector("filePosixPermissions")
     @NUInt
     public native long filePosixPermissions();
 
-    /**
-     * fileSize</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSDictionary_Class/index.html#//apple_ref/occ/instm/NSDictionary/fileSize">iOS Dev Center</a>
-     */
     @Generated
     @Selector("fileSize")
     public native long fileSize();
 
-    /**
-     * fileSystemFileNumber</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSDictionary_Class/index.html#//apple_ref/occ/instm/NSDictionary/fileSystemFileNumber">iOS Dev Center</a>
-     */
     @Generated
     @Selector("fileSystemFileNumber")
     @NUInt
     public native long fileSystemFileNumber();
 
-    /**
-     * fileSystemNumber</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSDictionary_Class/index.html#//apple_ref/occ/instm/NSDictionary/fileSystemNumber">iOS Dev Center</a>
-     */
     @Generated
     @Selector("fileSystemNumber")
     @NInt
     public native long fileSystemNumber();
 
-    /**
-     * fileType</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSDictionary_Class/index.html#//apple_ref/occ/instm/NSDictionary/fileType">iOS Dev Center</a>
-     */
     @Generated
     @Selector("fileType")
     public native String fileType();
 
-    /**
-     * getObjects:andKeys:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSDictionary_Class/index.html#//apple_ref/occ/instm/NSDictionary/getObjects:andKeys:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("getObjects:andKeys:")
     public native void getObjectsAndKeys(Ptr<ObjCObject> objects, Ptr<ObjCObject> keys);
 
-    /**
-     * init</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSDictionary_Class/index.html#//apple_ref/occ/instm/NSDictionary/init">iOS Dev Center</a>
-     */
     @Generated
     @Selector("init")
     public native NSDictionary<?, ?> init();
@@ -503,70 +355,38 @@ public class NSDictionary<_KeyType, _ObjectType> extends NSObject
     @Selector("initWithCoder:")
     public native NSDictionary<?, ?> initWithCoder(NSCoder aDecoder);
 
-    /**
-     * initWithContentsOfFile:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSDictionary_Class/index.html#//apple_ref/occ/instm/NSDictionary/initWithContentsOfFile:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithContentsOfFile:")
     public native NSDictionary<_KeyType, _ObjectType> initWithContentsOfFile(String path);
 
-    /**
-     * initWithContentsOfURL:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSDictionary_Class/index.html#//apple_ref/occ/instm/NSDictionary/initWithContentsOfURL:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithContentsOfURL:")
     public native NSDictionary<_KeyType, _ObjectType> initWithContentsOfURL(NSURL url);
 
-    /**
-     * initWithDictionary:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSDictionary_Class/index.html#//apple_ref/occ/instm/NSDictionary/initWithDictionary:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithDictionary:")
     public native NSDictionary<?, ?> initWithDictionary(NSDictionary<_KeyType, _ObjectType> otherDictionary);
 
-    /**
-     * initWithDictionary:copyItems:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSDictionary_Class/index.html#//apple_ref/occ/instm/NSDictionary/initWithDictionary:copyItems:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithDictionary:copyItems:")
     public native NSDictionary<?, ?> initWithDictionaryCopyItems(NSDictionary<_KeyType, _ObjectType> otherDictionary,
             boolean flag);
 
-    /**
-     * initWithObjects:forKeys:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSDictionary_Class/index.html#//apple_ref/occ/instm/NSDictionary/initWithObjects:forKeys:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithObjects:forKeys:")
     public native NSDictionary<?, ?> initWithObjectsForKeys(NSArray<_ObjectType> objects, NSArray<?> keys);
 
-    /**
-     * initWithObjects:forKeys:count:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSDictionary_Class/index.html#//apple_ref/occ/instm/NSDictionary/initWithObjects:forKeys:count:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithObjects:forKeys:count:")
     public native NSDictionary<?, ?> initWithObjectsForKeysCount(ConstPtr<_ObjectType> objects,
             ConstPtr<ObjCObject> keys, @NUInt long cnt);
 
-    /**
-     * initWithObjectsAndKeys:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSDictionary_Class/index.html#//apple_ref/occ/instm/NSDictionary/initWithObjectsAndKeys:">iOS Dev Center</a>
-     */
     @Generated
     @Variadic()
     @Selector("initWithObjectsAndKeys:")
     public native NSDictionary<?, ?> initWithObjectsAndKeys(@Mapped(ObjCObjectMapper.class) Object firstObject,
             Object... varargs);
 
-    /**
-     * isEqualToDictionary:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSDictionary_Class/index.html#//apple_ref/occ/instm/NSDictionary/isEqualToDictionary:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("isEqualToDictionary:")
     public native boolean isEqualToDictionary(NSDictionary<_KeyType, _ObjectType> otherDictionary);
@@ -579,45 +399,25 @@ public class NSDictionary<_KeyType, _ObjectType> extends NSObject
     @Selector("keyEnumerator")
     public native NSEnumerator<_KeyType> keyEnumerator();
 
-    /**
-     * keysOfEntriesPassingTest:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSDictionary_Class/index.html#//apple_ref/occ/instm/NSDictionary/keysOfEntriesPassingTest:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("keysOfEntriesPassingTest:")
     public native NSSet<_KeyType> keysOfEntriesPassingTest(
             @ObjCBlock(name = "call_keysOfEntriesPassingTest") Block_keysOfEntriesPassingTest predicate);
 
-    /**
-     * keysOfEntriesWithOptions:passingTest:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSDictionary_Class/index.html#//apple_ref/occ/instm/NSDictionary/keysOfEntriesWithOptions:passingTest:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("keysOfEntriesWithOptions:passingTest:")
     public native NSSet<_KeyType> keysOfEntriesWithOptionsPassingTest(@NUInt long opts,
             @ObjCBlock(name = "call_keysOfEntriesWithOptionsPassingTest") Block_keysOfEntriesWithOptionsPassingTest predicate);
 
-    /**
-     * keysSortedByValueUsingComparator:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSDictionary_Class/index.html#//apple_ref/occ/instm/NSDictionary/keysSortedByValueUsingComparator:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("keysSortedByValueUsingComparator:")
     public native NSArray<_KeyType> keysSortedByValueUsingComparator(
             @ObjCBlock(name = "call_keysSortedByValueUsingComparator") Block_keysSortedByValueUsingComparator cmptr);
 
-    /**
-     * keysSortedByValueUsingSelector:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSDictionary_Class/index.html#//apple_ref/occ/instm/NSDictionary/keysSortedByValueUsingSelector:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("keysSortedByValueUsingSelector:")
     public native NSArray<_KeyType> keysSortedByValueUsingSelector(SEL comparator);
 
-    /**
-     * keysSortedByValueWithOptions:usingComparator:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSDictionary_Class/index.html#//apple_ref/occ/instm/NSDictionary/keysSortedByValueWithOptions:usingComparator:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("keysSortedByValueWithOptions:usingComparator:")
     public native NSArray<_KeyType> keysSortedByValueWithOptionsUsingComparator(@NUInt long opts,
@@ -628,36 +428,20 @@ public class NSDictionary<_KeyType, _ObjectType> extends NSObject
     @MappedReturn(ObjCObjectMapper.class)
     public native Object mutableCopyWithZone(VoidPtr zone);
 
-    /**
-     * objectEnumerator</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSDictionary_Class/index.html#//apple_ref/occ/instm/NSDictionary/objectEnumerator">iOS Dev Center</a>
-     */
     @Generated
     @Selector("objectEnumerator")
     public native NSEnumerator<_ObjectType> objectEnumerator();
 
-    /**
-     * objectForKey:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSDictionary_Class/index.html#//apple_ref/occ/instm/NSDictionary/objectForKey:">iOS Dev Center</a>
-     */
     @MappedReturn(ObjCObjectMapper.class)
     @Generated
     @Selector("objectForKey:")
     public native _ObjectType objectForKey(@Mapped(ObjCObjectMapper.class) _KeyType aKey);
 
-    /**
-     * objectForKeyedSubscript:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSDictionary_Class/index.html#//apple_ref/occ/instm/NSDictionary/objectForKeyedSubscript:">iOS Dev Center</a>
-     */
     @MappedReturn(ObjCObjectMapper.class)
     @Generated
     @Selector("objectForKeyedSubscript:")
     public native _ObjectType objectForKeyedSubscript(@Mapped(ObjCObjectMapper.class) _KeyType key);
 
-    /**
-     * objectsForKeys:notFoundMarker:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSDictionary_Class/index.html#//apple_ref/occ/instm/NSDictionary/objectsForKeys:notFoundMarker:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("objectsForKeys:notFoundMarker:")
     public native NSArray<_ObjectType> objectsForKeysNotFoundMarker(NSArray<_KeyType> keys,
@@ -669,27 +453,15 @@ public class NSDictionary<_KeyType, _ObjectType> extends NSObject
         return supportsSecureCoding();
     }
 
-    /**
-     * valueForKey:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSDictionary_Class/index.html#//apple_ref/occ/instm/NSDictionary/valueForKey:">iOS Dev Center</a>
-     */
     @MappedReturn(ObjCObjectMapper.class)
     @Generated
     @Selector("valueForKey:")
     public native _ObjectType valueForKey(String key);
 
-    /**
-     * writeToFile:atomically:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSDictionary_Class/index.html#//apple_ref/occ/instm/NSDictionary/writeToFile:atomically:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("writeToFile:atomically:")
     public native boolean writeToFileAtomically(String path, boolean useAuxiliaryFile);
 
-    /**
-     * writeToURL:atomically:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSDictionary_Class/index.html#//apple_ref/occ/instm/NSDictionary/writeToURL:atomically:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("writeToURL:atomically:")
     public native boolean writeToURLAtomically(NSURL url, boolean atomically);

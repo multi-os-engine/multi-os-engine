@@ -31,10 +31,6 @@ import org.moe.natj.objc.ann.Selector;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("SCNActionable")
 public interface SCNActionable {
-    /**
-     * actionForKey:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNActionable_Protocol/index.html#//apple_ref/occ/intfm/SCNActionable/actionForKey:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("actionForKey:")
     SCNAction actionForKey(String key);
@@ -43,51 +39,27 @@ public interface SCNActionable {
     @Selector("hasActions")
     boolean hasActions();
 
-    /**
-     * removeActionForKey:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNActionable_Protocol/index.html#//apple_ref/occ/intfm/SCNActionable/removeActionForKey:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("removeActionForKey:")
     void removeActionForKey(String key);
 
-    /**
-     * removeAllActions</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNActionable_Protocol/index.html#//apple_ref/occ/intfm/SCNActionable/removeAllActions">iOS Dev Center</a>
-     */
     @Generated
     @Selector("removeAllActions")
     void removeAllActions();
 
-    /**
-     * runAction:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNActionable_Protocol/index.html#//apple_ref/occ/intfm/SCNActionable/runAction:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("runAction:")
     void runAction(SCNAction action);
 
-    /**
-     * runAction:completionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNActionable_Protocol/index.html#//apple_ref/occ/intfm/SCNActionable/runAction:completionHandler:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("runAction:completionHandler:")
     void runActionCompletionHandler(SCNAction action,
             @ObjCBlock(name = "call_runActionCompletionHandler") Block_runActionCompletionHandler block);
 
-    /**
-     * runAction:forKey:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNActionable_Protocol/index.html#//apple_ref/occ/intfm/SCNActionable/runAction:forKey:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("runAction:forKey:")
     void runActionForKey(SCNAction action, String key);
 
-    /**
-     * runAction:forKey:completionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNActionable_Protocol/index.html#//apple_ref/occ/intfm/SCNActionable/runAction:forKey:completionHandler:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("runAction:forKey:completionHandler:")
     void runActionForKeyCompletionHandler(SCNAction action, String key,

@@ -34,6 +34,7 @@ public final class CFStringBuiltInEncodings {
     @Generated public static final int UTF32 = 0x0C000100;
     @Generated public static final int UTF32BE = 0x18000100;
     @Generated public static final int UTF32LE = 0x1C000100;
+
     @Generated
     private CFStringBuiltInEncodings() {
     }

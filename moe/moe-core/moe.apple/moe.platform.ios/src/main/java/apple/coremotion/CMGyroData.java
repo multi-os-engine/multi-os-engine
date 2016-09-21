@@ -170,10 +170,6 @@ public class CMGyroData extends CMLogItem {
     @Selector("init")
     public native CMGyroData init();
 
-    /**
-     * rotationRate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMotion/Reference/CMGyroData_Class/index.html#//apple_ref/occ/instp/CMGyroData/rotationRate">iOS Dev Center</a>
-     */
     @Generated
     @Selector("rotationRate")
     @ByValue

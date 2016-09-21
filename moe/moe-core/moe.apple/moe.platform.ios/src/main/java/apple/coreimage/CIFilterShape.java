@@ -62,10 +62,6 @@ public class CIFilterShape extends NSObject implements NSCopying {
     @Selector("alloc")
     public static native CIFilterShape alloc();
 
-    /**
-     * shapeWithRect:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/QuartzCoreFramework/Classes/CIFilterShape_Class/index.html#//apple_ref/occ/clm/CIFilterShape/shapeWithRect:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("shapeWithRect:")
     public static native CIFilterShape shapeWithRect(@ByValue CGRect r);
@@ -176,10 +172,6 @@ public class CIFilterShape extends NSObject implements NSCopying {
     @MappedReturn(ObjCObjectMapper.class)
     public native Object copyWithZone(VoidPtr zone);
 
-    /**
-     * extent</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/QuartzCoreFramework/Classes/CIFilterShape_Class/index.html#//apple_ref/occ/instp/CIFilterShape/extent">iOS Dev Center</a>
-     */
     @Generated
     @Selector("extent")
     @ByValue
@@ -189,58 +181,30 @@ public class CIFilterShape extends NSObject implements NSCopying {
     @Selector("init")
     public native CIFilterShape init();
 
-    /**
-     * initWithRect:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/QuartzCoreFramework/Classes/CIFilterShape_Class/index.html#//apple_ref/occ/instm/CIFilterShape/initWithRect:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithRect:")
     public native CIFilterShape initWithRect(@ByValue CGRect r);
 
-    /**
-     * insetByX:Y:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/QuartzCoreFramework/Classes/CIFilterShape_Class/index.html#//apple_ref/occ/instm/CIFilterShape/insetByX:Y:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("insetByX:Y:")
     public native CIFilterShape insetByXY(int dx, int dy);
 
-    /**
-     * intersectWith:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/QuartzCoreFramework/Classes/CIFilterShape_Class/index.html#//apple_ref/occ/instm/CIFilterShape/intersectWith:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("intersectWith:")
     public native CIFilterShape intersectWith(CIFilterShape s2);
 
-    /**
-     * intersectWithRect:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/QuartzCoreFramework/Classes/CIFilterShape_Class/index.html#//apple_ref/occ/instm/CIFilterShape/intersectWithRect:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("intersectWithRect:")
     public native CIFilterShape intersectWithRect(@ByValue CGRect r);
 
-    /**
-     * transformBy:interior:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/QuartzCoreFramework/Classes/CIFilterShape_Class/index.html#//apple_ref/occ/instm/CIFilterShape/transformBy:interior:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("transformBy:interior:")
     public native CIFilterShape transformByInterior(@ByValue CGAffineTransform m, boolean flag);
 
-    /**
-     * unionWith:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/QuartzCoreFramework/Classes/CIFilterShape_Class/index.html#//apple_ref/occ/instm/CIFilterShape/unionWith:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("unionWith:")
     public native CIFilterShape unionWith(CIFilterShape s2);
 
-    /**
-     * unionWithRect:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/QuartzCoreFramework/Classes/CIFilterShape_Class/index.html#//apple_ref/occ/instm/CIFilterShape/unionWithRect:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("unionWithRect:")
     public native CIFilterShape unionWithRect(@ByValue CGRect r);

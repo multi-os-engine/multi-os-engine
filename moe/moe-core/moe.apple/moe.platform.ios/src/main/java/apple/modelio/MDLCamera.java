@@ -60,10 +60,6 @@ public class MDLCamera extends MDLObject {
     @Selector("alloc")
     public static native MDLCamera alloc();
 
-    /**
-     * cameraWithSCNCamera:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLCamera_Class/index.html#//apple_ref/occ/clm/MDLCamera/cameraWithSCNCamera:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("cameraWithSCNCamera:")
     public static native MDLCamera cameraWithSCNCamera(SCNCamera scnCamera);
@@ -172,75 +168,39 @@ public class MDLCamera extends MDLObject {
     @NInt
     public static native long version_static();
 
-    /**
-     * apertureBladeCount</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLCamera_Class/index.html#//apple_ref/occ/instp/MDLCamera/apertureBladeCount">iOS Dev Center</a>
-     */
     @Generated
     @Selector("apertureBladeCount")
     @NUInt
     public native long apertureBladeCount();
 
-    /**
-     * barrelDistortion</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLCamera_Class/index.html#//apple_ref/occ/instp/MDLCamera/barrelDistortion">iOS Dev Center</a>
-     */
     @Generated
     @Selector("barrelDistortion")
     public native float barrelDistortion();
 
-    /**
-     * chromaticAberration</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLCamera_Class/index.html#//apple_ref/occ/instp/MDLCamera/chromaticAberration">iOS Dev Center</a>
-     */
     @Generated
     @Selector("chromaticAberration")
     public native float chromaticAberration();
 
-    /**
-     * fStop</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLCamera_Class/index.html#//apple_ref/occ/instp/MDLCamera/fStop">iOS Dev Center</a>
-     */
     @Generated
     @Selector("fStop")
     public native float fStop();
 
-    /**
-     * farVisibilityDistance</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLCamera_Class/index.html#//apple_ref/occ/instp/MDLCamera/farVisibilityDistance">iOS Dev Center</a>
-     */
     @Generated
     @Selector("farVisibilityDistance")
     public native float farVisibilityDistance();
 
-    /**
-     * fieldOfView</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLCamera_Class/index.html#//apple_ref/occ/instp/MDLCamera/fieldOfView">iOS Dev Center</a>
-     */
     @Generated
     @Selector("fieldOfView")
     public native float fieldOfView();
 
-    /**
-     * fisheyeDistortion</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLCamera_Class/index.html#//apple_ref/occ/instp/MDLCamera/fisheyeDistortion">iOS Dev Center</a>
-     */
     @Generated
     @Selector("fisheyeDistortion")
     public native float fisheyeDistortion();
 
-    /**
-     * focalLength</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLCamera_Class/index.html#//apple_ref/occ/instp/MDLCamera/focalLength">iOS Dev Center</a>
-     */
     @Generated
     @Selector("focalLength")
     public native float focalLength();
 
-    /**
-     * focusDistance</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLCamera_Class/index.html#//apple_ref/occ/instp/MDLCamera/focusDistance">iOS Dev Center</a>
-     */
     @Generated
     @Selector("focusDistance")
     public native float focusDistance();
@@ -249,186 +209,94 @@ public class MDLCamera extends MDLObject {
     @Selector("init")
     public native MDLCamera init();
 
-    /**
-     * maximumCircleOfConfusion</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLCamera_Class/index.html#//apple_ref/occ/instp/MDLCamera/maximumCircleOfConfusion">iOS Dev Center</a>
-     */
     @Generated
     @Selector("maximumCircleOfConfusion")
     public native float maximumCircleOfConfusion();
 
-    /**
-     * nearVisibilityDistance</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLCamera_Class/index.html#//apple_ref/occ/instp/MDLCamera/nearVisibilityDistance">iOS Dev Center</a>
-     */
     @Generated
     @Selector("nearVisibilityDistance")
     public native float nearVisibilityDistance();
 
-    /**
-     * opticalVignetting</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLCamera_Class/index.html#//apple_ref/occ/instp/MDLCamera/opticalVignetting">iOS Dev Center</a>
-     */
     @Generated
     @Selector("opticalVignetting")
     public native float opticalVignetting();
 
-    /**
-     * sensorAspect</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLCamera_Class/index.html#//apple_ref/occ/instp/MDLCamera/sensorAspect">iOS Dev Center</a>
-     */
     @Generated
     @Selector("sensorAspect")
     public native float sensorAspect();
 
-    /**
-     * sensorVerticalAperture</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLCamera_Class/index.html#//apple_ref/occ/instp/MDLCamera/sensorVerticalAperture">iOS Dev Center</a>
-     */
     @Generated
     @Selector("sensorVerticalAperture")
     public native float sensorVerticalAperture();
 
-    /**
-     * apertureBladeCount</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLCamera_Class/index.html#//apple_ref/occ/instp/MDLCamera/apertureBladeCount">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setApertureBladeCount:")
     public native void setApertureBladeCount(@NUInt long value);
 
-    /**
-     * barrelDistortion</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLCamera_Class/index.html#//apple_ref/occ/instp/MDLCamera/barrelDistortion">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setBarrelDistortion:")
     public native void setBarrelDistortion(float value);
 
-    /**
-     * chromaticAberration</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLCamera_Class/index.html#//apple_ref/occ/instp/MDLCamera/chromaticAberration">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setChromaticAberration:")
     public native void setChromaticAberration(float value);
 
-    /**
-     * fStop</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLCamera_Class/index.html#//apple_ref/occ/instp/MDLCamera/fStop">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setFStop:")
     public native void setFStop(float value);
 
-    /**
-     * farVisibilityDistance</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLCamera_Class/index.html#//apple_ref/occ/instp/MDLCamera/farVisibilityDistance">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setFarVisibilityDistance:")
     public native void setFarVisibilityDistance(float value);
 
-    /**
-     * fieldOfView</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLCamera_Class/index.html#//apple_ref/occ/instp/MDLCamera/fieldOfView">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setFieldOfView:")
     public native void setFieldOfView(float value);
 
-    /**
-     * fisheyeDistortion</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLCamera_Class/index.html#//apple_ref/occ/instp/MDLCamera/fisheyeDistortion">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setFisheyeDistortion:")
     public native void setFisheyeDistortion(float value);
 
-    /**
-     * focalLength</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLCamera_Class/index.html#//apple_ref/occ/instp/MDLCamera/focalLength">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setFocalLength:")
     public native void setFocalLength(float value);
 
-    /**
-     * focusDistance</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLCamera_Class/index.html#//apple_ref/occ/instp/MDLCamera/focusDistance">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setFocusDistance:")
     public native void setFocusDistance(float value);
 
-    /**
-     * maximumCircleOfConfusion</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLCamera_Class/index.html#//apple_ref/occ/instp/MDLCamera/maximumCircleOfConfusion">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setMaximumCircleOfConfusion:")
     public native void setMaximumCircleOfConfusion(float value);
 
-    /**
-     * nearVisibilityDistance</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLCamera_Class/index.html#//apple_ref/occ/instp/MDLCamera/nearVisibilityDistance">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setNearVisibilityDistance:")
     public native void setNearVisibilityDistance(float value);
 
-    /**
-     * opticalVignetting</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLCamera_Class/index.html#//apple_ref/occ/instp/MDLCamera/opticalVignetting">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setOpticalVignetting:")
     public native void setOpticalVignetting(float value);
 
-    /**
-     * sensorAspect</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLCamera_Class/index.html#//apple_ref/occ/instp/MDLCamera/sensorAspect">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setSensorAspect:")
     public native void setSensorAspect(float value);
 
-    /**
-     * sensorVerticalAperture</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLCamera_Class/index.html#//apple_ref/occ/instp/MDLCamera/sensorVerticalAperture">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setSensorVerticalAperture:")
     public native void setSensorVerticalAperture(float value);
 
-    /**
-     * shutterOpenInterval</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLCamera_Class/index.html#//apple_ref/occ/instp/MDLCamera/shutterOpenInterval">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setShutterOpenInterval:")
     public native void setShutterOpenInterval(double value);
 
-    /**
-     * worldToMetersConversionScale</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLCamera_Class/index.html#//apple_ref/occ/instp/MDLCamera/worldToMetersConversionScale">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setWorldToMetersConversionScale:")
     public native void setWorldToMetersConversionScale(float value);
 
-    /**
-     * shutterOpenInterval</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLCamera_Class/index.html#//apple_ref/occ/instp/MDLCamera/shutterOpenInterval">iOS Dev Center</a>
-     */
     @Generated
     @Selector("shutterOpenInterval")
     public native double shutterOpenInterval();
 
-    /**
-     * worldToMetersConversionScale</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLCamera_Class/index.html#//apple_ref/occ/instp/MDLCamera/worldToMetersConversionScale">iOS Dev Center</a>
-     */
     @Generated
     @Selector("worldToMetersConversionScale")
     public native float worldToMetersConversionScale();

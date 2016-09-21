@@ -34,10 +34,6 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("UICollisionBehaviorDelegate")
 public interface UICollisionBehaviorDelegate {
-    /**
-     * collisionBehavior:beganContactForItem:withBoundaryIdentifier:atPoint:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UICollisionBehaviorDelegate_Protocol/index.html#//apple_ref/occ/intfm/UICollisionBehaviorDelegate/collisionBehavior:beganContactForItem:withBoundaryIdentifier:atPoint:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("collisionBehavior:beganContactForItem:withBoundaryIdentifier:atPoint:")
@@ -47,10 +43,6 @@ public interface UICollisionBehaviorDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * collisionBehavior:beganContactForItem:withItem:atPoint:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UICollisionBehaviorDelegate_Protocol/index.html#//apple_ref/occ/intfm/UICollisionBehaviorDelegate/collisionBehavior:beganContactForItem:withItem:atPoint:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("collisionBehavior:beganContactForItem:withItem:atPoint:")
@@ -60,10 +52,6 @@ public interface UICollisionBehaviorDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * collisionBehavior:endedContactForItem:withBoundaryIdentifier:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UICollisionBehaviorDelegate_Protocol/index.html#//apple_ref/occ/intfm/UICollisionBehaviorDelegate/collisionBehavior:endedContactForItem:withBoundaryIdentifier:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("collisionBehavior:endedContactForItem:withBoundaryIdentifier:")
@@ -72,10 +60,6 @@ public interface UICollisionBehaviorDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * collisionBehavior:endedContactForItem:withItem:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UICollisionBehaviorDelegate_Protocol/index.html#//apple_ref/occ/intfm/UICollisionBehaviorDelegate/collisionBehavior:endedContactForItem:withItem:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("collisionBehavior:endedContactForItem:withItem:")

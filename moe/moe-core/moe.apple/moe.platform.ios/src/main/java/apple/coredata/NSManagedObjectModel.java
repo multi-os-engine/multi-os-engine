@@ -68,35 +68,19 @@ public class NSManagedObjectModel extends NSObject implements NSCoding, NSCopyin
     @Selector("alloc")
     public static native NSManagedObjectModel alloc();
 
-    /**
-     * mergedModelFromBundles:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/CoreDataFramework/Classes/NSManagedObjectModel_Class/index.html#//apple_ref/occ/clm/NSManagedObjectModel/mergedModelFromBundles:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("mergedModelFromBundles:")
     public static native NSManagedObjectModel mergedModelFromBundles(NSArray<? extends NSBundle> bundles);
 
-    /**
-     * mergedModelFromBundles:forStoreMetadata:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/CoreDataFramework/Classes/NSManagedObjectModel_Class/index.html#//apple_ref/occ/clm/NSManagedObjectModel/mergedModelFromBundles:forStoreMetadata:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("mergedModelFromBundles:forStoreMetadata:")
     public static native NSManagedObjectModel mergedModelFromBundlesForStoreMetadata(
             NSArray<? extends NSBundle> bundles, NSDictionary<String, ?> metadata);
 
-    /**
-     * modelByMergingModels:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/CoreDataFramework/Classes/NSManagedObjectModel_Class/index.html#//apple_ref/occ/clm/NSManagedObjectModel/modelByMergingModels:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("modelByMergingModels:")
     public static native NSManagedObjectModel modelByMergingModels(NSArray<? extends NSManagedObjectModel> models);
 
-    /**
-     * modelByMergingModels:forStoreMetadata:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/CoreDataFramework/Classes/NSManagedObjectModel_Class/index.html#//apple_ref/occ/clm/NSManagedObjectModel/modelByMergingModels:forStoreMetadata:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("modelByMergingModels:forStoreMetadata:")
     public static native NSManagedObjectModel modelByMergingModelsForStoreMetadata(
@@ -202,10 +186,6 @@ public class NSManagedObjectModel extends NSObject implements NSCoding, NSCopyin
     @NInt
     public static native long version();
 
-    /**
-     * configurations</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/CoreDataFramework/Classes/NSManagedObjectModel_Class/index.html#//apple_ref/occ/instp/NSManagedObjectModel/configurations">iOS Dev Center</a>
-     */
     @Generated
     @Selector("configurations")
     public native NSArray<String> configurations();
@@ -225,59 +205,31 @@ public class NSManagedObjectModel extends NSObject implements NSCoding, NSCopyin
     @Selector("encodeWithCoder:")
     public native void encodeWithCoder(NSCoder aCoder);
 
-    /**
-     * entities</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/CoreDataFramework/Classes/NSManagedObjectModel_Class/index.html#//apple_ref/occ/instp/NSManagedObjectModel/entities">iOS Dev Center</a>
-     */
     @Generated
     @Selector("entities")
     public native NSArray<? extends NSEntityDescription> entities();
 
-    /**
-     * entitiesByName</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/CoreDataFramework/Classes/NSManagedObjectModel_Class/index.html#//apple_ref/occ/instp/NSManagedObjectModel/entitiesByName">iOS Dev Center</a>
-     */
     @Generated
     @Selector("entitiesByName")
     public native NSDictionary<String, ? extends NSEntityDescription> entitiesByName();
 
-    /**
-     * entitiesForConfiguration:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/CoreDataFramework/Classes/NSManagedObjectModel_Class/index.html#//apple_ref/occ/instm/NSManagedObjectModel/entitiesForConfiguration:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("entitiesForConfiguration:")
     public native NSArray<? extends NSEntityDescription> entitiesForConfiguration(String configuration);
 
-    /**
-     * entityVersionHashesByName</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/CoreDataFramework/Classes/NSManagedObjectModel_Class/index.html#//apple_ref/occ/instp/NSManagedObjectModel/entityVersionHashesByName">iOS Dev Center</a>
-     */
     @Generated
     @Selector("entityVersionHashesByName")
     public native NSDictionary<String, ? extends NSData> entityVersionHashesByName();
 
-    /**
-     * fetchRequestFromTemplateWithName:substitutionVariables:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/CoreDataFramework/Classes/NSManagedObjectModel_Class/index.html#//apple_ref/occ/instm/NSManagedObjectModel/fetchRequestFromTemplateWithName:substitutionVariables:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("fetchRequestFromTemplateWithName:substitutionVariables:")
     public native NSFetchRequest fetchRequestFromTemplateWithNameSubstitutionVariables(String name,
             NSDictionary<String, ?> variables);
 
-    /**
-     * fetchRequestTemplateForName:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/CoreDataFramework/Classes/NSManagedObjectModel_Class/index.html#//apple_ref/occ/instm/NSManagedObjectModel/fetchRequestTemplateForName:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("fetchRequestTemplateForName:")
     public native NSFetchRequest fetchRequestTemplateForName(String name);
 
-    /**
-     * fetchRequestTemplatesByName</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/CoreDataFramework/Classes/NSManagedObjectModel_Class/index.html#//apple_ref/occ/instp/NSManagedObjectModel/fetchRequestTemplatesByName">iOS Dev Center</a>
-     */
     @Generated
     @Selector("fetchRequestTemplatesByName")
     public native NSDictionary<String, ? extends NSFetchRequest> fetchRequestTemplatesByName();
@@ -290,76 +242,40 @@ public class NSManagedObjectModel extends NSObject implements NSCoding, NSCopyin
     @Selector("initWithCoder:")
     public native NSManagedObjectModel initWithCoder(NSCoder aDecoder);
 
-    /**
-     * initWithContentsOfURL:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/CoreDataFramework/Classes/NSManagedObjectModel_Class/index.html#//apple_ref/occ/instm/NSManagedObjectModel/initWithContentsOfURL:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithContentsOfURL:")
     public native NSManagedObjectModel initWithContentsOfURL(NSURL url);
 
-    /**
-     * isConfiguration:compatibleWithStoreMetadata:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/CoreDataFramework/Classes/NSManagedObjectModel_Class/index.html#//apple_ref/occ/instm/NSManagedObjectModel/isConfiguration:compatibleWithStoreMetadata:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("isConfiguration:compatibleWithStoreMetadata:")
     public native boolean isConfigurationCompatibleWithStoreMetadata(String configuration,
             NSDictionary<String, ?> metadata);
 
-    /**
-     * localizationDictionary</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/CoreDataFramework/Classes/NSManagedObjectModel_Class/index.html#//apple_ref/occ/instp/NSManagedObjectModel/localizationDictionary">iOS Dev Center</a>
-     */
     @Generated
     @Selector("localizationDictionary")
     public native NSDictionary<String, String> localizationDictionary();
 
-    /**
-     * entities</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/CoreDataFramework/Classes/NSManagedObjectModel_Class/index.html#//apple_ref/occ/instp/NSManagedObjectModel/entities">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setEntities:")
     public native void setEntities(NSArray<? extends NSEntityDescription> value);
 
-    /**
-     * setEntities:forConfiguration:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/CoreDataFramework/Classes/NSManagedObjectModel_Class/index.html#//apple_ref/occ/instm/NSManagedObjectModel/setEntities:forConfiguration:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setEntities:forConfiguration:")
     public native void setEntitiesForConfiguration(NSArray<? extends NSEntityDescription> entities,
             String configuration);
 
-    /**
-     * setFetchRequestTemplate:forName:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/CoreDataFramework/Classes/NSManagedObjectModel_Class/index.html#//apple_ref/occ/instm/NSManagedObjectModel/setFetchRequestTemplate:forName:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setFetchRequestTemplate:forName:")
     public native void setFetchRequestTemplateForName(NSFetchRequest fetchRequestTemplate, String name);
 
-    /**
-     * localizationDictionary</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/CoreDataFramework/Classes/NSManagedObjectModel_Class/index.html#//apple_ref/occ/instp/NSManagedObjectModel/localizationDictionary">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setLocalizationDictionary:")
     public native void setLocalizationDictionary(NSDictionary<String, String> value);
 
-    /**
-     * versionIdentifiers</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/CoreDataFramework/Classes/NSManagedObjectModel_Class/index.html#//apple_ref/occ/instp/NSManagedObjectModel/versionIdentifiers">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setVersionIdentifiers:")
     public native void setVersionIdentifiers(NSSet<?> value);
 
-    /**
-     * versionIdentifiers</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/CoreDataFramework/Classes/NSManagedObjectModel_Class/index.html#//apple_ref/occ/instp/NSManagedObjectModel/versionIdentifiers">iOS Dev Center</a>
-     */
     @Generated
     @Selector("versionIdentifiers")
     public native NSSet<?> versionIdentifiers();

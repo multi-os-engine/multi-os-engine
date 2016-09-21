@@ -30,10 +30,6 @@ import org.moe.natj.objc.ann.Selector;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("EAAccessoryDelegate")
 public interface EAAccessoryDelegate {
-    /**
-     * accessoryDidDisconnect:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ExternalAccessory/Reference/EAAccessoryDelegate_protocol/index.html#//apple_ref/occ/intfm/EAAccessoryDelegate/accessoryDidDisconnect:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("accessoryDidDisconnect:")

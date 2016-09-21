@@ -35,19 +35,11 @@ import org.moe.natj.objc.ann.Selector;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("PKAddPaymentPassViewControllerDelegate")
 public interface PKAddPaymentPassViewControllerDelegate {
-    /**
-     * addPaymentPassViewController:didFinishAddingPaymentPass:error:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/PassKit/Reference/PKAddPaymentPassViewControllerDelegate_Protocol/index.html#//apple_ref/occ/intfm/PKAddPaymentPassViewControllerDelegate/addPaymentPassViewController:didFinishAddingPaymentPass:error:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("addPaymentPassViewController:didFinishAddingPaymentPass:error:")
     void addPaymentPassViewControllerDidFinishAddingPaymentPassError(PKAddPaymentPassViewController controller,
             PKPaymentPass pass, NSError error);
 
-    /**
-     * addPaymentPassViewController:generateRequestWithCertificateChain:nonce:nonceSignature:completionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/PassKit/Reference/PKAddPaymentPassViewControllerDelegate_Protocol/index.html#//apple_ref/occ/intfm/PKAddPaymentPassViewControllerDelegate/addPaymentPassViewController:generateRequestWithCertificateChain:nonce:nonceSignature:completionHandler:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("addPaymentPassViewController:generateRequestWithCertificateChain:nonce:nonceSignature:completionHandler:")
     void addPaymentPassViewControllerGenerateRequestWithCertificateChainNonceNonceSignatureCompletionHandler(

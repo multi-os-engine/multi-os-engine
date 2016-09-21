@@ -32,10 +32,6 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("SCNSceneRendererDelegate")
 public interface SCNSceneRendererDelegate {
-    /**
-     * renderer:didApplyAnimationsAtTime:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNSceneRendererDelegate_Protocol/index.html#//apple_ref/occ/intfm/SCNSceneRendererDelegate/renderer:didApplyAnimationsAtTime:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("renderer:didApplyAnimationsAtTime:")
@@ -43,10 +39,6 @@ public interface SCNSceneRendererDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * renderer:didRenderScene:atTime:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNSceneRendererDelegate_Protocol/index.html#//apple_ref/occ/intfm/SCNSceneRendererDelegate/renderer:didRenderScene:atTime:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("renderer:didRenderScene:atTime:")
@@ -55,10 +47,6 @@ public interface SCNSceneRendererDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * renderer:didSimulatePhysicsAtTime:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNSceneRendererDelegate_Protocol/index.html#//apple_ref/occ/intfm/SCNSceneRendererDelegate/renderer:didSimulatePhysicsAtTime:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("renderer:didSimulatePhysicsAtTime:")
@@ -66,10 +54,6 @@ public interface SCNSceneRendererDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * renderer:updateAtTime:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNSceneRendererDelegate_Protocol/index.html#//apple_ref/occ/intfm/SCNSceneRendererDelegate/renderer:updateAtTime:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("renderer:updateAtTime:")
@@ -77,10 +61,6 @@ public interface SCNSceneRendererDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * renderer:willRenderScene:atTime:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNSceneRendererDelegate_Protocol/index.html#//apple_ref/occ/intfm/SCNSceneRendererDelegate/renderer:willRenderScene:atTime:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("renderer:willRenderScene:atTime:")

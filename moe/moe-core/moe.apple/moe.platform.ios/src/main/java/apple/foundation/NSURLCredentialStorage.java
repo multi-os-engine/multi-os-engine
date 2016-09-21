@@ -56,10 +56,6 @@ public class NSURLCredentialStorage extends NSObject {
     @Selector("alloc")
     public static native NSURLCredentialStorage alloc();
 
-    /**
-     * sharedCredentialStorage</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSURLCredentialStorage_Class/index.html#//apple_ref/occ/clm/NSURLCredentialStorage/sharedCredentialStorage">iOS Dev Center</a>
-     */
     @Generated
     @Selector("sharedCredentialStorage")
     public static native NSURLCredentialStorage sharedCredentialStorage();
@@ -164,27 +160,15 @@ public class NSURLCredentialStorage extends NSObject {
     @NInt
     public static native long version_static();
 
-    /**
-     * allCredentials</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSURLCredentialStorage_Class/index.html#//apple_ref/occ/instp/NSURLCredentialStorage/allCredentials">iOS Dev Center</a>
-     */
     @Generated
     @Selector("allCredentials")
     public native NSDictionary<? extends NSURLProtectionSpace, ? extends NSDictionary<String, ? extends NSURLCredential>> allCredentials();
 
-    /**
-     * credentialsForProtectionSpace:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSURLCredentialStorage_Class/index.html#//apple_ref/occ/instm/NSURLCredentialStorage/credentialsForProtectionSpace:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("credentialsForProtectionSpace:")
     public native NSDictionary<String, ? extends NSURLCredential> credentialsForProtectionSpace(
             NSURLProtectionSpace space);
 
-    /**
-     * defaultCredentialForProtectionSpace:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSURLCredentialStorage_Class/index.html#//apple_ref/occ/instm/NSURLCredentialStorage/defaultCredentialForProtectionSpace:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("defaultCredentialForProtectionSpace:")
     public native NSURLCredential defaultCredentialForProtectionSpace(NSURLProtectionSpace space);
@@ -205,18 +189,10 @@ public class NSURLCredentialStorage extends NSObject {
     @Selector("init")
     public native NSURLCredentialStorage init();
 
-    /**
-     * removeCredential:forProtectionSpace:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSURLCredentialStorage_Class/index.html#//apple_ref/occ/instm/NSURLCredentialStorage/removeCredential:forProtectionSpace:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("removeCredential:forProtectionSpace:")
     public native void removeCredentialForProtectionSpace(NSURLCredential credential, NSURLProtectionSpace space);
 
-    /**
-     * removeCredential:forProtectionSpace:options:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSURLCredentialStorage_Class/index.html#//apple_ref/occ/instm/NSURLCredentialStorage/removeCredential:forProtectionSpace:options:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("removeCredential:forProtectionSpace:options:")
     public native void removeCredentialForProtectionSpaceOptions(NSURLCredential credential, NSURLProtectionSpace space,
@@ -227,10 +203,6 @@ public class NSURLCredentialStorage extends NSObject {
     public native void removeCredentialForProtectionSpaceOptionsTask(NSURLCredential credential,
             NSURLProtectionSpace protectionSpace, NSDictionary<String, ?> options, NSURLSessionTask task);
 
-    /**
-     * setCredential:forProtectionSpace:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSURLCredentialStorage_Class/index.html#//apple_ref/occ/instm/NSURLCredentialStorage/setCredential:forProtectionSpace:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setCredential:forProtectionSpace:")
     public native void setCredentialForProtectionSpace(NSURLCredential credential, NSURLProtectionSpace space);
@@ -240,10 +212,6 @@ public class NSURLCredentialStorage extends NSObject {
     public native void setCredentialForProtectionSpaceTask(NSURLCredential credential,
             NSURLProtectionSpace protectionSpace, NSURLSessionTask task);
 
-    /**
-     * setDefaultCredential:forProtectionSpace:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSURLCredentialStorage_Class/index.html#//apple_ref/occ/instm/NSURLCredentialStorage/setDefaultCredential:forProtectionSpace:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setDefaultCredential:forProtectionSpace:")
     public native void setDefaultCredentialForProtectionSpace(NSURLCredential credential, NSURLProtectionSpace space);

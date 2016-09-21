@@ -200,27 +200,15 @@ public class UITabBarItem extends UIBarItem {
     @NInt
     public static native long version_static();
 
-    /**
-     * badgeValue</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITabBarItem_Class/index.html#//apple_ref/occ/instp/UITabBarItem/badgeValue">iOS Dev Center</a>
-     */
     @Generated
     @Selector("badgeValue")
     public native String badgeValue();
 
-    /**
-     * finishedSelectedImage</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITabBarItem_Class/index.html#//apple_ref/occ/instm/UITabBarItem/finishedSelectedImage">iOS Dev Center</a>
-     */
     @Generated
     @Deprecated
     @Selector("finishedSelectedImage")
     public native UIImage finishedSelectedImage();
 
-    /**
-     * finishedUnselectedImage</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITabBarItem_Class/index.html#//apple_ref/occ/instm/UITabBarItem/finishedUnselectedImage">iOS Dev Center</a>
-     */
     @Generated
     @Deprecated
     @Selector("finishedUnselectedImage")
@@ -230,76 +218,40 @@ public class UITabBarItem extends UIBarItem {
     @Selector("init")
     public native UITabBarItem init();
 
-    /**
-     * initWithTabBarSystemItem:tag:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITabBarItem_Class/index.html#//apple_ref/occ/instm/UITabBarItem/initWithTabBarSystemItem:tag:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithTabBarSystemItem:tag:")
     public native UITabBarItem initWithTabBarSystemItemTag(@NInt long systemItem, @NInt long tag);
 
-    /**
-     * initWithTitle:image:selectedImage:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITabBarItem_Class/index.html#//apple_ref/occ/instm/UITabBarItem/initWithTitle:image:selectedImage:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithTitle:image:selectedImage:")
     public native UITabBarItem initWithTitleImageSelectedImage(String title, UIImage image, UIImage selectedImage);
 
-    /**
-     * initWithTitle:image:tag:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITabBarItem_Class/index.html#//apple_ref/occ/instm/UITabBarItem/initWithTitle:image:tag:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithTitle:image:tag:")
     public native UITabBarItem initWithTitleImageTag(String title, UIImage image, @NInt long tag);
 
-    /**
-     * selectedImage</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITabBarItem_Class/index.html#//apple_ref/occ/instp/UITabBarItem/selectedImage">iOS Dev Center</a>
-     */
     @Generated
     @Selector("selectedImage")
     public native UIImage selectedImage();
 
-    /**
-     * badgeValue</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITabBarItem_Class/index.html#//apple_ref/occ/instp/UITabBarItem/badgeValue">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setBadgeValue:")
     public native void setBadgeValue(String value);
 
-    /**
-     * setFinishedSelectedImage:withFinishedUnselectedImage:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITabBarItem_Class/index.html#//apple_ref/occ/instm/UITabBarItem/setFinishedSelectedImage:withFinishedUnselectedImage:">iOS Dev Center</a>
-     */
     @Generated
     @Deprecated
     @Selector("setFinishedSelectedImage:withFinishedUnselectedImage:")
     public native void setFinishedSelectedImageWithFinishedUnselectedImage(UIImage selectedImage,
             UIImage unselectedImage);
 
-    /**
-     * selectedImage</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITabBarItem_Class/index.html#//apple_ref/occ/instp/UITabBarItem/selectedImage">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setSelectedImage:")
     public native void setSelectedImage(UIImage value);
 
-    /**
-     * titlePositionAdjustment</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITabBarItem_Class/index.html#//apple_ref/occ/instp/UITabBarItem/titlePositionAdjustment">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setTitlePositionAdjustment:")
     public native void setTitlePositionAdjustment(@ByValue UIOffset value);
 
-    /**
-     * titlePositionAdjustment</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITabBarItem_Class/index.html#//apple_ref/occ/instp/UITabBarItem/titlePositionAdjustment">iOS Dev Center</a>
-     */
     @Generated
     @Selector("titlePositionAdjustment")
     @ByValue

@@ -59,10 +59,6 @@ public class AVAssetWriterInputGroup extends AVMediaSelectionGroup {
     @Selector("alloc")
     public static native AVAssetWriterInputGroup alloc();
 
-    /**
-     * assetWriterInputGroupWithInputs:defaultInput:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAssetWriterInputGroup_Class/index.html#//apple_ref/occ/clm/AVAssetWriterInputGroup/assetWriterInputGroupWithInputs:defaultInput:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("assetWriterInputGroupWithInputs:defaultInput:")
     public static native AVAssetWriterInputGroup assetWriterInputGroupWithInputsDefaultInput(
@@ -193,10 +189,6 @@ public class AVAssetWriterInputGroup extends AVMediaSelectionGroup {
     @NInt
     public static native long version_static();
 
-    /**
-     * defaultInput</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAssetWriterInputGroup_Class/index.html#//apple_ref/occ/instp/AVAssetWriterInputGroup/defaultInput">iOS Dev Center</a>
-     */
     @Generated
     @Selector("defaultInput")
     public native AVAssetWriterInput defaultInput();
@@ -205,19 +197,11 @@ public class AVAssetWriterInputGroup extends AVMediaSelectionGroup {
     @Selector("init")
     public native AVAssetWriterInputGroup init();
 
-    /**
-     * initWithInputs:defaultInput:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAssetWriterInputGroup_Class/index.html#//apple_ref/occ/instm/AVAssetWriterInputGroup/initWithInputs:defaultInput:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithInputs:defaultInput:")
     public native AVAssetWriterInputGroup initWithInputsDefaultInput(NSArray<? extends AVAssetWriterInput> inputs,
             AVAssetWriterInput defaultInput);
 
-    /**
-     * inputs</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAssetWriterInputGroup_Class/index.html#//apple_ref/occ/instp/AVAssetWriterInputGroup/inputs">iOS Dev Center</a>
-     */
     @Generated
     @Selector("inputs")
     public native NSArray<? extends AVAssetWriterInput> inputs();

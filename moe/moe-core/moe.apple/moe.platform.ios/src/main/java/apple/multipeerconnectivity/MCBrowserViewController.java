@@ -178,10 +178,6 @@ public class MCBrowserViewController extends UIViewController implements MCNearb
     @NInt
     public static native long version_static();
 
-    /**
-     * browser</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MultipeerConnectivity/Reference/MCBrowserViewController_class/index.html#//apple_ref/occ/instp/MCBrowserViewController/browser">iOS Dev Center</a>
-     */
     @Generated
     @Selector("browser")
     public native MCNearbyServiceBrowser browser();
@@ -200,10 +196,6 @@ public class MCBrowserViewController extends UIViewController implements MCNearb
     @Selector("browser:lostPeer:")
     public native void browserLostPeer(MCNearbyServiceBrowser browser, MCPeerID peerID);
 
-    /**
-     * delegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MultipeerConnectivity/Reference/MCBrowserViewController_class/index.html#//apple_ref/occ/instp/MCBrowserViewController/delegate">iOS Dev Center</a>
-     */
     @Generated
     @Selector("delegate")
     @MappedReturn(ObjCObjectMapper.class)
@@ -213,10 +205,6 @@ public class MCBrowserViewController extends UIViewController implements MCNearb
     @Selector("init")
     public native MCBrowserViewController init();
 
-    /**
-     * initWithBrowser:session:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MultipeerConnectivity/Reference/MCBrowserViewController_class/index.html#//apple_ref/occ/instm/MCBrowserViewController/initWithBrowser:session:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithBrowser:session:")
     public native MCBrowserViewController initWithBrowserSession(MCNearbyServiceBrowser browser, MCSession session);
@@ -225,52 +213,28 @@ public class MCBrowserViewController extends UIViewController implements MCNearb
     @Selector("initWithNibName:bundle:")
     public native MCBrowserViewController initWithNibNameBundle(String nibNameOrNil, NSBundle nibBundleOrNil);
 
-    /**
-     * initWithServiceType:session:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MultipeerConnectivity/Reference/MCBrowserViewController_class/index.html#//apple_ref/occ/instm/MCBrowserViewController/initWithServiceType:session:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithServiceType:session:")
     public native MCBrowserViewController initWithServiceTypeSession(String serviceType, MCSession session);
 
-    /**
-     * maximumNumberOfPeers</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MultipeerConnectivity/Reference/MCBrowserViewController_class/index.html#//apple_ref/occ/instp/MCBrowserViewController/maximumNumberOfPeers">iOS Dev Center</a>
-     */
     @Generated
     @Selector("maximumNumberOfPeers")
     @NUInt
     public native long maximumNumberOfPeers();
 
-    /**
-     * minimumNumberOfPeers</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MultipeerConnectivity/Reference/MCBrowserViewController_class/index.html#//apple_ref/occ/instp/MCBrowserViewController/minimumNumberOfPeers">iOS Dev Center</a>
-     */
     @Generated
     @Selector("minimumNumberOfPeers")
     @NUInt
     public native long minimumNumberOfPeers();
 
-    /**
-     * session</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MultipeerConnectivity/Reference/MCBrowserViewController_class/index.html#//apple_ref/occ/instp/MCBrowserViewController/session">iOS Dev Center</a>
-     */
     @Generated
     @Selector("session")
     public native MCSession session();
 
-    /**
-     * delegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MultipeerConnectivity/Reference/MCBrowserViewController_class/index.html#//apple_ref/occ/instp/MCBrowserViewController/delegate">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setDelegate:")
     public native void setDelegate_unsafe(@Mapped(ObjCObjectMapper.class) MCBrowserViewControllerDelegate value);
 
-    /**
-     * delegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MultipeerConnectivity/Reference/MCBrowserViewController_class/index.html#//apple_ref/occ/instp/MCBrowserViewController/delegate">iOS Dev Center</a>
-     */
     @Generated
     public void setDelegate(@Mapped(ObjCObjectMapper.class) MCBrowserViewControllerDelegate value) {
         Object __old = delegate();
@@ -283,18 +247,10 @@ public class MCBrowserViewController extends UIViewController implements MCNearb
         }
     }
 
-    /**
-     * maximumNumberOfPeers</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MultipeerConnectivity/Reference/MCBrowserViewController_class/index.html#//apple_ref/occ/instp/MCBrowserViewController/maximumNumberOfPeers">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setMaximumNumberOfPeers:")
     public native void setMaximumNumberOfPeers(@NUInt long value);
 
-    /**
-     * minimumNumberOfPeers</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MultipeerConnectivity/Reference/MCBrowserViewController_class/index.html#//apple_ref/occ/instp/MCBrowserViewController/minimumNumberOfPeers">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setMinimumNumberOfPeers:")
     public native void setMinimumNumberOfPeers(@NUInt long value);

@@ -158,19 +158,11 @@ public class MTLVertexAttribute extends NSObject {
     @NInt
     public static native long version_static();
 
-    /**
-     * attributeIndex</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Metal/Reference/MTLVertexAttribute_Ref/index.html#//apple_ref/occ/instp/MTLVertexAttribute/attributeIndex">iOS Dev Center</a>
-     */
     @Generated
     @Selector("attributeIndex")
     @NUInt
     public native long attributeIndex();
 
-    /**
-     * attributeType</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Metal/Reference/MTLVertexAttribute_Ref/index.html#//apple_ref/occ/instp/MTLVertexAttribute/attributeType">iOS Dev Center</a>
-     */
     @Generated
     @Selector("attributeType")
     @NUInt
@@ -180,18 +172,10 @@ public class MTLVertexAttribute extends NSObject {
     @Selector("init")
     public native MTLVertexAttribute init();
 
-    /**
-     * active</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Metal/Reference/MTLVertexAttribute_Ref/index.html#//apple_ref/occ/instp/MTLVertexAttribute/active">iOS Dev Center</a>
-     */
     @Generated
     @Selector("isActive")
     public native boolean isActive();
 
-    /**
-     * name</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Metal/Reference/MTLVertexAttribute_Ref/index.html#//apple_ref/occ/instp/MTLVertexAttribute/name">iOS Dev Center</a>
-     */
     @Generated
     @Selector("name")
     public native String name();

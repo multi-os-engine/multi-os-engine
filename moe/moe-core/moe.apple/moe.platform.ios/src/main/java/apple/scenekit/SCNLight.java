@@ -69,10 +69,6 @@ public class SCNLight extends NSObject implements SCNAnimatable, SCNTechniqueSup
     @Selector("alloc")
     public static native SCNLight alloc();
 
-    /**
-     * light</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNLight_Class/index.html#//apple_ref/occ/clm/SCNLight/light">iOS Dev Center</a>
-     */
     @Generated
     @Selector("light")
     public static native SCNLight light();
@@ -81,10 +77,6 @@ public class SCNLight extends NSObject implements SCNAnimatable, SCNTechniqueSup
     @Selector("supportsSecureCoding")
     public static native boolean supportsSecureCoding();
 
-    /**
-     * lightWithMDLLight:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNLight_Class/index.html#//apple_ref/occ/clm/SCNLight/lightWithMDLLight:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("lightWithMDLLight:")
     public static native SCNLight lightWithMDLLight(MDLLight mdlLight);
@@ -201,54 +193,30 @@ public class SCNLight extends NSObject implements SCNAnimatable, SCNTechniqueSup
     @Selector("animationKeys")
     public native NSArray<String> animationKeys();
 
-    /**
-     * attenuationEndDistance</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNLight_Class/index.html#//apple_ref/occ/instp/SCNLight/attenuationEndDistance">iOS Dev Center</a>
-     */
     @Generated
     @Selector("attenuationEndDistance")
     @NFloat
     public native double attenuationEndDistance();
 
-    /**
-     * attenuationFalloffExponent</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNLight_Class/index.html#//apple_ref/occ/instp/SCNLight/attenuationFalloffExponent">iOS Dev Center</a>
-     */
     @Generated
     @Selector("attenuationFalloffExponent")
     @NFloat
     public native double attenuationFalloffExponent();
 
-    /**
-     * attenuationStartDistance</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNLight_Class/index.html#//apple_ref/occ/instp/SCNLight/attenuationStartDistance">iOS Dev Center</a>
-     */
     @Generated
     @Selector("attenuationStartDistance")
     @NFloat
     public native double attenuationStartDistance();
 
-    /**
-     * castsShadow</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNLight_Class/index.html#//apple_ref/occ/instp/SCNLight/castsShadow">iOS Dev Center</a>
-     */
     @Generated
     @Selector("castsShadow")
     public native boolean castsShadow();
 
-    /**
-     * categoryBitMask</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNLight_Class/index.html#//apple_ref/occ/instp/SCNLight/categoryBitMask">iOS Dev Center</a>
-     */
     @Generated
     @Selector("categoryBitMask")
     @NUInt
     public native long categoryBitMask();
 
-    /**
-     * color</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNLight_Class/index.html#//apple_ref/occ/instp/SCNLight/color">iOS Dev Center</a>
-     */
     @Generated
     @Selector("color")
     @MappedReturn(ObjCObjectMapper.class)
@@ -264,10 +232,6 @@ public class SCNLight extends NSObject implements SCNAnimatable, SCNTechniqueSup
     @Selector("encodeWithCoder:")
     public native void encodeWithCoder(NSCoder aCoder);
 
-    /**
-     * gobo</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNLight_Class/index.html#//apple_ref/occ/instp/SCNLight/gobo">iOS Dev Center</a>
-     */
     @Generated
     @Selector("gobo")
     public native SCNMaterialProperty gobo();
@@ -284,18 +248,10 @@ public class SCNLight extends NSObject implements SCNAnimatable, SCNTechniqueSup
     @Selector("isAnimationForKeyPaused:")
     public native boolean isAnimationForKeyPaused(String key);
 
-    /**
-     * name</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNLight_Class/index.html#//apple_ref/occ/instp/SCNLight/name">iOS Dev Center</a>
-     */
     @Generated
     @Selector("name")
     public native String name();
 
-    /**
-     * orthographicScale</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNLight_Class/index.html#//apple_ref/occ/instp/SCNLight/orthographicScale">iOS Dev Center</a>
-     */
     @Generated
     @Selector("orthographicScale")
     @NFloat
@@ -321,130 +277,66 @@ public class SCNLight extends NSObject implements SCNAnimatable, SCNTechniqueSup
     @Selector("resumeAnimationForKey:")
     public native void resumeAnimationForKey(String key);
 
-    /**
-     * attenuationEndDistance</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNLight_Class/index.html#//apple_ref/occ/instp/SCNLight/attenuationEndDistance">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setAttenuationEndDistance:")
     public native void setAttenuationEndDistance(@NFloat double value);
 
-    /**
-     * attenuationFalloffExponent</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNLight_Class/index.html#//apple_ref/occ/instp/SCNLight/attenuationFalloffExponent">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setAttenuationFalloffExponent:")
     public native void setAttenuationFalloffExponent(@NFloat double value);
 
-    /**
-     * attenuationStartDistance</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNLight_Class/index.html#//apple_ref/occ/instp/SCNLight/attenuationStartDistance">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setAttenuationStartDistance:")
     public native void setAttenuationStartDistance(@NFloat double value);
 
-    /**
-     * castsShadow</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNLight_Class/index.html#//apple_ref/occ/instp/SCNLight/castsShadow">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setCastsShadow:")
     public native void setCastsShadow(boolean value);
 
-    /**
-     * categoryBitMask</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNLight_Class/index.html#//apple_ref/occ/instp/SCNLight/categoryBitMask">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setCategoryBitMask:")
     public native void setCategoryBitMask(@NUInt long value);
 
-    /**
-     * color</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNLight_Class/index.html#//apple_ref/occ/instp/SCNLight/color">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setColor:")
     public native void setColor(@Mapped(ObjCObjectMapper.class) Object value);
 
-    /**
-     * name</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNLight_Class/index.html#//apple_ref/occ/instp/SCNLight/name">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setName:")
     public native void setName(String value);
 
-    /**
-     * orthographicScale</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNLight_Class/index.html#//apple_ref/occ/instp/SCNLight/orthographicScale">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setOrthographicScale:")
     public native void setOrthographicScale(@NFloat double value);
 
-    /**
-     * shadowBias</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNLight_Class/index.html#//apple_ref/occ/instp/SCNLight/shadowBias">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setShadowBias:")
     public native void setShadowBias(@NFloat double value);
 
-    /**
-     * shadowColor</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNLight_Class/index.html#//apple_ref/occ/instp/SCNLight/shadowColor">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setShadowColor:")
     public native void setShadowColor(@Mapped(ObjCObjectMapper.class) Object value);
 
-    /**
-     * shadowMapSize</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNLight_Class/index.html#//apple_ref/occ/instp/SCNLight/shadowMapSize">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setShadowMapSize:")
     public native void setShadowMapSize(@ByValue CGSize value);
 
-    /**
-     * shadowMode</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNLight_Class/index.html#//apple_ref/occ/instp/SCNLight/shadowMode">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setShadowMode:")
     public native void setShadowMode(@NInt long value);
 
-    /**
-     * shadowRadius</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNLight_Class/index.html#//apple_ref/occ/instp/SCNLight/shadowRadius">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setShadowRadius:")
     public native void setShadowRadius(@NFloat double value);
 
-    /**
-     * shadowSampleCount</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNLight_Class/index.html#//apple_ref/occ/instp/SCNLight/shadowSampleCount">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setShadowSampleCount:")
     public native void setShadowSampleCount(@NUInt long value);
 
-    /**
-     * spotInnerAngle</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNLight_Class/index.html#//apple_ref/occ/instp/SCNLight/spotInnerAngle">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setSpotInnerAngle:")
     public native void setSpotInnerAngle(@NFloat double value);
 
-    /**
-     * spotOuterAngle</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNLight_Class/index.html#//apple_ref/occ/instp/SCNLight/spotOuterAngle">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setSpotOuterAngle:")
     public native void setSpotOuterAngle(@NFloat double value);
@@ -453,97 +345,53 @@ public class SCNLight extends NSObject implements SCNAnimatable, SCNTechniqueSup
     @Selector("setTechnique:")
     public native void setTechnique(SCNTechnique value);
 
-    /**
-     * type</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNLight_Class/index.html#//apple_ref/occ/instp/SCNLight/type">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setType:")
     public native void setType(String value);
 
-    /**
-     * zFar</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNLight_Class/index.html#//apple_ref/occ/instp/SCNLight/zFar">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setZFar:")
     public native void setZFar(@NFloat double value);
 
-    /**
-     * zNear</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNLight_Class/index.html#//apple_ref/occ/instp/SCNLight/zNear">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setZNear:")
     public native void setZNear(@NFloat double value);
 
-    /**
-     * shadowBias</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNLight_Class/index.html#//apple_ref/occ/instp/SCNLight/shadowBias">iOS Dev Center</a>
-     */
     @Generated
     @Selector("shadowBias")
     @NFloat
     public native double shadowBias();
 
-    /**
-     * shadowColor</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNLight_Class/index.html#//apple_ref/occ/instp/SCNLight/shadowColor">iOS Dev Center</a>
-     */
     @Generated
     @Selector("shadowColor")
     @MappedReturn(ObjCObjectMapper.class)
     public native Object shadowColor();
 
-    /**
-     * shadowMapSize</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNLight_Class/index.html#//apple_ref/occ/instp/SCNLight/shadowMapSize">iOS Dev Center</a>
-     */
     @Generated
     @Selector("shadowMapSize")
     @ByValue
     public native CGSize shadowMapSize();
 
-    /**
-     * shadowMode</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNLight_Class/index.html#//apple_ref/occ/instp/SCNLight/shadowMode">iOS Dev Center</a>
-     */
     @Generated
     @Selector("shadowMode")
     @NInt
     public native long shadowMode();
 
-    /**
-     * shadowRadius</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNLight_Class/index.html#//apple_ref/occ/instp/SCNLight/shadowRadius">iOS Dev Center</a>
-     */
     @Generated
     @Selector("shadowRadius")
     @NFloat
     public native double shadowRadius();
 
-    /**
-     * shadowSampleCount</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNLight_Class/index.html#//apple_ref/occ/instp/SCNLight/shadowSampleCount">iOS Dev Center</a>
-     */
     @Generated
     @Selector("shadowSampleCount")
     @NUInt
     public native long shadowSampleCount();
 
-    /**
-     * spotInnerAngle</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNLight_Class/index.html#//apple_ref/occ/instp/SCNLight/spotInnerAngle">iOS Dev Center</a>
-     */
     @Generated
     @Selector("spotInnerAngle")
     @NFloat
     public native double spotInnerAngle();
 
-    /**
-     * spotOuterAngle</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNLight_Class/index.html#//apple_ref/occ/instp/SCNLight/spotOuterAngle">iOS Dev Center</a>
-     */
     @Generated
     @Selector("spotOuterAngle")
     @NFloat
@@ -559,27 +407,15 @@ public class SCNLight extends NSObject implements SCNAnimatable, SCNTechniqueSup
     @Selector("technique")
     public native SCNTechnique technique();
 
-    /**
-     * type</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNLight_Class/index.html#//apple_ref/occ/instp/SCNLight/type">iOS Dev Center</a>
-     */
     @Generated
     @Selector("type")
     public native String type();
 
-    /**
-     * zFar</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNLight_Class/index.html#//apple_ref/occ/instp/SCNLight/zFar">iOS Dev Center</a>
-     */
     @Generated
     @Selector("zFar")
     @NFloat
     public native double zFar();
 
-    /**
-     * zNear</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNLight_Class/index.html#//apple_ref/occ/instp/SCNLight/zNear">iOS Dev Center</a>
-     */
     @Generated
     @Selector("zNear")
     @NFloat

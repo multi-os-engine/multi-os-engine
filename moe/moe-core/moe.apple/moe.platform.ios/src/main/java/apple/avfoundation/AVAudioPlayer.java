@@ -165,67 +165,35 @@ public class AVAudioPlayer extends NSObject {
     @NInt
     public static native long version_static();
 
-    /**
-     * averagePowerForChannel:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioPlayerClassReference/index.html#//apple_ref/occ/instm/AVAudioPlayer/averagePowerForChannel:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("averagePowerForChannel:")
     public native float averagePowerForChannel(@NUInt long channelNumber);
 
-    /**
-     * channelAssignments</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioPlayerClassReference/index.html#//apple_ref/occ/instp/AVAudioPlayer/channelAssignments">iOS Dev Center</a>
-     */
     @Generated
     @Selector("channelAssignments")
     public native NSArray<? extends NSNumber> channelAssignments();
 
-    /**
-     * currentTime</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioPlayerClassReference/index.html#//apple_ref/occ/instp/AVAudioPlayer/currentTime">iOS Dev Center</a>
-     */
     @Generated
     @Selector("currentTime")
     public native double currentTime();
 
-    /**
-     * data</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioPlayerClassReference/index.html#//apple_ref/occ/instp/AVAudioPlayer/data">iOS Dev Center</a>
-     */
     @Generated
     @Selector("data")
     public native NSData data();
 
-    /**
-     * delegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioPlayerClassReference/index.html#//apple_ref/occ/instp/AVAudioPlayer/delegate">iOS Dev Center</a>
-     */
     @Generated
     @Selector("delegate")
     @MappedReturn(ObjCObjectMapper.class)
     public native AVAudioPlayerDelegate delegate();
 
-    /**
-     * deviceCurrentTime</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioPlayerClassReference/index.html#//apple_ref/occ/instp/AVAudioPlayer/deviceCurrentTime">iOS Dev Center</a>
-     */
     @Generated
     @Selector("deviceCurrentTime")
     public native double deviceCurrentTime();
 
-    /**
-     * duration</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioPlayerClassReference/index.html#//apple_ref/occ/instp/AVAudioPlayer/duration">iOS Dev Center</a>
-     */
     @Generated
     @Selector("duration")
     public native double duration();
 
-    /**
-     * enableRate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioPlayerClassReference/index.html#//apple_ref/occ/instp/AVAudioPlayer/enableRate">iOS Dev Center</a>
-     */
     @Generated
     @Selector("enableRate")
     public native boolean enableRate();
@@ -234,165 +202,85 @@ public class AVAudioPlayer extends NSObject {
     @Selector("init")
     public native AVAudioPlayer init();
 
-    /**
-     * initWithContentsOfURL:error:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioPlayerClassReference/index.html#//apple_ref/occ/instm/AVAudioPlayer/initWithContentsOfURL:error:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithContentsOfURL:error:")
     public native AVAudioPlayer initWithContentsOfURLError(NSURL url, Ptr<NSError> outError);
 
-    /**
-     * initWithContentsOfURL:fileTypeHint:error:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioPlayerClassReference/index.html#//apple_ref/occ/instm/AVAudioPlayer/initWithContentsOfURL:fileTypeHint:error:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithContentsOfURL:fileTypeHint:error:")
     public native AVAudioPlayer initWithContentsOfURLFileTypeHintError(NSURL url, String utiString,
             Ptr<NSError> outError);
 
-    /**
-     * initWithData:error:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioPlayerClassReference/index.html#//apple_ref/occ/instm/AVAudioPlayer/initWithData:error:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithData:error:")
     public native AVAudioPlayer initWithDataError(NSData data, Ptr<NSError> outError);
 
-    /**
-     * initWithData:fileTypeHint:error:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioPlayerClassReference/index.html#//apple_ref/occ/instm/AVAudioPlayer/initWithData:fileTypeHint:error:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithData:fileTypeHint:error:")
     public native AVAudioPlayer initWithDataFileTypeHintError(NSData data, String utiString, Ptr<NSError> outError);
 
-    /**
-     * meteringEnabled</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioPlayerClassReference/index.html#//apple_ref/occ/instp/AVAudioPlayer/meteringEnabled">iOS Dev Center</a>
-     */
     @Generated
     @Selector("isMeteringEnabled")
     public native boolean isMeteringEnabled();
 
-    /**
-     * meteringEnabled</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioPlayerClassReference/index.html#//apple_ref/occ/instp/AVAudioPlayer/meteringEnabled">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setMeteringEnabled:")
     public native void setMeteringEnabled(boolean value);
 
-    /**
-     * playing</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioPlayerClassReference/index.html#//apple_ref/occ/instp/AVAudioPlayer/playing">iOS Dev Center</a>
-     */
     @Generated
     @Selector("isPlaying")
     public native boolean isPlaying();
 
-    /**
-     * numberOfChannels</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioPlayerClassReference/index.html#//apple_ref/occ/instp/AVAudioPlayer/numberOfChannels">iOS Dev Center</a>
-     */
     @Generated
     @Selector("numberOfChannels")
     @NUInt
     public native long numberOfChannels();
 
-    /**
-     * numberOfLoops</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioPlayerClassReference/index.html#//apple_ref/occ/instp/AVAudioPlayer/numberOfLoops">iOS Dev Center</a>
-     */
     @Generated
     @Selector("numberOfLoops")
     @NInt
     public native long numberOfLoops();
 
-    /**
-     * pan</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioPlayerClassReference/index.html#//apple_ref/occ/instp/AVAudioPlayer/pan">iOS Dev Center</a>
-     */
     @Generated
     @Selector("pan")
     public native float pan();
 
-    /**
-     * pause</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioPlayerClassReference/index.html#//apple_ref/occ/instm/AVAudioPlayer/pause">iOS Dev Center</a>
-     */
     @Generated
     @Selector("pause")
     public native void pause();
 
-    /**
-     * peakPowerForChannel:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioPlayerClassReference/index.html#//apple_ref/occ/instm/AVAudioPlayer/peakPowerForChannel:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("peakPowerForChannel:")
     public native float peakPowerForChannel(@NUInt long channelNumber);
 
-    /**
-     * play</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioPlayerClassReference/index.html#//apple_ref/occ/instm/AVAudioPlayer/play">iOS Dev Center</a>
-     */
     @Generated
     @Selector("play")
     public native boolean play();
 
-    /**
-     * playAtTime:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioPlayerClassReference/index.html#//apple_ref/occ/instm/AVAudioPlayer/playAtTime:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("playAtTime:")
     public native boolean playAtTime(double time);
 
-    /**
-     * prepareToPlay</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioPlayerClassReference/index.html#//apple_ref/occ/instm/AVAudioPlayer/prepareToPlay">iOS Dev Center</a>
-     */
     @Generated
     @Selector("prepareToPlay")
     public native boolean prepareToPlay();
 
-    /**
-     * rate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioPlayerClassReference/index.html#//apple_ref/occ/instp/AVAudioPlayer/rate">iOS Dev Center</a>
-     */
     @Generated
     @Selector("rate")
     public native float rate();
 
-    /**
-     * channelAssignments</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioPlayerClassReference/index.html#//apple_ref/occ/instp/AVAudioPlayer/channelAssignments">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setChannelAssignments:")
     public native void setChannelAssignments(NSArray<? extends NSNumber> value);
 
-    /**
-     * currentTime</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioPlayerClassReference/index.html#//apple_ref/occ/instp/AVAudioPlayer/currentTime">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setCurrentTime:")
     public native void setCurrentTime(double value);
 
-    /**
-     * delegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioPlayerClassReference/index.html#//apple_ref/occ/instp/AVAudioPlayer/delegate">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setDelegate:")
     public native void setDelegate_unsafe(@Mapped(ObjCObjectMapper.class) AVAudioPlayerDelegate value);
 
-    /**
-     * delegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioPlayerClassReference/index.html#//apple_ref/occ/instp/AVAudioPlayer/delegate">iOS Dev Center</a>
-     */
     @Generated
     public void setDelegate(@Mapped(ObjCObjectMapper.class) AVAudioPlayerDelegate value) {
         Object __old = delegate();
@@ -405,82 +293,42 @@ public class AVAudioPlayer extends NSObject {
         }
     }
 
-    /**
-     * enableRate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioPlayerClassReference/index.html#//apple_ref/occ/instp/AVAudioPlayer/enableRate">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setEnableRate:")
     public native void setEnableRate(boolean value);
 
-    /**
-     * numberOfLoops</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioPlayerClassReference/index.html#//apple_ref/occ/instp/AVAudioPlayer/numberOfLoops">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setNumberOfLoops:")
     public native void setNumberOfLoops(@NInt long value);
 
-    /**
-     * pan</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioPlayerClassReference/index.html#//apple_ref/occ/instp/AVAudioPlayer/pan">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setPan:")
     public native void setPan(float value);
 
-    /**
-     * rate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioPlayerClassReference/index.html#//apple_ref/occ/instp/AVAudioPlayer/rate">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setRate:")
     public native void setRate(float value);
 
-    /**
-     * volume</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioPlayerClassReference/index.html#//apple_ref/occ/instp/AVAudioPlayer/volume">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setVolume:")
     public native void setVolume(float value);
 
-    /**
-     * settings</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioPlayerClassReference/index.html#//apple_ref/occ/instp/AVAudioPlayer/settings">iOS Dev Center</a>
-     */
     @Generated
     @Selector("settings")
     public native NSDictionary<String, ?> settings();
 
-    /**
-     * stop</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioPlayerClassReference/index.html#//apple_ref/occ/instm/AVAudioPlayer/stop">iOS Dev Center</a>
-     */
     @Generated
     @Selector("stop")
     public native void stop();
 
-    /**
-     * updateMeters</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioPlayerClassReference/index.html#//apple_ref/occ/instm/AVAudioPlayer/updateMeters">iOS Dev Center</a>
-     */
     @Generated
     @Selector("updateMeters")
     public native void updateMeters();
 
-    /**
-     * url</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioPlayerClassReference/index.html#//apple_ref/occ/instp/AVAudioPlayer/url">iOS Dev Center</a>
-     */
     @Generated
     @Selector("url")
     public native NSURL url();
 
-    /**
-     * volume</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioPlayerClassReference/index.html#//apple_ref/occ/instp/AVAudioPlayer/volume">iOS Dev Center</a>
-     */
     @Generated
     @Selector("volume")
     public native float volume();

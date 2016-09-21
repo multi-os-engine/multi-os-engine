@@ -66,19 +66,11 @@ public class GKScore extends NSObject implements NSCoding, NSSecureCoding {
     @Selector("alloc")
     public static native GKScore alloc();
 
-    /**
-     * reportScores:withCompletionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKScore_Ref/index.html#//apple_ref/occ/clm/GKScore/reportScores:withCompletionHandler:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("reportScores:withCompletionHandler:")
     public static native void reportScoresWithCompletionHandler(NSArray<? extends GKScore> scores,
             @ObjCBlock(name = "call_reportScoresWithCompletionHandler") Block_reportScoresWithCompletionHandler completionHandler);
 
-    /**
-     * reportScores:withEligibleChallenges:withCompletionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKScore_Ref/index.html#//apple_ref/occ/clm/GKScore/reportScores:withEligibleChallenges:withCompletionHandler:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("reportScores:withEligibleChallenges:withCompletionHandler:")
     public static native void reportScoresWithEligibleChallengesWithCompletionHandler(NSArray<? extends GKScore> scores,
@@ -189,29 +181,17 @@ public class GKScore extends NSObject implements NSCoding, NSSecureCoding {
     @NInt
     public static native long version_static();
 
-    /**
-     * category</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKScore_Ref/index.html#//apple_ref/occ/instp/GKScore/category">iOS Dev Center</a>
-     */
     @Generated
     @Deprecated
     @Selector("category")
     public native String category();
 
-    /**
-     * challengeComposeControllerWithMessage:players:completionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKScore_Ref/index.html#//apple_ref/occ/instm/GKScore/challengeComposeControllerWithMessage:players:completionHandler:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("challengeComposeControllerWithMessage:players:completionHandler:")
     public native UIViewController challengeComposeControllerWithMessagePlayersCompletionHandler(String message,
             NSArray<? extends GKPlayer> players,
             @ObjCBlock(name = "call_challengeComposeControllerWithMessagePlayersCompletionHandler") Block_challengeComposeControllerWithMessagePlayersCompletionHandler completionHandler);
 
-    /**
-     * challengeComposeControllerWithPlayers:message:completionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKScore_Ref/index.html#//apple_ref/occ/instm/GKScore/challengeComposeControllerWithPlayers:message:completionHandler:">iOS Dev Center</a>
-     */
     @Generated
     @Deprecated
     @Selector("challengeComposeControllerWithPlayers:message:completionHandler:")
@@ -219,18 +199,10 @@ public class GKScore extends NSObject implements NSCoding, NSSecureCoding {
             NSArray<String> playerIDs, String message,
             @ObjCBlock(name = "call_challengeComposeControllerWithPlayersMessageCompletionHandler") Block_challengeComposeControllerWithPlayersMessageCompletionHandler completionHandler);
 
-    /**
-     * context</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKScore_Ref/index.html#//apple_ref/occ/instp/GKScore/context">iOS Dev Center</a>
-     */
     @Generated
     @Selector("context")
     public native long context();
 
-    /**
-     * date</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKScore_Ref/index.html#//apple_ref/occ/instp/GKScore/date">iOS Dev Center</a>
-     */
     @Generated
     @Selector("date")
     public native NSDate date();
@@ -239,10 +211,6 @@ public class GKScore extends NSObject implements NSCoding, NSSecureCoding {
     @Selector("encodeWithCoder:")
     public native void encodeWithCoder(NSCoder aCoder);
 
-    /**
-     * formattedValue</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKScore_Ref/index.html#//apple_ref/occ/instp/GKScore/formattedValue">iOS Dev Center</a>
-     */
     @Generated
     @Selector("formattedValue")
     public native String formattedValue();
@@ -251,10 +219,6 @@ public class GKScore extends NSObject implements NSCoding, NSSecureCoding {
     @Selector("init")
     public native GKScore init();
 
-    /**
-     * initWithCategory:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKScore_Ref/index.html#//apple_ref/occ/instm/GKScore/initWithCategory:">iOS Dev Center</a>
-     */
     @Generated
     @Deprecated
     @Selector("initWithCategory:")
@@ -264,129 +228,69 @@ public class GKScore extends NSObject implements NSCoding, NSSecureCoding {
     @Selector("initWithCoder:")
     public native GKScore initWithCoder(NSCoder aDecoder);
 
-    /**
-     * initWithLeaderboardIdentifier:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKScore_Ref/index.html#//apple_ref/occ/instm/GKScore/initWithLeaderboardIdentifier:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithLeaderboardIdentifier:")
     public native GKScore initWithLeaderboardIdentifier(String identifier);
 
-    /**
-     * initWithLeaderboardIdentifier:forPlayer:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKScore_Ref/index.html#//apple_ref/occ/instm/GKScore/initWithLeaderboardIdentifier:forPlayer:">iOS Dev Center</a>
-     */
     @Generated
     @Deprecated
     @Selector("initWithLeaderboardIdentifier:forPlayer:")
     public native GKScore initWithLeaderboardIdentifierForPlayer(String identifier, String playerID);
 
-    /**
-     * initWithLeaderboardIdentifier:player:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKScore_Ref/index.html#//apple_ref/occ/instm/GKScore/initWithLeaderboardIdentifier:player:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithLeaderboardIdentifier:player:")
     public native GKScore initWithLeaderboardIdentifierPlayer(String identifier, GKPlayer player);
 
-    /**
-     * issueChallengeToPlayers:message:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKScore_Ref/index.html#//apple_ref/occ/instm/GKScore/issueChallengeToPlayers:message:">iOS Dev Center</a>
-     */
     @Generated
     @Deprecated
     @Selector("issueChallengeToPlayers:message:")
     public native void issueChallengeToPlayersMessage(NSArray<String> playerIDs, String message);
 
-    /**
-     * leaderboardIdentifier</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKScore_Ref/index.html#//apple_ref/occ/instp/GKScore/leaderboardIdentifier">iOS Dev Center</a>
-     */
     @Generated
     @Selector("leaderboardIdentifier")
     public native String leaderboardIdentifier();
 
-    /**
-     * player</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKScore_Ref/index.html#//apple_ref/occ/instp/GKScore/player">iOS Dev Center</a>
-     */
     @Generated
     @Selector("player")
     public native GKPlayer player();
 
-    /**
-     * playerID</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKScore_Ref/index.html#//apple_ref/occ/instp/GKScore/playerID">iOS Dev Center</a>
-     */
     @Generated
     @Deprecated
     @Selector("playerID")
     public native String playerID();
 
-    /**
-     * rank</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKScore_Ref/index.html#//apple_ref/occ/instp/GKScore/rank">iOS Dev Center</a>
-     */
     @Generated
     @Selector("rank")
     @NInt
     public native long rank();
 
-    /**
-     * reportScoreWithCompletionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKScore_Ref/index.html#//apple_ref/occ/instm/GKScore/reportScoreWithCompletionHandler:">iOS Dev Center</a>
-     */
     @Generated
     @Deprecated
     @Selector("reportScoreWithCompletionHandler:")
     public native void reportScoreWithCompletionHandler(
             @ObjCBlock(name = "call_reportScoreWithCompletionHandler") Block_reportScoreWithCompletionHandler completionHandler);
 
-    /**
-     * category</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKScore_Ref/index.html#//apple_ref/occ/instp/GKScore/category">iOS Dev Center</a>
-     */
     @Generated
     @Deprecated
     @Selector("setCategory:")
     public native void setCategory(String value);
 
-    /**
-     * context</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKScore_Ref/index.html#//apple_ref/occ/instp/GKScore/context">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setContext:")
     public native void setContext(long value);
 
-    /**
-     * leaderboardIdentifier</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKScore_Ref/index.html#//apple_ref/occ/instp/GKScore/leaderboardIdentifier">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setLeaderboardIdentifier:")
     public native void setLeaderboardIdentifier(String value);
 
-    /**
-     * shouldSetDefaultLeaderboard</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKScore_Ref/index.html#//apple_ref/occ/instp/GKScore/shouldSetDefaultLeaderboard">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setShouldSetDefaultLeaderboard:")
     public native void setShouldSetDefaultLeaderboard(boolean value);
 
-    /**
-     * value</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKScore_Ref/index.html#//apple_ref/occ/instp/GKScore/value">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setValue:")
     public native void setValue(long value);
 
-    /**
-     * shouldSetDefaultLeaderboard</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKScore_Ref/index.html#//apple_ref/occ/instp/GKScore/shouldSetDefaultLeaderboard">iOS Dev Center</a>
-     */
     @Generated
     @Selector("shouldSetDefaultLeaderboard")
     public native boolean shouldSetDefaultLeaderboard();
@@ -397,10 +301,6 @@ public class GKScore extends NSObject implements NSCoding, NSSecureCoding {
         return supportsSecureCoding();
     }
 
-    /**
-     * value</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKScore_Ref/index.html#//apple_ref/occ/instp/GKScore/value">iOS Dev Center</a>
-     */
     @Generated
     @Selector("value")
     public native long value();

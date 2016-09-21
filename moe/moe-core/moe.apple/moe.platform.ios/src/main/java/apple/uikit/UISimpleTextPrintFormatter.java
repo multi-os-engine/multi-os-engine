@@ -159,26 +159,14 @@ public class UISimpleTextPrintFormatter extends UIPrintFormatter {
     @NInt
     public static native long version_static();
 
-    /**
-     * attributedText</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISimpleTextPrintFormatter_Class/index.html#//apple_ref/occ/instp/UISimpleTextPrintFormatter/attributedText">iOS Dev Center</a>
-     */
     @Generated
     @Selector("attributedText")
     public native NSAttributedString attributedText();
 
-    /**
-     * color</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISimpleTextPrintFormatter_Class/index.html#//apple_ref/occ/instp/UISimpleTextPrintFormatter/color">iOS Dev Center</a>
-     */
     @Generated
     @Selector("color")
     public native UIColor color();
 
-    /**
-     * font</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISimpleTextPrintFormatter_Class/index.html#//apple_ref/occ/instp/UISimpleTextPrintFormatter/font">iOS Dev Center</a>
-     */
     @Generated
     @Selector("font")
     public native UIFont font();
@@ -187,74 +175,38 @@ public class UISimpleTextPrintFormatter extends UIPrintFormatter {
     @Selector("init")
     public native UISimpleTextPrintFormatter init();
 
-    /**
-     * initWithAttributedText:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISimpleTextPrintFormatter_Class/index.html#//apple_ref/occ/instm/UISimpleTextPrintFormatter/initWithAttributedText:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithAttributedText:")
     public native UISimpleTextPrintFormatter initWithAttributedText(NSAttributedString attributedText);
 
-    /**
-     * initWithText:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISimpleTextPrintFormatter_Class/index.html#//apple_ref/occ/instm/UISimpleTextPrintFormatter/initWithText:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithText:")
     public native UISimpleTextPrintFormatter initWithText(String text);
 
-    /**
-     * attributedText</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISimpleTextPrintFormatter_Class/index.html#//apple_ref/occ/instp/UISimpleTextPrintFormatter/attributedText">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setAttributedText:")
     public native void setAttributedText(NSAttributedString value);
 
-    /**
-     * color</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISimpleTextPrintFormatter_Class/index.html#//apple_ref/occ/instp/UISimpleTextPrintFormatter/color">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setColor:")
     public native void setColor(UIColor value);
 
-    /**
-     * font</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISimpleTextPrintFormatter_Class/index.html#//apple_ref/occ/instp/UISimpleTextPrintFormatter/font">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setFont:")
     public native void setFont(UIFont value);
 
-    /**
-     * text</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISimpleTextPrintFormatter_Class/index.html#//apple_ref/occ/instp/UISimpleTextPrintFormatter/text">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setText:")
     public native void setText(String value);
 
-    /**
-     * textAlignment</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISimpleTextPrintFormatter_Class/index.html#//apple_ref/occ/instp/UISimpleTextPrintFormatter/textAlignment">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setTextAlignment:")
     public native void setTextAlignment(@NInt long value);
 
-    /**
-     * text</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISimpleTextPrintFormatter_Class/index.html#//apple_ref/occ/instp/UISimpleTextPrintFormatter/text">iOS Dev Center</a>
-     */
     @Generated
     @Selector("text")
     public native String text();
 
-    /**
-     * textAlignment</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISimpleTextPrintFormatter_Class/index.html#//apple_ref/occ/instp/UISimpleTextPrintFormatter/textAlignment">iOS Dev Center</a>
-     */
     @Generated
     @Selector("textAlignment")
     @NInt

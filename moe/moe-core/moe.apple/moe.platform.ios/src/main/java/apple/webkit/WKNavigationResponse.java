@@ -159,10 +159,6 @@ public class WKNavigationResponse extends NSObject {
     @NInt
     public static native long version();
 
-    /**
-     * canShowMIMEType</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WebKit/Reference/WKNavigationResponse_Ref/index.html#//apple_ref/occ/instp/WKNavigationResponse/canShowMIMEType">iOS Dev Center</a>
-     */
     @Generated
     @Selector("canShowMIMEType")
     public native boolean canShowMIMEType();
@@ -171,18 +167,10 @@ public class WKNavigationResponse extends NSObject {
     @Selector("init")
     public native WKNavigationResponse init();
 
-    /**
-     * forMainFrame</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WebKit/Reference/WKNavigationResponse_Ref/index.html#//apple_ref/occ/instp/WKNavigationResponse/forMainFrame">iOS Dev Center</a>
-     */
     @Generated
     @Selector("isForMainFrame")
     public native boolean isForMainFrame();
 
-    /**
-     * response</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WebKit/Reference/WKNavigationResponse_Ref/index.html#//apple_ref/occ/instp/WKNavigationResponse/response">iOS Dev Center</a>
-     */
     @Generated
     @Selector("response")
     public native NSURLResponse response();

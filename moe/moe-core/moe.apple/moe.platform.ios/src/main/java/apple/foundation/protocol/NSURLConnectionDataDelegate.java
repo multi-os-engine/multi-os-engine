@@ -36,10 +36,6 @@ import org.moe.natj.objc.ann.Selector;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("NSURLConnectionDataDelegate")
 public interface NSURLConnectionDataDelegate extends NSURLConnectionDelegate {
-    /**
-     * connection:didReceiveData:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSURLConnectionDataDelegate_protocol/index.html#//apple_ref/occ/intfm/NSURLConnectionDataDelegate/connection:didReceiveData:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("connection:didReceiveData:")
@@ -47,10 +43,6 @@ public interface NSURLConnectionDataDelegate extends NSURLConnectionDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * connection:didReceiveResponse:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSURLConnectionDataDelegate_protocol/index.html#//apple_ref/occ/intfm/NSURLConnectionDataDelegate/connection:didReceiveResponse:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("connection:didReceiveResponse:")
@@ -58,10 +50,6 @@ public interface NSURLConnectionDataDelegate extends NSURLConnectionDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * connection:didSendBodyData:totalBytesWritten:totalBytesExpectedToWrite:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSURLConnectionDataDelegate_protocol/index.html#//apple_ref/occ/intfm/NSURLConnectionDataDelegate/connection:didSendBodyData:totalBytesWritten:totalBytesExpectedToWrite:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("connection:didSendBodyData:totalBytesWritten:totalBytesExpectedToWrite:")
@@ -70,10 +58,6 @@ public interface NSURLConnectionDataDelegate extends NSURLConnectionDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * connection:needNewBodyStream:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSURLConnectionDataDelegate_protocol/index.html#//apple_ref/occ/intfm/NSURLConnectionDataDelegate/connection:needNewBodyStream:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("connection:needNewBodyStream:")
@@ -81,10 +65,6 @@ public interface NSURLConnectionDataDelegate extends NSURLConnectionDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * connection:willCacheResponse:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSURLConnectionDataDelegate_protocol/index.html#//apple_ref/occ/intfm/NSURLConnectionDataDelegate/connection:willCacheResponse:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("connection:willCacheResponse:")
@@ -93,10 +73,6 @@ public interface NSURLConnectionDataDelegate extends NSURLConnectionDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * connection:willSendRequest:redirectResponse:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSURLConnectionDataDelegate_protocol/index.html#//apple_ref/occ/intfm/NSURLConnectionDataDelegate/connection:willSendRequest:redirectResponse:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("connection:willSendRequest:redirectResponse:")
@@ -105,10 +81,6 @@ public interface NSURLConnectionDataDelegate extends NSURLConnectionDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * connectionDidFinishLoading:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSURLConnectionDataDelegate_protocol/index.html#//apple_ref/occ/intfm/NSURLConnectionDataDelegate/connectionDidFinishLoading:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("connectionDidFinishLoading:")

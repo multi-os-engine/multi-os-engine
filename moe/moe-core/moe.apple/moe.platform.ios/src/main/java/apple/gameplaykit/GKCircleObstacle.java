@@ -58,10 +58,6 @@ public class GKCircleObstacle extends GKObstacle {
     @Selector("alloc")
     public static native GKCircleObstacle alloc();
 
-    /**
-     * obstacleWithRadius:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameplayKit/Reference/GKCircleObstacle_Class/index.html#//apple_ref/occ/clm/GKCircleObstacle/obstacleWithRadius:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("obstacleWithRadius:")
     public static native GKCircleObstacle obstacleWithRadius(float radius);
@@ -170,26 +166,14 @@ public class GKCircleObstacle extends GKObstacle {
     @Selector("init")
     public native GKCircleObstacle init();
 
-    /**
-     * initWithRadius:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameplayKit/Reference/GKCircleObstacle_Class/index.html#//apple_ref/occ/instm/GKCircleObstacle/initWithRadius:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithRadius:")
     public native GKCircleObstacle initWithRadius(float radius);
 
-    /**
-     * radius</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameplayKit/Reference/GKCircleObstacle_Class/index.html#//apple_ref/occ/instp/GKCircleObstacle/radius">iOS Dev Center</a>
-     */
     @Generated
     @Selector("radius")
     public native float radius();
 
-    /**
-     * radius</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameplayKit/Reference/GKCircleObstacle_Class/index.html#//apple_ref/occ/instp/GKCircleObstacle/radius">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setRadius:")
     public native void setRadius(float value);

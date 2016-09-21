@@ -58,19 +58,11 @@ public class PHCollection extends PHObject {
     @Selector("alloc")
     public static native PHCollection alloc();
 
-    /**
-     * fetchCollectionsInCollectionList:options:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHCollection_Class/index.html#//apple_ref/occ/clm/PHCollection/fetchCollectionsInCollectionList:options:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("fetchCollectionsInCollectionList:options:")
     public static native PHFetchResult<PHCollection> fetchCollectionsInCollectionListOptions(
             PHCollectionList collectionList, PHFetchOptions options);
 
-    /**
-     * fetchTopLevelUserCollectionsWithOptions:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHCollection_Class/index.html#//apple_ref/occ/clm/PHCollection/fetchTopLevelUserCollectionsWithOptions:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("fetchTopLevelUserCollectionsWithOptions:")
     public static native PHFetchResult<PHCollection> fetchTopLevelUserCollectionsWithOptions(PHFetchOptions options);
@@ -175,26 +167,14 @@ public class PHCollection extends PHObject {
     @NInt
     public static native long version();
 
-    /**
-     * canContainAssets</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHCollection_Class/index.html#//apple_ref/occ/instp/PHCollection/canContainAssets">iOS Dev Center</a>
-     */
     @Generated
     @Selector("canContainAssets")
     public native boolean canContainAssets();
 
-    /**
-     * canContainCollections</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHCollection_Class/index.html#//apple_ref/occ/instp/PHCollection/canContainCollections">iOS Dev Center</a>
-     */
     @Generated
     @Selector("canContainCollections")
     public native boolean canContainCollections();
 
-    /**
-     * canPerformEditOperation:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHCollection_Class/index.html#//apple_ref/occ/instm/PHCollection/canPerformEditOperation:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("canPerformEditOperation:")
     public native boolean canPerformEditOperation(@NInt long anOperation);
@@ -203,10 +183,6 @@ public class PHCollection extends PHObject {
     @Selector("init")
     public native PHCollection init();
 
-    /**
-     * localizedTitle</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHCollection_Class/index.html#//apple_ref/occ/instp/PHCollection/localizedTitle">iOS Dev Center</a>
-     */
     @Generated
     @Selector("localizedTitle")
     public native String localizedTitle();

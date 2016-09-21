@@ -70,10 +70,6 @@ public class AVMutableComposition extends AVComposition {
     @Selector("assetWithURL:")
     public static native AVMutableComposition assetWithURL(NSURL URL);
 
-    /**
-     * composition</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVMutableComposition_Class/index.html#//apple_ref/occ/clm/AVMutableComposition/composition">iOS Dev Center</a>
-     */
     @Generated
     @Selector("composition")
     public static native AVMutableComposition composition();
@@ -183,10 +179,6 @@ public class AVMutableComposition extends AVComposition {
     @NInt
     public static native long version();
 
-    /**
-     * addMutableTrackWithMediaType:preferredTrackID:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVMutableComposition_Class/index.html#//apple_ref/occ/instm/AVMutableComposition/addMutableTrackWithMediaType:preferredTrackID:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("addMutableTrackWithMediaType:preferredTrackID:")
     public native AVMutableCompositionTrack addMutableTrackWithMediaTypePreferredTrackID(String mediaType,
@@ -196,76 +188,40 @@ public class AVMutableComposition extends AVComposition {
     @Selector("init")
     public native AVMutableComposition init();
 
-    /**
-     * insertEmptyTimeRange:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVMutableComposition_Class/index.html#//apple_ref/occ/instm/AVMutableComposition/insertEmptyTimeRange:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("insertEmptyTimeRange:")
     public native void insertEmptyTimeRange(@ByValue CMTimeRange timeRange);
 
-    /**
-     * insertTimeRange:ofAsset:atTime:error:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVMutableComposition_Class/index.html#//apple_ref/occ/instm/AVMutableComposition/insertTimeRange:ofAsset:atTime:error:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("insertTimeRange:ofAsset:atTime:error:")
     public native boolean insertTimeRangeOfAssetAtTimeError(@ByValue CMTimeRange timeRange, AVAsset asset,
             @ByValue CMTime startTime, Ptr<NSError> outError);
 
-    /**
-     * mutableTrackCompatibleWithTrack:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVMutableComposition_Class/index.html#//apple_ref/occ/instm/AVMutableComposition/mutableTrackCompatibleWithTrack:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("mutableTrackCompatibleWithTrack:")
     public native AVMutableCompositionTrack mutableTrackCompatibleWithTrack(AVAssetTrack track);
 
-    /**
-     * naturalSize</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVMutableComposition_Class/index.html#//apple_ref/occ/instp/AVMutableComposition/naturalSize">iOS Dev Center</a>
-     */
     @Generated
     @Selector("naturalSize")
     @ByValue
     public native CGSize naturalSize();
 
-    /**
-     * removeTimeRange:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVMutableComposition_Class/index.html#//apple_ref/occ/instm/AVMutableComposition/removeTimeRange:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("removeTimeRange:")
     public native void removeTimeRange(@ByValue CMTimeRange timeRange);
 
-    /**
-     * removeTrack:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVMutableComposition_Class/index.html#//apple_ref/occ/instm/AVMutableComposition/removeTrack:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("removeTrack:")
     public native void removeTrack(AVCompositionTrack track);
 
-    /**
-     * scaleTimeRange:toDuration:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVMutableComposition_Class/index.html#//apple_ref/occ/instm/AVMutableComposition/scaleTimeRange:toDuration:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("scaleTimeRange:toDuration:")
     public native void scaleTimeRangeToDuration(@ByValue CMTimeRange timeRange, @ByValue CMTime duration);
 
-    /**
-     * naturalSize</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVMutableComposition_Class/index.html#//apple_ref/occ/instp/AVMutableComposition/naturalSize">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setNaturalSize:")
     public native void setNaturalSize(@ByValue CGSize value);
 
-    /**
-     * tracks</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVMutableComposition_Class/index.html#//apple_ref/occ/instp/AVMutableComposition/tracks">iOS Dev Center</a>
-     */
     @Generated
     @Selector("tracks")
     public native NSArray<? extends AVMutableCompositionTrack> tracks();

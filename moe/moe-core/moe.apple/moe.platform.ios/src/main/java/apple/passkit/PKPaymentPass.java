@@ -161,27 +161,15 @@ public class PKPaymentPass extends PKPass {
     @NInt
     public static native long version_static();
 
-    /**
-     * activationState</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/PassKit/Reference/PKPaymentPass_Ref/index.html#//apple_ref/occ/instp/PKPaymentPass/activationState">iOS Dev Center</a>
-     */
     @Generated
     @Selector("activationState")
     @NUInt
     public native long activationState();
 
-    /**
-     * deviceAccountIdentifier</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/PassKit/Reference/PKPaymentPass_Ref/index.html#//apple_ref/occ/instp/PKPaymentPass/deviceAccountIdentifier">iOS Dev Center</a>
-     */
     @Generated
     @Selector("deviceAccountIdentifier")
     public native String deviceAccountIdentifier();
 
-    /**
-     * deviceAccountNumberSuffix</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/PassKit/Reference/PKPaymentPass_Ref/index.html#//apple_ref/occ/instp/PKPaymentPass/deviceAccountNumberSuffix">iOS Dev Center</a>
-     */
     @Generated
     @Selector("deviceAccountNumberSuffix")
     public native String deviceAccountNumberSuffix();
@@ -194,18 +182,10 @@ public class PKPaymentPass extends PKPass {
     @Selector("initWithData:error:")
     public native PKPaymentPass initWithDataError(NSData data, Ptr<NSError> error);
 
-    /**
-     * primaryAccountIdentifier</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/PassKit/Reference/PKPaymentPass_Ref/index.html#//apple_ref/occ/instp/PKPaymentPass/primaryAccountIdentifier">iOS Dev Center</a>
-     */
     @Generated
     @Selector("primaryAccountIdentifier")
     public native String primaryAccountIdentifier();
 
-    /**
-     * primaryAccountNumberSuffix</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/PassKit/Reference/PKPaymentPass_Ref/index.html#//apple_ref/occ/instp/PKPaymentPass/primaryAccountNumberSuffix">iOS Dev Center</a>
-     */
     @Generated
     @Selector("primaryAccountNumberSuffix")
     public native String primaryAccountNumberSuffix();

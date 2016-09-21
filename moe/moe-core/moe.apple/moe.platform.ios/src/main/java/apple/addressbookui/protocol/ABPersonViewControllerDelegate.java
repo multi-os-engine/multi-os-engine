@@ -30,10 +30,6 @@ import org.moe.natj.objc.ann.Selector;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("ABPersonViewControllerDelegate")
 public interface ABPersonViewControllerDelegate {
-    /**
-     * personViewController:shouldPerformDefaultActionForPerson:property:identifier:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AddressBookUI/Reference/ABPersonViewControllerDelegate_Protocol/index.html#//apple_ref/occ/intfm/ABPersonViewControllerDelegate/personViewController:shouldPerformDefaultActionForPerson:property:identifier:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("personViewController:shouldPerformDefaultActionForPerson:property:identifier:")
     boolean personViewControllerShouldPerformDefaultActionForPersonPropertyIdentifier(

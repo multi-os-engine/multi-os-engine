@@ -159,10 +159,6 @@ public class MTLVertexAttributeDescriptor extends NSObject implements NSCopying 
     @NInt
     public static native long version_static();
 
-    /**
-     * bufferIndex</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Metal/Reference/MTLVertexAttributeDescriptor_Ref/index.html#//apple_ref/occ/instp/MTLVertexAttributeDescriptor/bufferIndex">iOS Dev Center</a>
-     */
     @Generated
     @Selector("bufferIndex")
     @NUInt
@@ -174,10 +170,6 @@ public class MTLVertexAttributeDescriptor extends NSObject implements NSCopying 
     @MappedReturn(ObjCObjectMapper.class)
     public native Object copyWithZone(VoidPtr zone);
 
-    /**
-     * format</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Metal/Reference/MTLVertexAttributeDescriptor_Ref/index.html#//apple_ref/occ/instp/MTLVertexAttributeDescriptor/format">iOS Dev Center</a>
-     */
     @Generated
     @Selector("format")
     @NUInt
@@ -187,35 +179,19 @@ public class MTLVertexAttributeDescriptor extends NSObject implements NSCopying 
     @Selector("init")
     public native MTLVertexAttributeDescriptor init();
 
-    /**
-     * offset</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Metal/Reference/MTLVertexAttributeDescriptor_Ref/index.html#//apple_ref/occ/instp/MTLVertexAttributeDescriptor/offset">iOS Dev Center</a>
-     */
     @Generated
     @Selector("offset")
     @NUInt
     public native long offset();
 
-    /**
-     * bufferIndex</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Metal/Reference/MTLVertexAttributeDescriptor_Ref/index.html#//apple_ref/occ/instp/MTLVertexAttributeDescriptor/bufferIndex">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setBufferIndex:")
     public native void setBufferIndex(@NUInt long value);
 
-    /**
-     * format</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Metal/Reference/MTLVertexAttributeDescriptor_Ref/index.html#//apple_ref/occ/instp/MTLVertexAttributeDescriptor/format">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setFormat:")
     public native void setFormat(@NUInt long value);
 
-    /**
-     * offset</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Metal/Reference/MTLVertexAttributeDescriptor_Ref/index.html#//apple_ref/occ/instp/MTLVertexAttributeDescriptor/offset">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setOffset:")
     public native void setOffset(@NUInt long value);

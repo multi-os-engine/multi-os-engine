@@ -65,10 +65,6 @@ public class GKChallenge extends NSObject implements NSCoding, NSSecureCoding {
     @Selector("alloc")
     public static native GKChallenge alloc();
 
-    /**
-     * loadReceivedChallengesWithCompletionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKChallenge_Ref/index.html#//apple_ref/occ/clm/GKChallenge/loadReceivedChallengesWithCompletionHandler:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("loadReceivedChallengesWithCompletionHandler:")
     public static native void loadReceivedChallengesWithCompletionHandler(
@@ -178,18 +174,10 @@ public class GKChallenge extends NSObject implements NSCoding, NSSecureCoding {
     @NInt
     public static native long version_static();
 
-    /**
-     * completionDate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKChallenge_Ref/index.html#//apple_ref/occ/instp/GKChallenge/completionDate">iOS Dev Center</a>
-     */
     @Generated
     @Selector("completionDate")
     public native NSDate completionDate();
 
-    /**
-     * decline</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKChallenge_Ref/index.html#//apple_ref/occ/instm/GKChallenge/decline">iOS Dev Center</a>
-     */
     @Generated
     @Selector("decline")
     public native void decline();
@@ -206,60 +194,32 @@ public class GKChallenge extends NSObject implements NSCoding, NSSecureCoding {
     @Selector("initWithCoder:")
     public native GKChallenge initWithCoder(NSCoder aDecoder);
 
-    /**
-     * issueDate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKChallenge_Ref/index.html#//apple_ref/occ/instp/GKChallenge/issueDate">iOS Dev Center</a>
-     */
     @Generated
     @Selector("issueDate")
     public native NSDate issueDate();
 
-    /**
-     * issuingPlayer</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKChallenge_Ref/index.html#//apple_ref/occ/instp/GKChallenge/issuingPlayer">iOS Dev Center</a>
-     */
     @Generated
     @Selector("issuingPlayer")
     public native GKPlayer issuingPlayer();
 
-    /**
-     * issuingPlayerID</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKChallenge_Ref/index.html#//apple_ref/occ/instp/GKChallenge/issuingPlayerID">iOS Dev Center</a>
-     */
     @Generated
     @Deprecated
     @Selector("issuingPlayerID")
     public native String issuingPlayerID();
 
-    /**
-     * message</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKChallenge_Ref/index.html#//apple_ref/occ/instp/GKChallenge/message">iOS Dev Center</a>
-     */
     @Generated
     @Selector("message")
     public native String message();
 
-    /**
-     * receivingPlayer</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKChallenge_Ref/index.html#//apple_ref/occ/instp/GKChallenge/receivingPlayer">iOS Dev Center</a>
-     */
     @Generated
     @Selector("receivingPlayer")
     public native GKPlayer receivingPlayer();
 
-    /**
-     * receivingPlayerID</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKChallenge_Ref/index.html#//apple_ref/occ/instp/GKChallenge/receivingPlayerID">iOS Dev Center</a>
-     */
     @Generated
     @Deprecated
     @Selector("receivingPlayerID")
     public native String receivingPlayerID();
 
-    /**
-     * state</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKChallenge_Ref/index.html#//apple_ref/occ/instp/GKChallenge/state">iOS Dev Center</a>
-     */
     @Generated
     @Selector("state")
     @NInt

@@ -24,6 +24,7 @@ public final class CFURLPathStyle {
     @Generated @NInt public static final long CFURLPOSIXPathStyle = 0x0000000000000000L;
     @Generated @NInt public static final long CFURLHFSPathStyle = 0x0000000000000001L;
     @Generated @NInt public static final long CFURLWindowsPathStyle = 0x0000000000000002L;
+
     @Generated
     private CFURLPathStyle() {
     }

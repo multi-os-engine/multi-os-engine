@@ -32,10 +32,6 @@ import org.moe.natj.objc.ann.Selector;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("MCBrowserViewControllerDelegate")
 public interface MCBrowserViewControllerDelegate {
-    /**
-     * browserViewController:shouldPresentNearbyPeer:withDiscoveryInfo:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MultipeerConnectivity/Reference/MCBrowserViewControllerDelegate/index.html#//apple_ref/occ/intfm/MCBrowserViewControllerDelegate/browserViewController:shouldPresentNearbyPeer:withDiscoveryInfo:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("browserViewController:shouldPresentNearbyPeer:withDiscoveryInfo:")
@@ -44,18 +40,10 @@ public interface MCBrowserViewControllerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * browserViewControllerDidFinish:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MultipeerConnectivity/Reference/MCBrowserViewControllerDelegate/index.html#//apple_ref/occ/intfm/MCBrowserViewControllerDelegate/browserViewControllerDidFinish:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("browserViewControllerDidFinish:")
     void browserViewControllerDidFinish(MCBrowserViewController browserViewController);
 
-    /**
-     * browserViewControllerWasCancelled:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MultipeerConnectivity/Reference/MCBrowserViewControllerDelegate/index.html#//apple_ref/occ/intfm/MCBrowserViewControllerDelegate/browserViewControllerWasCancelled:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("browserViewControllerWasCancelled:")
     void browserViewControllerWasCancelled(MCBrowserViewController browserViewController);

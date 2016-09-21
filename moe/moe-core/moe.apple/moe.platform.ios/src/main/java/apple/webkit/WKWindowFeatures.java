@@ -159,18 +159,10 @@ public class WKWindowFeatures extends NSObject {
     @NInt
     public static native long version_static();
 
-    /**
-     * allowsResizing</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WebKit/Reference/WKWindowFeatures_Ref/index.html#//apple_ref/occ/instp/WKWindowFeatures/allowsResizing">iOS Dev Center</a>
-     */
     @Generated
     @Selector("allowsResizing")
     public native NSNumber allowsResizing();
 
-    /**
-     * height</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WebKit/Reference/WKWindowFeatures_Ref/index.html#//apple_ref/occ/instp/WKWindowFeatures/height">iOS Dev Center</a>
-     */
     @Generated
     @Selector("height")
     public native NSNumber height();
@@ -179,50 +171,26 @@ public class WKWindowFeatures extends NSObject {
     @Selector("init")
     public native WKWindowFeatures init();
 
-    /**
-     * menuBarVisibility</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WebKit/Reference/WKWindowFeatures_Ref/index.html#//apple_ref/occ/instp/WKWindowFeatures/menuBarVisibility">iOS Dev Center</a>
-     */
     @Generated
     @Selector("menuBarVisibility")
     public native NSNumber menuBarVisibility();
 
-    /**
-     * statusBarVisibility</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WebKit/Reference/WKWindowFeatures_Ref/index.html#//apple_ref/occ/instp/WKWindowFeatures/statusBarVisibility">iOS Dev Center</a>
-     */
     @Generated
     @Selector("statusBarVisibility")
     public native NSNumber statusBarVisibility();
 
-    /**
-     * toolbarsVisibility</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WebKit/Reference/WKWindowFeatures_Ref/index.html#//apple_ref/occ/instp/WKWindowFeatures/toolbarsVisibility">iOS Dev Center</a>
-     */
     @Generated
     @Selector("toolbarsVisibility")
     public native NSNumber toolbarsVisibility();
 
-    /**
-     * width</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WebKit/Reference/WKWindowFeatures_Ref/index.html#//apple_ref/occ/instp/WKWindowFeatures/width">iOS Dev Center</a>
-     */
     @Generated
     @Selector("width")
     public native NSNumber width();
 
-    /**
-     * x</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WebKit/Reference/WKWindowFeatures_Ref/index.html#//apple_ref/occ/instp/WKWindowFeatures/x">iOS Dev Center</a>
-     */
     @Generated
     @Selector("x")
     public native NSNumber x();
 
-    /**
-     * y</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WebKit/Reference/WKWindowFeatures_Ref/index.html#//apple_ref/occ/instp/WKWindowFeatures/y">iOS Dev Center</a>
-     */
     @Generated
     @Selector("y")
     public native NSNumber y();

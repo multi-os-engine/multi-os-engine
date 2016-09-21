@@ -61,18 +61,10 @@ public class AVSpeechSynthesisVoice extends NSObject implements NSSecureCoding {
     @Selector("alloc")
     public static native AVSpeechSynthesisVoice alloc();
 
-    /**
-     * currentLanguageCode</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVSpeechSynthesisVoice_Ref/index.html#//apple_ref/occ/clm/AVSpeechSynthesisVoice/currentLanguageCode">iOS Dev Center</a>
-     */
     @Generated
     @Selector("currentLanguageCode")
     public static native String currentLanguageCode();
 
-    /**
-     * speechVoices</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVSpeechSynthesisVoice_Ref/index.html#//apple_ref/occ/clm/AVSpeechSynthesisVoice/speechVoices">iOS Dev Center</a>
-     */
     @Generated
     @Selector("speechVoices")
     public static native NSArray<? extends AVSpeechSynthesisVoice> speechVoices();
@@ -81,10 +73,6 @@ public class AVSpeechSynthesisVoice extends NSObject implements NSSecureCoding {
     @Selector("supportsSecureCoding")
     public static native boolean supportsSecureCoding();
 
-    /**
-     * voiceWithLanguage:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVSpeechSynthesisVoice_Ref/index.html#//apple_ref/occ/clm/AVSpeechSynthesisVoice/voiceWithLanguage:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("voiceWithLanguage:")
     public static native AVSpeechSynthesisVoice voiceWithLanguage(String languageCode);
@@ -205,10 +193,6 @@ public class AVSpeechSynthesisVoice extends NSObject implements NSSecureCoding {
     @Selector("initWithCoder:")
     public native AVSpeechSynthesisVoice initWithCoder(NSCoder aDecoder);
 
-    /**
-     * language</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVSpeechSynthesisVoice_Ref/index.html#//apple_ref/occ/instp/AVSpeechSynthesisVoice/language">iOS Dev Center</a>
-     */
     @Generated
     @Selector("language")
     public native String language();

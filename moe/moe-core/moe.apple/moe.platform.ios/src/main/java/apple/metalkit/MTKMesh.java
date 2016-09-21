@@ -64,10 +64,6 @@ public class MTKMesh extends NSObject {
     @Selector("alloc")
     public static native MTKMesh alloc();
 
-    /**
-     * newMeshesFromAsset:device:sourceMeshes:error:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MetalKit/Reference/MTKMesh_ClassReference/index.html#//apple_ref/occ/clm/MTKMesh/newMeshesFromAsset:device:sourceMeshes:error:">iOS Dev Center</a>
-     */
     @Generated
     @Owned
     @Selector("newMeshesFromAsset:device:sourceMeshes:error:")
@@ -179,60 +175,32 @@ public class MTKMesh extends NSObject {
     @Selector("init")
     public native MTKMesh init();
 
-    /**
-     * initWithMesh:device:error:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MetalKit/Reference/MTKMesh_ClassReference/index.html#//apple_ref/occ/instm/MTKMesh/initWithMesh:device:error:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithMesh:device:error:")
     public native MTKMesh initWithMeshDeviceError(MDLMesh mesh, @Mapped(ObjCObjectMapper.class) MTLDevice device,
             Ptr<NSError> error);
 
-    /**
-     * name</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MetalKit/Reference/MTKMesh_ClassReference/index.html#//apple_ref/occ/instp/MTKMesh/name">iOS Dev Center</a>
-     */
     @Generated
     @Selector("name")
     public native String name();
 
-    /**
-     * name</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MetalKit/Reference/MTKMesh_ClassReference/index.html#//apple_ref/occ/instp/MTKMesh/name">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setName:")
     public native void setName(String value);
 
-    /**
-     * submeshes</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MetalKit/Reference/MTKMesh_ClassReference/index.html#//apple_ref/occ/instp/MTKMesh/submeshes">iOS Dev Center</a>
-     */
     @Generated
     @Selector("submeshes")
     public native NSArray<? extends MTKSubmesh> submeshes();
 
-    /**
-     * vertexBuffers</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MetalKit/Reference/MTKMesh_ClassReference/index.html#//apple_ref/occ/instp/MTKMesh/vertexBuffers">iOS Dev Center</a>
-     */
     @Generated
     @Selector("vertexBuffers")
     public native NSArray<? extends MTKMeshBuffer> vertexBuffers();
 
-    /**
-     * vertexCount</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MetalKit/Reference/MTKMesh_ClassReference/index.html#//apple_ref/occ/instp/MTKMesh/vertexCount">iOS Dev Center</a>
-     */
     @Generated
     @Selector("vertexCount")
     @NUInt
     public native long vertexCount();
 
-    /**
-     * vertexDescriptor</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MetalKit/Reference/MTKMesh_ClassReference/index.html#//apple_ref/occ/instp/MTKMesh/vertexDescriptor">iOS Dev Center</a>
-     */
     @Generated
     @Selector("vertexDescriptor")
     public native MDLVertexDescriptor vertexDescriptor();

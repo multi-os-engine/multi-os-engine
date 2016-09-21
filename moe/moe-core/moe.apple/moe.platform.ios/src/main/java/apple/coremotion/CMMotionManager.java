@@ -61,10 +61,6 @@ public class CMMotionManager extends NSObject {
     @Selector("alloc")
     public static native CMMotionManager alloc();
 
-    /**
-     * availableAttitudeReferenceFrames</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMotion/Reference/CMMotionManager_Class/index.html#//apple_ref/occ/clm/CMMotionManager/availableAttitudeReferenceFrames">iOS Dev Center</a>
-     */
     @Generated
     @Selector("availableAttitudeReferenceFrames")
     @NUInt
@@ -170,59 +166,31 @@ public class CMMotionManager extends NSObject {
     @NInt
     public static native long version();
 
-    /**
-     * accelerometerData</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMotion/Reference/CMMotionManager_Class/index.html#//apple_ref/occ/instp/CMMotionManager/accelerometerData">iOS Dev Center</a>
-     */
     @Generated
     @Selector("accelerometerData")
     public native CMAccelerometerData accelerometerData();
 
-    /**
-     * accelerometerUpdateInterval</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMotion/Reference/CMMotionManager_Class/index.html#//apple_ref/occ/instp/CMMotionManager/accelerometerUpdateInterval">iOS Dev Center</a>
-     */
     @Generated
     @Selector("accelerometerUpdateInterval")
     public native double accelerometerUpdateInterval();
 
-    /**
-     * attitudeReferenceFrame</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMotion/Reference/CMMotionManager_Class/index.html#//apple_ref/occ/instp/CMMotionManager/attitudeReferenceFrame">iOS Dev Center</a>
-     */
     @Generated
     @Selector("attitudeReferenceFrame")
     @NUInt
     public native long attitudeReferenceFrame();
 
-    /**
-     * deviceMotion</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMotion/Reference/CMMotionManager_Class/index.html#//apple_ref/occ/instp/CMMotionManager/deviceMotion">iOS Dev Center</a>
-     */
     @Generated
     @Selector("deviceMotion")
     public native CMDeviceMotion deviceMotion();
 
-    /**
-     * deviceMotionUpdateInterval</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMotion/Reference/CMMotionManager_Class/index.html#//apple_ref/occ/instp/CMMotionManager/deviceMotionUpdateInterval">iOS Dev Center</a>
-     */
     @Generated
     @Selector("deviceMotionUpdateInterval")
     public native double deviceMotionUpdateInterval();
 
-    /**
-     * gyroData</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMotion/Reference/CMMotionManager_Class/index.html#//apple_ref/occ/instp/CMMotionManager/gyroData">iOS Dev Center</a>
-     */
     @Generated
     @Selector("gyroData")
     public native CMGyroData gyroData();
 
-    /**
-     * gyroUpdateInterval</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMotion/Reference/CMMotionManager_Class/index.html#//apple_ref/occ/instp/CMMotionManager/gyroUpdateInterval">iOS Dev Center</a>
-     */
     @Generated
     @Selector("gyroUpdateInterval")
     public native double gyroUpdateInterval();
@@ -231,248 +199,128 @@ public class CMMotionManager extends NSObject {
     @Selector("init")
     public native CMMotionManager init();
 
-    /**
-     * accelerometerActive</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMotion/Reference/CMMotionManager_Class/index.html#//apple_ref/occ/instp/CMMotionManager/accelerometerActive">iOS Dev Center</a>
-     */
     @Generated
     @Selector("isAccelerometerActive")
     public native boolean isAccelerometerActive();
 
-    /**
-     * accelerometerAvailable</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMotion/Reference/CMMotionManager_Class/index.html#//apple_ref/occ/instp/CMMotionManager/accelerometerAvailable">iOS Dev Center</a>
-     */
     @Generated
     @Selector("isAccelerometerAvailable")
     public native boolean isAccelerometerAvailable();
 
-    /**
-     * deviceMotionActive</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMotion/Reference/CMMotionManager_Class/index.html#//apple_ref/occ/instp/CMMotionManager/deviceMotionActive">iOS Dev Center</a>
-     */
     @Generated
     @Selector("isDeviceMotionActive")
     public native boolean isDeviceMotionActive();
 
-    /**
-     * deviceMotionAvailable</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMotion/Reference/CMMotionManager_Class/index.html#//apple_ref/occ/instp/CMMotionManager/deviceMotionAvailable">iOS Dev Center</a>
-     */
     @Generated
     @Selector("isDeviceMotionAvailable")
     public native boolean isDeviceMotionAvailable();
 
-    /**
-     * gyroActive</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMotion/Reference/CMMotionManager_Class/index.html#//apple_ref/occ/instp/CMMotionManager/gyroActive">iOS Dev Center</a>
-     */
     @Generated
     @Selector("isGyroActive")
     public native boolean isGyroActive();
 
-    /**
-     * gyroAvailable</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMotion/Reference/CMMotionManager_Class/index.html#//apple_ref/occ/instp/CMMotionManager/gyroAvailable">iOS Dev Center</a>
-     */
     @Generated
     @Selector("isGyroAvailable")
     public native boolean isGyroAvailable();
 
-    /**
-     * magnetometerActive</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMotion/Reference/CMMotionManager_Class/index.html#//apple_ref/occ/instp/CMMotionManager/magnetometerActive">iOS Dev Center</a>
-     */
     @Generated
     @Selector("isMagnetometerActive")
     public native boolean isMagnetometerActive();
 
-    /**
-     * magnetometerAvailable</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMotion/Reference/CMMotionManager_Class/index.html#//apple_ref/occ/instp/CMMotionManager/magnetometerAvailable">iOS Dev Center</a>
-     */
     @Generated
     @Selector("isMagnetometerAvailable")
     public native boolean isMagnetometerAvailable();
 
-    /**
-     * magnetometerData</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMotion/Reference/CMMotionManager_Class/index.html#//apple_ref/occ/instp/CMMotionManager/magnetometerData">iOS Dev Center</a>
-     */
     @Generated
     @Selector("magnetometerData")
     public native CMMagnetometerData magnetometerData();
 
-    /**
-     * magnetometerUpdateInterval</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMotion/Reference/CMMotionManager_Class/index.html#//apple_ref/occ/instp/CMMotionManager/magnetometerUpdateInterval">iOS Dev Center</a>
-     */
     @Generated
     @Selector("magnetometerUpdateInterval")
     public native double magnetometerUpdateInterval();
 
-    /**
-     * accelerometerUpdateInterval</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMotion/Reference/CMMotionManager_Class/index.html#//apple_ref/occ/instp/CMMotionManager/accelerometerUpdateInterval">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setAccelerometerUpdateInterval:")
     public native void setAccelerometerUpdateInterval(double value);
 
-    /**
-     * deviceMotionUpdateInterval</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMotion/Reference/CMMotionManager_Class/index.html#//apple_ref/occ/instp/CMMotionManager/deviceMotionUpdateInterval">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setDeviceMotionUpdateInterval:")
     public native void setDeviceMotionUpdateInterval(double value);
 
-    /**
-     * gyroUpdateInterval</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMotion/Reference/CMMotionManager_Class/index.html#//apple_ref/occ/instp/CMMotionManager/gyroUpdateInterval">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setGyroUpdateInterval:")
     public native void setGyroUpdateInterval(double value);
 
-    /**
-     * magnetometerUpdateInterval</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMotion/Reference/CMMotionManager_Class/index.html#//apple_ref/occ/instp/CMMotionManager/magnetometerUpdateInterval">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setMagnetometerUpdateInterval:")
     public native void setMagnetometerUpdateInterval(double value);
 
-    /**
-     * showsDeviceMovementDisplay</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMotion/Reference/CMMotionManager_Class/index.html#//apple_ref/occ/instp/CMMotionManager/showsDeviceMovementDisplay">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setShowsDeviceMovementDisplay:")
     public native void setShowsDeviceMovementDisplay(boolean value);
 
-    /**
-     * showsDeviceMovementDisplay</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMotion/Reference/CMMotionManager_Class/index.html#//apple_ref/occ/instp/CMMotionManager/showsDeviceMovementDisplay">iOS Dev Center</a>
-     */
     @Generated
     @Selector("showsDeviceMovementDisplay")
     public native boolean showsDeviceMovementDisplay();
 
-    /**
-     * startAccelerometerUpdates</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMotion/Reference/CMMotionManager_Class/index.html#//apple_ref/occ/instm/CMMotionManager/startAccelerometerUpdates">iOS Dev Center</a>
-     */
     @Generated
     @Selector("startAccelerometerUpdates")
     public native void startAccelerometerUpdates();
 
-    /**
-     * startAccelerometerUpdatesToQueue:withHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMotion/Reference/CMMotionManager_Class/index.html#//apple_ref/occ/instm/CMMotionManager/startAccelerometerUpdatesToQueue:withHandler:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("startAccelerometerUpdatesToQueue:withHandler:")
     public native void startAccelerometerUpdatesToQueueWithHandler(NSOperationQueue queue,
             @ObjCBlock(name = "call_startAccelerometerUpdatesToQueueWithHandler") Block_startAccelerometerUpdatesToQueueWithHandler handler);
 
-    /**
-     * startDeviceMotionUpdates</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMotion/Reference/CMMotionManager_Class/index.html#//apple_ref/occ/instm/CMMotionManager/startDeviceMotionUpdates">iOS Dev Center</a>
-     */
     @Generated
     @Selector("startDeviceMotionUpdates")
     public native void startDeviceMotionUpdates();
 
-    /**
-     * startDeviceMotionUpdatesToQueue:withHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMotion/Reference/CMMotionManager_Class/index.html#//apple_ref/occ/instm/CMMotionManager/startDeviceMotionUpdatesToQueue:withHandler:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("startDeviceMotionUpdatesToQueue:withHandler:")
     public native void startDeviceMotionUpdatesToQueueWithHandler(NSOperationQueue queue,
             @ObjCBlock(name = "call_startDeviceMotionUpdatesToQueueWithHandler") Block_startDeviceMotionUpdatesToQueueWithHandler handler);
 
-    /**
-     * startDeviceMotionUpdatesUsingReferenceFrame:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMotion/Reference/CMMotionManager_Class/index.html#//apple_ref/occ/instm/CMMotionManager/startDeviceMotionUpdatesUsingReferenceFrame:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("startDeviceMotionUpdatesUsingReferenceFrame:")
     public native void startDeviceMotionUpdatesUsingReferenceFrame(@NUInt long referenceFrame);
 
-    /**
-     * startDeviceMotionUpdatesUsingReferenceFrame:toQueue:withHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMotion/Reference/CMMotionManager_Class/index.html#//apple_ref/occ/instm/CMMotionManager/startDeviceMotionUpdatesUsingReferenceFrame:toQueue:withHandler:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("startDeviceMotionUpdatesUsingReferenceFrame:toQueue:withHandler:")
     public native void startDeviceMotionUpdatesUsingReferenceFrameToQueueWithHandler(@NUInt long referenceFrame,
             NSOperationQueue queue,
             @ObjCBlock(name = "call_startDeviceMotionUpdatesUsingReferenceFrameToQueueWithHandler") Block_startDeviceMotionUpdatesUsingReferenceFrameToQueueWithHandler handler);
 
-    /**
-     * startGyroUpdates</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMotion/Reference/CMMotionManager_Class/index.html#//apple_ref/occ/instm/CMMotionManager/startGyroUpdates">iOS Dev Center</a>
-     */
     @Generated
     @Selector("startGyroUpdates")
     public native void startGyroUpdates();
 
-    /**
-     * startGyroUpdatesToQueue:withHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMotion/Reference/CMMotionManager_Class/index.html#//apple_ref/occ/instm/CMMotionManager/startGyroUpdatesToQueue:withHandler:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("startGyroUpdatesToQueue:withHandler:")
     public native void startGyroUpdatesToQueueWithHandler(NSOperationQueue queue,
             @ObjCBlock(name = "call_startGyroUpdatesToQueueWithHandler") Block_startGyroUpdatesToQueueWithHandler handler);
 
-    /**
-     * startMagnetometerUpdates</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMotion/Reference/CMMotionManager_Class/index.html#//apple_ref/occ/instm/CMMotionManager/startMagnetometerUpdates">iOS Dev Center</a>
-     */
     @Generated
     @Selector("startMagnetometerUpdates")
     public native void startMagnetometerUpdates();
 
-    /**
-     * startMagnetometerUpdatesToQueue:withHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMotion/Reference/CMMotionManager_Class/index.html#//apple_ref/occ/instm/CMMotionManager/startMagnetometerUpdatesToQueue:withHandler:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("startMagnetometerUpdatesToQueue:withHandler:")
     public native void startMagnetometerUpdatesToQueueWithHandler(NSOperationQueue queue,
             @ObjCBlock(name = "call_startMagnetometerUpdatesToQueueWithHandler") Block_startMagnetometerUpdatesToQueueWithHandler handler);
 
-    /**
-     * stopAccelerometerUpdates</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMotion/Reference/CMMotionManager_Class/index.html#//apple_ref/occ/instm/CMMotionManager/stopAccelerometerUpdates">iOS Dev Center</a>
-     */
     @Generated
     @Selector("stopAccelerometerUpdates")
     public native void stopAccelerometerUpdates();
 
-    /**
-     * stopDeviceMotionUpdates</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMotion/Reference/CMMotionManager_Class/index.html#//apple_ref/occ/instm/CMMotionManager/stopDeviceMotionUpdates">iOS Dev Center</a>
-     */
     @Generated
     @Selector("stopDeviceMotionUpdates")
     public native void stopDeviceMotionUpdates();
 
-    /**
-     * stopGyroUpdates</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMotion/Reference/CMMotionManager_Class/index.html#//apple_ref/occ/instm/CMMotionManager/stopGyroUpdates">iOS Dev Center</a>
-     */
     @Generated
     @Selector("stopGyroUpdates")
     public native void stopGyroUpdates();
 
-    /**
-     * stopMagnetometerUpdates</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMotion/Reference/CMMotionManager_Class/index.html#//apple_ref/occ/instm/CMMotionManager/stopMagnetometerUpdates">iOS Dev Center</a>
-     */
     @Generated
     @Selector("stopMagnetometerUpdates")
     public native void stopMagnetometerUpdates();

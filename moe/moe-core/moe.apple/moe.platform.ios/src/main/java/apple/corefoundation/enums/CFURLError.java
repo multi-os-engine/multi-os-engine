@@ -30,6 +30,7 @@ public final class CFURLError {
     @Generated @NInt public static final long UnknownPropertyKeyError = 0xFFFFFFFFFFFFFFF0L;
     @Generated @NInt public static final long PropertyKeyUnavailableError = 0xFFFFFFFFFFFFFFEFL;
     @Generated @NInt public static final long TimeoutError = 0xFFFFFFFFFFFFFFEEL;
+
     @Generated
     private CFURLError() {
     }

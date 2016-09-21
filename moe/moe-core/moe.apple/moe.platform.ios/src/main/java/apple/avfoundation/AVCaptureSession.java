@@ -159,98 +159,50 @@ public class AVCaptureSession extends NSObject {
     @NInt
     public static native long version_static();
 
-    /**
-     * addConnection:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVCaptureSession_Class/index.html#//apple_ref/occ/instm/AVCaptureSession/addConnection:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("addConnection:")
     public native void addConnection(AVCaptureConnection connection);
 
-    /**
-     * addInput:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVCaptureSession_Class/index.html#//apple_ref/occ/instm/AVCaptureSession/addInput:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("addInput:")
     public native void addInput(AVCaptureInput input);
 
-    /**
-     * addInputWithNoConnections:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVCaptureSession_Class/index.html#//apple_ref/occ/instm/AVCaptureSession/addInputWithNoConnections:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("addInputWithNoConnections:")
     public native void addInputWithNoConnections(AVCaptureInput input);
 
-    /**
-     * addOutput:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVCaptureSession_Class/index.html#//apple_ref/occ/instm/AVCaptureSession/addOutput:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("addOutput:")
     public native void addOutput(AVCaptureOutput output);
 
-    /**
-     * addOutputWithNoConnections:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVCaptureSession_Class/index.html#//apple_ref/occ/instm/AVCaptureSession/addOutputWithNoConnections:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("addOutputWithNoConnections:")
     public native void addOutputWithNoConnections(AVCaptureOutput output);
 
-    /**
-     * automaticallyConfiguresApplicationAudioSession</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVCaptureSession_Class/index.html#//apple_ref/occ/instp/AVCaptureSession/automaticallyConfiguresApplicationAudioSession">iOS Dev Center</a>
-     */
     @Generated
     @Selector("automaticallyConfiguresApplicationAudioSession")
     public native boolean automaticallyConfiguresApplicationAudioSession();
 
-    /**
-     * beginConfiguration</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVCaptureSession_Class/index.html#//apple_ref/occ/instm/AVCaptureSession/beginConfiguration">iOS Dev Center</a>
-     */
     @Generated
     @Selector("beginConfiguration")
     public native void beginConfiguration();
 
-    /**
-     * canAddConnection:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVCaptureSession_Class/index.html#//apple_ref/occ/instm/AVCaptureSession/canAddConnection:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("canAddConnection:")
     public native boolean canAddConnection(AVCaptureConnection connection);
 
-    /**
-     * canAddInput:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVCaptureSession_Class/index.html#//apple_ref/occ/instm/AVCaptureSession/canAddInput:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("canAddInput:")
     public native boolean canAddInput(AVCaptureInput input);
 
-    /**
-     * canAddOutput:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVCaptureSession_Class/index.html#//apple_ref/occ/instm/AVCaptureSession/canAddOutput:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("canAddOutput:")
     public native boolean canAddOutput(AVCaptureOutput output);
 
-    /**
-     * canSetSessionPreset:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVCaptureSession_Class/index.html#//apple_ref/occ/instm/AVCaptureSession/canSetSessionPreset:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("canSetSessionPreset:")
     public native boolean canSetSessionPreset(String preset);
 
-    /**
-     * commitConfiguration</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVCaptureSession_Class/index.html#//apple_ref/occ/instm/AVCaptureSession/commitConfiguration">iOS Dev Center</a>
-     */
     @Generated
     @Selector("commitConfiguration")
     public native void commitConfiguration();
@@ -259,122 +211,62 @@ public class AVCaptureSession extends NSObject {
     @Selector("init")
     public native AVCaptureSession init();
 
-    /**
-     * inputs</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVCaptureSession_Class/index.html#//apple_ref/occ/instp/AVCaptureSession/inputs">iOS Dev Center</a>
-     */
     @Generated
     @Selector("inputs")
     public native NSArray<?> inputs();
 
-    /**
-     * interrupted</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVCaptureSession_Class/index.html#//apple_ref/occ/instp/AVCaptureSession/interrupted">iOS Dev Center</a>
-     */
     @Generated
     @Selector("isInterrupted")
     public native boolean isInterrupted();
 
-    /**
-     * running</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVCaptureSession_Class/index.html#//apple_ref/occ/instp/AVCaptureSession/running">iOS Dev Center</a>
-     */
     @Generated
     @Selector("isRunning")
     public native boolean isRunning();
 
-    /**
-     * masterClock</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVCaptureSession_Class/index.html#//apple_ref/occ/instp/AVCaptureSession/masterClock">iOS Dev Center</a>
-     */
     @Generated
     @Selector("masterClock")
     public native CMClockRef masterClock();
 
-    /**
-     * outputs</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVCaptureSession_Class/index.html#//apple_ref/occ/instp/AVCaptureSession/outputs">iOS Dev Center</a>
-     */
     @Generated
     @Selector("outputs")
     public native NSArray<?> outputs();
 
-    /**
-     * removeConnection:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVCaptureSession_Class/index.html#//apple_ref/occ/instm/AVCaptureSession/removeConnection:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("removeConnection:")
     public native void removeConnection(AVCaptureConnection connection);
 
-    /**
-     * removeInput:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVCaptureSession_Class/index.html#//apple_ref/occ/instm/AVCaptureSession/removeInput:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("removeInput:")
     public native void removeInput(AVCaptureInput input);
 
-    /**
-     * removeOutput:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVCaptureSession_Class/index.html#//apple_ref/occ/instm/AVCaptureSession/removeOutput:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("removeOutput:")
     public native void removeOutput(AVCaptureOutput output);
 
-    /**
-     * sessionPreset</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVCaptureSession_Class/index.html#//apple_ref/occ/instp/AVCaptureSession/sessionPreset">iOS Dev Center</a>
-     */
     @Generated
     @Selector("sessionPreset")
     public native String sessionPreset();
 
-    /**
-     * automaticallyConfiguresApplicationAudioSession</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVCaptureSession_Class/index.html#//apple_ref/occ/instp/AVCaptureSession/automaticallyConfiguresApplicationAudioSession">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setAutomaticallyConfiguresApplicationAudioSession:")
     public native void setAutomaticallyConfiguresApplicationAudioSession(boolean value);
 
-    /**
-     * sessionPreset</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVCaptureSession_Class/index.html#//apple_ref/occ/instp/AVCaptureSession/sessionPreset">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setSessionPreset:")
     public native void setSessionPreset(String value);
 
-    /**
-     * usesApplicationAudioSession</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVCaptureSession_Class/index.html#//apple_ref/occ/instp/AVCaptureSession/usesApplicationAudioSession">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setUsesApplicationAudioSession:")
     public native void setUsesApplicationAudioSession(boolean value);
 
-    /**
-     * startRunning</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVCaptureSession_Class/index.html#//apple_ref/occ/instm/AVCaptureSession/startRunning">iOS Dev Center</a>
-     */
     @Generated
     @Selector("startRunning")
     public native void startRunning();
 
-    /**
-     * stopRunning</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVCaptureSession_Class/index.html#//apple_ref/occ/instm/AVCaptureSession/stopRunning">iOS Dev Center</a>
-     */
     @Generated
     @Selector("stopRunning")
     public native void stopRunning();
 
-    /**
-     * usesApplicationAudioSession</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVCaptureSession_Class/index.html#//apple_ref/occ/instp/AVCaptureSession/usesApplicationAudioSession">iOS Dev Center</a>
-     */
     @Generated
     @Selector("usesApplicationAudioSession")
     public native boolean usesApplicationAudioSession();

@@ -48,19 +48,11 @@ public class NSProxy extends ObjCObject implements NSObject {
         super(peer);
     }
 
-    /**
-     * alloc</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSProxy_Class/index.html#//apple_ref/occ/clm/NSProxy/alloc">iOS Dev Center</a>
-     */
     @Generated
     @Owned
     @Selector("alloc")
     public static native NSProxy alloc();
 
-    /**
-     * respondsToSelector:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSProxy_Class/index.html#//apple_ref/occ/clm/NSProxy/respondsToSelector:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("respondsToSelector:")
     public static native boolean respondsToSelector_static(SEL aSelector);
@@ -69,10 +61,6 @@ public class NSProxy extends ObjCObject implements NSObject {
     @Selector("class")
     public native Class class_objc();
 
-    /**
-     * dealloc</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSProxy_Class/index.html#//apple_ref/occ/instm/NSProxy/dealloc">iOS Dev Center</a>
-     */
     @Generated
     @Selector("dealloc")
     public native void dealloc();
@@ -85,18 +73,10 @@ public class NSProxy extends ObjCObject implements NSObject {
     @Selector("description")
     public native String description();
 
-    /**
-     * finalize</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSProxy_Class/index.html#//apple_ref/occ/instm/NSProxy/finalize">iOS Dev Center</a>
-     */
     @Generated
     @Selector("finalize")
     public native void finalize_objc();
 
-    /**
-     * forwardInvocation:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSProxy_Class/index.html#//apple_ref/occ/instm/NSProxy/forwardInvocation:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("forwardInvocation:")
     public native void forwardInvocation(NSInvocation invocation);
@@ -122,10 +102,6 @@ public class NSProxy extends ObjCObject implements NSObject {
     @Selector("isProxy")
     public native boolean isProxy();
 
-    /**
-     * methodSignatureForSelector:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSProxy_Class/index.html#//apple_ref/occ/instm/NSProxy/methodSignatureForSelector:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("methodSignatureForSelector:")
     public native NSMethodSignature methodSignatureForSelector(SEL sel);

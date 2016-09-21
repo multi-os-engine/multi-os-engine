@@ -160,19 +160,11 @@ public class NSRelationshipDescription extends NSPropertyDescription {
     @NInt
     public static native long version_static();
 
-    /**
-     * deleteRule</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/CoreDataFramework/Classes/NSRelationshipDescription_Class/index.html#//apple_ref/occ/instp/NSRelationshipDescription/deleteRule">iOS Dev Center</a>
-     */
     @Generated
     @Selector("deleteRule")
     @NUInt
     public native long deleteRule();
 
-    /**
-     * destinationEntity</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/CoreDataFramework/Classes/NSRelationshipDescription_Class/index.html#//apple_ref/occ/instp/NSRelationshipDescription/destinationEntity">iOS Dev Center</a>
-     */
     @Generated
     @Selector("destinationEntity")
     public native NSEntityDescription destinationEntity();
@@ -181,76 +173,40 @@ public class NSRelationshipDescription extends NSPropertyDescription {
     @Selector("init")
     public native NSRelationshipDescription init();
 
-    /**
-     * inverseRelationship</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/CoreDataFramework/Classes/NSRelationshipDescription_Class/index.html#//apple_ref/occ/instp/NSRelationshipDescription/inverseRelationship">iOS Dev Center</a>
-     */
     @Generated
     @Selector("inverseRelationship")
     public native NSRelationshipDescription inverseRelationship();
 
-    /**
-     * ordered</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/CoreDataFramework/Classes/NSRelationshipDescription_Class/index.html#//apple_ref/occ/instp/NSRelationshipDescription/ordered">iOS Dev Center</a>
-     */
     @Generated
     @Selector("isOrdered")
     public native boolean isOrdered();
 
-    /**
-     * ordered</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/CoreDataFramework/Classes/NSRelationshipDescription_Class/index.html#//apple_ref/occ/instp/NSRelationshipDescription/ordered">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setOrdered:")
     public native void setOrdered(boolean value);
 
-    /**
-     * toMany</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/CoreDataFramework/Classes/NSRelationshipDescription_Class/index.html#//apple_ref/occ/instp/NSRelationshipDescription/toMany">iOS Dev Center</a>
-     */
     @Generated
     @Selector("isToMany")
     public native boolean isToMany();
 
-    /**
-     * maxCount</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/CoreDataFramework/Classes/NSRelationshipDescription_Class/index.html#//apple_ref/occ/instp/NSRelationshipDescription/maxCount">iOS Dev Center</a>
-     */
     @Generated
     @Selector("maxCount")
     @NUInt
     public native long maxCount();
 
-    /**
-     * minCount</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/CoreDataFramework/Classes/NSRelationshipDescription_Class/index.html#//apple_ref/occ/instp/NSRelationshipDescription/minCount">iOS Dev Center</a>
-     */
     @Generated
     @Selector("minCount")
     @NUInt
     public native long minCount();
 
-    /**
-     * deleteRule</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/CoreDataFramework/Classes/NSRelationshipDescription_Class/index.html#//apple_ref/occ/instp/NSRelationshipDescription/deleteRule">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setDeleteRule:")
     public native void setDeleteRule(@NUInt long value);
 
-    /**
-     * destinationEntity</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/CoreDataFramework/Classes/NSRelationshipDescription_Class/index.html#//apple_ref/occ/instp/NSRelationshipDescription/destinationEntity">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setDestinationEntity:")
     public native void setDestinationEntity_unsafe(NSEntityDescription value);
 
-    /**
-     * destinationEntity</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/CoreDataFramework/Classes/NSRelationshipDescription_Class/index.html#//apple_ref/occ/instp/NSRelationshipDescription/destinationEntity">iOS Dev Center</a>
-     */
     @Generated
     public void setDestinationEntity(NSEntityDescription value) {
         Object __old = destinationEntity();
@@ -263,18 +219,10 @@ public class NSRelationshipDescription extends NSPropertyDescription {
         }
     }
 
-    /**
-     * inverseRelationship</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/CoreDataFramework/Classes/NSRelationshipDescription_Class/index.html#//apple_ref/occ/instp/NSRelationshipDescription/inverseRelationship">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setInverseRelationship:")
     public native void setInverseRelationship_unsafe(NSRelationshipDescription value);
 
-    /**
-     * inverseRelationship</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/CoreDataFramework/Classes/NSRelationshipDescription_Class/index.html#//apple_ref/occ/instp/NSRelationshipDescription/inverseRelationship">iOS Dev Center</a>
-     */
     @Generated
     public void setInverseRelationship(NSRelationshipDescription value) {
         Object __old = inverseRelationship();
@@ -287,26 +235,14 @@ public class NSRelationshipDescription extends NSPropertyDescription {
         }
     }
 
-    /**
-     * maxCount</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/CoreDataFramework/Classes/NSRelationshipDescription_Class/index.html#//apple_ref/occ/instp/NSRelationshipDescription/maxCount">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setMaxCount:")
     public native void setMaxCount(@NUInt long value);
 
-    /**
-     * minCount</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/CoreDataFramework/Classes/NSRelationshipDescription_Class/index.html#//apple_ref/occ/instp/NSRelationshipDescription/minCount">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setMinCount:")
     public native void setMinCount(@NUInt long value);
 
-    /**
-     * versionHash</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/CoreDataFramework/Classes/NSRelationshipDescription_Class/index.html#//apple_ref/occ/instp/NSRelationshipDescription/versionHash">iOS Dev Center</a>
-     */
     @Generated
     @Selector("versionHash")
     public native NSData versionHash();

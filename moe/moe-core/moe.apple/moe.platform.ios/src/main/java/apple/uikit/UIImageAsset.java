@@ -169,10 +169,6 @@ public class UIImageAsset extends NSObject implements NSSecureCoding {
     @Selector("encodeWithCoder:")
     public native void encodeWithCoder(NSCoder aCoder);
 
-    /**
-     * imageWithTraitCollection:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIImageAsset_Ref/index.html#//apple_ref/occ/instm/UIImageAsset/imageWithTraitCollection:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("imageWithTraitCollection:")
     public native UIImage imageWithTraitCollection(UITraitCollection traitCollection);
@@ -185,10 +181,6 @@ public class UIImageAsset extends NSObject implements NSSecureCoding {
     @Selector("initWithCoder:")
     public native UIImageAsset initWithCoder(NSCoder aDecoder);
 
-    /**
-     * registerImage:withTraitCollection:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIImageAsset_Ref/index.html#//apple_ref/occ/instm/UIImageAsset/registerImage:withTraitCollection:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("registerImage:withTraitCollection:")
     public native void registerImageWithTraitCollection(UIImage image, UITraitCollection traitCollection);
@@ -199,10 +191,6 @@ public class UIImageAsset extends NSObject implements NSSecureCoding {
         return supportsSecureCoding();
     }
 
-    /**
-     * unregisterImageWithTraitCollection:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIImageAsset_Ref/index.html#//apple_ref/occ/instm/UIImageAsset/unregisterImageWithTraitCollection:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("unregisterImageWithTraitCollection:")
     public native void unregisterImageWithTraitCollection(UITraitCollection traitCollection);

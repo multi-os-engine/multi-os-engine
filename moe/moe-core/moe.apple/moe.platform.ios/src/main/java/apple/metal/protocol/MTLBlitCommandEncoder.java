@@ -35,10 +35,6 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("MTLBlitCommandEncoder")
 public interface MTLBlitCommandEncoder extends MTLCommandEncoder {
-    /**
-     * copyFromBuffer:sourceOffset:sourceBytesPerRow:sourceBytesPerImage:sourceSize:toTexture:destinationSlice:destinationLevel:destinationOrigin:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Metal/Reference/MTLBlitCommandEncoder_Ref/index.html#//apple_ref/occ/intfm/MTLBlitCommandEncoder/copyFromBuffer:sourceOffset:sourceBytesPerRow:sourceBytesPerImage:sourceSize:toTexture:destinationSlice:destinationLevel:destinationOrigin:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("copyFromBuffer:sourceOffset:sourceBytesPerRow:sourceBytesPerImage:sourceSize:toTexture:destinationSlice:destinationLevel:destinationOrigin:")
     void copyFromBufferSourceOffsetSourceBytesPerRowSourceBytesPerImageSourceSizeToTextureDestinationSliceDestinationLevelDestinationOrigin(
@@ -47,20 +43,12 @@ public interface MTLBlitCommandEncoder extends MTLCommandEncoder {
             @Mapped(ObjCObjectMapper.class) Object destinationTexture, @NUInt long destinationSlice,
             @NUInt long destinationLevel, @ByValue MTLOrigin destinationOrigin);
 
-    /**
-     * copyFromBuffer:sourceOffset:toBuffer:destinationOffset:size:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Metal/Reference/MTLBlitCommandEncoder_Ref/index.html#//apple_ref/occ/intfm/MTLBlitCommandEncoder/copyFromBuffer:sourceOffset:toBuffer:destinationOffset:size:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("copyFromBuffer:sourceOffset:toBuffer:destinationOffset:size:")
     void copyFromBufferSourceOffsetToBufferDestinationOffsetSize(@Mapped(ObjCObjectMapper.class) Object sourceBuffer,
             @NUInt long sourceOffset, @Mapped(ObjCObjectMapper.class) Object destinationBuffer,
             @NUInt long destinationOffset, @NUInt long size);
 
-    /**
-     * copyFromTexture:sourceSlice:sourceLevel:sourceOrigin:sourceSize:toBuffer:destinationOffset:destinationBytesPerRow:destinationBytesPerImage:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Metal/Reference/MTLBlitCommandEncoder_Ref/index.html#//apple_ref/occ/intfm/MTLBlitCommandEncoder/copyFromTexture:sourceSlice:sourceLevel:sourceOrigin:sourceSize:toBuffer:destinationOffset:destinationBytesPerRow:destinationBytesPerImage:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("copyFromTexture:sourceSlice:sourceLevel:sourceOrigin:sourceSize:toBuffer:destinationOffset:destinationBytesPerRow:destinationBytesPerImage:")
     void copyFromTextureSourceSliceSourceLevelSourceOriginSourceSizeToBufferDestinationOffsetDestinationBytesPerRowDestinationBytesPerImage(
@@ -69,10 +57,6 @@ public interface MTLBlitCommandEncoder extends MTLCommandEncoder {
             @Mapped(ObjCObjectMapper.class) Object destinationBuffer, @NUInt long destinationOffset,
             @NUInt long destinationBytesPerRow, @NUInt long destinationBytesPerImage);
 
-    /**
-     * copyFromTexture:sourceSlice:sourceLevel:sourceOrigin:sourceSize:toTexture:destinationSlice:destinationLevel:destinationOrigin:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Metal/Reference/MTLBlitCommandEncoder_Ref/index.html#//apple_ref/occ/intfm/MTLBlitCommandEncoder/copyFromTexture:sourceSlice:sourceLevel:sourceOrigin:sourceSize:toTexture:destinationSlice:destinationLevel:destinationOrigin:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("copyFromTexture:sourceSlice:sourceLevel:sourceOrigin:sourceSize:toTexture:destinationSlice:destinationLevel:destinationOrigin:")
     void copyFromTextureSourceSliceSourceLevelSourceOriginSourceSizeToTextureDestinationSliceDestinationLevelDestinationOrigin(
@@ -81,26 +65,14 @@ public interface MTLBlitCommandEncoder extends MTLCommandEncoder {
             @Mapped(ObjCObjectMapper.class) Object destinationTexture, @NUInt long destinationSlice,
             @NUInt long destinationLevel, @ByValue MTLOrigin destinationOrigin);
 
-    /**
-     * fillBuffer:range:value:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Metal/Reference/MTLBlitCommandEncoder_Ref/index.html#//apple_ref/occ/intfm/MTLBlitCommandEncoder/fillBuffer:range:value:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("fillBuffer:range:value:")
     void fillBufferRangeValue(@Mapped(ObjCObjectMapper.class) Object buffer, @ByValue NSRange range, byte value);
 
-    /**
-     * generateMipmapsForTexture:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Metal/Reference/MTLBlitCommandEncoder_Ref/index.html#//apple_ref/occ/intfm/MTLBlitCommandEncoder/generateMipmapsForTexture:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("generateMipmapsForTexture:")
     void generateMipmapsForTexture(@Mapped(ObjCObjectMapper.class) Object texture);
 
-    /**
-     * copyFromBuffer:sourceOffset:sourceBytesPerRow:sourceBytesPerImage:sourceSize:toTexture:destinationSlice:destinationLevel:destinationOrigin:options:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Metal/Reference/MTLBlitCommandEncoder_Ref/index.html#//apple_ref/occ/intfm/MTLBlitCommandEncoder/copyFromBuffer:sourceOffset:sourceBytesPerRow:sourceBytesPerImage:sourceSize:toTexture:destinationSlice:destinationLevel:destinationOrigin:options:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("copyFromBuffer:sourceOffset:sourceBytesPerRow:sourceBytesPerImage:sourceSize:toTexture:destinationSlice:destinationLevel:destinationOrigin:options:")
     void copyFromBufferSourceOffsetSourceBytesPerRowSourceBytesPerImageSourceSizeToTextureDestinationSliceDestinationLevelDestinationOriginOptions(
@@ -109,10 +81,6 @@ public interface MTLBlitCommandEncoder extends MTLCommandEncoder {
             @Mapped(ObjCObjectMapper.class) Object destinationTexture, @NUInt long destinationSlice,
             @NUInt long destinationLevel, @ByValue MTLOrigin destinationOrigin, @NUInt long options);
 
-    /**
-     * copyFromTexture:sourceSlice:sourceLevel:sourceOrigin:sourceSize:toBuffer:destinationOffset:destinationBytesPerRow:destinationBytesPerImage:options:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Metal/Reference/MTLBlitCommandEncoder_Ref/index.html#//apple_ref/occ/intfm/MTLBlitCommandEncoder/copyFromTexture:sourceSlice:sourceLevel:sourceOrigin:sourceSize:toBuffer:destinationOffset:destinationBytesPerRow:destinationBytesPerImage:options:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("copyFromTexture:sourceSlice:sourceLevel:sourceOrigin:sourceSize:toBuffer:destinationOffset:destinationBytesPerRow:destinationBytesPerImage:options:")
     void copyFromTextureSourceSliceSourceLevelSourceOriginSourceSizeToBufferDestinationOffsetDestinationBytesPerRowDestinationBytesPerImageOptions(

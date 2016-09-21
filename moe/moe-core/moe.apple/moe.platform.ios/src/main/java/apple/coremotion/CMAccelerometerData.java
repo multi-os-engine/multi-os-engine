@@ -166,10 +166,6 @@ public class CMAccelerometerData extends CMLogItem {
     @NInt
     public static native long version_static();
 
-    /**
-     * acceleration</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMotion/Reference/CMAccelerometerData_Class/index.html#//apple_ref/occ/instp/CMAccelerometerData/acceleration">iOS Dev Center</a>
-     */
     @Generated
     @Selector("acceleration")
     @ByValue

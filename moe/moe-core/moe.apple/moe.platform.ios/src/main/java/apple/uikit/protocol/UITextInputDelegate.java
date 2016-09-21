@@ -30,34 +30,18 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("UITextInputDelegate")
 public interface UITextInputDelegate {
-    /**
-     * selectionDidChange:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITextInputDelegate_Protocol/index.html#//apple_ref/occ/intfm/UITextInputDelegate/selectionDidChange:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("selectionDidChange:")
     void selectionDidChange(@Mapped(ObjCObjectMapper.class) Object textInput);
 
-    /**
-     * selectionWillChange:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITextInputDelegate_Protocol/index.html#//apple_ref/occ/intfm/UITextInputDelegate/selectionWillChange:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("selectionWillChange:")
     void selectionWillChange(@Mapped(ObjCObjectMapper.class) Object textInput);
 
-    /**
-     * textDidChange:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITextInputDelegate_Protocol/index.html#//apple_ref/occ/intfm/UITextInputDelegate/textDidChange:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("textDidChange:")
     void textDidChange(@Mapped(ObjCObjectMapper.class) Object textInput);
 
-    /**
-     * textWillChange:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITextInputDelegate_Protocol/index.html#//apple_ref/occ/intfm/UITextInputDelegate/textWillChange:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("textWillChange:")
     void textWillChange(@Mapped(ObjCObjectMapper.class) Object textInput);

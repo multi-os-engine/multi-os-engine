@@ -27,6 +27,7 @@ public final class NWTCPConnectionState {
     @Generated @NInt public static final long Connected = 0x0000000000000003L;
     @Generated @NInt public static final long Disconnected = 0x0000000000000004L;
     @Generated @NInt public static final long Cancelled = 0x0000000000000005L;
+
     @Generated
     private NWTCPConnectionState() {
     }

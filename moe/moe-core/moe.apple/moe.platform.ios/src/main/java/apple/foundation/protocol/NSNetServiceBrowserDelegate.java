@@ -33,10 +33,6 @@ import org.moe.natj.objc.ann.Selector;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("NSNetServiceBrowserDelegate")
 public interface NSNetServiceBrowserDelegate {
-    /**
-     * netServiceBrowser:didFindDomain:moreComing:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSNetServiceBrowserDelegate_Protocol/index.html#//apple_ref/occ/intfm/NSNetServiceBrowserDelegate/netServiceBrowser:didFindDomain:moreComing:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("netServiceBrowser:didFindDomain:moreComing:")
@@ -45,10 +41,6 @@ public interface NSNetServiceBrowserDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * netServiceBrowser:didFindService:moreComing:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSNetServiceBrowserDelegate_Protocol/index.html#//apple_ref/occ/intfm/NSNetServiceBrowserDelegate/netServiceBrowser:didFindService:moreComing:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("netServiceBrowser:didFindService:moreComing:")
@@ -57,10 +49,6 @@ public interface NSNetServiceBrowserDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * netServiceBrowser:didNotSearch:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSNetServiceBrowserDelegate_Protocol/index.html#//apple_ref/occ/intfm/NSNetServiceBrowserDelegate/netServiceBrowser:didNotSearch:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("netServiceBrowser:didNotSearch:")
@@ -69,10 +57,6 @@ public interface NSNetServiceBrowserDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * netServiceBrowser:didRemoveDomain:moreComing:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSNetServiceBrowserDelegate_Protocol/index.html#//apple_ref/occ/intfm/NSNetServiceBrowserDelegate/netServiceBrowser:didRemoveDomain:moreComing:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("netServiceBrowser:didRemoveDomain:moreComing:")
@@ -81,10 +65,6 @@ public interface NSNetServiceBrowserDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * netServiceBrowser:didRemoveService:moreComing:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSNetServiceBrowserDelegate_Protocol/index.html#//apple_ref/occ/intfm/NSNetServiceBrowserDelegate/netServiceBrowser:didRemoveService:moreComing:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("netServiceBrowser:didRemoveService:moreComing:")
@@ -93,10 +73,6 @@ public interface NSNetServiceBrowserDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * netServiceBrowserDidStopSearch:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSNetServiceBrowserDelegate_Protocol/index.html#//apple_ref/occ/intfm/NSNetServiceBrowserDelegate/netServiceBrowserDidStopSearch:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("netServiceBrowserDidStopSearch:")
@@ -104,10 +80,6 @@ public interface NSNetServiceBrowserDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * netServiceBrowserWillSearch:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSNetServiceBrowserDelegate_Protocol/index.html#//apple_ref/occ/intfm/NSNetServiceBrowserDelegate/netServiceBrowserWillSearch:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("netServiceBrowserWillSearch:")

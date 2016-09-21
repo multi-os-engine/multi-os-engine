@@ -28,6 +28,7 @@ public final class NEHotspotHelperCommandType {
     @Generated @NInt public static final long PresentUI = 0x0000000000000004L;
     @Generated @NInt public static final long Maintain = 0x0000000000000005L;
     @Generated @NInt public static final long Logoff = 0x0000000000000006L;
+
     @Generated
     private NEHotspotHelperCommandType() {
     }

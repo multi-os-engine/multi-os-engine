@@ -27,6 +27,7 @@ public final class NWUDPSessionState {
     @Generated @NInt public static final long Ready = 0x0000000000000003L;
     @Generated @NInt public static final long Failed = 0x0000000000000004L;
     @Generated @NInt public static final long Cancelled = 0x0000000000000005L;
+
     @Generated
     private NWUDPSessionState() {
     }

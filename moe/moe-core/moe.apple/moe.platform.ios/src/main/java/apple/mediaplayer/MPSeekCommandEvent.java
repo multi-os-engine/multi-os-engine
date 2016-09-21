@@ -162,10 +162,6 @@ public class MPSeekCommandEvent extends MPRemoteCommandEvent {
     @Selector("init")
     public native MPSeekCommandEvent init();
 
-    /**
-     * type</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPSeekCommandEvent_Ref/index.html#//apple_ref/occ/instp/MPSeekCommandEvent/type">iOS Dev Center</a>
-     */
     @Generated
     @Selector("type")
     @NUInt

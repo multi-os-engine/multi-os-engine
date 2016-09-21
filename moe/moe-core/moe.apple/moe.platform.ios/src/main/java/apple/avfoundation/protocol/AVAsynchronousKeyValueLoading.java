@@ -33,19 +33,11 @@ import org.moe.natj.objc.ann.Selector;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("AVAsynchronousKeyValueLoading")
 public interface AVAsynchronousKeyValueLoading {
-    /**
-     * loadValuesAsynchronouslyForKeys:completionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAsynchronousKeyValueLoading_Protocol/index.html#//apple_ref/occ/intfm/AVAsynchronousKeyValueLoading/loadValuesAsynchronouslyForKeys:completionHandler:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("loadValuesAsynchronouslyForKeys:completionHandler:")
     void loadValuesAsynchronouslyForKeysCompletionHandler(NSArray<String> keys,
             @ObjCBlock(name = "call_loadValuesAsynchronouslyForKeysCompletionHandler") Block_loadValuesAsynchronouslyForKeysCompletionHandler handler);
 
-    /**
-     * statusOfValueForKey:error:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAsynchronousKeyValueLoading_Protocol/index.html#//apple_ref/occ/intfm/AVAsynchronousKeyValueLoading/statusOfValueForKey:error:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("statusOfValueForKey:error:")
     @NInt

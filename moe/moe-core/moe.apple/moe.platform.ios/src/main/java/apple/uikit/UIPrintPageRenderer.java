@@ -162,67 +162,35 @@ public class UIPrintPageRenderer extends NSObject {
     @NInt
     public static native long version();
 
-    /**
-     * addPrintFormatter:startingAtPageAtIndex:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/iPhone/Reference/UIPrintPageRenderer_Class/index.html#//apple_ref/occ/instm/UIPrintPageRenderer/addPrintFormatter:startingAtPageAtIndex:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("addPrintFormatter:startingAtPageAtIndex:")
     public native void addPrintFormatterStartingAtPageAtIndex(UIPrintFormatter formatter, @NInt long pageIndex);
 
-    /**
-     * drawContentForPageAtIndex:inRect:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/iPhone/Reference/UIPrintPageRenderer_Class/index.html#//apple_ref/occ/instm/UIPrintPageRenderer/drawContentForPageAtIndex:inRect:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("drawContentForPageAtIndex:inRect:")
     public native void drawContentForPageAtIndexInRect(@NInt long pageIndex, @ByValue CGRect contentRect);
 
-    /**
-     * drawFooterForPageAtIndex:inRect:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/iPhone/Reference/UIPrintPageRenderer_Class/index.html#//apple_ref/occ/instm/UIPrintPageRenderer/drawFooterForPageAtIndex:inRect:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("drawFooterForPageAtIndex:inRect:")
     public native void drawFooterForPageAtIndexInRect(@NInt long pageIndex, @ByValue CGRect footerRect);
 
-    /**
-     * drawHeaderForPageAtIndex:inRect:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/iPhone/Reference/UIPrintPageRenderer_Class/index.html#//apple_ref/occ/instm/UIPrintPageRenderer/drawHeaderForPageAtIndex:inRect:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("drawHeaderForPageAtIndex:inRect:")
     public native void drawHeaderForPageAtIndexInRect(@NInt long pageIndex, @ByValue CGRect headerRect);
 
-    /**
-     * drawPageAtIndex:inRect:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/iPhone/Reference/UIPrintPageRenderer_Class/index.html#//apple_ref/occ/instm/UIPrintPageRenderer/drawPageAtIndex:inRect:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("drawPageAtIndex:inRect:")
     public native void drawPageAtIndexInRect(@NInt long pageIndex, @ByValue CGRect printableRect);
 
-    /**
-     * drawPrintFormatter:forPageAtIndex:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/iPhone/Reference/UIPrintPageRenderer_Class/index.html#//apple_ref/occ/instm/UIPrintPageRenderer/drawPrintFormatter:forPageAtIndex:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("drawPrintFormatter:forPageAtIndex:")
     public native void drawPrintFormatterForPageAtIndex(UIPrintFormatter printFormatter, @NInt long pageIndex);
 
-    /**
-     * footerHeight</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/iPhone/Reference/UIPrintPageRenderer_Class/index.html#//apple_ref/occ/instp/UIPrintPageRenderer/footerHeight">iOS Dev Center</a>
-     */
     @Generated
     @Selector("footerHeight")
     @NFloat
     public native double footerHeight();
 
-    /**
-     * headerHeight</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/iPhone/Reference/UIPrintPageRenderer_Class/index.html#//apple_ref/occ/instp/UIPrintPageRenderer/headerHeight">iOS Dev Center</a>
-     */
     @Generated
     @Selector("headerHeight")
     @NFloat
@@ -232,77 +200,41 @@ public class UIPrintPageRenderer extends NSObject {
     @Selector("init")
     public native UIPrintPageRenderer init();
 
-    /**
-     * numberOfPages</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/iPhone/Reference/UIPrintPageRenderer_Class/index.html#//apple_ref/occ/instm/UIPrintPageRenderer/numberOfPages">iOS Dev Center</a>
-     */
     @Generated
     @Selector("numberOfPages")
     @NInt
     public native long numberOfPages();
 
-    /**
-     * paperRect</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/iPhone/Reference/UIPrintPageRenderer_Class/index.html#//apple_ref/occ/instp/UIPrintPageRenderer/paperRect">iOS Dev Center</a>
-     */
     @Generated
     @Selector("paperRect")
     @ByValue
     public native CGRect paperRect();
 
-    /**
-     * prepareForDrawingPages:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/iPhone/Reference/UIPrintPageRenderer_Class/index.html#//apple_ref/occ/instm/UIPrintPageRenderer/prepareForDrawingPages:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("prepareForDrawingPages:")
     public native void prepareForDrawingPages(@ByValue NSRange range);
 
-    /**
-     * printFormatters</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/iPhone/Reference/UIPrintPageRenderer_Class/index.html#//apple_ref/occ/instp/UIPrintPageRenderer/printFormatters">iOS Dev Center</a>
-     */
     @Generated
     @Selector("printFormatters")
     public native NSArray<? extends UIPrintFormatter> printFormatters();
 
-    /**
-     * printFormattersForPageAtIndex:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/iPhone/Reference/UIPrintPageRenderer_Class/index.html#//apple_ref/occ/instm/UIPrintPageRenderer/printFormattersForPageAtIndex:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("printFormattersForPageAtIndex:")
     public native NSArray<? extends UIPrintFormatter> printFormattersForPageAtIndex(@NInt long pageIndex);
 
-    /**
-     * printableRect</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/iPhone/Reference/UIPrintPageRenderer_Class/index.html#//apple_ref/occ/instp/UIPrintPageRenderer/printableRect">iOS Dev Center</a>
-     */
     @Generated
     @Selector("printableRect")
     @ByValue
     public native CGRect printableRect();
 
-    /**
-     * footerHeight</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/iPhone/Reference/UIPrintPageRenderer_Class/index.html#//apple_ref/occ/instp/UIPrintPageRenderer/footerHeight">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setFooterHeight:")
     public native void setFooterHeight(@NFloat double value);
 
-    /**
-     * headerHeight</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/iPhone/Reference/UIPrintPageRenderer_Class/index.html#//apple_ref/occ/instp/UIPrintPageRenderer/headerHeight">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setHeaderHeight:")
     public native void setHeaderHeight(@NFloat double value);
 
-    /**
-     * printFormatters</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/iPhone/Reference/UIPrintPageRenderer_Class/index.html#//apple_ref/occ/instp/UIPrintPageRenderer/printFormatters">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setPrintFormatters:")
     public native void setPrintFormatters(NSArray<? extends UIPrintFormatter> value);

@@ -182,18 +182,10 @@ public class CAShapeLayer extends CALayer {
     @NInt
     public static native long version_static();
 
-    /**
-     * fillColor</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/CAShapeLayer_class/index.html#//apple_ref/occ/instp/CAShapeLayer/fillColor">iOS Dev Center</a>
-     */
     @Generated
     @Selector("fillColor")
     public native CGColorRef fillColor();
 
-    /**
-     * fillRule</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/CAShapeLayer_class/index.html#//apple_ref/occ/instp/CAShapeLayer/fillRule">iOS Dev Center</a>
-     */
     @Generated
     @Selector("fillRule")
     public native String fillRule();
@@ -206,182 +198,94 @@ public class CAShapeLayer extends CALayer {
     @Selector("initWithLayer:")
     public native CAShapeLayer initWithLayer(@Mapped(ObjCObjectMapper.class) Object layer);
 
-    /**
-     * lineCap</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/CAShapeLayer_class/index.html#//apple_ref/occ/instp/CAShapeLayer/lineCap">iOS Dev Center</a>
-     */
     @Generated
     @Selector("lineCap")
     public native String lineCap();
 
-    /**
-     * lineDashPattern</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/CAShapeLayer_class/index.html#//apple_ref/occ/instp/CAShapeLayer/lineDashPattern">iOS Dev Center</a>
-     */
     @Generated
     @Selector("lineDashPattern")
     public native NSArray<? extends NSNumber> lineDashPattern();
 
-    /**
-     * lineDashPhase</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/CAShapeLayer_class/index.html#//apple_ref/occ/instp/CAShapeLayer/lineDashPhase">iOS Dev Center</a>
-     */
     @Generated
     @Selector("lineDashPhase")
     @NFloat
     public native double lineDashPhase();
 
-    /**
-     * lineJoin</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/CAShapeLayer_class/index.html#//apple_ref/occ/instp/CAShapeLayer/lineJoin">iOS Dev Center</a>
-     */
     @Generated
     @Selector("lineJoin")
     public native String lineJoin();
 
-    /**
-     * lineWidth</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/CAShapeLayer_class/index.html#//apple_ref/occ/instp/CAShapeLayer/lineWidth">iOS Dev Center</a>
-     */
     @Generated
     @Selector("lineWidth")
     @NFloat
     public native double lineWidth();
 
-    /**
-     * miterLimit</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/CAShapeLayer_class/index.html#//apple_ref/occ/instp/CAShapeLayer/miterLimit">iOS Dev Center</a>
-     */
     @Generated
     @Selector("miterLimit")
     @NFloat
     public native double miterLimit();
 
-    /**
-     * path</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/CAShapeLayer_class/index.html#//apple_ref/occ/instp/CAShapeLayer/path">iOS Dev Center</a>
-     */
     @Generated
     @Selector("path")
     public native CGPathRef path();
 
-    /**
-     * fillColor</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/CAShapeLayer_class/index.html#//apple_ref/occ/instp/CAShapeLayer/fillColor">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setFillColor:")
     public native void setFillColor(CGColorRef value);
 
-    /**
-     * fillRule</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/CAShapeLayer_class/index.html#//apple_ref/occ/instp/CAShapeLayer/fillRule">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setFillRule:")
     public native void setFillRule(String value);
 
-    /**
-     * lineCap</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/CAShapeLayer_class/index.html#//apple_ref/occ/instp/CAShapeLayer/lineCap">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setLineCap:")
     public native void setLineCap(String value);
 
-    /**
-     * lineDashPattern</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/CAShapeLayer_class/index.html#//apple_ref/occ/instp/CAShapeLayer/lineDashPattern">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setLineDashPattern:")
     public native void setLineDashPattern(NSArray<? extends NSNumber> value);
 
-    /**
-     * lineDashPhase</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/CAShapeLayer_class/index.html#//apple_ref/occ/instp/CAShapeLayer/lineDashPhase">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setLineDashPhase:")
     public native void setLineDashPhase(@NFloat double value);
 
-    /**
-     * lineJoin</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/CAShapeLayer_class/index.html#//apple_ref/occ/instp/CAShapeLayer/lineJoin">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setLineJoin:")
     public native void setLineJoin(String value);
 
-    /**
-     * lineWidth</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/CAShapeLayer_class/index.html#//apple_ref/occ/instp/CAShapeLayer/lineWidth">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setLineWidth:")
     public native void setLineWidth(@NFloat double value);
 
-    /**
-     * miterLimit</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/CAShapeLayer_class/index.html#//apple_ref/occ/instp/CAShapeLayer/miterLimit">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setMiterLimit:")
     public native void setMiterLimit(@NFloat double value);
 
-    /**
-     * path</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/CAShapeLayer_class/index.html#//apple_ref/occ/instp/CAShapeLayer/path">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setPath:")
     public native void setPath(CGPathRef value);
 
-    /**
-     * strokeColor</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/CAShapeLayer_class/index.html#//apple_ref/occ/instp/CAShapeLayer/strokeColor">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setStrokeColor:")
     public native void setStrokeColor(CGColorRef value);
 
-    /**
-     * strokeEnd</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/CAShapeLayer_class/index.html#//apple_ref/occ/instp/CAShapeLayer/strokeEnd">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setStrokeEnd:")
     public native void setStrokeEnd(@NFloat double value);
 
-    /**
-     * strokeStart</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/CAShapeLayer_class/index.html#//apple_ref/occ/instp/CAShapeLayer/strokeStart">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setStrokeStart:")
     public native void setStrokeStart(@NFloat double value);
 
-    /**
-     * strokeColor</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/CAShapeLayer_class/index.html#//apple_ref/occ/instp/CAShapeLayer/strokeColor">iOS Dev Center</a>
-     */
     @Generated
     @Selector("strokeColor")
     public native CGColorRef strokeColor();
 
-    /**
-     * strokeEnd</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/CAShapeLayer_class/index.html#//apple_ref/occ/instp/CAShapeLayer/strokeEnd">iOS Dev Center</a>
-     */
     @Generated
     @Selector("strokeEnd")
     @NFloat
     public native double strokeEnd();
 
-    /**
-     * strokeStart</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/CAShapeLayer_class/index.html#//apple_ref/occ/instp/CAShapeLayer/strokeStart">iOS Dev Center</a>
-     */
     @Generated
     @Selector("strokeStart")
     @NFloat

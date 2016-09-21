@@ -164,10 +164,6 @@ public class PHCachingImageManager extends PHImageManager {
     @NInt
     public static native long version_static();
 
-    /**
-     * allowsCachingHighQualityImages</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHCachingImageManager_Class/index.html#//apple_ref/occ/instp/PHCachingImageManager/allowsCachingHighQualityImages">iOS Dev Center</a>
-     */
     @Generated
     @Selector("allowsCachingHighQualityImages")
     public native boolean allowsCachingHighQualityImages();
@@ -176,35 +172,19 @@ public class PHCachingImageManager extends PHImageManager {
     @Selector("init")
     public native PHCachingImageManager init();
 
-    /**
-     * allowsCachingHighQualityImages</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHCachingImageManager_Class/index.html#//apple_ref/occ/instp/PHCachingImageManager/allowsCachingHighQualityImages">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setAllowsCachingHighQualityImages:")
     public native void setAllowsCachingHighQualityImages(boolean value);
 
-    /**
-     * startCachingImagesForAssets:targetSize:contentMode:options:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHCachingImageManager_Class/index.html#//apple_ref/occ/instm/PHCachingImageManager/startCachingImagesForAssets:targetSize:contentMode:options:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("startCachingImagesForAssets:targetSize:contentMode:options:")
     public native void startCachingImagesForAssetsTargetSizeContentModeOptions(NSArray<? extends PHAsset> assets,
             @ByValue CGSize targetSize, @NInt long contentMode, PHImageRequestOptions options);
 
-    /**
-     * stopCachingImagesForAllAssets</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHCachingImageManager_Class/index.html#//apple_ref/occ/instm/PHCachingImageManager/stopCachingImagesForAllAssets">iOS Dev Center</a>
-     */
     @Generated
     @Selector("stopCachingImagesForAllAssets")
     public native void stopCachingImagesForAllAssets();
 
-    /**
-     * stopCachingImagesForAssets:targetSize:contentMode:options:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHCachingImageManager_Class/index.html#//apple_ref/occ/instm/PHCachingImageManager/stopCachingImagesForAssets:targetSize:contentMode:options:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("stopCachingImagesForAssets:targetSize:contentMode:options:")
     public native void stopCachingImagesForAssetsTargetSizeContentModeOptions(NSArray<? extends PHAsset> assets,

@@ -32,36 +32,20 @@ import org.moe.natj.objc.ann.Selector;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("UIAccessibilityReadingContent")
 public interface UIAccessibilityReadingContent {
-    /**
-     * accessibilityContentForLineNumber:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIAccessibilityReadingContent_Protocol/index.html#//apple_ref/occ/intfm/UIAccessibilityReadingContent/accessibilityContentForLineNumber:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("accessibilityContentForLineNumber:")
     String accessibilityContentForLineNumber(@NInt long lineNumber);
 
-    /**
-     * accessibilityFrameForLineNumber:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIAccessibilityReadingContent_Protocol/index.html#//apple_ref/occ/intfm/UIAccessibilityReadingContent/accessibilityFrameForLineNumber:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("accessibilityFrameForLineNumber:")
     @ByValue
     CGRect accessibilityFrameForLineNumber(@NInt long lineNumber);
 
-    /**
-     * accessibilityLineNumberForPoint:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIAccessibilityReadingContent_Protocol/index.html#//apple_ref/occ/intfm/UIAccessibilityReadingContent/accessibilityLineNumberForPoint:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("accessibilityLineNumberForPoint:")
     @NInt
     long accessibilityLineNumberForPoint(@ByValue CGPoint point);
 
-    /**
-     * accessibilityPageContent</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIAccessibilityReadingContent_Protocol/index.html#//apple_ref/occ/intfm/UIAccessibilityReadingContent/accessibilityPageContent">iOS Dev Center</a>
-     */
     @Generated
     @Selector("accessibilityPageContent")
     String accessibilityPageContent();

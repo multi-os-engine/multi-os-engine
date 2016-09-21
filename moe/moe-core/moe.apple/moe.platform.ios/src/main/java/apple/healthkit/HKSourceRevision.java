@@ -179,18 +179,10 @@ public class HKSourceRevision extends NSObject implements NSSecureCoding, NSCopy
     @Selector("initWithCoder:")
     public native HKSourceRevision initWithCoder(NSCoder aDecoder);
 
-    /**
-     * initWithSource:version:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HealthKit/Reference/HKSourceRevision_ClassReference/index.html#//apple_ref/occ/instm/HKSourceRevision/initWithSource:version:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithSource:version:")
     public native HKSourceRevision initWithSourceVersion(HKSource source, String version);
 
-    /**
-     * source</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HealthKit/Reference/HKSourceRevision_ClassReference/index.html#//apple_ref/occ/instp/HKSourceRevision/source">iOS Dev Center</a>
-     */
     @Generated
     @Selector("source")
     public native HKSource source();
@@ -201,10 +193,6 @@ public class HKSourceRevision extends NSObject implements NSSecureCoding, NSCopy
         return supportsSecureCoding();
     }
 
-    /**
-     * version</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HealthKit/Reference/HKSourceRevision_ClassReference/index.html#//apple_ref/occ/instp/HKSourceRevision/version">iOS Dev Center</a>
-     */
     @Generated
     @Selector("version")
     public native String version();

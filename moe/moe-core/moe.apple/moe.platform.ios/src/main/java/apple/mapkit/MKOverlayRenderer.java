@@ -166,36 +166,20 @@ public class MKOverlayRenderer extends NSObject {
     @NInt
     public static native long version();
 
-    /**
-     * alpha</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKOverlayRenderer_class/index.html#//apple_ref/occ/instp/MKOverlayRenderer/alpha">iOS Dev Center</a>
-     */
     @Generated
     @Selector("alpha")
     @NFloat
     public native double alpha();
 
-    /**
-     * canDrawMapRect:zoomScale:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKOverlayRenderer_class/index.html#//apple_ref/occ/instm/MKOverlayRenderer/canDrawMapRect:zoomScale:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("canDrawMapRect:zoomScale:")
     public native boolean canDrawMapRectZoomScale(@ByValue MKMapRect mapRect, @NFloat double zoomScale);
 
-    /**
-     * contentScaleFactor</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKOverlayRenderer_class/index.html#//apple_ref/occ/instp/MKOverlayRenderer/contentScaleFactor">iOS Dev Center</a>
-     */
     @Generated
     @Selector("contentScaleFactor")
     @NFloat
     public native double contentScaleFactor();
 
-    /**
-     * drawMapRect:zoomScale:inContext:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKOverlayRenderer_class/index.html#//apple_ref/occ/instm/MKOverlayRenderer/drawMapRect:zoomScale:inContext:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("drawMapRect:zoomScale:inContext:")
     public native void drawMapRectZoomScaleInContext(@ByValue MKMapRect mapRect, @NFloat double zoomScale,
@@ -205,87 +189,47 @@ public class MKOverlayRenderer extends NSObject {
     @Selector("init")
     public native MKOverlayRenderer init();
 
-    /**
-     * initWithOverlay:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKOverlayRenderer_class/index.html#//apple_ref/occ/instm/MKOverlayRenderer/initWithOverlay:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithOverlay:")
     public native MKOverlayRenderer initWithOverlay(@Mapped(ObjCObjectMapper.class) MKOverlay overlay);
 
-    /**
-     * mapPointForPoint:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKOverlayRenderer_class/index.html#//apple_ref/occ/instm/MKOverlayRenderer/mapPointForPoint:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("mapPointForPoint:")
     @ByValue
     public native MKMapPoint mapPointForPoint(@ByValue CGPoint point);
 
-    /**
-     * mapRectForRect:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKOverlayRenderer_class/index.html#//apple_ref/occ/instm/MKOverlayRenderer/mapRectForRect:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("mapRectForRect:")
     @ByValue
     public native MKMapRect mapRectForRect(@ByValue CGRect rect);
 
-    /**
-     * overlay</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKOverlayRenderer_class/index.html#//apple_ref/occ/instp/MKOverlayRenderer/overlay">iOS Dev Center</a>
-     */
     @Generated
     @Selector("overlay")
     @MappedReturn(ObjCObjectMapper.class)
     public native MKOverlay overlay();
 
-    /**
-     * pointForMapPoint:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKOverlayRenderer_class/index.html#//apple_ref/occ/instm/MKOverlayRenderer/pointForMapPoint:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("pointForMapPoint:")
     @ByValue
     public native CGPoint pointForMapPoint(@ByValue MKMapPoint mapPoint);
 
-    /**
-     * rectForMapRect:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKOverlayRenderer_class/index.html#//apple_ref/occ/instm/MKOverlayRenderer/rectForMapRect:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("rectForMapRect:")
     @ByValue
     public native CGRect rectForMapRect(@ByValue MKMapRect mapRect);
 
-    /**
-     * alpha</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKOverlayRenderer_class/index.html#//apple_ref/occ/instp/MKOverlayRenderer/alpha">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setAlpha:")
     public native void setAlpha(@NFloat double value);
 
-    /**
-     * setNeedsDisplay</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKOverlayRenderer_class/index.html#//apple_ref/occ/instm/MKOverlayRenderer/setNeedsDisplay">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setNeedsDisplay")
     public native void setNeedsDisplay();
 
-    /**
-     * setNeedsDisplayInMapRect:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKOverlayRenderer_class/index.html#//apple_ref/occ/instm/MKOverlayRenderer/setNeedsDisplayInMapRect:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setNeedsDisplayInMapRect:")
     public native void setNeedsDisplayInMapRect(@ByValue MKMapRect mapRect);
 
-    /**
-     * setNeedsDisplayInMapRect:zoomScale:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKOverlayRenderer_class/index.html#//apple_ref/occ/instm/MKOverlayRenderer/setNeedsDisplayInMapRect:zoomScale:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setNeedsDisplayInMapRect:zoomScale:")
     public native void setNeedsDisplayInMapRectZoomScale(@ByValue MKMapRect mapRect, @NFloat double zoomScale);

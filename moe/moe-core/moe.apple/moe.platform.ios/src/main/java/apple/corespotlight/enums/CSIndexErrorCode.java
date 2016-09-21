@@ -28,6 +28,7 @@ public final class CSIndexErrorCode {
     @Generated @NInt public static final long RemoteConnectionError = 0xFFFFFFFFFFFFFC15L;
     @Generated @NInt public static final long QuotaExceeded = 0xFFFFFFFFFFFFFC14L;
     @Generated @NInt public static final long IndexingUnsupported = 0xFFFFFFFFFFFFFC13L;
+
     @Generated
     private CSIndexErrorCode() {
     }

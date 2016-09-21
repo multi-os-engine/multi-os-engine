@@ -156,10 +156,6 @@ public class NSURLSessionDownloadTask extends NSURLSessionTask {
     @NInt
     public static native long version_static();
 
-    /**
-     * cancelByProducingResumeData:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSURLSessionDownloadTask_class/index.html#//apple_ref/occ/instm/NSURLSessionDownloadTask/cancelByProducingResumeData:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("cancelByProducingResumeData:")
     public native void cancelByProducingResumeData(

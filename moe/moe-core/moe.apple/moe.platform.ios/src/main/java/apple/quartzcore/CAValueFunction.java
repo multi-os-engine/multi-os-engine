@@ -60,10 +60,6 @@ public class CAValueFunction extends NSObject implements NSCoding {
     @Selector("alloc")
     public static native CAValueFunction alloc();
 
-    /**
-     * functionWithName:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/CAValueFunction_class/index.html#//apple_ref/occ/clm/CAValueFunction/functionWithName:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("functionWithName:")
     public static native CAValueFunction functionWithName(String name);
@@ -180,10 +176,6 @@ public class CAValueFunction extends NSObject implements NSCoding {
     @Selector("initWithCoder:")
     public native CAValueFunction initWithCoder(NSCoder aDecoder);
 
-    /**
-     * name</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/CAValueFunction_class/index.html#//apple_ref/occ/instp/CAValueFunction/name">iOS Dev Center</a>
-     */
     @Generated
     @Selector("name")
     public native String name();

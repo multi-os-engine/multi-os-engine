@@ -163,10 +163,6 @@ public class AVAssetWriterInputPassDescription extends NSObject {
     @Selector("init")
     public native AVAssetWriterInputPassDescription init();
 
-    /**
-     * sourceTimeRanges</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAssetWriterInputPassDescription_Class/index.html#//apple_ref/occ/instp/AVAssetWriterInputPassDescription/sourceTimeRanges">iOS Dev Center</a>
-     */
     @Generated
     @Selector("sourceTimeRanges")
     public native NSArray<? extends NSValue> sourceTimeRanges();

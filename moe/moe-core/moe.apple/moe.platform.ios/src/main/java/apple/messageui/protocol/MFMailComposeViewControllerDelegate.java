@@ -31,10 +31,6 @@ import org.moe.natj.objc.ann.Selector;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("MFMailComposeViewControllerDelegate")
 public interface MFMailComposeViewControllerDelegate {
-    /**
-     * mailComposeController:didFinishWithResult:error:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MessageUI/Reference/MFMailComposeViewControllerDelegate_protocol/index.html#//apple_ref/occ/intfm/MFMailComposeViewControllerDelegate/mailComposeController:didFinishWithResult:error:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("mailComposeController:didFinishWithResult:error:")

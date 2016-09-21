@@ -159,10 +159,6 @@ public class CBMutableCharacteristic extends CBCharacteristic {
     @NInt
     public static native long version_static();
 
-    /**
-     * descriptors</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreBluetooth/Reference/CBMutableCharacteristic_Class/index.html#//apple_ref/occ/instp/CBMutableCharacteristic/descriptors">iOS Dev Center</a>
-     */
     @Generated
     @Selector("descriptors")
     public native NSArray<? extends CBDescriptor> descriptors();
@@ -171,77 +167,41 @@ public class CBMutableCharacteristic extends CBCharacteristic {
     @Selector("init")
     public native CBMutableCharacteristic init();
 
-    /**
-     * initWithType:properties:value:permissions:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreBluetooth/Reference/CBMutableCharacteristic_Class/index.html#//apple_ref/occ/instm/CBMutableCharacteristic/initWithType:properties:value:permissions:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithType:properties:value:permissions:")
     public native CBMutableCharacteristic initWithTypePropertiesValuePermissions(CBUUID UUID, @NUInt long properties,
             NSData value, @NUInt long permissions);
 
-    /**
-     * permissions</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreBluetooth/Reference/CBMutableCharacteristic_Class/index.html#//apple_ref/occ/instp/CBMutableCharacteristic/permissions">iOS Dev Center</a>
-     */
     @Generated
     @Selector("permissions")
     @NUInt
     public native long permissions();
 
-    /**
-     * properties</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreBluetooth/Reference/CBMutableCharacteristic_Class/index.html#//apple_ref/occ/instp/CBMutableCharacteristic/properties">iOS Dev Center</a>
-     */
     @Generated
     @Selector("properties")
     @NUInt
     public native long properties();
 
-    /**
-     * descriptors</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreBluetooth/Reference/CBMutableCharacteristic_Class/index.html#//apple_ref/occ/instp/CBMutableCharacteristic/descriptors">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setDescriptors:")
     public native void setDescriptors(NSArray<? extends CBDescriptor> value);
 
-    /**
-     * permissions</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreBluetooth/Reference/CBMutableCharacteristic_Class/index.html#//apple_ref/occ/instp/CBMutableCharacteristic/permissions">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setPermissions:")
     public native void setPermissions(@NUInt long value);
 
-    /**
-     * properties</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreBluetooth/Reference/CBMutableCharacteristic_Class/index.html#//apple_ref/occ/instp/CBMutableCharacteristic/properties">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setProperties:")
     public native void setProperties(@NUInt long value);
 
-    /**
-     * value</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreBluetooth/Reference/CBMutableCharacteristic_Class/index.html#//apple_ref/occ/instp/CBMutableCharacteristic/value">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setValue:")
     public native void setValue(NSData value);
 
-    /**
-     * subscribedCentrals</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreBluetooth/Reference/CBMutableCharacteristic_Class/index.html#//apple_ref/occ/instp/CBMutableCharacteristic/subscribedCentrals">iOS Dev Center</a>
-     */
     @Generated
     @Selector("subscribedCentrals")
     public native NSArray<? extends CBCentral> subscribedCentrals();
 
-    /**
-     * value</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreBluetooth/Reference/CBMutableCharacteristic_Class/index.html#//apple_ref/occ/instp/CBMutableCharacteristic/value">iOS Dev Center</a>
-     */
     @Generated
     @Selector("value")
     public native NSData value();

@@ -29,18 +29,10 @@ import org.moe.natj.objc.ann.Selector;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("EAGLDrawable")
 public interface EAGLDrawable {
-    /**
-     * drawableProperties</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/iPhone/Reference/EAGLDrawable_Ref/index.html#//apple_ref/occ/intfp/EAGLDrawable/drawableProperties">iOS Dev Center</a>
-     */
     @Generated
     @Selector("drawableProperties")
     NSDictionary<?, ?> drawableProperties();
 
-    /**
-     * drawableProperties</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/iPhone/Reference/EAGLDrawable_Ref/index.html#//apple_ref/occ/intfp/EAGLDrawable/drawableProperties">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setDrawableProperties:")
     void setDrawableProperties(NSDictionary<?, ?> value);

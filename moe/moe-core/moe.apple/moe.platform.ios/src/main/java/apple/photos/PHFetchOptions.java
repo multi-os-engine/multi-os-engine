@@ -167,18 +167,10 @@ public class PHFetchOptions extends NSObject implements NSCopying {
     @MappedReturn(ObjCObjectMapper.class)
     public native Object copyWithZone(VoidPtr zone);
 
-    /**
-     * includeAllBurstAssets</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHFetchOptions_Class/index.html#//apple_ref/occ/instp/PHFetchOptions/includeAllBurstAssets">iOS Dev Center</a>
-     */
     @Generated
     @Selector("includeAllBurstAssets")
     public native boolean includeAllBurstAssets();
 
-    /**
-     * includeHiddenAssets</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHFetchOptions_Class/index.html#//apple_ref/occ/instp/PHFetchOptions/includeHiddenAssets">iOS Dev Center</a>
-     */
     @Generated
     @Selector("includeHiddenAssets")
     public native boolean includeHiddenAssets();
@@ -187,100 +179,52 @@ public class PHFetchOptions extends NSObject implements NSCopying {
     @Selector("init")
     public native PHFetchOptions init();
 
-    /**
-     * predicate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHFetchOptions_Class/index.html#//apple_ref/occ/instp/PHFetchOptions/predicate">iOS Dev Center</a>
-     */
     @Generated
     @Selector("predicate")
     public native NSPredicate predicate();
 
-    /**
-     * includeAllBurstAssets</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHFetchOptions_Class/index.html#//apple_ref/occ/instp/PHFetchOptions/includeAllBurstAssets">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setIncludeAllBurstAssets:")
     public native void setIncludeAllBurstAssets(boolean value);
 
-    /**
-     * includeHiddenAssets</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHFetchOptions_Class/index.html#//apple_ref/occ/instp/PHFetchOptions/includeHiddenAssets">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setIncludeHiddenAssets:")
     public native void setIncludeHiddenAssets(boolean value);
 
-    /**
-     * predicate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHFetchOptions_Class/index.html#//apple_ref/occ/instp/PHFetchOptions/predicate">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setPredicate:")
     public native void setPredicate(NSPredicate value);
 
-    /**
-     * sortDescriptors</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHFetchOptions_Class/index.html#//apple_ref/occ/instp/PHFetchOptions/sortDescriptors">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setSortDescriptors:")
     public native void setSortDescriptors(NSArray<? extends NSSortDescriptor> value);
 
-    /**
-     * wantsIncrementalChangeDetails</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHFetchOptions_Class/index.html#//apple_ref/occ/instp/PHFetchOptions/wantsIncrementalChangeDetails">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setWantsIncrementalChangeDetails:")
     public native void setWantsIncrementalChangeDetails(boolean value);
 
-    /**
-     * sortDescriptors</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHFetchOptions_Class/index.html#//apple_ref/occ/instp/PHFetchOptions/sortDescriptors">iOS Dev Center</a>
-     */
     @Generated
     @Selector("sortDescriptors")
     public native NSArray<? extends NSSortDescriptor> sortDescriptors();
 
-    /**
-     * wantsIncrementalChangeDetails</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHFetchOptions_Class/index.html#//apple_ref/occ/instp/PHFetchOptions/wantsIncrementalChangeDetails">iOS Dev Center</a>
-     */
     @Generated
     @Selector("wantsIncrementalChangeDetails")
     public native boolean wantsIncrementalChangeDetails();
 
-    /**
-     * fetchLimit</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHFetchOptions_Class/index.html#//apple_ref/occ/instp/PHFetchOptions/fetchLimit">iOS Dev Center</a>
-     */
     @Generated
     @Selector("fetchLimit")
     @NUInt
     public native long fetchLimit();
 
-    /**
-     * includeAssetSourceTypes</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHFetchOptions_Class/index.html#//apple_ref/occ/instp/PHFetchOptions/includeAssetSourceTypes">iOS Dev Center</a>
-     */
     @Generated
     @Selector("includeAssetSourceTypes")
     @NUInt
     public native long includeAssetSourceTypes();
 
-    /**
-     * fetchLimit</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHFetchOptions_Class/index.html#//apple_ref/occ/instp/PHFetchOptions/fetchLimit">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setFetchLimit:")
     public native void setFetchLimit(@NUInt long value);
 
-    /**
-     * includeAssetSourceTypes</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHFetchOptions_Class/index.html#//apple_ref/occ/instp/PHFetchOptions/includeAssetSourceTypes">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setIncludeAssetSourceTypes:")
     public native void setIncludeAssetSourceTypes(@NUInt long value);

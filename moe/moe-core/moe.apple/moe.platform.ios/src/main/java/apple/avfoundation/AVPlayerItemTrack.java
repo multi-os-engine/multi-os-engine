@@ -158,18 +158,10 @@ public class AVPlayerItemTrack extends NSObject {
     @NInt
     public static native long version_static();
 
-    /**
-     * assetTrack</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVPlayerItemTrack_Class/index.html#//apple_ref/occ/instp/AVPlayerItemTrack/assetTrack">iOS Dev Center</a>
-     */
     @Generated
     @Selector("assetTrack")
     public native AVAssetTrack assetTrack();
 
-    /**
-     * currentVideoFrameRate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVPlayerItemTrack_Class/index.html#//apple_ref/occ/instp/AVPlayerItemTrack/currentVideoFrameRate">iOS Dev Center</a>
-     */
     @Generated
     @Selector("currentVideoFrameRate")
     public native float currentVideoFrameRate();
@@ -178,18 +170,10 @@ public class AVPlayerItemTrack extends NSObject {
     @Selector("init")
     public native AVPlayerItemTrack init();
 
-    /**
-     * enabled</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVPlayerItemTrack_Class/index.html#//apple_ref/occ/instp/AVPlayerItemTrack/enabled">iOS Dev Center</a>
-     */
     @Generated
     @Selector("isEnabled")
     public native boolean isEnabled();
 
-    /**
-     * enabled</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVPlayerItemTrack_Class/index.html#//apple_ref/occ/instp/AVPlayerItemTrack/enabled">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setEnabled:")
     public native void setEnabled(boolean value);

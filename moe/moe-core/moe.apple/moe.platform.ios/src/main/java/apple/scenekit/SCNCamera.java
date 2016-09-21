@@ -69,10 +69,6 @@ public class SCNCamera extends NSObject implements SCNAnimatable, SCNTechniqueSu
     @Selector("alloc")
     public static native SCNCamera alloc();
 
-    /**
-     * camera</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNCamera_Class/index.html#//apple_ref/occ/clm/SCNCamera/camera">iOS Dev Center</a>
-     */
     @Generated
     @Selector("camera")
     public static native SCNCamera camera();
@@ -81,10 +77,6 @@ public class SCNCamera extends NSObject implements SCNAnimatable, SCNTechniqueSu
     @Selector("supportsSecureCoding")
     public static native boolean supportsSecureCoding();
 
-    /**
-     * cameraWithMDLCamera:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNCamera_Class/index.html#//apple_ref/occ/clm/SCNCamera/cameraWithMDLCamera:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("cameraWithMDLCamera:")
     public static native SCNCamera cameraWithMDLCamera(MDLCamera mdlCamera);
@@ -201,27 +193,15 @@ public class SCNCamera extends NSObject implements SCNAnimatable, SCNTechniqueSu
     @Selector("animationKeys")
     public native NSArray<String> animationKeys();
 
-    /**
-     * aperture</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNCamera_Class/index.html#//apple_ref/occ/instp/SCNCamera/aperture">iOS Dev Center</a>
-     */
     @Generated
     @Selector("aperture")
     @NFloat
     public native double aperture();
 
-    /**
-     * automaticallyAdjustsZRange</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNCamera_Class/index.html#//apple_ref/occ/instp/SCNCamera/automaticallyAdjustsZRange">iOS Dev Center</a>
-     */
     @Generated
     @Selector("automaticallyAdjustsZRange")
     public native boolean automaticallyAdjustsZRange();
 
-    /**
-     * categoryBitMask</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNCamera_Class/index.html#//apple_ref/occ/instp/SCNCamera/categoryBitMask">iOS Dev Center</a>
-     */
     @Generated
     @Selector("categoryBitMask")
     @NUInt
@@ -237,28 +217,16 @@ public class SCNCamera extends NSObject implements SCNAnimatable, SCNTechniqueSu
     @Selector("encodeWithCoder:")
     public native void encodeWithCoder(NSCoder aCoder);
 
-    /**
-     * focalBlurRadius</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNCamera_Class/index.html#//apple_ref/occ/instp/SCNCamera/focalBlurRadius">iOS Dev Center</a>
-     */
     @Generated
     @Selector("focalBlurRadius")
     @NFloat
     public native double focalBlurRadius();
 
-    /**
-     * focalDistance</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNCamera_Class/index.html#//apple_ref/occ/instp/SCNCamera/focalDistance">iOS Dev Center</a>
-     */
     @Generated
     @Selector("focalDistance")
     @NFloat
     public native double focalDistance();
 
-    /**
-     * focalSize</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNCamera_Class/index.html#//apple_ref/occ/instp/SCNCamera/focalSize">iOS Dev Center</a>
-     */
     @Generated
     @Selector("focalSize")
     @NFloat
@@ -276,18 +244,10 @@ public class SCNCamera extends NSObject implements SCNAnimatable, SCNTechniqueSu
     @Selector("isAnimationForKeyPaused:")
     public native boolean isAnimationForKeyPaused(String key);
 
-    /**
-     * name</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNCamera_Class/index.html#//apple_ref/occ/instp/SCNCamera/name">iOS Dev Center</a>
-     */
     @Generated
     @Selector("name")
     public native String name();
 
-    /**
-     * orthographicScale</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNCamera_Class/index.html#//apple_ref/occ/instp/SCNCamera/orthographicScale">iOS Dev Center</a>
-     */
     @Generated
     @Selector("orthographicScale")
     public native double orthographicScale();
@@ -296,10 +256,6 @@ public class SCNCamera extends NSObject implements SCNAnimatable, SCNTechniqueSu
     @Selector("pauseAnimationForKey:")
     public native void pauseAnimationForKey(String key);
 
-    /**
-     * projectionTransform</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNCamera_Class/index.html#//apple_ref/occ/instm/SCNCamera/projectionTransform">iOS Dev Center</a>
-     */
     @Generated
     @Selector("projectionTransform")
     @ByValue
@@ -321,74 +277,38 @@ public class SCNCamera extends NSObject implements SCNAnimatable, SCNTechniqueSu
     @Selector("resumeAnimationForKey:")
     public native void resumeAnimationForKey(String key);
 
-    /**
-     * aperture</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNCamera_Class/index.html#//apple_ref/occ/instp/SCNCamera/aperture">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setAperture:")
     public native void setAperture(@NFloat double value);
 
-    /**
-     * automaticallyAdjustsZRange</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNCamera_Class/index.html#//apple_ref/occ/instp/SCNCamera/automaticallyAdjustsZRange">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setAutomaticallyAdjustsZRange:")
     public native void setAutomaticallyAdjustsZRange(boolean value);
 
-    /**
-     * categoryBitMask</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNCamera_Class/index.html#//apple_ref/occ/instp/SCNCamera/categoryBitMask">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setCategoryBitMask:")
     public native void setCategoryBitMask(@NUInt long value);
 
-    /**
-     * focalBlurRadius</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNCamera_Class/index.html#//apple_ref/occ/instp/SCNCamera/focalBlurRadius">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setFocalBlurRadius:")
     public native void setFocalBlurRadius(@NFloat double value);
 
-    /**
-     * focalDistance</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNCamera_Class/index.html#//apple_ref/occ/instp/SCNCamera/focalDistance">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setFocalDistance:")
     public native void setFocalDistance(@NFloat double value);
 
-    /**
-     * focalSize</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNCamera_Class/index.html#//apple_ref/occ/instp/SCNCamera/focalSize">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setFocalSize:")
     public native void setFocalSize(@NFloat double value);
 
-    /**
-     * name</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNCamera_Class/index.html#//apple_ref/occ/instp/SCNCamera/name">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setName:")
     public native void setName(String value);
 
-    /**
-     * orthographicScale</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNCamera_Class/index.html#//apple_ref/occ/instp/SCNCamera/orthographicScale">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setOrthographicScale:")
     public native void setOrthographicScale(double value);
 
-    /**
-     * setProjectionTransform:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNCamera_Class/index.html#//apple_ref/occ/instm/SCNCamera/setProjectionTransform:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setProjectionTransform:")
     public native void setProjectionTransform(@ByValue SCNMatrix4 projectionTransform);
@@ -397,42 +317,22 @@ public class SCNCamera extends NSObject implements SCNAnimatable, SCNTechniqueSu
     @Selector("setTechnique:")
     public native void setTechnique(SCNTechnique value);
 
-    /**
-     * usesOrthographicProjection</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNCamera_Class/index.html#//apple_ref/occ/instp/SCNCamera/usesOrthographicProjection">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setUsesOrthographicProjection:")
     public native void setUsesOrthographicProjection(boolean value);
 
-    /**
-     * xFov</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNCamera_Class/index.html#//apple_ref/occ/instp/SCNCamera/xFov">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setXFov:")
     public native void setXFov(double value);
 
-    /**
-     * yFov</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNCamera_Class/index.html#//apple_ref/occ/instp/SCNCamera/yFov">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setYFov:")
     public native void setYFov(double value);
 
-    /**
-     * zFar</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNCamera_Class/index.html#//apple_ref/occ/instp/SCNCamera/zFar">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setZFar:")
     public native void setZFar(double value);
 
-    /**
-     * zNear</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNCamera_Class/index.html#//apple_ref/occ/instp/SCNCamera/zNear">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setZNear:")
     public native void setZNear(double value);
@@ -447,42 +347,22 @@ public class SCNCamera extends NSObject implements SCNAnimatable, SCNTechniqueSu
     @Selector("technique")
     public native SCNTechnique technique();
 
-    /**
-     * usesOrthographicProjection</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNCamera_Class/index.html#//apple_ref/occ/instp/SCNCamera/usesOrthographicProjection">iOS Dev Center</a>
-     */
     @Generated
     @Selector("usesOrthographicProjection")
     public native boolean usesOrthographicProjection();
 
-    /**
-     * xFov</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNCamera_Class/index.html#//apple_ref/occ/instp/SCNCamera/xFov">iOS Dev Center</a>
-     */
     @Generated
     @Selector("xFov")
     public native double xFov();
 
-    /**
-     * yFov</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNCamera_Class/index.html#//apple_ref/occ/instp/SCNCamera/yFov">iOS Dev Center</a>
-     */
     @Generated
     @Selector("yFov")
     public native double yFov();
 
-    /**
-     * zFar</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNCamera_Class/index.html#//apple_ref/occ/instp/SCNCamera/zFar">iOS Dev Center</a>
-     */
     @Generated
     @Selector("zFar")
     public native double zFar();
 
-    /**
-     * zNear</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNCamera_Class/index.html#//apple_ref/occ/instp/SCNCamera/zNear">iOS Dev Center</a>
-     */
     @Generated
     @Selector("zNear")
     public native double zNear();

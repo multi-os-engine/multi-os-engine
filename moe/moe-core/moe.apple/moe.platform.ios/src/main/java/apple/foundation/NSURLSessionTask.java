@@ -156,10 +156,6 @@ public class NSURLSessionTask extends NSObject implements NSCopying {
     @NInt
     public static native long version_static();
 
-    /**
-     * cancel</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSURLSessionTask_class/index.html#//apple_ref/occ/instm/NSURLSessionTask/cancel">iOS Dev Center</a>
-     */
     @Generated
     @Selector("cancel")
     public native void cancel();
@@ -170,50 +166,26 @@ public class NSURLSessionTask extends NSObject implements NSCopying {
     @MappedReturn(ObjCObjectMapper.class)
     public native Object copyWithZone(VoidPtr zone);
 
-    /**
-     * countOfBytesExpectedToReceive</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSURLSessionTask_class/index.html#//apple_ref/occ/instp/NSURLSessionTask/countOfBytesExpectedToReceive">iOS Dev Center</a>
-     */
     @Generated
     @Selector("countOfBytesExpectedToReceive")
     public native long countOfBytesExpectedToReceive();
 
-    /**
-     * countOfBytesExpectedToSend</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSURLSessionTask_class/index.html#//apple_ref/occ/instp/NSURLSessionTask/countOfBytesExpectedToSend">iOS Dev Center</a>
-     */
     @Generated
     @Selector("countOfBytesExpectedToSend")
     public native long countOfBytesExpectedToSend();
 
-    /**
-     * countOfBytesReceived</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSURLSessionTask_class/index.html#//apple_ref/occ/instp/NSURLSessionTask/countOfBytesReceived">iOS Dev Center</a>
-     */
     @Generated
     @Selector("countOfBytesReceived")
     public native long countOfBytesReceived();
 
-    /**
-     * countOfBytesSent</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSURLSessionTask_class/index.html#//apple_ref/occ/instp/NSURLSessionTask/countOfBytesSent">iOS Dev Center</a>
-     */
     @Generated
     @Selector("countOfBytesSent")
     public native long countOfBytesSent();
 
-    /**
-     * currentRequest</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSURLSessionTask_class/index.html#//apple_ref/occ/instp/NSURLSessionTask/currentRequest">iOS Dev Center</a>
-     */
     @Generated
     @Selector("currentRequest")
     public native NSURLRequest currentRequest();
 
-    /**
-     * error</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSURLSessionTask_class/index.html#//apple_ref/occ/instp/NSURLSessionTask/error">iOS Dev Center</a>
-     */
     @Generated
     @Selector("error")
     public native NSError error();
@@ -222,83 +194,43 @@ public class NSURLSessionTask extends NSObject implements NSCopying {
     @Selector("init")
     public native NSURLSessionTask init();
 
-    /**
-     * originalRequest</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSURLSessionTask_class/index.html#//apple_ref/occ/instp/NSURLSessionTask/originalRequest">iOS Dev Center</a>
-     */
     @Generated
     @Selector("originalRequest")
     public native NSURLRequest originalRequest();
 
-    /**
-     * priority</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSURLSessionTask_class/index.html#//apple_ref/occ/instp/NSURLSessionTask/priority">iOS Dev Center</a>
-     */
     @Generated
     @Selector("priority")
     public native float priority();
 
-    /**
-     * response</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSURLSessionTask_class/index.html#//apple_ref/occ/instp/NSURLSessionTask/response">iOS Dev Center</a>
-     */
     @Generated
     @Selector("response")
     public native NSURLResponse response();
 
-    /**
-     * resume</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSURLSessionTask_class/index.html#//apple_ref/occ/instm/NSURLSessionTask/resume">iOS Dev Center</a>
-     */
     @Generated
     @Selector("resume")
     public native void resume();
 
-    /**
-     * priority</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSURLSessionTask_class/index.html#//apple_ref/occ/instp/NSURLSessionTask/priority">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setPriority:")
     public native void setPriority(float value);
 
-    /**
-     * taskDescription</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSURLSessionTask_class/index.html#//apple_ref/occ/instp/NSURLSessionTask/taskDescription">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setTaskDescription:")
     public native void setTaskDescription(String value);
 
-    /**
-     * state</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSURLSessionTask_class/index.html#//apple_ref/occ/instp/NSURLSessionTask/state">iOS Dev Center</a>
-     */
     @Generated
     @Selector("state")
     @NInt
     public native long state();
 
-    /**
-     * suspend</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSURLSessionTask_class/index.html#//apple_ref/occ/instm/NSURLSessionTask/suspend">iOS Dev Center</a>
-     */
     @Generated
     @Selector("suspend")
     public native void suspend();
 
-    /**
-     * taskDescription</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSURLSessionTask_class/index.html#//apple_ref/occ/instp/NSURLSessionTask/taskDescription">iOS Dev Center</a>
-     */
     @Generated
     @Selector("taskDescription")
     public native String taskDescription();
 
-    /**
-     * taskIdentifier</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSURLSessionTask_class/index.html#//apple_ref/occ/instp/NSURLSessionTask/taskIdentifier">iOS Dev Center</a>
-     */
     @Generated
     @Selector("taskIdentifier")
     @NUInt

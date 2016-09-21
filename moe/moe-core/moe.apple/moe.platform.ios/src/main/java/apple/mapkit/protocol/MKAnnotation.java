@@ -31,19 +31,11 @@ import org.moe.natj.objc.ann.Selector;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("MKAnnotation")
 public interface MKAnnotation {
-    /**
-     * coordinate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKAnnotation_Protocol/index.html#//apple_ref/occ/intfp/MKAnnotation/coordinate">iOS Dev Center</a>
-     */
     @Generated
     @Selector("coordinate")
     @ByValue
     CLLocationCoordinate2D coordinate();
 
-    /**
-     * setCoordinate:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKAnnotation_Protocol/index.html#//apple_ref/occ/intfm/MKAnnotation/setCoordinate:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("setCoordinate:")
@@ -51,10 +43,6 @@ public interface MKAnnotation {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * subtitle</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKAnnotation_Protocol/index.html#//apple_ref/occ/intfp/MKAnnotation/subtitle">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("subtitle")
@@ -62,10 +50,6 @@ public interface MKAnnotation {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * title</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKAnnotation_Protocol/index.html#//apple_ref/occ/intfp/MKAnnotation/title">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("title")

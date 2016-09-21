@@ -29,10 +29,6 @@ import org.moe.natj.objc.ann.Selector;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("NSSecureCoding")
 public interface NSSecureCoding extends NSCoding {
-    /**
-     * supportsSecureCoding</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSSecureCoding_Protocol_Ref/index.html#//apple_ref/occ/intfcm/NSSecureCoding/supportsSecureCoding">iOS Dev Center</a>
-     */
     @Generated
     @Selector("supportsSecureCoding")
     @ProtocolClassMethod("supportsSecureCoding")

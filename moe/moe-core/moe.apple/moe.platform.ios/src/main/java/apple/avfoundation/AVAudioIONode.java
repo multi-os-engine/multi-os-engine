@@ -159,10 +159,6 @@ public class AVAudioIONode extends AVAudioNode {
     @NInt
     public static native long version();
 
-    /**
-     * audioUnit</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioIONode_Class/index.html#//apple_ref/occ/instp/AVAudioIONode/audioUnit">iOS Dev Center</a>
-     */
     @Generated
     @Selector("audioUnit")
     public native AudioComponentInstance audioUnit();
@@ -171,10 +167,6 @@ public class AVAudioIONode extends AVAudioNode {
     @Selector("init")
     public native AVAudioIONode init();
 
-    /**
-     * presentationLatency</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioIONode_Class/index.html#//apple_ref/occ/instp/AVAudioIONode/presentationLatency">iOS Dev Center</a>
-     */
     @Generated
     @Selector("presentationLatency")
     public native double presentationLatency();

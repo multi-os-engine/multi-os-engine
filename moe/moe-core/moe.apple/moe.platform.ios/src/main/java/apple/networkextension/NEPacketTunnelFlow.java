@@ -165,19 +165,11 @@ public class NEPacketTunnelFlow extends NSObject {
     @Selector("init")
     public native NEPacketTunnelFlow init();
 
-    /**
-     * readPacketsWithCompletionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEPacketTunnelFlowClassRef/index.html#//apple_ref/occ/instm/NEPacketTunnelFlow/readPacketsWithCompletionHandler:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("readPacketsWithCompletionHandler:")
     public native void readPacketsWithCompletionHandler(
             @ObjCBlock(name = "call_readPacketsWithCompletionHandler") Block_readPacketsWithCompletionHandler completionHandler);
 
-    /**
-     * writePackets:withProtocols:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEPacketTunnelFlowClassRef/index.html#//apple_ref/occ/instm/NEPacketTunnelFlow/writePackets:withProtocols:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("writePackets:withProtocols:")
     public native boolean writePacketsWithProtocols(NSArray<? extends NSData> packets,

@@ -61,18 +61,10 @@ public class SSReadingList extends NSObject {
     @Selector("alloc")
     public static native SSReadingList alloc();
 
-    /**
-     * defaultReadingList</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UserExperience/Reference/SSReadingList_Ref/index.html#//apple_ref/occ/clm/SSReadingList/defaultReadingList">iOS Dev Center</a>
-     */
     @Generated
     @Selector("defaultReadingList")
     public static native SSReadingList defaultReadingList();
 
-    /**
-     * supportsURL:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UserExperience/Reference/SSReadingList_Ref/index.html#//apple_ref/occ/clm/SSReadingList/supportsURL:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("supportsURL:")
     public static native boolean supportsURL(NSURL URL);
@@ -177,10 +169,6 @@ public class SSReadingList extends NSObject {
     @NInt
     public static native long version_static();
 
-    /**
-     * addReadingListItemWithURL:title:previewText:error:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UserExperience/Reference/SSReadingList_Ref/index.html#//apple_ref/occ/instm/SSReadingList/addReadingListItemWithURL:title:previewText:error:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("addReadingListItemWithURL:title:previewText:error:")
     public native boolean addReadingListItemWithURLTitlePreviewTextError(NSURL URL, String title, String previewText,

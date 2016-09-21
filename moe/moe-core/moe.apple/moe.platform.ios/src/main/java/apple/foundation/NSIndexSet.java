@@ -64,26 +64,14 @@ public class NSIndexSet extends NSObject implements NSCopying, NSMutableCopying,
     @Selector("alloc")
     public static native NSIndexSet alloc();
 
-    /**
-     * indexSet</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSIndexSet_Class/index.html#//apple_ref/occ/clm/NSIndexSet/indexSet">iOS Dev Center</a>
-     */
     @Generated
     @Selector("indexSet")
     public static native NSIndexSet indexSet();
 
-    /**
-     * indexSetWithIndex:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSIndexSet_Class/index.html#//apple_ref/occ/clm/NSIndexSet/indexSetWithIndex:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("indexSetWithIndex:")
     public static native NSIndexSet indexSetWithIndex(@NUInt long value);
 
-    /**
-     * indexSetWithIndexesInRange:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSIndexSet_Class/index.html#//apple_ref/occ/clm/NSIndexSet/indexSetWithIndexesInRange:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("indexSetWithIndexesInRange:")
     public static native NSIndexSet indexSetWithIndexesInRange(@ByValue NSRange range);
@@ -192,26 +180,14 @@ public class NSIndexSet extends NSObject implements NSCopying, NSMutableCopying,
     @NInt
     public static native long version();
 
-    /**
-     * containsIndex:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSIndexSet_Class/index.html#//apple_ref/occ/instm/NSIndexSet/containsIndex:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("containsIndex:")
     public native boolean containsIndex(@NUInt long value);
 
-    /**
-     * containsIndexes:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSIndexSet_Class/index.html#//apple_ref/occ/instm/NSIndexSet/containsIndexes:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("containsIndexes:")
     public native boolean containsIndexes(NSIndexSet indexSet);
 
-    /**
-     * containsIndexesInRange:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSIndexSet_Class/index.html#//apple_ref/occ/instm/NSIndexSet/containsIndexesInRange:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("containsIndexesInRange:")
     public native boolean containsIndexesInRange(@ByValue NSRange range);
@@ -222,19 +198,11 @@ public class NSIndexSet extends NSObject implements NSCopying, NSMutableCopying,
     @MappedReturn(ObjCObjectMapper.class)
     public native Object copyWithZone(VoidPtr zone);
 
-    /**
-     * count</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSIndexSet_Class/index.html#//apple_ref/occ/instp/NSIndexSet/count">iOS Dev Center</a>
-     */
     @Generated
     @Selector("count")
     @NUInt
     public native long count();
 
-    /**
-     * countOfIndexesInRange:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSIndexSet_Class/index.html#//apple_ref/occ/instm/NSIndexSet/countOfIndexesInRange:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("countOfIndexesInRange:")
     @NUInt
@@ -244,174 +212,98 @@ public class NSIndexSet extends NSObject implements NSCopying, NSMutableCopying,
     @Selector("encodeWithCoder:")
     public native void encodeWithCoder(NSCoder aCoder);
 
-    /**
-     * enumerateIndexesInRange:options:usingBlock:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSIndexSet_Class/index.html#//apple_ref/occ/instm/NSIndexSet/enumerateIndexesInRange:options:usingBlock:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("enumerateIndexesInRange:options:usingBlock:")
     public native void enumerateIndexesInRangeOptionsUsingBlock(@ByValue NSRange range, @NUInt long opts,
             @ObjCBlock(name = "call_enumerateIndexesInRangeOptionsUsingBlock") Block_enumerateIndexesInRangeOptionsUsingBlock block);
 
-    /**
-     * enumerateIndexesUsingBlock:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSIndexSet_Class/index.html#//apple_ref/occ/instm/NSIndexSet/enumerateIndexesUsingBlock:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("enumerateIndexesUsingBlock:")
     public native void enumerateIndexesUsingBlock(
             @ObjCBlock(name = "call_enumerateIndexesUsingBlock") Block_enumerateIndexesUsingBlock block);
 
-    /**
-     * enumerateIndexesWithOptions:usingBlock:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSIndexSet_Class/index.html#//apple_ref/occ/instm/NSIndexSet/enumerateIndexesWithOptions:usingBlock:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("enumerateIndexesWithOptions:usingBlock:")
     public native void enumerateIndexesWithOptionsUsingBlock(@NUInt long opts,
             @ObjCBlock(name = "call_enumerateIndexesWithOptionsUsingBlock") Block_enumerateIndexesWithOptionsUsingBlock block);
 
-    /**
-     * enumerateRangesInRange:options:usingBlock:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSIndexSet_Class/index.html#//apple_ref/occ/instm/NSIndexSet/enumerateRangesInRange:options:usingBlock:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("enumerateRangesInRange:options:usingBlock:")
     public native void enumerateRangesInRangeOptionsUsingBlock(@ByValue NSRange range, @NUInt long opts,
             @ObjCBlock(name = "call_enumerateRangesInRangeOptionsUsingBlock") Block_enumerateRangesInRangeOptionsUsingBlock block);
 
-    /**
-     * enumerateRangesUsingBlock:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSIndexSet_Class/index.html#//apple_ref/occ/instm/NSIndexSet/enumerateRangesUsingBlock:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("enumerateRangesUsingBlock:")
     public native void enumerateRangesUsingBlock(
             @ObjCBlock(name = "call_enumerateRangesUsingBlock") Block_enumerateRangesUsingBlock block);
 
-    /**
-     * enumerateRangesWithOptions:usingBlock:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSIndexSet_Class/index.html#//apple_ref/occ/instm/NSIndexSet/enumerateRangesWithOptions:usingBlock:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("enumerateRangesWithOptions:usingBlock:")
     public native void enumerateRangesWithOptionsUsingBlock(@NUInt long opts,
             @ObjCBlock(name = "call_enumerateRangesWithOptionsUsingBlock") Block_enumerateRangesWithOptionsUsingBlock block);
 
-    /**
-     * firstIndex</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSIndexSet_Class/index.html#//apple_ref/occ/instp/NSIndexSet/firstIndex">iOS Dev Center</a>
-     */
     @Generated
     @Selector("firstIndex")
     @NUInt
     public native long firstIndex();
 
-    /**
-     * getIndexes:maxCount:inIndexRange:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSIndexSet_Class/index.html#//apple_ref/occ/instm/NSIndexSet/getIndexes:maxCount:inIndexRange:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("getIndexes:maxCount:inIndexRange:")
     @NUInt
     public native long getIndexesMaxCountInIndexRange(NUIntPtr indexBuffer, @NUInt long bufferSize, NSRange range);
 
-    /**
-     * indexGreaterThanIndex:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSIndexSet_Class/index.html#//apple_ref/occ/instm/NSIndexSet/indexGreaterThanIndex:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("indexGreaterThanIndex:")
     @NUInt
     public native long indexGreaterThanIndex(@NUInt long value);
 
-    /**
-     * indexGreaterThanOrEqualToIndex:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSIndexSet_Class/index.html#//apple_ref/occ/instm/NSIndexSet/indexGreaterThanOrEqualToIndex:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("indexGreaterThanOrEqualToIndex:")
     @NUInt
     public native long indexGreaterThanOrEqualToIndex(@NUInt long value);
 
-    /**
-     * indexInRange:options:passingTest:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSIndexSet_Class/index.html#//apple_ref/occ/instm/NSIndexSet/indexInRange:options:passingTest:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("indexInRange:options:passingTest:")
     @NUInt
     public native long indexInRangeOptionsPassingTest(@ByValue NSRange range, @NUInt long opts,
             @ObjCBlock(name = "call_indexInRangeOptionsPassingTest") Block_indexInRangeOptionsPassingTest predicate);
 
-    /**
-     * indexLessThanIndex:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSIndexSet_Class/index.html#//apple_ref/occ/instm/NSIndexSet/indexLessThanIndex:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("indexLessThanIndex:")
     @NUInt
     public native long indexLessThanIndex(@NUInt long value);
 
-    /**
-     * indexLessThanOrEqualToIndex:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSIndexSet_Class/index.html#//apple_ref/occ/instm/NSIndexSet/indexLessThanOrEqualToIndex:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("indexLessThanOrEqualToIndex:")
     @NUInt
     public native long indexLessThanOrEqualToIndex(@NUInt long value);
 
-    /**
-     * indexPassingTest:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSIndexSet_Class/index.html#//apple_ref/occ/instm/NSIndexSet/indexPassingTest:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("indexPassingTest:")
     @NUInt
     public native long indexPassingTest(@ObjCBlock(name = "call_indexPassingTest") Block_indexPassingTest predicate);
 
-    /**
-     * indexWithOptions:passingTest:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSIndexSet_Class/index.html#//apple_ref/occ/instm/NSIndexSet/indexWithOptions:passingTest:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("indexWithOptions:passingTest:")
     @NUInt
     public native long indexWithOptionsPassingTest(@NUInt long opts,
             @ObjCBlock(name = "call_indexWithOptionsPassingTest") Block_indexWithOptionsPassingTest predicate);
 
-    /**
-     * indexesInRange:options:passingTest:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSIndexSet_Class/index.html#//apple_ref/occ/instm/NSIndexSet/indexesInRange:options:passingTest:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("indexesInRange:options:passingTest:")
     public native NSIndexSet indexesInRangeOptionsPassingTest(@ByValue NSRange range, @NUInt long opts,
             @ObjCBlock(name = "call_indexesInRangeOptionsPassingTest") Block_indexesInRangeOptionsPassingTest predicate);
 
-    /**
-     * indexesPassingTest:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSIndexSet_Class/index.html#//apple_ref/occ/instm/NSIndexSet/indexesPassingTest:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("indexesPassingTest:")
     public native NSIndexSet indexesPassingTest(
             @ObjCBlock(name = "call_indexesPassingTest") Block_indexesPassingTest predicate);
 
-    /**
-     * indexesWithOptions:passingTest:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSIndexSet_Class/index.html#//apple_ref/occ/instm/NSIndexSet/indexesWithOptions:passingTest:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("indexesWithOptions:passingTest:")
     public native NSIndexSet indexesWithOptionsPassingTest(@NUInt long opts,
             @ObjCBlock(name = "call_indexesWithOptionsPassingTest") Block_indexesWithOptionsPassingTest predicate);
 
-    /**
-     * init</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSIndexSet_Class/index.html#//apple_ref/occ/instm/NSIndexSet/init">iOS Dev Center</a>
-     */
     @Generated
     @Selector("init")
     public native NSIndexSet init();
@@ -420,50 +312,26 @@ public class NSIndexSet extends NSObject implements NSCopying, NSMutableCopying,
     @Selector("initWithCoder:")
     public native NSIndexSet initWithCoder(NSCoder aDecoder);
 
-    /**
-     * initWithIndex:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSIndexSet_Class/index.html#//apple_ref/occ/instm/NSIndexSet/initWithIndex:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithIndex:")
     public native NSIndexSet initWithIndex(@NUInt long value);
 
-    /**
-     * initWithIndexSet:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSIndexSet_Class/index.html#//apple_ref/occ/instm/NSIndexSet/initWithIndexSet:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithIndexSet:")
     public native NSIndexSet initWithIndexSet(NSIndexSet indexSet);
 
-    /**
-     * initWithIndexesInRange:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSIndexSet_Class/index.html#//apple_ref/occ/instm/NSIndexSet/initWithIndexesInRange:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithIndexesInRange:")
     public native NSIndexSet initWithIndexesInRange(@ByValue NSRange range);
 
-    /**
-     * intersectsIndexesInRange:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSIndexSet_Class/index.html#//apple_ref/occ/instm/NSIndexSet/intersectsIndexesInRange:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("intersectsIndexesInRange:")
     public native boolean intersectsIndexesInRange(@ByValue NSRange range);
 
-    /**
-     * isEqualToIndexSet:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSIndexSet_Class/index.html#//apple_ref/occ/instm/NSIndexSet/isEqualToIndexSet:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("isEqualToIndexSet:")
     public native boolean isEqualToIndexSet(NSIndexSet indexSet);
 
-    /**
-     * lastIndex</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSIndexSet_Class/index.html#//apple_ref/occ/instp/NSIndexSet/lastIndex">iOS Dev Center</a>
-     */
     @Generated
     @Selector("lastIndex")
     @NUInt

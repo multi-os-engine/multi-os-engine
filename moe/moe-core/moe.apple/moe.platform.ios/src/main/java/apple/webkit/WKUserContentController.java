@@ -159,19 +159,11 @@ public class WKUserContentController extends NSObject {
     @NInt
     public static native long version();
 
-    /**
-     * addScriptMessageHandler:name:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WebKit/Reference/WKUserContentController_Ref/index.html#//apple_ref/occ/instm/WKUserContentController/addScriptMessageHandler:name:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("addScriptMessageHandler:name:")
     public native void addScriptMessageHandlerName(
             @Mapped(ObjCObjectMapper.class) WKScriptMessageHandler scriptMessageHandler, String name);
 
-    /**
-     * addUserScript:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WebKit/Reference/WKUserContentController_Ref/index.html#//apple_ref/occ/instm/WKUserContentController/addUserScript:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("addUserScript:")
     public native void addUserScript(WKUserScript userScript);
@@ -180,26 +172,14 @@ public class WKUserContentController extends NSObject {
     @Selector("init")
     public native WKUserContentController init();
 
-    /**
-     * removeAllUserScripts</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WebKit/Reference/WKUserContentController_Ref/index.html#//apple_ref/occ/instm/WKUserContentController/removeAllUserScripts">iOS Dev Center</a>
-     */
     @Generated
     @Selector("removeAllUserScripts")
     public native void removeAllUserScripts();
 
-    /**
-     * removeScriptMessageHandlerForName:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WebKit/Reference/WKUserContentController_Ref/index.html#//apple_ref/occ/instm/WKUserContentController/removeScriptMessageHandlerForName:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("removeScriptMessageHandlerForName:")
     public native void removeScriptMessageHandlerForName(String name);
 
-    /**
-     * userScripts</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WebKit/Reference/WKUserContentController_Ref/index.html#//apple_ref/occ/instp/WKUserContentController/userScripts">iOS Dev Center</a>
-     */
     @Generated
     @Selector("userScripts")
     public native NSArray<? extends WKUserScript> userScripts();

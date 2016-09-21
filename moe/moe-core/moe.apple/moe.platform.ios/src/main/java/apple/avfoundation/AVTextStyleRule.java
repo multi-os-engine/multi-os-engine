@@ -60,37 +60,21 @@ public class AVTextStyleRule extends NSObject implements NSCopying {
     @Selector("alloc")
     public static native AVTextStyleRule alloc();
 
-    /**
-     * propertyListForTextStyleRules:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVTextStyleRule_Class/index.html#//apple_ref/occ/clm/AVTextStyleRule/propertyListForTextStyleRules:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("propertyListForTextStyleRules:")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object propertyListForTextStyleRules(NSArray<? extends AVTextStyleRule> textStyleRules);
 
-    /**
-     * textStyleRuleWithTextMarkupAttributes:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVTextStyleRule_Class/index.html#//apple_ref/occ/clm/AVTextStyleRule/textStyleRuleWithTextMarkupAttributes:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("textStyleRuleWithTextMarkupAttributes:")
     public static native AVTextStyleRule textStyleRuleWithTextMarkupAttributes(
             NSDictionary<String, ?> textMarkupAttributes);
 
-    /**
-     * textStyleRuleWithTextMarkupAttributes:textSelector:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVTextStyleRule_Class/index.html#//apple_ref/occ/clm/AVTextStyleRule/textStyleRuleWithTextMarkupAttributes:textSelector:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("textStyleRuleWithTextMarkupAttributes:textSelector:")
     public static native AVTextStyleRule textStyleRuleWithTextMarkupAttributesTextSelector(
             NSDictionary<String, ?> textMarkupAttributes, String textSelector);
 
-    /**
-     * textStyleRulesFromPropertyList:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVTextStyleRule_Class/index.html#//apple_ref/occ/clm/AVTextStyleRule/textStyleRulesFromPropertyList:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("textStyleRulesFromPropertyList:")
     public static native NSArray<? extends AVTextStyleRule> textStyleRulesFromPropertyList(
@@ -206,35 +190,19 @@ public class AVTextStyleRule extends NSObject implements NSCopying {
     @Selector("init")
     public native AVTextStyleRule init();
 
-    /**
-     * initWithTextMarkupAttributes:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVTextStyleRule_Class/index.html#//apple_ref/occ/instm/AVTextStyleRule/initWithTextMarkupAttributes:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithTextMarkupAttributes:")
     public native AVTextStyleRule initWithTextMarkupAttributes(NSDictionary<String, ?> textMarkupAttributes);
 
-    /**
-     * initWithTextMarkupAttributes:textSelector:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVTextStyleRule_Class/index.html#//apple_ref/occ/instm/AVTextStyleRule/initWithTextMarkupAttributes:textSelector:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithTextMarkupAttributes:textSelector:")
     public native AVTextStyleRule initWithTextMarkupAttributesTextSelector(NSDictionary<String, ?> textMarkupAttributes,
             String textSelector);
 
-    /**
-     * textMarkupAttributes</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVTextStyleRule_Class/index.html#//apple_ref/occ/instp/AVTextStyleRule/textMarkupAttributes">iOS Dev Center</a>
-     */
     @Generated
     @Selector("textMarkupAttributes")
     public native NSDictionary<String, ?> textMarkupAttributes();
 
-    /**
-     * textSelector</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVTextStyleRule_Class/index.html#//apple_ref/occ/instp/AVTextStyleRule/textSelector">iOS Dev Center</a>
-     */
     @Generated
     @Selector("textSelector")
     public native String textSelector();

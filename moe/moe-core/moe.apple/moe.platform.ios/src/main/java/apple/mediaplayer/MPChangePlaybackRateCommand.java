@@ -163,18 +163,10 @@ public class MPChangePlaybackRateCommand extends MPRemoteCommand {
     @Selector("init")
     public native MPChangePlaybackRateCommand init();
 
-    /**
-     * supportedPlaybackRates</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPChangePlaybackRateCommand_Ref/index.html#//apple_ref/occ/instp/MPChangePlaybackRateCommand/supportedPlaybackRates">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setSupportedPlaybackRates:")
     public native void setSupportedPlaybackRates(NSArray<? extends NSNumber> value);
 
-    /**
-     * supportedPlaybackRates</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPChangePlaybackRateCommand_Ref/index.html#//apple_ref/occ/instp/MPChangePlaybackRateCommand/supportedPlaybackRates">iOS Dev Center</a>
-     */
     @Generated
     @Selector("supportedPlaybackRates")
     public native NSArray<? extends NSNumber> supportedPlaybackRates();

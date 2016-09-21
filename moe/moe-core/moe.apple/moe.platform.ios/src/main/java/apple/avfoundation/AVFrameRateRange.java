@@ -164,36 +164,20 @@ public class AVFrameRateRange extends NSObject {
     @Selector("init")
     public native AVFrameRateRange init();
 
-    /**
-     * maxFrameDuration</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVFrameRateRange_Class/index.html#//apple_ref/occ/instp/AVFrameRateRange/maxFrameDuration">iOS Dev Center</a>
-     */
     @Generated
     @Selector("maxFrameDuration")
     @ByValue
     public native CMTime maxFrameDuration();
 
-    /**
-     * maxFrameRate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVFrameRateRange_Class/index.html#//apple_ref/occ/instp/AVFrameRateRange/maxFrameRate">iOS Dev Center</a>
-     */
     @Generated
     @Selector("maxFrameRate")
     public native double maxFrameRate();
 
-    /**
-     * minFrameDuration</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVFrameRateRange_Class/index.html#//apple_ref/occ/instp/AVFrameRateRange/minFrameDuration">iOS Dev Center</a>
-     */
     @Generated
     @Selector("minFrameDuration")
     @ByValue
     public native CMTime minFrameDuration();
 
-    /**
-     * minFrameRate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVFrameRateRange_Class/index.html#//apple_ref/occ/instp/AVFrameRateRange/minFrameRate">iOS Dev Center</a>
-     */
     @Generated
     @Selector("minFrameRate")
     public native double minFrameRate();

@@ -34,10 +34,6 @@ import org.moe.natj.objc.ann.Selector;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("SCNShadable")
 public interface SCNShadable {
-    /**
-     * handleBindingOfSymbol:usingBlock:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNShadable_Protocol/index.html#//apple_ref/occ/intfm/SCNShadable/handleBindingOfSymbol:usingBlock:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("handleBindingOfSymbol:usingBlock:")
@@ -46,10 +42,6 @@ public interface SCNShadable {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * handleUnbindingOfSymbol:usingBlock:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNShadable_Protocol/index.html#//apple_ref/occ/intfm/SCNShadable/handleUnbindingOfSymbol:usingBlock:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("handleUnbindingOfSymbol:usingBlock:")
@@ -58,10 +50,6 @@ public interface SCNShadable {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * program</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNShadable_Protocol/index.html#//apple_ref/occ/intfp/SCNShadable/program">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("program")
@@ -69,10 +57,6 @@ public interface SCNShadable {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * program</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNShadable_Protocol/index.html#//apple_ref/occ/intfp/SCNShadable/program">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("setProgram:")
@@ -80,10 +64,6 @@ public interface SCNShadable {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * shaderModifiers</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNShadable_Protocol/index.html#//apple_ref/occ/intfp/SCNShadable/shaderModifiers">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("setShaderModifiers:")
@@ -91,10 +71,6 @@ public interface SCNShadable {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * shaderModifiers</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNShadable_Protocol/index.html#//apple_ref/occ/intfp/SCNShadable/shaderModifiers">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("shaderModifiers")

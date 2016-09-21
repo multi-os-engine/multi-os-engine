@@ -160,26 +160,14 @@ public class MDLVertexDescriptor extends NSObject implements NSCopying {
     @NInt
     public static native long version_static();
 
-    /**
-     * addOrReplaceAttribute:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLVertexDescriptor_Class/index.html#//apple_ref/occ/instm/MDLVertexDescriptor/addOrReplaceAttribute:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("addOrReplaceAttribute:")
     public native void addOrReplaceAttribute(MDLVertexAttribute attribute);
 
-    /**
-     * attributeNamed:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLVertexDescriptor_Class/index.html#//apple_ref/occ/instm/MDLVertexDescriptor/attributeNamed:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("attributeNamed:")
     public native MDLVertexAttribute attributeNamed(String name);
 
-    /**
-     * attributes</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLVertexDescriptor_Class/index.html#//apple_ref/occ/instp/MDLVertexDescriptor/attributes">iOS Dev Center</a>
-     */
     @Generated
     @Selector("attributes")
     public native NSMutableArray<MDLVertexAttribute> attributes();
@@ -194,58 +182,30 @@ public class MDLVertexDescriptor extends NSObject implements NSCopying {
     @Selector("init")
     public native MDLVertexDescriptor init();
 
-    /**
-     * initWithVertexDescriptor:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLVertexDescriptor_Class/index.html#//apple_ref/occ/instm/MDLVertexDescriptor/initWithVertexDescriptor:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithVertexDescriptor:")
     public native MDLVertexDescriptor initWithVertexDescriptor(MDLVertexDescriptor vertexDescriptor);
 
-    /**
-     * layouts</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLVertexDescriptor_Class/index.html#//apple_ref/occ/instp/MDLVertexDescriptor/layouts">iOS Dev Center</a>
-     */
     @Generated
     @Selector("layouts")
     public native NSMutableArray<MDLVertexBufferLayout> layouts();
 
-    /**
-     * reset</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLVertexDescriptor_Class/index.html#//apple_ref/occ/instm/MDLVertexDescriptor/reset">iOS Dev Center</a>
-     */
     @Generated
     @Selector("reset")
     public native void reset();
 
-    /**
-     * attributes</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLVertexDescriptor_Class/index.html#//apple_ref/occ/instp/MDLVertexDescriptor/attributes">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setAttributes:")
     public native void setAttributes(NSMutableArray<MDLVertexAttribute> value);
 
-    /**
-     * layouts</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLVertexDescriptor_Class/index.html#//apple_ref/occ/instp/MDLVertexDescriptor/layouts">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setLayouts:")
     public native void setLayouts(NSMutableArray<MDLVertexBufferLayout> value);
 
-    /**
-     * setPackedOffsets</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLVertexDescriptor_Class/index.html#//apple_ref/occ/instm/MDLVertexDescriptor/setPackedOffsets">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setPackedOffsets")
     public native void setPackedOffsets();
 
-    /**
-     * setPackedStrides</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLVertexDescriptor_Class/index.html#//apple_ref/occ/instm/MDLVertexDescriptor/setPackedStrides">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setPackedStrides")
     public native void setPackedStrides();

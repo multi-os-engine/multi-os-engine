@@ -31,10 +31,6 @@ import org.moe.natj.objc.ann.Selector;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("RPPreviewViewControllerDelegate")
 public interface RPPreviewViewControllerDelegate {
-    /**
-     * previewController:didFinishWithActivityTypes:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ReplayKit/Reference/RPPreviewViewControllerDelegate_Ref/index.html#//apple_ref/occ/intfm/RPPreviewViewControllerDelegate/previewController:didFinishWithActivityTypes:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("previewController:didFinishWithActivityTypes:")
@@ -43,10 +39,6 @@ public interface RPPreviewViewControllerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * previewControllerDidFinish:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ReplayKit/Reference/RPPreviewViewControllerDelegate_Ref/index.html#//apple_ref/occ/intfm/RPPreviewViewControllerDelegate/previewControllerDidFinish:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("previewControllerDidFinish:")

@@ -31,10 +31,6 @@ import org.moe.natj.objc.ann.Selector;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("MPMediaPickerControllerDelegate")
 public interface MPMediaPickerControllerDelegate {
-    /**
-     * mediaPicker:didPickMediaItems:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPMediaPickerControllerDelegate_ProtocolReference/index.html#//apple_ref/occ/intfm/MPMediaPickerControllerDelegate/mediaPicker:didPickMediaItems:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("mediaPicker:didPickMediaItems:")
@@ -43,10 +39,6 @@ public interface MPMediaPickerControllerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * mediaPickerDidCancel:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPMediaPickerControllerDelegate_ProtocolReference/index.html#//apple_ref/occ/intfm/MPMediaPickerControllerDelegate/mediaPickerDidCancel:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("mediaPickerDidCancel:")

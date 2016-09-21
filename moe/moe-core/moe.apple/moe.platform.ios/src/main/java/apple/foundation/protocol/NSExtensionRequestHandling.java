@@ -29,10 +29,6 @@ import org.moe.natj.objc.ann.Selector;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("NSExtensionRequestHandling")
 public interface NSExtensionRequestHandling {
-    /**
-     * beginRequestWithExtensionContext:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSExtensionRequestHandling_Protocol/index.html#//apple_ref/occ/intfm/NSExtensionRequestHandling/beginRequestWithExtensionContext:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("beginRequestWithExtensionContext:")
     void beginRequestWithExtensionContext(NSExtensionContext context);

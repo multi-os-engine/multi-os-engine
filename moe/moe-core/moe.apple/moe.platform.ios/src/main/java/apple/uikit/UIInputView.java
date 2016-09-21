@@ -355,18 +355,10 @@ public class UIInputView extends UIView {
     @Selector("initWithFrame:")
     public native UIInputView initWithFrame(@ByValue CGRect frame);
 
-    /**
-     * initWithFrame:inputViewStyle:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIInputView_class/index.html#//apple_ref/occ/instm/UIInputView/initWithFrame:inputViewStyle:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithFrame:inputViewStyle:")
     public native UIInputView initWithFrameInputViewStyle(@ByValue CGRect frame, @NInt long inputViewStyle);
 
-    /**
-     * inputViewStyle</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIInputView_class/index.html#//apple_ref/occ/instp/UIInputView/inputViewStyle">iOS Dev Center</a>
-     */
     @Generated
     @Selector("inputViewStyle")
     @NInt

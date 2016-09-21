@@ -69,10 +69,6 @@ public class NSAttributedString extends NSObject implements NSCopying, NSMutable
     @Selector("alloc")
     public static native NSAttributedString alloc();
 
-    /**
-     * attributedStringWithAttachment:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSAttributedString_Class/index.html#//apple_ref/occ/clm/NSAttributedString/attributedStringWithAttachment:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("attributedStringWithAttachment:")
     public static native NSAttributedString attributedStringWithAttachment(NSTextAttachment attachment);
@@ -181,54 +177,30 @@ public class NSAttributedString extends NSObject implements NSCopying, NSMutable
     @NInt
     public static native long version_static();
 
-    /**
-     * attribute:atIndex:effectiveRange:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSAttributedString_Class/index.html#//apple_ref/occ/instm/NSAttributedString/attribute:atIndex:effectiveRange:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("attribute:atIndex:effectiveRange:")
     @MappedReturn(ObjCObjectMapper.class)
     public native Object attributeAtIndexEffectiveRange(String attrName, @NUInt long location, NSRange range);
 
-    /**
-     * attribute:atIndex:longestEffectiveRange:inRange:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSAttributedString_Class/index.html#//apple_ref/occ/instm/NSAttributedString/attribute:atIndex:longestEffectiveRange:inRange:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("attribute:atIndex:longestEffectiveRange:inRange:")
     @MappedReturn(ObjCObjectMapper.class)
     public native Object attributeAtIndexLongestEffectiveRangeInRange(String attrName, @NUInt long location,
             NSRange range, @ByValue NSRange rangeLimit);
 
-    /**
-     * attributedSubstringFromRange:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSAttributedString_Class/index.html#//apple_ref/occ/instm/NSAttributedString/attributedSubstringFromRange:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("attributedSubstringFromRange:")
     public native NSAttributedString attributedSubstringFromRange(@ByValue NSRange range);
 
-    /**
-     * attributesAtIndex:effectiveRange:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSAttributedString_Class/index.html#//apple_ref/occ/instm/NSAttributedString/attributesAtIndex:effectiveRange:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("attributesAtIndex:effectiveRange:")
     public native NSDictionary<String, ?> attributesAtIndexEffectiveRange(@NUInt long location, NSRange range);
 
-    /**
-     * attributesAtIndex:longestEffectiveRange:inRange:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSAttributedString_Class/index.html#//apple_ref/occ/instm/NSAttributedString/attributesAtIndex:longestEffectiveRange:inRange:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("attributesAtIndex:longestEffectiveRange:inRange:")
     public native NSDictionary<String, ?> attributesAtIndexLongestEffectiveRangeInRange(@NUInt long location,
             NSRange range, @ByValue NSRange rangeLimit);
 
-    /**
-     * boundingRectWithSize:options:context:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSAttributedString_Class/index.html#//apple_ref/occ/instm/NSAttributedString/boundingRectWithSize:options:context:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("boundingRectWithSize:options:context:")
     @ByValue
@@ -241,35 +213,19 @@ public class NSAttributedString extends NSObject implements NSCopying, NSMutable
     @MappedReturn(ObjCObjectMapper.class)
     public native Object copyWithZone(VoidPtr zone);
 
-    /**
-     * dataFromRange:documentAttributes:error:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSAttributedString_Class/index.html#//apple_ref/occ/instm/NSAttributedString/dataFromRange:documentAttributes:error:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("dataFromRange:documentAttributes:error:")
     public native NSData dataFromRangeDocumentAttributesError(@ByValue NSRange range, NSDictionary<String, ?> dict,
             Ptr<NSError> error);
 
-    /**
-     * drawAtPoint:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSAttributedString_Class/index.html#//apple_ref/occ/instm/NSAttributedString/drawAtPoint:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("drawAtPoint:")
     public native void drawAtPoint(@ByValue CGPoint point);
 
-    /**
-     * drawInRect:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSAttributedString_Class/index.html#//apple_ref/occ/instm/NSAttributedString/drawInRect:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("drawInRect:")
     public native void drawInRect(@ByValue CGRect rect);
 
-    /**
-     * drawWithRect:options:context:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSAttributedString_Class/index.html#//apple_ref/occ/instm/NSAttributedString/drawWithRect:options:context:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("drawWithRect:options:context:")
     public native void drawWithRectOptionsContext(@ByValue CGRect rect, @NInt long options,
@@ -279,29 +235,17 @@ public class NSAttributedString extends NSObject implements NSCopying, NSMutable
     @Selector("encodeWithCoder:")
     public native void encodeWithCoder(NSCoder aCoder);
 
-    /**
-     * enumerateAttribute:inRange:options:usingBlock:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSAttributedString_Class/index.html#//apple_ref/occ/instm/NSAttributedString/enumerateAttribute:inRange:options:usingBlock:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("enumerateAttribute:inRange:options:usingBlock:")
     public native void enumerateAttributeInRangeOptionsUsingBlock(String attrName, @ByValue NSRange enumerationRange,
             @NUInt long opts,
             @ObjCBlock(name = "call_enumerateAttributeInRangeOptionsUsingBlock") Block_enumerateAttributeInRangeOptionsUsingBlock block);
 
-    /**
-     * enumerateAttributesInRange:options:usingBlock:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSAttributedString_Class/index.html#//apple_ref/occ/instm/NSAttributedString/enumerateAttributesInRange:options:usingBlock:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("enumerateAttributesInRange:options:usingBlock:")
     public native void enumerateAttributesInRangeOptionsUsingBlock(@ByValue NSRange enumerationRange, @NUInt long opts,
             @ObjCBlock(name = "call_enumerateAttributesInRangeOptionsUsingBlock") Block_enumerateAttributesInRangeOptionsUsingBlock block);
 
-    /**
-     * fileWrapperFromRange:documentAttributes:error:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSAttributedString_Class/index.html#//apple_ref/occ/instm/NSAttributedString/fileWrapperFromRange:documentAttributes:error:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("fileWrapperFromRange:documentAttributes:error:")
     public native NSFileWrapper fileWrapperFromRangeDocumentAttributesError(@ByValue NSRange range,
@@ -311,10 +255,6 @@ public class NSAttributedString extends NSObject implements NSCopying, NSMutable
     @Selector("init")
     public native NSAttributedString init();
 
-    /**
-     * initWithAttributedString:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSAttributedString_Class/index.html#//apple_ref/occ/instm/NSAttributedString/initWithAttributedString:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithAttributedString:")
     public native NSAttributedString initWithAttributedString(NSAttributedString attrStr);
@@ -323,53 +263,29 @@ public class NSAttributedString extends NSObject implements NSCopying, NSMutable
     @Selector("initWithCoder:")
     public native NSAttributedString initWithCoder(NSCoder aDecoder);
 
-    /**
-     * initWithData:options:documentAttributes:error:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSAttributedString_Class/index.html#//apple_ref/occ/instm/NSAttributedString/initWithData:options:documentAttributes:error:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithData:options:documentAttributes:error:")
     public native NSAttributedString initWithDataOptionsDocumentAttributesError(NSData data,
             NSDictionary<String, ?> options, Ptr<NSDictionary<String, ?>> dict, Ptr<NSError> error);
 
-    /**
-     * initWithFileURL:options:documentAttributes:error:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSAttributedString_Class/index.html#//apple_ref/occ/instm/NSAttributedString/initWithFileURL:options:documentAttributes:error:">iOS Dev Center</a>
-     */
     @Deprecated
     @Generated
     @Selector("initWithFileURL:options:documentAttributes:error:")
     public native NSAttributedString initWithFileURLOptionsDocumentAttributesError(NSURL url,
             NSDictionary<?, ?> options, Ptr<NSDictionary<?, ?>> dict, Ptr<NSError> error);
 
-    /**
-     * initWithString:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSAttributedString_Class/index.html#//apple_ref/occ/instm/NSAttributedString/initWithString:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithString:")
     public native NSAttributedString initWithString(String str);
 
-    /**
-     * initWithString:attributes:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSAttributedString_Class/index.html#//apple_ref/occ/instm/NSAttributedString/initWithString:attributes:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithString:attributes:")
     public native NSAttributedString initWithStringAttributes(String str, NSDictionary<String, ?> attrs);
 
-    /**
-     * isEqualToAttributedString:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSAttributedString_Class/index.html#//apple_ref/occ/instm/NSAttributedString/isEqualToAttributedString:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("isEqualToAttributedString:")
     public native boolean isEqualToAttributedString(NSAttributedString other);
 
-    /**
-     * length</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSAttributedString_Class/index.html#//apple_ref/occ/instp/NSAttributedString/length">iOS Dev Center</a>
-     */
     @Generated
     @Selector("length")
     @NUInt
@@ -380,19 +296,11 @@ public class NSAttributedString extends NSObject implements NSCopying, NSMutable
     @MappedReturn(ObjCObjectMapper.class)
     public native Object mutableCopyWithZone(VoidPtr zone);
 
-    /**
-     * size</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSAttributedString_Class/index.html#//apple_ref/occ/instm/NSAttributedString/size">iOS Dev Center</a>
-     */
     @Generated
     @Selector("size")
     @ByValue
     public native CGSize size();
 
-    /**
-     * string</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSAttributedString_Class/index.html#//apple_ref/occ/instp/NSAttributedString/string">iOS Dev Center</a>
-     */
     @Generated
     @Selector("string")
     public native String string();
@@ -403,18 +311,10 @@ public class NSAttributedString extends NSObject implements NSCopying, NSMutable
         return supportsSecureCoding();
     }
 
-    /**
-     * containsAttachmentsInRange:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSAttributedString_Class/index.html#//apple_ref/occ/instm/NSAttributedString/containsAttachmentsInRange:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("containsAttachmentsInRange:")
     public native boolean containsAttachmentsInRange(@ByValue NSRange range);
 
-    /**
-     * initWithURL:options:documentAttributes:error:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSAttributedString_Class/index.html#//apple_ref/occ/instm/NSAttributedString/initWithURL:options:documentAttributes:error:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithURL:options:documentAttributes:error:")
     public native NSAttributedString initWithURLOptionsDocumentAttributesError(NSURL url,

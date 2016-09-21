@@ -61,19 +61,11 @@ public class AVCaptureConnection extends NSObject {
     @Selector("alloc")
     public static native AVCaptureConnection alloc();
 
-    /**
-     * connectionWithInputPort:videoPreviewLayer:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVCaptureConnection_Class/index.html#//apple_ref/occ/clm/AVCaptureConnection/connectionWithInputPort:videoPreviewLayer:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("connectionWithInputPort:videoPreviewLayer:")
     public static native AVCaptureConnection connectionWithInputPortVideoPreviewLayer(AVCaptureInputPort port,
             AVCaptureVideoPreviewLayer layer);
 
-    /**
-     * connectionWithInputPorts:output:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVCaptureConnection_Class/index.html#//apple_ref/occ/clm/AVCaptureConnection/connectionWithInputPorts:output:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("connectionWithInputPorts:output:")
     public static native AVCaptureConnection connectionWithInputPortsOutput(NSArray<?> ports, AVCaptureOutput output);
@@ -183,26 +175,14 @@ public class AVCaptureConnection extends NSObject {
     @NInt
     public native long activeVideoStabilizationMode();
 
-    /**
-     * audioChannels</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVCaptureConnection_Class/index.html#//apple_ref/occ/instp/AVCaptureConnection/audioChannels">iOS Dev Center</a>
-     */
     @Generated
     @Selector("audioChannels")
     public native NSArray<?> audioChannels();
 
-    /**
-     * automaticallyAdjustsVideoMirroring</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVCaptureConnection_Class/index.html#//apple_ref/occ/instp/AVCaptureConnection/automaticallyAdjustsVideoMirroring">iOS Dev Center</a>
-     */
     @Generated
     @Selector("automaticallyAdjustsVideoMirroring")
     public native boolean automaticallyAdjustsVideoMirroring();
 
-    /**
-     * enablesVideoStabilizationWhenAvailable</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVCaptureConnection_Class/index.html#//apple_ref/occ/instp/AVCaptureConnection/enablesVideoStabilizationWhenAvailable">iOS Dev Center</a>
-     */
     @Generated
     @Deprecated
     @Selector("enablesVideoStabilizationWhenAvailable")
@@ -212,126 +192,66 @@ public class AVCaptureConnection extends NSObject {
     @Selector("init")
     public native AVCaptureConnection init();
 
-    /**
-     * initWithInputPort:videoPreviewLayer:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVCaptureConnection_Class/index.html#//apple_ref/occ/instm/AVCaptureConnection/initWithInputPort:videoPreviewLayer:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithInputPort:videoPreviewLayer:")
     public native AVCaptureConnection initWithInputPortVideoPreviewLayer(AVCaptureInputPort port,
             AVCaptureVideoPreviewLayer layer);
 
-    /**
-     * initWithInputPorts:output:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVCaptureConnection_Class/index.html#//apple_ref/occ/instm/AVCaptureConnection/initWithInputPorts:output:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithInputPorts:output:")
     public native AVCaptureConnection initWithInputPortsOutput(NSArray<?> ports, AVCaptureOutput output);
 
-    /**
-     * inputPorts</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVCaptureConnection_Class/index.html#//apple_ref/occ/instp/AVCaptureConnection/inputPorts">iOS Dev Center</a>
-     */
     @Generated
     @Selector("inputPorts")
     public native NSArray<?> inputPorts();
 
-    /**
-     * active</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVCaptureConnection_Class/index.html#//apple_ref/occ/instp/AVCaptureConnection/active">iOS Dev Center</a>
-     */
     @Generated
     @Selector("isActive")
     public native boolean isActive();
 
-    /**
-     * enabled</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVCaptureConnection_Class/index.html#//apple_ref/occ/instp/AVCaptureConnection/enabled">iOS Dev Center</a>
-     */
     @Generated
     @Selector("isEnabled")
     public native boolean isEnabled();
 
-    /**
-     * enabled</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVCaptureConnection_Class/index.html#//apple_ref/occ/instp/AVCaptureConnection/enabled">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setEnabled:")
     public native void setEnabled(boolean value);
 
-    /**
-     * supportsVideoMaxFrameDuration</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVCaptureConnection_Class/index.html#//apple_ref/occ/instp/AVCaptureConnection/supportsVideoMaxFrameDuration">iOS Dev Center</a>
-     */
     @Generated
     @Deprecated
     @Selector("isVideoMaxFrameDurationSupported")
     public native boolean isVideoMaxFrameDurationSupported();
 
-    /**
-     * supportsVideoMinFrameDuration</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVCaptureConnection_Class/index.html#//apple_ref/occ/instp/AVCaptureConnection/supportsVideoMinFrameDuration">iOS Dev Center</a>
-     */
     @Generated
     @Deprecated
     @Selector("isVideoMinFrameDurationSupported")
     public native boolean isVideoMinFrameDurationSupported();
 
-    /**
-     * videoMirrored</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVCaptureConnection_Class/index.html#//apple_ref/occ/instp/AVCaptureConnection/videoMirrored">iOS Dev Center</a>
-     */
     @Generated
     @Selector("isVideoMirrored")
     public native boolean isVideoMirrored();
 
-    /**
-     * videoMirrored</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVCaptureConnection_Class/index.html#//apple_ref/occ/instp/AVCaptureConnection/videoMirrored">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setVideoMirrored:")
     public native void setVideoMirrored(boolean value);
 
-    /**
-     * supportsVideoMirroring</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVCaptureConnection_Class/index.html#//apple_ref/occ/instp/AVCaptureConnection/supportsVideoMirroring">iOS Dev Center</a>
-     */
     @Generated
     @Selector("isVideoMirroringSupported")
     public native boolean isVideoMirroringSupported();
 
-    /**
-     * supportsVideoOrientation</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVCaptureConnection_Class/index.html#//apple_ref/occ/instp/AVCaptureConnection/supportsVideoOrientation">iOS Dev Center</a>
-     */
     @Generated
     @Selector("isVideoOrientationSupported")
     public native boolean isVideoOrientationSupported();
 
-    /**
-     * videoStabilizationEnabled</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVCaptureConnection_Class/index.html#//apple_ref/occ/instp/AVCaptureConnection/videoStabilizationEnabled">iOS Dev Center</a>
-     */
     @Generated
     @Deprecated
     @Selector("isVideoStabilizationEnabled")
     public native boolean isVideoStabilizationEnabled();
 
-    /**
-     * supportsVideoStabilization</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVCaptureConnection_Class/index.html#//apple_ref/occ/instp/AVCaptureConnection/supportsVideoStabilization">iOS Dev Center</a>
-     */
     @Generated
     @Selector("isVideoStabilizationSupported")
     public native boolean isVideoStabilizationSupported();
 
-    /**
-     * output</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVCaptureConnection_Class/index.html#//apple_ref/occ/instp/AVCaptureConnection/output">iOS Dev Center</a>
-     */
     @Generated
     @Selector("output")
     public native AVCaptureOutput output();
@@ -341,18 +261,10 @@ public class AVCaptureConnection extends NSObject {
     @NInt
     public native long preferredVideoStabilizationMode();
 
-    /**
-     * automaticallyAdjustsVideoMirroring</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVCaptureConnection_Class/index.html#//apple_ref/occ/instp/AVCaptureConnection/automaticallyAdjustsVideoMirroring">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setAutomaticallyAdjustsVideoMirroring:")
     public native void setAutomaticallyAdjustsVideoMirroring(boolean value);
 
-    /**
-     * enablesVideoStabilizationWhenAvailable</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVCaptureConnection_Class/index.html#//apple_ref/occ/instp/AVCaptureConnection/enablesVideoStabilizationWhenAvailable">iOS Dev Center</a>
-     */
     @Generated
     @Deprecated
     @Selector("setEnablesVideoStabilizationWhenAvailable:")
@@ -362,90 +274,50 @@ public class AVCaptureConnection extends NSObject {
     @Selector("setPreferredVideoStabilizationMode:")
     public native void setPreferredVideoStabilizationMode(@NInt long value);
 
-    /**
-     * videoMaxFrameDuration</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVCaptureConnection_Class/index.html#//apple_ref/occ/instp/AVCaptureConnection/videoMaxFrameDuration">iOS Dev Center</a>
-     */
     @Generated
     @Deprecated
     @Selector("setVideoMaxFrameDuration:")
     public native void setVideoMaxFrameDuration(@ByValue CMTime value);
 
-    /**
-     * videoMinFrameDuration</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVCaptureConnection_Class/index.html#//apple_ref/occ/instp/AVCaptureConnection/videoMinFrameDuration">iOS Dev Center</a>
-     */
     @Generated
     @Deprecated
     @Selector("setVideoMinFrameDuration:")
     public native void setVideoMinFrameDuration(@ByValue CMTime value);
 
-    /**
-     * videoOrientation</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVCaptureConnection_Class/index.html#//apple_ref/occ/instp/AVCaptureConnection/videoOrientation">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setVideoOrientation:")
     public native void setVideoOrientation(@NInt long value);
 
-    /**
-     * videoScaleAndCropFactor</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVCaptureConnection_Class/index.html#//apple_ref/occ/instp/AVCaptureConnection/videoScaleAndCropFactor">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setVideoScaleAndCropFactor:")
     public native void setVideoScaleAndCropFactor(@NFloat double value);
 
-    /**
-     * videoMaxFrameDuration</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVCaptureConnection_Class/index.html#//apple_ref/occ/instp/AVCaptureConnection/videoMaxFrameDuration">iOS Dev Center</a>
-     */
     @Generated
     @Deprecated
     @Selector("videoMaxFrameDuration")
     @ByValue
     public native CMTime videoMaxFrameDuration();
 
-    /**
-     * videoMaxScaleAndCropFactor</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVCaptureConnection_Class/index.html#//apple_ref/occ/instp/AVCaptureConnection/videoMaxScaleAndCropFactor">iOS Dev Center</a>
-     */
     @Generated
     @Selector("videoMaxScaleAndCropFactor")
     @NFloat
     public native double videoMaxScaleAndCropFactor();
 
-    /**
-     * videoMinFrameDuration</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVCaptureConnection_Class/index.html#//apple_ref/occ/instp/AVCaptureConnection/videoMinFrameDuration">iOS Dev Center</a>
-     */
     @Generated
     @Deprecated
     @Selector("videoMinFrameDuration")
     @ByValue
     public native CMTime videoMinFrameDuration();
 
-    /**
-     * videoOrientation</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVCaptureConnection_Class/index.html#//apple_ref/occ/instp/AVCaptureConnection/videoOrientation">iOS Dev Center</a>
-     */
     @Generated
     @Selector("videoOrientation")
     @NInt
     public native long videoOrientation();
 
-    /**
-     * videoPreviewLayer</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVCaptureConnection_Class/index.html#//apple_ref/occ/instp/AVCaptureConnection/videoPreviewLayer">iOS Dev Center</a>
-     */
     @Generated
     @Selector("videoPreviewLayer")
     public native AVCaptureVideoPreviewLayer videoPreviewLayer();
 
-    /**
-     * videoScaleAndCropFactor</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVCaptureConnection_Class/index.html#//apple_ref/occ/instp/AVCaptureConnection/videoScaleAndCropFactor">iOS Dev Center</a>
-     */
     @Generated
     @Selector("videoScaleAndCropFactor")
     @NFloat

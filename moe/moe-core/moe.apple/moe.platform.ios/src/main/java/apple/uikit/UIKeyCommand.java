@@ -62,10 +62,6 @@ public class UIKeyCommand extends NSObject implements NSCopying, NSSecureCoding 
     @Selector("alloc")
     public static native UIKeyCommand alloc();
 
-    /**
-     * keyCommandWithInput:modifierFlags:action:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIKeyCommand_class/index.html#//apple_ref/occ/clm/UIKeyCommand/keyCommandWithInput:modifierFlags:action:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("keyCommandWithInput:modifierFlags:action:")
     public static native UIKeyCommand keyCommandWithInputModifierFlagsAction(String input, @NInt long modifierFlags,
@@ -75,10 +71,6 @@ public class UIKeyCommand extends NSObject implements NSCopying, NSSecureCoding 
     @Selector("supportsSecureCoding")
     public static native boolean supportsSecureCoding();
 
-    /**
-     * keyCommandWithInput:modifierFlags:action:discoverabilityTitle:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIKeyCommand_class/index.html#//apple_ref/occ/clm/UIKeyCommand/keyCommandWithInput:modifierFlags:action:discoverabilityTitle:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("keyCommandWithInput:modifierFlags:action:discoverabilityTitle:")
     public static native UIKeyCommand keyCommandWithInputModifierFlagsActionDiscoverabilityTitle(String input,
@@ -202,18 +194,10 @@ public class UIKeyCommand extends NSObject implements NSCopying, NSSecureCoding 
     @Selector("initWithCoder:")
     public native UIKeyCommand initWithCoder(NSCoder aDecoder);
 
-    /**
-     * input</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIKeyCommand_class/index.html#//apple_ref/occ/instp/UIKeyCommand/input">iOS Dev Center</a>
-     */
     @Generated
     @Selector("input")
     public native String input();
 
-    /**
-     * modifierFlags</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIKeyCommand_class/index.html#//apple_ref/occ/instp/UIKeyCommand/modifierFlags">iOS Dev Center</a>
-     */
     @Generated
     @Selector("modifierFlags")
     @NInt
@@ -225,18 +209,10 @@ public class UIKeyCommand extends NSObject implements NSCopying, NSSecureCoding 
         return supportsSecureCoding();
     }
 
-    /**
-     * discoverabilityTitle</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIKeyCommand_class/index.html#//apple_ref/occ/instp/UIKeyCommand/discoverabilityTitle">iOS Dev Center</a>
-     */
     @Generated
     @Selector("discoverabilityTitle")
     public native String discoverabilityTitle();
 
-    /**
-     * discoverabilityTitle</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIKeyCommand_class/index.html#//apple_ref/occ/instp/UIKeyCommand/discoverabilityTitle">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setDiscoverabilityTitle:")
     public native void setDiscoverabilityTitle(String value);

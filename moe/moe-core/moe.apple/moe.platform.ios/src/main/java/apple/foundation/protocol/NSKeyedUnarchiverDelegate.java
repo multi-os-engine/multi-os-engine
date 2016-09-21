@@ -35,10 +35,6 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("NSKeyedUnarchiverDelegate")
 public interface NSKeyedUnarchiverDelegate {
-    /**
-     * unarchiver:cannotDecodeObjectOfClassName:originalClasses:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSKeyedUnarchiverDelegate_Protocol/index.html#//apple_ref/occ/intfm/NSKeyedUnarchiverDelegate/unarchiver:cannotDecodeObjectOfClassName:originalClasses:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("unarchiver:cannotDecodeObjectOfClassName:originalClasses:")
@@ -47,10 +43,6 @@ public interface NSKeyedUnarchiverDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * unarchiver:didDecodeObject:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSKeyedUnarchiverDelegate_Protocol/index.html#//apple_ref/occ/intfm/NSKeyedUnarchiverDelegate/unarchiver:didDecodeObject:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("unarchiver:didDecodeObject:")
@@ -60,10 +52,6 @@ public interface NSKeyedUnarchiverDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * unarchiver:willReplaceObject:withObject:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSKeyedUnarchiverDelegate_Protocol/index.html#//apple_ref/occ/intfm/NSKeyedUnarchiverDelegate/unarchiver:willReplaceObject:withObject:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("unarchiver:willReplaceObject:withObject:")
@@ -72,10 +60,6 @@ public interface NSKeyedUnarchiverDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * unarchiverDidFinish:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSKeyedUnarchiverDelegate_Protocol/index.html#//apple_ref/occ/intfm/NSKeyedUnarchiverDelegate/unarchiverDidFinish:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("unarchiverDidFinish:")
@@ -83,10 +67,6 @@ public interface NSKeyedUnarchiverDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * unarchiverWillFinish:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSKeyedUnarchiverDelegate_Protocol/index.html#//apple_ref/occ/intfm/NSKeyedUnarchiverDelegate/unarchiverWillFinish:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("unarchiverWillFinish:")

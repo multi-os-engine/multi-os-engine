@@ -160,10 +160,6 @@ public class EASession extends NSObject {
     @NInt
     public static native long version_static();
 
-    /**
-     * accessory</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ExternalAccessory/Reference/EASession_class/index.html#//apple_ref/occ/instp/EASession/accessory">iOS Dev Center</a>
-     */
     @Generated
     @Selector("accessory")
     public native EAAccessory accessory();
@@ -172,34 +168,18 @@ public class EASession extends NSObject {
     @Selector("init")
     public native EASession init();
 
-    /**
-     * initWithAccessory:forProtocol:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ExternalAccessory/Reference/EASession_class/index.html#//apple_ref/occ/instm/EASession/initWithAccessory:forProtocol:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithAccessory:forProtocol:")
     public native EASession initWithAccessoryForProtocol(EAAccessory accessory, String protocolString);
 
-    /**
-     * inputStream</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ExternalAccessory/Reference/EASession_class/index.html#//apple_ref/occ/instp/EASession/inputStream">iOS Dev Center</a>
-     */
     @Generated
     @Selector("inputStream")
     public native NSInputStream inputStream();
 
-    /**
-     * outputStream</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ExternalAccessory/Reference/EASession_class/index.html#//apple_ref/occ/instp/EASession/outputStream">iOS Dev Center</a>
-     */
     @Generated
     @Selector("outputStream")
     public native NSOutputStream outputStream();
 
-    /**
-     * protocolString</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ExternalAccessory/Reference/EASession_class/index.html#//apple_ref/occ/instp/EASession/protocolString">iOS Dev Center</a>
-     */
     @Generated
     @Selector("protocolString")
     public native String protocolString();

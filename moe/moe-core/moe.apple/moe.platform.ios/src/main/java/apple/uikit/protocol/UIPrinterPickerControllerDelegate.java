@@ -32,10 +32,6 @@ import org.moe.natj.objc.ann.Selector;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("UIPrinterPickerControllerDelegate")
 public interface UIPrinterPickerControllerDelegate {
-    /**
-     * printerPickerController:shouldShowPrinter:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPrinterPickerControllerDelegate_protocol/index.html#//apple_ref/occ/intfm/UIPrinterPickerControllerDelegate/printerPickerController:shouldShowPrinter:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("printerPickerController:shouldShowPrinter:")
@@ -44,10 +40,6 @@ public interface UIPrinterPickerControllerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * printerPickerControllerDidDismiss:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPrinterPickerControllerDelegate_protocol/index.html#//apple_ref/occ/intfm/UIPrinterPickerControllerDelegate/printerPickerControllerDidDismiss:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("printerPickerControllerDidDismiss:")
@@ -55,10 +47,6 @@ public interface UIPrinterPickerControllerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * printerPickerControllerDidPresent:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPrinterPickerControllerDelegate_protocol/index.html#//apple_ref/occ/intfm/UIPrinterPickerControllerDelegate/printerPickerControllerDidPresent:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("printerPickerControllerDidPresent:")
@@ -66,10 +54,6 @@ public interface UIPrinterPickerControllerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * printerPickerControllerDidSelectPrinter:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPrinterPickerControllerDelegate_protocol/index.html#//apple_ref/occ/intfm/UIPrinterPickerControllerDelegate/printerPickerControllerDidSelectPrinter:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("printerPickerControllerDidSelectPrinter:")
@@ -77,10 +61,6 @@ public interface UIPrinterPickerControllerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * printerPickerControllerParentViewController:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPrinterPickerControllerDelegate_protocol/index.html#//apple_ref/occ/intfm/UIPrinterPickerControllerDelegate/printerPickerControllerParentViewController:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("printerPickerControllerParentViewController:")
@@ -89,10 +69,6 @@ public interface UIPrinterPickerControllerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * printerPickerControllerWillDismiss:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPrinterPickerControllerDelegate_protocol/index.html#//apple_ref/occ/intfm/UIPrinterPickerControllerDelegate/printerPickerControllerWillDismiss:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("printerPickerControllerWillDismiss:")
@@ -100,10 +76,6 @@ public interface UIPrinterPickerControllerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * printerPickerControllerWillPresent:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPrinterPickerControllerDelegate_protocol/index.html#//apple_ref/occ/intfm/UIPrinterPickerControllerDelegate/printerPickerControllerWillPresent:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("printerPickerControllerWillPresent:")

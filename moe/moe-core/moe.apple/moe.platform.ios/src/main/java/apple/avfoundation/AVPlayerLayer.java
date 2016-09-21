@@ -68,10 +68,6 @@ public class AVPlayerLayer extends CALayer {
     @Selector("layer")
     public static native AVPlayerLayer layer();
 
-    /**
-     * playerLayerWithPlayer:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVPlayerLayer_Class/index.html#//apple_ref/occ/clm/AVPlayerLayer/playerLayerWithPlayer:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("playerLayerWithPlayer:")
     public static native AVPlayerLayer playerLayerWithPlayer(AVPlayer player);
@@ -198,50 +194,26 @@ public class AVPlayerLayer extends CALayer {
     @Selector("initWithLayer:")
     public native AVPlayerLayer initWithLayer(@Mapped(ObjCObjectMapper.class) Object layer);
 
-    /**
-     * readyForDisplay</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVPlayerLayer_Class/index.html#//apple_ref/occ/instp/AVPlayerLayer/readyForDisplay">iOS Dev Center</a>
-     */
     @Generated
     @Selector("isReadyForDisplay")
     public native boolean isReadyForDisplay();
 
-    /**
-     * player</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVPlayerLayer_Class/index.html#//apple_ref/occ/instp/AVPlayerLayer/player">iOS Dev Center</a>
-     */
     @Generated
     @Selector("player")
     public native AVPlayer player();
 
-    /**
-     * player</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVPlayerLayer_Class/index.html#//apple_ref/occ/instp/AVPlayerLayer/player">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setPlayer:")
     public native void setPlayer(AVPlayer value);
 
-    /**
-     * videoGravity</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVPlayerLayer_Class/index.html#//apple_ref/occ/instp/AVPlayerLayer/videoGravity">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setVideoGravity:")
     public native void setVideoGravity(String value);
 
-    /**
-     * videoGravity</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVPlayerLayer_Class/index.html#//apple_ref/occ/instp/AVPlayerLayer/videoGravity">iOS Dev Center</a>
-     */
     @Generated
     @Selector("videoGravity")
     public native String videoGravity();
 
-    /**
-     * videoRect</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVPlayerLayer_Class/index.html#//apple_ref/occ/instp/AVPlayerLayer/videoRect">iOS Dev Center</a>
-     */
     @Generated
     @Selector("videoRect")
     @ByValue

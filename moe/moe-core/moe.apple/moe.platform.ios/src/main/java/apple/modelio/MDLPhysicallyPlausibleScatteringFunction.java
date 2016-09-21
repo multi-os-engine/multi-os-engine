@@ -158,34 +158,18 @@ public class MDLPhysicallyPlausibleScatteringFunction extends MDLScatteringFunct
     @NInt
     public static native long version_static();
 
-    /**
-     * anisotropic</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLPhysicallyPlausibleScatteringFunction_Class/index.html#//apple_ref/occ/instp/MDLPhysicallyPlausibleScatteringFunction/anisotropic">iOS Dev Center</a>
-     */
     @Generated
     @Selector("anisotropic")
     public native MDLMaterialProperty anisotropic();
 
-    /**
-     * anisotropicRotation</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLPhysicallyPlausibleScatteringFunction_Class/index.html#//apple_ref/occ/instp/MDLPhysicallyPlausibleScatteringFunction/anisotropicRotation">iOS Dev Center</a>
-     */
     @Generated
     @Selector("anisotropicRotation")
     public native MDLMaterialProperty anisotropicRotation();
 
-    /**
-     * clearcoat</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLPhysicallyPlausibleScatteringFunction_Class/index.html#//apple_ref/occ/instp/MDLPhysicallyPlausibleScatteringFunction/clearcoat">iOS Dev Center</a>
-     */
     @Generated
     @Selector("clearcoat")
     public native MDLMaterialProperty clearcoat();
 
-    /**
-     * clearcoatGloss</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLPhysicallyPlausibleScatteringFunction_Class/index.html#//apple_ref/occ/instp/MDLPhysicallyPlausibleScatteringFunction/clearcoatGloss">iOS Dev Center</a>
-     */
     @Generated
     @Selector("clearcoatGloss")
     public native MDLMaterialProperty clearcoatGloss();
@@ -194,58 +178,30 @@ public class MDLPhysicallyPlausibleScatteringFunction extends MDLScatteringFunct
     @Selector("init")
     public native MDLPhysicallyPlausibleScatteringFunction init();
 
-    /**
-     * metallic</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLPhysicallyPlausibleScatteringFunction_Class/index.html#//apple_ref/occ/instp/MDLPhysicallyPlausibleScatteringFunction/metallic">iOS Dev Center</a>
-     */
     @Generated
     @Selector("metallic")
     public native MDLMaterialProperty metallic();
 
-    /**
-     * roughness</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLPhysicallyPlausibleScatteringFunction_Class/index.html#//apple_ref/occ/instp/MDLPhysicallyPlausibleScatteringFunction/roughness">iOS Dev Center</a>
-     */
     @Generated
     @Selector("roughness")
     public native MDLMaterialProperty roughness();
 
-    /**
-     * sheen</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLPhysicallyPlausibleScatteringFunction_Class/index.html#//apple_ref/occ/instp/MDLPhysicallyPlausibleScatteringFunction/sheen">iOS Dev Center</a>
-     */
     @Generated
     @Selector("sheen")
     public native MDLMaterialProperty sheen();
 
-    /**
-     * sheenTint</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLPhysicallyPlausibleScatteringFunction_Class/index.html#//apple_ref/occ/instp/MDLPhysicallyPlausibleScatteringFunction/sheenTint">iOS Dev Center</a>
-     */
     @Generated
     @Selector("sheenTint")
     public native MDLMaterialProperty sheenTint();
 
-    /**
-     * specularAmount</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLPhysicallyPlausibleScatteringFunction_Class/index.html#//apple_ref/occ/instp/MDLPhysicallyPlausibleScatteringFunction/specularAmount">iOS Dev Center</a>
-     */
     @Generated
     @Selector("specularAmount")
     public native MDLMaterialProperty specularAmount();
 
-    /**
-     * specularTint</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLPhysicallyPlausibleScatteringFunction_Class/index.html#//apple_ref/occ/instp/MDLPhysicallyPlausibleScatteringFunction/specularTint">iOS Dev Center</a>
-     */
     @Generated
     @Selector("specularTint")
     public native MDLMaterialProperty specularTint();
 
-    /**
-     * subsurface</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLPhysicallyPlausibleScatteringFunction_Class/index.html#//apple_ref/occ/instp/MDLPhysicallyPlausibleScatteringFunction/subsurface">iOS Dev Center</a>
-     */
     @Generated
     @Selector("subsurface")
     public native MDLMaterialProperty subsurface();

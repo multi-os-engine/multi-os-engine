@@ -166,27 +166,15 @@ public class AVMetadataFaceObject extends AVMetadataObject implements NSCopying 
     @MappedReturn(ObjCObjectMapper.class)
     public native Object copyWithZone(VoidPtr zone);
 
-    /**
-     * faceID</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVMetadataFaceObject_Class/index.html#//apple_ref/occ/instp/AVMetadataFaceObject/faceID">iOS Dev Center</a>
-     */
     @Generated
     @Selector("faceID")
     @NInt
     public native long faceID();
 
-    /**
-     * hasRollAngle</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVMetadataFaceObject_Class/index.html#//apple_ref/occ/instp/AVMetadataFaceObject/hasRollAngle">iOS Dev Center</a>
-     */
     @Generated
     @Selector("hasRollAngle")
     public native boolean hasRollAngle();
 
-    /**
-     * hasYawAngle</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVMetadataFaceObject_Class/index.html#//apple_ref/occ/instp/AVMetadataFaceObject/hasYawAngle">iOS Dev Center</a>
-     */
     @Generated
     @Selector("hasYawAngle")
     public native boolean hasYawAngle();
@@ -195,19 +183,11 @@ public class AVMetadataFaceObject extends AVMetadataObject implements NSCopying 
     @Selector("init")
     public native AVMetadataFaceObject init();
 
-    /**
-     * rollAngle</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVMetadataFaceObject_Class/index.html#//apple_ref/occ/instp/AVMetadataFaceObject/rollAngle">iOS Dev Center</a>
-     */
     @Generated
     @Selector("rollAngle")
     @NFloat
     public native double rollAngle();
 
-    /**
-     * yawAngle</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVMetadataFaceObject_Class/index.html#//apple_ref/occ/instp/AVMetadataFaceObject/yawAngle">iOS Dev Center</a>
-     */
     @Generated
     @Selector("yawAngle")
     @NFloat

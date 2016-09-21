@@ -167,18 +167,10 @@ public class MKPolygonRenderer extends MKOverlayPathRenderer {
     @Selector("initWithOverlay:")
     public native MKPolygonRenderer initWithOverlay(@Mapped(ObjCObjectMapper.class) MKOverlay overlay);
 
-    /**
-     * initWithPolygon:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKPolygonRenderer_clas/index.html#//apple_ref/occ/instm/MKPolygonRenderer/initWithPolygon:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithPolygon:")
     public native MKPolygonRenderer initWithPolygon(MKPolygon polygon);
 
-    /**
-     * polygon</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKPolygonRenderer_clas/index.html#//apple_ref/occ/instp/MKPolygonRenderer/polygon">iOS Dev Center</a>
-     */
     @Generated
     @Selector("polygon")
     public native MKPolygon polygon();

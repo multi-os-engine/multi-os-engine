@@ -37,10 +37,6 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("UISplitViewControllerDelegate")
 public interface UISplitViewControllerDelegate {
-    /**
-     * primaryViewControllerForCollapsingSplitViewController:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISplitViewControllerDelegate_protocol/index.html#//apple_ref/occ/intfm/UISplitViewControllerDelegate/primaryViewControllerForCollapsingSplitViewController:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("primaryViewControllerForCollapsingSplitViewController:")
@@ -49,10 +45,6 @@ public interface UISplitViewControllerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * primaryViewControllerForExpandingSplitViewController:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISplitViewControllerDelegate_protocol/index.html#//apple_ref/occ/intfm/UISplitViewControllerDelegate/primaryViewControllerForExpandingSplitViewController:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("primaryViewControllerForExpandingSplitViewController:")
@@ -61,10 +53,6 @@ public interface UISplitViewControllerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * splitViewController:collapseSecondaryViewController:ontoPrimaryViewController:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISplitViewControllerDelegate_protocol/index.html#//apple_ref/occ/intfm/UISplitViewControllerDelegate/splitViewController:collapseSecondaryViewController:ontoPrimaryViewController:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("splitViewController:collapseSecondaryViewController:ontoPrimaryViewController:")
@@ -74,10 +62,6 @@ public interface UISplitViewControllerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * splitViewController:popoverController:willPresentViewController:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISplitViewControllerDelegate_protocol/index.html#//apple_ref/occ/intfm/UISplitViewControllerDelegate/splitViewController:popoverController:willPresentViewController:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Deprecated
@@ -87,10 +71,6 @@ public interface UISplitViewControllerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * splitViewController:separateSecondaryViewControllerFromPrimaryViewController:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISplitViewControllerDelegate_protocol/index.html#//apple_ref/occ/intfm/UISplitViewControllerDelegate/splitViewController:separateSecondaryViewControllerFromPrimaryViewController:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("splitViewController:separateSecondaryViewControllerFromPrimaryViewController:")
@@ -99,10 +79,6 @@ public interface UISplitViewControllerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * splitViewController:shouldHideViewController:inOrientation:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISplitViewControllerDelegate_protocol/index.html#//apple_ref/occ/intfm/UISplitViewControllerDelegate/splitViewController:shouldHideViewController:inOrientation:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Deprecated
@@ -112,10 +88,6 @@ public interface UISplitViewControllerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * splitViewController:showDetailViewController:sender:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISplitViewControllerDelegate_protocol/index.html#//apple_ref/occ/intfm/UISplitViewControllerDelegate/splitViewController:showDetailViewController:sender:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("splitViewController:showDetailViewController:sender:")
@@ -124,10 +96,6 @@ public interface UISplitViewControllerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * splitViewController:showViewController:sender:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISplitViewControllerDelegate_protocol/index.html#//apple_ref/occ/intfm/UISplitViewControllerDelegate/splitViewController:showViewController:sender:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("splitViewController:showViewController:sender:")
@@ -136,10 +104,6 @@ public interface UISplitViewControllerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * splitViewController:willChangeToDisplayMode:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISplitViewControllerDelegate_protocol/index.html#//apple_ref/occ/intfm/UISplitViewControllerDelegate/splitViewController:willChangeToDisplayMode:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("splitViewController:willChangeToDisplayMode:")
@@ -147,10 +111,6 @@ public interface UISplitViewControllerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * splitViewController:willHideViewController:withBarButtonItem:forPopoverController:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISplitViewControllerDelegate_protocol/index.html#//apple_ref/occ/intfm/UISplitViewControllerDelegate/splitViewController:willHideViewController:withBarButtonItem:forPopoverController:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Deprecated
@@ -161,10 +121,6 @@ public interface UISplitViewControllerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * splitViewController:willShowViewController:invalidatingBarButtonItem:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISplitViewControllerDelegate_protocol/index.html#//apple_ref/occ/intfm/UISplitViewControllerDelegate/splitViewController:willShowViewController:invalidatingBarButtonItem:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Deprecated
@@ -174,10 +130,6 @@ public interface UISplitViewControllerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * splitViewControllerPreferredInterfaceOrientationForPresentation:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISplitViewControllerDelegate_protocol/index.html#//apple_ref/occ/intfm/UISplitViewControllerDelegate/splitViewControllerPreferredInterfaceOrientationForPresentation:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("splitViewControllerPreferredInterfaceOrientationForPresentation:")
@@ -187,10 +139,6 @@ public interface UISplitViewControllerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * splitViewControllerSupportedInterfaceOrientations:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISplitViewControllerDelegate_protocol/index.html#//apple_ref/occ/intfm/UISplitViewControllerDelegate/splitViewControllerSupportedInterfaceOrientations:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("splitViewControllerSupportedInterfaceOrientations:")
@@ -199,10 +147,6 @@ public interface UISplitViewControllerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * targetDisplayModeForActionInSplitViewController:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISplitViewControllerDelegate_protocol/index.html#//apple_ref/occ/intfm/UISplitViewControllerDelegate/targetDisplayModeForActionInSplitViewController:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("targetDisplayModeForActionInSplitViewController:")

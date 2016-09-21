@@ -42,39 +42,23 @@ public final class GameController {
     private GameController() {
     }
 
-    /**
-     * GCGamepadSnapShotDataV100FromNSData</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameController/Reference/GameControllerFunctionsRef/index.html#//apple_ref/c/func/GCGamepadSnapShotDataV100FromNSData">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native boolean GCGamepadSnapShotDataV100FromNSData(
             @UncertainArgument("Options: reference, array Fallback: reference") GCGamepadSnapShotDataV100 snapshotData,
             NSData data);
 
-    /**
-     * NSDataFromGCGamepadSnapShotDataV100</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameController/Reference/GameControllerFunctionsRef/index.html#//apple_ref/c/func/NSDataFromGCGamepadSnapShotDataV100">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native NSData NSDataFromGCGamepadSnapShotDataV100(
             @UncertainArgument("Options: reference, array Fallback: reference") GCGamepadSnapShotDataV100 snapshotData);
 
-    /**
-     * GCExtendedGamepadSnapShotDataV100FromNSData</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameController/Reference/GameControllerFunctionsRef/index.html#//apple_ref/c/func/GCExtendedGamepadSnapShotDataV100FromNSData">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native boolean GCExtendedGamepadSnapShotDataV100FromNSData(
             @UncertainArgument("Options: reference, array Fallback: reference") GCExtendedGamepadSnapShotDataV100 snapshotData,
             NSData data);
 
-    /**
-     * NSDataFromGCExtendedGamepadSnapShotDataV100</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameController/Reference/GameControllerFunctionsRef/index.html#//apple_ref/c/func/NSDataFromGCExtendedGamepadSnapShotDataV100">iOS Dev Center</a>
-     */
     @Generated
     @CFunction
     public static native NSData NSDataFromGCExtendedGamepadSnapShotDataV100(

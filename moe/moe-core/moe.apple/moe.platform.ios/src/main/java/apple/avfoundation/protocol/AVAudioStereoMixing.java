@@ -28,18 +28,10 @@ import org.moe.natj.objc.ann.Selector;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("AVAudioStereoMixing")
 public interface AVAudioStereoMixing {
-    /**
-     * pan</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioStereoMixing_Protocol/index.html#//apple_ref/occ/intfp/AVAudioStereoMixing/pan">iOS Dev Center</a>
-     */
     @Generated
     @Selector("pan")
     float pan();
 
-    /**
-     * pan</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioStereoMixing_Protocol/index.html#//apple_ref/occ/intfp/AVAudioStereoMixing/pan">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setPan:")
     void setPan(float value);

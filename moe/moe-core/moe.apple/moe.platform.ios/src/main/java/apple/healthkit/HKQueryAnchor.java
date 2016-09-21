@@ -62,10 +62,6 @@ public class HKQueryAnchor extends NSObject implements NSSecureCoding, NSCopying
     @Selector("alloc")
     public static native HKQueryAnchor alloc();
 
-    /**
-     * anchorFromValue:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HealthKit/Reference/HKQueryAnchor_Class/index.html#//apple_ref/occ/clm/HKQueryAnchor/anchorFromValue:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("anchorFromValue:")
     public static native HKQueryAnchor anchorFromValue(@NUInt long value);

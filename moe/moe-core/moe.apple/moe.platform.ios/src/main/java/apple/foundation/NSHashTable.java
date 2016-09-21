@@ -60,18 +60,10 @@ public class NSHashTable<_ObjectType> extends NSObject implements NSCopying, NSC
     @Selector("alloc")
     public static native NSHashTable<?> alloc();
 
-    /**
-     * hashTableWithOptions:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSHashTable_class/index.html#//apple_ref/occ/clm/NSHashTable/hashTableWithOptions:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("hashTableWithOptions:")
     public static native <_ObjectType> NSHashTable<_ObjectType> hashTableWithOptions(@NUInt long options);
 
-    /**
-     * weakObjectsHashTable</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSHashTable_class/index.html#//apple_ref/occ/clm/NSHashTable/weakObjectsHashTable">iOS Dev Center</a>
-     */
     @Generated
     @Selector("weakObjectsHashTable")
     public static native <_ObjectType> NSHashTable<_ObjectType> weakObjectsHashTable();
@@ -176,35 +168,19 @@ public class NSHashTable<_ObjectType> extends NSObject implements NSCopying, NSC
     @NInt
     public static native long version_static();
 
-    /**
-     * addObject:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSHashTable_class/index.html#//apple_ref/occ/instm/NSHashTable/addObject:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("addObject:")
     public native void addObject(@Mapped(ObjCObjectMapper.class) _ObjectType object);
 
-    /**
-     * allObjects</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSHashTable_class/index.html#//apple_ref/occ/instp/NSHashTable/allObjects">iOS Dev Center</a>
-     */
     @Generated
     @Selector("allObjects")
     public native NSArray<_ObjectType> allObjects();
 
-    /**
-     * anyObject</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSHashTable_class/index.html#//apple_ref/occ/instp/NSHashTable/anyObject">iOS Dev Center</a>
-     */
     @MappedReturn(ObjCObjectMapper.class)
     @Generated
     @Selector("anyObject")
     public native _ObjectType anyObject();
 
-    /**
-     * containsObject:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSHashTable_class/index.html#//apple_ref/occ/instm/NSHashTable/containsObject:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("containsObject:")
     public native boolean containsObject(@Mapped(ObjCObjectMapper.class) _ObjectType anObject);
@@ -215,10 +191,6 @@ public class NSHashTable<_ObjectType> extends NSObject implements NSCopying, NSC
     @MappedReturn(ObjCObjectMapper.class)
     public native Object copyWithZone(VoidPtr zone);
 
-    /**
-     * count</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSHashTable_class/index.html#//apple_ref/occ/instp/NSHashTable/count">iOS Dev Center</a>
-     */
     @Generated
     @Selector("count")
     @NUInt
@@ -241,116 +213,60 @@ public class NSHashTable<_ObjectType> extends NSObject implements NSCopying, NSC
     @Selector("initWithCoder:")
     public native NSHashTable<?> initWithCoder(NSCoder aDecoder);
 
-    /**
-     * initWithOptions:capacity:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSHashTable_class/index.html#//apple_ref/occ/instm/NSHashTable/initWithOptions:capacity:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithOptions:capacity:")
     public native NSHashTable<?> initWithOptionsCapacity(@NUInt long options, @NUInt long initialCapacity);
 
-    /**
-     * initWithPointerFunctions:capacity:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSHashTable_class/index.html#//apple_ref/occ/instm/NSHashTable/initWithPointerFunctions:capacity:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithPointerFunctions:capacity:")
     public native NSHashTable<?> initWithPointerFunctionsCapacity(NSPointerFunctions functions,
             @NUInt long initialCapacity);
 
-    /**
-     * intersectHashTable:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSHashTable_class/index.html#//apple_ref/occ/instm/NSHashTable/intersectHashTable:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("intersectHashTable:")
     public native void intersectHashTable(NSHashTable<_ObjectType> other);
 
-    /**
-     * intersectsHashTable:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSHashTable_class/index.html#//apple_ref/occ/instm/NSHashTable/intersectsHashTable:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("intersectsHashTable:")
     public native boolean intersectsHashTable(NSHashTable<_ObjectType> other);
 
-    /**
-     * isEqualToHashTable:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSHashTable_class/index.html#//apple_ref/occ/instm/NSHashTable/isEqualToHashTable:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("isEqualToHashTable:")
     public native boolean isEqualToHashTable(NSHashTable<_ObjectType> other);
 
-    /**
-     * isSubsetOfHashTable:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSHashTable_class/index.html#//apple_ref/occ/instm/NSHashTable/isSubsetOfHashTable:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("isSubsetOfHashTable:")
     public native boolean isSubsetOfHashTable(NSHashTable<_ObjectType> other);
 
-    /**
-     * member:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSHashTable_class/index.html#//apple_ref/occ/instm/NSHashTable/member:">iOS Dev Center</a>
-     */
     @MappedReturn(ObjCObjectMapper.class)
     @Generated
     @Selector("member:")
     public native _ObjectType member(@Mapped(ObjCObjectMapper.class) _ObjectType object);
 
-    /**
-     * minusHashTable:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSHashTable_class/index.html#//apple_ref/occ/instm/NSHashTable/minusHashTable:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("minusHashTable:")
     public native void minusHashTable(NSHashTable<_ObjectType> other);
 
-    /**
-     * objectEnumerator</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSHashTable_class/index.html#//apple_ref/occ/instm/NSHashTable/objectEnumerator">iOS Dev Center</a>
-     */
     @Generated
     @Selector("objectEnumerator")
     public native NSEnumerator<_ObjectType> objectEnumerator();
 
-    /**
-     * pointerFunctions</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSHashTable_class/index.html#//apple_ref/occ/instp/NSHashTable/pointerFunctions">iOS Dev Center</a>
-     */
     @Generated
     @Selector("pointerFunctions")
     public native NSPointerFunctions pointerFunctions();
 
-    /**
-     * removeAllObjects</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSHashTable_class/index.html#//apple_ref/occ/instm/NSHashTable/removeAllObjects">iOS Dev Center</a>
-     */
     @Generated
     @Selector("removeAllObjects")
     public native void removeAllObjects();
 
-    /**
-     * removeObject:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSHashTable_class/index.html#//apple_ref/occ/instm/NSHashTable/removeObject:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("removeObject:")
     public native void removeObject(@Mapped(ObjCObjectMapper.class) _ObjectType object);
 
-    /**
-     * setRepresentation</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSHashTable_class/index.html#//apple_ref/occ/instp/NSHashTable/setRepresentation">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setRepresentation")
     public native NSSet<_ObjectType> setRepresentation();
 
-    /**
-     * unionHashTable:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSHashTable_class/index.html#//apple_ref/occ/instm/NSHashTable/unionHashTable:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("unionHashTable:")
     public native void unionHashTable(NSHashTable<_ObjectType> other);

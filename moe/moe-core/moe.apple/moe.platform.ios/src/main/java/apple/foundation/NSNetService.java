@@ -57,18 +57,10 @@ public class NSNetService extends NSObject {
     @Selector("alloc")
     public static native NSNetService alloc();
 
-    /**
-     * dataFromTXTRecordDictionary:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSNetService_Class/index.html#//apple_ref/occ/clm/NSNetService/dataFromTXTRecordDictionary:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("dataFromTXTRecordDictionary:")
     public static native NSData dataFromTXTRecordDictionary(NSDictionary<String, ? extends NSData> txtDictionary);
 
-    /**
-     * dictionaryFromTXTRecordData:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSNetService_Class/index.html#//apple_ref/occ/clm/NSNetService/dictionaryFromTXTRecordData:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("dictionaryFromTXTRecordData:")
     public static native NSDictionary<String, ? extends NSData> dictionaryFromTXTRecordData(NSData txtData);
@@ -173,59 +165,31 @@ public class NSNetService extends NSObject {
     @NInt
     public static native long version_static();
 
-    /**
-     * TXTRecordData</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSNetService_Class/index.html#//apple_ref/occ/instm/NSNetService/TXTRecordData">iOS Dev Center</a>
-     */
     @Generated
     @Selector("TXTRecordData")
     public native NSData TXTRecordData();
 
-    /**
-     * addresses</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSNetService_Class/index.html#//apple_ref/occ/instp/NSNetService/addresses">iOS Dev Center</a>
-     */
     @Generated
     @Selector("addresses")
     public native NSArray<? extends NSData> addresses();
 
-    /**
-     * delegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSNetService_Class/index.html#//apple_ref/occ/instp/NSNetService/delegate">iOS Dev Center</a>
-     */
     @Generated
     @Selector("delegate")
     @MappedReturn(ObjCObjectMapper.class)
     public native NSNetServiceDelegate delegate();
 
-    /**
-     * domain</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSNetService_Class/index.html#//apple_ref/occ/instp/NSNetService/domain">iOS Dev Center</a>
-     */
     @Generated
     @Selector("domain")
     public native String domain();
 
-    /**
-     * getInputStream:outputStream:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSNetService_Class/index.html#//apple_ref/occ/instm/NSNetService/getInputStream:outputStream:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("getInputStream:outputStream:")
     public native boolean getInputStreamOutputStream(Ptr<NSInputStream> inputStream, Ptr<NSOutputStream> outputStream);
 
-    /**
-     * hostName</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSNetService_Class/index.html#//apple_ref/occ/instp/NSNetService/hostName">iOS Dev Center</a>
-     */
     @Generated
     @Selector("hostName")
     public native String hostName();
 
-    /**
-     * includesPeerToPeer</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSNetService_Class/index.html#//apple_ref/occ/instp/NSNetService/includesPeerToPeer">iOS Dev Center</a>
-     */
     @Generated
     @Selector("includesPeerToPeer")
     public native boolean includesPeerToPeer();
@@ -234,100 +198,52 @@ public class NSNetService extends NSObject {
     @Selector("init")
     public native NSNetService init();
 
-    /**
-     * initWithDomain:type:name:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSNetService_Class/index.html#//apple_ref/occ/instm/NSNetService/initWithDomain:type:name:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithDomain:type:name:")
     public native NSNetService initWithDomainTypeName(String domain, String type, String name);
 
-    /**
-     * initWithDomain:type:name:port:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSNetService_Class/index.html#//apple_ref/occ/instm/NSNetService/initWithDomain:type:name:port:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithDomain:type:name:port:")
     public native NSNetService initWithDomainTypeNamePort(String domain, String type, String name, int port);
 
-    /**
-     * name</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSNetService_Class/index.html#//apple_ref/occ/instp/NSNetService/name">iOS Dev Center</a>
-     */
     @Generated
     @Selector("name")
     public native String name();
 
-    /**
-     * port</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSNetService_Class/index.html#//apple_ref/occ/instp/NSNetService/port">iOS Dev Center</a>
-     */
     @Generated
     @Selector("port")
     @NInt
     public native long port();
 
-    /**
-     * publish</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSNetService_Class/index.html#//apple_ref/occ/instm/NSNetService/publish">iOS Dev Center</a>
-     */
     @Generated
     @Selector("publish")
     public native void publish();
 
-    /**
-     * publishWithOptions:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSNetService_Class/index.html#//apple_ref/occ/instm/NSNetService/publishWithOptions:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("publishWithOptions:")
     public native void publishWithOptions(@NUInt long options);
 
-    /**
-     * removeFromRunLoop:forMode:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSNetService_Class/index.html#//apple_ref/occ/instm/NSNetService/removeFromRunLoop:forMode:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("removeFromRunLoop:forMode:")
     public native void removeFromRunLoopForMode(NSRunLoop aRunLoop, String mode);
 
-    /**
-     * resolve</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSNetService_Class/index.html#//apple_ref/occ/instm/NSNetService/resolve">iOS Dev Center</a>
-     */
     @Generated
     @Deprecated
     @Selector("resolve")
     public native void resolve();
 
-    /**
-     * resolveWithTimeout:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSNetService_Class/index.html#//apple_ref/occ/instm/NSNetService/resolveWithTimeout:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("resolveWithTimeout:")
     public native void resolveWithTimeout(double timeout);
 
-    /**
-     * scheduleInRunLoop:forMode:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSNetService_Class/index.html#//apple_ref/occ/instm/NSNetService/scheduleInRunLoop:forMode:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("scheduleInRunLoop:forMode:")
     public native void scheduleInRunLoopForMode(NSRunLoop aRunLoop, String mode);
 
-    /**
-     * delegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSNetService_Class/index.html#//apple_ref/occ/instp/NSNetService/delegate">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setDelegate:")
     public native void setDelegate_unsafe(@Mapped(ObjCObjectMapper.class) NSNetServiceDelegate value);
 
-    /**
-     * delegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSNetService_Class/index.html#//apple_ref/occ/instp/NSNetService/delegate">iOS Dev Center</a>
-     */
     @Generated
     public void setDelegate(@Mapped(ObjCObjectMapper.class) NSNetServiceDelegate value) {
         Object __old = delegate();
@@ -340,50 +256,26 @@ public class NSNetService extends NSObject {
         }
     }
 
-    /**
-     * includesPeerToPeer</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSNetService_Class/index.html#//apple_ref/occ/instp/NSNetService/includesPeerToPeer">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setIncludesPeerToPeer:")
     public native void setIncludesPeerToPeer(boolean value);
 
-    /**
-     * setTXTRecordData:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSNetService_Class/index.html#//apple_ref/occ/instm/NSNetService/setTXTRecordData:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setTXTRecordData:")
     public native boolean setTXTRecordData(NSData recordData);
 
-    /**
-     * startMonitoring</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSNetService_Class/index.html#//apple_ref/occ/instm/NSNetService/startMonitoring">iOS Dev Center</a>
-     */
     @Generated
     @Selector("startMonitoring")
     public native void startMonitoring();
 
-    /**
-     * stop</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSNetService_Class/index.html#//apple_ref/occ/instm/NSNetService/stop">iOS Dev Center</a>
-     */
     @Generated
     @Selector("stop")
     public native void stop();
 
-    /**
-     * stopMonitoring</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSNetService_Class/index.html#//apple_ref/occ/instm/NSNetService/stopMonitoring">iOS Dev Center</a>
-     */
     @Generated
     @Selector("stopMonitoring")
     public native void stopMonitoring();
 
-    /**
-     * type</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSNetService_Class/index.html#//apple_ref/occ/instp/NSNetService/type">iOS Dev Center</a>
-     */
     @Generated
     @Selector("type")
     public native String type();

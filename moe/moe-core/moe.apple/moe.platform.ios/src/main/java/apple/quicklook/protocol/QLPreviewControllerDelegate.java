@@ -38,10 +38,6 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("QLPreviewControllerDelegate")
 public interface QLPreviewControllerDelegate {
-    /**
-     * previewController:frameForPreviewItem:inSourceView:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkingInternet/Reference/QLPreviewControllerDelegate_Protocol/index.html#//apple_ref/occ/intfm/QLPreviewControllerDelegate/previewController:frameForPreviewItem:inSourceView:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("previewController:frameForPreviewItem:inSourceView:")
@@ -51,10 +47,6 @@ public interface QLPreviewControllerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * previewController:shouldOpenURL:forPreviewItem:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkingInternet/Reference/QLPreviewControllerDelegate_Protocol/index.html#//apple_ref/occ/intfm/QLPreviewControllerDelegate/previewController:shouldOpenURL:forPreviewItem:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("previewController:shouldOpenURL:forPreviewItem:")
@@ -63,10 +55,6 @@ public interface QLPreviewControllerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * previewController:transitionImageForPreviewItem:contentRect:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkingInternet/Reference/QLPreviewControllerDelegate_Protocol/index.html#//apple_ref/occ/intfm/QLPreviewControllerDelegate/previewController:transitionImageForPreviewItem:contentRect:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("previewController:transitionImageForPreviewItem:contentRect:")
@@ -75,10 +63,6 @@ public interface QLPreviewControllerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * previewControllerDidDismiss:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkingInternet/Reference/QLPreviewControllerDelegate_Protocol/index.html#//apple_ref/occ/intfm/QLPreviewControllerDelegate/previewControllerDidDismiss:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("previewControllerDidDismiss:")
@@ -86,10 +70,6 @@ public interface QLPreviewControllerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    /**
-     * previewControllerWillDismiss:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkingInternet/Reference/QLPreviewControllerDelegate_Protocol/index.html#//apple_ref/occ/intfm/QLPreviewControllerDelegate/previewControllerWillDismiss:">iOS Dev Center</a>
-     */
     @Generated
     @IsOptional
     @Selector("previewControllerWillDismiss:")

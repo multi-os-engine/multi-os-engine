@@ -61,10 +61,6 @@ public class SCNAnimationEvent extends NSObject {
     @Selector("alloc")
     public static native SCNAnimationEvent alloc();
 
-    /**
-     * animationEventWithKeyTime:block:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNAnimationEvent_Class/index.html#//apple_ref/occ/clm/SCNAnimationEvent/animationEventWithKeyTime:block:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("animationEventWithKeyTime:block:")
     public static native SCNAnimationEvent animationEventWithKeyTimeBlock(@NFloat double time,

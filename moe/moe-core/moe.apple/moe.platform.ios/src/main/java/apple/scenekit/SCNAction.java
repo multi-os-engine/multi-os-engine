@@ -67,193 +67,101 @@ public class SCNAction extends NSObject implements NSCopying, NSSecureCoding {
     @Selector("alloc")
     public static native SCNAction alloc();
 
-    /**
-     * customActionWithDuration:actionBlock:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNAction_Class/index.html#//apple_ref/occ/clm/SCNAction/customActionWithDuration:actionBlock:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("customActionWithDuration:actionBlock:")
     public static native SCNAction customActionWithDurationActionBlock(double seconds,
             @ObjCBlock(name = "call_customActionWithDurationActionBlock") Block_customActionWithDurationActionBlock block);
 
-    /**
-     * fadeInWithDuration:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNAction_Class/index.html#//apple_ref/occ/clm/SCNAction/fadeInWithDuration:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("fadeInWithDuration:")
     public static native SCNAction fadeInWithDuration(double sec);
 
-    /**
-     * fadeOpacityBy:duration:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNAction_Class/index.html#//apple_ref/occ/clm/SCNAction/fadeOpacityBy:duration:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("fadeOpacityBy:duration:")
     public static native SCNAction fadeOpacityByDuration(@NFloat double factor, double sec);
 
-    /**
-     * fadeOpacityTo:duration:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNAction_Class/index.html#//apple_ref/occ/clm/SCNAction/fadeOpacityTo:duration:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("fadeOpacityTo:duration:")
     public static native SCNAction fadeOpacityToDuration(@NFloat double opacity, double sec);
 
-    /**
-     * fadeOutWithDuration:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNAction_Class/index.html#//apple_ref/occ/clm/SCNAction/fadeOutWithDuration:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("fadeOutWithDuration:")
     public static native SCNAction fadeOutWithDuration(double sec);
 
-    /**
-     * group:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNAction_Class/index.html#//apple_ref/occ/clm/SCNAction/group:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("group:")
     public static native SCNAction group(NSArray<? extends SCNAction> actions);
 
-    /**
-     * javaScriptActionWithScript:duration:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNAction_Class/index.html#//apple_ref/occ/clm/SCNAction/javaScriptActionWithScript:duration:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("javaScriptActionWithScript:duration:")
     public static native SCNAction javaScriptActionWithScriptDuration(String script, double seconds);
 
-    /**
-     * moveBy:duration:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNAction_Class/index.html#//apple_ref/occ/clm/SCNAction/moveBy:duration:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("moveBy:duration:")
     public static native SCNAction moveByDuration(@ByValue SCNVector3 delta, double duration);
 
-    /**
-     * moveByX:y:z:duration:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNAction_Class/index.html#//apple_ref/occ/clm/SCNAction/moveByX:y:z:duration:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("moveByX:y:z:duration:")
     public static native SCNAction moveByXYZDuration(@NFloat double deltaX, @NFloat double deltaY,
             @NFloat double deltaZ, double duration);
 
-    /**
-     * moveTo:duration:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNAction_Class/index.html#//apple_ref/occ/clm/SCNAction/moveTo:duration:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("moveTo:duration:")
     public static native SCNAction moveToDuration(@ByValue SCNVector3 location, double duration);
 
-    /**
-     * removeFromParentNode</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNAction_Class/index.html#//apple_ref/occ/clm/SCNAction/removeFromParentNode">iOS Dev Center</a>
-     */
     @Generated
     @Selector("removeFromParentNode")
     public static native SCNAction removeFromParentNode();
 
-    /**
-     * repeatAction:count:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNAction_Class/index.html#//apple_ref/occ/clm/SCNAction/repeatAction:count:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("repeatAction:count:")
     public static native SCNAction repeatActionCount(SCNAction action, @NUInt long count);
 
-    /**
-     * repeatActionForever:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNAction_Class/index.html#//apple_ref/occ/clm/SCNAction/repeatActionForever:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("repeatActionForever:")
     public static native SCNAction repeatActionForever(SCNAction action);
 
-    /**
-     * rotateByAngle:aroundAxis:duration:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNAction_Class/index.html#//apple_ref/occ/clm/SCNAction/rotateByAngle:aroundAxis:duration:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("rotateByAngle:aroundAxis:duration:")
     public static native SCNAction rotateByAngleAroundAxisDuration(@NFloat double angle, @ByValue SCNVector3 axis,
             double duration);
 
-    /**
-     * rotateByX:y:z:duration:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNAction_Class/index.html#//apple_ref/occ/clm/SCNAction/rotateByX:y:z:duration:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("rotateByX:y:z:duration:")
     public static native SCNAction rotateByXYZDuration(@NFloat double xAngle, @NFloat double yAngle,
             @NFloat double zAngle, double duration);
 
-    /**
-     * rotateToAxisAngle:duration:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNAction_Class/index.html#//apple_ref/occ/clm/SCNAction/rotateToAxisAngle:duration:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("rotateToAxisAngle:duration:")
     public static native SCNAction rotateToAxisAngleDuration(@ByValue SCNVector4 axisAngle, double duration);
 
-    /**
-     * rotateToX:y:z:duration:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNAction_Class/index.html#//apple_ref/occ/clm/SCNAction/rotateToX:y:z:duration:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("rotateToX:y:z:duration:")
     public static native SCNAction rotateToXYZDuration(@NFloat double xAngle, @NFloat double yAngle,
             @NFloat double zAngle, double duration);
 
-    /**
-     * rotateToX:y:z:duration:shortestUnitArc:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNAction_Class/index.html#//apple_ref/occ/clm/SCNAction/rotateToX:y:z:duration:shortestUnitArc:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("rotateToX:y:z:duration:shortestUnitArc:")
     public static native SCNAction rotateToXYZDurationShortestUnitArc(@NFloat double xAngle, @NFloat double yAngle,
             @NFloat double zAngle, double duration, boolean shortestUnitArc);
 
-    /**
-     * runBlock:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNAction_Class/index.html#//apple_ref/occ/clm/SCNAction/runBlock:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("runBlock:")
     public static native SCNAction runBlock(@ObjCBlock(name = "call_runBlock") Block_runBlock block);
 
-    /**
-     * runBlock:queue:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNAction_Class/index.html#//apple_ref/occ/clm/SCNAction/runBlock:queue:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("runBlock:queue:")
     public static native SCNAction runBlockQueue(@ObjCBlock(name = "call_runBlockQueue") Block_runBlockQueue block,
             NSObject queue);
 
-    /**
-     * scaleBy:duration:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNAction_Class/index.html#//apple_ref/occ/clm/SCNAction/scaleBy:duration:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("scaleBy:duration:")
     public static native SCNAction scaleByDuration(@NFloat double scale, double sec);
 
-    /**
-     * scaleTo:duration:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNAction_Class/index.html#//apple_ref/occ/clm/SCNAction/scaleTo:duration:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("scaleTo:duration:")
     public static native SCNAction scaleToDuration(@NFloat double scale, double sec);
 
-    /**
-     * sequence:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNAction_Class/index.html#//apple_ref/occ/clm/SCNAction/sequence:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("sequence:")
     public static native SCNAction sequence(NSArray<? extends SCNAction> actions);
@@ -262,42 +170,22 @@ public class SCNAction extends NSObject implements NSCopying, NSSecureCoding {
     @Selector("supportsSecureCoding")
     public static native boolean supportsSecureCoding();
 
-    /**
-     * waitForDuration:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNAction_Class/index.html#//apple_ref/occ/clm/SCNAction/waitForDuration:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("waitForDuration:")
     public static native SCNAction waitForDuration(double sec);
 
-    /**
-     * waitForDuration:withRange:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNAction_Class/index.html#//apple_ref/occ/clm/SCNAction/waitForDuration:withRange:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("waitForDuration:withRange:")
     public static native SCNAction waitForDurationWithRange(double sec, double durationRange);
 
-    /**
-     * hide</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNAction_Class/index.html#//apple_ref/occ/clm/SCNAction/hide">iOS Dev Center</a>
-     */
     @Generated
     @Selector("hide")
     public static native SCNAction hide();
 
-    /**
-     * playAudioSource:waitForCompletion:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNAction_Class/index.html#//apple_ref/occ/clm/SCNAction/playAudioSource:waitForCompletion:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("playAudioSource:waitForCompletion:")
     public static native SCNAction playAudioSourceWaitForCompletion(SCNAudioSource source, boolean wait_);
 
-    /**
-     * unhide</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNAction_Class/index.html#//apple_ref/occ/clm/SCNAction/unhide">iOS Dev Center</a>
-     */
     @Generated
     @Selector("unhide")
     public static native SCNAction unhide();
@@ -408,10 +296,6 @@ public class SCNAction extends NSObject implements NSCopying, NSSecureCoding {
     @MappedReturn(ObjCObjectMapper.class)
     public native Object copyWithZone(VoidPtr zone);
 
-    /**
-     * duration</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNAction_Class/index.html#//apple_ref/occ/instp/SCNAction/duration">iOS Dev Center</a>
-     */
     @Generated
     @Selector("duration")
     public native double duration();
@@ -428,50 +312,26 @@ public class SCNAction extends NSObject implements NSCopying, NSSecureCoding {
     @Selector("initWithCoder:")
     public native SCNAction initWithCoder(NSCoder aDecoder);
 
-    /**
-     * reversedAction</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNAction_Class/index.html#//apple_ref/occ/instm/SCNAction/reversedAction">iOS Dev Center</a>
-     */
     @Generated
     @Selector("reversedAction")
     public native SCNAction reversedAction();
 
-    /**
-     * duration</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNAction_Class/index.html#//apple_ref/occ/instp/SCNAction/duration">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setDuration:")
     public native void setDuration(double value);
 
-    /**
-     * speed</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNAction_Class/index.html#//apple_ref/occ/instp/SCNAction/speed">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setSpeed:")
     public native void setSpeed(@NFloat double value);
 
-    /**
-     * timingFunction</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNAction_Class/index.html#//apple_ref/occ/instp/SCNAction/timingFunction">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setTimingFunction:")
     public native void setTimingFunction(@ObjCBlock(name = "call_setTimingFunction") Block_setTimingFunction value);
 
-    /**
-     * timingMode</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNAction_Class/index.html#//apple_ref/occ/instp/SCNAction/timingMode">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setTimingMode:")
     public native void setTimingMode(@NInt long value);
 
-    /**
-     * speed</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNAction_Class/index.html#//apple_ref/occ/instp/SCNAction/speed">iOS Dev Center</a>
-     */
     @Generated
     @Selector("speed")
     @NFloat
@@ -483,19 +343,11 @@ public class SCNAction extends NSObject implements NSCopying, NSSecureCoding {
         return supportsSecureCoding();
     }
 
-    /**
-     * timingMode</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNAction_Class/index.html#//apple_ref/occ/instp/SCNAction/timingMode">iOS Dev Center</a>
-     */
     @Generated
     @Selector("timingMode")
     @NInt
     public native long timingMode();
 
-    /**
-     * timingFunction</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNAction_Class/index.html#//apple_ref/occ/instp/SCNAction/timingFunction">iOS Dev Center</a>
-     */
     @Generated
     @Selector("timingFunction")
     @ObjCBlock(name = "call_timingFunction_ret")

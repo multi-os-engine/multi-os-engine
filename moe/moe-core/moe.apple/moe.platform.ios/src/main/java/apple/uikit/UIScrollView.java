@@ -351,94 +351,50 @@ public class UIScrollView extends UIView implements NSCoding {
     @NInt
     public static native long version_static();
 
-    /**
-     * alwaysBounceHorizontal</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIScrollView_Class/index.html#//apple_ref/occ/instp/UIScrollView/alwaysBounceHorizontal">iOS Dev Center</a>
-     */
     @Generated
     @Selector("alwaysBounceHorizontal")
     public native boolean alwaysBounceHorizontal();
 
-    /**
-     * alwaysBounceVertical</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIScrollView_Class/index.html#//apple_ref/occ/instp/UIScrollView/alwaysBounceVertical">iOS Dev Center</a>
-     */
     @Generated
     @Selector("alwaysBounceVertical")
     public native boolean alwaysBounceVertical();
 
-    /**
-     * bounces</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIScrollView_Class/index.html#//apple_ref/occ/instp/UIScrollView/bounces">iOS Dev Center</a>
-     */
     @Generated
     @Selector("bounces")
     public native boolean bounces();
 
-    /**
-     * bouncesZoom</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIScrollView_Class/index.html#//apple_ref/occ/instp/UIScrollView/bouncesZoom">iOS Dev Center</a>
-     */
     @Generated
     @Selector("bouncesZoom")
     public native boolean bouncesZoom();
 
-    /**
-     * canCancelContentTouches</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIScrollView_Class/index.html#//apple_ref/occ/instp/UIScrollView/canCancelContentTouches">iOS Dev Center</a>
-     */
     @Generated
     @Selector("canCancelContentTouches")
     public native boolean canCancelContentTouches();
 
-    /**
-     * contentInset</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIScrollView_Class/index.html#//apple_ref/occ/instp/UIScrollView/contentInset">iOS Dev Center</a>
-     */
     @Generated
     @Selector("contentInset")
     @ByValue
     public native UIEdgeInsets contentInset();
 
-    /**
-     * contentOffset</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIScrollView_Class/index.html#//apple_ref/occ/instp/UIScrollView/contentOffset">iOS Dev Center</a>
-     */
     @Generated
     @Selector("contentOffset")
     @ByValue
     public native CGPoint contentOffset();
 
-    /**
-     * contentSize</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIScrollView_Class/index.html#//apple_ref/occ/instp/UIScrollView/contentSize">iOS Dev Center</a>
-     */
     @Generated
     @Selector("contentSize")
     @ByValue
     public native CGSize contentSize();
 
-    /**
-     * decelerationRate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIScrollView_Class/index.html#//apple_ref/occ/instp/UIScrollView/decelerationRate">iOS Dev Center</a>
-     */
     @Generated
     @Selector("decelerationRate")
     @NFloat
     public native double decelerationRate();
 
-    /**
-     * delaysContentTouches</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIScrollView_Class/index.html#//apple_ref/occ/instp/UIScrollView/delaysContentTouches">iOS Dev Center</a>
-     */
     @Generated
     @Selector("delaysContentTouches")
     public native boolean delaysContentTouches();
 
-    /**
-     * delegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIScrollView_Class/index.html#//apple_ref/occ/instp/UIScrollView/delegate">iOS Dev Center</a>
-     */
     @Generated
     @Selector("delegate")
     @MappedReturn(ObjCObjectMapper.class)
@@ -448,18 +404,10 @@ public class UIScrollView extends UIView implements NSCoding {
     @Selector("encodeWithCoder:")
     public native void encodeWithCoder(NSCoder aCoder);
 
-    /**
-     * flashScrollIndicators</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIScrollView_Class/index.html#//apple_ref/occ/instm/UIScrollView/flashScrollIndicators">iOS Dev Center</a>
-     */
     @Generated
     @Selector("flashScrollIndicators")
     public native void flashScrollIndicators();
 
-    /**
-     * indicatorStyle</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIScrollView_Class/index.html#//apple_ref/occ/instp/UIScrollView/indicatorStyle">iOS Dev Center</a>
-     */
     @Generated
     @Selector("indicatorStyle")
     @NInt
@@ -477,262 +425,134 @@ public class UIScrollView extends UIView implements NSCoding {
     @Selector("initWithFrame:")
     public native UIScrollView initWithFrame(@ByValue CGRect frame);
 
-    /**
-     * decelerating</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIScrollView_Class/index.html#//apple_ref/occ/instp/UIScrollView/decelerating">iOS Dev Center</a>
-     */
     @Generated
     @Selector("isDecelerating")
     public native boolean isDecelerating();
 
-    /**
-     * directionalLockEnabled</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIScrollView_Class/index.html#//apple_ref/occ/instp/UIScrollView/directionalLockEnabled">iOS Dev Center</a>
-     */
     @Generated
     @Selector("isDirectionalLockEnabled")
     public native boolean isDirectionalLockEnabled();
 
-    /**
-     * directionalLockEnabled</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIScrollView_Class/index.html#//apple_ref/occ/instp/UIScrollView/directionalLockEnabled">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setDirectionalLockEnabled:")
     public native void setDirectionalLockEnabled(boolean value);
 
-    /**
-     * dragging</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIScrollView_Class/index.html#//apple_ref/occ/instp/UIScrollView/dragging">iOS Dev Center</a>
-     */
     @Generated
     @Selector("isDragging")
     public native boolean isDragging();
 
-    /**
-     * pagingEnabled</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIScrollView_Class/index.html#//apple_ref/occ/instp/UIScrollView/pagingEnabled">iOS Dev Center</a>
-     */
     @Generated
     @Selector("isPagingEnabled")
     public native boolean isPagingEnabled();
 
-    /**
-     * pagingEnabled</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIScrollView_Class/index.html#//apple_ref/occ/instp/UIScrollView/pagingEnabled">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setPagingEnabled:")
     public native void setPagingEnabled(boolean value);
 
-    /**
-     * scrollEnabled</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIScrollView_Class/index.html#//apple_ref/occ/instp/UIScrollView/scrollEnabled">iOS Dev Center</a>
-     */
     @Generated
     @Selector("isScrollEnabled")
     public native boolean isScrollEnabled();
 
-    /**
-     * scrollEnabled</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIScrollView_Class/index.html#//apple_ref/occ/instp/UIScrollView/scrollEnabled">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setScrollEnabled:")
     public native void setScrollEnabled(boolean value);
 
-    /**
-     * tracking</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIScrollView_Class/index.html#//apple_ref/occ/instp/UIScrollView/tracking">iOS Dev Center</a>
-     */
     @Generated
     @Selector("isTracking")
     public native boolean isTracking();
 
-    /**
-     * zoomBouncing</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIScrollView_Class/index.html#//apple_ref/occ/instp/UIScrollView/zoomBouncing">iOS Dev Center</a>
-     */
     @Generated
     @Selector("isZoomBouncing")
     public native boolean isZoomBouncing();
 
-    /**
-     * zooming</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIScrollView_Class/index.html#//apple_ref/occ/instp/UIScrollView/zooming">iOS Dev Center</a>
-     */
     @Generated
     @Selector("isZooming")
     public native boolean isZooming();
 
-    /**
-     * keyboardDismissMode</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIScrollView_Class/index.html#//apple_ref/occ/instp/UIScrollView/keyboardDismissMode">iOS Dev Center</a>
-     */
     @Generated
     @Selector("keyboardDismissMode")
     @NInt
     public native long keyboardDismissMode();
 
-    /**
-     * maximumZoomScale</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIScrollView_Class/index.html#//apple_ref/occ/instp/UIScrollView/maximumZoomScale">iOS Dev Center</a>
-     */
     @Generated
     @Selector("maximumZoomScale")
     @NFloat
     public native double maximumZoomScale();
 
-    /**
-     * minimumZoomScale</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIScrollView_Class/index.html#//apple_ref/occ/instp/UIScrollView/minimumZoomScale">iOS Dev Center</a>
-     */
     @Generated
     @Selector("minimumZoomScale")
     @NFloat
     public native double minimumZoomScale();
 
-    /**
-     * panGestureRecognizer</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIScrollView_Class/index.html#//apple_ref/occ/instp/UIScrollView/panGestureRecognizer">iOS Dev Center</a>
-     */
     @Generated
     @Selector("panGestureRecognizer")
     public native UIPanGestureRecognizer panGestureRecognizer();
 
-    /**
-     * pinchGestureRecognizer</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIScrollView_Class/index.html#//apple_ref/occ/instp/UIScrollView/pinchGestureRecognizer">iOS Dev Center</a>
-     */
     @Generated
     @Selector("pinchGestureRecognizer")
     public native UIPinchGestureRecognizer pinchGestureRecognizer();
 
-    /**
-     * scrollIndicatorInsets</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIScrollView_Class/index.html#//apple_ref/occ/instp/UIScrollView/scrollIndicatorInsets">iOS Dev Center</a>
-     */
     @Generated
     @Selector("scrollIndicatorInsets")
     @ByValue
     public native UIEdgeInsets scrollIndicatorInsets();
 
-    /**
-     * scrollRectToVisible:animated:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIScrollView_Class/index.html#//apple_ref/occ/instm/UIScrollView/scrollRectToVisible:animated:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("scrollRectToVisible:animated:")
     public native void scrollRectToVisibleAnimated(@ByValue CGRect rect, boolean animated);
 
-    /**
-     * scrollsToTop</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIScrollView_Class/index.html#//apple_ref/occ/instp/UIScrollView/scrollsToTop">iOS Dev Center</a>
-     */
     @Generated
     @Selector("scrollsToTop")
     public native boolean scrollsToTop();
 
-    /**
-     * alwaysBounceHorizontal</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIScrollView_Class/index.html#//apple_ref/occ/instp/UIScrollView/alwaysBounceHorizontal">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setAlwaysBounceHorizontal:")
     public native void setAlwaysBounceHorizontal(boolean value);
 
-    /**
-     * alwaysBounceVertical</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIScrollView_Class/index.html#//apple_ref/occ/instp/UIScrollView/alwaysBounceVertical">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setAlwaysBounceVertical:")
     public native void setAlwaysBounceVertical(boolean value);
 
-    /**
-     * bounces</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIScrollView_Class/index.html#//apple_ref/occ/instp/UIScrollView/bounces">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setBounces:")
     public native void setBounces(boolean value);
 
-    /**
-     * bouncesZoom</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIScrollView_Class/index.html#//apple_ref/occ/instp/UIScrollView/bouncesZoom">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setBouncesZoom:")
     public native void setBouncesZoom(boolean value);
 
-    /**
-     * canCancelContentTouches</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIScrollView_Class/index.html#//apple_ref/occ/instp/UIScrollView/canCancelContentTouches">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setCanCancelContentTouches:")
     public native void setCanCancelContentTouches(boolean value);
 
-    /**
-     * contentInset</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIScrollView_Class/index.html#//apple_ref/occ/instp/UIScrollView/contentInset">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setContentInset:")
     public native void setContentInset(@ByValue UIEdgeInsets value);
 
-    /**
-     * contentOffset</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIScrollView_Class/index.html#//apple_ref/occ/instp/UIScrollView/contentOffset">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setContentOffset:")
     public native void setContentOffset(@ByValue CGPoint value);
 
-    /**
-     * setContentOffset:animated:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIScrollView_Class/index.html#//apple_ref/occ/instm/UIScrollView/setContentOffset:animated:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setContentOffset:animated:")
     public native void setContentOffsetAnimated(@ByValue CGPoint contentOffset, boolean animated);
 
-    /**
-     * contentSize</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIScrollView_Class/index.html#//apple_ref/occ/instp/UIScrollView/contentSize">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setContentSize:")
     public native void setContentSize(@ByValue CGSize value);
 
-    /**
-     * decelerationRate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIScrollView_Class/index.html#//apple_ref/occ/instp/UIScrollView/decelerationRate">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setDecelerationRate:")
     public native void setDecelerationRate(@NFloat double value);
 
-    /**
-     * delaysContentTouches</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIScrollView_Class/index.html#//apple_ref/occ/instp/UIScrollView/delaysContentTouches">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setDelaysContentTouches:")
     public native void setDelaysContentTouches(boolean value);
 
-    /**
-     * delegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIScrollView_Class/index.html#//apple_ref/occ/instp/UIScrollView/delegate">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setDelegate:")
     public native void setDelegate_unsafe(@Mapped(ObjCObjectMapper.class) Object value);
 
-    /**
-     * delegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIScrollView_Class/index.html#//apple_ref/occ/instp/UIScrollView/delegate">iOS Dev Center</a>
-     */
     @Generated
     public void setDelegate(@Mapped(ObjCObjectMapper.class) Object value) {
         Object __old = delegate();
@@ -745,132 +565,68 @@ public class UIScrollView extends UIView implements NSCoding {
         }
     }
 
-    /**
-     * indicatorStyle</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIScrollView_Class/index.html#//apple_ref/occ/instp/UIScrollView/indicatorStyle">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setIndicatorStyle:")
     public native void setIndicatorStyle(@NInt long value);
 
-    /**
-     * keyboardDismissMode</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIScrollView_Class/index.html#//apple_ref/occ/instp/UIScrollView/keyboardDismissMode">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setKeyboardDismissMode:")
     public native void setKeyboardDismissMode(@NInt long value);
 
-    /**
-     * maximumZoomScale</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIScrollView_Class/index.html#//apple_ref/occ/instp/UIScrollView/maximumZoomScale">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setMaximumZoomScale:")
     public native void setMaximumZoomScale(@NFloat double value);
 
-    /**
-     * minimumZoomScale</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIScrollView_Class/index.html#//apple_ref/occ/instp/UIScrollView/minimumZoomScale">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setMinimumZoomScale:")
     public native void setMinimumZoomScale(@NFloat double value);
 
-    /**
-     * scrollIndicatorInsets</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIScrollView_Class/index.html#//apple_ref/occ/instp/UIScrollView/scrollIndicatorInsets">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setScrollIndicatorInsets:")
     public native void setScrollIndicatorInsets(@ByValue UIEdgeInsets value);
 
-    /**
-     * scrollsToTop</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIScrollView_Class/index.html#//apple_ref/occ/instp/UIScrollView/scrollsToTop">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setScrollsToTop:")
     public native void setScrollsToTop(boolean value);
 
-    /**
-     * showsHorizontalScrollIndicator</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIScrollView_Class/index.html#//apple_ref/occ/instp/UIScrollView/showsHorizontalScrollIndicator">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setShowsHorizontalScrollIndicator:")
     public native void setShowsHorizontalScrollIndicator(boolean value);
 
-    /**
-     * showsVerticalScrollIndicator</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIScrollView_Class/index.html#//apple_ref/occ/instp/UIScrollView/showsVerticalScrollIndicator">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setShowsVerticalScrollIndicator:")
     public native void setShowsVerticalScrollIndicator(boolean value);
 
-    /**
-     * zoomScale</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIScrollView_Class/index.html#//apple_ref/occ/instp/UIScrollView/zoomScale">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setZoomScale:")
     public native void setZoomScale(@NFloat double value);
 
-    /**
-     * setZoomScale:animated:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIScrollView_Class/index.html#//apple_ref/occ/instm/UIScrollView/setZoomScale:animated:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setZoomScale:animated:")
     public native void setZoomScaleAnimated(@NFloat double scale, boolean animated);
 
-    /**
-     * showsHorizontalScrollIndicator</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIScrollView_Class/index.html#//apple_ref/occ/instp/UIScrollView/showsHorizontalScrollIndicator">iOS Dev Center</a>
-     */
     @Generated
     @Selector("showsHorizontalScrollIndicator")
     public native boolean showsHorizontalScrollIndicator();
 
-    /**
-     * showsVerticalScrollIndicator</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIScrollView_Class/index.html#//apple_ref/occ/instp/UIScrollView/showsVerticalScrollIndicator">iOS Dev Center</a>
-     */
     @Generated
     @Selector("showsVerticalScrollIndicator")
     public native boolean showsVerticalScrollIndicator();
 
-    /**
-     * touchesShouldBegin:withEvent:inContentView:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIScrollView_Class/index.html#//apple_ref/occ/instm/UIScrollView/touchesShouldBegin:withEvent:inContentView:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("touchesShouldBegin:withEvent:inContentView:")
     public native boolean touchesShouldBeginWithEventInContentView(NSSet<? extends UITouch> touches, UIEvent event,
             UIView view);
 
-    /**
-     * touchesShouldCancelInContentView:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIScrollView_Class/index.html#//apple_ref/occ/instm/UIScrollView/touchesShouldCancelInContentView:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("touchesShouldCancelInContentView:")
     public native boolean touchesShouldCancelInContentView(UIView view);
 
-    /**
-     * zoomScale</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIScrollView_Class/index.html#//apple_ref/occ/instp/UIScrollView/zoomScale">iOS Dev Center</a>
-     */
     @Generated
     @Selector("zoomScale")
     @NFloat
     public native double zoomScale();
 
-    /**
-     * zoomToRect:animated:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIScrollView_Class/index.html#//apple_ref/occ/instm/UIScrollView/zoomToRect:animated:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("zoomToRect:animated:")
     public native void zoomToRectAnimated(@ByValue CGRect rect, boolean animated);

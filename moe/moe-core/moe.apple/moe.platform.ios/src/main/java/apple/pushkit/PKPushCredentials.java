@@ -163,18 +163,10 @@ public class PKPushCredentials extends NSObject {
     @Selector("init")
     public native PKPushCredentials init();
 
-    /**
-     * token</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/PushKit/Reference/PKPushCredentials_Class/index.html#//apple_ref/occ/instp/PKPushCredentials/token">iOS Dev Center</a>
-     */
     @Generated
     @Selector("token")
     public native NSData token();
 
-    /**
-     * type</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/PushKit/Reference/PKPushCredentials_Class/index.html#//apple_ref/occ/instp/PKPushCredentials/type">iOS Dev Center</a>
-     */
     @Generated
     @Selector("type")
     public native String type();

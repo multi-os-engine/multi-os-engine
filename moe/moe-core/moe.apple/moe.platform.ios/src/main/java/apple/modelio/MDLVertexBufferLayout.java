@@ -169,18 +169,10 @@ public class MDLVertexBufferLayout extends NSObject implements NSCopying {
     @Selector("init")
     public native MDLVertexBufferLayout init();
 
-    /**
-     * stride</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLVertexBufferLayout_Class/index.html#//apple_ref/occ/instp/MDLVertexBufferLayout/stride">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setStride:")
     public native void setStride(@NUInt long value);
 
-    /**
-     * stride</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLVertexBufferLayout_Class/index.html#//apple_ref/occ/instp/MDLVertexBufferLayout/stride">iOS Dev Center</a>
-     */
     @Generated
     @Selector("stride")
     @NUInt

@@ -24,6 +24,7 @@ public final class NEOnDemandRuleInterfaceType {
     @Generated @NInt public static final long WiFi = 0x0000000000000002L;
     @Generated @NInt public static final long Cellular = 0x0000000000000003L;
     @Generated @NInt public static final long Any = 0x0000000000000000L;
+
     @Generated
     private NEOnDemandRuleInterfaceType() {
     }

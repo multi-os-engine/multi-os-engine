@@ -156,83 +156,43 @@ public class NSNetServiceBrowser extends NSObject {
     @NInt
     public static native long version_static();
 
-    /**
-     * delegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSNetServiceBrowser_Class/index.html#//apple_ref/occ/instp/NSNetServiceBrowser/delegate">iOS Dev Center</a>
-     */
     @Generated
     @Selector("delegate")
     @MappedReturn(ObjCObjectMapper.class)
     public native NSNetServiceBrowserDelegate delegate();
 
-    /**
-     * includesPeerToPeer</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSNetServiceBrowser_Class/index.html#//apple_ref/occ/instp/NSNetServiceBrowser/includesPeerToPeer">iOS Dev Center</a>
-     */
     @Generated
     @Selector("includesPeerToPeer")
     public native boolean includesPeerToPeer();
 
-    /**
-     * init</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSNetServiceBrowser_Class/index.html#//apple_ref/occ/instm/NSNetServiceBrowser/init">iOS Dev Center</a>
-     */
     @Generated
     @Selector("init")
     public native NSNetServiceBrowser init();
 
-    /**
-     * removeFromRunLoop:forMode:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSNetServiceBrowser_Class/index.html#//apple_ref/occ/instm/NSNetServiceBrowser/removeFromRunLoop:forMode:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("removeFromRunLoop:forMode:")
     public native void removeFromRunLoopForMode(NSRunLoop aRunLoop, String mode);
 
-    /**
-     * scheduleInRunLoop:forMode:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSNetServiceBrowser_Class/index.html#//apple_ref/occ/instm/NSNetServiceBrowser/scheduleInRunLoop:forMode:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("scheduleInRunLoop:forMode:")
     public native void scheduleInRunLoopForMode(NSRunLoop aRunLoop, String mode);
 
-    /**
-     * searchForBrowsableDomains</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSNetServiceBrowser_Class/index.html#//apple_ref/occ/instm/NSNetServiceBrowser/searchForBrowsableDomains">iOS Dev Center</a>
-     */
     @Generated
     @Selector("searchForBrowsableDomains")
     public native void searchForBrowsableDomains();
 
-    /**
-     * searchForRegistrationDomains</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSNetServiceBrowser_Class/index.html#//apple_ref/occ/instm/NSNetServiceBrowser/searchForRegistrationDomains">iOS Dev Center</a>
-     */
     @Generated
     @Selector("searchForRegistrationDomains")
     public native void searchForRegistrationDomains();
 
-    /**
-     * searchForServicesOfType:inDomain:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSNetServiceBrowser_Class/index.html#//apple_ref/occ/instm/NSNetServiceBrowser/searchForServicesOfType:inDomain:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("searchForServicesOfType:inDomain:")
     public native void searchForServicesOfTypeInDomain(String type, String domainString);
 
-    /**
-     * delegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSNetServiceBrowser_Class/index.html#//apple_ref/occ/instp/NSNetServiceBrowser/delegate">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setDelegate:")
     public native void setDelegate_unsafe(@Mapped(ObjCObjectMapper.class) NSNetServiceBrowserDelegate value);
 
-    /**
-     * delegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSNetServiceBrowser_Class/index.html#//apple_ref/occ/instp/NSNetServiceBrowser/delegate">iOS Dev Center</a>
-     */
     @Generated
     public void setDelegate(@Mapped(ObjCObjectMapper.class) NSNetServiceBrowserDelegate value) {
         Object __old = delegate();
@@ -245,18 +205,10 @@ public class NSNetServiceBrowser extends NSObject {
         }
     }
 
-    /**
-     * includesPeerToPeer</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSNetServiceBrowser_Class/index.html#//apple_ref/occ/instp/NSNetServiceBrowser/includesPeerToPeer">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setIncludesPeerToPeer:")
     public native void setIncludesPeerToPeer(boolean value);
 
-    /**
-     * stop</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSNetServiceBrowser_Class/index.html#//apple_ref/occ/instm/NSNetServiceBrowser/stop">iOS Dev Center</a>
-     */
     @Generated
     @Selector("stop")
     public native void stop();

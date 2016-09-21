@@ -165,10 +165,6 @@ public class AVAudioMixerNode extends AVAudioNode implements AVAudioMixing {
     @Selector("init")
     public native AVAudioMixerNode init();
 
-    /**
-     * nextAvailableInputBus</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioMixerNode_Class/index.html#//apple_ref/occ/instp/AVAudioMixerNode/nextAvailableInputBus">iOS Dev Center</a>
-     */
     @Generated
     @Selector("nextAvailableInputBus")
     @NUInt
@@ -182,10 +178,6 @@ public class AVAudioMixerNode extends AVAudioNode implements AVAudioMixing {
     @Selector("occlusion")
     public native float occlusion();
 
-    /**
-     * outputVolume</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioMixerNode_Class/index.html#//apple_ref/occ/instp/AVAudioMixerNode/outputVolume">iOS Dev Center</a>
-     */
     @Generated
     @Selector("outputVolume")
     public native float outputVolume();
@@ -220,10 +212,6 @@ public class AVAudioMixerNode extends AVAudioNode implements AVAudioMixing {
     @Selector("setOcclusion:")
     public native void setOcclusion(float value);
 
-    /**
-     * outputVolume</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioMixerNode_Class/index.html#//apple_ref/occ/instp/AVAudioMixerNode/outputVolume">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setOutputVolume:")
     public native void setOutputVolume(float value);

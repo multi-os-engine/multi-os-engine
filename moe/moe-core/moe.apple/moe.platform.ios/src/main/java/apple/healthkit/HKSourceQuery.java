@@ -263,10 +263,6 @@ public class HKSourceQuery extends HKQuery {
     @Selector("init")
     public native HKSourceQuery init();
 
-    /**
-     * initWithSampleType:samplePredicate:completionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HealthKit/Reference/HKSourceQuery_Class/index.html#//apple_ref/occ/instm/HKSourceQuery/initWithSampleType:samplePredicate:completionHandler:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithSampleType:samplePredicate:completionHandler:")
     public native HKSourceQuery initWithSampleTypeSamplePredicateCompletionHandler(HKSampleType sampleType,

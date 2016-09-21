@@ -62,46 +62,26 @@ public class AUParameterTree extends AUParameterGroup implements NSSecureCoding 
     @Selector("alloc")
     public static native AUParameterTree alloc();
 
-    /**
-     * createGroupFromTemplate:identifier:name:addressOffset:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AudioUnit/Reference/AUParameterTree_ClassReference/index.html#//apple_ref/occ/clm/AUParameterTree/createGroupFromTemplate:identifier:name:addressOffset:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("createGroupFromTemplate:identifier:name:addressOffset:")
     public static native AUParameterGroup createGroupFromTemplateIdentifierNameAddressOffset(
             AUParameterGroup templateGroup, String identifier, String name, long addressOffset);
 
-    /**
-     * createGroupTemplate:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AudioUnit/Reference/AUParameterTree_ClassReference/index.html#//apple_ref/occ/clm/AUParameterTree/createGroupTemplate:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("createGroupTemplate:")
     public static native AUParameterGroup createGroupTemplate(NSArray<? extends AUParameterNode> children);
 
-    /**
-     * createGroupWithIdentifier:name:children:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AudioUnit/Reference/AUParameterTree_ClassReference/index.html#//apple_ref/occ/clm/AUParameterTree/createGroupWithIdentifier:name:children:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("createGroupWithIdentifier:name:children:")
     public static native AUParameterGroup createGroupWithIdentifierNameChildren(String identifier, String name,
             NSArray<? extends AUParameterNode> children);
 
-    /**
-     * createParameterWithIdentifier:name:address:min:max:unit:unitName:flags:valueStrings:dependentParameters:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AudioUnit/Reference/AUParameterTree_ClassReference/index.html#//apple_ref/occ/clm/AUParameterTree/createParameterWithIdentifier:name:address:min:max:unit:unitName:flags:valueStrings:dependentParameters:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("createParameterWithIdentifier:name:address:min:max:unit:unitName:flags:valueStrings:dependentParameters:")
     public static native AUParameter createParameterWithIdentifierNameAddressMinMaxUnitUnitNameFlagsValueStringsDependentParameters(
             String identifier, String name, long address, float min, float max, int unit, String unitName, int flags,
             NSArray<String> valueStrings, NSArray<? extends NSNumber> dependentParameters);
 
-    /**
-     * createTreeWithChildren:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AudioUnit/Reference/AUParameterTree_ClassReference/index.html#//apple_ref/occ/clm/AUParameterTree/createTreeWithChildren:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("createTreeWithChildren:")
     public static native AUParameterTree createTreeWithChildren(NSArray<? extends AUParameterNode> children);
@@ -222,18 +202,10 @@ public class AUParameterTree extends AUParameterGroup implements NSSecureCoding 
     @Selector("initWithCoder:")
     public native AUParameterTree initWithCoder(NSCoder aDecoder);
 
-    /**
-     * parameterWithAddress:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AudioUnit/Reference/AUParameterTree_ClassReference/index.html#//apple_ref/occ/instm/AUParameterTree/parameterWithAddress:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("parameterWithAddress:")
     public native AUParameter parameterWithAddress(long address);
 
-    /**
-     * parameterWithID:scope:element:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AudioUnit/Reference/AUParameterTree_ClassReference/index.html#//apple_ref/occ/instm/AUParameterTree/parameterWithID:scope:element:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("parameterWithID:scope:element:")
     public native AUParameter parameterWithIDScopeElement(int paramID, int scope, int element);

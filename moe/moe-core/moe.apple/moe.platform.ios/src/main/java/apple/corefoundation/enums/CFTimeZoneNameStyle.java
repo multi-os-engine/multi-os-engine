@@ -27,6 +27,7 @@ public final class CFTimeZoneNameStyle {
     @Generated @NInt public static final long ShortDaylightSaving = 0x0000000000000003L;
     @Generated @NInt public static final long Generic = 0x0000000000000004L;
     @Generated @NInt public static final long ShortGeneric = 0x0000000000000005L;
+
     @Generated
     private CFTimeZoneNameStyle() {
     }

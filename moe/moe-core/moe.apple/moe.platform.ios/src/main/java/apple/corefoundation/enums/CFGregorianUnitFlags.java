@@ -28,6 +28,7 @@ public final class CFGregorianUnitFlags {
     @Generated @NUInt public static final long UnitsMinutes = 0x0000000000000010L;
     @Generated @NUInt public static final long UnitsSeconds = 0x0000000000000020L;
     @Generated @NUInt public static final long AllUnits = 0x0000000000FFFFFFL;
+
     @Generated
     private CFGregorianUnitFlags() {
     }

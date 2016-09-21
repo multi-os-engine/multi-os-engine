@@ -24,6 +24,7 @@ public final class EAWiFiUnconfiguredAccessoryProperties {
     @Generated @NUInt public static final long AirPlay = 0x0000000000000001L;
     @Generated @NUInt public static final long AirPrint = 0x0000000000000002L;
     @Generated @NUInt public static final long HomeKit = 0x0000000000000004L;
+
     @Generated
     private EAWiFiUnconfiguredAccessoryProperties() {
     }

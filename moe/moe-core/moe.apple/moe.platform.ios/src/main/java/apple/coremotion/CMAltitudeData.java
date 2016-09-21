@@ -169,18 +169,10 @@ public class CMAltitudeData extends CMLogItem {
     @Selector("init")
     public native CMAltitudeData init();
 
-    /**
-     * pressure</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMotion/Reference/CMAltitudeData_class/index.html#//apple_ref/occ/instp/CMAltitudeData/pressure">iOS Dev Center</a>
-     */
     @Generated
     @Selector("pressure")
     public native NSNumber pressure();
 
-    /**
-     * relativeAltitude</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMotion/Reference/CMAltitudeData_class/index.html#//apple_ref/occ/instp/CMAltitudeData/relativeAltitude">iOS Dev Center</a>
-     */
     @Generated
     @Selector("relativeAltitude")
     public native NSNumber relativeAltitude();

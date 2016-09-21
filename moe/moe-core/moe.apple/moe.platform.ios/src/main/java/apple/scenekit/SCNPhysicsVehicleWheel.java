@@ -69,10 +69,6 @@ public class SCNPhysicsVehicleWheel extends NSObject implements NSCopying, NSSec
     @Selector("supportsSecureCoding")
     public static native boolean supportsSecureCoding();
 
-    /**
-     * wheelWithNode:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNPhysicsVehicleWheel_Class/index.html#//apple_ref/occ/clm/SCNPhysicsVehicleWheel/wheelWithNode:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("wheelWithNode:")
     public static native SCNPhysicsVehicleWheel wheelWithNode(SCNNode node);
@@ -177,19 +173,11 @@ public class SCNPhysicsVehicleWheel extends NSObject implements NSCopying, NSSec
     @NInt
     public static native long version();
 
-    /**
-     * axle</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNPhysicsVehicleWheel_Class/index.html#//apple_ref/occ/instp/SCNPhysicsVehicleWheel/axle">iOS Dev Center</a>
-     */
     @Generated
     @Selector("axle")
     @ByValue
     public native SCNVector3 axle();
 
-    /**
-     * connectionPosition</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNPhysicsVehicleWheel_Class/index.html#//apple_ref/occ/instp/SCNPhysicsVehicleWheel/connectionPosition">iOS Dev Center</a>
-     */
     @Generated
     @Selector("connectionPosition")
     @ByValue
@@ -205,10 +193,6 @@ public class SCNPhysicsVehicleWheel extends NSObject implements NSCopying, NSSec
     @Selector("encodeWithCoder:")
     public native void encodeWithCoder(NSCoder aCoder);
 
-    /**
-     * frictionSlip</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNPhysicsVehicleWheel_Class/index.html#//apple_ref/occ/instp/SCNPhysicsVehicleWheel/frictionSlip">iOS Dev Center</a>
-     */
     @Generated
     @Selector("frictionSlip")
     @NFloat
@@ -222,133 +206,69 @@ public class SCNPhysicsVehicleWheel extends NSObject implements NSCopying, NSSec
     @Selector("initWithCoder:")
     public native SCNPhysicsVehicleWheel initWithCoder(NSCoder aDecoder);
 
-    /**
-     * maximumSuspensionForce</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNPhysicsVehicleWheel_Class/index.html#//apple_ref/occ/instp/SCNPhysicsVehicleWheel/maximumSuspensionForce">iOS Dev Center</a>
-     */
     @Generated
     @Selector("maximumSuspensionForce")
     @NFloat
     public native double maximumSuspensionForce();
 
-    /**
-     * maximumSuspensionTravel</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNPhysicsVehicleWheel_Class/index.html#//apple_ref/occ/instp/SCNPhysicsVehicleWheel/maximumSuspensionTravel">iOS Dev Center</a>
-     */
     @Generated
     @Selector("maximumSuspensionTravel")
     @NFloat
     public native double maximumSuspensionTravel();
 
-    /**
-     * node</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNPhysicsVehicleWheel_Class/index.html#//apple_ref/occ/instp/SCNPhysicsVehicleWheel/node">iOS Dev Center</a>
-     */
     @Generated
     @Selector("node")
     public native SCNNode node();
 
-    /**
-     * radius</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNPhysicsVehicleWheel_Class/index.html#//apple_ref/occ/instp/SCNPhysicsVehicleWheel/radius">iOS Dev Center</a>
-     */
     @Generated
     @Selector("radius")
     @NFloat
     public native double radius();
 
-    /**
-     * axle</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNPhysicsVehicleWheel_Class/index.html#//apple_ref/occ/instp/SCNPhysicsVehicleWheel/axle">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setAxle:")
     public native void setAxle(@ByValue SCNVector3 value);
 
-    /**
-     * connectionPosition</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNPhysicsVehicleWheel_Class/index.html#//apple_ref/occ/instp/SCNPhysicsVehicleWheel/connectionPosition">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setConnectionPosition:")
     public native void setConnectionPosition(@ByValue SCNVector3 value);
 
-    /**
-     * frictionSlip</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNPhysicsVehicleWheel_Class/index.html#//apple_ref/occ/instp/SCNPhysicsVehicleWheel/frictionSlip">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setFrictionSlip:")
     public native void setFrictionSlip(@NFloat double value);
 
-    /**
-     * maximumSuspensionForce</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNPhysicsVehicleWheel_Class/index.html#//apple_ref/occ/instp/SCNPhysicsVehicleWheel/maximumSuspensionForce">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setMaximumSuspensionForce:")
     public native void setMaximumSuspensionForce(@NFloat double value);
 
-    /**
-     * maximumSuspensionTravel</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNPhysicsVehicleWheel_Class/index.html#//apple_ref/occ/instp/SCNPhysicsVehicleWheel/maximumSuspensionTravel">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setMaximumSuspensionTravel:")
     public native void setMaximumSuspensionTravel(@NFloat double value);
 
-    /**
-     * radius</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNPhysicsVehicleWheel_Class/index.html#//apple_ref/occ/instp/SCNPhysicsVehicleWheel/radius">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setRadius:")
     public native void setRadius(@NFloat double value);
 
-    /**
-     * steeringAxis</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNPhysicsVehicleWheel_Class/index.html#//apple_ref/occ/instp/SCNPhysicsVehicleWheel/steeringAxis">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setSteeringAxis:")
     public native void setSteeringAxis(@ByValue SCNVector3 value);
 
-    /**
-     * suspensionCompression</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNPhysicsVehicleWheel_Class/index.html#//apple_ref/occ/instp/SCNPhysicsVehicleWheel/suspensionCompression">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setSuspensionCompression:")
     public native void setSuspensionCompression(@NFloat double value);
 
-    /**
-     * suspensionDamping</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNPhysicsVehicleWheel_Class/index.html#//apple_ref/occ/instp/SCNPhysicsVehicleWheel/suspensionDamping">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setSuspensionDamping:")
     public native void setSuspensionDamping(@NFloat double value);
 
-    /**
-     * suspensionRestLength</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNPhysicsVehicleWheel_Class/index.html#//apple_ref/occ/instp/SCNPhysicsVehicleWheel/suspensionRestLength">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setSuspensionRestLength:")
     public native void setSuspensionRestLength(@NFloat double value);
 
-    /**
-     * suspensionStiffness</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNPhysicsVehicleWheel_Class/index.html#//apple_ref/occ/instp/SCNPhysicsVehicleWheel/suspensionStiffness">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setSuspensionStiffness:")
     public native void setSuspensionStiffness(@NFloat double value);
 
-    /**
-     * steeringAxis</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNPhysicsVehicleWheel_Class/index.html#//apple_ref/occ/instp/SCNPhysicsVehicleWheel/steeringAxis">iOS Dev Center</a>
-     */
     @Generated
     @Selector("steeringAxis")
     @ByValue
@@ -360,37 +280,21 @@ public class SCNPhysicsVehicleWheel extends NSObject implements NSCopying, NSSec
         return supportsSecureCoding();
     }
 
-    /**
-     * suspensionCompression</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNPhysicsVehicleWheel_Class/index.html#//apple_ref/occ/instp/SCNPhysicsVehicleWheel/suspensionCompression">iOS Dev Center</a>
-     */
     @Generated
     @Selector("suspensionCompression")
     @NFloat
     public native double suspensionCompression();
 
-    /**
-     * suspensionDamping</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNPhysicsVehicleWheel_Class/index.html#//apple_ref/occ/instp/SCNPhysicsVehicleWheel/suspensionDamping">iOS Dev Center</a>
-     */
     @Generated
     @Selector("suspensionDamping")
     @NFloat
     public native double suspensionDamping();
 
-    /**
-     * suspensionRestLength</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNPhysicsVehicleWheel_Class/index.html#//apple_ref/occ/instp/SCNPhysicsVehicleWheel/suspensionRestLength">iOS Dev Center</a>
-     */
     @Generated
     @Selector("suspensionRestLength")
     @NFloat
     public native double suspensionRestLength();
 
-    /**
-     * suspensionStiffness</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNPhysicsVehicleWheel_Class/index.html#//apple_ref/occ/instp/SCNPhysicsVehicleWheel/suspensionStiffness">iOS Dev Center</a>
-     */
     @Generated
     @Selector("suspensionStiffness")
     @NFloat

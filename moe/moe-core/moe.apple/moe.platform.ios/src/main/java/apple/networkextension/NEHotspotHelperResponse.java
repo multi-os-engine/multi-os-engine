@@ -158,10 +158,6 @@ public class NEHotspotHelperResponse extends NSObject {
     @NInt
     public static native long version_static();
 
-    /**
-     * deliver</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEHotspotHelperResponseClassRef/index.html#//apple_ref/occ/instm/NEHotspotHelperResponse/deliver">iOS Dev Center</a>
-     */
     @Generated
     @Selector("deliver")
     public native void deliver();
@@ -170,18 +166,10 @@ public class NEHotspotHelperResponse extends NSObject {
     @Selector("init")
     public native NEHotspotHelperResponse init();
 
-    /**
-     * setNetwork:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEHotspotHelperResponseClassRef/index.html#//apple_ref/occ/instm/NEHotspotHelperResponse/setNetwork:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setNetwork:")
     public native void setNetwork(NEHotspotNetwork network);
 
-    /**
-     * setNetworkList:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEHotspotHelperResponseClassRef/index.html#//apple_ref/occ/instm/NEHotspotHelperResponse/setNetworkList:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setNetworkList:")
     public native void setNetworkList(NSArray<? extends NEHotspotNetwork> networkList);

@@ -155,18 +155,10 @@ public class NSMetadataQueryAttributeValueTuple extends NSObject {
     @NInt
     public static native long version();
 
-    /**
-     * attribute</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSMetadataQueryAttributeValueTuple_Class/index.html#//apple_ref/occ/instp/NSMetadataQueryAttributeValueTuple/attribute">iOS Dev Center</a>
-     */
     @Generated
     @Selector("attribute")
     public native String attribute();
 
-    /**
-     * count</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSMetadataQueryAttributeValueTuple_Class/index.html#//apple_ref/occ/instp/NSMetadataQueryAttributeValueTuple/count">iOS Dev Center</a>
-     */
     @Generated
     @Selector("count")
     @NUInt
@@ -176,10 +168,6 @@ public class NSMetadataQueryAttributeValueTuple extends NSObject {
     @Selector("init")
     public native NSMetadataQueryAttributeValueTuple init();
 
-    /**
-     * value</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSMetadataQueryAttributeValueTuple_Class/index.html#//apple_ref/occ/instp/NSMetadataQueryAttributeValueTuple/value">iOS Dev Center</a>
-     */
     @Generated
     @Selector("value")
     @MappedReturn(ObjCObjectMapper.class)

@@ -55,10 +55,6 @@ public class UIAlertAction extends NSObject implements NSCopying {
         super(peer);
     }
 
-    /**
-     * actionWithTitle:style:handler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIAlertAction_Class/index.html#//apple_ref/occ/clm/UIAlertAction/actionWithTitle:style:handler:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("actionWithTitle:style:handler:")
     public static native UIAlertAction actionWithTitleStyleHandler(String title, @NInt long style,
@@ -179,35 +175,19 @@ public class UIAlertAction extends NSObject implements NSCopying {
     @Selector("init")
     public native UIAlertAction init();
 
-    /**
-     * enabled</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIAlertAction_Class/index.html#//apple_ref/occ/instp/UIAlertAction/enabled">iOS Dev Center</a>
-     */
     @Generated
     @Selector("isEnabled")
     public native boolean isEnabled();
 
-    /**
-     * enabled</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIAlertAction_Class/index.html#//apple_ref/occ/instp/UIAlertAction/enabled">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setEnabled:")
     public native void setEnabled(boolean value);
 
-    /**
-     * style</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIAlertAction_Class/index.html#//apple_ref/occ/instp/UIAlertAction/style">iOS Dev Center</a>
-     */
     @Generated
     @Selector("style")
     @NInt
     public native long style();
 
-    /**
-     * title</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIAlertAction_Class/index.html#//apple_ref/occ/instp/UIAlertAction/title">iOS Dev Center</a>
-     */
     @Generated
     @Selector("title")
     public native String title();

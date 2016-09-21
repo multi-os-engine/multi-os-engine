@@ -76,60 +76,32 @@ public class NSArray<_ObjectType> extends NSObject
     @Selector("alloc")
     public static native NSArray<?> alloc();
 
-    /**
-     * array</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSArray_Class/index.html#//apple_ref/occ/clm/NSArray/array">iOS Dev Center</a>
-     */
     @Generated
     @Selector("array")
     public static native <_ObjectType> NSArray<?> array();
 
-    /**
-     * arrayWithArray:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSArray_Class/index.html#//apple_ref/occ/clm/NSArray/arrayWithArray:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("arrayWithArray:")
     public static native <_ObjectType> NSArray<?> arrayWithArray(NSArray<_ObjectType> array);
 
-    /**
-     * arrayWithContentsOfFile:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSArray_Class/index.html#//apple_ref/occ/clm/NSArray/arrayWithContentsOfFile:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("arrayWithContentsOfFile:")
     public static native <_ObjectType> NSArray<_ObjectType> arrayWithContentsOfFile(String path);
 
-    /**
-     * arrayWithContentsOfURL:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSArray_Class/index.html#//apple_ref/occ/clm/NSArray/arrayWithContentsOfURL:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("arrayWithContentsOfURL:")
     public static native <_ObjectType> NSArray<_ObjectType> arrayWithContentsOfURL(NSURL url);
 
-    /**
-     * arrayWithObject:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSArray_Class/index.html#//apple_ref/occ/clm/NSArray/arrayWithObject:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("arrayWithObject:")
     public static native <_ObjectType> NSArray<?> arrayWithObject(@Mapped(ObjCObjectMapper.class) _ObjectType anObject);
 
-    /**
-     * arrayWithObjects:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSArray_Class/index.html#//apple_ref/occ/clm/NSArray/arrayWithObjects:">iOS Dev Center</a>
-     */
     @Generated
     @Variadic()
     @Selector("arrayWithObjects:")
     public static native <_ObjectType> NSArray<?> arrayWithObjects(@Mapped(ObjCObjectMapper.class) _ObjectType firstObj,
             Object... varargs);
 
-    /**
-     * arrayWithObjects:count:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSArray_Class/index.html#//apple_ref/occ/clm/NSArray/arrayWithObjects:count:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("arrayWithObjects:count:")
     public static native <_ObjectType> NSArray<?> arrayWithObjectsCount(ConstPtr<_ObjectType> objects, @NUInt long cnt);
@@ -234,52 +206,28 @@ public class NSArray<_ObjectType> extends NSObject
     @NInt
     public static native long version_static();
 
-    /**
-     * addObserver:forKeyPath:options:context:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSArray_Class/index.html#//apple_ref/occ/instm/NSArray/addObserver:forKeyPath:options:context:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("addObserver:forKeyPath:options:context:")
     public native void addObserverForKeyPathOptionsContext(NSObject observer, String keyPath, @NUInt long options,
             VoidPtr context);
 
-    /**
-     * addObserver:toObjectsAtIndexes:forKeyPath:options:context:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSArray_Class/index.html#//apple_ref/occ/instm/NSArray/addObserver:toObjectsAtIndexes:forKeyPath:options:context:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("addObserver:toObjectsAtIndexes:forKeyPath:options:context:")
     public native void addObserverToObjectsAtIndexesForKeyPathOptionsContext(NSObject observer, NSIndexSet indexes,
             String keyPath, @NUInt long options, VoidPtr context);
 
-    /**
-     * arrayByAddingObject:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSArray_Class/index.html#//apple_ref/occ/instm/NSArray/arrayByAddingObject:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("arrayByAddingObject:")
     public native NSArray<_ObjectType> arrayByAddingObject(@Mapped(ObjCObjectMapper.class) _ObjectType anObject);
 
-    /**
-     * arrayByAddingObjectsFromArray:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSArray_Class/index.html#//apple_ref/occ/instm/NSArray/arrayByAddingObjectsFromArray:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("arrayByAddingObjectsFromArray:")
     public native NSArray<_ObjectType> arrayByAddingObjectsFromArray(NSArray<_ObjectType> otherArray);
 
-    /**
-     * componentsJoinedByString:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSArray_Class/index.html#//apple_ref/occ/instm/NSArray/componentsJoinedByString:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("componentsJoinedByString:")
     public native String componentsJoinedByString(String separator);
 
-    /**
-     * containsObject:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSArray_Class/index.html#//apple_ref/occ/instm/NSArray/containsObject:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("containsObject:")
     public native boolean containsObject(@Mapped(ObjCObjectMapper.class) _ObjectType anObject);
@@ -290,10 +238,6 @@ public class NSArray<_ObjectType> extends NSObject
     @MappedReturn(ObjCObjectMapper.class)
     public native Object copyWithZone(VoidPtr zone);
 
-    /**
-     * count</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSArray_Class/index.html#//apple_ref/occ/instp/NSArray/count">iOS Dev Center</a>
-     */
     @Generated
     @Selector("count")
     @NUInt
@@ -304,26 +248,14 @@ public class NSArray<_ObjectType> extends NSObject
     @NUInt
     public native long countByEnumeratingWithStateObjectsCount(VoidPtr state, Ptr<ObjCObject> buffer, @NUInt long len);
 
-    /**
-     * description</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSArray_Class/index.html#//apple_ref/occ/instp/NSArray/description">iOS Dev Center</a>
-     */
     @Generated
     @Selector("description")
     public native String description();
 
-    /**
-     * descriptionWithLocale:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSArray_Class/index.html#//apple_ref/occ/instm/NSArray/descriptionWithLocale:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("descriptionWithLocale:")
     public native String descriptionWithLocale(@Mapped(ObjCObjectMapper.class) Object locale);
 
-    /**
-     * descriptionWithLocale:indent:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSArray_Class/index.html#//apple_ref/occ/instm/NSArray/descriptionWithLocale:indent:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("descriptionWithLocale:indent:")
     public native String descriptionWithLocaleIndent(@Mapped(ObjCObjectMapper.class) Object locale, @NUInt long level);
@@ -332,98 +264,54 @@ public class NSArray<_ObjectType> extends NSObject
     @Selector("encodeWithCoder:")
     public native void encodeWithCoder(NSCoder aCoder);
 
-    /**
-     * enumerateObjectsAtIndexes:options:usingBlock:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSArray_Class/index.html#//apple_ref/occ/instm/NSArray/enumerateObjectsAtIndexes:options:usingBlock:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("enumerateObjectsAtIndexes:options:usingBlock:")
     public native void enumerateObjectsAtIndexesOptionsUsingBlock(NSIndexSet s, @NUInt long opts,
             @ObjCBlock(name = "call_enumerateObjectsAtIndexesOptionsUsingBlock") Block_enumerateObjectsAtIndexesOptionsUsingBlock block);
 
-    /**
-     * enumerateObjectsUsingBlock:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSArray_Class/index.html#//apple_ref/occ/instm/NSArray/enumerateObjectsUsingBlock:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("enumerateObjectsUsingBlock:")
     public native void enumerateObjectsUsingBlock(
             @ObjCBlock(name = "call_enumerateObjectsUsingBlock") Block_enumerateObjectsUsingBlock block);
 
-    /**
-     * enumerateObjectsWithOptions:usingBlock:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSArray_Class/index.html#//apple_ref/occ/instm/NSArray/enumerateObjectsWithOptions:usingBlock:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("enumerateObjectsWithOptions:usingBlock:")
     public native void enumerateObjectsWithOptionsUsingBlock(@NUInt long opts,
             @ObjCBlock(name = "call_enumerateObjectsWithOptionsUsingBlock") Block_enumerateObjectsWithOptionsUsingBlock block);
 
-    /**
-     * filteredArrayUsingPredicate:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSArray_Class/index.html#//apple_ref/occ/instm/NSArray/filteredArrayUsingPredicate:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("filteredArrayUsingPredicate:")
     public native NSArray<_ObjectType> filteredArrayUsingPredicate(NSPredicate predicate);
 
-    /**
-     * firstObject</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSArray_Class/index.html#//apple_ref/occ/instp/NSArray/firstObject">iOS Dev Center</a>
-     */
     @MappedReturn(ObjCObjectMapper.class)
     @Generated
     @Selector("firstObject")
     public native _ObjectType firstObject();
 
-    /**
-     * firstObjectCommonWithArray:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSArray_Class/index.html#//apple_ref/occ/instm/NSArray/firstObjectCommonWithArray:">iOS Dev Center</a>
-     */
     @MappedReturn(ObjCObjectMapper.class)
     @Generated
     @Selector("firstObjectCommonWithArray:")
     public native _ObjectType firstObjectCommonWithArray(NSArray<_ObjectType> otherArray);
 
-    /**
-     * getObjects:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSArray_Class/index.html#//apple_ref/occ/instm/NSArray/getObjects:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("getObjects:")
     public native void getObjects(Ptr<ObjCObject> objects);
 
-    /**
-     * getObjects:range:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSArray_Class/index.html#//apple_ref/occ/instm/NSArray/getObjects:range:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("getObjects:range:")
     public native void getObjectsRange(Ptr<ObjCObject> objects, @ByValue NSRange range);
 
-    /**
-     * indexOfObject:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSArray_Class/index.html#//apple_ref/occ/instm/NSArray/indexOfObject:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("indexOfObject:")
     @NUInt
     public native long indexOfObject(@Mapped(ObjCObjectMapper.class) _ObjectType anObject);
 
-    /**
-     * indexOfObject:inRange:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSArray_Class/index.html#//apple_ref/occ/instm/NSArray/indexOfObject:inRange:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("indexOfObject:inRange:")
     @NUInt
     public native long indexOfObjectInRange(@Mapped(ObjCObjectMapper.class) _ObjectType anObject,
             @ByValue NSRange range);
 
-    /**
-     * indexOfObject:inSortedRange:options:usingComparator:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSArray_Class/index.html#//apple_ref/occ/instm/NSArray/indexOfObject:inSortedRange:options:usingComparator:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("indexOfObject:inSortedRange:options:usingComparator:")
     @NUInt
@@ -431,102 +319,58 @@ public class NSArray<_ObjectType> extends NSObject
             @ByValue NSRange r, @NUInt long opts,
             @ObjCBlock(name = "call_indexOfObjectInSortedRangeOptionsUsingComparator") Block_indexOfObjectInSortedRangeOptionsUsingComparator cmp);
 
-    /**
-     * indexOfObjectAtIndexes:options:passingTest:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSArray_Class/index.html#//apple_ref/occ/instm/NSArray/indexOfObjectAtIndexes:options:passingTest:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("indexOfObjectAtIndexes:options:passingTest:")
     @NUInt
     public native long indexOfObjectAtIndexesOptionsPassingTest(NSIndexSet s, @NUInt long opts,
             @ObjCBlock(name = "call_indexOfObjectAtIndexesOptionsPassingTest") Block_indexOfObjectAtIndexesOptionsPassingTest predicate);
 
-    /**
-     * indexOfObjectIdenticalTo:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSArray_Class/index.html#//apple_ref/occ/instm/NSArray/indexOfObjectIdenticalTo:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("indexOfObjectIdenticalTo:")
     @NUInt
     public native long indexOfObjectIdenticalTo(@Mapped(ObjCObjectMapper.class) _ObjectType anObject);
 
-    /**
-     * indexOfObjectIdenticalTo:inRange:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSArray_Class/index.html#//apple_ref/occ/instm/NSArray/indexOfObjectIdenticalTo:inRange:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("indexOfObjectIdenticalTo:inRange:")
     @NUInt
     public native long indexOfObjectIdenticalToInRange(@Mapped(ObjCObjectMapper.class) _ObjectType anObject,
             @ByValue NSRange range);
 
-    /**
-     * indexOfObjectPassingTest:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSArray_Class/index.html#//apple_ref/occ/instm/NSArray/indexOfObjectPassingTest:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("indexOfObjectPassingTest:")
     @NUInt
     public native long indexOfObjectPassingTest(
             @ObjCBlock(name = "call_indexOfObjectPassingTest") Block_indexOfObjectPassingTest predicate);
 
-    /**
-     * indexOfObjectWithOptions:passingTest:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSArray_Class/index.html#//apple_ref/occ/instm/NSArray/indexOfObjectWithOptions:passingTest:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("indexOfObjectWithOptions:passingTest:")
     @NUInt
     public native long indexOfObjectWithOptionsPassingTest(@NUInt long opts,
             @ObjCBlock(name = "call_indexOfObjectWithOptionsPassingTest") Block_indexOfObjectWithOptionsPassingTest predicate);
 
-    /**
-     * indexesOfObjectsAtIndexes:options:passingTest:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSArray_Class/index.html#//apple_ref/occ/instm/NSArray/indexesOfObjectsAtIndexes:options:passingTest:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("indexesOfObjectsAtIndexes:options:passingTest:")
     public native NSIndexSet indexesOfObjectsAtIndexesOptionsPassingTest(NSIndexSet s, @NUInt long opts,
             @ObjCBlock(name = "call_indexesOfObjectsAtIndexesOptionsPassingTest") Block_indexesOfObjectsAtIndexesOptionsPassingTest predicate);
 
-    /**
-     * indexesOfObjectsPassingTest:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSArray_Class/index.html#//apple_ref/occ/instm/NSArray/indexesOfObjectsPassingTest:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("indexesOfObjectsPassingTest:")
     public native NSIndexSet indexesOfObjectsPassingTest(
             @ObjCBlock(name = "call_indexesOfObjectsPassingTest") Block_indexesOfObjectsPassingTest predicate);
 
-    /**
-     * indexesOfObjectsWithOptions:passingTest:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSArray_Class/index.html#//apple_ref/occ/instm/NSArray/indexesOfObjectsWithOptions:passingTest:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("indexesOfObjectsWithOptions:passingTest:")
     public native NSIndexSet indexesOfObjectsWithOptionsPassingTest(@NUInt long opts,
             @ObjCBlock(name = "call_indexesOfObjectsWithOptionsPassingTest") Block_indexesOfObjectsWithOptionsPassingTest predicate);
 
-    /**
-     * init</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSArray_Class/index.html#//apple_ref/occ/instm/NSArray/init">iOS Dev Center</a>
-     */
     @Generated
     @Selector("init")
     public native NSArray<?> init();
 
-    /**
-     * initWithArray:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSArray_Class/index.html#//apple_ref/occ/instm/NSArray/initWithArray:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithArray:")
     public native NSArray<?> initWithArray(NSArray<_ObjectType> array);
 
-    /**
-     * initWithArray:copyItems:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSArray_Class/index.html#//apple_ref/occ/instm/NSArray/initWithArray:copyItems:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithArray:copyItems:")
     public native NSArray<?> initWithArrayCopyItems(NSArray<_ObjectType> array, boolean flag);
@@ -535,68 +379,36 @@ public class NSArray<_ObjectType> extends NSObject
     @Selector("initWithCoder:")
     public native NSArray<?> initWithCoder(NSCoder aDecoder);
 
-    /**
-     * initWithContentsOfFile:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSArray_Class/index.html#//apple_ref/occ/instm/NSArray/initWithContentsOfFile:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithContentsOfFile:")
     public native NSArray<_ObjectType> initWithContentsOfFile(String path);
 
-    /**
-     * initWithContentsOfURL:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSArray_Class/index.html#//apple_ref/occ/instm/NSArray/initWithContentsOfURL:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithContentsOfURL:")
     public native NSArray<_ObjectType> initWithContentsOfURL(NSURL url);
 
-    /**
-     * initWithObjects:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSArray_Class/index.html#//apple_ref/occ/instm/NSArray/initWithObjects:">iOS Dev Center</a>
-     */
     @Generated
     @Variadic()
     @Selector("initWithObjects:")
     public native NSArray<?> initWithObjects(@Mapped(ObjCObjectMapper.class) _ObjectType firstObj, Object... varargs);
 
-    /**
-     * initWithObjects:count:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSArray_Class/index.html#//apple_ref/occ/instm/NSArray/initWithObjects:count:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithObjects:count:")
     public native NSArray<?> initWithObjectsCount(ConstPtr<_ObjectType> objects, @NUInt long cnt);
 
-    /**
-     * isEqualToArray:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSArray_Class/index.html#//apple_ref/occ/instm/NSArray/isEqualToArray:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("isEqualToArray:")
     public native boolean isEqualToArray(NSArray<_ObjectType> otherArray);
 
-    /**
-     * lastObject</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSArray_Class/index.html#//apple_ref/occ/instp/NSArray/lastObject">iOS Dev Center</a>
-     */
     @MappedReturn(ObjCObjectMapper.class)
     @Generated
     @Selector("lastObject")
     public native _ObjectType lastObject();
 
-    /**
-     * makeObjectsPerformSelector:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSArray_Class/index.html#//apple_ref/occ/instm/NSArray/makeObjectsPerformSelector:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("makeObjectsPerformSelector:")
     public native void makeObjectsPerformSelector(SEL aSelector);
 
-    /**
-     * makeObjectsPerformSelector:withObject:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSArray_Class/index.html#//apple_ref/occ/instm/NSArray/makeObjectsPerformSelector:withObject:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("makeObjectsPerformSelector:withObject:")
     public native void makeObjectsPerformSelectorWithObject(SEL aSelector,
@@ -607,164 +419,88 @@ public class NSArray<_ObjectType> extends NSObject
     @MappedReturn(ObjCObjectMapper.class)
     public native Object mutableCopyWithZone(VoidPtr zone);
 
-    /**
-     * objectAtIndex:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSArray_Class/index.html#//apple_ref/occ/instm/NSArray/objectAtIndex:">iOS Dev Center</a>
-     */
     @MappedReturn(ObjCObjectMapper.class)
     @Generated
     @Selector("objectAtIndex:")
     public native _ObjectType objectAtIndex(@NUInt long index);
 
-    /**
-     * objectAtIndexedSubscript:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSArray_Class/index.html#//apple_ref/occ/instm/NSArray/objectAtIndexedSubscript:">iOS Dev Center</a>
-     */
     @MappedReturn(ObjCObjectMapper.class)
     @Generated
     @Selector("objectAtIndexedSubscript:")
     public native _ObjectType objectAtIndexedSubscript(@NUInt long idx);
 
-    /**
-     * objectEnumerator</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSArray_Class/index.html#//apple_ref/occ/instm/NSArray/objectEnumerator">iOS Dev Center</a>
-     */
     @Generated
     @Selector("objectEnumerator")
     public native NSEnumerator<_ObjectType> objectEnumerator();
 
-    /**
-     * objectsAtIndexes:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSArray_Class/index.html#//apple_ref/occ/instm/NSArray/objectsAtIndexes:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("objectsAtIndexes:")
     public native NSArray<_ObjectType> objectsAtIndexes(NSIndexSet indexes);
 
-    /**
-     * pathsMatchingExtensions:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSArray_Class/index.html#//apple_ref/occ/instm/NSArray/pathsMatchingExtensions:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("pathsMatchingExtensions:")
     public native NSArray<String> pathsMatchingExtensions(NSArray<String> filterTypes);
 
-    /**
-     * removeObserver:forKeyPath:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSArray_Class/index.html#//apple_ref/occ/instm/NSArray/removeObserver:forKeyPath:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("removeObserver:forKeyPath:")
     public native void removeObserverForKeyPath(NSObject observer, String keyPath);
 
-    /**
-     * removeObserver:forKeyPath:context:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSArray_Class/index.html#//apple_ref/occ/instm/NSArray/removeObserver:forKeyPath:context:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("removeObserver:forKeyPath:context:")
     public native void removeObserverForKeyPathContext(NSObject observer, String keyPath, VoidPtr context);
 
-    /**
-     * removeObserver:fromObjectsAtIndexes:forKeyPath:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSArray_Class/index.html#//apple_ref/occ/instm/NSArray/removeObserver:fromObjectsAtIndexes:forKeyPath:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("removeObserver:fromObjectsAtIndexes:forKeyPath:")
     public native void removeObserverFromObjectsAtIndexesForKeyPath(NSObject observer, NSIndexSet indexes,
             String keyPath);
 
-    /**
-     * removeObserver:fromObjectsAtIndexes:forKeyPath:context:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSArray_Class/index.html#//apple_ref/occ/instm/NSArray/removeObserver:fromObjectsAtIndexes:forKeyPath:context:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("removeObserver:fromObjectsAtIndexes:forKeyPath:context:")
     public native void removeObserverFromObjectsAtIndexesForKeyPathContext(NSObject observer, NSIndexSet indexes,
             String keyPath, VoidPtr context);
 
-    /**
-     * reverseObjectEnumerator</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSArray_Class/index.html#//apple_ref/occ/instm/NSArray/reverseObjectEnumerator">iOS Dev Center</a>
-     */
     @Generated
     @Selector("reverseObjectEnumerator")
     public native NSEnumerator<_ObjectType> reverseObjectEnumerator();
 
-    /**
-     * setValue:forKey:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSArray_Class/index.html#//apple_ref/occ/instm/NSArray/setValue:forKey:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setValue:forKey:")
     public native void setValueForKey(@Mapped(ObjCObjectMapper.class) Object value, String key);
 
-    /**
-     * sortedArrayHint</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSArray_Class/index.html#//apple_ref/occ/instp/NSArray/sortedArrayHint">iOS Dev Center</a>
-     */
     @Generated
     @Selector("sortedArrayHint")
     public native NSData sortedArrayHint();
 
-    /**
-     * sortedArrayUsingComparator:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSArray_Class/index.html#//apple_ref/occ/instm/NSArray/sortedArrayUsingComparator:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("sortedArrayUsingComparator:")
     public native NSArray<_ObjectType> sortedArrayUsingComparator(
             @ObjCBlock(name = "call_sortedArrayUsingComparator") Block_sortedArrayUsingComparator cmptr);
 
-    /**
-     * sortedArrayUsingDescriptors:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSArray_Class/index.html#//apple_ref/occ/instm/NSArray/sortedArrayUsingDescriptors:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("sortedArrayUsingDescriptors:")
     public native NSArray<_ObjectType> sortedArrayUsingDescriptors(NSArray<? extends NSSortDescriptor> sortDescriptors);
 
-    /**
-     * sortedArrayUsingFunction:context:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSArray_Class/index.html#//apple_ref/occ/instm/NSArray/sortedArrayUsingFunction:context:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("sortedArrayUsingFunction:context:")
     public native NSArray<_ObjectType> sortedArrayUsingFunctionContext(
             @FunctionPtr(name = "call_sortedArrayUsingFunctionContext") Function_sortedArrayUsingFunctionContext comparator,
             VoidPtr context);
 
-    /**
-     * sortedArrayUsingFunction:context:hint:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSArray_Class/index.html#//apple_ref/occ/instm/NSArray/sortedArrayUsingFunction:context:hint:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("sortedArrayUsingFunction:context:hint:")
     public native NSArray<_ObjectType> sortedArrayUsingFunctionContextHint(
             @FunctionPtr(name = "call_sortedArrayUsingFunctionContextHint") Function_sortedArrayUsingFunctionContextHint comparator,
             VoidPtr context, NSData hint);
 
-    /**
-     * sortedArrayUsingSelector:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSArray_Class/index.html#//apple_ref/occ/instm/NSArray/sortedArrayUsingSelector:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("sortedArrayUsingSelector:")
     public native NSArray<_ObjectType> sortedArrayUsingSelector(SEL comparator);
 
-    /**
-     * sortedArrayWithOptions:usingComparator:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSArray_Class/index.html#//apple_ref/occ/instm/NSArray/sortedArrayWithOptions:usingComparator:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("sortedArrayWithOptions:usingComparator:")
     public native NSArray<_ObjectType> sortedArrayWithOptionsUsingComparator(@NUInt long opts,
             @ObjCBlock(name = "call_sortedArrayWithOptionsUsingComparator") Block_sortedArrayWithOptionsUsingComparator cmptr);
 
-    /**
-     * subarrayWithRange:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSArray_Class/index.html#//apple_ref/occ/instm/NSArray/subarrayWithRange:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("subarrayWithRange:")
     public native NSArray<_ObjectType> subarrayWithRange(@ByValue NSRange range);
@@ -775,27 +511,15 @@ public class NSArray<_ObjectType> extends NSObject
         return supportsSecureCoding();
     }
 
-    /**
-     * valueForKey:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSArray_Class/index.html#//apple_ref/occ/instm/NSArray/valueForKey:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("valueForKey:")
     @MappedReturn(ObjCObjectMapper.class)
     public native Object valueForKey(String key);
 
-    /**
-     * writeToFile:atomically:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSArray_Class/index.html#//apple_ref/occ/instm/NSArray/writeToFile:atomically:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("writeToFile:atomically:")
     public native boolean writeToFileAtomically(String path, boolean useAuxiliaryFile);
 
-    /**
-     * writeToURL:atomically:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSArray_Class/index.html#//apple_ref/occ/instm/NSArray/writeToURL:atomically:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("writeToURL:atomically:")
     public native boolean writeToURLAtomically(NSURL url, boolean atomically);

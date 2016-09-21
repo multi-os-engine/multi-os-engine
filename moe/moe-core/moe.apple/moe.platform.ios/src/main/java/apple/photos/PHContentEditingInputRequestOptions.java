@@ -164,52 +164,28 @@ public class PHContentEditingInputRequestOptions extends NSObject {
     @Selector("init")
     public native PHContentEditingInputRequestOptions init();
 
-    /**
-     * networkAccessAllowed</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHContentEditingInputRequestOptions_Class/index.html#//apple_ref/occ/instp/PHContentEditingInputRequestOptions/networkAccessAllowed">iOS Dev Center</a>
-     */
     @Generated
     @Selector("isNetworkAccessAllowed")
     public native boolean isNetworkAccessAllowed();
 
-    /**
-     * networkAccessAllowed</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHContentEditingInputRequestOptions_Class/index.html#//apple_ref/occ/instp/PHContentEditingInputRequestOptions/networkAccessAllowed">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setNetworkAccessAllowed:")
     public native void setNetworkAccessAllowed(boolean value);
 
-    /**
-     * canHandleAdjustmentData</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHContentEditingInputRequestOptions_Class/index.html#//apple_ref/occ/instp/PHContentEditingInputRequestOptions/canHandleAdjustmentData">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setCanHandleAdjustmentData:")
     public native void setCanHandleAdjustmentData(
             @ObjCBlock(name = "call_setCanHandleAdjustmentData") Block_setCanHandleAdjustmentData value);
 
-    /**
-     * progressHandler</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHContentEditingInputRequestOptions_Class/index.html#//apple_ref/occ/instp/PHContentEditingInputRequestOptions/progressHandler">iOS Dev Center</a>
-     */
     @Generated
     @Selector("setProgressHandler:")
     public native void setProgressHandler(@ObjCBlock(name = "call_setProgressHandler") Block_setProgressHandler value);
 
-    /**
-     * canHandleAdjustmentData</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHContentEditingInputRequestOptions_Class/index.html#//apple_ref/occ/instp/PHContentEditingInputRequestOptions/canHandleAdjustmentData">iOS Dev Center</a>
-     */
     @Generated
     @Selector("canHandleAdjustmentData")
     @ObjCBlock(name = "call_canHandleAdjustmentData_ret")
     public native Block_canHandleAdjustmentData_ret canHandleAdjustmentData();
 
-    /**
-     * progressHandler</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHContentEditingInputRequestOptions_Class/index.html#//apple_ref/occ/instp/PHContentEditingInputRequestOptions/progressHandler">iOS Dev Center</a>
-     */
     @Generated
     @Selector("progressHandler")
     @ObjCBlock(name = "call_progressHandler_ret")

@@ -58,10 +58,6 @@ public class GKStateMachine extends NSObject {
     @Selector("alloc")
     public static native GKStateMachine alloc();
 
-    /**
-     * stateMachineWithStates:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameplayKit/Reference/GKStateMachine_Class/index.html#//apple_ref/occ/clm/GKStateMachine/stateMachineWithStates:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("stateMachineWithStates:")
     public static native GKStateMachine stateMachineWithStates(NSArray<? extends GKState> states);
@@ -166,26 +162,14 @@ public class GKStateMachine extends NSObject {
     @NInt
     public static native long version_static();
 
-    /**
-     * canEnterState:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameplayKit/Reference/GKStateMachine_Class/index.html#//apple_ref/occ/instm/GKStateMachine/canEnterState:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("canEnterState:")
     public native boolean canEnterState(Class stateClass);
 
-    /**
-     * currentState</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameplayKit/Reference/GKStateMachine_Class/index.html#//apple_ref/occ/instp/GKStateMachine/currentState">iOS Dev Center</a>
-     */
     @Generated
     @Selector("currentState")
     public native GKState currentState();
 
-    /**
-     * enterState:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameplayKit/Reference/GKStateMachine_Class/index.html#//apple_ref/occ/instm/GKStateMachine/enterState:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("enterState:")
     public native boolean enterState(Class stateClass);
@@ -194,26 +178,14 @@ public class GKStateMachine extends NSObject {
     @Selector("init")
     public native GKStateMachine init();
 
-    /**
-     * initWithStates:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameplayKit/Reference/GKStateMachine_Class/index.html#//apple_ref/occ/instm/GKStateMachine/initWithStates:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("initWithStates:")
     public native GKStateMachine initWithStates(NSArray<? extends GKState> states);
 
-    /**
-     * stateForClass:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameplayKit/Reference/GKStateMachine_Class/index.html#//apple_ref/occ/instm/GKStateMachine/stateForClass:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("stateForClass:")
     public native GKState stateForClass(Class stateClass);
 
-    /**
-     * updateWithDeltaTime:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameplayKit/Reference/GKStateMachine_Class/index.html#//apple_ref/occ/instm/GKStateMachine/updateWithDeltaTime:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("updateWithDeltaTime:")
     public native void updateWithDeltaTime(double sec);

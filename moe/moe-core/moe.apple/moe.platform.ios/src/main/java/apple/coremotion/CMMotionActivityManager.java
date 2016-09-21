@@ -62,10 +62,6 @@ public class CMMotionActivityManager extends NSObject {
     @Selector("alloc")
     public static native CMMotionActivityManager alloc();
 
-    /**
-     * isActivityAvailable</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMotion/Reference/CMMotionActivityManager_class/index.html#//apple_ref/occ/clm/CMMotionActivityManager/isActivityAvailable">iOS Dev Center</a>
-     */
     @Generated
     @Selector("isActivityAvailable")
     public static native boolean isActivityAvailable();
@@ -174,29 +170,17 @@ public class CMMotionActivityManager extends NSObject {
     @Selector("init")
     public native CMMotionActivityManager init();
 
-    /**
-     * queryActivityStartingFromDate:toDate:toQueue:withHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMotion/Reference/CMMotionActivityManager_class/index.html#//apple_ref/occ/instm/CMMotionActivityManager/queryActivityStartingFromDate:toDate:toQueue:withHandler:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("queryActivityStartingFromDate:toDate:toQueue:withHandler:")
     public native void queryActivityStartingFromDateToDateToQueueWithHandler(NSDate start, NSDate end,
             NSOperationQueue queue,
             @ObjCBlock(name = "call_queryActivityStartingFromDateToDateToQueueWithHandler") Block_queryActivityStartingFromDateToDateToQueueWithHandler handler);
 
-    /**
-     * startActivityUpdatesToQueue:withHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMotion/Reference/CMMotionActivityManager_class/index.html#//apple_ref/occ/instm/CMMotionActivityManager/startActivityUpdatesToQueue:withHandler:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("startActivityUpdatesToQueue:withHandler:")
     public native void startActivityUpdatesToQueueWithHandler(NSOperationQueue queue,
             @ObjCBlock(name = "call_startActivityUpdatesToQueueWithHandler") Block_startActivityUpdatesToQueueWithHandler handler);
 
-    /**
-     * stopActivityUpdates</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMotion/Reference/CMMotionActivityManager_class/index.html#//apple_ref/occ/instm/CMMotionActivityManager/stopActivityUpdates">iOS Dev Center</a>
-     */
     @Generated
     @Selector("stopActivityUpdates")
     public native void stopActivityUpdates();
