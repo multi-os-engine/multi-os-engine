@@ -31,7 +31,9 @@ import org.eclipse.core.runtime.NullProgressMonitor;
 import org.eclipse.debug.core.ILaunch;
 import org.eclipse.debug.core.ILaunchConfiguration;
 import org.eclipse.debug.core.ILaunchManager;
+import org.eclipse.debug.core.IStreamListener;
 import org.eclipse.debug.core.model.IProcess;
+import org.eclipse.debug.core.model.IStreamMonitor;
 import org.eclipse.ui.console.MessageConsole;
 import org.eclipse.ui.console.MessageConsoleStream;
 import org.moe.common.exec.ExecRunner;
@@ -211,6 +213,18 @@ public class ApplicationManager {
 		}
 
 		IProcess mavenProcess = process[0];
+		
+		StringBuffer errorBuffer = new StringBuffer();
+		
+		mavenProcess.getStreamsProxy().getOutputStreamMonitor().addListener(new IStreamListener() {
+			
+			@Override
+			public void streamAppended(String line, IStreamMonitor arg1) {
+				if (line.startsWith("[ERROR]")) {
+					errorBuffer.append(line);
+				}
+			}
+		});
 
 		while (!launch.isTerminated()) {
 			try {
@@ -227,7 +241,7 @@ public class ApplicationManager {
 		int result = mavenProcess.getExitValue();
 
 		if (result != 0) {
-			throw new CoreException(MessageFactory.getError("Maven build error"));
+			throw new CoreException(MessageFactory.getError("Maven build error", new Exception(errorBuffer.toString())));
 		}
 
 		progressMonitor.subTask("Build successful");
@@ -252,6 +266,8 @@ public class ApplicationManager {
 		}
 
 		Process process = null;
+		StringBuffer errorBuffer = new StringBuffer();
+		
 		if (runner != null) {
 			runner.getBuilder().directory(f);
 			final MessageConsoleStream consoleStream = console.newMessageStream();
@@ -265,6 +281,8 @@ public class ApplicationManager {
 				@Override
 				public void stderr(String message) {
 					consoleStream.println(message);
+					errorBuffer.append(message);
+					errorBuffer.append("\n");
 				}
 			});
 		}
@@ -282,7 +300,7 @@ public class ApplicationManager {
 			int result = process.waitFor();
 
 			if (result != 0) {
-				throw new CoreException(MessageFactory.getError("Gradle build error"));
+				throw new CoreException(MessageFactory.getError("Gradle build error", new Exception(errorBuffer.toString())));
 			}
 			LOG.debug("Build result: " + result);
 		} catch (IOException | InterruptedException e) {
