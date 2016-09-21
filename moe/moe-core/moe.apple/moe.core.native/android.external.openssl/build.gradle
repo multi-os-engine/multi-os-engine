@@ -28,3 +28,6 @@ XcodeBuild.createTask(project, "openssl", "ios", "iphonesimulator", "Debug")
 XcodeBuild.createTask(project, "openssl", "ios", "iphonesimulator", "Release")
         .cond_buildopt(buildfilter.ios.archs, "ARCHS")
         .cond_buildopt(buildfilter.ios.archs != null, "ONLY_ACTIVE_ARCH", "YES")
+
+XcodeBuild.createTask(project, "openssl", "macos", "macosx", "Debug")
+XcodeBuild.createTask(project, "openssl", "macos", "macosx", "Release")

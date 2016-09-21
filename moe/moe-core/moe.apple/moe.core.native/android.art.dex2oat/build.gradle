@@ -23,6 +23,7 @@ def androidDeps = [
                 ':moe.apple:moe.core.native:android.art.compiler',
                 ':moe.apple:moe.core.native:android.art.runtime',
                 ':moe.apple:moe.core.native:android.art.sigchainlib',
+                ':moe.apple:moe.core.native:android.external.openssl',
                 ':moe.apple:moe.core.native:android.external.vixl',
                 ':moe.apple:moe.core.native:android.libnativehelper',
                 ':moe.apple:moe.core.native:android.system.core.libbacktrace',

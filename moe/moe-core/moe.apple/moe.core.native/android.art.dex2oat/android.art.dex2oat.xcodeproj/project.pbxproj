@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		230A4D991937A2DB00BE9D69 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D94FEED5183AB17100589FCA /* Foundation.framework */; };
 		238561E81935DFDC0071CE6F /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 238561E71935DFDC0071CE6F /* IOKit.framework */; };
-		238561E91935DFF70071CE6F /* libcrypto.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 238561E51935DFD00071CE6F /* libcrypto.dylib */; };
 		23966DF3192CF61100A807F8 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 23966D72192CDF2800A807F8 /* libz.dylib */; };
 		D9679DDB183D0B2000E3DEE6 /* dex2oat.cc in Sources */ = {isa = PBXBuildFile; fileRef = D9679DCC183D0AEA00E3DEE6 /* dex2oat.cc */; };
 /* End PBXBuildFile section */
@@ -45,7 +44,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				230A4D991937A2DB00BE9D69 /* Foundation.framework in Frameworks */,
-				238561E91935DFF70071CE6F /* libcrypto.dylib in Frameworks */,
 				238561E81935DFDC0071CE6F /* IOKit.framework in Frameworks */,
 				23966DF3192CF61100A807F8 /* libz.dylib in Frameworks */,
 			);
@@ -305,6 +303,7 @@
 					"$(SRCROOT)/../android.art.runtime/build/xcode/$(CONFIGURATION)-$(PLATFORM_NAME)",
 					"$(SRCROOT)/../android.art.sigchainlib/build/xcode/$(CONFIGURATION)-$(PLATFORM_NAME)",
 					"$(SRCROOT)/../android.art.compiler/build/xcode/$(CONFIGURATION)-$(PLATFORM_NAME)",
+					"$(SRCROOT)/../android.external.openssl/build/xcode/$(CONFIGURATION)-$(PLATFORM_NAME)",
 					"$(SRCROOT)/../android.external.vixl/build/xcode/$(CONFIGURATION)-$(PLATFORM_NAME)",
 					"$(SRCROOT)/../android.libnativehelper/build/xcode/$(CONFIGURATION)-$(PLATFORM_NAME)",
 				);
@@ -317,6 +316,7 @@
 					"-llibutils",
 					"-llibcutils",
 					"-lcompiler",
+					"-lopenssl",
 					"-lruntime",
 					"-lsigchainlib",
 					"-lvixl",
@@ -367,6 +367,7 @@
 					"$(SRCROOT)/../android.art.runtime/build/xcode/$(CONFIGURATION)-$(PLATFORM_NAME)",
 					"$(SRCROOT)/../android.art.sigchainlib/build/xcode/$(CONFIGURATION)-$(PLATFORM_NAME)",
 					"$(SRCROOT)/../android.art.compiler/build/xcode/$(CONFIGURATION)-$(PLATFORM_NAME)",
+					"$(SRCROOT)/../android.external.openssl/build/xcode/$(CONFIGURATION)-$(PLATFORM_NAME)",
 					"$(SRCROOT)/../android.external.vixl/build/xcode/$(CONFIGURATION)-$(PLATFORM_NAME)",
 					"$(SRCROOT)/../android.libnativehelper/build/xcode/$(CONFIGURATION)-$(PLATFORM_NAME)",
 				);
@@ -379,6 +380,7 @@
 					"-llibutils",
 					"-llibcutils",
 					"-lcompiler",
+					"-lopenssl",
 					"-lruntime",
 					"-lsigchainlib",
 					"-lvixl",
