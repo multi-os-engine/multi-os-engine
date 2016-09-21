@@ -21,6 +21,7 @@ import org.clang.enums.CXCursorKind;
 import org.clang.enums.CXIdxEntityKind;
 import org.clang.enums.CXIdxObjCContainerKind;
 import org.clang.enums.CXLinkageKind;
+import org.clang.enums.CXObjCPropertyAttrKind;
 import org.clang.enums.CXTypeKind;
 import org.clang.struct.CXCursor;
 import org.clang.struct.CXIdxDeclInfo;
@@ -316,9 +317,10 @@ class ModelBuilder extends AbstractModelEditor {
         final CXType type = declCursor.getCursorType();
         final String name = declCursor.toString();
         final int propertyFlags = clang_Cursor_getObjCPropertyAttributes(declCursor, 0);
+        final boolean isStatic = (propertyFlags & CXObjCPropertyAttrKind.CXObjCPropertyAttr_class) > 0;
 
         // Create getter
-        final ObjCMethod getter = new ObjCMethod(getter_info.cursor().toString(), false, new Type(type, memModel), 0,
+        final ObjCMethod getter = new ObjCMethod(getter_info.cursor().toString(), isStatic, new Type(type, memModel), 0,
                 ObjCMethodKind.PROPERTY_GETTER, false, manager);
         getter.close();
         getter.setDeprecated(ClangUtil.isDeprecated(declCursor));
@@ -336,7 +338,7 @@ class ModelBuilder extends AbstractModelEditor {
 
         // Create setter
         if (setter_info != null) {
-            final ObjCMethod setter = new ObjCMethod(setter_info.cursor().toString(), false, null, 1,
+            final ObjCMethod setter = new ObjCMethod(setter_info.cursor().toString(), isStatic, null, 1,
                     ObjCMethodKind.PROPERTY_SETTER, false, manager);
             setter.getArguments().add(new CalleeArgument("value", new Type(type, memModel)));
             setter.close();

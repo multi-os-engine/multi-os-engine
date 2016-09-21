@@ -20,6 +20,7 @@ import org.clang.enums.CXObjCPropertyAttrKind;
 import org.moe.natjgen.util.StringUtil;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 
 public class ObjCMethod extends AbstractModelElement implements IParameterizedCallable {
 
@@ -149,6 +150,8 @@ public class ObjCMethod extends AbstractModelElement implements IParameterizedCa
         updateJavaMethodName();
     }
 
+    private final HashSet<ObjCMethod> inheritedCopies = new HashSet<>();
+
     /**
      * Creates a copy of a method and skips the 'skipViaConfig' flag.
      *
@@ -175,6 +178,7 @@ public class ObjCMethod extends AbstractModelElement implements IParameterizedCa
             ObjCClassManager cmOwner = (ObjCClassManager)this.owner;
             copy.isInheritedFromNonTemplateClass = cmOwner.genericParamTypes.size() == 0;
         }
+        inheritedCopies.add(copy);
         return copy;
     }
 
@@ -430,12 +434,15 @@ public class ObjCMethod extends AbstractModelElement implements IParameterizedCa
     }
 
     /**
-     * Append a suffix to the java name
-     *
-     * @param sfx suffix to append
+     * Append a '_static' suffix to the java name
      */
-    public void addJavaSuffix(String sfx) {
-        javaName += sfx;
+    public void addStaticSuffix() {
+        if (!javaName.endsWith("_static")) {
+            javaName += "_static";
+        }
+        for (ObjCMethod inheritedCopy : inheritedCopies) {
+            inheritedCopy.addStaticSuffix();
+        }
     }
 
     /**

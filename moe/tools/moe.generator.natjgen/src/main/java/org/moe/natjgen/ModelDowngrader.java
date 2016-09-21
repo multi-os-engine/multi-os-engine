@@ -19,6 +19,7 @@ package org.moe.natjgen;
 import org.clang.c.clang;
 import org.clang.enums.CXCursorKind;
 import org.clang.enums.CXLinkageKind;
+import org.clang.enums.CXObjCPropertyAttrKind;
 import org.clang.struct.CXCursor;
 import org.clang.struct.CXIdxDeclInfo;
 import org.clang.struct.CXIdxEntityInfo;
@@ -31,6 +32,7 @@ import org.moe.natjgen.Configuration.Unit;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import static org.clang.c.clang.clang_Cursor_getObjCPropertyAttributes;
 import static org.clang.c.clang.clang_getFileName;
 
 class ModelDowngrader extends AbstractModelEditor {
@@ -151,11 +153,14 @@ class ModelDowngrader extends AbstractModelEditor {
         CXIdxEntityInfo setter_info = info.setter();
 
         // Get Objective-C attribute
-        final CXType type = decl.cursor().getCursorType();
+        final CXCursor declCursor = decl.cursor();
+        final CXType type = declCursor.getCursorType();
+        final int propertyFlags = clang_Cursor_getObjCPropertyAttributes(declCursor, 0);
+        final boolean isStatic = (propertyFlags & CXObjCPropertyAttrKind.CXObjCPropertyAttr_class) > 0;
 
         // Check getter
         String selector = getter_info.cursor().toString();
-        ObjCMethod getter = manager.getMethodWithSelector(selector, false);
+        ObjCMethod getter = manager.getMethodWithSelector(selector, isStatic);
         if (getter == null) {
             return;
         }
@@ -186,7 +191,7 @@ class ModelDowngrader extends AbstractModelEditor {
         // Create setter
         if (setter_info != null) {
             selector = setter_info.cursor().toString();
-            ObjCMethod setter = manager.getMethodWithSelector(selector, false);
+            ObjCMethod setter = manager.getMethodWithSelector(selector, isStatic);
             if (setter == null) {
                 return;
             }

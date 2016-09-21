@@ -739,9 +739,9 @@ public class ObjCClassManager extends AbstractUnitManager {
                 if (collision_method.isStatic() == method.isStatic()) {
                     // Do nothing
                 } else if (collision_method.isStatic()) {
-                    collision_method.addJavaSuffix("_static");
+                    collision_method.addStaticSuffix();
                 } else {
-                    method.addJavaSuffix("_static");
+                    method.addStaticSuffix();
                 }
             }
         }
