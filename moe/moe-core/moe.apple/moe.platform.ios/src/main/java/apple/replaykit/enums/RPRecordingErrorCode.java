@@ -29,6 +29,8 @@ public final class RPRecordingErrorCode {
     @Generated @NInt public static final long InsufficientStorage = 0xFFFFFFFFFFFFE953L;
     @Generated @NInt public static final long Interrupted = 0xFFFFFFFFFFFFE952L;
     @Generated @NInt public static final long ContentResize = 0xFFFFFFFFFFFFE951L;
+    @Generated @NInt public static final long BroadcastInvalidSession = 0xFFFFFFFFFFFFE950L;
+    @Generated @NInt public static final long SystemDormancy = 0xFFFFFFFFFFFFE94FL;
 
     @Generated
     private RPRecordingErrorCode() {

@@ -57,21 +57,13 @@ public class UINib extends NSObject {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native UINib alloc();
-
-    @Generated
-    @Selector("nibWithData:bundle:")
-    public static native UINib nibWithDataBundle(NSData data, NSBundle bundleOrNil);
-
-    @Generated
-    @Selector("nibWithNibName:bundle:")
-    public static native UINib nibWithNibNameBundle(String name, NSBundle bundleOrNil);
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -149,6 +141,14 @@ public class UINib extends NSObject {
     public static native Object new_objc();
 
     @Generated
+    @Selector("nibWithData:bundle:")
+    public static native UINib nibWithDataBundle(NSData data, NSBundle bundleOrNil);
+
+    @Generated
+    @Selector("nibWithNibName:bundle:")
+    public static native UINib nibWithNibNameBundle(String name, NSBundle bundleOrNil);
+
+    @Generated
     @Selector("resolveClassMethod:")
     public static native boolean resolveClassMethod(SEL sel);
 
@@ -158,7 +158,7 @@ public class UINib extends NSObject {
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")

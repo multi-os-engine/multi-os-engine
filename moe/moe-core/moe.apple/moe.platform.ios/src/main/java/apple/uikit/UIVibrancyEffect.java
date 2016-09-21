@@ -56,21 +56,13 @@ public class UIVibrancyEffect extends UIVisualEffect {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native UIVibrancyEffect alloc();
-
-    @Generated
-    @Selector("effectForBlurEffect:")
-    public static native UIVibrancyEffect effectForBlurEffect(UIBlurEffect blurEffect);
-
-    @Generated
-    @Selector("notificationCenterVibrancyEffect")
-    public static native UIVibrancyEffect notificationCenterVibrancyEffect();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -106,6 +98,10 @@ public class UIVibrancyEffect extends UIVisualEffect {
     @Generated
     @Selector("description")
     public static native String description_static();
+
+    @Generated
+    @Selector("effectForBlurEffect:")
+    public static native UIVibrancyEffect effectForBlurEffect(UIBlurEffect blurEffect);
 
     @Generated
     @Selector("hash")
@@ -148,6 +144,10 @@ public class UIVibrancyEffect extends UIVisualEffect {
     public static native Object new_objc();
 
     @Generated
+    @Selector("notificationCenterVibrancyEffect")
+    public static native UIVibrancyEffect notificationCenterVibrancyEffect();
+
+    @Generated
     @Selector("resolveClassMethod:")
     public static native boolean resolveClassMethod(SEL sel);
 
@@ -157,7 +157,7 @@ public class UIVibrancyEffect extends UIVisualEffect {
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")
@@ -171,6 +171,14 @@ public class UIVibrancyEffect extends UIVisualEffect {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("widgetPrimaryVibrancyEffect")
+    public static native UIVibrancyEffect widgetPrimaryVibrancyEffect();
+
+    @Generated
+    @Selector("widgetSecondaryVibrancyEffect")
+    public static native UIVibrancyEffect widgetSecondaryVibrancyEffect();
 
     @Generated
     @Selector("init")

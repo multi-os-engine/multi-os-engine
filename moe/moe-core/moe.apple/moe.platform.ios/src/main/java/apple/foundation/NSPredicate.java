@@ -57,39 +57,13 @@ public class NSPredicate extends NSObject implements NSSecureCoding, NSCopying {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native NSPredicate alloc();
-
-    @Generated
-    @Selector("predicateWithBlock:")
-    public static native NSPredicate predicateWithBlock(
-            @ObjCBlock(name = "call_predicateWithBlock") Block_predicateWithBlock block);
-
-    @Generated
-    @Variadic()
-    @Selector("predicateWithFormat:")
-    public static native NSPredicate predicateWithFormat(String predicateFormat, Object... varargs);
-
-    @Generated
-    @Selector("predicateWithFormat:argumentArray:")
-    public static native NSPredicate predicateWithFormatArgumentArray(String predicateFormat, NSArray<?> arguments);
-
-    @Generated
-    @Selector("predicateWithFormat:arguments:")
-    public static native NSPredicate predicateWithFormatArguments(String predicateFormat, BytePtr argList);
-
-    @Generated
-    @Selector("predicateWithValue:")
-    public static native NSPredicate predicateWithValue(boolean value);
-
-    @Generated
-    @Selector("supportsSecureCoding")
-    public static native boolean supportsSecureCoding();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -167,6 +141,28 @@ public class NSPredicate extends NSObject implements NSSecureCoding, NSCopying {
     public static native Object new_objc();
 
     @Generated
+    @Selector("predicateWithBlock:")
+    public static native NSPredicate predicateWithBlock(
+            @ObjCBlock(name = "call_predicateWithBlock") Block_predicateWithBlock block);
+
+    @Generated
+    @Variadic()
+    @Selector("predicateWithFormat:")
+    public static native NSPredicate predicateWithFormat(String predicateFormat, Object... varargs);
+
+    @Generated
+    @Selector("predicateWithFormat:argumentArray:")
+    public static native NSPredicate predicateWithFormatArgumentArray(String predicateFormat, NSArray<?> arguments);
+
+    @Generated
+    @Selector("predicateWithFormat:arguments:")
+    public static native NSPredicate predicateWithFormatArguments(String predicateFormat, BytePtr argList);
+
+    @Generated
+    @Selector("predicateWithValue:")
+    public static native NSPredicate predicateWithValue(boolean value);
+
+    @Generated
     @Selector("resolveClassMethod:")
     public static native boolean resolveClassMethod(SEL sel);
 
@@ -176,11 +172,15 @@ public class NSPredicate extends NSObject implements NSSecureCoding, NSCopying {
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")
     public static native Class superclass_static();
+
+    @Generated
+    @Selector("supportsSecureCoding")
+    public static native boolean supportsSecureCoding();
 
     @Generated
     @Selector("version")

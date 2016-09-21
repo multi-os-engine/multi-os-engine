@@ -54,13 +54,13 @@ public class UIEvent extends NSObject {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native UIEvent alloc();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -147,7 +147,7 @@ public class UIEvent extends NSObject {
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")
@@ -163,8 +163,16 @@ public class UIEvent extends NSObject {
     public native NSSet<? extends UITouch> allTouches();
 
     @Generated
+    @Selector("coalescedTouchesForTouch:")
+    public native NSArray<? extends UITouch> coalescedTouchesForTouch(UITouch touch);
+
+    @Generated
     @Selector("init")
     public native UIEvent init();
+
+    @Generated
+    @Selector("predictedTouchesForTouch:")
+    public native NSArray<? extends UITouch> predictedTouchesForTouch(UITouch touch);
 
     @Generated
     @Selector("subtype")
@@ -191,12 +199,4 @@ public class UIEvent extends NSObject {
     @Selector("type")
     @NInt
     public native long type();
-
-    @Generated
-    @Selector("coalescedTouchesForTouch:")
-    public native NSArray<? extends UITouch> coalescedTouchesForTouch(UITouch touch);
-
-    @Generated
-    @Selector("predictedTouchesForTouch:")
-    public native NSArray<? extends UITouch> predictedTouchesForTouch(UITouch touch);
 }

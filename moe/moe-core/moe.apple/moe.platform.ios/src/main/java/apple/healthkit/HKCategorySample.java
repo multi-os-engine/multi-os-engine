@@ -58,28 +58,13 @@ public class HKCategorySample extends HKSample {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native HKCategorySample alloc();
-
-    @Generated
-    @Selector("categorySampleWithType:value:startDate:endDate:")
-    public static native HKCategorySample categorySampleWithTypeValueStartDateEndDate(HKCategoryType type,
-            @NInt long value, NSDate startDate, NSDate endDate);
-
-    @Generated
-    @Selector("categorySampleWithType:value:startDate:endDate:metadata:")
-    public static native HKCategorySample categorySampleWithTypeValueStartDateEndDateMetadata(HKCategoryType type,
-            @NInt long value, NSDate startDate, NSDate endDate, NSDictionary<String, ?> metadata);
-
-    @Generated
-    @Selector("categorySampleWithType:value:startDate:endDate:device:metadata:")
-    public static native HKCategorySample categorySampleWithTypeValueStartDateEndDateDeviceMetadata(HKCategoryType type,
-            @NInt long value, NSDate startDate, NSDate endDate, HKDevice device, NSDictionary<String, ?> metadata);
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -99,6 +84,21 @@ public class HKCategorySample extends HKSample {
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
             @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
             @Mapped(ObjCObjectMapper.class) Object anArgument);
+
+    @Generated
+    @Selector("categorySampleWithType:value:startDate:endDate:")
+    public static native HKCategorySample categorySampleWithTypeValueStartDateEndDate(HKCategoryType type,
+            @NInt long value, NSDate startDate, NSDate endDate);
+
+    @Generated
+    @Selector("categorySampleWithType:value:startDate:endDate:device:metadata:")
+    public static native HKCategorySample categorySampleWithTypeValueStartDateEndDateDeviceMetadata(HKCategoryType type,
+            @NInt long value, NSDate startDate, NSDate endDate, HKDevice device, NSDictionary<String, ?> metadata);
+
+    @Generated
+    @Selector("categorySampleWithType:value:startDate:endDate:metadata:")
+    public static native HKCategorySample categorySampleWithTypeValueStartDateEndDateMetadata(HKCategoryType type,
+            @NInt long value, NSDate startDate, NSDate endDate, NSDictionary<String, ?> metadata);
 
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
@@ -166,7 +166,7 @@ public class HKCategorySample extends HKSample {
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")
@@ -190,11 +190,6 @@ public class HKCategorySample extends HKSample {
     public native HKCategorySample init();
 
     @Generated
-    @Selector("value")
-    @NInt
-    public native long value();
-
-    @Generated
     @Selector("initWithCoder:")
     public native HKCategorySample initWithCoder(NSCoder aDecoder);
 
@@ -203,4 +198,9 @@ public class HKCategorySample extends HKSample {
     public boolean _supportsSecureCoding() {
         return supportsSecureCoding();
     }
+
+    @Generated
+    @Selector("value")
+    @NInt
+    public native long value();
 }

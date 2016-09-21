@@ -60,32 +60,13 @@ public class CKLocationSortDescriptor extends NSSortDescriptor implements NSSecu
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native CKLocationSortDescriptor alloc();
-
-    @Generated
-    @Selector("sortDescriptorWithKey:ascending:")
-    public static native CKLocationSortDescriptor sortDescriptorWithKeyAscending(String key, boolean ascending);
-
-    @Generated
-    @Selector("sortDescriptorWithKey:ascending:comparator:")
-    public static native CKLocationSortDescriptor sortDescriptorWithKeyAscendingComparator(String key,
-            boolean ascending,
-            @ObjCBlock(name = "call_sortDescriptorWithKeyAscendingComparator") NSSortDescriptor.Block_sortDescriptorWithKeyAscendingComparator cmptr);
-
-    @Generated
-    @Selector("sortDescriptorWithKey:ascending:selector:")
-    public static native CKLocationSortDescriptor sortDescriptorWithKeyAscendingSelector(String key, boolean ascending,
-            SEL selector);
-
-    @Generated
-    @Selector("supportsSecureCoding")
-    public static native boolean supportsSecureCoding();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -175,8 +156,27 @@ public class CKLocationSortDescriptor extends NSSortDescriptor implements NSSecu
     public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
+    @Selector("sortDescriptorWithKey:ascending:")
+    public static native CKLocationSortDescriptor sortDescriptorWithKeyAscending(String key, boolean ascending);
+
+    @Generated
+    @Selector("sortDescriptorWithKey:ascending:comparator:")
+    public static native CKLocationSortDescriptor sortDescriptorWithKeyAscendingComparator(String key,
+            boolean ascending,
+            @ObjCBlock(name = "call_sortDescriptorWithKeyAscendingComparator") NSSortDescriptor.Block_sortDescriptorWithKeyAscendingComparator cmptr);
+
+    @Generated
+    @Selector("sortDescriptorWithKey:ascending:selector:")
+    public static native CKLocationSortDescriptor sortDescriptorWithKeyAscendingSelector(String key, boolean ascending,
+            SEL selector);
+
+    @Generated
     @Selector("superclass")
     public static native Class superclass_static();
+
+    @Generated
+    @Selector("supportsSecureCoding")
+    public static native boolean supportsSecureCoding();
 
     @Generated
     @Selector("version")

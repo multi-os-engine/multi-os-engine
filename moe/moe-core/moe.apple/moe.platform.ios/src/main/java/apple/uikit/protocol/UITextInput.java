@@ -49,6 +49,13 @@ public interface UITextInput extends UIKeyInput {
     long baseWritingDirectionForPositionInDirection(UITextPosition position, @NInt long direction);
 
     @Generated
+    @IsOptional
+    @Selector("beginFloatingCursorAtPoint:")
+    default void beginFloatingCursorAtPoint(@ByValue CGPoint point) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Generated
     @Selector("beginningOfDocument")
     UITextPosition beginningOfDocument();
 
@@ -97,6 +104,13 @@ public interface UITextInput extends UIKeyInput {
     @IsOptional
     @Selector("dictationRecordingDidEnd")
     default void dictationRecordingDidEnd() {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Generated
+    @IsOptional
+    @Selector("endFloatingCursor")
+    default void endFloatingCursor() {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -262,20 +276,6 @@ public interface UITextInput extends UIKeyInput {
     @Generated
     @Selector("unmarkText")
     void unmarkText();
-
-    @Generated
-    @IsOptional
-    @Selector("beginFloatingCursorAtPoint:")
-    default void beginFloatingCursorAtPoint(@ByValue CGPoint point) {
-        throw new java.lang.UnsupportedOperationException();
-    }
-
-    @Generated
-    @IsOptional
-    @Selector("endFloatingCursor")
-    default void endFloatingCursor() {
-        throw new java.lang.UnsupportedOperationException();
-    }
 
     @Generated
     @IsOptional

@@ -54,25 +54,13 @@ public class NSInputStream extends NSStream {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native NSInputStream alloc();
-
-    @Generated
-    @Selector("inputStreamWithData:")
-    public static native NSInputStream inputStreamWithData(NSData data);
-
-    @Generated
-    @Selector("inputStreamWithFileAtPath:")
-    public static native NSInputStream inputStreamWithFileAtPath(String path);
-
-    @Generated
-    @Selector("inputStreamWithURL:")
-    public static native NSInputStream inputStreamWithURL(NSURL url);
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -127,6 +115,18 @@ public class NSInputStream extends NSStream {
     @Generated
     @Selector("initialize")
     public static native void initialize();
+
+    @Generated
+    @Selector("inputStreamWithData:")
+    public static native NSInputStream inputStreamWithData(NSData data);
+
+    @Generated
+    @Selector("inputStreamWithFileAtPath:")
+    public static native NSInputStream inputStreamWithFileAtPath(String path);
+
+    @Generated
+    @Selector("inputStreamWithURL:")
+    public static native NSInputStream inputStreamWithURL(NSURL url);
 
     @Generated
     @Selector("instanceMethodForSelector:")

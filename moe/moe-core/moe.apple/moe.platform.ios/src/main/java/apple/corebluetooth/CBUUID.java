@@ -57,8 +57,8 @@ public class CBUUID extends NSObject implements NSCopying {
         super(peer);
     }
 
-    @Deprecated
     @Generated
+    @Deprecated
     @Selector("UUIDWithCFUUID:")
     public static native CBUUID UUIDWithCFUUID(CFUUIDRef theUUID);
 
@@ -75,13 +75,13 @@ public class CBUUID extends NSObject implements NSCopying {
     public static native CBUUID UUIDWithString(String theString);
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native CBUUID alloc();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -168,7 +168,7 @@ public class CBUUID extends NSObject implements NSCopying {
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")

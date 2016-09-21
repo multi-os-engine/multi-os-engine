@@ -59,18 +59,13 @@ public class SKPhysicsJointSliding extends SKPhysicsJoint {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native SKPhysicsJointSliding alloc();
-
-    @Generated
-    @Selector("jointWithBodyA:bodyB:anchor:axis:")
-    public static native SKPhysicsJointSliding jointWithBodyABodyBAnchorAxis(SKPhysicsBody bodyA, SKPhysicsBody bodyB,
-            @ByValue CGPoint anchor, @ByValue CGVector axis);
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -134,6 +129,11 @@ public class SKPhysicsJointSliding extends SKPhysicsJoint {
     public static native boolean isSubclassOfClass(Class aClass);
 
     @Generated
+    @Selector("jointWithBodyA:bodyB:anchor:axis:")
+    public static native SKPhysicsJointSliding jointWithBodyABodyBAnchorAxis(SKPhysicsBody bodyA, SKPhysicsBody bodyB,
+            @ByValue CGPoint anchor, @ByValue CGVector axis);
+
+    @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
@@ -173,6 +173,10 @@ public class SKPhysicsJointSliding extends SKPhysicsJoint {
     public native SKPhysicsJointSliding init();
 
     @Generated
+    @Selector("initWithCoder:")
+    public native SKPhysicsJointSliding initWithCoder(NSCoder aDecoder);
+
+    @Generated
     @Selector("lowerDistanceLimit")
     @NFloat
     public native double lowerDistanceLimit();
@@ -197,8 +201,4 @@ public class SKPhysicsJointSliding extends SKPhysicsJoint {
     @Selector("upperDistanceLimit")
     @NFloat
     public native double upperDistanceLimit();
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native SKPhysicsJointSliding initWithCoder(NSCoder aDecoder);
 }

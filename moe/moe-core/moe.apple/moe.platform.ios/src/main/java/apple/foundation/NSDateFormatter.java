@@ -54,31 +54,13 @@ public class NSDateFormatter extends NSFormatter {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native NSDateFormatter alloc();
-
-    @Generated
-    @Selector("dateFormatFromTemplate:options:locale:")
-    public static native String dateFormatFromTemplateOptionsLocale(String tmplate, @NUInt long opts, NSLocale locale);
-
-    @Generated
-    @Selector("defaultFormatterBehavior")
-    @NUInt
-    public static native long defaultFormatterBehavior();
-
-    @Generated
-    @Selector("localizedStringFromDate:dateStyle:timeStyle:")
-    public static native String localizedStringFromDateDateStyleTimeStyle(NSDate date, @NUInt long dstyle,
-            @NUInt long tstyle);
-
-    @Generated
-    @Selector("setDefaultFormatterBehavior:")
-    public static native void setDefaultFormatterBehavior(@NUInt long behavior);
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -108,8 +90,17 @@ public class NSDateFormatter extends NSFormatter {
     public static native Class classForKeyedUnarchiver();
 
     @Generated
+    @Selector("dateFormatFromTemplate:options:locale:")
+    public static native String dateFormatFromTemplateOptionsLocale(String tmplate, @NUInt long opts, NSLocale locale);
+
+    @Generated
     @Selector("debugDescription")
     public static native String debugDescription_static();
+
+    @Generated
+    @Selector("defaultFormatterBehavior")
+    @NUInt
+    public static native long defaultFormatterBehavior();
 
     @Generated
     @Selector("description")
@@ -150,6 +141,11 @@ public class NSDateFormatter extends NSFormatter {
     public static native void load_objc_static();
 
     @Generated
+    @Selector("localizedStringFromDate:dateStyle:timeStyle:")
+    public static native String localizedStringFromDateDateStyleTimeStyle(NSDate date, @NUInt long dstyle,
+            @NUInt long tstyle);
+
+    @Generated
     @Owned
     @Selector("new")
     @MappedReturn(ObjCObjectMapper.class)
@@ -162,6 +158,10 @@ public class NSDateFormatter extends NSFormatter {
     @Generated
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
+
+    @Generated
+    @Selector("setDefaultFormatterBehavior:")
+    public static native void setDefaultFormatterBehavior(@NUInt long value);
 
     @Generated
     @Selector("setVersion:")
@@ -239,6 +239,10 @@ public class NSDateFormatter extends NSFormatter {
     @Generated
     @Selector("init")
     public native NSDateFormatter init();
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native NSDateFormatter initWithCoder(NSCoder aDecoder);
 
     @Generated
     @Selector("isLenient")
@@ -472,8 +476,4 @@ public class NSDateFormatter extends NSFormatter {
     @Generated
     @Selector("weekdaySymbols")
     public native NSArray<String> weekdaySymbols();
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native NSDateFormatter initWithCoder(NSCoder aDecoder);
 }

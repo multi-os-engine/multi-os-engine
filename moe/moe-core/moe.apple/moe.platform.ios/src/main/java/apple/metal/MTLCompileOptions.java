@@ -56,13 +56,13 @@ public class MTLCompileOptions extends NSObject implements NSCopying {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native MTLCompileOptions alloc();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -175,6 +175,11 @@ public class MTLCompileOptions extends NSObject implements NSCopying {
     public native MTLCompileOptions init();
 
     @Generated
+    @Selector("languageVersion")
+    @NUInt
+    public native long languageVersion();
+
+    @Generated
     @Selector("preprocessorMacros")
     public native NSDictionary<String, ? extends NSObject> preprocessorMacros();
 
@@ -183,15 +188,10 @@ public class MTLCompileOptions extends NSObject implements NSCopying {
     public native void setFastMathEnabled(boolean value);
 
     @Generated
-    @Selector("setPreprocessorMacros:")
-    public native void setPreprocessorMacros(NSDictionary<String, ? extends NSObject> value);
-
-    @Generated
-    @Selector("languageVersion")
-    @NUInt
-    public native long languageVersion();
-
-    @Generated
     @Selector("setLanguageVersion:")
     public native void setLanguageVersion(@NUInt long value);
+
+    @Generated
+    @Selector("setPreprocessorMacros:")
+    public native void setPreprocessorMacros(NSDictionary<String, ? extends NSObject> value);
 }

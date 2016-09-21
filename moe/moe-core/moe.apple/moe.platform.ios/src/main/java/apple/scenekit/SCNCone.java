@@ -58,31 +58,13 @@ public class SCNCone extends SCNGeometry {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native SCNCone alloc();
-
-    @Generated
-    @Selector("coneWithTopRadius:bottomRadius:height:")
-    public static native SCNCone coneWithTopRadiusBottomRadiusHeight(@NFloat double topRadius,
-            @NFloat double bottomRadius, @NFloat double height);
-
-    @Generated
-    @Selector("geometry")
-    public static native SCNCone geometry();
-
-    @Generated
-    @Selector("geometryWithSources:elements:")
-    public static native SCNCone geometryWithSourcesElements(NSArray<? extends SCNGeometrySource> sources,
-            NSArray<? extends SCNGeometryElement> elements);
-
-    @Generated
-    @Selector("geometryWithMDLMesh:")
-    public static native SCNCone geometryWithMDLMesh(MDLMesh mdlMesh);
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -112,12 +94,30 @@ public class SCNCone extends SCNGeometry {
     public static native Class classForKeyedUnarchiver();
 
     @Generated
+    @Selector("coneWithTopRadius:bottomRadius:height:")
+    public static native SCNCone coneWithTopRadiusBottomRadiusHeight(@NFloat double topRadius,
+            @NFloat double bottomRadius, @NFloat double height);
+
+    @Generated
     @Selector("debugDescription")
     public static native String debugDescription_static();
 
     @Generated
     @Selector("description")
     public static native String description_static();
+
+    @Generated
+    @Selector("geometry")
+    public static native SCNCone geometry();
+
+    @Generated
+    @Selector("geometryWithMDLMesh:")
+    public static native SCNCone geometryWithMDLMesh(MDLMesh mdlMesh);
+
+    @Generated
+    @Selector("geometryWithSources:elements:")
+    public static native SCNCone geometryWithSourcesElements(NSArray<? extends SCNGeometrySource> sources,
+            NSArray<? extends SCNGeometryElement> elements);
 
     @Generated
     @Selector("hash")
@@ -169,7 +169,7 @@ public class SCNCone extends SCNGeometry {
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")
@@ -204,6 +204,10 @@ public class SCNCone extends SCNGeometry {
     public native SCNCone init();
 
     @Generated
+    @Selector("initWithCoder:")
+    public native SCNCone initWithCoder(NSCoder aDecoder);
+
+    @Generated
     @Selector("radialSegmentCount")
     @NInt
     public native long radialSegmentCount();
@@ -229,17 +233,13 @@ public class SCNCone extends SCNGeometry {
     public native void setTopRadius(@NFloat double value);
 
     @Generated
-    @Selector("topRadius")
-    @NFloat
-    public native double topRadius();
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native SCNCone initWithCoder(NSCoder aDecoder);
-
-    @Generated
     @ProtocolClassMethod("supportsSecureCoding")
     public boolean _supportsSecureCoding() {
         return supportsSecureCoding();
     }
+
+    @Generated
+    @Selector("topRadius")
+    @NFloat
+    public native double topRadius();
 }

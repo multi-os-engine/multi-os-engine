@@ -63,9 +63,18 @@ public class UIBarItem extends NSObject implements NSCoding, UIAppearance, UIAcc
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native UIBarItem alloc();
+
+    @Generated
+    @Selector("allocWithZone:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("appearance")
@@ -77,21 +86,13 @@ public class UIBarItem extends NSObject implements NSCoding, UIAppearance, UIAcc
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object appearanceForTraitCollection(UITraitCollection trait);
 
-    @Deprecated
     @Generated
     @Variadic()
+    @Deprecated
     @Selector("appearanceForTraitCollection:whenContainedIn:")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object appearanceForTraitCollectionWhenContainedIn(UITraitCollection trait,
             @Mapped(ObjCObjectMapper.class) Object ContainerClass, Object... varargs);
-
-    @Deprecated
-    @Generated
-    @Variadic()
-    @Selector("appearanceWhenContainedIn:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object appearanceWhenContainedIn(@Mapped(ObjCObjectMapper.class) Object ContainerClass,
-            Object... varargs);
 
     @Generated
     @Selector("appearanceForTraitCollection:whenContainedInInstancesOfClasses:")
@@ -100,18 +101,17 @@ public class UIBarItem extends NSObject implements NSCoding, UIAppearance, UIAcc
             NSArray<?> containerTypes);
 
     @Generated
+    @Variadic()
+    @Deprecated
+    @Selector("appearanceWhenContainedIn:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object appearanceWhenContainedIn(@Mapped(ObjCObjectMapper.class) Object ContainerClass,
+            Object... varargs);
+
+    @Generated
     @Selector("appearanceWhenContainedInInstancesOfClasses:")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object appearanceWhenContainedInInstancesOfClasses(NSArray<?> containerTypes);
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
-
-    @Generated
-    @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -193,7 +193,7 @@ public class UIBarItem extends NSObject implements NSCoding, UIAppearance, UIAcc
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")
@@ -222,8 +222,8 @@ public class UIBarItem extends NSObject implements NSCoding, UIAppearance, UIAcc
         return appearanceForTraitCollection(trait);
     }
 
-    @Deprecated
     @Generated
+    @Deprecated
     @ProtocolClassMethod("appearanceForTraitCollectionWhenContainedIn")
     @MappedReturn(ObjCObjectMapper.class)
     public Object _appearanceForTraitCollectionWhenContainedIn(UITraitCollection trait,
@@ -231,13 +231,32 @@ public class UIBarItem extends NSObject implements NSCoding, UIAppearance, UIAcc
         return appearanceForTraitCollectionWhenContainedIn(trait, ContainerClass, varargs);
     }
 
-    @Deprecated
     @Generated
+    @ProtocolClassMethod("appearanceForTraitCollectionWhenContainedInInstancesOfClasses")
+    @MappedReturn(ObjCObjectMapper.class)
+    public Object _appearanceForTraitCollectionWhenContainedInInstancesOfClasses(UITraitCollection trait,
+            NSArray<?> containerTypes) {
+        return appearanceForTraitCollectionWhenContainedInInstancesOfClasses(trait, containerTypes);
+    }
+
+    @Generated
+    @Deprecated
     @ProtocolClassMethod("appearanceWhenContainedIn")
     @MappedReturn(ObjCObjectMapper.class)
     public Object _appearanceWhenContainedIn(@Mapped(ObjCObjectMapper.class) Object ContainerClass, Object... varargs) {
         return appearanceWhenContainedIn(ContainerClass, varargs);
     }
+
+    @Generated
+    @ProtocolClassMethod("appearanceWhenContainedInInstancesOfClasses")
+    @MappedReturn(ObjCObjectMapper.class)
+    public Object _appearanceWhenContainedInInstancesOfClasses(NSArray<?> containerTypes) {
+        return appearanceWhenContainedInInstancesOfClasses(containerTypes);
+    }
+
+    @Generated
+    @Selector("encodeWithCoder:")
+    public native void encodeWithCoder(NSCoder aCoder);
 
     @Generated
     @Selector("image")
@@ -251,6 +270,10 @@ public class UIBarItem extends NSObject implements NSCoding, UIAppearance, UIAcc
     @Generated
     @Selector("init")
     public native UIBarItem init();
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native UIBarItem initWithCoder(NSCoder aDecoder);
 
     @Generated
     @Selector("isEnabled")
@@ -313,27 +336,4 @@ public class UIBarItem extends NSObject implements NSCoding, UIAppearance, UIAcc
     @Generated
     @Selector("titleTextAttributesForState:")
     public native NSDictionary<String, ?> titleTextAttributesForState(@NUInt long state);
-
-    @Generated
-    @ProtocolClassMethod("appearanceForTraitCollectionWhenContainedInInstancesOfClasses")
-    @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearanceForTraitCollectionWhenContainedInInstancesOfClasses(UITraitCollection trait,
-            NSArray<?> containerTypes) {
-        return appearanceForTraitCollectionWhenContainedInInstancesOfClasses(trait, containerTypes);
-    }
-
-    @Generated
-    @ProtocolClassMethod("appearanceWhenContainedInInstancesOfClasses")
-    @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearanceWhenContainedInInstancesOfClasses(NSArray<?> containerTypes) {
-        return appearanceWhenContainedInInstancesOfClasses(containerTypes);
-    }
-
-    @Generated
-    @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native UIBarItem initWithCoder(NSCoder aDecoder);
 }

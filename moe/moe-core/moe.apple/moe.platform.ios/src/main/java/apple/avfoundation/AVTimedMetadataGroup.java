@@ -60,13 +60,13 @@ public class AVTimedMetadataGroup extends AVMetadataGroup implements NSCopying, 
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native AVTimedMetadataGroup alloc();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -153,7 +153,7 @@ public class AVTimedMetadataGroup extends AVMetadataGroup implements NSCopying, 
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")
@@ -192,12 +192,12 @@ public class AVTimedMetadataGroup extends AVMetadataGroup implements NSCopying, 
     public native NSArray<? extends AVMetadataItem> items();
 
     @Generated
-    @Selector("timeRange")
-    @ByValue
-    public native CMTimeRange timeRange();
-
-    @Generated
     @Selector("mutableCopyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
     public native Object mutableCopyWithZone(VoidPtr zone);
+
+    @Generated
+    @Selector("timeRange")
+    @ByValue
+    public native CMTimeRange timeRange();
 }

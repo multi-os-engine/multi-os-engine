@@ -60,17 +60,13 @@ public class CAEmitterLayer extends CALayer {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native CAEmitterLayer alloc();
-
-    @Generated
-    @Selector("layer")
-    public static native CAEmitterLayer layer();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -148,6 +144,10 @@ public class CAEmitterLayer extends CALayer {
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
     @Generated
+    @Selector("layer")
+    public static native CAEmitterLayer layer();
+
+    @Generated
     @Selector("load")
     public static native void load_objc_static();
 
@@ -171,7 +171,7 @@ public class CAEmitterLayer extends CALayer {
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")
@@ -221,6 +221,10 @@ public class CAEmitterLayer extends CALayer {
     @Generated
     @Selector("init")
     public native CAEmitterLayer init();
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native CAEmitterLayer initWithCoder(NSCoder aDecoder);
 
     @Generated
     @Selector("initWithLayer:")
@@ -313,8 +317,4 @@ public class CAEmitterLayer extends CALayer {
     @Generated
     @Selector("velocity")
     public native float velocity();
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native CAEmitterLayer initWithCoder(NSCoder aDecoder);
 }

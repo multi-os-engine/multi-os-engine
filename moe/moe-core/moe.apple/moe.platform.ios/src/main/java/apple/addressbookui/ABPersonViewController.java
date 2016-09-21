@@ -62,18 +62,13 @@ public class ABPersonViewController extends UIViewController implements UIViewCo
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native ABPersonViewController alloc();
-
-    @Generated
-    @Selector("viewControllerWithRestorationIdentifierPath:coder:")
-    public static native UIViewController viewControllerWithRestorationIdentifierPathCoder(
-            NSArray<?> identifierComponents, NSCoder coder);
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -184,6 +179,11 @@ public class ABPersonViewController extends UIViewController implements UIViewCo
     public static native long version_static();
 
     @Generated
+    @Selector("viewControllerWithRestorationIdentifierPath:coder:")
+    public static native UIViewController viewControllerWithRestorationIdentifierPathCoder(
+            NSArray<?> identifierComponents, NSCoder coder);
+
+    @Generated
     @Selector("addressBook")
     public native ConstVoidPtr addressBook();
 
@@ -206,6 +206,10 @@ public class ABPersonViewController extends UIViewController implements UIViewCo
     @Generated
     @Selector("init")
     public native ABPersonViewController init();
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native ABPersonViewController initWithCoder(NSCoder aDecoder);
 
     @Generated
     @Selector("initWithNibName:bundle:")
@@ -271,8 +275,4 @@ public class ABPersonViewController extends UIViewController implements UIViewCo
             NSCoder coder) {
         return viewControllerWithRestorationIdentifierPathCoder(identifierComponents, coder);
     }
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native ABPersonViewController initWithCoder(NSCoder aDecoder);
 }

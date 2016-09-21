@@ -37,7 +37,7 @@ public interface NSFetchedResultsControllerDelegate {
     @Generated
     @IsOptional
     @Selector("controller:didChangeObject:atIndexPath:forChangeType:newIndexPath:")
-    default void controllerDidChangeObjectAtIndexPathForChangeTypeNewIndexPath(NSFetchedResultsController controller,
+    default void controllerDidChangeObjectAtIndexPathForChangeTypeNewIndexPath(NSFetchedResultsController<?> controller,
             @Mapped(ObjCObjectMapper.class) Object anObject, NSIndexPath indexPath, @NUInt long type,
             NSIndexPath newIndexPath) {
         throw new java.lang.UnsupportedOperationException();
@@ -46,7 +46,7 @@ public interface NSFetchedResultsControllerDelegate {
     @Generated
     @IsOptional
     @Selector("controller:didChangeSection:atIndex:forChangeType:")
-    default void controllerDidChangeSectionAtIndexForChangeType(NSFetchedResultsController controller,
+    default void controllerDidChangeSectionAtIndexForChangeType(NSFetchedResultsController<?> controller,
             @Mapped(ObjCObjectMapper.class) Object sectionInfo, @NUInt long sectionIndex, @NUInt long type) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -54,7 +54,7 @@ public interface NSFetchedResultsControllerDelegate {
     @Generated
     @IsOptional
     @Selector("controller:sectionIndexTitleForSectionName:")
-    default String controllerSectionIndexTitleForSectionName(NSFetchedResultsController controller,
+    default String controllerSectionIndexTitleForSectionName(NSFetchedResultsController<?> controller,
             String sectionName) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -62,14 +62,14 @@ public interface NSFetchedResultsControllerDelegate {
     @Generated
     @IsOptional
     @Selector("controllerDidChangeContent:")
-    default void controllerDidChangeContent(NSFetchedResultsController controller) {
+    default void controllerDidChangeContent(NSFetchedResultsController<?> controller) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Generated
     @IsOptional
     @Selector("controllerWillChangeContent:")
-    default void controllerWillChangeContent(NSFetchedResultsController controller) {
+    default void controllerWillChangeContent(NSFetchedResultsController<?> controller) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

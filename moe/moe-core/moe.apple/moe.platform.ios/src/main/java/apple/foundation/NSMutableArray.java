@@ -33,6 +33,7 @@ import org.moe.natj.general.ann.Owned;
 import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.general.ptr.ConstPtr;
 import org.moe.natj.general.ptr.NUIntPtr;
+import org.moe.natj.general.ptr.Ptr;
 import org.moe.natj.general.ptr.VoidPtr;
 import org.moe.natj.objc.Class;
 import org.moe.natj.objc.ObjCRuntime;
@@ -48,7 +49,6 @@ import java.util.Iterator;
 import java.util.ListIterator;
 import java.util.NoSuchElementException;
 
-@SuppressWarnings({ "rawtypes" })
 @Library("Foundation")
 @Runtime(ObjCRuntime.class)
 @ObjCClassBinding
@@ -63,9 +63,18 @@ public class NSMutableArray<_ObjectType> extends NSArray<_ObjectType> {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native NSMutableArray<?> alloc();
+
+    @Generated
+    @Selector("allocWithZone:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("array")
@@ -102,15 +111,6 @@ public class NSMutableArray<_ObjectType> extends NSArray<_ObjectType> {
     @Selector("arrayWithObjects:count:")
     public static native <_ObjectType> NSMutableArray<?> arrayWithObjectsCount(ConstPtr<_ObjectType> objects,
             @NUInt long cnt);
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
-
-    @Generated
-    @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -259,7 +259,7 @@ public class NSMutableArray<_ObjectType> extends NSArray<_ObjectType> {
 
     @Generated
     @Selector("initWithObjects:count:")
-    public native NSMutableArray<?> initWithObjectsCount(ConstPtr<_ObjectType> objects, @NUInt long cnt);
+    public native NSMutableArray<?> initWithObjectsCount(Ptr<_ObjectType> objects, @NUInt long cnt);
 
     @Generated
     @Selector("insertObject:atIndex:")

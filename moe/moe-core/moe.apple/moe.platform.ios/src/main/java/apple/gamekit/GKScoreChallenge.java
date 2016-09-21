@@ -57,13 +57,13 @@ public class GKScoreChallenge extends GKChallenge {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native GKScoreChallenge alloc();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -175,12 +175,12 @@ public class GKScoreChallenge extends GKChallenge {
     public native GKScoreChallenge init();
 
     @Generated
-    @Selector("score")
-    public native GKScore score();
-
-    @Generated
     @Selector("initWithCoder:")
     public native GKScoreChallenge initWithCoder(NSCoder aDecoder);
+
+    @Generated
+    @Selector("score")
+    public native GKScore score();
 
     @Generated
     @ProtocolClassMethod("supportsSecureCoding")

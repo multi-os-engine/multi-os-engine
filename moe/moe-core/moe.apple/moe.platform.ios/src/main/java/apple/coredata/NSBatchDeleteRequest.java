@@ -54,13 +54,13 @@ public class NSBatchDeleteRequest extends NSPersistentStoreRequest {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native NSBatchDeleteRequest alloc();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -160,7 +160,7 @@ public class NSBatchDeleteRequest extends NSPersistentStoreRequest {
 
     @Generated
     @Selector("fetchRequest")
-    public native NSFetchRequest fetchRequest();
+    public native NSFetchRequest<?> fetchRequest();
 
     @Generated
     @Selector("init")
@@ -168,7 +168,7 @@ public class NSBatchDeleteRequest extends NSPersistentStoreRequest {
 
     @Generated
     @Selector("initWithFetchRequest:")
-    public native NSBatchDeleteRequest initWithFetchRequest(NSFetchRequest fetch);
+    public native NSBatchDeleteRequest initWithFetchRequest(NSFetchRequest<?> fetch);
 
     @Generated
     @Selector("initWithObjectIDs:")

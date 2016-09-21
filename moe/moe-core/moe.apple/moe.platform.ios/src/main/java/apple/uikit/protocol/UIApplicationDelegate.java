@@ -16,6 +16,7 @@ limitations under the License.
 
 package apple.uikit.protocol;
 
+import apple.cloudkit.CKShareMetadata;
 import apple.coregraphics.struct.CGRect;
 import apple.foundation.NSArray;
 import apple.foundation.NSCoder;
@@ -160,10 +161,29 @@ public interface UIApplicationDelegate {
 
     @Generated
     @IsOptional
+    @Selector("application:handleActionWithIdentifier:forLocalNotification:withResponseInfo:completionHandler:")
+    default void applicationHandleActionWithIdentifierForLocalNotificationWithResponseInfoCompletionHandler(
+            UIApplication application, String identifier, UILocalNotification notification,
+            NSDictionary<?, ?> responseInfo,
+            @ObjCBlock(name = "call_applicationHandleActionWithIdentifierForLocalNotificationWithResponseInfoCompletionHandler") Block_applicationHandleActionWithIdentifierForLocalNotificationWithResponseInfoCompletionHandler completionHandler) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Generated
+    @IsOptional
     @Selector("application:handleActionWithIdentifier:forRemoteNotification:completionHandler:")
     default void applicationHandleActionWithIdentifierForRemoteNotificationCompletionHandler(UIApplication application,
             String identifier, NSDictionary<?, ?> userInfo,
             @ObjCBlock(name = "call_applicationHandleActionWithIdentifierForRemoteNotificationCompletionHandler") Block_applicationHandleActionWithIdentifierForRemoteNotificationCompletionHandler completionHandler) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Generated
+    @IsOptional
+    @Selector("application:handleActionWithIdentifier:forRemoteNotification:withResponseInfo:completionHandler:")
+    default void applicationHandleActionWithIdentifierForRemoteNotificationWithResponseInfoCompletionHandler(
+            UIApplication application, String identifier, NSDictionary<?, ?> userInfo, NSDictionary<?, ?> responseInfo,
+            @ObjCBlock(name = "call_applicationHandleActionWithIdentifierForRemoteNotificationWithResponseInfoCompletionHandler") Block_applicationHandleActionWithIdentifierForRemoteNotificationWithResponseInfoCompletionHandler completionHandler) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -176,9 +196,9 @@ public interface UIApplicationDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    @Deprecated
     @Generated
     @IsOptional
+    @Deprecated
     @Selector("application:handleOpenURL:")
     default boolean applicationHandleOpenURL(UIApplication application, NSURL url) {
         throw new java.lang.UnsupportedOperationException();
@@ -192,12 +212,28 @@ public interface UIApplicationDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    @Deprecated
     @Generated
     @IsOptional
+    @Selector("application:openURL:options:")
+    default boolean applicationOpenURLOptions(UIApplication app, NSURL url, NSDictionary<String, ?> options) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Generated
+    @IsOptional
+    @Deprecated
     @Selector("application:openURL:sourceApplication:annotation:")
     default boolean applicationOpenURLSourceApplicationAnnotation(UIApplication application, NSURL url,
             String sourceApplication, @Mapped(ObjCObjectMapper.class) Object annotation) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Generated
+    @IsOptional
+    @Selector("application:performActionForShortcutItem:completionHandler:")
+    default void applicationPerformActionForShortcutItemCompletionHandler(UIApplication application,
+            UIApplicationShortcutItem shortcutItem,
+            @ObjCBlock(name = "call_applicationPerformActionForShortcutItemCompletionHandler") Block_applicationPerformActionForShortcutItemCompletionHandler completionHandler) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -236,6 +272,14 @@ public interface UIApplicationDelegate {
     @Selector("application:supportedInterfaceOrientationsForWindow:")
     @NUInt
     default long applicationSupportedInterfaceOrientationsForWindow(UIApplication application, UIWindow window) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Generated
+    @IsOptional
+    @Selector("application:userDidAcceptCloudKitShareWithMetadata:")
+    default void applicationUserDidAcceptCloudKitShareWithMetadata(UIApplication application,
+            CKShareMetadata cloudKitShareMetadata) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -328,6 +372,13 @@ public interface UIApplicationDelegate {
 
     @Generated
     @IsOptional
+    @Selector("applicationShouldRequestHealthAuthorization:")
+    default void applicationShouldRequestHealthAuthorization(UIApplication application) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Generated
+    @IsOptional
     @Selector("applicationSignificantTimeChange:")
     default void applicationSignificantTimeChange(UIApplication application) {
         throw new java.lang.UnsupportedOperationException();
@@ -368,48 +419,6 @@ public interface UIApplicationDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    @Generated
-    @IsOptional
-    @Selector("application:handleActionWithIdentifier:forLocalNotification:withResponseInfo:completionHandler:")
-    default void applicationHandleActionWithIdentifierForLocalNotificationWithResponseInfoCompletionHandler(
-            UIApplication application, String identifier, UILocalNotification notification,
-            NSDictionary<?, ?> responseInfo,
-            @ObjCBlock(name = "call_applicationHandleActionWithIdentifierForLocalNotificationWithResponseInfoCompletionHandler") Block_applicationHandleActionWithIdentifierForLocalNotificationWithResponseInfoCompletionHandler completionHandler) {
-        throw new java.lang.UnsupportedOperationException();
-    }
-
-    @Generated
-    @IsOptional
-    @Selector("application:handleActionWithIdentifier:forRemoteNotification:withResponseInfo:completionHandler:")
-    default void applicationHandleActionWithIdentifierForRemoteNotificationWithResponseInfoCompletionHandler(
-            UIApplication application, String identifier, NSDictionary<?, ?> userInfo, NSDictionary<?, ?> responseInfo,
-            @ObjCBlock(name = "call_applicationHandleActionWithIdentifierForRemoteNotificationWithResponseInfoCompletionHandler") Block_applicationHandleActionWithIdentifierForRemoteNotificationWithResponseInfoCompletionHandler completionHandler) {
-        throw new java.lang.UnsupportedOperationException();
-    }
-
-    @Generated
-    @IsOptional
-    @Selector("application:openURL:options:")
-    default boolean applicationOpenURLOptions(UIApplication app, NSURL url, NSDictionary<String, ?> options) {
-        throw new java.lang.UnsupportedOperationException();
-    }
-
-    @Generated
-    @IsOptional
-    @Selector("applicationShouldRequestHealthAuthorization:")
-    default void applicationShouldRequestHealthAuthorization(UIApplication application) {
-        throw new java.lang.UnsupportedOperationException();
-    }
-
-    @Generated
-    @IsOptional
-    @Selector("application:performActionForShortcutItem:completionHandler:")
-    default void applicationPerformActionForShortcutItemCompletionHandler(UIApplication application,
-            UIApplicationShortcutItem shortcutItem,
-            @ObjCBlock(name = "call_applicationPerformActionForShortcutItemCompletionHandler") Block_applicationPerformActionForShortcutItemCompletionHandler completionHandler) {
-        throw new java.lang.UnsupportedOperationException();
-    }
-
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_applicationContinueUserActivityRestorationHandler {
@@ -433,9 +442,23 @@ public interface UIApplicationDelegate {
 
     @Runtime(ObjCRuntime.class)
     @Generated
+    public interface Block_applicationHandleActionWithIdentifierForLocalNotificationWithResponseInfoCompletionHandler {
+        @Generated
+        void call_applicationHandleActionWithIdentifierForLocalNotificationWithResponseInfoCompletionHandler();
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
     public interface Block_applicationHandleActionWithIdentifierForRemoteNotificationCompletionHandler {
         @Generated
         void call_applicationHandleActionWithIdentifierForRemoteNotificationCompletionHandler();
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_applicationHandleActionWithIdentifierForRemoteNotificationWithResponseInfoCompletionHandler {
+        @Generated
+        void call_applicationHandleActionWithIdentifierForRemoteNotificationWithResponseInfoCompletionHandler();
     }
 
     @Runtime(ObjCRuntime.class)
@@ -454,29 +477,15 @@ public interface UIApplicationDelegate {
 
     @Runtime(ObjCRuntime.class)
     @Generated
-    public interface Block_applicationPerformFetchWithCompletionHandler {
-        @Generated
-        void call_applicationPerformFetchWithCompletionHandler(@NUInt long arg0);
-    }
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_applicationHandleActionWithIdentifierForLocalNotificationWithResponseInfoCompletionHandler {
-        @Generated
-        void call_applicationHandleActionWithIdentifierForLocalNotificationWithResponseInfoCompletionHandler();
-    }
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_applicationHandleActionWithIdentifierForRemoteNotificationWithResponseInfoCompletionHandler {
-        @Generated
-        void call_applicationHandleActionWithIdentifierForRemoteNotificationWithResponseInfoCompletionHandler();
-    }
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
     public interface Block_applicationPerformActionForShortcutItemCompletionHandler {
         @Generated
         void call_applicationPerformActionForShortcutItemCompletionHandler(boolean arg0);
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_applicationPerformFetchWithCompletionHandler {
+        @Generated
+        void call_applicationPerformFetchWithCompletionHandler(@NUInt long arg0);
     }
 }

@@ -56,13 +56,13 @@ public class AVPlayerItemAccessLogEvent extends NSObject implements NSCopying {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native AVPlayerItemAccessLogEvent alloc();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -131,7 +131,7 @@ public class AVPlayerItemAccessLogEvent extends NSObject implements NSCopying {
 
     @Generated
     @Selector("load")
-    public static native void load_objc();
+    public static native void load_objc_static();
 
     @Generated
     @Owned
@@ -149,7 +149,7 @@ public class AVPlayerItemAccessLogEvent extends NSObject implements NSCopying {
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")
@@ -158,11 +158,19 @@ public class AVPlayerItemAccessLogEvent extends NSObject implements NSCopying {
     @Generated
     @Selector("version")
     @NInt
-    public static native long version();
+    public static native long version_static();
 
     @Generated
     @Selector("URI")
     public native String URI();
+
+    @Generated
+    @Selector("averageAudioBitrate")
+    public native double averageAudioBitrate();
+
+    @Generated
+    @Selector("averageVideoBitrate")
+    public native double averageVideoBitrate();
 
     @Generated
     @Owned
@@ -178,6 +186,10 @@ public class AVPlayerItemAccessLogEvent extends NSObject implements NSCopying {
     @Generated
     @Selector("durationWatched")
     public native double durationWatched();
+
+    @Generated
+    @Selector("indicatedAverageBitrate")
+    public native double indicatedAverageBitrate();
 
     @Generated
     @Selector("indicatedBitrate")

@@ -54,13 +54,13 @@ public class MDLPhysicallyPlausibleScatteringFunction extends MDLScatteringFunct
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native MDLPhysicallyPlausibleScatteringFunction alloc();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -147,7 +147,7 @@ public class MDLPhysicallyPlausibleScatteringFunction extends MDLScatteringFunct
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")

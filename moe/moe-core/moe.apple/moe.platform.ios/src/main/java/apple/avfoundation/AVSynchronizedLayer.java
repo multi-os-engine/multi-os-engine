@@ -57,21 +57,13 @@ public class AVSynchronizedLayer extends CALayer {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native AVSynchronizedLayer alloc();
-
-    @Generated
-    @Selector("layer")
-    public static native AVSynchronizedLayer layer();
-
-    @Generated
-    @Selector("synchronizedLayerWithPlayerItem:")
-    public static native AVSynchronizedLayer synchronizedLayerWithPlayerItem(AVPlayerItem playerItem);
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -149,6 +141,10 @@ public class AVSynchronizedLayer extends CALayer {
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
     @Generated
+    @Selector("layer")
+    public static native AVSynchronizedLayer layer();
+
+    @Generated
     @Selector("load")
     public static native void load_objc_static();
 
@@ -179,6 +175,10 @@ public class AVSynchronizedLayer extends CALayer {
     public static native Class superclass_static();
 
     @Generated
+    @Selector("synchronizedLayerWithPlayerItem:")
+    public static native AVSynchronizedLayer synchronizedLayerWithPlayerItem(AVPlayerItem playerItem);
+
+    @Generated
     @Selector("version")
     @NInt
     public static native long version_static();
@@ -186,6 +186,10 @@ public class AVSynchronizedLayer extends CALayer {
     @Generated
     @Selector("init")
     public native AVSynchronizedLayer init();
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native AVSynchronizedLayer initWithCoder(NSCoder aDecoder);
 
     @Generated
     @Selector("initWithLayer:")
@@ -198,8 +202,4 @@ public class AVSynchronizedLayer extends CALayer {
     @Generated
     @Selector("setPlayerItem:")
     public native void setPlayerItem(AVPlayerItem value);
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native AVSynchronizedLayer initWithCoder(NSCoder aDecoder);
 }

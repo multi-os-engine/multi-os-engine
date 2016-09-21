@@ -27,6 +27,7 @@ import apple.foundation.NSDictionary;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
 import apple.foundation.struct.NSRange;
+import apple.uikit.protocol.UIContentSizeCategoryAdjusting;
 import apple.uikit.protocol.UITextInput;
 import apple.uikit.struct.UIEdgeInsets;
 import org.moe.natj.c.ann.FunctionPtr;
@@ -58,7 +59,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
 @ObjCClassBinding
-public class UITextView extends UIScrollView implements UITextInput {
+public class UITextView extends UIScrollView implements UITextInput, UIContentSizeCategoryAdjusting {
     static {
         NatJ.register();
     }
@@ -69,11 +70,6 @@ public class UITextView extends UIScrollView implements UITextInput {
     }
 
     @Generated
-    @Owned
-    @Selector("alloc")
-    public static native UITextView alloc();
-
-    @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
 
@@ -82,6 +78,11 @@ public class UITextView extends UIScrollView implements UITextInput {
     public static native void addKeyframeWithRelativeStartTimeRelativeDurationAnimations(double frameStartTime,
             double frameDuration,
             @ObjCBlock(name = "call_addKeyframeWithRelativeStartTimeRelativeDurationAnimations") UIView.Block_addKeyframeWithRelativeStartTimeRelativeDurationAnimations animations);
+
+    @Generated
+    @Owned
+    @Selector("alloc")
+    public static native UITextView alloc();
 
     @Generated
     @Selector("allocWithZone:")
@@ -297,7 +298,7 @@ public class UITextView extends UIScrollView implements UITextInput {
 
     @Generated
     @Selector("setAnimationDuration:")
-    public static native void setAnimationDuration(double duration);
+    public static native void setAnimationDuration_static(double duration);
 
     @Generated
     @Selector("setAnimationRepeatAutoreverses:")
@@ -305,7 +306,7 @@ public class UITextView extends UIScrollView implements UITextInput {
 
     @Generated
     @Selector("setAnimationRepeatCount:")
-    public static native void setAnimationRepeatCount(float repeatCount);
+    public static native void setAnimationRepeatCount_static(float repeatCount);
 
     @Generated
     @Selector("setAnimationStartDate:")
@@ -325,7 +326,7 @@ public class UITextView extends UIScrollView implements UITextInput {
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")
@@ -350,13 +351,69 @@ public class UITextView extends UIScrollView implements UITextInput {
     public static native long userInterfaceLayoutDirectionForSemanticContentAttribute(@NInt long attribute);
 
     @Generated
+    @Selector("userInterfaceLayoutDirectionForSemanticContentAttribute:relativeToLayoutDirection:")
+    @NInt
+    public static native long userInterfaceLayoutDirectionForSemanticContentAttributeRelativeToLayoutDirection(
+            @NInt long semanticContentAttribute, @NInt long layoutDirection);
+
+    @Generated
     @Selector("version")
     @NInt
     public static native long version_static();
 
     @Generated
+    @Selector("adjustsFontForContentSizeCategory")
+    public native boolean adjustsFontForContentSizeCategory();
+
+    @Generated
     @Selector("allowsEditingTextAttributes")
     public native boolean allowsEditingTextAttributes();
+
+    @Generated
+    @ProtocolClassMethod("appearance")
+    @MappedReturn(ObjCObjectMapper.class)
+    public Object _appearance() {
+        return appearance();
+    }
+
+    @Generated
+    @ProtocolClassMethod("appearanceForTraitCollection")
+    @MappedReturn(ObjCObjectMapper.class)
+    public Object _appearanceForTraitCollection(UITraitCollection trait) {
+        return appearanceForTraitCollection(trait);
+    }
+
+    @Generated
+    @Deprecated
+    @ProtocolClassMethod("appearanceForTraitCollectionWhenContainedIn")
+    @MappedReturn(ObjCObjectMapper.class)
+    public Object _appearanceForTraitCollectionWhenContainedIn(UITraitCollection trait,
+            @Mapped(ObjCObjectMapper.class) Object ContainerClass, Object... varargs) {
+        return appearanceForTraitCollectionWhenContainedIn(trait, ContainerClass, varargs);
+    }
+
+    @Generated
+    @ProtocolClassMethod("appearanceForTraitCollectionWhenContainedInInstancesOfClasses")
+    @MappedReturn(ObjCObjectMapper.class)
+    public Object _appearanceForTraitCollectionWhenContainedInInstancesOfClasses(UITraitCollection trait,
+            NSArray<?> containerTypes) {
+        return appearanceForTraitCollectionWhenContainedInInstancesOfClasses(trait, containerTypes);
+    }
+
+    @Generated
+    @Deprecated
+    @ProtocolClassMethod("appearanceWhenContainedIn")
+    @MappedReturn(ObjCObjectMapper.class)
+    public Object _appearanceWhenContainedIn(@Mapped(ObjCObjectMapper.class) Object ContainerClass, Object... varargs) {
+        return appearanceWhenContainedIn(ContainerClass, varargs);
+    }
+
+    @Generated
+    @ProtocolClassMethod("appearanceWhenContainedInInstancesOfClasses")
+    @MappedReturn(ObjCObjectMapper.class)
+    public Object _appearanceWhenContainedInInstancesOfClasses(NSArray<?> containerTypes) {
+        return appearanceWhenContainedInInstancesOfClasses(containerTypes);
+    }
 
     @Generated
     @Selector("attributedText")
@@ -378,6 +435,11 @@ public class UITextView extends UIScrollView implements UITextInput {
     @Selector("baseWritingDirectionForPosition:inDirection:")
     @NInt
     public native long baseWritingDirectionForPositionInDirection(UITextPosition position, @NInt long direction);
+
+    @Generated
+    @IsOptional
+    @Selector("beginFloatingCursorAtPoint:")
+    public native void beginFloatingCursorAtPoint(@ByValue CGPoint point);
 
     @Generated
     @Selector("beginningOfDocument")
@@ -450,6 +512,11 @@ public class UITextView extends UIScrollView implements UITextInput {
     public native boolean enablesReturnKeyAutomatically();
 
     @Generated
+    @IsOptional
+    @Selector("endFloatingCursor")
+    public native void endFloatingCursor();
+
+    @Generated
     @Selector("endOfDocument")
     public native UITextPosition endOfDocument();
 
@@ -475,6 +542,10 @@ public class UITextView extends UIScrollView implements UITextInput {
     @Generated
     @Selector("init")
     public native UITextView init();
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native UITextView initWithCoder(NSCoder aDecoder);
 
     @Generated
     @Selector("initWithFrame:")
@@ -629,6 +700,10 @@ public class UITextView extends UIScrollView implements UITextInput {
     public native NSArray<?> selectionRectsForRange(UITextRange range);
 
     @Generated
+    @Selector("setAdjustsFontForContentSizeCategory:")
+    public native void setAdjustsFontForContentSizeCategory(boolean value);
+
+    @Generated
     @Selector("setAllowsEditingTextAttributes:")
     public native void setAllowsEditingTextAttributes(boolean value);
 
@@ -769,6 +844,11 @@ public class UITextView extends UIScrollView implements UITextInput {
     public native void setTextContainerInset(@ByValue UIEdgeInsets value);
 
     @Generated
+    @IsOptional
+    @Selector("setTextContentType:")
+    public native void setTextContentType(String value);
+
+    @Generated
     @Selector("setTypingAttributes:")
     public native void setTypingAttributes(NSDictionary<String, ?> value);
 
@@ -804,6 +884,11 @@ public class UITextView extends UIScrollView implements UITextInput {
     @Selector("textContainerInset")
     @ByValue
     public native UIEdgeInsets textContainerInset();
+
+    @Generated
+    @IsOptional
+    @Selector("textContentType")
+    public native String textContentType();
 
     @Generated
     @Selector("textInRange:")
@@ -843,66 +928,6 @@ public class UITextView extends UIScrollView implements UITextInput {
 
     @Generated
     @IsOptional
-    @Selector("beginFloatingCursorAtPoint:")
-    public native void beginFloatingCursorAtPoint(@ByValue CGPoint point);
-
-    @Generated
-    @IsOptional
-    @Selector("endFloatingCursor")
-    public native void endFloatingCursor();
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native UITextView initWithCoder(NSCoder aDecoder);
-
-    @Generated
-    @IsOptional
     @Selector("updateFloatingCursorAtPoint:")
     public native void updateFloatingCursorAtPoint(@ByValue CGPoint point);
-
-    @Generated
-    @ProtocolClassMethod("appearance")
-    @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearance() {
-        return appearance();
-    }
-
-    @Generated
-    @ProtocolClassMethod("appearanceForTraitCollection")
-    @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearanceForTraitCollection(UITraitCollection trait) {
-        return appearanceForTraitCollection(trait);
-    }
-
-    @Generated
-    @Deprecated
-    @ProtocolClassMethod("appearanceForTraitCollectionWhenContainedIn")
-    @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearanceForTraitCollectionWhenContainedIn(UITraitCollection trait,
-            @Mapped(ObjCObjectMapper.class) Object ContainerClass, Object... varargs) {
-        return appearanceForTraitCollectionWhenContainedIn(trait, ContainerClass, varargs);
-    }
-
-    @Generated
-    @ProtocolClassMethod("appearanceForTraitCollectionWhenContainedInInstancesOfClasses")
-    @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearanceForTraitCollectionWhenContainedInInstancesOfClasses(UITraitCollection trait,
-            NSArray<?> containerTypes) {
-        return appearanceForTraitCollectionWhenContainedInInstancesOfClasses(trait, containerTypes);
-    }
-
-    @Generated
-    @Deprecated
-    @ProtocolClassMethod("appearanceWhenContainedIn")
-    @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearanceWhenContainedIn(@Mapped(ObjCObjectMapper.class) Object ContainerClass, Object... varargs) {
-        return appearanceWhenContainedIn(ContainerClass, varargs);
-    }
-
-    @Generated
-    @ProtocolClassMethod("appearanceWhenContainedInInstancesOfClasses")
-    @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearanceWhenContainedInInstancesOfClasses(NSArray<?> containerTypes) {
-        return appearanceWhenContainedInInstancesOfClasses(containerTypes);
-    }
 }

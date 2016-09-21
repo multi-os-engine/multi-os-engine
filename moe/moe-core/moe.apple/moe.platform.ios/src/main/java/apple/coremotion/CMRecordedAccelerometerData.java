@@ -57,13 +57,13 @@ public class CMRecordedAccelerometerData extends CMAccelerometerData {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native CMRecordedAccelerometerData alloc();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -174,12 +174,12 @@ public class CMRecordedAccelerometerData extends CMAccelerometerData {
     public native CMRecordedAccelerometerData init();
 
     @Generated
-    @Selector("startDate")
-    public native NSDate startDate();
-
-    @Generated
     @Selector("initWithCoder:")
     public native CMRecordedAccelerometerData initWithCoder(NSCoder aDecoder);
+
+    @Generated
+    @Selector("startDate")
+    public native NSDate startDate();
 
     @Generated
     @ProtocolClassMethod("supportsSecureCoding")

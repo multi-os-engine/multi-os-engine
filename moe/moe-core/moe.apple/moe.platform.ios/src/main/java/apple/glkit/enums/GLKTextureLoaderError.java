@@ -39,6 +39,7 @@ public final class GLKTextureLoaderError {
     @Generated public static final int AlphaPremultiplicationFailure = 0x00000010;
     @Generated public static final int InvalidEAGLContext = 0x00000011;
     @Generated public static final int IncompatibleFormatSRGB = 0x00000012;
+    @Generated public static final int UnsupportedTextureTarget = 0x00000013;
 
     @Generated
     private GLKTextureLoaderError() {

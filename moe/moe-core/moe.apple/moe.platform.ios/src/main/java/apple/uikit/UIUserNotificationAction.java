@@ -60,17 +60,13 @@ public class UIUserNotificationAction extends NSObject implements NSCopying, NSM
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native UIUserNotificationAction alloc();
-
-    @Generated
-    @Selector("supportsSecureCoding")
-    public static native boolean supportsSecureCoding();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -139,7 +135,7 @@ public class UIUserNotificationAction extends NSObject implements NSCopying, NSM
 
     @Generated
     @Selector("load")
-    public static native void load_objc();
+    public static native void load_objc_static();
 
     @Generated
     @Owned
@@ -157,21 +153,30 @@ public class UIUserNotificationAction extends NSObject implements NSCopying, NSM
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")
     public static native Class superclass_static();
 
     @Generated
+    @Selector("supportsSecureCoding")
+    public static native boolean supportsSecureCoding();
+
+    @Generated
     @Selector("version")
     @NInt
-    public static native long version();
+    public static native long version_static();
 
     @Generated
     @Selector("activationMode")
     @NUInt
     public native long activationMode();
+
+    @Generated
+    @Selector("behavior")
+    @NUInt
+    public native long behavior();
 
     @Generated
     @Owned
@@ -209,6 +214,10 @@ public class UIUserNotificationAction extends NSObject implements NSCopying, NSM
     public native Object mutableCopyWithZone(VoidPtr zone);
 
     @Generated
+    @Selector("parameters")
+    public native NSDictionary<?, ?> parameters();
+
+    @Generated
     @ProtocolClassMethod("supportsSecureCoding")
     public boolean _supportsSecureCoding() {
         return supportsSecureCoding();
@@ -217,13 +226,4 @@ public class UIUserNotificationAction extends NSObject implements NSCopying, NSM
     @Generated
     @Selector("title")
     public native String title();
-
-    @Generated
-    @Selector("behavior")
-    @NUInt
-    public native long behavior();
-
-    @Generated
-    @Selector("parameters")
-    public native NSDictionary<?, ?> parameters();
 }

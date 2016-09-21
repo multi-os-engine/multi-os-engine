@@ -22,6 +22,7 @@ import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
 import apple.foundation.NSUndoManager;
 import apple.foundation.NSUserActivity;
+import apple.uikit.protocol.UIResponderStandardEditActions;
 import org.moe.natj.c.ann.FunctionPtr;
 import org.moe.natj.general.NatJ;
 import org.moe.natj.general.Pointer;
@@ -37,6 +38,7 @@ import org.moe.natj.general.ptr.VoidPtr;
 import org.moe.natj.objc.Class;
 import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.SEL;
+import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
@@ -45,7 +47,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
 @ObjCClassBinding
-public class UIResponder extends NSObject {
+public class UIResponder extends NSObject implements UIResponderStandardEditActions {
     static {
         NatJ.register();
     }
@@ -56,17 +58,13 @@ public class UIResponder extends NSObject {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native UIResponder alloc();
-
-    @Generated
-    @Selector("clearTextInputContextIdentifier:")
-    public static native void clearTextInputContextIdentifier(String identifier);
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -94,6 +92,10 @@ public class UIResponder extends NSObject {
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
+
+    @Generated
+    @Selector("clearTextInputContextIdentifier:")
+    public static native void clearTextInputContextIdentifier(String identifier);
 
     @Generated
     @Selector("debugDescription")
@@ -135,7 +137,7 @@ public class UIResponder extends NSObject {
 
     @Generated
     @Selector("load")
-    public static native void load_objc();
+    public static native void load_objc_static();
 
     @Generated
     @Owned
@@ -153,7 +155,7 @@ public class UIResponder extends NSObject {
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")
@@ -162,7 +164,7 @@ public class UIResponder extends NSObject {
     @Generated
     @Selector("version")
     @NInt
-    public static native long version();
+    public static native long version_static();
 
     @Generated
     @Selector("becomeFirstResponder")
@@ -181,6 +183,31 @@ public class UIResponder extends NSObject {
     public native boolean canResignFirstResponder();
 
     @Generated
+    @IsOptional
+    @Selector("copy:")
+    public native void copy(@Mapped(ObjCObjectMapper.class) Object sender);
+
+    @Generated
+    @IsOptional
+    @Selector("cut:")
+    public native void cut(@Mapped(ObjCObjectMapper.class) Object sender);
+
+    @Generated
+    @IsOptional
+    @Selector("decreaseSize:")
+    public native void decreaseSize(@Mapped(ObjCObjectMapper.class) Object sender);
+
+    @Generated
+    @IsOptional
+    @Selector("delete:")
+    public native void delete(@Mapped(ObjCObjectMapper.class) Object sender);
+
+    @Generated
+    @IsOptional
+    @Selector("increaseSize:")
+    public native void increaseSize(@Mapped(ObjCObjectMapper.class) Object sender);
+
+    @Generated
     @Selector("init")
     public native UIResponder init();
 
@@ -191,6 +218,10 @@ public class UIResponder extends NSObject {
     @Generated
     @Selector("inputAccessoryViewController")
     public native UIInputViewController inputAccessoryViewController();
+
+    @Generated
+    @Selector("inputAssistantItem")
+    public native UITextInputAssistantItem inputAssistantItem();
 
     @Generated
     @Selector("inputView")
@@ -209,6 +240,16 @@ public class UIResponder extends NSObject {
     public native NSArray<? extends UIKeyCommand> keyCommands();
 
     @Generated
+    @IsOptional
+    @Selector("makeTextWritingDirectionLeftToRight:")
+    public native void makeTextWritingDirectionLeftToRight(@Mapped(ObjCObjectMapper.class) Object sender);
+
+    @Generated
+    @IsOptional
+    @Selector("makeTextWritingDirectionRightToLeft:")
+    public native void makeTextWritingDirectionRightToLeft(@Mapped(ObjCObjectMapper.class) Object sender);
+
+    @Generated
     @Selector("motionBegan:withEvent:")
     public native void motionBeganWithEvent(@NInt long motion, UIEvent event);
 
@@ -225,6 +266,27 @@ public class UIResponder extends NSObject {
     public native UIResponder nextResponder();
 
     @Generated
+    @IsOptional
+    @Selector("paste:")
+    public native void paste(@Mapped(ObjCObjectMapper.class) Object sender);
+
+    @Generated
+    @Selector("pressesBegan:withEvent:")
+    public native void pressesBeganWithEvent(NSSet<? extends UIPress> presses, UIPressesEvent event);
+
+    @Generated
+    @Selector("pressesCancelled:withEvent:")
+    public native void pressesCancelledWithEvent(NSSet<? extends UIPress> presses, UIPressesEvent event);
+
+    @Generated
+    @Selector("pressesChanged:withEvent:")
+    public native void pressesChangedWithEvent(NSSet<? extends UIPress> presses, UIPressesEvent event);
+
+    @Generated
+    @Selector("pressesEnded:withEvent:")
+    public native void pressesEndedWithEvent(NSSet<? extends UIPress> presses, UIPressesEvent event);
+
+    @Generated
     @Selector("reloadInputViews")
     public native void reloadInputViews();
 
@@ -239,6 +301,16 @@ public class UIResponder extends NSObject {
     @Generated
     @Selector("restoreUserActivityState:")
     public native void restoreUserActivityState(NSUserActivity activity);
+
+    @Generated
+    @IsOptional
+    @Selector("select:")
+    public native void select(@Mapped(ObjCObjectMapper.class) Object sender);
+
+    @Generated
+    @IsOptional
+    @Selector("selectAll:")
+    public native void selectAll(@Mapped(ObjCObjectMapper.class) Object sender);
 
     @Generated
     @Selector("setUserActivity:")
@@ -258,6 +330,21 @@ public class UIResponder extends NSObject {
     public native UITextInputMode textInputMode();
 
     @Generated
+    @IsOptional
+    @Selector("toggleBoldface:")
+    public native void toggleBoldface(@Mapped(ObjCObjectMapper.class) Object sender);
+
+    @Generated
+    @IsOptional
+    @Selector("toggleItalics:")
+    public native void toggleItalics(@Mapped(ObjCObjectMapper.class) Object sender);
+
+    @Generated
+    @IsOptional
+    @Selector("toggleUnderline:")
+    public native void toggleUnderline(@Mapped(ObjCObjectMapper.class) Object sender);
+
+    @Generated
     @Selector("touchesBegan:withEvent:")
     public native void touchesBeganWithEvent(NSSet<? extends UITouch> touches, UIEvent event);
 
@@ -268,6 +355,10 @@ public class UIResponder extends NSObject {
     @Generated
     @Selector("touchesEnded:withEvent:")
     public native void touchesEndedWithEvent(NSSet<? extends UITouch> touches, UIEvent event);
+
+    @Generated
+    @Selector("touchesEstimatedPropertiesUpdated:")
+    public native void touchesEstimatedPropertiesUpdated(NSSet<? extends UITouch> touches);
 
     @Generated
     @Selector("touchesMoved:withEvent:")
@@ -284,28 +375,4 @@ public class UIResponder extends NSObject {
     @Generated
     @Selector("userActivity")
     public native NSUserActivity userActivity();
-
-    @Generated
-    @Selector("inputAssistantItem")
-    public native UITextInputAssistantItem inputAssistantItem();
-
-    @Generated
-    @Selector("pressesBegan:withEvent:")
-    public native void pressesBeganWithEvent(NSSet<? extends UIPress> presses, UIPressesEvent event);
-
-    @Generated
-    @Selector("pressesCancelled:withEvent:")
-    public native void pressesCancelledWithEvent(NSSet<? extends UIPress> presses, UIPressesEvent event);
-
-    @Generated
-    @Selector("pressesChanged:withEvent:")
-    public native void pressesChangedWithEvent(NSSet<? extends UIPress> presses, UIPressesEvent event);
-
-    @Generated
-    @Selector("pressesEnded:withEvent:")
-    public native void pressesEndedWithEvent(NSSet<? extends UIPress> presses, UIPressesEvent event);
-
-    @Generated
-    @Selector("touchesEstimatedPropertiesUpdated:")
-    public native void touchesEstimatedPropertiesUpdated(NSSet<?> touches);
 }

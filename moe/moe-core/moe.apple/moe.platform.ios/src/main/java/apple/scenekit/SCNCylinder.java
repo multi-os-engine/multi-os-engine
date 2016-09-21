@@ -58,30 +58,13 @@ public class SCNCylinder extends SCNGeometry {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native SCNCylinder alloc();
-
-    @Generated
-    @Selector("cylinderWithRadius:height:")
-    public static native SCNCylinder cylinderWithRadiusHeight(@NFloat double radius, @NFloat double height);
-
-    @Generated
-    @Selector("geometry")
-    public static native SCNCylinder geometry();
-
-    @Generated
-    @Selector("geometryWithSources:elements:")
-    public static native SCNCylinder geometryWithSourcesElements(NSArray<? extends SCNGeometrySource> sources,
-            NSArray<? extends SCNGeometryElement> elements);
-
-    @Generated
-    @Selector("geometryWithMDLMesh:")
-    public static native SCNCylinder geometryWithMDLMesh(MDLMesh mdlMesh);
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -111,12 +94,29 @@ public class SCNCylinder extends SCNGeometry {
     public static native Class classForKeyedUnarchiver();
 
     @Generated
+    @Selector("cylinderWithRadius:height:")
+    public static native SCNCylinder cylinderWithRadiusHeight(@NFloat double radius, @NFloat double height);
+
+    @Generated
     @Selector("debugDescription")
     public static native String debugDescription_static();
 
     @Generated
     @Selector("description")
     public static native String description_static();
+
+    @Generated
+    @Selector("geometry")
+    public static native SCNCylinder geometry();
+
+    @Generated
+    @Selector("geometryWithMDLMesh:")
+    public static native SCNCylinder geometryWithMDLMesh(MDLMesh mdlMesh);
+
+    @Generated
+    @Selector("geometryWithSources:elements:")
+    public static native SCNCylinder geometryWithSourcesElements(NSArray<? extends SCNGeometrySource> sources,
+            NSArray<? extends SCNGeometryElement> elements);
 
     @Generated
     @Selector("hash")
@@ -198,6 +198,10 @@ public class SCNCylinder extends SCNGeometry {
     public native SCNCylinder init();
 
     @Generated
+    @Selector("initWithCoder:")
+    public native SCNCylinder initWithCoder(NSCoder aDecoder);
+
+    @Generated
     @Selector("radialSegmentCount")
     @NInt
     public native long radialSegmentCount();
@@ -222,10 +226,6 @@ public class SCNCylinder extends SCNGeometry {
     @Generated
     @Selector("setRadius:")
     public native void setRadius(@NFloat double value);
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native SCNCylinder initWithCoder(NSCoder aDecoder);
 
     @Generated
     @ProtocolClassMethod("supportsSecureCoding")

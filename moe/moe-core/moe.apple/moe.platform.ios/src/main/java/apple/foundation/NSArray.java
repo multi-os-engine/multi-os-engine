@@ -24,6 +24,7 @@ import apple.foundation.protocol.NSFastEnumeration;
 import apple.foundation.protocol.NSMutableCopying;
 import apple.foundation.protocol.NSSecureCoding;
 import apple.foundation.struct.NSRange;
+import apple.gameplaykit.GKRandomSource;
 import org.moe.natj.c.ann.FunctionPtr;
 import org.moe.natj.c.ann.Variadic;
 import org.moe.natj.general.NatJ;
@@ -72,9 +73,18 @@ public class NSArray<_ObjectType> extends NSObject
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native NSArray<?> alloc();
+
+    @Generated
+    @Selector("allocWithZone:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("array")
@@ -105,19 +115,6 @@ public class NSArray<_ObjectType> extends NSObject
     @Generated
     @Selector("arrayWithObjects:count:")
     public static native <_ObjectType> NSArray<?> arrayWithObjectsCount(ConstPtr<_ObjectType> objects, @NUInt long cnt);
-
-    @Generated
-    @Selector("supportsSecureCoding")
-    public static native <_ObjectType> boolean supportsSecureCoding();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
-
-    @Generated
-    @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -202,6 +199,10 @@ public class NSArray<_ObjectType> extends NSObject
     public static native Class superclass_static();
 
     @Generated
+    @Selector("supportsSecureCoding")
+    public static native <_ObjectType> boolean supportsSecureCoding();
+
+    @Generated
     @Selector("version")
     @NInt
     public static native long version_static();
@@ -283,14 +284,14 @@ public class NSArray<_ObjectType> extends NSObject
     @Selector("filteredArrayUsingPredicate:")
     public native NSArray<_ObjectType> filteredArrayUsingPredicate(NSPredicate predicate);
 
-    @MappedReturn(ObjCObjectMapper.class)
     @Generated
     @Selector("firstObject")
+    @MappedReturn(ObjCObjectMapper.class)
     public native _ObjectType firstObject();
 
-    @MappedReturn(ObjCObjectMapper.class)
     @Generated
     @Selector("firstObjectCommonWithArray:")
+    @MappedReturn(ObjCObjectMapper.class)
     public native _ObjectType firstObjectCommonWithArray(NSArray<_ObjectType> otherArray);
 
     @Generated
@@ -394,15 +395,15 @@ public class NSArray<_ObjectType> extends NSObject
 
     @Generated
     @Selector("initWithObjects:count:")
-    public native NSArray<?> initWithObjectsCount(ConstPtr<_ObjectType> objects, @NUInt long cnt);
+    public native NSArray<?> initWithObjectsCount(Ptr<_ObjectType> objects, @NUInt long cnt);
 
     @Generated
     @Selector("isEqualToArray:")
     public native boolean isEqualToArray(NSArray<_ObjectType> otherArray);
 
-    @MappedReturn(ObjCObjectMapper.class)
     @Generated
     @Selector("lastObject")
+    @MappedReturn(ObjCObjectMapper.class)
     public native _ObjectType lastObject();
 
     @Generated
@@ -419,14 +420,14 @@ public class NSArray<_ObjectType> extends NSObject
     @MappedReturn(ObjCObjectMapper.class)
     public native Object mutableCopyWithZone(VoidPtr zone);
 
-    @MappedReturn(ObjCObjectMapper.class)
     @Generated
     @Selector("objectAtIndex:")
+    @MappedReturn(ObjCObjectMapper.class)
     public native _ObjectType objectAtIndex(@NUInt long index);
 
-    @MappedReturn(ObjCObjectMapper.class)
     @Generated
     @Selector("objectAtIndexedSubscript:")
+    @MappedReturn(ObjCObjectMapper.class)
     public native _ObjectType objectAtIndexedSubscript(@NUInt long idx);
 
     @Generated
@@ -466,6 +467,14 @@ public class NSArray<_ObjectType> extends NSObject
     @Generated
     @Selector("setValue:forKey:")
     public native void setValueForKey(@Mapped(ObjCObjectMapper.class) Object value, String key);
+
+    @Generated
+    @Selector("shuffledArray")
+    public native NSArray<_ObjectType> shuffledArray();
+
+    @Generated
+    @Selector("shuffledArrayWithRandomSource:")
+    public native NSArray<_ObjectType> shuffledArrayWithRandomSource(GKRandomSource randomSource);
 
     @Generated
     @Selector("sortedArrayHint")

@@ -56,17 +56,13 @@ public class NSLinguisticTagger extends NSObject {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native NSLinguisticTagger alloc();
-
-    @Generated
-    @Selector("availableTagSchemesForLanguage:")
-    public static native NSArray<String> availableTagSchemesForLanguage(String language);
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -76,6 +72,10 @@ public class NSLinguisticTagger extends NSObject {
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
     public static native boolean automaticallyNotifiesObserversForKey(String key);
+
+    @Generated
+    @Selector("availableTagSchemesForLanguage:")
+    public static native NSArray<String> availableTagSchemesForLanguage(String language);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")

@@ -56,21 +56,13 @@ public class EKRecurrenceEnd extends NSObject implements NSCopying {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native EKRecurrenceEnd alloc();
-
-    @Generated
-    @Selector("recurrenceEndWithEndDate:")
-    public static native EKRecurrenceEnd recurrenceEndWithEndDate(NSDate endDate);
-
-    @Generated
-    @Selector("recurrenceEndWithOccurrenceCount:")
-    public static native EKRecurrenceEnd recurrenceEndWithOccurrenceCount(@NUInt long occurrenceCount);
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -148,6 +140,14 @@ public class EKRecurrenceEnd extends NSObject implements NSCopying {
     public static native Object new_objc();
 
     @Generated
+    @Selector("recurrenceEndWithEndDate:")
+    public static native EKRecurrenceEnd recurrenceEndWithEndDate(NSDate endDate);
+
+    @Generated
+    @Selector("recurrenceEndWithOccurrenceCount:")
+    public static native EKRecurrenceEnd recurrenceEndWithOccurrenceCount(@NUInt long occurrenceCount);
+
+    @Generated
     @Selector("resolveClassMethod:")
     public static native boolean resolveClassMethod(SEL sel);
 
@@ -157,7 +157,7 @@ public class EKRecurrenceEnd extends NSObject implements NSCopying {
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")

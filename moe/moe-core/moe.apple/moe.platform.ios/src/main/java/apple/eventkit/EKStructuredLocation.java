@@ -57,21 +57,13 @@ public class EKStructuredLocation extends EKObject implements NSCopying {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native EKStructuredLocation alloc();
-
-    @Generated
-    @Selector("locationWithTitle:")
-    public static native EKStructuredLocation locationWithTitle(String title);
-
-    @Generated
-    @Selector("locationWithMapItem:")
-    public static native EKStructuredLocation locationWithMapItem(MKMapItem mapItem);
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -143,6 +135,14 @@ public class EKStructuredLocation extends EKObject implements NSCopying {
     public static native void load_objc_static();
 
     @Generated
+    @Selector("locationWithMapItem:")
+    public static native EKStructuredLocation locationWithMapItem(MKMapItem mapItem);
+
+    @Generated
+    @Selector("locationWithTitle:")
+    public static native EKStructuredLocation locationWithTitle(String title);
+
+    @Generated
     @Owned
     @Selector("new")
     @MappedReturn(ObjCObjectMapper.class)
@@ -158,7 +158,7 @@ public class EKStructuredLocation extends EKObject implements NSCopying {
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")
@@ -167,7 +167,7 @@ public class EKStructuredLocation extends EKObject implements NSCopying {
     @Generated
     @Selector("version")
     @NInt
-    public static native long version();
+    public static native long version_static();
 
     @Generated
     @Owned

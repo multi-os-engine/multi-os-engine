@@ -77,13 +77,13 @@ public class NSLayoutManager extends NSObject implements NSCoding {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native NSLayoutManager alloc();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -180,6 +180,14 @@ public class NSLayoutManager extends NSObject implements NSCoding {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("CGGlyphAtIndex:")
+    public native char CGGlyphAtIndex(@NUInt long glyphIndex);
+
+    @Generated
+    @Selector("CGGlyphAtIndex:isValidIndex:")
+    public native char CGGlyphAtIndexIsValidIndex(@NUInt long glyphIndex, BoolPtr isValidIndex);
 
     @Generated
     @Selector("addTextContainer:")
@@ -432,10 +440,22 @@ public class NSLayoutManager extends NSObject implements NSCoding {
             NSRange effectiveGlyphRange);
 
     @Generated
+    @Selector("lineFragmentRectForGlyphAtIndex:effectiveRange:withoutAdditionalLayout:")
+    @ByValue
+    public native CGRect lineFragmentRectForGlyphAtIndexEffectiveRangeWithoutAdditionalLayout(@NUInt long glyphIndex,
+            NSRange effectiveGlyphRange, boolean flag);
+
+    @Generated
     @Selector("lineFragmentUsedRectForGlyphAtIndex:effectiveRange:")
     @ByValue
     public native CGRect lineFragmentUsedRectForGlyphAtIndexEffectiveRange(@NUInt long glyphIndex,
             NSRange effectiveGlyphRange);
+
+    @Generated
+    @Selector("lineFragmentUsedRectForGlyphAtIndex:effectiveRange:withoutAdditionalLayout:")
+    @ByValue
+    public native CGRect lineFragmentUsedRectForGlyphAtIndexEffectiveRangeWithoutAdditionalLayout(
+            @NUInt long glyphIndex, NSRange effectiveGlyphRange, boolean flag);
 
     @Generated
     @Selector("locationForGlyphAtIndex:")
@@ -588,6 +608,11 @@ public class NSLayoutManager extends NSObject implements NSCoding {
             NSRange effectiveGlyphRange);
 
     @Generated
+    @Selector("textContainerForGlyphAtIndex:effectiveRange:withoutAdditionalLayout:")
+    public native NSTextContainer textContainerForGlyphAtIndexEffectiveRangeWithoutAdditionalLayout(
+            @NUInt long glyphIndex, NSRange effectiveGlyphRange, boolean flag);
+
+    @Generated
     @Selector("textContainers")
     public native NSArray<? extends NSTextContainer> textContainers();
 
@@ -614,31 +639,6 @@ public class NSLayoutManager extends NSObject implements NSCoding {
     @Generated
     @Selector("usesFontLeading")
     public native boolean usesFontLeading();
-
-    @Generated
-    @Selector("CGGlyphAtIndex:")
-    public native char CGGlyphAtIndex(@NUInt long glyphIndex);
-
-    @Generated
-    @Selector("CGGlyphAtIndex:isValidIndex:")
-    public native char CGGlyphAtIndexIsValidIndex(@NUInt long glyphIndex, BoolPtr isValidIndex);
-
-    @Generated
-    @Selector("lineFragmentRectForGlyphAtIndex:effectiveRange:withoutAdditionalLayout:")
-    @ByValue
-    public native CGRect lineFragmentRectForGlyphAtIndexEffectiveRangeWithoutAdditionalLayout(@NUInt long glyphIndex,
-            NSRange effectiveGlyphRange, boolean flag);
-
-    @Generated
-    @Selector("lineFragmentUsedRectForGlyphAtIndex:effectiveRange:withoutAdditionalLayout:")
-    @ByValue
-    public native CGRect lineFragmentUsedRectForGlyphAtIndexEffectiveRangeWithoutAdditionalLayout(
-            @NUInt long glyphIndex, NSRange effectiveGlyphRange, boolean flag);
-
-    @Generated
-    @Selector("textContainerForGlyphAtIndex:effectiveRange:withoutAdditionalLayout:")
-    public native NSTextContainer textContainerForGlyphAtIndexEffectiveRangeWithoutAdditionalLayout(
-            @NUInt long glyphIndex, NSRange effectiveGlyphRange, boolean flag);
 
     @Runtime(ObjCRuntime.class)
     @Generated

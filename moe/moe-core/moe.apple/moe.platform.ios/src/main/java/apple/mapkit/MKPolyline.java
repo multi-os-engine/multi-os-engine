@@ -36,7 +36,7 @@ import org.moe.natj.general.ann.NInt;
 import org.moe.natj.general.ann.NUInt;
 import org.moe.natj.general.ann.Owned;
 import org.moe.natj.general.ann.Runtime;
-import org.moe.natj.general.ptr.Ptr;
+import org.moe.natj.general.ptr.ConstPtr;
 import org.moe.natj.general.ptr.VoidPtr;
 import org.moe.natj.objc.Class;
 import org.moe.natj.objc.ObjCRuntime;
@@ -61,21 +61,13 @@ public class MKPolyline extends MKMultiPoint implements MKOverlay {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native MKPolyline alloc();
-
-    @Generated
-    @Selector("polylineWithCoordinates:count:")
-    public static native MKPolyline polylineWithCoordinatesCount(Ptr<CLLocationCoordinate2D> coords, @NUInt long count);
-
-    @Generated
-    @Selector("polylineWithPoints:count:")
-    public static native MKPolyline polylineWithPointsCount(Ptr<MKMapPoint> points, @NUInt long count);
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -151,6 +143,15 @@ public class MKPolyline extends MKMultiPoint implements MKOverlay {
     @Selector("new")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object new_objc();
+
+    @Generated
+    @Selector("polylineWithCoordinates:count:")
+    public static native MKPolyline polylineWithCoordinatesCount(ConstPtr<CLLocationCoordinate2D> coords,
+            @NUInt long count);
+
+    @Generated
+    @Selector("polylineWithPoints:count:")
+    public static native MKPolyline polylineWithPointsCount(ConstPtr<MKMapPoint> points, @NUInt long count);
 
     @Generated
     @Selector("resolveClassMethod:")

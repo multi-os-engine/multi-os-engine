@@ -31,49 +31,49 @@ import org.moe.natj.objc.ann.Selector;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("UIActionSheetDelegate")
 public interface UIActionSheetDelegate {
-    @Deprecated
     @Generated
     @IsOptional
+    @Deprecated
     @Selector("actionSheet:clickedButtonAtIndex:")
     default void actionSheetClickedButtonAtIndex(UIActionSheet actionSheet, @NInt long buttonIndex) {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    @Deprecated
     @Generated
     @IsOptional
+    @Deprecated
     @Selector("actionSheet:didDismissWithButtonIndex:")
     default void actionSheetDidDismissWithButtonIndex(UIActionSheet actionSheet, @NInt long buttonIndex) {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    @Deprecated
     @Generated
     @IsOptional
+    @Deprecated
     @Selector("actionSheet:willDismissWithButtonIndex:")
     default void actionSheetWillDismissWithButtonIndex(UIActionSheet actionSheet, @NInt long buttonIndex) {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    @Deprecated
     @Generated
     @IsOptional
+    @Deprecated
     @Selector("actionSheetCancel:")
     default void actionSheetCancel(UIActionSheet actionSheet) {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    @Deprecated
     @Generated
     @IsOptional
+    @Deprecated
     @Selector("didPresentActionSheet:")
     default void didPresentActionSheet(UIActionSheet actionSheet) {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    @Deprecated
     @Generated
     @IsOptional
+    @Deprecated
     @Selector("willPresentActionSheet:")
     default void willPresentActionSheet(UIActionSheet actionSheet) {
         throw new java.lang.UnsupportedOperationException();

@@ -62,18 +62,13 @@ public class SLRequest extends NSObject {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native SLRequest alloc();
-
-    @Generated
-    @Selector("requestForServiceType:requestMethod:URL:parameters:")
-    public static native SLRequest requestForServiceTypeRequestMethodURLParameters(String serviceType,
-            @NInt long requestMethod, NSURL url, NSDictionary<?, ?> parameters);
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -149,6 +144,11 @@ public class SLRequest extends NSObject {
     @Selector("new")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object new_objc();
+
+    @Generated
+    @Selector("requestForServiceType:requestMethod:URL:parameters:")
+    public static native SLRequest requestForServiceTypeRequestMethodURLParameters(String serviceType,
+            @NInt long requestMethod, NSURL url, NSDictionary<?, ?> parameters);
 
     @Generated
     @Selector("resolveClassMethod:")

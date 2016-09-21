@@ -59,13 +59,13 @@ public class AVPlayerItemVideoOutput extends AVPlayerItemOutput {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native AVPlayerItemVideoOutput alloc();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -152,7 +152,7 @@ public class AVPlayerItemVideoOutput extends AVPlayerItemOutput {
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")
@@ -184,6 +184,10 @@ public class AVPlayerItemVideoOutput extends AVPlayerItemOutput {
     @Generated
     @Selector("init")
     public native AVPlayerItemVideoOutput init();
+
+    @Generated
+    @Selector("initWithOutputSettings:")
+    public native AVPlayerItemVideoOutput initWithOutputSettings(NSDictionary<String, ?> outputSettings);
 
     @Generated
     @Selector("initWithPixelBufferAttributes:")

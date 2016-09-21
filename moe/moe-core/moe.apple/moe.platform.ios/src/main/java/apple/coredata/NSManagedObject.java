@@ -17,6 +17,7 @@ limitations under the License.
 package apple.coredata;
 
 import apple.NSObject;
+import apple.coredata.protocol.NSFetchRequestResult;
 import apple.foundation.NSArray;
 import apple.foundation.NSDictionary;
 import apple.foundation.NSError;
@@ -47,7 +48,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @Library("CoreData")
 @Runtime(ObjCRuntime.class)
 @ObjCClassBinding
-public class NSManagedObject extends NSObject {
+public class NSManagedObject extends NSObject implements NSFetchRequestResult {
     static {
         NatJ.register();
     }
@@ -58,17 +59,13 @@ public class NSManagedObject extends NSObject {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native NSManagedObject alloc();
-
-    @Generated
-    @Selector("contextShouldIgnoreUnmodeledPropertyChanges")
-    public static native boolean contextShouldIgnoreUnmodeledPropertyChanges();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -98,12 +95,24 @@ public class NSManagedObject extends NSObject {
     public static native Class classForKeyedUnarchiver();
 
     @Generated
+    @Selector("contextShouldIgnoreUnmodeledPropertyChanges")
+    public static native boolean contextShouldIgnoreUnmodeledPropertyChanges();
+
+    @Generated
     @Selector("debugDescription")
     public static native String debugDescription_static();
 
     @Generated
     @Selector("description")
     public static native String description_static();
+
+    @Generated
+    @Selector("entity")
+    public static native NSEntityDescription entity_static();
+
+    @Generated
+    @Selector("fetchRequest")
+    public static native NSFetchRequest<?> fetchRequest();
 
     @Generated
     @Selector("hash")
@@ -229,8 +238,16 @@ public class NSManagedObject extends NSObject {
     public native boolean hasFaultForRelationshipNamed(String key);
 
     @Generated
+    @Selector("hasPersistentChangedValues")
+    public native boolean hasPersistentChangedValues();
+
+    @Generated
     @Selector("init")
     public native NSManagedObject init();
+
+    @Generated
+    @Selector("initWithContext:")
+    public native NSManagedObject initWithContext(NSManagedObjectContext moc);
 
     @Generated
     @Selector("initWithEntity:insertIntoManagedObjectContext:")
@@ -260,6 +277,10 @@ public class NSManagedObject extends NSObject {
     @Generated
     @Selector("objectID")
     public native NSManagedObjectID objectID();
+
+    @Generated
+    @Selector("objectIDsForRelationshipNamed:")
+    public native NSArray<? extends NSManagedObjectID> objectIDsForRelationshipNamed(String key);
 
     @Generated
     @Selector("prepareForDeletion")
@@ -319,12 +340,4 @@ public class NSManagedObject extends NSObject {
     @Generated
     @Selector("willTurnIntoFault")
     public native void willTurnIntoFault();
-
-    @Generated
-    @Selector("hasPersistentChangedValues")
-    public native boolean hasPersistentChangedValues();
-
-    @Generated
-    @Selector("objectIDsForRelationshipNamed:")
-    public native NSArray<? extends NSManagedObjectID> objectIDsForRelationshipNamed(String key);
 }

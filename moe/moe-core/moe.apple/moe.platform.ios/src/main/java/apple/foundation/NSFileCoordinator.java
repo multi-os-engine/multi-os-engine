@@ -54,6 +54,10 @@ public class NSFileCoordinator extends NSObject {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Selector("addFilePresenter:")
     public static native void addFilePresenter(@Mapped(ObjCObjectMapper.class) NSFilePresenter filePresenter);
 
@@ -61,18 +65,6 @@ public class NSFileCoordinator extends NSObject {
     @Owned
     @Selector("alloc")
     public static native NSFileCoordinator alloc();
-
-    @Generated
-    @Selector("filePresenters")
-    public static native NSArray<?> filePresenters();
-
-    @Generated
-    @Selector("removeFilePresenter:")
-    public static native void removeFilePresenter(@Mapped(ObjCObjectMapper.class) NSFilePresenter filePresenter);
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -108,6 +100,10 @@ public class NSFileCoordinator extends NSObject {
     @Generated
     @Selector("description")
     public static native String description_static();
+
+    @Generated
+    @Selector("filePresenters")
+    public static native NSArray<?> filePresenters();
 
     @Generated
     @Selector("hash")
@@ -148,6 +144,10 @@ public class NSFileCoordinator extends NSObject {
     @Selector("new")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object new_objc();
+
+    @Generated
+    @Selector("removeFilePresenter:")
+    public static native void removeFilePresenter(@Mapped(ObjCObjectMapper.class) NSFilePresenter filePresenter);
 
     @Generated
     @Selector("resolveClassMethod:")

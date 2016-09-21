@@ -57,9 +57,40 @@ public class NSMutableData extends NSData {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native NSMutableData alloc();
+
+    @Generated
+    @Selector("allocWithZone:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object allocWithZone(VoidPtr zone);
+
+    @Generated
+    @Selector("automaticallyNotifiesObserversForKey:")
+    public static native boolean automaticallyNotifiesObserversForKey(String key);
+
+    @Generated
+    @Selector("cancelPreviousPerformRequestsWithTarget:")
+    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+
+    @Generated
+    @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
+    public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
+            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
+            @Mapped(ObjCObjectMapper.class) Object anArgument);
+
+    @Generated
+    @Selector("classFallbacksForKeyedArchiver")
+    public static native NSArray<String> classFallbacksForKeyedArchiver();
+
+    @Generated
+    @Selector("classForKeyedUnarchiver")
+    public static native Class classForKeyedUnarchiver();
 
     @Generated
     @Selector("data")
@@ -112,37 +143,6 @@ public class NSMutableData extends NSData {
     @Generated
     @Selector("dataWithLength:")
     public static native NSMutableData dataWithLength(@NUInt long length);
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
-
-    @Generated
-    @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
-
-    @Generated
-    @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
-
-    @Generated
-    @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
-
-    @Generated
-    @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
-    public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
-
-    @Generated
-    @Selector("classFallbacksForKeyedArchiver")
-    public static native NSArray<String> classFallbacksForKeyedArchiver();
-
-    @Generated
-    @Selector("classForKeyedUnarchiver")
-    public static native Class classForKeyedUnarchiver();
 
     @Generated
     @Selector("debugDescription")
@@ -202,7 +202,7 @@ public class NSMutableData extends NSData {
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")
@@ -268,6 +268,10 @@ public class NSMutableData extends NSData {
     public native NSMutableData initWithCapacity(@NUInt long capacity);
 
     @Generated
+    @Selector("initWithCoder:")
+    public native NSMutableData initWithCoder(NSCoder aDecoder);
+
+    @Generated
     @Selector("initWithContentsOfFile:")
     public native NSMutableData initWithContentsOfFile(String path);
 
@@ -327,10 +331,6 @@ public class NSMutableData extends NSData {
     @Generated
     @Selector("setLength:")
     public native void setLength(@NUInt long value);
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native NSMutableData initWithCoder(NSCoder aDecoder);
 
     @Generated
     @ProtocolClassMethod("supportsSecureCoding")

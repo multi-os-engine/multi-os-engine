@@ -57,33 +57,13 @@ public class JSContext extends NSObject {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native JSContext alloc();
-
-    @Generated
-    @Selector("contextWithJSGlobalContextRef:")
-    public static native JSContext contextWithJSGlobalContextRef(JSGlobalContextRef jsGlobalContextRef);
-
-    @Generated
-    @Selector("currentArguments")
-    public static native NSArray<?> currentArguments();
-
-    @Generated
-    @Selector("currentCallee")
-    public static native JSValue currentCallee();
-
-    @Generated
-    @Selector("currentContext")
-    public static native JSContext currentContext();
-
-    @Generated
-    @Selector("currentThis")
-    public static native JSValue currentThis();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -111,6 +91,26 @@ public class JSContext extends NSObject {
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
+
+    @Generated
+    @Selector("contextWithJSGlobalContextRef:")
+    public static native JSContext contextWithJSGlobalContextRef(JSGlobalContextRef jsGlobalContextRef);
+
+    @Generated
+    @Selector("currentArguments")
+    public static native NSArray<?> currentArguments();
+
+    @Generated
+    @Selector("currentCallee")
+    public static native JSValue currentCallee();
+
+    @Generated
+    @Selector("currentContext")
+    public static native JSContext currentContext();
+
+    @Generated
+    @Selector("currentThis")
+    public static native JSValue currentThis();
 
     @Generated
     @Selector("debugDescription")
@@ -198,6 +198,11 @@ public class JSContext extends NSObject {
     public native JSValue exception();
 
     @Generated
+    @Selector("exceptionHandler")
+    @ObjCBlock(name = "call_exceptionHandler_ret")
+    public native Block_exceptionHandler_ret exceptionHandler();
+
+    @Generated
     @Selector("globalObject")
     public native JSValue globalObject();
 
@@ -238,22 +243,17 @@ public class JSContext extends NSObject {
     @Selector("virtualMachine")
     public native JSVirtualMachine virtualMachine();
 
+    @Runtime(ObjCRuntime.class)
     @Generated
-    @Selector("exceptionHandler")
-    @ObjCBlock(name = "call_exceptionHandler_ret")
-    public native Block_exceptionHandler_ret exceptionHandler();
+    public interface Block_exceptionHandler_ret {
+        @Generated
+        void call_exceptionHandler_ret(JSContext arg0, JSValue arg1);
+    }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_setExceptionHandler {
         @Generated
         void call_setExceptionHandler(JSContext arg0, JSValue arg1);
-    }
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_exceptionHandler_ret {
-        @Generated
-        void call_exceptionHandler_ret(JSContext arg0, JSValue arg1);
     }
 }

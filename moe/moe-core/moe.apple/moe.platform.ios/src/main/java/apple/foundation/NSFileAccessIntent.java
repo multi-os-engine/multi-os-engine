@@ -51,23 +51,13 @@ public class NSFileAccessIntent extends NSObject {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native NSFileAccessIntent alloc();
-
-    @Generated
-    @Selector("readingIntentWithURL:options:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object readingIntentWithURLOptions(NSURL url, @NUInt long options);
-
-    @Generated
-    @Selector("writingIntentWithURL:options:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object writingIntentWithURLOptions(NSURL url, @NUInt long options);
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -145,6 +135,11 @@ public class NSFileAccessIntent extends NSObject {
     public static native Object new_objc();
 
     @Generated
+    @Selector("readingIntentWithURL:options:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object readingIntentWithURLOptions(NSURL url, @NUInt long options);
+
+    @Generated
     @Selector("resolveClassMethod:")
     public static native boolean resolveClassMethod(SEL sel);
 
@@ -154,7 +149,7 @@ public class NSFileAccessIntent extends NSObject {
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")
@@ -164,6 +159,11 @@ public class NSFileAccessIntent extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("writingIntentWithURL:options:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object writingIntentWithURLOptions(NSURL url, @NUInt long options);
 
     @Generated
     @Selector("URL")

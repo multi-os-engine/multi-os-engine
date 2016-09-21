@@ -57,13 +57,13 @@ public class UIMutableUserNotificationAction extends UIUserNotificationAction {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native UIMutableUserNotificationAction alloc();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -150,7 +150,7 @@ public class UIMutableUserNotificationAction extends UIUserNotificationAction {
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")
@@ -171,12 +171,21 @@ public class UIMutableUserNotificationAction extends UIUserNotificationAction {
     public native long activationMode();
 
     @Generated
+    @Selector("behavior")
+    @NUInt
+    public native long behavior();
+
+    @Generated
     @Selector("identifier")
     public native String identifier();
 
     @Generated
     @Selector("init")
     public native UIMutableUserNotificationAction init();
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native UIMutableUserNotificationAction initWithCoder(NSCoder aDecoder);
 
     @Generated
     @Selector("isAuthenticationRequired")
@@ -195,45 +204,36 @@ public class UIMutableUserNotificationAction extends UIUserNotificationAction {
     public native void setDestructive(boolean value);
 
     @Generated
-    @Selector("setActivationMode:")
-    public native void setActivationMode(@NUInt long value);
-
-    @Generated
-    @Selector("setIdentifier:")
-    public native void setIdentifier(String value);
-
-    @Generated
-    @Selector("setTitle:")
-    public native void setTitle(String value);
-
-    @Generated
-    @Selector("title")
-    public native String title();
-
-    @Generated
-    @Selector("behavior")
-    @NUInt
-    public native long behavior();
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native UIMutableUserNotificationAction initWithCoder(NSCoder aDecoder);
-
-    @Generated
     @Selector("parameters")
     public native NSDictionary<?, ?> parameters();
+
+    @Generated
+    @Selector("setActivationMode:")
+    public native void setActivationMode(@NUInt long value);
 
     @Generated
     @Selector("setBehavior:")
     public native void setBehavior(@NUInt long value);
 
     @Generated
+    @Selector("setIdentifier:")
+    public native void setIdentifier(String value);
+
+    @Generated
     @Selector("setParameters:")
     public native void setParameters(NSDictionary<?, ?> value);
+
+    @Generated
+    @Selector("setTitle:")
+    public native void setTitle(String value);
 
     @Generated
     @ProtocolClassMethod("supportsSecureCoding")
     public boolean _supportsSecureCoding() {
         return supportsSecureCoding();
     }
+
+    @Generated
+    @Selector("title")
+    public native String title();
 }

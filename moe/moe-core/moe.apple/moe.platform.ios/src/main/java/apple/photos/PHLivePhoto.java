@@ -64,27 +64,13 @@ public class PHLivePhoto extends NSObject implements NSCopying, NSSecureCoding {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native PHLivePhoto alloc();
-
-    @Generated
-    @Selector("cancelLivePhotoRequestWithRequestID:")
-    public static native void cancelLivePhotoRequestWithRequestID(int requestID);
-
-    @Generated
-    @Selector("requestLivePhotoWithResourceFileURLs:placeholderImage:targetSize:contentMode:resultHandler:")
-    public static native int requestLivePhotoWithResourceFileURLsPlaceholderImageTargetSizeContentModeResultHandler(
-            NSArray<? extends NSURL> fileURLs, UIImage image, @ByValue CGSize targetSize, @NInt long contentMode,
-            @ObjCBlock(name = "call_requestLivePhotoWithResourceFileURLsPlaceholderImageTargetSizeContentModeResultHandler") Block_requestLivePhotoWithResourceFileURLsPlaceholderImageTargetSizeContentModeResultHandler resultHandler);
-
-    @Generated
-    @Selector("supportsSecureCoding")
-    public static native boolean supportsSecureCoding();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -94,6 +80,10 @@ public class PHLivePhoto extends NSObject implements NSCopying, NSSecureCoding {
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
     public static native boolean automaticallyNotifiesObserversForKey(String key);
+
+    @Generated
+    @Selector("cancelLivePhotoRequestWithRequestID:")
+    public static native void cancelLivePhotoRequestWithRequestID(int requestID);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
@@ -162,6 +152,12 @@ public class PHLivePhoto extends NSObject implements NSCopying, NSSecureCoding {
     public static native Object new_objc();
 
     @Generated
+    @Selector("requestLivePhotoWithResourceFileURLs:placeholderImage:targetSize:contentMode:resultHandler:")
+    public static native int requestLivePhotoWithResourceFileURLsPlaceholderImageTargetSizeContentModeResultHandler(
+            NSArray<? extends NSURL> fileURLs, UIImage image, @ByValue CGSize targetSize, @NInt long contentMode,
+            @ObjCBlock(name = "call_requestLivePhotoWithResourceFileURLsPlaceholderImageTargetSizeContentModeResultHandler") Block_requestLivePhotoWithResourceFileURLsPlaceholderImageTargetSizeContentModeResultHandler resultHandler);
+
+    @Generated
     @Selector("resolveClassMethod:")
     public static native boolean resolveClassMethod(SEL sel);
 
@@ -171,11 +167,15 @@ public class PHLivePhoto extends NSObject implements NSCopying, NSSecureCoding {
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")
     public static native Class superclass_static();
+
+    @Generated
+    @Selector("supportsSecureCoding")
+    public static native boolean supportsSecureCoding();
 
     @Generated
     @Selector("version")

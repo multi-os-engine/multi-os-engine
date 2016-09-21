@@ -55,19 +55,13 @@ public class UIStoryboardSegue extends NSObject {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native UIStoryboardSegue alloc();
-
-    @Generated
-    @Selector("segueWithIdentifier:source:destination:performHandler:")
-    public static native UIStoryboardSegue segueWithIdentifierSourceDestinationPerformHandler(String identifier,
-            UIViewController source, UIViewController destination,
-            @ObjCBlock(name = "call_segueWithIdentifierSourceDestinationPerformHandler") Block_segueWithIdentifierSourceDestinationPerformHandler performHandler);
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -153,8 +147,14 @@ public class UIStoryboardSegue extends NSObject {
     public static native boolean resolveInstanceMethod(SEL sel);
 
     @Generated
+    @Selector("segueWithIdentifier:source:destination:performHandler:")
+    public static native UIStoryboardSegue segueWithIdentifierSourceDestinationPerformHandler(String identifier,
+            UIViewController source, UIViewController destination,
+            @ObjCBlock(name = "call_segueWithIdentifierSourceDestinationPerformHandler") Block_segueWithIdentifierSourceDestinationPerformHandler performHandler);
+
+    @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")

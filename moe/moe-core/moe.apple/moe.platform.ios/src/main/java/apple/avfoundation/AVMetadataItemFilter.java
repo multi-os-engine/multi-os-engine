@@ -54,17 +54,13 @@ public class AVMetadataItemFilter extends NSObject {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native AVMetadataItemFilter alloc();
-
-    @Generated
-    @Selector("metadataItemFilterForSharing")
-    public static native AVMetadataItemFilter metadataItemFilterForSharing();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -134,6 +130,10 @@ public class AVMetadataItemFilter extends NSObject {
     @Generated
     @Selector("load")
     public static native void load_objc_static();
+
+    @Generated
+    @Selector("metadataItemFilterForSharing")
+    public static native AVMetadataItemFilter metadataItemFilterForSharing();
 
     @Generated
     @Owned

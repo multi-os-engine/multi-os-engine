@@ -61,6 +61,10 @@ public class AVAssetExportSession extends NSObject {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Selector("allExportPresets")
     public static native NSArray<String> allExportPresets();
 
@@ -68,24 +72,6 @@ public class AVAssetExportSession extends NSObject {
     @Owned
     @Selector("alloc")
     public static native AVAssetExportSession alloc();
-
-    @Generated
-    @Selector("determineCompatibilityOfExportPreset:withAsset:outputFileType:completionHandler:")
-    public static native void determineCompatibilityOfExportPresetWithAssetOutputFileTypeCompletionHandler(
-            String presetName, AVAsset asset, String outputFileType,
-            @ObjCBlock(name = "call_determineCompatibilityOfExportPresetWithAssetOutputFileTypeCompletionHandler") Block_determineCompatibilityOfExportPresetWithAssetOutputFileTypeCompletionHandler handler);
-
-    @Generated
-    @Selector("exportPresetsCompatibleWithAsset:")
-    public static native NSArray<String> exportPresetsCompatibleWithAsset(AVAsset asset);
-
-    @Generated
-    @Selector("exportSessionWithAsset:presetName:")
-    public static native AVAssetExportSession exportSessionWithAssetPresetName(AVAsset asset, String presetName);
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -121,6 +107,20 @@ public class AVAssetExportSession extends NSObject {
     @Generated
     @Selector("description")
     public static native String description_static();
+
+    @Generated
+    @Selector("determineCompatibilityOfExportPreset:withAsset:outputFileType:completionHandler:")
+    public static native void determineCompatibilityOfExportPresetWithAssetOutputFileTypeCompletionHandler(
+            String presetName, AVAsset asset, String outputFileType,
+            @ObjCBlock(name = "call_determineCompatibilityOfExportPresetWithAssetOutputFileTypeCompletionHandler") Block_determineCompatibilityOfExportPresetWithAssetOutputFileTypeCompletionHandler handler);
+
+    @Generated
+    @Selector("exportPresetsCompatibleWithAsset:")
+    public static native NSArray<String> exportPresetsCompatibleWithAsset(AVAsset asset);
+
+    @Generated
+    @Selector("exportSessionWithAsset:presetName:")
+    public static native AVAssetExportSession exportSessionWithAssetPresetName(AVAsset asset, String presetName);
 
     @Generated
     @Selector("hash")
@@ -172,7 +172,7 @@ public class AVAssetExportSession extends NSObject {
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")

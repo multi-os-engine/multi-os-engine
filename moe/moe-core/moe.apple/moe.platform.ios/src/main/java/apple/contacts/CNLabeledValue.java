@@ -58,26 +58,13 @@ public class CNLabeledValue<_ValueType> extends NSObject implements NSCopying, N
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native CNLabeledValue<?> alloc();
-
-    @Generated
-    @Selector("labeledValueWithLabel:value:")
-    public static native <_ValueType> CNLabeledValue<?> labeledValueWithLabelValue(String label,
-            @Mapped(ObjCObjectMapper.class) Object value);
-
-    @Generated
-    @Selector("localizedStringForLabel:")
-    public static native <_ValueType> String localizedStringForLabel(String label);
-
-    @Generated
-    @Selector("supportsSecureCoding")
-    public static native <_ValueType> boolean supportsSecureCoding();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -145,8 +132,17 @@ public class CNLabeledValue<_ValueType> extends NSObject implements NSCopying, N
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
     @Generated
+    @Selector("labeledValueWithLabel:value:")
+    public static native <_ValueType> CNLabeledValue<?> labeledValueWithLabelValue(String label,
+            @Mapped(ObjCObjectMapper.class) Object value);
+
+    @Generated
     @Selector("load")
     public static native void load_objc_static();
+
+    @Generated
+    @Selector("localizedStringForLabel:")
+    public static native <_ValueType> String localizedStringForLabel(String label);
 
     @Generated
     @Owned
@@ -164,11 +160,15 @@ public class CNLabeledValue<_ValueType> extends NSObject implements NSCopying, N
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")
     public static native Class superclass_static();
+
+    @Generated
+    @Selector("supportsSecureCoding")
+    public static native <_ValueType> boolean supportsSecureCoding();
 
     @Generated
     @Selector("version")

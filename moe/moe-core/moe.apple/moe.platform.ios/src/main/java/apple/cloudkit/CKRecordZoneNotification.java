@@ -55,18 +55,13 @@ public class CKRecordZoneNotification extends CKNotification {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native CKRecordZoneNotification alloc();
-
-    @Generated
-    @Selector("notificationFromRemoteNotificationDictionary:")
-    public static native CKRecordZoneNotification notificationFromRemoteNotificationDictionary(
-            NSDictionary<String, ? extends NSObject> notificationDictionary);
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -135,13 +130,18 @@ public class CKRecordZoneNotification extends CKNotification {
 
     @Generated
     @Selector("load")
-    public static native void load_objc();
+    public static native void load_objc_static();
 
     @Generated
     @Owned
     @Selector("new")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object new_objc();
+
+    @Generated
+    @Selector("notificationFromRemoteNotificationDictionary:")
+    public static native CKRecordZoneNotification notificationFromRemoteNotificationDictionary(
+            NSDictionary<String, ? extends NSObject> notificationDictionary);
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -153,7 +153,7 @@ public class CKRecordZoneNotification extends CKNotification {
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")
@@ -162,7 +162,12 @@ public class CKRecordZoneNotification extends CKNotification {
     @Generated
     @Selector("version")
     @NInt
-    public static native long version();
+    public static native long version_static();
+
+    @Generated
+    @Selector("databaseScope")
+    @NInt
+    public native long databaseScope();
 
     @Generated
     @Selector("init")

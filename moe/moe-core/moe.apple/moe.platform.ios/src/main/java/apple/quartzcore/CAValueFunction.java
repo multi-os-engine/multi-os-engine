@@ -56,17 +56,13 @@ public class CAValueFunction extends NSObject implements NSCoding {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native CAValueFunction alloc();
-
-    @Generated
-    @Selector("functionWithName:")
-    public static native CAValueFunction functionWithName(String name);
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -102,6 +98,10 @@ public class CAValueFunction extends NSObject implements NSCoding {
     @Generated
     @Selector("description")
     public static native String description_static();
+
+    @Generated
+    @Selector("functionWithName:")
+    public static native CAValueFunction functionWithName(String name);
 
     @Generated
     @Selector("hash")

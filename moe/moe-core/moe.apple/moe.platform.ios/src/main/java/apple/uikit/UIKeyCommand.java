@@ -58,27 +58,13 @@ public class UIKeyCommand extends NSObject implements NSCopying, NSSecureCoding 
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native UIKeyCommand alloc();
-
-    @Generated
-    @Selector("keyCommandWithInput:modifierFlags:action:")
-    public static native UIKeyCommand keyCommandWithInputModifierFlagsAction(String input, @NInt long modifierFlags,
-            SEL action);
-
-    @Generated
-    @Selector("supportsSecureCoding")
-    public static native boolean supportsSecureCoding();
-
-    @Generated
-    @Selector("keyCommandWithInput:modifierFlags:action:discoverabilityTitle:")
-    public static native UIKeyCommand keyCommandWithInputModifierFlagsActionDiscoverabilityTitle(String input,
-            @NInt long modifierFlags, SEL action, String discoverabilityTitle);
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -142,6 +128,16 @@ public class UIKeyCommand extends NSObject implements NSCopying, NSSecureCoding 
     public static native boolean isSubclassOfClass(Class aClass);
 
     @Generated
+    @Selector("keyCommandWithInput:modifierFlags:action:")
+    public static native UIKeyCommand keyCommandWithInputModifierFlagsAction(String input, @NInt long modifierFlags,
+            SEL action);
+
+    @Generated
+    @Selector("keyCommandWithInput:modifierFlags:action:discoverabilityTitle:")
+    public static native UIKeyCommand keyCommandWithInputModifierFlagsActionDiscoverabilityTitle(String input,
+            @NInt long modifierFlags, SEL action, String discoverabilityTitle);
+
+    @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
@@ -172,6 +168,10 @@ public class UIKeyCommand extends NSObject implements NSCopying, NSSecureCoding 
     public static native Class superclass_static();
 
     @Generated
+    @Selector("supportsSecureCoding")
+    public static native boolean supportsSecureCoding();
+
+    @Generated
     @Selector("version")
     @NInt
     public static native long version_static();
@@ -181,6 +181,10 @@ public class UIKeyCommand extends NSObject implements NSCopying, NSSecureCoding 
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
     public native Object copyWithZone(VoidPtr zone);
+
+    @Generated
+    @Selector("discoverabilityTitle")
+    public native String discoverabilityTitle();
 
     @Generated
     @Selector("encodeWithCoder:")
@@ -204,16 +208,12 @@ public class UIKeyCommand extends NSObject implements NSCopying, NSSecureCoding 
     public native long modifierFlags();
 
     @Generated
+    @Selector("setDiscoverabilityTitle:")
+    public native void setDiscoverabilityTitle(String value);
+
+    @Generated
     @ProtocolClassMethod("supportsSecureCoding")
     public boolean _supportsSecureCoding() {
         return supportsSecureCoding();
     }
-
-    @Generated
-    @Selector("discoverabilityTitle")
-    public native String discoverabilityTitle();
-
-    @Generated
-    @Selector("setDiscoverabilityTitle:")
-    public native void setDiscoverabilityTitle(String value);
 }

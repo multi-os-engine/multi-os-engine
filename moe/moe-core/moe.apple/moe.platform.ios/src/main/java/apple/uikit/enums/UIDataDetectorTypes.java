@@ -25,6 +25,9 @@ public final class UIDataDetectorTypes {
     @Generated @NUInt public static final long Link = 0x0000000000000002L;
     @Generated @NUInt public static final long Address = 0x0000000000000004L;
     @Generated @NUInt public static final long CalendarEvent = 0x0000000000000008L;
+    @Generated @NUInt public static final long ShipmentTrackingNumber = 0x0000000000000010L;
+    @Generated @NUInt public static final long FlightNumber = 0x0000000000000020L;
+    @Generated @NUInt public static final long LookupSuggestion = 0x0000000000000040L;
     @Generated @NUInt public static final long None = 0x0000000000000000L;
     @Generated @NUInt public static final long All = org.moe.natj.general.NatJ.is64Bit() ?
             0xFFFFFFFFFFFFFFFFL :

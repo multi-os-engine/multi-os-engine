@@ -51,17 +51,13 @@ public class NSMessagePort extends NSPort {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native NSMessagePort alloc();
-
-    @Generated
-    @Selector("port")
-    public static native NSPort port();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -139,6 +135,10 @@ public class NSMessagePort extends NSPort {
     public static native Object new_objc();
 
     @Generated
+    @Selector("port")
+    public static native NSPort port();
+
+    @Generated
     @Selector("resolveClassMethod:")
     public static native boolean resolveClassMethod(SEL sel);
 
@@ -148,7 +148,7 @@ public class NSMessagePort extends NSPort {
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")

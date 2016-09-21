@@ -307,21 +307,21 @@ public final class CFNetwork {
     public static native void CFStreamCreatePairWithSocketToNetService(CFAllocatorRef alloc, CFNetServiceRef service,
             Ptr<CFReadStreamRef> readStream, Ptr<CFWriteStreamRef> writeStream);
 
-    @Deprecated
     @Generated
+    @Deprecated
     @CFunction
     public static native CFReadStreamRef CFReadStreamCreateWithFTPURL(CFAllocatorRef alloc, CFURLRef ftpURL);
 
-    @Deprecated
     @Generated
+    @Deprecated
     @CFunction
     @NInt
     public static native long CFFTPCreateParsedResourceListing(CFAllocatorRef alloc,
             @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String buffer,
             @NInt long bufferLength, Ptr<CFDictionaryRef> parsed);
 
-    @Deprecated
     @Generated
+    @Deprecated
     @CFunction
     public static native CFWriteStreamRef CFWriteStreamCreateWithFTPURL(CFAllocatorRef alloc, CFURLRef ftpURL);
 
@@ -415,14 +415,14 @@ public final class CFNetwork {
     @CFunction
     public static native CFStringRef CFHTTPMessageCopyResponseStatusLine(CFHTTPMessageRef response);
 
-    @Deprecated
     @Generated
+    @Deprecated
     @CFunction
     public static native CFReadStreamRef CFReadStreamCreateForHTTPRequest(CFAllocatorRef alloc,
             CFHTTPMessageRef request);
 
-    @Deprecated
     @Generated
+    @Deprecated
     @CFunction
     public static native CFReadStreamRef CFReadStreamCreateForStreamedHTTPRequest(CFAllocatorRef alloc,
             CFHTTPMessageRef requestHeaders, CFReadStreamRef requestBody);
@@ -628,10 +628,6 @@ public final class CFNetwork {
 
     @Generated
     @CVariable()
-    public static native CFStringRef kCFStreamNetworkServiceTypeVoIP();
-
-    @Generated
-    @CVariable()
     public static native CFStringRef kCFStreamNetworkServiceTypeVideo();
 
     @Generated
@@ -641,6 +637,14 @@ public final class CFNetwork {
     @Generated
     @CVariable()
     public static native CFStringRef kCFStreamNetworkServiceTypeBackground();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCFStreamNetworkServiceTypeCallSignaling();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCFStreamNetworkServiceTypeVoIP();
 
     @Generated
     @CVariable()
@@ -734,6 +738,10 @@ public final class CFNetwork {
     @Generated
     @CVariable()
     public static native CFStringRef kCFStreamPropertySocketRemoteNetService();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCFStreamPropertySocketExtendedBackgroundIdleMode();
 
     @Generated
     @CVariable()
@@ -842,6 +850,10 @@ public final class CFNetwork {
     @Generated
     @CVariable()
     public static native CFStringRef kCFHTTPVersion1_1();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCFHTTPVersion2_0();
 
     @Generated
     @CVariable()
@@ -1018,14 +1030,6 @@ public final class CFNetwork {
     @Generated
     @CVariable()
     public static native CFStringRef kCFNetworkProxiesProxyAutoConfigJavaScript();
-
-    @Generated
-    @CVariable()
-    public static native CFStringRef kCFStreamPropertySocketExtendedBackgroundIdleMode();
-
-    @Generated
-    @CVariable()
-    public static native CFStringRef kCFHTTPVersion2_0();
 
     @Runtime(CRuntime.class)
     @Generated

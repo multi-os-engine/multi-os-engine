@@ -65,22 +65,22 @@ public class AVAsset extends NSObject implements NSCopying, AVAsynchronousKeyVal
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native AVAsset alloc();
 
     @Generated
-    @Selector("assetWithURL:")
-    public static native AVAsset assetWithURL(NSURL URL);
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
-
-    @Generated
     @Selector("allocWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object allocWithZone(VoidPtr zone);
+
+    @Generated
+    @Selector("assetWithURL:")
+    public static native AVAsset assetWithURL(NSURL URL);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -162,7 +162,7 @@ public class AVAsset extends NSObject implements NSCopying, AVAsynchronousKeyVal
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")
@@ -171,7 +171,7 @@ public class AVAsset extends NSObject implements NSCopying, AVAsynchronousKeyVal
     @Generated
     @Selector("version")
     @NInt
-    public static native long version();
+    public static native long version_static();
 
     @Generated
     @Selector("availableChapterLocales")
@@ -184,6 +184,10 @@ public class AVAsset extends NSObject implements NSCopying, AVAsynchronousKeyVal
     @Generated
     @Selector("availableMetadataFormats")
     public native NSArray<String> availableMetadataFormats();
+
+    @Generated
+    @Selector("canContainFragments")
+    public native boolean canContainFragments();
 
     @Generated
     @Selector("cancelLoading")
@@ -202,6 +206,10 @@ public class AVAsset extends NSObject implements NSCopying, AVAsynchronousKeyVal
     @Generated
     @Selector("commonMetadata")
     public native NSArray<? extends AVMetadataItem> commonMetadata();
+
+    @Generated
+    @Selector("containsFragments")
+    public native boolean containsFragments();
 
     @Generated
     @Owned
@@ -225,6 +233,10 @@ public class AVAsset extends NSObject implements NSCopying, AVAsynchronousKeyVal
     @Generated
     @Selector("init")
     public native AVAsset init();
+
+    @Generated
+    @Selector("isCompatibleWithAirPlayVideo")
+    public native boolean isCompatibleWithAirPlayVideo();
 
     @Generated
     @Selector("isCompatibleWithSavedPhotosAlbum")
@@ -272,6 +284,10 @@ public class AVAsset extends NSObject implements NSCopying, AVAsynchronousKeyVal
     @Selector("naturalSize")
     @ByValue
     public native CGSize naturalSize();
+
+    @Generated
+    @Selector("preferredMediaSelection")
+    public native AVMediaSelection preferredMediaSelection();
 
     @Generated
     @Selector("preferredRate")
@@ -323,20 +339,4 @@ public class AVAsset extends NSObject implements NSCopying, AVAsynchronousKeyVal
     @Generated
     @Selector("unusedTrackID")
     public native int unusedTrackID();
-
-    @Generated
-    @Selector("canContainFragments")
-    public native boolean canContainFragments();
-
-    @Generated
-    @Selector("containsFragments")
-    public native boolean containsFragments();
-
-    @Generated
-    @Selector("isCompatibleWithAirPlayVideo")
-    public native boolean isCompatibleWithAirPlayVideo();
-
-    @Generated
-    @Selector("preferredMediaSelection")
-    public native AVMediaSelection preferredMediaSelection();
 }

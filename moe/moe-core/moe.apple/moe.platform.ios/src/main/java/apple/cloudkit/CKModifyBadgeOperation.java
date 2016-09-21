@@ -56,13 +56,13 @@ public class CKModifyBadgeOperation extends CKOperation {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native CKModifyBadgeOperation alloc();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -174,6 +174,11 @@ public class CKModifyBadgeOperation extends CKOperation {
     public native CKModifyBadgeOperation initWithBadgeValue(@NUInt long badgeValue);
 
     @Generated
+    @Selector("modifyBadgeCompletionBlock")
+    @ObjCBlock(name = "call_modifyBadgeCompletionBlock_ret")
+    public native Block_modifyBadgeCompletionBlock_ret modifyBadgeCompletionBlock();
+
+    @Generated
     @Selector("setBadgeValue:")
     public native void setBadgeValue(@NUInt long value);
 
@@ -182,22 +187,17 @@ public class CKModifyBadgeOperation extends CKOperation {
     public native void setModifyBadgeCompletionBlock(
             @ObjCBlock(name = "call_setModifyBadgeCompletionBlock") Block_setModifyBadgeCompletionBlock value);
 
+    @Runtime(ObjCRuntime.class)
     @Generated
-    @Selector("modifyBadgeCompletionBlock")
-    @ObjCBlock(name = "call_modifyBadgeCompletionBlock_ret")
-    public native Block_modifyBadgeCompletionBlock_ret modifyBadgeCompletionBlock();
+    public interface Block_modifyBadgeCompletionBlock_ret {
+        @Generated
+        void call_modifyBadgeCompletionBlock_ret(NSError arg0);
+    }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_setModifyBadgeCompletionBlock {
         @Generated
         void call_setModifyBadgeCompletionBlock(NSError arg0);
-    }
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_modifyBadgeCompletionBlock_ret {
-        @Generated
-        void call_modifyBadgeCompletionBlock_ret(NSError arg0);
     }
 }

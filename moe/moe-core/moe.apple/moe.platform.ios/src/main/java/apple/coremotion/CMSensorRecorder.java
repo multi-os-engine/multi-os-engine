@@ -55,21 +55,13 @@ public class CMSensorRecorder extends NSObject {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native CMSensorRecorder alloc();
-
-    @Generated
-    @Selector("isAccelerometerRecordingAvailable")
-    public static native boolean isAccelerometerRecordingAvailable();
-
-    @Generated
-    @Selector("isAuthorizedForRecording")
-    public static native boolean isAuthorizedForRecording();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -129,6 +121,14 @@ public class CMSensorRecorder extends NSObject {
     public static native boolean instancesRespondToSelector(SEL aSelector);
 
     @Generated
+    @Selector("isAccelerometerRecordingAvailable")
+    public static native boolean isAccelerometerRecordingAvailable();
+
+    @Generated
+    @Selector("isAuthorizedForRecording")
+    public static native boolean isAuthorizedForRecording();
+
+    @Generated
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
@@ -168,12 +168,12 @@ public class CMSensorRecorder extends NSObject {
     public static native long version_static();
 
     @Generated
-    @Selector("init")
-    public native CMSensorRecorder init();
-
-    @Generated
     @Selector("accelerometerDataFromDate:toDate:")
     public native CMSensorDataList accelerometerDataFromDateToDate(NSDate fromDate, NSDate toDate);
+
+    @Generated
+    @Selector("init")
+    public native CMSensorRecorder init();
 
     @Generated
     @Selector("recordAccelerometerForDuration:")

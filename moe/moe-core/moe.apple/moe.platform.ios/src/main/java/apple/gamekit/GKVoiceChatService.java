@@ -58,21 +58,13 @@ public class GKVoiceChatService extends NSObject {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native GKVoiceChatService alloc();
-
-    @Generated
-    @Selector("defaultVoiceChatService")
-    public static native GKVoiceChatService defaultVoiceChatService();
-
-    @Generated
-    @Selector("isVoIPAllowed")
-    public static native boolean isVoIPAllowed();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -106,6 +98,10 @@ public class GKVoiceChatService extends NSObject {
     public static native String debugDescription_static();
 
     @Generated
+    @Selector("defaultVoiceChatService")
+    public static native GKVoiceChatService defaultVoiceChatService();
+
+    @Generated
     @Selector("description")
     public static native String description_static();
 
@@ -134,6 +130,10 @@ public class GKVoiceChatService extends NSObject {
     @Generated
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
+
+    @Generated
+    @Selector("isVoIPAllowed")
+    public static native boolean isVoIPAllowed();
 
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")

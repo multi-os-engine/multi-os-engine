@@ -59,18 +59,13 @@ public class SCNTransformConstraint extends SCNConstraint {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native SCNTransformConstraint alloc();
-
-    @Generated
-    @Selector("transformConstraintInWorldSpace:withBlock:")
-    public static native SCNTransformConstraint transformConstraintInWorldSpaceWithBlock(boolean world,
-            @ObjCBlock(name = "call_transformConstraintInWorldSpaceWithBlock") Block_transformConstraintInWorldSpaceWithBlock block);
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -157,7 +152,7 @@ public class SCNTransformConstraint extends SCNConstraint {
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")
@@ -166,6 +161,11 @@ public class SCNTransformConstraint extends SCNConstraint {
     @Generated
     @Selector("supportsSecureCoding")
     public static native boolean supportsSecureCoding();
+
+    @Generated
+    @Selector("transformConstraintInWorldSpace:withBlock:")
+    public static native SCNTransformConstraint transformConstraintInWorldSpaceWithBlock(boolean world,
+            @ObjCBlock(name = "call_transformConstraintInWorldSpaceWithBlock") Block_transformConstraintInWorldSpaceWithBlock block);
 
     @Generated
     @Selector("version")

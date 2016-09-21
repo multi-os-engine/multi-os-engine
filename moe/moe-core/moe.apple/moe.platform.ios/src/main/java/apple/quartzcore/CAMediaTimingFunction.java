@@ -56,21 +56,13 @@ public class CAMediaTimingFunction extends NSObject implements NSCoding {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native CAMediaTimingFunction alloc();
-
-    @Generated
-    @Selector("functionWithControlPoints::::")
-    public static native CAMediaTimingFunction functionWithControlPoints(float c1x, float c1y, float c2x, float c2y);
-
-    @Generated
-    @Selector("functionWithName:")
-    public static native CAMediaTimingFunction functionWithName(String name);
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -106,6 +98,14 @@ public class CAMediaTimingFunction extends NSObject implements NSCoding {
     @Generated
     @Selector("description")
     public static native String description_static();
+
+    @Generated
+    @Selector("functionWithControlPoints::::")
+    public static native CAMediaTimingFunction functionWithControlPoints(float c1x, float c1y, float c2x, float c2y);
+
+    @Generated
+    @Selector("functionWithName:")
+    public static native CAMediaTimingFunction functionWithName(String name);
 
     @Generated
     @Selector("hash")

@@ -58,21 +58,13 @@ public class HKDevice extends NSObject implements NSSecureCoding, NSCopying {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native HKDevice alloc();
-
-    @Generated
-    @Selector("localDevice")
-    public static native HKDevice localDevice();
-
-    @Generated
-    @Selector("supportsSecureCoding")
-    public static native boolean supportsSecureCoding();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -144,6 +136,10 @@ public class HKDevice extends NSObject implements NSSecureCoding, NSCopying {
     public static native void load_objc_static();
 
     @Generated
+    @Selector("localDevice")
+    public static native HKDevice localDevice();
+
+    @Generated
     @Owned
     @Selector("new")
     @MappedReturn(ObjCObjectMapper.class)
@@ -164,6 +160,10 @@ public class HKDevice extends NSObject implements NSSecureCoding, NSCopying {
     @Generated
     @Selector("superclass")
     public static native Class superclass_static();
+
+    @Generated
+    @Selector("supportsSecureCoding")
+    public static native boolean supportsSecureCoding();
 
     @Generated
     @Selector("version")

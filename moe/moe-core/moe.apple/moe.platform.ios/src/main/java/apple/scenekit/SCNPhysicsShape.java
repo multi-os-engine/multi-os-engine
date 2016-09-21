@@ -60,31 +60,13 @@ public class SCNPhysicsShape extends NSObject implements NSCopying, NSSecureCodi
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native SCNPhysicsShape alloc();
-
-    @Generated
-    @Selector("shapeWithGeometry:options:")
-    public static native SCNPhysicsShape shapeWithGeometryOptions(SCNGeometry geometry,
-            NSDictionary<String, ?> options);
-
-    @Generated
-    @Selector("shapeWithNode:options:")
-    public static native SCNPhysicsShape shapeWithNodeOptions(SCNNode node, NSDictionary<String, ?> options);
-
-    @Generated
-    @Selector("shapeWithShapes:transforms:")
-    public static native SCNPhysicsShape shapeWithShapesTransforms(NSArray<? extends SCNPhysicsShape> shapes,
-            NSArray<? extends NSValue> transforms);
-
-    @Generated
-    @Selector("supportsSecureCoding")
-    public static native boolean supportsSecureCoding();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -174,8 +156,26 @@ public class SCNPhysicsShape extends NSObject implements NSCopying, NSSecureCodi
     public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
+    @Selector("shapeWithGeometry:options:")
+    public static native SCNPhysicsShape shapeWithGeometryOptions(SCNGeometry geometry,
+            NSDictionary<String, ?> options);
+
+    @Generated
+    @Selector("shapeWithNode:options:")
+    public static native SCNPhysicsShape shapeWithNodeOptions(SCNNode node, NSDictionary<String, ?> options);
+
+    @Generated
+    @Selector("shapeWithShapes:transforms:")
+    public static native SCNPhysicsShape shapeWithShapesTransforms(NSArray<? extends SCNPhysicsShape> shapes,
+            NSArray<? extends NSValue> transforms);
+
+    @Generated
     @Selector("superclass")
     public static native Class superclass_static();
+
+    @Generated
+    @Selector("supportsSecureCoding")
+    public static native boolean supportsSecureCoding();
 
     @Generated
     @Selector("version")
@@ -201,12 +201,6 @@ public class SCNPhysicsShape extends NSObject implements NSCopying, NSSecureCodi
     public native SCNPhysicsShape initWithCoder(NSCoder aDecoder);
 
     @Generated
-    @ProtocolClassMethod("supportsSecureCoding")
-    public boolean _supportsSecureCoding() {
-        return supportsSecureCoding();
-    }
-
-    @Generated
     @Selector("options")
     public native NSDictionary<String, ?> options();
 
@@ -214,6 +208,12 @@ public class SCNPhysicsShape extends NSObject implements NSCopying, NSSecureCodi
     @Selector("sourceObject")
     @MappedReturn(ObjCObjectMapper.class)
     public native Object sourceObject();
+
+    @Generated
+    @ProtocolClassMethod("supportsSecureCoding")
+    public boolean _supportsSecureCoding() {
+        return supportsSecureCoding();
+    }
 
     @Generated
     @Selector("transforms")

@@ -60,49 +60,13 @@ public class AVMutableMetadataItem extends AVMetadataItem {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native AVMutableMetadataItem alloc();
-
-    @Generated
-    @Selector("metadataItem")
-    public static native AVMutableMetadataItem metadataItem();
-
-    @Generated
-    @Selector("metadataItemsFromArray:filteredAndSortedAccordingToPreferredLanguages:")
-    public static native NSArray<? extends AVMetadataItem> metadataItemsFromArrayFilteredAndSortedAccordingToPreferredLanguages(
-            NSArray<? extends AVMetadataItem> metadataItems, NSArray<String> preferredLanguages);
-
-    @Generated
-    @Selector("metadataItemsFromArray:filteredByIdentifier:")
-    public static native NSArray<? extends AVMetadataItem> metadataItemsFromArrayFilteredByIdentifier(
-            NSArray<? extends AVMetadataItem> metadataItems, String identifier);
-
-    @Generated
-    @Selector("metadataItemsFromArray:filteredByMetadataItemFilter:")
-    public static native NSArray<? extends AVMetadataItem> metadataItemsFromArrayFilteredByMetadataItemFilter(
-            NSArray<? extends AVMetadataItem> metadataItems, AVMetadataItemFilter metadataItemFilter);
-
-    @Generated
-    @Selector("metadataItemsFromArray:withKey:keySpace:")
-    public static native NSArray<? extends AVMetadataItem> metadataItemsFromArrayWithKeyKeySpace(
-            NSArray<? extends AVMetadataItem> metadataItems, @Mapped(ObjCObjectMapper.class) Object key,
-            String keySpace);
-
-    @Generated
-    @Selector("metadataItemsFromArray:withLocale:")
-    public static native NSArray<? extends AVMetadataItem> metadataItemsFromArrayWithLocale(
-            NSArray<? extends AVMetadataItem> metadataItems, NSLocale locale);
-
-    @Generated
-    @Selector("metadataItemWithPropertiesOfMetadataItem:valueLoadingHandler:")
-    public static native AVMetadataItem metadataItemWithPropertiesOfMetadataItemValueLoadingHandler(
-            AVMetadataItem metadataItem,
-            @ObjCBlock(name = "call_metadataItemWithPropertiesOfMetadataItemValueLoadingHandler") AVMetadataItem.Block_metadataItemWithPropertiesOfMetadataItemValueLoadingHandler handler);
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -187,6 +151,42 @@ public class AVMutableMetadataItem extends AVMetadataItem {
     public static native void load_objc_static();
 
     @Generated
+    @Selector("metadataItem")
+    public static native AVMutableMetadataItem metadataItem();
+
+    @Generated
+    @Selector("metadataItemWithPropertiesOfMetadataItem:valueLoadingHandler:")
+    public static native AVMetadataItem metadataItemWithPropertiesOfMetadataItemValueLoadingHandler(
+            AVMetadataItem metadataItem,
+            @ObjCBlock(name = "call_metadataItemWithPropertiesOfMetadataItemValueLoadingHandler") AVMetadataItem.Block_metadataItemWithPropertiesOfMetadataItemValueLoadingHandler handler);
+
+    @Generated
+    @Selector("metadataItemsFromArray:filteredAndSortedAccordingToPreferredLanguages:")
+    public static native NSArray<? extends AVMetadataItem> metadataItemsFromArrayFilteredAndSortedAccordingToPreferredLanguages(
+            NSArray<? extends AVMetadataItem> metadataItems, NSArray<String> preferredLanguages);
+
+    @Generated
+    @Selector("metadataItemsFromArray:filteredByIdentifier:")
+    public static native NSArray<? extends AVMetadataItem> metadataItemsFromArrayFilteredByIdentifier(
+            NSArray<? extends AVMetadataItem> metadataItems, String identifier);
+
+    @Generated
+    @Selector("metadataItemsFromArray:filteredByMetadataItemFilter:")
+    public static native NSArray<? extends AVMetadataItem> metadataItemsFromArrayFilteredByMetadataItemFilter(
+            NSArray<? extends AVMetadataItem> metadataItems, AVMetadataItemFilter metadataItemFilter);
+
+    @Generated
+    @Selector("metadataItemsFromArray:withKey:keySpace:")
+    public static native NSArray<? extends AVMetadataItem> metadataItemsFromArrayWithKeyKeySpace(
+            NSArray<? extends AVMetadataItem> metadataItems, @Mapped(ObjCObjectMapper.class) Object key,
+            String keySpace);
+
+    @Generated
+    @Selector("metadataItemsFromArray:withLocale:")
+    public static native NSArray<? extends AVMetadataItem> metadataItemsFromArrayWithLocale(
+            NSArray<? extends AVMetadataItem> metadataItems, NSLocale locale);
+
+    @Generated
     @Owned
     @Selector("new")
     @MappedReturn(ObjCObjectMapper.class)
@@ -202,7 +202,7 @@ public class AVMutableMetadataItem extends AVMetadataItem {
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")
@@ -284,12 +284,20 @@ public class AVMutableMetadataItem extends AVMetadataItem {
     public native void setLocale(NSLocale value);
 
     @Generated
+    @Selector("setStartDate:")
+    public native void setStartDate(NSDate value);
+
+    @Generated
     @Selector("setTime:")
     public native void setTime(@ByValue CMTime value);
 
     @Generated
     @Selector("setValue:")
     public native void setValue(@Mapped(ObjCObjectMapper.class) Object value);
+
+    @Generated
+    @Selector("startDate")
+    public native NSDate startDate();
 
     @Generated
     @Selector("time")
@@ -300,12 +308,4 @@ public class AVMutableMetadataItem extends AVMetadataItem {
     @Selector("value")
     @MappedReturn(ObjCObjectMapper.class)
     public native Object value();
-
-    @Generated
-    @Selector("setStartDate:")
-    public native void setStartDate(NSDate value);
-
-    @Generated
-    @Selector("startDate")
-    public native NSDate startDate();
 }

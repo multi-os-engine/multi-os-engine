@@ -51,27 +51,13 @@ public class NSHTTPCookie extends NSObject {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native NSHTTPCookie alloc();
-
-    @Generated
-    @Selector("cookieWithProperties:")
-    public static native NSHTTPCookie cookieWithProperties(NSDictionary<String, ?> properties);
-
-    @Generated
-    @Selector("cookiesWithResponseHeaderFields:forURL:")
-    public static native NSArray<? extends NSHTTPCookie> cookiesWithResponseHeaderFieldsForURL(
-            NSDictionary<String, String> headerFields, NSURL URL);
-
-    @Generated
-    @Selector("requestHeaderFieldsWithCookies:")
-    public static native NSDictionary<String, String> requestHeaderFieldsWithCookies(
-            NSArray<? extends NSHTTPCookie> cookies);
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -99,6 +85,15 @@ public class NSHTTPCookie extends NSObject {
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
+
+    @Generated
+    @Selector("cookieWithProperties:")
+    public static native NSHTTPCookie cookieWithProperties(NSDictionary<String, ?> properties);
+
+    @Generated
+    @Selector("cookiesWithResponseHeaderFields:forURL:")
+    public static native NSArray<? extends NSHTTPCookie> cookiesWithResponseHeaderFieldsForURL(
+            NSDictionary<String, String> headerFields, NSURL URL);
 
     @Generated
     @Selector("debugDescription")
@@ -147,6 +142,11 @@ public class NSHTTPCookie extends NSObject {
     @Selector("new")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object new_objc();
+
+    @Generated
+    @Selector("requestHeaderFieldsWithCookies:")
+    public static native NSDictionary<String, String> requestHeaderFieldsWithCookies(
+            NSArray<? extends NSHTTPCookie> cookies);
 
     @Generated
     @Selector("resolveClassMethod:")

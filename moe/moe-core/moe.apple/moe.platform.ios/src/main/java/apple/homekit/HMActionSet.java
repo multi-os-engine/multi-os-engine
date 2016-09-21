@@ -18,6 +18,7 @@ package apple.homekit;
 
 import apple.NSObject;
 import apple.foundation.NSArray;
+import apple.foundation.NSDate;
 import apple.foundation.NSError;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
@@ -57,13 +58,13 @@ public class HMActionSet extends NSObject {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native HMActionSet alloc();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -150,7 +151,7 @@ public class HMActionSet extends NSObject {
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")
@@ -160,6 +161,10 @@ public class HMActionSet extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("actionSetType")
+    public native String actionSetType();
 
     @Generated
     @Selector("actions")
@@ -179,6 +184,10 @@ public class HMActionSet extends NSObject {
     public native boolean isExecuting();
 
     @Generated
+    @Selector("lastExecutionDate")
+    public native NSDate lastExecutionDate();
+
+    @Generated
     @Selector("name")
     public native String name();
 
@@ -188,17 +197,13 @@ public class HMActionSet extends NSObject {
             @ObjCBlock(name = "call_removeActionCompletionHandler") Block_removeActionCompletionHandler completion);
 
     @Generated
+    @Selector("uniqueIdentifier")
+    public native NSUUID uniqueIdentifier();
+
+    @Generated
     @Selector("updateName:completionHandler:")
     public native void updateNameCompletionHandler(String name,
             @ObjCBlock(name = "call_updateNameCompletionHandler") Block_updateNameCompletionHandler completion);
-
-    @Generated
-    @Selector("actionSetType")
-    public native String actionSetType();
-
-    @Generated
-    @Selector("uniqueIdentifier")
-    public native NSUUID uniqueIdentifier();
 
     @Runtime(ObjCRuntime.class)
     @Generated

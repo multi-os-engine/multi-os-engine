@@ -70,88 +70,13 @@ public class CIImage extends NSObject implements NSSecureCoding, NSCopying {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native CIImage alloc();
-
-    @Generated
-    @Selector("emptyImage")
-    public static native CIImage emptyImage();
-
-    @Generated
-    @Selector("imageWithBitmapData:bytesPerRow:size:format:colorSpace:")
-    public static native CIImage imageWithBitmapDataBytesPerRowSizeFormatColorSpace(NSData data,
-            @NUInt long bytesPerRow, @ByValue CGSize size, int format, CGColorSpaceRef colorSpace);
-
-    @Generated
-    @Selector("imageWithCGImage:")
-    public static native CIImage imageWithCGImage(CGImageRef image);
-
-    @Generated
-    @Selector("imageWithCGImage:options:")
-    public static native CIImage imageWithCGImageOptions(CGImageRef image, NSDictionary<String, ?> options);
-
-    @Generated
-    @Selector("imageWithCVPixelBuffer:")
-    public static native CIImage imageWithCVPixelBuffer(CVBufferRef pixelBuffer);
-
-    @Generated
-    @Selector("imageWithCVPixelBuffer:options:")
-    public static native CIImage imageWithCVPixelBufferOptions(CVBufferRef pixelBuffer,
-            NSDictionary<String, ?> options);
-
-    @Generated
-    @Selector("imageWithColor:")
-    public static native CIImage imageWithColor(CIColor color);
-
-    @Generated
-    @Selector("imageWithContentsOfURL:")
-    public static native CIImage imageWithContentsOfURL(NSURL url);
-
-    @Generated
-    @Selector("imageWithContentsOfURL:options:")
-    public static native CIImage imageWithContentsOfURLOptions(NSURL url, NSDictionary<String, ?> options);
-
-    @Generated
-    @Selector("imageWithData:")
-    public static native CIImage imageWithData(NSData data);
-
-    @Generated
-    @Selector("imageWithData:options:")
-    public static native CIImage imageWithDataOptions(NSData data, NSDictionary<String, ?> options);
-
-    @Generated
-    @Selector("imageWithTexture:size:flipped:colorSpace:")
-    public static native CIImage imageWithTextureSizeFlippedColorSpace(int name, @ByValue CGSize size, boolean flipped,
-            CGColorSpaceRef colorSpace);
-
-    @Generated
-    @Selector("imageWithCVImageBuffer:")
-    public static native CIImage imageWithCVImageBuffer(CVBufferRef imageBuffer);
-
-    @Generated
-    @Selector("imageWithCVImageBuffer:options:")
-    public static native CIImage imageWithCVImageBufferOptions(CVBufferRef imageBuffer,
-            NSDictionary<String, ?> options);
-
-    @Generated
-    @Selector("imageWithImageProvider:size::format:colorSpace:options:")
-    public static native CIImage imageWithImageProviderSize_FormatColorSpaceOptions(
-            @Mapped(ObjCObjectMapper.class) Object p, @NUInt long width, @NUInt long height, int f, CGColorSpaceRef cs,
-            NSDictionary<String, ?> options);
-
-    @Generated
-    @Selector("imageWithMTLTexture:options:")
-    public static native CIImage imageWithMTLTextureOptions(@Mapped(ObjCObjectMapper.class) MTLTexture texture,
-            NSDictionary<String, ?> options);
-
-    @Generated
-    @Selector("supportsSecureCoding")
-    public static native boolean supportsSecureCoding();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -189,9 +114,80 @@ public class CIImage extends NSObject implements NSSecureCoding, NSCopying {
     public static native String description_static();
 
     @Generated
+    @Selector("emptyImage")
+    public static native CIImage emptyImage();
+
+    @Generated
     @Selector("hash")
     @NUInt
     public static native long hash_static();
+
+    @Generated
+    @Selector("imageWithBitmapData:bytesPerRow:size:format:colorSpace:")
+    public static native CIImage imageWithBitmapDataBytesPerRowSizeFormatColorSpace(NSData data,
+            @NUInt long bytesPerRow, @ByValue CGSize size, int format, CGColorSpaceRef colorSpace);
+
+    @Generated
+    @Selector("imageWithCGImage:")
+    public static native CIImage imageWithCGImage(CGImageRef image);
+
+    @Generated
+    @Selector("imageWithCGImage:options:")
+    public static native CIImage imageWithCGImageOptions(CGImageRef image, NSDictionary<String, ?> options);
+
+    @Generated
+    @Selector("imageWithCVImageBuffer:")
+    public static native CIImage imageWithCVImageBuffer(CVBufferRef imageBuffer);
+
+    @Generated
+    @Selector("imageWithCVImageBuffer:options:")
+    public static native CIImage imageWithCVImageBufferOptions(CVBufferRef imageBuffer,
+            NSDictionary<String, ?> options);
+
+    @Generated
+    @Selector("imageWithCVPixelBuffer:")
+    public static native CIImage imageWithCVPixelBuffer(CVBufferRef pixelBuffer);
+
+    @Generated
+    @Selector("imageWithCVPixelBuffer:options:")
+    public static native CIImage imageWithCVPixelBufferOptions(CVBufferRef pixelBuffer,
+            NSDictionary<String, ?> options);
+
+    @Generated
+    @Selector("imageWithColor:")
+    public static native CIImage imageWithColor(CIColor color);
+
+    @Generated
+    @Selector("imageWithContentsOfURL:")
+    public static native CIImage imageWithContentsOfURL(NSURL url);
+
+    @Generated
+    @Selector("imageWithContentsOfURL:options:")
+    public static native CIImage imageWithContentsOfURLOptions(NSURL url, NSDictionary<String, ?> options);
+
+    @Generated
+    @Selector("imageWithData:")
+    public static native CIImage imageWithData(NSData data);
+
+    @Generated
+    @Selector("imageWithData:options:")
+    public static native CIImage imageWithDataOptions(NSData data, NSDictionary<String, ?> options);
+
+    @Generated
+    @Selector("imageWithImageProvider:size::format:colorSpace:options:")
+    public static native CIImage imageWithImageProviderSize_FormatColorSpaceOptions(
+            @Mapped(ObjCObjectMapper.class) Object p, @NUInt long width, @NUInt long height, int f, CGColorSpaceRef cs,
+            NSDictionary<String, ?> options);
+
+    @Generated
+    @Selector("imageWithMTLTexture:options:")
+    public static native CIImage imageWithMTLTextureOptions(@Mapped(ObjCObjectMapper.class) MTLTexture texture,
+            NSDictionary<String, ?> options);
+
+    @Generated
+    @Selector("imageWithTexture:size:flipped:colorSpace:")
+    public static native CIImage imageWithTextureSizeFlippedColorSpace(int name, @ByValue CGSize size, boolean flipped,
+            CGColorSpaceRef colorSpace);
 
     @Generated
     @Selector("initialize")
@@ -238,11 +234,15 @@ public class CIImage extends NSObject implements NSSecureCoding, NSCopying {
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")
     public static native Class superclass_static();
+
+    @Generated
+    @Selector("supportsSecureCoding")
+    public static native boolean supportsSecureCoding();
 
     @Generated
     @Selector("version")
@@ -250,8 +250,20 @@ public class CIImage extends NSObject implements NSSecureCoding, NSCopying {
     public static native long version_static();
 
     @Generated
+    @Selector("CGImage")
+    public native CGImageRef CGImage();
+
+    @Generated
+    @Selector("autoAdjustmentFilters")
+    public native NSArray<? extends CIFilter> autoAdjustmentFilters();
+
+    @Generated
     @Selector("autoAdjustmentFiltersWithOptions:")
     public native NSArray<? extends CIFilter> autoAdjustmentFiltersWithOptions(NSDictionary<String, ?> options);
+
+    @Generated
+    @Selector("colorSpace")
+    public native CGColorSpaceRef colorSpace();
 
     @Generated
     @Owned
@@ -273,6 +285,10 @@ public class CIImage extends NSObject implements NSSecureCoding, NSCopying {
     public native CIImage imageByApplyingFilterWithInputParameters(String filterName, NSDictionary<String, ?> params);
 
     @Generated
+    @Selector("imageByApplyingGaussianBlurWithSigma:")
+    public native CIImage imageByApplyingGaussianBlurWithSigma(double sigma);
+
+    @Generated
     @Selector("imageByApplyingOrientation:")
     public native CIImage imageByApplyingOrientation(int orientation);
 
@@ -285,12 +301,40 @@ public class CIImage extends NSObject implements NSSecureCoding, NSCopying {
     public native CIImage imageByClampingToExtent();
 
     @Generated
+    @Selector("imageByClampingToRect:")
+    public native CIImage imageByClampingToRect(@ByValue CGRect rect);
+
+    @Generated
+    @Selector("imageByColorMatchingColorSpaceToWorkingSpace:")
+    public native CIImage imageByColorMatchingColorSpaceToWorkingSpace(CGColorSpaceRef colorSpace);
+
+    @Generated
+    @Selector("imageByColorMatchingWorkingSpaceToColorSpace:")
+    public native CIImage imageByColorMatchingWorkingSpaceToColorSpace(CGColorSpaceRef colorSpace);
+
+    @Generated
     @Selector("imageByCompositingOverImage:")
     public native CIImage imageByCompositingOverImage(CIImage dest);
 
     @Generated
     @Selector("imageByCroppingToRect:")
     public native CIImage imageByCroppingToRect(@ByValue CGRect rect);
+
+    @Generated
+    @Selector("imageByPremultiplyingAlpha")
+    public native CIImage imageByPremultiplyingAlpha();
+
+    @Generated
+    @Selector("imageBySettingAlphaOneInExtent:")
+    public native CIImage imageBySettingAlphaOneInExtent(@ByValue CGRect extent);
+
+    @Generated
+    @Selector("imageBySettingProperties:")
+    public native CIImage imageBySettingProperties(NSDictionary<?, ?> properties);
+
+    @Generated
+    @Selector("imageByUnpremultiplyingAlpha")
+    public native CIImage imageByUnpremultiplyingAlpha();
 
     @Generated
     @Selector("imageTransformForOrientation:")
@@ -313,6 +357,14 @@ public class CIImage extends NSObject implements NSSecureCoding, NSCopying {
     @Generated
     @Selector("initWithCGImage:options:")
     public native CIImage initWithCGImageOptions(CGImageRef image, NSDictionary<String, ?> options);
+
+    @Generated
+    @Selector("initWithCVImageBuffer:")
+    public native CIImage initWithCVImageBuffer(CVBufferRef imageBuffer);
+
+    @Generated
+    @Selector("initWithCVImageBuffer:options:")
+    public native CIImage initWithCVImageBufferOptions(CVBufferRef imageBuffer, NSDictionary<String, ?> options);
 
     @Generated
     @Selector("initWithCVPixelBuffer:")
@@ -355,9 +407,23 @@ public class CIImage extends NSObject implements NSSecureCoding, NSCopying {
     public native CIImage initWithImageOptions(UIImage image, NSDictionary<?, ?> options);
 
     @Generated
+    @Selector("initWithImageProvider:size::format:colorSpace:options:")
+    public native CIImage initWithImageProviderSize_FormatColorSpaceOptions(@Mapped(ObjCObjectMapper.class) Object p,
+            @NUInt long width, @NUInt long height, int f, CGColorSpaceRef cs, NSDictionary<String, ?> options);
+
+    @Generated
+    @Selector("initWithMTLTexture:options:")
+    public native CIImage initWithMTLTextureOptions(@Mapped(ObjCObjectMapper.class) MTLTexture texture,
+            NSDictionary<String, ?> options);
+
+    @Generated
     @Selector("initWithTexture:size:flipped:colorSpace:")
     public native CIImage initWithTextureSizeFlippedColorSpace(int name, @ByValue CGSize size, boolean flipped,
             CGColorSpaceRef colorSpace);
+
+    @Generated
+    @Selector("pixelBuffer")
+    public native CVBufferRef pixelBuffer();
 
     @Generated
     @Selector("properties")
@@ -367,28 +433,6 @@ public class CIImage extends NSObject implements NSSecureCoding, NSCopying {
     @Selector("regionOfInterestForImage:inRect:")
     @ByValue
     public native CGRect regionOfInterestForImageInRect(CIImage image, @ByValue CGRect rect);
-
-    @Generated
-    @Selector("colorSpace")
-    public native CGColorSpaceRef colorSpace();
-
-    @Generated
-    @Selector("initWithCVImageBuffer:")
-    public native CIImage initWithCVImageBuffer(CVBufferRef imageBuffer);
-
-    @Generated
-    @Selector("initWithCVImageBuffer:options:")
-    public native CIImage initWithCVImageBufferOptions(CVBufferRef imageBuffer, NSDictionary<String, ?> options);
-
-    @Generated
-    @Selector("initWithImageProvider:size::format:colorSpace:options:")
-    public native CIImage initWithImageProviderSize_FormatColorSpaceOptions(@Mapped(ObjCObjectMapper.class) Object p,
-            @NUInt long width, @NUInt long height, int f, CGColorSpaceRef cs, NSDictionary<String, ?> options);
-
-    @Generated
-    @Selector("initWithMTLTexture:options:")
-    public native CIImage initWithMTLTextureOptions(@Mapped(ObjCObjectMapper.class) MTLTexture texture,
-            NSDictionary<String, ?> options);
 
     @Generated
     @ProtocolClassMethod("supportsSecureCoding")

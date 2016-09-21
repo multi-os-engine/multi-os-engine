@@ -56,29 +56,13 @@ public class UITextChecker extends NSObject {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native UITextChecker alloc();
-
-    @Generated
-    @Selector("availableLanguages")
-    public static native NSArray<?> availableLanguages();
-
-    @Generated
-    @Selector("hasLearnedWord:")
-    public static native boolean hasLearnedWord(String word);
-
-    @Generated
-    @Selector("learnWord:")
-    public static native void learnWord(String word);
-
-    @Generated
-    @Selector("unlearnWord:")
-    public static native void unlearnWord(String word);
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -88,6 +72,10 @@ public class UITextChecker extends NSObject {
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
     public static native boolean automaticallyNotifiesObserversForKey(String key);
+
+    @Generated
+    @Selector("availableLanguages")
+    public static native NSArray<String> availableLanguages();
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
@@ -114,6 +102,10 @@ public class UITextChecker extends NSObject {
     @Generated
     @Selector("description")
     public static native String description_static();
+
+    @Generated
+    @Selector("hasLearnedWord:")
+    public static native boolean hasLearnedWord(String word);
 
     @Generated
     @Selector("hash")
@@ -146,6 +138,10 @@ public class UITextChecker extends NSObject {
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
     @Generated
+    @Selector("learnWord:")
+    public static native void learnWord(String word);
+
+    @Generated
     @Selector("load")
     public static native void load_objc_static();
 
@@ -172,18 +168,22 @@ public class UITextChecker extends NSObject {
     public static native Class superclass_static();
 
     @Generated
+    @Selector("unlearnWord:")
+    public static native void unlearnWord(String word);
+
+    @Generated
     @Selector("version")
     @NInt
     public static native long version_static();
 
     @Generated
     @Selector("completionsForPartialWordRange:inString:language:")
-    public native NSArray<?> completionsForPartialWordRangeInStringLanguage(@ByValue NSRange range, String string,
+    public native NSArray<String> completionsForPartialWordRangeInStringLanguage(@ByValue NSRange range, String string,
             String language);
 
     @Generated
     @Selector("guessesForWordRange:inString:language:")
-    public native NSArray<?> guessesForWordRangeInStringLanguage(@ByValue NSRange range, String string,
+    public native NSArray<String> guessesForWordRangeInStringLanguage(@ByValue NSRange range, String string,
             String language);
 
     @Generated
@@ -192,7 +192,7 @@ public class UITextChecker extends NSObject {
 
     @Generated
     @Selector("ignoredWords")
-    public native NSArray<?> ignoredWords();
+    public native NSArray<String> ignoredWords();
 
     @Generated
     @Selector("init")
@@ -206,5 +206,5 @@ public class UITextChecker extends NSObject {
 
     @Generated
     @Selector("setIgnoredWords:")
-    public native void setIgnoredWords(NSArray<?> words);
+    public native void setIgnoredWords(NSArray<String> value);
 }

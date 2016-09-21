@@ -55,23 +55,23 @@ public class AVAssetWriterInputGroup extends AVMediaSelectionGroup {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native AVAssetWriterInputGroup alloc();
 
     @Generated
-    @Selector("assetWriterInputGroupWithInputs:defaultInput:")
-    public static native AVAssetWriterInputGroup assetWriterInputGroupWithInputsDefaultInput(
-            NSArray<? extends AVAssetWriterInput> inputs, AVAssetWriterInput defaultInput);
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
-
-    @Generated
     @Selector("allocWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object allocWithZone(VoidPtr zone);
+
+    @Generated
+    @Selector("assetWriterInputGroupWithInputs:defaultInput:")
+    public static native AVAssetWriterInputGroup assetWriterInputGroupWithInputsDefaultInput(
+            NSArray<? extends AVAssetWriterInput> inputs, AVAssetWriterInput defaultInput);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -178,7 +178,7 @@ public class AVAssetWriterInputGroup extends AVMediaSelectionGroup {
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")

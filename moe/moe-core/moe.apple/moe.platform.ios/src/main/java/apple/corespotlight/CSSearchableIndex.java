@@ -58,22 +58,13 @@ public class CSSearchableIndex extends NSObject {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native CSSearchableIndex alloc();
-
-    @Generated
-    @Selector("defaultSearchableIndex")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object defaultSearchableIndex();
-
-    @Generated
-    @Selector("isIndexingAvailable")
-    public static native boolean isIndexingAvailable();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -107,6 +98,11 @@ public class CSSearchableIndex extends NSObject {
     public static native String debugDescription_static();
 
     @Generated
+    @Selector("defaultSearchableIndex")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object defaultSearchableIndex();
+
+    @Generated
     @Selector("description")
     public static native String description_static();
 
@@ -131,6 +127,10 @@ public class CSSearchableIndex extends NSObject {
     @Generated
     @Selector("instancesRespondToSelector:")
     public static native boolean instancesRespondToSelector(SEL aSelector);
+
+    @Generated
+    @Selector("isIndexingAvailable")
+    public static native boolean isIndexingAvailable();
 
     @Generated
     @Selector("isSubclassOfClass:")

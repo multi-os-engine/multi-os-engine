@@ -61,29 +61,24 @@ public class ALAssetsLibrary extends NSObject {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native ALAssetsLibrary alloc();
-
-    @Deprecated
-    @Generated
-    @Selector("authorizationStatus")
-    @NInt
-    public static native long authorizationStatus();
-
-    @Deprecated
-    @Generated
-    @Selector("disableSharedPhotoStreamsSupport")
-    public static native void disableSharedPhotoStreamsSupport();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object allocWithZone(VoidPtr zone);
+
+    @Generated
+    @Deprecated
+    @Selector("authorizationStatus")
+    @NInt
+    public static native long authorizationStatus();
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -114,6 +109,11 @@ public class ALAssetsLibrary extends NSObject {
     @Generated
     @Selector("description")
     public static native String description_static();
+
+    @Generated
+    @Deprecated
+    @Selector("disableSharedPhotoStreamsSupport")
+    public static native void disableSharedPhotoStreamsSupport();
 
     @Generated
     @Selector("hash")
@@ -165,7 +165,7 @@ public class ALAssetsLibrary extends NSObject {
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")
@@ -176,29 +176,29 @@ public class ALAssetsLibrary extends NSObject {
     @NInt
     public static native long version_static();
 
-    @Deprecated
     @Generated
+    @Deprecated
     @Selector("addAssetsGroupAlbumWithName:resultBlock:failureBlock:")
     public native void addAssetsGroupAlbumWithNameResultBlockFailureBlock(String name,
             @ObjCBlock(name = "call_addAssetsGroupAlbumWithNameResultBlockFailureBlock_1") Block_addAssetsGroupAlbumWithNameResultBlockFailureBlock_1 resultBlock,
             @ObjCBlock(name = "call_addAssetsGroupAlbumWithNameResultBlockFailureBlock_2") Block_addAssetsGroupAlbumWithNameResultBlockFailureBlock_2 failureBlock);
 
-    @Deprecated
     @Generated
+    @Deprecated
     @Selector("assetForURL:resultBlock:failureBlock:")
     public native void assetForURLResultBlockFailureBlock(NSURL assetURL,
             @ObjCBlock(name = "call_assetForURLResultBlockFailureBlock_1") Block_assetForURLResultBlockFailureBlock_1 resultBlock,
             @ObjCBlock(name = "call_assetForURLResultBlockFailureBlock_2") Block_assetForURLResultBlockFailureBlock_2 failureBlock);
 
-    @Deprecated
     @Generated
+    @Deprecated
     @Selector("enumerateGroupsWithTypes:usingBlock:failureBlock:")
     public native void enumerateGroupsWithTypesUsingBlockFailureBlock(@NUInt long types,
             @ObjCBlock(name = "call_enumerateGroupsWithTypesUsingBlockFailureBlock_1") Block_enumerateGroupsWithTypesUsingBlockFailureBlock_1 enumerationBlock,
             @ObjCBlock(name = "call_enumerateGroupsWithTypesUsingBlockFailureBlock_2") Block_enumerateGroupsWithTypesUsingBlockFailureBlock_2 failureBlock);
 
-    @Deprecated
     @Generated
+    @Deprecated
     @Selector("groupForURL:resultBlock:failureBlock:")
     public native void groupForURLResultBlockFailureBlock(NSURL groupURL,
             @ObjCBlock(name = "call_groupForURLResultBlockFailureBlock_1") Block_groupForURLResultBlockFailureBlock_1 resultBlock,
@@ -208,34 +208,34 @@ public class ALAssetsLibrary extends NSObject {
     @Selector("init")
     public native ALAssetsLibrary init();
 
-    @Deprecated
     @Generated
+    @Deprecated
     @Selector("videoAtPathIsCompatibleWithSavedPhotosAlbum:")
     public native boolean videoAtPathIsCompatibleWithSavedPhotosAlbum(NSURL videoPathURL);
 
-    @Deprecated
     @Generated
+    @Deprecated
     @Selector("writeImageDataToSavedPhotosAlbum:metadata:completionBlock:")
     public native void writeImageDataToSavedPhotosAlbumMetadataCompletionBlock(NSData imageData,
             NSDictionary<?, ?> metadata,
             @ObjCBlock(name = "call_writeImageDataToSavedPhotosAlbumMetadataCompletionBlock") Block_writeImageDataToSavedPhotosAlbumMetadataCompletionBlock completionBlock);
 
-    @Deprecated
     @Generated
+    @Deprecated
     @Selector("writeImageToSavedPhotosAlbum:metadata:completionBlock:")
     public native void writeImageToSavedPhotosAlbumMetadataCompletionBlock(CGImageRef imageRef,
             NSDictionary<?, ?> metadata,
             @ObjCBlock(name = "call_writeImageToSavedPhotosAlbumMetadataCompletionBlock") Block_writeImageToSavedPhotosAlbumMetadataCompletionBlock completionBlock);
 
-    @Deprecated
     @Generated
+    @Deprecated
     @Selector("writeImageToSavedPhotosAlbum:orientation:completionBlock:")
     public native void writeImageToSavedPhotosAlbumOrientationCompletionBlock(CGImageRef imageRef,
             @NInt long orientation,
             @ObjCBlock(name = "call_writeImageToSavedPhotosAlbumOrientationCompletionBlock") Block_writeImageToSavedPhotosAlbumOrientationCompletionBlock completionBlock);
 
-    @Deprecated
     @Generated
+    @Deprecated
     @Selector("writeVideoAtPathToSavedPhotosAlbum:completionBlock:")
     public native void writeVideoAtPathToSavedPhotosAlbumCompletionBlock(NSURL videoPathURL,
             @ObjCBlock(name = "call_writeVideoAtPathToSavedPhotosAlbumCompletionBlock") Block_writeVideoAtPathToSavedPhotosAlbumCompletionBlock completionBlock);

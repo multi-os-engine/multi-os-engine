@@ -39,8 +39,8 @@ public final class AddressBookUI {
     private AddressBookUI() {
     }
 
-    @Deprecated
     @Generated
+    @Deprecated
     @CFunction
     @MappedReturn(ObjCStringMapper.class)
     public static native String ABCreateStringWithAddressDictionary(NSDictionary<?, ?> address, boolean addCountryName);

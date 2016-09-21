@@ -25,9 +25,9 @@ public final class UIControlState {
     @Generated @NUInt public static final long Highlighted = 0x0000000000000001L;
     @Generated @NUInt public static final long Disabled = 0x0000000000000002L;
     @Generated @NUInt public static final long Selected = 0x0000000000000004L;
+    @Generated @NUInt public static final long Focused = 0x0000000000000008L;
     @Generated @NUInt public static final long Application = 0x0000000000FF0000L;
     @Generated @NUInt public static final long Reserved = 0x00000000FF000000L;
-    @Generated @NUInt public static final long Focused = 0x0000000000000008L;
 
     @Generated
     private UIControlState() {

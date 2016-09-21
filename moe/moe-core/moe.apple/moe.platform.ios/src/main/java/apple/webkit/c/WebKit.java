@@ -45,6 +45,26 @@ public final class WebKit {
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
+    public static native String WKPreviewActionItemIdentifierOpen();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String WKPreviewActionItemIdentifierAddToReadingList();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String WKPreviewActionItemIdentifierCopy();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String WKPreviewActionItemIdentifierShare();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
     public static native String WKWebsiteDataTypeDiskCache();
 
     @Generated

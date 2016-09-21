@@ -58,6 +58,11 @@ public final class VTDecompressionOutputCallbackRecord extends StructObject {
     }
 
     @Generated
+    @StructureField(order = 0, isGetter = true)
+    @FunctionPtr(name = "call_decompressionOutputCallback")
+    public native Function_decompressionOutputCallback decompressionOutputCallback();
+
+    @Generated
     @StructureField(order = 0, isGetter = false)
     public native void setDecompressionOutputCallback(
             @FunctionPtr(name = "call_decompressionOutputCallback") Function_decompressionOutputCallback value);
@@ -69,11 +74,6 @@ public final class VTDecompressionOutputCallbackRecord extends StructObject {
     @Generated
     @StructureField(order = 1, isGetter = false)
     public native void setDecompressionOutputRefCon(VoidPtr value);
-
-    @Generated
-    @StructureField(order = 0, isGetter = true)
-    @FunctionPtr(name = "call_decompressionOutputCallback")
-    public native Function_decompressionOutputCallback decompressionOutputCallback();
 
     @Runtime(CRuntime.class)
     @Generated

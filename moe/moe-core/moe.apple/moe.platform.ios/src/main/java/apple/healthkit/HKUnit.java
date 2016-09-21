@@ -58,9 +58,18 @@ public class HKUnit extends NSObject implements NSSecureCoding, NSCopying {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native HKUnit alloc();
+
+    @Generated
+    @Selector("allocWithZone:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("atmosphereUnit")
@@ -68,9 +77,23 @@ public class HKUnit extends NSObject implements NSSecureCoding, NSCopying {
     public static native Object atmosphereUnit();
 
     @Generated
+    @Selector("automaticallyNotifiesObserversForKey:")
+    public static native boolean automaticallyNotifiesObserversForKey(String key);
+
+    @Generated
     @Selector("calorieUnit")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object calorieUnit();
+
+    @Generated
+    @Selector("cancelPreviousPerformRequestsWithTarget:")
+    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+
+    @Generated
+    @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
+    public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
+            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
+            @Mapped(ObjCObjectMapper.class) Object anArgument);
 
     @Generated
     @Selector("centimeterOfWaterUnit")
@@ -78,14 +101,36 @@ public class HKUnit extends NSObject implements NSSecureCoding, NSCopying {
     public static native Object centimeterOfWaterUnit();
 
     @Generated
+    @Selector("classFallbacksForKeyedArchiver")
+    public static native NSArray<String> classFallbacksForKeyedArchiver();
+
+    @Generated
+    @Selector("classForKeyedUnarchiver")
+    public static native Class classForKeyedUnarchiver();
+
+    @Generated
     @Selector("countUnit")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object countUnit();
 
     @Generated
+    @Selector("cupImperialUnit")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object cupImperialUnit();
+
+    @Generated
+    @Selector("cupUSUnit")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object cupUSUnit();
+
+    @Generated
     @Selector("dayUnit")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object dayUnit();
+
+    @Generated
+    @Selector("debugDescription")
+    public static native String debugDescription_static();
 
     @Generated
     @Selector("degreeCelsiusUnit")
@@ -96,6 +141,10 @@ public class HKUnit extends NSObject implements NSSecureCoding, NSCopying {
     @Selector("degreeFahrenheitUnit")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object degreeFahrenheitUnit();
+
+    @Generated
+    @Selector("description")
+    public static native String description_static();
 
     @Generated
     @Selector("energyFormatterUnitFromUnit:")
@@ -128,6 +177,11 @@ public class HKUnit extends NSObject implements NSSecureCoding, NSCopying {
     public static native Object gramUnitWithMetricPrefix(@NInt long prefix);
 
     @Generated
+    @Selector("hash")
+    @NUInt
+    public static native long hash_static();
+
+    @Generated
     @Selector("hourUnit")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object hourUnit();
@@ -136,6 +190,27 @@ public class HKUnit extends NSObject implements NSSecureCoding, NSCopying {
     @Selector("inchUnit")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object inchUnit();
+
+    @Generated
+    @Selector("initialize")
+    public static native void initialize();
+
+    @Generated
+    @Selector("instanceMethodForSelector:")
+    @FunctionPtr(name = "call_instanceMethodForSelector_ret")
+    public static native NSObject.Function_instanceMethodForSelector_ret instanceMethodForSelector(SEL aSelector);
+
+    @Generated
+    @Selector("instanceMethodSignatureForSelector:")
+    public static native NSMethodSignature instanceMethodSignatureForSelector(SEL aSelector);
+
+    @Generated
+    @Selector("instancesRespondToSelector:")
+    public static native boolean instancesRespondToSelector(SEL aSelector);
+
+    @Generated
+    @Selector("isSubclassOfClass:")
+    public static native boolean isSubclassOfClass(Class aClass);
 
     @Generated
     @Selector("jouleUnit")
@@ -151,6 +226,10 @@ public class HKUnit extends NSObject implements NSSecureCoding, NSCopying {
     @Selector("kelvinUnit")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object kelvinUnit();
+
+    @Generated
+    @Selector("keyPathsForValuesAffectingValueForKey:")
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
     @Generated
     @Selector("kilocalorieUnit")
@@ -171,6 +250,10 @@ public class HKUnit extends NSObject implements NSSecureCoding, NSCopying {
     @Selector("literUnitWithMetricPrefix:")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object literUnitWithMetricPrefix(@NInt long prefix);
+
+    @Generated
+    @Selector("load")
+    public static native void load_objc_static();
 
     @Generated
     @Selector("massFormatterUnitFromUnit:")
@@ -213,6 +296,12 @@ public class HKUnit extends NSObject implements NSSecureCoding, NSCopying {
     public static native Object moleUnitWithMolarMass(double gramsPerMole);
 
     @Generated
+    @Owned
+    @Selector("new")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object new_objc();
+
+    @Generated
     @Selector("ounceUnit")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object ounceUnit();
@@ -248,6 +337,14 @@ public class HKUnit extends NSObject implements NSSecureCoding, NSCopying {
     public static native Object poundUnit();
 
     @Generated
+    @Selector("resolveClassMethod:")
+    public static native boolean resolveClassMethod(SEL sel);
+
+    @Generated
+    @Selector("resolveInstanceMethod:")
+    public static native boolean resolveInstanceMethod(SEL sel);
+
+    @Generated
     @Selector("secondUnit")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object secondUnit();
@@ -256,6 +353,10 @@ public class HKUnit extends NSObject implements NSSecureCoding, NSCopying {
     @Selector("secondUnitWithMetricPrefix:")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object secondUnitWithMetricPrefix(@NInt long prefix);
+
+    @Generated
+    @Selector("setVersion:")
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("siemenUnit")
@@ -271,6 +372,10 @@ public class HKUnit extends NSObject implements NSSecureCoding, NSCopying {
     @Selector("stoneUnit")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object stoneUnit();
+
+    @Generated
+    @Selector("superclass")
+    public static native Class superclass_static();
 
     @Generated
     @Selector("supportsSecureCoding")
@@ -293,119 +398,14 @@ public class HKUnit extends NSObject implements NSSecureCoding, NSCopying {
     public static native HKUnit unitFromString(String string);
 
     @Generated
-    @Selector("cupImperialUnit")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object cupImperialUnit();
-
-    @Generated
-    @Selector("cupUSUnit")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object cupUSUnit();
+    @Selector("version")
+    @NInt
+    public static native long version_static();
 
     @Generated
     @Selector("yardUnit")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object yardUnit();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
-
-    @Generated
-    @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
-
-    @Generated
-    @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
-
-    @Generated
-    @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
-
-    @Generated
-    @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
-    public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
-
-    @Generated
-    @Selector("classFallbacksForKeyedArchiver")
-    public static native NSArray<String> classFallbacksForKeyedArchiver();
-
-    @Generated
-    @Selector("classForKeyedUnarchiver")
-    public static native Class classForKeyedUnarchiver();
-
-    @Generated
-    @Selector("debugDescription")
-    public static native String debugDescription_static();
-
-    @Generated
-    @Selector("description")
-    public static native String description_static();
-
-    @Generated
-    @Selector("hash")
-    @NUInt
-    public static native long hash_static();
-
-    @Generated
-    @Selector("initialize")
-    public static native void initialize();
-
-    @Generated
-    @Selector("instanceMethodForSelector:")
-    @FunctionPtr(name = "call_instanceMethodForSelector_ret")
-    public static native NSObject.Function_instanceMethodForSelector_ret instanceMethodForSelector(SEL aSelector);
-
-    @Generated
-    @Selector("instanceMethodSignatureForSelector:")
-    public static native NSMethodSignature instanceMethodSignatureForSelector(SEL aSelector);
-
-    @Generated
-    @Selector("instancesRespondToSelector:")
-    public static native boolean instancesRespondToSelector(SEL aSelector);
-
-    @Generated
-    @Selector("isSubclassOfClass:")
-    public static native boolean isSubclassOfClass(Class aClass);
-
-    @Generated
-    @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
-
-    @Generated
-    @Selector("load")
-    public static native void load_objc_static();
-
-    @Generated
-    @Owned
-    @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
-
-    @Generated
-    @Selector("resolveClassMethod:")
-    public static native boolean resolveClassMethod(SEL sel);
-
-    @Generated
-    @Selector("resolveInstanceMethod:")
-    public static native boolean resolveInstanceMethod(SEL sel);
-
-    @Generated
-    @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
-
-    @Generated
-    @Selector("superclass")
-    public static native Class superclass_static();
-
-    @Generated
-    @Selector("version")
-    @NInt
-    public static native long version_static();
 
     @Generated
     @Owned

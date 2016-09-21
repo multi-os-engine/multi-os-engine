@@ -57,13 +57,13 @@ public class NSMutableParagraphStyle extends NSParagraphStyle {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native NSMutableParagraphStyle alloc();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -159,7 +159,7 @@ public class NSMutableParagraphStyle extends NSParagraphStyle {
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")
@@ -175,9 +175,17 @@ public class NSMutableParagraphStyle extends NSParagraphStyle {
     public static native long version_static();
 
     @Generated
+    @Selector("addTabStop:")
+    public native void addTabStop(NSTextTab anObject);
+
+    @Generated
     @Selector("alignment")
     @NInt
     public native long alignment();
+
+    @Generated
+    @Selector("allowsDefaultTighteningForTruncation")
+    public native boolean allowsDefaultTighteningForTruncation();
 
     @Generated
     @Selector("baseWritingDirection")
@@ -206,6 +214,10 @@ public class NSMutableParagraphStyle extends NSParagraphStyle {
     @Generated
     @Selector("init")
     public native NSMutableParagraphStyle init();
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native NSMutableParagraphStyle initWithCoder(NSCoder aDecoder);
 
     @Generated
     @Selector("lineBreakMode")
@@ -243,8 +255,16 @@ public class NSMutableParagraphStyle extends NSParagraphStyle {
     public native double paragraphSpacingBefore();
 
     @Generated
+    @Selector("removeTabStop:")
+    public native void removeTabStop(NSTextTab anObject);
+
+    @Generated
     @Selector("setAlignment:")
     public native void setAlignment(@NInt long value);
+
+    @Generated
+    @Selector("setAllowsDefaultTighteningForTruncation:")
+    public native void setAllowsDefaultTighteningForTruncation(boolean value);
 
     @Generated
     @Selector("setBaseWritingDirection:")
@@ -295,12 +315,22 @@ public class NSMutableParagraphStyle extends NSParagraphStyle {
     public native void setParagraphSpacingBefore(@NFloat double value);
 
     @Generated
+    @Selector("setParagraphStyle:")
+    public native void setParagraphStyle(NSParagraphStyle obj);
+
+    @Generated
     @Selector("setTabStops:")
     public native void setTabStops(NSArray<? extends NSTextTab> value);
 
     @Generated
     @Selector("setTailIndent:")
     public native void setTailIndent(@NFloat double value);
+
+    @Generated
+    @ProtocolClassMethod("supportsSecureCoding")
+    public boolean _supportsSecureCoding() {
+        return supportsSecureCoding();
+    }
 
     @Generated
     @Selector("tabStops")
@@ -310,34 +340,4 @@ public class NSMutableParagraphStyle extends NSParagraphStyle {
     @Selector("tailIndent")
     @NFloat
     public native double tailIndent();
-
-    @Generated
-    @Selector("addTabStop:")
-    public native void addTabStop(NSTextTab anObject);
-
-    @Generated
-    @Selector("allowsDefaultTighteningForTruncation")
-    public native boolean allowsDefaultTighteningForTruncation();
-
-    @Generated
-    @Selector("removeTabStop:")
-    public native void removeTabStop(NSTextTab anObject);
-
-    @Generated
-    @Selector("setAllowsDefaultTighteningForTruncation:")
-    public native void setAllowsDefaultTighteningForTruncation(boolean value);
-
-    @Generated
-    @Selector("setParagraphStyle:")
-    public native void setParagraphStyle(NSParagraphStyle obj);
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native NSMutableParagraphStyle initWithCoder(NSCoder aDecoder);
-
-    @Generated
-    @ProtocolClassMethod("supportsSecureCoding")
-    public boolean _supportsSecureCoding() {
-        return supportsSecureCoding();
-    }
 }

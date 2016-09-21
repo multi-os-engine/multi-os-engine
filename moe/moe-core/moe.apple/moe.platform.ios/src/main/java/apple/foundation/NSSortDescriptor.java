@@ -55,31 +55,13 @@ public class NSSortDescriptor extends NSObject implements NSSecureCoding, NSCopy
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native NSSortDescriptor alloc();
-
-    @Generated
-    @Selector("sortDescriptorWithKey:ascending:")
-    public static native NSSortDescriptor sortDescriptorWithKeyAscending(String key, boolean ascending);
-
-    @Generated
-    @Selector("sortDescriptorWithKey:ascending:comparator:")
-    public static native NSSortDescriptor sortDescriptorWithKeyAscendingComparator(String key, boolean ascending,
-            @ObjCBlock(name = "call_sortDescriptorWithKeyAscendingComparator") Block_sortDescriptorWithKeyAscendingComparator cmptr);
-
-    @Generated
-    @Selector("sortDescriptorWithKey:ascending:selector:")
-    public static native NSSortDescriptor sortDescriptorWithKeyAscendingSelector(String key, boolean ascending,
-            SEL selector);
-
-    @Generated
-    @Selector("supportsSecureCoding")
-    public static native boolean supportsSecureCoding();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -166,11 +148,29 @@ public class NSSortDescriptor extends NSObject implements NSSecureCoding, NSCopy
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
+
+    @Generated
+    @Selector("sortDescriptorWithKey:ascending:")
+    public static native NSSortDescriptor sortDescriptorWithKeyAscending(String key, boolean ascending);
+
+    @Generated
+    @Selector("sortDescriptorWithKey:ascending:comparator:")
+    public static native NSSortDescriptor sortDescriptorWithKeyAscendingComparator(String key, boolean ascending,
+            @ObjCBlock(name = "call_sortDescriptorWithKeyAscendingComparator") Block_sortDescriptorWithKeyAscendingComparator cmptr);
+
+    @Generated
+    @Selector("sortDescriptorWithKey:ascending:selector:")
+    public static native NSSortDescriptor sortDescriptorWithKeyAscendingSelector(String key, boolean ascending,
+            SEL selector);
 
     @Generated
     @Selector("superclass")
     public static native Class superclass_static();
+
+    @Generated
+    @Selector("supportsSecureCoding")
+    public static native boolean supportsSecureCoding();
 
     @Generated
     @Selector("version")
@@ -184,6 +184,11 @@ public class NSSortDescriptor extends NSObject implements NSSecureCoding, NSCopy
     @Generated
     @Selector("ascending")
     public native boolean ascending();
+
+    @Generated
+    @Selector("comparator")
+    @ObjCBlock(name = "call_comparator_ret")
+    public native Block_comparator_ret comparator();
 
     @Generated
     @Selector("compareObject:toObject:")
@@ -241,10 +246,14 @@ public class NSSortDescriptor extends NSObject implements NSSecureCoding, NSCopy
         return supportsSecureCoding();
     }
 
+    @Runtime(ObjCRuntime.class)
     @Generated
-    @Selector("comparator")
-    @ObjCBlock(name = "call_comparator_ret")
-    public native Block_comparator_ret comparator();
+    public interface Block_comparator_ret {
+        @Generated
+        @NInt
+        long call_comparator_ret(@Mapped(ObjCObjectMapper.class) Object arg0,
+                @Mapped(ObjCObjectMapper.class) Object arg1);
+    }
 
     @Runtime(ObjCRuntime.class)
     @Generated
@@ -261,15 +270,6 @@ public class NSSortDescriptor extends NSObject implements NSSecureCoding, NSCopy
         @Generated
         @NInt
         long call_sortDescriptorWithKeyAscendingComparator(@Mapped(ObjCObjectMapper.class) Object arg0,
-                @Mapped(ObjCObjectMapper.class) Object arg1);
-    }
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_comparator_ret {
-        @Generated
-        @NInt
-        long call_comparator_ret(@Mapped(ObjCObjectMapper.class) Object arg0,
                 @Mapped(ObjCObjectMapper.class) Object arg1);
     }
 }

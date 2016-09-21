@@ -54,17 +54,13 @@ public class NSPointerFunctions extends NSObject implements NSCopying {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native NSPointerFunctions alloc();
-
-    @Generated
-    @Selector("pointerFunctionsWithOptions:")
-    public static native NSPointerFunctions pointerFunctionsWithOptions(@NUInt long options);
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -142,6 +138,10 @@ public class NSPointerFunctions extends NSObject implements NSCopying {
     public static native Object new_objc();
 
     @Generated
+    @Selector("pointerFunctionsWithOptions:")
+    public static native NSPointerFunctions pointerFunctionsWithOptions(@NUInt long options);
+
+    @Generated
     @Selector("resolveClassMethod:")
     public static native boolean resolveClassMethod(SEL sel);
 
@@ -151,7 +151,7 @@ public class NSPointerFunctions extends NSObject implements NSCopying {
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")
@@ -167,6 +167,11 @@ public class NSPointerFunctions extends NSObject implements NSCopying {
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
     public native Object copyWithZone(VoidPtr zone);
+
+    @Generated
+    @Selector("descriptionFunction")
+    @FunctionPtr(name = "call_descriptionFunction_ret")
+    public native Function_descriptionFunction_ret descriptionFunction();
 
     @Generated
     @Selector("init")
@@ -194,6 +199,11 @@ public class NSPointerFunctions extends NSObject implements NSCopying {
     public native void setUsesWeakReadAndWriteBarriers(boolean value);
 
     @Generated
+    @Selector("sizeFunction")
+    @FunctionPtr(name = "call_sizeFunction_ret")
+    public native Function_sizeFunction_ret sizeFunction();
+
+    @Generated
     @Selector("usesStrongWriteBarrier")
     public native boolean usesStrongWriteBarrier();
 
@@ -201,15 +211,13 @@ public class NSPointerFunctions extends NSObject implements NSCopying {
     @Selector("usesWeakReadAndWriteBarriers")
     public native boolean usesWeakReadAndWriteBarriers();
 
+    @Runtime(ObjCRuntime.class)
     @Generated
-    @Selector("descriptionFunction")
-    @FunctionPtr(name = "call_descriptionFunction_ret")
-    public native Function_descriptionFunction_ret descriptionFunction();
-
-    @Generated
-    @Selector("sizeFunction")
-    @FunctionPtr(name = "call_sizeFunction_ret")
-    public native Function_sizeFunction_ret sizeFunction();
+    public interface Function_descriptionFunction_ret {
+        @Generated
+        @MappedReturn(ObjCStringMapper.class)
+        String call_descriptionFunction_ret(ConstVoidPtr arg0);
+    }
 
     @Runtime(ObjCRuntime.class)
     @Generated
@@ -225,14 +233,6 @@ public class NSPointerFunctions extends NSObject implements NSCopying {
         @Generated
         @NUInt
         long call_setSizeFunction(ConstVoidPtr arg0);
-    }
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Function_descriptionFunction_ret {
-        @Generated
-        @MappedReturn(ObjCStringMapper.class)
-        String call_descriptionFunction_ret(ConstVoidPtr arg0);
     }
 
     @Runtime(ObjCRuntime.class)

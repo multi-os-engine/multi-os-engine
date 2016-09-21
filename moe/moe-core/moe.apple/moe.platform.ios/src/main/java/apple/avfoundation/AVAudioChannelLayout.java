@@ -58,25 +58,13 @@ public class AVAudioChannelLayout extends NSObject implements NSSecureCoding {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native AVAudioChannelLayout alloc();
-
-    @Generated
-    @Selector("layoutWithLayout:")
-    public static native AVAudioChannelLayout layoutWithLayout(AudioChannelLayout layout);
-
-    @Generated
-    @Selector("layoutWithLayoutTag:")
-    public static native AVAudioChannelLayout layoutWithLayoutTag(int layoutTag);
-
-    @Generated
-    @Selector("supportsSecureCoding")
-    public static native boolean supportsSecureCoding();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -144,6 +132,14 @@ public class AVAudioChannelLayout extends NSObject implements NSSecureCoding {
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
     @Generated
+    @Selector("layoutWithLayout:")
+    public static native AVAudioChannelLayout layoutWithLayout(AudioChannelLayout layout);
+
+    @Generated
+    @Selector("layoutWithLayoutTag:")
+    public static native AVAudioChannelLayout layoutWithLayoutTag(int layoutTag);
+
+    @Generated
     @Selector("load")
     public static native void load_objc_static();
 
@@ -163,11 +159,15 @@ public class AVAudioChannelLayout extends NSObject implements NSSecureCoding {
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")
     public static native Class superclass_static();
+
+    @Generated
+    @Selector("supportsSecureCoding")
+    public static native boolean supportsSecureCoding();
 
     @Generated
     @Selector("version")
@@ -179,8 +179,16 @@ public class AVAudioChannelLayout extends NSObject implements NSSecureCoding {
     public native int channelCount();
 
     @Generated
+    @Selector("encodeWithCoder:")
+    public native void encodeWithCoder(NSCoder aCoder);
+
+    @Generated
     @Selector("init")
     public native AVAudioChannelLayout init();
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native AVAudioChannelLayout initWithCoder(NSCoder aDecoder);
 
     @Generated
     @Selector("initWithLayout:")
@@ -201,14 +209,6 @@ public class AVAudioChannelLayout extends NSObject implements NSSecureCoding {
     @Generated
     @Selector("layoutTag")
     public native int layoutTag();
-
-    @Generated
-    @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native AVAudioChannelLayout initWithCoder(NSCoder aDecoder);
 
     @Generated
     @ProtocolClassMethod("supportsSecureCoding")

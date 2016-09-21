@@ -58,28 +58,13 @@ public class GKTurnBasedMatch extends NSObject {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native GKTurnBasedMatch alloc();
-
-    @Generated
-    @Selector("findMatchForRequest:withCompletionHandler:")
-    public static native void findMatchForRequestWithCompletionHandler(GKMatchRequest request,
-            @ObjCBlock(name = "call_findMatchForRequestWithCompletionHandler") Block_findMatchForRequestWithCompletionHandler completionHandler);
-
-    @Generated
-    @Selector("loadMatchWithID:withCompletionHandler:")
-    public static native void loadMatchWithIDWithCompletionHandler(String matchID,
-            @ObjCBlock(name = "call_loadMatchWithIDWithCompletionHandler") Block_loadMatchWithIDWithCompletionHandler completionHandler);
-
-    @Generated
-    @Selector("loadMatchesWithCompletionHandler:")
-    public static native void loadMatchesWithCompletionHandler(
-            @ObjCBlock(name = "call_loadMatchesWithCompletionHandler") Block_loadMatchesWithCompletionHandler completionHandler);
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -117,6 +102,11 @@ public class GKTurnBasedMatch extends NSObject {
     public static native String description_static();
 
     @Generated
+    @Selector("findMatchForRequest:withCompletionHandler:")
+    public static native void findMatchForRequestWithCompletionHandler(GKMatchRequest request,
+            @ObjCBlock(name = "call_findMatchForRequestWithCompletionHandler") Block_findMatchForRequestWithCompletionHandler completionHandler);
+
+    @Generated
     @Selector("hash")
     @NUInt
     public static native long hash_static();
@@ -151,6 +141,16 @@ public class GKTurnBasedMatch extends NSObject {
     public static native void load_objc_static();
 
     @Generated
+    @Selector("loadMatchWithID:withCompletionHandler:")
+    public static native void loadMatchWithIDWithCompletionHandler(String matchID,
+            @ObjCBlock(name = "call_loadMatchWithIDWithCompletionHandler") Block_loadMatchWithIDWithCompletionHandler completionHandler);
+
+    @Generated
+    @Selector("loadMatchesWithCompletionHandler:")
+    public static native void loadMatchesWithCompletionHandler(
+            @ObjCBlock(name = "call_loadMatchesWithCompletionHandler") Block_loadMatchesWithCompletionHandler completionHandler);
+
+    @Generated
     @Owned
     @Selector("new")
     @MappedReturn(ObjCObjectMapper.class)
@@ -166,7 +166,7 @@ public class GKTurnBasedMatch extends NSObject {
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")

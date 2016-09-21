@@ -55,23 +55,23 @@ public class AVAssetReaderAudioMixOutput extends AVAssetReaderOutput {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native AVAssetReaderAudioMixOutput alloc();
 
     @Generated
-    @Selector("assetReaderAudioMixOutputWithAudioTracks:audioSettings:")
-    public static native AVAssetReaderAudioMixOutput assetReaderAudioMixOutputWithAudioTracksAudioSettings(
-            NSArray<? extends AVAssetTrack> audioTracks, NSDictionary<String, ?> audioSettings);
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
-
-    @Generated
     @Selector("allocWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object allocWithZone(VoidPtr zone);
+
+    @Generated
+    @Selector("assetReaderAudioMixOutputWithAudioTracks:audioSettings:")
+    public static native AVAssetReaderAudioMixOutput assetReaderAudioMixOutputWithAudioTracksAudioSettings(
+            NSArray<? extends AVAssetTrack> audioTracks, NSDictionary<String, ?> audioSettings);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -135,7 +135,7 @@ public class AVAssetReaderAudioMixOutput extends AVAssetReaderOutput {
 
     @Generated
     @Selector("load")
-    public static native void load_objc();
+    public static native void load_objc_static();
 
     @Generated
     @Owned
@@ -153,7 +153,7 @@ public class AVAssetReaderAudioMixOutput extends AVAssetReaderOutput {
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")
@@ -162,7 +162,7 @@ public class AVAssetReaderAudioMixOutput extends AVAssetReaderOutput {
     @Generated
     @Selector("version")
     @NInt
-    public static native long version();
+    public static native long version_static();
 
     @Generated
     @Selector("audioMix")

@@ -57,13 +57,13 @@ public class HMServiceGroup extends NSObject {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native HMServiceGroup alloc();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -184,13 +184,13 @@ public class HMServiceGroup extends NSObject {
     public native NSArray<? extends HMService> services();
 
     @Generated
+    @Selector("uniqueIdentifier")
+    public native NSUUID uniqueIdentifier();
+
+    @Generated
     @Selector("updateName:completionHandler:")
     public native void updateNameCompletionHandler(String name,
             @ObjCBlock(name = "call_updateNameCompletionHandler") Block_updateNameCompletionHandler completion);
-
-    @Generated
-    @Selector("uniqueIdentifier")
-    public native NSUUID uniqueIdentifier();
 
     @Runtime(ObjCRuntime.class)
     @Generated

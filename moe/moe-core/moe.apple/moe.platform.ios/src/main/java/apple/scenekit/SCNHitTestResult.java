@@ -58,13 +58,13 @@ public class SCNHitTestResult extends NSObject {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native SCNHitTestResult alloc();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -161,6 +161,10 @@ public class SCNHitTestResult extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("boneNode")
+    public native SCNNode boneNode();
 
     @Generated
     @Selector("faceIndex")

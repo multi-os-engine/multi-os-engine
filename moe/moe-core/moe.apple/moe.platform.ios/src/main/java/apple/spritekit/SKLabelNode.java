@@ -58,29 +58,13 @@ public class SKLabelNode extends SKNode {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native SKLabelNode alloc();
-
-    @Generated
-    @Selector("labelNodeWithFontNamed:")
-    public static native SKLabelNode labelNodeWithFontNamed(String fontName);
-
-    @Generated
-    @Selector("labelNodeWithText:")
-    public static native SKLabelNode labelNodeWithText(String text);
-
-    @Generated
-    @Selector("node")
-    public static native SKLabelNode node();
-
-    @Generated
-    @Selector("nodeWithFileNamed:")
-    public static native SKLabelNode nodeWithFileNamed(String filename);
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -152,6 +136,14 @@ public class SKLabelNode extends SKNode {
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
     @Generated
+    @Selector("labelNodeWithFontNamed:")
+    public static native SKLabelNode labelNodeWithFontNamed(String fontName);
+
+    @Generated
+    @Selector("labelNodeWithText:")
+    public static native SKLabelNode labelNodeWithText(String text);
+
+    @Generated
     @Selector("load")
     public static native void load_objc_static();
 
@@ -160,6 +152,14 @@ public class SKLabelNode extends SKNode {
     @Selector("new")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object new_objc();
+
+    @Generated
+    @Selector("node")
+    public static native SKLabelNode node();
+
+    @Generated
+    @Selector("nodeWithFileNamed:")
+    public static native SKLabelNode nodeWithFileNamed(String filename);
 
     @Generated
     @Selector("obstaclesFromNodeBounds:")

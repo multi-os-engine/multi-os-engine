@@ -65,6 +65,10 @@ public interface UIViewControllerTransitionCoordinatorContext {
     boolean isInteractive();
 
     @Generated
+    @Selector("isInterruptible")
+    boolean isInterruptible();
+
+    @Generated
     @Selector("percentComplete")
     @NFloat
     double percentComplete();

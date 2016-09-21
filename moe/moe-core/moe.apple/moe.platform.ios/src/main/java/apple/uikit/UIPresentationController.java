@@ -42,6 +42,7 @@ import org.moe.natj.general.ptr.VoidPtr;
 import org.moe.natj.objc.Class;
 import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.SEL;
+import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
@@ -62,13 +63,13 @@ public class UIPresentationController extends NSObject
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native UIPresentationController alloc();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -194,6 +195,11 @@ public class UIPresentationController extends NSObject
     public native Object delegate();
 
     @Generated
+    @Selector("didUpdateFocusInContext:withAnimationCoordinator:")
+    public native void didUpdateFocusInContextWithAnimationCoordinator(UIFocusUpdateContext context,
+            UIFocusAnimationCoordinator coordinator);
+
+    @Generated
     @Selector("dismissalTransitionDidEnd:")
     public native void dismissalTransitionDidEnd(boolean completed);
 
@@ -228,6 +234,15 @@ public class UIPresentationController extends NSObject
     @Selector("preferredContentSizeDidChangeForChildContentContainer:")
     public native void preferredContentSizeDidChangeForChildContentContainer(
             @Mapped(ObjCObjectMapper.class) Object container);
+
+    @Generated
+    @Selector("preferredFocusEnvironments")
+    public native NSArray<?> preferredFocusEnvironments();
+
+    @Generated
+    @IsOptional
+    @Selector("preferredFocusedView")
+    public native UIView preferredFocusedView();
 
     @Generated
     @Selector("presentationStyle")
@@ -271,6 +286,10 @@ public class UIPresentationController extends NSObject
     }
 
     @Generated
+    @Selector("setNeedsFocusUpdate")
+    public native void setNeedsFocusUpdate();
+
+    @Generated
     @Selector("setOverrideTraitCollection:")
     public native void setOverrideTraitCollection(UITraitCollection value);
 
@@ -281,6 +300,10 @@ public class UIPresentationController extends NSObject
     @Generated
     @Selector("shouldRemovePresentersView")
     public native boolean shouldRemovePresentersView();
+
+    @Generated
+    @Selector("shouldUpdateFocusInContext:")
+    public native boolean shouldUpdateFocusInContext(UIFocusUpdateContext context);
 
     @Generated
     @Selector("sizeForChildContentContainer:withParentContainerSize:")
@@ -302,6 +325,10 @@ public class UIPresentationController extends NSObject
     public native void traitCollectionDidChange(UITraitCollection previousTraitCollection);
 
     @Generated
+    @Selector("updateFocusIfNeeded")
+    public native void updateFocusIfNeeded();
+
+    @Generated
     @Selector("viewWillTransitionToSize:withTransitionCoordinator:")
     public native void viewWillTransitionToSizeWithTransitionCoordinator(@ByValue CGSize size,
             @Mapped(ObjCObjectMapper.class) Object coordinator);
@@ -310,25 +337,4 @@ public class UIPresentationController extends NSObject
     @Selector("willTransitionToTraitCollection:withTransitionCoordinator:")
     public native void willTransitionToTraitCollectionWithTransitionCoordinator(UITraitCollection newCollection,
             @Mapped(ObjCObjectMapper.class) Object coordinator);
-
-    @Generated
-    @Selector("didUpdateFocusInContext:withAnimationCoordinator:")
-    public native void didUpdateFocusInContextWithAnimationCoordinator(UIFocusUpdateContext context,
-            UIFocusAnimationCoordinator coordinator);
-
-    @Generated
-    @Selector("preferredFocusedView")
-    public native UIView preferredFocusedView();
-
-    @Generated
-    @Selector("setNeedsFocusUpdate")
-    public native void setNeedsFocusUpdate();
-
-    @Generated
-    @Selector("shouldUpdateFocusInContext:")
-    public native boolean shouldUpdateFocusInContext(UIFocusUpdateContext context);
-
-    @Generated
-    @Selector("updateFocusIfNeeded")
-    public native void updateFocusIfNeeded();
 }

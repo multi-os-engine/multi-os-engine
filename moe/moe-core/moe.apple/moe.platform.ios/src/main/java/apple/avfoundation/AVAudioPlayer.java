@@ -23,7 +23,6 @@ import apple.foundation.NSData;
 import apple.foundation.NSDictionary;
 import apple.foundation.NSError;
 import apple.foundation.NSMethodSignature;
-import apple.foundation.NSNumber;
 import apple.foundation.NSSet;
 import apple.foundation.NSURL;
 import org.moe.natj.c.ann.FunctionPtr;
@@ -61,13 +60,13 @@ public class AVAudioPlayer extends NSObject {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native AVAudioPlayer alloc();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -154,7 +153,7 @@ public class AVAudioPlayer extends NSObject {
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")
@@ -171,7 +170,7 @@ public class AVAudioPlayer extends NSObject {
 
     @Generated
     @Selector("channelAssignments")
-    public native NSArray<? extends NSNumber> channelAssignments();
+    public native NSArray<? extends AVAudioSessionChannelDescription> channelAssignments();
 
     @Generated
     @Selector("currentTime")
@@ -197,6 +196,10 @@ public class AVAudioPlayer extends NSObject {
     @Generated
     @Selector("enableRate")
     public native boolean enableRate();
+
+    @Generated
+    @Selector("format")
+    public native AVAudioFormat format();
 
     @Generated
     @Selector("init")
@@ -271,7 +274,7 @@ public class AVAudioPlayer extends NSObject {
 
     @Generated
     @Selector("setChannelAssignments:")
-    public native void setChannelAssignments(NSArray<? extends NSNumber> value);
+    public native void setChannelAssignments(NSArray<? extends AVAudioSessionChannelDescription> value);
 
     @Generated
     @Selector("setCurrentTime:")
@@ -312,6 +315,10 @@ public class AVAudioPlayer extends NSObject {
     @Generated
     @Selector("setVolume:")
     public native void setVolume(float value);
+
+    @Generated
+    @Selector("setVolume:fadeDuration:")
+    public native void setVolumeFadeDuration(float volume, double duration);
 
     @Generated
     @Selector("settings")

@@ -16,7 +16,6 @@ limitations under the License.
 
 package apple;
 
-import apple.coregraphics.opaque.CGContextRef;
 import apple.coregraphics.struct.CGPoint;
 import apple.coregraphics.struct.CGRect;
 import apple.foundation.NSArray;
@@ -33,10 +32,8 @@ import apple.foundation.NSMutableOrderedSet;
 import apple.foundation.NSMutableSet;
 import apple.foundation.NSSet;
 import apple.foundation.NSThread;
-import apple.quartzcore.CAAnimation;
-import apple.quartzcore.CALayer;
-import apple.quartzcore.protocol.CAAction;
 import apple.uikit.UIAccessibilityCustomAction;
+import apple.uikit.UIAccessibilityCustomRotor;
 import apple.uikit.UIBezierPath;
 import org.moe.natj.c.ann.FunctionPtr;
 import org.moe.natj.general.NatJ;
@@ -127,6 +124,11 @@ public class NSObject extends ObjCObject implements apple.protocol.NSObject {
     public static native void initialize();
 
     @Generated
+    @Selector("instanceMethodForSelector:")
+    @FunctionPtr(name = "call_instanceMethodForSelector_ret")
+    public static native Function_instanceMethodForSelector_ret instanceMethodForSelector(SEL aSelector);
+
+    @Generated
     @Selector("instanceMethodSignatureForSelector:")
     public static native NSMethodSignature instanceMethodSignatureForSelector(SEL aSelector);
 
@@ -174,11 +176,6 @@ public class NSObject extends ObjCObject implements apple.protocol.NSObject {
     public static native long version_static();
 
     @Generated
-    @Selector("instanceMethodForSelector:")
-    @FunctionPtr(name = "call_instanceMethodForSelector_ret")
-    public static native Function_instanceMethodForSelector_ret instanceMethodForSelector(SEL aSelector);
-
-    @Generated
     @Selector("accessibilityActivate")
     public native boolean accessibilityActivate();
 
@@ -188,8 +185,16 @@ public class NSObject extends ObjCObject implements apple.protocol.NSObject {
     public native CGPoint accessibilityActivationPoint();
 
     @Generated
+    @Selector("accessibilityAssistiveTechnologyFocusedIdentifiers")
+    public native NSSet<String> accessibilityAssistiveTechnologyFocusedIdentifiers();
+
+    @Generated
     @Selector("accessibilityCustomActions")
     public native NSArray<? extends UIAccessibilityCustomAction> accessibilityCustomActions();
+
+    @Generated
+    @Selector("accessibilityCustomRotors")
+    public native NSArray<? extends UIAccessibilityCustomRotor> accessibilityCustomRotors();
 
     @Generated
     @Selector("accessibilityDecrement")
@@ -280,22 +285,9 @@ public class NSObject extends ObjCObject implements apple.protocol.NSObject {
     public native boolean accessibilityViewIsModal();
 
     @Generated
-    @Selector("actionForLayer:forKey:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native CAAction actionForLayerForKey(CALayer layer, String event);
-
-    @Generated
     @Selector("addObserver:forKeyPath:options:context:")
     public native void addObserverForKeyPathOptionsContext(NSObject observer, String keyPath, @NUInt long options,
             VoidPtr context);
-
-    @Generated
-    @Selector("animationDidStart:")
-    public native void animationDidStart(CAAnimation anim);
-
-    @Generated
-    @Selector("animationDidStop:finished:")
-    public native void animationDidStopFinished(CAAnimation anim, boolean flag);
 
     @Generated
     @Selector("attemptRecoveryFromError:optionIndex:")
@@ -340,14 +332,6 @@ public class NSObject extends ObjCObject implements apple.protocol.NSObject {
     public native Object copy();
 
     @Generated
-    @Selector("copy:")
-    public native void copy(@Mapped(ObjCObjectMapper.class) Object sender);
-
-    @Generated
-    @Selector("cut:")
-    public native void cut(@Mapped(ObjCObjectMapper.class) Object sender);
-
-    @Generated
     @Selector("dealloc")
     public native void dealloc();
 
@@ -355,14 +339,6 @@ public class NSObject extends ObjCObject implements apple.protocol.NSObject {
     @IsOptional
     @Selector("debugDescription")
     public native String debugDescription();
-
-    @Generated
-    @Selector("decreaseSize:")
-    public native void decreaseSize(@Mapped(ObjCObjectMapper.class) Object sender);
-
-    @Generated
-    @Selector("delete:")
-    public native void delete(@Mapped(ObjCObjectMapper.class) Object sender);
 
     @Generated
     @Selector("description")
@@ -386,16 +362,8 @@ public class NSObject extends ObjCObject implements apple.protocol.NSObject {
             NSSet<?> objects);
 
     @Generated
-    @Selector("displayLayer:")
-    public native void displayLayer(CALayer layer);
-
-    @Generated
     @Selector("doesNotRecognizeSelector:")
     public native void doesNotRecognizeSelector(SEL aSelector);
-
-    @Generated
-    @Selector("drawLayer:inContext:")
-    public native void drawLayerInContext(CALayer layer, CGContextRef ctx);
 
     @Generated
     @Deprecated
@@ -408,6 +376,7 @@ public class NSObject extends ObjCObject implements apple.protocol.NSObject {
     public native void fileManagerWillProcessPath(NSFileManager fm, String path);
 
     @Generated
+    @Deprecated
     @Selector("finalize")
     public native void finalize_objc();
 
@@ -424,10 +393,6 @@ public class NSObject extends ObjCObject implements apple.protocol.NSObject {
     @Selector("hash")
     @NUInt
     public native long hash();
-
-    @Generated
-    @Selector("increaseSize:")
-    public native void increaseSize(@Mapped(ObjCObjectMapper.class) Object sender);
 
     @Generated
     @Selector("indexOfAccessibilityElement:")
@@ -459,16 +424,9 @@ public class NSObject extends ObjCObject implements apple.protocol.NSObject {
     public native boolean isProxy();
 
     @Generated
-    @Selector("layoutSublayersOfLayer:")
-    public native void layoutSublayersOfLayer(CALayer layer);
-
-    @Generated
-    @Selector("makeTextWritingDirectionLeftToRight:")
-    public native void makeTextWritingDirectionLeftToRight(@Mapped(ObjCObjectMapper.class) Object sender);
-
-    @Generated
-    @Selector("makeTextWritingDirectionRightToLeft:")
-    public native void makeTextWritingDirectionRightToLeft(@Mapped(ObjCObjectMapper.class) Object sender);
+    @Selector("methodForSelector:")
+    @FunctionPtr(name = "call_methodForSelector_ret")
+    public native Function_methodForSelector_ret methodForSelector(SEL aSelector);
 
     @Generated
     @Selector("methodSignatureForSelector:")
@@ -511,10 +469,6 @@ public class NSObject extends ObjCObject implements apple.protocol.NSObject {
     @Selector("observeValueForKeyPath:ofObject:change:context:")
     public native void observeValueForKeyPathOfObjectChangeContext(String keyPath,
             @Mapped(ObjCObjectMapper.class) Object object, NSDictionary<String, ?> change, VoidPtr context);
-
-    @Generated
-    @Selector("paste:")
-    public native void paste(@Mapped(ObjCObjectMapper.class) Object sender);
 
     @Generated
     @Selector("performSelector:")
@@ -571,6 +525,12 @@ public class NSObject extends ObjCObject implements apple.protocol.NSObject {
     public native void prepareForInterfaceBuilder();
 
     @Generated
+    @Selector("provideImageData:bytesPerRow:origin::size::userInfo:")
+    public native void provideImageDataBytesPerRowOrigin_Size_UserInfo(VoidPtr data, @NUInt long rowbytes,
+            @NUInt long x, @NUInt long y, @NUInt long width, @NUInt long height,
+            @Mapped(ObjCObjectMapper.class) Object info);
+
+    @Generated
     @Selector("removeObserver:forKeyPath:")
     public native void removeObserverForKeyPath(NSObject observer, String keyPath);
 
@@ -593,14 +553,6 @@ public class NSObject extends ObjCObject implements apple.protocol.NSObject {
     public native boolean respondsToSelector(SEL aSelector);
 
     @Generated
-    @Selector("select:")
-    public native void select(@Mapped(ObjCObjectMapper.class) Object sender);
-
-    @Generated
-    @Selector("selectAll:")
-    public native void selectAll(@Mapped(ObjCObjectMapper.class) Object sender);
-
-    @Generated
     @Selector("self")
     @MappedReturn(ObjCObjectMapper.class)
     public native Object self();
@@ -612,6 +564,10 @@ public class NSObject extends ObjCObject implements apple.protocol.NSObject {
     @Generated
     @Selector("setAccessibilityCustomActions:")
     public native void setAccessibilityCustomActions(NSArray<? extends UIAccessibilityCustomAction> value);
+
+    @Generated
+    @Selector("setAccessibilityCustomRotors:")
+    public native void setAccessibilityCustomRotors(NSArray<? extends UIAccessibilityCustomRotor> value);
 
     @Generated
     @Selector("setAccessibilityElements:")
@@ -698,18 +654,6 @@ public class NSObject extends ObjCObject implements apple.protocol.NSObject {
     public native Class superclass();
 
     @Generated
-    @Selector("toggleBoldface:")
-    public native void toggleBoldface(@Mapped(ObjCObjectMapper.class) Object sender);
-
-    @Generated
-    @Selector("toggleItalics:")
-    public native void toggleItalics(@Mapped(ObjCObjectMapper.class) Object sender);
-
-    @Generated
-    @Selector("toggleUnderline:")
-    public native void toggleUnderline(@Mapped(ObjCObjectMapper.class) Object sender);
-
-    @Generated
     @Selector("validateValue:forKey:error:")
     public native boolean validateValueForKeyError(Ptr<ObjCObject> ioValue, String inKey, Ptr<NSError> outError);
 
@@ -745,21 +689,6 @@ public class NSObject extends ObjCObject implements apple.protocol.NSObject {
     @Selector("willChangeValueForKey:withSetMutation:usingObjects:")
     public native void willChangeValueForKeyWithSetMutationUsingObjects(String key, @NUInt long mutationKind,
             NSSet<?> objects);
-
-    @Generated
-    @Selector("accessibilityAssistiveTechnologyFocusedIdentifiers")
-    public native NSSet<String> accessibilityAssistiveTechnologyFocusedIdentifiers();
-
-    @Generated
-    @Selector("methodForSelector:")
-    @FunctionPtr(name = "call_methodForSelector_ret")
-    public native Function_methodForSelector_ret methodForSelector(SEL aSelector);
-
-    @Generated
-    @Selector("provideImageData:bytesPerRow:origin::size::userInfo:")
-    public native void provideImageDataBytesPerRowOrigin_Size_UserInfo(VoidPtr data, @NUInt long rowbytes,
-            @NUInt long x, @NUInt long y, @NUInt long width, @NUInt long height,
-            @Mapped(ObjCObjectMapper.class) Object info);
 
     @Runtime(ObjCRuntime.class)
     @Generated

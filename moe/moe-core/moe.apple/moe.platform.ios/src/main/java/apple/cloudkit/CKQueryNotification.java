@@ -55,18 +55,13 @@ public class CKQueryNotification extends CKNotification {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native CKQueryNotification alloc();
-
-    @Generated
-    @Selector("notificationFromRemoteNotificationDictionary:")
-    public static native CKQueryNotification notificationFromRemoteNotificationDictionary(
-            NSDictionary<String, ? extends NSObject> notificationDictionary);
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -144,6 +139,11 @@ public class CKQueryNotification extends CKNotification {
     public static native Object new_objc();
 
     @Generated
+    @Selector("notificationFromRemoteNotificationDictionary:")
+    public static native CKQueryNotification notificationFromRemoteNotificationDictionary(
+            NSDictionary<String, ? extends NSObject> notificationDictionary);
+
+    @Generated
     @Selector("resolveClassMethod:")
     public static native boolean resolveClassMethod(SEL sel);
 
@@ -163,6 +163,11 @@ public class CKQueryNotification extends CKNotification {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("databaseScope")
+    @NInt
+    public native long databaseScope();
 
     @Generated
     @Selector("init")

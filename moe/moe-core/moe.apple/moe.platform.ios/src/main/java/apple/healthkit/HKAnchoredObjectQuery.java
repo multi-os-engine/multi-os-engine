@@ -60,13 +60,13 @@ public class HKAnchoredObjectQuery extends HKQuery {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native HKAnchoredObjectQuery alloc();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -235,6 +235,11 @@ public class HKAnchoredObjectQuery extends HKQuery {
             HKQuantity totalEnergyBurned);
 
     @Generated
+    @Selector("predicateForWorkoutsWithOperatorType:totalSwimmingStrokeCount:")
+    public static native NSPredicate predicateForWorkoutsWithOperatorTypeTotalSwimmingStrokeCount(
+            @NUInt long operatorType, HKQuantity totalSwimmingStrokeCount);
+
+    @Generated
     @Selector("predicateForWorkoutsWithWorkoutActivityType:")
     public static native NSPredicate predicateForWorkoutsWithWorkoutActivityType(@NUInt long workoutActivityType);
 
@@ -248,7 +253,7 @@ public class HKAnchoredObjectQuery extends HKQuery {
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")
@@ -263,8 +268,8 @@ public class HKAnchoredObjectQuery extends HKQuery {
     @Selector("init")
     public native HKAnchoredObjectQuery init();
 
-    @Deprecated
     @Generated
+    @Deprecated
     @Selector("initWithType:predicate:anchor:limit:completionHandler:")
     public native HKAnchoredObjectQuery initWithTypePredicateAnchorLimitCompletionHandler(HKSampleType type,
             NSPredicate predicate, @NUInt long anchor, @NUInt long limit,

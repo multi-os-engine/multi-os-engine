@@ -19,6 +19,7 @@ package apple.uikit;
 import apple.NSObject;
 import apple.coregraphics.struct.CGRect;
 import apple.foundation.NSArray;
+import apple.foundation.NSDictionary;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
 import apple.foundation.NSURL;
@@ -60,22 +61,13 @@ public class UIApplication extends UIResponder {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native UIApplication alloc();
-
-    @Generated
-    @Selector("registerObjectForStateRestoration:restorationIdentifier:")
-    public static native void registerObjectForStateRestorationRestorationIdentifier(
-            @Mapped(ObjCObjectMapper.class) UIStateRestoring object, String restorationIdentifier);
-
-    @Generated
-    @Selector("sharedApplication")
-    public static native UIApplication sharedApplication();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -157,6 +149,11 @@ public class UIApplication extends UIResponder {
     public static native Object new_objc();
 
     @Generated
+    @Selector("registerObjectForStateRestoration:restorationIdentifier:")
+    public static native void registerObjectForStateRestorationRestorationIdentifier(
+            @Mapped(ObjCObjectMapper.class) UIStateRestoring object, String restorationIdentifier);
+
+    @Generated
     @Selector("resolveClassMethod:")
     public static native boolean resolveClassMethod(SEL sel);
 
@@ -167,6 +164,10 @@ public class UIApplication extends UIResponder {
     @Generated
     @Selector("setVersion:")
     public static native void setVersion_static(@NInt long aVersion);
+
+    @Generated
+    @Selector("sharedApplication")
+    public static native UIApplication sharedApplication();
 
     @Generated
     @Selector("superclass")
@@ -232,8 +233,8 @@ public class UIApplication extends UIResponder {
     @Selector("cancelLocalNotification:")
     public native void cancelLocalNotification(UILocalNotification notification);
 
-    @Deprecated
     @Generated
+    @Deprecated
     @Selector("clearKeepAliveTimeout")
     public native void clearKeepAliveTimeout();
 
@@ -322,8 +323,8 @@ public class UIApplication extends UIResponder {
     @Selector("isStatusBarHidden")
     public native boolean isStatusBarHidden();
 
-    @Deprecated
     @Generated
+    @Deprecated
     @Selector("setStatusBarHidden:")
     public native void setStatusBarHidden(boolean value);
 
@@ -334,6 +335,11 @@ public class UIApplication extends UIResponder {
     @Generated
     @Selector("openURL:")
     public native boolean openURL(NSURL url);
+
+    @Generated
+    @Selector("openURL:options:completionHandler:")
+    public native void openURLOptionsCompletionHandler(NSURL url, NSDictionary<String, ?> options,
+            @ObjCBlock(name = "call_openURLOptionsCompletionHandler") Block_openURLOptionsCompletionHandler completion);
 
     @Generated
     @Selector("preferredContentSizeCategory")
@@ -397,8 +403,8 @@ public class UIApplication extends UIResponder {
         }
     }
 
-    @Deprecated
     @Generated
+    @Deprecated
     @Selector("setKeepAliveTimeout:handler:")
     public native boolean setKeepAliveTimeoutHandler(double timeout,
             @ObjCBlock(name = "call_setKeepAliveTimeoutHandler") Block_setKeepAliveTimeoutHandler keepAliveHandler);
@@ -407,8 +413,8 @@ public class UIApplication extends UIResponder {
     @Selector("setMinimumBackgroundFetchInterval:")
     public native void setMinimumBackgroundFetchInterval(double minimumBackgroundFetchInterval);
 
-    @Deprecated
     @Generated
+    @Deprecated
     @Selector("setNewsstandIconImage:")
     public native void setNewsstandIconImage(UIImage image);
 
@@ -417,34 +423,42 @@ public class UIApplication extends UIResponder {
     public native void setScheduledLocalNotifications(NSArray<? extends UILocalNotification> value);
 
     @Generated
+    @Selector("setShortcutItems:")
+    public native void setShortcutItems(NSArray<? extends UIApplicationShortcutItem> value);
+
+    @Generated
     @Deprecated
     @Selector("setStatusBarHidden:animated:")
     public native void setStatusBarHiddenAnimated(boolean hidden, boolean animated);
 
-    @Deprecated
     @Generated
+    @Deprecated
     @Selector("setStatusBarHidden:withAnimation:")
     public native void setStatusBarHiddenWithAnimation(boolean hidden, @NInt long animation);
 
-    @Deprecated
     @Generated
+    @Deprecated
     @Selector("setStatusBarOrientation:")
     public native void setStatusBarOrientation(@NInt long value);
 
-    @Deprecated
     @Generated
+    @Deprecated
     @Selector("setStatusBarOrientation:animated:")
     public native void setStatusBarOrientationAnimated(@NInt long interfaceOrientation, boolean animated);
 
-    @Deprecated
     @Generated
+    @Deprecated
     @Selector("setStatusBarStyle:")
     public native void setStatusBarStyle(@NInt long value);
 
-    @Deprecated
     @Generated
+    @Deprecated
     @Selector("setStatusBarStyle:animated:")
     public native void setStatusBarStyleAnimated(@NInt long statusBarStyle, boolean animated);
+
+    @Generated
+    @Selector("shortcutItems")
+    public native NSArray<? extends UIApplicationShortcutItem> shortcutItems();
 
     @Generated
     @Selector("statusBarFrame")
@@ -483,14 +497,6 @@ public class UIApplication extends UIResponder {
     @Selector("windows")
     public native NSArray<? extends UIWindow> windows();
 
-    @Generated
-    @Selector("setShortcutItems:")
-    public native void setShortcutItems(NSArray<? extends UIApplicationShortcutItem> value);
-
-    @Generated
-    @Selector("shortcutItems")
-    public native NSArray<? extends UIApplicationShortcutItem> shortcutItems();
-
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_beginBackgroundTaskWithExpirationHandler {
@@ -503,6 +509,13 @@ public class UIApplication extends UIResponder {
     public interface Block_beginBackgroundTaskWithNameExpirationHandler {
         @Generated
         void call_beginBackgroundTaskWithNameExpirationHandler();
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_openURLOptionsCompletionHandler {
+        @Generated
+        void call_openURLOptionsCompletionHandler(boolean arg0);
     }
 
     @Runtime(ObjCRuntime.class)

@@ -75,11 +75,6 @@ public class SCNView extends UIView implements SCNSceneRenderer, SCNTechniqueSup
     }
 
     @Generated
-    @Owned
-    @Selector("alloc")
-    public static native SCNView alloc();
-
-    @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
 
@@ -88,6 +83,11 @@ public class SCNView extends UIView implements SCNSceneRenderer, SCNTechniqueSup
     public static native void addKeyframeWithRelativeStartTimeRelativeDurationAnimations(double frameStartTime,
             double frameDuration,
             @ObjCBlock(name = "call_addKeyframeWithRelativeStartTimeRelativeDurationAnimations") UIView.Block_addKeyframeWithRelativeStartTimeRelativeDurationAnimations animations);
+
+    @Generated
+    @Owned
+    @Selector("alloc")
+    public static native SCNView alloc();
 
     @Generated
     @Selector("allocWithZone:")
@@ -303,7 +303,7 @@ public class SCNView extends UIView implements SCNSceneRenderer, SCNTechniqueSup
 
     @Generated
     @Selector("setAnimationDuration:")
-    public static native void setAnimationDuration(double duration);
+    public static native void setAnimationDuration_static(double duration);
 
     @Generated
     @Selector("setAnimationRepeatAutoreverses:")
@@ -311,7 +311,7 @@ public class SCNView extends UIView implements SCNSceneRenderer, SCNTechniqueSup
 
     @Generated
     @Selector("setAnimationRepeatCount:")
-    public static native void setAnimationRepeatCount(float repeatCount);
+    public static native void setAnimationRepeatCount_static(float repeatCount);
 
     @Generated
     @Selector("setAnimationStartDate:")
@@ -331,7 +331,7 @@ public class SCNView extends UIView implements SCNSceneRenderer, SCNTechniqueSup
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")
@@ -356,6 +356,12 @@ public class SCNView extends UIView implements SCNSceneRenderer, SCNTechniqueSup
     public static native long userInterfaceLayoutDirectionForSemanticContentAttribute(@NInt long attribute);
 
     @Generated
+    @Selector("userInterfaceLayoutDirectionForSemanticContentAttribute:relativeToLayoutDirection:")
+    @NInt
+    public static native long userInterfaceLayoutDirectionForSemanticContentAttributeRelativeToLayoutDirection(
+            @NInt long semanticContentAttribute, @NInt long layoutDirection);
+
+    @Generated
     @Selector("version")
     @NInt
     public static native long version_static();
@@ -370,17 +376,105 @@ public class SCNView extends UIView implements SCNSceneRenderer, SCNTechniqueSup
     public native long antialiasingMode();
 
     @Generated
+    @ProtocolClassMethod("appearance")
+    @MappedReturn(ObjCObjectMapper.class)
+    public Object _appearance() {
+        return appearance();
+    }
+
+    @Generated
+    @ProtocolClassMethod("appearanceForTraitCollection")
+    @MappedReturn(ObjCObjectMapper.class)
+    public Object _appearanceForTraitCollection(UITraitCollection trait) {
+        return appearanceForTraitCollection(trait);
+    }
+
+    @Generated
+    @Deprecated
+    @ProtocolClassMethod("appearanceForTraitCollectionWhenContainedIn")
+    @MappedReturn(ObjCObjectMapper.class)
+    public Object _appearanceForTraitCollectionWhenContainedIn(UITraitCollection trait,
+            @Mapped(ObjCObjectMapper.class) Object ContainerClass, Object... varargs) {
+        return appearanceForTraitCollectionWhenContainedIn(trait, ContainerClass, varargs);
+    }
+
+    @Generated
+    @ProtocolClassMethod("appearanceForTraitCollectionWhenContainedInInstancesOfClasses")
+    @MappedReturn(ObjCObjectMapper.class)
+    public Object _appearanceForTraitCollectionWhenContainedInInstancesOfClasses(UITraitCollection trait,
+            NSArray<?> containerTypes) {
+        return appearanceForTraitCollectionWhenContainedInInstancesOfClasses(trait, containerTypes);
+    }
+
+    @Generated
+    @Deprecated
+    @ProtocolClassMethod("appearanceWhenContainedIn")
+    @MappedReturn(ObjCObjectMapper.class)
+    public Object _appearanceWhenContainedIn(@Mapped(ObjCObjectMapper.class) Object ContainerClass, Object... varargs) {
+        return appearanceWhenContainedIn(ContainerClass, varargs);
+    }
+
+    @Generated
+    @ProtocolClassMethod("appearanceWhenContainedInInstancesOfClasses")
+    @MappedReturn(ObjCObjectMapper.class)
+    public Object _appearanceWhenContainedInInstancesOfClasses(NSArray<?> containerTypes) {
+        return appearanceWhenContainedInInstancesOfClasses(containerTypes);
+    }
+
+    @Generated
+    @Selector("audioEngine")
+    public native AVAudioEngine audioEngine();
+
+    @Generated
+    @Selector("audioEnvironmentNode")
+    public native AVAudioEnvironmentNode audioEnvironmentNode();
+
+    @Generated
+    @Selector("audioListener")
+    public native SCNNode audioListener();
+
+    @Generated
     @Selector("autoenablesDefaultLighting")
     public native boolean autoenablesDefaultLighting();
+
+    @Generated
+    @Selector("colorPixelFormat")
+    @NUInt
+    public native long colorPixelFormat();
+
+    @Generated
+    @Selector("commandQueue")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native Object commandQueue();
 
     @Generated
     @Selector("context")
     public native VoidPtr context();
 
     @Generated
+    @Selector("currentRenderCommandEncoder")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native Object currentRenderCommandEncoder();
+
+    @Generated
+    @Selector("debugOptions")
+    @NUInt
+    public native long debugOptions();
+
+    @Generated
     @Selector("delegate")
     @MappedReturn(ObjCObjectMapper.class)
     public native Object delegate();
+
+    @Generated
+    @Selector("depthPixelFormat")
+    @NUInt
+    public native long depthPixelFormat();
+
+    @Generated
+    @Selector("device")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native Object device();
 
     @Generated
     @Selector("eaglContext")
@@ -394,6 +488,10 @@ public class SCNView extends UIView implements SCNSceneRenderer, SCNTechniqueSup
     @Generated
     @Selector("init")
     public native SCNView init();
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native SCNView initWithCoder(NSCoder aDecoder);
 
     @Generated
     @Selector("initWithFrame:")
@@ -428,6 +526,10 @@ public class SCNView extends UIView implements SCNSceneRenderer, SCNTechniqueSup
     public native boolean loops();
 
     @Generated
+    @Selector("nodesInsideFrustumWithPointOfView:")
+    public native NSArray<? extends SCNNode> nodesInsideFrustumWithPointOfView(SCNNode pointOfView);
+
+    @Generated
     @Selector("overlaySKScene")
     public native SKScene overlaySKScene();
 
@@ -459,9 +561,20 @@ public class SCNView extends UIView implements SCNSceneRenderer, SCNTechniqueSup
             @ObjCBlock(name = "call_prepareObjectsWithCompletionHandler") SCNSceneRenderer.Block_prepareObjectsWithCompletionHandler completionHandler);
 
     @Generated
+    @Selector("presentScene:withTransition:incomingPointOfView:completionHandler:")
+    public native void presentSceneWithTransitionIncomingPointOfViewCompletionHandler(SCNScene scene,
+            SKTransition transition, SCNNode pointOfView,
+            @ObjCBlock(name = "call_presentSceneWithTransitionIncomingPointOfViewCompletionHandler") SCNSceneRenderer.Block_presentSceneWithTransitionIncomingPointOfViewCompletionHandler completionHandler);
+
+    @Generated
     @Selector("projectPoint:")
     @ByValue
     public native SCNVector3 projectPoint(@ByValue SCNVector3 point);
+
+    @Generated
+    @Selector("renderingAPI")
+    @NUInt
+    public native long renderingAPI();
 
     @Generated
     @Selector("scene")
@@ -480,8 +593,16 @@ public class SCNView extends UIView implements SCNSceneRenderer, SCNTechniqueSup
     public native void setAntialiasingMode(@NUInt long value);
 
     @Generated
+    @Selector("setAudioListener:")
+    public native void setAudioListener(SCNNode value);
+
+    @Generated
     @Selector("setAutoenablesDefaultLighting:")
     public native void setAutoenablesDefaultLighting(boolean value);
+
+    @Generated
+    @Selector("setDebugOptions:")
+    public native void setDebugOptions(@NUInt long value);
 
     @Generated
     @Selector("setDelegate:")
@@ -544,6 +665,11 @@ public class SCNView extends UIView implements SCNSceneRenderer, SCNTechniqueSup
     public native UIImage snapshot();
 
     @Generated
+    @Selector("stencilPixelFormat")
+    @NUInt
+    public native long stencilPixelFormat();
+
+    @Generated
     @Selector("stop:")
     public native void stop(@Mapped(ObjCObjectMapper.class) Object sender);
 
@@ -555,124 +681,4 @@ public class SCNView extends UIView implements SCNSceneRenderer, SCNTechniqueSup
     @Selector("unprojectPoint:")
     @ByValue
     public native SCNVector3 unprojectPoint(@ByValue SCNVector3 point);
-
-    @Generated
-    @Selector("audioEngine")
-    public native AVAudioEngine audioEngine();
-
-    @Generated
-    @Selector("audioEnvironmentNode")
-    public native AVAudioEnvironmentNode audioEnvironmentNode();
-
-    @Generated
-    @Selector("audioListener")
-    public native SCNNode audioListener();
-
-    @Generated
-    @Selector("colorPixelFormat")
-    @NUInt
-    public native long colorPixelFormat();
-
-    @Generated
-    @Selector("commandQueue")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native Object commandQueue();
-
-    @Generated
-    @Selector("currentRenderCommandEncoder")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native Object currentRenderCommandEncoder();
-
-    @Generated
-    @Selector("debugOptions")
-    @NUInt
-    public native long debugOptions();
-
-    @Generated
-    @Selector("depthPixelFormat")
-    @NUInt
-    public native long depthPixelFormat();
-
-    @Generated
-    @Selector("device")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native Object device();
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native SCNView initWithCoder(NSCoder aDecoder);
-
-    @Generated
-    @Selector("nodesInsideFrustumWithPointOfView:")
-    public native NSArray<? extends SCNNode> nodesInsideFrustumWithPointOfView(SCNNode pointOfView);
-
-    @Generated
-    @Selector("presentScene:withTransition:incomingPointOfView:completionHandler:")
-    public native void presentSceneWithTransitionIncomingPointOfViewCompletionHandler(SCNScene scene,
-            SKTransition transition, SCNNode pointOfView,
-            @ObjCBlock(name = "call_presentSceneWithTransitionIncomingPointOfViewCompletionHandler") SCNSceneRenderer.Block_presentSceneWithTransitionIncomingPointOfViewCompletionHandler completionHandler);
-
-    @Generated
-    @Selector("renderingAPI")
-    @NUInt
-    public native long renderingAPI();
-
-    @Generated
-    @Selector("setAudioListener:")
-    public native void setAudioListener(SCNNode value);
-
-    @Generated
-    @Selector("setDebugOptions:")
-    public native void setDebugOptions(@NUInt long value);
-
-    @Generated
-    @Selector("stencilPixelFormat")
-    @NUInt
-    public native long stencilPixelFormat();
-
-    @Generated
-    @ProtocolClassMethod("appearance")
-    @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearance() {
-        return appearance();
-    }
-
-    @Generated
-    @ProtocolClassMethod("appearanceForTraitCollection")
-    @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearanceForTraitCollection(UITraitCollection trait) {
-        return appearanceForTraitCollection(trait);
-    }
-
-    @Generated
-    @Deprecated
-    @ProtocolClassMethod("appearanceForTraitCollectionWhenContainedIn")
-    @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearanceForTraitCollectionWhenContainedIn(UITraitCollection trait,
-            @Mapped(ObjCObjectMapper.class) Object ContainerClass, Object... varargs) {
-        return appearanceForTraitCollectionWhenContainedIn(trait, ContainerClass, varargs);
-    }
-
-    @Generated
-    @ProtocolClassMethod("appearanceForTraitCollectionWhenContainedInInstancesOfClasses")
-    @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearanceForTraitCollectionWhenContainedInInstancesOfClasses(UITraitCollection trait,
-            NSArray<?> containerTypes) {
-        return appearanceForTraitCollectionWhenContainedInInstancesOfClasses(trait, containerTypes);
-    }
-
-    @Generated
-    @Deprecated
-    @ProtocolClassMethod("appearanceWhenContainedIn")
-    @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearanceWhenContainedIn(@Mapped(ObjCObjectMapper.class) Object ContainerClass, Object... varargs) {
-        return appearanceWhenContainedIn(ContainerClass, varargs);
-    }
-
-    @Generated
-    @ProtocolClassMethod("appearanceWhenContainedInInstancesOfClasses")
-    @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearanceWhenContainedInInstancesOfClasses(NSArray<?> containerTypes) {
-        return appearanceWhenContainedInInstancesOfClasses(containerTypes);
-    }
 }

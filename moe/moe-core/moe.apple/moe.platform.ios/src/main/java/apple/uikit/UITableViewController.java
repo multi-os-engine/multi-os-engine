@@ -63,13 +63,13 @@ public class UITableViewController extends UIViewController implements UITableVi
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native UITableViewController alloc();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -182,6 +182,11 @@ public class UITableViewController extends UIViewController implements UITableVi
     @Generated
     @Selector("clearsSelectionOnViewWillAppear")
     public native boolean clearsSelectionOnViewWillAppear();
+
+    @Generated
+    @IsOptional
+    @Selector("indexPathForPreferredFocusedViewInTableView:")
+    public native NSIndexPath indexPathForPreferredFocusedViewInTableView(UITableView tableView);
 
     @Generated
     @Selector("init")
@@ -311,6 +316,11 @@ public class UITableViewController extends UIViewController implements UITableVi
 
     @Generated
     @IsOptional
+    @Selector("tableView:canFocusRowAtIndexPath:")
+    public native boolean tableViewCanFocusRowAtIndexPath(UITableView tableView, NSIndexPath indexPath);
+
+    @Generated
+    @IsOptional
     @Selector("tableView:canMoveRowAtIndexPath:")
     public native boolean tableViewCanMoveRowAtIndexPath(UITableView tableView, NSIndexPath indexPath);
 
@@ -372,6 +382,12 @@ public class UITableViewController extends UIViewController implements UITableVi
     @IsOptional
     @Selector("tableView:didUnhighlightRowAtIndexPath:")
     public native void tableViewDidUnhighlightRowAtIndexPath(UITableView tableView, NSIndexPath indexPath);
+
+    @Generated
+    @IsOptional
+    @Selector("tableView:didUpdateFocusInContext:withAnimationCoordinator:")
+    public native void tableViewDidUpdateFocusInContextWithAnimationCoordinator(UITableView tableView,
+            UITableViewFocusUpdateContext context, UIFocusAnimationCoordinator coordinator);
 
     @Generated
     @IsOptional
@@ -468,6 +484,12 @@ public class UITableViewController extends UIViewController implements UITableVi
 
     @Generated
     @IsOptional
+    @Selector("tableView:shouldUpdateFocusInContext:")
+    public native boolean tableViewShouldUpdateFocusInContext(UITableView tableView,
+            UITableViewFocusUpdateContext context);
+
+    @Generated
+    @IsOptional
     @Selector("tableView:targetIndexPathForMoveFromRowAtIndexPath:toProposedIndexPath:")
     public native NSIndexPath tableViewTargetIndexPathForMoveFromRowAtIndexPathToProposedIndexPath(
             UITableView tableView, NSIndexPath sourceIndexPath, NSIndexPath proposedDestinationIndexPath);
@@ -533,26 +555,4 @@ public class UITableViewController extends UIViewController implements UITableVi
     @IsOptional
     @Selector("viewForZoomingInScrollView:")
     public native UIView viewForZoomingInScrollView(UIScrollView scrollView);
-
-    @Generated
-    @IsOptional
-    @Selector("indexPathForPreferredFocusedViewInTableView:")
-    public native NSIndexPath indexPathForPreferredFocusedViewInTableView(UITableView tableView);
-
-    @Generated
-    @IsOptional
-    @Selector("tableView:canFocusRowAtIndexPath:")
-    public native boolean tableViewCanFocusRowAtIndexPath(UITableView tableView, NSIndexPath indexPath);
-
-    @Generated
-    @IsOptional
-    @Selector("tableView:didUpdateFocusInContext:withAnimationCoordinator:")
-    public native void tableViewDidUpdateFocusInContextWithAnimationCoordinator(UITableView tableView,
-            UITableViewFocusUpdateContext context, UIFocusAnimationCoordinator coordinator);
-
-    @Generated
-    @IsOptional
-    @Selector("tableView:shouldUpdateFocusInContext:")
-    public native boolean tableViewShouldUpdateFocusInContext(UITableView tableView,
-            UITableViewFocusUpdateContext context);
 }

@@ -58,13 +58,13 @@ public class CMGyroData extends CMLogItem {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native CMGyroData alloc();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -171,13 +171,13 @@ public class CMGyroData extends CMLogItem {
     public native CMGyroData init();
 
     @Generated
+    @Selector("initWithCoder:")
+    public native CMGyroData initWithCoder(NSCoder aDecoder);
+
+    @Generated
     @Selector("rotationRate")
     @ByValue
     public native CMRotationRate rotationRate();
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native CMGyroData initWithCoder(NSCoder aDecoder);
 
     @Generated
     @ProtocolClassMethod("supportsSecureCoding")

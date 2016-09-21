@@ -63,11 +63,6 @@ public class UIPageControl extends UIControl {
     }
 
     @Generated
-    @Owned
-    @Selector("alloc")
-    public static native UIPageControl alloc();
-
-    @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
 
@@ -76,6 +71,11 @@ public class UIPageControl extends UIControl {
     public static native void addKeyframeWithRelativeStartTimeRelativeDurationAnimations(double frameStartTime,
             double frameDuration,
             @ObjCBlock(name = "call_addKeyframeWithRelativeStartTimeRelativeDurationAnimations") UIView.Block_addKeyframeWithRelativeStartTimeRelativeDurationAnimations animations);
+
+    @Generated
+    @Owned
+    @Selector("alloc")
+    public static native UIPageControl alloc();
 
     @Generated
     @Selector("allocWithZone:")
@@ -291,7 +291,7 @@ public class UIPageControl extends UIControl {
 
     @Generated
     @Selector("setAnimationDuration:")
-    public static native void setAnimationDuration(double duration);
+    public static native void setAnimationDuration_static(double duration);
 
     @Generated
     @Selector("setAnimationRepeatAutoreverses:")
@@ -299,7 +299,7 @@ public class UIPageControl extends UIControl {
 
     @Generated
     @Selector("setAnimationRepeatCount:")
-    public static native void setAnimationRepeatCount(float repeatCount);
+    public static native void setAnimationRepeatCount_static(float repeatCount);
 
     @Generated
     @Selector("setAnimationStartDate:")
@@ -344,80 +344,15 @@ public class UIPageControl extends UIControl {
     public static native long userInterfaceLayoutDirectionForSemanticContentAttribute(@NInt long attribute);
 
     @Generated
+    @Selector("userInterfaceLayoutDirectionForSemanticContentAttribute:relativeToLayoutDirection:")
+    @NInt
+    public static native long userInterfaceLayoutDirectionForSemanticContentAttributeRelativeToLayoutDirection(
+            @NInt long semanticContentAttribute, @NInt long layoutDirection);
+
+    @Generated
     @Selector("version")
     @NInt
     public static native long version_static();
-
-    @Generated
-    @Selector("currentPage")
-    @NInt
-    public native long currentPage();
-
-    @Generated
-    @Selector("currentPageIndicatorTintColor")
-    public native UIColor currentPageIndicatorTintColor();
-
-    @Generated
-    @Selector("defersCurrentPageDisplay")
-    public native boolean defersCurrentPageDisplay();
-
-    @Generated
-    @Selector("hidesForSinglePage")
-    public native boolean hidesForSinglePage();
-
-    @Generated
-    @Selector("init")
-    public native UIPageControl init();
-
-    @Generated
-    @Selector("initWithFrame:")
-    public native UIPageControl initWithFrame(@ByValue CGRect frame);
-
-    @Generated
-    @Selector("numberOfPages")
-    @NInt
-    public native long numberOfPages();
-
-    @Generated
-    @Selector("pageIndicatorTintColor")
-    public native UIColor pageIndicatorTintColor();
-
-    @Generated
-    @Selector("setCurrentPage:")
-    public native void setCurrentPage(@NInt long value);
-
-    @Generated
-    @Selector("setCurrentPageIndicatorTintColor:")
-    public native void setCurrentPageIndicatorTintColor(UIColor value);
-
-    @Generated
-    @Selector("setDefersCurrentPageDisplay:")
-    public native void setDefersCurrentPageDisplay(boolean value);
-
-    @Generated
-    @Selector("setHidesForSinglePage:")
-    public native void setHidesForSinglePage(boolean value);
-
-    @Generated
-    @Selector("setNumberOfPages:")
-    public native void setNumberOfPages(@NInt long value);
-
-    @Generated
-    @Selector("setPageIndicatorTintColor:")
-    public native void setPageIndicatorTintColor(UIColor value);
-
-    @Generated
-    @Selector("sizeForNumberOfPages:")
-    @ByValue
-    public native CGSize sizeForNumberOfPages(@NInt long pageCount);
-
-    @Generated
-    @Selector("updateCurrentPageDisplay")
-    public native void updateCurrentPageDisplay();
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native UIPageControl initWithCoder(NSCoder aDecoder);
 
     @Generated
     @ProtocolClassMethod("appearance")
@@ -464,4 +399,75 @@ public class UIPageControl extends UIControl {
     public Object _appearanceWhenContainedInInstancesOfClasses(NSArray<?> containerTypes) {
         return appearanceWhenContainedInInstancesOfClasses(containerTypes);
     }
+
+    @Generated
+    @Selector("currentPage")
+    @NInt
+    public native long currentPage();
+
+    @Generated
+    @Selector("currentPageIndicatorTintColor")
+    public native UIColor currentPageIndicatorTintColor();
+
+    @Generated
+    @Selector("defersCurrentPageDisplay")
+    public native boolean defersCurrentPageDisplay();
+
+    @Generated
+    @Selector("hidesForSinglePage")
+    public native boolean hidesForSinglePage();
+
+    @Generated
+    @Selector("init")
+    public native UIPageControl init();
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native UIPageControl initWithCoder(NSCoder aDecoder);
+
+    @Generated
+    @Selector("initWithFrame:")
+    public native UIPageControl initWithFrame(@ByValue CGRect frame);
+
+    @Generated
+    @Selector("numberOfPages")
+    @NInt
+    public native long numberOfPages();
+
+    @Generated
+    @Selector("pageIndicatorTintColor")
+    public native UIColor pageIndicatorTintColor();
+
+    @Generated
+    @Selector("setCurrentPage:")
+    public native void setCurrentPage(@NInt long value);
+
+    @Generated
+    @Selector("setCurrentPageIndicatorTintColor:")
+    public native void setCurrentPageIndicatorTintColor(UIColor value);
+
+    @Generated
+    @Selector("setDefersCurrentPageDisplay:")
+    public native void setDefersCurrentPageDisplay(boolean value);
+
+    @Generated
+    @Selector("setHidesForSinglePage:")
+    public native void setHidesForSinglePage(boolean value);
+
+    @Generated
+    @Selector("setNumberOfPages:")
+    public native void setNumberOfPages(@NInt long value);
+
+    @Generated
+    @Selector("setPageIndicatorTintColor:")
+    public native void setPageIndicatorTintColor(UIColor value);
+
+    @Generated
+    @Selector("sizeForNumberOfPages:")
+    @ByValue
+    public native CGSize sizeForNumberOfPages(@NInt long pageCount);
+
+    @Generated
+    @Selector("updateCurrentPageDisplay")
+    public native void updateCurrentPageDisplay();
 }

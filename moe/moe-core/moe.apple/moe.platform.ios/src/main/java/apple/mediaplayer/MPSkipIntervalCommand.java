@@ -19,6 +19,7 @@ package apple.mediaplayer;
 import apple.NSObject;
 import apple.foundation.NSArray;
 import apple.foundation.NSMethodSignature;
+import apple.foundation.NSNumber;
 import apple.foundation.NSSet;
 import org.moe.natj.c.ann.FunctionPtr;
 import org.moe.natj.general.NatJ;
@@ -54,13 +55,13 @@ public class MPSkipIntervalCommand extends MPRemoteCommand {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native MPSkipIntervalCommand alloc();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -147,7 +148,7 @@ public class MPSkipIntervalCommand extends MPRemoteCommand {
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")
@@ -164,9 +165,9 @@ public class MPSkipIntervalCommand extends MPRemoteCommand {
 
     @Generated
     @Selector("preferredIntervals")
-    public native NSArray<?> preferredIntervals();
+    public native NSArray<? extends NSNumber> preferredIntervals();
 
     @Generated
     @Selector("setPreferredIntervals:")
-    public native void setPreferredIntervals(NSArray<?> value);
+    public native void setPreferredIntervals(NSArray<? extends NSNumber> value);
 }

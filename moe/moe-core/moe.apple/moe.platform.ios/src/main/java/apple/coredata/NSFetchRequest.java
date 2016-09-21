@@ -19,6 +19,7 @@ package apple.coredata;
 import apple.NSObject;
 import apple.foundation.NSArray;
 import apple.foundation.NSCoder;
+import apple.foundation.NSError;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSPredicate;
 import apple.foundation.NSSet;
@@ -35,6 +36,7 @@ import org.moe.natj.general.ann.NInt;
 import org.moe.natj.general.ann.NUInt;
 import org.moe.natj.general.ann.Owned;
 import org.moe.natj.general.ann.Runtime;
+import org.moe.natj.general.ptr.Ptr;
 import org.moe.natj.general.ptr.VoidPtr;
 import org.moe.natj.objc.Class;
 import org.moe.natj.objc.ObjCRuntime;
@@ -47,7 +49,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @Library("CoreData")
 @Runtime(ObjCRuntime.class)
 @ObjCClassBinding
-public class NSFetchRequest extends NSPersistentStoreRequest implements NSCoding {
+public class NSFetchRequest<_ResultType> extends NSPersistentStoreRequest implements NSCoding {
     static {
         NatJ.register();
     }
@@ -58,17 +60,13 @@ public class NSFetchRequest extends NSPersistentStoreRequest implements NSCoding
     }
 
     @Generated
-    @Owned
-    @Selector("alloc")
-    public static native NSFetchRequest alloc();
-
-    @Generated
-    @Selector("fetchRequestWithEntityName:")
-    public static native NSFetchRequest fetchRequestWithEntityName(String entityName);
-
-    @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
+    @Owned
+    @Selector("alloc")
+    public static native NSFetchRequest<?> alloc();
 
     @Generated
     @Selector("allocWithZone:")
@@ -104,6 +102,10 @@ public class NSFetchRequest extends NSPersistentStoreRequest implements NSCoding
     @Generated
     @Selector("description")
     public static native String description_static();
+
+    @Generated
+    @Selector("fetchRequestWithEntityName:")
+    public static native <_ResultType> NSFetchRequest<?> fetchRequestWithEntityName(String entityName);
 
     @Generated
     @Selector("hash")
@@ -155,7 +157,7 @@ public class NSFetchRequest extends NSPersistentStoreRequest implements NSCoding
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")
@@ -181,6 +183,10 @@ public class NSFetchRequest extends NSPersistentStoreRequest implements NSCoding
     @Generated
     @Selector("entityName")
     public native String entityName();
+
+    @Generated
+    @Selector("execute:")
+    public native NSArray<?> execute(Ptr<NSError> error);
 
     @Generated
     @Selector("fetchBatchSize")
@@ -215,15 +221,15 @@ public class NSFetchRequest extends NSPersistentStoreRequest implements NSCoding
 
     @Generated
     @Selector("init")
-    public native NSFetchRequest init();
+    public native NSFetchRequest<?> init();
 
     @Generated
     @Selector("initWithCoder:")
-    public native NSFetchRequest initWithCoder(NSCoder aDecoder);
+    public native NSFetchRequest<?> initWithCoder(NSCoder aDecoder);
 
     @Generated
     @Selector("initWithEntityName:")
-    public native NSFetchRequest initWithEntityName(String entityName);
+    public native NSFetchRequest<?> initWithEntityName(String entityName);
 
     @Generated
     @Selector("predicate")

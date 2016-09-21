@@ -59,41 +59,23 @@ public class CNContactFormatter extends NSFormatter {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native CNContactFormatter alloc();
 
     @Generated
-    @Selector("attributedStringFromContact:style:defaultAttributes:")
-    public static native NSAttributedString attributedStringFromContactStyleDefaultAttributes(CNContact contact,
-            @NInt long style, NSDictionary<?, ?> attributes);
-
-    @Generated
-    @Selector("delimiterForContact:")
-    public static native String delimiterForContact(CNContact contact);
-
-    @Generated
-    @Selector("descriptorForRequiredKeysForStyle:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native CNKeyDescriptor descriptorForRequiredKeysForStyle(@NInt long style);
-
-    @Generated
-    @Selector("nameOrderForContact:")
-    @NInt
-    public static native long nameOrderForContact(CNContact contact);
-
-    @Generated
-    @Selector("stringFromContact:style:")
-    public static native String stringFromContactStyle(CNContact contact, @NInt long style);
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
-
-    @Generated
     @Selector("allocWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object allocWithZone(VoidPtr zone);
+
+    @Generated
+    @Selector("attributedStringFromContact:style:defaultAttributes:")
+    public static native NSAttributedString attributedStringFromContactStyleDefaultAttributes(CNContact contact,
+            @NInt long style, NSDictionary<?, ?> attributes);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -122,8 +104,17 @@ public class CNContactFormatter extends NSFormatter {
     public static native String debugDescription_static();
 
     @Generated
+    @Selector("delimiterForContact:")
+    public static native String delimiterForContact(CNContact contact);
+
+    @Generated
     @Selector("description")
     public static native String description_static();
+
+    @Generated
+    @Selector("descriptorForRequiredKeysForStyle:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native CNKeyDescriptor descriptorForRequiredKeysForStyle(@NInt long style);
 
     @Generated
     @Selector("hash")
@@ -160,6 +151,11 @@ public class CNContactFormatter extends NSFormatter {
     public static native void load_objc_static();
 
     @Generated
+    @Selector("nameOrderForContact:")
+    @NInt
+    public static native long nameOrderForContact(CNContact contact);
+
+    @Generated
     @Owned
     @Selector("new")
     @MappedReturn(ObjCObjectMapper.class)
@@ -176,6 +172,10 @@ public class CNContactFormatter extends NSFormatter {
     @Generated
     @Selector("setVersion:")
     public static native void setVersion_static(@NInt long aVersion);
+
+    @Generated
+    @Selector("stringFromContact:style:")
+    public static native String stringFromContactStyle(CNContact contact, @NInt long style);
 
     @Generated
     @Selector("superclass")
@@ -196,6 +196,10 @@ public class CNContactFormatter extends NSFormatter {
     public native CNContactFormatter init();
 
     @Generated
+    @Selector("initWithCoder:")
+    public native CNContactFormatter initWithCoder(NSCoder aDecoder);
+
+    @Generated
     @Selector("setStyle:")
     public native void setStyle(@NInt long value);
 
@@ -207,8 +211,4 @@ public class CNContactFormatter extends NSFormatter {
     @Selector("style")
     @NInt
     public native long style();
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native CNContactFormatter initWithCoder(NSCoder aDecoder);
 }

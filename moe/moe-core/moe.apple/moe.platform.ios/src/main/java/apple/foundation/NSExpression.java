@@ -57,9 +57,48 @@ public class NSExpression extends NSObject implements NSSecureCoding, NSCopying 
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native NSExpression alloc();
+
+    @Generated
+    @Selector("allocWithZone:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object allocWithZone(VoidPtr zone);
+
+    @Generated
+    @Selector("automaticallyNotifiesObserversForKey:")
+    public static native boolean automaticallyNotifiesObserversForKey(String key);
+
+    @Generated
+    @Selector("cancelPreviousPerformRequestsWithTarget:")
+    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+
+    @Generated
+    @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
+    public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
+            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
+            @Mapped(ObjCObjectMapper.class) Object anArgument);
+
+    @Generated
+    @Selector("classFallbacksForKeyedArchiver")
+    public static native NSArray<String> classFallbacksForKeyedArchiver();
+
+    @Generated
+    @Selector("classForKeyedUnarchiver")
+    public static native Class classForKeyedUnarchiver();
+
+    @Generated
+    @Selector("debugDescription")
+    public static native String debugDescription_static();
+
+    @Generated
+    @Selector("description")
+    public static native String description_static();
 
     @Generated
     @Selector("expressionForAggregate:")
@@ -74,6 +113,11 @@ public class NSExpression extends NSObject implements NSSecureCoding, NSCopying 
     public static native NSExpression expressionForBlockArguments(
             @ObjCBlock(name = "call_expressionForBlockArguments") Block_expressionForBlockArguments block,
             NSArray<? extends NSExpression> arguments);
+
+    @Generated
+    @Selector("expressionForConditional:trueExpression:falseExpression:")
+    public static native NSExpression expressionForConditionalTrueExpressionFalseExpression(NSPredicate predicate,
+            NSExpression trueExpression, NSExpression falseExpression);
 
     @Generated
     @Selector("expressionForConstantValue:")
@@ -129,54 +173,6 @@ public class NSExpression extends NSObject implements NSSecureCoding, NSCopying 
     @Generated
     @Selector("expressionWithFormat:arguments:")
     public static native NSExpression expressionWithFormatArguments(String expressionFormat, BytePtr argList);
-
-    @Generated
-    @Selector("supportsSecureCoding")
-    public static native boolean supportsSecureCoding();
-
-    @Generated
-    @Selector("expressionForConditional:trueExpression:falseExpression:")
-    public static native NSExpression expressionForConditionalTrueExpressionFalseExpression(NSPredicate predicate,
-            NSExpression trueExpression, NSExpression falseExpression);
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
-
-    @Generated
-    @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
-
-    @Generated
-    @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
-
-    @Generated
-    @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
-
-    @Generated
-    @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
-    public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
-
-    @Generated
-    @Selector("classFallbacksForKeyedArchiver")
-    public static native NSArray<String> classFallbacksForKeyedArchiver();
-
-    @Generated
-    @Selector("classForKeyedUnarchiver")
-    public static native Class classForKeyedUnarchiver();
-
-    @Generated
-    @Selector("debugDescription")
-    public static native String debugDescription_static();
-
-    @Generated
-    @Selector("description")
-    public static native String description_static();
 
     @Generated
     @Selector("hash")
@@ -235,6 +231,10 @@ public class NSExpression extends NSObject implements NSSecureCoding, NSCopying 
     public static native Class superclass_static();
 
     @Generated
+    @Selector("supportsSecureCoding")
+    public static native boolean supportsSecureCoding();
+
+    @Generated
     @Selector("version")
     @NInt
     public static native long version_static();
@@ -268,6 +268,11 @@ public class NSExpression extends NSObject implements NSSecureCoding, NSCopying 
     public native void encodeWithCoder(NSCoder aCoder);
 
     @Generated
+    @Selector("expressionBlock")
+    @ObjCBlock(name = "call_expressionBlock_ret")
+    public native Block_expressionBlock_ret expressionBlock();
+
+    @Generated
     @Selector("expressionType")
     @NUInt
     public native long expressionType();
@@ -277,6 +282,10 @@ public class NSExpression extends NSObject implements NSSecureCoding, NSCopying 
     @MappedReturn(ObjCObjectMapper.class)
     public native Object expressionValueWithObjectContext(@Mapped(ObjCObjectMapper.class) Object object,
             NSMutableDictionary<?, ?> context);
+
+    @Generated
+    @Selector("falseExpression")
+    public native NSExpression falseExpression();
 
     @Generated
     @Selector("function")
@@ -321,30 +330,12 @@ public class NSExpression extends NSObject implements NSSecureCoding, NSCopying 
     }
 
     @Generated
-    @Selector("variable")
-    public native String variable();
-
-    @Generated
-    @Selector("expressionBlock")
-    @ObjCBlock(name = "call_expressionBlock_ret")
-    public native Block_expressionBlock_ret expressionBlock();
-
-    @Generated
-    @Selector("falseExpression")
-    public native NSExpression falseExpression();
-
-    @Generated
     @Selector("trueExpression")
     public native NSExpression trueExpression();
 
-    @Runtime(ObjCRuntime.class)
     @Generated
-    public interface Block_expressionForBlockArguments {
-        @Generated
-        @MappedReturn(ObjCObjectMapper.class)
-        Object call_expressionForBlockArguments(@Mapped(ObjCObjectMapper.class) Object arg0, NSArray<?> arg1,
-                NSMutableDictionary<?, ?> arg2);
-    }
+    @Selector("variable")
+    public native String variable();
 
     @Runtime(ObjCRuntime.class)
     @Generated
@@ -352,6 +343,15 @@ public class NSExpression extends NSObject implements NSSecureCoding, NSCopying 
         @Generated
         @MappedReturn(ObjCObjectMapper.class)
         Object call_expressionBlock_ret(@Mapped(ObjCObjectMapper.class) Object arg0, NSArray<?> arg1,
+                NSMutableDictionary<?, ?> arg2);
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_expressionForBlockArguments {
+        @Generated
+        @MappedReturn(ObjCObjectMapper.class)
+        Object call_expressionForBlockArguments(@Mapped(ObjCObjectMapper.class) Object arg0, NSArray<?> arg1,
                 NSMutableDictionary<?, ?> arg2);
     }
 }

@@ -55,13 +55,13 @@ public class AVAssetResourceLoadingDataRequest extends NSObject {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native AVAssetResourceLoadingDataRequest alloc();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -148,7 +148,7 @@ public class AVAssetResourceLoadingDataRequest extends NSObject {
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")
@@ -177,10 +177,10 @@ public class AVAssetResourceLoadingDataRequest extends NSObject {
     public native long requestedOffset();
 
     @Generated
-    @Selector("respondWithData:")
-    public native void respondWithData(NSData data);
-
-    @Generated
     @Selector("requestsAllDataToEndOfResource")
     public native boolean requestsAllDataToEndOfResource();
+
+    @Generated
+    @Selector("respondWithData:")
+    public native void respondWithData(NSData data);
 }

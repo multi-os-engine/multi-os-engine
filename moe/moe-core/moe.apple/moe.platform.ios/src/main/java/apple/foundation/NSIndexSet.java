@@ -60,29 +60,13 @@ public class NSIndexSet extends NSObject implements NSCopying, NSMutableCopying,
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native NSIndexSet alloc();
-
-    @Generated
-    @Selector("indexSet")
-    public static native NSIndexSet indexSet();
-
-    @Generated
-    @Selector("indexSetWithIndex:")
-    public static native NSIndexSet indexSetWithIndex(@NUInt long value);
-
-    @Generated
-    @Selector("indexSetWithIndexesInRange:")
-    public static native NSIndexSet indexSetWithIndexesInRange(@ByValue NSRange range);
-
-    @Generated
-    @Selector("supportsSecureCoding")
-    public static native boolean supportsSecureCoding();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -125,6 +109,18 @@ public class NSIndexSet extends NSObject implements NSCopying, NSMutableCopying,
     public static native long hash_static();
 
     @Generated
+    @Selector("indexSet")
+    public static native NSIndexSet indexSet();
+
+    @Generated
+    @Selector("indexSetWithIndex:")
+    public static native NSIndexSet indexSetWithIndex(@NUInt long value);
+
+    @Generated
+    @Selector("indexSetWithIndexesInRange:")
+    public static native NSIndexSet indexSetWithIndexesInRange(@ByValue NSRange range);
+
+    @Generated
     @Selector("initialize")
     public static native void initialize();
 
@@ -151,7 +147,7 @@ public class NSIndexSet extends NSObject implements NSCopying, NSMutableCopying,
 
     @Generated
     @Selector("load")
-    public static native void load_objc();
+    public static native void load_objc_static();
 
     @Generated
     @Owned
@@ -169,16 +165,20 @@ public class NSIndexSet extends NSObject implements NSCopying, NSMutableCopying,
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")
     public static native Class superclass_static();
 
     @Generated
+    @Selector("supportsSecureCoding")
+    public static native boolean supportsSecureCoding();
+
+    @Generated
     @Selector("version")
     @NInt
-    public static native long version();
+    public static native long version_static();
 
     @Generated
     @Selector("containsIndex:")

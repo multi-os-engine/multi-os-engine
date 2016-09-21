@@ -60,23 +60,23 @@ public class EKEventStore extends NSObject {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native EKEventStore alloc();
 
     @Generated
-    @Selector("authorizationStatusForEntityType:")
-    @NInt
-    public static native long authorizationStatusForEntityType(@NUInt long entityType);
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
-
-    @Generated
     @Selector("allocWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object allocWithZone(VoidPtr zone);
+
+    @Generated
+    @Selector("authorizationStatusForEntityType:")
+    @NInt
+    public static native long authorizationStatusForEntityType(@NUInt long entityType);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -158,7 +158,7 @@ public class EKEventStore extends NSObject {
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")

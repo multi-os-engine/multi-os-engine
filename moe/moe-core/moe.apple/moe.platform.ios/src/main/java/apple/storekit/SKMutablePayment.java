@@ -55,22 +55,13 @@ public class SKMutablePayment extends SKPayment {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native SKMutablePayment alloc();
-
-    @Generated
-    @Selector("paymentWithProduct:")
-    public static native SKMutablePayment paymentWithProduct(SKProduct product);
-
-    @Generated
-    @Deprecated
-    @Selector("paymentWithProductIdentifier:")
-    public static native SKMutablePayment paymentWithProductIdentifier(String identifier);
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -146,6 +137,15 @@ public class SKMutablePayment extends SKPayment {
     @Selector("new")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object new_objc();
+
+    @Generated
+    @Selector("paymentWithProduct:")
+    public static native SKMutablePayment paymentWithProduct(SKProduct product);
+
+    @Generated
+    @Deprecated
+    @Selector("paymentWithProductIdentifier:")
+    public static native SKMutablePayment paymentWithProductIdentifier(String identifier);
 
     @Generated
     @Selector("resolveClassMethod:")

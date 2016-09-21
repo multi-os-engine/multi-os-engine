@@ -59,17 +59,13 @@ public class NEVPNProtocol extends NSObject implements NSCopying, NSSecureCoding
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native NEVPNProtocol alloc();
-
-    @Generated
-    @Selector("supportsSecureCoding")
-    public static native boolean supportsSecureCoding();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -156,11 +152,15 @@ public class NEVPNProtocol extends NSObject implements NSCopying, NSSecureCoding
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")
     public static native Class superclass_static();
+
+    @Generated
+    @Selector("supportsSecureCoding")
+    public static native boolean supportsSecureCoding();
 
     @Generated
     @Selector("version")
@@ -190,6 +190,10 @@ public class NEVPNProtocol extends NSObject implements NSCopying, NSSecureCoding
     public native String identityDataPassword();
 
     @Generated
+    @Selector("identityReference")
+    public native NSData identityReference();
+
+    @Generated
     @Selector("init")
     public native NEVPNProtocol init();
 
@@ -200,6 +204,10 @@ public class NEVPNProtocol extends NSObject implements NSCopying, NSSecureCoding
     @Generated
     @Selector("passwordReference")
     public native NSData passwordReference();
+
+    @Generated
+    @Selector("proxySettings")
+    public native NEProxySettings proxySettings();
 
     @Generated
     @Selector("serverAddress")
@@ -218,8 +226,16 @@ public class NEVPNProtocol extends NSObject implements NSCopying, NSSecureCoding
     public native void setIdentityDataPassword(String value);
 
     @Generated
+    @Selector("setIdentityReference:")
+    public native void setIdentityReference(NSData value);
+
+    @Generated
     @Selector("setPasswordReference:")
     public native void setPasswordReference(NSData value);
+
+    @Generated
+    @Selector("setProxySettings:")
+    public native void setProxySettings(NEProxySettings value);
 
     @Generated
     @Selector("setServerAddress:")
@@ -238,20 +254,4 @@ public class NEVPNProtocol extends NSObject implements NSCopying, NSSecureCoding
     @Generated
     @Selector("username")
     public native String username();
-
-    @Generated
-    @Selector("identityReference")
-    public native NSData identityReference();
-
-    @Generated
-    @Selector("proxySettings")
-    public native NEProxySettings proxySettings();
-
-    @Generated
-    @Selector("setIdentityReference:")
-    public native void setIdentityReference(NSData value);
-
-    @Generated
-    @Selector("setProxySettings:")
-    public native void setProxySettings(NEProxySettings value);
 }

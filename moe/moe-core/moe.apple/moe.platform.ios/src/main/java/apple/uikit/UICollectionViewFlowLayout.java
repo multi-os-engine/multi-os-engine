@@ -59,17 +59,13 @@ public class UICollectionViewFlowLayout extends UICollectionViewLayout {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native UICollectionViewFlowLayout alloc();
-
-    @Generated
-    @Selector("layoutAttributesClass")
-    public static native Class layoutAttributesClass();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -141,8 +137,12 @@ public class UICollectionViewFlowLayout extends UICollectionViewLayout {
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
     @Generated
+    @Selector("layoutAttributesClass")
+    public static native Class layoutAttributesClass();
+
+    @Generated
     @Selector("load")
-    public static native void load_objc();
+    public static native void load_objc_static();
 
     @Generated
     @Owned
@@ -160,7 +160,7 @@ public class UICollectionViewFlowLayout extends UICollectionViewLayout {
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")
@@ -169,7 +169,7 @@ public class UICollectionViewFlowLayout extends UICollectionViewLayout {
     @Generated
     @Selector("version")
     @NInt
-    public static native long version();
+    public static native long version_static();
 
     @Generated
     @Selector("estimatedItemSize")
@@ -191,6 +191,10 @@ public class UICollectionViewFlowLayout extends UICollectionViewLayout {
     public native UICollectionViewFlowLayout init();
 
     @Generated
+    @Selector("initWithCoder:")
+    public native UICollectionViewFlowLayout initWithCoder(NSCoder aDecoder);
+
+    @Generated
     @Selector("itemSize")
     @ByValue
     public native CGSize itemSize();
@@ -209,6 +213,14 @@ public class UICollectionViewFlowLayout extends UICollectionViewLayout {
     @Selector("scrollDirection")
     @NInt
     public native long scrollDirection();
+
+    @Generated
+    @Selector("sectionFootersPinToVisibleBounds")
+    public native boolean sectionFootersPinToVisibleBounds();
+
+    @Generated
+    @Selector("sectionHeadersPinToVisibleBounds")
+    public native boolean sectionHeadersPinToVisibleBounds();
 
     @Generated
     @Selector("sectionInset")
@@ -244,26 +256,14 @@ public class UICollectionViewFlowLayout extends UICollectionViewLayout {
     public native void setScrollDirection(@NInt long value);
 
     @Generated
-    @Selector("setSectionInset:")
-    public native void setSectionInset(@ByValue UIEdgeInsets value);
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native UICollectionViewFlowLayout initWithCoder(NSCoder aDecoder);
-
-    @Generated
-    @Selector("sectionFootersPinToVisibleBounds")
-    public native boolean sectionFootersPinToVisibleBounds();
-
-    @Generated
-    @Selector("sectionHeadersPinToVisibleBounds")
-    public native boolean sectionHeadersPinToVisibleBounds();
-
-    @Generated
     @Selector("setSectionFootersPinToVisibleBounds:")
     public native void setSectionFootersPinToVisibleBounds(boolean value);
 
     @Generated
     @Selector("setSectionHeadersPinToVisibleBounds:")
     public native void setSectionHeadersPinToVisibleBounds(boolean value);
+
+    @Generated
+    @Selector("setSectionInset:")
+    public native void setSectionInset(@ByValue UIEdgeInsets value);
 }

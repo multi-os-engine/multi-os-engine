@@ -32,6 +32,7 @@ public final class UIKeyboardType {
     @Generated @NInt public static final long DecimalPad = 0x0000000000000008L;
     @Generated @NInt public static final long Twitter = 0x0000000000000009L;
     @Generated @NInt public static final long WebSearch = 0x000000000000000AL;
+    @Generated @NInt public static final long ASCIICapableNumberPad = 0x000000000000000BL;
     @Generated @NInt public static final long Alphabet = 0x0000000000000001L;
 
     @Generated

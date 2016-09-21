@@ -16,6 +16,7 @@ limitations under the License.
 
 package apple.uikit.protocol;
 
+import apple.foundation.NSArray;
 import apple.uikit.UIFocusAnimationCoordinator;
 import apple.uikit.UIFocusUpdateContext;
 import apple.uikit.UIView;
@@ -23,6 +24,7 @@ import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.Library;
 import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.objc.ObjCRuntime;
+import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 
@@ -37,8 +39,15 @@ public interface UIFocusEnvironment {
             UIFocusAnimationCoordinator coordinator);
 
     @Generated
+    @Selector("preferredFocusEnvironments")
+    NSArray<?> preferredFocusEnvironments();
+
+    @Generated
+    @IsOptional
     @Selector("preferredFocusedView")
-    UIView preferredFocusedView();
+    default UIView preferredFocusedView() {
+        throw new java.lang.UnsupportedOperationException();
+    }
 
     @Generated
     @Selector("setNeedsFocusUpdate")

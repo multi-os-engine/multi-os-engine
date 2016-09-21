@@ -54,17 +54,13 @@ public class GKPath extends NSObject {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native GKPath alloc();
-
-    @Generated
-    @Selector("pathWithGraphNodes:radius:")
-    public static native GKPath pathWithGraphNodesRadius(NSArray<? extends GKGraphNode2D> graphNodes, float radius);
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -142,6 +138,10 @@ public class GKPath extends NSObject {
     public static native Object new_objc();
 
     @Generated
+    @Selector("pathWithGraphNodes:radius:")
+    public static native GKPath pathWithGraphNodesRadius(NSArray<? extends GKGraphNode> graphNodes, float radius);
+
+    @Generated
     @Selector("resolveClassMethod:")
     public static native boolean resolveClassMethod(SEL sel);
 
@@ -151,7 +151,7 @@ public class GKPath extends NSObject {
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")
@@ -168,7 +168,7 @@ public class GKPath extends NSObject {
 
     @Generated
     @Selector("initWithGraphNodes:radius:")
-    public native GKPath initWithGraphNodesRadius(NSArray<? extends GKGraphNode2D> graphNodes, float radius);
+    public native GKPath initWithGraphNodesRadius(NSArray<? extends GKGraphNode> graphNodes, float radius);
 
     @Generated
     @Selector("isCyclical")

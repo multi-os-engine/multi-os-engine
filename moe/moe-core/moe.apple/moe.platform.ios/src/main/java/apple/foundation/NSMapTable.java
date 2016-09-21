@@ -56,34 +56,13 @@ public class NSMapTable<_KeyType, _ObjectType> extends NSObject implements NSCop
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native NSMapTable<?, ?> alloc();
-
-    @Generated
-    @Selector("mapTableWithKeyOptions:valueOptions:")
-    public static native <_KeyType, _ObjectType> NSMapTable<_KeyType, _ObjectType> mapTableWithKeyOptionsValueOptions(
-            @NUInt long keyOptions, @NUInt long valueOptions);
-
-    @Generated
-    @Selector("strongToStrongObjectsMapTable")
-    public static native <_KeyType, _ObjectType> NSMapTable<_KeyType, _ObjectType> strongToStrongObjectsMapTable();
-
-    @Generated
-    @Selector("strongToWeakObjectsMapTable")
-    public static native <_KeyType, _ObjectType> NSMapTable<_KeyType, _ObjectType> strongToWeakObjectsMapTable();
-
-    @Generated
-    @Selector("weakToStrongObjectsMapTable")
-    public static native <_KeyType, _ObjectType> NSMapTable<_KeyType, _ObjectType> weakToStrongObjectsMapTable();
-
-    @Generated
-    @Selector("weakToWeakObjectsMapTable")
-    public static native <_KeyType, _ObjectType> NSMapTable<_KeyType, _ObjectType> weakToWeakObjectsMapTable();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -155,6 +134,11 @@ public class NSMapTable<_KeyType, _ObjectType> extends NSObject implements NSCop
     public static native void load_objc_static();
 
     @Generated
+    @Selector("mapTableWithKeyOptions:valueOptions:")
+    public static native <_KeyType, _ObjectType> NSMapTable<_KeyType, _ObjectType> mapTableWithKeyOptionsValueOptions(
+            @NUInt long keyOptions, @NUInt long valueOptions);
+
+    @Generated
     @Owned
     @Selector("new")
     @MappedReturn(ObjCObjectMapper.class)
@@ -173,6 +157,14 @@ public class NSMapTable<_KeyType, _ObjectType> extends NSObject implements NSCop
     public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
+    @Selector("strongToStrongObjectsMapTable")
+    public static native <_KeyType, _ObjectType> NSMapTable<_KeyType, _ObjectType> strongToStrongObjectsMapTable();
+
+    @Generated
+    @Selector("strongToWeakObjectsMapTable")
+    public static native <_KeyType, _ObjectType> NSMapTable<_KeyType, _ObjectType> strongToWeakObjectsMapTable();
+
+    @Generated
     @Selector("superclass")
     public static native Class superclass_static();
 
@@ -180,6 +172,14 @@ public class NSMapTable<_KeyType, _ObjectType> extends NSObject implements NSCop
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("weakToStrongObjectsMapTable")
+    public static native <_KeyType, _ObjectType> NSMapTable<_KeyType, _ObjectType> weakToStrongObjectsMapTable();
+
+    @Generated
+    @Selector("weakToWeakObjectsMapTable")
+    public static native <_KeyType, _ObjectType> NSMapTable<_KeyType, _ObjectType> weakToWeakObjectsMapTable();
 
     @Generated
     @Owned
@@ -235,9 +235,9 @@ public class NSMapTable<_KeyType, _ObjectType> extends NSObject implements NSCop
     @Selector("objectEnumerator")
     public native NSEnumerator<_ObjectType> objectEnumerator();
 
-    @MappedReturn(ObjCObjectMapper.class)
     @Generated
     @Selector("objectForKey:")
+    @MappedReturn(ObjCObjectMapper.class)
     public native _ObjectType objectForKey(@Mapped(ObjCObjectMapper.class) _KeyType aKey);
 
     @Generated

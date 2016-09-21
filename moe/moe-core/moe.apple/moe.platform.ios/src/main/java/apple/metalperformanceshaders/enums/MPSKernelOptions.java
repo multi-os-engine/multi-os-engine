@@ -24,6 +24,8 @@ public final class MPSKernelOptions {
     @Generated @NUInt public static final long None = 0x0000000000000000L;
     @Generated @NUInt public static final long SkipAPIValidation = 0x0000000000000001L;
     @Generated @NUInt public static final long AllowReducedPrecision = 0x0000000000000002L;
+    @Generated @NUInt public static final long DisableInternalTiling = 0x0000000000000004L;
+    @Generated @NUInt public static final long InsertDebugGroups = 0x0000000000000008L;
 
     @Generated
     private MPSKernelOptions() {

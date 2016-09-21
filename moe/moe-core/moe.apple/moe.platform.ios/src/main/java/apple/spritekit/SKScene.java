@@ -25,6 +25,7 @@ import apple.foundation.NSCoder;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
 import apple.gameplaykit.GKPolygonObstacle;
+import apple.gameplaykit.protocol.GKSceneRootNodeType;
 import apple.spritekit.protocol.SKSceneDelegate;
 import apple.uikit.UIColor;
 import org.moe.natj.c.ann.FunctionPtr;
@@ -51,7 +52,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @Library("SpriteKit")
 @Runtime(ObjCRuntime.class)
 @ObjCClassBinding
-public class SKScene extends SKEffectNode {
+public class SKScene extends SKEffectNode implements GKSceneRootNodeType {
     static {
         NatJ.register();
     }
@@ -62,25 +63,13 @@ public class SKScene extends SKEffectNode {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native SKScene alloc();
-
-    @Generated
-    @Selector("node")
-    public static native SKScene node();
-
-    @Generated
-    @Selector("nodeWithFileNamed:")
-    public static native SKScene nodeWithFileNamed(String filename);
-
-    @Generated
-    @Selector("sceneWithSize:")
-    public static native SKScene sceneWithSize(@ByValue CGSize size);
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -162,6 +151,14 @@ public class SKScene extends SKEffectNode {
     public static native Object new_objc();
 
     @Generated
+    @Selector("node")
+    public static native SKScene node();
+
+    @Generated
+    @Selector("nodeWithFileNamed:")
+    public static native SKScene nodeWithFileNamed(String filename);
+
+    @Generated
     @Selector("obstaclesFromNodeBounds:")
     public static native NSArray<? extends GKPolygonObstacle> obstaclesFromNodeBounds(NSArray<? extends SKNode> nodes);
 
@@ -184,6 +181,10 @@ public class SKScene extends SKEffectNode {
     public static native boolean resolveInstanceMethod(SEL sel);
 
     @Generated
+    @Selector("sceneWithSize:")
+    public static native SKScene sceneWithSize(@ByValue CGSize size);
+
+    @Generated
     @Selector("setVersion:")
     public static native void setVersion_static(@NInt long aVersion);
 
@@ -202,8 +203,16 @@ public class SKScene extends SKEffectNode {
     public native CGPoint anchorPoint();
 
     @Generated
+    @Selector("audioEngine")
+    public native AVAudioEngine audioEngine();
+
+    @Generated
     @Selector("backgroundColor")
     public native UIColor backgroundColor();
+
+    @Generated
+    @Selector("camera")
+    public native SKCameraNode camera();
 
     @Generated
     @Selector("convertPointFromView:")
@@ -257,6 +266,10 @@ public class SKScene extends SKEffectNode {
     public native SKScene initWithSize(@ByValue CGSize size);
 
     @Generated
+    @Selector("listener")
+    public native SKNode listener();
+
+    @Generated
     @Selector("physicsWorld")
     public native SKPhysicsWorld physicsWorld();
 
@@ -266,12 +279,32 @@ public class SKScene extends SKEffectNode {
     public native long scaleMode();
 
     @Generated
+    @Selector("sceneDidLoad")
+    public native void sceneDidLoad();
+
+    @Generated
     @Selector("setAnchorPoint:")
     public native void setAnchorPoint(@ByValue CGPoint value);
 
     @Generated
     @Selector("setBackgroundColor:")
     public native void setBackgroundColor(UIColor value);
+
+    @Generated
+    @Selector("setCamera:")
+    public native void setCamera_unsafe(SKCameraNode value);
+
+    @Generated
+    public void setCamera(SKCameraNode value) {
+        Object __old = camera();
+        if (value != null) {
+            org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);
+        }
+        setCamera_unsafe(value);
+        if (__old != null) {
+            org.moe.natj.objc.ObjCRuntime.dissociateObjCObject(this, __old);
+        }
+    }
 
     @Generated
     @Selector("setDelegate:")
@@ -284,6 +317,22 @@ public class SKScene extends SKEffectNode {
             org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);
         }
         setDelegate_unsafe(value);
+        if (__old != null) {
+            org.moe.natj.objc.ObjCRuntime.dissociateObjCObject(this, __old);
+        }
+    }
+
+    @Generated
+    @Selector("setListener:")
+    public native void setListener_unsafe(SKNode value);
+
+    @Generated
+    public void setListener(SKNode value) {
+        Object __old = listener();
+        if (value != null) {
+            org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);
+        }
+        setListener_unsafe(value);
         if (__old != null) {
             org.moe.natj.objc.ObjCRuntime.dissociateObjCObject(this, __old);
         }
@@ -313,48 +362,4 @@ public class SKScene extends SKEffectNode {
     @Generated
     @Selector("willMoveFromView:")
     public native void willMoveFromView(SKView view);
-
-    @Generated
-    @Selector("audioEngine")
-    public native AVAudioEngine audioEngine();
-
-    @Generated
-    @Selector("camera")
-    public native SKCameraNode camera();
-
-    @Generated
-    @Selector("listener")
-    public native SKNode listener();
-
-    @Generated
-    @Selector("setCamera:")
-    public native void setCamera_unsafe(SKCameraNode value);
-
-    @Generated
-    public void setCamera(SKCameraNode value) {
-        Object __old = camera();
-        if (value != null) {
-            org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);
-        }
-        setCamera_unsafe(value);
-        if (__old != null) {
-            org.moe.natj.objc.ObjCRuntime.dissociateObjCObject(this, __old);
-        }
-    }
-
-    @Generated
-    @Selector("setListener:")
-    public native void setListener_unsafe(SKNode value);
-
-    @Generated
-    public void setListener(SKNode value) {
-        Object __old = listener();
-        if (value != null) {
-            org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);
-        }
-        setListener_unsafe(value);
-        if (__old != null) {
-            org.moe.natj.objc.ObjCRuntime.dissociateObjCObject(this, __old);
-        }
-    }
 }

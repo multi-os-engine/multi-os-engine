@@ -28,6 +28,7 @@ import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
 import apple.foundation.protocol.NSCoding;
 import apple.uikit.protocol.UITableViewDataSource;
+import apple.uikit.protocol.UITableViewDataSourcePrefetching;
 import apple.uikit.struct.UIEdgeInsets;
 import org.moe.natj.c.ann.FunctionPtr;
 import org.moe.natj.c.ann.Variadic;
@@ -68,11 +69,6 @@ public class UITableView extends UIScrollView implements NSCoding {
     }
 
     @Generated
-    @Owned
-    @Selector("alloc")
-    public static native UITableView alloc();
-
-    @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
 
@@ -81,6 +77,11 @@ public class UITableView extends UIScrollView implements NSCoding {
     public static native void addKeyframeWithRelativeStartTimeRelativeDurationAnimations(double frameStartTime,
             double frameDuration,
             @ObjCBlock(name = "call_addKeyframeWithRelativeStartTimeRelativeDurationAnimations") UIView.Block_addKeyframeWithRelativeStartTimeRelativeDurationAnimations animations);
+
+    @Generated
+    @Owned
+    @Selector("alloc")
+    public static native UITableView alloc();
 
     @Generated
     @Selector("allocWithZone:")
@@ -349,6 +350,12 @@ public class UITableView extends UIScrollView implements NSCoding {
     public static native long userInterfaceLayoutDirectionForSemanticContentAttribute(@NInt long attribute);
 
     @Generated
+    @Selector("userInterfaceLayoutDirectionForSemanticContentAttribute:relativeToLayoutDirection:")
+    @NInt
+    public static native long userInterfaceLayoutDirectionForSemanticContentAttributeRelativeToLayoutDirection(
+            @NInt long semanticContentAttribute, @NInt long layoutDirection);
+
+    @Generated
     @Selector("version")
     @NInt
     public static native long version_static();
@@ -370,6 +377,52 @@ public class UITableView extends UIScrollView implements NSCoding {
     public native boolean allowsSelectionDuringEditing();
 
     @Generated
+    @ProtocolClassMethod("appearance")
+    @MappedReturn(ObjCObjectMapper.class)
+    public Object _appearance() {
+        return appearance();
+    }
+
+    @Generated
+    @ProtocolClassMethod("appearanceForTraitCollection")
+    @MappedReturn(ObjCObjectMapper.class)
+    public Object _appearanceForTraitCollection(UITraitCollection trait) {
+        return appearanceForTraitCollection(trait);
+    }
+
+    @Generated
+    @Deprecated
+    @ProtocolClassMethod("appearanceForTraitCollectionWhenContainedIn")
+    @MappedReturn(ObjCObjectMapper.class)
+    public Object _appearanceForTraitCollectionWhenContainedIn(UITraitCollection trait,
+            @Mapped(ObjCObjectMapper.class) Object ContainerClass, Object... varargs) {
+        return appearanceForTraitCollectionWhenContainedIn(trait, ContainerClass, varargs);
+    }
+
+    @Generated
+    @ProtocolClassMethod("appearanceForTraitCollectionWhenContainedInInstancesOfClasses")
+    @MappedReturn(ObjCObjectMapper.class)
+    public Object _appearanceForTraitCollectionWhenContainedInInstancesOfClasses(UITraitCollection trait,
+            NSArray<?> containerTypes) {
+        return appearanceForTraitCollectionWhenContainedInInstancesOfClasses(trait, containerTypes);
+    }
+
+    @Generated
+    @Deprecated
+    @ProtocolClassMethod("appearanceWhenContainedIn")
+    @MappedReturn(ObjCObjectMapper.class)
+    public Object _appearanceWhenContainedIn(@Mapped(ObjCObjectMapper.class) Object ContainerClass, Object... varargs) {
+        return appearanceWhenContainedIn(ContainerClass, varargs);
+    }
+
+    @Generated
+    @ProtocolClassMethod("appearanceWhenContainedInInstancesOfClasses")
+    @MappedReturn(ObjCObjectMapper.class)
+    public Object _appearanceWhenContainedInInstancesOfClasses(NSArray<?> containerTypes) {
+        return appearanceWhenContainedInInstancesOfClasses(containerTypes);
+    }
+
+    @Generated
     @Selector("backgroundView")
     public native UIView backgroundView();
 
@@ -380,6 +433,10 @@ public class UITableView extends UIScrollView implements NSCoding {
     @Generated
     @Selector("cellForRowAtIndexPath:")
     public native UITableViewCell cellForRowAtIndexPath(NSIndexPath indexPath);
+
+    @Generated
+    @Selector("cellLayoutMarginsFollowReadableWidth")
+    public native boolean cellLayoutMarginsFollowReadableWidth();
 
     @Generated
     @Selector("dataSource")
@@ -524,6 +581,11 @@ public class UITableView extends UIScrollView implements NSCoding {
     public native long numberOfSections();
 
     @Generated
+    @Selector("prefetchDataSource")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native UITableViewDataSourcePrefetching prefetchDataSource();
+
+    @Generated
     @Selector("rectForFooterInSection:")
     @ByValue
     public native CGRect rectForFooterInSection(@NInt long section);
@@ -575,6 +637,10 @@ public class UITableView extends UIScrollView implements NSCoding {
     @Generated
     @Selector("reloadSections:withRowAnimation:")
     public native void reloadSectionsWithRowAnimation(NSIndexSet sections, @NInt long animation);
+
+    @Generated
+    @Selector("remembersLastFocusedIndexPath")
+    public native boolean remembersLastFocusedIndexPath();
 
     @Generated
     @Selector("rowHeight")
@@ -661,6 +727,10 @@ public class UITableView extends UIScrollView implements NSCoding {
     public native void setBackgroundView(UIView value);
 
     @Generated
+    @Selector("setCellLayoutMarginsFollowReadableWidth:")
+    public native void setCellLayoutMarginsFollowReadableWidth(boolean value);
+
+    @Generated
     @Selector("setDataSource:")
     public native void setDataSource_unsafe(@Mapped(ObjCObjectMapper.class) UITableViewDataSource value);
 
@@ -707,6 +777,27 @@ public class UITableView extends UIScrollView implements NSCoding {
     @Generated
     @Selector("setEstimatedSectionHeaderHeight:")
     public native void setEstimatedSectionHeaderHeight(@NFloat double value);
+
+    @Generated
+    @Selector("setPrefetchDataSource:")
+    public native void setPrefetchDataSource_unsafe(
+            @Mapped(ObjCObjectMapper.class) UITableViewDataSourcePrefetching value);
+
+    @Generated
+    public void setPrefetchDataSource(@Mapped(ObjCObjectMapper.class) UITableViewDataSourcePrefetching value) {
+        Object __old = prefetchDataSource();
+        if (value != null) {
+            org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);
+        }
+        setPrefetchDataSource_unsafe(value);
+        if (__old != null) {
+            org.moe.natj.objc.ObjCRuntime.dissociateObjCObject(this, __old);
+        }
+    }
+
+    @Generated
+    @Selector("setRemembersLastFocusedIndexPath:")
+    public native void setRemembersLastFocusedIndexPath(boolean value);
 
     @Generated
     @Selector("setRowHeight:")
@@ -776,66 +867,4 @@ public class UITableView extends UIScrollView implements NSCoding {
     @Generated
     @Selector("visibleCells")
     public native NSArray<? extends UITableViewCell> visibleCells();
-
-    @Generated
-    @Selector("cellLayoutMarginsFollowReadableWidth")
-    public native boolean cellLayoutMarginsFollowReadableWidth();
-
-    @Generated
-    @Selector("setCellLayoutMarginsFollowReadableWidth:")
-    public native void setCellLayoutMarginsFollowReadableWidth(boolean value);
-
-    @Generated
-    @Selector("remembersLastFocusedIndexPath")
-    public native boolean remembersLastFocusedIndexPath();
-
-    @Generated
-    @Selector("setRemembersLastFocusedIndexPath:")
-    public native void setRemembersLastFocusedIndexPath(boolean value);
-
-    @Generated
-    @ProtocolClassMethod("appearance")
-    @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearance() {
-        return appearance();
-    }
-
-    @Generated
-    @ProtocolClassMethod("appearanceForTraitCollection")
-    @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearanceForTraitCollection(UITraitCollection trait) {
-        return appearanceForTraitCollection(trait);
-    }
-
-    @Generated
-    @Deprecated
-    @ProtocolClassMethod("appearanceForTraitCollectionWhenContainedIn")
-    @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearanceForTraitCollectionWhenContainedIn(UITraitCollection trait,
-            @Mapped(ObjCObjectMapper.class) Object ContainerClass, Object... varargs) {
-        return appearanceForTraitCollectionWhenContainedIn(trait, ContainerClass, varargs);
-    }
-
-    @Generated
-    @ProtocolClassMethod("appearanceForTraitCollectionWhenContainedInInstancesOfClasses")
-    @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearanceForTraitCollectionWhenContainedInInstancesOfClasses(UITraitCollection trait,
-            NSArray<?> containerTypes) {
-        return appearanceForTraitCollectionWhenContainedInInstancesOfClasses(trait, containerTypes);
-    }
-
-    @Generated
-    @Deprecated
-    @ProtocolClassMethod("appearanceWhenContainedIn")
-    @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearanceWhenContainedIn(@Mapped(ObjCObjectMapper.class) Object ContainerClass, Object... varargs) {
-        return appearanceWhenContainedIn(ContainerClass, varargs);
-    }
-
-    @Generated
-    @ProtocolClassMethod("appearanceWhenContainedInInstancesOfClasses")
-    @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearanceWhenContainedInInstancesOfClasses(NSArray<?> containerTypes) {
-        return appearanceWhenContainedInInstancesOfClasses(containerTypes);
-    }
 }

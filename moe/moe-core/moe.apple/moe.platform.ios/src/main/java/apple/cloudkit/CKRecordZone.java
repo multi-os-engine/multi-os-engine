@@ -58,21 +58,13 @@ public class CKRecordZone extends NSObject implements NSSecureCoding, NSCopying 
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native CKRecordZone alloc();
-
-    @Generated
-    @Selector("defaultRecordZone")
-    public static native CKRecordZone defaultRecordZone();
-
-    @Generated
-    @Selector("supportsSecureCoding")
-    public static native boolean supportsSecureCoding();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -104,6 +96,10 @@ public class CKRecordZone extends NSObject implements NSSecureCoding, NSCopying 
     @Generated
     @Selector("debugDescription")
     public static native String debugDescription_static();
+
+    @Generated
+    @Selector("defaultRecordZone")
+    public static native CKRecordZone defaultRecordZone();
 
     @Generated
     @Selector("description")
@@ -159,11 +155,15 @@ public class CKRecordZone extends NSObject implements NSSecureCoding, NSCopying 
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")
     public static native Class superclass_static();
+
+    @Generated
+    @Selector("supportsSecureCoding")
+    public static native boolean supportsSecureCoding();
 
     @Generated
     @Selector("version")

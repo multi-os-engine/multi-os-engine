@@ -67,37 +67,13 @@ public final class CFAllocatorContext extends StructObject {
     public native void setInfo(VoidPtr value);
 
     @Generated
-    @StructureField(order = 2, isGetter = false)
-    public native void setRetain(@FunctionPtr(name = "call_retain") Function_retain value);
-
-    @Generated
-    @StructureField(order = 3, isGetter = false)
-    public native void setRelease(@FunctionPtr(name = "call_release") Function_release value);
-
-    @Generated
-    @StructureField(order = 4, isGetter = false)
-    public native void setCopyDescription(@FunctionPtr(name = "call_copyDescription") Function_copyDescription value);
-
-    @Generated
-    @StructureField(order = 5, isGetter = false)
-    public native void setAllocate(@FunctionPtr(name = "call_allocate") Function_allocate value);
-
-    @Generated
-    @StructureField(order = 6, isGetter = false)
-    public native void setReallocate(@FunctionPtr(name = "call_reallocate") Function_reallocate value);
-
-    @Generated
-    @StructureField(order = 7, isGetter = false)
-    public native void setDeallocate(@FunctionPtr(name = "call_deallocate") Function_deallocate value);
-
-    @Generated
-    @StructureField(order = 8, isGetter = false)
-    public native void setPreferredSize(@FunctionPtr(name = "call_preferredSize") Function_preferredSize value);
-
-    @Generated
     @StructureField(order = 2, isGetter = true)
     @FunctionPtr(name = "call_retain")
     public native Function_retain retain();
+
+    @Generated
+    @StructureField(order = 2, isGetter = false)
+    public native void setRetain(@FunctionPtr(name = "call_retain") Function_retain value);
 
     @Generated
     @StructureField(order = 3, isGetter = true)
@@ -105,9 +81,17 @@ public final class CFAllocatorContext extends StructObject {
     public native Function_release release();
 
     @Generated
+    @StructureField(order = 3, isGetter = false)
+    public native void setRelease(@FunctionPtr(name = "call_release") Function_release value);
+
+    @Generated
     @StructureField(order = 4, isGetter = true)
     @FunctionPtr(name = "call_copyDescription")
     public native Function_copyDescription copyDescription();
+
+    @Generated
+    @StructureField(order = 4, isGetter = false)
+    public native void setCopyDescription(@FunctionPtr(name = "call_copyDescription") Function_copyDescription value);
 
     @Generated
     @StructureField(order = 5, isGetter = true)
@@ -115,9 +99,17 @@ public final class CFAllocatorContext extends StructObject {
     public native Function_allocate allocate();
 
     @Generated
+    @StructureField(order = 5, isGetter = false)
+    public native void setAllocate(@FunctionPtr(name = "call_allocate") Function_allocate value);
+
+    @Generated
     @StructureField(order = 6, isGetter = true)
     @FunctionPtr(name = "call_reallocate")
     public native Function_reallocate reallocate();
+
+    @Generated
+    @StructureField(order = 6, isGetter = false)
+    public native void setReallocate(@FunctionPtr(name = "call_reallocate") Function_reallocate value);
 
     @Generated
     @StructureField(order = 7, isGetter = true)
@@ -125,9 +117,17 @@ public final class CFAllocatorContext extends StructObject {
     public native Function_deallocate deallocate();
 
     @Generated
+    @StructureField(order = 7, isGetter = false)
+    public native void setDeallocate(@FunctionPtr(name = "call_deallocate") Function_deallocate value);
+
+    @Generated
     @StructureField(order = 8, isGetter = true)
     @FunctionPtr(name = "call_preferredSize")
     public native Function_preferredSize preferredSize();
+
+    @Generated
+    @StructureField(order = 8, isGetter = false)
+    public native void setPreferredSize(@FunctionPtr(name = "call_preferredSize") Function_preferredSize value);
 
     @Runtime(CRuntime.class)
     @Generated

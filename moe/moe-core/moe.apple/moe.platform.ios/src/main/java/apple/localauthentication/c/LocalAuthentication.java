@@ -39,10 +39,10 @@ public final class LocalAuthentication {
 
     @Generated
     @CVariable()
-    @MappedReturn(ObjCStringMapper.class)
-    public static native String LAErrorDomain();
+    public static native double LATouchIDAuthenticationMaximumAllowableReuseDuration();
 
     @Generated
     @CVariable()
-    public static native double LATouchIDAuthenticationMaximumAllowableReuseDuration();
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String LAErrorDomain();
 }

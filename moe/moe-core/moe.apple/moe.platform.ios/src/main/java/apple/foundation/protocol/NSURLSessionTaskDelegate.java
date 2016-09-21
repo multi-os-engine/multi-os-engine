@@ -24,6 +24,7 @@ import apple.foundation.NSURLCredential;
 import apple.foundation.NSURLRequest;
 import apple.foundation.NSURLSession;
 import apple.foundation.NSURLSessionTask;
+import apple.foundation.NSURLSessionTaskMetrics;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.Library;
 import org.moe.natj.general.ann.NInt;
@@ -43,6 +44,14 @@ public interface NSURLSessionTaskDelegate extends NSURLSessionDelegate {
     @IsOptional
     @Selector("URLSession:task:didCompleteWithError:")
     default void URLSessionTaskDidCompleteWithError(NSURLSession session, NSURLSessionTask task, NSError error) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Generated
+    @IsOptional
+    @Selector("URLSession:task:didFinishCollectingMetrics:")
+    default void URLSessionTaskDidFinishCollectingMetrics(NSURLSession session, NSURLSessionTask task,
+            NSURLSessionTaskMetrics metrics) {
         throw new java.lang.UnsupportedOperationException();
     }
 

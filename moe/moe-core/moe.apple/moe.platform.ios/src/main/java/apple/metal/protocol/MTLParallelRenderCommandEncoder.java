@@ -19,6 +19,7 @@ package apple.metal.protocol;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.Library;
 import org.moe.natj.general.ann.MappedReturn;
+import org.moe.natj.general.ann.NUInt;
 import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.ObjCProtocolName;
@@ -34,4 +35,16 @@ public interface MTLParallelRenderCommandEncoder extends MTLCommandEncoder {
     @Selector("renderCommandEncoder")
     @MappedReturn(ObjCObjectMapper.class)
     Object renderCommandEncoder();
+
+    @Generated
+    @Selector("setColorStoreAction:atIndex:")
+    void setColorStoreActionAtIndex(@NUInt long storeAction, @NUInt long colorAttachmentIndex);
+
+    @Generated
+    @Selector("setDepthStoreAction:")
+    void setDepthStoreAction(@NUInt long storeAction);
+
+    @Generated
+    @Selector("setStencilStoreAction:")
+    void setStencilStoreAction(@NUInt long storeAction);
 }

@@ -58,30 +58,13 @@ public class SCNPlane extends SCNGeometry {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native SCNPlane alloc();
-
-    @Generated
-    @Selector("geometry")
-    public static native SCNPlane geometry();
-
-    @Generated
-    @Selector("geometryWithSources:elements:")
-    public static native SCNPlane geometryWithSourcesElements(NSArray<? extends SCNGeometrySource> sources,
-            NSArray<? extends SCNGeometryElement> elements);
-
-    @Generated
-    @Selector("planeWithWidth:height:")
-    public static native SCNPlane planeWithWidthHeight(@NFloat double width, @NFloat double height);
-
-    @Generated
-    @Selector("geometryWithMDLMesh:")
-    public static native SCNPlane geometryWithMDLMesh(MDLMesh mdlMesh);
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -117,6 +100,19 @@ public class SCNPlane extends SCNGeometry {
     @Generated
     @Selector("description")
     public static native String description_static();
+
+    @Generated
+    @Selector("geometry")
+    public static native SCNPlane geometry();
+
+    @Generated
+    @Selector("geometryWithMDLMesh:")
+    public static native SCNPlane geometryWithMDLMesh(MDLMesh mdlMesh);
+
+    @Generated
+    @Selector("geometryWithSources:elements:")
+    public static native SCNPlane geometryWithSourcesElements(NSArray<? extends SCNGeometrySource> sources,
+            NSArray<? extends SCNGeometryElement> elements);
 
     @Generated
     @Selector("hash")
@@ -157,6 +153,10 @@ public class SCNPlane extends SCNGeometry {
     @Selector("new")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object new_objc();
+
+    @Generated
+    @Selector("planeWithWidth:height:")
+    public static native SCNPlane planeWithWidthHeight(@NFloat double width, @NFloat double height);
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -208,6 +208,10 @@ public class SCNPlane extends SCNGeometry {
     public native SCNPlane init();
 
     @Generated
+    @Selector("initWithCoder:")
+    public native SCNPlane initWithCoder(NSCoder aDecoder);
+
+    @Generated
     @Selector("setCornerRadius:")
     public native void setCornerRadius(@NFloat double value);
 
@@ -232,6 +236,12 @@ public class SCNPlane extends SCNGeometry {
     public native void setWidthSegmentCount(@NInt long value);
 
     @Generated
+    @ProtocolClassMethod("supportsSecureCoding")
+    public boolean _supportsSecureCoding() {
+        return supportsSecureCoding();
+    }
+
+    @Generated
     @Selector("width")
     @NFloat
     public native double width();
@@ -240,14 +250,4 @@ public class SCNPlane extends SCNGeometry {
     @Selector("widthSegmentCount")
     @NInt
     public native long widthSegmentCount();
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native SCNPlane initWithCoder(NSCoder aDecoder);
-
-    @Generated
-    @ProtocolClassMethod("supportsSecureCoding")
-    public boolean _supportsSecureCoding() {
-        return supportsSecureCoding();
-    }
 }

@@ -45,6 +45,11 @@ public final class GameKit {
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
+    public static native String GKGameSessionErrorDomain();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
     public static native String GKPlayerDidChangeNotificationName();
 
     @Generated

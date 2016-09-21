@@ -55,21 +55,13 @@ public class NSNull extends NSObject implements NSCopying, NSSecureCoding, CAAct
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native NSNull alloc();
-
-    @Generated
-    @Selector("null")
-    public static native NSNull null_objc();
-
-    @Generated
-    @Selector("supportsSecureCoding")
-    public static native boolean supportsSecureCoding();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -147,6 +139,10 @@ public class NSNull extends NSObject implements NSCopying, NSSecureCoding, CAAct
     public static native Object new_objc();
 
     @Generated
+    @Selector("null")
+    public static native NSNull null_objc();
+
+    @Generated
     @Selector("resolveClassMethod:")
     public static native boolean resolveClassMethod(SEL sel);
 
@@ -156,11 +152,15 @@ public class NSNull extends NSObject implements NSCopying, NSSecureCoding, CAAct
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")
     public static native Class superclass_static();
+
+    @Generated
+    @Selector("supportsSecureCoding")
+    public static native boolean supportsSecureCoding();
 
     @Generated
     @Selector("version")

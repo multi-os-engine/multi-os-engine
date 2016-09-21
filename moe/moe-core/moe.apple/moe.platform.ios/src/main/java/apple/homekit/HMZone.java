@@ -57,13 +57,13 @@ public class HMZone extends NSObject {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native HMZone alloc();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -150,7 +150,7 @@ public class HMZone extends NSObject {
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")
@@ -184,13 +184,13 @@ public class HMZone extends NSObject {
     public native NSArray<? extends HMRoom> rooms();
 
     @Generated
+    @Selector("uniqueIdentifier")
+    public native NSUUID uniqueIdentifier();
+
+    @Generated
     @Selector("updateName:completionHandler:")
     public native void updateNameCompletionHandler(String name,
             @ObjCBlock(name = "call_updateNameCompletionHandler") Block_updateNameCompletionHandler completion);
-
-    @Generated
-    @Selector("uniqueIdentifier")
-    public native NSUUID uniqueIdentifier();
 
     @Runtime(ObjCRuntime.class)
     @Generated

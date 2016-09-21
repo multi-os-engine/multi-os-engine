@@ -568,6 +568,45 @@ public final class CoreFoundation {
     @Generated
     @CFunction
     @NUInt
+    public static native long CFNotificationCenterGetTypeID();
+
+    @Generated
+    @CFunction
+    public static native CFNotificationCenterRef CFNotificationCenterGetLocalCenter();
+
+    @Generated
+    @CFunction
+    public static native CFNotificationCenterRef CFNotificationCenterGetDarwinNotifyCenter();
+
+    @Generated
+    @CFunction
+    public static native void CFNotificationCenterAddObserver(CFNotificationCenterRef center, ConstVoidPtr observer,
+            @FunctionPtr(name = "call_CFNotificationCenterAddObserver") Function_CFNotificationCenterAddObserver callBack,
+            CFStringRef name, ConstVoidPtr object, @NInt long suspensionBehavior);
+
+    @Generated
+    @CFunction
+    public static native void CFNotificationCenterRemoveObserver(CFNotificationCenterRef center, ConstVoidPtr observer,
+            CFStringRef name, ConstVoidPtr object);
+
+    @Generated
+    @CFunction
+    public static native void CFNotificationCenterRemoveEveryObserver(CFNotificationCenterRef center,
+            ConstVoidPtr observer);
+
+    @Generated
+    @CFunction
+    public static native void CFNotificationCenterPostNotification(CFNotificationCenterRef center, CFStringRef name,
+            ConstVoidPtr object, CFDictionaryRef userInfo, byte deliverImmediately);
+
+    @Generated
+    @CFunction
+    public static native void CFNotificationCenterPostNotificationWithOptions(CFNotificationCenterRef center,
+            CFStringRef name, ConstVoidPtr object, CFDictionaryRef userInfo, @NUInt long options);
+
+    @Generated
+    @CFunction
+    @NUInt
     public static native long CFLocaleGetTypeID();
 
     @Generated
@@ -1332,14 +1371,14 @@ public final class CoreFoundation {
     public static native CFStringRef CFURLCreateStringByReplacingPercentEscapes(CFAllocatorRef allocator,
             CFStringRef originalString, CFStringRef charactersToLeaveEscaped);
 
-    @Deprecated
     @Generated
+    @Deprecated
     @CFunction
     public static native CFStringRef CFURLCreateStringByReplacingPercentEscapesUsingEncoding(CFAllocatorRef allocator,
             CFStringRef origString, CFStringRef charsToLeaveEscaped, int encoding);
 
-    @Deprecated
     @Generated
+    @Deprecated
     @CFunction
     public static native CFStringRef CFURLCreateStringByAddingPercentEscapes(CFAllocatorRef allocator,
             CFStringRef originalString, CFStringRef charactersToLeaveUnescaped,
@@ -2049,6 +2088,11 @@ public final class CoreFoundation {
     @CFunction
     @NUInt
     public static native long CFDateFormatterGetTypeID();
+
+    @Generated
+    @CFunction
+    public static native CFDateFormatterRef CFDateFormatterCreateISO8601Formatter(CFAllocatorRef allocator,
+            @NUInt long formatOptions);
 
     @Generated
     @CFunction
@@ -3380,6 +3424,12 @@ public final class CoreFoundation {
 
     @Generated
     @CFunction
+    @FunctionPtr(name = "call_CFMessagePortGetInvalidationCallBack_ret")
+    public static native Function_CFMessagePortGetInvalidationCallBack_ret CFMessagePortGetInvalidationCallBack(
+            CFMessagePortRef ms);
+
+    @Generated
+    @CFunction
     public static native void CFMessagePortSetInvalidationCallBack(CFMessagePortRef ms,
             @FunctionPtr(name = "call_CFMessagePortSetInvalidationCallBack") Function_CFMessagePortSetInvalidationCallBack callout);
 
@@ -3490,6 +3540,58 @@ public final class CoreFoundation {
     @Generated
     @CFunction
     @NUInt
+    public static native long CFMachPortGetTypeID();
+
+    @Generated
+    @CFunction
+    public static native CFMachPortRef CFMachPortCreate(CFAllocatorRef allocator,
+            @FunctionPtr(name = "call_CFMachPortCreate") Function_CFMachPortCreate callout,
+            @UncertainArgument("Options: reference, array Fallback: reference") CFMachPortContext context,
+            BytePtr shouldFreeInfo);
+
+    @Generated
+    @CFunction
+    public static native CFMachPortRef CFMachPortCreateWithPort(CFAllocatorRef allocator, int portNum,
+            @FunctionPtr(name = "call_CFMachPortCreateWithPort") Function_CFMachPortCreateWithPort callout,
+            @UncertainArgument("Options: reference, array Fallback: reference") CFMachPortContext context,
+            BytePtr shouldFreeInfo);
+
+    @Generated
+    @CFunction
+    public static native int CFMachPortGetPort(CFMachPortRef port);
+
+    @Generated
+    @CFunction
+    public static native void CFMachPortGetContext(CFMachPortRef port,
+            @UncertainArgument("Options: reference, array Fallback: reference") CFMachPortContext context);
+
+    @Generated
+    @CFunction
+    public static native void CFMachPortInvalidate(CFMachPortRef port);
+
+    @Generated
+    @CFunction
+    public static native byte CFMachPortIsValid(CFMachPortRef port);
+
+    @Generated
+    @CFunction
+    @FunctionPtr(name = "call_CFMachPortGetInvalidationCallBack_ret")
+    public static native Function_CFMachPortGetInvalidationCallBack_ret CFMachPortGetInvalidationCallBack(
+            CFMachPortRef port);
+
+    @Generated
+    @CFunction
+    public static native void CFMachPortSetInvalidationCallBack(CFMachPortRef port,
+            @FunctionPtr(name = "call_CFMachPortSetInvalidationCallBack") Function_CFMachPortSetInvalidationCallBack callout);
+
+    @Generated
+    @CFunction
+    public static native CFRunLoopSourceRef CFMachPortCreateRunLoopSource(CFAllocatorRef allocator, CFMachPortRef port,
+            @NInt long order);
+
+    @Generated
+    @CFunction
+    @NUInt
     public static native long CFAttributedStringGetTypeID();
 
     @Generated
@@ -3585,45 +3687,6 @@ public final class CoreFoundation {
     @Generated
     @CFunction
     public static native void CFAttributedStringEndEditing(CFMutableAttributedStringRef aStr);
-
-    @Generated
-    @CFunction
-    @NUInt
-    public static native long CFNotificationCenterGetTypeID();
-
-    @Generated
-    @CFunction
-    public static native CFNotificationCenterRef CFNotificationCenterGetLocalCenter();
-
-    @Generated
-    @CFunction
-    public static native CFNotificationCenterRef CFNotificationCenterGetDarwinNotifyCenter();
-
-    @Generated
-    @CFunction
-    public static native void CFNotificationCenterAddObserver(CFNotificationCenterRef center, ConstVoidPtr observer,
-            @FunctionPtr(name = "call_CFNotificationCenterAddObserver") Function_CFNotificationCenterAddObserver callBack,
-            CFStringRef name, ConstVoidPtr object, @NInt long suspensionBehavior);
-
-    @Generated
-    @CFunction
-    public static native void CFNotificationCenterRemoveObserver(CFNotificationCenterRef center, ConstVoidPtr observer,
-            CFStringRef name, ConstVoidPtr object);
-
-    @Generated
-    @CFunction
-    public static native void CFNotificationCenterRemoveEveryObserver(CFNotificationCenterRef center,
-            ConstVoidPtr observer);
-
-    @Generated
-    @CFunction
-    public static native void CFNotificationCenterPostNotification(CFNotificationCenterRef center, CFStringRef name,
-            ConstVoidPtr object, CFDictionaryRef userInfo, byte deliverImmediately);
-
-    @Generated
-    @CFunction
-    public static native void CFNotificationCenterPostNotificationWithOptions(CFNotificationCenterRef center,
-            CFStringRef name, ConstVoidPtr object, CFDictionaryRef userInfo, @NUInt long options);
 
     @Generated
     @CFunction
@@ -3726,52 +3789,6 @@ public final class CoreFoundation {
     @Generated
     @CFunction
     public static native byte CFFileSecurityClearProperties(CFFileSecurityRef fileSec, @NUInt long clearPropertyMask);
-
-    @Generated
-    @CFunction
-    @NUInt
-    public static native long CFMachPortGetTypeID();
-
-    @Generated
-    @CFunction
-    public static native CFMachPortRef CFMachPortCreate(CFAllocatorRef allocator,
-            @FunctionPtr(name = "call_CFMachPortCreate") Function_CFMachPortCreate callout,
-            @UncertainArgument("Options: reference, array Fallback: reference") CFMachPortContext context,
-            BytePtr shouldFreeInfo);
-
-    @Generated
-    @CFunction
-    public static native CFMachPortRef CFMachPortCreateWithPort(CFAllocatorRef allocator, int portNum,
-            @FunctionPtr(name = "call_CFMachPortCreateWithPort") Function_CFMachPortCreateWithPort callout,
-            @UncertainArgument("Options: reference, array Fallback: reference") CFMachPortContext context,
-            BytePtr shouldFreeInfo);
-
-    @Generated
-    @CFunction
-    public static native int CFMachPortGetPort(CFMachPortRef port);
-
-    @Generated
-    @CFunction
-    public static native void CFMachPortGetContext(CFMachPortRef port,
-            @UncertainArgument("Options: reference, array Fallback: reference") CFMachPortContext context);
-
-    @Generated
-    @CFunction
-    public static native void CFMachPortInvalidate(CFMachPortRef port);
-
-    @Generated
-    @CFunction
-    public static native byte CFMachPortIsValid(CFMachPortRef port);
-
-    @Generated
-    @CFunction
-    public static native void CFMachPortSetInvalidationCallBack(CFMachPortRef port,
-            @FunctionPtr(name = "call_CFMachPortSetInvalidationCallBack") Function_CFMachPortSetInvalidationCallBack callout);
-
-    @Generated
-    @CFunction
-    public static native CFRunLoopSourceRef CFMachPortCreateRunLoopSource(CFAllocatorRef allocator, CFMachPortRef port,
-            @NInt long order);
 
     @Generated
     @CFunction
@@ -4192,6 +4209,10 @@ public final class CoreFoundation {
 
     @Generated
     @CVariable()
+    public static native CFStringRef kCFURLIsApplicationKey();
+
+    @Generated
+    @CVariable()
     public static native CFStringRef kCFURLIsSystemImmutableKey();
 
     @Generated
@@ -4300,6 +4321,10 @@ public final class CoreFoundation {
 
     @Generated
     @CVariable()
+    public static native CFStringRef kCFURLCanonicalPathKey();
+
+    @Generated
+    @CVariable()
     public static native CFStringRef kCFURLIsMountTriggerKey();
 
     @Generated
@@ -4369,6 +4394,26 @@ public final class CoreFoundation {
     @Generated
     @CVariable()
     public static native CFStringRef kCFURLIsAliasFileKey();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCFURLFileProtectionKey();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCFURLFileProtectionNone();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCFURLFileProtectionComplete();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCFURLFileProtectionCompleteUnlessOpen();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCFURLFileProtectionCompleteUntilFirstUserAuthentication();
 
     @Generated
     @CVariable()
@@ -4493,6 +4538,30 @@ public final class CoreFoundation {
     @Generated
     @CVariable()
     public static native CFStringRef kCFURLVolumeLocalizedNameKey();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCFURLVolumeIsEncryptedKey();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCFURLVolumeIsRootFileSystemKey();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCFURLVolumeSupportsCompressionKey();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCFURLVolumeSupportsFileCloningKey();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCFURLVolumeSupportsSwapRenamingKey();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCFURLVolumeSupportsExclusiveRenamingKey();
 
     @Generated
     @CVariable()
@@ -5039,42 +5108,6 @@ public final class CoreFoundation {
     @CVariable()
     public static native CFStringRef kCFPlugInTypesKey();
 
-    @Generated
-    @CFunction
-    @FunctionPtr(name = "call_CFMessagePortGetInvalidationCallBack_ret")
-    public static native Function_CFMessagePortGetInvalidationCallBack_ret CFMessagePortGetInvalidationCallBack(
-            CFMessagePortRef ms);
-
-    @Generated
-    @CFunction
-    @FunctionPtr(name = "call_CFMachPortGetInvalidationCallBack_ret")
-    public static native Function_CFMachPortGetInvalidationCallBack_ret CFMachPortGetInvalidationCallBack(
-            CFMachPortRef port);
-
-    @Generated
-    @CVariable()
-    public static native CFStringRef kCFURLIsApplicationKey();
-
-    @Generated
-    @CVariable()
-    public static native CFStringRef kCFURLFileProtectionKey();
-
-    @Generated
-    @CVariable()
-    public static native CFStringRef kCFURLFileProtectionNone();
-
-    @Generated
-    @CVariable()
-    public static native CFStringRef kCFURLFileProtectionComplete();
-
-    @Generated
-    @CVariable()
-    public static native CFStringRef kCFURLFileProtectionCompleteUnlessOpen();
-
-    @Generated
-    @CVariable()
-    public static native CFStringRef kCFURLFileProtectionCompleteUntilFirstUserAuthentication();
-
     @Runtime(CRuntime.class)
     @Generated
     public interface Function_CFDictionaryApplyFunction {
@@ -5103,6 +5136,14 @@ public final class CoreFoundation {
         @Generated
         @NInt
         long call_CFArraySortValues(ConstVoidPtr arg0, ConstVoidPtr arg1, VoidPtr arg2);
+    }
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Function_CFNotificationCenterAddObserver {
+        @Generated
+        void call_CFNotificationCenterAddObserver(VoidPtr arg0, VoidPtr arg1, VoidPtr arg2, ConstVoidPtr arg3,
+                VoidPtr arg4);
     }
 
     @Runtime(CRuntime.class)
@@ -5230,6 +5271,13 @@ public final class CoreFoundation {
 
     @Runtime(CRuntime.class)
     @Generated
+    public interface Function_CFMessagePortGetInvalidationCallBack_ret {
+        @Generated
+        void call_CFMessagePortGetInvalidationCallBack_ret(VoidPtr arg0, VoidPtr arg1);
+    }
+
+    @Runtime(CRuntime.class)
+    @Generated
     public interface Function_CFMessagePortSetInvalidationCallBack {
         @Generated
         void call_CFMessagePortSetInvalidationCallBack(VoidPtr arg0, VoidPtr arg1);
@@ -5259,14 +5307,6 @@ public final class CoreFoundation {
 
     @Runtime(CRuntime.class)
     @Generated
-    public interface Function_CFNotificationCenterAddObserver {
-        @Generated
-        void call_CFNotificationCenterAddObserver(VoidPtr arg0, VoidPtr arg1, VoidPtr arg2, ConstVoidPtr arg3,
-                VoidPtr arg4);
-    }
-
-    @Runtime(CRuntime.class)
-    @Generated
     public interface Function_CFMachPortCreate {
         @Generated
         void call_CFMachPortCreate(VoidPtr arg0, VoidPtr arg1, @NInt long arg2, VoidPtr arg3);
@@ -5281,6 +5321,13 @@ public final class CoreFoundation {
 
     @Runtime(CRuntime.class)
     @Generated
+    public interface Function_CFMachPortGetInvalidationCallBack_ret {
+        @Generated
+        void call_CFMachPortGetInvalidationCallBack_ret(VoidPtr arg0, VoidPtr arg1);
+    }
+
+    @Runtime(CRuntime.class)
+    @Generated
     public interface Function_CFMachPortSetInvalidationCallBack {
         @Generated
         void call_CFMachPortSetInvalidationCallBack(VoidPtr arg0, VoidPtr arg1);
@@ -5291,19 +5338,5 @@ public final class CoreFoundation {
     public interface Function_CFFileDescriptorCreate {
         @Generated
         void call_CFFileDescriptorCreate(VoidPtr arg0, @NUInt long arg1, VoidPtr arg2);
-    }
-
-    @Runtime(CRuntime.class)
-    @Generated
-    public interface Function_CFMessagePortGetInvalidationCallBack_ret {
-        @Generated
-        void call_CFMessagePortGetInvalidationCallBack_ret(VoidPtr arg0, VoidPtr arg1);
-    }
-
-    @Runtime(CRuntime.class)
-    @Generated
-    public interface Function_CFMachPortGetInvalidationCallBack_ret {
-        @Generated
-        void call_CFMachPortGetInvalidationCallBack_ret(VoidPtr arg0, VoidPtr arg1);
     }
 }

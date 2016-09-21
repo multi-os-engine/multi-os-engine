@@ -58,22 +58,13 @@ public class NSScanner extends NSObject implements NSCopying {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native NSScanner alloc();
-
-    @Generated
-    @Selector("localizedScannerWithString:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object localizedScannerWithString(String string);
-
-    @Generated
-    @Selector("scannerWithString:")
-    public static native NSScanner scannerWithString(String string);
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -145,6 +136,11 @@ public class NSScanner extends NSObject implements NSCopying {
     public static native void load_objc_static();
 
     @Generated
+    @Selector("localizedScannerWithString:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object localizedScannerWithString(String string);
+
+    @Generated
     @Owned
     @Selector("new")
     @MappedReturn(ObjCObjectMapper.class)
@@ -159,8 +155,12 @@ public class NSScanner extends NSObject implements NSCopying {
     public static native boolean resolveInstanceMethod(SEL sel);
 
     @Generated
+    @Selector("scannerWithString:")
+    public static native NSScanner scannerWithString(String string);
+
+    @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")

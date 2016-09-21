@@ -70,11 +70,6 @@ public class UIWebView extends UIView implements NSCoding, UIScrollViewDelegate 
     }
 
     @Generated
-    @Owned
-    @Selector("alloc")
-    public static native UIWebView alloc();
-
-    @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
 
@@ -83,6 +78,11 @@ public class UIWebView extends UIView implements NSCoding, UIScrollViewDelegate 
     public static native void addKeyframeWithRelativeStartTimeRelativeDurationAnimations(double frameStartTime,
             double frameDuration,
             @ObjCBlock(name = "call_addKeyframeWithRelativeStartTimeRelativeDurationAnimations") UIView.Block_addKeyframeWithRelativeStartTimeRelativeDurationAnimations animations);
+
+    @Generated
+    @Owned
+    @Selector("alloc")
+    public static native UIWebView alloc();
 
     @Generated
     @Selector("allocWithZone:")
@@ -298,7 +298,7 @@ public class UIWebView extends UIView implements NSCoding, UIScrollViewDelegate 
 
     @Generated
     @Selector("setAnimationDuration:")
-    public static native void setAnimationDuration(double duration);
+    public static native void setAnimationDuration_static(double duration);
 
     @Generated
     @Selector("setAnimationRepeatAutoreverses:")
@@ -306,7 +306,7 @@ public class UIWebView extends UIView implements NSCoding, UIScrollViewDelegate 
 
     @Generated
     @Selector("setAnimationRepeatCount:")
-    public static native void setAnimationRepeatCount(float repeatCount);
+    public static native void setAnimationRepeatCount_static(float repeatCount);
 
     @Generated
     @Selector("setAnimationStartDate:")
@@ -326,7 +326,7 @@ public class UIWebView extends UIView implements NSCoding, UIScrollViewDelegate 
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")
@@ -351,6 +351,12 @@ public class UIWebView extends UIView implements NSCoding, UIScrollViewDelegate 
     public static native long userInterfaceLayoutDirectionForSemanticContentAttribute(@NInt long attribute);
 
     @Generated
+    @Selector("userInterfaceLayoutDirectionForSemanticContentAttribute:relativeToLayoutDirection:")
+    @NInt
+    public static native long userInterfaceLayoutDirectionForSemanticContentAttributeRelativeToLayoutDirection(
+            @NInt long semanticContentAttribute, @NInt long layoutDirection);
+
+    @Generated
     @Selector("version")
     @NInt
     public static native long version_static();
@@ -358,6 +364,60 @@ public class UIWebView extends UIView implements NSCoding, UIScrollViewDelegate 
     @Generated
     @Selector("allowsInlineMediaPlayback")
     public native boolean allowsInlineMediaPlayback();
+
+    @Generated
+    @Selector("allowsLinkPreview")
+    public native boolean allowsLinkPreview();
+
+    @Generated
+    @Selector("allowsPictureInPictureMediaPlayback")
+    public native boolean allowsPictureInPictureMediaPlayback();
+
+    @Generated
+    @ProtocolClassMethod("appearance")
+    @MappedReturn(ObjCObjectMapper.class)
+    public Object _appearance() {
+        return appearance();
+    }
+
+    @Generated
+    @ProtocolClassMethod("appearanceForTraitCollection")
+    @MappedReturn(ObjCObjectMapper.class)
+    public Object _appearanceForTraitCollection(UITraitCollection trait) {
+        return appearanceForTraitCollection(trait);
+    }
+
+    @Generated
+    @Deprecated
+    @ProtocolClassMethod("appearanceForTraitCollectionWhenContainedIn")
+    @MappedReturn(ObjCObjectMapper.class)
+    public Object _appearanceForTraitCollectionWhenContainedIn(UITraitCollection trait,
+            @Mapped(ObjCObjectMapper.class) Object ContainerClass, Object... varargs) {
+        return appearanceForTraitCollectionWhenContainedIn(trait, ContainerClass, varargs);
+    }
+
+    @Generated
+    @ProtocolClassMethod("appearanceForTraitCollectionWhenContainedInInstancesOfClasses")
+    @MappedReturn(ObjCObjectMapper.class)
+    public Object _appearanceForTraitCollectionWhenContainedInInstancesOfClasses(UITraitCollection trait,
+            NSArray<?> containerTypes) {
+        return appearanceForTraitCollectionWhenContainedInInstancesOfClasses(trait, containerTypes);
+    }
+
+    @Generated
+    @Deprecated
+    @ProtocolClassMethod("appearanceWhenContainedIn")
+    @MappedReturn(ObjCObjectMapper.class)
+    public Object _appearanceWhenContainedIn(@Mapped(ObjCObjectMapper.class) Object ContainerClass, Object... varargs) {
+        return appearanceWhenContainedIn(ContainerClass, varargs);
+    }
+
+    @Generated
+    @ProtocolClassMethod("appearanceWhenContainedInInstancesOfClasses")
+    @MappedReturn(ObjCObjectMapper.class)
+    public Object _appearanceWhenContainedInInstancesOfClasses(NSArray<?> containerTypes) {
+        return appearanceWhenContainedInInstancesOfClasses(containerTypes);
+    }
 
     @Generated
     @Selector("canGoBack")
@@ -543,6 +603,14 @@ public class UIWebView extends UIView implements NSCoding, UIScrollViewDelegate 
     public native void setAllowsInlineMediaPlayback(boolean value);
 
     @Generated
+    @Selector("setAllowsLinkPreview:")
+    public native void setAllowsLinkPreview(boolean value);
+
+    @Generated
+    @Selector("setAllowsPictureInPictureMediaPlayback:")
+    public native void setAllowsPictureInPictureMediaPlayback(boolean value);
+
+    @Generated
     @Selector("setDataDetectorTypes:")
     public native void setDataDetectorTypes(@NUInt long value);
 
@@ -619,66 +687,4 @@ public class UIWebView extends UIView implements NSCoding, UIScrollViewDelegate 
     @IsOptional
     @Selector("viewForZoomingInScrollView:")
     public native UIView viewForZoomingInScrollView(UIScrollView scrollView);
-
-    @Generated
-    @Selector("allowsPictureInPictureMediaPlayback")
-    public native boolean allowsPictureInPictureMediaPlayback();
-
-    @Generated
-    @Selector("setAllowsPictureInPictureMediaPlayback:")
-    public native void setAllowsPictureInPictureMediaPlayback(boolean value);
-
-    @Generated
-    @Selector("allowsLinkPreview")
-    public native boolean allowsLinkPreview();
-
-    @Generated
-    @Selector("setAllowsLinkPreview:")
-    public native void setAllowsLinkPreview(boolean value);
-
-    @Generated
-    @ProtocolClassMethod("appearance")
-    @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearance() {
-        return appearance();
-    }
-
-    @Generated
-    @ProtocolClassMethod("appearanceForTraitCollection")
-    @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearanceForTraitCollection(UITraitCollection trait) {
-        return appearanceForTraitCollection(trait);
-    }
-
-    @Generated
-    @Deprecated
-    @ProtocolClassMethod("appearanceForTraitCollectionWhenContainedIn")
-    @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearanceForTraitCollectionWhenContainedIn(UITraitCollection trait,
-            @Mapped(ObjCObjectMapper.class) Object ContainerClass, Object... varargs) {
-        return appearanceForTraitCollectionWhenContainedIn(trait, ContainerClass, varargs);
-    }
-
-    @Generated
-    @ProtocolClassMethod("appearanceForTraitCollectionWhenContainedInInstancesOfClasses")
-    @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearanceForTraitCollectionWhenContainedInInstancesOfClasses(UITraitCollection trait,
-            NSArray<?> containerTypes) {
-        return appearanceForTraitCollectionWhenContainedInInstancesOfClasses(trait, containerTypes);
-    }
-
-    @Generated
-    @Deprecated
-    @ProtocolClassMethod("appearanceWhenContainedIn")
-    @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearanceWhenContainedIn(@Mapped(ObjCObjectMapper.class) Object ContainerClass, Object... varargs) {
-        return appearanceWhenContainedIn(ContainerClass, varargs);
-    }
-
-    @Generated
-    @ProtocolClassMethod("appearanceWhenContainedInInstancesOfClasses")
-    @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearanceWhenContainedInInstancesOfClasses(NSArray<?> containerTypes) {
-        return appearanceWhenContainedInInstancesOfClasses(containerTypes);
-    }
 }

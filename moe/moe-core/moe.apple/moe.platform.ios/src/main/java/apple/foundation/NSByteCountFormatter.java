@@ -51,17 +51,13 @@ public class NSByteCountFormatter extends NSFormatter {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native NSByteCountFormatter alloc();
-
-    @Generated
-    @Selector("stringFromByteCount:countStyle:")
-    public static native String stringFromByteCountCountStyle(long byteCount, @NInt long countStyle);
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -148,7 +144,11 @@ public class NSByteCountFormatter extends NSFormatter {
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
+
+    @Generated
+    @Selector("stringFromByteCount:countStyle:")
+    public static native String stringFromByteCountCountStyle(long byteCount, @NInt long countStyle);
 
     @Generated
     @Selector("superclass")
@@ -193,6 +193,10 @@ public class NSByteCountFormatter extends NSFormatter {
     @Generated
     @Selector("init")
     public native NSByteCountFormatter init();
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native NSByteCountFormatter initWithCoder(NSCoder aDecoder);
 
     @Generated
     @Selector("isAdaptive")
@@ -241,8 +245,4 @@ public class NSByteCountFormatter extends NSFormatter {
     @Generated
     @Selector("zeroPadsFractionDigits")
     public native boolean zeroPadsFractionDigits();
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native NSByteCountFormatter initWithCoder(NSCoder aDecoder);
 }

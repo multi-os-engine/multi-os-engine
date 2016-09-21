@@ -63,79 +63,13 @@ public class JSValue extends NSObject {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native JSValue alloc();
-
-    @Generated
-    @Selector("valueWithBool:inContext:")
-    public static native JSValue valueWithBoolInContext(boolean value, JSContext context);
-
-    @Generated
-    @Selector("valueWithDouble:inContext:")
-    public static native JSValue valueWithDoubleInContext(double value, JSContext context);
-
-    @Generated
-    @Selector("valueWithInt32:inContext:")
-    public static native JSValue valueWithInt32InContext(int value, JSContext context);
-
-    @Generated
-    @Selector("valueWithJSValueRef:inContext:")
-    public static native JSValue valueWithJSValueRefInContext(JSValueRef value, JSContext context);
-
-    @Generated
-    @Selector("valueWithNewArrayInContext:")
-    public static native JSValue valueWithNewArrayInContext(JSContext context);
-
-    @Generated
-    @Selector("valueWithNewErrorFromMessage:inContext:")
-    public static native JSValue valueWithNewErrorFromMessageInContext(String message, JSContext context);
-
-    @Generated
-    @Selector("valueWithNewObjectInContext:")
-    public static native JSValue valueWithNewObjectInContext(JSContext context);
-
-    @Generated
-    @Selector("valueWithNewRegularExpressionFromPattern:flags:inContext:")
-    public static native JSValue valueWithNewRegularExpressionFromPatternFlagsInContext(String pattern, String flags,
-            JSContext context);
-
-    @Generated
-    @Selector("valueWithNullInContext:")
-    public static native JSValue valueWithNullInContext(JSContext context);
-
-    @Generated
-    @Selector("valueWithObject:inContext:")
-    public static native JSValue valueWithObjectInContext(@Mapped(ObjCObjectMapper.class) Object value,
-            JSContext context);
-
-    @Generated
-    @Selector("valueWithPoint:inContext:")
-    public static native JSValue valueWithPointInContext(@ByValue CGPoint point, JSContext context);
-
-    @Generated
-    @Selector("valueWithRange:inContext:")
-    public static native JSValue valueWithRangeInContext(@ByValue NSRange range, JSContext context);
-
-    @Generated
-    @Selector("valueWithRect:inContext:")
-    public static native JSValue valueWithRectInContext(@ByValue CGRect rect, JSContext context);
-
-    @Generated
-    @Selector("valueWithSize:inContext:")
-    public static native JSValue valueWithSizeInContext(@ByValue CGSize size, JSContext context);
-
-    @Generated
-    @Selector("valueWithUInt32:inContext:")
-    public static native JSValue valueWithUInt32InContext(int value, JSContext context);
-
-    @Generated
-    @Selector("valueWithUndefinedInContext:")
-    public static native JSValue valueWithUndefinedInContext(JSContext context);
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -222,11 +156,77 @@ public class JSValue extends NSObject {
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")
     public static native Class superclass_static();
+
+    @Generated
+    @Selector("valueWithBool:inContext:")
+    public static native JSValue valueWithBoolInContext(boolean value, JSContext context);
+
+    @Generated
+    @Selector("valueWithDouble:inContext:")
+    public static native JSValue valueWithDoubleInContext(double value, JSContext context);
+
+    @Generated
+    @Selector("valueWithInt32:inContext:")
+    public static native JSValue valueWithInt32InContext(int value, JSContext context);
+
+    @Generated
+    @Selector("valueWithJSValueRef:inContext:")
+    public static native JSValue valueWithJSValueRefInContext(JSValueRef value, JSContext context);
+
+    @Generated
+    @Selector("valueWithNewArrayInContext:")
+    public static native JSValue valueWithNewArrayInContext(JSContext context);
+
+    @Generated
+    @Selector("valueWithNewErrorFromMessage:inContext:")
+    public static native JSValue valueWithNewErrorFromMessageInContext(String message, JSContext context);
+
+    @Generated
+    @Selector("valueWithNewObjectInContext:")
+    public static native JSValue valueWithNewObjectInContext(JSContext context);
+
+    @Generated
+    @Selector("valueWithNewRegularExpressionFromPattern:flags:inContext:")
+    public static native JSValue valueWithNewRegularExpressionFromPatternFlagsInContext(String pattern, String flags,
+            JSContext context);
+
+    @Generated
+    @Selector("valueWithNullInContext:")
+    public static native JSValue valueWithNullInContext(JSContext context);
+
+    @Generated
+    @Selector("valueWithObject:inContext:")
+    public static native JSValue valueWithObjectInContext(@Mapped(ObjCObjectMapper.class) Object value,
+            JSContext context);
+
+    @Generated
+    @Selector("valueWithPoint:inContext:")
+    public static native JSValue valueWithPointInContext(@ByValue CGPoint point, JSContext context);
+
+    @Generated
+    @Selector("valueWithRange:inContext:")
+    public static native JSValue valueWithRangeInContext(@ByValue NSRange range, JSContext context);
+
+    @Generated
+    @Selector("valueWithRect:inContext:")
+    public static native JSValue valueWithRectInContext(@ByValue CGRect rect, JSContext context);
+
+    @Generated
+    @Selector("valueWithSize:inContext:")
+    public static native JSValue valueWithSizeInContext(@ByValue CGSize size, JSContext context);
+
+    @Generated
+    @Selector("valueWithUInt32:inContext:")
+    public static native JSValue valueWithUInt32InContext(int value, JSContext context);
+
+    @Generated
+    @Selector("valueWithUndefinedInContext:")
+    public static native JSValue valueWithUndefinedInContext(JSContext context);
 
     @Generated
     @Selector("version")
@@ -270,8 +270,16 @@ public class JSValue extends NSObject {
     public native JSValue invokeMethodWithArguments(String method, NSArray<?> arguments);
 
     @Generated
+    @Selector("isArray")
+    public native boolean isArray();
+
+    @Generated
     @Selector("isBoolean")
     public native boolean isBoolean();
+
+    @Generated
+    @Selector("isDate")
+    public native boolean isDate();
 
     @Generated
     @Selector("isEqualToObject:")
@@ -402,12 +410,4 @@ public class JSValue extends NSObject {
     @Generated
     @Selector("valueForProperty:")
     public native JSValue valueForProperty(String property);
-
-    @Generated
-    @Selector("isArray")
-    public native boolean isArray();
-
-    @Generated
-    @Selector("isDate")
-    public native boolean isDate();
 }

@@ -58,13 +58,13 @@ public class CMMagnetometerData extends CMLogItem {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native CMMagnetometerData alloc();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -151,7 +151,7 @@ public class CMMagnetometerData extends CMLogItem {
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")
@@ -171,13 +171,13 @@ public class CMMagnetometerData extends CMLogItem {
     public native CMMagnetometerData init();
 
     @Generated
+    @Selector("initWithCoder:")
+    public native CMMagnetometerData initWithCoder(NSCoder aDecoder);
+
+    @Generated
     @Selector("magneticField")
     @ByValue
     public native CMMagneticField magneticField();
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native CMMagnetometerData initWithCoder(NSCoder aDecoder);
 
     @Generated
     @ProtocolClassMethod("supportsSecureCoding")

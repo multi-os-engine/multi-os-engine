@@ -52,13 +52,13 @@ public class NSUndoManager extends NSObject {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native NSUndoManager alloc();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -145,7 +145,7 @@ public class NSUndoManager extends NSObject {
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")
@@ -236,6 +236,11 @@ public class NSUndoManager extends NSObject {
     public native String redoMenuTitleForUndoActionName(String actionName);
 
     @Generated
+    @Selector("registerUndoWithTarget:handler:")
+    public native void registerUndoWithTargetHandler(@Mapped(ObjCObjectMapper.class) Object target,
+            @ObjCBlock(name = "call_registerUndoWithTargetHandler") Block_registerUndoWithTargetHandler undoHandler);
+
+    @Generated
     @Selector("registerUndoWithTarget:selector:object:")
     public native void registerUndoWithTargetSelectorObject(@Mapped(ObjCObjectMapper.class) Object target, SEL selector,
             @Mapped(ObjCObjectMapper.class) Object anObject);
@@ -295,11 +300,6 @@ public class NSUndoManager extends NSObject {
     @Generated
     @Selector("undoNestedGroup")
     public native void undoNestedGroup();
-
-    @Generated
-    @Selector("registerUndoWithTarget:handler:")
-    public native void registerUndoWithTargetHandler(@Mapped(ObjCObjectMapper.class) Object target,
-            @ObjCBlock(name = "call_registerUndoWithTargetHandler") Block_registerUndoWithTargetHandler undoHandler);
 
     @Runtime(ObjCRuntime.class)
     @Generated

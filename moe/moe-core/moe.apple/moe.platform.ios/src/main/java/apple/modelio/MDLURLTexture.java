@@ -56,29 +56,13 @@ public class MDLURLTexture extends MDLTexture {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native MDLURLTexture alloc();
-
-    @Generated
-    @Selector("textureCubeWithImagesNamed:")
-    public static native MDLURLTexture textureCubeWithImagesNamed(NSArray<String> names);
-
-    @Generated
-    @Selector("textureCubeWithImagesNamed:bundle:")
-    public static native MDLURLTexture textureCubeWithImagesNamedBundle(NSArray<String> names, NSBundle bundleOrNil);
-
-    @Generated
-    @Selector("textureNamed:")
-    public static native MDLURLTexture textureNamed(String name);
-
-    @Generated
-    @Selector("textureNamed:bundle:")
-    public static native MDLURLTexture textureNamedBundle(String name, NSBundle bundleOrNil);
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -170,6 +154,22 @@ public class MDLURLTexture extends MDLTexture {
     @Generated
     @Selector("superclass")
     public static native Class superclass_static();
+
+    @Generated
+    @Selector("textureCubeWithImagesNamed:")
+    public static native MDLURLTexture textureCubeWithImagesNamed(NSArray<String> names);
+
+    @Generated
+    @Selector("textureCubeWithImagesNamed:bundle:")
+    public static native MDLURLTexture textureCubeWithImagesNamedBundle(NSArray<String> names, NSBundle bundleOrNil);
+
+    @Generated
+    @Selector("textureNamed:")
+    public static native MDLURLTexture textureNamed(String name);
+
+    @Generated
+    @Selector("textureNamed:bundle:")
+    public static native MDLURLTexture textureNamedBundle(String name, NSBundle bundleOrNil);
 
     @Generated
     @Selector("version")

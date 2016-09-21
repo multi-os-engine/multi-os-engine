@@ -61,13 +61,13 @@ public class UIBarButtonItem extends UIBarItem implements NSCoding {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native UIBarButtonItem alloc();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -207,6 +207,52 @@ public class UIBarButtonItem extends UIBarItem implements NSCoding {
     public native SEL action();
 
     @Generated
+    @ProtocolClassMethod("appearance")
+    @MappedReturn(ObjCObjectMapper.class)
+    public Object _appearance() {
+        return appearance();
+    }
+
+    @Generated
+    @ProtocolClassMethod("appearanceForTraitCollection")
+    @MappedReturn(ObjCObjectMapper.class)
+    public Object _appearanceForTraitCollection(UITraitCollection trait) {
+        return appearanceForTraitCollection(trait);
+    }
+
+    @Generated
+    @Deprecated
+    @ProtocolClassMethod("appearanceForTraitCollectionWhenContainedIn")
+    @MappedReturn(ObjCObjectMapper.class)
+    public Object _appearanceForTraitCollectionWhenContainedIn(UITraitCollection trait,
+            @Mapped(ObjCObjectMapper.class) Object ContainerClass, Object... varargs) {
+        return appearanceForTraitCollectionWhenContainedIn(trait, ContainerClass, varargs);
+    }
+
+    @Generated
+    @ProtocolClassMethod("appearanceForTraitCollectionWhenContainedInInstancesOfClasses")
+    @MappedReturn(ObjCObjectMapper.class)
+    public Object _appearanceForTraitCollectionWhenContainedInInstancesOfClasses(UITraitCollection trait,
+            NSArray<?> containerTypes) {
+        return appearanceForTraitCollectionWhenContainedInInstancesOfClasses(trait, containerTypes);
+    }
+
+    @Generated
+    @Deprecated
+    @ProtocolClassMethod("appearanceWhenContainedIn")
+    @MappedReturn(ObjCObjectMapper.class)
+    public Object _appearanceWhenContainedIn(@Mapped(ObjCObjectMapper.class) Object ContainerClass, Object... varargs) {
+        return appearanceWhenContainedIn(ContainerClass, varargs);
+    }
+
+    @Generated
+    @ProtocolClassMethod("appearanceWhenContainedInInstancesOfClasses")
+    @MappedReturn(ObjCObjectMapper.class)
+    public Object _appearanceWhenContainedInInstancesOfClasses(NSArray<?> containerTypes) {
+        return appearanceWhenContainedInInstancesOfClasses(containerTypes);
+    }
+
+    @Generated
     @Selector("backButtonBackgroundImageForState:barMetrics:")
     public native UIImage backButtonBackgroundImageForStateBarMetrics(@NUInt long state, @NInt long barMetrics);
 
@@ -233,6 +279,10 @@ public class UIBarButtonItem extends UIBarItem implements NSCoding {
     @Selector("backgroundVerticalPositionAdjustmentForBarMetrics:")
     @NFloat
     public native double backgroundVerticalPositionAdjustmentForBarMetrics(@NInt long barMetrics);
+
+    @Generated
+    @Selector("buttonGroup")
+    public native UIBarButtonItemGroup buttonGroup();
 
     @Generated
     @Selector("customView")
@@ -375,54 +425,4 @@ public class UIBarButtonItem extends UIBarItem implements NSCoding {
     @Selector("width")
     @NFloat
     public native double width();
-
-    @Generated
-    @Selector("buttonGroup")
-    public native UIBarButtonItemGroup buttonGroup();
-
-    @Generated
-    @ProtocolClassMethod("appearance")
-    @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearance() {
-        return appearance();
-    }
-
-    @Generated
-    @ProtocolClassMethod("appearanceForTraitCollection")
-    @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearanceForTraitCollection(UITraitCollection trait) {
-        return appearanceForTraitCollection(trait);
-    }
-
-    @Generated
-    @Deprecated
-    @ProtocolClassMethod("appearanceForTraitCollectionWhenContainedIn")
-    @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearanceForTraitCollectionWhenContainedIn(UITraitCollection trait,
-            @Mapped(ObjCObjectMapper.class) Object ContainerClass, Object... varargs) {
-        return appearanceForTraitCollectionWhenContainedIn(trait, ContainerClass, varargs);
-    }
-
-    @Generated
-    @ProtocolClassMethod("appearanceForTraitCollectionWhenContainedInInstancesOfClasses")
-    @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearanceForTraitCollectionWhenContainedInInstancesOfClasses(UITraitCollection trait,
-            NSArray<?> containerTypes) {
-        return appearanceForTraitCollectionWhenContainedInInstancesOfClasses(trait, containerTypes);
-    }
-
-    @Generated
-    @Deprecated
-    @ProtocolClassMethod("appearanceWhenContainedIn")
-    @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearanceWhenContainedIn(@Mapped(ObjCObjectMapper.class) Object ContainerClass, Object... varargs) {
-        return appearanceWhenContainedIn(ContainerClass, varargs);
-    }
-
-    @Generated
-    @ProtocolClassMethod("appearanceWhenContainedInInstancesOfClasses")
-    @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearanceWhenContainedInInstancesOfClasses(NSArray<?> containerTypes) {
-        return appearanceWhenContainedInInstancesOfClasses(containerTypes);
-    }
 }

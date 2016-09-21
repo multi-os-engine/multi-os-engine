@@ -60,13 +60,13 @@ public class ALAsset extends NSObject {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native ALAsset alloc();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -164,13 +164,13 @@ public class ALAsset extends NSObject {
     @NInt
     public static native long version_static();
 
-    @Deprecated
     @Generated
+    @Deprecated
     @Selector("aspectRatioThumbnail")
     public native CGImageRef aspectRatioThumbnail();
 
-    @Deprecated
     @Generated
+    @Deprecated
     @Selector("defaultRepresentation")
     public native ALAssetRepresentation defaultRepresentation();
 
@@ -178,53 +178,53 @@ public class ALAsset extends NSObject {
     @Selector("init")
     public native ALAsset init();
 
-    @Deprecated
     @Generated
+    @Deprecated
     @Selector("isEditable")
     public native boolean isEditable();
 
-    @Deprecated
     @Generated
+    @Deprecated
     @Selector("originalAsset")
     public native ALAsset originalAsset();
 
-    @Deprecated
     @Generated
+    @Deprecated
     @Selector("representationForUTI:")
     public native ALAssetRepresentation representationForUTI(String representationUTI);
 
-    @Deprecated
     @Generated
+    @Deprecated
     @Selector("setImageData:metadata:completionBlock:")
     public native void setImageDataMetadataCompletionBlock(NSData imageData, NSDictionary<?, ?> metadata,
             @ObjCBlock(name = "call_setImageDataMetadataCompletionBlock") Block_setImageDataMetadataCompletionBlock completionBlock);
 
-    @Deprecated
     @Generated
+    @Deprecated
     @Selector("setVideoAtPath:completionBlock:")
     public native void setVideoAtPathCompletionBlock(NSURL videoPathURL,
             @ObjCBlock(name = "call_setVideoAtPathCompletionBlock") Block_setVideoAtPathCompletionBlock completionBlock);
 
-    @Deprecated
     @Generated
+    @Deprecated
     @Selector("thumbnail")
     public native CGImageRef thumbnail();
 
-    @Deprecated
     @Generated
+    @Deprecated
     @Selector("valueForProperty:")
     @MappedReturn(ObjCObjectMapper.class)
     public native Object valueForProperty(String property);
 
-    @Deprecated
     @Generated
+    @Deprecated
     @Selector("writeModifiedImageDataToSavedPhotosAlbum:metadata:completionBlock:")
     public native void writeModifiedImageDataToSavedPhotosAlbumMetadataCompletionBlock(NSData imageData,
             NSDictionary<?, ?> metadata,
             @ObjCBlock(name = "call_writeModifiedImageDataToSavedPhotosAlbumMetadataCompletionBlock") Block_writeModifiedImageDataToSavedPhotosAlbumMetadataCompletionBlock completionBlock);
 
-    @Deprecated
     @Generated
+    @Deprecated
     @Selector("writeModifiedVideoAtPathToSavedPhotosAlbum:completionBlock:")
     public native void writeModifiedVideoAtPathToSavedPhotosAlbumCompletionBlock(NSURL videoPathURL,
             @ObjCBlock(name = "call_writeModifiedVideoAtPathToSavedPhotosAlbumCompletionBlock") Block_writeModifiedVideoAtPathToSavedPhotosAlbumCompletionBlock completionBlock);

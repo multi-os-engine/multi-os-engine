@@ -17,9 +17,13 @@ limitations under the License.
 package apple.foundation;
 
 import apple.NSObject;
+import apple.coregraphics.struct.CGSize;
+import apple.replaykit.RPBroadcastConfiguration;
+import apple.uikit.UIImage;
 import org.moe.natj.c.ann.FunctionPtr;
 import org.moe.natj.general.NatJ;
 import org.moe.natj.general.Pointer;
+import org.moe.natj.general.ann.ByValue;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.Library;
 import org.moe.natj.general.ann.Mapped;
@@ -52,13 +56,13 @@ public class NSExtensionContext extends NSObject {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native NSExtensionContext alloc();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -166,6 +170,21 @@ public class NSExtensionContext extends NSObject {
             @ObjCBlock(name = "call_completeRequestReturningItemsCompletionHandler") Block_completeRequestReturningItemsCompletionHandler completionHandler);
 
     @Generated
+    @Selector("completeRequestWithBroadcastURL:broadcastConfiguration:setupInfo:")
+    public native void completeRequestWithBroadcastURLBroadcastConfigurationSetupInfo(NSURL broadcastURL,
+            RPBroadcastConfiguration broadcastConfiguration, NSDictionary<String, ? extends NSObject> setupInfo);
+
+    @Generated
+    @Selector("hostedViewMaximumAllowedSize")
+    @ByValue
+    public native CGSize hostedViewMaximumAllowedSize();
+
+    @Generated
+    @Selector("hostedViewMinimumAllowedSize")
+    @ByValue
+    public native CGSize hostedViewMinimumAllowedSize();
+
+    @Generated
     @Selector("init")
     public native NSExtensionContext init();
 
@@ -174,15 +193,54 @@ public class NSExtensionContext extends NSObject {
     public native NSArray<?> inputItems();
 
     @Generated
+    @Selector("loadBroadcastingApplicationInfoWithCompletion:")
+    public native void loadBroadcastingApplicationInfoWithCompletion(
+            @ObjCBlock(name = "call_loadBroadcastingApplicationInfoWithCompletion") Block_loadBroadcastingApplicationInfoWithCompletion handler);
+
+    @Generated
+    @Selector("mediaPlayingPaused")
+    public native void mediaPlayingPaused();
+
+    @Generated
+    @Selector("mediaPlayingStarted")
+    public native void mediaPlayingStarted();
+
+    @Generated
     @Selector("openURL:completionHandler:")
     public native void openURLCompletionHandler(NSURL URL,
             @ObjCBlock(name = "call_openURLCompletionHandler") Block_openURLCompletionHandler completionHandler);
+
+    @Generated
+    @Selector("setWidgetLargestAvailableDisplayMode:")
+    public native void setWidgetLargestAvailableDisplayMode(@NInt long value);
+
+    @Generated
+    @Selector("widgetActiveDisplayMode")
+    @NInt
+    public native long widgetActiveDisplayMode();
+
+    @Generated
+    @Selector("widgetLargestAvailableDisplayMode")
+    @NInt
+    public native long widgetLargestAvailableDisplayMode();
+
+    @Generated
+    @Selector("widgetMaximumSizeForDisplayMode:")
+    @ByValue
+    public native CGSize widgetMaximumSizeForDisplayMode(@NInt long displayMode);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_completeRequestReturningItemsCompletionHandler {
         @Generated
         void call_completeRequestReturningItemsCompletionHandler(boolean arg0);
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_loadBroadcastingApplicationInfoWithCompletion {
+        @Generated
+        void call_loadBroadcastingApplicationInfoWithCompletion(String arg0, String arg1, UIImage arg2);
     }
 
     @Runtime(ObjCRuntime.class)

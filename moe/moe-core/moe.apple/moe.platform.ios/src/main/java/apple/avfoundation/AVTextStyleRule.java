@@ -56,33 +56,13 @@ public class AVTextStyleRule extends NSObject implements NSCopying {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native AVTextStyleRule alloc();
-
-    @Generated
-    @Selector("propertyListForTextStyleRules:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object propertyListForTextStyleRules(NSArray<? extends AVTextStyleRule> textStyleRules);
-
-    @Generated
-    @Selector("textStyleRuleWithTextMarkupAttributes:")
-    public static native AVTextStyleRule textStyleRuleWithTextMarkupAttributes(
-            NSDictionary<String, ?> textMarkupAttributes);
-
-    @Generated
-    @Selector("textStyleRuleWithTextMarkupAttributes:textSelector:")
-    public static native AVTextStyleRule textStyleRuleWithTextMarkupAttributesTextSelector(
-            NSDictionary<String, ?> textMarkupAttributes, String textSelector);
-
-    @Generated
-    @Selector("textStyleRulesFromPropertyList:")
-    public static native NSArray<? extends AVTextStyleRule> textStyleRulesFromPropertyList(
-            @Mapped(ObjCObjectMapper.class) Object plist);
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -160,6 +140,11 @@ public class AVTextStyleRule extends NSObject implements NSCopying {
     public static native Object new_objc();
 
     @Generated
+    @Selector("propertyListForTextStyleRules:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object propertyListForTextStyleRules(NSArray<? extends AVTextStyleRule> textStyleRules);
+
+    @Generated
     @Selector("resolveClassMethod:")
     public static native boolean resolveClassMethod(SEL sel);
 
@@ -174,6 +159,21 @@ public class AVTextStyleRule extends NSObject implements NSCopying {
     @Generated
     @Selector("superclass")
     public static native Class superclass_static();
+
+    @Generated
+    @Selector("textStyleRuleWithTextMarkupAttributes:")
+    public static native AVTextStyleRule textStyleRuleWithTextMarkupAttributes(
+            NSDictionary<String, ?> textMarkupAttributes);
+
+    @Generated
+    @Selector("textStyleRuleWithTextMarkupAttributes:textSelector:")
+    public static native AVTextStyleRule textStyleRuleWithTextMarkupAttributesTextSelector(
+            NSDictionary<String, ?> textMarkupAttributes, String textSelector);
+
+    @Generated
+    @Selector("textStyleRulesFromPropertyList:")
+    public static native NSArray<? extends AVTextStyleRule> textStyleRulesFromPropertyList(
+            @Mapped(ObjCObjectMapper.class) Object plist);
 
     @Generated
     @Selector("version")

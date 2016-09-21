@@ -60,33 +60,13 @@ public class UIImagePickerController extends UINavigationController implements N
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native UIImagePickerController alloc();
-
-    @Generated
-    @Selector("availableCaptureModesForCameraDevice:")
-    public static native NSArray<? extends NSNumber> availableCaptureModesForCameraDevice(@NInt long cameraDevice);
-
-    @Generated
-    @Selector("availableMediaTypesForSourceType:")
-    public static native NSArray<String> availableMediaTypesForSourceType(@NInt long sourceType);
-
-    @Generated
-    @Selector("isCameraDeviceAvailable:")
-    public static native boolean isCameraDeviceAvailable(@NInt long cameraDevice);
-
-    @Generated
-    @Selector("isFlashAvailableForCameraDevice:")
-    public static native boolean isFlashAvailableForCameraDevice(@NInt long cameraDevice);
-
-    @Generated
-    @Selector("isSourceTypeAvailable:")
-    public static native boolean isSourceTypeAvailable(@NInt long sourceType);
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -100,6 +80,14 @@ public class UIImagePickerController extends UINavigationController implements N
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
     public static native boolean automaticallyNotifiesObserversForKey(String key);
+
+    @Generated
+    @Selector("availableCaptureModesForCameraDevice:")
+    public static native NSArray<? extends NSNumber> availableCaptureModesForCameraDevice(@NInt long cameraDevice);
+
+    @Generated
+    @Selector("availableMediaTypesForSourceType:")
+    public static native NSArray<String> availableMediaTypesForSourceType(@NInt long sourceType);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
@@ -154,6 +142,18 @@ public class UIImagePickerController extends UINavigationController implements N
     public static native boolean instancesRespondToSelector(SEL aSelector);
 
     @Generated
+    @Selector("isCameraDeviceAvailable:")
+    public static native boolean isCameraDeviceAvailable(@NInt long cameraDevice);
+
+    @Generated
+    @Selector("isFlashAvailableForCameraDevice:")
+    public static native boolean isFlashAvailableForCameraDevice(@NInt long cameraDevice);
+
+    @Generated
+    @Selector("isSourceTypeAvailable:")
+    public static native boolean isSourceTypeAvailable(@NInt long sourceType);
+
+    @Generated
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
@@ -185,7 +185,7 @@ public class UIImagePickerController extends UINavigationController implements N
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")

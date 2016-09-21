@@ -224,6 +224,10 @@ public final class MobileCoreServices {
 
     @Generated
     @CVariable()
+    public static native CFStringRef kUTTypeSwiftSource();
+
+    @Generated
+    @CVariable()
     public static native CFStringRef kUTTypeCPlusPlusSource();
 
     @Generated
@@ -369,6 +373,10 @@ public final class MobileCoreServices {
     @Generated
     @CVariable()
     public static native CFStringRef kUTTypeScalableVectorGraphics();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kUTTypeLivePhoto();
 
     @Generated
     @CVariable()
@@ -633,12 +641,4 @@ public final class MobileCoreServices {
     @Generated
     @CVariable()
     public static native CFStringRef kUTTagClassMIMEType();
-
-    @Generated
-    @CVariable()
-    public static native CFStringRef kUTTypeSwiftSource();
-
-    @Generated
-    @CVariable()
-    public static native CFStringRef kUTTypeLivePhoto();
 }

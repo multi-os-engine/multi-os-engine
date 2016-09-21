@@ -60,17 +60,13 @@ public class CMPedometerData extends NSObject implements NSSecureCoding, NSCopyi
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native CMPedometerData alloc();
-
-    @Generated
-    @Selector("supportsSecureCoding")
-    public static native boolean supportsSecureCoding();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -164,15 +160,31 @@ public class CMPedometerData extends NSObject implements NSSecureCoding, NSCopyi
     public static native Class superclass_static();
 
     @Generated
+    @Selector("supportsSecureCoding")
+    public static native boolean supportsSecureCoding();
+
+    @Generated
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("averageActivePace")
+    public native NSNumber averageActivePace();
 
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
     public native Object copyWithZone(VoidPtr zone);
+
+    @Generated
+    @Selector("currentCadence")
+    public native NSNumber currentCadence();
+
+    @Generated
+    @Selector("currentPace")
+    public native NSNumber currentPace();
 
     @Generated
     @Selector("distance")
@@ -215,12 +227,4 @@ public class CMPedometerData extends NSObject implements NSSecureCoding, NSCopyi
     public boolean _supportsSecureCoding() {
         return supportsSecureCoding();
     }
-
-    @Generated
-    @Selector("currentCadence")
-    public native NSNumber currentCadence();
-
-    @Generated
-    @Selector("currentPace")
-    public native NSNumber currentPace();
 }

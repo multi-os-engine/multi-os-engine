@@ -57,13 +57,13 @@ public class NEPacketTunnelFlow extends NSObject {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native NEPacketTunnelFlow alloc();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -150,7 +150,7 @@ public class NEPacketTunnelFlow extends NSObject {
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")
@@ -166,14 +166,30 @@ public class NEPacketTunnelFlow extends NSObject {
     public native NEPacketTunnelFlow init();
 
     @Generated
+    @Selector("readPacketObjectsWithCompletionHandler:")
+    public native void readPacketObjectsWithCompletionHandler(
+            @ObjCBlock(name = "call_readPacketObjectsWithCompletionHandler") Block_readPacketObjectsWithCompletionHandler completionHandler);
+
+    @Generated
     @Selector("readPacketsWithCompletionHandler:")
     public native void readPacketsWithCompletionHandler(
             @ObjCBlock(name = "call_readPacketsWithCompletionHandler") Block_readPacketsWithCompletionHandler completionHandler);
 
     @Generated
+    @Selector("writePacketObjects:")
+    public native boolean writePacketObjects(NSArray<? extends NEPacket> packets);
+
+    @Generated
     @Selector("writePackets:withProtocols:")
     public native boolean writePacketsWithProtocols(NSArray<? extends NSData> packets,
             NSArray<? extends NSNumber> protocols);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_readPacketObjectsWithCompletionHandler {
+        @Generated
+        void call_readPacketObjectsWithCompletionHandler(NSArray<? extends NEPacket> arg0);
+    }
 
     @Runtime(ObjCRuntime.class)
     @Generated

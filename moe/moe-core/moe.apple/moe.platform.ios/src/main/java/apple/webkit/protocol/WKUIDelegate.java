@@ -16,8 +16,11 @@ limitations under the License.
 
 package apple.webkit.protocol;
 
+import apple.foundation.NSArray;
+import apple.uikit.UIViewController;
 import apple.webkit.WKFrameInfo;
 import apple.webkit.WKNavigationAction;
+import apple.webkit.WKPreviewElementInfo;
 import apple.webkit.WKWebView;
 import apple.webkit.WKWebViewConfiguration;
 import apple.webkit.WKWindowFeatures;
@@ -37,10 +40,25 @@ import org.moe.natj.objc.ann.Selector;
 public interface WKUIDelegate {
     @Generated
     @IsOptional
+    @Selector("webView:commitPreviewingViewController:")
+    default void webViewCommitPreviewingViewController(WKWebView webView, UIViewController previewingViewController) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Generated
+    @IsOptional
     @Selector("webView:createWebViewWithConfiguration:forNavigationAction:windowFeatures:")
     default WKWebView webViewCreateWebViewWithConfigurationForNavigationActionWindowFeatures(WKWebView webView,
             WKWebViewConfiguration configuration, WKNavigationAction navigationAction,
             WKWindowFeatures windowFeatures) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Generated
+    @IsOptional
+    @Selector("webView:previewingViewControllerForElement:defaultActions:")
+    default UIViewController webViewPreviewingViewControllerForElementDefaultActions(WKWebView webView,
+            WKPreviewElementInfo elementInfo, NSArray<?> previewActions) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -68,6 +86,13 @@ public interface WKUIDelegate {
     default void webViewRunJavaScriptTextInputPanelWithPromptDefaultTextInitiatedByFrameCompletionHandler(
             WKWebView webView, String prompt, String defaultText, WKFrameInfo frame,
             @ObjCBlock(name = "call_webViewRunJavaScriptTextInputPanelWithPromptDefaultTextInitiatedByFrameCompletionHandler") Block_webViewRunJavaScriptTextInputPanelWithPromptDefaultTextInitiatedByFrameCompletionHandler completionHandler) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Generated
+    @IsOptional
+    @Selector("webView:shouldPreviewElement:")
+    default boolean webViewShouldPreviewElement(WKWebView webView, WKPreviewElementInfo elementInfo) {
         throw new java.lang.UnsupportedOperationException();
     }
 

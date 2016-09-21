@@ -58,17 +58,13 @@ public class NSFileManager extends NSObject {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native NSFileManager alloc();
-
-    @Generated
-    @Selector("defaultManager")
-    public static native NSFileManager defaultManager();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -100,6 +96,10 @@ public class NSFileManager extends NSObject {
     @Generated
     @Selector("debugDescription")
     public static native String debugDescription_static();
+
+    @Generated
+    @Selector("defaultManager")
+    public static native NSFileManager defaultManager();
 
     @Generated
     @Selector("description")
@@ -440,6 +440,10 @@ public class NSFileManager extends NSObject {
     @Generated
     @Selector("subpathsOfDirectoryAtPath:error:")
     public native NSArray<String> subpathsOfDirectoryAtPathError(String path, Ptr<NSError> error);
+
+    @Generated
+    @Selector("temporaryDirectory")
+    public native NSURL temporaryDirectory();
 
     @Generated
     @Selector("ubiquityIdentityToken")

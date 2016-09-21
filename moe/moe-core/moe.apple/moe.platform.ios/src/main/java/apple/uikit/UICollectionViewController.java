@@ -64,13 +64,13 @@ public class UICollectionViewController extends UIViewController
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native UICollectionViewController alloc();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -190,6 +190,16 @@ public class UICollectionViewController extends UIViewController
 
     @Generated
     @IsOptional
+    @Selector("collectionView:canFocusItemAtIndexPath:")
+    public native boolean collectionViewCanFocusItemAtIndexPath(UICollectionView collectionView, NSIndexPath indexPath);
+
+    @Generated
+    @IsOptional
+    @Selector("collectionView:canMoveItemAtIndexPath:")
+    public native boolean collectionViewCanMoveItemAtIndexPath(UICollectionView collectionView, NSIndexPath indexPath);
+
+    @Generated
+    @IsOptional
     @Selector("collectionView:canPerformAction:forItemAtIndexPath:withSender:")
     public native boolean collectionViewCanPerformActionForItemAtIndexPathWithSender(UICollectionView collectionView,
             SEL action, NSIndexPath indexPath, @Mapped(ObjCObjectMapper.class) Object sender);
@@ -234,6 +244,18 @@ public class UICollectionViewController extends UIViewController
             NSIndexPath indexPath);
 
     @Generated
+    @IsOptional
+    @Selector("collectionView:didUpdateFocusInContext:withAnimationCoordinator:")
+    public native void collectionViewDidUpdateFocusInContextWithAnimationCoordinator(UICollectionView collectionView,
+            UICollectionViewFocusUpdateContext context, UIFocusAnimationCoordinator coordinator);
+
+    @Generated
+    @IsOptional
+    @Selector("collectionView:moveItemAtIndexPath:toIndexPath:")
+    public native void collectionViewMoveItemAtIndexPathToIndexPath(UICollectionView collectionView,
+            NSIndexPath sourceIndexPath, NSIndexPath destinationIndexPath);
+
+    @Generated
     @Selector("collectionView:numberOfItemsInSection:")
     @NInt
     public native long collectionViewNumberOfItemsInSection(UICollectionView collectionView, @NInt long section);
@@ -270,6 +292,25 @@ public class UICollectionViewController extends UIViewController
 
     @Generated
     @IsOptional
+    @Selector("collectionView:shouldUpdateFocusInContext:")
+    public native boolean collectionViewShouldUpdateFocusInContext(UICollectionView collectionView,
+            UICollectionViewFocusUpdateContext context);
+
+    @Generated
+    @IsOptional
+    @Selector("collectionView:targetContentOffsetForProposedContentOffset:")
+    @ByValue
+    public native CGPoint collectionViewTargetContentOffsetForProposedContentOffset(UICollectionView collectionView,
+            @ByValue CGPoint proposedContentOffset);
+
+    @Generated
+    @IsOptional
+    @Selector("collectionView:targetIndexPathForMoveFromItemAtIndexPath:toProposedIndexPath:")
+    public native NSIndexPath collectionViewTargetIndexPathForMoveFromItemAtIndexPathToProposedIndexPath(
+            UICollectionView collectionView, NSIndexPath originalIndexPath, NSIndexPath proposedIndexPath);
+
+    @Generated
+    @IsOptional
     @Selector("collectionView:transitionLayoutForOldLayout:newLayout:")
     public native UICollectionViewTransitionLayout collectionViewTransitionLayoutForOldLayoutNewLayout(
             UICollectionView collectionView, UICollectionViewLayout fromLayout, UICollectionViewLayout toLayout);
@@ -297,8 +338,17 @@ public class UICollectionViewController extends UIViewController
     public native UICollectionViewLayout collectionViewLayout();
 
     @Generated
+    @IsOptional
+    @Selector("indexPathForPreferredFocusedViewInCollectionView:")
+    public native NSIndexPath indexPathForPreferredFocusedViewInCollectionView(UICollectionView collectionView);
+
+    @Generated
     @Selector("init")
     public native UICollectionViewController init();
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native UICollectionViewController initWithCoder(NSCoder aDecoder);
 
     @Generated
     @Selector("initWithCollectionViewLayout:")
@@ -307,6 +357,10 @@ public class UICollectionViewController extends UIViewController
     @Generated
     @Selector("initWithNibName:bundle:")
     public native UICollectionViewController initWithNibNameBundle(String nibNameOrNil, NSBundle nibBundleOrNil);
+
+    @Generated
+    @Selector("installsStandardGestureForInteractiveMovement")
+    public native boolean installsStandardGestureForInteractiveMovement();
 
     @Generated
     @IsOptional
@@ -385,6 +439,10 @@ public class UICollectionViewController extends UIViewController
     public native void setCollectionView(UICollectionView value);
 
     @Generated
+    @Selector("setInstallsStandardGestureForInteractiveMovement:")
+    public native void setInstallsStandardGestureForInteractiveMovement(boolean value);
+
+    @Generated
     @Selector("setUseLayoutToLayoutNavigationTransitions:")
     public native void setUseLayoutToLayoutNavigationTransitions(boolean value);
 
@@ -396,62 +454,4 @@ public class UICollectionViewController extends UIViewController
     @IsOptional
     @Selector("viewForZoomingInScrollView:")
     public native UIView viewForZoomingInScrollView(UIScrollView scrollView);
-
-    @Generated
-    @IsOptional
-    @Selector("collectionView:canMoveItemAtIndexPath:")
-    public native boolean collectionViewCanMoveItemAtIndexPath(UICollectionView collectionView, NSIndexPath indexPath);
-
-    @Generated
-    @IsOptional
-    @Selector("collectionView:moveItemAtIndexPath:toIndexPath:")
-    public native void collectionViewMoveItemAtIndexPathToIndexPath(UICollectionView collectionView,
-            NSIndexPath sourceIndexPath, NSIndexPath destinationIndexPath);
-
-    @Generated
-    @IsOptional
-    @Selector("collectionView:targetContentOffsetForProposedContentOffset:")
-    @ByValue
-    public native CGPoint collectionViewTargetContentOffsetForProposedContentOffset(UICollectionView collectionView,
-            @ByValue CGPoint proposedContentOffset);
-
-    @Generated
-    @IsOptional
-    @Selector("collectionView:targetIndexPathForMoveFromItemAtIndexPath:toProposedIndexPath:")
-    public native NSIndexPath collectionViewTargetIndexPathForMoveFromItemAtIndexPathToProposedIndexPath(
-            UICollectionView collectionView, NSIndexPath originalIndexPath, NSIndexPath proposedIndexPath);
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native UICollectionViewController initWithCoder(NSCoder aDecoder);
-
-    @Generated
-    @Selector("installsStandardGestureForInteractiveMovement")
-    public native boolean installsStandardGestureForInteractiveMovement();
-
-    @Generated
-    @Selector("setInstallsStandardGestureForInteractiveMovement:")
-    public native void setInstallsStandardGestureForInteractiveMovement(boolean value);
-
-    @Generated
-    @IsOptional
-    @Selector("collectionView:canFocusItemAtIndexPath:")
-    public native boolean collectionViewCanFocusItemAtIndexPath(UICollectionView collectionView, NSIndexPath indexPath);
-
-    @Generated
-    @IsOptional
-    @Selector("collectionView:didUpdateFocusInContext:withAnimationCoordinator:")
-    public native void collectionViewDidUpdateFocusInContextWithAnimationCoordinator(UICollectionView collectionView,
-            UICollectionViewFocusUpdateContext context, UIFocusAnimationCoordinator coordinator);
-
-    @Generated
-    @IsOptional
-    @Selector("collectionView:shouldUpdateFocusInContext:")
-    public native boolean collectionViewShouldUpdateFocusInContext(UICollectionView collectionView,
-            UICollectionViewFocusUpdateContext context);
-
-    @Generated
-    @IsOptional
-    @Selector("indexPathForPreferredFocusedViewInCollectionView:")
-    public native NSIndexPath indexPathForPreferredFocusedViewInCollectionView(UICollectionView collectionView);
 }

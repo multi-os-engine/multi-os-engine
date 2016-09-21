@@ -52,30 +52,13 @@ public class NSProgress extends NSObject {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native NSProgress alloc();
-
-    @Generated
-    @Selector("currentProgress")
-    public static native NSProgress currentProgress();
-
-    @Generated
-    @Selector("progressWithTotalUnitCount:")
-    public static native NSProgress progressWithTotalUnitCount(long unitCount);
-
-    @Generated
-    @Selector("discreteProgressWithTotalUnitCount:")
-    public static native NSProgress discreteProgressWithTotalUnitCount(long unitCount);
-
-    @Generated
-    @Selector("progressWithTotalUnitCount:parent:pendingUnitCount:")
-    public static native NSProgress progressWithTotalUnitCountParentPendingUnitCount(long unitCount, NSProgress parent,
-            long portionOfParentTotalUnitCount);
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -105,12 +88,20 @@ public class NSProgress extends NSObject {
     public static native Class classForKeyedUnarchiver();
 
     @Generated
+    @Selector("currentProgress")
+    public static native NSProgress currentProgress();
+
+    @Generated
     @Selector("debugDescription")
     public static native String debugDescription_static();
 
     @Generated
     @Selector("description")
     public static native String description_static();
+
+    @Generated
+    @Selector("discreteProgressWithTotalUnitCount:")
+    public static native NSProgress discreteProgressWithTotalUnitCount(long unitCount);
 
     @Generated
     @Selector("hash")
@@ -153,6 +144,15 @@ public class NSProgress extends NSObject {
     public static native Object new_objc();
 
     @Generated
+    @Selector("progressWithTotalUnitCount:")
+    public static native NSProgress progressWithTotalUnitCount(long unitCount);
+
+    @Generated
+    @Selector("progressWithTotalUnitCount:parent:pendingUnitCount:")
+    public static native NSProgress progressWithTotalUnitCountParentPendingUnitCount(long unitCount, NSProgress parent,
+            long portionOfParentTotalUnitCount);
+
+    @Generated
     @Selector("resolveClassMethod:")
     public static native boolean resolveClassMethod(SEL sel);
 
@@ -162,7 +162,7 @@ public class NSProgress extends NSObject {
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")
@@ -174,12 +174,21 @@ public class NSProgress extends NSObject {
     public static native long version_static();
 
     @Generated
+    @Selector("addChild:withPendingUnitCount:")
+    public native void addChildWithPendingUnitCount(NSProgress child, long inUnitCount);
+
+    @Generated
     @Selector("becomeCurrentWithPendingUnitCount:")
     public native void becomeCurrentWithPendingUnitCount(long unitCount);
 
     @Generated
     @Selector("cancel")
     public native void cancel();
+
+    @Generated
+    @Selector("cancellationHandler")
+    @ObjCBlock(name = "call_cancellationHandler_ret")
+    public native Block_cancellationHandler_ret cancellationHandler();
 
     @Generated
     @Selector("completedUnitCount")
@@ -242,8 +251,22 @@ public class NSProgress extends NSObject {
     public native void pause();
 
     @Generated
+    @Selector("pausingHandler")
+    @ObjCBlock(name = "call_pausingHandler_ret")
+    public native Block_pausingHandler_ret pausingHandler();
+
+    @Generated
     @Selector("resignCurrent")
     public native void resignCurrent();
+
+    @Generated
+    @Selector("resume")
+    public native void resume();
+
+    @Generated
+    @Selector("resumingHandler")
+    @ObjCBlock(name = "call_resumingHandler_ret")
+    public native Block_resumingHandler_ret resumingHandler();
 
     @Generated
     @Selector("setCancellationHandler:")
@@ -271,6 +294,10 @@ public class NSProgress extends NSObject {
     public native void setPausingHandler(@ObjCBlock(name = "call_setPausingHandler") Block_setPausingHandler value);
 
     @Generated
+    @Selector("setResumingHandler:")
+    public native void setResumingHandler(@ObjCBlock(name = "call_setResumingHandler") Block_setResumingHandler value);
+
+    @Generated
     @Selector("setTotalUnitCount:")
     public native void setTotalUnitCount(long value);
 
@@ -284,48 +311,7 @@ public class NSProgress extends NSObject {
 
     @Generated
     @Selector("userInfo")
-    public native NSDictionary<?, ?> userInfo();
-
-    @Generated
-    @Selector("cancellationHandler")
-    @ObjCBlock(name = "call_cancellationHandler_ret")
-    public native Block_cancellationHandler_ret cancellationHandler();
-
-    @Generated
-    @Selector("pausingHandler")
-    @ObjCBlock(name = "call_pausingHandler_ret")
-    public native Block_pausingHandler_ret pausingHandler();
-
-    @Generated
-    @Selector("addChild:withPendingUnitCount:")
-    public native void addChildWithPendingUnitCount(NSProgress child, long inUnitCount);
-
-    @Generated
-    @Selector("resume")
-    public native void resume();
-
-    @Generated
-    @Selector("resumingHandler")
-    @ObjCBlock(name = "call_resumingHandler_ret")
-    public native Block_resumingHandler_ret resumingHandler();
-
-    @Generated
-    @Selector("setResumingHandler:")
-    public native void setResumingHandler(@ObjCBlock(name = "call_setResumingHandler") Block_setResumingHandler value);
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_setCancellationHandler {
-        @Generated
-        void call_setCancellationHandler();
-    }
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_setPausingHandler {
-        @Generated
-        void call_setPausingHandler();
-    }
+    public native NSDictionary<String, ?> userInfo();
 
     @Runtime(ObjCRuntime.class)
     @Generated
@@ -346,6 +332,20 @@ public class NSProgress extends NSObject {
     public interface Block_resumingHandler_ret {
         @Generated
         void call_resumingHandler_ret();
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_setCancellationHandler {
+        @Generated
+        void call_setCancellationHandler();
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_setPausingHandler {
+        @Generated
+        void call_setPausingHandler();
     }
 
     @Runtime(ObjCRuntime.class)

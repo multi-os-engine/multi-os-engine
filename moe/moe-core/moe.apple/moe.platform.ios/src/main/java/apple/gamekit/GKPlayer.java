@@ -46,7 +46,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @Library("GameKit")
 @Runtime(ObjCRuntime.class)
 @ObjCClassBinding
-public class GKPlayer extends NSObject {
+public class GKPlayer extends GKBasePlayer {
     static {
         NatJ.register();
     }
@@ -57,28 +57,23 @@ public class GKPlayer extends NSObject {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native GKPlayer alloc();
 
     @Generated
-    @Selector("loadPlayersForIdentifiers:withCompletionHandler:")
-    public static native void loadPlayersForIdentifiersWithCompletionHandler(NSArray<String> identifiers,
-            @ObjCBlock(name = "call_loadPlayersForIdentifiersWithCompletionHandler") Block_loadPlayersForIdentifiersWithCompletionHandler completionHandler);
+    @Selector("allocWithZone:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("anonymousGuestPlayerWithIdentifier:")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object anonymousGuestPlayerWithIdentifier(String guestIdentifier);
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
-
-    @Generated
-    @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -145,6 +140,11 @@ public class GKPlayer extends NSObject {
     public static native void load_objc_static();
 
     @Generated
+    @Selector("loadPlayersForIdentifiers:withCompletionHandler:")
+    public static native void loadPlayersForIdentifiersWithCompletionHandler(NSArray<String> identifiers,
+            @ObjCBlock(name = "call_loadPlayersForIdentifiersWithCompletionHandler") Block_loadPlayersForIdentifiersWithCompletionHandler completionHandler);
+
+    @Generated
     @Owned
     @Selector("new")
     @MappedReturn(ObjCObjectMapper.class)
@@ -160,7 +160,7 @@ public class GKPlayer extends NSObject {
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")
@@ -180,6 +180,10 @@ public class GKPlayer extends NSObject {
     public native String displayName();
 
     @Generated
+    @Selector("guestIdentifier")
+    public native String guestIdentifier();
+
+    @Generated
     @Selector("init")
     public native GKPlayer init();
 
@@ -196,10 +200,6 @@ public class GKPlayer extends NSObject {
     @Generated
     @Selector("playerID")
     public native String playerID();
-
-    @Generated
-    @Selector("guestIdentifier")
-    public native String guestIdentifier();
 
     @Runtime(ObjCRuntime.class)
     @Generated

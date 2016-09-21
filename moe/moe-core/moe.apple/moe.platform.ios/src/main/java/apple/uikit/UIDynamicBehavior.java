@@ -55,13 +55,13 @@ public class UIDynamicBehavior extends NSObject {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native UIDynamicBehavior alloc();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -148,7 +148,7 @@ public class UIDynamicBehavior extends NSObject {
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")
@@ -157,7 +157,12 @@ public class UIDynamicBehavior extends NSObject {
     @Generated
     @Selector("version")
     @NInt
-    public static native long version();
+    public static native long version_static();
+
+    @Generated
+    @Selector("action")
+    @ObjCBlock(name = "call_action_ret")
+    public native Block_action_ret action();
 
     @Generated
     @Selector("addChildBehavior:")
@@ -187,22 +192,17 @@ public class UIDynamicBehavior extends NSObject {
     @Selector("willMoveToAnimator:")
     public native void willMoveToAnimator(UIDynamicAnimator dynamicAnimator);
 
+    @Runtime(ObjCRuntime.class)
     @Generated
-    @Selector("action")
-    @ObjCBlock(name = "call_action_ret")
-    public native Block_action_ret action();
+    public interface Block_action_ret {
+        @Generated
+        void call_action_ret();
+    }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_setAction {
         @Generated
         void call_setAction();
-    }
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_action_ret {
-        @Generated
-        void call_action_ret();
     }
 }

@@ -24,6 +24,8 @@ public final class UIBlurEffectStyle {
     @Generated @NInt public static final long ExtraLight = 0x0000000000000000L;
     @Generated @NInt public static final long Light = 0x0000000000000001L;
     @Generated @NInt public static final long Dark = 0x0000000000000002L;
+    @Generated @NInt public static final long Regular = 0x0000000000000004L;
+    @Generated @NInt public static final long Prominent = 0x0000000000000005L;
 
     @Generated
     private UIBlurEffectStyle() {

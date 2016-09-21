@@ -56,13 +56,13 @@ public class UINavigationController extends UIViewController {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native UINavigationController alloc();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -161,7 +161,7 @@ public class UINavigationController extends UIViewController {
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")
@@ -170,7 +170,7 @@ public class UINavigationController extends UIViewController {
     @Generated
     @Selector("version")
     @NInt
-    public static native long version();
+    public static native long version_static();
 
     @Generated
     @Selector("barHideOnSwipeGestureRecognizer")
@@ -204,6 +204,10 @@ public class UINavigationController extends UIViewController {
     @Generated
     @Selector("init")
     public native UINavigationController init();
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native UINavigationController initWithCoder(NSCoder aDecoder);
 
     @Generated
     @Selector("initWithNavigationBarClass:toolbarClass:")
@@ -327,8 +331,4 @@ public class UINavigationController extends UIViewController {
     @Generated
     @Selector("visibleViewController")
     public native UIViewController visibleViewController();
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native UINavigationController initWithCoder(NSCoder aDecoder);
 }

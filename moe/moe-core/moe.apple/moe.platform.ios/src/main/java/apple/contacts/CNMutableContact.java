@@ -61,13 +61,13 @@ public class CNMutableContact extends CNContact {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native CNMutableContact alloc();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -185,7 +185,7 @@ public class CNMutableContact extends CNContact {
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")
@@ -242,6 +242,10 @@ public class CNMutableContact extends CNContact {
     public native CNMutableContact init();
 
     @Generated
+    @Selector("initWithCoder:")
+    public native CNMutableContact initWithCoder(NSCoder aDecoder);
+
+    @Generated
     @Selector("instantMessageAddresses")
     public native NSArray<? extends CNLabeledValue<CNInstantMessageAddress>> instantMessageAddresses();
 
@@ -292,6 +296,10 @@ public class CNMutableContact extends CNContact {
     @Generated
     @Selector("phoneticMiddleName")
     public native String phoneticMiddleName();
+
+    @Generated
+    @Selector("phoneticOrganizationName")
+    public native String phoneticOrganizationName();
 
     @Generated
     @Selector("postalAddresses")
@@ -390,6 +398,10 @@ public class CNMutableContact extends CNContact {
     public native void setPhoneticMiddleName(String value);
 
     @Generated
+    @Selector("setPhoneticOrganizationName:")
+    public native void setPhoneticOrganizationName(String value);
+
+    @Generated
     @Selector("setPostalAddresses:")
     public native void setPostalAddresses(NSArray<? extends CNLabeledValue<CNPostalAddress>> value);
 
@@ -410,16 +422,12 @@ public class CNMutableContact extends CNContact {
     public native NSArray<? extends CNLabeledValue<CNSocialProfile>> socialProfiles();
 
     @Generated
-    @Selector("urlAddresses")
-    public native NSArray<? extends CNLabeledValue<String>> urlAddresses();
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native CNMutableContact initWithCoder(NSCoder aDecoder);
-
-    @Generated
     @ProtocolClassMethod("supportsSecureCoding")
     public boolean _supportsSecureCoding() {
         return supportsSecureCoding();
     }
+
+    @Generated
+    @Selector("urlAddresses")
+    public native NSArray<? extends CNLabeledValue<String>> urlAddresses();
 }

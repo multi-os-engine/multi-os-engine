@@ -56,17 +56,13 @@ public class UIReferenceLibraryViewController extends UIViewController {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native UIReferenceLibraryViewController alloc();
-
-    @Generated
-    @Selector("dictionaryHasDefinitionForTerm:")
-    public static native boolean dictionaryHasDefinitionForTerm(String term);
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -110,6 +106,10 @@ public class UIReferenceLibraryViewController extends UIViewController {
     @Generated
     @Selector("description")
     public static native String description_static();
+
+    @Generated
+    @Selector("dictionaryHasDefinitionForTerm:")
+    public static native boolean dictionaryHasDefinitionForTerm(String term);
 
     @Generated
     @Selector("hash")
@@ -181,14 +181,14 @@ public class UIReferenceLibraryViewController extends UIViewController {
     public native UIReferenceLibraryViewController init();
 
     @Generated
+    @Selector("initWithCoder:")
+    public native UIReferenceLibraryViewController initWithCoder(NSCoder aDecoder);
+
+    @Generated
     @Selector("initWithNibName:bundle:")
     public native UIReferenceLibraryViewController initWithNibNameBundle(String nibNameOrNil, NSBundle nibBundleOrNil);
 
     @Generated
     @Selector("initWithTerm:")
     public native UIReferenceLibraryViewController initWithTerm(String term);
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native UIReferenceLibraryViewController initWithCoder(NSCoder aDecoder);
 }

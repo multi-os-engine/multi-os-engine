@@ -18,8 +18,10 @@ package apple.webkit;
 
 import apple.NSObject;
 import apple.foundation.NSArray;
+import apple.foundation.NSCoder;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
+import apple.foundation.protocol.NSCoding;
 import apple.webkit.protocol.WKScriptMessageHandler;
 import org.moe.natj.c.ann.FunctionPtr;
 import org.moe.natj.general.NatJ;
@@ -44,7 +46,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @Library("WebKit")
 @Runtime(ObjCRuntime.class)
 @ObjCClassBinding
-public class WKUserContentController extends NSObject {
+public class WKUserContentController extends NSObject implements NSCoding {
     static {
         NatJ.register();
     }
@@ -55,13 +57,13 @@ public class WKUserContentController extends NSObject {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native WKUserContentController alloc();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -130,7 +132,7 @@ public class WKUserContentController extends NSObject {
 
     @Generated
     @Selector("load")
-    public static native void load_objc();
+    public static native void load_objc_static();
 
     @Generated
     @Owned
@@ -148,7 +150,7 @@ public class WKUserContentController extends NSObject {
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")
@@ -157,7 +159,7 @@ public class WKUserContentController extends NSObject {
     @Generated
     @Selector("version")
     @NInt
-    public static native long version();
+    public static native long version_static();
 
     @Generated
     @Selector("addScriptMessageHandler:name:")
@@ -169,8 +171,16 @@ public class WKUserContentController extends NSObject {
     public native void addUserScript(WKUserScript userScript);
 
     @Generated
+    @Selector("encodeWithCoder:")
+    public native void encodeWithCoder(NSCoder aCoder);
+
+    @Generated
     @Selector("init")
     public native WKUserContentController init();
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native WKUserContentController initWithCoder(NSCoder aDecoder);
 
     @Generated
     @Selector("removeAllUserScripts")

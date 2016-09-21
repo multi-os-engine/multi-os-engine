@@ -32,6 +32,7 @@ import org.moe.natj.general.ann.NUInt;
 import org.moe.natj.general.ann.Owned;
 import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.general.ptr.ConstPtr;
+import org.moe.natj.general.ptr.Ptr;
 import org.moe.natj.general.ptr.VoidPtr;
 import org.moe.natj.objc.Class;
 import org.moe.natj.objc.ObjCRuntime;
@@ -57,64 +58,13 @@ public class NSMutableOrderedSet<_ObjectType> extends NSOrderedSet<_ObjectType> 
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native NSMutableOrderedSet<?> alloc();
-
-    @Generated
-    @Selector("orderedSet")
-    public static native <_ObjectType> NSMutableOrderedSet<?> orderedSet();
-
-    @Generated
-    @Selector("orderedSetWithArray:")
-    public static native <_ObjectType> NSMutableOrderedSet<?> orderedSetWithArray(NSArray<_ObjectType> array);
-
-    @Generated
-    @Selector("orderedSetWithArray:range:copyItems:")
-    public static native <_ObjectType> NSMutableOrderedSet<?> orderedSetWithArrayRangeCopyItems(
-            NSArray<_ObjectType> array, @ByValue NSRange range, boolean flag);
-
-    @Generated
-    @Selector("orderedSetWithCapacity:")
-    public static native <_ObjectType> NSMutableOrderedSet<?> orderedSetWithCapacity(@NUInt long numItems);
-
-    @Generated
-    @Selector("orderedSetWithObject:")
-    public static native <_ObjectType> NSMutableOrderedSet<?> orderedSetWithObject(
-            @Mapped(ObjCObjectMapper.class) _ObjectType object);
-
-    @Generated
-    @Variadic()
-    @Selector("orderedSetWithObjects:")
-    public static native <_ObjectType> NSMutableOrderedSet<?> orderedSetWithObjects(
-            @Mapped(ObjCObjectMapper.class) _ObjectType firstObj, Object... varargs);
-
-    @Generated
-    @Selector("orderedSetWithObjects:count:")
-    public static native <_ObjectType> NSMutableOrderedSet<?> orderedSetWithObjectsCount(ConstPtr<_ObjectType> objects,
-            @NUInt long cnt);
-
-    @Generated
-    @Selector("orderedSetWithOrderedSet:")
-    public static native <_ObjectType> NSMutableOrderedSet<?> orderedSetWithOrderedSet(NSOrderedSet<_ObjectType> set);
-
-    @Generated
-    @Selector("orderedSetWithOrderedSet:range:copyItems:")
-    public static native <_ObjectType> NSMutableOrderedSet<?> orderedSetWithOrderedSetRangeCopyItems(
-            NSOrderedSet<_ObjectType> set, @ByValue NSRange range, boolean flag);
-
-    @Generated
-    @Selector("orderedSetWithSet:")
-    public static native <_ObjectType> NSMutableOrderedSet<?> orderedSetWithSet(NSSet<_ObjectType> set);
-
-    @Generated
-    @Selector("orderedSetWithSet:copyItems:")
-    public static native <_ObjectType> NSMutableOrderedSet<?> orderedSetWithSetCopyItems(NSSet<_ObjectType> set,
-            boolean flag);
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -190,6 +140,57 @@ public class NSMutableOrderedSet<_ObjectType> extends NSOrderedSet<_ObjectType> 
     @Selector("new")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object new_objc();
+
+    @Generated
+    @Selector("orderedSet")
+    public static native <_ObjectType> NSMutableOrderedSet<?> orderedSet();
+
+    @Generated
+    @Selector("orderedSetWithArray:")
+    public static native <_ObjectType> NSMutableOrderedSet<?> orderedSetWithArray(NSArray<_ObjectType> array);
+
+    @Generated
+    @Selector("orderedSetWithArray:range:copyItems:")
+    public static native <_ObjectType> NSMutableOrderedSet<?> orderedSetWithArrayRangeCopyItems(
+            NSArray<_ObjectType> array, @ByValue NSRange range, boolean flag);
+
+    @Generated
+    @Selector("orderedSetWithCapacity:")
+    public static native <_ObjectType> NSMutableOrderedSet<?> orderedSetWithCapacity(@NUInt long numItems);
+
+    @Generated
+    @Selector("orderedSetWithObject:")
+    public static native <_ObjectType> NSMutableOrderedSet<?> orderedSetWithObject(
+            @Mapped(ObjCObjectMapper.class) _ObjectType object);
+
+    @Generated
+    @Variadic()
+    @Selector("orderedSetWithObjects:")
+    public static native <_ObjectType> NSMutableOrderedSet<?> orderedSetWithObjects(
+            @Mapped(ObjCObjectMapper.class) _ObjectType firstObj, Object... varargs);
+
+    @Generated
+    @Selector("orderedSetWithObjects:count:")
+    public static native <_ObjectType> NSMutableOrderedSet<?> orderedSetWithObjectsCount(ConstPtr<_ObjectType> objects,
+            @NUInt long cnt);
+
+    @Generated
+    @Selector("orderedSetWithOrderedSet:")
+    public static native <_ObjectType> NSMutableOrderedSet<?> orderedSetWithOrderedSet(NSOrderedSet<_ObjectType> set);
+
+    @Generated
+    @Selector("orderedSetWithOrderedSet:range:copyItems:")
+    public static native <_ObjectType> NSMutableOrderedSet<?> orderedSetWithOrderedSetRangeCopyItems(
+            NSOrderedSet<_ObjectType> set, @ByValue NSRange range, boolean flag);
+
+    @Generated
+    @Selector("orderedSetWithSet:")
+    public static native <_ObjectType> NSMutableOrderedSet<?> orderedSetWithSet(NSSet<_ObjectType> set);
+
+    @Generated
+    @Selector("orderedSetWithSet:copyItems:")
+    public static native <_ObjectType> NSMutableOrderedSet<?> orderedSetWithSetCopyItems(NSSet<_ObjectType> set,
+            boolean flag);
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -273,7 +274,7 @@ public class NSMutableOrderedSet<_ObjectType> extends NSOrderedSet<_ObjectType> 
 
     @Generated
     @Selector("initWithObjects:count:")
-    public native NSMutableOrderedSet<?> initWithObjectsCount(ConstPtr<_ObjectType> objects, @NUInt long cnt);
+    public native NSMutableOrderedSet<?> initWithObjectsCount(Ptr<_ObjectType> objects, @NUInt long cnt);
 
     @Generated
     @Selector("initWithOrderedSet:")
@@ -390,18 +391,18 @@ public class NSMutableOrderedSet<_ObjectType> extends NSOrderedSet<_ObjectType> 
             @ObjCBlock(name = "call_sortWithOptionsUsingComparator") Block_sortWithOptionsUsingComparator cmptr);
 
     @Generated
+    @ProtocolClassMethod("supportsSecureCoding")
+    public boolean _supportsSecureCoding() {
+        return supportsSecureCoding();
+    }
+
+    @Generated
     @Selector("unionOrderedSet:")
     public native void unionOrderedSet(NSOrderedSet<_ObjectType> other);
 
     @Generated
     @Selector("unionSet:")
     public native void unionSet(NSSet<_ObjectType> other);
-
-    @Generated
-    @ProtocolClassMethod("supportsSecureCoding")
-    public boolean _supportsSecureCoding() {
-        return supportsSecureCoding();
-    }
 
     @Runtime(ObjCRuntime.class)
     @Generated

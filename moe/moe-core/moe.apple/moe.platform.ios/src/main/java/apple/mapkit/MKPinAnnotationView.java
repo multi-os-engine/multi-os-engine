@@ -66,23 +66,6 @@ public class MKPinAnnotationView extends MKAnnotationView {
     }
 
     @Generated
-    @Owned
-    @Selector("alloc")
-    public static native MKPinAnnotationView alloc();
-
-    @Generated
-    @Selector("greenPinColor")
-    public static native UIColor greenPinColor();
-
-    @Generated
-    @Selector("purplePinColor")
-    public static native UIColor purplePinColor();
-
-    @Generated
-    @Selector("redPinColor")
-    public static native UIColor redPinColor();
-
-    @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
 
@@ -91,6 +74,11 @@ public class MKPinAnnotationView extends MKAnnotationView {
     public static native void addKeyframeWithRelativeStartTimeRelativeDurationAnimations(double frameStartTime,
             double frameDuration,
             @ObjCBlock(name = "call_addKeyframeWithRelativeStartTimeRelativeDurationAnimations") UIView.Block_addKeyframeWithRelativeStartTimeRelativeDurationAnimations animations);
+
+    @Generated
+    @Owned
+    @Selector("alloc")
+    public static native MKPinAnnotationView alloc();
 
     @Generated
     @Selector("allocWithZone:")
@@ -213,6 +201,10 @@ public class MKPinAnnotationView extends MKAnnotationView {
     public static native String description_static();
 
     @Generated
+    @Selector("greenPinColor")
+    public static native UIColor greenPinColor();
+
+    @Generated
     @Selector("hash")
     @NUInt
     public static native long hash_static();
@@ -271,6 +263,14 @@ public class MKPinAnnotationView extends MKAnnotationView {
     @Selector("performWithoutAnimation:")
     public static native void performWithoutAnimation(
             @ObjCBlock(name = "call_performWithoutAnimation") UIView.Block_performWithoutAnimation actionsWithoutAnimation);
+
+    @Generated
+    @Selector("purplePinColor")
+    public static native UIColor purplePinColor();
+
+    @Generated
+    @Selector("redPinColor")
+    public static native UIColor redPinColor();
 
     @Generated
     @Selector("requiresConstraintBasedLayout")
@@ -359,6 +359,12 @@ public class MKPinAnnotationView extends MKAnnotationView {
     public static native long userInterfaceLayoutDirectionForSemanticContentAttribute(@NInt long attribute);
 
     @Generated
+    @Selector("userInterfaceLayoutDirectionForSemanticContentAttribute:relativeToLayoutDirection:")
+    @NInt
+    public static native long userInterfaceLayoutDirectionForSemanticContentAttributeRelativeToLayoutDirection(
+            @NInt long semanticContentAttribute, @NInt long layoutDirection);
+
+    @Generated
     @Selector("version")
     @NInt
     public static native long version_static();
@@ -366,46 +372,6 @@ public class MKPinAnnotationView extends MKAnnotationView {
     @Generated
     @Selector("animatesDrop")
     public native boolean animatesDrop();
-
-    @Generated
-    @Selector("init")
-    public native MKPinAnnotationView init();
-
-    @Generated
-    @Selector("initWithAnnotation:reuseIdentifier:")
-    public native MKPinAnnotationView initWithAnnotationReuseIdentifier(
-            @Mapped(ObjCObjectMapper.class) MKAnnotation annotation, String reuseIdentifier);
-
-    @Generated
-    @Selector("initWithFrame:")
-    public native MKPinAnnotationView initWithFrame(@ByValue CGRect frame);
-
-    @Deprecated
-    @Generated
-    @Selector("pinColor")
-    @NUInt
-    public native long pinColor();
-
-    @Generated
-    @Selector("setAnimatesDrop:")
-    public native void setAnimatesDrop(boolean value);
-
-    @Deprecated
-    @Generated
-    @Selector("setPinColor:")
-    public native void setPinColor(@NUInt long value);
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native MKPinAnnotationView initWithCoder(NSCoder aDecoder);
-
-    @Generated
-    @Selector("pinTintColor")
-    public native UIColor pinTintColor();
-
-    @Generated
-    @Selector("setPinTintColor:")
-    public native void setPinTintColor(UIColor value);
 
     @Generated
     @ProtocolClassMethod("appearance")
@@ -452,4 +418,44 @@ public class MKPinAnnotationView extends MKAnnotationView {
     public Object _appearanceWhenContainedInInstancesOfClasses(NSArray<?> containerTypes) {
         return appearanceWhenContainedInInstancesOfClasses(containerTypes);
     }
+
+    @Generated
+    @Selector("init")
+    public native MKPinAnnotationView init();
+
+    @Generated
+    @Selector("initWithAnnotation:reuseIdentifier:")
+    public native MKPinAnnotationView initWithAnnotationReuseIdentifier(
+            @Mapped(ObjCObjectMapper.class) MKAnnotation annotation, String reuseIdentifier);
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native MKPinAnnotationView initWithCoder(NSCoder aDecoder);
+
+    @Generated
+    @Selector("initWithFrame:")
+    public native MKPinAnnotationView initWithFrame(@ByValue CGRect frame);
+
+    @Generated
+    @Deprecated
+    @Selector("pinColor")
+    @NUInt
+    public native long pinColor();
+
+    @Generated
+    @Selector("pinTintColor")
+    public native UIColor pinTintColor();
+
+    @Generated
+    @Selector("setAnimatesDrop:")
+    public native void setAnimatesDrop(boolean value);
+
+    @Generated
+    @Deprecated
+    @Selector("setPinColor:")
+    public native void setPinColor(@NUInt long value);
+
+    @Generated
+    @Selector("setPinTintColor:")
+    public native void setPinTintColor(UIColor value);
 }

@@ -18,6 +18,7 @@ package apple.gameplaykit;
 
 import apple.NSObject;
 import apple.foundation.NSArray;
+import apple.foundation.NSCoder;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
 import org.moe.natj.c.ann.FunctionPtr;
@@ -43,7 +44,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @Library("GameplayKit")
 @Runtime(ObjCRuntime.class)
 @ObjCClassBinding
-public class GKGridGraph extends GKGraph {
+public class GKGridGraph<_NodeType> extends GKGraph {
     static {
         NatJ.register();
     }
@@ -54,17 +55,13 @@ public class GKGridGraph extends GKGraph {
     }
 
     @Generated
-    @Owned
-    @Selector("alloc")
-    public static native GKGridGraph alloc();
-
-    @Generated
-    @Selector("graphWithNodes:")
-    public static native GKGridGraph graphWithNodes(NSArray<? extends GKGraphNode> nodes);
-
-    @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
+    @Owned
+    @Selector("alloc")
+    public static native GKGridGraph<?> alloc();
 
     @Generated
     @Selector("allocWithZone:")
@@ -100,6 +97,10 @@ public class GKGridGraph extends GKGraph {
     @Generated
     @Selector("description")
     public static native String description_static();
+
+    @Generated
+    @Selector("graphWithNodes:")
+    public static native GKGridGraph<?> graphWithNodes(NSArray<? extends GKGraphNode> nodes);
 
     @Generated
     @Selector("hash")
@@ -163,6 +164,10 @@ public class GKGridGraph extends GKGraph {
     public static native long version_static();
 
     @Generated
+    @Selector("classForGenericArgumentAtIndex:")
+    public native Class classForGenericArgumentAtIndex(@NUInt long index);
+
+    @Generated
     @Selector("connectNodeToAdjacentNodes:")
     public native void connectNodeToAdjacentNodes(GKGridGraphNode node);
 
@@ -182,9 +187,13 @@ public class GKGridGraph extends GKGraph {
 
     @Generated
     @Selector("init")
-    public native GKGridGraph init();
+    public native GKGridGraph<?> init();
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native GKGridGraph<?> initWithCoder(NSCoder aDecoder);
 
     @Generated
     @Selector("initWithNodes:")
-    public native GKGridGraph initWithNodes(NSArray<? extends GKGraphNode> nodes);
+    public native GKGridGraph<?> initWithNodes(NSArray<? extends GKGraphNode> nodes);
 }

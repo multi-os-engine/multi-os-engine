@@ -27,6 +27,7 @@ import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
 import apple.foundation.NSURL;
 import apple.foundation.NSURLRequest;
+import apple.security.opaque.SecTrustRef;
 import apple.uikit.UIScrollView;
 import apple.uikit.UITraitCollection;
 import apple.uikit.UIView;
@@ -71,11 +72,6 @@ public class WKWebView extends UIView {
     }
 
     @Generated
-    @Owned
-    @Selector("alloc")
-    public static native WKWebView alloc();
-
-    @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
 
@@ -84,6 +80,11 @@ public class WKWebView extends UIView {
     public static native void addKeyframeWithRelativeStartTimeRelativeDurationAnimations(double frameStartTime,
             double frameDuration,
             @ObjCBlock(name = "call_addKeyframeWithRelativeStartTimeRelativeDurationAnimations") UIView.Block_addKeyframeWithRelativeStartTimeRelativeDurationAnimations animations);
+
+    @Generated
+    @Owned
+    @Selector("alloc")
+    public static native WKWebView alloc();
 
     @Generated
     @Selector("allocWithZone:")
@@ -299,7 +300,7 @@ public class WKWebView extends UIView {
 
     @Generated
     @Selector("setAnimationDuration:")
-    public static native void setAnimationDuration(double duration);
+    public static native void setAnimationDuration_static(double duration);
 
     @Generated
     @Selector("setAnimationRepeatAutoreverses:")
@@ -307,7 +308,7 @@ public class WKWebView extends UIView {
 
     @Generated
     @Selector("setAnimationRepeatCount:")
-    public static native void setAnimationRepeatCount(float repeatCount);
+    public static native void setAnimationRepeatCount_static(float repeatCount);
 
     @Generated
     @Selector("setAnimationStartDate:")
@@ -327,7 +328,7 @@ public class WKWebView extends UIView {
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")
@@ -352,6 +353,12 @@ public class WKWebView extends UIView {
     public static native long userInterfaceLayoutDirectionForSemanticContentAttribute(@NInt long attribute);
 
     @Generated
+    @Selector("userInterfaceLayoutDirectionForSemanticContentAttribute:relativeToLayoutDirection:")
+    @NInt
+    public static native long userInterfaceLayoutDirectionForSemanticContentAttributeRelativeToLayoutDirection(
+            @NInt long semanticContentAttribute, @NInt long layoutDirection);
+
+    @Generated
     @Selector("version")
     @NInt
     public static native long version_static();
@@ -370,163 +377,8 @@ public class WKWebView extends UIView {
     public native boolean allowsBackForwardNavigationGestures();
 
     @Generated
-    @Selector("backForwardList")
-    public native WKBackForwardList backForwardList();
-
-    @Generated
-    @Selector("canGoBack")
-    public native boolean canGoBack();
-
-    @Generated
-    @Selector("canGoForward")
-    public native boolean canGoForward();
-
-    @Generated
-    @Selector("configuration")
-    public native WKWebViewConfiguration configuration();
-
-    @Generated
-    @Selector("estimatedProgress")
-    public native double estimatedProgress();
-
-    @Generated
-    @Selector("evaluateJavaScript:completionHandler:")
-    public native void evaluateJavaScriptCompletionHandler(String javaScriptString,
-            @ObjCBlock(name = "call_evaluateJavaScriptCompletionHandler") Block_evaluateJavaScriptCompletionHandler completionHandler);
-
-    @Generated
-    @Selector("goBack")
-    public native WKNavigation goBack();
-
-    @Generated
-    @Selector("goForward")
-    public native WKNavigation goForward();
-
-    @Generated
-    @Selector("goToBackForwardListItem:")
-    public native WKNavigation goToBackForwardListItem(WKBackForwardListItem item);
-
-    @Generated
-    @Selector("hasOnlySecureContent")
-    public native boolean hasOnlySecureContent();
-
-    @Generated
-    @Selector("init")
-    public native WKWebView init();
-
-    @Generated
-    @Selector("initWithFrame:")
-    public native WKWebView initWithFrame(@ByValue CGRect frame);
-
-    @Generated
-    @Selector("initWithFrame:configuration:")
-    public native WKWebView initWithFrameConfiguration(@ByValue CGRect frame, WKWebViewConfiguration configuration);
-
-    @Generated
-    @Selector("isLoading")
-    public native boolean isLoading();
-
-    @Generated
-    @Selector("loadHTMLString:baseURL:")
-    public native WKNavigation loadHTMLStringBaseURL(String string, NSURL baseURL);
-
-    @Generated
-    @Selector("loadRequest:")
-    public native WKNavigation loadRequest(NSURLRequest request);
-
-    @Generated
-    @Selector("navigationDelegate")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native WKNavigationDelegate navigationDelegate();
-
-    @Generated
-    @Selector("reload")
-    public native WKNavigation reload();
-
-    @Generated
-    @Selector("reloadFromOrigin")
-    public native WKNavigation reloadFromOrigin();
-
-    @Generated
-    @Selector("scrollView")
-    public native UIScrollView scrollView();
-
-    @Generated
-    @Selector("setAllowsBackForwardNavigationGestures:")
-    public native void setAllowsBackForwardNavigationGestures(boolean value);
-
-    @Generated
-    @Selector("setNavigationDelegate:")
-    public native void setNavigationDelegate_unsafe(@Mapped(ObjCObjectMapper.class) WKNavigationDelegate value);
-
-    @Generated
-    public void setNavigationDelegate(@Mapped(ObjCObjectMapper.class) WKNavigationDelegate value) {
-        Object __old = navigationDelegate();
-        if (value != null) {
-            org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);
-        }
-        setNavigationDelegate_unsafe(value);
-        if (__old != null) {
-            org.moe.natj.objc.ObjCRuntime.dissociateObjCObject(this, __old);
-        }
-    }
-
-    @Generated
-    @Selector("setUIDelegate:")
-    public native void setUIDelegate_unsafe(@Mapped(ObjCObjectMapper.class) WKUIDelegate value);
-
-    @Generated
-    public void setUIDelegate(@Mapped(ObjCObjectMapper.class) WKUIDelegate value) {
-        Object __old = UIDelegate();
-        if (value != null) {
-            org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);
-        }
-        setUIDelegate_unsafe(value);
-        if (__old != null) {
-            org.moe.natj.objc.ObjCRuntime.dissociateObjCObject(this, __old);
-        }
-    }
-
-    @Generated
-    @Selector("stopLoading")
-    public native void stopLoading();
-
-    @Generated
-    @Selector("title")
-    public native String title();
-
-    @Generated
-    @Selector("certificateChain")
-    public native NSArray<?> certificateChain();
-
-    @Generated
-    @Selector("customUserAgent")
-    public native String customUserAgent();
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native WKWebView initWithCoder(NSCoder aDecoder);
-
-    @Generated
-    @Selector("loadData:MIMEType:characterEncodingName:baseURL:")
-    public native WKNavigation loadDataMIMETypeCharacterEncodingNameBaseURL(NSData data, String MIMEType,
-            String characterEncodingName, NSURL baseURL);
-
-    @Generated
-    @Selector("loadFileURL:allowingReadAccessToURL:")
-    public native WKNavigation loadFileURLAllowingReadAccessToURL(NSURL URL, NSURL readAccessURL);
-
-    @Generated
-    @Selector("setCustomUserAgent:")
-    public native void setCustomUserAgent(String value);
-
-    @Generated
     @Selector("allowsLinkPreview")
     public native boolean allowsLinkPreview();
-
-    @Generated
-    @Selector("setAllowsLinkPreview:")
-    public native void setAllowsLinkPreview(boolean value);
 
     @Generated
     @ProtocolClassMethod("appearance")
@@ -573,6 +425,165 @@ public class WKWebView extends UIView {
     public Object _appearanceWhenContainedInInstancesOfClasses(NSArray<?> containerTypes) {
         return appearanceWhenContainedInInstancesOfClasses(containerTypes);
     }
+
+    @Generated
+    @Selector("backForwardList")
+    public native WKBackForwardList backForwardList();
+
+    @Generated
+    @Selector("canGoBack")
+    public native boolean canGoBack();
+
+    @Generated
+    @Selector("canGoForward")
+    public native boolean canGoForward();
+
+    @Generated
+    @Selector("certificateChain")
+    public native NSArray<?> certificateChain();
+
+    @Generated
+    @Selector("configuration")
+    public native WKWebViewConfiguration configuration();
+
+    @Generated
+    @Selector("customUserAgent")
+    public native String customUserAgent();
+
+    @Generated
+    @Selector("estimatedProgress")
+    public native double estimatedProgress();
+
+    @Generated
+    @Selector("evaluateJavaScript:completionHandler:")
+    public native void evaluateJavaScriptCompletionHandler(String javaScriptString,
+            @ObjCBlock(name = "call_evaluateJavaScriptCompletionHandler") Block_evaluateJavaScriptCompletionHandler completionHandler);
+
+    @Generated
+    @Selector("goBack")
+    public native WKNavigation goBack();
+
+    @Generated
+    @Selector("goForward")
+    public native WKNavigation goForward();
+
+    @Generated
+    @Selector("goToBackForwardListItem:")
+    public native WKNavigation goToBackForwardListItem(WKBackForwardListItem item);
+
+    @Generated
+    @Selector("hasOnlySecureContent")
+    public native boolean hasOnlySecureContent();
+
+    @Generated
+    @Selector("init")
+    public native WKWebView init();
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native WKWebView initWithCoder(NSCoder coder);
+
+    @Generated
+    @Selector("initWithFrame:")
+    public native WKWebView initWithFrame(@ByValue CGRect frame);
+
+    @Generated
+    @Selector("initWithFrame:configuration:")
+    public native WKWebView initWithFrameConfiguration(@ByValue CGRect frame, WKWebViewConfiguration configuration);
+
+    @Generated
+    @Selector("isLoading")
+    public native boolean isLoading();
+
+    @Generated
+    @Selector("loadData:MIMEType:characterEncodingName:baseURL:")
+    public native WKNavigation loadDataMIMETypeCharacterEncodingNameBaseURL(NSData data, String MIMEType,
+            String characterEncodingName, NSURL baseURL);
+
+    @Generated
+    @Selector("loadFileURL:allowingReadAccessToURL:")
+    public native WKNavigation loadFileURLAllowingReadAccessToURL(NSURL URL, NSURL readAccessURL);
+
+    @Generated
+    @Selector("loadHTMLString:baseURL:")
+    public native WKNavigation loadHTMLStringBaseURL(String string, NSURL baseURL);
+
+    @Generated
+    @Selector("loadRequest:")
+    public native WKNavigation loadRequest(NSURLRequest request);
+
+    @Generated
+    @Selector("navigationDelegate")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native WKNavigationDelegate navigationDelegate();
+
+    @Generated
+    @Selector("reload")
+    public native WKNavigation reload();
+
+    @Generated
+    @Selector("reloadFromOrigin")
+    public native WKNavigation reloadFromOrigin();
+
+    @Generated
+    @Selector("scrollView")
+    public native UIScrollView scrollView();
+
+    @Generated
+    @Selector("serverTrust")
+    public native SecTrustRef serverTrust();
+
+    @Generated
+    @Selector("setAllowsBackForwardNavigationGestures:")
+    public native void setAllowsBackForwardNavigationGestures(boolean value);
+
+    @Generated
+    @Selector("setAllowsLinkPreview:")
+    public native void setAllowsLinkPreview(boolean value);
+
+    @Generated
+    @Selector("setCustomUserAgent:")
+    public native void setCustomUserAgent(String value);
+
+    @Generated
+    @Selector("setNavigationDelegate:")
+    public native void setNavigationDelegate_unsafe(@Mapped(ObjCObjectMapper.class) WKNavigationDelegate value);
+
+    @Generated
+    public void setNavigationDelegate(@Mapped(ObjCObjectMapper.class) WKNavigationDelegate value) {
+        Object __old = navigationDelegate();
+        if (value != null) {
+            org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);
+        }
+        setNavigationDelegate_unsafe(value);
+        if (__old != null) {
+            org.moe.natj.objc.ObjCRuntime.dissociateObjCObject(this, __old);
+        }
+    }
+
+    @Generated
+    @Selector("setUIDelegate:")
+    public native void setUIDelegate_unsafe(@Mapped(ObjCObjectMapper.class) WKUIDelegate value);
+
+    @Generated
+    public void setUIDelegate(@Mapped(ObjCObjectMapper.class) WKUIDelegate value) {
+        Object __old = UIDelegate();
+        if (value != null) {
+            org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);
+        }
+        setUIDelegate_unsafe(value);
+        if (__old != null) {
+            org.moe.natj.objc.ObjCRuntime.dissociateObjCObject(this, __old);
+        }
+    }
+
+    @Generated
+    @Selector("stopLoading")
+    public native void stopLoading();
+
+    @Generated
+    @Selector("title")
+    public native String title();
 
     @Runtime(ObjCRuntime.class)
     @Generated

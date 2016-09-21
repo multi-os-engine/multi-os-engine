@@ -56,13 +56,13 @@ public class CKOperation extends NSOperation {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native CKOperation alloc();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -131,7 +131,7 @@ public class CKOperation extends NSOperation {
 
     @Generated
     @Selector("load")
-    public static native void load_objc();
+    public static native void load_objc_static();
 
     @Generated
     @Owned
@@ -149,7 +149,7 @@ public class CKOperation extends NSOperation {
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")
@@ -158,7 +158,7 @@ public class CKOperation extends NSOperation {
     @Generated
     @Selector("version")
     @NInt
-    public static native long version();
+    public static native long version_static();
 
     @Generated
     @Selector("allowsCellularAccess")
@@ -171,24 +171,6 @@ public class CKOperation extends NSOperation {
     @Generated
     @Selector("init")
     public native CKOperation init();
-
-    @Generated
-    @Selector("setAllowsCellularAccess:")
-    public native void setAllowsCellularAccess(boolean value);
-
-    @Generated
-    @Selector("setContainer:")
-    public native void setContainer(CKContainer value);
-
-    @Deprecated
-    @Generated
-    @Selector("setUsesBackgroundSession:")
-    public native void setUsesBackgroundSession(boolean value);
-
-    @Deprecated
-    @Generated
-    @Selector("usesBackgroundSession")
-    public native boolean usesBackgroundSession();
 
     @Generated
     @Selector("isLongLived")
@@ -208,9 +190,43 @@ public class CKOperation extends NSOperation {
     public native String operationID();
 
     @Generated
+    @Selector("setAllowsCellularAccess:")
+    public native void setAllowsCellularAccess(boolean value);
+
+    @Generated
+    @Selector("setContainer:")
+    public native void setContainer(CKContainer value);
+
+    @Generated
     @Selector("setLongLivedOperationWasPersistedBlock:")
     public native void setLongLivedOperationWasPersistedBlock(
             @ObjCBlock(name = "call_setLongLivedOperationWasPersistedBlock") Block_setLongLivedOperationWasPersistedBlock value);
+
+    @Generated
+    @Selector("setTimeoutIntervalForRequest:")
+    public native void setTimeoutIntervalForRequest(double value);
+
+    @Generated
+    @Selector("setTimeoutIntervalForResource:")
+    public native void setTimeoutIntervalForResource(double value);
+
+    @Generated
+    @Deprecated
+    @Selector("setUsesBackgroundSession:")
+    public native void setUsesBackgroundSession(boolean value);
+
+    @Generated
+    @Selector("timeoutIntervalForRequest")
+    public native double timeoutIntervalForRequest();
+
+    @Generated
+    @Selector("timeoutIntervalForResource")
+    public native double timeoutIntervalForResource();
+
+    @Generated
+    @Deprecated
+    @Selector("usesBackgroundSession")
+    public native boolean usesBackgroundSession();
 
     @Runtime(ObjCRuntime.class)
     @Generated

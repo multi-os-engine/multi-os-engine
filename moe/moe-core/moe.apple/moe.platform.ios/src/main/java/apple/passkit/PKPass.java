@@ -61,13 +61,13 @@ public class PKPass extends PKObject {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native PKPass alloc();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -154,7 +154,7 @@ public class PKPass extends PKObject {
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")
@@ -163,11 +163,15 @@ public class PKPass extends PKObject {
     @Generated
     @Selector("version")
     @NInt
-    public static native long version();
+    public static native long version_static();
 
     @Generated
     @Selector("authenticationToken")
     public native String authenticationToken();
+
+    @Generated
+    @Selector("deviceName")
+    public native String deviceName();
 
     @Generated
     @Selector("icon")
@@ -180,6 +184,10 @@ public class PKPass extends PKObject {
     @Generated
     @Selector("initWithData:error:")
     public native PKPass initWithDataError(NSData data, Ptr<NSError> error);
+
+    @Generated
+    @Selector("isRemotePass")
+    public native boolean isRemotePass();
 
     @Generated
     @Selector("localizedDescription")
@@ -230,12 +238,4 @@ public class PKPass extends PKObject {
     @Generated
     @Selector("webServiceURL")
     public native NSURL webServiceURL();
-
-    @Generated
-    @Selector("deviceName")
-    public native String deviceName();
-
-    @Generated
-    @Selector("isRemotePass")
-    public native boolean isRemotePass();
 }

@@ -58,33 +58,17 @@ public class NEFilterControlVerdict extends NEFilterNewFlowVerdict implements NS
     }
 
     @Generated
-    @Owned
-    @Selector("alloc")
-    public static native NEFilterControlVerdict alloc();
-
-    @Generated
-    @Selector("allowVerdictWithUpdateRules:")
-    public static native NEFilterControlVerdict allowVerdictWithUpdateRules(boolean updateRules);
-
-    @Generated
-    @Selector("dropVerdictWithUpdateRules:")
-    public static native NEFilterControlVerdict dropVerdictWithUpdateRules(boolean updateRules);
-
-    @Generated
-    @Selector("supportsSecureCoding")
-    public static native boolean supportsSecureCoding();
-
-    @Generated
-    @Selector("updateRules")
-    public static native NEFilterControlVerdict updateRules();
-
-    @Generated
     @Selector("URLAppendStringVerdictWithMapKey:")
     public static native NEFilterNewFlowVerdict URLAppendStringVerdictWithMapKey(String urlAppendMapKey);
 
     @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
+    @Owned
+    @Selector("alloc")
+    public static native NEFilterControlVerdict alloc();
 
     @Generated
     @Selector("allocWithZone:")
@@ -94,6 +78,10 @@ public class NEFilterControlVerdict extends NEFilterNewFlowVerdict implements NS
     @Generated
     @Selector("allowVerdict")
     public static native NEFilterNewFlowVerdict allowVerdict();
+
+    @Generated
+    @Selector("allowVerdictWithUpdateRules:")
+    public static native NEFilterControlVerdict allowVerdictWithUpdateRules(boolean updateRules);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -128,6 +116,10 @@ public class NEFilterControlVerdict extends NEFilterNewFlowVerdict implements NS
     @Generated
     @Selector("dropVerdict")
     public static native NEFilterNewFlowVerdict dropVerdict();
+
+    @Generated
+    @Selector("dropVerdictWithUpdateRules:")
+    public static native NEFilterControlVerdict dropVerdictWithUpdateRules(boolean updateRules);
 
     @Generated
     @Selector("filterDataVerdictWithFilterInbound:peekInboundBytes:filterOutbound:peekOutboundBytes:")
@@ -193,16 +185,24 @@ public class NEFilterControlVerdict extends NEFilterNewFlowVerdict implements NS
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")
     public static native Class superclass_static();
 
     @Generated
+    @Selector("supportsSecureCoding")
+    public static native boolean supportsSecureCoding();
+
+    @Generated
+    @Selector("updateRules")
+    public static native NEFilterControlVerdict updateRules();
+
+    @Generated
     @Selector("version")
     @NInt
-    public static native long version();
+    public static native long version_static();
 
     @Generated
     @Owned

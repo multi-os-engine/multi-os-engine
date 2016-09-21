@@ -56,23 +56,13 @@ public class MPMediaPropertyPredicate extends MPMediaPredicate {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native MPMediaPropertyPredicate alloc();
-
-    @Generated
-    @Selector("predicateWithValue:forProperty:")
-    public static native MPMediaPropertyPredicate predicateWithValueForProperty(
-            @Mapped(ObjCObjectMapper.class) Object value, String property);
-
-    @Generated
-    @Selector("predicateWithValue:forProperty:comparisonType:")
-    public static native MPMediaPropertyPredicate predicateWithValueForPropertyComparisonType(
-            @Mapped(ObjCObjectMapper.class) Object value, String property, @NInt long comparisonType);
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -150,6 +140,16 @@ public class MPMediaPropertyPredicate extends MPMediaPredicate {
     public static native Object new_objc();
 
     @Generated
+    @Selector("predicateWithValue:forProperty:")
+    public static native MPMediaPropertyPredicate predicateWithValueForProperty(
+            @Mapped(ObjCObjectMapper.class) Object value, String property);
+
+    @Generated
+    @Selector("predicateWithValue:forProperty:comparisonType:")
+    public static native MPMediaPropertyPredicate predicateWithValueForPropertyComparisonType(
+            @Mapped(ObjCObjectMapper.class) Object value, String property, @NInt long comparisonType);
+
+    @Generated
     @Selector("resolveClassMethod:")
     public static native boolean resolveClassMethod(SEL sel);
 
@@ -184,21 +184,21 @@ public class MPMediaPropertyPredicate extends MPMediaPredicate {
     public native MPMediaPropertyPredicate init();
 
     @Generated
-    @Selector("property")
-    public native String property();
-
-    @Generated
-    @Selector("value")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native Object value();
-
-    @Generated
     @Selector("initWithCoder:")
     public native MPMediaPropertyPredicate initWithCoder(NSCoder aDecoder);
+
+    @Generated
+    @Selector("property")
+    public native String property();
 
     @Generated
     @ProtocolClassMethod("supportsSecureCoding")
     public boolean _supportsSecureCoding() {
         return supportsSecureCoding();
     }
+
+    @Generated
+    @Selector("value")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native Object value();
 }

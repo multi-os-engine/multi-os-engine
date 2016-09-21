@@ -55,9 +55,18 @@ public class CATransaction extends NSObject {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native CATransaction alloc();
+
+    @Generated
+    @Selector("allocWithZone:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("animationDuration")
@@ -68,72 +77,12 @@ public class CATransaction extends NSObject {
     public static native CAMediaTimingFunction animationTimingFunction();
 
     @Generated
-    @Selector("begin")
-    public static native void begin();
-
-    @Generated
-    @Selector("commit")
-    public static native void commit();
-
-    @Generated
-    @Selector("disableActions")
-    public static native boolean disableActions();
-
-    @Generated
-    @Selector("flush")
-    public static native void flush();
-
-    @Generated
-    @Selector("lock")
-    public static native void lock();
-
-    @Generated
-    @Selector("setAnimationDuration:")
-    public static native void setAnimationDuration(double dur);
-
-    @Generated
-    @Selector("setAnimationTimingFunction:")
-    public static native void setAnimationTimingFunction(CAMediaTimingFunction function);
-
-    @Generated
-    @Selector("setCompletionBlock:")
-    public static native void setCompletionBlock(
-            @ObjCBlock(name = "call_setCompletionBlock") Block_setCompletionBlock block);
-
-    @Generated
-    @Selector("setDisableActions:")
-    public static native void setDisableActions(boolean flag);
-
-    @Generated
-    @Selector("setValue:forKey:")
-    public static native void setValueForKey_static(@Mapped(ObjCObjectMapper.class) Object anObject, String key);
-
-    @Generated
-    @Selector("unlock")
-    public static native void unlock();
-
-    @Generated
-    @Selector("valueForKey:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object valueForKey_static(String key);
-
-    @Generated
-    @Selector("completionBlock")
-    @ObjCBlock(name = "call_completionBlock_ret")
-    public static native Block_completionBlock_ret completionBlock();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
-
-    @Generated
-    @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
-
-    @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
     public static native boolean automaticallyNotifiesObserversForKey(String key);
+
+    @Generated
+    @Selector("begin")
+    public static native void begin();
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
@@ -154,12 +103,29 @@ public class CATransaction extends NSObject {
     public static native Class classForKeyedUnarchiver();
 
     @Generated
+    @Selector("commit")
+    public static native void commit();
+
+    @Generated
+    @Selector("completionBlock")
+    @ObjCBlock(name = "call_completionBlock_ret")
+    public static native Block_completionBlock_ret completionBlock();
+
+    @Generated
     @Selector("debugDescription")
     public static native String debugDescription_static();
 
     @Generated
     @Selector("description")
     public static native String description_static();
+
+    @Generated
+    @Selector("disableActions")
+    public static native boolean disableActions();
+
+    @Generated
+    @Selector("flush")
+    public static native void flush();
 
     @Generated
     @Selector("hash")
@@ -196,6 +162,10 @@ public class CATransaction extends NSObject {
     public static native void load_objc_static();
 
     @Generated
+    @Selector("lock")
+    public static native void lock();
+
+    @Generated
     @Owned
     @Selector("new")
     @MappedReturn(ObjCObjectMapper.class)
@@ -210,12 +180,42 @@ public class CATransaction extends NSObject {
     public static native boolean resolveInstanceMethod(SEL sel);
 
     @Generated
+    @Selector("setAnimationDuration:")
+    public static native void setAnimationDuration(double dur);
+
+    @Generated
+    @Selector("setAnimationTimingFunction:")
+    public static native void setAnimationTimingFunction(CAMediaTimingFunction function);
+
+    @Generated
+    @Selector("setCompletionBlock:")
+    public static native void setCompletionBlock(
+            @ObjCBlock(name = "call_setCompletionBlock") Block_setCompletionBlock block);
+
+    @Generated
+    @Selector("setDisableActions:")
+    public static native void setDisableActions(boolean flag);
+
+    @Generated
+    @Selector("setValue:forKey:")
+    public static native void setValueForKey_static(@Mapped(ObjCObjectMapper.class) Object anObject, String key);
+
+    @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")
     public static native Class superclass_static();
+
+    @Generated
+    @Selector("unlock")
+    public static native void unlock();
+
+    @Generated
+    @Selector("valueForKey:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object valueForKey_static(String key);
 
     @Generated
     @Selector("version")
@@ -228,15 +228,15 @@ public class CATransaction extends NSObject {
 
     @Runtime(ObjCRuntime.class)
     @Generated
-    public interface Block_setCompletionBlock {
+    public interface Block_completionBlock_ret {
         @Generated
-        void call_setCompletionBlock();
+        void call_completionBlock_ret();
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
-    public interface Block_completionBlock_ret {
+    public interface Block_setCompletionBlock {
         @Generated
-        void call_completionBlock_ret();
+        void call_setCompletionBlock();
     }
 }

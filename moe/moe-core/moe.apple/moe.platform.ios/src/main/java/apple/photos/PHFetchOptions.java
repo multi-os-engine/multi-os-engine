@@ -57,13 +57,13 @@ public class PHFetchOptions extends NSObject implements NSCopying {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native PHFetchOptions alloc();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -150,7 +150,7 @@ public class PHFetchOptions extends NSObject implements NSCopying {
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")
@@ -168,8 +168,18 @@ public class PHFetchOptions extends NSObject implements NSCopying {
     public native Object copyWithZone(VoidPtr zone);
 
     @Generated
+    @Selector("fetchLimit")
+    @NUInt
+    public native long fetchLimit();
+
+    @Generated
     @Selector("includeAllBurstAssets")
     public native boolean includeAllBurstAssets();
+
+    @Generated
+    @Selector("includeAssetSourceTypes")
+    @NUInt
+    public native long includeAssetSourceTypes();
 
     @Generated
     @Selector("includeHiddenAssets")
@@ -184,8 +194,16 @@ public class PHFetchOptions extends NSObject implements NSCopying {
     public native NSPredicate predicate();
 
     @Generated
+    @Selector("setFetchLimit:")
+    public native void setFetchLimit(@NUInt long value);
+
+    @Generated
     @Selector("setIncludeAllBurstAssets:")
     public native void setIncludeAllBurstAssets(boolean value);
+
+    @Generated
+    @Selector("setIncludeAssetSourceTypes:")
+    public native void setIncludeAssetSourceTypes(@NUInt long value);
 
     @Generated
     @Selector("setIncludeHiddenAssets:")
@@ -210,22 +228,4 @@ public class PHFetchOptions extends NSObject implements NSCopying {
     @Generated
     @Selector("wantsIncrementalChangeDetails")
     public native boolean wantsIncrementalChangeDetails();
-
-    @Generated
-    @Selector("fetchLimit")
-    @NUInt
-    public native long fetchLimit();
-
-    @Generated
-    @Selector("includeAssetSourceTypes")
-    @NUInt
-    public native long includeAssetSourceTypes();
-
-    @Generated
-    @Selector("setFetchLimit:")
-    public native void setFetchLimit(@NUInt long value);
-
-    @Generated
-    @Selector("setIncludeAssetSourceTypes:")
-    public native void setIncludeAssetSourceTypes(@NUInt long value);
 }

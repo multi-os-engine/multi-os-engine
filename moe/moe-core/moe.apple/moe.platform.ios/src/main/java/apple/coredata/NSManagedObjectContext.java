@@ -64,25 +64,13 @@ public class NSManagedObjectContext extends NSObject implements NSCoding, NSLock
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native NSManagedObjectContext alloc();
-
-    @Generated
-    @Selector("mergeChangesFromRemoteContextSave:intoContexts:")
-    public static native void mergeChangesFromRemoteContextSaveIntoContexts(NSDictionary<?, ?> changeNotificationData,
-            NSArray<? extends NSManagedObjectContext> contexts);
-
-    @Generated
-    @Owned
-    @Deprecated
-    @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -154,6 +142,18 @@ public class NSManagedObjectContext extends NSObject implements NSCoding, NSLock
     public static native void load_objc_static();
 
     @Generated
+    @Selector("mergeChangesFromRemoteContextSave:intoContexts:")
+    public static native void mergeChangesFromRemoteContextSaveIntoContexts(NSDictionary<?, ?> changeNotificationData,
+            NSArray<? extends NSManagedObjectContext> contexts);
+
+    @Generated
+    @Owned
+    @Deprecated
+    @Selector("new")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object new_objc();
+
+    @Generated
     @Selector("resolveClassMethod:")
     public static native boolean resolveClassMethod(SEL sel);
 
@@ -163,7 +163,7 @@ public class NSManagedObjectContext extends NSObject implements NSCoding, NSLock
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")
@@ -180,6 +180,10 @@ public class NSManagedObjectContext extends NSObject implements NSCoding, NSLock
             NSPersistentStore store);
 
     @Generated
+    @Selector("automaticallyMergesChangesFromParent")
+    public native boolean automaticallyMergesChangesFromParent();
+
+    @Generated
     @Selector("concurrencyType")
     @NUInt
     public native long concurrencyType();
@@ -187,7 +191,7 @@ public class NSManagedObjectContext extends NSObject implements NSCoding, NSLock
     @Generated
     @Selector("countForFetchRequest:error:")
     @NUInt
-    public native long countForFetchRequestError(NSFetchRequest request, Ptr<NSError> error);
+    public native long countForFetchRequestError(NSFetchRequest<?> request, Ptr<NSError> error);
 
     @Generated
     @Selector("deleteObject:")
@@ -207,7 +211,7 @@ public class NSManagedObjectContext extends NSObject implements NSCoding, NSLock
 
     @Generated
     @Selector("executeFetchRequest:error:")
-    public native NSArray<?> executeFetchRequestError(NSFetchRequest request, Ptr<NSError> error);
+    public native NSArray<?> executeFetchRequestError(NSFetchRequest<?> request, Ptr<NSError> error);
 
     @Generated
     @Selector("executeRequest:error:")
@@ -221,8 +225,8 @@ public class NSManagedObjectContext extends NSObject implements NSCoding, NSLock
     @Selector("hasChanges")
     public native boolean hasChanges();
 
-    @Deprecated
     @Generated
+    @Deprecated
     @Selector("init")
     public native NSManagedObjectContext init();
 
@@ -304,8 +308,16 @@ public class NSManagedObjectContext extends NSObject implements NSCoding, NSLock
     public native boolean propagatesDeletesAtEndOfEvent();
 
     @Generated
+    @Selector("queryGenerationToken")
+    public native NSQueryGenerationToken queryGenerationToken();
+
+    @Generated
     @Selector("redo")
     public native void redo();
+
+    @Generated
+    @Selector("refreshAllObjects")
+    public native void refreshAllObjects();
 
     @Generated
     @Selector("refreshObject:mergeChanges:")
@@ -332,6 +344,10 @@ public class NSManagedObjectContext extends NSObject implements NSCoding, NSLock
     public native boolean save(Ptr<NSError> error);
 
     @Generated
+    @Selector("setAutomaticallyMergesChangesFromParent:")
+    public native void setAutomaticallyMergesChangesFromParent(boolean value);
+
+    @Generated
     @Selector("setMergePolicy:")
     public native void setMergePolicy(@Mapped(ObjCObjectMapper.class) Object value);
 
@@ -352,8 +368,16 @@ public class NSManagedObjectContext extends NSObject implements NSCoding, NSLock
     public native void setPropagatesDeletesAtEndOfEvent(boolean value);
 
     @Generated
+    @Selector("setQueryGenerationFromToken:error:")
+    public native boolean setQueryGenerationFromTokenError(NSQueryGenerationToken generation, Ptr<NSError> error);
+
+    @Generated
     @Selector("setRetainsRegisteredObjects:")
     public native void setRetainsRegisteredObjects(boolean value);
+
+    @Generated
+    @Selector("setShouldDeleteInaccessibleFaults:")
+    public native void setShouldDeleteInaccessibleFaults(boolean value);
 
     @Generated
     @Selector("setStalenessInterval:")
@@ -362,6 +386,15 @@ public class NSManagedObjectContext extends NSObject implements NSCoding, NSLock
     @Generated
     @Selector("setUndoManager:")
     public native void setUndoManager(NSUndoManager value);
+
+    @Generated
+    @Selector("shouldDeleteInaccessibleFaults")
+    public native boolean shouldDeleteInaccessibleFaults();
+
+    @Generated
+    @Selector("shouldHandleInaccessibleFault:forObjectID:triggeredByProperty:")
+    public native boolean shouldHandleInaccessibleFaultForObjectIDTriggeredByProperty(NSManagedObject fault,
+            NSManagedObjectID oid, NSPropertyDescription property);
 
     @Generated
     @Selector("stalenessInterval")
@@ -392,23 +425,6 @@ public class NSManagedObjectContext extends NSObject implements NSCoding, NSLock
     @Generated
     @Selector("userInfo")
     public native NSMutableDictionary<?, ?> userInfo();
-
-    @Generated
-    @Selector("refreshAllObjects")
-    public native void refreshAllObjects();
-
-    @Generated
-    @Selector("setShouldDeleteInaccessibleFaults:")
-    public native void setShouldDeleteInaccessibleFaults(boolean value);
-
-    @Generated
-    @Selector("shouldDeleteInaccessibleFaults")
-    public native boolean shouldDeleteInaccessibleFaults();
-
-    @Generated
-    @Selector("shouldHandleInaccessibleFault:forObjectID:triggeredByProperty:")
-    public native boolean shouldHandleInaccessibleFaultForObjectIDTriggeredByProperty(NSManagedObject fault,
-            NSManagedObjectID oid, NSPropertyDescription property);
 
     @Runtime(ObjCRuntime.class)
     @Generated

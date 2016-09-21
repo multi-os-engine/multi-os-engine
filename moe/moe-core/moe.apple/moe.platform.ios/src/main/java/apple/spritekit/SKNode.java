@@ -21,13 +21,19 @@ import apple.coregraphics.struct.CGPoint;
 import apple.coregraphics.struct.CGRect;
 import apple.foundation.NSArray;
 import apple.foundation.NSCoder;
+import apple.foundation.NSDictionary;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSMutableDictionary;
 import apple.foundation.NSSet;
 import apple.foundation.protocol.NSCoding;
 import apple.foundation.protocol.NSCopying;
+import apple.gameplaykit.GKEntity;
 import apple.gameplaykit.GKPolygonObstacle;
+import apple.uikit.UIFocusAnimationCoordinator;
+import apple.uikit.UIFocusUpdateContext;
 import apple.uikit.UIResponder;
+import apple.uikit.UIView;
+import apple.uikit.protocol.UIFocusItem;
 import org.moe.natj.c.ann.FunctionPtr;
 import org.moe.natj.general.NatJ;
 import org.moe.natj.general.Pointer;
@@ -46,6 +52,7 @@ import org.moe.natj.general.ptr.VoidPtr;
 import org.moe.natj.objc.Class;
 import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.SEL;
+import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
@@ -55,7 +62,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @Library("SpriteKit")
 @Runtime(ObjCRuntime.class)
 @ObjCClassBinding
-public class SKNode extends UIResponder implements NSCopying, NSCoding {
+public class SKNode extends UIResponder implements NSCopying, NSCoding, UIFocusItem {
     static {
         NatJ.register();
     }
@@ -66,35 +73,13 @@ public class SKNode extends UIResponder implements NSCopying, NSCoding {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native SKNode alloc();
-
-    @Generated
-    @Selector("node")
-    public static native SKNode node();
-
-    @Generated
-    @Selector("nodeWithFileNamed:")
-    public static native SKNode nodeWithFileNamed(String filename);
-
-    @Generated
-    @Selector("obstaclesFromNodeBounds:")
-    public static native NSArray<? extends GKPolygonObstacle> obstaclesFromNodeBounds(NSArray<? extends SKNode> nodes);
-
-    @Generated
-    @Selector("obstaclesFromNodePhysicsBodies:")
-    public static native NSArray<? extends GKPolygonObstacle> obstaclesFromNodePhysicsBodies(
-            NSArray<? extends SKNode> nodes);
-
-    @Generated
-    @Selector("obstaclesFromSpriteTextures:accuracy:")
-    public static native NSArray<? extends GKPolygonObstacle> obstaclesFromSpriteTexturesAccuracy(
-            NSArray<? extends SKNode> sprites, float accuracy);
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -167,13 +152,35 @@ public class SKNode extends UIResponder implements NSCopying, NSCoding {
 
     @Generated
     @Selector("load")
-    public static native void load_objc();
+    public static native void load_objc_static();
 
     @Generated
     @Owned
     @Selector("new")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object new_objc();
+
+    @Generated
+    @Selector("node")
+    public static native SKNode node();
+
+    @Generated
+    @Selector("nodeWithFileNamed:")
+    public static native SKNode nodeWithFileNamed(String filename);
+
+    @Generated
+    @Selector("obstaclesFromNodeBounds:")
+    public static native NSArray<? extends GKPolygonObstacle> obstaclesFromNodeBounds(NSArray<? extends SKNode> nodes);
+
+    @Generated
+    @Selector("obstaclesFromNodePhysicsBodies:")
+    public static native NSArray<? extends GKPolygonObstacle> obstaclesFromNodePhysicsBodies(
+            NSArray<? extends SKNode> nodes);
+
+    @Generated
+    @Selector("obstaclesFromSpriteTextures:accuracy:")
+    public static native NSArray<? extends GKPolygonObstacle> obstaclesFromSpriteTexturesAccuracy(
+            NSArray<? extends SKNode> sprites, float accuracy);
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -185,7 +192,7 @@ public class SKNode extends UIResponder implements NSCopying, NSCoding {
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")
@@ -194,7 +201,7 @@ public class SKNode extends UIResponder implements NSCopying, NSCoding {
     @Generated
     @Selector("version")
     @NInt
-    public static native long version();
+    public static native long version_static();
 
     @Generated
     @Selector("actionForKey:")
@@ -210,9 +217,17 @@ public class SKNode extends UIResponder implements NSCopying, NSCoding {
     public native double alpha();
 
     @Generated
+    @Selector("attributeValues")
+    public native NSDictionary<String, ? extends SKAttributeValue> attributeValues();
+
+    @Generated
     @Selector("calculateAccumulatedFrame")
     @ByValue
     public native CGRect calculateAccumulatedFrame();
+
+    @Generated
+    @Selector("canBecomeFocused")
+    public native boolean canBecomeFocused();
 
     @Generated
     @Selector("childNodeWithName:")
@@ -247,8 +262,17 @@ public class SKNode extends UIResponder implements NSCopying, NSCoding {
     public native Object copyWithZone(VoidPtr zone);
 
     @Generated
+    @Selector("didUpdateFocusInContext:withAnimationCoordinator:")
+    public native void didUpdateFocusInContextWithAnimationCoordinator(UIFocusUpdateContext context,
+            UIFocusAnimationCoordinator coordinator);
+
+    @Generated
     @Selector("encodeWithCoder:")
     public native void encodeWithCoder(NSCoder aCoder);
+
+    @Generated
+    @Selector("entity")
+    public native GKEntity entity();
 
     @Generated
     @Selector("enumerateChildNodesWithName:usingBlock:")
@@ -313,6 +337,10 @@ public class SKNode extends UIResponder implements NSCopying, NSCoding {
     public native void setUserInteractionEnabled(boolean value);
 
     @Generated
+    @Selector("moveToParent:")
+    public native void moveToParent(SKNode parent);
+
+    @Generated
     @Selector("name")
     public native String name();
 
@@ -340,6 +368,15 @@ public class SKNode extends UIResponder implements NSCopying, NSCoding {
     @Selector("position")
     @ByValue
     public native CGPoint position();
+
+    @Generated
+    @Selector("preferredFocusEnvironments")
+    public native NSArray<?> preferredFocusEnvironments();
+
+    @Generated
+    @IsOptional
+    @Selector("preferredFocusedView")
+    public native UIView preferredFocusedView();
 
     @Generated
     @Selector("reachConstraints")
@@ -387,12 +424,36 @@ public class SKNode extends UIResponder implements NSCopying, NSCoding {
     public native void setAlpha(@NFloat double value);
 
     @Generated
+    @Selector("setAttributeValues:")
+    public native void setAttributeValues(NSDictionary<String, ? extends SKAttributeValue> value);
+
+    @Generated
     @Selector("setConstraints:")
     public native void setConstraints(NSArray<? extends SKConstraint> value);
 
     @Generated
+    @Selector("setEntity:")
+    public native void setEntity_unsafe(GKEntity value);
+
+    @Generated
+    public void setEntity(GKEntity value) {
+        Object __old = entity();
+        if (value != null) {
+            org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);
+        }
+        setEntity_unsafe(value);
+        if (__old != null) {
+            org.moe.natj.objc.ObjCRuntime.dissociateObjCObject(this, __old);
+        }
+    }
+
+    @Generated
     @Selector("setName:")
     public native void setName(String value);
+
+    @Generated
+    @Selector("setNeedsFocusUpdate")
+    public native void setNeedsFocusUpdate();
 
     @Generated
     @Selector("setPhysicsBody:")
@@ -419,6 +480,10 @@ public class SKNode extends UIResponder implements NSCopying, NSCoding {
     public native void setUserData(NSMutableDictionary<?, ?> value);
 
     @Generated
+    @Selector("setValue:forAttributeNamed:")
+    public native void setValueForAttributeNamed(SKAttributeValue value, String key);
+
+    @Generated
     @Selector("setXScale:")
     public native void setXScale(@NFloat double value);
 
@@ -435,13 +500,25 @@ public class SKNode extends UIResponder implements NSCopying, NSCoding {
     public native void setZRotation(@NFloat double value);
 
     @Generated
+    @Selector("shouldUpdateFocusInContext:")
+    public native boolean shouldUpdateFocusInContext(UIFocusUpdateContext context);
+
+    @Generated
     @Selector("speed")
     @NFloat
     public native double speed();
 
     @Generated
+    @Selector("updateFocusIfNeeded")
+    public native void updateFocusIfNeeded();
+
+    @Generated
     @Selector("userData")
     public native NSMutableDictionary<?, ?> userData();
+
+    @Generated
+    @Selector("valueForAttributeNamed:")
+    public native SKAttributeValue valueForAttributeNamed(String key);
 
     @Generated
     @Selector("xScale")
@@ -462,10 +539,6 @@ public class SKNode extends UIResponder implements NSCopying, NSCoding {
     @Selector("zRotation")
     @NFloat
     public native double zRotation();
-
-    @Generated
-    @Selector("moveToParent:")
-    public native void moveToParent(SKNode parent);
 
     @Runtime(ObjCRuntime.class)
     @Generated

@@ -58,30 +58,13 @@ public class SCNFloor extends SCNGeometry {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native SCNFloor alloc();
-
-    @Generated
-    @Selector("floor")
-    public static native SCNFloor floor();
-
-    @Generated
-    @Selector("geometry")
-    public static native SCNFloor geometry();
-
-    @Generated
-    @Selector("geometryWithSources:elements:")
-    public static native SCNFloor geometryWithSourcesElements(NSArray<? extends SCNGeometrySource> sources,
-            NSArray<? extends SCNGeometryElement> elements);
-
-    @Generated
-    @Selector("geometryWithMDLMesh:")
-    public static native SCNFloor geometryWithMDLMesh(MDLMesh mdlMesh);
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -117,6 +100,23 @@ public class SCNFloor extends SCNGeometry {
     @Generated
     @Selector("description")
     public static native String description_static();
+
+    @Generated
+    @Selector("floor")
+    public static native SCNFloor floor();
+
+    @Generated
+    @Selector("geometry")
+    public static native SCNFloor geometry();
+
+    @Generated
+    @Selector("geometryWithMDLMesh:")
+    public static native SCNFloor geometryWithMDLMesh(MDLMesh mdlMesh);
+
+    @Generated
+    @Selector("geometryWithSources:elements:")
+    public static native SCNFloor geometryWithSourcesElements(NSArray<? extends SCNGeometrySource> sources,
+            NSArray<? extends SCNGeometryElement> elements);
 
     @Generated
     @Selector("hash")
@@ -188,6 +188,20 @@ public class SCNFloor extends SCNGeometry {
     public native SCNFloor init();
 
     @Generated
+    @Selector("initWithCoder:")
+    public native SCNFloor initWithCoder(NSCoder aDecoder);
+
+    @Generated
+    @Selector("length")
+    @NFloat
+    public native double length();
+
+    @Generated
+    @Selector("reflectionCategoryBitMask")
+    @NUInt
+    public native long reflectionCategoryBitMask();
+
+    @Generated
     @Selector("reflectionFalloffEnd")
     @NFloat
     public native double reflectionFalloffEnd();
@@ -208,6 +222,14 @@ public class SCNFloor extends SCNGeometry {
     public native double reflectivity();
 
     @Generated
+    @Selector("setLength:")
+    public native void setLength(@NFloat double value);
+
+    @Generated
+    @Selector("setReflectionCategoryBitMask:")
+    public native void setReflectionCategoryBitMask(@NUInt long value);
+
+    @Generated
     @Selector("setReflectionFalloffEnd:")
     public native void setReflectionFalloffEnd(@NFloat double value);
 
@@ -224,12 +246,17 @@ public class SCNFloor extends SCNGeometry {
     public native void setReflectivity(@NFloat double value);
 
     @Generated
-    @Selector("initWithCoder:")
-    public native SCNFloor initWithCoder(NSCoder aDecoder);
+    @Selector("setWidth:")
+    public native void setWidth(@NFloat double value);
 
     @Generated
     @ProtocolClassMethod("supportsSecureCoding")
     public boolean _supportsSecureCoding() {
         return supportsSecureCoding();
     }
+
+    @Generated
+    @Selector("width")
+    @NFloat
+    public native double width();
 }

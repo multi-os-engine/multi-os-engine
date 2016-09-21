@@ -27,6 +27,7 @@ import apple.foundation.NSIndexSet;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
 import apple.uikit.protocol.UICollectionViewDataSource;
+import apple.uikit.protocol.UICollectionViewDataSourcePrefetching;
 import org.moe.natj.c.ann.FunctionPtr;
 import org.moe.natj.c.ann.Variadic;
 import org.moe.natj.general.NatJ;
@@ -66,11 +67,6 @@ public class UICollectionView extends UIScrollView {
     }
 
     @Generated
-    @Owned
-    @Selector("alloc")
-    public static native UICollectionView alloc();
-
-    @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
 
@@ -79,6 +75,11 @@ public class UICollectionView extends UIScrollView {
     public static native void addKeyframeWithRelativeStartTimeRelativeDurationAnimations(double frameStartTime,
             double frameDuration,
             @ObjCBlock(name = "call_addKeyframeWithRelativeStartTimeRelativeDurationAnimations") UIView.Block_addKeyframeWithRelativeStartTimeRelativeDurationAnimations animations);
+
+    @Generated
+    @Owned
+    @Selector("alloc")
+    public static native UICollectionView alloc();
 
     @Generated
     @Selector("allocWithZone:")
@@ -294,7 +295,7 @@ public class UICollectionView extends UIScrollView {
 
     @Generated
     @Selector("setAnimationDuration:")
-    public static native void setAnimationDuration(double duration);
+    public static native void setAnimationDuration_static(double duration);
 
     @Generated
     @Selector("setAnimationRepeatAutoreverses:")
@@ -302,7 +303,7 @@ public class UICollectionView extends UIScrollView {
 
     @Generated
     @Selector("setAnimationRepeatCount:")
-    public static native void setAnimationRepeatCount(float repeatCount);
+    public static native void setAnimationRepeatCount_static(float repeatCount);
 
     @Generated
     @Selector("setAnimationStartDate:")
@@ -322,7 +323,7 @@ public class UICollectionView extends UIScrollView {
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")
@@ -347,6 +348,12 @@ public class UICollectionView extends UIScrollView {
     public static native long userInterfaceLayoutDirectionForSemanticContentAttribute(@NInt long attribute);
 
     @Generated
+    @Selector("userInterfaceLayoutDirectionForSemanticContentAttribute:relativeToLayoutDirection:")
+    @NInt
+    public static native long userInterfaceLayoutDirectionForSemanticContentAttributeRelativeToLayoutDirection(
+            @NInt long semanticContentAttribute, @NInt long layoutDirection);
+
+    @Generated
     @Selector("version")
     @NInt
     public static native long version_static();
@@ -360,8 +367,62 @@ public class UICollectionView extends UIScrollView {
     public native boolean allowsSelection();
 
     @Generated
+    @ProtocolClassMethod("appearance")
+    @MappedReturn(ObjCObjectMapper.class)
+    public Object _appearance() {
+        return appearance();
+    }
+
+    @Generated
+    @ProtocolClassMethod("appearanceForTraitCollection")
+    @MappedReturn(ObjCObjectMapper.class)
+    public Object _appearanceForTraitCollection(UITraitCollection trait) {
+        return appearanceForTraitCollection(trait);
+    }
+
+    @Generated
+    @Deprecated
+    @ProtocolClassMethod("appearanceForTraitCollectionWhenContainedIn")
+    @MappedReturn(ObjCObjectMapper.class)
+    public Object _appearanceForTraitCollectionWhenContainedIn(UITraitCollection trait,
+            @Mapped(ObjCObjectMapper.class) Object ContainerClass, Object... varargs) {
+        return appearanceForTraitCollectionWhenContainedIn(trait, ContainerClass, varargs);
+    }
+
+    @Generated
+    @ProtocolClassMethod("appearanceForTraitCollectionWhenContainedInInstancesOfClasses")
+    @MappedReturn(ObjCObjectMapper.class)
+    public Object _appearanceForTraitCollectionWhenContainedInInstancesOfClasses(UITraitCollection trait,
+            NSArray<?> containerTypes) {
+        return appearanceForTraitCollectionWhenContainedInInstancesOfClasses(trait, containerTypes);
+    }
+
+    @Generated
+    @Deprecated
+    @ProtocolClassMethod("appearanceWhenContainedIn")
+    @MappedReturn(ObjCObjectMapper.class)
+    public Object _appearanceWhenContainedIn(@Mapped(ObjCObjectMapper.class) Object ContainerClass, Object... varargs) {
+        return appearanceWhenContainedIn(ContainerClass, varargs);
+    }
+
+    @Generated
+    @ProtocolClassMethod("appearanceWhenContainedInInstancesOfClasses")
+    @MappedReturn(ObjCObjectMapper.class)
+    public Object _appearanceWhenContainedInInstancesOfClasses(NSArray<?> containerTypes) {
+        return appearanceWhenContainedInInstancesOfClasses(containerTypes);
+    }
+
+    @Generated
     @Selector("backgroundView")
     public native UIView backgroundView();
+
+    @Generated
+    @Selector("beginInteractiveMovementForItemAtIndexPath:")
+    public native boolean beginInteractiveMovementForItemAtIndexPath(NSIndexPath indexPath);
+
+    @Generated
+    @Selector("cancelInteractiveMovement")
+    public native void cancelInteractiveMovement();
 
     @Generated
     @Selector("cancelInteractiveTransition")
@@ -408,6 +469,10 @@ public class UICollectionView extends UIScrollView {
     public native void deselectItemAtIndexPathAnimated(NSIndexPath indexPath, boolean animated);
 
     @Generated
+    @Selector("endInteractiveMovement")
+    public native void endInteractiveMovement();
+
+    @Generated
     @Selector("finishInteractiveTransition")
     public native void finishInteractiveTransition();
 
@@ -428,8 +493,16 @@ public class UICollectionView extends UIScrollView {
     public native NSArray<? extends NSIndexPath> indexPathsForVisibleItems();
 
     @Generated
+    @Selector("indexPathsForVisibleSupplementaryElementsOfKind:")
+    public native NSArray<? extends NSIndexPath> indexPathsForVisibleSupplementaryElementsOfKind(String elementKind);
+
+    @Generated
     @Selector("init")
     public native UICollectionView init();
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native UICollectionView initWithCoder(NSCoder aDecoder);
 
     @Generated
     @Selector("initWithFrame:")
@@ -447,6 +520,14 @@ public class UICollectionView extends UIScrollView {
     @Generated
     @Selector("insertSections:")
     public native void insertSections(NSIndexSet sections);
+
+    @Generated
+    @Selector("isPrefetchingEnabled")
+    public native boolean isPrefetchingEnabled();
+
+    @Generated
+    @Selector("setPrefetchingEnabled:")
+    public native void setPrefetchingEnabled(boolean value);
 
     @Generated
     @Selector("layoutAttributesForItemAtIndexPath:")
@@ -482,6 +563,11 @@ public class UICollectionView extends UIScrollView {
             @ObjCBlock(name = "call_performBatchUpdatesCompletion_1") Block_performBatchUpdatesCompletion_1 completion);
 
     @Generated
+    @Selector("prefetchDataSource")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native UICollectionViewDataSourcePrefetching prefetchDataSource();
+
+    @Generated
     @Selector("registerClass:forCellWithReuseIdentifier:")
     public native void registerClassForCellWithReuseIdentifier(Class cellClass, String identifier);
 
@@ -510,6 +596,10 @@ public class UICollectionView extends UIScrollView {
     @Generated
     @Selector("reloadSections:")
     public native void reloadSections(NSIndexSet sections);
+
+    @Generated
+    @Selector("remembersLastFocusedIndexPath")
+    public native boolean remembersLastFocusedIndexPath();
 
     @Generated
     @Selector("scrollToItemAtIndexPath:atScrollPosition:animated:")
@@ -579,34 +669,31 @@ public class UICollectionView extends UIScrollView {
     }
 
     @Generated
+    @Selector("setPrefetchDataSource:")
+    public native void setPrefetchDataSource_unsafe(
+            @Mapped(ObjCObjectMapper.class) UICollectionViewDataSourcePrefetching value);
+
+    @Generated
+    public void setPrefetchDataSource(@Mapped(ObjCObjectMapper.class) UICollectionViewDataSourcePrefetching value) {
+        Object __old = prefetchDataSource();
+        if (value != null) {
+            org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);
+        }
+        setPrefetchDataSource_unsafe(value);
+        if (__old != null) {
+            org.moe.natj.objc.ObjCRuntime.dissociateObjCObject(this, __old);
+        }
+    }
+
+    @Generated
+    @Selector("setRemembersLastFocusedIndexPath:")
+    public native void setRemembersLastFocusedIndexPath(boolean value);
+
+    @Generated
     @Selector("startInteractiveTransitionToCollectionViewLayout:completion:")
     public native UICollectionViewTransitionLayout startInteractiveTransitionToCollectionViewLayoutCompletion(
             UICollectionViewLayout layout,
             @ObjCBlock(name = "call_startInteractiveTransitionToCollectionViewLayoutCompletion") Block_startInteractiveTransitionToCollectionViewLayoutCompletion completion);
-
-    @Generated
-    @Selector("visibleCells")
-    public native NSArray<? extends UICollectionViewCell> visibleCells();
-
-    @Generated
-    @Selector("beginInteractiveMovementForItemAtIndexPath:")
-    public native boolean beginInteractiveMovementForItemAtIndexPath(NSIndexPath indexPath);
-
-    @Generated
-    @Selector("cancelInteractiveMovement")
-    public native void cancelInteractiveMovement();
-
-    @Generated
-    @Selector("endInteractiveMovement")
-    public native void endInteractiveMovement();
-
-    @Generated
-    @Selector("indexPathsForVisibleSupplementaryElementsOfKind:")
-    public native NSArray<? extends NSIndexPath> indexPathsForVisibleSupplementaryElementsOfKind(String elementKind);
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native UICollectionView initWithCoder(NSCoder aDecoder);
 
     @Generated
     @Selector("supplementaryViewForElementKind:atIndexPath:")
@@ -618,62 +705,12 @@ public class UICollectionView extends UIScrollView {
     public native void updateInteractiveMovementTargetPosition(@ByValue CGPoint targetPosition);
 
     @Generated
+    @Selector("visibleCells")
+    public native NSArray<? extends UICollectionViewCell> visibleCells();
+
+    @Generated
     @Selector("visibleSupplementaryViewsOfKind:")
     public native NSArray<? extends UICollectionReusableView> visibleSupplementaryViewsOfKind(String elementKind);
-
-    @Generated
-    @Selector("remembersLastFocusedIndexPath")
-    public native boolean remembersLastFocusedIndexPath();
-
-    @Generated
-    @Selector("setRemembersLastFocusedIndexPath:")
-    public native void setRemembersLastFocusedIndexPath(boolean value);
-
-    @Generated
-    @ProtocolClassMethod("appearance")
-    @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearance() {
-        return appearance();
-    }
-
-    @Generated
-    @ProtocolClassMethod("appearanceForTraitCollection")
-    @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearanceForTraitCollection(UITraitCollection trait) {
-        return appearanceForTraitCollection(trait);
-    }
-
-    @Generated
-    @Deprecated
-    @ProtocolClassMethod("appearanceForTraitCollectionWhenContainedIn")
-    @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearanceForTraitCollectionWhenContainedIn(UITraitCollection trait,
-            @Mapped(ObjCObjectMapper.class) Object ContainerClass, Object... varargs) {
-        return appearanceForTraitCollectionWhenContainedIn(trait, ContainerClass, varargs);
-    }
-
-    @Generated
-    @ProtocolClassMethod("appearanceForTraitCollectionWhenContainedInInstancesOfClasses")
-    @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearanceForTraitCollectionWhenContainedInInstancesOfClasses(UITraitCollection trait,
-            NSArray<?> containerTypes) {
-        return appearanceForTraitCollectionWhenContainedInInstancesOfClasses(trait, containerTypes);
-    }
-
-    @Generated
-    @Deprecated
-    @ProtocolClassMethod("appearanceWhenContainedIn")
-    @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearanceWhenContainedIn(@Mapped(ObjCObjectMapper.class) Object ContainerClass, Object... varargs) {
-        return appearanceWhenContainedIn(ContainerClass, varargs);
-    }
-
-    @Generated
-    @ProtocolClassMethod("appearanceWhenContainedInInstancesOfClasses")
-    @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearanceWhenContainedInInstancesOfClasses(NSArray<?> containerTypes) {
-        return appearanceWhenContainedInInstancesOfClasses(containerTypes);
-    }
 
     @Runtime(ObjCRuntime.class)
     @Generated

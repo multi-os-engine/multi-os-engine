@@ -56,13 +56,13 @@ public class NEVPNProtocolIKEv2 extends NEVPNProtocolIPSec {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native NEVPNProtocolIKEv2 alloc();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -149,7 +149,7 @@ public class NEVPNProtocolIKEv2 extends NEVPNProtocolIPSec {
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")
@@ -183,8 +183,28 @@ public class NEVPNProtocolIKEv2 extends NEVPNProtocolIPSec {
     public native long deadPeerDetectionRate();
 
     @Generated
+    @Selector("disableMOBIKE")
+    public native boolean disableMOBIKE();
+
+    @Generated
+    @Selector("disableRedirect")
+    public native boolean disableRedirect();
+
+    @Generated
+    @Selector("enablePFS")
+    public native boolean enablePFS();
+
+    @Generated
+    @Selector("enableRevocationCheck")
+    public native boolean enableRevocationCheck();
+
+    @Generated
     @Selector("init")
     public native NEVPNProtocolIKEv2 init();
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native NEVPNProtocolIKEv2 initWithCoder(NSCoder aDecoder);
 
     @Generated
     @Selector("serverCertificateCommonName")
@@ -203,30 +223,6 @@ public class NEVPNProtocolIKEv2 extends NEVPNProtocolIPSec {
     public native void setDeadPeerDetectionRate(@NInt long value);
 
     @Generated
-    @Selector("setServerCertificateCommonName:")
-    public native void setServerCertificateCommonName(String value);
-
-    @Generated
-    @Selector("setServerCertificateIssuerCommonName:")
-    public native void setServerCertificateIssuerCommonName(String value);
-
-    @Generated
-    @Selector("disableMOBIKE")
-    public native boolean disableMOBIKE();
-
-    @Generated
-    @Selector("disableRedirect")
-    public native boolean disableRedirect();
-
-    @Generated
-    @Selector("enablePFS")
-    public native boolean enablePFS();
-
-    @Generated
-    @Selector("enableRevocationCheck")
-    public native boolean enableRevocationCheck();
-
-    @Generated
     @Selector("setDisableMOBIKE:")
     public native void setDisableMOBIKE(boolean value);
 
@@ -243,6 +239,14 @@ public class NEVPNProtocolIKEv2 extends NEVPNProtocolIPSec {
     public native void setEnableRevocationCheck(boolean value);
 
     @Generated
+    @Selector("setServerCertificateCommonName:")
+    public native void setServerCertificateCommonName(String value);
+
+    @Generated
+    @Selector("setServerCertificateIssuerCommonName:")
+    public native void setServerCertificateIssuerCommonName(String value);
+
+    @Generated
     @Selector("setStrictRevocationCheck:")
     public native void setStrictRevocationCheck(boolean value);
 
@@ -255,16 +259,12 @@ public class NEVPNProtocolIKEv2 extends NEVPNProtocolIPSec {
     public native boolean strictRevocationCheck();
 
     @Generated
-    @Selector("useConfigurationAttributeInternalIPSubnet")
-    public native boolean useConfigurationAttributeInternalIPSubnet();
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native NEVPNProtocolIKEv2 initWithCoder(NSCoder aDecoder);
-
-    @Generated
     @ProtocolClassMethod("supportsSecureCoding")
     public boolean _supportsSecureCoding() {
         return supportsSecureCoding();
     }
+
+    @Generated
+    @Selector("useConfigurationAttributeInternalIPSubnet")
+    public native boolean useConfigurationAttributeInternalIPSubnet();
 }

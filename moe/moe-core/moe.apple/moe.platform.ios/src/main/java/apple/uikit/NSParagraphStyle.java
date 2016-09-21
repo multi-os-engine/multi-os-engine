@@ -60,26 +60,13 @@ public class NSParagraphStyle extends NSObject implements NSCopying, NSMutableCo
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native NSParagraphStyle alloc();
-
-    @Generated
-    @Selector("defaultParagraphStyle")
-    public static native NSParagraphStyle defaultParagraphStyle();
-
-    @Generated
-    @Selector("defaultWritingDirectionForLanguage:")
-    @NInt
-    public static native long defaultWritingDirectionForLanguage(String languageName);
-
-    @Generated
-    @Selector("supportsSecureCoding")
-    public static native boolean supportsSecureCoding();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -111,6 +98,15 @@ public class NSParagraphStyle extends NSObject implements NSCopying, NSMutableCo
     @Generated
     @Selector("debugDescription")
     public static native String debugDescription_static();
+
+    @Generated
+    @Selector("defaultParagraphStyle")
+    public static native NSParagraphStyle defaultParagraphStyle();
+
+    @Generated
+    @Selector("defaultWritingDirectionForLanguage:")
+    @NInt
+    public static native long defaultWritingDirectionForLanguage(String languageName);
 
     @Generated
     @Selector("description")
@@ -166,11 +162,15 @@ public class NSParagraphStyle extends NSObject implements NSCopying, NSMutableCo
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")
     public static native Class superclass_static();
+
+    @Generated
+    @Selector("supportsSecureCoding")
+    public static native boolean supportsSecureCoding();
 
     @Generated
     @Selector("version")
@@ -181,6 +181,10 @@ public class NSParagraphStyle extends NSObject implements NSCopying, NSMutableCo
     @Selector("alignment")
     @NInt
     public native long alignment();
+
+    @Generated
+    @Selector("allowsDefaultTighteningForTruncation")
+    public native boolean allowsDefaultTighteningForTruncation();
 
     @Generated
     @Selector("baseWritingDirection")
@@ -265,6 +269,12 @@ public class NSParagraphStyle extends NSObject implements NSCopying, NSMutableCo
     public native double paragraphSpacingBefore();
 
     @Generated
+    @ProtocolClassMethod("supportsSecureCoding")
+    public boolean _supportsSecureCoding() {
+        return supportsSecureCoding();
+    }
+
+    @Generated
     @Selector("tabStops")
     public native NSArray<? extends NSTextTab> tabStops();
 
@@ -272,14 +282,4 @@ public class NSParagraphStyle extends NSObject implements NSCopying, NSMutableCo
     @Selector("tailIndent")
     @NFloat
     public native double tailIndent();
-
-    @Generated
-    @Selector("allowsDefaultTighteningForTruncation")
-    public native boolean allowsDefaultTighteningForTruncation();
-
-    @Generated
-    @ProtocolClassMethod("supportsSecureCoding")
-    public boolean _supportsSecureCoding() {
-        return supportsSecureCoding();
-    }
 }

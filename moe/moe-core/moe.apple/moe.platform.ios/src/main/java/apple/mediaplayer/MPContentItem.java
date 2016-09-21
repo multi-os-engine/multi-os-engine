@@ -54,13 +54,13 @@ public class MPContentItem extends NSObject {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native MPContentItem alloc();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -147,7 +147,7 @@ public class MPContentItem extends NSObject {
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")
@@ -156,7 +156,7 @@ public class MPContentItem extends NSObject {
     @Generated
     @Selector("version")
     @NInt
-    public static native long version();
+    public static native long version_static();
 
     @Generated
     @Selector("artwork")
@@ -183,12 +183,28 @@ public class MPContentItem extends NSObject {
     public native void setContainer(boolean value);
 
     @Generated
+    @Selector("isExplicitContent")
+    public native boolean isExplicitContent();
+
+    @Generated
+    @Selector("setExplicitContent:")
+    public native void setExplicitContent(boolean value);
+
+    @Generated
     @Selector("isPlayable")
     public native boolean isPlayable();
 
     @Generated
     @Selector("setPlayable:")
     public native void setPlayable(boolean value);
+
+    @Generated
+    @Selector("isStreamingContent")
+    public native boolean isStreamingContent();
+
+    @Generated
+    @Selector("setStreamingContent:")
+    public native void setStreamingContent(boolean value);
 
     @Generated
     @Selector("playbackProgress")

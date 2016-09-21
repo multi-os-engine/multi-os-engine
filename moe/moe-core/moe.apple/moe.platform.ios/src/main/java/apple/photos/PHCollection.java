@@ -54,22 +54,13 @@ public class PHCollection extends PHObject {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native PHCollection alloc();
-
-    @Generated
-    @Selector("fetchCollectionsInCollectionList:options:")
-    public static native PHFetchResult<PHCollection> fetchCollectionsInCollectionListOptions(
-            PHCollectionList collectionList, PHFetchOptions options);
-
-    @Generated
-    @Selector("fetchTopLevelUserCollectionsWithOptions:")
-    public static native PHFetchResult<PHCollection> fetchTopLevelUserCollectionsWithOptions(PHFetchOptions options);
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -105,6 +96,15 @@ public class PHCollection extends PHObject {
     @Generated
     @Selector("description")
     public static native String description_static();
+
+    @Generated
+    @Selector("fetchCollectionsInCollectionList:options:")
+    public static native PHFetchResult<PHCollection> fetchCollectionsInCollectionListOptions(
+            PHCollectionList collectionList, PHFetchOptions options);
+
+    @Generated
+    @Selector("fetchTopLevelUserCollectionsWithOptions:")
+    public static native PHFetchResult<PHCollection> fetchTopLevelUserCollectionsWithOptions(PHFetchOptions options);
 
     @Generated
     @Selector("hash")
@@ -156,7 +156,7 @@ public class PHCollection extends PHObject {
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")
@@ -165,7 +165,7 @@ public class PHCollection extends PHObject {
     @Generated
     @Selector("version")
     @NInt
-    public static native long version();
+    public static native long version_static();
 
     @Generated
     @Selector("canContainAssets")

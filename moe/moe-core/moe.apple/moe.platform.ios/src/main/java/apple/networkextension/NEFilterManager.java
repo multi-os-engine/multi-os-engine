@@ -56,17 +56,13 @@ public class NEFilterManager extends NSObject {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native NEFilterManager alloc();
-
-    @Generated
-    @Selector("sharedManager")
-    public static native NEFilterManager sharedManager();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -154,6 +150,10 @@ public class NEFilterManager extends NSObject {
     @Generated
     @Selector("setVersion:")
     public static native void setVersion_static(@NInt long aVersion);
+
+    @Generated
+    @Selector("sharedManager")
+    public static native NEFilterManager sharedManager();
 
     @Generated
     @Selector("superclass")

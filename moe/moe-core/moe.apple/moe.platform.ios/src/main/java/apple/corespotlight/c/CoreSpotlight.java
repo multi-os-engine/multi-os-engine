@@ -51,6 +51,16 @@ public final class CoreSpotlight {
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
+    public static native String CSQueryContinuationActionType();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String CSSearchQueryString();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
     public static native String CSIndexErrorDomain();
 
     @Generated
@@ -82,6 +92,11 @@ public final class CoreSpotlight {
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String CSMailboxArchive();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String CSSearchQueryErrorDomain();
 
     @Generated
     @CVariable()

@@ -20,18 +20,6 @@ import org.moe.natj.general.ann.Generated;
 
 @Generated
 public final class Enums {
-    @Generated public static final int kSCBondStatusOK = 0x00000000;
-    @Generated public static final int kSCBondStatusLinkInvalid = 0x00000001;
-    @Generated public static final int kSCBondStatusNoPartner = 0x00000002;
-    @Generated public static final int kSCBondStatusNotInActiveGroup = 0x00000003;
-    @Generated public static final int kSCBondStatusUnknown = 0x000003E7;
-    @Generated public static final int kSCNetworkFlagsTransientConnection = 0x00000001;
-    @Generated public static final int kSCNetworkFlagsReachable = 0x00000002;
-    @Generated public static final int kSCNetworkFlagsConnectionRequired = 0x00000004;
-    @Generated public static final int kSCNetworkFlagsConnectionAutomatic = 0x00000008;
-    @Generated public static final int kSCNetworkFlagsInterventionRequired = 0x00000010;
-    @Generated public static final int kSCNetworkFlagsIsLocalAddress = 0x00010000;
-    @Generated public static final int kSCNetworkFlagsIsDirect = 0x00020000;
     @Generated public static final int kSCStatusOK = 0x00000000;
     @Generated public static final int kSCStatusFailed = 0x000003E9;
     @Generated public static final int kSCStatusInvalidArgument = 0x000003EA;
@@ -52,6 +40,18 @@ public final class Enums {
     @Generated public static final int kSCStatusReachabilityUnknown = 0x00000FA1;
     @Generated public static final int kSCStatusConnectionNoService = 0x00001389;
     @Generated public static final int kSCStatusConnectionIgnore = 0x0000138A;
+    @Generated public static final int kSCBondStatusOK = 0x00000000;
+    @Generated public static final int kSCBondStatusLinkInvalid = 0x00000001;
+    @Generated public static final int kSCBondStatusNoPartner = 0x00000002;
+    @Generated public static final int kSCBondStatusNotInActiveGroup = 0x00000003;
+    @Generated public static final int kSCBondStatusUnknown = 0x000003E7;
+    @Generated public static final int kSCNetworkFlagsTransientConnection = 0x00000001;
+    @Generated public static final int kSCNetworkFlagsReachable = 0x00000002;
+    @Generated public static final int kSCNetworkFlagsConnectionRequired = 0x00000004;
+    @Generated public static final int kSCNetworkFlagsConnectionAutomatic = 0x00000008;
+    @Generated public static final int kSCNetworkFlagsInterventionRequired = 0x00000010;
+    @Generated public static final int kSCNetworkFlagsIsLocalAddress = 0x00010000;
+    @Generated public static final int kSCNetworkFlagsIsDirect = 0x00020000;
 
     @Generated
     private Enums() {

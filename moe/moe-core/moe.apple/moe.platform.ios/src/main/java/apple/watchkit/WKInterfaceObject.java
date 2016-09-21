@@ -55,13 +55,13 @@ public class WKInterfaceObject extends NSObject {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native WKInterfaceObject alloc();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -130,7 +130,7 @@ public class WKInterfaceObject extends NSObject {
 
     @Generated
     @Selector("load")
-    public static native void load_objc();
+    public static native void load_objc_static();
 
     @Generated
     @Owned
@@ -148,7 +148,7 @@ public class WKInterfaceObject extends NSObject {
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")
@@ -157,7 +157,7 @@ public class WKInterfaceObject extends NSObject {
     @Generated
     @Selector("version")
     @NInt
-    public static native long version();
+    public static native long version_static();
 
     @Generated
     @Selector("init")
@@ -170,6 +170,10 @@ public class WKInterfaceObject extends NSObject {
     @Generated
     @Selector("setAccessibilityHint:")
     public native void setAccessibilityHint(String accessibilityHint);
+
+    @Generated
+    @Selector("setAccessibilityIdentifier:")
+    public native void setAccessibilityIdentifier(String accessibilityIdentifier);
 
     @Generated
     @Selector("setAccessibilityImageRegions:")
@@ -207,8 +211,4 @@ public class WKInterfaceObject extends NSObject {
     @Generated
     @Selector("setWidth:")
     public native void setWidth(@NFloat double width);
-
-    @Generated
-    @Selector("setAccessibilityIdentifier:")
-    public native void setAccessibilityIdentifier(String accessibilityIdentifier);
 }

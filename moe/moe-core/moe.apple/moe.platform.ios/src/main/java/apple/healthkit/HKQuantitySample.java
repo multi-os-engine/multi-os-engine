@@ -58,30 +58,13 @@ public class HKQuantitySample extends HKSample {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native HKQuantitySample alloc();
-
-    @Generated
-    @Selector("quantitySampleWithType:quantity:startDate:endDate:")
-    public static native HKQuantitySample quantitySampleWithTypeQuantityStartDateEndDate(HKQuantityType quantityType,
-            HKQuantity quantity, NSDate startDate, NSDate endDate);
-
-    @Generated
-    @Selector("quantitySampleWithType:quantity:startDate:endDate:metadata:")
-    public static native HKQuantitySample quantitySampleWithTypeQuantityStartDateEndDateMetadata(
-            HKQuantityType quantityType, HKQuantity quantity, NSDate startDate, NSDate endDate,
-            NSDictionary<String, ?> metadata);
-
-    @Generated
-    @Selector("quantitySampleWithType:quantity:startDate:endDate:device:metadata:")
-    public static native HKQuantitySample quantitySampleWithTypeQuantityStartDateEndDateDeviceMetadata(
-            HKQuantityType quantityType, HKQuantity quantity, NSDate startDate, NSDate endDate, HKDevice device,
-            NSDictionary<String, ?> metadata);
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -159,6 +142,23 @@ public class HKQuantitySample extends HKSample {
     public static native Object new_objc();
 
     @Generated
+    @Selector("quantitySampleWithType:quantity:startDate:endDate:")
+    public static native HKQuantitySample quantitySampleWithTypeQuantityStartDateEndDate(HKQuantityType quantityType,
+            HKQuantity quantity, NSDate startDate, NSDate endDate);
+
+    @Generated
+    @Selector("quantitySampleWithType:quantity:startDate:endDate:device:metadata:")
+    public static native HKQuantitySample quantitySampleWithTypeQuantityStartDateEndDateDeviceMetadata(
+            HKQuantityType quantityType, HKQuantity quantity, NSDate startDate, NSDate endDate, HKDevice device,
+            NSDictionary<String, ?> metadata);
+
+    @Generated
+    @Selector("quantitySampleWithType:quantity:startDate:endDate:metadata:")
+    public static native HKQuantitySample quantitySampleWithTypeQuantityStartDateEndDateMetadata(
+            HKQuantityType quantityType, HKQuantity quantity, NSDate startDate, NSDate endDate,
+            NSDictionary<String, ?> metadata);
+
+    @Generated
     @Selector("resolveClassMethod:")
     public static native boolean resolveClassMethod(SEL sel);
 
@@ -188,16 +188,16 @@ public class HKQuantitySample extends HKSample {
     public native HKQuantitySample init();
 
     @Generated
+    @Selector("initWithCoder:")
+    public native HKQuantitySample initWithCoder(NSCoder aDecoder);
+
+    @Generated
     @Selector("quantity")
     public native HKQuantity quantity();
 
     @Generated
     @Selector("quantityType")
     public native HKQuantityType quantityType();
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native HKQuantitySample initWithCoder(NSCoder aDecoder);
 
     @Generated
     @ProtocolClassMethod("supportsSecureCoding")

@@ -108,7 +108,7 @@ public final class Security {
     @Generated
     @CFunction
     public static native SecAccessControlRef SecAccessControlCreateWithFlags(CFAllocatorRef allocator,
-            ConstVoidPtr protection, @NInt long flags, Ptr<CFErrorRef> error);
+            ConstVoidPtr protection, @NUInt long flags, Ptr<CFErrorRef> error);
 
     @Generated
     @CFunction
@@ -166,6 +166,56 @@ public final class Security {
     @CFunction
     @NUInt
     public static native long SecKeyGetBlockSize(SecKeyRef key);
+
+    @Generated
+    @CFunction
+    public static native SecKeyRef SecKeyCreateRandomKey(CFDictionaryRef parameters, Ptr<CFErrorRef> error);
+
+    @Generated
+    @CFunction
+    public static native SecKeyRef SecKeyCreateWithData(CFDataRef keyData, CFDictionaryRef attributes,
+            Ptr<CFErrorRef> error);
+
+    @Generated
+    @CFunction
+    public static native CFDataRef SecKeyCopyExternalRepresentation(SecKeyRef key, Ptr<CFErrorRef> error);
+
+    @Generated
+    @CFunction
+    public static native CFDictionaryRef SecKeyCopyAttributes(SecKeyRef key);
+
+    @Generated
+    @CFunction
+    public static native SecKeyRef SecKeyCopyPublicKey(SecKeyRef key);
+
+    @Generated
+    @CFunction
+    public static native CFDataRef SecKeyCreateSignature(SecKeyRef key, CFStringRef algorithm, CFDataRef dataToSign,
+            Ptr<CFErrorRef> error);
+
+    @Generated
+    @CFunction
+    public static native byte SecKeyVerifySignature(SecKeyRef key, CFStringRef algorithm, CFDataRef signedData,
+            CFDataRef signature, Ptr<CFErrorRef> error);
+
+    @Generated
+    @CFunction
+    public static native CFDataRef SecKeyCreateEncryptedData(SecKeyRef key, CFStringRef algorithm, CFDataRef plaintext,
+            Ptr<CFErrorRef> error);
+
+    @Generated
+    @CFunction
+    public static native CFDataRef SecKeyCreateDecryptedData(SecKeyRef key, CFStringRef algorithm, CFDataRef ciphertext,
+            Ptr<CFErrorRef> error);
+
+    @Generated
+    @CFunction
+    public static native CFDataRef SecKeyCopyKeyExchangeResult(SecKeyRef privateKey, CFStringRef algorithm,
+            SecKeyRef publicKey, CFDictionaryRef parameters, Ptr<CFErrorRef> error);
+
+    @Generated
+    @CFunction
+    public static native byte SecKeyIsAlgorithmSupported(SecKeyRef key, @NInt long operation, CFStringRef algorithm);
 
     @Generated
     @CFunction
@@ -332,6 +382,10 @@ public final class Security {
 
     @Generated
     @CFunction
+    public static native int SSLSetSessionConfig(SSLContextRef context, CFStringRef config);
+
+    @Generated
+    @CFunction
     public static native int SSLSetProtocolVersionMin(SSLContextRef context, int minVersion);
 
     @Generated
@@ -371,6 +425,14 @@ public final class Security {
     @Generated
     @CFunction
     public static native int SSLGetPeerDomainName(SSLContextRef context, BytePtr peerName, NUIntPtr peerNameLen);
+
+    @Generated
+    @CFunction
+    public static native int SSLCopyRequestedPeerName(SSLContextRef context, BytePtr peerName, NUIntPtr peerNameLen);
+
+    @Generated
+    @CFunction
+    public static native int SSLCopyRequestedPeerNameLength(SSLContextRef ctx, NUIntPtr peerNameLen);
 
     @Generated
     @CFunction
@@ -425,8 +487,8 @@ public final class Security {
     @CFunction
     public static native int SSLGetNegotiatedCipher(SSLContextRef context, CharPtr cipherSuite);
 
-    @Deprecated
     @Generated
+    @Deprecated
     @CFunction
     public static native int SSLSetEncryptionCertificate(SSLContextRef context, CFArrayRef certRefs);
 
@@ -449,6 +511,10 @@ public final class Security {
     @Generated
     @CFunction
     public static native int SSLHandshake(SSLContextRef context);
+
+    @Generated
+    @CFunction
+    public static native int SSLReHandshake(SSLContextRef context);
 
     @Generated
     @CFunction
@@ -534,10 +600,6 @@ public final class Security {
     @Generated
     @CVariable()
     public static native CFStringRef kSecAttrSynchronizable();
-
-    @Generated
-    @CVariable()
-    public static native CFStringRef kSecAttrSynchronizableAny();
 
     @Generated
     @CVariable()
@@ -694,6 +756,14 @@ public final class Security {
     @Generated
     @CVariable()
     public static native CFStringRef kSecAttrCanUnwrap();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kSecAttrSyncViewHint();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kSecAttrTokenID();
 
     @Generated
     @CVariable()
@@ -901,6 +971,14 @@ public final class Security {
 
     @Generated
     @CVariable()
+    public static native CFStringRef kSecAttrKeyTypeECSECPrimeRandom();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kSecAttrSynchronizableAny();
+
+    @Generated
+    @CVariable()
     public static native CFStringRef kSecMatchPolicy();
 
     @Generated
@@ -989,11 +1067,279 @@ public final class Security {
 
     @Generated
     @CVariable()
+    public static native CFStringRef kSecUseAuthenticationUI();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kSecUseAuthenticationContext();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kSecUseAuthenticationUIAllow();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kSecUseAuthenticationUIFail();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kSecUseAuthenticationUISkip();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kSecAttrTokenIDSecureEnclave();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kSecAttrAccessGroupToken();
+
+    @Generated
+    @CVariable()
     public static native CFStringRef kSecPrivateKeyAttrs();
 
     @Generated
     @CVariable()
     public static native CFStringRef kSecPublicKeyAttrs();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kSecKeyAlgorithmRSASignatureRaw();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kSecKeyAlgorithmRSASignatureDigestPKCS1v15Raw();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kSecKeyAlgorithmRSASignatureDigestPKCS1v15SHA1();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kSecKeyAlgorithmRSASignatureDigestPKCS1v15SHA224();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kSecKeyAlgorithmRSASignatureDigestPKCS1v15SHA256();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kSecKeyAlgorithmRSASignatureDigestPKCS1v15SHA384();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kSecKeyAlgorithmRSASignatureDigestPKCS1v15SHA512();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kSecKeyAlgorithmRSASignatureMessagePKCS1v15SHA1();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kSecKeyAlgorithmRSASignatureMessagePKCS1v15SHA224();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kSecKeyAlgorithmRSASignatureMessagePKCS1v15SHA256();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kSecKeyAlgorithmRSASignatureMessagePKCS1v15SHA384();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kSecKeyAlgorithmRSASignatureMessagePKCS1v15SHA512();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kSecKeyAlgorithmECDSASignatureRFC4754();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kSecKeyAlgorithmECDSASignatureDigestX962();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kSecKeyAlgorithmECDSASignatureDigestX962SHA1();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kSecKeyAlgorithmECDSASignatureDigestX962SHA224();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kSecKeyAlgorithmECDSASignatureDigestX962SHA256();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kSecKeyAlgorithmECDSASignatureDigestX962SHA384();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kSecKeyAlgorithmECDSASignatureDigestX962SHA512();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kSecKeyAlgorithmECDSASignatureMessageX962SHA1();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kSecKeyAlgorithmECDSASignatureMessageX962SHA224();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kSecKeyAlgorithmECDSASignatureMessageX962SHA256();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kSecKeyAlgorithmECDSASignatureMessageX962SHA384();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kSecKeyAlgorithmECDSASignatureMessageX962SHA512();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kSecKeyAlgorithmRSAEncryptionRaw();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kSecKeyAlgorithmRSAEncryptionPKCS1();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kSecKeyAlgorithmRSAEncryptionOAEPSHA1();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kSecKeyAlgorithmRSAEncryptionOAEPSHA224();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kSecKeyAlgorithmRSAEncryptionOAEPSHA256();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kSecKeyAlgorithmRSAEncryptionOAEPSHA384();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kSecKeyAlgorithmRSAEncryptionOAEPSHA512();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kSecKeyAlgorithmRSAEncryptionOAEPSHA1AESGCM();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kSecKeyAlgorithmRSAEncryptionOAEPSHA224AESGCM();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kSecKeyAlgorithmRSAEncryptionOAEPSHA256AESGCM();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kSecKeyAlgorithmRSAEncryptionOAEPSHA384AESGCM();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kSecKeyAlgorithmRSAEncryptionOAEPSHA512AESGCM();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kSecKeyAlgorithmECIESEncryptionStandardX963SHA1AESGCM();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kSecKeyAlgorithmECIESEncryptionStandardX963SHA224AESGCM();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kSecKeyAlgorithmECIESEncryptionStandardX963SHA256AESGCM();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kSecKeyAlgorithmECIESEncryptionStandardX963SHA384AESGCM();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kSecKeyAlgorithmECIESEncryptionStandardX963SHA512AESGCM();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kSecKeyAlgorithmECIESEncryptionCofactorX963SHA1AESGCM();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kSecKeyAlgorithmECIESEncryptionCofactorX963SHA224AESGCM();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kSecKeyAlgorithmECIESEncryptionCofactorX963SHA256AESGCM();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kSecKeyAlgorithmECIESEncryptionCofactorX963SHA384AESGCM();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kSecKeyAlgorithmECIESEncryptionCofactorX963SHA512AESGCM();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kSecKeyAlgorithmECDHKeyExchangeStandard();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kSecKeyAlgorithmECDHKeyExchangeStandardX963SHA1();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kSecKeyAlgorithmECDHKeyExchangeStandardX963SHA224();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kSecKeyAlgorithmECDHKeyExchangeStandardX963SHA256();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kSecKeyAlgorithmECDHKeyExchangeStandardX963SHA384();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kSecKeyAlgorithmECDHKeyExchangeStandardX963SHA512();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kSecKeyAlgorithmECDHKeyExchangeCofactor();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kSecKeyAlgorithmECDHKeyExchangeCofactorX963SHA1();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kSecKeyAlgorithmECDHKeyExchangeCofactorX963SHA224();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kSecKeyAlgorithmECDHKeyExchangeCofactorX963SHA256();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kSecKeyAlgorithmECDHKeyExchangeCofactorX963SHA384();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kSecKeyAlgorithmECDHKeyExchangeCofactorX963SHA512();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kSecKeyKeyExchangeParameterRequestedSize();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kSecKeyKeyExchangeParameterSharedInfo();
 
     @Generated
     @CVariable()
@@ -1021,6 +1367,10 @@ public final class Security {
 
     @Generated
     @CVariable()
+    public static native CFStringRef kSecPolicyMacAppStoreReceipt();
+
+    @Generated
+    @CVariable()
     public static native CFStringRef kSecPolicyAppleIDValidation();
 
     @Generated
@@ -1030,6 +1380,14 @@ public final class Security {
     @Generated
     @CVariable()
     public static native CFStringRef kSecPolicyAppleRevocation();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kSecPolicyApplePassbookSigning();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kSecPolicyApplePayIssuerEncryption();
 
     @Generated
     @CVariable()
@@ -1046,6 +1404,10 @@ public final class Security {
     @Generated
     @CVariable()
     public static native CFStringRef kSecPolicyRevocationFlags();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kSecPolicyTeamIdentifier();
 
     @Generated
     @CVariable()
@@ -1088,52 +1450,52 @@ public final class Security {
     public static native CFStringRef kSecTrustRevocationValidUntilDate();
 
     @Generated
-    @CFunction
-    public static native int SSLSetSessionStrengthPolicy(SSLContextRef context, int policyStrength);
-
-    @Generated
-    @CVariable()
-    public static native CFStringRef kSecAttrSyncViewHint();
-
-    @Generated
-    @CVariable()
-    public static native CFStringRef kSecAttrTokenID();
-
-    @Generated
-    @CVariable()
-    public static native CFStringRef kSecUseAuthenticationUI();
-
-    @Generated
-    @CVariable()
-    public static native CFStringRef kSecUseAuthenticationContext();
-
-    @Generated
-    @CVariable()
-    public static native CFStringRef kSecUseAuthenticationUIAllow();
-
-    @Generated
-    @CVariable()
-    public static native CFStringRef kSecUseAuthenticationUIFail();
-
-    @Generated
-    @CVariable()
-    public static native CFStringRef kSecUseAuthenticationUISkip();
-
-    @Generated
-    @CVariable()
-    public static native CFStringRef kSecAttrTokenIDSecureEnclave();
-
-    @Generated
-    @CVariable()
-    public static native CFStringRef kSecPolicyMacAppStoreReceipt();
-
-    @Generated
-    @CVariable()
-    public static native CFStringRef kSecPolicyApplePayIssuerEncryption();
-
-    @Generated
     @CVariable()
     public static native CFStringRef kSecTrustCertificateTransparency();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kSecTrustCertificateTransparencyWhiteList();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kSSLSessionConfig_default();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kSSLSessionConfig_ATSv1();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kSSLSessionConfig_ATSv1_noPFS();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kSSLSessionConfig_standard();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kSSLSessionConfig_RC4_fallback();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kSSLSessionConfig_TLSv1_fallback();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kSSLSessionConfig_TLSv1_RC4_fallback();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kSSLSessionConfig_legacy();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kSSLSessionConfig_legacy_DHE();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kSSLSessionConfig_anonymous();
 
     @Runtime(CRuntime.class)
     @Generated

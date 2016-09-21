@@ -58,17 +58,13 @@ public class PHAssetResourceManager extends NSObject {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native PHAssetResourceManager alloc();
-
-    @Generated
-    @Selector("defaultManager")
-    public static native PHAssetResourceManager defaultManager();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -100,6 +96,10 @@ public class PHAssetResourceManager extends NSObject {
     @Generated
     @Selector("debugDescription")
     public static native String debugDescription_static();
+
+    @Generated
+    @Selector("defaultManager")
+    public static native PHAssetResourceManager defaultManager();
 
     @Generated
     @Selector("description")
@@ -155,7 +155,7 @@ public class PHAssetResourceManager extends NSObject {
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")

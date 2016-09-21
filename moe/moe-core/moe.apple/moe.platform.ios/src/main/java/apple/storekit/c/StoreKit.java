@@ -44,6 +44,16 @@ public final class StoreKit {
 
     @Generated
     @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String SKStorefrontIdentifierDidChangeNotification();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String SKCloudServiceCapabilitiesDidChangeNotification();
+
+    @Generated
+    @CVariable()
     public static native double SKDownloadTimeRemainingUnknown();
 
     @Generated
@@ -85,16 +95,6 @@ public final class StoreKit {
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String SKStoreProductParameterProviderToken();
-
-    @Generated
-    @CVariable()
-    @MappedReturn(ObjCStringMapper.class)
-    public static native String SKStorefrontIdentifierDidChangeNotification();
-
-    @Generated
-    @CVariable()
-    @MappedReturn(ObjCStringMapper.class)
-    public static native String SKCloudServiceCapabilitiesDidChangeNotification();
 
     @Generated
     @CVariable()

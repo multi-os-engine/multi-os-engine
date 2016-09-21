@@ -62,11 +62,6 @@ public class UICollectionViewCell extends UICollectionReusableView {
     }
 
     @Generated
-    @Owned
-    @Selector("alloc")
-    public static native UICollectionViewCell alloc();
-
-    @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
 
@@ -75,6 +70,11 @@ public class UICollectionViewCell extends UICollectionReusableView {
     public static native void addKeyframeWithRelativeStartTimeRelativeDurationAnimations(double frameStartTime,
             double frameDuration,
             @ObjCBlock(name = "call_addKeyframeWithRelativeStartTimeRelativeDurationAnimations") UIView.Block_addKeyframeWithRelativeStartTimeRelativeDurationAnimations animations);
+
+    @Generated
+    @Owned
+    @Selector("alloc")
+    public static native UICollectionViewCell alloc();
 
     @Generated
     @Selector("allocWithZone:")
@@ -290,7 +290,7 @@ public class UICollectionViewCell extends UICollectionReusableView {
 
     @Generated
     @Selector("setAnimationDuration:")
-    public static native void setAnimationDuration(double duration);
+    public static native void setAnimationDuration_static(double duration);
 
     @Generated
     @Selector("setAnimationRepeatAutoreverses:")
@@ -298,7 +298,7 @@ public class UICollectionViewCell extends UICollectionReusableView {
 
     @Generated
     @Selector("setAnimationRepeatCount:")
-    public static native void setAnimationRepeatCount(float repeatCount);
+    public static native void setAnimationRepeatCount_static(float repeatCount);
 
     @Generated
     @Selector("setAnimationStartDate:")
@@ -343,57 +343,15 @@ public class UICollectionViewCell extends UICollectionReusableView {
     public static native long userInterfaceLayoutDirectionForSemanticContentAttribute(@NInt long attribute);
 
     @Generated
+    @Selector("userInterfaceLayoutDirectionForSemanticContentAttribute:relativeToLayoutDirection:")
+    @NInt
+    public static native long userInterfaceLayoutDirectionForSemanticContentAttributeRelativeToLayoutDirection(
+            @NInt long semanticContentAttribute, @NInt long layoutDirection);
+
+    @Generated
     @Selector("version")
     @NInt
     public static native long version_static();
-
-    @Generated
-    @Selector("backgroundView")
-    public native UIView backgroundView();
-
-    @Generated
-    @Selector("contentView")
-    public native UIView contentView();
-
-    @Generated
-    @Selector("init")
-    public native UICollectionViewCell init();
-
-    @Generated
-    @Selector("initWithFrame:")
-    public native UICollectionViewCell initWithFrame(@ByValue CGRect frame);
-
-    @Generated
-    @Selector("isHighlighted")
-    public native boolean isHighlighted();
-
-    @Generated
-    @Selector("setHighlighted:")
-    public native void setHighlighted(boolean value);
-
-    @Generated
-    @Selector("isSelected")
-    public native boolean isSelected();
-
-    @Generated
-    @Selector("setSelected:")
-    public native void setSelected(boolean value);
-
-    @Generated
-    @Selector("selectedBackgroundView")
-    public native UIView selectedBackgroundView();
-
-    @Generated
-    @Selector("setBackgroundView:")
-    public native void setBackgroundView(UIView value);
-
-    @Generated
-    @Selector("setSelectedBackgroundView:")
-    public native void setSelectedBackgroundView(UIView value);
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native UICollectionViewCell initWithCoder(NSCoder aDecoder);
 
     @Generated
     @ProtocolClassMethod("appearance")
@@ -440,4 +398,52 @@ public class UICollectionViewCell extends UICollectionReusableView {
     public Object _appearanceWhenContainedInInstancesOfClasses(NSArray<?> containerTypes) {
         return appearanceWhenContainedInInstancesOfClasses(containerTypes);
     }
+
+    @Generated
+    @Selector("backgroundView")
+    public native UIView backgroundView();
+
+    @Generated
+    @Selector("contentView")
+    public native UIView contentView();
+
+    @Generated
+    @Selector("init")
+    public native UICollectionViewCell init();
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native UICollectionViewCell initWithCoder(NSCoder aDecoder);
+
+    @Generated
+    @Selector("initWithFrame:")
+    public native UICollectionViewCell initWithFrame(@ByValue CGRect frame);
+
+    @Generated
+    @Selector("isHighlighted")
+    public native boolean isHighlighted();
+
+    @Generated
+    @Selector("setHighlighted:")
+    public native void setHighlighted(boolean value);
+
+    @Generated
+    @Selector("isSelected")
+    public native boolean isSelected();
+
+    @Generated
+    @Selector("setSelected:")
+    public native void setSelected(boolean value);
+
+    @Generated
+    @Selector("selectedBackgroundView")
+    public native UIView selectedBackgroundView();
+
+    @Generated
+    @Selector("setBackgroundView:")
+    public native void setBackgroundView(UIView value);
+
+    @Generated
+    @Selector("setSelectedBackgroundView:")
+    public native void setSelectedBackgroundView(UIView value);
 }

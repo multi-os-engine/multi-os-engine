@@ -58,13 +58,13 @@ public class UIPopoverPresentationController extends UIPresentationController {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native UIPopoverPresentationController alloc();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -176,6 +176,10 @@ public class UIPopoverPresentationController extends UIPresentationController {
     public native UIBarButtonItem barButtonItem();
 
     @Generated
+    @Selector("canOverlapSourceViewRect")
+    public native boolean canOverlapSourceViewRect();
+
+    @Generated
     @Selector("delegate")
     @MappedReturn(ObjCObjectMapper.class)
     public native Object delegate();
@@ -215,6 +219,10 @@ public class UIPopoverPresentationController extends UIPresentationController {
     @Generated
     @Selector("setBarButtonItem:")
     public native void setBarButtonItem(UIBarButtonItem value);
+
+    @Generated
+    @Selector("setCanOverlapSourceViewRect:")
+    public native void setCanOverlapSourceViewRect(boolean value);
 
     @Generated
     @Selector("setDelegate:")
@@ -265,12 +273,4 @@ public class UIPopoverPresentationController extends UIPresentationController {
     @Generated
     @Selector("sourceView")
     public native UIView sourceView();
-
-    @Generated
-    @Selector("canOverlapSourceViewRect")
-    public native boolean canOverlapSourceViewRect();
-
-    @Generated
-    @Selector("setCanOverlapSourceViewRect:")
-    public native void setCanOverlapSourceViewRect(boolean value);
 }

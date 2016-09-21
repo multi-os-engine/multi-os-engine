@@ -64,30 +64,6 @@ public class UIPopoverBackgroundView extends UIView implements UIPopoverBackgrou
     }
 
     @Generated
-    @Owned
-    @Selector("alloc")
-    public static native UIPopoverBackgroundView alloc();
-
-    @Generated
-    @Selector("arrowBase")
-    @NFloat
-    public static native double arrowBase();
-
-    @Generated
-    @Selector("arrowHeight")
-    @NFloat
-    public static native double arrowHeight();
-
-    @Generated
-    @Selector("contentViewInsets")
-    @ByValue
-    public static native UIEdgeInsets contentViewInsets();
-
-    @Generated
-    @Selector("wantsDefaultContentAppearance")
-    public static native boolean wantsDefaultContentAppearance();
-
-    @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
 
@@ -96,6 +72,11 @@ public class UIPopoverBackgroundView extends UIView implements UIPopoverBackgrou
     public static native void addKeyframeWithRelativeStartTimeRelativeDurationAnimations(double frameStartTime,
             double frameDuration,
             @ObjCBlock(name = "call_addKeyframeWithRelativeStartTimeRelativeDurationAnimations") UIView.Block_addKeyframeWithRelativeStartTimeRelativeDurationAnimations animations);
+
+    @Generated
+    @Owned
+    @Selector("alloc")
+    public static native UIPopoverBackgroundView alloc();
 
     @Generated
     @Selector("allocWithZone:")
@@ -176,6 +157,16 @@ public class UIPopoverBackgroundView extends UIView implements UIPopoverBackgrou
     public static native boolean areAnimationsEnabled();
 
     @Generated
+    @Selector("arrowBase")
+    @NFloat
+    public static native double arrowBase();
+
+    @Generated
+    @Selector("arrowHeight")
+    @NFloat
+    public static native double arrowHeight();
+
+    @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
     public static native boolean automaticallyNotifiesObserversForKey(String key);
 
@@ -208,6 +199,11 @@ public class UIPopoverBackgroundView extends UIView implements UIPopoverBackgrou
     @Generated
     @Selector("commitAnimations")
     public static native void commitAnimations();
+
+    @Generated
+    @Selector("contentViewInsets")
+    @ByValue
+    public static native UIEdgeInsets contentViewInsets();
 
     @Generated
     @Selector("debugDescription")
@@ -311,7 +307,7 @@ public class UIPopoverBackgroundView extends UIView implements UIPopoverBackgrou
 
     @Generated
     @Selector("setAnimationDuration:")
-    public static native void setAnimationDuration(double duration);
+    public static native void setAnimationDuration_static(double duration);
 
     @Generated
     @Selector("setAnimationRepeatAutoreverses:")
@@ -319,7 +315,7 @@ public class UIPopoverBackgroundView extends UIView implements UIPopoverBackgrou
 
     @Generated
     @Selector("setAnimationRepeatCount:")
-    public static native void setAnimationRepeatCount(float repeatCount);
+    public static native void setAnimationRepeatCount_static(float repeatCount);
 
     @Generated
     @Selector("setAnimationStartDate:")
@@ -339,7 +335,7 @@ public class UIPopoverBackgroundView extends UIView implements UIPopoverBackgrou
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")
@@ -364,60 +360,19 @@ public class UIPopoverBackgroundView extends UIView implements UIPopoverBackgrou
     public static native long userInterfaceLayoutDirectionForSemanticContentAttribute(@NInt long attribute);
 
     @Generated
+    @Selector("userInterfaceLayoutDirectionForSemanticContentAttribute:relativeToLayoutDirection:")
+    @NInt
+    public static native long userInterfaceLayoutDirectionForSemanticContentAttributeRelativeToLayoutDirection(
+            @NInt long semanticContentAttribute, @NInt long layoutDirection);
+
+    @Generated
     @Selector("version")
     @NInt
     public static native long version_static();
 
     @Generated
-    @ProtocolClassMethod("arrowBase")
-    @NFloat
-    public double _arrowBase() {
-        return arrowBase();
-    }
-
-    @Generated
-    @Selector("arrowDirection")
-    @NUInt
-    public native long arrowDirection();
-
-    @Generated
-    @ProtocolClassMethod("arrowHeight")
-    @NFloat
-    public double _arrowHeight() {
-        return arrowHeight();
-    }
-
-    @Generated
-    @Selector("arrowOffset")
-    @NFloat
-    public native double arrowOffset();
-
-    @Generated
-    @ProtocolClassMethod("contentViewInsets")
-    @ByValue
-    public UIEdgeInsets _contentViewInsets() {
-        return contentViewInsets();
-    }
-
-    @Generated
-    @Selector("init")
-    public native UIPopoverBackgroundView init();
-
-    @Generated
-    @Selector("initWithFrame:")
-    public native UIPopoverBackgroundView initWithFrame(@ByValue CGRect frame);
-
-    @Generated
-    @Selector("setArrowDirection:")
-    public native void setArrowDirection(@NUInt long value);
-
-    @Generated
-    @Selector("setArrowOffset:")
-    public native void setArrowOffset(@NFloat double value);
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native UIPopoverBackgroundView initWithCoder(NSCoder aDecoder);
+    @Selector("wantsDefaultContentAppearance")
+    public static native boolean wantsDefaultContentAppearance();
 
     @Generated
     @ProtocolClassMethod("appearance")
@@ -464,4 +419,55 @@ public class UIPopoverBackgroundView extends UIView implements UIPopoverBackgrou
     public Object _appearanceWhenContainedInInstancesOfClasses(NSArray<?> containerTypes) {
         return appearanceWhenContainedInInstancesOfClasses(containerTypes);
     }
+
+    @Generated
+    @ProtocolClassMethod("arrowBase")
+    @NFloat
+    public double _arrowBase() {
+        return arrowBase();
+    }
+
+    @Generated
+    @Selector("arrowDirection")
+    @NUInt
+    public native long arrowDirection();
+
+    @Generated
+    @ProtocolClassMethod("arrowHeight")
+    @NFloat
+    public double _arrowHeight() {
+        return arrowHeight();
+    }
+
+    @Generated
+    @Selector("arrowOffset")
+    @NFloat
+    public native double arrowOffset();
+
+    @Generated
+    @ProtocolClassMethod("contentViewInsets")
+    @ByValue
+    public UIEdgeInsets _contentViewInsets() {
+        return contentViewInsets();
+    }
+
+    @Generated
+    @Selector("init")
+    public native UIPopoverBackgroundView init();
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native UIPopoverBackgroundView initWithCoder(NSCoder aDecoder);
+
+    @Generated
+    @Selector("initWithFrame:")
+    public native UIPopoverBackgroundView initWithFrame(@ByValue CGRect frame);
+
+    @Generated
+    @Selector("setArrowDirection:")
+    public native void setArrowDirection(@NUInt long value);
+
+    @Generated
+    @Selector("setArrowOffset:")
+    public native void setArrowOffset(@NFloat double value);
 }

@@ -52,17 +52,13 @@ public class NSMethodSignature extends NSObject {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native NSMethodSignature alloc();
-
-    @Generated
-    @Selector("signatureWithObjCTypes:")
-    public static native NSMethodSignature signatureWithObjCTypes(@Mapped(CStringMapper.class) String types);
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -131,7 +127,7 @@ public class NSMethodSignature extends NSObject {
 
     @Generated
     @Selector("load")
-    public static native void load_objc();
+    public static native void load_objc_static();
 
     @Generated
     @Owned
@@ -149,7 +145,11 @@ public class NSMethodSignature extends NSObject {
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
+
+    @Generated
+    @Selector("signatureWithObjCTypes:")
+    public static native NSMethodSignature signatureWithObjCTypes(@Mapped(CStringMapper.class) String types);
 
     @Generated
     @Selector("superclass")
@@ -158,7 +158,7 @@ public class NSMethodSignature extends NSObject {
     @Generated
     @Selector("version")
     @NInt
-    public static native long version();
+    public static native long version_static();
 
     @Generated
     @Selector("frameLength")

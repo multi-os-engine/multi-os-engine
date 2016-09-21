@@ -64,47 +64,13 @@ public class CNContact extends NSObject implements NSCopying, NSMutableCopying, 
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native CNContact alloc();
-
-    @Generated
-    @Selector("comparatorForNameSortOrder:")
-    @ObjCBlock(name = "call_comparatorForNameSortOrder_ret")
-    public static native Block_comparatorForNameSortOrder_ret comparatorForNameSortOrder(@NInt long sortOrder);
-
-    @Generated
-    @Selector("descriptorForAllComparatorKeys")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native CNKeyDescriptor descriptorForAllComparatorKeys();
-
-    @Generated
-    @Selector("localizedStringForKey:")
-    public static native String localizedStringForKey(String key);
-
-    @Generated
-    @Selector("predicateForContactsInContainerWithIdentifier:")
-    public static native NSPredicate predicateForContactsInContainerWithIdentifier(String containerIdentifier);
-
-    @Generated
-    @Selector("predicateForContactsInGroupWithIdentifier:")
-    public static native NSPredicate predicateForContactsInGroupWithIdentifier(String groupIdentifier);
-
-    @Generated
-    @Selector("predicateForContactsMatchingName:")
-    public static native NSPredicate predicateForContactsMatchingName(String name);
-
-    @Generated
-    @Selector("predicateForContactsWithIdentifiers:")
-    public static native NSPredicate predicateForContactsWithIdentifiers(NSArray<String> identifiers);
-
-    @Generated
-    @Selector("supportsSecureCoding")
-    public static native boolean supportsSecureCoding();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -134,12 +100,22 @@ public class CNContact extends NSObject implements NSCopying, NSMutableCopying, 
     public static native Class classForKeyedUnarchiver();
 
     @Generated
+    @Selector("comparatorForNameSortOrder:")
+    @ObjCBlock(name = "call_comparatorForNameSortOrder_ret")
+    public static native Block_comparatorForNameSortOrder_ret comparatorForNameSortOrder(@NInt long sortOrder);
+
+    @Generated
     @Selector("debugDescription")
     public static native String debugDescription_static();
 
     @Generated
     @Selector("description")
     public static native String description_static();
+
+    @Generated
+    @Selector("descriptorForAllComparatorKeys")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native CNKeyDescriptor descriptorForAllComparatorKeys();
 
     @Generated
     @Selector("hash")
@@ -176,10 +152,30 @@ public class CNContact extends NSObject implements NSCopying, NSMutableCopying, 
     public static native void load_objc_static();
 
     @Generated
+    @Selector("localizedStringForKey:")
+    public static native String localizedStringForKey(String key);
+
+    @Generated
     @Owned
     @Selector("new")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object new_objc();
+
+    @Generated
+    @Selector("predicateForContactsInContainerWithIdentifier:")
+    public static native NSPredicate predicateForContactsInContainerWithIdentifier(String containerIdentifier);
+
+    @Generated
+    @Selector("predicateForContactsInGroupWithIdentifier:")
+    public static native NSPredicate predicateForContactsInGroupWithIdentifier(String groupIdentifier);
+
+    @Generated
+    @Selector("predicateForContactsMatchingName:")
+    public static native NSPredicate predicateForContactsMatchingName(String name);
+
+    @Generated
+    @Selector("predicateForContactsWithIdentifiers:")
+    public static native NSPredicate predicateForContactsWithIdentifiers(NSArray<String> identifiers);
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -191,11 +187,15 @@ public class CNContact extends NSObject implements NSCopying, NSMutableCopying, 
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")
     public static native Class superclass_static();
+
+    @Generated
+    @Selector("supportsSecureCoding")
+    public static native boolean supportsSecureCoding();
 
     @Generated
     @Selector("version")
@@ -333,6 +333,10 @@ public class CNContact extends NSObject implements NSCopying, NSMutableCopying, 
     @Generated
     @Selector("phoneticMiddleName")
     public native String phoneticMiddleName();
+
+    @Generated
+    @Selector("phoneticOrganizationName")
+    public native String phoneticOrganizationName();
 
     @Generated
     @Selector("postalAddresses")

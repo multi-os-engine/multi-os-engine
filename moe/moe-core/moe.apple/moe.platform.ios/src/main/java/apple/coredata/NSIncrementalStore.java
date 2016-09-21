@@ -58,18 +58,13 @@ public class NSIncrementalStore extends NSPersistentStore {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native NSIncrementalStore alloc();
-
-    @Generated
-    @Selector("identifierForNewStoreAtURL:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object identifierForNewStoreAtURL(NSURL storeURL);
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -110,6 +105,11 @@ public class NSIncrementalStore extends NSPersistentStore {
     @Selector("hash")
     @NUInt
     public static native long hash_static();
+
+    @Generated
+    @Selector("identifierForNewStoreAtURL:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object identifierForNewStoreAtURL(NSURL storeURL);
 
     @Generated
     @Selector("initialize")

@@ -67,9 +67,22 @@ public class UIBezierPath extends NSObject implements NSCopying, NSCoding {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native UIBezierPath alloc();
+
+    @Generated
+    @Selector("allocWithZone:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object allocWithZone(VoidPtr zone);
+
+    @Generated
+    @Selector("automaticallyNotifiesObserversForKey:")
+    public static native boolean automaticallyNotifiesObserversForKey(String key);
 
     @Generated
     @Selector("bezierPath")
@@ -101,19 +114,6 @@ public class UIBezierPath extends NSObject implements NSCopying, NSCoding {
     @Selector("bezierPathWithRoundedRect:cornerRadius:")
     public static native UIBezierPath bezierPathWithRoundedRectCornerRadius(@ByValue CGRect rect,
             @NFloat double cornerRadius);
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
-
-    @Generated
-    @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
-
-    @Generated
-    @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")

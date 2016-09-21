@@ -65,11 +65,6 @@ public class SKView extends UIView {
     }
 
     @Generated
-    @Owned
-    @Selector("alloc")
-    public static native SKView alloc();
-
-    @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
 
@@ -78,6 +73,11 @@ public class SKView extends UIView {
     public static native void addKeyframeWithRelativeStartTimeRelativeDurationAnimations(double frameStartTime,
             double frameDuration,
             @ObjCBlock(name = "call_addKeyframeWithRelativeStartTimeRelativeDurationAnimations") UIView.Block_addKeyframeWithRelativeStartTimeRelativeDurationAnimations animations);
+
+    @Generated
+    @Owned
+    @Selector("alloc")
+    public static native SKView alloc();
 
     @Generated
     @Selector("allocWithZone:")
@@ -293,7 +293,7 @@ public class SKView extends UIView {
 
     @Generated
     @Selector("setAnimationDuration:")
-    public static native void setAnimationDuration(double duration);
+    public static native void setAnimationDuration_static(double duration);
 
     @Generated
     @Selector("setAnimationRepeatAutoreverses:")
@@ -301,7 +301,7 @@ public class SKView extends UIView {
 
     @Generated
     @Selector("setAnimationRepeatCount:")
-    public static native void setAnimationRepeatCount(float repeatCount);
+    public static native void setAnimationRepeatCount_static(float repeatCount);
 
     @Generated
     @Selector("setAnimationStartDate:")
@@ -346,6 +346,12 @@ public class SKView extends UIView {
     public static native long userInterfaceLayoutDirectionForSemanticContentAttribute(@NInt long attribute);
 
     @Generated
+    @Selector("userInterfaceLayoutDirectionForSemanticContentAttribute:relativeToLayoutDirection:")
+    @NInt
+    public static native long userInterfaceLayoutDirectionForSemanticContentAttributeRelativeToLayoutDirection(
+            @NInt long semanticContentAttribute, @NInt long layoutDirection);
+
+    @Generated
     @Selector("version")
     @NInt
     public static native long version_static();
@@ -353,6 +359,52 @@ public class SKView extends UIView {
     @Generated
     @Selector("allowsTransparency")
     public native boolean allowsTransparency();
+
+    @Generated
+    @ProtocolClassMethod("appearance")
+    @MappedReturn(ObjCObjectMapper.class)
+    public Object _appearance() {
+        return appearance();
+    }
+
+    @Generated
+    @ProtocolClassMethod("appearanceForTraitCollection")
+    @MappedReturn(ObjCObjectMapper.class)
+    public Object _appearanceForTraitCollection(UITraitCollection trait) {
+        return appearanceForTraitCollection(trait);
+    }
+
+    @Generated
+    @Deprecated
+    @ProtocolClassMethod("appearanceForTraitCollectionWhenContainedIn")
+    @MappedReturn(ObjCObjectMapper.class)
+    public Object _appearanceForTraitCollectionWhenContainedIn(UITraitCollection trait,
+            @Mapped(ObjCObjectMapper.class) Object ContainerClass, Object... varargs) {
+        return appearanceForTraitCollectionWhenContainedIn(trait, ContainerClass, varargs);
+    }
+
+    @Generated
+    @ProtocolClassMethod("appearanceForTraitCollectionWhenContainedInInstancesOfClasses")
+    @MappedReturn(ObjCObjectMapper.class)
+    public Object _appearanceForTraitCollectionWhenContainedInInstancesOfClasses(UITraitCollection trait,
+            NSArray<?> containerTypes) {
+        return appearanceForTraitCollectionWhenContainedInInstancesOfClasses(trait, containerTypes);
+    }
+
+    @Generated
+    @Deprecated
+    @ProtocolClassMethod("appearanceWhenContainedIn")
+    @MappedReturn(ObjCObjectMapper.class)
+    public Object _appearanceWhenContainedIn(@Mapped(ObjCObjectMapper.class) Object ContainerClass, Object... varargs) {
+        return appearanceWhenContainedIn(ContainerClass, varargs);
+    }
+
+    @Generated
+    @ProtocolClassMethod("appearanceWhenContainedInInstancesOfClasses")
+    @MappedReturn(ObjCObjectMapper.class)
+    public Object _appearanceWhenContainedInInstancesOfClasses(NSArray<?> containerTypes) {
+        return appearanceWhenContainedInInstancesOfClasses(containerTypes);
+    }
 
     @Generated
     @Selector("convertPoint:fromScene:")
@@ -363,6 +415,10 @@ public class SKView extends UIView {
     @Selector("convertPoint:toScene:")
     @ByValue
     public native CGPoint convertPointToScene(@ByValue CGPoint point, SKScene scene);
+
+    @Generated
+    @Selector("delegate")
+    public native NSObject delegate();
 
     @Generated
     @Selector("frameInterval")
@@ -376,6 +432,10 @@ public class SKView extends UIView {
     @Generated
     @Selector("init")
     public native SKView init();
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native SKView initWithCoder(NSCoder aDecoder);
 
     @Generated
     @Selector("initWithFrame:")
@@ -398,6 +458,15 @@ public class SKView extends UIView {
     public native void setPaused(boolean value);
 
     @Generated
+    @Selector("preferredFrameRate")
+    public native float preferredFrameRate();
+
+    @Generated
+    @Selector("preferredFramesPerSecond")
+    @NInt
+    public native long preferredFramesPerSecond();
+
+    @Generated
     @Selector("presentScene:")
     public native void presentScene(SKScene scene);
 
@@ -414,12 +483,36 @@ public class SKView extends UIView {
     public native void setAllowsTransparency(boolean value);
 
     @Generated
+    @Selector("setDelegate:")
+    public native void setDelegate_unsafe(NSObject value);
+
+    @Generated
+    public void setDelegate(NSObject value) {
+        Object __old = delegate();
+        if (value != null) {
+            org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);
+        }
+        setDelegate_unsafe(value);
+        if (__old != null) {
+            org.moe.natj.objc.ObjCRuntime.dissociateObjCObject(this, __old);
+        }
+    }
+
+    @Generated
     @Selector("setFrameInterval:")
     public native void setFrameInterval(@NInt long value);
 
     @Generated
     @Selector("setIgnoresSiblingOrder:")
     public native void setIgnoresSiblingOrder(boolean value);
+
+    @Generated
+    @Selector("setPreferredFrameRate:")
+    public native void setPreferredFrameRate(float value);
+
+    @Generated
+    @Selector("setPreferredFramesPerSecond:")
+    public native void setPreferredFramesPerSecond(@NInt long value);
 
     @Generated
     @Selector("setShouldCullNonVisibleNodes:")
@@ -484,54 +577,4 @@ public class SKView extends UIView {
     @Generated
     @Selector("textureFromNode:crop:")
     public native SKTexture textureFromNodeCrop(SKNode node, @ByValue CGRect crop);
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native SKView initWithCoder(NSCoder aDecoder);
-
-    @Generated
-    @ProtocolClassMethod("appearance")
-    @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearance() {
-        return appearance();
-    }
-
-    @Generated
-    @ProtocolClassMethod("appearanceForTraitCollection")
-    @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearanceForTraitCollection(UITraitCollection trait) {
-        return appearanceForTraitCollection(trait);
-    }
-
-    @Generated
-    @Deprecated
-    @ProtocolClassMethod("appearanceForTraitCollectionWhenContainedIn")
-    @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearanceForTraitCollectionWhenContainedIn(UITraitCollection trait,
-            @Mapped(ObjCObjectMapper.class) Object ContainerClass, Object... varargs) {
-        return appearanceForTraitCollectionWhenContainedIn(trait, ContainerClass, varargs);
-    }
-
-    @Generated
-    @ProtocolClassMethod("appearanceForTraitCollectionWhenContainedInInstancesOfClasses")
-    @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearanceForTraitCollectionWhenContainedInInstancesOfClasses(UITraitCollection trait,
-            NSArray<?> containerTypes) {
-        return appearanceForTraitCollectionWhenContainedInInstancesOfClasses(trait, containerTypes);
-    }
-
-    @Generated
-    @Deprecated
-    @ProtocolClassMethod("appearanceWhenContainedIn")
-    @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearanceWhenContainedIn(@Mapped(ObjCObjectMapper.class) Object ContainerClass, Object... varargs) {
-        return appearanceWhenContainedIn(ContainerClass, varargs);
-    }
-
-    @Generated
-    @ProtocolClassMethod("appearanceWhenContainedInInstancesOfClasses")
-    @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearanceWhenContainedInInstancesOfClasses(NSArray<?> containerTypes) {
-        return appearanceWhenContainedInInstancesOfClasses(containerTypes);
-    }
 }

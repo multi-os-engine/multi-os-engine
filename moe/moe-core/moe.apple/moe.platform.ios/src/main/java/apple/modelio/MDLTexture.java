@@ -60,29 +60,13 @@ public class MDLTexture extends NSObject implements MDLNamed {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native MDLTexture alloc();
-
-    @Generated
-    @Selector("textureCubeWithImagesNamed:")
-    public static native MDLTexture textureCubeWithImagesNamed(NSArray<String> names);
-
-    @Generated
-    @Selector("textureCubeWithImagesNamed:bundle:")
-    public static native MDLTexture textureCubeWithImagesNamedBundle(NSArray<String> names, NSBundle bundleOrNil);
-
-    @Generated
-    @Selector("textureNamed:")
-    public static native MDLTexture textureNamed(String name);
-
-    @Generated
-    @Selector("textureNamed:bundle:")
-    public static native MDLTexture textureNamedBundle(String name, NSBundle bundleOrNil);
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -151,7 +135,7 @@ public class MDLTexture extends NSObject implements MDLNamed {
 
     @Generated
     @Selector("load")
-    public static native void load_objc();
+    public static native void load_objc_static();
 
     @Generated
     @Owned
@@ -169,16 +153,32 @@ public class MDLTexture extends NSObject implements MDLNamed {
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")
     public static native Class superclass_static();
 
     @Generated
+    @Selector("textureCubeWithImagesNamed:")
+    public static native MDLTexture textureCubeWithImagesNamed(NSArray<String> names);
+
+    @Generated
+    @Selector("textureCubeWithImagesNamed:bundle:")
+    public static native MDLTexture textureCubeWithImagesNamedBundle(NSArray<String> names, NSBundle bundleOrNil);
+
+    @Generated
+    @Selector("textureNamed:")
+    public static native MDLTexture textureNamed(String name);
+
+    @Generated
+    @Selector("textureNamed:bundle:")
+    public static native MDLTexture textureNamedBundle(String name, NSBundle bundleOrNil);
+
+    @Generated
     @Selector("version")
     @NInt
-    public static native long version();
+    public static native long version_static();
 
     @Generated
     @Selector("channelCount")
@@ -189,6 +189,10 @@ public class MDLTexture extends NSObject implements MDLNamed {
     @Selector("channelEncoding")
     @NInt
     public native long channelEncoding();
+
+    @Generated
+    @Selector("hasAlphaValues")
+    public native boolean hasAlphaValues();
 
     @Generated
     @Selector("imageFromTexture")
@@ -215,6 +219,10 @@ public class MDLTexture extends NSObject implements MDLNamed {
     @Selector("rowStride")
     @NInt
     public native long rowStride();
+
+    @Generated
+    @Selector("setHasAlphaValues:")
+    public native void setHasAlphaValues(boolean value);
 
     @Generated
     @Selector("setIsCube:")

@@ -60,17 +60,13 @@ public class QLPreviewController extends UIViewController {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native QLPreviewController alloc();
-
-    @Generated
-    @Selector("canPreviewItem:")
-    public static native boolean canPreviewItem(@Mapped(ObjCObjectMapper.class) QLPreviewItem item);
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -84,6 +80,10 @@ public class QLPreviewController extends UIViewController {
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
     public static native boolean automaticallyNotifiesObserversForKey(String key);
+
+    @Generated
+    @Selector("canPreviewItem:")
+    public static native boolean canPreviewItem(@Mapped(ObjCObjectMapper.class) QLPreviewItem item);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
@@ -205,6 +205,10 @@ public class QLPreviewController extends UIViewController {
     public native QLPreviewController init();
 
     @Generated
+    @Selector("initWithCoder:")
+    public native QLPreviewController initWithCoder(NSCoder aDecoder);
+
+    @Generated
     @Selector("initWithNibName:bundle:")
     public native QLPreviewController initWithNibNameBundle(String nibNameOrNil, NSBundle nibBundleOrNil);
 
@@ -251,8 +255,4 @@ public class QLPreviewController extends UIViewController {
             org.moe.natj.objc.ObjCRuntime.dissociateObjCObject(this, __old);
         }
     }
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native QLPreviewController initWithCoder(NSCoder aDecoder);
 }

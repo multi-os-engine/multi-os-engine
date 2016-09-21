@@ -52,13 +52,13 @@ public class NSCache<_KeyType, _ObjectType> extends NSObject {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native NSCache<?, ?> alloc();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -178,9 +178,9 @@ public class NSCache<_KeyType, _ObjectType> extends NSObject {
     @Selector("name")
     public native String name();
 
-    @MappedReturn(ObjCObjectMapper.class)
     @Generated
     @Selector("objectForKey:")
+    @MappedReturn(ObjCObjectMapper.class)
     public native _ObjectType objectForKey(@Mapped(ObjCObjectMapper.class) _KeyType key);
 
     @Generated

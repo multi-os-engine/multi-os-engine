@@ -406,6 +406,10 @@ public final class ImageIO {
 
     @Generated
     @CVariable()
+    public static native CFStringRef kCGImageSourceSubsampleFactor();
+
+    @Generated
+    @CVariable()
     public static native CFStringRef kCGImageDestinationLossyCompressionQuality();
 
     @Generated
@@ -419,6 +423,10 @@ public final class ImageIO {
     @Generated
     @CVariable()
     public static native CFStringRef kCGImageDestinationEmbedThumbnail();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImageDestinationOptimizeColorForSharing();
 
     @Generated
     @CVariable()
@@ -658,6 +666,14 @@ public final class ImageIO {
 
     @Generated
     @CVariable()
+    public static native CFStringRef kCGImagePropertyTIFFTileWidth();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImagePropertyTIFFTileLength();
+
+    @Generated
+    @CVariable()
     public static native CFStringRef kCGImagePropertyJFIFVersion();
 
     @Generated
@@ -802,7 +818,7 @@ public final class ImageIO {
 
     @Generated
     @CVariable()
-    public static native CFStringRef kCGImagePropertyExifSubsecTimeOrginal();
+    public static native CFStringRef kCGImagePropertyExifSubsecTimeOriginal();
 
     @Generated
     @CVariable()
@@ -951,6 +967,10 @@ public final class ImageIO {
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyExifGamma();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImagePropertyExifSubsecTimeOrginal();
 
     @Generated
     @CVariable()
@@ -1470,6 +1490,86 @@ public final class ImageIO {
 
     @Generated
     @CVariable()
+    public static native CFStringRef kCGImagePropertyDNGBlackLevel();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImagePropertyDNGWhiteLevel();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImagePropertyDNGCalibrationIlluminant1();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImagePropertyDNGCalibrationIlluminant2();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImagePropertyDNGColorMatrix1();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImagePropertyDNGColorMatrix2();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImagePropertyDNGCameraCalibration1();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImagePropertyDNGCameraCalibration2();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImagePropertyDNGAsShotNeutral();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImagePropertyDNGAsShotWhiteXY();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImagePropertyDNGBaselineExposure();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImagePropertyDNGBaselineNoise();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImagePropertyDNGBaselineSharpness();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImagePropertyDNGPrivateData();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImagePropertyDNGCameraCalibrationSignature();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImagePropertyDNGProfileCalibrationSignature();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImagePropertyDNGNoiseProfile();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImagePropertyDNGWarpRectilinear();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImagePropertyDNGWarpFisheye();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImagePropertyDNGFixVignetteRadial();
+
+    @Generated
+    @CVariable()
     public static native CFStringRef kCGImagePropertyCIFFDescription();
 
     @Generated
@@ -1655,22 +1755,6 @@ public final class ImageIO {
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyMakerCanonAspectRatioInfo();
-
-    @Generated
-    @CVariable()
-    public static native CFStringRef kCGImageSourceSubsampleFactor();
-
-    @Generated
-    @CVariable()
-    public static native CFStringRef kCGImagePropertyTIFFTileWidth();
-
-    @Generated
-    @CVariable()
-    public static native CFStringRef kCGImagePropertyTIFFTileLength();
-
-    @Generated
-    @CVariable()
-    public static native CFStringRef kCGImagePropertyExifSubsecTimeOriginal();
 
     @Generated
     @CVariable()

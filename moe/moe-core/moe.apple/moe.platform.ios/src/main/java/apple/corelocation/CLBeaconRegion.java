@@ -61,13 +61,13 @@ public class CLBeaconRegion extends CLRegion {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native CLBeaconRegion alloc();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -154,7 +154,7 @@ public class CLBeaconRegion extends CLRegion {
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")
@@ -178,6 +178,10 @@ public class CLBeaconRegion extends CLRegion {
     @Selector("initCircularRegionWithCenter:radius:identifier:")
     public native CLBeaconRegion initCircularRegionWithCenterRadiusIdentifier(@ByValue CLLocationCoordinate2D center,
             double radius, String identifier);
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native CLBeaconRegion initWithCoder(NSCoder aDecoder);
 
     @Generated
     @Selector("initWithProximityUUID:identifier:")
@@ -216,10 +220,6 @@ public class CLBeaconRegion extends CLRegion {
     @Generated
     @Selector("setNotifyEntryStateOnDisplay:")
     public native void setNotifyEntryStateOnDisplay(boolean value);
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native CLBeaconRegion initWithCoder(NSCoder aDecoder);
 
     @Generated
     @ProtocolClassMethod("supportsSecureCoding")

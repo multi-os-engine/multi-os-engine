@@ -56,17 +56,13 @@ public class CATransformLayer extends CALayer {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native CATransformLayer alloc();
-
-    @Generated
-    @Selector("layer")
-    public static native CATransformLayer layer();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -144,6 +140,10 @@ public class CATransformLayer extends CALayer {
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
     @Generated
+    @Selector("layer")
+    public static native CATransformLayer layer();
+
+    @Generated
     @Selector("load")
     public static native void load_objc_static();
 
@@ -183,10 +183,10 @@ public class CATransformLayer extends CALayer {
     public native CATransformLayer init();
 
     @Generated
-    @Selector("initWithLayer:")
-    public native CATransformLayer initWithLayer(@Mapped(ObjCObjectMapper.class) Object layer);
-
-    @Generated
     @Selector("initWithCoder:")
     public native CATransformLayer initWithCoder(NSCoder aDecoder);
+
+    @Generated
+    @Selector("initWithLayer:")
+    public native CATransformLayer initWithLayer(@Mapped(ObjCObjectMapper.class) Object layer);
 }

@@ -61,21 +61,13 @@ public class SCNPhysicsVehicleWheel extends NSObject implements NSCopying, NSSec
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native SCNPhysicsVehicleWheel alloc();
-
-    @Generated
-    @Selector("supportsSecureCoding")
-    public static native boolean supportsSecureCoding();
-
-    @Generated
-    @Selector("wheelWithNode:")
-    public static native SCNPhysicsVehicleWheel wheelWithNode(SCNNode node);
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -144,7 +136,7 @@ public class SCNPhysicsVehicleWheel extends NSObject implements NSCopying, NSSec
 
     @Generated
     @Selector("load")
-    public static native void load_objc();
+    public static native void load_objc_static();
 
     @Generated
     @Owned
@@ -162,16 +154,24 @@ public class SCNPhysicsVehicleWheel extends NSObject implements NSCopying, NSSec
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")
     public static native Class superclass_static();
 
     @Generated
+    @Selector("supportsSecureCoding")
+    public static native boolean supportsSecureCoding();
+
+    @Generated
     @Selector("version")
     @NInt
-    public static native long version();
+    public static native long version_static();
+
+    @Generated
+    @Selector("wheelWithNode:")
+    public static native SCNPhysicsVehicleWheel wheelWithNode(SCNNode node);
 
     @Generated
     @Selector("axle")

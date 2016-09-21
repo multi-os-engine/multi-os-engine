@@ -17,18 +17,18 @@ limitations under the License.
 package apple.security.enums;
 
 import org.moe.natj.general.ann.Generated;
-import org.moe.natj.general.ann.NInt;
+import org.moe.natj.general.ann.NUInt;
 
 @Generated
 public final class SecAccessControlCreateFlags {
-    @Generated @NInt public static final long UserPresence = 0x0000000000000001L;
-    @Generated @NInt public static final long TouchIDAny = 0x0000000000000002L;
-    @Generated @NInt public static final long TouchIDCurrentSet = 0x0000000000000008L;
-    @Generated @NInt public static final long DevicePasscode = 0x0000000000000010L;
-    @Generated @NInt public static final long Or = 0x0000000000004000L;
-    @Generated @NInt public static final long And = 0x0000000000008000L;
-    @Generated @NInt public static final long PrivateKeyUsage = 0x0000000040000000L;
-    @Generated @NInt public static final long ApplicationPassword = 0xFFFFFFFF80000000L;
+    @Generated @NUInt public static final long UserPresence = 0x0000000000000001L;
+    @Generated @NUInt public static final long TouchIDAny = 0x0000000000000002L;
+    @Generated @NUInt public static final long TouchIDCurrentSet = 0x0000000000000008L;
+    @Generated @NUInt public static final long DevicePasscode = 0x0000000000000010L;
+    @Generated @NUInt public static final long Or = 0x0000000000004000L;
+    @Generated @NUInt public static final long And = 0x0000000000008000L;
+    @Generated @NUInt public static final long PrivateKeyUsage = 0x0000000040000000L;
+    @Generated @NUInt public static final long ApplicationPassword = 0x0000000080000000L;
 
     @Generated
     private SecAccessControlCreateFlags() {

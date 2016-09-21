@@ -61,13 +61,13 @@ public class NSTextContainer extends NSObject implements NSCoding, NSTextLayoutO
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native NSTextContainer alloc();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -154,7 +154,7 @@ public class NSTextContainer extends NSObject implements NSCoding, NSTextLayoutO
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")
@@ -190,6 +190,10 @@ public class NSTextContainer extends NSObject implements NSCoding, NSTextLayoutO
     public native NSTextContainer initWithSize(@ByValue CGSize size);
 
     @Generated
+    @Selector("isSimpleRectangularTextContainer")
+    public native boolean isSimpleRectangularTextContainer();
+
+    @Generated
     @Selector("layoutManager")
     public native NSLayoutManager layoutManager();
 
@@ -219,6 +223,10 @@ public class NSTextContainer extends NSObject implements NSCoding, NSTextLayoutO
     @Selector("maximumNumberOfLines")
     @NUInt
     public native long maximumNumberOfLines();
+
+    @Generated
+    @Selector("replaceLayoutManager:")
+    public native void replaceLayoutManager(NSLayoutManager newLayoutManager);
 
     @Generated
     @Selector("setExclusionPaths:")
@@ -272,12 +280,4 @@ public class NSTextContainer extends NSObject implements NSCoding, NSTextLayoutO
     @Generated
     @Selector("widthTracksTextView")
     public native boolean widthTracksTextView();
-
-    @Generated
-    @Selector("isSimpleRectangularTextContainer")
-    public native boolean isSimpleRectangularTextContainer();
-
-    @Generated
-    @Selector("replaceLayoutManager:")
-    public native void replaceLayoutManager(NSLayoutManager newLayoutManager);
 }

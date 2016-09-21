@@ -57,17 +57,13 @@ public class EAAccessoryManager extends NSObject {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native EAAccessoryManager alloc();
-
-    @Generated
-    @Selector("sharedAccessoryManager")
-    public static native EAAccessoryManager sharedAccessoryManager();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -155,6 +151,10 @@ public class EAAccessoryManager extends NSObject {
     @Generated
     @Selector("setVersion:")
     public static native void setVersion_static(@NInt long aVersion);
+
+    @Generated
+    @Selector("sharedAccessoryManager")
+    public static native EAAccessoryManager sharedAccessoryManager();
 
     @Generated
     @Selector("superclass")

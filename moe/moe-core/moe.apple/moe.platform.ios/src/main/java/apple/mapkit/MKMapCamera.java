@@ -61,32 +61,13 @@ public class MKMapCamera extends NSObject implements NSSecureCoding, NSCopying {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native MKMapCamera alloc();
-
-    @Generated
-    @Selector("camera")
-    public static native MKMapCamera camera();
-
-    @Generated
-    @Selector("cameraLookingAtCenterCoordinate:fromEyeCoordinate:eyeAltitude:")
-    public static native MKMapCamera cameraLookingAtCenterCoordinateFromEyeCoordinateEyeAltitude(
-            @ByValue CLLocationCoordinate2D centerCoordinate, @ByValue CLLocationCoordinate2D eyeCoordinate,
-            double eyeAltitude);
-
-    @Generated
-    @Selector("supportsSecureCoding")
-    public static native boolean supportsSecureCoding();
-
-    @Generated
-    @Selector("cameraLookingAtCenterCoordinate:fromDistance:pitch:heading:")
-    public static native MKMapCamera cameraLookingAtCenterCoordinateFromDistancePitchHeading(
-            @ByValue CLLocationCoordinate2D centerCoordinate, double distance, @NFloat double pitch, double heading);
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -96,6 +77,21 @@ public class MKMapCamera extends NSObject implements NSSecureCoding, NSCopying {
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
     public static native boolean automaticallyNotifiesObserversForKey(String key);
+
+    @Generated
+    @Selector("camera")
+    public static native MKMapCamera camera();
+
+    @Generated
+    @Selector("cameraLookingAtCenterCoordinate:fromDistance:pitch:heading:")
+    public static native MKMapCamera cameraLookingAtCenterCoordinateFromDistancePitchHeading(
+            @ByValue CLLocationCoordinate2D centerCoordinate, double distance, @NFloat double pitch, double heading);
+
+    @Generated
+    @Selector("cameraLookingAtCenterCoordinate:fromEyeCoordinate:eyeAltitude:")
+    public static native MKMapCamera cameraLookingAtCenterCoordinateFromEyeCoordinateEyeAltitude(
+            @ByValue CLLocationCoordinate2D centerCoordinate, @ByValue CLLocationCoordinate2D eyeCoordinate,
+            double eyeAltitude);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
@@ -178,6 +174,10 @@ public class MKMapCamera extends NSObject implements NSSecureCoding, NSCopying {
     @Generated
     @Selector("superclass")
     public static native Class superclass_static();
+
+    @Generated
+    @Selector("supportsSecureCoding")
+    public static native boolean supportsSecureCoding();
 
     @Generated
     @Selector("version")

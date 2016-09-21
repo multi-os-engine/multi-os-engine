@@ -23,6 +23,7 @@ import apple.foundation.NSCoder;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
 import apple.gameplaykit.GKPolygonObstacle;
+import apple.spritekit.protocol.SKWarpable;
 import org.moe.natj.c.ann.FunctionPtr;
 import org.moe.natj.general.NatJ;
 import org.moe.natj.general.Pointer;
@@ -46,7 +47,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @Library("SpriteKit")
 @Runtime(ObjCRuntime.class)
 @ObjCClassBinding
-public class SKEffectNode extends SKNode {
+public class SKEffectNode extends SKNode implements SKWarpable {
     static {
         NatJ.register();
     }
@@ -57,21 +58,13 @@ public class SKEffectNode extends SKNode {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native SKEffectNode alloc();
-
-    @Generated
-    @Selector("node")
-    public static native SKEffectNode node();
-
-    @Generated
-    @Selector("nodeWithFileNamed:")
-    public static native SKEffectNode nodeWithFileNamed(String filename);
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -153,6 +146,14 @@ public class SKEffectNode extends SKNode {
     public static native Object new_objc();
 
     @Generated
+    @Selector("node")
+    public static native SKEffectNode node();
+
+    @Generated
+    @Selector("nodeWithFileNamed:")
+    public static native SKEffectNode nodeWithFileNamed(String filename);
+
+    @Generated
     @Selector("obstaclesFromNodeBounds:")
     public static native NSArray<? extends GKPolygonObstacle> obstaclesFromNodeBounds(NSArray<? extends SKNode> nodes);
 
@@ -176,7 +177,7 @@ public class SKEffectNode extends SKNode {
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")
@@ -229,6 +230,14 @@ public class SKEffectNode extends SKNode {
     public native void setShouldRasterize(boolean value);
 
     @Generated
+    @Selector("setSubdivisionLevels:")
+    public native void setSubdivisionLevels(@NInt long value);
+
+    @Generated
+    @Selector("setWarpGeometry:")
+    public native void setWarpGeometry(SKWarpGeometry value);
+
+    @Generated
     @Selector("shader")
     public native SKShader shader();
 
@@ -243,4 +252,13 @@ public class SKEffectNode extends SKNode {
     @Generated
     @Selector("shouldRasterize")
     public native boolean shouldRasterize();
+
+    @Generated
+    @Selector("subdivisionLevels")
+    @NInt
+    public native long subdivisionLevels();
+
+    @Generated
+    @Selector("warpGeometry")
+    public native SKWarpGeometry warpGeometry();
 }

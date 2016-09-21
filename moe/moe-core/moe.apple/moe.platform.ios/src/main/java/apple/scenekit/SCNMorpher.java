@@ -60,17 +60,13 @@ public class SCNMorpher extends NSObject implements SCNAnimatable, NSSecureCodin
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native SCNMorpher alloc();
-
-    @Generated
-    @Selector("supportsSecureCoding")
-    public static native boolean supportsSecureCoding();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -164,6 +160,10 @@ public class SCNMorpher extends NSObject implements SCNAnimatable, NSSecureCodin
     public static native Class superclass_static();
 
     @Generated
+    @Selector("supportsSecureCoding")
+    public static native boolean supportsSecureCoding();
+
+    @Generated
     @Selector("version")
     @NInt
     public static native long version_static();
@@ -224,6 +224,10 @@ public class SCNMorpher extends NSObject implements SCNAnimatable, NSSecureCodin
     @Generated
     @Selector("setCalculationMode:")
     public native void setCalculationMode(@NInt long value);
+
+    @Generated
+    @Selector("setSpeed:forAnimationKey:")
+    public native void setSpeedForAnimationKey(@NFloat double speed, String key);
 
     @Generated
     @Selector("setTargets:")

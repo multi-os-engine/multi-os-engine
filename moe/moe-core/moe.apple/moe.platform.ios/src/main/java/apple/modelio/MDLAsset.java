@@ -24,7 +24,9 @@ import apple.foundation.NSSet;
 import apple.foundation.NSURL;
 import apple.foundation.protocol.NSCopying;
 import apple.foundation.protocol.NSFastEnumeration;
+import apple.modelio.protocol.MDLLightProbeIrradianceDataSource;
 import apple.modelio.protocol.MDLMeshBufferAllocator;
+import apple.modelio.protocol.MDLObjectContainerComponent;
 import apple.scenekit.SCNScene;
 import org.moe.natj.c.ann.FunctionPtr;
 import org.moe.natj.general.NatJ;
@@ -62,13 +64,31 @@ public class MDLAsset extends NSObject implements NSCopying, NSFastEnumeration {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native MDLAsset alloc();
 
     @Generated
+    @Selector("allocWithZone:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object allocWithZone(VoidPtr zone);
+
+    @Generated
     @Selector("assetWithSCNScene:")
     public static native MDLAsset assetWithSCNScene(SCNScene scnScene);
+
+    @Generated
+    @Selector("assetWithSCNScene:bufferAllocator:")
+    public static native MDLAsset assetWithSCNSceneBufferAllocator(SCNScene scnScene,
+            @Mapped(ObjCObjectMapper.class) MDLMeshBufferAllocator bufferAllocator);
+
+    @Generated
+    @Selector("automaticallyNotifiesObserversForKey:")
+    public static native boolean automaticallyNotifiesObserversForKey(String key);
 
     @Generated
     @Selector("canExportFileExtension:")
@@ -77,19 +97,6 @@ public class MDLAsset extends NSObject implements NSCopying, NSFastEnumeration {
     @Generated
     @Selector("canImportFileExtension:")
     public static native boolean canImportFileExtension(String extension);
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
-
-    @Generated
-    @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
-
-    @Generated
-    @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
@@ -158,6 +165,11 @@ public class MDLAsset extends NSObject implements NSCopying, NSFastEnumeration {
     public static native Object new_objc();
 
     @Generated
+    @Selector("placeLightProbesWithDensity:heuristic:usingIrradianceDataSource:")
+    public static native NSArray<? extends MDLLightProbe> placeLightProbesWithDensityHeuristicUsingIrradianceDataSource(
+            float value, @NInt long type, @Mapped(ObjCObjectMapper.class) MDLLightProbeIrradianceDataSource dataSource);
+
+    @Generated
     @Selector("resolveClassMethod:")
     public static native boolean resolveClassMethod(SEL sel);
 
@@ -190,6 +202,10 @@ public class MDLAsset extends NSObject implements NSCopying, NSFastEnumeration {
     @Selector("bufferAllocator")
     @MappedReturn(ObjCObjectMapper.class)
     public native MDLMeshBufferAllocator bufferAllocator();
+
+    @Generated
+    @Selector("childObjectsOfClass:")
+    public native NSArray<? extends MDLObject> childObjectsOfClass(Class objectClass);
 
     @Generated
     @Owned
@@ -228,6 +244,11 @@ public class MDLAsset extends NSObject implements NSCopying, NSFastEnumeration {
     public native MDLAsset init();
 
     @Generated
+    @Selector("initWithBufferAllocator:")
+    public native MDLAsset initWithBufferAllocator(
+            @Mapped(ObjCObjectMapper.class) MDLMeshBufferAllocator bufferAllocator);
+
+    @Generated
     @Selector("initWithURL:")
     public native MDLAsset initWithURL(NSURL URL);
 
@@ -242,6 +263,11 @@ public class MDLAsset extends NSObject implements NSCopying, NSFastEnumeration {
             MDLVertexDescriptor vertexDescriptor,
             @Mapped(ObjCObjectMapper.class) MDLMeshBufferAllocator bufferAllocator, boolean preserveTopology,
             Ptr<NSError> error);
+
+    @Generated
+    @Selector("masters")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native MDLObjectContainerComponent masters();
 
     @Generated
     @Selector("objectAtIndex:")
@@ -262,6 +288,10 @@ public class MDLAsset extends NSObject implements NSCopying, NSFastEnumeration {
     @Generated
     @Selector("setFrameInterval:")
     public native void setFrameInterval(double value);
+
+    @Generated
+    @Selector("setMasters:")
+    public native void setMasters(@Mapped(ObjCObjectMapper.class) MDLObjectContainerComponent value);
 
     @Generated
     @Selector("setStartTime:")

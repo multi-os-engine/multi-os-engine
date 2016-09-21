@@ -78,6 +78,20 @@ public final class HKWorkoutActivityType {
     @Generated @NUInt public static final long WaterSports = 0x0000000000000037L;
     @Generated @NUInt public static final long Wrestling = 0x0000000000000038L;
     @Generated @NUInt public static final long Yoga = 0x0000000000000039L;
+    @Generated @NUInt public static final long Barre = 0x000000000000003AL;
+    @Generated @NUInt public static final long CoreTraining = 0x000000000000003BL;
+    @Generated @NUInt public static final long CrossCountrySkiing = 0x000000000000003CL;
+    @Generated @NUInt public static final long DownhillSkiing = 0x000000000000003DL;
+    @Generated @NUInt public static final long Flexibility = 0x000000000000003EL;
+    @Generated @NUInt public static final long HighIntensityIntervalTraining = 0x000000000000003FL;
+    @Generated @NUInt public static final long JumpRope = 0x0000000000000040L;
+    @Generated @NUInt public static final long Kickboxing = 0x0000000000000041L;
+    @Generated @NUInt public static final long Pilates = 0x0000000000000042L;
+    @Generated @NUInt public static final long Snowboarding = 0x0000000000000043L;
+    @Generated @NUInt public static final long Stairs = 0x0000000000000044L;
+    @Generated @NUInt public static final long StepTraining = 0x0000000000000045L;
+    @Generated @NUInt public static final long WheelchairWalkPace = 0x0000000000000046L;
+    @Generated @NUInt public static final long WheelchairRunPace = 0x0000000000000047L;
     @Generated @NUInt public static final long Other = 0x0000000000000BB8L;
 
     @Generated

@@ -57,13 +57,13 @@ public class HMRoom extends NSObject {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native HMRoom alloc();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -174,13 +174,13 @@ public class HMRoom extends NSObject {
     public native String name();
 
     @Generated
+    @Selector("uniqueIdentifier")
+    public native NSUUID uniqueIdentifier();
+
+    @Generated
     @Selector("updateName:completionHandler:")
     public native void updateNameCompletionHandler(String name,
             @ObjCBlock(name = "call_updateNameCompletionHandler") Block_updateNameCompletionHandler completion);
-
-    @Generated
-    @Selector("uniqueIdentifier")
-    public native NSUUID uniqueIdentifier();
 
     @Runtime(ObjCRuntime.class)
     @Generated

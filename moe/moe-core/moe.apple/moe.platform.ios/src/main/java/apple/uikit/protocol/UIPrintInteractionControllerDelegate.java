@@ -37,6 +37,15 @@ import org.moe.natj.objc.ann.Selector;
 public interface UIPrintInteractionControllerDelegate {
     @Generated
     @IsOptional
+    @Selector("printInteractionController:chooseCutterBehavior:")
+    @NInt
+    default long printInteractionControllerChooseCutterBehavior(UIPrintInteractionController printInteractionController,
+            NSArray<?> availableBehaviors) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Generated
+    @IsOptional
     @Selector("printInteractionController:choosePaper:")
     default UIPrintPaper printInteractionControllerChoosePaper(UIPrintInteractionController printInteractionController,
             NSArray<? extends UIPrintPaper> paperList) {
@@ -103,15 +112,6 @@ public interface UIPrintInteractionControllerDelegate {
     @IsOptional
     @Selector("printInteractionControllerWillStartJob:")
     default void printInteractionControllerWillStartJob(UIPrintInteractionController printInteractionController) {
-        throw new java.lang.UnsupportedOperationException();
-    }
-
-    @Generated
-    @IsOptional
-    @Selector("printInteractionController:chooseCutterBehavior:")
-    @NInt
-    default long printInteractionControllerChooseCutterBehavior(UIPrintInteractionController printInteractionController,
-            NSArray<?> availableBehaviors) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

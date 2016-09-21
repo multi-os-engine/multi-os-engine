@@ -55,13 +55,13 @@ public class MDLVertexAttribute extends NSObject implements NSCopying {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native MDLVertexAttribute alloc();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -208,4 +208,12 @@ public class MDLVertexAttribute extends NSObject implements NSCopying {
     @Generated
     @Selector("setOffset:")
     public native void setOffset(@NUInt long value);
+
+    @Generated
+    @Selector("setTime:")
+    public native void setTime(double value);
+
+    @Generated
+    @Selector("time")
+    public native double time();
 }

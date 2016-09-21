@@ -57,21 +57,13 @@ public class SSReadingList extends NSObject {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native SSReadingList alloc();
-
-    @Generated
-    @Selector("defaultReadingList")
-    public static native SSReadingList defaultReadingList();
-
-    @Generated
-    @Selector("supportsURL:")
-    public static native boolean supportsURL(NSURL URL);
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -103,6 +95,10 @@ public class SSReadingList extends NSObject {
     @Generated
     @Selector("debugDescription")
     public static native String debugDescription_static();
+
+    @Generated
+    @Selector("defaultReadingList")
+    public static native SSReadingList defaultReadingList();
 
     @Generated
     @Selector("description")
@@ -163,6 +159,10 @@ public class SSReadingList extends NSObject {
     @Generated
     @Selector("superclass")
     public static native Class superclass_static();
+
+    @Generated
+    @Selector("supportsURL:")
+    public static native boolean supportsURL(NSURL URL);
 
     @Generated
     @Selector("version")

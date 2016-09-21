@@ -64,11 +64,6 @@ public class UIProgressView extends UIView implements NSCoding {
     }
 
     @Generated
-    @Owned
-    @Selector("alloc")
-    public static native UIProgressView alloc();
-
-    @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
 
@@ -77,6 +72,11 @@ public class UIProgressView extends UIView implements NSCoding {
     public static native void addKeyframeWithRelativeStartTimeRelativeDurationAnimations(double frameStartTime,
             double frameDuration,
             @ObjCBlock(name = "call_addKeyframeWithRelativeStartTimeRelativeDurationAnimations") UIView.Block_addKeyframeWithRelativeStartTimeRelativeDurationAnimations animations);
+
+    @Generated
+    @Owned
+    @Selector("alloc")
+    public static native UIProgressView alloc();
 
     @Generated
     @Selector("allocWithZone:")
@@ -345,90 +345,15 @@ public class UIProgressView extends UIView implements NSCoding {
     public static native long userInterfaceLayoutDirectionForSemanticContentAttribute(@NInt long attribute);
 
     @Generated
+    @Selector("userInterfaceLayoutDirectionForSemanticContentAttribute:relativeToLayoutDirection:")
+    @NInt
+    public static native long userInterfaceLayoutDirectionForSemanticContentAttributeRelativeToLayoutDirection(
+            @NInt long semanticContentAttribute, @NInt long layoutDirection);
+
+    @Generated
     @Selector("version")
     @NInt
     public static native long version_static();
-
-    @Generated
-    @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
-
-    @Generated
-    @Selector("init")
-    public native UIProgressView init();
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native UIProgressView initWithCoder(NSCoder aDecoder);
-
-    @Generated
-    @Selector("initWithFrame:")
-    public native UIProgressView initWithFrame(@ByValue CGRect frame);
-
-    @Generated
-    @Selector("initWithProgressViewStyle:")
-    public native UIProgressView initWithProgressViewStyle(@NInt long style);
-
-    @Generated
-    @Selector("progress")
-    public native float progress();
-
-    @Generated
-    @Selector("progressImage")
-    public native UIImage progressImage();
-
-    @Generated
-    @Selector("progressTintColor")
-    public native UIColor progressTintColor();
-
-    @Generated
-    @Selector("progressViewStyle")
-    @NInt
-    public native long progressViewStyle();
-
-    @Generated
-    @Selector("setProgress:")
-    public native void setProgress(float value);
-
-    @Generated
-    @Selector("setProgress:animated:")
-    public native void setProgressAnimated(float progress, boolean animated);
-
-    @Generated
-    @Selector("setProgressImage:")
-    public native void setProgressImage(UIImage value);
-
-    @Generated
-    @Selector("setProgressTintColor:")
-    public native void setProgressTintColor(UIColor value);
-
-    @Generated
-    @Selector("setProgressViewStyle:")
-    public native void setProgressViewStyle(@NInt long value);
-
-    @Generated
-    @Selector("setTrackImage:")
-    public native void setTrackImage(UIImage value);
-
-    @Generated
-    @Selector("setTrackTintColor:")
-    public native void setTrackTintColor(UIColor value);
-
-    @Generated
-    @Selector("trackImage")
-    public native UIImage trackImage();
-
-    @Generated
-    @Selector("trackTintColor")
-    public native UIColor trackTintColor();
-
-    @Generated
-    @Selector("observedProgress")
-    public native NSProgress observedProgress();
-
-    @Generated
-    @Selector("setObservedProgress:")
-    public native void setObservedProgress(NSProgress value);
 
     @Generated
     @ProtocolClassMethod("appearance")
@@ -475,4 +400,85 @@ public class UIProgressView extends UIView implements NSCoding {
     public Object _appearanceWhenContainedInInstancesOfClasses(NSArray<?> containerTypes) {
         return appearanceWhenContainedInInstancesOfClasses(containerTypes);
     }
+
+    @Generated
+    @Selector("encodeWithCoder:")
+    public native void encodeWithCoder(NSCoder aCoder);
+
+    @Generated
+    @Selector("init")
+    public native UIProgressView init();
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native UIProgressView initWithCoder(NSCoder aDecoder);
+
+    @Generated
+    @Selector("initWithFrame:")
+    public native UIProgressView initWithFrame(@ByValue CGRect frame);
+
+    @Generated
+    @Selector("initWithProgressViewStyle:")
+    public native UIProgressView initWithProgressViewStyle(@NInt long style);
+
+    @Generated
+    @Selector("observedProgress")
+    public native NSProgress observedProgress();
+
+    @Generated
+    @Selector("progress")
+    public native float progress();
+
+    @Generated
+    @Selector("progressImage")
+    public native UIImage progressImage();
+
+    @Generated
+    @Selector("progressTintColor")
+    public native UIColor progressTintColor();
+
+    @Generated
+    @Selector("progressViewStyle")
+    @NInt
+    public native long progressViewStyle();
+
+    @Generated
+    @Selector("setObservedProgress:")
+    public native void setObservedProgress(NSProgress value);
+
+    @Generated
+    @Selector("setProgress:")
+    public native void setProgress(float value);
+
+    @Generated
+    @Selector("setProgress:animated:")
+    public native void setProgressAnimated(float progress, boolean animated);
+
+    @Generated
+    @Selector("setProgressImage:")
+    public native void setProgressImage(UIImage value);
+
+    @Generated
+    @Selector("setProgressTintColor:")
+    public native void setProgressTintColor(UIColor value);
+
+    @Generated
+    @Selector("setProgressViewStyle:")
+    public native void setProgressViewStyle(@NInt long value);
+
+    @Generated
+    @Selector("setTrackImage:")
+    public native void setTrackImage(UIImage value);
+
+    @Generated
+    @Selector("setTrackTintColor:")
+    public native void setTrackTintColor(UIColor value);
+
+    @Generated
+    @Selector("trackImage")
+    public native UIImage trackImage();
+
+    @Generated
+    @Selector("trackTintColor")
+    public native UIColor trackTintColor();
 }

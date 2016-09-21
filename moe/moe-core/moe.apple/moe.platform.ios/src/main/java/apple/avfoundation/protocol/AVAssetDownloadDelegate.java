@@ -20,6 +20,7 @@ import apple.avfoundation.AVAssetDownloadTask;
 import apple.avfoundation.AVMediaSelection;
 import apple.coremedia.struct.CMTimeRange;
 import apple.foundation.NSArray;
+import apple.foundation.NSURL;
 import apple.foundation.NSURLSession;
 import apple.foundation.NSValue;
 import apple.foundation.protocol.NSURLSessionTaskDelegate;
@@ -37,6 +38,14 @@ import org.moe.natj.objc.ann.Selector;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("AVAssetDownloadDelegate")
 public interface AVAssetDownloadDelegate extends NSURLSessionTaskDelegate {
+    @Generated
+    @IsOptional
+    @Selector("URLSession:assetDownloadTask:didFinishDownloadingToURL:")
+    default void URLSessionAssetDownloadTaskDidFinishDownloadingToURL(NSURLSession session,
+            AVAssetDownloadTask assetDownloadTask, NSURL location) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
     @Generated
     @IsOptional
     @Selector("URLSession:assetDownloadTask:didLoadTimeRange:totalTimeRangesLoaded:timeRangeExpectedToLoad:")

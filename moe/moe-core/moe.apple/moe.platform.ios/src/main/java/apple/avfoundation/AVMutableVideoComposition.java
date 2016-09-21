@@ -59,26 +59,13 @@ public class AVMutableVideoComposition extends AVVideoComposition {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native AVMutableVideoComposition alloc();
-
-    @Generated
-    @Selector("videoComposition")
-    public static native AVMutableVideoComposition videoComposition();
-
-    @Generated
-    @Selector("videoCompositionWithPropertiesOfAsset:")
-    public static native AVMutableVideoComposition videoCompositionWithPropertiesOfAsset(AVAsset asset);
-
-    @Generated
-    @Selector("videoCompositionWithAsset:applyingCIFiltersWithHandler:")
-    public static native AVMutableVideoComposition videoCompositionWithAssetApplyingCIFiltersWithHandler(AVAsset asset,
-            @ObjCBlock(name = "call_videoCompositionWithAssetApplyingCIFiltersWithHandler") Block_videoCompositionWithAssetApplyingCIFiltersWithHandler applier);
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -177,8 +164,33 @@ public class AVMutableVideoComposition extends AVVideoComposition {
     public static native long version_static();
 
     @Generated
+    @Selector("videoComposition")
+    public static native AVMutableVideoComposition videoComposition();
+
+    @Generated
+    @Selector("videoCompositionWithAsset:applyingCIFiltersWithHandler:")
+    public static native AVMutableVideoComposition videoCompositionWithAssetApplyingCIFiltersWithHandler(AVAsset asset,
+            @ObjCBlock(name = "call_videoCompositionWithAssetApplyingCIFiltersWithHandler") Block_videoCompositionWithAssetApplyingCIFiltersWithHandler applier);
+
+    @Generated
+    @Selector("videoCompositionWithPropertiesOfAsset:")
+    public static native AVMutableVideoComposition videoCompositionWithPropertiesOfAsset(AVAsset asset);
+
+    @Generated
     @Selector("animationTool")
     public native AVVideoCompositionCoreAnimationTool animationTool();
+
+    @Generated
+    @Selector("colorPrimaries")
+    public native String colorPrimaries();
+
+    @Generated
+    @Selector("colorTransferFunction")
+    public native String colorTransferFunction();
+
+    @Generated
+    @Selector("colorYCbCrMatrix")
+    public native String colorYCbCrMatrix();
 
     @Generated
     @Selector("customVideoCompositorClass")
@@ -210,6 +222,18 @@ public class AVMutableVideoComposition extends AVVideoComposition {
     @Generated
     @Selector("setAnimationTool:")
     public native void setAnimationTool(AVVideoCompositionCoreAnimationTool value);
+
+    @Generated
+    @Selector("setColorPrimaries:")
+    public native void setColorPrimaries(String value);
+
+    @Generated
+    @Selector("setColorTransferFunction:")
+    public native void setColorTransferFunction(String value);
+
+    @Generated
+    @Selector("setColorYCbCrMatrix:")
+    public native void setColorYCbCrMatrix(String value);
 
     @Generated
     @Selector("setCustomVideoCompositorClass:")

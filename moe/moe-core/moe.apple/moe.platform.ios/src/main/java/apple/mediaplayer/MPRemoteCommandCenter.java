@@ -54,17 +54,13 @@ public class MPRemoteCommandCenter extends NSObject {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native MPRemoteCommandCenter alloc();
-
-    @Generated
-    @Selector("sharedCommandCenter")
-    public static native MPRemoteCommandCenter sharedCommandCenter();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -151,7 +147,11 @@ public class MPRemoteCommandCenter extends NSObject {
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
+
+    @Generated
+    @Selector("sharedCommandCenter")
+    public static native MPRemoteCommandCenter sharedCommandCenter();
 
     @Generated
     @Selector("superclass")
@@ -167,12 +167,32 @@ public class MPRemoteCommandCenter extends NSObject {
     public native MPFeedbackCommand bookmarkCommand();
 
     @Generated
+    @Selector("changePlaybackPositionCommand")
+    public native MPChangePlaybackPositionCommand changePlaybackPositionCommand();
+
+    @Generated
     @Selector("changePlaybackRateCommand")
     public native MPChangePlaybackRateCommand changePlaybackRateCommand();
 
     @Generated
+    @Selector("changeRepeatModeCommand")
+    public native MPChangeRepeatModeCommand changeRepeatModeCommand();
+
+    @Generated
+    @Selector("changeShuffleModeCommand")
+    public native MPChangeShuffleModeCommand changeShuffleModeCommand();
+
+    @Generated
+    @Selector("disableLanguageOptionCommand")
+    public native MPRemoteCommand disableLanguageOptionCommand();
+
+    @Generated
     @Selector("dislikeCommand")
     public native MPFeedbackCommand dislikeCommand();
+
+    @Generated
+    @Selector("enableLanguageOptionCommand")
+    public native MPRemoteCommand enableLanguageOptionCommand();
 
     @Generated
     @Selector("init")
@@ -225,16 +245,4 @@ public class MPRemoteCommandCenter extends NSObject {
     @Generated
     @Selector("togglePlayPauseCommand")
     public native MPRemoteCommand togglePlayPauseCommand();
-
-    @Generated
-    @Selector("disableLanguageOptionCommand")
-    public native MPRemoteCommand disableLanguageOptionCommand();
-
-    @Generated
-    @Selector("enableLanguageOptionCommand")
-    public native MPRemoteCommand enableLanguageOptionCommand();
-
-    @Generated
-    @Selector("changePlaybackPositionCommand")
-    public native MPChangePlaybackPositionCommand changePlaybackPositionCommand();
 }

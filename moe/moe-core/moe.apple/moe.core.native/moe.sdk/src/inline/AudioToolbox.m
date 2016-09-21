@@ -15,12 +15,21 @@ limitations under the License.
 */
 
 #import <AudioToolbox/AudioFile.h>
+#import <AudioToolbox/AudioUnitProperties.h>
 #import <AudioToolbox/MusicPlayer.h>
 #import <MacTypes.h>
 #import <sys/_types/_size_t.h>
 
 
 #define EXPORT __attribute__ ((visibility ("default")))
+
+EXPORT AudioUnitParameterOptions __natj_inline_GetAudioUnitParameterDisplayType(AudioUnitParameterOptions flags) {
+	return GetAudioUnitParameterDisplayType(flags);
+}
+
+EXPORT AudioUnitParameterOptions __natj_inline_SetAudioUnitParameterDisplayType(AudioUnitParameterOptions flags, AudioUnitParameterOptions displayType) {
+	return SetAudioUnitParameterDisplayType(flags, displayType);
+}
 
 EXPORT size_t __natj_inline_NumBytesToNumAudioFileMarkers(size_t inNumBytes) {
 	return NumBytesToNumAudioFileMarkers(inNumBytes);

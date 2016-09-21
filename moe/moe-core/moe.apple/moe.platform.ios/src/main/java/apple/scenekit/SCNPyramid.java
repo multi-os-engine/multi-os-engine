@@ -58,31 +58,13 @@ public class SCNPyramid extends SCNGeometry {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native SCNPyramid alloc();
-
-    @Generated
-    @Selector("geometry")
-    public static native SCNPyramid geometry();
-
-    @Generated
-    @Selector("geometryWithSources:elements:")
-    public static native SCNPyramid geometryWithSourcesElements(NSArray<? extends SCNGeometrySource> sources,
-            NSArray<? extends SCNGeometryElement> elements);
-
-    @Generated
-    @Selector("pyramidWithWidth:height:length:")
-    public static native SCNPyramid pyramidWithWidthHeightLength(@NFloat double width, @NFloat double height,
-            @NFloat double length);
-
-    @Generated
-    @Selector("geometryWithMDLMesh:")
-    public static native SCNPyramid geometryWithMDLMesh(MDLMesh mdlMesh);
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -118,6 +100,19 @@ public class SCNPyramid extends SCNGeometry {
     @Generated
     @Selector("description")
     public static native String description_static();
+
+    @Generated
+    @Selector("geometry")
+    public static native SCNPyramid geometry();
+
+    @Generated
+    @Selector("geometryWithMDLMesh:")
+    public static native SCNPyramid geometryWithMDLMesh(MDLMesh mdlMesh);
+
+    @Generated
+    @Selector("geometryWithSources:elements:")
+    public static native SCNPyramid geometryWithSourcesElements(NSArray<? extends SCNGeometrySource> sources,
+            NSArray<? extends SCNGeometryElement> elements);
 
     @Generated
     @Selector("hash")
@@ -160,6 +155,11 @@ public class SCNPyramid extends SCNGeometry {
     public static native Object new_objc();
 
     @Generated
+    @Selector("pyramidWithWidth:height:length:")
+    public static native SCNPyramid pyramidWithWidthHeightLength(@NFloat double width, @NFloat double height,
+            @NFloat double length);
+
+    @Generated
     @Selector("resolveClassMethod:")
     public static native boolean resolveClassMethod(SEL sel);
 
@@ -199,6 +199,10 @@ public class SCNPyramid extends SCNGeometry {
     public native SCNPyramid init();
 
     @Generated
+    @Selector("initWithCoder:")
+    public native SCNPyramid initWithCoder(NSCoder aDecoder);
+
+    @Generated
     @Selector("length")
     @NFloat
     public native double length();
@@ -233,6 +237,12 @@ public class SCNPyramid extends SCNGeometry {
     public native void setWidthSegmentCount(@NInt long value);
 
     @Generated
+    @ProtocolClassMethod("supportsSecureCoding")
+    public boolean _supportsSecureCoding() {
+        return supportsSecureCoding();
+    }
+
+    @Generated
     @Selector("width")
     @NFloat
     public native double width();
@@ -241,14 +251,4 @@ public class SCNPyramid extends SCNGeometry {
     @Selector("widthSegmentCount")
     @NInt
     public native long widthSegmentCount();
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native SCNPyramid initWithCoder(NSCoder aDecoder);
-
-    @Generated
-    @ProtocolClassMethod("supportsSecureCoding")
-    public boolean _supportsSecureCoding() {
-        return supportsSecureCoding();
-    }
 }

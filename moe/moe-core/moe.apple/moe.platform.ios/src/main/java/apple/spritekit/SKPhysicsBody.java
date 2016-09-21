@@ -64,9 +64,22 @@ public class SKPhysicsBody extends NSObject implements NSCopying, NSCoding {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native SKPhysicsBody alloc();
+
+    @Generated
+    @Selector("allocWithZone:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object allocWithZone(VoidPtr zone);
+
+    @Generated
+    @Selector("automaticallyNotifiesObserversForKey:")
+    public static native boolean automaticallyNotifiesObserversForKey(String key);
 
     @Generated
     @Selector("bodyWithBodies:")
@@ -116,19 +129,6 @@ public class SKPhysicsBody extends NSObject implements NSCopying, NSCoding {
     @Generated
     @Selector("bodyWithTexture:size:")
     public static native SKPhysicsBody bodyWithTextureSize(SKTexture texture, @ByValue CGSize size);
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
-
-    @Generated
-    @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
-
-    @Generated
-    @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")

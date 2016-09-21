@@ -68,13 +68,13 @@ public class UIDocument extends NSObject implements NSFilePresenter, NSProgressR
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native UIDocument alloc();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -143,7 +143,7 @@ public class UIDocument extends NSObject implements NSFilePresenter, NSProgressR
 
     @Generated
     @Selector("load")
-    public static native void load_objc();
+    public static native void load_objc_static();
 
     @Generated
     @Owned
@@ -161,7 +161,7 @@ public class UIDocument extends NSObject implements NSFilePresenter, NSProgressR
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")
@@ -170,7 +170,7 @@ public class UIDocument extends NSObject implements NSFilePresenter, NSProgressR
     @Generated
     @Selector("version")
     @NInt
-    public static native long version();
+    public static native long version_static();
 
     @Generated
     @IsOptional
@@ -341,6 +341,10 @@ public class UIDocument extends NSObject implements NSFilePresenter, NSProgressR
     public native void presentedSubitemDidChangeAtURL(NSURL url);
 
     @Generated
+    @Selector("progress")
+    public native NSProgress progress();
+
+    @Generated
     @Selector("readFromURL:error:")
     public native boolean readFromURLError(NSURL url, Ptr<NSError> outError);
 
@@ -416,10 +420,6 @@ public class UIDocument extends NSObject implements NSFilePresenter, NSProgressR
     public native boolean writeContentsToURLForSaveOperationOriginalContentsURLError(
             @Mapped(ObjCObjectMapper.class) Object contents, NSURL url, @NInt long saveOperation,
             NSURL originalContentsURL, Ptr<NSError> outError);
-
-    @Generated
-    @Selector("progress")
-    public native NSProgress progress();
 
     @Runtime(ObjCRuntime.class)
     @Generated

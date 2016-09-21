@@ -48,6 +48,8 @@ public final class GKErrorCode {
     @Generated @NInt public static final long InvitationsDisabled = 0x0000000000000019L;
     @Generated @NInt public static final long PlayerPhotoFailure = 0x000000000000001AL;
     @Generated @NInt public static final long UbiquityContainerUnavailable = 0x000000000000001BL;
+    @Generated @NInt public static final long MatchNotConnected = 0x000000000000001CL;
+    @Generated @NInt public static final long GameSessionRequestInvalid = 0x000000000000001DL;
 
     @Generated
     private GKErrorCode() {

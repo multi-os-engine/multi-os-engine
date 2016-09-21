@@ -26,7 +26,6 @@ import org.moe.natj.general.Pointer;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.ReferenceInfo;
 import org.moe.natj.general.ann.Runtime;
-import org.moe.natj.general.ann.UncertainReturn;
 import org.moe.natj.general.ptr.Ptr;
 import org.moe.natj.general.ptr.VoidPtr;
 
@@ -61,7 +60,6 @@ public final class JSStaticValue extends StructObject {
 
     @Generated
     @StructureField(order = 0, isGetter = true)
-    @UncertainReturn("Options: java.string, c.const-byte-ptr Fallback: java.string")
     public native String name();
 
     @Generated
@@ -69,8 +67,18 @@ public final class JSStaticValue extends StructObject {
     public native void setName(String value);
 
     @Generated
+    @StructureField(order = 1, isGetter = true)
+    @FunctionPtr(name = "call_getProperty")
+    public native Function_getProperty getProperty();
+
+    @Generated
     @StructureField(order = 1, isGetter = false)
     public native void setGetProperty(@FunctionPtr(name = "call_getProperty") Function_getProperty value);
+
+    @Generated
+    @StructureField(order = 2, isGetter = true)
+    @FunctionPtr(name = "call_setProperty")
+    public native Function_setProperty setProperty();
 
     @Generated
     @StructureField(order = 2, isGetter = false)
@@ -83,16 +91,6 @@ public final class JSStaticValue extends StructObject {
     @Generated
     @StructureField(order = 3, isGetter = false)
     public native void setAttributes(int value);
-
-    @Generated
-    @StructureField(order = 1, isGetter = true)
-    @FunctionPtr(name = "call_getProperty")
-    public native Function_getProperty getProperty();
-
-    @Generated
-    @StructureField(order = 2, isGetter = true)
-    @FunctionPtr(name = "call_setProperty")
-    public native Function_setProperty setProperty();
 
     @Runtime(CRuntime.class)
     @Generated

@@ -58,21 +58,13 @@ public class AVOutputSettingsAssistant extends NSObject {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native AVOutputSettingsAssistant alloc();
-
-    @Generated
-    @Selector("availableOutputSettingsPresets")
-    public static native NSArray<String> availableOutputSettingsPresets();
-
-    @Generated
-    @Selector("outputSettingsAssistantWithPreset:")
-    public static native AVOutputSettingsAssistant outputSettingsAssistantWithPreset(String presetIdentifier);
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -82,6 +74,10 @@ public class AVOutputSettingsAssistant extends NSObject {
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
     public static native boolean automaticallyNotifiesObserversForKey(String key);
+
+    @Generated
+    @Selector("availableOutputSettingsPresets")
+    public static native NSArray<String> availableOutputSettingsPresets();
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
@@ -148,6 +144,10 @@ public class AVOutputSettingsAssistant extends NSObject {
     @Selector("new")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object new_objc();
+
+    @Generated
+    @Selector("outputSettingsAssistantWithPreset:")
+    public static native AVOutputSettingsAssistant outputSettingsAssistantWithPreset(String presetIdentifier);
 
     @Generated
     @Selector("resolveClassMethod:")

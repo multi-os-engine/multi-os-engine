@@ -17,7 +17,7 @@ limitations under the License.
 package apple.avfoundation;
 
 import apple.NSObject;
-import apple.audiounit.struct.AudioComponentDescription;
+import apple.audiotoolbox.struct.AudioComponentDescription;
 import apple.avfoundation.protocol.AVAudioMixing;
 import apple.avfoundation.struct.AVAudio3DPoint;
 import apple.foundation.NSArray;
@@ -60,13 +60,13 @@ public class AVAudioUnitMIDIInstrument extends AVAudioUnit implements AVAudioMix
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native AVAudioUnitMIDIInstrument alloc();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -159,7 +159,7 @@ public class AVAudioUnitMIDIInstrument extends AVAudioUnit implements AVAudioMix
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")
@@ -171,6 +171,10 @@ public class AVAudioUnitMIDIInstrument extends AVAudioUnit implements AVAudioMix
     public static native long version_static();
 
     @Generated
+    @Selector("destinationForMixer:bus:")
+    public native AVAudioMixingDestination destinationForMixerBus(AVAudioNode mixer, @NUInt long bus);
+
+    @Generated
     @Selector("init")
     public native AVAudioUnitMIDIInstrument init();
 
@@ -178,6 +182,36 @@ public class AVAudioUnitMIDIInstrument extends AVAudioUnit implements AVAudioMix
     @Selector("initWithAudioComponentDescription:")
     public native AVAudioUnitMIDIInstrument initWithAudioComponentDescription(
             @ByValue AudioComponentDescription description);
+
+    @Generated
+    @Selector("obstruction")
+    public native float obstruction();
+
+    @Generated
+    @Selector("occlusion")
+    public native float occlusion();
+
+    @Generated
+    @Selector("pan")
+    public native float pan();
+
+    @Generated
+    @Selector("position")
+    @ByValue
+    public native AVAudio3DPoint position();
+
+    @Generated
+    @Selector("rate")
+    public native float rate();
+
+    @Generated
+    @Selector("renderingAlgorithm")
+    @NInt
+    public native long renderingAlgorithm();
+
+    @Generated
+    @Selector("reverbBlend")
+    public native float reverbBlend();
 
     @Generated
     @Selector("sendController:withValue:onChannel:")
@@ -216,48 +250,6 @@ public class AVAudioUnitMIDIInstrument extends AVAudioUnit implements AVAudioMix
     public native void sendProgramChangeOnChannel(byte program, byte channel);
 
     @Generated
-    @Selector("startNote:withVelocity:onChannel:")
-    public native void startNoteWithVelocityOnChannel(byte note, byte velocity, byte channel);
-
-    @Generated
-    @Selector("stopNote:onChannel:")
-    public native void stopNoteOnChannel(byte note, byte channel);
-
-    @Generated
-    @Selector("destinationForMixer:bus:")
-    public native AVAudioMixingDestination destinationForMixerBus(AVAudioNode mixer, @NUInt long bus);
-
-    @Generated
-    @Selector("obstruction")
-    public native float obstruction();
-
-    @Generated
-    @Selector("occlusion")
-    public native float occlusion();
-
-    @Generated
-    @Selector("pan")
-    public native float pan();
-
-    @Generated
-    @Selector("position")
-    @ByValue
-    public native AVAudio3DPoint position();
-
-    @Generated
-    @Selector("rate")
-    public native float rate();
-
-    @Generated
-    @Selector("renderingAlgorithm")
-    @NInt
-    public native long renderingAlgorithm();
-
-    @Generated
-    @Selector("reverbBlend")
-    public native float reverbBlend();
-
-    @Generated
     @Selector("setObstruction:")
     public native void setObstruction(float value);
 
@@ -288,6 +280,14 @@ public class AVAudioUnitMIDIInstrument extends AVAudioUnit implements AVAudioMix
     @Generated
     @Selector("setVolume:")
     public native void setVolume(float value);
+
+    @Generated
+    @Selector("startNote:withVelocity:onChannel:")
+    public native void startNoteWithVelocityOnChannel(byte note, byte velocity, byte channel);
+
+    @Generated
+    @Selector("stopNote:onChannel:")
+    public native void stopNoteOnChannel(byte note, byte channel);
 
     @Generated
     @Selector("volume")

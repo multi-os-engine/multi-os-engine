@@ -61,33 +61,13 @@ public class UIPrintInteractionController extends NSObject {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native UIPrintInteractionController alloc();
-
-    @Generated
-    @Selector("canPrintData:")
-    public static native boolean canPrintData(NSData data);
-
-    @Generated
-    @Selector("canPrintURL:")
-    public static native boolean canPrintURL(NSURL url);
-
-    @Generated
-    @Selector("isPrintingAvailable")
-    public static native boolean isPrintingAvailable();
-
-    @Generated
-    @Selector("printableUTIs")
-    public static native NSSet<String> printableUTIs();
-
-    @Generated
-    @Selector("sharedPrintController")
-    public static native UIPrintInteractionController sharedPrintController();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -97,6 +77,14 @@ public class UIPrintInteractionController extends NSObject {
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
     public static native boolean automaticallyNotifiesObserversForKey(String key);
+
+    @Generated
+    @Selector("canPrintData:")
+    public static native boolean canPrintData(NSData data);
+
+    @Generated
+    @Selector("canPrintURL:")
+    public static native boolean canPrintURL(NSURL url);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
@@ -147,6 +135,10 @@ public class UIPrintInteractionController extends NSObject {
     public static native boolean instancesRespondToSelector(SEL aSelector);
 
     @Generated
+    @Selector("isPrintingAvailable")
+    public static native boolean isPrintingAvailable();
+
+    @Generated
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
@@ -165,6 +157,10 @@ public class UIPrintInteractionController extends NSObject {
     public static native Object new_objc();
 
     @Generated
+    @Selector("printableUTIs")
+    public static native NSSet<String> printableUTIs();
+
+    @Generated
     @Selector("resolveClassMethod:")
     public static native boolean resolveClassMethod(SEL sel);
 
@@ -175,6 +171,10 @@ public class UIPrintInteractionController extends NSObject {
     @Generated
     @Selector("setVersion:")
     public static native void setVersion_static(@NInt long aVersion);
+
+    @Generated
+    @Selector("sharedPrintController")
+    public static native UIPrintInteractionController sharedPrintController();
 
     @Generated
     @Selector("superclass")

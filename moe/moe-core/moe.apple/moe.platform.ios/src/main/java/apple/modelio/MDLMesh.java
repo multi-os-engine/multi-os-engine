@@ -18,6 +18,7 @@ package apple.modelio;
 
 import apple.NSObject;
 import apple.foundation.NSArray;
+import apple.foundation.NSData;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSMutableArray;
 import apple.foundation.NSSet;
@@ -59,35 +60,13 @@ public class MDLMesh extends MDLObject {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native MDLMesh alloc();
-
-    @Generated
-    @Selector("meshWithSCNGeometry:")
-    public static native MDLMesh meshWithSCNGeometry(SCNGeometry scnGeometry);
-
-    @Generated
-    @Owned
-    @Selector("newIcosahedronWithRadius:inwardNormals:allocator:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object newIcosahedronWithRadiusInwardNormalsAllocator(float radius, boolean inwardNormals,
-            @Mapped(ObjCObjectMapper.class) MDLMeshBufferAllocator allocator);
-
-    @Generated
-    @Owned
-    @Selector("newSubdividedMesh:submeshIndex:subdivisionLevels:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object newSubdividedMeshSubmeshIndexSubdivisionLevels(MDLMesh mesh, @NUInt long submeshIndex,
-            @NUInt long subdivisionLevels);
-
-    @Generated
-    @Selector("objectWithSCNNode:")
-    public static native MDLMesh objectWithSCNNode(SCNNode scnNode);
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -159,10 +138,42 @@ public class MDLMesh extends MDLObject {
     public static native void load_objc_static();
 
     @Generated
+    @Selector("meshWithSCNGeometry:")
+    public static native MDLMesh meshWithSCNGeometry(SCNGeometry scnGeometry);
+
+    @Generated
+    @Selector("meshWithSCNGeometry:bufferAllocator:")
+    public static native MDLMesh meshWithSCNGeometryBufferAllocator(SCNGeometry scnGeometry,
+            @Mapped(ObjCObjectMapper.class) MDLMeshBufferAllocator bufferAllocator);
+
+    @Generated
     @Owned
     @Selector("new")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object new_objc();
+
+    @Generated
+    @Owned
+    @Selector("newIcosahedronWithRadius:inwardNormals:allocator:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object newIcosahedronWithRadiusInwardNormalsAllocator(float radius, boolean inwardNormals,
+            @Mapped(ObjCObjectMapper.class) MDLMeshBufferAllocator allocator);
+
+    @Generated
+    @Owned
+    @Selector("newSubdividedMesh:submeshIndex:subdivisionLevels:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object newSubdividedMeshSubmeshIndexSubdivisionLevels(MDLMesh mesh, @NUInt long submeshIndex,
+            @NUInt long subdivisionLevels);
+
+    @Generated
+    @Selector("objectWithSCNNode:")
+    public static native MDLMesh objectWithSCNNode(SCNNode scnNode);
+
+    @Generated
+    @Selector("objectWithSCNNode:bufferAllocator:")
+    public static native MDLMesh objectWithSCNNodeBufferAllocator(SCNNode scnNode,
+            @Mapped(ObjCObjectMapper.class) MDLMeshBufferAllocator bufferAllocator);
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -174,7 +185,7 @@ public class MDLMesh extends MDLObject {
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")
@@ -190,18 +201,37 @@ public class MDLMesh extends MDLObject {
     public native void addAttributeWithNameFormat(String name, @NUInt long format);
 
     @Generated
+    @Selector("addAttributeWithName:format:type:data:stride:")
+    public native void addAttributeWithNameFormatTypeDataStride(String name, @NUInt long format, String type,
+            NSData data, @NInt long stride);
+
+    @Generated
+    @Selector("addAttributeWithName:format:type:data:stride:time:")
+    public native void addAttributeWithNameFormatTypeDataStrideTime(String name, @NUInt long format, String type,
+            NSData data, @NInt long stride, double time);
+
+    @Generated
     @Selector("addNormalsWithAttributeNamed:creaseThreshold:")
     public native void addNormalsWithAttributeNamedCreaseThreshold(String attributeName, float creaseThreshold);
 
     @Generated
     @Selector("addTangentBasisForTextureCoordinateAttributeNamed:normalAttributeNamed:tangentAttributeNamed:")
     public native void addTangentBasisForTextureCoordinateAttributeNamedNormalAttributeNamedTangentAttributeNamed(
-            String textureCoordinateAttributeName, String normalAttributeName, String tangentAttributeName);
+            String textureCoordinateAttributeName, String normalAttributeNamed, String tangentAttributeNamed);
 
     @Generated
     @Selector("addTangentBasisForTextureCoordinateAttributeNamed:tangentAttributeNamed:bitangentAttributeNamed:")
     public native void addTangentBasisForTextureCoordinateAttributeNamedTangentAttributeNamedBitangentAttributeNamed(
-            String textureCoordinateAttributeName, String tangentAttributeName, String bitangentAttributeName);
+            String textureCoordinateAttributeName, String tangentAttributeNamed, String bitangentAttributeName);
+
+    @Generated
+    @Selector("addUnwrappedTextureCoordinatesForAttributeNamed:")
+    public native void addUnwrappedTextureCoordinatesForAttributeNamed(String textureCoordinateAttributeName);
+
+    @Generated
+    @Selector("allocator")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native MDLMeshBufferAllocator allocator();
 
     @Generated
     @Selector("generateAmbientOcclusionTextureWithQuality:attenuationFactor:objectsToConsider:vertexAttributeNamed:materialPropertyNamed:")
@@ -238,6 +268,16 @@ public class MDLMesh extends MDLObject {
     public native MDLMesh init();
 
     @Generated
+    @Selector("initMeshBySubdividingMesh:submeshIndex:subdivisionLevels:allocator:")
+    public native MDLMesh initMeshBySubdividingMeshSubmeshIndexSubdivisionLevelsAllocator(MDLMesh mesh,
+            int submeshIndex, int subdivisionLevels, @Mapped(ObjCObjectMapper.class) MDLMeshBufferAllocator allocator);
+
+    @Generated
+    @Selector("initWithBufferAllocator:")
+    public native MDLMesh initWithBufferAllocator(
+            @Mapped(ObjCObjectMapper.class) MDLMeshBufferAllocator bufferAllocator);
+
+    @Generated
     @Selector("initWithVertexBuffer:vertexCount:descriptor:submeshes:")
     public native MDLMesh initWithVertexBufferVertexCountDescriptorSubmeshes(
             @Mapped(ObjCObjectMapper.class) MDLMeshBuffer vertexBuffer, @NUInt long vertexCount,
@@ -253,6 +293,22 @@ public class MDLMesh extends MDLObject {
     public native void makeVerticesUnique();
 
     @Generated
+    @Selector("removeAttributeNamed:")
+    public native void removeAttributeNamed(String name);
+
+    @Generated
+    @Selector("replaceAttributeNamed:withData:")
+    public native void replaceAttributeNamedWithData(String name, MDLVertexAttributeData newData);
+
+    @Generated
+    @Selector("setSubmeshes:")
+    public native void setSubmeshes(NSMutableArray<MDLSubmesh> value);
+
+    @Generated
+    @Selector("setVertexCount:")
+    public native void setVertexCount(@NUInt long value);
+
+    @Generated
     @Selector("setVertexDescriptor:")
     public native void setVertexDescriptor(MDLVertexDescriptor value);
 
@@ -261,8 +317,16 @@ public class MDLMesh extends MDLObject {
     public native NSMutableArray<MDLSubmesh> submeshes();
 
     @Generated
+    @Selector("updateAttributeNamed:withData:")
+    public native void updateAttributeNamedWithData(String name, MDLVertexAttributeData newData);
+
+    @Generated
     @Selector("vertexAttributeDataForAttributeNamed:")
     public native MDLVertexAttributeData vertexAttributeDataForAttributeNamed(String name);
+
+    @Generated
+    @Selector("vertexAttributeDataForAttributeNamed:asFormat:")
+    public native MDLVertexAttributeData vertexAttributeDataForAttributeNamedAsFormat(String name, @NUInt long format);
 
     @Generated
     @Selector("vertexBuffers")

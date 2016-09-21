@@ -59,9 +59,18 @@ public class SKTextureAtlas extends NSObject implements NSCoding {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native SKTextureAtlas alloc();
+
+    @Generated
+    @Selector("allocWithZone:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("atlasNamed:")
@@ -70,26 +79,6 @@ public class SKTextureAtlas extends NSObject implements NSCoding {
     @Generated
     @Selector("atlasWithDictionary:")
     public static native SKTextureAtlas atlasWithDictionary(NSDictionary<String, ?> properties);
-
-    @Generated
-    @Selector("preloadTextureAtlases:withCompletionHandler:")
-    public static native void preloadTextureAtlasesWithCompletionHandler(
-            NSArray<? extends SKTextureAtlas> textureAtlases,
-            @ObjCBlock(name = "call_preloadTextureAtlasesWithCompletionHandler") Block_preloadTextureAtlasesWithCompletionHandler completionHandler);
-
-    @Generated
-    @Selector("preloadTextureAtlasesNamed:withCompletionHandler:")
-    public static native void preloadTextureAtlasesNamedWithCompletionHandler(NSArray<String> atlasNames,
-            @ObjCBlock(name = "call_preloadTextureAtlasesNamedWithCompletionHandler") Block_preloadTextureAtlasesNamedWithCompletionHandler completionHandler);
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
-
-    @Generated
-    @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -162,6 +151,17 @@ public class SKTextureAtlas extends NSObject implements NSCoding {
     public static native Object new_objc();
 
     @Generated
+    @Selector("preloadTextureAtlases:withCompletionHandler:")
+    public static native void preloadTextureAtlasesWithCompletionHandler(
+            NSArray<? extends SKTextureAtlas> textureAtlases,
+            @ObjCBlock(name = "call_preloadTextureAtlasesWithCompletionHandler") Block_preloadTextureAtlasesWithCompletionHandler completionHandler);
+
+    @Generated
+    @Selector("preloadTextureAtlasesNamed:withCompletionHandler:")
+    public static native void preloadTextureAtlasesNamedWithCompletionHandler(NSArray<String> atlasNames,
+            @ObjCBlock(name = "call_preloadTextureAtlasesNamedWithCompletionHandler") Block_preloadTextureAtlasesNamedWithCompletionHandler completionHandler);
+
+    @Generated
     @Selector("resolveClassMethod:")
     public static native boolean resolveClassMethod(SEL sel);
 
@@ -171,7 +171,7 @@ public class SKTextureAtlas extends NSObject implements NSCoding {
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")
@@ -216,15 +216,15 @@ public class SKTextureAtlas extends NSObject implements NSCoding {
 
     @Runtime(ObjCRuntime.class)
     @Generated
-    public interface Block_preloadWithCompletionHandler {
+    public interface Block_preloadTextureAtlasesNamedWithCompletionHandler {
         @Generated
-        void call_preloadWithCompletionHandler();
+        void call_preloadTextureAtlasesNamedWithCompletionHandler(NSError arg0, NSArray<? extends SKTextureAtlas> arg1);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
-    public interface Block_preloadTextureAtlasesNamedWithCompletionHandler {
+    public interface Block_preloadWithCompletionHandler {
         @Generated
-        void call_preloadTextureAtlasesNamedWithCompletionHandler(NSError arg0, NSArray<? extends SKTextureAtlas> arg1);
+        void call_preloadWithCompletionHandler();
     }
 }

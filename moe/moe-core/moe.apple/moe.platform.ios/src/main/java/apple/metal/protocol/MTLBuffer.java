@@ -16,7 +16,9 @@ limitations under the License.
 
 package apple.metal.protocol;
 
+import apple.foundation.struct.NSRange;
 import apple.metal.MTLTextureDescriptor;
+import org.moe.natj.general.ann.ByValue;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.Library;
 import org.moe.natj.general.ann.MappedReturn;
@@ -34,6 +36,10 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @ObjCProtocolName("MTLBuffer")
 public interface MTLBuffer extends MTLResource {
     @Generated
+    @Selector("addDebugMarker:range:")
+    void addDebugMarkerRange(String marker, @ByValue NSRange range);
+
+    @Generated
     @Selector("contents")
     VoidPtr contents();
 
@@ -47,4 +53,8 @@ public interface MTLBuffer extends MTLResource {
     @MappedReturn(ObjCObjectMapper.class)
     Object newTextureWithDescriptorOffsetBytesPerRow(MTLTextureDescriptor descriptor, @NUInt long offset,
             @NUInt long bytesPerRow);
+
+    @Generated
+    @Selector("removeAllDebugMarkers")
+    void removeAllDebugMarkers();
 }

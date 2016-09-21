@@ -23,6 +23,7 @@ import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
 import apple.quartzcore.CADisplayLink;
 import apple.uikit.protocol.UICoordinateSpace;
+import apple.uikit.protocol.UIFocusItem;
 import apple.uikit.protocol.UITraitEnvironment;
 import apple.uikit.struct.UIEdgeInsets;
 import org.moe.natj.c.ann.FunctionPtr;
@@ -61,21 +62,13 @@ public class UIScreen extends NSObject implements UITraitEnvironment {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native UIScreen alloc();
-
-    @Generated
-    @Selector("mainScreen")
-    public static native UIScreen mainScreen();
-
-    @Generated
-    @Selector("screens")
-    public static native NSArray<? extends UIScreen> screens();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -147,6 +140,10 @@ public class UIScreen extends NSObject implements UITraitEnvironment {
     public static native void load_objc_static();
 
     @Generated
+    @Selector("mainScreen")
+    public static native UIScreen mainScreen();
+
+    @Generated
     @Owned
     @Selector("new")
     @MappedReturn(ObjCObjectMapper.class)
@@ -161,6 +158,10 @@ public class UIScreen extends NSObject implements UITraitEnvironment {
     public static native boolean resolveInstanceMethod(SEL sel);
 
     @Generated
+    @Selector("screens")
+    public static native NSArray<? extends UIScreen> screens();
+
+    @Generated
     @Selector("setVersion:")
     public static native void setVersion_static(@NInt long aVersion);
 
@@ -173,8 +174,8 @@ public class UIScreen extends NSObject implements UITraitEnvironment {
     @NInt
     public static native long version_static();
 
-    @Deprecated
     @Generated
+    @Deprecated
     @Selector("applicationFrame")
     @ByValue
     public native CGRect applicationFrame();
@@ -212,6 +213,15 @@ public class UIScreen extends NSObject implements UITraitEnvironment {
     public native UICoordinateSpace fixedCoordinateSpace();
 
     @Generated
+    @Selector("focusedItem")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native UIFocusItem focusedItem();
+
+    @Generated
+    @Selector("focusedView")
+    public native UIView focusedView();
+
+    @Generated
     @Selector("init")
     public native UIScreen init();
 
@@ -233,6 +243,11 @@ public class UIScreen extends NSObject implements UITraitEnvironment {
     @Selector("overscanCompensation")
     @NInt
     public native long overscanCompensation();
+
+    @Generated
+    @Selector("overscanCompensationInsets")
+    @ByValue
+    public native UIEdgeInsets overscanCompensationInsets();
 
     @Generated
     @Selector("preferredMode")
@@ -264,6 +279,10 @@ public class UIScreen extends NSObject implements UITraitEnvironment {
     public native UIView snapshotViewAfterScreenUpdates(boolean afterUpdates);
 
     @Generated
+    @Selector("supportsFocus")
+    public native boolean supportsFocus();
+
+    @Generated
     @Selector("traitCollection")
     public native UITraitCollection traitCollection();
 
@@ -274,17 +293,4 @@ public class UIScreen extends NSObject implements UITraitEnvironment {
     @Generated
     @Selector("wantsSoftwareDimming")
     public native boolean wantsSoftwareDimming();
-
-    @Generated
-    @Selector("overscanCompensationInsets")
-    @ByValue
-    public native UIEdgeInsets overscanCompensationInsets();
-
-    @Generated
-    @Selector("focusedView")
-    public native UIView focusedView();
-
-    @Generated
-    @Selector("supportsFocus")
-    public native boolean supportsFocus();
 }

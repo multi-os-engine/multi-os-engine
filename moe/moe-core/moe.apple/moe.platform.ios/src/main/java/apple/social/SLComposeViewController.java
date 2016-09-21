@@ -60,21 +60,13 @@ public class SLComposeViewController extends UIViewController {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native SLComposeViewController alloc();
-
-    @Generated
-    @Selector("composeViewControllerForServiceType:")
-    public static native SLComposeViewController composeViewControllerForServiceType(String serviceType);
-
-    @Generated
-    @Selector("isAvailableForServiceType:")
-    public static native boolean isAvailableForServiceType(String serviceType);
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -112,6 +104,10 @@ public class SLComposeViewController extends UIViewController {
     public static native void clearTextInputContextIdentifier(String identifier);
 
     @Generated
+    @Selector("composeViewControllerForServiceType:")
+    public static native SLComposeViewController composeViewControllerForServiceType(String serviceType);
+
+    @Generated
     @Selector("debugDescription")
     public static native String debugDescription_static();
 
@@ -140,6 +136,10 @@ public class SLComposeViewController extends UIViewController {
     @Generated
     @Selector("instancesRespondToSelector:")
     public static native boolean instancesRespondToSelector(SEL aSelector);
+
+    @Generated
+    @Selector("isAvailableForServiceType:")
+    public static native boolean isAvailableForServiceType(String serviceType);
 
     @Generated
     @Selector("isSubclassOfClass:")
@@ -173,7 +173,7 @@ public class SLComposeViewController extends UIViewController {
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")
@@ -193,8 +193,17 @@ public class SLComposeViewController extends UIViewController {
     public native boolean addURL(NSURL url);
 
     @Generated
+    @Selector("completionHandler")
+    @ObjCBlock(name = "call_completionHandler_ret")
+    public native Block_completionHandler_ret completionHandler();
+
+    @Generated
     @Selector("init")
     public native SLComposeViewController init();
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native SLComposeViewController initWithCoder(NSCoder aDecoder);
 
     @Generated
     @Selector("initWithNibName:bundle:")
@@ -221,26 +230,17 @@ public class SLComposeViewController extends UIViewController {
     @Selector("setInitialText:")
     public native boolean setInitialText(String text);
 
+    @Runtime(ObjCRuntime.class)
     @Generated
-    @Selector("completionHandler")
-    @ObjCBlock(name = "call_completionHandler_ret")
-    public native Block_completionHandler_ret completionHandler();
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native SLComposeViewController initWithCoder(NSCoder aDecoder);
+    public interface Block_completionHandler_ret {
+        @Generated
+        void call_completionHandler_ret(@NInt long arg0);
+    }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_setCompletionHandler {
         @Generated
         void call_setCompletionHandler(@NInt long arg0);
-    }
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_completionHandler_ret {
-        @Generated
-        void call_completionHandler_ret(@NInt long arg0);
     }
 }

@@ -55,13 +55,13 @@ public class NSFetchedPropertyDescription extends NSPropertyDescription {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native NSFetchedPropertyDescription alloc();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -161,17 +161,17 @@ public class NSFetchedPropertyDescription extends NSPropertyDescription {
 
     @Generated
     @Selector("fetchRequest")
-    public native NSFetchRequest fetchRequest();
+    public native NSFetchRequest<?> fetchRequest();
 
     @Generated
     @Selector("init")
     public native NSFetchedPropertyDescription init();
 
     @Generated
-    @Selector("setFetchRequest:")
-    public native void setFetchRequest(NSFetchRequest value);
-
-    @Generated
     @Selector("initWithCoder:")
     public native NSFetchedPropertyDescription initWithCoder(NSCoder aDecoder);
+
+    @Generated
+    @Selector("setFetchRequest:")
+    public native void setFetchRequest(NSFetchRequest<?> value);
 }

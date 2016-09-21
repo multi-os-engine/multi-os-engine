@@ -26,6 +26,7 @@ import apple.foundation.NSSet;
 import apple.foundation.NSURL;
 import apple.uikit.UIImage;
 import apple.uikit.UILocalNotification;
+import apple.usernotifications.UNNotification;
 import org.moe.natj.c.ann.FunctionPtr;
 import org.moe.natj.general.NatJ;
 import org.moe.natj.general.Pointer;
@@ -62,22 +63,13 @@ public class WKInterfaceController extends NSObject {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native WKInterfaceController alloc();
-
-    @Generated
-    @Selector("openParentApplication:reply:")
-    public static native boolean openParentApplicationReply(NSDictionary<?, ?> userInfo,
-            @ObjCBlock(name = "call_openParentApplicationReply") Block_openParentApplicationReply reply);
-
-    @Generated
-    @Selector("reloadRootControllersWithNames:contexts:")
-    public static native void reloadRootControllersWithNamesContexts(NSArray<String> names, NSArray<?> contexts);
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -153,6 +145,15 @@ public class WKInterfaceController extends NSObject {
     @Selector("new")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object new_objc();
+
+    @Generated
+    @Selector("openParentApplication:reply:")
+    public static native boolean openParentApplicationReply(NSDictionary<?, ?> userInfo,
+            @ObjCBlock(name = "call_openParentApplicationReply") Block_openParentApplicationReply reply);
+
+    @Generated
+    @Selector("reloadRootControllersWithNames:contexts:")
+    public static native void reloadRootControllersWithNamesContexts(NSArray<String> names, NSArray<?> contexts);
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -242,6 +243,10 @@ public class WKInterfaceController extends NSObject {
             UILocalNotification localNotification);
 
     @Generated
+    @Selector("handleActionWithIdentifier:forNotification:")
+    public native void handleActionWithIdentifierForNotification(String identifier, UNNotification notification);
+
+    @Generated
     @Selector("handleActionWithIdentifier:forRemoteNotification:")
     public native void handleActionWithIdentifierForRemoteNotification(String identifier,
             NSDictionary<?, ?> remoteNotification);
@@ -281,6 +286,13 @@ public class WKInterfaceController extends NSObject {
             @ObjCBlock(name = "call_presentTextInputControllerWithSuggestionsAllowedInputModeCompletion") Block_presentTextInputControllerWithSuggestionsAllowedInputModeCompletion completion);
 
     @Generated
+    @Selector("presentTextInputControllerWithSuggestionsForLanguage:allowedInputMode:completion:")
+    public native void presentTextInputControllerWithSuggestionsForLanguageAllowedInputModeCompletion(
+            @ObjCBlock(name = "call_presentTextInputControllerWithSuggestionsForLanguageAllowedInputModeCompletion_0") Block_presentTextInputControllerWithSuggestionsForLanguageAllowedInputModeCompletion_0 suggestionsHandler,
+            @NInt long inputMode,
+            @ObjCBlock(name = "call_presentTextInputControllerWithSuggestionsForLanguageAllowedInputModeCompletion_2") Block_presentTextInputControllerWithSuggestionsForLanguageAllowedInputModeCompletion_2 completion);
+
+    @Generated
     @Selector("pushControllerWithName:context:")
     public native void pushControllerWithNameContext(String name, @Mapped(ObjCObjectMapper.class) Object context);
 
@@ -299,13 +311,6 @@ public class WKInterfaceController extends NSObject {
     @Generated
     @Selector("willActivate")
     public native void willActivate();
-
-    @Generated
-    @Selector("presentTextInputControllerWithSuggestionsForLanguage:allowedInputMode:completion:")
-    public native void presentTextInputControllerWithSuggestionsForLanguageAllowedInputModeCompletion(
-            @ObjCBlock(name = "call_presentTextInputControllerWithSuggestionsForLanguageAllowedInputModeCompletion_0") Block_presentTextInputControllerWithSuggestionsForLanguageAllowedInputModeCompletion_0 suggestionsHandler,
-            @NInt long inputMode,
-            @ObjCBlock(name = "call_presentTextInputControllerWithSuggestionsForLanguageAllowedInputModeCompletion_2") Block_presentTextInputControllerWithSuggestionsForLanguageAllowedInputModeCompletion_2 completion);
 
     @Runtime(ObjCRuntime.class)
     @Generated

@@ -59,30 +59,13 @@ public class GKLeaderboard extends NSObject {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native GKLeaderboard alloc();
-
-    @Generated
-    @Deprecated
-    @Selector("loadCategoriesWithCompletionHandler:")
-    public static native void loadCategoriesWithCompletionHandler(
-            @ObjCBlock(name = "call_loadCategoriesWithCompletionHandler") Block_loadCategoriesWithCompletionHandler completionHandler);
-
-    @Generated
-    @Selector("loadLeaderboardsWithCompletionHandler:")
-    public static native void loadLeaderboardsWithCompletionHandler(
-            @ObjCBlock(name = "call_loadLeaderboardsWithCompletionHandler") Block_loadLeaderboardsWithCompletionHandler completionHandler);
-
-    @Generated
-    @Deprecated
-    @Selector("setDefaultLeaderboard:withCompletionHandler:")
-    public static native void setDefaultLeaderboardWithCompletionHandler(String leaderboardIdentifier,
-            @ObjCBlock(name = "call_setDefaultLeaderboardWithCompletionHandler") Block_setDefaultLeaderboardWithCompletionHandler completionHandler);
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -154,6 +137,17 @@ public class GKLeaderboard extends NSObject {
     public static native void load_objc_static();
 
     @Generated
+    @Deprecated
+    @Selector("loadCategoriesWithCompletionHandler:")
+    public static native void loadCategoriesWithCompletionHandler(
+            @ObjCBlock(name = "call_loadCategoriesWithCompletionHandler") Block_loadCategoriesWithCompletionHandler completionHandler);
+
+    @Generated
+    @Selector("loadLeaderboardsWithCompletionHandler:")
+    public static native void loadLeaderboardsWithCompletionHandler(
+            @ObjCBlock(name = "call_loadLeaderboardsWithCompletionHandler") Block_loadLeaderboardsWithCompletionHandler completionHandler);
+
+    @Generated
     @Owned
     @Selector("new")
     @MappedReturn(ObjCObjectMapper.class)
@@ -168,8 +162,14 @@ public class GKLeaderboard extends NSObject {
     public static native boolean resolveInstanceMethod(SEL sel);
 
     @Generated
+    @Deprecated
+    @Selector("setDefaultLeaderboard:withCompletionHandler:")
+    public static native void setDefaultLeaderboardWithCompletionHandler(String leaderboardIdentifier,
+            @ObjCBlock(name = "call_setDefaultLeaderboardWithCompletionHandler") Block_setDefaultLeaderboardWithCompletionHandler completionHandler);
+
+    @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")

@@ -57,18 +57,13 @@ public class SKPhysicsJointFixed extends SKPhysicsJoint {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native SKPhysicsJointFixed alloc();
-
-    @Generated
-    @Selector("jointWithBodyA:bodyB:anchor:")
-    public static native SKPhysicsJointFixed jointWithBodyABodyBAnchor(SKPhysicsBody bodyA, SKPhysicsBody bodyB,
-            @ByValue CGPoint anchor);
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -130,6 +125,11 @@ public class SKPhysicsJointFixed extends SKPhysicsJoint {
     @Generated
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
+
+    @Generated
+    @Selector("jointWithBodyA:bodyB:anchor:")
+    public static native SKPhysicsJointFixed jointWithBodyABodyBAnchor(SKPhysicsBody bodyA, SKPhysicsBody bodyB,
+            @ByValue CGPoint anchor);
 
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")

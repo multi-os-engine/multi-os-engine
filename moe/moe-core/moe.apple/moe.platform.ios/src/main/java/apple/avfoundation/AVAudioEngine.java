@@ -57,13 +57,13 @@ public class AVAudioEngine extends NSObject {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native AVAudioEngine alloc();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -175,6 +175,11 @@ public class AVAudioEngine extends NSObject {
             @NUInt long bus2, AVAudioFormat format);
 
     @Generated
+    @Selector("connect:toConnectionPoints:fromBus:format:")
+    public native void connectToConnectionPointsFromBusFormat(AVAudioNode sourceNode,
+            NSArray<? extends AVAudioConnectionPoint> destNodes, @NUInt long sourceBus, AVAudioFormat format);
+
+    @Generated
     @Selector("detachNode:")
     public native void detachNode(AVAudioNode node);
 
@@ -199,6 +204,10 @@ public class AVAudioEngine extends NSObject {
     public native AVAudioEngine init();
 
     @Generated
+    @Selector("inputConnectionPointForNode:inputBus:")
+    public native AVAudioConnectionPoint inputConnectionPointForNodeInputBus(AVAudioNode node, @NUInt long bus);
+
+    @Generated
     @Selector("inputNode")
     public native AVAudioInputNode inputNode();
 
@@ -213,6 +222,11 @@ public class AVAudioEngine extends NSObject {
     @Generated
     @Selector("musicSequence")
     public native MusicSequence musicSequence();
+
+    @Generated
+    @Selector("outputConnectionPointsForNode:outputBus:")
+    public native NSArray<? extends AVAudioConnectionPoint> outputConnectionPointsForNodeOutputBus(AVAudioNode node,
+            @NUInt long bus);
 
     @Generated
     @Selector("outputNode")
@@ -241,18 +255,4 @@ public class AVAudioEngine extends NSObject {
     @Generated
     @Selector("stop")
     public native void stop();
-
-    @Generated
-    @Selector("connect:toConnectionPoints:fromBus:format:")
-    public native void connectToConnectionPointsFromBusFormat(AVAudioNode sourceNode,
-            NSArray<? extends AVAudioConnectionPoint> destNodes, @NUInt long sourceBus, AVAudioFormat format);
-
-    @Generated
-    @Selector("inputConnectionPointForNode:inputBus:")
-    public native AVAudioConnectionPoint inputConnectionPointForNodeInputBus(AVAudioNode node, @NUInt long bus);
-
-    @Generated
-    @Selector("outputConnectionPointsForNode:outputBus:")
-    public native NSArray<? extends AVAudioConnectionPoint> outputConnectionPointsForNodeOutputBus(AVAudioNode node,
-            @NUInt long bus);
 }

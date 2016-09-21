@@ -60,6 +60,11 @@ public final class ModelIO {
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
+    public static native String kUTTypeUniversalSceneDescription();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
     public static native String MDLVertexAttributeAnisotropy();
 
     @Generated

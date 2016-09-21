@@ -58,9 +58,18 @@ public class AVMutableAudioMixInputParameters extends AVAudioMixInputParameters 
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native AVMutableAudioMixInputParameters alloc();
+
+    @Generated
+    @Selector("allocWithZone:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("audioMixInputParameters")
@@ -69,15 +78,6 @@ public class AVMutableAudioMixInputParameters extends AVAudioMixInputParameters 
     @Generated
     @Selector("audioMixInputParametersWithTrack:")
     public static native AVMutableAudioMixInputParameters audioMixInputParametersWithTrack(AVAssetTrack track);
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
-
-    @Generated
-    @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -159,7 +159,7 @@ public class AVMutableAudioMixInputParameters extends AVAudioMixInputParameters 
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")

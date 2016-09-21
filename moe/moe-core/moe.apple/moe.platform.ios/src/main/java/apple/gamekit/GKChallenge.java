@@ -61,22 +61,13 @@ public class GKChallenge extends NSObject implements NSCoding, NSSecureCoding {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native GKChallenge alloc();
-
-    @Generated
-    @Selector("loadReceivedChallengesWithCompletionHandler:")
-    public static native void loadReceivedChallengesWithCompletionHandler(
-            @ObjCBlock(name = "call_loadReceivedChallengesWithCompletionHandler") Block_loadReceivedChallengesWithCompletionHandler completionHandler);
-
-    @Generated
-    @Selector("supportsSecureCoding")
-    public static native boolean supportsSecureCoding();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -148,6 +139,11 @@ public class GKChallenge extends NSObject implements NSCoding, NSSecureCoding {
     public static native void load_objc_static();
 
     @Generated
+    @Selector("loadReceivedChallengesWithCompletionHandler:")
+    public static native void loadReceivedChallengesWithCompletionHandler(
+            @ObjCBlock(name = "call_loadReceivedChallengesWithCompletionHandler") Block_loadReceivedChallengesWithCompletionHandler completionHandler);
+
+    @Generated
     @Owned
     @Selector("new")
     @MappedReturn(ObjCObjectMapper.class)
@@ -163,11 +159,15 @@ public class GKChallenge extends NSObject implements NSCoding, NSSecureCoding {
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")
     public static native Class superclass_static();
+
+    @Generated
+    @Selector("supportsSecureCoding")
+    public static native boolean supportsSecureCoding();
 
     @Generated
     @Selector("version")

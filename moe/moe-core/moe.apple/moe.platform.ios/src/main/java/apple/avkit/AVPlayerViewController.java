@@ -64,17 +64,13 @@ public class AVPlayerViewController extends UIViewController {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native AVPlayerViewController alloc();
-
-    @Generated
-    @Selector("preparePrerollAds")
-    public static native void preparePrerollAds();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -164,6 +160,10 @@ public class AVPlayerViewController extends UIViewController {
     public static native void prepareInterstitialAds();
 
     @Generated
+    @Selector("preparePrerollAds")
+    public static native void preparePrerollAds();
+
+    @Generated
     @Selector("resolveClassMethod:")
     public static native boolean resolveClassMethod(SEL sel);
 
@@ -173,7 +173,7 @@ public class AVPlayerViewController extends UIViewController {
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")
@@ -185,6 +185,10 @@ public class AVPlayerViewController extends UIViewController {
     public static native long version_static();
 
     @Generated
+    @Selector("allowsPictureInPicturePlayback")
+    public native boolean allowsPictureInPicturePlayback();
+
+    @Generated
     @Selector("cancelPreroll")
     public native void cancelPreroll();
 
@@ -193,8 +197,17 @@ public class AVPlayerViewController extends UIViewController {
     public native UIView contentOverlayView();
 
     @Generated
+    @Selector("delegate")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native AVPlayerViewControllerDelegate delegate();
+
+    @Generated
     @Selector("init")
     public native AVPlayerViewController init();
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native AVPlayerViewController initWithCoder(NSCoder aDecoder);
 
     @Generated
     @Selector("initWithNibName:bundle:")
@@ -212,44 +225,6 @@ public class AVPlayerViewController extends UIViewController {
     @Generated
     @Selector("player")
     public native AVPlayer player();
-
-    @Generated
-    @Selector("setPlayer:")
-    public native void setPlayer(AVPlayer value);
-
-    @Generated
-    @Selector("setShowsPlaybackControls:")
-    public native void setShowsPlaybackControls(boolean value);
-
-    @Generated
-    @Selector("setVideoGravity:")
-    public native void setVideoGravity(String value);
-
-    @Generated
-    @Selector("showsPlaybackControls")
-    public native boolean showsPlaybackControls();
-
-    @Generated
-    @Selector("videoBounds")
-    @ByValue
-    public native CGRect videoBounds();
-
-    @Generated
-    @Selector("videoGravity")
-    public native String videoGravity();
-
-    @Generated
-    @Selector("allowsPictureInPicturePlayback")
-    public native boolean allowsPictureInPicturePlayback();
-
-    @Generated
-    @Selector("delegate")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native AVPlayerViewControllerDelegate delegate();
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native AVPlayerViewController initWithCoder(NSCoder aDecoder);
 
     @Generated
     @Selector("setAllowsPictureInPicturePlayback:")
@@ -270,6 +245,39 @@ public class AVPlayerViewController extends UIViewController {
             org.moe.natj.objc.ObjCRuntime.dissociateObjCObject(this, __old);
         }
     }
+
+    @Generated
+    @Selector("setPlayer:")
+    public native void setPlayer(AVPlayer value);
+
+    @Generated
+    @Selector("setShowsPlaybackControls:")
+    public native void setShowsPlaybackControls(boolean value);
+
+    @Generated
+    @Selector("setUpdatesNowPlayingInfoCenter:")
+    public native void setUpdatesNowPlayingInfoCenter(boolean value);
+
+    @Generated
+    @Selector("setVideoGravity:")
+    public native void setVideoGravity(String value);
+
+    @Generated
+    @Selector("showsPlaybackControls")
+    public native boolean showsPlaybackControls();
+
+    @Generated
+    @Selector("updatesNowPlayingInfoCenter")
+    public native boolean updatesNowPlayingInfoCenter();
+
+    @Generated
+    @Selector("videoBounds")
+    @ByValue
+    public native CGRect videoBounds();
+
+    @Generated
+    @Selector("videoGravity")
+    public native String videoGravity();
 
     @Runtime(ObjCRuntime.class)
     @Generated

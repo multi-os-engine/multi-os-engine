@@ -60,13 +60,13 @@ public class LAContext extends NSObject {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native LAContext alloc();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -169,41 +169,23 @@ public class LAContext extends NSObject {
     public native boolean canEvaluatePolicyError(@NInt long policy, Ptr<NSError> error);
 
     @Generated
-    @Selector("evaluatePolicy:localizedReason:reply:")
-    public native void evaluatePolicyLocalizedReasonReply(@NInt long policy, String localizedReason,
-            @ObjCBlock(name = "call_evaluatePolicyLocalizedReasonReply") Block_evaluatePolicyLocalizedReasonReply reply);
-
-    @Generated
-    @Selector("init")
-    public native LAContext init();
-
-    @Generated
-    @Selector("localizedFallbackTitle")
-    public native String localizedFallbackTitle();
-
-    @Deprecated
-    @Generated
-    @Selector("maxBiometryFailures")
-    public native NSNumber maxBiometryFailures();
-
-    @Generated
-    @Selector("setLocalizedFallbackTitle:")
-    public native void setLocalizedFallbackTitle(String value);
-
-    @Deprecated
-    @Generated
-    @Selector("setMaxBiometryFailures:")
-    public native void setMaxBiometryFailures(NSNumber value);
-
-    @Generated
     @Selector("evaluateAccessControl:operation:localizedReason:reply:")
     public native void evaluateAccessControlOperationLocalizedReasonReply(SecAccessControlRef accessControl,
             @NInt long operation, String localizedReason,
             @ObjCBlock(name = "call_evaluateAccessControlOperationLocalizedReasonReply") Block_evaluateAccessControlOperationLocalizedReasonReply reply);
 
     @Generated
+    @Selector("evaluatePolicy:localizedReason:reply:")
+    public native void evaluatePolicyLocalizedReasonReply(@NInt long policy, String localizedReason,
+            @ObjCBlock(name = "call_evaluatePolicyLocalizedReasonReply") Block_evaluatePolicyLocalizedReasonReply reply);
+
+    @Generated
     @Selector("evaluatedPolicyDomainState")
     public native NSData evaluatedPolicyDomainState();
+
+    @Generated
+    @Selector("init")
+    public native LAContext init();
 
     @Generated
     @Selector("invalidate")
@@ -214,8 +196,34 @@ public class LAContext extends NSObject {
     public native boolean isCredentialSet(@NInt long type);
 
     @Generated
+    @Selector("localizedCancelTitle")
+    public native String localizedCancelTitle();
+
+    @Generated
+    @Selector("localizedFallbackTitle")
+    public native String localizedFallbackTitle();
+
+    @Generated
+    @Deprecated
+    @Selector("maxBiometryFailures")
+    public native NSNumber maxBiometryFailures();
+
+    @Generated
     @Selector("setCredential:type:")
     public native boolean setCredentialType(NSData credential, @NInt long type);
+
+    @Generated
+    @Selector("setLocalizedCancelTitle:")
+    public native void setLocalizedCancelTitle(String value);
+
+    @Generated
+    @Selector("setLocalizedFallbackTitle:")
+    public native void setLocalizedFallbackTitle(String value);
+
+    @Generated
+    @Deprecated
+    @Selector("setMaxBiometryFailures:")
+    public native void setMaxBiometryFailures(NSNumber value);
 
     @Generated
     @Selector("setTouchIDAuthenticationAllowableReuseDuration:")
@@ -227,15 +235,15 @@ public class LAContext extends NSObject {
 
     @Runtime(ObjCRuntime.class)
     @Generated
-    public interface Block_evaluatePolicyLocalizedReasonReply {
+    public interface Block_evaluateAccessControlOperationLocalizedReasonReply {
         @Generated
-        void call_evaluatePolicyLocalizedReasonReply(boolean arg0, NSError arg1);
+        void call_evaluateAccessControlOperationLocalizedReasonReply(boolean arg0, NSError arg1);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
-    public interface Block_evaluateAccessControlOperationLocalizedReasonReply {
+    public interface Block_evaluatePolicyLocalizedReasonReply {
         @Generated
-        void call_evaluateAccessControlOperationLocalizedReasonReply(boolean arg0, NSError arg1);
+        void call_evaluatePolicyLocalizedReasonReply(boolean arg0, NSError arg1);
     }
 }

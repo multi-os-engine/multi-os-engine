@@ -66,6 +66,11 @@ public final class CVFillExtendedPixelsCallBackData extends StructObject {
     public native void setVersion(@NInt long value);
 
     @Generated
+    @StructureField(order = 1, isGetter = true)
+    @FunctionPtr(name = "call_fillCallBack")
+    public native Function_fillCallBack fillCallBack();
+
+    @Generated
     @StructureField(order = 1, isGetter = false)
     public native void setFillCallBack(@FunctionPtr(name = "call_fillCallBack") Function_fillCallBack value);
 
@@ -76,11 +81,6 @@ public final class CVFillExtendedPixelsCallBackData extends StructObject {
     @Generated
     @StructureField(order = 2, isGetter = false)
     public native void setRefCon(VoidPtr value);
-
-    @Generated
-    @StructureField(order = 1, isGetter = true)
-    @FunctionPtr(name = "call_fillCallBack")
-    public native Function_fillCallBack fillCallBack();
 
     @Runtime(CRuntime.class)
     @Generated

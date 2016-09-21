@@ -59,13 +59,13 @@ public class ABNewPersonViewController extends UIViewController {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native ABNewPersonViewController alloc();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -188,6 +188,10 @@ public class ABNewPersonViewController extends UIViewController {
     public native ABNewPersonViewController init();
 
     @Generated
+    @Selector("initWithCoder:")
+    public native ABNewPersonViewController initWithCoder(NSCoder aDecoder);
+
+    @Generated
     @Selector("initWithNibName:bundle:")
     public native ABNewPersonViewController initWithNibNameBundle(String nibNameOrNil, NSBundle nibBundleOrNil);
 
@@ -228,8 +232,4 @@ public class ABNewPersonViewController extends UIViewController {
     @Generated
     @Selector("setParentGroup:")
     public native void setParentGroup(ConstVoidPtr value);
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native ABNewPersonViewController initWithCoder(NSCoder aDecoder);
 }

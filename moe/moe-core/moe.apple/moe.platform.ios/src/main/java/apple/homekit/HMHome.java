@@ -58,13 +58,13 @@ public class HMHome extends NSObject {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native HMHome alloc();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -151,7 +151,7 @@ public class HMHome extends NSObject {
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")
@@ -181,6 +181,11 @@ public class HMHome extends NSObject {
             @ObjCBlock(name = "call_addActionSetWithNameCompletionHandler") Block_addActionSetWithNameCompletionHandler completion);
 
     @Generated
+    @Selector("addAndSetupAccessoriesWithCompletionHandler:")
+    public native void addAndSetupAccessoriesWithCompletionHandler(
+            @ObjCBlock(name = "call_addAndSetupAccessoriesWithCompletionHandler") Block_addAndSetupAccessoriesWithCompletionHandler completion);
+
+    @Generated
     @Selector("addRoomWithName:completionHandler:")
     public native void addRoomWithNameCompletionHandler(String roomName,
             @ObjCBlock(name = "call_addRoomWithNameCompletionHandler") Block_addRoomWithNameCompletionHandler completion);
@@ -195,8 +200,8 @@ public class HMHome extends NSObject {
     public native void addTriggerCompletionHandler(HMTrigger trigger,
             @ObjCBlock(name = "call_addTriggerCompletionHandler") Block_addTriggerCompletionHandler completion);
 
-    @Deprecated
     @Generated
+    @Deprecated
     @Selector("addUserWithCompletionHandler:")
     public native void addUserWithCompletionHandler(
             @ObjCBlock(name = "call_addUserWithCompletionHandler") Block_addUserWithCompletionHandler completion);
@@ -212,6 +217,14 @@ public class HMHome extends NSObject {
             @ObjCBlock(name = "call_assignAccessoryToRoomCompletionHandler") Block_assignAccessoryToRoomCompletionHandler completion);
 
     @Generated
+    @Selector("builtinActionSetOfType:")
+    public native HMActionSet builtinActionSetOfType(String actionSetType);
+
+    @Generated
+    @Selector("currentUser")
+    public native HMUser currentUser();
+
+    @Generated
     @Selector("delegate")
     @MappedReturn(ObjCObjectMapper.class)
     public native HMHomeDelegate delegate();
@@ -222,12 +235,21 @@ public class HMHome extends NSObject {
             @ObjCBlock(name = "call_executeActionSetCompletionHandler") Block_executeActionSetCompletionHandler completion);
 
     @Generated
+    @Selector("homeAccessControlForUser:")
+    public native HMHomeAccessControl homeAccessControlForUser(HMUser user);
+
+    @Generated
     @Selector("init")
     public native HMHome init();
 
     @Generated
     @Selector("isPrimary")
     public native boolean isPrimary();
+
+    @Generated
+    @Selector("manageUsersWithCompletionHandler:")
+    public native void manageUsersWithCompletionHandler(
+            @ObjCBlock(name = "call_manageUsersWithCompletionHandler") Block_manageUsersWithCompletionHandler completion);
 
     @Generated
     @Selector("name")
@@ -258,8 +280,8 @@ public class HMHome extends NSObject {
     public native void removeTriggerCompletionHandler(HMTrigger trigger,
             @ObjCBlock(name = "call_removeTriggerCompletionHandler") Block_removeTriggerCompletionHandler completion);
 
-    @Deprecated
     @Generated
+    @Deprecated
     @Selector("removeUser:completionHandler:")
     public native void removeUserCompletionHandler(HMUser user,
             @ObjCBlock(name = "call_removeUserCompletionHandler") Block_removeUserCompletionHandler completion);
@@ -311,39 +333,22 @@ public class HMHome extends NSObject {
             @ObjCBlock(name = "call_unblockAccessoryCompletionHandler") Block_unblockAccessoryCompletionHandler completion);
 
     @Generated
+    @Selector("uniqueIdentifier")
+    public native NSUUID uniqueIdentifier();
+
+    @Generated
     @Selector("updateName:completionHandler:")
     public native void updateNameCompletionHandler(String name,
             @ObjCBlock(name = "call_updateNameCompletionHandler") Block_updateNameCompletionHandler completion);
 
-    @Deprecated
     @Generated
+    @Deprecated
     @Selector("users")
     public native NSArray<? extends HMUser> users();
 
     @Generated
     @Selector("zones")
     public native NSArray<? extends HMZone> zones();
-
-    @Generated
-    @Selector("builtinActionSetOfType:")
-    public native HMActionSet builtinActionSetOfType(String actionSetType);
-
-    @Generated
-    @Selector("currentUser")
-    public native HMUser currentUser();
-
-    @Generated
-    @Selector("homeAccessControlForUser:")
-    public native HMHomeAccessControl homeAccessControlForUser(HMUser user);
-
-    @Generated
-    @Selector("manageUsersWithCompletionHandler:")
-    public native void manageUsersWithCompletionHandler(
-            @ObjCBlock(name = "call_manageUsersWithCompletionHandler") Block_manageUsersWithCompletionHandler completion);
-
-    @Generated
-    @Selector("uniqueIdentifier")
-    public native NSUUID uniqueIdentifier();
 
     @Runtime(ObjCRuntime.class)
     @Generated
@@ -357,6 +362,13 @@ public class HMHome extends NSObject {
     public interface Block_addActionSetWithNameCompletionHandler {
         @Generated
         void call_addActionSetWithNameCompletionHandler(HMActionSet arg0, NSError arg1);
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_addAndSetupAccessoriesWithCompletionHandler {
+        @Generated
+        void call_addAndSetupAccessoriesWithCompletionHandler(NSError arg0);
     }
 
     @Runtime(ObjCRuntime.class)
@@ -406,6 +418,13 @@ public class HMHome extends NSObject {
     public interface Block_executeActionSetCompletionHandler {
         @Generated
         void call_executeActionSetCompletionHandler(NSError arg0);
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_manageUsersWithCompletionHandler {
+        @Generated
+        void call_manageUsersWithCompletionHandler(NSError arg0);
     }
 
     @Runtime(ObjCRuntime.class)
@@ -469,12 +488,5 @@ public class HMHome extends NSObject {
     public interface Block_updateNameCompletionHandler {
         @Generated
         void call_updateNameCompletionHandler(NSError arg0);
-    }
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_manageUsersWithCompletionHandler {
-        @Generated
-        void call_manageUsersWithCompletionHandler(NSError arg0);
     }
 }

@@ -57,13 +57,13 @@ public class NETunnelProviderProtocol extends NEVPNProtocol {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native NETunnelProviderProtocol alloc();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -170,6 +170,10 @@ public class NETunnelProviderProtocol extends NEVPNProtocol {
     public native NETunnelProviderProtocol init();
 
     @Generated
+    @Selector("initWithCoder:")
+    public native NETunnelProviderProtocol initWithCoder(NSCoder aDecoder);
+
+    @Generated
     @Selector("providerBundleIdentifier")
     public native String providerBundleIdentifier();
 
@@ -184,10 +188,6 @@ public class NETunnelProviderProtocol extends NEVPNProtocol {
     @Generated
     @Selector("setProviderConfiguration:")
     public native void setProviderConfiguration(NSDictionary<String, ?> value);
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native NETunnelProviderProtocol initWithCoder(NSCoder aDecoder);
 
     @Generated
     @ProtocolClassMethod("supportsSecureCoding")

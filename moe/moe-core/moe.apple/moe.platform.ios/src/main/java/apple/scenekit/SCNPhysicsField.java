@@ -62,60 +62,13 @@ public class SCNPhysicsField extends NSObject implements NSCopying, NSSecureCodi
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native SCNPhysicsField alloc();
-
-    @Generated
-    @Selector("customFieldWithEvaluationBlock:")
-    public static native SCNPhysicsField customFieldWithEvaluationBlock(
-            @ObjCBlock(name = "call_customFieldWithEvaluationBlock") Block_customFieldWithEvaluationBlock block);
-
-    @Generated
-    @Selector("dragField")
-    public static native SCNPhysicsField dragField();
-
-    @Generated
-    @Selector("electricField")
-    public static native SCNPhysicsField electricField();
-
-    @Generated
-    @Selector("linearGravityField")
-    public static native SCNPhysicsField linearGravityField();
-
-    @Generated
-    @Selector("magneticField")
-    public static native SCNPhysicsField magneticField();
-
-    @Generated
-    @Selector("noiseFieldWithSmoothness:animationSpeed:")
-    public static native SCNPhysicsField noiseFieldWithSmoothnessAnimationSpeed(@NFloat double smoothness,
-            @NFloat double speed);
-
-    @Generated
-    @Selector("radialGravityField")
-    public static native SCNPhysicsField radialGravityField();
-
-    @Generated
-    @Selector("springField")
-    public static native SCNPhysicsField springField();
-
-    @Generated
-    @Selector("supportsSecureCoding")
-    public static native boolean supportsSecureCoding();
-
-    @Generated
-    @Selector("turbulenceFieldWithSmoothness:animationSpeed:")
-    public static native SCNPhysicsField turbulenceFieldWithSmoothnessAnimationSpeed(@NFloat double smoothness,
-            @NFloat double speed);
-
-    @Generated
-    @Selector("vortexField")
-    public static native SCNPhysicsField vortexField();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -145,12 +98,25 @@ public class SCNPhysicsField extends NSObject implements NSCopying, NSSecureCodi
     public static native Class classForKeyedUnarchiver();
 
     @Generated
+    @Selector("customFieldWithEvaluationBlock:")
+    public static native SCNPhysicsField customFieldWithEvaluationBlock(
+            @ObjCBlock(name = "call_customFieldWithEvaluationBlock") Block_customFieldWithEvaluationBlock block);
+
+    @Generated
     @Selector("debugDescription")
     public static native String debugDescription_static();
 
     @Generated
     @Selector("description")
     public static native String description_static();
+
+    @Generated
+    @Selector("dragField")
+    public static native SCNPhysicsField dragField();
+
+    @Generated
+    @Selector("electricField")
+    public static native SCNPhysicsField electricField();
 
     @Generated
     @Selector("hash")
@@ -183,14 +149,31 @@ public class SCNPhysicsField extends NSObject implements NSCopying, NSSecureCodi
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
     @Generated
+    @Selector("linearGravityField")
+    public static native SCNPhysicsField linearGravityField();
+
+    @Generated
     @Selector("load")
     public static native void load_objc_static();
+
+    @Generated
+    @Selector("magneticField")
+    public static native SCNPhysicsField magneticField();
 
     @Generated
     @Owned
     @Selector("new")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object new_objc();
+
+    @Generated
+    @Selector("noiseFieldWithSmoothness:animationSpeed:")
+    public static native SCNPhysicsField noiseFieldWithSmoothnessAnimationSpeed(@NFloat double smoothness,
+            @NFloat double speed);
+
+    @Generated
+    @Selector("radialGravityField")
+    public static native SCNPhysicsField radialGravityField();
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -205,13 +188,30 @@ public class SCNPhysicsField extends NSObject implements NSCopying, NSSecureCodi
     public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
+    @Selector("springField")
+    public static native SCNPhysicsField springField();
+
+    @Generated
     @Selector("superclass")
     public static native Class superclass_static();
+
+    @Generated
+    @Selector("supportsSecureCoding")
+    public static native boolean supportsSecureCoding();
+
+    @Generated
+    @Selector("turbulenceFieldWithSmoothness:animationSpeed:")
+    public static native SCNPhysicsField turbulenceFieldWithSmoothnessAnimationSpeed(@NFloat double smoothness,
+            @NFloat double speed);
 
     @Generated
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("vortexField")
+    public static native SCNPhysicsField vortexField();
 
     @Generated
     @Selector("categoryBitMask")

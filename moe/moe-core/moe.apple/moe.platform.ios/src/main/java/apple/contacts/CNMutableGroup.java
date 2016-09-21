@@ -57,13 +57,13 @@ public class CNMutableGroup extends CNGroup {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native CNMutableGroup alloc();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -158,7 +158,7 @@ public class CNMutableGroup extends CNGroup {
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")
@@ -178,16 +178,16 @@ public class CNMutableGroup extends CNGroup {
     public native CNMutableGroup init();
 
     @Generated
+    @Selector("initWithCoder:")
+    public native CNMutableGroup initWithCoder(NSCoder aDecoder);
+
+    @Generated
     @Selector("name")
     public native String name();
 
     @Generated
     @Selector("setName:")
     public native void setName(String value);
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native CNMutableGroup initWithCoder(NSCoder aDecoder);
 
     @Generated
     @ProtocolClassMethod("supportsSecureCoding")

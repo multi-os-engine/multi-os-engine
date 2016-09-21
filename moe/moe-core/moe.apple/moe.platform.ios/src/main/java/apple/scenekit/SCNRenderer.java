@@ -21,6 +21,7 @@ import apple.avfoundation.AVAudioEngine;
 import apple.avfoundation.AVAudioEnvironmentNode;
 import apple.coregraphics.struct.CGPoint;
 import apple.coregraphics.struct.CGRect;
+import apple.coregraphics.struct.CGSize;
 import apple.foundation.NSArray;
 import apple.foundation.NSDictionary;
 import apple.foundation.NSMethodSignature;
@@ -34,6 +35,7 @@ import apple.scenekit.protocol.SCNTechniqueSupport;
 import apple.scenekit.struct.SCNVector3;
 import apple.spritekit.SKScene;
 import apple.spritekit.SKTransition;
+import apple.uikit.UIImage;
 import org.moe.natj.c.ann.FunctionPtr;
 import org.moe.natj.general.NatJ;
 import org.moe.natj.general.Pointer;
@@ -70,22 +72,13 @@ public class SCNRenderer extends NSObject implements SCNSceneRenderer, SCNTechni
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native SCNRenderer alloc();
-
-    @Generated
-    @Selector("rendererWithContext:options:")
-    public static native SCNRenderer rendererWithContextOptions(EAGLContext context, NSDictionary<?, ?> options);
-
-    @Generated
-    @Selector("rendererWithDevice:options:")
-    public static native SCNRenderer rendererWithDeviceOptions(@Mapped(ObjCObjectMapper.class) MTLDevice device,
-            NSDictionary<?, ?> options);
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -163,6 +156,15 @@ public class SCNRenderer extends NSObject implements SCNSceneRenderer, SCNTechni
     public static native Object new_objc();
 
     @Generated
+    @Selector("rendererWithContext:options:")
+    public static native SCNRenderer rendererWithContextOptions(EAGLContext context, NSDictionary<?, ?> options);
+
+    @Generated
+    @Selector("rendererWithDevice:options:")
+    public static native SCNRenderer rendererWithDeviceOptions(@Mapped(ObjCObjectMapper.class) MTLDevice device,
+            NSDictionary<?, ?> options);
+
+    @Generated
     @Selector("resolveClassMethod:")
     public static native boolean resolveClassMethod(SEL sel);
 
@@ -184,17 +186,59 @@ public class SCNRenderer extends NSObject implements SCNSceneRenderer, SCNTechni
     public static native long version_static();
 
     @Generated
+    @Selector("audioEngine")
+    public native AVAudioEngine audioEngine();
+
+    @Generated
+    @Selector("audioEnvironmentNode")
+    public native AVAudioEnvironmentNode audioEnvironmentNode();
+
+    @Generated
+    @Selector("audioListener")
+    public native SCNNode audioListener();
+
+    @Generated
     @Selector("autoenablesDefaultLighting")
     public native boolean autoenablesDefaultLighting();
+
+    @Generated
+    @Selector("colorPixelFormat")
+    @NUInt
+    public native long colorPixelFormat();
+
+    @Generated
+    @Selector("commandQueue")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native Object commandQueue();
 
     @Generated
     @Selector("context")
     public native VoidPtr context();
 
     @Generated
+    @Selector("currentRenderCommandEncoder")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native Object currentRenderCommandEncoder();
+
+    @Generated
+    @Selector("debugOptions")
+    @NUInt
+    public native long debugOptions();
+
+    @Generated
     @Selector("delegate")
     @MappedReturn(ObjCObjectMapper.class)
     public native Object delegate();
+
+    @Generated
+    @Selector("depthPixelFormat")
+    @NUInt
+    public native long depthPixelFormat();
+
+    @Generated
+    @Selector("device")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native Object device();
 
     @Generated
     @Selector("hitTest:options:")
@@ -234,6 +278,10 @@ public class SCNRenderer extends NSObject implements SCNSceneRenderer, SCNTechni
     public native double nextFrameTime();
 
     @Generated
+    @Selector("nodesInsideFrustumWithPointOfView:")
+    public native NSArray<? extends SCNNode> nodesInsideFrustumWithPointOfView(SCNNode pointOfView);
+
+    @Generated
     @Selector("overlaySKScene")
     public native SKScene overlaySKScene();
 
@@ -252,18 +300,35 @@ public class SCNRenderer extends NSObject implements SCNSceneRenderer, SCNTechni
             @ObjCBlock(name = "call_prepareObjectsWithCompletionHandler") SCNSceneRenderer.Block_prepareObjectsWithCompletionHandler completionHandler);
 
     @Generated
+    @Selector("presentScene:withTransition:incomingPointOfView:completionHandler:")
+    public native void presentSceneWithTransitionIncomingPointOfViewCompletionHandler(SCNScene scene,
+            SKTransition transition, SCNNode pointOfView,
+            @ObjCBlock(name = "call_presentSceneWithTransitionIncomingPointOfViewCompletionHandler") SCNSceneRenderer.Block_presentSceneWithTransitionIncomingPointOfViewCompletionHandler completionHandler);
+
+    @Generated
     @Selector("projectPoint:")
     @ByValue
     public native SCNVector3 projectPoint(@ByValue SCNVector3 point);
 
-    @Deprecated
     @Generated
+    @Deprecated
     @Selector("render")
     public native void render();
 
     @Generated
     @Selector("renderAtTime:")
     public native void renderAtTime(double time);
+
+    @Generated
+    @Selector("renderAtTime:viewport:commandBuffer:passDescriptor:")
+    public native void renderAtTimeViewportCommandBufferPassDescriptor(double time, @ByValue CGRect viewport,
+            @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer,
+            MTLRenderPassDescriptor renderPassDescriptor);
+
+    @Generated
+    @Selector("renderingAPI")
+    @NUInt
+    public native long renderingAPI();
 
     @Generated
     @Selector("scene")
@@ -274,8 +339,16 @@ public class SCNRenderer extends NSObject implements SCNSceneRenderer, SCNTechni
     public native double sceneTime();
 
     @Generated
+    @Selector("setAudioListener:")
+    public native void setAudioListener(SCNNode value);
+
+    @Generated
     @Selector("setAutoenablesDefaultLighting:")
     public native void setAutoenablesDefaultLighting(boolean value);
+
+    @Generated
+    @Selector("setDebugOptions:")
+    public native void setDebugOptions(@NUInt long value);
 
     @Generated
     @Selector("setDelegate:")
@@ -326,6 +399,16 @@ public class SCNRenderer extends NSObject implements SCNSceneRenderer, SCNTechni
     public native boolean showsStatistics();
 
     @Generated
+    @Selector("snapshotAtTime:withSize:antialiasingMode:")
+    public native UIImage snapshotAtTimeWithSizeAntialiasingMode(double time, @ByValue CGSize size,
+            @NUInt long antialiasingMode);
+
+    @Generated
+    @Selector("stencilPixelFormat")
+    @NUInt
+    public native long stencilPixelFormat();
+
+    @Generated
     @Selector("technique")
     public native SCNTechnique technique();
 
@@ -335,78 +418,6 @@ public class SCNRenderer extends NSObject implements SCNSceneRenderer, SCNTechni
     public native SCNVector3 unprojectPoint(@ByValue SCNVector3 point);
 
     @Generated
-    @Selector("audioEngine")
-    public native AVAudioEngine audioEngine();
-
-    @Generated
-    @Selector("audioEnvironmentNode")
-    public native AVAudioEnvironmentNode audioEnvironmentNode();
-
-    @Generated
-    @Selector("audioListener")
-    public native SCNNode audioListener();
-
-    @Generated
-    @Selector("colorPixelFormat")
-    @NUInt
-    public native long colorPixelFormat();
-
-    @Generated
-    @Selector("commandQueue")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native Object commandQueue();
-
-    @Generated
-    @Selector("currentRenderCommandEncoder")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native Object currentRenderCommandEncoder();
-
-    @Generated
-    @Selector("debugOptions")
-    @NUInt
-    public native long debugOptions();
-
-    @Generated
-    @Selector("depthPixelFormat")
-    @NUInt
-    public native long depthPixelFormat();
-
-    @Generated
-    @Selector("device")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native Object device();
-
-    @Generated
-    @Selector("nodesInsideFrustumWithPointOfView:")
-    public native NSArray<? extends SCNNode> nodesInsideFrustumWithPointOfView(SCNNode pointOfView);
-
-    @Generated
-    @Selector("presentScene:withTransition:incomingPointOfView:completionHandler:")
-    public native void presentSceneWithTransitionIncomingPointOfViewCompletionHandler(SCNScene scene,
-            SKTransition transition, SCNNode pointOfView,
-            @ObjCBlock(name = "call_presentSceneWithTransitionIncomingPointOfViewCompletionHandler") SCNSceneRenderer.Block_presentSceneWithTransitionIncomingPointOfViewCompletionHandler completionHandler);
-
-    @Generated
-    @Selector("renderAtTime:viewport:commandBuffer:passDescriptor:")
-    public native void renderAtTimeViewportCommandBufferPassDescriptor(double time, @ByValue CGRect viewport,
-            @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer,
-            MTLRenderPassDescriptor renderPassDescriptor);
-
-    @Generated
-    @Selector("renderingAPI")
-    @NUInt
-    public native long renderingAPI();
-
-    @Generated
-    @Selector("setAudioListener:")
-    public native void setAudioListener(SCNNode value);
-
-    @Generated
-    @Selector("setDebugOptions:")
-    public native void setDebugOptions(@NUInt long value);
-
-    @Generated
-    @Selector("stencilPixelFormat")
-    @NUInt
-    public native long stencilPixelFormat();
+    @Selector("updateProbes:atTime:")
+    public native void updateProbesAtTime(NSArray<? extends SCNNode> lightProbes, double time);
 }

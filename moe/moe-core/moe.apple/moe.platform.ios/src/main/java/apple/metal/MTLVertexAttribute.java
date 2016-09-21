@@ -54,13 +54,13 @@ public class MTLVertexAttribute extends NSObject {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native MTLVertexAttribute alloc();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -175,6 +175,14 @@ public class MTLVertexAttribute extends NSObject {
     @Generated
     @Selector("isActive")
     public native boolean isActive();
+
+    @Generated
+    @Selector("isPatchControlPointData")
+    public native boolean isPatchControlPointData();
+
+    @Generated
+    @Selector("isPatchData")
+    public native boolean isPatchData();
 
     @Generated
     @Selector("name")

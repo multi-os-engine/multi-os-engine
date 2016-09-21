@@ -48,6 +48,14 @@ public interface NSURLSessionDataDelegate extends NSURLSessionTaskDelegate {
 
     @Generated
     @IsOptional
+    @Selector("URLSession:dataTask:didBecomeStreamTask:")
+    default void URLSessionDataTaskDidBecomeStreamTask(NSURLSession session, NSURLSessionDataTask dataTask,
+            NSURLSessionStreamTask streamTask) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Generated
+    @IsOptional
     @Selector("URLSession:dataTask:didReceiveData:")
     default void URLSessionDataTaskDidReceiveData(NSURLSession session, NSURLSessionDataTask dataTask, NSData data) {
         throw new java.lang.UnsupportedOperationException();
@@ -68,14 +76,6 @@ public interface NSURLSessionDataDelegate extends NSURLSessionTaskDelegate {
     default void URLSessionDataTaskWillCacheResponseCompletionHandler(NSURLSession session,
             NSURLSessionDataTask dataTask, NSCachedURLResponse proposedResponse,
             @ObjCBlock(name = "call_URLSessionDataTaskWillCacheResponseCompletionHandler") Block_URLSessionDataTaskWillCacheResponseCompletionHandler completionHandler) {
-        throw new java.lang.UnsupportedOperationException();
-    }
-
-    @Generated
-    @IsOptional
-    @Selector("URLSession:dataTask:didBecomeStreamTask:")
-    default void URLSessionDataTaskDidBecomeStreamTask(NSURLSession session, NSURLSessionDataTask dataTask,
-            NSURLSessionStreamTask streamTask) {
         throw new java.lang.UnsupportedOperationException();
     }
 

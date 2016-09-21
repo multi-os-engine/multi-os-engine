@@ -24,7 +24,7 @@ import org.moe.natj.general.Pointer;
 import org.moe.natj.general.ann.Generated;
 
 @Generated
-@Structure()
+@Structure(alignment = 2)
 public final class KerxIndexArrayHeader extends StructObject {
     private static long __natjCache;
 
@@ -44,73 +44,57 @@ public final class KerxIndexArrayHeader extends StructObject {
 
     @Generated
     @StructureField(order = 0, isGetter = true)
-    public native char glyphCount();
+    public native int flags();
 
     @Generated
     @StructureField(order = 0, isGetter = false)
-    public native void setGlyphCount(char value);
+    public native void setFlags(int value);
 
     @Generated
     @StructureField(order = 1, isGetter = true)
-    public native char kernValueCount();
+    public native char rowCount();
 
     @Generated
     @StructureField(order = 1, isGetter = false)
-    public native void setKernValueCount(char value);
+    public native void setRowCount(char value);
 
     @Generated
     @StructureField(order = 2, isGetter = true)
-    public native char leftClassCount();
+    public native char columnCount();
 
     @Generated
     @StructureField(order = 2, isGetter = false)
-    public native void setLeftClassCount(char value);
+    public native void setColumnCount(char value);
 
     @Generated
     @StructureField(order = 3, isGetter = true)
-    public native char rightClassCount();
+    public native int rowIndexTableOffset();
 
     @Generated
     @StructureField(order = 3, isGetter = false)
-    public native void setRightClassCount(char value);
+    public native void setRowIndexTableOffset(int value);
 
     @Generated
     @StructureField(order = 4, isGetter = true)
-    public native char flags();
+    public native int columnIndexTableOffset();
 
     @Generated
     @StructureField(order = 4, isGetter = false)
-    public native void setFlags(char value);
+    public native void setColumnIndexTableOffset(int value);
 
     @Generated
     @StructureField(order = 5, isGetter = true)
-    public native short kernValue();
+    public native int kerningArrayOffset();
 
     @Generated
     @StructureField(order = 5, isGetter = false)
-    public native void setKernValue(short value);
+    public native void setKerningArrayOffset(int value);
 
     @Generated
     @StructureField(order = 6, isGetter = true)
-    public native char leftClass();
+    public native int kerningVectorOffset();
 
     @Generated
     @StructureField(order = 6, isGetter = false)
-    public native void setLeftClass(char value);
-
-    @Generated
-    @StructureField(order = 7, isGetter = true)
-    public native char rightClass();
-
-    @Generated
-    @StructureField(order = 7, isGetter = false)
-    public native void setRightClass(char value);
-
-    @Generated
-    @StructureField(order = 8, isGetter = true)
-    public native char kernIndex();
-
-    @Generated
-    @StructureField(order = 8, isGetter = false)
-    public native void setKernIndex(char value);
+    public native void setKerningVectorOffset(int value);
 }

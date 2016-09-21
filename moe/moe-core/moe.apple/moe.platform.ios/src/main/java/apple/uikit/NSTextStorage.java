@@ -66,22 +66,22 @@ public class NSTextStorage extends NSMutableAttributedString {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native NSTextStorage alloc();
 
     @Generated
-    @Selector("attributedStringWithAttachment:")
-    public static native NSAttributedString attributedStringWithAttachment(NSTextAttachment attachment);
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
-
-    @Generated
     @Selector("allocWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object allocWithZone(VoidPtr zone);
+
+    @Generated
+    @Selector("attributedStringWithAttachment:")
+    public static native NSAttributedString attributedStringWithAttachment(NSTextAttachment attachment);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -163,7 +163,7 @@ public class NSTextStorage extends NSMutableAttributedString {
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")
@@ -224,12 +224,16 @@ public class NSTextStorage extends NSMutableAttributedString {
     public native NSTextStorage initWithAttributedString(NSAttributedString attrStr);
 
     @Generated
+    @Selector("initWithCoder:")
+    public native NSTextStorage initWithCoder(NSCoder aDecoder);
+
+    @Generated
     @Selector("initWithData:options:documentAttributes:error:")
     public native NSTextStorage initWithDataOptionsDocumentAttributesError(NSData data, NSDictionary<String, ?> options,
             Ptr<NSDictionary<String, ?>> dict, Ptr<NSError> error);
 
-    @Deprecated
     @Generated
+    @Deprecated
     @Selector("initWithFileURL:options:documentAttributes:error:")
     public native NSTextStorage initWithFileURLOptionsDocumentAttributesError(NSURL url, NSDictionary<?, ?> options,
             Ptr<NSDictionary<?, ?>> dict, Ptr<NSError> error);
@@ -241,6 +245,11 @@ public class NSTextStorage extends NSMutableAttributedString {
     @Generated
     @Selector("initWithString:attributes:")
     public native NSTextStorage initWithStringAttributes(String str, NSDictionary<String, ?> attrs);
+
+    @Generated
+    @Selector("initWithURL:options:documentAttributes:error:")
+    public native NSTextStorage initWithURLOptionsDocumentAttributesError(NSURL url, NSDictionary<String, ?> options,
+            Ptr<NSDictionary<String, ?>> dict, Ptr<NSError> error);
 
     @Generated
     @Selector("invalidateAttributesInRange:")
@@ -273,15 +282,6 @@ public class NSTextStorage extends NSMutableAttributedString {
             org.moe.natj.objc.ObjCRuntime.dissociateObjCObject(this, __old);
         }
     }
-
-    @Generated
-    @Selector("initWithURL:options:documentAttributes:error:")
-    public native NSTextStorage initWithURLOptionsDocumentAttributesError(NSURL url, NSDictionary<String, ?> options,
-            Ptr<NSDictionary<String, ?>> dict, Ptr<NSError> error);
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native NSTextStorage initWithCoder(NSCoder aDecoder);
 
     @Generated
     @ProtocolClassMethod("supportsSecureCoding")

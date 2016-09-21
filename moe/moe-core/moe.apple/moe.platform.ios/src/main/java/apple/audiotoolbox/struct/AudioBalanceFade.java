@@ -23,7 +23,6 @@ import org.moe.natj.c.ann.StructureField;
 import org.moe.natj.general.NatJ;
 import org.moe.natj.general.Pointer;
 import org.moe.natj.general.ann.Generated;
-import org.moe.natj.general.ann.UncertainReturn;
 
 @Generated
 @Structure()
@@ -80,7 +79,6 @@ public final class AudioBalanceFade extends StructObject {
 
     @Generated
     @StructureField(order = 3, isGetter = true)
-    @UncertainReturn("Options: reference, array Fallback: reference")
     public native AudioChannelLayout mChannelLayout();
 
     @Generated

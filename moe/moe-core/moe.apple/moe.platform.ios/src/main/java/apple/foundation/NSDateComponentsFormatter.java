@@ -53,18 +53,13 @@ public class NSDateComponentsFormatter extends NSFormatter {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native NSDateComponentsFormatter alloc();
-
-    @Generated
-    @Selector("localizedStringFromDateComponents:unitsStyle:")
-    public static native String localizedStringFromDateComponentsUnitsStyle(NSDateComponents components,
-            @NInt long unitsStyle);
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -136,6 +131,11 @@ public class NSDateComponentsFormatter extends NSFormatter {
     public static native void load_objc_static();
 
     @Generated
+    @Selector("localizedStringFromDateComponents:unitsStyle:")
+    public static native String localizedStringFromDateComponentsUnitsStyle(NSDateComponents components,
+            @NInt long unitsStyle);
+
+    @Generated
     @Owned
     @Selector("new")
     @MappedReturn(ObjCObjectMapper.class)
@@ -200,6 +200,10 @@ public class NSDateComponentsFormatter extends NSFormatter {
     @Generated
     @Selector("init")
     public native NSDateComponentsFormatter init();
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native NSDateComponentsFormatter initWithCoder(NSCoder aDecoder);
 
     @Generated
     @Selector("maximumUnitCount")
@@ -271,8 +275,4 @@ public class NSDateComponentsFormatter extends NSFormatter {
     @Selector("zeroFormattingBehavior")
     @NUInt
     public native long zeroFormattingBehavior();
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native NSDateComponentsFormatter initWithCoder(NSCoder aDecoder);
 }

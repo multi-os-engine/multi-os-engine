@@ -58,18 +58,13 @@ public class SKPhysicsJointSpring extends SKPhysicsJoint {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native SKPhysicsJointSpring alloc();
-
-    @Generated
-    @Selector("jointWithBodyA:bodyB:anchorA:anchorB:")
-    public static native SKPhysicsJointSpring jointWithBodyABodyBAnchorAAnchorB(SKPhysicsBody bodyA,
-            SKPhysicsBody bodyB, @ByValue CGPoint anchorA, @ByValue CGPoint anchorB);
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -133,6 +128,11 @@ public class SKPhysicsJointSpring extends SKPhysicsJoint {
     public static native boolean isSubclassOfClass(Class aClass);
 
     @Generated
+    @Selector("jointWithBodyA:bodyB:anchorA:anchorB:")
+    public static native SKPhysicsJointSpring jointWithBodyABodyBAnchorAAnchorB(SKPhysicsBody bodyA,
+            SKPhysicsBody bodyB, @ByValue CGPoint anchorA, @ByValue CGPoint anchorB);
+
+    @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
@@ -182,14 +182,14 @@ public class SKPhysicsJointSpring extends SKPhysicsJoint {
     public native SKPhysicsJointSpring init();
 
     @Generated
+    @Selector("initWithCoder:")
+    public native SKPhysicsJointSpring initWithCoder(NSCoder aDecoder);
+
+    @Generated
     @Selector("setDamping:")
     public native void setDamping(@NFloat double value);
 
     @Generated
     @Selector("setFrequency:")
     public native void setFrequency(@NFloat double value);
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native SKPhysicsJointSpring initWithCoder(NSCoder aDecoder);
 }

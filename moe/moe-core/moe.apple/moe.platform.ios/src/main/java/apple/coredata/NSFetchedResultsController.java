@@ -17,6 +17,7 @@ limitations under the License.
 package apple.coredata;
 
 import apple.NSObject;
+import apple.coredata.protocol.NSFetchRequestResult;
 import apple.coredata.protocol.NSFetchedResultsControllerDelegate;
 import apple.foundation.NSArray;
 import apple.foundation.NSError;
@@ -47,7 +48,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @Library("CoreData")
 @Runtime(ObjCRuntime.class)
 @ObjCClassBinding
-public class NSFetchedResultsController extends NSObject {
+public class NSFetchedResultsController<_ResultType> extends NSObject {
     static {
         NatJ.register();
     }
@@ -58,17 +59,13 @@ public class NSFetchedResultsController extends NSObject {
     }
 
     @Generated
-    @Owned
-    @Selector("alloc")
-    public static native NSFetchedResultsController alloc();
-
-    @Generated
-    @Selector("deleteCacheWithName:")
-    public static native void deleteCacheWithName(String name);
-
-    @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
+    @Owned
+    @Selector("alloc")
+    public static native NSFetchedResultsController<?> alloc();
 
     @Generated
     @Selector("allocWithZone:")
@@ -100,6 +97,10 @@ public class NSFetchedResultsController extends NSObject {
     @Generated
     @Selector("debugDescription")
     public static native String debugDescription_static();
+
+    @Generated
+    @Selector("deleteCacheWithName:")
+    public static native <_ResultType> void deleteCacheWithName(String name);
 
     @Generated
     @Selector("description")
@@ -177,7 +178,7 @@ public class NSFetchedResultsController extends NSObject {
 
     @Generated
     @Selector("fetchRequest")
-    public native NSFetchRequest fetchRequest();
+    public native NSFetchRequest<?> fetchRequest();
 
     @Generated
     @Selector("fetchedObjects")
@@ -185,16 +186,16 @@ public class NSFetchedResultsController extends NSObject {
 
     @Generated
     @Selector("indexPathForObject:")
-    public native NSIndexPath indexPathForObject(@Mapped(ObjCObjectMapper.class) Object object);
+    public native NSIndexPath indexPathForObject(@Mapped(ObjCObjectMapper.class) NSFetchRequestResult object);
 
     @Generated
     @Selector("init")
-    public native NSFetchedResultsController init();
+    public native NSFetchedResultsController<?> init();
 
     @Generated
     @Selector("initWithFetchRequest:managedObjectContext:sectionNameKeyPath:cacheName:")
-    public native NSFetchedResultsController initWithFetchRequestManagedObjectContextSectionNameKeyPathCacheName(
-            NSFetchRequest fetchRequest, NSManagedObjectContext context, String sectionNameKeyPath, String name);
+    public native NSFetchedResultsController<?> initWithFetchRequestManagedObjectContextSectionNameKeyPathCacheName(
+            NSFetchRequest<?> fetchRequest, NSManagedObjectContext context, String sectionNameKeyPath, String name);
 
     @Generated
     @Selector("managedObjectContext")
@@ -203,7 +204,7 @@ public class NSFetchedResultsController extends NSObject {
     @Generated
     @Selector("objectAtIndexPath:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object objectAtIndexPath(NSIndexPath indexPath);
+    public native NSFetchRequestResult objectAtIndexPath(NSIndexPath indexPath);
 
     @Generated
     @Selector("performFetch:")

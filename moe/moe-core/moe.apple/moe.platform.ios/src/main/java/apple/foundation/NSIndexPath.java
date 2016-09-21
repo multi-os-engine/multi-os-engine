@@ -58,33 +58,13 @@ public class NSIndexPath extends NSObject implements NSCopying, NSSecureCoding {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native NSIndexPath alloc();
-
-    @Generated
-    @Selector("indexPathForItem:inSection:")
-    public static native NSIndexPath indexPathForItemInSection(@NInt long item, @NInt long section);
-
-    @Generated
-    @Selector("indexPathForRow:inSection:")
-    public static native NSIndexPath indexPathForRowInSection(@NInt long row, @NInt long section);
-
-    @Generated
-    @Selector("indexPathWithIndex:")
-    public static native NSIndexPath indexPathWithIndex(@NUInt long index);
-
-    @Generated
-    @Selector("indexPathWithIndexes:length:")
-    public static native NSIndexPath indexPathWithIndexesLength(ConstNUIntPtr indexes, @NUInt long length);
-
-    @Generated
-    @Selector("supportsSecureCoding")
-    public static native boolean supportsSecureCoding();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -125,6 +105,22 @@ public class NSIndexPath extends NSObject implements NSCopying, NSSecureCoding {
     @Selector("hash")
     @NUInt
     public static native long hash_static();
+
+    @Generated
+    @Selector("indexPathForItem:inSection:")
+    public static native NSIndexPath indexPathForItemInSection(@NInt long item, @NInt long section);
+
+    @Generated
+    @Selector("indexPathForRow:inSection:")
+    public static native NSIndexPath indexPathForRowInSection(@NInt long row, @NInt long section);
+
+    @Generated
+    @Selector("indexPathWithIndex:")
+    public static native NSIndexPath indexPathWithIndex(@NUInt long index);
+
+    @Generated
+    @Selector("indexPathWithIndexes:length:")
+    public static native NSIndexPath indexPathWithIndexesLength(ConstNUIntPtr indexes, @NUInt long length);
 
     @Generated
     @Selector("initialize")
@@ -171,11 +167,15 @@ public class NSIndexPath extends NSObject implements NSCopying, NSSecureCoding {
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")
     public static native Class superclass_static();
+
+    @Generated
+    @Selector("supportsSecureCoding")
+    public static native boolean supportsSecureCoding();
 
     @Generated
     @Selector("version")
@@ -200,6 +200,10 @@ public class NSIndexPath extends NSObject implements NSCopying, NSSecureCoding {
     @Generated
     @Selector("getIndexes:")
     public native void getIndexes(NUIntPtr indexes);
+
+    @Generated
+    @Selector("getIndexes:range:")
+    public native void getIndexesRange(NUIntPtr indexes, @ByValue NSRange positionRange);
 
     @Generated
     @Selector("indexAtPosition:")
@@ -255,8 +259,4 @@ public class NSIndexPath extends NSObject implements NSCopying, NSSecureCoding {
     public boolean _supportsSecureCoding() {
         return supportsSecureCoding();
     }
-
-    @Generated
-    @Selector("getIndexes:range:")
-    public native void getIndexesRange(NUIntPtr indexes, @ByValue NSRange positionRange);
 }

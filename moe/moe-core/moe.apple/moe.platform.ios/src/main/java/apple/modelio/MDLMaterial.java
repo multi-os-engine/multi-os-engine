@@ -59,17 +59,13 @@ public class MDLMaterial extends NSObject implements MDLNamed, NSFastEnumeration
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native MDLMaterial alloc();
-
-    @Generated
-    @Selector("materialWithSCNMaterial:")
-    public static native MDLMaterial materialWithSCNMaterial(SCNMaterial scnMaterial);
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -141,6 +137,10 @@ public class MDLMaterial extends NSObject implements MDLNamed, NSFastEnumeration
     public static native void load_objc_static();
 
     @Generated
+    @Selector("materialWithSCNMaterial:")
+    public static native MDLMaterial materialWithSCNMaterial(SCNMaterial scnMaterial);
+
+    @Generated
     @Owned
     @Selector("new")
     @MappedReturn(ObjCObjectMapper.class)
@@ -156,7 +156,7 @@ public class MDLMaterial extends NSObject implements MDLNamed, NSFastEnumeration
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")
@@ -188,6 +188,11 @@ public class MDLMaterial extends NSObject implements MDLNamed, NSFastEnumeration
     @Generated
     @Selector("initWithName:scatteringFunction:")
     public native MDLMaterial initWithNameScatteringFunction(String name, MDLScatteringFunction scatteringFunction);
+
+    @Generated
+    @Selector("materialFace")
+    @NUInt
+    public native long materialFace();
 
     @Generated
     @Selector("name")
@@ -224,6 +229,10 @@ public class MDLMaterial extends NSObject implements MDLNamed, NSFastEnumeration
     @Generated
     @Selector("setBaseMaterial:")
     public native void setBaseMaterial(MDLMaterial value);
+
+    @Generated
+    @Selector("setMaterialFace:")
+    public native void setMaterialFace(@NUInt long value);
 
     @Generated
     @Selector("setName:")

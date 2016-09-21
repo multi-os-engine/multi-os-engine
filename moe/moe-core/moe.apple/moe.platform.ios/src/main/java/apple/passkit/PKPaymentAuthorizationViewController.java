@@ -58,26 +58,13 @@ public class PKPaymentAuthorizationViewController extends UIViewController {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native PKPaymentAuthorizationViewController alloc();
-
-    @Generated
-    @Selector("canMakePayments")
-    public static native boolean canMakePayments();
-
-    @Generated
-    @Selector("canMakePaymentsUsingNetworks:")
-    public static native boolean canMakePaymentsUsingNetworks(NSArray<String> supportedNetworks);
-
-    @Generated
-    @Selector("canMakePaymentsUsingNetworks:capabilities:")
-    public static native boolean canMakePaymentsUsingNetworksCapabilities(NSArray<String> supportedNetworks,
-            @NUInt long capabilties);
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -91,6 +78,19 @@ public class PKPaymentAuthorizationViewController extends UIViewController {
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
     public static native boolean automaticallyNotifiesObserversForKey(String key);
+
+    @Generated
+    @Selector("canMakePayments")
+    public static native boolean canMakePayments();
+
+    @Generated
+    @Selector("canMakePaymentsUsingNetworks:")
+    public static native boolean canMakePaymentsUsingNetworks(NSArray<String> supportedNetworks);
+
+    @Generated
+    @Selector("canMakePaymentsUsingNetworks:capabilities:")
+    public static native boolean canMakePaymentsUsingNetworksCapabilities(NSArray<String> supportedNetworks,
+            @NUInt long capabilties);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
@@ -176,7 +176,7 @@ public class PKPaymentAuthorizationViewController extends UIViewController {
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")
@@ -195,6 +195,10 @@ public class PKPaymentAuthorizationViewController extends UIViewController {
     @Generated
     @Selector("init")
     public native PKPaymentAuthorizationViewController init();
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native PKPaymentAuthorizationViewController initWithCoder(NSCoder aDecoder);
 
     @Generated
     @Selector("initWithNibName:bundle:")
@@ -221,8 +225,4 @@ public class PKPaymentAuthorizationViewController extends UIViewController {
             org.moe.natj.objc.ObjCRuntime.dissociateObjCObject(this, __old);
         }
     }
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native PKPaymentAuthorizationViewController initWithCoder(NSCoder aDecoder);
 }

@@ -56,25 +56,13 @@ public final class CGDataProviderSequentialCallbacks extends StructObject {
     public native void setVersion(int value);
 
     @Generated
-    @StructureField(order = 1, isGetter = false)
-    public native void setGetBytes(@FunctionPtr(name = "call_getBytes") Function_getBytes value);
-
-    @Generated
-    @StructureField(order = 2, isGetter = false)
-    public native void setSkipForward(@FunctionPtr(name = "call_skipForward") Function_skipForward value);
-
-    @Generated
-    @StructureField(order = 3, isGetter = false)
-    public native void setRewind(@FunctionPtr(name = "call_rewind") Function_rewind value);
-
-    @Generated
-    @StructureField(order = 4, isGetter = false)
-    public native void setReleaseInfo(@FunctionPtr(name = "call_releaseInfo") Function_releaseInfo value);
-
-    @Generated
     @StructureField(order = 1, isGetter = true)
     @FunctionPtr(name = "call_getBytes")
     public native Function_getBytes getBytes();
+
+    @Generated
+    @StructureField(order = 1, isGetter = false)
+    public native void setGetBytes(@FunctionPtr(name = "call_getBytes") Function_getBytes value);
 
     @Generated
     @StructureField(order = 2, isGetter = true)
@@ -82,14 +70,26 @@ public final class CGDataProviderSequentialCallbacks extends StructObject {
     public native Function_skipForward skipForward();
 
     @Generated
+    @StructureField(order = 2, isGetter = false)
+    public native void setSkipForward(@FunctionPtr(name = "call_skipForward") Function_skipForward value);
+
+    @Generated
     @StructureField(order = 3, isGetter = true)
     @FunctionPtr(name = "call_rewind")
     public native Function_rewind rewind();
 
     @Generated
+    @StructureField(order = 3, isGetter = false)
+    public native void setRewind(@FunctionPtr(name = "call_rewind") Function_rewind value);
+
+    @Generated
     @StructureField(order = 4, isGetter = true)
     @FunctionPtr(name = "call_releaseInfo")
     public native Function_releaseInfo releaseInfo();
+
+    @Generated
+    @StructureField(order = 4, isGetter = false)
+    public native void setReleaseInfo(@FunctionPtr(name = "call_releaseInfo") Function_releaseInfo value);
 
     @Runtime(CRuntime.class)
     @Generated

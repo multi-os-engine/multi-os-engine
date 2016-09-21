@@ -59,29 +59,13 @@ public class CNContainer extends NSObject implements NSCopying, NSSecureCoding {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native CNContainer alloc();
-
-    @Generated
-    @Selector("predicateForContainerOfContactWithIdentifier:")
-    public static native NSPredicate predicateForContainerOfContactWithIdentifier(String contactIdentifier);
-
-    @Generated
-    @Selector("predicateForContainerOfGroupWithIdentifier:")
-    public static native NSPredicate predicateForContainerOfGroupWithIdentifier(String groupIdentifier);
-
-    @Generated
-    @Selector("predicateForContainersWithIdentifiers:")
-    public static native NSPredicate predicateForContainersWithIdentifiers(NSArray<String> identifiers);
-
-    @Generated
-    @Selector("supportsSecureCoding")
-    public static native boolean supportsSecureCoding();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -159,6 +143,18 @@ public class CNContainer extends NSObject implements NSCopying, NSSecureCoding {
     public static native Object new_objc();
 
     @Generated
+    @Selector("predicateForContainerOfContactWithIdentifier:")
+    public static native NSPredicate predicateForContainerOfContactWithIdentifier(String contactIdentifier);
+
+    @Generated
+    @Selector("predicateForContainerOfGroupWithIdentifier:")
+    public static native NSPredicate predicateForContainerOfGroupWithIdentifier(String groupIdentifier);
+
+    @Generated
+    @Selector("predicateForContainersWithIdentifiers:")
+    public static native NSPredicate predicateForContainersWithIdentifiers(NSArray<String> identifiers);
+
+    @Generated
     @Selector("resolveClassMethod:")
     public static native boolean resolveClassMethod(SEL sel);
 
@@ -168,11 +164,15 @@ public class CNContainer extends NSObject implements NSCopying, NSSecureCoding {
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")
     public static native Class superclass_static();
+
+    @Generated
+    @Selector("supportsSecureCoding")
+    public static native boolean supportsSecureCoding();
 
     @Generated
     @Selector("version")

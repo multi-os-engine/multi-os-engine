@@ -17,6 +17,8 @@ limitations under the License.
 package apple.mapkit;
 
 import apple.NSObject;
+import apple.contacts.CNPostalAddress;
+import apple.corelocation.CLLocation;
 import apple.corelocation.CLPlacemark;
 import apple.corelocation.struct.CLLocationCoordinate2D;
 import apple.foundation.NSArray;
@@ -62,13 +64,13 @@ public class MKPlacemark extends CLPlacemark implements MKAnnotation {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native MKPlacemark alloc();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -146,6 +148,11 @@ public class MKPlacemark extends CLPlacemark implements MKAnnotation {
     public static native Object new_objc();
 
     @Generated
+    @Selector("placemarkWithLocation:name:postalAddress:")
+    public static native MKPlacemark placemarkWithLocationNamePostalAddress(CLLocation location, String name,
+            CNPostalAddress postalAddress);
+
+    @Generated
     @Selector("resolveClassMethod:")
     public static native boolean resolveClassMethod(SEL sel);
 
@@ -155,7 +162,7 @@ public class MKPlacemark extends CLPlacemark implements MKAnnotation {
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")
@@ -184,9 +191,22 @@ public class MKPlacemark extends CLPlacemark implements MKAnnotation {
     public native MKPlacemark init();
 
     @Generated
+    @Selector("initWithCoder:")
+    public native MKPlacemark initWithCoder(NSCoder aDecoder);
+
+    @Generated
+    @Selector("initWithCoordinate:")
+    public native MKPlacemark initWithCoordinate(@ByValue CLLocationCoordinate2D coordinate);
+
+    @Generated
     @Selector("initWithCoordinate:addressDictionary:")
     public native MKPlacemark initWithCoordinateAddressDictionary(@ByValue CLLocationCoordinate2D coordinate,
             NSDictionary<String, ?> addressDictionary);
+
+    @Generated
+    @Selector("initWithCoordinate:postalAddress:")
+    public native MKPlacemark initWithCoordinatePostalAddress(@ByValue CLLocationCoordinate2D coordinate,
+            CNPostalAddress postalAddress);
 
     @Generated
     @Selector("initWithPlacemark:")
@@ -203,17 +223,13 @@ public class MKPlacemark extends CLPlacemark implements MKAnnotation {
     public native String subtitle();
 
     @Generated
-    @IsOptional
-    @Selector("title")
-    public native String title();
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native MKPlacemark initWithCoder(NSCoder aDecoder);
-
-    @Generated
     @ProtocolClassMethod("supportsSecureCoding")
     public boolean _supportsSecureCoding() {
         return supportsSecureCoding();
     }
+
+    @Generated
+    @IsOptional
+    @Selector("title")
+    public native String title();
 }

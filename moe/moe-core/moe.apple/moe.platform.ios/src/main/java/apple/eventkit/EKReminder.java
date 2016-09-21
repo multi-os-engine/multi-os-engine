@@ -56,17 +56,13 @@ public class EKReminder extends EKCalendarItem {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native EKReminder alloc();
-
-    @Generated
-    @Selector("reminderWithEventStore:")
-    public static native EKReminder reminderWithEventStore(EKEventStore eventStore);
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -144,6 +140,10 @@ public class EKReminder extends EKCalendarItem {
     public static native Object new_objc();
 
     @Generated
+    @Selector("reminderWithEventStore:")
+    public static native EKReminder reminderWithEventStore(EKEventStore eventStore);
+
+    @Generated
     @Selector("resolveClassMethod:")
     public static native boolean resolveClassMethod(SEL sel);
 
@@ -184,9 +184,9 @@ public class EKReminder extends EKCalendarItem {
     @Selector("setCompleted:")
     public native void setCompleted(boolean value);
 
-    @NUInt
     @Generated
     @Selector("priority")
+    @NUInt
     public native long priority();
 
     @Generated

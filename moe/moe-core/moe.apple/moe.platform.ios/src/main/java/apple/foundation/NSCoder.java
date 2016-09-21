@@ -68,13 +68,13 @@ public class NSCoder extends NSObject {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native NSCoder alloc();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -161,7 +161,7 @@ public class NSCoder extends NSObject {
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")
@@ -296,6 +296,27 @@ public class NSCoder extends NSObject {
     public native Object decodePropertyListForKey(String key);
 
     @Generated
+    @Selector("decodeTopLevelObjectAndReturnError:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native Object decodeTopLevelObjectAndReturnError(Ptr<NSError> error);
+
+    @Generated
+    @Selector("decodeTopLevelObjectForKey:error:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native Object decodeTopLevelObjectForKeyError(String key, Ptr<NSError> error);
+
+    @Generated
+    @Selector("decodeTopLevelObjectOfClass:forKey:error:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native Object decodeTopLevelObjectOfClassForKeyError(Class aClass, String key, Ptr<NSError> error);
+
+    @Generated
+    @Selector("decodeTopLevelObjectOfClasses:forKey:error:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native Object decodeTopLevelObjectOfClassesForKeyError(NSSet<? extends Class> classes, String key,
+            Ptr<NSError> error);
+
+    @Generated
     @Selector("decodeUIEdgeInsetsForKey:")
     @ByValue
     public native UIEdgeInsets decodeUIEdgeInsetsForKey(String key);
@@ -313,6 +334,11 @@ public class NSCoder extends NSObject {
     @Variadic()
     @Selector("decodeValuesOfObjCTypes:")
     public native void decodeValuesOfObjCTypes(@Mapped(CStringMapper.class) String types, Object... varargs);
+
+    @Generated
+    @Selector("decodingFailurePolicy")
+    @NInt
+    public native long decodingFailurePolicy();
 
     @Generated
     @Selector("encodeArrayOfObjCType:count:at:")
@@ -437,6 +463,14 @@ public class NSCoder extends NSObject {
     public native void encodeValuesOfObjCTypes(@Mapped(CStringMapper.class) String types, Object... varargs);
 
     @Generated
+    @Selector("error")
+    public native NSError error();
+
+    @Generated
+    @Selector("failWithError:")
+    public native void failWithError(NSError error);
+
+    @Generated
     @Selector("init")
     public native NSCoder init();
 
@@ -452,29 +486,4 @@ public class NSCoder extends NSObject {
     @Selector("versionForClassName:")
     @NInt
     public native long versionForClassName(String className);
-
-    @Generated
-    @Selector("decodeTopLevelObjectAndReturnError:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native Object decodeTopLevelObjectAndReturnError(Ptr<NSError> error);
-
-    @Generated
-    @Selector("decodeTopLevelObjectForKey:error:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native Object decodeTopLevelObjectForKeyError(String key, Ptr<NSError> error);
-
-    @Generated
-    @Selector("decodeTopLevelObjectOfClass:forKey:error:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native Object decodeTopLevelObjectOfClassForKeyError(Class aClass, String key, Ptr<NSError> error);
-
-    @Generated
-    @Selector("decodeTopLevelObjectOfClasses:forKey:error:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native Object decodeTopLevelObjectOfClassesForKeyError(NSSet<? extends Class> classes, String key,
-            Ptr<NSError> error);
-
-    @Generated
-    @Selector("failWithError:")
-    public native void failWithError(NSError error);
 }

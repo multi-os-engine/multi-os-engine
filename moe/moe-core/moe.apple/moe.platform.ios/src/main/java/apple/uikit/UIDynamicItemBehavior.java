@@ -58,13 +58,13 @@ public class UIDynamicItemBehavior extends UIDynamicBehavior {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native UIDynamicItemBehavior alloc();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -151,7 +151,7 @@ public class UIDynamicItemBehavior extends UIDynamicBehavior {
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")
@@ -191,6 +191,11 @@ public class UIDynamicItemBehavior extends UIDynamicBehavior {
     public native double angularVelocityForItem(@Mapped(ObjCObjectMapper.class) UIDynamicItem item);
 
     @Generated
+    @Selector("charge")
+    @NFloat
+    public native double charge();
+
+    @Generated
     @Selector("density")
     @NFloat
     public native double density();
@@ -212,6 +217,14 @@ public class UIDynamicItemBehavior extends UIDynamicBehavior {
     @Generated
     @Selector("initWithItems:")
     public native UIDynamicItemBehavior initWithItems(NSArray<?> items);
+
+    @Generated
+    @Selector("isAnchored")
+    public native boolean isAnchored();
+
+    @Generated
+    @Selector("setAnchored:")
+    public native void setAnchored(boolean value);
 
     @Generated
     @Selector("items")
@@ -240,6 +253,10 @@ public class UIDynamicItemBehavior extends UIDynamicBehavior {
     public native void setAngularResistance(@NFloat double value);
 
     @Generated
+    @Selector("setCharge:")
+    public native void setCharge(@NFloat double value);
+
+    @Generated
     @Selector("setDensity:")
     public native void setDensity(@NFloat double value);
 
@@ -254,21 +271,4 @@ public class UIDynamicItemBehavior extends UIDynamicBehavior {
     @Generated
     @Selector("setResistance:")
     public native void setResistance(@NFloat double value);
-
-    @Generated
-    @Selector("charge")
-    @NFloat
-    public native double charge();
-
-    @Generated
-    @Selector("isAnchored")
-    public native boolean isAnchored();
-
-    @Generated
-    @Selector("setAnchored:")
-    public native void setAnchored(boolean value);
-
-    @Generated
-    @Selector("setCharge:")
-    public native void setCharge(@NFloat double value);
 }

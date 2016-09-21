@@ -53,9 +53,18 @@ public class NSKeyedArchiver extends NSCoder {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native NSKeyedArchiver alloc();
+
+    @Generated
+    @Selector("allocWithZone:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("archiveRootObject:toFile:")
@@ -65,23 +74,6 @@ public class NSKeyedArchiver extends NSCoder {
     @Generated
     @Selector("archivedDataWithRootObject:")
     public static native NSData archivedDataWithRootObject(@Mapped(ObjCObjectMapper.class) Object rootObject);
-
-    @Generated
-    @Selector("classNameForClass:")
-    public static native String classNameForClass_static(Class cls);
-
-    @Generated
-    @Selector("setClassName:forClass:")
-    public static native void setClassNameForClass_static(String codedName, Class cls);
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
-
-    @Generated
-    @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -104,6 +96,10 @@ public class NSKeyedArchiver extends NSCoder {
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
+
+    @Generated
+    @Selector("classNameForClass:")
+    public static native String classNameForClass_static(Class cls);
 
     @Generated
     @Selector("debugDescription")
@@ -160,6 +156,10 @@ public class NSKeyedArchiver extends NSCoder {
     @Generated
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
+
+    @Generated
+    @Selector("setClassName:forClass:")
+    public static native void setClassNameForClass_static(String codedName, Class cls);
 
     @Generated
     @Selector("setVersion:")
@@ -220,6 +220,10 @@ public class NSKeyedArchiver extends NSCoder {
     public native void encodeObjectForKey(@Mapped(ObjCObjectMapper.class) Object objv, String key);
 
     @Generated
+    @Selector("encodedData")
+    public native NSData encodedData();
+
+    @Generated
     @Selector("finishEncoding")
     public native void finishEncoding();
 
@@ -235,6 +239,10 @@ public class NSKeyedArchiver extends NSCoder {
     @Selector("outputFormat")
     @NUInt
     public native long outputFormat();
+
+    @Generated
+    @Selector("requiresSecureCoding")
+    public native boolean requiresSecureCoding();
 
     @Generated
     @Selector("setClassName:forClass:")
@@ -263,8 +271,4 @@ public class NSKeyedArchiver extends NSCoder {
     @Generated
     @Selector("setRequiresSecureCoding:")
     public native void setRequiresSecureCoding(boolean value);
-
-    @Generated
-    @Selector("requiresSecureCoding")
-    public native boolean requiresSecureCoding();
 }

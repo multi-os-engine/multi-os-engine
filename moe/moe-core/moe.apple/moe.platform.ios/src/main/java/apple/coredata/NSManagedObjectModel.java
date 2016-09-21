@@ -64,31 +64,13 @@ public class NSManagedObjectModel extends NSObject implements NSCoding, NSCopyin
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native NSManagedObjectModel alloc();
-
-    @Generated
-    @Selector("mergedModelFromBundles:")
-    public static native NSManagedObjectModel mergedModelFromBundles(NSArray<? extends NSBundle> bundles);
-
-    @Generated
-    @Selector("mergedModelFromBundles:forStoreMetadata:")
-    public static native NSManagedObjectModel mergedModelFromBundlesForStoreMetadata(
-            NSArray<? extends NSBundle> bundles, NSDictionary<String, ?> metadata);
-
-    @Generated
-    @Selector("modelByMergingModels:")
-    public static native NSManagedObjectModel modelByMergingModels(NSArray<? extends NSManagedObjectModel> models);
-
-    @Generated
-    @Selector("modelByMergingModels:forStoreMetadata:")
-    public static native NSManagedObjectModel modelByMergingModelsForStoreMetadata(
-            NSArray<? extends NSManagedObjectModel> models, NSDictionary<String, ?> metadata);
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -160,6 +142,24 @@ public class NSManagedObjectModel extends NSObject implements NSCoding, NSCopyin
     public static native void load_objc_static();
 
     @Generated
+    @Selector("mergedModelFromBundles:")
+    public static native NSManagedObjectModel mergedModelFromBundles(NSArray<? extends NSBundle> bundles);
+
+    @Generated
+    @Selector("mergedModelFromBundles:forStoreMetadata:")
+    public static native NSManagedObjectModel mergedModelFromBundlesForStoreMetadata(
+            NSArray<? extends NSBundle> bundles, NSDictionary<String, ?> metadata);
+
+    @Generated
+    @Selector("modelByMergingModels:")
+    public static native NSManagedObjectModel modelByMergingModels(NSArray<? extends NSManagedObjectModel> models);
+
+    @Generated
+    @Selector("modelByMergingModels:forStoreMetadata:")
+    public static native NSManagedObjectModel modelByMergingModelsForStoreMetadata(
+            NSArray<? extends NSManagedObjectModel> models, NSDictionary<String, ?> metadata);
+
+    @Generated
     @Owned
     @Selector("new")
     @MappedReturn(ObjCObjectMapper.class)
@@ -175,7 +175,7 @@ public class NSManagedObjectModel extends NSObject implements NSCoding, NSCopyin
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")
@@ -184,7 +184,7 @@ public class NSManagedObjectModel extends NSObject implements NSCoding, NSCopyin
     @Generated
     @Selector("version")
     @NInt
-    public static native long version();
+    public static native long version_static();
 
     @Generated
     @Selector("configurations")
@@ -223,16 +223,16 @@ public class NSManagedObjectModel extends NSObject implements NSCoding, NSCopyin
 
     @Generated
     @Selector("fetchRequestFromTemplateWithName:substitutionVariables:")
-    public native NSFetchRequest fetchRequestFromTemplateWithNameSubstitutionVariables(String name,
+    public native NSFetchRequest<?> fetchRequestFromTemplateWithNameSubstitutionVariables(String name,
             NSDictionary<String, ?> variables);
 
     @Generated
     @Selector("fetchRequestTemplateForName:")
-    public native NSFetchRequest fetchRequestTemplateForName(String name);
+    public native NSFetchRequest<?> fetchRequestTemplateForName(String name);
 
     @Generated
     @Selector("fetchRequestTemplatesByName")
-    public native NSDictionary<String, ? extends NSFetchRequest> fetchRequestTemplatesByName();
+    public native NSDictionary<String, ? extends NSFetchRequest<?>> fetchRequestTemplatesByName();
 
     @Generated
     @Selector("init")
@@ -266,7 +266,7 @@ public class NSManagedObjectModel extends NSObject implements NSCoding, NSCopyin
 
     @Generated
     @Selector("setFetchRequestTemplate:forName:")
-    public native void setFetchRequestTemplateForName(NSFetchRequest fetchRequestTemplate, String name);
+    public native void setFetchRequestTemplateForName(NSFetchRequest<?> fetchRequestTemplate, String name);
 
     @Generated
     @Selector("setLocalizationDictionary:")

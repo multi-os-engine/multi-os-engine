@@ -58,18 +58,13 @@ public class SKPhysicsJointPin extends SKPhysicsJoint {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native SKPhysicsJointPin alloc();
-
-    @Generated
-    @Selector("jointWithBodyA:bodyB:anchor:")
-    public static native SKPhysicsJointPin jointWithBodyABodyBAnchor(SKPhysicsBody bodyA, SKPhysicsBody bodyB,
-            @ByValue CGPoint anchor);
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -133,6 +128,11 @@ public class SKPhysicsJointPin extends SKPhysicsJoint {
     public static native boolean isSubclassOfClass(Class aClass);
 
     @Generated
+    @Selector("jointWithBodyA:bodyB:anchor:")
+    public static native SKPhysicsJointPin jointWithBodyABodyBAnchor(SKPhysicsBody bodyA, SKPhysicsBody bodyB,
+            @ByValue CGPoint anchor);
+
+    @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
@@ -156,7 +156,7 @@ public class SKPhysicsJointPin extends SKPhysicsJoint {
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")
@@ -175,6 +175,10 @@ public class SKPhysicsJointPin extends SKPhysicsJoint {
     @Generated
     @Selector("init")
     public native SKPhysicsJointPin init();
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native SKPhysicsJointPin initWithCoder(NSCoder aDecoder);
 
     @Generated
     @Selector("lowerAngleLimit")
@@ -214,8 +218,4 @@ public class SKPhysicsJointPin extends SKPhysicsJoint {
     @Selector("upperAngleLimit")
     @NFloat
     public native double upperAngleLimit();
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native SKPhysicsJointPin initWithCoder(NSCoder aDecoder);
 }

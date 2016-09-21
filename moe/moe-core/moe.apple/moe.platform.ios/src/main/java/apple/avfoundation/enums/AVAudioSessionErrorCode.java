@@ -32,8 +32,8 @@ public final class AVAudioSessionErrorCode {
     @Generated @NInt public static final long CodeCannotStartRecording = 0x0000000021726563L;
     @Generated @NInt public static final long CodeBadParam = 0xFFFFFFFFFFFFFFCEL;
     @Generated @NInt public static final long InsufficientPriority = 0x0000000021707269L;
-    @Generated @NInt public static final long CodeUnspecified = 0x0000000077686174L;
     @Generated @NInt public static final long CodeResourceNotAvailable = 0x0000000021726573L;
+    @Generated @NInt public static final long CodeUnspecified = 0x0000000077686174L;
 
     @Generated
     private AVAudioSessionErrorCode() {

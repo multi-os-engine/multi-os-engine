@@ -63,14 +63,53 @@ public class SCNAction extends NSObject implements NSCopying, NSSecureCoding {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native SCNAction alloc();
 
     @Generated
+    @Selector("allocWithZone:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object allocWithZone(VoidPtr zone);
+
+    @Generated
+    @Selector("automaticallyNotifiesObserversForKey:")
+    public static native boolean automaticallyNotifiesObserversForKey(String key);
+
+    @Generated
+    @Selector("cancelPreviousPerformRequestsWithTarget:")
+    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+
+    @Generated
+    @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
+    public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
+            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
+            @Mapped(ObjCObjectMapper.class) Object anArgument);
+
+    @Generated
+    @Selector("classFallbacksForKeyedArchiver")
+    public static native NSArray<String> classFallbacksForKeyedArchiver();
+
+    @Generated
+    @Selector("classForKeyedUnarchiver")
+    public static native Class classForKeyedUnarchiver();
+
+    @Generated
     @Selector("customActionWithDuration:actionBlock:")
     public static native SCNAction customActionWithDurationActionBlock(double seconds,
             @ObjCBlock(name = "call_customActionWithDurationActionBlock") Block_customActionWithDurationActionBlock block);
+
+    @Generated
+    @Selector("debugDescription")
+    public static native String debugDescription_static();
+
+    @Generated
+    @Selector("description")
+    public static native String description_static();
 
     @Generated
     @Selector("fadeInWithDuration:")
@@ -93,8 +132,46 @@ public class SCNAction extends NSObject implements NSCopying, NSSecureCoding {
     public static native SCNAction group(NSArray<? extends SCNAction> actions);
 
     @Generated
+    @Selector("hash")
+    @NUInt
+    public static native long hash_static();
+
+    @Generated
+    @Selector("hide")
+    public static native SCNAction hide();
+
+    @Generated
+    @Selector("initialize")
+    public static native void initialize();
+
+    @Generated
+    @Selector("instanceMethodForSelector:")
+    @FunctionPtr(name = "call_instanceMethodForSelector_ret")
+    public static native NSObject.Function_instanceMethodForSelector_ret instanceMethodForSelector(SEL aSelector);
+
+    @Generated
+    @Selector("instanceMethodSignatureForSelector:")
+    public static native NSMethodSignature instanceMethodSignatureForSelector(SEL aSelector);
+
+    @Generated
+    @Selector("instancesRespondToSelector:")
+    public static native boolean instancesRespondToSelector(SEL aSelector);
+
+    @Generated
+    @Selector("isSubclassOfClass:")
+    public static native boolean isSubclassOfClass(Class aClass);
+
+    @Generated
     @Selector("javaScriptActionWithScript:duration:")
     public static native SCNAction javaScriptActionWithScriptDuration(String script, double seconds);
+
+    @Generated
+    @Selector("keyPathsForValuesAffectingValueForKey:")
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+
+    @Generated
+    @Selector("load")
+    public static native void load_objc_static();
 
     @Generated
     @Selector("moveBy:duration:")
@@ -110,6 +187,16 @@ public class SCNAction extends NSObject implements NSCopying, NSSecureCoding {
     public static native SCNAction moveToDuration(@ByValue SCNVector3 location, double duration);
 
     @Generated
+    @Owned
+    @Selector("new")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object new_objc();
+
+    @Generated
+    @Selector("playAudioSource:waitForCompletion:")
+    public static native SCNAction playAudioSourceWaitForCompletion(SCNAudioSource source, boolean wait_);
+
+    @Generated
     @Selector("removeFromParentNode")
     public static native SCNAction removeFromParentNode();
 
@@ -120,6 +207,14 @@ public class SCNAction extends NSObject implements NSCopying, NSSecureCoding {
     @Generated
     @Selector("repeatActionForever:")
     public static native SCNAction repeatActionForever(SCNAction action);
+
+    @Generated
+    @Selector("resolveClassMethod:")
+    public static native boolean resolveClassMethod(SEL sel);
+
+    @Generated
+    @Selector("resolveInstanceMethod:")
+    public static native boolean resolveInstanceMethod(SEL sel);
 
     @Generated
     @Selector("rotateByAngle:aroundAxis:duration:")
@@ -167,117 +262,6 @@ public class SCNAction extends NSObject implements NSCopying, NSSecureCoding {
     public static native SCNAction sequence(NSArray<? extends SCNAction> actions);
 
     @Generated
-    @Selector("supportsSecureCoding")
-    public static native boolean supportsSecureCoding();
-
-    @Generated
-    @Selector("waitForDuration:")
-    public static native SCNAction waitForDuration(double sec);
-
-    @Generated
-    @Selector("waitForDuration:withRange:")
-    public static native SCNAction waitForDurationWithRange(double sec, double durationRange);
-
-    @Generated
-    @Selector("hide")
-    public static native SCNAction hide();
-
-    @Generated
-    @Selector("playAudioSource:waitForCompletion:")
-    public static native SCNAction playAudioSourceWaitForCompletion(SCNAudioSource source, boolean wait_);
-
-    @Generated
-    @Selector("unhide")
-    public static native SCNAction unhide();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
-
-    @Generated
-    @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
-
-    @Generated
-    @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
-
-    @Generated
-    @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
-
-    @Generated
-    @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
-    public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
-
-    @Generated
-    @Selector("classFallbacksForKeyedArchiver")
-    public static native NSArray<String> classFallbacksForKeyedArchiver();
-
-    @Generated
-    @Selector("classForKeyedUnarchiver")
-    public static native Class classForKeyedUnarchiver();
-
-    @Generated
-    @Selector("debugDescription")
-    public static native String debugDescription_static();
-
-    @Generated
-    @Selector("description")
-    public static native String description_static();
-
-    @Generated
-    @Selector("hash")
-    @NUInt
-    public static native long hash_static();
-
-    @Generated
-    @Selector("initialize")
-    public static native void initialize();
-
-    @Generated
-    @Selector("instanceMethodForSelector:")
-    @FunctionPtr(name = "call_instanceMethodForSelector_ret")
-    public static native NSObject.Function_instanceMethodForSelector_ret instanceMethodForSelector(SEL aSelector);
-
-    @Generated
-    @Selector("instanceMethodSignatureForSelector:")
-    public static native NSMethodSignature instanceMethodSignatureForSelector(SEL aSelector);
-
-    @Generated
-    @Selector("instancesRespondToSelector:")
-    public static native boolean instancesRespondToSelector(SEL aSelector);
-
-    @Generated
-    @Selector("isSubclassOfClass:")
-    public static native boolean isSubclassOfClass(Class aClass);
-
-    @Generated
-    @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
-
-    @Generated
-    @Selector("load")
-    public static native void load_objc_static();
-
-    @Generated
-    @Owned
-    @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
-
-    @Generated
-    @Selector("resolveClassMethod:")
-    public static native boolean resolveClassMethod(SEL sel);
-
-    @Generated
-    @Selector("resolveInstanceMethod:")
-    public static native boolean resolveInstanceMethod(SEL sel);
-
-    @Generated
     @Selector("setVersion:")
     public static native void setVersion_static(@NInt long aVersion);
 
@@ -286,9 +270,25 @@ public class SCNAction extends NSObject implements NSCopying, NSSecureCoding {
     public static native Class superclass_static();
 
     @Generated
+    @Selector("supportsSecureCoding")
+    public static native boolean supportsSecureCoding();
+
+    @Generated
+    @Selector("unhide")
+    public static native SCNAction unhide();
+
+    @Generated
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("waitForDuration:")
+    public static native SCNAction waitForDuration(double sec);
+
+    @Generated
+    @Selector("waitForDuration:withRange:")
+    public static native SCNAction waitForDurationWithRange(double sec, double durationRange);
 
     @Generated
     @Owned
@@ -344,14 +344,14 @@ public class SCNAction extends NSObject implements NSCopying, NSSecureCoding {
     }
 
     @Generated
-    @Selector("timingMode")
-    @NInt
-    public native long timingMode();
-
-    @Generated
     @Selector("timingFunction")
     @ObjCBlock(name = "call_timingFunction_ret")
     public native Block_timingFunction_ret timingFunction();
+
+    @Generated
+    @Selector("timingMode")
+    @NInt
+    public native long timingMode();
 
     @Runtime(ObjCRuntime.class)
     @Generated

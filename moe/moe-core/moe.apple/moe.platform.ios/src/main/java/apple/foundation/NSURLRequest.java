@@ -55,26 +55,13 @@ public class NSURLRequest extends NSObject implements NSSecureCoding, NSCopying,
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native NSURLRequest alloc();
-
-    @Generated
-    @Selector("requestWithURL:")
-    public static native NSURLRequest requestWithURL(NSURL URL);
-
-    @Generated
-    @Selector("requestWithURL:cachePolicy:timeoutInterval:")
-    public static native NSURLRequest requestWithURLCachePolicyTimeoutInterval(NSURL URL, @NUInt long cachePolicy,
-            double timeoutInterval);
-
-    @Generated
-    @Selector("supportsSecureCoding")
-    public static native boolean supportsSecureCoding();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -152,6 +139,15 @@ public class NSURLRequest extends NSObject implements NSSecureCoding, NSCopying,
     public static native Object new_objc();
 
     @Generated
+    @Selector("requestWithURL:")
+    public static native NSURLRequest requestWithURL(NSURL URL);
+
+    @Generated
+    @Selector("requestWithURL:cachePolicy:timeoutInterval:")
+    public static native NSURLRequest requestWithURLCachePolicyTimeoutInterval(NSURL URL, @NUInt long cachePolicy,
+            double timeoutInterval);
+
+    @Generated
     @Selector("resolveClassMethod:")
     public static native boolean resolveClassMethod(SEL sel);
 
@@ -161,11 +157,15 @@ public class NSURLRequest extends NSObject implements NSSecureCoding, NSCopying,
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")
     public static native Class superclass_static();
+
+    @Generated
+    @Selector("supportsSecureCoding")
+    public static native boolean supportsSecureCoding();
 
     @Generated
     @Selector("version")

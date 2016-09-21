@@ -1300,6 +1300,11 @@ public final class GLKit {
     public static native String NSStringFromGLKQuaternion(@ByValue GLKQuaternion quaternion);
 
     @Generated
+    @CFunction
+    @ByValue
+    public static native GLKVertexAttributeParameters GLKVertexAttributeParametersFromModelIO(@NUInt long vertexFormat);
+
+    @Generated
     @CVariable()
     @ByValue
     public static native GLKQuaternion GLKQuaternionIdentity();
@@ -1313,6 +1318,16 @@ public final class GLKit {
     @CVariable()
     @ByValue
     public static native GLKMatrix4 GLKMatrix4Identity();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String kGLKModelErrorDomain();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String kGLKModelErrorKey();
 
     @Generated
     @CVariable()
@@ -1353,19 +1368,4 @@ public final class GLKit {
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String GLKTextureLoaderGLErrorKey();
-
-    @Generated
-    @CFunction
-    @ByValue
-    public static native GLKVertexAttributeParameters GLKVertexAttributeParametersFromModelIO(@NUInt long vertexFormat);
-
-    @Generated
-    @CVariable()
-    @MappedReturn(ObjCStringMapper.class)
-    public static native String kGLKModelErrorDomain();
-
-    @Generated
-    @CVariable()
-    @MappedReturn(ObjCStringMapper.class)
-    public static native String kGLKModelErrorKey();
 }

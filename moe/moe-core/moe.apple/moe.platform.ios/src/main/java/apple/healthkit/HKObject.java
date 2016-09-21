@@ -59,17 +59,13 @@ public class HKObject extends NSObject implements NSSecureCoding {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native HKObject alloc();
-
-    @Generated
-    @Selector("supportsSecureCoding")
-    public static native boolean supportsSecureCoding();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -138,7 +134,7 @@ public class HKObject extends NSObject implements NSSecureCoding {
 
     @Generated
     @Selector("load")
-    public static native void load_objc();
+    public static native void load_objc_static();
 
     @Generated
     @Owned
@@ -156,20 +152,28 @@ public class HKObject extends NSObject implements NSSecureCoding {
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")
     public static native Class superclass_static();
 
     @Generated
+    @Selector("supportsSecureCoding")
+    public static native boolean supportsSecureCoding();
+
+    @Generated
     @Selector("version")
     @NInt
-    public static native long version();
+    public static native long version_static();
 
     @Generated
     @Selector("UUID")
     public native NSUUID UUID();
+
+    @Generated
+    @Selector("device")
+    public native HKDevice device();
 
     @Generated
     @Selector("encodeWithCoder:")
@@ -187,22 +191,18 @@ public class HKObject extends NSObject implements NSSecureCoding {
     @Selector("metadata")
     public native NSDictionary<String, ?> metadata();
 
-    @Deprecated
     @Generated
+    @Deprecated
     @Selector("source")
     public native HKSource source();
+
+    @Generated
+    @Selector("sourceRevision")
+    public native HKSourceRevision sourceRevision();
 
     @Generated
     @ProtocolClassMethod("supportsSecureCoding")
     public boolean _supportsSecureCoding() {
         return supportsSecureCoding();
     }
-
-    @Generated
-    @Selector("device")
-    public native HKDevice device();
-
-    @Generated
-    @Selector("sourceRevision")
-    public native HKSourceRevision sourceRevision();
 }

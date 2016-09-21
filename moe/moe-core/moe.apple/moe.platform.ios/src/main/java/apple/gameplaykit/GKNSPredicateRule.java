@@ -16,11 +16,11 @@ limitations under the License.
 
 package apple.gameplaykit;
 
+import apple.NSObject;
 import apple.foundation.NSArray;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSPredicate;
 import apple.foundation.NSSet;
-import apple.protocol.NSObject;
 import org.moe.natj.c.ann.FunctionPtr;
 import org.moe.natj.general.NatJ;
 import org.moe.natj.general.Pointer;
@@ -56,29 +56,13 @@ public class GKNSPredicateRule extends GKRule {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native GKNSPredicateRule alloc();
-
-    @Generated
-    @Selector("ruleWithBlockPredicate:action:")
-    public static native GKNSPredicateRule ruleWithBlockPredicateAction(
-            @ObjCBlock(name = "call_ruleWithBlockPredicateAction_0") GKRule.Block_ruleWithBlockPredicateAction_0 predicate,
-            @ObjCBlock(name = "call_ruleWithBlockPredicateAction_1") GKRule.Block_ruleWithBlockPredicateAction_1 action);
-
-    @Generated
-    @Selector("ruleWithPredicate:assertingFact:grade:")
-    public static native GKNSPredicateRule ruleWithPredicateAssertingFactGrade(NSPredicate predicate,
-            @Mapped(ObjCObjectMapper.class) NSObject fact, float grade);
-
-    @Generated
-    @Selector("ruleWithPredicate:retractingFact:grade:")
-    public static native GKNSPredicateRule ruleWithPredicateRetractingFactGrade(NSPredicate predicate,
-            @Mapped(ObjCObjectMapper.class) NSObject fact, float grade);
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -127,7 +111,7 @@ public class GKNSPredicateRule extends GKRule {
     @Generated
     @Selector("instanceMethodForSelector:")
     @FunctionPtr(name = "call_instanceMethodForSelector_ret")
-    public static native apple.NSObject.Function_instanceMethodForSelector_ret instanceMethodForSelector(SEL aSelector);
+    public static native NSObject.Function_instanceMethodForSelector_ret instanceMethodForSelector(SEL aSelector);
 
     @Generated
     @Selector("instanceMethodSignatureForSelector:")
@@ -162,6 +146,22 @@ public class GKNSPredicateRule extends GKRule {
     @Generated
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
+
+    @Generated
+    @Selector("ruleWithBlockPredicate:action:")
+    public static native GKNSPredicateRule ruleWithBlockPredicateAction(
+            @ObjCBlock(name = "call_ruleWithBlockPredicateAction_0") GKRule.Block_ruleWithBlockPredicateAction_0 predicate,
+            @ObjCBlock(name = "call_ruleWithBlockPredicateAction_1") GKRule.Block_ruleWithBlockPredicateAction_1 action);
+
+    @Generated
+    @Selector("ruleWithPredicate:assertingFact:grade:")
+    public static native GKNSPredicateRule ruleWithPredicateAssertingFactGrade(NSPredicate predicate,
+            @Mapped(ObjCObjectMapper.class) apple.protocol.NSObject fact, float grade);
+
+    @Generated
+    @Selector("ruleWithPredicate:retractingFact:grade:")
+    public static native GKNSPredicateRule ruleWithPredicateRetractingFactGrade(NSPredicate predicate,
+            @Mapped(ObjCObjectMapper.class) apple.protocol.NSObject fact, float grade);
 
     @Generated
     @Selector("setVersion:")

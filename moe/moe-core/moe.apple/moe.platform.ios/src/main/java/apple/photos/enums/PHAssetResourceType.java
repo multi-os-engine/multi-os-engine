@@ -30,6 +30,8 @@ public final class PHAssetResourceType {
     @Generated @NInt public static final long AdjustmentData = 0x0000000000000007L;
     @Generated @NInt public static final long AdjustmentBasePhoto = 0x0000000000000008L;
     @Generated @NInt public static final long PairedVideo = 0x0000000000000009L;
+    @Generated @NInt public static final long FullSizePairedVideo = 0x000000000000000AL;
+    @Generated @NInt public static final long AdjustmentBasePairedVideo = 0x000000000000000BL;
 
     @Generated
     private PHAssetResourceType() {

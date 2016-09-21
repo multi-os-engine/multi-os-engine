@@ -55,27 +55,13 @@ public class NSException extends NSObject implements NSCopying, NSCoding {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native NSException alloc();
-
-    @Generated
-    @Selector("exceptionWithName:reason:userInfo:")
-    public static native NSException exceptionWithNameReasonUserInfo(String name, String reason,
-            NSDictionary<?, ?> userInfo);
-
-    @Generated
-    @Variadic()
-    @Selector("raise:format:")
-    public static native void raiseFormat(String name, String format, Object... varargs);
-
-    @Generated
-    @Selector("raise:format:arguments:")
-    public static native void raiseFormatArguments(String name, String format, BytePtr argList);
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -111,6 +97,11 @@ public class NSException extends NSObject implements NSCopying, NSCoding {
     @Generated
     @Selector("description")
     public static native String description_static();
+
+    @Generated
+    @Selector("exceptionWithName:reason:userInfo:")
+    public static native NSException exceptionWithNameReasonUserInfo(String name, String reason,
+            NSDictionary<?, ?> userInfo);
 
     @Generated
     @Selector("hash")
@@ -151,6 +142,15 @@ public class NSException extends NSObject implements NSCopying, NSCoding {
     @Selector("new")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object new_objc();
+
+    @Generated
+    @Variadic()
+    @Selector("raise:format:")
+    public static native void raiseFormat(String name, String format, Object... varargs);
+
+    @Generated
+    @Selector("raise:format:arguments:")
+    public static native void raiseFormatArguments(String name, String format, BytePtr argList);
 
     @Generated
     @Selector("resolveClassMethod:")

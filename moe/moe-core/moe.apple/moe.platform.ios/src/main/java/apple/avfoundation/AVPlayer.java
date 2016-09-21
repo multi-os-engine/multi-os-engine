@@ -62,21 +62,13 @@ public class AVPlayer extends NSObject {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native AVPlayer alloc();
-
-    @Generated
-    @Selector("playerWithPlayerItem:")
-    public static native AVPlayer playerWithPlayerItem(AVPlayerItem item);
-
-    @Generated
-    @Selector("playerWithURL:")
-    public static native AVPlayer playerWithURL(NSURL URL);
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -154,6 +146,14 @@ public class AVPlayer extends NSObject {
     public static native Object new_objc();
 
     @Generated
+    @Selector("playerWithPlayerItem:")
+    public static native AVPlayer playerWithPlayerItem(AVPlayerItem item);
+
+    @Generated
+    @Selector("playerWithURL:")
+    public static native AVPlayer playerWithURL(NSURL URL);
+
+    @Generated
     @Selector("resolveClassMethod:")
     public static native boolean resolveClassMethod(SEL sel);
 
@@ -204,6 +204,10 @@ public class AVPlayer extends NSObject {
     @Generated
     @Selector("appliesMediaSelectionCriteriaAutomatically")
     public native boolean appliesMediaSelectionCriteriaAutomatically();
+
+    @Generated
+    @Selector("automaticallyWaitsToMinimizeStalling")
+    public native boolean automaticallyWaitsToMinimizeStalling();
 
     @Generated
     @Selector("cancelPendingPrerolls")
@@ -285,6 +289,10 @@ public class AVPlayer extends NSObject {
     public native void play();
 
     @Generated
+    @Selector("playImmediatelyAtRate:")
+    public native void playImmediatelyAtRate(float rate);
+
+    @Generated
     @Selector("prerollAtRate:completionHandler:")
     public native void prerollAtRateCompletionHandler(float rate,
             @ObjCBlock(name = "call_prerollAtRateCompletionHandler") Block_prerollAtRateCompletionHandler completionHandler);
@@ -292,6 +300,10 @@ public class AVPlayer extends NSObject {
     @Generated
     @Selector("rate")
     public native float rate();
+
+    @Generated
+    @Selector("reasonForWaitingToPlay")
+    public native String reasonForWaitingToPlay();
 
     @Generated
     @Selector("removeTimeObserver:")
@@ -348,6 +360,10 @@ public class AVPlayer extends NSObject {
     public native void setAppliesMediaSelectionCriteriaAutomatically(boolean value);
 
     @Generated
+    @Selector("setAutomaticallyWaitsToMinimizeStalling:")
+    public native void setAutomaticallyWaitsToMinimizeStalling(boolean value);
+
+    @Generated
     @Selector("setExternalPlaybackVideoGravity:")
     public native void setExternalPlaybackVideoGravity(String value);
 
@@ -385,6 +401,11 @@ public class AVPlayer extends NSObject {
     @Selector("status")
     @NInt
     public native long status();
+
+    @Generated
+    @Selector("timeControlStatus")
+    @NInt
+    public native long timeControlStatus();
 
     @Generated
     @Deprecated

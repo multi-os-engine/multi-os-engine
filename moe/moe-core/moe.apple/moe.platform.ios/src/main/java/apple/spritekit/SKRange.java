@@ -58,37 +58,13 @@ public class SKRange extends NSObject implements NSCoding, NSCopying {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native SKRange alloc();
-
-    @Generated
-    @Selector("rangeWithConstantValue:")
-    public static native SKRange rangeWithConstantValue(@NFloat double value);
-
-    @Generated
-    @Selector("rangeWithLowerLimit:")
-    public static native SKRange rangeWithLowerLimit(@NFloat double lower);
-
-    @Generated
-    @Selector("rangeWithLowerLimit:upperLimit:")
-    public static native SKRange rangeWithLowerLimitUpperLimit(@NFloat double lower, @NFloat double upper);
-
-    @Generated
-    @Selector("rangeWithNoLimits")
-    public static native SKRange rangeWithNoLimits();
-
-    @Generated
-    @Selector("rangeWithUpperLimit:")
-    public static native SKRange rangeWithUpperLimit(@NFloat double upper);
-
-    @Generated
-    @Selector("rangeWithValue:variance:")
-    public static native SKRange rangeWithValueVariance(@NFloat double value, @NFloat double variance);
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -164,6 +140,30 @@ public class SKRange extends NSObject implements NSCoding, NSCopying {
     @Selector("new")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object new_objc();
+
+    @Generated
+    @Selector("rangeWithConstantValue:")
+    public static native SKRange rangeWithConstantValue(@NFloat double value);
+
+    @Generated
+    @Selector("rangeWithLowerLimit:")
+    public static native SKRange rangeWithLowerLimit(@NFloat double lower);
+
+    @Generated
+    @Selector("rangeWithLowerLimit:upperLimit:")
+    public static native SKRange rangeWithLowerLimitUpperLimit(@NFloat double lower, @NFloat double upper);
+
+    @Generated
+    @Selector("rangeWithNoLimits")
+    public static native SKRange rangeWithNoLimits();
+
+    @Generated
+    @Selector("rangeWithUpperLimit:")
+    public static native SKRange rangeWithUpperLimit(@NFloat double upper);
+
+    @Generated
+    @Selector("rangeWithValue:variance:")
+    public static native SKRange rangeWithValueVariance(@NFloat double value, @NFloat double variance);
 
     @Generated
     @Selector("resolveClassMethod:")

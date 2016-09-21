@@ -62,22 +62,13 @@ public class CAEmitterCell extends NSObject implements NSCoding, CAMediaTiming {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native CAEmitterCell alloc();
-
-    @Generated
-    @Selector("defaultValueForKey:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object defaultValueForKey(String key);
-
-    @Generated
-    @Selector("emitterCell")
-    public static native CAEmitterCell emitterCell();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -111,8 +102,17 @@ public class CAEmitterCell extends NSObject implements NSCoding, CAMediaTiming {
     public static native String debugDescription_static();
 
     @Generated
+    @Selector("defaultValueForKey:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object defaultValueForKey(String key);
+
+    @Generated
     @Selector("description")
     public static native String description_static();
+
+    @Generated
+    @Selector("emitterCell")
+    public static native CAEmitterCell emitterCell();
 
     @Generated
     @Selector("hash")
@@ -164,7 +164,7 @@ public class CAEmitterCell extends NSObject implements NSCoding, CAMediaTiming {
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")
@@ -216,6 +216,11 @@ public class CAEmitterCell extends NSObject implements NSCoding, CAMediaTiming {
     @Selector("contentsRect")
     @ByValue
     public native CGRect contentsRect();
+
+    @Generated
+    @Selector("contentsScale")
+    @NFloat
+    public native double contentsScale();
 
     @Generated
     @Selector("duration")
@@ -366,6 +371,10 @@ public class CAEmitterCell extends NSObject implements NSCoding, CAMediaTiming {
     @Generated
     @Selector("setContentsRect:")
     public native void setContentsRect(@ByValue CGRect value);
+
+    @Generated
+    @Selector("setContentsScale:")
+    public native void setContentsScale(@NFloat double value);
 
     @Generated
     @Selector("setDuration:")
@@ -541,13 +550,4 @@ public class CAEmitterCell extends NSObject implements NSCoding, CAMediaTiming {
     @Selector("zAcceleration")
     @NFloat
     public native double zAcceleration();
-
-    @Generated
-    @Selector("contentsScale")
-    @NFloat
-    public native double contentsScale();
-
-    @Generated
-    @Selector("setContentsScale:")
-    public native void setContentsScale(@NFloat double value);
 }

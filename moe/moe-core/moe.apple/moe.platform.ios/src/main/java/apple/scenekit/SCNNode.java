@@ -75,29 +75,13 @@ public class SCNNode extends NSObject
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native SCNNode alloc();
-
-    @Generated
-    @Selector("node")
-    public static native SCNNode node();
-
-    @Generated
-    @Selector("nodeWithGeometry:")
-    public static native SCNNode nodeWithGeometry(SCNGeometry geometry);
-
-    @Generated
-    @Selector("supportsSecureCoding")
-    public static native boolean supportsSecureCoding();
-
-    @Generated
-    @Selector("nodeWithMDLObject:")
-    public static native SCNNode nodeWithMDLObject(MDLObject mdlObject);
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -175,6 +159,18 @@ public class SCNNode extends NSObject
     public static native Object new_objc();
 
     @Generated
+    @Selector("node")
+    public static native SCNNode node();
+
+    @Generated
+    @Selector("nodeWithGeometry:")
+    public static native SCNNode nodeWithGeometry(SCNGeometry geometry);
+
+    @Generated
+    @Selector("nodeWithMDLObject:")
+    public static native SCNNode nodeWithMDLObject(MDLObject mdlObject);
+
+    @Generated
     @Selector("resolveClassMethod:")
     public static native boolean resolveClassMethod(SEL sel);
 
@@ -191,6 +187,10 @@ public class SCNNode extends NSObject
     public static native Class superclass_static();
 
     @Generated
+    @Selector("supportsSecureCoding")
+    public static native boolean supportsSecureCoding();
+
+    @Generated
     @Selector("version")
     @NInt
     public static native long version_static();
@@ -200,8 +200,16 @@ public class SCNNode extends NSObject
     public native SCNAction actionForKey(String key);
 
     @Generated
+    @Selector("actionKeys")
+    public native NSArray<String> actionKeys();
+
+    @Generated
     @Selector("addAnimation:forKey:")
     public native void addAnimationForKey(CAAnimation animation, String key);
+
+    @Generated
+    @Selector("addAudioPlayer:")
+    public native void addAudioPlayer(SCNAudioPlayer player);
 
     @Generated
     @Selector("addChildNode:")
@@ -218,6 +226,10 @@ public class SCNNode extends NSObject
     @Generated
     @Selector("animationKeys")
     public native NSArray<String> animationKeys();
+
+    @Generated
+    @Selector("audioPlayers")
+    public native NSArray<? extends SCNAudioPlayer> audioPlayers();
 
     @Generated
     @Selector("camera")
@@ -290,6 +302,11 @@ public class SCNNode extends NSObject
             @ObjCBlock(name = "call_enumerateChildNodesUsingBlock") Block_enumerateChildNodesUsingBlock block);
 
     @Generated
+    @Selector("enumerateHierarchyUsingBlock:")
+    public native void enumerateHierarchyUsingBlock(
+            @ObjCBlock(name = "call_enumerateHierarchyUsingBlock") Block_enumerateHierarchyUsingBlock block);
+
+    @Generated
     @Selector("eulerAngles")
     @ByValue
     public native SCNVector3 eulerAngles();
@@ -298,9 +315,9 @@ public class SCNNode extends NSObject
     @Selector("filters")
     public native NSArray<? extends CIFilter> filters();
 
-    @MappedReturn(ObjCObjectMapper.class)
     @Generated
     @Selector("flattenedClone")
+    @MappedReturn(ObjCObjectMapper.class)
     public native Object flattenedClone();
 
     @Generated
@@ -365,6 +382,11 @@ public class SCNNode extends NSObject
     public native SCNMorpher morpher();
 
     @Generated
+    @Selector("movabilityHint")
+    @NInt
+    public native long movabilityHint();
+
+    @Generated
     @Selector("name")
     public native String name();
 
@@ -425,6 +447,10 @@ public class SCNNode extends NSObject
     public native void removeAllAnimations();
 
     @Generated
+    @Selector("removeAllAudioPlayers")
+    public native void removeAllAudioPlayers();
+
+    @Generated
     @Selector("removeAllParticleSystems")
     public native void removeAllParticleSystems();
 
@@ -435,6 +461,10 @@ public class SCNNode extends NSObject
     @Generated
     @Selector("removeAnimationForKey:fadeOutDuration:")
     public native void removeAnimationForKeyFadeOutDuration(String key, @NFloat double duration);
+
+    @Generated
+    @Selector("removeAudioPlayer:")
+    public native void removeAudioPlayer(SCNAudioPlayer player);
 
     @Generated
     @Selector("removeFromParentNode")
@@ -531,6 +561,10 @@ public class SCNNode extends NSObject
     public native void setMorpher(SCNMorpher value);
 
     @Generated
+    @Selector("setMovabilityHint:")
+    public native void setMovabilityHint(@NInt long value);
+
+    @Generated
     @Selector("setName:")
     public native void setName(String value);
 
@@ -591,6 +625,10 @@ public class SCNNode extends NSObject
     public native void setSkinner(SCNSkinner value);
 
     @Generated
+    @Selector("setSpeed:forAnimationKey:")
+    public native void setSpeedForAnimationKey(@NFloat double speed, String key);
+
+    @Generated
     @Selector("setTransform:")
     public native void setTransform(@ByValue SCNMatrix4 value);
 
@@ -614,26 +652,6 @@ public class SCNNode extends NSObject
     @ByValue
     public native SCNMatrix4 worldTransform();
 
-    @Generated
-    @Selector("actionKeys")
-    public native NSArray<String> actionKeys();
-
-    @Generated
-    @Selector("addAudioPlayer:")
-    public native void addAudioPlayer(SCNAudioPlayer player);
-
-    @Generated
-    @Selector("audioPlayers")
-    public native NSArray<? extends SCNAudioPlayer> audioPlayers();
-
-    @Generated
-    @Selector("removeAllAudioPlayers")
-    public native void removeAllAudioPlayers();
-
-    @Generated
-    @Selector("removeAudioPlayer:")
-    public native void removeAudioPlayer(SCNAudioPlayer player);
-
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_childNodesPassingTest {
@@ -646,5 +664,12 @@ public class SCNNode extends NSObject
     public interface Block_enumerateChildNodesUsingBlock {
         @Generated
         void call_enumerateChildNodesUsingBlock(SCNNode arg0, BoolPtr arg1);
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_enumerateHierarchyUsingBlock {
+        @Generated
+        void call_enumerateHierarchyUsingBlock(SCNNode arg0, BoolPtr arg1);
     }
 }

@@ -56,30 +56,13 @@ public class MDLSkyCubeTexture extends MDLTexture {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native MDLSkyCubeTexture alloc();
-
-    @Generated
-    @Selector("textureCubeWithImagesNamed:")
-    public static native MDLSkyCubeTexture textureCubeWithImagesNamed(NSArray<String> names);
-
-    @Generated
-    @Selector("textureCubeWithImagesNamed:bundle:")
-    public static native MDLSkyCubeTexture textureCubeWithImagesNamedBundle(NSArray<String> names,
-            NSBundle bundleOrNil);
-
-    @Generated
-    @Selector("textureNamed:")
-    public static native MDLSkyCubeTexture textureNamed(String name);
-
-    @Generated
-    @Selector("textureNamed:bundle:")
-    public static native MDLSkyCubeTexture textureNamedBundle(String name, NSBundle bundleOrNil);
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -171,6 +154,23 @@ public class MDLSkyCubeTexture extends MDLTexture {
     @Generated
     @Selector("superclass")
     public static native Class superclass_static();
+
+    @Generated
+    @Selector("textureCubeWithImagesNamed:")
+    public static native MDLSkyCubeTexture textureCubeWithImagesNamed(NSArray<String> names);
+
+    @Generated
+    @Selector("textureCubeWithImagesNamed:bundle:")
+    public static native MDLSkyCubeTexture textureCubeWithImagesNamedBundle(NSArray<String> names,
+            NSBundle bundleOrNil);
+
+    @Generated
+    @Selector("textureNamed:")
+    public static native MDLSkyCubeTexture textureNamed(String name);
+
+    @Generated
+    @Selector("textureNamed:bundle:")
+    public static native MDLSkyCubeTexture textureNamedBundle(String name, NSBundle bundleOrNil);
 
     @Generated
     @Selector("version")

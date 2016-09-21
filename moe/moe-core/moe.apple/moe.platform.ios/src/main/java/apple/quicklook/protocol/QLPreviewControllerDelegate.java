@@ -65,6 +65,14 @@ public interface QLPreviewControllerDelegate {
 
     @Generated
     @IsOptional
+    @Selector("previewController:transitionViewForPreviewItem:")
+    default UIView previewControllerTransitionViewForPreviewItem(QLPreviewController controller,
+            @Mapped(ObjCObjectMapper.class) Object item) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Generated
+    @IsOptional
     @Selector("previewControllerDidDismiss:")
     default void previewControllerDidDismiss(QLPreviewController controller) {
         throw new java.lang.UnsupportedOperationException();

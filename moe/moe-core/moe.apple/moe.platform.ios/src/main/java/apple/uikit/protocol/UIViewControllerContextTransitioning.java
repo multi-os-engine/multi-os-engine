@@ -70,6 +70,10 @@ public interface UIViewControllerContextTransitioning {
     boolean isInteractive();
 
     @Generated
+    @Selector("pauseInteractiveTransition")
+    void pauseInteractiveTransition();
+
+    @Generated
     @Selector("presentationStyle")
     @NInt
     long presentationStyle();

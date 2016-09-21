@@ -28,7 +28,6 @@ import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NUInt;
 import org.moe.natj.general.ann.ReferenceInfo;
 import org.moe.natj.general.ann.Runtime;
-import org.moe.natj.general.ann.UncertainReturn;
 import org.moe.natj.general.ptr.ConstPtr;
 import org.moe.natj.general.ptr.Ptr;
 import org.moe.natj.general.ptr.VoidPtr;
@@ -70,7 +69,6 @@ public final class JSClassDefinition extends StructObject {
 
     @Generated
     @StructureField(order = 2, isGetter = true)
-    @UncertainReturn("Options: java.string, c.const-byte-ptr Fallback: java.string")
     public native String className();
 
     @Generated
@@ -85,20 +83,18 @@ public final class JSClassDefinition extends StructObject {
     @StructureField(order = 3, isGetter = false)
     public native void setParentClass(JSClassRef value);
 
-    @ReferenceInfo(type = JSStaticValue.class)
     @Generated
     @StructureField(order = 4, isGetter = true)
-    @UncertainReturn("Options: reference, array Fallback: reference")
+    @ReferenceInfo(type = JSStaticValue.class)
     public native ConstPtr<JSStaticValue> staticValues();
 
     @Generated
     @StructureField(order = 4, isGetter = false)
     public native void setStaticValues(ConstPtr<JSStaticValue> value);
 
-    @ReferenceInfo(type = JSStaticFunction.class)
     @Generated
     @StructureField(order = 5, isGetter = true)
-    @UncertainReturn("Options: reference, array Fallback: reference")
+    @ReferenceInfo(type = JSStaticFunction.class)
     public native ConstPtr<JSStaticFunction> staticFunctions();
 
     @Generated
@@ -106,55 +102,13 @@ public final class JSClassDefinition extends StructObject {
     public native void setStaticFunctions(ConstPtr<JSStaticFunction> value);
 
     @Generated
-    @StructureField(order = 6, isGetter = false)
-    public native void setInitialize(@FunctionPtr(name = "call_initialize") Function_initialize value);
-
-    @Generated
-    @StructureField(order = 7, isGetter = false)
-    public native void set_finalize(@FunctionPtr(name = "call__finalize") Function__finalize value);
-
-    @Generated
-    @StructureField(order = 8, isGetter = false)
-    public native void setHasProperty(@FunctionPtr(name = "call_hasProperty") Function_hasProperty value);
-
-    @Generated
-    @StructureField(order = 9, isGetter = false)
-    public native void setGetProperty(@FunctionPtr(name = "call_getProperty") Function_getProperty value);
-
-    @Generated
-    @StructureField(order = 10, isGetter = false)
-    public native void setSetProperty(@FunctionPtr(name = "call_setProperty") Function_setProperty value);
-
-    @Generated
-    @StructureField(order = 11, isGetter = false)
-    public native void setDeleteProperty(@FunctionPtr(name = "call_deleteProperty") Function_deleteProperty value);
-
-    @Generated
-    @StructureField(order = 12, isGetter = false)
-    public native void setGetPropertyNames(
-            @FunctionPtr(name = "call_getPropertyNames") Function_getPropertyNames value);
-
-    @Generated
-    @StructureField(order = 13, isGetter = false)
-    public native void setCallAsFunction(@FunctionPtr(name = "call_callAsFunction") Function_callAsFunction value);
-
-    @Generated
-    @StructureField(order = 14, isGetter = false)
-    public native void setCallAsConstructor(
-            @FunctionPtr(name = "call_callAsConstructor") Function_callAsConstructor value);
-
-    @Generated
-    @StructureField(order = 15, isGetter = false)
-    public native void setHasInstance(@FunctionPtr(name = "call_hasInstance") Function_hasInstance value);
-
-    @Generated
-    @StructureField(order = 16, isGetter = false)
-    public native void setConvertToType(@FunctionPtr(name = "call_convertToType") Function_convertToType value);
-
-    @Generated
     @StructureField(order = 6, isGetter = true)
     @FunctionPtr(name = "call_initialize")
     public native Function_initialize initialize();
+
+    @Generated
+    @StructureField(order = 6, isGetter = false)
+    public native void setInitialize(@FunctionPtr(name = "call_initialize") Function_initialize value);
 
     @Generated
     @StructureField(order = 7, isGetter = true)
@@ -162,9 +116,17 @@ public final class JSClassDefinition extends StructObject {
     public native Function__finalize _finalize();
 
     @Generated
+    @StructureField(order = 7, isGetter = false)
+    public native void set_finalize(@FunctionPtr(name = "call__finalize") Function__finalize value);
+
+    @Generated
     @StructureField(order = 8, isGetter = true)
     @FunctionPtr(name = "call_hasProperty")
     public native Function_hasProperty hasProperty();
+
+    @Generated
+    @StructureField(order = 8, isGetter = false)
+    public native void setHasProperty(@FunctionPtr(name = "call_hasProperty") Function_hasProperty value);
 
     @Generated
     @StructureField(order = 9, isGetter = true)
@@ -172,9 +134,17 @@ public final class JSClassDefinition extends StructObject {
     public native Function_getProperty getProperty();
 
     @Generated
+    @StructureField(order = 9, isGetter = false)
+    public native void setGetProperty(@FunctionPtr(name = "call_getProperty") Function_getProperty value);
+
+    @Generated
     @StructureField(order = 10, isGetter = true)
     @FunctionPtr(name = "call_setProperty")
     public native Function_setProperty setProperty();
+
+    @Generated
+    @StructureField(order = 10, isGetter = false)
+    public native void setSetProperty(@FunctionPtr(name = "call_setProperty") Function_setProperty value);
 
     @Generated
     @StructureField(order = 11, isGetter = true)
@@ -182,9 +152,18 @@ public final class JSClassDefinition extends StructObject {
     public native Function_deleteProperty deleteProperty();
 
     @Generated
+    @StructureField(order = 11, isGetter = false)
+    public native void setDeleteProperty(@FunctionPtr(name = "call_deleteProperty") Function_deleteProperty value);
+
+    @Generated
     @StructureField(order = 12, isGetter = true)
     @FunctionPtr(name = "call_getPropertyNames")
     public native Function_getPropertyNames getPropertyNames();
+
+    @Generated
+    @StructureField(order = 12, isGetter = false)
+    public native void setGetPropertyNames(
+            @FunctionPtr(name = "call_getPropertyNames") Function_getPropertyNames value);
 
     @Generated
     @StructureField(order = 13, isGetter = true)
@@ -192,9 +171,18 @@ public final class JSClassDefinition extends StructObject {
     public native Function_callAsFunction callAsFunction();
 
     @Generated
+    @StructureField(order = 13, isGetter = false)
+    public native void setCallAsFunction(@FunctionPtr(name = "call_callAsFunction") Function_callAsFunction value);
+
+    @Generated
     @StructureField(order = 14, isGetter = true)
     @FunctionPtr(name = "call_callAsConstructor")
     public native Function_callAsConstructor callAsConstructor();
+
+    @Generated
+    @StructureField(order = 14, isGetter = false)
+    public native void setCallAsConstructor(
+            @FunctionPtr(name = "call_callAsConstructor") Function_callAsConstructor value);
 
     @Generated
     @StructureField(order = 15, isGetter = true)
@@ -202,9 +190,17 @@ public final class JSClassDefinition extends StructObject {
     public native Function_hasInstance hasInstance();
 
     @Generated
+    @StructureField(order = 15, isGetter = false)
+    public native void setHasInstance(@FunctionPtr(name = "call_hasInstance") Function_hasInstance value);
+
+    @Generated
     @StructureField(order = 16, isGetter = true)
     @FunctionPtr(name = "call_convertToType")
     public native Function_convertToType convertToType();
+
+    @Generated
+    @StructureField(order = 16, isGetter = false)
+    public native void setConvertToType(@FunctionPtr(name = "call_convertToType") Function_convertToType value);
 
     @Runtime(CRuntime.class)
     @Generated

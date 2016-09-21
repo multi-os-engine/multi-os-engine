@@ -55,17 +55,13 @@ public class MTLVertexDescriptor extends NSObject implements NSCopying {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native MTLVertexDescriptor alloc();
-
-    @Generated
-    @Selector("vertexDescriptor")
-    public static native MTLVertexDescriptor vertexDescriptor();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -162,6 +158,10 @@ public class MTLVertexDescriptor extends NSObject implements NSCopying {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("vertexDescriptor")
+    public static native MTLVertexDescriptor vertexDescriptor();
 
     @Generated
     @Selector("attributes")

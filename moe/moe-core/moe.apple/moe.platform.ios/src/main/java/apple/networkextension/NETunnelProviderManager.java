@@ -56,18 +56,13 @@ public class NETunnelProviderManager extends NEVPNManager {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native NETunnelProviderManager alloc();
-
-    @Generated
-    @Selector("loadAllFromPreferencesWithCompletionHandler:")
-    public static native void loadAllFromPreferencesWithCompletionHandler(
-            @ObjCBlock(name = "call_loadAllFromPreferencesWithCompletionHandler") Block_loadAllFromPreferencesWithCompletionHandler completionHandler);
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -139,6 +134,11 @@ public class NETunnelProviderManager extends NEVPNManager {
     public static native void load_objc_static();
 
     @Generated
+    @Selector("loadAllFromPreferencesWithCompletionHandler:")
+    public static native void loadAllFromPreferencesWithCompletionHandler(
+            @ObjCBlock(name = "call_loadAllFromPreferencesWithCompletionHandler") Block_loadAllFromPreferencesWithCompletionHandler completionHandler);
+
+    @Generated
     @Owned
     @Selector("new")
     @MappedReturn(ObjCObjectMapper.class)
@@ -154,7 +154,7 @@ public class NETunnelProviderManager extends NEVPNManager {
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("sharedManager")

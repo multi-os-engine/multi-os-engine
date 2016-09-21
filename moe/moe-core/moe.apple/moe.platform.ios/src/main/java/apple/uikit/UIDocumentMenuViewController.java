@@ -59,13 +59,13 @@ public class UIDocumentMenuViewController extends UIViewController {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native UIDocumentMenuViewController alloc();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -164,7 +164,7 @@ public class UIDocumentMenuViewController extends UIViewController {
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")
@@ -188,6 +188,10 @@ public class UIDocumentMenuViewController extends UIViewController {
     @Generated
     @Selector("init")
     public native UIDocumentMenuViewController init();
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native UIDocumentMenuViewController initWithCoder(NSCoder aDecoder);
 
     @Generated
     @Selector("initWithDocumentTypes:inMode:")
@@ -217,10 +221,6 @@ public class UIDocumentMenuViewController extends UIViewController {
             org.moe.natj.objc.ObjCRuntime.dissociateObjCObject(this, __old);
         }
     }
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native UIDocumentMenuViewController initWithCoder(NSCoder aDecoder);
 
     @Runtime(ObjCRuntime.class)
     @Generated

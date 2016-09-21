@@ -47,22 +47,14 @@ public interface UIAppearance {
     @MappedReturn(ObjCObjectMapper.class)
     Object _appearanceForTraitCollection(UITraitCollection trait);
 
-    @Deprecated
     @Generated
     @Variadic()
+    @Deprecated
     @Selector("appearanceForTraitCollection:whenContainedIn:")
     @ProtocolClassMethod("appearanceForTraitCollectionWhenContainedIn")
     @MappedReturn(ObjCObjectMapper.class)
     Object _appearanceForTraitCollectionWhenContainedIn(UITraitCollection trait,
             @Mapped(ObjCObjectMapper.class) Object ContainerClass, Object... varargs);
-
-    @Deprecated
-    @Generated
-    @Variadic()
-    @Selector("appearanceWhenContainedIn:")
-    @ProtocolClassMethod("appearanceWhenContainedIn")
-    @MappedReturn(ObjCObjectMapper.class)
-    Object _appearanceWhenContainedIn(@Mapped(ObjCObjectMapper.class) Object ContainerClass, Object... varargs);
 
     @Generated
     @Selector("appearanceForTraitCollection:whenContainedInInstancesOfClasses:")
@@ -70,6 +62,14 @@ public interface UIAppearance {
     @MappedReturn(ObjCObjectMapper.class)
     Object _appearanceForTraitCollectionWhenContainedInInstancesOfClasses(UITraitCollection trait,
             NSArray<?> containerTypes);
+
+    @Generated
+    @Variadic()
+    @Deprecated
+    @Selector("appearanceWhenContainedIn:")
+    @ProtocolClassMethod("appearanceWhenContainedIn")
+    @MappedReturn(ObjCObjectMapper.class)
+    Object _appearanceWhenContainedIn(@Mapped(ObjCObjectMapper.class) Object ContainerClass, Object... varargs);
 
     @Generated
     @Selector("appearanceWhenContainedInInstancesOfClasses:")

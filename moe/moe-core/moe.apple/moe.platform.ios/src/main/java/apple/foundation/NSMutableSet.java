@@ -30,6 +30,7 @@ import org.moe.natj.general.ann.NUInt;
 import org.moe.natj.general.ann.Owned;
 import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.general.ptr.ConstPtr;
+import org.moe.natj.general.ptr.Ptr;
 import org.moe.natj.general.ptr.VoidPtr;
 import org.moe.natj.objc.Class;
 import org.moe.natj.objc.ObjCRuntime;
@@ -54,45 +55,13 @@ public class NSMutableSet<_ObjectType> extends NSSet<_ObjectType> {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native NSMutableSet<?> alloc();
-
-    @Generated
-    @Selector("set")
-    public static native <_ObjectType> NSMutableSet<?> set();
-
-    @Generated
-    @Selector("setWithArray:")
-    public static native <_ObjectType> NSMutableSet<?> setWithArray(NSArray<_ObjectType> array);
-
-    @Generated
-    @Selector("setWithCapacity:")
-    public static native <_ObjectType> NSMutableSet<?> setWithCapacity(@NUInt long numItems);
-
-    @Generated
-    @Selector("setWithObject:")
-    public static native <_ObjectType> NSMutableSet<?> setWithObject(
-            @Mapped(ObjCObjectMapper.class) _ObjectType object);
-
-    @Generated
-    @Variadic()
-    @Selector("setWithObjects:")
-    public static native <_ObjectType> NSMutableSet<?> setWithObjects(
-            @Mapped(ObjCObjectMapper.class) _ObjectType firstObj, Object... varargs);
-
-    @Generated
-    @Selector("setWithObjects:count:")
-    public static native <_ObjectType> NSMutableSet<?> setWithObjectsCount(ConstPtr<_ObjectType> objects,
-            @NUInt long cnt);
-
-    @Generated
-    @Selector("setWithSet:")
-    public static native <_ObjectType> NSMutableSet<?> setWithSet(NSSet<_ObjectType> set);
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -178,8 +147,40 @@ public class NSMutableSet<_ObjectType> extends NSSet<_ObjectType> {
     public static native boolean resolveInstanceMethod(SEL sel);
 
     @Generated
+    @Selector("set")
+    public static native <_ObjectType> NSMutableSet<?> set();
+
+    @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
+
+    @Generated
+    @Selector("setWithArray:")
+    public static native <_ObjectType> NSMutableSet<?> setWithArray(NSArray<_ObjectType> array);
+
+    @Generated
+    @Selector("setWithCapacity:")
+    public static native <_ObjectType> NSMutableSet<?> setWithCapacity(@NUInt long numItems);
+
+    @Generated
+    @Selector("setWithObject:")
+    public static native <_ObjectType> NSMutableSet<?> setWithObject(
+            @Mapped(ObjCObjectMapper.class) _ObjectType object);
+
+    @Generated
+    @Variadic()
+    @Selector("setWithObjects:")
+    public static native <_ObjectType> NSMutableSet<?> setWithObjects(
+            @Mapped(ObjCObjectMapper.class) _ObjectType firstObj, Object... varargs);
+
+    @Generated
+    @Selector("setWithObjects:count:")
+    public static native <_ObjectType> NSMutableSet<?> setWithObjectsCount(ConstPtr<_ObjectType> objects,
+            @NUInt long cnt);
+
+    @Generated
+    @Selector("setWithSet:")
+    public static native <_ObjectType> NSMutableSet<?> setWithSet(NSSet<_ObjectType> set);
 
     @Generated
     @Selector("superclass")
@@ -230,7 +231,7 @@ public class NSMutableSet<_ObjectType> extends NSSet<_ObjectType> {
 
     @Generated
     @Selector("initWithObjects:count:")
-    public native NSMutableSet<?> initWithObjectsCount(ConstPtr<_ObjectType> objects, @NUInt long cnt);
+    public native NSMutableSet<?> initWithObjectsCount(Ptr<_ObjectType> objects, @NUInt long cnt);
 
     @Generated
     @Selector("initWithSet:")
@@ -261,12 +262,12 @@ public class NSMutableSet<_ObjectType> extends NSSet<_ObjectType> {
     public native void setSet(NSSet<_ObjectType> otherSet);
 
     @Generated
-    @Selector("unionSet:")
-    public native void unionSet(NSSet<_ObjectType> otherSet);
-
-    @Generated
     @ProtocolClassMethod("supportsSecureCoding")
     public boolean _supportsSecureCoding() {
         return supportsSecureCoding();
     }
+
+    @Generated
+    @Selector("unionSet:")
+    public native void unionSet(NSSet<_ObjectType> otherSet);
 }

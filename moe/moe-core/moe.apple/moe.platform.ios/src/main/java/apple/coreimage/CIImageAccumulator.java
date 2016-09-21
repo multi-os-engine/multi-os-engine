@@ -57,22 +57,13 @@ public class CIImageAccumulator extends NSObject {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native CIImageAccumulator alloc();
-
-    @Generated
-    @Selector("imageAccumulatorWithExtent:format:")
-    public static native CIImageAccumulator imageAccumulatorWithExtentFormat(@ByValue CGRect extent, int format);
-
-    @Generated
-    @Selector("imageAccumulatorWithExtent:format:colorSpace:")
-    public static native CIImageAccumulator imageAccumulatorWithExtentFormatColorSpace(@ByValue CGRect extent,
-            int format, CGColorSpaceRef colorSpace);
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -113,6 +104,15 @@ public class CIImageAccumulator extends NSObject {
     @Selector("hash")
     @NUInt
     public static native long hash_static();
+
+    @Generated
+    @Selector("imageAccumulatorWithExtent:format:")
+    public static native CIImageAccumulator imageAccumulatorWithExtentFormat(@ByValue CGRect extent, int format);
+
+    @Generated
+    @Selector("imageAccumulatorWithExtent:format:colorSpace:")
+    public static native CIImageAccumulator imageAccumulatorWithExtentFormatColorSpace(@ByValue CGRect extent,
+            int format, CGColorSpaceRef colorSpace);
 
     @Generated
     @Selector("initialize")

@@ -56,73 +56,13 @@ public class UIFont extends NSObject implements NSCopying {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native UIFont alloc();
-
-    @Generated
-    @Selector("boldSystemFontOfSize:")
-    public static native UIFont boldSystemFontOfSize(@NFloat double fontSize);
-
-    @Generated
-    @Selector("buttonFontSize")
-    @NFloat
-    public static native double buttonFontSize();
-
-    @Generated
-    @Selector("familyNames")
-    public static native NSArray<String> familyNames();
-
-    @Generated
-    @Selector("fontNamesForFamilyName:")
-    public static native NSArray<String> fontNamesForFamilyName(String familyName);
-
-    @Generated
-    @Selector("fontWithDescriptor:size:")
-    public static native UIFont fontWithDescriptorSize(UIFontDescriptor descriptor, @NFloat double pointSize);
-
-    @Generated
-    @Selector("fontWithName:size:")
-    public static native UIFont fontWithNameSize(String fontName, @NFloat double fontSize);
-
-    @Generated
-    @Selector("italicSystemFontOfSize:")
-    public static native UIFont italicSystemFontOfSize(@NFloat double fontSize);
-
-    @Generated
-    @Selector("labelFontSize")
-    @NFloat
-    public static native double labelFontSize();
-
-    @Generated
-    @Selector("preferredFontForTextStyle:")
-    public static native UIFont preferredFontForTextStyle(String style);
-
-    @Generated
-    @Selector("smallSystemFontSize")
-    @NFloat
-    public static native double smallSystemFontSize();
-
-    @Generated
-    @Selector("systemFontOfSize:")
-    public static native UIFont systemFontOfSize(@NFloat double fontSize);
-
-    @Generated
-    @Selector("systemFontOfSize:weight:")
-    public static native UIFont systemFontOfSizeWeight(@NFloat double fontSize, @NFloat double weight);
-
-    @Generated
-    @Selector("systemFontSize")
-    @NFloat
-    public static native double systemFontSize();
-
-    @Generated
-    @Selector("monospacedDigitSystemFontOfSize:weight:")
-    public static native UIFont monospacedDigitSystemFontOfSizeWeight(@NFloat double fontSize, @NFloat double weight);
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -132,6 +72,15 @@ public class UIFont extends NSObject implements NSCopying {
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
     public static native boolean automaticallyNotifiesObserversForKey(String key);
+
+    @Generated
+    @Selector("boldSystemFontOfSize:")
+    public static native UIFont boldSystemFontOfSize(@NFloat double fontSize);
+
+    @Generated
+    @Selector("buttonFontSize")
+    @NFloat
+    public static native double buttonFontSize();
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
@@ -160,6 +109,22 @@ public class UIFont extends NSObject implements NSCopying {
     public static native String description_static();
 
     @Generated
+    @Selector("familyNames")
+    public static native NSArray<String> familyNames();
+
+    @Generated
+    @Selector("fontNamesForFamilyName:")
+    public static native NSArray<String> fontNamesForFamilyName(String familyName);
+
+    @Generated
+    @Selector("fontWithDescriptor:size:")
+    public static native UIFont fontWithDescriptorSize(UIFontDescriptor descriptor, @NFloat double pointSize);
+
+    @Generated
+    @Selector("fontWithName:size:")
+    public static native UIFont fontWithNameSize(String fontName, @NFloat double fontSize);
+
+    @Generated
     @Selector("hash")
     @NUInt
     public static native long hash_static();
@@ -186,18 +151,40 @@ public class UIFont extends NSObject implements NSCopying {
     public static native boolean isSubclassOfClass(Class aClass);
 
     @Generated
+    @Selector("italicSystemFontOfSize:")
+    public static native UIFont italicSystemFontOfSize(@NFloat double fontSize);
+
+    @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+
+    @Generated
+    @Selector("labelFontSize")
+    @NFloat
+    public static native double labelFontSize();
 
     @Generated
     @Selector("load")
     public static native void load_objc_static();
 
     @Generated
+    @Selector("monospacedDigitSystemFontOfSize:weight:")
+    public static native UIFont monospacedDigitSystemFontOfSizeWeight(@NFloat double fontSize, @NFloat double weight);
+
+    @Generated
     @Owned
     @Selector("new")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object new_objc();
+
+    @Generated
+    @Selector("preferredFontForTextStyle:")
+    public static native UIFont preferredFontForTextStyle(String style);
+
+    @Generated
+    @Selector("preferredFontForTextStyle:compatibleWithTraitCollection:")
+    public static native UIFont preferredFontForTextStyleCompatibleWithTraitCollection(String style,
+            UITraitCollection traitCollection);
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -212,8 +199,26 @@ public class UIFont extends NSObject implements NSCopying {
     public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
+    @Selector("smallSystemFontSize")
+    @NFloat
+    public static native double smallSystemFontSize();
+
+    @Generated
     @Selector("superclass")
     public static native Class superclass_static();
+
+    @Generated
+    @Selector("systemFontOfSize:")
+    public static native UIFont systemFontOfSize(@NFloat double fontSize);
+
+    @Generated
+    @Selector("systemFontOfSize:weight:")
+    public static native UIFont systemFontOfSizeWeight(@NFloat double fontSize, @NFloat double weight);
+
+    @Generated
+    @Selector("systemFontSize")
+    @NFloat
+    public static native double systemFontSize();
 
     @Generated
     @Selector("version")

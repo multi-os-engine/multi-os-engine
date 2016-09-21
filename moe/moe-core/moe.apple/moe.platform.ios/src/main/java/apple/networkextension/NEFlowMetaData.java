@@ -18,9 +18,12 @@ package apple.networkextension;
 
 import apple.NSObject;
 import apple.foundation.NSArray;
+import apple.foundation.NSCoder;
 import apple.foundation.NSData;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
+import apple.foundation.protocol.NSCopying;
+import apple.foundation.protocol.NSSecureCoding;
 import org.moe.natj.c.ann.FunctionPtr;
 import org.moe.natj.general.NatJ;
 import org.moe.natj.general.Pointer;
@@ -37,6 +40,7 @@ import org.moe.natj.objc.Class;
 import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
+import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
@@ -44,7 +48,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @Library("NetworkExtension")
 @Runtime(ObjCRuntime.class)
 @ObjCClassBinding
-public class NEFlowMetaData extends NSObject {
+public class NEFlowMetaData extends NSObject implements NSCopying, NSSecureCoding {
     static {
         NatJ.register();
     }
@@ -55,13 +59,13 @@ public class NEFlowMetaData extends NSObject {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native NEFlowMetaData alloc();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -155,13 +159,31 @@ public class NEFlowMetaData extends NSObject {
     public static native Class superclass_static();
 
     @Generated
+    @Selector("supportsSecureCoding")
+    public static native boolean supportsSecureCoding();
+
+    @Generated
     @Selector("version")
     @NInt
     public static native long version_static();
 
     @Generated
+    @Owned
+    @Selector("copyWithZone:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native Object copyWithZone(VoidPtr zone);
+
+    @Generated
+    @Selector("encodeWithCoder:")
+    public native void encodeWithCoder(NSCoder aCoder);
+
+    @Generated
     @Selector("init")
     public native NEFlowMetaData init();
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native NEFlowMetaData initWithCoder(NSCoder aDecoder);
 
     @Generated
     @Selector("sourceAppSigningIdentifier")
@@ -170,4 +192,10 @@ public class NEFlowMetaData extends NSObject {
     @Generated
     @Selector("sourceAppUniqueIdentifier")
     public native NSData sourceAppUniqueIdentifier();
+
+    @Generated
+    @ProtocolClassMethod("supportsSecureCoding")
+    public boolean _supportsSecureCoding() {
+        return supportsSecureCoding();
+    }
 }

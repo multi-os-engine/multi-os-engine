@@ -54,13 +54,13 @@ public class MTLRenderPassDepthAttachmentDescriptor extends MTLRenderPassAttachm
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native MTLRenderPassDepthAttachmentDescriptor alloc();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -163,17 +163,17 @@ public class MTLRenderPassDepthAttachmentDescriptor extends MTLRenderPassAttachm
     public native double clearDepth();
 
     @Generated
+    @Selector("depthResolveFilter")
+    @NUInt
+    public native long depthResolveFilter();
+
+    @Generated
     @Selector("init")
     public native MTLRenderPassDepthAttachmentDescriptor init();
 
     @Generated
     @Selector("setClearDepth:")
     public native void setClearDepth(double value);
-
-    @Generated
-    @Selector("depthResolveFilter")
-    @NUInt
-    public native long depthResolveFilter();
 
     @Generated
     @Selector("setDepthResolveFilter:")

@@ -59,13 +59,13 @@ public class PHLivePhotoRequestOptions extends NSObject implements NSCopying {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native PHLivePhotoRequestOptions alloc();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -134,7 +134,7 @@ public class PHLivePhotoRequestOptions extends NSObject implements NSCopying {
 
     @Generated
     @Selector("load")
-    public static native void load_objc();
+    public static native void load_objc_static();
 
     @Generated
     @Owned
@@ -151,17 +151,8 @@ public class PHLivePhotoRequestOptions extends NSObject implements NSCopying {
     public static native boolean resolveInstanceMethod(SEL sel);
 
     @Generated
-    @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
-
-    @Generated
     @Selector("superclass")
     public static native Class superclass_static();
-
-    @Generated
-    @Selector("version")
-    @NInt
-    public static native long version();
 
     @Generated
     @Owned
@@ -198,6 +189,15 @@ public class PHLivePhotoRequestOptions extends NSObject implements NSCopying {
     @Generated
     @Selector("setProgressHandler:")
     public native void setProgressHandler(@ObjCBlock(name = "call_setProgressHandler") Block_setProgressHandler value);
+
+    @Generated
+    @Selector("setVersion:")
+    public native void setVersion(@NInt long value);
+
+    @Generated
+    @Selector("version")
+    @NInt
+    public native long version();
 
     @Runtime(ObjCRuntime.class)
     @Generated

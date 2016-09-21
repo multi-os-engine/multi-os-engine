@@ -56,13 +56,13 @@ public class CKModifyRecordZonesOperation extends CKDatabaseOperation {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native CKModifyRecordZonesOperation alloc();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -149,7 +149,7 @@ public class CKModifyRecordZonesOperation extends CKDatabaseOperation {
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")
@@ -168,6 +168,11 @@ public class CKModifyRecordZonesOperation extends CKDatabaseOperation {
     @Selector("initWithRecordZonesToSave:recordZoneIDsToDelete:")
     public native CKModifyRecordZonesOperation initWithRecordZonesToSaveRecordZoneIDsToDelete(
             NSArray<? extends CKRecordZone> recordZonesToSave, NSArray<? extends CKRecordZoneID> recordZoneIDsToDelete);
+
+    @Generated
+    @Selector("modifyRecordZonesCompletionBlock")
+    @ObjCBlock(name = "call_modifyRecordZonesCompletionBlock_ret")
+    public native Block_modifyRecordZonesCompletionBlock_ret modifyRecordZonesCompletionBlock();
 
     @Generated
     @Selector("recordZoneIDsToDelete")
@@ -190,24 +195,19 @@ public class CKModifyRecordZonesOperation extends CKDatabaseOperation {
     @Selector("setRecordZonesToSave:")
     public native void setRecordZonesToSave(NSArray<? extends CKRecordZone> value);
 
+    @Runtime(ObjCRuntime.class)
     @Generated
-    @Selector("modifyRecordZonesCompletionBlock")
-    @ObjCBlock(name = "call_modifyRecordZonesCompletionBlock_ret")
-    public native Block_modifyRecordZonesCompletionBlock_ret modifyRecordZonesCompletionBlock();
+    public interface Block_modifyRecordZonesCompletionBlock_ret {
+        @Generated
+        void call_modifyRecordZonesCompletionBlock_ret(NSArray<? extends CKRecordZone> arg0,
+                NSArray<? extends CKRecordZoneID> arg1, NSError arg2);
+    }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_setModifyRecordZonesCompletionBlock {
         @Generated
         void call_setModifyRecordZonesCompletionBlock(NSArray<? extends CKRecordZone> arg0,
-                NSArray<? extends CKRecordZoneID> arg1, NSError arg2);
-    }
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_modifyRecordZonesCompletionBlock_ret {
-        @Generated
-        void call_modifyRecordZonesCompletionBlock_ret(NSArray<? extends CKRecordZone> arg0,
                 NSArray<? extends CKRecordZoneID> arg1, NSError arg2);
     }
 }

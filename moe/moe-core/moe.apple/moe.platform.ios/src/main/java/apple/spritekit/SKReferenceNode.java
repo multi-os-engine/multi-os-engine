@@ -57,29 +57,13 @@ public class SKReferenceNode extends SKNode {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native SKReferenceNode alloc();
-
-    @Generated
-    @Selector("node")
-    public static native SKReferenceNode node();
-
-    @Generated
-    @Selector("nodeWithFileNamed:")
-    public static native SKReferenceNode nodeWithFileNamed(String filename);
-
-    @Generated
-    @Selector("referenceNodeWithFileNamed:")
-    public static native SKReferenceNode referenceNodeWithFileNamed(String fileName);
-
-    @Generated
-    @Selector("referenceNodeWithURL:")
-    public static native SKReferenceNode referenceNodeWithURL(NSURL referenceURL);
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -161,6 +145,14 @@ public class SKReferenceNode extends SKNode {
     public static native Object new_objc();
 
     @Generated
+    @Selector("node")
+    public static native SKReferenceNode node();
+
+    @Generated
+    @Selector("nodeWithFileNamed:")
+    public static native SKReferenceNode nodeWithFileNamed(String filename);
+
+    @Generated
     @Selector("obstaclesFromNodeBounds:")
     public static native NSArray<? extends GKPolygonObstacle> obstaclesFromNodeBounds(NSArray<? extends SKNode> nodes);
 
@@ -173,6 +165,14 @@ public class SKReferenceNode extends SKNode {
     @Selector("obstaclesFromSpriteTextures:accuracy:")
     public static native NSArray<? extends GKPolygonObstacle> obstaclesFromSpriteTexturesAccuracy(
             NSArray<? extends SKNode> sprites, float accuracy);
+
+    @Generated
+    @Selector("referenceNodeWithFileNamed:")
+    public static native SKReferenceNode referenceNodeWithFileNamed(String fileName);
+
+    @Generated
+    @Selector("referenceNodeWithURL:")
+    public static native SKReferenceNode referenceNodeWithURL(NSURL referenceURL);
 
     @Generated
     @Selector("resolveClassMethod:")

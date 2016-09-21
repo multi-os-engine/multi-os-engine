@@ -52,17 +52,13 @@ public class NSURLCredentialStorage extends NSObject {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native NSURLCredentialStorage alloc();
-
-    @Generated
-    @Selector("sharedCredentialStorage")
-    public static native NSURLCredentialStorage sharedCredentialStorage();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -150,6 +146,10 @@ public class NSURLCredentialStorage extends NSObject {
     @Generated
     @Selector("setVersion:")
     public static native void setVersion_static(@NInt long aVersion);
+
+    @Generated
+    @Selector("sharedCredentialStorage")
+    public static native NSURLCredentialStorage sharedCredentialStorage();
 
     @Generated
     @Selector("superclass")

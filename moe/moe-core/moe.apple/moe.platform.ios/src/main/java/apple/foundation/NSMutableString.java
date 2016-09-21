@@ -64,88 +64,13 @@ public class NSMutableString extends NSString {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native NSMutableString alloc();
-
-    @Generated
-    @Selector("string")
-    public static native NSMutableString string();
-
-    @Generated
-    @Selector("stringEncodingForData:encodingOptions:convertedString:usedLossyConversion:")
-    @NUInt
-    public static native long stringEncodingForDataEncodingOptionsConvertedStringUsedLossyConversion(NSData data,
-            NSDictionary<String, ?> opts, Ptr<NSString> string, BoolPtr usedLossyConversion);
-
-    @Generated
-    @Deprecated
-    @Selector("stringWithCString:")
-    public static native NSMutableString stringWithCString(ConstBytePtr bytes);
-
-    @Generated
-    @Selector("stringWithCString:encoding:")
-    public static native NSMutableString stringWithCStringEncoding(ConstBytePtr cString, @NUInt long enc);
-
-    @Generated
-    @Deprecated
-    @Selector("stringWithCString:length:")
-    public static native NSMutableString stringWithCStringLength(ConstBytePtr bytes, @NUInt long length);
-
-    @Generated
-    @Selector("stringWithCapacity:")
-    public static native NSMutableString stringWithCapacity(@NUInt long capacity);
-
-    @Generated
-    @Selector("stringWithCharacters:length:")
-    public static native NSMutableString stringWithCharactersLength(ConstCharPtr characters, @NUInt long length);
-
-    @Generated
-    @Deprecated
-    @Selector("stringWithContentsOfFile:")
-    public static native NSMutableString stringWithContentsOfFile(String path);
-
-    @Generated
-    @Selector("stringWithContentsOfFile:encoding:error:")
-    public static native NSMutableString stringWithContentsOfFileEncodingError(String path, @NUInt long enc,
-            Ptr<NSError> error);
-
-    @Generated
-    @Selector("stringWithContentsOfFile:usedEncoding:error:")
-    public static native NSMutableString stringWithContentsOfFileUsedEncodingError(String path, NUIntPtr enc,
-            Ptr<NSError> error);
-
-    @Generated
-    @Deprecated
-    @Selector("stringWithContentsOfURL:")
-    public static native NSMutableString stringWithContentsOfURL(NSURL url);
-
-    @Generated
-    @Selector("stringWithContentsOfURL:encoding:error:")
-    public static native NSMutableString stringWithContentsOfURLEncodingError(NSURL url, @NUInt long enc,
-            Ptr<NSError> error);
-
-    @Generated
-    @Selector("stringWithContentsOfURL:usedEncoding:error:")
-    public static native NSMutableString stringWithContentsOfURLUsedEncodingError(NSURL url, NUIntPtr enc,
-            Ptr<NSError> error);
-
-    @Generated
-    @Variadic()
-    @Selector("stringWithFormat:")
-    public static native NSMutableString stringWithFormat(String format, Object... varargs);
-
-    @Generated
-    @Selector("stringWithString:")
-    public static native NSMutableString stringWithString(String string);
-
-    @Generated
-    @Selector("stringWithUTF8String:")
-    public static native NSMutableString stringWithUTF8String(ConstBytePtr nullTerminatedCString);
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -223,7 +148,7 @@ public class NSMutableString extends NSString {
 
     @Generated
     @Selector("load")
-    public static native void load_objc();
+    public static native void load_objc_static();
 
     @Generated
     @Selector("localizedNameOfStringEncoding:")
@@ -234,6 +159,10 @@ public class NSMutableString extends NSString {
     @Selector("localizedStringWithFormat:")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object localizedStringWithFormat(String format, Object... varargs);
+
+    @Generated
+    @Selector("localizedUserNotificationStringForKey:arguments:")
+    public static native String localizedUserNotificationStringForKeyArguments(String key, NSArray<?> arguments);
 
     @Generated
     @Owned
@@ -255,7 +184,82 @@ public class NSMutableString extends NSString {
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
+
+    @Generated
+    @Selector("string")
+    public static native NSMutableString string();
+
+    @Generated
+    @Selector("stringEncodingForData:encodingOptions:convertedString:usedLossyConversion:")
+    @NUInt
+    public static native long stringEncodingForDataEncodingOptionsConvertedStringUsedLossyConversion(NSData data,
+            NSDictionary<String, ?> opts, Ptr<NSString> string, BoolPtr usedLossyConversion);
+
+    @Generated
+    @Deprecated
+    @Selector("stringWithCString:")
+    public static native NSMutableString stringWithCString(ConstBytePtr bytes);
+
+    @Generated
+    @Selector("stringWithCString:encoding:")
+    public static native NSMutableString stringWithCStringEncoding(ConstBytePtr cString, @NUInt long enc);
+
+    @Generated
+    @Deprecated
+    @Selector("stringWithCString:length:")
+    public static native NSMutableString stringWithCStringLength(ConstBytePtr bytes, @NUInt long length);
+
+    @Generated
+    @Selector("stringWithCapacity:")
+    public static native NSMutableString stringWithCapacity(@NUInt long capacity);
+
+    @Generated
+    @Selector("stringWithCharacters:length:")
+    public static native NSMutableString stringWithCharactersLength(ConstCharPtr characters, @NUInt long length);
+
+    @Generated
+    @Deprecated
+    @Selector("stringWithContentsOfFile:")
+    public static native NSMutableString stringWithContentsOfFile(String path);
+
+    @Generated
+    @Selector("stringWithContentsOfFile:encoding:error:")
+    public static native NSMutableString stringWithContentsOfFileEncodingError(String path, @NUInt long enc,
+            Ptr<NSError> error);
+
+    @Generated
+    @Selector("stringWithContentsOfFile:usedEncoding:error:")
+    public static native NSMutableString stringWithContentsOfFileUsedEncodingError(String path, NUIntPtr enc,
+            Ptr<NSError> error);
+
+    @Generated
+    @Deprecated
+    @Selector("stringWithContentsOfURL:")
+    public static native NSMutableString stringWithContentsOfURL(NSURL url);
+
+    @Generated
+    @Selector("stringWithContentsOfURL:encoding:error:")
+    public static native NSMutableString stringWithContentsOfURLEncodingError(NSURL url, @NUInt long enc,
+            Ptr<NSError> error);
+
+    @Generated
+    @Selector("stringWithContentsOfURL:usedEncoding:error:")
+    public static native NSMutableString stringWithContentsOfURLUsedEncodingError(NSURL url, NUIntPtr enc,
+            Ptr<NSError> error);
+
+    @Generated
+    @Variadic()
+    @Selector("stringWithFormat:")
+    public static native NSMutableString stringWithFormat(String format, Object... varargs);
+
+    @Generated
+    @Selector("stringWithString:")
+    public static native NSMutableString stringWithString(String string);
+
+    @Generated
+    @Selector("stringWithUTF8String:")
+    public static native NSMutableString stringWithUTF8String(ConstBytePtr nullTerminatedCString);
 
     @Generated
     @Selector("superclass")
@@ -268,7 +272,7 @@ public class NSMutableString extends NSString {
     @Generated
     @Selector("version")
     @NInt
-    public static native long version();
+    public static native long version_static();
 
     @Generated
     @Variadic()
@@ -278,6 +282,11 @@ public class NSMutableString extends NSString {
     @Generated
     @Selector("appendString:")
     public native void appendString(String aString);
+
+    @Generated
+    @Selector("applyTransform:reverse:range:updatedRange:")
+    public native boolean applyTransformReverseRangeUpdatedRange(String transform, boolean reverse,
+            @ByValue NSRange range, NSRange resultingRange);
 
     @Generated
     @Selector("deleteCharactersInRange:")
@@ -410,11 +419,6 @@ public class NSMutableString extends NSString {
     @Generated
     @Selector("setString:")
     public native void setString(String aString);
-
-    @Generated
-    @Selector("applyTransform:reverse:range:updatedRange:")
-    public native boolean applyTransformReverseRangeUpdatedRange(String transform, boolean reverse,
-            @ByValue NSRange range, NSRange resultingRange);
 
     @Generated
     @ProtocolClassMethod("supportsSecureCoding")

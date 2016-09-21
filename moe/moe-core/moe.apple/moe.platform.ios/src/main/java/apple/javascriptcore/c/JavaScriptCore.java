@@ -108,6 +108,18 @@ public final class JavaScriptCore {
 
     @Generated
     @CFunction
+    public static native boolean JSValueIsArray(JSContextRef ctx, JSValueRef value);
+
+    @Generated
+    @CFunction
+    public static native boolean JSValueIsDate(JSContextRef ctx, JSValueRef value);
+
+    @Generated
+    @CFunction
+    public static native int JSValueGetTypedArrayType(JSContextRef ctx, JSValueRef value, Ptr<JSValueRef> exception);
+
+    @Generated
+    @CFunction
     public static native boolean JSValueIsEqual(JSContextRef ctx, JSValueRef a, JSValueRef b,
             Ptr<JSValueRef> exception);
 
@@ -411,6 +423,74 @@ public final class JavaScriptCore {
 
     @Generated
     @CFunction
+    public static native JSObjectRef JSObjectMakeTypedArray(JSContextRef ctx, int arrayType, @NUInt long length,
+            Ptr<JSValueRef> exception);
+
+    @Generated
+    @CFunction
+    public static native JSObjectRef JSObjectMakeTypedArrayWithBytesNoCopy(JSContextRef ctx, int arrayType,
+            VoidPtr bytes, @NUInt long byteLength,
+            @FunctionPtr(name = "call_JSObjectMakeTypedArrayWithBytesNoCopy") Function_JSObjectMakeTypedArrayWithBytesNoCopy bytesDeallocator,
+            VoidPtr deallocatorContext, Ptr<JSValueRef> exception);
+
+    @Generated
+    @CFunction
+    public static native JSObjectRef JSObjectMakeTypedArrayWithArrayBuffer(JSContextRef ctx, int arrayType,
+            JSObjectRef buffer, Ptr<JSValueRef> exception);
+
+    @Generated
+    @CFunction
+    public static native JSObjectRef JSObjectMakeTypedArrayWithArrayBufferAndOffset(JSContextRef ctx, int arrayType,
+            JSObjectRef buffer, @NUInt long byteOffset, @NUInt long length, Ptr<JSValueRef> exception);
+
+    @Generated
+    @CFunction
+    public static native VoidPtr JSObjectGetTypedArrayBytesPtr(JSContextRef ctx, JSObjectRef object,
+            Ptr<JSValueRef> exception);
+
+    @Generated
+    @CFunction
+    @NUInt
+    public static native long JSObjectGetTypedArrayLength(JSContextRef ctx, JSObjectRef object,
+            Ptr<JSValueRef> exception);
+
+    @Generated
+    @CFunction
+    @NUInt
+    public static native long JSObjectGetTypedArrayByteLength(JSContextRef ctx, JSObjectRef object,
+            Ptr<JSValueRef> exception);
+
+    @Generated
+    @CFunction
+    @NUInt
+    public static native long JSObjectGetTypedArrayByteOffset(JSContextRef ctx, JSObjectRef object,
+            Ptr<JSValueRef> exception);
+
+    @Generated
+    @CFunction
+    public static native JSObjectRef JSObjectGetTypedArrayBuffer(JSContextRef ctx, JSObjectRef object,
+            Ptr<JSValueRef> exception);
+
+    @Generated
+    @CFunction
+    public static native JSObjectRef JSObjectMakeArrayBufferWithBytesNoCopy(JSContextRef ctx, VoidPtr bytes,
+            @NUInt long byteLength,
+            @FunctionPtr(name = "call_JSObjectMakeArrayBufferWithBytesNoCopy") Function_JSObjectMakeArrayBufferWithBytesNoCopy bytesDeallocator,
+            VoidPtr deallocatorContext, Ptr<JSValueRef> exception);
+
+    @Generated
+    @CFunction
+    public static native VoidPtr JSObjectGetArrayBufferBytesPtr(JSContextRef ctx, JSObjectRef object,
+            Ptr<JSValueRef> exception);
+
+    @Generated
+    @CFunction
+    @NUInt
+    public static native long JSObjectGetArrayBufferByteLength(JSContextRef ctx, JSObjectRef object,
+            Ptr<JSValueRef> exception);
+
+    @Generated
+    @CFunction
     public static native JSStringRef JSStringCreateWithCFString(CFStringRef string);
 
     @Generated
@@ -452,14 +532,6 @@ public final class JavaScriptCore {
     @MappedReturn(ObjCStringMapper.class)
     public static native String JSPropertyDescriptorSetKey();
 
-    @Generated
-    @CFunction
-    public static native boolean JSValueIsArray(JSContextRef ctx, JSValueRef value);
-
-    @Generated
-    @CFunction
-    public static native boolean JSValueIsDate(JSContextRef ctx, JSValueRef value);
-
     @Runtime(CRuntime.class)
     @Generated
     public interface Function_JSObjectMakeFunctionWithCallback {
@@ -476,5 +548,19 @@ public final class JavaScriptCore {
         VoidPtr call_JSObjectMakeConstructor(VoidPtr arg0, VoidPtr arg1, @NUInt long arg2,
                 @ReferenceInfo(type = Void.class, depth = 2) ConstPtr<VoidPtr> arg3,
                 @ReferenceInfo(type = Void.class, depth = 2) Ptr<VoidPtr> arg4);
+    }
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Function_JSObjectMakeTypedArrayWithBytesNoCopy {
+        @Generated
+        void call_JSObjectMakeTypedArrayWithBytesNoCopy(VoidPtr arg0, VoidPtr arg1);
+    }
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Function_JSObjectMakeArrayBufferWithBytesNoCopy {
+        @Generated
+        void call_JSObjectMakeArrayBufferWithBytesNoCopy(VoidPtr arg0, VoidPtr arg1);
     }
 }

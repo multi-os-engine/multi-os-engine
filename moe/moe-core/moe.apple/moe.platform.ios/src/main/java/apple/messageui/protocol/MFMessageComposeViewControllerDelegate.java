@@ -19,6 +19,7 @@ package apple.messageui.protocol;
 import apple.messageui.MFMessageComposeViewController;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.Library;
+import org.moe.natj.general.ann.NInt;
 import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.ObjCProtocolName;
@@ -31,5 +32,5 @@ import org.moe.natj.objc.ann.Selector;
 public interface MFMessageComposeViewControllerDelegate {
     @Generated
     @Selector("messageComposeViewController:didFinishWithResult:")
-    void messageComposeViewControllerDidFinishWithResult(MFMessageComposeViewController controller, int result);
+    void messageComposeViewControllerDidFinishWithResult(MFMessageComposeViewController controller, @NInt long result);
 }

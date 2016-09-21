@@ -55,18 +55,13 @@ public class GKMatchRequest extends NSObject {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native GKMatchRequest alloc();
-
-    @Generated
-    @Selector("maxPlayersAllowedForMatchOfType:")
-    @NUInt
-    public static native long maxPlayersAllowedForMatchOfType(@NUInt long matchType);
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -138,6 +133,11 @@ public class GKMatchRequest extends NSObject {
     public static native void load_objc_static();
 
     @Generated
+    @Selector("maxPlayersAllowedForMatchOfType:")
+    @NUInt
+    public static native long maxPlayersAllowedForMatchOfType(@NUInt long matchType);
+
+    @Generated
     @Owned
     @Selector("new")
     @MappedReturn(ObjCObjectMapper.class)
@@ -178,6 +178,12 @@ public class GKMatchRequest extends NSObject {
     public native String inviteMessage();
 
     @Generated
+    @Deprecated
+    @Selector("inviteeResponseHandler")
+    @ObjCBlock(name = "call_inviteeResponseHandler_ret")
+    public native Block_inviteeResponseHandler_ret inviteeResponseHandler();
+
+    @Generated
     @Selector("maxPlayers")
     @NUInt
     public native long maxPlayers();
@@ -200,6 +206,11 @@ public class GKMatchRequest extends NSObject {
     @Deprecated
     @Selector("playersToInvite")
     public native NSArray<String> playersToInvite();
+
+    @Generated
+    @Selector("recipientResponseHandler")
+    @ObjCBlock(name = "call_recipientResponseHandler_ret")
+    public native Block_recipientResponseHandler_ret recipientResponseHandler();
 
     @Generated
     @Selector("recipients")
@@ -249,16 +260,19 @@ public class GKMatchRequest extends NSObject {
     @Selector("setRecipients:")
     public native void setRecipients(NSArray<? extends GKPlayer> value);
 
+    @Runtime(ObjCRuntime.class)
     @Generated
-    @Deprecated
-    @Selector("inviteeResponseHandler")
-    @ObjCBlock(name = "call_inviteeResponseHandler_ret")
-    public native Block_inviteeResponseHandler_ret inviteeResponseHandler();
+    public interface Block_inviteeResponseHandler_ret {
+        @Generated
+        void call_inviteeResponseHandler_ret(String arg0, @NInt long arg1);
+    }
 
+    @Runtime(ObjCRuntime.class)
     @Generated
-    @Selector("recipientResponseHandler")
-    @ObjCBlock(name = "call_recipientResponseHandler_ret")
-    public native Block_recipientResponseHandler_ret recipientResponseHandler();
+    public interface Block_recipientResponseHandler_ret {
+        @Generated
+        void call_recipientResponseHandler_ret(GKPlayer arg0, @NInt long arg1);
+    }
 
     @Runtime(ObjCRuntime.class)
     @Generated
@@ -272,19 +286,5 @@ public class GKMatchRequest extends NSObject {
     public interface Block_setRecipientResponseHandler {
         @Generated
         void call_setRecipientResponseHandler(GKPlayer arg0, @NInt long arg1);
-    }
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_inviteeResponseHandler_ret {
-        @Generated
-        void call_inviteeResponseHandler_ret(String arg0, @NInt long arg1);
-    }
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_recipientResponseHandler_ret {
-        @Generated
-        void call_recipientResponseHandler_ret(GKPlayer arg0, @NInt long arg1);
     }
 }

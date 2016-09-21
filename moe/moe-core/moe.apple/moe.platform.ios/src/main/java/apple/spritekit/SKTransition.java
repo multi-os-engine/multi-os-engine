@@ -57,13 +57,52 @@ public class SKTransition extends NSObject implements NSCopying {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native SKTransition alloc();
 
     @Generated
+    @Selector("allocWithZone:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object allocWithZone(VoidPtr zone);
+
+    @Generated
+    @Selector("automaticallyNotifiesObserversForKey:")
+    public static native boolean automaticallyNotifiesObserversForKey(String key);
+
+    @Generated
+    @Selector("cancelPreviousPerformRequestsWithTarget:")
+    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+
+    @Generated
+    @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
+    public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
+            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
+            @Mapped(ObjCObjectMapper.class) Object anArgument);
+
+    @Generated
+    @Selector("classFallbacksForKeyedArchiver")
+    public static native NSArray<String> classFallbacksForKeyedArchiver();
+
+    @Generated
+    @Selector("classForKeyedUnarchiver")
+    public static native Class classForKeyedUnarchiver();
+
+    @Generated
     @Selector("crossFadeWithDuration:")
     public static native SKTransition crossFadeWithDuration(double sec);
+
+    @Generated
+    @Selector("debugDescription")
+    public static native String debugDescription_static();
+
+    @Generated
+    @Selector("description")
+    public static native String description_static();
 
     @Generated
     @Selector("doorsCloseHorizontalWithDuration:")
@@ -102,61 +141,6 @@ public class SKTransition extends NSObject implements NSCopying {
     public static native SKTransition flipVerticalWithDuration(double sec);
 
     @Generated
-    @Selector("moveInWithDirection:duration:")
-    public static native SKTransition moveInWithDirectionDuration(@NInt long direction, double sec);
-
-    @Generated
-    @Selector("pushWithDirection:duration:")
-    public static native SKTransition pushWithDirectionDuration(@NInt long direction, double sec);
-
-    @Generated
-    @Selector("revealWithDirection:duration:")
-    public static native SKTransition revealWithDirectionDuration(@NInt long direction, double sec);
-
-    @Generated
-    @Selector("transitionWithCIFilter:duration:")
-    public static native SKTransition transitionWithCIFilterDuration(CIFilter filter, double sec);
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
-
-    @Generated
-    @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
-
-    @Generated
-    @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
-
-    @Generated
-    @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
-
-    @Generated
-    @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
-    public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
-
-    @Generated
-    @Selector("classFallbacksForKeyedArchiver")
-    public static native NSArray<String> classFallbacksForKeyedArchiver();
-
-    @Generated
-    @Selector("classForKeyedUnarchiver")
-    public static native Class classForKeyedUnarchiver();
-
-    @Generated
-    @Selector("debugDescription")
-    public static native String debugDescription_static();
-
-    @Generated
-    @Selector("description")
-    public static native String description_static();
-
-    @Generated
     @Selector("hash")
     @NUInt
     public static native long hash_static();
@@ -191,10 +175,18 @@ public class SKTransition extends NSObject implements NSCopying {
     public static native void load_objc_static();
 
     @Generated
+    @Selector("moveInWithDirection:duration:")
+    public static native SKTransition moveInWithDirectionDuration(@NInt long direction, double sec);
+
+    @Generated
     @Owned
     @Selector("new")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object new_objc();
+
+    @Generated
+    @Selector("pushWithDirection:duration:")
+    public static native SKTransition pushWithDirectionDuration(@NInt long direction, double sec);
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -205,17 +197,31 @@ public class SKTransition extends NSObject implements NSCopying {
     public static native boolean resolveInstanceMethod(SEL sel);
 
     @Generated
+    @Selector("revealWithDirection:duration:")
+    public static native SKTransition revealWithDirectionDuration(@NInt long direction, double sec);
+
+    @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")
     public static native Class superclass_static();
 
     @Generated
+    @Selector("transitionWithCIFilter:duration:")
+    public static native SKTransition transitionWithCIFilterDuration(CIFilter filter, double sec);
+
+    @Generated
     @Selector("version")
     @NInt
-    public static native long version();
+    public static native long version_static();
+
+    @Generated
+    @Owned
+    @Selector("copyWithZone:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native Object copyWithZone(VoidPtr zone);
 
     @Generated
     @Selector("init")
@@ -236,10 +242,4 @@ public class SKTransition extends NSObject implements NSCopying {
     @Generated
     @Selector("setPausesOutgoingScene:")
     public native void setPausesOutgoingScene(boolean value);
-
-    @Generated
-    @Owned
-    @Selector("copyWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
 }

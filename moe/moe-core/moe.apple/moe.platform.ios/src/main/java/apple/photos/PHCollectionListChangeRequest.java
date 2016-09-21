@@ -56,31 +56,13 @@ public class PHCollectionListChangeRequest extends NSObject {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native PHCollectionListChangeRequest alloc();
-
-    @Generated
-    @Selector("changeRequestForCollectionList:")
-    public static native PHCollectionListChangeRequest changeRequestForCollectionList(PHCollectionList collectionList);
-
-    @Generated
-    @Selector("changeRequestForCollectionList:childCollections:")
-    public static native PHCollectionListChangeRequest changeRequestForCollectionListChildCollections(
-            PHCollectionList collectionList, PHFetchResult<?> childCollections);
-
-    @Generated
-    @Selector("creationRequestForCollectionListWithTitle:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object creationRequestForCollectionListWithTitle(String title);
-
-    @Generated
-    @Selector("deleteCollectionLists:")
-    public static native void deleteCollectionLists(@Mapped(ObjCObjectMapper.class) NSFastEnumeration collectionLists);
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -102,6 +84,15 @@ public class PHCollectionListChangeRequest extends NSObject {
             @Mapped(ObjCObjectMapper.class) Object anArgument);
 
     @Generated
+    @Selector("changeRequestForCollectionList:")
+    public static native PHCollectionListChangeRequest changeRequestForCollectionList(PHCollectionList collectionList);
+
+    @Generated
+    @Selector("changeRequestForCollectionList:childCollections:")
+    public static native PHCollectionListChangeRequest changeRequestForCollectionListChildCollections(
+            PHCollectionList collectionList, PHFetchResult<PHCollection> childCollections);
+
+    @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
@@ -110,8 +101,17 @@ public class PHCollectionListChangeRequest extends NSObject {
     public static native Class classForKeyedUnarchiver();
 
     @Generated
+    @Selector("creationRequestForCollectionListWithTitle:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object creationRequestForCollectionListWithTitle(String title);
+
+    @Generated
     @Selector("debugDescription")
     public static native String debugDescription_static();
+
+    @Generated
+    @Selector("deleteCollectionLists:")
+    public static native void deleteCollectionLists(@Mapped(ObjCObjectMapper.class) NSFastEnumeration collectionLists);
 
     @Generated
     @Selector("description")
@@ -167,7 +167,7 @@ public class PHCollectionListChangeRequest extends NSObject {
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")

@@ -54,13 +54,13 @@ public class NSLengthFormatter extends NSFormatter {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native NSLengthFormatter alloc();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -168,6 +168,10 @@ public class NSLengthFormatter extends NSFormatter {
     public native NSLengthFormatter init();
 
     @Generated
+    @Selector("initWithCoder:")
+    public native NSLengthFormatter initWithCoder(NSCoder aDecoder);
+
+    @Generated
     @Selector("isForPersonHeightUse")
     public native boolean isForPersonHeightUse();
 
@@ -207,8 +211,4 @@ public class NSLengthFormatter extends NSFormatter {
     @Selector("unitStyle")
     @NInt
     public native long unitStyle();
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native NSLengthFormatter initWithCoder(NSCoder aDecoder);
 }

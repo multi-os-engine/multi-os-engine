@@ -55,49 +55,13 @@ public class NSDate extends NSObject implements NSCopying, NSSecureCoding, CKRec
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native NSDate alloc();
-
-    @Generated
-    @Selector("date")
-    public static native NSDate date();
-
-    @Generated
-    @Selector("dateWithTimeInterval:sinceDate:")
-    public static native NSDate dateWithTimeIntervalSinceDate(double secsToBeAdded, NSDate date);
-
-    @Generated
-    @Selector("dateWithTimeIntervalSince1970:")
-    public static native NSDate dateWithTimeIntervalSince1970(double secs);
-
-    @Generated
-    @Selector("dateWithTimeIntervalSinceNow:")
-    public static native NSDate dateWithTimeIntervalSinceNow(double secs);
-
-    @Generated
-    @Selector("dateWithTimeIntervalSinceReferenceDate:")
-    public static native NSDate dateWithTimeIntervalSinceReferenceDate(double ti);
-
-    @Generated
-    @Selector("distantFuture")
-    public static native NSDate distantFuture();
-
-    @Generated
-    @Selector("distantPast")
-    public static native NSDate distantPast();
-
-    @Generated
-    @Selector("supportsSecureCoding")
-    public static native boolean supportsSecureCoding();
-
-    @Generated
-    @Selector("timeIntervalSinceReferenceDate")
-    public static native double timeIntervalSinceReferenceDate_static();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -127,8 +91,36 @@ public class NSDate extends NSObject implements NSCopying, NSSecureCoding, CKRec
     public static native Class classForKeyedUnarchiver();
 
     @Generated
+    @Selector("date")
+    public static native NSDate date();
+
+    @Generated
+    @Selector("dateWithTimeInterval:sinceDate:")
+    public static native NSDate dateWithTimeIntervalSinceDate(double secsToBeAdded, NSDate date);
+
+    @Generated
+    @Selector("dateWithTimeIntervalSince1970:")
+    public static native NSDate dateWithTimeIntervalSince1970(double secs);
+
+    @Generated
+    @Selector("dateWithTimeIntervalSinceNow:")
+    public static native NSDate dateWithTimeIntervalSinceNow(double secs);
+
+    @Generated
+    @Selector("dateWithTimeIntervalSinceReferenceDate:")
+    public static native NSDate dateWithTimeIntervalSinceReferenceDate(double ti);
+
+    @Generated
     @Selector("debugDescription")
     public static native String debugDescription_static();
+
+    @Generated
+    @Selector("distantFuture")
+    public static native NSDate distantFuture();
+
+    @Generated
+    @Selector("distantPast")
+    public static native NSDate distantPast();
 
     @Generated
     @Selector("hash")
@@ -180,11 +172,19 @@ public class NSDate extends NSObject implements NSCopying, NSSecureCoding, CKRec
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")
     public static native Class superclass_static();
+
+    @Generated
+    @Selector("supportsSecureCoding")
+    public static native boolean supportsSecureCoding();
+
+    @Generated
+    @Selector("timeIntervalSinceReferenceDate")
+    public static native double timeIntervalSinceReferenceDate_static();
 
     @Generated
     @Selector("version")

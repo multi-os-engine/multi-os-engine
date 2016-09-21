@@ -56,13 +56,13 @@ public class NEOnDemandRuleEvaluateConnection extends NEOnDemandRule {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native NEOnDemandRuleEvaluateConnection alloc();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -149,7 +149,7 @@ public class NEOnDemandRuleEvaluateConnection extends NEOnDemandRule {
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")
@@ -173,12 +173,12 @@ public class NEOnDemandRuleEvaluateConnection extends NEOnDemandRule {
     public native NEOnDemandRuleEvaluateConnection init();
 
     @Generated
-    @Selector("setConnectionRules:")
-    public native void setConnectionRules(NSArray<? extends NEEvaluateConnectionRule> value);
-
-    @Generated
     @Selector("initWithCoder:")
     public native NEOnDemandRuleEvaluateConnection initWithCoder(NSCoder aDecoder);
+
+    @Generated
+    @Selector("setConnectionRules:")
+    public native void setConnectionRules(NSArray<? extends NEEvaluateConnectionRule> value);
 
     @Generated
     @ProtocolClassMethod("supportsSecureCoding")

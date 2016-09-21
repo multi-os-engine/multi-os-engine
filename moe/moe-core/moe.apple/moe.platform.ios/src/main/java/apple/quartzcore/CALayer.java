@@ -31,6 +31,7 @@ import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
 import apple.foundation.protocol.NSCoding;
 import apple.quartzcore.protocol.CAAction;
+import apple.quartzcore.protocol.CALayerDelegate;
 import apple.quartzcore.protocol.CAMediaTiming;
 import apple.quartzcore.struct.CATransform3D;
 import org.moe.natj.c.ann.FunctionPtr;
@@ -69,31 +70,13 @@ public class CALayer extends NSObject implements NSCoding, CAMediaTiming {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native CALayer alloc();
-
-    @Generated
-    @Selector("defaultActionForKey:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native CAAction defaultActionForKey(String event);
-
-    @Generated
-    @Selector("defaultValueForKey:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object defaultValueForKey(String key);
-
-    @Generated
-    @Selector("layer")
-    public static native CALayer layer();
-
-    @Generated
-    @Selector("needsDisplayForKey:")
-    public static native boolean needsDisplayForKey(String key);
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -125,6 +108,16 @@ public class CALayer extends NSObject implements NSCoding, CAMediaTiming {
     @Generated
     @Selector("debugDescription")
     public static native String debugDescription_static();
+
+    @Generated
+    @Selector("defaultActionForKey:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native CAAction defaultActionForKey(String event);
+
+    @Generated
+    @Selector("defaultValueForKey:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object defaultValueForKey(String key);
 
     @Generated
     @Selector("description")
@@ -161,8 +154,16 @@ public class CALayer extends NSObject implements NSCoding, CAMediaTiming {
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
     @Generated
+    @Selector("layer")
+    public static native CALayer layer();
+
+    @Generated
     @Selector("load")
     public static native void load_objc_static();
+
+    @Generated
+    @Selector("needsDisplayForKey:")
+    public static native boolean needsDisplayForKey(String key);
 
     @Generated
     @Owned
@@ -180,7 +181,7 @@ public class CALayer extends NSObject implements NSCoding, CAMediaTiming {
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")
@@ -293,6 +294,10 @@ public class CALayer extends NSObject implements NSCoding, CAMediaTiming {
     public native CGRect contentsCenter();
 
     @Generated
+    @Selector("contentsFormat")
+    public native String contentsFormat();
+
+    @Generated
     @Selector("contentsGravity")
     public native String contentsGravity();
 
@@ -342,7 +347,7 @@ public class CALayer extends NSObject implements NSCoding, CAMediaTiming {
     @Generated
     @Selector("delegate")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object delegate();
+    public native CALayerDelegate delegate();
 
     @Generated
     @Selector("display")
@@ -619,6 +624,10 @@ public class CALayer extends NSObject implements NSCoding, CAMediaTiming {
     public native void setContentsCenter(@ByValue CGRect value);
 
     @Generated
+    @Selector("setContentsFormat:")
+    public native void setContentsFormat(String value);
+
+    @Generated
     @Selector("setContentsGravity:")
     public native void setContentsGravity(String value);
 
@@ -636,10 +645,10 @@ public class CALayer extends NSObject implements NSCoding, CAMediaTiming {
 
     @Generated
     @Selector("setDelegate:")
-    public native void setDelegate_unsafe(@Mapped(ObjCObjectMapper.class) Object value);
+    public native void setDelegate_unsafe(@Mapped(ObjCObjectMapper.class) CALayerDelegate value);
 
     @Generated
-    public void setDelegate(@Mapped(ObjCObjectMapper.class) Object value) {
+    public void setDelegate(@Mapped(ObjCObjectMapper.class) CALayerDelegate value) {
         Object __old = delegate();
         if (value != null) {
             org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);

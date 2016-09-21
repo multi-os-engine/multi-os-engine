@@ -18,6 +18,7 @@ package apple.gameplaykit;
 
 import apple.NSObject;
 import apple.foundation.NSArray;
+import apple.foundation.NSCoder;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
 import org.moe.natj.c.ann.FunctionPtr;
@@ -43,7 +44,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @Library("GameplayKit")
 @Runtime(ObjCRuntime.class)
 @ObjCClassBinding
-public class GKObstacleGraph extends GKGraph {
+public class GKObstacleGraph<_NodeType> extends GKGraph {
     static {
         NatJ.register();
     }
@@ -54,22 +55,13 @@ public class GKObstacleGraph extends GKGraph {
     }
 
     @Generated
-    @Owned
-    @Selector("alloc")
-    public static native GKObstacleGraph alloc();
-
-    @Generated
-    @Selector("graphWithNodes:")
-    public static native GKObstacleGraph graphWithNodes(NSArray<? extends GKGraphNode> nodes);
-
-    @Generated
-    @Selector("graphWithObstacles:bufferRadius:")
-    public static native GKObstacleGraph graphWithObstaclesBufferRadius(NSArray<? extends GKPolygonObstacle> obstacles,
-            float bufferRadius);
-
-    @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
+    @Owned
+    @Selector("alloc")
+    public static native GKObstacleGraph<?> alloc();
 
     @Generated
     @Selector("allocWithZone:")
@@ -105,6 +97,20 @@ public class GKObstacleGraph extends GKGraph {
     @Generated
     @Selector("description")
     public static native String description_static();
+
+    @Generated
+    @Selector("graphWithNodes:")
+    public static native GKObstacleGraph<?> graphWithNodes(NSArray<? extends GKGraphNode> nodes);
+
+    @Generated
+    @Selector("graphWithObstacles:bufferRadius:")
+    public static native <_NodeType> GKObstacleGraph<?> graphWithObstaclesBufferRadius(
+            NSArray<? extends GKPolygonObstacle> obstacles, float bufferRadius);
+
+    @Generated
+    @Selector("graphWithObstacles:bufferRadius:nodeClass:")
+    public static native <_NodeType> GKObstacleGraph<?> graphWithObstaclesBufferRadiusNodeClass(
+            NSArray<? extends GKPolygonObstacle> obstacles, float bufferRadius, Class nodeClass);
 
     @Generated
     @Selector("hash")
@@ -156,7 +162,7 @@ public class GKObstacleGraph extends GKGraph {
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")
@@ -176,6 +182,10 @@ public class GKObstacleGraph extends GKGraph {
     public native float bufferRadius();
 
     @Generated
+    @Selector("classForGenericArgumentAtIndex:")
+    public native Class classForGenericArgumentAtIndex(@NUInt long index);
+
+    @Generated
     @Selector("connectNodeUsingObstacles:")
     public native void connectNodeUsingObstacles(GKGraphNode2D node);
 
@@ -191,16 +201,25 @@ public class GKObstacleGraph extends GKGraph {
 
     @Generated
     @Selector("init")
-    public native GKObstacleGraph init();
+    public native GKObstacleGraph<?> init();
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native GKObstacleGraph<?> initWithCoder(NSCoder aDecoder);
 
     @Generated
     @Selector("initWithNodes:")
-    public native GKObstacleGraph initWithNodes(NSArray<? extends GKGraphNode> nodes);
+    public native GKObstacleGraph<?> initWithNodes(NSArray<? extends GKGraphNode> nodes);
 
     @Generated
     @Selector("initWithObstacles:bufferRadius:")
-    public native GKObstacleGraph initWithObstaclesBufferRadius(NSArray<? extends GKPolygonObstacle> obstacles,
+    public native GKObstacleGraph<?> initWithObstaclesBufferRadius(NSArray<? extends GKPolygonObstacle> obstacles,
             float bufferRadius);
+
+    @Generated
+    @Selector("initWithObstacles:bufferRadius:nodeClass:")
+    public native GKObstacleGraph<?> initWithObstaclesBufferRadiusNodeClass(
+            NSArray<? extends GKPolygonObstacle> obstacles, float bufferRadius, Class nodeClass);
 
     @Generated
     @Selector("isConnectionLockedFromNode:toNode:")

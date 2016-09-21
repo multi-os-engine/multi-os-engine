@@ -60,21 +60,13 @@ public class AVPlayerLayer extends CALayer {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native AVPlayerLayer alloc();
-
-    @Generated
-    @Selector("layer")
-    public static native AVPlayerLayer layer();
-
-    @Generated
-    @Selector("playerLayerWithPlayer:")
-    public static native AVPlayerLayer playerLayerWithPlayer(AVPlayer player);
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -152,6 +144,10 @@ public class AVPlayerLayer extends CALayer {
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
     @Generated
+    @Selector("layer")
+    public static native AVPlayerLayer layer();
+
+    @Generated
     @Selector("load")
     public static native void load_objc_static();
 
@@ -166,6 +162,10 @@ public class AVPlayerLayer extends CALayer {
     public static native Object new_objc();
 
     @Generated
+    @Selector("playerLayerWithPlayer:")
+    public static native AVPlayerLayer playerLayerWithPlayer(AVPlayer player);
+
+    @Generated
     @Selector("resolveClassMethod:")
     public static native boolean resolveClassMethod(SEL sel);
 
@@ -175,7 +175,7 @@ public class AVPlayerLayer extends CALayer {
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")
@@ -191,6 +191,10 @@ public class AVPlayerLayer extends CALayer {
     public native AVPlayerLayer init();
 
     @Generated
+    @Selector("initWithCoder:")
+    public native AVPlayerLayer initWithCoder(NSCoder aDecoder);
+
+    @Generated
     @Selector("initWithLayer:")
     public native AVPlayerLayer initWithLayer(@Mapped(ObjCObjectMapper.class) Object layer);
 
@@ -199,8 +203,16 @@ public class AVPlayerLayer extends CALayer {
     public native boolean isReadyForDisplay();
 
     @Generated
+    @Selector("pixelBufferAttributes")
+    public native NSDictionary<String, ?> pixelBufferAttributes();
+
+    @Generated
     @Selector("player")
     public native AVPlayer player();
+
+    @Generated
+    @Selector("setPixelBufferAttributes:")
+    public native void setPixelBufferAttributes(NSDictionary<String, ?> value);
 
     @Generated
     @Selector("setPlayer:")
@@ -218,16 +230,4 @@ public class AVPlayerLayer extends CALayer {
     @Selector("videoRect")
     @ByValue
     public native CGRect videoRect();
-
-    @Generated
-    @Selector("pixelBufferAttributes")
-    public native NSDictionary<String, ?> pixelBufferAttributes();
-
-    @Generated
-    @Selector("setPixelBufferAttributes:")
-    public native void setPixelBufferAttributes(NSDictionary<String, ?> value);
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native AVPlayerLayer initWithCoder(NSCoder aDecoder);
 }

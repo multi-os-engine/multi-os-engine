@@ -58,17 +58,13 @@ public class ADClient extends NSObject {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native ADClient alloc();
-
-    @Generated
-    @Selector("sharedClient")
-    public static native ADClient sharedClient();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -158,6 +154,10 @@ public class ADClient extends NSObject {
     public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
+    @Selector("sharedClient")
+    public static native ADClient sharedClient();
+
+    @Generated
     @Selector("superclass")
     public static native Class superclass_static();
 
@@ -170,8 +170,8 @@ public class ADClient extends NSObject {
     @Selector("addClientToSegments:replaceExisting:")
     public native void addClientToSegmentsReplaceExisting(NSArray<?> segmentIdentifiers, boolean replaceExisting);
 
-    @Deprecated
     @Generated
+    @Deprecated
     @Selector("determineAppInstallationAttributionWithCompletionHandler:")
     public native void determineAppInstallationAttributionWithCompletionHandler(
             @ObjCBlock(name = "call_determineAppInstallationAttributionWithCompletionHandler") Block_determineAppInstallationAttributionWithCompletionHandler completionHandler);
@@ -180,8 +180,8 @@ public class ADClient extends NSObject {
     @Selector("init")
     public native ADClient init();
 
-    @Deprecated
     @Generated
+    @Deprecated
     @Selector("lookupAdConversionDetails:")
     public native void lookupAdConversionDetails(
             @ObjCBlock(name = "call_lookupAdConversionDetails") Block_lookupAdConversionDetails completionHandler);

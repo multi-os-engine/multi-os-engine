@@ -62,9 +62,22 @@ public class UIColor extends NSObject implements NSSecureCoding, NSCopying {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native UIColor alloc();
+
+    @Generated
+    @Selector("allocWithZone:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object allocWithZone(VoidPtr zone);
+
+    @Generated
+    @Selector("automaticallyNotifiesObserversForKey:")
+    public static native boolean automaticallyNotifiesObserversForKey(String key);
 
     @Generated
     @Selector("blackColor")
@@ -79,6 +92,24 @@ public class UIColor extends NSObject implements NSSecureCoding, NSCopying {
     public static native UIColor brownColor();
 
     @Generated
+    @Selector("cancelPreviousPerformRequestsWithTarget:")
+    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+
+    @Generated
+    @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
+    public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
+            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
+            @Mapped(ObjCObjectMapper.class) Object anArgument);
+
+    @Generated
+    @Selector("classFallbacksForKeyedArchiver")
+    public static native NSArray<String> classFallbacksForKeyedArchiver();
+
+    @Generated
+    @Selector("classForKeyedUnarchiver")
+    public static native Class classForKeyedUnarchiver();
+
+    @Generated
     @Selector("clearColor")
     public static native UIColor clearColor();
 
@@ -89,6 +120,11 @@ public class UIColor extends NSObject implements NSSecureCoding, NSCopying {
     @Generated
     @Selector("colorWithCIColor:")
     public static native UIColor colorWithCIColor(CIColor ciColor);
+
+    @Generated
+    @Selector("colorWithDisplayP3Red:green:blue:alpha:")
+    public static native UIColor colorWithDisplayP3RedGreenBlueAlpha(@NFloat double displayP3Red, @NFloat double green,
+            @NFloat double blue, @NFloat double alpha);
 
     @Generated
     @Selector("colorWithHue:saturation:brightness:alpha:")
@@ -121,6 +157,14 @@ public class UIColor extends NSObject implements NSSecureCoding, NSCopying {
     public static native UIColor darkTextColor();
 
     @Generated
+    @Selector("debugDescription")
+    public static native String debugDescription_static();
+
+    @Generated
+    @Selector("description")
+    public static native String description_static();
+
+    @Generated
     @Selector("grayColor")
     public static native UIColor grayColor();
 
@@ -131,96 +175,6 @@ public class UIColor extends NSObject implements NSSecureCoding, NSCopying {
     @Generated
     @Selector("groupTableViewBackgroundColor")
     public static native UIColor groupTableViewBackgroundColor();
-
-    @Generated
-    @Selector("lightGrayColor")
-    public static native UIColor lightGrayColor();
-
-    @Generated
-    @Selector("lightTextColor")
-    public static native UIColor lightTextColor();
-
-    @Generated
-    @Selector("magentaColor")
-    public static native UIColor magentaColor();
-
-    @Generated
-    @Selector("orangeColor")
-    public static native UIColor orangeColor();
-
-    @Generated
-    @Selector("purpleColor")
-    public static native UIColor purpleColor();
-
-    @Generated
-    @Selector("redColor")
-    public static native UIColor redColor();
-
-    @Generated
-    @Deprecated
-    @Selector("scrollViewTexturedBackgroundColor")
-    public static native UIColor scrollViewTexturedBackgroundColor();
-
-    @Generated
-    @Selector("supportsSecureCoding")
-    public static native boolean supportsSecureCoding();
-
-    @Generated
-    @Deprecated
-    @Selector("underPageBackgroundColor")
-    public static native UIColor underPageBackgroundColor();
-
-    @Generated
-    @Deprecated
-    @Selector("viewFlipsideBackgroundColor")
-    public static native UIColor viewFlipsideBackgroundColor();
-
-    @Generated
-    @Selector("whiteColor")
-    public static native UIColor whiteColor();
-
-    @Generated
-    @Selector("yellowColor")
-    public static native UIColor yellowColor();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
-
-    @Generated
-    @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
-
-    @Generated
-    @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
-
-    @Generated
-    @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
-
-    @Generated
-    @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
-    public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
-
-    @Generated
-    @Selector("classFallbacksForKeyedArchiver")
-    public static native NSArray<String> classFallbacksForKeyedArchiver();
-
-    @Generated
-    @Selector("classForKeyedUnarchiver")
-    public static native Class classForKeyedUnarchiver();
-
-    @Generated
-    @Selector("debugDescription")
-    public static native String debugDescription_static();
-
-    @Generated
-    @Selector("description")
-    public static native String description_static();
 
     @Generated
     @Selector("hash")
@@ -253,14 +207,38 @@ public class UIColor extends NSObject implements NSSecureCoding, NSCopying {
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
     @Generated
+    @Selector("lightGrayColor")
+    public static native UIColor lightGrayColor();
+
+    @Generated
+    @Selector("lightTextColor")
+    public static native UIColor lightTextColor();
+
+    @Generated
     @Selector("load")
     public static native void load_objc_static();
+
+    @Generated
+    @Selector("magentaColor")
+    public static native UIColor magentaColor();
 
     @Generated
     @Owned
     @Selector("new")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object new_objc();
+
+    @Generated
+    @Selector("orangeColor")
+    public static native UIColor orangeColor();
+
+    @Generated
+    @Selector("purpleColor")
+    public static native UIColor purpleColor();
+
+    @Generated
+    @Selector("redColor")
+    public static native UIColor redColor();
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -271,17 +249,44 @@ public class UIColor extends NSObject implements NSSecureCoding, NSCopying {
     public static native boolean resolveInstanceMethod(SEL sel);
 
     @Generated
+    @Deprecated
+    @Selector("scrollViewTexturedBackgroundColor")
+    public static native UIColor scrollViewTexturedBackgroundColor();
+
+    @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")
     public static native Class superclass_static();
 
     @Generated
+    @Selector("supportsSecureCoding")
+    public static native boolean supportsSecureCoding();
+
+    @Generated
+    @Deprecated
+    @Selector("underPageBackgroundColor")
+    public static native UIColor underPageBackgroundColor();
+
+    @Generated
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Deprecated
+    @Selector("viewFlipsideBackgroundColor")
+    public static native UIColor viewFlipsideBackgroundColor();
+
+    @Generated
+    @Selector("whiteColor")
+    public static native UIColor whiteColor();
+
+    @Generated
+    @Selector("yellowColor")
+    public static native UIColor yellowColor();
 
     @Generated
     @Selector("CGColor")
@@ -333,6 +338,11 @@ public class UIColor extends NSObject implements NSSecureCoding, NSCopying {
     @Generated
     @Selector("initWithCoder:")
     public native UIColor initWithCoder(NSCoder aDecoder);
+
+    @Generated
+    @Selector("initWithDisplayP3Red:green:blue:alpha:")
+    public native UIColor initWithDisplayP3RedGreenBlueAlpha(@NFloat double displayP3Red, @NFloat double green,
+            @NFloat double blue, @NFloat double alpha);
 
     @Generated
     @Selector("initWithHue:saturation:brightness:alpha:")

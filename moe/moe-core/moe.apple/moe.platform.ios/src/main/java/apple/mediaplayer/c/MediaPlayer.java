@@ -53,6 +53,11 @@ public final class MediaPlayer {
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
+    public static native String MPErrorDomain();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
     public static native String MPMediaEntityPropertyPersistentID();
 
     @Generated
@@ -153,6 +158,11 @@ public final class MediaPlayer {
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
+    public static native String MPMediaItemPropertyIsExplicit();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
     public static native String MPMediaItemPropertyLyrics();
 
     @Generated
@@ -184,6 +194,11 @@ public final class MediaPlayer {
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String MPMediaItemPropertyIsCloudItem();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String MPMediaItemPropertyHasProtectedAsset();
 
     @Generated
     @CVariable()
@@ -228,6 +243,11 @@ public final class MediaPlayer {
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
+    public static native String MPMediaItemPropertyDateAdded();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
     public static native String MPMediaLibraryDidChangeNotification();
 
     @Generated
@@ -249,6 +269,16 @@ public final class MediaPlayer {
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String MPMediaPlaylistPropertySeedItems();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String MPMediaPlaylistPropertyDescriptionText();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String MPMediaPlaylistPropertyAuthorDisplayName();
 
     @Generated
     @CVariable()
@@ -453,12 +483,7 @@ public final class MediaPlayer {
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
-    public static native String MPVolumeViewWirelessRoutesAvailableDidChangeNotification();
-
-    @Generated
-    @CVariable()
-    @MappedReturn(ObjCStringMapper.class)
-    public static native String MPVolumeViewWirelessRouteActiveDidChangeNotification();
+    public static native String MPNowPlayingInfoPropertyIsLiveStream();
 
     @Generated
     @CVariable()
@@ -469,6 +494,31 @@ public final class MediaPlayer {
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String MPNowPlayingInfoPropertyCurrentLanguageOptions();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String MPNowPlayingInfoCollectionIdentifier();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String MPNowPlayingInfoPropertyExternalContentIdentifier();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String MPNowPlayingInfoPropertyExternalUserProfileIdentifier();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String MPNowPlayingInfoPropertyPlaybackProgress();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String MPNowPlayingInfoPropertyMediaType();
 
     @Generated
     @CVariable()
@@ -523,20 +573,10 @@ public final class MediaPlayer {
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
-    public static native String MPErrorDomain();
+    public static native String MPVolumeViewWirelessRoutesAvailableDidChangeNotification();
 
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
-    public static native String MPMediaItemPropertyHasProtectedAsset();
-
-    @Generated
-    @CVariable()
-    @MappedReturn(ObjCStringMapper.class)
-    public static native String MPMediaPlaylistPropertyDescriptionText();
-
-    @Generated
-    @CVariable()
-    @MappedReturn(ObjCStringMapper.class)
-    public static native String MPMediaPlaylistPropertyAuthorDisplayName();
+    public static native String MPVolumeViewWirelessRouteActiveDidChangeNotification();
 }

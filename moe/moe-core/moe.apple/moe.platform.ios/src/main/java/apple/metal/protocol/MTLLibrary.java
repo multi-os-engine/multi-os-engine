@@ -17,11 +17,16 @@ limitations under the License.
 package apple.metal.protocol;
 
 import apple.foundation.NSArray;
+import apple.foundation.NSError;
+import apple.metal.MTLFunctionConstantValues;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.Library;
+import org.moe.natj.general.ann.Mapped;
 import org.moe.natj.general.ann.MappedReturn;
 import org.moe.natj.general.ann.Runtime;
+import org.moe.natj.general.ptr.Ptr;
 import org.moe.natj.objc.ObjCRuntime;
+import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
@@ -50,6 +55,25 @@ public interface MTLLibrary {
     Object newFunctionWithName(String functionName);
 
     @Generated
+    @Selector("newFunctionWithName:constantValues:completionHandler:")
+    void newFunctionWithNameConstantValuesCompletionHandler(String name, MTLFunctionConstantValues constantValues,
+            @ObjCBlock(name = "call_newFunctionWithNameConstantValuesCompletionHandler") Block_newFunctionWithNameConstantValuesCompletionHandler completionHandler);
+
+    @Generated
+    @Selector("newFunctionWithName:constantValues:error:")
+    @MappedReturn(ObjCObjectMapper.class)
+    Object newFunctionWithNameConstantValuesError(String name, MTLFunctionConstantValues constantValues,
+            Ptr<NSError> error);
+
+    @Generated
     @Selector("setLabel:")
     void setLabel(String value);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_newFunctionWithNameConstantValuesCompletionHandler {
+        @Generated
+        void call_newFunctionWithNameConstantValuesCompletionHandler(@Mapped(ObjCObjectMapper.class) Object arg0,
+                NSError arg1);
+    }
 }

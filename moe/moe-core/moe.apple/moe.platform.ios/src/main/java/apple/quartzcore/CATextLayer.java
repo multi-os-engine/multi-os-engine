@@ -59,17 +59,13 @@ public class CATextLayer extends CALayer {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native CATextLayer alloc();
-
-    @Generated
-    @Selector("layer")
-    public static native CATextLayer layer();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -147,6 +143,10 @@ public class CATextLayer extends CALayer {
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
     @Generated
+    @Selector("layer")
+    public static native CATextLayer layer();
+
+    @Generated
     @Selector("load")
     public static native void load_objc_static();
 
@@ -170,7 +170,7 @@ public class CATextLayer extends CALayer {
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")
@@ -184,6 +184,10 @@ public class CATextLayer extends CALayer {
     @Generated
     @Selector("alignmentMode")
     public native String alignmentMode();
+
+    @Generated
+    @Selector("allowsFontSubpixelQuantization")
+    public native boolean allowsFontSubpixelQuantization();
 
     @Generated
     @Selector("font")
@@ -203,6 +207,10 @@ public class CATextLayer extends CALayer {
     public native CATextLayer init();
 
     @Generated
+    @Selector("initWithCoder:")
+    public native CATextLayer initWithCoder(NSCoder aDecoder);
+
+    @Generated
     @Selector("initWithLayer:")
     public native CATextLayer initWithLayer(@Mapped(ObjCObjectMapper.class) Object layer);
 
@@ -217,6 +225,10 @@ public class CATextLayer extends CALayer {
     @Generated
     @Selector("setAlignmentMode:")
     public native void setAlignmentMode(String value);
+
+    @Generated
+    @Selector("setAllowsFontSubpixelQuantization:")
+    public native void setAllowsFontSubpixelQuantization(boolean value);
 
     @Generated
     @Selector("setFont:")
@@ -246,16 +258,4 @@ public class CATextLayer extends CALayer {
     @Generated
     @Selector("truncationMode")
     public native String truncationMode();
-
-    @Generated
-    @Selector("allowsFontSubpixelQuantization")
-    public native boolean allowsFontSubpixelQuantization();
-
-    @Generated
-    @Selector("setAllowsFontSubpixelQuantization:")
-    public native void setAllowsFontSubpixelQuantization(boolean value);
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native CATextLayer initWithCoder(NSCoder aDecoder);
 }

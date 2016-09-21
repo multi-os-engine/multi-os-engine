@@ -56,17 +56,13 @@ public class UIBlurEffect extends UIVisualEffect {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native UIBlurEffect alloc();
-
-    @Generated
-    @Selector("effectWithStyle:")
-    public static native UIBlurEffect effectWithStyle(@NInt long style);
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -102,6 +98,10 @@ public class UIBlurEffect extends UIVisualEffect {
     @Generated
     @Selector("description")
     public static native String description_static();
+
+    @Generated
+    @Selector("effectWithStyle:")
+    public static native UIBlurEffect effectWithStyle(@NInt long style);
 
     @Generated
     @Selector("hash")

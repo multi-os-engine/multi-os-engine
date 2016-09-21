@@ -17,7 +17,7 @@ limitations under the License.
 package apple.coreaudiokit;
 
 import apple.NSObject;
-import apple.audiounit.opaque.AudioComponentInstance;
+import apple.audiotoolbox.opaque.AudioComponentInstance;
 import apple.coregraphics.struct.CGRect;
 import apple.foundation.NSArray;
 import apple.foundation.NSCoder;
@@ -65,11 +65,6 @@ public class CAInterAppAudioSwitcherView extends UIView {
     }
 
     @Generated
-    @Owned
-    @Selector("alloc")
-    public static native CAInterAppAudioSwitcherView alloc();
-
-    @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
 
@@ -78,6 +73,11 @@ public class CAInterAppAudioSwitcherView extends UIView {
     public static native void addKeyframeWithRelativeStartTimeRelativeDurationAnimations(double frameStartTime,
             double frameDuration,
             @ObjCBlock(name = "call_addKeyframeWithRelativeStartTimeRelativeDurationAnimations") UIView.Block_addKeyframeWithRelativeStartTimeRelativeDurationAnimations animations);
+
+    @Generated
+    @Owned
+    @Selector("alloc")
+    public static native CAInterAppAudioSwitcherView alloc();
 
     @Generated
     @Selector("allocWithZone:")
@@ -239,7 +239,7 @@ public class CAInterAppAudioSwitcherView extends UIView {
 
     @Generated
     @Selector("load")
-    public static native void load_objc();
+    public static native void load_objc_static();
 
     @Generated
     @Owned
@@ -293,7 +293,7 @@ public class CAInterAppAudioSwitcherView extends UIView {
 
     @Generated
     @Selector("setAnimationDuration:")
-    public static native void setAnimationDuration(double duration);
+    public static native void setAnimationDuration_static(double duration);
 
     @Generated
     @Selector("setAnimationRepeatAutoreverses:")
@@ -301,7 +301,7 @@ public class CAInterAppAudioSwitcherView extends UIView {
 
     @Generated
     @Selector("setAnimationRepeatCount:")
-    public static native void setAnimationRepeatCount(float repeatCount);
+    public static native void setAnimationRepeatCount_static(float repeatCount);
 
     @Generated
     @Selector("setAnimationStartDate:")
@@ -321,7 +321,7 @@ public class CAInterAppAudioSwitcherView extends UIView {
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")
@@ -346,38 +346,15 @@ public class CAInterAppAudioSwitcherView extends UIView {
     public static native long userInterfaceLayoutDirectionForSemanticContentAttribute(@NInt long attribute);
 
     @Generated
+    @Selector("userInterfaceLayoutDirectionForSemanticContentAttribute:relativeToLayoutDirection:")
+    @NInt
+    public static native long userInterfaceLayoutDirectionForSemanticContentAttributeRelativeToLayoutDirection(
+            @NInt long semanticContentAttribute, @NInt long layoutDirection);
+
+    @Generated
     @Selector("version")
     @NInt
-    public static native long version();
-
-    @Generated
-    @Selector("contentWidth")
-    @NFloat
-    public native double contentWidth();
-
-    @Generated
-    @Selector("init")
-    public native CAInterAppAudioSwitcherView init();
-
-    @Generated
-    @Selector("initWithFrame:")
-    public native CAInterAppAudioSwitcherView initWithFrame(@ByValue CGRect frame);
-
-    @Generated
-    @Selector("isShowingAppNames")
-    public native boolean isShowingAppNames();
-
-    @Generated
-    @Selector("setShowingAppNames:")
-    public native void setShowingAppNames(boolean value);
-
-    @Generated
-    @Selector("setOutputAudioUnit:")
-    public native void setOutputAudioUnit(AudioComponentInstance au);
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native CAInterAppAudioSwitcherView initWithCoder(NSCoder aDecoder);
+    public static native long version_static();
 
     @Generated
     @ProtocolClassMethod("appearance")
@@ -424,4 +401,33 @@ public class CAInterAppAudioSwitcherView extends UIView {
     public Object _appearanceWhenContainedInInstancesOfClasses(NSArray<?> containerTypes) {
         return appearanceWhenContainedInInstancesOfClasses(containerTypes);
     }
+
+    @Generated
+    @Selector("contentWidth")
+    @NFloat
+    public native double contentWidth();
+
+    @Generated
+    @Selector("init")
+    public native CAInterAppAudioSwitcherView init();
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native CAInterAppAudioSwitcherView initWithCoder(NSCoder aDecoder);
+
+    @Generated
+    @Selector("initWithFrame:")
+    public native CAInterAppAudioSwitcherView initWithFrame(@ByValue CGRect frame);
+
+    @Generated
+    @Selector("isShowingAppNames")
+    public native boolean isShowingAppNames();
+
+    @Generated
+    @Selector("setShowingAppNames:")
+    public native void setShowingAppNames(boolean value);
+
+    @Generated
+    @Selector("setOutputAudioUnit:")
+    public native void setOutputAudioUnit(AudioComponentInstance au);
 }

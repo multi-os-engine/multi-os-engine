@@ -55,53 +55,23 @@ public class NSCompoundPredicate extends NSPredicate {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native NSCompoundPredicate alloc();
 
     @Generated
-    @Selector("andPredicateWithSubpredicates:")
-    public static native NSCompoundPredicate andPredicateWithSubpredicates(
-            NSArray<? extends NSPredicate> subpredicates);
-
-    @Generated
-    @Selector("notPredicateWithSubpredicate:")
-    public static native NSCompoundPredicate notPredicateWithSubpredicate(NSPredicate predicate);
-
-    @Generated
-    @Selector("orPredicateWithSubpredicates:")
-    public static native NSCompoundPredicate orPredicateWithSubpredicates(NSArray<? extends NSPredicate> subpredicates);
-
-    @Generated
-    @Selector("predicateWithBlock:")
-    public static native NSPredicate predicateWithBlock(
-            @ObjCBlock(name = "call_predicateWithBlock") NSPredicate.Block_predicateWithBlock block);
-
-    @Generated
-    @Variadic()
-    @Selector("predicateWithFormat:")
-    public static native NSPredicate predicateWithFormat(String predicateFormat, Object... varargs);
-
-    @Generated
-    @Selector("predicateWithFormat:argumentArray:")
-    public static native NSPredicate predicateWithFormatArgumentArray(String predicateFormat, NSArray<?> arguments);
-
-    @Generated
-    @Selector("predicateWithFormat:arguments:")
-    public static native NSPredicate predicateWithFormatArguments(String predicateFormat, BytePtr argList);
-
-    @Generated
-    @Selector("predicateWithValue:")
-    public static native NSPredicate predicateWithValue(boolean value);
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
-
-    @Generated
     @Selector("allocWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object allocWithZone(VoidPtr zone);
+
+    @Generated
+    @Selector("andPredicateWithSubpredicates:")
+    public static native NSCompoundPredicate andPredicateWithSubpredicates(
+            NSArray<? extends NSPredicate> subpredicates);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -174,6 +144,36 @@ public class NSCompoundPredicate extends NSPredicate {
     public static native Object new_objc();
 
     @Generated
+    @Selector("notPredicateWithSubpredicate:")
+    public static native NSCompoundPredicate notPredicateWithSubpredicate(NSPredicate predicate);
+
+    @Generated
+    @Selector("orPredicateWithSubpredicates:")
+    public static native NSCompoundPredicate orPredicateWithSubpredicates(NSArray<? extends NSPredicate> subpredicates);
+
+    @Generated
+    @Selector("predicateWithBlock:")
+    public static native NSPredicate predicateWithBlock(
+            @ObjCBlock(name = "call_predicateWithBlock") NSPredicate.Block_predicateWithBlock block);
+
+    @Generated
+    @Variadic()
+    @Selector("predicateWithFormat:")
+    public static native NSPredicate predicateWithFormat(String predicateFormat, Object... varargs);
+
+    @Generated
+    @Selector("predicateWithFormat:argumentArray:")
+    public static native NSPredicate predicateWithFormatArgumentArray(String predicateFormat, NSArray<?> arguments);
+
+    @Generated
+    @Selector("predicateWithFormat:arguments:")
+    public static native NSPredicate predicateWithFormatArguments(String predicateFormat, BytePtr argList);
+
+    @Generated
+    @Selector("predicateWithValue:")
+    public static native NSPredicate predicateWithValue(boolean value);
+
+    @Generated
     @Selector("resolveClassMethod:")
     public static native boolean resolveClassMethod(SEL sel);
 
@@ -183,7 +183,7 @@ public class NSCompoundPredicate extends NSPredicate {
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")
@@ -208,6 +208,10 @@ public class NSCompoundPredicate extends NSPredicate {
     public native NSCompoundPredicate init();
 
     @Generated
+    @Selector("initWithCoder:")
+    public native NSCompoundPredicate initWithCoder(NSCoder coder);
+
+    @Generated
     @Selector("initWithType:subpredicates:")
     public native NSCompoundPredicate initWithTypeSubpredicates(@NUInt long type,
             NSArray<? extends NSPredicate> subpredicates);
@@ -215,10 +219,6 @@ public class NSCompoundPredicate extends NSPredicate {
     @Generated
     @Selector("subpredicates")
     public native NSArray<?> subpredicates();
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native NSCompoundPredicate initWithCoder(NSCoder coder);
 
     @Generated
     @ProtocolClassMethod("supportsSecureCoding")

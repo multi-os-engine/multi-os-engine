@@ -57,59 +57,13 @@ public class SKFieldNode extends SKNode {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native SKFieldNode alloc();
-
-    @Generated
-    @Selector("dragField")
-    public static native SKFieldNode dragField();
-
-    @Generated
-    @Selector("electricField")
-    public static native SKFieldNode electricField();
-
-    @Generated
-    @Selector("magneticField")
-    public static native SKFieldNode magneticField();
-
-    @Generated
-    @Selector("node")
-    public static native SKFieldNode node();
-
-    @Generated
-    @Selector("nodeWithFileNamed:")
-    public static native SKFieldNode nodeWithFileNamed(String filename);
-
-    @Generated
-    @Selector("noiseFieldWithSmoothness:animationSpeed:")
-    public static native SKFieldNode noiseFieldWithSmoothnessAnimationSpeed(@NFloat double smoothness,
-            @NFloat double speed);
-
-    @Generated
-    @Selector("radialGravityField")
-    public static native SKFieldNode radialGravityField();
-
-    @Generated
-    @Selector("springField")
-    public static native SKFieldNode springField();
-
-    @Generated
-    @Selector("turbulenceFieldWithSmoothness:animationSpeed:")
-    public static native SKFieldNode turbulenceFieldWithSmoothnessAnimationSpeed(@NFloat double smoothness,
-            @NFloat double speed);
-
-    @Generated
-    @Selector("velocityFieldWithTexture:")
-    public static native SKFieldNode velocityFieldWithTexture(SKTexture velocityTexture);
-
-    @Generated
-    @Selector("vortexField")
-    public static native SKFieldNode vortexField();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -151,6 +105,14 @@ public class SKFieldNode extends SKNode {
     public static native String description_static();
 
     @Generated
+    @Selector("dragField")
+    public static native SKFieldNode dragField();
+
+    @Generated
+    @Selector("electricField")
+    public static native SKFieldNode electricField();
+
+    @Generated
     @Selector("hash")
     @NUInt
     public static native long hash_static();
@@ -185,10 +147,27 @@ public class SKFieldNode extends SKNode {
     public static native void load_objc_static();
 
     @Generated
+    @Selector("magneticField")
+    public static native SKFieldNode magneticField();
+
+    @Generated
     @Owned
     @Selector("new")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object new_objc();
+
+    @Generated
+    @Selector("node")
+    public static native SKFieldNode node();
+
+    @Generated
+    @Selector("nodeWithFileNamed:")
+    public static native SKFieldNode nodeWithFileNamed(String filename);
+
+    @Generated
+    @Selector("noiseFieldWithSmoothness:animationSpeed:")
+    public static native SKFieldNode noiseFieldWithSmoothnessAnimationSpeed(@NFloat double smoothness,
+            @NFloat double speed);
 
     @Generated
     @Selector("obstaclesFromNodeBounds:")
@@ -205,6 +184,10 @@ public class SKFieldNode extends SKNode {
             NSArray<? extends SKNode> sprites, float accuracy);
 
     @Generated
+    @Selector("radialGravityField")
+    public static native SKFieldNode radialGravityField();
+
+    @Generated
     @Selector("resolveClassMethod:")
     public static native boolean resolveClassMethod(SEL sel);
 
@@ -217,13 +200,30 @@ public class SKFieldNode extends SKNode {
     public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
+    @Selector("springField")
+    public static native SKFieldNode springField();
+
+    @Generated
     @Selector("superclass")
     public static native Class superclass_static();
+
+    @Generated
+    @Selector("turbulenceFieldWithSmoothness:animationSpeed:")
+    public static native SKFieldNode turbulenceFieldWithSmoothnessAnimationSpeed(@NFloat double smoothness,
+            @NFloat double speed);
+
+    @Generated
+    @Selector("velocityFieldWithTexture:")
+    public static native SKFieldNode velocityFieldWithTexture(SKTexture velocityTexture);
 
     @Generated
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("vortexField")
+    public static native SKFieldNode vortexField();
 
     @Generated
     @Selector("animationSpeed")

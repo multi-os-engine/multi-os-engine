@@ -55,56 +55,22 @@ public class CLLocationManager extends NSObject {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native CLLocationManager alloc();
 
     @Generated
-    @Selector("authorizationStatus")
-    public static native int authorizationStatus();
-
-    @Generated
-    @Selector("deferredLocationUpdatesAvailable")
-    public static native boolean deferredLocationUpdatesAvailable();
-
-    @Generated
-    @Selector("headingAvailable")
-    public static native boolean headingAvailable_static();
-
-    @Generated
-    @Selector("isMonitoringAvailableForClass:")
-    public static native boolean isMonitoringAvailableForClass(Class regionClass);
-
-    @Generated
-    @Selector("isRangingAvailable")
-    public static native boolean isRangingAvailable();
-
-    @Generated
-    @Selector("locationServicesEnabled")
-    public static native boolean locationServicesEnabled_static();
-
-    @Generated
-    @Deprecated
-    @Selector("regionMonitoringAvailable")
-    public static native boolean regionMonitoringAvailable();
-
-    @Generated
-    @Deprecated
-    @Selector("regionMonitoringEnabled")
-    public static native boolean regionMonitoringEnabled();
-
-    @Generated
-    @Selector("significantLocationChangeMonitoringAvailable")
-    public static native boolean significantLocationChangeMonitoringAvailable();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
-
-    @Generated
     @Selector("allocWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object allocWithZone(VoidPtr zone);
+
+    @Generated
+    @Selector("authorizationStatus")
+    public static native int authorizationStatus();
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -133,6 +99,10 @@ public class CLLocationManager extends NSObject {
     public static native String debugDescription_static();
 
     @Generated
+    @Selector("deferredLocationUpdatesAvailable")
+    public static native boolean deferredLocationUpdatesAvailable();
+
+    @Generated
     @Selector("description")
     public static native String description_static();
 
@@ -140,6 +110,10 @@ public class CLLocationManager extends NSObject {
     @Selector("hash")
     @NUInt
     public static native long hash_static();
+
+    @Generated
+    @Selector("headingAvailable")
+    public static native boolean headingAvailable_static();
 
     @Generated
     @Selector("initialize")
@@ -159,6 +133,14 @@ public class CLLocationManager extends NSObject {
     public static native boolean instancesRespondToSelector(SEL aSelector);
 
     @Generated
+    @Selector("isMonitoringAvailableForClass:")
+    public static native boolean isMonitoringAvailableForClass(Class regionClass);
+
+    @Generated
+    @Selector("isRangingAvailable")
+    public static native boolean isRangingAvailable();
+
+    @Generated
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
@@ -171,10 +153,24 @@ public class CLLocationManager extends NSObject {
     public static native void load_objc_static();
 
     @Generated
+    @Selector("locationServicesEnabled")
+    public static native boolean locationServicesEnabled_static();
+
+    @Generated
     @Owned
     @Selector("new")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object new_objc();
+
+    @Generated
+    @Deprecated
+    @Selector("regionMonitoringAvailable")
+    public static native boolean regionMonitoringAvailable();
+
+    @Generated
+    @Deprecated
+    @Selector("regionMonitoringEnabled")
+    public static native boolean regionMonitoringEnabled();
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -186,7 +182,11 @@ public class CLLocationManager extends NSObject {
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
+
+    @Generated
+    @Selector("significantLocationChangeMonitoringAvailable")
+    public static native boolean significantLocationChangeMonitoringAvailable();
 
     @Generated
     @Selector("superclass")
@@ -205,6 +205,10 @@ public class CLLocationManager extends NSObject {
     @Generated
     @Selector("allowDeferredLocationUpdatesUntilTraveled:timeout:")
     public native void allowDeferredLocationUpdatesUntilTraveledTimeout(double distance, double timeout);
+
+    @Generated
+    @Selector("allowsBackgroundLocationUpdates")
+    public native boolean allowsBackgroundLocationUpdates();
 
     @Generated
     @Selector("delegate")
@@ -283,6 +287,10 @@ public class CLLocationManager extends NSObject {
     public native void requestAlwaysAuthorization();
 
     @Generated
+    @Selector("requestLocation")
+    public native void requestLocation();
+
+    @Generated
     @Selector("requestStateForRegion:")
     public native void requestStateForRegion(CLRegion region);
 
@@ -293,6 +301,10 @@ public class CLLocationManager extends NSObject {
     @Generated
     @Selector("setActivityType:")
     public native void setActivityType(@NInt long value);
+
+    @Generated
+    @Selector("setAllowsBackgroundLocationUpdates:")
+    public native void setAllowsBackgroundLocationUpdates(boolean value);
 
     @Generated
     @Selector("setDelegate:")
@@ -387,16 +399,4 @@ public class CLLocationManager extends NSObject {
     @Generated
     @Selector("stopUpdatingLocation")
     public native void stopUpdatingLocation();
-
-    @Generated
-    @Selector("allowsBackgroundLocationUpdates")
-    public native boolean allowsBackgroundLocationUpdates();
-
-    @Generated
-    @Selector("requestLocation")
-    public native void requestLocation();
-
-    @Generated
-    @Selector("setAllowsBackgroundLocationUpdates:")
-    public native void setAllowsBackgroundLocationUpdates(boolean value);
 }

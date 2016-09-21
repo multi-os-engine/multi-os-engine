@@ -67,37 +67,13 @@ public final class CFRunLoopSourceContext1 extends StructObject {
     public native void setInfo(VoidPtr value);
 
     @Generated
-    @StructureField(order = 2, isGetter = false)
-    public native void setRetain(@FunctionPtr(name = "call_retain") Function_retain value);
-
-    @Generated
-    @StructureField(order = 3, isGetter = false)
-    public native void setRelease(@FunctionPtr(name = "call_release") Function_release value);
-
-    @Generated
-    @StructureField(order = 4, isGetter = false)
-    public native void setCopyDescription(@FunctionPtr(name = "call_copyDescription") Function_copyDescription value);
-
-    @Generated
-    @StructureField(order = 5, isGetter = false)
-    public native void setEqual(@FunctionPtr(name = "call_equal") Function_equal value);
-
-    @Generated
-    @StructureField(order = 6, isGetter = false)
-    public native void setHash(@FunctionPtr(name = "call_hash") Function_hash value);
-
-    @Generated
-    @StructureField(order = 7, isGetter = false)
-    public native void setGetPort(@FunctionPtr(name = "call_getPort") Function_getPort value);
-
-    @Generated
-    @StructureField(order = 8, isGetter = false)
-    public native void setPerform(@FunctionPtr(name = "call_perform") Function_perform value);
-
-    @Generated
     @StructureField(order = 2, isGetter = true)
     @FunctionPtr(name = "call_retain")
     public native Function_retain retain();
+
+    @Generated
+    @StructureField(order = 2, isGetter = false)
+    public native void setRetain(@FunctionPtr(name = "call_retain") Function_retain value);
 
     @Generated
     @StructureField(order = 3, isGetter = true)
@@ -105,9 +81,17 @@ public final class CFRunLoopSourceContext1 extends StructObject {
     public native Function_release release();
 
     @Generated
+    @StructureField(order = 3, isGetter = false)
+    public native void setRelease(@FunctionPtr(name = "call_release") Function_release value);
+
+    @Generated
     @StructureField(order = 4, isGetter = true)
     @FunctionPtr(name = "call_copyDescription")
     public native Function_copyDescription copyDescription();
+
+    @Generated
+    @StructureField(order = 4, isGetter = false)
+    public native void setCopyDescription(@FunctionPtr(name = "call_copyDescription") Function_copyDescription value);
 
     @Generated
     @StructureField(order = 5, isGetter = true)
@@ -115,9 +99,17 @@ public final class CFRunLoopSourceContext1 extends StructObject {
     public native Function_equal equal();
 
     @Generated
+    @StructureField(order = 5, isGetter = false)
+    public native void setEqual(@FunctionPtr(name = "call_equal") Function_equal value);
+
+    @Generated
     @StructureField(order = 6, isGetter = true)
     @FunctionPtr(name = "call_hash")
     public native Function_hash hash();
+
+    @Generated
+    @StructureField(order = 6, isGetter = false)
+    public native void setHash(@FunctionPtr(name = "call_hash") Function_hash value);
 
     @Generated
     @StructureField(order = 7, isGetter = true)
@@ -125,9 +117,17 @@ public final class CFRunLoopSourceContext1 extends StructObject {
     public native Function_getPort getPort();
 
     @Generated
+    @StructureField(order = 7, isGetter = false)
+    public native void setGetPort(@FunctionPtr(name = "call_getPort") Function_getPort value);
+
+    @Generated
     @StructureField(order = 8, isGetter = true)
     @FunctionPtr(name = "call_perform")
     public native Function_perform perform();
+
+    @Generated
+    @StructureField(order = 8, isGetter = false)
+    public native void setPerform(@FunctionPtr(name = "call_perform") Function_perform value);
 
     @Runtime(CRuntime.class)
     @Generated

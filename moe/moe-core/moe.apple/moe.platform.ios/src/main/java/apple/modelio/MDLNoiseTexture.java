@@ -55,29 +55,13 @@ public class MDLNoiseTexture extends MDLTexture {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native MDLNoiseTexture alloc();
-
-    @Generated
-    @Selector("textureCubeWithImagesNamed:")
-    public static native MDLNoiseTexture textureCubeWithImagesNamed(NSArray<String> names);
-
-    @Generated
-    @Selector("textureCubeWithImagesNamed:bundle:")
-    public static native MDLNoiseTexture textureCubeWithImagesNamedBundle(NSArray<String> names, NSBundle bundleOrNil);
-
-    @Generated
-    @Selector("textureNamed:")
-    public static native MDLNoiseTexture textureNamed(String name);
-
-    @Generated
-    @Selector("textureNamed:bundle:")
-    public static native MDLNoiseTexture textureNamedBundle(String name, NSBundle bundleOrNil);
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -164,11 +148,27 @@ public class MDLNoiseTexture extends MDLTexture {
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")
     public static native Class superclass_static();
+
+    @Generated
+    @Selector("textureCubeWithImagesNamed:")
+    public static native MDLNoiseTexture textureCubeWithImagesNamed(NSArray<String> names);
+
+    @Generated
+    @Selector("textureCubeWithImagesNamed:bundle:")
+    public static native MDLNoiseTexture textureCubeWithImagesNamedBundle(NSArray<String> names, NSBundle bundleOrNil);
+
+    @Generated
+    @Selector("textureNamed:")
+    public static native MDLNoiseTexture textureNamed(String name);
+
+    @Generated
+    @Selector("textureNamed:bundle:")
+    public static native MDLNoiseTexture textureNamedBundle(String name, NSBundle bundleOrNil);
 
     @Generated
     @Selector("version")

@@ -48,6 +48,11 @@ public final class HealthKit {
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
+    public static native String HKPredicateKeyPathDateComponents();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
     public static native String HKPredicateKeyPathUUID();
 
     @Generated
@@ -69,6 +74,16 @@ public final class HealthKit {
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String HKPredicateKeyPathWorkout();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String HKPredicateKeyPathDevice();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String HKPredicateKeyPathSourceRevision();
 
     @Generated
     @CVariable()
@@ -113,6 +128,11 @@ public final class HealthKit {
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
+    public static native String HKPredicateKeyPathWorkoutTotalSwimmingStrokeCount();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
     public static native String HKWorkoutSortIdentifierDuration();
 
     @Generated
@@ -128,7 +148,77 @@ public final class HealthKit {
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
+    public static native String HKWorkoutSortIdentifierTotalSwimmingStrokeCount();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
     public static native String HKPredicateKeyPathCategoryValue();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String HKPredicateKeyPathCDATitle();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String HKPredicateKeyPathCDAPatientName();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String HKPredicateKeyPathCDAAuthorName();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String HKPredicateKeyPathCDACustodianName();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String HKDetailedCDAValidationErrorKey();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String HKDevicePropertyKeyName();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String HKDevicePropertyKeyManufacturer();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String HKDevicePropertyKeyModel();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String HKDevicePropertyKeyHardwareVersion();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String HKDevicePropertyKeyFirmwareVersion();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String HKDevicePropertyKeySoftwareVersion();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String HKDevicePropertyKeyLocalIdentifier();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String HKDevicePropertyKeyUDIDeviceIdentifier();
 
     @Generated
     @CVariable()
@@ -233,6 +323,46 @@ public final class HealthKit {
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
+    public static native String HKMetadataKeyWeatherCondition();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String HKMetadataKeyWeatherTemperature();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String HKMetadataKeyWeatherHumidity();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String HKMetadataKeySexualActivityProtectionUsed();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String HKMetadataKeyMenstrualCycleStart();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String HKMetadataKeyLapLength();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String HKMetadataKeySwimmingLocationType();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String HKMetadataKeySwimmingStrokeStyle();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
     public static native String HKQuantityTypeIdentifierBodyMassIndex();
 
     @Generated
@@ -273,6 +403,11 @@ public final class HealthKit {
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
+    public static native String HKQuantityTypeIdentifierDistanceWheelchair();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
     public static native String HKQuantityTypeIdentifierBasalEnergyBurned();
 
     @Generated
@@ -293,12 +428,37 @@ public final class HealthKit {
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
+    public static native String HKQuantityTypeIdentifierAppleExerciseTime();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String HKQuantityTypeIdentifierPushCount();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String HKQuantityTypeIdentifierDistanceSwimming();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String HKQuantityTypeIdentifierSwimmingStrokeCount();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
     public static native String HKQuantityTypeIdentifierHeartRate();
 
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String HKQuantityTypeIdentifierBodyTemperature();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String HKQuantityTypeIdentifierBasalBodyTemperature();
 
     @Generated
     @CVariable()
@@ -558,117 +718,17 @@ public final class HealthKit {
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
-    public static native String HKCategoryTypeIdentifierSleepAnalysis();
-
-    @Generated
-    @CVariable()
-    @MappedReturn(ObjCStringMapper.class)
-    public static native String HKCharacteristicTypeIdentifierBiologicalSex();
-
-    @Generated
-    @CVariable()
-    @MappedReturn(ObjCStringMapper.class)
-    public static native String HKCharacteristicTypeIdentifierBloodType();
-
-    @Generated
-    @CVariable()
-    @MappedReturn(ObjCStringMapper.class)
-    public static native String HKCharacteristicTypeIdentifierDateOfBirth();
-
-    @Generated
-    @CVariable()
-    @MappedReturn(ObjCStringMapper.class)
-    public static native String HKCorrelationTypeIdentifierBloodPressure();
-
-    @Generated
-    @CVariable()
-    @MappedReturn(ObjCStringMapper.class)
-    public static native String HKCorrelationTypeIdentifierFood();
-
-    @Generated
-    @CVariable()
-    @MappedReturn(ObjCStringMapper.class)
-    public static native String HKWorkoutTypeIdentifier();
-
-    @Generated
-    @CVariable()
-    @MappedReturn(ObjCStringMapper.class)
-    public static native String HKPredicateKeyPathQuantity();
-
-    @Generated
-    @CVariable()
-    @MappedReturn(ObjCStringMapper.class)
-    public static native String HKPredicateKeyPathDevice();
-
-    @Generated
-    @CVariable()
-    @MappedReturn(ObjCStringMapper.class)
-    public static native String HKPredicateKeyPathSourceRevision();
-
-    @Generated
-    @CVariable()
-    @MappedReturn(ObjCStringMapper.class)
-    public static native String HKDevicePropertyKeyName();
-
-    @Generated
-    @CVariable()
-    @MappedReturn(ObjCStringMapper.class)
-    public static native String HKDevicePropertyKeyManufacturer();
-
-    @Generated
-    @CVariable()
-    @MappedReturn(ObjCStringMapper.class)
-    public static native String HKDevicePropertyKeyModel();
-
-    @Generated
-    @CVariable()
-    @MappedReturn(ObjCStringMapper.class)
-    public static native String HKDevicePropertyKeyHardwareVersion();
-
-    @Generated
-    @CVariable()
-    @MappedReturn(ObjCStringMapper.class)
-    public static native String HKDevicePropertyKeyFirmwareVersion();
-
-    @Generated
-    @CVariable()
-    @MappedReturn(ObjCStringMapper.class)
-    public static native String HKDevicePropertyKeySoftwareVersion();
-
-    @Generated
-    @CVariable()
-    @MappedReturn(ObjCStringMapper.class)
-    public static native String HKDevicePropertyKeyLocalIdentifier();
-
-    @Generated
-    @CVariable()
-    @MappedReturn(ObjCStringMapper.class)
-    public static native String HKDevicePropertyKeyUDIDeviceIdentifier();
-
-    @Generated
-    @CVariable()
-    @MappedReturn(ObjCStringMapper.class)
-    public static native String HKMetadataKeySexualActivityProtectionUsed();
-
-    @Generated
-    @CVariable()
-    @MappedReturn(ObjCStringMapper.class)
-    public static native String HKMetadataKeyMenstrualCycleStart();
-
-    @Generated
-    @CVariable()
-    @MappedReturn(ObjCStringMapper.class)
-    public static native String HKQuantityTypeIdentifierBasalBodyTemperature();
-
-    @Generated
-    @CVariable()
-    @MappedReturn(ObjCStringMapper.class)
     public static native String HKQuantityTypeIdentifierDietaryWater();
 
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String HKQuantityTypeIdentifierUVExposure();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String HKCategoryTypeIdentifierSleepAnalysis();
 
     @Generated
     @CVariable()
@@ -703,15 +763,55 @@ public final class HealthKit {
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
+    public static native String HKCategoryTypeIdentifierMindfulSession();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String HKCharacteristicTypeIdentifierBiologicalSex();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String HKCharacteristicTypeIdentifierBloodType();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String HKCharacteristicTypeIdentifierDateOfBirth();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
     public static native String HKCharacteristicTypeIdentifierFitzpatrickSkinType();
 
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
-    public static native String HKPredicateKeyPathDateComponents();
+    public static native String HKCharacteristicTypeIdentifierWheelchairUse();
 
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
-    public static native String HKQuantityTypeIdentifierAppleExerciseTime();
+    public static native String HKCorrelationTypeIdentifierBloodPressure();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String HKCorrelationTypeIdentifierFood();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String HKDocumentTypeIdentifierCDA();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String HKWorkoutTypeIdentifier();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String HKPredicateKeyPathQuantity();
 }

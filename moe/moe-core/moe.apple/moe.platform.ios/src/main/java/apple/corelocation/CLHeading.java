@@ -59,17 +59,13 @@ public class CLHeading extends NSObject implements NSCopying, NSSecureCoding {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native CLHeading alloc();
-
-    @Generated
-    @Selector("supportsSecureCoding")
-    public static native boolean supportsSecureCoding();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -101,6 +97,10 @@ public class CLHeading extends NSObject implements NSCopying, NSSecureCoding {
     @Generated
     @Selector("debugDescription")
     public static native String debugDescription_static();
+
+    @Generated
+    @Selector("description")
+    public static native String description_static();
 
     @Generated
     @Selector("hash")
@@ -152,11 +152,15 @@ public class CLHeading extends NSObject implements NSCopying, NSSecureCoding {
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")
     public static native Class superclass_static();
+
+    @Generated
+    @Selector("supportsSecureCoding")
+    public static native boolean supportsSecureCoding();
 
     @Generated
     @Selector("version")
@@ -168,10 +172,6 @@ public class CLHeading extends NSObject implements NSCopying, NSSecureCoding {
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
     public native Object copyWithZone(VoidPtr zone);
-
-    @Generated
-    @Selector("description")
-    public native String description();
 
     @Generated
     @Selector("encodeWithCoder:")

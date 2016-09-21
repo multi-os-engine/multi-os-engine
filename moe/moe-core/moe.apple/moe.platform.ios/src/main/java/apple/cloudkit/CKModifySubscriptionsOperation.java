@@ -56,13 +56,13 @@ public class CKModifySubscriptionsOperation extends CKDatabaseOperation {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native CKModifySubscriptionsOperation alloc();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -170,6 +170,11 @@ public class CKModifySubscriptionsOperation extends CKDatabaseOperation {
             NSArray<? extends CKSubscription> subscriptionsToSave, NSArray<String> subscriptionIDsToDelete);
 
     @Generated
+    @Selector("modifySubscriptionsCompletionBlock")
+    @ObjCBlock(name = "call_modifySubscriptionsCompletionBlock_ret")
+    public native Block_modifySubscriptionsCompletionBlock_ret modifySubscriptionsCompletionBlock();
+
+    @Generated
     @Selector("setModifySubscriptionsCompletionBlock:")
     public native void setModifySubscriptionsCompletionBlock(
             @ObjCBlock(name = "call_setModifySubscriptionsCompletionBlock") Block_setModifySubscriptionsCompletionBlock value);
@@ -190,24 +195,19 @@ public class CKModifySubscriptionsOperation extends CKDatabaseOperation {
     @Selector("subscriptionsToSave")
     public native NSArray<? extends CKSubscription> subscriptionsToSave();
 
+    @Runtime(ObjCRuntime.class)
     @Generated
-    @Selector("modifySubscriptionsCompletionBlock")
-    @ObjCBlock(name = "call_modifySubscriptionsCompletionBlock_ret")
-    public native Block_modifySubscriptionsCompletionBlock_ret modifySubscriptionsCompletionBlock();
+    public interface Block_modifySubscriptionsCompletionBlock_ret {
+        @Generated
+        void call_modifySubscriptionsCompletionBlock_ret(NSArray<? extends CKSubscription> arg0, NSArray<String> arg1,
+                NSError arg2);
+    }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_setModifySubscriptionsCompletionBlock {
         @Generated
         void call_setModifySubscriptionsCompletionBlock(NSArray<? extends CKSubscription> arg0, NSArray<String> arg1,
-                NSError arg2);
-    }
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_modifySubscriptionsCompletionBlock_ret {
-        @Generated
-        void call_modifySubscriptionsCompletionBlock_ret(NSArray<? extends CKSubscription> arg0, NSArray<String> arg1,
                 NSError arg2);
     }
 }

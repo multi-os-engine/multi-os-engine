@@ -56,13 +56,13 @@ public class CKDiscoverAllContactsOperation extends CKOperation {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native CKDiscoverAllContactsOperation alloc();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -131,7 +131,7 @@ public class CKDiscoverAllContactsOperation extends CKOperation {
 
     @Generated
     @Selector("load")
-    public static native void load_objc();
+    public static native void load_objc_static();
 
     @Generated
     @Owned
@@ -149,7 +149,7 @@ public class CKDiscoverAllContactsOperation extends CKOperation {
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")
@@ -158,7 +158,12 @@ public class CKDiscoverAllContactsOperation extends CKOperation {
     @Generated
     @Selector("version")
     @NInt
-    public static native long version();
+    public static native long version_static();
+
+    @Generated
+    @Selector("discoverAllContactsCompletionBlock")
+    @ObjCBlock(name = "call_discoverAllContactsCompletionBlock_ret")
+    public native Block_discoverAllContactsCompletionBlock_ret discoverAllContactsCompletionBlock();
 
     @Generated
     @Selector("init")
@@ -169,22 +174,17 @@ public class CKDiscoverAllContactsOperation extends CKOperation {
     public native void setDiscoverAllContactsCompletionBlock(
             @ObjCBlock(name = "call_setDiscoverAllContactsCompletionBlock") Block_setDiscoverAllContactsCompletionBlock value);
 
+    @Runtime(ObjCRuntime.class)
     @Generated
-    @Selector("discoverAllContactsCompletionBlock")
-    @ObjCBlock(name = "call_discoverAllContactsCompletionBlock_ret")
-    public native Block_discoverAllContactsCompletionBlock_ret discoverAllContactsCompletionBlock();
+    public interface Block_discoverAllContactsCompletionBlock_ret {
+        @Generated
+        void call_discoverAllContactsCompletionBlock_ret(NSArray<? extends CKDiscoveredUserInfo> arg0, NSError arg1);
+    }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_setDiscoverAllContactsCompletionBlock {
         @Generated
         void call_setDiscoverAllContactsCompletionBlock(NSArray<? extends CKDiscoveredUserInfo> arg0, NSError arg1);
-    }
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_discoverAllContactsCompletionBlock_ret {
-        @Generated
-        void call_discoverAllContactsCompletionBlock_ret(NSArray<? extends CKDiscoveredUserInfo> arg0, NSError arg1);
     }
 }

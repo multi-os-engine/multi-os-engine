@@ -52,17 +52,13 @@ public class NSHTTPURLResponse extends NSURLResponse {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native NSHTTPURLResponse alloc();
-
-    @Generated
-    @Selector("localizedStringForStatusCode:")
-    public static native String localizedStringForStatusCode(@NInt long statusCode);
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -134,6 +130,10 @@ public class NSHTTPURLResponse extends NSURLResponse {
     public static native void load_objc_static();
 
     @Generated
+    @Selector("localizedStringForStatusCode:")
+    public static native String localizedStringForStatusCode(@NInt long statusCode);
+
+    @Generated
     @Owned
     @Selector("new")
     @MappedReturn(ObjCObjectMapper.class)
@@ -173,6 +173,10 @@ public class NSHTTPURLResponse extends NSURLResponse {
     public native NSHTTPURLResponse init();
 
     @Generated
+    @Selector("initWithCoder:")
+    public native NSHTTPURLResponse initWithCoder(NSCoder aDecoder);
+
+    @Generated
     @Selector("initWithURL:MIMEType:expectedContentLength:textEncodingName:")
     public native NSHTTPURLResponse initWithURLMIMETypeExpectedContentLengthTextEncodingName(NSURL URL, String MIMEType,
             @NInt long length, String name);
@@ -186,10 +190,6 @@ public class NSHTTPURLResponse extends NSURLResponse {
     @Selector("statusCode")
     @NInt
     public native long statusCode();
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native NSHTTPURLResponse initWithCoder(NSCoder aDecoder);
 
     @Generated
     @ProtocolClassMethod("supportsSecureCoding")

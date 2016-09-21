@@ -62,31 +62,22 @@ public class AVMutableComposition extends AVComposition {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native AVMutableComposition alloc();
 
     @Generated
-    @Selector("assetWithURL:")
-    public static native AVMutableComposition assetWithURL(NSURL URL);
-
-    @Generated
-    @Selector("composition")
-    public static native AVMutableComposition composition();
-
-    @Generated
-    @Selector("compositionWithURLAssetInitializationOptions:")
-    public static native AVMutableComposition compositionWithURLAssetInitializationOptions(
-            NSDictionary<String, ?> URLAssetInitializationOptions);
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
-
-    @Generated
     @Selector("allocWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object allocWithZone(VoidPtr zone);
+
+    @Generated
+    @Selector("assetWithURL:")
+    public static native AVMutableComposition assetWithURL(NSURL URL);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -109,6 +100,15 @@ public class AVMutableComposition extends AVComposition {
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
+
+    @Generated
+    @Selector("composition")
+    public static native AVMutableComposition composition();
+
+    @Generated
+    @Selector("compositionWithURLAssetInitializationOptions:")
+    public static native AVMutableComposition compositionWithURLAssetInitializationOptions(
+            NSDictionary<String, ?> URLAssetInitializationOptions);
 
     @Generated
     @Selector("debugDescription")
@@ -168,7 +168,7 @@ public class AVMutableComposition extends AVComposition {
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")
@@ -177,7 +177,7 @@ public class AVMutableComposition extends AVComposition {
     @Generated
     @Selector("version")
     @NInt
-    public static native long version();
+    public static native long version_static();
 
     @Generated
     @Selector("addMutableTrackWithMediaType:preferredTrackID:")
@@ -223,12 +223,12 @@ public class AVMutableComposition extends AVComposition {
     public native void setNaturalSize(@ByValue CGSize value);
 
     @Generated
-    @Selector("tracks")
-    public native NSArray<? extends AVMutableCompositionTrack> tracks();
-
-    @Generated
     @Selector("trackWithTrackID:")
     public native AVMutableCompositionTrack trackWithTrackID(int trackID);
+
+    @Generated
+    @Selector("tracks")
+    public native NSArray<? extends AVMutableCompositionTrack> tracks();
 
     @Generated
     @Selector("tracksWithMediaCharacteristic:")

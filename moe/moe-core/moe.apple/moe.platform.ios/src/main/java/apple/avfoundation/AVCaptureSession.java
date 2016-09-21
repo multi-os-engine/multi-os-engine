@@ -55,13 +55,13 @@ public class AVCaptureSession extends NSObject {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native AVCaptureSession alloc();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -184,6 +184,10 @@ public class AVCaptureSession extends NSObject {
     public native boolean automaticallyConfiguresApplicationAudioSession();
 
     @Generated
+    @Selector("automaticallyConfiguresCaptureDeviceForWideColor")
+    public native boolean automaticallyConfiguresCaptureDeviceForWideColor();
+
+    @Generated
     @Selector("beginConfiguration")
     public native void beginConfiguration();
 
@@ -250,6 +254,10 @@ public class AVCaptureSession extends NSObject {
     @Generated
     @Selector("setAutomaticallyConfiguresApplicationAudioSession:")
     public native void setAutomaticallyConfiguresApplicationAudioSession(boolean value);
+
+    @Generated
+    @Selector("setAutomaticallyConfiguresCaptureDeviceForWideColor:")
+    public native void setAutomaticallyConfiguresCaptureDeviceForWideColor(boolean value);
 
     @Generated
     @Selector("setSessionPreset:")

@@ -56,13 +56,13 @@ public class MTLComputePipelineDescriptor extends NSObject implements NSCopying 
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native MTLComputePipelineDescriptor alloc();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -192,8 +192,16 @@ public class MTLComputePipelineDescriptor extends NSObject implements NSCopying 
     public native void setLabel(String value);
 
     @Generated
+    @Selector("setStageInputDescriptor:")
+    public native void setStageInputDescriptor(MTLStageInputOutputDescriptor value);
+
+    @Generated
     @Selector("setThreadGroupSizeIsMultipleOfThreadExecutionWidth:")
     public native void setThreadGroupSizeIsMultipleOfThreadExecutionWidth(boolean value);
+
+    @Generated
+    @Selector("stageInputDescriptor")
+    public native MTLStageInputOutputDescriptor stageInputDescriptor();
 
     @Generated
     @Selector("threadGroupSizeIsMultipleOfThreadExecutionWidth")

@@ -62,17 +62,13 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native CSSearchableItemAttributeSet alloc();
-
-    @Generated
-    @Selector("supportsSecureCoding")
-    public static native boolean supportsSecureCoding();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -160,6 +156,10 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
     @Generated
     @Selector("superclass")
     public static native Class superclass_static();
+
+    @Generated
+    @Selector("supportsSecureCoding")
+    public static native boolean supportsSecureCoding();
 
     @Generated
     @Selector("EXIFGPSVersion")
@@ -444,6 +444,10 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
     public native String displayName();
 
     @Generated
+    @Selector("domainIdentifier")
+    public native String domainIdentifier();
+
+    @Generated
     @Selector("downloadedDate")
     public native NSDate downloadedDate();
 
@@ -510,6 +514,10 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
     @Generated
     @Selector("fontNames")
     public native NSArray<String> fontNames();
+
+    @Generated
+    @Selector("fullyFormattedAddress")
+    public native String fullyFormattedAddress();
 
     @Generated
     @Selector("genre")
@@ -726,6 +734,10 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
     @Generated
     @Selector("playCount")
     public native NSNumber playCount();
+
+    @Generated
+    @Selector("postalCode")
+    public native String postalCode();
 
     @Generated
     @Selector("primaryRecipients")
@@ -1000,6 +1012,10 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
     public native void setDisplayName(String value);
 
     @Generated
+    @Selector("setDomainIdentifier:")
+    public native void setDomainIdentifier(String value);
+
+    @Generated
     @Selector("setDownloadedDate:")
     public native void setDownloadedDate(NSDate value);
 
@@ -1078,6 +1094,10 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
     @Generated
     @Selector("setFontNames:")
     public native void setFontNames(NSArray<String> value);
+
+    @Generated
+    @Selector("setFullyFormattedAddress:")
+    public native void setFullyFormattedAddress(String value);
 
     @Generated
     @Selector("setGPSAreaInformation:")
@@ -1328,6 +1348,10 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
     public native void setPlayCount(NSNumber value);
 
     @Generated
+    @Selector("setPostalCode:")
+    public native void setPostalCode(String value);
+
+    @Generated
     @Selector("setPrimaryRecipients:")
     public native void setPrimaryRecipients(NSArray<? extends CSPerson> value);
 
@@ -1416,6 +1440,10 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
     public native void setStreamable(NSNumber value);
 
     @Generated
+    @Selector("setSubThoroughfare:")
+    public native void setSubThoroughfare(String value);
+
+    @Generated
     @Selector("setSubject:")
     public native void setSubject(String value);
 
@@ -1438,6 +1466,10 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
     @Generated
     @Selector("setTheme:")
     public native void setTheme(String value);
+
+    @Generated
+    @Selector("setThoroughfare:")
+    public native void setThoroughfare(String value);
 
     @Generated
     @Selector("setThumbnailData:")
@@ -1481,6 +1513,10 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
     public native void setVideoBitRate(NSNumber value);
 
     @Generated
+    @Selector("setWeakRelatedUniqueIdentifier:")
+    public native void setWeakRelatedUniqueIdentifier(String value);
+
+    @Generated
     @Selector("setWhiteBalance:")
     public native void setWhiteBalance(NSNumber value);
 
@@ -1495,6 +1531,10 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
     @Generated
     @Selector("stateOrProvince")
     public native String stateOrProvince();
+
+    @Generated
+    @Selector("subThoroughfare")
+    public native String subThoroughfare();
 
     @Generated
     @Selector("subject")
@@ -1525,6 +1565,10 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
     @Generated
     @Selector("theme")
     public native String theme();
+
+    @Generated
+    @Selector("thoroughfare")
+    public native String thoroughfare();
 
     @Generated
     @Selector("thumbnailData")
@@ -1562,6 +1606,10 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
     @Generated
     @Selector("videoBitRate")
     public native NSNumber videoBitRate();
+
+    @Generated
+    @Selector("weakRelatedUniqueIdentifier")
+    public native String weakRelatedUniqueIdentifier();
 
     @Generated
     @Selector("whiteBalance")

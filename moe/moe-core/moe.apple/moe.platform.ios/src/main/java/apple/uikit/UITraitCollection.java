@@ -59,42 +59,13 @@ public class UITraitCollection extends NSObject implements NSCopying, NSSecureCo
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native UITraitCollection alloc();
-
-    @Generated
-    @Selector("supportsSecureCoding")
-    public static native boolean supportsSecureCoding();
-
-    @Generated
-    @Selector("traitCollectionWithDisplayScale:")
-    public static native UITraitCollection traitCollectionWithDisplayScale(@NFloat double scale);
-
-    @Generated
-    @Selector("traitCollectionWithHorizontalSizeClass:")
-    public static native UITraitCollection traitCollectionWithHorizontalSizeClass(@NInt long horizontalSizeClass);
-
-    @Generated
-    @Selector("traitCollectionWithTraitsFromCollections:")
-    public static native UITraitCollection traitCollectionWithTraitsFromCollections(
-            NSArray<? extends UITraitCollection> traitCollections);
-
-    @Generated
-    @Selector("traitCollectionWithUserInterfaceIdiom:")
-    public static native UITraitCollection traitCollectionWithUserInterfaceIdiom(@NInt long idiom);
-
-    @Generated
-    @Selector("traitCollectionWithVerticalSizeClass:")
-    public static native UITraitCollection traitCollectionWithVerticalSizeClass(@NInt long verticalSizeClass);
-
-    @Generated
-    @Selector("traitCollectionWithForceTouchCapability:")
-    public static native UITraitCollection traitCollectionWithForceTouchCapability(@NInt long capability);
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -188,6 +159,48 @@ public class UITraitCollection extends NSObject implements NSCopying, NSSecureCo
     public static native Class superclass_static();
 
     @Generated
+    @Selector("supportsSecureCoding")
+    public static native boolean supportsSecureCoding();
+
+    @Generated
+    @Selector("traitCollectionWithDisplayGamut:")
+    public static native UITraitCollection traitCollectionWithDisplayGamut(@NInt long displayGamut);
+
+    @Generated
+    @Selector("traitCollectionWithDisplayScale:")
+    public static native UITraitCollection traitCollectionWithDisplayScale(@NFloat double scale);
+
+    @Generated
+    @Selector("traitCollectionWithForceTouchCapability:")
+    public static native UITraitCollection traitCollectionWithForceTouchCapability(@NInt long capability);
+
+    @Generated
+    @Selector("traitCollectionWithHorizontalSizeClass:")
+    public static native UITraitCollection traitCollectionWithHorizontalSizeClass(@NInt long horizontalSizeClass);
+
+    @Generated
+    @Selector("traitCollectionWithLayoutDirection:")
+    public static native UITraitCollection traitCollectionWithLayoutDirection(@NInt long layoutDirection);
+
+    @Generated
+    @Selector("traitCollectionWithPreferredContentSizeCategory:")
+    public static native UITraitCollection traitCollectionWithPreferredContentSizeCategory(
+            String preferredContentSizeCategory);
+
+    @Generated
+    @Selector("traitCollectionWithTraitsFromCollections:")
+    public static native UITraitCollection traitCollectionWithTraitsFromCollections(
+            NSArray<? extends UITraitCollection> traitCollections);
+
+    @Generated
+    @Selector("traitCollectionWithUserInterfaceIdiom:")
+    public static native UITraitCollection traitCollectionWithUserInterfaceIdiom(@NInt long idiom);
+
+    @Generated
+    @Selector("traitCollectionWithVerticalSizeClass:")
+    public static native UITraitCollection traitCollectionWithVerticalSizeClass(@NInt long verticalSizeClass);
+
+    @Generated
     @Selector("version")
     @NInt
     public static native long version_static();
@@ -203,6 +216,11 @@ public class UITraitCollection extends NSObject implements NSCopying, NSSecureCo
     public native Object copyWithZone(VoidPtr zone);
 
     @Generated
+    @Selector("displayGamut")
+    @NInt
+    public native long displayGamut();
+
+    @Generated
     @Selector("displayScale")
     @NFloat
     public native double displayScale();
@@ -210,6 +228,11 @@ public class UITraitCollection extends NSObject implements NSCopying, NSSecureCo
     @Generated
     @Selector("encodeWithCoder:")
     public native void encodeWithCoder(NSCoder aCoder);
+
+    @Generated
+    @Selector("forceTouchCapability")
+    @NInt
+    public native long forceTouchCapability();
 
     @Generated
     @Selector("horizontalSizeClass")
@@ -223,6 +246,15 @@ public class UITraitCollection extends NSObject implements NSCopying, NSSecureCo
     @Generated
     @Selector("initWithCoder:")
     public native UITraitCollection initWithCoder(NSCoder aDecoder);
+
+    @Generated
+    @Selector("layoutDirection")
+    @NInt
+    public native long layoutDirection();
+
+    @Generated
+    @Selector("preferredContentSizeCategory")
+    public native String preferredContentSizeCategory();
 
     @Generated
     @ProtocolClassMethod("supportsSecureCoding")
@@ -239,9 +271,4 @@ public class UITraitCollection extends NSObject implements NSCopying, NSSecureCo
     @Selector("verticalSizeClass")
     @NInt
     public native long verticalSizeClass();
-
-    @Generated
-    @Selector("forceTouchCapability")
-    @NInt
-    public native long forceTouchCapability();
 }

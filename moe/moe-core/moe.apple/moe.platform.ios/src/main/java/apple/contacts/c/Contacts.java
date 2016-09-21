@@ -360,6 +360,21 @@ public final class Contacts {
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
+    public static native String CNContactOrganizationNameKey();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String CNContactDepartmentNameKey();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String CNContactJobTitleKey();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
     public static native String CNContactPhoneticGivenNameKey();
 
     @Generated
@@ -375,17 +390,7 @@ public final class Contacts {
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
-    public static native String CNContactOrganizationNameKey();
-
-    @Generated
-    @CVariable()
-    @MappedReturn(ObjCStringMapper.class)
-    public static native String CNContactDepartmentNameKey();
-
-    @Generated
-    @CVariable()
-    @MappedReturn(ObjCStringMapper.class)
-    public static native String CNContactJobTitleKey();
+    public static native String CNContactPhoneticOrganizationNameKey();
 
     @Generated
     @CVariable()

@@ -58,13 +58,13 @@ public class HMAccessory extends NSObject {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native HMAccessory alloc();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -133,7 +133,7 @@ public class HMAccessory extends NSObject {
 
     @Generated
     @Selector("load")
-    public static native void load_objc();
+    public static native void load_objc_static();
 
     @Generated
     @Owned
@@ -151,7 +151,7 @@ public class HMAccessory extends NSObject {
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")
@@ -160,20 +160,28 @@ public class HMAccessory extends NSObject {
     @Generated
     @Selector("version")
     @NInt
-    public static native long version();
+    public static native long version_static();
+
+    @Generated
+    @Selector("cameraProfiles")
+    public native NSArray<? extends HMCameraProfile> cameraProfiles();
+
+    @Generated
+    @Selector("category")
+    public native HMAccessoryCategory category();
 
     @Generated
     @Selector("delegate")
     @MappedReturn(ObjCObjectMapper.class)
     public native HMAccessoryDelegate delegate();
 
-    @Deprecated
     @Generated
+    @Deprecated
     @Selector("identifier")
     public native NSUUID identifier();
 
-    @Deprecated
     @Generated
+    @Deprecated
     @Selector("identifiersForBridgedAccessories")
     public native NSArray<? extends NSUUID> identifiersForBridgedAccessories();
 
@@ -227,21 +235,17 @@ public class HMAccessory extends NSObject {
     }
 
     @Generated
-    @Selector("updateName:completionHandler:")
-    public native void updateNameCompletionHandler(String name,
-            @ObjCBlock(name = "call_updateNameCompletionHandler") Block_updateNameCompletionHandler completion);
-
-    @Generated
-    @Selector("category")
-    public native HMAccessoryCategory category();
-
-    @Generated
     @Selector("uniqueIdentifier")
     public native NSUUID uniqueIdentifier();
 
     @Generated
     @Selector("uniqueIdentifiersForBridgedAccessories")
     public native NSArray<? extends NSUUID> uniqueIdentifiersForBridgedAccessories();
+
+    @Generated
+    @Selector("updateName:completionHandler:")
+    public native void updateNameCompletionHandler(String name,
+            @ObjCBlock(name = "call_updateNameCompletionHandler") Block_updateNameCompletionHandler completion);
 
     @Runtime(ObjCRuntime.class)
     @Generated

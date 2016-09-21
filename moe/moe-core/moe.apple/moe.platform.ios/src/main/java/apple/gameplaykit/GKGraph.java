@@ -18,8 +18,11 @@ package apple.gameplaykit;
 
 import apple.NSObject;
 import apple.foundation.NSArray;
+import apple.foundation.NSCoder;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
+import apple.foundation.protocol.NSCoding;
+import apple.foundation.protocol.NSCopying;
 import org.moe.natj.c.ann.FunctionPtr;
 import org.moe.natj.general.NatJ;
 import org.moe.natj.general.Pointer;
@@ -43,7 +46,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @Library("GameplayKit")
 @Runtime(ObjCRuntime.class)
 @ObjCClassBinding
-public class GKGraph extends NSObject {
+public class GKGraph extends NSObject implements NSCopying, NSCoding {
     static {
         NatJ.register();
     }
@@ -54,17 +57,13 @@ public class GKGraph extends NSObject {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native GKGraph alloc();
-
-    @Generated
-    @Selector("graphWithNodes:")
-    public static native GKGraph graphWithNodes(NSArray<? extends GKGraphNode> nodes);
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -100,6 +99,10 @@ public class GKGraph extends NSObject {
     @Generated
     @Selector("description")
     public static native String description_static();
+
+    @Generated
+    @Selector("graphWithNodes:")
+    public static native GKGraph graphWithNodes(NSArray<? extends GKGraphNode> nodes);
 
     @Generated
     @Selector("hash")
@@ -151,7 +154,7 @@ public class GKGraph extends NSObject {
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")
@@ -171,12 +174,26 @@ public class GKGraph extends NSObject {
     public native void connectNodeToLowestCostNodeBidirectional(GKGraphNode node, boolean bidirectional);
 
     @Generated
+    @Owned
+    @Selector("copyWithZone:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native Object copyWithZone(VoidPtr zone);
+
+    @Generated
+    @Selector("encodeWithCoder:")
+    public native void encodeWithCoder(NSCoder aCoder);
+
+    @Generated
     @Selector("findPathFromNode:toNode:")
     public native NSArray<? extends GKGraphNode> findPathFromNodeToNode(GKGraphNode startNode, GKGraphNode endNode);
 
     @Generated
     @Selector("init")
     public native GKGraph init();
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native GKGraph initWithCoder(NSCoder aDecoder);
 
     @Generated
     @Selector("initWithNodes:")

@@ -55,13 +55,13 @@ public class PKPaymentToken extends NSObject {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native PKPaymentToken alloc();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -148,7 +148,7 @@ public class PKPaymentToken extends NSObject {
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")
@@ -157,7 +157,7 @@ public class PKPaymentToken extends NSObject {
     @Generated
     @Selector("version")
     @NInt
-    public static native long version();
+    public static native long version_static();
 
     @Generated
     @Selector("init")
@@ -167,21 +167,21 @@ public class PKPaymentToken extends NSObject {
     @Selector("paymentData")
     public native NSData paymentData();
 
-    @Deprecated
     @Generated
+    @Deprecated
     @Selector("paymentInstrumentName")
     public native String paymentInstrumentName();
 
-    @Deprecated
     @Generated
+    @Selector("paymentMethod")
+    public native PKPaymentMethod paymentMethod();
+
+    @Generated
+    @Deprecated
     @Selector("paymentNetwork")
     public native String paymentNetwork();
 
     @Generated
     @Selector("transactionIdentifier")
     public native String transactionIdentifier();
-
-    @Generated
-    @Selector("paymentMethod")
-    public native PKPaymentMethod paymentMethod();
 }

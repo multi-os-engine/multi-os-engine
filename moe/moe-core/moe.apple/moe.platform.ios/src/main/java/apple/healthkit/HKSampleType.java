@@ -56,17 +56,17 @@ public class HKSampleType extends HKObjectType {
     }
 
     @Generated
-    @Owned
-    @Selector("alloc")
-    public static native HKSampleType alloc();
-
-    @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("activitySummaryType")
     public static native HKActivitySummaryType activitySummaryType();
+
+    @Generated
+    @Owned
+    @Selector("alloc")
+    public static native HKSampleType alloc();
 
     @Generated
     @Selector("allocWithZone:")
@@ -116,6 +116,10 @@ public class HKSampleType extends HKObjectType {
     public static native String description_static();
 
     @Generated
+    @Selector("documentTypeForIdentifier:")
+    public static native HKDocumentType documentTypeForIdentifier(String identifier);
+
+    @Generated
     @Selector("hash")
     @NUInt
     public static native long hash_static();
@@ -147,7 +151,7 @@ public class HKSampleType extends HKObjectType {
 
     @Generated
     @Selector("load")
-    public static native void load_objc();
+    public static native void load_objc_static();
 
     @Generated
     @Owned
@@ -169,7 +173,7 @@ public class HKSampleType extends HKObjectType {
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")
@@ -182,7 +186,7 @@ public class HKSampleType extends HKObjectType {
     @Generated
     @Selector("version")
     @NInt
-    public static native long version();
+    public static native long version_static();
 
     @Generated
     @Selector("workoutType")

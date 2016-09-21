@@ -60,17 +60,13 @@ public class CKRecord extends NSObject implements NSSecureCoding, NSCopying {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native CKRecord alloc();
-
-    @Generated
-    @Selector("supportsSecureCoding")
-    public static native boolean supportsSecureCoding();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -164,6 +160,10 @@ public class CKRecord extends NSObject implements NSSecureCoding, NSCopying {
     public static native Class superclass_static();
 
     @Generated
+    @Selector("supportsSecureCoding")
+    public static native boolean supportsSecureCoding();
+
+    @Generated
     @Selector("version")
     @NInt
     public static native long version_static();
@@ -241,6 +241,10 @@ public class CKRecord extends NSObject implements NSSecureCoding, NSCopying {
     public native CKRecordValue objectForKeyedSubscript(String key);
 
     @Generated
+    @Selector("parent")
+    public native CKReference parent();
+
+    @Generated
     @Selector("recordChangeTag")
     public native String recordChangeTag();
 
@@ -259,6 +263,22 @@ public class CKRecord extends NSObject implements NSSecureCoding, NSCopying {
     @Generated
     @Selector("setObject:forKeyedSubscript:")
     public native void setObjectForKeyedSubscript(@Mapped(ObjCObjectMapper.class) CKRecordValue object, String key);
+
+    @Generated
+    @Selector("setParent:")
+    public native void setParent(CKReference value);
+
+    @Generated
+    @Selector("setParentReferenceFromRecord:")
+    public native void setParentReferenceFromRecord(CKRecord parentRecord);
+
+    @Generated
+    @Selector("setParentReferenceFromRecordID:")
+    public native void setParentReferenceFromRecordID(CKRecordID parentRecordID);
+
+    @Generated
+    @Selector("share")
+    public native CKReference share();
 
     @Generated
     @ProtocolClassMethod("supportsSecureCoding")

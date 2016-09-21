@@ -54,13 +54,13 @@ public class MPNowPlayingInfoLanguageOption extends NSObject {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native MPNowPlayingInfoLanguageOption alloc();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -147,7 +147,7 @@ public class MPNowPlayingInfoLanguageOption extends NSObject {
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")
@@ -177,6 +177,10 @@ public class MPNowPlayingInfoLanguageOption extends NSObject {
             String displayName, String identifier);
 
     @Generated
+    @Selector("isAutomaticAudibleLanguageOption")
+    public native boolean isAutomaticAudibleLanguageOption();
+
+    @Generated
     @Selector("isAutomaticLegibleLanguageOption")
     public native boolean isAutomaticLegibleLanguageOption();
 
@@ -192,8 +196,4 @@ public class MPNowPlayingInfoLanguageOption extends NSObject {
     @Generated
     @Selector("languageTag")
     public native String languageTag();
-
-    @Generated
-    @Selector("isAutomaticAudibleLanguageOption")
-    public native boolean isAutomaticAudibleLanguageOption();
 }

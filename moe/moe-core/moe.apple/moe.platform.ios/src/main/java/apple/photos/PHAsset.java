@@ -59,47 +59,13 @@ public class PHAsset extends PHObject {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native PHAsset alloc();
-
-    @Generated
-    @Selector("fetchAssetsInAssetCollection:options:")
-    public static native PHFetchResult<PHAsset> fetchAssetsInAssetCollectionOptions(PHAssetCollection assetCollection,
-            PHFetchOptions options);
-
-    @Generated
-    @Selector("fetchAssetsWithALAssetURLs:options:")
-    public static native PHFetchResult<PHAsset> fetchAssetsWithALAssetURLsOptions(NSArray<? extends NSURL> assetURLs,
-            PHFetchOptions options);
-
-    @Generated
-    @Selector("fetchAssetsWithBurstIdentifier:options:")
-    public static native PHFetchResult<PHAsset> fetchAssetsWithBurstIdentifierOptions(String burstIdentifier,
-            PHFetchOptions options);
-
-    @Generated
-    @Selector("fetchAssetsWithLocalIdentifiers:options:")
-    public static native PHFetchResult<PHAsset> fetchAssetsWithLocalIdentifiersOptions(NSArray<String> identifiers,
-            PHFetchOptions options);
-
-    @Generated
-    @Selector("fetchAssetsWithMediaType:options:")
-    public static native PHFetchResult<PHAsset> fetchAssetsWithMediaTypeOptions(@NInt long mediaType,
-            PHFetchOptions options);
-
-    @Generated
-    @Selector("fetchAssetsWithOptions:")
-    public static native PHFetchResult<PHAsset> fetchAssetsWithOptions(PHFetchOptions options);
-
-    @Generated
-    @Selector("fetchKeyAssetsInAssetCollection:options:")
-    public static native PHFetchResult<PHAsset> fetchKeyAssetsInAssetCollectionOptions(
-            PHAssetCollection assetCollection, PHFetchOptions options);
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -135,6 +101,40 @@ public class PHAsset extends PHObject {
     @Generated
     @Selector("description")
     public static native String description_static();
+
+    @Generated
+    @Selector("fetchAssetsInAssetCollection:options:")
+    public static native PHFetchResult<PHAsset> fetchAssetsInAssetCollectionOptions(PHAssetCollection assetCollection,
+            PHFetchOptions options);
+
+    @Generated
+    @Selector("fetchAssetsWithALAssetURLs:options:")
+    public static native PHFetchResult<PHAsset> fetchAssetsWithALAssetURLsOptions(NSArray<? extends NSURL> assetURLs,
+            PHFetchOptions options);
+
+    @Generated
+    @Selector("fetchAssetsWithBurstIdentifier:options:")
+    public static native PHFetchResult<PHAsset> fetchAssetsWithBurstIdentifierOptions(String burstIdentifier,
+            PHFetchOptions options);
+
+    @Generated
+    @Selector("fetchAssetsWithLocalIdentifiers:options:")
+    public static native PHFetchResult<PHAsset> fetchAssetsWithLocalIdentifiersOptions(NSArray<String> identifiers,
+            PHFetchOptions options);
+
+    @Generated
+    @Selector("fetchAssetsWithMediaType:options:")
+    public static native PHFetchResult<PHAsset> fetchAssetsWithMediaTypeOptions(@NInt long mediaType,
+            PHFetchOptions options);
+
+    @Generated
+    @Selector("fetchAssetsWithOptions:")
+    public static native PHFetchResult<PHAsset> fetchAssetsWithOptions(PHFetchOptions options);
+
+    @Generated
+    @Selector("fetchKeyAssetsInAssetCollection:options:")
+    public static native PHFetchResult<PHAsset> fetchKeyAssetsInAssetCollectionOptions(
+            PHAssetCollection assetCollection, PHFetchOptions options);
 
     @Generated
     @Selector("hash")

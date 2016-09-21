@@ -62,23 +62,13 @@ public class NSEntityDescription extends NSObject implements NSCoding, NSCopying
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native NSEntityDescription alloc();
-
-    @Generated
-    @Selector("entityForName:inManagedObjectContext:")
-    public static native NSEntityDescription entityForNameInManagedObjectContext(String entityName,
-            NSManagedObjectContext context);
-
-    @Generated
-    @Selector("insertNewObjectForEntityForName:inManagedObjectContext:")
-    public static native NSManagedObject insertNewObjectForEntityForNameInManagedObjectContext(String entityName,
-            NSManagedObjectContext context);
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -116,6 +106,11 @@ public class NSEntityDescription extends NSObject implements NSCoding, NSCopying
     public static native String description_static();
 
     @Generated
+    @Selector("entityForName:inManagedObjectContext:")
+    public static native NSEntityDescription entityForNameInManagedObjectContext(String entityName,
+            NSManagedObjectContext context);
+
+    @Generated
     @Selector("hash")
     @NUInt
     public static native long hash_static();
@@ -123,6 +118,11 @@ public class NSEntityDescription extends NSObject implements NSCoding, NSCopying
     @Generated
     @Selector("initialize")
     public static native void initialize();
+
+    @Generated
+    @Selector("insertNewObjectForEntityForName:inManagedObjectContext:")
+    public static native NSManagedObject insertNewObjectForEntityForNameInManagedObjectContext(String entityName,
+            NSManagedObjectContext context);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -165,7 +165,7 @@ public class NSEntityDescription extends NSObject implements NSCoding, NSCopying
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")
@@ -277,6 +277,10 @@ public class NSEntityDescription extends NSObject implements NSCoding, NSCopying
     public native void setSubentities(NSArray<? extends NSEntityDescription> value);
 
     @Generated
+    @Selector("setUniquenessConstraints:")
+    public native void setUniquenessConstraints(NSArray<? extends NSArray<?>> value);
+
+    @Generated
     @Selector("setUserInfo:")
     public native void setUserInfo(NSDictionary<?, ?> value);
 
@@ -297,6 +301,10 @@ public class NSEntityDescription extends NSObject implements NSCoding, NSCopying
     public native NSEntityDescription superentity();
 
     @Generated
+    @Selector("uniquenessConstraints")
+    public native NSArray<? extends NSArray<?>> uniquenessConstraints();
+
+    @Generated
     @Selector("userInfo")
     public native NSDictionary<?, ?> userInfo();
 
@@ -307,12 +315,4 @@ public class NSEntityDescription extends NSObject implements NSCoding, NSCopying
     @Generated
     @Selector("versionHashModifier")
     public native String versionHashModifier();
-
-    @Generated
-    @Selector("setUniquenessConstraints:")
-    public native void setUniquenessConstraints(NSArray<? extends NSArray<?>> value);
-
-    @Generated
-    @Selector("uniquenessConstraints")
-    public native NSArray<? extends NSArray<?>> uniquenessConstraints();
 }

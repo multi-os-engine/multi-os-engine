@@ -55,23 +55,23 @@ public class AVAssetReaderTrackOutput extends AVAssetReaderOutput {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native AVAssetReaderTrackOutput alloc();
 
     @Generated
-    @Selector("assetReaderTrackOutputWithTrack:outputSettings:")
-    public static native AVAssetReaderTrackOutput assetReaderTrackOutputWithTrackOutputSettings(AVAssetTrack track,
-            NSDictionary<String, ?> outputSettings);
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
-
-    @Generated
     @Selector("allocWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object allocWithZone(VoidPtr zone);
+
+    @Generated
+    @Selector("assetReaderTrackOutputWithTrack:outputSettings:")
+    public static native AVAssetReaderTrackOutput assetReaderTrackOutputWithTrackOutputSettings(AVAssetTrack track,
+            NSDictionary<String, ?> outputSettings);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")

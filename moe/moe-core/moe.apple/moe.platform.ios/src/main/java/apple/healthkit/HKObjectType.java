@@ -58,41 +58,17 @@ public class HKObjectType extends NSObject implements NSSecureCoding, NSCopying 
     }
 
     @Generated
-    @Owned
-    @Selector("alloc")
-    public static native HKObjectType alloc();
-
-    @Generated
-    @Selector("categoryTypeForIdentifier:")
-    public static native HKCategoryType categoryTypeForIdentifier(String identifier);
-
-    @Generated
-    @Selector("characteristicTypeForIdentifier:")
-    public static native HKCharacteristicType characteristicTypeForIdentifier(String identifier);
-
-    @Generated
-    @Selector("correlationTypeForIdentifier:")
-    public static native HKCorrelationType correlationTypeForIdentifier(String identifier);
-
-    @Generated
-    @Selector("quantityTypeForIdentifier:")
-    public static native HKQuantityType quantityTypeForIdentifier(String identifier);
-
-    @Generated
-    @Selector("supportsSecureCoding")
-    public static native boolean supportsSecureCoding();
-
-    @Generated
-    @Selector("workoutType")
-    public static native HKWorkoutType workoutType();
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("activitySummaryType")
     public static native HKActivitySummaryType activitySummaryType();
 
     @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
+    @Owned
+    @Selector("alloc")
+    public static native HKObjectType alloc();
 
     @Generated
     @Selector("allocWithZone:")
@@ -114,6 +90,14 @@ public class HKObjectType extends NSObject implements NSSecureCoding, NSCopying 
             @Mapped(ObjCObjectMapper.class) Object anArgument);
 
     @Generated
+    @Selector("categoryTypeForIdentifier:")
+    public static native HKCategoryType categoryTypeForIdentifier(String identifier);
+
+    @Generated
+    @Selector("characteristicTypeForIdentifier:")
+    public static native HKCharacteristicType characteristicTypeForIdentifier(String identifier);
+
+    @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
@@ -122,12 +106,20 @@ public class HKObjectType extends NSObject implements NSSecureCoding, NSCopying 
     public static native Class classForKeyedUnarchiver();
 
     @Generated
+    @Selector("correlationTypeForIdentifier:")
+    public static native HKCorrelationType correlationTypeForIdentifier(String identifier);
+
+    @Generated
     @Selector("debugDescription")
     public static native String debugDescription_static();
 
     @Generated
     @Selector("description")
     public static native String description_static();
+
+    @Generated
+    @Selector("documentTypeForIdentifier:")
+    public static native HKDocumentType documentTypeForIdentifier(String identifier);
 
     @Generated
     @Selector("hash")
@@ -161,13 +153,17 @@ public class HKObjectType extends NSObject implements NSSecureCoding, NSCopying 
 
     @Generated
     @Selector("load")
-    public static native void load_objc();
+    public static native void load_objc_static();
 
     @Generated
     @Owned
     @Selector("new")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object new_objc();
+
+    @Generated
+    @Selector("quantityTypeForIdentifier:")
+    public static native HKQuantityType quantityTypeForIdentifier(String identifier);
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -179,16 +175,24 @@ public class HKObjectType extends NSObject implements NSSecureCoding, NSCopying 
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")
     public static native Class superclass_static();
 
     @Generated
+    @Selector("supportsSecureCoding")
+    public static native boolean supportsSecureCoding();
+
+    @Generated
     @Selector("version")
     @NInt
-    public static native long version();
+    public static native long version_static();
+
+    @Generated
+    @Selector("workoutType")
+    public static native HKWorkoutType workoutType();
 
     @Generated
     @Owned

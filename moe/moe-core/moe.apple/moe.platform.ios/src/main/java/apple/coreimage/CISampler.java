@@ -59,27 +59,13 @@ public class CISampler extends NSObject implements NSCopying {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native CISampler alloc();
-
-    @Generated
-    @Selector("samplerWithImage:")
-    public static native CISampler samplerWithImage(CIImage im);
-
-    @Generated
-    @Variadic()
-    @Selector("samplerWithImage:keysAndValues:")
-    public static native CISampler samplerWithImageKeysAndValues(CIImage im,
-            @Mapped(ObjCObjectMapper.class) Object key0, Object... varargs);
-
-    @Generated
-    @Selector("samplerWithImage:options:")
-    public static native CISampler samplerWithImageOptions(CIImage im, NSDictionary<?, ?> dict);
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -163,6 +149,20 @@ public class CISampler extends NSObject implements NSCopying {
     @Generated
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
+
+    @Generated
+    @Selector("samplerWithImage:")
+    public static native CISampler samplerWithImage(CIImage im);
+
+    @Generated
+    @Variadic()
+    @Selector("samplerWithImage:keysAndValues:")
+    public static native CISampler samplerWithImageKeysAndValues(CIImage im,
+            @Mapped(ObjCObjectMapper.class) Object key0, Object... varargs);
+
+    @Generated
+    @Selector("samplerWithImage:options:")
+    public static native CISampler samplerWithImageOptions(CIImage im, NSDictionary<?, ?> dict);
 
     @Generated
     @Selector("setVersion:")

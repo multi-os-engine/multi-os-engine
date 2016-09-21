@@ -55,31 +55,22 @@ public class MPMusicPlayerController extends NSObject implements MPMediaPlayback
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native MPMusicPlayerController alloc();
 
     @Generated
-    @Selector("applicationMusicPlayer")
-    public static native MPMusicPlayerController applicationMusicPlayer();
-
-    @Generated
-    @Deprecated
-    @Selector("iPodMusicPlayer")
-    public static native MPMusicPlayerController iPodMusicPlayer();
-
-    @Generated
-    @Selector("systemMusicPlayer")
-    public static native MPMusicPlayerController systemMusicPlayer();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
-
-    @Generated
     @Selector("allocWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object allocWithZone(VoidPtr zone);
+
+    @Generated
+    @Selector("applicationMusicPlayer")
+    public static native MPMusicPlayerController applicationMusicPlayer();
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -115,6 +106,11 @@ public class MPMusicPlayerController extends NSObject implements MPMediaPlayback
     @Selector("hash")
     @NUInt
     public static native long hash_static();
+
+    @Generated
+    @Deprecated
+    @Selector("iPodMusicPlayer")
+    public static native MPMusicPlayerController iPodMusicPlayer();
 
     @Generated
     @Selector("initialize")
@@ -166,6 +162,10 @@ public class MPMusicPlayerController extends NSObject implements MPMediaPlayback
     @Generated
     @Selector("superclass")
     public static native Class superclass_static();
+
+    @Generated
+    @Selector("systemMusicPlayer")
+    public static native MPMusicPlayerController systemMusicPlayer();
 
     @Generated
     @Selector("version")
@@ -260,6 +260,10 @@ public class MPMusicPlayerController extends NSObject implements MPMediaPlayback
     public native void setQueueWithQuery(MPMediaQuery query);
 
     @Generated
+    @Selector("setQueueWithStoreIDs:")
+    public native void setQueueWithStoreIDs(NSArray<String> storeIDs);
+
+    @Generated
     @Selector("setRepeatMode:")
     public native void setRepeatMode(@NInt long value);
 
@@ -297,8 +301,4 @@ public class MPMusicPlayerController extends NSObject implements MPMediaPlayback
     @Deprecated
     @Selector("volume")
     public native float volume();
-
-    @Generated
-    @Selector("setQueueWithStoreIDs:")
-    public native void setQueueWithStoreIDs(NSArray<String> storeIDs);
 }

@@ -51,17 +51,13 @@ public class NSUbiquitousKeyValueStore extends NSObject {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native NSUbiquitousKeyValueStore alloc();
-
-    @Generated
-    @Selector("defaultStore")
-    public static native NSUbiquitousKeyValueStore defaultStore();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -93,6 +89,10 @@ public class NSUbiquitousKeyValueStore extends NSObject {
     @Generated
     @Selector("debugDescription")
     public static native String debugDescription_static();
+
+    @Generated
+    @Selector("defaultStore")
+    public static native NSUbiquitousKeyValueStore defaultStore();
 
     @Generated
     @Selector("description")

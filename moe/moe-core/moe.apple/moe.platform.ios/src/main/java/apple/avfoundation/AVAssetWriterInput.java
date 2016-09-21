@@ -63,9 +63,18 @@ public class AVAssetWriterInput extends NSObject {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native AVAssetWriterInput alloc();
+
+    @Generated
+    @Selector("allocWithZone:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("assetWriterInputWithMediaType:outputSettings:")
@@ -76,15 +85,6 @@ public class AVAssetWriterInput extends NSObject {
     @Selector("assetWriterInputWithMediaType:outputSettings:sourceFormatHint:")
     public static native AVAssetWriterInput assetWriterInputWithMediaTypeOutputSettingsSourceFormatHint(
             String mediaType, NSDictionary<String, ?> outputSettings, CMFormatDescriptionRef sourceFormatHint);
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
-
-    @Generated
-    @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -166,7 +166,7 @@ public class AVAssetWriterInput extends NSObject {
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")

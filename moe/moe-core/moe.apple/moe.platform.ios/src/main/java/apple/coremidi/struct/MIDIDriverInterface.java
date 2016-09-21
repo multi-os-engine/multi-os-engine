@@ -60,53 +60,13 @@ public final class MIDIDriverInterface extends StructObject {
     public native void set_reserved(VoidPtr value);
 
     @Generated
-    @StructureField(order = 1, isGetter = false)
-    public native void setQueryInterface(@FunctionPtr(name = "call_QueryInterface") Function_QueryInterface value);
-
-    @Generated
-    @StructureField(order = 2, isGetter = false)
-    public native void setAddRef(@FunctionPtr(name = "call_AddRef") Function_AddRef value);
-
-    @Generated
-    @StructureField(order = 3, isGetter = false)
-    public native void setRelease(@FunctionPtr(name = "call_Release") Function_Release value);
-
-    @Generated
-    @StructureField(order = 4, isGetter = false)
-    public native void setFindDevices(@FunctionPtr(name = "call_FindDevices") Function_FindDevices value);
-
-    @Generated
-    @StructureField(order = 5, isGetter = false)
-    public native void setStart(@FunctionPtr(name = "call_Start") Function_Start value);
-
-    @Generated
-    @StructureField(order = 6, isGetter = false)
-    public native void setStop(@FunctionPtr(name = "call_Stop") Function_Stop value);
-
-    @Generated
-    @StructureField(order = 7, isGetter = false)
-    public native void setConfigure(@FunctionPtr(name = "call_Configure") Function_Configure value);
-
-    @Generated
-    @StructureField(order = 8, isGetter = false)
-    public native void setSend(@FunctionPtr(name = "call_Send") Function_Send value);
-
-    @Generated
-    @StructureField(order = 9, isGetter = false)
-    public native void setEnableSource(@FunctionPtr(name = "call_EnableSource") Function_EnableSource value);
-
-    @Generated
-    @StructureField(order = 10, isGetter = false)
-    public native void setFlush(@FunctionPtr(name = "call_Flush") Function_Flush value);
-
-    @Generated
-    @StructureField(order = 11, isGetter = false)
-    public native void setMonitor(@FunctionPtr(name = "call_Monitor") Function_Monitor value);
-
-    @Generated
     @StructureField(order = 1, isGetter = true)
     @FunctionPtr(name = "call_QueryInterface")
     public native Function_QueryInterface QueryInterface();
+
+    @Generated
+    @StructureField(order = 1, isGetter = false)
+    public native void setQueryInterface(@FunctionPtr(name = "call_QueryInterface") Function_QueryInterface value);
 
     @Generated
     @StructureField(order = 2, isGetter = true)
@@ -114,9 +74,17 @@ public final class MIDIDriverInterface extends StructObject {
     public native Function_AddRef AddRef();
 
     @Generated
+    @StructureField(order = 2, isGetter = false)
+    public native void setAddRef(@FunctionPtr(name = "call_AddRef") Function_AddRef value);
+
+    @Generated
     @StructureField(order = 3, isGetter = true)
     @FunctionPtr(name = "call_Release")
     public native Function_Release Release();
+
+    @Generated
+    @StructureField(order = 3, isGetter = false)
+    public native void setRelease(@FunctionPtr(name = "call_Release") Function_Release value);
 
     @Generated
     @StructureField(order = 4, isGetter = true)
@@ -124,9 +92,17 @@ public final class MIDIDriverInterface extends StructObject {
     public native Function_FindDevices FindDevices();
 
     @Generated
+    @StructureField(order = 4, isGetter = false)
+    public native void setFindDevices(@FunctionPtr(name = "call_FindDevices") Function_FindDevices value);
+
+    @Generated
     @StructureField(order = 5, isGetter = true)
     @FunctionPtr(name = "call_Start")
     public native Function_Start Start();
+
+    @Generated
+    @StructureField(order = 5, isGetter = false)
+    public native void setStart(@FunctionPtr(name = "call_Start") Function_Start value);
 
     @Generated
     @StructureField(order = 6, isGetter = true)
@@ -134,9 +110,17 @@ public final class MIDIDriverInterface extends StructObject {
     public native Function_Stop Stop();
 
     @Generated
+    @StructureField(order = 6, isGetter = false)
+    public native void setStop(@FunctionPtr(name = "call_Stop") Function_Stop value);
+
+    @Generated
     @StructureField(order = 7, isGetter = true)
     @FunctionPtr(name = "call_Configure")
     public native Function_Configure Configure();
+
+    @Generated
+    @StructureField(order = 7, isGetter = false)
+    public native void setConfigure(@FunctionPtr(name = "call_Configure") Function_Configure value);
 
     @Generated
     @StructureField(order = 8, isGetter = true)
@@ -144,9 +128,17 @@ public final class MIDIDriverInterface extends StructObject {
     public native Function_Send Send();
 
     @Generated
+    @StructureField(order = 8, isGetter = false)
+    public native void setSend(@FunctionPtr(name = "call_Send") Function_Send value);
+
+    @Generated
     @StructureField(order = 9, isGetter = true)
     @FunctionPtr(name = "call_EnableSource")
     public native Function_EnableSource EnableSource();
+
+    @Generated
+    @StructureField(order = 9, isGetter = false)
+    public native void setEnableSource(@FunctionPtr(name = "call_EnableSource") Function_EnableSource value);
 
     @Generated
     @StructureField(order = 10, isGetter = true)
@@ -154,9 +146,17 @@ public final class MIDIDriverInterface extends StructObject {
     public native Function_Flush Flush();
 
     @Generated
+    @StructureField(order = 10, isGetter = false)
+    public native void setFlush(@FunctionPtr(name = "call_Flush") Function_Flush value);
+
+    @Generated
     @StructureField(order = 11, isGetter = true)
     @FunctionPtr(name = "call_Monitor")
     public native Function_Monitor Monitor();
+
+    @Generated
+    @StructureField(order = 11, isGetter = false)
+    public native void setMonitor(@FunctionPtr(name = "call_Monitor") Function_Monitor value);
 
     @Runtime(CRuntime.class)
     @Generated

@@ -60,70 +60,13 @@ public class UIFieldBehavior extends UIDynamicBehavior {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native UIFieldBehavior alloc();
-
-    @Generated
-    @Selector("dragField")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object dragField();
-
-    @Generated
-    @Selector("electricField")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object electricField();
-
-    @Generated
-    @Selector("fieldWithEvaluationBlock:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object fieldWithEvaluationBlock(
-            @ObjCBlock(name = "call_fieldWithEvaluationBlock") Block_fieldWithEvaluationBlock block);
-
-    @Generated
-    @Selector("linearGravityFieldWithVector:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object linearGravityFieldWithVector(@ByValue CGVector direction);
-
-    @Generated
-    @Selector("magneticField")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object magneticField();
-
-    @Generated
-    @Selector("noiseFieldWithSmoothness:animationSpeed:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object noiseFieldWithSmoothnessAnimationSpeed(@NFloat double smoothness, @NFloat double speed);
-
-    @Generated
-    @Selector("radialGravityFieldWithPosition:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object radialGravityFieldWithPosition(@ByValue CGPoint position);
-
-    @Generated
-    @Selector("springField")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object springField();
-
-    @Generated
-    @Selector("turbulenceFieldWithSmoothness:animationSpeed:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object turbulenceFieldWithSmoothnessAnimationSpeed(@NFloat double smoothness,
-            @NFloat double speed);
-
-    @Generated
-    @Selector("velocityFieldWithVector:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object velocityFieldWithVector(@ByValue CGVector direction);
-
-    @Generated
-    @Selector("vortexField")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object vortexField();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -161,6 +104,22 @@ public class UIFieldBehavior extends UIDynamicBehavior {
     public static native String description_static();
 
     @Generated
+    @Selector("dragField")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object dragField();
+
+    @Generated
+    @Selector("electricField")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object electricField();
+
+    @Generated
+    @Selector("fieldWithEvaluationBlock:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object fieldWithEvaluationBlock(
+            @ObjCBlock(name = "call_fieldWithEvaluationBlock") Block_fieldWithEvaluationBlock block);
+
+    @Generated
     @Selector("hash")
     @NUInt
     public static native long hash_static();
@@ -191,14 +150,34 @@ public class UIFieldBehavior extends UIDynamicBehavior {
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
     @Generated
+    @Selector("linearGravityFieldWithVector:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object linearGravityFieldWithVector(@ByValue CGVector direction);
+
+    @Generated
     @Selector("load")
     public static native void load_objc_static();
+
+    @Generated
+    @Selector("magneticField")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object magneticField();
 
     @Generated
     @Owned
     @Selector("new")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object new_objc();
+
+    @Generated
+    @Selector("noiseFieldWithSmoothness:animationSpeed:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object noiseFieldWithSmoothnessAnimationSpeed(@NFloat double smoothness, @NFloat double speed);
+
+    @Generated
+    @Selector("radialGravityFieldWithPosition:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object radialGravityFieldWithPosition(@ByValue CGPoint position);
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -210,16 +189,37 @@ public class UIFieldBehavior extends UIDynamicBehavior {
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
+
+    @Generated
+    @Selector("springField")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object springField();
 
     @Generated
     @Selector("superclass")
     public static native Class superclass_static();
 
     @Generated
+    @Selector("turbulenceFieldWithSmoothness:animationSpeed:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object turbulenceFieldWithSmoothnessAnimationSpeed(@NFloat double smoothness,
+            @NFloat double speed);
+
+    @Generated
+    @Selector("velocityFieldWithVector:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object velocityFieldWithVector(@ByValue CGVector direction);
+
+    @Generated
     @Selector("version")
     @NInt
-    public static native long version();
+    public static native long version_static();
+
+    @Generated
+    @Selector("vortexField")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object vortexField();
 
     @Generated
     @Selector("addItem:")

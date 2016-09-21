@@ -20,6 +20,7 @@ import apple.NSObject;
 import apple.foundation.NSArray;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
+import apple.uikit.protocol.UIFocusItem;
 import org.moe.natj.c.ann.FunctionPtr;
 import org.moe.natj.general.NatJ;
 import org.moe.natj.general.Pointer;
@@ -54,13 +55,13 @@ public class UIFocusUpdateContext extends NSObject {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native UIFocusUpdateContext alloc();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -147,7 +148,7 @@ public class UIFocusUpdateContext extends NSObject {
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")
@@ -168,8 +169,18 @@ public class UIFocusUpdateContext extends NSObject {
     public native UIFocusUpdateContext init();
 
     @Generated
+    @Selector("nextFocusedItem")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native UIFocusItem nextFocusedItem();
+
+    @Generated
     @Selector("nextFocusedView")
     public native UIView nextFocusedView();
+
+    @Generated
+    @Selector("previouslyFocusedItem")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native UIFocusItem previouslyFocusedItem();
 
     @Generated
     @Selector("previouslyFocusedView")

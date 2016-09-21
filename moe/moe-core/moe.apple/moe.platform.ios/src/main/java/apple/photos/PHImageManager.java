@@ -64,17 +64,13 @@ public class PHImageManager extends NSObject {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native PHImageManager alloc();
-
-    @Generated
-    @Selector("defaultManager")
-    public static native PHImageManager defaultManager();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -106,6 +102,10 @@ public class PHImageManager extends NSObject {
     @Generated
     @Selector("debugDescription")
     public static native String debugDescription_static();
+
+    @Generated
+    @Selector("defaultManager")
+    public static native PHImageManager defaultManager();
 
     @Generated
     @Selector("description")
@@ -161,7 +161,7 @@ public class PHImageManager extends NSObject {
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")
@@ -203,15 +203,15 @@ public class PHImageManager extends NSObject {
             @ObjCBlock(name = "call_requestImageForAssetTargetSizeContentModeOptionsResultHandler") Block_requestImageForAssetTargetSizeContentModeOptionsResultHandler resultHandler);
 
     @Generated
-    @Selector("requestPlayerItemForVideo:options:resultHandler:")
-    public native int requestPlayerItemForVideoOptionsResultHandler(PHAsset asset, PHVideoRequestOptions options,
-            @ObjCBlock(name = "call_requestPlayerItemForVideoOptionsResultHandler") Block_requestPlayerItemForVideoOptionsResultHandler resultHandler);
-
-    @Generated
     @Selector("requestLivePhotoForAsset:targetSize:contentMode:options:resultHandler:")
     public native int requestLivePhotoForAssetTargetSizeContentModeOptionsResultHandler(PHAsset asset,
             @ByValue CGSize targetSize, @NInt long contentMode, PHLivePhotoRequestOptions options,
             @ObjCBlock(name = "call_requestLivePhotoForAssetTargetSizeContentModeOptionsResultHandler") Block_requestLivePhotoForAssetTargetSizeContentModeOptionsResultHandler resultHandler);
+
+    @Generated
+    @Selector("requestPlayerItemForVideo:options:resultHandler:")
+    public native int requestPlayerItemForVideoOptionsResultHandler(PHAsset asset, PHVideoRequestOptions options,
+            @ObjCBlock(name = "call_requestPlayerItemForVideoOptionsResultHandler") Block_requestPlayerItemForVideoOptionsResultHandler resultHandler);
 
     @Runtime(ObjCRuntime.class)
     @Generated
@@ -245,16 +245,16 @@ public class PHImageManager extends NSObject {
 
     @Runtime(ObjCRuntime.class)
     @Generated
-    public interface Block_requestPlayerItemForVideoOptionsResultHandler {
-        @Generated
-        void call_requestPlayerItemForVideoOptionsResultHandler(AVPlayerItem arg0, NSDictionary<?, ?> arg1);
-    }
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
     public interface Block_requestLivePhotoForAssetTargetSizeContentModeOptionsResultHandler {
         @Generated
         void call_requestLivePhotoForAssetTargetSizeContentModeOptionsResultHandler(PHLivePhoto arg0,
                 NSDictionary<?, ?> arg1);
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_requestPlayerItemForVideoOptionsResultHandler {
+        @Generated
+        void call_requestPlayerItemForVideoOptionsResultHandler(AVPlayerItem arg0, NSDictionary<?, ?> arg1);
     }
 }

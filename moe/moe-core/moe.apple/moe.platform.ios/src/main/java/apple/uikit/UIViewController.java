@@ -77,26 +77,22 @@ public class UIViewController extends UIResponder
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native UIViewController alloc();
 
     @Generated
-    @Selector("attemptRotationToDeviceOrientation")
-    public static native void attemptRotationToDeviceOrientation();
-
-    @Generated
-    @Selector("prepareInterstitialAds")
-    public static native void prepareInterstitialAds();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
-
-    @Generated
     @Selector("allocWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object allocWithZone(VoidPtr zone);
+
+    @Generated
+    @Selector("attemptRotationToDeviceOrientation")
+    public static native void attemptRotationToDeviceOrientation();
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -164,13 +160,17 @@ public class UIViewController extends UIResponder
 
     @Generated
     @Selector("load")
-    public static native void load_objc();
+    public static native void load_objc_static();
 
     @Generated
     @Owned
     @Selector("new")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object new_objc();
+
+    @Generated
+    @Selector("prepareInterstitialAds")
+    public static native void prepareInterstitialAds();
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -182,7 +182,7 @@ public class UIViewController extends UIResponder
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")
@@ -191,11 +191,20 @@ public class UIViewController extends UIResponder
     @Generated
     @Selector("version")
     @NInt
-    public static native long version();
+    public static native long version_static();
 
     @Generated
     @Selector("addChildViewController:")
     public native void addChildViewController(UIViewController childController);
+
+    @Generated
+    @Selector("addKeyCommand:")
+    public native void addKeyCommand(UIKeyCommand keyCommand);
+
+    @Generated
+    @Selector("allowedChildViewControllersForUnwindingFromSource:")
+    public native NSArray<? extends UIViewController> allowedChildViewControllersForUnwindingFromSource(
+            UIStoryboardUnwindSegueSource source);
 
     @Generated
     @Selector("applicationFinishedRestoringState")
@@ -231,6 +240,10 @@ public class UIViewController extends UIResponder
     @Selector("canPerformUnwindSegueAction:fromViewController:withSender:")
     public native boolean canPerformUnwindSegueActionFromViewControllerWithSender(SEL action,
             UIViewController fromViewController, @Mapped(ObjCObjectMapper.class) Object sender);
+
+    @Generated
+    @Selector("childViewControllerContainingSegueSource:")
+    public native UIViewController childViewControllerContainingSegueSource(UIStoryboardUnwindSegueSource source);
 
     @Generated
     @Selector("childViewControllerForStatusBarHidden")
@@ -282,6 +295,11 @@ public class UIViewController extends UIResponder
     public native void didRotateFromInterfaceOrientation(@NInt long fromInterfaceOrientation);
 
     @Generated
+    @Selector("didUpdateFocusInContext:withAnimationCoordinator:")
+    public native void didUpdateFocusInContextWithAnimationCoordinator(UIFocusUpdateContext context,
+            UIFocusAnimationCoordinator coordinator);
+
+    @Generated
     @Selector("disablesAutomaticKeyboardDismissal")
     public native boolean disablesAutomaticKeyboardDismissal();
 
@@ -290,8 +308,8 @@ public class UIViewController extends UIResponder
     @Selector("dismissModalViewControllerAnimated:")
     public native void dismissModalViewControllerAnimated(boolean animated);
 
-    @Deprecated
     @Generated
+    @Deprecated
     @Selector("dismissMoviePlayerViewControllerAnimated")
     public native void dismissMoviePlayerViewControllerAnimated();
 
@@ -405,6 +423,10 @@ public class UIViewController extends UIResponder
     public native void loadView();
 
     @Generated
+    @Selector("loadViewIfNeeded")
+    public native void loadViewIfNeeded();
+
+    @Generated
     @Selector("modalPresentationCapturesStatusBarAppearance")
     public native boolean modalPresentationCapturesStatusBarAppearance();
 
@@ -477,6 +499,15 @@ public class UIViewController extends UIResponder
             @Mapped(ObjCObjectMapper.class) Object container);
 
     @Generated
+    @Selector("preferredFocusEnvironments")
+    public native NSArray<?> preferredFocusEnvironments();
+
+    @Generated
+    @IsOptional
+    @Selector("preferredFocusedView")
+    public native UIView preferredFocusedView();
+
+    @Generated
     @Selector("preferredInterfaceOrientationForPresentation")
     @NInt
     public native long preferredInterfaceOrientationForPresentation();
@@ -504,8 +535,8 @@ public class UIViewController extends UIResponder
     @Selector("presentModalViewController:animated:")
     public native void presentModalViewControllerAnimated(UIViewController modalViewController, boolean animated);
 
-    @Deprecated
     @Generated
+    @Deprecated
     @Selector("presentMoviePlayerViewControllerAnimated:")
     public native void presentMoviePlayerViewControllerAnimated(MPMoviePlayerViewController moviePlayerViewController);
 
@@ -527,12 +558,26 @@ public class UIViewController extends UIResponder
     public native UIViewController presentingViewController();
 
     @Generated
+    @Selector("previewActionItems")
+    public native NSArray<?> previewActionItems();
+
+    @Generated
     @Selector("providesPresentationContextTransitionStyle")
     public native boolean providesPresentationContextTransitionStyle();
 
     @Generated
+    @Selector("registerForPreviewingWithDelegate:sourceView:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native UIViewControllerPreviewing registerForPreviewingWithDelegateSourceView(
+            @Mapped(ObjCObjectMapper.class) UIViewControllerPreviewingDelegate delegate, UIView sourceView);
+
+    @Generated
     @Selector("removeFromParentViewController")
     public native void removeFromParentViewController();
+
+    @Generated
+    @Selector("removeKeyCommand:")
+    public native void removeKeyCommand(UIKeyCommand keyCommand);
 
     @Generated
     @Selector("requestInterstitialAdPresentation")
@@ -554,6 +599,10 @@ public class UIViewController extends UIResponder
     public native Object restorationParent();
 
     @Generated
+    @Selector("restoresFocusAfterTransition")
+    public native boolean restoresFocusAfterTransition();
+
+    @Generated
     @Deprecated
     @Selector("rotatingFooterView")
     public native UIView rotatingFooterView();
@@ -568,8 +617,8 @@ public class UIViewController extends UIResponder
     @Selector("searchDisplayController")
     public native UISearchDisplayController searchDisplayController();
 
-    @Deprecated
     @Generated
+    @Deprecated
     @Selector("segueForUnwindingToViewController:fromViewController:identifier:")
     public native UIStoryboardSegue segueForUnwindingToViewControllerFromViewControllerIdentifier(
             UIViewController toViewController, UIViewController fromViewController, String identifier);
@@ -595,6 +644,10 @@ public class UIViewController extends UIResponder
     @Generated
     @Selector("setDefinesPresentationContext:")
     public native void setDefinesPresentationContext(boolean value);
+
+    @Generated
+    @Selector("setDisablesAutomaticKeyboardDismissal:")
+    public native void setDisablesAutomaticKeyboardDismissal(boolean value);
 
     @Generated
     @Selector("setEdgesForExtendedLayout:")
@@ -627,6 +680,10 @@ public class UIViewController extends UIResponder
     @Generated
     @Selector("setModalTransitionStyle:")
     public native void setModalTransitionStyle(@NInt long value);
+
+    @Generated
+    @Selector("setNeedsFocusUpdate")
+    public native void setNeedsFocusUpdate();
 
     @Generated
     @Selector("setNeedsStatusBarAppearanceUpdate")
@@ -664,6 +721,10 @@ public class UIViewController extends UIResponder
     @Generated
     @Selector("setRestorationIdentifier:")
     public native void setRestorationIdentifier(String value);
+
+    @Generated
+    @Selector("setRestoresFocusAfterTransition:")
+    public native void setRestoresFocusAfterTransition(boolean value);
 
     @Generated
     @Selector("setTabBarItem:")
@@ -733,6 +794,10 @@ public class UIViewController extends UIResponder
     @Generated
     @Selector("shouldPresentInterstitialAd")
     public native boolean shouldPresentInterstitialAd();
+
+    @Generated
+    @Selector("shouldUpdateFocusInContext:")
+    public native boolean shouldUpdateFocusInContext(UIFocusUpdateContext context);
 
     @Generated
     @Selector("showDetailViewController:sender:")
@@ -820,6 +885,20 @@ public class UIViewController extends UIResponder
     public native UIViewControllerTransitioningDelegate transitioningDelegate();
 
     @Generated
+    @Selector("unregisterForPreviewingWithContext:")
+    public native void unregisterForPreviewingWithContext(
+            @Mapped(ObjCObjectMapper.class) UIViewControllerPreviewing previewing);
+
+    @Generated
+    @Selector("unwindForSegue:towardsViewController:")
+    public native void unwindForSegueTowardsViewController(UIStoryboardSegue unwindSegue,
+            UIViewController subsequentVC);
+
+    @Generated
+    @Selector("updateFocusIfNeeded")
+    public native void updateFocusIfNeeded();
+
+    @Generated
     @Selector("updateViewConstraints")
     public native void updateViewConstraints();
 
@@ -827,8 +906,8 @@ public class UIViewController extends UIResponder
     @Selector("view")
     public native UIView view();
 
-    @Deprecated
     @Generated
+    @Deprecated
     @Selector("viewControllerForUnwindSegueAction:fromViewController:withSender:")
     public native UIViewController viewControllerForUnwindSegueActionFromViewControllerWithSender(SEL action,
             UIViewController fromViewController, @Mapped(ObjCObjectMapper.class) Object sender);
@@ -853,6 +932,10 @@ public class UIViewController extends UIResponder
     @Deprecated
     @Selector("viewDidUnload")
     public native void viewDidUnload();
+
+    @Generated
+    @Selector("viewIfLoaded")
+    public native UIView viewIfLoaded();
 
     @Generated
     @Selector("viewWillAppear:")
@@ -912,72 +995,6 @@ public class UIViewController extends UIResponder
     @Selector("willTransitionToTraitCollection:withTransitionCoordinator:")
     public native void willTransitionToTraitCollectionWithTransitionCoordinator(UITraitCollection newCollection,
             @Mapped(ObjCObjectMapper.class) Object coordinator);
-
-    @Generated
-    @Selector("addKeyCommand:")
-    public native void addKeyCommand(UIKeyCommand keyCommand);
-
-    @Generated
-    @Selector("allowedChildViewControllersForUnwindingFromSource:")
-    public native NSArray<? extends UIViewController> allowedChildViewControllersForUnwindingFromSource(
-            UIStoryboardUnwindSegueSource source);
-
-    @Generated
-    @Selector("childViewControllerContainingSegueSource:")
-    public native UIViewController childViewControllerContainingSegueSource(UIStoryboardUnwindSegueSource source);
-
-    @Generated
-    @Selector("loadViewIfNeeded")
-    public native void loadViewIfNeeded();
-
-    @Generated
-    @Selector("removeKeyCommand:")
-    public native void removeKeyCommand(UIKeyCommand keyCommand);
-
-    @Generated
-    @Selector("unwindForSegue:towardsViewController:")
-    public native void unwindForSegueTowardsViewController(UIStoryboardSegue unwindSegue,
-            UIViewController subsequentVC);
-
-    @Generated
-    @Selector("viewIfLoaded")
-    public native UIView viewIfLoaded();
-
-    @Generated
-    @Selector("previewActionItems")
-    public native NSArray<?> previewActionItems();
-
-    @Generated
-    @Selector("registerForPreviewingWithDelegate:sourceView:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native UIViewControllerPreviewing registerForPreviewingWithDelegateSourceView(
-            @Mapped(ObjCObjectMapper.class) UIViewControllerPreviewingDelegate delegate, UIView sourceView);
-
-    @Generated
-    @Selector("unregisterForPreviewingWithContext:")
-    public native void unregisterForPreviewingWithContext(
-            @Mapped(ObjCObjectMapper.class) UIViewControllerPreviewing previewing);
-
-    @Generated
-    @Selector("didUpdateFocusInContext:withAnimationCoordinator:")
-    public native void didUpdateFocusInContextWithAnimationCoordinator(UIFocusUpdateContext context,
-            UIFocusAnimationCoordinator coordinator);
-
-    @Generated
-    @Selector("preferredFocusedView")
-    public native UIView preferredFocusedView();
-
-    @Generated
-    @Selector("setNeedsFocusUpdate")
-    public native void setNeedsFocusUpdate();
-
-    @Generated
-    @Selector("shouldUpdateFocusInContext:")
-    public native boolean shouldUpdateFocusInContext(UIFocusUpdateContext context);
-
-    @Generated
-    @Selector("updateFocusIfNeeded")
-    public native void updateFocusIfNeeded();
 
     @Runtime(ObjCRuntime.class)
     @Generated

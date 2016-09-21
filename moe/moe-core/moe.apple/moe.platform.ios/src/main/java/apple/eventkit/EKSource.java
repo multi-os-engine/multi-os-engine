@@ -54,13 +54,13 @@ public class EKSource extends EKObject {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native EKSource alloc();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -147,7 +147,7 @@ public class EKSource extends EKObject {
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")
@@ -175,9 +175,9 @@ public class EKSource extends EKObject {
     @Selector("sourceIdentifier")
     public native String sourceIdentifier();
 
-    @NInt
     @Generated
     @Selector("sourceType")
+    @NInt
     public native long sourceType();
 
     @Generated

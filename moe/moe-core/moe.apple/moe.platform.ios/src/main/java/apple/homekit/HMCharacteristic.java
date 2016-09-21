@@ -58,13 +58,13 @@ public class HMCharacteristic extends NSObject {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native HMCharacteristic alloc();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -133,7 +133,7 @@ public class HMCharacteristic extends NSObject {
 
     @Generated
     @Selector("load")
-    public static native void load_objc();
+    public static native void load_objc_static();
 
     @Generated
     @Owned
@@ -151,7 +151,7 @@ public class HMCharacteristic extends NSObject {
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")
@@ -160,7 +160,7 @@ public class HMCharacteristic extends NSObject {
     @Generated
     @Selector("version")
     @NInt
-    public static native long version();
+    public static native long version_static();
 
     @Generated
     @Selector("characteristicType")
@@ -180,6 +180,10 @@ public class HMCharacteristic extends NSObject {
     public native boolean isNotificationEnabled();
 
     @Generated
+    @Selector("localizedDescription")
+    public native String localizedDescription();
+
+    @Generated
     @Selector("metadata")
     public native HMCharacteristicMetadata metadata();
 
@@ -197,6 +201,10 @@ public class HMCharacteristic extends NSObject {
     public native HMService service();
 
     @Generated
+    @Selector("uniqueIdentifier")
+    public native NSUUID uniqueIdentifier();
+
+    @Generated
     @Selector("updateAuthorizationData:completionHandler:")
     public native void updateAuthorizationDataCompletionHandler(NSData data,
             @ObjCBlock(name = "call_updateAuthorizationDataCompletionHandler") Block_updateAuthorizationDataCompletionHandler completion);
@@ -210,14 +218,6 @@ public class HMCharacteristic extends NSObject {
     @Selector("writeValue:completionHandler:")
     public native void writeValueCompletionHandler(@Mapped(ObjCObjectMapper.class) Object value,
             @ObjCBlock(name = "call_writeValueCompletionHandler") Block_writeValueCompletionHandler completion);
-
-    @Generated
-    @Selector("localizedDescription")
-    public native String localizedDescription();
-
-    @Generated
-    @Selector("uniqueIdentifier")
-    public native NSUUID uniqueIdentifier();
 
     @Runtime(ObjCRuntime.class)
     @Generated

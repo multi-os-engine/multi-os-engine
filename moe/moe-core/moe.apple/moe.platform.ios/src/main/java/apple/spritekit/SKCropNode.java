@@ -56,21 +56,13 @@ public class SKCropNode extends SKNode {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native SKCropNode alloc();
-
-    @Generated
-    @Selector("node")
-    public static native SKCropNode node();
-
-    @Generated
-    @Selector("nodeWithFileNamed:")
-    public static native SKCropNode nodeWithFileNamed(String filename);
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -150,6 +142,14 @@ public class SKCropNode extends SKNode {
     @Selector("new")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object new_objc();
+
+    @Generated
+    @Selector("node")
+    public static native SKCropNode node();
+
+    @Generated
+    @Selector("nodeWithFileNamed:")
+    public static native SKCropNode nodeWithFileNamed(String filename);
 
     @Generated
     @Selector("obstaclesFromNodeBounds:")

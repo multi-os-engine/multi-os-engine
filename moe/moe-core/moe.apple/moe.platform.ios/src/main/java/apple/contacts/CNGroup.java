@@ -60,25 +60,13 @@ public class CNGroup extends NSObject implements NSCopying, NSMutableCopying, NS
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native CNGroup alloc();
-
-    @Generated
-    @Selector("predicateForGroupsInContainerWithIdentifier:")
-    public static native NSPredicate predicateForGroupsInContainerWithIdentifier(String containerIdentifier);
-
-    @Generated
-    @Selector("predicateForGroupsWithIdentifiers:")
-    public static native NSPredicate predicateForGroupsWithIdentifiers(NSArray<String> identifiers);
-
-    @Generated
-    @Selector("supportsSecureCoding")
-    public static native boolean supportsSecureCoding();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -156,6 +144,14 @@ public class CNGroup extends NSObject implements NSCopying, NSMutableCopying, NS
     public static native Object new_objc();
 
     @Generated
+    @Selector("predicateForGroupsInContainerWithIdentifier:")
+    public static native NSPredicate predicateForGroupsInContainerWithIdentifier(String containerIdentifier);
+
+    @Generated
+    @Selector("predicateForGroupsWithIdentifiers:")
+    public static native NSPredicate predicateForGroupsWithIdentifiers(NSArray<String> identifiers);
+
+    @Generated
     @Selector("resolveClassMethod:")
     public static native boolean resolveClassMethod(SEL sel);
 
@@ -165,11 +161,15 @@ public class CNGroup extends NSObject implements NSCopying, NSMutableCopying, NS
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")
     public static native Class superclass_static();
+
+    @Generated
+    @Selector("supportsSecureCoding")
+    public static native boolean supportsSecureCoding();
 
     @Generated
     @Selector("version")

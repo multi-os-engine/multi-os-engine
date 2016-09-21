@@ -54,21 +54,13 @@ public class NSURLQueryItem extends NSObject implements NSSecureCoding, NSCopyin
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native NSURLQueryItem alloc();
-
-    @Generated
-    @Selector("queryItemWithName:value:")
-    public static native NSURLQueryItem queryItemWithNameValue(String name, String value);
-
-    @Generated
-    @Selector("supportsSecureCoding")
-    public static native boolean supportsSecureCoding();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -146,6 +138,10 @@ public class NSURLQueryItem extends NSObject implements NSSecureCoding, NSCopyin
     public static native Object new_objc();
 
     @Generated
+    @Selector("queryItemWithName:value:")
+    public static native NSURLQueryItem queryItemWithNameValue(String name, String value);
+
+    @Generated
     @Selector("resolveClassMethod:")
     public static native boolean resolveClassMethod(SEL sel);
 
@@ -155,11 +151,15 @@ public class NSURLQueryItem extends NSObject implements NSSecureCoding, NSCopyin
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")
     public static native Class superclass_static();
+
+    @Generated
+    @Selector("supportsSecureCoding")
+    public static native boolean supportsSecureCoding();
 
     @Generated
     @Selector("version")

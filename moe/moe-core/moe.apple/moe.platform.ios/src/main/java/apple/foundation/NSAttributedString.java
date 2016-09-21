@@ -65,26 +65,22 @@ public class NSAttributedString extends NSObject implements NSCopying, NSMutable
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native NSAttributedString alloc();
 
     @Generated
-    @Selector("attributedStringWithAttachment:")
-    public static native NSAttributedString attributedStringWithAttachment(NSTextAttachment attachment);
-
-    @Generated
-    @Selector("supportsSecureCoding")
-    public static native boolean supportsSecureCoding();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
-
-    @Generated
     @Selector("allocWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object allocWithZone(VoidPtr zone);
+
+    @Generated
+    @Selector("attributedStringWithAttachment:")
+    public static native NSAttributedString attributedStringWithAttachment(NSTextAttachment attachment);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -166,11 +162,15 @@ public class NSAttributedString extends NSObject implements NSCopying, NSMutable
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")
     public static native Class superclass_static();
+
+    @Generated
+    @Selector("supportsSecureCoding")
+    public static native boolean supportsSecureCoding();
 
     @Generated
     @Selector("version")
@@ -206,6 +206,10 @@ public class NSAttributedString extends NSObject implements NSCopying, NSMutable
     @ByValue
     public native CGRect boundingRectWithSizeOptionsContext(@ByValue CGSize size, @NInt long options,
             NSStringDrawingContext context);
+
+    @Generated
+    @Selector("containsAttachmentsInRange:")
+    public native boolean containsAttachmentsInRange(@ByValue NSRange range);
 
     @Generated
     @Owned
@@ -268,8 +272,8 @@ public class NSAttributedString extends NSObject implements NSCopying, NSMutable
     public native NSAttributedString initWithDataOptionsDocumentAttributesError(NSData data,
             NSDictionary<String, ?> options, Ptr<NSDictionary<String, ?>> dict, Ptr<NSError> error);
 
-    @Deprecated
     @Generated
+    @Deprecated
     @Selector("initWithFileURL:options:documentAttributes:error:")
     public native NSAttributedString initWithFileURLOptionsDocumentAttributesError(NSURL url,
             NSDictionary<?, ?> options, Ptr<NSDictionary<?, ?>> dict, Ptr<NSError> error);
@@ -281,6 +285,11 @@ public class NSAttributedString extends NSObject implements NSCopying, NSMutable
     @Generated
     @Selector("initWithString:attributes:")
     public native NSAttributedString initWithStringAttributes(String str, NSDictionary<String, ?> attrs);
+
+    @Generated
+    @Selector("initWithURL:options:documentAttributes:error:")
+    public native NSAttributedString initWithURLOptionsDocumentAttributesError(NSURL url,
+            NSDictionary<String, ?> options, Ptr<NSDictionary<String, ?>> dict, Ptr<NSError> error);
 
     @Generated
     @Selector("isEqualToAttributedString:")
@@ -310,15 +319,6 @@ public class NSAttributedString extends NSObject implements NSCopying, NSMutable
     public boolean _supportsSecureCoding() {
         return supportsSecureCoding();
     }
-
-    @Generated
-    @Selector("containsAttachmentsInRange:")
-    public native boolean containsAttachmentsInRange(@ByValue NSRange range);
-
-    @Generated
-    @Selector("initWithURL:options:documentAttributes:error:")
-    public native NSAttributedString initWithURLOptionsDocumentAttributesError(NSURL url,
-            NSDictionary<String, ?> options, Ptr<NSDictionary<String, ?>> dict, Ptr<NSError> error);
 
     @Runtime(ObjCRuntime.class)
     @Generated

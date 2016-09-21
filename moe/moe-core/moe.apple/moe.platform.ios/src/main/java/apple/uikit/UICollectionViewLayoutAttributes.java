@@ -65,27 +65,13 @@ public class UICollectionViewLayoutAttributes extends NSObject implements NSCopy
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native UICollectionViewLayoutAttributes alloc();
-
-    @Generated
-    @Selector("layoutAttributesForCellWithIndexPath:")
-    public static native UICollectionViewLayoutAttributes layoutAttributesForCellWithIndexPath(NSIndexPath indexPath);
-
-    @Generated
-    @Selector("layoutAttributesForDecorationViewOfKind:withIndexPath:")
-    public static native UICollectionViewLayoutAttributes layoutAttributesForDecorationViewOfKindWithIndexPath(
-            String decorationViewKind, NSIndexPath indexPath);
-
-    @Generated
-    @Selector("layoutAttributesForSupplementaryViewOfKind:withIndexPath:")
-    public static native UICollectionViewLayoutAttributes layoutAttributesForSupplementaryViewOfKindWithIndexPath(
-            String elementKind, NSIndexPath indexPath);
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -153,8 +139,22 @@ public class UICollectionViewLayoutAttributes extends NSObject implements NSCopy
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
     @Generated
+    @Selector("layoutAttributesForCellWithIndexPath:")
+    public static native UICollectionViewLayoutAttributes layoutAttributesForCellWithIndexPath(NSIndexPath indexPath);
+
+    @Generated
+    @Selector("layoutAttributesForDecorationViewOfKind:withIndexPath:")
+    public static native UICollectionViewLayoutAttributes layoutAttributesForDecorationViewOfKindWithIndexPath(
+            String decorationViewKind, NSIndexPath indexPath);
+
+    @Generated
+    @Selector("layoutAttributesForSupplementaryViewOfKind:withIndexPath:")
+    public static native UICollectionViewLayoutAttributes layoutAttributesForSupplementaryViewOfKindWithIndexPath(
+            String elementKind, NSIndexPath indexPath);
+
+    @Generated
     @Selector("load")
-    public static native void load_objc();
+    public static native void load_objc_static();
 
     @Generated
     @Owned
@@ -172,7 +172,7 @@ public class UICollectionViewLayoutAttributes extends NSObject implements NSCopy
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")
@@ -181,7 +181,7 @@ public class UICollectionViewLayoutAttributes extends NSObject implements NSCopy
     @Generated
     @Selector("version")
     @NInt
-    public static native long version();
+    public static native long version_static();
 
     @Generated
     @Selector("alpha")
@@ -197,6 +197,17 @@ public class UICollectionViewLayoutAttributes extends NSObject implements NSCopy
     @Selector("center")
     @ByValue
     public native CGPoint center();
+
+    @Generated
+    @IsOptional
+    @Selector("collisionBoundingPath")
+    public native UIBezierPath collisionBoundingPath();
+
+    @Generated
+    @IsOptional
+    @Selector("collisionBoundsType")
+    @NUInt
+    public native long collisionBoundsType();
 
     @Generated
     @Owned
@@ -289,15 +300,4 @@ public class UICollectionViewLayoutAttributes extends NSObject implements NSCopy
     @Selector("zIndex")
     @NInt
     public native long zIndex();
-
-    @Generated
-    @IsOptional
-    @Selector("collisionBoundingPath")
-    public native UIBezierPath collisionBoundingPath();
-
-    @Generated
-    @IsOptional
-    @Selector("collisionBoundsType")
-    @NUInt
-    public native long collisionBoundsType();
 }

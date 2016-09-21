@@ -54,6 +54,10 @@ public class ALAssetsFilter extends NSObject {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Selector("allAssets")
     public static native ALAssetsFilter allAssets();
 
@@ -69,10 +73,6 @@ public class ALAssetsFilter extends NSObject {
     @Owned
     @Selector("alloc")
     public static native ALAssetsFilter alloc();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")

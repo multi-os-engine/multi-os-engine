@@ -58,21 +58,13 @@ public class CNPhoneNumber extends NSObject implements NSCopying, NSSecureCoding
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native CNPhoneNumber alloc();
-
-    @Generated
-    @Selector("phoneNumberWithStringValue:")
-    public static native CNPhoneNumber phoneNumberWithStringValue(String stringValue);
-
-    @Generated
-    @Selector("supportsSecureCoding")
-    public static native boolean supportsSecureCoding();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -141,13 +133,17 @@ public class CNPhoneNumber extends NSObject implements NSCopying, NSSecureCoding
 
     @Generated
     @Selector("load")
-    public static native void load_objc();
+    public static native void load_objc_static();
 
     @Generated
     @Owned
     @Selector("new")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object new_objc();
+
+    @Generated
+    @Selector("phoneNumberWithStringValue:")
+    public static native CNPhoneNumber phoneNumberWithStringValue(String stringValue);
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -159,16 +155,20 @@ public class CNPhoneNumber extends NSObject implements NSCopying, NSSecureCoding
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")
     public static native Class superclass_static();
 
     @Generated
+    @Selector("supportsSecureCoding")
+    public static native boolean supportsSecureCoding();
+
+    @Generated
     @Selector("version")
     @NInt
-    public static native long version();
+    public static native long version_static();
 
     @Generated
     @Owned

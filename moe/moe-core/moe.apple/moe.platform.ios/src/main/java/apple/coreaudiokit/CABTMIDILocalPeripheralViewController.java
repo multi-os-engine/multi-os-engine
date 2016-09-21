@@ -57,13 +57,13 @@ public class CABTMIDILocalPeripheralViewController extends UIViewController {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native CABTMIDILocalPeripheralViewController alloc();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -178,11 +178,11 @@ public class CABTMIDILocalPeripheralViewController extends UIViewController {
     public native CABTMIDILocalPeripheralViewController init();
 
     @Generated
+    @Selector("initWithCoder:")
+    public native CABTMIDILocalPeripheralViewController initWithCoder(NSCoder aDecoder);
+
+    @Generated
     @Selector("initWithNibName:bundle:")
     public native CABTMIDILocalPeripheralViewController initWithNibNameBundle(String nibNameOrNil,
             NSBundle nibBundleOrNil);
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native CABTMIDILocalPeripheralViewController initWithCoder(NSCoder aDecoder);
 }

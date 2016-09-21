@@ -51,25 +51,13 @@ public class NSMachPort extends NSPort {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native NSMachPort alloc();
-
-    @Generated
-    @Selector("port")
-    public static native NSPort port();
-
-    @Generated
-    @Selector("portWithMachPort:")
-    public static native NSPort portWithMachPort(int machPort);
-
-    @Generated
-    @Selector("portWithMachPort:options:")
-    public static native NSPort portWithMachPortOptions(int machPort, @NUInt long f);
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -147,6 +135,18 @@ public class NSMachPort extends NSPort {
     public static native Object new_objc();
 
     @Generated
+    @Selector("port")
+    public static native NSPort port();
+
+    @Generated
+    @Selector("portWithMachPort:")
+    public static native NSPort portWithMachPort(int machPort);
+
+    @Generated
+    @Selector("portWithMachPort:options:")
+    public static native NSPort portWithMachPortOptions(int machPort, @NUInt long f);
+
+    @Generated
     @Selector("resolveClassMethod:")
     public static native boolean resolveClassMethod(SEL sel);
 
@@ -177,6 +177,10 @@ public class NSMachPort extends NSPort {
     public native NSMachPort init();
 
     @Generated
+    @Selector("initWithCoder:")
+    public native NSMachPort initWithCoder(NSCoder aDecoder);
+
+    @Generated
     @Selector("initWithMachPort:")
     public native NSMachPort initWithMachPort(int machPort);
 
@@ -199,8 +203,4 @@ public class NSMachPort extends NSPort {
     @Generated
     @Selector("setDelegate:")
     public native void setDelegate(@Mapped(ObjCObjectMapper.class) Object anObject);
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native NSMachPort initWithCoder(NSCoder aDecoder);
 }

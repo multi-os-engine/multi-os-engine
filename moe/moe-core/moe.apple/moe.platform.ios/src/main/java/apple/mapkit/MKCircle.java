@@ -59,22 +59,13 @@ public class MKCircle extends MKShape implements MKOverlay {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native MKCircle alloc();
-
-    @Generated
-    @Selector("circleWithCenterCoordinate:radius:")
-    public static native MKCircle circleWithCenterCoordinateRadius(@ByValue CLLocationCoordinate2D coord,
-            double radius);
-
-    @Generated
-    @Selector("circleWithMapRect:")
-    public static native MKCircle circleWithMapRect(@ByValue MKMapRect mapRect);
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -94,6 +85,15 @@ public class MKCircle extends MKShape implements MKOverlay {
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
             @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
             @Mapped(ObjCObjectMapper.class) Object anArgument);
+
+    @Generated
+    @Selector("circleWithCenterCoordinate:radius:")
+    public static native MKCircle circleWithCenterCoordinateRadius(@ByValue CLLocationCoordinate2D coord,
+            double radius);
+
+    @Generated
+    @Selector("circleWithMapRect:")
+    public static native MKCircle circleWithMapRect(@ByValue MKMapRect mapRect);
 
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
@@ -161,7 +161,7 @@ public class MKCircle extends MKShape implements MKOverlay {
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")

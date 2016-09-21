@@ -14,8 +14,8 @@ See the License for the specific language governing permissions and
 limitations under the License.
 */
 
-#import <GLKit/GLKit.h>
-#import <SceneKit/SceneKit.h>
+#import <GLKit/GLKMathTypes.h>
+#import <SceneKit/SceneKitTypes.h>
 
 
 #define EXPORT __attribute__ ((visibility ("default")))
@@ -28,16 +28,16 @@ EXPORT SCNVector4 __natj_inline_SCNVector4Make(float x, float y, float z, float 
 	return SCNVector4Make(x, y, z, w);
 }
 
-EXPORT SCNMatrix4 __natj_inline_SCNMatrix4MakeTranslation(float x, float y, float z) {
-	return SCNMatrix4MakeTranslation(x, y, z);
+EXPORT SCNMatrix4 __natj_inline_SCNMatrix4MakeTranslation(float tx, float ty, float tz) {
+	return SCNMatrix4MakeTranslation(tx, ty, tz);
 }
 
 EXPORT SCNMatrix4 __natj_inline_SCNMatrix4MakeScale(float sx, float sy, float sz) {
 	return SCNMatrix4MakeScale(sx, sy, sz);
 }
 
-EXPORT SCNMatrix4 __natj_inline_SCNMatrix4Translate(SCNMatrix4 mat, float x, float y, float z) {
-	return SCNMatrix4Translate(mat, x, y, z);
+EXPORT SCNMatrix4 __natj_inline_SCNMatrix4Translate(SCNMatrix4 m, float tx, float ty, float tz) {
+	return SCNMatrix4Translate(m, tx, ty, tz);
 }
 
 EXPORT SCNVector3 __natj_inline_SCNVector3FromGLKVector3(GLKVector3 vector) {

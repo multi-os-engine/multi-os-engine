@@ -54,26 +54,13 @@ public class NSNumberFormatter extends NSFormatter {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native NSNumberFormatter alloc();
-
-    @Generated
-    @Selector("defaultFormatterBehavior")
-    @NUInt
-    public static native long defaultFormatterBehavior();
-
-    @Generated
-    @Selector("localizedStringFromNumber:numberStyle:")
-    public static native String localizedStringFromNumberNumberStyle(NSNumber num, @NUInt long nstyle);
-
-    @Generated
-    @Selector("setDefaultFormatterBehavior:")
-    public static native void setDefaultFormatterBehavior(@NUInt long behavior);
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -105,6 +92,11 @@ public class NSNumberFormatter extends NSFormatter {
     @Generated
     @Selector("debugDescription")
     public static native String debugDescription_static();
+
+    @Generated
+    @Selector("defaultFormatterBehavior")
+    @NUInt
+    public static native long defaultFormatterBehavior();
 
     @Generated
     @Selector("description")
@@ -145,6 +137,10 @@ public class NSNumberFormatter extends NSFormatter {
     public static native void load_objc_static();
 
     @Generated
+    @Selector("localizedStringFromNumber:numberStyle:")
+    public static native String localizedStringFromNumberNumberStyle(NSNumber num, @NUInt long nstyle);
+
+    @Generated
     @Owned
     @Selector("new")
     @MappedReturn(ObjCObjectMapper.class)
@@ -159,8 +155,12 @@ public class NSNumberFormatter extends NSFormatter {
     public static native boolean resolveInstanceMethod(SEL sel);
 
     @Generated
+    @Selector("setDefaultFormatterBehavior:")
+    public static native void setDefaultFormatterBehavior(@NUInt long behavior);
+
+    @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")
@@ -239,6 +239,10 @@ public class NSNumberFormatter extends NSFormatter {
     @Generated
     @Selector("init")
     public native NSNumberFormatter init();
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native NSNumberFormatter initWithCoder(NSCoder aDecoder);
 
     @Generated
     @Selector("internationalCurrencySymbol")
@@ -657,8 +661,4 @@ public class NSNumberFormatter extends NSFormatter {
     @Generated
     @Selector("zeroSymbol")
     public native String zeroSymbol();
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native NSNumberFormatter initWithCoder(NSCoder aDecoder);
 }

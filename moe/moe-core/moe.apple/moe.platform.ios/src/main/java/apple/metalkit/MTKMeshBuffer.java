@@ -25,6 +25,7 @@ import apple.metal.protocol.MTLBuffer;
 import apple.modelio.MDLMeshBufferMap;
 import apple.modelio.protocol.MDLMeshBuffer;
 import apple.modelio.protocol.MDLMeshBufferZone;
+import apple.modelio.protocol.MDLNamed;
 import org.moe.natj.c.ann.FunctionPtr;
 import org.moe.natj.general.NatJ;
 import org.moe.natj.general.Pointer;
@@ -48,7 +49,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @Library("MetalKit")
 @Runtime(ObjCRuntime.class)
 @ObjCClassBinding
-public class MTKMeshBuffer extends NSObject implements MDLMeshBuffer {
+public class MTKMeshBuffer extends NSObject implements MDLMeshBuffer, MDLNamed {
     static {
         NatJ.register();
     }
@@ -59,13 +60,13 @@ public class MTKMeshBuffer extends NSObject implements MDLMeshBuffer {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native MTKMeshBuffer alloc();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -152,7 +153,7 @@ public class MTKMeshBuffer extends NSObject implements MDLMeshBuffer {
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")
@@ -196,9 +197,17 @@ public class MTKMeshBuffer extends NSObject implements MDLMeshBuffer {
     public native MDLMeshBufferMap map();
 
     @Generated
+    @Selector("name")
+    public native String name();
+
+    @Generated
     @Selector("offset")
     @NUInt
     public native long offset();
+
+    @Generated
+    @Selector("setName:")
+    public native void setName(String value);
 
     @Generated
     @Selector("type")

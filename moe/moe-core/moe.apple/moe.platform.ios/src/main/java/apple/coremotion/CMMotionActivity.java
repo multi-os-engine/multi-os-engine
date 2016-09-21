@@ -57,13 +57,13 @@ public class CMMotionActivity extends CMLogItem {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native CMMotionActivity alloc();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -150,7 +150,7 @@ public class CMMotionActivity extends CMLogItem {
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")
@@ -163,7 +163,7 @@ public class CMMotionActivity extends CMLogItem {
     @Generated
     @Selector("version")
     @NInt
-    public static native long version();
+    public static native long version_static();
 
     @Generated
     @Selector("automotive")
@@ -183,6 +183,10 @@ public class CMMotionActivity extends CMLogItem {
     public native CMMotionActivity init();
 
     @Generated
+    @Selector("initWithCoder:")
+    public native CMMotionActivity initWithCoder(NSCoder aDecoder);
+
+    @Generated
     @Selector("running")
     public native boolean running();
 
@@ -195,20 +199,16 @@ public class CMMotionActivity extends CMLogItem {
     public native boolean stationary();
 
     @Generated
+    @ProtocolClassMethod("supportsSecureCoding")
+    public boolean _supportsSecureCoding() {
+        return supportsSecureCoding();
+    }
+
+    @Generated
     @Selector("unknown")
     public native boolean unknown();
 
     @Generated
     @Selector("walking")
     public native boolean walking();
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native CMMotionActivity initWithCoder(NSCoder aDecoder);
-
-    @Generated
-    @ProtocolClassMethod("supportsSecureCoding")
-    public boolean _supportsSecureCoding() {
-        return supportsSecureCoding();
-    }
 }

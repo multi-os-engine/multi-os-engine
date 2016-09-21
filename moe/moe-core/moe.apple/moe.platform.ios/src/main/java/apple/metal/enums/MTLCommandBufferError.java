@@ -29,6 +29,7 @@ public final class MTLCommandBufferError {
     @Generated @NUInt public static final long NotPermitted = 0x0000000000000007L;
     @Generated @NUInt public static final long OutOfMemory = 0x0000000000000008L;
     @Generated @NUInt public static final long InvalidResource = 0x0000000000000009L;
+    @Generated @NUInt public static final long Memoryless = 0x000000000000000AL;
 
     @Generated
     private MTLCommandBufferError() {

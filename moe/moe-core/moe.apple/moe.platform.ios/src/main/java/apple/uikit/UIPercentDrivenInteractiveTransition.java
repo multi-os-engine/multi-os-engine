@@ -20,6 +20,7 @@ import apple.NSObject;
 import apple.foundation.NSArray;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
+import apple.uikit.protocol.UITimingCurveProvider;
 import apple.uikit.protocol.UIViewControllerInteractiveTransitioning;
 import org.moe.natj.c.ann.FunctionPtr;
 import org.moe.natj.general.NatJ;
@@ -56,13 +57,13 @@ public class UIPercentDrivenInteractiveTransition extends NSObject implements UI
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native UIPercentDrivenInteractiveTransition alloc();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -188,6 +189,10 @@ public class UIPercentDrivenInteractiveTransition extends NSObject implements UI
     public native UIPercentDrivenInteractiveTransition init();
 
     @Generated
+    @Selector("pauseInteractiveTransition")
+    public native void pauseInteractiveTransition();
+
+    @Generated
     @Selector("percentComplete")
     @NFloat
     public native double percentComplete();
@@ -201,10 +206,27 @@ public class UIPercentDrivenInteractiveTransition extends NSObject implements UI
     public native void setCompletionSpeed(@NFloat double value);
 
     @Generated
+    @Selector("setTimingCurve:")
+    public native void setTimingCurve(@Mapped(ObjCObjectMapper.class) UITimingCurveProvider value);
+
+    @Generated
+    @Selector("setWantsInteractiveStart:")
+    public native void setWantsInteractiveStart(boolean value);
+
+    @Generated
     @Selector("startInteractiveTransition:")
     public native void startInteractiveTransition(@Mapped(ObjCObjectMapper.class) Object transitionContext);
 
     @Generated
+    @Selector("timingCurve")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native UITimingCurveProvider timingCurve();
+
+    @Generated
     @Selector("updateInteractiveTransition:")
     public native void updateInteractiveTransition(@NFloat double percentComplete);
+
+    @Generated
+    @Selector("wantsInteractiveStart")
+    public native boolean wantsInteractiveStart();
 }

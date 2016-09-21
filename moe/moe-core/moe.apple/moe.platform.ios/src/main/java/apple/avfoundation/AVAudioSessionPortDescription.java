@@ -56,13 +56,13 @@ public class AVAudioSessionPortDescription extends NSObject {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native AVAudioSessionPortDescription alloc();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -171,6 +171,10 @@ public class AVAudioSessionPortDescription extends NSObject {
     @Generated
     @Selector("dataSources")
     public native NSArray<? extends AVAudioSessionDataSourceDescription> dataSources();
+
+    @Generated
+    @Selector("hasHardwareVoiceCallProcessing")
+    public native boolean hasHardwareVoiceCallProcessing();
 
     @Generated
     @Selector("init")

@@ -58,29 +58,13 @@ public class UIPasteboard extends NSObject {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native UIPasteboard alloc();
-
-    @Generated
-    @Selector("generalPasteboard")
-    public static native UIPasteboard generalPasteboard();
-
-    @Generated
-    @Selector("pasteboardWithName:create:")
-    public static native UIPasteboard pasteboardWithNameCreate(String pasteboardName, boolean create);
-
-    @Generated
-    @Selector("pasteboardWithUniqueName")
-    public static native UIPasteboard pasteboardWithUniqueName();
-
-    @Generated
-    @Selector("removePasteboardWithName:")
-    public static native void removePasteboardWithName(String pasteboardName);
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -116,6 +100,10 @@ public class UIPasteboard extends NSObject {
     @Generated
     @Selector("description")
     public static native String description_static();
+
+    @Generated
+    @Selector("generalPasteboard")
+    public static native UIPasteboard generalPasteboard();
 
     @Generated
     @Selector("hash")
@@ -156,6 +144,18 @@ public class UIPasteboard extends NSObject {
     @Selector("new")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object new_objc();
+
+    @Generated
+    @Selector("pasteboardWithName:create:")
+    public static native UIPasteboard pasteboardWithNameCreate(String pasteboardName, boolean create);
+
+    @Generated
+    @Selector("pasteboardWithUniqueName")
+    public static native UIPasteboard pasteboardWithUniqueName();
+
+    @Generated
+    @Selector("removePasteboardWithName:")
+    public static native void removePasteboardWithName(String pasteboardName);
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -220,6 +220,22 @@ public class UIPasteboard extends NSObject {
     public native NSArray<?> dataForPasteboardTypeInItemSet(String pasteboardType, NSIndexSet itemSet);
 
     @Generated
+    @Selector("hasColors")
+    public native boolean hasColors();
+
+    @Generated
+    @Selector("hasImages")
+    public native boolean hasImages();
+
+    @Generated
+    @Selector("hasStrings")
+    public native boolean hasStrings();
+
+    @Generated
+    @Selector("hasURLs")
+    public native boolean hasURLs();
+
+    @Generated
     @Selector("image")
     public native UIImage image();
 
@@ -237,15 +253,15 @@ public class UIPasteboard extends NSObject {
 
     @Generated
     @Selector("setPersistent:")
-    public native void setPersistent(boolean value);
+    public native void setPersistent(boolean persistent);
 
     @Generated
     @Selector("itemSetWithPasteboardTypes:")
-    public native NSIndexSet itemSetWithPasteboardTypes(NSArray<?> pasteboardTypes);
+    public native NSIndexSet itemSetWithPasteboardTypes(NSArray<String> pasteboardTypes);
 
     @Generated
     @Selector("items")
-    public native NSArray<?> items();
+    public native NSArray<? extends NSDictionary<String, ?>> items();
 
     @Generated
     @Selector("name")
@@ -262,7 +278,7 @@ public class UIPasteboard extends NSObject {
 
     @Generated
     @Selector("pasteboardTypesForItemSet:")
-    public native NSArray<?> pasteboardTypesForItemSet(NSIndexSet itemSet);
+    public native NSArray<? extends NSArray<String>> pasteboardTypesForItemSet(NSIndexSet itemSet);
 
     @Generated
     @Selector("setColor:")
@@ -286,7 +302,12 @@ public class UIPasteboard extends NSObject {
 
     @Generated
     @Selector("setItems:")
-    public native void setItems(NSArray<?> value);
+    public native void setItems(NSArray<? extends NSDictionary<String, ?>> value);
+
+    @Generated
+    @Selector("setItems:options:")
+    public native void setItemsOptions(NSArray<? extends NSDictionary<String, ?>> items,
+            NSDictionary<String, ?> options);
 
     @Generated
     @Selector("setString:")

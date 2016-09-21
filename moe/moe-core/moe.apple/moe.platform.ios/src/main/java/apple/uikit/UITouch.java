@@ -60,13 +60,13 @@ public class UITouch extends NSObject {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native UITouch alloc();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -153,7 +153,7 @@ public class UITouch extends NSObject {
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")
@@ -163,76 +163,6 @@ public class UITouch extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
-
-    @Generated
-    @Selector("gestureRecognizers")
-    public native NSArray<? extends UIGestureRecognizer> gestureRecognizers();
-
-    @Generated
-    @Selector("init")
-    public native UITouch init();
-
-    @Generated
-    @Selector("locationInNode:")
-    @ByValue
-    public native CGPoint locationInNode(SKNode node);
-
-    @Generated
-    @Selector("locationInView:")
-    @ByValue
-    public native CGPoint locationInView(UIView view);
-
-    @Generated
-    @Selector("majorRadius")
-    @NFloat
-    public native double majorRadius();
-
-    @Generated
-    @Selector("majorRadiusTolerance")
-    @NFloat
-    public native double majorRadiusTolerance();
-
-    @Generated
-    @Selector("phase")
-    @NInt
-    public native long phase();
-
-    @Generated
-    @Selector("previousLocationInNode:")
-    @ByValue
-    public native CGPoint previousLocationInNode(SKNode node);
-
-    @Generated
-    @Selector("previousLocationInView:")
-    @ByValue
-    public native CGPoint previousLocationInView(UIView view);
-
-    @Generated
-    @Selector("tapCount")
-    @NUInt
-    public native long tapCount();
-
-    @Generated
-    @Selector("timestamp")
-    public native double timestamp();
-
-    @Generated
-    @Selector("view")
-    public native UIView view();
-
-    @Generated
-    @Selector("window")
-    public native UIWindow window();
-
-    @Generated
-    @Selector("force")
-    @NFloat
-    public native double force();
-
-    @Generated
-    @Selector("maximumPossibleForce")
-    @NFloat
-    public native double maximumPossibleForce();
 
     @Generated
     @Selector("altitudeAngle")
@@ -264,6 +194,49 @@ public class UITouch extends NSObject {
     public native NSNumber estimationUpdateIndex();
 
     @Generated
+    @Selector("force")
+    @NFloat
+    public native double force();
+
+    @Generated
+    @Selector("gestureRecognizers")
+    public native NSArray<? extends UIGestureRecognizer> gestureRecognizers();
+
+    @Generated
+    @Selector("init")
+    public native UITouch init();
+
+    @Generated
+    @Selector("locationInNode:")
+    @ByValue
+    public native CGPoint locationInNode(SKNode node);
+
+    @Generated
+    @Selector("locationInView:")
+    @ByValue
+    public native CGPoint locationInView(UIView view);
+
+    @Generated
+    @Selector("majorRadius")
+    @NFloat
+    public native double majorRadius();
+
+    @Generated
+    @Selector("majorRadiusTolerance")
+    @NFloat
+    public native double majorRadiusTolerance();
+
+    @Generated
+    @Selector("maximumPossibleForce")
+    @NFloat
+    public native double maximumPossibleForce();
+
+    @Generated
+    @Selector("phase")
+    @NInt
+    public native long phase();
+
+    @Generated
     @Selector("preciseLocationInView:")
     @ByValue
     public native CGPoint preciseLocationInView(UIView view);
@@ -274,7 +247,34 @@ public class UITouch extends NSObject {
     public native CGPoint precisePreviousLocationInView(UIView view);
 
     @Generated
+    @Selector("previousLocationInNode:")
+    @ByValue
+    public native CGPoint previousLocationInNode(SKNode node);
+
+    @Generated
+    @Selector("previousLocationInView:")
+    @ByValue
+    public native CGPoint previousLocationInView(UIView view);
+
+    @Generated
+    @Selector("tapCount")
+    @NUInt
+    public native long tapCount();
+
+    @Generated
+    @Selector("timestamp")
+    public native double timestamp();
+
+    @Generated
     @Selector("type")
     @NInt
     public native long type();
+
+    @Generated
+    @Selector("view")
+    public native UIView view();
+
+    @Generated
+    @Selector("window")
+    public native UIWindow window();
 }

@@ -64,54 +64,13 @@ public class CIVector extends NSObject implements NSCopying, NSSecureCoding {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native CIVector alloc();
-
-    @Generated
-    @Selector("vectorWithCGAffineTransform:")
-    public static native CIVector vectorWithCGAffineTransform(@ByValue CGAffineTransform t);
-
-    @Generated
-    @Selector("vectorWithCGPoint:")
-    public static native CIVector vectorWithCGPoint(@ByValue CGPoint p);
-
-    @Generated
-    @Selector("vectorWithCGRect:")
-    public static native CIVector vectorWithCGRect(@ByValue CGRect r);
-
-    @Generated
-    @Selector("vectorWithString:")
-    public static native CIVector vectorWithString(String representation);
-
-    @Generated
-    @Selector("vectorWithValues:count:")
-    public static native CIVector vectorWithValuesCount(ConstNFloatPtr values, @NUInt long count);
-
-    @Generated
-    @Selector("vectorWithX:")
-    public static native CIVector vectorWithX(@NFloat double x);
-
-    @Generated
-    @Selector("vectorWithX:Y:")
-    public static native CIVector vectorWithXY(@NFloat double x, @NFloat double y);
-
-    @Generated
-    @Selector("vectorWithX:Y:Z:")
-    public static native CIVector vectorWithXYZ(@NFloat double x, @NFloat double y, @NFloat double z);
-
-    @Generated
-    @Selector("vectorWithX:Y:Z:W:")
-    public static native CIVector vectorWithXYZW(@NFloat double x, @NFloat double y, @NFloat double z,
-            @NFloat double w);
-
-    @Generated
-    @Selector("supportsSecureCoding")
-    public static native boolean supportsSecureCoding();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -203,6 +162,47 @@ public class CIVector extends NSObject implements NSCopying, NSSecureCoding {
     @Generated
     @Selector("superclass")
     public static native Class superclass_static();
+
+    @Generated
+    @Selector("supportsSecureCoding")
+    public static native boolean supportsSecureCoding();
+
+    @Generated
+    @Selector("vectorWithCGAffineTransform:")
+    public static native CIVector vectorWithCGAffineTransform(@ByValue CGAffineTransform t);
+
+    @Generated
+    @Selector("vectorWithCGPoint:")
+    public static native CIVector vectorWithCGPoint(@ByValue CGPoint p);
+
+    @Generated
+    @Selector("vectorWithCGRect:")
+    public static native CIVector vectorWithCGRect(@ByValue CGRect r);
+
+    @Generated
+    @Selector("vectorWithString:")
+    public static native CIVector vectorWithString(String representation);
+
+    @Generated
+    @Selector("vectorWithValues:count:")
+    public static native CIVector vectorWithValuesCount(ConstNFloatPtr values, @NUInt long count);
+
+    @Generated
+    @Selector("vectorWithX:")
+    public static native CIVector vectorWithX(@NFloat double x);
+
+    @Generated
+    @Selector("vectorWithX:Y:")
+    public static native CIVector vectorWithXY(@NFloat double x, @NFloat double y);
+
+    @Generated
+    @Selector("vectorWithX:Y:Z:")
+    public static native CIVector vectorWithXYZ(@NFloat double x, @NFloat double y, @NFloat double z);
+
+    @Generated
+    @Selector("vectorWithX:Y:Z:W:")
+    public static native CIVector vectorWithXYZW(@NFloat double x, @NFloat double y, @NFloat double z,
+            @NFloat double w);
 
     @Generated
     @Selector("version")
@@ -308,13 +308,13 @@ public class CIVector extends NSObject implements NSCopying, NSSecureCoding {
     public native String stringRepresentation();
 
     @Generated
-    @Selector("valueAtIndex:")
-    @NFloat
-    public native double valueAtIndex(@NUInt long index);
-
-    @Generated
     @ProtocolClassMethod("supportsSecureCoding")
     public boolean _supportsSecureCoding() {
         return supportsSecureCoding();
     }
+
+    @Generated
+    @Selector("valueAtIndex:")
+    @NFloat
+    public native double valueAtIndex(@NUInt long index);
 }

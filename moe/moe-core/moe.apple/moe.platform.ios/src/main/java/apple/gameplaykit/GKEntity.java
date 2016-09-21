@@ -18,8 +18,10 @@ package apple.gameplaykit;
 
 import apple.NSObject;
 import apple.foundation.NSArray;
+import apple.foundation.NSCoder;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
+import apple.foundation.protocol.NSCoding;
 import apple.foundation.protocol.NSCopying;
 import org.moe.natj.c.ann.FunctionPtr;
 import org.moe.natj.general.NatJ;
@@ -44,7 +46,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @Library("GameplayKit")
 @Runtime(ObjCRuntime.class)
 @ObjCClassBinding
-public class GKEntity extends NSObject implements NSCopying {
+public class GKEntity extends NSObject implements NSCopying, NSCoding {
     static {
         NatJ.register();
     }
@@ -55,17 +57,13 @@ public class GKEntity extends NSObject implements NSCopying {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native GKEntity alloc();
-
-    @Generated
-    @Selector("entity")
-    public static native GKEntity entity();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -101,6 +99,10 @@ public class GKEntity extends NSObject implements NSCopying {
     @Generated
     @Selector("description")
     public static native String description_static();
+
+    @Generated
+    @Selector("entity")
+    public static native GKEntity entity();
 
     @Generated
     @Selector("hash")
@@ -182,8 +184,16 @@ public class GKEntity extends NSObject implements NSCopying {
     public native Object copyWithZone(VoidPtr zone);
 
     @Generated
+    @Selector("encodeWithCoder:")
+    public native void encodeWithCoder(NSCoder aCoder);
+
+    @Generated
     @Selector("init")
     public native GKEntity init();
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native GKEntity initWithCoder(NSCoder aDecoder);
 
     @Generated
     @Selector("removeComponentForClass:")

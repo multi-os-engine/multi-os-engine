@@ -23,6 +23,7 @@ import org.moe.natj.general.ann.NUInt;
 public final class MTLStorageMode {
     @Generated @NUInt public static final long Shared = 0x0000000000000000L;
     @Generated @NUInt public static final long Private = 0x0000000000000002L;
+    @Generated @NUInt public static final long Memoryless = 0x0000000000000003L;
 
     @Generated
     private MTLStorageMode() {

@@ -26,6 +26,8 @@ public final class AVAudioSessionCategoryOptions {
     @Generated @NUInt public static final long AllowBluetooth = 0x0000000000000004L;
     @Generated @NUInt public static final long DefaultToSpeaker = 0x0000000000000008L;
     @Generated @NUInt public static final long InterruptSpokenAudioAndMixWithOthers = 0x0000000000000011L;
+    @Generated @NUInt public static final long AllowBluetoothA2DP = 0x0000000000000020L;
+    @Generated @NUInt public static final long AllowAirPlay = 0x0000000000000040L;
 
     @Generated
     private AVAudioSessionCategoryOptions() {

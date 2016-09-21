@@ -54,18 +54,13 @@ public class CNContactsUserDefaults extends NSObject {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native CNContactsUserDefaults alloc();
-
-    @Generated
-    @Selector("sharedDefaults")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object sharedDefaults();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -152,7 +147,12 @@ public class CNContactsUserDefaults extends NSObject {
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
+
+    @Generated
+    @Selector("sharedDefaults")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object sharedDefaults();
 
     @Generated
     @Selector("superclass")

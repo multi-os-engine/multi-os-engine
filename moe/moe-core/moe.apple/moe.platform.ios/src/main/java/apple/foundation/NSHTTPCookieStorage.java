@@ -52,21 +52,13 @@ public class NSHTTPCookieStorage extends NSObject {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native NSHTTPCookieStorage alloc();
-
-    @Generated
-    @Selector("sharedHTTPCookieStorage")
-    public static native NSHTTPCookieStorage sharedHTTPCookieStorage();
-
-    @Generated
-    @Selector("sharedCookieStorageForGroupContainerIdentifier:")
-    public static native NSHTTPCookieStorage sharedCookieStorageForGroupContainerIdentifier(String identifier);
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -153,7 +145,15 @@ public class NSHTTPCookieStorage extends NSObject {
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
+
+    @Generated
+    @Selector("sharedCookieStorageForGroupContainerIdentifier:")
+    public static native NSHTTPCookieStorage sharedCookieStorageForGroupContainerIdentifier(String identifier);
+
+    @Generated
+    @Selector("sharedHTTPCookieStorage")
+    public static native NSHTTPCookieStorage sharedHTTPCookieStorage();
 
     @Generated
     @Selector("superclass")

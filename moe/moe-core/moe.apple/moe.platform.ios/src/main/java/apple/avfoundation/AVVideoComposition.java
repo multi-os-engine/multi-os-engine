@@ -63,22 +63,13 @@ public class AVVideoComposition extends NSObject implements NSCopying, NSMutable
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native AVVideoComposition alloc();
-
-    @Generated
-    @Selector("videoCompositionWithPropertiesOfAsset:")
-    public static native AVVideoComposition videoCompositionWithPropertiesOfAsset(AVAsset asset);
-
-    @Generated
-    @Selector("videoCompositionWithAsset:applyingCIFiltersWithHandler:")
-    public static native AVVideoComposition videoCompositionWithAssetApplyingCIFiltersWithHandler(AVAsset asset,
-            @ObjCBlock(name = "call_videoCompositionWithAssetApplyingCIFiltersWithHandler") Block_videoCompositionWithAssetApplyingCIFiltersWithHandler applier);
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -165,7 +156,7 @@ public class AVVideoComposition extends NSObject implements NSCopying, NSMutable
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")
@@ -177,8 +168,29 @@ public class AVVideoComposition extends NSObject implements NSCopying, NSMutable
     public static native long version_static();
 
     @Generated
+    @Selector("videoCompositionWithAsset:applyingCIFiltersWithHandler:")
+    public static native AVVideoComposition videoCompositionWithAssetApplyingCIFiltersWithHandler(AVAsset asset,
+            @ObjCBlock(name = "call_videoCompositionWithAssetApplyingCIFiltersWithHandler") Block_videoCompositionWithAssetApplyingCIFiltersWithHandler applier);
+
+    @Generated
+    @Selector("videoCompositionWithPropertiesOfAsset:")
+    public static native AVVideoComposition videoCompositionWithPropertiesOfAsset(AVAsset asset);
+
+    @Generated
     @Selector("animationTool")
     public native AVVideoCompositionCoreAnimationTool animationTool();
+
+    @Generated
+    @Selector("colorPrimaries")
+    public native String colorPrimaries();
+
+    @Generated
+    @Selector("colorTransferFunction")
+    public native String colorTransferFunction();
+
+    @Generated
+    @Selector("colorYCbCrMatrix")
+    public native String colorYCbCrMatrix();
 
     @Generated
     @Owned

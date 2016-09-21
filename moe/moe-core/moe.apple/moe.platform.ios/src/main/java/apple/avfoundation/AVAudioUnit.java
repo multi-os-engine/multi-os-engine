@@ -17,9 +17,9 @@ limitations under the License.
 package apple.avfoundation;
 
 import apple.NSObject;
-import apple.audiounit.AUAudioUnit;
-import apple.audiounit.opaque.AudioComponentInstance;
-import apple.audiounit.struct.AudioComponentDescription;
+import apple.audiotoolbox.AUAudioUnit;
+import apple.audiotoolbox.opaque.AudioComponentInstance;
+import apple.audiotoolbox.struct.AudioComponentDescription;
 import apple.foundation.NSArray;
 import apple.foundation.NSError;
 import apple.foundation.NSMethodSignature;
@@ -62,19 +62,13 @@ public class AVAudioUnit extends AVAudioNode {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native AVAudioUnit alloc();
-
-    @Generated
-    @Selector("instantiateWithComponentDescription:options:completionHandler:")
-    public static native void instantiateWithComponentDescriptionOptionsCompletionHandler(
-            @ByValue AudioComponentDescription audioComponentDescription, int options,
-            @ObjCBlock(name = "call_instantiateWithComponentDescriptionOptionsCompletionHandler") Block_instantiateWithComponentDescriptionOptionsCompletionHandler completionHandler);
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -134,6 +128,12 @@ public class AVAudioUnit extends AVAudioNode {
     public static native boolean instancesRespondToSelector(SEL aSelector);
 
     @Generated
+    @Selector("instantiateWithComponentDescription:options:completionHandler:")
+    public static native void instantiateWithComponentDescriptionOptionsCompletionHandler(
+            @ByValue AudioComponentDescription audioComponentDescription, int options,
+            @ObjCBlock(name = "call_instantiateWithComponentDescriptionOptionsCompletionHandler") Block_instantiateWithComponentDescriptionOptionsCompletionHandler completionHandler);
+
+    @Generated
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
@@ -161,7 +161,7 @@ public class AVAudioUnit extends AVAudioNode {
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")
@@ -171,6 +171,10 @@ public class AVAudioUnit extends AVAudioNode {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("AUAudioUnit")
+    public native AUAudioUnit AUAudioUnit();
 
     @Generated
     @Selector("audioComponentDescription")
@@ -201,10 +205,6 @@ public class AVAudioUnit extends AVAudioNode {
     @Selector("version")
     @NUInt
     public native long version();
-
-    @Generated
-    @Selector("AUAudioUnit")
-    public native AUAudioUnit AUAudioUnit();
 
     @Runtime(ObjCRuntime.class)
     @Generated

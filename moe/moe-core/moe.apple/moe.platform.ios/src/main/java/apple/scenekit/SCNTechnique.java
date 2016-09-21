@@ -63,25 +63,13 @@ public class SCNTechnique extends NSObject implements SCNAnimatable, NSCopying, 
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native SCNTechnique alloc();
-
-    @Generated
-    @Selector("supportsSecureCoding")
-    public static native boolean supportsSecureCoding();
-
-    @Generated
-    @Selector("techniqueBySequencingTechniques:")
-    public static native SCNTechnique techniqueBySequencingTechniques(NSArray<? extends SCNTechnique> techniques);
-
-    @Generated
-    @Selector("techniqueWithDictionary:")
-    public static native SCNTechnique techniqueWithDictionary(NSDictionary<String, ?> dictionary);
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -150,7 +138,7 @@ public class SCNTechnique extends NSObject implements SCNAnimatable, NSCopying, 
 
     @Generated
     @Selector("load")
-    public static native void load_objc();
+    public static native void load_objc_static();
 
     @Generated
     @Owned
@@ -168,16 +156,28 @@ public class SCNTechnique extends NSObject implements SCNAnimatable, NSCopying, 
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")
     public static native Class superclass_static();
 
     @Generated
+    @Selector("supportsSecureCoding")
+    public static native boolean supportsSecureCoding();
+
+    @Generated
+    @Selector("techniqueBySequencingTechniques:")
+    public static native SCNTechnique techniqueBySequencingTechniques(NSArray<? extends SCNTechnique> techniques);
+
+    @Generated
+    @Selector("techniqueWithDictionary:")
+    public static native SCNTechnique techniqueWithDictionary(NSDictionary<String, ?> dictionary);
+
+    @Generated
     @Selector("version")
     @NInt
-    public static native long version();
+    public static native long version_static();
 
     @Generated
     @Selector("addAnimation:forKey:")
@@ -223,6 +223,11 @@ public class SCNTechnique extends NSObject implements SCNAnimatable, NSCopying, 
     public native boolean isAnimationForKeyPaused(String key);
 
     @Generated
+    @Selector("objectForKeyedSubscript:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native Object objectForKeyedSubscript(@Mapped(ObjCObjectMapper.class) Object key);
+
+    @Generated
     @Selector("pauseAnimationForKey:")
     public native void pauseAnimationForKey(String key);
 
@@ -243,20 +248,19 @@ public class SCNTechnique extends NSObject implements SCNAnimatable, NSCopying, 
     public native void resumeAnimationForKey(String key);
 
     @Generated
+    @Selector("setObject:forKeyedSubscript:")
+    public native void setObjectForKeyedSubscript(@Mapped(ObjCObjectMapper.class) Object obj,
+            @Mapped(ObjCObjectMapper.class) Object key);
+
+    @Generated
+    @Selector("setSpeed:forAnimationKey:")
+    public native void setSpeedForAnimationKey(@NFloat double speed, String key);
+
+    @Generated
     @ProtocolClassMethod("supportsSecureCoding")
     public boolean _supportsSecureCoding() {
         return supportsSecureCoding();
     }
-
-    @Generated
-    @Selector("objectForKeyedSubscript:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native Object objectForKeyedSubscript(@Mapped(ObjCObjectMapper.class) Object key);
-
-    @Generated
-    @Selector("setObject:forKeyedSubscript:")
-    public native void setObjectForKeyedSubscript(@Mapped(ObjCObjectMapper.class) Object obj,
-            @Mapped(ObjCObjectMapper.class) Object key);
 
     @Runtime(ObjCRuntime.class)
     @Generated

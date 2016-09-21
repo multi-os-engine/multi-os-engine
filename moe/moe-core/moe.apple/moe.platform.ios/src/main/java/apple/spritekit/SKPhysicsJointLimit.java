@@ -58,18 +58,13 @@ public class SKPhysicsJointLimit extends SKPhysicsJoint {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native SKPhysicsJointLimit alloc();
-
-    @Generated
-    @Selector("jointWithBodyA:bodyB:anchorA:anchorB:")
-    public static native SKPhysicsJointLimit jointWithBodyABodyBAnchorAAnchorB(SKPhysicsBody bodyA, SKPhysicsBody bodyB,
-            @ByValue CGPoint anchorA, @ByValue CGPoint anchorB);
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -133,6 +128,11 @@ public class SKPhysicsJointLimit extends SKPhysicsJoint {
     public static native boolean isSubclassOfClass(Class aClass);
 
     @Generated
+    @Selector("jointWithBodyA:bodyB:anchorA:anchorB:")
+    public static native SKPhysicsJointLimit jointWithBodyABodyBAnchorAAnchorB(SKPhysicsBody bodyA, SKPhysicsBody bodyB,
+            @ByValue CGPoint anchorA, @ByValue CGPoint anchorB);
+
+    @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
@@ -172,6 +172,10 @@ public class SKPhysicsJointLimit extends SKPhysicsJoint {
     public native SKPhysicsJointLimit init();
 
     @Generated
+    @Selector("initWithCoder:")
+    public native SKPhysicsJointLimit initWithCoder(NSCoder aDecoder);
+
+    @Generated
     @Selector("maxLength")
     @NFloat
     public native double maxLength();
@@ -179,8 +183,4 @@ public class SKPhysicsJointLimit extends SKPhysicsJoint {
     @Generated
     @Selector("setMaxLength:")
     public native void setMaxLength(@NFloat double value);
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native SKPhysicsJointLimit initWithCoder(NSCoder aDecoder);
 }

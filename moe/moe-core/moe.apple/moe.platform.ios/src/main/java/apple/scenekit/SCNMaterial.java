@@ -66,25 +66,13 @@ public class SCNMaterial extends NSObject implements SCNAnimatable, SCNShadable,
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native SCNMaterial alloc();
-
-    @Generated
-    @Selector("material")
-    public static native SCNMaterial material();
-
-    @Generated
-    @Selector("supportsSecureCoding")
-    public static native boolean supportsSecureCoding();
-
-    @Generated
-    @Selector("materialWithMDLMaterial:")
-    public static native SCNMaterial materialWithMDLMaterial(MDLMaterial mdlMaterial);
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -156,6 +144,14 @@ public class SCNMaterial extends NSObject implements SCNAnimatable, SCNShadable,
     public static native void load_objc_static();
 
     @Generated
+    @Selector("material")
+    public static native SCNMaterial material();
+
+    @Generated
+    @Selector("materialWithMDLMaterial:")
+    public static native SCNMaterial materialWithMDLMaterial(MDLMaterial mdlMaterial);
+
+    @Generated
     @Owned
     @Selector("new")
     @MappedReturn(ObjCObjectMapper.class)
@@ -178,6 +174,10 @@ public class SCNMaterial extends NSObject implements SCNAnimatable, SCNShadable,
     public static native Class superclass_static();
 
     @Generated
+    @Selector("supportsSecureCoding")
+    public static native boolean supportsSecureCoding();
+
+    @Generated
     @Selector("version")
     @NInt
     public static native long version_static();
@@ -191,12 +191,21 @@ public class SCNMaterial extends NSObject implements SCNAnimatable, SCNShadable,
     public native SCNMaterialProperty ambient();
 
     @Generated
+    @Selector("ambientOcclusion")
+    public native SCNMaterialProperty ambientOcclusion();
+
+    @Generated
     @Selector("animationForKey:")
     public native CAAnimation animationForKey(String key);
 
     @Generated
     @Selector("animationKeys")
     public native NSArray<String> animationKeys();
+
+    @Generated
+    @Selector("blendMode")
+    @NInt
+    public native long blendMode();
 
     @Generated
     @Owned
@@ -275,6 +284,10 @@ public class SCNMaterial extends NSObject implements SCNAnimatable, SCNShadable,
     public native boolean locksAmbientWithDiffuse();
 
     @Generated
+    @Selector("metalness")
+    public native SCNMaterialProperty metalness();
+
+    @Generated
     @Selector("multiply")
     public native SCNMaterialProperty multiply();
 
@@ -320,6 +333,18 @@ public class SCNMaterial extends NSObject implements SCNAnimatable, SCNShadable,
     public native void resumeAnimationForKey(String key);
 
     @Generated
+    @Selector("roughness")
+    public native SCNMaterialProperty roughness();
+
+    @Generated
+    @Selector("selfIllumination")
+    public native SCNMaterialProperty selfIllumination();
+
+    @Generated
+    @Selector("setBlendMode:")
+    public native void setBlendMode(@NInt long value);
+
+    @Generated
     @Selector("setCullMode:")
     public native void setCullMode(@NInt long value);
 
@@ -356,6 +381,10 @@ public class SCNMaterial extends NSObject implements SCNAnimatable, SCNShadable,
     @Generated
     @Selector("setShininess:")
     public native void setShininess(@NFloat double value);
+
+    @Generated
+    @Selector("setSpeed:forAnimationKey:")
+    public native void setSpeedForAnimationKey(@NFloat double speed, String key);
 
     @Generated
     @Selector("setTransparency:")
@@ -406,21 +435,4 @@ public class SCNMaterial extends NSObject implements SCNAnimatable, SCNShadable,
     @Generated
     @Selector("writesToDepthBuffer")
     public native boolean writesToDepthBuffer();
-
-    @Generated
-    @Selector("ambientOcclusion")
-    public native SCNMaterialProperty ambientOcclusion();
-
-    @Generated
-    @Selector("blendMode")
-    @NInt
-    public native long blendMode();
-
-    @Generated
-    @Selector("selfIllumination")
-    public native SCNMaterialProperty selfIllumination();
-
-    @Generated
-    @Selector("setBlendMode:")
-    public native void setBlendMode(@NInt long value);
 }

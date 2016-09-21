@@ -25,9 +25,12 @@ import apple.coregraphics.struct.CGRect;
 import apple.coregraphics.struct.CGSize;
 import apple.corevideo.opaque.CVBufferRef;
 import apple.foundation.NSArray;
+import apple.foundation.NSData;
 import apple.foundation.NSDictionary;
+import apple.foundation.NSError;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
+import apple.foundation.NSURL;
 import apple.metal.protocol.MTLCommandBuffer;
 import apple.metal.protocol.MTLDevice;
 import apple.metal.protocol.MTLTexture;
@@ -44,6 +47,7 @@ import org.moe.natj.general.ann.NInt;
 import org.moe.natj.general.ann.NUInt;
 import org.moe.natj.general.ann.Owned;
 import org.moe.natj.general.ann.Runtime;
+import org.moe.natj.general.ptr.Ptr;
 import org.moe.natj.general.ptr.VoidPtr;
 import org.moe.natj.objc.Class;
 import org.moe.natj.objc.ObjCRuntime;
@@ -67,39 +71,13 @@ public class CIContext extends NSObject {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native CIContext alloc();
-
-    @Generated
-    @Selector("contextWithEAGLContext:")
-    public static native CIContext contextWithEAGLContext(EAGLContext eaglContext);
-
-    @Generated
-    @Selector("contextWithEAGLContext:options:")
-    public static native CIContext contextWithEAGLContextOptions(EAGLContext eaglContext,
-            NSDictionary<String, ?> options);
-
-    @Generated
-    @Selector("contextWithOptions:")
-    public static native CIContext contextWithOptions(NSDictionary<String, ?> options);
-
-    @Generated
-    @Selector("contextWithCGContext:options:")
-    public static native CIContext contextWithCGContextOptions(CGContextRef cgctx, NSDictionary<String, ?> options);
-
-    @Generated
-    @Selector("contextWithMTLDevice:")
-    public static native CIContext contextWithMTLDevice(@Mapped(ObjCObjectMapper.class) MTLDevice device);
-
-    @Generated
-    @Selector("contextWithMTLDevice:options:")
-    public static native CIContext contextWithMTLDeviceOptions(@Mapped(ObjCObjectMapper.class) MTLDevice device,
-            NSDictionary<String, ?> options);
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -127,6 +105,36 @@ public class CIContext extends NSObject {
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
+
+    @Generated
+    @Selector("context")
+    public static native CIContext context();
+
+    @Generated
+    @Selector("contextWithCGContext:options:")
+    public static native CIContext contextWithCGContextOptions(CGContextRef cgctx, NSDictionary<String, ?> options);
+
+    @Generated
+    @Selector("contextWithEAGLContext:")
+    public static native CIContext contextWithEAGLContext(EAGLContext eaglContext);
+
+    @Generated
+    @Selector("contextWithEAGLContext:options:")
+    public static native CIContext contextWithEAGLContextOptions(EAGLContext eaglContext,
+            NSDictionary<String, ?> options);
+
+    @Generated
+    @Selector("contextWithMTLDevice:")
+    public static native CIContext contextWithMTLDevice(@Mapped(ObjCObjectMapper.class) MTLDevice device);
+
+    @Generated
+    @Selector("contextWithMTLDevice:options:")
+    public static native CIContext contextWithMTLDeviceOptions(@Mapped(ObjCObjectMapper.class) MTLDevice device,
+            NSDictionary<String, ?> options);
+
+    @Generated
+    @Selector("contextWithOptions:")
+    public static native CIContext contextWithOptions(NSDictionary<String, ?> options);
 
     @Generated
     @Selector("debugDescription")
@@ -198,6 +206,20 @@ public class CIContext extends NSObject {
     public static native long version_static();
 
     @Generated
+    @Selector("JPEGRepresentationOfImage:colorSpace:options:")
+    public native NSData JPEGRepresentationOfImageColorSpaceOptions(CIImage image, CGColorSpaceRef colorSpace,
+            NSDictionary<?, ?> options);
+
+    @Generated
+    @Selector("TIFFRepresentationOfImage:format:colorSpace:options:")
+    public native NSData TIFFRepresentationOfImageFormatColorSpaceOptions(CIImage image, int format,
+            CGColorSpaceRef colorSpace, NSDictionary<?, ?> options);
+
+    @Generated
+    @Selector("clearCaches")
+    public native void clearCaches();
+
+    @Generated
     @Selector("createCGImage:fromRect:")
     public native CGImageRef createCGImageFromRect(CIImage image, @ByValue CGRect fromRect);
 
@@ -205,6 +227,11 @@ public class CIContext extends NSObject {
     @Selector("createCGImage:fromRect:format:colorSpace:")
     public native CGImageRef createCGImageFromRectFormatColorSpace(CIImage image, @ByValue CGRect fromRect, int format,
             CGColorSpaceRef colorSpace);
+
+    @Generated
+    @Selector("createCGImage:fromRect:format:colorSpace:deferred:")
+    public native CGImageRef createCGImageFromRectFormatColorSpaceDeferred(CIImage image, @ByValue CGRect fromRect,
+            int format, CGColorSpaceRef colorSpace, boolean deferred);
 
     @Generated
     @Deprecated
@@ -218,6 +245,10 @@ public class CIContext extends NSObject {
     @Generated
     @Selector("init")
     public native CIContext init();
+
+    @Generated
+    @Selector("initWithOptions:")
+    public native CIContext initWithOptions(NSDictionary<String, ?> options);
 
     @Generated
     @Selector("inputImageMaximumSize")
@@ -253,4 +284,18 @@ public class CIContext extends NSObject {
     @Generated
     @Selector("workingColorSpace")
     public native CGColorSpaceRef workingColorSpace();
+
+    @Generated
+    @Selector("workingFormat")
+    public native int workingFormat();
+
+    @Generated
+    @Selector("writeJPEGRepresentationOfImage:toURL:colorSpace:options:error:")
+    public native boolean writeJPEGRepresentationOfImageToURLColorSpaceOptionsError(CIImage image, NSURL url,
+            CGColorSpaceRef colorSpace, NSDictionary<?, ?> options, Ptr<NSError> errorPtr);
+
+    @Generated
+    @Selector("writeTIFFRepresentationOfImage:toURL:format:colorSpace:options:error:")
+    public native boolean writeTIFFRepresentationOfImageToURLFormatColorSpaceOptionsError(CIImage image, NSURL url,
+            int format, CGColorSpaceRef colorSpace, NSDictionary<?, ?> options, Ptr<NSError> errorPtr);
 }

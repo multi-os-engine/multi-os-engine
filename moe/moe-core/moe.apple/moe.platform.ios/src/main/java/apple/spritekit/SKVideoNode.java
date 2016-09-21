@@ -61,43 +61,13 @@ public class SKVideoNode extends SKNode {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native SKVideoNode alloc();
-
-    @Generated
-    @Selector("node")
-    public static native SKVideoNode node();
-
-    @Generated
-    @Selector("nodeWithFileNamed:")
-    public static native SKVideoNode nodeWithFileNamed(String filename);
-
-    @Generated
-    @Selector("videoNodeWithAVPlayer:")
-    public static native SKVideoNode videoNodeWithAVPlayer(AVPlayer player);
-
-    @Deprecated
-    @Generated
-    @Selector("videoNodeWithVideoFileNamed:")
-    public static native SKVideoNode videoNodeWithVideoFileNamed(String videoFile);
-
-    @Deprecated
-    @Generated
-    @Selector("videoNodeWithVideoURL:")
-    public static native SKVideoNode videoNodeWithVideoURL(NSURL videoURL);
-
-    @Generated
-    @Selector("videoNodeWithFileNamed:")
-    public static native SKVideoNode videoNodeWithFileNamed(String videoFile);
-
-    @Generated
-    @Selector("videoNodeWithURL:")
-    public static native SKVideoNode videoNodeWithURL(NSURL videoURL);
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -179,6 +149,14 @@ public class SKVideoNode extends SKNode {
     public static native Object new_objc();
 
     @Generated
+    @Selector("node")
+    public static native SKVideoNode node();
+
+    @Generated
+    @Selector("nodeWithFileNamed:")
+    public static native SKVideoNode nodeWithFileNamed(String filename);
+
+    @Generated
     @Selector("obstaclesFromNodeBounds:")
     public static native NSArray<? extends GKPolygonObstacle> obstaclesFromNodeBounds(NSArray<? extends SKNode> nodes);
 
@@ -214,6 +192,28 @@ public class SKVideoNode extends SKNode {
     public static native long version_static();
 
     @Generated
+    @Selector("videoNodeWithAVPlayer:")
+    public static native SKVideoNode videoNodeWithAVPlayer(AVPlayer player);
+
+    @Generated
+    @Selector("videoNodeWithFileNamed:")
+    public static native SKVideoNode videoNodeWithFileNamed(String videoFile);
+
+    @Generated
+    @Selector("videoNodeWithURL:")
+    public static native SKVideoNode videoNodeWithURL(NSURL videoURL);
+
+    @Generated
+    @Deprecated
+    @Selector("videoNodeWithVideoFileNamed:")
+    public static native SKVideoNode videoNodeWithVideoFileNamed(String videoFile);
+
+    @Generated
+    @Deprecated
+    @Selector("videoNodeWithVideoURL:")
+    public static native SKVideoNode videoNodeWithVideoURL(NSURL videoURL);
+
+    @Generated
     @Selector("anchorPoint")
     @ByValue
     public native CGPoint anchorPoint();
@@ -230,13 +230,21 @@ public class SKVideoNode extends SKNode {
     @Selector("initWithCoder:")
     public native SKVideoNode initWithCoder(NSCoder aDecoder);
 
-    @Deprecated
     @Generated
+    @Selector("initWithFileNamed:")
+    public native SKVideoNode initWithFileNamed(String videoFile);
+
+    @Generated
+    @Selector("initWithURL:")
+    public native SKVideoNode initWithURL(NSURL url);
+
+    @Generated
+    @Deprecated
     @Selector("initWithVideoFileNamed:")
     public native SKVideoNode initWithVideoFileNamed(String videoFile);
 
-    @Deprecated
     @Generated
+    @Deprecated
     @Selector("initWithVideoURL:")
     public native SKVideoNode initWithVideoURL(NSURL url);
 
@@ -260,12 +268,4 @@ public class SKVideoNode extends SKNode {
     @Selector("size")
     @ByValue
     public native CGSize size();
-
-    @Generated
-    @Selector("initWithFileNamed:")
-    public native SKVideoNode initWithFileNamed(String videoFile);
-
-    @Generated
-    @Selector("initWithURL:")
-    public native SKVideoNode initWithURL(NSURL url);
 }

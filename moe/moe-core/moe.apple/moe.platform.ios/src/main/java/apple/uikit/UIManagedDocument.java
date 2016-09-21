@@ -60,17 +60,13 @@ public class UIManagedDocument extends UIDocument {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native UIManagedDocument alloc();
-
-    @Generated
-    @Selector("persistentStoreName")
-    public static native String persistentStoreName();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -139,13 +135,17 @@ public class UIManagedDocument extends UIDocument {
 
     @Generated
     @Selector("load")
-    public static native void load_objc();
+    public static native void load_objc_static();
 
     @Generated
     @Owned
     @Selector("new")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object new_objc();
+
+    @Generated
+    @Selector("persistentStoreName")
+    public static native String persistentStoreName();
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -157,7 +157,7 @@ public class UIManagedDocument extends UIDocument {
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")
@@ -166,7 +166,7 @@ public class UIManagedDocument extends UIDocument {
     @Generated
     @Selector("version")
     @NInt
-    public static native long version();
+    public static native long version_static();
 
     @Generated
     @Selector("additionalContentForURL:error:")

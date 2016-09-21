@@ -60,13 +60,13 @@ public class HKStatisticsQuery extends HKQuery {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native HKStatisticsQuery alloc();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -233,6 +233,11 @@ public class HKStatisticsQuery extends HKQuery {
     @Selector("predicateForWorkoutsWithOperatorType:totalEnergyBurned:")
     public static native NSPredicate predicateForWorkoutsWithOperatorTypeTotalEnergyBurned(@NUInt long operatorType,
             HKQuantity totalEnergyBurned);
+
+    @Generated
+    @Selector("predicateForWorkoutsWithOperatorType:totalSwimmingStrokeCount:")
+    public static native NSPredicate predicateForWorkoutsWithOperatorTypeTotalSwimmingStrokeCount(
+            @NUInt long operatorType, HKQuantity totalSwimmingStrokeCount);
 
     @Generated
     @Selector("predicateForWorkoutsWithWorkoutActivityType:")

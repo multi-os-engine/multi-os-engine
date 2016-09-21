@@ -18,6 +18,7 @@ package apple.networkextension;
 
 import apple.NSObject;
 import apple.foundation.NSArray;
+import apple.foundation.NSCoder;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
 import org.moe.natj.c.ann.FunctionPtr;
@@ -36,6 +37,7 @@ import org.moe.natj.objc.Class;
 import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
+import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
@@ -54,17 +56,13 @@ public class NWBonjourServiceEndpoint extends NWEndpoint {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native NWBonjourServiceEndpoint alloc();
-
-    @Generated
-    @Selector("endpointWithName:type:domain:")
-    public static native NWBonjourServiceEndpoint endpointWithNameTypeDomain(String name, String type, String domain);
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -100,6 +98,10 @@ public class NWBonjourServiceEndpoint extends NWEndpoint {
     @Generated
     @Selector("description")
     public static native String description_static();
+
+    @Generated
+    @Selector("endpointWithName:type:domain:")
+    public static native NWBonjourServiceEndpoint endpointWithNameTypeDomain(String name, String type, String domain);
 
     @Generated
     @Selector("hash")
@@ -158,6 +160,10 @@ public class NWBonjourServiceEndpoint extends NWEndpoint {
     public static native Class superclass_static();
 
     @Generated
+    @Selector("supportsSecureCoding")
+    public static native boolean supportsSecureCoding();
+
+    @Generated
     @Selector("version")
     @NInt
     public static native long version_static();
@@ -171,8 +177,18 @@ public class NWBonjourServiceEndpoint extends NWEndpoint {
     public native NWBonjourServiceEndpoint init();
 
     @Generated
+    @Selector("initWithCoder:")
+    public native NWBonjourServiceEndpoint initWithCoder(NSCoder aDecoder);
+
+    @Generated
     @Selector("name")
     public native String name();
+
+    @Generated
+    @ProtocolClassMethod("supportsSecureCoding")
+    public boolean _supportsSecureCoding() {
+        return supportsSecureCoding();
+    }
 
     @Generated
     @Selector("type")

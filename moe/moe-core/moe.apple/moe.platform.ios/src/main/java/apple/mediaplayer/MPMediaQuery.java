@@ -58,6 +58,10 @@ public class MPMediaQuery extends NSObject implements NSSecureCoding, NSCopying 
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Selector("albumsQuery")
     public static native MPMediaQuery albumsQuery();
 
@@ -67,49 +71,17 @@ public class MPMediaQuery extends NSObject implements NSSecureCoding, NSCopying 
     public static native MPMediaQuery alloc();
 
     @Generated
+    @Selector("allocWithZone:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object allocWithZone(VoidPtr zone);
+
+    @Generated
     @Selector("artistsQuery")
     public static native MPMediaQuery artistsQuery();
 
     @Generated
     @Selector("audiobooksQuery")
     public static native MPMediaQuery audiobooksQuery();
-
-    @Generated
-    @Selector("compilationsQuery")
-    public static native MPMediaQuery compilationsQuery();
-
-    @Generated
-    @Selector("composersQuery")
-    public static native MPMediaQuery composersQuery();
-
-    @Generated
-    @Selector("genresQuery")
-    public static native MPMediaQuery genresQuery();
-
-    @Generated
-    @Selector("playlistsQuery")
-    public static native MPMediaQuery playlistsQuery();
-
-    @Generated
-    @Selector("podcastsQuery")
-    public static native MPMediaQuery podcastsQuery();
-
-    @Generated
-    @Selector("songsQuery")
-    public static native MPMediaQuery songsQuery();
-
-    @Generated
-    @Selector("supportsSecureCoding")
-    public static native boolean supportsSecureCoding();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
-
-    @Generated
-    @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -134,12 +106,24 @@ public class MPMediaQuery extends NSObject implements NSSecureCoding, NSCopying 
     public static native Class classForKeyedUnarchiver();
 
     @Generated
+    @Selector("compilationsQuery")
+    public static native MPMediaQuery compilationsQuery();
+
+    @Generated
+    @Selector("composersQuery")
+    public static native MPMediaQuery composersQuery();
+
+    @Generated
     @Selector("debugDescription")
     public static native String debugDescription_static();
 
     @Generated
     @Selector("description")
     public static native String description_static();
+
+    @Generated
+    @Selector("genresQuery")
+    public static native MPMediaQuery genresQuery();
 
     @Generated
     @Selector("hash")
@@ -182,6 +166,14 @@ public class MPMediaQuery extends NSObject implements NSSecureCoding, NSCopying 
     public static native Object new_objc();
 
     @Generated
+    @Selector("playlistsQuery")
+    public static native MPMediaQuery playlistsQuery();
+
+    @Generated
+    @Selector("podcastsQuery")
+    public static native MPMediaQuery podcastsQuery();
+
+    @Generated
     @Selector("resolveClassMethod:")
     public static native boolean resolveClassMethod(SEL sel);
 
@@ -194,8 +186,16 @@ public class MPMediaQuery extends NSObject implements NSSecureCoding, NSCopying 
     public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
+    @Selector("songsQuery")
+    public static native MPMediaQuery songsQuery();
+
+    @Generated
     @Selector("superclass")
     public static native Class superclass_static();
+
+    @Generated
+    @Selector("supportsSecureCoding")
+    public static native boolean supportsSecureCoding();
 
     @Generated
     @Selector("version")

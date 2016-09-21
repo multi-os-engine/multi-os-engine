@@ -53,22 +53,13 @@ public class NSDataDetector extends NSRegularExpression {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native NSDataDetector alloc();
-
-    @Generated
-    @Selector("dataDetectorWithTypes:error:")
-    public static native NSDataDetector dataDetectorWithTypesError(long checkingTypes, Ptr<NSError> error);
-
-    @Generated
-    @Selector("regularExpressionWithPattern:options:error:")
-    public static native NSRegularExpression regularExpressionWithPatternOptionsError(String pattern,
-            @NUInt long options, Ptr<NSError> error);
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -96,6 +87,10 @@ public class NSDataDetector extends NSRegularExpression {
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
+
+    @Generated
+    @Selector("dataDetectorWithTypes:error:")
+    public static native NSDataDetector dataDetectorWithTypesError(long checkingTypes, Ptr<NSError> error);
 
     @Generated
     @Selector("debugDescription")
@@ -154,6 +149,11 @@ public class NSDataDetector extends NSRegularExpression {
     public static native Object new_objc();
 
     @Generated
+    @Selector("regularExpressionWithPattern:options:error:")
+    public static native NSRegularExpression regularExpressionWithPatternOptionsError(String pattern,
+            @NUInt long options, Ptr<NSError> error);
+
+    @Generated
     @Selector("resolveClassMethod:")
     public static native boolean resolveClassMethod(SEL sel);
 
@@ -163,7 +163,7 @@ public class NSDataDetector extends NSRegularExpression {
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")
@@ -187,16 +187,16 @@ public class NSDataDetector extends NSRegularExpression {
     public native NSDataDetector init();
 
     @Generated
+    @Selector("initWithCoder:")
+    public native NSDataDetector initWithCoder(NSCoder aDecoder);
+
+    @Generated
     @Selector("initWithPattern:options:error:")
     public native NSDataDetector initWithPatternOptionsError(String pattern, @NUInt long options, Ptr<NSError> error);
 
     @Generated
     @Selector("initWithTypes:error:")
     public native NSDataDetector initWithTypesError(long checkingTypes, Ptr<NSError> error);
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native NSDataDetector initWithCoder(NSCoder aDecoder);
 
     @Generated
     @ProtocolClassMethod("supportsSecureCoding")

@@ -56,29 +56,13 @@ public class NSPointerArray extends NSObject implements NSFastEnumeration, NSCop
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native NSPointerArray alloc();
-
-    @Generated
-    @Selector("pointerArrayWithOptions:")
-    public static native NSPointerArray pointerArrayWithOptions(@NUInt long options);
-
-    @Generated
-    @Selector("pointerArrayWithPointerFunctions:")
-    public static native NSPointerArray pointerArrayWithPointerFunctions(NSPointerFunctions functions);
-
-    @Generated
-    @Selector("strongObjectsPointerArray")
-    public static native NSPointerArray strongObjectsPointerArray();
-
-    @Generated
-    @Selector("weakObjectsPointerArray")
-    public static native NSPointerArray weakObjectsPointerArray();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -156,6 +140,14 @@ public class NSPointerArray extends NSObject implements NSFastEnumeration, NSCop
     public static native Object new_objc();
 
     @Generated
+    @Selector("pointerArrayWithOptions:")
+    public static native NSPointerArray pointerArrayWithOptions(@NUInt long options);
+
+    @Generated
+    @Selector("pointerArrayWithPointerFunctions:")
+    public static native NSPointerArray pointerArrayWithPointerFunctions(NSPointerFunctions functions);
+
+    @Generated
     @Selector("resolveClassMethod:")
     public static native boolean resolveClassMethod(SEL sel);
 
@@ -168,6 +160,10 @@ public class NSPointerArray extends NSObject implements NSFastEnumeration, NSCop
     public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
+    @Selector("strongObjectsPointerArray")
+    public static native NSPointerArray strongObjectsPointerArray();
+
+    @Generated
     @Selector("superclass")
     public static native Class superclass_static();
 
@@ -175,6 +171,10 @@ public class NSPointerArray extends NSObject implements NSFastEnumeration, NSCop
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("weakObjectsPointerArray")
+    public static native NSPointerArray weakObjectsPointerArray();
 
     @Generated
     @Selector("addPointer:")

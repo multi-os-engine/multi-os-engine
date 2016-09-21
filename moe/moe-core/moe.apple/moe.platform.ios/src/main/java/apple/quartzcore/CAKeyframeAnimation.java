@@ -57,9 +57,18 @@ public class CAKeyframeAnimation extends CAPropertyAnimation {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native CAKeyframeAnimation alloc();
+
+    @Generated
+    @Selector("allocWithZone:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("animation")
@@ -68,15 +77,6 @@ public class CAKeyframeAnimation extends CAPropertyAnimation {
     @Generated
     @Selector("animationWithKeyPath:")
     public static native CAKeyframeAnimation animationWithKeyPath(String path);
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
-
-    @Generated
-    @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -163,7 +163,7 @@ public class CAKeyframeAnimation extends CAPropertyAnimation {
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")
@@ -189,6 +189,10 @@ public class CAKeyframeAnimation extends CAPropertyAnimation {
     @Generated
     @Selector("init")
     public native CAKeyframeAnimation init();
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native CAKeyframeAnimation initWithCoder(NSCoder aDecoder);
 
     @Generated
     @Selector("keyTimes")
@@ -249,8 +253,4 @@ public class CAKeyframeAnimation extends CAPropertyAnimation {
     @Generated
     @Selector("values")
     public native NSArray<?> values();
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native CAKeyframeAnimation initWithCoder(NSCoder aDecoder);
 }

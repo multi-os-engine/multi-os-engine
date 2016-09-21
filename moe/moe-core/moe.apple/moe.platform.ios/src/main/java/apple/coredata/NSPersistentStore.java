@@ -58,26 +58,13 @@ public class NSPersistentStore extends NSObject {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native NSPersistentStore alloc();
-
-    @Generated
-    @Selector("metadataForPersistentStoreWithURL:error:")
-    public static native NSDictionary<String, ?> metadataForPersistentStoreWithURLError(NSURL url, Ptr<NSError> error);
-
-    @Generated
-    @Selector("migrationManagerClass")
-    public static native Class migrationManagerClass();
-
-    @Generated
-    @Selector("setMetadata:forPersistentStoreWithURL:error:")
-    public static native boolean setMetadataForPersistentStoreWithURLError(NSDictionary<String, ?> metadata, NSURL url,
-            Ptr<NSError> error);
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -149,6 +136,14 @@ public class NSPersistentStore extends NSObject {
     public static native void load_objc_static();
 
     @Generated
+    @Selector("metadataForPersistentStoreWithURL:error:")
+    public static native NSDictionary<String, ?> metadataForPersistentStoreWithURLError(NSURL url, Ptr<NSError> error);
+
+    @Generated
+    @Selector("migrationManagerClass")
+    public static native Class migrationManagerClass();
+
+    @Generated
     @Owned
     @Selector("new")
     @MappedReturn(ObjCObjectMapper.class)
@@ -163,8 +158,13 @@ public class NSPersistentStore extends NSObject {
     public static native boolean resolveInstanceMethod(SEL sel);
 
     @Generated
+    @Selector("setMetadata:forPersistentStoreWithURL:error:")
+    public static native boolean setMetadataForPersistentStoreWithURLError(NSDictionary<String, ?> metadata, NSURL url,
+            Ptr<NSError> error);
+
+    @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")

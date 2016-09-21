@@ -28,6 +28,7 @@ import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
 import apple.foundation.protocol.NSCoding;
 import apple.foundation.protocol.NSCopying;
+import apple.gameplaykit.GKNoiseMap;
 import apple.uikit.UIImage;
 import org.moe.natj.c.ann.FunctionPtr;
 import org.moe.natj.general.NatJ;
@@ -66,57 +67,13 @@ public class SKTexture extends NSObject implements NSCopying, NSCoding {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native SKTexture alloc();
-
-    @Generated
-    @Selector("preloadTextures:withCompletionHandler:")
-    public static native void preloadTexturesWithCompletionHandler(NSArray<? extends SKTexture> textures,
-            @ObjCBlock(name = "call_preloadTexturesWithCompletionHandler") Block_preloadTexturesWithCompletionHandler completionHandler);
-
-    @Generated
-    @Selector("textureNoiseWithSmoothness:size:grayscale:")
-    public static native SKTexture textureNoiseWithSmoothnessSizeGrayscale(@NFloat double smoothness,
-            @ByValue CGSize size, boolean grayscale);
-
-    @Generated
-    @Selector("textureVectorNoiseWithSmoothness:size:")
-    public static native SKTexture textureVectorNoiseWithSmoothnessSize(@NFloat double smoothness,
-            @ByValue CGSize size);
-
-    @Generated
-    @Selector("textureWithCGImage:")
-    public static native SKTexture textureWithCGImage(CGImageRef image);
-
-    @Generated
-    @Selector("textureWithData:size:")
-    public static native SKTexture textureWithDataSize(NSData pixelData, @ByValue CGSize size);
-
-    @Generated
-    @Selector("textureWithData:size:flipped:")
-    public static native SKTexture textureWithDataSizeFlipped(NSData pixelData, @ByValue CGSize size, boolean flipped);
-
-    @Generated
-    @Selector("textureWithData:size:rowLength:alignment:")
-    public static native SKTexture textureWithDataSizeRowLengthAlignment(NSData pixelData, @ByValue CGSize size,
-            int rowLength, int alignment);
-
-    @Generated
-    @Selector("textureWithImage:")
-    public static native SKTexture textureWithImage(UIImage image);
-
-    @Generated
-    @Selector("textureWithImageNamed:")
-    public static native SKTexture textureWithImageNamed(String name);
-
-    @Generated
-    @Selector("textureWithRect:inTexture:")
-    public static native SKTexture textureWithRectInTexture(@ByValue CGRect rect, SKTexture texture);
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -194,6 +151,11 @@ public class SKTexture extends NSObject implements NSCopying, NSCoding {
     public static native Object new_objc();
 
     @Generated
+    @Selector("preloadTextures:withCompletionHandler:")
+    public static native void preloadTexturesWithCompletionHandler(NSArray<? extends SKTexture> textures,
+            @ObjCBlock(name = "call_preloadTexturesWithCompletionHandler") Block_preloadTexturesWithCompletionHandler completionHandler);
+
+    @Generated
     @Selector("resolveClassMethod:")
     public static native boolean resolveClassMethod(SEL sel);
 
@@ -203,16 +165,63 @@ public class SKTexture extends NSObject implements NSCopying, NSCoding {
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")
     public static native Class superclass_static();
 
     @Generated
+    @Selector("textureNoiseWithSmoothness:size:grayscale:")
+    public static native SKTexture textureNoiseWithSmoothnessSizeGrayscale(@NFloat double smoothness,
+            @ByValue CGSize size, boolean grayscale);
+
+    @Generated
+    @Selector("textureVectorNoiseWithSmoothness:size:")
+    public static native SKTexture textureVectorNoiseWithSmoothnessSize(@NFloat double smoothness,
+            @ByValue CGSize size);
+
+    @Generated
+    @Selector("textureWithCGImage:")
+    public static native SKTexture textureWithCGImage(CGImageRef image);
+
+    @Generated
+    @Selector("textureWithData:size:")
+    public static native SKTexture textureWithDataSize(NSData pixelData, @ByValue CGSize size);
+
+    @Generated
+    @Selector("textureWithData:size:flipped:")
+    public static native SKTexture textureWithDataSizeFlipped(NSData pixelData, @ByValue CGSize size, boolean flipped);
+
+    @Generated
+    @Selector("textureWithData:size:rowLength:alignment:")
+    public static native SKTexture textureWithDataSizeRowLengthAlignment(NSData pixelData, @ByValue CGSize size,
+            int rowLength, int alignment);
+
+    @Generated
+    @Selector("textureWithImage:")
+    public static native SKTexture textureWithImage(UIImage image);
+
+    @Generated
+    @Selector("textureWithImageNamed:")
+    public static native SKTexture textureWithImageNamed(String name);
+
+    @Generated
+    @Selector("textureWithNoiseMap:")
+    public static native SKTexture textureWithNoiseMap(GKNoiseMap noiseMap);
+
+    @Generated
+    @Selector("textureWithRect:inTexture:")
+    public static native SKTexture textureWithRectInTexture(@ByValue CGRect rect, SKTexture texture);
+
+    @Generated
     @Selector("version")
     @NInt
-    public static native long version();
+    public static native long version_static();
+
+    @Generated
+    @Selector("CGImage")
+    public native CGImageRef CGImage();
 
     @Generated
     @Owned
@@ -279,10 +288,6 @@ public class SKTexture extends NSObject implements NSCopying, NSCoding {
     @Generated
     @Selector("usesMipmaps")
     public native boolean usesMipmaps();
-
-    @Generated
-    @Selector("CGImage")
-    public native CGImageRef CGImage();
 
     @Runtime(ObjCRuntime.class)
     @Generated

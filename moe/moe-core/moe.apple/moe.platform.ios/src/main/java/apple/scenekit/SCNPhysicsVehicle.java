@@ -57,18 +57,13 @@ public class SCNPhysicsVehicle extends SCNPhysicsBehavior {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native SCNPhysicsVehicle alloc();
-
-    @Generated
-    @Selector("vehicleWithChassisBody:wheels:")
-    public static native SCNPhysicsVehicle vehicleWithChassisBodyWheels(SCNPhysicsBody chassisBody,
-            NSArray<? extends SCNPhysicsVehicleWheel> wheels);
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -155,7 +150,7 @@ public class SCNPhysicsVehicle extends SCNPhysicsBehavior {
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")
@@ -164,6 +159,11 @@ public class SCNPhysicsVehicle extends SCNPhysicsBehavior {
     @Generated
     @Selector("supportsSecureCoding")
     public static native boolean supportsSecureCoding();
+
+    @Generated
+    @Selector("vehicleWithChassisBody:wheels:")
+    public static native SCNPhysicsVehicle vehicleWithChassisBodyWheels(SCNPhysicsBody chassisBody,
+            NSArray<? extends SCNPhysicsVehicleWheel> wheels);
 
     @Generated
     @Selector("version")
@@ -187,6 +187,10 @@ public class SCNPhysicsVehicle extends SCNPhysicsBehavior {
     public native SCNPhysicsVehicle init();
 
     @Generated
+    @Selector("initWithCoder:")
+    public native SCNPhysicsVehicle initWithCoder(NSCoder aDecoder);
+
+    @Generated
     @Selector("setSteeringAngle:forWheelAtIndex:")
     public native void setSteeringAngleForWheelAtIndex(@NFloat double value, @NInt long index);
 
@@ -196,16 +200,12 @@ public class SCNPhysicsVehicle extends SCNPhysicsBehavior {
     public native double speedInKilometersPerHour();
 
     @Generated
-    @Selector("wheels")
-    public native NSArray<? extends SCNPhysicsVehicleWheel> wheels();
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native SCNPhysicsVehicle initWithCoder(NSCoder aDecoder);
-
-    @Generated
     @ProtocolClassMethod("supportsSecureCoding")
     public boolean _supportsSecureCoding() {
         return supportsSecureCoding();
     }
+
+    @Generated
+    @Selector("wheels")
+    public native NSArray<? extends SCNPhysicsVehicleWheel> wheels();
 }

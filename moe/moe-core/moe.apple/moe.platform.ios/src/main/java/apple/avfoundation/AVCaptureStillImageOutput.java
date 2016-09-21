@@ -59,17 +59,13 @@ public class AVCaptureStillImageOutput extends AVCaptureOutput {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native AVCaptureStillImageOutput alloc();
-
-    @Generated
-    @Selector("jpegStillImageNSDataRepresentation:")
-    public static native NSData jpegStillImageNSDataRepresentation(CMSampleBufferRef jpegSampleBuffer);
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -131,6 +127,10 @@ public class AVCaptureStillImageOutput extends AVCaptureOutput {
     @Generated
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
+
+    @Generated
+    @Selector("jpegStillImageNSDataRepresentation:")
+    public static native NSData jpegStillImageNSDataRepresentation(CMSampleBufferRef jpegSampleBuffer);
 
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
@@ -207,6 +207,18 @@ public class AVCaptureStillImageOutput extends AVCaptureOutput {
     public native void setHighResolutionStillImageOutputEnabled(boolean value);
 
     @Generated
+    @Selector("isLensStabilizationDuringBracketedCaptureEnabled")
+    public native boolean isLensStabilizationDuringBracketedCaptureEnabled();
+
+    @Generated
+    @Selector("setLensStabilizationDuringBracketedCaptureEnabled:")
+    public native void setLensStabilizationDuringBracketedCaptureEnabled(boolean value);
+
+    @Generated
+    @Selector("isLensStabilizationDuringBracketedCaptureSupported")
+    public native boolean isLensStabilizationDuringBracketedCaptureSupported();
+
+    @Generated
     @Selector("isStillImageStabilizationActive")
     public native boolean isStillImageStabilizationActive();
 
@@ -236,18 +248,6 @@ public class AVCaptureStillImageOutput extends AVCaptureOutput {
     @Generated
     @Selector("setOutputSettings:")
     public native void setOutputSettings(NSDictionary<?, ?> value);
-
-    @Generated
-    @Selector("isLensStabilizationDuringBracketedCaptureEnabled")
-    public native boolean isLensStabilizationDuringBracketedCaptureEnabled();
-
-    @Generated
-    @Selector("setLensStabilizationDuringBracketedCaptureEnabled:")
-    public native void setLensStabilizationDuringBracketedCaptureEnabled(boolean value);
-
-    @Generated
-    @Selector("isLensStabilizationDuringBracketedCaptureSupported")
-    public native boolean isLensStabilizationDuringBracketedCaptureSupported();
 
     @Runtime(ObjCRuntime.class)
     @Generated

@@ -61,17 +61,13 @@ public class WKInterfaceDevice extends NSObject {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native WKInterfaceDevice alloc();
-
-    @Generated
-    @Selector("currentDevice")
-    public static native WKInterfaceDevice currentDevice();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -99,6 +95,10 @@ public class WKInterfaceDevice extends NSObject {
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
+
+    @Generated
+    @Selector("currentDevice")
+    public static native WKInterfaceDevice currentDevice();
 
     @Generated
     @Selector("debugDescription")
@@ -186,6 +186,18 @@ public class WKInterfaceDevice extends NSObject {
     public native WKInterfaceDevice init();
 
     @Generated
+    @Selector("localizedModel")
+    public native String localizedModel();
+
+    @Generated
+    @Selector("model")
+    public native String model();
+
+    @Generated
+    @Selector("name")
+    public native String name();
+
+    @Generated
     @Selector("preferredContentSizeCategory")
     public native String preferredContentSizeCategory();
 
@@ -206,18 +218,6 @@ public class WKInterfaceDevice extends NSObject {
     @Selector("screenScale")
     @NFloat
     public native double screenScale();
-
-    @Generated
-    @Selector("localizedModel")
-    public native String localizedModel();
-
-    @Generated
-    @Selector("model")
-    public native String model();
-
-    @Generated
-    @Selector("name")
-    public native String name();
 
     @Generated
     @Selector("systemName")

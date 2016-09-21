@@ -58,27 +58,23 @@ public class CNPostalAddressFormatter extends NSFormatter {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native CNPostalAddressFormatter alloc();
 
     @Generated
-    @Selector("attributedStringFromPostalAddress:style:withDefaultAttributes:")
-    public static native NSAttributedString attributedStringFromPostalAddressStyleWithDefaultAttributes(
-            CNPostalAddress postalAddress, @NInt long style, NSDictionary<?, ?> attributes);
-
-    @Generated
-    @Selector("stringFromPostalAddress:style:")
-    public static native String stringFromPostalAddressStyle(CNPostalAddress postalAddress, @NInt long style);
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
-
-    @Generated
     @Selector("allocWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object allocWithZone(VoidPtr zone);
+
+    @Generated
+    @Selector("attributedStringFromPostalAddress:style:withDefaultAttributes:")
+    public static native NSAttributedString attributedStringFromPostalAddressStyleWithDefaultAttributes(
+            CNPostalAddress postalAddress, @NInt long style, NSDictionary<?, ?> attributes);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -160,7 +156,11 @@ public class CNPostalAddressFormatter extends NSFormatter {
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
+
+    @Generated
+    @Selector("stringFromPostalAddress:style:")
+    public static native String stringFromPostalAddressStyle(CNPostalAddress postalAddress, @NInt long style);
 
     @Generated
     @Selector("superclass")
@@ -181,6 +181,10 @@ public class CNPostalAddressFormatter extends NSFormatter {
     public native CNPostalAddressFormatter init();
 
     @Generated
+    @Selector("initWithCoder:")
+    public native CNPostalAddressFormatter initWithCoder(NSCoder aDecoder);
+
+    @Generated
     @Selector("setStyle:")
     public native void setStyle(@NInt long value);
 
@@ -192,8 +196,4 @@ public class CNPostalAddressFormatter extends NSFormatter {
     @Selector("style")
     @NInt
     public native long style();
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native CNPostalAddressFormatter initWithCoder(NSCoder aDecoder);
 }

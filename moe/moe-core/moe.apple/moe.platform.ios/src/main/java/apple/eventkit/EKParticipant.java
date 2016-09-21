@@ -58,13 +58,13 @@ public class EKParticipant extends EKObject implements NSCopying {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native EKParticipant alloc();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -151,7 +151,7 @@ public class EKParticipant extends EKObject implements NSCopying {
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")
@@ -162,14 +162,18 @@ public class EKParticipant extends EKObject implements NSCopying {
     @NInt
     public static native long version_static();
 
-    @Deprecated
     @Generated
+    @Deprecated
     @Selector("ABRecordWithAddressBook:")
     public native ConstVoidPtr ABRecordWithAddressBook(ConstVoidPtr addressBook);
 
     @Generated
     @Selector("URL")
     public native NSURL URL();
+
+    @Generated
+    @Selector("contactPredicate")
+    public native NSPredicate contactPredicate();
 
     @Generated
     @Owned
@@ -189,22 +193,18 @@ public class EKParticipant extends EKObject implements NSCopying {
     @Selector("name")
     public native String name();
 
-    @NInt
     @Generated
     @Selector("participantRole")
+    @NInt
     public native long participantRole();
 
-    @NInt
     @Generated
     @Selector("participantStatus")
+    @NInt
     public native long participantStatus();
 
-    @NInt
     @Generated
     @Selector("participantType")
+    @NInt
     public native long participantType();
-
-    @Generated
-    @Selector("contactPredicate")
-    public native NSPredicate contactPredicate();
 }

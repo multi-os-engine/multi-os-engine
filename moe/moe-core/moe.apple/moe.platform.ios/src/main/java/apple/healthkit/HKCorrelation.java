@@ -58,30 +58,13 @@ public class HKCorrelation extends HKSample {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native HKCorrelation alloc();
-
-    @Generated
-    @Selector("correlationWithType:startDate:endDate:objects:")
-    public static native HKCorrelation correlationWithTypeStartDateEndDateObjects(HKCorrelationType correlationType,
-            NSDate startDate, NSDate endDate, NSSet<? extends HKSample> objects);
-
-    @Generated
-    @Selector("correlationWithType:startDate:endDate:objects:metadata:")
-    public static native HKCorrelation correlationWithTypeStartDateEndDateObjectsMetadata(
-            HKCorrelationType correlationType, NSDate startDate, NSDate endDate, NSSet<? extends HKSample> objects,
-            NSDictionary<String, ?> metadata);
-
-    @Generated
-    @Selector("correlationWithType:startDate:endDate:objects:device:metadata:")
-    public static native HKCorrelation correlationWithTypeStartDateEndDateObjectsDeviceMetadata(
-            HKCorrelationType correlationType, NSDate startDate, NSDate endDate, NSSet<? extends HKSample> objects,
-            HKDevice device, NSDictionary<String, ?> metadata);
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -109,6 +92,23 @@ public class HKCorrelation extends HKSample {
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
+
+    @Generated
+    @Selector("correlationWithType:startDate:endDate:objects:")
+    public static native HKCorrelation correlationWithTypeStartDateEndDateObjects(HKCorrelationType correlationType,
+            NSDate startDate, NSDate endDate, NSSet<? extends HKSample> objects);
+
+    @Generated
+    @Selector("correlationWithType:startDate:endDate:objects:device:metadata:")
+    public static native HKCorrelation correlationWithTypeStartDateEndDateObjectsDeviceMetadata(
+            HKCorrelationType correlationType, NSDate startDate, NSDate endDate, NSSet<? extends HKSample> objects,
+            HKDevice device, NSDictionary<String, ?> metadata);
+
+    @Generated
+    @Selector("correlationWithType:startDate:endDate:objects:metadata:")
+    public static native HKCorrelation correlationWithTypeStartDateEndDateObjectsMetadata(
+            HKCorrelationType correlationType, NSDate startDate, NSDate endDate, NSSet<? extends HKSample> objects,
+            NSDictionary<String, ?> metadata);
 
     @Generated
     @Selector("debugDescription")
@@ -168,7 +168,7 @@ public class HKCorrelation extends HKSample {
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")
@@ -192,16 +192,16 @@ public class HKCorrelation extends HKSample {
     public native HKCorrelation init();
 
     @Generated
+    @Selector("initWithCoder:")
+    public native HKCorrelation initWithCoder(NSCoder aDecoder);
+
+    @Generated
     @Selector("objects")
     public native NSSet<? extends HKSample> objects();
 
     @Generated
     @Selector("objectsForType:")
     public native NSSet<? extends HKSample> objectsForType(HKObjectType objectType);
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native HKCorrelation initWithCoder(NSCoder aDecoder);
 
     @Generated
     @ProtocolClassMethod("supportsSecureCoding")

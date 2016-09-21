@@ -19,7 +19,9 @@ package apple.modelio;
 import apple.NSObject;
 import apple.foundation.NSArray;
 import apple.foundation.NSMethodSignature;
+import apple.foundation.NSNumber;
 import apple.foundation.NSSet;
+import apple.foundation.protocol.NSCopying;
 import apple.modelio.protocol.MDLTransformComponent;
 import org.moe.natj.c.ann.FunctionPtr;
 import org.moe.natj.general.NatJ;
@@ -44,7 +46,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @Library("ModelIO")
 @Runtime(ObjCRuntime.class)
 @ObjCClassBinding
-public class MDLTransform extends NSObject implements MDLTransformComponent {
+public class MDLTransform extends NSObject implements NSCopying, MDLTransformComponent {
     static {
         NatJ.register();
     }
@@ -55,13 +57,13 @@ public class MDLTransform extends NSObject implements MDLTransformComponent {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native MDLTransform alloc();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -148,7 +150,7 @@ public class MDLTransform extends NSObject implements MDLTransformComponent {
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")
@@ -157,7 +159,13 @@ public class MDLTransform extends NSObject implements MDLTransformComponent {
     @Generated
     @Selector("version")
     @NInt
-    public static native long version();
+    public static native long version_static();
+
+    @Generated
+    @Owned
+    @Selector("copyWithZone:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native Object copyWithZone(VoidPtr zone);
 
     @Generated
     @Selector("init")
@@ -173,6 +181,15 @@ public class MDLTransform extends NSObject implements MDLTransformComponent {
             @Mapped(ObjCObjectMapper.class) MDLTransformComponent component);
 
     @Generated
+    @Selector("initWithTransformComponent:resetsTransform:")
+    public native MDLTransform initWithTransformComponentResetsTransform(
+            @Mapped(ObjCObjectMapper.class) MDLTransformComponent component, boolean resetsTransform);
+
+    @Generated
+    @Selector("keyTimes")
+    public native NSArray<? extends NSNumber> keyTimes();
+
+    @Generated
     @Selector("maximumTime")
     public native double maximumTime();
 
@@ -181,6 +198,14 @@ public class MDLTransform extends NSObject implements MDLTransformComponent {
     public native double minimumTime();
 
     @Generated
+    @Selector("resetsTransform")
+    public native boolean resetsTransform();
+
+    @Generated
     @Selector("setIdentity")
     public native void setIdentity();
+
+    @Generated
+    @Selector("setResetsTransform:")
+    public native void setResetsTransform(boolean value);
 }

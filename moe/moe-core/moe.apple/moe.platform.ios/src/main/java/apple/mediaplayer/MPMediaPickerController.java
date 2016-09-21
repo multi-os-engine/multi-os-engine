@@ -58,13 +58,13 @@ public class MPMediaPickerController extends UIViewController {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native MPMediaPickerController alloc();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -163,7 +163,7 @@ public class MPMediaPickerController extends UIViewController {
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")
@@ -186,6 +186,10 @@ public class MPMediaPickerController extends UIViewController {
     @Generated
     @Selector("init")
     public native MPMediaPickerController init();
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native MPMediaPickerController initWithCoder(NSCoder aDecoder);
 
     @Generated
     @Selector("initWithMediaTypes:")
@@ -233,16 +237,12 @@ public class MPMediaPickerController extends UIViewController {
     public native void setShowsCloudItems(boolean value);
 
     @Generated
-    @Selector("showsCloudItems")
-    public native boolean showsCloudItems();
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native MPMediaPickerController initWithCoder(NSCoder aDecoder);
-
-    @Generated
     @Selector("setShowsItemsWithProtectedAssets:")
     public native void setShowsItemsWithProtectedAssets(boolean value);
+
+    @Generated
+    @Selector("showsCloudItems")
+    public native boolean showsCloudItems();
 
     @Generated
     @Selector("showsItemsWithProtectedAssets")

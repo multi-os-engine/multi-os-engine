@@ -57,6 +57,10 @@ public class UIPreviewAction extends NSObject implements NSCopying, UIPreviewAct
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Selector("actionWithTitle:style:handler:")
     public static native UIPreviewAction actionWithTitleStyleHandler(String title, @NInt long style,
             @ObjCBlock(name = "call_actionWithTitleStyleHandler") Block_actionWithTitleStyleHandler handler);
@@ -65,10 +69,6 @@ public class UIPreviewAction extends NSObject implements NSCopying, UIPreviewAct
     @Owned
     @Selector("alloc")
     public static native UIPreviewAction alloc();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")

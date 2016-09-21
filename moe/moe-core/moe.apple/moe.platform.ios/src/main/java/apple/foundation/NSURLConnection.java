@@ -54,36 +54,13 @@ public class NSURLConnection extends NSObject {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native NSURLConnection alloc();
-
-    @Generated
-    @Selector("canHandleRequest:")
-    public static native boolean canHandleRequest(NSURLRequest request);
-
-    @Deprecated
-    @Generated
-    @Selector("connectionWithRequest:delegate:")
-    public static native NSURLConnection connectionWithRequestDelegate(NSURLRequest request,
-            @Mapped(ObjCObjectMapper.class) Object delegate);
-
-    @Deprecated
-    @Generated
-    @Selector("sendAsynchronousRequest:queue:completionHandler:")
-    public static native void sendAsynchronousRequestQueueCompletionHandler(NSURLRequest request,
-            NSOperationQueue queue,
-            @ObjCBlock(name = "call_sendAsynchronousRequestQueueCompletionHandler") Block_sendAsynchronousRequestQueueCompletionHandler handler);
-
-    @Deprecated
-    @Generated
-    @Selector("sendSynchronousRequest:returningResponse:error:")
-    public static native NSData sendSynchronousRequestReturningResponseError(NSURLRequest request,
-            Ptr<NSURLResponse> response, Ptr<NSError> error);
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -93,6 +70,10 @@ public class NSURLConnection extends NSObject {
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
     public static native boolean automaticallyNotifiesObserversForKey(String key);
+
+    @Generated
+    @Selector("canHandleRequest:")
+    public static native boolean canHandleRequest(NSURLRequest request);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
@@ -111,6 +92,12 @@ public class NSURLConnection extends NSObject {
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
+
+    @Generated
+    @Deprecated
+    @Selector("connectionWithRequest:delegate:")
+    public static native NSURLConnection connectionWithRequestDelegate(NSURLRequest request,
+            @Mapped(ObjCObjectMapper.class) Object delegate);
 
     @Generated
     @Selector("debugDescription")
@@ -169,8 +156,21 @@ public class NSURLConnection extends NSObject {
     public static native boolean resolveInstanceMethod(SEL sel);
 
     @Generated
+    @Deprecated
+    @Selector("sendAsynchronousRequest:queue:completionHandler:")
+    public static native void sendAsynchronousRequestQueueCompletionHandler(NSURLRequest request,
+            NSOperationQueue queue,
+            @ObjCBlock(name = "call_sendAsynchronousRequestQueueCompletionHandler") Block_sendAsynchronousRequestQueueCompletionHandler handler);
+
+    @Generated
+    @Deprecated
+    @Selector("sendSynchronousRequest:returningResponse:error:")
+    public static native NSData sendSynchronousRequestReturningResponseError(NSURLRequest request,
+            Ptr<NSURLResponse> response, Ptr<NSError> error);
+
+    @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")
@@ -193,14 +193,14 @@ public class NSURLConnection extends NSObject {
     @Selector("init")
     public native NSURLConnection init();
 
-    @Deprecated
     @Generated
+    @Deprecated
     @Selector("initWithRequest:delegate:")
     public native NSURLConnection initWithRequestDelegate(NSURLRequest request,
             @Mapped(ObjCObjectMapper.class) Object delegate);
 
-    @Deprecated
     @Generated
+    @Deprecated
     @Selector("initWithRequest:delegate:startImmediately:")
     public native NSURLConnection initWithRequestDelegateStartImmediately(NSURLRequest request,
             @Mapped(ObjCObjectMapper.class) Object delegate, boolean startImmediately);

@@ -55,9 +55,18 @@ public class CAPropertyAnimation extends CAAnimation {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native CAPropertyAnimation alloc();
+
+    @Generated
+    @Selector("allocWithZone:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("animation")
@@ -66,15 +75,6 @@ public class CAPropertyAnimation extends CAAnimation {
     @Generated
     @Selector("animationWithKeyPath:")
     public static native CAPropertyAnimation animationWithKeyPath(String path);
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
-
-    @Generated
-    @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -161,7 +161,7 @@ public class CAPropertyAnimation extends CAAnimation {
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")
@@ -175,6 +175,10 @@ public class CAPropertyAnimation extends CAAnimation {
     @Generated
     @Selector("init")
     public native CAPropertyAnimation init();
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native CAPropertyAnimation initWithCoder(NSCoder aDecoder);
 
     @Generated
     @Selector("isAdditive")
@@ -207,8 +211,4 @@ public class CAPropertyAnimation extends CAAnimation {
     @Generated
     @Selector("valueFunction")
     public native CAValueFunction valueFunction();
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native CAPropertyAnimation initWithCoder(NSCoder aDecoder);
 }

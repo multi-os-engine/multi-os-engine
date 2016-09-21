@@ -60,17 +60,13 @@ public class TWTweetComposeViewController extends UIViewController {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native TWTweetComposeViewController alloc();
-
-    @Generated
-    @Selector("canSendTweet")
-    public static native boolean canSendTweet();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -84,6 +80,10 @@ public class TWTweetComposeViewController extends UIViewController {
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
     public static native boolean automaticallyNotifiesObserversForKey(String key);
+
+    @Generated
+    @Selector("canSendTweet")
+    public static native boolean canSendTweet();
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
@@ -169,7 +169,7 @@ public class TWTweetComposeViewController extends UIViewController {
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")
@@ -189,8 +189,17 @@ public class TWTweetComposeViewController extends UIViewController {
     public native boolean addURL(NSURL url);
 
     @Generated
+    @Selector("completionHandler")
+    @ObjCBlock(name = "call_completionHandler_ret")
+    public native Block_completionHandler_ret completionHandler();
+
+    @Generated
     @Selector("init")
     public native TWTweetComposeViewController init();
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native TWTweetComposeViewController initWithCoder(NSCoder aDecoder);
 
     @Generated
     @Selector("initWithNibName:bundle:")
@@ -213,26 +222,17 @@ public class TWTweetComposeViewController extends UIViewController {
     @Selector("setInitialText:")
     public native boolean setInitialText(String text);
 
+    @Runtime(ObjCRuntime.class)
     @Generated
-    @Selector("completionHandler")
-    @ObjCBlock(name = "call_completionHandler_ret")
-    public native Block_completionHandler_ret completionHandler();
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native TWTweetComposeViewController initWithCoder(NSCoder aDecoder);
+    public interface Block_completionHandler_ret {
+        @Generated
+        void call_completionHandler_ret(@NInt long arg0);
+    }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_setCompletionHandler {
         @Generated
         void call_setCompletionHandler(@NInt long arg0);
-    }
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_completionHandler_ret {
-        @Generated
-        void call_completionHandler_ret(@NInt long arg0);
     }
 }

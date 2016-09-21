@@ -55,9 +55,18 @@ public class CABasicAnimation extends CAPropertyAnimation {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native CABasicAnimation alloc();
+
+    @Generated
+    @Selector("allocWithZone:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("animation")
@@ -66,15 +75,6 @@ public class CABasicAnimation extends CAPropertyAnimation {
     @Generated
     @Selector("animationWithKeyPath:")
     public static native CABasicAnimation animationWithKeyPath(String path);
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
-
-    @Generated
-    @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -187,6 +187,10 @@ public class CABasicAnimation extends CAPropertyAnimation {
     public native CABasicAnimation init();
 
     @Generated
+    @Selector("initWithCoder:")
+    public native CABasicAnimation initWithCoder(NSCoder aDecoder);
+
+    @Generated
     @Selector("setByValue:")
     public native void setByValue(@Mapped(ObjCObjectMapper.class) Object value);
 
@@ -202,8 +206,4 @@ public class CABasicAnimation extends CAPropertyAnimation {
     @Selector("toValue")
     @MappedReturn(ObjCObjectMapper.class)
     public native Object toValue();
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native CABasicAnimation initWithCoder(NSCoder aDecoder);
 }

@@ -61,13 +61,13 @@ public class SKStoreProductViewController extends UIViewController {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native SKStoreProductViewController alloc();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -187,6 +187,10 @@ public class SKStoreProductViewController extends UIViewController {
     public native SKStoreProductViewController init();
 
     @Generated
+    @Selector("initWithCoder:")
+    public native SKStoreProductViewController initWithCoder(NSCoder aDecoder);
+
+    @Generated
     @Selector("initWithNibName:bundle:")
     public native SKStoreProductViewController initWithNibNameBundle(String nibNameOrNil, NSBundle nibBundleOrNil);
 
@@ -210,10 +214,6 @@ public class SKStoreProductViewController extends UIViewController {
             org.moe.natj.objc.ObjCRuntime.dissociateObjCObject(this, __old);
         }
     }
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native SKStoreProductViewController initWithCoder(NSCoder aDecoder);
 
     @Runtime(ObjCRuntime.class)
     @Generated

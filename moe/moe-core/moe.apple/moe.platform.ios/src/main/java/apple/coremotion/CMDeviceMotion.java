@@ -60,13 +60,13 @@ public class CMDeviceMotion extends CMLogItem {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native CMDeviceMotion alloc();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -182,6 +182,10 @@ public class CMDeviceMotion extends CMLogItem {
     public native CMDeviceMotion init();
 
     @Generated
+    @Selector("initWithCoder:")
+    public native CMDeviceMotion initWithCoder(NSCoder aDecoder);
+
+    @Generated
     @Selector("magneticField")
     @ByValue
     public native CMCalibratedMagneticField magneticField();
@@ -192,17 +196,13 @@ public class CMDeviceMotion extends CMLogItem {
     public native CMRotationRate rotationRate();
 
     @Generated
-    @Selector("userAcceleration")
-    @ByValue
-    public native CMAcceleration userAcceleration();
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native CMDeviceMotion initWithCoder(NSCoder aDecoder);
-
-    @Generated
     @ProtocolClassMethod("supportsSecureCoding")
     public boolean _supportsSecureCoding() {
         return supportsSecureCoding();
     }
+
+    @Generated
+    @Selector("userAcceleration")
+    @ByValue
+    public native CMAcceleration userAcceleration();
 }

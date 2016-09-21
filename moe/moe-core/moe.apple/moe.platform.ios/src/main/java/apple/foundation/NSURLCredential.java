@@ -56,31 +56,13 @@ public class NSURLCredential extends NSObject implements NSSecureCoding, NSCopyi
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native NSURLCredential alloc();
-
-    @Generated
-    @Selector("credentialForTrust:")
-    public static native NSURLCredential credentialForTrust(SecTrustRef trust);
-
-    @Generated
-    @Selector("credentialWithIdentity:certificates:persistence:")
-    public static native NSURLCredential credentialWithIdentityCertificatesPersistence(SecIdentityRef identity,
-            NSArray<?> certArray, @NUInt long persistence);
-
-    @Generated
-    @Selector("credentialWithUser:password:persistence:")
-    public static native NSURLCredential credentialWithUserPasswordPersistence(String user, String password,
-            @NUInt long persistence);
-
-    @Generated
-    @Selector("supportsSecureCoding")
-    public static native boolean supportsSecureCoding();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -108,6 +90,20 @@ public class NSURLCredential extends NSObject implements NSSecureCoding, NSCopyi
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
+
+    @Generated
+    @Selector("credentialForTrust:")
+    public static native NSURLCredential credentialForTrust(SecTrustRef trust);
+
+    @Generated
+    @Selector("credentialWithIdentity:certificates:persistence:")
+    public static native NSURLCredential credentialWithIdentityCertificatesPersistence(SecIdentityRef identity,
+            NSArray<?> certArray, @NUInt long persistence);
+
+    @Generated
+    @Selector("credentialWithUser:password:persistence:")
+    public static native NSURLCredential credentialWithUserPasswordPersistence(String user, String password,
+            @NUInt long persistence);
 
     @Generated
     @Selector("debugDescription")
@@ -167,11 +163,15 @@ public class NSURLCredential extends NSObject implements NSSecureCoding, NSCopyi
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")
     public static native Class superclass_static();
+
+    @Generated
+    @Selector("supportsSecureCoding")
+    public static native boolean supportsSecureCoding();
 
     @Generated
     @Selector("version")

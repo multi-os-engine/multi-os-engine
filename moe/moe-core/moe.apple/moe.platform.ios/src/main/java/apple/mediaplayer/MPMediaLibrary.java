@@ -61,36 +61,23 @@ public class MPMediaLibrary extends NSObject implements NSSecureCoding {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native MPMediaLibrary alloc();
 
     @Generated
-    @Selector("defaultMediaLibrary")
-    public static native MPMediaLibrary defaultMediaLibrary();
-
-    @Generated
-    @Selector("supportsSecureCoding")
-    public static native boolean supportsSecureCoding();
+    @Selector("allocWithZone:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("authorizationStatus")
     @NInt
     public static native long authorizationStatus();
-
-    @Generated
-    @Selector("requestAuthorization:")
-    public static native void requestAuthorization(
-            @ObjCBlock(name = "call_requestAuthorization") Block_requestAuthorization handler);
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
-
-    @Generated
-    @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -117,6 +104,10 @@ public class MPMediaLibrary extends NSObject implements NSSecureCoding {
     @Generated
     @Selector("debugDescription")
     public static native String debugDescription_static();
+
+    @Generated
+    @Selector("defaultMediaLibrary")
+    public static native MPMediaLibrary defaultMediaLibrary();
 
     @Generated
     @Selector("description")
@@ -163,6 +154,11 @@ public class MPMediaLibrary extends NSObject implements NSSecureCoding {
     public static native Object new_objc();
 
     @Generated
+    @Selector("requestAuthorization:")
+    public static native void requestAuthorization(
+            @ObjCBlock(name = "call_requestAuthorization") Block_requestAuthorization handler);
+
+    @Generated
     @Selector("resolveClassMethod:")
     public static native boolean resolveClassMethod(SEL sel);
 
@@ -172,16 +168,25 @@ public class MPMediaLibrary extends NSObject implements NSSecureCoding {
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")
     public static native Class superclass_static();
 
     @Generated
+    @Selector("supportsSecureCoding")
+    public static native boolean supportsSecureCoding();
+
+    @Generated
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("addItemWithProductID:completionHandler:")
+    public native void addItemWithProductIDCompletionHandler(String productID,
+            @ObjCBlock(name = "call_addItemWithProductIDCompletionHandler") Block_addItemWithProductIDCompletionHandler completionHandler);
 
     @Generated
     @Selector("beginGeneratingLibraryChangeNotifications")
@@ -194,6 +199,12 @@ public class MPMediaLibrary extends NSObject implements NSSecureCoding {
     @Generated
     @Selector("endGeneratingLibraryChangeNotifications")
     public native void endGeneratingLibraryChangeNotifications();
+
+    @Generated
+    @Selector("getPlaylistWithUUID:creationMetadata:completionHandler:")
+    public native void getPlaylistWithUUIDCreationMetadataCompletionHandler(NSUUID uuid,
+            MPMediaPlaylistCreationMetadata creationMetadata,
+            @ObjCBlock(name = "call_getPlaylistWithUUIDCreationMetadataCompletionHandler") Block_getPlaylistWithUUIDCreationMetadataCompletionHandler completionHandler);
 
     @Generated
     @Selector("init")
@@ -212,17 +223,6 @@ public class MPMediaLibrary extends NSObject implements NSSecureCoding {
     public boolean _supportsSecureCoding() {
         return supportsSecureCoding();
     }
-
-    @Generated
-    @Selector("addItemWithProductID:completionHandler:")
-    public native void addItemWithProductIDCompletionHandler(String productID,
-            @ObjCBlock(name = "call_addItemWithProductIDCompletionHandler") Block_addItemWithProductIDCompletionHandler completionHandler);
-
-    @Generated
-    @Selector("getPlaylistWithUUID:creationMetadata:completionHandler:")
-    public native void getPlaylistWithUUIDCreationMetadataCompletionHandler(NSUUID uuid,
-            MPMediaPlaylistCreationMetadata creationMetadata,
-            @ObjCBlock(name = "call_getPlaylistWithUUIDCreationMetadataCompletionHandler") Block_getPlaylistWithUUIDCreationMetadataCompletionHandler completionHandler);
 
     @Runtime(ObjCRuntime.class)
     @Generated

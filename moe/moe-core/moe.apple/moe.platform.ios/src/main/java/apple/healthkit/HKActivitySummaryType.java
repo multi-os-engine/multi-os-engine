@@ -56,17 +56,17 @@ public class HKActivitySummaryType extends HKObjectType {
     }
 
     @Generated
-    @Owned
-    @Selector("alloc")
-    public static native HKActivitySummaryType alloc();
-
-    @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("activitySummaryType")
     public static native HKActivitySummaryType activitySummaryType();
+
+    @Generated
+    @Owned
+    @Selector("alloc")
+    public static native HKActivitySummaryType alloc();
 
     @Generated
     @Selector("allocWithZone:")
@@ -114,6 +114,10 @@ public class HKActivitySummaryType extends HKObjectType {
     @Generated
     @Selector("description")
     public static native String description_static();
+
+    @Generated
+    @Selector("documentTypeForIdentifier:")
+    public static native HKDocumentType documentTypeForIdentifier(String identifier);
 
     @Generated
     @Selector("hash")
@@ -169,7 +173,7 @@ public class HKActivitySummaryType extends HKObjectType {
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")

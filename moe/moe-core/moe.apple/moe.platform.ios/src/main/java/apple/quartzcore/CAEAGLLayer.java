@@ -58,17 +58,13 @@ public class CAEAGLLayer extends CALayer implements EAGLDrawable {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native CAEAGLLayer alloc();
-
-    @Generated
-    @Selector("layer")
-    public static native CAEAGLLayer layer();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -146,6 +142,10 @@ public class CAEAGLLayer extends CALayer implements EAGLDrawable {
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
     @Generated
+    @Selector("layer")
+    public static native CAEAGLLayer layer();
+
+    @Generated
     @Selector("load")
     public static native void load_objc_static();
 
@@ -169,7 +169,7 @@ public class CAEAGLLayer extends CALayer implements EAGLDrawable {
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")
@@ -189,22 +189,22 @@ public class CAEAGLLayer extends CALayer implements EAGLDrawable {
     public native CAEAGLLayer init();
 
     @Generated
-    @Selector("initWithLayer:")
-    public native CAEAGLLayer initWithLayer(@Mapped(ObjCObjectMapper.class) Object layer);
+    @Selector("initWithCoder:")
+    public native CAEAGLLayer initWithCoder(NSCoder aDecoder);
 
     @Generated
-    @Selector("setDrawableProperties:")
-    public native void setDrawableProperties(NSDictionary<?, ?> value);
+    @Selector("initWithLayer:")
+    public native CAEAGLLayer initWithLayer(@Mapped(ObjCObjectMapper.class) Object layer);
 
     @Generated
     @Selector("presentsWithTransaction")
     public native boolean presentsWithTransaction();
 
     @Generated
-    @Selector("setPresentsWithTransaction:")
-    public native void setPresentsWithTransaction(boolean value);
+    @Selector("setDrawableProperties:")
+    public native void setDrawableProperties(NSDictionary<?, ?> value);
 
     @Generated
-    @Selector("initWithCoder:")
-    public native CAEAGLLayer initWithCoder(NSCoder aDecoder);
+    @Selector("setPresentsWithTransaction:")
+    public native void setPresentsWithTransaction(boolean value);
 }

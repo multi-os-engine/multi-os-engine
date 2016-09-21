@@ -39,6 +39,7 @@ import org.moe.natj.general.ptr.VoidPtr;
 import org.moe.natj.objc.Class;
 import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.SEL;
+import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
@@ -58,13 +59,13 @@ public class MPMediaItemArtwork extends NSObject {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native MPMediaItemArtwork alloc();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -151,7 +152,7 @@ public class MPMediaItemArtwork extends NSObject {
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")
@@ -181,6 +182,18 @@ public class MPMediaItemArtwork extends NSObject {
     public native MPMediaItemArtwork init();
 
     @Generated
+    @Selector("initWithBoundsSize:requestHandler:")
+    public native MPMediaItemArtwork initWithBoundsSizeRequestHandler(@ByValue CGSize boundsSize,
+            @ObjCBlock(name = "call_initWithBoundsSizeRequestHandler") Block_initWithBoundsSizeRequestHandler requestHandler);
+
+    @Generated
     @Selector("initWithImage:")
     public native MPMediaItemArtwork initWithImage(UIImage image);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_initWithBoundsSizeRequestHandler {
+        @Generated
+        UIImage call_initWithBoundsSizeRequestHandler(@ByValue CGSize arg0);
+    }
 }

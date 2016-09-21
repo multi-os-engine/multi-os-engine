@@ -38,11 +38,11 @@ public final class PHAssetCollectionSubtype {
     @Generated @NInt public static final long SmartAlbumBursts = 0x00000000000000CFL;
     @Generated @NInt public static final long SmartAlbumSlomoVideos = 0x00000000000000D0L;
     @Generated @NInt public static final long SmartAlbumUserLibrary = 0x00000000000000D1L;
+    @Generated @NInt public static final long SmartAlbumSelfPortraits = 0x00000000000000D2L;
+    @Generated @NInt public static final long SmartAlbumScreenshots = 0x00000000000000D3L;
     @Generated @NInt public static final long Any = org.moe.natj.general.NatJ.is64Bit() ?
             0x7FFFFFFFFFFFFFFFL :
             0x000000007FFFFFFFL;
-    @Generated @NInt public static final long SmartAlbumSelfPortraits = 0x00000000000000D2L;
-    @Generated @NInt public static final long SmartAlbumScreenshots = 0x00000000000000D3L;
 
     @Generated
     private PHAssetCollectionSubtype() {

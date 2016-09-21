@@ -53,18 +53,13 @@ public class NSPersonNameComponentsFormatter extends NSFormatter {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native NSPersonNameComponentsFormatter alloc();
-
-    @Generated
-    @Selector("localizedStringFromPersonNameComponents:style:options:")
-    public static native String localizedStringFromPersonNameComponentsStyleOptions(NSPersonNameComponents components,
-            @NInt long nameFormatStyle, @NUInt long nameOptions);
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -136,6 +131,11 @@ public class NSPersonNameComponentsFormatter extends NSFormatter {
     public static native void load_objc_static();
 
     @Generated
+    @Selector("localizedStringFromPersonNameComponents:style:options:")
+    public static native String localizedStringFromPersonNameComponentsStyleOptions(NSPersonNameComponents components,
+            @NInt long nameFormatStyle, @NUInt long nameOptions);
+
+    @Generated
     @Owned
     @Selector("new")
     @MappedReturn(ObjCObjectMapper.class)
@@ -151,7 +151,7 @@ public class NSPersonNameComponentsFormatter extends NSFormatter {
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")
@@ -176,12 +176,20 @@ public class NSPersonNameComponentsFormatter extends NSFormatter {
     public native NSPersonNameComponentsFormatter init();
 
     @Generated
+    @Selector("initWithCoder:")
+    public native NSPersonNameComponentsFormatter initWithCoder(NSCoder aDecoder);
+
+    @Generated
     @Selector("isPhonetic")
     public native boolean isPhonetic();
 
     @Generated
     @Selector("setPhonetic:")
     public native void setPhonetic(boolean value);
+
+    @Generated
+    @Selector("personNameComponentsFromString:")
+    public native NSPersonNameComponents personNameComponentsFromString(String string);
 
     @Generated
     @Selector("setStyle:")
@@ -195,8 +203,4 @@ public class NSPersonNameComponentsFormatter extends NSFormatter {
     @Selector("style")
     @NInt
     public native long style();
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native NSPersonNameComponentsFormatter initWithCoder(NSCoder aDecoder);
 }

@@ -59,25 +59,13 @@ public class PHAssetCreationRequest extends PHAssetChangeRequest {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native PHAssetCreationRequest alloc();
-
-    @Generated
-    @Selector("changeRequestForAsset:")
-    public static native PHAssetCreationRequest changeRequestForAsset(PHAsset asset);
-
-    @Generated
-    @Selector("creationRequestForAsset")
-    public static native PHAssetCreationRequest creationRequestForAsset();
-
-    @Generated
-    @Selector("supportsAssetResourceTypes:")
-    public static native boolean supportsAssetResourceTypes(NSArray<? extends NSNumber> types);
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -99,12 +87,20 @@ public class PHAssetCreationRequest extends PHAssetChangeRequest {
             @Mapped(ObjCObjectMapper.class) Object anArgument);
 
     @Generated
+    @Selector("changeRequestForAsset:")
+    public static native PHAssetCreationRequest changeRequestForAsset(PHAsset asset);
+
+    @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
+
+    @Generated
+    @Selector("creationRequestForAsset")
+    public static native PHAssetCreationRequest creationRequestForAsset();
 
     @Generated
     @Selector("creationRequestForAssetFromImage:")
@@ -188,6 +184,10 @@ public class PHAssetCreationRequest extends PHAssetChangeRequest {
     @Generated
     @Selector("superclass")
     public static native Class superclass_static();
+
+    @Generated
+    @Selector("supportsAssetResourceTypes:")
+    public static native boolean supportsAssetResourceTypes(NSArray<? extends NSNumber> types);
 
     @Generated
     @Selector("version")

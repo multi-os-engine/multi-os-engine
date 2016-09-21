@@ -40,10 +40,15 @@ public final class SafariServices {
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
-    public static native String SSReadingListErrorDomain();
+    public static native String SFErrorDomain();
 
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String SFContentBlockerErrorDomain();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String SSReadingListErrorDomain();
 }

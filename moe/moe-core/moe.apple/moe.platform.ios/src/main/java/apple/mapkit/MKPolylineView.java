@@ -65,11 +65,6 @@ public class MKPolylineView extends MKOverlayPathView {
     }
 
     @Generated
-    @Owned
-    @Selector("alloc")
-    public static native MKPolylineView alloc();
-
-    @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
 
@@ -78,6 +73,11 @@ public class MKPolylineView extends MKOverlayPathView {
     public static native void addKeyframeWithRelativeStartTimeRelativeDurationAnimations(double frameStartTime,
             double frameDuration,
             @ObjCBlock(name = "call_addKeyframeWithRelativeStartTimeRelativeDurationAnimations") UIView.Block_addKeyframeWithRelativeStartTimeRelativeDurationAnimations animations);
+
+    @Generated
+    @Owned
+    @Selector("alloc")
+    public static native MKPolylineView alloc();
 
     @Generated
     @Selector("allocWithZone:")
@@ -293,7 +293,7 @@ public class MKPolylineView extends MKOverlayPathView {
 
     @Generated
     @Selector("setAnimationDuration:")
-    public static native void setAnimationDuration(double duration);
+    public static native void setAnimationDuration_static(double duration);
 
     @Generated
     @Selector("setAnimationRepeatAutoreverses:")
@@ -301,7 +301,7 @@ public class MKPolylineView extends MKOverlayPathView {
 
     @Generated
     @Selector("setAnimationRepeatCount:")
-    public static native void setAnimationRepeatCount(float repeatCount);
+    public static native void setAnimationRepeatCount_static(float repeatCount);
 
     @Generated
     @Selector("setAnimationStartDate:")
@@ -321,7 +321,7 @@ public class MKPolylineView extends MKOverlayPathView {
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")
@@ -346,36 +346,15 @@ public class MKPolylineView extends MKOverlayPathView {
     public static native long userInterfaceLayoutDirectionForSemanticContentAttribute(@NInt long attribute);
 
     @Generated
+    @Selector("userInterfaceLayoutDirectionForSemanticContentAttribute:relativeToLayoutDirection:")
+    @NInt
+    public static native long userInterfaceLayoutDirectionForSemanticContentAttributeRelativeToLayoutDirection(
+            @NInt long semanticContentAttribute, @NInt long layoutDirection);
+
+    @Generated
     @Selector("version")
     @NInt
     public static native long version_static();
-
-    @Generated
-    @Selector("init")
-    public native MKPolylineView init();
-
-    @Generated
-    @Selector("initWithFrame:")
-    public native MKPolylineView initWithFrame(@ByValue CGRect frame);
-
-    @Generated
-    @Deprecated
-    @Selector("initWithOverlay:")
-    public native MKPolylineView initWithOverlay(@Mapped(ObjCObjectMapper.class) MKOverlay overlay);
-
-    @Generated
-    @Deprecated
-    @Selector("initWithPolyline:")
-    public native MKPolylineView initWithPolyline(MKPolyline polyline);
-
-    @Generated
-    @Deprecated
-    @Selector("polyline")
-    public native MKPolyline polyline();
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native MKPolylineView initWithCoder(NSCoder aDecoder);
 
     @Generated
     @ProtocolClassMethod("appearance")
@@ -422,4 +401,31 @@ public class MKPolylineView extends MKOverlayPathView {
     public Object _appearanceWhenContainedInInstancesOfClasses(NSArray<?> containerTypes) {
         return appearanceWhenContainedInInstancesOfClasses(containerTypes);
     }
+
+    @Generated
+    @Selector("init")
+    public native MKPolylineView init();
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native MKPolylineView initWithCoder(NSCoder aDecoder);
+
+    @Generated
+    @Selector("initWithFrame:")
+    public native MKPolylineView initWithFrame(@ByValue CGRect frame);
+
+    @Generated
+    @Deprecated
+    @Selector("initWithOverlay:")
+    public native MKPolylineView initWithOverlay(@Mapped(ObjCObjectMapper.class) MKOverlay overlay);
+
+    @Generated
+    @Deprecated
+    @Selector("initWithPolyline:")
+    public native MKPolylineView initWithPolyline(MKPolyline polyline);
+
+    @Generated
+    @Deprecated
+    @Selector("polyline")
+    public native MKPolyline polyline();
 }

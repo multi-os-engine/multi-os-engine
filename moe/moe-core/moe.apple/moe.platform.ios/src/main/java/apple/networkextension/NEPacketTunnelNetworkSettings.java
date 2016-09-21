@@ -57,13 +57,13 @@ public class NEPacketTunnelNetworkSettings extends NETunnelNetworkSettings {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native NEPacketTunnelNetworkSettings alloc();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -150,7 +150,7 @@ public class NEPacketTunnelNetworkSettings extends NETunnelNetworkSettings {
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")
@@ -182,6 +182,10 @@ public class NEPacketTunnelNetworkSettings extends NETunnelNetworkSettings {
     public native NEPacketTunnelNetworkSettings init();
 
     @Generated
+    @Selector("initWithCoder:")
+    public native NEPacketTunnelNetworkSettings initWithCoder(NSCoder aDecoder);
+
+    @Generated
     @Selector("initWithTunnelRemoteAddress:")
     public native NEPacketTunnelNetworkSettings initWithTunnelRemoteAddress(String address);
 
@@ -202,16 +206,12 @@ public class NEPacketTunnelNetworkSettings extends NETunnelNetworkSettings {
     public native void setTunnelOverheadBytes(NSNumber value);
 
     @Generated
-    @Selector("tunnelOverheadBytes")
-    public native NSNumber tunnelOverheadBytes();
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native NEPacketTunnelNetworkSettings initWithCoder(NSCoder aDecoder);
-
-    @Generated
     @ProtocolClassMethod("supportsSecureCoding")
     public boolean _supportsSecureCoding() {
         return supportsSecureCoding();
     }
+
+    @Generated
+    @Selector("tunnelOverheadBytes")
+    public native NSNumber tunnelOverheadBytes();
 }

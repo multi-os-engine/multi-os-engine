@@ -18,8 +18,10 @@ package apple.gameplaykit;
 
 import apple.NSObject;
 import apple.foundation.NSArray;
+import apple.foundation.NSCoder;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
+import apple.foundation.protocol.NSCoding;
 import apple.gameplaykit.protocol.GKAgentDelegate;
 import org.moe.natj.c.ann.FunctionPtr;
 import org.moe.natj.general.NatJ;
@@ -44,7 +46,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @Library("GameplayKit")
 @Runtime(ObjCRuntime.class)
 @ObjCClassBinding
-public class GKAgent extends GKComponent {
+public class GKAgent extends GKComponent implements NSCoding {
     static {
         NatJ.register();
     }
@@ -55,13 +57,13 @@ public class GKAgent extends GKComponent {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native GKAgent alloc();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -148,7 +150,7 @@ public class GKAgent extends GKComponent {
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")
@@ -169,8 +171,16 @@ public class GKAgent extends GKComponent {
     public native GKAgentDelegate delegate();
 
     @Generated
+    @Selector("encodeWithCoder:")
+    public native void encodeWithCoder(NSCoder aCoder);
+
+    @Generated
     @Selector("init")
     public native GKAgent init();
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native GKAgent initWithCoder(NSCoder aDecoder);
 
     @Generated
     @Selector("mass")
@@ -223,6 +233,10 @@ public class GKAgent extends GKComponent {
     @Generated
     @Selector("setRadius:")
     public native void setRadius(float value);
+
+    @Generated
+    @Selector("setSpeed:")
+    public native void setSpeed(float value);
 
     @Generated
     @Selector("speed")

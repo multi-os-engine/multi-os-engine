@@ -57,13 +57,13 @@ public class CKFetchRecordChangesOperation extends CKDatabaseOperation {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native CKFetchRecordChangesOperation alloc();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -150,7 +150,7 @@ public class CKFetchRecordChangesOperation extends CKDatabaseOperation {
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")
@@ -164,6 +164,11 @@ public class CKFetchRecordChangesOperation extends CKDatabaseOperation {
     @Generated
     @Selector("desiredKeys")
     public native NSArray<String> desiredKeys();
+
+    @Generated
+    @Selector("fetchRecordChangesCompletionBlock")
+    @ObjCBlock(name = "call_fetchRecordChangesCompletionBlock_ret")
+    public native Block_fetchRecordChangesCompletionBlock_ret fetchRecordChangesCompletionBlock();
 
     @Generated
     @Selector("init")
@@ -181,6 +186,16 @@ public class CKFetchRecordChangesOperation extends CKDatabaseOperation {
     @Generated
     @Selector("previousServerChangeToken")
     public native CKServerChangeToken previousServerChangeToken();
+
+    @Generated
+    @Selector("recordChangedBlock")
+    @ObjCBlock(name = "call_recordChangedBlock_ret")
+    public native Block_recordChangedBlock_ret recordChangedBlock();
+
+    @Generated
+    @Selector("recordWithIDWasDeletedBlock")
+    @ObjCBlock(name = "call_recordWithIDWasDeletedBlock_ret")
+    public native Block_recordWithIDWasDeletedBlock_ret recordWithIDWasDeletedBlock();
 
     @Generated
     @Selector("recordZoneID")
@@ -222,20 +237,26 @@ public class CKFetchRecordChangesOperation extends CKDatabaseOperation {
     @Selector("setResultsLimit:")
     public native void setResultsLimit(@NUInt long value);
 
+    @Runtime(ObjCRuntime.class)
     @Generated
-    @Selector("fetchRecordChangesCompletionBlock")
-    @ObjCBlock(name = "call_fetchRecordChangesCompletionBlock_ret")
-    public native Block_fetchRecordChangesCompletionBlock_ret fetchRecordChangesCompletionBlock();
+    public interface Block_fetchRecordChangesCompletionBlock_ret {
+        @Generated
+        void call_fetchRecordChangesCompletionBlock_ret(CKServerChangeToken arg0, NSData arg1, NSError arg2);
+    }
 
+    @Runtime(ObjCRuntime.class)
     @Generated
-    @Selector("recordChangedBlock")
-    @ObjCBlock(name = "call_recordChangedBlock_ret")
-    public native Block_recordChangedBlock_ret recordChangedBlock();
+    public interface Block_recordChangedBlock_ret {
+        @Generated
+        void call_recordChangedBlock_ret(CKRecord arg0);
+    }
 
+    @Runtime(ObjCRuntime.class)
     @Generated
-    @Selector("recordWithIDWasDeletedBlock")
-    @ObjCBlock(name = "call_recordWithIDWasDeletedBlock_ret")
-    public native Block_recordWithIDWasDeletedBlock_ret recordWithIDWasDeletedBlock();
+    public interface Block_recordWithIDWasDeletedBlock_ret {
+        @Generated
+        void call_recordWithIDWasDeletedBlock_ret(CKRecordID arg0);
+    }
 
     @Runtime(ObjCRuntime.class)
     @Generated
@@ -256,26 +277,5 @@ public class CKFetchRecordChangesOperation extends CKDatabaseOperation {
     public interface Block_setRecordWithIDWasDeletedBlock {
         @Generated
         void call_setRecordWithIDWasDeletedBlock(CKRecordID arg0);
-    }
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_fetchRecordChangesCompletionBlock_ret {
-        @Generated
-        void call_fetchRecordChangesCompletionBlock_ret(CKServerChangeToken arg0, NSData arg1, NSError arg2);
-    }
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_recordChangedBlock_ret {
-        @Generated
-        void call_recordChangedBlock_ret(CKRecord arg0);
-    }
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_recordWithIDWasDeletedBlock_ret {
-        @Generated
-        void call_recordWithIDWasDeletedBlock_ret(CKRecordID arg0);
     }
 }

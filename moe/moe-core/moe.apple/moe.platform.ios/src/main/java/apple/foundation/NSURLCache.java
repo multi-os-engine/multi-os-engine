@@ -52,21 +52,13 @@ public class NSURLCache extends NSObject {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native NSURLCache alloc();
-
-    @Generated
-    @Selector("setSharedURLCache:")
-    public static native void setSharedURLCache(NSURLCache cache);
-
-    @Generated
-    @Selector("sharedURLCache")
-    public static native NSURLCache sharedURLCache();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -152,8 +144,16 @@ public class NSURLCache extends NSObject {
     public static native boolean resolveInstanceMethod(SEL sel);
 
     @Generated
+    @Selector("setSharedURLCache:")
+    public static native void setSharedURLCache(NSURLCache value);
+
+    @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
+
+    @Generated
+    @Selector("sharedURLCache")
+    public static native NSURLCache sharedURLCache();
 
     @Generated
     @Selector("superclass")

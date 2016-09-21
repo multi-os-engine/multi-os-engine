@@ -65,19 +65,6 @@ public class PKAddPassButton extends UIButton {
     }
 
     @Generated
-    @Selector("addPassButtonWithStyle:")
-    public static native PKAddPassButton addPassButtonWithStyle(@NInt long addPassButtonStyle);
-
-    @Generated
-    @Owned
-    @Selector("alloc")
-    public static native PKAddPassButton alloc();
-
-    @Generated
-    @Selector("buttonWithType:")
-    public static native PKAddPassButton buttonWithType(@NInt long buttonType);
-
-    @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
 
@@ -86,6 +73,15 @@ public class PKAddPassButton extends UIButton {
     public static native void addKeyframeWithRelativeStartTimeRelativeDurationAnimations(double frameStartTime,
             double frameDuration,
             @ObjCBlock(name = "call_addKeyframeWithRelativeStartTimeRelativeDurationAnimations") UIView.Block_addKeyframeWithRelativeStartTimeRelativeDurationAnimations animations);
+
+    @Generated
+    @Selector("addPassButtonWithStyle:")
+    public static native PKAddPassButton addPassButtonWithStyle(@NInt long addPassButtonStyle);
+
+    @Generated
+    @Owned
+    @Selector("alloc")
+    public static native PKAddPassButton alloc();
 
     @Generated
     @Selector("allocWithZone:")
@@ -172,6 +168,10 @@ public class PKAddPassButton extends UIButton {
     @Generated
     @Selector("beginAnimations:context:")
     public static native void beginAnimationsContext(String animationID, VoidPtr context);
+
+    @Generated
+    @Selector("buttonWithType:")
+    public static native PKAddPassButton buttonWithType(@NInt long buttonType);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
@@ -354,6 +354,12 @@ public class PKAddPassButton extends UIButton {
     public static native long userInterfaceLayoutDirectionForSemanticContentAttribute(@NInt long attribute);
 
     @Generated
+    @Selector("userInterfaceLayoutDirectionForSemanticContentAttribute:relativeToLayoutDirection:")
+    @NInt
+    public static native long userInterfaceLayoutDirectionForSemanticContentAttributeRelativeToLayoutDirection(
+            @NInt long semanticContentAttribute, @NInt long layoutDirection);
+
+    @Generated
     @Selector("version")
     @NInt
     public static native long version_static();
@@ -362,26 +368,6 @@ public class PKAddPassButton extends UIButton {
     @Selector("addPassButtonStyle")
     @NInt
     public native long addPassButtonStyle();
-
-    @Generated
-    @Selector("init")
-    public native PKAddPassButton init();
-
-    @Generated
-    @Selector("initWithAddPassButtonStyle:")
-    public native PKAddPassButton initWithAddPassButtonStyle(@NInt long style);
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native PKAddPassButton initWithCoder(NSCoder aDecoder);
-
-    @Generated
-    @Selector("initWithFrame:")
-    public native PKAddPassButton initWithFrame(@ByValue CGRect frame);
-
-    @Generated
-    @Selector("setAddPassButtonStyle:")
-    public native void setAddPassButtonStyle(@NInt long value);
 
     @Generated
     @ProtocolClassMethod("appearance")
@@ -428,4 +414,24 @@ public class PKAddPassButton extends UIButton {
     public Object _appearanceWhenContainedInInstancesOfClasses(NSArray<?> containerTypes) {
         return appearanceWhenContainedInInstancesOfClasses(containerTypes);
     }
+
+    @Generated
+    @Selector("init")
+    public native PKAddPassButton init();
+
+    @Generated
+    @Selector("initWithAddPassButtonStyle:")
+    public native PKAddPassButton initWithAddPassButtonStyle(@NInt long style);
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native PKAddPassButton initWithCoder(NSCoder aDecoder);
+
+    @Generated
+    @Selector("initWithFrame:")
+    public native PKAddPassButton initWithFrame(@ByValue CGRect frame);
+
+    @Generated
+    @Selector("setAddPassButtonStyle:")
+    public native void setAddPassButtonStyle(@NInt long value);
 }

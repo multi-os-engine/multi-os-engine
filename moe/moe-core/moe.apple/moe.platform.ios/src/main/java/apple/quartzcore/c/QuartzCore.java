@@ -201,6 +201,21 @@ public final class QuartzCore {
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
+    public static native String kCAContentsFormatRGBA8Uint();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String kCAContentsFormatRGBA16Float();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String kCAContentsFormatGray8Uint();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
     public static native String kCAFilterNearest();
 
     @Generated
@@ -337,6 +352,11 @@ public final class QuartzCore {
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String kCAEmitterBehaviorAttractor();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String kCAEmitterBehaviorSimpleAttractor();
 
     @Generated
     @CVariable()

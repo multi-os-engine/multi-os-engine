@@ -55,36 +55,13 @@ public class NSKeyedUnarchiver extends NSCoder {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native NSKeyedUnarchiver alloc();
-
-    @Generated
-    @Selector("classForClassName:")
-    public static native Class classForClassName_static(String codedName);
-
-    @Generated
-    @Selector("setClass:forClassName:")
-    public static native void setClassForClassName_static(Class cls, String codedName);
-
-    @Generated
-    @Selector("unarchiveObjectWithData:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object unarchiveObjectWithData(NSData data);
-
-    @Generated
-    @Selector("unarchiveObjectWithFile:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object unarchiveObjectWithFile(String path);
-
-    @Generated
-    @Selector("unarchiveTopLevelObjectWithData:error:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object unarchiveTopLevelObjectWithDataError(NSData data, Ptr<NSError> error);
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -108,6 +85,10 @@ public class NSKeyedUnarchiver extends NSCoder {
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
+
+    @Generated
+    @Selector("classForClassName:")
+    public static native Class classForClassName_static(String codedName);
 
     @Generated
     @Selector("classForKeyedUnarchiver")
@@ -170,12 +151,31 @@ public class NSKeyedUnarchiver extends NSCoder {
     public static native boolean resolveInstanceMethod(SEL sel);
 
     @Generated
+    @Selector("setClass:forClassName:")
+    public static native void setClassForClassName_static(Class cls, String codedName);
+
+    @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")
     public static native Class superclass_static();
+
+    @Generated
+    @Selector("unarchiveObjectWithData:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object unarchiveObjectWithData(NSData data);
+
+    @Generated
+    @Selector("unarchiveObjectWithFile:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object unarchiveObjectWithFile(String path);
+
+    @Generated
+    @Selector("unarchiveTopLevelObjectWithData:error:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object unarchiveTopLevelObjectWithDataError(NSData data, Ptr<NSError> error);
 
     @Generated
     @Selector("version")
@@ -224,6 +224,11 @@ public class NSKeyedUnarchiver extends NSCoder {
     public native Object decodeObjectForKey(String key);
 
     @Generated
+    @Selector("decodingFailurePolicy")
+    @NInt
+    public native long decodingFailurePolicy();
+
+    @Generated
     @Selector("delegate")
     @MappedReturn(ObjCObjectMapper.class)
     public native NSKeyedUnarchiverDelegate delegate();
@@ -241,8 +246,16 @@ public class NSKeyedUnarchiver extends NSCoder {
     public native NSKeyedUnarchiver initForReadingWithData(NSData data);
 
     @Generated
+    @Selector("requiresSecureCoding")
+    public native boolean requiresSecureCoding();
+
+    @Generated
     @Selector("setClass:forClassName:")
     public native void setClassForClassName(Class cls, String codedName);
+
+    @Generated
+    @Selector("setDecodingFailurePolicy:")
+    public native void setDecodingFailurePolicy(@NInt long value);
 
     @Generated
     @Selector("setDelegate:")
@@ -263,8 +276,4 @@ public class NSKeyedUnarchiver extends NSCoder {
     @Generated
     @Selector("setRequiresSecureCoding:")
     public native void setRequiresSecureCoding(boolean value);
-
-    @Generated
-    @Selector("requiresSecureCoding")
-    public native boolean requiresSecureCoding();
 }

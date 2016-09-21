@@ -56,17 +56,13 @@ public class SCNBillboardConstraint extends SCNConstraint {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native SCNBillboardConstraint alloc();
-
-    @Generated
-    @Selector("billboardConstraint")
-    public static native SCNBillboardConstraint billboardConstraint();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -76,6 +72,10 @@ public class SCNBillboardConstraint extends SCNConstraint {
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
     public static native boolean automaticallyNotifiesObserversForKey(String key);
+
+    @Generated
+    @Selector("billboardConstraint")
+    public static native SCNBillboardConstraint billboardConstraint();
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
@@ -178,12 +178,12 @@ public class SCNBillboardConstraint extends SCNConstraint {
     public native SCNBillboardConstraint init();
 
     @Generated
-    @Selector("setFreeAxes:")
-    public native void setFreeAxes(@NUInt long value);
-
-    @Generated
     @Selector("initWithCoder:")
     public native SCNBillboardConstraint initWithCoder(NSCoder aDecoder);
+
+    @Generated
+    @Selector("setFreeAxes:")
+    public native void setFreeAxes(@NUInt long value);
 
     @Generated
     @ProtocolClassMethod("supportsSecureCoding")

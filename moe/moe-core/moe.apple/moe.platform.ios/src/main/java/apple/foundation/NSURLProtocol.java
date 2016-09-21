@@ -52,51 +52,13 @@ public class NSURLProtocol extends NSObject {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native NSURLProtocol alloc();
-
-    @Generated
-    @Selector("canInitWithRequest:")
-    public static native boolean canInitWithRequest(NSURLRequest request);
-
-    @Generated
-    @Selector("canInitWithTask:")
-    public static native boolean canInitWithTask(NSURLSessionTask task);
-
-    @Generated
-    @Selector("canonicalRequestForRequest:")
-    public static native NSURLRequest canonicalRequestForRequest(NSURLRequest request);
-
-    @Generated
-    @Selector("propertyForKey:inRequest:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object propertyForKeyInRequest(String key, NSURLRequest request);
-
-    @Generated
-    @Selector("registerClass:")
-    public static native boolean registerClass(Class protocolClass);
-
-    @Generated
-    @Selector("removePropertyForKey:inRequest:")
-    public static native void removePropertyForKeyInRequest(String key, NSMutableURLRequest request);
-
-    @Generated
-    @Selector("requestIsCacheEquivalent:toRequest:")
-    public static native boolean requestIsCacheEquivalentToRequest(NSURLRequest a, NSURLRequest b);
-
-    @Generated
-    @Selector("setProperty:forKey:inRequest:")
-    public static native void setPropertyForKeyInRequest(@Mapped(ObjCObjectMapper.class) Object value, String key,
-            NSMutableURLRequest request);
-
-    @Generated
-    @Selector("unregisterClass:")
-    public static native void unregisterClass(Class protocolClass);
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -108,6 +70,14 @@ public class NSURLProtocol extends NSObject {
     public static native boolean automaticallyNotifiesObserversForKey(String key);
 
     @Generated
+    @Selector("canInitWithRequest:")
+    public static native boolean canInitWithRequest(NSURLRequest request);
+
+    @Generated
+    @Selector("canInitWithTask:")
+    public static native boolean canInitWithTask(NSURLSessionTask task);
+
+    @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
     public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
 
@@ -116,6 +86,10 @@ public class NSURLProtocol extends NSObject {
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
             @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
             @Mapped(ObjCObjectMapper.class) Object anArgument);
+
+    @Generated
+    @Selector("canonicalRequestForRequest:")
+    public static native NSURLRequest canonicalRequestForRequest(NSURLRequest request);
 
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
@@ -174,6 +148,23 @@ public class NSURLProtocol extends NSObject {
     public static native Object new_objc();
 
     @Generated
+    @Selector("propertyForKey:inRequest:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object propertyForKeyInRequest(String key, NSURLRequest request);
+
+    @Generated
+    @Selector("registerClass:")
+    public static native boolean registerClass(Class protocolClass);
+
+    @Generated
+    @Selector("removePropertyForKey:inRequest:")
+    public static native void removePropertyForKeyInRequest(String key, NSMutableURLRequest request);
+
+    @Generated
+    @Selector("requestIsCacheEquivalent:toRequest:")
+    public static native boolean requestIsCacheEquivalentToRequest(NSURLRequest a, NSURLRequest b);
+
+    @Generated
     @Selector("resolveClassMethod:")
     public static native boolean resolveClassMethod(SEL sel);
 
@@ -182,12 +173,21 @@ public class NSURLProtocol extends NSObject {
     public static native boolean resolveInstanceMethod(SEL sel);
 
     @Generated
+    @Selector("setProperty:forKey:inRequest:")
+    public static native void setPropertyForKeyInRequest(@Mapped(ObjCObjectMapper.class) Object value, String key,
+            NSMutableURLRequest request);
+
+    @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")
     public static native Class superclass_static();
+
+    @Generated
+    @Selector("unregisterClass:")
+    public static native void unregisterClass(Class protocolClass);
 
     @Generated
     @Selector("version")

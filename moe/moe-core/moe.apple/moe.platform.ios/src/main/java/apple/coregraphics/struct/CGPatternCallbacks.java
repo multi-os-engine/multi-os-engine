@@ -64,22 +64,22 @@ public final class CGPatternCallbacks extends StructObject {
     public native void setVersion(int value);
 
     @Generated
-    @StructureField(order = 1, isGetter = false)
-    public native void setDrawPattern(@FunctionPtr(name = "call_drawPattern") Function_drawPattern value);
-
-    @Generated
-    @StructureField(order = 2, isGetter = false)
-    public native void setReleaseInfo(@FunctionPtr(name = "call_releaseInfo") Function_releaseInfo value);
-
-    @Generated
     @StructureField(order = 1, isGetter = true)
     @FunctionPtr(name = "call_drawPattern")
     public native Function_drawPattern drawPattern();
 
     @Generated
+    @StructureField(order = 1, isGetter = false)
+    public native void setDrawPattern(@FunctionPtr(name = "call_drawPattern") Function_drawPattern value);
+
+    @Generated
     @StructureField(order = 2, isGetter = true)
     @FunctionPtr(name = "call_releaseInfo")
     public native Function_releaseInfo releaseInfo();
+
+    @Generated
+    @StructureField(order = 2, isGetter = false)
+    public native void setReleaseInfo(@FunctionPtr(name = "call_releaseInfo") Function_releaseInfo value);
 
     @Runtime(CRuntime.class)
     @Generated

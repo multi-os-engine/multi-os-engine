@@ -56,13 +56,13 @@ public class NSRelationshipDescription extends NSPropertyDescription {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native NSRelationshipDescription alloc();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -149,7 +149,7 @@ public class NSRelationshipDescription extends NSPropertyDescription {
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")
@@ -172,6 +172,10 @@ public class NSRelationshipDescription extends NSPropertyDescription {
     @Generated
     @Selector("init")
     public native NSRelationshipDescription init();
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native NSRelationshipDescription initWithCoder(NSCoder aDecoder);
 
     @Generated
     @Selector("inverseRelationship")
@@ -246,8 +250,4 @@ public class NSRelationshipDescription extends NSPropertyDescription {
     @Generated
     @Selector("versionHash")
     public native NSData versionHash();
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native NSRelationshipDescription initWithCoder(NSCoder aDecoder);
 }

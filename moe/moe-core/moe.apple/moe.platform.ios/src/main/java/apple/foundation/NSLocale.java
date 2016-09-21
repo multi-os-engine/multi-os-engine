@@ -66,9 +66,22 @@ public class NSLocale extends NSObject implements NSCopying, NSSecureCoding {
     public static native NSArray<String> ISOLanguageCodes();
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native NSLocale alloc();
+
+    @Generated
+    @Selector("allocWithZone:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object allocWithZone(VoidPtr zone);
+
+    @Generated
+    @Selector("automaticallyNotifiesObserversForKey:")
+    public static native boolean automaticallyNotifiesObserversForKey(String key);
 
     @Generated
     @Selector("autoupdatingCurrentLocale")
@@ -77,6 +90,16 @@ public class NSLocale extends NSObject implements NSCopying, NSSecureCoding {
     @Generated
     @Selector("availableLocaleIdentifiers")
     public static native NSArray<String> availableLocaleIdentifiers();
+
+    @Generated
+    @Selector("cancelPreviousPerformRequestsWithTarget:")
+    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+
+    @Generated
+    @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
+    public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
+            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
+            @Mapped(ObjCObjectMapper.class) Object anArgument);
 
     @Generated
     @Selector("canonicalLanguageIdentifierFromString:")
@@ -92,6 +115,14 @@ public class NSLocale extends NSObject implements NSCopying, NSSecureCoding {
     public static native long characterDirectionForLanguage(String isoLangCode);
 
     @Generated
+    @Selector("classFallbacksForKeyedArchiver")
+    public static native NSArray<String> classFallbacksForKeyedArchiver();
+
+    @Generated
+    @Selector("classForKeyedUnarchiver")
+    public static native Class classForKeyedUnarchiver();
+
+    @Generated
     @Selector("commonISOCurrencyCodes")
     public static native NSArray<String> commonISOCurrencyCodes();
 
@@ -102,70 +133,6 @@ public class NSLocale extends NSObject implements NSCopying, NSSecureCoding {
     @Generated
     @Selector("currentLocale")
     public static native NSLocale currentLocale();
-
-    @Generated
-    @Selector("lineDirectionForLanguage:")
-    @NUInt
-    public static native long lineDirectionForLanguage(String isoLangCode);
-
-    @Generated
-    @Selector("localeIdentifierFromComponents:")
-    public static native String localeIdentifierFromComponents(NSDictionary<String, String> dict);
-
-    @Generated
-    @Selector("localeIdentifierFromWindowsLocaleCode:")
-    public static native String localeIdentifierFromWindowsLocaleCode(int lcid);
-
-    @Generated
-    @Selector("localeWithLocaleIdentifier:")
-    public static native NSLocale localeWithLocaleIdentifier(String ident);
-
-    @Generated
-    @Selector("preferredLanguages")
-    public static native NSArray<String> preferredLanguages();
-
-    @Generated
-    @Selector("supportsSecureCoding")
-    public static native boolean supportsSecureCoding();
-
-    @Generated
-    @Selector("systemLocale")
-    public static native NSLocale systemLocale();
-
-    @Generated
-    @Selector("windowsLocaleCodeFromLocaleIdentifier:")
-    public static native int windowsLocaleCodeFromLocaleIdentifier(String localeIdentifier);
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
-
-    @Generated
-    @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
-
-    @Generated
-    @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
-
-    @Generated
-    @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
-
-    @Generated
-    @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
-    public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
-
-    @Generated
-    @Selector("classFallbacksForKeyedArchiver")
-    public static native NSArray<String> classFallbacksForKeyedArchiver();
-
-    @Generated
-    @Selector("classForKeyedUnarchiver")
-    public static native Class classForKeyedUnarchiver();
 
     @Generated
     @Selector("debugDescription")
@@ -206,14 +173,35 @@ public class NSLocale extends NSObject implements NSCopying, NSSecureCoding {
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
     @Generated
+    @Selector("lineDirectionForLanguage:")
+    @NUInt
+    public static native long lineDirectionForLanguage(String isoLangCode);
+
+    @Generated
     @Selector("load")
     public static native void load_objc_static();
+
+    @Generated
+    @Selector("localeIdentifierFromComponents:")
+    public static native String localeIdentifierFromComponents(NSDictionary<String, String> dict);
+
+    @Generated
+    @Selector("localeIdentifierFromWindowsLocaleCode:")
+    public static native String localeIdentifierFromWindowsLocaleCode(int lcid);
+
+    @Generated
+    @Selector("localeWithLocaleIdentifier:")
+    public static native NSLocale localeWithLocaleIdentifier(String ident);
 
     @Generated
     @Owned
     @Selector("new")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object new_objc();
+
+    @Generated
+    @Selector("preferredLanguages")
+    public static native NSArray<String> preferredLanguages();
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -225,16 +213,48 @@ public class NSLocale extends NSObject implements NSCopying, NSSecureCoding {
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")
     public static native Class superclass_static();
 
     @Generated
+    @Selector("supportsSecureCoding")
+    public static native boolean supportsSecureCoding();
+
+    @Generated
+    @Selector("systemLocale")
+    public static native NSLocale systemLocale();
+
+    @Generated
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("windowsLocaleCodeFromLocaleIdentifier:")
+    public static native int windowsLocaleCodeFromLocaleIdentifier(String localeIdentifier);
+
+    @Generated
+    @Selector("alternateQuotationBeginDelimiter")
+    public native String alternateQuotationBeginDelimiter();
+
+    @Generated
+    @Selector("alternateQuotationEndDelimiter")
+    public native String alternateQuotationEndDelimiter();
+
+    @Generated
+    @Selector("calendarIdentifier")
+    public native String calendarIdentifier();
+
+    @Generated
+    @Selector("collationIdentifier")
+    public native String collationIdentifier();
+
+    @Generated
+    @Selector("collatorIdentifier")
+    public native String collatorIdentifier();
 
     @Generated
     @Owned
@@ -243,13 +263,36 @@ public class NSLocale extends NSObject implements NSCopying, NSSecureCoding {
     public native Object copyWithZone(VoidPtr zone);
 
     @Generated
+    @Selector("countryCode")
+    public native String countryCode();
+
+    @Generated
+    @Selector("currencyCode")
+    public native String currencyCode();
+
+    @Generated
+    @Selector("currencySymbol")
+    public native String currencySymbol();
+
+    @Generated
+    @Selector("decimalSeparator")
+    public native String decimalSeparator();
+
+    @Generated
     @Selector("displayNameForKey:value:")
-    public native String displayNameForKeyValue(@Mapped(ObjCObjectMapper.class) Object key,
-            @Mapped(ObjCObjectMapper.class) Object value);
+    public native String displayNameForKeyValue(String key, @Mapped(ObjCObjectMapper.class) Object value);
 
     @Generated
     @Selector("encodeWithCoder:")
     public native void encodeWithCoder(NSCoder aCoder);
+
+    @Generated
+    @Selector("exemplarCharacterSet")
+    public native NSCharacterSet exemplarCharacterSet();
+
+    @Generated
+    @Selector("groupingSeparator")
+    public native String groupingSeparator();
 
     @Generated
     @Selector("init")
@@ -264,17 +307,77 @@ public class NSLocale extends NSObject implements NSCopying, NSSecureCoding {
     public native NSLocale initWithLocaleIdentifier(String string);
 
     @Generated
+    @Selector("languageCode")
+    public native String languageCode();
+
+    @Generated
     @Selector("localeIdentifier")
     public native String localeIdentifier();
 
     @Generated
+    @Selector("localizedStringForCalendarIdentifier:")
+    public native String localizedStringForCalendarIdentifier(String calendarIdentifier);
+
+    @Generated
+    @Selector("localizedStringForCollationIdentifier:")
+    public native String localizedStringForCollationIdentifier(String collationIdentifier);
+
+    @Generated
+    @Selector("localizedStringForCollatorIdentifier:")
+    public native String localizedStringForCollatorIdentifier(String collatorIdentifier);
+
+    @Generated
+    @Selector("localizedStringForCountryCode:")
+    public native String localizedStringForCountryCode(String countryCode);
+
+    @Generated
+    @Selector("localizedStringForCurrencyCode:")
+    public native String localizedStringForCurrencyCode(String currencyCode);
+
+    @Generated
+    @Selector("localizedStringForLanguageCode:")
+    public native String localizedStringForLanguageCode(String languageCode);
+
+    @Generated
+    @Selector("localizedStringForLocaleIdentifier:")
+    public native String localizedStringForLocaleIdentifier(String localeIdentifier);
+
+    @Generated
+    @Selector("localizedStringForScriptCode:")
+    public native String localizedStringForScriptCode(String scriptCode);
+
+    @Generated
+    @Selector("localizedStringForVariantCode:")
+    public native String localizedStringForVariantCode(String variantCode);
+
+    @Generated
     @Selector("objectForKey:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object objectForKey(@Mapped(ObjCObjectMapper.class) Object key);
+    public native Object objectForKey(String key);
+
+    @Generated
+    @Selector("quotationBeginDelimiter")
+    public native String quotationBeginDelimiter();
+
+    @Generated
+    @Selector("quotationEndDelimiter")
+    public native String quotationEndDelimiter();
+
+    @Generated
+    @Selector("scriptCode")
+    public native String scriptCode();
 
     @Generated
     @ProtocolClassMethod("supportsSecureCoding")
     public boolean _supportsSecureCoding() {
         return supportsSecureCoding();
     }
+
+    @Generated
+    @Selector("usesMetricSystem")
+    public native boolean usesMetricSystem();
+
+    @Generated
+    @Selector("variantCode")
+    public native String variantCode();
 }

@@ -60,13 +60,13 @@ public class AVAssetResourceLoadingRequest extends NSObject {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native AVAssetResourceLoadingRequest alloc();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -199,6 +199,11 @@ public class AVAssetResourceLoadingRequest extends NSObject {
     public native boolean isFinished();
 
     @Generated
+    @Selector("persistentContentKeyFromKeyVendorResponse:options:error:")
+    public native NSData persistentContentKeyFromKeyVendorResponseOptionsError(NSData keyVendorResponse,
+            NSDictionary<String, ?> options, Ptr<NSError> outError);
+
+    @Generated
     @Selector("redirect")
     public native NSURLRequest redirect();
 
@@ -222,9 +227,4 @@ public class AVAssetResourceLoadingRequest extends NSObject {
     @Selector("streamingContentKeyRequestDataForApp:contentIdentifier:options:error:")
     public native NSData streamingContentKeyRequestDataForAppContentIdentifierOptionsError(NSData appIdentifier,
             NSData contentIdentifier, NSDictionary<String, ?> options, Ptr<NSError> outError);
-
-    @Generated
-    @Selector("persistentContentKeyFromKeyVendorResponse:options:error:")
-    public native NSData persistentContentKeyFromKeyVendorResponseOptionsError(NSData keyVendorResponse,
-            NSDictionary<String, ?> options, Ptr<NSError> outError);
 }

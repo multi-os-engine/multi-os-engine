@@ -56,18 +56,13 @@ public class SFContentBlockerManager extends NSObject {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native SFContentBlockerManager alloc();
-
-    @Generated
-    @Selector("reloadContentBlockerWithIdentifier:completionHandler:")
-    public static native void reloadContentBlockerWithIdentifierCompletionHandler(String identifier,
-            @ObjCBlock(name = "call_reloadContentBlockerWithIdentifierCompletionHandler") Block_reloadContentBlockerWithIdentifierCompletionHandler completionHandler);
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -103,6 +98,11 @@ public class SFContentBlockerManager extends NSObject {
     @Generated
     @Selector("description")
     public static native String description_static();
+
+    @Generated
+    @Selector("getStateOfContentBlockerWithIdentifier:completionHandler:")
+    public static native void getStateOfContentBlockerWithIdentifierCompletionHandler(String identifier,
+            @ObjCBlock(name = "call_getStateOfContentBlockerWithIdentifierCompletionHandler") Block_getStateOfContentBlockerWithIdentifierCompletionHandler completionHandler);
 
     @Generated
     @Selector("hash")
@@ -145,6 +145,11 @@ public class SFContentBlockerManager extends NSObject {
     public static native Object new_objc();
 
     @Generated
+    @Selector("reloadContentBlockerWithIdentifier:completionHandler:")
+    public static native void reloadContentBlockerWithIdentifierCompletionHandler(String identifier,
+            @ObjCBlock(name = "call_reloadContentBlockerWithIdentifierCompletionHandler") Block_reloadContentBlockerWithIdentifierCompletionHandler completionHandler);
+
+    @Generated
     @Selector("resolveClassMethod:")
     public static native boolean resolveClassMethod(SEL sel);
 
@@ -154,7 +159,7 @@ public class SFContentBlockerManager extends NSObject {
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")
@@ -168,6 +173,13 @@ public class SFContentBlockerManager extends NSObject {
     @Generated
     @Selector("init")
     public native SFContentBlockerManager init();
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_getStateOfContentBlockerWithIdentifierCompletionHandler {
+        @Generated
+        void call_getStateOfContentBlockerWithIdentifierCompletionHandler(SFContentBlockerState arg0, NSError arg1);
+    }
 
     @Runtime(ObjCRuntime.class)
     @Generated

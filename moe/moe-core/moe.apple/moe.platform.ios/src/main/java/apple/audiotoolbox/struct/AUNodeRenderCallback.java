@@ -16,7 +16,6 @@ limitations under the License.
 
 package apple.audiotoolbox.struct;
 
-import apple.audiounit.struct.AURenderCallbackStruct;
 import org.moe.natj.c.StructObject;
 import org.moe.natj.c.ann.Structure;
 import org.moe.natj.c.ann.StructureField;

@@ -51,13 +51,13 @@ public class NSDateIntervalFormatter extends NSFormatter {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native NSDateIntervalFormatter alloc();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -144,7 +144,7 @@ public class NSDateIntervalFormatter extends NSFormatter {
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")
@@ -171,6 +171,10 @@ public class NSDateIntervalFormatter extends NSFormatter {
     @Generated
     @Selector("init")
     public native NSDateIntervalFormatter init();
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native NSDateIntervalFormatter initWithCoder(NSCoder aDecoder);
 
     @Generated
     @Selector("locale")
@@ -205,6 +209,10 @@ public class NSDateIntervalFormatter extends NSFormatter {
     public native String stringFromDateToDate(NSDate fromDate, NSDate toDate);
 
     @Generated
+    @Selector("stringFromDateInterval:")
+    public native String stringFromDateInterval(NSDateInterval dateInterval);
+
+    @Generated
     @Selector("timeStyle")
     @NUInt
     public native long timeStyle();
@@ -212,8 +220,4 @@ public class NSDateIntervalFormatter extends NSFormatter {
     @Generated
     @Selector("timeZone")
     public native NSTimeZone timeZone();
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native NSDateIntervalFormatter initWithCoder(NSCoder aDecoder);
 }

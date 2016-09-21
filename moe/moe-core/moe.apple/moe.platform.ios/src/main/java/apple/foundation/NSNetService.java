@@ -53,21 +53,13 @@ public class NSNetService extends NSObject {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native NSNetService alloc();
-
-    @Generated
-    @Selector("dataFromTXTRecordDictionary:")
-    public static native NSData dataFromTXTRecordDictionary(NSDictionary<String, ? extends NSData> txtDictionary);
-
-    @Generated
-    @Selector("dictionaryFromTXTRecordData:")
-    public static native NSDictionary<String, ? extends NSData> dictionaryFromTXTRecordData(NSData txtData);
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -97,12 +89,20 @@ public class NSNetService extends NSObject {
     public static native Class classForKeyedUnarchiver();
 
     @Generated
+    @Selector("dataFromTXTRecordDictionary:")
+    public static native NSData dataFromTXTRecordDictionary(NSDictionary<String, ? extends NSData> txtDictionary);
+
+    @Generated
     @Selector("debugDescription")
     public static native String debugDescription_static();
 
     @Generated
     @Selector("description")
     public static native String description_static();
+
+    @Generated
+    @Selector("dictionaryFromTXTRecordData:")
+    public static native NSDictionary<String, ? extends NSData> dictionaryFromTXTRecordData(NSData txtData);
 
     @Generated
     @Selector("hash")
@@ -154,7 +154,7 @@ public class NSNetService extends NSObject {
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")

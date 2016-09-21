@@ -58,17 +58,13 @@ public class CKNotificationInfo extends NSObject implements NSSecureCoding, NSCo
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native CKNotificationInfo alloc();
-
-    @Generated
-    @Selector("supportsSecureCoding")
-    public static native boolean supportsSecureCoding();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -155,11 +151,15 @@ public class CKNotificationInfo extends NSObject implements NSSecureCoding, NSCo
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")
     public static native Class superclass_static();
+
+    @Generated
+    @Selector("supportsSecureCoding")
+    public static native boolean supportsSecureCoding();
 
     @Generated
     @Selector("version")
@@ -185,6 +185,10 @@ public class CKNotificationInfo extends NSObject implements NSSecureCoding, NSCo
     @Generated
     @Selector("alertLocalizationKey")
     public native String alertLocalizationKey();
+
+    @Generated
+    @Selector("category")
+    public native String category();
 
     @Generated
     @Owned
@@ -229,6 +233,10 @@ public class CKNotificationInfo extends NSObject implements NSSecureCoding, NSCo
     public native void setAlertLocalizationKey(String value);
 
     @Generated
+    @Selector("setCategory:")
+    public native void setCategory(String value);
+
+    @Generated
     @Selector("setDesiredKeys:")
     public native void setDesiredKeys(NSArray<String> value);
 
@@ -261,12 +269,4 @@ public class CKNotificationInfo extends NSObject implements NSSecureCoding, NSCo
     public boolean _supportsSecureCoding() {
         return supportsSecureCoding();
     }
-
-    @Generated
-    @Selector("category")
-    public native String category();
-
-    @Generated
-    @Selector("setCategory:")
-    public native void setCategory(String value);
 }

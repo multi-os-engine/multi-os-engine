@@ -56,17 +56,13 @@ public class NEVPNManager extends NSObject {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native NEVPNManager alloc();
-
-    @Generated
-    @Selector("sharedManager")
-    public static native NEVPNManager sharedManager();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -153,7 +149,11 @@ public class NEVPNManager extends NSObject {
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
+
+    @Generated
+    @Selector("sharedManager")
+    public static native NEVPNManager sharedManager();
 
     @Generated
     @Selector("superclass")
@@ -201,10 +201,14 @@ public class NEVPNManager extends NSObject {
     @Selector("onDemandRules")
     public native NSArray<? extends NEOnDemandRule> onDemandRules();
 
-    @Deprecated
     @Generated
+    @Deprecated
     @Selector("protocol")
     public native NEVPNProtocol protocol();
+
+    @Generated
+    @Selector("protocolConfiguration")
+    public native NEVPNProtocol protocolConfiguration();
 
     @Generated
     @Selector("removeFromPreferencesWithCompletionHandler:")
@@ -224,14 +228,10 @@ public class NEVPNManager extends NSObject {
     @Selector("setOnDemandRules:")
     public native void setOnDemandRules(NSArray<? extends NEOnDemandRule> value);
 
-    @Deprecated
     @Generated
+    @Deprecated
     @Selector("setProtocol:")
     public native void setProtocol(NEVPNProtocol value);
-
-    @Generated
-    @Selector("protocolConfiguration")
-    public native NEVPNProtocol protocolConfiguration();
 
     @Generated
     @Selector("setProtocolConfiguration:")

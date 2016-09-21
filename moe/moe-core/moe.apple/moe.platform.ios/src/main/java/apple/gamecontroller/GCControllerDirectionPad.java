@@ -55,13 +55,13 @@ public class GCControllerDirectionPad extends GCControllerElement {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native GCControllerDirectionPad alloc();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -185,17 +185,17 @@ public class GCControllerDirectionPad extends GCControllerElement {
     public native GCControllerButtonInput up();
 
     @Generated
+    @Selector("valueChangedHandler")
+    @ObjCBlock(name = "call_valueChangedHandler_ret")
+    public native Block_valueChangedHandler_ret valueChangedHandler();
+
+    @Generated
     @Selector("xAxis")
     public native GCControllerAxisInput xAxis();
 
     @Generated
     @Selector("yAxis")
     public native GCControllerAxisInput yAxis();
-
-    @Generated
-    @Selector("valueChangedHandler")
-    @ObjCBlock(name = "call_valueChangedHandler_ret")
-    public native Block_valueChangedHandler_ret valueChangedHandler();
 
     @Runtime(ObjCRuntime.class)
     @Generated

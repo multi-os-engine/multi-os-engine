@@ -55,22 +55,22 @@ public class CAAnimationGroup extends CAAnimation {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native CAAnimationGroup alloc();
 
     @Generated
-    @Selector("animation")
-    public static native CAAnimationGroup animation();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
-
-    @Generated
     @Selector("allocWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object allocWithZone(VoidPtr zone);
+
+    @Generated
+    @Selector("animation")
+    public static native CAAnimationGroup animation();
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -177,10 +177,10 @@ public class CAAnimationGroup extends CAAnimation {
     public native CAAnimationGroup init();
 
     @Generated
-    @Selector("setAnimations:")
-    public native void setAnimations(NSArray<? extends CAAnimation> value);
-
-    @Generated
     @Selector("initWithCoder:")
     public native CAAnimationGroup initWithCoder(NSCoder aDecoder);
+
+    @Generated
+    @Selector("setAnimations:")
+    public native void setAnimations(NSArray<? extends CAAnimation> value);
 }

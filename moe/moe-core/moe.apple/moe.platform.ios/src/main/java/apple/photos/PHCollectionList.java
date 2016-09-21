@@ -55,48 +55,13 @@ public class PHCollectionList extends PHCollection {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native PHCollectionList alloc();
-
-    @Generated
-    @Selector("fetchCollectionListsContainingCollection:options:")
-    public static native PHFetchResult<PHCollectionList> fetchCollectionListsContainingCollectionOptions(
-            PHCollection collection, PHFetchOptions options);
-
-    @Generated
-    @Selector("fetchCollectionListsWithLocalIdentifiers:options:")
-    public static native PHFetchResult<PHCollectionList> fetchCollectionListsWithLocalIdentifiersOptions(
-            NSArray<String> identifiers, PHFetchOptions options);
-
-    @Generated
-    @Selector("fetchCollectionListsWithType:subtype:options:")
-    public static native PHFetchResult<PHCollectionList> fetchCollectionListsWithTypeSubtypeOptions(
-            @NInt long collectionListType, @NInt long subtype, PHFetchOptions options);
-
-    @Generated
-    @Selector("fetchMomentListsWithSubtype:containingMoment:options:")
-    public static native PHFetchResult<PHCollectionList> fetchMomentListsWithSubtypeContainingMomentOptions(
-            @NInt long momentListSubtype, PHAssetCollection moment, PHFetchOptions options);
-
-    @Generated
-    @Selector("fetchMomentListsWithSubtype:options:")
-    public static native PHFetchResult<PHCollectionList> fetchMomentListsWithSubtypeOptions(
-            @NInt long momentListSubtype, PHFetchOptions options);
-
-    @Generated
-    @Selector("transientCollectionListWithCollections:title:")
-    public static native PHCollectionList transientCollectionListWithCollectionsTitle(
-            NSArray<? extends PHCollection> collections, String title);
-
-    @Generated
-    @Selector("transientCollectionListWithCollectionsFetchResult:title:")
-    public static native PHCollectionList transientCollectionListWithCollectionsFetchResultTitle(
-            PHFetchResult<PHCollection> fetchResult, String title);
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -134,9 +99,34 @@ public class PHCollectionList extends PHCollection {
     public static native String description_static();
 
     @Generated
+    @Selector("fetchCollectionListsContainingCollection:options:")
+    public static native PHFetchResult<PHCollectionList> fetchCollectionListsContainingCollectionOptions(
+            PHCollection collection, PHFetchOptions options);
+
+    @Generated
+    @Selector("fetchCollectionListsWithLocalIdentifiers:options:")
+    public static native PHFetchResult<PHCollectionList> fetchCollectionListsWithLocalIdentifiersOptions(
+            NSArray<String> identifiers, PHFetchOptions options);
+
+    @Generated
+    @Selector("fetchCollectionListsWithType:subtype:options:")
+    public static native PHFetchResult<PHCollectionList> fetchCollectionListsWithTypeSubtypeOptions(
+            @NInt long collectionListType, @NInt long subtype, PHFetchOptions options);
+
+    @Generated
     @Selector("fetchCollectionsInCollectionList:options:")
     public static native PHFetchResult<PHCollection> fetchCollectionsInCollectionListOptions(
             PHCollectionList collectionList, PHFetchOptions options);
+
+    @Generated
+    @Selector("fetchMomentListsWithSubtype:containingMoment:options:")
+    public static native PHFetchResult<PHCollectionList> fetchMomentListsWithSubtypeContainingMomentOptions(
+            @NInt long momentListSubtype, PHAssetCollection moment, PHFetchOptions options);
+
+    @Generated
+    @Selector("fetchMomentListsWithSubtype:options:")
+    public static native PHFetchResult<PHCollectionList> fetchMomentListsWithSubtypeOptions(
+            @NInt long momentListSubtype, PHFetchOptions options);
 
     @Generated
     @Selector("fetchTopLevelUserCollectionsWithOptions:")
@@ -192,11 +182,21 @@ public class PHCollectionList extends PHCollection {
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")
     public static native Class superclass_static();
+
+    @Generated
+    @Selector("transientCollectionListWithCollections:title:")
+    public static native PHCollectionList transientCollectionListWithCollectionsTitle(
+            NSArray<? extends PHCollection> collections, String title);
+
+    @Generated
+    @Selector("transientCollectionListWithCollectionsFetchResult:title:")
+    public static native PHCollectionList transientCollectionListWithCollectionsFetchResultTitle(
+            PHFetchResult<PHCollection> fetchResult, String title);
 
     @Generated
     @Selector("version")

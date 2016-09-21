@@ -60,13 +60,13 @@ public class WKInterfaceImage extends WKInterfaceObject implements WKImageAnimat
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native WKInterfaceImage alloc();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -153,7 +153,7 @@ public class WKInterfaceImage extends WKInterfaceObject implements WKImageAnimat
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")
@@ -184,27 +184,15 @@ public class WKInterfaceImage extends WKInterfaceObject implements WKImageAnimat
     @Selector("setTintColor:")
     public native void setTintColor(UIColor tintColor);
 
-    /**
-     * startAnimating</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WatchKit/Reference/WKInterfaceImage_class/index.html#//apple_ref/occ/instm/WKInterfaceImage/startAnimating">iOS Dev Center</a>
-     */
     @Generated
     @Selector("startAnimating")
     public native void startAnimating();
 
-    /**
-     * startAnimatingWithImagesInRange:duration:repeatCount:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WatchKit/Reference/WKInterfaceImage_class/index.html#//apple_ref/occ/instm/WKInterfaceImage/startAnimatingWithImagesInRange:duration:repeatCount:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("startAnimatingWithImagesInRange:duration:repeatCount:")
     public native void startAnimatingWithImagesInRangeDurationRepeatCount(@ByValue NSRange imageRange, double duration,
             @NInt long repeatCount);
 
-    /**
-     * stopAnimating</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WatchKit/Reference/WKInterfaceImage_class/index.html#//apple_ref/occ/instm/WKInterfaceImage/stopAnimating">iOS Dev Center</a>
-     */
     @Generated
     @Selector("stopAnimating")
     public native void stopAnimating();

@@ -56,17 +56,13 @@ public class MPMediaItemCollection extends MPMediaEntity {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native MPMediaItemCollection alloc();
-
-    @Generated
-    @Selector("collectionWithItems:")
-    public static native MPMediaItemCollection collectionWithItems(NSArray<? extends MPMediaItem> items);
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -98,6 +94,10 @@ public class MPMediaItemCollection extends MPMediaEntity {
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
+
+    @Generated
+    @Selector("collectionWithItems:")
+    public static native MPMediaItemCollection collectionWithItems(NSArray<? extends MPMediaItem> items);
 
     @Generated
     @Selector("debugDescription")
@@ -157,7 +157,7 @@ public class MPMediaItemCollection extends MPMediaEntity {
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")
@@ -182,6 +182,10 @@ public class MPMediaItemCollection extends MPMediaEntity {
     public native MPMediaItemCollection init();
 
     @Generated
+    @Selector("initWithCoder:")
+    public native MPMediaItemCollection initWithCoder(NSCoder aDecoder);
+
+    @Generated
     @Selector("initWithItems:")
     public native MPMediaItemCollection initWithItems(NSArray<? extends MPMediaItem> items);
 
@@ -197,10 +201,6 @@ public class MPMediaItemCollection extends MPMediaEntity {
     @Generated
     @Selector("representativeItem")
     public native MPMediaItem representativeItem();
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native MPMediaItemCollection initWithCoder(NSCoder aDecoder);
 
     @Generated
     @ProtocolClassMethod("supportsSecureCoding")

@@ -21,6 +21,7 @@ import apple.foundation.NSArray;
 import apple.foundation.NSData;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
+import apple.modelio.protocol.MDLMeshBufferAllocator;
 import apple.scenekit.SCNLight;
 import apple.scenekit.SCNNode;
 import org.moe.natj.c.ann.FunctionPtr;
@@ -57,27 +58,13 @@ public class MDLLightProbe extends MDLLight {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native MDLLightProbe alloc();
-
-    @Generated
-    @Selector("lightProbeWithTextureSize:forLocation:lightsToConsider:objectsToConsider:reflectiveCubemap:irradianceCubemap:")
-    public static native MDLLightProbe lightProbeWithTextureSizeForLocationLightsToConsiderObjectsToConsiderReflectiveCubemapIrradianceCubemap(
-            @NInt long textureSize, MDLTransform transform, NSArray<? extends MDLLight> lightsToConsider,
-            NSArray<? extends MDLObject> objectsToConsider, MDLTexture reflectiveCubemap, MDLTexture irradianceCubemap);
-
-    @Generated
-    @Selector("lightWithSCNLight:")
-    public static native MDLLightProbe lightWithSCNLight(SCNLight scnLight);
-
-    @Generated
-    @Selector("objectWithSCNNode:")
-    public static native MDLLightProbe objectWithSCNNode(SCNNode scnNode);
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -145,6 +132,16 @@ public class MDLLightProbe extends MDLLight {
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
     @Generated
+    @Selector("lightProbeWithTextureSize:forLocation:lightsToConsider:objectsToConsider:reflectiveCubemap:irradianceCubemap:")
+    public static native MDLLightProbe lightProbeWithTextureSizeForLocationLightsToConsiderObjectsToConsiderReflectiveCubemapIrradianceCubemap(
+            @NInt long textureSize, MDLTransform transform, NSArray<? extends MDLLight> lightsToConsider,
+            NSArray<? extends MDLObject> objectsToConsider, MDLTexture reflectiveCubemap, MDLTexture irradianceCubemap);
+
+    @Generated
+    @Selector("lightWithSCNLight:")
+    public static native MDLLightProbe lightWithSCNLight(SCNLight scnLight);
+
+    @Generated
     @Selector("load")
     public static native void load_objc_static();
 
@@ -153,6 +150,15 @@ public class MDLLightProbe extends MDLLight {
     @Selector("new")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object new_objc();
+
+    @Generated
+    @Selector("objectWithSCNNode:")
+    public static native MDLLightProbe objectWithSCNNode(SCNNode scnNode);
+
+    @Generated
+    @Selector("objectWithSCNNode:bufferAllocator:")
+    public static native MDLLightProbe objectWithSCNNodeBufferAllocator(SCNNode scnNode,
+            @Mapped(ObjCObjectMapper.class) MDLMeshBufferAllocator bufferAllocator);
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -164,7 +170,7 @@ public class MDLLightProbe extends MDLLight {
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")

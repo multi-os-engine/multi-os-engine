@@ -51,38 +51,22 @@ public class NSValueTransformer extends NSObject {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native NSValueTransformer alloc();
 
     @Generated
-    @Selector("allowsReverseTransformation")
-    public static native boolean allowsReverseTransformation();
-
-    @Generated
-    @Selector("setValueTransformer:forName:")
-    public static native void setValueTransformerForName(NSValueTransformer transformer, String name);
-
-    @Generated
-    @Selector("transformedValueClass")
-    public static native Class transformedValueClass();
-
-    @Generated
-    @Selector("valueTransformerForName:")
-    public static native NSValueTransformer valueTransformerForName(String name);
-
-    @Generated
-    @Selector("valueTransformerNames")
-    public static native NSArray<String> valueTransformerNames();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
-
-    @Generated
     @Selector("allocWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object allocWithZone(VoidPtr zone);
+
+    @Generated
+    @Selector("allowsReverseTransformation")
+    public static native boolean allowsReverseTransformation();
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -163,12 +147,28 @@ public class NSValueTransformer extends NSObject {
     public static native boolean resolveInstanceMethod(SEL sel);
 
     @Generated
+    @Selector("setValueTransformer:forName:")
+    public static native void setValueTransformerForName(NSValueTransformer transformer, String name);
+
+    @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")
     public static native Class superclass_static();
+
+    @Generated
+    @Selector("transformedValueClass")
+    public static native Class transformedValueClass();
+
+    @Generated
+    @Selector("valueTransformerForName:")
+    public static native NSValueTransformer valueTransformerForName(String name);
+
+    @Generated
+    @Selector("valueTransformerNames")
+    public static native NSArray<String> valueTransformerNames();
 
     @Generated
     @Selector("version")

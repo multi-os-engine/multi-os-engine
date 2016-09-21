@@ -55,13 +55,13 @@ public class MDLVertexBufferLayout extends NSObject implements NSCopying {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native MDLVertexBufferLayout alloc();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -168,6 +168,10 @@ public class MDLVertexBufferLayout extends NSObject implements NSCopying {
     @Generated
     @Selector("init")
     public native MDLVertexBufferLayout init();
+
+    @Generated
+    @Selector("initWithStride:")
+    public native MDLVertexBufferLayout initWithStride(@NUInt long stride);
 
     @Generated
     @Selector("setStride:")

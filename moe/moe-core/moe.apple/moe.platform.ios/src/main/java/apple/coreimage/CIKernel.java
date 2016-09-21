@@ -57,21 +57,13 @@ public class CIKernel extends NSObject {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native CIKernel alloc();
-
-    @Generated
-    @Selector("kernelWithString:")
-    public static native CIKernel kernelWithString(String string);
-
-    @Generated
-    @Selector("kernelsWithString:")
-    public static native NSArray<? extends CIKernel> kernelsWithString(String string);
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -135,12 +127,20 @@ public class CIKernel extends NSObject {
     public static native boolean isSubclassOfClass(Class aClass);
 
     @Generated
+    @Selector("kernelWithString:")
+    public static native CIKernel kernelWithString(String string);
+
+    @Generated
+    @Selector("kernelsWithString:")
+    public static native NSArray<? extends CIKernel> kernelsWithString(String string);
+
+    @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
     @Generated
     @Selector("load")
-    public static native void load_objc();
+    public static native void load_objc_static();
 
     @Generated
     @Owned
@@ -158,7 +158,7 @@ public class CIKernel extends NSObject {
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")
@@ -167,7 +167,7 @@ public class CIKernel extends NSObject {
     @Generated
     @Selector("version")
     @NInt
-    public static native long version();
+    public static native long version_static();
 
     @Generated
     @Selector("applyWithExtent:roiCallback:arguments:")

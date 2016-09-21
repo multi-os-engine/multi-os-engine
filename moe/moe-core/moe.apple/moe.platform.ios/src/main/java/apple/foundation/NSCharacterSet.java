@@ -17,9 +17,9 @@ limitations under the License.
 package apple.foundation;
 
 import apple.NSObject;
-import apple.foundation.protocol.NSCoding;
 import apple.foundation.protocol.NSCopying;
 import apple.foundation.protocol.NSMutableCopying;
+import apple.foundation.protocol.NSSecureCoding;
 import apple.foundation.struct.NSRange;
 import org.moe.natj.c.ann.FunctionPtr;
 import org.moe.natj.general.NatJ;
@@ -38,6 +38,7 @@ import org.moe.natj.objc.Class;
 import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
+import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
@@ -45,7 +46,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @Library("Foundation")
 @Runtime(ObjCRuntime.class)
 @ObjCClassBinding
-public class NSCharacterSet extends NSObject implements NSCopying, NSMutableCopying, NSCoding {
+public class NSCharacterSet extends NSObject implements NSCopying, NSMutableCopying, NSSecureCoding {
     static {
         NatJ.register();
     }
@@ -80,13 +81,36 @@ public class NSCharacterSet extends NSObject implements NSCopying, NSMutableCopy
     public static native NSCharacterSet URLUserAllowedCharacterSet();
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native NSCharacterSet alloc();
 
     @Generated
+    @Selector("allocWithZone:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object allocWithZone(VoidPtr zone);
+
+    @Generated
     @Selector("alphanumericCharacterSet")
     public static native NSCharacterSet alphanumericCharacterSet();
+
+    @Generated
+    @Selector("automaticallyNotifiesObserversForKey:")
+    public static native boolean automaticallyNotifiesObserversForKey(String key);
+
+    @Generated
+    @Selector("cancelPreviousPerformRequestsWithTarget:")
+    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+
+    @Generated
+    @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
+    public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
+            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
+            @Mapped(ObjCObjectMapper.class) Object anArgument);
 
     @Generated
     @Selector("capitalizedLetterCharacterSet")
@@ -109,8 +133,20 @@ public class NSCharacterSet extends NSObject implements NSCopying, NSMutableCopy
     public static native NSCharacterSet characterSetWithRange(@ByValue NSRange aRange);
 
     @Generated
+    @Selector("classFallbacksForKeyedArchiver")
+    public static native NSArray<String> classFallbacksForKeyedArchiver();
+
+    @Generated
+    @Selector("classForKeyedUnarchiver")
+    public static native Class classForKeyedUnarchiver();
+
+    @Generated
     @Selector("controlCharacterSet")
     public static native NSCharacterSet controlCharacterSet();
+
+    @Generated
+    @Selector("debugDescription")
+    public static native String debugDescription_static();
 
     @Generated
     @Selector("decimalDigitCharacterSet")
@@ -121,81 +157,6 @@ public class NSCharacterSet extends NSObject implements NSCopying, NSMutableCopy
     public static native NSCharacterSet decomposableCharacterSet();
 
     @Generated
-    @Selector("illegalCharacterSet")
-    public static native NSCharacterSet illegalCharacterSet();
-
-    @Generated
-    @Selector("letterCharacterSet")
-    public static native NSCharacterSet letterCharacterSet();
-
-    @Generated
-    @Selector("lowercaseLetterCharacterSet")
-    public static native NSCharacterSet lowercaseLetterCharacterSet();
-
-    @Generated
-    @Selector("newlineCharacterSet")
-    public static native NSCharacterSet newlineCharacterSet();
-
-    @Generated
-    @Selector("nonBaseCharacterSet")
-    public static native NSCharacterSet nonBaseCharacterSet();
-
-    @Generated
-    @Selector("punctuationCharacterSet")
-    public static native NSCharacterSet punctuationCharacterSet();
-
-    @Generated
-    @Selector("symbolCharacterSet")
-    public static native NSCharacterSet symbolCharacterSet();
-
-    @Generated
-    @Selector("uppercaseLetterCharacterSet")
-    public static native NSCharacterSet uppercaseLetterCharacterSet();
-
-    @Generated
-    @Selector("whitespaceAndNewlineCharacterSet")
-    public static native NSCharacterSet whitespaceAndNewlineCharacterSet();
-
-    @Generated
-    @Selector("whitespaceCharacterSet")
-    public static native NSCharacterSet whitespaceCharacterSet();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
-
-    @Generated
-    @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
-
-    @Generated
-    @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
-
-    @Generated
-    @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
-
-    @Generated
-    @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
-    public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
-
-    @Generated
-    @Selector("classFallbacksForKeyedArchiver")
-    public static native NSArray<String> classFallbacksForKeyedArchiver();
-
-    @Generated
-    @Selector("classForKeyedUnarchiver")
-    public static native Class classForKeyedUnarchiver();
-
-    @Generated
-    @Selector("debugDescription")
-    public static native String debugDescription_static();
-
-    @Generated
     @Selector("description")
     public static native String description_static();
 
@@ -203,6 +164,10 @@ public class NSCharacterSet extends NSObject implements NSCopying, NSMutableCopy
     @Selector("hash")
     @NUInt
     public static native long hash_static();
+
+    @Generated
+    @Selector("illegalCharacterSet")
+    public static native NSCharacterSet illegalCharacterSet();
 
     @Generated
     @Selector("initialize")
@@ -230,14 +195,34 @@ public class NSCharacterSet extends NSObject implements NSCopying, NSMutableCopy
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
     @Generated
+    @Selector("letterCharacterSet")
+    public static native NSCharacterSet letterCharacterSet();
+
+    @Generated
     @Selector("load")
     public static native void load_objc_static();
+
+    @Generated
+    @Selector("lowercaseLetterCharacterSet")
+    public static native NSCharacterSet lowercaseLetterCharacterSet();
 
     @Generated
     @Owned
     @Selector("new")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object new_objc();
+
+    @Generated
+    @Selector("newlineCharacterSet")
+    public static native NSCharacterSet newlineCharacterSet();
+
+    @Generated
+    @Selector("nonBaseCharacterSet")
+    public static native NSCharacterSet nonBaseCharacterSet();
+
+    @Generated
+    @Selector("punctuationCharacterSet")
+    public static native NSCharacterSet punctuationCharacterSet();
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -249,16 +234,36 @@ public class NSCharacterSet extends NSObject implements NSCopying, NSMutableCopy
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")
     public static native Class superclass_static();
 
     @Generated
+    @Selector("supportsSecureCoding")
+    public static native boolean supportsSecureCoding();
+
+    @Generated
+    @Selector("symbolCharacterSet")
+    public static native NSCharacterSet symbolCharacterSet();
+
+    @Generated
+    @Selector("uppercaseLetterCharacterSet")
+    public static native NSCharacterSet uppercaseLetterCharacterSet();
+
+    @Generated
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("whitespaceAndNewlineCharacterSet")
+    public static native NSCharacterSet whitespaceAndNewlineCharacterSet();
+
+    @Generated
+    @Selector("whitespaceCharacterSet")
+    public static native NSCharacterSet whitespaceCharacterSet();
 
     @Generated
     @Selector("bitmapRepresentation")
@@ -306,4 +311,10 @@ public class NSCharacterSet extends NSObject implements NSCopying, NSMutableCopy
     @Selector("mutableCopyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
     public native Object mutableCopyWithZone(VoidPtr zone);
+
+    @Generated
+    @ProtocolClassMethod("supportsSecureCoding")
+    public boolean _supportsSecureCoding() {
+        return supportsSecureCoding();
+    }
 }

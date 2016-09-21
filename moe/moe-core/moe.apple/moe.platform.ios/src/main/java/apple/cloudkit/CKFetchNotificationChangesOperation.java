@@ -56,13 +56,13 @@ public class CKFetchNotificationChangesOperation extends CKOperation {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native CKFetchNotificationChangesOperation alloc();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -161,6 +161,11 @@ public class CKFetchNotificationChangesOperation extends CKOperation {
     public static native long version_static();
 
     @Generated
+    @Selector("fetchNotificationChangesCompletionBlock")
+    @ObjCBlock(name = "call_fetchNotificationChangesCompletionBlock_ret")
+    public native Block_fetchNotificationChangesCompletionBlock_ret fetchNotificationChangesCompletionBlock();
+
+    @Generated
     @Selector("init")
     public native CKFetchNotificationChangesOperation init();
 
@@ -172,6 +177,11 @@ public class CKFetchNotificationChangesOperation extends CKOperation {
     @Generated
     @Selector("moreComing")
     public native boolean moreComing();
+
+    @Generated
+    @Selector("notificationChangedBlock")
+    @ObjCBlock(name = "call_notificationChangedBlock_ret")
+    public native Block_notificationChangedBlock_ret notificationChangedBlock();
 
     @Generated
     @Selector("previousServerChangeToken")
@@ -200,15 +210,19 @@ public class CKFetchNotificationChangesOperation extends CKOperation {
     @Selector("setResultsLimit:")
     public native void setResultsLimit(@NUInt long value);
 
+    @Runtime(ObjCRuntime.class)
     @Generated
-    @Selector("fetchNotificationChangesCompletionBlock")
-    @ObjCBlock(name = "call_fetchNotificationChangesCompletionBlock_ret")
-    public native Block_fetchNotificationChangesCompletionBlock_ret fetchNotificationChangesCompletionBlock();
+    public interface Block_fetchNotificationChangesCompletionBlock_ret {
+        @Generated
+        void call_fetchNotificationChangesCompletionBlock_ret(CKServerChangeToken arg0, NSError arg1);
+    }
 
+    @Runtime(ObjCRuntime.class)
     @Generated
-    @Selector("notificationChangedBlock")
-    @ObjCBlock(name = "call_notificationChangedBlock_ret")
-    public native Block_notificationChangedBlock_ret notificationChangedBlock();
+    public interface Block_notificationChangedBlock_ret {
+        @Generated
+        void call_notificationChangedBlock_ret(CKNotification arg0);
+    }
 
     @Runtime(ObjCRuntime.class)
     @Generated
@@ -222,19 +236,5 @@ public class CKFetchNotificationChangesOperation extends CKOperation {
     public interface Block_setNotificationChangedBlock {
         @Generated
         void call_setNotificationChangedBlock(CKNotification arg0);
-    }
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_fetchNotificationChangesCompletionBlock_ret {
-        @Generated
-        void call_fetchNotificationChangesCompletionBlock_ret(CKServerChangeToken arg0, NSError arg1);
-    }
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_notificationChangedBlock_ret {
-        @Generated
-        void call_notificationChangedBlock_ret(CKNotification arg0);
     }
 }

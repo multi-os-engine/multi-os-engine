@@ -61,21 +61,13 @@ public class SCNSceneSource extends NSObject {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native SCNSceneSource alloc();
-
-    @Generated
-    @Selector("sceneSourceWithData:options:")
-    public static native SCNSceneSource sceneSourceWithDataOptions(NSData data, NSDictionary<String, ?> options);
-
-    @Generated
-    @Selector("sceneSourceWithURL:options:")
-    public static native SCNSceneSource sceneSourceWithURLOptions(NSURL url, NSDictionary<String, ?> options);
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -161,8 +153,16 @@ public class SCNSceneSource extends NSObject {
     public static native boolean resolveInstanceMethod(SEL sel);
 
     @Generated
+    @Selector("sceneSourceWithData:options:")
+    public static native SCNSceneSource sceneSourceWithDataOptions(NSData data, NSDictionary<String, ?> options);
+
+    @Generated
+    @Selector("sceneSourceWithURL:options:")
+    public static native SCNSceneSource sceneSourceWithURLOptions(NSURL url, NSDictionary<String, ?> options);
+
+    @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")

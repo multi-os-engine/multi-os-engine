@@ -17,6 +17,7 @@ limitations under the License.
 package apple.metal.protocol;
 
 import apple.foundation.struct.NSRange;
+import apple.metal.struct.MTLRegion;
 import apple.metal.struct.MTLSize;
 import org.moe.natj.general.ann.ByValue;
 import org.moe.natj.general.ann.Generated;
@@ -42,6 +43,12 @@ public interface MTLComputeCommandEncoder extends MTLCommandEncoder {
     @Generated
     @Selector("dispatchThreadgroups:threadsPerThreadgroup:")
     void dispatchThreadgroupsThreadsPerThreadgroup(@ByValue MTLSize threadgroupsPerGrid,
+            @ByValue MTLSize threadsPerThreadgroup);
+
+    @Generated
+    @Selector("dispatchThreadgroupsWithIndirectBuffer:indirectBufferOffset:threadsPerThreadgroup:")
+    void dispatchThreadgroupsWithIndirectBufferIndirectBufferOffsetThreadsPerThreadgroup(
+            @Mapped(ObjCObjectMapper.class) Object indirectBuffer, @NUInt long indirectBufferOffset,
             @ByValue MTLSize threadsPerThreadgroup);
 
     @Generated
@@ -83,6 +90,10 @@ public interface MTLComputeCommandEncoder extends MTLCommandEncoder {
     void setSamplerStatesWithRange(Ptr<ObjCObject> samplers, @ByValue NSRange range);
 
     @Generated
+    @Selector("setStageInRegion:")
+    void setStageInRegion(@ByValue MTLRegion region);
+
+    @Generated
     @Selector("setTexture:atIndex:")
     void setTextureAtIndex(@Mapped(ObjCObjectMapper.class) Object texture, @NUInt long index);
 
@@ -95,8 +106,10 @@ public interface MTLComputeCommandEncoder extends MTLCommandEncoder {
     void setThreadgroupMemoryLengthAtIndex(@NUInt long length, @NUInt long index);
 
     @Generated
-    @Selector("dispatchThreadgroupsWithIndirectBuffer:indirectBufferOffset:threadsPerThreadgroup:")
-    void dispatchThreadgroupsWithIndirectBufferIndirectBufferOffsetThreadsPerThreadgroup(
-            @Mapped(ObjCObjectMapper.class) Object indirectBuffer, @NUInt long indirectBufferOffset,
-            @ByValue MTLSize threadsPerThreadgroup);
+    @Selector("updateFence:")
+    void updateFence(@Mapped(ObjCObjectMapper.class) Object fence);
+
+    @Generated
+    @Selector("waitForFence:")
+    void waitForFence(@Mapped(ObjCObjectMapper.class) Object fence);
 }

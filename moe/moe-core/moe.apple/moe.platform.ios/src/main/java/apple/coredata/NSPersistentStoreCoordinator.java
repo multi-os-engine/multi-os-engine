@@ -61,48 +61,13 @@ public class NSPersistentStoreCoordinator extends NSObject implements NSLocking 
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native NSPersistentStoreCoordinator alloc();
-
-    @Deprecated
-    @Generated
-    @Selector("metadataForPersistentStoreOfType:URL:error:")
-    public static native NSDictionary<String, ?> metadataForPersistentStoreOfTypeURLError(String storeType, NSURL url,
-            Ptr<NSError> error);
-
-    @Generated
-    @Selector("registerStoreClass:forStoreType:")
-    public static native void registerStoreClassForStoreType(Class storeClass, String storeType);
-
-    @Generated
-    @Selector("registeredStoreTypes")
-    public static native NSDictionary<String, ? extends NSValue> registeredStoreTypes();
-
-    @Generated
-    @Selector("removeUbiquitousContentAndPersistentStoreAtURL:options:error:")
-    public static native boolean removeUbiquitousContentAndPersistentStoreAtURLOptionsError(NSURL storeURL,
-            NSDictionary<?, ?> options, Ptr<NSError> error);
-
-    @Deprecated
-    @Generated
-    @Selector("setMetadata:forPersistentStoreOfType:URL:error:")
-    public static native boolean setMetadataForPersistentStoreOfTypeURLError(NSDictionary<String, ?> metadata,
-            String storeType, NSURL url, Ptr<NSError> error);
-
-    @Generated
-    @Selector("metadataForPersistentStoreOfType:URL:options:error:")
-    public static native NSDictionary<String, ?> metadataForPersistentStoreOfTypeURLOptionsError(String storeType,
-            NSURL url, NSDictionary<?, ?> options, Ptr<NSError> error);
-
-    @Generated
-    @Selector("setMetadata:forPersistentStoreOfType:URL:options:error:")
-    public static native boolean setMetadataForPersistentStoreOfTypeURLOptionsError(NSDictionary<String, ?> metadata,
-            String storeType, NSURL url, NSDictionary<?, ?> options, Ptr<NSError> error);
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -174,10 +139,34 @@ public class NSPersistentStoreCoordinator extends NSObject implements NSLocking 
     public static native void load_objc_static();
 
     @Generated
+    @Deprecated
+    @Selector("metadataForPersistentStoreOfType:URL:error:")
+    public static native NSDictionary<String, ?> metadataForPersistentStoreOfTypeURLError(String storeType, NSURL url,
+            Ptr<NSError> error);
+
+    @Generated
+    @Selector("metadataForPersistentStoreOfType:URL:options:error:")
+    public static native NSDictionary<String, ?> metadataForPersistentStoreOfTypeURLOptionsError(String storeType,
+            NSURL url, NSDictionary<?, ?> options, Ptr<NSError> error);
+
+    @Generated
     @Owned
     @Selector("new")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object new_objc();
+
+    @Generated
+    @Selector("registerStoreClass:forStoreType:")
+    public static native void registerStoreClassForStoreType(Class storeClass, String storeType);
+
+    @Generated
+    @Selector("registeredStoreTypes")
+    public static native NSDictionary<String, ? extends NSValue> registeredStoreTypes();
+
+    @Generated
+    @Selector("removeUbiquitousContentAndPersistentStoreAtURL:options:error:")
+    public static native boolean removeUbiquitousContentAndPersistentStoreAtURLOptionsError(NSURL storeURL,
+            NSDictionary<?, ?> options, Ptr<NSError> error);
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -188,8 +177,19 @@ public class NSPersistentStoreCoordinator extends NSObject implements NSLocking 
     public static native boolean resolveInstanceMethod(SEL sel);
 
     @Generated
+    @Deprecated
+    @Selector("setMetadata:forPersistentStoreOfType:URL:error:")
+    public static native boolean setMetadataForPersistentStoreOfTypeURLError(NSDictionary<String, ?> metadata,
+            String storeType, NSURL url, Ptr<NSError> error);
+
+    @Generated
+    @Selector("setMetadata:forPersistentStoreOfType:URL:options:error:")
+    public static native boolean setMetadataForPersistentStoreOfTypeURLOptionsError(NSDictionary<String, ?> metadata,
+            String storeType, NSURL url, NSDictionary<?, ?> options, Ptr<NSError> error);
+
+    @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")
@@ -205,9 +205,19 @@ public class NSPersistentStoreCoordinator extends NSObject implements NSLocking 
     public native NSURL URLForPersistentStore(NSPersistentStore store);
 
     @Generated
+    @Selector("addPersistentStoreWithDescription:completionHandler:")
+    public native void addPersistentStoreWithDescriptionCompletionHandler(NSPersistentStoreDescription storeDescription,
+            @ObjCBlock(name = "call_addPersistentStoreWithDescriptionCompletionHandler") Block_addPersistentStoreWithDescriptionCompletionHandler block);
+
+    @Generated
     @Selector("addPersistentStoreWithType:configuration:URL:options:error:")
     public native NSPersistentStore addPersistentStoreWithTypeConfigurationURLOptionsError(String storeType,
             String configuration, NSURL storeURL, NSDictionary<?, ?> options, Ptr<NSError> error);
+
+    @Generated
+    @Selector("destroyPersistentStoreAtURL:withType:options:error:")
+    public native boolean destroyPersistentStoreAtURLWithTypeOptionsError(NSURL url, String storeType,
+            NSDictionary<?, ?> options, Ptr<NSError> error);
 
     @Generated
     @Selector("executeRequest:withContext:error:")
@@ -271,6 +281,12 @@ public class NSPersistentStoreCoordinator extends NSObject implements NSLocking 
     public native boolean removePersistentStoreError(NSPersistentStore store, Ptr<NSError> error);
 
     @Generated
+    @Selector("replacePersistentStoreAtURL:destinationOptions:withPersistentStoreFromURL:sourceOptions:storeType:error:")
+    public native boolean replacePersistentStoreAtURLDestinationOptionsWithPersistentStoreFromURLSourceOptionsStoreTypeError(
+            NSURL destinationURL, NSDictionary<?, ?> destinationOptions, NSURL sourceURL,
+            NSDictionary<?, ?> sourceOptions, String storeType, Ptr<NSError> error);
+
+    @Generated
     @Selector("setMetadata:forPersistentStore:")
     public native void setMetadataForPersistentStore(NSDictionary<String, ?> metadata, NSPersistentStore store);
 
@@ -292,16 +308,12 @@ public class NSPersistentStoreCoordinator extends NSObject implements NSLocking 
     @Selector("unlock")
     public native void unlock();
 
+    @Runtime(ObjCRuntime.class)
     @Generated
-    @Selector("destroyPersistentStoreAtURL:withType:options:error:")
-    public native boolean destroyPersistentStoreAtURLWithTypeOptionsError(NSURL url, String storeType,
-            NSDictionary<?, ?> options, Ptr<NSError> error);
-
-    @Generated
-    @Selector("replacePersistentStoreAtURL:destinationOptions:withPersistentStoreFromURL:sourceOptions:storeType:error:")
-    public native boolean replacePersistentStoreAtURLDestinationOptionsWithPersistentStoreFromURLSourceOptionsStoreTypeError(
-            NSURL destinationURL, NSDictionary<?, ?> destinationOptions, NSURL sourceURL,
-            NSDictionary<?, ?> sourceOptions, String storeType, Ptr<NSError> error);
+    public interface Block_addPersistentStoreWithDescriptionCompletionHandler {
+        @Generated
+        void call_addPersistentStoreWithDescriptionCompletionHandler(NSPersistentStoreDescription arg0, NSError arg1);
+    }
 
     @Runtime(ObjCRuntime.class)
     @Generated

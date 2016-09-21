@@ -56,28 +56,23 @@ public class SKCloudServiceController extends NSObject {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native SKCloudServiceController alloc();
 
     @Generated
-    @Selector("authorizationStatus")
-    @NInt
-    public static native long authorizationStatus();
-
-    @Generated
-    @Selector("requestAuthorization:")
-    public static native void requestAuthorization(
-            @ObjCBlock(name = "call_requestAuthorization") Block_requestAuthorization handler);
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
-
-    @Generated
     @Selector("allocWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object allocWithZone(VoidPtr zone);
+
+    @Generated
+    @Selector("authorizationStatus")
+    @NInt
+    public static native long authorizationStatus();
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -148,6 +143,11 @@ public class SKCloudServiceController extends NSObject {
     @Selector("new")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object new_objc();
+
+    @Generated
+    @Selector("requestAuthorization:")
+    public static native void requestAuthorization(
+            @ObjCBlock(name = "call_requestAuthorization") Block_requestAuthorization handler);
 
     @Generated
     @Selector("resolveClassMethod:")

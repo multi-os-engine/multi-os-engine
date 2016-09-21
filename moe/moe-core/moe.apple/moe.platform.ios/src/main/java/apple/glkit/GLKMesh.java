@@ -59,19 +59,13 @@ public class GLKMesh extends NSObject {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native GLKMesh alloc();
-
-    @Generated
-    @Owned
-    @Selector("newMeshesFromAsset:sourceMeshes:error:")
-    public static native NSArray<? extends GLKMesh> newMeshesFromAssetSourceMeshesError(MDLAsset asset,
-            Ptr<NSArray<? extends MDLMesh>> sourceMeshes, Ptr<NSError> error);
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -149,6 +143,12 @@ public class GLKMesh extends NSObject {
     public static native Object new_objc();
 
     @Generated
+    @Owned
+    @Selector("newMeshesFromAsset:sourceMeshes:error:")
+    public static native NSArray<? extends GLKMesh> newMeshesFromAssetSourceMeshesError(MDLAsset asset,
+            Ptr<NSArray<? extends MDLMesh>> sourceMeshes, Ptr<NSError> error);
+
+    @Generated
     @Selector("resolveClassMethod:")
     public static native boolean resolveClassMethod(SEL sel);
 
@@ -158,7 +158,7 @@ public class GLKMesh extends NSObject {
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")

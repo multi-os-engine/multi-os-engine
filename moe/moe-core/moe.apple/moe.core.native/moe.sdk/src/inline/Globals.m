@@ -14,16 +14,11 @@ See the License for the specific language governing permissions and
 limitations under the License.
 */
 
-#import <_types/_uint16_t.h>
-#import <_types/_uint32_t.h>
-#import <_types/_uint64_t.h>
 #import <ctype.h>
 #import <dispatch/dispatch.h>
 #import <libkern/OSByteOrder.h>
 #import <math.h>
 #import <stdio.h>
-#import <sys/_types/_fd_def.h>
-#import <sys/_types/_uintptr_t.h>
 
 
 #define EXPORT __attribute__ ((visibility ("default")))
@@ -68,19 +63,19 @@ EXPORT int __natj_inline___darwin_fd_isset(int _n, const struct fd_set * _p) {
 	return __darwin_fd_isset(_n, _p);
 }
 
-EXPORT void __natj_inline__dispatch_object_validate(__strong dispatch_object_t object) {
+EXPORT void __natj_inline__dispatch_object_validate(dispatch_object_t  _Nonnull __strong object) {
 	_dispatch_object_validate(object);
 }
 
-EXPORT dispatch_queue_t __natj_inline_dispatch_get_main_queue() {
+EXPORT dispatch_queue_t _Nonnull __natj_inline_dispatch_get_main_queue() {
 	return dispatch_get_main_queue();
 }
 
-EXPORT void __natj_inline__dispatch_once(dispatch_once_t * predicate, __strong dispatch_block_t block) {
+EXPORT void __natj_inline__dispatch_once(dispatch_once_t * _Nonnull predicate, dispatch_block_t  _Nonnull __strong block) {
 	_dispatch_once(predicate, block);
 }
 
-EXPORT void __natj_inline__dispatch_once_f(dispatch_once_t * predicate, void * context, dispatch_function_t function) {
+EXPORT void __natj_inline__dispatch_once_f(dispatch_once_t * _Nonnull predicate, void * _Nullable context, dispatch_function_t _Nonnull function) {
 	_dispatch_once_f(predicate, context, function);
 }
 

@@ -61,18 +61,13 @@ public class SKRegion extends NSObject implements NSCopying, NSCoding {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native SKRegion alloc();
-
-    @Generated
-    @Selector("infiniteRegion")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object infiniteRegion();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -113,6 +108,11 @@ public class SKRegion extends NSObject implements NSCopying, NSCoding {
     @Selector("hash")
     @NUInt
     public static native long hash_static();
+
+    @Generated
+    @Selector("infiniteRegion")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object infiniteRegion();
 
     @Generated
     @Selector("initialize")

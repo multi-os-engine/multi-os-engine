@@ -22,6 +22,7 @@ import org.moe.natj.general.ann.NInt;
 @Generated
 public final class Enums {
     @Generated @NInt public static final long NSManagedObjectValidationError = 0x000000000000060EL;
+    @Generated @NInt public static final long NSManagedObjectConstraintValidationError = 0x000000000000060FL;
     @Generated @NInt public static final long NSValidationMultipleErrorsError = 0x0000000000000618L;
     @Generated @NInt public static final long NSValidationMissingMandatoryPropertyError = 0x0000000000000622L;
     @Generated @NInt public static final long NSValidationRelationshipLacksMinimumCountError = 0x000000000000062CL;
@@ -40,6 +41,7 @@ public final class Enums {
     @Generated @NInt public static final long NSManagedObjectReferentialIntegrityError = 0x0000000000020788L;
     @Generated @NInt public static final long NSManagedObjectExternalRelationshipError = 0x0000000000020792L;
     @Generated @NInt public static final long NSManagedObjectMergeError = 0x000000000002079CL;
+    @Generated @NInt public static final long NSManagedObjectConstraintMergeError = 0x000000000002079DL;
     @Generated @NInt public static final long NSPersistentStoreInvalidTypeError = 0x0000000000020B70L;
     @Generated @NInt public static final long NSPersistentStoreTypeMismatchError = 0x0000000000020B7AL;
     @Generated @NInt public static final long NSPersistentStoreIncompatibleSchemaError = 0x0000000000020B84L;
@@ -53,6 +55,7 @@ public final class Enums {
     @Generated @NInt public static final long NSPersistentStoreUnsupportedRequestTypeError = 0x0000000000020BCBL;
     @Generated @NInt public static final long NSPersistentStoreIncompatibleVersionHashError = 0x0000000000020BD4L;
     @Generated @NInt public static final long NSMigrationError = 0x0000000000020BDEL;
+    @Generated @NInt public static final long NSMigrationConstraintViolationError = 0x0000000000020BDFL;
     @Generated @NInt public static final long NSMigrationCancelledError = 0x0000000000020BE8L;
     @Generated @NInt public static final long NSMigrationMissingSourceModelError = 0x0000000000020BF2L;
     @Generated @NInt public static final long NSMigrationMissingMappingModelError = 0x0000000000020BFCL;
@@ -62,9 +65,6 @@ public final class Enums {
     @Generated @NInt public static final long NSSQLiteError = 0x0000000000020C24L;
     @Generated @NInt public static final long NSInferredMappingModelError = 0x0000000000020C2EL;
     @Generated @NInt public static final long NSExternalRecordImportError = 0x0000000000020C38L;
-    @Generated @NInt public static final long NSManagedObjectConstraintValidationError = 0x000000000000060FL;
-    @Generated @NInt public static final long NSManagedObjectConstraintMergeError = 0x000000000002079DL;
-    @Generated @NInt public static final long NSMigrationConstraintViolationError = 0x0000000000020BDFL;
 
     @Generated
     private Enums() {

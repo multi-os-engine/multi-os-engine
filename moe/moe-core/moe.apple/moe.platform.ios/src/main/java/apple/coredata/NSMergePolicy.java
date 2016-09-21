@@ -56,13 +56,13 @@ public class NSMergePolicy extends NSObject {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native NSMergePolicy alloc();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -100,6 +100,10 @@ public class NSMergePolicy extends NSObject {
     public static native String description_static();
 
     @Generated
+    @Selector("errorMergePolicy")
+    public static native NSMergePolicy errorMergePolicy();
+
+    @Generated
     @Selector("hash")
     @NUInt
     public static native long hash_static();
@@ -134,10 +138,22 @@ public class NSMergePolicy extends NSObject {
     public static native void load_objc_static();
 
     @Generated
+    @Selector("mergeByPropertyObjectTrumpMergePolicy")
+    public static native NSMergePolicy mergeByPropertyObjectTrumpMergePolicy();
+
+    @Generated
+    @Selector("mergeByPropertyStoreTrumpMergePolicy")
+    public static native NSMergePolicy mergeByPropertyStoreTrumpMergePolicy();
+
+    @Generated
     @Owned
     @Selector("new")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object new_objc();
+
+    @Generated
+    @Selector("overwriteMergePolicy")
+    public static native NSMergePolicy overwriteMergePolicy();
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -148,8 +164,12 @@ public class NSMergePolicy extends NSObject {
     public static native boolean resolveInstanceMethod(SEL sel);
 
     @Generated
+    @Selector("rollbackMergePolicy")
+    public static native NSMergePolicy rollbackMergePolicy();
+
+    @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")
@@ -158,7 +178,7 @@ public class NSMergePolicy extends NSObject {
     @Generated
     @Selector("version")
     @NInt
-    public static native long version();
+    public static native long version_static();
 
     @Generated
     @Selector("init")

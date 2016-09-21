@@ -58,21 +58,13 @@ public class MPMediaItem extends MPMediaEntity {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native MPMediaItem alloc();
-
-    @Generated
-    @Selector("persistentIDPropertyForGroupingType:")
-    public static native String persistentIDPropertyForGroupingType(@NInt long groupingType);
-
-    @Generated
-    @Selector("titlePropertyForGroupingType:")
-    public static native String titlePropertyForGroupingType(@NInt long groupingType);
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -154,6 +146,10 @@ public class MPMediaItem extends MPMediaEntity {
     public static native Object new_objc();
 
     @Generated
+    @Selector("persistentIDPropertyForGroupingType:")
+    public static native String persistentIDPropertyForGroupingType(@NInt long groupingType);
+
+    @Generated
     @Selector("resolveClassMethod:")
     public static native boolean resolveClassMethod(SEL sel);
 
@@ -172,6 +168,10 @@ public class MPMediaItem extends MPMediaEntity {
     @Generated
     @Selector("supportsSecureCoding")
     public static native boolean supportsSecureCoding();
+
+    @Generated
+    @Selector("titlePropertyForGroupingType:")
+    public static native String titlePropertyForGroupingType(@NInt long groupingType);
 
     @Generated
     @Selector("version")
@@ -242,6 +242,10 @@ public class MPMediaItem extends MPMediaEntity {
     public native long composerPersistentID();
 
     @Generated
+    @Selector("dateAdded")
+    public native NSDate dateAdded();
+
+    @Generated
     @Selector("discCount")
     @NUInt
     public native long discCount();
@@ -260,8 +264,16 @@ public class MPMediaItem extends MPMediaEntity {
     public native long genrePersistentID();
 
     @Generated
+    @Selector("hasProtectedAsset")
+    public native boolean hasProtectedAsset();
+
+    @Generated
     @Selector("init")
     public native MPMediaItem init();
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native MPMediaItem initWithCoder(NSCoder aDecoder);
 
     @Generated
     @Selector("isCloudItem")
@@ -270,6 +282,10 @@ public class MPMediaItem extends MPMediaEntity {
     @Generated
     @Selector("isCompilation")
     public native boolean isCompilation();
+
+    @Generated
+    @Selector("isExplicitItem")
+    public native boolean isExplicitItem();
 
     @Generated
     @Selector("lastPlayedDate")
@@ -320,24 +336,16 @@ public class MPMediaItem extends MPMediaEntity {
     public native long skipCount();
 
     @Generated
+    @ProtocolClassMethod("supportsSecureCoding")
+    public boolean _supportsSecureCoding() {
+        return supportsSecureCoding();
+    }
+
+    @Generated
     @Selector("title")
     public native String title();
 
     @Generated
     @Selector("userGrouping")
     public native String userGrouping();
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native MPMediaItem initWithCoder(NSCoder aDecoder);
-
-    @Generated
-    @Selector("hasProtectedAsset")
-    public native boolean hasProtectedAsset();
-
-    @Generated
-    @ProtocolClassMethod("supportsSecureCoding")
-    public boolean _supportsSecureCoding() {
-        return supportsSecureCoding();
-    }
 }

@@ -59,22 +59,22 @@ public class AVComposition extends AVAsset implements NSMutableCopying {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native AVComposition alloc();
 
     @Generated
-    @Selector("assetWithURL:")
-    public static native AVComposition assetWithURL(NSURL URL);
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
-
-    @Generated
     @Selector("allocWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object allocWithZone(VoidPtr zone);
+
+    @Generated
+    @Selector("assetWithURL:")
+    public static native AVComposition assetWithURL(NSURL URL);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -156,7 +156,7 @@ public class AVComposition extends AVAsset implements NSMutableCopying {
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")
@@ -165,7 +165,11 @@ public class AVComposition extends AVAsset implements NSMutableCopying {
     @Generated
     @Selector("version")
     @NInt
-    public static native long version();
+    public static native long version_static();
+
+    @Generated
+    @Selector("URLAssetInitializationOptions")
+    public native NSDictionary<String, ?> URLAssetInitializationOptions();
 
     @Generated
     @Selector("init")
@@ -182,16 +186,12 @@ public class AVComposition extends AVAsset implements NSMutableCopying {
     public native CGSize naturalSize();
 
     @Generated
-    @Selector("tracks")
-    public native NSArray<? extends AVCompositionTrack> tracks();
-
-    @Generated
-    @Selector("URLAssetInitializationOptions")
-    public native NSDictionary<String, ?> URLAssetInitializationOptions();
-
-    @Generated
     @Selector("trackWithTrackID:")
     public native AVCompositionTrack trackWithTrackID(int trackID);
+
+    @Generated
+    @Selector("tracks")
+    public native NSArray<? extends AVCompositionTrack> tracks();
 
     @Generated
     @Selector("tracksWithMediaCharacteristic:")

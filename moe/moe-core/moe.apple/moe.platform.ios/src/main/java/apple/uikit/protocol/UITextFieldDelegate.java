@@ -21,6 +21,7 @@ import apple.uikit.UITextField;
 import org.moe.natj.general.ann.ByValue;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.Library;
+import org.moe.natj.general.ann.NInt;
 import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.IsOptional;
@@ -51,6 +52,13 @@ public interface UITextFieldDelegate {
     @IsOptional
     @Selector("textFieldDidEndEditing:")
     default void textFieldDidEndEditing(UITextField textField) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Generated
+    @IsOptional
+    @Selector("textFieldDidEndEditing:reason:")
+    default void textFieldDidEndEditingReason(UITextField textField, @NInt long reason) {
         throw new java.lang.UnsupportedOperationException();
     }
 

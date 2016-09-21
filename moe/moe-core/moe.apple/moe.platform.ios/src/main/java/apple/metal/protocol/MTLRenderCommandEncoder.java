@@ -42,6 +42,14 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @ObjCProtocolName("MTLRenderCommandEncoder")
 public interface MTLRenderCommandEncoder extends MTLCommandEncoder {
     @Generated
+    @Selector("drawIndexedPatches:patchStart:patchCount:patchIndexBuffer:patchIndexBufferOffset:controlPointIndexBuffer:controlPointIndexBufferOffset:instanceCount:baseInstance:")
+    void drawIndexedPatchesPatchStartPatchCountPatchIndexBufferPatchIndexBufferOffsetControlPointIndexBufferControlPointIndexBufferOffsetInstanceCountBaseInstance(
+            @NUInt long numberOfPatchControlPoints, @NUInt long patchStart, @NUInt long patchCount,
+            @Mapped(ObjCObjectMapper.class) Object patchIndexBuffer, @NUInt long patchIndexBufferOffset,
+            @Mapped(ObjCObjectMapper.class) Object controlPointIndexBuffer, @NUInt long controlPointIndexBufferOffset,
+            @NUInt long instanceCount, @NUInt long baseInstance);
+
+    @Generated
     @Selector("drawIndexedPrimitives:indexCount:indexType:indexBuffer:indexBufferOffset:")
     void drawIndexedPrimitivesIndexCountIndexTypeIndexBufferIndexBufferOffset(@NUInt long primitiveType,
             @NUInt long indexCount, @NUInt long indexType, @Mapped(ObjCObjectMapper.class) Object indexBuffer,
@@ -54,6 +62,32 @@ public interface MTLRenderCommandEncoder extends MTLCommandEncoder {
             @NUInt long indexBufferOffset, @NUInt long instanceCount);
 
     @Generated
+    @Selector("drawIndexedPrimitives:indexCount:indexType:indexBuffer:indexBufferOffset:instanceCount:baseVertex:baseInstance:")
+    void drawIndexedPrimitivesIndexCountIndexTypeIndexBufferIndexBufferOffsetInstanceCountBaseVertexBaseInstance(
+            @NUInt long primitiveType, @NUInt long indexCount, @NUInt long indexType,
+            @Mapped(ObjCObjectMapper.class) Object indexBuffer, @NUInt long indexBufferOffset,
+            @NUInt long instanceCount, @NInt long baseVertex, @NUInt long baseInstance);
+
+    @Generated
+    @Selector("drawIndexedPrimitives:indexType:indexBuffer:indexBufferOffset:indirectBuffer:indirectBufferOffset:")
+    void drawIndexedPrimitivesIndexTypeIndexBufferIndexBufferOffsetIndirectBufferIndirectBufferOffset(
+            @NUInt long primitiveType, @NUInt long indexType, @Mapped(ObjCObjectMapper.class) Object indexBuffer,
+            @NUInt long indexBufferOffset, @Mapped(ObjCObjectMapper.class) Object indirectBuffer,
+            @NUInt long indirectBufferOffset);
+
+    @Generated
+    @Selector("drawPatches:patchStart:patchCount:patchIndexBuffer:patchIndexBufferOffset:instanceCount:baseInstance:")
+    void drawPatchesPatchStartPatchCountPatchIndexBufferPatchIndexBufferOffsetInstanceCountBaseInstance(
+            @NUInt long numberOfPatchControlPoints, @NUInt long patchStart, @NUInt long patchCount,
+            @Mapped(ObjCObjectMapper.class) Object patchIndexBuffer, @NUInt long patchIndexBufferOffset,
+            @NUInt long instanceCount, @NUInt long baseInstance);
+
+    @Generated
+    @Selector("drawPrimitives:indirectBuffer:indirectBufferOffset:")
+    void drawPrimitivesIndirectBufferIndirectBufferOffset(@NUInt long primitiveType,
+            @Mapped(ObjCObjectMapper.class) Object indirectBuffer, @NUInt long indirectBufferOffset);
+
+    @Generated
     @Selector("drawPrimitives:vertexStart:vertexCount:")
     void drawPrimitivesVertexStartVertexCount(@NUInt long primitiveType, @NUInt long vertexStart,
             @NUInt long vertexCount);
@@ -64,8 +98,17 @@ public interface MTLRenderCommandEncoder extends MTLCommandEncoder {
             @NUInt long vertexCount, @NUInt long instanceCount);
 
     @Generated
+    @Selector("drawPrimitives:vertexStart:vertexCount:instanceCount:baseInstance:")
+    void drawPrimitivesVertexStartVertexCountInstanceCountBaseInstance(@NUInt long primitiveType,
+            @NUInt long vertexStart, @NUInt long vertexCount, @NUInt long instanceCount, @NUInt long baseInstance);
+
+    @Generated
     @Selector("setBlendColorRed:green:blue:alpha:")
     void setBlendColorRedGreenBlueAlpha(float red, float green, float blue, float alpha);
+
+    @Generated
+    @Selector("setColorStoreAction:atIndex:")
+    void setColorStoreActionAtIndex(@NUInt long storeAction, @NUInt long colorAttachmentIndex);
 
     @Generated
     @Selector("setCullMode:")
@@ -78,6 +121,10 @@ public interface MTLRenderCommandEncoder extends MTLCommandEncoder {
     @Generated
     @Selector("setDepthStencilState:")
     void setDepthStencilState(@Mapped(ObjCObjectMapper.class) Object depthStencilState);
+
+    @Generated
+    @Selector("setDepthStoreAction:")
+    void setDepthStoreAction(@NUInt long storeAction);
 
     @Generated
     @Selector("setFragmentBuffer:offset:atIndex:")
@@ -135,8 +182,25 @@ public interface MTLRenderCommandEncoder extends MTLCommandEncoder {
     void setScissorRect(@ByValue MTLScissorRect rect);
 
     @Generated
+    @Selector("setStencilFrontReferenceValue:backReferenceValue:")
+    void setStencilFrontReferenceValueBackReferenceValue(int frontReferenceValue, int backReferenceValue);
+
+    @Generated
     @Selector("setStencilReferenceValue:")
     void setStencilReferenceValue(int referenceValue);
+
+    @Generated
+    @Selector("setStencilStoreAction:")
+    void setStencilStoreAction(@NUInt long storeAction);
+
+    @Generated
+    @Selector("setTessellationFactorBuffer:offset:instanceStride:")
+    void setTessellationFactorBufferOffsetInstanceStride(@Mapped(ObjCObjectMapper.class) Object buffer,
+            @NUInt long offset, @NUInt long instanceStride);
+
+    @Generated
+    @Selector("setTessellationFactorScale:")
+    void setTessellationFactorScale(float scale);
 
     @Generated
     @Selector("setTriangleFillMode:")
@@ -194,34 +258,10 @@ public interface MTLRenderCommandEncoder extends MTLCommandEncoder {
     void setVisibilityResultModeOffset(@NUInt long mode, @NUInt long offset);
 
     @Generated
-    @Selector("setDepthClipMode:")
-    void setDepthClipMode(@NUInt long depthClipMode);
+    @Selector("updateFence:afterStages:")
+    void updateFenceAfterStages(@Mapped(ObjCObjectMapper.class) Object fence, @NUInt long stages);
 
     @Generated
-    @Selector("setStencilFrontReferenceValue:backReferenceValue:")
-    void setStencilFrontReferenceValueBackReferenceValue(int frontReferenceValue, int backReferenceValue);
-
-    @Generated
-    @Selector("drawIndexedPrimitives:indexCount:indexType:indexBuffer:indexBufferOffset:instanceCount:baseVertex:baseInstance:")
-    void drawIndexedPrimitivesIndexCountIndexTypeIndexBufferIndexBufferOffsetInstanceCountBaseVertexBaseInstance(
-            @NUInt long primitiveType, @NUInt long indexCount, @NUInt long indexType,
-            @Mapped(ObjCObjectMapper.class) Object indexBuffer, @NUInt long indexBufferOffset,
-            @NUInt long instanceCount, @NInt long baseVertex, @NUInt long baseInstance);
-
-    @Generated
-    @Selector("drawIndexedPrimitives:indexType:indexBuffer:indexBufferOffset:indirectBuffer:indirectBufferOffset:")
-    void drawIndexedPrimitivesIndexTypeIndexBufferIndexBufferOffsetIndirectBufferIndirectBufferOffset(
-            @NUInt long primitiveType, @NUInt long indexType, @Mapped(ObjCObjectMapper.class) Object indexBuffer,
-            @NUInt long indexBufferOffset, @Mapped(ObjCObjectMapper.class) Object indirectBuffer,
-            @NUInt long indirectBufferOffset);
-
-    @Generated
-    @Selector("drawPrimitives:indirectBuffer:indirectBufferOffset:")
-    void drawPrimitivesIndirectBufferIndirectBufferOffset(@NUInt long primitiveType,
-            @Mapped(ObjCObjectMapper.class) Object indirectBuffer, @NUInt long indirectBufferOffset);
-
-    @Generated
-    @Selector("drawPrimitives:vertexStart:vertexCount:instanceCount:baseInstance:")
-    void drawPrimitivesVertexStartVertexCountInstanceCountBaseInstance(@NUInt long primitiveType,
-            @NUInt long vertexStart, @NUInt long vertexCount, @NUInt long instanceCount, @NUInt long baseInstance);
+    @Selector("waitForFence:beforeStages:")
+    void waitForFenceBeforeStages(@Mapped(ObjCObjectMapper.class) Object fence, @NUInt long stages);
 }

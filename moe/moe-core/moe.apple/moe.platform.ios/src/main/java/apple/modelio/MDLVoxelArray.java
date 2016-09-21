@@ -22,6 +22,7 @@ import apple.foundation.NSData;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
 import apple.modelio.protocol.MDLMeshBufferAllocator;
+import apple.scenekit.SCNNode;
 import org.moe.natj.c.ann.FunctionPtr;
 import org.moe.natj.general.NatJ;
 import org.moe.natj.general.Pointer;
@@ -45,7 +46,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @Library("ModelIO")
 @Runtime(ObjCRuntime.class)
 @ObjCClassBinding
-public class MDLVoxelArray extends NSObject {
+public class MDLVoxelArray extends MDLObject {
     static {
         NatJ.register();
     }
@@ -56,13 +57,13 @@ public class MDLVoxelArray extends NSObject {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native MDLVoxelArray alloc();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -140,6 +141,15 @@ public class MDLVoxelArray extends NSObject {
     public static native Object new_objc();
 
     @Generated
+    @Selector("objectWithSCNNode:")
+    public static native MDLVoxelArray objectWithSCNNode(SCNNode scnNode);
+
+    @Generated
+    @Selector("objectWithSCNNode:bufferAllocator:")
+    public static native MDLVoxelArray objectWithSCNNodeBufferAllocator(SCNNode scnNode,
+            @Mapped(ObjCObjectMapper.class) MDLMeshBufferAllocator bufferAllocator);
+
+    @Generated
     @Selector("resolveClassMethod:")
     public static native boolean resolveClassMethod(SEL sel);
 
@@ -149,7 +159,7 @@ public class MDLVoxelArray extends NSObject {
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")
@@ -159,6 +169,18 @@ public class MDLVoxelArray extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("coarseMesh")
+    public native MDLMesh coarseMesh();
+
+    @Generated
+    @Selector("coarseMeshUsingAllocator:")
+    public native MDLMesh coarseMeshUsingAllocator(@Mapped(ObjCObjectMapper.class) MDLMeshBufferAllocator allocator);
+
+    @Generated
+    @Selector("convertToSignedShellField")
+    public native void convertToSignedShellField();
 
     @Generated
     @Selector("count")
@@ -174,32 +196,40 @@ public class MDLVoxelArray extends NSObject {
     public native MDLVoxelArray init();
 
     @Generated
-    @Selector("initWithAsset:divisions:interiorNBWidth:exteriorNBWidth:patchRadius:")
-    public native MDLVoxelArray initWithAssetDivisionsInteriorNBWidthExteriorNBWidthPatchRadius(MDLAsset asset,
-            int divisions, float interiorNBWidth, float exteriorNBWidth, float patchRadius);
-
-    @Generated
-    @Selector("initWithAsset:divisions:interiorShells:exteriorShells:patchRadius:")
-    public native MDLVoxelArray initWithAssetDivisionsInteriorShellsExteriorShellsPatchRadius(MDLAsset asset,
-            int divisions, int interiorShells, int exteriorShells, float patchRadius);
+    @Selector("initWithAsset:divisions:patchRadius:")
+    public native MDLVoxelArray initWithAssetDivisionsPatchRadius(MDLAsset asset, int divisions, float patchRadius);
 
     @Generated
     @Selector("intersectWithVoxels:")
     public native void intersectWithVoxels(MDLVoxelArray voxels);
 
     @Generated
+    @Selector("isValidSignedShellField")
+    public native boolean isValidSignedShellField();
+
+    @Generated
     @Selector("meshUsingAllocator:")
     public native MDLMesh meshUsingAllocator(@Mapped(ObjCObjectMapper.class) MDLMeshBufferAllocator allocator);
 
     @Generated
-    @Selector("setVoxelsForMesh:divisions:interiorNBWidth:exteriorNBWidth:patchRadius:")
-    public native void setVoxelsForMeshDivisionsInteriorNBWidthExteriorNBWidthPatchRadius(MDLMesh mesh, int divisions,
-            float interiorNBWidth, float exteriorNBWidth, float patchRadius);
+    @Selector("setShellFieldExteriorThickness:")
+    public native void setShellFieldExteriorThickness(float value);
 
     @Generated
-    @Selector("setVoxelsForMesh:divisions:interiorShells:exteriorShells:patchRadius:")
-    public native void setVoxelsForMeshDivisionsInteriorShellsExteriorShellsPatchRadius(MDLMesh mesh, int divisions,
-            int interiorShells, int exteriorShells, float patchRadius);
+    @Selector("setShellFieldInteriorThickness:")
+    public native void setShellFieldInteriorThickness(float value);
+
+    @Generated
+    @Selector("setVoxelsForMesh:divisions:patchRadius:")
+    public native void setVoxelsForMeshDivisionsPatchRadius(MDLMesh mesh, int divisions, float patchRadius);
+
+    @Generated
+    @Selector("shellFieldExteriorThickness")
+    public native float shellFieldExteriorThickness();
+
+    @Generated
+    @Selector("shellFieldInteriorThickness")
+    public native float shellFieldInteriorThickness();
 
     @Generated
     @Selector("unionWithVoxels:")

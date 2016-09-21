@@ -58,30 +58,13 @@ public class SCNSphere extends SCNGeometry {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native SCNSphere alloc();
-
-    @Generated
-    @Selector("geometry")
-    public static native SCNSphere geometry();
-
-    @Generated
-    @Selector("geometryWithSources:elements:")
-    public static native SCNSphere geometryWithSourcesElements(NSArray<? extends SCNGeometrySource> sources,
-            NSArray<? extends SCNGeometryElement> elements);
-
-    @Generated
-    @Selector("sphereWithRadius:")
-    public static native SCNSphere sphereWithRadius(@NFloat double radius);
-
-    @Generated
-    @Selector("geometryWithMDLMesh:")
-    public static native SCNSphere geometryWithMDLMesh(MDLMesh mdlMesh);
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -117,6 +100,19 @@ public class SCNSphere extends SCNGeometry {
     @Generated
     @Selector("description")
     public static native String description_static();
+
+    @Generated
+    @Selector("geometry")
+    public static native SCNSphere geometry();
+
+    @Generated
+    @Selector("geometryWithMDLMesh:")
+    public static native SCNSphere geometryWithMDLMesh(MDLMesh mdlMesh);
+
+    @Generated
+    @Selector("geometryWithSources:elements:")
+    public static native SCNSphere geometryWithSourcesElements(NSArray<? extends SCNGeometrySource> sources,
+            NSArray<? extends SCNGeometryElement> elements);
 
     @Generated
     @Selector("hash")
@@ -168,7 +164,11 @@ public class SCNSphere extends SCNGeometry {
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
+
+    @Generated
+    @Selector("sphereWithRadius:")
+    public static native SCNSphere sphereWithRadius(@NFloat double radius);
 
     @Generated
     @Selector("superclass")
@@ -186,6 +186,10 @@ public class SCNSphere extends SCNGeometry {
     @Generated
     @Selector("init")
     public native SCNSphere init();
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native SCNSphere initWithCoder(NSCoder aDecoder);
 
     @Generated
     @Selector("isGeodesic")
@@ -212,10 +216,6 @@ public class SCNSphere extends SCNGeometry {
     @Generated
     @Selector("setSegmentCount:")
     public native void setSegmentCount(@NInt long value);
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native SCNSphere initWithCoder(NSCoder aDecoder);
 
     @Generated
     @ProtocolClassMethod("supportsSecureCoding")

@@ -24,6 +24,7 @@ public final class CKNotificationType {
     @Generated @NInt public static final long Query = 0x0000000000000001L;
     @Generated @NInt public static final long RecordZone = 0x0000000000000002L;
     @Generated @NInt public static final long ReadNotification = 0x0000000000000003L;
+    @Generated @NInt public static final long Database = 0x0000000000000004L;
 
     @Generated
     private CKNotificationType() {

@@ -55,18 +55,13 @@ public class CADisplayLink extends NSObject {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native CADisplayLink alloc();
-
-    @Generated
-    @Selector("displayLinkWithTarget:selector:")
-    public static native CADisplayLink displayLinkWithTargetSelector(@Mapped(ObjCObjectMapper.class) Object target,
-            SEL sel);
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -102,6 +97,11 @@ public class CADisplayLink extends NSObject {
     @Generated
     @Selector("description")
     public static native String description_static();
+
+    @Generated
+    @Selector("displayLinkWithTarget:selector:")
+    public static native CADisplayLink displayLinkWithTargetSelector(@Mapped(ObjCObjectMapper.class) Object target,
+            SEL sel);
 
     @Generated
     @Selector("hash")
@@ -194,12 +194,25 @@ public class CADisplayLink extends NSObject {
     public native void setPaused(boolean value);
 
     @Generated
+    @Selector("preferredFramesPerSecond")
+    @NInt
+    public native long preferredFramesPerSecond();
+
+    @Generated
     @Selector("removeFromRunLoop:forMode:")
     public native void removeFromRunLoopForMode(NSRunLoop runloop, String mode);
 
     @Generated
     @Selector("setFrameInterval:")
     public native void setFrameInterval(@NInt long value);
+
+    @Generated
+    @Selector("setPreferredFramesPerSecond:")
+    public native void setPreferredFramesPerSecond(@NInt long value);
+
+    @Generated
+    @Selector("targetTimestamp")
+    public native double targetTimestamp();
 
     @Generated
     @Selector("timestamp")

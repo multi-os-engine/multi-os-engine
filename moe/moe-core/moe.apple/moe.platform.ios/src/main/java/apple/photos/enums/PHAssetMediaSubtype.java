@@ -24,11 +24,11 @@ public final class PHAssetMediaSubtype {
     @Generated @NUInt public static final long None = 0x0000000000000000L;
     @Generated @NUInt public static final long PhotoPanorama = 0x0000000000000001L;
     @Generated @NUInt public static final long PhotoHDR = 0x0000000000000002L;
+    @Generated @NUInt public static final long PhotoScreenshot = 0x0000000000000004L;
+    @Generated @NUInt public static final long PhotoLive = 0x0000000000000008L;
     @Generated @NUInt public static final long VideoStreamed = 0x0000000000010000L;
     @Generated @NUInt public static final long VideoHighFrameRate = 0x0000000000020000L;
     @Generated @NUInt public static final long VideoTimelapse = 0x0000000000040000L;
-    @Generated @NUInt public static final long PhotoScreenshot = 0x0000000000000004L;
-    @Generated @NUInt public static final long PhotoLive = 0x0000000000000008L;
 
     @Generated
     private PHAssetMediaSubtype() {

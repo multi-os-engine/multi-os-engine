@@ -59,17 +59,13 @@ public class CAGradientLayer extends CALayer {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native CAGradientLayer alloc();
-
-    @Generated
-    @Selector("layer")
-    public static native CAGradientLayer layer();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -147,6 +143,10 @@ public class CAGradientLayer extends CALayer {
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
     @Generated
+    @Selector("layer")
+    public static native CAGradientLayer layer();
+
+    @Generated
     @Selector("load")
     public static native void load_objc_static();
 
@@ -195,6 +195,10 @@ public class CAGradientLayer extends CALayer {
     public native CAGradientLayer init();
 
     @Generated
+    @Selector("initWithCoder:")
+    public native CAGradientLayer initWithCoder(NSCoder aDecoder);
+
+    @Generated
     @Selector("initWithLayer:")
     public native CAGradientLayer initWithLayer(@Mapped(ObjCObjectMapper.class) Object layer);
 
@@ -230,8 +234,4 @@ public class CAGradientLayer extends CALayer {
     @Generated
     @Selector("type")
     public native String type();
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native CAGradientLayer initWithCoder(NSCoder aDecoder);
 }

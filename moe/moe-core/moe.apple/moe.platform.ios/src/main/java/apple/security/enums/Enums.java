@@ -21,6 +21,28 @@ import org.moe.natj.general.ann.NUInt;
 
 @Generated
 public final class Enums {
+    @Generated public static final int errSecSuccess = 0x00000000;
+    @Generated public static final int errSecUnimplemented = 0xFFFFFFFC;
+    @Generated public static final int errSecIO = 0xFFFFFFDC;
+    @Generated public static final int errSecOpWr = 0xFFFFFFCF;
+    @Generated public static final int errSecParam = 0xFFFFFFCE;
+    @Generated public static final int errSecAllocate = 0xFFFFFF94;
+    @Generated public static final int errSecUserCanceled = 0xFFFFFF80;
+    @Generated public static final int errSecBadReq = 0xFFFFFC73;
+    @Generated public static final int errSecInternalComponent = 0xFFFFF7EA;
+    @Generated public static final int errSecNotAvailable = 0xFFFF9D35;
+    @Generated public static final int errSecDuplicateItem = 0xFFFF9D2D;
+    @Generated public static final int errSecItemNotFound = 0xFFFF9D2C;
+    @Generated public static final int errSecInteractionNotAllowed = 0xFFFF9D24;
+    @Generated public static final int errSecDecode = 0xFFFF995D;
+    @Generated public static final int errSecAuthFailed = 0xFFFF9D33;
+    @Generated public static final int errSecVerifyFailed = 0xFFFEF720;
+    @Generated @NUInt public static final long kSecRevocationOCSPMethod = 0x0000000000000001L;
+    @Generated @NUInt public static final long kSecRevocationCRLMethod = 0x0000000000000002L;
+    @Generated @NUInt public static final long kSecRevocationPreferCRL = 0x0000000000000004L;
+    @Generated @NUInt public static final long kSecRevocationRequirePositiveResponse = 0x0000000000000008L;
+    @Generated @NUInt public static final long kSecRevocationNetworkAccessDisabled = 0x0000000000000010L;
+    @Generated @NUInt public static final long kSecRevocationUseAnyAvailableMethod = 0x0000000000000003L;
     @Generated public static final int errSSLProtocol = 0xFFFFD9B8;
     @Generated public static final int errSSLNegotiation = 0xFFFFD9B7;
     @Generated public static final int errSSLFatalAlert = 0xFFFFD9B6;
@@ -71,14 +93,8 @@ public final class Enums {
     @Generated public static final int errSSLRecordOverflow = 0xFFFFD989;
     @Generated public static final int errSSLBadConfiguration = 0xFFFFD988;
     @Generated public static final int errSSLUnexpectedRecord = 0xFFFFD987;
-    @Generated public static final int kSecTrustResultInvalid = 0x00000000;
-    @Generated public static final int kSecTrustResultProceed = 0x00000001;
-    @Generated public static final int kSecTrustResultConfirm = 0x00000002;
-    @Generated public static final int kSecTrustResultDeny = 0x00000003;
-    @Generated public static final int kSecTrustResultUnspecified = 0x00000004;
-    @Generated public static final int kSecTrustResultRecoverableTrustFailure = 0x00000005;
-    @Generated public static final int kSecTrustResultFatalTrustFailure = 0x00000006;
-    @Generated public static final int kSecTrustResultOtherError = 0x00000007;
+    @Generated public static final int errSSLWeakPeerEphemeralDHKey = 0xFFFFD986;
+    @Generated public static final int errSSLClientHelloReceived = 0xFFFFD985;
     @Generated public static final char SSL_NULL_WITH_NULL_NULL = 0x0000;
     @Generated public static final char SSL_RSA_WITH_NULL_MD5 = 0x0001;
     @Generated public static final char SSL_RSA_WITH_NULL_SHA = 0x0002;
@@ -238,29 +254,6 @@ public final class Enums {
     @Generated public static final char SSL_RSA_WITH_DES_CBC_MD5 = 0xFF82;
     @Generated public static final char SSL_RSA_WITH_3DES_EDE_CBC_MD5 = 0xFF83;
     @Generated public static final char SSL_NO_SUCH_CIPHERSUITE = 0xFFFF;
-    @NUInt @Generated public static final long kSecRevocationOCSPMethod = 0x0000000000000001L;
-    @NUInt @Generated public static final long kSecRevocationCRLMethod = 0x0000000000000002L;
-    @NUInt @Generated public static final long kSecRevocationPreferCRL = 0x0000000000000004L;
-    @NUInt @Generated public static final long kSecRevocationRequirePositiveResponse = 0x0000000000000008L;
-    @NUInt @Generated public static final long kSecRevocationNetworkAccessDisabled = 0x0000000000000010L;
-    @NUInt @Generated public static final long kSecRevocationUseAnyAvailableMethod = 0x0000000000000003L;
-    @Generated public static final int errSecSuccess = 0x00000000;
-    @Generated public static final int errSecUnimplemented = 0xFFFFFFFC;
-    @Generated public static final int errSecIO = 0xFFFFFFDC;
-    @Generated public static final int errSecOpWr = 0xFFFFFFCF;
-    @Generated public static final int errSecParam = 0xFFFFFFCE;
-    @Generated public static final int errSecAllocate = 0xFFFFFF94;
-    @Generated public static final int errSecUserCanceled = 0xFFFFFF80;
-    @Generated public static final int errSecBadReq = 0xFFFFFC73;
-    @Generated public static final int errSecInternalComponent = 0xFFFFF7EA;
-    @Generated public static final int errSecNotAvailable = 0xFFFF9D35;
-    @Generated public static final int errSecDuplicateItem = 0xFFFF9D2D;
-    @Generated public static final int errSecItemNotFound = 0xFFFF9D2C;
-    @Generated public static final int errSecInteractionNotAllowed = 0xFFFF9D24;
-    @Generated public static final int errSecDecode = 0xFFFF995D;
-    @Generated public static final int errSecAuthFailed = 0xFFFF9D33;
-    @Generated public static final int errSSLWeakPeerEphemeralDHKey = 0xFFFFD986;
-    @Generated public static final int errSSLClientHelloReceived = 0xFFFFD985;
 
     @Generated
     private Enums() {

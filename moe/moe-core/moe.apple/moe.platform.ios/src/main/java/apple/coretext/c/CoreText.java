@@ -467,6 +467,14 @@ public final class CoreText {
 
     @Generated
     @CFunction
+    public static native CFArrayRef CTFontManagerCopyAvailablePostScriptNames();
+
+    @Generated
+    @CFunction
+    public static native CFArrayRef CTFontManagerCopyAvailableFontFamilyNames();
+
+    @Generated
+    @CFunction
     public static native CFArrayRef CTFontManagerCreateFontDescriptorsFromURL(CFURLRef fileURL);
 
     @Generated
@@ -609,6 +617,11 @@ public final class CoreText {
 
     @Generated
     @CFunction
+    public static native void CTLineEnumerateCaretOffsets(CTLineRef line,
+            @ObjCBlock(name = "call_CTLineEnumerateCaretOffsets") Block_CTLineEnumerateCaretOffsets block);
+
+    @Generated
+    @CFunction
     @NUInt
     public static native long CTTypesetterGetTypeID();
 
@@ -714,6 +727,11 @@ public final class CoreText {
     @CFunction
     @NUInt
     public static native long CTRubyAnnotationGetTypeID();
+
+    @Generated
+    @CFunction
+    public static native CTRubyAnnotationRef CTRubyAnnotationCreateWithAttributes(byte alignment, byte overhang,
+            byte position, CFStringRef string, CFDictionaryRef attributes);
 
     @Generated
     @CFunction
@@ -1209,6 +1227,14 @@ public final class CoreText {
 
     @Generated
     @CVariable()
+    public static native CFStringRef kCTRubyAnnotationSizeFactorAttributeName();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCTRubyAnnotationScaleToFitAttributeName();
+
+    @Generated
+    @CVariable()
     public static native CFStringRef kCTFontAttributeName();
 
     @Generated
@@ -1226,6 +1252,10 @@ public final class CoreText {
     @Generated
     @CVariable()
     public static native CFStringRef kCTForegroundColorAttributeName();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCTBackgroundColorAttributeName();
 
     @Generated
     @CVariable()
@@ -1254,6 +1284,10 @@ public final class CoreText {
     @Generated
     @CVariable()
     public static native CFStringRef kCTVerticalFormsAttributeName();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCTHorizontalInVerticalFormsAttributeName();
 
     @Generated
     @CVariable()
@@ -1294,11 +1328,6 @@ public final class CoreText {
     @Generated
     @CVariable()
     public static native CFStringRef kCTTabColumnTerminatorsAttributeName();
-
-    @Generated
-    @CFunction
-    public static native void CTLineEnumerateCaretOffsets(CTLineRef line,
-            @ObjCBlock(name = "call_CTLineEnumerateCaretOffsets") Block_CTLineEnumerateCaretOffsets block);
 
     @Runtime(CRuntime.class)
     @Generated

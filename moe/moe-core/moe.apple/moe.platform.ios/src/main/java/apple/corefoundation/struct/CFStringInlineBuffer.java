@@ -25,7 +25,6 @@ import org.moe.natj.general.Pointer;
 import org.moe.natj.general.ann.ByValue;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
-import org.moe.natj.general.ann.UncertainReturn;
 import org.moe.natj.general.ptr.ConstBytePtr;
 import org.moe.natj.general.ptr.ConstCharPtr;
 
@@ -74,7 +73,6 @@ public final class CFStringInlineBuffer extends StructObject {
 
     @Generated
     @StructureField(order = 3, isGetter = true)
-    @UncertainReturn("Options: java.string, c.const-byte-ptr Fallback: java.string")
     public native ConstBytePtr directCStringBuffer();
 
     @Generated

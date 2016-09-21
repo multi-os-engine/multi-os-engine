@@ -57,22 +57,13 @@ public class MKMapItem extends NSObject {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native MKMapItem alloc();
-
-    @Generated
-    @Selector("mapItemForCurrentLocation")
-    public static native MKMapItem mapItemForCurrentLocation();
-
-    @Generated
-    @Selector("openMapsWithItems:launchOptions:")
-    public static native boolean openMapsWithItemsLaunchOptions(NSArray<? extends MKMapItem> mapItems,
-            NSDictionary<String, ?> launchOptions);
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -144,10 +135,19 @@ public class MKMapItem extends NSObject {
     public static native void load_objc_static();
 
     @Generated
+    @Selector("mapItemForCurrentLocation")
+    public static native MKMapItem mapItemForCurrentLocation();
+
+    @Generated
     @Owned
     @Selector("new")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object new_objc();
+
+    @Generated
+    @Selector("openMapsWithItems:launchOptions:")
+    public static native boolean openMapsWithItemsLaunchOptions(NSArray<? extends MKMapItem> mapItems,
+            NSDictionary<String, ?> launchOptions);
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -159,7 +159,7 @@ public class MKMapItem extends NSObject {
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")
@@ -207,18 +207,18 @@ public class MKMapItem extends NSObject {
     public native void setPhoneNumber(String value);
 
     @Generated
-    @Selector("setUrl:")
-    public native void setUrl(NSURL value);
-
-    @Generated
-    @Selector("url")
-    public native NSURL url();
-
-    @Generated
     @Selector("setTimeZone:")
     public native void setTimeZone(NSTimeZone value);
 
     @Generated
+    @Selector("setUrl:")
+    public native void setUrl(NSURL value);
+
+    @Generated
     @Selector("timeZone")
     public native NSTimeZone timeZone();
+
+    @Generated
+    @Selector("url")
+    public native NSURL url();
 }

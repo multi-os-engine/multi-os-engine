@@ -56,18 +56,13 @@ public class CKNotification extends NSObject {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native CKNotification alloc();
-
-    @Generated
-    @Selector("notificationFromRemoteNotificationDictionary:")
-    public static native CKNotification notificationFromRemoteNotificationDictionary(
-            NSDictionary<String, ? extends NSObject> notificationDictionary);
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -136,13 +131,18 @@ public class CKNotification extends NSObject {
 
     @Generated
     @Selector("load")
-    public static native void load_objc();
+    public static native void load_objc_static();
 
     @Generated
     @Owned
     @Selector("new")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object new_objc();
+
+    @Generated
+    @Selector("notificationFromRemoteNotificationDictionary:")
+    public static native CKNotification notificationFromRemoteNotificationDictionary(
+            NSDictionary<String, ? extends NSObject> notificationDictionary);
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -154,7 +154,7 @@ public class CKNotification extends NSObject {
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")
@@ -163,7 +163,7 @@ public class CKNotification extends NSObject {
     @Generated
     @Selector("version")
     @NInt
-    public static native long version();
+    public static native long version_static();
 
     @Generated
     @Selector("alertActionLocalizationKey")
@@ -190,6 +190,10 @@ public class CKNotification extends NSObject {
     public native NSNumber badge();
 
     @Generated
+    @Selector("category")
+    public native String category();
+
+    @Generated
     @Selector("containerIdentifier")
     public native String containerIdentifier();
 
@@ -213,10 +217,6 @@ public class CKNotification extends NSObject {
     @Generated
     @Selector("soundName")
     public native String soundName();
-
-    @Generated
-    @Selector("category")
-    public native String category();
 
     @Generated
     @Selector("subscriptionID")

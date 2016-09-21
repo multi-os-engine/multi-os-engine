@@ -55,22 +55,22 @@ public class CATransition extends CAAnimation {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native CATransition alloc();
 
     @Generated
-    @Selector("animation")
-    public static native CATransition animation();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
-
-    @Generated
     @Selector("allocWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object allocWithZone(VoidPtr zone);
+
+    @Generated
+    @Selector("animation")
+    public static native CATransition animation();
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -182,6 +182,10 @@ public class CATransition extends CAAnimation {
     public native CATransition init();
 
     @Generated
+    @Selector("initWithCoder:")
+    public native CATransition initWithCoder(NSCoder aDecoder);
+
+    @Generated
     @Selector("setEndProgress:")
     public native void setEndProgress(float value);
 
@@ -212,8 +216,4 @@ public class CATransition extends CAAnimation {
     @Generated
     @Selector("type")
     public native String type();
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native CATransition initWithCoder(NSCoder aDecoder);
 }

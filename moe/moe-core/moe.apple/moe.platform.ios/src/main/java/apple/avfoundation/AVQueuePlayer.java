@@ -55,25 +55,13 @@ public class AVQueuePlayer extends AVPlayer {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native AVQueuePlayer alloc();
-
-    @Generated
-    @Selector("playerWithPlayerItem:")
-    public static native AVQueuePlayer playerWithPlayerItem(AVPlayerItem item);
-
-    @Generated
-    @Selector("playerWithURL:")
-    public static native AVQueuePlayer playerWithURL(NSURL URL);
-
-    @Generated
-    @Selector("queuePlayerWithItems:")
-    public static native AVQueuePlayer queuePlayerWithItems(NSArray<? extends AVPlayerItem> items);
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -149,6 +137,18 @@ public class AVQueuePlayer extends AVPlayer {
     @Selector("new")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object new_objc();
+
+    @Generated
+    @Selector("playerWithPlayerItem:")
+    public static native AVQueuePlayer playerWithPlayerItem(AVPlayerItem item);
+
+    @Generated
+    @Selector("playerWithURL:")
+    public static native AVQueuePlayer playerWithURL(NSURL URL);
+
+    @Generated
+    @Selector("queuePlayerWithItems:")
+    public static native AVQueuePlayer queuePlayerWithItems(NSArray<? extends AVPlayerItem> items);
 
     @Generated
     @Selector("resolveClassMethod:")

@@ -54,13 +54,13 @@ public class NSEnergyFormatter extends NSFormatter {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native NSEnergyFormatter alloc();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -168,6 +168,10 @@ public class NSEnergyFormatter extends NSFormatter {
     public native NSEnergyFormatter init();
 
     @Generated
+    @Selector("initWithCoder:")
+    public native NSEnergyFormatter initWithCoder(NSCoder aDecoder);
+
+    @Generated
     @Selector("isForFoodEnergyUse")
     public native boolean isForFoodEnergyUse();
 
@@ -207,8 +211,4 @@ public class NSEnergyFormatter extends NSFormatter {
     @Selector("unitStyle")
     @NInt
     public native long unitStyle();
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native NSEnergyFormatter initWithCoder(NSCoder aDecoder);
 }

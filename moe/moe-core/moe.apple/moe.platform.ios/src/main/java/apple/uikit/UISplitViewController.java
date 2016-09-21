@@ -58,13 +58,13 @@ public class UISplitViewController extends UIViewController {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native UISplitViewController alloc();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -163,7 +163,7 @@ public class UISplitViewController extends UIViewController {
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")
@@ -191,6 +191,10 @@ public class UISplitViewController extends UIViewController {
     @Generated
     @Selector("init")
     public native UISplitViewController init();
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native UISplitViewController initWithCoder(NSCoder aDecoder);
 
     @Generated
     @Selector("initWithNibName:bundle:")
@@ -281,8 +285,4 @@ public class UISplitViewController extends UIViewController {
     @Generated
     @Selector("viewControllers")
     public native NSArray<? extends UIViewController> viewControllers();
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native UISplitViewController initWithCoder(NSCoder aDecoder);
 }

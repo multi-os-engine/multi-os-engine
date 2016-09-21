@@ -55,17 +55,13 @@ public class UIStoryboard extends NSObject {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native UIStoryboard alloc();
-
-    @Generated
-    @Selector("storyboardWithName:bundle:")
-    public static native UIStoryboard storyboardWithNameBundle(String name, NSBundle storyboardBundleOrNil);
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -153,6 +149,10 @@ public class UIStoryboard extends NSObject {
     @Generated
     @Selector("setVersion:")
     public static native void setVersion_static(@NInt long aVersion);
+
+    @Generated
+    @Selector("storyboardWithName:bundle:")
+    public static native UIStoryboard storyboardWithNameBundle(String name, NSBundle storyboardBundleOrNil);
 
     @Generated
     @Selector("superclass")

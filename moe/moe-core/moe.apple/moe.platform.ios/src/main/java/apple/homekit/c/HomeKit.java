@@ -90,6 +90,121 @@ public final class HomeKit {
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
+    public static native String HMServiceTypeAirQualitySensor();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String HMServiceTypeBattery();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String HMServiceTypeCarbonDioxideSensor();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String HMServiceTypeCarbonMonoxideSensor();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String HMServiceTypeContactSensor();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String HMServiceTypeDoor();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String HMServiceTypeDoorbell();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String HMServiceTypeHumiditySensor();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String HMServiceTypeLeakSensor();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String HMServiceTypeLightSensor();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String HMServiceTypeMotionSensor();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String HMServiceTypeOccupancySensor();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String HMServiceTypeSecuritySystem();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String HMServiceTypeStatefulProgrammableSwitch();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String HMServiceTypeStatelessProgrammableSwitch();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String HMServiceTypeSmokeSensor();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String HMServiceTypeTemperatureSensor();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String HMServiceTypeWindow();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String HMServiceTypeWindowCovering();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String HMServiceTypeCameraRTPStreamManagement();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String HMServiceTypeCameraControl();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String HMServiceTypeMicrophone();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String HMServiceTypeSpeaker();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
     public static native String HMCharacteristicPropertySupportsEventNotification();
 
     @Generated
@@ -101,6 +216,11 @@ public final class HomeKit {
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String HMCharacteristicPropertyWritable();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String HMCharacteristicPropertyHidden();
 
     @Generated
     @CVariable()
@@ -245,6 +365,11 @@ public final class HomeKit {
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
+    public static native String HMCharacteristicTypeSecuritySystemAlarmType();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
     public static native String HMCharacteristicTypeMotionDetected();
 
     @Generated
@@ -271,191 +396,6 @@ public final class HomeKit {
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String HMCharacteristicTypeLockManagementAutoSecureTimeout();
-
-    @Generated
-    @CVariable()
-    @MappedReturn(ObjCStringMapper.class)
-    public static native String HMCharacteristicMetadataFormatBool();
-
-    @Generated
-    @CVariable()
-    @MappedReturn(ObjCStringMapper.class)
-    public static native String HMCharacteristicMetadataFormatInt();
-
-    @Generated
-    @CVariable()
-    @MappedReturn(ObjCStringMapper.class)
-    public static native String HMCharacteristicMetadataFormatFloat();
-
-    @Generated
-    @CVariable()
-    @MappedReturn(ObjCStringMapper.class)
-    public static native String HMCharacteristicMetadataFormatString();
-
-    @Generated
-    @CVariable()
-    @MappedReturn(ObjCStringMapper.class)
-    public static native String HMCharacteristicMetadataFormatArray();
-
-    @Generated
-    @CVariable()
-    @MappedReturn(ObjCStringMapper.class)
-    public static native String HMCharacteristicMetadataFormatDictionary();
-
-    @Generated
-    @CVariable()
-    @MappedReturn(ObjCStringMapper.class)
-    public static native String HMCharacteristicMetadataFormatUInt8();
-
-    @Generated
-    @CVariable()
-    @MappedReturn(ObjCStringMapper.class)
-    public static native String HMCharacteristicMetadataFormatUInt16();
-
-    @Generated
-    @CVariable()
-    @MappedReturn(ObjCStringMapper.class)
-    public static native String HMCharacteristicMetadataFormatUInt32();
-
-    @Generated
-    @CVariable()
-    @MappedReturn(ObjCStringMapper.class)
-    public static native String HMCharacteristicMetadataFormatUInt64();
-
-    @Generated
-    @CVariable()
-    @MappedReturn(ObjCStringMapper.class)
-    public static native String HMCharacteristicMetadataFormatData();
-
-    @Generated
-    @CVariable()
-    @MappedReturn(ObjCStringMapper.class)
-    public static native String HMCharacteristicMetadataFormatTLV8();
-
-    @Generated
-    @CVariable()
-    @MappedReturn(ObjCStringMapper.class)
-    public static native String HMCharacteristicMetadataUnitsCelsius();
-
-    @Generated
-    @CVariable()
-    @MappedReturn(ObjCStringMapper.class)
-    public static native String HMCharacteristicMetadataUnitsFahrenheit();
-
-    @Generated
-    @CVariable()
-    @MappedReturn(ObjCStringMapper.class)
-    public static native String HMCharacteristicMetadataUnitsPercentage();
-
-    @Generated
-    @CVariable()
-    @MappedReturn(ObjCStringMapper.class)
-    public static native String HMCharacteristicMetadataUnitsArcDegree();
-
-    @Generated
-    @CVariable()
-    @MappedReturn(ObjCStringMapper.class)
-    public static native String HMCharacteristicMetadataUnitsSeconds();
-
-    @Generated
-    @CVariable()
-    @MappedReturn(ObjCStringMapper.class)
-    public static native String HMErrorDomain();
-
-    @Generated
-    @CVariable()
-    @MappedReturn(ObjCStringMapper.class)
-    public static native String HMServiceTypeAirQualitySensor();
-
-    @Generated
-    @CVariable()
-    @MappedReturn(ObjCStringMapper.class)
-    public static native String HMServiceTypeBattery();
-
-    @Generated
-    @CVariable()
-    @MappedReturn(ObjCStringMapper.class)
-    public static native String HMServiceTypeCarbonDioxideSensor();
-
-    @Generated
-    @CVariable()
-    @MappedReturn(ObjCStringMapper.class)
-    public static native String HMServiceTypeCarbonMonoxideSensor();
-
-    @Generated
-    @CVariable()
-    @MappedReturn(ObjCStringMapper.class)
-    public static native String HMServiceTypeContactSensor();
-
-    @Generated
-    @CVariable()
-    @MappedReturn(ObjCStringMapper.class)
-    public static native String HMServiceTypeDoor();
-
-    @Generated
-    @CVariable()
-    @MappedReturn(ObjCStringMapper.class)
-    public static native String HMServiceTypeHumiditySensor();
-
-    @Generated
-    @CVariable()
-    @MappedReturn(ObjCStringMapper.class)
-    public static native String HMServiceTypeLeakSensor();
-
-    @Generated
-    @CVariable()
-    @MappedReturn(ObjCStringMapper.class)
-    public static native String HMServiceTypeLightSensor();
-
-    @Generated
-    @CVariable()
-    @MappedReturn(ObjCStringMapper.class)
-    public static native String HMServiceTypeMotionSensor();
-
-    @Generated
-    @CVariable()
-    @MappedReturn(ObjCStringMapper.class)
-    public static native String HMServiceTypeOccupancySensor();
-
-    @Generated
-    @CVariable()
-    @MappedReturn(ObjCStringMapper.class)
-    public static native String HMServiceTypeSecuritySystem();
-
-    @Generated
-    @CVariable()
-    @MappedReturn(ObjCStringMapper.class)
-    public static native String HMServiceTypeStatefulProgrammableSwitch();
-
-    @Generated
-    @CVariable()
-    @MappedReturn(ObjCStringMapper.class)
-    public static native String HMServiceTypeStatelessProgrammableSwitch();
-
-    @Generated
-    @CVariable()
-    @MappedReturn(ObjCStringMapper.class)
-    public static native String HMServiceTypeSmokeSensor();
-
-    @Generated
-    @CVariable()
-    @MappedReturn(ObjCStringMapper.class)
-    public static native String HMServiceTypeTemperatureSensor();
-
-    @Generated
-    @CVariable()
-    @MappedReturn(ObjCStringMapper.class)
-    public static native String HMServiceTypeWindow();
-
-    @Generated
-    @CVariable()
-    @MappedReturn(ObjCStringMapper.class)
-    public static native String HMServiceTypeWindowCovering();
-
-    @Generated
-    @CVariable()
-    @MappedReturn(ObjCStringMapper.class)
-    public static native String HMCharacteristicTypeSecuritySystemAlarmType();
 
     @Generated
     @CVariable()
@@ -640,6 +580,171 @@ public final class HomeKit {
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
+    public static native String HMCharacteristicTypeStreamingStatus();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String HMCharacteristicTypeSetupStreamEndpoint();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String HMCharacteristicTypeSupportedVideoStreamConfiguration();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String HMCharacteristicTypeSupportedAudioStreamConfiguration();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String HMCharacteristicTypeSupportedRTPConfiguration();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String HMCharacteristicTypeSelectedStreamConfiguration();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String HMCharacteristicTypeVolume();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String HMCharacteristicTypeMute();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String HMCharacteristicTypeNightVision();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String HMCharacteristicTypeOpticalZoom();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String HMCharacteristicTypeDigitalZoom();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String HMCharacteristicTypeImageRotation();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String HMCharacteristicTypeImageMirroring();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String HMCharacteristicMetadataFormatBool();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String HMCharacteristicMetadataFormatInt();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String HMCharacteristicMetadataFormatFloat();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String HMCharacteristicMetadataFormatString();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String HMCharacteristicMetadataFormatArray();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String HMCharacteristicMetadataFormatDictionary();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String HMCharacteristicMetadataFormatUInt8();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String HMCharacteristicMetadataFormatUInt16();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String HMCharacteristicMetadataFormatUInt32();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String HMCharacteristicMetadataFormatUInt64();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String HMCharacteristicMetadataFormatData();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String HMCharacteristicMetadataFormatTLV8();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String HMCharacteristicMetadataUnitsCelsius();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String HMCharacteristicMetadataUnitsFahrenheit();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String HMCharacteristicMetadataUnitsPercentage();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String HMCharacteristicMetadataUnitsArcDegree();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String HMCharacteristicMetadataUnitsSeconds();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String HMCharacteristicMetadataUnitsLux();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String HMCharacteristicMetadataUnitsPartsPerMillion();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String HMCharacteristicMetadataUnitsMicrogramsPerCubicMeter();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
     public static native String HMActionSetTypeWakeUp();
 
     @Generated
@@ -661,6 +766,11 @@ public final class HomeKit {
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String HMActionSetTypeUserDefined();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String HMActionSetTypeTriggerOwned();
 
     @Generated
     @CVariable()
@@ -700,6 +810,11 @@ public final class HomeKit {
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
+    public static native String HMAccessoryCategoryTypeIPCamera();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
     public static native String HMAccessoryCategoryTypeLightbulb();
 
     @Generated
@@ -711,6 +826,11 @@ public final class HomeKit {
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String HMAccessoryCategoryTypeProgrammableSwitch();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String HMAccessoryCategoryTypeRangeExtender();
 
     @Generated
     @CVariable()
@@ -730,22 +850,17 @@ public final class HomeKit {
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
+    public static native String HMAccessoryCategoryTypeVideoDoorbell();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
     public static native String HMAccessoryCategoryTypeWindow();
 
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String HMAccessoryCategoryTypeWindowCovering();
-
-    @Generated
-    @CVariable()
-    @MappedReturn(ObjCStringMapper.class)
-    public static native String HMSignificantEventSunrise();
-
-    @Generated
-    @CVariable()
-    @MappedReturn(ObjCStringMapper.class)
-    public static native String HMSignificantEventSunset();
 
     @Generated
     @CVariable()
@@ -760,15 +875,15 @@ public final class HomeKit {
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
-    public static native String HMCharacteristicPropertyHidden();
+    public static native String HMErrorDomain();
 
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
-    public static native String HMCharacteristicMetadataUnitsLux();
+    public static native String HMSignificantEventSunrise();
 
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
-    public static native String HMAccessoryCategoryTypeRangeExtender();
+    public static native String HMSignificantEventSunset();
 }

@@ -65,19 +65,6 @@ public class PKPaymentButton extends UIButton {
     }
 
     @Generated
-    @Owned
-    @Selector("alloc")
-    public static native PKPaymentButton alloc();
-
-    @Generated
-    @Selector("buttonWithType:")
-    public static native PKPaymentButton buttonWithType(@NInt long buttonType);
-
-    @Generated
-    @Selector("buttonWithType:style:")
-    public static native PKPaymentButton buttonWithTypeStyle(@NInt long buttonType, @NInt long buttonStyle);
-
-    @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
 
@@ -86,6 +73,11 @@ public class PKPaymentButton extends UIButton {
     public static native void addKeyframeWithRelativeStartTimeRelativeDurationAnimations(double frameStartTime,
             double frameDuration,
             @ObjCBlock(name = "call_addKeyframeWithRelativeStartTimeRelativeDurationAnimations") UIView.Block_addKeyframeWithRelativeStartTimeRelativeDurationAnimations animations);
+
+    @Generated
+    @Owned
+    @Selector("alloc")
+    public static native PKPaymentButton alloc();
 
     @Generated
     @Selector("allocWithZone:")
@@ -172,6 +164,14 @@ public class PKPaymentButton extends UIButton {
     @Generated
     @Selector("beginAnimations:context:")
     public static native void beginAnimationsContext(String animationID, VoidPtr context);
+
+    @Generated
+    @Selector("buttonWithType:")
+    public static native PKPaymentButton buttonWithType(@NInt long buttonType);
+
+    @Generated
+    @Selector("buttonWithType:style:")
+    public static native PKPaymentButton buttonWithTypeStyle(@NInt long buttonType, @NInt long buttonStyle);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
@@ -354,25 +354,15 @@ public class PKPaymentButton extends UIButton {
     public static native long userInterfaceLayoutDirectionForSemanticContentAttribute(@NInt long attribute);
 
     @Generated
+    @Selector("userInterfaceLayoutDirectionForSemanticContentAttribute:relativeToLayoutDirection:")
+    @NInt
+    public static native long userInterfaceLayoutDirectionForSemanticContentAttributeRelativeToLayoutDirection(
+            @NInt long semanticContentAttribute, @NInt long layoutDirection);
+
+    @Generated
     @Selector("version")
     @NInt
     public static native long version_static();
-
-    @Generated
-    @Selector("init")
-    public native PKPaymentButton init();
-
-    @Generated
-    @Selector("initWithFrame:")
-    public native PKPaymentButton initWithFrame(@ByValue CGRect frame);
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native PKPaymentButton initWithCoder(NSCoder aDecoder);
-
-    @Generated
-    @Selector("initWithPaymentButtonType:paymentButtonStyle:")
-    public native PKPaymentButton initWithPaymentButtonTypePaymentButtonStyle(@NInt long type, @NInt long style);
 
     @Generated
     @ProtocolClassMethod("appearance")
@@ -419,4 +409,20 @@ public class PKPaymentButton extends UIButton {
     public Object _appearanceWhenContainedInInstancesOfClasses(NSArray<?> containerTypes) {
         return appearanceWhenContainedInInstancesOfClasses(containerTypes);
     }
+
+    @Generated
+    @Selector("init")
+    public native PKPaymentButton init();
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native PKPaymentButton initWithCoder(NSCoder aDecoder);
+
+    @Generated
+    @Selector("initWithFrame:")
+    public native PKPaymentButton initWithFrame(@ByValue CGRect frame);
+
+    @Generated
+    @Selector("initWithPaymentButtonType:paymentButtonStyle:")
+    public native PKPaymentButton initWithPaymentButtonTypePaymentButtonStyle(@NInt long type, @NInt long style);
 }

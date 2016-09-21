@@ -56,13 +56,13 @@ public class CKQueryOperation extends CKDatabaseOperation {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native CKQueryOperation alloc();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -149,7 +149,7 @@ public class CKQueryOperation extends CKDatabaseOperation {
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")
@@ -183,6 +183,16 @@ public class CKQueryOperation extends CKDatabaseOperation {
     @Generated
     @Selector("query")
     public native CKQuery query();
+
+    @Generated
+    @Selector("queryCompletionBlock")
+    @ObjCBlock(name = "call_queryCompletionBlock_ret")
+    public native Block_queryCompletionBlock_ret queryCompletionBlock();
+
+    @Generated
+    @Selector("recordFetchedBlock")
+    @ObjCBlock(name = "call_recordFetchedBlock_ret")
+    public native Block_recordFetchedBlock_ret recordFetchedBlock();
 
     @Generated
     @Selector("resultsLimit")
@@ -223,15 +233,19 @@ public class CKQueryOperation extends CKDatabaseOperation {
     @Selector("zoneID")
     public native CKRecordZoneID zoneID();
 
+    @Runtime(ObjCRuntime.class)
     @Generated
-    @Selector("queryCompletionBlock")
-    @ObjCBlock(name = "call_queryCompletionBlock_ret")
-    public native Block_queryCompletionBlock_ret queryCompletionBlock();
+    public interface Block_queryCompletionBlock_ret {
+        @Generated
+        void call_queryCompletionBlock_ret(CKQueryCursor arg0, NSError arg1);
+    }
 
+    @Runtime(ObjCRuntime.class)
     @Generated
-    @Selector("recordFetchedBlock")
-    @ObjCBlock(name = "call_recordFetchedBlock_ret")
-    public native Block_recordFetchedBlock_ret recordFetchedBlock();
+    public interface Block_recordFetchedBlock_ret {
+        @Generated
+        void call_recordFetchedBlock_ret(CKRecord arg0);
+    }
 
     @Runtime(ObjCRuntime.class)
     @Generated
@@ -245,19 +259,5 @@ public class CKQueryOperation extends CKDatabaseOperation {
     public interface Block_setRecordFetchedBlock {
         @Generated
         void call_setRecordFetchedBlock(CKRecord arg0);
-    }
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_queryCompletionBlock_ret {
-        @Generated
-        void call_queryCompletionBlock_ret(CKQueryCursor arg0, NSError arg1);
-    }
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_recordFetchedBlock_ret {
-        @Generated
-        void call_recordFetchedBlock_ret(CKRecord arg0);
     }
 }

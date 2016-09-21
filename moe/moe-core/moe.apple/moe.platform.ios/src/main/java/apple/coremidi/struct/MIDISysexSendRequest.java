@@ -26,7 +26,6 @@ import org.moe.natj.general.Pointer;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.general.ann.UncertainArgument;
-import org.moe.natj.general.ann.UncertainReturn;
 import org.moe.natj.general.ptr.ConstBytePtr;
 import org.moe.natj.general.ptr.VoidPtr;
 
@@ -59,7 +58,6 @@ public final class MIDISysexSendRequest extends StructObject {
 
     @Generated
     @StructureField(order = 1, isGetter = true)
-    @UncertainReturn("Options: java.string, c.const-byte-ptr Fallback: java.string")
     public native ConstBytePtr data();
 
     @Generated
@@ -91,6 +89,11 @@ public final class MIDISysexSendRequest extends StructObject {
     public native void setReserved(byte value, int field_idx);
 
     @Generated
+    @StructureField(order = 5, isGetter = true)
+    @FunctionPtr(name = "call_completionProc")
+    public native Function_completionProc completionProc();
+
+    @Generated
     @StructureField(order = 5, isGetter = false)
     public native void setCompletionProc(@FunctionPtr(name = "call_completionProc") Function_completionProc value);
 
@@ -101,11 +104,6 @@ public final class MIDISysexSendRequest extends StructObject {
     @Generated
     @StructureField(order = 6, isGetter = false)
     public native void setCompletionRefCon(VoidPtr value);
-
-    @Generated
-    @StructureField(order = 5, isGetter = true)
-    @FunctionPtr(name = "call_completionProc")
-    public native Function_completionProc completionProc();
 
     @Runtime(CRuntime.class)
     @Generated

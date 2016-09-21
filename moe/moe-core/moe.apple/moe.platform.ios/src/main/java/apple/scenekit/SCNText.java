@@ -62,31 +62,13 @@ public class SCNText extends SCNGeometry {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native SCNText alloc();
-
-    @Generated
-    @Selector("geometry")
-    public static native SCNText geometry();
-
-    @Generated
-    @Selector("geometryWithSources:elements:")
-    public static native SCNText geometryWithSourcesElements(NSArray<? extends SCNGeometrySource> sources,
-            NSArray<? extends SCNGeometryElement> elements);
-
-    @Generated
-    @Selector("textWithString:extrusionDepth:")
-    public static native SCNText textWithStringExtrusionDepth(@Mapped(ObjCObjectMapper.class) Object string,
-            @NFloat double extrusionDepth);
-
-    @Generated
-    @Selector("geometryWithMDLMesh:")
-    public static native SCNText geometryWithMDLMesh(MDLMesh mdlMesh);
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -122,6 +104,19 @@ public class SCNText extends SCNGeometry {
     @Generated
     @Selector("description")
     public static native String description_static();
+
+    @Generated
+    @Selector("geometry")
+    public static native SCNText geometry();
+
+    @Generated
+    @Selector("geometryWithMDLMesh:")
+    public static native SCNText geometryWithMDLMesh(MDLMesh mdlMesh);
+
+    @Generated
+    @Selector("geometryWithSources:elements:")
+    public static native SCNText geometryWithSourcesElements(NSArray<? extends SCNGeometrySource> sources,
+            NSArray<? extends SCNGeometryElement> elements);
 
     @Generated
     @Selector("hash")
@@ -184,6 +179,11 @@ public class SCNText extends SCNGeometry {
     public static native boolean supportsSecureCoding();
 
     @Generated
+    @Selector("textWithString:extrusionDepth:")
+    public static native SCNText textWithStringExtrusionDepth(@Mapped(ObjCObjectMapper.class) Object string,
+            @NFloat double extrusionDepth);
+
+    @Generated
     @Selector("version")
     @NInt
     public static native long version_static();
@@ -223,6 +223,10 @@ public class SCNText extends SCNGeometry {
     @Generated
     @Selector("init")
     public native SCNText init();
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native SCNText initWithCoder(NSCoder aDecoder);
 
     @Generated
     @Selector("isWrapped")
@@ -274,16 +278,12 @@ public class SCNText extends SCNGeometry {
     public native Object string();
 
     @Generated
-    @Selector("truncationMode")
-    public native String truncationMode();
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native SCNText initWithCoder(NSCoder aDecoder);
-
-    @Generated
     @ProtocolClassMethod("supportsSecureCoding")
     public boolean _supportsSecureCoding() {
         return supportsSecureCoding();
     }
+
+    @Generated
+    @Selector("truncationMode")
+    public native String truncationMode();
 }

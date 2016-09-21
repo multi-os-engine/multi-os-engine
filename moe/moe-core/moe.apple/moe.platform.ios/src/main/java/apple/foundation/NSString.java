@@ -79,18 +79,82 @@ public class NSString extends NSObject
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native NSString alloc();
+
+    @Generated
+    @Selector("allocWithZone:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object allocWithZone(VoidPtr zone);
+
+    @Generated
+    @Selector("automaticallyNotifiesObserversForKey:")
+    public static native boolean automaticallyNotifiesObserversForKey(String key);
 
     @Generated
     @Selector("availableStringEncodings")
     public static native ConstNUIntPtr availableStringEncodings();
 
     @Generated
+    @Selector("cancelPreviousPerformRequestsWithTarget:")
+    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+
+    @Generated
+    @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
+    public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
+            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
+            @Mapped(ObjCObjectMapper.class) Object anArgument);
+
+    @Generated
+    @Selector("classFallbacksForKeyedArchiver")
+    public static native NSArray<String> classFallbacksForKeyedArchiver();
+
+    @Generated
+    @Selector("classForKeyedUnarchiver")
+    public static native Class classForKeyedUnarchiver();
+
+    @Generated
+    @Selector("debugDescription")
+    public static native String debugDescription_static();
+
+    @Generated
     @Selector("defaultCStringEncoding")
     @NUInt
     public static native long defaultCStringEncoding();
+
+    @Generated
+    @Selector("initialize")
+    public static native void initialize();
+
+    @Generated
+    @Selector("instanceMethodForSelector:")
+    @FunctionPtr(name = "call_instanceMethodForSelector_ret")
+    public static native NSObject.Function_instanceMethodForSelector_ret instanceMethodForSelector(SEL aSelector);
+
+    @Generated
+    @Selector("instanceMethodSignatureForSelector:")
+    public static native NSMethodSignature instanceMethodSignatureForSelector(SEL aSelector);
+
+    @Generated
+    @Selector("instancesRespondToSelector:")
+    public static native boolean instancesRespondToSelector(SEL aSelector);
+
+    @Generated
+    @Selector("isSubclassOfClass:")
+    public static native boolean isSubclassOfClass(Class aClass);
+
+    @Generated
+    @Selector("keyPathsForValuesAffectingValueForKey:")
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+
+    @Generated
+    @Selector("load")
+    public static native void load_objc_static();
 
     @Generated
     @Selector("localizedNameOfStringEncoding:")
@@ -103,8 +167,30 @@ public class NSString extends NSObject
     public static native Object localizedStringWithFormat(String format, Object... varargs);
 
     @Generated
+    @Selector("localizedUserNotificationStringForKey:arguments:")
+    public static native String localizedUserNotificationStringForKeyArguments(String key, NSArray<?> arguments);
+
+    @Generated
+    @Owned
+    @Selector("new")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object new_objc();
+
+    @Generated
     @Selector("pathWithComponents:")
     public static native String pathWithComponents(NSArray<String> components);
+
+    @Generated
+    @Selector("resolveClassMethod:")
+    public static native boolean resolveClassMethod(SEL sel);
+
+    @Generated
+    @Selector("resolveInstanceMethod:")
+    public static native boolean resolveInstanceMethod(SEL sel);
+
+    @Generated
+    @Selector("setVersion:")
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("string")
@@ -176,99 +262,17 @@ public class NSString extends NSObject
     public static native NSString stringWithUTF8String(ConstBytePtr nullTerminatedCString);
 
     @Generated
-    @Selector("supportsSecureCoding")
-    public static native boolean supportsSecureCoding();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
-
-    @Generated
-    @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
-
-    @Generated
-    @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
-
-    @Generated
-    @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
-
-    @Generated
-    @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
-    public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
-
-    @Generated
-    @Selector("classFallbacksForKeyedArchiver")
-    public static native NSArray<String> classFallbacksForKeyedArchiver();
-
-    @Generated
-    @Selector("classForKeyedUnarchiver")
-    public static native Class classForKeyedUnarchiver();
-
-    @Generated
-    @Selector("debugDescription")
-    public static native String debugDescription_static();
-
-    @Generated
-    @Selector("initialize")
-    public static native void initialize();
-
-    @Generated
-    @Selector("instanceMethodForSelector:")
-    @FunctionPtr(name = "call_instanceMethodForSelector_ret")
-    public static native NSObject.Function_instanceMethodForSelector_ret instanceMethodForSelector(SEL aSelector);
-
-    @Generated
-    @Selector("instanceMethodSignatureForSelector:")
-    public static native NSMethodSignature instanceMethodSignatureForSelector(SEL aSelector);
-
-    @Generated
-    @Selector("instancesRespondToSelector:")
-    public static native boolean instancesRespondToSelector(SEL aSelector);
-
-    @Generated
-    @Selector("isSubclassOfClass:")
-    public static native boolean isSubclassOfClass(Class aClass);
-
-    @Generated
-    @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
-
-    @Generated
-    @Selector("load")
-    public static native void load_objc();
-
-    @Generated
-    @Owned
-    @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
-
-    @Generated
-    @Selector("resolveClassMethod:")
-    public static native boolean resolveClassMethod(SEL sel);
-
-    @Generated
-    @Selector("resolveInstanceMethod:")
-    public static native boolean resolveInstanceMethod(SEL sel);
-
-    @Generated
-    @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
-
-    @Generated
     @Selector("superclass")
     public static native Class superclass_static();
 
     @Generated
+    @Selector("supportsSecureCoding")
+    public static native boolean supportsSecureCoding();
+
+    @Generated
     @Selector("version")
     @NInt
-    public static native long version();
+    public static native long version_static();
 
     @Generated
     @Selector("UTF8String")
@@ -337,13 +341,13 @@ public class NSString extends NSObject
     @Generated
     @Selector("compare:options:range:")
     @NInt
-    public native long compareOptionsRange(String string, @NUInt long mask, @ByValue NSRange compareRange);
+    public native long compareOptionsRange(String string, @NUInt long mask, @ByValue NSRange rangeOfReceiverToCompare);
 
     @Generated
     @Selector("compare:options:range:locale:")
     @NInt
-    public native long compareOptionsRangeLocale(String string, @NUInt long mask, @ByValue NSRange compareRange,
-            @Mapped(ObjCObjectMapper.class) Object locale);
+    public native long compareOptionsRangeLocale(String string, @NUInt long mask,
+            @ByValue NSRange rangeOfReceiverToCompare, @Mapped(ObjCObjectMapper.class) Object locale);
 
     @Generated
     @Selector("completePathIntoString:caseSensitive:matchesIntoArray:filterTypes:")
@@ -695,6 +699,10 @@ public class NSString extends NSObject
             String tagScheme, @NUInt long opts, NSOrthography orthography, Ptr<NSArray<? extends NSValue>> tokenRanges);
 
     @Generated
+    @Selector("localizedCapitalizedString")
+    public native String localizedCapitalizedString();
+
+    @Generated
     @Selector("localizedCaseInsensitiveCompare:")
     @NInt
     public native long localizedCaseInsensitiveCompare(String string);
@@ -709,9 +717,26 @@ public class NSString extends NSObject
     public native long localizedCompare(String string);
 
     @Generated
+    @Selector("localizedLowercaseString")
+    public native String localizedLowercaseString();
+
+    @Generated
     @Selector("localizedStandardCompare:")
     @NInt
     public native long localizedStandardCompare(String string);
+
+    @Generated
+    @Selector("localizedStandardContainsString:")
+    public native boolean localizedStandardContainsString(String str);
+
+    @Generated
+    @Selector("localizedStandardRangeOfString:")
+    @ByValue
+    public native NSRange localizedStandardRangeOfString(String str);
+
+    @Generated
+    @Selector("localizedUppercaseString")
+    public native String localizedUppercaseString();
 
     @Generated
     @Selector("longLongValue")
@@ -784,7 +809,7 @@ public class NSString extends NSObject
     @Selector("rangeOfCharacterFromSet:options:range:")
     @ByValue
     public native NSRange rangeOfCharacterFromSetOptionsRange(NSCharacterSet searchSet, @NUInt long mask,
-            @ByValue NSRange searchRange);
+            @ByValue NSRange rangeOfReceiverToSearch);
 
     @Generated
     @Selector("rangeOfComposedCharacterSequenceAtIndex:")
@@ -810,13 +835,13 @@ public class NSString extends NSObject
     @Selector("rangeOfString:options:range:")
     @ByValue
     public native NSRange rangeOfStringOptionsRange(String searchString, @NUInt long mask,
-            @ByValue NSRange searchRange);
+            @ByValue NSRange rangeOfReceiverToSearch);
 
     @Generated
     @Selector("rangeOfString:options:range:locale:")
     @ByValue
     public native NSRange rangeOfStringOptionsRangeLocale(String searchString, @NUInt long mask,
-            @ByValue NSRange searchRange, NSLocale locale);
+            @ByValue NSRange rangeOfReceiverToSearch, NSLocale locale);
 
     @Generated
     @Selector("sizeWithAttributes:")
@@ -868,8 +893,8 @@ public class NSString extends NSObject
     @Selector("stringByAddingPercentEncodingWithAllowedCharacters:")
     public native String stringByAddingPercentEncodingWithAllowedCharacters(NSCharacterSet allowedCharacters);
 
-    @Deprecated
     @Generated
+    @Deprecated
     @Selector("stringByAddingPercentEscapesUsingEncoding:")
     public native String stringByAddingPercentEscapesUsingEncoding(@NUInt long enc);
 
@@ -889,6 +914,10 @@ public class NSString extends NSObject
     @Generated
     @Selector("stringByAppendingString:")
     public native String stringByAppendingString(String aString);
+
+    @Generated
+    @Selector("stringByApplyingTransform:reverse:")
+    public native String stringByApplyingTransformReverse(String transform, boolean reverse);
 
     @Generated
     @Selector("stringByDeletingLastPathComponent")
@@ -928,8 +957,8 @@ public class NSString extends NSObject
     public native String stringByReplacingOccurrencesOfStringWithStringOptionsRange(String target, String replacement,
             @NUInt long options, @ByValue NSRange searchRange);
 
-    @Deprecated
     @Generated
+    @Deprecated
     @Selector("stringByReplacingPercentEscapesUsingEncoding:")
     public native String stringByReplacingPercentEscapesUsingEncoding(@NUInt long enc);
 
@@ -976,6 +1005,10 @@ public class NSString extends NSObject
     public native String uppercaseStringWithLocale(NSLocale locale);
 
     @Generated
+    @Selector("variantFittingPresentationWidth:")
+    public native String variantFittingPresentationWidth(@NInt long width);
+
+    @Generated
     @Deprecated
     @Selector("writeToFile:atomically:")
     public native boolean writeToFileAtomically(String path, boolean useAuxiliaryFile);
@@ -994,35 +1027,6 @@ public class NSString extends NSObject
     @Selector("writeToURL:atomically:encoding:error:")
     public native boolean writeToURLAtomicallyEncodingError(NSURL url, boolean useAuxiliaryFile, @NUInt long enc,
             Ptr<NSError> error);
-
-    @Generated
-    @Selector("localizedCapitalizedString")
-    public native String localizedCapitalizedString();
-
-    @Generated
-    @Selector("localizedLowercaseString")
-    public native String localizedLowercaseString();
-
-    @Generated
-    @Selector("localizedStandardContainsString:")
-    public native boolean localizedStandardContainsString(String str);
-
-    @Generated
-    @Selector("localizedStandardRangeOfString:")
-    @ByValue
-    public native NSRange localizedStandardRangeOfString(String str);
-
-    @Generated
-    @Selector("localizedUppercaseString")
-    public native String localizedUppercaseString();
-
-    @Generated
-    @Selector("stringByApplyingTransform:reverse:")
-    public native String stringByApplyingTransformReverse(String transform, boolean reverse);
-
-    @Generated
-    @Selector("variantFittingPresentationWidth:")
-    public native String variantFittingPresentationWidth(@NInt long width);
 
     @Runtime(ObjCRuntime.class)
     @Generated

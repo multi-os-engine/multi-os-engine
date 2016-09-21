@@ -58,17 +58,13 @@ public class HKBiologicalSexObject extends NSObject implements NSCopying, NSSecu
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native HKBiologicalSexObject alloc();
-
-    @Generated
-    @Selector("supportsSecureCoding")
-    public static native boolean supportsSecureCoding();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -155,25 +151,25 @@ public class HKBiologicalSexObject extends NSObject implements NSCopying, NSSecu
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")
     public static native Class superclass_static();
 
     @Generated
+    @Selector("supportsSecureCoding")
+    public static native boolean supportsSecureCoding();
+
+    @Generated
     @Selector("version")
     @NInt
-    public static native long version();
+    public static native long version_static();
 
     @Generated
     @Selector("biologicalSex")
     @NInt
     public native long biologicalSex();
-
-    @Generated
-    @Selector("init")
-    public native HKBiologicalSexObject init();
 
     @Generated
     @Owned
@@ -184,6 +180,10 @@ public class HKBiologicalSexObject extends NSObject implements NSCopying, NSSecu
     @Generated
     @Selector("encodeWithCoder:")
     public native void encodeWithCoder(NSCoder aCoder);
+
+    @Generated
+    @Selector("init")
+    public native HKBiologicalSexObject init();
 
     @Generated
     @Selector("initWithCoder:")

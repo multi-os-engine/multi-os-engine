@@ -57,13 +57,13 @@ public class CKDiscoverUserInfosOperation extends CKOperation {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native CKDiscoverUserInfosOperation alloc();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -162,6 +162,11 @@ public class CKDiscoverUserInfosOperation extends CKOperation {
     public static native long version_static();
 
     @Generated
+    @Selector("discoverUserInfosCompletionBlock")
+    @ObjCBlock(name = "call_discoverUserInfosCompletionBlock_ret")
+    public native Block_discoverUserInfosCompletionBlock_ret discoverUserInfosCompletionBlock();
+
+    @Generated
     @Selector("emailAddresses")
     public native NSArray<String> emailAddresses();
 
@@ -191,24 +196,19 @@ public class CKDiscoverUserInfosOperation extends CKOperation {
     @Selector("userRecordIDs")
     public native NSArray<? extends CKRecordID> userRecordIDs();
 
+    @Runtime(ObjCRuntime.class)
     @Generated
-    @Selector("discoverUserInfosCompletionBlock")
-    @ObjCBlock(name = "call_discoverUserInfosCompletionBlock_ret")
-    public native Block_discoverUserInfosCompletionBlock_ret discoverUserInfosCompletionBlock();
+    public interface Block_discoverUserInfosCompletionBlock_ret {
+        @Generated
+        void call_discoverUserInfosCompletionBlock_ret(NSDictionary<String, ? extends CKDiscoveredUserInfo> arg0,
+                NSDictionary<? extends CKRecordID, ? extends CKDiscoveredUserInfo> arg1, NSError arg2);
+    }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_setDiscoverUserInfosCompletionBlock {
         @Generated
         void call_setDiscoverUserInfosCompletionBlock(NSDictionary<String, ? extends CKDiscoveredUserInfo> arg0,
-                NSDictionary<? extends CKRecordID, ? extends CKDiscoveredUserInfo> arg1, NSError arg2);
-    }
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_discoverUserInfosCompletionBlock_ret {
-        @Generated
-        void call_discoverUserInfosCompletionBlock_ret(NSDictionary<String, ? extends CKDiscoveredUserInfo> arg0,
                 NSDictionary<? extends CKRecordID, ? extends CKDiscoveredUserInfo> arg1, NSError arg2);
     }
 }

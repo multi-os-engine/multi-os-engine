@@ -55,13 +55,13 @@ public class SLComposeSheetConfigurationItem extends NSObject {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native SLComposeSheetConfigurationItem alloc();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -148,7 +148,7 @@ public class SLComposeSheetConfigurationItem extends NSObject {
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")
@@ -180,6 +180,11 @@ public class SLComposeSheetConfigurationItem extends NSObject {
     public native void setValuePending(boolean value);
 
     @Generated
+    @Selector("tapHandler")
+    @ObjCBlock(name = "call_tapHandler_ret")
+    public native Block_tapHandler_ret tapHandler();
+
+    @Generated
     @Selector("title")
     public native String title();
 
@@ -190,11 +195,6 @@ public class SLComposeSheetConfigurationItem extends NSObject {
     @Generated
     @Selector("valuePending")
     public native boolean valuePending();
-
-    @Generated
-    @Selector("tapHandler")
-    @ObjCBlock(name = "call_tapHandler_ret")
-    public native Block_tapHandler_ret tapHandler();
 
     @Runtime(ObjCRuntime.class)
     @Generated

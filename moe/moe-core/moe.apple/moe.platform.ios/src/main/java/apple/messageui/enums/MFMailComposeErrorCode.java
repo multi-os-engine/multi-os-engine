@@ -17,11 +17,12 @@ limitations under the License.
 package apple.messageui.enums;
 
 import org.moe.natj.general.ann.Generated;
+import org.moe.natj.general.ann.NInt;
 
 @Generated
 public final class MFMailComposeErrorCode {
-    @Generated public static final int SaveFailed = 0x00000000;
-    @Generated public static final int SendFailed = 0x00000001;
+    @Generated @NInt public static final long SaveFailed = 0x0000000000000000L;
+    @Generated @NInt public static final long SendFailed = 0x0000000000000001L;
 
     @Generated
     private MFMailComposeErrorCode() {

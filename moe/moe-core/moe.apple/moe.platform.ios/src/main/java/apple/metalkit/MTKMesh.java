@@ -60,20 +60,13 @@ public class MTKMesh extends NSObject {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native MTKMesh alloc();
-
-    @Generated
-    @Owned
-    @Selector("newMeshesFromAsset:device:sourceMeshes:error:")
-    public static native NSArray<? extends MTKMesh> newMeshesFromAssetDeviceSourceMeshesError(MDLAsset asset,
-            @Mapped(ObjCObjectMapper.class) MTLDevice device, Ptr<NSArray<? extends MDLMesh>> sourceMeshes,
-            Ptr<NSError> error);
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -149,6 +142,13 @@ public class MTKMesh extends NSObject {
     @Selector("new")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object new_objc();
+
+    @Generated
+    @Owned
+    @Selector("newMeshesFromAsset:device:sourceMeshes:error:")
+    public static native NSArray<? extends MTKMesh> newMeshesFromAssetDeviceSourceMeshesError(MDLAsset asset,
+            @Mapped(ObjCObjectMapper.class) MTLDevice device, Ptr<NSArray<? extends MDLMesh>> sourceMeshes,
+            Ptr<NSError> error);
 
     @Generated
     @Selector("resolveClassMethod:")

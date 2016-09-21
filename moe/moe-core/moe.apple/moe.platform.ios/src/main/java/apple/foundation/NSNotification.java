@@ -53,23 +53,13 @@ public class NSNotification extends NSObject implements NSCopying, NSCoding {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native NSNotification alloc();
-
-    @Generated
-    @Selector("notificationWithName:object:")
-    public static native NSNotification notificationWithNameObject(String aName,
-            @Mapped(ObjCObjectMapper.class) Object anObject);
-
-    @Generated
-    @Selector("notificationWithName:object:userInfo:")
-    public static native NSNotification notificationWithNameObjectUserInfo(String aName,
-            @Mapped(ObjCObjectMapper.class) Object anObject, NSDictionary<?, ?> aUserInfo);
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -145,6 +135,16 @@ public class NSNotification extends NSObject implements NSCopying, NSCoding {
     @Selector("new")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object new_objc();
+
+    @Generated
+    @Selector("notificationWithName:object:")
+    public static native NSNotification notificationWithNameObject(String aName,
+            @Mapped(ObjCObjectMapper.class) Object anObject);
+
+    @Generated
+    @Selector("notificationWithName:object:userInfo:")
+    public static native NSNotification notificationWithNameObjectUserInfo(String aName,
+            @Mapped(ObjCObjectMapper.class) Object anObject, NSDictionary<?, ?> aUserInfo);
 
     @Generated
     @Selector("resolveClassMethod:")

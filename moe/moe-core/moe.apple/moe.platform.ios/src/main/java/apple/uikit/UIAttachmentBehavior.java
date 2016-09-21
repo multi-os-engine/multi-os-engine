@@ -61,47 +61,13 @@ public class UIAttachmentBehavior extends UIDynamicBehavior {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native UIAttachmentBehavior alloc();
-
-    @Generated
-    @Selector("fixedAttachmentWithItem:attachedToItem:attachmentAnchor:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object fixedAttachmentWithItemAttachedToItemAttachmentAnchor(
-            @Mapped(ObjCObjectMapper.class) UIDynamicItem item1, @Mapped(ObjCObjectMapper.class) UIDynamicItem item2,
-            @ByValue CGPoint point);
-
-    @Generated
-    @Selector("limitAttachmentWithItem:offsetFromCenter:attachedToItem:offsetFromCenter:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object limitAttachmentWithItemOffsetFromCenterAttachedToItemOffsetFromCenter(
-            @Mapped(ObjCObjectMapper.class) UIDynamicItem item1, @ByValue UIOffset offset1,
-            @Mapped(ObjCObjectMapper.class) UIDynamicItem item2, @ByValue UIOffset offset2);
-
-    @Generated
-    @Selector("pinAttachmentWithItem:attachedToItem:attachmentAnchor:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object pinAttachmentWithItemAttachedToItemAttachmentAnchor(
-            @Mapped(ObjCObjectMapper.class) UIDynamicItem item1, @Mapped(ObjCObjectMapper.class) UIDynamicItem item2,
-            @ByValue CGPoint point);
-
-    @Generated
-    @Selector("slidingAttachmentWithItem:attachedToItem:attachmentAnchor:axisOfTranslation:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object slidingAttachmentWithItemAttachedToItemAttachmentAnchorAxisOfTranslation(
-            @Mapped(ObjCObjectMapper.class) UIDynamicItem item1, @Mapped(ObjCObjectMapper.class) UIDynamicItem item2,
-            @ByValue CGPoint point, @ByValue CGVector axis);
-
-    @Generated
-    @Selector("slidingAttachmentWithItem:attachmentAnchor:axisOfTranslation:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object slidingAttachmentWithItemAttachmentAnchorAxisOfTranslation(
-            @Mapped(ObjCObjectMapper.class) UIDynamicItem item, @ByValue CGPoint point, @ByValue CGVector axis);
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -139,6 +105,13 @@ public class UIAttachmentBehavior extends UIDynamicBehavior {
     public static native String description_static();
 
     @Generated
+    @Selector("fixedAttachmentWithItem:attachedToItem:attachmentAnchor:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object fixedAttachmentWithItemAttachedToItemAttachmentAnchor(
+            @Mapped(ObjCObjectMapper.class) UIDynamicItem item1, @Mapped(ObjCObjectMapper.class) UIDynamicItem item2,
+            @ByValue CGPoint point);
+
+    @Generated
     @Selector("hash")
     @NUInt
     public static native long hash_static();
@@ -169,6 +142,13 @@ public class UIAttachmentBehavior extends UIDynamicBehavior {
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
     @Generated
+    @Selector("limitAttachmentWithItem:offsetFromCenter:attachedToItem:offsetFromCenter:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object limitAttachmentWithItemOffsetFromCenterAttachedToItemOffsetFromCenter(
+            @Mapped(ObjCObjectMapper.class) UIDynamicItem item1, @ByValue UIOffset offset1,
+            @Mapped(ObjCObjectMapper.class) UIDynamicItem item2, @ByValue UIOffset offset2);
+
+    @Generated
     @Selector("load")
     public static native void load_objc_static();
 
@@ -177,6 +157,13 @@ public class UIAttachmentBehavior extends UIDynamicBehavior {
     @Selector("new")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object new_objc();
+
+    @Generated
+    @Selector("pinAttachmentWithItem:attachedToItem:attachmentAnchor:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object pinAttachmentWithItemAttachedToItemAttachmentAnchor(
+            @Mapped(ObjCObjectMapper.class) UIDynamicItem item1, @Mapped(ObjCObjectMapper.class) UIDynamicItem item2,
+            @ByValue CGPoint point);
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -188,7 +175,20 @@ public class UIAttachmentBehavior extends UIDynamicBehavior {
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
+
+    @Generated
+    @Selector("slidingAttachmentWithItem:attachedToItem:attachmentAnchor:axisOfTranslation:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object slidingAttachmentWithItemAttachedToItemAttachmentAnchorAxisOfTranslation(
+            @Mapped(ObjCObjectMapper.class) UIDynamicItem item1, @Mapped(ObjCObjectMapper.class) UIDynamicItem item2,
+            @ByValue CGPoint point, @ByValue CGVector axis);
+
+    @Generated
+    @Selector("slidingAttachmentWithItem:attachmentAnchor:axisOfTranslation:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object slidingAttachmentWithItemAttachmentAnchorAxisOfTranslation(
+            @Mapped(ObjCObjectMapper.class) UIDynamicItem item, @ByValue CGPoint point, @ByValue CGVector axis);
 
     @Generated
     @Selector("superclass")
@@ -210,6 +210,11 @@ public class UIAttachmentBehavior extends UIDynamicBehavior {
     public native long attachedBehaviorType();
 
     @Generated
+    @Selector("attachmentRange")
+    @ByValue
+    public native UIFloatRange attachmentRange();
+
+    @Generated
     @Selector("damping")
     @NFloat
     public native double damping();
@@ -218,6 +223,11 @@ public class UIAttachmentBehavior extends UIDynamicBehavior {
     @Selector("frequency")
     @NFloat
     public native double frequency();
+
+    @Generated
+    @Selector("frictionTorque")
+    @NFloat
+    public native double frictionTorque();
 
     @Generated
     @Selector("init")
@@ -258,6 +268,10 @@ public class UIAttachmentBehavior extends UIDynamicBehavior {
     public native void setAnchorPoint(@ByValue CGPoint value);
 
     @Generated
+    @Selector("setAttachmentRange:")
+    public native void setAttachmentRange(@ByValue UIFloatRange value);
+
+    @Generated
     @Selector("setDamping:")
     public native void setDamping(@NFloat double value);
 
@@ -266,24 +280,10 @@ public class UIAttachmentBehavior extends UIDynamicBehavior {
     public native void setFrequency(@NFloat double value);
 
     @Generated
-    @Selector("setLength:")
-    public native void setLength(@NFloat double value);
-
-    @Generated
-    @Selector("attachmentRange")
-    @ByValue
-    public native UIFloatRange attachmentRange();
-
-    @Generated
-    @Selector("frictionTorque")
-    @NFloat
-    public native double frictionTorque();
-
-    @Generated
-    @Selector("setAttachmentRange:")
-    public native void setAttachmentRange(@ByValue UIFloatRange value);
-
-    @Generated
     @Selector("setFrictionTorque:")
     public native void setFrictionTorque(@NFloat double value);
+
+    @Generated
+    @Selector("setLength:")
+    public native void setLength(@NFloat double value);
 }

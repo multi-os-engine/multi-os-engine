@@ -57,38 +57,13 @@ public class AVMediaSelectionGroup extends NSObject implements NSCopying {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native AVMediaSelectionGroup alloc();
-
-    @Generated
-    @Selector("mediaSelectionOptionsFromArray:filteredAndSortedAccordingToPreferredLanguages:")
-    public static native NSArray<? extends AVMediaSelectionOption> mediaSelectionOptionsFromArrayFilteredAndSortedAccordingToPreferredLanguages(
-            NSArray<? extends AVMediaSelectionOption> mediaSelectionOptions, NSArray<String> preferredLanguages);
-
-    @Generated
-    @Selector("mediaSelectionOptionsFromArray:withLocale:")
-    public static native NSArray<? extends AVMediaSelectionOption> mediaSelectionOptionsFromArrayWithLocale(
-            NSArray<? extends AVMediaSelectionOption> mediaSelectionOptions, NSLocale locale);
-
-    @Generated
-    @Selector("mediaSelectionOptionsFromArray:withMediaCharacteristics:")
-    public static native NSArray<? extends AVMediaSelectionOption> mediaSelectionOptionsFromArrayWithMediaCharacteristics(
-            NSArray<? extends AVMediaSelectionOption> mediaSelectionOptions, NSArray<String> mediaCharacteristics);
-
-    @Generated
-    @Selector("mediaSelectionOptionsFromArray:withoutMediaCharacteristics:")
-    public static native NSArray<? extends AVMediaSelectionOption> mediaSelectionOptionsFromArrayWithoutMediaCharacteristics(
-            NSArray<? extends AVMediaSelectionOption> mediaSelectionOptions, NSArray<String> mediaCharacteristics);
-
-    @Generated
-    @Selector("playableMediaSelectionOptionsFromArray:")
-    public static native NSArray<? extends AVMediaSelectionOption> playableMediaSelectionOptionsFromArray(
-            NSArray<? extends AVMediaSelectionOption> mediaSelectionOptions);
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -160,10 +135,35 @@ public class AVMediaSelectionGroup extends NSObject implements NSCopying {
     public static native void load_objc_static();
 
     @Generated
+    @Selector("mediaSelectionOptionsFromArray:filteredAndSortedAccordingToPreferredLanguages:")
+    public static native NSArray<? extends AVMediaSelectionOption> mediaSelectionOptionsFromArrayFilteredAndSortedAccordingToPreferredLanguages(
+            NSArray<? extends AVMediaSelectionOption> mediaSelectionOptions, NSArray<String> preferredLanguages);
+
+    @Generated
+    @Selector("mediaSelectionOptionsFromArray:withLocale:")
+    public static native NSArray<? extends AVMediaSelectionOption> mediaSelectionOptionsFromArrayWithLocale(
+            NSArray<? extends AVMediaSelectionOption> mediaSelectionOptions, NSLocale locale);
+
+    @Generated
+    @Selector("mediaSelectionOptionsFromArray:withMediaCharacteristics:")
+    public static native NSArray<? extends AVMediaSelectionOption> mediaSelectionOptionsFromArrayWithMediaCharacteristics(
+            NSArray<? extends AVMediaSelectionOption> mediaSelectionOptions, NSArray<String> mediaCharacteristics);
+
+    @Generated
+    @Selector("mediaSelectionOptionsFromArray:withoutMediaCharacteristics:")
+    public static native NSArray<? extends AVMediaSelectionOption> mediaSelectionOptionsFromArrayWithoutMediaCharacteristics(
+            NSArray<? extends AVMediaSelectionOption> mediaSelectionOptions, NSArray<String> mediaCharacteristics);
+
+    @Generated
     @Owned
     @Selector("new")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object new_objc();
+
+    @Generated
+    @Selector("playableMediaSelectionOptionsFromArray:")
+    public static native NSArray<? extends AVMediaSelectionOption> playableMediaSelectionOptionsFromArray(
+            NSArray<? extends AVMediaSelectionOption> mediaSelectionOptions);
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -175,7 +175,7 @@ public class AVMediaSelectionGroup extends NSObject implements NSCopying {
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")
@@ -205,6 +205,10 @@ public class AVMediaSelectionGroup extends NSObject implements NSCopying {
     public native AVMediaSelectionGroup init();
 
     @Generated
+    @Selector("makeNowPlayingInfoLanguageOptionGroup")
+    public native MPNowPlayingInfoLanguageOptionGroup makeNowPlayingInfoLanguageOptionGroup();
+
+    @Generated
     @Selector("mediaSelectionOptionWithPropertyList:")
     public native AVMediaSelectionOption mediaSelectionOptionWithPropertyList(
             @Mapped(ObjCObjectMapper.class) Object plist);
@@ -212,8 +216,4 @@ public class AVMediaSelectionGroup extends NSObject implements NSCopying {
     @Generated
     @Selector("options")
     public native NSArray<? extends AVMediaSelectionOption> options();
-
-    @Generated
-    @Selector("makeNowPlayingInfoLanguageOptionGroup")
-    public native MPNowPlayingInfoLanguageOptionGroup makeNowPlayingInfoLanguageOptionGroup();
 }

@@ -17,8 +17,8 @@ limitations under the License.
 package apple.avfoundation;
 
 import apple.NSObject;
-import apple.audiounit.opaque.AudioComponent;
-import apple.audiounit.struct.AudioComponentDescription;
+import apple.audiotoolbox.opaque.AudioComponent;
+import apple.audiotoolbox.struct.AudioComponentDescription;
 import apple.foundation.NSArray;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
@@ -57,13 +57,13 @@ public class AVAudioUnitComponent extends NSObject {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native AVAudioUnitComponent alloc();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")

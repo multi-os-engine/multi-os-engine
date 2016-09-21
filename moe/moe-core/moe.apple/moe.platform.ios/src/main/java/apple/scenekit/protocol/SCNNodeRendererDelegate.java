@@ -17,7 +17,6 @@ limitations under the License.
 package apple.scenekit.protocol;
 
 import apple.foundation.NSDictionary;
-import apple.foundation.NSValue;
 import apple.scenekit.SCNNode;
 import apple.scenekit.SCNRenderer;
 import org.moe.natj.general.ann.Generated;
@@ -36,8 +35,7 @@ public interface SCNNodeRendererDelegate {
     @Generated
     @IsOptional
     @Selector("renderNode:renderer:arguments:")
-    default void renderNodeRendererArguments(SCNNode node, SCNRenderer renderer,
-            NSDictionary<String, ? extends NSValue> arguments) {
+    default void renderNodeRendererArguments(SCNNode node, SCNRenderer renderer, NSDictionary<String, ?> arguments) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

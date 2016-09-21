@@ -55,17 +55,13 @@ public class EKEvent extends EKCalendarItem {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native EKEvent alloc();
-
-    @Generated
-    @Selector("eventWithEventStore:")
-    public static native EKEvent eventWithEventStore(EKEventStore eventStore);
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -101,6 +97,10 @@ public class EKEvent extends EKCalendarItem {
     @Generated
     @Selector("description")
     public static native String description_static();
+
+    @Generated
+    @Selector("eventWithEventStore:")
+    public static native EKEvent eventWithEventStore(EKEventStore eventStore);
 
     @Generated
     @Selector("hash")
@@ -163,13 +163,17 @@ public class EKEvent extends EKCalendarItem {
     @NInt
     public static native long version_static();
 
-    @NInt
     @Generated
     @Selector("availability")
+    @NInt
     public native long availability();
 
-    @Deprecated
     @Generated
+    @Selector("birthdayContactIdentifier")
+    public native String birthdayContactIdentifier();
+
+    @Generated
+    @Deprecated
     @Selector("birthdayPersonID")
     @NInt
     public native long birthdayPersonID();
@@ -204,6 +208,10 @@ public class EKEvent extends EKCalendarItem {
     public native boolean isDetached();
 
     @Generated
+    @Selector("occurrenceDate")
+    public native NSDate occurrenceDate();
+
+    @Generated
     @Selector("organizer")
     public native EKParticipant organizer();
 
@@ -224,25 +232,17 @@ public class EKEvent extends EKCalendarItem {
     public native void setStartDate(NSDate value);
 
     @Generated
+    @Selector("setStructuredLocation:")
+    public native void setStructuredLocation(EKStructuredLocation value);
+
+    @Generated
     @Selector("startDate")
     public native NSDate startDate();
 
-    @NInt
     @Generated
     @Selector("status")
+    @NInt
     public native long status();
-
-    @Generated
-    @Selector("birthdayContactIdentifier")
-    public native String birthdayContactIdentifier();
-
-    @Generated
-    @Selector("occurrenceDate")
-    public native NSDate occurrenceDate();
-
-    @Generated
-    @Selector("setStructuredLocation:")
-    public native void setStructuredLocation(EKStructuredLocation value);
 
     @Generated
     @Selector("structuredLocation")

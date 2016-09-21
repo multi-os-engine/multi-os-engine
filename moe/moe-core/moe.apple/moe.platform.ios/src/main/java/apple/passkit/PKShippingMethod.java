@@ -55,22 +55,13 @@ public class PKShippingMethod extends PKPaymentSummaryItem {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native PKShippingMethod alloc();
-
-    @Generated
-    @Selector("summaryItemWithLabel:amount:")
-    public static native PKShippingMethod summaryItemWithLabelAmount(String label, NSDecimalNumber amount);
-
-    @Generated
-    @Selector("summaryItemWithLabel:amount:type:")
-    public static native PKShippingMethod summaryItemWithLabelAmountType(String label, NSDecimalNumber amount,
-            @NUInt long type);
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -157,7 +148,16 @@ public class PKShippingMethod extends PKPaymentSummaryItem {
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
+
+    @Generated
+    @Selector("summaryItemWithLabel:amount:")
+    public static native PKShippingMethod summaryItemWithLabelAmount(String label, NSDecimalNumber amount);
+
+    @Generated
+    @Selector("summaryItemWithLabel:amount:type:")
+    public static native PKShippingMethod summaryItemWithLabelAmountType(String label, NSDecimalNumber amount,
+            @NUInt long type);
 
     @Generated
     @Selector("superclass")

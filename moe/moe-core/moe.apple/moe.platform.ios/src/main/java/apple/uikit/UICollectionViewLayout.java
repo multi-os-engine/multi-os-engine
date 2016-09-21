@@ -61,21 +61,13 @@ public class UICollectionViewLayout extends NSObject implements NSCoding {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native UICollectionViewLayout alloc();
-
-    @Generated
-    @Selector("invalidationContextClass")
-    public static native Class invalidationContextClass();
-
-    @Generated
-    @Selector("layoutAttributesClass")
-    public static native Class layoutAttributesClass();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -135,6 +127,10 @@ public class UICollectionViewLayout extends NSObject implements NSCoding {
     public static native boolean instancesRespondToSelector(SEL aSelector);
 
     @Generated
+    @Selector("invalidationContextClass")
+    public static native Class invalidationContextClass();
+
+    @Generated
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
@@ -143,8 +139,12 @@ public class UICollectionViewLayout extends NSObject implements NSCoding {
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
     @Generated
+    @Selector("layoutAttributesClass")
+    public static native Class layoutAttributesClass();
+
+    @Generated
     @Selector("load")
-    public static native void load_objc();
+    public static native void load_objc_static();
 
     @Generated
     @Owned
@@ -162,7 +162,7 @@ public class UICollectionViewLayout extends NSObject implements NSCoding {
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")
@@ -171,7 +171,7 @@ public class UICollectionViewLayout extends NSObject implements NSCoding {
     @Generated
     @Selector("version")
     @NInt
-    public static native long version();
+    public static native long version_static();
 
     @Generated
     @Selector("collectionView")
@@ -266,6 +266,18 @@ public class UICollectionViewLayout extends NSObject implements NSCoding {
             @ByValue CGRect newBounds);
 
     @Generated
+    @Selector("invalidationContextForEndingInteractiveMovementOfItemsToFinalIndexPaths:previousIndexPaths:movementCancelled:")
+    public native UICollectionViewLayoutInvalidationContext invalidationContextForEndingInteractiveMovementOfItemsToFinalIndexPathsPreviousIndexPathsMovementCancelled(
+            NSArray<? extends NSIndexPath> indexPaths, NSArray<? extends NSIndexPath> previousIndexPaths,
+            boolean movementCancelled);
+
+    @Generated
+    @Selector("invalidationContextForInteractivelyMovingItems:withTargetPosition:previousIndexPaths:previousPosition:")
+    public native UICollectionViewLayoutInvalidationContext invalidationContextForInteractivelyMovingItemsWithTargetPositionPreviousIndexPathsPreviousPosition(
+            NSArray<? extends NSIndexPath> targetIndexPaths, @ByValue CGPoint targetPosition,
+            NSArray<? extends NSIndexPath> previousIndexPaths, @ByValue CGPoint previousPosition);
+
+    @Generated
     @Selector("invalidationContextForPreferredLayoutAttributes:withOriginalAttributes:")
     public native UICollectionViewLayoutInvalidationContext invalidationContextForPreferredLayoutAttributesWithOriginalAttributes(
             UICollectionViewLayoutAttributes preferredAttributes, UICollectionViewLayoutAttributes originalAttributes);
@@ -279,6 +291,11 @@ public class UICollectionViewLayout extends NSObject implements NSCoding {
     @Selector("layoutAttributesForElementsInRect:")
     public native NSArray<? extends UICollectionViewLayoutAttributes> layoutAttributesForElementsInRect(
             @ByValue CGRect rect);
+
+    @Generated
+    @Selector("layoutAttributesForInteractivelyMovingItemAtIndexPath:withTargetPosition:")
+    public native UICollectionViewLayoutAttributes layoutAttributesForInteractivelyMovingItemAtIndexPathWithTargetPosition(
+            NSIndexPath indexPath, @ByValue CGPoint position);
 
     @Generated
     @Selector("layoutAttributesForItemAtIndexPath:")
@@ -336,23 +353,6 @@ public class UICollectionViewLayout extends NSObject implements NSCoding {
     @ByValue
     public native CGPoint targetContentOffsetForProposedContentOffsetWithScrollingVelocity(
             @ByValue CGPoint proposedContentOffset, @ByValue CGPoint velocity);
-
-    @Generated
-    @Selector("invalidationContextForEndingInteractiveMovementOfItemsToFinalIndexPaths:previousIndexPaths:movementCancelled:")
-    public native UICollectionViewLayoutInvalidationContext invalidationContextForEndingInteractiveMovementOfItemsToFinalIndexPathsPreviousIndexPathsMovementCancelled(
-            NSArray<? extends NSIndexPath> indexPaths, NSArray<? extends NSIndexPath> previousIndexPaths,
-            boolean movementCancelled);
-
-    @Generated
-    @Selector("invalidationContextForInteractivelyMovingItems:withTargetPosition:previousIndexPaths:previousPosition:")
-    public native UICollectionViewLayoutInvalidationContext invalidationContextForInteractivelyMovingItemsWithTargetPositionPreviousIndexPathsPreviousPosition(
-            NSArray<? extends NSIndexPath> targetIndexPaths, @ByValue CGPoint targetPosition,
-            NSArray<? extends NSIndexPath> previousIndexPaths, @ByValue CGPoint previousPosition);
-
-    @Generated
-    @Selector("layoutAttributesForInteractivelyMovingItemAtIndexPath:withTargetPosition:")
-    public native UICollectionViewLayoutAttributes layoutAttributesForInteractivelyMovingItemAtIndexPathWithTargetPosition(
-            NSIndexPath indexPath, @ByValue CGPoint position);
 
     @Generated
     @Selector("targetIndexPathForInteractivelyMovingItem:withPosition:")

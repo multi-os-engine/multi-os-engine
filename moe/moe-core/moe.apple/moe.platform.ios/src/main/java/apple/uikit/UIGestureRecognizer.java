@@ -58,13 +58,13 @@ public class UIGestureRecognizer extends NSObject {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native UIGestureRecognizer alloc();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -151,7 +151,7 @@ public class UIGestureRecognizer extends NSObject {
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")
@@ -160,11 +160,19 @@ public class UIGestureRecognizer extends NSObject {
     @Generated
     @Selector("version")
     @NInt
-    public static native long version();
+    public static native long version_static();
 
     @Generated
     @Selector("addTarget:action:")
     public native void addTargetAction(@Mapped(ObjCObjectMapper.class) Object target, SEL action);
+
+    @Generated
+    @Selector("allowedPressTypes")
+    public native NSArray<? extends NSNumber> allowedPressTypes();
+
+    @Generated
+    @Selector("allowedTouchTypes")
+    public native NSArray<? extends NSNumber> allowedTouchTypes();
 
     @Generated
     @Selector("cancelsTouchesInView")
@@ -223,6 +231,18 @@ public class UIGestureRecognizer extends NSObject {
     public native void requireGestureRecognizerToFail(UIGestureRecognizer otherGestureRecognizer);
 
     @Generated
+    @Selector("requiresExclusiveTouchType")
+    public native boolean requiresExclusiveTouchType();
+
+    @Generated
+    @Selector("setAllowedPressTypes:")
+    public native void setAllowedPressTypes(NSArray<? extends NSNumber> value);
+
+    @Generated
+    @Selector("setAllowedTouchTypes:")
+    public native void setAllowedTouchTypes(NSArray<? extends NSNumber> value);
+
+    @Generated
     @Selector("setCancelsTouchesInView:")
     public native void setCancelsTouchesInView(boolean value);
 
@@ -251,6 +271,10 @@ public class UIGestureRecognizer extends NSObject {
     }
 
     @Generated
+    @Selector("setRequiresExclusiveTouchType:")
+    public native void setRequiresExclusiveTouchType(boolean value);
+
+    @Generated
     @Selector("state")
     @NInt
     public native long state();
@@ -258,20 +282,4 @@ public class UIGestureRecognizer extends NSObject {
     @Generated
     @Selector("view")
     public native UIView view();
-
-    @Generated
-    @Selector("allowedPressTypes")
-    public native NSArray<? extends NSNumber> allowedPressTypes();
-
-    @Generated
-    @Selector("allowedTouchTypes")
-    public native NSArray<? extends NSNumber> allowedTouchTypes();
-
-    @Generated
-    @Selector("setAllowedPressTypes:")
-    public native void setAllowedPressTypes(NSArray<? extends NSNumber> value);
-
-    @Generated
-    @Selector("setAllowedTouchTypes:")
-    public native void setAllowedTouchTypes(NSArray<? extends NSNumber> value);
 }

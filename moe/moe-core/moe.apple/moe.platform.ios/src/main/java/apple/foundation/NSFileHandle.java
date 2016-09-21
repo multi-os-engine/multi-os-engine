@@ -55,9 +55,48 @@ public class NSFileHandle extends NSObject implements NSSecureCoding {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native NSFileHandle alloc();
+
+    @Generated
+    @Selector("allocWithZone:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object allocWithZone(VoidPtr zone);
+
+    @Generated
+    @Selector("automaticallyNotifiesObserversForKey:")
+    public static native boolean automaticallyNotifiesObserversForKey(String key);
+
+    @Generated
+    @Selector("cancelPreviousPerformRequestsWithTarget:")
+    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+
+    @Generated
+    @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
+    public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
+            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
+            @Mapped(ObjCObjectMapper.class) Object anArgument);
+
+    @Generated
+    @Selector("classFallbacksForKeyedArchiver")
+    public static native NSArray<String> classFallbacksForKeyedArchiver();
+
+    @Generated
+    @Selector("classForKeyedUnarchiver")
+    public static native Class classForKeyedUnarchiver();
+
+    @Generated
+    @Selector("debugDescription")
+    public static native String debugDescription_static();
+
+    @Generated
+    @Selector("description")
+    public static native String description_static();
 
     @Generated
     @Selector("fileHandleForReadingAtPath:")
@@ -98,49 +137,6 @@ public class NSFileHandle extends NSObject implements NSSecureCoding {
     @Generated
     @Selector("fileHandleWithStandardOutput")
     public static native NSFileHandle fileHandleWithStandardOutput();
-
-    @Generated
-    @Selector("supportsSecureCoding")
-    public static native boolean supportsSecureCoding();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
-
-    @Generated
-    @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
-
-    @Generated
-    @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
-
-    @Generated
-    @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
-
-    @Generated
-    @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
-    public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
-
-    @Generated
-    @Selector("classFallbacksForKeyedArchiver")
-    public static native NSArray<String> classFallbacksForKeyedArchiver();
-
-    @Generated
-    @Selector("classForKeyedUnarchiver")
-    public static native Class classForKeyedUnarchiver();
-
-    @Generated
-    @Selector("debugDescription")
-    public static native String debugDescription_static();
-
-    @Generated
-    @Selector("description")
-    public static native String description_static();
 
     @Generated
     @Selector("hash")
@@ -192,11 +188,15 @@ public class NSFileHandle extends NSObject implements NSSecureCoding {
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")
     public static native Class superclass_static();
+
+    @Generated
+    @Selector("supportsSecureCoding")
+    public static native boolean supportsSecureCoding();
 
     @Generated
     @Selector("version")
@@ -272,6 +272,11 @@ public class NSFileHandle extends NSObject implements NSSecureCoding {
     public native void readToEndOfFileInBackgroundAndNotifyForModes(NSArray<String> modes);
 
     @Generated
+    @Selector("readabilityHandler")
+    @ObjCBlock(name = "call_readabilityHandler_ret")
+    public native Block_readabilityHandler_ret readabilityHandler();
+
+    @Generated
     @Selector("seekToEndOfFile")
     public native long seekToEndOfFile();
 
@@ -316,14 +321,16 @@ public class NSFileHandle extends NSObject implements NSSecureCoding {
     public native void writeData(NSData data);
 
     @Generated
-    @Selector("readabilityHandler")
-    @ObjCBlock(name = "call_readabilityHandler_ret")
-    public native Block_readabilityHandler_ret readabilityHandler();
-
-    @Generated
     @Selector("writeabilityHandler")
     @ObjCBlock(name = "call_writeabilityHandler_ret")
     public native Block_writeabilityHandler_ret writeabilityHandler();
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_readabilityHandler_ret {
+        @Generated
+        void call_readabilityHandler_ret(NSFileHandle arg0);
+    }
 
     @Runtime(ObjCRuntime.class)
     @Generated
@@ -337,13 +344,6 @@ public class NSFileHandle extends NSObject implements NSSecureCoding {
     public interface Block_setWriteabilityHandler {
         @Generated
         void call_setWriteabilityHandler(NSFileHandle arg0);
-    }
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_readabilityHandler_ret {
-        @Generated
-        void call_readabilityHandler_ret(NSFileHandle arg0);
     }
 
     @Runtime(ObjCRuntime.class)

@@ -70,21 +70,13 @@ public final class IUnknownVTbl extends StructObject {
     public native void set_reserved(VoidPtr value);
 
     @Generated
-    @StructureField(order = 1, isGetter = false)
-    public native void setQueryInterface(@FunctionPtr(name = "call_QueryInterface") Function_QueryInterface value);
-
-    @Generated
-    @StructureField(order = 2, isGetter = false)
-    public native void setAddRef(@FunctionPtr(name = "call_AddRef") Function_AddRef value);
-
-    @Generated
-    @StructureField(order = 3, isGetter = false)
-    public native void setRelease(@FunctionPtr(name = "call_Release") Function_Release value);
-
-    @Generated
     @StructureField(order = 1, isGetter = true)
     @FunctionPtr(name = "call_QueryInterface")
     public native Function_QueryInterface QueryInterface();
+
+    @Generated
+    @StructureField(order = 1, isGetter = false)
+    public native void setQueryInterface(@FunctionPtr(name = "call_QueryInterface") Function_QueryInterface value);
 
     @Generated
     @StructureField(order = 2, isGetter = true)
@@ -92,9 +84,17 @@ public final class IUnknownVTbl extends StructObject {
     public native Function_AddRef AddRef();
 
     @Generated
+    @StructureField(order = 2, isGetter = false)
+    public native void setAddRef(@FunctionPtr(name = "call_AddRef") Function_AddRef value);
+
+    @Generated
     @StructureField(order = 3, isGetter = true)
     @FunctionPtr(name = "call_Release")
     public native Function_Release Release();
+
+    @Generated
+    @StructureField(order = 3, isGetter = false)
+    public native void setRelease(@FunctionPtr(name = "call_Release") Function_Release value);
 
     @Runtime(CRuntime.class)
     @Generated

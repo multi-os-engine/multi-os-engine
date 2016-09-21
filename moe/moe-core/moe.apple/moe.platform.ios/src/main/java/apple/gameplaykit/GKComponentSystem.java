@@ -57,13 +57,13 @@ public class GKComponentSystem<_ComponentType> extends NSObject implements NSFas
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native GKComponentSystem<?> alloc();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -168,6 +168,10 @@ public class GKComponentSystem<_ComponentType> extends NSObject implements NSFas
     @Generated
     @Selector("addComponentWithEntity:")
     public native void addComponentWithEntity(GKEntity entity);
+
+    @Generated
+    @Selector("classForGenericArgumentAtIndex:")
+    public native Class classForGenericArgumentAtIndex(@NUInt long index);
 
     @Generated
     @Selector("componentClass")

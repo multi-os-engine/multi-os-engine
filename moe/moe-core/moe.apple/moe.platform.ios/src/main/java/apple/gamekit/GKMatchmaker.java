@@ -56,17 +56,13 @@ public class GKMatchmaker extends NSObject {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native GKMatchmaker alloc();
-
-    @Generated
-    @Selector("sharedMatchmaker")
-    public static native GKMatchmaker sharedMatchmaker();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -153,7 +149,11 @@ public class GKMatchmaker extends NSObject {
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
+
+    @Generated
+    @Selector("sharedMatchmaker")
+    public static native GKMatchmaker sharedMatchmaker();
 
     @Generated
     @Selector("superclass")
@@ -207,6 +207,12 @@ public class GKMatchmaker extends NSObject {
     public native GKMatchmaker init();
 
     @Generated
+    @Deprecated
+    @Selector("inviteHandler")
+    @ObjCBlock(name = "call_inviteHandler_ret")
+    public native Block_inviteHandler_ret inviteHandler();
+
+    @Generated
     @Selector("matchForInvite:completionHandler:")
     public native void matchForInviteCompletionHandler(GKInvite invite,
             @ObjCBlock(name = "call_matchForInviteCompletionHandler") Block_matchForInviteCompletionHandler completionHandler);
@@ -241,12 +247,6 @@ public class GKMatchmaker extends NSObject {
     @Selector("stopBrowsingForNearbyPlayers")
     public native void stopBrowsingForNearbyPlayers();
 
-    @Generated
-    @Deprecated
-    @Selector("inviteHandler")
-    @ObjCBlock(name = "call_inviteHandler_ret")
-    public native Block_inviteHandler_ret inviteHandler();
-
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_addPlayersToMatchMatchRequestCompletionHandler {
@@ -273,6 +273,13 @@ public class GKMatchmaker extends NSObject {
     public interface Block_findPlayersForHostedRequestWithCompletionHandler {
         @Generated
         void call_findPlayersForHostedRequestWithCompletionHandler(NSArray<? extends GKPlayer> arg0, NSError arg1);
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_inviteHandler_ret {
+        @Generated
+        void call_inviteHandler_ret(GKInvite arg0, NSArray<?> arg1);
     }
 
     @Runtime(ObjCRuntime.class)
@@ -315,12 +322,5 @@ public class GKMatchmaker extends NSObject {
     public interface Block_startBrowsingForNearbyPlayersWithReachableHandler {
         @Generated
         void call_startBrowsingForNearbyPlayersWithReachableHandler(String arg0, boolean arg1);
-    }
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_inviteHandler_ret {
-        @Generated
-        void call_inviteHandler_ret(GKInvite arg0, NSArray<?> arg1);
     }
 }

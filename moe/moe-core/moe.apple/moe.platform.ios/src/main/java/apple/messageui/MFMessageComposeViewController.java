@@ -25,6 +25,7 @@ import apple.foundation.NSDictionary;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
 import apple.foundation.NSURL;
+import apple.messages.MSMessage;
 import apple.messageui.protocol.MFMessageComposeViewControllerDelegate;
 import apple.uikit.UINavigationController;
 import apple.uikit.UIViewController;
@@ -62,29 +63,13 @@ public class MFMessageComposeViewController extends UINavigationController {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native MFMessageComposeViewController alloc();
-
-    @Generated
-    @Selector("canSendAttachments")
-    public static native boolean canSendAttachments();
-
-    @Generated
-    @Selector("canSendSubject")
-    public static native boolean canSendSubject();
-
-    @Generated
-    @Selector("canSendText")
-    public static native boolean canSendText();
-
-    @Generated
-    @Selector("isSupportedAttachmentUTI:")
-    public static native boolean isSupportedAttachmentUTI(String uti);
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -98,6 +83,18 @@ public class MFMessageComposeViewController extends UINavigationController {
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
     public static native boolean automaticallyNotifiesObserversForKey(String key);
+
+    @Generated
+    @Selector("canSendAttachments")
+    public static native boolean canSendAttachments();
+
+    @Generated
+    @Selector("canSendSubject")
+    public static native boolean canSendSubject();
+
+    @Generated
+    @Selector("canSendText")
+    public static native boolean canSendText();
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
@@ -154,6 +151,10 @@ public class MFMessageComposeViewController extends UINavigationController {
     @Generated
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
+
+    @Generated
+    @Selector("isSupportedAttachmentUTI:")
+    public static native boolean isSupportedAttachmentUTI(String uti);
 
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
@@ -219,6 +220,10 @@ public class MFMessageComposeViewController extends UINavigationController {
     public native MFMessageComposeViewController init();
 
     @Generated
+    @Selector("initWithCoder:")
+    public native MFMessageComposeViewController initWithCoder(NSCoder aDecoder);
+
+    @Generated
     @Selector("initWithNavigationBarClass:toolbarClass:")
     public native MFMessageComposeViewController initWithNavigationBarClassToolbarClass(Class navigationBarClass,
             Class toolbarClass);
@@ -232,6 +237,10 @@ public class MFMessageComposeViewController extends UINavigationController {
     public native MFMessageComposeViewController initWithRootViewController(UIViewController rootViewController);
 
     @Generated
+    @Selector("message")
+    public native MSMessage message();
+
+    @Generated
     @Selector("messageComposeDelegate")
     @MappedReturn(ObjCObjectMapper.class)
     public native MFMessageComposeViewControllerDelegate messageComposeDelegate();
@@ -243,6 +252,10 @@ public class MFMessageComposeViewController extends UINavigationController {
     @Generated
     @Selector("setBody:")
     public native void setBody(String value);
+
+    @Generated
+    @Selector("setMessage:")
+    public native void setMessage(MSMessage value);
 
     @Generated
     @Selector("setMessageComposeDelegate:")
@@ -273,8 +286,4 @@ public class MFMessageComposeViewController extends UINavigationController {
     @Generated
     @Selector("subject")
     public native String subject();
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native MFMessageComposeViewController initWithCoder(NSCoder aDecoder);
 }

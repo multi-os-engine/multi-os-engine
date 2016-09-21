@@ -31,57 +31,57 @@ import org.moe.natj.objc.ann.Selector;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("UIAlertViewDelegate")
 public interface UIAlertViewDelegate {
-    @Deprecated
     @Generated
     @IsOptional
+    @Deprecated
     @Selector("alertView:clickedButtonAtIndex:")
     default void alertViewClickedButtonAtIndex(UIAlertView alertView, @NInt long buttonIndex) {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    @Deprecated
     @Generated
     @IsOptional
+    @Deprecated
     @Selector("alertView:didDismissWithButtonIndex:")
     default void alertViewDidDismissWithButtonIndex(UIAlertView alertView, @NInt long buttonIndex) {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    @Deprecated
     @Generated
     @IsOptional
+    @Deprecated
     @Selector("alertView:willDismissWithButtonIndex:")
     default void alertViewWillDismissWithButtonIndex(UIAlertView alertView, @NInt long buttonIndex) {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    @Deprecated
     @Generated
     @IsOptional
+    @Deprecated
     @Selector("alertViewCancel:")
     default void alertViewCancel(UIAlertView alertView) {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    @Deprecated
     @Generated
     @IsOptional
+    @Deprecated
     @Selector("alertViewShouldEnableFirstOtherButton:")
     default boolean alertViewShouldEnableFirstOtherButton(UIAlertView alertView) {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    @Deprecated
     @Generated
     @IsOptional
+    @Deprecated
     @Selector("didPresentAlertView:")
     default void didPresentAlertView(UIAlertView alertView) {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    @Deprecated
     @Generated
     @IsOptional
+    @Deprecated
     @Selector("willPresentAlertView:")
     default void willPresentAlertView(UIAlertView alertView) {
         throw new java.lang.UnsupportedOperationException();

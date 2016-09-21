@@ -42,6 +42,21 @@ public interface MTLTexture extends MTLResource {
     long arrayLength();
 
     @Generated
+    @Selector("buffer")
+    @MappedReturn(ObjCObjectMapper.class)
+    Object buffer();
+
+    @Generated
+    @Selector("bufferBytesPerRow")
+    @NUInt
+    long bufferBytesPerRow();
+
+    @Generated
+    @Selector("bufferOffset")
+    @NUInt
+    long bufferOffset();
+
+    @Generated
     @Selector("depth")
     @NUInt
     long depth();
@@ -76,6 +91,27 @@ public interface MTLTexture extends MTLResource {
     Object newTextureViewWithPixelFormat(@NUInt long pixelFormat);
 
     @Generated
+    @Selector("newTextureViewWithPixelFormat:textureType:levels:slices:")
+    @MappedReturn(ObjCObjectMapper.class)
+    Object newTextureViewWithPixelFormatTextureTypeLevelsSlices(@NUInt long pixelFormat, @NUInt long textureType,
+            @ByValue NSRange levelRange, @ByValue NSRange sliceRange);
+
+    @Generated
+    @Selector("parentRelativeLevel")
+    @NUInt
+    long parentRelativeLevel();
+
+    @Generated
+    @Selector("parentRelativeSlice")
+    @NUInt
+    long parentRelativeSlice();
+
+    @Generated
+    @Selector("parentTexture")
+    @MappedReturn(ObjCObjectMapper.class)
+    Object parentTexture();
+
+    @Generated
     @Selector("pixelFormat")
     @NUInt
     long pixelFormat();
@@ -106,48 +142,12 @@ public interface MTLTexture extends MTLResource {
     long textureType();
 
     @Generated
-    @Selector("width")
-    @NUInt
-    long width();
-
-    @Generated
-    @Selector("buffer")
-    @MappedReturn(ObjCObjectMapper.class)
-    Object buffer();
-
-    @Generated
-    @Selector("bufferBytesPerRow")
-    @NUInt
-    long bufferBytesPerRow();
-
-    @Generated
-    @Selector("bufferOffset")
-    @NUInt
-    long bufferOffset();
-
-    @Generated
-    @Selector("newTextureViewWithPixelFormat:textureType:levels:slices:")
-    @MappedReturn(ObjCObjectMapper.class)
-    Object newTextureViewWithPixelFormatTextureTypeLevelsSlices(@NUInt long pixelFormat, @NUInt long textureType,
-            @ByValue NSRange levelRange, @ByValue NSRange sliceRange);
-
-    @Generated
-    @Selector("parentRelativeLevel")
-    @NUInt
-    long parentRelativeLevel();
-
-    @Generated
-    @Selector("parentRelativeSlice")
-    @NUInt
-    long parentRelativeSlice();
-
-    @Generated
-    @Selector("parentTexture")
-    @MappedReturn(ObjCObjectMapper.class)
-    Object parentTexture();
-
-    @Generated
     @Selector("usage")
     @NUInt
     long usage();
+
+    @Generated
+    @Selector("width")
+    @NUInt
+    long width();
 }

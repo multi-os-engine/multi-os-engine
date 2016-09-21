@@ -56,13 +56,13 @@ public class CKDatabase extends NSObject {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native CKDatabase alloc();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -163,6 +163,11 @@ public class CKDatabase extends NSObject {
     @Generated
     @Selector("addOperation:")
     public native void addOperation(CKDatabaseOperation operation);
+
+    @Generated
+    @Selector("databaseScope")
+    @NInt
+    public native long databaseScope();
 
     @Generated
     @Selector("deleteRecordWithID:completionHandler:")

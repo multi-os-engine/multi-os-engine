@@ -57,33 +57,13 @@ public class CMPedometer extends NSObject {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native CMPedometer alloc();
-
-    @Generated
-    @Selector("isDistanceAvailable")
-    public static native boolean isDistanceAvailable();
-
-    @Generated
-    @Selector("isFloorCountingAvailable")
-    public static native boolean isFloorCountingAvailable();
-
-    @Generated
-    @Selector("isStepCountingAvailable")
-    public static native boolean isStepCountingAvailable();
-
-    @Generated
-    @Selector("isCadenceAvailable")
-    public static native boolean isCadenceAvailable();
-
-    @Generated
-    @Selector("isPaceAvailable")
-    public static native boolean isPaceAvailable();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -143,6 +123,30 @@ public class CMPedometer extends NSObject {
     public static native boolean instancesRespondToSelector(SEL aSelector);
 
     @Generated
+    @Selector("isCadenceAvailable")
+    public static native boolean isCadenceAvailable();
+
+    @Generated
+    @Selector("isDistanceAvailable")
+    public static native boolean isDistanceAvailable();
+
+    @Generated
+    @Selector("isFloorCountingAvailable")
+    public static native boolean isFloorCountingAvailable();
+
+    @Generated
+    @Selector("isPaceAvailable")
+    public static native boolean isPaceAvailable();
+
+    @Generated
+    @Selector("isPedometerEventTrackingAvailable")
+    public static native boolean isPedometerEventTrackingAvailable();
+
+    @Generated
+    @Selector("isStepCountingAvailable")
+    public static native boolean isStepCountingAvailable();
+
+    @Generated
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
@@ -152,7 +156,7 @@ public class CMPedometer extends NSObject {
 
     @Generated
     @Selector("load")
-    public static native void load_objc();
+    public static native void load_objc_static();
 
     @Generated
     @Owned
@@ -170,7 +174,7 @@ public class CMPedometer extends NSObject {
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")
@@ -179,7 +183,7 @@ public class CMPedometer extends NSObject {
     @Generated
     @Selector("version")
     @NInt
-    public static native long version();
+    public static native long version_static();
 
     @Generated
     @Selector("init")
@@ -191,9 +195,18 @@ public class CMPedometer extends NSObject {
             @ObjCBlock(name = "call_queryPedometerDataFromDateToDateWithHandler") Block_queryPedometerDataFromDateToDateWithHandler handler);
 
     @Generated
+    @Selector("startPedometerEventUpdatesWithHandler:")
+    public native void startPedometerEventUpdatesWithHandler(
+            @ObjCBlock(name = "call_startPedometerEventUpdatesWithHandler") Block_startPedometerEventUpdatesWithHandler handler);
+
+    @Generated
     @Selector("startPedometerUpdatesFromDate:withHandler:")
     public native void startPedometerUpdatesFromDateWithHandler(NSDate start,
             @ObjCBlock(name = "call_startPedometerUpdatesFromDateWithHandler") Block_startPedometerUpdatesFromDateWithHandler handler);
+
+    @Generated
+    @Selector("stopPedometerEventUpdates")
+    public native void stopPedometerEventUpdates();
 
     @Generated
     @Selector("stopPedometerUpdates")
@@ -204,6 +217,13 @@ public class CMPedometer extends NSObject {
     public interface Block_queryPedometerDataFromDateToDateWithHandler {
         @Generated
         void call_queryPedometerDataFromDateToDateWithHandler(CMPedometerData arg0, NSError arg1);
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_startPedometerEventUpdatesWithHandler {
+        @Generated
+        void call_startPedometerEventUpdatesWithHandler(CMPedometerEvent arg0, NSError arg1);
     }
 
     @Runtime(ObjCRuntime.class)

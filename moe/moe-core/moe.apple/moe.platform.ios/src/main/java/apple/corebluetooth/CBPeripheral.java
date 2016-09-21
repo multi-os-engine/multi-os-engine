@@ -57,13 +57,13 @@ public class CBPeripheral extends CBPeer {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native CBPeripheral alloc();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -150,7 +150,7 @@ public class CBPeripheral extends CBPeer {
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")
@@ -192,6 +192,11 @@ public class CBPeripheral extends CBPeer {
     @Generated
     @Selector("init")
     public native CBPeripheral init();
+
+    @Generated
+    @Selector("maximumWriteValueLengthForType:")
+    @NUInt
+    public native long maximumWriteValueLengthForType(@NInt long type);
 
     @Generated
     @Selector("name")
@@ -245,9 +250,4 @@ public class CBPeripheral extends CBPeer {
     @Generated
     @Selector("writeValue:forDescriptor:")
     public native void writeValueForDescriptor(NSData data, CBDescriptor descriptor);
-
-    @Generated
-    @Selector("maximumWriteValueLengthForType:")
-    @NUInt
-    public native long maximumWriteValueLengthForType(@NInt long type);
 }

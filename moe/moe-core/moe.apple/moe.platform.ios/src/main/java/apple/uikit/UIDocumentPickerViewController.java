@@ -58,13 +58,13 @@ public class UIDocumentPickerViewController extends UIViewController {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native UIDocumentPickerViewController alloc();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -163,7 +163,7 @@ public class UIDocumentPickerViewController extends UIViewController {
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")
@@ -187,6 +187,10 @@ public class UIDocumentPickerViewController extends UIViewController {
     @Generated
     @Selector("init")
     public native UIDocumentPickerViewController init();
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native UIDocumentPickerViewController initWithCoder(NSCoder aDecoder);
 
     @Generated
     @Selector("initWithDocumentTypes:inMode:")
@@ -216,8 +220,4 @@ public class UIDocumentPickerViewController extends UIViewController {
             org.moe.natj.objc.ObjCRuntime.dissociateObjCObject(this, __old);
         }
     }
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native UIDocumentPickerViewController initWithCoder(NSCoder aDecoder);
 }

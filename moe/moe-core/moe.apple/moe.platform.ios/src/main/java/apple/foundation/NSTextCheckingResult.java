@@ -57,6 +57,10 @@ public class NSTextCheckingResult extends NSObject implements NSCopying, NSSecur
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Selector("addressCheckingResultWithRange:components:")
     public static native NSTextCheckingResult addressCheckingResultWithRangeComponents(@ByValue NSRange range,
             NSDictionary<String, String> components);
@@ -65,81 +69,6 @@ public class NSTextCheckingResult extends NSObject implements NSCopying, NSSecur
     @Owned
     @Selector("alloc")
     public static native NSTextCheckingResult alloc();
-
-    @Generated
-    @Selector("correctionCheckingResultWithRange:replacementString:")
-    public static native NSTextCheckingResult correctionCheckingResultWithRangeReplacementString(@ByValue NSRange range,
-            String replacementString);
-
-    @Generated
-    @Selector("correctionCheckingResultWithRange:replacementString:alternativeStrings:")
-    public static native NSTextCheckingResult correctionCheckingResultWithRangeReplacementStringAlternativeStrings(
-            @ByValue NSRange range, String replacementString, NSArray<String> alternativeStrings);
-
-    @Generated
-    @Selector("dashCheckingResultWithRange:replacementString:")
-    public static native NSTextCheckingResult dashCheckingResultWithRangeReplacementString(@ByValue NSRange range,
-            String replacementString);
-
-    @Generated
-    @Selector("dateCheckingResultWithRange:date:")
-    public static native NSTextCheckingResult dateCheckingResultWithRangeDate(@ByValue NSRange range, NSDate date);
-
-    @Generated
-    @Selector("dateCheckingResultWithRange:date:timeZone:duration:")
-    public static native NSTextCheckingResult dateCheckingResultWithRangeDateTimeZoneDuration(@ByValue NSRange range,
-            NSDate date, NSTimeZone timeZone, double duration);
-
-    @Generated
-    @Selector("grammarCheckingResultWithRange:details:")
-    public static native NSTextCheckingResult grammarCheckingResultWithRangeDetails(@ByValue NSRange range,
-            NSArray<String> details);
-
-    @Generated
-    @Selector("linkCheckingResultWithRange:URL:")
-    public static native NSTextCheckingResult linkCheckingResultWithRangeURL(@ByValue NSRange range, NSURL url);
-
-    @Generated
-    @Selector("orthographyCheckingResultWithRange:orthography:")
-    public static native NSTextCheckingResult orthographyCheckingResultWithRangeOrthography(@ByValue NSRange range,
-            NSOrthography orthography);
-
-    @Generated
-    @Selector("phoneNumberCheckingResultWithRange:phoneNumber:")
-    public static native NSTextCheckingResult phoneNumberCheckingResultWithRangePhoneNumber(@ByValue NSRange range,
-            String phoneNumber);
-
-    @Generated
-    @Selector("quoteCheckingResultWithRange:replacementString:")
-    public static native NSTextCheckingResult quoteCheckingResultWithRangeReplacementString(@ByValue NSRange range,
-            String replacementString);
-
-    @Generated
-    @Selector("regularExpressionCheckingResultWithRanges:count:regularExpression:")
-    public static native NSTextCheckingResult regularExpressionCheckingResultWithRangesCountRegularExpression(
-            Ptr<NSRange> ranges, @NUInt long count, NSRegularExpression regularExpression);
-
-    @Generated
-    @Selector("replacementCheckingResultWithRange:replacementString:")
-    public static native NSTextCheckingResult replacementCheckingResultWithRangeReplacementString(
-            @ByValue NSRange range, String replacementString);
-
-    @Generated
-    @Selector("spellCheckingResultWithRange:")
-    public static native NSTextCheckingResult spellCheckingResultWithRange(@ByValue NSRange range);
-
-    @Generated
-    @Selector("transitInformationCheckingResultWithRange:components:")
-    public static native NSTextCheckingResult transitInformationCheckingResultWithRangeComponents(
-            @ByValue NSRange range, NSDictionary<String, String> components);
-
-    @Generated
-    @Selector("supportsSecureCoding")
-    public static native boolean supportsSecureCoding();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -169,12 +98,41 @@ public class NSTextCheckingResult extends NSObject implements NSCopying, NSSecur
     public static native Class classForKeyedUnarchiver();
 
     @Generated
+    @Selector("correctionCheckingResultWithRange:replacementString:")
+    public static native NSTextCheckingResult correctionCheckingResultWithRangeReplacementString(@ByValue NSRange range,
+            String replacementString);
+
+    @Generated
+    @Selector("correctionCheckingResultWithRange:replacementString:alternativeStrings:")
+    public static native NSTextCheckingResult correctionCheckingResultWithRangeReplacementStringAlternativeStrings(
+            @ByValue NSRange range, String replacementString, NSArray<String> alternativeStrings);
+
+    @Generated
+    @Selector("dashCheckingResultWithRange:replacementString:")
+    public static native NSTextCheckingResult dashCheckingResultWithRangeReplacementString(@ByValue NSRange range,
+            String replacementString);
+
+    @Generated
+    @Selector("dateCheckingResultWithRange:date:")
+    public static native NSTextCheckingResult dateCheckingResultWithRangeDate(@ByValue NSRange range, NSDate date);
+
+    @Generated
+    @Selector("dateCheckingResultWithRange:date:timeZone:duration:")
+    public static native NSTextCheckingResult dateCheckingResultWithRangeDateTimeZoneDuration(@ByValue NSRange range,
+            NSDate date, NSTimeZone timeZone, double duration);
+
+    @Generated
     @Selector("debugDescription")
     public static native String debugDescription_static();
 
     @Generated
     @Selector("description")
     public static native String description_static();
+
+    @Generated
+    @Selector("grammarCheckingResultWithRange:details:")
+    public static native NSTextCheckingResult grammarCheckingResultWithRangeDetails(@ByValue NSRange range,
+            NSArray<? extends NSDictionary<String, ?>> details);
 
     @Generated
     @Selector("hash")
@@ -207,6 +165,10 @@ public class NSTextCheckingResult extends NSObject implements NSCopying, NSSecur
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
     @Generated
+    @Selector("linkCheckingResultWithRange:URL:")
+    public static native NSTextCheckingResult linkCheckingResultWithRangeURL(@ByValue NSRange range, NSURL url);
+
+    @Generated
     @Selector("load")
     public static native void load_objc_static();
 
@@ -215,6 +177,31 @@ public class NSTextCheckingResult extends NSObject implements NSCopying, NSSecur
     @Selector("new")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object new_objc();
+
+    @Generated
+    @Selector("orthographyCheckingResultWithRange:orthography:")
+    public static native NSTextCheckingResult orthographyCheckingResultWithRangeOrthography(@ByValue NSRange range,
+            NSOrthography orthography);
+
+    @Generated
+    @Selector("phoneNumberCheckingResultWithRange:phoneNumber:")
+    public static native NSTextCheckingResult phoneNumberCheckingResultWithRangePhoneNumber(@ByValue NSRange range,
+            String phoneNumber);
+
+    @Generated
+    @Selector("quoteCheckingResultWithRange:replacementString:")
+    public static native NSTextCheckingResult quoteCheckingResultWithRangeReplacementString(@ByValue NSRange range,
+            String replacementString);
+
+    @Generated
+    @Selector("regularExpressionCheckingResultWithRanges:count:regularExpression:")
+    public static native NSTextCheckingResult regularExpressionCheckingResultWithRangesCountRegularExpression(
+            Ptr<NSRange> ranges, @NUInt long count, NSRegularExpression regularExpression);
+
+    @Generated
+    @Selector("replacementCheckingResultWithRange:replacementString:")
+    public static native NSTextCheckingResult replacementCheckingResultWithRangeReplacementString(
+            @ByValue NSRange range, String replacementString);
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -229,8 +216,21 @@ public class NSTextCheckingResult extends NSObject implements NSCopying, NSSecur
     public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
+    @Selector("spellCheckingResultWithRange:")
+    public static native NSTextCheckingResult spellCheckingResultWithRange(@ByValue NSRange range);
+
+    @Generated
     @Selector("superclass")
     public static native Class superclass_static();
+
+    @Generated
+    @Selector("supportsSecureCoding")
+    public static native boolean supportsSecureCoding();
+
+    @Generated
+    @Selector("transitInformationCheckingResultWithRange:components:")
+    public static native NSTextCheckingResult transitInformationCheckingResultWithRangeComponents(
+            @ByValue NSRange range, NSDictionary<String, String> components);
 
     @Generated
     @Selector("version")
@@ -273,7 +273,7 @@ public class NSTextCheckingResult extends NSObject implements NSCopying, NSSecur
 
     @Generated
     @Selector("grammarDetails")
-    public native NSArray<String> grammarDetails();
+    public native NSArray<? extends NSDictionary<String, ?>> grammarDetails();
 
     @Generated
     @Selector("init")
@@ -323,12 +323,12 @@ public class NSTextCheckingResult extends NSObject implements NSCopying, NSSecur
     public native long resultType();
 
     @Generated
-    @Selector("timeZone")
-    public native NSTimeZone timeZone();
-
-    @Generated
     @ProtocolClassMethod("supportsSecureCoding")
     public boolean _supportsSecureCoding() {
         return supportsSecureCoding();
     }
+
+    @Generated
+    @Selector("timeZone")
+    public native NSTimeZone timeZone();
 }

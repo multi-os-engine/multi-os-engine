@@ -31,9 +31,9 @@ import org.moe.natj.objc.map.ObjCStringMapper;
 @Library("Photos")
 @Runtime(CRuntime.class)
 public final class Photos {
+    @Generated public static final int PHLivePhotoRequestIDInvalid = 0x00000000;
     @Generated public static final int PHInvalidImageRequestID = 0x00000000;
     @Generated public static final int PHInvalidAssetResourceDataRequestID = 0x00000000;
-    @Generated public static final int PHLivePhotoRequestIDInvalid = 0x00000000;
 
     static {
         NatJ.register();
@@ -42,6 +42,21 @@ public final class Photos {
     @Generated
     private Photos() {
     }
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String PHLivePhotoInfoErrorKey();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String PHLivePhotoInfoIsDegradedKey();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String PHLivePhotoInfoCancelledKey();
 
     @Generated
     @CVariable()
@@ -57,6 +72,11 @@ public final class Photos {
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String PHContentEditingInputErrorKey();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String PHLivePhotoShouldRenderAtPlaybackTime();
 
     @Generated
     @CVariable()
@@ -87,19 +107,4 @@ public final class Photos {
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String PHImageErrorKey();
-
-    @Generated
-    @CVariable()
-    @MappedReturn(ObjCStringMapper.class)
-    public static native String PHLivePhotoInfoErrorKey();
-
-    @Generated
-    @CVariable()
-    @MappedReturn(ObjCStringMapper.class)
-    public static native String PHLivePhotoInfoIsDegradedKey();
-
-    @Generated
-    @CVariable()
-    @MappedReturn(ObjCStringMapper.class)
-    public static native String PHLivePhotoInfoCancelledKey();
 }

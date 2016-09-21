@@ -55,22 +55,13 @@ public class SKPaymentQueue extends NSObject {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native SKPaymentQueue alloc();
-
-    @Generated
-    @Selector("canMakePayments")
-    public static native boolean canMakePayments();
-
-    @Generated
-    @Selector("defaultQueue")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object defaultQueue();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -80,6 +71,10 @@ public class SKPaymentQueue extends NSObject {
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
     public static native boolean automaticallyNotifiesObserversForKey(String key);
+
+    @Generated
+    @Selector("canMakePayments")
+    public static native boolean canMakePayments();
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
@@ -102,6 +97,11 @@ public class SKPaymentQueue extends NSObject {
     @Generated
     @Selector("debugDescription")
     public static native String debugDescription_static();
+
+    @Generated
+    @Selector("defaultQueue")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object defaultQueue();
 
     @Generated
     @Selector("description")
@@ -157,7 +157,7 @@ public class SKPaymentQueue extends NSObject {
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")

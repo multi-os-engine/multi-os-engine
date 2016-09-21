@@ -61,13 +61,13 @@ public class WKInterfaceGroup extends WKInterfaceObject implements WKImageAnimat
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native WKInterfaceGroup alloc();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -136,7 +136,7 @@ public class WKInterfaceGroup extends WKInterfaceObject implements WKImageAnimat
 
     @Generated
     @Selector("load")
-    public static native void load_objc();
+    public static native void load_objc_static();
 
     @Generated
     @Owned
@@ -154,7 +154,7 @@ public class WKInterfaceGroup extends WKInterfaceObject implements WKImageAnimat
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")
@@ -163,7 +163,7 @@ public class WKInterfaceGroup extends WKInterfaceObject implements WKImageAnimat
     @Generated
     @Selector("version")
     @NInt
-    public static native long version();
+    public static native long version_static();
 
     @Generated
     @Selector("init")
@@ -189,27 +189,15 @@ public class WKInterfaceGroup extends WKInterfaceObject implements WKImageAnimat
     @Selector("setCornerRadius:")
     public native void setCornerRadius(@NFloat double cornerRadius);
 
-    /**
-     * startAnimating</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WatchKit/Reference/WKInterfaceGroup_class/index.html#//apple_ref/occ/instm/WKInterfaceGroup/startAnimating">iOS Dev Center</a>
-     */
     @Generated
     @Selector("startAnimating")
     public native void startAnimating();
 
-    /**
-     * startAnimatingWithImagesInRange:duration:repeatCount:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WatchKit/Reference/WKInterfaceGroup_class/index.html#//apple_ref/occ/instm/WKInterfaceGroup/startAnimatingWithImagesInRange:duration:repeatCount:">iOS Dev Center</a>
-     */
     @Generated
     @Selector("startAnimatingWithImagesInRange:duration:repeatCount:")
     public native void startAnimatingWithImagesInRangeDurationRepeatCount(@ByValue NSRange imageRange, double duration,
             @NInt long repeatCount);
 
-    /**
-     * stopAnimating</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WatchKit/Reference/WKInterfaceGroup_class/index.html#//apple_ref/occ/instm/WKInterfaceGroup/stopAnimating">iOS Dev Center</a>
-     */
     @Generated
     @Selector("stopAnimating")
     public native void stopAnimating();

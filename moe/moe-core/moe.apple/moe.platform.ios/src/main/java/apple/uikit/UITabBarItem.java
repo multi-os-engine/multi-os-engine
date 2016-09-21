@@ -19,6 +19,7 @@ package apple.uikit;
 import apple.NSObject;
 import apple.foundation.NSArray;
 import apple.foundation.NSCoder;
+import apple.foundation.NSDictionary;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
 import apple.uikit.struct.UIOffset;
@@ -59,13 +60,13 @@ public class UITabBarItem extends UIBarItem {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native UITabBarItem alloc();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -189,7 +190,7 @@ public class UITabBarItem extends UIBarItem {
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")
@@ -199,67 +200,6 @@ public class UITabBarItem extends UIBarItem {
     @Selector("version")
     @NInt
     public static native long version_static();
-
-    @Generated
-    @Selector("badgeValue")
-    public native String badgeValue();
-
-    @Generated
-    @Deprecated
-    @Selector("finishedSelectedImage")
-    public native UIImage finishedSelectedImage();
-
-    @Generated
-    @Deprecated
-    @Selector("finishedUnselectedImage")
-    public native UIImage finishedUnselectedImage();
-
-    @Generated
-    @Selector("init")
-    public native UITabBarItem init();
-
-    @Generated
-    @Selector("initWithTabBarSystemItem:tag:")
-    public native UITabBarItem initWithTabBarSystemItemTag(@NInt long systemItem, @NInt long tag);
-
-    @Generated
-    @Selector("initWithTitle:image:selectedImage:")
-    public native UITabBarItem initWithTitleImageSelectedImage(String title, UIImage image, UIImage selectedImage);
-
-    @Generated
-    @Selector("initWithTitle:image:tag:")
-    public native UITabBarItem initWithTitleImageTag(String title, UIImage image, @NInt long tag);
-
-    @Generated
-    @Selector("selectedImage")
-    public native UIImage selectedImage();
-
-    @Generated
-    @Selector("setBadgeValue:")
-    public native void setBadgeValue(String value);
-
-    @Generated
-    @Deprecated
-    @Selector("setFinishedSelectedImage:withFinishedUnselectedImage:")
-    public native void setFinishedSelectedImageWithFinishedUnselectedImage(UIImage selectedImage,
-            UIImage unselectedImage);
-
-    @Generated
-    @Selector("setSelectedImage:")
-    public native void setSelectedImage(UIImage value);
-
-    @Generated
-    @Selector("setTitlePositionAdjustment:")
-    public native void setTitlePositionAdjustment(@ByValue UIOffset value);
-
-    @Generated
-    @Selector("titlePositionAdjustment")
-    @ByValue
-    public native UIOffset titlePositionAdjustment();
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native UITabBarItem initWithCoder(NSCoder aDecoder);
 
     @Generated
     @ProtocolClassMethod("appearance")
@@ -306,4 +246,81 @@ public class UITabBarItem extends UIBarItem {
     public Object _appearanceWhenContainedInInstancesOfClasses(NSArray<?> containerTypes) {
         return appearanceWhenContainedInInstancesOfClasses(containerTypes);
     }
+
+    @Generated
+    @Selector("badgeColor")
+    public native UIColor badgeColor();
+
+    @Generated
+    @Selector("badgeTextAttributesForState:")
+    public native NSDictionary<String, ?> badgeTextAttributesForState(@NUInt long state);
+
+    @Generated
+    @Selector("badgeValue")
+    public native String badgeValue();
+
+    @Generated
+    @Deprecated
+    @Selector("finishedSelectedImage")
+    public native UIImage finishedSelectedImage();
+
+    @Generated
+    @Deprecated
+    @Selector("finishedUnselectedImage")
+    public native UIImage finishedUnselectedImage();
+
+    @Generated
+    @Selector("init")
+    public native UITabBarItem init();
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native UITabBarItem initWithCoder(NSCoder aDecoder);
+
+    @Generated
+    @Selector("initWithTabBarSystemItem:tag:")
+    public native UITabBarItem initWithTabBarSystemItemTag(@NInt long systemItem, @NInt long tag);
+
+    @Generated
+    @Selector("initWithTitle:image:selectedImage:")
+    public native UITabBarItem initWithTitleImageSelectedImage(String title, UIImage image, UIImage selectedImage);
+
+    @Generated
+    @Selector("initWithTitle:image:tag:")
+    public native UITabBarItem initWithTitleImageTag(String title, UIImage image, @NInt long tag);
+
+    @Generated
+    @Selector("selectedImage")
+    public native UIImage selectedImage();
+
+    @Generated
+    @Selector("setBadgeColor:")
+    public native void setBadgeColor(UIColor value);
+
+    @Generated
+    @Selector("setBadgeTextAttributes:forState:")
+    public native void setBadgeTextAttributesForState(NSDictionary<String, ?> textAttributes, @NUInt long state);
+
+    @Generated
+    @Selector("setBadgeValue:")
+    public native void setBadgeValue(String value);
+
+    @Generated
+    @Deprecated
+    @Selector("setFinishedSelectedImage:withFinishedUnselectedImage:")
+    public native void setFinishedSelectedImageWithFinishedUnselectedImage(UIImage selectedImage,
+            UIImage unselectedImage);
+
+    @Generated
+    @Selector("setSelectedImage:")
+    public native void setSelectedImage(UIImage value);
+
+    @Generated
+    @Selector("setTitlePositionAdjustment:")
+    public native void setTitlePositionAdjustment(@ByValue UIOffset value);
+
+    @Generated
+    @Selector("titlePositionAdjustment")
+    @ByValue
+    public native UIOffset titlePositionAdjustment();
 }

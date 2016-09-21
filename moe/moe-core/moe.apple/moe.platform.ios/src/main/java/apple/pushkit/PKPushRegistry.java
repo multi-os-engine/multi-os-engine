@@ -56,13 +56,13 @@ public class PKPushRegistry extends NSObject {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native PKPushRegistry alloc();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -149,7 +149,7 @@ public class PKPushRegistry extends NSObject {
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")
@@ -167,7 +167,7 @@ public class PKPushRegistry extends NSObject {
 
     @Generated
     @Selector("desiredPushTypes")
-    public native NSSet<?> desiredPushTypes();
+    public native NSSet<String> desiredPushTypes();
 
     @Generated
     @Selector("init")
@@ -199,5 +199,5 @@ public class PKPushRegistry extends NSObject {
 
     @Generated
     @Selector("setDesiredPushTypes:")
-    public native void setDesiredPushTypes(NSSet<?> value);
+    public native void setDesiredPushTypes(NSSet<String> value);
 }

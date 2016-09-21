@@ -52,18 +52,13 @@ public class NSBlockOperation extends NSOperation {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native NSBlockOperation alloc();
-
-    @Generated
-    @Selector("blockOperationWithBlock:")
-    public static native NSBlockOperation blockOperationWithBlock(
-            @ObjCBlock(name = "call_blockOperationWithBlock") Block_blockOperationWithBlock block);
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -73,6 +68,11 @@ public class NSBlockOperation extends NSOperation {
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
     public static native boolean automaticallyNotifiesObserversForKey(String key);
+
+    @Generated
+    @Selector("blockOperationWithBlock:")
+    public static native NSBlockOperation blockOperationWithBlock(
+            @ObjCBlock(name = "call_blockOperationWithBlock") Block_blockOperationWithBlock block);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")

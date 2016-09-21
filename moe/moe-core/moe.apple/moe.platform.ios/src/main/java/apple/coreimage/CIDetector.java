@@ -55,18 +55,13 @@ public class CIDetector extends NSObject {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native CIDetector alloc();
-
-    @Generated
-    @Selector("detectorOfType:context:options:")
-    public static native CIDetector detectorOfTypeContextOptions(String type, CIContext context,
-            NSDictionary<String, ?> options);
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -102,6 +97,11 @@ public class CIDetector extends NSObject {
     @Generated
     @Selector("description")
     public static native String description_static();
+
+    @Generated
+    @Selector("detectorOfType:context:options:")
+    public static native CIDetector detectorOfTypeContextOptions(String type, CIContext context,
+            NSDictionary<String, ?> options);
 
     @Generated
     @Selector("hash")

@@ -57,13 +57,13 @@ public class UIDocumentPickerExtensionViewController extends UIViewController {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native UIDocumentPickerExtensionViewController alloc();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -191,6 +191,10 @@ public class UIDocumentPickerExtensionViewController extends UIViewController {
     public native UIDocumentPickerExtensionViewController init();
 
     @Generated
+    @Selector("initWithCoder:")
+    public native UIDocumentPickerExtensionViewController initWithCoder(NSCoder aDecoder);
+
+    @Generated
     @Selector("initWithNibName:bundle:")
     public native UIDocumentPickerExtensionViewController initWithNibNameBundle(String nibNameOrNil,
             NSBundle nibBundleOrNil);
@@ -210,8 +214,4 @@ public class UIDocumentPickerExtensionViewController extends UIViewController {
     @Generated
     @Selector("validTypes")
     public native NSArray<String> validTypes();
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native UIDocumentPickerExtensionViewController initWithCoder(NSCoder aDecoder);
 }

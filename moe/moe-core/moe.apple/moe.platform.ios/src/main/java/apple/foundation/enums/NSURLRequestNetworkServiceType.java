@@ -26,6 +26,7 @@ public final class NSURLRequestNetworkServiceType {
     @Generated @NUInt public static final long Video = 0x0000000000000002L;
     @Generated @NUInt public static final long Background = 0x0000000000000003L;
     @Generated @NUInt public static final long Voice = 0x0000000000000004L;
+    @Generated @NUInt public static final long CallSignaling = 0x000000000000000BL;
 
     @Generated
     private NSURLRequestNetworkServiceType() {

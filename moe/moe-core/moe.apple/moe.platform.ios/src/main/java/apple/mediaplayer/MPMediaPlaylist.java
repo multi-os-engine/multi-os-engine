@@ -58,17 +58,13 @@ public class MPMediaPlaylist extends MPMediaItemCollection {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native MPMediaPlaylist alloc();
-
-    @Generated
-    @Selector("collectionWithItems:")
-    public static native MPMediaItemCollection collectionWithItems(NSArray<? extends MPMediaItem> items);
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -100,6 +96,10 @@ public class MPMediaPlaylist extends MPMediaItemCollection {
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
+
+    @Generated
+    @Selector("collectionWithItems:")
+    public static native MPMediaItemCollection collectionWithItems(NSArray<? extends MPMediaItem> items);
 
     @Generated
     @Selector("debugDescription")
@@ -159,7 +159,7 @@ public class MPMediaPlaylist extends MPMediaItemCollection {
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")
@@ -175,8 +175,30 @@ public class MPMediaPlaylist extends MPMediaItemCollection {
     public static native long version_static();
 
     @Generated
+    @Selector("addItemWithProductID:completionHandler:")
+    public native void addItemWithProductIDCompletionHandler(String productID,
+            @ObjCBlock(name = "call_addItemWithProductIDCompletionHandler") Block_addItemWithProductIDCompletionHandler completionHandler);
+
+    @Generated
+    @Selector("addMediaItems:completionHandler:")
+    public native void addMediaItemsCompletionHandler(NSArray<? extends MPMediaItem> mediaItems,
+            @ObjCBlock(name = "call_addMediaItemsCompletionHandler") Block_addMediaItemsCompletionHandler completionHandler);
+
+    @Generated
+    @Selector("authorDisplayName")
+    public native String authorDisplayName();
+
+    @Generated
+    @Selector("descriptionText")
+    public native String descriptionText();
+
+    @Generated
     @Selector("init")
     public native MPMediaPlaylist init();
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native MPMediaPlaylist initWithCoder(NSCoder aDecoder);
 
     @Generated
     @Selector("initWithItems:")
@@ -198,28 +220,6 @@ public class MPMediaPlaylist extends MPMediaItemCollection {
     @Generated
     @Selector("seedItems")
     public native NSArray<? extends MPMediaItem> seedItems();
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native MPMediaPlaylist initWithCoder(NSCoder aDecoder);
-
-    @Generated
-    @Selector("addItemWithProductID:completionHandler:")
-    public native void addItemWithProductIDCompletionHandler(String productID,
-            @ObjCBlock(name = "call_addItemWithProductIDCompletionHandler") Block_addItemWithProductIDCompletionHandler completionHandler);
-
-    @Generated
-    @Selector("addMediaItems:completionHandler:")
-    public native void addMediaItemsCompletionHandler(NSArray<? extends MPMediaItem> mediaItems,
-            @ObjCBlock(name = "call_addMediaItemsCompletionHandler") Block_addMediaItemsCompletionHandler completionHandler);
-
-    @Generated
-    @Selector("authorDisplayName")
-    public native String authorDisplayName();
-
-    @Generated
-    @Selector("descriptionText")
-    public native String descriptionText();
 
     @Generated
     @ProtocolClassMethod("supportsSecureCoding")

@@ -69,13 +69,13 @@ public class SLComposeServiceViewController extends UIViewController implements 
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native SLComposeServiceViewController alloc();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -174,7 +174,7 @@ public class SLComposeServiceViewController extends UIViewController implements 
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")
@@ -216,6 +216,10 @@ public class SLComposeServiceViewController extends UIViewController implements 
     @Generated
     @Selector("init")
     public native SLComposeServiceViewController init();
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native SLComposeServiceViewController initWithCoder(NSCoder aDecoder);
 
     @Generated
     @Selector("initWithNibName:bundle:")
@@ -341,9 +345,21 @@ public class SLComposeServiceViewController extends UIViewController implements 
 
     @Generated
     @IsOptional
+    @Selector("textView:shouldInteractWithTextAttachment:inRange:interaction:")
+    public native boolean textViewShouldInteractWithTextAttachmentInRangeInteraction(UITextView textView,
+            NSTextAttachment textAttachment, @ByValue NSRange characterRange, @NInt long interaction);
+
+    @Generated
+    @IsOptional
     @Selector("textView:shouldInteractWithURL:inRange:")
     public native boolean textViewShouldInteractWithURLInRange(UITextView textView, NSURL URL,
             @ByValue NSRange characterRange);
+
+    @Generated
+    @IsOptional
+    @Selector("textView:shouldInteractWithURL:inRange:interaction:")
+    public native boolean textViewShouldInteractWithURLInRangeInteraction(UITextView textView, NSURL URL,
+            @ByValue NSRange characterRange, @NInt long interaction);
 
     @Generated
     @IsOptional
@@ -383,8 +399,4 @@ public class SLComposeServiceViewController extends UIViewController implements 
     @IsOptional
     @Selector("viewForZoomingInScrollView:")
     public native UIView viewForZoomingInScrollView(UIScrollView scrollView);
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native SLComposeServiceViewController initWithCoder(NSCoder aDecoder);
 }

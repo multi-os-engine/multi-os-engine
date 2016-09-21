@@ -57,36 +57,13 @@ public class PKPassLibrary extends NSObject {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native PKPassLibrary alloc();
-
-    @Generated
-    @Selector("isPassLibraryAvailable")
-    public static native boolean isPassLibraryAvailable();
-
-    @Deprecated
-    @Generated
-    @Selector("isPaymentPassActivationAvailable")
-    public static native boolean isPaymentPassActivationAvailable_static();
-
-    @Generated
-    @Selector("endAutomaticPassPresentationSuppressionWithRequestToken:")
-    public static native void endAutomaticPassPresentationSuppressionWithRequestToken(@NUInt long requestToken);
-
-    @Generated
-    @Selector("isSuppressingAutomaticPassPresentation")
-    public static native boolean isSuppressingAutomaticPassPresentation();
-
-    @Generated
-    @Selector("requestAutomaticPassPresentationSuppressionWithResponseHandler:")
-    @NUInt
-    public static native long requestAutomaticPassPresentationSuppressionWithResponseHandler(
-            @ObjCBlock(name = "call_requestAutomaticPassPresentationSuppressionWithResponseHandler") Block_requestAutomaticPassPresentationSuppressionWithResponseHandler responseHandler);
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -124,6 +101,10 @@ public class PKPassLibrary extends NSObject {
     public static native String description_static();
 
     @Generated
+    @Selector("endAutomaticPassPresentationSuppressionWithRequestToken:")
+    public static native void endAutomaticPassPresentationSuppressionWithRequestToken(@NUInt long requestToken);
+
+    @Generated
     @Selector("hash")
     @NUInt
     public static native long hash_static();
@@ -146,8 +127,21 @@ public class PKPassLibrary extends NSObject {
     public static native boolean instancesRespondToSelector(SEL aSelector);
 
     @Generated
+    @Selector("isPassLibraryAvailable")
+    public static native boolean isPassLibraryAvailable();
+
+    @Generated
+    @Deprecated
+    @Selector("isPaymentPassActivationAvailable")
+    public static native boolean isPaymentPassActivationAvailable_static();
+
+    @Generated
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
+
+    @Generated
+    @Selector("isSuppressingAutomaticPassPresentation")
+    public static native boolean isSuppressingAutomaticPassPresentation();
 
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
@@ -162,6 +156,12 @@ public class PKPassLibrary extends NSObject {
     @Selector("new")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object new_objc();
+
+    @Generated
+    @Selector("requestAutomaticPassPresentationSuppressionWithResponseHandler:")
+    @NUInt
+    public static native long requestAutomaticPassPresentationSuppressionWithResponseHandler(
+            @ObjCBlock(name = "call_requestAutomaticPassPresentationSuppressionWithResponseHandler") Block_requestAutomaticPassPresentationSuppressionWithResponseHandler responseHandler);
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -184,8 +184,8 @@ public class PKPassLibrary extends NSObject {
     @NInt
     public static native long version_static();
 
-    @Deprecated
     @Generated
+    @Deprecated
     @Selector("activatePaymentPass:withActivationCode:completion:")
     public native void activatePaymentPassWithActivationCodeCompletion(PKPaymentPass paymentPass, String activationCode,
             @ObjCBlock(name = "call_activatePaymentPassWithActivationCodeCompletion") Block_activatePaymentPassWithActivationCodeCompletion completion);
@@ -201,12 +201,20 @@ public class PKPassLibrary extends NSObject {
             @ObjCBlock(name = "call_addPassesWithCompletionHandler") Block_addPassesWithCompletionHandler completion);
 
     @Generated
+    @Selector("canAddPaymentPassWithPrimaryAccountIdentifier:")
+    public native boolean canAddPaymentPassWithPrimaryAccountIdentifier(String primaryAccountIdentifier);
+
+    @Generated
     @Selector("containsPass:")
     public native boolean containsPass(PKPass pass);
 
     @Generated
     @Selector("init")
     public native PKPassLibrary init();
+
+    @Generated
+    @Selector("isPaymentPassActivationAvailable")
+    public native boolean isPaymentPassActivationAvailable();
 
     @Generated
     @Selector("openPaymentSetup")
@@ -225,24 +233,20 @@ public class PKPassLibrary extends NSObject {
     public native NSArray<? extends PKPass> passesOfType(@NUInt long passType);
 
     @Generated
+    @Selector("presentPaymentPass:")
+    public native void presentPaymentPass(PKPaymentPass pass);
+
+    @Generated
+    @Selector("remotePaymentPasses")
+    public native NSArray<? extends PKPaymentPass> remotePaymentPasses();
+
+    @Generated
     @Selector("removePass:")
     public native void removePass(PKPass pass);
 
     @Generated
     @Selector("replacePassWithPass:")
     public native boolean replacePassWithPass(PKPass pass);
-
-    @Generated
-    @Selector("canAddPaymentPassWithPrimaryAccountIdentifier:")
-    public native boolean canAddPaymentPassWithPrimaryAccountIdentifier(String primaryAccountIdentifier);
-
-    @Generated
-    @Selector("isPaymentPassActivationAvailable")
-    public native boolean isPaymentPassActivationAvailable();
-
-    @Generated
-    @Selector("remotePaymentPasses")
-    public native NSArray<? extends PKPaymentPass> remotePaymentPasses();
 
     @Runtime(ObjCRuntime.class)
     @Generated

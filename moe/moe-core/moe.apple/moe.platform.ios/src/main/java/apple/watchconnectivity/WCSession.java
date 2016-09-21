@@ -61,21 +61,13 @@ public class WCSession extends NSObject {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native WCSession alloc();
-
-    @Generated
-    @Selector("defaultSession")
-    public static native WCSession defaultSession();
-
-    @Generated
-    @Selector("isSupported")
-    public static native boolean isSupported();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -109,6 +101,10 @@ public class WCSession extends NSObject {
     public static native String debugDescription_static();
 
     @Generated
+    @Selector("defaultSession")
+    public static native WCSession defaultSession();
+
+    @Generated
     @Selector("description")
     public static native String description_static();
 
@@ -137,6 +133,10 @@ public class WCSession extends NSObject {
     @Generated
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
+
+    @Generated
+    @Selector("isSupported")
+    public static native boolean isSupported();
 
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
@@ -178,6 +178,11 @@ public class WCSession extends NSObject {
     public native void activateSession();
 
     @Generated
+    @Selector("activationState")
+    @NInt
+    public native long activationState();
+
+    @Generated
     @Selector("applicationContext")
     public native NSDictionary<String, ?> applicationContext();
 
@@ -185,6 +190,10 @@ public class WCSession extends NSObject {
     @Selector("delegate")
     @MappedReturn(ObjCObjectMapper.class)
     public native WCSessionDelegate delegate();
+
+    @Generated
+    @Selector("hasContentPending")
+    public native boolean hasContentPending();
 
     @Generated
     @Selector("init")
@@ -217,6 +226,11 @@ public class WCSession extends NSObject {
     @Generated
     @Selector("receivedApplicationContext")
     public native NSDictionary<String, ?> receivedApplicationContext();
+
+    @Generated
+    @Selector("remainingComplicationUserInfoTransfers")
+    @NUInt
+    public native long remainingComplicationUserInfoTransfers();
 
     @Generated
     @Selector("sendMessage:replyHandler:errorHandler:")
@@ -265,11 +279,6 @@ public class WCSession extends NSObject {
     @Generated
     @Selector("watchDirectoryURL")
     public native NSURL watchDirectoryURL();
-
-    @Generated
-    @Selector("activationState")
-    @NInt
-    public native long activationState();
 
     @Runtime(ObjCRuntime.class)
     @Generated

@@ -57,13 +57,13 @@ public class UIAccessibilityElement extends NSObject implements UIAccessibilityI
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native UIAccessibilityElement alloc();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -172,6 +172,11 @@ public class UIAccessibilityElement extends NSObject implements UIAccessibilityI
     public native CGRect accessibilityFrame();
 
     @Generated
+    @Selector("accessibilityFrameInContainerSpace")
+    @ByValue
+    public native CGRect accessibilityFrameInContainerSpace();
+
+    @Generated
     @Selector("accessibilityHint")
     public native String accessibilityHint();
 
@@ -223,6 +228,10 @@ public class UIAccessibilityElement extends NSObject implements UIAccessibilityI
     @Generated
     @Selector("setAccessibilityFrame:")
     public native void setAccessibilityFrame(@ByValue CGRect value);
+
+    @Generated
+    @Selector("setAccessibilityFrameInContainerSpace:")
+    public native void setAccessibilityFrameInContainerSpace(@ByValue CGRect value);
 
     @Generated
     @Selector("setAccessibilityHint:")

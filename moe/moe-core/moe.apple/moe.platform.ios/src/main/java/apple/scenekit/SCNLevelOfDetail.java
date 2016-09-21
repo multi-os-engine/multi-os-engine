@@ -59,27 +59,13 @@ public class SCNLevelOfDetail extends NSObject implements NSCopying, NSSecureCod
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native SCNLevelOfDetail alloc();
-
-    @Generated
-    @Selector("levelOfDetailWithGeometry:screenSpaceRadius:")
-    public static native SCNLevelOfDetail levelOfDetailWithGeometryScreenSpaceRadius(SCNGeometry geometry,
-            @NFloat double radius);
-
-    @Generated
-    @Selector("levelOfDetailWithGeometry:worldSpaceDistance:")
-    public static native SCNLevelOfDetail levelOfDetailWithGeometryWorldSpaceDistance(SCNGeometry geometry,
-            @NFloat double distance);
-
-    @Generated
-    @Selector("supportsSecureCoding")
-    public static native boolean supportsSecureCoding();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -147,6 +133,16 @@ public class SCNLevelOfDetail extends NSObject implements NSCopying, NSSecureCod
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
     @Generated
+    @Selector("levelOfDetailWithGeometry:screenSpaceRadius:")
+    public static native SCNLevelOfDetail levelOfDetailWithGeometryScreenSpaceRadius(SCNGeometry geometry,
+            @NFloat double radius);
+
+    @Generated
+    @Selector("levelOfDetailWithGeometry:worldSpaceDistance:")
+    public static native SCNLevelOfDetail levelOfDetailWithGeometryWorldSpaceDistance(SCNGeometry geometry,
+            @NFloat double distance);
+
+    @Generated
     @Selector("load")
     public static native void load_objc_static();
 
@@ -171,6 +167,10 @@ public class SCNLevelOfDetail extends NSObject implements NSCopying, NSSecureCod
     @Generated
     @Selector("superclass")
     public static native Class superclass_static();
+
+    @Generated
+    @Selector("supportsSecureCoding")
+    public static native boolean supportsSecureCoding();
 
     @Generated
     @Selector("version")

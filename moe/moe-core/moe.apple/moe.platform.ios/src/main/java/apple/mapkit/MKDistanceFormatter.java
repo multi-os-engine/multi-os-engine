@@ -57,13 +57,13 @@ public class MKDistanceFormatter extends NSFormatter {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native MKDistanceFormatter alloc();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -170,6 +170,10 @@ public class MKDistanceFormatter extends NSFormatter {
     public native MKDistanceFormatter init();
 
     @Generated
+    @Selector("initWithCoder:")
+    public native MKDistanceFormatter initWithCoder(NSCoder aDecoder);
+
+    @Generated
     @Selector("locale")
     public native NSLocale locale();
 
@@ -198,8 +202,4 @@ public class MKDistanceFormatter extends NSFormatter {
     @Selector("units")
     @NUInt
     public native long units();
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native MKDistanceFormatter initWithCoder(NSCoder aDecoder);
 }

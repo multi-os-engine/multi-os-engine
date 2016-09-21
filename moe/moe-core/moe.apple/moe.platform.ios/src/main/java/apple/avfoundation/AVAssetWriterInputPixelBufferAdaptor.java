@@ -59,23 +59,23 @@ public class AVAssetWriterInputPixelBufferAdaptor extends NSObject {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native AVAssetWriterInputPixelBufferAdaptor alloc();
 
     @Generated
-    @Selector("assetWriterInputPixelBufferAdaptorWithAssetWriterInput:sourcePixelBufferAttributes:")
-    public static native AVAssetWriterInputPixelBufferAdaptor assetWriterInputPixelBufferAdaptorWithAssetWriterInputSourcePixelBufferAttributes(
-            AVAssetWriterInput input, NSDictionary<String, ?> sourcePixelBufferAttributes);
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
-
-    @Generated
     @Selector("allocWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object allocWithZone(VoidPtr zone);
+
+    @Generated
+    @Selector("assetWriterInputPixelBufferAdaptorWithAssetWriterInput:sourcePixelBufferAttributes:")
+    public static native AVAssetWriterInputPixelBufferAdaptor assetWriterInputPixelBufferAdaptorWithAssetWriterInputSourcePixelBufferAttributes(
+            AVAssetWriterInput input, NSDictionary<String, ?> sourcePixelBufferAttributes);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")

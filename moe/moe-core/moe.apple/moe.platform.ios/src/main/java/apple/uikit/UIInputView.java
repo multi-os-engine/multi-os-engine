@@ -62,11 +62,6 @@ public class UIInputView extends UIView {
     }
 
     @Generated
-    @Owned
-    @Selector("alloc")
-    public static native UIInputView alloc();
-
-    @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
 
@@ -75,6 +70,11 @@ public class UIInputView extends UIView {
     public static native void addKeyframeWithRelativeStartTimeRelativeDurationAnimations(double frameStartTime,
             double frameDuration,
             @ObjCBlock(name = "call_addKeyframeWithRelativeStartTimeRelativeDurationAnimations") UIView.Block_addKeyframeWithRelativeStartTimeRelativeDurationAnimations animations);
+
+    @Generated
+    @Owned
+    @Selector("alloc")
+    public static native UIInputView alloc();
 
     @Generated
     @Selector("allocWithZone:")
@@ -290,7 +290,7 @@ public class UIInputView extends UIView {
 
     @Generated
     @Selector("setAnimationDuration:")
-    public static native void setAnimationDuration(double duration);
+    public static native void setAnimationDuration_static(double duration);
 
     @Generated
     @Selector("setAnimationRepeatAutoreverses:")
@@ -298,7 +298,7 @@ public class UIInputView extends UIView {
 
     @Generated
     @Selector("setAnimationRepeatCount:")
-    public static native void setAnimationRepeatCount(float repeatCount);
+    public static native void setAnimationRepeatCount_static(float repeatCount);
 
     @Generated
     @Selector("setAnimationStartDate:")
@@ -318,7 +318,7 @@ public class UIInputView extends UIView {
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")
@@ -343,38 +343,19 @@ public class UIInputView extends UIView {
     public static native long userInterfaceLayoutDirectionForSemanticContentAttribute(@NInt long attribute);
 
     @Generated
+    @Selector("userInterfaceLayoutDirectionForSemanticContentAttribute:relativeToLayoutDirection:")
+    @NInt
+    public static native long userInterfaceLayoutDirectionForSemanticContentAttributeRelativeToLayoutDirection(
+            @NInt long semanticContentAttribute, @NInt long layoutDirection);
+
+    @Generated
     @Selector("version")
     @NInt
     public static native long version_static();
 
     @Generated
-    @Selector("init")
-    public native UIInputView init();
-
-    @Generated
-    @Selector("initWithFrame:")
-    public native UIInputView initWithFrame(@ByValue CGRect frame);
-
-    @Generated
-    @Selector("initWithFrame:inputViewStyle:")
-    public native UIInputView initWithFrameInputViewStyle(@ByValue CGRect frame, @NInt long inputViewStyle);
-
-    @Generated
-    @Selector("inputViewStyle")
-    @NInt
-    public native long inputViewStyle();
-
-    @Generated
     @Selector("allowsSelfSizing")
     public native boolean allowsSelfSizing();
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native UIInputView initWithCoder(NSCoder aDecoder);
-
-    @Generated
-    @Selector("setAllowsSelfSizing:")
-    public native void setAllowsSelfSizing(boolean value);
 
     @Generated
     @ProtocolClassMethod("appearance")
@@ -421,4 +402,29 @@ public class UIInputView extends UIView {
     public Object _appearanceWhenContainedInInstancesOfClasses(NSArray<?> containerTypes) {
         return appearanceWhenContainedInInstancesOfClasses(containerTypes);
     }
+
+    @Generated
+    @Selector("init")
+    public native UIInputView init();
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native UIInputView initWithCoder(NSCoder aDecoder);
+
+    @Generated
+    @Selector("initWithFrame:")
+    public native UIInputView initWithFrame(@ByValue CGRect frame);
+
+    @Generated
+    @Selector("initWithFrame:inputViewStyle:")
+    public native UIInputView initWithFrameInputViewStyle(@ByValue CGRect frame, @NInt long inputViewStyle);
+
+    @Generated
+    @Selector("inputViewStyle")
+    @NInt
+    public native long inputViewStyle();
+
+    @Generated
+    @Selector("setAllowsSelfSizing:")
+    public native void setAllowsSelfSizing(boolean value);
 }

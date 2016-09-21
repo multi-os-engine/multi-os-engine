@@ -51,17 +51,13 @@ public class NSInvocation extends NSObject {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native NSInvocation alloc();
-
-    @Generated
-    @Selector("invocationWithMethodSignature:")
-    public static native NSInvocation invocationWithMethodSignature(NSMethodSignature sig);
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -121,6 +117,10 @@ public class NSInvocation extends NSObject {
     public static native boolean instancesRespondToSelector(SEL aSelector);
 
     @Generated
+    @Selector("invocationWithMethodSignature:")
+    public static native NSInvocation invocationWithMethodSignature(NSMethodSignature sig);
+
+    @Generated
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
@@ -148,7 +148,7 @@ public class NSInvocation extends NSObject {
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")
@@ -157,7 +157,7 @@ public class NSInvocation extends NSObject {
     @Generated
     @Selector("version")
     @NInt
-    public static native long version();
+    public static native long version_static();
 
     @Generated
     @Selector("argumentsRetained")

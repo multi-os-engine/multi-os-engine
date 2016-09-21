@@ -17,16 +17,19 @@ limitations under the License.
 package apple.metal.protocol;
 
 import apple.NSObject;
+import apple.foundation.NSBundle;
 import apple.foundation.NSError;
 import apple.metal.MTLCompileOptions;
 import apple.metal.MTLComputePipelineDescriptor;
 import apple.metal.MTLComputePipelineReflection;
 import apple.metal.MTLDepthStencilDescriptor;
+import apple.metal.MTLHeapDescriptor;
 import apple.metal.MTLRenderPipelineDescriptor;
 import apple.metal.MTLRenderPipelineReflection;
 import apple.metal.MTLSamplerDescriptor;
 import apple.metal.MTLTextureDescriptor;
 import apple.metal.struct.MTLSize;
+import apple.metal.struct.MTLSizeAndAlign;
 import org.moe.natj.general.ann.ByValue;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.Library;
@@ -48,6 +51,21 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("MTLDevice")
 public interface MTLDevice {
+    @Generated
+    @Selector("heapBufferSizeAndAlignWithLength:options:")
+    @ByValue
+    MTLSizeAndAlign heapBufferSizeAndAlignWithLengthOptions(@NUInt long length, @NUInt long options);
+
+    @Generated
+    @Selector("heapTextureSizeAndAlignWithDescriptor:")
+    @ByValue
+    MTLSizeAndAlign heapTextureSizeAndAlignWithDescriptor(MTLTextureDescriptor desc);
+
+    @Generated
+    @Selector("maxThreadsPerThreadgroup")
+    @ByValue
+    MTLSize maxThreadsPerThreadgroup();
+
     @Generated
     @Selector("name")
     String name();
@@ -79,6 +97,18 @@ public interface MTLDevice {
     Object newCommandQueueWithMaxCommandBufferCount(@NUInt long maxCommandBufferCount);
 
     @Generated
+    @Selector("newComputePipelineStateWithDescriptor:options:completionHandler:")
+    void newComputePipelineStateWithDescriptorOptionsCompletionHandler(MTLComputePipelineDescriptor descriptor,
+            @NUInt long options,
+            @ObjCBlock(name = "call_newComputePipelineStateWithDescriptorOptionsCompletionHandler") Block_newComputePipelineStateWithDescriptorOptionsCompletionHandler completionHandler);
+
+    @Generated
+    @Selector("newComputePipelineStateWithDescriptor:options:reflection:error:")
+    @MappedReturn(ObjCObjectMapper.class)
+    Object newComputePipelineStateWithDescriptorOptionsReflectionError(MTLComputePipelineDescriptor descriptor,
+            @NUInt long options, Ptr<MTLComputePipelineReflection> reflection, Ptr<NSError> error);
+
+    @Generated
     @Selector("newComputePipelineStateWithFunction:completionHandler:")
     void newComputePipelineStateWithFunctionCompletionHandler(@Mapped(ObjCObjectMapper.class) Object computeFunction,
             @ObjCBlock(name = "call_newComputePipelineStateWithFunctionCompletionHandler") Block_newComputePipelineStateWithFunctionCompletionHandler completionHandler);
@@ -108,9 +138,24 @@ public interface MTLDevice {
     Object newDefaultLibrary();
 
     @Generated
+    @Selector("newDefaultLibraryWithBundle:error:")
+    @MappedReturn(ObjCObjectMapper.class)
+    Object newDefaultLibraryWithBundleError(NSBundle bundle, Ptr<NSError> error);
+
+    @Generated
     @Selector("newDepthStencilStateWithDescriptor:")
     @MappedReturn(ObjCObjectMapper.class)
     Object newDepthStencilStateWithDescriptor(MTLDepthStencilDescriptor descriptor);
+
+    @Generated
+    @Selector("newFence")
+    @MappedReturn(ObjCObjectMapper.class)
+    Object newFence();
+
+    @Generated
+    @Selector("newHeapWithDescriptor:")
+    @MappedReturn(ObjCObjectMapper.class)
+    Object newHeapWithDescriptor(MTLHeapDescriptor descriptor);
 
     @Generated
     @Selector("newLibraryWithData:error:")
@@ -169,23 +214,6 @@ public interface MTLDevice {
     boolean supportsFeatureSet(@NUInt long featureSet);
 
     @Generated
-    @Selector("maxThreadsPerThreadgroup")
-    @ByValue
-    MTLSize maxThreadsPerThreadgroup();
-
-    @Generated
-    @Selector("newComputePipelineStateWithDescriptor:options:completionHandler:")
-    void newComputePipelineStateWithDescriptorOptionsCompletionHandler(MTLComputePipelineDescriptor descriptor,
-            @NUInt long options,
-            @ObjCBlock(name = "call_newComputePipelineStateWithDescriptorOptionsCompletionHandler") Block_newComputePipelineStateWithDescriptorOptionsCompletionHandler completionHandler);
-
-    @Generated
-    @Selector("newComputePipelineStateWithDescriptor:options:reflection:error:")
-    @MappedReturn(ObjCObjectMapper.class)
-    Object newComputePipelineStateWithDescriptorOptionsReflectionError(MTLComputePipelineDescriptor descriptor,
-            @NUInt long options, Ptr<MTLComputePipelineReflection> reflection, Ptr<NSError> error);
-
-    @Generated
     @Selector("supportsTextureSampleCount:")
     boolean supportsTextureSampleCount(@NUInt long sampleCount);
 
@@ -194,6 +222,14 @@ public interface MTLDevice {
     public interface Block_newBufferWithBytesNoCopyLengthOptionsDeallocator {
         @Generated
         void call_newBufferWithBytesNoCopyLengthOptionsDeallocator(VoidPtr arg0, @NUInt long arg1);
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_newComputePipelineStateWithDescriptorOptionsCompletionHandler {
+        @Generated
+        void call_newComputePipelineStateWithDescriptorOptionsCompletionHandler(
+                @Mapped(ObjCObjectMapper.class) Object arg0, MTLComputePipelineReflection arg1, NSError arg2);
     }
 
     @Runtime(ObjCRuntime.class)
@@ -234,13 +270,5 @@ public interface MTLDevice {
         @Generated
         void call_newRenderPipelineStateWithDescriptorOptionsCompletionHandler(
                 @Mapped(ObjCObjectMapper.class) Object arg0, MTLRenderPipelineReflection arg1, NSError arg2);
-    }
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_newComputePipelineStateWithDescriptorOptionsCompletionHandler {
-        @Generated
-        void call_newComputePipelineStateWithDescriptorOptionsCompletionHandler(
-                @Mapped(ObjCObjectMapper.class) Object arg0, MTLComputePipelineReflection arg1, NSError arg2);
     }
 }

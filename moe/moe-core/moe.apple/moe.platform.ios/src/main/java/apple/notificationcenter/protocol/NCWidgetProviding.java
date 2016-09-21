@@ -16,10 +16,12 @@ limitations under the License.
 
 package apple.notificationcenter.protocol;
 
+import apple.coregraphics.struct.CGSize;
 import apple.uikit.struct.UIEdgeInsets;
 import org.moe.natj.general.ann.ByValue;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.Library;
+import org.moe.natj.general.ann.NInt;
 import org.moe.natj.general.ann.NUInt;
 import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.objc.ObjCRuntime;
@@ -33,6 +35,14 @@ import org.moe.natj.objc.ann.Selector;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("NCWidgetProviding")
 public interface NCWidgetProviding {
+    @Generated
+    @IsOptional
+    @Selector("widgetActiveDisplayModeDidChange:withMaximumSize:")
+    default void widgetActiveDisplayModeDidChangeWithMaximumSize(@NInt long activeDisplayMode,
+            @ByValue CGSize maxSize) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
     @Generated
     @IsOptional
     @Selector("widgetMarginInsetsForProposedMarginInsets:")

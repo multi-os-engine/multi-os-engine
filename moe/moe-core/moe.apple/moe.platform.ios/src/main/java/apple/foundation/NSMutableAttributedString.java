@@ -56,22 +56,22 @@ public class NSMutableAttributedString extends NSAttributedString {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native NSMutableAttributedString alloc();
 
     @Generated
-    @Selector("attributedStringWithAttachment:")
-    public static native NSAttributedString attributedStringWithAttachment(NSTextAttachment attachment);
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
-
-    @Generated
     @Selector("allocWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object allocWithZone(VoidPtr zone);
+
+    @Generated
+    @Selector("attributedStringWithAttachment:")
+    public static native NSAttributedString attributedStringWithAttachment(NSTextAttachment attachment);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -153,7 +153,7 @@ public class NSMutableAttributedString extends NSAttributedString {
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")
@@ -206,12 +206,16 @@ public class NSMutableAttributedString extends NSAttributedString {
     public native NSMutableAttributedString initWithAttributedString(NSAttributedString attrStr);
 
     @Generated
+    @Selector("initWithCoder:")
+    public native NSMutableAttributedString initWithCoder(NSCoder aDecoder);
+
+    @Generated
     @Selector("initWithData:options:documentAttributes:error:")
     public native NSMutableAttributedString initWithDataOptionsDocumentAttributesError(NSData data,
             NSDictionary<String, ?> options, Ptr<NSDictionary<String, ?>> dict, Ptr<NSError> error);
 
-    @Deprecated
     @Generated
+    @Deprecated
     @Selector("initWithFileURL:options:documentAttributes:error:")
     public native NSMutableAttributedString initWithFileURLOptionsDocumentAttributesError(NSURL url,
             NSDictionary<?, ?> options, Ptr<NSDictionary<?, ?>> dict, Ptr<NSError> error);
@@ -223,6 +227,11 @@ public class NSMutableAttributedString extends NSAttributedString {
     @Generated
     @Selector("initWithString:attributes:")
     public native NSMutableAttributedString initWithStringAttributes(String str, NSDictionary<String, ?> attrs);
+
+    @Generated
+    @Selector("initWithURL:options:documentAttributes:error:")
+    public native NSMutableAttributedString initWithURLOptionsDocumentAttributesError(NSURL url,
+            NSDictionary<String, ?> options, Ptr<NSDictionary<String, ?>> dict, Ptr<NSError> error);
 
     @Generated
     @Selector("insertAttributedString:atIndex:")
@@ -237,11 +246,16 @@ public class NSMutableAttributedString extends NSAttributedString {
     public native boolean readFromDataOptionsDocumentAttributesError(NSData data, NSDictionary<String, ?> opts,
             Ptr<NSDictionary<String, ?>> dict, Ptr<NSError> error);
 
-    @Deprecated
     @Generated
+    @Deprecated
     @Selector("readFromFileURL:options:documentAttributes:error:")
     public native boolean readFromFileURLOptionsDocumentAttributesError(NSURL url, NSDictionary<?, ?> opts,
             Ptr<NSDictionary<?, ?>> dict, Ptr<NSError> error);
+
+    @Generated
+    @Selector("readFromURL:options:documentAttributes:error:")
+    public native boolean readFromURLOptionsDocumentAttributesError(NSURL url, NSDictionary<String, ?> opts,
+            Ptr<NSDictionary<String, ?>> dict, Ptr<NSError> error);
 
     @Generated
     @Selector("removeAttribute:range:")
@@ -263,20 +277,6 @@ public class NSMutableAttributedString extends NSAttributedString {
     @Generated
     @Selector("setAttributes:range:")
     public native void setAttributesRange(NSDictionary<String, ?> attrs, @ByValue NSRange range);
-
-    @Generated
-    @Selector("initWithURL:options:documentAttributes:error:")
-    public native NSMutableAttributedString initWithURLOptionsDocumentAttributesError(NSURL url,
-            NSDictionary<String, ?> options, Ptr<NSDictionary<String, ?>> dict, Ptr<NSError> error);
-
-    @Generated
-    @Selector("readFromURL:options:documentAttributes:error:")
-    public native boolean readFromURLOptionsDocumentAttributesError(NSURL url, NSDictionary<String, ?> opts,
-            Ptr<NSDictionary<String, ?>> dict, Ptr<NSError> error);
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native NSMutableAttributedString initWithCoder(NSCoder aDecoder);
 
     @Generated
     @ProtocolClassMethod("supportsSecureCoding")

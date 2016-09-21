@@ -62,44 +62,13 @@ public class SCNGeometrySource extends NSObject implements NSSecureCoding {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native SCNGeometrySource alloc();
-
-    @Generated
-    @Selector("geometrySourceWithData:semantic:vectorCount:floatComponents:componentsPerVector:bytesPerComponent:dataOffset:dataStride:")
-    public static native SCNGeometrySource geometrySourceWithDataSemanticVectorCountFloatComponentsComponentsPerVectorBytesPerComponentDataOffsetDataStride(
-            NSData data, String semantic, @NInt long vectorCount, boolean floatComponents,
-            @NInt long componentsPerVector, @NInt long bytesPerComponent, @NInt long offset, @NInt long stride);
-
-    @Generated
-    @Selector("geometrySourceWithNormals:count:")
-    public static native SCNGeometrySource geometrySourceWithNormalsCount(ConstPtr<SCNVector3> normals,
-            @NInt long count);
-
-    @Generated
-    @Selector("geometrySourceWithTextureCoordinates:count:")
-    public static native SCNGeometrySource geometrySourceWithTextureCoordinatesCount(ConstPtr<CGPoint> texcoord,
-            @NInt long count);
-
-    @Generated
-    @Selector("geometrySourceWithVertices:count:")
-    public static native SCNGeometrySource geometrySourceWithVerticesCount(ConstPtr<SCNVector3> vertices,
-            @NInt long count);
-
-    @Generated
-    @Selector("supportsSecureCoding")
-    public static native boolean supportsSecureCoding();
-
-    @Generated
-    @Selector("geometrySourceWithBuffer:vertexFormat:semantic:vertexCount:dataOffset:dataStride:")
-    public static native SCNGeometrySource geometrySourceWithBufferVertexFormatSemanticVertexCountDataOffsetDataStride(
-            @Mapped(ObjCObjectMapper.class) MTLBuffer mtlBuffer, @NUInt long vertexFormat, String semantic,
-            @NInt long vertexCount, @NInt long offset, @NInt long stride);
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -135,6 +104,33 @@ public class SCNGeometrySource extends NSObject implements NSSecureCoding {
     @Generated
     @Selector("description")
     public static native String description_static();
+
+    @Generated
+    @Selector("geometrySourceWithBuffer:vertexFormat:semantic:vertexCount:dataOffset:dataStride:")
+    public static native SCNGeometrySource geometrySourceWithBufferVertexFormatSemanticVertexCountDataOffsetDataStride(
+            @Mapped(ObjCObjectMapper.class) MTLBuffer mtlBuffer, @NUInt long vertexFormat, String semantic,
+            @NInt long vertexCount, @NInt long offset, @NInt long stride);
+
+    @Generated
+    @Selector("geometrySourceWithData:semantic:vectorCount:floatComponents:componentsPerVector:bytesPerComponent:dataOffset:dataStride:")
+    public static native SCNGeometrySource geometrySourceWithDataSemanticVectorCountFloatComponentsComponentsPerVectorBytesPerComponentDataOffsetDataStride(
+            NSData data, String semantic, @NInt long vectorCount, boolean floatComponents,
+            @NInt long componentsPerVector, @NInt long bytesPerComponent, @NInt long offset, @NInt long stride);
+
+    @Generated
+    @Selector("geometrySourceWithNormals:count:")
+    public static native SCNGeometrySource geometrySourceWithNormalsCount(ConstPtr<SCNVector3> normals,
+            @NInt long count);
+
+    @Generated
+    @Selector("geometrySourceWithTextureCoordinates:count:")
+    public static native SCNGeometrySource geometrySourceWithTextureCoordinatesCount(ConstPtr<CGPoint> texcoord,
+            @NInt long count);
+
+    @Generated
+    @Selector("geometrySourceWithVertices:count:")
+    public static native SCNGeometrySource geometrySourceWithVerticesCount(ConstPtr<SCNVector3> vertices,
+            @NInt long count);
 
     @Generated
     @Selector("hash")
@@ -191,6 +187,10 @@ public class SCNGeometrySource extends NSObject implements NSSecureCoding {
     @Generated
     @Selector("superclass")
     public static native Class superclass_static();
+
+    @Generated
+    @Selector("supportsSecureCoding")
+    public static native boolean supportsSecureCoding();
 
     @Generated
     @Selector("version")

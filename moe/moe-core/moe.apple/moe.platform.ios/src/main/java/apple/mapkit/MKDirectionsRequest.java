@@ -56,17 +56,13 @@ public class MKDirectionsRequest extends NSObject {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native MKDirectionsRequest alloc();
-
-    @Generated
-    @Selector("isDirectionsRequestURL:")
-    public static native boolean isDirectionsRequestURL(NSURL url);
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -126,6 +122,10 @@ public class MKDirectionsRequest extends NSObject {
     public static native boolean instancesRespondToSelector(SEL aSelector);
 
     @Generated
+    @Selector("isDirectionsRequestURL:")
+    public static native boolean isDirectionsRequestURL(NSURL url);
+
+    @Generated
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
@@ -153,7 +153,7 @@ public class MKDirectionsRequest extends NSObject {
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")

@@ -55,13 +55,13 @@ public class GLKTextureInfo extends NSObject implements NSCopying {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native GLKTextureInfo alloc();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -164,6 +164,10 @@ public class GLKTextureInfo extends NSObject implements NSCopying {
     public native int alphaState();
 
     @Generated
+    @Selector("arrayLength")
+    public native int arrayLength();
+
+    @Generated
     @Selector("containsMipmaps")
     public native boolean containsMipmaps();
 
@@ -174,12 +178,20 @@ public class GLKTextureInfo extends NSObject implements NSCopying {
     public native Object copyWithZone(VoidPtr zone);
 
     @Generated
+    @Selector("depth")
+    public native int depth();
+
+    @Generated
     @Selector("height")
     public native int height();
 
     @Generated
     @Selector("init")
     public native GLKTextureInfo init();
+
+    @Generated
+    @Selector("mimapLevelCount")
+    public native int mimapLevelCount();
 
     @Generated
     @Selector("name")

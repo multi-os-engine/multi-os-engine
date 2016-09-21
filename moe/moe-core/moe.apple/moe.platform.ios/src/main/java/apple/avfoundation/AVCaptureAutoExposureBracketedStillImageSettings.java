@@ -54,23 +54,23 @@ public class AVCaptureAutoExposureBracketedStillImageSettings extends AVCaptureB
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native AVCaptureAutoExposureBracketedStillImageSettings alloc();
 
     @Generated
-    @Selector("autoExposureSettingsWithExposureTargetBias:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object autoExposureSettingsWithExposureTargetBias(float exposureTargetBias);
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
-
-    @Generated
     @Selector("allocWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object allocWithZone(VoidPtr zone);
+
+    @Generated
+    @Selector("autoExposureSettingsWithExposureTargetBias:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object autoExposureSettingsWithExposureTargetBias(float exposureTargetBias);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -152,7 +152,7 @@ public class AVCaptureAutoExposureBracketedStillImageSettings extends AVCaptureB
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")
@@ -161,7 +161,7 @@ public class AVCaptureAutoExposureBracketedStillImageSettings extends AVCaptureB
     @Generated
     @Selector("version")
     @NInt
-    public static native long version();
+    public static native long version_static();
 
     @Generated
     @Selector("exposureTargetBias")

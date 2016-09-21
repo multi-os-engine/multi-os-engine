@@ -58,26 +58,13 @@ public class CNContactVCardSerialization extends NSObject {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native CNContactVCardSerialization alloc();
-
-    @Generated
-    @Selector("contactsWithData:error:")
-    public static native NSArray<?> contactsWithDataError(NSData data, Ptr<NSError> error);
-
-    @Generated
-    @Selector("dataWithContacts:error:")
-    public static native NSData dataWithContactsError(NSArray<?> contacts, Ptr<NSError> error);
-
-    @Generated
-    @Selector("descriptorForRequiredKeys")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native CNKeyDescriptor descriptorForRequiredKeys();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -107,12 +94,25 @@ public class CNContactVCardSerialization extends NSObject {
     public static native Class classForKeyedUnarchiver();
 
     @Generated
+    @Selector("contactsWithData:error:")
+    public static native NSArray<? extends CNContact> contactsWithDataError(NSData data, Ptr<NSError> error);
+
+    @Generated
+    @Selector("dataWithContacts:error:")
+    public static native NSData dataWithContactsError(NSArray<? extends CNContact> contacts, Ptr<NSError> error);
+
+    @Generated
     @Selector("debugDescription")
     public static native String debugDescription_static();
 
     @Generated
     @Selector("description")
     public static native String description_static();
+
+    @Generated
+    @Selector("descriptorForRequiredKeys")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native CNKeyDescriptor descriptorForRequiredKeys();
 
     @Generated
     @Selector("hash")

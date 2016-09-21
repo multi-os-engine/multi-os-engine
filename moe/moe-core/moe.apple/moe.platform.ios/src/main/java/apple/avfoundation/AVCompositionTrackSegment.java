@@ -57,22 +57,13 @@ public class AVCompositionTrackSegment extends AVAssetTrackSegment {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native AVCompositionTrackSegment alloc();
-
-    @Generated
-    @Selector("compositionTrackSegmentWithTimeRange:")
-    public static native AVCompositionTrackSegment compositionTrackSegmentWithTimeRange(@ByValue CMTimeRange timeRange);
-
-    @Generated
-    @Selector("compositionTrackSegmentWithURL:trackID:sourceTimeRange:targetTimeRange:")
-    public static native AVCompositionTrackSegment compositionTrackSegmentWithURLTrackIDSourceTimeRangeTargetTimeRange(
-            NSURL URL, int trackID, @ByValue CMTimeRange sourceTimeRange, @ByValue CMTimeRange targetTimeRange);
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -100,6 +91,15 @@ public class AVCompositionTrackSegment extends AVAssetTrackSegment {
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
+
+    @Generated
+    @Selector("compositionTrackSegmentWithTimeRange:")
+    public static native AVCompositionTrackSegment compositionTrackSegmentWithTimeRange(@ByValue CMTimeRange timeRange);
+
+    @Generated
+    @Selector("compositionTrackSegmentWithURL:trackID:sourceTimeRange:targetTimeRange:")
+    public static native AVCompositionTrackSegment compositionTrackSegmentWithURLTrackIDSourceTimeRangeTargetTimeRange(
+            NSURL URL, int trackID, @ByValue CMTimeRange sourceTimeRange, @ByValue CMTimeRange targetTimeRange);
 
     @Generated
     @Selector("debugDescription")
@@ -159,7 +159,7 @@ public class AVCompositionTrackSegment extends AVAssetTrackSegment {
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")
@@ -168,7 +168,7 @@ public class AVCompositionTrackSegment extends AVAssetTrackSegment {
     @Generated
     @Selector("version")
     @NInt
-    public static native long version();
+    public static native long version_static();
 
     @Generated
     @Selector("init")

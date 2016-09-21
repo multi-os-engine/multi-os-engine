@@ -58,17 +58,13 @@ public class PKAddPassesViewController extends UIViewController {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native PKAddPassesViewController alloc();
-
-    @Generated
-    @Selector("canAddPasses")
-    public static native boolean canAddPasses();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -82,6 +78,10 @@ public class PKAddPassesViewController extends UIViewController {
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
     public static native boolean automaticallyNotifiesObserversForKey(String key);
+
+    @Generated
+    @Selector("canAddPasses")
+    public static native boolean canAddPasses();
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
@@ -167,7 +167,7 @@ public class PKAddPassesViewController extends UIViewController {
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")
@@ -186,6 +186,10 @@ public class PKAddPassesViewController extends UIViewController {
     @Generated
     @Selector("init")
     public native PKAddPassesViewController init();
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native PKAddPassesViewController initWithCoder(NSCoder aDecoder);
 
     @Generated
     @Selector("initWithNibName:bundle:")
@@ -214,8 +218,4 @@ public class PKAddPassesViewController extends UIViewController {
             org.moe.natj.objc.ObjCRuntime.dissociateObjCObject(this, __old);
         }
     }
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native PKAddPassesViewController initWithCoder(NSCoder aDecoder);
 }

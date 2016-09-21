@@ -58,17 +58,13 @@ public class CMMotionActivityManager extends NSObject {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native CMMotionActivityManager alloc();
-
-    @Generated
-    @Selector("isActivityAvailable")
-    public static native boolean isActivityAvailable();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -126,6 +122,10 @@ public class CMMotionActivityManager extends NSObject {
     @Generated
     @Selector("instancesRespondToSelector:")
     public static native boolean instancesRespondToSelector(SEL aSelector);
+
+    @Generated
+    @Selector("isActivityAvailable")
+    public static native boolean isActivityAvailable();
 
     @Generated
     @Selector("isSubclassOfClass:")

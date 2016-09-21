@@ -56,17 +56,13 @@ public class SCNLookAtConstraint extends SCNConstraint {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native SCNLookAtConstraint alloc();
-
-    @Generated
-    @Selector("lookAtConstraintWithTarget:")
-    public static native SCNLookAtConstraint lookAtConstraintWithTarget(SCNNode target);
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -138,6 +134,10 @@ public class SCNLookAtConstraint extends SCNConstraint {
     public static native void load_objc_static();
 
     @Generated
+    @Selector("lookAtConstraintWithTarget:")
+    public static native SCNLookAtConstraint lookAtConstraintWithTarget(SCNNode target);
+
+    @Generated
     @Owned
     @Selector("new")
     @MappedReturn(ObjCObjectMapper.class)
@@ -177,20 +177,24 @@ public class SCNLookAtConstraint extends SCNConstraint {
     public native SCNLookAtConstraint init();
 
     @Generated
+    @Selector("initWithCoder:")
+    public native SCNLookAtConstraint initWithCoder(NSCoder aDecoder);
+
+    @Generated
     @Selector("setGimbalLockEnabled:")
     public native void setGimbalLockEnabled(boolean value);
 
     @Generated
-    @Selector("target")
-    public native SCNNode target();
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native SCNLookAtConstraint initWithCoder(NSCoder aDecoder);
+    @Selector("setTarget:")
+    public native void setTarget(SCNNode target);
 
     @Generated
     @ProtocolClassMethod("supportsSecureCoding")
     public boolean _supportsSecureCoding() {
         return supportsSecureCoding();
     }
+
+    @Generated
+    @Selector("target")
+    public native SCNNode target();
 }

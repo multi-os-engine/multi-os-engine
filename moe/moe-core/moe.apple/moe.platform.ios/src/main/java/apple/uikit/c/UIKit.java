@@ -254,6 +254,12 @@ public final class UIKit {
 
     @Generated
     @CFunction
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object UIAccessibilityFocusedElement(
+            @Mapped(ObjCStringMapper.class) String assistiveTechnologyIdentifier);
+
+    @Generated
+    @CFunction
     public static native void UIAccessibilityPostNotification(int notification,
             @Mapped(ObjCObjectMapper.class) Object argument);
 
@@ -311,8 +317,21 @@ public final class UIKit {
 
     @Generated
     @CFunction
+    public static native boolean UIAccessibilityIsShakeToUndoEnabled();
+
+    @Generated
+    @CFunction
+    public static native boolean UIAccessibilityIsAssistiveTouchRunning();
+
+    @Generated
+    @CFunction
     public static native void UIAccessibilityRequestGuidedAccessSession(boolean enable,
             @ObjCBlock(name = "call_UIAccessibilityRequestGuidedAccessSession") Block_UIAccessibilityRequestGuidedAccessSession completionHandler);
+
+    @Generated
+    @CFunction
+    @NUInt
+    public static native long UIAccessibilityHearingDevicePairedEar();
 
     @Generated
     @CFunction
@@ -418,6 +437,21 @@ public final class UIKit {
     @CFunction
     public static native void UISaveVideoAtPathToSavedPhotosAlbum(@Mapped(ObjCStringMapper.class) String videoPath,
             @Mapped(ObjCObjectMapper.class) Object completionTarget, SEL completionSelector, VoidPtr contextInfo);
+
+    @Generated
+    @CFunction
+    public static native boolean UIFloatRangeIsInfinite(@ByValue UIFloatRange range);
+
+    @Generated
+    @CFunction
+    public static native boolean UIFloatRangeIsEqualToRange(@ByValue UIFloatRange range,
+            @ByValue UIFloatRange otherRange);
+
+    @Generated
+    @Inline
+    @CFunction
+    @ByValue
+    public static native UIFloatRange UIFloatRangeMake(@NFloat double minimum, @NFloat double maximum);
 
     @Generated
     @CVariable()
@@ -582,7 +616,27 @@ public final class UIKit {
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
+    public static native String UIFontTextStyleTitle1();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String UIFontTextStyleTitle2();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String UIFontTextStyleTitle3();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
     public static native String UIFontTextStyleHeadline();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String UIFontTextStyleSubheadline();
 
     @Generated
     @CVariable()
@@ -592,7 +646,7 @@ public final class UIKit {
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
-    public static native String UIFontTextStyleSubheadline();
+    public static native String UIFontTextStyleCallout();
 
     @Generated
     @CVariable()
@@ -641,6 +695,81 @@ public final class UIKit {
 
     @Generated
     @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String UIContentSizeCategoryUnspecified();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String UIContentSizeCategoryExtraSmall();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String UIContentSizeCategorySmall();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String UIContentSizeCategoryMedium();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String UIContentSizeCategoryLarge();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String UIContentSizeCategoryExtraLarge();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String UIContentSizeCategoryExtraExtraLarge();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String UIContentSizeCategoryExtraExtraExtraLarge();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String UIContentSizeCategoryAccessibilityMedium();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String UIContentSizeCategoryAccessibilityLarge();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String UIContentSizeCategoryAccessibilityExtraLarge();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String UIContentSizeCategoryAccessibilityExtraExtraLarge();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String UIContentSizeCategoryAccessibilityExtraExtraExtraLarge();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String UIContentSizeCategoryDidChangeNotification();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String UIContentSizeCategoryNewValueKey();
+
+    @Generated
+    @CVariable()
     @NFloat
     public static native double UIViewNoIntrinsicMetric();
 
@@ -682,6 +811,121 @@ public final class UIKit {
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
+    public static native String UITextContentTypeName();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String UITextContentTypeNamePrefix();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String UITextContentTypeGivenName();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String UITextContentTypeMiddleName();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String UITextContentTypeFamilyName();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String UITextContentTypeNameSuffix();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String UITextContentTypeNickname();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String UITextContentTypeJobTitle();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String UITextContentTypeOrganizationName();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String UITextContentTypeLocation();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String UITextContentTypeFullStreetAddress();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String UITextContentTypeStreetAddressLine1();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String UITextContentTypeStreetAddressLine2();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String UITextContentTypeAddressCity();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String UITextContentTypeAddressState();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String UITextContentTypeAddressCityAndState();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String UITextContentTypeSublocality();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String UITextContentTypeCountryName();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String UITextContentTypePostalCode();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String UITextContentTypeTelephoneNumber();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String UITextContentTypeEmailAddress();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String UITextContentTypeURL();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String UITextContentTypeCreditCardNumber();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
     public static native String UITextInputTextBackgroundColorKey();
 
     @Generated
@@ -713,6 +957,11 @@ public final class UIKit {
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String UITextFieldTextDidChangeNotification();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String UITextFieldDidEndEditingReasonKey();
 
     @Generated
     @CVariable()
@@ -819,6 +1068,16 @@ public final class UIKit {
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
+    public static native String UIApplicationProtectedDataWillBecomeUnavailable();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String UIApplicationProtectedDataDidBecomeAvailable();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
     public static native String UIApplicationLaunchOptionsURLKey();
 
     @Generated
@@ -844,16 +1103,6 @@ public final class UIKit {
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
-    public static native String UIApplicationProtectedDataWillBecomeUnavailable();
-
-    @Generated
-    @CVariable()
-    @MappedReturn(ObjCStringMapper.class)
-    public static native String UIApplicationProtectedDataDidBecomeAvailable();
-
-    @Generated
-    @CVariable()
-    @MappedReturn(ObjCStringMapper.class)
     public static native String UIApplicationLaunchOptionsLocationKey();
 
     @Generated
@@ -874,6 +1123,11 @@ public final class UIKit {
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
+    public static native String UIApplicationLaunchOptionsShortcutItemKey();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
     public static native String UIApplicationLaunchOptionsUserActivityDictionaryKey();
 
     @Generated
@@ -884,77 +1138,27 @@ public final class UIKit {
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
+    public static native String UIApplicationLaunchOptionsCloudKitShareMetadataKey();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
     public static native String UIApplicationOpenSettingsURLString();
 
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
-    public static native String UIContentSizeCategoryExtraSmall();
+    public static native String UIApplicationOpenURLOptionsSourceApplicationKey();
 
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
-    public static native String UIContentSizeCategorySmall();
+    public static native String UIApplicationOpenURLOptionsAnnotationKey();
 
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
-    public static native String UIContentSizeCategoryMedium();
-
-    @Generated
-    @CVariable()
-    @MappedReturn(ObjCStringMapper.class)
-    public static native String UIContentSizeCategoryLarge();
-
-    @Generated
-    @CVariable()
-    @MappedReturn(ObjCStringMapper.class)
-    public static native String UIContentSizeCategoryExtraLarge();
-
-    @Generated
-    @CVariable()
-    @MappedReturn(ObjCStringMapper.class)
-    public static native String UIContentSizeCategoryExtraExtraLarge();
-
-    @Generated
-    @CVariable()
-    @MappedReturn(ObjCStringMapper.class)
-    public static native String UIContentSizeCategoryExtraExtraExtraLarge();
-
-    @Generated
-    @CVariable()
-    @MappedReturn(ObjCStringMapper.class)
-    public static native String UIContentSizeCategoryAccessibilityMedium();
-
-    @Generated
-    @CVariable()
-    @MappedReturn(ObjCStringMapper.class)
-    public static native String UIContentSizeCategoryAccessibilityLarge();
-
-    @Generated
-    @CVariable()
-    @MappedReturn(ObjCStringMapper.class)
-    public static native String UIContentSizeCategoryAccessibilityExtraLarge();
-
-    @Generated
-    @CVariable()
-    @MappedReturn(ObjCStringMapper.class)
-    public static native String UIContentSizeCategoryAccessibilityExtraExtraLarge();
-
-    @Generated
-    @CVariable()
-    @MappedReturn(ObjCStringMapper.class)
-    public static native String UIContentSizeCategoryAccessibilityExtraExtraExtraLarge();
-
-    @Generated
-    @CVariable()
-    @MappedReturn(ObjCStringMapper.class)
-    public static native String UIContentSizeCategoryDidChangeNotification();
-
-    @Generated
-    @CVariable()
-    @MappedReturn(ObjCStringMapper.class)
-    public static native String UIContentSizeCategoryNewValueKey();
+    public static native String UIApplicationOpenURLOptionsOpenInPlaceKey();
 
     @Generated
     @CVariable()
@@ -965,6 +1169,11 @@ public final class UIKit {
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String UIApplicationKeyboardExtensionPointIdentifier();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String UIApplicationOpenURLOptionUniversalLinksOnly();
 
     @Generated
     @CVariable()
@@ -1015,21 +1224,6 @@ public final class UIKit {
     @CVariable()
     @NFloat
     public static native double UIScrollViewDecelerationRateFast();
-
-    @Generated
-    @CVariable()
-    @MappedReturn(ObjCStringMapper.class)
-    public static native String UITableViewIndexSearch();
-
-    @Generated
-    @CVariable()
-    @NFloat
-    public static native double UITableViewAutomaticDimension();
-
-    @Generated
-    @CVariable()
-    @MappedReturn(ObjCStringMapper.class)
-    public static native String UITableViewSelectionDidChangeNotification();
 
     @Generated
     @CVariable()
@@ -1101,6 +1295,10 @@ public final class UIKit {
 
     @Generated
     @CVariable()
+    public static native long UIAccessibilityTraitTabBar();
+
+    @Generated
+    @CVariable()
     public static native int UIAccessibilityScreenChangedNotification();
 
     @Generated
@@ -1128,6 +1326,26 @@ public final class UIKit {
 
     @Generated
     @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String UIAccessibilityElementFocusedNotification();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String UIAccessibilityFocusedElementKey();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String UIAccessibilityUnfocusedElementKey();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String UIAccessibilityAssistiveTechnologyKey();
+
+    @Generated
+    @CVariable()
     public static native int UIAccessibilityPageScrolledNotification();
 
     @Generated
@@ -1142,6 +1360,11 @@ public final class UIKit {
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String UIAccessibilityNotificationSwitchControlIdentifier();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String UIAccessibilityNotificationVoiceOverIdentifier();
 
     @Generated
     @CVariable()
@@ -1226,6 +1449,21 @@ public final class UIKit {
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
+    public static native String UIAccessibilityShakeToUndoDidChangeNotification();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String UIAccessibilityAssistiveTouchStatusDidChangeNotification();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String UIAccessibilityHearingDevicePairedEarDidChangeNotification();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
     public static native String UIActivityTypePostToFacebook();
 
     @Generated
@@ -1296,12 +1534,22 @@ public final class UIKit {
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
+    public static native String UIActivityTypeOpenInIBooks();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
     public static native String UICollectionElementKindSectionHeader();
 
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String UICollectionElementKindSectionFooter();
+
+    @Generated
+    @CVariable()
+    @ByValue
+    public static native CGSize UICollectionViewFlowLayoutAutomaticSize();
 
     @Generated
     @CVariable()
@@ -1351,7 +1599,22 @@ public final class UIKit {
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
+    public static native String UIImagePickerControllerLivePhoto();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
     public static native String UILocalNotificationDefaultSoundName();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String UIUserNotificationTextInputActionButtonTitleKey();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String UIUserNotificationActionResponseTypedTextKey();
 
     @Generated
     @CVariable()
@@ -1411,6 +1674,16 @@ public final class UIKit {
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
+    public static native String UIPasteboardOptionExpirationDate();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String UIPasteboardOptionLocalOnly();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
     public static native String UIPasteboardChangedNotification();
 
     @Generated
@@ -1443,6 +1716,11 @@ public final class UIKit {
     @Generated
     @CVariable()
     public static native NSArray<String> UIPasteboardTypeListColor();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String UIPasteboardTypeAutomatic();
 
     @Generated
     @CVariable()
@@ -1488,6 +1766,21 @@ public final class UIKit {
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String UITransitionContextToViewKey();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String UITableViewIndexSearch();
+
+    @Generated
+    @CVariable()
+    @NFloat
+    public static native double UITableViewAutomaticDimension();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String UITableViewSelectionDidChangeNotification();
 
     @Generated
     @CVariable()
@@ -1583,6 +1876,11 @@ public final class UIKit {
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String UIKeyboardAnimationCurveUserInfoKey();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String UIKeyboardIsLocalUserInfoKey();
 
     @Generated
     @CVariable()
@@ -1825,116 +2123,6 @@ public final class UIKit {
     public static native String NSTextStorageDidProcessEditingNotification();
 
     @Generated
-    @CFunction
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object UIAccessibilityFocusedElement(
-            @Mapped(ObjCStringMapper.class) String assistiveTechnologyIdentifier);
-
-    @Generated
-    @CFunction
-    public static native boolean UIAccessibilityIsShakeToUndoEnabled();
-
-    @Generated
-    @CFunction
-    public static native boolean UIFloatRangeIsInfinite(@ByValue UIFloatRange range);
-
-    @Generated
-    @CFunction
-    public static native boolean UIFloatRangeIsEqualToRange(@ByValue UIFloatRange range,
-            @ByValue UIFloatRange otherRange);
-
-    @Generated
-    @Inline
-    @CFunction
-    @ByValue
-    public static native UIFloatRange UIFloatRangeMake(@NFloat double minimum, @NFloat double maximum);
-
-    @Generated
-    @CVariable()
-    @MappedReturn(ObjCStringMapper.class)
-    public static native String UIFontTextStyleTitle1();
-
-    @Generated
-    @CVariable()
-    @MappedReturn(ObjCStringMapper.class)
-    public static native String UIFontTextStyleTitle2();
-
-    @Generated
-    @CVariable()
-    @MappedReturn(ObjCStringMapper.class)
-    public static native String UIFontTextStyleTitle3();
-
-    @Generated
-    @CVariable()
-    @MappedReturn(ObjCStringMapper.class)
-    public static native String UIFontTextStyleCallout();
-
-    @Generated
-    @CVariable()
-    @MappedReturn(ObjCStringMapper.class)
-    public static native String UIApplicationOpenURLOptionsSourceApplicationKey();
-
-    @Generated
-    @CVariable()
-    @MappedReturn(ObjCStringMapper.class)
-    public static native String UIApplicationOpenURLOptionsAnnotationKey();
-
-    @Generated
-    @CVariable()
-    @MappedReturn(ObjCStringMapper.class)
-    public static native String UIApplicationOpenURLOptionsOpenInPlaceKey();
-
-    @Generated
-    @CVariable()
-    @MappedReturn(ObjCStringMapper.class)
-    public static native String UIAccessibilityElementFocusedNotification();
-
-    @Generated
-    @CVariable()
-    @MappedReturn(ObjCStringMapper.class)
-    public static native String UIAccessibilityFocusedElementKey();
-
-    @Generated
-    @CVariable()
-    @MappedReturn(ObjCStringMapper.class)
-    public static native String UIAccessibilityUnfocusedElementKey();
-
-    @Generated
-    @CVariable()
-    @MappedReturn(ObjCStringMapper.class)
-    public static native String UIAccessibilityAssistiveTechnologyKey();
-
-    @Generated
-    @CVariable()
-    @MappedReturn(ObjCStringMapper.class)
-    public static native String UIAccessibilityNotificationVoiceOverIdentifier();
-
-    @Generated
-    @CVariable()
-    @MappedReturn(ObjCStringMapper.class)
-    public static native String UIAccessibilityShakeToUndoDidChangeNotification();
-
-    @Generated
-    @CVariable()
-    @MappedReturn(ObjCStringMapper.class)
-    public static native String UIActivityTypeOpenInIBooks();
-
-    @Generated
-    @CVariable()
-    @MappedReturn(ObjCStringMapper.class)
-    public static native String UIUserNotificationTextInputActionButtonTitleKey();
-
-    @Generated
-    @CVariable()
-    @MappedReturn(ObjCStringMapper.class)
-    public static native String UIUserNotificationActionResponseTypedTextKey();
-
-    @Generated
-    @CVariable()
-    @MappedReturn(ObjCStringMapper.class)
-    public static native String UIKeyboardIsLocalUserInfoKey();
-
-    @Generated
     @CVariable()
     @ByValue
     public static native UIFloatRange UIFloatRangeZero();
@@ -1943,16 +2131,6 @@ public final class UIKit {
     @CVariable()
     @ByValue
     public static native UIFloatRange UIFloatRangeInfinite();
-
-    @Generated
-    @CVariable()
-    @MappedReturn(ObjCStringMapper.class)
-    public static native String UIApplicationLaunchOptionsShortcutItemKey();
-
-    @Generated
-    @CVariable()
-    @MappedReturn(ObjCStringMapper.class)
-    public static native String UIImagePickerControllerLivePhoto();
 
     @Runtime(CRuntime.class)
     @Generated

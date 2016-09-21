@@ -43,6 +43,14 @@ public interface GKMatchDelegate {
 
     @Generated
     @IsOptional
+    @Selector("match:didReceiveData:forRecipient:fromRemotePlayer:")
+    default void matchDidReceiveDataForRecipientFromRemotePlayer(GKMatch match, NSData data, GKPlayer recipient,
+            GKPlayer player) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Generated
+    @IsOptional
     @Deprecated
     @Selector("match:didReceiveData:fromPlayer:")
     default void matchDidReceiveDataFromPlayer(GKMatch match, NSData data, String playerID) {
@@ -83,14 +91,6 @@ public interface GKMatchDelegate {
     @Deprecated
     @Selector("match:shouldReinvitePlayer:")
     default boolean matchShouldReinvitePlayer(GKMatch match, String playerID) {
-        throw new java.lang.UnsupportedOperationException();
-    }
-
-    @Generated
-    @IsOptional
-    @Selector("match:didReceiveData:forRecipient:fromRemotePlayer:")
-    default void matchDidReceiveDataForRecipientFromRemotePlayer(GKMatch match, NSData data, GKPlayer recipient,
-            GKPlayer player) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

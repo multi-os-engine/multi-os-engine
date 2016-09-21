@@ -35,8 +35,23 @@ import org.moe.natj.objc.ann.Selector;
 @ObjCProtocolName("UICollectionViewDataSource")
 public interface UICollectionViewDataSource {
     @Generated
+    @IsOptional
+    @Selector("collectionView:canMoveItemAtIndexPath:")
+    default boolean collectionViewCanMoveItemAtIndexPath(UICollectionView collectionView, NSIndexPath indexPath) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Generated
     @Selector("collectionView:cellForItemAtIndexPath:")
     UICollectionViewCell collectionViewCellForItemAtIndexPath(UICollectionView collectionView, NSIndexPath indexPath);
+
+    @Generated
+    @IsOptional
+    @Selector("collectionView:moveItemAtIndexPath:toIndexPath:")
+    default void collectionViewMoveItemAtIndexPathToIndexPath(UICollectionView collectionView,
+            NSIndexPath sourceIndexPath, NSIndexPath destinationIndexPath) {
+        throw new java.lang.UnsupportedOperationException();
+    }
 
     @Generated
     @Selector("collectionView:numberOfItemsInSection:")
@@ -56,21 +71,6 @@ public interface UICollectionViewDataSource {
     @Selector("numberOfSectionsInCollectionView:")
     @NInt
     default long numberOfSectionsInCollectionView(UICollectionView collectionView) {
-        throw new java.lang.UnsupportedOperationException();
-    }
-
-    @Generated
-    @IsOptional
-    @Selector("collectionView:canMoveItemAtIndexPath:")
-    default boolean collectionViewCanMoveItemAtIndexPath(UICollectionView collectionView, NSIndexPath indexPath) {
-        throw new java.lang.UnsupportedOperationException();
-    }
-
-    @Generated
-    @IsOptional
-    @Selector("collectionView:moveItemAtIndexPath:toIndexPath:")
-    default void collectionViewMoveItemAtIndexPathToIndexPath(UICollectionView collectionView,
-            NSIndexPath sourceIndexPath, NSIndexPath destinationIndexPath) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

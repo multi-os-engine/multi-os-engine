@@ -55,13 +55,13 @@ public class NEProvider extends NSObject {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native NEProvider alloc();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -148,7 +148,7 @@ public class NEProvider extends NSObject {
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")
@@ -174,6 +174,11 @@ public class NEProvider extends NSObject {
     public native NWPath defaultPath();
 
     @Generated
+    @Selector("displayMessage:completionHandler:")
+    public native void displayMessageCompletionHandler(String message,
+            @ObjCBlock(name = "call_displayMessageCompletionHandler") Block_displayMessageCompletionHandler completionHandler);
+
+    @Generated
     @Selector("init")
     public native NEProvider init();
 
@@ -185,6 +190,13 @@ public class NEProvider extends NSObject {
     @Generated
     @Selector("wake")
     public native void wake();
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_displayMessageCompletionHandler {
+        @Generated
+        void call_displayMessageCompletionHandler(boolean arg0);
+    }
 
     @Runtime(ObjCRuntime.class)
     @Generated

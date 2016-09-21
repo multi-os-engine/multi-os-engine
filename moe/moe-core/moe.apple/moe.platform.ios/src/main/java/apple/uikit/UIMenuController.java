@@ -56,17 +56,13 @@ public class UIMenuController extends NSObject {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native UIMenuController alloc();
-
-    @Generated
-    @Selector("sharedMenuController")
-    public static native UIMenuController sharedMenuController();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -135,7 +131,7 @@ public class UIMenuController extends NSObject {
 
     @Generated
     @Selector("load")
-    public static native void load_objc();
+    public static native void load_objc_static();
 
     @Generated
     @Owned
@@ -153,7 +149,11 @@ public class UIMenuController extends NSObject {
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
+
+    @Generated
+    @Selector("sharedMenuController")
+    public static native UIMenuController sharedMenuController();
 
     @Generated
     @Selector("superclass")
@@ -162,7 +162,7 @@ public class UIMenuController extends NSObject {
     @Generated
     @Selector("version")
     @NInt
-    public static native long version();
+    public static native long version_static();
 
     @Generated
     @Selector("arrowDirection")

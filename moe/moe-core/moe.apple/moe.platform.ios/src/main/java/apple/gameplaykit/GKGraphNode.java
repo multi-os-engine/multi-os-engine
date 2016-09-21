@@ -18,8 +18,10 @@ package apple.gameplaykit;
 
 import apple.NSObject;
 import apple.foundation.NSArray;
+import apple.foundation.NSCoder;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
+import apple.foundation.protocol.NSCoding;
 import org.moe.natj.c.ann.FunctionPtr;
 import org.moe.natj.general.NatJ;
 import org.moe.natj.general.Pointer;
@@ -43,7 +45,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @Library("GameplayKit")
 @Runtime(ObjCRuntime.class)
 @ObjCClassBinding
-public class GKGraphNode extends NSObject {
+public class GKGraphNode extends NSObject implements NSCoding {
     static {
         NatJ.register();
     }
@@ -54,13 +56,13 @@ public class GKGraphNode extends NSObject {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native GKGraphNode alloc();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -147,7 +149,7 @@ public class GKGraphNode extends NSObject {
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")
@@ -171,6 +173,10 @@ public class GKGraphNode extends NSObject {
     public native float costToNode(GKGraphNode node);
 
     @Generated
+    @Selector("encodeWithCoder:")
+    public native void encodeWithCoder(NSCoder aCoder);
+
+    @Generated
     @Selector("estimatedCostToNode:")
     public native float estimatedCostToNode(GKGraphNode node);
 
@@ -185,6 +191,10 @@ public class GKGraphNode extends NSObject {
     @Generated
     @Selector("init")
     public native GKGraphNode init();
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native GKGraphNode initWithCoder(NSCoder aDecoder);
 
     @Generated
     @Selector("removeConnectionsToNodes:bidirectional:")

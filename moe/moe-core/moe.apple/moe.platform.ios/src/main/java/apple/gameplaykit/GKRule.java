@@ -56,29 +56,13 @@ public class GKRule extends NSObject {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native GKRule alloc();
-
-    @Generated
-    @Selector("ruleWithBlockPredicate:action:")
-    public static native GKRule ruleWithBlockPredicateAction(
-            @ObjCBlock(name = "call_ruleWithBlockPredicateAction_0") Block_ruleWithBlockPredicateAction_0 predicate,
-            @ObjCBlock(name = "call_ruleWithBlockPredicateAction_1") Block_ruleWithBlockPredicateAction_1 action);
-
-    @Generated
-    @Selector("ruleWithPredicate:assertingFact:grade:")
-    public static native GKRule ruleWithPredicateAssertingFactGrade(NSPredicate predicate,
-            @Mapped(ObjCObjectMapper.class) apple.protocol.NSObject fact, float grade);
-
-    @Generated
-    @Selector("ruleWithPredicate:retractingFact:grade:")
-    public static native GKRule ruleWithPredicateRetractingFactGrade(NSPredicate predicate,
-            @Mapped(ObjCObjectMapper.class) apple.protocol.NSObject fact, float grade);
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -162,6 +146,22 @@ public class GKRule extends NSObject {
     @Generated
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
+
+    @Generated
+    @Selector("ruleWithBlockPredicate:action:")
+    public static native GKRule ruleWithBlockPredicateAction(
+            @ObjCBlock(name = "call_ruleWithBlockPredicateAction_0") Block_ruleWithBlockPredicateAction_0 predicate,
+            @ObjCBlock(name = "call_ruleWithBlockPredicateAction_1") Block_ruleWithBlockPredicateAction_1 action);
+
+    @Generated
+    @Selector("ruleWithPredicate:assertingFact:grade:")
+    public static native GKRule ruleWithPredicateAssertingFactGrade(NSPredicate predicate,
+            @Mapped(ObjCObjectMapper.class) apple.protocol.NSObject fact, float grade);
+
+    @Generated
+    @Selector("ruleWithPredicate:retractingFact:grade:")
+    public static native GKRule ruleWithPredicateRetractingFactGrade(NSPredicate predicate,
+            @Mapped(ObjCObjectMapper.class) apple.protocol.NSObject fact, float grade);
 
     @Generated
     @Selector("setVersion:")

@@ -59,13 +59,13 @@ public class UIInputViewController extends UIViewController implements UITextInp
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native UIInputViewController alloc();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -184,8 +184,16 @@ public class UIInputViewController extends UIViewController implements UITextInp
     public native void dismissKeyboard();
 
     @Generated
+    @Selector("handleInputModeListFromView:withEvent:")
+    public native void handleInputModeListFromViewWithEvent(UIView view, UIEvent event);
+
+    @Generated
     @Selector("init")
     public native UIInputViewController init();
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native UIInputViewController initWithCoder(NSCoder aDecoder);
 
     @Generated
     @Selector("initWithNibName:bundle:")
@@ -232,10 +240,6 @@ public class UIInputViewController extends UIViewController implements UITextInp
     @Generated
     @Selector("textWillChange:")
     public native void textWillChange(@Mapped(ObjCObjectMapper.class) Object textInput);
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native UIInputViewController initWithCoder(NSCoder aDecoder);
 
     @Runtime(ObjCRuntime.class)
     @Generated

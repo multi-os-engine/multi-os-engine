@@ -20,6 +20,7 @@ import apple.NSObject;
 import apple.foundation.NSArray;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
+import apple.modelio.protocol.MDLMeshBufferAllocator;
 import apple.scenekit.SCNLight;
 import apple.scenekit.SCNNode;
 import org.moe.natj.c.ann.FunctionPtr;
@@ -56,21 +57,13 @@ public class MDLLight extends MDLObject {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native MDLLight alloc();
-
-    @Generated
-    @Selector("lightWithSCNLight:")
-    public static native MDLLight lightWithSCNLight(SCNLight scnLight);
-
-    @Generated
-    @Selector("objectWithSCNNode:")
-    public static native MDLLight objectWithSCNNode(SCNNode scnNode);
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -138,6 +131,10 @@ public class MDLLight extends MDLObject {
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
     @Generated
+    @Selector("lightWithSCNLight:")
+    public static native MDLLight lightWithSCNLight(SCNLight scnLight);
+
+    @Generated
     @Selector("load")
     public static native void load_objc_static();
 
@@ -146,6 +143,15 @@ public class MDLLight extends MDLObject {
     @Selector("new")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object new_objc();
+
+    @Generated
+    @Selector("objectWithSCNNode:")
+    public static native MDLLight objectWithSCNNode(SCNNode scnNode);
+
+    @Generated
+    @Selector("objectWithSCNNode:bufferAllocator:")
+    public static native MDLLight objectWithSCNNodeBufferAllocator(SCNNode scnNode,
+            @Mapped(ObjCObjectMapper.class) MDLMeshBufferAllocator bufferAllocator);
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -157,7 +163,7 @@ public class MDLLight extends MDLObject {
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")
@@ -169,6 +175,10 @@ public class MDLLight extends MDLObject {
     public static native long version_static();
 
     @Generated
+    @Selector("colorSpace")
+    public native String colorSpace();
+
+    @Generated
     @Selector("init")
     public native MDLLight init();
 
@@ -176,6 +186,10 @@ public class MDLLight extends MDLObject {
     @Selector("lightType")
     @NUInt
     public native long lightType();
+
+    @Generated
+    @Selector("setColorSpace:")
+    public native void setColorSpace(String value);
 
     @Generated
     @Selector("setLightType:")

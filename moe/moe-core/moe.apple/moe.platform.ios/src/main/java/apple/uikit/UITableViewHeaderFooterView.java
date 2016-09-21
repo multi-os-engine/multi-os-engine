@@ -62,11 +62,6 @@ public class UITableViewHeaderFooterView extends UIView {
     }
 
     @Generated
-    @Owned
-    @Selector("alloc")
-    public static native UITableViewHeaderFooterView alloc();
-
-    @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
 
@@ -75,6 +70,11 @@ public class UITableViewHeaderFooterView extends UIView {
     public static native void addKeyframeWithRelativeStartTimeRelativeDurationAnimations(double frameStartTime,
             double frameDuration,
             @ObjCBlock(name = "call_addKeyframeWithRelativeStartTimeRelativeDurationAnimations") UIView.Block_addKeyframeWithRelativeStartTimeRelativeDurationAnimations animations);
+
+    @Generated
+    @Owned
+    @Selector("alloc")
+    public static native UITableViewHeaderFooterView alloc();
 
     @Generated
     @Selector("allocWithZone:")
@@ -290,7 +290,7 @@ public class UITableViewHeaderFooterView extends UIView {
 
     @Generated
     @Selector("setAnimationDuration:")
-    public static native void setAnimationDuration(double duration);
+    public static native void setAnimationDuration_static(double duration);
 
     @Generated
     @Selector("setAnimationRepeatAutoreverses:")
@@ -298,7 +298,7 @@ public class UITableViewHeaderFooterView extends UIView {
 
     @Generated
     @Selector("setAnimationRepeatCount:")
-    public static native void setAnimationRepeatCount(float repeatCount);
+    public static native void setAnimationRepeatCount_static(float repeatCount);
 
     @Generated
     @Selector("setAnimationStartDate:")
@@ -343,61 +343,15 @@ public class UITableViewHeaderFooterView extends UIView {
     public static native long userInterfaceLayoutDirectionForSemanticContentAttribute(@NInt long attribute);
 
     @Generated
+    @Selector("userInterfaceLayoutDirectionForSemanticContentAttribute:relativeToLayoutDirection:")
+    @NInt
+    public static native long userInterfaceLayoutDirectionForSemanticContentAttributeRelativeToLayoutDirection(
+            @NInt long semanticContentAttribute, @NInt long layoutDirection);
+
+    @Generated
     @Selector("version")
     @NInt
     public static native long version_static();
-
-    @Generated
-    @Selector("backgroundView")
-    public native UIView backgroundView();
-
-    @Generated
-    @Selector("contentView")
-    public native UIView contentView();
-
-    @Generated
-    @Selector("detailTextLabel")
-    public native UILabel detailTextLabel();
-
-    @Generated
-    @Selector("init")
-    public native UITableViewHeaderFooterView init();
-
-    @Generated
-    @Selector("initWithFrame:")
-    public native UITableViewHeaderFooterView initWithFrame(@ByValue CGRect frame);
-
-    @Generated
-    @Selector("initWithReuseIdentifier:")
-    public native UITableViewHeaderFooterView initWithReuseIdentifier(String reuseIdentifier);
-
-    @Generated
-    @Selector("prepareForReuse")
-    public native void prepareForReuse();
-
-    @Generated
-    @Selector("reuseIdentifier")
-    public native String reuseIdentifier();
-
-    @Generated
-    @Selector("setBackgroundView:")
-    public native void setBackgroundView(UIView value);
-
-    @Generated
-    @Selector("setTintColor:")
-    public native void setTintColor(UIColor value);
-
-    @Generated
-    @Selector("textLabel")
-    public native UILabel textLabel();
-
-    @Generated
-    @Selector("tintColor")
-    public native UIColor tintColor();
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native UITableViewHeaderFooterView initWithCoder(NSCoder aDecoder);
 
     @Generated
     @ProtocolClassMethod("appearance")
@@ -444,4 +398,56 @@ public class UITableViewHeaderFooterView extends UIView {
     public Object _appearanceWhenContainedInInstancesOfClasses(NSArray<?> containerTypes) {
         return appearanceWhenContainedInInstancesOfClasses(containerTypes);
     }
+
+    @Generated
+    @Selector("backgroundView")
+    public native UIView backgroundView();
+
+    @Generated
+    @Selector("contentView")
+    public native UIView contentView();
+
+    @Generated
+    @Selector("detailTextLabel")
+    public native UILabel detailTextLabel();
+
+    @Generated
+    @Selector("init")
+    public native UITableViewHeaderFooterView init();
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native UITableViewHeaderFooterView initWithCoder(NSCoder aDecoder);
+
+    @Generated
+    @Selector("initWithFrame:")
+    public native UITableViewHeaderFooterView initWithFrame(@ByValue CGRect frame);
+
+    @Generated
+    @Selector("initWithReuseIdentifier:")
+    public native UITableViewHeaderFooterView initWithReuseIdentifier(String reuseIdentifier);
+
+    @Generated
+    @Selector("prepareForReuse")
+    public native void prepareForReuse();
+
+    @Generated
+    @Selector("reuseIdentifier")
+    public native String reuseIdentifier();
+
+    @Generated
+    @Selector("setBackgroundView:")
+    public native void setBackgroundView(UIView value);
+
+    @Generated
+    @Selector("setTintColor:")
+    public native void setTintColor(UIColor value);
+
+    @Generated
+    @Selector("textLabel")
+    public native UILabel textLabel();
+
+    @Generated
+    @Selector("tintColor")
+    public native UIColor tintColor();
 }

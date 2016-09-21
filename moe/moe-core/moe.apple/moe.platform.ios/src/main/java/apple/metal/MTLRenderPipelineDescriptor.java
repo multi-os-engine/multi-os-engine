@@ -56,13 +56,13 @@ public class MTLRenderPipelineDescriptor extends NSObject implements NSCopying {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native MTLRenderPipelineDescriptor alloc();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -209,8 +209,21 @@ public class MTLRenderPipelineDescriptor extends NSObject implements NSCopying {
     public native void setRasterizationEnabled(boolean value);
 
     @Generated
+    @Selector("isTessellationFactorScaleEnabled")
+    public native boolean isTessellationFactorScaleEnabled();
+
+    @Generated
+    @Selector("setTessellationFactorScaleEnabled:")
+    public native void setTessellationFactorScaleEnabled(boolean value);
+
+    @Generated
     @Selector("label")
     public native String label();
+
+    @Generated
+    @Selector("maxTessellationFactor")
+    @NUInt
+    public native long maxTessellationFactor();
 
     @Generated
     @Selector("reset")
@@ -234,12 +247,36 @@ public class MTLRenderPipelineDescriptor extends NSObject implements NSCopying {
     public native void setLabel(String value);
 
     @Generated
+    @Selector("setMaxTessellationFactor:")
+    public native void setMaxTessellationFactor(@NUInt long value);
+
+    @Generated
     @Selector("setSampleCount:")
     public native void setSampleCount(@NUInt long value);
 
     @Generated
     @Selector("setStencilAttachmentPixelFormat:")
     public native void setStencilAttachmentPixelFormat(@NUInt long value);
+
+    @Generated
+    @Selector("setTessellationControlPointIndexType:")
+    public native void setTessellationControlPointIndexType(@NUInt long value);
+
+    @Generated
+    @Selector("setTessellationFactorFormat:")
+    public native void setTessellationFactorFormat(@NUInt long value);
+
+    @Generated
+    @Selector("setTessellationFactorStepFunction:")
+    public native void setTessellationFactorStepFunction(@NUInt long value);
+
+    @Generated
+    @Selector("setTessellationOutputWindingOrder:")
+    public native void setTessellationOutputWindingOrder(@NUInt long value);
+
+    @Generated
+    @Selector("setTessellationPartitionMode:")
+    public native void setTessellationPartitionMode(@NUInt long value);
 
     @Generated
     @Selector("setVertexDescriptor:")
@@ -253,6 +290,31 @@ public class MTLRenderPipelineDescriptor extends NSObject implements NSCopying {
     @Selector("stencilAttachmentPixelFormat")
     @NUInt
     public native long stencilAttachmentPixelFormat();
+
+    @Generated
+    @Selector("tessellationControlPointIndexType")
+    @NUInt
+    public native long tessellationControlPointIndexType();
+
+    @Generated
+    @Selector("tessellationFactorFormat")
+    @NUInt
+    public native long tessellationFactorFormat();
+
+    @Generated
+    @Selector("tessellationFactorStepFunction")
+    @NUInt
+    public native long tessellationFactorStepFunction();
+
+    @Generated
+    @Selector("tessellationOutputWindingOrder")
+    @NUInt
+    public native long tessellationOutputWindingOrder();
+
+    @Generated
+    @Selector("tessellationPartitionMode")
+    @NUInt
+    public native long tessellationPartitionMode();
 
     @Generated
     @Selector("vertexDescriptor")

@@ -55,26 +55,13 @@ public class GCController extends NSObject {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native GCController alloc();
-
-    @Generated
-    @Selector("controllers")
-    public static native NSArray<? extends GCController> controllers();
-
-    @Generated
-    @Selector("startWirelessControllerDiscoveryWithCompletionHandler:")
-    public static native void startWirelessControllerDiscoveryWithCompletionHandler(
-            @ObjCBlock(name = "call_startWirelessControllerDiscoveryWithCompletionHandler") Block_startWirelessControllerDiscoveryWithCompletionHandler completionHandler);
-
-    @Generated
-    @Selector("stopWirelessControllerDiscovery")
-    public static native void stopWirelessControllerDiscovery();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -102,6 +89,10 @@ public class GCController extends NSObject {
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
+
+    @Generated
+    @Selector("controllers")
+    public static native NSArray<? extends GCController> controllers();
 
     @Generated
     @Selector("debugDescription")
@@ -161,7 +152,16 @@ public class GCController extends NSObject {
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
+
+    @Generated
+    @Selector("startWirelessControllerDiscoveryWithCompletionHandler:")
+    public static native void startWirelessControllerDiscoveryWithCompletionHandler(
+            @ObjCBlock(name = "call_startWirelessControllerDiscoveryWithCompletionHandler") Block_startWirelessControllerDiscoveryWithCompletionHandler completionHandler);
+
+    @Generated
+    @Selector("stopWirelessControllerDiscovery")
+    public static native void stopWirelessControllerDiscovery();
 
     @Generated
     @Selector("superclass")
@@ -173,6 +173,11 @@ public class GCController extends NSObject {
     public static native long version_static();
 
     @Generated
+    @Selector("controllerPausedHandler")
+    @ObjCBlock(name = "call_controllerPausedHandler_ret")
+    public native Block_controllerPausedHandler_ret controllerPausedHandler();
+
+    @Generated
     @Selector("extendedGamepad")
     public native GCExtendedGamepad extendedGamepad();
 
@@ -181,12 +186,20 @@ public class GCController extends NSObject {
     public native GCGamepad gamepad();
 
     @Generated
+    @Selector("handlerQueue")
+    public native NSObject handlerQueue();
+
+    @Generated
     @Selector("init")
     public native GCController init();
 
     @Generated
     @Selector("isAttachedToDevice")
     public native boolean isAttachedToDevice();
+
+    @Generated
+    @Selector("microGamepad")
+    public native GCMicroGamepad microGamepad();
 
     @Generated
     @Selector("motion")
@@ -203,6 +216,10 @@ public class GCController extends NSObject {
             @ObjCBlock(name = "call_setControllerPausedHandler") Block_setControllerPausedHandler value);
 
     @Generated
+    @Selector("setHandlerQueue:")
+    public native void setHandlerQueue(NSObject value);
+
+    @Generated
     @Selector("setPlayerIndex:")
     public native void setPlayerIndex(@NInt long value);
 
@@ -210,18 +227,12 @@ public class GCController extends NSObject {
     @Selector("vendorName")
     public native String vendorName();
 
+    @Runtime(ObjCRuntime.class)
     @Generated
-    @Selector("controllerPausedHandler")
-    @ObjCBlock(name = "call_controllerPausedHandler_ret")
-    public native Block_controllerPausedHandler_ret controllerPausedHandler();
-
-    @Generated
-    @Selector("handlerQueue")
-    public native NSObject handlerQueue();
-
-    @Generated
-    @Selector("setHandlerQueue:")
-    public native void setHandlerQueue(NSObject value);
+    public interface Block_controllerPausedHandler_ret {
+        @Generated
+        void call_controllerPausedHandler_ret(GCController arg0);
+    }
 
     @Runtime(ObjCRuntime.class)
     @Generated
@@ -235,12 +246,5 @@ public class GCController extends NSObject {
     public interface Block_startWirelessControllerDiscoveryWithCompletionHandler {
         @Generated
         void call_startWirelessControllerDiscoveryWithCompletionHandler();
-    }
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_controllerPausedHandler_ret {
-        @Generated
-        void call_controllerPausedHandler_ret(GCController arg0);
     }
 }

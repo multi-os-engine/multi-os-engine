@@ -133,6 +133,11 @@ public final class CoreData {
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
+    public static native String NSManagedObjectContextQueryGenerationKey();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
     public static native String NSInvalidatedAllObjectsKey();
 
     @Generated
@@ -273,6 +278,21 @@ public final class CoreData {
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
+    public static native String NSPersistentStoreConnectionPoolMaxSizeKey();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String NSPersistentStoreForceDestroyOption();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String NSPersistentStoreFileProtectionKey();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
     public static native String NSPersistentStoreUbiquitousContentNameKey();
 
     @Generated
@@ -313,11 +333,6 @@ public final class CoreData {
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
-    public static native String NSPersistentStoreFileProtectionKey();
-
-    @Generated
-    @CVariable()
-    @MappedReturn(ObjCStringMapper.class)
     public static native String NSMigrationManagerKey();
 
     @Generated
@@ -344,9 +359,4 @@ public final class CoreData {
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String NSMigrationEntityPolicyKey();
-
-    @Generated
-    @CVariable()
-    @MappedReturn(ObjCStringMapper.class)
-    public static native String NSPersistentStoreForceDestroyOption();
 }

@@ -70,30 +70,13 @@ public class SCNGeometry extends NSObject
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native SCNGeometry alloc();
-
-    @Generated
-    @Selector("geometry")
-    public static native SCNGeometry geometry();
-
-    @Generated
-    @Selector("geometryWithSources:elements:")
-    public static native SCNGeometry geometryWithSourcesElements(NSArray<? extends SCNGeometrySource> sources,
-            NSArray<? extends SCNGeometryElement> elements);
-
-    @Generated
-    @Selector("supportsSecureCoding")
-    public static native boolean supportsSecureCoding();
-
-    @Generated
-    @Selector("geometryWithMDLMesh:")
-    public static native SCNGeometry geometryWithMDLMesh(MDLMesh mdlMesh);
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -129,6 +112,19 @@ public class SCNGeometry extends NSObject
     @Generated
     @Selector("description")
     public static native String description_static();
+
+    @Generated
+    @Selector("geometry")
+    public static native SCNGeometry geometry();
+
+    @Generated
+    @Selector("geometryWithMDLMesh:")
+    public static native SCNGeometry geometryWithMDLMesh(MDLMesh mdlMesh);
+
+    @Generated
+    @Selector("geometryWithSources:elements:")
+    public static native SCNGeometry geometryWithSourcesElements(NSArray<? extends SCNGeometrySource> sources,
+            NSArray<? extends SCNGeometryElement> elements);
 
     @Generated
     @Selector("hash")
@@ -180,11 +176,15 @@ public class SCNGeometry extends NSObject
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")
     public static native Class superclass_static();
+
+    @Generated
+    @Selector("supportsSecureCoding")
+    public static native boolean supportsSecureCoding();
 
     @Generated
     @Selector("version")
@@ -233,6 +233,14 @@ public class SCNGeometry extends NSObject
     @Selector("geometryElementCount")
     @NInt
     public native long geometryElementCount();
+
+    @Generated
+    @Selector("geometryElements")
+    public native NSArray<? extends SCNGeometryElement> geometryElements();
+
+    @Generated
+    @Selector("geometrySources")
+    public native NSArray<? extends SCNGeometrySource> geometrySources();
 
     @Generated
     @Selector("geometrySourcesForSemantic:")
@@ -362,6 +370,10 @@ public class SCNGeometry extends NSObject
     public native void setShaderModifiers(NSDictionary<String, String> value);
 
     @Generated
+    @Selector("setSpeed:forAnimationKey:")
+    public native void setSpeedForAnimationKey(@NFloat double speed, String key);
+
+    @Generated
     @Selector("setSubdivisionLevel:")
     public native void setSubdivisionLevel(@NUInt long value);
 
@@ -380,12 +392,4 @@ public class SCNGeometry extends NSObject
     public boolean _supportsSecureCoding() {
         return supportsSecureCoding();
     }
-
-    @Generated
-    @Selector("geometryElements")
-    public native NSArray<? extends SCNGeometryElement> geometryElements();
-
-    @Generated
-    @Selector("geometrySources")
-    public native NSArray<? extends SCNGeometrySource> geometrySources();
 }

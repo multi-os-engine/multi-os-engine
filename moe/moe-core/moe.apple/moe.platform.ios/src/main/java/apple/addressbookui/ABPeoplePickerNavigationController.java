@@ -62,13 +62,13 @@ public class ABPeoplePickerNavigationController extends UINavigationController {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native ABPeoplePickerNavigationController alloc();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -191,6 +191,10 @@ public class ABPeoplePickerNavigationController extends UINavigationController {
     public native ABPeoplePickerNavigationController init();
 
     @Generated
+    @Selector("initWithCoder:")
+    public native ABPeoplePickerNavigationController initWithCoder(NSCoder aDecoder);
+
+    @Generated
     @Selector("initWithNavigationBarClass:toolbarClass:")
     public native ABPeoplePickerNavigationController initWithNavigationBarClassToolbarClass(Class navigationBarClass,
             Class toolbarClass);
@@ -258,8 +262,4 @@ public class ABPeoplePickerNavigationController extends UINavigationController {
     @Generated
     @Selector("setPredicateForSelectionOfProperty:")
     public native void setPredicateForSelectionOfProperty(NSPredicate value);
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native ABPeoplePickerNavigationController initWithCoder(NSCoder aDecoder);
 }

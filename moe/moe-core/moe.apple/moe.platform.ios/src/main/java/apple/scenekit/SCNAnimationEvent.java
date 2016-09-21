@@ -57,23 +57,23 @@ public class SCNAnimationEvent extends NSObject {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native SCNAnimationEvent alloc();
 
     @Generated
-    @Selector("animationEventWithKeyTime:block:")
-    public static native SCNAnimationEvent animationEventWithKeyTimeBlock(@NFloat double time,
-            @ObjCBlock(name = "call_animationEventWithKeyTimeBlock") Block_animationEventWithKeyTimeBlock eventBlock);
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
-
-    @Generated
     @Selector("allocWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object allocWithZone(VoidPtr zone);
+
+    @Generated
+    @Selector("animationEventWithKeyTime:block:")
+    public static native SCNAnimationEvent animationEventWithKeyTimeBlock(@NFloat double time,
+            @ObjCBlock(name = "call_animationEventWithKeyTimeBlock") Block_animationEventWithKeyTimeBlock eventBlock);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")

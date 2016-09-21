@@ -49,6 +49,11 @@ public final class CKErrorCode {
     @Generated @NInt public static final long ZoneNotFound = 0x000000000000001AL;
     @Generated @NInt public static final long LimitExceeded = 0x000000000000001BL;
     @Generated @NInt public static final long UserDeletedZone = 0x000000000000001CL;
+    @Generated @NInt public static final long TooManyParticipants = 0x000000000000001DL;
+    @Generated @NInt public static final long AlreadyShared = 0x000000000000001EL;
+    @Generated @NInt public static final long ReferenceViolation = 0x000000000000001FL;
+    @Generated @NInt public static final long ManagedAccountRestricted = 0x0000000000000020L;
+    @Generated @NInt public static final long ParticipantMayNeedVerification = 0x0000000000000021L;
 
     @Generated
     private CKErrorCode() {

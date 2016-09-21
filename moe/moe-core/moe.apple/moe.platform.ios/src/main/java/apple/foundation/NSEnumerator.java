@@ -54,13 +54,13 @@ public class NSEnumerator<_ObjectType> extends NSObject implements NSFastEnumera
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native NSEnumerator<?> alloc();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -171,8 +171,8 @@ public class NSEnumerator<_ObjectType> extends NSObject implements NSFastEnumera
     @Selector("init")
     public native NSEnumerator<?> init();
 
-    @MappedReturn(ObjCObjectMapper.class)
     @Generated
     @Selector("nextObject")
+    @MappedReturn(ObjCObjectMapper.class)
     public native _ObjectType nextObject();
 }

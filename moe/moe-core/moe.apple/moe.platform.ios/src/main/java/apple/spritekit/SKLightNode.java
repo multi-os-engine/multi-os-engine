@@ -58,21 +58,13 @@ public class SKLightNode extends SKNode {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native SKLightNode alloc();
-
-    @Generated
-    @Selector("node")
-    public static native SKLightNode node();
-
-    @Generated
-    @Selector("nodeWithFileNamed:")
-    public static native SKLightNode nodeWithFileNamed(String filename);
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -154,6 +146,14 @@ public class SKLightNode extends SKNode {
     public static native Object new_objc();
 
     @Generated
+    @Selector("node")
+    public static native SKLightNode node();
+
+    @Generated
+    @Selector("nodeWithFileNamed:")
+    public static native SKLightNode nodeWithFileNamed(String filename);
+
+    @Generated
     @Selector("obstaclesFromNodeBounds:")
     public static native NSArray<? extends GKPolygonObstacle> obstaclesFromNodeBounds(NSArray<? extends SKNode> nodes);
 
@@ -177,7 +177,7 @@ public class SKLightNode extends SKNode {
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")

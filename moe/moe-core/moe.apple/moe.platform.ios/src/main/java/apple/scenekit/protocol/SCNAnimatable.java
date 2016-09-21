@@ -66,4 +66,8 @@ public interface SCNAnimatable {
     @Generated
     @Selector("resumeAnimationForKey:")
     void resumeAnimationForKey(String key);
+
+    @Generated
+    @Selector("setSpeed:forAnimationKey:")
+    void setSpeedForAnimationKey(@NFloat double speed, String key);
 }

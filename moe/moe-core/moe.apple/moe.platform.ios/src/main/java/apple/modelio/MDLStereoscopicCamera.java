@@ -20,6 +20,7 @@ import apple.NSObject;
 import apple.foundation.NSArray;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
+import apple.modelio.protocol.MDLMeshBufferAllocator;
 import apple.scenekit.SCNCamera;
 import apple.scenekit.SCNNode;
 import org.moe.natj.c.ann.FunctionPtr;
@@ -56,21 +57,13 @@ public class MDLStereoscopicCamera extends MDLCamera {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native MDLStereoscopicCamera alloc();
-
-    @Generated
-    @Selector("cameraWithSCNCamera:")
-    public static native MDLStereoscopicCamera cameraWithSCNCamera(SCNCamera scnCamera);
-
-    @Generated
-    @Selector("objectWithSCNNode:")
-    public static native MDLStereoscopicCamera objectWithSCNNode(SCNNode scnNode);
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -80,6 +73,10 @@ public class MDLStereoscopicCamera extends MDLCamera {
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
     public static native boolean automaticallyNotifiesObserversForKey(String key);
+
+    @Generated
+    @Selector("cameraWithSCNCamera:")
+    public static native MDLStereoscopicCamera cameraWithSCNCamera(SCNCamera scnCamera);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
@@ -148,6 +145,15 @@ public class MDLStereoscopicCamera extends MDLCamera {
     public static native Object new_objc();
 
     @Generated
+    @Selector("objectWithSCNNode:")
+    public static native MDLStereoscopicCamera objectWithSCNNode(SCNNode scnNode);
+
+    @Generated
+    @Selector("objectWithSCNNode:bufferAllocator:")
+    public static native MDLStereoscopicCamera objectWithSCNNodeBufferAllocator(SCNNode scnNode,
+            @Mapped(ObjCObjectMapper.class) MDLMeshBufferAllocator bufferAllocator);
+
+    @Generated
     @Selector("resolveClassMethod:")
     public static native boolean resolveClassMethod(SEL sel);
 
@@ -157,7 +163,7 @@ public class MDLStereoscopicCamera extends MDLCamera {
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")

@@ -59,22 +59,13 @@ public class NSFileProviderExtension extends NSObject {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native NSFileProviderExtension alloc();
-
-    @Generated
-    @Selector("placeholderURLForURL:")
-    public static native NSURL placeholderURLForURL(NSURL url);
-
-    @Generated
-    @Selector("writePlaceholderAtURL:withMetadata:error:")
-    public static native boolean writePlaceholderAtURLWithMetadataError(NSURL placeholderURL,
-            NSDictionary<?, ?> metadata, Ptr<NSError> error);
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -152,6 +143,10 @@ public class NSFileProviderExtension extends NSObject {
     public static native Object new_objc();
 
     @Generated
+    @Selector("placeholderURLForURL:")
+    public static native NSURL placeholderURLForURL(NSURL url);
+
+    @Generated
     @Selector("resolveClassMethod:")
     public static native boolean resolveClassMethod(SEL sel);
 
@@ -171,6 +166,11 @@ public class NSFileProviderExtension extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("writePlaceholderAtURL:withMetadata:error:")
+    public static native boolean writePlaceholderAtURLWithMetadataError(NSURL placeholderURL,
+            NSDictionary<?, ?> metadata, Ptr<NSError> error);
 
     @Generated
     @Selector("URLForItemWithPersistentIdentifier:")

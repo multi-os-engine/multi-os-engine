@@ -55,23 +55,13 @@ public class MTLTextureDescriptor extends NSObject implements NSCopying {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native MTLTextureDescriptor alloc();
-
-    @Generated
-    @Selector("texture2DDescriptorWithPixelFormat:width:height:mipmapped:")
-    public static native MTLTextureDescriptor texture2DDescriptorWithPixelFormatWidthHeightMipmapped(
-            @NUInt long pixelFormat, @NUInt long width, @NUInt long height, boolean mipmapped);
-
-    @Generated
-    @Selector("textureCubeDescriptorWithPixelFormat:size:mipmapped:")
-    public static native MTLTextureDescriptor textureCubeDescriptorWithPixelFormatSizeMipmapped(@NUInt long pixelFormat,
-            @NUInt long size, boolean mipmapped);
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -158,11 +148,21 @@ public class MTLTextureDescriptor extends NSObject implements NSCopying {
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")
     public static native Class superclass_static();
+
+    @Generated
+    @Selector("texture2DDescriptorWithPixelFormat:width:height:mipmapped:")
+    public static native MTLTextureDescriptor texture2DDescriptorWithPixelFormatWidthHeightMipmapped(
+            @NUInt long pixelFormat, @NUInt long width, @NUInt long height, boolean mipmapped);
+
+    @Generated
+    @Selector("textureCubeDescriptorWithPixelFormat:size:mipmapped:")
+    public static native MTLTextureDescriptor textureCubeDescriptorWithPixelFormatSizeMipmapped(@NUInt long pixelFormat,
+            @NUInt long size, boolean mipmapped);
 
     @Generated
     @Selector("version")
@@ -179,6 +179,11 @@ public class MTLTextureDescriptor extends NSObject implements NSCopying {
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
     public native Object copyWithZone(VoidPtr zone);
+
+    @Generated
+    @Selector("cpuCacheMode")
+    @NUInt
+    public native long cpuCacheMode();
 
     @Generated
     @Selector("depth")
@@ -219,6 +224,10 @@ public class MTLTextureDescriptor extends NSObject implements NSCopying {
     public native void setArrayLength(@NUInt long value);
 
     @Generated
+    @Selector("setCpuCacheMode:")
+    public native void setCpuCacheMode(@NUInt long value);
+
+    @Generated
     @Selector("setDepth:")
     public native void setDepth(@NUInt long value);
 
@@ -243,39 +252,20 @@ public class MTLTextureDescriptor extends NSObject implements NSCopying {
     public native void setSampleCount(@NUInt long value);
 
     @Generated
-    @Selector("setTextureType:")
-    public native void setTextureType(@NUInt long value);
-
-    @Generated
-    @Selector("setWidth:")
-    public native void setWidth(@NUInt long value);
-
-    @Generated
-    @Selector("textureType")
-    @NUInt
-    public native long textureType();
-
-    @Generated
-    @Selector("width")
-    @NUInt
-    public native long width();
-
-    @Generated
-    @Selector("cpuCacheMode")
-    @NUInt
-    public native long cpuCacheMode();
-
-    @Generated
-    @Selector("setCpuCacheMode:")
-    public native void setCpuCacheMode(@NUInt long value);
-
-    @Generated
     @Selector("setStorageMode:")
     public native void setStorageMode(@NUInt long value);
 
     @Generated
+    @Selector("setTextureType:")
+    public native void setTextureType(@NUInt long value);
+
+    @Generated
     @Selector("setUsage:")
     public native void setUsage(@NUInt long value);
+
+    @Generated
+    @Selector("setWidth:")
+    public native void setWidth(@NUInt long value);
 
     @Generated
     @Selector("storageMode")
@@ -283,7 +273,17 @@ public class MTLTextureDescriptor extends NSObject implements NSCopying {
     public native long storageMode();
 
     @Generated
+    @Selector("textureType")
+    @NUInt
+    public native long textureType();
+
+    @Generated
     @Selector("usage")
     @NUInt
     public native long usage();
+
+    @Generated
+    @Selector("width")
+    @NUInt
+    public native long width();
 }

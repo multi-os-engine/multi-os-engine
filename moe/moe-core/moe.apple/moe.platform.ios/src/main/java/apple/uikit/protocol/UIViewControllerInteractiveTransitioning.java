@@ -52,4 +52,11 @@ public interface UIViewControllerInteractiveTransitioning {
     @Generated
     @Selector("startInteractiveTransition:")
     void startInteractiveTransition(@Mapped(ObjCObjectMapper.class) Object transitionContext);
+
+    @Generated
+    @IsOptional
+    @Selector("wantsInteractiveStart")
+    default boolean wantsInteractiveStart() {
+        throw new java.lang.UnsupportedOperationException();
+    }
 }

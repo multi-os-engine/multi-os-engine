@@ -62,6 +62,10 @@ public class NSBundle extends NSObject {
             String subpath, NSURL bundleURL);
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Selector("allBundles")
     public static native NSArray<? extends NSBundle> allBundles();
 
@@ -73,6 +77,15 @@ public class NSBundle extends NSObject {
     @Owned
     @Selector("alloc")
     public static native NSBundle alloc();
+
+    @Generated
+    @Selector("allocWithZone:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object allocWithZone(VoidPtr zone);
+
+    @Generated
+    @Selector("automaticallyNotifiesObserversForKey:")
+    public static native boolean automaticallyNotifiesObserversForKey(String key);
 
     @Generated
     @Selector("bundleForClass:")
@@ -89,40 +102,6 @@ public class NSBundle extends NSObject {
     @Generated
     @Selector("bundleWithURL:")
     public static native NSBundle bundleWithURL(NSURL url);
-
-    @Generated
-    @Selector("mainBundle")
-    public static native NSBundle mainBundle();
-
-    @Generated
-    @Selector("pathForResource:ofType:inDirectory:")
-    public static native String pathForResourceOfTypeInDirectory_static(String name, String ext, String bundlePath);
-
-    @Generated
-    @Selector("pathsForResourcesOfType:inDirectory:")
-    public static native NSArray<String> pathsForResourcesOfTypeInDirectory_static(String ext, String bundlePath);
-
-    @Generated
-    @Selector("preferredLocalizationsFromArray:")
-    public static native NSArray<String> preferredLocalizationsFromArray(NSArray<String> localizationsArray);
-
-    @Generated
-    @Selector("preferredLocalizationsFromArray:forPreferences:")
-    public static native NSArray<String> preferredLocalizationsFromArrayForPreferences(
-            NSArray<String> localizationsArray, NSArray<String> preferencesArray);
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
-
-    @Generated
-    @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
-
-    @Generated
-    @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
@@ -181,10 +160,31 @@ public class NSBundle extends NSObject {
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
     @Generated
+    @Selector("mainBundle")
+    public static native NSBundle mainBundle();
+
+    @Generated
     @Owned
     @Selector("new")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object new_objc();
+
+    @Generated
+    @Selector("pathForResource:ofType:inDirectory:")
+    public static native String pathForResourceOfTypeInDirectory_static(String name, String ext, String bundlePath);
+
+    @Generated
+    @Selector("pathsForResourcesOfType:inDirectory:")
+    public static native NSArray<String> pathsForResourcesOfTypeInDirectory_static(String ext, String bundlePath);
+
+    @Generated
+    @Selector("preferredLocalizationsFromArray:")
+    public static native NSArray<String> preferredLocalizationsFromArray(NSArray<String> localizationsArray);
+
+    @Generated
+    @Selector("preferredLocalizationsFromArray:forPreferences:")
+    public static native NSArray<String> preferredLocalizationsFromArrayForPreferences(
+            NSArray<String> localizationsArray, NSArray<String> preferencesArray);
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -196,7 +196,7 @@ public class NSBundle extends NSObject {
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")
@@ -362,6 +362,10 @@ public class NSBundle extends NSObject {
     public native boolean preflightAndReturnError(Ptr<NSError> error);
 
     @Generated
+    @Selector("preservationPriorityForTag:")
+    public native double preservationPriorityForTag(String tag);
+
+    @Generated
     @Selector("principalClass")
     public native Class principalClass();
 
@@ -382,6 +386,10 @@ public class NSBundle extends NSObject {
     public native NSURL resourceURL();
 
     @Generated
+    @Selector("setPreservationPriority:forTags:")
+    public native void setPreservationPriorityForTags(double priority, NSSet<String> tags);
+
+    @Generated
     @Selector("sharedFrameworksPath")
     public native String sharedFrameworksPath();
 
@@ -400,12 +408,4 @@ public class NSBundle extends NSObject {
     @Generated
     @Selector("unload")
     public native boolean unload();
-
-    @Generated
-    @Selector("preservationPriorityForTag:")
-    public native double preservationPriorityForTag(String tag);
-
-    @Generated
-    @Selector("setPreservationPriority:forTags:")
-    public native void setPreservationPriorityForTags(double priority, NSSet<String> tags);
 }

@@ -16,6 +16,7 @@ limitations under the License.
 
 package apple.metalkit.c;
 
+import apple.foundation.NSError;
 import apple.metal.MTLVertexDescriptor;
 import apple.modelio.MDLVertexDescriptor;
 import org.moe.natj.c.CRuntime;
@@ -27,6 +28,7 @@ import org.moe.natj.general.ann.Library;
 import org.moe.natj.general.ann.MappedReturn;
 import org.moe.natj.general.ann.NUInt;
 import org.moe.natj.general.ann.Runtime;
+import org.moe.natj.general.ptr.Ptr;
 import org.moe.natj.objc.map.ObjCStringMapper;
 
 @Generated
@@ -47,7 +49,17 @@ public final class MetalKit {
 
     @Generated
     @CFunction
+    public static native MDLVertexDescriptor MTKModelIOVertexDescriptorFromMetalWithError(
+            MTLVertexDescriptor metalDescriptor, Ptr<NSError> error);
+
+    @Generated
+    @CFunction
     public static native MTLVertexDescriptor MTKMetalVertexDescriptorFromModelIO(MDLVertexDescriptor modelIODescriptor);
+
+    @Generated
+    @CFunction
+    public static native MTLVertexDescriptor MTKMetalVertexDescriptorFromModelIOWithError(
+            MDLVertexDescriptor modelIODescriptor, Ptr<NSError> error);
 
     @Generated
     @CFunction
@@ -77,6 +89,11 @@ public final class MetalKit {
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
+    public static native String MTKTextureLoaderOptionGenerateMipmaps();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
     public static native String MTKTextureLoaderOptionSRGB();
 
     @Generated
@@ -88,6 +105,41 @@ public final class MetalKit {
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String MTKTextureLoaderOptionTextureCPUCacheMode();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String MTKTextureLoaderOptionTextureStorageMode();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String MTKTextureLoaderOptionCubeLayout();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String MTKTextureLoaderCubeLayoutVertical();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String MTKTextureLoaderOptionOrigin();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String MTKTextureLoaderOriginTopLeft();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String MTKTextureLoaderOriginBottomLeft();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String MTKTextureLoaderOriginFlippedVertically();
 
     @Generated
     @CVariable()

@@ -43,7 +43,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @Library("Photos")
 @Runtime(ObjCRuntime.class)
 @ObjCClassBinding
-public class PHObjectChangeDetails extends NSObject {
+public class PHObjectChangeDetails<_ObjectType> extends NSObject {
     static {
         NatJ.register();
     }
@@ -54,13 +54,13 @@ public class PHObjectChangeDetails extends NSObject {
     }
 
     @Generated
-    @Owned
-    @Selector("alloc")
-    public static native PHObjectChangeDetails alloc();
-
-    @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
+    @Owned
+    @Selector("alloc")
+    public static native PHObjectChangeDetails<?> alloc();
 
     @Generated
     @Selector("allocWithZone:")
@@ -147,7 +147,7 @@ public class PHObjectChangeDetails extends NSObject {
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")
@@ -164,7 +164,7 @@ public class PHObjectChangeDetails extends NSObject {
 
     @Generated
     @Selector("init")
-    public native PHObjectChangeDetails init();
+    public native PHObjectChangeDetails<?> init();
 
     @Generated
     @Selector("objectAfterChanges")

@@ -58,21 +58,13 @@ public class CNContactRelation extends NSObject implements NSCopying, NSSecureCo
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native CNContactRelation alloc();
-
-    @Generated
-    @Selector("contactRelationWithName:")
-    public static native CNContactRelation contactRelationWithName(String name);
-
-    @Generated
-    @Selector("supportsSecureCoding")
-    public static native boolean supportsSecureCoding();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -100,6 +92,10 @@ public class CNContactRelation extends NSObject implements NSCopying, NSSecureCo
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
+
+    @Generated
+    @Selector("contactRelationWithName:")
+    public static native CNContactRelation contactRelationWithName(String name);
 
     @Generated
     @Selector("debugDescription")
@@ -164,6 +160,10 @@ public class CNContactRelation extends NSObject implements NSCopying, NSSecureCo
     @Generated
     @Selector("superclass")
     public static native Class superclass_static();
+
+    @Generated
+    @Selector("supportsSecureCoding")
+    public static native boolean supportsSecureCoding();
 
     @Generated
     @Selector("version")

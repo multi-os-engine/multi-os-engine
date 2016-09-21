@@ -57,18 +57,13 @@ public class CKFetchSubscriptionsOperation extends CKDatabaseOperation {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native CKFetchSubscriptionsOperation alloc();
-
-    @Generated
-    @Selector("fetchAllSubscriptionsOperation")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object fetchAllSubscriptionsOperation();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -104,6 +99,11 @@ public class CKFetchSubscriptionsOperation extends CKDatabaseOperation {
     @Generated
     @Selector("description")
     public static native String description_static();
+
+    @Generated
+    @Selector("fetchAllSubscriptionsOperation")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object fetchAllSubscriptionsOperation();
 
     @Generated
     @Selector("hash")
@@ -155,7 +155,7 @@ public class CKFetchSubscriptionsOperation extends CKDatabaseOperation {
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")
@@ -165,6 +165,11 @@ public class CKFetchSubscriptionsOperation extends CKDatabaseOperation {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("fetchSubscriptionCompletionBlock")
+    @ObjCBlock(name = "call_fetchSubscriptionCompletionBlock_ret")
+    public native Block_fetchSubscriptionCompletionBlock_ret fetchSubscriptionCompletionBlock();
 
     @Generated
     @Selector("init")
@@ -187,24 +192,19 @@ public class CKFetchSubscriptionsOperation extends CKDatabaseOperation {
     @Selector("subscriptionIDs")
     public native NSArray<String> subscriptionIDs();
 
+    @Runtime(ObjCRuntime.class)
     @Generated
-    @Selector("fetchSubscriptionCompletionBlock")
-    @ObjCBlock(name = "call_fetchSubscriptionCompletionBlock_ret")
-    public native Block_fetchSubscriptionCompletionBlock_ret fetchSubscriptionCompletionBlock();
+    public interface Block_fetchSubscriptionCompletionBlock_ret {
+        @Generated
+        void call_fetchSubscriptionCompletionBlock_ret(NSDictionary<String, ? extends CKSubscription> arg0,
+                NSError arg1);
+    }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_setFetchSubscriptionCompletionBlock {
         @Generated
         void call_setFetchSubscriptionCompletionBlock(NSDictionary<String, ? extends CKSubscription> arg0,
-                NSError arg1);
-    }
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_fetchSubscriptionCompletionBlock_ret {
-        @Generated
-        void call_fetchSubscriptionCompletionBlock_ret(NSDictionary<String, ? extends CKSubscription> arg0,
                 NSError arg1);
     }
 }

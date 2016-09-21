@@ -42,8 +42,21 @@ public interface MTLResource {
     Object device();
 
     @Generated
+    @Selector("heap")
+    @MappedReturn(ObjCObjectMapper.class)
+    Object heap();
+
+    @Generated
+    @Selector("isAliasable")
+    boolean isAliasable();
+
+    @Generated
     @Selector("label")
     String label();
+
+    @Generated
+    @Selector("makeAliasable")
+    void makeAliasable();
 
     @Generated
     @Selector("setLabel:")

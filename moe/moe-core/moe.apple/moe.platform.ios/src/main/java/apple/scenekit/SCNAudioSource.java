@@ -59,26 +59,22 @@ public class SCNAudioSource extends NSObject implements NSCopying, NSSecureCodin
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native SCNAudioSource alloc();
 
     @Generated
-    @Selector("audioSourceNamed:")
-    public static native SCNAudioSource audioSourceNamed(String fileName);
-
-    @Generated
-    @Selector("supportsSecureCoding")
-    public static native boolean supportsSecureCoding();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
-
-    @Generated
     @Selector("allocWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object allocWithZone(VoidPtr zone);
+
+    @Generated
+    @Selector("audioSourceNamed:")
+    public static native SCNAudioSource audioSourceNamed(String fileName);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -156,16 +152,20 @@ public class SCNAudioSource extends NSObject implements NSCopying, NSSecureCodin
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")
     public static native Class superclass_static();
 
     @Generated
+    @Selector("supportsSecureCoding")
+    public static native boolean supportsSecureCoding();
+
+    @Generated
     @Selector("version")
     @NInt
-    public static native long version();
+    public static native long version_static();
 
     @Generated
     @Owned

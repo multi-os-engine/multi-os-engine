@@ -57,13 +57,13 @@ public class HMService extends NSObject {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native HMService alloc();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -178,12 +178,32 @@ public class HMService extends NSObject {
     public native HMService init();
 
     @Generated
+    @Selector("isPrimaryService")
+    public native boolean isPrimaryService();
+
+    @Generated
+    @Selector("isUserInteractive")
+    public native boolean isUserInteractive();
+
+    @Generated
+    @Selector("linkedServices")
+    public native NSArray<? extends HMService> linkedServices();
+
+    @Generated
+    @Selector("localizedDescription")
+    public native String localizedDescription();
+
+    @Generated
     @Selector("name")
     public native String name();
 
     @Generated
     @Selector("serviceType")
     public native String serviceType();
+
+    @Generated
+    @Selector("uniqueIdentifier")
+    public native NSUUID uniqueIdentifier();
 
     @Generated
     @Selector("updateAssociatedServiceType:completionHandler:")
@@ -194,18 +214,6 @@ public class HMService extends NSObject {
     @Selector("updateName:completionHandler:")
     public native void updateNameCompletionHandler(String name,
             @ObjCBlock(name = "call_updateNameCompletionHandler") Block_updateNameCompletionHandler completion);
-
-    @Generated
-    @Selector("isUserInteractive")
-    public native boolean isUserInteractive();
-
-    @Generated
-    @Selector("localizedDescription")
-    public native String localizedDescription();
-
-    @Generated
-    @Selector("uniqueIdentifier")
-    public native NSUUID uniqueIdentifier();
 
     @Runtime(ObjCRuntime.class)
     @Generated

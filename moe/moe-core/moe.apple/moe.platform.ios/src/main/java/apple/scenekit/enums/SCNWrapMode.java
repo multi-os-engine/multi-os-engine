@@ -23,8 +23,8 @@ import org.moe.natj.general.ann.NInt;
 public final class SCNWrapMode {
     @Generated @NInt public static final long Clamp = 0x0000000000000001L;
     @Generated @NInt public static final long Repeat = 0x0000000000000002L;
-    @Generated @NInt public static final long Mirror = 0x0000000000000004L;
     @Generated @NInt public static final long ClampToBorder = 0x0000000000000003L;
+    @Generated @NInt public static final long Mirror = 0x0000000000000004L;
 
     @Generated
     private SCNWrapMode() {

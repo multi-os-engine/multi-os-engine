@@ -61,13 +61,13 @@ public class PHImageRequestOptions extends NSObject implements NSCopying {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native PHImageRequestOptions alloc();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -193,6 +193,11 @@ public class PHImageRequestOptions extends NSObject implements NSCopying {
     public native CGRect normalizedCropRect();
 
     @Generated
+    @Selector("progressHandler")
+    @ObjCBlock(name = "call_progressHandler_ret")
+    public native Block_progressHandler_ret progressHandler();
+
+    @Generated
     @Selector("resizeMode")
     @NInt
     public native long resizeMode();
@@ -222,22 +227,17 @@ public class PHImageRequestOptions extends NSObject implements NSCopying {
     @NInt
     public native long version();
 
+    @Runtime(ObjCRuntime.class)
     @Generated
-    @Selector("progressHandler")
-    @ObjCBlock(name = "call_progressHandler_ret")
-    public native Block_progressHandler_ret progressHandler();
+    public interface Block_progressHandler_ret {
+        @Generated
+        void call_progressHandler_ret(double arg0, NSError arg1, BoolPtr arg2, NSDictionary<?, ?> arg3);
+    }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_setProgressHandler {
         @Generated
         void call_setProgressHandler(double arg0, NSError arg1, BoolPtr arg2, NSDictionary<?, ?> arg3);
-    }
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_progressHandler_ret {
-        @Generated
-        void call_progressHandler_ret(double arg0, NSError arg1, BoolPtr arg2, NSDictionary<?, ?> arg3);
     }
 }

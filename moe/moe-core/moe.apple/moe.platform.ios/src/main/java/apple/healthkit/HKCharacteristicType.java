@@ -56,17 +56,17 @@ public class HKCharacteristicType extends HKObjectType {
     }
 
     @Generated
-    @Owned
-    @Selector("alloc")
-    public static native HKCharacteristicType alloc();
-
-    @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("activitySummaryType")
     public static native HKActivitySummaryType activitySummaryType();
+
+    @Generated
+    @Owned
+    @Selector("alloc")
+    public static native HKCharacteristicType alloc();
 
     @Generated
     @Selector("allocWithZone:")
@@ -114,6 +114,10 @@ public class HKCharacteristicType extends HKObjectType {
     @Generated
     @Selector("description")
     public static native String description_static();
+
+    @Generated
+    @Selector("documentTypeForIdentifier:")
+    public static native HKDocumentType documentTypeForIdentifier(String identifier);
 
     @Generated
     @Selector("hash")

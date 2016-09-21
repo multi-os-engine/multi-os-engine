@@ -65,11 +65,6 @@ public class MKCircleView extends MKOverlayPathView {
     }
 
     @Generated
-    @Owned
-    @Selector("alloc")
-    public static native MKCircleView alloc();
-
-    @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
 
@@ -78,6 +73,11 @@ public class MKCircleView extends MKOverlayPathView {
     public static native void addKeyframeWithRelativeStartTimeRelativeDurationAnimations(double frameStartTime,
             double frameDuration,
             @ObjCBlock(name = "call_addKeyframeWithRelativeStartTimeRelativeDurationAnimations") UIView.Block_addKeyframeWithRelativeStartTimeRelativeDurationAnimations animations);
+
+    @Generated
+    @Owned
+    @Selector("alloc")
+    public static native MKCircleView alloc();
 
     @Generated
     @Selector("allocWithZone:")
@@ -346,36 +346,15 @@ public class MKCircleView extends MKOverlayPathView {
     public static native long userInterfaceLayoutDirectionForSemanticContentAttribute(@NInt long attribute);
 
     @Generated
+    @Selector("userInterfaceLayoutDirectionForSemanticContentAttribute:relativeToLayoutDirection:")
+    @NInt
+    public static native long userInterfaceLayoutDirectionForSemanticContentAttributeRelativeToLayoutDirection(
+            @NInt long semanticContentAttribute, @NInt long layoutDirection);
+
+    @Generated
     @Selector("version")
     @NInt
     public static native long version_static();
-
-    @Generated
-    @Deprecated
-    @Selector("circle")
-    public native MKCircle circle();
-
-    @Generated
-    @Selector("init")
-    public native MKCircleView init();
-
-    @Generated
-    @Deprecated
-    @Selector("initWithCircle:")
-    public native MKCircleView initWithCircle(MKCircle circle);
-
-    @Generated
-    @Selector("initWithFrame:")
-    public native MKCircleView initWithFrame(@ByValue CGRect frame);
-
-    @Generated
-    @Deprecated
-    @Selector("initWithOverlay:")
-    public native MKCircleView initWithOverlay(@Mapped(ObjCObjectMapper.class) MKOverlay overlay);
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native MKCircleView initWithCoder(NSCoder aDecoder);
 
     @Generated
     @ProtocolClassMethod("appearance")
@@ -422,4 +401,31 @@ public class MKCircleView extends MKOverlayPathView {
     public Object _appearanceWhenContainedInInstancesOfClasses(NSArray<?> containerTypes) {
         return appearanceWhenContainedInInstancesOfClasses(containerTypes);
     }
+
+    @Generated
+    @Deprecated
+    @Selector("circle")
+    public native MKCircle circle();
+
+    @Generated
+    @Selector("init")
+    public native MKCircleView init();
+
+    @Generated
+    @Deprecated
+    @Selector("initWithCircle:")
+    public native MKCircleView initWithCircle(MKCircle circle);
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native MKCircleView initWithCoder(NSCoder aDecoder);
+
+    @Generated
+    @Selector("initWithFrame:")
+    public native MKCircleView initWithFrame(@ByValue CGRect frame);
+
+    @Generated
+    @Deprecated
+    @Selector("initWithOverlay:")
+    public native MKCircleView initWithOverlay(@Mapped(ObjCObjectMapper.class) MKOverlay overlay);
 }

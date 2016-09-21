@@ -60,24 +60,13 @@ public class SCNSkinner extends NSObject implements NSSecureCoding {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native SCNSkinner alloc();
-
-    @Generated
-    @Selector("skinnerWithBaseGeometry:bones:boneInverseBindTransforms:boneWeights:boneIndices:")
-    public static native SCNSkinner skinnerWithBaseGeometryBonesBoneInverseBindTransformsBoneWeightsBoneIndices(
-            SCNGeometry baseGeometry, NSArray<? extends SCNNode> bones,
-            NSArray<? extends NSValue> boneInverseBindTransforms, SCNGeometrySource boneWeights,
-            SCNGeometrySource boneIndices);
-
-    @Generated
-    @Selector("supportsSecureCoding")
-    public static native boolean supportsSecureCoding();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -167,8 +156,19 @@ public class SCNSkinner extends NSObject implements NSSecureCoding {
     public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
+    @Selector("skinnerWithBaseGeometry:bones:boneInverseBindTransforms:boneWeights:boneIndices:")
+    public static native SCNSkinner skinnerWithBaseGeometryBonesBoneInverseBindTransformsBoneWeightsBoneIndices(
+            SCNGeometry baseGeometry, NSArray<? extends SCNNode> bones,
+            NSArray<? extends NSValue> boneInverseBindTransforms, SCNGeometrySource boneWeights,
+            SCNGeometrySource boneIndices);
+
+    @Generated
     @Selector("superclass")
     public static native Class superclass_static();
+
+    @Generated
+    @Selector("supportsSecureCoding")
+    public static native boolean supportsSecureCoding();
 
     @Generated
     @Selector("version")

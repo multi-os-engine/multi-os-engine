@@ -60,13 +60,13 @@ public class UIPageViewController extends UIViewController {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native UIPageViewController alloc();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -165,7 +165,7 @@ public class UIPageViewController extends UIViewController {
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")
@@ -193,6 +193,10 @@ public class UIPageViewController extends UIViewController {
     @Generated
     @Selector("init")
     public native UIPageViewController init();
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native UIPageViewController initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithNibName:bundle:")
@@ -267,10 +271,6 @@ public class UIPageViewController extends UIViewController {
     @Generated
     @Selector("viewControllers")
     public native NSArray<? extends UIViewController> viewControllers();
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native UIPageViewController initWithCoder(NSCoder coder);
 
     @Runtime(ObjCRuntime.class)
     @Generated

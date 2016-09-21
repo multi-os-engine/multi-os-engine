@@ -56,17 +56,13 @@ public class UIVideoEditorController extends UINavigationController {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native UIVideoEditorController alloc();
-
-    @Generated
-    @Selector("canEditVideoAtPath:")
-    public static native boolean canEditVideoAtPath(String videoPath);
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -80,6 +76,10 @@ public class UIVideoEditorController extends UINavigationController {
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
     public static native boolean automaticallyNotifiesObserversForKey(String key);
+
+    @Generated
+    @Selector("canEditVideoAtPath:")
+    public static native boolean canEditVideoAtPath(String videoPath);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
@@ -186,6 +186,10 @@ public class UIVideoEditorController extends UINavigationController {
     public native UIVideoEditorController init();
 
     @Generated
+    @Selector("initWithCoder:")
+    public native UIVideoEditorController initWithCoder(NSCoder aDecoder);
+
+    @Generated
     @Selector("initWithNavigationBarClass:toolbarClass:")
     public native UIVideoEditorController initWithNavigationBarClassToolbarClass(Class navigationBarClass,
             Class toolbarClass);
@@ -238,8 +242,4 @@ public class UIVideoEditorController extends UINavigationController {
     @Selector("videoQuality")
     @NInt
     public native long videoQuality();
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native UIVideoEditorController initWithCoder(NSCoder aDecoder);
 }

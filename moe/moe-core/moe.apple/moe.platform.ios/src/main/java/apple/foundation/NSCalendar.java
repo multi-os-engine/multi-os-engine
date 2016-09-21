@@ -61,29 +61,13 @@ public class NSCalendar extends NSObject implements NSCopying, NSSecureCoding {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native NSCalendar alloc();
-
-    @Generated
-    @Selector("autoupdatingCurrentCalendar")
-    public static native NSCalendar autoupdatingCurrentCalendar();
-
-    @Generated
-    @Selector("calendarWithIdentifier:")
-    public static native NSCalendar calendarWithIdentifier(String calendarIdentifierConstant);
-
-    @Generated
-    @Selector("currentCalendar")
-    public static native NSCalendar currentCalendar();
-
-    @Generated
-    @Selector("supportsSecureCoding")
-    public static native boolean supportsSecureCoding();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -93,6 +77,14 @@ public class NSCalendar extends NSObject implements NSCopying, NSSecureCoding {
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
     public static native boolean automaticallyNotifiesObserversForKey(String key);
+
+    @Generated
+    @Selector("autoupdatingCurrentCalendar")
+    public static native NSCalendar autoupdatingCurrentCalendar();
+
+    @Generated
+    @Selector("calendarWithIdentifier:")
+    public static native NSCalendar calendarWithIdentifier(String calendarIdentifierConstant);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
@@ -111,6 +103,10 @@ public class NSCalendar extends NSObject implements NSCopying, NSSecureCoding {
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
+
+    @Generated
+    @Selector("currentCalendar")
+    public static native NSCalendar currentCalendar();
 
     @Generated
     @Selector("debugDescription")
@@ -175,6 +171,10 @@ public class NSCalendar extends NSObject implements NSCopying, NSSecureCoding {
     @Generated
     @Selector("superclass")
     public static native Class superclass_static();
+
+    @Generated
+    @Selector("supportsSecureCoding")
+    public static native boolean supportsSecureCoding();
 
     @Generated
     @Selector("version")

@@ -57,6 +57,10 @@ public class UIAlertController extends UIViewController {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Selector("alertControllerWithTitle:message:preferredStyle:")
     public static native UIAlertController alertControllerWithTitleMessagePreferredStyle(String title, String message,
             @NInt long preferredStyle);
@@ -65,10 +69,6 @@ public class UIAlertController extends UIViewController {
     @Owned
     @Selector("alloc")
     public static native UIAlertController alloc();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -145,7 +145,7 @@ public class UIAlertController extends UIViewController {
 
     @Generated
     @Selector("load")
-    public static native void load_objc();
+    public static native void load_objc_static();
 
     @Generated
     @Owned
@@ -167,7 +167,7 @@ public class UIAlertController extends UIViewController {
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")
@@ -176,7 +176,7 @@ public class UIAlertController extends UIViewController {
     @Generated
     @Selector("version")
     @NInt
-    public static native long version();
+    public static native long version_static();
 
     @Generated
     @Selector("actions")
@@ -196,12 +196,20 @@ public class UIAlertController extends UIViewController {
     public native UIAlertController init();
 
     @Generated
+    @Selector("initWithCoder:")
+    public native UIAlertController initWithCoder(NSCoder aDecoder);
+
+    @Generated
     @Selector("initWithNibName:bundle:")
     public native UIAlertController initWithNibNameBundle(String nibNameOrNil, NSBundle nibBundleOrNil);
 
     @Generated
     @Selector("message")
     public native String message();
+
+    @Generated
+    @Selector("preferredAction")
+    public native UIAlertAction preferredAction();
 
     @Generated
     @Selector("preferredStyle")
@@ -211,6 +219,10 @@ public class UIAlertController extends UIViewController {
     @Generated
     @Selector("setMessage:")
     public native void setMessage(String value);
+
+    @Generated
+    @Selector("setPreferredAction:")
+    public native void setPreferredAction(UIAlertAction value);
 
     @Generated
     @Selector("setTitle:")
@@ -223,18 +235,6 @@ public class UIAlertController extends UIViewController {
     @Generated
     @Selector("title")
     public native String title();
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native UIAlertController initWithCoder(NSCoder aDecoder);
-
-    @Generated
-    @Selector("preferredAction")
-    public native UIAlertAction preferredAction();
-
-    @Generated
-    @Selector("setPreferredAction:")
-    public native void setPreferredAction(UIAlertAction value);
 
     @Runtime(ObjCRuntime.class)
     @Generated

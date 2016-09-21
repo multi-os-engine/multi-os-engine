@@ -61,22 +61,13 @@ public class GKLeaderboardSet extends NSObject implements NSCoding, NSSecureCodi
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native GKLeaderboardSet alloc();
-
-    @Generated
-    @Selector("loadLeaderboardSetsWithCompletionHandler:")
-    public static native void loadLeaderboardSetsWithCompletionHandler(
-            @ObjCBlock(name = "call_loadLeaderboardSetsWithCompletionHandler") Block_loadLeaderboardSetsWithCompletionHandler completionHandler);
-
-    @Generated
-    @Selector("supportsSecureCoding")
-    public static native boolean supportsSecureCoding();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -148,6 +139,11 @@ public class GKLeaderboardSet extends NSObject implements NSCoding, NSSecureCodi
     public static native void load_objc_static();
 
     @Generated
+    @Selector("loadLeaderboardSetsWithCompletionHandler:")
+    public static native void loadLeaderboardSetsWithCompletionHandler(
+            @ObjCBlock(name = "call_loadLeaderboardSetsWithCompletionHandler") Block_loadLeaderboardSetsWithCompletionHandler completionHandler);
+
+    @Generated
     @Owned
     @Selector("new")
     @MappedReturn(ObjCObjectMapper.class)
@@ -163,11 +159,15 @@ public class GKLeaderboardSet extends NSObject implements NSCoding, NSSecureCodi
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")
     public static native Class superclass_static();
+
+    @Generated
+    @Selector("supportsSecureCoding")
+    public static native boolean supportsSecureCoding();
 
     @Generated
     @Selector("version")

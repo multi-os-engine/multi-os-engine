@@ -26,6 +26,7 @@ import apple.foundation.NSSet;
 import apple.foundation.NSURL;
 import apple.foundation.protocol.NSSecureCoding;
 import apple.modelio.MDLAsset;
+import apple.scenekit.protocol.SCNSceneExportDelegate;
 import apple.scenekit.struct.SCNMatrix4;
 import org.moe.natj.c.ann.FunctionPtr;
 import org.moe.natj.general.NatJ;
@@ -40,11 +41,13 @@ import org.moe.natj.general.ann.NInt;
 import org.moe.natj.general.ann.NUInt;
 import org.moe.natj.general.ann.Owned;
 import org.moe.natj.general.ann.Runtime;
+import org.moe.natj.general.ptr.BoolPtr;
 import org.moe.natj.general.ptr.Ptr;
 import org.moe.natj.general.ptr.VoidPtr;
 import org.moe.natj.objc.Class;
 import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.SEL;
+import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
@@ -65,39 +68,13 @@ public class SCNScene extends NSObject implements NSSecureCoding {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native SCNScene alloc();
-
-    @Generated
-    @Selector("scene")
-    public static native SCNScene scene();
-
-    @Generated
-    @Selector("sceneNamed:")
-    public static native SCNScene sceneNamed(String name);
-
-    @Generated
-    @Selector("sceneNamed:inDirectory:options:")
-    public static native SCNScene sceneNamedInDirectoryOptions(String name, String directory,
-            NSDictionary<String, ?> options);
-
-    @Generated
-    @Selector("sceneWithURL:options:error:")
-    public static native SCNScene sceneWithURLOptionsError(NSURL url, NSDictionary<String, ?> options,
-            Ptr<NSError> error);
-
-    @Generated
-    @Selector("supportsSecureCoding")
-    public static native boolean supportsSecureCoding();
-
-    @Generated
-    @Selector("sceneWithMDLAsset:")
-    public static native SCNScene sceneWithMDLAsset(MDLAsset mdlAsset);
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -183,12 +160,38 @@ public class SCNScene extends NSObject implements NSSecureCoding {
     public static native boolean resolveInstanceMethod(SEL sel);
 
     @Generated
+    @Selector("scene")
+    public static native SCNScene scene();
+
+    @Generated
+    @Selector("sceneNamed:")
+    public static native SCNScene sceneNamed(String name);
+
+    @Generated
+    @Selector("sceneNamed:inDirectory:options:")
+    public static native SCNScene sceneNamedInDirectoryOptions(String name, String directory,
+            NSDictionary<String, ?> options);
+
+    @Generated
+    @Selector("sceneWithMDLAsset:")
+    public static native SCNScene sceneWithMDLAsset(MDLAsset mdlAsset);
+
+    @Generated
+    @Selector("sceneWithURL:options:error:")
+    public static native SCNScene sceneWithURLOptionsError(NSURL url, NSDictionary<String, ?> options,
+            Ptr<NSError> error);
+
+    @Generated
     @Selector("setVersion:")
     public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")
     public static native Class superclass_static();
+
+    @Generated
+    @Selector("supportsSecureCoding")
+    public static native boolean supportsSecureCoding();
 
     @Generated
     @Selector("version")
@@ -249,6 +252,10 @@ public class SCNScene extends NSObject implements NSSecureCoding {
     public native void setPaused(boolean value);
 
     @Generated
+    @Selector("lightingEnvironment")
+    public native SCNMaterialProperty lightingEnvironment();
+
+    @Generated
     @Selector("particleSystems")
     public native NSArray<? extends SCNParticleSystem> particleSystems();
 
@@ -292,5 +299,18 @@ public class SCNScene extends NSObject implements NSSecureCoding {
     @ProtocolClassMethod("supportsSecureCoding")
     public boolean _supportsSecureCoding() {
         return supportsSecureCoding();
+    }
+
+    @Generated
+    @Selector("writeToURL:options:delegate:progressHandler:")
+    public native boolean writeToURLOptionsDelegateProgressHandler(NSURL url, NSDictionary<String, ?> options,
+            @Mapped(ObjCObjectMapper.class) SCNSceneExportDelegate delegate,
+            @ObjCBlock(name = "call_writeToURLOptionsDelegateProgressHandler") Block_writeToURLOptionsDelegateProgressHandler progressHandler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_writeToURLOptionsDelegateProgressHandler {
+        @Generated
+        void call_writeToURLOptionsDelegateProgressHandler(float arg0, NSError arg1, BoolPtr arg2);
     }
 }

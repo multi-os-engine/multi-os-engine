@@ -17,6 +17,7 @@ limitations under the License.
 package apple.coredata;
 
 import apple.NSObject;
+import apple.coredata.protocol.NSFetchRequestResult;
 import apple.foundation.NSArray;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
@@ -45,7 +46,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @Library("CoreData")
 @Runtime(ObjCRuntime.class)
 @ObjCClassBinding
-public class NSManagedObjectID extends NSObject implements NSCopying {
+public class NSManagedObjectID extends NSObject implements NSCopying, NSFetchRequestResult {
     static {
         NatJ.register();
     }
@@ -56,13 +57,13 @@ public class NSManagedObjectID extends NSObject implements NSCopying {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native NSManagedObjectID alloc();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")

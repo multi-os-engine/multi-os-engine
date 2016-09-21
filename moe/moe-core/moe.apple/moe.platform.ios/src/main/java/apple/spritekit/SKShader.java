@@ -57,29 +57,13 @@ public class SKShader extends NSObject implements NSCopying, NSCoding {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native SKShader alloc();
-
-    @Generated
-    @Selector("shader")
-    public static native SKShader shader();
-
-    @Generated
-    @Selector("shaderWithFileNamed:")
-    public static native SKShader shaderWithFileNamed(String name);
-
-    @Generated
-    @Selector("shaderWithSource:")
-    public static native SKShader shaderWithSource(String source);
-
-    @Generated
-    @Selector("shaderWithSource:uniforms:")
-    public static native SKShader shaderWithSourceUniforms(String source, NSArray<? extends SKUniform> uniforms);
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -169,6 +153,22 @@ public class SKShader extends NSObject implements NSCopying, NSCoding {
     public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
+    @Selector("shader")
+    public static native SKShader shader();
+
+    @Generated
+    @Selector("shaderWithFileNamed:")
+    public static native SKShader shaderWithFileNamed(String name);
+
+    @Generated
+    @Selector("shaderWithSource:")
+    public static native SKShader shaderWithSource(String source);
+
+    @Generated
+    @Selector("shaderWithSource:uniforms:")
+    public static native SKShader shaderWithSourceUniforms(String source, NSArray<? extends SKUniform> uniforms);
+
+    @Generated
     @Selector("superclass")
     public static native Class superclass_static();
 
@@ -180,6 +180,10 @@ public class SKShader extends NSObject implements NSCopying, NSCoding {
     @Generated
     @Selector("addUniform:")
     public native void addUniform(SKUniform uniform);
+
+    @Generated
+    @Selector("attributes")
+    public native NSArray<? extends SKAttribute> attributes();
 
     @Generated
     @Owned
@@ -210,6 +214,10 @@ public class SKShader extends NSObject implements NSCopying, NSCoding {
     @Generated
     @Selector("removeUniformNamed:")
     public native void removeUniformNamed(String name);
+
+    @Generated
+    @Selector("setAttributes:")
+    public native void setAttributes(NSArray<? extends SKAttribute> value);
 
     @Generated
     @Selector("setSource:")

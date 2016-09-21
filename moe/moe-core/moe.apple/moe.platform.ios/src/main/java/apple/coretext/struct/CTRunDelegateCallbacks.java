@@ -58,25 +58,13 @@ public final class CTRunDelegateCallbacks extends StructObject {
     public native void setVersion(@NInt long value);
 
     @Generated
-    @StructureField(order = 1, isGetter = false)
-    public native void setDealloc(@FunctionPtr(name = "call_dealloc") Function_dealloc value);
-
-    @Generated
-    @StructureField(order = 2, isGetter = false)
-    public native void setGetAscent(@FunctionPtr(name = "call_getAscent") Function_getAscent value);
-
-    @Generated
-    @StructureField(order = 3, isGetter = false)
-    public native void setGetDescent(@FunctionPtr(name = "call_getDescent") Function_getDescent value);
-
-    @Generated
-    @StructureField(order = 4, isGetter = false)
-    public native void setGetWidth(@FunctionPtr(name = "call_getWidth") Function_getWidth value);
-
-    @Generated
     @StructureField(order = 1, isGetter = true)
     @FunctionPtr(name = "call_dealloc")
     public native Function_dealloc dealloc();
+
+    @Generated
+    @StructureField(order = 1, isGetter = false)
+    public native void setDealloc(@FunctionPtr(name = "call_dealloc") Function_dealloc value);
 
     @Generated
     @StructureField(order = 2, isGetter = true)
@@ -84,14 +72,26 @@ public final class CTRunDelegateCallbacks extends StructObject {
     public native Function_getAscent getAscent();
 
     @Generated
+    @StructureField(order = 2, isGetter = false)
+    public native void setGetAscent(@FunctionPtr(name = "call_getAscent") Function_getAscent value);
+
+    @Generated
     @StructureField(order = 3, isGetter = true)
     @FunctionPtr(name = "call_getDescent")
     public native Function_getDescent getDescent();
 
     @Generated
+    @StructureField(order = 3, isGetter = false)
+    public native void setGetDescent(@FunctionPtr(name = "call_getDescent") Function_getDescent value);
+
+    @Generated
     @StructureField(order = 4, isGetter = true)
     @FunctionPtr(name = "call_getWidth")
     public native Function_getWidth getWidth();
+
+    @Generated
+    @StructureField(order = 4, isGetter = false)
+    public native void setGetWidth(@FunctionPtr(name = "call_getWidth") Function_getWidth value);
 
     @Runtime(CRuntime.class)
     @Generated

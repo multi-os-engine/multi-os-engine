@@ -17,6 +17,7 @@ limitations under the License.
 package apple.foundation;
 
 import apple.NSObject;
+import apple.coredata.protocol.NSFetchRequestResult;
 import apple.foundation.protocol.NSCopying;
 import apple.foundation.protocol.NSFastEnumeration;
 import apple.foundation.protocol.NSMutableCopying;
@@ -58,7 +59,8 @@ import java.util.Set;
 @Runtime(ObjCRuntime.class)
 @ObjCClassBinding
 public class NSDictionary<_KeyType, _ObjectType> extends NSObject
-        implements NSCopying, NSMutableCopying, NSSecureCoding, NSFastEnumeration, Map<_KeyType, _ObjectType> {
+        implements NSCopying, NSMutableCopying, NSSecureCoding, NSFastEnumeration, NSFetchRequestResult,
+        Map<_KeyType, _ObjectType> {
     static {
         NatJ.register();
     }
@@ -69,9 +71,44 @@ public class NSDictionary<_KeyType, _ObjectType> extends NSObject
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native NSDictionary<?, ?> alloc();
+
+    @Generated
+    @Selector("allocWithZone:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object allocWithZone(VoidPtr zone);
+
+    @Generated
+    @Selector("automaticallyNotifiesObserversForKey:")
+    public static native boolean automaticallyNotifiesObserversForKey(String key);
+
+    @Generated
+    @Selector("cancelPreviousPerformRequestsWithTarget:")
+    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+
+    @Generated
+    @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
+    public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
+            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
+            @Mapped(ObjCObjectMapper.class) Object anArgument);
+
+    @Generated
+    @Selector("classFallbacksForKeyedArchiver")
+    public static native NSArray<String> classFallbacksForKeyedArchiver();
+
+    @Generated
+    @Selector("classForKeyedUnarchiver")
+    public static native Class classForKeyedUnarchiver();
+
+    @Generated
+    @Selector("debugDescription")
+    public static native String debugDescription_static();
 
     @Generated
     @Selector("dictionary")
@@ -112,50 +149,6 @@ public class NSDictionary<_KeyType, _ObjectType> extends NSObject
     @Selector("dictionaryWithObjectsAndKeys:")
     public static native <_KeyType, _ObjectType> NSDictionary<?, ?> dictionaryWithObjectsAndKeys(
             @Mapped(ObjCObjectMapper.class) Object firstObject, Object... varargs);
-
-    @Generated
-    @Selector("sharedKeySetForKeys:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native <_KeyType, _ObjectType> Object sharedKeySetForKeys(NSArray<?> keys);
-
-    @Generated
-    @Selector("supportsSecureCoding")
-    public static native <_KeyType, _ObjectType> boolean supportsSecureCoding();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
-
-    @Generated
-    @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
-
-    @Generated
-    @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
-
-    @Generated
-    @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
-
-    @Generated
-    @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
-    public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
-
-    @Generated
-    @Selector("classFallbacksForKeyedArchiver")
-    public static native NSArray<String> classFallbacksForKeyedArchiver();
-
-    @Generated
-    @Selector("classForKeyedUnarchiver")
-    public static native Class classForKeyedUnarchiver();
-
-    @Generated
-    @Selector("debugDescription")
-    public static native String debugDescription_static();
 
     @Generated
     @Selector("hash")
@@ -207,11 +200,20 @@ public class NSDictionary<_KeyType, _ObjectType> extends NSObject
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
+
+    @Generated
+    @Selector("sharedKeySetForKeys:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native <_KeyType, _ObjectType> Object sharedKeySetForKeys(NSArray<?> keys);
 
     @Generated
     @Selector("superclass")
     public static native Class superclass_static();
+
+    @Generated
+    @Selector("supportsSecureCoding")
+    public static native <_KeyType, _ObjectType> boolean supportsSecureCoding();
 
     @Generated
     @Selector("version")
@@ -348,6 +350,10 @@ public class NSDictionary<_KeyType, _ObjectType> extends NSObject
     public native void getObjectsAndKeys(Ptr<ObjCObject> objects, Ptr<ObjCObject> keys);
 
     @Generated
+    @Selector("getObjects:andKeys:count:")
+    public native void getObjectsAndKeysCount(Ptr<ObjCObject> objects, Ptr<ObjCObject> keys, @NUInt long count);
+
+    @Generated
     @Selector("init")
     public native NSDictionary<?, ?> init();
 
@@ -378,8 +384,8 @@ public class NSDictionary<_KeyType, _ObjectType> extends NSObject
 
     @Generated
     @Selector("initWithObjects:forKeys:count:")
-    public native NSDictionary<?, ?> initWithObjectsForKeysCount(ConstPtr<_ObjectType> objects,
-            ConstPtr<ObjCObject> keys, @NUInt long cnt);
+    public native NSDictionary<?, ?> initWithObjectsForKeysCount(Ptr<_ObjectType> objects, Ptr<ObjCObject> keys,
+            @NUInt long cnt);
 
     @Generated
     @Variadic()
@@ -390,10 +396,6 @@ public class NSDictionary<_KeyType, _ObjectType> extends NSObject
     @Generated
     @Selector("isEqualToDictionary:")
     public native boolean isEqualToDictionary(NSDictionary<_KeyType, _ObjectType> otherDictionary);
-
-    @Generated
-    @Selector("getObjects:andKeys:count:")
-    public native void getObjectsAndKeysCount(Ptr<ObjCObject> objects, Ptr<ObjCObject> keys, @NUInt long count);
 
     @Generated
     @Selector("keyEnumerator")
@@ -432,14 +434,14 @@ public class NSDictionary<_KeyType, _ObjectType> extends NSObject
     @Selector("objectEnumerator")
     public native NSEnumerator<_ObjectType> objectEnumerator();
 
-    @MappedReturn(ObjCObjectMapper.class)
     @Generated
     @Selector("objectForKey:")
+    @MappedReturn(ObjCObjectMapper.class)
     public native _ObjectType objectForKey(@Mapped(ObjCObjectMapper.class) _KeyType aKey);
 
-    @MappedReturn(ObjCObjectMapper.class)
     @Generated
     @Selector("objectForKeyedSubscript:")
+    @MappedReturn(ObjCObjectMapper.class)
     public native _ObjectType objectForKeyedSubscript(@Mapped(ObjCObjectMapper.class) _KeyType key);
 
     @Generated
@@ -453,9 +455,9 @@ public class NSDictionary<_KeyType, _ObjectType> extends NSObject
         return supportsSecureCoding();
     }
 
-    @MappedReturn(ObjCObjectMapper.class)
     @Generated
     @Selector("valueForKey:")
+    @MappedReturn(ObjCObjectMapper.class)
     public native _ObjectType valueForKey(String key);
 
     @Generated

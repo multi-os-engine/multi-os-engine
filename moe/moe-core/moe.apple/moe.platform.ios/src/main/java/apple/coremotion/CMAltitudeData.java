@@ -57,13 +57,13 @@ public class CMAltitudeData extends CMLogItem {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native CMAltitudeData alloc();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -170,16 +170,16 @@ public class CMAltitudeData extends CMLogItem {
     public native CMAltitudeData init();
 
     @Generated
+    @Selector("initWithCoder:")
+    public native CMAltitudeData initWithCoder(NSCoder aDecoder);
+
+    @Generated
     @Selector("pressure")
     public native NSNumber pressure();
 
     @Generated
     @Selector("relativeAltitude")
     public native NSNumber relativeAltitude();
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native CMAltitudeData initWithCoder(NSCoder aDecoder);
 
     @Generated
     @ProtocolClassMethod("supportsSecureCoding")

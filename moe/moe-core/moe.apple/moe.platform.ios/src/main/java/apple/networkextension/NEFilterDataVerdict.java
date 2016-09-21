@@ -58,44 +58,22 @@ public class NEFilterDataVerdict extends NEFilterVerdict implements NSSecureCodi
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native NEFilterDataVerdict alloc();
 
     @Generated
-    @Selector("allowVerdict")
-    public static native NEFilterDataVerdict allowVerdict();
-
-    @Generated
-    @Selector("dataVerdictWithPassBytes:peekBytes:")
-    public static native NEFilterDataVerdict dataVerdictWithPassBytesPeekBytes(@NUInt long passBytes,
-            @NUInt long peekBytes);
-
-    @Generated
-    @Selector("dropVerdict")
-    public static native NEFilterDataVerdict dropVerdict();
-
-    @Generated
-    @Selector("needRulesVerdict")
-    public static native NEFilterDataVerdict needRulesVerdict();
-
-    @Generated
-    @Selector("remediateVerdictWithRemediationURLMapKey:remediationButtonTextMapKey:")
-    public static native NEFilterDataVerdict remediateVerdictWithRemediationURLMapKeyRemediationButtonTextMapKey(
-            String remediationURLMapKey, String remediationButtonTextMapKey);
-
-    @Generated
-    @Selector("supportsSecureCoding")
-    public static native boolean supportsSecureCoding();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
-
-    @Generated
     @Selector("allocWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object allocWithZone(VoidPtr zone);
+
+    @Generated
+    @Selector("allowVerdict")
+    public static native NEFilterDataVerdict allowVerdict();
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -120,12 +98,21 @@ public class NEFilterDataVerdict extends NEFilterVerdict implements NSSecureCodi
     public static native Class classForKeyedUnarchiver();
 
     @Generated
+    @Selector("dataVerdictWithPassBytes:peekBytes:")
+    public static native NEFilterDataVerdict dataVerdictWithPassBytesPeekBytes(@NUInt long passBytes,
+            @NUInt long peekBytes);
+
+    @Generated
     @Selector("debugDescription")
     public static native String debugDescription_static();
 
     @Generated
     @Selector("description")
     public static native String description_static();
+
+    @Generated
+    @Selector("dropVerdict")
+    public static native NEFilterDataVerdict dropVerdict();
 
     @Generated
     @Selector("hash")
@@ -162,10 +149,19 @@ public class NEFilterDataVerdict extends NEFilterVerdict implements NSSecureCodi
     public static native void load_objc_static();
 
     @Generated
+    @Selector("needRulesVerdict")
+    public static native NEFilterDataVerdict needRulesVerdict();
+
+    @Generated
     @Owned
     @Selector("new")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object new_objc();
+
+    @Generated
+    @Selector("remediateVerdictWithRemediationURLMapKey:remediationButtonTextMapKey:")
+    public static native NEFilterDataVerdict remediateVerdictWithRemediationURLMapKeyRemediationButtonTextMapKey(
+            String remediationURLMapKey, String remediationButtonTextMapKey);
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -177,11 +173,15 @@ public class NEFilterDataVerdict extends NEFilterVerdict implements NSSecureCodi
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")
     public static native Class superclass_static();
+
+    @Generated
+    @Selector("supportsSecureCoding")
+    public static native boolean supportsSecureCoding();
 
     @Generated
     @Selector("version")

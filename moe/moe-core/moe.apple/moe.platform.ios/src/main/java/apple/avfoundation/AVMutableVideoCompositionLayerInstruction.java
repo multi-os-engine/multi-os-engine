@@ -61,22 +61,13 @@ public class AVMutableVideoCompositionLayerInstruction extends AVVideoCompositio
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native AVMutableVideoCompositionLayerInstruction alloc();
-
-    @Generated
-    @Selector("videoCompositionLayerInstruction")
-    public static native AVMutableVideoCompositionLayerInstruction videoCompositionLayerInstruction();
-
-    @Generated
-    @Selector("videoCompositionLayerInstructionWithAssetTrack:")
-    public static native AVMutableVideoCompositionLayerInstruction videoCompositionLayerInstructionWithAssetTrack(
-            AVAssetTrack track);
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -179,8 +170,21 @@ public class AVMutableVideoCompositionLayerInstruction extends AVVideoCompositio
     public static native long version_static();
 
     @Generated
+    @Selector("videoCompositionLayerInstruction")
+    public static native AVMutableVideoCompositionLayerInstruction videoCompositionLayerInstruction();
+
+    @Generated
+    @Selector("videoCompositionLayerInstructionWithAssetTrack:")
+    public static native AVMutableVideoCompositionLayerInstruction videoCompositionLayerInstructionWithAssetTrack(
+            AVAssetTrack track);
+
+    @Generated
     @Selector("init")
     public native AVMutableVideoCompositionLayerInstruction init();
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native AVMutableVideoCompositionLayerInstruction initWithCoder(NSCoder aDecoder);
 
     @Generated
     @Selector("setCropRectangle:atTime:")
@@ -215,16 +219,12 @@ public class AVMutableVideoCompositionLayerInstruction extends AVVideoCompositio
             @ByValue CMTimeRange timeRange);
 
     @Generated
-    @Selector("trackID")
-    public native int trackID();
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native AVMutableVideoCompositionLayerInstruction initWithCoder(NSCoder aDecoder);
-
-    @Generated
     @ProtocolClassMethod("supportsSecureCoding")
     public boolean _supportsSecureCoding() {
         return supportsSecureCoding();
     }
+
+    @Generated
+    @Selector("trackID")
+    public native int trackID();
 }

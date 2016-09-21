@@ -62,44 +62,22 @@ public class NEFilterNewFlowVerdict extends NEFilterVerdict implements NSSecureC
     public static native NEFilterNewFlowVerdict URLAppendStringVerdictWithMapKey(String urlAppendMapKey);
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native NEFilterNewFlowVerdict alloc();
 
     @Generated
-    @Selector("allowVerdict")
-    public static native NEFilterNewFlowVerdict allowVerdict();
-
-    @Generated
-    @Selector("dropVerdict")
-    public static native NEFilterNewFlowVerdict dropVerdict();
-
-    @Generated
-    @Selector("filterDataVerdictWithFilterInbound:peekInboundBytes:filterOutbound:peekOutboundBytes:")
-    public static native NEFilterNewFlowVerdict filterDataVerdictWithFilterInboundPeekInboundBytesFilterOutboundPeekOutboundBytes(
-            boolean filterInbound, @NUInt long peekInboundBytes, boolean filterOutbound, @NUInt long peekOutboundBytes);
-
-    @Generated
-    @Selector("needRulesVerdict")
-    public static native NEFilterNewFlowVerdict needRulesVerdict();
-
-    @Generated
-    @Selector("remediateVerdictWithRemediationURLMapKey:remediationButtonTextMapKey:")
-    public static native NEFilterNewFlowVerdict remediateVerdictWithRemediationURLMapKeyRemediationButtonTextMapKey(
-            String remediationURLMapKey, String remediationButtonTextMapKey);
-
-    @Generated
-    @Selector("supportsSecureCoding")
-    public static native boolean supportsSecureCoding();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
-
-    @Generated
     @Selector("allocWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object allocWithZone(VoidPtr zone);
+
+    @Generated
+    @Selector("allowVerdict")
+    public static native NEFilterNewFlowVerdict allowVerdict();
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -130,6 +108,15 @@ public class NEFilterNewFlowVerdict extends NEFilterVerdict implements NSSecureC
     @Generated
     @Selector("description")
     public static native String description_static();
+
+    @Generated
+    @Selector("dropVerdict")
+    public static native NEFilterNewFlowVerdict dropVerdict();
+
+    @Generated
+    @Selector("filterDataVerdictWithFilterInbound:peekInboundBytes:filterOutbound:peekOutboundBytes:")
+    public static native NEFilterNewFlowVerdict filterDataVerdictWithFilterInboundPeekInboundBytesFilterOutboundPeekOutboundBytes(
+            boolean filterInbound, @NUInt long peekInboundBytes, boolean filterOutbound, @NUInt long peekOutboundBytes);
 
     @Generated
     @Selector("hash")
@@ -166,10 +153,19 @@ public class NEFilterNewFlowVerdict extends NEFilterVerdict implements NSSecureC
     public static native void load_objc_static();
 
     @Generated
+    @Selector("needRulesVerdict")
+    public static native NEFilterNewFlowVerdict needRulesVerdict();
+
+    @Generated
     @Owned
     @Selector("new")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object new_objc();
+
+    @Generated
+    @Selector("remediateVerdictWithRemediationURLMapKey:remediationButtonTextMapKey:")
+    public static native NEFilterNewFlowVerdict remediateVerdictWithRemediationURLMapKeyRemediationButtonTextMapKey(
+            String remediationURLMapKey, String remediationButtonTextMapKey);
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -181,16 +177,20 @@ public class NEFilterNewFlowVerdict extends NEFilterVerdict implements NSSecureC
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")
     public static native Class superclass_static();
 
     @Generated
+    @Selector("supportsSecureCoding")
+    public static native boolean supportsSecureCoding();
+
+    @Generated
     @Selector("version")
     @NInt
-    public static native long version();
+    public static native long version_static();
 
     @Generated
     @Owned

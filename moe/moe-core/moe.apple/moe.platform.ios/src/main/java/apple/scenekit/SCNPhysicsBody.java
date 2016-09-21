@@ -62,36 +62,13 @@ public class SCNPhysicsBody extends NSObject implements NSCopying, NSSecureCodin
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native SCNPhysicsBody alloc();
-
-    @Generated
-    @Selector("bodyWithType:shape:")
-    public static native SCNPhysicsBody bodyWithTypeShape(@NInt long type, SCNPhysicsShape shape);
-
-    @Generated
-    @Selector("dynamicBody")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object dynamicBody();
-
-    @Generated
-    @Selector("kinematicBody")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object kinematicBody();
-
-    @Generated
-    @Selector("staticBody")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object staticBody();
-
-    @Generated
-    @Selector("supportsSecureCoding")
-    public static native boolean supportsSecureCoding();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -101,6 +78,10 @@ public class SCNPhysicsBody extends NSObject implements NSCopying, NSSecureCodin
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
     public static native boolean automaticallyNotifiesObserversForKey(String key);
+
+    @Generated
+    @Selector("bodyWithType:shape:")
+    public static native SCNPhysicsBody bodyWithTypeShape(@NInt long type, SCNPhysicsShape shape);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
@@ -127,6 +108,11 @@ public class SCNPhysicsBody extends NSObject implements NSCopying, NSSecureCodin
     @Generated
     @Selector("description")
     public static native String description_static();
+
+    @Generated
+    @Selector("dynamicBody")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object dynamicBody();
 
     @Generated
     @Selector("hash")
@@ -159,6 +145,11 @@ public class SCNPhysicsBody extends NSObject implements NSCopying, NSSecureCodin
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
     @Generated
+    @Selector("kinematicBody")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object kinematicBody();
+
+    @Generated
     @Selector("load")
     public static native void load_objc_static();
 
@@ -178,11 +169,20 @@ public class SCNPhysicsBody extends NSObject implements NSCopying, NSSecureCodin
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
+
+    @Generated
+    @Selector("staticBody")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object staticBody();
 
     @Generated
     @Selector("superclass")
     public static native Class superclass_static();
+
+    @Generated
+    @Selector("supportsSecureCoding")
+    public static native boolean supportsSecureCoding();
 
     @Generated
     @Selector("version")
@@ -241,6 +241,11 @@ public class SCNPhysicsBody extends NSObject implements NSCopying, NSSecureCodin
     public native long collisionBitMask();
 
     @Generated
+    @Selector("contactTestBitMask")
+    @NUInt
+    public native long contactTestBitMask();
+
+    @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
@@ -269,6 +274,14 @@ public class SCNPhysicsBody extends NSObject implements NSCopying, NSSecureCodin
     public native SCNPhysicsBody initWithCoder(NSCoder aDecoder);
 
     @Generated
+    @Selector("isAffectedByGravity")
+    public native boolean isAffectedByGravity();
+
+    @Generated
+    @Selector("setAffectedByGravity:")
+    public native void setAffectedByGravity(boolean value);
+
+    @Generated
     @Selector("isResting")
     public native boolean isResting();
 
@@ -276,6 +289,11 @@ public class SCNPhysicsBody extends NSObject implements NSCopying, NSSecureCodin
     @Selector("mass")
     @NFloat
     public native double mass();
+
+    @Generated
+    @Selector("momentOfInertia")
+    @ByValue
+    public native SCNVector3 momentOfInertia();
 
     @Generated
     @Selector("physicsShape")
@@ -324,6 +342,10 @@ public class SCNPhysicsBody extends NSObject implements NSCopying, NSSecureCodin
     public native void setCollisionBitMask(@NUInt long value);
 
     @Generated
+    @Selector("setContactTestBitMask:")
+    public native void setContactTestBitMask(@NUInt long value);
+
+    @Generated
     @Selector("setDamping:")
     public native void setDamping(@NFloat double value);
 
@@ -334,6 +356,10 @@ public class SCNPhysicsBody extends NSObject implements NSCopying, NSSecureCodin
     @Generated
     @Selector("setMass:")
     public native void setMass(@NFloat double value);
+
+    @Generated
+    @Selector("setMomentOfInertia:")
+    public native void setMomentOfInertia(@ByValue SCNVector3 value);
 
     @Generated
     @Selector("setPhysicsShape:")
@@ -350,6 +376,10 @@ public class SCNPhysicsBody extends NSObject implements NSCopying, NSSecureCodin
     @Generated
     @Selector("setType:")
     public native void setType(@NInt long value);
+
+    @Generated
+    @Selector("setUsesDefaultMomentOfInertia:")
+    public native void setUsesDefaultMomentOfInertia(boolean value);
 
     @Generated
     @Selector("setVelocity:")
@@ -371,6 +401,10 @@ public class SCNPhysicsBody extends NSObject implements NSCopying, NSSecureCodin
     public native long type();
 
     @Generated
+    @Selector("usesDefaultMomentOfInertia")
+    public native boolean usesDefaultMomentOfInertia();
+
+    @Generated
     @Selector("velocity")
     @ByValue
     public native SCNVector3 velocity();
@@ -379,38 +413,4 @@ public class SCNPhysicsBody extends NSObject implements NSCopying, NSSecureCodin
     @Selector("velocityFactor")
     @ByValue
     public native SCNVector3 velocityFactor();
-
-    @Generated
-    @Selector("contactTestBitMask")
-    @NUInt
-    public native long contactTestBitMask();
-
-    @Generated
-    @Selector("isAffectedByGravity")
-    public native boolean isAffectedByGravity();
-
-    @Generated
-    @Selector("setAffectedByGravity:")
-    public native void setAffectedByGravity(boolean value);
-
-    @Generated
-    @Selector("momentOfInertia")
-    @ByValue
-    public native SCNVector3 momentOfInertia();
-
-    @Generated
-    @Selector("setContactTestBitMask:")
-    public native void setContactTestBitMask(@NUInt long value);
-
-    @Generated
-    @Selector("setMomentOfInertia:")
-    public native void setMomentOfInertia(@ByValue SCNVector3 value);
-
-    @Generated
-    @Selector("setUsesDefaultMomentOfInertia:")
-    public native void setUsesDefaultMomentOfInertia(boolean value);
-
-    @Generated
-    @Selector("usesDefaultMomentOfInertia")
-    public native boolean usesDefaultMomentOfInertia();
 }

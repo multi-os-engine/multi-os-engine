@@ -56,21 +56,13 @@ public class CAEmitterBehavior extends NSObject implements NSCoding {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native CAEmitterBehavior alloc();
-
-    @Generated
-    @Selector("behaviorTypes")
-    public static native NSArray<String> behaviorTypes();
-
-    @Generated
-    @Selector("behaviorWithType:")
-    public static native CAEmitterBehavior behaviorWithType(String type);
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -80,6 +72,14 @@ public class CAEmitterBehavior extends NSObject implements NSCoding {
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
     public static native boolean automaticallyNotifiesObserversForKey(String key);
+
+    @Generated
+    @Selector("behaviorTypes")
+    public static native NSArray<String> behaviorTypes();
+
+    @Generated
+    @Selector("behaviorWithType:")
+    public static native CAEmitterBehavior behaviorWithType(String type);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
@@ -157,7 +157,7 @@ public class CAEmitterBehavior extends NSObject implements NSCoding {
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")

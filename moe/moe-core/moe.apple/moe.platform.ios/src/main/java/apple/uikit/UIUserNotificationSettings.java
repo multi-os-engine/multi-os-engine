@@ -54,18 +54,13 @@ public class UIUserNotificationSettings extends NSObject {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native UIUserNotificationSettings alloc();
-
-    @Generated
-    @Selector("settingsForTypes:categories:")
-    public static native UIUserNotificationSettings settingsForTypesCategories(@NUInt long types,
-            NSSet<? extends UIUserNotificationCategory> categories);
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -153,6 +148,11 @@ public class UIUserNotificationSettings extends NSObject {
     @Generated
     @Selector("setVersion:")
     public static native void setVersion_static(@NInt long aVersion);
+
+    @Generated
+    @Selector("settingsForTypes:categories:")
+    public static native UIUserNotificationSettings settingsForTypesCategories(@NUInt long types,
+            NSSet<? extends UIUserNotificationCategory> categories);
 
     @Generated
     @Selector("superclass")

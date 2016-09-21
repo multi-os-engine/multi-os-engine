@@ -55,22 +55,13 @@ public class GKGaussianDistribution extends GKRandomDistribution {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native GKGaussianDistribution alloc();
-
-    @Generated
-    @Selector("distributionForDieWithSideCount:")
-    public static native GKGaussianDistribution distributionForDieWithSideCount(@NInt long sideCount);
-
-    @Generated
-    @Selector("distributionWithLowestValue:highestValue:")
-    public static native GKGaussianDistribution distributionWithLowestValueHighestValue(@NInt long lowestInclusive,
-            @NInt long highestInclusive);
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -116,6 +107,15 @@ public class GKGaussianDistribution extends GKRandomDistribution {
     @Generated
     @Selector("description")
     public static native String description_static();
+
+    @Generated
+    @Selector("distributionForDieWithSideCount:")
+    public static native GKGaussianDistribution distributionForDieWithSideCount(@NInt long sideCount);
+
+    @Generated
+    @Selector("distributionWithLowestValue:highestValue:")
+    public static native GKGaussianDistribution distributionWithLowestValueHighestValue(@NInt long lowestInclusive,
+            @NInt long highestInclusive);
 
     @Generated
     @Selector("hash")
@@ -167,7 +167,7 @@ public class GKGaussianDistribution extends GKRandomDistribution {
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")

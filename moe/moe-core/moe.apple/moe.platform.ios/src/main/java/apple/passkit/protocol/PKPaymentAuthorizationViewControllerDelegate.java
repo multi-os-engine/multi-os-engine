@@ -45,13 +45,31 @@ public interface PKPaymentAuthorizationViewControllerDelegate {
             PKPaymentAuthorizationViewController controller, PKPayment payment,
             @ObjCBlock(name = "call_paymentAuthorizationViewControllerDidAuthorizePaymentCompletion") Block_paymentAuthorizationViewControllerDidAuthorizePaymentCompletion completion);
 
-    @Deprecated
     @Generated
     @IsOptional
+    @Selector("paymentAuthorizationViewController:didSelectPaymentMethod:completion:")
+    default void paymentAuthorizationViewControllerDidSelectPaymentMethodCompletion(
+            PKPaymentAuthorizationViewController controller, PKPaymentMethod paymentMethod,
+            @ObjCBlock(name = "call_paymentAuthorizationViewControllerDidSelectPaymentMethodCompletion") Block_paymentAuthorizationViewControllerDidSelectPaymentMethodCompletion completion) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Generated
+    @IsOptional
+    @Deprecated
     @Selector("paymentAuthorizationViewController:didSelectShippingAddress:completion:")
     default void paymentAuthorizationViewControllerDidSelectShippingAddressCompletion(
             PKPaymentAuthorizationViewController controller, ConstVoidPtr address,
             @ObjCBlock(name = "call_paymentAuthorizationViewControllerDidSelectShippingAddressCompletion") Block_paymentAuthorizationViewControllerDidSelectShippingAddressCompletion completion) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Generated
+    @IsOptional
+    @Selector("paymentAuthorizationViewController:didSelectShippingContact:completion:")
+    default void paymentAuthorizationViewControllerDidSelectShippingContactCompletion(
+            PKPaymentAuthorizationViewController controller, PKContact contact,
+            @ObjCBlock(name = "call_paymentAuthorizationViewControllerDidSelectShippingContactCompletion") Block_paymentAuthorizationViewControllerDidSelectShippingContactCompletion completion) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -76,45 +94,11 @@ public interface PKPaymentAuthorizationViewControllerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    @Generated
-    @IsOptional
-    @Selector("paymentAuthorizationViewController:didSelectPaymentMethod:completion:")
-    default void paymentAuthorizationViewControllerDidSelectPaymentMethodCompletion(
-            PKPaymentAuthorizationViewController controller, PKPaymentMethod paymentMethod,
-            @ObjCBlock(name = "call_paymentAuthorizationViewControllerDidSelectPaymentMethodCompletion") Block_paymentAuthorizationViewControllerDidSelectPaymentMethodCompletion completion) {
-        throw new java.lang.UnsupportedOperationException();
-    }
-
-    @Generated
-    @IsOptional
-    @Selector("paymentAuthorizationViewController:didSelectShippingContact:completion:")
-    default void paymentAuthorizationViewControllerDidSelectShippingContactCompletion(
-            PKPaymentAuthorizationViewController controller, PKContact contact,
-            @ObjCBlock(name = "call_paymentAuthorizationViewControllerDidSelectShippingContactCompletion") Block_paymentAuthorizationViewControllerDidSelectShippingContactCompletion completion) {
-        throw new java.lang.UnsupportedOperationException();
-    }
-
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_paymentAuthorizationViewControllerDidAuthorizePaymentCompletion {
         @Generated
         void call_paymentAuthorizationViewControllerDidAuthorizePaymentCompletion(@NInt long arg0);
-    }
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_paymentAuthorizationViewControllerDidSelectShippingAddressCompletion {
-        @Generated
-        void call_paymentAuthorizationViewControllerDidSelectShippingAddressCompletion(@NInt long arg0,
-                NSArray<? extends PKShippingMethod> arg1, NSArray<? extends PKPaymentSummaryItem> arg2);
-    }
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_paymentAuthorizationViewControllerDidSelectShippingMethodCompletion {
-        @Generated
-        void call_paymentAuthorizationViewControllerDidSelectShippingMethodCompletion(@NInt long arg0,
-                NSArray<? extends PKPaymentSummaryItem> arg1);
     }
 
     @Runtime(ObjCRuntime.class)
@@ -127,9 +111,25 @@ public interface PKPaymentAuthorizationViewControllerDelegate {
 
     @Runtime(ObjCRuntime.class)
     @Generated
+    public interface Block_paymentAuthorizationViewControllerDidSelectShippingAddressCompletion {
+        @Generated
+        void call_paymentAuthorizationViewControllerDidSelectShippingAddressCompletion(@NInt long arg0,
+                NSArray<? extends PKShippingMethod> arg1, NSArray<? extends PKPaymentSummaryItem> arg2);
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
     public interface Block_paymentAuthorizationViewControllerDidSelectShippingContactCompletion {
         @Generated
         void call_paymentAuthorizationViewControllerDidSelectShippingContactCompletion(@NInt long arg0,
                 NSArray<? extends PKShippingMethod> arg1, NSArray<? extends PKPaymentSummaryItem> arg2);
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_paymentAuthorizationViewControllerDidSelectShippingMethodCompletion {
+        @Generated
+        void call_paymentAuthorizationViewControllerDidSelectShippingMethodCompletion(@NInt long arg0,
+                NSArray<? extends PKPaymentSummaryItem> arg1);
     }
 }

@@ -57,17 +57,13 @@ public class CIWarpKernel extends CIKernel {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native CIWarpKernel alloc();
-
-    @Generated
-    @Selector("kernelWithString:")
-    public static native CIWarpKernel kernelWithString(String string);
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -131,6 +127,10 @@ public class CIWarpKernel extends CIKernel {
     public static native boolean isSubclassOfClass(Class aClass);
 
     @Generated
+    @Selector("kernelWithString:")
+    public static native CIWarpKernel kernelWithString(String string);
+
+    @Generated
     @Selector("kernelsWithString:")
     public static native NSArray<? extends CIKernel> kernelsWithString(String string);
 
@@ -158,7 +158,7 @@ public class CIWarpKernel extends CIKernel {
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")

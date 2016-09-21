@@ -54,17 +54,13 @@ public class MIDINetworkSession extends NSObject {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native MIDINetworkSession alloc();
-
-    @Generated
-    @Selector("defaultSession")
-    public static native MIDINetworkSession defaultSession();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -96,6 +92,10 @@ public class MIDINetworkSession extends NSObject {
     @Generated
     @Selector("debugDescription")
     public static native String debugDescription_static();
+
+    @Generated
+    @Selector("defaultSession")
+    public static native MIDINetworkSession defaultSession();
 
     @Generated
     @Selector("description")

@@ -62,11 +62,6 @@ public class UICollectionReusableView extends UIView {
     }
 
     @Generated
-    @Owned
-    @Selector("alloc")
-    public static native UICollectionReusableView alloc();
-
-    @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
 
@@ -75,6 +70,11 @@ public class UICollectionReusableView extends UIView {
     public static native void addKeyframeWithRelativeStartTimeRelativeDurationAnimations(double frameStartTime,
             double frameDuration,
             @ObjCBlock(name = "call_addKeyframeWithRelativeStartTimeRelativeDurationAnimations") UIView.Block_addKeyframeWithRelativeStartTimeRelativeDurationAnimations animations);
+
+    @Generated
+    @Owned
+    @Selector("alloc")
+    public static native UICollectionReusableView alloc();
 
     @Generated
     @Selector("allocWithZone:")
@@ -290,7 +290,7 @@ public class UICollectionReusableView extends UIView {
 
     @Generated
     @Selector("setAnimationDuration:")
-    public static native void setAnimationDuration(double duration);
+    public static native void setAnimationDuration_static(double duration);
 
     @Generated
     @Selector("setAnimationRepeatAutoreverses:")
@@ -298,7 +298,7 @@ public class UICollectionReusableView extends UIView {
 
     @Generated
     @Selector("setAnimationRepeatCount:")
-    public static native void setAnimationRepeatCount(float repeatCount);
+    public static native void setAnimationRepeatCount_static(float repeatCount);
 
     @Generated
     @Selector("setAnimationStartDate:")
@@ -318,7 +318,7 @@ public class UICollectionReusableView extends UIView {
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")
@@ -343,48 +343,15 @@ public class UICollectionReusableView extends UIView {
     public static native long userInterfaceLayoutDirectionForSemanticContentAttribute(@NInt long attribute);
 
     @Generated
+    @Selector("userInterfaceLayoutDirectionForSemanticContentAttribute:relativeToLayoutDirection:")
+    @NInt
+    public static native long userInterfaceLayoutDirectionForSemanticContentAttributeRelativeToLayoutDirection(
+            @NInt long semanticContentAttribute, @NInt long layoutDirection);
+
+    @Generated
     @Selector("version")
     @NInt
-    public static native long version();
-
-    @Generated
-    @Selector("applyLayoutAttributes:")
-    public native void applyLayoutAttributes(UICollectionViewLayoutAttributes layoutAttributes);
-
-    @Generated
-    @Selector("didTransitionFromLayout:toLayout:")
-    public native void didTransitionFromLayoutToLayout(UICollectionViewLayout oldLayout,
-            UICollectionViewLayout newLayout);
-
-    @Generated
-    @Selector("init")
-    public native UICollectionReusableView init();
-
-    @Generated
-    @Selector("initWithFrame:")
-    public native UICollectionReusableView initWithFrame(@ByValue CGRect frame);
-
-    @Generated
-    @Selector("preferredLayoutAttributesFittingAttributes:")
-    public native UICollectionViewLayoutAttributes preferredLayoutAttributesFittingAttributes(
-            UICollectionViewLayoutAttributes layoutAttributes);
-
-    @Generated
-    @Selector("prepareForReuse")
-    public native void prepareForReuse();
-
-    @Generated
-    @Selector("reuseIdentifier")
-    public native String reuseIdentifier();
-
-    @Generated
-    @Selector("willTransitionFromLayout:toLayout:")
-    public native void willTransitionFromLayoutToLayout(UICollectionViewLayout oldLayout,
-            UICollectionViewLayout newLayout);
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native UICollectionReusableView initWithCoder(NSCoder aDecoder);
+    public static native long version_static();
 
     @Generated
     @ProtocolClassMethod("appearance")
@@ -431,4 +398,43 @@ public class UICollectionReusableView extends UIView {
     public Object _appearanceWhenContainedInInstancesOfClasses(NSArray<?> containerTypes) {
         return appearanceWhenContainedInInstancesOfClasses(containerTypes);
     }
+
+    @Generated
+    @Selector("applyLayoutAttributes:")
+    public native void applyLayoutAttributes(UICollectionViewLayoutAttributes layoutAttributes);
+
+    @Generated
+    @Selector("didTransitionFromLayout:toLayout:")
+    public native void didTransitionFromLayoutToLayout(UICollectionViewLayout oldLayout,
+            UICollectionViewLayout newLayout);
+
+    @Generated
+    @Selector("init")
+    public native UICollectionReusableView init();
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native UICollectionReusableView initWithCoder(NSCoder aDecoder);
+
+    @Generated
+    @Selector("initWithFrame:")
+    public native UICollectionReusableView initWithFrame(@ByValue CGRect frame);
+
+    @Generated
+    @Selector("preferredLayoutAttributesFittingAttributes:")
+    public native UICollectionViewLayoutAttributes preferredLayoutAttributesFittingAttributes(
+            UICollectionViewLayoutAttributes layoutAttributes);
+
+    @Generated
+    @Selector("prepareForReuse")
+    public native void prepareForReuse();
+
+    @Generated
+    @Selector("reuseIdentifier")
+    public native String reuseIdentifier();
+
+    @Generated
+    @Selector("willTransitionFromLayout:toLayout:")
+    public native void willTransitionFromLayoutToLayout(UICollectionViewLayout oldLayout,
+            UICollectionViewLayout newLayout);
 }

@@ -55,13 +55,13 @@ public class EAAccessory extends NSObject {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native EAAccessory alloc();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -170,6 +170,10 @@ public class EAAccessory extends NSObject {
     public native EAAccessoryDelegate delegate();
 
     @Generated
+    @Selector("dockType")
+    public native String dockType();
+
+    @Generated
     @Selector("firmwareRevision")
     public native String firmwareRevision();
 
@@ -220,8 +224,4 @@ public class EAAccessory extends NSObject {
             org.moe.natj.objc.ObjCRuntime.dissociateObjCObject(this, __old);
         }
     }
-
-    @Generated
-    @Selector("dockType")
-    public native String dockType();
 }

@@ -55,26 +55,13 @@ public class MIDINetworkHost extends NSObject {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native MIDINetworkHost alloc();
-
-    @Generated
-    @Selector("hostWithName:address:port:")
-    public static native MIDINetworkHost hostWithNameAddressPort(String name, String address, @NUInt long port);
-
-    @Generated
-    @Selector("hostWithName:netService:")
-    public static native MIDINetworkHost hostWithNameNetService(String name, NSNetService netService);
-
-    @Generated
-    @Selector("hostWithName:netServiceName:netServiceDomain:")
-    public static native MIDINetworkHost hostWithNameNetServiceNameNetServiceDomain(String name, String netServiceName,
-            String netServiceDomain);
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -115,6 +102,19 @@ public class MIDINetworkHost extends NSObject {
     @Selector("hash")
     @NUInt
     public static native long hash_static();
+
+    @Generated
+    @Selector("hostWithName:address:port:")
+    public static native MIDINetworkHost hostWithNameAddressPort(String name, String address, @NUInt long port);
+
+    @Generated
+    @Selector("hostWithName:netService:")
+    public static native MIDINetworkHost hostWithNameNetService(String name, NSNetService netService);
+
+    @Generated
+    @Selector("hostWithName:netServiceName:netServiceDomain:")
+    public static native MIDINetworkHost hostWithNameNetServiceNameNetServiceDomain(String name, String netServiceName,
+            String netServiceDomain);
 
     @Generated
     @Selector("initialize")
@@ -161,7 +161,7 @@ public class MIDINetworkHost extends NSObject {
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")
@@ -170,7 +170,7 @@ public class MIDINetworkHost extends NSObject {
     @Generated
     @Selector("version")
     @NInt
-    public static native long version();
+    public static native long version_static();
 
     @Generated
     @Selector("address")

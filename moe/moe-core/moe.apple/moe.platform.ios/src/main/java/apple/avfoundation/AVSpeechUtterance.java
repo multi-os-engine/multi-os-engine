@@ -18,6 +18,7 @@ package apple.avfoundation;
 
 import apple.NSObject;
 import apple.foundation.NSArray;
+import apple.foundation.NSAttributedString;
 import apple.foundation.NSCoder;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
@@ -58,21 +59,13 @@ public class AVSpeechUtterance extends NSObject implements NSCopying, NSSecureCo
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native AVSpeechUtterance alloc();
-
-    @Generated
-    @Selector("speechUtteranceWithString:")
-    public static native AVSpeechUtterance speechUtteranceWithString(String string);
-
-    @Generated
-    @Selector("supportsSecureCoding")
-    public static native boolean supportsSecureCoding();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -162,13 +155,29 @@ public class AVSpeechUtterance extends NSObject implements NSCopying, NSSecureCo
     public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
+    @Selector("speechUtteranceWithAttributedString:")
+    public static native AVSpeechUtterance speechUtteranceWithAttributedString(NSAttributedString string);
+
+    @Generated
+    @Selector("speechUtteranceWithString:")
+    public static native AVSpeechUtterance speechUtteranceWithString(String string);
+
+    @Generated
     @Selector("superclass")
     public static native Class superclass_static();
+
+    @Generated
+    @Selector("supportsSecureCoding")
+    public static native boolean supportsSecureCoding();
 
     @Generated
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("attributedSpeechString")
+    public native NSAttributedString attributedSpeechString();
 
     @Generated
     @Owned
@@ -183,6 +192,10 @@ public class AVSpeechUtterance extends NSObject implements NSCopying, NSSecureCo
     @Generated
     @Selector("init")
     public native AVSpeechUtterance init();
+
+    @Generated
+    @Selector("initWithAttributedString:")
+    public native AVSpeechUtterance initWithAttributedString(NSAttributedString string);
 
     @Generated
     @Selector("initWithCoder:")

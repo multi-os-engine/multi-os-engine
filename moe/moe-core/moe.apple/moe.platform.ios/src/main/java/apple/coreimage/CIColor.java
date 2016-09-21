@@ -63,34 +63,13 @@ public class CIColor extends NSObject implements NSSecureCoding, NSCopying {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native CIColor alloc();
-
-    @Generated
-    @Selector("colorWithCGColor:")
-    public static native CIColor colorWithCGColor(CGColorRef c);
-
-    @Generated
-    @Selector("colorWithRed:green:blue:")
-    public static native CIColor colorWithRedGreenBlue(@NFloat double r, @NFloat double g, @NFloat double b);
-
-    @Generated
-    @Selector("colorWithRed:green:blue:alpha:")
-    public static native CIColor colorWithRedGreenBlueAlpha(@NFloat double r, @NFloat double g, @NFloat double b,
-            @NFloat double a);
-
-    @Generated
-    @Selector("colorWithString:")
-    public static native CIColor colorWithString(String representation);
-
-    @Generated
-    @Selector("supportsSecureCoding")
-    public static native boolean supportsSecureCoding();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -100,6 +79,16 @@ public class CIColor extends NSObject implements NSSecureCoding, NSCopying {
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
     public static native boolean automaticallyNotifiesObserversForKey(String key);
+
+    @Generated
+    @Selector("blackColor")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object blackColor();
+
+    @Generated
+    @Selector("blueColor")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object blueColor();
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
@@ -120,12 +109,59 @@ public class CIColor extends NSObject implements NSSecureCoding, NSCopying {
     public static native Class classForKeyedUnarchiver();
 
     @Generated
+    @Selector("clearColor")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object clearColor();
+
+    @Generated
+    @Selector("colorWithCGColor:")
+    public static native CIColor colorWithCGColor(CGColorRef c);
+
+    @Generated
+    @Selector("colorWithRed:green:blue:")
+    public static native CIColor colorWithRedGreenBlue(@NFloat double r, @NFloat double g, @NFloat double b);
+
+    @Generated
+    @Selector("colorWithRed:green:blue:alpha:")
+    public static native CIColor colorWithRedGreenBlueAlpha(@NFloat double r, @NFloat double g, @NFloat double b,
+            @NFloat double a);
+
+    @Generated
+    @Selector("colorWithRed:green:blue:alpha:colorSpace:")
+    public static native CIColor colorWithRedGreenBlueAlphaColorSpace(@NFloat double r, @NFloat double g,
+            @NFloat double b, @NFloat double a, CGColorSpaceRef colorSpace);
+
+    @Generated
+    @Selector("colorWithRed:green:blue:colorSpace:")
+    public static native CIColor colorWithRedGreenBlueColorSpace(@NFloat double r, @NFloat double g, @NFloat double b,
+            CGColorSpaceRef colorSpace);
+
+    @Generated
+    @Selector("colorWithString:")
+    public static native CIColor colorWithString(String representation);
+
+    @Generated
+    @Selector("cyanColor")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object cyanColor();
+
+    @Generated
     @Selector("debugDescription")
     public static native String debugDescription_static();
 
     @Generated
     @Selector("description")
     public static native String description_static();
+
+    @Generated
+    @Selector("grayColor")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object grayColor();
+
+    @Generated
+    @Selector("greenColor")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object greenColor();
 
     @Generated
     @Selector("hash")
@@ -162,10 +198,20 @@ public class CIColor extends NSObject implements NSSecureCoding, NSCopying {
     public static native void load_objc_static();
 
     @Generated
+    @Selector("magentaColor")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object magentaColor();
+
+    @Generated
     @Owned
     @Selector("new")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object new_objc();
+
+    @Generated
+    @Selector("redColor")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object redColor();
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -184,9 +230,23 @@ public class CIColor extends NSObject implements NSSecureCoding, NSCopying {
     public static native Class superclass_static();
 
     @Generated
+    @Selector("supportsSecureCoding")
+    public static native boolean supportsSecureCoding();
+
+    @Generated
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("whiteColor")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object whiteColor();
+
+    @Generated
+    @Selector("yellowColor")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object yellowColor();
 
     @Generated
     @Selector("alpha")
@@ -238,6 +298,25 @@ public class CIColor extends NSObject implements NSSecureCoding, NSCopying {
     public native CIColor initWithColor(UIColor color);
 
     @Generated
+    @Selector("initWithRed:green:blue:")
+    public native CIColor initWithRedGreenBlue(@NFloat double r, @NFloat double g, @NFloat double b);
+
+    @Generated
+    @Selector("initWithRed:green:blue:alpha:")
+    public native CIColor initWithRedGreenBlueAlpha(@NFloat double r, @NFloat double g, @NFloat double b,
+            @NFloat double a);
+
+    @Generated
+    @Selector("initWithRed:green:blue:alpha:colorSpace:")
+    public native CIColor initWithRedGreenBlueAlphaColorSpace(@NFloat double r, @NFloat double g, @NFloat double b,
+            @NFloat double a, CGColorSpaceRef colorSpace);
+
+    @Generated
+    @Selector("initWithRed:green:blue:colorSpace:")
+    public native CIColor initWithRedGreenBlueColorSpace(@NFloat double r, @NFloat double g, @NFloat double b,
+            CGColorSpaceRef colorSpace);
+
+    @Generated
     @Selector("numberOfComponents")
     @NUInt
     public native long numberOfComponents();
@@ -250,15 +329,6 @@ public class CIColor extends NSObject implements NSSecureCoding, NSCopying {
     @Generated
     @Selector("stringRepresentation")
     public native String stringRepresentation();
-
-    @Generated
-    @Selector("initWithRed:green:blue:")
-    public native CIColor initWithRedGreenBlue(@NFloat double r, @NFloat double g, @NFloat double b);
-
-    @Generated
-    @Selector("initWithRed:green:blue:alpha:")
-    public native CIColor initWithRedGreenBlueAlpha(@NFloat double r, @NFloat double g, @NFloat double b,
-            @NFloat double a);
 
     @Generated
     @ProtocolClassMethod("supportsSecureCoding")

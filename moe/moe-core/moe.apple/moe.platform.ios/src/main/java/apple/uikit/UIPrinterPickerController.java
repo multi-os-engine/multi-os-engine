@@ -59,18 +59,13 @@ public class UIPrinterPickerController extends NSObject {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native UIPrinterPickerController alloc();
-
-    @Generated
-    @Selector("printerPickerControllerWithInitiallySelectedPrinter:")
-    public static native UIPrinterPickerController printerPickerControllerWithInitiallySelectedPrinter(
-            UIPrinter printer);
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -146,6 +141,11 @@ public class UIPrinterPickerController extends NSObject {
     @Selector("new")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object new_objc();
+
+    @Generated
+    @Selector("printerPickerControllerWithInitiallySelectedPrinter:")
+    public static native UIPrinterPickerController printerPickerControllerWithInitiallySelectedPrinter(
+            UIPrinter printer);
 
     @Generated
     @Selector("resolveClassMethod:")

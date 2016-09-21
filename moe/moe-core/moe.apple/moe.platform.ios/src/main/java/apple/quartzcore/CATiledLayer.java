@@ -58,21 +58,13 @@ public class CATiledLayer extends CALayer {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native CATiledLayer alloc();
-
-    @Generated
-    @Selector("fadeDuration")
-    public static native double fadeDuration();
-
-    @Generated
-    @Selector("layer")
-    public static native CATiledLayer layer();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -120,6 +112,10 @@ public class CATiledLayer extends CALayer {
     public static native String description_static();
 
     @Generated
+    @Selector("fadeDuration")
+    public static native double fadeDuration();
+
+    @Generated
     @Selector("hash")
     @NUInt
     public static native long hash_static();
@@ -150,6 +146,10 @@ public class CATiledLayer extends CALayer {
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
     @Generated
+    @Selector("layer")
+    public static native CATiledLayer layer();
+
+    @Generated
     @Selector("load")
     public static native void load_objc_static();
 
@@ -173,7 +173,7 @@ public class CATiledLayer extends CALayer {
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")
@@ -187,6 +187,10 @@ public class CATiledLayer extends CALayer {
     @Generated
     @Selector("init")
     public native CATiledLayer init();
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native CATiledLayer initWithCoder(NSCoder aDecoder);
 
     @Generated
     @Selector("initWithLayer:")
@@ -218,8 +222,4 @@ public class CATiledLayer extends CALayer {
     @Selector("tileSize")
     @ByValue
     public native CGSize tileSize();
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native CATiledLayer initWithCoder(NSCoder aDecoder);
 }

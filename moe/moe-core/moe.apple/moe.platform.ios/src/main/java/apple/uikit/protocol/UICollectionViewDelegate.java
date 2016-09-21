@@ -44,6 +44,13 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 public interface UICollectionViewDelegate extends UIScrollViewDelegate {
     @Generated
     @IsOptional
+    @Selector("collectionView:canFocusItemAtIndexPath:")
+    default boolean collectionViewCanFocusItemAtIndexPath(UICollectionView collectionView, NSIndexPath indexPath) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Generated
+    @IsOptional
     @Selector("collectionView:canPerformAction:forItemAtIndexPath:withSender:")
     default boolean collectionViewCanPerformActionForItemAtIndexPathWithSender(UICollectionView collectionView,
             SEL action, NSIndexPath indexPath, @Mapped(ObjCObjectMapper.class) Object sender) {
@@ -96,6 +103,14 @@ public interface UICollectionViewDelegate extends UIScrollViewDelegate {
 
     @Generated
     @IsOptional
+    @Selector("collectionView:didUpdateFocusInContext:withAnimationCoordinator:")
+    default void collectionViewDidUpdateFocusInContextWithAnimationCoordinator(UICollectionView collectionView,
+            UICollectionViewFocusUpdateContext context, UIFocusAnimationCoordinator coordinator) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Generated
+    @IsOptional
     @Selector("collectionView:performAction:forItemAtIndexPath:withSender:")
     default void collectionViewPerformActionForItemAtIndexPathWithSender(UICollectionView collectionView, SEL action,
             NSIndexPath indexPath, @Mapped(ObjCObjectMapper.class) Object sender) {
@@ -135,25 +150,9 @@ public interface UICollectionViewDelegate extends UIScrollViewDelegate {
 
     @Generated
     @IsOptional
-    @Selector("collectionView:transitionLayoutForOldLayout:newLayout:")
-    default UICollectionViewTransitionLayout collectionViewTransitionLayoutForOldLayoutNewLayout(
-            UICollectionView collectionView, UICollectionViewLayout fromLayout, UICollectionViewLayout toLayout) {
-        throw new java.lang.UnsupportedOperationException();
-    }
-
-    @Generated
-    @IsOptional
-    @Selector("collectionView:willDisplayCell:forItemAtIndexPath:")
-    default void collectionViewWillDisplayCellForItemAtIndexPath(UICollectionView collectionView,
-            UICollectionViewCell cell, NSIndexPath indexPath) {
-        throw new java.lang.UnsupportedOperationException();
-    }
-
-    @Generated
-    @IsOptional
-    @Selector("collectionView:willDisplaySupplementaryView:forElementKind:atIndexPath:")
-    default void collectionViewWillDisplaySupplementaryViewForElementKindAtIndexPath(UICollectionView collectionView,
-            UICollectionReusableView view, String elementKind, NSIndexPath indexPath) {
+    @Selector("collectionView:shouldUpdateFocusInContext:")
+    default boolean collectionViewShouldUpdateFocusInContext(UICollectionView collectionView,
+            UICollectionViewFocusUpdateContext context) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -176,24 +175,25 @@ public interface UICollectionViewDelegate extends UIScrollViewDelegate {
 
     @Generated
     @IsOptional
-    @Selector("collectionView:canFocusItemAtIndexPath:")
-    default boolean collectionViewCanFocusItemAtIndexPath(UICollectionView collectionView, NSIndexPath indexPath) {
+    @Selector("collectionView:transitionLayoutForOldLayout:newLayout:")
+    default UICollectionViewTransitionLayout collectionViewTransitionLayoutForOldLayoutNewLayout(
+            UICollectionView collectionView, UICollectionViewLayout fromLayout, UICollectionViewLayout toLayout) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Generated
     @IsOptional
-    @Selector("collectionView:didUpdateFocusInContext:withAnimationCoordinator:")
-    default void collectionViewDidUpdateFocusInContextWithAnimationCoordinator(UICollectionView collectionView,
-            UICollectionViewFocusUpdateContext context, UIFocusAnimationCoordinator coordinator) {
+    @Selector("collectionView:willDisplayCell:forItemAtIndexPath:")
+    default void collectionViewWillDisplayCellForItemAtIndexPath(UICollectionView collectionView,
+            UICollectionViewCell cell, NSIndexPath indexPath) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Generated
     @IsOptional
-    @Selector("collectionView:shouldUpdateFocusInContext:")
-    default boolean collectionViewShouldUpdateFocusInContext(UICollectionView collectionView,
-            UICollectionViewFocusUpdateContext context) {
+    @Selector("collectionView:willDisplaySupplementaryView:forElementKind:atIndexPath:")
+    default void collectionViewWillDisplaySupplementaryViewForElementKindAtIndexPath(UICollectionView collectionView,
+            UICollectionReusableView view, String elementKind, NSIndexPath indexPath) {
         throw new java.lang.UnsupportedOperationException();
     }
 

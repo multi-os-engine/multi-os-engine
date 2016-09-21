@@ -49,45 +49,45 @@ public final class AddressBook {
     private AddressBook() {
     }
 
-    @Deprecated
     @Generated
+    @Deprecated
     @CFunction
     public static native int ABRecordGetRecordID(ConstVoidPtr record);
 
-    @Deprecated
     @Generated
+    @Deprecated
     @CFunction
     public static native int ABRecordGetRecordType(ConstVoidPtr record);
 
-    @Deprecated
     @Generated
+    @Deprecated
     @CFunction
     public static native ConstVoidPtr ABRecordCopyValue(ConstVoidPtr record, int property);
 
-    @Deprecated
     @Generated
+    @Deprecated
     @CFunction
     public static native boolean ABRecordSetValue(ConstVoidPtr record, int property, ConstVoidPtr value,
             Ptr<CFErrorRef> error);
 
-    @Deprecated
     @Generated
+    @Deprecated
     @CFunction
     public static native boolean ABRecordRemoveValue(ConstVoidPtr record, int property, Ptr<CFErrorRef> error);
 
-    @Deprecated
     @Generated
+    @Deprecated
     @CFunction
     public static native CFStringRef ABRecordCopyCompositeName(ConstVoidPtr record);
 
-    @Deprecated
     @Generated
+    @Deprecated
     @CFunction
     @NInt
     public static native long ABAddressBookGetAuthorizationStatus();
 
-    @Deprecated
     @Generated
+    @Deprecated
     @CFunction
     public static native ConstVoidPtr ABAddressBookCreateWithOptions(CFDictionaryRef options, Ptr<CFErrorRef> error);
 
@@ -96,105 +96,105 @@ public final class AddressBook {
     @CFunction
     public static native ConstVoidPtr ABAddressBookCreate();
 
-    @Deprecated
     @Generated
+    @Deprecated
     @CFunction
     public static native void ABAddressBookRequestAccessWithCompletion(ConstVoidPtr addressBook,
             @ObjCBlock(name = "call_ABAddressBookRequestAccessWithCompletion") Block_ABAddressBookRequestAccessWithCompletion completion);
 
-    @Deprecated
     @Generated
+    @Deprecated
     @CFunction
     public static native boolean ABAddressBookSave(ConstVoidPtr addressBook, Ptr<CFErrorRef> error);
 
-    @Deprecated
     @Generated
+    @Deprecated
     @CFunction
     public static native boolean ABAddressBookHasUnsavedChanges(ConstVoidPtr addressBook);
 
-    @Deprecated
     @Generated
+    @Deprecated
     @CFunction
     public static native boolean ABAddressBookAddRecord(ConstVoidPtr addressBook, ConstVoidPtr record,
             Ptr<CFErrorRef> error);
 
-    @Deprecated
     @Generated
+    @Deprecated
     @CFunction
     public static native boolean ABAddressBookRemoveRecord(ConstVoidPtr addressBook, ConstVoidPtr record,
             Ptr<CFErrorRef> error);
 
-    @Deprecated
     @Generated
+    @Deprecated
     @CFunction
     public static native CFStringRef ABAddressBookCopyLocalizedLabel(CFStringRef label);
 
-    @Deprecated
     @Generated
+    @Deprecated
     @CFunction
     public static native void ABAddressBookRegisterExternalChangeCallback(ConstVoidPtr addressBook,
             @FunctionPtr(name = "call_ABAddressBookRegisterExternalChangeCallback") Function_ABAddressBookRegisterExternalChangeCallback callback,
             VoidPtr context);
 
-    @Deprecated
     @Generated
+    @Deprecated
     @CFunction
     public static native void ABAddressBookUnregisterExternalChangeCallback(ConstVoidPtr addressBook,
             @FunctionPtr(name = "call_ABAddressBookUnregisterExternalChangeCallback") Function_ABAddressBookUnregisterExternalChangeCallback callback,
             VoidPtr context);
 
-    @Deprecated
     @Generated
+    @Deprecated
     @CFunction
     public static native void ABAddressBookRevert(ConstVoidPtr addressBook);
 
-    @Deprecated
     @Generated
+    @Deprecated
     @CFunction
     public static native ConstVoidPtr ABAddressBookCopyDefaultSource(ConstVoidPtr addressBook);
 
-    @Deprecated
     @Generated
+    @Deprecated
     @CFunction
     public static native ConstVoidPtr ABAddressBookGetSourceWithRecordID(ConstVoidPtr addressBook, int sourceID);
 
-    @Deprecated
     @Generated
+    @Deprecated
     @CFunction
     public static native CFArrayRef ABAddressBookCopyArrayOfAllSources(ConstVoidPtr addressBook);
 
-    @Deprecated
     @Generated
+    @Deprecated
     @CFunction
     public static native ConstVoidPtr ABPersonCreate();
 
-    @Deprecated
     @Generated
+    @Deprecated
     @CFunction
     public static native ConstVoidPtr ABPersonCreateInSource(ConstVoidPtr source);
 
-    @Deprecated
     @Generated
+    @Deprecated
     @CFunction
     public static native ConstVoidPtr ABPersonCopySource(ConstVoidPtr person);
 
-    @Deprecated
     @Generated
+    @Deprecated
     @CFunction
     public static native CFArrayRef ABPersonCopyArrayOfAllLinkedPeople(ConstVoidPtr person);
 
-    @Deprecated
     @Generated
+    @Deprecated
     @CFunction
     public static native int ABPersonGetTypeOfProperty(int property);
 
-    @Deprecated
     @Generated
+    @Deprecated
     @CFunction
     public static native CFStringRef ABPersonCopyLocalizedPropertyName(int property);
 
-    @Deprecated
     @Generated
+    @Deprecated
     @CFunction
     public static native int ABPersonGetSortOrdering();
 
@@ -203,226 +203,226 @@ public final class AddressBook {
     @CFunction
     public static native int ABPersonGetCompositeNameFormat();
 
-    @Deprecated
     @Generated
+    @Deprecated
     @CFunction
     public static native int ABPersonGetCompositeNameFormatForRecord(ConstVoidPtr record);
 
-    @Deprecated
     @Generated
+    @Deprecated
     @CFunction
     public static native CFStringRef ABPersonCopyCompositeNameDelimiterForRecord(ConstVoidPtr record);
 
-    @Deprecated
     @Generated
+    @Deprecated
     @CFunction
     public static native boolean ABPersonSetImageData(ConstVoidPtr person, CFDataRef imageData, Ptr<CFErrorRef> error);
 
-    @Deprecated
     @Generated
+    @Deprecated
     @CFunction
     public static native CFDataRef ABPersonCopyImageData(ConstVoidPtr person);
 
-    @Deprecated
     @Generated
+    @Deprecated
     @CFunction
     public static native CFDataRef ABPersonCopyImageDataWithFormat(ConstVoidPtr person, int format);
 
-    @Deprecated
     @Generated
+    @Deprecated
     @CFunction
     public static native boolean ABPersonHasImageData(ConstVoidPtr person);
 
-    @Deprecated
     @Generated
+    @Deprecated
     @CFunction
     public static native boolean ABPersonRemoveImageData(ConstVoidPtr person, Ptr<CFErrorRef> error);
 
-    @Deprecated
     @Generated
+    @Deprecated
     @CFunction
     @NInt
     public static native long ABPersonComparePeopleByName(ConstVoidPtr person1, ConstVoidPtr person2, int ordering);
 
-    @Deprecated
     @Generated
+    @Deprecated
     @CFunction
     @NInt
     public static native long ABAddressBookGetPersonCount(ConstVoidPtr addressBook);
 
-    @Deprecated
     @Generated
+    @Deprecated
     @CFunction
     public static native ConstVoidPtr ABAddressBookGetPersonWithRecordID(ConstVoidPtr addressBook, int recordID);
 
-    @Deprecated
     @Generated
+    @Deprecated
     @CFunction
     public static native CFArrayRef ABAddressBookCopyArrayOfAllPeople(ConstVoidPtr addressBook);
 
-    @Deprecated
     @Generated
+    @Deprecated
     @CFunction
     public static native CFArrayRef ABAddressBookCopyArrayOfAllPeopleInSource(ConstVoidPtr addressBook,
             ConstVoidPtr source);
 
-    @Deprecated
     @Generated
+    @Deprecated
     @CFunction
     public static native CFArrayRef ABAddressBookCopyArrayOfAllPeopleInSourceWithSortOrdering(ConstVoidPtr addressBook,
             ConstVoidPtr source, int sortOrdering);
 
-    @Deprecated
     @Generated
+    @Deprecated
     @CFunction
     public static native CFArrayRef ABAddressBookCopyPeopleWithName(ConstVoidPtr addressBook, CFStringRef name);
 
-    @Deprecated
     @Generated
+    @Deprecated
     @CFunction
     public static native CFArrayRef ABPersonCreatePeopleInSourceWithVCardRepresentation(ConstVoidPtr source,
             CFDataRef vCardData);
 
-    @Deprecated
     @Generated
+    @Deprecated
     @CFunction
     public static native CFDataRef ABPersonCreateVCardRepresentationWithPeople(CFArrayRef people);
 
-    @Deprecated
     @Generated
+    @Deprecated
     @CFunction
     public static native ConstVoidPtr ABGroupCreate();
 
-    @Deprecated
     @Generated
+    @Deprecated
     @CFunction
     public static native ConstVoidPtr ABGroupCreateInSource(ConstVoidPtr source);
 
-    @Deprecated
     @Generated
+    @Deprecated
     @CFunction
     public static native ConstVoidPtr ABGroupCopySource(ConstVoidPtr group);
 
-    @Deprecated
     @Generated
+    @Deprecated
     @CFunction
     public static native CFArrayRef ABGroupCopyArrayOfAllMembers(ConstVoidPtr group);
 
-    @Deprecated
     @Generated
+    @Deprecated
     @CFunction
     public static native CFArrayRef ABGroupCopyArrayOfAllMembersWithSortOrdering(ConstVoidPtr group, int sortOrdering);
 
-    @Deprecated
     @Generated
+    @Deprecated
     @CFunction
     public static native boolean ABGroupAddMember(ConstVoidPtr group, ConstVoidPtr person, Ptr<CFErrorRef> error);
 
-    @Deprecated
     @Generated
+    @Deprecated
     @CFunction
     public static native boolean ABGroupRemoveMember(ConstVoidPtr group, ConstVoidPtr member, Ptr<CFErrorRef> error);
 
-    @Deprecated
     @Generated
+    @Deprecated
     @CFunction
     public static native ConstVoidPtr ABAddressBookGetGroupWithRecordID(ConstVoidPtr addressBook, int recordID);
 
-    @Deprecated
     @Generated
+    @Deprecated
     @CFunction
     @NInt
     public static native long ABAddressBookGetGroupCount(ConstVoidPtr addressBook);
 
-    @Deprecated
     @Generated
+    @Deprecated
     @CFunction
     public static native CFArrayRef ABAddressBookCopyArrayOfAllGroups(ConstVoidPtr addressBook);
 
-    @Deprecated
     @Generated
+    @Deprecated
     @CFunction
     public static native CFArrayRef ABAddressBookCopyArrayOfAllGroupsInSource(ConstVoidPtr addressBook,
             ConstVoidPtr source);
 
-    @Deprecated
     @Generated
+    @Deprecated
     @CFunction
     public static native int ABMultiValueGetPropertyType(ConstVoidPtr multiValue);
 
-    @Deprecated
     @Generated
+    @Deprecated
     @CFunction
     @NInt
     public static native long ABMultiValueGetCount(ConstVoidPtr multiValue);
 
-    @Deprecated
     @Generated
+    @Deprecated
     @CFunction
     public static native ConstVoidPtr ABMultiValueCopyValueAtIndex(ConstVoidPtr multiValue, @NInt long index);
 
-    @Deprecated
     @Generated
+    @Deprecated
     @CFunction
     public static native CFArrayRef ABMultiValueCopyArrayOfAllValues(ConstVoidPtr multiValue);
 
-    @Deprecated
     @Generated
+    @Deprecated
     @CFunction
     public static native CFStringRef ABMultiValueCopyLabelAtIndex(ConstVoidPtr multiValue, @NInt long index);
 
-    @Deprecated
     @Generated
+    @Deprecated
     @CFunction
     @NInt
     public static native long ABMultiValueGetIndexForIdentifier(ConstVoidPtr multiValue, int identifier);
 
-    @Deprecated
     @Generated
+    @Deprecated
     @CFunction
     public static native int ABMultiValueGetIdentifierAtIndex(ConstVoidPtr multiValue, @NInt long index);
 
-    @Deprecated
     @Generated
+    @Deprecated
     @CFunction
     @NInt
     public static native long ABMultiValueGetFirstIndexOfValue(ConstVoidPtr multiValue, ConstVoidPtr value);
 
-    @Deprecated
     @Generated
+    @Deprecated
     @CFunction
     public static native ConstVoidPtr ABMultiValueCreateMutable(int type);
 
-    @Deprecated
     @Generated
+    @Deprecated
     @CFunction
     public static native ConstVoidPtr ABMultiValueCreateMutableCopy(ConstVoidPtr multiValue);
 
-    @Deprecated
     @Generated
+    @Deprecated
     @CFunction
     public static native boolean ABMultiValueAddValueAndLabel(ConstVoidPtr multiValue, ConstVoidPtr value,
             CFStringRef label, IntPtr outIdentifier);
 
-    @Deprecated
     @Generated
+    @Deprecated
     @CFunction
     public static native boolean ABMultiValueInsertValueAndLabelAtIndex(ConstVoidPtr multiValue, ConstVoidPtr value,
             CFStringRef label, @NInt long index, IntPtr outIdentifier);
 
-    @Deprecated
     @Generated
+    @Deprecated
     @CFunction
     public static native boolean ABMultiValueRemoveValueAndLabelAtIndex(ConstVoidPtr multiValue, @NInt long index);
 
-    @Deprecated
     @Generated
+    @Deprecated
     @CFunction
     public static native boolean ABMultiValueReplaceValueAtIndex(ConstVoidPtr multiValue, ConstVoidPtr value,
             @NInt long index);
 
-    @Deprecated
     @Generated
+    @Deprecated
     @CFunction
     public static native boolean ABMultiValueReplaceLabelAtIndex(ConstVoidPtr multiValue, CFStringRef label,
             @NInt long index);
@@ -493,11 +493,11 @@ public final class AddressBook {
 
     @Generated
     @CVariable()
-    public static native int kABPersonJobTitleProperty();
+    public static native int kABPersonDepartmentProperty();
 
     @Generated
     @CVariable()
-    public static native int kABPersonDepartmentProperty();
+    public static native int kABPersonJobTitleProperty();
 
     @Generated
     @CVariable()

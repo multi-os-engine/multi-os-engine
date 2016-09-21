@@ -142,9 +142,23 @@ public interface UITextInputTraits {
 
     @Generated
     @IsOptional
+    @Selector("setTextContentType:")
+    default void setTextContentType(String value) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Generated
+    @IsOptional
     @Selector("spellCheckingType")
     @NInt
     default long spellCheckingType() {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Generated
+    @IsOptional
+    @Selector("textContentType")
+    default String textContentType() {
         throw new java.lang.UnsupportedOperationException();
     }
 }

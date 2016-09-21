@@ -22,6 +22,7 @@ import apple.foundation.NSDictionary;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
 import apple.uikit.UILocalNotification;
+import apple.usernotifications.UNNotification;
 import org.moe.natj.c.ann.FunctionPtr;
 import org.moe.natj.general.NatJ;
 import org.moe.natj.general.Pointer;
@@ -57,13 +58,13 @@ public class WKUserNotificationInterfaceController extends WKInterfaceController
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native WKUserNotificationInterfaceController alloc();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -176,6 +177,11 @@ public class WKUserNotificationInterfaceController extends WKInterfaceController
             @ObjCBlock(name = "call_didReceiveLocalNotificationWithCompletion") Block_didReceiveLocalNotificationWithCompletion completionHandler);
 
     @Generated
+    @Selector("didReceiveNotification:withCompletion:")
+    public native void didReceiveNotificationWithCompletion(UNNotification notification,
+            @ObjCBlock(name = "call_didReceiveNotificationWithCompletion") Block_didReceiveNotificationWithCompletion completionHandler);
+
+    @Generated
     @Selector("didReceiveRemoteNotification:withCompletion:")
     public native void didReceiveRemoteNotificationWithCompletion(NSDictionary<?, ?> remoteNotification,
             @ObjCBlock(name = "call_didReceiveRemoteNotificationWithCompletion") Block_didReceiveRemoteNotificationWithCompletion completionHandler);
@@ -189,6 +195,13 @@ public class WKUserNotificationInterfaceController extends WKInterfaceController
     public interface Block_didReceiveLocalNotificationWithCompletion {
         @Generated
         void call_didReceiveLocalNotificationWithCompletion(@NInt long arg0);
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_didReceiveNotificationWithCompletion {
+        @Generated
+        void call_didReceiveNotificationWithCompletion(@NInt long arg0);
     }
 
     @Runtime(ObjCRuntime.class)

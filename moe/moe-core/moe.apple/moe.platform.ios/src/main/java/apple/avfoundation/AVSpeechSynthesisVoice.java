@@ -57,33 +57,13 @@ public class AVSpeechSynthesisVoice extends NSObject implements NSSecureCoding {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native AVSpeechSynthesisVoice alloc();
-
-    @Generated
-    @Selector("currentLanguageCode")
-    public static native String currentLanguageCode();
-
-    @Generated
-    @Selector("speechVoices")
-    public static native NSArray<? extends AVSpeechSynthesisVoice> speechVoices();
-
-    @Generated
-    @Selector("supportsSecureCoding")
-    public static native boolean supportsSecureCoding();
-
-    @Generated
-    @Selector("voiceWithLanguage:")
-    public static native AVSpeechSynthesisVoice voiceWithLanguage(String languageCode);
-
-    @Generated
-    @Selector("voiceWithIdentifier:")
-    public static native AVSpeechSynthesisVoice voiceWithIdentifier(String identifier);
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -111,6 +91,10 @@ public class AVSpeechSynthesisVoice extends NSObject implements NSSecureCoding {
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
+
+    @Generated
+    @Selector("currentLanguageCode")
+    public static native String currentLanguageCode();
 
     @Generated
     @Selector("debugDescription")
@@ -170,20 +154,40 @@ public class AVSpeechSynthesisVoice extends NSObject implements NSSecureCoding {
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
+
+    @Generated
+    @Selector("speechVoices")
+    public static native NSArray<? extends AVSpeechSynthesisVoice> speechVoices();
 
     @Generated
     @Selector("superclass")
     public static native Class superclass_static();
 
     @Generated
+    @Selector("supportsSecureCoding")
+    public static native boolean supportsSecureCoding();
+
+    @Generated
     @Selector("version")
     @NInt
-    public static native long version();
+    public static native long version_static();
+
+    @Generated
+    @Selector("voiceWithIdentifier:")
+    public static native AVSpeechSynthesisVoice voiceWithIdentifier(String identifier);
+
+    @Generated
+    @Selector("voiceWithLanguage:")
+    public static native AVSpeechSynthesisVoice voiceWithLanguage(String languageCode);
 
     @Generated
     @Selector("encodeWithCoder:")
     public native void encodeWithCoder(NSCoder aCoder);
+
+    @Generated
+    @Selector("identifier")
+    public native String identifier();
 
     @Generated
     @Selector("init")
@@ -198,16 +202,6 @@ public class AVSpeechSynthesisVoice extends NSObject implements NSSecureCoding {
     public native String language();
 
     @Generated
-    @ProtocolClassMethod("supportsSecureCoding")
-    public boolean _supportsSecureCoding() {
-        return supportsSecureCoding();
-    }
-
-    @Generated
-    @Selector("identifier")
-    public native String identifier();
-
-    @Generated
     @Selector("name")
     public native String name();
 
@@ -215,4 +209,10 @@ public class AVSpeechSynthesisVoice extends NSObject implements NSSecureCoding {
     @Selector("quality")
     @NInt
     public native long quality();
+
+    @Generated
+    @ProtocolClassMethod("supportsSecureCoding")
+    public boolean _supportsSecureCoding() {
+        return supportsSecureCoding();
+    }
 }

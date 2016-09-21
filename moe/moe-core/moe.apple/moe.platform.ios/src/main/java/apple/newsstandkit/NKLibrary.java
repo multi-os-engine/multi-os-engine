@@ -55,17 +55,13 @@ public class NKLibrary extends NSObject {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native NKLibrary alloc();
-
-    @Generated
-    @Selector("sharedLibrary")
-    public static native NKLibrary sharedLibrary();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -153,6 +149,10 @@ public class NKLibrary extends NSObject {
     @Generated
     @Selector("setVersion:")
     public static native void setVersion_static(@NInt long aVersion);
+
+    @Generated
+    @Selector("sharedLibrary")
+    public static native NKLibrary sharedLibrary();
 
     @Generated
     @Selector("superclass")

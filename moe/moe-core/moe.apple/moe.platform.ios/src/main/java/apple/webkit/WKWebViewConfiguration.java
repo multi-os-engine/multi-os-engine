@@ -18,8 +18,10 @@ package apple.webkit;
 
 import apple.NSObject;
 import apple.foundation.NSArray;
+import apple.foundation.NSCoder;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
+import apple.foundation.protocol.NSCoding;
 import apple.foundation.protocol.NSCopying;
 import org.moe.natj.c.ann.FunctionPtr;
 import org.moe.natj.general.NatJ;
@@ -44,7 +46,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @Library("WebKit")
 @Runtime(ObjCRuntime.class)
 @ObjCClassBinding
-public class WKWebViewConfiguration extends NSObject implements NSCopying {
+public class WKWebViewConfiguration extends NSObject implements NSCoding, NSCopying {
     static {
         NatJ.register();
     }
@@ -55,13 +57,13 @@ public class WKWebViewConfiguration extends NSObject implements NSCopying {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native WKWebViewConfiguration alloc();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -160,8 +162,20 @@ public class WKWebViewConfiguration extends NSObject implements NSCopying {
     public static native long version_static();
 
     @Generated
+    @Selector("allowsAirPlayForMediaPlayback")
+    public native boolean allowsAirPlayForMediaPlayback();
+
+    @Generated
     @Selector("allowsInlineMediaPlayback")
     public native boolean allowsInlineMediaPlayback();
+
+    @Generated
+    @Selector("allowsPictureInPictureMediaPlayback")
+    public native boolean allowsPictureInPictureMediaPlayback();
+
+    @Generated
+    @Selector("applicationNameForUserAgent")
+    public native String applicationNameForUserAgent();
 
     @Generated
     @Owned
@@ -170,18 +184,40 @@ public class WKWebViewConfiguration extends NSObject implements NSCopying {
     public native Object copyWithZone(VoidPtr zone);
 
     @Generated
+    @Selector("dataDetectorTypes")
+    @NUInt
+    public native long dataDetectorTypes();
+
+    @Generated
+    @Selector("encodeWithCoder:")
+    public native void encodeWithCoder(NSCoder aCoder);
+
+    @Generated
+    @Selector("ignoresViewportScaleLimits")
+    public native boolean ignoresViewportScaleLimits();
+
+    @Generated
     @Selector("init")
     public native WKWebViewConfiguration init();
 
-    @Deprecated
     @Generated
+    @Selector("initWithCoder:")
+    public native WKWebViewConfiguration initWithCoder(NSCoder aDecoder);
+
+    @Generated
+    @Deprecated
     @Selector("mediaPlaybackAllowsAirPlay")
     public native boolean mediaPlaybackAllowsAirPlay();
 
-    @Deprecated
     @Generated
+    @Deprecated
     @Selector("mediaPlaybackRequiresUserAction")
     public native boolean mediaPlaybackRequiresUserAction();
+
+    @Generated
+    @Selector("mediaTypesRequiringUserActionForPlayback")
+    @NUInt
+    public native long mediaTypesRequiringUserActionForPlayback();
 
     @Generated
     @Selector("preferences")
@@ -192,23 +228,51 @@ public class WKWebViewConfiguration extends NSObject implements NSCopying {
     public native WKProcessPool processPool();
 
     @Generated
+    @Selector("requiresUserActionForMediaPlayback")
+    public native boolean requiresUserActionForMediaPlayback();
+
+    @Generated
     @Selector("selectionGranularity")
     @NInt
     public native long selectionGranularity();
 
     @Generated
+    @Selector("setAllowsAirPlayForMediaPlayback:")
+    public native void setAllowsAirPlayForMediaPlayback(boolean value);
+
+    @Generated
     @Selector("setAllowsInlineMediaPlayback:")
     public native void setAllowsInlineMediaPlayback(boolean value);
 
-    @Deprecated
     @Generated
+    @Selector("setAllowsPictureInPictureMediaPlayback:")
+    public native void setAllowsPictureInPictureMediaPlayback(boolean value);
+
+    @Generated
+    @Selector("setApplicationNameForUserAgent:")
+    public native void setApplicationNameForUserAgent(String value);
+
+    @Generated
+    @Selector("setDataDetectorTypes:")
+    public native void setDataDetectorTypes(@NUInt long value);
+
+    @Generated
+    @Selector("setIgnoresViewportScaleLimits:")
+    public native void setIgnoresViewportScaleLimits(boolean value);
+
+    @Generated
+    @Deprecated
     @Selector("setMediaPlaybackAllowsAirPlay:")
     public native void setMediaPlaybackAllowsAirPlay(boolean value);
 
-    @Deprecated
     @Generated
+    @Deprecated
     @Selector("setMediaPlaybackRequiresUserAction:")
     public native void setMediaPlaybackRequiresUserAction(boolean value);
+
+    @Generated
+    @Selector("setMediaTypesRequiringUserActionForPlayback:")
+    public native void setMediaTypesRequiringUserActionForPlayback(@NUInt long value);
 
     @Generated
     @Selector("setPreferences:")
@@ -217,6 +281,10 @@ public class WKWebViewConfiguration extends NSObject implements NSCopying {
     @Generated
     @Selector("setProcessPool:")
     public native void setProcessPool(WKProcessPool value);
+
+    @Generated
+    @Selector("setRequiresUserActionForMediaPlayback:")
+    public native void setRequiresUserActionForMediaPlayback(boolean value);
 
     @Generated
     @Selector("setSelectionGranularity:")
@@ -231,48 +299,16 @@ public class WKWebViewConfiguration extends NSObject implements NSCopying {
     public native void setUserContentController(WKUserContentController value);
 
     @Generated
+    @Selector("setWebsiteDataStore:")
+    public native void setWebsiteDataStore(WKWebsiteDataStore value);
+
+    @Generated
     @Selector("suppressesIncrementalRendering")
     public native boolean suppressesIncrementalRendering();
 
     @Generated
     @Selector("userContentController")
     public native WKUserContentController userContentController();
-
-    @Generated
-    @Selector("allowsAirPlayForMediaPlayback")
-    public native boolean allowsAirPlayForMediaPlayback();
-
-    @Generated
-    @Selector("allowsPictureInPictureMediaPlayback")
-    public native boolean allowsPictureInPictureMediaPlayback();
-
-    @Generated
-    @Selector("applicationNameForUserAgent")
-    public native String applicationNameForUserAgent();
-
-    @Generated
-    @Selector("requiresUserActionForMediaPlayback")
-    public native boolean requiresUserActionForMediaPlayback();
-
-    @Generated
-    @Selector("setAllowsAirPlayForMediaPlayback:")
-    public native void setAllowsAirPlayForMediaPlayback(boolean value);
-
-    @Generated
-    @Selector("setAllowsPictureInPictureMediaPlayback:")
-    public native void setAllowsPictureInPictureMediaPlayback(boolean value);
-
-    @Generated
-    @Selector("setApplicationNameForUserAgent:")
-    public native void setApplicationNameForUserAgent(String value);
-
-    @Generated
-    @Selector("setRequiresUserActionForMediaPlayback:")
-    public native void setRequiresUserActionForMediaPlayback(boolean value);
-
-    @Generated
-    @Selector("setWebsiteDataStore:")
-    public native void setWebsiteDataStore(WKWebsiteDataStore value);
 
     @Generated
     @Selector("websiteDataStore")

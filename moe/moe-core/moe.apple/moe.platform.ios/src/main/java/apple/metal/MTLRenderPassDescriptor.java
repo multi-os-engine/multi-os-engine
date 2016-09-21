@@ -56,17 +56,13 @@ public class MTLRenderPassDescriptor extends NSObject implements NSCopying {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native MTLRenderPassDescriptor alloc();
-
-    @Generated
-    @Selector("renderPassDescriptor")
-    public static native MTLRenderPassDescriptor renderPassDescriptor();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -142,6 +138,10 @@ public class MTLRenderPassDescriptor extends NSObject implements NSCopying {
     @Selector("new")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object new_objc();
+
+    @Generated
+    @Selector("renderPassDescriptor")
+    public static native MTLRenderPassDescriptor renderPassDescriptor();
 
     @Generated
     @Selector("resolveClassMethod:")

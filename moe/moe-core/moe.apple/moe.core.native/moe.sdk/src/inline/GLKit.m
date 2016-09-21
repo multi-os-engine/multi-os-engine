@@ -399,7 +399,7 @@ EXPORT GLKVector3 __natj_inline_GLKMatrix3MultiplyVector3(GLKMatrix3 matrixLeft,
 	return GLKMatrix3MultiplyVector3(matrixLeft, vectorRight);
 }
 
-EXPORT void __natj_inline_GLKMatrix3MultiplyVector3Array(GLKMatrix3 matrix, GLKVector3 * vectors, size_t vectorCount) {
+EXPORT void __natj_inline_GLKMatrix3MultiplyVector3Array(GLKMatrix3 matrix, GLKVector3 * _Nonnull vectors, size_t vectorCount) {
 	GLKMatrix3MultiplyVector3Array(matrix, vectors, vectorCount);
 }
 
@@ -563,15 +563,15 @@ EXPORT GLKVector3 __natj_inline_GLKMatrix4MultiplyAndProjectVector3(GLKMatrix4 m
 	return GLKMatrix4MultiplyAndProjectVector3(matrixLeft, vectorRight);
 }
 
-EXPORT void __natj_inline_GLKMatrix4MultiplyVector3Array(GLKMatrix4 matrix, GLKVector3 * vectors, size_t vectorCount) {
+EXPORT void __natj_inline_GLKMatrix4MultiplyVector3Array(GLKMatrix4 matrix, GLKVector3 * _Nonnull vectors, size_t vectorCount) {
 	GLKMatrix4MultiplyVector3Array(matrix, vectors, vectorCount);
 }
 
-EXPORT void __natj_inline_GLKMatrix4MultiplyVector3ArrayWithTranslation(GLKMatrix4 matrix, GLKVector3 * vectors, size_t vectorCount) {
+EXPORT void __natj_inline_GLKMatrix4MultiplyVector3ArrayWithTranslation(GLKMatrix4 matrix, GLKVector3 * _Nonnull vectors, size_t vectorCount) {
 	GLKMatrix4MultiplyVector3ArrayWithTranslation(matrix, vectors, vectorCount);
 }
 
-EXPORT void __natj_inline_GLKMatrix4MultiplyAndProjectVector3Array(GLKMatrix4 matrix, GLKVector3 * vectors, size_t vectorCount) {
+EXPORT void __natj_inline_GLKMatrix4MultiplyAndProjectVector3Array(GLKMatrix4 matrix, GLKVector3 * _Nonnull vectors, size_t vectorCount) {
 	GLKMatrix4MultiplyAndProjectVector3Array(matrix, vectors, vectorCount);
 }
 
@@ -579,7 +579,7 @@ EXPORT GLKVector4 __natj_inline_GLKMatrix4MultiplyVector4(GLKMatrix4 matrixLeft,
 	return GLKMatrix4MultiplyVector4(matrixLeft, vectorRight);
 }
 
-EXPORT void __natj_inline_GLKMatrix4MultiplyVector4Array(GLKMatrix4 matrix, GLKVector4 * vectors, size_t vectorCount) {
+EXPORT void __natj_inline_GLKMatrix4MultiplyVector4Array(GLKMatrix4 matrix, GLKVector4 * _Nonnull vectors, size_t vectorCount) {
 	GLKMatrix4MultiplyVector4Array(matrix, vectors, vectorCount);
 }
 

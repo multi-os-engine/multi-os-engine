@@ -62,17 +62,13 @@ public class GKLocalPlayer extends GKPlayer implements GKSavedGameListener {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native GKLocalPlayer alloc();
-
-    @Generated
-    @Selector("localPlayer")
-    public static native GKLocalPlayer localPlayer();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -154,6 +150,10 @@ public class GKLocalPlayer extends GKPlayer implements GKSavedGameListener {
             @ObjCBlock(name = "call_loadPlayersForIdentifiersWithCompletionHandler") GKPlayer.Block_loadPlayersForIdentifiersWithCompletionHandler completionHandler);
 
     @Generated
+    @Selector("localPlayer")
+    public static native GKLocalPlayer localPlayer();
+
+    @Generated
     @Owned
     @Selector("new")
     @MappedReturn(ObjCObjectMapper.class)
@@ -169,7 +169,7 @@ public class GKLocalPlayer extends GKPlayer implements GKSavedGameListener {
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")
@@ -179,6 +179,11 @@ public class GKLocalPlayer extends GKPlayer implements GKSavedGameListener {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("authenticateHandler")
+    @ObjCBlock(name = "call_authenticateHandler_ret")
+    public native Block_authenticateHandler_ret authenticateHandler();
 
     @Generated
     @Deprecated
@@ -241,6 +246,11 @@ public class GKLocalPlayer extends GKPlayer implements GKSavedGameListener {
             @ObjCBlock(name = "call_loadFriendsWithCompletionHandler") Block_loadFriendsWithCompletionHandler completionHandler);
 
     @Generated
+    @Selector("loadRecentPlayersWithCompletionHandler:")
+    public native void loadRecentPlayersWithCompletionHandler(
+            @ObjCBlock(name = "call_loadRecentPlayersWithCompletionHandler") Block_loadRecentPlayersWithCompletionHandler completionHandler);
+
+    @Generated
     @IsOptional
     @Selector("player:didModifySavedGame:")
     public native void playerDidModifySavedGame(GKPlayer player, GKSavedGame savedGame);
@@ -289,10 +299,12 @@ public class GKLocalPlayer extends GKPlayer implements GKSavedGameListener {
     @Selector("unregisterListener:")
     public native void unregisterListener(@Mapped(ObjCObjectMapper.class) GKLocalPlayerListener listener);
 
+    @Runtime(ObjCRuntime.class)
     @Generated
-    @Selector("authenticateHandler")
-    @ObjCBlock(name = "call_authenticateHandler_ret")
-    public native Block_authenticateHandler_ret authenticateHandler();
+    public interface Block_authenticateHandler_ret {
+        @Generated
+        void call_authenticateHandler_ret(UIViewController arg0, NSError arg1);
+    }
 
     @Runtime(ObjCRuntime.class)
     @Generated
@@ -353,6 +365,13 @@ public class GKLocalPlayer extends GKPlayer implements GKSavedGameListener {
 
     @Runtime(ObjCRuntime.class)
     @Generated
+    public interface Block_loadRecentPlayersWithCompletionHandler {
+        @Generated
+        void call_loadRecentPlayersWithCompletionHandler(NSArray<? extends GKPlayer> arg0, NSError arg1);
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
     public interface Block_resolveConflictingSavedGamesWithDataCompletionHandler {
         @Generated
         void call_resolveConflictingSavedGamesWithDataCompletionHandler(NSArray<? extends GKSavedGame> arg0,
@@ -385,12 +404,5 @@ public class GKLocalPlayer extends GKPlayer implements GKSavedGameListener {
     public interface Block_setDefaultLeaderboardIdentifierCompletionHandler {
         @Generated
         void call_setDefaultLeaderboardIdentifierCompletionHandler(NSError arg0);
-    }
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_authenticateHandler_ret {
-        @Generated
-        void call_authenticateHandler_ret(UIViewController arg0, NSError arg1);
     }
 }

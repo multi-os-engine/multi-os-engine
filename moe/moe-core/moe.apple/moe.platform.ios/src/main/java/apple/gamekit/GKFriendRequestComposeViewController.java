@@ -59,18 +59,13 @@ public class GKFriendRequestComposeViewController extends UINavigationController
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native GKFriendRequestComposeViewController alloc();
-
-    @Generated
-    @Selector("maxNumberOfRecipients")
-    @NUInt
-    public static native long maxNumberOfRecipients();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -150,6 +145,11 @@ public class GKFriendRequestComposeViewController extends UINavigationController
     public static native void load_objc_static();
 
     @Generated
+    @Selector("maxNumberOfRecipients")
+    @NUInt
+    public static native long maxNumberOfRecipients();
+
+    @Generated
     @Owned
     @Selector("new")
     @MappedReturn(ObjCObjectMapper.class)
@@ -203,6 +203,10 @@ public class GKFriendRequestComposeViewController extends UINavigationController
     public native GKFriendRequestComposeViewController init();
 
     @Generated
+    @Selector("initWithCoder:")
+    public native GKFriendRequestComposeViewController initWithCoder(NSCoder aDecoder);
+
+    @Generated
     @Selector("initWithNavigationBarClass:toolbarClass:")
     public native GKFriendRequestComposeViewController initWithNavigationBarClassToolbarClass(Class navigationBarClass,
             Class toolbarClass);
@@ -237,8 +241,4 @@ public class GKFriendRequestComposeViewController extends UINavigationController
     @Generated
     @Selector("setMessage:")
     public native void setMessage(String message);
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native GKFriendRequestComposeViewController initWithCoder(NSCoder aDecoder);
 }

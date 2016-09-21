@@ -58,21 +58,13 @@ public class UIPrintInfo extends NSObject implements NSCopying, NSCoding {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native UIPrintInfo alloc();
-
-    @Generated
-    @Selector("printInfo")
-    public static native UIPrintInfo printInfo();
-
-    @Generated
-    @Selector("printInfoWithDictionary:")
-    public static native UIPrintInfo printInfoWithDictionary(NSDictionary<?, ?> dictionary);
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -148,6 +140,14 @@ public class UIPrintInfo extends NSObject implements NSCopying, NSCoding {
     @Selector("new")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object new_objc();
+
+    @Generated
+    @Selector("printInfo")
+    public static native UIPrintInfo printInfo();
+
+    @Generated
+    @Selector("printInfoWithDictionary:")
+    public static native UIPrintInfo printInfoWithDictionary(NSDictionary<?, ?> dictionary);
 
     @Generated
     @Selector("resolveClassMethod:")

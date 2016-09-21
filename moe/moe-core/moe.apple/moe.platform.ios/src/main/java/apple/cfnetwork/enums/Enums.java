@@ -20,19 +20,19 @@ import org.moe.natj.general.ann.Generated;
 
 @Generated
 public final class Enums {
-    @Generated public static final int kSOCKS5NoAcceptableMethod = 0x000000FF;
-    @Generated public static final int kCFStreamErrorSOCKS4RequestFailed = 0x0000005B;
-    @Generated public static final int kCFStreamErrorSOCKS4IdentdFailed = 0x0000005C;
-    @Generated public static final int kCFStreamErrorSOCKS4IdConflict = 0x0000005D;
     @Generated public static final int kCFStreamErrorSOCKS5BadResponseAddr = 0x00000001;
     @Generated public static final int kCFStreamErrorSOCKS5BadState = 0x00000002;
     @Generated public static final int kCFStreamErrorSOCKSUnknownClientVersion = 0x00000003;
+    @Generated public static final int kCFStreamErrorSOCKS4RequestFailed = 0x0000005B;
+    @Generated public static final int kCFStreamErrorSOCKS4IdentdFailed = 0x0000005C;
+    @Generated public static final int kCFStreamErrorSOCKS4IdConflict = 0x0000005D;
     @Generated public static final int kCFStreamErrorSOCKSSubDomainNone = 0x00000000;
     @Generated public static final int kCFStreamErrorSOCKSSubDomainVersionCode = 0x00000001;
     @Generated public static final int kCFStreamErrorSOCKS4SubDomainResponse = 0x00000002;
     @Generated public static final int kCFStreamErrorSOCKS5SubDomainUserPass = 0x00000003;
     @Generated public static final int kCFStreamErrorSOCKS5SubDomainMethod = 0x00000004;
     @Generated public static final int kCFStreamErrorSOCKS5SubDomainResponse = 0x00000005;
+    @Generated public static final int kSOCKS5NoAcceptableMethod = 0x000000FF;
 
     @Generated
     private Enums() {

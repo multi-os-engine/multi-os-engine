@@ -56,9 +56,18 @@ public class CASpringAnimation extends CABasicAnimation {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native CASpringAnimation alloc();
+
+    @Generated
+    @Selector("allocWithZone:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("animation")
@@ -67,15 +76,6 @@ public class CASpringAnimation extends CABasicAnimation {
     @Generated
     @Selector("animationWithKeyPath:")
     public static native CASpringAnimation animationWithKeyPath(String path);
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
-
-    @Generated
-    @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -183,6 +183,10 @@ public class CASpringAnimation extends CABasicAnimation {
     public native CASpringAnimation init();
 
     @Generated
+    @Selector("initWithCoder:")
+    public native CASpringAnimation initWithCoder(NSCoder aDecoder);
+
+    @Generated
     @Selector("initialVelocity")
     @NFloat
     public native double initialVelocity();
@@ -216,8 +220,4 @@ public class CASpringAnimation extends CABasicAnimation {
     @Selector("stiffness")
     @NFloat
     public native double stiffness();
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native CASpringAnimation initWithCoder(NSCoder aDecoder);
 }

@@ -59,63 +59,13 @@ public class SKConstraint extends NSObject implements NSCoding, NSCopying {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native SKConstraint alloc();
-
-    @Generated
-    @Selector("distance:toNode:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object distanceToNode(SKRange range, SKNode node);
-
-    @Generated
-    @Selector("distance:toPoint:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object distanceToPoint(SKRange range, @ByValue CGPoint point);
-
-    @Generated
-    @Selector("distance:toPoint:inNode:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object distanceToPointInNode(SKRange range, @ByValue CGPoint point, SKNode node);
-
-    @Generated
-    @Selector("orientToNode:offset:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object orientToNodeOffset(SKNode node, SKRange radians);
-
-    @Generated
-    @Selector("orientToPoint:inNode:offset:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object orientToPointInNodeOffset(@ByValue CGPoint point, SKNode node, SKRange radians);
-
-    @Generated
-    @Selector("orientToPoint:offset:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object orientToPointOffset(@ByValue CGPoint point, SKRange radians);
-
-    @Generated
-    @Selector("positionX:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object positionX(SKRange range);
-
-    @Generated
-    @Selector("positionX:Y:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object positionXY(SKRange xRange, SKRange yRange);
-
-    @Generated
-    @Selector("positionY:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object positionY(SKRange range);
-
-    @Generated
-    @Selector("zRotation:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object zRotation(SKRange zRange);
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -151,6 +101,21 @@ public class SKConstraint extends NSObject implements NSCoding, NSCopying {
     @Generated
     @Selector("description")
     public static native String description_static();
+
+    @Generated
+    @Selector("distance:toNode:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object distanceToNode(SKRange range, SKNode node);
+
+    @Generated
+    @Selector("distance:toPoint:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object distanceToPoint(SKRange range, @ByValue CGPoint point);
+
+    @Generated
+    @Selector("distance:toPoint:inNode:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object distanceToPointInNode(SKRange range, @ByValue CGPoint point, SKNode node);
 
     @Generated
     @Selector("hash")
@@ -193,6 +158,36 @@ public class SKConstraint extends NSObject implements NSCoding, NSCopying {
     public static native Object new_objc();
 
     @Generated
+    @Selector("orientToNode:offset:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object orientToNodeOffset(SKNode node, SKRange radians);
+
+    @Generated
+    @Selector("orientToPoint:inNode:offset:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object orientToPointInNodeOffset(@ByValue CGPoint point, SKNode node, SKRange radians);
+
+    @Generated
+    @Selector("orientToPoint:offset:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object orientToPointOffset(@ByValue CGPoint point, SKRange radians);
+
+    @Generated
+    @Selector("positionX:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object positionX(SKRange range);
+
+    @Generated
+    @Selector("positionX:Y:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object positionXY(SKRange xRange, SKRange yRange);
+
+    @Generated
+    @Selector("positionY:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object positionY(SKRange range);
+
+    @Generated
     @Selector("resolveClassMethod:")
     public static native boolean resolveClassMethod(SEL sel);
 
@@ -212,6 +207,11 @@ public class SKConstraint extends NSObject implements NSCoding, NSCopying {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("zRotation:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object zRotation(SKRange zRange);
 
     @Generated
     @Owned

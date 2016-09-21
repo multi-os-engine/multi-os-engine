@@ -56,17 +56,17 @@ public class HKCorrelationType extends HKSampleType {
     }
 
     @Generated
-    @Owned
-    @Selector("alloc")
-    public static native HKCorrelationType alloc();
-
-    @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("activitySummaryType")
     public static native HKActivitySummaryType activitySummaryType();
+
+    @Generated
+    @Owned
+    @Selector("alloc")
+    public static native HKCorrelationType alloc();
 
     @Generated
     @Selector("allocWithZone:")
@@ -114,6 +114,10 @@ public class HKCorrelationType extends HKSampleType {
     @Generated
     @Selector("description")
     public static native String description_static();
+
+    @Generated
+    @Selector("documentTypeForIdentifier:")
+    public static native HKDocumentType documentTypeForIdentifier(String identifier);
 
     @Generated
     @Selector("hash")

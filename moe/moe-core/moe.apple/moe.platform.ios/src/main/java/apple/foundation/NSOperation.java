@@ -52,13 +52,13 @@ public class NSOperation extends NSObject {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native NSOperation alloc();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -127,7 +127,7 @@ public class NSOperation extends NSObject {
 
     @Generated
     @Selector("load")
-    public static native void load_objc();
+    public static native void load_objc_static();
 
     @Generated
     @Owned
@@ -145,7 +145,7 @@ public class NSOperation extends NSObject {
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")
@@ -154,7 +154,7 @@ public class NSOperation extends NSObject {
     @Generated
     @Selector("version")
     @NInt
-    public static native long version();
+    public static native long version_static();
 
     @Generated
     @Selector("addDependency:")
@@ -163,6 +163,11 @@ public class NSOperation extends NSObject {
     @Generated
     @Selector("cancel")
     public native void cancel();
+
+    @Generated
+    @Selector("completionBlock")
+    @ObjCBlock(name = "call_completionBlock_ret")
+    public native Block_completionBlock_ret completionBlock();
 
     @Generated
     @Selector("dependencies")
@@ -252,22 +257,17 @@ public class NSOperation extends NSObject {
     @Selector("waitUntilFinished")
     public native void waitUntilFinished();
 
+    @Runtime(ObjCRuntime.class)
     @Generated
-    @Selector("completionBlock")
-    @ObjCBlock(name = "call_completionBlock_ret")
-    public native Block_completionBlock_ret completionBlock();
+    public interface Block_completionBlock_ret {
+        @Generated
+        void call_completionBlock_ret();
+    }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_setCompletionBlock {
         @Generated
         void call_setCompletionBlock();
-    }
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_completionBlock_ret {
-        @Generated
-        void call_completionBlock_ret();
     }
 }

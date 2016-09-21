@@ -58,22 +58,13 @@ public class SCNPhysicsBallSocketJoint extends SCNPhysicsBehavior {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native SCNPhysicsBallSocketJoint alloc();
-
-    @Generated
-    @Selector("jointWithBody:anchor:")
-    public static native SCNPhysicsBallSocketJoint jointWithBodyAnchor(SCNPhysicsBody body, @ByValue SCNVector3 anchor);
-
-    @Generated
-    @Selector("jointWithBodyA:anchorA:bodyB:anchorB:")
-    public static native SCNPhysicsBallSocketJoint jointWithBodyAAnchorABodyBAnchorB(SCNPhysicsBody bodyA,
-            @ByValue SCNVector3 anchorA, SCNPhysicsBody bodyB, @ByValue SCNVector3 anchorB);
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -137,6 +128,15 @@ public class SCNPhysicsBallSocketJoint extends SCNPhysicsBehavior {
     public static native boolean isSubclassOfClass(Class aClass);
 
     @Generated
+    @Selector("jointWithBody:anchor:")
+    public static native SCNPhysicsBallSocketJoint jointWithBodyAnchor(SCNPhysicsBody body, @ByValue SCNVector3 anchor);
+
+    @Generated
+    @Selector("jointWithBodyA:anchorA:bodyB:anchorB:")
+    public static native SCNPhysicsBallSocketJoint jointWithBodyAAnchorABodyBAnchorB(SCNPhysicsBody bodyA,
+            @ByValue SCNVector3 anchorA, SCNPhysicsBody bodyB, @ByValue SCNVector3 anchorB);
+
+    @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
@@ -160,7 +160,7 @@ public class SCNPhysicsBallSocketJoint extends SCNPhysicsBehavior {
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")
@@ -198,16 +198,16 @@ public class SCNPhysicsBallSocketJoint extends SCNPhysicsBehavior {
     public native SCNPhysicsBallSocketJoint init();
 
     @Generated
+    @Selector("initWithCoder:")
+    public native SCNPhysicsBallSocketJoint initWithCoder(NSCoder aDecoder);
+
+    @Generated
     @Selector("setAnchorA:")
     public native void setAnchorA(@ByValue SCNVector3 value);
 
     @Generated
     @Selector("setAnchorB:")
     public native void setAnchorB(@ByValue SCNVector3 value);
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native SCNPhysicsBallSocketJoint initWithCoder(NSCoder aDecoder);
 
     @Generated
     @ProtocolClassMethod("supportsSecureCoding")

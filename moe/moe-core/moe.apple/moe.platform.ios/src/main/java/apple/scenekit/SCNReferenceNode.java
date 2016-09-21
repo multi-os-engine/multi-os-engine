@@ -58,29 +58,13 @@ public class SCNReferenceNode extends SCNNode {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native SCNReferenceNode alloc();
-
-    @Generated
-    @Selector("node")
-    public static native SCNReferenceNode node();
-
-    @Generated
-    @Selector("nodeWithGeometry:")
-    public static native SCNNode nodeWithGeometry(SCNGeometry geometry);
-
-    @Generated
-    @Selector("nodeWithMDLObject:")
-    public static native SCNReferenceNode nodeWithMDLObject(MDLObject mdlObject);
-
-    @Generated
-    @Selector("referenceNodeWithURL:")
-    public static native SCNReferenceNode referenceNodeWithURL(NSURL referenceURL);
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -158,6 +142,22 @@ public class SCNReferenceNode extends SCNNode {
     public static native Object new_objc();
 
     @Generated
+    @Selector("node")
+    public static native SCNReferenceNode node();
+
+    @Generated
+    @Selector("nodeWithGeometry:")
+    public static native SCNNode nodeWithGeometry(SCNGeometry geometry);
+
+    @Generated
+    @Selector("nodeWithMDLObject:")
+    public static native SCNReferenceNode nodeWithMDLObject(MDLObject mdlObject);
+
+    @Generated
+    @Selector("referenceNodeWithURL:")
+    public static native SCNReferenceNode referenceNodeWithURL(NSURL referenceURL);
+
+    @Generated
     @Selector("resolveClassMethod:")
     public static native boolean resolveClassMethod(SEL sel);
 
@@ -220,12 +220,12 @@ public class SCNReferenceNode extends SCNNode {
     public native void setReferenceURL(NSURL value);
 
     @Generated
-    @Selector("unload")
-    public native void unload();
-
-    @Generated
     @ProtocolClassMethod("supportsSecureCoding")
     public boolean _supportsSecureCoding() {
         return supportsSecureCoding();
     }
+
+    @Generated
+    @Selector("unload")
+    public native void unload();
 }

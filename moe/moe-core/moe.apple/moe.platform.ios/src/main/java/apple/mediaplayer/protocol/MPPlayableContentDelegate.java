@@ -16,6 +16,7 @@ limitations under the License.
 
 package apple.mediaplayer.protocol;
 
+import apple.foundation.NSArray;
 import apple.foundation.NSError;
 import apple.foundation.NSIndexPath;
 import apple.mediaplayer.MPPlayableContentManager;
@@ -36,15 +37,6 @@ import org.moe.natj.objc.ann.Selector;
 public interface MPPlayableContentDelegate {
     @Generated
     @IsOptional
-    @Selector("playableContentManager:initiatePlaybackOfContentItemAtIndexPath:completionHandler:")
-    default void playableContentManagerInitiatePlaybackOfContentItemAtIndexPathCompletionHandler(
-            MPPlayableContentManager contentManager, NSIndexPath indexPath,
-            @ObjCBlock(name = "call_playableContentManagerInitiatePlaybackOfContentItemAtIndexPathCompletionHandler") Block_playableContentManagerInitiatePlaybackOfContentItemAtIndexPathCompletionHandler completionHandler) {
-        throw new java.lang.UnsupportedOperationException();
-    }
-
-    @Generated
-    @IsOptional
     @Selector("playableContentManager:didUpdateContext:")
     default void playableContentManagerDidUpdateContext(MPPlayableContentManager contentManager,
             MPPlayableContentManagerContext context) {
@@ -60,11 +52,22 @@ public interface MPPlayableContentDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    @Runtime(ObjCRuntime.class)
     @Generated
-    public interface Block_playableContentManagerInitiatePlaybackOfContentItemAtIndexPathCompletionHandler {
-        @Generated
-        void call_playableContentManagerInitiatePlaybackOfContentItemAtIndexPathCompletionHandler(NSError arg0);
+    @IsOptional
+    @Selector("playableContentManager:initializePlaybackQueueWithContentItems:completionHandler:")
+    default void playableContentManagerInitializePlaybackQueueWithContentItemsCompletionHandler(
+            MPPlayableContentManager contentManager, NSArray<?> contentItems,
+            @ObjCBlock(name = "call_playableContentManagerInitializePlaybackQueueWithContentItemsCompletionHandler") Block_playableContentManagerInitializePlaybackQueueWithContentItemsCompletionHandler completionHandler) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Generated
+    @IsOptional
+    @Selector("playableContentManager:initiatePlaybackOfContentItemAtIndexPath:completionHandler:")
+    default void playableContentManagerInitiatePlaybackOfContentItemAtIndexPathCompletionHandler(
+            MPPlayableContentManager contentManager, NSIndexPath indexPath,
+            @ObjCBlock(name = "call_playableContentManagerInitiatePlaybackOfContentItemAtIndexPathCompletionHandler") Block_playableContentManagerInitiatePlaybackOfContentItemAtIndexPathCompletionHandler completionHandler) {
+        throw new java.lang.UnsupportedOperationException();
     }
 
     @Runtime(ObjCRuntime.class)
@@ -72,5 +75,19 @@ public interface MPPlayableContentDelegate {
     public interface Block_playableContentManagerInitializePlaybackQueueWithCompletionHandler {
         @Generated
         void call_playableContentManagerInitializePlaybackQueueWithCompletionHandler(NSError arg0);
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_playableContentManagerInitializePlaybackQueueWithContentItemsCompletionHandler {
+        @Generated
+        void call_playableContentManagerInitializePlaybackQueueWithContentItemsCompletionHandler(NSError arg0);
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_playableContentManagerInitiatePlaybackOfContentItemAtIndexPathCompletionHandler {
+        @Generated
+        void call_playableContentManagerInitiatePlaybackOfContentItemAtIndexPathCompletionHandler(NSError arg0);
     }
 }

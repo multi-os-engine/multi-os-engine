@@ -56,21 +56,13 @@ public class SKCameraNode extends SKNode {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native SKCameraNode alloc();
-
-    @Generated
-    @Selector("node")
-    public static native SKCameraNode node();
-
-    @Generated
-    @Selector("nodeWithFileNamed:")
-    public static native SKCameraNode nodeWithFileNamed(String filename);
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -150,6 +142,14 @@ public class SKCameraNode extends SKNode {
     @Selector("new")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object new_objc();
+
+    @Generated
+    @Selector("node")
+    public static native SKCameraNode node();
+
+    @Generated
+    @Selector("nodeWithFileNamed:")
+    public static native SKCameraNode nodeWithFileNamed(String filename);
 
     @Generated
     @Selector("obstaclesFromNodeBounds:")

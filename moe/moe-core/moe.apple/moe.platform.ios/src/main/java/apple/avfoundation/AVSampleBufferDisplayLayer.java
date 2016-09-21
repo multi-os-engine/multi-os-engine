@@ -61,17 +61,13 @@ public class AVSampleBufferDisplayLayer extends CALayer {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native AVSampleBufferDisplayLayer alloc();
-
-    @Generated
-    @Selector("layer")
-    public static native AVSampleBufferDisplayLayer layer();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -149,6 +145,10 @@ public class AVSampleBufferDisplayLayer extends CALayer {
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
     @Generated
+    @Selector("layer")
+    public static native AVSampleBufferDisplayLayer layer();
+
+    @Generated
     @Selector("load")
     public static native void load_objc_static();
 
@@ -172,7 +172,7 @@ public class AVSampleBufferDisplayLayer extends CALayer {
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")
@@ -208,6 +208,10 @@ public class AVSampleBufferDisplayLayer extends CALayer {
     public native AVSampleBufferDisplayLayer init();
 
     @Generated
+    @Selector("initWithCoder:")
+    public native AVSampleBufferDisplayLayer initWithCoder(NSCoder aDecoder);
+
+    @Generated
     @Selector("initWithLayer:")
     public native AVSampleBufferDisplayLayer initWithLayer(@Mapped(ObjCObjectMapper.class) Object layer);
 
@@ -240,10 +244,6 @@ public class AVSampleBufferDisplayLayer extends CALayer {
     @Generated
     @Selector("videoGravity")
     public native String videoGravity();
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native AVSampleBufferDisplayLayer initWithCoder(NSCoder aDecoder);
 
     @Runtime(ObjCRuntime.class)
     @Generated

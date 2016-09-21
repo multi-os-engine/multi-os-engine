@@ -58,18 +58,13 @@ public class AVCaptureMetadataInput extends AVCaptureInput {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native AVCaptureMetadataInput alloc();
-
-    @Generated
-    @Selector("metadataInputWithFormatDescription:clock:")
-    public static native AVCaptureMetadataInput metadataInputWithFormatDescriptionClock(CMFormatDescriptionRef desc,
-            CMClockRef clock);
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -139,6 +134,11 @@ public class AVCaptureMetadataInput extends AVCaptureInput {
     @Generated
     @Selector("load")
     public static native void load_objc_static();
+
+    @Generated
+    @Selector("metadataInputWithFormatDescription:clock:")
+    public static native AVCaptureMetadataInput metadataInputWithFormatDescriptionClock(CMFormatDescriptionRef desc,
+            CMClockRef clock);
 
     @Generated
     @Owned

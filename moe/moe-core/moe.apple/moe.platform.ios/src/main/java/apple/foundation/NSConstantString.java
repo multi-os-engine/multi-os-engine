@@ -62,84 +62,13 @@ public class NSConstantString extends NSSimpleCString {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native NSConstantString alloc();
-
-    @Generated
-    @Selector("string")
-    public static native NSConstantString string();
-
-    @Generated
-    @Selector("stringEncodingForData:encodingOptions:convertedString:usedLossyConversion:")
-    @NUInt
-    public static native long stringEncodingForDataEncodingOptionsConvertedStringUsedLossyConversion(NSData data,
-            NSDictionary<String, ?> opts, Ptr<NSString> string, BoolPtr usedLossyConversion);
-
-    @Generated
-    @Deprecated
-    @Selector("stringWithCString:")
-    public static native NSConstantString stringWithCString(ConstBytePtr bytes);
-
-    @Generated
-    @Selector("stringWithCString:encoding:")
-    public static native NSConstantString stringWithCStringEncoding(ConstBytePtr cString, @NUInt long enc);
-
-    @Generated
-    @Deprecated
-    @Selector("stringWithCString:length:")
-    public static native NSConstantString stringWithCStringLength(ConstBytePtr bytes, @NUInt long length);
-
-    @Generated
-    @Selector("stringWithCharacters:length:")
-    public static native NSConstantString stringWithCharactersLength(ConstCharPtr characters, @NUInt long length);
-
-    @Generated
-    @Deprecated
-    @Selector("stringWithContentsOfFile:")
-    public static native NSConstantString stringWithContentsOfFile(String path);
-
-    @Generated
-    @Selector("stringWithContentsOfFile:encoding:error:")
-    public static native NSConstantString stringWithContentsOfFileEncodingError(String path, @NUInt long enc,
-            Ptr<NSError> error);
-
-    @Generated
-    @Selector("stringWithContentsOfFile:usedEncoding:error:")
-    public static native NSConstantString stringWithContentsOfFileUsedEncodingError(String path, NUIntPtr enc,
-            Ptr<NSError> error);
-
-    @Generated
-    @Deprecated
-    @Selector("stringWithContentsOfURL:")
-    public static native NSConstantString stringWithContentsOfURL(NSURL url);
-
-    @Generated
-    @Selector("stringWithContentsOfURL:encoding:error:")
-    public static native NSConstantString stringWithContentsOfURLEncodingError(NSURL url, @NUInt long enc,
-            Ptr<NSError> error);
-
-    @Generated
-    @Selector("stringWithContentsOfURL:usedEncoding:error:")
-    public static native NSConstantString stringWithContentsOfURLUsedEncodingError(NSURL url, NUIntPtr enc,
-            Ptr<NSError> error);
-
-    @Generated
-    @Variadic()
-    @Selector("stringWithFormat:")
-    public static native NSConstantString stringWithFormat(String format, Object... varargs);
-
-    @Generated
-    @Selector("stringWithString:")
-    public static native NSConstantString stringWithString(String string);
-
-    @Generated
-    @Selector("stringWithUTF8String:")
-    public static native NSConstantString stringWithUTF8String(ConstBytePtr nullTerminatedCString);
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -230,6 +159,10 @@ public class NSConstantString extends NSSimpleCString {
     public static native Object localizedStringWithFormat(String format, Object... varargs);
 
     @Generated
+    @Selector("localizedUserNotificationStringForKey:arguments:")
+    public static native String localizedUserNotificationStringForKeyArguments(String key, NSArray<?> arguments);
+
+    @Generated
     @Owned
     @Selector("new")
     @MappedReturn(ObjCObjectMapper.class)
@@ -249,7 +182,78 @@ public class NSConstantString extends NSSimpleCString {
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
+
+    @Generated
+    @Selector("string")
+    public static native NSConstantString string();
+
+    @Generated
+    @Selector("stringEncodingForData:encodingOptions:convertedString:usedLossyConversion:")
+    @NUInt
+    public static native long stringEncodingForDataEncodingOptionsConvertedStringUsedLossyConversion(NSData data,
+            NSDictionary<String, ?> opts, Ptr<NSString> string, BoolPtr usedLossyConversion);
+
+    @Generated
+    @Deprecated
+    @Selector("stringWithCString:")
+    public static native NSConstantString stringWithCString(ConstBytePtr bytes);
+
+    @Generated
+    @Selector("stringWithCString:encoding:")
+    public static native NSConstantString stringWithCStringEncoding(ConstBytePtr cString, @NUInt long enc);
+
+    @Generated
+    @Deprecated
+    @Selector("stringWithCString:length:")
+    public static native NSConstantString stringWithCStringLength(ConstBytePtr bytes, @NUInt long length);
+
+    @Generated
+    @Selector("stringWithCharacters:length:")
+    public static native NSConstantString stringWithCharactersLength(ConstCharPtr characters, @NUInt long length);
+
+    @Generated
+    @Deprecated
+    @Selector("stringWithContentsOfFile:")
+    public static native NSConstantString stringWithContentsOfFile(String path);
+
+    @Generated
+    @Selector("stringWithContentsOfFile:encoding:error:")
+    public static native NSConstantString stringWithContentsOfFileEncodingError(String path, @NUInt long enc,
+            Ptr<NSError> error);
+
+    @Generated
+    @Selector("stringWithContentsOfFile:usedEncoding:error:")
+    public static native NSConstantString stringWithContentsOfFileUsedEncodingError(String path, NUIntPtr enc,
+            Ptr<NSError> error);
+
+    @Generated
+    @Deprecated
+    @Selector("stringWithContentsOfURL:")
+    public static native NSConstantString stringWithContentsOfURL(NSURL url);
+
+    @Generated
+    @Selector("stringWithContentsOfURL:encoding:error:")
+    public static native NSConstantString stringWithContentsOfURLEncodingError(NSURL url, @NUInt long enc,
+            Ptr<NSError> error);
+
+    @Generated
+    @Selector("stringWithContentsOfURL:usedEncoding:error:")
+    public static native NSConstantString stringWithContentsOfURLUsedEncodingError(NSURL url, NUIntPtr enc,
+            Ptr<NSError> error);
+
+    @Generated
+    @Variadic()
+    @Selector("stringWithFormat:")
+    public static native NSConstantString stringWithFormat(String format, Object... varargs);
+
+    @Generated
+    @Selector("stringWithString:")
+    public static native NSConstantString stringWithString(String string);
+
+    @Generated
+    @Selector("stringWithUTF8String:")
+    public static native NSConstantString stringWithUTF8String(ConstBytePtr nullTerminatedCString);
 
     @Generated
     @Selector("superclass")

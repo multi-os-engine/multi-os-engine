@@ -60,17 +60,13 @@ public class MFMailComposeViewController extends UINavigationController {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native MFMailComposeViewController alloc();
-
-    @Generated
-    @Selector("canSendMail")
-    public static native boolean canSendMail();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -84,6 +80,10 @@ public class MFMailComposeViewController extends UINavigationController {
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
     public static native boolean automaticallyNotifiesObserversForKey(String key);
+
+    @Generated
+    @Selector("canSendMail")
+    public static native boolean canSendMail();
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
@@ -189,6 +189,10 @@ public class MFMailComposeViewController extends UINavigationController {
     public native MFMailComposeViewController init();
 
     @Generated
+    @Selector("initWithCoder:")
+    public native MFMailComposeViewController initWithCoder(NSCoder aDecoder);
+
+    @Generated
     @Selector("initWithNavigationBarClass:toolbarClass:")
     public native MFMailComposeViewController initWithNavigationBarClassToolbarClass(Class navigationBarClass,
             Class toolbarClass);
@@ -242,8 +246,4 @@ public class MFMailComposeViewController extends UINavigationController {
     @Generated
     @Selector("setToRecipients:")
     public native void setToRecipients(NSArray<String> toRecipients);
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native MFMailComposeViewController initWithCoder(NSCoder aDecoder);
 }

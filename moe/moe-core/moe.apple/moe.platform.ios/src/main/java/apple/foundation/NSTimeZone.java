@@ -58,65 +58,13 @@ public class NSTimeZone extends NSObject implements NSCopying, NSSecureCoding {
     public static native NSDictionary<String, String> abbreviationDictionary();
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native NSTimeZone alloc();
-
-    @Generated
-    @Selector("defaultTimeZone")
-    public static native NSTimeZone defaultTimeZone();
-
-    @Generated
-    @Selector("knownTimeZoneNames")
-    public static native NSArray<String> knownTimeZoneNames();
-
-    @Generated
-    @Selector("localTimeZone")
-    public static native NSTimeZone localTimeZone();
-
-    @Generated
-    @Selector("resetSystemTimeZone")
-    public static native void resetSystemTimeZone();
-
-    @Generated
-    @Selector("setAbbreviationDictionary:")
-    public static native void setAbbreviationDictionary(NSDictionary<String, String> dict);
-
-    @Generated
-    @Selector("setDefaultTimeZone:")
-    public static native void setDefaultTimeZone(NSTimeZone aTimeZone);
-
-    @Generated
-    @Selector("supportsSecureCoding")
-    public static native boolean supportsSecureCoding();
-
-    @Generated
-    @Selector("systemTimeZone")
-    public static native NSTimeZone systemTimeZone();
-
-    @Generated
-    @Selector("timeZoneDataVersion")
-    public static native String timeZoneDataVersion();
-
-    @Generated
-    @Selector("timeZoneForSecondsFromGMT:")
-    public static native NSTimeZone timeZoneForSecondsFromGMT(@NInt long seconds);
-
-    @Generated
-    @Selector("timeZoneWithAbbreviation:")
-    public static native NSTimeZone timeZoneWithAbbreviation(String abbreviation);
-
-    @Generated
-    @Selector("timeZoneWithName:")
-    public static native NSTimeZone timeZoneWithName(String tzName);
-
-    @Generated
-    @Selector("timeZoneWithName:data:")
-    public static native NSTimeZone timeZoneWithNameData(String tzName, NSData aData);
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -150,6 +98,10 @@ public class NSTimeZone extends NSObject implements NSCopying, NSSecureCoding {
     public static native String debugDescription_static();
 
     @Generated
+    @Selector("defaultTimeZone")
+    public static native NSTimeZone defaultTimeZone();
+
+    @Generated
     @Selector("hash")
     @NUInt
     public static native long hash_static();
@@ -180,14 +132,26 @@ public class NSTimeZone extends NSObject implements NSCopying, NSSecureCoding {
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
     @Generated
+    @Selector("knownTimeZoneNames")
+    public static native NSArray<String> knownTimeZoneNames();
+
+    @Generated
     @Selector("load")
     public static native void load_objc_static();
+
+    @Generated
+    @Selector("localTimeZone")
+    public static native NSTimeZone localTimeZone();
 
     @Generated
     @Owned
     @Selector("new")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object new_objc();
+
+    @Generated
+    @Selector("resetSystemTimeZone")
+    public static native void resetSystemTimeZone();
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -198,12 +162,48 @@ public class NSTimeZone extends NSObject implements NSCopying, NSSecureCoding {
     public static native boolean resolveInstanceMethod(SEL sel);
 
     @Generated
+    @Selector("setAbbreviationDictionary:")
+    public static native void setAbbreviationDictionary(NSDictionary<String, String> value);
+
+    @Generated
+    @Selector("setDefaultTimeZone:")
+    public static native void setDefaultTimeZone(NSTimeZone value);
+
+    @Generated
     @Selector("setVersion:")
     public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")
     public static native Class superclass_static();
+
+    @Generated
+    @Selector("supportsSecureCoding")
+    public static native boolean supportsSecureCoding();
+
+    @Generated
+    @Selector("systemTimeZone")
+    public static native NSTimeZone systemTimeZone();
+
+    @Generated
+    @Selector("timeZoneDataVersion")
+    public static native String timeZoneDataVersion();
+
+    @Generated
+    @Selector("timeZoneForSecondsFromGMT:")
+    public static native NSTimeZone timeZoneForSecondsFromGMT(@NInt long seconds);
+
+    @Generated
+    @Selector("timeZoneWithAbbreviation:")
+    public static native NSTimeZone timeZoneWithAbbreviation(String abbreviation);
+
+    @Generated
+    @Selector("timeZoneWithName:")
+    public static native NSTimeZone timeZoneWithName(String tzName);
+
+    @Generated
+    @Selector("timeZoneWithName:data:")
+    public static native NSTimeZone timeZoneWithNameData(String tzName, NSData aData);
 
     @Generated
     @Selector("version")

@@ -62,17 +62,13 @@ public class MPMoviePlayerController extends NSObject implements MPMediaPlayback
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native MPMoviePlayerController alloc();
-
-    @Generated
-    @Selector("preparePrerollAds")
-    public static native void preparePrerollAds();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -150,6 +146,10 @@ public class MPMoviePlayerController extends NSObject implements MPMediaPlayback
     public static native Object new_objc();
 
     @Generated
+    @Selector("preparePrerollAds")
+    public static native void preparePrerollAds();
+
+    @Generated
     @Selector("resolveClassMethod:")
     public static native boolean resolveClassMethod(SEL sel);
 
@@ -170,13 +170,13 @@ public class MPMoviePlayerController extends NSObject implements MPMediaPlayback
     @NInt
     public static native long version_static();
 
-    @Deprecated
     @Generated
+    @Deprecated
     @Selector("accessLog")
     public native MPMovieAccessLog accessLog();
 
-    @Deprecated
     @Generated
+    @Deprecated
     @Selector("allowsAirPlay")
     public native boolean allowsAirPlay();
 
@@ -192,8 +192,8 @@ public class MPMoviePlayerController extends NSObject implements MPMediaPlayback
     @Selector("beginSeekingForward")
     public native void beginSeekingForward();
 
-    @Deprecated
     @Generated
+    @Deprecated
     @Selector("cancelAllThumbnailImageRequests")
     public native void cancelAllThumbnailImageRequests();
 
@@ -218,13 +218,13 @@ public class MPMoviePlayerController extends NSObject implements MPMediaPlayback
     @Selector("currentPlaybackTime")
     public native double currentPlaybackTime();
 
-    @Deprecated
     @Generated
+    @Deprecated
     @Selector("duration")
     public native double duration();
 
-    @Deprecated
     @Generated
+    @Deprecated
     @Selector("endPlaybackTime")
     public native double endPlaybackTime();
 
@@ -232,8 +232,8 @@ public class MPMoviePlayerController extends NSObject implements MPMediaPlayback
     @Selector("endSeeking")
     public native void endSeeking();
 
-    @Deprecated
     @Generated
+    @Deprecated
     @Selector("errorLog")
     public native MPMovieErrorLog errorLog();
 
@@ -245,13 +245,13 @@ public class MPMoviePlayerController extends NSObject implements MPMediaPlayback
     @Selector("initWithContentURL:")
     public native MPMoviePlayerController initWithContentURL(NSURL url);
 
-    @Deprecated
     @Generated
+    @Deprecated
     @Selector("initialPlaybackTime")
     public native double initialPlaybackTime();
 
-    @Deprecated
     @Generated
+    @Deprecated
     @Selector("isAirPlayVideoActive")
     public native boolean isAirPlayVideoActive();
 
@@ -272,20 +272,20 @@ public class MPMoviePlayerController extends NSObject implements MPMediaPlayback
     @NUInt
     public native long loadState();
 
-    @Deprecated
     @Generated
+    @Deprecated
     @Selector("movieMediaTypes")
     @NUInt
     public native long movieMediaTypes();
 
-    @Deprecated
     @Generated
+    @Deprecated
     @Selector("movieSourceType")
     @NInt
     public native long movieSourceType();
 
-    @Deprecated
     @Generated
+    @Deprecated
     @Selector("naturalSize")
     @ByValue
     public native CGSize naturalSize();
@@ -303,8 +303,8 @@ public class MPMoviePlayerController extends NSObject implements MPMediaPlayback
     public native void playPrerollAdWithCompletionHandler(
             @ObjCBlock(name = "call_playPrerollAdWithCompletionHandler") Block_playPrerollAdWithCompletionHandler completionHandler);
 
-    @Deprecated
     @Generated
+    @Deprecated
     @Selector("playableDuration")
     public native double playableDuration();
 
@@ -326,8 +326,8 @@ public class MPMoviePlayerController extends NSObject implements MPMediaPlayback
     @NInt
     public native long repeatMode();
 
-    @Deprecated
     @Generated
+    @Deprecated
     @Selector("requestThumbnailImagesAtTimes:timeOption:")
     public native void requestThumbnailImagesAtTimesTimeOption(NSArray<?> playbackTimes, @NInt long option);
 
@@ -336,8 +336,8 @@ public class MPMoviePlayerController extends NSObject implements MPMediaPlayback
     @NInt
     public native long scalingMode();
 
-    @Deprecated
     @Generated
+    @Deprecated
     @Selector("setAllowsAirPlay:")
     public native void setAllowsAirPlay(boolean value);
 
@@ -357,8 +357,8 @@ public class MPMoviePlayerController extends NSObject implements MPMediaPlayback
     @Selector("setCurrentPlaybackTime:")
     public native void setCurrentPlaybackTime(double value);
 
-    @Deprecated
     @Generated
+    @Deprecated
     @Selector("setEndPlaybackTime:")
     public native void setEndPlaybackTime(double value);
 
@@ -366,13 +366,13 @@ public class MPMoviePlayerController extends NSObject implements MPMediaPlayback
     @Selector("setFullscreen:animated:")
     public native void setFullscreenAnimated(boolean fullscreen, boolean animated);
 
-    @Deprecated
     @Generated
+    @Deprecated
     @Selector("setInitialPlaybackTime:")
     public native void setInitialPlaybackTime(double value);
 
-    @Deprecated
     @Generated
+    @Deprecated
     @Selector("setMovieSourceType:")
     public native void setMovieSourceType(@NInt long value);
 
@@ -406,8 +406,8 @@ public class MPMoviePlayerController extends NSObject implements MPMediaPlayback
     @Selector("thumbnailImageAtTime:timeOption:")
     public native UIImage thumbnailImageAtTimeTimeOption(double playbackTime, @NInt long option);
 
-    @Deprecated
     @Generated
+    @Deprecated
     @Selector("timedMetadata")
     public native NSArray<?> timedMetadata();
 

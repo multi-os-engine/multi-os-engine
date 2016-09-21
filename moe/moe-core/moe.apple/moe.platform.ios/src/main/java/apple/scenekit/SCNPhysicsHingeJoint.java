@@ -58,24 +58,13 @@ public class SCNPhysicsHingeJoint extends SCNPhysicsBehavior {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native SCNPhysicsHingeJoint alloc();
-
-    @Generated
-    @Selector("jointWithBody:axis:anchor:")
-    public static native SCNPhysicsHingeJoint jointWithBodyAxisAnchor(SCNPhysicsBody body, @ByValue SCNVector3 axis,
-            @ByValue SCNVector3 anchor);
-
-    @Generated
-    @Selector("jointWithBodyA:axisA:anchorA:bodyB:axisB:anchorB:")
-    public static native SCNPhysicsHingeJoint jointWithBodyAAxisAAnchorABodyBAxisBAnchorB(SCNPhysicsBody bodyA,
-            @ByValue SCNVector3 axisA, @ByValue SCNVector3 anchorA, SCNPhysicsBody bodyB, @ByValue SCNVector3 axisB,
-            @ByValue SCNVector3 anchorB);
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -139,6 +128,17 @@ public class SCNPhysicsHingeJoint extends SCNPhysicsBehavior {
     public static native boolean isSubclassOfClass(Class aClass);
 
     @Generated
+    @Selector("jointWithBody:axis:anchor:")
+    public static native SCNPhysicsHingeJoint jointWithBodyAxisAnchor(SCNPhysicsBody body, @ByValue SCNVector3 axis,
+            @ByValue SCNVector3 anchor);
+
+    @Generated
+    @Selector("jointWithBodyA:axisA:anchorA:bodyB:axisB:anchorB:")
+    public static native SCNPhysicsHingeJoint jointWithBodyAAxisAAnchorABodyBAxisBAnchorB(SCNPhysicsBody bodyA,
+            @ByValue SCNVector3 axisA, @ByValue SCNVector3 anchorA, SCNPhysicsBody bodyB, @ByValue SCNVector3 axisB,
+            @ByValue SCNVector3 anchorB);
+
+    @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
@@ -162,7 +162,7 @@ public class SCNPhysicsHingeJoint extends SCNPhysicsBehavior {
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")
@@ -210,6 +210,10 @@ public class SCNPhysicsHingeJoint extends SCNPhysicsBehavior {
     public native SCNPhysicsHingeJoint init();
 
     @Generated
+    @Selector("initWithCoder:")
+    public native SCNPhysicsHingeJoint initWithCoder(NSCoder aDecoder);
+
+    @Generated
     @Selector("setAnchorA:")
     public native void setAnchorA(@ByValue SCNVector3 value);
 
@@ -224,10 +228,6 @@ public class SCNPhysicsHingeJoint extends SCNPhysicsBehavior {
     @Generated
     @Selector("setAxisB:")
     public native void setAxisB(@ByValue SCNVector3 value);
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native SCNPhysicsHingeJoint initWithCoder(NSCoder aDecoder);
 
     @Generated
     @ProtocolClassMethod("supportsSecureCoding")

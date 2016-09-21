@@ -20,7 +20,6 @@ import org.moe.natj.general.ann.Generated;
 
 @Generated
 public final class Enums {
-    @Generated public static final int kVTUnlimitedFrameDelayCount = 0xFFFFFFFF;
     @Generated public static final int kVTPropertyNotSupportedErr = 0xFFFFCD9C;
     @Generated public static final int kVTPropertyReadOnlyErr = 0xFFFFCD9B;
     @Generated public static final int kVTParameterErr = 0xFFFFCD9A;
@@ -50,6 +49,8 @@ public final class Enums {
     @Generated public static final int kVTFrameSiloInvalidTimeRangeErr = 0xFFFFD048;
     @Generated public static final int kVTCouldNotFindTemporalFilterErr = 0xFFFFD047;
     @Generated public static final int kVTPixelTransferNotPermittedErr = 0xFFFFD046;
+    @Generated public static final int kVTColorCorrectionImageRotationFailedErr = 0xFFFFD045;
+    @Generated public static final int kVTUnlimitedFrameDelayCount = 0xFFFFFFFF;
 
     @Generated
     private Enums() {

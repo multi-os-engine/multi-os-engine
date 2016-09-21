@@ -54,29 +54,13 @@ public class NSOutputStream extends NSStream {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native NSOutputStream alloc();
-
-    @Generated
-    @Selector("outputStreamToBuffer:capacity:")
-    public static native NSOutputStream outputStreamToBufferCapacity(BytePtr buffer, @NUInt long capacity);
-
-    @Generated
-    @Selector("outputStreamToFileAtPath:append:")
-    public static native NSOutputStream outputStreamToFileAtPathAppend(String path, boolean shouldAppend);
-
-    @Generated
-    @Selector("outputStreamToMemory")
-    public static native NSOutputStream outputStreamToMemory();
-
-    @Generated
-    @Selector("outputStreamWithURL:append:")
-    public static native NSOutputStream outputStreamWithURLAppend(NSURL url, boolean shouldAppend);
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -162,6 +146,22 @@ public class NSOutputStream extends NSStream {
     @Selector("new")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object new_objc();
+
+    @Generated
+    @Selector("outputStreamToBuffer:capacity:")
+    public static native NSOutputStream outputStreamToBufferCapacity(BytePtr buffer, @NUInt long capacity);
+
+    @Generated
+    @Selector("outputStreamToFileAtPath:append:")
+    public static native NSOutputStream outputStreamToFileAtPathAppend(String path, boolean shouldAppend);
+
+    @Generated
+    @Selector("outputStreamToMemory")
+    public static native NSOutputStream outputStreamToMemory();
+
+    @Generated
+    @Selector("outputStreamWithURL:append:")
+    public static native NSOutputStream outputStreamWithURLAppend(NSURL url, boolean shouldAppend);
 
     @Generated
     @Selector("resolveClassMethod:")

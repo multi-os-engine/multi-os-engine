@@ -58,13 +58,13 @@ public class AVAudioPlayerNode extends AVAudioNode implements AVAudioMixing {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native AVAudioPlayerNode alloc();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -151,7 +151,7 @@ public class AVAudioPlayerNode extends AVAudioNode implements AVAudioMixing {
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")
@@ -161,6 +161,10 @@ public class AVAudioPlayerNode extends AVAudioNode implements AVAudioMixing {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("destinationForMixer:bus:")
+    public native AVAudioMixingDestination destinationForMixerBus(AVAudioNode mixer, @NUInt long bus);
 
     @Generated
     @Selector("init")
@@ -285,10 +289,6 @@ public class AVAudioPlayerNode extends AVAudioNode implements AVAudioMixing {
     @Generated
     @Selector("volume")
     public native float volume();
-
-    @Generated
-    @Selector("destinationForMixer:bus:")
-    public native AVAudioMixingDestination destinationForMixerBus(AVAudioNode mixer, @NUInt long bus);
 
     @Runtime(ObjCRuntime.class)
     @Generated

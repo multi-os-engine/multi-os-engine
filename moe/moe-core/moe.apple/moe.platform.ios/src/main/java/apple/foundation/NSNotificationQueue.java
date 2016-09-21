@@ -51,17 +51,13 @@ public class NSNotificationQueue extends NSObject {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native NSNotificationQueue alloc();
-
-    @Generated
-    @Selector("defaultQueue")
-    public static native NSNotificationQueue defaultQueue();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -93,6 +89,10 @@ public class NSNotificationQueue extends NSObject {
     @Generated
     @Selector("debugDescription")
     public static native String debugDescription_static();
+
+    @Generated
+    @Selector("defaultQueue")
+    public static native NSNotificationQueue defaultQueue();
 
     @Generated
     @Selector("description")
@@ -148,7 +148,7 @@ public class NSNotificationQueue extends NSObject {
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")

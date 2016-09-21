@@ -53,23 +53,13 @@ public class NSStream extends NSObject {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native NSStream alloc();
-
-    @Generated
-    @Selector("getBoundStreamsWithBufferSize:inputStream:outputStream:")
-    public static native void getBoundStreamsWithBufferSizeInputStreamOutputStream(@NUInt long bufferSize,
-            Ptr<NSInputStream> inputStream, Ptr<NSOutputStream> outputStream);
-
-    @Generated
-    @Selector("getStreamsToHostWithName:port:inputStream:outputStream:")
-    public static native void getStreamsToHostWithNamePortInputStreamOutputStream(String hostname, @NInt long port,
-            Ptr<NSInputStream> inputStream, Ptr<NSOutputStream> outputStream);
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -105,6 +95,16 @@ public class NSStream extends NSObject {
     @Generated
     @Selector("description")
     public static native String description_static();
+
+    @Generated
+    @Selector("getBoundStreamsWithBufferSize:inputStream:outputStream:")
+    public static native void getBoundStreamsWithBufferSizeInputStreamOutputStream(@NUInt long bufferSize,
+            Ptr<NSInputStream> inputStream, Ptr<NSOutputStream> outputStream);
+
+    @Generated
+    @Selector("getStreamsToHostWithName:port:inputStream:outputStream:")
+    public static native void getStreamsToHostWithNamePortInputStreamOutputStream(String hostname, @NInt long port,
+            Ptr<NSInputStream> inputStream, Ptr<NSOutputStream> outputStream);
 
     @Generated
     @Selector("hash")

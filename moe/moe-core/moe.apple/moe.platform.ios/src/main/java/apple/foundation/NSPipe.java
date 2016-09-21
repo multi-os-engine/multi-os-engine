@@ -51,17 +51,13 @@ public class NSPipe extends NSObject {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native NSPipe alloc();
-
-    @Generated
-    @Selector("pipe")
-    public static native NSPipe pipe();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -137,6 +133,10 @@ public class NSPipe extends NSObject {
     @Selector("new")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object new_objc();
+
+    @Generated
+    @Selector("pipe")
+    public static native NSPipe pipe();
 
     @Generated
     @Selector("resolveClassMethod:")

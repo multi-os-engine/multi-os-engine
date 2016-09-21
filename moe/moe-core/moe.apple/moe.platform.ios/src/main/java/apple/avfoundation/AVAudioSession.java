@@ -58,17 +58,13 @@ public class AVAudioSession extends NSObject {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native AVAudioSession alloc();
-
-    @Generated
-    @Selector("sharedInstance")
-    public static native AVAudioSession sharedInstance();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -158,6 +154,10 @@ public class AVAudioSession extends NSObject {
     public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
+    @Selector("sharedInstance")
+    public static native AVAudioSession sharedInstance();
+
+    @Generated
     @Selector("superclass")
     public static native Class superclass_static();
 
@@ -171,8 +171,16 @@ public class AVAudioSession extends NSObject {
     public native double IOBufferDuration();
 
     @Generated
+    @Selector("availableCategories")
+    public native NSArray<String> availableCategories();
+
+    @Generated
     @Selector("availableInputs")
     public native NSArray<? extends AVAudioSessionPortDescription> availableInputs();
+
+    @Generated
+    @Selector("availableModes")
+    public native NSArray<String> availableModes();
 
     @Generated
     @Selector("category")
@@ -350,8 +358,17 @@ public class AVAudioSession extends NSObject {
     public native boolean setActiveWithOptionsError(boolean active, @NUInt long options, Ptr<NSError> outError);
 
     @Generated
+    @Selector("setAggregatedIOPreference:error:")
+    public native boolean setAggregatedIOPreferenceError(@NUInt long inIOType, Ptr<NSError> outError);
+
+    @Generated
     @Selector("setCategory:error:")
     public native boolean setCategoryError(String category, Ptr<NSError> outError);
+
+    @Generated
+    @Selector("setCategory:mode:options:error:")
+    public native boolean setCategoryModeOptionsError(String category, String mode, @NUInt long options,
+            Ptr<NSError> outError);
 
     @Generated
     @Selector("setCategory:withOptions:error:")
@@ -417,14 +434,6 @@ public class AVAudioSession extends NSObject {
     @Generated
     @Selector("setPreferredSampleRate:error:")
     public native boolean setPreferredSampleRateError(double sampleRate, Ptr<NSError> outError);
-
-    @Generated
-    @Selector("availableCategories")
-    public native NSArray<String> availableCategories();
-
-    @Generated
-    @Selector("availableModes")
-    public native NSArray<String> availableModes();
 
     @Runtime(ObjCRuntime.class)
     @Generated

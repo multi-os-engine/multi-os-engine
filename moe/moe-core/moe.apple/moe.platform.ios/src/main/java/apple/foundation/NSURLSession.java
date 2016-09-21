@@ -53,27 +53,13 @@ public class NSURLSession extends NSObject {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native NSURLSession alloc();
-
-    @Generated
-    @Selector("sessionWithConfiguration:")
-    public static native NSURLSession sessionWithConfiguration(NSURLSessionConfiguration configuration);
-
-    @Generated
-    @Selector("sessionWithConfiguration:delegate:delegateQueue:")
-    public static native NSURLSession sessionWithConfigurationDelegateDelegateQueue(
-            NSURLSessionConfiguration configuration, @Mapped(ObjCObjectMapper.class) NSURLSessionDelegate delegate,
-            NSOperationQueue queue);
-
-    @Generated
-    @Selector("sharedSession")
-    public static native NSURLSession sharedSession();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -159,8 +145,22 @@ public class NSURLSession extends NSObject {
     public static native boolean resolveInstanceMethod(SEL sel);
 
     @Generated
+    @Selector("sessionWithConfiguration:")
+    public static native NSURLSession sessionWithConfiguration(NSURLSessionConfiguration configuration);
+
+    @Generated
+    @Selector("sessionWithConfiguration:delegate:delegateQueue:")
+    public static native NSURLSession sessionWithConfigurationDelegateDelegateQueue(
+            NSURLSessionConfiguration configuration, @Mapped(ObjCObjectMapper.class) NSURLSessionDelegate delegate,
+            NSOperationQueue queue);
+
+    @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
+
+    @Generated
+    @Selector("sharedSession")
+    public static native NSURLSession sharedSession();
 
     @Generated
     @Selector("superclass")
@@ -239,6 +239,11 @@ public class NSURLSession extends NSObject {
             @ObjCBlock(name = "call_flushWithCompletionHandler") Block_flushWithCompletionHandler completionHandler);
 
     @Generated
+    @Selector("getAllTasksWithCompletionHandler:")
+    public native void getAllTasksWithCompletionHandler(
+            @ObjCBlock(name = "call_getAllTasksWithCompletionHandler") Block_getAllTasksWithCompletionHandler completionHandler);
+
+    @Generated
     @Selector("getTasksWithCompletionHandler:")
     public native void getTasksWithCompletionHandler(
             @ObjCBlock(name = "call_getTasksWithCompletionHandler") Block_getTasksWithCompletionHandler completionHandler);
@@ -265,6 +270,14 @@ public class NSURLSession extends NSObject {
     public native void setSessionDescription(String value);
 
     @Generated
+    @Selector("streamTaskWithHostName:port:")
+    public native NSURLSessionStreamTask streamTaskWithHostNamePort(String hostname, @NInt long port);
+
+    @Generated
+    @Selector("streamTaskWithNetService:")
+    public native NSURLSessionStreamTask streamTaskWithNetService(NSNetService service);
+
+    @Generated
     @Selector("uploadTaskWithRequest:fromData:")
     public native NSURLSessionUploadTask uploadTaskWithRequestFromData(NSURLRequest request, NSData bodyData);
 
@@ -287,19 +300,6 @@ public class NSURLSession extends NSObject {
     @Generated
     @Selector("uploadTaskWithStreamedRequest:")
     public native NSURLSessionUploadTask uploadTaskWithStreamedRequest(NSURLRequest request);
-
-    @Generated
-    @Selector("getAllTasksWithCompletionHandler:")
-    public native void getAllTasksWithCompletionHandler(
-            @ObjCBlock(name = "call_getAllTasksWithCompletionHandler") Block_getAllTasksWithCompletionHandler completionHandler);
-
-    @Generated
-    @Selector("streamTaskWithHostName:port:")
-    public native NSURLSessionStreamTask streamTaskWithHostNamePort(String hostname, @NInt long port);
-
-    @Generated
-    @Selector("streamTaskWithNetService:")
-    public native NSURLSessionStreamTask streamTaskWithNetService(NSNetService service);
 
     @Runtime(ObjCRuntime.class)
     @Generated
@@ -345,6 +345,13 @@ public class NSURLSession extends NSObject {
 
     @Runtime(ObjCRuntime.class)
     @Generated
+    public interface Block_getAllTasksWithCompletionHandler {
+        @Generated
+        void call_getAllTasksWithCompletionHandler(NSArray<? extends NSURLSessionTask> arg0);
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
     public interface Block_getTasksWithCompletionHandler {
         @Generated
         void call_getTasksWithCompletionHandler(NSArray<? extends NSURLSessionDataTask> arg0,
@@ -370,12 +377,5 @@ public class NSURLSession extends NSObject {
     public interface Block_uploadTaskWithRequestFromFileCompletionHandler {
         @Generated
         void call_uploadTaskWithRequestFromFileCompletionHandler(NSData arg0, NSURLResponse arg1, NSError arg2);
-    }
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_getAllTasksWithCompletionHandler {
-        @Generated
-        void call_getAllTasksWithCompletionHandler(NSArray<? extends NSURLSessionTask> arg0);
     }
 }

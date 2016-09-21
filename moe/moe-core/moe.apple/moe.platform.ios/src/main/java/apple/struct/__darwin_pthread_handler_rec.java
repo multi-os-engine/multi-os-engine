@@ -59,6 +59,11 @@ public final class __darwin_pthread_handler_rec extends StructObject {
     }
 
     @Generated
+    @StructureField(order = 0, isGetter = true)
+    @FunctionPtr(name = "call___routine")
+    public native Function___routine __routine();
+
+    @Generated
     @StructureField(order = 0, isGetter = false)
     public native void set__routine(@FunctionPtr(name = "call___routine") Function___routine value);
 
@@ -79,11 +84,6 @@ public final class __darwin_pthread_handler_rec extends StructObject {
     @StructureField(order = 2, isGetter = false)
     public native void set__next(
             @UncertainArgument("Options: reference, array Fallback: reference") __darwin_pthread_handler_rec value);
-
-    @Generated
-    @StructureField(order = 0, isGetter = true)
-    @FunctionPtr(name = "call___routine")
-    public native Function___routine __routine();
 
     @Runtime(CRuntime.class)
     @Generated

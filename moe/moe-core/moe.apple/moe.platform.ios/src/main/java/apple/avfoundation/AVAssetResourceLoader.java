@@ -55,13 +55,13 @@ public class AVAssetResourceLoader extends NSObject {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native AVAssetResourceLoader alloc();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -148,7 +148,7 @@ public class AVAssetResourceLoader extends NSObject {
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")
@@ -173,13 +173,13 @@ public class AVAssetResourceLoader extends NSObject {
     public native AVAssetResourceLoader init();
 
     @Generated
+    @Selector("preloadsEligibleContentKeys")
+    public native boolean preloadsEligibleContentKeys();
+
+    @Generated
     @Selector("setDelegate:queue:")
     public native void setDelegateQueue(@Mapped(ObjCObjectMapper.class) AVAssetResourceLoaderDelegate delegate,
             NSObject delegateQueue);
-
-    @Generated
-    @Selector("preloadsEligibleContentKeys")
-    public native boolean preloadsEligibleContentKeys();
 
     @Generated
     @Selector("setPreloadsEligibleContentKeys:")

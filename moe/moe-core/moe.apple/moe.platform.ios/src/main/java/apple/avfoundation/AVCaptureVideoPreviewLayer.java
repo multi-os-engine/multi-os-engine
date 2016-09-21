@@ -60,25 +60,13 @@ public class AVCaptureVideoPreviewLayer extends CALayer {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native AVCaptureVideoPreviewLayer alloc();
-
-    @Generated
-    @Selector("layer")
-    public static native AVCaptureVideoPreviewLayer layer();
-
-    @Generated
-    @Selector("layerWithSession:")
-    public static native AVCaptureVideoPreviewLayer layerWithSession(AVCaptureSession session);
-
-    @Generated
-    @Selector("layerWithSessionWithNoConnection:")
-    public static native AVCaptureVideoPreviewLayer layerWithSessionWithNoConnection(AVCaptureSession session);
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -156,6 +144,18 @@ public class AVCaptureVideoPreviewLayer extends CALayer {
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
     @Generated
+    @Selector("layer")
+    public static native AVCaptureVideoPreviewLayer layer();
+
+    @Generated
+    @Selector("layerWithSession:")
+    public static native AVCaptureVideoPreviewLayer layerWithSession(AVCaptureSession session);
+
+    @Generated
+    @Selector("layerWithSessionWithNoConnection:")
+    public static native AVCaptureVideoPreviewLayer layerWithSessionWithNoConnection(AVCaptureSession session);
+
+    @Generated
     @Selector("load")
     public static native void load_objc_static();
 
@@ -179,7 +179,7 @@ public class AVCaptureVideoPreviewLayer extends CALayer {
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")
@@ -207,6 +207,10 @@ public class AVCaptureVideoPreviewLayer extends CALayer {
     @Generated
     @Selector("init")
     public native AVCaptureVideoPreviewLayer init();
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native AVCaptureVideoPreviewLayer initWithCoder(NSCoder aDecoder);
 
     @Generated
     @Selector("initWithLayer:")
@@ -294,8 +298,4 @@ public class AVCaptureVideoPreviewLayer extends CALayer {
     @Generated
     @Selector("videoGravity")
     public native String videoGravity();
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native AVCaptureVideoPreviewLayer initWithCoder(NSCoder aDecoder);
 }

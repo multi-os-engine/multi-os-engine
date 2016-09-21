@@ -56,18 +56,13 @@ public class AVCaptureManualExposureBracketedStillImageSettings extends AVCaptur
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native AVCaptureManualExposureBracketedStillImageSettings alloc();
-
-    @Generated
-    @Selector("manualExposureSettingsWithExposureDuration:ISO:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object manualExposureSettingsWithExposureDurationISO(@ByValue CMTime duration, float ISO);
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -137,6 +132,11 @@ public class AVCaptureManualExposureBracketedStillImageSettings extends AVCaptur
     @Generated
     @Selector("load")
     public static native void load_objc_static();
+
+    @Generated
+    @Selector("manualExposureSettingsWithExposureDuration:ISO:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object manualExposureSettingsWithExposureDurationISO(@ByValue CMTime duration, float ISO);
 
     @Generated
     @Owned

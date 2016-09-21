@@ -59,13 +59,13 @@ public class GKTurnBasedMatchmakerViewController extends UINavigationController 
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native GKTurnBasedMatchmakerViewController alloc();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -164,7 +164,7 @@ public class GKTurnBasedMatchmakerViewController extends UINavigationController 
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")
@@ -178,6 +178,10 @@ public class GKTurnBasedMatchmakerViewController extends UINavigationController 
     @Generated
     @Selector("init")
     public native GKTurnBasedMatchmakerViewController init();
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native GKTurnBasedMatchmakerViewController initWithCoder(NSCoder aDecoder);
 
     @Generated
     @Selector("initWithMatchRequest:")
@@ -227,8 +231,4 @@ public class GKTurnBasedMatchmakerViewController extends UINavigationController 
     @Selector("turnBasedMatchmakerDelegate")
     @MappedReturn(ObjCObjectMapper.class)
     public native GKTurnBasedMatchmakerViewControllerDelegate turnBasedMatchmakerDelegate();
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native GKTurnBasedMatchmakerViewController initWithCoder(NSCoder aDecoder);
 }

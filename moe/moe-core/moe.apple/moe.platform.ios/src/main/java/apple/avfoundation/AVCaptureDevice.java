@@ -64,44 +64,23 @@ public class AVCaptureDevice extends NSObject {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native AVCaptureDevice alloc();
 
     @Generated
-    @Selector("authorizationStatusForMediaType:")
-    @NInt
-    public static native long authorizationStatusForMediaType(String mediaType);
-
-    @Generated
-    @Selector("defaultDeviceWithMediaType:")
-    public static native AVCaptureDevice defaultDeviceWithMediaType(String mediaType);
-
-    @Generated
-    @Selector("deviceWithUniqueID:")
-    public static native AVCaptureDevice deviceWithUniqueID(String deviceUniqueID);
-
-    @Generated
-    @Selector("devices")
-    public static native NSArray<?> devices();
-
-    @Generated
-    @Selector("devicesWithMediaType:")
-    public static native NSArray<?> devicesWithMediaType(String mediaType);
-
-    @Generated
-    @Selector("requestAccessForMediaType:completionHandler:")
-    public static native void requestAccessForMediaTypeCompletionHandler(String mediaType,
-            @ObjCBlock(name = "call_requestAccessForMediaTypeCompletionHandler") Block_requestAccessForMediaTypeCompletionHandler handler);
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
-
-    @Generated
     @Selector("allocWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object allocWithZone(VoidPtr zone);
+
+    @Generated
+    @Selector("authorizationStatusForMediaType:")
+    @NInt
+    public static native long authorizationStatusForMediaType(String mediaType);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -130,8 +109,29 @@ public class AVCaptureDevice extends NSObject {
     public static native String debugDescription_static();
 
     @Generated
+    @Selector("defaultDeviceWithDeviceType:mediaType:position:")
+    public static native AVCaptureDevice defaultDeviceWithDeviceTypeMediaTypePosition(String deviceType,
+            String mediaType, @NInt long position);
+
+    @Generated
+    @Selector("defaultDeviceWithMediaType:")
+    public static native AVCaptureDevice defaultDeviceWithMediaType(String mediaType);
+
+    @Generated
     @Selector("description")
     public static native String description_static();
+
+    @Generated
+    @Selector("deviceWithUniqueID:")
+    public static native AVCaptureDevice deviceWithUniqueID(String deviceUniqueID);
+
+    @Generated
+    @Selector("devices")
+    public static native NSArray<?> devices();
+
+    @Generated
+    @Selector("devicesWithMediaType:")
+    public static native NSArray<?> devicesWithMediaType(String mediaType);
 
     @Generated
     @Selector("hash")
@@ -165,13 +165,18 @@ public class AVCaptureDevice extends NSObject {
 
     @Generated
     @Selector("load")
-    public static native void load_objc();
+    public static native void load_objc_static();
 
     @Generated
     @Owned
     @Selector("new")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object new_objc();
+
+    @Generated
+    @Selector("requestAccessForMediaType:completionHandler:")
+    public static native void requestAccessForMediaTypeCompletionHandler(String mediaType,
+            @ObjCBlock(name = "call_requestAccessForMediaTypeCompletionHandler") Block_requestAccessForMediaTypeCompletionHandler handler);
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -183,7 +188,7 @@ public class AVCaptureDevice extends NSObject {
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")
@@ -192,11 +197,16 @@ public class AVCaptureDevice extends NSObject {
     @Generated
     @Selector("version")
     @NInt
-    public static native long version();
+    public static native long version_static();
 
     @Generated
     @Selector("ISO")
     public native float ISO();
+
+    @Generated
+    @Selector("activeColorSpace")
+    @NInt
+    public native long activeColorSpace();
 
     @Generated
     @Selector("activeFormat")
@@ -234,6 +244,10 @@ public class AVCaptureDevice extends NSObject {
     @ByValue
     public native AVCaptureWhiteBalanceChromaticityValues chromaticityValuesForDeviceWhiteBalanceGains(
             @ByValue AVCaptureWhiteBalanceGains whiteBalanceGains);
+
+    @Generated
+    @Selector("deviceType")
+    public native String deviceType();
 
     @Generated
     @Selector("deviceWhiteBalanceGains")
@@ -364,6 +378,14 @@ public class AVCaptureDevice extends NSObject {
     public native boolean isFocusPointOfInterestSupported();
 
     @Generated
+    @Selector("isLockingFocusWithCustomLensPositionSupported")
+    public native boolean isLockingFocusWithCustomLensPositionSupported();
+
+    @Generated
+    @Selector("isLockingWhiteBalanceWithCustomDeviceGainsSupported")
+    public native boolean isLockingWhiteBalanceWithCustomDeviceGainsSupported();
+
+    @Generated
     @Selector("isLowLightBoostEnabled")
     public native boolean isLowLightBoostEnabled();
 
@@ -459,6 +481,10 @@ public class AVCaptureDevice extends NSObject {
     @Generated
     @Selector("rampToVideoZoomFactor:withRate:")
     public native void rampToVideoZoomFactorWithRate(@NFloat double factor, float rate);
+
+    @Generated
+    @Selector("setActiveColorSpace:")
+    public native void setActiveColorSpace(@NInt long value);
 
     @Generated
     @Selector("setActiveFormat:")

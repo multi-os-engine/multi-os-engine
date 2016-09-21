@@ -55,13 +55,13 @@ public class MKETAResponse extends NSObject {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native MKETAResponse alloc();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -164,18 +164,6 @@ public class MKETAResponse extends NSObject {
     public native MKMapItem destination();
 
     @Generated
-    @Selector("expectedTravelTime")
-    public native double expectedTravelTime();
-
-    @Generated
-    @Selector("init")
-    public native MKETAResponse init();
-
-    @Generated
-    @Selector("source")
-    public native MKMapItem source();
-
-    @Generated
     @Selector("distance")
     public native double distance();
 
@@ -186,6 +174,18 @@ public class MKETAResponse extends NSObject {
     @Generated
     @Selector("expectedDepartureDate")
     public native NSDate expectedDepartureDate();
+
+    @Generated
+    @Selector("expectedTravelTime")
+    public native double expectedTravelTime();
+
+    @Generated
+    @Selector("init")
+    public native MKETAResponse init();
+
+    @Generated
+    @Selector("source")
+    public native MKMapItem source();
 
     @Generated
     @Selector("transportType")

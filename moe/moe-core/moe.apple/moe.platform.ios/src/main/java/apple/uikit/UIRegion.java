@@ -61,18 +61,13 @@ public class UIRegion extends NSObject implements NSCopying, NSCoding {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native UIRegion alloc();
-
-    @Generated
-    @Selector("infiniteRegion")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object infiniteRegion();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -113,6 +108,10 @@ public class UIRegion extends NSObject implements NSCopying, NSCoding {
     @Selector("hash")
     @NUInt
     public static native long hash_static();
+
+    @Generated
+    @Selector("infiniteRegion")
+    public static native UIRegion infiniteRegion();
 
     @Generated
     @Selector("initialize")
@@ -159,7 +158,7 @@ public class UIRegion extends NSObject implements NSCopying, NSCoding {
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")

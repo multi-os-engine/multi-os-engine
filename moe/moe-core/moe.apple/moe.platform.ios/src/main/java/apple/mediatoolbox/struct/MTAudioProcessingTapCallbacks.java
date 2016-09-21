@@ -71,29 +71,13 @@ public final class MTAudioProcessingTapCallbacks extends StructObject {
     public native void setClientInfo(VoidPtr value);
 
     @Generated
-    @StructureField(order = 2, isGetter = false)
-    public native void setInit(@FunctionPtr(name = "call_init") Function_init value);
-
-    @Generated
-    @StructureField(order = 3, isGetter = false)
-    public native void set_finalize(@FunctionPtr(name = "call__finalize") Function__finalize value);
-
-    @Generated
-    @StructureField(order = 4, isGetter = false)
-    public native void setPrepare(@FunctionPtr(name = "call_prepare") Function_prepare value);
-
-    @Generated
-    @StructureField(order = 5, isGetter = false)
-    public native void setUnprepare(@FunctionPtr(name = "call_unprepare") Function_unprepare value);
-
-    @Generated
-    @StructureField(order = 6, isGetter = false)
-    public native void setProcess(@FunctionPtr(name = "call_process") Function_process value);
-
-    @Generated
     @StructureField(order = 2, isGetter = true)
     @FunctionPtr(name = "call_init")
     public native Function_init init();
+
+    @Generated
+    @StructureField(order = 2, isGetter = false)
+    public native void setInit(@FunctionPtr(name = "call_init") Function_init value);
 
     @Generated
     @StructureField(order = 3, isGetter = true)
@@ -101,9 +85,17 @@ public final class MTAudioProcessingTapCallbacks extends StructObject {
     public native Function__finalize _finalize();
 
     @Generated
+    @StructureField(order = 3, isGetter = false)
+    public native void set_finalize(@FunctionPtr(name = "call__finalize") Function__finalize value);
+
+    @Generated
     @StructureField(order = 4, isGetter = true)
     @FunctionPtr(name = "call_prepare")
     public native Function_prepare prepare();
+
+    @Generated
+    @StructureField(order = 4, isGetter = false)
+    public native void setPrepare(@FunctionPtr(name = "call_prepare") Function_prepare value);
 
     @Generated
     @StructureField(order = 5, isGetter = true)
@@ -111,9 +103,17 @@ public final class MTAudioProcessingTapCallbacks extends StructObject {
     public native Function_unprepare unprepare();
 
     @Generated
+    @StructureField(order = 5, isGetter = false)
+    public native void setUnprepare(@FunctionPtr(name = "call_unprepare") Function_unprepare value);
+
+    @Generated
     @StructureField(order = 6, isGetter = true)
     @FunctionPtr(name = "call_process")
     public native Function_process process();
+
+    @Generated
+    @StructureField(order = 6, isGetter = false)
+    public native void setProcess(@FunctionPtr(name = "call_process") Function_process value);
 
     @Runtime(CRuntime.class)
     @Generated

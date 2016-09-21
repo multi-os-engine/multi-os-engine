@@ -55,17 +55,13 @@ public class ASIdentifierManager extends NSObject {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native ASIdentifierManager alloc();
-
-    @Generated
-    @Selector("sharedManager")
-    public static native ASIdentifierManager sharedManager();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -153,6 +149,10 @@ public class ASIdentifierManager extends NSObject {
     @Generated
     @Selector("setVersion:")
     public static native void setVersion_static(@NInt long aVersion);
+
+    @Generated
+    @Selector("sharedManager")
+    public static native ASIdentifierManager sharedManager();
 
     @Generated
     @Selector("superclass")

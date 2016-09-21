@@ -56,17 +56,13 @@ public class NSBatchUpdateRequest extends NSPersistentStoreRequest {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native NSBatchUpdateRequest alloc();
-
-    @Generated
-    @Selector("batchUpdateRequestWithEntityName:")
-    public static native NSBatchUpdateRequest batchUpdateRequestWithEntityName(String entityName);
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -76,6 +72,10 @@ public class NSBatchUpdateRequest extends NSPersistentStoreRequest {
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
     public static native boolean automaticallyNotifiesObserversForKey(String key);
+
+    @Generated
+    @Selector("batchUpdateRequestWithEntityName:")
+    public static native NSBatchUpdateRequest batchUpdateRequestWithEntityName(String entityName);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")

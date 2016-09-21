@@ -60,17 +60,13 @@ public class UIDocumentInteractionController extends NSObject implements UIActio
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native UIDocumentInteractionController alloc();
-
-    @Generated
-    @Selector("interactionControllerWithURL:")
-    public static native UIDocumentInteractionController interactionControllerWithURL(NSURL url);
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -130,6 +126,10 @@ public class UIDocumentInteractionController extends NSObject implements UIActio
     public static native boolean instancesRespondToSelector(SEL aSelector);
 
     @Generated
+    @Selector("interactionControllerWithURL:")
+    public static native UIDocumentInteractionController interactionControllerWithURL(NSURL url);
+
+    @Generated
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
@@ -176,27 +176,27 @@ public class UIDocumentInteractionController extends NSObject implements UIActio
     @Selector("UTI")
     public native String UTI();
 
-    @Deprecated
     @Generated
     @IsOptional
+    @Deprecated
     @Selector("actionSheet:clickedButtonAtIndex:")
     public native void actionSheetClickedButtonAtIndex(UIActionSheet actionSheet, @NInt long buttonIndex);
 
-    @Deprecated
     @Generated
     @IsOptional
+    @Deprecated
     @Selector("actionSheet:didDismissWithButtonIndex:")
     public native void actionSheetDidDismissWithButtonIndex(UIActionSheet actionSheet, @NInt long buttonIndex);
 
-    @Deprecated
     @Generated
     @IsOptional
+    @Deprecated
     @Selector("actionSheet:willDismissWithButtonIndex:")
     public native void actionSheetWillDismissWithButtonIndex(UIActionSheet actionSheet, @NInt long buttonIndex);
 
-    @Deprecated
     @Generated
     @IsOptional
+    @Deprecated
     @Selector("actionSheetCancel:")
     public native void actionSheetCancel(UIActionSheet actionSheet);
 
@@ -210,9 +210,9 @@ public class UIDocumentInteractionController extends NSObject implements UIActio
     @MappedReturn(ObjCObjectMapper.class)
     public native UIDocumentInteractionControllerDelegate delegate();
 
-    @Deprecated
     @Generated
     @IsOptional
+    @Deprecated
     @Selector("didPresentActionSheet:")
     public native void didPresentActionSheet(UIActionSheet actionSheet);
 
@@ -293,9 +293,9 @@ public class UIDocumentInteractionController extends NSObject implements UIActio
     @Selector("setUTI:")
     public native void setUTI(String value);
 
-    @Deprecated
     @Generated
     @IsOptional
+    @Deprecated
     @Selector("willPresentActionSheet:")
     public native void willPresentActionSheet(UIActionSheet actionSheet);
 }

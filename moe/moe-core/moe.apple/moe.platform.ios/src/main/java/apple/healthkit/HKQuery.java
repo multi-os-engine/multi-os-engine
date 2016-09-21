@@ -58,108 +58,13 @@ public class HKQuery extends NSObject {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native HKQuery alloc();
-
-    @Generated
-    @Selector("predicateForCategorySamplesWithOperatorType:value:")
-    public static native NSPredicate predicateForCategorySamplesWithOperatorTypeValue(@NUInt long operatorType,
-            @NInt long value);
-
-    @Generated
-    @Selector("predicateForObjectWithUUID:")
-    public static native NSPredicate predicateForObjectWithUUID(NSUUID UUID);
-
-    @Generated
-    @Selector("predicateForObjectsFromSource:")
-    public static native NSPredicate predicateForObjectsFromSource(HKSource source);
-
-    @Generated
-    @Selector("predicateForObjectsFromSources:")
-    public static native NSPredicate predicateForObjectsFromSources(NSSet<? extends HKSource> sources);
-
-    @Generated
-    @Selector("predicateForObjectsFromWorkout:")
-    public static native NSPredicate predicateForObjectsFromWorkout(HKWorkout workout);
-
-    @Generated
-    @Selector("predicateForObjectsWithMetadataKey:")
-    public static native NSPredicate predicateForObjectsWithMetadataKey(String key);
-
-    @Generated
-    @Selector("predicateForObjectsWithMetadataKey:allowedValues:")
-    public static native NSPredicate predicateForObjectsWithMetadataKeyAllowedValues(String key,
-            NSArray<?> allowedValues);
-
-    @Generated
-    @Selector("predicateForObjectsWithMetadataKey:operatorType:value:")
-    public static native NSPredicate predicateForObjectsWithMetadataKeyOperatorTypeValue(String key,
-            @NUInt long operatorType, @Mapped(ObjCObjectMapper.class) Object value);
-
-    @Generated
-    @Selector("predicateForObjectsWithNoCorrelation")
-    public static native NSPredicate predicateForObjectsWithNoCorrelation();
-
-    @Generated
-    @Selector("predicateForObjectsWithUUIDs:")
-    public static native NSPredicate predicateForObjectsWithUUIDs(NSSet<? extends NSUUID> UUIDs);
-
-    @Generated
-    @Selector("predicateForQuantitySamplesWithOperatorType:quantity:")
-    public static native NSPredicate predicateForQuantitySamplesWithOperatorTypeQuantity(@NUInt long operatorType,
-            HKQuantity quantity);
-
-    @Generated
-    @Selector("predicateForSamplesWithStartDate:endDate:options:")
-    public static native NSPredicate predicateForSamplesWithStartDateEndDateOptions(NSDate startDate, NSDate endDate,
-            @NUInt long options);
-
-    @Generated
-    @Selector("predicateForWorkoutsWithOperatorType:duration:")
-    public static native NSPredicate predicateForWorkoutsWithOperatorTypeDuration(@NUInt long operatorType,
-            double duration);
-
-    @Generated
-    @Selector("predicateForWorkoutsWithOperatorType:totalDistance:")
-    public static native NSPredicate predicateForWorkoutsWithOperatorTypeTotalDistance(@NUInt long operatorType,
-            HKQuantity totalDistance);
-
-    @Generated
-    @Selector("predicateForWorkoutsWithOperatorType:totalEnergyBurned:")
-    public static native NSPredicate predicateForWorkoutsWithOperatorTypeTotalEnergyBurned(@NUInt long operatorType,
-            HKQuantity totalEnergyBurned);
-
-    @Generated
-    @Selector("predicateForWorkoutsWithWorkoutActivityType:")
-    public static native NSPredicate predicateForWorkoutsWithWorkoutActivityType(@NUInt long workoutActivityType);
-
-    @Generated
-    @Selector("predicateForObjectsFromDevices:")
-    public static native NSPredicate predicateForObjectsFromDevices(NSSet<? extends HKDevice> devices);
-
-    @Generated
-    @Selector("predicateForObjectsFromSourceRevisions:")
-    public static native NSPredicate predicateForObjectsFromSourceRevisions(
-            NSSet<? extends HKSourceRevision> sourceRevisions);
-
-    @Generated
-    @Selector("predicateForObjectsWithDeviceProperty:allowedValues:")
-    public static native NSPredicate predicateForObjectsWithDevicePropertyAllowedValues(String key,
-            NSSet<String> allowedValues);
-
-    @Generated
-    @Selector("predicateForActivitySummariesBetweenStartDateComponents:endDateComponents:")
-    public static native NSPredicate predicateForActivitySummariesBetweenStartDateComponentsEndDateComponents(
-            NSDateComponents startDateComponents, NSDateComponents endDateComponents);
-
-    @Generated
-    @Selector("predicateForActivitySummaryWithDateComponents:")
-    public static native NSPredicate predicateForActivitySummaryWithDateComponents(NSDateComponents dateComponents);
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -237,6 +142,106 @@ public class HKQuery extends NSObject {
     public static native Object new_objc();
 
     @Generated
+    @Selector("predicateForActivitySummariesBetweenStartDateComponents:endDateComponents:")
+    public static native NSPredicate predicateForActivitySummariesBetweenStartDateComponentsEndDateComponents(
+            NSDateComponents startDateComponents, NSDateComponents endDateComponents);
+
+    @Generated
+    @Selector("predicateForActivitySummaryWithDateComponents:")
+    public static native NSPredicate predicateForActivitySummaryWithDateComponents(NSDateComponents dateComponents);
+
+    @Generated
+    @Selector("predicateForCategorySamplesWithOperatorType:value:")
+    public static native NSPredicate predicateForCategorySamplesWithOperatorTypeValue(@NUInt long operatorType,
+            @NInt long value);
+
+    @Generated
+    @Selector("predicateForObjectWithUUID:")
+    public static native NSPredicate predicateForObjectWithUUID(NSUUID UUID);
+
+    @Generated
+    @Selector("predicateForObjectsFromDevices:")
+    public static native NSPredicate predicateForObjectsFromDevices(NSSet<? extends HKDevice> devices);
+
+    @Generated
+    @Selector("predicateForObjectsFromSource:")
+    public static native NSPredicate predicateForObjectsFromSource(HKSource source);
+
+    @Generated
+    @Selector("predicateForObjectsFromSourceRevisions:")
+    public static native NSPredicate predicateForObjectsFromSourceRevisions(
+            NSSet<? extends HKSourceRevision> sourceRevisions);
+
+    @Generated
+    @Selector("predicateForObjectsFromSources:")
+    public static native NSPredicate predicateForObjectsFromSources(NSSet<? extends HKSource> sources);
+
+    @Generated
+    @Selector("predicateForObjectsFromWorkout:")
+    public static native NSPredicate predicateForObjectsFromWorkout(HKWorkout workout);
+
+    @Generated
+    @Selector("predicateForObjectsWithDeviceProperty:allowedValues:")
+    public static native NSPredicate predicateForObjectsWithDevicePropertyAllowedValues(String key,
+            NSSet<String> allowedValues);
+
+    @Generated
+    @Selector("predicateForObjectsWithMetadataKey:")
+    public static native NSPredicate predicateForObjectsWithMetadataKey(String key);
+
+    @Generated
+    @Selector("predicateForObjectsWithMetadataKey:allowedValues:")
+    public static native NSPredicate predicateForObjectsWithMetadataKeyAllowedValues(String key,
+            NSArray<?> allowedValues);
+
+    @Generated
+    @Selector("predicateForObjectsWithMetadataKey:operatorType:value:")
+    public static native NSPredicate predicateForObjectsWithMetadataKeyOperatorTypeValue(String key,
+            @NUInt long operatorType, @Mapped(ObjCObjectMapper.class) Object value);
+
+    @Generated
+    @Selector("predicateForObjectsWithNoCorrelation")
+    public static native NSPredicate predicateForObjectsWithNoCorrelation();
+
+    @Generated
+    @Selector("predicateForObjectsWithUUIDs:")
+    public static native NSPredicate predicateForObjectsWithUUIDs(NSSet<? extends NSUUID> UUIDs);
+
+    @Generated
+    @Selector("predicateForQuantitySamplesWithOperatorType:quantity:")
+    public static native NSPredicate predicateForQuantitySamplesWithOperatorTypeQuantity(@NUInt long operatorType,
+            HKQuantity quantity);
+
+    @Generated
+    @Selector("predicateForSamplesWithStartDate:endDate:options:")
+    public static native NSPredicate predicateForSamplesWithStartDateEndDateOptions(NSDate startDate, NSDate endDate,
+            @NUInt long options);
+
+    @Generated
+    @Selector("predicateForWorkoutsWithOperatorType:duration:")
+    public static native NSPredicate predicateForWorkoutsWithOperatorTypeDuration(@NUInt long operatorType,
+            double duration);
+
+    @Generated
+    @Selector("predicateForWorkoutsWithOperatorType:totalDistance:")
+    public static native NSPredicate predicateForWorkoutsWithOperatorTypeTotalDistance(@NUInt long operatorType,
+            HKQuantity totalDistance);
+
+    @Generated
+    @Selector("predicateForWorkoutsWithOperatorType:totalEnergyBurned:")
+    public static native NSPredicate predicateForWorkoutsWithOperatorTypeTotalEnergyBurned(@NUInt long operatorType,
+            HKQuantity totalEnergyBurned);
+
+    @Generated
+    @Selector("predicateForWorkoutsWithOperatorType:totalSwimmingStrokeCount:")
+    public static native NSPredicate predicateForWorkoutsWithOperatorTypeTotalSwimmingStrokeCount(
+            @NUInt long operatorType, HKQuantity totalSwimmingStrokeCount);
+
+    @Generated
+    @Selector("predicateForWorkoutsWithWorkoutActivityType:")
+    public static native NSPredicate predicateForWorkoutsWithWorkoutActivityType(@NUInt long workoutActivityType);
+
+    @Generated
     @Selector("resolveClassMethod:")
     public static native boolean resolveClassMethod(SEL sel);
 
@@ -246,7 +251,7 @@ public class HKQuery extends NSObject {
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")
@@ -255,11 +260,15 @@ public class HKQuery extends NSObject {
     @Generated
     @Selector("version")
     @NInt
-    public static native long version();
+    public static native long version_static();
 
     @Generated
     @Selector("init")
     public native HKQuery init();
+
+    @Generated
+    @Selector("objectType")
+    public native HKObjectType objectType();
 
     @Generated
     @Selector("predicate")
@@ -268,8 +277,4 @@ public class HKQuery extends NSObject {
     @Generated
     @Selector("sampleType")
     public native HKSampleType sampleType();
-
-    @Generated
-    @Selector("objectType")
-    public native HKObjectType objectType();
 }

@@ -20,13 +20,6 @@ import org.moe.natj.general.ann.Generated;
 
 @Generated
 public final class Enums {
-    @Generated public static final int kCVTimeIsIndefinite = 0x00000001;
-    @Generated public static final int kCVAttachmentMode_ShouldNotPropagate = 0x00000000;
-    @Generated public static final int kCVAttachmentMode_ShouldPropagate = 0x00000001;
-    @Generated public static final int kCVSMPTETimeValid = 0x00000001;
-    @Generated public static final int kCVSMPTETimeRunning = 0x00000002;
-    @Generated public static final int kCVTimeStampVideoHostTimeValid = 0x00000003;
-    @Generated public static final int kCVTimeStampIsInterlaced = 0x00030000;
     @Generated public static final int kCVPixelFormatType_1Monochrome = 0x00000001;
     @Generated public static final int kCVPixelFormatType_2Indexed = 0x00000002;
     @Generated public static final int kCVPixelFormatType_4Indexed = 0x00000004;
@@ -69,29 +62,17 @@ public final class Enums {
     @Generated public static final int kCVPixelFormatType_422YpCbCr8FullRange = 0x79757666;
     @Generated public static final int kCVPixelFormatType_OneComponent8 = 0x4C303038;
     @Generated public static final int kCVPixelFormatType_TwoComponent8 = 0x32433038;
+    @Generated public static final int kCVPixelFormatType_30RGBLEPackedWideGamut = 0x77333072;
     @Generated public static final int kCVPixelFormatType_OneComponent16Half = 0x4C303068;
     @Generated public static final int kCVPixelFormatType_OneComponent32Float = 0x4C303066;
     @Generated public static final int kCVPixelFormatType_TwoComponent16Half = 0x32433068;
     @Generated public static final int kCVPixelFormatType_TwoComponent32Float = 0x32433066;
     @Generated public static final int kCVPixelFormatType_64RGBAHalf = 0x52476841;
     @Generated public static final int kCVPixelFormatType_128RGBAFloat = 0x52476641;
-    @Generated public static final int kCVTimeStampVideoTimeValid = 0x00000001;
-    @Generated public static final int kCVTimeStampHostTimeValid = 0x00000002;
-    @Generated public static final int kCVTimeStampSMPTETimeValid = 0x00000004;
-    @Generated public static final int kCVTimeStampVideoRefreshPeriodValid = 0x00000008;
-    @Generated public static final int kCVTimeStampRateScalarValid = 0x00000010;
-    @Generated public static final int kCVTimeStampTopField = 0x00010000;
-    @Generated public static final int kCVTimeStampBottomField = 0x00020000;
-    @Generated public static final int kCVSMPTETimeType24 = 0x00000000;
-    @Generated public static final int kCVSMPTETimeType25 = 0x00000001;
-    @Generated public static final int kCVSMPTETimeType30Drop = 0x00000002;
-    @Generated public static final int kCVSMPTETimeType30 = 0x00000003;
-    @Generated public static final int kCVSMPTETimeType2997 = 0x00000004;
-    @Generated public static final int kCVSMPTETimeType2997Drop = 0x00000005;
-    @Generated public static final int kCVSMPTETimeType60 = 0x00000006;
-    @Generated public static final int kCVSMPTETimeType5994 = 0x00000007;
-    @Generated public static final long kCVPixelBufferLock_ReadOnly = 0x0000000000000001L;
-    @Generated public static final long kCVPixelBufferPoolFlushExcessBuffers = 0x0000000000000001L;
+    @Generated public static final int kCVPixelFormatType_14Bayer_GRBG = 0x67726234;
+    @Generated public static final int kCVPixelFormatType_14Bayer_RGGB = 0x72676734;
+    @Generated public static final int kCVPixelFormatType_14Bayer_BGGR = 0x62676734;
+    @Generated public static final int kCVPixelFormatType_14Bayer_GBRG = 0x67627234;
     @Generated public static final int kCVReturnSuccess = 0x00000000;
     @Generated public static final int kCVReturnFirst = 0xFFFFE5FC;
     @Generated public static final int kCVReturnError = 0xFFFFE5FC;
@@ -110,6 +91,7 @@ public final class Enums {
     @Generated public static final int kCVReturnWouldExceedAllocationThreshold = 0xFFFFE5DF;
     @Generated public static final int kCVReturnPoolAllocationFailed = 0xFFFFE5DE;
     @Generated public static final int kCVReturnInvalidPoolAttributes = 0xFFFFE5DD;
+    @Generated public static final int kCVReturnRetry = 0xFFFFE5DC;
     @Generated public static final int kCVReturnLast = 0xFFFFE5D5;
 
     @Generated

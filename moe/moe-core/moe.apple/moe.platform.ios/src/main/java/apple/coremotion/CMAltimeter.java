@@ -57,17 +57,13 @@ public class CMAltimeter extends NSObject {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native CMAltimeter alloc();
-
-    @Generated
-    @Selector("isRelativeAltitudeAvailable")
-    public static native boolean isRelativeAltitudeAvailable();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -125,6 +121,10 @@ public class CMAltimeter extends NSObject {
     @Generated
     @Selector("instancesRespondToSelector:")
     public static native boolean instancesRespondToSelector(SEL aSelector);
+
+    @Generated
+    @Selector("isRelativeAltitudeAvailable")
+    public static native boolean isRelativeAltitudeAvailable();
 
     @Generated
     @Selector("isSubclassOfClass:")

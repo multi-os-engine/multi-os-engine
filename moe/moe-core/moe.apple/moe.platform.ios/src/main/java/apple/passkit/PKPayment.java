@@ -55,13 +55,13 @@ public class PKPayment extends NSObject {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native PKPayment alloc();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -159,19 +159,27 @@ public class PKPayment extends NSObject {
     @NInt
     public static native long version_static();
 
-    @Deprecated
     @Generated
+    @Deprecated
     @Selector("billingAddress")
     public native ConstVoidPtr billingAddress();
+
+    @Generated
+    @Selector("billingContact")
+    public native PKContact billingContact();
 
     @Generated
     @Selector("init")
     public native PKPayment init();
 
-    @Deprecated
     @Generated
+    @Deprecated
     @Selector("shippingAddress")
     public native ConstVoidPtr shippingAddress();
+
+    @Generated
+    @Selector("shippingContact")
+    public native PKContact shippingContact();
 
     @Generated
     @Selector("shippingMethod")
@@ -180,12 +188,4 @@ public class PKPayment extends NSObject {
     @Generated
     @Selector("token")
     public native PKPaymentToken token();
-
-    @Generated
-    @Selector("billingContact")
-    public native PKContact billingContact();
-
-    @Generated
-    @Selector("shippingContact")
-    public native PKContact shippingContact();
 }

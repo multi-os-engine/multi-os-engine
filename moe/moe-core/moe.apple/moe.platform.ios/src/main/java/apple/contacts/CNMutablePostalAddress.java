@@ -56,13 +56,13 @@ public class CNMutablePostalAddress extends CNPostalAddress {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native CNMutablePostalAddress alloc();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -185,6 +185,10 @@ public class CNMutablePostalAddress extends CNPostalAddress {
     public native CNMutablePostalAddress init();
 
     @Generated
+    @Selector("initWithCoder:")
+    public native CNMutablePostalAddress initWithCoder(NSCoder aDecoder);
+
+    @Generated
     @Selector("postalCode")
     public native String postalCode();
 
@@ -219,10 +223,6 @@ public class CNMutablePostalAddress extends CNPostalAddress {
     @Generated
     @Selector("street")
     public native String street();
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native CNMutablePostalAddress initWithCoder(NSCoder aDecoder);
 
     @Generated
     @ProtocolClassMethod("supportsSecureCoding")

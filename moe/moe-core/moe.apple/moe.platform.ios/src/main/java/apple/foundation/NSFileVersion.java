@@ -54,39 +54,13 @@ public class NSFileVersion extends NSObject {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native NSFileVersion alloc();
-
-    @Generated
-    @Selector("currentVersionOfItemAtURL:")
-    public static native NSFileVersion currentVersionOfItemAtURL(NSURL url);
-
-    @Generated
-    @Selector("getNonlocalVersionsOfItemAtURL:completionHandler:")
-    public static native void getNonlocalVersionsOfItemAtURLCompletionHandler(NSURL url,
-            @ObjCBlock(name = "call_getNonlocalVersionsOfItemAtURLCompletionHandler") Block_getNonlocalVersionsOfItemAtURLCompletionHandler completionHandler);
-
-    @Generated
-    @Selector("otherVersionsOfItemAtURL:")
-    public static native NSArray<? extends NSFileVersion> otherVersionsOfItemAtURL(NSURL url);
-
-    @Generated
-    @Selector("removeOtherVersionsOfItemAtURL:error:")
-    public static native boolean removeOtherVersionsOfItemAtURLError(NSURL url, Ptr<NSError> outError);
-
-    @Generated
-    @Selector("unresolvedConflictVersionsOfItemAtURL:")
-    public static native NSArray<? extends NSFileVersion> unresolvedConflictVersionsOfItemAtURL(NSURL url);
-
-    @Generated
-    @Selector("versionOfItemAtURL:forPersistentIdentifier:")
-    public static native NSFileVersion versionOfItemAtURLForPersistentIdentifier(NSURL url,
-            @Mapped(ObjCObjectMapper.class) Object persistentIdentifier);
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -116,12 +90,21 @@ public class NSFileVersion extends NSObject {
     public static native Class classForKeyedUnarchiver();
 
     @Generated
+    @Selector("currentVersionOfItemAtURL:")
+    public static native NSFileVersion currentVersionOfItemAtURL(NSURL url);
+
+    @Generated
     @Selector("debugDescription")
     public static native String debugDescription_static();
 
     @Generated
     @Selector("description")
     public static native String description_static();
+
+    @Generated
+    @Selector("getNonlocalVersionsOfItemAtURL:completionHandler:")
+    public static native void getNonlocalVersionsOfItemAtURLCompletionHandler(NSURL url,
+            @ObjCBlock(name = "call_getNonlocalVersionsOfItemAtURLCompletionHandler") Block_getNonlocalVersionsOfItemAtURLCompletionHandler completionHandler);
 
     @Generated
     @Selector("hash")
@@ -164,6 +147,14 @@ public class NSFileVersion extends NSObject {
     public static native Object new_objc();
 
     @Generated
+    @Selector("otherVersionsOfItemAtURL:")
+    public static native NSArray<? extends NSFileVersion> otherVersionsOfItemAtURL(NSURL url);
+
+    @Generated
+    @Selector("removeOtherVersionsOfItemAtURL:error:")
+    public static native boolean removeOtherVersionsOfItemAtURLError(NSURL url, Ptr<NSError> outError);
+
+    @Generated
     @Selector("resolveClassMethod:")
     public static native boolean resolveClassMethod(SEL sel);
 
@@ -173,16 +164,25 @@ public class NSFileVersion extends NSObject {
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")
     public static native Class superclass_static();
 
     @Generated
+    @Selector("unresolvedConflictVersionsOfItemAtURL:")
+    public static native NSArray<? extends NSFileVersion> unresolvedConflictVersionsOfItemAtURL(NSURL url);
+
+    @Generated
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("versionOfItemAtURL:forPersistentIdentifier:")
+    public static native NSFileVersion versionOfItemAtURLForPersistentIdentifier(NSURL url,
+            @Mapped(ObjCObjectMapper.class) Object persistentIdentifier);
 
     @Generated
     @Selector("URL")

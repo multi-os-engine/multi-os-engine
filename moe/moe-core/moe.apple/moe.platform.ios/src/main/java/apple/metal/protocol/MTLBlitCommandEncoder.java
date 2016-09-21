@@ -44,6 +44,14 @@ public interface MTLBlitCommandEncoder extends MTLCommandEncoder {
             @NUInt long destinationLevel, @ByValue MTLOrigin destinationOrigin);
 
     @Generated
+    @Selector("copyFromBuffer:sourceOffset:sourceBytesPerRow:sourceBytesPerImage:sourceSize:toTexture:destinationSlice:destinationLevel:destinationOrigin:options:")
+    void copyFromBufferSourceOffsetSourceBytesPerRowSourceBytesPerImageSourceSizeToTextureDestinationSliceDestinationLevelDestinationOriginOptions(
+            @Mapped(ObjCObjectMapper.class) Object sourceBuffer, @NUInt long sourceOffset,
+            @NUInt long sourceBytesPerRow, @NUInt long sourceBytesPerImage, @ByValue MTLSize sourceSize,
+            @Mapped(ObjCObjectMapper.class) Object destinationTexture, @NUInt long destinationSlice,
+            @NUInt long destinationLevel, @ByValue MTLOrigin destinationOrigin, @NUInt long options);
+
+    @Generated
     @Selector("copyFromBuffer:sourceOffset:toBuffer:destinationOffset:size:")
     void copyFromBufferSourceOffsetToBufferDestinationOffsetSize(@Mapped(ObjCObjectMapper.class) Object sourceBuffer,
             @NUInt long sourceOffset, @Mapped(ObjCObjectMapper.class) Object destinationBuffer,
@@ -56,6 +64,14 @@ public interface MTLBlitCommandEncoder extends MTLCommandEncoder {
             @ByValue MTLOrigin sourceOrigin, @ByValue MTLSize sourceSize,
             @Mapped(ObjCObjectMapper.class) Object destinationBuffer, @NUInt long destinationOffset,
             @NUInt long destinationBytesPerRow, @NUInt long destinationBytesPerImage);
+
+    @Generated
+    @Selector("copyFromTexture:sourceSlice:sourceLevel:sourceOrigin:sourceSize:toBuffer:destinationOffset:destinationBytesPerRow:destinationBytesPerImage:options:")
+    void copyFromTextureSourceSliceSourceLevelSourceOriginSourceSizeToBufferDestinationOffsetDestinationBytesPerRowDestinationBytesPerImageOptions(
+            @Mapped(ObjCObjectMapper.class) Object sourceTexture, @NUInt long sourceSlice, @NUInt long sourceLevel,
+            @ByValue MTLOrigin sourceOrigin, @ByValue MTLSize sourceSize,
+            @Mapped(ObjCObjectMapper.class) Object destinationBuffer, @NUInt long destinationOffset,
+            @NUInt long destinationBytesPerRow, @NUInt long destinationBytesPerImage, @NUInt long options);
 
     @Generated
     @Selector("copyFromTexture:sourceSlice:sourceLevel:sourceOrigin:sourceSize:toTexture:destinationSlice:destinationLevel:destinationOrigin:")
@@ -74,18 +90,10 @@ public interface MTLBlitCommandEncoder extends MTLCommandEncoder {
     void generateMipmapsForTexture(@Mapped(ObjCObjectMapper.class) Object texture);
 
     @Generated
-    @Selector("copyFromBuffer:sourceOffset:sourceBytesPerRow:sourceBytesPerImage:sourceSize:toTexture:destinationSlice:destinationLevel:destinationOrigin:options:")
-    void copyFromBufferSourceOffsetSourceBytesPerRowSourceBytesPerImageSourceSizeToTextureDestinationSliceDestinationLevelDestinationOriginOptions(
-            @Mapped(ObjCObjectMapper.class) Object sourceBuffer, @NUInt long sourceOffset,
-            @NUInt long sourceBytesPerRow, @NUInt long sourceBytesPerImage, @ByValue MTLSize sourceSize,
-            @Mapped(ObjCObjectMapper.class) Object destinationTexture, @NUInt long destinationSlice,
-            @NUInt long destinationLevel, @ByValue MTLOrigin destinationOrigin, @NUInt long options);
+    @Selector("updateFence:")
+    void updateFence(@Mapped(ObjCObjectMapper.class) Object fence);
 
     @Generated
-    @Selector("copyFromTexture:sourceSlice:sourceLevel:sourceOrigin:sourceSize:toBuffer:destinationOffset:destinationBytesPerRow:destinationBytesPerImage:options:")
-    void copyFromTextureSourceSliceSourceLevelSourceOriginSourceSizeToBufferDestinationOffsetDestinationBytesPerRowDestinationBytesPerImageOptions(
-            @Mapped(ObjCObjectMapper.class) Object sourceTexture, @NUInt long sourceSlice, @NUInt long sourceLevel,
-            @ByValue MTLOrigin sourceOrigin, @ByValue MTLSize sourceSize,
-            @Mapped(ObjCObjectMapper.class) Object destinationBuffer, @NUInt long destinationOffset,
-            @NUInt long destinationBytesPerRow, @NUInt long destinationBytesPerImage, @NUInt long options);
+    @Selector("waitForFence:")
+    void waitForFence(@Mapped(ObjCObjectMapper.class) Object fence);
 }

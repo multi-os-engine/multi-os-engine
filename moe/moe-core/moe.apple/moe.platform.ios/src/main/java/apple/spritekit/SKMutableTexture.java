@@ -25,6 +25,7 @@ import apple.foundation.NSCoder;
 import apple.foundation.NSData;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
+import apple.gameplaykit.GKNoiseMap;
 import apple.uikit.UIImage;
 import org.moe.natj.c.ann.FunctionPtr;
 import org.moe.natj.general.NatJ;
@@ -63,57 +64,13 @@ public class SKMutableTexture extends SKTexture {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native SKMutableTexture alloc();
-
-    @Generated
-    @Selector("mutableTextureWithSize:")
-    public static native SKMutableTexture mutableTextureWithSize(@ByValue CGSize size);
-
-    @Generated
-    @Selector("textureNoiseWithSmoothness:size:grayscale:")
-    public static native SKMutableTexture textureNoiseWithSmoothnessSizeGrayscale(@NFloat double smoothness,
-            @ByValue CGSize size, boolean grayscale);
-
-    @Generated
-    @Selector("textureVectorNoiseWithSmoothness:size:")
-    public static native SKMutableTexture textureVectorNoiseWithSmoothnessSize(@NFloat double smoothness,
-            @ByValue CGSize size);
-
-    @Generated
-    @Selector("textureWithCGImage:")
-    public static native SKMutableTexture textureWithCGImage(CGImageRef image);
-
-    @Generated
-    @Selector("textureWithData:size:")
-    public static native SKMutableTexture textureWithDataSize(NSData pixelData, @ByValue CGSize size);
-
-    @Generated
-    @Selector("textureWithData:size:flipped:")
-    public static native SKMutableTexture textureWithDataSizeFlipped(NSData pixelData, @ByValue CGSize size,
-            boolean flipped);
-
-    @Generated
-    @Selector("textureWithData:size:rowLength:alignment:")
-    public static native SKMutableTexture textureWithDataSizeRowLengthAlignment(NSData pixelData, @ByValue CGSize size,
-            int rowLength, int alignment);
-
-    @Generated
-    @Selector("textureWithImage:")
-    public static native SKMutableTexture textureWithImage(UIImage image);
-
-    @Generated
-    @Selector("textureWithImageNamed:")
-    public static native SKMutableTexture textureWithImageNamed(String name);
-
-    @Generated
-    @Selector("textureWithRect:inTexture:")
-    public static native SKMutableTexture textureWithRectInTexture(@ByValue CGRect rect, SKTexture texture);
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -185,6 +142,10 @@ public class SKMutableTexture extends SKTexture {
     public static native void load_objc_static();
 
     @Generated
+    @Selector("mutableTextureWithSize:")
+    public static native SKMutableTexture mutableTextureWithSize(@ByValue CGSize size);
+
+    @Generated
     @Owned
     @Selector("new")
     @MappedReturn(ObjCObjectMapper.class)
@@ -205,11 +166,55 @@ public class SKMutableTexture extends SKTexture {
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")
     public static native Class superclass_static();
+
+    @Generated
+    @Selector("textureNoiseWithSmoothness:size:grayscale:")
+    public static native SKMutableTexture textureNoiseWithSmoothnessSizeGrayscale(@NFloat double smoothness,
+            @ByValue CGSize size, boolean grayscale);
+
+    @Generated
+    @Selector("textureVectorNoiseWithSmoothness:size:")
+    public static native SKMutableTexture textureVectorNoiseWithSmoothnessSize(@NFloat double smoothness,
+            @ByValue CGSize size);
+
+    @Generated
+    @Selector("textureWithCGImage:")
+    public static native SKMutableTexture textureWithCGImage(CGImageRef image);
+
+    @Generated
+    @Selector("textureWithData:size:")
+    public static native SKMutableTexture textureWithDataSize(NSData pixelData, @ByValue CGSize size);
+
+    @Generated
+    @Selector("textureWithData:size:flipped:")
+    public static native SKMutableTexture textureWithDataSizeFlipped(NSData pixelData, @ByValue CGSize size,
+            boolean flipped);
+
+    @Generated
+    @Selector("textureWithData:size:rowLength:alignment:")
+    public static native SKMutableTexture textureWithDataSizeRowLengthAlignment(NSData pixelData, @ByValue CGSize size,
+            int rowLength, int alignment);
+
+    @Generated
+    @Selector("textureWithImage:")
+    public static native SKMutableTexture textureWithImage(UIImage image);
+
+    @Generated
+    @Selector("textureWithImageNamed:")
+    public static native SKMutableTexture textureWithImageNamed(String name);
+
+    @Generated
+    @Selector("textureWithNoiseMap:")
+    public static native SKMutableTexture textureWithNoiseMap(GKNoiseMap noiseMap);
+
+    @Generated
+    @Selector("textureWithRect:inTexture:")
+    public static native SKMutableTexture textureWithRectInTexture(@ByValue CGRect rect, SKTexture texture);
 
     @Generated
     @Selector("version")
@@ -219,6 +224,10 @@ public class SKMutableTexture extends SKTexture {
     @Generated
     @Selector("init")
     public native SKMutableTexture init();
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native SKMutableTexture initWithCoder(NSCoder aDecoder);
 
     @Generated
     @Selector("initWithSize:")
@@ -232,10 +241,6 @@ public class SKMutableTexture extends SKTexture {
     @Selector("modifyPixelDataWithBlock:")
     public native void modifyPixelDataWithBlock(
             @ObjCBlock(name = "call_modifyPixelDataWithBlock") Block_modifyPixelDataWithBlock block);
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native SKMutableTexture initWithCoder(NSCoder aDecoder);
 
     @Runtime(ObjCRuntime.class)
     @Generated

@@ -31,8 +31,8 @@ public final class NSLayoutAttribute {
     @Generated @NInt public static final long Height = 0x0000000000000008L;
     @Generated @NInt public static final long CenterX = 0x0000000000000009L;
     @Generated @NInt public static final long CenterY = 0x000000000000000AL;
-    @Generated @NInt public static final long Baseline = 0x000000000000000BL;
     @Generated @NInt public static final long LastBaseline = 0x000000000000000BL;
+    @Generated @NInt public static final long Baseline = 0x000000000000000BL;
     @Generated @NInt public static final long FirstBaseline = 0x000000000000000CL;
     @Generated @NInt public static final long LeftMargin = 0x000000000000000DL;
     @Generated @NInt public static final long RightMargin = 0x000000000000000EL;

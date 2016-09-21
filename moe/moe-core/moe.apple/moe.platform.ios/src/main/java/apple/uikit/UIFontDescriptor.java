@@ -62,34 +62,13 @@ public class UIFontDescriptor extends NSObject implements NSCopying, NSSecureCod
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native UIFontDescriptor alloc();
-
-    @Generated
-    @Selector("fontDescriptorWithFontAttributes:")
-    public static native UIFontDescriptor fontDescriptorWithFontAttributes(NSDictionary<String, ?> attributes);
-
-    @Generated
-    @Selector("fontDescriptorWithName:matrix:")
-    public static native UIFontDescriptor fontDescriptorWithNameMatrix(String fontName,
-            @ByValue CGAffineTransform matrix);
-
-    @Generated
-    @Selector("fontDescriptorWithName:size:")
-    public static native UIFontDescriptor fontDescriptorWithNameSize(String fontName, @NFloat double size);
-
-    @Generated
-    @Selector("preferredFontDescriptorWithTextStyle:")
-    public static native UIFontDescriptor preferredFontDescriptorWithTextStyle(String style);
-
-    @Generated
-    @Selector("supportsSecureCoding")
-    public static native boolean supportsSecureCoding();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -125,6 +104,19 @@ public class UIFontDescriptor extends NSObject implements NSCopying, NSSecureCod
     @Generated
     @Selector("description")
     public static native String description_static();
+
+    @Generated
+    @Selector("fontDescriptorWithFontAttributes:")
+    public static native UIFontDescriptor fontDescriptorWithFontAttributes(NSDictionary<String, ?> attributes);
+
+    @Generated
+    @Selector("fontDescriptorWithName:matrix:")
+    public static native UIFontDescriptor fontDescriptorWithNameMatrix(String fontName,
+            @ByValue CGAffineTransform matrix);
+
+    @Generated
+    @Selector("fontDescriptorWithName:size:")
+    public static native UIFontDescriptor fontDescriptorWithNameSize(String fontName, @NFloat double size);
 
     @Generated
     @Selector("hash")
@@ -167,6 +159,15 @@ public class UIFontDescriptor extends NSObject implements NSCopying, NSSecureCod
     public static native Object new_objc();
 
     @Generated
+    @Selector("preferredFontDescriptorWithTextStyle:")
+    public static native UIFontDescriptor preferredFontDescriptorWithTextStyle(String style);
+
+    @Generated
+    @Selector("preferredFontDescriptorWithTextStyle:compatibleWithTraitCollection:")
+    public static native UIFontDescriptor preferredFontDescriptorWithTextStyleCompatibleWithTraitCollection(
+            String style, UITraitCollection traitCollection);
+
+    @Generated
     @Selector("resolveClassMethod:")
     public static native boolean resolveClassMethod(SEL sel);
 
@@ -176,11 +177,15 @@ public class UIFontDescriptor extends NSObject implements NSCopying, NSSecureCod
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")
     public static native Class superclass_static();
+
+    @Generated
+    @Selector("supportsSecureCoding")
+    public static native boolean supportsSecureCoding();
 
     @Generated
     @Selector("version")
@@ -262,12 +267,12 @@ public class UIFontDescriptor extends NSObject implements NSCopying, NSSecureCod
     public native String postscriptName();
 
     @Generated
-    @Selector("symbolicTraits")
-    public native int symbolicTraits();
-
-    @Generated
     @ProtocolClassMethod("supportsSecureCoding")
     public boolean _supportsSecureCoding() {
         return supportsSecureCoding();
     }
+
+    @Generated
+    @Selector("symbolicTraits")
+    public native int symbolicTraits();
 }

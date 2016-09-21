@@ -46,7 +46,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @Library("CoreBluetooth")
 @Runtime(ObjCRuntime.class)
 @ObjCClassBinding
-public class CBCentralManager extends NSObject {
+public class CBCentralManager extends CBManager {
     static {
         NatJ.register();
     }
@@ -57,13 +57,13 @@ public class CBCentralManager extends NSObject {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native CBCentralManager alloc();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -150,7 +150,7 @@ public class CBCentralManager extends NSObject {
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")
@@ -190,6 +190,10 @@ public class CBCentralManager extends NSObject {
             NSDictionary<String, ?> options);
 
     @Generated
+    @Selector("isScanning")
+    public native boolean isScanning();
+
+    @Generated
     @Selector("retrieveConnectedPeripheralsWithServices:")
     public native NSArray<? extends CBPeripheral> retrieveConnectedPeripheralsWithServices(
             NSArray<? extends CBUUID> serviceUUIDs);
@@ -221,15 +225,6 @@ public class CBCentralManager extends NSObject {
     }
 
     @Generated
-    @Selector("state")
-    @NInt
-    public native long state();
-
-    @Generated
     @Selector("stopScan")
     public native void stopScan();
-
-    @Generated
-    @Selector("isScanning")
-    public native boolean isScanning();
 }

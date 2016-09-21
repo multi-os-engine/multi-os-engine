@@ -58,30 +58,13 @@ public class SCNCapsule extends SCNGeometry {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native SCNCapsule alloc();
-
-    @Generated
-    @Selector("capsuleWithCapRadius:height:")
-    public static native SCNCapsule capsuleWithCapRadiusHeight(@NFloat double capRadius, @NFloat double height);
-
-    @Generated
-    @Selector("geometry")
-    public static native SCNCapsule geometry();
-
-    @Generated
-    @Selector("geometryWithSources:elements:")
-    public static native SCNCapsule geometryWithSourcesElements(NSArray<? extends SCNGeometrySource> sources,
-            NSArray<? extends SCNGeometryElement> elements);
-
-    @Generated
-    @Selector("geometryWithMDLMesh:")
-    public static native SCNCapsule geometryWithMDLMesh(MDLMesh mdlMesh);
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -103,6 +86,10 @@ public class SCNCapsule extends SCNGeometry {
             @Mapped(ObjCObjectMapper.class) Object anArgument);
 
     @Generated
+    @Selector("capsuleWithCapRadius:height:")
+    public static native SCNCapsule capsuleWithCapRadiusHeight(@NFloat double capRadius, @NFloat double height);
+
+    @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
@@ -117,6 +104,19 @@ public class SCNCapsule extends SCNGeometry {
     @Generated
     @Selector("description")
     public static native String description_static();
+
+    @Generated
+    @Selector("geometry")
+    public static native SCNCapsule geometry();
+
+    @Generated
+    @Selector("geometryWithMDLMesh:")
+    public static native SCNCapsule geometryWithMDLMesh(MDLMesh mdlMesh);
+
+    @Generated
+    @Selector("geometryWithSources:elements:")
+    public static native SCNCapsule geometryWithSourcesElements(NSArray<? extends SCNGeometrySource> sources,
+            NSArray<? extends SCNGeometryElement> elements);
 
     @Generated
     @Selector("hash")
@@ -208,6 +208,10 @@ public class SCNCapsule extends SCNGeometry {
     public native SCNCapsule init();
 
     @Generated
+    @Selector("initWithCoder:")
+    public native SCNCapsule initWithCoder(NSCoder aDecoder);
+
+    @Generated
     @Selector("radialSegmentCount")
     @NInt
     public native long radialSegmentCount();
@@ -231,10 +235,6 @@ public class SCNCapsule extends SCNGeometry {
     @Generated
     @Selector("setRadialSegmentCount:")
     public native void setRadialSegmentCount(@NInt long value);
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native SCNCapsule initWithCoder(NSCoder aDecoder);
 
     @Generated
     @ProtocolClassMethod("supportsSecureCoding")

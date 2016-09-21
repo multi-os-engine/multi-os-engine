@@ -63,13 +63,13 @@ public class PHFetchResult<_ObjectType> extends NSObject implements NSCopying, N
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native PHFetchResult<?> alloc();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -207,9 +207,9 @@ public class PHFetchResult<_ObjectType> extends NSObject implements NSCopying, N
     public native void enumerateObjectsWithOptionsUsingBlock(@NUInt long opts,
             @ObjCBlock(name = "call_enumerateObjectsWithOptionsUsingBlock") Block_enumerateObjectsWithOptionsUsingBlock block);
 
-    @MappedReturn(ObjCObjectMapper.class)
     @Generated
     @Selector("firstObject")
+    @MappedReturn(ObjCObjectMapper.class)
     public native _ObjectType firstObject();
 
     @Generated
@@ -227,19 +227,19 @@ public class PHFetchResult<_ObjectType> extends NSObject implements NSCopying, N
     @Selector("init")
     public native PHFetchResult<?> init();
 
-    @MappedReturn(ObjCObjectMapper.class)
     @Generated
     @Selector("lastObject")
+    @MappedReturn(ObjCObjectMapper.class)
     public native _ObjectType lastObject();
 
-    @MappedReturn(ObjCObjectMapper.class)
     @Generated
     @Selector("objectAtIndex:")
+    @MappedReturn(ObjCObjectMapper.class)
     public native _ObjectType objectAtIndex(@NUInt long index);
 
-    @MappedReturn(ObjCObjectMapper.class)
     @Generated
     @Selector("objectAtIndexedSubscript:")
+    @MappedReturn(ObjCObjectMapper.class)
     public native _ObjectType objectAtIndexedSubscript(@NUInt long idx);
 
     @Generated

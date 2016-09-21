@@ -21,6 +21,7 @@ import apple.coreaudio.struct.AudioStreamBasicDescription;
 import apple.coremedia.opaque.CMFormatDescriptionRef;
 import apple.foundation.NSArray;
 import apple.foundation.NSCoder;
+import apple.foundation.NSData;
 import apple.foundation.NSDictionary;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
@@ -60,17 +61,13 @@ public class AVAudioFormat extends NSObject implements NSSecureCoding {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native AVAudioFormat alloc();
-
-    @Generated
-    @Selector("supportsSecureCoding")
-    public static native boolean supportsSecureCoding();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -164,6 +161,10 @@ public class AVAudioFormat extends NSObject implements NSSecureCoding {
     public static native Class superclass_static();
 
     @Generated
+    @Selector("supportsSecureCoding")
+    public static native boolean supportsSecureCoding();
+
+    @Generated
     @Selector("version")
     @NInt
     public static native long version_static();
@@ -182,6 +183,14 @@ public class AVAudioFormat extends NSObject implements NSSecureCoding {
     public native long commonFormat();
 
     @Generated
+    @Selector("encodeWithCoder:")
+    public native void encodeWithCoder(NSCoder aCoder);
+
+    @Generated
+    @Selector("formatDescription")
+    public native CMFormatDescriptionRef formatDescription();
+
+    @Generated
     @Selector("init")
     public native AVAudioFormat init();
 
@@ -193,6 +202,14 @@ public class AVAudioFormat extends NSObject implements NSSecureCoding {
     @Generated
     @Selector("initStandardFormatWithSampleRate:channels:")
     public native AVAudioFormat initStandardFormatWithSampleRateChannels(double sampleRate, int channels);
+
+    @Generated
+    @Selector("initWithCMAudioFormatDescription:")
+    public native AVAudioFormat initWithCMAudioFormatDescription(CMFormatDescriptionRef formatDescription);
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native AVAudioFormat initWithCoder(NSCoder aDecoder);
 
     @Generated
     @Selector("initWithCommonFormat:sampleRate:channels:interleaved:")
@@ -230,8 +247,16 @@ public class AVAudioFormat extends NSObject implements NSSecureCoding {
     public native boolean isStandard();
 
     @Generated
+    @Selector("magicCookie")
+    public native NSData magicCookie();
+
+    @Generated
     @Selector("sampleRate")
     public native double sampleRate();
+
+    @Generated
+    @Selector("setMagicCookie:")
+    public native void setMagicCookie(NSData value);
 
     @Generated
     @Selector("settings")
@@ -240,22 +265,6 @@ public class AVAudioFormat extends NSObject implements NSSecureCoding {
     @Generated
     @Selector("streamDescription")
     public native AudioStreamBasicDescription streamDescription();
-
-    @Generated
-    @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
-
-    @Generated
-    @Selector("formatDescription")
-    public native CMFormatDescriptionRef formatDescription();
-
-    @Generated
-    @Selector("initWithCMAudioFormatDescription:")
-    public native AVAudioFormat initWithCMAudioFormatDescription(CMFormatDescriptionRef formatDescription);
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native AVAudioFormat initWithCoder(NSCoder aDecoder);
 
     @Generated
     @ProtocolClassMethod("supportsSecureCoding")

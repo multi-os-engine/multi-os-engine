@@ -57,13 +57,13 @@ public class CKModifyRecordsOperation extends CKDatabaseOperation {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native CKModifyRecordsOperation alloc();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -150,7 +150,7 @@ public class CKModifyRecordsOperation extends CKDatabaseOperation {
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")
@@ -177,6 +177,21 @@ public class CKModifyRecordsOperation extends CKDatabaseOperation {
     @Selector("initWithRecordsToSave:recordIDsToDelete:")
     public native CKModifyRecordsOperation initWithRecordsToSaveRecordIDsToDelete(NSArray<? extends CKRecord> records,
             NSArray<? extends CKRecordID> recordIDs);
+
+    @Generated
+    @Selector("modifyRecordsCompletionBlock")
+    @ObjCBlock(name = "call_modifyRecordsCompletionBlock_ret")
+    public native Block_modifyRecordsCompletionBlock_ret modifyRecordsCompletionBlock();
+
+    @Generated
+    @Selector("perRecordCompletionBlock")
+    @ObjCBlock(name = "call_perRecordCompletionBlock_ret")
+    public native Block_perRecordCompletionBlock_ret perRecordCompletionBlock();
+
+    @Generated
+    @Selector("perRecordProgressBlock")
+    @ObjCBlock(name = "call_perRecordProgressBlock_ret")
+    public native Block_perRecordProgressBlock_ret perRecordProgressBlock();
 
     @Generated
     @Selector("recordIDsToDelete")
@@ -226,20 +241,27 @@ public class CKModifyRecordsOperation extends CKDatabaseOperation {
     @Selector("setSavePolicy:")
     public native void setSavePolicy(@NInt long value);
 
+    @Runtime(ObjCRuntime.class)
     @Generated
-    @Selector("modifyRecordsCompletionBlock")
-    @ObjCBlock(name = "call_modifyRecordsCompletionBlock_ret")
-    public native Block_modifyRecordsCompletionBlock_ret modifyRecordsCompletionBlock();
+    public interface Block_modifyRecordsCompletionBlock_ret {
+        @Generated
+        void call_modifyRecordsCompletionBlock_ret(NSArray<? extends CKRecord> arg0, NSArray<? extends CKRecordID> arg1,
+                NSError arg2);
+    }
 
+    @Runtime(ObjCRuntime.class)
     @Generated
-    @Selector("perRecordCompletionBlock")
-    @ObjCBlock(name = "call_perRecordCompletionBlock_ret")
-    public native Block_perRecordCompletionBlock_ret perRecordCompletionBlock();
+    public interface Block_perRecordCompletionBlock_ret {
+        @Generated
+        void call_perRecordCompletionBlock_ret(CKRecord arg0, NSError arg1);
+    }
 
+    @Runtime(ObjCRuntime.class)
     @Generated
-    @Selector("perRecordProgressBlock")
-    @ObjCBlock(name = "call_perRecordProgressBlock_ret")
-    public native Block_perRecordProgressBlock_ret perRecordProgressBlock();
+    public interface Block_perRecordProgressBlock_ret {
+        @Generated
+        void call_perRecordProgressBlock_ret(CKRecord arg0, double arg1);
+    }
 
     @Runtime(ObjCRuntime.class)
     @Generated
@@ -261,27 +283,5 @@ public class CKModifyRecordsOperation extends CKDatabaseOperation {
     public interface Block_setPerRecordProgressBlock {
         @Generated
         void call_setPerRecordProgressBlock(CKRecord arg0, double arg1);
-    }
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_modifyRecordsCompletionBlock_ret {
-        @Generated
-        void call_modifyRecordsCompletionBlock_ret(NSArray<? extends CKRecord> arg0, NSArray<? extends CKRecordID> arg1,
-                NSError arg2);
-    }
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_perRecordCompletionBlock_ret {
-        @Generated
-        void call_perRecordCompletionBlock_ret(CKRecord arg0, NSError arg1);
-    }
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_perRecordProgressBlock_ret {
-        @Generated
-        void call_perRecordProgressBlock_ret(CKRecord arg0, double arg1);
     }
 }

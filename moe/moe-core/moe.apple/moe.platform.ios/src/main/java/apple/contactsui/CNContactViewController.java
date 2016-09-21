@@ -63,30 +63,13 @@ public class CNContactViewController extends UIViewController {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native CNContactViewController alloc();
-
-    @Generated
-    @Selector("descriptorForRequiredKeys")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native CNKeyDescriptor descriptorForRequiredKeys();
-
-    @Generated
-    @Selector("viewControllerForContact:")
-    public static native CNContactViewController viewControllerForContact(CNContact contact);
-
-    @Generated
-    @Selector("viewControllerForNewContact:")
-    public static native CNContactViewController viewControllerForNewContact(CNContact contact);
-
-    @Generated
-    @Selector("viewControllerForUnknownContact:")
-    public static native CNContactViewController viewControllerForUnknownContact(CNContact contact);
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -130,6 +113,11 @@ public class CNContactViewController extends UIViewController {
     @Generated
     @Selector("description")
     public static native String description_static();
+
+    @Generated
+    @Selector("descriptorForRequiredKeys")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native CNKeyDescriptor descriptorForRequiredKeys();
 
     @Generated
     @Selector("hash")
@@ -195,6 +183,18 @@ public class CNContactViewController extends UIViewController {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("viewControllerForContact:")
+    public static native CNContactViewController viewControllerForContact(CNContact contact);
+
+    @Generated
+    @Selector("viewControllerForNewContact:")
+    public static native CNContactViewController viewControllerForNewContact(CNContact contact);
+
+    @Generated
+    @Selector("viewControllerForUnknownContact:")
+    public static native CNContactViewController viewControllerForUnknownContact(CNContact contact);
 
     @Generated
     @Selector("allowsActions")

@@ -33,26 +33,26 @@ import org.moe.natj.objc.ann.Selector;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("UIPopoverControllerDelegate")
 public interface UIPopoverControllerDelegate {
-    @Deprecated
     @Generated
     @IsOptional
+    @Deprecated
     @Selector("popoverController:willRepositionPopoverToRect:inView:")
     default void popoverControllerWillRepositionPopoverToRectInView(UIPopoverController popoverController, CGRect rect,
             Ptr<UIView> view) {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    @Deprecated
     @Generated
     @IsOptional
+    @Deprecated
     @Selector("popoverControllerDidDismissPopover:")
     default void popoverControllerDidDismissPopover(UIPopoverController popoverController) {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    @Deprecated
     @Generated
     @IsOptional
+    @Deprecated
     @Selector("popoverControllerShouldDismissPopover:")
     default boolean popoverControllerShouldDismissPopover(UIPopoverController popoverController) {
         throw new java.lang.UnsupportedOperationException();

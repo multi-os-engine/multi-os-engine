@@ -32,14 +32,14 @@ import org.moe.natj.objc.ann.Selector;
 @ObjCProtocolName("AVAudioMixing")
 public interface AVAudioMixing extends AVAudioStereoMixing, AVAudio3DMixing {
     @Generated
+    @Selector("destinationForMixer:bus:")
+    AVAudioMixingDestination destinationForMixerBus(AVAudioNode mixer, @NUInt long bus);
+
+    @Generated
     @Selector("setVolume:")
     void setVolume(float value);
 
     @Generated
     @Selector("volume")
     float volume();
-
-    @Generated
-    @Selector("destinationForMixer:bus:")
-    AVAudioMixingDestination destinationForMixerBus(AVAudioNode mixer, @NUInt long bus);
 }

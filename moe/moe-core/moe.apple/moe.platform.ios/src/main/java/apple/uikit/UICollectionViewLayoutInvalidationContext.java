@@ -59,13 +59,13 @@ public class UICollectionViewLayoutInvalidationContext extends NSObject {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native UICollectionViewLayoutInvalidationContext alloc();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -178,6 +178,11 @@ public class UICollectionViewLayoutInvalidationContext extends NSObject {
     public native UICollectionViewLayoutInvalidationContext init();
 
     @Generated
+    @Selector("interactiveMovementTarget")
+    @ByValue
+    public native CGPoint interactiveMovementTarget();
+
+    @Generated
     @Selector("invalidateDataSourceCounts")
     public native boolean invalidateDataSourceCounts();
 
@@ -212,21 +217,16 @@ public class UICollectionViewLayoutInvalidationContext extends NSObject {
     public native NSDictionary<String, ? extends NSArray<? extends NSIndexPath>> invalidatedSupplementaryIndexPaths();
 
     @Generated
+    @Selector("previousIndexPathsForInteractivelyMovingItems")
+    public native NSArray<? extends NSIndexPath> previousIndexPathsForInteractivelyMovingItems();
+
+    @Generated
     @Selector("setContentOffsetAdjustment:")
     public native void setContentOffsetAdjustment(@ByValue CGPoint value);
 
     @Generated
     @Selector("setContentSizeAdjustment:")
     public native void setContentSizeAdjustment(@ByValue CGSize value);
-
-    @Generated
-    @Selector("interactiveMovementTarget")
-    @ByValue
-    public native CGPoint interactiveMovementTarget();
-
-    @Generated
-    @Selector("previousIndexPathsForInteractivelyMovingItems")
-    public native NSArray<? extends NSIndexPath> previousIndexPathsForInteractivelyMovingItems();
 
     @Generated
     @Selector("targetIndexPathsForInteractivelyMovingItems")

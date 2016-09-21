@@ -65,63 +65,13 @@ public class NSOrderedSet<_ObjectType> extends NSObject
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native NSOrderedSet<?> alloc();
-
-    @Generated
-    @Selector("orderedSet")
-    public static native <_ObjectType> NSOrderedSet<?> orderedSet();
-
-    @Generated
-    @Selector("orderedSetWithArray:")
-    public static native <_ObjectType> NSOrderedSet<?> orderedSetWithArray(NSArray<_ObjectType> array);
-
-    @Generated
-    @Selector("orderedSetWithArray:range:copyItems:")
-    public static native <_ObjectType> NSOrderedSet<?> orderedSetWithArrayRangeCopyItems(NSArray<_ObjectType> array,
-            @ByValue NSRange range, boolean flag);
-
-    @Generated
-    @Selector("orderedSetWithObject:")
-    public static native <_ObjectType> NSOrderedSet<?> orderedSetWithObject(
-            @Mapped(ObjCObjectMapper.class) _ObjectType object);
-
-    @Generated
-    @Variadic()
-    @Selector("orderedSetWithObjects:")
-    public static native <_ObjectType> NSOrderedSet<?> orderedSetWithObjects(
-            @Mapped(ObjCObjectMapper.class) _ObjectType firstObj, Object... varargs);
-
-    @Generated
-    @Selector("orderedSetWithObjects:count:")
-    public static native <_ObjectType> NSOrderedSet<?> orderedSetWithObjectsCount(ConstPtr<_ObjectType> objects,
-            @NUInt long cnt);
-
-    @Generated
-    @Selector("orderedSetWithOrderedSet:")
-    public static native <_ObjectType> NSOrderedSet<?> orderedSetWithOrderedSet(NSOrderedSet<_ObjectType> set);
-
-    @Generated
-    @Selector("orderedSetWithOrderedSet:range:copyItems:")
-    public static native <_ObjectType> NSOrderedSet<?> orderedSetWithOrderedSetRangeCopyItems(
-            NSOrderedSet<_ObjectType> set, @ByValue NSRange range, boolean flag);
-
-    @Generated
-    @Selector("orderedSetWithSet:")
-    public static native <_ObjectType> NSOrderedSet<?> orderedSetWithSet(NSSet<_ObjectType> set);
-
-    @Generated
-    @Selector("orderedSetWithSet:copyItems:")
-    public static native <_ObjectType> NSOrderedSet<?> orderedSetWithSetCopyItems(NSSet<_ObjectType> set, boolean flag);
-
-    @Generated
-    @Selector("supportsSecureCoding")
-    public static native <_ObjectType> boolean supportsSecureCoding();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -195,6 +145,52 @@ public class NSOrderedSet<_ObjectType> extends NSObject
     public static native Object new_objc();
 
     @Generated
+    @Selector("orderedSet")
+    public static native <_ObjectType> NSOrderedSet<?> orderedSet();
+
+    @Generated
+    @Selector("orderedSetWithArray:")
+    public static native <_ObjectType> NSOrderedSet<?> orderedSetWithArray(NSArray<_ObjectType> array);
+
+    @Generated
+    @Selector("orderedSetWithArray:range:copyItems:")
+    public static native <_ObjectType> NSOrderedSet<?> orderedSetWithArrayRangeCopyItems(NSArray<_ObjectType> array,
+            @ByValue NSRange range, boolean flag);
+
+    @Generated
+    @Selector("orderedSetWithObject:")
+    public static native <_ObjectType> NSOrderedSet<?> orderedSetWithObject(
+            @Mapped(ObjCObjectMapper.class) _ObjectType object);
+
+    @Generated
+    @Variadic()
+    @Selector("orderedSetWithObjects:")
+    public static native <_ObjectType> NSOrderedSet<?> orderedSetWithObjects(
+            @Mapped(ObjCObjectMapper.class) _ObjectType firstObj, Object... varargs);
+
+    @Generated
+    @Selector("orderedSetWithObjects:count:")
+    public static native <_ObjectType> NSOrderedSet<?> orderedSetWithObjectsCount(ConstPtr<_ObjectType> objects,
+            @NUInt long cnt);
+
+    @Generated
+    @Selector("orderedSetWithOrderedSet:")
+    public static native <_ObjectType> NSOrderedSet<?> orderedSetWithOrderedSet(NSOrderedSet<_ObjectType> set);
+
+    @Generated
+    @Selector("orderedSetWithOrderedSet:range:copyItems:")
+    public static native <_ObjectType> NSOrderedSet<?> orderedSetWithOrderedSetRangeCopyItems(
+            NSOrderedSet<_ObjectType> set, @ByValue NSRange range, boolean flag);
+
+    @Generated
+    @Selector("orderedSetWithSet:")
+    public static native <_ObjectType> NSOrderedSet<?> orderedSetWithSet(NSSet<_ObjectType> set);
+
+    @Generated
+    @Selector("orderedSetWithSet:copyItems:")
+    public static native <_ObjectType> NSOrderedSet<?> orderedSetWithSetCopyItems(NSSet<_ObjectType> set, boolean flag);
+
+    @Generated
     @Selector("resolveClassMethod:")
     public static native boolean resolveClassMethod(SEL sel);
 
@@ -209,6 +205,10 @@ public class NSOrderedSet<_ObjectType> extends NSObject
     @Generated
     @Selector("superclass")
     public static native Class superclass_static();
+
+    @Generated
+    @Selector("supportsSecureCoding")
+    public static native <_ObjectType> boolean supportsSecureCoding();
 
     @Generated
     @Selector("version")
@@ -279,9 +279,9 @@ public class NSOrderedSet<_ObjectType> extends NSObject
     @Selector("filteredOrderedSetUsingPredicate:")
     public native NSOrderedSet<_ObjectType> filteredOrderedSetUsingPredicate(NSPredicate p);
 
-    @MappedReturn(ObjCObjectMapper.class)
     @Generated
     @Selector("firstObject")
+    @MappedReturn(ObjCObjectMapper.class)
     public native _ObjectType firstObject();
 
     @Generated
@@ -366,7 +366,7 @@ public class NSOrderedSet<_ObjectType> extends NSObject
 
     @Generated
     @Selector("initWithObjects:count:")
-    public native NSOrderedSet<?> initWithObjectsCount(ConstPtr<_ObjectType> objects, @NUInt long cnt);
+    public native NSOrderedSet<?> initWithObjectsCount(Ptr<_ObjectType> objects, @NUInt long cnt);
 
     @Generated
     @Selector("initWithOrderedSet:")
@@ -409,9 +409,9 @@ public class NSOrderedSet<_ObjectType> extends NSObject
     @Selector("isSubsetOfSet:")
     public native boolean isSubsetOfSet(NSSet<_ObjectType> set);
 
-    @MappedReturn(ObjCObjectMapper.class)
     @Generated
     @Selector("lastObject")
+    @MappedReturn(ObjCObjectMapper.class)
     public native _ObjectType lastObject();
 
     @Generated
@@ -419,14 +419,14 @@ public class NSOrderedSet<_ObjectType> extends NSObject
     @MappedReturn(ObjCObjectMapper.class)
     public native Object mutableCopyWithZone(VoidPtr zone);
 
-    @MappedReturn(ObjCObjectMapper.class)
     @Generated
     @Selector("objectAtIndex:")
+    @MappedReturn(ObjCObjectMapper.class)
     public native _ObjectType objectAtIndex(@NUInt long idx);
 
-    @MappedReturn(ObjCObjectMapper.class)
     @Generated
     @Selector("objectAtIndexedSubscript:")
+    @MappedReturn(ObjCObjectMapper.class)
     public native _ObjectType objectAtIndexedSubscript(@NUInt long idx);
 
     @Generated

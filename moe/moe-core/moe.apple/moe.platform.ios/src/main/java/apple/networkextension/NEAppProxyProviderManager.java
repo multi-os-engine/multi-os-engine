@@ -56,18 +56,13 @@ public class NEAppProxyProviderManager extends NETunnelProviderManager {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native NEAppProxyProviderManager alloc();
-
-    @Generated
-    @Selector("loadAllFromPreferencesWithCompletionHandler:")
-    public static native void loadAllFromPreferencesWithCompletionHandler(
-            @ObjCBlock(name = "call_loadAllFromPreferencesWithCompletionHandler") Block_loadAllFromPreferencesWithCompletionHandler completionHandler);
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -137,6 +132,11 @@ public class NEAppProxyProviderManager extends NETunnelProviderManager {
     @Generated
     @Selector("load")
     public static native void load_objc_static();
+
+    @Generated
+    @Selector("loadAllFromPreferencesWithCompletionHandler:")
+    public static native void loadAllFromPreferencesWithCompletionHandler(
+            @ObjCBlock(name = "call_loadAllFromPreferencesWithCompletionHandler") Block_loadAllFromPreferencesWithCompletionHandler completionHandler);
 
     @Generated
     @Owned

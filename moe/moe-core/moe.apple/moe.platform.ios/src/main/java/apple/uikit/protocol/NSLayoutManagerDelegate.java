@@ -117,6 +117,15 @@ public interface NSLayoutManagerDelegate {
 
     @Generated
     @IsOptional
+    @Selector("layoutManager:shouldSetLineFragmentRect:lineFragmentUsedRect:baselineOffset:inTextContainer:forGlyphRange:")
+    default boolean layoutManagerShouldSetLineFragmentRectLineFragmentUsedRectBaselineOffsetInTextContainerForGlyphRange(
+            NSLayoutManager layoutManager, CGRect lineFragmentRect, CGRect lineFragmentUsedRect,
+            NFloatPtr baselineOffset, NSTextContainer textContainer, @ByValue NSRange glyphRange) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Generated
+    @IsOptional
     @Selector("layoutManager:shouldUseAction:forControlCharacterAtIndex:")
     @NInt
     default long layoutManagerShouldUseActionForControlCharacterAtIndex(NSLayoutManager layoutManager,
@@ -136,15 +145,6 @@ public interface NSLayoutManagerDelegate {
     @IsOptional
     @Selector("layoutManagerDidInvalidateLayout:")
     default void layoutManagerDidInvalidateLayout(NSLayoutManager sender) {
-        throw new java.lang.UnsupportedOperationException();
-    }
-
-    @Generated
-    @IsOptional
-    @Selector("layoutManager:shouldSetLineFragmentRect:lineFragmentUsedRect:baselineOffset:inTextContainer:forGlyphRange:")
-    default boolean layoutManagerShouldSetLineFragmentRectLineFragmentUsedRectBaselineOffsetInTextContainerForGlyphRange(
-            NSLayoutManager layoutManager, CGRect lineFragmentRect, CGRect lineFragmentUsedRect,
-            NFloatPtr baselineOffset, NSTextContainer textContainer, @ByValue NSRange glyphRange) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

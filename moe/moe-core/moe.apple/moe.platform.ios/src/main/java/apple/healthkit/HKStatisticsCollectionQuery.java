@@ -60,13 +60,13 @@ public class HKStatisticsCollectionQuery extends HKQuery {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native HKStatisticsCollectionQuery alloc();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -235,6 +235,11 @@ public class HKStatisticsCollectionQuery extends HKQuery {
             HKQuantity totalEnergyBurned);
 
     @Generated
+    @Selector("predicateForWorkoutsWithOperatorType:totalSwimmingStrokeCount:")
+    public static native NSPredicate predicateForWorkoutsWithOperatorTypeTotalSwimmingStrokeCount(
+            @NUInt long operatorType, HKQuantity totalSwimmingStrokeCount);
+
+    @Generated
     @Selector("predicateForWorkoutsWithWorkoutActivityType:")
     public static native NSPredicate predicateForWorkoutsWithWorkoutActivityType(@NUInt long workoutActivityType);
 
@@ -248,7 +253,7 @@ public class HKStatisticsCollectionQuery extends HKQuery {
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")
@@ -257,7 +262,7 @@ public class HKStatisticsCollectionQuery extends HKQuery {
     @Generated
     @Selector("version")
     @NInt
-    public static native long version();
+    public static native long version_static();
 
     @Generated
     @Selector("anchorDate")
@@ -272,6 +277,11 @@ public class HKStatisticsCollectionQuery extends HKQuery {
     public native HKStatisticsCollectionQuery initWithQuantityTypeQuantitySamplePredicateOptionsAnchorDateIntervalComponents(
             HKQuantityType quantityType, NSPredicate quantitySamplePredicate, @NUInt long options, NSDate anchorDate,
             NSDateComponents intervalComponents);
+
+    @Generated
+    @Selector("initialResultsHandler")
+    @ObjCBlock(name = "call_initialResultsHandler_ret")
+    public native Block_initialResultsHandler_ret initialResultsHandler();
 
     @Generated
     @Selector("intervalComponents")
@@ -293,14 +303,17 @@ public class HKStatisticsCollectionQuery extends HKQuery {
             @ObjCBlock(name = "call_setStatisticsUpdateHandler") Block_setStatisticsUpdateHandler value);
 
     @Generated
-    @Selector("initialResultsHandler")
-    @ObjCBlock(name = "call_initialResultsHandler_ret")
-    public native Block_initialResultsHandler_ret initialResultsHandler();
-
-    @Generated
     @Selector("statisticsUpdateHandler")
     @ObjCBlock(name = "call_statisticsUpdateHandler_ret")
     public native Block_statisticsUpdateHandler_ret statisticsUpdateHandler();
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_initialResultsHandler_ret {
+        @Generated
+        void call_initialResultsHandler_ret(HKStatisticsCollectionQuery arg0, HKStatisticsCollection arg1,
+                NSError arg2);
+    }
 
     @Runtime(ObjCRuntime.class)
     @Generated
@@ -315,14 +328,6 @@ public class HKStatisticsCollectionQuery extends HKQuery {
         @Generated
         void call_setStatisticsUpdateHandler(HKStatisticsCollectionQuery arg0, HKStatistics arg1,
                 HKStatisticsCollection arg2, NSError arg3);
-    }
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_initialResultsHandler_ret {
-        @Generated
-        void call_initialResultsHandler_ret(HKStatisticsCollectionQuery arg0, HKStatisticsCollection arg1,
-                NSError arg2);
     }
 
     @Runtime(ObjCRuntime.class)

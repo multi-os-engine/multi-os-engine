@@ -58,13 +58,13 @@ public class MPMoviePlayerViewController extends UIViewController {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native MPMoviePlayerViewController alloc();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -179,6 +179,10 @@ public class MPMoviePlayerViewController extends UIViewController {
     public native MPMoviePlayerViewController init();
 
     @Generated
+    @Selector("initWithCoder:")
+    public native MPMoviePlayerViewController initWithCoder(NSCoder aDecoder);
+
+    @Generated
     @Selector("initWithContentURL:")
     public native MPMoviePlayerViewController initWithContentURL(NSURL contentURL);
 
@@ -189,8 +193,4 @@ public class MPMoviePlayerViewController extends UIViewController {
     @Generated
     @Selector("moviePlayer")
     public native MPMoviePlayerController moviePlayer();
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native MPMoviePlayerViewController initWithCoder(NSCoder aDecoder);
 }

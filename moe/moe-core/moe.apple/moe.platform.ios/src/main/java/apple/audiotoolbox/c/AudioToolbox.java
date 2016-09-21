@@ -16,7 +16,10 @@ limitations under the License.
 
 package apple.audiotoolbox.c;
 
+import apple.NSObject;
 import apple.audiotoolbox.opaque.AUGraph;
+import apple.audiotoolbox.opaque.AudioComponent;
+import apple.audiotoolbox.opaque.AudioComponentInstance;
 import apple.audiotoolbox.opaque.AudioConverterRef;
 import apple.audiotoolbox.opaque.AudioFileID;
 import apple.audiotoolbox.opaque.AudioFileStreamID;
@@ -29,6 +32,8 @@ import apple.audiotoolbox.opaque.MusicPlayer;
 import apple.audiotoolbox.opaque.MusicSequence;
 import apple.audiotoolbox.opaque.MusicTrack;
 import apple.audiotoolbox.struct.AUPresetEvent;
+import apple.audiotoolbox.struct.AURenderCallbackStruct;
+import apple.audiotoolbox.struct.AudioComponentDescription;
 import apple.audiotoolbox.struct.AudioFileRegion;
 import apple.audiotoolbox.struct.AudioQueueBuffer;
 import apple.audiotoolbox.struct.AudioQueueParameterEvent;
@@ -38,11 +43,9 @@ import apple.audiotoolbox.struct.MIDIChannelMessage;
 import apple.audiotoolbox.struct.MIDIMetaEvent;
 import apple.audiotoolbox.struct.MIDINoteMessage;
 import apple.audiotoolbox.struct.MIDIRawData;
+import apple.audiotoolbox.struct.MusicDeviceNoteParams;
 import apple.audiotoolbox.struct.MusicEventUserData;
 import apple.audiotoolbox.struct.ParameterEvent;
-import apple.audiounit.opaque.AudioComponentInstance;
-import apple.audiounit.struct.AURenderCallbackStruct;
-import apple.audiounit.struct.AudioComponentDescription;
 import apple.coreaudio.struct.AudioBufferList;
 import apple.coreaudio.struct.AudioChannelLayout;
 import apple.coreaudio.struct.AudioClassDescription;
@@ -56,6 +59,7 @@ import apple.corefoundation.opaque.CFRunLoopRef;
 import apple.corefoundation.opaque.CFStringRef;
 import apple.corefoundation.opaque.CFURLRef;
 import apple.struct.FILE;
+import apple.uikit.UIImage;
 import org.moe.natj.c.CRuntime;
 import org.moe.natj.c.ann.CFunction;
 import org.moe.natj.c.ann.CVariable;
@@ -91,6 +95,408 @@ public final class AudioToolbox {
     @Generated
     private AudioToolbox() {
     }
+
+    @Generated
+    @CFunction
+    public static native AudioComponent AudioComponentFindNext(AudioComponent inComponent,
+            @UncertainArgument("Options: reference, array Fallback: reference") AudioComponentDescription inDesc);
+
+    @Generated
+    @CFunction
+    public static native int AudioComponentCount(
+            @UncertainArgument("Options: reference, array Fallback: reference") AudioComponentDescription inDesc);
+
+    @Generated
+    @CFunction
+    public static native int AudioComponentCopyName(AudioComponent inComponent, Ptr<CFStringRef> outName);
+
+    @Generated
+    @CFunction
+    public static native int AudioComponentGetDescription(AudioComponent inComponent,
+            @UncertainArgument("Options: reference, array Fallback: reference") AudioComponentDescription outDesc);
+
+    @Generated
+    @CFunction
+    public static native int AudioComponentGetVersion(AudioComponent inComponent, IntPtr outVersion);
+
+    @Generated
+    @CFunction
+    public static native int AudioComponentInstanceNew(AudioComponent inComponent,
+            Ptr<AudioComponentInstance> outInstance);
+
+    @Generated
+    @CFunction
+    public static native void AudioComponentInstantiate(AudioComponent inComponent, int inOptions,
+            @ObjCBlock(name = "call_AudioComponentInstantiate") Block_AudioComponentInstantiate inCompletionHandler);
+
+    @Generated
+    @CFunction
+    public static native int AudioComponentInstanceDispose(AudioComponentInstance inInstance);
+
+    @Generated
+    @CFunction
+    public static native AudioComponent AudioComponentInstanceGetComponent(AudioComponentInstance inInstance);
+
+    @Generated
+    @CFunction
+    public static native byte AudioComponentInstanceCanDo(AudioComponentInstance inInstance, short inSelectorID);
+
+    @Generated
+    @CFunction
+    public static native AudioComponent AudioComponentRegister(
+            @UncertainArgument("Options: reference, array Fallback: reference") AudioComponentDescription inDesc,
+            CFStringRef inName, int inVersion,
+            @FunctionPtr(name = "call_AudioComponentRegister") Function_AudioComponentRegister inFactory);
+
+    @Generated
+    @CFunction
+    public static native int AudioUnitInitialize(AudioComponentInstance inUnit);
+
+    @Generated
+    @CFunction
+    public static native int AudioUnitUninitialize(AudioComponentInstance inUnit);
+
+    @Generated
+    @CFunction
+    public static native int AudioUnitGetPropertyInfo(AudioComponentInstance inUnit, int inID, int inScope,
+            int inElement, IntPtr outDataSize, BytePtr outWritable);
+
+    @Generated
+    @CFunction
+    public static native int AudioUnitGetProperty(AudioComponentInstance inUnit, int inID, int inScope, int inElement,
+            VoidPtr outData, IntPtr ioDataSize);
+
+    @Generated
+    @CFunction
+    public static native int AudioUnitSetProperty(AudioComponentInstance inUnit, int inID, int inScope, int inElement,
+            ConstVoidPtr inData, int inDataSize);
+
+    @Generated
+    @CFunction
+    public static native int AudioUnitAddPropertyListener(AudioComponentInstance inUnit, int inID,
+            @FunctionPtr(name = "call_AudioUnitAddPropertyListener") Function_AudioUnitAddPropertyListener inProc,
+            VoidPtr inProcUserData);
+
+    @Generated
+    @CFunction
+    public static native int AudioUnitRemovePropertyListenerWithUserData(AudioComponentInstance inUnit, int inID,
+            @FunctionPtr(name = "call_AudioUnitRemovePropertyListenerWithUserData") Function_AudioUnitRemovePropertyListenerWithUserData inProc,
+            VoidPtr inProcUserData);
+
+    @Generated
+    @CFunction
+    public static native int AudioUnitAddRenderNotify(AudioComponentInstance inUnit,
+            @FunctionPtr(name = "call_AudioUnitAddRenderNotify") Function_AudioUnitAddRenderNotify inProc,
+            VoidPtr inProcUserData);
+
+    @Generated
+    @CFunction
+    public static native int AudioUnitRemoveRenderNotify(AudioComponentInstance inUnit,
+            @FunctionPtr(name = "call_AudioUnitRemoveRenderNotify") Function_AudioUnitRemoveRenderNotify inProc,
+            VoidPtr inProcUserData);
+
+    @Generated
+    @CFunction
+    public static native int AudioUnitGetParameter(AudioComponentInstance inUnit, int inID, int inScope, int inElement,
+            FloatPtr outValue);
+
+    @Generated
+    @CFunction
+    public static native int AudioUnitSetParameter(AudioComponentInstance inUnit, int inID, int inScope, int inElement,
+            float inValue, int inBufferOffsetInFrames);
+
+    @Generated
+    @CFunction
+    public static native int AudioUnitScheduleParameters(AudioComponentInstance inUnit, VoidPtr inParameterEvent,
+            int inNumParamEvents);
+
+    @Generated
+    @CFunction
+    public static native int AudioUnitRender(AudioComponentInstance inUnit, IntPtr ioActionFlags,
+            @UncertainArgument("Options: reference, array Fallback: reference") AudioTimeStamp inTimeStamp,
+            int inOutputBusNumber, int inNumberFrames,
+            @UncertainArgument("Options: reference, array Fallback: reference") AudioBufferList ioData);
+
+    @Generated
+    @CFunction
+    public static native int AudioUnitProcess(AudioComponentInstance inUnit, IntPtr ioActionFlags,
+            @UncertainArgument("Options: reference, array Fallback: reference") AudioTimeStamp inTimeStamp,
+            int inNumberFrames,
+            @UncertainArgument("Options: reference, array Fallback: reference") AudioBufferList ioData);
+
+    @Generated
+    @CFunction
+    public static native int AudioUnitProcessMultiple(AudioComponentInstance inUnit, IntPtr ioActionFlags,
+            @UncertainArgument("Options: reference, array Fallback: reference") AudioTimeStamp inTimeStamp,
+            int inNumberFrames, int inNumberInputBufferLists, Ptr<ConstPtr<AudioBufferList>> inInputBufferLists,
+            int inNumberOutputBufferLists, Ptr<Ptr<AudioBufferList>> ioOutputBufferLists);
+
+    @Generated
+    @CFunction
+    public static native int AudioUnitReset(AudioComponentInstance inUnit, int inScope, int inElement);
+
+    @Generated
+    @CFunction
+    public static native int AudioOutputUnitPublish(
+            @UncertainArgument("Options: reference, array Fallback: reference") AudioComponentDescription inDesc,
+            CFStringRef inName, int inVersion, AudioComponentInstance inOutputUnit);
+
+    @Generated
+    @CFunction
+    public static native UIImage AudioOutputUnitGetHostIcon(AudioComponentInstance au, float desiredPointSize);
+
+    @Generated
+    @CFunction
+    public static native UIImage AudioComponentGetIcon(AudioComponent comp, float desiredPointSize);
+
+    @Generated
+    @CFunction
+    public static native double AudioComponentGetLastActiveTime(AudioComponent comp);
+
+    @Generated
+    @CFunction
+    public static native int AudioOutputUnitStart(AudioComponentInstance ci);
+
+    @Generated
+    @CFunction
+    public static native int AudioOutputUnitStop(AudioComponentInstance ci);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native int GetAudioUnitParameterDisplayType(int flags);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native int SetAudioUnitParameterDisplayType(int flags, int displayType);
+
+    @Generated
+    @CFunction
+    public static native int MusicDeviceMIDIEvent(AudioComponentInstance inUnit, int inStatus, int inData1, int inData2,
+            int inOffsetSampleFrame);
+
+    @Generated
+    @CFunction
+    public static native int MusicDeviceSysEx(AudioComponentInstance inUnit,
+            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String inData,
+            int inLength);
+
+    @Generated
+    @CFunction
+    public static native int MusicDeviceStartNote(AudioComponentInstance inUnit, int inInstrument, int inGroupID,
+            IntPtr outNoteInstanceID, int inOffsetSampleFrame,
+            @UncertainArgument("Options: reference, array Fallback: reference") MusicDeviceNoteParams inParams);
+
+    @Generated
+    @CFunction
+    public static native int MusicDeviceStopNote(AudioComponentInstance inUnit, int inGroupID, int inNoteInstanceID,
+            int inOffsetSampleFrame);
+
+    @Generated
+    @CFunction
+    public static native int NewAUGraph(Ptr<AUGraph> outGraph);
+
+    @Generated
+    @CFunction
+    public static native int DisposeAUGraph(AUGraph inGraph);
+
+    @Generated
+    @CFunction
+    public static native int AUGraphAddNode(AUGraph inGraph,
+            @UncertainArgument("Options: reference, array Fallback: reference") AudioComponentDescription inDescription,
+            IntPtr outNode);
+
+    @Generated
+    @CFunction
+    public static native int AUGraphRemoveNode(AUGraph inGraph, int inNode);
+
+    @Generated
+    @CFunction
+    public static native int AUGraphGetNodeCount(AUGraph inGraph, IntPtr outNumberOfNodes);
+
+    @Generated
+    @CFunction
+    public static native int AUGraphGetIndNode(AUGraph inGraph, int inIndex, IntPtr outNode);
+
+    @Generated
+    @CFunction
+    public static native int AUGraphNodeInfo(AUGraph inGraph, int inNode,
+            @UncertainArgument("Options: reference, array Fallback: reference") AudioComponentDescription outDescription,
+            Ptr<AudioComponentInstance> outAudioUnit);
+
+    @Generated
+    @CFunction
+    public static native int AUGraphConnectNodeInput(AUGraph inGraph, int inSourceNode, int inSourceOutputNumber,
+            int inDestNode, int inDestInputNumber);
+
+    @Generated
+    @CFunction
+    public static native int AUGraphSetNodeInputCallback(AUGraph inGraph, int inDestNode, int inDestInputNumber,
+            @UncertainArgument("Options: reference, array Fallback: reference") AURenderCallbackStruct inInputCallback);
+
+    @Generated
+    @CFunction
+    public static native int AUGraphDisconnectNodeInput(AUGraph inGraph, int inDestNode, int inDestInputNumber);
+
+    @Generated
+    @CFunction
+    public static native int AUGraphClearConnections(AUGraph inGraph);
+
+    @Generated
+    @CFunction
+    public static native int AUGraphGetNumberOfInteractions(AUGraph inGraph, IntPtr outNumInteractions);
+
+    @Generated
+    @CFunction
+    public static native int AUGraphGetInteractionInfo(AUGraph inGraph, int inInteractionIndex, VoidPtr outInteraction);
+
+    @Generated
+    @CFunction
+    public static native int AUGraphCountNodeInteractions(AUGraph inGraph, int inNode, IntPtr outNumInteractions);
+
+    @Generated
+    @CFunction
+    public static native int AUGraphGetNodeInteractions(AUGraph inGraph, int inNode, IntPtr ioNumInteractions,
+            VoidPtr outInteractions);
+
+    @Generated
+    @CFunction
+    public static native int AUGraphUpdate(AUGraph inGraph, BytePtr outIsUpdated);
+
+    @Generated
+    @CFunction
+    public static native int AUGraphOpen(AUGraph inGraph);
+
+    @Generated
+    @CFunction
+    public static native int AUGraphClose(AUGraph inGraph);
+
+    @Generated
+    @CFunction
+    public static native int AUGraphInitialize(AUGraph inGraph);
+
+    @Generated
+    @CFunction
+    public static native int AUGraphUninitialize(AUGraph inGraph);
+
+    @Generated
+    @CFunction
+    public static native int AUGraphStart(AUGraph inGraph);
+
+    @Generated
+    @CFunction
+    public static native int AUGraphStop(AUGraph inGraph);
+
+    @Generated
+    @CFunction
+    public static native int AUGraphIsOpen(AUGraph inGraph, BytePtr outIsOpen);
+
+    @Generated
+    @CFunction
+    public static native int AUGraphIsInitialized(AUGraph inGraph, BytePtr outIsInitialized);
+
+    @Generated
+    @CFunction
+    public static native int AUGraphIsRunning(AUGraph inGraph, BytePtr outIsRunning);
+
+    @Generated
+    @CFunction
+    public static native int AUGraphGetCPULoad(AUGraph inGraph, FloatPtr outAverageCPULoad);
+
+    @Generated
+    @CFunction
+    public static native int AUGraphGetMaxCPULoad(AUGraph inGraph, FloatPtr outMaxLoad);
+
+    @Generated
+    @CFunction
+    public static native int AUGraphAddRenderNotify(AUGraph inGraph,
+            @FunctionPtr(name = "call_AUGraphAddRenderNotify") Function_AUGraphAddRenderNotify inCallback,
+            VoidPtr inRefCon);
+
+    @Generated
+    @CFunction
+    public static native int AUGraphRemoveRenderNotify(AUGraph inGraph,
+            @FunctionPtr(name = "call_AUGraphRemoveRenderNotify") Function_AUGraphRemoveRenderNotify inCallback,
+            VoidPtr inRefCon);
+
+    @Generated
+    @CFunction
+    public static native int AudioConverterNew(
+            @UncertainArgument("Options: reference, array Fallback: reference") AudioStreamBasicDescription inSourceFormat,
+            @UncertainArgument("Options: reference, array Fallback: reference") AudioStreamBasicDescription inDestinationFormat,
+            Ptr<AudioConverterRef> outAudioConverter);
+
+    @Generated
+    @CFunction
+    public static native int AudioConverterNewSpecific(
+            @UncertainArgument("Options: reference, array Fallback: reference") AudioStreamBasicDescription inSourceFormat,
+            @UncertainArgument("Options: reference, array Fallback: reference") AudioStreamBasicDescription inDestinationFormat,
+            int inNumberClassDescriptions,
+            @UncertainArgument("Options: reference, array Fallback: reference") AudioClassDescription inClassDescriptions,
+            Ptr<AudioConverterRef> outAudioConverter);
+
+    @Generated
+    @CFunction
+    public static native int AudioConverterDispose(AudioConverterRef inAudioConverter);
+
+    @Generated
+    @CFunction
+    public static native int AudioConverterReset(AudioConverterRef inAudioConverter);
+
+    @Generated
+    @CFunction
+    public static native int AudioConverterGetPropertyInfo(AudioConverterRef inAudioConverter, int inPropertyID,
+            IntPtr outSize, BytePtr outWritable);
+
+    @Generated
+    @CFunction
+    public static native int AudioConverterGetProperty(AudioConverterRef inAudioConverter, int inPropertyID,
+            IntPtr ioPropertyDataSize, VoidPtr outPropertyData);
+
+    @Generated
+    @CFunction
+    public static native int AudioConverterSetProperty(AudioConverterRef inAudioConverter, int inPropertyID,
+            int inPropertyDataSize, ConstVoidPtr inPropertyData);
+
+    @Generated
+    @CFunction
+    public static native int AudioConverterConvertBuffer(AudioConverterRef inAudioConverter, int inInputDataSize,
+            ConstVoidPtr inInputData, IntPtr ioOutputDataSize, VoidPtr outOutputData);
+
+    @Generated
+    @CFunction
+    public static native int AudioConverterFillComplexBuffer(AudioConverterRef inAudioConverter,
+            @FunctionPtr(name = "call_AudioConverterFillComplexBuffer") Function_AudioConverterFillComplexBuffer inInputDataProc,
+            VoidPtr inInputDataProcUserData, IntPtr ioOutputDataPacketSize,
+            @UncertainArgument("Options: reference, array Fallback: reference") AudioBufferList outOutputData,
+            @UncertainArgument("Options: reference, array Fallback: reference") AudioStreamPacketDescription outPacketDescription);
+
+    @Generated
+    @CFunction
+    public static native int AudioConverterConvertComplexBuffer(AudioConverterRef inAudioConverter,
+            int inNumberPCMFrames,
+            @UncertainArgument("Options: reference, array Fallback: reference") AudioBufferList inInputData,
+            @UncertainArgument("Options: reference, array Fallback: reference") AudioBufferList outOutputData);
+
+    @Generated
+    @Inline
+    @CFunction
+    @NUInt
+    public static native long NumBytesToNumAudioFileMarkers(@NUInt long inNumBytes);
+
+    @Generated
+    @Inline
+    @CFunction
+    @NUInt
+    public static native long NumAudioFileMarkersToNumBytes(@NUInt long inNumMarkers);
+
+    @Generated
+    @Inline
+    @CFunction
+    @UncertainReturn("Options: reference, array Fallback: reference")
+    public static native AudioFileRegion NextAudioFileRegion(
+            @UncertainArgument("Options: reference, array Fallback: reference") AudioFileRegion inAFRegionPtr);
 
     @Generated
     @CFunction
@@ -269,6 +675,20 @@ public final class AudioToolbox {
             @FunctionPtr(name = "call_AudioQueueNewInput") Function_AudioQueueNewInput inCallbackProc,
             VoidPtr inUserData, CFRunLoopRef inCallbackRunLoop, CFStringRef inCallbackRunLoopMode, int inFlags,
             Ptr<AudioQueueRef> outAQ);
+
+    @Generated
+    @CFunction
+    public static native int AudioQueueNewOutputWithDispatchQueue(Ptr<AudioQueueRef> outAQ,
+            @UncertainArgument("Options: reference, array Fallback: reference") AudioStreamBasicDescription inFormat,
+            int inFlags, NSObject inCallbackDispatchQueue,
+            @ObjCBlock(name = "call_AudioQueueNewOutputWithDispatchQueue") Block_AudioQueueNewOutputWithDispatchQueue inCallbackBlock);
+
+    @Generated
+    @CFunction
+    public static native int AudioQueueNewInputWithDispatchQueue(Ptr<AudioQueueRef> outAQ,
+            @UncertainArgument("Options: reference, array Fallback: reference") AudioStreamBasicDescription inFormat,
+            int inFlags, NSObject inCallbackDispatchQueue,
+            @ObjCBlock(name = "call_AudioQueueNewInputWithDispatchQueue") Block_AudioQueueNewInputWithDispatchQueue inCallbackBlock);
 
     @Generated
     @CFunction
@@ -487,14 +907,6 @@ public final class AudioToolbox {
 
     @Generated
     @CFunction
-    public static native void AudioServicesPlayAlertSound(int inSystemSoundID);
-
-    @Generated
-    @CFunction
-    public static native void AudioServicesPlaySystemSound(int inSystemSoundID);
-
-    @Generated
-    @CFunction
     public static native int AudioServicesCreateSystemSoundID(CFURLRef inFileURL, IntPtr outSystemSoundID);
 
     @Generated
@@ -503,14 +915,13 @@ public final class AudioToolbox {
 
     @Generated
     @CFunction
-    public static native int AudioServicesAddSystemSoundCompletion(int inSystemSoundID, CFRunLoopRef inRunLoop,
-            CFStringRef inRunLoopMode,
-            @FunctionPtr(name = "call_AudioServicesAddSystemSoundCompletion") Function_AudioServicesAddSystemSoundCompletion inCompletionRoutine,
-            VoidPtr inClientData);
+    public static native void AudioServicesPlayAlertSoundWithCompletion(int inSystemSoundID,
+            @ObjCBlock(name = "call_AudioServicesPlayAlertSoundWithCompletion") Block_AudioServicesPlayAlertSoundWithCompletion inCompletionBlock);
 
     @Generated
     @CFunction
-    public static native void AudioServicesRemoveSystemSoundCompletion(int inSystemSoundID);
+    public static native void AudioServicesPlaySystemSoundWithCompletion(int inSystemSoundID,
+            @ObjCBlock(name = "call_AudioServicesPlaySystemSoundWithCompletion") Block_AudioServicesPlaySystemSoundWithCompletion inCompletionBlock);
 
     @Generated
     @CFunction
@@ -529,189 +940,22 @@ public final class AudioToolbox {
 
     @Generated
     @CFunction
-    public static native int NewAUGraph(Ptr<AUGraph> outGraph);
+    public static native void AudioServicesPlayAlertSound(int inSystemSoundID);
 
     @Generated
     @CFunction
-    public static native int DisposeAUGraph(AUGraph inGraph);
+    public static native void AudioServicesPlaySystemSound(int inSystemSoundID);
 
     @Generated
     @CFunction
-    public static native int AUGraphAddNode(AUGraph inGraph,
-            @UncertainArgument("Options: reference, array Fallback: reference") AudioComponentDescription inDescription,
-            IntPtr outNode);
+    public static native int AudioServicesAddSystemSoundCompletion(int inSystemSoundID, CFRunLoopRef inRunLoop,
+            CFStringRef inRunLoopMode,
+            @FunctionPtr(name = "call_AudioServicesAddSystemSoundCompletion") Function_AudioServicesAddSystemSoundCompletion inCompletionRoutine,
+            VoidPtr inClientData);
 
     @Generated
     @CFunction
-    public static native int AUGraphRemoveNode(AUGraph inGraph, int inNode);
-
-    @Generated
-    @CFunction
-    public static native int AUGraphGetNodeCount(AUGraph inGraph, IntPtr outNumberOfNodes);
-
-    @Generated
-    @CFunction
-    public static native int AUGraphGetIndNode(AUGraph inGraph, int inIndex, IntPtr outNode);
-
-    @Generated
-    @CFunction
-    public static native int AUGraphNodeInfo(AUGraph inGraph, int inNode,
-            @UncertainArgument("Options: reference, array Fallback: reference") AudioComponentDescription outDescription,
-            Ptr<AudioComponentInstance> outAudioUnit);
-
-    @Generated
-    @CFunction
-    public static native int AUGraphConnectNodeInput(AUGraph inGraph, int inSourceNode, int inSourceOutputNumber,
-            int inDestNode, int inDestInputNumber);
-
-    @Generated
-    @CFunction
-    public static native int AUGraphSetNodeInputCallback(AUGraph inGraph, int inDestNode, int inDestInputNumber,
-            @UncertainArgument("Options: reference, array Fallback: reference") AURenderCallbackStruct inInputCallback);
-
-    @Generated
-    @CFunction
-    public static native int AUGraphDisconnectNodeInput(AUGraph inGraph, int inDestNode, int inDestInputNumber);
-
-    @Generated
-    @CFunction
-    public static native int AUGraphClearConnections(AUGraph inGraph);
-
-    @Generated
-    @CFunction
-    public static native int AUGraphGetNumberOfInteractions(AUGraph inGraph, IntPtr outNumInteractions);
-
-    @Generated
-    @CFunction
-    public static native int AUGraphGetInteractionInfo(AUGraph inGraph, int inInteractionIndex, VoidPtr outInteraction);
-
-    @Generated
-    @CFunction
-    public static native int AUGraphCountNodeInteractions(AUGraph inGraph, int inNode, IntPtr outNumInteractions);
-
-    @Generated
-    @CFunction
-    public static native int AUGraphGetNodeInteractions(AUGraph inGraph, int inNode, IntPtr ioNumInteractions,
-            VoidPtr outInteractions);
-
-    @Generated
-    @CFunction
-    public static native int AUGraphUpdate(AUGraph inGraph, BytePtr outIsUpdated);
-
-    @Generated
-    @CFunction
-    public static native int AUGraphOpen(AUGraph inGraph);
-
-    @Generated
-    @CFunction
-    public static native int AUGraphClose(AUGraph inGraph);
-
-    @Generated
-    @CFunction
-    public static native int AUGraphInitialize(AUGraph inGraph);
-
-    @Generated
-    @CFunction
-    public static native int AUGraphUninitialize(AUGraph inGraph);
-
-    @Generated
-    @CFunction
-    public static native int AUGraphStart(AUGraph inGraph);
-
-    @Generated
-    @CFunction
-    public static native int AUGraphStop(AUGraph inGraph);
-
-    @Generated
-    @CFunction
-    public static native int AUGraphIsOpen(AUGraph inGraph, BytePtr outIsOpen);
-
-    @Generated
-    @CFunction
-    public static native int AUGraphIsInitialized(AUGraph inGraph, BytePtr outIsInitialized);
-
-    @Generated
-    @CFunction
-    public static native int AUGraphIsRunning(AUGraph inGraph, BytePtr outIsRunning);
-
-    @Generated
-    @CFunction
-    public static native int AUGraphGetCPULoad(AUGraph inGraph, FloatPtr outAverageCPULoad);
-
-    @Generated
-    @CFunction
-    public static native int AUGraphGetMaxCPULoad(AUGraph inGraph, FloatPtr outMaxLoad);
-
-    @Generated
-    @CFunction
-    public static native int AUGraphAddRenderNotify(AUGraph inGraph,
-            @FunctionPtr(name = "call_AUGraphAddRenderNotify") Function_AUGraphAddRenderNotify inCallback,
-            VoidPtr inRefCon);
-
-    @Generated
-    @CFunction
-    public static native int AUGraphRemoveRenderNotify(AUGraph inGraph,
-            @FunctionPtr(name = "call_AUGraphRemoveRenderNotify") Function_AUGraphRemoveRenderNotify inCallback,
-            VoidPtr inRefCon);
-
-    @Generated
-    @CFunction
-    public static native int AudioConverterNew(
-            @UncertainArgument("Options: reference, array Fallback: reference") AudioStreamBasicDescription inSourceFormat,
-            @UncertainArgument("Options: reference, array Fallback: reference") AudioStreamBasicDescription inDestinationFormat,
-            Ptr<AudioConverterRef> outAudioConverter);
-
-    @Generated
-    @CFunction
-    public static native int AudioConverterNewSpecific(
-            @UncertainArgument("Options: reference, array Fallback: reference") AudioStreamBasicDescription inSourceFormat,
-            @UncertainArgument("Options: reference, array Fallback: reference") AudioStreamBasicDescription inDestinationFormat,
-            int inNumberClassDescriptions,
-            @UncertainArgument("Options: reference, array Fallback: reference") AudioClassDescription inClassDescriptions,
-            Ptr<AudioConverterRef> outAudioConverter);
-
-    @Generated
-    @CFunction
-    public static native int AudioConverterDispose(AudioConverterRef inAudioConverter);
-
-    @Generated
-    @CFunction
-    public static native int AudioConverterReset(AudioConverterRef inAudioConverter);
-
-    @Generated
-    @CFunction
-    public static native int AudioConverterGetPropertyInfo(AudioConverterRef inAudioConverter, int inPropertyID,
-            IntPtr outSize, BytePtr outWritable);
-
-    @Generated
-    @CFunction
-    public static native int AudioConverterGetProperty(AudioConverterRef inAudioConverter, int inPropertyID,
-            IntPtr ioPropertyDataSize, VoidPtr outPropertyData);
-
-    @Generated
-    @CFunction
-    public static native int AudioConverterSetProperty(AudioConverterRef inAudioConverter, int inPropertyID,
-            int inPropertyDataSize, ConstVoidPtr inPropertyData);
-
-    @Generated
-    @CFunction
-    public static native int AudioConverterConvertBuffer(AudioConverterRef inAudioConverter, int inInputDataSize,
-            ConstVoidPtr inInputData, IntPtr ioOutputDataSize, VoidPtr outOutputData);
-
-    @Generated
-    @CFunction
-    public static native int AudioConverterFillComplexBuffer(AudioConverterRef inAudioConverter,
-            @FunctionPtr(name = "call_AudioConverterFillComplexBuffer") Function_AudioConverterFillComplexBuffer inInputDataProc,
-            VoidPtr inInputDataProcUserData, IntPtr ioOutputDataPacketSize,
-            @UncertainArgument("Options: reference, array Fallback: reference") AudioBufferList outOutputData,
-            @UncertainArgument("Options: reference, array Fallback: reference") AudioStreamPacketDescription outPacketDescription);
-
-    @Generated
-    @CFunction
-    public static native int AudioConverterConvertComplexBuffer(AudioConverterRef inAudioConverter,
-            int inNumberPCMFrames,
-            @UncertainArgument("Options: reference, array Fallback: reference") AudioBufferList inInputData,
-            @UncertainArgument("Options: reference, array Fallback: reference") AudioBufferList outOutputData);
+    public static native void AudioServicesRemoveSystemSoundCompletion(int inSystemSoundID);
 
     @Generated
     @CFunction
@@ -1112,6 +1356,14 @@ public final class AudioToolbox {
 
     @Generated
     @CVariable()
+    public static native CFStringRef kAudioComponentRegistrationsChangedNotification();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kAudioComponentInstanceInvalidationNotification();
+
+    @Generated
+    @CVariable()
     public static native CFStringRef kAudioSession_RouteChangeKey_Reason();
 
     @Generated
@@ -1206,34 +1458,80 @@ public final class AudioToolbox {
     @CVariable()
     public static native CFStringRef kAudioSession_OutputDestinationKey_Description();
 
+    @Runtime(CRuntime.class)
     @Generated
-    @Inline
-    @CFunction
-    @NUInt
-    public static native long NumBytesToNumAudioFileMarkers(@NUInt long inNumBytes);
+    public interface Block_AudioComponentInstantiate {
+        @Generated
+        void call_AudioComponentInstantiate(AudioComponentInstance arg0, int arg1);
+    }
 
+    @Runtime(CRuntime.class)
     @Generated
-    @Inline
-    @CFunction
-    @NUInt
-    public static native long NumAudioFileMarkersToNumBytes(@NUInt long inNumMarkers);
+    public interface Function_AudioComponentRegister {
+        @Generated
+        VoidPtr call_AudioComponentRegister(
+                @UncertainArgument("Options: reference, array Fallback: reference") AudioComponentDescription arg0);
+    }
 
+    @Runtime(CRuntime.class)
     @Generated
-    @Inline
-    @CFunction
-    @UncertainReturn("Options: reference, array Fallback: reference")
-    public static native AudioFileRegion NextAudioFileRegion(
-            @UncertainArgument("Options: reference, array Fallback: reference") AudioFileRegion inAFRegionPtr);
+    public interface Function_AudioUnitAddPropertyListener {
+        @Generated
+        void call_AudioUnitAddPropertyListener(VoidPtr arg0, VoidPtr arg1, int arg2, int arg3, int arg4);
+    }
 
+    @Runtime(CRuntime.class)
     @Generated
-    @CFunction
-    public static native void AudioServicesPlayAlertSoundWithCompletion(int inSystemSoundID,
-            @ObjCBlock(name = "call_AudioServicesPlayAlertSoundWithCompletion") Block_AudioServicesPlayAlertSoundWithCompletion inCompletionBlock);
+    public interface Function_AudioUnitRemovePropertyListenerWithUserData {
+        @Generated
+        void call_AudioUnitRemovePropertyListenerWithUserData(VoidPtr arg0, VoidPtr arg1, int arg2, int arg3, int arg4);
+    }
 
+    @Runtime(CRuntime.class)
     @Generated
-    @CFunction
-    public static native void AudioServicesPlaySystemSoundWithCompletion(int inSystemSoundID,
-            @ObjCBlock(name = "call_AudioServicesPlaySystemSoundWithCompletion") Block_AudioServicesPlaySystemSoundWithCompletion inCompletionBlock);
+    public interface Function_AudioUnitAddRenderNotify {
+        @Generated
+        int call_AudioUnitAddRenderNotify(VoidPtr arg0, IntPtr arg1,
+                @UncertainArgument("Options: reference, array Fallback: reference") AudioTimeStamp arg2, int arg3,
+                int arg4, @UncertainArgument("Options: reference, array Fallback: reference") AudioBufferList arg5);
+    }
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Function_AudioUnitRemoveRenderNotify {
+        @Generated
+        int call_AudioUnitRemoveRenderNotify(VoidPtr arg0, IntPtr arg1,
+                @UncertainArgument("Options: reference, array Fallback: reference") AudioTimeStamp arg2, int arg3,
+                int arg4, @UncertainArgument("Options: reference, array Fallback: reference") AudioBufferList arg5);
+    }
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Function_AUGraphAddRenderNotify {
+        @Generated
+        int call_AUGraphAddRenderNotify(VoidPtr arg0, IntPtr arg1,
+                @UncertainArgument("Options: reference, array Fallback: reference") AudioTimeStamp arg2, int arg3,
+                int arg4, @UncertainArgument("Options: reference, array Fallback: reference") AudioBufferList arg5);
+    }
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Function_AUGraphRemoveRenderNotify {
+        @Generated
+        int call_AUGraphRemoveRenderNotify(VoidPtr arg0, IntPtr arg1,
+                @UncertainArgument("Options: reference, array Fallback: reference") AudioTimeStamp arg2, int arg3,
+                int arg4, @UncertainArgument("Options: reference, array Fallback: reference") AudioBufferList arg5);
+    }
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Function_AudioConverterFillComplexBuffer {
+        @Generated
+        int call_AudioConverterFillComplexBuffer(VoidPtr arg0, IntPtr arg1,
+                @UncertainArgument("Options: reference, array Fallback: reference") AudioBufferList arg2,
+                @ReferenceInfo(type = AudioStreamPacketDescription.class, depth = 2) Ptr<Ptr<AudioStreamPacketDescription>> arg3,
+                VoidPtr arg4);
+    }
 
     @Runtime(CRuntime.class)
     @Generated
@@ -1323,6 +1621,24 @@ public final class AudioToolbox {
 
     @Runtime(CRuntime.class)
     @Generated
+    public interface Block_AudioQueueNewOutputWithDispatchQueue {
+        @Generated
+        void call_AudioQueueNewOutputWithDispatchQueue(AudioQueueRef arg0,
+                @UncertainArgument("Options: reference, array Fallback: reference") AudioQueueBuffer arg1);
+    }
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Block_AudioQueueNewInputWithDispatchQueue {
+        @Generated
+        void call_AudioQueueNewInputWithDispatchQueue(AudioQueueRef arg0,
+                @UncertainArgument("Options: reference, array Fallback: reference") AudioQueueBuffer arg1,
+                @UncertainArgument("Options: reference, array Fallback: reference") AudioTimeStamp arg2, int arg3,
+                @UncertainArgument("Options: reference, array Fallback: reference") AudioStreamPacketDescription arg4);
+    }
+
+    @Runtime(CRuntime.class)
+    @Generated
     public interface Function_AudioQueueAddPropertyListener {
         @Generated
         void call_AudioQueueAddPropertyListener(VoidPtr arg0, VoidPtr arg1, int arg2);
@@ -1367,50 +1683,6 @@ public final class AudioToolbox {
 
     @Runtime(CRuntime.class)
     @Generated
-    public interface Function_AudioServicesAddSystemSoundCompletion {
-        @Generated
-        void call_AudioServicesAddSystemSoundCompletion(int arg0, VoidPtr arg1);
-    }
-
-    @Runtime(CRuntime.class)
-    @Generated
-    public interface Function_AUGraphAddRenderNotify {
-        @Generated
-        int call_AUGraphAddRenderNotify(VoidPtr arg0, IntPtr arg1,
-                @UncertainArgument("Options: reference, array Fallback: reference") AudioTimeStamp arg2, int arg3,
-                int arg4, @UncertainArgument("Options: reference, array Fallback: reference") AudioBufferList arg5);
-    }
-
-    @Runtime(CRuntime.class)
-    @Generated
-    public interface Function_AUGraphRemoveRenderNotify {
-        @Generated
-        int call_AUGraphRemoveRenderNotify(VoidPtr arg0, IntPtr arg1,
-                @UncertainArgument("Options: reference, array Fallback: reference") AudioTimeStamp arg2, int arg3,
-                int arg4, @UncertainArgument("Options: reference, array Fallback: reference") AudioBufferList arg5);
-    }
-
-    @Runtime(CRuntime.class)
-    @Generated
-    public interface Function_AudioConverterFillComplexBuffer {
-        @Generated
-        int call_AudioConverterFillComplexBuffer(VoidPtr arg0, IntPtr arg1,
-                @UncertainArgument("Options: reference, array Fallback: reference") AudioBufferList arg2,
-                @ReferenceInfo(type = AudioStreamPacketDescription.class, depth = 2) Ptr<Ptr<AudioStreamPacketDescription>> arg3,
-                VoidPtr arg4);
-    }
-
-    @Runtime(CRuntime.class)
-    @Generated
-    public interface Function_MusicSequenceSetUserCallback {
-        @Generated
-        void call_MusicSequenceSetUserCallback(VoidPtr arg0, VoidPtr arg1, VoidPtr arg2, double arg3,
-                @UncertainArgument("Options: reference, array Fallback: reference") MusicEventUserData arg4,
-                double arg5, double arg6);
-    }
-
-    @Runtime(CRuntime.class)
-    @Generated
     public interface Block_AudioServicesPlayAlertSoundWithCompletion {
         @Generated
         void call_AudioServicesPlayAlertSoundWithCompletion();
@@ -1421,5 +1693,21 @@ public final class AudioToolbox {
     public interface Block_AudioServicesPlaySystemSoundWithCompletion {
         @Generated
         void call_AudioServicesPlaySystemSoundWithCompletion();
+    }
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Function_AudioServicesAddSystemSoundCompletion {
+        @Generated
+        void call_AudioServicesAddSystemSoundCompletion(int arg0, VoidPtr arg1);
+    }
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Function_MusicSequenceSetUserCallback {
+        @Generated
+        void call_MusicSequenceSetUserCallback(VoidPtr arg0, VoidPtr arg1, VoidPtr arg2, double arg3,
+                @UncertainArgument("Options: reference, array Fallback: reference") MusicEventUserData arg4,
+                double arg5, double arg6);
     }
 }

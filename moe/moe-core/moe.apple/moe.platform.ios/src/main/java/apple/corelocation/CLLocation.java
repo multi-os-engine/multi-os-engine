@@ -62,17 +62,13 @@ public class CLLocation extends NSObject implements NSCopying, NSSecureCoding, C
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native CLLocation alloc();
-
-    @Generated
-    @Selector("supportsSecureCoding")
-    public static native boolean supportsSecureCoding();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -104,6 +100,10 @@ public class CLLocation extends NSObject implements NSCopying, NSSecureCoding, C
     @Generated
     @Selector("debugDescription")
     public static native String debugDescription_static();
+
+    @Generated
+    @Selector("description")
+    public static native String description_static();
 
     @Generated
     @Selector("hash")
@@ -155,11 +155,15 @@ public class CLLocation extends NSObject implements NSCopying, NSSecureCoding, C
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")
     public static native Class superclass_static();
+
+    @Generated
+    @Selector("supportsSecureCoding")
+    public static native boolean supportsSecureCoding();
 
     @Generated
     @Selector("version")
@@ -184,10 +188,6 @@ public class CLLocation extends NSObject implements NSCopying, NSSecureCoding, C
     @Generated
     @Selector("course")
     public native double course();
-
-    @Generated
-    @Selector("description")
-    public native String description();
 
     @Generated
     @Selector("distanceFromLocation:")

@@ -55,45 +55,13 @@ public class NSComparisonPredicate extends NSPredicate {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native NSComparisonPredicate alloc();
-
-    @Generated
-    @Selector("predicateWithBlock:")
-    public static native NSPredicate predicateWithBlock(
-            @ObjCBlock(name = "call_predicateWithBlock") NSPredicate.Block_predicateWithBlock block);
-
-    @Generated
-    @Variadic()
-    @Selector("predicateWithFormat:")
-    public static native NSPredicate predicateWithFormat(String predicateFormat, Object... varargs);
-
-    @Generated
-    @Selector("predicateWithFormat:argumentArray:")
-    public static native NSPredicate predicateWithFormatArgumentArray(String predicateFormat, NSArray<?> arguments);
-
-    @Generated
-    @Selector("predicateWithFormat:arguments:")
-    public static native NSPredicate predicateWithFormatArguments(String predicateFormat, BytePtr argList);
-
-    @Generated
-    @Selector("predicateWithLeftExpression:rightExpression:customSelector:")
-    public static native NSComparisonPredicate predicateWithLeftExpressionRightExpressionCustomSelector(
-            NSExpression lhs, NSExpression rhs, SEL selector);
-
-    @Generated
-    @Selector("predicateWithLeftExpression:rightExpression:modifier:type:options:")
-    public static native NSComparisonPredicate predicateWithLeftExpressionRightExpressionModifierTypeOptions(
-            NSExpression lhs, NSExpression rhs, @NUInt long modifier, @NUInt long type, @NUInt long options);
-
-    @Generated
-    @Selector("predicateWithValue:")
-    public static native NSPredicate predicateWithValue(boolean value);
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -171,6 +139,38 @@ public class NSComparisonPredicate extends NSPredicate {
     public static native Object new_objc();
 
     @Generated
+    @Selector("predicateWithBlock:")
+    public static native NSPredicate predicateWithBlock(
+            @ObjCBlock(name = "call_predicateWithBlock") NSPredicate.Block_predicateWithBlock block);
+
+    @Generated
+    @Variadic()
+    @Selector("predicateWithFormat:")
+    public static native NSPredicate predicateWithFormat(String predicateFormat, Object... varargs);
+
+    @Generated
+    @Selector("predicateWithFormat:argumentArray:")
+    public static native NSPredicate predicateWithFormatArgumentArray(String predicateFormat, NSArray<?> arguments);
+
+    @Generated
+    @Selector("predicateWithFormat:arguments:")
+    public static native NSPredicate predicateWithFormatArguments(String predicateFormat, BytePtr argList);
+
+    @Generated
+    @Selector("predicateWithLeftExpression:rightExpression:customSelector:")
+    public static native NSComparisonPredicate predicateWithLeftExpressionRightExpressionCustomSelector(
+            NSExpression lhs, NSExpression rhs, SEL selector);
+
+    @Generated
+    @Selector("predicateWithLeftExpression:rightExpression:modifier:type:options:")
+    public static native NSComparisonPredicate predicateWithLeftExpressionRightExpressionModifierTypeOptions(
+            NSExpression lhs, NSExpression rhs, @NUInt long modifier, @NUInt long type, @NUInt long options);
+
+    @Generated
+    @Selector("predicateWithValue:")
+    public static native NSPredicate predicateWithValue(boolean value);
+
+    @Generated
     @Selector("resolveClassMethod:")
     public static native boolean resolveClassMethod(SEL sel);
 
@@ -209,6 +209,10 @@ public class NSComparisonPredicate extends NSPredicate {
     public native NSComparisonPredicate init();
 
     @Generated
+    @Selector("initWithCoder:")
+    public native NSComparisonPredicate initWithCoder(NSCoder coder);
+
+    @Generated
     @Selector("initWithLeftExpression:rightExpression:customSelector:")
     public native NSComparisonPredicate initWithLeftExpressionRightExpressionCustomSelector(NSExpression lhs,
             NSExpression rhs, SEL selector);
@@ -235,10 +239,6 @@ public class NSComparisonPredicate extends NSPredicate {
     @Generated
     @Selector("rightExpression")
     public native NSExpression rightExpression();
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native NSComparisonPredicate initWithCoder(NSCoder coder);
 
     @Generated
     @ProtocolClassMethod("supportsSecureCoding")

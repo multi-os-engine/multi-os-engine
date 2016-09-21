@@ -56,13 +56,13 @@ public class NSAttributeDescription extends NSPropertyDescription {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native NSAttributeDescription alloc();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -183,6 +183,10 @@ public class NSAttributeDescription extends NSPropertyDescription {
     public native NSAttributeDescription init();
 
     @Generated
+    @Selector("initWithCoder:")
+    public native NSAttributeDescription initWithCoder(NSCoder aDecoder);
+
+    @Generated
     @Selector("setAllowsExternalBinaryDataStorage:")
     public native void setAllowsExternalBinaryDataStorage(boolean value);
 
@@ -209,8 +213,4 @@ public class NSAttributeDescription extends NSPropertyDescription {
     @Generated
     @Selector("versionHash")
     public native NSData versionHash();
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native NSAttributeDescription initWithCoder(NSCoder aDecoder);
 }

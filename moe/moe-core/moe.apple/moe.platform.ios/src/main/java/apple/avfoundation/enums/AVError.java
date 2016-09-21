@@ -78,6 +78,8 @@ public final class AVError {
     @Generated @NInt public static final long AirPlayReceiverRequiresInternet = 0xFFFFFFFFFFFFD1AFL;
     @Generated @NInt public static final long VideoCompositorFailed = 0xFFFFFFFFFFFFD1AEL;
     @Generated @NInt public static final long RecordingAlreadyInProgress = 0xFFFFFFFFFFFFD1ADL;
+    @Generated @NInt public static final long UnsupportedOutputSettings = 0xFFFFFFFFFFFFD1ABL;
+    @Generated @NInt public static final long OperationNotAllowed = 0xFFFFFFFFFFFFD1AAL;
 
     @Generated
     private AVError() {

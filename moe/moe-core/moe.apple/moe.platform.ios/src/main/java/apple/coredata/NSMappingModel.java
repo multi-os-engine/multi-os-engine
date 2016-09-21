@@ -59,24 +59,13 @@ public class NSMappingModel extends NSObject {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native NSMappingModel alloc();
-
-    @Generated
-    @Selector("inferredMappingModelForSourceModel:destinationModel:error:")
-    public static native NSMappingModel inferredMappingModelForSourceModelDestinationModelError(
-            NSManagedObjectModel sourceModel, NSManagedObjectModel destinationModel, Ptr<NSError> error);
-
-    @Generated
-    @Selector("mappingModelFromBundles:forSourceModel:destinationModel:")
-    public static native NSMappingModel mappingModelFromBundlesForSourceModelDestinationModel(
-            NSArray<? extends NSBundle> bundles, NSManagedObjectModel sourceModel,
-            NSManagedObjectModel destinationModel);
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -119,6 +108,11 @@ public class NSMappingModel extends NSObject {
     public static native long hash_static();
 
     @Generated
+    @Selector("inferredMappingModelForSourceModel:destinationModel:error:")
+    public static native NSMappingModel inferredMappingModelForSourceModelDestinationModelError(
+            NSManagedObjectModel sourceModel, NSManagedObjectModel destinationModel, Ptr<NSError> error);
+
+    @Generated
     @Selector("initialize")
     public static native void initialize();
 
@@ -148,6 +142,12 @@ public class NSMappingModel extends NSObject {
     public static native void load_objc_static();
 
     @Generated
+    @Selector("mappingModelFromBundles:forSourceModel:destinationModel:")
+    public static native NSMappingModel mappingModelFromBundlesForSourceModelDestinationModel(
+            NSArray<? extends NSBundle> bundles, NSManagedObjectModel sourceModel,
+            NSManagedObjectModel destinationModel);
+
+    @Generated
     @Owned
     @Selector("new")
     @MappedReturn(ObjCObjectMapper.class)
@@ -163,7 +163,7 @@ public class NSMappingModel extends NSObject {
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")

@@ -46,7 +46,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @Library("CoreBluetooth")
 @Runtime(ObjCRuntime.class)
 @ObjCClassBinding
-public class CBPeripheralManager extends NSObject {
+public class CBPeripheralManager extends CBManager {
     static {
         NatJ.register();
     }
@@ -57,23 +57,23 @@ public class CBPeripheralManager extends NSObject {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native CBPeripheralManager alloc();
 
     @Generated
-    @Selector("authorizationStatus")
-    @NInt
-    public static native long authorizationStatus();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
-
-    @Generated
     @Selector("allocWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object allocWithZone(VoidPtr zone);
+
+    @Generated
+    @Selector("authorizationStatus")
+    @NInt
+    public static native long authorizationStatus();
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -229,11 +229,6 @@ public class CBPeripheralManager extends NSObject {
     @Generated
     @Selector("startAdvertising:")
     public native void startAdvertising(NSDictionary<String, ?> advertisementData);
-
-    @Generated
-    @Selector("state")
-    @NInt
-    public native long state();
 
     @Generated
     @Selector("stopAdvertising")

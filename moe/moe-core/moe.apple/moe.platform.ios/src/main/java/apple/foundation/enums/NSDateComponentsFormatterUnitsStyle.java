@@ -26,6 +26,7 @@ public final class NSDateComponentsFormatterUnitsStyle {
     @Generated @NInt public static final long Short = 0x0000000000000002L;
     @Generated @NInt public static final long Full = 0x0000000000000003L;
     @Generated @NInt public static final long SpellOut = 0x0000000000000004L;
+    @Generated @NInt public static final long Brief = 0x0000000000000005L;
 
     @Generated
     private NSDateComponentsFormatterUnitsStyle() {

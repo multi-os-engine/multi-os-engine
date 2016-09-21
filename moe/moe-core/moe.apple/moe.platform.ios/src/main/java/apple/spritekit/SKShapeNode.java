@@ -64,66 +64,13 @@ public class SKShapeNode extends SKNode {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native SKShapeNode alloc();
-
-    @Generated
-    @Selector("node")
-    public static native SKShapeNode node();
-
-    @Generated
-    @Selector("nodeWithFileNamed:")
-    public static native SKShapeNode nodeWithFileNamed(String filename);
-
-    @Generated
-    @Selector("shapeNodeWithCircleOfRadius:")
-    public static native SKShapeNode shapeNodeWithCircleOfRadius(@NFloat double radius);
-
-    @Generated
-    @Selector("shapeNodeWithEllipseInRect:")
-    public static native SKShapeNode shapeNodeWithEllipseInRect(@ByValue CGRect rect);
-
-    @Generated
-    @Selector("shapeNodeWithEllipseOfSize:")
-    public static native SKShapeNode shapeNodeWithEllipseOfSize(@ByValue CGSize size);
-
-    @Generated
-    @Selector("shapeNodeWithPath:")
-    public static native SKShapeNode shapeNodeWithPath(CGPathRef path);
-
-    @Generated
-    @Selector("shapeNodeWithPath:centered:")
-    public static native SKShapeNode shapeNodeWithPathCentered(CGPathRef path, boolean centered);
-
-    @Generated
-    @Selector("shapeNodeWithPoints:count:")
-    public static native SKShapeNode shapeNodeWithPointsCount(Ptr<CGPoint> points, @NUInt long numPoints);
-
-    @Generated
-    @Selector("shapeNodeWithRect:")
-    public static native SKShapeNode shapeNodeWithRect(@ByValue CGRect rect);
-
-    @Generated
-    @Selector("shapeNodeWithRect:cornerRadius:")
-    public static native SKShapeNode shapeNodeWithRectCornerRadius(@ByValue CGRect rect, @NFloat double cornerRadius);
-
-    @Generated
-    @Selector("shapeNodeWithRectOfSize:")
-    public static native SKShapeNode shapeNodeWithRectOfSize(@ByValue CGSize size);
-
-    @Generated
-    @Selector("shapeNodeWithRectOfSize:cornerRadius:")
-    public static native SKShapeNode shapeNodeWithRectOfSizeCornerRadius(@ByValue CGSize size,
-            @NFloat double cornerRadius);
-
-    @Generated
-    @Selector("shapeNodeWithSplinePoints:count:")
-    public static native SKShapeNode shapeNodeWithSplinePointsCount(Ptr<CGPoint> points, @NUInt long numPoints);
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -205,6 +152,14 @@ public class SKShapeNode extends SKNode {
     public static native Object new_objc();
 
     @Generated
+    @Selector("node")
+    public static native SKShapeNode node();
+
+    @Generated
+    @Selector("nodeWithFileNamed:")
+    public static native SKShapeNode nodeWithFileNamed(String filename);
+
+    @Generated
     @Selector("obstaclesFromNodeBounds:")
     public static native NSArray<? extends GKPolygonObstacle> obstaclesFromNodeBounds(NSArray<? extends SKNode> nodes);
 
@@ -229,6 +184,51 @@ public class SKShapeNode extends SKNode {
     @Generated
     @Selector("setVersion:")
     public static native void setVersion_static(@NInt long aVersion);
+
+    @Generated
+    @Selector("shapeNodeWithCircleOfRadius:")
+    public static native SKShapeNode shapeNodeWithCircleOfRadius(@NFloat double radius);
+
+    @Generated
+    @Selector("shapeNodeWithEllipseInRect:")
+    public static native SKShapeNode shapeNodeWithEllipseInRect(@ByValue CGRect rect);
+
+    @Generated
+    @Selector("shapeNodeWithEllipseOfSize:")
+    public static native SKShapeNode shapeNodeWithEllipseOfSize(@ByValue CGSize size);
+
+    @Generated
+    @Selector("shapeNodeWithPath:")
+    public static native SKShapeNode shapeNodeWithPath(CGPathRef path);
+
+    @Generated
+    @Selector("shapeNodeWithPath:centered:")
+    public static native SKShapeNode shapeNodeWithPathCentered(CGPathRef path, boolean centered);
+
+    @Generated
+    @Selector("shapeNodeWithPoints:count:")
+    public static native SKShapeNode shapeNodeWithPointsCount(Ptr<CGPoint> points, @NUInt long numPoints);
+
+    @Generated
+    @Selector("shapeNodeWithRect:")
+    public static native SKShapeNode shapeNodeWithRect(@ByValue CGRect rect);
+
+    @Generated
+    @Selector("shapeNodeWithRect:cornerRadius:")
+    public static native SKShapeNode shapeNodeWithRectCornerRadius(@ByValue CGRect rect, @NFloat double cornerRadius);
+
+    @Generated
+    @Selector("shapeNodeWithRectOfSize:")
+    public static native SKShapeNode shapeNodeWithRectOfSize(@ByValue CGSize size);
+
+    @Generated
+    @Selector("shapeNodeWithRectOfSize:cornerRadius:")
+    public static native SKShapeNode shapeNodeWithRectOfSizeCornerRadius(@ByValue CGSize size,
+            @NFloat double cornerRadius);
+
+    @Generated
+    @Selector("shapeNodeWithSplinePoints:count:")
+    public static native SKShapeNode shapeNodeWithSplinePointsCount(Ptr<CGPoint> points, @NUInt long numPoints);
 
     @Generated
     @Selector("superclass")

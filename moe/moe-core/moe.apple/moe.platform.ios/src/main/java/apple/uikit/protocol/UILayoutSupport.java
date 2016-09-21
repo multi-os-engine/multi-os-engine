@@ -32,17 +32,17 @@ import org.moe.natj.objc.ann.Selector;
 @ObjCProtocolName("UILayoutSupport")
 public interface UILayoutSupport {
     @Generated
-    @Selector("length")
-    @NFloat
-    double length();
-
-    @Generated
     @Selector("bottomAnchor")
     NSLayoutYAxisAnchor bottomAnchor();
 
     @Generated
     @Selector("heightAnchor")
     NSLayoutDimension heightAnchor();
+
+    @Generated
+    @Selector("length")
+    @NFloat
+    double length();
 
     @Generated
     @Selector("topAnchor")

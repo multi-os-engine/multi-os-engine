@@ -60,9 +60,18 @@ public class AVURLAsset extends AVAsset {
     public static native AVURLAsset URLAssetWithURLOptions(NSURL URL, NSDictionary<String, ?> options);
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native AVURLAsset alloc();
+
+    @Generated
+    @Selector("allocWithZone:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("assetWithURL:")
@@ -75,19 +84,6 @@ public class AVURLAsset extends AVAsset {
     @Generated
     @Selector("audiovisualTypes")
     public static native NSArray<String> audiovisualTypes();
-
-    @Generated
-    @Selector("isPlayableExtendedMIMEType:")
-    public static native boolean isPlayableExtendedMIMEType(String extendedMIMEType);
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
-
-    @Generated
-    @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -142,6 +138,10 @@ public class AVURLAsset extends AVAsset {
     public static native boolean instancesRespondToSelector(SEL aSelector);
 
     @Generated
+    @Selector("isPlayableExtendedMIMEType:")
+    public static native boolean isPlayableExtendedMIMEType(String extendedMIMEType);
+
+    @Generated
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
@@ -183,6 +183,10 @@ public class AVURLAsset extends AVAsset {
     @Generated
     @Selector("URL")
     public native NSURL URL();
+
+    @Generated
+    @Selector("assetCache")
+    public native AVAssetCache assetCache();
 
     @Generated
     @Selector("compatibleTrackForCompositionTrack:")

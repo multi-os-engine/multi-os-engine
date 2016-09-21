@@ -57,13 +57,13 @@ public class MKLocalSearchRequest extends NSObject implements NSCopying {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native MKLocalSearchRequest alloc();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -150,7 +150,7 @@ public class MKLocalSearchRequest extends NSObject implements NSCopying {
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")
@@ -172,6 +172,10 @@ public class MKLocalSearchRequest extends NSObject implements NSCopying {
     public native MKLocalSearchRequest init();
 
     @Generated
+    @Selector("initWithCompletion:")
+    public native MKLocalSearchRequest initWithCompletion(MKLocalSearchCompletion completion);
+
+    @Generated
     @Selector("naturalLanguageQuery")
     public native String naturalLanguageQuery();
 
@@ -187,8 +191,4 @@ public class MKLocalSearchRequest extends NSObject implements NSCopying {
     @Generated
     @Selector("setRegion:")
     public native void setRegion(@ByValue MKCoordinateRegion value);
-
-    @Generated
-    @Selector("initWithCompletion:")
-    public native MKLocalSearchRequest initWithCompletion(MKLocalSearchCompletion completion);
 }

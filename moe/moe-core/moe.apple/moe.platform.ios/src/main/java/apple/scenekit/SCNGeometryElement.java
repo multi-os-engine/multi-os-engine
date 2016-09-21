@@ -59,26 +59,13 @@ public class SCNGeometryElement extends NSObject implements NSSecureCoding {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native SCNGeometryElement alloc();
-
-    @Generated
-    @Selector("geometryElementWithData:primitiveType:primitiveCount:bytesPerIndex:")
-    public static native SCNGeometryElement geometryElementWithDataPrimitiveTypePrimitiveCountBytesPerIndex(NSData data,
-            @NInt long primitiveType, @NInt long primitiveCount, @NInt long bytesPerIndex);
-
-    @Generated
-    @Selector("supportsSecureCoding")
-    public static native boolean supportsSecureCoding();
-
-    @Generated
-    @Selector("geometryElementWithMDLSubmesh:")
-    public static native SCNGeometryElement geometryElementWithMDLSubmesh(MDLSubmesh mdlSubMesh);
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -114,6 +101,15 @@ public class SCNGeometryElement extends NSObject implements NSSecureCoding {
     @Generated
     @Selector("description")
     public static native String description_static();
+
+    @Generated
+    @Selector("geometryElementWithData:primitiveType:primitiveCount:bytesPerIndex:")
+    public static native SCNGeometryElement geometryElementWithDataPrimitiveTypePrimitiveCountBytesPerIndex(NSData data,
+            @NInt long primitiveType, @NInt long primitiveCount, @NInt long bytesPerIndex);
+
+    @Generated
+    @Selector("geometryElementWithMDLSubmesh:")
+    public static native SCNGeometryElement geometryElementWithMDLSubmesh(MDLSubmesh mdlSubMesh);
 
     @Generated
     @Selector("hash")
@@ -170,6 +166,10 @@ public class SCNGeometryElement extends NSObject implements NSSecureCoding {
     @Generated
     @Selector("superclass")
     public static native Class superclass_static();
+
+    @Generated
+    @Selector("supportsSecureCoding")
+    public static native boolean supportsSecureCoding();
 
     @Generated
     @Selector("version")

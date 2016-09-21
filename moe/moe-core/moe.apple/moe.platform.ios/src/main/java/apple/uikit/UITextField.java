@@ -28,6 +28,7 @@ import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
 import apple.foundation.protocol.NSCoding;
 import apple.foundation.struct.NSRange;
+import apple.uikit.protocol.UIContentSizeCategoryAdjusting;
 import apple.uikit.protocol.UITextFieldDelegate;
 import apple.uikit.protocol.UITextInput;
 import org.moe.natj.c.ann.FunctionPtr;
@@ -59,7 +60,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
 @ObjCClassBinding
-public class UITextField extends UIControl implements UITextInput, NSCoding {
+public class UITextField extends UIControl implements UITextInput, NSCoding, UIContentSizeCategoryAdjusting {
     static {
         NatJ.register();
     }
@@ -70,11 +71,6 @@ public class UITextField extends UIControl implements UITextInput, NSCoding {
     }
 
     @Generated
-    @Owned
-    @Selector("alloc")
-    public static native UITextField alloc();
-
-    @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
 
@@ -83,6 +79,11 @@ public class UITextField extends UIControl implements UITextInput, NSCoding {
     public static native void addKeyframeWithRelativeStartTimeRelativeDurationAnimations(double frameStartTime,
             double frameDuration,
             @ObjCBlock(name = "call_addKeyframeWithRelativeStartTimeRelativeDurationAnimations") UIView.Block_addKeyframeWithRelativeStartTimeRelativeDurationAnimations animations);
+
+    @Generated
+    @Owned
+    @Selector("alloc")
+    public static native UITextField alloc();
 
     @Generated
     @Selector("allocWithZone:")
@@ -298,7 +299,7 @@ public class UITextField extends UIControl implements UITextInput, NSCoding {
 
     @Generated
     @Selector("setAnimationDuration:")
-    public static native void setAnimationDuration(double duration);
+    public static native void setAnimationDuration_static(double duration);
 
     @Generated
     @Selector("setAnimationRepeatAutoreverses:")
@@ -306,7 +307,7 @@ public class UITextField extends UIControl implements UITextInput, NSCoding {
 
     @Generated
     @Selector("setAnimationRepeatCount:")
-    public static native void setAnimationRepeatCount(float repeatCount);
+    public static native void setAnimationRepeatCount_static(float repeatCount);
 
     @Generated
     @Selector("setAnimationStartDate:")
@@ -326,7 +327,7 @@ public class UITextField extends UIControl implements UITextInput, NSCoding {
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")
@@ -351,9 +352,19 @@ public class UITextField extends UIControl implements UITextInput, NSCoding {
     public static native long userInterfaceLayoutDirectionForSemanticContentAttribute(@NInt long attribute);
 
     @Generated
+    @Selector("userInterfaceLayoutDirectionForSemanticContentAttribute:relativeToLayoutDirection:")
+    @NInt
+    public static native long userInterfaceLayoutDirectionForSemanticContentAttributeRelativeToLayoutDirection(
+            @NInt long semanticContentAttribute, @NInt long layoutDirection);
+
+    @Generated
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("adjustsFontForContentSizeCategory")
+    public native boolean adjustsFontForContentSizeCategory();
 
     @Generated
     @Selector("adjustsFontSizeToFitWidth")
@@ -362,6 +373,52 @@ public class UITextField extends UIControl implements UITextInput, NSCoding {
     @Generated
     @Selector("allowsEditingTextAttributes")
     public native boolean allowsEditingTextAttributes();
+
+    @Generated
+    @ProtocolClassMethod("appearance")
+    @MappedReturn(ObjCObjectMapper.class)
+    public Object _appearance() {
+        return appearance();
+    }
+
+    @Generated
+    @ProtocolClassMethod("appearanceForTraitCollection")
+    @MappedReturn(ObjCObjectMapper.class)
+    public Object _appearanceForTraitCollection(UITraitCollection trait) {
+        return appearanceForTraitCollection(trait);
+    }
+
+    @Generated
+    @Deprecated
+    @ProtocolClassMethod("appearanceForTraitCollectionWhenContainedIn")
+    @MappedReturn(ObjCObjectMapper.class)
+    public Object _appearanceForTraitCollectionWhenContainedIn(UITraitCollection trait,
+            @Mapped(ObjCObjectMapper.class) Object ContainerClass, Object... varargs) {
+        return appearanceForTraitCollectionWhenContainedIn(trait, ContainerClass, varargs);
+    }
+
+    @Generated
+    @ProtocolClassMethod("appearanceForTraitCollectionWhenContainedInInstancesOfClasses")
+    @MappedReturn(ObjCObjectMapper.class)
+    public Object _appearanceForTraitCollectionWhenContainedInInstancesOfClasses(UITraitCollection trait,
+            NSArray<?> containerTypes) {
+        return appearanceForTraitCollectionWhenContainedInInstancesOfClasses(trait, containerTypes);
+    }
+
+    @Generated
+    @Deprecated
+    @ProtocolClassMethod("appearanceWhenContainedIn")
+    @MappedReturn(ObjCObjectMapper.class)
+    public Object _appearanceWhenContainedIn(@Mapped(ObjCObjectMapper.class) Object ContainerClass, Object... varargs) {
+        return appearanceWhenContainedIn(ContainerClass, varargs);
+    }
+
+    @Generated
+    @ProtocolClassMethod("appearanceWhenContainedInInstancesOfClasses")
+    @MappedReturn(ObjCObjectMapper.class)
+    public Object _appearanceWhenContainedInInstancesOfClasses(NSArray<?> containerTypes) {
+        return appearanceWhenContainedInInstancesOfClasses(containerTypes);
+    }
 
     @Generated
     @Selector("attributedPlaceholder")
@@ -391,6 +448,11 @@ public class UITextField extends UIControl implements UITextInput, NSCoding {
     @Selector("baseWritingDirectionForPosition:inDirection:")
     @NInt
     public native long baseWritingDirectionForPositionInDirection(UITextPosition position, @NInt long direction);
+
+    @Generated
+    @IsOptional
+    @Selector("beginFloatingCursorAtPoint:")
+    public native void beginFloatingCursorAtPoint(@ByValue CGPoint point);
 
     @Generated
     @Selector("beginningOfDocument")
@@ -505,6 +567,11 @@ public class UITextField extends UIControl implements UITextInput, NSCoding {
     @Generated
     @Selector("encodeWithCoder:")
     public native void encodeWithCoder(NSCoder aCoder);
+
+    @Generated
+    @IsOptional
+    @Selector("endFloatingCursor")
+    public native void endFloatingCursor();
 
     @Generated
     @Selector("endOfDocument")
@@ -699,6 +766,10 @@ public class UITextField extends UIControl implements UITextInput, NSCoding {
     public native NSArray<?> selectionRectsForRange(UITextRange range);
 
     @Generated
+    @Selector("setAdjustsFontForContentSizeCategory:")
+    public native void setAdjustsFontForContentSizeCategory(boolean value);
+
+    @Generated
     @Selector("setAdjustsFontSizeToFitWidth:")
     public native void setAdjustsFontSizeToFitWidth(boolean value);
 
@@ -879,6 +950,11 @@ public class UITextField extends UIControl implements UITextInput, NSCoding {
     public native void setTextColor(UIColor value);
 
     @Generated
+    @IsOptional
+    @Selector("setTextContentType:")
+    public native void setTextContentType(String value);
+
+    @Generated
     @Selector("setTypingAttributes:")
     public native void setTypingAttributes(NSDictionary<String, ?> value);
 
@@ -905,6 +981,11 @@ public class UITextField extends UIControl implements UITextInput, NSCoding {
     @Generated
     @Selector("textColor")
     public native UIColor textColor();
+
+    @Generated
+    @IsOptional
+    @Selector("textContentType")
+    public native String textContentType();
 
     @Generated
     @Selector("textInRange:")
@@ -945,62 +1026,6 @@ public class UITextField extends UIControl implements UITextInput, NSCoding {
 
     @Generated
     @IsOptional
-    @Selector("beginFloatingCursorAtPoint:")
-    public native void beginFloatingCursorAtPoint(@ByValue CGPoint point);
-
-    @Generated
-    @IsOptional
-    @Selector("endFloatingCursor")
-    public native void endFloatingCursor();
-
-    @Generated
-    @IsOptional
     @Selector("updateFloatingCursorAtPoint:")
     public native void updateFloatingCursorAtPoint(@ByValue CGPoint point);
-
-    @Generated
-    @ProtocolClassMethod("appearance")
-    @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearance() {
-        return appearance();
-    }
-
-    @Generated
-    @ProtocolClassMethod("appearanceForTraitCollection")
-    @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearanceForTraitCollection(UITraitCollection trait) {
-        return appearanceForTraitCollection(trait);
-    }
-
-    @Generated
-    @Deprecated
-    @ProtocolClassMethod("appearanceForTraitCollectionWhenContainedIn")
-    @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearanceForTraitCollectionWhenContainedIn(UITraitCollection trait,
-            @Mapped(ObjCObjectMapper.class) Object ContainerClass, Object... varargs) {
-        return appearanceForTraitCollectionWhenContainedIn(trait, ContainerClass, varargs);
-    }
-
-    @Generated
-    @ProtocolClassMethod("appearanceForTraitCollectionWhenContainedInInstancesOfClasses")
-    @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearanceForTraitCollectionWhenContainedInInstancesOfClasses(UITraitCollection trait,
-            NSArray<?> containerTypes) {
-        return appearanceForTraitCollectionWhenContainedInInstancesOfClasses(trait, containerTypes);
-    }
-
-    @Generated
-    @Deprecated
-    @ProtocolClassMethod("appearanceWhenContainedIn")
-    @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearanceWhenContainedIn(@Mapped(ObjCObjectMapper.class) Object ContainerClass, Object... varargs) {
-        return appearanceWhenContainedIn(ContainerClass, varargs);
-    }
-
-    @Generated
-    @ProtocolClassMethod("appearanceWhenContainedInInstancesOfClasses")
-    @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearanceWhenContainedInInstancesOfClasses(NSArray<?> containerTypes) {
-        return appearanceWhenContainedInInstancesOfClasses(containerTypes);
-    }
 }

@@ -57,13 +57,13 @@ public class NEVPNProtocolIPSec extends NEVPNProtocol {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native NEVPNProtocolIPSec alloc();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -150,7 +150,7 @@ public class NEVPNProtocolIPSec extends NEVPNProtocol {
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")
@@ -173,6 +173,10 @@ public class NEVPNProtocolIPSec extends NEVPNProtocol {
     @Generated
     @Selector("init")
     public native NEVPNProtocolIPSec init();
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native NEVPNProtocolIPSec initWithCoder(NSCoder aDecoder);
 
     @Generated
     @Selector("localIdentifier")
@@ -207,16 +211,12 @@ public class NEVPNProtocolIPSec extends NEVPNProtocol {
     public native NSData sharedSecretReference();
 
     @Generated
-    @Selector("useExtendedAuthentication")
-    public native boolean useExtendedAuthentication();
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native NEVPNProtocolIPSec initWithCoder(NSCoder aDecoder);
-
-    @Generated
     @ProtocolClassMethod("supportsSecureCoding")
     public boolean _supportsSecureCoding() {
         return supportsSecureCoding();
     }
+
+    @Generated
+    @Selector("useExtendedAuthentication")
+    public native boolean useExtendedAuthentication();
 }

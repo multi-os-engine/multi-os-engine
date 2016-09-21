@@ -58,25 +58,13 @@ public final class CFDictionaryValueCallBacks extends StructObject {
     public native void setVersion(@NInt long value);
 
     @Generated
-    @StructureField(order = 1, isGetter = false)
-    public native void setRetain(@FunctionPtr(name = "call_retain") Function_retain value);
-
-    @Generated
-    @StructureField(order = 2, isGetter = false)
-    public native void setRelease(@FunctionPtr(name = "call_release") Function_release value);
-
-    @Generated
-    @StructureField(order = 3, isGetter = false)
-    public native void setCopyDescription(@FunctionPtr(name = "call_copyDescription") Function_copyDescription value);
-
-    @Generated
-    @StructureField(order = 4, isGetter = false)
-    public native void setEqual(@FunctionPtr(name = "call_equal") Function_equal value);
-
-    @Generated
     @StructureField(order = 1, isGetter = true)
     @FunctionPtr(name = "call_retain")
     public native Function_retain retain();
+
+    @Generated
+    @StructureField(order = 1, isGetter = false)
+    public native void setRetain(@FunctionPtr(name = "call_retain") Function_retain value);
 
     @Generated
     @StructureField(order = 2, isGetter = true)
@@ -84,14 +72,26 @@ public final class CFDictionaryValueCallBacks extends StructObject {
     public native Function_release release();
 
     @Generated
+    @StructureField(order = 2, isGetter = false)
+    public native void setRelease(@FunctionPtr(name = "call_release") Function_release value);
+
+    @Generated
     @StructureField(order = 3, isGetter = true)
     @FunctionPtr(name = "call_copyDescription")
     public native Function_copyDescription copyDescription();
 
     @Generated
+    @StructureField(order = 3, isGetter = false)
+    public native void setCopyDescription(@FunctionPtr(name = "call_copyDescription") Function_copyDescription value);
+
+    @Generated
     @StructureField(order = 4, isGetter = true)
     @FunctionPtr(name = "call_equal")
     public native Function_equal equal();
+
+    @Generated
+    @StructureField(order = 4, isGetter = false)
+    public native void setEqual(@FunctionPtr(name = "call_equal") Function_equal value);
 
     @Runtime(CRuntime.class)
     @Generated

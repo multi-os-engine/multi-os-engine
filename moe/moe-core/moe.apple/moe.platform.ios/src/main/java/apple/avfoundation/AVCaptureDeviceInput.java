@@ -56,17 +56,13 @@ public class AVCaptureDeviceInput extends AVCaptureInput {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native AVCaptureDeviceInput alloc();
-
-    @Generated
-    @Selector("deviceInputWithDevice:error:")
-    public static native AVCaptureDeviceInput deviceInputWithDeviceError(AVCaptureDevice device, Ptr<NSError> outError);
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -104,6 +100,10 @@ public class AVCaptureDeviceInput extends AVCaptureInput {
     public static native String description_static();
 
     @Generated
+    @Selector("deviceInputWithDevice:error:")
+    public static native AVCaptureDeviceInput deviceInputWithDeviceError(AVCaptureDevice device, Ptr<NSError> outError);
+
+    @Generated
     @Selector("hash")
     @NUInt
     public static native long hash_static();
@@ -135,7 +135,7 @@ public class AVCaptureDeviceInput extends AVCaptureInput {
 
     @Generated
     @Selector("load")
-    public static native void load_objc();
+    public static native void load_objc_static();
 
     @Generated
     @Owned
@@ -153,7 +153,7 @@ public class AVCaptureDeviceInput extends AVCaptureInput {
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")
@@ -162,7 +162,7 @@ public class AVCaptureDeviceInput extends AVCaptureInput {
     @Generated
     @Selector("version")
     @NInt
-    public static native long version();
+    public static native long version_static();
 
     @Generated
     @Selector("device")

@@ -62,28 +62,13 @@ public class GKScore extends NSObject implements NSCoding, NSSecureCoding {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native GKScore alloc();
-
-    @Generated
-    @Selector("reportScores:withCompletionHandler:")
-    public static native void reportScoresWithCompletionHandler(NSArray<? extends GKScore> scores,
-            @ObjCBlock(name = "call_reportScoresWithCompletionHandler") Block_reportScoresWithCompletionHandler completionHandler);
-
-    @Generated
-    @Selector("reportScores:withEligibleChallenges:withCompletionHandler:")
-    public static native void reportScoresWithEligibleChallengesWithCompletionHandler(NSArray<? extends GKScore> scores,
-            NSArray<? extends GKChallenge> challenges,
-            @ObjCBlock(name = "call_reportScoresWithEligibleChallengesWithCompletionHandler") Block_reportScoresWithEligibleChallengesWithCompletionHandler completionHandler);
-
-    @Generated
-    @Selector("supportsSecureCoding")
-    public static native boolean supportsSecureCoding();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -161,6 +146,17 @@ public class GKScore extends NSObject implements NSCoding, NSSecureCoding {
     public static native Object new_objc();
 
     @Generated
+    @Selector("reportScores:withCompletionHandler:")
+    public static native void reportScoresWithCompletionHandler(NSArray<? extends GKScore> scores,
+            @ObjCBlock(name = "call_reportScoresWithCompletionHandler") Block_reportScoresWithCompletionHandler completionHandler);
+
+    @Generated
+    @Selector("reportScores:withEligibleChallenges:withCompletionHandler:")
+    public static native void reportScoresWithEligibleChallengesWithCompletionHandler(NSArray<? extends GKScore> scores,
+            NSArray<? extends GKChallenge> challenges,
+            @ObjCBlock(name = "call_reportScoresWithEligibleChallengesWithCompletionHandler") Block_reportScoresWithEligibleChallengesWithCompletionHandler completionHandler);
+
+    @Generated
     @Selector("resolveClassMethod:")
     public static native boolean resolveClassMethod(SEL sel);
 
@@ -175,6 +171,10 @@ public class GKScore extends NSObject implements NSCoding, NSSecureCoding {
     @Generated
     @Selector("superclass")
     public static native Class superclass_static();
+
+    @Generated
+    @Selector("supportsSecureCoding")
+    public static native boolean supportsSecureCoding();
 
     @Generated
     @Selector("version")

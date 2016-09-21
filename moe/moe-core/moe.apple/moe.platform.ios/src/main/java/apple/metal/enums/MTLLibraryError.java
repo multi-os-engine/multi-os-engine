@@ -25,6 +25,8 @@ public final class MTLLibraryError {
     @Generated @NUInt public static final long Internal = 0x0000000000000002L;
     @Generated @NUInt public static final long CompileFailure = 0x0000000000000003L;
     @Generated @NUInt public static final long CompileWarning = 0x0000000000000004L;
+    @Generated @NUInt public static final long FunctionNotFound = 0x0000000000000005L;
+    @Generated @NUInt public static final long FileNotFound = 0x0000000000000006L;
 
     @Generated
     private MTLLibraryError() {

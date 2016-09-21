@@ -25,6 +25,7 @@ import apple.foundation.NSSet;
 import apple.foundation.protocol.NSCoding;
 import apple.foundation.protocol.NSCopying;
 import apple.quartzcore.protocol.CAAction;
+import apple.quartzcore.protocol.CAAnimationDelegate;
 import apple.quartzcore.protocol.CAMediaTiming;
 import apple.scenekit.SCNAnimationEvent;
 import org.moe.natj.c.ann.FunctionPtr;
@@ -62,27 +63,22 @@ public class CAAnimation extends NSObject implements NSCoding, NSCopying, CAMedi
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native CAAnimation alloc();
 
     @Generated
-    @Selector("animation")
-    public static native CAAnimation animation();
-
-    @Generated
-    @Selector("defaultValueForKey:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object defaultValueForKey(String key);
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
-
-    @Generated
     @Selector("allocWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object allocWithZone(VoidPtr zone);
+
+    @Generated
+    @Selector("animation")
+    public static native CAAnimation animation();
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -109,6 +105,11 @@ public class CAAnimation extends NSObject implements NSCoding, NSCopying, CAMedi
     @Generated
     @Selector("debugDescription")
     public static native String debugDescription_static();
+
+    @Generated
+    @Selector("defaultValueForKey:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object defaultValueForKey(String key);
 
     @Generated
     @Selector("description")
@@ -164,7 +165,7 @@ public class CAAnimation extends NSObject implements NSCoding, NSCopying, CAMedi
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")
@@ -196,7 +197,7 @@ public class CAAnimation extends NSObject implements NSCoding, NSCopying, CAMedi
     @Generated
     @Selector("delegate")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object delegate();
+    public native CAAnimationDelegate delegate();
 
     @Generated
     @Selector("duration")
@@ -263,7 +264,7 @@ public class CAAnimation extends NSObject implements NSCoding, NSCopying, CAMedi
 
     @Generated
     @Selector("setDelegate:")
-    public native void setDelegate(@Mapped(ObjCObjectMapper.class) Object value);
+    public native void setDelegate(@Mapped(ObjCObjectMapper.class) CAAnimationDelegate value);
 
     @Generated
     @Selector("setDuration:")

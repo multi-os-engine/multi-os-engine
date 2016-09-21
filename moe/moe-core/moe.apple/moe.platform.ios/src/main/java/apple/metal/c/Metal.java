@@ -91,15 +91,15 @@ public final class Metal {
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
-    public static native String MTLCommandBufferErrorDomain();
-
-    @Generated
-    @CVariable()
-    @MappedReturn(ObjCStringMapper.class)
     public static native String MTLLibraryErrorDomain();
 
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String MTLRenderPipelineErrorDomain();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String MTLCommandBufferErrorDomain();
 }

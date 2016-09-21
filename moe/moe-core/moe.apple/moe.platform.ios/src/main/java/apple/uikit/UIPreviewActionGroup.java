@@ -56,6 +56,10 @@ public class UIPreviewActionGroup extends NSObject implements NSCopying, UIPrevi
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Selector("actionGroupWithTitle:style:actions:")
     public static native UIPreviewActionGroup actionGroupWithTitleStyleActions(String title, @NInt long style,
             NSArray<? extends UIPreviewAction> actions);
@@ -64,10 +68,6 @@ public class UIPreviewActionGroup extends NSObject implements NSCopying, UIPrevi
     @Owned
     @Selector("alloc")
     public static native UIPreviewActionGroup alloc();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -136,7 +136,7 @@ public class UIPreviewActionGroup extends NSObject implements NSCopying, UIPrevi
 
     @Generated
     @Selector("load")
-    public static native void load_objc();
+    public static native void load_objc_static();
 
     @Generated
     @Owned
@@ -154,7 +154,7 @@ public class UIPreviewActionGroup extends NSObject implements NSCopying, UIPrevi
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")
@@ -163,7 +163,7 @@ public class UIPreviewActionGroup extends NSObject implements NSCopying, UIPrevi
     @Generated
     @Selector("version")
     @NInt
-    public static native long version();
+    public static native long version_static();
 
     @Generated
     @Owned

@@ -22,6 +22,7 @@ import apple.foundation.NSArray;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
 import apple.foundation.NSURL;
+import apple.foundation.protocol.NSCopying;
 import apple.modelio.protocol.MDLNamed;
 import org.moe.natj.c.ann.FunctionPtr;
 import org.moe.natj.general.NatJ;
@@ -46,7 +47,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @Library("ModelIO")
 @Runtime(ObjCRuntime.class)
 @ObjCClassBinding
-public class MDLMaterialProperty extends NSObject implements MDLNamed {
+public class MDLMaterialProperty extends NSObject implements MDLNamed, NSCopying {
     static {
         NatJ.register();
     }
@@ -57,13 +58,13 @@ public class MDLMaterialProperty extends NSObject implements MDLNamed {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native MDLMaterialProperty alloc();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -150,7 +151,7 @@ public class MDLMaterialProperty extends NSObject implements MDLNamed {
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")
@@ -168,6 +169,12 @@ public class MDLMaterialProperty extends NSObject implements MDLNamed {
     @Generated
     @Selector("color")
     public native CGColorRef color();
+
+    @Generated
+    @Owned
+    @Selector("copyWithZone:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native Object copyWithZone(VoidPtr zone);
 
     @Generated
     @Selector("floatValue")
@@ -203,6 +210,10 @@ public class MDLMaterialProperty extends NSObject implements MDLNamed {
             MDLTextureSampler textureSampler);
 
     @Generated
+    @Selector("luminance")
+    public native float luminance();
+
+    @Generated
     @Selector("name")
     public native String name();
 
@@ -218,6 +229,10 @@ public class MDLMaterialProperty extends NSObject implements MDLNamed {
     @Generated
     @Selector("setFloatValue:")
     public native void setFloatValue(float value);
+
+    @Generated
+    @Selector("setLuminance:")
+    public native void setLuminance(float value);
 
     @Generated
     @Selector("setName:")

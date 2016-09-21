@@ -59,30 +59,13 @@ public class NSRegularExpression extends NSObject implements NSCopying, NSSecure
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native NSRegularExpression alloc();
-
-    @Generated
-    @Selector("escapedPatternForString:")
-    public static native String escapedPatternForString(String string);
-
-    @Generated
-    @Selector("escapedTemplateForString:")
-    public static native String escapedTemplateForString(String string);
-
-    @Generated
-    @Selector("regularExpressionWithPattern:options:error:")
-    public static native NSRegularExpression regularExpressionWithPatternOptionsError(String pattern,
-            @NUInt long options, Ptr<NSError> error);
-
-    @Generated
-    @Selector("supportsSecureCoding")
-    public static native boolean supportsSecureCoding();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -118,6 +101,14 @@ public class NSRegularExpression extends NSObject implements NSCopying, NSSecure
     @Generated
     @Selector("description")
     public static native String description_static();
+
+    @Generated
+    @Selector("escapedPatternForString:")
+    public static native String escapedPatternForString(String string);
+
+    @Generated
+    @Selector("escapedTemplateForString:")
+    public static native String escapedTemplateForString(String string);
 
     @Generated
     @Selector("hash")
@@ -160,6 +151,11 @@ public class NSRegularExpression extends NSObject implements NSCopying, NSSecure
     public static native Object new_objc();
 
     @Generated
+    @Selector("regularExpressionWithPattern:options:error:")
+    public static native NSRegularExpression regularExpressionWithPatternOptionsError(String pattern,
+            @NUInt long options, Ptr<NSError> error);
+
+    @Generated
     @Selector("resolveClassMethod:")
     public static native boolean resolveClassMethod(SEL sel);
 
@@ -169,11 +165,15 @@ public class NSRegularExpression extends NSObject implements NSCopying, NSSecure
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")
     public static native Class superclass_static();
+
+    @Generated
+    @Selector("supportsSecureCoding")
+    public static native boolean supportsSecureCoding();
 
     @Generated
     @Selector("version")

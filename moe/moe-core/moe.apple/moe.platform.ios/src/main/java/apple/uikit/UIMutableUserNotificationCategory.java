@@ -56,13 +56,13 @@ public class UIMutableUserNotificationCategory extends UIUserNotificationCategor
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native UIMutableUserNotificationCategory alloc();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -173,16 +173,16 @@ public class UIMutableUserNotificationCategory extends UIUserNotificationCategor
     public native UIMutableUserNotificationCategory init();
 
     @Generated
+    @Selector("initWithCoder:")
+    public native UIMutableUserNotificationCategory initWithCoder(NSCoder aDecoder);
+
+    @Generated
     @Selector("setActions:forContext:")
     public native void setActionsForContext(NSArray<? extends UIUserNotificationAction> actions, @NUInt long context);
 
     @Generated
     @Selector("setIdentifier:")
     public native void setIdentifier(String value);
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native UIMutableUserNotificationCategory initWithCoder(NSCoder aDecoder);
 
     @Generated
     @ProtocolClassMethod("supportsSecureCoding")

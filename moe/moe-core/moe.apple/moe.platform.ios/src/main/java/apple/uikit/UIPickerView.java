@@ -22,13 +22,11 @@ import apple.coregraphics.struct.CGSize;
 import apple.foundation.NSArray;
 import apple.foundation.NSCoder;
 import apple.foundation.NSDate;
-import apple.foundation.NSIndexPath;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
 import apple.foundation.protocol.NSCoding;
 import apple.uikit.protocol.UIPickerViewDataSource;
 import apple.uikit.protocol.UIPickerViewDelegate;
-import apple.uikit.protocol.UITableViewDataSource;
 import org.moe.natj.c.ann.FunctionPtr;
 import org.moe.natj.c.ann.Variadic;
 import org.moe.natj.general.NatJ;
@@ -47,7 +45,6 @@ import org.moe.natj.general.ptr.VoidPtr;
 import org.moe.natj.objc.Class;
 import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.SEL;
-import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
@@ -58,7 +55,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
 @ObjCClassBinding
-public class UIPickerView extends UIView implements NSCoding, UITableViewDataSource {
+public class UIPickerView extends UIView implements NSCoding {
     static {
         NatJ.register();
     }
@@ -69,11 +66,6 @@ public class UIPickerView extends UIView implements NSCoding, UITableViewDataSou
     }
 
     @Generated
-    @Owned
-    @Selector("alloc")
-    public static native UIPickerView alloc();
-
-    @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
 
@@ -82,6 +74,11 @@ public class UIPickerView extends UIView implements NSCoding, UITableViewDataSou
     public static native void addKeyframeWithRelativeStartTimeRelativeDurationAnimations(double frameStartTime,
             double frameDuration,
             @ObjCBlock(name = "call_addKeyframeWithRelativeStartTimeRelativeDurationAnimations") UIView.Block_addKeyframeWithRelativeStartTimeRelativeDurationAnimations animations);
+
+    @Generated
+    @Owned
+    @Selector("alloc")
+    public static native UIPickerView alloc();
 
     @Generated
     @Selector("allocWithZone:")
@@ -297,7 +294,7 @@ public class UIPickerView extends UIView implements NSCoding, UITableViewDataSou
 
     @Generated
     @Selector("setAnimationDuration:")
-    public static native void setAnimationDuration(double duration);
+    public static native void setAnimationDuration_static(double duration);
 
     @Generated
     @Selector("setAnimationRepeatAutoreverses:")
@@ -305,7 +302,7 @@ public class UIPickerView extends UIView implements NSCoding, UITableViewDataSou
 
     @Generated
     @Selector("setAnimationRepeatCount:")
-    public static native void setAnimationRepeatCount(float repeatCount);
+    public static native void setAnimationRepeatCount_static(float repeatCount);
 
     @Generated
     @Selector("setAnimationStartDate:")
@@ -325,7 +322,7 @@ public class UIPickerView extends UIView implements NSCoding, UITableViewDataSou
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")
@@ -350,9 +347,61 @@ public class UIPickerView extends UIView implements NSCoding, UITableViewDataSou
     public static native long userInterfaceLayoutDirectionForSemanticContentAttribute(@NInt long attribute);
 
     @Generated
+    @Selector("userInterfaceLayoutDirectionForSemanticContentAttribute:relativeToLayoutDirection:")
+    @NInt
+    public static native long userInterfaceLayoutDirectionForSemanticContentAttributeRelativeToLayoutDirection(
+            @NInt long semanticContentAttribute, @NInt long layoutDirection);
+
+    @Generated
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @ProtocolClassMethod("appearance")
+    @MappedReturn(ObjCObjectMapper.class)
+    public Object _appearance() {
+        return appearance();
+    }
+
+    @Generated
+    @ProtocolClassMethod("appearanceForTraitCollection")
+    @MappedReturn(ObjCObjectMapper.class)
+    public Object _appearanceForTraitCollection(UITraitCollection trait) {
+        return appearanceForTraitCollection(trait);
+    }
+
+    @Generated
+    @Deprecated
+    @ProtocolClassMethod("appearanceForTraitCollectionWhenContainedIn")
+    @MappedReturn(ObjCObjectMapper.class)
+    public Object _appearanceForTraitCollectionWhenContainedIn(UITraitCollection trait,
+            @Mapped(ObjCObjectMapper.class) Object ContainerClass, Object... varargs) {
+        return appearanceForTraitCollectionWhenContainedIn(trait, ContainerClass, varargs);
+    }
+
+    @Generated
+    @ProtocolClassMethod("appearanceForTraitCollectionWhenContainedInInstancesOfClasses")
+    @MappedReturn(ObjCObjectMapper.class)
+    public Object _appearanceForTraitCollectionWhenContainedInInstancesOfClasses(UITraitCollection trait,
+            NSArray<?> containerTypes) {
+        return appearanceForTraitCollectionWhenContainedInInstancesOfClasses(trait, containerTypes);
+    }
+
+    @Generated
+    @Deprecated
+    @ProtocolClassMethod("appearanceWhenContainedIn")
+    @MappedReturn(ObjCObjectMapper.class)
+    public Object _appearanceWhenContainedIn(@Mapped(ObjCObjectMapper.class) Object ContainerClass, Object... varargs) {
+        return appearanceWhenContainedIn(ContainerClass, varargs);
+    }
+
+    @Generated
+    @ProtocolClassMethod("appearanceWhenContainedInInstancesOfClasses")
+    @MappedReturn(ObjCObjectMapper.class)
+    public Object _appearanceWhenContainedInInstancesOfClasses(NSArray<?> containerTypes) {
+        return appearanceWhenContainedInInstancesOfClasses(containerTypes);
+    }
 
     @Generated
     @Selector("dataSource")
@@ -391,12 +440,6 @@ public class UIPickerView extends UIView implements NSCoding, UITableViewDataSou
     public native long numberOfRowsInComponent(@NInt long component);
 
     @Generated
-    @IsOptional
-    @Selector("numberOfSectionsInTableView:")
-    @NInt
-    public native long numberOfSectionsInTableView(UITableView tableView);
-
-    @Generated
     @Selector("reloadAllComponents")
     public native void reloadAllComponents();
 
@@ -408,11 +451,6 @@ public class UIPickerView extends UIView implements NSCoding, UITableViewDataSou
     @Selector("rowSizeForComponent:")
     @ByValue
     public native CGSize rowSizeForComponent(@NInt long component);
-
-    @Generated
-    @IsOptional
-    @Selector("sectionIndexTitlesForTableView:")
-    public native NSArray<String> sectionIndexTitlesForTableView(UITableView tableView);
 
     @Generated
     @Selector("selectRow:inComponent:animated:")
@@ -464,100 +502,6 @@ public class UIPickerView extends UIView implements NSCoding, UITableViewDataSou
     public native boolean showsSelectionIndicator();
 
     @Generated
-    @IsOptional
-    @Selector("tableView:canEditRowAtIndexPath:")
-    public native boolean tableViewCanEditRowAtIndexPath(UITableView tableView, NSIndexPath indexPath);
-
-    @Generated
-    @IsOptional
-    @Selector("tableView:canMoveRowAtIndexPath:")
-    public native boolean tableViewCanMoveRowAtIndexPath(UITableView tableView, NSIndexPath indexPath);
-
-    @Generated
-    @Selector("tableView:cellForRowAtIndexPath:")
-    public native UITableViewCell tableViewCellForRowAtIndexPath(UITableView tableView, NSIndexPath indexPath);
-
-    @Generated
-    @IsOptional
-    @Selector("tableView:commitEditingStyle:forRowAtIndexPath:")
-    public native void tableViewCommitEditingStyleForRowAtIndexPath(UITableView tableView, @NInt long editingStyle,
-            NSIndexPath indexPath);
-
-    @Generated
-    @IsOptional
-    @Selector("tableView:moveRowAtIndexPath:toIndexPath:")
-    public native void tableViewMoveRowAtIndexPathToIndexPath(UITableView tableView, NSIndexPath sourceIndexPath,
-            NSIndexPath destinationIndexPath);
-
-    @Generated
-    @Selector("tableView:numberOfRowsInSection:")
-    @NInt
-    public native long tableViewNumberOfRowsInSection(UITableView tableView, @NInt long section);
-
-    @Generated
-    @IsOptional
-    @Selector("tableView:sectionForSectionIndexTitle:atIndex:")
-    @NInt
-    public native long tableViewSectionForSectionIndexTitleAtIndex(UITableView tableView, String title,
-            @NInt long index);
-
-    @Generated
-    @IsOptional
-    @Selector("tableView:titleForFooterInSection:")
-    public native String tableViewTitleForFooterInSection(UITableView tableView, @NInt long section);
-
-    @Generated
-    @IsOptional
-    @Selector("tableView:titleForHeaderInSection:")
-    public native String tableViewTitleForHeaderInSection(UITableView tableView, @NInt long section);
-
-    @Generated
     @Selector("viewForRow:forComponent:")
     public native UIView viewForRowForComponent(@NInt long row, @NInt long component);
-
-    @Generated
-    @ProtocolClassMethod("appearance")
-    @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearance() {
-        return appearance();
-    }
-
-    @Generated
-    @ProtocolClassMethod("appearanceForTraitCollection")
-    @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearanceForTraitCollection(UITraitCollection trait) {
-        return appearanceForTraitCollection(trait);
-    }
-
-    @Generated
-    @Deprecated
-    @ProtocolClassMethod("appearanceForTraitCollectionWhenContainedIn")
-    @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearanceForTraitCollectionWhenContainedIn(UITraitCollection trait,
-            @Mapped(ObjCObjectMapper.class) Object ContainerClass, Object... varargs) {
-        return appearanceForTraitCollectionWhenContainedIn(trait, ContainerClass, varargs);
-    }
-
-    @Generated
-    @ProtocolClassMethod("appearanceForTraitCollectionWhenContainedInInstancesOfClasses")
-    @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearanceForTraitCollectionWhenContainedInInstancesOfClasses(UITraitCollection trait,
-            NSArray<?> containerTypes) {
-        return appearanceForTraitCollectionWhenContainedInInstancesOfClasses(trait, containerTypes);
-    }
-
-    @Generated
-    @Deprecated
-    @ProtocolClassMethod("appearanceWhenContainedIn")
-    @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearanceWhenContainedIn(@Mapped(ObjCObjectMapper.class) Object ContainerClass, Object... varargs) {
-        return appearanceWhenContainedIn(ContainerClass, varargs);
-    }
-
-    @Generated
-    @ProtocolClassMethod("appearanceWhenContainedInInstancesOfClasses")
-    @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearanceWhenContainedInInstancesOfClasses(NSArray<?> containerTypes) {
-        return appearanceWhenContainedInInstancesOfClasses(containerTypes);
-    }
 }

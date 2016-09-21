@@ -56,38 +56,13 @@ public class AVAudioTime extends NSObject {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native AVAudioTime alloc();
-
-    @Generated
-    @Selector("hostTimeForSeconds:")
-    public static native long hostTimeForSeconds(double seconds);
-
-    @Generated
-    @Selector("secondsForHostTime:")
-    public static native double secondsForHostTime(long hostTime);
-
-    @Generated
-    @Selector("timeWithAudioTimeStamp:sampleRate:")
-    public static native AVAudioTime timeWithAudioTimeStampSampleRate(AudioTimeStamp ts, double sampleRate);
-
-    @Generated
-    @Selector("timeWithHostTime:")
-    public static native AVAudioTime timeWithHostTime(long hostTime);
-
-    @Generated
-    @Selector("timeWithHostTime:sampleTime:atRate:")
-    public static native AVAudioTime timeWithHostTimeSampleTimeAtRate(long hostTime, long sampleTime,
-            double sampleRate);
-
-    @Generated
-    @Selector("timeWithSampleTime:atRate:")
-    public static native AVAudioTime timeWithSampleTimeAtRate(long sampleTime, double sampleRate);
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -128,6 +103,10 @@ public class AVAudioTime extends NSObject {
     @Selector("hash")
     @NUInt
     public static native long hash_static();
+
+    @Generated
+    @Selector("hostTimeForSeconds:")
+    public static native long hostTimeForSeconds(double seconds);
 
     @Generated
     @Selector("initialize")
@@ -173,12 +152,33 @@ public class AVAudioTime extends NSObject {
     public static native boolean resolveInstanceMethod(SEL sel);
 
     @Generated
+    @Selector("secondsForHostTime:")
+    public static native double secondsForHostTime(long hostTime);
+
+    @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")
     public static native Class superclass_static();
+
+    @Generated
+    @Selector("timeWithAudioTimeStamp:sampleRate:")
+    public static native AVAudioTime timeWithAudioTimeStampSampleRate(AudioTimeStamp ts, double sampleRate);
+
+    @Generated
+    @Selector("timeWithHostTime:")
+    public static native AVAudioTime timeWithHostTime(long hostTime);
+
+    @Generated
+    @Selector("timeWithHostTime:sampleTime:atRate:")
+    public static native AVAudioTime timeWithHostTimeSampleTimeAtRate(long hostTime, long sampleTime,
+            double sampleRate);
+
+    @Generated
+    @Selector("timeWithSampleTime:atRate:")
+    public static native AVAudioTime timeWithSampleTimeAtRate(long sampleTime, double sampleRate);
 
     @Generated
     @Selector("version")

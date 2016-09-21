@@ -22,6 +22,7 @@ import apple.coremedia.struct.CMTime;
 import apple.coremedia.struct.CMVideoDimensions;
 import apple.foundation.NSArray;
 import apple.foundation.NSMethodSignature;
+import apple.foundation.NSNumber;
 import apple.foundation.NSSet;
 import org.moe.natj.c.ann.FunctionPtr;
 import org.moe.natj.general.NatJ;
@@ -59,13 +60,13 @@ public class AVCaptureDeviceFormat extends NSObject {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native AVCaptureDeviceFormat alloc();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -219,6 +220,10 @@ public class AVCaptureDeviceFormat extends NSObject {
     @Generated
     @Selector("minISO")
     public native float minISO();
+
+    @Generated
+    @Selector("supportedColorSpaces")
+    public native NSArray<? extends NSNumber> supportedColorSpaces();
 
     @Generated
     @Selector("videoFieldOfView")

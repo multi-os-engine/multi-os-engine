@@ -18,8 +18,10 @@ package apple.webkit;
 
 import apple.NSObject;
 import apple.foundation.NSArray;
+import apple.foundation.NSCoder;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
+import apple.foundation.protocol.NSCoding;
 import org.moe.natj.c.ann.FunctionPtr;
 import org.moe.natj.general.NatJ;
 import org.moe.natj.general.Pointer;
@@ -44,7 +46,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @Library("WebKit")
 @Runtime(ObjCRuntime.class)
 @ObjCClassBinding
-public class WKPreferences extends NSObject {
+public class WKPreferences extends NSObject implements NSCoding {
     static {
         NatJ.register();
     }
@@ -55,13 +57,13 @@ public class WKPreferences extends NSObject {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native WKPreferences alloc();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -160,8 +162,16 @@ public class WKPreferences extends NSObject {
     public static native long version_static();
 
     @Generated
+    @Selector("encodeWithCoder:")
+    public native void encodeWithCoder(NSCoder aCoder);
+
+    @Generated
     @Selector("init")
     public native WKPreferences init();
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native WKPreferences initWithCoder(NSCoder aDecoder);
 
     @Generated
     @Selector("javaScriptCanOpenWindowsAutomatically")

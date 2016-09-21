@@ -68,9 +68,18 @@ public class UIImage extends NSObject implements NSSecureCoding, UIAccessibility
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native UIImage alloc();
+
+    @Generated
+    @Selector("allocWithZone:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("animatedImageNamed:duration:")
@@ -89,6 +98,41 @@ public class UIImage extends NSObject implements NSSecureCoding, UIAccessibility
     @Selector("animatedResizableImageNamed:capInsets:resizingMode:duration:")
     public static native UIImage animatedResizableImageNamedCapInsetsResizingModeDuration(String name,
             @ByValue UIEdgeInsets capInsets, @NInt long resizingMode, double duration);
+
+    @Generated
+    @Selector("automaticallyNotifiesObserversForKey:")
+    public static native boolean automaticallyNotifiesObserversForKey(String key);
+
+    @Generated
+    @Selector("cancelPreviousPerformRequestsWithTarget:")
+    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+
+    @Generated
+    @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
+    public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
+            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
+            @Mapped(ObjCObjectMapper.class) Object anArgument);
+
+    @Generated
+    @Selector("classFallbacksForKeyedArchiver")
+    public static native NSArray<String> classFallbacksForKeyedArchiver();
+
+    @Generated
+    @Selector("classForKeyedUnarchiver")
+    public static native Class classForKeyedUnarchiver();
+
+    @Generated
+    @Selector("debugDescription")
+    public static native String debugDescription_static();
+
+    @Generated
+    @Selector("description")
+    public static native String description_static();
+
+    @Generated
+    @Selector("hash")
+    @NUInt
+    public static native long hash_static();
 
     @Generated
     @Selector("imageNamed:")
@@ -128,54 +172,6 @@ public class UIImage extends NSObject implements NSSecureCoding, UIAccessibility
     @Generated
     @Selector("imageWithData:scale:")
     public static native UIImage imageWithDataScale(NSData data, @NFloat double scale);
-
-    @Generated
-    @Selector("supportsSecureCoding")
-    public static native boolean supportsSecureCoding();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
-
-    @Generated
-    @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
-
-    @Generated
-    @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
-
-    @Generated
-    @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
-
-    @Generated
-    @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
-    public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
-
-    @Generated
-    @Selector("classFallbacksForKeyedArchiver")
-    public static native NSArray<String> classFallbacksForKeyedArchiver();
-
-    @Generated
-    @Selector("classForKeyedUnarchiver")
-    public static native Class classForKeyedUnarchiver();
-
-    @Generated
-    @Selector("debugDescription")
-    public static native String debugDescription_static();
-
-    @Generated
-    @Selector("description")
-    public static native String description_static();
-
-    @Generated
-    @Selector("hash")
-    @NUInt
-    public static native long hash_static();
 
     @Generated
     @Selector("initialize")
@@ -222,11 +218,15 @@ public class UIImage extends NSObject implements NSSecureCoding, UIAccessibility
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")
     public static native Class superclass_static();
+
+    @Generated
+    @Selector("supportsSecureCoding")
+    public static native boolean supportsSecureCoding();
 
     @Generated
     @Selector("version")
@@ -284,8 +284,16 @@ public class UIImage extends NSObject implements NSSecureCoding, UIAccessibility
     public native void encodeWithCoder(NSCoder aCoder);
 
     @Generated
+    @Selector("flipsForRightToLeftLayoutDirection")
+    public native boolean flipsForRightToLeftLayoutDirection();
+
+    @Generated
     @Selector("imageAsset")
     public native UIImageAsset imageAsset();
+
+    @Generated
+    @Selector("imageFlippedForRightToLeftLayoutDirection")
+    public native UIImage imageFlippedForRightToLeftLayoutDirection();
 
     @Generated
     @Selector("imageOrientation")
@@ -293,8 +301,16 @@ public class UIImage extends NSObject implements NSSecureCoding, UIAccessibility
     public native long imageOrientation();
 
     @Generated
+    @Selector("imageRendererFormat")
+    public native UIGraphicsImageRendererFormat imageRendererFormat();
+
+    @Generated
     @Selector("imageWithAlignmentRectInsets:")
     public native UIImage imageWithAlignmentRectInsets(@ByValue UIEdgeInsets alignmentInsets);
+
+    @Generated
+    @Selector("imageWithHorizontallyFlippedOrientation")
+    public native UIImage imageWithHorizontallyFlippedOrientation();
 
     @Generated
     @Selector("imageWithRenderingMode:")
@@ -399,12 +415,4 @@ public class UIImage extends NSObject implements NSSecureCoding, UIAccessibility
     @Generated
     @Selector("traitCollection")
     public native UITraitCollection traitCollection();
-
-    @Generated
-    @Selector("flipsForRightToLeftLayoutDirection")
-    public native boolean flipsForRightToLeftLayoutDirection();
-
-    @Generated
-    @Selector("imageFlippedForRightToLeftLayoutDirection")
-    public native UIImage imageFlippedForRightToLeftLayoutDirection();
 }

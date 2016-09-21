@@ -19,6 +19,8 @@ package apple.foundation;
 import apple.NSObject;
 import apple.corespotlight.CSSearchableItemAttributeSet;
 import apple.foundation.protocol.NSUserActivityDelegate;
+import apple.intents.INInteraction;
+import apple.mapkit.MKMapItem;
 import org.moe.natj.c.ann.FunctionPtr;
 import org.moe.natj.general.NatJ;
 import org.moe.natj.general.Pointer;
@@ -54,13 +56,13 @@ public class NSUserActivity extends NSObject {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native NSUserActivity alloc();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -147,7 +149,7 @@ public class NSUserActivity extends NSObject {
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")
@@ -171,9 +173,17 @@ public class NSUserActivity extends NSObject {
     public native void becomeCurrent();
 
     @Generated
+    @Selector("contentAttributeSet")
+    public native CSSearchableItemAttributeSet contentAttributeSet();
+
+    @Generated
     @Selector("delegate")
     @MappedReturn(ObjCObjectMapper.class)
     public native NSUserActivityDelegate delegate();
+
+    @Generated
+    @Selector("expirationDate")
+    public native NSDate expirationDate();
 
     @Generated
     @Selector("getContinuationStreamsWithCompletionHandler:")
@@ -189,12 +199,60 @@ public class NSUserActivity extends NSObject {
     public native NSUserActivity initWithActivityType(String activityType);
 
     @Generated
+    @Selector("interaction")
+    public native INInteraction interaction();
+
+    @Generated
     @Selector("invalidate")
     public native void invalidate();
 
     @Generated
+    @Selector("isEligibleForHandoff")
+    public native boolean isEligibleForHandoff();
+
+    @Generated
+    @Selector("setEligibleForHandoff:")
+    public native void setEligibleForHandoff(boolean value);
+
+    @Generated
+    @Selector("isEligibleForPublicIndexing")
+    public native boolean isEligibleForPublicIndexing();
+
+    @Generated
+    @Selector("setEligibleForPublicIndexing:")
+    public native void setEligibleForPublicIndexing(boolean value);
+
+    @Generated
+    @Selector("isEligibleForSearch")
+    public native boolean isEligibleForSearch();
+
+    @Generated
+    @Selector("setEligibleForSearch:")
+    public native void setEligibleForSearch(boolean value);
+
+    @Generated
+    @Selector("keywords")
+    public native NSSet<String> keywords();
+
+    @Generated
+    @Selector("mapItem")
+    public native MKMapItem mapItem();
+
+    @Generated
     @Selector("needsSave")
     public native boolean needsSave();
+
+    @Generated
+    @Selector("requiredUserInfoKeys")
+    public native NSSet<String> requiredUserInfoKeys();
+
+    @Generated
+    @Selector("resignCurrent")
+    public native void resignCurrent();
+
+    @Generated
+    @Selector("setContentAttributeSet:")
+    public native void setContentAttributeSet(CSSearchableItemAttributeSet value);
 
     @Generated
     @Selector("setDelegate:")
@@ -213,8 +271,24 @@ public class NSUserActivity extends NSObject {
     }
 
     @Generated
+    @Selector("setExpirationDate:")
+    public native void setExpirationDate(NSDate value);
+
+    @Generated
+    @Selector("setKeywords:")
+    public native void setKeywords(NSSet<String> value);
+
+    @Generated
+    @Selector("setMapItem:")
+    public native void setMapItem(MKMapItem value);
+
+    @Generated
     @Selector("setNeedsSave:")
     public native void setNeedsSave(boolean value);
+
+    @Generated
+    @Selector("setRequiredUserInfoKeys:")
+    public native void setRequiredUserInfoKeys(NSSet<String> value);
 
     @Generated
     @Selector("setSupportsContinuationStreams:")
@@ -247,66 +321,6 @@ public class NSUserActivity extends NSObject {
     @Generated
     @Selector("webpageURL")
     public native NSURL webpageURL();
-
-    @Generated
-    @Selector("contentAttributeSet")
-    public native CSSearchableItemAttributeSet contentAttributeSet();
-
-    @Generated
-    @Selector("expirationDate")
-    public native NSDate expirationDate();
-
-    @Generated
-    @Selector("isEligibleForHandoff")
-    public native boolean isEligibleForHandoff();
-
-    @Generated
-    @Selector("setEligibleForHandoff:")
-    public native void setEligibleForHandoff(boolean value);
-
-    @Generated
-    @Selector("isEligibleForPublicIndexing")
-    public native boolean isEligibleForPublicIndexing();
-
-    @Generated
-    @Selector("setEligibleForPublicIndexing:")
-    public native void setEligibleForPublicIndexing(boolean value);
-
-    @Generated
-    @Selector("isEligibleForSearch")
-    public native boolean isEligibleForSearch();
-
-    @Generated
-    @Selector("setEligibleForSearch:")
-    public native void setEligibleForSearch(boolean value);
-
-    @Generated
-    @Selector("keywords")
-    public native NSSet<String> keywords();
-
-    @Generated
-    @Selector("requiredUserInfoKeys")
-    public native NSSet<String> requiredUserInfoKeys();
-
-    @Generated
-    @Selector("resignCurrent")
-    public native void resignCurrent();
-
-    @Generated
-    @Selector("setContentAttributeSet:")
-    public native void setContentAttributeSet(CSSearchableItemAttributeSet value);
-
-    @Generated
-    @Selector("setExpirationDate:")
-    public native void setExpirationDate(NSDate value);
-
-    @Generated
-    @Selector("setKeywords:")
-    public native void setKeywords(NSSet<String> value);
-
-    @Generated
-    @Selector("setRequiredUserInfoKeys:")
-    public native void setRequiredUserInfoKeys(NSSet<String> value);
 
     @Runtime(ObjCRuntime.class)
     @Generated

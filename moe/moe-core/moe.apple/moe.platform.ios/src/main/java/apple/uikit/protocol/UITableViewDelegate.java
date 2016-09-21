@@ -44,6 +44,13 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 public interface UITableViewDelegate extends UIScrollViewDelegate {
     @Generated
     @IsOptional
+    @Selector("indexPathForPreferredFocusedViewInTableView:")
+    default NSIndexPath indexPathForPreferredFocusedViewInTableView(UITableView tableView) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Generated
+    @IsOptional
     @Selector("tableView:accessoryButtonTappedForRowWithIndexPath:")
     default void tableViewAccessoryButtonTappedForRowWithIndexPath(UITableView tableView, NSIndexPath indexPath) {
         throw new java.lang.UnsupportedOperationException();
@@ -55,6 +62,13 @@ public interface UITableViewDelegate extends UIScrollViewDelegate {
     @Selector("tableView:accessoryTypeForRowWithIndexPath:")
     @NInt
     default long tableViewAccessoryTypeForRowWithIndexPath(UITableView tableView, NSIndexPath indexPath) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Generated
+    @IsOptional
+    @Selector("tableView:canFocusRowAtIndexPath:")
+    default boolean tableViewCanFocusRowAtIndexPath(UITableView tableView, NSIndexPath indexPath) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -120,6 +134,14 @@ public interface UITableViewDelegate extends UIScrollViewDelegate {
     @IsOptional
     @Selector("tableView:didUnhighlightRowAtIndexPath:")
     default void tableViewDidUnhighlightRowAtIndexPath(UITableView tableView, NSIndexPath indexPath) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Generated
+    @IsOptional
+    @Selector("tableView:didUpdateFocusInContext:withAnimationCoordinator:")
+    default void tableViewDidUpdateFocusInContextWithAnimationCoordinator(UITableView tableView,
+            UITableViewFocusUpdateContext context, UIFocusAnimationCoordinator coordinator) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -226,6 +248,13 @@ public interface UITableViewDelegate extends UIScrollViewDelegate {
 
     @Generated
     @IsOptional
+    @Selector("tableView:shouldUpdateFocusInContext:")
+    default boolean tableViewShouldUpdateFocusInContext(UITableView tableView, UITableViewFocusUpdateContext context) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Generated
+    @IsOptional
     @Selector("tableView:targetIndexPathForMoveFromRowAtIndexPath:toProposedIndexPath:")
     default NSIndexPath tableViewTargetIndexPathForMoveFromRowAtIndexPathToProposedIndexPath(UITableView tableView,
             NSIndexPath sourceIndexPath, NSIndexPath proposedDestinationIndexPath) {
@@ -294,35 +323,6 @@ public interface UITableViewDelegate extends UIScrollViewDelegate {
     @IsOptional
     @Selector("tableView:willSelectRowAtIndexPath:")
     default NSIndexPath tableViewWillSelectRowAtIndexPath(UITableView tableView, NSIndexPath indexPath) {
-        throw new java.lang.UnsupportedOperationException();
-    }
-
-    @Generated
-    @IsOptional
-    @Selector("indexPathForPreferredFocusedViewInTableView:")
-    default NSIndexPath indexPathForPreferredFocusedViewInTableView(UITableView tableView) {
-        throw new java.lang.UnsupportedOperationException();
-    }
-
-    @Generated
-    @IsOptional
-    @Selector("tableView:canFocusRowAtIndexPath:")
-    default boolean tableViewCanFocusRowAtIndexPath(UITableView tableView, NSIndexPath indexPath) {
-        throw new java.lang.UnsupportedOperationException();
-    }
-
-    @Generated
-    @IsOptional
-    @Selector("tableView:didUpdateFocusInContext:withAnimationCoordinator:")
-    default void tableViewDidUpdateFocusInContextWithAnimationCoordinator(UITableView tableView,
-            UITableViewFocusUpdateContext context, UIFocusAnimationCoordinator coordinator) {
-        throw new java.lang.UnsupportedOperationException();
-    }
-
-    @Generated
-    @IsOptional
-    @Selector("tableView:shouldUpdateFocusInContext:")
-    default boolean tableViewShouldUpdateFocusInContext(UITableView tableView, UITableViewFocusUpdateContext context) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

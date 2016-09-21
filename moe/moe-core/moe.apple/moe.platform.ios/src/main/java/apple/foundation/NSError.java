@@ -55,31 +55,13 @@ public class NSError extends NSObject implements NSCopying, NSSecureCoding {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native NSError alloc();
-
-    @Generated
-    @Selector("errorWithDomain:code:userInfo:")
-    public static native NSError errorWithDomainCodeUserInfo(String domain, @NInt long code, NSDictionary<?, ?> dict);
-
-    @Generated
-    @Selector("supportsSecureCoding")
-    public static native boolean supportsSecureCoding();
-
-    @Generated
-    @Selector("setUserInfoValueProviderForDomain:provider:")
-    public static native void setUserInfoValueProviderForDomainProvider(String errorDomain,
-            @ObjCBlock(name = "call_setUserInfoValueProviderForDomainProvider") Block_setUserInfoValueProviderForDomainProvider provider);
-
-    @Generated
-    @Selector("userInfoValueProviderForDomain:")
-    @ObjCBlock(name = "call_userInfoValueProviderForDomain_ret")
-    public static native Block_userInfoValueProviderForDomain_ret userInfoValueProviderForDomain(String errorDomain);
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -115,6 +97,10 @@ public class NSError extends NSObject implements NSCopying, NSSecureCoding {
     @Generated
     @Selector("description")
     public static native String description_static();
+
+    @Generated
+    @Selector("errorWithDomain:code:userInfo:")
+    public static native NSError errorWithDomainCodeUserInfo(String domain, @NInt long code, NSDictionary<?, ?> dict);
 
     @Generated
     @Selector("hash")
@@ -165,12 +151,26 @@ public class NSError extends NSObject implements NSCopying, NSSecureCoding {
     public static native boolean resolveInstanceMethod(SEL sel);
 
     @Generated
+    @Selector("setUserInfoValueProviderForDomain:provider:")
+    public static native void setUserInfoValueProviderForDomainProvider(String errorDomain,
+            @ObjCBlock(name = "call_setUserInfoValueProviderForDomainProvider") Block_setUserInfoValueProviderForDomainProvider provider);
+
+    @Generated
     @Selector("setVersion:")
     public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")
     public static native Class superclass_static();
+
+    @Generated
+    @Selector("supportsSecureCoding")
+    public static native boolean supportsSecureCoding();
+
+    @Generated
+    @Selector("userInfoValueProviderForDomain:")
+    @ObjCBlock(name = "call_userInfoValueProviderForDomain_ret")
+    public static native Block_userInfoValueProviderForDomain_ret userInfoValueProviderForDomain(String errorDomain);
 
     @Generated
     @Selector("version")

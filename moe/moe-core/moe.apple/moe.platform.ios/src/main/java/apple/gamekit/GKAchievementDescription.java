@@ -61,30 +61,13 @@ public class GKAchievementDescription extends NSObject implements NSCoding, NSSe
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native GKAchievementDescription alloc();
-
-    @Generated
-    @Selector("incompleteAchievementImage")
-    public static native UIImage incompleteAchievementImage();
-
-    @Generated
-    @Selector("loadAchievementDescriptionsWithCompletionHandler:")
-    public static native void loadAchievementDescriptionsWithCompletionHandler(
-            @ObjCBlock(name = "call_loadAchievementDescriptionsWithCompletionHandler") Block_loadAchievementDescriptionsWithCompletionHandler completionHandler);
-
-    @Generated
-    @Selector("placeholderCompletedAchievementImage")
-    public static native UIImage placeholderCompletedAchievementImage();
-
-    @Generated
-    @Selector("supportsSecureCoding")
-    public static native boolean supportsSecureCoding();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -127,6 +110,10 @@ public class GKAchievementDescription extends NSObject implements NSCoding, NSSe
     public static native long hash_static();
 
     @Generated
+    @Selector("incompleteAchievementImage")
+    public static native UIImage incompleteAchievementImage();
+
+    @Generated
     @Selector("initialize")
     public static native void initialize();
 
@@ -153,13 +140,22 @@ public class GKAchievementDescription extends NSObject implements NSCoding, NSSe
 
     @Generated
     @Selector("load")
-    public static native void load_objc();
+    public static native void load_objc_static();
+
+    @Generated
+    @Selector("loadAchievementDescriptionsWithCompletionHandler:")
+    public static native void loadAchievementDescriptionsWithCompletionHandler(
+            @ObjCBlock(name = "call_loadAchievementDescriptionsWithCompletionHandler") Block_loadAchievementDescriptionsWithCompletionHandler completionHandler);
 
     @Generated
     @Owned
     @Selector("new")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object new_objc();
+
+    @Generated
+    @Selector("placeholderCompletedAchievementImage")
+    public static native UIImage placeholderCompletedAchievementImage();
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -171,16 +167,20 @@ public class GKAchievementDescription extends NSObject implements NSCoding, NSSe
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")
     public static native Class superclass_static();
 
     @Generated
+    @Selector("supportsSecureCoding")
+    public static native boolean supportsSecureCoding();
+
+    @Generated
     @Selector("version")
     @NInt
-    public static native long version();
+    public static native long version_static();
 
     @Generated
     @Selector("achievedDescription")

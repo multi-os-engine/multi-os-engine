@@ -55,19 +55,13 @@ public class UIStoryboardPopoverSegue extends UIStoryboardSegue {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native UIStoryboardPopoverSegue alloc();
-
-    @Generated
-    @Selector("segueWithIdentifier:source:destination:performHandler:")
-    public static native UIStoryboardPopoverSegue segueWithIdentifierSourceDestinationPerformHandler(String identifier,
-            UIViewController source, UIViewController destination,
-            @ObjCBlock(name = "call_segueWithIdentifierSourceDestinationPerformHandler") UIStoryboardSegue.Block_segueWithIdentifierSourceDestinationPerformHandler performHandler);
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -153,8 +147,14 @@ public class UIStoryboardPopoverSegue extends UIStoryboardSegue {
     public static native boolean resolveInstanceMethod(SEL sel);
 
     @Generated
+    @Selector("segueWithIdentifier:source:destination:performHandler:")
+    public static native UIStoryboardPopoverSegue segueWithIdentifierSourceDestinationPerformHandler(String identifier,
+            UIViewController source, UIViewController destination,
+            @ObjCBlock(name = "call_segueWithIdentifierSourceDestinationPerformHandler") UIStoryboardSegue.Block_segueWithIdentifierSourceDestinationPerformHandler performHandler);
+
+    @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")

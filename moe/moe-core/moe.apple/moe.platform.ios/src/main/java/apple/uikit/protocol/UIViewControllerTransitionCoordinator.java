@@ -45,6 +45,11 @@ public interface UIViewControllerTransitionCoordinator extends UIViewControllerT
             @ObjCBlock(name = "call_animateAlongsideTransitionInViewAnimationCompletion_2") Block_animateAlongsideTransitionInViewAnimationCompletion_2 completion);
 
     @Generated
+    @Selector("notifyWhenInteractionChangesUsingBlock:")
+    void notifyWhenInteractionChangesUsingBlock(
+            @ObjCBlock(name = "call_notifyWhenInteractionChangesUsingBlock") Block_notifyWhenInteractionChangesUsingBlock handler);
+
+    @Generated
     @Selector("notifyWhenInteractionEndsUsingBlock:")
     void notifyWhenInteractionEndsUsingBlock(
             @ObjCBlock(name = "call_notifyWhenInteractionEndsUsingBlock") Block_notifyWhenInteractionEndsUsingBlock handler);
@@ -75,6 +80,13 @@ public interface UIViewControllerTransitionCoordinator extends UIViewControllerT
     public interface Block_animateAlongsideTransitionInViewAnimationCompletion_2 {
         @Generated
         void call_animateAlongsideTransitionInViewAnimationCompletion_2(@Mapped(ObjCObjectMapper.class) Object arg0);
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_notifyWhenInteractionChangesUsingBlock {
+        @Generated
+        void call_notifyWhenInteractionChangesUsingBlock(@Mapped(ObjCObjectMapper.class) Object arg0);
     }
 
     @Runtime(ObjCRuntime.class)

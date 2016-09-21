@@ -59,13 +59,13 @@ public class GKMatchmakerViewController extends UINavigationController {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native GKMatchmakerViewController alloc();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -189,6 +189,10 @@ public class GKMatchmakerViewController extends UINavigationController {
     public native GKMatchmakerViewController init();
 
     @Generated
+    @Selector("initWithCoder:")
+    public native GKMatchmakerViewController initWithCoder(NSCoder aDecoder);
+
+    @Generated
     @Selector("initWithInvite:")
     public native GKMatchmakerViewController initWithInvite(GKInvite invite);
 
@@ -261,8 +265,4 @@ public class GKMatchmakerViewController extends UINavigationController {
             org.moe.natj.objc.ObjCRuntime.dissociateObjCObject(this, __old);
         }
     }
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native GKMatchmakerViewController initWithCoder(NSCoder aDecoder);
 }

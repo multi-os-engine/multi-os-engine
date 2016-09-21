@@ -58,17 +58,13 @@ public class HKBloodTypeObject extends NSObject implements NSCopying, NSSecureCo
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native HKBloodTypeObject alloc();
-
-    @Generated
-    @Selector("supportsSecureCoding")
-    public static native boolean supportsSecureCoding();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -155,11 +151,15 @@ public class HKBloodTypeObject extends NSObject implements NSCopying, NSSecureCo
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")
     public static native Class superclass_static();
+
+    @Generated
+    @Selector("supportsSecureCoding")
+    public static native boolean supportsSecureCoding();
 
     @Generated
     @Selector("version")
@@ -172,10 +172,6 @@ public class HKBloodTypeObject extends NSObject implements NSCopying, NSSecureCo
     public native long bloodType();
 
     @Generated
-    @Selector("init")
-    public native HKBloodTypeObject init();
-
-    @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
@@ -184,6 +180,10 @@ public class HKBloodTypeObject extends NSObject implements NSCopying, NSSecureCo
     @Generated
     @Selector("encodeWithCoder:")
     public native void encodeWithCoder(NSCoder aCoder);
+
+    @Generated
+    @Selector("init")
+    public native HKBloodTypeObject init();
 
     @Generated
     @Selector("initWithCoder:")

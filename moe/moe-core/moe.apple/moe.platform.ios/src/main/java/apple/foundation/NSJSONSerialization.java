@@ -63,28 +63,13 @@ public class NSJSONSerialization extends NSObject {
             Ptr<NSError> error);
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native NSJSONSerialization alloc();
-
-    @Generated
-    @Selector("dataWithJSONObject:options:error:")
-    public static native NSData dataWithJSONObjectOptionsError(@Mapped(ObjCObjectMapper.class) Object obj,
-            @NUInt long opt, Ptr<NSError> error);
-
-    @Generated
-    @Selector("isValidJSONObject:")
-    public static native boolean isValidJSONObject(@Mapped(ObjCObjectMapper.class) Object obj);
-
-    @Generated
-    @Selector("writeJSONObject:toStream:options:error:")
-    @NInt
-    public static native long writeJSONObjectToStreamOptionsError(@Mapped(ObjCObjectMapper.class) Object obj,
-            NSOutputStream stream, @NUInt long opt, Ptr<NSError> error);
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -112,6 +97,11 @@ public class NSJSONSerialization extends NSObject {
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
+
+    @Generated
+    @Selector("dataWithJSONObject:options:error:")
+    public static native NSData dataWithJSONObjectOptionsError(@Mapped(ObjCObjectMapper.class) Object obj,
+            @NUInt long opt, Ptr<NSError> error);
 
     @Generated
     @Selector("debugDescription")
@@ -148,6 +138,10 @@ public class NSJSONSerialization extends NSObject {
     public static native boolean isSubclassOfClass(Class aClass);
 
     @Generated
+    @Selector("isValidJSONObject:")
+    public static native boolean isValidJSONObject(@Mapped(ObjCObjectMapper.class) Object obj);
+
+    @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
@@ -171,7 +165,7 @@ public class NSJSONSerialization extends NSObject {
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")
@@ -181,6 +175,12 @@ public class NSJSONSerialization extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("writeJSONObject:toStream:options:error:")
+    @NInt
+    public static native long writeJSONObjectToStreamOptionsError(@Mapped(ObjCObjectMapper.class) Object obj,
+            NSOutputStream stream, @NUInt long opt, Ptr<NSError> error);
 
     @Generated
     @Selector("init")

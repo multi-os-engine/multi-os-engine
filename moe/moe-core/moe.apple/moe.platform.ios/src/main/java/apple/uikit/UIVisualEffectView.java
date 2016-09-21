@@ -63,15 +63,6 @@ public class UIVisualEffectView extends UIView implements NSSecureCoding {
     }
 
     @Generated
-    @Owned
-    @Selector("alloc")
-    public static native UIVisualEffectView alloc();
-
-    @Generated
-    @Selector("supportsSecureCoding")
-    public static native boolean supportsSecureCoding();
-
-    @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
 
@@ -80,6 +71,11 @@ public class UIVisualEffectView extends UIView implements NSSecureCoding {
     public static native void addKeyframeWithRelativeStartTimeRelativeDurationAnimations(double frameStartTime,
             double frameDuration,
             @ObjCBlock(name = "call_addKeyframeWithRelativeStartTimeRelativeDurationAnimations") UIView.Block_addKeyframeWithRelativeStartTimeRelativeDurationAnimations animations);
+
+    @Generated
+    @Owned
+    @Selector("alloc")
+    public static native UIVisualEffectView alloc();
 
     @Generated
     @Selector("allocWithZone:")
@@ -330,6 +326,10 @@ public class UIVisualEffectView extends UIView implements NSSecureCoding {
     public static native Class superclass_static();
 
     @Generated
+    @Selector("supportsSecureCoding")
+    public static native boolean supportsSecureCoding();
+
+    @Generated
     @Selector("transitionFromView:toView:duration:options:completion:")
     public static native void transitionFromViewToViewDurationOptionsCompletion(UIView fromView, UIView toView,
             double duration, @NUInt long options,
@@ -348,47 +348,15 @@ public class UIVisualEffectView extends UIView implements NSSecureCoding {
     public static native long userInterfaceLayoutDirectionForSemanticContentAttribute(@NInt long attribute);
 
     @Generated
+    @Selector("userInterfaceLayoutDirectionForSemanticContentAttribute:relativeToLayoutDirection:")
+    @NInt
+    public static native long userInterfaceLayoutDirectionForSemanticContentAttributeRelativeToLayoutDirection(
+            @NInt long semanticContentAttribute, @NInt long layoutDirection);
+
+    @Generated
     @Selector("version")
     @NInt
     public static native long version_static();
-
-    @Generated
-    @Selector("contentView")
-    public native UIView contentView();
-
-    @Generated
-    @Selector("effect")
-    public native UIVisualEffect effect();
-
-    @Generated
-    @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
-
-    @Generated
-    @Selector("init")
-    public native UIVisualEffectView init();
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native UIVisualEffectView initWithCoder(NSCoder aDecoder);
-
-    @Generated
-    @Selector("initWithEffect:")
-    public native UIVisualEffectView initWithEffect(UIVisualEffect effect);
-
-    @Generated
-    @Selector("initWithFrame:")
-    public native UIVisualEffectView initWithFrame(@ByValue CGRect frame);
-
-    @Generated
-    @ProtocolClassMethod("supportsSecureCoding")
-    public boolean _supportsSecureCoding() {
-        return supportsSecureCoding();
-    }
-
-    @Generated
-    @Selector("setEffect:")
-    public native void setEffect(UIVisualEffect value);
 
     @Generated
     @ProtocolClassMethod("appearance")
@@ -434,5 +402,43 @@ public class UIVisualEffectView extends UIView implements NSSecureCoding {
     @MappedReturn(ObjCObjectMapper.class)
     public Object _appearanceWhenContainedInInstancesOfClasses(NSArray<?> containerTypes) {
         return appearanceWhenContainedInInstancesOfClasses(containerTypes);
+    }
+
+    @Generated
+    @Selector("contentView")
+    public native UIView contentView();
+
+    @Generated
+    @Selector("effect")
+    public native UIVisualEffect effect();
+
+    @Generated
+    @Selector("encodeWithCoder:")
+    public native void encodeWithCoder(NSCoder aCoder);
+
+    @Generated
+    @Selector("init")
+    public native UIVisualEffectView init();
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native UIVisualEffectView initWithCoder(NSCoder aDecoder);
+
+    @Generated
+    @Selector("initWithEffect:")
+    public native UIVisualEffectView initWithEffect(UIVisualEffect effect);
+
+    @Generated
+    @Selector("initWithFrame:")
+    public native UIVisualEffectView initWithFrame(@ByValue CGRect frame);
+
+    @Generated
+    @Selector("setEffect:")
+    public native void setEffect(UIVisualEffect value);
+
+    @Generated
+    @ProtocolClassMethod("supportsSecureCoding")
+    public boolean _supportsSecureCoding() {
+        return supportsSecureCoding();
     }
 }

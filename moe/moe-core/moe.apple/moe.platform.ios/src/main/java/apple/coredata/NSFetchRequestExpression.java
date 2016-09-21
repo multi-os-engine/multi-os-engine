@@ -61,9 +61,48 @@ public class NSFetchRequestExpression extends NSExpression {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native NSFetchRequestExpression alloc();
+
+    @Generated
+    @Selector("allocWithZone:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object allocWithZone(VoidPtr zone);
+
+    @Generated
+    @Selector("automaticallyNotifiesObserversForKey:")
+    public static native boolean automaticallyNotifiesObserversForKey(String key);
+
+    @Generated
+    @Selector("cancelPreviousPerformRequestsWithTarget:")
+    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+
+    @Generated
+    @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
+    public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
+            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
+            @Mapped(ObjCObjectMapper.class) Object anArgument);
+
+    @Generated
+    @Selector("classFallbacksForKeyedArchiver")
+    public static native NSArray<String> classFallbacksForKeyedArchiver();
+
+    @Generated
+    @Selector("classForKeyedUnarchiver")
+    public static native Class classForKeyedUnarchiver();
+
+    @Generated
+    @Selector("debugDescription")
+    public static native String debugDescription_static();
+
+    @Generated
+    @Selector("description")
+    public static native String description_static();
 
     @Generated
     @Selector("expressionForAggregate:")
@@ -78,6 +117,11 @@ public class NSFetchRequestExpression extends NSExpression {
     public static native NSExpression expressionForBlockArguments(
             @ObjCBlock(name = "call_expressionForBlockArguments") NSExpression.Block_expressionForBlockArguments block,
             NSArray<? extends NSExpression> arguments);
+
+    @Generated
+    @Selector("expressionForConditional:trueExpression:falseExpression:")
+    public static native NSExpression expressionForConditionalTrueExpressionFalseExpression(NSPredicate predicate,
+            NSExpression trueExpression, NSExpression falseExpression);
 
     @Generated
     @Selector("expressionForConstantValue:")
@@ -138,50 +182,6 @@ public class NSFetchRequestExpression extends NSExpression {
     @Generated
     @Selector("expressionWithFormat:arguments:")
     public static native NSExpression expressionWithFormatArguments(String expressionFormat, BytePtr argList);
-
-    @Generated
-    @Selector("expressionForConditional:trueExpression:falseExpression:")
-    public static native NSExpression expressionForConditionalTrueExpressionFalseExpression(NSPredicate predicate,
-            NSExpression trueExpression, NSExpression falseExpression);
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
-
-    @Generated
-    @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
-
-    @Generated
-    @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
-
-    @Generated
-    @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
-
-    @Generated
-    @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
-    public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
-
-    @Generated
-    @Selector("classFallbacksForKeyedArchiver")
-    public static native NSArray<String> classFallbacksForKeyedArchiver();
-
-    @Generated
-    @Selector("classForKeyedUnarchiver")
-    public static native Class classForKeyedUnarchiver();
-
-    @Generated
-    @Selector("debugDescription")
-    public static native String debugDescription_static();
-
-    @Generated
-    @Selector("description")
-    public static native String description_static();
 
     @Generated
     @Selector("hash")
@@ -257,6 +257,10 @@ public class NSFetchRequestExpression extends NSExpression {
     public native NSFetchRequestExpression init();
 
     @Generated
+    @Selector("initWithCoder:")
+    public native NSFetchRequestExpression initWithCoder(NSCoder coder);
+
+    @Generated
     @Selector("initWithExpressionType:")
     public native NSFetchRequestExpression initWithExpressionType(@NUInt long type);
 
@@ -267,10 +271,6 @@ public class NSFetchRequestExpression extends NSExpression {
     @Generated
     @Selector("requestExpression")
     public native NSExpression requestExpression();
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native NSFetchRequestExpression initWithCoder(NSCoder coder);
 
     @Generated
     @ProtocolClassMethod("supportsSecureCoding")

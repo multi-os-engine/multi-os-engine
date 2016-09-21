@@ -18,9 +18,11 @@ package apple.webkit;
 
 import apple.NSObject;
 import apple.foundation.NSArray;
+import apple.foundation.NSCoder;
 import apple.foundation.NSDate;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
+import apple.foundation.protocol.NSCoding;
 import org.moe.natj.c.ann.FunctionPtr;
 import org.moe.natj.general.NatJ;
 import org.moe.natj.general.Pointer;
@@ -45,7 +47,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @Library("WebKit")
 @Runtime(ObjCRuntime.class)
 @ObjCClassBinding
-public class WKWebsiteDataStore extends NSObject {
+public class WKWebsiteDataStore extends NSObject implements NSCoding {
     static {
         NatJ.register();
     }
@@ -56,6 +58,10 @@ public class WKWebsiteDataStore extends NSObject {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Selector("allWebsiteDataTypes")
     public static native NSSet<String> allWebsiteDataTypes();
 
@@ -63,18 +69,6 @@ public class WKWebsiteDataStore extends NSObject {
     @Owned
     @Selector("alloc")
     public static native WKWebsiteDataStore alloc();
-
-    @Generated
-    @Selector("defaultDataStore")
-    public static native WKWebsiteDataStore defaultDataStore();
-
-    @Generated
-    @Selector("nonPersistentDataStore")
-    public static native WKWebsiteDataStore nonPersistentDataStore();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -106,6 +100,10 @@ public class WKWebsiteDataStore extends NSObject {
     @Generated
     @Selector("debugDescription")
     public static native String debugDescription_static();
+
+    @Generated
+    @Selector("defaultDataStore")
+    public static native WKWebsiteDataStore defaultDataStore();
 
     @Generated
     @Selector("description")
@@ -152,6 +150,10 @@ public class WKWebsiteDataStore extends NSObject {
     public static native Object new_objc();
 
     @Generated
+    @Selector("nonPersistentDataStore")
+    public static native WKWebsiteDataStore nonPersistentDataStore();
+
+    @Generated
     @Selector("resolveClassMethod:")
     public static native boolean resolveClassMethod(SEL sel);
 
@@ -173,6 +175,10 @@ public class WKWebsiteDataStore extends NSObject {
     public static native long version_static();
 
     @Generated
+    @Selector("encodeWithCoder:")
+    public native void encodeWithCoder(NSCoder aCoder);
+
+    @Generated
     @Selector("fetchDataRecordsOfTypes:completionHandler:")
     public native void fetchDataRecordsOfTypesCompletionHandler(NSSet<String> dataTypes,
             @ObjCBlock(name = "call_fetchDataRecordsOfTypesCompletionHandler") Block_fetchDataRecordsOfTypesCompletionHandler completionHandler);
@@ -180,6 +186,10 @@ public class WKWebsiteDataStore extends NSObject {
     @Generated
     @Selector("init")
     public native WKWebsiteDataStore init();
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native WKWebsiteDataStore initWithCoder(NSCoder aDecoder);
 
     @Generated
     @Selector("isPersistent")

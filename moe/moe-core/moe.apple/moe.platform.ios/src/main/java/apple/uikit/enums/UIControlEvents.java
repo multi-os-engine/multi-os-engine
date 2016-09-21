@@ -31,6 +31,7 @@ public final class UIControlEvents {
     @Generated @NUInt public static final long TouchUpOutside = 0x0000000000000080L;
     @Generated @NUInt public static final long TouchCancel = 0x0000000000000100L;
     @Generated @NUInt public static final long ValueChanged = 0x0000000000001000L;
+    @Generated @NUInt public static final long PrimaryActionTriggered = 0x0000000000002000L;
     @Generated @NUInt public static final long EditingDidBegin = 0x0000000000010000L;
     @Generated @NUInt public static final long EditingChanged = 0x0000000000020000L;
     @Generated @NUInt public static final long EditingDidEnd = 0x0000000000040000L;
@@ -40,7 +41,6 @@ public final class UIControlEvents {
     @Generated @NUInt public static final long ApplicationReserved = 0x000000000F000000L;
     @Generated @NUInt public static final long SystemReserved = 0x00000000F0000000L;
     @Generated @NUInt public static final long AllEvents = 0x00000000FFFFFFFFL;
-    @Generated @NUInt public static final long PrimaryActionTriggered = 0x0000000000002000L;
 
     @Generated
     private UIControlEvents() {

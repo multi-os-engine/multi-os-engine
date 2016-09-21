@@ -56,33 +56,13 @@ public class PHAssetCollectionChangeRequest extends NSObject {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native PHAssetCollectionChangeRequest alloc();
-
-    @Generated
-    @Selector("changeRequestForAssetCollection:")
-    public static native PHAssetCollectionChangeRequest changeRequestForAssetCollection(
-            PHAssetCollection assetCollection);
-
-    @Generated
-    @Selector("changeRequestForAssetCollection:assets:")
-    public static native PHAssetCollectionChangeRequest changeRequestForAssetCollectionAssets(
-            PHAssetCollection assetCollection, PHFetchResult<?> assets);
-
-    @Generated
-    @Selector("creationRequestForAssetCollectionWithTitle:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object creationRequestForAssetCollectionWithTitle(String title);
-
-    @Generated
-    @Selector("deleteAssetCollections:")
-    public static native void deleteAssetCollections(
-            @Mapped(ObjCObjectMapper.class) NSFastEnumeration assetCollections);
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -104,6 +84,16 @@ public class PHAssetCollectionChangeRequest extends NSObject {
             @Mapped(ObjCObjectMapper.class) Object anArgument);
 
     @Generated
+    @Selector("changeRequestForAssetCollection:")
+    public static native PHAssetCollectionChangeRequest changeRequestForAssetCollection(
+            PHAssetCollection assetCollection);
+
+    @Generated
+    @Selector("changeRequestForAssetCollection:assets:")
+    public static native PHAssetCollectionChangeRequest changeRequestForAssetCollectionAssets(
+            PHAssetCollection assetCollection, PHFetchResult<PHAsset> assets);
+
+    @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
@@ -112,8 +102,18 @@ public class PHAssetCollectionChangeRequest extends NSObject {
     public static native Class classForKeyedUnarchiver();
 
     @Generated
+    @Selector("creationRequestForAssetCollectionWithTitle:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object creationRequestForAssetCollectionWithTitle(String title);
+
+    @Generated
     @Selector("debugDescription")
     public static native String debugDescription_static();
+
+    @Generated
+    @Selector("deleteAssetCollections:")
+    public static native void deleteAssetCollections(
+            @Mapped(ObjCObjectMapper.class) NSFastEnumeration assetCollections);
 
     @Generated
     @Selector("description")
@@ -169,7 +169,7 @@ public class PHAssetCollectionChangeRequest extends NSObject {
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")

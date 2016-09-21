@@ -24,7 +24,6 @@ import org.moe.natj.general.NatJ;
 import org.moe.natj.general.Pointer;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.ReferenceInfo;
-import org.moe.natj.general.ann.UncertainReturn;
 import org.moe.natj.general.ptr.Ptr;
 import org.moe.natj.general.ptr.VoidPtr;
 
@@ -87,10 +86,9 @@ public final class AudioQueueBuffer extends StructObject {
     @StructureField(order = 4, isGetter = false)
     public native void setMPacketDescriptionCapacity(int value);
 
-    @ReferenceInfo(type = AudioStreamPacketDescription.class)
     @Generated
     @StructureField(order = 5, isGetter = true)
-    @UncertainReturn("Options: reference, array Fallback: reference")
+    @ReferenceInfo(type = AudioStreamPacketDescription.class)
     public native Ptr<AudioStreamPacketDescription> mPacketDescriptions();
 
     @Generated

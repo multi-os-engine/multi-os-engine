@@ -26,6 +26,9 @@ public final class MTLFeatureSet {
     @Generated @NUInt public static final long Family1_v2 = 0x0000000000000002L;
     @Generated @NUInt public static final long Family2_v2 = 0x0000000000000003L;
     @Generated @NUInt public static final long Family3_v1 = 0x0000000000000004L;
+    @Generated @NUInt public static final long Family1_v3 = 0x0000000000000005L;
+    @Generated @NUInt public static final long Family2_v3 = 0x0000000000000006L;
+    @Generated @NUInt public static final long Family3_v2 = 0x0000000000000007L;
 
     @Generated
     private MTLFeatureSet() {

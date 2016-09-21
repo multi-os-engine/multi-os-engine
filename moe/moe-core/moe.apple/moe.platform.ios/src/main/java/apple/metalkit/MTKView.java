@@ -17,6 +17,7 @@ limitations under the License.
 package apple.metalkit;
 
 import apple.NSObject;
+import apple.coregraphics.opaque.CGContextRef;
 import apple.coregraphics.struct.CGRect;
 import apple.coregraphics.struct.CGSize;
 import apple.foundation.NSArray;
@@ -30,6 +31,8 @@ import apple.metal.protocol.MTLDevice;
 import apple.metal.protocol.MTLTexture;
 import apple.metal.struct.MTLClearColor;
 import apple.metalkit.protocol.MTKViewDelegate;
+import apple.quartzcore.CALayer;
+import apple.quartzcore.protocol.CALayerDelegate;
 import apple.quartzcore.protocol.CAMetalDrawable;
 import apple.uikit.UITraitCollection;
 import apple.uikit.UIView;
@@ -51,6 +54,7 @@ import org.moe.natj.general.ptr.VoidPtr;
 import org.moe.natj.objc.Class;
 import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.SEL;
+import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
@@ -61,7 +65,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @Library("MetalKit")
 @Runtime(ObjCRuntime.class)
 @ObjCClassBinding
-public class MTKView extends UIView implements NSCoding {
+public class MTKView extends UIView implements NSCoding, CALayerDelegate {
     static {
         NatJ.register();
     }
@@ -72,11 +76,6 @@ public class MTKView extends UIView implements NSCoding {
     }
 
     @Generated
-    @Owned
-    @Selector("alloc")
-    public static native MTKView alloc();
-
-    @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
 
@@ -85,6 +84,11 @@ public class MTKView extends UIView implements NSCoding {
     public static native void addKeyframeWithRelativeStartTimeRelativeDurationAnimations(double frameStartTime,
             double frameDuration,
             @ObjCBlock(name = "call_addKeyframeWithRelativeStartTimeRelativeDurationAnimations") UIView.Block_addKeyframeWithRelativeStartTimeRelativeDurationAnimations animations);
+
+    @Generated
+    @Owned
+    @Selector("alloc")
+    public static native MTKView alloc();
 
     @Generated
     @Selector("allocWithZone:")
@@ -300,7 +304,7 @@ public class MTKView extends UIView implements NSCoding {
 
     @Generated
     @Selector("setAnimationDuration:")
-    public static native void setAnimationDuration(double duration);
+    public static native void setAnimationDuration_static(double duration);
 
     @Generated
     @Selector("setAnimationRepeatAutoreverses:")
@@ -308,7 +312,7 @@ public class MTKView extends UIView implements NSCoding {
 
     @Generated
     @Selector("setAnimationRepeatCount:")
-    public static native void setAnimationRepeatCount(float repeatCount);
+    public static native void setAnimationRepeatCount_static(float repeatCount);
 
     @Generated
     @Selector("setAnimationStartDate:")
@@ -353,9 +357,67 @@ public class MTKView extends UIView implements NSCoding {
     public static native long userInterfaceLayoutDirectionForSemanticContentAttribute(@NInt long attribute);
 
     @Generated
+    @Selector("userInterfaceLayoutDirectionForSemanticContentAttribute:relativeToLayoutDirection:")
+    @NInt
+    public static native long userInterfaceLayoutDirectionForSemanticContentAttributeRelativeToLayoutDirection(
+            @NInt long semanticContentAttribute, @NInt long layoutDirection);
+
+    @Generated
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @IsOptional
+    @Selector("actionForLayer:forKey:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native Object actionForLayerForKey(CALayer layer, String event);
+
+    @Generated
+    @ProtocolClassMethod("appearance")
+    @MappedReturn(ObjCObjectMapper.class)
+    public Object _appearance() {
+        return appearance();
+    }
+
+    @Generated
+    @ProtocolClassMethod("appearanceForTraitCollection")
+    @MappedReturn(ObjCObjectMapper.class)
+    public Object _appearanceForTraitCollection(UITraitCollection trait) {
+        return appearanceForTraitCollection(trait);
+    }
+
+    @Generated
+    @Deprecated
+    @ProtocolClassMethod("appearanceForTraitCollectionWhenContainedIn")
+    @MappedReturn(ObjCObjectMapper.class)
+    public Object _appearanceForTraitCollectionWhenContainedIn(UITraitCollection trait,
+            @Mapped(ObjCObjectMapper.class) Object ContainerClass, Object... varargs) {
+        return appearanceForTraitCollectionWhenContainedIn(trait, ContainerClass, varargs);
+    }
+
+    @Generated
+    @ProtocolClassMethod("appearanceForTraitCollectionWhenContainedInInstancesOfClasses")
+    @MappedReturn(ObjCObjectMapper.class)
+    public Object _appearanceForTraitCollectionWhenContainedInInstancesOfClasses(UITraitCollection trait,
+            NSArray<?> containerTypes) {
+        return appearanceForTraitCollectionWhenContainedInInstancesOfClasses(trait, containerTypes);
+    }
+
+    @Generated
+    @Deprecated
+    @ProtocolClassMethod("appearanceWhenContainedIn")
+    @MappedReturn(ObjCObjectMapper.class)
+    public Object _appearanceWhenContainedIn(@Mapped(ObjCObjectMapper.class) Object ContainerClass, Object... varargs) {
+        return appearanceWhenContainedIn(ContainerClass, varargs);
+    }
+
+    @Generated
+    @ProtocolClassMethod("appearanceWhenContainedInInstancesOfClasses")
+    @MappedReturn(ObjCObjectMapper.class)
+    public Object _appearanceWhenContainedInInstancesOfClasses(NSArray<?> containerTypes) {
+        return appearanceWhenContainedInInstancesOfClasses(containerTypes);
+    }
 
     @Generated
     @Selector("autoResizeDrawable")
@@ -409,8 +471,18 @@ public class MTKView extends UIView implements NSCoding {
     public native MTLDevice device();
 
     @Generated
+    @IsOptional
+    @Selector("displayLayer:")
+    public native void displayLayer(CALayer layer);
+
+    @Generated
     @Selector("draw")
     public native void draw();
+
+    @Generated
+    @IsOptional
+    @Selector("drawLayer:inContext:")
+    public native void drawLayerInContext(CALayer layer, CGContextRef ctx);
 
     @Generated
     @Selector("drawableSize")
@@ -453,6 +525,16 @@ public class MTKView extends UIView implements NSCoding {
     @Generated
     @Selector("setPaused:")
     public native void setPaused(boolean value);
+
+    @Generated
+    @IsOptional
+    @Selector("layerWillDraw:")
+    public native void layerWillDraw(CALayer layer);
+
+    @Generated
+    @IsOptional
+    @Selector("layoutSublayersOfLayer:")
+    public native void layoutSublayersOfLayer(CALayer layer);
 
     @Generated
     @Selector("multisampleColorTexture")
@@ -544,50 +626,4 @@ public class MTKView extends UIView implements NSCoding {
     @Generated
     @Selector("setSampleCount:")
     public native void setSampleCount(@NUInt long value);
-
-    @Generated
-    @ProtocolClassMethod("appearance")
-    @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearance() {
-        return appearance();
-    }
-
-    @Generated
-    @ProtocolClassMethod("appearanceForTraitCollection")
-    @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearanceForTraitCollection(UITraitCollection trait) {
-        return appearanceForTraitCollection(trait);
-    }
-
-    @Generated
-    @Deprecated
-    @ProtocolClassMethod("appearanceForTraitCollectionWhenContainedIn")
-    @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearanceForTraitCollectionWhenContainedIn(UITraitCollection trait,
-            @Mapped(ObjCObjectMapper.class) Object ContainerClass, Object... varargs) {
-        return appearanceForTraitCollectionWhenContainedIn(trait, ContainerClass, varargs);
-    }
-
-    @Generated
-    @ProtocolClassMethod("appearanceForTraitCollectionWhenContainedInInstancesOfClasses")
-    @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearanceForTraitCollectionWhenContainedInInstancesOfClasses(UITraitCollection trait,
-            NSArray<?> containerTypes) {
-        return appearanceForTraitCollectionWhenContainedInInstancesOfClasses(trait, containerTypes);
-    }
-
-    @Generated
-    @Deprecated
-    @ProtocolClassMethod("appearanceWhenContainedIn")
-    @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearanceWhenContainedIn(@Mapped(ObjCObjectMapper.class) Object ContainerClass, Object... varargs) {
-        return appearanceWhenContainedIn(ContainerClass, varargs);
-    }
-
-    @Generated
-    @ProtocolClassMethod("appearanceWhenContainedInInstancesOfClasses")
-    @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearanceWhenContainedInInstancesOfClasses(NSArray<?> containerTypes) {
-        return appearanceWhenContainedInInstancesOfClasses(containerTypes);
-    }
 }

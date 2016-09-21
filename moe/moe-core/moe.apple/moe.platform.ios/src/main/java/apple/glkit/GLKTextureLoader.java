@@ -19,6 +19,7 @@ package apple.glkit;
 import apple.NSObject;
 import apple.coregraphics.opaque.CGImageRef;
 import apple.foundation.NSArray;
+import apple.foundation.NSBundle;
 import apple.foundation.NSData;
 import apple.foundation.NSDictionary;
 import apple.foundation.NSError;
@@ -34,6 +35,7 @@ import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.Library;
 import org.moe.natj.general.ann.Mapped;
 import org.moe.natj.general.ann.MappedReturn;
+import org.moe.natj.general.ann.NFloat;
 import org.moe.natj.general.ann.NInt;
 import org.moe.natj.general.ann.NUInt;
 import org.moe.natj.general.ann.Owned;
@@ -63,48 +65,13 @@ public class GLKTextureLoader extends NSObject {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native GLKTextureLoader alloc();
-
-    @Generated
-    @Selector("cubeMapWithContentsOfFile:options:error:")
-    public static native GLKTextureInfo cubeMapWithContentsOfFileOptionsError(String path,
-            NSDictionary<String, ? extends NSNumber> options, Ptr<NSError> outError);
-
-    @Generated
-    @Selector("cubeMapWithContentsOfFiles:options:error:")
-    public static native GLKTextureInfo cubeMapWithContentsOfFilesOptionsError(NSArray<?> paths,
-            NSDictionary<String, ? extends NSNumber> options, Ptr<NSError> outError);
-
-    @Generated
-    @Selector("cubeMapWithContentsOfURL:options:error:")
-    public static native GLKTextureInfo cubeMapWithContentsOfURLOptionsError(NSURL url,
-            NSDictionary<String, ? extends NSNumber> options, Ptr<NSError> outError);
-
-    @Generated
-    @Selector("textureWithCGImage:options:error:")
-    public static native GLKTextureInfo textureWithCGImageOptionsError(CGImageRef cgImage,
-            NSDictionary<String, ? extends NSNumber> options, Ptr<NSError> outError);
-
-    @Generated
-    @Selector("textureWithContentsOfData:options:error:")
-    public static native GLKTextureInfo textureWithContentsOfDataOptionsError(NSData data,
-            NSDictionary<String, ? extends NSNumber> options, Ptr<NSError> outError);
-
-    @Generated
-    @Selector("textureWithContentsOfFile:options:error:")
-    public static native GLKTextureInfo textureWithContentsOfFileOptionsError(String path,
-            NSDictionary<String, ? extends NSNumber> options, Ptr<NSError> outError);
-
-    @Generated
-    @Selector("textureWithContentsOfURL:options:error:")
-    public static native GLKTextureInfo textureWithContentsOfURLOptionsError(NSURL url,
-            NSDictionary<String, ? extends NSNumber> options, Ptr<NSError> outError);
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -132,6 +99,21 @@ public class GLKTextureLoader extends NSObject {
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
+
+    @Generated
+    @Selector("cubeMapWithContentsOfFile:options:error:")
+    public static native GLKTextureInfo cubeMapWithContentsOfFileOptionsError(String path,
+            NSDictionary<String, ? extends NSNumber> options, Ptr<NSError> outError);
+
+    @Generated
+    @Selector("cubeMapWithContentsOfFiles:options:error:")
+    public static native GLKTextureInfo cubeMapWithContentsOfFilesOptionsError(NSArray<?> paths,
+            NSDictionary<String, ? extends NSNumber> options, Ptr<NSError> outError);
+
+    @Generated
+    @Selector("cubeMapWithContentsOfURL:options:error:")
+    public static native GLKTextureInfo cubeMapWithContentsOfURLOptionsError(NSURL url,
+            NSDictionary<String, ? extends NSNumber> options, Ptr<NSError> outError);
 
     @Generated
     @Selector("debugDescription")
@@ -198,6 +180,32 @@ public class GLKTextureLoader extends NSObject {
     public static native Class superclass_static();
 
     @Generated
+    @Selector("textureWithCGImage:options:error:")
+    public static native GLKTextureInfo textureWithCGImageOptionsError(CGImageRef cgImage,
+            NSDictionary<String, ? extends NSNumber> options, Ptr<NSError> outError);
+
+    @Generated
+    @Selector("textureWithContentsOfData:options:error:")
+    public static native GLKTextureInfo textureWithContentsOfDataOptionsError(NSData data,
+            NSDictionary<String, ? extends NSNumber> options, Ptr<NSError> outError);
+
+    @Generated
+    @Selector("textureWithContentsOfFile:options:error:")
+    public static native GLKTextureInfo textureWithContentsOfFileOptionsError(String path,
+            NSDictionary<String, ? extends NSNumber> options, Ptr<NSError> outError);
+
+    @Generated
+    @Selector("textureWithContentsOfURL:options:error:")
+    public static native GLKTextureInfo textureWithContentsOfURLOptionsError(NSURL url,
+            NSDictionary<String, ? extends NSNumber> options, Ptr<NSError> outError);
+
+    @Generated
+    @Selector("textureWithName:scaleFactor:bundle:options:error:")
+    public static native GLKTextureInfo textureWithNameScaleFactorBundleOptionsError(String name,
+            @NFloat double scaleFactor, NSBundle bundle, NSDictionary<String, ? extends NSNumber> options,
+            Ptr<NSError> outError);
+
+    @Generated
     @Selector("version")
     @NInt
     public static native long version_static();
@@ -252,6 +260,13 @@ public class GLKTextureLoader extends NSObject {
             NSDictionary<String, ? extends NSNumber> options, NSObject queue,
             @ObjCBlock(name = "call_textureWithContentsOfURLOptionsQueueCompletionHandler") Block_textureWithContentsOfURLOptionsQueueCompletionHandler block);
 
+    @Generated
+    @Selector("textureWithName:scaleFactor:bundle:options:queue:completionHandler:")
+    public native void textureWithNameScaleFactorBundleOptionsQueueCompletionHandler(String name,
+            @NFloat double scaleFactor, NSBundle bundle, NSDictionary<String, ? extends NSNumber> options,
+            NSObject queue,
+            @ObjCBlock(name = "call_textureWithNameScaleFactorBundleOptionsQueueCompletionHandler") Block_textureWithNameScaleFactorBundleOptionsQueueCompletionHandler block);
+
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_cubeMapWithContentsOfFileOptionsQueueCompletionHandler {
@@ -299,5 +314,12 @@ public class GLKTextureLoader extends NSObject {
     public interface Block_textureWithContentsOfURLOptionsQueueCompletionHandler {
         @Generated
         void call_textureWithContentsOfURLOptionsQueueCompletionHandler(GLKTextureInfo arg0, NSError arg1);
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_textureWithNameScaleFactorBundleOptionsQueueCompletionHandler {
+        @Generated
+        void call_textureWithNameScaleFactorBundleOptionsQueueCompletionHandler(GLKTextureInfo arg0, NSError arg1);
     }
 }

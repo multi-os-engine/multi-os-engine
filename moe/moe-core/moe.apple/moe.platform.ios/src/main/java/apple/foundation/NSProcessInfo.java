@@ -54,17 +54,13 @@ public class NSProcessInfo extends NSObject {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native NSProcessInfo alloc();
-
-    @Generated
-    @Selector("processInfo")
-    public static native NSProcessInfo processInfo();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -142,6 +138,10 @@ public class NSProcessInfo extends NSObject {
     public static native Object new_objc();
 
     @Generated
+    @Selector("processInfo")
+    public static native NSProcessInfo processInfo();
+
+    @Generated
     @Selector("resolveClassMethod:")
     public static native boolean resolveClassMethod(SEL sel);
 
@@ -151,7 +151,7 @@ public class NSProcessInfo extends NSObject {
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")
@@ -195,6 +195,10 @@ public class NSProcessInfo extends NSObject {
     @Generated
     @Selector("init")
     public native NSProcessInfo init();
+
+    @Generated
+    @Selector("isLowPowerModeEnabled")
+    public native boolean isLowPowerModeEnabled();
 
     @Generated
     @Selector("isOperatingSystemAtLeastVersion:")
@@ -254,10 +258,6 @@ public class NSProcessInfo extends NSObject {
     @Generated
     @Selector("systemUptime")
     public native double systemUptime();
-
-    @Generated
-    @Selector("isLowPowerModeEnabled")
-    public native boolean isLowPowerModeEnabled();
 
     @Runtime(ObjCRuntime.class)
     @Generated

@@ -65,25 +65,13 @@ public class SCNCamera extends NSObject implements SCNAnimatable, SCNTechniqueSu
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native SCNCamera alloc();
-
-    @Generated
-    @Selector("camera")
-    public static native SCNCamera camera();
-
-    @Generated
-    @Selector("supportsSecureCoding")
-    public static native boolean supportsSecureCoding();
-
-    @Generated
-    @Selector("cameraWithMDLCamera:")
-    public static native SCNCamera cameraWithMDLCamera(MDLCamera mdlCamera);
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -93,6 +81,14 @@ public class SCNCamera extends NSObject implements SCNAnimatable, SCNTechniqueSu
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
     public static native boolean automaticallyNotifiesObserversForKey(String key);
+
+    @Generated
+    @Selector("camera")
+    public static native SCNCamera camera();
+
+    @Generated
+    @Selector("cameraWithMDLCamera:")
+    public static native SCNCamera cameraWithMDLCamera(MDLCamera mdlCamera);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
@@ -170,11 +166,15 @@ public class SCNCamera extends NSObject implements SCNAnimatable, SCNTechniqueSu
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")
     public static native Class superclass_static();
+
+    @Generated
+    @Selector("supportsSecureCoding")
+    public static native boolean supportsSecureCoding();
 
     @Generated
     @Selector("version")
@@ -203,9 +203,48 @@ public class SCNCamera extends NSObject implements SCNAnimatable, SCNTechniqueSu
     public native boolean automaticallyAdjustsZRange();
 
     @Generated
+    @Selector("averageGray")
+    @NFloat
+    public native double averageGray();
+
+    @Generated
+    @Selector("bloomBlurRadius")
+    @NFloat
+    public native double bloomBlurRadius();
+
+    @Generated
+    @Selector("bloomIntensity")
+    @NFloat
+    public native double bloomIntensity();
+
+    @Generated
+    @Selector("bloomThreshold")
+    @NFloat
+    public native double bloomThreshold();
+
+    @Generated
     @Selector("categoryBitMask")
     @NUInt
     public native long categoryBitMask();
+
+    @Generated
+    @Selector("colorFringeIntensity")
+    @NFloat
+    public native double colorFringeIntensity();
+
+    @Generated
+    @Selector("colorFringeStrength")
+    @NFloat
+    public native double colorFringeStrength();
+
+    @Generated
+    @Selector("colorGrading")
+    public native SCNMaterialProperty colorGrading();
+
+    @Generated
+    @Selector("contrast")
+    @NFloat
+    public native double contrast();
 
     @Generated
     @Owned
@@ -216,6 +255,21 @@ public class SCNCamera extends NSObject implements SCNAnimatable, SCNTechniqueSu
     @Generated
     @Selector("encodeWithCoder:")
     public native void encodeWithCoder(NSCoder aCoder);
+
+    @Generated
+    @Selector("exposureAdaptationBrighteningSpeedFactor")
+    @NFloat
+    public native double exposureAdaptationBrighteningSpeedFactor();
+
+    @Generated
+    @Selector("exposureAdaptationDarkeningSpeedFactor")
+    @NFloat
+    public native double exposureAdaptationDarkeningSpeedFactor();
+
+    @Generated
+    @Selector("exposureOffset")
+    @NFloat
+    public native double exposureOffset();
 
     @Generated
     @Selector("focalBlurRadius")
@@ -243,6 +297,21 @@ public class SCNCamera extends NSObject implements SCNAnimatable, SCNTechniqueSu
     @Generated
     @Selector("isAnimationForKeyPaused:")
     public native boolean isAnimationForKeyPaused(String key);
+
+    @Generated
+    @Selector("maximumExposure")
+    @NFloat
+    public native double maximumExposure();
+
+    @Generated
+    @Selector("minimumExposure")
+    @NFloat
+    public native double minimumExposure();
+
+    @Generated
+    @Selector("motionBlurIntensity")
+    @NFloat
+    public native double motionBlurIntensity();
 
     @Generated
     @Selector("name")
@@ -278,6 +347,11 @@ public class SCNCamera extends NSObject implements SCNAnimatable, SCNTechniqueSu
     public native void resumeAnimationForKey(String key);
 
     @Generated
+    @Selector("saturation")
+    @NFloat
+    public native double saturation();
+
+    @Generated
     @Selector("setAperture:")
     public native void setAperture(@NFloat double value);
 
@@ -286,8 +360,48 @@ public class SCNCamera extends NSObject implements SCNAnimatable, SCNTechniqueSu
     public native void setAutomaticallyAdjustsZRange(boolean value);
 
     @Generated
+    @Selector("setAverageGray:")
+    public native void setAverageGray(@NFloat double value);
+
+    @Generated
+    @Selector("setBloomBlurRadius:")
+    public native void setBloomBlurRadius(@NFloat double value);
+
+    @Generated
+    @Selector("setBloomIntensity:")
+    public native void setBloomIntensity(@NFloat double value);
+
+    @Generated
+    @Selector("setBloomThreshold:")
+    public native void setBloomThreshold(@NFloat double value);
+
+    @Generated
     @Selector("setCategoryBitMask:")
     public native void setCategoryBitMask(@NUInt long value);
+
+    @Generated
+    @Selector("setColorFringeIntensity:")
+    public native void setColorFringeIntensity(@NFloat double value);
+
+    @Generated
+    @Selector("setColorFringeStrength:")
+    public native void setColorFringeStrength(@NFloat double value);
+
+    @Generated
+    @Selector("setContrast:")
+    public native void setContrast(@NFloat double value);
+
+    @Generated
+    @Selector("setExposureAdaptationBrighteningSpeedFactor:")
+    public native void setExposureAdaptationBrighteningSpeedFactor(@NFloat double value);
+
+    @Generated
+    @Selector("setExposureAdaptationDarkeningSpeedFactor:")
+    public native void setExposureAdaptationDarkeningSpeedFactor(@NFloat double value);
+
+    @Generated
+    @Selector("setExposureOffset:")
+    public native void setExposureOffset(@NFloat double value);
 
     @Generated
     @Selector("setFocalBlurRadius:")
@@ -302,6 +416,18 @@ public class SCNCamera extends NSObject implements SCNAnimatable, SCNTechniqueSu
     public native void setFocalSize(@NFloat double value);
 
     @Generated
+    @Selector("setMaximumExposure:")
+    public native void setMaximumExposure(@NFloat double value);
+
+    @Generated
+    @Selector("setMinimumExposure:")
+    public native void setMinimumExposure(@NFloat double value);
+
+    @Generated
+    @Selector("setMotionBlurIntensity:")
+    public native void setMotionBlurIntensity(@NFloat double value);
+
+    @Generated
     @Selector("setName:")
     public native void setName(String value);
 
@@ -311,7 +437,15 @@ public class SCNCamera extends NSObject implements SCNAnimatable, SCNTechniqueSu
 
     @Generated
     @Selector("setProjectionTransform:")
-    public native void setProjectionTransform(@ByValue SCNMatrix4 projectionTransform);
+    public native void setProjectionTransform(@ByValue SCNMatrix4 value);
+
+    @Generated
+    @Selector("setSaturation:")
+    public native void setSaturation(@NFloat double value);
+
+    @Generated
+    @Selector("setSpeed:forAnimationKey:")
+    public native void setSpeedForAnimationKey(@NFloat double speed, String key);
 
     @Generated
     @Selector("setTechnique:")
@@ -320,6 +454,26 @@ public class SCNCamera extends NSObject implements SCNAnimatable, SCNTechniqueSu
     @Generated
     @Selector("setUsesOrthographicProjection:")
     public native void setUsesOrthographicProjection(boolean value);
+
+    @Generated
+    @Selector("setVignettingIntensity:")
+    public native void setVignettingIntensity(@NFloat double value);
+
+    @Generated
+    @Selector("setVignettingPower:")
+    public native void setVignettingPower(@NFloat double value);
+
+    @Generated
+    @Selector("setWantsExposureAdaptation:")
+    public native void setWantsExposureAdaptation(boolean value);
+
+    @Generated
+    @Selector("setWantsHDR:")
+    public native void setWantsHDR(boolean value);
+
+    @Generated
+    @Selector("setWhitePoint:")
+    public native void setWhitePoint(@NFloat double value);
 
     @Generated
     @Selector("setXFov:")
@@ -350,6 +504,29 @@ public class SCNCamera extends NSObject implements SCNAnimatable, SCNTechniqueSu
     @Generated
     @Selector("usesOrthographicProjection")
     public native boolean usesOrthographicProjection();
+
+    @Generated
+    @Selector("vignettingIntensity")
+    @NFloat
+    public native double vignettingIntensity();
+
+    @Generated
+    @Selector("vignettingPower")
+    @NFloat
+    public native double vignettingPower();
+
+    @Generated
+    @Selector("wantsExposureAdaptation")
+    public native boolean wantsExposureAdaptation();
+
+    @Generated
+    @Selector("wantsHDR")
+    public native boolean wantsHDR();
+
+    @Generated
+    @Selector("whitePoint")
+    @NFloat
+    public native double whitePoint();
 
     @Generated
     @Selector("xFov")

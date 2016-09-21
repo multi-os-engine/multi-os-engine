@@ -58,13 +58,13 @@ public class GKAchievementViewController extends GKGameCenterViewController {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native GKAchievementViewController alloc();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -184,6 +184,10 @@ public class GKAchievementViewController extends GKGameCenterViewController {
     public native GKAchievementViewController init();
 
     @Generated
+    @Selector("initWithCoder:")
+    public native GKAchievementViewController initWithCoder(NSCoder aDecoder);
+
+    @Generated
     @Selector("initWithNavigationBarClass:toolbarClass:")
     public native GKAchievementViewController initWithNavigationBarClassToolbarClass(Class navigationBarClass,
             Class toolbarClass);
@@ -212,8 +216,4 @@ public class GKAchievementViewController extends GKGameCenterViewController {
             org.moe.natj.objc.ObjCRuntime.dissociateObjCObject(this, __old);
         }
     }
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native GKAchievementViewController initWithCoder(NSCoder aDecoder);
 }

@@ -20,6 +20,7 @@ import apple.NSObject;
 import apple.foundation.NSArray;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
+import apple.modelio.protocol.MDLMeshBufferAllocator;
 import apple.modelio.protocol.MDLNamed;
 import apple.modelio.protocol.MDLObjectContainerComponent;
 import apple.modelio.protocol.MDLTransformComponent;
@@ -58,17 +59,13 @@ public class MDLObject extends NSObject implements MDLNamed {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native MDLObject alloc();
-
-    @Generated
-    @Selector("objectWithSCNNode:")
-    public static native MDLObject objectWithSCNNode(SCNNode scnNode);
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -146,6 +143,15 @@ public class MDLObject extends NSObject implements MDLNamed {
     public static native Object new_objc();
 
     @Generated
+    @Selector("objectWithSCNNode:")
+    public static native MDLObject objectWithSCNNode(SCNNode scnNode);
+
+    @Generated
+    @Selector("objectWithSCNNode:bufferAllocator:")
+    public static native MDLObject objectWithSCNNodeBufferAllocator(SCNNode scnNode,
+            @Mapped(ObjCObjectMapper.class) MDLMeshBufferAllocator bufferAllocator);
+
+    @Generated
     @Selector("resolveClassMethod:")
     public static native boolean resolveClassMethod(SEL sel);
 
@@ -155,7 +161,7 @@ public class MDLObject extends NSObject implements MDLNamed {
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")
@@ -176,20 +182,44 @@ public class MDLObject extends NSObject implements MDLNamed {
     public native MDLObjectContainerComponent children();
 
     @Generated
+    @Selector("hidden")
+    public native boolean hidden();
+
+    @Generated
     @Selector("init")
     public native MDLObject init();
+
+    @Generated
+    @Selector("instance")
+    public native MDLObject instance();
 
     @Generated
     @Selector("name")
     public native String name();
 
     @Generated
+    @Selector("objectAtPath:")
+    public native MDLObject objectAtPath(String path);
+
+    @Generated
     @Selector("parent")
     public native MDLObject parent();
 
     @Generated
+    @Selector("path")
+    public native String path();
+
+    @Generated
     @Selector("setChildren:")
     public native void setChildren(@Mapped(ObjCObjectMapper.class) MDLObjectContainerComponent value);
+
+    @Generated
+    @Selector("setHidden:")
+    public native void setHidden(boolean value);
+
+    @Generated
+    @Selector("setInstance:")
+    public native void setInstance(MDLObject value);
 
     @Generated
     @Selector("setName:")

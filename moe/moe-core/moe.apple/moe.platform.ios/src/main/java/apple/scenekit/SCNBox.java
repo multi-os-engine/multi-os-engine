@@ -58,31 +58,13 @@ public class SCNBox extends SCNGeometry {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native SCNBox alloc();
-
-    @Generated
-    @Selector("boxWithWidth:height:length:chamferRadius:")
-    public static native SCNBox boxWithWidthHeightLengthChamferRadius(@NFloat double width, @NFloat double height,
-            @NFloat double length, @NFloat double chamferRadius);
-
-    @Generated
-    @Selector("geometry")
-    public static native SCNBox geometry();
-
-    @Generated
-    @Selector("geometryWithSources:elements:")
-    public static native SCNBox geometryWithSourcesElements(NSArray<? extends SCNGeometrySource> sources,
-            NSArray<? extends SCNGeometryElement> elements);
-
-    @Generated
-    @Selector("geometryWithMDLMesh:")
-    public static native SCNBox geometryWithMDLMesh(MDLMesh mdlMesh);
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -92,6 +74,11 @@ public class SCNBox extends SCNGeometry {
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
     public static native boolean automaticallyNotifiesObserversForKey(String key);
+
+    @Generated
+    @Selector("boxWithWidth:height:length:chamferRadius:")
+    public static native SCNBox boxWithWidthHeightLengthChamferRadius(@NFloat double width, @NFloat double height,
+            @NFloat double length, @NFloat double chamferRadius);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
@@ -118,6 +105,19 @@ public class SCNBox extends SCNGeometry {
     @Generated
     @Selector("description")
     public static native String description_static();
+
+    @Generated
+    @Selector("geometry")
+    public static native SCNBox geometry();
+
+    @Generated
+    @Selector("geometryWithMDLMesh:")
+    public static native SCNBox geometryWithMDLMesh(MDLMesh mdlMesh);
+
+    @Generated
+    @Selector("geometryWithSources:elements:")
+    public static native SCNBox geometryWithSourcesElements(NSArray<? extends SCNGeometrySource> sources,
+            NSArray<? extends SCNGeometryElement> elements);
 
     @Generated
     @Selector("hash")
@@ -209,6 +209,10 @@ public class SCNBox extends SCNGeometry {
     public native SCNBox init();
 
     @Generated
+    @Selector("initWithCoder:")
+    public native SCNBox initWithCoder(NSCoder aDecoder);
+
+    @Generated
     @Selector("length")
     @NFloat
     public native double length();
@@ -251,6 +255,12 @@ public class SCNBox extends SCNGeometry {
     public native void setWidthSegmentCount(@NInt long value);
 
     @Generated
+    @ProtocolClassMethod("supportsSecureCoding")
+    public boolean _supportsSecureCoding() {
+        return supportsSecureCoding();
+    }
+
+    @Generated
     @Selector("width")
     @NFloat
     public native double width();
@@ -259,14 +269,4 @@ public class SCNBox extends SCNGeometry {
     @Selector("widthSegmentCount")
     @NInt
     public native long widthSegmentCount();
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native SCNBox initWithCoder(NSCoder aDecoder);
-
-    @Generated
-    @ProtocolClassMethod("supportsSecureCoding")
-    public boolean _supportsSecureCoding() {
-        return supportsSecureCoding();
-    }
 }

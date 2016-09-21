@@ -55,28 +55,13 @@ public class AVVideoCompositionCoreAnimationTool extends NSObject {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native AVVideoCompositionCoreAnimationTool alloc();
-
-    @Generated
-    @Selector("videoCompositionCoreAnimationToolWithAdditionalLayer:asTrackID:")
-    public static native AVVideoCompositionCoreAnimationTool videoCompositionCoreAnimationToolWithAdditionalLayerAsTrackID(
-            CALayer layer, int trackID);
-
-    @Generated
-    @Selector("videoCompositionCoreAnimationToolWithPostProcessingAsVideoLayer:inLayer:")
-    public static native AVVideoCompositionCoreAnimationTool videoCompositionCoreAnimationToolWithPostProcessingAsVideoLayerInLayer(
-            CALayer videoLayer, CALayer animationLayer);
-
-    @Generated
-    @Selector("videoCompositionCoreAnimationToolWithPostProcessingAsVideoLayers:inLayer:")
-    public static native AVVideoCompositionCoreAnimationTool videoCompositionCoreAnimationToolWithPostProcessingAsVideoLayersInLayer(
-            NSArray<? extends CALayer> videoLayers, CALayer animationLayer);
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -173,6 +158,21 @@ public class AVVideoCompositionCoreAnimationTool extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("videoCompositionCoreAnimationToolWithAdditionalLayer:asTrackID:")
+    public static native AVVideoCompositionCoreAnimationTool videoCompositionCoreAnimationToolWithAdditionalLayerAsTrackID(
+            CALayer layer, int trackID);
+
+    @Generated
+    @Selector("videoCompositionCoreAnimationToolWithPostProcessingAsVideoLayer:inLayer:")
+    public static native AVVideoCompositionCoreAnimationTool videoCompositionCoreAnimationToolWithPostProcessingAsVideoLayerInLayer(
+            CALayer videoLayer, CALayer animationLayer);
+
+    @Generated
+    @Selector("videoCompositionCoreAnimationToolWithPostProcessingAsVideoLayers:inLayer:")
+    public static native AVVideoCompositionCoreAnimationTool videoCompositionCoreAnimationToolWithPostProcessingAsVideoLayersInLayer(
+            NSArray<? extends CALayer> videoLayers, CALayer animationLayer);
 
     @Generated
     @Selector("init")

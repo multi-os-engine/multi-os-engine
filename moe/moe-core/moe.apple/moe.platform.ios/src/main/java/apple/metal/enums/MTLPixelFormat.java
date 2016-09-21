@@ -41,6 +41,7 @@ public final class MTLPixelFormat {
     @Generated @NUInt public static final long B5G6R5Unorm = 0x0000000000000028L;
     @Generated @NUInt public static final long A1BGR5Unorm = 0x0000000000000029L;
     @Generated @NUInt public static final long ABGR4Unorm = 0x000000000000002AL;
+    @Generated @NUInt public static final long BGR5A1Unorm = 0x000000000000002BL;
     @Generated @NUInt public static final long R32Uint = 0x0000000000000035L;
     @Generated @NUInt public static final long R32Sint = 0x0000000000000036L;
     @Generated @NUInt public static final long R32Float = 0x0000000000000037L;
@@ -60,6 +61,8 @@ public final class MTLPixelFormat {
     @Generated @NUInt public static final long RGB10A2Uint = 0x000000000000005BL;
     @Generated @NUInt public static final long RG11B10Float = 0x000000000000005CL;
     @Generated @NUInt public static final long RGB9E5Float = 0x000000000000005DL;
+    @Generated @NUInt public static final long BGR10_XR = 0x000000000000022AL;
+    @Generated @NUInt public static final long BGR10_XR_sRGB = 0x000000000000022BL;
     @Generated @NUInt public static final long RG32Uint = 0x0000000000000067L;
     @Generated @NUInt public static final long RG32Sint = 0x0000000000000068L;
     @Generated @NUInt public static final long RG32Float = 0x0000000000000069L;
@@ -68,6 +71,8 @@ public final class MTLPixelFormat {
     @Generated @NUInt public static final long RGBA16Uint = 0x0000000000000071L;
     @Generated @NUInt public static final long RGBA16Sint = 0x0000000000000072L;
     @Generated @NUInt public static final long RGBA16Float = 0x0000000000000073L;
+    @Generated @NUInt public static final long BGRA10_XR = 0x0000000000000228L;
+    @Generated @NUInt public static final long BGRA10_XR_sRGB = 0x0000000000000229L;
     @Generated @NUInt public static final long RGBA32Uint = 0x000000000000007BL;
     @Generated @NUInt public static final long RGBA32Sint = 0x000000000000007CL;
     @Generated @NUInt public static final long RGBA32Float = 0x000000000000007DL;
@@ -121,8 +126,8 @@ public final class MTLPixelFormat {
     @Generated @NUInt public static final long BGRG422 = 0x00000000000000F1L;
     @Generated @NUInt public static final long Depth32Float = 0x00000000000000FCL;
     @Generated @NUInt public static final long Stencil8 = 0x00000000000000FDL;
-    @Generated @NUInt public static final long BGR5A1Unorm = 0x000000000000002BL;
     @Generated @NUInt public static final long Depth32Float_Stencil8 = 0x0000000000000104L;
+    @Generated @NUInt public static final long X32_Stencil8 = 0x0000000000000105L;
 
     @Generated
     private MTLPixelFormat() {

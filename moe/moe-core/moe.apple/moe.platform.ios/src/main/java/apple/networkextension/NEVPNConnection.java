@@ -58,13 +58,13 @@ public class NEVPNConnection extends NSObject {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native NEVPNConnection alloc();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -151,7 +151,7 @@ public class NEVPNConnection extends NSObject {
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")
@@ -163,12 +163,25 @@ public class NEVPNConnection extends NSObject {
     public static native long version_static();
 
     @Generated
+    @Selector("connectedDate")
+    public native NSDate connectedDate();
+
+    @Generated
     @Selector("init")
     public native NEVPNConnection init();
 
     @Generated
+    @Selector("manager")
+    public native NEVPNManager manager();
+
+    @Generated
     @Selector("startVPNTunnelAndReturnError:")
     public native boolean startVPNTunnelAndReturnError(Ptr<NSError> error);
+
+    @Generated
+    @Selector("startVPNTunnelWithOptions:andReturnError:")
+    public native boolean startVPNTunnelWithOptionsAndReturnError(NSDictionary<String, ? extends NSObject> options,
+            Ptr<NSError> error);
 
     @Generated
     @Selector("status")
@@ -178,13 +191,4 @@ public class NEVPNConnection extends NSObject {
     @Generated
     @Selector("stopVPNTunnel")
     public native void stopVPNTunnel();
-
-    @Generated
-    @Selector("connectedDate")
-    public native NSDate connectedDate();
-
-    @Generated
-    @Selector("startVPNTunnelWithOptions:andReturnError:")
-    public native boolean startVPNTunnelWithOptionsAndReturnError(NSDictionary<String, ? extends NSObject> options,
-            Ptr<NSError> error);
 }

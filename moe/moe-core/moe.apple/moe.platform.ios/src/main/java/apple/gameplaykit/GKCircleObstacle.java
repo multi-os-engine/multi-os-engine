@@ -54,17 +54,13 @@ public class GKCircleObstacle extends GKObstacle {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native GKCircleObstacle alloc();
-
-    @Generated
-    @Selector("obstacleWithRadius:")
-    public static native GKCircleObstacle obstacleWithRadius(float radius);
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -140,6 +136,10 @@ public class GKCircleObstacle extends GKObstacle {
     @Selector("new")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object new_objc();
+
+    @Generated
+    @Selector("obstacleWithRadius:")
+    public static native GKCircleObstacle obstacleWithRadius(float radius);
 
     @Generated
     @Selector("resolveClassMethod:")

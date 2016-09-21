@@ -37,18 +37,18 @@ public interface GKTurnBasedMatchmakerViewControllerDelegate {
     void turnBasedMatchmakerViewControllerDidFailWithError(GKTurnBasedMatchmakerViewController viewController,
             NSError error);
 
+    @Generated
     @IsOptional
     @Deprecated
-    @Generated
     @Selector("turnBasedMatchmakerViewController:didFindMatch:")
     default void turnBasedMatchmakerViewControllerDidFindMatch(GKTurnBasedMatchmakerViewController viewController,
             GKTurnBasedMatch match) {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    @Generated
     @IsOptional
     @Deprecated
-    @Generated
     @Selector("turnBasedMatchmakerViewController:playerQuitForMatch:")
     default void turnBasedMatchmakerViewControllerPlayerQuitForMatch(GKTurnBasedMatchmakerViewController viewController,
             GKTurnBasedMatch match) {

@@ -19,6 +19,7 @@ package apple.uikit.protocol;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.Library;
 import org.moe.natj.general.ann.Mapped;
+import org.moe.natj.general.ann.MappedReturn;
 import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.IsOptional;
@@ -39,6 +40,14 @@ public interface UIViewControllerAnimatedTransitioning {
     @IsOptional
     @Selector("animationEnded:")
     default void animationEnded(boolean transitionCompleted) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Generated
+    @IsOptional
+    @Selector("interruptibleAnimatorForTransition:")
+    @MappedReturn(ObjCObjectMapper.class)
+    default Object interruptibleAnimatorForTransition(@Mapped(ObjCObjectMapper.class) Object transitionContext) {
         throw new java.lang.UnsupportedOperationException();
     }
 

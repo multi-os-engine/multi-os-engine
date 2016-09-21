@@ -20,8 +20,10 @@ import apple.NSObject;
 import apple.foundation.NSArray;
 import apple.foundation.NSCoder;
 import apple.foundation.NSDate;
+import apple.foundation.NSDictionary;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
+import apple.foundation.protocol.NSCopying;
 import apple.foundation.protocol.NSSecureCoding;
 import org.moe.natj.c.ann.FunctionPtr;
 import org.moe.natj.general.NatJ;
@@ -47,7 +49,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @Library("HealthKit")
 @Runtime(ObjCRuntime.class)
 @ObjCClassBinding
-public class HKWorkoutEvent extends NSObject implements NSSecureCoding {
+public class HKWorkoutEvent extends NSObject implements NSSecureCoding, NSCopying {
     static {
         NatJ.register();
     }
@@ -58,21 +60,13 @@ public class HKWorkoutEvent extends NSObject implements NSSecureCoding {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native HKWorkoutEvent alloc();
-
-    @Generated
-    @Selector("supportsSecureCoding")
-    public static native boolean supportsSecureCoding();
-
-    @Generated
-    @Selector("workoutEventWithType:date:")
-    public static native HKWorkoutEvent workoutEventWithTypeDate(@NInt long type, NSDate date);
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -166,9 +160,28 @@ public class HKWorkoutEvent extends NSObject implements NSSecureCoding {
     public static native Class superclass_static();
 
     @Generated
+    @Selector("supportsSecureCoding")
+    public static native boolean supportsSecureCoding();
+
+    @Generated
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("workoutEventWithType:date:")
+    public static native HKWorkoutEvent workoutEventWithTypeDate(@NInt long type, NSDate date);
+
+    @Generated
+    @Selector("workoutEventWithType:date:metadata:")
+    public static native HKWorkoutEvent workoutEventWithTypeDateMetadata(@NInt long type, NSDate date,
+            NSDictionary<String, ?> metadata);
+
+    @Generated
+    @Owned
+    @Selector("copyWithZone:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native Object copyWithZone(VoidPtr zone);
 
     @Generated
     @Selector("date")
@@ -185,6 +198,10 @@ public class HKWorkoutEvent extends NSObject implements NSSecureCoding {
     @Generated
     @Selector("initWithCoder:")
     public native HKWorkoutEvent initWithCoder(NSCoder aDecoder);
+
+    @Generated
+    @Selector("metadata")
+    public native NSDictionary<String, ?> metadata();
 
     @Generated
     @ProtocolClassMethod("supportsSecureCoding")

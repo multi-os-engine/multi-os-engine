@@ -60,21 +60,13 @@ public class SCNParticlePropertyController extends NSObject implements NSSecureC
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native SCNParticlePropertyController alloc();
-
-    @Generated
-    @Selector("controllerWithAnimation:")
-    public static native SCNParticlePropertyController controllerWithAnimation(CAAnimation animation);
-
-    @Generated
-    @Selector("supportsSecureCoding")
-    public static native boolean supportsSecureCoding();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -102,6 +94,10 @@ public class SCNParticlePropertyController extends NSObject implements NSSecureC
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
+
+    @Generated
+    @Selector("controllerWithAnimation:")
+    public static native SCNParticlePropertyController controllerWithAnimation(CAAnimation animation);
 
     @Generated
     @Selector("debugDescription")
@@ -161,11 +157,15 @@ public class SCNParticlePropertyController extends NSObject implements NSSecureC
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")
     public static native Class superclass_static();
+
+    @Generated
+    @Selector("supportsSecureCoding")
+    public static native boolean supportsSecureCoding();
 
     @Generated
     @Selector("version")

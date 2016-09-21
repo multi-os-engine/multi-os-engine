@@ -54,6 +54,11 @@ public final class sigvec extends StructObject {
     }
 
     @Generated
+    @StructureField(order = 0, isGetter = true)
+    @FunctionPtr(name = "call_sv_handler")
+    public native Function_sv_handler sv_handler();
+
+    @Generated
     @StructureField(order = 0, isGetter = false)
     public native void setSv_handler(@FunctionPtr(name = "call_sv_handler") Function_sv_handler value);
 
@@ -72,11 +77,6 @@ public final class sigvec extends StructObject {
     @Generated
     @StructureField(order = 2, isGetter = false)
     public native void setSv_flags(int value);
-
-    @Generated
-    @StructureField(order = 0, isGetter = true)
-    @FunctionPtr(name = "call_sv_handler")
-    public native Function_sv_handler sv_handler();
 
     @Runtime(CRuntime.class)
     @Generated

@@ -43,7 +43,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @Library("CoreData")
 @Runtime(ObjCRuntime.class)
 @ObjCClassBinding
-public class NSAsynchronousFetchResult extends NSPersistentStoreAsynchronousResult {
+public class NSAsynchronousFetchResult<_ResultType> extends NSPersistentStoreAsynchronousResult {
     static {
         NatJ.register();
     }
@@ -54,13 +54,13 @@ public class NSAsynchronousFetchResult extends NSPersistentStoreAsynchronousResu
     }
 
     @Generated
-    @Owned
-    @Selector("alloc")
-    public static native NSAsynchronousFetchResult alloc();
-
-    @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
+    @Owned
+    @Selector("alloc")
+    public static native NSAsynchronousFetchResult<?> alloc();
 
     @Generated
     @Selector("allocWithZone:")
@@ -147,7 +147,7 @@ public class NSAsynchronousFetchResult extends NSPersistentStoreAsynchronousResu
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")
@@ -160,7 +160,7 @@ public class NSAsynchronousFetchResult extends NSPersistentStoreAsynchronousResu
 
     @Generated
     @Selector("fetchRequest")
-    public native NSAsynchronousFetchRequest fetchRequest();
+    public native NSAsynchronousFetchRequest<Object> fetchRequest();
 
     @Generated
     @Selector("finalResult")
@@ -168,5 +168,5 @@ public class NSAsynchronousFetchResult extends NSPersistentStoreAsynchronousResu
 
     @Generated
     @Selector("init")
-    public native NSAsynchronousFetchResult init();
+    public native NSAsynchronousFetchResult<?> init();
 }

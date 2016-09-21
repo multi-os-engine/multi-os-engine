@@ -55,30 +55,13 @@ public class MDLNormalMapTexture extends MDLTexture {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native MDLNormalMapTexture alloc();
-
-    @Generated
-    @Selector("textureCubeWithImagesNamed:")
-    public static native MDLNormalMapTexture textureCubeWithImagesNamed(NSArray<String> names);
-
-    @Generated
-    @Selector("textureCubeWithImagesNamed:bundle:")
-    public static native MDLNormalMapTexture textureCubeWithImagesNamedBundle(NSArray<String> names,
-            NSBundle bundleOrNil);
-
-    @Generated
-    @Selector("textureNamed:")
-    public static native MDLNormalMapTexture textureNamed(String name);
-
-    @Generated
-    @Selector("textureNamed:bundle:")
-    public static native MDLNormalMapTexture textureNamedBundle(String name, NSBundle bundleOrNil);
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -170,6 +153,23 @@ public class MDLNormalMapTexture extends MDLTexture {
     @Generated
     @Selector("superclass")
     public static native Class superclass_static();
+
+    @Generated
+    @Selector("textureCubeWithImagesNamed:")
+    public static native MDLNormalMapTexture textureCubeWithImagesNamed(NSArray<String> names);
+
+    @Generated
+    @Selector("textureCubeWithImagesNamed:bundle:")
+    public static native MDLNormalMapTexture textureCubeWithImagesNamedBundle(NSArray<String> names,
+            NSBundle bundleOrNil);
+
+    @Generated
+    @Selector("textureNamed:")
+    public static native MDLNormalMapTexture textureNamed(String name);
+
+    @Generated
+    @Selector("textureNamed:bundle:")
+    public static native MDLNormalMapTexture textureNamedBundle(String name, NSBundle bundleOrNil);
 
     @Generated
     @Selector("version")

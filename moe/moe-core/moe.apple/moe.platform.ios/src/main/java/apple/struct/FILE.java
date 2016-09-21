@@ -115,16 +115,36 @@ public final class FILE extends StructObject {
     public native void set_cookie(VoidPtr value);
 
     @Generated
+    @StructureField(order = 8, isGetter = true)
+    @FunctionPtr(name = "call__close")
+    public native Function__close _close();
+
+    @Generated
     @StructureField(order = 8, isGetter = false)
     public native void set_close(@FunctionPtr(name = "call__close") Function__close value);
+
+    @Generated
+    @StructureField(order = 9, isGetter = true)
+    @FunctionPtr(name = "call__read")
+    public native Function__read _read();
 
     @Generated
     @StructureField(order = 9, isGetter = false)
     public native void set_read(@FunctionPtr(name = "call__read") Function__read value);
 
     @Generated
+    @StructureField(order = 10, isGetter = true)
+    @FunctionPtr(name = "call__seek")
+    public native Function__seek _seek();
+
+    @Generated
     @StructureField(order = 10, isGetter = false)
     public native void set_seek(@FunctionPtr(name = "call__seek") Function__seek value);
+
+    @Generated
+    @StructureField(order = 11, isGetter = true)
+    @FunctionPtr(name = "call__write")
+    public native Function__write _write();
 
     @Generated
     @StructureField(order = 11, isGetter = false)
@@ -195,26 +215,6 @@ public final class FILE extends StructObject {
     @Generated
     @StructureField(order = 19, isGetter = false)
     public native void set_offset(long value);
-
-    @Generated
-    @StructureField(order = 8, isGetter = true)
-    @FunctionPtr(name = "call__close")
-    public native Function__close _close();
-
-    @Generated
-    @StructureField(order = 9, isGetter = true)
-    @FunctionPtr(name = "call__read")
-    public native Function__read _read();
-
-    @Generated
-    @StructureField(order = 10, isGetter = true)
-    @FunctionPtr(name = "call__seek")
-    public native Function__seek _seek();
-
-    @Generated
-    @StructureField(order = 11, isGetter = true)
-    @FunctionPtr(name = "call__write")
-    public native Function__write _write();
 
     @Runtime(CRuntime.class)
     @Generated

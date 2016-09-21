@@ -58,26 +58,22 @@ public class HKQueryAnchor extends NSObject implements NSSecureCoding, NSCopying
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native HKQueryAnchor alloc();
 
     @Generated
-    @Selector("anchorFromValue:")
-    public static native HKQueryAnchor anchorFromValue(@NUInt long value);
-
-    @Generated
-    @Selector("supportsSecureCoding")
-    public static native boolean supportsSecureCoding();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
-
-    @Generated
     @Selector("allocWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object allocWithZone(VoidPtr zone);
+
+    @Generated
+    @Selector("anchorFromValue:")
+    public static native HKQueryAnchor anchorFromValue(@NUInt long value);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -164,6 +160,10 @@ public class HKQueryAnchor extends NSObject implements NSSecureCoding, NSCopying
     @Generated
     @Selector("superclass")
     public static native Class superclass_static();
+
+    @Generated
+    @Selector("supportsSecureCoding")
+    public static native boolean supportsSecureCoding();
 
     @Generated
     @Selector("version")

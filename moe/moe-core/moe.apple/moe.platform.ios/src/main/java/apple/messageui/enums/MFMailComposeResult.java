@@ -17,13 +17,14 @@ limitations under the License.
 package apple.messageui.enums;
 
 import org.moe.natj.general.ann.Generated;
+import org.moe.natj.general.ann.NInt;
 
 @Generated
 public final class MFMailComposeResult {
-    @Generated public static final int Cancelled = 0x00000000;
-    @Generated public static final int Saved = 0x00000001;
-    @Generated public static final int Sent = 0x00000002;
-    @Generated public static final int Failed = 0x00000003;
+    @Generated @NInt public static final long Cancelled = 0x0000000000000000L;
+    @Generated @NInt public static final long Saved = 0x0000000000000001L;
+    @Generated @NInt public static final long Sent = 0x0000000000000002L;
+    @Generated @NInt public static final long Failed = 0x0000000000000003L;
 
     @Generated
     private MFMailComposeResult() {

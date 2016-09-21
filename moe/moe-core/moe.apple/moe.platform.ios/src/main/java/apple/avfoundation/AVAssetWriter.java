@@ -61,23 +61,23 @@ public class AVAssetWriter extends NSObject {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native AVAssetWriter alloc();
 
     @Generated
-    @Selector("assetWriterWithURL:fileType:error:")
-    public static native AVAssetWriter assetWriterWithURLFileTypeError(NSURL outputURL, String outputFileType,
-            Ptr<NSError> outError);
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
-
-    @Generated
     @Selector("allocWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object allocWithZone(VoidPtr zone);
+
+    @Generated
+    @Selector("assetWriterWithURL:fileType:error:")
+    public static native AVAssetWriter assetWriterWithURLFileTypeError(NSURL outputURL, String outputFileType,
+            Ptr<NSError> outError);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -258,6 +258,11 @@ public class AVAssetWriter extends NSObject {
     public native NSURL outputURL();
 
     @Generated
+    @Selector("overallDurationHint")
+    @ByValue
+    public native CMTime overallDurationHint();
+
+    @Generated
     @Selector("setDirectoryForTemporaryFiles:")
     public native void setDirectoryForTemporaryFiles(NSURL value);
 
@@ -272,6 +277,10 @@ public class AVAssetWriter extends NSObject {
     @Generated
     @Selector("setMovieTimeScale:")
     public native void setMovieTimeScale(int value);
+
+    @Generated
+    @Selector("setOverallDurationHint:")
+    public native void setOverallDurationHint(@ByValue CMTime value);
 
     @Generated
     @Selector("setShouldOptimizeForNetworkUse:")
@@ -293,15 +302,6 @@ public class AVAssetWriter extends NSObject {
     @Selector("status")
     @NInt
     public native long status();
-
-    @Generated
-    @Selector("overallDurationHint")
-    @ByValue
-    public native CMTime overallDurationHint();
-
-    @Generated
-    @Selector("setOverallDurationHint:")
-    public native void setOverallDurationHint(@ByValue CMTime value);
 
     @Runtime(ObjCRuntime.class)
     @Generated

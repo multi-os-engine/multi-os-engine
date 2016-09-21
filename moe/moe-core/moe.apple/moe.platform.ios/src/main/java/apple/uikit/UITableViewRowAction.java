@@ -57,18 +57,13 @@ public class UITableViewRowAction extends NSObject implements NSCopying {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native UITableViewRowAction alloc();
-
-    @Generated
-    @Selector("rowActionWithStyle:title:handler:")
-    public static native UITableViewRowAction rowActionWithStyleTitleHandler(@NInt long style, String title,
-            @ObjCBlock(name = "call_rowActionWithStyleTitleHandler") Block_rowActionWithStyleTitleHandler handler);
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -154,8 +149,13 @@ public class UITableViewRowAction extends NSObject implements NSCopying {
     public static native boolean resolveInstanceMethod(SEL sel);
 
     @Generated
+    @Selector("rowActionWithStyle:title:handler:")
+    public static native UITableViewRowAction rowActionWithStyleTitleHandler(@NInt long style, String title,
+            @ObjCBlock(name = "call_rowActionWithStyleTitleHandler") Block_rowActionWithStyleTitleHandler handler);
+
+    @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")

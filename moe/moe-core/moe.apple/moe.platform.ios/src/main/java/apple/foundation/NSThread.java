@@ -32,6 +32,7 @@ import org.moe.natj.general.ptr.VoidPtr;
 import org.moe.natj.objc.Class;
 import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.SEL;
+import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
@@ -51,62 +52,13 @@ public class NSThread extends NSObject {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native NSThread alloc();
-
-    @Generated
-    @Selector("callStackReturnAddresses")
-    public static native NSArray<? extends NSNumber> callStackReturnAddresses();
-
-    @Generated
-    @Selector("callStackSymbols")
-    public static native NSArray<String> callStackSymbols();
-
-    @Generated
-    @Selector("currentThread")
-    public static native NSThread currentThread();
-
-    @Generated
-    @Selector("detachNewThreadSelector:toTarget:withObject:")
-    public static native void detachNewThreadSelectorToTargetWithObject(SEL selector,
-            @Mapped(ObjCObjectMapper.class) Object target, @Mapped(ObjCObjectMapper.class) Object argument);
-
-    @Generated
-    @Selector("exit")
-    public static native void exit();
-
-    @Generated
-    @Selector("isMainThread")
-    public static native boolean isMainThread_static();
-
-    @Generated
-    @Selector("isMultiThreaded")
-    public static native boolean isMultiThreaded();
-
-    @Generated
-    @Selector("mainThread")
-    public static native NSThread mainThread();
-
-    @Generated
-    @Selector("setThreadPriority:")
-    public static native boolean setThreadPriority_static(double p);
-
-    @Generated
-    @Selector("sleepForTimeInterval:")
-    public static native void sleepForTimeInterval(double ti);
-
-    @Generated
-    @Selector("sleepUntilDate:")
-    public static native void sleepUntilDate(NSDate date);
-
-    @Generated
-    @Selector("threadPriority")
-    public static native double threadPriority_static();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -116,6 +68,14 @@ public class NSThread extends NSObject {
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
     public static native boolean automaticallyNotifiesObserversForKey(String key);
+
+    @Generated
+    @Selector("callStackReturnAddresses")
+    public static native NSArray<? extends NSNumber> callStackReturnAddresses();
+
+    @Generated
+    @Selector("callStackSymbols")
+    public static native NSArray<String> callStackSymbols();
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
@@ -136,12 +96,30 @@ public class NSThread extends NSObject {
     public static native Class classForKeyedUnarchiver();
 
     @Generated
+    @Selector("currentThread")
+    public static native NSThread currentThread();
+
+    @Generated
     @Selector("debugDescription")
     public static native String debugDescription_static();
 
     @Generated
     @Selector("description")
     public static native String description_static();
+
+    @Generated
+    @Selector("detachNewThreadSelector:toTarget:withObject:")
+    public static native void detachNewThreadSelectorToTargetWithObject(SEL selector,
+            @Mapped(ObjCObjectMapper.class) Object target, @Mapped(ObjCObjectMapper.class) Object argument);
+
+    @Generated
+    @Selector("detachNewThreadWithBlock:")
+    public static native void detachNewThreadWithBlock(
+            @ObjCBlock(name = "call_detachNewThreadWithBlock") Block_detachNewThreadWithBlock block);
+
+    @Generated
+    @Selector("exit")
+    public static native void exit();
 
     @Generated
     @Selector("hash")
@@ -166,6 +144,14 @@ public class NSThread extends NSObject {
     public static native boolean instancesRespondToSelector(SEL aSelector);
 
     @Generated
+    @Selector("isMainThread")
+    public static native boolean isMainThread_static();
+
+    @Generated
+    @Selector("isMultiThreaded")
+    public static native boolean isMultiThreaded();
+
+    @Generated
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
@@ -176,6 +162,10 @@ public class NSThread extends NSObject {
     @Generated
     @Selector("load")
     public static native void load_objc_static();
+
+    @Generated
+    @Selector("mainThread")
+    public static native NSThread mainThread();
 
     @Generated
     @Owned
@@ -192,12 +182,28 @@ public class NSThread extends NSObject {
     public static native boolean resolveInstanceMethod(SEL sel);
 
     @Generated
+    @Selector("setThreadPriority:")
+    public static native boolean setThreadPriority_static(double p);
+
+    @Generated
     @Selector("setVersion:")
     public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
+    @Selector("sleepForTimeInterval:")
+    public static native void sleepForTimeInterval(double ti);
+
+    @Generated
+    @Selector("sleepUntilDate:")
+    public static native void sleepUntilDate(NSDate date);
+
+    @Generated
     @Selector("superclass")
     public static native Class superclass_static();
+
+    @Generated
+    @Selector("threadPriority")
+    public static native double threadPriority_static();
 
     @Generated
     @Selector("version")
@@ -211,6 +217,10 @@ public class NSThread extends NSObject {
     @Generated
     @Selector("init")
     public native NSThread init();
+
+    @Generated
+    @Selector("initWithBlock:")
+    public native NSThread initWithBlock(@ObjCBlock(name = "call_initWithBlock") Block_initWithBlock block);
 
     @Generated
     @Selector("initWithTarget:selector:object:")
@@ -278,4 +288,18 @@ public class NSThread extends NSObject {
     @Generated
     @Selector("threadPriority")
     public native double threadPriority();
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_detachNewThreadWithBlock {
+        @Generated
+        void call_detachNewThreadWithBlock();
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_initWithBlock {
+        @Generated
+        void call_initWithBlock();
+    }
 }

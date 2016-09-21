@@ -56,13 +56,13 @@ public class PKPaymentRequest extends NSObject {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native PKPaymentRequest alloc();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -72,6 +72,10 @@ public class PKPaymentRequest extends NSObject {
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
     public static native boolean automaticallyNotifiesObserversForKey(String key);
+
+    @Generated
+    @Selector("availableNetworks")
+    public static native NSArray<String> availableNetworks();
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
@@ -149,7 +153,7 @@ public class PKPaymentRequest extends NSObject {
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")
@@ -164,10 +168,14 @@ public class PKPaymentRequest extends NSObject {
     @Selector("applicationData")
     public native NSData applicationData();
 
-    @Deprecated
     @Generated
+    @Deprecated
     @Selector("billingAddress")
     public native ConstVoidPtr billingAddress();
+
+    @Generated
+    @Selector("billingContact")
+    public native PKContact billingContact();
 
     @Generated
     @Selector("countryCode")
@@ -208,10 +216,14 @@ public class PKPaymentRequest extends NSObject {
     @Selector("setApplicationData:")
     public native void setApplicationData(NSData value);
 
-    @Deprecated
     @Generated
+    @Deprecated
     @Selector("setBillingAddress:")
     public native void setBillingAddress(ConstVoidPtr value);
+
+    @Generated
+    @Selector("setBillingContact:")
+    public native void setBillingContact(PKContact value);
 
     @Generated
     @Selector("setCountryCode:")
@@ -241,10 +253,14 @@ public class PKPaymentRequest extends NSObject {
     @Selector("setRequiredShippingAddressFields:")
     public native void setRequiredShippingAddressFields(@NUInt long value);
 
-    @Deprecated
     @Generated
+    @Deprecated
     @Selector("setShippingAddress:")
     public native void setShippingAddress(ConstVoidPtr value);
+
+    @Generated
+    @Selector("setShippingContact:")
+    public native void setShippingContact(PKContact value);
 
     @Generated
     @Selector("setShippingMethods:")
@@ -258,10 +274,14 @@ public class PKPaymentRequest extends NSObject {
     @Selector("setSupportedNetworks:")
     public native void setSupportedNetworks(NSArray<String> value);
 
-    @Deprecated
     @Generated
+    @Deprecated
     @Selector("shippingAddress")
     public native ConstVoidPtr shippingAddress();
+
+    @Generated
+    @Selector("shippingContact")
+    public native PKContact shippingContact();
 
     @Generated
     @Selector("shippingMethods")
@@ -275,20 +295,4 @@ public class PKPaymentRequest extends NSObject {
     @Generated
     @Selector("supportedNetworks")
     public native NSArray<String> supportedNetworks();
-
-    @Generated
-    @Selector("billingContact")
-    public native PKContact billingContact();
-
-    @Generated
-    @Selector("setBillingContact:")
-    public native void setBillingContact(PKContact value);
-
-    @Generated
-    @Selector("setShippingContact:")
-    public native void setShippingContact(PKContact value);
-
-    @Generated
-    @Selector("shippingContact")
-    public native PKContact shippingContact();
 }

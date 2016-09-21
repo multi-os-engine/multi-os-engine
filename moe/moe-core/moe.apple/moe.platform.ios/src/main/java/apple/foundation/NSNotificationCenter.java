@@ -52,17 +52,13 @@ public class NSNotificationCenter extends NSObject {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native NSNotificationCenter alloc();
-
-    @Generated
-    @Selector("defaultCenter")
-    public static native NSNotificationCenter defaultCenter();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -94,6 +90,10 @@ public class NSNotificationCenter extends NSObject {
     @Generated
     @Selector("debugDescription")
     public static native String debugDescription_static();
+
+    @Generated
+    @Selector("defaultCenter")
+    public static native NSNotificationCenter defaultCenter();
 
     @Generated
     @Selector("description")

@@ -60,13 +60,13 @@ public class AVAudioRecorder extends NSObject {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native AVAudioRecorder alloc();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -190,8 +190,16 @@ public class AVAudioRecorder extends NSObject {
     public native double deviceCurrentTime();
 
     @Generated
+    @Selector("format")
+    public native AVAudioFormat format();
+
+    @Generated
     @Selector("init")
     public native AVAudioRecorder init();
+
+    @Generated
+    @Selector("initWithURL:format:error:")
+    public native AVAudioRecorder initWithURLFormatError(NSURL url, AVAudioFormat format, Ptr<NSError> outError);
 
     @Generated
     @Selector("initWithURL:settings:error:")

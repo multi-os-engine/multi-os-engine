@@ -63,43 +63,13 @@ public class NSSet<_ObjectType> extends NSObject
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native NSSet<?> alloc();
-
-    @Generated
-    @Selector("set")
-    public static native <_ObjectType> NSSet<?> set();
-
-    @Generated
-    @Selector("setWithArray:")
-    public static native <_ObjectType> NSSet<?> setWithArray(NSArray<_ObjectType> array);
-
-    @Generated
-    @Selector("setWithObject:")
-    public static native <_ObjectType> NSSet<?> setWithObject(@Mapped(ObjCObjectMapper.class) _ObjectType object);
-
-    @Generated
-    @Variadic()
-    @Selector("setWithObjects:")
-    public static native <_ObjectType> NSSet<?> setWithObjects(@Mapped(ObjCObjectMapper.class) _ObjectType firstObj,
-            Object... varargs);
-
-    @Generated
-    @Selector("setWithObjects:count:")
-    public static native <_ObjectType> NSSet<?> setWithObjectsCount(ConstPtr<_ObjectType> objects, @NUInt long cnt);
-
-    @Generated
-    @Selector("setWithSet:")
-    public static native <_ObjectType> NSSet<?> setWithSet(NSSet<_ObjectType> set);
-
-    @Generated
-    @Selector("supportsSecureCoding")
-    public static native <_ObjectType> boolean supportsSecureCoding();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -181,12 +151,42 @@ public class NSSet<_ObjectType> extends NSObject
     public static native boolean resolveInstanceMethod(SEL sel);
 
     @Generated
+    @Selector("set")
+    public static native <_ObjectType> NSSet<?> set();
+
+    @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
+
+    @Generated
+    @Selector("setWithArray:")
+    public static native <_ObjectType> NSSet<?> setWithArray(NSArray<_ObjectType> array);
+
+    @Generated
+    @Selector("setWithObject:")
+    public static native <_ObjectType> NSSet<?> setWithObject(@Mapped(ObjCObjectMapper.class) _ObjectType object);
+
+    @Generated
+    @Variadic()
+    @Selector("setWithObjects:")
+    public static native <_ObjectType> NSSet<?> setWithObjects(@Mapped(ObjCObjectMapper.class) _ObjectType firstObj,
+            Object... varargs);
+
+    @Generated
+    @Selector("setWithObjects:count:")
+    public static native <_ObjectType> NSSet<?> setWithObjectsCount(ConstPtr<_ObjectType> objects, @NUInt long cnt);
+
+    @Generated
+    @Selector("setWithSet:")
+    public static native <_ObjectType> NSSet<?> setWithSet(NSSet<_ObjectType> set);
 
     @Generated
     @Selector("superclass")
     public static native Class superclass_static();
+
+    @Generated
+    @Selector("supportsSecureCoding")
+    public static native <_ObjectType> boolean supportsSecureCoding();
 
     @Generated
     @Selector("version")
@@ -202,9 +202,9 @@ public class NSSet<_ObjectType> extends NSObject
     @Selector("allObjects")
     public native NSArray<_ObjectType> allObjects();
 
-    @MappedReturn(ObjCObjectMapper.class)
     @Generated
     @Selector("anyObject")
+    @MappedReturn(ObjCObjectMapper.class)
     public native _ObjectType anyObject();
 
     @Generated
@@ -272,7 +272,7 @@ public class NSSet<_ObjectType> extends NSObject
 
     @Generated
     @Selector("initWithObjects:count:")
-    public native NSSet<?> initWithObjectsCount(ConstPtr<_ObjectType> objects, @NUInt long cnt);
+    public native NSSet<?> initWithObjectsCount(Ptr<_ObjectType> objects, @NUInt long cnt);
 
     @Generated
     @Selector("initWithSet:")
@@ -303,9 +303,9 @@ public class NSSet<_ObjectType> extends NSObject
     public native void makeObjectsPerformSelectorWithObject(SEL aSelector,
             @Mapped(ObjCObjectMapper.class) Object argument);
 
-    @MappedReturn(ObjCObjectMapper.class)
     @Generated
     @Selector("member:")
+    @MappedReturn(ObjCObjectMapper.class)
     public native _ObjectType member(@Mapped(ObjCObjectMapper.class) _ObjectType object);
 
     @Generated

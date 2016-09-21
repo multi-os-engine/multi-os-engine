@@ -58,17 +58,13 @@ public class PKAddPaymentPassViewController extends UIViewController {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native PKAddPaymentPassViewController alloc();
-
-    @Generated
-    @Selector("canAddPaymentPass")
-    public static native boolean canAddPaymentPass();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -82,6 +78,10 @@ public class PKAddPaymentPassViewController extends UIViewController {
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
     public static native boolean automaticallyNotifiesObserversForKey(String key);
+
+    @Generated
+    @Selector("canAddPaymentPass")
+    public static native boolean canAddPaymentPass();
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
@@ -167,7 +167,7 @@ public class PKAddPaymentPassViewController extends UIViewController {
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")

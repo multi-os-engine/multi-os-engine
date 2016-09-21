@@ -59,24 +59,13 @@ public class SCNPhysicsSliderJoint extends SCNPhysicsBehavior {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native SCNPhysicsSliderJoint alloc();
-
-    @Generated
-    @Selector("jointWithBody:axis:anchor:")
-    public static native SCNPhysicsSliderJoint jointWithBodyAxisAnchor(SCNPhysicsBody body, @ByValue SCNVector3 axis,
-            @ByValue SCNVector3 anchor);
-
-    @Generated
-    @Selector("jointWithBodyA:axisA:anchorA:bodyB:axisB:anchorB:")
-    public static native SCNPhysicsSliderJoint jointWithBodyAAxisAAnchorABodyBAxisBAnchorB(SCNPhysicsBody bodyA,
-            @ByValue SCNVector3 axisA, @ByValue SCNVector3 anchorA, SCNPhysicsBody bodyB, @ByValue SCNVector3 axisB,
-            @ByValue SCNVector3 anchorB);
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -138,6 +127,17 @@ public class SCNPhysicsSliderJoint extends SCNPhysicsBehavior {
     @Generated
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
+
+    @Generated
+    @Selector("jointWithBody:axis:anchor:")
+    public static native SCNPhysicsSliderJoint jointWithBodyAxisAnchor(SCNPhysicsBody body, @ByValue SCNVector3 axis,
+            @ByValue SCNVector3 anchor);
+
+    @Generated
+    @Selector("jointWithBodyA:axisA:anchorA:bodyB:axisB:anchorB:")
+    public static native SCNPhysicsSliderJoint jointWithBodyAAxisAAnchorABodyBAxisBAnchorB(SCNPhysicsBody bodyA,
+            @ByValue SCNVector3 axisA, @ByValue SCNVector3 anchorA, SCNPhysicsBody bodyB, @ByValue SCNVector3 axisB,
+            @ByValue SCNVector3 anchorB);
 
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
@@ -209,6 +209,10 @@ public class SCNPhysicsSliderJoint extends SCNPhysicsBehavior {
     @Generated
     @Selector("init")
     public native SCNPhysicsSliderJoint init();
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native SCNPhysicsSliderJoint initWithCoder(NSCoder aDecoder);
 
     @Generated
     @Selector("maximumAngularLimit")
@@ -297,10 +301,6 @@ public class SCNPhysicsSliderJoint extends SCNPhysicsBehavior {
     @Generated
     @Selector("setMotorTargetLinearVelocity:")
     public native void setMotorTargetLinearVelocity(@NFloat double value);
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native SCNPhysicsSliderJoint initWithCoder(NSCoder aDecoder);
 
     @Generated
     @ProtocolClassMethod("supportsSecureCoding")

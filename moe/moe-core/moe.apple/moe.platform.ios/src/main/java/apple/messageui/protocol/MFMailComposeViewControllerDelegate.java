@@ -20,6 +20,7 @@ import apple.foundation.NSError;
 import apple.messageui.MFMailComposeViewController;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.Library;
+import org.moe.natj.general.ann.NInt;
 import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.IsOptional;
@@ -34,8 +35,8 @@ public interface MFMailComposeViewControllerDelegate {
     @Generated
     @IsOptional
     @Selector("mailComposeController:didFinishWithResult:error:")
-    default void mailComposeControllerDidFinishWithResultError(MFMailComposeViewController controller, int result,
-            NSError error) {
+    default void mailComposeControllerDidFinishWithResultError(MFMailComposeViewController controller,
+            @NInt long result, NSError error) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

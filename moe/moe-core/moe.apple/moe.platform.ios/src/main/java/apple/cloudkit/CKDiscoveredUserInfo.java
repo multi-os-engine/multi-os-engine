@@ -55,13 +55,13 @@ public class CKDiscoveredUserInfo extends NSObject {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native CKDiscoveredUserInfo alloc();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -148,7 +148,7 @@ public class CKDiscoveredUserInfo extends NSObject {
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")
@@ -159,8 +159,12 @@ public class CKDiscoveredUserInfo extends NSObject {
     @NInt
     public static native long version_static();
 
-    @Deprecated
     @Generated
+    @Selector("displayContact")
+    public native CNContact displayContact();
+
+    @Generated
+    @Deprecated
     @Selector("firstName")
     public native String firstName();
 
@@ -168,16 +172,12 @@ public class CKDiscoveredUserInfo extends NSObject {
     @Selector("init")
     public native CKDiscoveredUserInfo init();
 
-    @Deprecated
     @Generated
+    @Deprecated
     @Selector("lastName")
     public native String lastName();
 
     @Generated
     @Selector("userRecordID")
     public native CKRecordID userRecordID();
-
-    @Generated
-    @Selector("displayContact")
-    public native CNContact displayContact();
 }

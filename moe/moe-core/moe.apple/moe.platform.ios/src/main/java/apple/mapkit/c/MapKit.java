@@ -250,11 +250,6 @@ public final class MapKit {
 
     @Generated
     @CVariable()
-    @MappedReturn(ObjCStringMapper.class)
-    public static native String MKAnnotationCalloutInfoDidChangeNotification();
-
-    @Generated
-    @CVariable()
     @ByValue
     public static native MKMapSize MKMapSizeWorld();
 
@@ -286,12 +281,22 @@ public final class MapKit {
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
+    public static native String MKLaunchOptionsDirectionsModeDefault();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
     public static native String MKLaunchOptionsDirectionsModeDriving();
 
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String MKLaunchOptionsDirectionsModeWalking();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String MKLaunchOptionsDirectionsModeTransit();
 
     @Generated
     @CVariable()
@@ -311,10 +316,10 @@ public final class MapKit {
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
-    public static native String MKErrorDomain();
+    public static native String MKAnnotationCalloutInfoDidChangeNotification();
 
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
-    public static native String MKLaunchOptionsDirectionsModeTransit();
+    public static native String MKErrorDomain();
 }

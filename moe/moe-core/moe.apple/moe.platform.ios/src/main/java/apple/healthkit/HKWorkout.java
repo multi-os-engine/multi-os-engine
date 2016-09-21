@@ -58,44 +58,13 @@ public class HKWorkout extends HKSample {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native HKWorkout alloc();
-
-    @Generated
-    @Selector("workoutWithActivityType:startDate:endDate:")
-    public static native HKWorkout workoutWithActivityTypeStartDateEndDate(@NUInt long workoutActivityType,
-            NSDate startDate, NSDate endDate);
-
-    @Generated
-    @Selector("workoutWithActivityType:startDate:endDate:duration:totalEnergyBurned:totalDistance:metadata:")
-    public static native HKWorkout workoutWithActivityTypeStartDateEndDateDurationTotalEnergyBurnedTotalDistanceMetadata(
-            @NUInt long workoutActivityType, NSDate startDate, NSDate endDate, double duration,
-            HKQuantity totalEnergyBurned, HKQuantity totalDistance, NSDictionary<String, ?> metadata);
-
-    @Generated
-    @Selector("workoutWithActivityType:startDate:endDate:workoutEvents:totalEnergyBurned:totalDistance:metadata:")
-    public static native HKWorkout workoutWithActivityTypeStartDateEndDateWorkoutEventsTotalEnergyBurnedTotalDistanceMetadata(
-            @NUInt long workoutActivityType, NSDate startDate, NSDate endDate,
-            NSArray<? extends HKWorkoutEvent> workoutEvents, HKQuantity totalEnergyBurned, HKQuantity totalDistance,
-            NSDictionary<String, ?> metadata);
-
-    @Generated
-    @Selector("workoutWithActivityType:startDate:endDate:duration:totalEnergyBurned:totalDistance:device:metadata:")
-    public static native HKWorkout workoutWithActivityTypeStartDateEndDateDurationTotalEnergyBurnedTotalDistanceDeviceMetadata(
-            @NUInt long workoutActivityType, NSDate startDate, NSDate endDate, double duration,
-            HKQuantity totalEnergyBurned, HKQuantity totalDistance, HKDevice device, NSDictionary<String, ?> metadata);
-
-    @Generated
-    @Selector("workoutWithActivityType:startDate:endDate:workoutEvents:totalEnergyBurned:totalDistance:device:metadata:")
-    public static native HKWorkout workoutWithActivityTypeStartDateEndDateWorkoutEventsTotalEnergyBurnedTotalDistanceDeviceMetadata(
-            @NUInt long workoutActivityType, NSDate startDate, NSDate endDate,
-            NSArray<? extends HKWorkoutEvent> workoutEvents, HKQuantity totalEnergyBurned, HKQuantity totalDistance,
-            HKDevice device, NSDictionary<String, ?> metadata);
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -164,7 +133,7 @@ public class HKWorkout extends HKSample {
 
     @Generated
     @Selector("load")
-    public static native void load_objc();
+    public static native void load_objc_static();
 
     @Generated
     @Owned
@@ -182,7 +151,7 @@ public class HKWorkout extends HKSample {
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")
@@ -195,7 +164,45 @@ public class HKWorkout extends HKSample {
     @Generated
     @Selector("version")
     @NInt
-    public static native long version();
+    public static native long version_static();
+
+    @Generated
+    @Selector("workoutWithActivityType:startDate:endDate:")
+    public static native HKWorkout workoutWithActivityTypeStartDateEndDate(@NUInt long workoutActivityType,
+            NSDate startDate, NSDate endDate);
+
+    @Generated
+    @Selector("workoutWithActivityType:startDate:endDate:duration:totalEnergyBurned:totalDistance:device:metadata:")
+    public static native HKWorkout workoutWithActivityTypeStartDateEndDateDurationTotalEnergyBurnedTotalDistanceDeviceMetadata(
+            @NUInt long workoutActivityType, NSDate startDate, NSDate endDate, double duration,
+            HKQuantity totalEnergyBurned, HKQuantity totalDistance, HKDevice device, NSDictionary<String, ?> metadata);
+
+    @Generated
+    @Selector("workoutWithActivityType:startDate:endDate:duration:totalEnergyBurned:totalDistance:metadata:")
+    public static native HKWorkout workoutWithActivityTypeStartDateEndDateDurationTotalEnergyBurnedTotalDistanceMetadata(
+            @NUInt long workoutActivityType, NSDate startDate, NSDate endDate, double duration,
+            HKQuantity totalEnergyBurned, HKQuantity totalDistance, NSDictionary<String, ?> metadata);
+
+    @Generated
+    @Selector("workoutWithActivityType:startDate:endDate:workoutEvents:totalEnergyBurned:totalDistance:device:metadata:")
+    public static native HKWorkout workoutWithActivityTypeStartDateEndDateWorkoutEventsTotalEnergyBurnedTotalDistanceDeviceMetadata(
+            @NUInt long workoutActivityType, NSDate startDate, NSDate endDate,
+            NSArray<? extends HKWorkoutEvent> workoutEvents, HKQuantity totalEnergyBurned, HKQuantity totalDistance,
+            HKDevice device, NSDictionary<String, ?> metadata);
+
+    @Generated
+    @Selector("workoutWithActivityType:startDate:endDate:workoutEvents:totalEnergyBurned:totalDistance:metadata:")
+    public static native HKWorkout workoutWithActivityTypeStartDateEndDateWorkoutEventsTotalEnergyBurnedTotalDistanceMetadata(
+            @NUInt long workoutActivityType, NSDate startDate, NSDate endDate,
+            NSArray<? extends HKWorkoutEvent> workoutEvents, HKQuantity totalEnergyBurned, HKQuantity totalDistance,
+            NSDictionary<String, ?> metadata);
+
+    @Generated
+    @Selector("workoutWithActivityType:startDate:endDate:workoutEvents:totalEnergyBurned:totalDistance:totalSwimmingStrokeCount:device:metadata:")
+    public static native HKWorkout workoutWithActivityTypeStartDateEndDateWorkoutEventsTotalEnergyBurnedTotalDistanceTotalSwimmingStrokeCountDeviceMetadata(
+            @NUInt long workoutActivityType, NSDate startDate, NSDate endDate,
+            NSArray<? extends HKWorkoutEvent> workoutEvents, HKQuantity totalEnergyBurned, HKQuantity totalDistance,
+            HKQuantity totalSwimmingStrokeCount, HKDevice device, NSDictionary<String, ?> metadata);
 
     @Generated
     @Selector("duration")
@@ -206,12 +213,26 @@ public class HKWorkout extends HKSample {
     public native HKWorkout init();
 
     @Generated
+    @Selector("initWithCoder:")
+    public native HKWorkout initWithCoder(NSCoder aDecoder);
+
+    @Generated
+    @ProtocolClassMethod("supportsSecureCoding")
+    public boolean _supportsSecureCoding() {
+        return supportsSecureCoding();
+    }
+
+    @Generated
     @Selector("totalDistance")
     public native HKQuantity totalDistance();
 
     @Generated
     @Selector("totalEnergyBurned")
     public native HKQuantity totalEnergyBurned();
+
+    @Generated
+    @Selector("totalSwimmingStrokeCount")
+    public native HKQuantity totalSwimmingStrokeCount();
 
     @Generated
     @Selector("workoutActivityType")
@@ -221,14 +242,4 @@ public class HKWorkout extends HKSample {
     @Generated
     @Selector("workoutEvents")
     public native NSArray<? extends HKWorkoutEvent> workoutEvents();
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native HKWorkout initWithCoder(NSCoder aDecoder);
-
-    @Generated
-    @ProtocolClassMethod("supportsSecureCoding")
-    public boolean _supportsSecureCoding() {
-        return supportsSecureCoding();
-    }
 }

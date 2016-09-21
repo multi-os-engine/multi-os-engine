@@ -68,10 +68,18 @@ public final class SceneKit {
     public static native SCNVector4 SCNVector4Make(float x, float y, float z, float w);
 
     @Generated
+    @CFunction
+    public static native boolean SCNMatrix4IsIdentity(@ByValue SCNMatrix4 m);
+
+    @Generated
+    @CFunction
+    public static native boolean SCNMatrix4EqualToMatrix4(@ByValue SCNMatrix4 a, @ByValue SCNMatrix4 b);
+
+    @Generated
     @Inline
     @CFunction
     @ByValue
-    public static native SCNMatrix4 SCNMatrix4MakeTranslation(float x, float y, float z);
+    public static native SCNMatrix4 SCNMatrix4MakeTranslation(float tx, float ty, float tz);
 
     @Generated
     @Inline
@@ -80,43 +88,35 @@ public final class SceneKit {
     public static native SCNMatrix4 SCNMatrix4MakeScale(float sx, float sy, float sz);
 
     @Generated
-    @Inline
-    @CFunction
-    @ByValue
-    public static native SCNMatrix4 SCNMatrix4Translate(@ByValue SCNMatrix4 mat, float x, float y, float z);
-
-    @Generated
     @CFunction
     @ByValue
     public static native SCNMatrix4 SCNMatrix4MakeRotation(float angle, float x, float y, float z);
 
     @Generated
+    @Inline
     @CFunction
     @ByValue
-    public static native SCNMatrix4 SCNMatrix4Scale(@ByValue SCNMatrix4 mat, float x, float y, float z);
-
-    @Generated
-    @CFunction
-    @ByValue
-    public static native SCNMatrix4 SCNMatrix4Rotate(@ByValue SCNMatrix4 mat, float angle, float x, float y, float z);
+    public static native SCNMatrix4 SCNMatrix4Translate(@ByValue SCNMatrix4 m, float tx, float ty, float tz);
 
     @Generated
     @CFunction
     @ByValue
-    public static native SCNMatrix4 SCNMatrix4Invert(@ByValue SCNMatrix4 mat);
+    public static native SCNMatrix4 SCNMatrix4Scale(@ByValue SCNMatrix4 m, float sx, float sy, float sz);
 
     @Generated
     @CFunction
     @ByValue
-    public static native SCNMatrix4 SCNMatrix4Mult(@ByValue SCNMatrix4 matA, @ByValue SCNMatrix4 matB);
+    public static native SCNMatrix4 SCNMatrix4Rotate(@ByValue SCNMatrix4 m, float angle, float x, float y, float z);
 
     @Generated
     @CFunction
-    public static native boolean SCNMatrix4IsIdentity(@ByValue SCNMatrix4 mat);
+    @ByValue
+    public static native SCNMatrix4 SCNMatrix4Invert(@ByValue SCNMatrix4 m);
 
     @Generated
     @CFunction
-    public static native boolean SCNMatrix4EqualToMatrix4(@ByValue SCNMatrix4 matA, @ByValue SCNMatrix4 matB);
+    @ByValue
+    public static native SCNMatrix4 SCNMatrix4Mult(@ByValue SCNMatrix4 a, @ByValue SCNMatrix4 b);
 
     @Generated
     @Inline
@@ -159,17 +159,17 @@ public final class SceneKit {
     @Generated
     @CVariable()
     @ByValue
-    public static native SCNMatrix4 SCNMatrix4Identity();
-
-    @Generated
-    @CVariable()
-    @ByValue
     public static native SCNVector3 SCNVector3Zero();
 
     @Generated
     @CVariable()
     @ByValue
     public static native SCNVector4 SCNVector4Zero();
+
+    @Generated
+    @CVariable()
+    @ByValue
+    public static native SCNMatrix4 SCNMatrix4Identity();
 
     @Generated
     @CVariable()
@@ -219,6 +219,11 @@ public final class SceneKit {
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
+    public static native String SCNHitTestOptionCategoryBitMask();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
     public static native String SCNProgramMappingChannelKey();
 
     @Generated
@@ -244,27 +249,17 @@ public final class SceneKit {
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
-    public static native String SCNSceneExportDestinationURL();
+    public static native String SCNPreferredRenderingAPIKey();
 
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
-    public static native String SCNSceneStartTimeAttributeKey();
+    public static native String SCNPreferredDeviceKey();
 
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
-    public static native String SCNSceneEndTimeAttributeKey();
-
-    @Generated
-    @CVariable()
-    @MappedReturn(ObjCStringMapper.class)
-    public static native String SCNSceneFrameRateAttributeKey();
-
-    @Generated
-    @CVariable()
-    @MappedReturn(ObjCStringMapper.class)
-    public static native String SCNSceneUpAxisAttributeKey();
+    public static native String SCNPreferLowPowerDeviceKey();
 
     @Generated
     @CVariable()
@@ -354,6 +349,11 @@ public final class SceneKit {
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
+    public static native String SCNSceneSourceLoadingOptionPreserveOriginalTopology();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
     public static native String SCNSceneSourceAnimationImportPolicyPlay();
 
     @Generated
@@ -390,6 +390,31 @@ public final class SceneKit {
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String SCNConsistencyLineNumberErrorKey();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String SCNSceneExportDestinationURL();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String SCNSceneStartTimeAttributeKey();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String SCNSceneEndTimeAttributeKey();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String SCNSceneFrameRateAttributeKey();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String SCNSceneUpAxisAttributeKey();
 
     @Generated
     @CVariable()
@@ -444,6 +469,16 @@ public final class SceneKit {
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
+    public static native String SCNLightTypeIES();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String SCNLightTypeProbe();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
     public static native String SCNLightingModelPhong();
 
     @Generated
@@ -464,6 +499,11 @@ public final class SceneKit {
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
+    public static native String SCNLightingModelPhysicallyBased();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
     public static native String SCNGeometrySourceSemanticVertex();
 
     @Generated
@@ -480,6 +520,11 @@ public final class SceneKit {
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String SCNGeometrySourceSemanticTexcoord();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String SCNGeometrySourceSemanticTangent();
 
     @Generated
     @CVariable()
@@ -589,6 +634,21 @@ public final class SceneKit {
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
+    public static native String SCNPhysicsShapeKeepAsCompoundKey();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String SCNPhysicsShapeScaleKey();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String SCNPhysicsShapeOptionCollisionMargin();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
     public static native String SCNPhysicsShapeTypeBoundingBox();
 
     @Generated
@@ -600,16 +660,6 @@ public final class SceneKit {
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String SCNPhysicsShapeTypeConcavePolyhedron();
-
-    @Generated
-    @CVariable()
-    @MappedReturn(ObjCStringMapper.class)
-    public static native String SCNPhysicsShapeKeepAsCompoundKey();
-
-    @Generated
-    @CVariable()
-    @MappedReturn(ObjCStringMapper.class)
-    public static native String SCNPhysicsShapeScaleKey();
 
     @Generated
     @CVariable()
@@ -640,19 +690,4 @@ public final class SceneKit {
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String SCNPhysicsTestSearchModeAll();
-
-    @Generated
-    @CVariable()
-    @MappedReturn(ObjCStringMapper.class)
-    public static native String SCNPreferredRenderingAPIKey();
-
-    @Generated
-    @CVariable()
-    @MappedReturn(ObjCStringMapper.class)
-    public static native String SCNPreferredDeviceKey();
-
-    @Generated
-    @CVariable()
-    @MappedReturn(ObjCStringMapper.class)
-    public static native String SCNPreferLowPowerDeviceKey();
 }

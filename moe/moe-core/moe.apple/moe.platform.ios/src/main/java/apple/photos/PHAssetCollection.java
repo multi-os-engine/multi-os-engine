@@ -57,52 +57,13 @@ public class PHAssetCollection extends PHCollection {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native PHAssetCollection alloc();
-
-    @Generated
-    @Selector("fetchAssetCollectionsContainingAsset:withType:options:")
-    public static native PHFetchResult<PHAssetCollection> fetchAssetCollectionsContainingAssetWithTypeOptions(
-            PHAsset asset, @NInt long type, PHFetchOptions options);
-
-    @Generated
-    @Selector("fetchAssetCollectionsWithALAssetGroupURLs:options:")
-    public static native PHFetchResult<PHAssetCollection> fetchAssetCollectionsWithALAssetGroupURLsOptions(
-            NSArray<? extends NSURL> assetGroupURLs, PHFetchOptions options);
-
-    @Generated
-    @Selector("fetchAssetCollectionsWithLocalIdentifiers:options:")
-    public static native PHFetchResult<PHAssetCollection> fetchAssetCollectionsWithLocalIdentifiersOptions(
-            NSArray<String> identifiers, PHFetchOptions options);
-
-    @Generated
-    @Selector("fetchAssetCollectionsWithType:subtype:options:")
-    public static native PHFetchResult<PHAssetCollection> fetchAssetCollectionsWithTypeSubtypeOptions(@NInt long type,
-            @NInt long subtype, PHFetchOptions options);
-
-    @Generated
-    @Selector("fetchMomentsInMomentList:options:")
-    public static native PHFetchResult<PHAssetCollection> fetchMomentsInMomentListOptions(PHCollectionList momentList,
-            PHFetchOptions options);
-
-    @Generated
-    @Selector("fetchMomentsWithOptions:")
-    public static native PHFetchResult<PHAssetCollection> fetchMomentsWithOptions(PHFetchOptions options);
-
-    @Generated
-    @Selector("transientAssetCollectionWithAssetFetchResult:title:")
-    public static native PHAssetCollection transientAssetCollectionWithAssetFetchResultTitle(
-            PHFetchResult<PHAsset> fetchResult, String title);
-
-    @Generated
-    @Selector("transientAssetCollectionWithAssets:title:")
-    public static native PHAssetCollection transientAssetCollectionWithAssetsTitle(NSArray<? extends PHAsset> assets,
-            String title);
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -140,9 +101,38 @@ public class PHAssetCollection extends PHCollection {
     public static native String description_static();
 
     @Generated
+    @Selector("fetchAssetCollectionsContainingAsset:withType:options:")
+    public static native PHFetchResult<PHAssetCollection> fetchAssetCollectionsContainingAssetWithTypeOptions(
+            PHAsset asset, @NInt long type, PHFetchOptions options);
+
+    @Generated
+    @Selector("fetchAssetCollectionsWithALAssetGroupURLs:options:")
+    public static native PHFetchResult<PHAssetCollection> fetchAssetCollectionsWithALAssetGroupURLsOptions(
+            NSArray<? extends NSURL> assetGroupURLs, PHFetchOptions options);
+
+    @Generated
+    @Selector("fetchAssetCollectionsWithLocalIdentifiers:options:")
+    public static native PHFetchResult<PHAssetCollection> fetchAssetCollectionsWithLocalIdentifiersOptions(
+            NSArray<String> identifiers, PHFetchOptions options);
+
+    @Generated
+    @Selector("fetchAssetCollectionsWithType:subtype:options:")
+    public static native PHFetchResult<PHAssetCollection> fetchAssetCollectionsWithTypeSubtypeOptions(@NInt long type,
+            @NInt long subtype, PHFetchOptions options);
+
+    @Generated
     @Selector("fetchCollectionsInCollectionList:options:")
     public static native PHFetchResult<PHCollection> fetchCollectionsInCollectionListOptions(
             PHCollectionList collectionList, PHFetchOptions options);
+
+    @Generated
+    @Selector("fetchMomentsInMomentList:options:")
+    public static native PHFetchResult<PHAssetCollection> fetchMomentsInMomentListOptions(PHCollectionList momentList,
+            PHFetchOptions options);
+
+    @Generated
+    @Selector("fetchMomentsWithOptions:")
+    public static native PHFetchResult<PHAssetCollection> fetchMomentsWithOptions(PHFetchOptions options);
 
     @Generated
     @Selector("fetchTopLevelUserCollectionsWithOptions:")
@@ -198,11 +188,21 @@ public class PHAssetCollection extends PHCollection {
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")
     public static native Class superclass_static();
+
+    @Generated
+    @Selector("transientAssetCollectionWithAssetFetchResult:title:")
+    public static native PHAssetCollection transientAssetCollectionWithAssetFetchResultTitle(
+            PHFetchResult<PHAsset> fetchResult, String title);
+
+    @Generated
+    @Selector("transientAssetCollectionWithAssets:title:")
+    public static native PHAssetCollection transientAssetCollectionWithAssetsTitle(NSArray<? extends PHAsset> assets,
+            String title);
 
     @Generated
     @Selector("version")

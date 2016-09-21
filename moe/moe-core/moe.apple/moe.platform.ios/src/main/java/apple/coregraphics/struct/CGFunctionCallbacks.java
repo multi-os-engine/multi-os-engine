@@ -66,22 +66,22 @@ public final class CGFunctionCallbacks extends StructObject {
     public native void setVersion(int value);
 
     @Generated
-    @StructureField(order = 1, isGetter = false)
-    public native void setEvaluate(@FunctionPtr(name = "call_evaluate") Function_evaluate value);
-
-    @Generated
-    @StructureField(order = 2, isGetter = false)
-    public native void setReleaseInfo(@FunctionPtr(name = "call_releaseInfo") Function_releaseInfo value);
-
-    @Generated
     @StructureField(order = 1, isGetter = true)
     @FunctionPtr(name = "call_evaluate")
     public native Function_evaluate evaluate();
 
     @Generated
+    @StructureField(order = 1, isGetter = false)
+    public native void setEvaluate(@FunctionPtr(name = "call_evaluate") Function_evaluate value);
+
+    @Generated
     @StructureField(order = 2, isGetter = true)
     @FunctionPtr(name = "call_releaseInfo")
     public native Function_releaseInfo releaseInfo();
+
+    @Generated
+    @StructureField(order = 2, isGetter = false)
+    public native void setReleaseInfo(@FunctionPtr(name = "call_releaseInfo") Function_releaseInfo value);
 
     @Runtime(CRuntime.class)
     @Generated

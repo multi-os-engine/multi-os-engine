@@ -53,22 +53,13 @@ public class NSMutableURLRequest extends NSURLRequest {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native NSMutableURLRequest alloc();
-
-    @Generated
-    @Selector("requestWithURL:")
-    public static native NSMutableURLRequest requestWithURL(NSURL URL);
-
-    @Generated
-    @Selector("requestWithURL:cachePolicy:timeoutInterval:")
-    public static native NSMutableURLRequest requestWithURLCachePolicyTimeoutInterval(NSURL URL,
-            @NUInt long cachePolicy, double timeoutInterval);
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -146,6 +137,15 @@ public class NSMutableURLRequest extends NSURLRequest {
     public static native Object new_objc();
 
     @Generated
+    @Selector("requestWithURL:")
+    public static native NSMutableURLRequest requestWithURL(NSURL URL);
+
+    @Generated
+    @Selector("requestWithURL:cachePolicy:timeoutInterval:")
+    public static native NSMutableURLRequest requestWithURLCachePolicyTimeoutInterval(NSURL URL,
+            @NUInt long cachePolicy, double timeoutInterval);
+
+    @Generated
     @Selector("resolveClassMethod:")
     public static native boolean resolveClassMethod(SEL sel);
 
@@ -207,6 +207,10 @@ public class NSMutableURLRequest extends NSURLRequest {
     public native boolean allowsCellularAccess();
 
     @Generated
+    @Selector("bindToHotspotHelperCommand:")
+    public native void bindToHotspotHelperCommand(NEHotspotHelperCommand command);
+
+    @Generated
     @Selector("cachePolicy")
     @NUInt
     public native long cachePolicy();
@@ -214,6 +218,10 @@ public class NSMutableURLRequest extends NSURLRequest {
     @Generated
     @Selector("init")
     public native NSMutableURLRequest init();
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native NSMutableURLRequest initWithCoder(NSCoder aDecoder);
 
     @Generated
     @Selector("initWithURL:")
@@ -286,20 +294,12 @@ public class NSMutableURLRequest extends NSURLRequest {
     public native void setValueForHTTPHeaderField(String value, String field);
 
     @Generated
-    @Selector("timeoutInterval")
-    public native double timeoutInterval();
-
-    @Generated
-    @Selector("bindToHotspotHelperCommand:")
-    public native void bindToHotspotHelperCommand(NEHotspotHelperCommand command);
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native NSMutableURLRequest initWithCoder(NSCoder aDecoder);
-
-    @Generated
     @ProtocolClassMethod("supportsSecureCoding")
     public boolean _supportsSecureCoding() {
         return supportsSecureCoding();
     }
+
+    @Generated
+    @Selector("timeoutInterval")
+    public native double timeoutInterval();
 }

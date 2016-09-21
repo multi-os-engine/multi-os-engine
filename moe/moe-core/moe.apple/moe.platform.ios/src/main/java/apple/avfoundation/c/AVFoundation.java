@@ -75,10 +75,431 @@ public final class AVFoundation {
             float roll);
 
     @Generated
+    @Inline
+    @CFunction
+    @ByValue
+    public static native AVBeatRange AVMakeBeatRange(double startBeat, double lengthInBeats);
+
+    @Generated
     @CFunction
     @ByValue
     public static native CGRect AVMakeRectWithAspectRatioInsideRect(@ByValue CGSize aspectRatio,
             @ByValue CGRect boundingRect);
+
+    @Generated
+    @CVariable()
+    public static native double AVCoreAnimationBeginTimeAtZero();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String AVLayerVideoGravityResizeAspect();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String AVLayerVideoGravityResizeAspectFill();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String AVLayerVideoGravityResize();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String AVURLAssetPreferPreciseDurationAndTimingKey();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String AVURLAssetReferenceRestrictionsKey();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String AVURLAssetHTTPCookiesKey();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String AVURLAssetAllowsCellularAccessKey();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String AVAssetDurationDidChangeNotification();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String AVAssetChapterMetadataGroupsDidChangeNotification();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String AVAssetMediaSelectionGroupsDidChangeNotification();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String AVAssetExportPresetLowQuality();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String AVAssetExportPresetMediumQuality();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String AVAssetExportPresetHighestQuality();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String AVAssetExportPreset640x480();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String AVAssetExportPreset960x540();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String AVAssetExportPreset1280x720();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String AVAssetExportPreset1920x1080();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String AVAssetExportPreset3840x2160();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String AVAssetExportPresetAppleM4A();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String AVAssetExportPresetPassthrough();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String AVAssetImageGeneratorApertureModeCleanAperture();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String AVAssetImageGeneratorApertureModeProductionAperture();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String AVAssetImageGeneratorApertureModeEncodedPixels();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String AVAssetResourceLoadingRequestStreamingContentKeyRequestRequiresPersistentKey();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String AVTrackAssociationTypeAudioFallback();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String AVTrackAssociationTypeChapterList();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String AVTrackAssociationTypeForcedSubtitlesOnly();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String AVTrackAssociationTypeSelectionFollower();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String AVTrackAssociationTypeTimecode();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String AVTrackAssociationTypeMetadataReferent();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String AVAssetTrackTimeRangeDidChangeNotification();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String AVAssetTrackSegmentsDidChangeNotification();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String AVAssetTrackTrackAssociationsDidChangeNotification();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String AVAudioTimePitchAlgorithmLowQualityZeroLatency();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String AVAudioTimePitchAlgorithmTimeDomain();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String AVAudioTimePitchAlgorithmSpectral();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String AVAudioTimePitchAlgorithmVarispeed();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String AVAssetDownloadTaskMinimumRequiredMediaBitrateKey();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String AVAssetDownloadTaskMediaSelectionKey();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String AVCaptureDeviceWasConnectedNotification();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String AVCaptureDeviceWasDisconnectedNotification();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String AVCaptureDeviceSubjectAreaDidChangeNotification();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String AVCaptureDeviceTypeBuiltInMicrophone();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String AVCaptureDeviceTypeBuiltInWideAngleCamera();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String AVCaptureDeviceTypeBuiltInTelephotoCamera();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String AVCaptureDeviceTypeBuiltInDuoCamera();
+
+    @Generated
+    @CVariable()
+    public static native float AVCaptureMaxAvailableTorchLevel();
+
+    @Generated
+    @CVariable()
+    public static native float AVCaptureLensPositionCurrent();
+
+    @Generated
+    @CVariable()
+    @ByValue
+    public static native CMTime AVCaptureExposureDurationCurrent();
+
+    @Generated
+    @CVariable()
+    public static native float AVCaptureISOCurrent();
+
+    @Generated
+    @CVariable()
+    public static native float AVCaptureExposureTargetBiasCurrent();
+
+    @Generated
+    @CVariable()
+    @ByValue
+    public static native AVCaptureWhiteBalanceGains AVCaptureWhiteBalanceGainsCurrent();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String AVCaptureInputPortFormatDescriptionDidChangeNotification();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String AVCaptureSessionRuntimeErrorNotification();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String AVCaptureSessionErrorKey();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String AVCaptureSessionDidStartRunningNotification();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String AVCaptureSessionDidStopRunningNotification();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String AVCaptureSessionWasInterruptedNotification();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String AVCaptureSessionInterruptionReasonKey();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String AVCaptureSessionInterruptionEndedNotification();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String AVCaptureSessionPresetPhoto();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String AVCaptureSessionPresetHigh();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String AVCaptureSessionPresetMedium();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String AVCaptureSessionPresetLow();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String AVCaptureSessionPreset352x288();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String AVCaptureSessionPreset640x480();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String AVCaptureSessionPreset1280x720();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String AVCaptureSessionPreset1920x1080();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String AVCaptureSessionPreset3840x2160();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String AVCaptureSessionPresetiFrame960x540();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String AVCaptureSessionPresetiFrame1280x720();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String AVCaptureSessionPresetInputPriority();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String AVFoundationErrorDomain();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String AVErrorDeviceKey();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String AVErrorTimeKey();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String AVErrorFileSizeKey();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String AVErrorPIDKey();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String AVErrorRecordingSuccessfullyFinishedKey();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String AVErrorMediaTypeKey();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String AVErrorMediaSubTypeKey();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String AVErrorPresentationTimeStampKey();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String AVErrorPersistentTrackIDKey();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String AVErrorFileTypeKey();
 
     @Generated
     @CVariable()
@@ -194,6 +615,71 @@ public final class AVFoundation {
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String AVSampleRateConverterAlgorithm_Mastering();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String AVSampleRateConverterAlgorithm_MinimumPhase();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String AVAudioUnitTypeOutput();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String AVAudioUnitTypeMusicDevice();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String AVAudioUnitTypeMusicEffect();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String AVAudioUnitTypeFormatConverter();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String AVAudioUnitTypeEffect();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String AVAudioUnitTypeMixer();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String AVAudioUnitTypePanner();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String AVAudioUnitTypeGenerator();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String AVAudioUnitTypeOfflineEffect();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String AVAudioUnitTypeMIDIProcessor();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String AVAudioUnitManufacturerNameApple();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String AVAudioUnitComponentTagsDidChangeNotification();
 
     @Generated
     @CVariable()
@@ -314,6 +800,11 @@ public final class AVFoundation {
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String AVAudioSessionModeVideoChat();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String AVAudioSessionModeSpokenAudio();
 
     @Generated
     @CVariable()
@@ -442,333 +933,25 @@ public final class AVFoundation {
 
     @Generated
     @CVariable()
-    public static native double AVCoreAnimationBeginTimeAtZero();
+    public static native float AVSpeechUtteranceMinimumSpeechRate();
+
+    @Generated
+    @CVariable()
+    public static native float AVSpeechUtteranceMaximumSpeechRate();
+
+    @Generated
+    @CVariable()
+    public static native float AVSpeechUtteranceDefaultSpeechRate();
 
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
-    public static native String AVLayerVideoGravityResizeAspect();
+    public static native String AVSpeechSynthesisVoiceIdentifierAlex();
 
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
-    public static native String AVLayerVideoGravityResizeAspectFill();
-
-    @Generated
-    @CVariable()
-    @MappedReturn(ObjCStringMapper.class)
-    public static native String AVLayerVideoGravityResize();
-
-    @Generated
-    @CVariable()
-    @MappedReturn(ObjCStringMapper.class)
-    public static native String AVURLAssetPreferPreciseDurationAndTimingKey();
-
-    @Generated
-    @CVariable()
-    @MappedReturn(ObjCStringMapper.class)
-    public static native String AVURLAssetReferenceRestrictionsKey();
-
-    @Generated
-    @CVariable()
-    @MappedReturn(ObjCStringMapper.class)
-    public static native String AVURLAssetHTTPCookiesKey();
-
-    @Generated
-    @CVariable()
-    @MappedReturn(ObjCStringMapper.class)
-    public static native String AVAssetExportPresetLowQuality();
-
-    @Generated
-    @CVariable()
-    @MappedReturn(ObjCStringMapper.class)
-    public static native String AVAssetExportPresetMediumQuality();
-
-    @Generated
-    @CVariable()
-    @MappedReturn(ObjCStringMapper.class)
-    public static native String AVAssetExportPresetHighestQuality();
-
-    @Generated
-    @CVariable()
-    @MappedReturn(ObjCStringMapper.class)
-    public static native String AVAssetExportPreset640x480();
-
-    @Generated
-    @CVariable()
-    @MappedReturn(ObjCStringMapper.class)
-    public static native String AVAssetExportPreset960x540();
-
-    @Generated
-    @CVariable()
-    @MappedReturn(ObjCStringMapper.class)
-    public static native String AVAssetExportPreset1280x720();
-
-    @Generated
-    @CVariable()
-    @MappedReturn(ObjCStringMapper.class)
-    public static native String AVAssetExportPreset1920x1080();
-
-    @Generated
-    @CVariable()
-    @MappedReturn(ObjCStringMapper.class)
-    public static native String AVAssetExportPresetAppleM4A();
-
-    @Generated
-    @CVariable()
-    @MappedReturn(ObjCStringMapper.class)
-    public static native String AVAssetExportPresetPassthrough();
-
-    @Generated
-    @CVariable()
-    @MappedReturn(ObjCStringMapper.class)
-    public static native String AVAssetImageGeneratorApertureModeCleanAperture();
-
-    @Generated
-    @CVariable()
-    @MappedReturn(ObjCStringMapper.class)
-    public static native String AVAssetImageGeneratorApertureModeProductionAperture();
-
-    @Generated
-    @CVariable()
-    @MappedReturn(ObjCStringMapper.class)
-    public static native String AVAssetImageGeneratorApertureModeEncodedPixels();
-
-    @Generated
-    @CVariable()
-    @MappedReturn(ObjCStringMapper.class)
-    public static native String AVTrackAssociationTypeAudioFallback();
-
-    @Generated
-    @CVariable()
-    @MappedReturn(ObjCStringMapper.class)
-    public static native String AVTrackAssociationTypeChapterList();
-
-    @Generated
-    @CVariable()
-    @MappedReturn(ObjCStringMapper.class)
-    public static native String AVTrackAssociationTypeForcedSubtitlesOnly();
-
-    @Generated
-    @CVariable()
-    @MappedReturn(ObjCStringMapper.class)
-    public static native String AVTrackAssociationTypeSelectionFollower();
-
-    @Generated
-    @CVariable()
-    @MappedReturn(ObjCStringMapper.class)
-    public static native String AVTrackAssociationTypeTimecode();
-
-    @Generated
-    @CVariable()
-    @MappedReturn(ObjCStringMapper.class)
-    public static native String AVTrackAssociationTypeMetadataReferent();
-
-    @Generated
-    @CVariable()
-    @MappedReturn(ObjCStringMapper.class)
-    public static native String AVAudioTimePitchAlgorithmLowQualityZeroLatency();
-
-    @Generated
-    @CVariable()
-    @MappedReturn(ObjCStringMapper.class)
-    public static native String AVAudioTimePitchAlgorithmTimeDomain();
-
-    @Generated
-    @CVariable()
-    @MappedReturn(ObjCStringMapper.class)
-    public static native String AVAudioTimePitchAlgorithmSpectral();
-
-    @Generated
-    @CVariable()
-    @MappedReturn(ObjCStringMapper.class)
-    public static native String AVAudioTimePitchAlgorithmVarispeed();
-
-    @Generated
-    @CVariable()
-    @MappedReturn(ObjCStringMapper.class)
-    public static native String AVCaptureDeviceWasConnectedNotification();
-
-    @Generated
-    @CVariable()
-    @MappedReturn(ObjCStringMapper.class)
-    public static native String AVCaptureDeviceWasDisconnectedNotification();
-
-    @Generated
-    @CVariable()
-    @MappedReturn(ObjCStringMapper.class)
-    public static native String AVCaptureDeviceSubjectAreaDidChangeNotification();
-
-    @Generated
-    @CVariable()
-    public static native float AVCaptureMaxAvailableTorchLevel();
-
-    @Generated
-    @CVariable()
-    public static native float AVCaptureLensPositionCurrent();
-
-    @Generated
-    @CVariable()
-    @ByValue
-    public static native CMTime AVCaptureExposureDurationCurrent();
-
-    @Generated
-    @CVariable()
-    public static native float AVCaptureISOCurrent();
-
-    @Generated
-    @CVariable()
-    public static native float AVCaptureExposureTargetBiasCurrent();
-
-    @Generated
-    @CVariable()
-    @ByValue
-    public static native AVCaptureWhiteBalanceGains AVCaptureWhiteBalanceGainsCurrent();
-
-    @Generated
-    @CVariable()
-    @MappedReturn(ObjCStringMapper.class)
-    public static native String AVCaptureInputPortFormatDescriptionDidChangeNotification();
-
-    @Generated
-    @CVariable()
-    @MappedReturn(ObjCStringMapper.class)
-    public static native String AVCaptureSessionRuntimeErrorNotification();
-
-    @Generated
-    @CVariable()
-    @MappedReturn(ObjCStringMapper.class)
-    public static native String AVCaptureSessionErrorKey();
-
-    @Generated
-    @CVariable()
-    @MappedReturn(ObjCStringMapper.class)
-    public static native String AVCaptureSessionDidStartRunningNotification();
-
-    @Generated
-    @CVariable()
-    @MappedReturn(ObjCStringMapper.class)
-    public static native String AVCaptureSessionDidStopRunningNotification();
-
-    @Generated
-    @CVariable()
-    @MappedReturn(ObjCStringMapper.class)
-    public static native String AVCaptureSessionWasInterruptedNotification();
-
-    @Generated
-    @CVariable()
-    @MappedReturn(ObjCStringMapper.class)
-    public static native String AVCaptureSessionInterruptionEndedNotification();
-
-    @Generated
-    @CVariable()
-    @MappedReturn(ObjCStringMapper.class)
-    public static native String AVCaptureSessionPresetPhoto();
-
-    @Generated
-    @CVariable()
-    @MappedReturn(ObjCStringMapper.class)
-    public static native String AVCaptureSessionPresetHigh();
-
-    @Generated
-    @CVariable()
-    @MappedReturn(ObjCStringMapper.class)
-    public static native String AVCaptureSessionPresetMedium();
-
-    @Generated
-    @CVariable()
-    @MappedReturn(ObjCStringMapper.class)
-    public static native String AVCaptureSessionPresetLow();
-
-    @Generated
-    @CVariable()
-    @MappedReturn(ObjCStringMapper.class)
-    public static native String AVCaptureSessionPreset352x288();
-
-    @Generated
-    @CVariable()
-    @MappedReturn(ObjCStringMapper.class)
-    public static native String AVCaptureSessionPreset640x480();
-
-    @Generated
-    @CVariable()
-    @MappedReturn(ObjCStringMapper.class)
-    public static native String AVCaptureSessionPreset1280x720();
-
-    @Generated
-    @CVariable()
-    @MappedReturn(ObjCStringMapper.class)
-    public static native String AVCaptureSessionPreset1920x1080();
-
-    @Generated
-    @CVariable()
-    @MappedReturn(ObjCStringMapper.class)
-    public static native String AVCaptureSessionPresetiFrame960x540();
-
-    @Generated
-    @CVariable()
-    @MappedReturn(ObjCStringMapper.class)
-    public static native String AVCaptureSessionPresetiFrame1280x720();
-
-    @Generated
-    @CVariable()
-    @MappedReturn(ObjCStringMapper.class)
-    public static native String AVCaptureSessionPresetInputPriority();
-
-    @Generated
-    @CVariable()
-    @MappedReturn(ObjCStringMapper.class)
-    public static native String AVFoundationErrorDomain();
-
-    @Generated
-    @CVariable()
-    @MappedReturn(ObjCStringMapper.class)
-    public static native String AVErrorDeviceKey();
-
-    @Generated
-    @CVariable()
-    @MappedReturn(ObjCStringMapper.class)
-    public static native String AVErrorTimeKey();
-
-    @Generated
-    @CVariable()
-    @MappedReturn(ObjCStringMapper.class)
-    public static native String AVErrorFileSizeKey();
-
-    @Generated
-    @CVariable()
-    @MappedReturn(ObjCStringMapper.class)
-    public static native String AVErrorPIDKey();
-
-    @Generated
-    @CVariable()
-    @MappedReturn(ObjCStringMapper.class)
-    public static native String AVErrorRecordingSuccessfullyFinishedKey();
-
-    @Generated
-    @CVariable()
-    @MappedReturn(ObjCStringMapper.class)
-    public static native String AVErrorMediaTypeKey();
-
-    @Generated
-    @CVariable()
-    @MappedReturn(ObjCStringMapper.class)
-    public static native String AVErrorMediaSubTypeKey();
-
-    @Generated
-    @CVariable()
-    @MappedReturn(ObjCStringMapper.class)
-    public static native String AVErrorPresentationTimeStampKey();
-
-    @Generated
-    @CVariable()
-    @MappedReturn(ObjCStringMapper.class)
-    public static native String AVErrorPersistentTrackIDKey();
-
-    @Generated
-    @CVariable()
-    @MappedReturn(ObjCStringMapper.class)
-    public static native String AVErrorFileTypeKey();
+    public static native String AVSpeechSynthesisIPANotationAttribute();
 
     @Generated
     @CVariable()
@@ -813,6 +996,11 @@ public final class AVFoundation {
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
+    public static native String AVMediaTypeMetadataObject();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
     public static native String AVMediaCharacteristicVisual();
 
     @Generated
@@ -829,6 +1017,11 @@ public final class AVFoundation {
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String AVMediaCharacteristicFrameBased();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String AVMediaCharacteristicUsesWideGamutColorSpace();
 
     @Generated
     @CVariable()
@@ -864,6 +1057,21 @@ public final class AVFoundation {
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String AVMediaCharacteristicDescribesVideoForAccessibility();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String AVMediaCharacteristicLanguageTranslation();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String AVMediaCharacteristicDubbedTranslation();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String AVMediaCharacteristicVoiceOverTranslation();
 
     @Generated
     @CVariable()
@@ -934,6 +1142,21 @@ public final class AVFoundation {
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String AVFileTypeAC3();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String AVFileTypeEnhancedAC3();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String AVStreamingKeyDeliveryContentKeyType();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String AVStreamingKeyDeliveryPersistentContentKeyType();
 
     @Generated
     @CVariable()
@@ -1278,6 +1501,11 @@ public final class AVFoundation {
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
+    public static native String AVMetadataISOUserDataKeyDate();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
     public static native String AVMetadata3GPUserDataKeyCopyright();
 
     @Generated
@@ -1563,6 +1791,11 @@ public final class AVFoundation {
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
+    public static native String AVMetadataQuickTimeMetadataKeyContentIdentifier();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
     public static native String AVMetadataFormatiTunesMetadata();
 
     @Generated
@@ -1839,6 +2072,11 @@ public final class AVFoundation {
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String AVMetadataID3MetadataKeyComments();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String AVMetadataID3MetadataKeyCommercial();
 
     @Generated
     @CVariable()
@@ -2303,12 +2541,22 @@ public final class AVFoundation {
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
+    public static native String AVMetadataKeySpaceHLSDateRange();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
     public static native String AVMetadataExtraAttributeValueURIKey();
 
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String AVMetadataExtraAttributeBaseURIKey();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String AVMetadataExtraAttributeInfoKey();
 
     @Generated
     @CVariable()
@@ -2623,6 +2871,11 @@ public final class AVFoundation {
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
+    public static native String AVMetadataIdentifierISOUserDataDate();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
     public static native String AVMetadataIdentifierISOUserDataTaggedCharacteristic();
 
     @Generated
@@ -2908,6 +3161,21 @@ public final class AVFoundation {
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
+    public static native String AVMetadataIdentifierQuickTimeMetadataDetectedFace();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String AVMetadataIdentifierQuickTimeMetadataVideoOrientation();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String AVMetadataIdentifierQuickTimeMetadataContentIdentifier();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
     public static native String AVMetadataIdentifieriTunesMetadataAlbum();
 
     @Generated
@@ -3164,6 +3432,11 @@ public final class AVFoundation {
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String AVMetadataIdentifierID3MetadataComments();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String AVMetadataIdentifierID3MetadataCommercial();
 
     @Generated
     @CVariable()
@@ -3708,6 +3981,26 @@ public final class AVFoundation {
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
+    public static native String AVOutputSettingsPreset3840x2160();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String AVPlayerWaitingToMinimizeStallsReason();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String AVPlayerWaitingWhileEvaluatingBufferingRateReason();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String AVPlayerWaitingWithNoItemToPlayReason();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
     public static native String AVPlayerItemTimeJumpedNotification();
 
     @Generated
@@ -3759,18 +4052,6 @@ public final class AVFoundation {
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String AVSampleBufferDisplayLayerFailedToDecodeNotificationErrorKey();
-
-    @Generated
-    @CVariable()
-    public static native float AVSpeechUtteranceMinimumSpeechRate();
-
-    @Generated
-    @CVariable()
-    public static native float AVSpeechUtteranceMaximumSpeechRate();
-
-    @Generated
-    @CVariable()
-    public static native float AVSpeechUtteranceDefaultSpeechRate();
 
     @Generated
     @CVariable()
@@ -3861,6 +4142,61 @@ public final class AVFoundation {
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String AVVideoScalingModeResizeAspectFill();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String AVVideoColorPropertiesKey();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String AVVideoColorPrimariesKey();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String AVVideoColorPrimaries_ITU_R_709_2();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String AVVideoColorPrimaries_SMPTE_C();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String AVVideoColorPrimaries_P3_D65();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String AVVideoTransferFunctionKey();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String AVVideoTransferFunction_ITU_R_709_2();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String AVVideoYCbCrMatrixKey();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String AVVideoYCbCrMatrix_ITU_R_709_2();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String AVVideoYCbCrMatrix_ITU_R_601_4();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String AVVideoAllowWideColorKey();
 
     @Generated
     @CVariable()
@@ -3981,220 +4317,4 @@ public final class AVFoundation {
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String AVVideoAverageNonDroppableFrameRateKey();
-
-    @Generated
-    @Inline
-    @CFunction
-    @ByValue
-    public static native AVBeatRange AVMakeBeatRange(double startBeat, double lengthInBeats);
-
-    @Generated
-    @CVariable()
-    @MappedReturn(ObjCStringMapper.class)
-    public static native String AVAssetDurationDidChangeNotification();
-
-    @Generated
-    @CVariable()
-    @MappedReturn(ObjCStringMapper.class)
-    public static native String AVAssetChapterMetadataGroupsDidChangeNotification();
-
-    @Generated
-    @CVariable()
-    @MappedReturn(ObjCStringMapper.class)
-    public static native String AVAssetMediaSelectionGroupsDidChangeNotification();
-
-    @Generated
-    @CVariable()
-    @MappedReturn(ObjCStringMapper.class)
-    public static native String AVAssetResourceLoadingRequestStreamingContentKeyRequestRequiresPersistentKey();
-
-    @Generated
-    @CVariable()
-    @MappedReturn(ObjCStringMapper.class)
-    public static native String AVAssetTrackTimeRangeDidChangeNotification();
-
-    @Generated
-    @CVariable()
-    @MappedReturn(ObjCStringMapper.class)
-    public static native String AVAssetTrackSegmentsDidChangeNotification();
-
-    @Generated
-    @CVariable()
-    @MappedReturn(ObjCStringMapper.class)
-    public static native String AVAssetTrackTrackAssociationsDidChangeNotification();
-
-    @Generated
-    @CVariable()
-    @MappedReturn(ObjCStringMapper.class)
-    public static native String AVAssetDownloadTaskMinimumRequiredMediaBitrateKey();
-
-    @Generated
-    @CVariable()
-    @MappedReturn(ObjCStringMapper.class)
-    public static native String AVAssetDownloadTaskMediaSelectionKey();
-
-    @Generated
-    @CVariable()
-    @MappedReturn(ObjCStringMapper.class)
-    public static native String AVCaptureSessionInterruptionReasonKey();
-
-    @Generated
-    @CVariable()
-    @MappedReturn(ObjCStringMapper.class)
-    public static native String AVAudioUnitTypeOutput();
-
-    @Generated
-    @CVariable()
-    @MappedReturn(ObjCStringMapper.class)
-    public static native String AVAudioUnitTypeMusicDevice();
-
-    @Generated
-    @CVariable()
-    @MappedReturn(ObjCStringMapper.class)
-    public static native String AVAudioUnitTypeMusicEffect();
-
-    @Generated
-    @CVariable()
-    @MappedReturn(ObjCStringMapper.class)
-    public static native String AVAudioUnitTypeFormatConverter();
-
-    @Generated
-    @CVariable()
-    @MappedReturn(ObjCStringMapper.class)
-    public static native String AVAudioUnitTypeEffect();
-
-    @Generated
-    @CVariable()
-    @MappedReturn(ObjCStringMapper.class)
-    public static native String AVAudioUnitTypeMixer();
-
-    @Generated
-    @CVariable()
-    @MappedReturn(ObjCStringMapper.class)
-    public static native String AVAudioUnitTypePanner();
-
-    @Generated
-    @CVariable()
-    @MappedReturn(ObjCStringMapper.class)
-    public static native String AVAudioUnitTypeGenerator();
-
-    @Generated
-    @CVariable()
-    @MappedReturn(ObjCStringMapper.class)
-    public static native String AVAudioUnitTypeOfflineEffect();
-
-    @Generated
-    @CVariable()
-    @MappedReturn(ObjCStringMapper.class)
-    public static native String AVAudioUnitTypeMIDIProcessor();
-
-    @Generated
-    @CVariable()
-    @MappedReturn(ObjCStringMapper.class)
-    public static native String AVAudioUnitManufacturerNameApple();
-
-    @Generated
-    @CVariable()
-    @MappedReturn(ObjCStringMapper.class)
-    public static native String AVAudioUnitComponentTagsDidChangeNotification();
-
-    @Generated
-    @CVariable()
-    @MappedReturn(ObjCStringMapper.class)
-    public static native String AVAudioSessionModeSpokenAudio();
-
-    @Generated
-    @CVariable()
-    @MappedReturn(ObjCStringMapper.class)
-    public static native String AVSpeechSynthesisVoiceIdentifierAlex();
-
-    @Generated
-    @CVariable()
-    @MappedReturn(ObjCStringMapper.class)
-    public static native String AVMediaTypeMetadataObject();
-
-    @Generated
-    @CVariable()
-    @MappedReturn(ObjCStringMapper.class)
-    public static native String AVMediaCharacteristicLanguageTranslation();
-
-    @Generated
-    @CVariable()
-    @MappedReturn(ObjCStringMapper.class)
-    public static native String AVMediaCharacteristicDubbedTranslation();
-
-    @Generated
-    @CVariable()
-    @MappedReturn(ObjCStringMapper.class)
-    public static native String AVMediaCharacteristicVoiceOverTranslation();
-
-    @Generated
-    @CVariable()
-    @MappedReturn(ObjCStringMapper.class)
-    public static native String AVFileTypeEnhancedAC3();
-
-    @Generated
-    @CVariable()
-    @MappedReturn(ObjCStringMapper.class)
-    public static native String AVStreamingKeyDeliveryContentKeyType();
-
-    @Generated
-    @CVariable()
-    @MappedReturn(ObjCStringMapper.class)
-    public static native String AVStreamingKeyDeliveryPersistentContentKeyType();
-
-    @Generated
-    @CVariable()
-    @MappedReturn(ObjCStringMapper.class)
-    public static native String AVMetadataQuickTimeMetadataKeyContentIdentifier();
-
-    @Generated
-    @CVariable()
-    @MappedReturn(ObjCStringMapper.class)
-    public static native String AVMetadataID3MetadataKeyCommercial();
-
-    @Generated
-    @CVariable()
-    @MappedReturn(ObjCStringMapper.class)
-    public static native String AVMetadataExtraAttributeInfoKey();
-
-    @Generated
-    @CVariable()
-    @MappedReturn(ObjCStringMapper.class)
-    public static native String AVMetadataIdentifierQuickTimeMetadataDetectedFace();
-
-    @Generated
-    @CVariable()
-    @MappedReturn(ObjCStringMapper.class)
-    public static native String AVMetadataIdentifierQuickTimeMetadataVideoOrientation();
-
-    @Generated
-    @CVariable()
-    @MappedReturn(ObjCStringMapper.class)
-    public static native String AVMetadataIdentifierQuickTimeMetadataContentIdentifier();
-
-    @Generated
-    @CVariable()
-    @MappedReturn(ObjCStringMapper.class)
-    public static native String AVMetadataIdentifierID3MetadataCommercial();
-
-    @Generated
-    @CVariable()
-    @MappedReturn(ObjCStringMapper.class)
-    public static native String AVAssetExportPreset3840x2160();
-
-    @Generated
-    @CVariable()
-    @MappedReturn(ObjCStringMapper.class)
-    public static native String AVCaptureSessionPreset3840x2160();
-
-    @Generated
-    @CVariable()
-    @MappedReturn(ObjCStringMapper.class)
-    public static native String AVOutputSettingsPreset3840x2160();
-
-    @Generated
-    @CVariable()
-    @MappedReturn(ObjCStringMapper.class)
-    public static native String AVMetadataKeySpaceHLSDateRange();
 }

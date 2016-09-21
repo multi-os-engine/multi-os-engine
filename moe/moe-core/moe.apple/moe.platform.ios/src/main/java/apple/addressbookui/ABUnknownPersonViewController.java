@@ -59,13 +59,13 @@ public class ABUnknownPersonViewController extends UIViewController {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native ABUnknownPersonViewController alloc();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -164,7 +164,7 @@ public class ABUnknownPersonViewController extends UIViewController {
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")
@@ -198,6 +198,10 @@ public class ABUnknownPersonViewController extends UIViewController {
     @Generated
     @Selector("init")
     public native ABUnknownPersonViewController init();
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native ABUnknownPersonViewController initWithCoder(NSCoder aDecoder);
 
     @Generated
     @Selector("initWithNibName:bundle:")
@@ -253,8 +257,4 @@ public class ABUnknownPersonViewController extends UIViewController {
     @Selector("unknownPersonViewDelegate")
     @MappedReturn(ObjCObjectMapper.class)
     public native ABUnknownPersonViewControllerDelegate unknownPersonViewDelegate();
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native ABUnknownPersonViewController initWithCoder(NSCoder aDecoder);
 }

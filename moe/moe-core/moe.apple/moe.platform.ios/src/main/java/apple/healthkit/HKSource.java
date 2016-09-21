@@ -58,21 +58,13 @@ public class HKSource extends NSObject implements NSSecureCoding, NSCopying {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native HKSource alloc();
-
-    @Generated
-    @Selector("defaultSource")
-    public static native HKSource defaultSource();
-
-    @Generated
-    @Selector("supportsSecureCoding")
-    public static native boolean supportsSecureCoding();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -104,6 +96,10 @@ public class HKSource extends NSObject implements NSSecureCoding, NSCopying {
     @Generated
     @Selector("debugDescription")
     public static native String debugDescription_static();
+
+    @Generated
+    @Selector("defaultSource")
+    public static native HKSource defaultSource();
 
     @Generated
     @Selector("description")
@@ -164,6 +160,10 @@ public class HKSource extends NSObject implements NSSecureCoding, NSCopying {
     @Generated
     @Selector("superclass")
     public static native Class superclass_static();
+
+    @Generated
+    @Selector("supportsSecureCoding")
+    public static native boolean supportsSecureCoding();
 
     @Generated
     @Selector("version")

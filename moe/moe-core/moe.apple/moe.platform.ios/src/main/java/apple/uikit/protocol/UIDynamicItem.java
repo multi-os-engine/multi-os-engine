@@ -46,19 +46,6 @@ public interface UIDynamicItem {
     CGPoint center();
 
     @Generated
-    @Selector("setCenter:")
-    void setCenter(@ByValue CGPoint value);
-
-    @Generated
-    @Selector("setTransform:")
-    void setTransform(@ByValue CGAffineTransform value);
-
-    @Generated
-    @Selector("transform")
-    @ByValue
-    CGAffineTransform transform();
-
-    @Generated
     @IsOptional
     @Selector("collisionBoundingPath")
     default UIBezierPath collisionBoundingPath() {
@@ -72,4 +59,17 @@ public interface UIDynamicItem {
     default long collisionBoundsType() {
         throw new java.lang.UnsupportedOperationException();
     }
+
+    @Generated
+    @Selector("setCenter:")
+    void setCenter(@ByValue CGPoint value);
+
+    @Generated
+    @Selector("setTransform:")
+    void setTransform(@ByValue CGAffineTransform value);
+
+    @Generated
+    @Selector("transform")
+    @ByValue
+    CGAffineTransform transform();
 }

@@ -71,8 +71,18 @@ public final class _RuneLocale extends StructObject {
     public native void set__encoding(byte value, int field_idx);
 
     @Generated
+    @StructureField(order = 2, isGetter = true)
+    @FunctionPtr(name = "call___sgetrune")
+    public native Function___sgetrune __sgetrune();
+
+    @Generated
     @StructureField(order = 2, isGetter = false)
     public native void set__sgetrune(@FunctionPtr(name = "call___sgetrune") Function___sgetrune value);
+
+    @Generated
+    @StructureField(order = 3, isGetter = true)
+    @FunctionPtr(name = "call___sputrune")
+    public native Function___sputrune __sputrune();
 
     @Generated
     @StructureField(order = 3, isGetter = false)
@@ -170,16 +180,6 @@ public final class _RuneLocale extends StructObject {
     @StructureField(order = 14, isGetter = false)
     public native void set__charclasses(
             @UncertainArgument("Options: reference, array Fallback: reference") _RuneCharClass value);
-
-    @Generated
-    @StructureField(order = 2, isGetter = true)
-    @FunctionPtr(name = "call___sgetrune")
-    public native Function___sgetrune __sgetrune();
-
-    @Generated
-    @StructureField(order = 3, isGetter = true)
-    @FunctionPtr(name = "call___sputrune")
-    public native Function___sputrune __sputrune();
 
     @Runtime(CRuntime.class)
     @Generated

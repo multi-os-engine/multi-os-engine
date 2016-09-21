@@ -58,34 +58,22 @@ public class NEFilterRemediationVerdict extends NEFilterVerdict implements NSSec
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native NEFilterRemediationVerdict alloc();
 
     @Generated
-    @Selector("allowVerdict")
-    public static native NEFilterRemediationVerdict allowVerdict();
-
-    @Generated
-    @Selector("dropVerdict")
-    public static native NEFilterRemediationVerdict dropVerdict();
-
-    @Generated
-    @Selector("needRulesVerdict")
-    public static native NEFilterRemediationVerdict needRulesVerdict();
-
-    @Generated
-    @Selector("supportsSecureCoding")
-    public static native boolean supportsSecureCoding();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
-
-    @Generated
     @Selector("allocWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object allocWithZone(VoidPtr zone);
+
+    @Generated
+    @Selector("allowVerdict")
+    public static native NEFilterRemediationVerdict allowVerdict();
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -116,6 +104,10 @@ public class NEFilterRemediationVerdict extends NEFilterVerdict implements NSSec
     @Generated
     @Selector("description")
     public static native String description_static();
+
+    @Generated
+    @Selector("dropVerdict")
+    public static native NEFilterRemediationVerdict dropVerdict();
 
     @Generated
     @Selector("hash")
@@ -152,6 +144,10 @@ public class NEFilterRemediationVerdict extends NEFilterVerdict implements NSSec
     public static native void load_objc_static();
 
     @Generated
+    @Selector("needRulesVerdict")
+    public static native NEFilterRemediationVerdict needRulesVerdict();
+
+    @Generated
     @Owned
     @Selector("new")
     @MappedReturn(ObjCObjectMapper.class)
@@ -167,11 +163,15 @@ public class NEFilterRemediationVerdict extends NEFilterVerdict implements NSSec
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")
     public static native Class superclass_static();
+
+    @Generated
+    @Selector("supportsSecureCoding")
+    public static native boolean supportsSecureCoding();
 
     @Generated
     @Selector("version")

@@ -54,17 +54,13 @@ public class MIDINetworkConnection extends NSObject {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native MIDINetworkConnection alloc();
-
-    @Generated
-    @Selector("connectionWithHost:")
-    public static native MIDINetworkConnection connectionWithHost(MIDINetworkHost host);
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -92,6 +88,10 @@ public class MIDINetworkConnection extends NSObject {
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
+
+    @Generated
+    @Selector("connectionWithHost:")
+    public static native MIDINetworkConnection connectionWithHost(MIDINetworkHost host);
 
     @Generated
     @Selector("debugDescription")

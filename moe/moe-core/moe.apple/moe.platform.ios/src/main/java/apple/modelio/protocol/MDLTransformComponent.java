@@ -16,6 +16,8 @@ limitations under the License.
 
 package apple.modelio.protocol;
 
+import apple.foundation.NSArray;
+import apple.foundation.NSNumber;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.Library;
 import org.moe.natj.general.ann.Runtime;
@@ -29,10 +31,22 @@ import org.moe.natj.objc.ann.Selector;
 @ObjCProtocolName("MDLTransformComponent")
 public interface MDLTransformComponent extends MDLComponent {
     @Generated
+    @Selector("keyTimes")
+    NSArray<? extends NSNumber> keyTimes();
+
+    @Generated
     @Selector("maximumTime")
     double maximumTime();
 
     @Generated
     @Selector("minimumTime")
     double minimumTime();
+
+    @Generated
+    @Selector("resetsTransform")
+    boolean resetsTransform();
+
+    @Generated
+    @Selector("setResetsTransform:")
+    void setResetsTransform(boolean value);
 }

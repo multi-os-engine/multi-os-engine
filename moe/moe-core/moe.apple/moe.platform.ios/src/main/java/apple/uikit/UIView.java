@@ -17,6 +17,7 @@ limitations under the License.
 package apple.uikit;
 
 import apple.NSObject;
+import apple.coregraphics.opaque.CGContextRef;
 import apple.coregraphics.struct.CGAffineTransform;
 import apple.coregraphics.struct.CGPoint;
 import apple.coregraphics.struct.CGRect;
@@ -28,12 +29,13 @@ import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
 import apple.foundation.protocol.NSCoding;
 import apple.quartzcore.CALayer;
+import apple.quartzcore.protocol.CALayerDelegate;
 import apple.uikit.protocol.UIAccessibilityIdentification;
 import apple.uikit.protocol.UIAppearance;
 import apple.uikit.protocol.UIAppearanceContainer;
 import apple.uikit.protocol.UICoordinateSpace;
 import apple.uikit.protocol.UIDynamicItem;
-import apple.uikit.protocol.UIFocusEnvironment;
+import apple.uikit.protocol.UIFocusItem;
 import apple.uikit.protocol.UITraitEnvironment;
 import apple.uikit.struct.UIEdgeInsets;
 import org.moe.natj.c.ann.FunctionPtr;
@@ -67,7 +69,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @ObjCClassBinding
 public class UIView extends UIResponder
         implements NSCoding, UIAppearance, UIAppearanceContainer, UIDynamicItem, UITraitEnvironment, UICoordinateSpace,
-        UIFocusEnvironment, UIAccessibilityIdentification {
+        UIFocusItem, CALayerDelegate, UIAccessibilityIdentification {
     static {
         NatJ.register();
     }
@@ -76,6 +78,10 @@ public class UIView extends UIResponder
     protected UIView(Pointer peer) {
         super(peer);
     }
+
+    @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("addKeyframeWithRelativeStartTime:relativeDuration:animations:")
@@ -87,6 +93,11 @@ public class UIView extends UIResponder
     @Owned
     @Selector("alloc")
     public static native UIView alloc();
+
+    @Generated
+    @Selector("allocWithZone:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("animateKeyframesWithDuration:delay:options:animations:completion:")
@@ -130,37 +141,126 @@ public class UIView extends UIResponder
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object appearanceForTraitCollection(UITraitCollection trait);
 
-    @Deprecated
     @Generated
     @Variadic()
+    @Deprecated
     @Selector("appearanceForTraitCollection:whenContainedIn:")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object appearanceForTraitCollectionWhenContainedIn(UITraitCollection trait,
             @Mapped(ObjCObjectMapper.class) Object ContainerClass, Object... varargs);
 
-    @Deprecated
+    @Generated
+    @Selector("appearanceForTraitCollection:whenContainedInInstancesOfClasses:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object appearanceForTraitCollectionWhenContainedInInstancesOfClasses(UITraitCollection trait,
+            NSArray<?> containerTypes);
+
     @Generated
     @Variadic()
+    @Deprecated
     @Selector("appearanceWhenContainedIn:")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object appearanceWhenContainedIn(@Mapped(ObjCObjectMapper.class) Object ContainerClass,
             Object... varargs);
 
     @Generated
+    @Selector("appearanceWhenContainedInInstancesOfClasses:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object appearanceWhenContainedInInstancesOfClasses(NSArray<?> containerTypes);
+
+    @Generated
     @Selector("areAnimationsEnabled")
     public static native boolean areAnimationsEnabled();
+
+    @Generated
+    @Selector("automaticallyNotifiesObserversForKey:")
+    public static native boolean automaticallyNotifiesObserversForKey(String key);
 
     @Generated
     @Selector("beginAnimations:context:")
     public static native void beginAnimationsContext(String animationID, VoidPtr context);
 
     @Generated
+    @Selector("cancelPreviousPerformRequestsWithTarget:")
+    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+
+    @Generated
+    @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
+    public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
+            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
+            @Mapped(ObjCObjectMapper.class) Object anArgument);
+
+    @Generated
+    @Selector("classFallbacksForKeyedArchiver")
+    public static native NSArray<String> classFallbacksForKeyedArchiver();
+
+    @Generated
+    @Selector("classForKeyedUnarchiver")
+    public static native Class classForKeyedUnarchiver();
+
+    @Generated
+    @Selector("clearTextInputContextIdentifier:")
+    public static native void clearTextInputContextIdentifier(String identifier);
+
+    @Generated
     @Selector("commitAnimations")
     public static native void commitAnimations();
 
     @Generated
+    @Selector("debugDescription")
+    public static native String debugDescription_static();
+
+    @Generated
+    @Selector("description")
+    public static native String description_static();
+
+    @Generated
+    @Selector("hash")
+    @NUInt
+    public static native long hash_static();
+
+    @Generated
+    @Selector("inheritedAnimationDuration")
+    public static native double inheritedAnimationDuration();
+
+    @Generated
+    @Selector("initialize")
+    public static native void initialize();
+
+    @Generated
+    @Selector("instanceMethodForSelector:")
+    @FunctionPtr(name = "call_instanceMethodForSelector_ret")
+    public static native NSObject.Function_instanceMethodForSelector_ret instanceMethodForSelector(SEL aSelector);
+
+    @Generated
+    @Selector("instanceMethodSignatureForSelector:")
+    public static native NSMethodSignature instanceMethodSignatureForSelector(SEL aSelector);
+
+    @Generated
+    @Selector("instancesRespondToSelector:")
+    public static native boolean instancesRespondToSelector(SEL aSelector);
+
+    @Generated
+    @Selector("isSubclassOfClass:")
+    public static native boolean isSubclassOfClass(Class aClass);
+
+    @Generated
+    @Selector("keyPathsForValuesAffectingValueForKey:")
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+
+    @Generated
     @Selector("layerClass")
     public static native Class layerClass();
+
+    @Generated
+    @Selector("load")
+    public static native void load_objc_static();
+
+    @Generated
+    @Owned
+    @Selector("new")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object new_objc();
 
     @Generated
     @Selector("performSystemAnimation:onViews:options:animations:completion:")
@@ -177,6 +277,14 @@ public class UIView extends UIResponder
     @Generated
     @Selector("requiresConstraintBasedLayout")
     public static native boolean requiresConstraintBasedLayout();
+
+    @Generated
+    @Selector("resolveClassMethod:")
+    public static native boolean resolveClassMethod(SEL sel);
+
+    @Generated
+    @Selector("resolveInstanceMethod:")
+    public static native boolean resolveInstanceMethod(SEL sel);
 
     @Generated
     @Selector("setAnimationBeginsFromCurrentState:")
@@ -227,6 +335,14 @@ public class UIView extends UIResponder
     public static native void setAnimationsEnabled(boolean enabled);
 
     @Generated
+    @Selector("setVersion:")
+    public static native void setVersion_static(@NInt long aVersion);
+
+    @Generated
+    @Selector("superclass")
+    public static native Class superclass_static();
+
+    @Generated
     @Selector("transitionFromView:toView:duration:options:completion:")
     public static native void transitionFromViewToViewDurationOptionsCompletion(UIView fromView, UIView toView,
             double duration, @NUInt long options,
@@ -240,132 +356,30 @@ public class UIView extends UIResponder
             @ObjCBlock(name = "call_transitionWithViewDurationOptionsAnimationsCompletion_4") Block_transitionWithViewDurationOptionsAnimationsCompletion_4 completion);
 
     @Generated
-    @Selector("appearanceForTraitCollection:whenContainedInInstancesOfClasses:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object appearanceForTraitCollectionWhenContainedInInstancesOfClasses(UITraitCollection trait,
-            NSArray<?> containerTypes);
-
-    @Generated
-    @Selector("appearanceWhenContainedInInstancesOfClasses:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object appearanceWhenContainedInInstancesOfClasses(NSArray<?> containerTypes);
-
-    @Generated
-    @Selector("inheritedAnimationDuration")
-    public static native double inheritedAnimationDuration();
-
-    @Generated
     @Selector("userInterfaceLayoutDirectionForSemanticContentAttribute:")
     @NInt
     public static native long userInterfaceLayoutDirectionForSemanticContentAttribute(@NInt long attribute);
 
     @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
-
-    @Generated
-    @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
-
-    @Generated
-    @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
-
-    @Generated
-    @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
-
-    @Generated
-    @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
-    public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
-
-    @Generated
-    @Selector("classFallbacksForKeyedArchiver")
-    public static native NSArray<String> classFallbacksForKeyedArchiver();
-
-    @Generated
-    @Selector("classForKeyedUnarchiver")
-    public static native Class classForKeyedUnarchiver();
-
-    @Generated
-    @Selector("clearTextInputContextIdentifier:")
-    public static native void clearTextInputContextIdentifier(String identifier);
-
-    @Generated
-    @Selector("debugDescription")
-    public static native String debugDescription_static();
-
-    @Generated
-    @Selector("description")
-    public static native String description_static();
-
-    @Generated
-    @Selector("hash")
-    @NUInt
-    public static native long hash_static();
-
-    @Generated
-    @Selector("initialize")
-    public static native void initialize();
-
-    @Generated
-    @Selector("instanceMethodForSelector:")
-    @FunctionPtr(name = "call_instanceMethodForSelector_ret")
-    public static native NSObject.Function_instanceMethodForSelector_ret instanceMethodForSelector(SEL aSelector);
-
-    @Generated
-    @Selector("instanceMethodSignatureForSelector:")
-    public static native NSMethodSignature instanceMethodSignatureForSelector(SEL aSelector);
-
-    @Generated
-    @Selector("instancesRespondToSelector:")
-    public static native boolean instancesRespondToSelector(SEL aSelector);
-
-    @Generated
-    @Selector("isSubclassOfClass:")
-    public static native boolean isSubclassOfClass(Class aClass);
-
-    @Generated
-    @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
-
-    @Generated
-    @Selector("load")
-    public static native void load_objc();
-
-    @Generated
-    @Owned
-    @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
-
-    @Generated
-    @Selector("resolveClassMethod:")
-    public static native boolean resolveClassMethod(SEL sel);
-
-    @Generated
-    @Selector("resolveInstanceMethod:")
-    public static native boolean resolveInstanceMethod(SEL sel);
-
-    @Generated
-    @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
-
-    @Generated
-    @Selector("superclass")
-    public static native Class superclass_static();
+    @Selector("userInterfaceLayoutDirectionForSemanticContentAttribute:relativeToLayoutDirection:")
+    @NInt
+    public static native long userInterfaceLayoutDirectionForSemanticContentAttributeRelativeToLayoutDirection(
+            @NInt long semanticContentAttribute, @NInt long layoutDirection);
 
     @Generated
     @Selector("version")
     @NInt
-    public static native long version();
+    public static native long version_static();
 
     @Generated
     @Selector("accessibilityIdentifier")
     public native String accessibilityIdentifier();
+
+    @Generated
+    @IsOptional
+    @Selector("actionForLayer:forKey:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native Object actionForLayerForKey(CALayer layer, String event);
 
     @Generated
     @Selector("addConstraint:")
@@ -378,6 +392,10 @@ public class UIView extends UIResponder
     @Generated
     @Selector("addGestureRecognizer:")
     public native void addGestureRecognizer(UIGestureRecognizer gestureRecognizer);
+
+    @Generated
+    @Selector("addLayoutGuide:")
+    public native void addLayoutGuide(UILayoutGuide layoutGuide);
 
     @Generated
     @Selector("addMotionEffect:")
@@ -416,8 +434,8 @@ public class UIView extends UIResponder
         return appearanceForTraitCollection(trait);
     }
 
-    @Deprecated
     @Generated
+    @Deprecated
     @ProtocolClassMethod("appearanceForTraitCollectionWhenContainedIn")
     @MappedReturn(ObjCObjectMapper.class)
     public Object _appearanceForTraitCollectionWhenContainedIn(UITraitCollection trait,
@@ -425,12 +443,27 @@ public class UIView extends UIResponder
         return appearanceForTraitCollectionWhenContainedIn(trait, ContainerClass, varargs);
     }
 
-    @Deprecated
     @Generated
+    @ProtocolClassMethod("appearanceForTraitCollectionWhenContainedInInstancesOfClasses")
+    @MappedReturn(ObjCObjectMapper.class)
+    public Object _appearanceForTraitCollectionWhenContainedInInstancesOfClasses(UITraitCollection trait,
+            NSArray<?> containerTypes) {
+        return appearanceForTraitCollectionWhenContainedInInstancesOfClasses(trait, containerTypes);
+    }
+
+    @Generated
+    @Deprecated
     @ProtocolClassMethod("appearanceWhenContainedIn")
     @MappedReturn(ObjCObjectMapper.class)
     public Object _appearanceWhenContainedIn(@Mapped(ObjCObjectMapper.class) Object ContainerClass, Object... varargs) {
         return appearanceWhenContainedIn(ContainerClass, varargs);
+    }
+
+    @Generated
+    @ProtocolClassMethod("appearanceWhenContainedInInstancesOfClasses")
+    @MappedReturn(ObjCObjectMapper.class)
+    public Object _appearanceWhenContainedInInstancesOfClasses(NSArray<?> containerTypes) {
+        return appearanceWhenContainedInInstancesOfClasses(containerTypes);
     }
 
     @Generated
@@ -447,6 +480,10 @@ public class UIView extends UIResponder
     public native UIColor backgroundColor();
 
     @Generated
+    @Selector("bottomAnchor")
+    public native NSLayoutYAxisAnchor bottomAnchor();
+
+    @Generated
     @Selector("bounds")
     @ByValue
     public native CGRect bounds();
@@ -456,9 +493,21 @@ public class UIView extends UIResponder
     public native void bringSubviewToFront(UIView view);
 
     @Generated
+    @Selector("canBecomeFocused")
+    public native boolean canBecomeFocused();
+
+    @Generated
     @Selector("center")
     @ByValue
     public native CGPoint center();
+
+    @Generated
+    @Selector("centerXAnchor")
+    public native NSLayoutXAxisAnchor centerXAnchor();
+
+    @Generated
+    @Selector("centerYAnchor")
+    public native NSLayoutYAxisAnchor centerYAnchor();
 
     @Generated
     @Selector("clearsContextBeforeDrawing")
@@ -467,6 +516,17 @@ public class UIView extends UIResponder
     @Generated
     @Selector("clipsToBounds")
     public native boolean clipsToBounds();
+
+    @Generated
+    @IsOptional
+    @Selector("collisionBoundingPath")
+    public native UIBezierPath collisionBoundingPath();
+
+    @Generated
+    @IsOptional
+    @Selector("collisionBoundsType")
+    @NUInt
+    public native long collisionBoundsType();
 
     @Generated
     @Selector("constraints")
@@ -561,6 +621,21 @@ public class UIView extends UIResponder
     public native void didMoveToWindow();
 
     @Generated
+    @Selector("didUpdateFocusInContext:withAnimationCoordinator:")
+    public native void didUpdateFocusInContextWithAnimationCoordinator(UIFocusUpdateContext context,
+            UIFocusAnimationCoordinator coordinator);
+
+    @Generated
+    @IsOptional
+    @Selector("displayLayer:")
+    public native void displayLayer(CALayer layer);
+
+    @Generated
+    @IsOptional
+    @Selector("drawLayer:inContext:")
+    public native void drawLayerInContext(CALayer layer, CGContextRef ctx);
+
+    @Generated
     @Selector("drawRect:")
     public native void drawRect(@ByValue CGRect rect);
 
@@ -571,6 +646,11 @@ public class UIView extends UIResponder
     @Generated
     @Selector("drawViewHierarchyInRect:afterScreenUpdates:")
     public native boolean drawViewHierarchyInRectAfterScreenUpdates(@ByValue CGRect rect, boolean afterUpdates);
+
+    @Generated
+    @Selector("effectiveUserInterfaceLayoutDirection")
+    @NInt
+    public native long effectiveUserInterfaceLayoutDirection();
 
     @Generated
     @Selector("encodeRestorableStateWithCoder:")
@@ -593,6 +673,10 @@ public class UIView extends UIResponder
     public native void exerciseAmbiguityInLayout();
 
     @Generated
+    @Selector("firstBaselineAnchor")
+    public native NSLayoutYAxisAnchor firstBaselineAnchor();
+
+    @Generated
     @Selector("frame")
     @ByValue
     public native CGRect frame();
@@ -613,6 +697,10 @@ public class UIView extends UIResponder
     @Generated
     @Selector("hasAmbiguousLayout")
     public native boolean hasAmbiguousLayout();
+
+    @Generated
+    @Selector("heightAnchor")
+    public native NSLayoutDimension heightAnchor();
 
     @Generated
     @Selector("hitTest:withEvent:")
@@ -664,6 +752,10 @@ public class UIView extends UIResponder
     public native void setExclusiveTouch(boolean value);
 
     @Generated
+    @Selector("isFocused")
+    public native boolean isFocused();
+
+    @Generated
     @Selector("isHidden")
     public native boolean isHidden();
 
@@ -696,8 +788,21 @@ public class UIView extends UIResponder
     public native void setUserInteractionEnabled(boolean value);
 
     @Generated
+    @Selector("lastBaselineAnchor")
+    public native NSLayoutYAxisAnchor lastBaselineAnchor();
+
+    @Generated
     @Selector("layer")
     public native CALayer layer();
+
+    @Generated
+    @IsOptional
+    @Selector("layerWillDraw:")
+    public native void layerWillDraw(CALayer layer);
+
+    @Generated
+    @Selector("layoutGuides")
+    public native NSArray<? extends UILayoutGuide> layoutGuides();
 
     @Generated
     @Selector("layoutIfNeeded")
@@ -713,8 +818,25 @@ public class UIView extends UIResponder
     public native void layoutMarginsDidChange();
 
     @Generated
+    @Selector("layoutMarginsGuide")
+    public native UILayoutGuide layoutMarginsGuide();
+
+    @Generated
+    @IsOptional
+    @Selector("layoutSublayersOfLayer:")
+    public native void layoutSublayersOfLayer(CALayer layer);
+
+    @Generated
     @Selector("layoutSubviews")
     public native void layoutSubviews();
+
+    @Generated
+    @Selector("leadingAnchor")
+    public native NSLayoutXAxisAnchor leadingAnchor();
+
+    @Generated
+    @Selector("leftAnchor")
+    public native NSLayoutXAxisAnchor leftAnchor();
 
     @Generated
     @Selector("maskView")
@@ -733,8 +855,21 @@ public class UIView extends UIResponder
     public native boolean pointInsideWithEvent(@ByValue CGPoint point, UIEvent event);
 
     @Generated
+    @Selector("preferredFocusEnvironments")
+    public native NSArray<?> preferredFocusEnvironments();
+
+    @Generated
+    @IsOptional
+    @Selector("preferredFocusedView")
+    public native UIView preferredFocusedView();
+
+    @Generated
     @Selector("preservesSuperviewLayoutMargins")
     public native boolean preservesSuperviewLayoutMargins();
+
+    @Generated
+    @Selector("readableContentGuide")
+    public native UILayoutGuide readableContentGuide();
 
     @Generated
     @Selector("removeConstraint:")
@@ -753,6 +888,10 @@ public class UIView extends UIResponder
     public native void removeGestureRecognizer(UIGestureRecognizer gestureRecognizer);
 
     @Generated
+    @Selector("removeLayoutGuide:")
+    public native void removeLayoutGuide(UILayoutGuide layoutGuide);
+
+    @Generated
     @Selector("removeMotionEffect:")
     public native void removeMotionEffect(UIMotionEffect effect);
 
@@ -764,6 +903,15 @@ public class UIView extends UIResponder
     @Generated
     @Selector("restorationIdentifier")
     public native String restorationIdentifier();
+
+    @Generated
+    @Selector("rightAnchor")
+    public native NSLayoutXAxisAnchor rightAnchor();
+
+    @Generated
+    @Selector("semanticContentAttribute")
+    @NInt
+    public native long semanticContentAttribute();
 
     @Generated
     @Selector("sendSubviewToBack:")
@@ -855,6 +1003,10 @@ public class UIView extends UIResponder
     public native void setNeedsDisplayInRect(@ByValue CGRect rect);
 
     @Generated
+    @Selector("setNeedsFocusUpdate")
+    public native void setNeedsFocusUpdate();
+
+    @Generated
     @Selector("setNeedsLayout")
     public native void setNeedsLayout();
 
@@ -869,6 +1021,10 @@ public class UIView extends UIResponder
     @Generated
     @Selector("setRestorationIdentifier:")
     public native void setRestorationIdentifier(String value);
+
+    @Generated
+    @Selector("setSemanticContentAttribute:")
+    public native void setSemanticContentAttribute(@NInt long value);
 
     @Generated
     @Selector("setTag:")
@@ -889,6 +1045,10 @@ public class UIView extends UIResponder
     @Generated
     @Selector("setTranslatesAutoresizingMaskIntoConstraints:")
     public native void setTranslatesAutoresizingMaskIntoConstraints(boolean value);
+
+    @Generated
+    @Selector("shouldUpdateFocusInContext:")
+    public native boolean shouldUpdateFocusInContext(UIFocusUpdateContext context);
 
     @Generated
     @Selector("sizeThatFits:")
@@ -941,6 +1101,14 @@ public class UIView extends UIResponder
     public native void tintColorDidChange();
 
     @Generated
+    @Selector("topAnchor")
+    public native NSLayoutYAxisAnchor topAnchor();
+
+    @Generated
+    @Selector("trailingAnchor")
+    public native NSLayoutXAxisAnchor trailingAnchor();
+
+    @Generated
     @Selector("traitCollection")
     public native UITraitCollection traitCollection();
 
@@ -965,10 +1133,22 @@ public class UIView extends UIResponder
     @Selector("updateConstraintsIfNeeded")
     public native void updateConstraintsIfNeeded();
 
-    @Deprecated
     @Generated
+    @Selector("updateFocusIfNeeded")
+    public native void updateFocusIfNeeded();
+
+    @Generated
+    @Deprecated
     @Selector("viewForBaselineLayout")
     public native UIView viewForBaselineLayout();
+
+    @Generated
+    @Selector("viewForFirstBaselineLayout")
+    public native UIView viewForFirstBaselineLayout();
+
+    @Generated
+    @Selector("viewForLastBaselineLayout")
+    public native UIView viewForLastBaselineLayout();
 
     @Generated
     @Selector("viewPrintFormatter")
@@ -977,6 +1157,10 @@ public class UIView extends UIResponder
     @Generated
     @Selector("viewWithTag:")
     public native UIView viewWithTag(@NInt long tag);
+
+    @Generated
+    @Selector("widthAnchor")
+    public native NSLayoutDimension widthAnchor();
 
     @Generated
     @Selector("willMoveToSuperview:")
@@ -993,146 +1177,6 @@ public class UIView extends UIResponder
     @Generated
     @Selector("window")
     public native UIWindow window();
-
-    @Generated
-    @Selector("addLayoutGuide:")
-    public native void addLayoutGuide(UILayoutGuide layoutGuide);
-
-    @Generated
-    @ProtocolClassMethod("appearanceForTraitCollectionWhenContainedInInstancesOfClasses")
-    @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearanceForTraitCollectionWhenContainedInInstancesOfClasses(UITraitCollection trait,
-            NSArray<?> containerTypes) {
-        return appearanceForTraitCollectionWhenContainedInInstancesOfClasses(trait, containerTypes);
-    }
-
-    @Generated
-    @ProtocolClassMethod("appearanceWhenContainedInInstancesOfClasses")
-    @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearanceWhenContainedInInstancesOfClasses(NSArray<?> containerTypes) {
-        return appearanceWhenContainedInInstancesOfClasses(containerTypes);
-    }
-
-    @Generated
-    @Selector("bottomAnchor")
-    public native NSLayoutYAxisAnchor bottomAnchor();
-
-    @Generated
-    @Selector("centerXAnchor")
-    public native NSLayoutXAxisAnchor centerXAnchor();
-
-    @Generated
-    @Selector("centerYAnchor")
-    public native NSLayoutYAxisAnchor centerYAnchor();
-
-    @Generated
-    @IsOptional
-    @Selector("collisionBoundingPath")
-    public native UIBezierPath collisionBoundingPath();
-
-    @Generated
-    @IsOptional
-    @Selector("collisionBoundsType")
-    @NUInt
-    public native long collisionBoundsType();
-
-    @Generated
-    @Selector("firstBaselineAnchor")
-    public native NSLayoutYAxisAnchor firstBaselineAnchor();
-
-    @Generated
-    @Selector("heightAnchor")
-    public native NSLayoutDimension heightAnchor();
-
-    @Generated
-    @Selector("lastBaselineAnchor")
-    public native NSLayoutYAxisAnchor lastBaselineAnchor();
-
-    @Generated
-    @Selector("layoutGuides")
-    public native NSArray<? extends UILayoutGuide> layoutGuides();
-
-    @Generated
-    @Selector("layoutMarginsGuide")
-    public native UILayoutGuide layoutMarginsGuide();
-
-    @Generated
-    @Selector("leadingAnchor")
-    public native NSLayoutXAxisAnchor leadingAnchor();
-
-    @Generated
-    @Selector("leftAnchor")
-    public native NSLayoutXAxisAnchor leftAnchor();
-
-    @Generated
-    @Selector("readableContentGuide")
-    public native UILayoutGuide readableContentGuide();
-
-    @Generated
-    @Selector("removeLayoutGuide:")
-    public native void removeLayoutGuide(UILayoutGuide layoutGuide);
-
-    @Generated
-    @Selector("rightAnchor")
-    public native NSLayoutXAxisAnchor rightAnchor();
-
-    @Generated
-    @Selector("semanticContentAttribute")
-    @NInt
-    public native long semanticContentAttribute();
-
-    @Generated
-    @Selector("setSemanticContentAttribute:")
-    public native void setSemanticContentAttribute(@NInt long value);
-
-    @Generated
-    @Selector("topAnchor")
-    public native NSLayoutYAxisAnchor topAnchor();
-
-    @Generated
-    @Selector("trailingAnchor")
-    public native NSLayoutXAxisAnchor trailingAnchor();
-
-    @Generated
-    @Selector("viewForFirstBaselineLayout")
-    public native UIView viewForFirstBaselineLayout();
-
-    @Generated
-    @Selector("viewForLastBaselineLayout")
-    public native UIView viewForLastBaselineLayout();
-
-    @Generated
-    @Selector("widthAnchor")
-    public native NSLayoutDimension widthAnchor();
-
-    @Generated
-    @Selector("canBecomeFocused")
-    public native boolean canBecomeFocused();
-
-    @Generated
-    @Selector("didUpdateFocusInContext:withAnimationCoordinator:")
-    public native void didUpdateFocusInContextWithAnimationCoordinator(UIFocusUpdateContext context,
-            UIFocusAnimationCoordinator coordinator);
-
-    @Generated
-    @Selector("isFocused")
-    public native boolean isFocused();
-
-    @Generated
-    @Selector("preferredFocusedView")
-    public native UIView preferredFocusedView();
-
-    @Generated
-    @Selector("setNeedsFocusUpdate")
-    public native void setNeedsFocusUpdate();
-
-    @Generated
-    @Selector("shouldUpdateFocusInContext:")
-    public native boolean shouldUpdateFocusInContext(UIFocusUpdateContext context);
-
-    @Generated
-    @Selector("updateFocusIfNeeded")
-    public native void updateFocusIfNeeded();
 
     @Runtime(ObjCRuntime.class)
     @Generated

@@ -55,21 +55,13 @@ public class EAGLContext extends NSObject {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native EAGLContext alloc();
-
-    @Generated
-    @Selector("currentContext")
-    public static native EAGLContext currentContext();
-
-    @Generated
-    @Selector("setCurrentContext:")
-    public static native boolean setCurrentContext(EAGLContext context);
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -97,6 +89,10 @@ public class EAGLContext extends NSObject {
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
+
+    @Generated
+    @Selector("currentContext")
+    public static native EAGLContext currentContext();
 
     @Generated
     @Selector("debugDescription")
@@ -155,6 +151,10 @@ public class EAGLContext extends NSObject {
     public static native boolean resolveInstanceMethod(SEL sel);
 
     @Generated
+    @Selector("setCurrentContext:")
+    public static native boolean setCurrentContext(EAGLContext context);
+
+    @Generated
     @Selector("setVersion:")
     public static native void setVersion_static(@NInt long aVersion);
 
@@ -199,6 +199,10 @@ public class EAGLContext extends NSObject {
     @Generated
     @Selector("presentRenderbuffer:")
     public native boolean presentRenderbuffer(@NUInt long target);
+
+    @Generated
+    @Selector("presentRenderbuffer:atTime:")
+    public native boolean presentRenderbufferAtTime(@NUInt long target, double presentationTime);
 
     @Generated
     @Selector("renderbufferStorage:fromDrawable:")

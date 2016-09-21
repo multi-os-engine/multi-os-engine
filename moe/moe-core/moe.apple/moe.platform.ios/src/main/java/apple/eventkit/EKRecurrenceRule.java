@@ -56,13 +56,13 @@ public class EKRecurrenceRule extends EKObject implements NSCopying {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native EKRecurrenceRule alloc();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -187,9 +187,9 @@ public class EKRecurrenceRule extends EKObject implements NSCopying {
     @NInt
     public native long firstDayOfTheWeek();
 
-    @NInt
     @Generated
     @Selector("frequency")
+    @NInt
     public native long frequency();
 
     @Generated

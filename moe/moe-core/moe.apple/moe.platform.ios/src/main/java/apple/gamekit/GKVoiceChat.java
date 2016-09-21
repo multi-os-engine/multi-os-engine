@@ -55,17 +55,13 @@ public class GKVoiceChat extends NSObject {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native GKVoiceChat alloc();
-
-    @Generated
-    @Selector("isVoIPAllowed")
-    public static native boolean isVoIPAllowed();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -129,6 +125,10 @@ public class GKVoiceChat extends NSObject {
     public static native boolean isSubclassOfClass(Class aClass);
 
     @Generated
+    @Selector("isVoIPAllowed")
+    public static native boolean isVoIPAllowed();
+
+    @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
@@ -152,7 +152,7 @@ public class GKVoiceChat extends NSObject {
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")
@@ -183,6 +183,17 @@ public class GKVoiceChat extends NSObject {
     @Deprecated
     @Selector("playerIDs")
     public native NSArray<String> playerIDs();
+
+    @Generated
+    @Deprecated
+    @Selector("playerStateUpdateHandler")
+    @ObjCBlock(name = "call_playerStateUpdateHandler_ret")
+    public native Block_playerStateUpdateHandler_ret playerStateUpdateHandler();
+
+    @Generated
+    @Selector("playerVoiceChatStateDidChangeHandler")
+    @ObjCBlock(name = "call_playerVoiceChatStateDidChangeHandler_ret")
+    public native Block_playerVoiceChatStateDidChangeHandler_ret playerVoiceChatStateDidChangeHandler();
 
     @Generated
     @Selector("players")
@@ -224,16 +235,19 @@ public class GKVoiceChat extends NSObject {
     @Selector("volume")
     public native float volume();
 
+    @Runtime(ObjCRuntime.class)
     @Generated
-    @Deprecated
-    @Selector("playerStateUpdateHandler")
-    @ObjCBlock(name = "call_playerStateUpdateHandler_ret")
-    public native Block_playerStateUpdateHandler_ret playerStateUpdateHandler();
+    public interface Block_playerStateUpdateHandler_ret {
+        @Generated
+        void call_playerStateUpdateHandler_ret(String arg0, @NInt long arg1);
+    }
 
+    @Runtime(ObjCRuntime.class)
     @Generated
-    @Selector("playerVoiceChatStateDidChangeHandler")
-    @ObjCBlock(name = "call_playerVoiceChatStateDidChangeHandler_ret")
-    public native Block_playerVoiceChatStateDidChangeHandler_ret playerVoiceChatStateDidChangeHandler();
+    public interface Block_playerVoiceChatStateDidChangeHandler_ret {
+        @Generated
+        void call_playerVoiceChatStateDidChangeHandler_ret(GKPlayer arg0, @NInt long arg1);
+    }
 
     @Runtime(ObjCRuntime.class)
     @Generated
@@ -247,19 +261,5 @@ public class GKVoiceChat extends NSObject {
     public interface Block_setPlayerVoiceChatStateDidChangeHandler {
         @Generated
         void call_setPlayerVoiceChatStateDidChangeHandler(GKPlayer arg0, @NInt long arg1);
-    }
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_playerStateUpdateHandler_ret {
-        @Generated
-        void call_playerStateUpdateHandler_ret(String arg0, @NInt long arg1);
-    }
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_playerVoiceChatStateDidChangeHandler_ret {
-        @Generated
-        void call_playerVoiceChatStateDidChangeHandler_ret(GKPlayer arg0, @NInt long arg1);
     }
 }

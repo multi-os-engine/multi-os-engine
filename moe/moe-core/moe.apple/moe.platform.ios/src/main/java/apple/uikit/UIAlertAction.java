@@ -56,6 +56,10 @@ public class UIAlertAction extends NSObject implements NSCopying {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Selector("actionWithTitle:style:handler:")
     public static native UIAlertAction actionWithTitleStyleHandler(String title, @NInt long style,
             @ObjCBlock(name = "call_actionWithTitleStyleHandler") Block_actionWithTitleStyleHandler handler);
@@ -64,10 +68,6 @@ public class UIAlertAction extends NSObject implements NSCopying {
     @Owned
     @Selector("alloc")
     public static native UIAlertAction alloc();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -154,7 +154,7 @@ public class UIAlertAction extends NSObject implements NSCopying {
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")

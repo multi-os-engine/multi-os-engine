@@ -23,7 +23,6 @@ import org.moe.natj.general.NatJ;
 import org.moe.natj.general.Pointer;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.ReferenceInfo;
-import org.moe.natj.general.ann.UncertainReturn;
 import org.moe.natj.general.ptr.Ptr;
 
 @Generated
@@ -60,10 +59,9 @@ public final class CGPathElement extends StructObject {
     @StructureField(order = 0, isGetter = false)
     public native void setType(int value);
 
-    @ReferenceInfo(type = CGPoint.class)
     @Generated
     @StructureField(order = 1, isGetter = true)
-    @UncertainReturn("Options: reference, array Fallback: reference")
+    @ReferenceInfo(type = CGPoint.class)
     public native Ptr<CGPoint> points();
 
     @Generated

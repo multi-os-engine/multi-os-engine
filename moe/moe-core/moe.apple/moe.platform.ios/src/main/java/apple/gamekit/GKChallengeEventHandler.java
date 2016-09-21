@@ -55,18 +55,13 @@ public class GKChallengeEventHandler extends NSObject {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native GKChallengeEventHandler alloc();
-
-    @Generated
-    @Deprecated
-    @Selector("challengeEventHandler")
-    public static native GKChallengeEventHandler challengeEventHandler();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -86,6 +81,11 @@ public class GKChallengeEventHandler extends NSObject {
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
             @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
             @Mapped(ObjCObjectMapper.class) Object anArgument);
+
+    @Generated
+    @Deprecated
+    @Selector("challengeEventHandler")
+    public static native GKChallengeEventHandler challengeEventHandler();
 
     @Generated
     @Selector("classFallbacksForKeyedArchiver")

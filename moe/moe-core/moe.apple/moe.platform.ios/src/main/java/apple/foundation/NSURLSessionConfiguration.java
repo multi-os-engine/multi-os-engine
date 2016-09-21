@@ -52,30 +52,13 @@ public class NSURLSessionConfiguration extends NSObject implements NSCopying {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native NSURLSessionConfiguration alloc();
-
-    @Generated
-    @Deprecated
-    @Selector("backgroundSessionConfiguration:")
-    public static native NSURLSessionConfiguration backgroundSessionConfiguration(String identifier);
-
-    @Generated
-    @Selector("backgroundSessionConfigurationWithIdentifier:")
-    public static native NSURLSessionConfiguration backgroundSessionConfigurationWithIdentifier(String identifier);
-
-    @Generated
-    @Selector("defaultSessionConfiguration")
-    public static native NSURLSessionConfiguration defaultSessionConfiguration();
-
-    @Generated
-    @Selector("ephemeralSessionConfiguration")
-    public static native NSURLSessionConfiguration ephemeralSessionConfiguration();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -85,6 +68,15 @@ public class NSURLSessionConfiguration extends NSObject implements NSCopying {
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
     public static native boolean automaticallyNotifiesObserversForKey(String key);
+
+    @Generated
+    @Deprecated
+    @Selector("backgroundSessionConfiguration:")
+    public static native NSURLSessionConfiguration backgroundSessionConfiguration(String identifier);
+
+    @Generated
+    @Selector("backgroundSessionConfigurationWithIdentifier:")
+    public static native NSURLSessionConfiguration backgroundSessionConfigurationWithIdentifier(String identifier);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
@@ -109,8 +101,16 @@ public class NSURLSessionConfiguration extends NSObject implements NSCopying {
     public static native String debugDescription_static();
 
     @Generated
+    @Selector("defaultSessionConfiguration")
+    public static native NSURLSessionConfiguration defaultSessionConfiguration();
+
+    @Generated
     @Selector("description")
     public static native String description_static();
+
+    @Generated
+    @Selector("ephemeralSessionConfiguration")
+    public static native NSURLSessionConfiguration ephemeralSessionConfiguration();
 
     @Generated
     @Selector("hash")
@@ -162,7 +162,7 @@ public class NSURLSessionConfiguration extends NSObject implements NSCopying {
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")
@@ -316,6 +316,10 @@ public class NSURLSessionConfiguration extends NSObject implements NSCopying {
     public native void setSharedContainerIdentifier(String value);
 
     @Generated
+    @Selector("setShouldUseExtendedBackgroundIdleMode:")
+    public native void setShouldUseExtendedBackgroundIdleMode(boolean value);
+
+    @Generated
     @Selector("setTLSMaximumSupportedProtocol:")
     public native void setTLSMaximumSupportedProtocol(int value);
 
@@ -344,18 +348,14 @@ public class NSURLSessionConfiguration extends NSObject implements NSCopying {
     public native String sharedContainerIdentifier();
 
     @Generated
+    @Selector("shouldUseExtendedBackgroundIdleMode")
+    public native boolean shouldUseExtendedBackgroundIdleMode();
+
+    @Generated
     @Selector("timeoutIntervalForRequest")
     public native double timeoutIntervalForRequest();
 
     @Generated
     @Selector("timeoutIntervalForResource")
     public native double timeoutIntervalForResource();
-
-    @Generated
-    @Selector("setShouldUseExtendedBackgroundIdleMode:")
-    public native void setShouldUseExtendedBackgroundIdleMode(boolean value);
-
-    @Generated
-    @Selector("shouldUseExtendedBackgroundIdleMode")
-    public native boolean shouldUseExtendedBackgroundIdleMode();
 }

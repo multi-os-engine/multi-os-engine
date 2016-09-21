@@ -62,13 +62,13 @@ public class UISearchController extends UIViewController
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native UISearchController alloc();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -167,7 +167,7 @@ public class UISearchController extends UIViewController
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")
@@ -218,6 +218,10 @@ public class UISearchController extends UIViewController
     public native UISearchController init();
 
     @Generated
+    @Selector("initWithCoder:")
+    public native UISearchController initWithCoder(NSCoder aDecoder);
+
+    @Generated
     @Selector("initWithNibName:bundle:")
     public native UISearchController initWithNibNameBundle(String nibNameOrNil, NSBundle nibBundleOrNil);
 
@@ -238,12 +242,22 @@ public class UISearchController extends UIViewController
     public native Object interactionControllerForPresentation(@Mapped(ObjCObjectMapper.class) Object animator);
 
     @Generated
+    @IsOptional
+    @Selector("interruptibleAnimatorForTransition:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native Object interruptibleAnimatorForTransition(@Mapped(ObjCObjectMapper.class) Object transitionContext);
+
+    @Generated
     @Selector("isActive")
     public native boolean isActive();
 
     @Generated
     @Selector("setActive:")
     public native void setActive(boolean value);
+
+    @Generated
+    @Selector("obscuresBackgroundDuringPresentation")
+    public native boolean obscuresBackgroundDuringPresentation();
 
     @Generated
     @IsOptional
@@ -289,6 +303,10 @@ public class UISearchController extends UIViewController
     public native void setHidesNavigationBarDuringPresentation(boolean value);
 
     @Generated
+    @Selector("setObscuresBackgroundDuringPresentation:")
+    public native void setObscuresBackgroundDuringPresentation(boolean value);
+
+    @Generated
     @Selector("setSearchResultsUpdater:")
     public native void setSearchResultsUpdater_unsafe(@Mapped(ObjCObjectMapper.class) UISearchResultsUpdating value);
 
@@ -307,16 +325,4 @@ public class UISearchController extends UIViewController
     @Generated
     @Selector("transitionDuration:")
     public native double transitionDuration(@Mapped(ObjCObjectMapper.class) Object transitionContext);
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native UISearchController initWithCoder(NSCoder aDecoder);
-
-    @Generated
-    @Selector("obscuresBackgroundDuringPresentation")
-    public native boolean obscuresBackgroundDuringPresentation();
-
-    @Generated
-    @Selector("setObscuresBackgroundDuringPresentation:")
-    public native void setObscuresBackgroundDuringPresentation(boolean value);
 }

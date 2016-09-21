@@ -55,21 +55,13 @@ public class EKRecurrenceDayOfWeek extends NSObject implements NSCopying {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native EKRecurrenceDayOfWeek alloc();
-
-    @Generated
-    @Selector("dayOfWeek:")
-    public static native EKRecurrenceDayOfWeek dayOfWeek(@NInt long dayOfTheWeek);
-
-    @Generated
-    @Selector("dayOfWeek:weekNumber:")
-    public static native EKRecurrenceDayOfWeek dayOfWeekWeekNumber(@NInt long dayOfTheWeek, @NInt long weekNumber);
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -97,6 +89,14 @@ public class EKRecurrenceDayOfWeek extends NSObject implements NSCopying {
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
+
+    @Generated
+    @Selector("dayOfWeek:")
+    public static native EKRecurrenceDayOfWeek dayOfWeek(@NInt long dayOfTheWeek);
+
+    @Generated
+    @Selector("dayOfWeek:weekNumber:")
+    public static native EKRecurrenceDayOfWeek dayOfWeekWeekNumber(@NInt long dayOfTheWeek, @NInt long weekNumber);
 
     @Generated
     @Selector("debugDescription")

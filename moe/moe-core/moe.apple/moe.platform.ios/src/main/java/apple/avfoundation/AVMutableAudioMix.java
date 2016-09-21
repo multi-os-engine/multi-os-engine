@@ -54,22 +54,22 @@ public class AVMutableAudioMix extends AVAudioMix {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native AVMutableAudioMix alloc();
 
     @Generated
-    @Selector("audioMix")
-    public static native AVMutableAudioMix audioMix();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
-
-    @Generated
     @Selector("allocWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object allocWithZone(VoidPtr zone);
+
+    @Generated
+    @Selector("audioMix")
+    public static native AVMutableAudioMix audioMix();
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -151,7 +151,7 @@ public class AVMutableAudioMix extends AVAudioMix {
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")

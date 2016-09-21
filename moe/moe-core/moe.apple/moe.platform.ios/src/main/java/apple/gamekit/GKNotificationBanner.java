@@ -55,24 +55,13 @@ public class GKNotificationBanner extends NSObject {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native GKNotificationBanner alloc();
-
-    @Generated
-    @Selector("showBannerWithTitle:message:completionHandler:")
-    public static native void showBannerWithTitleMessageCompletionHandler(String title, String message,
-            @ObjCBlock(name = "call_showBannerWithTitleMessageCompletionHandler") Block_showBannerWithTitleMessageCompletionHandler completionHandler);
-
-    @Generated
-    @Selector("showBannerWithTitle:message:duration:completionHandler:")
-    public static native void showBannerWithTitleMessageDurationCompletionHandler(String title, String message,
-            double duration,
-            @ObjCBlock(name = "call_showBannerWithTitleMessageDurationCompletionHandler") Block_showBannerWithTitleMessageDurationCompletionHandler completionHandler);
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -159,7 +148,18 @@ public class GKNotificationBanner extends NSObject {
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
+
+    @Generated
+    @Selector("showBannerWithTitle:message:completionHandler:")
+    public static native void showBannerWithTitleMessageCompletionHandler(String title, String message,
+            @ObjCBlock(name = "call_showBannerWithTitleMessageCompletionHandler") Block_showBannerWithTitleMessageCompletionHandler completionHandler);
+
+    @Generated
+    @Selector("showBannerWithTitle:message:duration:completionHandler:")
+    public static native void showBannerWithTitleMessageDurationCompletionHandler(String title, String message,
+            double duration,
+            @ObjCBlock(name = "call_showBannerWithTitleMessageDurationCompletionHandler") Block_showBannerWithTitleMessageDurationCompletionHandler completionHandler);
 
     @Generated
     @Selector("superclass")

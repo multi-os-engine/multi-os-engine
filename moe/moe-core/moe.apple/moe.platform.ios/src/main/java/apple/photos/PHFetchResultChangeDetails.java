@@ -45,7 +45,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @Library("Photos")
 @Runtime(ObjCRuntime.class)
 @ObjCClassBinding
-public class PHFetchResultChangeDetails extends NSObject {
+public class PHFetchResultChangeDetails<_ObjectType> extends NSObject {
     static {
         NatJ.register();
     }
@@ -56,18 +56,13 @@ public class PHFetchResultChangeDetails extends NSObject {
     }
 
     @Generated
-    @Owned
-    @Selector("alloc")
-    public static native PHFetchResultChangeDetails alloc();
-
-    @Generated
-    @Selector("changeDetailsFromFetchResult:toFetchResult:changedObjects:")
-    public static native PHFetchResultChangeDetails changeDetailsFromFetchResultToFetchResultChangedObjects(
-            PHFetchResult<?> fromResult, PHFetchResult<?> toResult, NSArray<? extends PHObject> changedObjects);
-
-    @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
+    @Owned
+    @Selector("alloc")
+    public static native PHFetchResultChangeDetails<?> alloc();
 
     @Generated
     @Selector("allocWithZone:")
@@ -87,6 +82,12 @@ public class PHFetchResultChangeDetails extends NSObject {
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
             @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
             @Mapped(ObjCObjectMapper.class) Object anArgument);
+
+    @Generated
+    @Selector("changeDetailsFromFetchResult:toFetchResult:changedObjects:")
+    public static native <_ObjectType> PHFetchResultChangeDetails<?> changeDetailsFromFetchResultToFetchResultChangedObjects(
+            PHFetchResult<PHObject> fromResult, PHFetchResult<PHObject> toResult,
+            NSArray<? extends PHObject> changedObjects);
 
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
@@ -154,7 +155,7 @@ public class PHFetchResultChangeDetails extends NSObject {
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")
@@ -180,11 +181,11 @@ public class PHFetchResultChangeDetails extends NSObject {
 
     @Generated
     @Selector("fetchResultAfterChanges")
-    public native PHFetchResult<?> fetchResultAfterChanges();
+    public native PHFetchResult<PHObject> fetchResultAfterChanges();
 
     @Generated
     @Selector("fetchResultBeforeChanges")
-    public native PHFetchResult<?> fetchResultBeforeChanges();
+    public native PHFetchResult<PHObject> fetchResultBeforeChanges();
 
     @Generated
     @Selector("hasIncrementalChanges")
@@ -196,7 +197,7 @@ public class PHFetchResultChangeDetails extends NSObject {
 
     @Generated
     @Selector("init")
-    public native PHFetchResultChangeDetails init();
+    public native PHFetchResultChangeDetails<?> init();
 
     @Generated
     @Selector("insertedIndexes")

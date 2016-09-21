@@ -56,17 +56,13 @@ public class UICollectionViewTransitionLayout extends UICollectionViewLayout {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native UICollectionViewTransitionLayout alloc();
-
-    @Generated
-    @Selector("layoutAttributesClass")
-    public static native Class layoutAttributesClass();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -138,6 +134,10 @@ public class UICollectionViewTransitionLayout extends UICollectionViewLayout {
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
     @Generated
+    @Selector("layoutAttributesClass")
+    public static native Class layoutAttributesClass();
+
+    @Generated
     @Selector("load")
     public static native void load_objc_static();
 
@@ -177,6 +177,10 @@ public class UICollectionViewTransitionLayout extends UICollectionViewLayout {
     public native UICollectionViewTransitionLayout init();
 
     @Generated
+    @Selector("initWithCoder:")
+    public native UICollectionViewTransitionLayout initWithCoder(NSCoder aDecoder);
+
+    @Generated
     @Selector("initWithCurrentLayout:nextLayout:")
     public native UICollectionViewTransitionLayout initWithCurrentLayoutNextLayout(UICollectionViewLayout currentLayout,
             UICollectionViewLayout newLayout);
@@ -202,8 +206,4 @@ public class UICollectionViewTransitionLayout extends UICollectionViewLayout {
     @Selector("valueForAnimatedKey:")
     @NFloat
     public native double valueForAnimatedKey(String key);
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native UICollectionViewTransitionLayout initWithCoder(NSCoder aDecoder);
 }

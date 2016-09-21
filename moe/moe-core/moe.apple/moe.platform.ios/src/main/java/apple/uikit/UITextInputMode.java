@@ -57,26 +57,17 @@ public class UITextInputMode extends NSObject implements NSSecureCoding {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Selector("activeInputModes")
-    public static native NSArray<String> activeInputModes();
+    public static native NSArray<? extends UITextInputMode> activeInputModes();
 
     @Generated
     @Owned
     @Selector("alloc")
     public static native UITextInputMode alloc();
-
-    @Generated
-    @Deprecated
-    @Selector("currentInputMode")
-    public static native UITextInputMode currentInputMode();
-
-    @Generated
-    @Selector("supportsSecureCoding")
-    public static native boolean supportsSecureCoding();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -104,6 +95,11 @@ public class UITextInputMode extends NSObject implements NSSecureCoding {
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
+
+    @Generated
+    @Deprecated
+    @Selector("currentInputMode")
+    public static native UITextInputMode currentInputMode();
 
     @Generated
     @Selector("debugDescription")
@@ -163,16 +159,20 @@ public class UITextInputMode extends NSObject implements NSSecureCoding {
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")
     public static native Class superclass_static();
 
     @Generated
+    @Selector("supportsSecureCoding")
+    public static native boolean supportsSecureCoding();
+
+    @Generated
     @Selector("version")
     @NInt
-    public static native long version();
+    public static native long version_static();
 
     @Generated
     @Selector("encodeWithCoder:")

@@ -58,31 +58,13 @@ public class SCNTube extends SCNGeometry {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native SCNTube alloc();
-
-    @Generated
-    @Selector("geometry")
-    public static native SCNTube geometry();
-
-    @Generated
-    @Selector("geometryWithSources:elements:")
-    public static native SCNTube geometryWithSourcesElements(NSArray<? extends SCNGeometrySource> sources,
-            NSArray<? extends SCNGeometryElement> elements);
-
-    @Generated
-    @Selector("tubeWithInnerRadius:outerRadius:height:")
-    public static native SCNTube tubeWithInnerRadiusOuterRadiusHeight(@NFloat double innerRadius,
-            @NFloat double outerRadius, @NFloat double height);
-
-    @Generated
-    @Selector("geometryWithMDLMesh:")
-    public static native SCNTube geometryWithMDLMesh(MDLMesh mdlMesh);
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -118,6 +100,19 @@ public class SCNTube extends SCNGeometry {
     @Generated
     @Selector("description")
     public static native String description_static();
+
+    @Generated
+    @Selector("geometry")
+    public static native SCNTube geometry();
+
+    @Generated
+    @Selector("geometryWithMDLMesh:")
+    public static native SCNTube geometryWithMDLMesh(MDLMesh mdlMesh);
+
+    @Generated
+    @Selector("geometryWithSources:elements:")
+    public static native SCNTube geometryWithSourcesElements(NSArray<? extends SCNGeometrySource> sources,
+            NSArray<? extends SCNGeometryElement> elements);
 
     @Generated
     @Selector("hash")
@@ -180,6 +175,11 @@ public class SCNTube extends SCNGeometry {
     public static native boolean supportsSecureCoding();
 
     @Generated
+    @Selector("tubeWithInnerRadius:outerRadius:height:")
+    public static native SCNTube tubeWithInnerRadiusOuterRadiusHeight(@NFloat double innerRadius,
+            @NFloat double outerRadius, @NFloat double height);
+
+    @Generated
     @Selector("version")
     @NInt
     public static native long version_static();
@@ -197,6 +197,10 @@ public class SCNTube extends SCNGeometry {
     @Generated
     @Selector("init")
     public native SCNTube init();
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native SCNTube initWithCoder(NSCoder aDecoder);
 
     @Generated
     @Selector("innerRadius")
@@ -232,10 +236,6 @@ public class SCNTube extends SCNGeometry {
     @Generated
     @Selector("setRadialSegmentCount:")
     public native void setRadialSegmentCount(@NInt long value);
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native SCNTube initWithCoder(NSCoder aDecoder);
 
     @Generated
     @ProtocolClassMethod("supportsSecureCoding")

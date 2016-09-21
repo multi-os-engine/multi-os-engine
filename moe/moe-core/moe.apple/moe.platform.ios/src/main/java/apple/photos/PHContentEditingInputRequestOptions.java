@@ -56,13 +56,13 @@ public class PHContentEditingInputRequestOptions extends NSObject {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native PHContentEditingInputRequestOptions alloc();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -149,7 +149,7 @@ public class PHContentEditingInputRequestOptions extends NSObject {
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")
@@ -159,6 +159,11 @@ public class PHContentEditingInputRequestOptions extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("canHandleAdjustmentData")
+    @ObjCBlock(name = "call_canHandleAdjustmentData_ret")
+    public native Block_canHandleAdjustmentData_ret canHandleAdjustmentData();
 
     @Generated
     @Selector("init")
@@ -173,6 +178,11 @@ public class PHContentEditingInputRequestOptions extends NSObject {
     public native void setNetworkAccessAllowed(boolean value);
 
     @Generated
+    @Selector("progressHandler")
+    @ObjCBlock(name = "call_progressHandler_ret")
+    public native Block_progressHandler_ret progressHandler();
+
+    @Generated
     @Selector("setCanHandleAdjustmentData:")
     public native void setCanHandleAdjustmentData(
             @ObjCBlock(name = "call_setCanHandleAdjustmentData") Block_setCanHandleAdjustmentData value);
@@ -180,30 +190,6 @@ public class PHContentEditingInputRequestOptions extends NSObject {
     @Generated
     @Selector("setProgressHandler:")
     public native void setProgressHandler(@ObjCBlock(name = "call_setProgressHandler") Block_setProgressHandler value);
-
-    @Generated
-    @Selector("canHandleAdjustmentData")
-    @ObjCBlock(name = "call_canHandleAdjustmentData_ret")
-    public native Block_canHandleAdjustmentData_ret canHandleAdjustmentData();
-
-    @Generated
-    @Selector("progressHandler")
-    @ObjCBlock(name = "call_progressHandler_ret")
-    public native Block_progressHandler_ret progressHandler();
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_setCanHandleAdjustmentData {
-        @Generated
-        boolean call_setCanHandleAdjustmentData(PHAdjustmentData arg0);
-    }
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_setProgressHandler {
-        @Generated
-        void call_setProgressHandler(double arg0, BoolPtr arg1);
-    }
 
     @Runtime(ObjCRuntime.class)
     @Generated
@@ -217,5 +203,19 @@ public class PHContentEditingInputRequestOptions extends NSObject {
     public interface Block_progressHandler_ret {
         @Generated
         void call_progressHandler_ret(double arg0, BoolPtr arg1);
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_setCanHandleAdjustmentData {
+        @Generated
+        boolean call_setCanHandleAdjustmentData(PHAdjustmentData arg0);
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_setProgressHandler {
+        @Generated
+        void call_setProgressHandler(double arg0, BoolPtr arg1);
     }
 }

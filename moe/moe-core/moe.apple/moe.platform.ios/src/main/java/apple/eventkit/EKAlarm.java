@@ -56,6 +56,10 @@ public class EKAlarm extends EKObject implements NSCopying {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Selector("alarmWithAbsoluteDate:")
     public static native EKAlarm alarmWithAbsoluteDate(NSDate date);
 
@@ -67,10 +71,6 @@ public class EKAlarm extends EKObject implements NSCopying {
     @Owned
     @Selector("alloc")
     public static native EKAlarm alloc();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")

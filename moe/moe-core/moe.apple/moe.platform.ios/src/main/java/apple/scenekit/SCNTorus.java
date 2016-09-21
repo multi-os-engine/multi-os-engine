@@ -58,30 +58,13 @@ public class SCNTorus extends SCNGeometry {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native SCNTorus alloc();
-
-    @Generated
-    @Selector("geometry")
-    public static native SCNTorus geometry();
-
-    @Generated
-    @Selector("geometryWithSources:elements:")
-    public static native SCNTorus geometryWithSourcesElements(NSArray<? extends SCNGeometrySource> sources,
-            NSArray<? extends SCNGeometryElement> elements);
-
-    @Generated
-    @Selector("torusWithRingRadius:pipeRadius:")
-    public static native SCNTorus torusWithRingRadiusPipeRadius(@NFloat double ringRadius, @NFloat double pipeRadius);
-
-    @Generated
-    @Selector("geometryWithMDLMesh:")
-    public static native SCNTorus geometryWithMDLMesh(MDLMesh mdlMesh);
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -117,6 +100,19 @@ public class SCNTorus extends SCNGeometry {
     @Generated
     @Selector("description")
     public static native String description_static();
+
+    @Generated
+    @Selector("geometry")
+    public static native SCNTorus geometry();
+
+    @Generated
+    @Selector("geometryWithMDLMesh:")
+    public static native SCNTorus geometryWithMDLMesh(MDLMesh mdlMesh);
+
+    @Generated
+    @Selector("geometryWithSources:elements:")
+    public static native SCNTorus geometryWithSourcesElements(NSArray<? extends SCNGeometrySource> sources,
+            NSArray<? extends SCNGeometryElement> elements);
 
     @Generated
     @Selector("hash")
@@ -179,6 +175,10 @@ public class SCNTorus extends SCNGeometry {
     public static native boolean supportsSecureCoding();
 
     @Generated
+    @Selector("torusWithRingRadius:pipeRadius:")
+    public static native SCNTorus torusWithRingRadiusPipeRadius(@NFloat double ringRadius, @NFloat double pipeRadius);
+
+    @Generated
     @Selector("version")
     @NInt
     public static native long version_static();
@@ -186,6 +186,10 @@ public class SCNTorus extends SCNGeometry {
     @Generated
     @Selector("init")
     public native SCNTorus init();
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native SCNTorus initWithCoder(NSCoder aDecoder);
 
     @Generated
     @Selector("pipeRadius")
@@ -222,10 +226,6 @@ public class SCNTorus extends SCNGeometry {
     @Generated
     @Selector("setRingSegmentCount:")
     public native void setRingSegmentCount(@NInt long value);
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native SCNTorus initWithCoder(NSCoder aDecoder);
 
     @Generated
     @ProtocolClassMethod("supportsSecureCoding")

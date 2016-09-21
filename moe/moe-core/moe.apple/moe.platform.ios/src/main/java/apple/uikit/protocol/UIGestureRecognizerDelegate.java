@@ -42,6 +42,13 @@ public interface UIGestureRecognizerDelegate {
 
     @Generated
     @IsOptional
+    @Selector("gestureRecognizer:shouldReceivePress:")
+    default boolean gestureRecognizerShouldReceivePress(UIGestureRecognizer gestureRecognizer, UIPress press) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Generated
+    @IsOptional
     @Selector("gestureRecognizer:shouldReceiveTouch:")
     default boolean gestureRecognizerShouldReceiveTouch(UIGestureRecognizer gestureRecognizer, UITouch touch) {
         throw new java.lang.UnsupportedOperationException();
@@ -67,13 +74,6 @@ public interface UIGestureRecognizerDelegate {
     @IsOptional
     @Selector("gestureRecognizerShouldBegin:")
     default boolean gestureRecognizerShouldBegin(UIGestureRecognizer gestureRecognizer) {
-        throw new java.lang.UnsupportedOperationException();
-    }
-
-    @Generated
-    @IsOptional
-    @Selector("gestureRecognizer:shouldReceivePress:")
-    default boolean gestureRecognizerShouldReceivePress(UIGestureRecognizer gestureRecognizer, UIPress press) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

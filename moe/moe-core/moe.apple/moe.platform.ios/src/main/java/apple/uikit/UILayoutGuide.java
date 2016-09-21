@@ -58,13 +58,13 @@ public class UILayoutGuide extends NSObject implements NSCoding {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native UILayoutGuide alloc();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -133,7 +133,7 @@ public class UILayoutGuide extends NSObject implements NSCoding {
 
     @Generated
     @Selector("load")
-    public static native void load_objc();
+    public static native void load_objc_static();
 
     @Generated
     @Owned
@@ -151,7 +151,7 @@ public class UILayoutGuide extends NSObject implements NSCoding {
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")
@@ -160,7 +160,7 @@ public class UILayoutGuide extends NSObject implements NSCoding {
     @Generated
     @Selector("version")
     @NInt
-    public static native long version();
+    public static native long version_static();
 
     @Generated
     @Selector("bottomAnchor")
@@ -175,8 +175,16 @@ public class UILayoutGuide extends NSObject implements NSCoding {
     public native NSLayoutYAxisAnchor centerYAnchor();
 
     @Generated
+    @Selector("constraintsAffectingLayoutForAxis:")
+    public native NSArray<? extends NSLayoutConstraint> constraintsAffectingLayoutForAxis(@NInt long axis);
+
+    @Generated
     @Selector("encodeWithCoder:")
     public native void encodeWithCoder(NSCoder aCoder);
+
+    @Generated
+    @Selector("hasAmbiguousLayout")
+    public native boolean hasAmbiguousLayout();
 
     @Generated
     @Selector("heightAnchor")

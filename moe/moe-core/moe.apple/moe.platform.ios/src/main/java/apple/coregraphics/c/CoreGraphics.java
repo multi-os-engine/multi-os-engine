@@ -23,7 +23,7 @@ import apple.corefoundation.opaque.CFDictionaryRef;
 import apple.corefoundation.opaque.CFMutableDataRef;
 import apple.corefoundation.opaque.CFStringRef;
 import apple.corefoundation.opaque.CFURLRef;
-import apple.coregraphics.opaque.CGColorConverterRef;
+import apple.coregraphics.opaque.CGColorConversionInfoRef;
 import apple.coregraphics.opaque.CGColorRef;
 import apple.coregraphics.opaque.CGColorSpaceRef;
 import apple.coregraphics.opaque.CGContextRef;
@@ -447,6 +447,10 @@ public final class CoreGraphics {
 
     @Generated
     @CFunction
+    public static native CGColorSpaceRef CGColorSpaceCreateWithPlatformColorSpace(ConstVoidPtr ref);
+
+    @Generated
+    @CFunction
     public static native CGColorSpaceRef CGColorSpaceCreateWithName(CFStringRef name);
 
     @Generated
@@ -456,6 +460,10 @@ public final class CoreGraphics {
     @Generated
     @CFunction
     public static native void CGColorSpaceRelease(CGColorSpaceRef space);
+
+    @Generated
+    @CFunction
+    public static native CFStringRef CGColorSpaceCopyName(CGColorSpaceRef space);
 
     @Generated
     @CFunction
@@ -487,6 +495,18 @@ public final class CoreGraphics {
     @Generated
     @CFunction
     public static native CFDataRef CGColorSpaceCopyICCProfile(CGColorSpaceRef space);
+
+    @Generated
+    @CFunction
+    public static native CFDataRef CGColorSpaceCopyICCData(CGColorSpaceRef space);
+
+    @Generated
+    @CFunction
+    public static native boolean CGColorSpaceIsWideGamutRGB(CGColorSpaceRef arg1);
+
+    @Generated
+    @CFunction
+    public static native boolean CGColorSpaceSupportsOutput(CGColorSpaceRef space);
 
     @Generated
     @CFunction
@@ -524,6 +544,11 @@ public final class CoreGraphics {
     @Generated
     @CFunction
     public static native CGColorRef CGColorCreateCopyWithAlpha(CGColorRef color, @NFloat double alpha);
+
+    @Generated
+    @CFunction
+    public static native CGColorRef CGColorCreateCopyByMatchingToColorSpace(CGColorSpaceRef arg1, int intent,
+            CGColorRef color, CFDictionaryRef options);
 
     @Generated
     @CFunction
@@ -813,6 +838,10 @@ public final class CoreGraphics {
     @Generated
     @CFunction
     public static native int CGImageGetBitmapInfo(CGImageRef image);
+
+    @Generated
+    @CFunction
+    public static native CFStringRef CGImageGetUTType(CGImageRef image);
 
     @Generated
     @CFunction
@@ -1883,6 +1912,21 @@ public final class CoreGraphics {
     @Generated
     @CFunction
     @NUInt
+    public static native long CGColorConversionInfoGetTypeID();
+
+    @Generated
+    @CFunction
+    public static native CGColorConversionInfoRef CGColorConversionInfoCreate(CGColorSpaceRef src, CGColorSpaceRef dst);
+
+    @Generated
+    @Variadic()
+    @CFunction
+    public static native CGColorConversionInfoRef CGColorConversionInfoCreateFromList(CFDictionaryRef options,
+            CGColorSpaceRef arg2, int arg3, int arg4, Object... varargs);
+
+    @Generated
+    @CFunction
+    @NUInt
     public static native long CGDataConsumerGetTypeID();
 
     @Generated
@@ -2118,6 +2162,86 @@ public final class CoreGraphics {
 
     @Generated
     @CVariable()
+    public static native CFStringRef kCGColorSpaceGenericGray();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGColorSpaceGenericRGB();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGColorSpaceGenericCMYK();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGColorSpaceDisplayP3();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGColorSpaceGenericRGBLinear();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGColorSpaceAdobeRGB1998();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGColorSpaceSRGB();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGColorSpaceGenericGrayGamma2_2();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGColorSpaceGenericXYZ();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGColorSpaceACESCGLinear();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGColorSpaceITUR_709();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGColorSpaceITUR_2020();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGColorSpaceROMMRGB();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGColorSpaceDCIP3();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGColorSpaceExtendedSRGB();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGColorSpaceLinearSRGB();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGColorSpaceExtendedLinearSRGB();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGColorSpaceExtendedGray();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGColorSpaceLinearGray();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGColorSpaceExtendedLinearGray();
+
+    @Generated
+    @CVariable()
     public static native CFStringRef kCGFontVariationAxisName();
 
     @Generated
@@ -2131,6 +2255,10 @@ public final class CoreGraphics {
     @Generated
     @CVariable()
     public static native CFStringRef kCGFontVariationAxisDefaultValue();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGColorConversionBlackPointCompensation();
 
     @Generated
     @CVariable()
@@ -2191,94 +2319,6 @@ public final class CoreGraphics {
     @Generated
     @CVariable()
     public static native CFStringRef kCGPDFContextAllowsCopying();
-
-    @Generated
-    @CFunction
-    public static native CGColorSpaceRef CGColorSpaceCreateWithPlatformColorSpace(ConstVoidPtr ref);
-
-    @Generated
-    @CFunction
-    public static native CGColorRef CGColorCreateCopyByMatchingToColorSpace(CGColorSpaceRef arg1, int intent,
-            CGColorRef color, CFDictionaryRef options);
-
-    @Generated
-    @CFunction
-    public static native CFStringRef CGImageGetUTType(CGImageRef image);
-
-    @Generated
-    @CVariable()
-    public static native CFStringRef kCGColorSpaceGenericGray();
-
-    @Generated
-    @CVariable()
-    public static native CFStringRef kCGColorSpaceGenericRGB();
-
-    @Generated
-    @CVariable()
-    public static native CFStringRef kCGColorSpaceGenericCMYK();
-
-    @Generated
-    @CVariable()
-    public static native CFStringRef kCGColorSpaceGenericRGBLinear();
-
-    @Generated
-    @CVariable()
-    public static native CFStringRef kCGColorSpaceAdobeRGB1998();
-
-    @Generated
-    @CVariable()
-    public static native CFStringRef kCGColorSpaceSRGB();
-
-    @Generated
-    @CVariable()
-    public static native CFStringRef kCGColorSpaceGenericGrayGamma2_2();
-
-    @Generated
-    @CVariable()
-    public static native CFStringRef kCGColorSpaceGenericXYZ();
-
-    @Generated
-    @CVariable()
-    public static native CFStringRef kCGColorSpaceACESCGLinear();
-
-    @Generated
-    @CVariable()
-    public static native CFStringRef kCGColorSpaceITUR_709();
-
-    @Generated
-    @CVariable()
-    public static native CFStringRef kCGColorSpaceITUR_2020();
-
-    @Generated
-    @CVariable()
-    public static native CFStringRef kCGColorSpaceROMMRGB();
-
-    @Generated
-    @CFunction
-    @NUInt
-    public static native long CGColorConverterGetTypeID();
-
-    @Generated
-    @Variadic()
-    @CFunction
-    public static native CGColorConverterRef CGColorConverterCreate(CFDictionaryRef options, CGColorSpaceRef arg2,
-            int arg3, int arg4, Object... varargs);
-
-    @Generated
-    @CFunction
-    public static native CGColorConverterRef CGColorConverterCreateSimple(CGColorSpaceRef from, CGColorSpaceRef to);
-
-    @Generated
-    @CFunction
-    public static native void CGColorConverterRelease(CGColorConverterRef arg1);
-
-    @Generated
-    @CVariable()
-    public static native CFStringRef kCGColorSpaceDisplayP3();
-
-    @Generated
-    @CVariable()
-    public static native CFStringRef kCGColorSpaceDCIP3();
 
     @Runtime(CRuntime.class)
     @Generated

@@ -23,6 +23,7 @@ import apple.uikit.UITextView;
 import org.moe.natj.general.ann.ByValue;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.Library;
+import org.moe.natj.general.ann.NInt;
 import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.IsOptional;
@@ -52,9 +53,25 @@ public interface UITextViewDelegate extends UIScrollViewDelegate {
 
     @Generated
     @IsOptional
+    @Selector("textView:shouldInteractWithTextAttachment:inRange:interaction:")
+    default boolean textViewShouldInteractWithTextAttachmentInRangeInteraction(UITextView textView,
+            NSTextAttachment textAttachment, @ByValue NSRange characterRange, @NInt long interaction) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Generated
+    @IsOptional
     @Selector("textView:shouldInteractWithURL:inRange:")
     default boolean textViewShouldInteractWithURLInRange(UITextView textView, NSURL URL,
             @ByValue NSRange characterRange) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Generated
+    @IsOptional
+    @Selector("textView:shouldInteractWithURL:inRange:interaction:")
+    default boolean textViewShouldInteractWithURLInRangeInteraction(UITextView textView, NSURL URL,
+            @ByValue NSRange characterRange, @NInt long interaction) {
         throw new java.lang.UnsupportedOperationException();
     }
 

@@ -71,25 +71,13 @@ public class SCNParticleSystem extends NSObject implements NSCopying, NSSecureCo
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native SCNParticleSystem alloc();
-
-    @Generated
-    @Selector("particleSystem")
-    public static native SCNParticleSystem particleSystem();
-
-    @Generated
-    @Selector("particleSystemNamed:inDirectory:")
-    public static native SCNParticleSystem particleSystemNamedInDirectory(String name, String directory);
-
-    @Generated
-    @Selector("supportsSecureCoding")
-    public static native boolean supportsSecureCoding();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -167,6 +155,14 @@ public class SCNParticleSystem extends NSObject implements NSCopying, NSSecureCo
     public static native Object new_objc();
 
     @Generated
+    @Selector("particleSystem")
+    public static native SCNParticleSystem particleSystem();
+
+    @Generated
+    @Selector("particleSystemNamed:inDirectory:")
+    public static native SCNParticleSystem particleSystemNamedInDirectory(String name, String directory);
+
+    @Generated
     @Selector("resolveClassMethod:")
     public static native boolean resolveClassMethod(SEL sel);
 
@@ -181,6 +177,10 @@ public class SCNParticleSystem extends NSObject implements NSCopying, NSSecureCo
     @Generated
     @Selector("superclass")
     public static native Class superclass_static();
+
+    @Generated
+    @Selector("supportsSecureCoding")
+    public static native boolean supportsSecureCoding();
 
     @Generated
     @Selector("version")
@@ -723,6 +723,10 @@ public class SCNParticleSystem extends NSObject implements NSCopying, NSSecureCo
     @Generated
     @Selector("setSortingMode:")
     public native void setSortingMode(@NInt long value);
+
+    @Generated
+    @Selector("setSpeed:forAnimationKey:")
+    public native void setSpeedForAnimationKey(@NFloat double speed, String key);
 
     @Generated
     @Selector("setSpeedFactor:")

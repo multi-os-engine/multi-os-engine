@@ -71,6 +71,10 @@ public class NSURL extends NSObject implements NSSecureCoding, NSCopying, QLPrev
             NSData bookmarkData, @NUInt long options, NSURL relativeURL, BoolPtr isStale, Ptr<NSError> error);
 
     @Generated
+    @Selector("URLWithDataRepresentation:relativeToURL:")
+    public static native NSURL URLWithDataRepresentationRelativeToURL(NSData data, NSURL baseURL);
+
+    @Generated
     @Selector("URLWithString:")
     public static native NSURL URLWithString(String URLString);
 
@@ -79,64 +83,17 @@ public class NSURL extends NSObject implements NSSecureCoding, NSCopying, QLPrev
     public static native NSURL URLWithStringRelativeToURL(String URLString, NSURL baseURL);
 
     @Generated
-    @Owned
-    @Selector("alloc")
-    public static native NSURL alloc();
-
-    @Generated
-    @Selector("bookmarkDataWithContentsOfURL:error:")
-    public static native NSData bookmarkDataWithContentsOfURLError(NSURL bookmarkFileURL, Ptr<NSError> error);
-
-    @Generated
-    @Selector("fileURLWithFileSystemRepresentation:isDirectory:relativeToURL:")
-    public static native NSURL fileURLWithFileSystemRepresentationIsDirectoryRelativeToURL(
-            @Mapped(CStringMapper.class) String path, boolean isDir, NSURL baseURL);
-
-    @Generated
-    @Selector("fileURLWithPath:")
-    public static native NSURL fileURLWithPath(String path);
-
-    @Generated
-    @Selector("fileURLWithPath:isDirectory:")
-    public static native NSURL fileURLWithPathIsDirectory(String path, boolean isDir);
-
-    @Generated
-    @Selector("fileURLWithPathComponents:")
-    public static native NSURL fileURLWithPathComponents(NSArray<String> components);
-
-    @Generated
-    @Selector("resourceValuesForKeys:fromBookmarkData:")
-    public static native NSDictionary<String, ?> resourceValuesForKeysFromBookmarkData(NSArray<String> keys,
-            NSData bookmarkData);
-
-    @Generated
-    @Selector("supportsSecureCoding")
-    public static native boolean supportsSecureCoding();
-
-    @Generated
-    @Selector("writeBookmarkData:toURL:options:error:")
-    public static native boolean writeBookmarkDataToURLOptionsError(NSData bookmarkData, NSURL bookmarkFileURL,
-            @NUInt long options, Ptr<NSError> error);
-
-    @Generated
-    @Selector("URLWithDataRepresentation:relativeToURL:")
-    public static native NSURL URLWithDataRepresentationRelativeToURL(NSData data, NSURL baseURL);
-
-    @Generated
     @Selector("absoluteURLWithDataRepresentation:relativeToURL:")
     public static native NSURL absoluteURLWithDataRepresentationRelativeToURL(NSData data, NSURL baseURL);
 
     @Generated
-    @Selector("fileURLWithPath:isDirectory:relativeToURL:")
-    public static native NSURL fileURLWithPathIsDirectoryRelativeToURL(String path, boolean isDir, NSURL baseURL);
-
-    @Generated
-    @Selector("fileURLWithPath:relativeToURL:")
-    public static native NSURL fileURLWithPathRelativeToURL(String path, NSURL baseURL);
-
-    @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
+    @Owned
+    @Selector("alloc")
+    public static native NSURL alloc();
 
     @Generated
     @Selector("allocWithZone:")
@@ -146,6 +103,10 @@ public class NSURL extends NSObject implements NSSecureCoding, NSCopying, QLPrev
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
     public static native boolean automaticallyNotifiesObserversForKey(String key);
+
+    @Generated
+    @Selector("bookmarkDataWithContentsOfURL:error:")
+    public static native NSData bookmarkDataWithContentsOfURLError(NSURL bookmarkFileURL, Ptr<NSError> error);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
@@ -172,6 +133,31 @@ public class NSURL extends NSObject implements NSSecureCoding, NSCopying, QLPrev
     @Generated
     @Selector("description")
     public static native String description_static();
+
+    @Generated
+    @Selector("fileURLWithFileSystemRepresentation:isDirectory:relativeToURL:")
+    public static native NSURL fileURLWithFileSystemRepresentationIsDirectoryRelativeToURL(
+            @Mapped(CStringMapper.class) String path, boolean isDir, NSURL baseURL);
+
+    @Generated
+    @Selector("fileURLWithPath:")
+    public static native NSURL fileURLWithPath(String path);
+
+    @Generated
+    @Selector("fileURLWithPath:isDirectory:")
+    public static native NSURL fileURLWithPathIsDirectory(String path, boolean isDir);
+
+    @Generated
+    @Selector("fileURLWithPath:isDirectory:relativeToURL:")
+    public static native NSURL fileURLWithPathIsDirectoryRelativeToURL(String path, boolean isDir, NSURL baseURL);
+
+    @Generated
+    @Selector("fileURLWithPath:relativeToURL:")
+    public static native NSURL fileURLWithPathRelativeToURL(String path, NSURL baseURL);
+
+    @Generated
+    @Selector("fileURLWithPathComponents:")
+    public static native NSURL fileURLWithPathComponents(NSArray<String> components);
 
     @Generated
     @Selector("hash")
@@ -222,17 +208,31 @@ public class NSURL extends NSObject implements NSSecureCoding, NSCopying, QLPrev
     public static native boolean resolveInstanceMethod(SEL sel);
 
     @Generated
+    @Selector("resourceValuesForKeys:fromBookmarkData:")
+    public static native NSDictionary<String, ?> resourceValuesForKeysFromBookmarkData(NSArray<String> keys,
+            NSData bookmarkData);
+
+    @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")
     public static native Class superclass_static();
 
     @Generated
+    @Selector("supportsSecureCoding")
+    public static native boolean supportsSecureCoding();
+
+    @Generated
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("writeBookmarkData:toURL:options:error:")
+    public static native boolean writeBookmarkDataToURLOptionsError(NSData bookmarkData, NSURL bookmarkFileURL,
+            @NUInt long options, Ptr<NSError> error);
 
     @Generated
     @Selector("URLByAppendingPathComponent:")
@@ -294,6 +294,10 @@ public class NSURL extends NSObject implements NSSecureCoding, NSCopying, QLPrev
     public native Object copyWithZone(VoidPtr zone);
 
     @Generated
+    @Selector("dataRepresentation")
+    public native NSData dataRepresentation();
+
+    @Generated
     @Selector("encodeWithCoder:")
     public native void encodeWithCoder(NSCoder aCoder);
 
@@ -328,12 +332,20 @@ public class NSURL extends NSObject implements NSSecureCoding, NSCopying, QLPrev
     public native boolean getResourceValueForKeyError(Ptr<ObjCObject> value, String key, Ptr<NSError> error);
 
     @Generated
+    @Selector("hasDirectoryPath")
+    public native boolean hasDirectoryPath();
+
+    @Generated
     @Selector("host")
     public native String host();
 
     @Generated
     @Selector("init")
     public native NSURL init();
+
+    @Generated
+    @Selector("initAbsoluteURLWithDataRepresentation:relativeToURL:")
+    public native NSURL initAbsoluteURLWithDataRepresentationRelativeToURL(NSData data, NSURL baseURL);
 
     @Generated
     @Selector("initByResolvingBookmarkData:options:relativeToURL:bookmarkDataIsStale:error:")
@@ -354,11 +366,23 @@ public class NSURL extends NSObject implements NSSecureCoding, NSCopying, QLPrev
     public native NSURL initFileURLWithPathIsDirectory(String path, boolean isDir);
 
     @Generated
+    @Selector("initFileURLWithPath:isDirectory:relativeToURL:")
+    public native NSURL initFileURLWithPathIsDirectoryRelativeToURL(String path, boolean isDir, NSURL baseURL);
+
+    @Generated
+    @Selector("initFileURLWithPath:relativeToURL:")
+    public native NSURL initFileURLWithPathRelativeToURL(String path, NSURL baseURL);
+
+    @Generated
     @Selector("initWithCoder:")
     public native NSURL initWithCoder(NSCoder aDecoder);
 
-    @Deprecated
     @Generated
+    @Selector("initWithDataRepresentation:relativeToURL:")
+    public native NSURL initWithDataRepresentationRelativeToURL(NSData data, NSURL baseURL);
+
+    @Generated
+    @Deprecated
     @Selector("initWithScheme:host:path:")
     public native NSURL initWithSchemeHostPath(String scheme, String host, String path);
 
@@ -486,28 +510,4 @@ public class NSURL extends NSObject implements NSSecureCoding, NSCopying, QLPrev
     @Generated
     @Selector("user")
     public native String user();
-
-    @Generated
-    @Selector("dataRepresentation")
-    public native NSData dataRepresentation();
-
-    @Generated
-    @Selector("hasDirectoryPath")
-    public native boolean hasDirectoryPath();
-
-    @Generated
-    @Selector("initAbsoluteURLWithDataRepresentation:relativeToURL:")
-    public native NSURL initAbsoluteURLWithDataRepresentationRelativeToURL(NSData data, NSURL baseURL);
-
-    @Generated
-    @Selector("initFileURLWithPath:isDirectory:relativeToURL:")
-    public native NSURL initFileURLWithPathIsDirectoryRelativeToURL(String path, boolean isDir, NSURL baseURL);
-
-    @Generated
-    @Selector("initFileURLWithPath:relativeToURL:")
-    public native NSURL initFileURLWithPathRelativeToURL(String path, NSURL baseURL);
-
-    @Generated
-    @Selector("initWithDataRepresentation:relativeToURL:")
-    public native NSURL initWithDataRepresentationRelativeToURL(NSData data, NSURL baseURL);
 }

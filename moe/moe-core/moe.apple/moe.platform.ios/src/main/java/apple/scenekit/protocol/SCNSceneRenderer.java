@@ -47,17 +47,59 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @ObjCProtocolName("SCNSceneRenderer")
 public interface SCNSceneRenderer {
     @Generated
+    @Selector("audioEngine")
+    AVAudioEngine audioEngine();
+
+    @Generated
+    @Selector("audioEnvironmentNode")
+    AVAudioEnvironmentNode audioEnvironmentNode();
+
+    @Generated
+    @Selector("audioListener")
+    SCNNode audioListener();
+
+    @Generated
     @Selector("autoenablesDefaultLighting")
     boolean autoenablesDefaultLighting();
+
+    @Generated
+    @Selector("colorPixelFormat")
+    @NUInt
+    long colorPixelFormat();
+
+    @Generated
+    @Selector("commandQueue")
+    @MappedReturn(ObjCObjectMapper.class)
+    Object commandQueue();
 
     @Generated
     @Selector("context")
     VoidPtr context();
 
     @Generated
+    @Selector("currentRenderCommandEncoder")
+    @MappedReturn(ObjCObjectMapper.class)
+    Object currentRenderCommandEncoder();
+
+    @Generated
+    @Selector("debugOptions")
+    @NUInt
+    long debugOptions();
+
+    @Generated
     @Selector("delegate")
     @MappedReturn(ObjCObjectMapper.class)
     Object delegate();
+
+    @Generated
+    @Selector("depthPixelFormat")
+    @NUInt
+    long depthPixelFormat();
+
+    @Generated
+    @Selector("device")
+    @MappedReturn(ObjCObjectMapper.class)
+    Object device();
 
     @Generated
     @Selector("hitTest:options:")
@@ -88,6 +130,10 @@ public interface SCNSceneRenderer {
     boolean loops();
 
     @Generated
+    @Selector("nodesInsideFrustumWithPointOfView:")
+    NSArray<? extends SCNNode> nodesInsideFrustumWithPointOfView(SCNNode pointOfView);
+
+    @Generated
     @Selector("overlaySKScene")
     SKScene overlaySKScene();
 
@@ -106,9 +152,20 @@ public interface SCNSceneRenderer {
             @ObjCBlock(name = "call_prepareObjectsWithCompletionHandler") Block_prepareObjectsWithCompletionHandler completionHandler);
 
     @Generated
+    @Selector("presentScene:withTransition:incomingPointOfView:completionHandler:")
+    void presentSceneWithTransitionIncomingPointOfViewCompletionHandler(SCNScene scene, SKTransition transition,
+            SCNNode pointOfView,
+            @ObjCBlock(name = "call_presentSceneWithTransitionIncomingPointOfViewCompletionHandler") Block_presentSceneWithTransitionIncomingPointOfViewCompletionHandler completionHandler);
+
+    @Generated
     @Selector("projectPoint:")
     @ByValue
     SCNVector3 projectPoint(@ByValue SCNVector3 point);
+
+    @Generated
+    @Selector("renderingAPI")
+    @NUInt
+    long renderingAPI();
 
     @Generated
     @Selector("scene")
@@ -119,8 +176,16 @@ public interface SCNSceneRenderer {
     double sceneTime();
 
     @Generated
+    @Selector("setAudioListener:")
+    void setAudioListener(SCNNode value);
+
+    @Generated
     @Selector("setAutoenablesDefaultLighting:")
     void setAutoenablesDefaultLighting(boolean value);
+
+    @Generated
+    @Selector("setDebugOptions:")
+    void setDebugOptions(@NUInt long value);
 
     @Generated
     @Selector("setDelegate:")
@@ -155,79 +220,14 @@ public interface SCNSceneRenderer {
     boolean showsStatistics();
 
     @Generated
-    @Selector("unprojectPoint:")
-    @ByValue
-    SCNVector3 unprojectPoint(@ByValue SCNVector3 point);
-
-    @Generated
-    @Selector("audioEngine")
-    AVAudioEngine audioEngine();
-
-    @Generated
-    @Selector("audioEnvironmentNode")
-    AVAudioEnvironmentNode audioEnvironmentNode();
-
-    @Generated
-    @Selector("audioListener")
-    SCNNode audioListener();
-
-    @Generated
-    @Selector("colorPixelFormat")
-    @NUInt
-    long colorPixelFormat();
-
-    @Generated
-    @Selector("commandQueue")
-    @MappedReturn(ObjCObjectMapper.class)
-    Object commandQueue();
-
-    @Generated
-    @Selector("currentRenderCommandEncoder")
-    @MappedReturn(ObjCObjectMapper.class)
-    Object currentRenderCommandEncoder();
-
-    @Generated
-    @Selector("debugOptions")
-    @NUInt
-    long debugOptions();
-
-    @Generated
-    @Selector("depthPixelFormat")
-    @NUInt
-    long depthPixelFormat();
-
-    @Generated
-    @Selector("device")
-    @MappedReturn(ObjCObjectMapper.class)
-    Object device();
-
-    @Generated
-    @Selector("nodesInsideFrustumWithPointOfView:")
-    NSArray<? extends SCNNode> nodesInsideFrustumWithPointOfView(SCNNode pointOfView);
-
-    @Generated
-    @Selector("presentScene:withTransition:incomingPointOfView:completionHandler:")
-    void presentSceneWithTransitionIncomingPointOfViewCompletionHandler(SCNScene scene, SKTransition transition,
-            SCNNode pointOfView,
-            @ObjCBlock(name = "call_presentSceneWithTransitionIncomingPointOfViewCompletionHandler") Block_presentSceneWithTransitionIncomingPointOfViewCompletionHandler completionHandler);
-
-    @Generated
-    @Selector("renderingAPI")
-    @NUInt
-    long renderingAPI();
-
-    @Generated
-    @Selector("setAudioListener:")
-    void setAudioListener(SCNNode value);
-
-    @Generated
-    @Selector("setDebugOptions:")
-    void setDebugOptions(@NUInt long value);
-
-    @Generated
     @Selector("stencilPixelFormat")
     @NUInt
     long stencilPixelFormat();
+
+    @Generated
+    @Selector("unprojectPoint:")
+    @ByValue
+    SCNVector3 unprojectPoint(@ByValue SCNVector3 point);
 
     @Runtime(ObjCRuntime.class)
     @Generated

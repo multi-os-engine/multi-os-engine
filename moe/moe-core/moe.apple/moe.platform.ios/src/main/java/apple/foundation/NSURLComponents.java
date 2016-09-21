@@ -54,21 +54,13 @@ public class NSURLComponents extends NSObject implements NSCopying {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native NSURLComponents alloc();
-
-    @Generated
-    @Selector("componentsWithString:")
-    public static native NSURLComponents componentsWithString(String URLString);
-
-    @Generated
-    @Selector("componentsWithURL:resolvingAgainstBaseURL:")
-    public static native NSURLComponents componentsWithURLResolvingAgainstBaseURL(NSURL url, boolean resolve);
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -96,6 +88,14 @@ public class NSURLComponents extends NSObject implements NSCopying {
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
+
+    @Generated
+    @Selector("componentsWithString:")
+    public static native NSURLComponents componentsWithString(String URLString);
+
+    @Generated
+    @Selector("componentsWithURL:resolvingAgainstBaseURL:")
+    public static native NSURLComponents componentsWithURLResolvingAgainstBaseURL(NSURL url, boolean resolve);
 
     @Generated
     @Selector("debugDescription")
@@ -245,6 +245,46 @@ public class NSURLComponents extends NSObject implements NSCopying {
     public native NSArray<? extends NSURLQueryItem> queryItems();
 
     @Generated
+    @Selector("rangeOfFragment")
+    @ByValue
+    public native NSRange rangeOfFragment();
+
+    @Generated
+    @Selector("rangeOfHost")
+    @ByValue
+    public native NSRange rangeOfHost();
+
+    @Generated
+    @Selector("rangeOfPassword")
+    @ByValue
+    public native NSRange rangeOfPassword();
+
+    @Generated
+    @Selector("rangeOfPath")
+    @ByValue
+    public native NSRange rangeOfPath();
+
+    @Generated
+    @Selector("rangeOfPort")
+    @ByValue
+    public native NSRange rangeOfPort();
+
+    @Generated
+    @Selector("rangeOfQuery")
+    @ByValue
+    public native NSRange rangeOfQuery();
+
+    @Generated
+    @Selector("rangeOfScheme")
+    @ByValue
+    public native NSRange rangeOfScheme();
+
+    @Generated
+    @Selector("rangeOfUser")
+    @ByValue
+    public native NSRange rangeOfUser();
+
+    @Generated
     @Selector("scheme")
     public native String scheme();
 
@@ -315,44 +355,4 @@ public class NSURLComponents extends NSObject implements NSCopying {
     @Generated
     @Selector("user")
     public native String user();
-
-    @Generated
-    @Selector("rangeOfFragment")
-    @ByValue
-    public native NSRange rangeOfFragment();
-
-    @Generated
-    @Selector("rangeOfHost")
-    @ByValue
-    public native NSRange rangeOfHost();
-
-    @Generated
-    @Selector("rangeOfPassword")
-    @ByValue
-    public native NSRange rangeOfPassword();
-
-    @Generated
-    @Selector("rangeOfPath")
-    @ByValue
-    public native NSRange rangeOfPath();
-
-    @Generated
-    @Selector("rangeOfPort")
-    @ByValue
-    public native NSRange rangeOfPort();
-
-    @Generated
-    @Selector("rangeOfQuery")
-    @ByValue
-    public native NSRange rangeOfQuery();
-
-    @Generated
-    @Selector("rangeOfScheme")
-    @ByValue
-    public native NSRange rangeOfScheme();
-
-    @Generated
-    @Selector("rangeOfUser")
-    @ByValue
-    public native NSRange rangeOfUser();
 }

@@ -58,13 +58,13 @@ public class UIActivityViewController extends UIViewController {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native UIActivityViewController alloc();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -175,6 +175,17 @@ public class UIActivityViewController extends UIViewController {
     public static native long version_static();
 
     @Generated
+    @Deprecated
+    @Selector("completionHandler")
+    @ObjCBlock(name = "call_completionHandler_ret")
+    public native Block_completionHandler_ret completionHandler();
+
+    @Generated
+    @Selector("completionWithItemsHandler")
+    @ObjCBlock(name = "call_completionWithItemsHandler_ret")
+    public native Block_completionWithItemsHandler_ret completionWithItemsHandler();
+
+    @Generated
     @Selector("excludedActivityTypes")
     public native NSArray<String> excludedActivityTypes();
 
@@ -186,6 +197,10 @@ public class UIActivityViewController extends UIViewController {
     @Selector("initWithActivityItems:applicationActivities:")
     public native UIActivityViewController initWithActivityItemsApplicationActivities(NSArray<?> activityItems,
             NSArray<? extends UIActivity> applicationActivities);
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native UIActivityViewController initWithCoder(NSCoder aDecoder);
 
     @Generated
     @Selector("initWithNibName:bundle:")
@@ -206,20 +221,19 @@ public class UIActivityViewController extends UIViewController {
     @Selector("setExcludedActivityTypes:")
     public native void setExcludedActivityTypes(NSArray<String> value);
 
+    @Runtime(ObjCRuntime.class)
     @Generated
-    @Deprecated
-    @Selector("completionHandler")
-    @ObjCBlock(name = "call_completionHandler_ret")
-    public native Block_completionHandler_ret completionHandler();
+    public interface Block_completionHandler_ret {
+        @Generated
+        void call_completionHandler_ret(String arg0, boolean arg1);
+    }
 
+    @Runtime(ObjCRuntime.class)
     @Generated
-    @Selector("completionWithItemsHandler")
-    @ObjCBlock(name = "call_completionWithItemsHandler_ret")
-    public native Block_completionWithItemsHandler_ret completionWithItemsHandler();
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native UIActivityViewController initWithCoder(NSCoder aDecoder);
+    public interface Block_completionWithItemsHandler_ret {
+        @Generated
+        void call_completionWithItemsHandler_ret(String arg0, boolean arg1, NSArray<?> arg2, NSError arg3);
+    }
 
     @Runtime(ObjCRuntime.class)
     @Generated
@@ -233,19 +247,5 @@ public class UIActivityViewController extends UIViewController {
     public interface Block_setCompletionWithItemsHandler {
         @Generated
         void call_setCompletionWithItemsHandler(String arg0, boolean arg1, NSArray<?> arg2, NSError arg3);
-    }
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_completionHandler_ret {
-        @Generated
-        void call_completionHandler_ret(String arg0, boolean arg1);
-    }
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_completionWithItemsHandler_ret {
-        @Generated
-        void call_completionWithItemsHandler_ret(String arg0, boolean arg1, NSArray<?> arg2, NSError arg3);
     }
 }

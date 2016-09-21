@@ -54,13 +54,13 @@ public class NSMassFormatter extends NSFormatter {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native NSMassFormatter alloc();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -168,6 +168,10 @@ public class NSMassFormatter extends NSFormatter {
     public native NSMassFormatter init();
 
     @Generated
+    @Selector("initWithCoder:")
+    public native NSMassFormatter initWithCoder(NSCoder aDecoder);
+
+    @Generated
     @Selector("isForPersonMassUse")
     public native boolean isForPersonMassUse();
 
@@ -207,8 +211,4 @@ public class NSMassFormatter extends NSFormatter {
     @Selector("unitStyle")
     @NInt
     public native long unitStyle();
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native NSMassFormatter initWithCoder(NSCoder aDecoder);
 }

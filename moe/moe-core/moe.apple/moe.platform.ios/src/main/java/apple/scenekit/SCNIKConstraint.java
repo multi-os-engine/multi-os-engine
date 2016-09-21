@@ -59,18 +59,13 @@ public class SCNIKConstraint extends SCNConstraint {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native SCNIKConstraint alloc();
-
-    @Generated
-    @Selector("inverseKinematicsConstraintWithChainRootNode:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object inverseKinematicsConstraintWithChainRootNode(SCNNode chainRootNode);
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -130,6 +125,11 @@ public class SCNIKConstraint extends SCNConstraint {
     public static native boolean instancesRespondToSelector(SEL aSelector);
 
     @Generated
+    @Selector("inverseKinematicsConstraintWithChainRootNode:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object inverseKinematicsConstraintWithChainRootNode(SCNNode chainRootNode);
+
+    @Generated
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
@@ -181,6 +181,14 @@ public class SCNIKConstraint extends SCNConstraint {
     public native SCNIKConstraint init();
 
     @Generated
+    @Selector("initWithChainRootNode:")
+    public native SCNIKConstraint initWithChainRootNode(SCNNode chainRootNode);
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native SCNIKConstraint initWithCoder(NSCoder aDecoder);
+
+    @Generated
     @Selector("maxAllowedRotationAngleForJoint:")
     @NFloat
     public native double maxAllowedRotationAngleForJoint(SCNNode node);
@@ -194,21 +202,13 @@ public class SCNIKConstraint extends SCNConstraint {
     public native void setTargetPosition(@ByValue SCNVector3 value);
 
     @Generated
-    @Selector("targetPosition")
-    @ByValue
-    public native SCNVector3 targetPosition();
-
-    @Generated
-    @Selector("initWithChainRootNode:")
-    public native SCNIKConstraint initWithChainRootNode(SCNNode chainRootNode);
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native SCNIKConstraint initWithCoder(NSCoder aDecoder);
-
-    @Generated
     @ProtocolClassMethod("supportsSecureCoding")
     public boolean _supportsSecureCoding() {
         return supportsSecureCoding();
     }
+
+    @Generated
+    @Selector("targetPosition")
+    @ByValue
+    public native SCNVector3 targetPosition();
 }

@@ -54,13 +54,13 @@ public class MTLArgument extends NSObject {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native MTLArgument alloc();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -147,7 +147,7 @@ public class MTLArgument extends NSObject {
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")
@@ -162,6 +162,11 @@ public class MTLArgument extends NSObject {
     @Selector("access")
     @NUInt
     public native long access();
+
+    @Generated
+    @Selector("arrayLength")
+    @NUInt
+    public native long arrayLength();
 
     @Generated
     @Selector("bufferAlignment")
@@ -194,6 +199,10 @@ public class MTLArgument extends NSObject {
     @Generated
     @Selector("isActive")
     public native boolean isActive();
+
+    @Generated
+    @Selector("isDepthTexture")
+    public native boolean isDepthTexture();
 
     @Generated
     @Selector("name")

@@ -22,6 +22,7 @@ import apple.foundation.NSDictionary;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSNumber;
 import apple.foundation.NSSet;
+import apple.foundation.protocol.NSCopying;
 import apple.foundation.protocol.NSFastEnumeration;
 import org.moe.natj.c.ann.FunctionPtr;
 import org.moe.natj.general.NatJ;
@@ -48,7 +49,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @Library("GameplayKit")
 @Runtime(ObjCRuntime.class)
 @ObjCClassBinding
-public class GKBehavior extends NSObject implements NSFastEnumeration {
+public class GKBehavior extends NSObject implements NSFastEnumeration, NSCopying {
     static {
         NatJ.register();
     }
@@ -59,9 +60,22 @@ public class GKBehavior extends NSObject implements NSFastEnumeration {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native GKBehavior alloc();
+
+    @Generated
+    @Selector("allocWithZone:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object allocWithZone(VoidPtr zone);
+
+    @Generated
+    @Selector("automaticallyNotifiesObserversForKey:")
+    public static native boolean automaticallyNotifiesObserversForKey(String key);
 
     @Generated
     @Selector("behaviorWithGoal:weight:")
@@ -80,19 +94,6 @@ public class GKBehavior extends NSObject implements NSFastEnumeration {
     @Selector("behaviorWithWeightedGoals:")
     public static native GKBehavior behaviorWithWeightedGoals(
             NSDictionary<? extends GKGoal, ? extends NSNumber> weightedGoals);
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
-
-    @Generated
-    @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
-
-    @Generated
-    @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
@@ -180,6 +181,12 @@ public class GKBehavior extends NSObject implements NSFastEnumeration {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Owned
+    @Selector("copyWithZone:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native Object copyWithZone(VoidPtr zone);
 
     @Generated
     @Selector("countByEnumeratingWithState:objects:count:")

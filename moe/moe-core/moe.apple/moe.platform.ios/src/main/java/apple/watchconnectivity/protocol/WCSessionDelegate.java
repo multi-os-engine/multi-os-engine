@@ -39,6 +39,10 @@ import org.moe.natj.objc.ann.Selector;
 @ObjCProtocolName("WCSessionDelegate")
 public interface WCSessionDelegate {
     @Generated
+    @Selector("session:activationDidCompleteWithState:error:")
+    void sessionActivationDidCompleteWithStateError(WCSession session, @NInt long activationState, NSError error);
+
+    @Generated
     @IsOptional
     @Selector("session:didFinishFileTransfer:error:")
     default void sessionDidFinishFileTransferError(WCSession session, WCSessionFileTransfer fileTransfer,
@@ -106,6 +110,14 @@ public interface WCSessionDelegate {
     }
 
     @Generated
+    @Selector("sessionDidBecomeInactive:")
+    void sessionDidBecomeInactive(WCSession session);
+
+    @Generated
+    @Selector("sessionDidDeactivate:")
+    void sessionDidDeactivate(WCSession session);
+
+    @Generated
     @IsOptional
     @Selector("sessionReachabilityDidChange:")
     default void sessionReachabilityDidChange(WCSession session) {
@@ -116,28 +128,6 @@ public interface WCSessionDelegate {
     @IsOptional
     @Selector("sessionWatchStateDidChange:")
     default void sessionWatchStateDidChange(WCSession session) {
-        throw new java.lang.UnsupportedOperationException();
-    }
-
-    @Generated
-    @IsOptional
-    @Selector("session:activationDidCompleteWithState:error:")
-    default void sessionActivationDidCompleteWithStateError(WCSession session, @NInt long activationState,
-            NSError error) {
-        throw new java.lang.UnsupportedOperationException();
-    }
-
-    @Generated
-    @IsOptional
-    @Selector("sessionDidBecomeInactive:")
-    default void sessionDidBecomeInactive(WCSession session) {
-        throw new java.lang.UnsupportedOperationException();
-    }
-
-    @Generated
-    @IsOptional
-    @Selector("sessionDidDeactivate:")
-    default void sessionDidDeactivate(WCSession session) {
         throw new java.lang.UnsupportedOperationException();
     }
 

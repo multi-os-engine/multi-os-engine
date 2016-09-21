@@ -63,25 +63,13 @@ public class SK3DNode extends SKNode {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native SK3DNode alloc();
-
-    @Generated
-    @Selector("node")
-    public static native SK3DNode node();
-
-    @Generated
-    @Selector("nodeWithFileNamed:")
-    public static native SK3DNode nodeWithFileNamed(String filename);
-
-    @Generated
-    @Selector("nodeWithViewportSize:")
-    public static native SK3DNode nodeWithViewportSize(@ByValue CGSize viewportSize);
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -154,13 +142,25 @@ public class SK3DNode extends SKNode {
 
     @Generated
     @Selector("load")
-    public static native void load_objc();
+    public static native void load_objc_static();
 
     @Generated
     @Owned
     @Selector("new")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object new_objc();
+
+    @Generated
+    @Selector("node")
+    public static native SK3DNode node();
+
+    @Generated
+    @Selector("nodeWithFileNamed:")
+    public static native SK3DNode nodeWithFileNamed(String filename);
+
+    @Generated
+    @Selector("nodeWithViewportSize:")
+    public static native SK3DNode nodeWithViewportSize(@ByValue CGSize viewportSize);
 
     @Generated
     @Selector("obstaclesFromNodeBounds:")
@@ -186,7 +186,7 @@ public class SK3DNode extends SKNode {
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")
@@ -195,7 +195,7 @@ public class SK3DNode extends SKNode {
     @Generated
     @Selector("version")
     @NInt
-    public static native long version();
+    public static native long version_static();
 
     @Generated
     @Selector("autoenablesDefaultLighting")

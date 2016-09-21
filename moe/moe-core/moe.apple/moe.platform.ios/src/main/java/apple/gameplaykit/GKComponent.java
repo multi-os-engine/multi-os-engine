@@ -18,8 +18,10 @@ package apple.gameplaykit;
 
 import apple.NSObject;
 import apple.foundation.NSArray;
+import apple.foundation.NSCoder;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
+import apple.foundation.protocol.NSCoding;
 import apple.foundation.protocol.NSCopying;
 import org.moe.natj.c.ann.FunctionPtr;
 import org.moe.natj.general.NatJ;
@@ -44,7 +46,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @Library("GameplayKit")
 @Runtime(ObjCRuntime.class)
 @ObjCClassBinding
-public class GKComponent extends NSObject implements NSCopying {
+public class GKComponent extends NSObject implements NSCopying, NSCoding {
     static {
         NatJ.register();
     }
@@ -55,13 +57,13 @@ public class GKComponent extends NSObject implements NSCopying {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native GKComponent alloc();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -148,7 +150,7 @@ public class GKComponent extends NSObject implements NSCopying {
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")
@@ -166,6 +168,14 @@ public class GKComponent extends NSObject implements NSCopying {
     public native Object copyWithZone(VoidPtr zone);
 
     @Generated
+    @Selector("didAddToEntity")
+    public native void didAddToEntity();
+
+    @Generated
+    @Selector("encodeWithCoder:")
+    public native void encodeWithCoder(NSCoder aCoder);
+
+    @Generated
     @Selector("entity")
     public native GKEntity entity();
 
@@ -174,6 +184,14 @@ public class GKComponent extends NSObject implements NSCopying {
     public native GKComponent init();
 
     @Generated
+    @Selector("initWithCoder:")
+    public native GKComponent initWithCoder(NSCoder aDecoder);
+
+    @Generated
     @Selector("updateWithDeltaTime:")
     public native void updateWithDeltaTime(double seconds);
+
+    @Generated
+    @Selector("willRemoveFromEntity")
+    public native void willRemoveFromEntity();
 }

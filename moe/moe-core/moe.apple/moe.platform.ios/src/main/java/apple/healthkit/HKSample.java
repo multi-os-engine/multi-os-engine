@@ -57,13 +57,13 @@ public class HKSample extends HKObject {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native HKSample alloc();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -132,7 +132,7 @@ public class HKSample extends HKObject {
 
     @Generated
     @Selector("load")
-    public static native void load_objc();
+    public static native void load_objc_static();
 
     @Generated
     @Owned
@@ -150,7 +150,7 @@ public class HKSample extends HKObject {
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")
@@ -163,7 +163,7 @@ public class HKSample extends HKObject {
     @Generated
     @Selector("version")
     @NInt
-    public static native long version();
+    public static native long version_static();
 
     @Generated
     @Selector("endDate")
@@ -174,16 +174,16 @@ public class HKSample extends HKObject {
     public native HKSample init();
 
     @Generated
+    @Selector("initWithCoder:")
+    public native HKSample initWithCoder(NSCoder aDecoder);
+
+    @Generated
     @Selector("sampleType")
     public native HKSampleType sampleType();
 
     @Generated
     @Selector("startDate")
     public native NSDate startDate();
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native HKSample initWithCoder(NSCoder aDecoder);
 
     @Generated
     @ProtocolClassMethod("supportsSecureCoding")

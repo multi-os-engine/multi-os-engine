@@ -57,18 +57,13 @@ public class CKFetchRecordZonesOperation extends CKDatabaseOperation {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native CKFetchRecordZonesOperation alloc();
-
-    @Generated
-    @Selector("fetchAllRecordZonesOperation")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object fetchAllRecordZonesOperation();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -104,6 +99,11 @@ public class CKFetchRecordZonesOperation extends CKDatabaseOperation {
     @Generated
     @Selector("description")
     public static native String description_static();
+
+    @Generated
+    @Selector("fetchAllRecordZonesOperation")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object fetchAllRecordZonesOperation();
 
     @Generated
     @Selector("hash")
@@ -155,7 +155,7 @@ public class CKFetchRecordZonesOperation extends CKDatabaseOperation {
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")
@@ -165,6 +165,11 @@ public class CKFetchRecordZonesOperation extends CKDatabaseOperation {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("fetchRecordZonesCompletionBlock")
+    @ObjCBlock(name = "call_fetchRecordZonesCompletionBlock_ret")
+    public native Block_fetchRecordZonesCompletionBlock_ret fetchRecordZonesCompletionBlock();
 
     @Generated
     @Selector("init")
@@ -187,24 +192,19 @@ public class CKFetchRecordZonesOperation extends CKDatabaseOperation {
     @Selector("setRecordZoneIDs:")
     public native void setRecordZoneIDs(NSArray<? extends CKRecordZoneID> value);
 
+    @Runtime(ObjCRuntime.class)
     @Generated
-    @Selector("fetchRecordZonesCompletionBlock")
-    @ObjCBlock(name = "call_fetchRecordZonesCompletionBlock_ret")
-    public native Block_fetchRecordZonesCompletionBlock_ret fetchRecordZonesCompletionBlock();
+    public interface Block_fetchRecordZonesCompletionBlock_ret {
+        @Generated
+        void call_fetchRecordZonesCompletionBlock_ret(
+                NSDictionary<? extends CKRecordZoneID, ? extends CKRecordZone> arg0, NSError arg1);
+    }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_setFetchRecordZonesCompletionBlock {
         @Generated
         void call_setFetchRecordZonesCompletionBlock(
-                NSDictionary<? extends CKRecordZoneID, ? extends CKRecordZone> arg0, NSError arg1);
-    }
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_fetchRecordZonesCompletionBlock_ret {
-        @Generated
-        void call_fetchRecordZonesCompletionBlock_ret(
                 NSDictionary<? extends CKRecordZoneID, ? extends CKRecordZone> arg0, NSError arg1);
     }
 }

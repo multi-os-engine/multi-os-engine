@@ -58,17 +58,13 @@ public class NEAppRule extends NSObject implements NSSecureCoding, NSCopying {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native NEAppRule alloc();
-
-    @Generated
-    @Selector("supportsSecureCoding")
-    public static native boolean supportsSecureCoding();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -162,6 +158,10 @@ public class NEAppRule extends NSObject implements NSSecureCoding, NSCopying {
     public static native Class superclass_static();
 
     @Generated
+    @Selector("supportsSecureCoding")
+    public static native boolean supportsSecureCoding();
+
+    @Generated
     @Selector("version")
     @NInt
     public static native long version_static();
@@ -193,6 +193,10 @@ public class NEAppRule extends NSObject implements NSSecureCoding, NSCopying {
     public native NSArray<?> matchDomains();
 
     @Generated
+    @Selector("matchPath")
+    public native String matchPath();
+
+    @Generated
     @Selector("matchSigningIdentifier")
     public native String matchSigningIdentifier();
 
@@ -201,16 +205,12 @@ public class NEAppRule extends NSObject implements NSSecureCoding, NSCopying {
     public native void setMatchDomains(NSArray<?> value);
 
     @Generated
+    @Selector("setMatchPath:")
+    public native void setMatchPath(String value);
+
+    @Generated
     @ProtocolClassMethod("supportsSecureCoding")
     public boolean _supportsSecureCoding() {
         return supportsSecureCoding();
     }
-
-    @Generated
-    @Selector("matchPath")
-    public native String matchPath();
-
-    @Generated
-    @Selector("setMatchPath:")
-    public native void setMatchPath(String value);
 }

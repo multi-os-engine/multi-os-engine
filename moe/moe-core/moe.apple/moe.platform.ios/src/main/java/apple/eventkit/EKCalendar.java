@@ -55,22 +55,13 @@ public class EKCalendar extends EKObject {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native EKCalendar alloc();
-
-    @Generated
-    @Selector("calendarForEntityType:eventStore:")
-    public static native EKCalendar calendarForEntityTypeEventStore(@NUInt long entityType, EKEventStore eventStore);
-
-    @Generated
-    @Deprecated
-    @Selector("calendarWithEventStore:")
-    public static native EKCalendar calendarWithEventStore(EKEventStore eventStore);
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -80,6 +71,15 @@ public class EKCalendar extends EKObject {
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
     public static native boolean automaticallyNotifiesObserversForKey(String key);
+
+    @Generated
+    @Selector("calendarForEntityType:eventStore:")
+    public static native EKCalendar calendarForEntityTypeEventStore(@NUInt long entityType, EKEventStore eventStore);
+
+    @Generated
+    @Deprecated
+    @Selector("calendarWithEventStore:")
+    public static native EKCalendar calendarWithEventStore(EKEventStore eventStore);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
@@ -157,7 +157,7 @@ public class EKCalendar extends EKObject {
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")
@@ -222,8 +222,8 @@ public class EKCalendar extends EKObject {
     @Selector("title")
     public native String title();
 
-    @NInt
     @Generated
     @Selector("type")
+    @NInt
     public native long type();
 }

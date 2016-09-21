@@ -61,13 +61,13 @@ public class EKEventEditViewController extends UINavigationController {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native EKEventEditViewController alloc();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -166,7 +166,7 @@ public class EKEventEditViewController extends UINavigationController {
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")
@@ -175,7 +175,7 @@ public class EKEventEditViewController extends UINavigationController {
     @Generated
     @Selector("version")
     @NInt
-    public static native long version();
+    public static native long version_static();
 
     @Generated
     @Selector("cancelEditing")
@@ -197,6 +197,10 @@ public class EKEventEditViewController extends UINavigationController {
     @Generated
     @Selector("init")
     public native EKEventEditViewController init();
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native EKEventEditViewController initWithCoder(NSCoder aDecoder);
 
     @Generated
     @Selector("initWithNavigationBarClass:toolbarClass:")
@@ -234,8 +238,4 @@ public class EKEventEditViewController extends UINavigationController {
     @Generated
     @Selector("setEventStore:")
     public native void setEventStore(EKEventStore value);
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native EKEventEditViewController initWithCoder(NSCoder aDecoder);
 }

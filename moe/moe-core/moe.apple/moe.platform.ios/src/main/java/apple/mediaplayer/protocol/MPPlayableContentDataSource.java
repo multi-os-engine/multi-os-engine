@@ -54,6 +54,14 @@ public interface MPPlayableContentDataSource {
     MPContentItem contentItemAtIndexPath(NSIndexPath indexPath);
 
     @Generated
+    @IsOptional
+    @Selector("contentItemForIdentifier:completionHandler:")
+    default void contentItemForIdentifierCompletionHandler(String identifier,
+            @ObjCBlock(name = "call_contentItemForIdentifierCompletionHandler") Block_contentItemForIdentifierCompletionHandler completionHandler) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Generated
     @Selector("numberOfChildItemsAtIndexPath:")
     @NInt
     long numberOfChildItemsAtIndexPath(NSIndexPath indexPath);
@@ -63,5 +71,12 @@ public interface MPPlayableContentDataSource {
     public interface Block_beginLoadingChildItemsAtIndexPathCompletionHandler {
         @Generated
         void call_beginLoadingChildItemsAtIndexPathCompletionHandler(NSError arg0);
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_contentItemForIdentifierCompletionHandler {
+        @Generated
+        void call_contentItemForIdentifierCompletionHandler(MPContentItem arg0, NSError arg1);
     }
 }

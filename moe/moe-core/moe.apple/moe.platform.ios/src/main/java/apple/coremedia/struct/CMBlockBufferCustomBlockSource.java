@@ -67,8 +67,18 @@ public final class CMBlockBufferCustomBlockSource extends StructObject {
     public native void setVersion(int value);
 
     @Generated
+    @StructureField(order = 1, isGetter = true)
+    @FunctionPtr(name = "call_AllocateBlock")
+    public native Function_AllocateBlock AllocateBlock();
+
+    @Generated
     @StructureField(order = 1, isGetter = false)
     public native void setAllocateBlock(@FunctionPtr(name = "call_AllocateBlock") Function_AllocateBlock value);
+
+    @Generated
+    @StructureField(order = 2, isGetter = true)
+    @FunctionPtr(name = "call_FreeBlock")
+    public native Function_FreeBlock FreeBlock();
 
     @Generated
     @StructureField(order = 2, isGetter = false)
@@ -81,16 +91,6 @@ public final class CMBlockBufferCustomBlockSource extends StructObject {
     @Generated
     @StructureField(order = 3, isGetter = false)
     public native void setRefCon(VoidPtr value);
-
-    @Generated
-    @StructureField(order = 1, isGetter = true)
-    @FunctionPtr(name = "call_AllocateBlock")
-    public native Function_AllocateBlock AllocateBlock();
-
-    @Generated
-    @StructureField(order = 2, isGetter = true)
-    @FunctionPtr(name = "call_FreeBlock")
-    public native Function_FreeBlock FreeBlock();
 
     @Runtime(CRuntime.class)
     @Generated

@@ -19,6 +19,7 @@ package apple.coreimage;
 import apple.NSObject;
 import apple.coregraphics.struct.CGRect;
 import apple.coreimage.protocol.CIFilterConstructor;
+import apple.corevideo.opaque.CVBufferRef;
 import apple.foundation.NSArray;
 import apple.foundation.NSCoder;
 import apple.foundation.NSData;
@@ -67,70 +68,13 @@ public class CIFilter extends NSObject implements NSSecureCoding, NSCopying {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native CIFilter alloc();
-
-    @Generated
-    @Selector("filterArrayFromSerializedXMP:inputImageExtent:error:")
-    public static native NSArray<? extends CIFilter> filterArrayFromSerializedXMPInputImageExtentError(NSData xmpData,
-            @ByValue CGRect extent, Ptr<NSError> outError);
-
-    @Generated
-    @Selector("filterNamesInCategories:")
-    public static native NSArray<String> filterNamesInCategories(NSArray<String> categories);
-
-    @Generated
-    @Selector("filterNamesInCategory:")
-    public static native NSArray<String> filterNamesInCategory(String category);
-
-    @Generated
-    @Selector("filterWithName:")
-    public static native CIFilter filterWithName(String name);
-
-    @Generated
-    @Variadic()
-    @Selector("filterWithName:keysAndValues:")
-    public static native CIFilter filterWithNameKeysAndValues(String name, @Mapped(ObjCObjectMapper.class) Object key0,
-            Object... varargs);
-
-    @Generated
-    @Selector("filterWithName:withInputParameters:")
-    public static native CIFilter filterWithNameWithInputParameters(String name, NSDictionary<String, ?> params);
-
-    @Generated
-    @Selector("serializedXMPFromFilters:inputImageExtent:")
-    public static native NSData serializedXMPFromFiltersInputImageExtent(NSArray<? extends CIFilter> filters,
-            @ByValue CGRect extent);
-
-    @Generated
-    @Selector("localizedDescriptionForFilterName:")
-    public static native String localizedDescriptionForFilterName(String filterName);
-
-    @Generated
-    @Selector("localizedNameForCategory:")
-    public static native String localizedNameForCategory(String category);
-
-    @Generated
-    @Selector("localizedNameForFilterName:")
-    public static native String localizedNameForFilterName(String filterName);
-
-    @Generated
-    @Selector("localizedReferenceDocumentationForFilterName:")
-    public static native NSURL localizedReferenceDocumentationForFilterName(String filterName);
-
-    @Generated
-    @Selector("registerFilterName:constructor:classAttributes:")
-    public static native void registerFilterNameConstructorClassAttributes(String name,
-            @Mapped(ObjCObjectMapper.class) CIFilterConstructor anObject, NSDictionary<String, ?> attributes);
-
-    @Generated
-    @Selector("supportsSecureCoding")
-    public static native boolean supportsSecureCoding();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -168,6 +112,46 @@ public class CIFilter extends NSObject implements NSSecureCoding, NSCopying {
     public static native String description_static();
 
     @Generated
+    @Selector("filterArrayFromSerializedXMP:inputImageExtent:error:")
+    public static native NSArray<? extends CIFilter> filterArrayFromSerializedXMPInputImageExtentError(NSData xmpData,
+            @ByValue CGRect extent, Ptr<NSError> outError);
+
+    @Generated
+    @Selector("filterNamesInCategories:")
+    public static native NSArray<String> filterNamesInCategories(NSArray<String> categories);
+
+    @Generated
+    @Selector("filterNamesInCategory:")
+    public static native NSArray<String> filterNamesInCategory(String category);
+
+    @Generated
+    @Selector("filterWithCVPixelBuffer:properties:options:")
+    public static native CIFilter filterWithCVPixelBufferPropertiesOptions(CVBufferRef pixelBuffer,
+            NSDictionary<?, ?> properties, NSDictionary<?, ?> options);
+
+    @Generated
+    @Selector("filterWithImageData:options:")
+    public static native CIFilter filterWithImageDataOptions(NSData data, NSDictionary<?, ?> options);
+
+    @Generated
+    @Selector("filterWithImageURL:options:")
+    public static native CIFilter filterWithImageURLOptions(NSURL url, NSDictionary<?, ?> options);
+
+    @Generated
+    @Selector("filterWithName:")
+    public static native CIFilter filterWithName(String name);
+
+    @Generated
+    @Variadic()
+    @Selector("filterWithName:keysAndValues:")
+    public static native CIFilter filterWithNameKeysAndValues(String name, @Mapped(ObjCObjectMapper.class) Object key0,
+            Object... varargs);
+
+    @Generated
+    @Selector("filterWithName:withInputParameters:")
+    public static native CIFilter filterWithNameWithInputParameters(String name, NSDictionary<String, ?> params);
+
+    @Generated
     @Selector("hash")
     @NUInt
     public static native long hash_static();
@@ -202,10 +186,31 @@ public class CIFilter extends NSObject implements NSSecureCoding, NSCopying {
     public static native void load_objc_static();
 
     @Generated
+    @Selector("localizedDescriptionForFilterName:")
+    public static native String localizedDescriptionForFilterName(String filterName);
+
+    @Generated
+    @Selector("localizedNameForCategory:")
+    public static native String localizedNameForCategory(String category);
+
+    @Generated
+    @Selector("localizedNameForFilterName:")
+    public static native String localizedNameForFilterName(String filterName);
+
+    @Generated
+    @Selector("localizedReferenceDocumentationForFilterName:")
+    public static native NSURL localizedReferenceDocumentationForFilterName(String filterName);
+
+    @Generated
     @Owned
     @Selector("new")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object new_objc();
+
+    @Generated
+    @Selector("registerFilterName:constructor:classAttributes:")
+    public static native void registerFilterNameConstructorClassAttributes(String name,
+            @Mapped(ObjCObjectMapper.class) CIFilterConstructor anObject, NSDictionary<String, ?> attributes);
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -216,17 +221,26 @@ public class CIFilter extends NSObject implements NSSecureCoding, NSCopying {
     public static native boolean resolveInstanceMethod(SEL sel);
 
     @Generated
+    @Selector("serializedXMPFromFilters:inputImageExtent:")
+    public static native NSData serializedXMPFromFiltersInputImageExtent(NSArray<? extends CIFilter> filters,
+            @ByValue CGRect extent);
+
+    @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")
     public static native Class superclass_static();
 
     @Generated
+    @Selector("supportsSecureCoding")
+    public static native boolean supportsSecureCoding();
+
+    @Generated
     @Selector("version")
     @NInt
-    public static native long version();
+    public static native long version_static();
 
     @Generated
     @Selector("attributes")
@@ -269,6 +283,10 @@ public class CIFilter extends NSObject implements NSSecureCoding, NSCopying {
     @Generated
     @Selector("setDefaults")
     public native void setDefaults();
+
+    @Generated
+    @Selector("setName:")
+    public native void setName(String aString);
 
     @Generated
     @ProtocolClassMethod("supportsSecureCoding")

@@ -68,9 +68,19 @@ public final class CMBufferCallbacks extends StructObject {
     public native void setRefcon(VoidPtr value);
 
     @Generated
+    @StructureField(order = 2, isGetter = true)
+    @FunctionPtr(name = "call_getDecodeTimeStamp")
+    public native Function_getDecodeTimeStamp getDecodeTimeStamp();
+
+    @Generated
     @StructureField(order = 2, isGetter = false)
     public native void setGetDecodeTimeStamp(
             @FunctionPtr(name = "call_getDecodeTimeStamp") Function_getDecodeTimeStamp value);
+
+    @Generated
+    @StructureField(order = 3, isGetter = true)
+    @FunctionPtr(name = "call_getPresentationTimeStamp")
+    public native Function_getPresentationTimeStamp getPresentationTimeStamp();
 
     @Generated
     @StructureField(order = 3, isGetter = false)
@@ -78,12 +88,27 @@ public final class CMBufferCallbacks extends StructObject {
             @FunctionPtr(name = "call_getPresentationTimeStamp") Function_getPresentationTimeStamp value);
 
     @Generated
+    @StructureField(order = 4, isGetter = true)
+    @FunctionPtr(name = "call_getDuration")
+    public native Function_getDuration getDuration();
+
+    @Generated
     @StructureField(order = 4, isGetter = false)
     public native void setGetDuration(@FunctionPtr(name = "call_getDuration") Function_getDuration value);
 
     @Generated
+    @StructureField(order = 5, isGetter = true)
+    @FunctionPtr(name = "call_isDataReady")
+    public native Function_isDataReady isDataReady();
+
+    @Generated
     @StructureField(order = 5, isGetter = false)
     public native void setIsDataReady(@FunctionPtr(name = "call_isDataReady") Function_isDataReady value);
+
+    @Generated
+    @StructureField(order = 6, isGetter = true)
+    @FunctionPtr(name = "call_compare")
+    public native Function_compare compare();
 
     @Generated
     @StructureField(order = 6, isGetter = false)
@@ -98,38 +123,13 @@ public final class CMBufferCallbacks extends StructObject {
     public native void setDataBecameReadyNotification(CFStringRef value);
 
     @Generated
-    @StructureField(order = 8, isGetter = false)
-    public native void setGetSize(@FunctionPtr(name = "call_getSize") Function_getSize value);
-
-    @Generated
-    @StructureField(order = 2, isGetter = true)
-    @FunctionPtr(name = "call_getDecodeTimeStamp")
-    public native Function_getDecodeTimeStamp getDecodeTimeStamp();
-
-    @Generated
-    @StructureField(order = 3, isGetter = true)
-    @FunctionPtr(name = "call_getPresentationTimeStamp")
-    public native Function_getPresentationTimeStamp getPresentationTimeStamp();
-
-    @Generated
-    @StructureField(order = 4, isGetter = true)
-    @FunctionPtr(name = "call_getDuration")
-    public native Function_getDuration getDuration();
-
-    @Generated
-    @StructureField(order = 5, isGetter = true)
-    @FunctionPtr(name = "call_isDataReady")
-    public native Function_isDataReady isDataReady();
-
-    @Generated
-    @StructureField(order = 6, isGetter = true)
-    @FunctionPtr(name = "call_compare")
-    public native Function_compare compare();
-
-    @Generated
     @StructureField(order = 8, isGetter = true)
     @FunctionPtr(name = "call_getSize")
     public native Function_getSize getSize();
+
+    @Generated
+    @StructureField(order = 8, isGetter = false)
+    public native void setGetSize(@FunctionPtr(name = "call_getSize") Function_getSize value);
 
     @Runtime(CRuntime.class)
     @Generated

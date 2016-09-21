@@ -57,22 +57,13 @@ public class AVCaptureConnection extends NSObject {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native AVCaptureConnection alloc();
-
-    @Generated
-    @Selector("connectionWithInputPort:videoPreviewLayer:")
-    public static native AVCaptureConnection connectionWithInputPortVideoPreviewLayer(AVCaptureInputPort port,
-            AVCaptureVideoPreviewLayer layer);
-
-    @Generated
-    @Selector("connectionWithInputPorts:output:")
-    public static native AVCaptureConnection connectionWithInputPortsOutput(NSArray<?> ports, AVCaptureOutput output);
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -100,6 +91,15 @@ public class AVCaptureConnection extends NSObject {
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
+
+    @Generated
+    @Selector("connectionWithInputPort:videoPreviewLayer:")
+    public static native AVCaptureConnection connectionWithInputPortVideoPreviewLayer(AVCaptureInputPort port,
+            AVCaptureVideoPreviewLayer layer);
+
+    @Generated
+    @Selector("connectionWithInputPorts:output:")
+    public static native AVCaptureConnection connectionWithInputPortsOutput(NSArray<?> ports, AVCaptureOutput output);
 
     @Generated
     @Selector("debugDescription")

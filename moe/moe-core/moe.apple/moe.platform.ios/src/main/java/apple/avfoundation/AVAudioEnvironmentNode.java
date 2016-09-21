@@ -60,13 +60,13 @@ public class AVAudioEnvironmentNode extends AVAudioNode implements AVAudioMixing
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native AVAudioEnvironmentNode alloc();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -135,7 +135,7 @@ public class AVAudioEnvironmentNode extends AVAudioNode implements AVAudioMixing
 
     @Generated
     @Selector("load")
-    public static native void load_objc();
+    public static native void load_objc_static();
 
     @Generated
     @Owned
@@ -153,7 +153,7 @@ public class AVAudioEnvironmentNode extends AVAudioNode implements AVAudioMixing
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")
@@ -162,11 +162,15 @@ public class AVAudioEnvironmentNode extends AVAudioNode implements AVAudioMixing
     @Generated
     @Selector("version")
     @NInt
-    public static native long version();
+    public static native long version_static();
 
     @Generated
     @Selector("applicableRenderingAlgorithms")
     public native NSArray<? extends NSNumber> applicableRenderingAlgorithms();
+
+    @Generated
+    @Selector("destinationForMixer:bus:")
+    public native AVAudioMixingDestination destinationForMixerBus(AVAudioNode mixer, @NUInt long bus);
 
     @Generated
     @Selector("distanceAttenuationParameters")
@@ -285,8 +289,4 @@ public class AVAudioEnvironmentNode extends AVAudioNode implements AVAudioMixing
     @Generated
     @Selector("volume")
     public native float volume();
-
-    @Generated
-    @Selector("destinationForMixer:bus:")
-    public native AVAudioMixingDestination destinationForMixerBus(AVAudioNode mixer, @NUInt long bus);
 }

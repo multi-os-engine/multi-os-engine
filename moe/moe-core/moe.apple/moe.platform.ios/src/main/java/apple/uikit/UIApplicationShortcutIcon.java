@@ -56,25 +56,13 @@ public class UIApplicationShortcutIcon extends NSObject implements NSCopying {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native UIApplicationShortcutIcon alloc();
-
-    @Generated
-    @Selector("iconWithContact:")
-    public static native UIApplicationShortcutIcon iconWithContact(CNContact contact);
-
-    @Generated
-    @Selector("iconWithTemplateImageName:")
-    public static native UIApplicationShortcutIcon iconWithTemplateImageName(String templateImageName);
-
-    @Generated
-    @Selector("iconWithType:")
-    public static native UIApplicationShortcutIcon iconWithType(@NInt long type);
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -115,6 +103,18 @@ public class UIApplicationShortcutIcon extends NSObject implements NSCopying {
     @Selector("hash")
     @NUInt
     public static native long hash_static();
+
+    @Generated
+    @Selector("iconWithContact:")
+    public static native UIApplicationShortcutIcon iconWithContact(CNContact contact);
+
+    @Generated
+    @Selector("iconWithTemplateImageName:")
+    public static native UIApplicationShortcutIcon iconWithTemplateImageName(String templateImageName);
+
+    @Generated
+    @Selector("iconWithType:")
+    public static native UIApplicationShortcutIcon iconWithType(@NInt long type);
 
     @Generated
     @Selector("initialize")

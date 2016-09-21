@@ -54,4 +54,11 @@ public interface AVVideoCompositing {
     @Generated
     @Selector("startVideoCompositionRequest:")
     void startVideoCompositionRequest(AVAsynchronousVideoCompositionRequest asyncVideoCompositionRequest);
+
+    @Generated
+    @IsOptional
+    @Selector("supportsWideColorSourceFrames")
+    default boolean supportsWideColorSourceFrames() {
+        throw new java.lang.UnsupportedOperationException();
+    }
 }

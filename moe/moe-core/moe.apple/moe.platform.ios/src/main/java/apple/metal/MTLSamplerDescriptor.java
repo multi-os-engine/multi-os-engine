@@ -55,13 +55,13 @@ public class MTLSamplerDescriptor extends NSObject implements NSCopying {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native MTLSamplerDescriptor alloc();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -148,7 +148,7 @@ public class MTLSamplerDescriptor extends NSObject implements NSCopying {
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")
@@ -158,6 +158,11 @@ public class MTLSamplerDescriptor extends NSObject implements NSCopying {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("compareFunction")
+    @NUInt
+    public native long compareFunction();
 
     @Generated
     @Owned
@@ -172,6 +177,10 @@ public class MTLSamplerDescriptor extends NSObject implements NSCopying {
     @Generated
     @Selector("label")
     public native String label();
+
+    @Generated
+    @Selector("lodAverage")
+    public native boolean lodAverage();
 
     @Generated
     @Selector("lodMaxClamp")
@@ -216,8 +225,16 @@ public class MTLSamplerDescriptor extends NSObject implements NSCopying {
     public native long sAddressMode();
 
     @Generated
+    @Selector("setCompareFunction:")
+    public native void setCompareFunction(@NUInt long value);
+
+    @Generated
     @Selector("setLabel:")
     public native void setLabel(String value);
+
+    @Generated
+    @Selector("setLodAverage:")
+    public native void setLodAverage(boolean value);
 
     @Generated
     @Selector("setLodMaxClamp:")
@@ -263,21 +280,4 @@ public class MTLSamplerDescriptor extends NSObject implements NSCopying {
     @Selector("tAddressMode")
     @NUInt
     public native long tAddressMode();
-
-    @Generated
-    @Selector("compareFunction")
-    @NUInt
-    public native long compareFunction();
-
-    @Generated
-    @Selector("lodAverage")
-    public native boolean lodAverage();
-
-    @Generated
-    @Selector("setCompareFunction:")
-    public native void setCompareFunction(@NUInt long value);
-
-    @Generated
-    @Selector("setLodAverage:")
-    public native void setLodAverage(boolean value);
 }

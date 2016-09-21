@@ -73,11 +73,6 @@ public class MKMapView extends UIView implements NSCoding {
     }
 
     @Generated
-    @Owned
-    @Selector("alloc")
-    public static native MKMapView alloc();
-
-    @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
 
@@ -86,6 +81,11 @@ public class MKMapView extends UIView implements NSCoding {
     public static native void addKeyframeWithRelativeStartTimeRelativeDurationAnimations(double frameStartTime,
             double frameDuration,
             @ObjCBlock(name = "call_addKeyframeWithRelativeStartTimeRelativeDurationAnimations") UIView.Block_addKeyframeWithRelativeStartTimeRelativeDurationAnimations animations);
+
+    @Generated
+    @Owned
+    @Selector("alloc")
+    public static native MKMapView alloc();
 
     @Generated
     @Selector("allocWithZone:")
@@ -301,7 +301,7 @@ public class MKMapView extends UIView implements NSCoding {
 
     @Generated
     @Selector("setAnimationDuration:")
-    public static native void setAnimationDuration(double duration);
+    public static native void setAnimationDuration_static(double duration);
 
     @Generated
     @Selector("setAnimationRepeatAutoreverses:")
@@ -309,7 +309,7 @@ public class MKMapView extends UIView implements NSCoding {
 
     @Generated
     @Selector("setAnimationRepeatCount:")
-    public static native void setAnimationRepeatCount(float repeatCount);
+    public static native void setAnimationRepeatCount_static(float repeatCount);
 
     @Generated
     @Selector("setAnimationStartDate:")
@@ -329,7 +329,7 @@ public class MKMapView extends UIView implements NSCoding {
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")
@@ -352,6 +352,12 @@ public class MKMapView extends UIView implements NSCoding {
     @Selector("userInterfaceLayoutDirectionForSemanticContentAttribute:")
     @NInt
     public static native long userInterfaceLayoutDirectionForSemanticContentAttribute(@NInt long attribute);
+
+    @Generated
+    @Selector("userInterfaceLayoutDirectionForSemanticContentAttribute:relativeToLayoutDirection:")
+    @NInt
+    public static native long userInterfaceLayoutDirectionForSemanticContentAttributeRelativeToLayoutDirection(
+            @NInt long semanticContentAttribute, @NInt long layoutDirection);
 
     @Generated
     @Selector("version")
@@ -394,6 +400,52 @@ public class MKMapView extends UIView implements NSCoding {
     @Generated
     @Selector("annotationsInMapRect:")
     public native NSSet<?> annotationsInMapRect(@ByValue MKMapRect mapRect);
+
+    @Generated
+    @ProtocolClassMethod("appearance")
+    @MappedReturn(ObjCObjectMapper.class)
+    public Object _appearance() {
+        return appearance();
+    }
+
+    @Generated
+    @ProtocolClassMethod("appearanceForTraitCollection")
+    @MappedReturn(ObjCObjectMapper.class)
+    public Object _appearanceForTraitCollection(UITraitCollection trait) {
+        return appearanceForTraitCollection(trait);
+    }
+
+    @Generated
+    @Deprecated
+    @ProtocolClassMethod("appearanceForTraitCollectionWhenContainedIn")
+    @MappedReturn(ObjCObjectMapper.class)
+    public Object _appearanceForTraitCollectionWhenContainedIn(UITraitCollection trait,
+            @Mapped(ObjCObjectMapper.class) Object ContainerClass, Object... varargs) {
+        return appearanceForTraitCollectionWhenContainedIn(trait, ContainerClass, varargs);
+    }
+
+    @Generated
+    @ProtocolClassMethod("appearanceForTraitCollectionWhenContainedInInstancesOfClasses")
+    @MappedReturn(ObjCObjectMapper.class)
+    public Object _appearanceForTraitCollectionWhenContainedInInstancesOfClasses(UITraitCollection trait,
+            NSArray<?> containerTypes) {
+        return appearanceForTraitCollectionWhenContainedInInstancesOfClasses(trait, containerTypes);
+    }
+
+    @Generated
+    @Deprecated
+    @ProtocolClassMethod("appearanceWhenContainedIn")
+    @MappedReturn(ObjCObjectMapper.class)
+    public Object _appearanceWhenContainedIn(@Mapped(ObjCObjectMapper.class) Object ContainerClass, Object... varargs) {
+        return appearanceWhenContainedIn(ContainerClass, varargs);
+    }
+
+    @Generated
+    @ProtocolClassMethod("appearanceWhenContainedInInstancesOfClasses")
+    @MappedReturn(ObjCObjectMapper.class)
+    public Object _appearanceWhenContainedInInstancesOfClasses(NSArray<?> containerTypes) {
+        return appearanceWhenContainedInInstancesOfClasses(containerTypes);
+    }
 
     @Generated
     @Selector("camera")
@@ -633,8 +685,20 @@ public class MKMapView extends UIView implements NSCoding {
     public native void setShowsBuildings(boolean value);
 
     @Generated
+    @Selector("setShowsCompass:")
+    public native void setShowsCompass(boolean value);
+
+    @Generated
     @Selector("setShowsPointsOfInterest:")
     public native void setShowsPointsOfInterest(boolean value);
+
+    @Generated
+    @Selector("setShowsScale:")
+    public native void setShowsScale(boolean value);
+
+    @Generated
+    @Selector("setShowsTraffic:")
+    public native void setShowsTraffic(boolean value);
 
     @Generated
     @Selector("setShowsUserLocation:")
@@ -670,8 +734,20 @@ public class MKMapView extends UIView implements NSCoding {
     public native boolean showsBuildings();
 
     @Generated
+    @Selector("showsCompass")
+    public native boolean showsCompass();
+
+    @Generated
     @Selector("showsPointsOfInterest")
     public native boolean showsPointsOfInterest();
+
+    @Generated
+    @Selector("showsScale")
+    public native boolean showsScale();
+
+    @Generated
+    @Selector("showsTraffic")
+    public native boolean showsTraffic();
 
     @Generated
     @Selector("showsUserLocation")
@@ -699,74 +775,4 @@ public class MKMapView extends UIView implements NSCoding {
     @Selector("visibleMapRect")
     @ByValue
     public native MKMapRect visibleMapRect();
-
-    @Generated
-    @Selector("setShowsCompass:")
-    public native void setShowsCompass(boolean value);
-
-    @Generated
-    @Selector("setShowsScale:")
-    public native void setShowsScale(boolean value);
-
-    @Generated
-    @Selector("setShowsTraffic:")
-    public native void setShowsTraffic(boolean value);
-
-    @Generated
-    @Selector("showsCompass")
-    public native boolean showsCompass();
-
-    @Generated
-    @Selector("showsScale")
-    public native boolean showsScale();
-
-    @Generated
-    @Selector("showsTraffic")
-    public native boolean showsTraffic();
-
-    @Generated
-    @ProtocolClassMethod("appearance")
-    @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearance() {
-        return appearance();
-    }
-
-    @Generated
-    @ProtocolClassMethod("appearanceForTraitCollection")
-    @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearanceForTraitCollection(UITraitCollection trait) {
-        return appearanceForTraitCollection(trait);
-    }
-
-    @Generated
-    @Deprecated
-    @ProtocolClassMethod("appearanceForTraitCollectionWhenContainedIn")
-    @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearanceForTraitCollectionWhenContainedIn(UITraitCollection trait,
-            @Mapped(ObjCObjectMapper.class) Object ContainerClass, Object... varargs) {
-        return appearanceForTraitCollectionWhenContainedIn(trait, ContainerClass, varargs);
-    }
-
-    @Generated
-    @ProtocolClassMethod("appearanceForTraitCollectionWhenContainedInInstancesOfClasses")
-    @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearanceForTraitCollectionWhenContainedInInstancesOfClasses(UITraitCollection trait,
-            NSArray<?> containerTypes) {
-        return appearanceForTraitCollectionWhenContainedInInstancesOfClasses(trait, containerTypes);
-    }
-
-    @Generated
-    @Deprecated
-    @ProtocolClassMethod("appearanceWhenContainedIn")
-    @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearanceWhenContainedIn(@Mapped(ObjCObjectMapper.class) Object ContainerClass, Object... varargs) {
-        return appearanceWhenContainedIn(ContainerClass, varargs);
-    }
-
-    @Generated
-    @ProtocolClassMethod("appearanceWhenContainedInInstancesOfClasses")
-    @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearanceWhenContainedInInstancesOfClasses(NSArray<?> containerTypes) {
-        return appearanceWhenContainedInInstancesOfClasses(containerTypes);
-    }
 }

@@ -58,21 +58,13 @@ public class HKQuantity extends NSObject implements NSSecureCoding, NSCopying {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native HKQuantity alloc();
-
-    @Generated
-    @Selector("quantityWithUnit:doubleValue:")
-    public static native HKQuantity quantityWithUnitDoubleValue(HKUnit unit, double value);
-
-    @Generated
-    @Selector("supportsSecureCoding")
-    public static native boolean supportsSecureCoding();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -150,6 +142,10 @@ public class HKQuantity extends NSObject implements NSSecureCoding, NSCopying {
     public static native Object new_objc();
 
     @Generated
+    @Selector("quantityWithUnit:doubleValue:")
+    public static native HKQuantity quantityWithUnitDoubleValue(HKUnit unit, double value);
+
+    @Generated
     @Selector("resolveClassMethod:")
     public static native boolean resolveClassMethod(SEL sel);
 
@@ -164,6 +160,10 @@ public class HKQuantity extends NSObject implements NSSecureCoding, NSCopying {
     @Generated
     @Selector("superclass")
     public static native Class superclass_static();
+
+    @Generated
+    @Selector("supportsSecureCoding")
+    public static native boolean supportsSecureCoding();
 
     @Generated
     @Selector("version")

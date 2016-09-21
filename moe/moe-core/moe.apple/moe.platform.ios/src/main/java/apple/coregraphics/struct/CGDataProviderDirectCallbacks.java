@@ -57,27 +57,13 @@ public final class CGDataProviderDirectCallbacks extends StructObject {
     public native void setVersion(int value);
 
     @Generated
-    @StructureField(order = 1, isGetter = false)
-    public native void setGetBytePointer(@FunctionPtr(name = "call_getBytePointer") Function_getBytePointer value);
-
-    @Generated
-    @StructureField(order = 2, isGetter = false)
-    public native void setReleaseBytePointer(
-            @FunctionPtr(name = "call_releaseBytePointer") Function_releaseBytePointer value);
-
-    @Generated
-    @StructureField(order = 3, isGetter = false)
-    public native void setGetBytesAtPosition(
-            @FunctionPtr(name = "call_getBytesAtPosition") Function_getBytesAtPosition value);
-
-    @Generated
-    @StructureField(order = 4, isGetter = false)
-    public native void setReleaseInfo(@FunctionPtr(name = "call_releaseInfo") Function_releaseInfo value);
-
-    @Generated
     @StructureField(order = 1, isGetter = true)
     @FunctionPtr(name = "call_getBytePointer")
     public native Function_getBytePointer getBytePointer();
+
+    @Generated
+    @StructureField(order = 1, isGetter = false)
+    public native void setGetBytePointer(@FunctionPtr(name = "call_getBytePointer") Function_getBytePointer value);
 
     @Generated
     @StructureField(order = 2, isGetter = true)
@@ -85,14 +71,28 @@ public final class CGDataProviderDirectCallbacks extends StructObject {
     public native Function_releaseBytePointer releaseBytePointer();
 
     @Generated
+    @StructureField(order = 2, isGetter = false)
+    public native void setReleaseBytePointer(
+            @FunctionPtr(name = "call_releaseBytePointer") Function_releaseBytePointer value);
+
+    @Generated
     @StructureField(order = 3, isGetter = true)
     @FunctionPtr(name = "call_getBytesAtPosition")
     public native Function_getBytesAtPosition getBytesAtPosition();
 
     @Generated
+    @StructureField(order = 3, isGetter = false)
+    public native void setGetBytesAtPosition(
+            @FunctionPtr(name = "call_getBytesAtPosition") Function_getBytesAtPosition value);
+
+    @Generated
     @StructureField(order = 4, isGetter = true)
     @FunctionPtr(name = "call_releaseInfo")
     public native Function_releaseInfo releaseInfo();
+
+    @Generated
+    @StructureField(order = 4, isGetter = false)
+    public native void setReleaseInfo(@FunctionPtr(name = "call_releaseInfo") Function_releaseInfo value);
 
     @Runtime(CRuntime.class)
     @Generated

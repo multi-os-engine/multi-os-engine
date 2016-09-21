@@ -24,6 +24,7 @@ import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
 import apple.foundation.NSURL;
 import apple.safariservices.protocol.SFSafariViewControllerDelegate;
+import apple.uikit.UIColor;
 import apple.uikit.UIViewController;
 import org.moe.natj.c.ann.FunctionPtr;
 import org.moe.natj.general.NatJ;
@@ -59,13 +60,13 @@ public class SFSafariViewController extends UIViewController {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native SFSafariViewController alloc();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -201,6 +202,14 @@ public class SFSafariViewController extends UIViewController {
     public native SFSafariViewController initWithURLEntersReaderIfAvailable(NSURL URL, boolean entersReaderIfAvailable);
 
     @Generated
+    @Selector("preferredBarTintColor")
+    public native UIColor preferredBarTintColor();
+
+    @Generated
+    @Selector("preferredControlTintColor")
+    public native UIColor preferredControlTintColor();
+
+    @Generated
     @Selector("setDelegate:")
     public native void setDelegate_unsafe(@Mapped(ObjCObjectMapper.class) SFSafariViewControllerDelegate value);
 
@@ -215,4 +224,12 @@ public class SFSafariViewController extends UIViewController {
             org.moe.natj.objc.ObjCRuntime.dissociateObjCObject(this, __old);
         }
     }
+
+    @Generated
+    @Selector("setPreferredBarTintColor:")
+    public native void setPreferredBarTintColor(UIColor value);
+
+    @Generated
+    @Selector("setPreferredControlTintColor:")
+    public native void setPreferredControlTintColor(UIColor value);
 }

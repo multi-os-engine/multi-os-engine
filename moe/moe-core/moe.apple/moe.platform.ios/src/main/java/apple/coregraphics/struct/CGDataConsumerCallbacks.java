@@ -57,22 +57,22 @@ public final class CGDataConsumerCallbacks extends StructObject {
     }
 
     @Generated
-    @StructureField(order = 0, isGetter = false)
-    public native void setPutBytes(@FunctionPtr(name = "call_putBytes") Function_putBytes value);
-
-    @Generated
-    @StructureField(order = 1, isGetter = false)
-    public native void setReleaseConsumer(@FunctionPtr(name = "call_releaseConsumer") Function_releaseConsumer value);
-
-    @Generated
     @StructureField(order = 0, isGetter = true)
     @FunctionPtr(name = "call_putBytes")
     public native Function_putBytes putBytes();
 
     @Generated
+    @StructureField(order = 0, isGetter = false)
+    public native void setPutBytes(@FunctionPtr(name = "call_putBytes") Function_putBytes value);
+
+    @Generated
     @StructureField(order = 1, isGetter = true)
     @FunctionPtr(name = "call_releaseConsumer")
     public native Function_releaseConsumer releaseConsumer();
+
+    @Generated
+    @StructureField(order = 1, isGetter = false)
+    public native void setReleaseConsumer(@FunctionPtr(name = "call_releaseConsumer") Function_releaseConsumer value);
 
     @Runtime(CRuntime.class)
     @Generated

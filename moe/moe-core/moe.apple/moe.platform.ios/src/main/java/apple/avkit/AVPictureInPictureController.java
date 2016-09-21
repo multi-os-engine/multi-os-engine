@@ -58,27 +58,13 @@ public class AVPictureInPictureController extends NSObject {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native AVPictureInPictureController alloc();
-
-    @Generated
-    @Selector("isPictureInPictureSupported")
-    public static native boolean isPictureInPictureSupported();
-
-    @Generated
-    @Selector("pictureInPictureButtonStartImageCompatibleWithTraitCollection:")
-    public static native UIImage pictureInPictureButtonStartImageCompatibleWithTraitCollection(
-            UITraitCollection traitCollection);
-
-    @Generated
-    @Selector("pictureInPictureButtonStopImageCompatibleWithTraitCollection:")
-    public static native UIImage pictureInPictureButtonStopImageCompatibleWithTraitCollection(
-            UITraitCollection traitCollection);
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -138,6 +124,10 @@ public class AVPictureInPictureController extends NSObject {
     public static native boolean instancesRespondToSelector(SEL aSelector);
 
     @Generated
+    @Selector("isPictureInPictureSupported")
+    public static native boolean isPictureInPictureSupported();
+
+    @Generated
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
@@ -154,6 +144,16 @@ public class AVPictureInPictureController extends NSObject {
     @Selector("new")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object new_objc();
+
+    @Generated
+    @Selector("pictureInPictureButtonStartImageCompatibleWithTraitCollection:")
+    public static native UIImage pictureInPictureButtonStartImageCompatibleWithTraitCollection(
+            UITraitCollection traitCollection);
+
+    @Generated
+    @Selector("pictureInPictureButtonStopImageCompatibleWithTraitCollection:")
+    public static native UIImage pictureInPictureButtonStopImageCompatibleWithTraitCollection(
+            UITraitCollection traitCollection);
 
     @Generated
     @Selector("resolveClassMethod:")

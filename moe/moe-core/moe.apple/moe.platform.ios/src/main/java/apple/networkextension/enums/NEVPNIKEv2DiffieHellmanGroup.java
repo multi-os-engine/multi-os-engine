@@ -21,7 +21,7 @@ import org.moe.natj.general.ann.NInt;
 
 @Generated
 public final class NEVPNIKEv2DiffieHellmanGroup {
-    @Generated @NInt public static final long Group0 = 0x0000000000000000L;
+    @Generated @NInt public static final long GroupInvalid = 0x0000000000000000L;
     @Generated @NInt public static final long Group1 = 0x0000000000000001L;
     @Generated @NInt public static final long Group2 = 0x0000000000000002L;
     @Generated @NInt public static final long Group5 = 0x0000000000000005L;

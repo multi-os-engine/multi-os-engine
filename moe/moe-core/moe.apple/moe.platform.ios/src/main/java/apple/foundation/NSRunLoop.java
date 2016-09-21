@@ -33,6 +33,7 @@ import org.moe.natj.general.ptr.VoidPtr;
 import org.moe.natj.objc.Class;
 import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.SEL;
+import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
@@ -52,21 +53,13 @@ public class NSRunLoop extends NSObject {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native NSRunLoop alloc();
-
-    @Generated
-    @Selector("currentRunLoop")
-    public static native NSRunLoop currentRunLoop();
-
-    @Generated
-    @Selector("mainRunLoop")
-    public static native NSRunLoop mainRunLoop();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -94,6 +87,10 @@ public class NSRunLoop extends NSObject {
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
+
+    @Generated
+    @Selector("currentRunLoop")
+    public static native NSRunLoop currentRunLoop();
 
     @Generated
     @Selector("debugDescription")
@@ -136,6 +133,10 @@ public class NSRunLoop extends NSObject {
     @Generated
     @Selector("load")
     public static native void load_objc_static();
+
+    @Generated
+    @Selector("mainRunLoop")
+    public static native NSRunLoop mainRunLoop();
 
     @Generated
     @Owned
@@ -202,6 +203,15 @@ public class NSRunLoop extends NSObject {
     public native NSDate limitDateForMode(String mode);
 
     @Generated
+    @Selector("performBlock:")
+    public native void performBlock(@ObjCBlock(name = "call_performBlock") Block_performBlock block);
+
+    @Generated
+    @Selector("performInModes:block:")
+    public native void performInModesBlock(NSArray<String> modes,
+            @ObjCBlock(name = "call_performInModesBlock") Block_performInModesBlock block);
+
+    @Generated
     @Selector("performSelector:target:argument:order:modes:")
     public native void performSelectorTargetArgumentOrderModes(SEL aSelector,
             @Mapped(ObjCObjectMapper.class) Object target, @Mapped(ObjCObjectMapper.class) Object arg,
@@ -222,4 +232,18 @@ public class NSRunLoop extends NSObject {
     @Generated
     @Selector("runUntilDate:")
     public native void runUntilDate(NSDate limitDate);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_performBlock {
+        @Generated
+        void call_performBlock();
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_performInModesBlock {
+        @Generated
+        void call_performInModesBlock();
+    }
 }

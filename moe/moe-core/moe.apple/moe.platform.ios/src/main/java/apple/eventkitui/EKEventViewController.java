@@ -59,13 +59,13 @@ public class EKEventViewController extends UIViewController {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native EKEventViewController alloc();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -164,7 +164,7 @@ public class EKEventViewController extends UIViewController {
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")
@@ -197,6 +197,10 @@ public class EKEventViewController extends UIViewController {
     public native EKEventViewController init();
 
     @Generated
+    @Selector("initWithCoder:")
+    public native EKEventViewController initWithCoder(NSCoder aDecoder);
+
+    @Generated
     @Selector("initWithNibName:bundle:")
     public native EKEventViewController initWithNibNameBundle(String nibNameOrNil, NSBundle nibBundleOrNil);
 
@@ -227,8 +231,4 @@ public class EKEventViewController extends UIViewController {
     @Generated
     @Selector("setEvent:")
     public native void setEvent(EKEvent value);
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native EKEventViewController initWithCoder(NSCoder aDecoder);
 }

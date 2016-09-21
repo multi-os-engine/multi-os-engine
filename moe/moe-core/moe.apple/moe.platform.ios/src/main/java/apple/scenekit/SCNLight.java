@@ -22,6 +22,7 @@ import apple.foundation.NSArray;
 import apple.foundation.NSCoder;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
+import apple.foundation.NSURL;
 import apple.foundation.protocol.NSCopying;
 import apple.foundation.protocol.NSSecureCoding;
 import apple.modelio.MDLLight;
@@ -65,25 +66,13 @@ public class SCNLight extends NSObject implements SCNAnimatable, SCNTechniqueSup
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native SCNLight alloc();
-
-    @Generated
-    @Selector("light")
-    public static native SCNLight light();
-
-    @Generated
-    @Selector("supportsSecureCoding")
-    public static native boolean supportsSecureCoding();
-
-    @Generated
-    @Selector("lightWithMDLLight:")
-    public static native SCNLight lightWithMDLLight(MDLLight mdlLight);
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -151,6 +140,14 @@ public class SCNLight extends NSObject implements SCNAnimatable, SCNTechniqueSup
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
     @Generated
+    @Selector("light")
+    public static native SCNLight light();
+
+    @Generated
+    @Selector("lightWithMDLLight:")
+    public static native SCNLight lightWithMDLLight(MDLLight mdlLight);
+
+    @Generated
     @Selector("load")
     public static native void load_objc_static();
 
@@ -177,9 +174,17 @@ public class SCNLight extends NSObject implements SCNAnimatable, SCNTechniqueSup
     public static native Class superclass_static();
 
     @Generated
+    @Selector("supportsSecureCoding")
+    public static native boolean supportsSecureCoding();
+
+    @Generated
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("IESProfileURL")
+    public native NSURL IESProfileURL();
 
     @Generated
     @Selector("addAnimation:forKey:")
@@ -245,6 +250,11 @@ public class SCNLight extends NSObject implements SCNAnimatable, SCNTechniqueSup
     public native SCNLight initWithCoder(NSCoder aDecoder);
 
     @Generated
+    @Selector("intensity")
+    @NFloat
+    public native double intensity();
+
+    @Generated
     @Selector("isAnimationForKeyPaused:")
     public native boolean isAnimationForKeyPaused(String key);
 
@@ -302,6 +312,14 @@ public class SCNLight extends NSObject implements SCNAnimatable, SCNTechniqueSup
     public native void setColor(@Mapped(ObjCObjectMapper.class) Object value);
 
     @Generated
+    @Selector("setIESProfileURL:")
+    public native void setIESProfileURL(NSURL value);
+
+    @Generated
+    @Selector("setIntensity:")
+    public native void setIntensity(@NFloat double value);
+
+    @Generated
     @Selector("setName:")
     public native void setName(String value);
 
@@ -334,6 +352,10 @@ public class SCNLight extends NSObject implements SCNAnimatable, SCNTechniqueSup
     public native void setShadowSampleCount(@NUInt long value);
 
     @Generated
+    @Selector("setSpeed:forAnimationKey:")
+    public native void setSpeedForAnimationKey(@NFloat double speed, String key);
+
+    @Generated
     @Selector("setSpotInnerAngle:")
     public native void setSpotInnerAngle(@NFloat double value);
 
@@ -344,6 +366,10 @@ public class SCNLight extends NSObject implements SCNAnimatable, SCNTechniqueSup
     @Generated
     @Selector("setTechnique:")
     public native void setTechnique(SCNTechnique value);
+
+    @Generated
+    @Selector("setTemperature:")
+    public native void setTemperature(@NFloat double value);
 
     @Generated
     @Selector("setType:")
@@ -406,6 +432,11 @@ public class SCNLight extends NSObject implements SCNAnimatable, SCNTechniqueSup
     @Generated
     @Selector("technique")
     public native SCNTechnique technique();
+
+    @Generated
+    @Selector("temperature")
+    @NFloat
+    public native double temperature();
 
     @Generated
     @Selector("type")

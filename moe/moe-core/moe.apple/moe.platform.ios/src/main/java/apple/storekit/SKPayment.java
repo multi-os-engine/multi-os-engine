@@ -57,22 +57,13 @@ public class SKPayment extends NSObject implements NSCopying, NSMutableCopying {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native SKPayment alloc();
-
-    @Generated
-    @Selector("paymentWithProduct:")
-    public static native SKPayment paymentWithProduct(SKProduct product);
-
-    @Generated
-    @Deprecated
-    @Selector("paymentWithProductIdentifier:")
-    public static native SKPayment paymentWithProductIdentifier(String identifier);
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -150,6 +141,15 @@ public class SKPayment extends NSObject implements NSCopying, NSMutableCopying {
     public static native Object new_objc();
 
     @Generated
+    @Selector("paymentWithProduct:")
+    public static native SKPayment paymentWithProduct(SKProduct product);
+
+    @Generated
+    @Deprecated
+    @Selector("paymentWithProductIdentifier:")
+    public static native SKPayment paymentWithProductIdentifier(String identifier);
+
+    @Generated
     @Selector("resolveClassMethod:")
     public static native boolean resolveClassMethod(SEL sel);
 
@@ -159,7 +159,7 @@ public class SKPayment extends NSObject implements NSCopying, NSMutableCopying {
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")

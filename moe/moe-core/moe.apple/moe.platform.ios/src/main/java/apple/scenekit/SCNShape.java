@@ -59,30 +59,13 @@ public class SCNShape extends SCNGeometry {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native SCNShape alloc();
-
-    @Generated
-    @Selector("geometry")
-    public static native SCNShape geometry();
-
-    @Generated
-    @Selector("geometryWithSources:elements:")
-    public static native SCNShape geometryWithSourcesElements(NSArray<? extends SCNGeometrySource> sources,
-            NSArray<? extends SCNGeometryElement> elements);
-
-    @Generated
-    @Selector("shapeWithPath:extrusionDepth:")
-    public static native SCNShape shapeWithPathExtrusionDepth(UIBezierPath path, @NFloat double extrusionDepth);
-
-    @Generated
-    @Selector("geometryWithMDLMesh:")
-    public static native SCNShape geometryWithMDLMesh(MDLMesh mdlMesh);
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -118,6 +101,19 @@ public class SCNShape extends SCNGeometry {
     @Generated
     @Selector("description")
     public static native String description_static();
+
+    @Generated
+    @Selector("geometry")
+    public static native SCNShape geometry();
+
+    @Generated
+    @Selector("geometryWithMDLMesh:")
+    public static native SCNShape geometryWithMDLMesh(MDLMesh mdlMesh);
+
+    @Generated
+    @Selector("geometryWithSources:elements:")
+    public static native SCNShape geometryWithSourcesElements(NSArray<? extends SCNGeometrySource> sources,
+            NSArray<? extends SCNGeometryElement> elements);
 
     @Generated
     @Selector("hash")
@@ -172,6 +168,10 @@ public class SCNShape extends SCNGeometry {
     public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
+    @Selector("shapeWithPath:extrusionDepth:")
+    public static native SCNShape shapeWithPathExtrusionDepth(UIBezierPath path, @NFloat double extrusionDepth);
+
+    @Generated
     @Selector("superclass")
     public static native Class superclass_static();
 
@@ -208,6 +208,10 @@ public class SCNShape extends SCNGeometry {
     public native SCNShape init();
 
     @Generated
+    @Selector("initWithCoder:")
+    public native SCNShape initWithCoder(NSCoder aDecoder);
+
+    @Generated
     @Selector("path")
     public native UIBezierPath path();
 
@@ -230,10 +234,6 @@ public class SCNShape extends SCNGeometry {
     @Generated
     @Selector("setPath:")
     public native void setPath(UIBezierPath value);
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native SCNShape initWithCoder(NSCoder aDecoder);
 
     @Generated
     @ProtocolClassMethod("supportsSecureCoding")

@@ -17,10 +17,14 @@ limitations under the License.
 package apple.metal.protocol;
 
 import apple.foundation.NSArray;
+import apple.foundation.NSDictionary;
+import apple.metal.MTLAttribute;
+import apple.metal.MTLFunctionConstant;
 import apple.metal.MTLVertexAttribute;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.Library;
 import org.moe.natj.general.ann.MappedReturn;
+import org.moe.natj.general.ann.NInt;
 import org.moe.natj.general.ann.NUInt;
 import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.objc.ObjCRuntime;
@@ -39,13 +43,39 @@ public interface MTLFunction {
     Object device();
 
     @Generated
+    @Selector("functionConstantsDictionary")
+    NSDictionary<String, ? extends MTLFunctionConstant> functionConstantsDictionary();
+
+    @Generated
     @Selector("functionType")
     @NUInt
     long functionType();
 
     @Generated
+    @Selector("label")
+    String label();
+
+    @Generated
     @Selector("name")
     String name();
+
+    @Generated
+    @Selector("patchControlPointCount")
+    @NInt
+    long patchControlPointCount();
+
+    @Generated
+    @Selector("patchType")
+    @NUInt
+    long patchType();
+
+    @Generated
+    @Selector("setLabel:")
+    void setLabel(String value);
+
+    @Generated
+    @Selector("stageInputAttributes")
+    NSArray<? extends MTLAttribute> stageInputAttributes();
 
     @Generated
     @Selector("vertexAttributes")

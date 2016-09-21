@@ -17,7 +17,7 @@ limitations under the License.
 package apple.avfoundation;
 
 import apple.NSObject;
-import apple.audiounit.struct.AudioComponentDescription;
+import apple.audiotoolbox.struct.AudioComponentDescription;
 import apple.avfoundation.protocol.AVAudioMixing;
 import apple.avfoundation.struct.AVAudio3DPoint;
 import apple.foundation.NSArray;
@@ -59,13 +59,13 @@ public class AVAudioUnitGenerator extends AVAudioUnit implements AVAudioMixing {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native AVAudioUnitGenerator alloc();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -174,6 +174,10 @@ public class AVAudioUnitGenerator extends AVAudioUnit implements AVAudioMixing {
     public native boolean bypass();
 
     @Generated
+    @Selector("destinationForMixer:bus:")
+    public native AVAudioMixingDestination destinationForMixerBus(AVAudioNode mixer, @NUInt long bus);
+
+    @Generated
     @Selector("init")
     public native AVAudioUnitGenerator init();
 
@@ -251,8 +255,4 @@ public class AVAudioUnitGenerator extends AVAudioUnit implements AVAudioMixing {
     @Generated
     @Selector("volume")
     public native float volume();
-
-    @Generated
-    @Selector("destinationForMixer:bus:")
-    public native AVAudioMixingDestination destinationForMixerBus(AVAudioNode mixer, @NUInt long bus);
 }

@@ -62,22 +62,13 @@ public class SCNMaterialProperty extends NSObject implements SCNAnimatable, NSSe
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native SCNMaterialProperty alloc();
-
-    @Generated
-    @Selector("materialPropertyWithContents:")
-    public static native SCNMaterialProperty materialPropertyWithContents(
-            @Mapped(ObjCObjectMapper.class) Object contents);
-
-    @Generated
-    @Selector("supportsSecureCoding")
-    public static native boolean supportsSecureCoding();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -149,6 +140,11 @@ public class SCNMaterialProperty extends NSObject implements SCNAnimatable, NSSe
     public static native void load_objc_static();
 
     @Generated
+    @Selector("materialPropertyWithContents:")
+    public static native SCNMaterialProperty materialPropertyWithContents(
+            @Mapped(ObjCObjectMapper.class) Object contents);
+
+    @Generated
     @Owned
     @Selector("new")
     @MappedReturn(ObjCObjectMapper.class)
@@ -169,6 +165,10 @@ public class SCNMaterialProperty extends NSObject implements SCNAnimatable, NSSe
     @Generated
     @Selector("superclass")
     public static native Class superclass_static();
+
+    @Generated
+    @Selector("supportsSecureCoding")
+    public static native boolean supportsSecureCoding();
 
     @Generated
     @Selector("version")
@@ -303,6 +303,10 @@ public class SCNMaterialProperty extends NSObject implements SCNAnimatable, NSSe
     @Generated
     @Selector("setMipFilter:")
     public native void setMipFilter(@NInt long value);
+
+    @Generated
+    @Selector("setSpeed:forAnimationKey:")
+    public native void setSpeedForAnimationKey(@NFloat double speed, String key);
 
     @Generated
     @Selector("setWrapS:")

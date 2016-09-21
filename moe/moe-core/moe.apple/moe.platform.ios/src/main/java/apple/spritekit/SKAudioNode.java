@@ -59,21 +59,13 @@ public class SKAudioNode extends SKNode implements NSCoding {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native SKAudioNode alloc();
-
-    @Generated
-    @Selector("node")
-    public static native SKAudioNode node();
-
-    @Generated
-    @Selector("nodeWithFileNamed:")
-    public static native SKAudioNode nodeWithFileNamed(String filename);
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -155,6 +147,14 @@ public class SKAudioNode extends SKNode implements NSCoding {
     public static native Object new_objc();
 
     @Generated
+    @Selector("node")
+    public static native SKAudioNode node();
+
+    @Generated
+    @Selector("nodeWithFileNamed:")
+    public static native SKAudioNode nodeWithFileNamed(String filename);
+
+    @Generated
     @Selector("obstaclesFromNodeBounds:")
     public static native NSArray<? extends GKPolygonObstacle> obstaclesFromNodeBounds(NSArray<? extends SKNode> nodes);
 
@@ -178,7 +178,7 @@ public class SKAudioNode extends SKNode implements NSCoding {
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")

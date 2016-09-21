@@ -30,6 +30,7 @@ import org.moe.natj.general.ann.NUInt;
 import org.moe.natj.general.ann.Owned;
 import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.general.ptr.ConstPtr;
+import org.moe.natj.general.ptr.Ptr;
 import org.moe.natj.general.ptr.VoidPtr;
 import org.moe.natj.objc.Class;
 import org.moe.natj.objc.ObjCRuntime;
@@ -54,45 +55,13 @@ public class NSCountedSet<_ObjectType> extends NSMutableSet<_ObjectType> {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native NSCountedSet<?> alloc();
-
-    @Generated
-    @Selector("set")
-    public static native <_ObjectType> NSCountedSet<?> set();
-
-    @Generated
-    @Selector("setWithArray:")
-    public static native <_ObjectType> NSCountedSet<?> setWithArray(NSArray<_ObjectType> array);
-
-    @Generated
-    @Selector("setWithCapacity:")
-    public static native <_ObjectType> NSCountedSet<?> setWithCapacity(@NUInt long numItems);
-
-    @Generated
-    @Selector("setWithObject:")
-    public static native <_ObjectType> NSCountedSet<?> setWithObject(
-            @Mapped(ObjCObjectMapper.class) _ObjectType object);
-
-    @Generated
-    @Variadic()
-    @Selector("setWithObjects:")
-    public static native <_ObjectType> NSCountedSet<?> setWithObjects(
-            @Mapped(ObjCObjectMapper.class) _ObjectType firstObj, Object... varargs);
-
-    @Generated
-    @Selector("setWithObjects:count:")
-    public static native <_ObjectType> NSCountedSet<?> setWithObjectsCount(ConstPtr<_ObjectType> objects,
-            @NUInt long cnt);
-
-    @Generated
-    @Selector("setWithSet:")
-    public static native <_ObjectType> NSCountedSet<?> setWithSet(NSSet<_ObjectType> set);
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -178,8 +147,40 @@ public class NSCountedSet<_ObjectType> extends NSMutableSet<_ObjectType> {
     public static native boolean resolveInstanceMethod(SEL sel);
 
     @Generated
+    @Selector("set")
+    public static native <_ObjectType> NSCountedSet<?> set();
+
+    @Generated
     @Selector("setVersion:")
     public static native void setVersion_static(@NInt long aVersion);
+
+    @Generated
+    @Selector("setWithArray:")
+    public static native <_ObjectType> NSCountedSet<?> setWithArray(NSArray<_ObjectType> array);
+
+    @Generated
+    @Selector("setWithCapacity:")
+    public static native <_ObjectType> NSCountedSet<?> setWithCapacity(@NUInt long numItems);
+
+    @Generated
+    @Selector("setWithObject:")
+    public static native <_ObjectType> NSCountedSet<?> setWithObject(
+            @Mapped(ObjCObjectMapper.class) _ObjectType object);
+
+    @Generated
+    @Variadic()
+    @Selector("setWithObjects:")
+    public static native <_ObjectType> NSCountedSet<?> setWithObjects(
+            @Mapped(ObjCObjectMapper.class) _ObjectType firstObj, Object... varargs);
+
+    @Generated
+    @Selector("setWithObjects:count:")
+    public static native <_ObjectType> NSCountedSet<?> setWithObjectsCount(ConstPtr<_ObjectType> objects,
+            @NUInt long cnt);
+
+    @Generated
+    @Selector("setWithSet:")
+    public static native <_ObjectType> NSCountedSet<?> setWithSet(NSSet<_ObjectType> set);
 
     @Generated
     @Selector("superclass")
@@ -227,7 +228,7 @@ public class NSCountedSet<_ObjectType> extends NSMutableSet<_ObjectType> {
 
     @Generated
     @Selector("initWithObjects:count:")
-    public native NSCountedSet<?> initWithObjectsCount(ConstPtr<_ObjectType> objects, @NUInt long cnt);
+    public native NSCountedSet<?> initWithObjectsCount(Ptr<_ObjectType> objects, @NUInt long cnt);
 
     @Generated
     @Selector("initWithSet:")

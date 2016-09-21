@@ -54,22 +54,13 @@ public class JSManagedValue extends NSObject {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native JSManagedValue alloc();
-
-    @Generated
-    @Selector("managedValueWithValue:")
-    public static native JSManagedValue managedValueWithValue(JSValue value);
-
-    @Generated
-    @Selector("managedValueWithValue:andOwner:")
-    public static native JSManagedValue managedValueWithValueAndOwner(JSValue value,
-            @Mapped(ObjCObjectMapper.class) Object owner);
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -139,6 +130,15 @@ public class JSManagedValue extends NSObject {
     @Generated
     @Selector("load")
     public static native void load_objc_static();
+
+    @Generated
+    @Selector("managedValueWithValue:")
+    public static native JSManagedValue managedValueWithValue(JSValue value);
+
+    @Generated
+    @Selector("managedValueWithValue:andOwner:")
+    public static native JSManagedValue managedValueWithValueAndOwner(JSValue value,
+            @Mapped(ObjCObjectMapper.class) Object owner);
 
     @Generated
     @Owned

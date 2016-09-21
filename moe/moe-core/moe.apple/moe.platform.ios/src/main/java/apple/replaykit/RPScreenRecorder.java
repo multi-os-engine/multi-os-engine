@@ -22,6 +22,7 @@ import apple.foundation.NSError;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
 import apple.replaykit.protocol.RPScreenRecorderDelegate;
+import apple.uikit.UIView;
 import org.moe.natj.c.ann.FunctionPtr;
 import org.moe.natj.general.NatJ;
 import org.moe.natj.general.Pointer;
@@ -57,17 +58,13 @@ public class RPScreenRecorder extends NSObject {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native RPScreenRecorder alloc();
-
-    @Generated
-    @Selector("sharedRecorder")
-    public static native RPScreenRecorder sharedRecorder();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -154,7 +151,11 @@ public class RPScreenRecorder extends NSObject {
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
+
+    @Generated
+    @Selector("sharedRecorder")
+    public static native RPScreenRecorder sharedRecorder();
 
     @Generated
     @Selector("superclass")
@@ -164,6 +165,10 @@ public class RPScreenRecorder extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("cameraPreviewView")
+    public native UIView cameraPreviewView();
 
     @Generated
     @Selector("delegate")
@@ -184,8 +189,20 @@ public class RPScreenRecorder extends NSObject {
     public native boolean isAvailable();
 
     @Generated
+    @Selector("isCameraEnabled")
+    public native boolean isCameraEnabled();
+
+    @Generated
+    @Selector("setCameraEnabled:")
+    public native void setCameraEnabled(boolean value);
+
+    @Generated
     @Selector("isMicrophoneEnabled")
     public native boolean isMicrophoneEnabled();
+
+    @Generated
+    @Selector("setMicrophoneEnabled:")
+    public native void setMicrophoneEnabled(boolean value);
 
     @Generated
     @Selector("isRecording")
@@ -208,6 +225,11 @@ public class RPScreenRecorder extends NSObject {
     }
 
     @Generated
+    @Selector("startRecordingWithHandler:")
+    public native void startRecordingWithHandler(
+            @ObjCBlock(name = "call_startRecordingWithHandler") Block_startRecordingWithHandler handler);
+
+    @Generated
     @Selector("startRecordingWithMicrophoneEnabled:handler:")
     public native void startRecordingWithMicrophoneEnabledHandler(boolean microphoneEnabled,
             @ObjCBlock(name = "call_startRecordingWithMicrophoneEnabledHandler") Block_startRecordingWithMicrophoneEnabledHandler handler);
@@ -222,6 +244,13 @@ public class RPScreenRecorder extends NSObject {
     public interface Block_discardRecordingWithHandler {
         @Generated
         void call_discardRecordingWithHandler();
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_startRecordingWithHandler {
+        @Generated
+        void call_startRecordingWithHandler(NSError arg0);
     }
 
     @Runtime(ObjCRuntime.class)

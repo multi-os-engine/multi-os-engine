@@ -54,17 +54,13 @@ public class CTSubscriberInfo extends NSObject {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native CTSubscriberInfo alloc();
-
-    @Generated
-    @Selector("subscriber")
-    public static native CTSubscriber subscriber();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -152,6 +148,10 @@ public class CTSubscriberInfo extends NSObject {
     @Generated
     @Selector("setVersion:")
     public static native void setVersion_static(@NInt long aVersion);
+
+    @Generated
+    @Selector("subscriber")
+    public static native CTSubscriber subscriber();
 
     @Generated
     @Selector("superclass")

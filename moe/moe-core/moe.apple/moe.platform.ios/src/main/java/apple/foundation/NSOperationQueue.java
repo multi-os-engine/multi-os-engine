@@ -52,21 +52,13 @@ public class NSOperationQueue extends NSObject {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native NSOperationQueue alloc();
-
-    @Generated
-    @Selector("currentQueue")
-    public static native NSOperationQueue currentQueue();
-
-    @Generated
-    @Selector("mainQueue")
-    public static native NSOperationQueue mainQueue();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -94,6 +86,10 @@ public class NSOperationQueue extends NSObject {
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
+
+    @Generated
+    @Selector("currentQueue")
+    public static native NSOperationQueue currentQueue();
 
     @Generated
     @Selector("debugDescription")
@@ -136,6 +132,10 @@ public class NSOperationQueue extends NSObject {
     @Generated
     @Selector("load")
     public static native void load_objc_static();
+
+    @Generated
+    @Selector("mainQueue")
+    public static native NSOperationQueue mainQueue();
 
     @Generated
     @Owned

@@ -55,23 +55,13 @@ public class MPSImageMedian extends MPSUnaryImageKernel {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native MPSImageMedian alloc();
-
-    @Generated
-    @Selector("maxKernelDiameter")
-    @NUInt
-    public static native long maxKernelDiameter();
-
-    @Generated
-    @Selector("minKernelDiameter")
-    @NUInt
-    public static native long minKernelDiameter();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -141,6 +131,16 @@ public class MPSImageMedian extends MPSUnaryImageKernel {
     @Generated
     @Selector("load")
     public static native void load_objc_static();
+
+    @Generated
+    @Selector("maxKernelDiameter")
+    @NUInt
+    public static native long maxKernelDiameter();
+
+    @Generated
+    @Selector("minKernelDiameter")
+    @NUInt
+    public static native long minKernelDiameter();
 
     @Generated
     @Owned

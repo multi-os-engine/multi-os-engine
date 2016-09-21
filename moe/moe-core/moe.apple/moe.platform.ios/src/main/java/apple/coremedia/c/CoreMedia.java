@@ -102,7 +102,7 @@ public final class CoreMedia {
     @Generated
     @CFunction
     @ByValue
-    public static native CMTime CMTimeMakeWithSeconds(double seconds, int preferredTimeScale);
+    public static native CMTime CMTimeMakeWithSeconds(double seconds, int preferredTimescale);
 
     @Generated
     @CFunction
@@ -246,6 +246,35 @@ public final class CoreMedia {
     @Generated
     @CFunction
     public static native void CMTimeRangeShow(@ByValue CMTimeRange range);
+
+    @Generated
+    @CFunction
+    @ByValue
+    public static native CMTimeMapping CMTimeMappingMake(@ByValue CMTimeRange source, @ByValue CMTimeRange target);
+
+    @Generated
+    @CFunction
+    @ByValue
+    public static native CMTimeMapping CMTimeMappingMakeEmpty(@ByValue CMTimeRange target);
+
+    @Generated
+    @CFunction
+    public static native CFDictionaryRef CMTimeMappingCopyAsDictionary(@ByValue CMTimeMapping mapping,
+            CFAllocatorRef allocator);
+
+    @Generated
+    @CFunction
+    @ByValue
+    public static native CMTimeMapping CMTimeMappingMakeFromDictionary(CFDictionaryRef dict);
+
+    @Generated
+    @CFunction
+    public static native CFStringRef CMTimeMappingCopyDescription(CFAllocatorRef allocator,
+            @ByValue CMTimeMapping mapping);
+
+    @Generated
+    @CFunction
+    public static native void CMTimeMappingShow(@ByValue CMTimeMapping mapping);
 
     @Generated
     @CFunction
@@ -886,23 +915,39 @@ public final class CoreMedia {
     public static native int CMTimebaseCreateWithMasterTimebase(CFAllocatorRef allocator, CMTimebaseRef masterTimebase,
             Ptr<CMTimebaseRef> timebaseOut);
 
-    @Deprecated
     @Generated
+    @CFunction
+    public static native CMTimebaseRef CMTimebaseCopyMasterTimebase(CMTimebaseRef timebase);
+
+    @Generated
+    @CFunction
+    public static native CMClockRef CMTimebaseCopyMasterClock(CMTimebaseRef timebase);
+
+    @Generated
+    @CFunction
+    public static native ConstVoidPtr CMTimebaseCopyMaster(CMTimebaseRef timebase);
+
+    @Generated
+    @CFunction
+    public static native CMClockRef CMTimebaseCopyUltimateMasterClock(CMTimebaseRef timebase);
+
+    @Generated
+    @Deprecated
     @CFunction
     public static native CMTimebaseRef CMTimebaseGetMasterTimebase(CMTimebaseRef timebase);
 
-    @Deprecated
     @Generated
+    @Deprecated
     @CFunction
     public static native CMClockRef CMTimebaseGetMasterClock(CMTimebaseRef timebase);
 
-    @Deprecated
     @Generated
+    @Deprecated
     @CFunction
     public static native ConstVoidPtr CMTimebaseGetMaster(CMTimebaseRef timebase);
 
-    @Deprecated
     @Generated
+    @Deprecated
     @CFunction
     public static native CMClockRef CMTimebaseGetUltimateMasterClock(CMTimebaseRef timebase);
 
@@ -1512,6 +1557,19 @@ public final class CoreMedia {
 
     @Generated
     @CVariable()
+    @ByValue
+    public static native CMTimeMapping kCMTimeMappingInvalid();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCMTimeMappingSourceKey();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCMTimeMappingTargetKey();
+
+    @Generated
+    @CVariable()
     public static native CFStringRef kCMFormatDescriptionExtension_OriginalCompressionSettings();
 
     @Generated
@@ -1536,6 +1594,26 @@ public final class CoreMedia {
 
     @Generated
     @CVariable()
+    public static native CFStringRef kCMFormatDescriptionExtension_CleanAperture();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCMFormatDescriptionKey_CleanApertureWidth();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCMFormatDescriptionKey_CleanApertureHeight();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCMFormatDescriptionKey_CleanApertureHorizontalOffset();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCMFormatDescriptionKey_CleanApertureVerticalOffset();
+
+    @Generated
+    @CVariable()
     public static native CFStringRef kCMFormatDescriptionKey_CleanApertureWidthRational();
 
     @Generated
@@ -1552,7 +1630,119 @@ public final class CoreMedia {
 
     @Generated
     @CVariable()
+    public static native CFStringRef kCMFormatDescriptionExtension_FieldCount();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCMFormatDescriptionExtension_FieldDetail();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCMFormatDescriptionFieldDetail_TemporalTopFirst();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCMFormatDescriptionFieldDetail_TemporalBottomFirst();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCMFormatDescriptionFieldDetail_SpatialFirstLineEarly();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCMFormatDescriptionFieldDetail_SpatialFirstLineLate();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCMFormatDescriptionExtension_PixelAspectRatio();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCMFormatDescriptionKey_PixelAspectRatioHorizontalSpacing();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCMFormatDescriptionKey_PixelAspectRatioVerticalSpacing();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCMFormatDescriptionExtension_ColorPrimaries();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCMFormatDescriptionColorPrimaries_ITU_R_709_2();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCMFormatDescriptionColorPrimaries_EBU_3213();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCMFormatDescriptionColorPrimaries_SMPTE_C();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCMFormatDescriptionColorPrimaries_DCI_P3();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCMFormatDescriptionColorPrimaries_P3_D65();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCMFormatDescriptionColorPrimaries_ITU_R_2020();
+
+    @Generated
+    @CVariable()
     public static native CFStringRef kCMFormatDescriptionColorPrimaries_P22();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCMFormatDescriptionExtension_TransferFunction();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCMFormatDescriptionTransferFunction_ITU_R_709_2();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCMFormatDescriptionTransferFunction_SMPTE_240M_1995();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCMFormatDescriptionTransferFunction_UseGamma();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCMFormatDescriptionTransferFunction_ITU_R_2020();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCMFormatDescriptionTransferFunction_SMPTE_ST_428_1();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCMFormatDescriptionExtension_GammaLevel();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCMFormatDescriptionExtension_YCbCrMatrix();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCMFormatDescriptionYCbCrMatrix_ITU_R_709_2();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCMFormatDescriptionYCbCrMatrix_ITU_R_601_4();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCMFormatDescriptionYCbCrMatrix_SMPTE_240M_1995();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCMFormatDescriptionYCbCrMatrix_ITU_R_2020();
 
     @Generated
     @CVariable()
@@ -1568,6 +1758,42 @@ public final class CoreMedia {
 
     @Generated
     @CVariable()
+    public static native CFStringRef kCMFormatDescriptionExtension_ChromaLocationTopField();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCMFormatDescriptionExtension_ChromaLocationBottomField();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCMFormatDescriptionChromaLocation_Left();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCMFormatDescriptionChromaLocation_Center();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCMFormatDescriptionChromaLocation_TopLeft();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCMFormatDescriptionChromaLocation_Top();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCMFormatDescriptionChromaLocation_BottomLeft();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCMFormatDescriptionChromaLocation_Bottom();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCMFormatDescriptionChromaLocation_DV420();
+
+    @Generated
+    @CVariable()
     public static native CFStringRef kCMFormatDescriptionConformsToMPEG2VideoProfile();
 
     @Generated
@@ -1577,6 +1803,10 @@ public final class CoreMedia {
     @Generated
     @CVariable()
     public static native CFStringRef kCMFormatDescriptionExtension_SpatialQuality();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCMFormatDescriptionExtension_VerbatimImageDescription();
 
     @Generated
     @CVariable()
@@ -1740,6 +1970,18 @@ public final class CoreMedia {
 
     @Generated
     @CVariable()
+    public static native CFStringRef kCMMetadataFormatDescriptionKey_StructuralDependency();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCMMetadataFormatDescriptionKey_SetupData();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCMMetadataFormatDescription_StructuralDependencyKey_DependencyIsInvalidFlag();
+
+    @Generated
+    @CVariable()
     public static native CFStringRef kCMMetadataFormatDescriptionMetadataSpecificationKey_Identifier();
 
     @Generated
@@ -1749,6 +1991,14 @@ public final class CoreMedia {
     @Generated
     @CVariable()
     public static native CFStringRef kCMMetadataFormatDescriptionMetadataSpecificationKey_ExtendedLanguageTag();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCMMetadataFormatDescriptionMetadataSpecificationKey_StructuralDependency();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCMMetadataFormatDescriptionMetadataSpecificationKey_SetupData();
 
     @Generated
     @CVariable()
@@ -1922,6 +2172,26 @@ public final class CoreMedia {
     @Generated
     @CVariable()
     public static native CFStringRef kCMSampleBufferDroppedFrameReasonInfo_CameraModeSwitch();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCMSampleBufferAttachmentKey_StillImageLensStabilizationInfo();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCMSampleBufferLensStabilizationInfo_Active();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCMSampleBufferLensStabilizationInfo_OutOfRange();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCMSampleBufferLensStabilizationInfo_Unavailable();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCMSampleBufferLensStabilizationInfo_Off();
 
     @Generated
     @CVariable()
@@ -2157,6 +2427,10 @@ public final class CoreMedia {
 
     @Generated
     @CVariable()
+    public static native CFStringRef kCMMetadataKeySpace_HLSDateRange();
+
+    @Generated
+    @CVariable()
     public static native CFStringRef kCMMetadataIdentifier_QuickTimeMetadataLocation_ISO6709();
 
     @Generated
@@ -2166,6 +2440,10 @@ public final class CoreMedia {
     @Generated
     @CVariable()
     public static native CFStringRef kCMMetadataIdentifier_QuickTimeMetadataPreferredAffineTransform();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCMMetadataIdentifier_QuickTimeMetadataVideoOrientation();
 
     @Generated
     @CVariable()
@@ -2253,276 +2531,6 @@ public final class CoreMedia {
 
     @Generated
     @CVariable()
-    public static native CFStringRef kCMMetadataDataType_QuickTimeMetadataLocation_ISO6709();
-
-    @Generated
-    @CVariable()
-    public static native CFStringRef kCMMetadataDataType_QuickTimeMetadataDirection();
-
-    @Generated
-    @CFunction
-    @ByValue
-    public static native CMTimeMapping CMTimeMappingMake(@ByValue CMTimeRange source, @ByValue CMTimeRange target);
-
-    @Generated
-    @CFunction
-    @ByValue
-    public static native CMTimeMapping CMTimeMappingMakeEmpty(@ByValue CMTimeRange target);
-
-    @Generated
-    @CFunction
-    public static native CFDictionaryRef CMTimeMappingCopyAsDictionary(@ByValue CMTimeMapping mapping,
-            CFAllocatorRef allocator);
-
-    @Generated
-    @CFunction
-    @ByValue
-    public static native CMTimeMapping CMTimeMappingMakeFromDictionary(CFDictionaryRef dict);
-
-    @Generated
-    @CFunction
-    public static native CFStringRef CMTimeMappingCopyDescription(CFAllocatorRef allocator,
-            @ByValue CMTimeMapping mapping);
-
-    @Generated
-    @CFunction
-    public static native void CMTimeMappingShow(@ByValue CMTimeMapping mapping);
-
-    @Generated
-    @CFunction
-    public static native CMTimebaseRef CMTimebaseCopyMasterTimebase(CMTimebaseRef timebase);
-
-    @Generated
-    @CFunction
-    public static native CMClockRef CMTimebaseCopyMasterClock(CMTimebaseRef timebase);
-
-    @Generated
-    @CFunction
-    public static native ConstVoidPtr CMTimebaseCopyMaster(CMTimebaseRef timebase);
-
-    @Generated
-    @CFunction
-    public static native CMClockRef CMTimebaseCopyUltimateMasterClock(CMTimebaseRef timebase);
-
-    @Generated
-    @CVariable()
-    @ByValue
-    public static native CMTimeMapping kCMTimeMappingInvalid();
-
-    @Generated
-    @CVariable()
-    public static native CFStringRef kCMTimeMappingSourceKey();
-
-    @Generated
-    @CVariable()
-    public static native CFStringRef kCMTimeMappingTargetKey();
-
-    @Generated
-    @CVariable()
-    public static native CFStringRef kCMFormatDescriptionExtension_CleanAperture();
-
-    @Generated
-    @CVariable()
-    public static native CFStringRef kCMFormatDescriptionKey_CleanApertureWidth();
-
-    @Generated
-    @CVariable()
-    public static native CFStringRef kCMFormatDescriptionKey_CleanApertureHeight();
-
-    @Generated
-    @CVariable()
-    public static native CFStringRef kCMFormatDescriptionKey_CleanApertureHorizontalOffset();
-
-    @Generated
-    @CVariable()
-    public static native CFStringRef kCMFormatDescriptionKey_CleanApertureVerticalOffset();
-
-    @Generated
-    @CVariable()
-    public static native CFStringRef kCMFormatDescriptionExtension_FieldCount();
-
-    @Generated
-    @CVariable()
-    public static native CFStringRef kCMFormatDescriptionExtension_FieldDetail();
-
-    @Generated
-    @CVariable()
-    public static native CFStringRef kCMFormatDescriptionFieldDetail_TemporalTopFirst();
-
-    @Generated
-    @CVariable()
-    public static native CFStringRef kCMFormatDescriptionFieldDetail_TemporalBottomFirst();
-
-    @Generated
-    @CVariable()
-    public static native CFStringRef kCMFormatDescriptionFieldDetail_SpatialFirstLineEarly();
-
-    @Generated
-    @CVariable()
-    public static native CFStringRef kCMFormatDescriptionFieldDetail_SpatialFirstLineLate();
-
-    @Generated
-    @CVariable()
-    public static native CFStringRef kCMFormatDescriptionExtension_PixelAspectRatio();
-
-    @Generated
-    @CVariable()
-    public static native CFStringRef kCMFormatDescriptionKey_PixelAspectRatioHorizontalSpacing();
-
-    @Generated
-    @CVariable()
-    public static native CFStringRef kCMFormatDescriptionKey_PixelAspectRatioVerticalSpacing();
-
-    @Generated
-    @CVariable()
-    public static native CFStringRef kCMFormatDescriptionExtension_ColorPrimaries();
-
-    @Generated
-    @CVariable()
-    public static native CFStringRef kCMFormatDescriptionColorPrimaries_ITU_R_709_2();
-
-    @Generated
-    @CVariable()
-    public static native CFStringRef kCMFormatDescriptionColorPrimaries_EBU_3213();
-
-    @Generated
-    @CVariable()
-    public static native CFStringRef kCMFormatDescriptionColorPrimaries_SMPTE_C();
-
-    @Generated
-    @CVariable()
-    public static native CFStringRef kCMFormatDescriptionColorPrimaries_DCI_P3();
-
-    @Generated
-    @CVariable()
-    public static native CFStringRef kCMFormatDescriptionColorPrimaries_P3_D65();
-
-    @Generated
-    @CVariable()
-    public static native CFStringRef kCMFormatDescriptionColorPrimaries_ITU_R_2020();
-
-    @Generated
-    @CVariable()
-    public static native CFStringRef kCMFormatDescriptionExtension_TransferFunction();
-
-    @Generated
-    @CVariable()
-    public static native CFStringRef kCMFormatDescriptionTransferFunction_ITU_R_709_2();
-
-    @Generated
-    @CVariable()
-    public static native CFStringRef kCMFormatDescriptionTransferFunction_SMPTE_240M_1995();
-
-    @Generated
-    @CVariable()
-    public static native CFStringRef kCMFormatDescriptionTransferFunction_UseGamma();
-
-    @Generated
-    @CVariable()
-    public static native CFStringRef kCMFormatDescriptionTransferFunction_ITU_R_2020();
-
-    @Generated
-    @CVariable()
-    public static native CFStringRef kCMFormatDescriptionExtension_GammaLevel();
-
-    @Generated
-    @CVariable()
-    public static native CFStringRef kCMFormatDescriptionExtension_YCbCrMatrix();
-
-    @Generated
-    @CVariable()
-    public static native CFStringRef kCMFormatDescriptionYCbCrMatrix_ITU_R_709_2();
-
-    @Generated
-    @CVariable()
-    public static native CFStringRef kCMFormatDescriptionYCbCrMatrix_ITU_R_601_4();
-
-    @Generated
-    @CVariable()
-    public static native CFStringRef kCMFormatDescriptionYCbCrMatrix_SMPTE_240M_1995();
-
-    @Generated
-    @CVariable()
-    public static native CFStringRef kCMFormatDescriptionYCbCrMatrix_ITU_R_2020();
-
-    @Generated
-    @CVariable()
-    public static native CFStringRef kCMFormatDescriptionExtension_ChromaLocationTopField();
-
-    @Generated
-    @CVariable()
-    public static native CFStringRef kCMFormatDescriptionExtension_ChromaLocationBottomField();
-
-    @Generated
-    @CVariable()
-    public static native CFStringRef kCMFormatDescriptionChromaLocation_Left();
-
-    @Generated
-    @CVariable()
-    public static native CFStringRef kCMFormatDescriptionChromaLocation_Center();
-
-    @Generated
-    @CVariable()
-    public static native CFStringRef kCMFormatDescriptionChromaLocation_TopLeft();
-
-    @Generated
-    @CVariable()
-    public static native CFStringRef kCMFormatDescriptionChromaLocation_Top();
-
-    @Generated
-    @CVariable()
-    public static native CFStringRef kCMFormatDescriptionChromaLocation_BottomLeft();
-
-    @Generated
-    @CVariable()
-    public static native CFStringRef kCMFormatDescriptionChromaLocation_Bottom();
-
-    @Generated
-    @CVariable()
-    public static native CFStringRef kCMFormatDescriptionChromaLocation_DV420();
-
-    @Generated
-    @CVariable()
-    public static native CFStringRef kCMFormatDescriptionExtension_VerbatimImageDescription();
-
-    @Generated
-    @CVariable()
-    public static native CFStringRef kCMMetadataFormatDescriptionKey_StructuralDependency();
-
-    @Generated
-    @CVariable()
-    public static native CFStringRef kCMMetadataFormatDescription_StructuralDependencyKey_DependencyIsInvalidFlag();
-
-    @Generated
-    @CVariable()
-    public static native CFStringRef kCMMetadataFormatDescriptionMetadataSpecificationKey_StructuralDependency();
-
-    @Generated
-    @CVariable()
-    public static native CFStringRef kCMSampleBufferAttachmentKey_StillImageLensStabilizationInfo();
-
-    @Generated
-    @CVariable()
-    public static native CFStringRef kCMSampleBufferLensStabilizationInfo_Active();
-
-    @Generated
-    @CVariable()
-    public static native CFStringRef kCMSampleBufferLensStabilizationInfo_OutOfRange();
-
-    @Generated
-    @CVariable()
-    public static native CFStringRef kCMSampleBufferLensStabilizationInfo_Unavailable();
-
-    @Generated
-    @CVariable()
-    public static native CFStringRef kCMSampleBufferLensStabilizationInfo_Off();
-
-    @Generated
-    @CVariable()
-    public static native CFStringRef kCMMetadataIdentifier_QuickTimeMetadataVideoOrientation();
-
-    @Generated
-    @CVariable()
     public static native CFStringRef kCMMetadataBaseDataType_PolygonF32();
 
     @Generated
@@ -2535,7 +2543,11 @@ public final class CoreMedia {
 
     @Generated
     @CVariable()
-    public static native CFStringRef kCMMetadataKeySpace_HLSDateRange();
+    public static native CFStringRef kCMMetadataDataType_QuickTimeMetadataLocation_ISO6709();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCMMetadataDataType_QuickTimeMetadataDirection();
 
     @Runtime(CRuntime.class)
     @Generated

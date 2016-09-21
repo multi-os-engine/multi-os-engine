@@ -20,12 +20,12 @@ import org.moe.natj.general.ann.Generated;
 
 @Generated
 public final class Enums {
-    @Generated public static final int UISegmentedControlNoSegment = 0xFFFFFFFF;
+    @Generated public static final int NSAttachmentCharacter = 0x0000FFFC;
     @Generated public static final int UIPrintingNotAvailableError = 0x00000001;
     @Generated public static final int UIPrintNoContentError = 0x00000002;
     @Generated public static final int UIPrintUnknownImageFormatError = 0x00000003;
     @Generated public static final int UIPrintJobFailedError = 0x00000004;
-    @Generated public static final int NSAttachmentCharacter = 0x0000FFFC;
+    @Generated public static final int UISegmentedControlNoSegment = 0xFFFFFFFF;
     @Generated public static final int NSControlCharacterZeroAdvancementAction = 0x00000001;
     @Generated public static final int NSControlCharacterWhitespaceAction = 0x00000002;
     @Generated public static final int NSControlCharacterHorizontalTabAction = 0x00000004;

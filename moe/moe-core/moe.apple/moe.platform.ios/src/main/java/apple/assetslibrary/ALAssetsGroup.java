@@ -58,13 +58,13 @@ public class ALAssetsGroup extends NSObject {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native ALAssetsGroup alloc();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -151,7 +151,7 @@ public class ALAssetsGroup extends NSObject {
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")
@@ -162,25 +162,25 @@ public class ALAssetsGroup extends NSObject {
     @NInt
     public static native long version_static();
 
-    @Deprecated
     @Generated
+    @Deprecated
     @Selector("addAsset:")
     public native boolean addAsset(ALAsset asset);
 
-    @Deprecated
     @Generated
+    @Deprecated
     @Selector("enumerateAssetsAtIndexes:options:usingBlock:")
     public native void enumerateAssetsAtIndexesOptionsUsingBlock(NSIndexSet indexSet, @NUInt long options,
             @ObjCBlock(name = "call_enumerateAssetsAtIndexesOptionsUsingBlock") Block_enumerateAssetsAtIndexesOptionsUsingBlock enumerationBlock);
 
-    @Deprecated
     @Generated
+    @Deprecated
     @Selector("enumerateAssetsUsingBlock:")
     public native void enumerateAssetsUsingBlock(
             @ObjCBlock(name = "call_enumerateAssetsUsingBlock") Block_enumerateAssetsUsingBlock enumerationBlock);
 
-    @Deprecated
     @Generated
+    @Deprecated
     @Selector("enumerateAssetsWithOptions:usingBlock:")
     public native void enumerateAssetsWithOptionsUsingBlock(@NUInt long options,
             @ObjCBlock(name = "call_enumerateAssetsWithOptionsUsingBlock") Block_enumerateAssetsWithOptionsUsingBlock enumerationBlock);
@@ -189,29 +189,29 @@ public class ALAssetsGroup extends NSObject {
     @Selector("init")
     public native ALAssetsGroup init();
 
-    @Deprecated
     @Generated
+    @Deprecated
     @Selector("isEditable")
     public native boolean isEditable();
 
-    @Deprecated
     @Generated
+    @Deprecated
     @Selector("numberOfAssets")
     @NInt
     public native long numberOfAssets();
 
-    @Deprecated
     @Generated
+    @Deprecated
     @Selector("posterImage")
     public native CGImageRef posterImage();
 
-    @Deprecated
     @Generated
+    @Deprecated
     @Selector("setAssetsFilter:")
     public native void setAssetsFilter(ALAssetsFilter filter);
 
-    @Deprecated
     @Generated
+    @Deprecated
     @Selector("valueForProperty:")
     @MappedReturn(ObjCObjectMapper.class)
     public native Object valueForProperty(String property);

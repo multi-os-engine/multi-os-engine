@@ -124,6 +124,13 @@ public final class VideoToolbox {
 
     @Generated
     @CFunction
+    public static native int VTCompressionSessionEncodeFrameWithOutputHandler(VTCompressionSessionRef session,
+            CVBufferRef imageBuffer, @ByValue CMTime presentationTimeStamp, @ByValue CMTime duration,
+            CFDictionaryRef frameProperties, IntPtr infoFlagsOut,
+            @ObjCBlock(name = "call_VTCompressionSessionEncodeFrameWithOutputHandler") Block_VTCompressionSessionEncodeFrameWithOutputHandler outputHandler);
+
+    @Generated
+    @CFunction
     public static native int VTCompressionSessionCompleteFrames(VTCompressionSessionRef session,
             @ByValue CMTime completeUntilPresentationTimeStamp);
 
@@ -163,6 +170,12 @@ public final class VideoToolbox {
     @CFunction
     public static native int VTDecompressionSessionDecodeFrame(VTDecompressionSessionRef session,
             CMSampleBufferRef sampleBuffer, int decodeFlags, VoidPtr sourceFrameRefCon, IntPtr infoFlagsOut);
+
+    @Generated
+    @CFunction
+    public static native int VTDecompressionSessionDecodeFrameWithOutputHandler(VTDecompressionSessionRef session,
+            CMSampleBufferRef sampleBuffer, int decodeFlags, IntPtr infoFlagsOut,
+            @ObjCBlock(name = "call_VTDecompressionSessionDecodeFrameWithOutputHandler") Block_VTDecompressionSessionDecodeFrameWithOutputHandler outputHandler);
 
     @Generated
     @CFunction
@@ -234,6 +247,11 @@ public final class VideoToolbox {
     @Generated
     @CFunction
     public static native int VTCopyVideoEncoderList(CFDictionaryRef options, Ptr<CFArrayRef> listOfVideoEncodersOut);
+
+    @Generated
+    @CFunction
+    public static native int VTCreateCGImageFromCVPixelBuffer(CVBufferRef pixelBuffer, CFDictionaryRef options,
+            Ptr<CGImageRef> imageOut);
 
     @Generated
     @CVariable()
@@ -780,42 +798,66 @@ public final class VideoToolbox {
     public static native CFStringRef kVTVideoEncoderList_DisplayName();
 
     @Generated
-    @CFunction
-    public static native int VTCompressionSessionEncodeFrameWithOutputHandler(VTCompressionSessionRef session,
-            CVBufferRef imageBuffer, @ByValue CMTime presentationTimeStamp, @ByValue CMTime duration,
-            CFDictionaryRef frameProperties, IntPtr infoFlagsOut,
-            @ObjCBlock(name = "call_VTCompressionSessionEncodeFrameWithOutputHandler") Block_VTCompressionSessionEncodeFrameWithOutputHandler outputHandler);
+    @CVariable()
+    public static native CFStringRef kVTPixelTransferPropertyKey_ScalingMode();
 
     @Generated
-    @CFunction
-    public static native int VTDecompressionSessionDecodeFrameWithOutputHandler(VTDecompressionSessionRef session,
-            CMSampleBufferRef sampleBuffer, int decodeFlags, IntPtr infoFlagsOut,
-            @ObjCBlock(name = "call_VTDecompressionSessionDecodeFrameWithOutputHandler") Block_VTDecompressionSessionDecodeFrameWithOutputHandler outputHandler);
+    @CVariable()
+    public static native CFStringRef kVTScalingMode_Normal();
 
     @Generated
-    @CFunction
-    public static native int VTCreateCGImageFromCVPixelBuffer(CVBufferRef pixelBuffer, CFDictionaryRef options,
-            Ptr<CGImageRef> imageOut);
+    @CVariable()
+    public static native CFStringRef kVTScalingMode_CropSourceToCleanAperture();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kVTScalingMode_Letterbox();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kVTScalingMode_Trim();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kVTPixelTransferPropertyKey_DestinationCleanAperture();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kVTPixelTransferPropertyKey_DestinationPixelAspectRatio();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kVTPixelTransferPropertyKey_DownsamplingMode();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kVTDownsamplingMode_Decimate();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kVTDownsamplingMode_Average();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kVTPixelTransferPropertyKey_DestinationColorPrimaries();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kVTPixelTransferPropertyKey_DestinationTransferFunction();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kVTPixelTransferPropertyKey_DestinationICCProfile();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kVTPixelTransferPropertyKey_DestinationYCbCrMatrix();
 
     @Runtime(CRuntime.class)
     @Generated
     public interface Function_VTCompressionSessionCreate {
         @Generated
         void call_VTCompressionSessionCreate(VoidPtr arg0, VoidPtr arg1, int arg2, int arg3, VoidPtr arg4);
-    }
-
-    @Runtime(CRuntime.class)
-    @Generated
-    public interface Function_VTFrameSiloCallFunctionForEachSampleBuffer {
-        @Generated
-        int call_VTFrameSiloCallFunctionForEachSampleBuffer(VoidPtr arg0, VoidPtr arg1);
-    }
-
-    @Runtime(CRuntime.class)
-    @Generated
-    public interface Block_VTFrameSiloCallBlockForEachSampleBuffer {
-        @Generated
-        int call_VTFrameSiloCallBlockForEachSampleBuffer(CMSampleBufferRef arg0);
     }
 
     @Runtime(CRuntime.class)
@@ -831,5 +873,19 @@ public final class VideoToolbox {
         @Generated
         void call_VTDecompressionSessionDecodeFrameWithOutputHandler(int arg0, int arg1, CVBufferRef arg2,
                 @ByValue CMTime arg3, @ByValue CMTime arg4);
+    }
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Function_VTFrameSiloCallFunctionForEachSampleBuffer {
+        @Generated
+        int call_VTFrameSiloCallFunctionForEachSampleBuffer(VoidPtr arg0, VoidPtr arg1);
+    }
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Block_VTFrameSiloCallBlockForEachSampleBuffer {
+        @Generated
+        int call_VTFrameSiloCallBlockForEachSampleBuffer(CMSampleBufferRef arg0);
     }
 }

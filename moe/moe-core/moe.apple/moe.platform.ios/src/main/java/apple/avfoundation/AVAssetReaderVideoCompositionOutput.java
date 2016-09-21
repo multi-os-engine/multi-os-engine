@@ -56,23 +56,23 @@ public class AVAssetReaderVideoCompositionOutput extends AVAssetReaderOutput {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native AVAssetReaderVideoCompositionOutput alloc();
 
     @Generated
-    @Selector("assetReaderVideoCompositionOutputWithVideoTracks:videoSettings:")
-    public static native AVAssetReaderVideoCompositionOutput assetReaderVideoCompositionOutputWithVideoTracksVideoSettings(
-            NSArray<? extends AVAssetTrack> videoTracks, NSDictionary<String, ?> videoSettings);
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
-
-    @Generated
     @Selector("allocWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object allocWithZone(VoidPtr zone);
+
+    @Generated
+    @Selector("assetReaderVideoCompositionOutputWithVideoTracks:videoSettings:")
+    public static native AVAssetReaderVideoCompositionOutput assetReaderVideoCompositionOutputWithVideoTracksVideoSettings(
+            NSArray<? extends AVAssetTrack> videoTracks, NSDictionary<String, ?> videoSettings);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")

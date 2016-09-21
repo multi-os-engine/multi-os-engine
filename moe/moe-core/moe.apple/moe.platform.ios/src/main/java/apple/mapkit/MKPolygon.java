@@ -36,7 +36,7 @@ import org.moe.natj.general.ann.NInt;
 import org.moe.natj.general.ann.NUInt;
 import org.moe.natj.general.ann.Owned;
 import org.moe.natj.general.ann.Runtime;
-import org.moe.natj.general.ptr.Ptr;
+import org.moe.natj.general.ptr.ConstPtr;
 import org.moe.natj.general.ptr.VoidPtr;
 import org.moe.natj.objc.Class;
 import org.moe.natj.objc.ObjCRuntime;
@@ -61,31 +61,13 @@ public class MKPolygon extends MKMultiPoint implements MKOverlay {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native MKPolygon alloc();
-
-    @Generated
-    @Selector("polygonWithCoordinates:count:")
-    public static native MKPolygon polygonWithCoordinatesCount(Ptr<CLLocationCoordinate2D> coords, @NUInt long count);
-
-    @Generated
-    @Selector("polygonWithCoordinates:count:interiorPolygons:")
-    public static native MKPolygon polygonWithCoordinatesCountInteriorPolygons(Ptr<CLLocationCoordinate2D> coords,
-            @NUInt long count, NSArray<? extends MKPolygon> interiorPolygons);
-
-    @Generated
-    @Selector("polygonWithPoints:count:")
-    public static native MKPolygon polygonWithPointsCount(Ptr<MKMapPoint> points, @NUInt long count);
-
-    @Generated
-    @Selector("polygonWithPoints:count:interiorPolygons:")
-    public static native MKPolygon polygonWithPointsCountInteriorPolygons(Ptr<MKMapPoint> points, @NUInt long count,
-            NSArray<? extends MKPolygon> interiorPolygons);
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -161,6 +143,25 @@ public class MKPolygon extends MKMultiPoint implements MKOverlay {
     @Selector("new")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object new_objc();
+
+    @Generated
+    @Selector("polygonWithCoordinates:count:")
+    public static native MKPolygon polygonWithCoordinatesCount(ConstPtr<CLLocationCoordinate2D> coords,
+            @NUInt long count);
+
+    @Generated
+    @Selector("polygonWithCoordinates:count:interiorPolygons:")
+    public static native MKPolygon polygonWithCoordinatesCountInteriorPolygons(ConstPtr<CLLocationCoordinate2D> coords,
+            @NUInt long count, NSArray<? extends MKPolygon> interiorPolygons);
+
+    @Generated
+    @Selector("polygonWithPoints:count:")
+    public static native MKPolygon polygonWithPointsCount(ConstPtr<MKMapPoint> points, @NUInt long count);
+
+    @Generated
+    @Selector("polygonWithPoints:count:interiorPolygons:")
+    public static native MKPolygon polygonWithPointsCountInteriorPolygons(ConstPtr<MKMapPoint> points,
+            @NUInt long count, NSArray<? extends MKPolygon> interiorPolygons);
 
     @Generated
     @Selector("resolveClassMethod:")

@@ -56,17 +56,17 @@ public class HKQuantityType extends HKSampleType {
     }
 
     @Generated
-    @Owned
-    @Selector("alloc")
-    public static native HKQuantityType alloc();
-
-    @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("activitySummaryType")
     public static native HKActivitySummaryType activitySummaryType();
+
+    @Generated
+    @Owned
+    @Selector("alloc")
+    public static native HKQuantityType alloc();
 
     @Generated
     @Selector("allocWithZone:")
@@ -114,6 +114,10 @@ public class HKQuantityType extends HKSampleType {
     @Generated
     @Selector("description")
     public static native String description_static();
+
+    @Generated
+    @Selector("documentTypeForIdentifier:")
+    public static native HKDocumentType documentTypeForIdentifier(String identifier);
 
     @Generated
     @Selector("hash")
@@ -198,12 +202,12 @@ public class HKQuantityType extends HKSampleType {
     public native HKQuantityType init();
 
     @Generated
-    @Selector("isCompatibleWithUnit:")
-    public native boolean isCompatibleWithUnit(HKUnit unit);
-
-    @Generated
     @Selector("initWithCoder:")
     public native HKQuantityType initWithCoder(NSCoder aDecoder);
+
+    @Generated
+    @Selector("isCompatibleWithUnit:")
+    public native boolean isCompatibleWithUnit(HKUnit unit);
 
     @Generated
     @ProtocolClassMethod("supportsSecureCoding")

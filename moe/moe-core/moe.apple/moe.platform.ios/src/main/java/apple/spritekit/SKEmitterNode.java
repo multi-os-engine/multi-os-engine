@@ -62,21 +62,13 @@ public class SKEmitterNode extends SKNode {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native SKEmitterNode alloc();
-
-    @Generated
-    @Selector("node")
-    public static native SKEmitterNode node();
-
-    @Generated
-    @Selector("nodeWithFileNamed:")
-    public static native SKEmitterNode nodeWithFileNamed(String filename);
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -158,6 +150,14 @@ public class SKEmitterNode extends SKNode {
     public static native Object new_objc();
 
     @Generated
+    @Selector("node")
+    public static native SKEmitterNode node();
+
+    @Generated
+    @Selector("nodeWithFileNamed:")
+    public static native SKEmitterNode nodeWithFileNamed(String filename);
+
+    @Generated
     @Selector("obstaclesFromNodeBounds:")
     public static native NSArray<? extends GKPolygonObstacle> obstaclesFromNodeBounds(NSArray<? extends SKNode> nodes);
 
@@ -181,7 +181,7 @@ public class SKEmitterNode extends SKNode {
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")
@@ -344,6 +344,11 @@ public class SKEmitterNode extends SKNode {
     public native CGVector particlePositionRange();
 
     @Generated
+    @Selector("particleRenderOrder")
+    @NUInt
+    public native long particleRenderOrder();
+
+    @Generated
     @Selector("particleRotation")
     @NFloat
     public native double particleRotation();
@@ -401,14 +406,14 @@ public class SKEmitterNode extends SKNode {
     @NFloat
     public native double particleZPosition();
 
-    @Deprecated
     @Generated
+    @Deprecated
     @Selector("particleZPositionRange")
     @NFloat
     public native double particleZPositionRange();
 
-    @Deprecated
     @Generated
+    @Deprecated
     @Selector("particleZPositionSpeed")
     @NFloat
     public native double particleZPositionSpeed();
@@ -534,6 +539,10 @@ public class SKEmitterNode extends SKNode {
     public native void setParticlePositionRange(@ByValue CGVector value);
 
     @Generated
+    @Selector("setParticleRenderOrder:")
+    public native void setParticleRenderOrder(@NUInt long value);
+
+    @Generated
     @Selector("setParticleRotation:")
     public native void setParticleRotation(@NFloat double value);
 
@@ -581,13 +590,13 @@ public class SKEmitterNode extends SKNode {
     @Selector("setParticleZPosition:")
     public native void setParticleZPosition(@NFloat double value);
 
-    @Deprecated
     @Generated
+    @Deprecated
     @Selector("setParticleZPositionRange:")
     public native void setParticleZPositionRange(@NFloat double value);
 
-    @Deprecated
     @Generated
+    @Deprecated
     @Selector("setParticleZPositionSpeed:")
     public native void setParticleZPositionSpeed(@NFloat double value);
 
@@ -636,13 +645,4 @@ public class SKEmitterNode extends SKNode {
     @Selector("yAcceleration")
     @NFloat
     public native double yAcceleration();
-
-    @Generated
-    @Selector("particleRenderOrder")
-    @NUInt
-    public native long particleRenderOrder();
-
-    @Generated
-    @Selector("setParticleRenderOrder:")
-    public native void setParticleRenderOrder(@NUInt long value);
 }

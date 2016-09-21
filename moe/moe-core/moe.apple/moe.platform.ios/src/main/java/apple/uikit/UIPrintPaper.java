@@ -57,18 +57,13 @@ public class UIPrintPaper extends NSObject {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native UIPrintPaper alloc();
-
-    @Generated
-    @Selector("bestPaperForPageSize:withPapersFromArray:")
-    public static native UIPrintPaper bestPaperForPageSizeWithPapersFromArray(@ByValue CGSize contentSize,
-            NSArray<? extends UIPrintPaper> paperList);
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -78,6 +73,11 @@ public class UIPrintPaper extends NSObject {
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
     public static native boolean automaticallyNotifiesObserversForKey(String key);
+
+    @Generated
+    @Selector("bestPaperForPageSize:withPapersFromArray:")
+    public static native UIPrintPaper bestPaperForPageSizeWithPapersFromArray(@ByValue CGSize contentSize,
+            NSArray<? extends UIPrintPaper> paperList);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
@@ -155,7 +155,7 @@ public class UIPrintPaper extends NSObject {
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")

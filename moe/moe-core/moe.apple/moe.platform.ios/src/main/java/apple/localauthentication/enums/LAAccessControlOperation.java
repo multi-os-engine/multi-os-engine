@@ -25,6 +25,8 @@ public final class LAAccessControlOperation {
     @Generated @NInt public static final long UseItem = 0x0000000000000001L;
     @Generated @NInt public static final long CreateKey = 0x0000000000000002L;
     @Generated @NInt public static final long UseKeySign = 0x0000000000000003L;
+    @Generated @NInt public static final long UseKeyDecrypt = 0x0000000000000004L;
+    @Generated @NInt public static final long UseKeyKeyExchange = 0x0000000000000005L;
 
     @Generated
     private LAAccessControlOperation() {

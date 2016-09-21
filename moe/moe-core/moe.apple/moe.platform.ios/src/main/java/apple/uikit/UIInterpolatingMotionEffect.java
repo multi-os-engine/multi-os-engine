@@ -55,13 +55,13 @@ public class UIInterpolatingMotionEffect extends UIMotionEffect {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native UIInterpolatingMotionEffect alloc();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -164,6 +164,10 @@ public class UIInterpolatingMotionEffect extends UIMotionEffect {
     public native UIInterpolatingMotionEffect init();
 
     @Generated
+    @Selector("initWithCoder:")
+    public native UIInterpolatingMotionEffect initWithCoder(NSCoder aDecoder);
+
+    @Generated
     @Selector("initWithKeyPath:type:")
     public native UIInterpolatingMotionEffect initWithKeyPathType(String keyPath, @NInt long type);
 
@@ -193,8 +197,4 @@ public class UIInterpolatingMotionEffect extends UIMotionEffect {
     @Selector("type")
     @NInt
     public native long type();
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native UIInterpolatingMotionEffect initWithCoder(NSCoder aDecoder);
 }

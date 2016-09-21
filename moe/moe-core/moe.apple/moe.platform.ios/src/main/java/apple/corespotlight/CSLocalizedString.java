@@ -71,84 +71,13 @@ public class CSLocalizedString extends NSString {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native CSLocalizedString alloc();
-
-    @Generated
-    @Selector("string")
-    public static native CSLocalizedString string();
-
-    @Generated
-    @Selector("stringEncodingForData:encodingOptions:convertedString:usedLossyConversion:")
-    @NUInt
-    public static native long stringEncodingForDataEncodingOptionsConvertedStringUsedLossyConversion(NSData data,
-            NSDictionary<String, ?> opts, Ptr<NSString> string, BoolPtr usedLossyConversion);
-
-    @Generated
-    @Deprecated
-    @Selector("stringWithCString:")
-    public static native CSLocalizedString stringWithCString(ConstBytePtr bytes);
-
-    @Generated
-    @Selector("stringWithCString:encoding:")
-    public static native CSLocalizedString stringWithCStringEncoding(ConstBytePtr cString, @NUInt long enc);
-
-    @Generated
-    @Deprecated
-    @Selector("stringWithCString:length:")
-    public static native CSLocalizedString stringWithCStringLength(ConstBytePtr bytes, @NUInt long length);
-
-    @Generated
-    @Selector("stringWithCharacters:length:")
-    public static native CSLocalizedString stringWithCharactersLength(ConstCharPtr characters, @NUInt long length);
-
-    @Generated
-    @Deprecated
-    @Selector("stringWithContentsOfFile:")
-    public static native CSLocalizedString stringWithContentsOfFile(String path);
-
-    @Generated
-    @Selector("stringWithContentsOfFile:encoding:error:")
-    public static native CSLocalizedString stringWithContentsOfFileEncodingError(String path, @NUInt long enc,
-            Ptr<NSError> error);
-
-    @Generated
-    @Selector("stringWithContentsOfFile:usedEncoding:error:")
-    public static native CSLocalizedString stringWithContentsOfFileUsedEncodingError(String path, NUIntPtr enc,
-            Ptr<NSError> error);
-
-    @Generated
-    @Deprecated
-    @Selector("stringWithContentsOfURL:")
-    public static native CSLocalizedString stringWithContentsOfURL(NSURL url);
-
-    @Generated
-    @Selector("stringWithContentsOfURL:encoding:error:")
-    public static native CSLocalizedString stringWithContentsOfURLEncodingError(NSURL url, @NUInt long enc,
-            Ptr<NSError> error);
-
-    @Generated
-    @Selector("stringWithContentsOfURL:usedEncoding:error:")
-    public static native CSLocalizedString stringWithContentsOfURLUsedEncodingError(NSURL url, NUIntPtr enc,
-            Ptr<NSError> error);
-
-    @Generated
-    @Variadic()
-    @Selector("stringWithFormat:")
-    public static native CSLocalizedString stringWithFormat(String format, Object... varargs);
-
-    @Generated
-    @Selector("stringWithString:")
-    public static native CSLocalizedString stringWithString(String string);
-
-    @Generated
-    @Selector("stringWithUTF8String:")
-    public static native CSLocalizedString stringWithUTF8String(ConstBytePtr nullTerminatedCString);
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -239,6 +168,10 @@ public class CSLocalizedString extends NSString {
     public static native Object localizedStringWithFormat(String format, Object... varargs);
 
     @Generated
+    @Selector("localizedUserNotificationStringForKey:arguments:")
+    public static native String localizedUserNotificationStringForKeyArguments(String key, NSArray<?> arguments);
+
+    @Generated
     @Owned
     @Selector("new")
     @MappedReturn(ObjCObjectMapper.class)
@@ -259,6 +192,77 @@ public class CSLocalizedString extends NSString {
     @Generated
     @Selector("setVersion:")
     public static native void setVersion_static(@NInt long aVersion);
+
+    @Generated
+    @Selector("string")
+    public static native CSLocalizedString string();
+
+    @Generated
+    @Selector("stringEncodingForData:encodingOptions:convertedString:usedLossyConversion:")
+    @NUInt
+    public static native long stringEncodingForDataEncodingOptionsConvertedStringUsedLossyConversion(NSData data,
+            NSDictionary<String, ?> opts, Ptr<NSString> string, BoolPtr usedLossyConversion);
+
+    @Generated
+    @Deprecated
+    @Selector("stringWithCString:")
+    public static native CSLocalizedString stringWithCString(ConstBytePtr bytes);
+
+    @Generated
+    @Selector("stringWithCString:encoding:")
+    public static native CSLocalizedString stringWithCStringEncoding(ConstBytePtr cString, @NUInt long enc);
+
+    @Generated
+    @Deprecated
+    @Selector("stringWithCString:length:")
+    public static native CSLocalizedString stringWithCStringLength(ConstBytePtr bytes, @NUInt long length);
+
+    @Generated
+    @Selector("stringWithCharacters:length:")
+    public static native CSLocalizedString stringWithCharactersLength(ConstCharPtr characters, @NUInt long length);
+
+    @Generated
+    @Deprecated
+    @Selector("stringWithContentsOfFile:")
+    public static native CSLocalizedString stringWithContentsOfFile(String path);
+
+    @Generated
+    @Selector("stringWithContentsOfFile:encoding:error:")
+    public static native CSLocalizedString stringWithContentsOfFileEncodingError(String path, @NUInt long enc,
+            Ptr<NSError> error);
+
+    @Generated
+    @Selector("stringWithContentsOfFile:usedEncoding:error:")
+    public static native CSLocalizedString stringWithContentsOfFileUsedEncodingError(String path, NUIntPtr enc,
+            Ptr<NSError> error);
+
+    @Generated
+    @Deprecated
+    @Selector("stringWithContentsOfURL:")
+    public static native CSLocalizedString stringWithContentsOfURL(NSURL url);
+
+    @Generated
+    @Selector("stringWithContentsOfURL:encoding:error:")
+    public static native CSLocalizedString stringWithContentsOfURLEncodingError(NSURL url, @NUInt long enc,
+            Ptr<NSError> error);
+
+    @Generated
+    @Selector("stringWithContentsOfURL:usedEncoding:error:")
+    public static native CSLocalizedString stringWithContentsOfURLUsedEncodingError(NSURL url, NUIntPtr enc,
+            Ptr<NSError> error);
+
+    @Generated
+    @Variadic()
+    @Selector("stringWithFormat:")
+    public static native CSLocalizedString stringWithFormat(String format, Object... varargs);
+
+    @Generated
+    @Selector("stringWithString:")
+    public static native CSLocalizedString stringWithString(String string);
+
+    @Generated
+    @Selector("stringWithUTF8String:")
+    public static native CSLocalizedString stringWithUTF8String(ConstBytePtr nullTerminatedCString);
 
     @Generated
     @Selector("superclass")

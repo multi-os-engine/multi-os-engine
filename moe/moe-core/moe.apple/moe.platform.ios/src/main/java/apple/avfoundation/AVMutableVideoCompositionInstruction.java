@@ -59,17 +59,13 @@ public class AVMutableVideoCompositionInstruction extends AVVideoCompositionInst
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native AVMutableVideoCompositionInstruction alloc();
-
-    @Generated
-    @Selector("videoCompositionInstruction")
-    public static native AVMutableVideoCompositionInstruction videoCompositionInstruction();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -156,7 +152,7 @@ public class AVMutableVideoCompositionInstruction extends AVVideoCompositionInst
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")
@@ -172,6 +168,10 @@ public class AVMutableVideoCompositionInstruction extends AVVideoCompositionInst
     public static native long version_static();
 
     @Generated
+    @Selector("videoCompositionInstruction")
+    public static native AVMutableVideoCompositionInstruction videoCompositionInstruction();
+
+    @Generated
     @Selector("backgroundColor")
     public native CGColorRef backgroundColor();
 
@@ -182,6 +182,10 @@ public class AVMutableVideoCompositionInstruction extends AVVideoCompositionInst
     @Generated
     @Selector("init")
     public native AVMutableVideoCompositionInstruction init();
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native AVMutableVideoCompositionInstruction initWithCoder(NSCoder aDecoder);
 
     @Generated
     @Selector("layerInstructions")
@@ -204,17 +208,13 @@ public class AVMutableVideoCompositionInstruction extends AVVideoCompositionInst
     public native void setTimeRange(@ByValue CMTimeRange value);
 
     @Generated
-    @Selector("timeRange")
-    @ByValue
-    public native CMTimeRange timeRange();
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native AVMutableVideoCompositionInstruction initWithCoder(NSCoder aDecoder);
-
-    @Generated
     @ProtocolClassMethod("supportsSecureCoding")
     public boolean _supportsSecureCoding() {
         return supportsSecureCoding();
     }
+
+    @Generated
+    @Selector("timeRange")
+    @ByValue
+    public native CMTimeRange timeRange();
 }

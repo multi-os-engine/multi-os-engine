@@ -56,13 +56,13 @@ public class NSExpressionDescription extends NSPropertyDescription {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native NSExpressionDescription alloc();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -174,14 +174,14 @@ public class NSExpressionDescription extends NSPropertyDescription {
     public native NSExpressionDescription init();
 
     @Generated
+    @Selector("initWithCoder:")
+    public native NSExpressionDescription initWithCoder(NSCoder aDecoder);
+
+    @Generated
     @Selector("setExpression:")
     public native void setExpression(NSExpression value);
 
     @Generated
     @Selector("setExpressionResultType:")
     public native void setExpressionResultType(@NUInt long value);
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native NSExpressionDescription initWithCoder(NSCoder aDecoder);
 }

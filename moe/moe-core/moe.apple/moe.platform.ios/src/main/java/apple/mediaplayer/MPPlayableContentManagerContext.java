@@ -54,13 +54,13 @@ public class MPPlayableContentManagerContext extends NSObject {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native MPPlayableContentManagerContext alloc();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -158,10 +158,14 @@ public class MPPlayableContentManagerContext extends NSObject {
     @NInt
     public static native long version_static();
 
-    @Deprecated
     @Generated
+    @Deprecated
     @Selector("contentLimitsEnabled")
     public native boolean contentLimitsEnabled();
+
+    @Generated
+    @Selector("contentLimitsEnforced")
+    public native boolean contentLimitsEnforced();
 
     @Generated
     @Selector("endpointAvailable")
@@ -180,8 +184,4 @@ public class MPPlayableContentManagerContext extends NSObject {
     @Generated
     @Selector("init")
     public native MPPlayableContentManagerContext init();
-
-    @Generated
-    @Selector("contentLimitsEnforced")
-    public native boolean contentLimitsEnforced();
 }

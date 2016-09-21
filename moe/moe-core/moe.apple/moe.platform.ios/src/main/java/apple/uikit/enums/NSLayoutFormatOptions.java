@@ -29,8 +29,8 @@ public final class NSLayoutFormatOptions {
     @Generated @NUInt public static final long AlignAllTrailing = 0x0000000000000040L;
     @Generated @NUInt public static final long AlignAllCenterX = 0x0000000000000200L;
     @Generated @NUInt public static final long AlignAllCenterY = 0x0000000000000400L;
-    @Generated @NUInt public static final long AlignAllBaseline = 0x0000000000000800L;
     @Generated @NUInt public static final long AlignAllLastBaseline = 0x0000000000000800L;
+    @Generated @NUInt public static final long AlignAllBaseline = 0x0000000000000800L;
     @Generated @NUInt public static final long AlignAllFirstBaseline = 0x0000000000001000L;
     @Generated @NUInt public static final long AlignmentMask = 0x000000000000FFFFL;
     @Generated @NUInt public static final long DirectionLeadingToTrailing = 0x0000000000000000L;

@@ -30,15 +30,18 @@ import apple.struct.__float2;
 import apple.struct._opaque_pthread_t;
 import apple.struct.accessx_descriptor;
 import apple.struct.audit_token_t;
+import apple.struct.cmsghdr;
 import apple.struct.div_t;
 import apple.struct.fd_set;
 import apple.struct.imaxdiv_t;
+import apple.struct.in_addr;
 import apple.struct.iovec;
 import apple.struct.lconv;
 import apple.struct.ldiv_t;
 import apple.struct.lldiv_t;
 import apple.struct.mach_msg_header_t;
 import apple.struct.msghdr;
+import apple.struct.os_unfair_lock_s;
 import apple.struct.rlimit;
 import apple.struct.rusage;
 import apple.struct.sa_endpoints;
@@ -46,6 +49,8 @@ import apple.struct.security_token_t;
 import apple.struct.sf_hdtr;
 import apple.struct.sigvec;
 import apple.struct.sockaddr;
+import apple.struct.sockaddr_in;
+import apple.struct.sockaddr_storage;
 import apple.struct.stack_t;
 import apple.struct.timespec;
 import apple.struct.timeval;
@@ -96,6 +101,85 @@ public final class Globals {
     @Generated
     private Globals() {
     }
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native char _OSSwapInt16(char data);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native int _OSSwapInt32(int data);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native long _OSSwapInt64(long data);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native char OSReadSwapInt16(ConstVoidPtr base, @NUInt long offset);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native int OSReadSwapInt32(ConstVoidPtr base, @NUInt long offset);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native long OSReadSwapInt64(ConstVoidPtr base, @NUInt long offset);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native void OSWriteSwapInt16(VoidPtr base, @NUInt long offset, char data);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native void OSWriteSwapInt32(VoidPtr base, @NUInt long offset, int data);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native void OSWriteSwapInt64(VoidPtr base, @NUInt long offset, long data);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native int __darwin_fd_isset(int _n,
+            @UncertainArgument("Options: reference, array Fallback: reference") fd_set _p);
+
+    @Generated
+    @CFunction
+    @UncertainReturn("Options: java.string, c.const-byte-ptr Fallback: java.string")
+    public static native String sel_getName(SEL sel);
+
+    @Generated
+    @CFunction
+    public static native SEL sel_registerName(
+            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String str);
+
+    @Generated
+    @CFunction
+    @UncertainReturn("Options: java.string, c.const-byte-ptr Fallback: java.string")
+    public static native String object_getClassName(@Mapped(ObjCObjectMapper.class) Object obj);
+
+    @Generated
+    @CFunction
+    public static native VoidPtr object_getIndexedIvars(@Mapped(ObjCObjectMapper.class) Object obj);
+
+    @Generated
+    @CFunction
+    public static native boolean sel_isMapped(SEL sel);
+
+    @Generated
+    @CFunction
+    public static native SEL sel_getUid(
+            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String str);
 
     @Generated
     @CFunction
@@ -183,43 +267,43 @@ public final class Globals {
     @Variadic()
     @CFunction
     public static native int execl(
-            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String arg1,
-            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String arg2,
+            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String __path,
+            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String __arg0,
             Object... varargs);
 
     @Generated
     @Variadic()
     @CFunction
     public static native int execle(
-            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String arg1,
-            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String arg2,
+            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String __path,
+            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String __arg0,
             Object... varargs);
 
     @Generated
     @Variadic()
     @CFunction
     public static native int execlp(
-            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String arg1,
-            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String arg2,
+            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String __file,
+            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String __arg0,
             Object... varargs);
 
     @Generated
     @CFunction
     public static native int execv(
-            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String arg1,
-            ConstPtr<BytePtr> arg2);
+            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String __path,
+            ConstPtr<BytePtr> __argv);
 
     @Generated
     @CFunction
     public static native int execve(
-            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String arg1,
-            ConstPtr<BytePtr> arg2, ConstPtr<BytePtr> arg3);
+            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String __file,
+            ConstPtr<BytePtr> __argv, ConstPtr<BytePtr> __envp);
 
     @Generated
     @CFunction
     public static native int execvp(
-            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String arg1,
-            ConstPtr<BytePtr> arg2);
+            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String __file,
+            ConstPtr<BytePtr> __argv);
 
     @Generated
     @CFunction
@@ -353,7 +437,7 @@ public final class Globals {
     @Generated
     @CFunction
     @NInt
-    public static native long write(int arg1, ConstVoidPtr arg2, @NUInt long arg3);
+    public static native long write(int __fd, ConstVoidPtr __buf, @NUInt long __nbyte);
 
     @Generated
     @CFunction
@@ -440,12 +524,12 @@ public final class Globals {
     @Generated
     @CFunction
     @NInt
-    public static native long pread(int arg1, VoidPtr arg2, @NUInt long arg3, long arg4);
+    public static native long pread(int __fd, VoidPtr __buf, @NUInt long __nbyte, long __offset);
 
     @Generated
     @CFunction
     @NInt
-    public static native long pwrite(int arg1, ConstVoidPtr arg2, @NUInt long arg3, long arg4);
+    public static native long pwrite(int __fd, ConstVoidPtr __buf, @NUInt long __nbyte, long __offset);
 
     @Generated
     @Deprecated
@@ -531,12 +615,6 @@ public final class Globals {
             @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String arg2);
 
     @Generated
-    @Inline
-    @CFunction
-    public static native int __darwin_fd_isset(int _n,
-            @UncertainArgument("Options: reference, array Fallback: reference") fd_set _p);
-
-    @Generated
     @CFunction
     public static native int pselect(int arg1,
             @UncertainArgument("Options: reference, array Fallback: reference") fd_set arg2,
@@ -578,9 +656,9 @@ public final class Globals {
     @Generated
     @CFunction
     public static native int execvP(
-            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String arg1,
-            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String arg2,
-            ConstPtr<BytePtr> arg3);
+            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String __file,
+            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String __searchpath,
+            ConstPtr<BytePtr> __argv);
 
     @Generated
     @CFunction
@@ -615,18 +693,6 @@ public final class Globals {
 
     @Generated
     @CFunction
-    public static native int iruserok(@NUInt long arg1, int arg2,
-            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String arg3,
-            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String arg4);
-
-    @Generated
-    @CFunction
-    public static native int iruserok_sa(ConstVoidPtr arg1, int arg2, int arg3,
-            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String arg4,
-            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String arg5);
-
-    @Generated
-    @CFunction
     public static native int issetugid();
 
     @Generated
@@ -646,6 +712,11 @@ public final class Globals {
 
     @Generated
     @CFunction
+    public static native int mkpathat_np(int dfd,
+            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String path, char omode);
+
+    @Generated
+    @CFunction
     public static native int mkstemp(BytePtr arg1);
 
     @Generated
@@ -655,6 +726,18 @@ public final class Globals {
     @Generated
     @CFunction
     public static native BytePtr mktemp(BytePtr arg1);
+
+    @Generated
+    @CFunction
+    public static native int mkostemp(BytePtr path, int oflags);
+
+    @Generated
+    @CFunction
+    public static native int mkostemps(BytePtr path, int slen, int oflags);
+
+    @Generated
+    @CFunction
+    public static native int mkstemp_dprotected_np(BytePtr path, int dpclass, int dpflags);
 
     @Generated
     @CFunction
@@ -674,22 +757,6 @@ public final class Globals {
 
     @Generated
     @CFunction
-    public static native int rcmd(Ptr<BytePtr> arg1, int arg2,
-            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String arg3,
-            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String arg4,
-            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String arg5,
-            IntPtr arg6);
-
-    @Generated
-    @CFunction
-    public static native int rcmd_af(Ptr<BytePtr> arg1, int arg2,
-            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String arg3,
-            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String arg4,
-            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String arg5, IntPtr arg6,
-            int arg7);
-
-    @Generated
-    @CFunction
     public static native int reboot(int arg1);
 
     @Generated
@@ -698,14 +765,49 @@ public final class Globals {
             @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String arg1);
 
     @Generated
+    @Deprecated
+    @CFunction
+    public static native int rcmd(Ptr<BytePtr> arg1, int arg2,
+            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String arg3,
+            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String arg4,
+            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String arg5,
+            IntPtr arg6);
+
+    @Generated
+    @Deprecated
+    @CFunction
+    public static native int rcmd_af(Ptr<BytePtr> arg1, int arg2,
+            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String arg3,
+            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String arg4,
+            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String arg5, IntPtr arg6,
+            int arg7);
+
+    @Generated
+    @Deprecated
     @CFunction
     public static native int rresvport(IntPtr arg1);
 
     @Generated
+    @Deprecated
     @CFunction
     public static native int rresvport_af(IntPtr arg1, int arg2);
 
     @Generated
+    @Deprecated
+    @CFunction
+    public static native int iruserok(@NUInt long arg1, int arg2,
+            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String arg3,
+            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String arg4);
+
+    @Generated
+    @Deprecated
+    @CFunction
+    public static native int iruserok_sa(ConstVoidPtr arg1, int arg2, int arg3,
+            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String arg4,
+            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String arg5);
+
+    @Generated
+    @Deprecated
     @CFunction
     public static native int ruserok(
             @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String arg1, int arg2,
@@ -767,11 +869,6 @@ public final class Globals {
             @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String arg1);
 
     @Generated
-    @Variadic()
-    @CFunction
-    public static native int syscall(int arg1, Object... varargs);
-
-    @Generated
     @CFunction
     public static native int ttyslot();
 
@@ -788,6 +885,11 @@ public final class Globals {
     @Generated
     @CFunction
     public static native VoidPtr valloc(@NUInt long arg1);
+
+    @Generated
+    @Variadic()
+    @CFunction
+    public static native int syscall(int arg1, Object... varargs);
 
     @Generated
     @CFunction
@@ -919,79 +1021,6 @@ public final class Globals {
     public static native int filesec_unset_property(filesec_t arg1, int arg2);
 
     @Generated
-    @Inline
-    @CFunction
-    public static native char _OSSwapInt16(char data);
-
-    @Generated
-    @Inline
-    @CFunction
-    public static native int _OSSwapInt32(int data);
-
-    @Generated
-    @Inline
-    @CFunction
-    public static native long _OSSwapInt64(long data);
-
-    @Generated
-    @Inline
-    @CFunction
-    public static native char OSReadSwapInt16(ConstVoidPtr base, @NUInt long offset);
-
-    @Generated
-    @Inline
-    @CFunction
-    public static native int OSReadSwapInt32(ConstVoidPtr base, @NUInt long offset);
-
-    @Generated
-    @Inline
-    @CFunction
-    public static native long OSReadSwapInt64(ConstVoidPtr base, @NUInt long offset);
-
-    @Generated
-    @Inline
-    @CFunction
-    public static native void OSWriteSwapInt16(VoidPtr base, @NUInt long offset, char data);
-
-    @Generated
-    @Inline
-    @CFunction
-    public static native void OSWriteSwapInt32(VoidPtr base, @NUInt long offset, int data);
-
-    @Generated
-    @Inline
-    @CFunction
-    public static native void OSWriteSwapInt64(VoidPtr base, @NUInt long offset, long data);
-
-    @Generated
-    @CFunction
-    @UncertainReturn("Options: java.string, c.const-byte-ptr Fallback: java.string")
-    public static native String sel_getName(SEL sel);
-
-    @Generated
-    @CFunction
-    public static native SEL sel_registerName(
-            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String str);
-
-    @Generated
-    @CFunction
-    @UncertainReturn("Options: java.string, c.const-byte-ptr Fallback: java.string")
-    public static native String object_getClassName(@Mapped(ObjCObjectMapper.class) Object obj);
-
-    @Generated
-    @CFunction
-    public static native VoidPtr object_getIndexedIvars(@Mapped(ObjCObjectMapper.class) Object obj);
-
-    @Generated
-    @CFunction
-    public static native boolean sel_isMapped(SEL sel);
-
-    @Generated
-    @CFunction
-    public static native SEL sel_getUid(
-            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String str);
-
-    @Generated
     @CFunction
     public static native VoidPtr os_retain(VoidPtr object);
 
@@ -1036,6 +1065,10 @@ public final class Globals {
 
     @Generated
     @CFunction
+    public static native void dispatch_activate(NSObject object);
+
+    @Generated
+    @CFunction
     public static native void dispatch_suspend(NSObject object);
 
     @Generated
@@ -1056,6 +1089,14 @@ public final class Globals {
     public static native void dispatch_debugv(NSObject object,
             @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String message,
             BytePtr ap);
+
+    @Generated
+    @CFunction
+    public static native int qos_class_self();
+
+    @Generated
+    @CFunction
+    public static native int qos_class_main();
 
     @Generated
     @CFunction
@@ -1099,20 +1140,27 @@ public final class Globals {
 
     @Generated
     @CFunction
-    public static native int qos_class_self();
-
-    @Generated
-    @CFunction
-    public static native int qos_class_main();
-
-    @Generated
-    @CFunction
     public static native NSObject dispatch_get_global_queue(@NInt long identifier, @NUInt long flags);
+
+    @Generated
+    @CFunction
+    public static native NSObject dispatch_queue_attr_make_initially_inactive(NSObject attr);
+
+    @Generated
+    @CFunction
+    public static native NSObject dispatch_queue_attr_make_with_autorelease_frequency(NSObject attr,
+            @NUInt long frequency);
 
     @Generated
     @CFunction
     public static native NSObject dispatch_queue_attr_make_with_qos_class(NSObject attr, int qos_class,
             int relative_priority);
+
+    @Generated
+    @CFunction
+    public static native NSObject dispatch_queue_create_with_target(
+            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String label,
+            NSObject attr, NSObject target);
 
     @Generated
     @CFunction
@@ -1182,6 +1230,31 @@ public final class Globals {
 
     @Generated
     @CFunction
+    public static native void dispatch_assert_queue(NSObject queue);
+
+    @Generated
+    @CFunction
+    public static native void dispatch_assert_queue_barrier(NSObject queue);
+
+    @Generated
+    @CFunction
+    public static native void dispatch_assert_queue_not(NSObject queue);
+
+    @Generated
+    @CFunction
+    @ObjCBlock(name = "call_dispatch_block_create_ret")
+    public static native Block_dispatch_block_create_ret dispatch_block_create(@NUInt long flags,
+            @ObjCBlock(name = "call_dispatch_block_create") Block_dispatch_block_create block);
+
+    @Generated
+    @CFunction
+    @ObjCBlock(name = "call_dispatch_block_create_with_qos_class_ret")
+    public static native Block_dispatch_block_create_with_qos_class_ret dispatch_block_create_with_qos_class(
+            @NUInt long flags, int qos_class, int relative_priority,
+            @ObjCBlock(name = "call_dispatch_block_create_with_qos_class") Block_dispatch_block_create_with_qos_class block);
+
+    @Generated
+    @CFunction
     public static native void dispatch_block_perform(@NUInt long flags,
             @ObjCBlock(name = "call_dispatch_block_perform") Block_dispatch_block_perform block);
 
@@ -1225,6 +1298,11 @@ public final class Globals {
     @Generated
     @CFunction
     public static native int mach_voucher_deallocate(int voucher);
+
+    @Generated
+    @CFunction
+    @FunctionPtr(name = "call_signal_ret")
+    public static native Function_signal_ret signal(int arg1, @FunctionPtr(name = "call_signal") Function_signal arg2);
 
     @Generated
     @CFunction
@@ -2270,11 +2348,33 @@ public final class Globals {
 
     @Generated
     @CFunction
+    public static native int setjmp(IntPtr arg1);
+
+    @Generated
+    @CFunction
+    public static native void longjmp(IntPtr arg1, int arg2);
+
+    @Generated
+    @CFunction
+    public static native int _setjmp(IntPtr arg1);
+
+    @Generated
+    @CFunction
+    public static native int sigsetjmp(IntPtr arg1, int arg2);
+
+    @Generated
+    @CFunction
     public static native void longjmperror();
 
     @Generated
     @CFunction
     public static native int raise(int arg1);
+
+    @Generated
+    @CFunction
+    @FunctionPtr(name = "call_bsd_signal_ret")
+    public static native Function_bsd_signal_ret bsd_signal(int arg1,
+            @FunctionPtr(name = "call_bsd_signal") Function_bsd_signal arg2);
 
     @Generated
     @CFunction
@@ -2353,6 +2453,11 @@ public final class Globals {
 
     @Generated
     @CFunction
+    @FunctionPtr(name = "call_sigset_ret")
+    public static native Function_sigset_ret sigset(int arg1, @FunctionPtr(name = "call_sigset") Function_sigset arg2);
+
+    @Generated
+    @CFunction
     public static native int sigsuspend(ConstIntPtr arg1);
 
     @Generated
@@ -2383,6 +2488,18 @@ public final class Globals {
     public static native int renameat(int arg1,
             @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String arg2, int arg3,
             @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String arg4);
+
+    @Generated
+    @CFunction
+    public static native int renamex_np(
+            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String arg1,
+            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String arg2, int arg3);
+
+    @Generated
+    @CFunction
+    public static native int renameatx_np(int arg1,
+            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String arg2, int arg3,
+            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String arg4, int arg5);
 
     @Generated
     @CFunction
@@ -2422,8 +2539,8 @@ public final class Globals {
     @CFunction
     @UncertainReturn("Options: reference, array Fallback: reference")
     public static native FILE fopen(
-            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String arg1,
-            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String arg2);
+            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String __filename,
+            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String __mode);
 
     @Generated
     @Variadic()
@@ -2446,8 +2563,8 @@ public final class Globals {
     @Generated
     @CFunction
     @NUInt
-    public static native long fread(VoidPtr arg1, @NUInt long arg2, @NUInt long arg3,
-            @UncertainArgument("Options: reference, array Fallback: reference") FILE arg4);
+    public static native long fread(VoidPtr __ptr, @NUInt long __size, @NUInt long __nitems,
+            @UncertainArgument("Options: reference, array Fallback: reference") FILE __stream);
 
     @Generated
     @CFunction
@@ -2482,8 +2599,8 @@ public final class Globals {
     @Generated
     @CFunction
     @NUInt
-    public static native long fwrite(ConstVoidPtr arg1, @NUInt long arg2, @NUInt long arg3,
-            @UncertainArgument("Options: reference, array Fallback: reference") FILE arg4);
+    public static native long fwrite(ConstVoidPtr __ptr, @NUInt long __size, @NUInt long __nitems,
+            @UncertainArgument("Options: reference, array Fallback: reference") FILE __stream);
 
     @Generated
     @CFunction
@@ -2531,8 +2648,8 @@ public final class Globals {
     @Generated
     @CFunction
     public static native int rename(
-            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String arg1,
-            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String arg2);
+            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String __old,
+            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String __new);
 
     @Generated
     @CFunction
@@ -2690,48 +2807,48 @@ public final class Globals {
     @Deprecated
     @CFunction
     public static native BytePtr tempnam(
-            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String arg1,
-            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String arg2);
+            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String __dir,
+            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String __prefix);
 
     @Generated
     @CFunction
-    public static native int fseeko(@UncertainArgument("Options: reference, array Fallback: reference") FILE arg1,
-            long arg2, int arg3);
+    public static native int fseeko(@UncertainArgument("Options: reference, array Fallback: reference") FILE __stream,
+            long __offset, int __whence);
 
     @Generated
     @CFunction
-    public static native long ftello(@UncertainArgument("Options: reference, array Fallback: reference") FILE arg1);
+    public static native long ftello(@UncertainArgument("Options: reference, array Fallback: reference") FILE __stream);
 
     @Generated
     @Variadic()
     @CFunction
-    public static native int snprintf(BytePtr arg1, @NUInt long arg2,
-            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String arg3,
+    public static native int snprintf(BytePtr __str, @NUInt long __size,
+            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String __format,
             Object... varargs);
 
     @Generated
     @CFunction
-    public static native int vfscanf(@UncertainArgument("Options: reference, array Fallback: reference") FILE arg1,
-            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String arg2,
+    public static native int vfscanf(@UncertainArgument("Options: reference, array Fallback: reference") FILE __stream,
+            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String __format,
             BytePtr arg3);
 
     @Generated
     @CFunction
     public static native int vscanf(
-            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String arg1,
+            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String __format,
             BytePtr arg2);
 
     @Generated
     @CFunction
-    public static native int vsnprintf(BytePtr arg1, @NUInt long arg2,
-            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String arg3,
+    public static native int vsnprintf(BytePtr __str, @NUInt long __size,
+            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String __format,
             BytePtr arg4);
 
     @Generated
     @CFunction
     public static native int vsscanf(
-            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String arg1,
-            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String arg2,
+            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String __str,
+            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String __format,
             BytePtr arg3);
 
     @Generated
@@ -2750,14 +2867,14 @@ public final class Globals {
     @Generated
     @CFunction
     @NInt
-    public static native long getdelim(Ptr<BytePtr> arg1, NUIntPtr arg2, int arg3,
-            @UncertainArgument("Options: reference, array Fallback: reference") FILE arg4);
+    public static native long getdelim(Ptr<BytePtr> __linep, NUIntPtr __linecapp, int __delimiter,
+            @UncertainArgument("Options: reference, array Fallback: reference") FILE __stream);
 
     @Generated
     @CFunction
     @NInt
-    public static native long getline(Ptr<BytePtr> arg1, NUIntPtr arg2,
-            @UncertainArgument("Options: reference, array Fallback: reference") FILE arg3);
+    public static native long getline(Ptr<BytePtr> __linep, NUIntPtr __linecapp,
+            @UncertainArgument("Options: reference, array Fallback: reference") FILE __stream);
 
     @Generated
     @Variadic()
@@ -2934,12 +3051,12 @@ public final class Globals {
 
     @Generated
     @CFunction
-    public static native VoidPtr bsearch(ConstVoidPtr arg1, ConstVoidPtr arg2, @NUInt long arg3, @NUInt long arg4,
-            @FunctionPtr(name = "call_bsearch") Function_bsearch arg5);
+    public static native VoidPtr bsearch(ConstVoidPtr __key, ConstVoidPtr __base, @NUInt long __nel,
+            @NUInt long __width, @FunctionPtr(name = "call_bsearch") Function_bsearch __compar);
 
     @Generated
     @CFunction
-    public static native VoidPtr calloc(@NUInt long arg1, @NUInt long arg2);
+    public static native VoidPtr calloc(@NUInt long __count, @NUInt long __size);
 
     @Generated
     @CFunction
@@ -2980,13 +3097,13 @@ public final class Globals {
 
     @Generated
     @CFunction
-    public static native VoidPtr malloc(@NUInt long arg1);
+    public static native VoidPtr malloc(@NUInt long __size);
 
     @Generated
     @CFunction
     public static native int mblen(
-            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String arg1,
-            @NUInt long arg2);
+            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String __s,
+            @NUInt long __n);
 
     @Generated
     @CFunction
@@ -3003,12 +3120,12 @@ public final class Globals {
 
     @Generated
     @CFunction
-    public static native int posix_memalign(Ptr<VoidPtr> arg1, @NUInt long arg2, @NUInt long arg3);
+    public static native int posix_memalign(Ptr<VoidPtr> __memptr, @NUInt long __alignment, @NUInt long __size);
 
     @Generated
     @CFunction
-    public static native void qsort(VoidPtr arg1, @NUInt long arg2, @NUInt long arg3,
-            @FunctionPtr(name = "call_qsort") Function_qsort arg4);
+    public static native void qsort(VoidPtr __base, @NUInt long __nel, @NUInt long __width,
+            @FunctionPtr(name = "call_qsort") Function_qsort __compar);
 
     @Generated
     @CFunction
@@ -3016,7 +3133,7 @@ public final class Globals {
 
     @Generated
     @CFunction
-    public static native VoidPtr realloc(VoidPtr arg1, @NUInt long arg2);
+    public static native VoidPtr realloc(VoidPtr __ptr, @NUInt long __size);
 
     @Generated
     @CFunction
@@ -3038,27 +3155,27 @@ public final class Globals {
     @CFunction
     @NInt
     public static native long strtol(
-            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String arg1,
-            Ptr<BytePtr> arg2, int arg3);
+            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String __str,
+            Ptr<BytePtr> __endptr, int __base);
 
     @Generated
     @CFunction
     public static native long strtoll(
-            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String arg1,
-            Ptr<BytePtr> arg2, int arg3);
+            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String __str,
+            Ptr<BytePtr> __endptr, int __base);
 
     @Generated
     @CFunction
     @NUInt
     public static native long strtoul(
-            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String arg1,
-            Ptr<BytePtr> arg2, int arg3);
+            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String __str,
+            Ptr<BytePtr> __endptr, int __base);
 
     @Generated
     @CFunction
     public static native long strtoull(
-            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String arg1,
-            Ptr<BytePtr> arg2, int arg3);
+            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String __str,
+            Ptr<BytePtr> __endptr, int __base);
 
     @Generated
     @Deprecated
@@ -3149,8 +3266,9 @@ public final class Globals {
     @Generated
     @CFunction
     public static native int setenv(
-            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String arg1,
-            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String arg2, int arg3);
+            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String __name,
+            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String __value,
+            int __overwrite);
 
     @Generated
     @CFunction
@@ -3184,7 +3302,7 @@ public final class Globals {
 
     @Generated
     @CFunction
-    public static native void arc4random_buf(VoidPtr arg1, @NUInt long arg2);
+    public static native void arc4random_buf(VoidPtr __buf, @NUInt long __nbytes);
 
     @Generated
     @CFunction
@@ -3192,7 +3310,7 @@ public final class Globals {
 
     @Generated
     @CFunction
-    public static native int arc4random_uniform(int arg1);
+    public static native int arc4random_uniform(int __upper_bound);
 
     @Generated
     @CFunction
@@ -3200,8 +3318,8 @@ public final class Globals {
 
     @Generated
     @CFunction
-    public static native VoidPtr bsearch_b(ConstVoidPtr arg1, ConstVoidPtr arg2, @NUInt long arg3, @NUInt long arg4,
-            @ObjCBlock(name = "call_bsearch_b") Block_bsearch_b arg5);
+    public static native VoidPtr bsearch_b(ConstVoidPtr __key, ConstVoidPtr __base, @NUInt long __nel,
+            @NUInt long __width, @ObjCBlock(name = "call_bsearch_b") Block_bsearch_b __compar);
 
     @Generated
     @CFunction
@@ -3282,55 +3400,56 @@ public final class Globals {
 
     @Generated
     @CFunction
-    public static native int heapsort(VoidPtr arg1, @NUInt long arg2, @NUInt long arg3,
-            @FunctionPtr(name = "call_heapsort") Function_heapsort arg4);
+    public static native int heapsort(VoidPtr __base, @NUInt long __nel, @NUInt long __width,
+            @FunctionPtr(name = "call_heapsort") Function_heapsort __compar);
 
     @Generated
     @CFunction
-    public static native int heapsort_b(VoidPtr arg1, @NUInt long arg2, @NUInt long arg3,
-            @ObjCBlock(name = "call_heapsort_b") Block_heapsort_b arg4);
+    public static native int heapsort_b(VoidPtr __base, @NUInt long __nel, @NUInt long __width,
+            @ObjCBlock(name = "call_heapsort_b") Block_heapsort_b __compar);
 
     @Generated
     @CFunction
-    public static native int mergesort(VoidPtr arg1, @NUInt long arg2, @NUInt long arg3,
-            @FunctionPtr(name = "call_mergesort") Function_mergesort arg4);
+    public static native int mergesort(VoidPtr __base, @NUInt long __nel, @NUInt long __width,
+            @FunctionPtr(name = "call_mergesort") Function_mergesort __compar);
 
     @Generated
     @CFunction
-    public static native int mergesort_b(VoidPtr arg1, @NUInt long arg2, @NUInt long arg3,
-            @ObjCBlock(name = "call_mergesort_b") Block_mergesort_b arg4);
+    public static native int mergesort_b(VoidPtr __base, @NUInt long __nel, @NUInt long __width,
+            @ObjCBlock(name = "call_mergesort_b") Block_mergesort_b __compar);
 
     @Generated
     @CFunction
-    public static native void psort(VoidPtr arg1, @NUInt long arg2, @NUInt long arg3,
-            @FunctionPtr(name = "call_psort") Function_psort arg4);
+    public static native void psort(VoidPtr __base, @NUInt long __nel, @NUInt long __width,
+            @FunctionPtr(name = "call_psort") Function_psort __compar);
 
     @Generated
     @CFunction
-    public static native void psort_b(VoidPtr arg1, @NUInt long arg2, @NUInt long arg3,
-            @ObjCBlock(name = "call_psort_b") Block_psort_b arg4);
+    public static native void psort_b(VoidPtr __base, @NUInt long __nel, @NUInt long __width,
+            @ObjCBlock(name = "call_psort_b") Block_psort_b __compar);
 
     @Generated
     @CFunction
-    public static native void psort_r(VoidPtr arg1, @NUInt long arg2, @NUInt long arg3, VoidPtr arg4,
-            @FunctionPtr(name = "call_psort_r") Function_psort_r arg5);
+    public static native void psort_r(VoidPtr __base, @NUInt long __nel, @NUInt long __width, VoidPtr arg4,
+            @FunctionPtr(name = "call_psort_r") Function_psort_r __compar);
 
     @Generated
     @CFunction
-    public static native void qsort_b(VoidPtr arg1, @NUInt long arg2, @NUInt long arg3,
-            @ObjCBlock(name = "call_qsort_b") Block_qsort_b arg4);
+    public static native void qsort_b(VoidPtr __base, @NUInt long __nel, @NUInt long __width,
+            @ObjCBlock(name = "call_qsort_b") Block_qsort_b __compar);
 
     @Generated
     @CFunction
-    public static native void qsort_r(VoidPtr arg1, @NUInt long arg2, @NUInt long arg3, VoidPtr arg4,
-            @FunctionPtr(name = "call_qsort_r") Function_qsort_r arg5);
+    public static native void qsort_r(VoidPtr __base, @NUInt long __nel, @NUInt long __width, VoidPtr arg4,
+            @FunctionPtr(name = "call_qsort_r") Function_qsort_r __compar);
 
     @Generated
     @CFunction
     public static native int radixsort(
-            @UncertainArgument("Options: java.string.array, c.const-byte-ptr-ptr Fallback: java.string.array") @Mapped(CStringArrayMapper.class) String[] arg1,
-            int arg2, @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String arg3,
-            int arg4);
+            @UncertainArgument("Options: java.string.array, c.const-byte-ptr-ptr Fallback: java.string.array") @Mapped(CStringArrayMapper.class) String[] __base,
+            int __nel,
+            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String __table,
+            int __endbyte);
 
     @Generated
     @CFunction
@@ -3340,9 +3459,10 @@ public final class Globals {
     @Generated
     @CFunction
     public static native int sradixsort(
-            @UncertainArgument("Options: java.string.array, c.const-byte-ptr-ptr Fallback: java.string.array") @Mapped(CStringArrayMapper.class) String[] arg1,
-            int arg2, @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String arg3,
-            int arg4);
+            @UncertainArgument("Options: java.string.array, c.const-byte-ptr-ptr Fallback: java.string.array") @Mapped(CStringArrayMapper.class) String[] __base,
+            int __nel,
+            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String __table,
+            int __endbyte);
 
     @Generated
     @CFunction
@@ -3354,237 +3474,238 @@ public final class Globals {
 
     @Generated
     @CFunction
-    public static native VoidPtr reallocf(VoidPtr arg1, @NUInt long arg2);
+    public static native VoidPtr reallocf(VoidPtr __ptr, @NUInt long __size);
 
     @Generated
     @CFunction
     public static native long strtoq(
-            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String arg1,
-            Ptr<BytePtr> arg2, int arg3);
+            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String __str,
+            Ptr<BytePtr> __endptr, int __base);
 
     @Generated
     @CFunction
     public static native long strtouq(
-            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String arg1,
-            Ptr<BytePtr> arg2, int arg3);
+            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String __str,
+            Ptr<BytePtr> __endptr, int __base);
 
     @Generated
     @CFunction
-    public static native VoidPtr memchr(ConstVoidPtr arg1, int arg2, @NUInt long arg3);
+    public static native VoidPtr memchr(ConstVoidPtr __s, int __c, @NUInt long __n);
 
     @Generated
     @CFunction
-    public static native int memcmp(ConstVoidPtr arg1, ConstVoidPtr arg2, @NUInt long arg3);
+    public static native int memcmp(ConstVoidPtr __s1, ConstVoidPtr __s2, @NUInt long __n);
 
     @Generated
     @CFunction
-    public static native VoidPtr memcpy(VoidPtr arg1, ConstVoidPtr arg2, @NUInt long arg3);
+    public static native VoidPtr memcpy(VoidPtr __dst, ConstVoidPtr __src, @NUInt long __n);
 
     @Generated
     @CFunction
-    public static native VoidPtr memmove(VoidPtr arg1, ConstVoidPtr arg2, @NUInt long arg3);
+    public static native VoidPtr memmove(VoidPtr __dst, ConstVoidPtr __src, @NUInt long __len);
 
     @Generated
     @CFunction
-    public static native VoidPtr memset(VoidPtr arg1, int arg2, @NUInt long arg3);
+    public static native VoidPtr memset(VoidPtr __b, int __c, @NUInt long __len);
 
     @Generated
     @CFunction
-    public static native BytePtr strcat(BytePtr arg1,
-            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String arg2);
+    public static native BytePtr strcat(BytePtr __s1,
+            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String __s2);
 
     @Generated
     @CFunction
     public static native BytePtr strchr(
-            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String arg1, int arg2);
+            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String __s, int __c);
 
     @Generated
     @CFunction
     public static native int strcmp(
-            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String arg1,
-            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String arg2);
+            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String __s1,
+            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String __s2);
 
     @Generated
     @CFunction
     public static native int strcoll(
-            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String arg1,
-            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String arg2);
+            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String __s1,
+            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String __s2);
 
     @Generated
     @CFunction
-    public static native BytePtr strcpy(BytePtr arg1,
-            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String arg2);
+    public static native BytePtr strcpy(BytePtr __dst,
+            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String __src);
 
     @Generated
     @CFunction
     @NUInt
     public static native long strcspn(
-            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String arg1,
-            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String arg2);
+            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String __s,
+            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String __charset);
 
     @Generated
     @CFunction
-    public static native BytePtr strerror(int arg1);
+    public static native BytePtr strerror(int __errnum);
 
     @Generated
     @CFunction
     @NUInt
     public static native long strlen(
-            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String arg1);
+            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String __s);
 
     @Generated
     @CFunction
-    public static native BytePtr strncat(BytePtr arg1,
-            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String arg2,
-            @NUInt long arg3);
+    public static native BytePtr strncat(BytePtr __s1,
+            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String __s2,
+            @NUInt long __n);
 
     @Generated
     @CFunction
     public static native int strncmp(
-            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String arg1,
-            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String arg2,
-            @NUInt long arg3);
+            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String __s1,
+            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String __s2,
+            @NUInt long __n);
 
     @Generated
     @CFunction
-    public static native BytePtr strncpy(BytePtr arg1,
-            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String arg2,
-            @NUInt long arg3);
+    public static native BytePtr strncpy(BytePtr __dst,
+            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String __src,
+            @NUInt long __n);
 
     @Generated
     @CFunction
     public static native BytePtr strpbrk(
-            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String arg1,
-            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String arg2);
+            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String __s,
+            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String __charset);
 
     @Generated
     @CFunction
     public static native BytePtr strrchr(
-            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String arg1, int arg2);
+            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String __s, int __c);
 
     @Generated
     @CFunction
     @NUInt
     public static native long strspn(
-            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String arg1,
-            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String arg2);
+            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String __s,
+            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String __charset);
 
     @Generated
     @CFunction
     public static native BytePtr strstr(
-            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String arg1,
-            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String arg2);
+            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String __big,
+            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String __little);
 
     @Generated
     @CFunction
-    public static native BytePtr strtok(BytePtr arg1,
-            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String arg2);
+    public static native BytePtr strtok(BytePtr __str,
+            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String __sep);
 
     @Generated
     @CFunction
     @NUInt
-    public static native long strxfrm(BytePtr arg1,
-            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String arg2,
-            @NUInt long arg3);
+    public static native long strxfrm(BytePtr __s1,
+            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String __s2,
+            @NUInt long __n);
 
     @Generated
     @CFunction
-    public static native BytePtr strtok_r(BytePtr arg1,
-            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String arg2,
-            Ptr<BytePtr> arg3);
+    public static native BytePtr strtok_r(BytePtr __str,
+            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String __sep,
+            Ptr<BytePtr> __lasts);
 
     @Generated
     @CFunction
-    public static native int strerror_r(int arg1, BytePtr arg2, @NUInt long arg3);
+    public static native int strerror_r(int __errnum, BytePtr __strerrbuf, @NUInt long __buflen);
 
     @Generated
     @CFunction
     public static native BytePtr strdup(
-            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String arg1);
+            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String __s1);
 
     @Generated
     @CFunction
-    public static native VoidPtr memccpy(VoidPtr arg1, ConstVoidPtr arg2, int arg3, @NUInt long arg4);
+    public static native VoidPtr memccpy(VoidPtr __dst, ConstVoidPtr __src, int __c, @NUInt long __n);
 
     @Generated
     @CFunction
-    public static native BytePtr stpcpy(BytePtr arg1,
-            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String arg2);
+    public static native BytePtr stpcpy(BytePtr __dst,
+            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String __src);
 
     @Generated
     @CFunction
-    public static native BytePtr stpncpy(BytePtr arg1,
-            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String arg2,
-            @NUInt long arg3);
+    public static native BytePtr stpncpy(BytePtr __dst,
+            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String __src,
+            @NUInt long __n);
 
     @Generated
     @CFunction
     public static native BytePtr strndup(
-            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String arg1,
-            @NUInt long arg2);
+            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String __s1,
+            @NUInt long __n);
 
     @Generated
     @CFunction
     @NUInt
     public static native long strnlen(
-            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String arg1,
-            @NUInt long arg2);
+            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String __s1,
+            @NUInt long __n);
 
     @Generated
     @CFunction
-    public static native BytePtr strsignal(int sig);
+    public static native BytePtr strsignal(int __sig);
 
     @Generated
     @CFunction
-    public static native VoidPtr memmem(ConstVoidPtr arg1, @NUInt long arg2, ConstVoidPtr arg3, @NUInt long arg4);
+    public static native VoidPtr memmem(ConstVoidPtr __big, @NUInt long __big_len, ConstVoidPtr __little,
+            @NUInt long __little_len);
 
     @Generated
     @CFunction
-    public static native void memset_pattern4(VoidPtr arg1, ConstVoidPtr arg2, @NUInt long arg3);
+    public static native void memset_pattern4(VoidPtr __b, ConstVoidPtr __pattern4, @NUInt long __len);
 
     @Generated
     @CFunction
-    public static native void memset_pattern8(VoidPtr arg1, ConstVoidPtr arg2, @NUInt long arg3);
+    public static native void memset_pattern8(VoidPtr __b, ConstVoidPtr __pattern8, @NUInt long __len);
 
     @Generated
     @CFunction
-    public static native void memset_pattern16(VoidPtr arg1, ConstVoidPtr arg2, @NUInt long arg3);
+    public static native void memset_pattern16(VoidPtr __b, ConstVoidPtr __pattern16, @NUInt long __len);
 
     @Generated
     @CFunction
     public static native BytePtr strcasestr(
-            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String arg1,
-            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String arg2);
+            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String __big,
+            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String __little);
 
     @Generated
     @CFunction
     public static native BytePtr strnstr(
-            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String arg1,
-            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String arg2,
-            @NUInt long arg3);
+            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String __big,
+            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String __little,
+            @NUInt long __len);
 
     @Generated
     @CFunction
     @NUInt
-    public static native long strlcat(BytePtr arg1,
-            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String arg2,
-            @NUInt long arg3);
+    public static native long strlcat(BytePtr __dst,
+            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String __source,
+            @NUInt long __size);
 
     @Generated
     @CFunction
     @NUInt
-    public static native long strlcpy(BytePtr arg1,
-            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String arg2,
-            @NUInt long arg3);
+    public static native long strlcpy(BytePtr __dst,
+            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String __source,
+            @NUInt long __size);
 
     @Generated
     @CFunction
-    public static native void strmode(int arg1, BytePtr arg2);
+    public static native void strmode(int __mode, BytePtr __bp);
 
     @Generated
     @CFunction
-    public static native BytePtr strsep(Ptr<BytePtr> arg1,
-            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String arg2);
+    public static native BytePtr strsep(Ptr<BytePtr> __stringp,
+            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String __delim);
 
     @Generated
     @CFunction
@@ -3754,8 +3875,22 @@ public final class Globals {
     @Generated
     @CFunction
     public static native int nanosleep(
-            @UncertainArgument("Options: reference, array Fallback: reference") timespec arg1,
-            @UncertainArgument("Options: reference, array Fallback: reference") timespec arg2);
+            @UncertainArgument("Options: reference, array Fallback: reference") timespec __rqtp,
+            @UncertainArgument("Options: reference, array Fallback: reference") timespec __rmtp);
+
+    @Generated
+    @CFunction
+    public static native int clock_getres(int __clock_id,
+            @UncertainArgument("Options: reference, array Fallback: reference") timespec __res);
+
+    @Generated
+    @CFunction
+    public static native int clock_gettime(int __clock_id,
+            @UncertainArgument("Options: reference, array Fallback: reference") timespec __tp);
+
+    @Generated
+    @CFunction
+    public static native long clock_gettime_nsec_np(int __clock_id);
 
     @Generated
     @CFunction
@@ -4030,6 +4165,21 @@ public final class Globals {
 
     @Generated
     @CFunction
+    public static native void os_unfair_lock_lock(
+            @UncertainArgument("Options: reference, array Fallback: reference") os_unfair_lock_s lock);
+
+    @Generated
+    @CFunction
+    public static native boolean os_unfair_lock_trylock(
+            @UncertainArgument("Options: reference, array Fallback: reference") os_unfair_lock_s lock);
+
+    @Generated
+    @CFunction
+    public static native void os_unfair_lock_unlock(
+            @UncertainArgument("Options: reference, array Fallback: reference") os_unfair_lock_s lock);
+
+    @Generated
+    @CFunction
     public static native int accept(int arg1,
             @UncertainArgument("Options: reference, array Fallback: reference") sockaddr arg2, IntPtr arg3);
 
@@ -4126,6 +4276,175 @@ public final class Globals {
             @UncertainArgument("Options: reference, array Fallback: reference") sockaddr arg2);
 
     @Generated
+    @CFunction
+    public static native int connectx(int arg1,
+            @UncertainArgument("Options: reference, array Fallback: reference") sa_endpoints arg2, int arg3, int arg4,
+            @UncertainArgument("Options: reference, array Fallback: reference") iovec arg5, int arg6, NUIntPtr arg7,
+            IntPtr arg8);
+
+    @Generated
+    @CFunction
+    public static native int disconnectx(int arg1, int arg2, int arg3);
+
+    @Generated
+    @CFunction
+    public static native int setipv4sourcefilter(int arg1, @ByValue in_addr arg2, @ByValue in_addr arg3, int arg4,
+            int arg5, @UncertainArgument("Options: reference, array Fallback: reference") in_addr arg6);
+
+    @Generated
+    @CFunction
+    public static native int getipv4sourcefilter(int arg1, @ByValue in_addr arg2, @ByValue in_addr arg3, IntPtr arg4,
+            IntPtr arg5, @UncertainArgument("Options: reference, array Fallback: reference") in_addr arg6);
+
+    @Generated
+    @CFunction
+    public static native int setsourcefilter(int arg1, int arg2,
+            @UncertainArgument("Options: reference, array Fallback: reference") sockaddr arg3, int arg4, int arg5,
+            int arg6, @UncertainArgument("Options: reference, array Fallback: reference") sockaddr_storage arg7);
+
+    @Generated
+    @CFunction
+    public static native int getsourcefilter(int arg1, int arg2,
+            @UncertainArgument("Options: reference, array Fallback: reference") sockaddr arg3, int arg4, IntPtr arg5,
+            IntPtr arg6, @UncertainArgument("Options: reference, array Fallback: reference") sockaddr_storage arg7);
+
+    @Generated
+    @CFunction
+    public static native int inet6_option_space(int arg1);
+
+    @Generated
+    @CFunction
+    public static native int inet6_option_init(VoidPtr arg1, Ptr<Ptr<cmsghdr>> arg2, int arg3);
+
+    @Generated
+    @CFunction
+    public static native int inet6_option_append(
+            @UncertainArgument("Options: reference, array Fallback: reference") cmsghdr arg1,
+            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String arg2, int arg3,
+            int arg4);
+
+    @Generated
+    @CFunction
+    public static native BytePtr inet6_option_alloc(
+            @UncertainArgument("Options: reference, array Fallback: reference") cmsghdr arg1, int arg2, int arg3,
+            int arg4);
+
+    @Generated
+    @CFunction
+    public static native int inet6_option_next(
+            @UncertainArgument("Options: reference, array Fallback: reference") cmsghdr arg1, Ptr<BytePtr> arg2);
+
+    @Generated
+    @CFunction
+    public static native int inet6_option_find(
+            @UncertainArgument("Options: reference, array Fallback: reference") cmsghdr arg1, Ptr<BytePtr> arg2,
+            int arg3);
+
+    @Generated
+    @CFunction
+    @NUInt
+    public static native long inet6_rthdr_space(int arg1, int arg2);
+
+    @Generated
+    @CFunction
+    @UncertainReturn("Options: reference, array Fallback: reference")
+    public static native cmsghdr inet6_rthdr_init(VoidPtr arg1, int arg2);
+
+    @Generated
+    @CFunction
+    public static native int inet6_rthdr_add(
+            @UncertainArgument("Options: reference, array Fallback: reference") cmsghdr arg1, VoidPtr arg2, int arg3);
+
+    @Generated
+    @CFunction
+    public static native int inet6_rthdr_lasthop(
+            @UncertainArgument("Options: reference, array Fallback: reference") cmsghdr arg1, int arg2);
+
+    @Generated
+    @CFunction
+    public static native int inet6_rthdr_segments(
+            @UncertainArgument("Options: reference, array Fallback: reference") cmsghdr arg1);
+
+    @Generated
+    @CFunction
+    public static native VoidPtr inet6_rthdr_getaddr(
+            @UncertainArgument("Options: reference, array Fallback: reference") cmsghdr arg1, int arg2);
+
+    @Generated
+    @CFunction
+    public static native int inet6_rthdr_getflags(
+            @UncertainArgument("Options: reference, array Fallback: reference") cmsghdr arg1, int arg2);
+
+    @Generated
+    @CFunction
+    public static native int inet6_opt_init(VoidPtr arg1, int arg2);
+
+    @Generated
+    @CFunction
+    public static native int inet6_opt_append(VoidPtr arg1, int arg2, int arg3, byte arg4, int arg5, byte arg6,
+            Ptr<VoidPtr> arg7);
+
+    @Generated
+    @CFunction
+    public static native int inet6_opt_finish(VoidPtr arg1, int arg2, int arg3);
+
+    @Generated
+    @CFunction
+    public static native int inet6_opt_set_val(VoidPtr arg1, int arg2, VoidPtr arg3, int arg4);
+
+    @Generated
+    @CFunction
+    public static native int inet6_opt_next(VoidPtr arg1, int arg2, int arg3, BytePtr arg4, IntPtr arg5,
+            Ptr<VoidPtr> arg6);
+
+    @Generated
+    @CFunction
+    public static native int inet6_opt_find(VoidPtr arg1, int arg2, int arg3, byte arg4, IntPtr arg5,
+            Ptr<VoidPtr> arg6);
+
+    @Generated
+    @CFunction
+    public static native int inet6_opt_get_val(VoidPtr arg1, int arg2, VoidPtr arg3, int arg4);
+
+    @Generated
+    @CFunction
+    public static native int inet6_rth_space(int arg1, int arg2);
+
+    @Generated
+    @CFunction
+    public static native VoidPtr inet6_rth_init(VoidPtr arg1, int arg2, int arg3, int arg4);
+
+    @Generated
+    @CFunction
+    public static native int inet6_rth_add(VoidPtr arg1, VoidPtr arg2);
+
+    @Generated
+    @CFunction
+    public static native int inet6_rth_reverse(ConstVoidPtr arg1, VoidPtr arg2);
+
+    @Generated
+    @CFunction
+    public static native int inet6_rth_segments(ConstVoidPtr arg1);
+
+    @Generated
+    @CFunction
+    public static native VoidPtr inet6_rth_getaddr(ConstVoidPtr arg1, int arg2);
+
+    @Generated
+    @CFunction
+    public static native void addrsel_policy_init();
+
+    @Generated
+    @CFunction
+    public static native int bindresvport(int arg1,
+            @UncertainArgument("Options: reference, array Fallback: reference") sockaddr_in arg2);
+
+    @Generated
+    @CFunction
+    public static native int bindresvport_sa(int arg1,
+            @UncertainArgument("Options: reference, array Fallback: reference") sockaddr arg2);
+
+    @Generated
     @CVariable()
     public static native BytePtr optarg();
 
@@ -4218,877 +4537,6 @@ public final class Globals {
     @Generated
     @CVariable()
     public static native int daylight();
-
-    @Generated
-    @CFunction
-    @ObjCBlock(name = "call_dispatch_block_create_ret")
-    public static native Block_dispatch_block_create_ret dispatch_block_create(@NUInt long flags,
-            @ObjCBlock(name = "call_dispatch_block_create") Block_dispatch_block_create block);
-
-    @Generated
-    @CFunction
-    @ObjCBlock(name = "call_dispatch_block_create_with_qos_class_ret")
-    public static native Block_dispatch_block_create_with_qos_class_ret dispatch_block_create_with_qos_class(
-            @NUInt long flags, int qos_class, int relative_priority,
-            @ObjCBlock(name = "call_dispatch_block_create_with_qos_class") Block_dispatch_block_create_with_qos_class block);
-
-    @Generated
-    @CFunction
-    @FunctionPtr(name = "call_signal_ret")
-    public static native Function_signal_ret signal(int arg1, @FunctionPtr(name = "call_signal") Function_signal arg2);
-
-    @Generated
-    @CFunction
-    @FunctionPtr(name = "call_bsd_signal_ret")
-    public static native Function_bsd_signal_ret bsd_signal(int arg1,
-            @FunctionPtr(name = "call_bsd_signal") Function_bsd_signal arg2);
-
-    @Generated
-    @CFunction
-    @FunctionPtr(name = "call_sigset_ret")
-    public static native Function_sigset_ret sigset(int arg1, @FunctionPtr(name = "call_sigset") Function_sigset arg2);
-
-    @Generated
-    @CFunction
-    public static native int connectx(int arg1,
-            @UncertainArgument("Options: reference, array Fallback: reference") sa_endpoints arg2, int arg3, int arg4,
-            @UncertainArgument("Options: reference, array Fallback: reference") iovec arg5, int arg6, NUIntPtr arg7,
-            IntPtr arg8);
-
-    @Generated
-    @CFunction
-    public static native int disconnectx(int arg1, int arg2, int arg3);
-
-    @Generated
-    @CFunction
-    public static native int setjmp(IntPtr arg1);
-
-    @Generated
-    @CFunction
-    public static native void longjmp(IntPtr arg1, int arg2);
-
-    @Generated
-    @CFunction
-    public static native int _setjmp(IntPtr arg1);
-
-    @Generated
-    @CFunction
-    public static native int sigsetjmp(IntPtr arg1, int arg2);
-
-    @Generated
-    @Inline
-    @CFunction
-    public static native int vsha1h_u32(int __p0);
-
-    @Generated
-    @Inline
-    @CFunction
-    public static native double vabdd_f64(double __p0, double __p1);
-
-    @Generated
-    @Inline
-    @CFunction
-    public static native float vabds_f32(float __p0, float __p1);
-
-    @Generated
-    @Inline
-    @CFunction
-    public static native long vabsd_s64(long __p0);
-
-    @Generated
-    @Inline
-    @CFunction
-    public static native long vaddd_u64(long __p0, long __p1);
-
-    @Generated
-    @Inline
-    @CFunction
-    public static native long vaddd_s64(long __p0, long __p1);
-
-    @Generated
-    @Inline
-    @CFunction
-    public static native long vcaged_f64(double __p0, double __p1);
-
-    @Generated
-    @Inline
-    @CFunction
-    public static native int vcages_f32(float __p0, float __p1);
-
-    @Generated
-    @Inline
-    @CFunction
-    public static native long vcagtd_f64(double __p0, double __p1);
-
-    @Generated
-    @Inline
-    @CFunction
-    public static native int vcagts_f32(float __p0, float __p1);
-
-    @Generated
-    @Inline
-    @CFunction
-    public static native long vcaled_f64(double __p0, double __p1);
-
-    @Generated
-    @Inline
-    @CFunction
-    public static native int vcales_f32(float __p0, float __p1);
-
-    @Generated
-    @Inline
-    @CFunction
-    public static native long vcaltd_f64(double __p0, double __p1);
-
-    @Generated
-    @Inline
-    @CFunction
-    public static native int vcalts_f32(float __p0, float __p1);
-
-    @Generated
-    @Inline
-    @CFunction
-    public static native long vceqd_u64(long __p0, long __p1);
-
-    @Generated
-    @Inline
-    @CFunction
-    public static native long vceqd_s64(long __p0, long __p1);
-
-    @Generated
-    @Inline
-    @CFunction
-    public static native long vceqd_f64(double __p0, double __p1);
-
-    @Generated
-    @Inline
-    @CFunction
-    public static native int vceqs_f32(float __p0, float __p1);
-
-    @Generated
-    @Inline
-    @CFunction
-    public static native long vceqzd_u64(long __p0);
-
-    @Generated
-    @Inline
-    @CFunction
-    public static native long vceqzd_s64(long __p0);
-
-    @Generated
-    @Inline
-    @CFunction
-    public static native long vceqzd_f64(double __p0);
-
-    @Generated
-    @Inline
-    @CFunction
-    public static native int vceqzs_f32(float __p0);
-
-    @Generated
-    @Inline
-    @CFunction
-    public static native long vcged_s64(long __p0, long __p1);
-
-    @Generated
-    @Inline
-    @CFunction
-    public static native long vcged_u64(long __p0, long __p1);
-
-    @Generated
-    @Inline
-    @CFunction
-    public static native long vcged_f64(double __p0, double __p1);
-
-    @Generated
-    @Inline
-    @CFunction
-    public static native int vcges_f32(float __p0, float __p1);
-
-    @Generated
-    @Inline
-    @CFunction
-    public static native long vcgezd_s64(long __p0);
-
-    @Generated
-    @Inline
-    @CFunction
-    public static native long vcgezd_f64(double __p0);
-
-    @Generated
-    @Inline
-    @CFunction
-    public static native int vcgezs_f32(float __p0);
-
-    @Generated
-    @Inline
-    @CFunction
-    public static native long vcgtd_s64(long __p0, long __p1);
-
-    @Generated
-    @Inline
-    @CFunction
-    public static native long vcgtd_u64(long __p0, long __p1);
-
-    @Generated
-    @Inline
-    @CFunction
-    public static native long vcgtd_f64(double __p0, double __p1);
-
-    @Generated
-    @Inline
-    @CFunction
-    public static native int vcgts_f32(float __p0, float __p1);
-
-    @Generated
-    @Inline
-    @CFunction
-    public static native long vcgtzd_s64(long __p0);
-
-    @Generated
-    @Inline
-    @CFunction
-    public static native long vcgtzd_f64(double __p0);
-
-    @Generated
-    @Inline
-    @CFunction
-    public static native int vcgtzs_f32(float __p0);
-
-    @Generated
-    @Inline
-    @CFunction
-    public static native long vcled_u64(long __p0, long __p1);
-
-    @Generated
-    @Inline
-    @CFunction
-    public static native long vcled_s64(long __p0, long __p1);
-
-    @Generated
-    @Inline
-    @CFunction
-    public static native long vcled_f64(double __p0, double __p1);
-
-    @Generated
-    @Inline
-    @CFunction
-    public static native int vcles_f32(float __p0, float __p1);
-
-    @Generated
-    @Inline
-    @CFunction
-    public static native long vclezd_s64(long __p0);
-
-    @Generated
-    @Inline
-    @CFunction
-    public static native long vclezd_f64(double __p0);
-
-    @Generated
-    @Inline
-    @CFunction
-    public static native int vclezs_f32(float __p0);
-
-    @Generated
-    @Inline
-    @CFunction
-    public static native long vcltd_u64(long __p0, long __p1);
-
-    @Generated
-    @Inline
-    @CFunction
-    public static native long vcltd_s64(long __p0, long __p1);
-
-    @Generated
-    @Inline
-    @CFunction
-    public static native long vcltd_f64(double __p0, double __p1);
-
-    @Generated
-    @Inline
-    @CFunction
-    public static native int vclts_f32(float __p0, float __p1);
-
-    @Generated
-    @Inline
-    @CFunction
-    public static native long vcltzd_s64(long __p0);
-
-    @Generated
-    @Inline
-    @CFunction
-    public static native long vcltzd_f64(double __p0);
-
-    @Generated
-    @Inline
-    @CFunction
-    public static native int vcltzs_f32(float __p0);
-
-    @Generated
-    @Inline
-    @CFunction
-    public static native float vcvts_f32_s32(int __p0);
-
-    @Generated
-    @Inline
-    @CFunction
-    public static native float vcvts_f32_u32(int __p0);
-
-    @Generated
-    @Inline
-    @CFunction
-    public static native double vcvtd_f64_s64(long __p0);
-
-    @Generated
-    @Inline
-    @CFunction
-    public static native double vcvtd_f64_u64(long __p0);
-
-    @Generated
-    @Inline
-    @CFunction
-    public static native int vcvts_s32_f32(float __p0);
-
-    @Generated
-    @Inline
-    @CFunction
-    public static native long vcvtd_s64_f64(double __p0);
-
-    @Generated
-    @Inline
-    @CFunction
-    public static native int vcvts_u32_f32(float __p0);
-
-    @Generated
-    @Inline
-    @CFunction
-    public static native long vcvtd_u64_f64(double __p0);
-
-    @Generated
-    @Inline
-    @CFunction
-    public static native int vcvtas_s32_f32(float __p0);
-
-    @Generated
-    @Inline
-    @CFunction
-    public static native long vcvtad_s64_f64(double __p0);
-
-    @Generated
-    @Inline
-    @CFunction
-    public static native int vcvtas_u32_f32(float __p0);
-
-    @Generated
-    @Inline
-    @CFunction
-    public static native long vcvtad_u64_f64(double __p0);
-
-    @Generated
-    @Inline
-    @CFunction
-    public static native int vcvtms_s32_f32(float __p0);
-
-    @Generated
-    @Inline
-    @CFunction
-    public static native long vcvtmd_s64_f64(double __p0);
-
-    @Generated
-    @Inline
-    @CFunction
-    public static native int vcvtms_u32_f32(float __p0);
-
-    @Generated
-    @Inline
-    @CFunction
-    public static native long vcvtmd_u64_f64(double __p0);
-
-    @Generated
-    @Inline
-    @CFunction
-    public static native int vcvtns_s32_f32(float __p0);
-
-    @Generated
-    @Inline
-    @CFunction
-    public static native long vcvtnd_s64_f64(double __p0);
-
-    @Generated
-    @Inline
-    @CFunction
-    public static native int vcvtns_u32_f32(float __p0);
-
-    @Generated
-    @Inline
-    @CFunction
-    public static native long vcvtnd_u64_f64(double __p0);
-
-    @Generated
-    @Inline
-    @CFunction
-    public static native int vcvtps_s32_f32(float __p0);
-
-    @Generated
-    @Inline
-    @CFunction
-    public static native long vcvtpd_s64_f64(double __p0);
-
-    @Generated
-    @Inline
-    @CFunction
-    public static native int vcvtps_u32_f32(float __p0);
-
-    @Generated
-    @Inline
-    @CFunction
-    public static native long vcvtpd_u64_f64(double __p0);
-
-    @Generated
-    @Inline
-    @CFunction
-    public static native float vcvtxd_f32_f64(double __p0);
-
-    @Generated
-    @Inline
-    @CFunction
-    public static native double vmulxd_f64(double __p0, double __p1);
-
-    @Generated
-    @Inline
-    @CFunction
-    public static native float vmulxs_f32(float __p0, float __p1);
-
-    @Generated
-    @Inline
-    @CFunction
-    public static native long vnegd_s64(long __p0);
-
-    @Generated
-    @Inline
-    @CFunction
-    public static native byte vqabsb_s8(byte __p0);
-
-    @Generated
-    @Inline
-    @CFunction
-    public static native int vqabss_s32(int __p0);
-
-    @Generated
-    @Inline
-    @CFunction
-    public static native long vqabsd_s64(long __p0);
-
-    @Generated
-    @Inline
-    @CFunction
-    public static native short vqabsh_s16(short __p0);
-
-    @Generated
-    @Inline
-    @CFunction
-    public static native byte vqaddb_u8(byte __p0, byte __p1);
-
-    @Generated
-    @Inline
-    @CFunction
-    public static native int vqadds_u32(int __p0, int __p1);
-
-    @Generated
-    @Inline
-    @CFunction
-    public static native long vqaddd_u64(long __p0, long __p1);
-
-    @Generated
-    @Inline
-    @CFunction
-    public static native char vqaddh_u16(char __p0, char __p1);
-
-    @Generated
-    @Inline
-    @CFunction
-    public static native byte vqaddb_s8(byte __p0, byte __p1);
-
-    @Generated
-    @Inline
-    @CFunction
-    public static native int vqadds_s32(int __p0, int __p1);
-
-    @Generated
-    @Inline
-    @CFunction
-    public static native long vqaddd_s64(long __p0, long __p1);
-
-    @Generated
-    @Inline
-    @CFunction
-    public static native short vqaddh_s16(short __p0, short __p1);
-
-    @Generated
-    @Inline
-    @CFunction
-    public static native long vqdmlals_s32(long __p0, int __p1, int __p2);
-
-    @Generated
-    @Inline
-    @CFunction
-    public static native int vqdmlalh_s16(int __p0, short __p1, short __p2);
-
-    @Generated
-    @Inline
-    @CFunction
-    public static native long vqdmlsls_s32(long __p0, int __p1, int __p2);
-
-    @Generated
-    @Inline
-    @CFunction
-    public static native int vqdmlslh_s16(int __p0, short __p1, short __p2);
-
-    @Generated
-    @Inline
-    @CFunction
-    public static native int vqdmulhs_s32(int __p0, int __p1);
-
-    @Generated
-    @Inline
-    @CFunction
-    public static native short vqdmulhh_s16(short __p0, short __p1);
-
-    @Generated
-    @Inline
-    @CFunction
-    public static native long vqdmulls_s32(int __p0, int __p1);
-
-    @Generated
-    @Inline
-    @CFunction
-    public static native int vqdmullh_s16(short __p0, short __p1);
-
-    @Generated
-    @Inline
-    @CFunction
-    public static native short vqmovns_s32(int __p0);
-
-    @Generated
-    @Inline
-    @CFunction
-    public static native int vqmovnd_s64(long __p0);
-
-    @Generated
-    @Inline
-    @CFunction
-    public static native byte vqmovnh_s16(short __p0);
-
-    @Generated
-    @Inline
-    @CFunction
-    public static native char vqmovns_u32(int __p0);
-
-    @Generated
-    @Inline
-    @CFunction
-    public static native int vqmovnd_u64(long __p0);
-
-    @Generated
-    @Inline
-    @CFunction
-    public static native byte vqmovnh_u16(char __p0);
-
-    @Generated
-    @Inline
-    @CFunction
-    public static native short vqmovuns_s32(int __p0);
-
-    @Generated
-    @Inline
-    @CFunction
-    public static native int vqmovund_s64(long __p0);
-
-    @Generated
-    @Inline
-    @CFunction
-    public static native byte vqmovunh_s16(short __p0);
-
-    @Generated
-    @Inline
-    @CFunction
-    public static native byte vqnegb_s8(byte __p0);
-
-    @Generated
-    @Inline
-    @CFunction
-    public static native int vqnegs_s32(int __p0);
-
-    @Generated
-    @Inline
-    @CFunction
-    public static native long vqnegd_s64(long __p0);
-
-    @Generated
-    @Inline
-    @CFunction
-    public static native short vqnegh_s16(short __p0);
-
-    @Generated
-    @Inline
-    @CFunction
-    public static native int vqrdmulhs_s32(int __p0, int __p1);
-
-    @Generated
-    @Inline
-    @CFunction
-    public static native short vqrdmulhh_s16(short __p0, short __p1);
-
-    @Generated
-    @Inline
-    @CFunction
-    public static native byte vqrshlb_u8(byte __p0, byte __p1);
-
-    @Generated
-    @Inline
-    @CFunction
-    public static native int vqrshls_u32(int __p0, int __p1);
-
-    @Generated
-    @Inline
-    @CFunction
-    public static native long vqrshld_u64(long __p0, long __p1);
-
-    @Generated
-    @Inline
-    @CFunction
-    public static native char vqrshlh_u16(char __p0, char __p1);
-
-    @Generated
-    @Inline
-    @CFunction
-    public static native byte vqrshlb_s8(byte __p0, byte __p1);
-
-    @Generated
-    @Inline
-    @CFunction
-    public static native int vqrshls_s32(int __p0, int __p1);
-
-    @Generated
-    @Inline
-    @CFunction
-    public static native long vqrshld_s64(long __p0, long __p1);
-
-    @Generated
-    @Inline
-    @CFunction
-    public static native short vqrshlh_s16(short __p0, short __p1);
-
-    @Generated
-    @Inline
-    @CFunction
-    public static native byte vqshlb_u8(byte __p0, byte __p1);
-
-    @Generated
-    @Inline
-    @CFunction
-    public static native int vqshls_u32(int __p0, int __p1);
-
-    @Generated
-    @Inline
-    @CFunction
-    public static native long vqshld_u64(long __p0, long __p1);
-
-    @Generated
-    @Inline
-    @CFunction
-    public static native char vqshlh_u16(char __p0, char __p1);
-
-    @Generated
-    @Inline
-    @CFunction
-    public static native byte vqshlb_s8(byte __p0, byte __p1);
-
-    @Generated
-    @Inline
-    @CFunction
-    public static native int vqshls_s32(int __p0, int __p1);
-
-    @Generated
-    @Inline
-    @CFunction
-    public static native long vqshld_s64(long __p0, long __p1);
-
-    @Generated
-    @Inline
-    @CFunction
-    public static native short vqshlh_s16(short __p0, short __p1);
-
-    @Generated
-    @Inline
-    @CFunction
-    public static native byte vqsubb_u8(byte __p0, byte __p1);
-
-    @Generated
-    @Inline
-    @CFunction
-    public static native int vqsubs_u32(int __p0, int __p1);
-
-    @Generated
-    @Inline
-    @CFunction
-    public static native long vqsubd_u64(long __p0, long __p1);
-
-    @Generated
-    @Inline
-    @CFunction
-    public static native char vqsubh_u16(char __p0, char __p1);
-
-    @Generated
-    @Inline
-    @CFunction
-    public static native byte vqsubb_s8(byte __p0, byte __p1);
-
-    @Generated
-    @Inline
-    @CFunction
-    public static native int vqsubs_s32(int __p0, int __p1);
-
-    @Generated
-    @Inline
-    @CFunction
-    public static native long vqsubd_s64(long __p0, long __p1);
-
-    @Generated
-    @Inline
-    @CFunction
-    public static native short vqsubh_s16(short __p0, short __p1);
-
-    @Generated
-    @Inline
-    @CFunction
-    public static native double vrecped_f64(double __p0);
-
-    @Generated
-    @Inline
-    @CFunction
-    public static native float vrecpes_f32(float __p0);
-
-    @Generated
-    @Inline
-    @CFunction
-    public static native double vrecpsd_f64(double __p0, double __p1);
-
-    @Generated
-    @Inline
-    @CFunction
-    public static native float vrecpss_f32(float __p0, float __p1);
-
-    @Generated
-    @Inline
-    @CFunction
-    public static native double vrecpxd_f64(double __p0);
-
-    @Generated
-    @Inline
-    @CFunction
-    public static native float vrecpxs_f32(float __p0);
-
-    @Generated
-    @Inline
-    @CFunction
-    public static native long vrshld_u64(long __p0, long __p1);
-
-    @Generated
-    @Inline
-    @CFunction
-    public static native long vrshld_s64(long __p0, long __p1);
-
-    @Generated
-    @Inline
-    @CFunction
-    public static native double vrsqrted_f64(double __p0);
-
-    @Generated
-    @Inline
-    @CFunction
-    public static native float vrsqrtes_f32(float __p0);
-
-    @Generated
-    @Inline
-    @CFunction
-    public static native double vrsqrtsd_f64(double __p0, double __p1);
-
-    @Generated
-    @Inline
-    @CFunction
-    public static native float vrsqrtss_f32(float __p0, float __p1);
-
-    @Generated
-    @Inline
-    @CFunction
-    public static native long vshld_u64(long __p0, long __p1);
-
-    @Generated
-    @Inline
-    @CFunction
-    public static native long vshld_s64(long __p0, long __p1);
-
-    @Generated
-    @Inline
-    @CFunction
-    public static native byte vsqaddb_u8(byte __p0, byte __p1);
-
-    @Generated
-    @Inline
-    @CFunction
-    public static native int vsqadds_u32(int __p0, int __p1);
-
-    @Generated
-    @Inline
-    @CFunction
-    public static native long vsqaddd_u64(long __p0, long __p1);
-
-    @Generated
-    @Inline
-    @CFunction
-    public static native char vsqaddh_u16(char __p0, char __p1);
-
-    @Generated
-    @Inline
-    @CFunction
-    public static native long vsubd_u64(long __p0, long __p1);
-
-    @Generated
-    @Inline
-    @CFunction
-    public static native long vsubd_s64(long __p0, long __p1);
-
-    @Generated
-    @Inline
-    @CFunction
-    public static native long vtstd_u64(long __p0, long __p1);
-
-    @Generated
-    @Inline
-    @CFunction
-    public static native long vtstd_s64(long __p0, long __p1);
-
-    @Generated
-    @Inline
-    @CFunction
-    public static native byte vuqaddb_s8(byte __p0, byte __p1);
-
-    @Generated
-    @Inline
-    @CFunction
-    public static native int vuqadds_s32(int __p0, int __p1);
-
-    @Generated
-    @Inline
-    @CFunction
-    public static native long vuqaddd_s64(long __p0, long __p1);
-
-    @Generated
-    @Inline
-    @CFunction
-    public static native short vuqaddh_s16(short __p0, short __p1);
 
     @Runtime(CRuntime.class)
     @Generated
@@ -5190,6 +4638,34 @@ public final class Globals {
 
     @Runtime(CRuntime.class)
     @Generated
+    public interface Block_dispatch_block_create_ret {
+        @Generated
+        void call_dispatch_block_create_ret();
+    }
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Block_dispatch_block_create {
+        @Generated
+        void call_dispatch_block_create();
+    }
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Block_dispatch_block_create_with_qos_class_ret {
+        @Generated
+        void call_dispatch_block_create_with_qos_class_ret();
+    }
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Block_dispatch_block_create_with_qos_class {
+        @Generated
+        void call_dispatch_block_create_with_qos_class();
+    }
+
+    @Runtime(CRuntime.class)
+    @Generated
     public interface Block_dispatch_block_perform {
         @Generated
         void call_dispatch_block_perform();
@@ -5228,6 +4704,20 @@ public final class Globals {
     public interface Block_dispatch_block_testcancel {
         @Generated
         void call_dispatch_block_testcancel();
+    }
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Function_signal_ret {
+        @Generated
+        void call_signal_ret(int arg0);
+    }
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Function_signal {
+        @Generated
+        void call_signal(int arg0);
     }
 
     @Runtime(CRuntime.class)
@@ -5400,6 +4890,34 @@ public final class Globals {
 
     @Runtime(CRuntime.class)
     @Generated
+    public interface Function_bsd_signal_ret {
+        @Generated
+        void call_bsd_signal_ret(int arg0);
+    }
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Function_bsd_signal {
+        @Generated
+        void call_bsd_signal(int arg0);
+    }
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Function_sigset_ret {
+        @Generated
+        void call_sigset_ret(int arg0);
+    }
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Function_sigset {
+        @Generated
+        void call_sigset(int arg0);
+    }
+
+    @Runtime(CRuntime.class)
+    @Generated
     public interface Function_funopen_1 {
         @Generated
         int call_funopen_1(VoidPtr arg0, BytePtr arg1, int arg2);
@@ -5524,75 +5042,5 @@ public final class Globals {
     public interface Function_qsort_r {
         @Generated
         int call_qsort_r(VoidPtr arg0, ConstVoidPtr arg1, ConstVoidPtr arg2);
-    }
-
-    @Runtime(CRuntime.class)
-    @Generated
-    public interface Block_dispatch_block_create_ret {
-        @Generated
-        void call_dispatch_block_create_ret();
-    }
-
-    @Runtime(CRuntime.class)
-    @Generated
-    public interface Block_dispatch_block_create {
-        @Generated
-        void call_dispatch_block_create();
-    }
-
-    @Runtime(CRuntime.class)
-    @Generated
-    public interface Block_dispatch_block_create_with_qos_class_ret {
-        @Generated
-        void call_dispatch_block_create_with_qos_class_ret();
-    }
-
-    @Runtime(CRuntime.class)
-    @Generated
-    public interface Block_dispatch_block_create_with_qos_class {
-        @Generated
-        void call_dispatch_block_create_with_qos_class();
-    }
-
-    @Runtime(CRuntime.class)
-    @Generated
-    public interface Function_signal_ret {
-        @Generated
-        void call_signal_ret(int arg0);
-    }
-
-    @Runtime(CRuntime.class)
-    @Generated
-    public interface Function_signal {
-        @Generated
-        void call_signal(int arg0);
-    }
-
-    @Runtime(CRuntime.class)
-    @Generated
-    public interface Function_bsd_signal_ret {
-        @Generated
-        void call_bsd_signal_ret(int arg0);
-    }
-
-    @Runtime(CRuntime.class)
-    @Generated
-    public interface Function_bsd_signal {
-        @Generated
-        void call_bsd_signal(int arg0);
-    }
-
-    @Runtime(CRuntime.class)
-    @Generated
-    public interface Function_sigset_ret {
-        @Generated
-        void call_sigset_ret(int arg0);
-    }
-
-    @Runtime(CRuntime.class)
-    @Generated
-    public interface Function_sigset {
-        @Generated
-        void call_sigset(int arg0);
     }
 }

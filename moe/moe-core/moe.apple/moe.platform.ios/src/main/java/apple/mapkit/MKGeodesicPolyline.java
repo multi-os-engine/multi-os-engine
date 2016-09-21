@@ -57,22 +57,13 @@ public class MKGeodesicPolyline extends MKPolyline {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native MKGeodesicPolyline alloc();
-
-    @Generated
-    @Selector("polylineWithCoordinates:count:")
-    public static native MKGeodesicPolyline polylineWithCoordinatesCount(Ptr<CLLocationCoordinate2D> coords,
-            @NUInt long count);
-
-    @Generated
-    @Selector("polylineWithPoints:count:")
-    public static native MKGeodesicPolyline polylineWithPointsCount(Ptr<MKMapPoint> points, @NUInt long count);
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -148,6 +139,15 @@ public class MKGeodesicPolyline extends MKPolyline {
     @Selector("new")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object new_objc();
+
+    @Generated
+    @Selector("polylineWithCoordinates:count:")
+    public static native MKGeodesicPolyline polylineWithCoordinatesCount(Ptr<CLLocationCoordinate2D> coords,
+            @NUInt long count);
+
+    @Generated
+    @Selector("polylineWithPoints:count:")
+    public static native MKGeodesicPolyline polylineWithPointsCount(Ptr<MKMapPoint> points, @NUInt long count);
 
     @Generated
     @Selector("resolveClassMethod:")

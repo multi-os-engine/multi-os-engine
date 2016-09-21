@@ -25,6 +25,7 @@ import apple.foundation.NSCoder;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
 import apple.gameplaykit.GKPolygonObstacle;
+import apple.spritekit.protocol.SKWarpable;
 import apple.uikit.UIColor;
 import org.moe.natj.c.ann.FunctionPtr;
 import org.moe.natj.general.NatJ;
@@ -51,7 +52,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @Library("SpriteKit")
 @Runtime(ObjCRuntime.class)
 @ObjCClassBinding
-public class SKSpriteNode extends SKNode {
+public class SKSpriteNode extends SKNode implements SKWarpable {
     static {
         NatJ.register();
     }
@@ -62,45 +63,13 @@ public class SKSpriteNode extends SKNode {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native SKSpriteNode alloc();
-
-    @Generated
-    @Selector("node")
-    public static native SKSpriteNode node();
-
-    @Generated
-    @Selector("nodeWithFileNamed:")
-    public static native SKSpriteNode nodeWithFileNamed(String filename);
-
-    @Generated
-    @Selector("spriteNodeWithColor:size:")
-    public static native SKSpriteNode spriteNodeWithColorSize(UIColor color, @ByValue CGSize size);
-
-    @Generated
-    @Selector("spriteNodeWithImageNamed:")
-    public static native SKSpriteNode spriteNodeWithImageNamed(String name);
-
-    @Generated
-    @Selector("spriteNodeWithImageNamed:normalMapped:")
-    public static native SKSpriteNode spriteNodeWithImageNamedNormalMapped(String name, boolean generateNormalMap);
-
-    @Generated
-    @Selector("spriteNodeWithTexture:")
-    public static native SKSpriteNode spriteNodeWithTexture(SKTexture texture);
-
-    @Generated
-    @Selector("spriteNodeWithTexture:normalMap:")
-    public static native SKSpriteNode spriteNodeWithTextureNormalMap(SKTexture texture, SKTexture normalMap);
-
-    @Generated
-    @Selector("spriteNodeWithTexture:size:")
-    public static native SKSpriteNode spriteNodeWithTextureSize(SKTexture texture, @ByValue CGSize size);
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -182,6 +151,14 @@ public class SKSpriteNode extends SKNode {
     public static native Object new_objc();
 
     @Generated
+    @Selector("node")
+    public static native SKSpriteNode node();
+
+    @Generated
+    @Selector("nodeWithFileNamed:")
+    public static native SKSpriteNode nodeWithFileNamed(String filename);
+
+    @Generated
     @Selector("obstaclesFromNodeBounds:")
     public static native NSArray<? extends GKPolygonObstacle> obstaclesFromNodeBounds(NSArray<? extends SKNode> nodes);
 
@@ -206,6 +183,30 @@ public class SKSpriteNode extends SKNode {
     @Generated
     @Selector("setVersion:")
     public static native void setVersion_static(@NInt long aVersion);
+
+    @Generated
+    @Selector("spriteNodeWithColor:size:")
+    public static native SKSpriteNode spriteNodeWithColorSize(UIColor color, @ByValue CGSize size);
+
+    @Generated
+    @Selector("spriteNodeWithImageNamed:")
+    public static native SKSpriteNode spriteNodeWithImageNamed(String name);
+
+    @Generated
+    @Selector("spriteNodeWithImageNamed:normalMapped:")
+    public static native SKSpriteNode spriteNodeWithImageNamedNormalMapped(String name, boolean generateNormalMap);
+
+    @Generated
+    @Selector("spriteNodeWithTexture:")
+    public static native SKSpriteNode spriteNodeWithTexture(SKTexture texture);
+
+    @Generated
+    @Selector("spriteNodeWithTexture:normalMap:")
+    public static native SKSpriteNode spriteNodeWithTextureNormalMap(SKTexture texture, SKTexture normalMap);
+
+    @Generated
+    @Selector("spriteNodeWithTexture:size:")
+    public static native SKSpriteNode spriteNodeWithTextureSize(SKTexture texture, @ByValue CGSize size);
 
     @Generated
     @Selector("superclass")
@@ -273,6 +274,10 @@ public class SKSpriteNode extends SKNode {
     public native SKTexture normalTexture();
 
     @Generated
+    @Selector("scaleToSize:")
+    public native void scaleToSize(@ByValue CGSize size);
+
+    @Generated
     @Selector("setAnchorPoint:")
     public native void setAnchorPoint(@ByValue CGPoint value);
 
@@ -317,8 +322,16 @@ public class SKSpriteNode extends SKNode {
     public native void setSize(@ByValue CGSize value);
 
     @Generated
+    @Selector("setSubdivisionLevels:")
+    public native void setSubdivisionLevels(@NInt long value);
+
+    @Generated
     @Selector("setTexture:")
     public native void setTexture(SKTexture value);
+
+    @Generated
+    @Selector("setWarpGeometry:")
+    public native void setWarpGeometry(SKWarpGeometry value);
 
     @Generated
     @Selector("shader")
@@ -338,6 +351,15 @@ public class SKSpriteNode extends SKNode {
     public native CGSize size();
 
     @Generated
+    @Selector("subdivisionLevels")
+    @NInt
+    public native long subdivisionLevels();
+
+    @Generated
     @Selector("texture")
     public native SKTexture texture();
+
+    @Generated
+    @Selector("warpGeometry")
+    public native SKWarpGeometry warpGeometry();
 }

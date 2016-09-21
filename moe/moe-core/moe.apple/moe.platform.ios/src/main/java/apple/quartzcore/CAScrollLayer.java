@@ -59,17 +59,13 @@ public class CAScrollLayer extends CALayer {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native CAScrollLayer alloc();
-
-    @Generated
-    @Selector("layer")
-    public static native CAScrollLayer layer();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -147,6 +143,10 @@ public class CAScrollLayer extends CALayer {
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
     @Generated
+    @Selector("layer")
+    public static native CAScrollLayer layer();
+
+    @Generated
     @Selector("load")
     public static native void load_objc_static();
 
@@ -170,7 +170,7 @@ public class CAScrollLayer extends CALayer {
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")
@@ -184,6 +184,10 @@ public class CAScrollLayer extends CALayer {
     @Generated
     @Selector("init")
     public native CAScrollLayer init();
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native CAScrollLayer initWithCoder(NSCoder aDecoder);
 
     @Generated
     @Selector("initWithLayer:")
@@ -204,8 +208,4 @@ public class CAScrollLayer extends CALayer {
     @Generated
     @Selector("setScrollMode:")
     public native void setScrollMode(String value);
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native CAScrollLayer initWithCoder(NSCoder aDecoder);
 }

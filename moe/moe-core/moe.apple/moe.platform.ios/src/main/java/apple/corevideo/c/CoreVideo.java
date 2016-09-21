@@ -266,6 +266,10 @@ public final class CoreVideo {
 
     @Generated
     @CFunction
+    public static native void CVPixelBufferPoolFlush(CVPixelBufferPoolRef pool, long options);
+
+    @Generated
+    @CFunction
     @NUInt
     public static native long CVOpenGLESTextureGetTypeID();
 
@@ -485,6 +489,18 @@ public final class CoreVideo {
 
     @Generated
     @CVariable()
+    public static native CFStringRef kCVImageBufferYCbCrMatrix_DCI_P3();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCVImageBufferYCbCrMatrix_P3_D65();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCVImageBufferYCbCrMatrix_ITU_R_2020();
+
+    @Generated
+    @CVariable()
     public static native CFStringRef kCVImageBufferColorPrimariesKey();
 
     @Generated
@@ -505,6 +521,18 @@ public final class CoreVideo {
 
     @Generated
     @CVariable()
+    public static native CFStringRef kCVImageBufferColorPrimaries_DCI_P3();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCVImageBufferColorPrimaries_P3_D65();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCVImageBufferColorPrimaries_ITU_R_2020();
+
+    @Generated
+    @CVariable()
     public static native CFStringRef kCVImageBufferTransferFunctionKey();
 
     @Generated
@@ -518,6 +546,14 @@ public final class CoreVideo {
     @Generated
     @CVariable()
     public static native CFStringRef kCVImageBufferTransferFunction_UseGamma();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCVImageBufferTransferFunction_ITU_R_2020();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCVImageBufferTransferFunction_SMPTE_ST_428_1();
 
     @Generated
     @CVariable()
@@ -641,6 +677,10 @@ public final class CoreVideo {
 
     @Generated
     @CVariable()
+    public static native CFStringRef kCVPixelBufferOpenGLESTextureCacheCompatibilityKey();
+
+    @Generated
+    @CVariable()
     public static native CFStringRef kCVPixelBufferPoolMinimumBufferCountKey();
 
     @Generated
@@ -686,6 +726,22 @@ public final class CoreVideo {
     @Generated
     @CVariable()
     public static native CFStringRef kCVPixelFormatContainsRGB();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCVPixelFormatComponentRange();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCVPixelFormatComponentRange_VideoRange();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCVPixelFormatComponentRange_FullRange();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCVPixelFormatComponentRange_WideRange();
 
     @Generated
     @CVariable()
@@ -766,58 +822,6 @@ public final class CoreVideo {
     @Generated
     @CVariable()
     public static native CFStringRef kCVMetalTextureCacheMaximumTextureAgeKey();
-
-    @Generated
-    @CFunction
-    public static native void CVPixelBufferPoolFlush(CVPixelBufferPoolRef pool, long options);
-
-    @Generated
-    @CVariable()
-    public static native CFStringRef kCVImageBufferYCbCrMatrix_DCI_P3();
-
-    @Generated
-    @CVariable()
-    public static native CFStringRef kCVImageBufferYCbCrMatrix_P3_D65();
-
-    @Generated
-    @CVariable()
-    public static native CFStringRef kCVImageBufferYCbCrMatrix_ITU_R_2020();
-
-    @Generated
-    @CVariable()
-    public static native CFStringRef kCVImageBufferColorPrimaries_DCI_P3();
-
-    @Generated
-    @CVariable()
-    public static native CFStringRef kCVImageBufferColorPrimaries_P3_D65();
-
-    @Generated
-    @CVariable()
-    public static native CFStringRef kCVImageBufferColorPrimaries_ITU_R_2020();
-
-    @Generated
-    @CVariable()
-    public static native CFStringRef kCVImageBufferTransferFunction_ITU_R_2020();
-
-    @Generated
-    @CVariable()
-    public static native CFStringRef kCVPixelBufferOpenGLESTextureCacheCompatibilityKey();
-
-    @Generated
-    @CVariable()
-    public static native CFStringRef kCVPixelFormatComponentRange();
-
-    @Generated
-    @CVariable()
-    public static native CFStringRef kCVPixelFormatComponentRange_VideoRange();
-
-    @Generated
-    @CVariable()
-    public static native CFStringRef kCVPixelFormatComponentRange_FullRange();
-
-    @Generated
-    @CVariable()
-    public static native CFStringRef kCVPixelFormatComponentRange_WideRange();
 
     @Runtime(CRuntime.class)
     @Generated

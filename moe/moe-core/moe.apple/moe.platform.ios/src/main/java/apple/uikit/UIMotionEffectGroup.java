@@ -55,13 +55,13 @@ public class UIMotionEffectGroup extends UIMotionEffect {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native UIMotionEffectGroup alloc();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -148,7 +148,7 @@ public class UIMotionEffectGroup extends UIMotionEffect {
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")
@@ -164,14 +164,14 @@ public class UIMotionEffectGroup extends UIMotionEffect {
     public native UIMotionEffectGroup init();
 
     @Generated
+    @Selector("initWithCoder:")
+    public native UIMotionEffectGroup initWithCoder(NSCoder aDecoder);
+
+    @Generated
     @Selector("motionEffects")
     public native NSArray<? extends UIMotionEffect> motionEffects();
 
     @Generated
     @Selector("setMotionEffects:")
     public native void setMotionEffects(NSArray<? extends UIMotionEffect> value);
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native UIMotionEffectGroup initWithCoder(NSCoder aDecoder);
 }

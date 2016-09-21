@@ -53,23 +53,13 @@ public class NSDecimalNumberHandler extends NSObject implements NSDecimalNumberB
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native NSDecimalNumberHandler alloc();
-
-    @Generated
-    @Selector("decimalNumberHandlerWithRoundingMode:scale:raiseOnExactness:raiseOnOverflow:raiseOnUnderflow:raiseOnDivideByZero:")
-    public static native NSDecimalNumberHandler decimalNumberHandlerWithRoundingModeScaleRaiseOnExactnessRaiseOnOverflowRaiseOnUnderflowRaiseOnDivideByZero(
-            @NUInt long roundingMode, short scale, boolean exact, boolean overflow, boolean underflow,
-            boolean divideByZero);
-
-    @Generated
-    @Selector("defaultDecimalNumberHandler")
-    public static native NSDecimalNumberHandler defaultDecimalNumberHandler();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -101,6 +91,16 @@ public class NSDecimalNumberHandler extends NSObject implements NSDecimalNumberB
     @Generated
     @Selector("debugDescription")
     public static native String debugDescription_static();
+
+    @Generated
+    @Selector("decimalNumberHandlerWithRoundingMode:scale:raiseOnExactness:raiseOnOverflow:raiseOnUnderflow:raiseOnDivideByZero:")
+    public static native NSDecimalNumberHandler decimalNumberHandlerWithRoundingModeScaleRaiseOnExactnessRaiseOnOverflowRaiseOnUnderflowRaiseOnDivideByZero(
+            @NUInt long roundingMode, short scale, boolean exact, boolean overflow, boolean underflow,
+            boolean divideByZero);
+
+    @Generated
+    @Selector("defaultDecimalNumberHandler")
+    public static native NSDecimalNumberHandler defaultDecimalNumberHandler();
 
     @Generated
     @Selector("description")

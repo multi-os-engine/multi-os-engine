@@ -28,6 +28,7 @@ public final class SSLSessionOption {
     @Generated public static final int AllowServerIdentityChange = 0x00000005;
     @Generated public static final int Fallback = 0x00000006;
     @Generated public static final int BreakOnClientHello = 0x00000007;
+    @Generated public static final int AllowRenegotiation = 0x00000008;
 
     @Generated
     private SSLSessionOption() {

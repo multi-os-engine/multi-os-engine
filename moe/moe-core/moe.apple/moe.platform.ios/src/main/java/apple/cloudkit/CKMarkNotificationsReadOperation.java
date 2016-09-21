@@ -56,13 +56,13 @@ public class CKMarkNotificationsReadOperation extends CKOperation {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native CKMarkNotificationsReadOperation alloc();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -149,7 +149,7 @@ public class CKMarkNotificationsReadOperation extends CKOperation {
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")
@@ -170,6 +170,11 @@ public class CKMarkNotificationsReadOperation extends CKOperation {
             NSArray<? extends CKNotificationID> notificationIDs);
 
     @Generated
+    @Selector("markNotificationsReadCompletionBlock")
+    @ObjCBlock(name = "call_markNotificationsReadCompletionBlock_ret")
+    public native Block_markNotificationsReadCompletionBlock_ret markNotificationsReadCompletionBlock();
+
+    @Generated
     @Selector("notificationIDs")
     public native NSArray<? extends CKNotificationID> notificationIDs();
 
@@ -182,22 +187,17 @@ public class CKMarkNotificationsReadOperation extends CKOperation {
     @Selector("setNotificationIDs:")
     public native void setNotificationIDs(NSArray<? extends CKNotificationID> value);
 
+    @Runtime(ObjCRuntime.class)
     @Generated
-    @Selector("markNotificationsReadCompletionBlock")
-    @ObjCBlock(name = "call_markNotificationsReadCompletionBlock_ret")
-    public native Block_markNotificationsReadCompletionBlock_ret markNotificationsReadCompletionBlock();
+    public interface Block_markNotificationsReadCompletionBlock_ret {
+        @Generated
+        void call_markNotificationsReadCompletionBlock_ret(NSArray<? extends CKNotificationID> arg0, NSError arg1);
+    }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_setMarkNotificationsReadCompletionBlock {
         @Generated
         void call_setMarkNotificationsReadCompletionBlock(NSArray<? extends CKNotificationID> arg0, NSError arg1);
-    }
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_markNotificationsReadCompletionBlock_ret {
-        @Generated
-        void call_markNotificationsReadCompletionBlock_ret(NSArray<? extends CKNotificationID> arg0, NSError arg1);
     }
 }

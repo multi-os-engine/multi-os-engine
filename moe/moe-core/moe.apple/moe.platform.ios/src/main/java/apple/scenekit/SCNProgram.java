@@ -62,21 +62,13 @@ public class SCNProgram extends NSObject implements NSCopying, NSSecureCoding {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native SCNProgram alloc();
-
-    @Generated
-    @Selector("program")
-    public static native SCNProgram program();
-
-    @Generated
-    @Selector("supportsSecureCoding")
-    public static native boolean supportsSecureCoding();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -154,6 +146,10 @@ public class SCNProgram extends NSObject implements NSCopying, NSSecureCoding {
     public static native Object new_objc();
 
     @Generated
+    @Selector("program")
+    public static native SCNProgram program();
+
+    @Generated
     @Selector("resolveClassMethod:")
     public static native boolean resolveClassMethod(SEL sel);
 
@@ -168,6 +164,10 @@ public class SCNProgram extends NSObject implements NSCopying, NSSecureCoding {
     @Generated
     @Selector("superclass")
     public static native Class superclass_static();
+
+    @Generated
+    @Selector("supportsSecureCoding")
+    public static native boolean supportsSecureCoding();
 
     @Generated
     @Selector("version")
@@ -190,8 +190,17 @@ public class SCNProgram extends NSObject implements NSCopying, NSSecureCoding {
     public native void encodeWithCoder(NSCoder aCoder);
 
     @Generated
+    @Selector("fragmentFunctionName")
+    public native String fragmentFunctionName();
+
+    @Generated
     @Selector("fragmentShader")
     public native String fragmentShader();
+
+    @Generated
+    @Selector("handleBindingOfBufferNamed:frequency:usingBlock:")
+    public native void handleBindingOfBufferNamedFrequencyUsingBlock(String name, @NInt long frequency,
+            @ObjCBlock(name = "call_handleBindingOfBufferNamedFrequencyUsingBlock") Block_handleBindingOfBufferNamedFrequencyUsingBlock block);
 
     @Generated
     @Selector("init")
@@ -208,6 +217,11 @@ public class SCNProgram extends NSObject implements NSCopying, NSSecureCoding {
     @Generated
     @Selector("setOpaque:")
     public native void setOpaque(boolean value);
+
+    @Generated
+    @Selector("library")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native MTLLibrary library();
 
     @Generated
     @Selector("semanticForSymbol:")
@@ -230,12 +244,24 @@ public class SCNProgram extends NSObject implements NSCopying, NSSecureCoding {
     }
 
     @Generated
+    @Selector("setFragmentFunctionName:")
+    public native void setFragmentFunctionName(String value);
+
+    @Generated
     @Selector("setFragmentShader:")
     public native void setFragmentShader(String value);
 
     @Generated
+    @Selector("setLibrary:")
+    public native void setLibrary(@Mapped(ObjCObjectMapper.class) MTLLibrary value);
+
+    @Generated
     @Selector("setSemantic:forSymbol:options:")
     public native void setSemanticForSymbolOptions(String semantic, String symbol, NSDictionary<String, ?> options);
+
+    @Generated
+    @Selector("setVertexFunctionName:")
+    public native void setVertexFunctionName(String value);
 
     @Generated
     @Selector("setVertexShader:")
@@ -248,38 +274,12 @@ public class SCNProgram extends NSObject implements NSCopying, NSSecureCoding {
     }
 
     @Generated
-    @Selector("vertexShader")
-    public native String vertexShader();
-
-    @Generated
-    @Selector("fragmentFunctionName")
-    public native String fragmentFunctionName();
-
-    @Generated
-    @Selector("handleBindingOfBufferNamed:frequency:usingBlock:")
-    public native void handleBindingOfBufferNamedFrequencyUsingBlock(String name, @NInt long frequency,
-            @ObjCBlock(name = "call_handleBindingOfBufferNamedFrequencyUsingBlock") Block_handleBindingOfBufferNamedFrequencyUsingBlock block);
-
-    @Generated
-    @Selector("library")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native MTLLibrary library();
-
-    @Generated
-    @Selector("setFragmentFunctionName:")
-    public native void setFragmentFunctionName(String value);
-
-    @Generated
-    @Selector("setLibrary:")
-    public native void setLibrary(@Mapped(ObjCObjectMapper.class) MTLLibrary value);
-
-    @Generated
-    @Selector("setVertexFunctionName:")
-    public native void setVertexFunctionName(String value);
-
-    @Generated
     @Selector("vertexFunctionName")
     public native String vertexFunctionName();
+
+    @Generated
+    @Selector("vertexShader")
+    public native String vertexShader();
 
     @Runtime(ObjCRuntime.class)
     @Generated

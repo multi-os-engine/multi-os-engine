@@ -60,13 +60,13 @@ public class MKMultiPoint extends MKShape {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native MKMultiPoint alloc();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -177,8 +177,8 @@ public class MKMultiPoint extends MKShape {
     @NUInt
     public native long pointCount();
 
-    @ReferenceInfo(type = MKMapPoint.class)
     @Generated
     @Selector("points")
+    @ReferenceInfo(type = MKMapPoint.class)
     public native Ptr<MKMapPoint> points();
 }

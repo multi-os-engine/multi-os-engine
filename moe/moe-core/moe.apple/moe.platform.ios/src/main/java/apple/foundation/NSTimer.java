@@ -32,6 +32,7 @@ import org.moe.natj.general.ptr.VoidPtr;
 import org.moe.natj.objc.Class;
 import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.SEL;
+import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
@@ -51,35 +52,13 @@ public class NSTimer extends NSObject {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native NSTimer alloc();
-
-    @Generated
-    @Selector("scheduledTimerWithTimeInterval:invocation:repeats:")
-    public static native NSTimer scheduledTimerWithTimeIntervalInvocationRepeats(double ti, NSInvocation invocation,
-            boolean yesOrNo);
-
-    @Generated
-    @Selector("scheduledTimerWithTimeInterval:target:selector:userInfo:repeats:")
-    public static native NSTimer scheduledTimerWithTimeIntervalTargetSelectorUserInfoRepeats(double ti,
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object userInfo, boolean yesOrNo);
-
-    @Generated
-    @Selector("timerWithTimeInterval:invocation:repeats:")
-    public static native NSTimer timerWithTimeIntervalInvocationRepeats(double ti, NSInvocation invocation,
-            boolean yesOrNo);
-
-    @Generated
-    @Selector("timerWithTimeInterval:target:selector:userInfo:repeats:")
-    public static native NSTimer timerWithTimeIntervalTargetSelectorUserInfoRepeats(double ti,
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object userInfo, boolean yesOrNo);
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -148,7 +127,7 @@ public class NSTimer extends NSObject {
 
     @Generated
     @Selector("load")
-    public static native void load_objc();
+    public static native void load_objc_static();
 
     @Generated
     @Owned
@@ -165,17 +144,49 @@ public class NSTimer extends NSObject {
     public static native boolean resolveInstanceMethod(SEL sel);
 
     @Generated
+    @Selector("scheduledTimerWithTimeInterval:invocation:repeats:")
+    public static native NSTimer scheduledTimerWithTimeIntervalInvocationRepeats(double ti, NSInvocation invocation,
+            boolean yesOrNo);
+
+    @Generated
+    @Selector("scheduledTimerWithTimeInterval:repeats:block:")
+    public static native NSTimer scheduledTimerWithTimeIntervalRepeatsBlock(double interval, boolean repeats,
+            @ObjCBlock(name = "call_scheduledTimerWithTimeIntervalRepeatsBlock") Block_scheduledTimerWithTimeIntervalRepeatsBlock block);
+
+    @Generated
+    @Selector("scheduledTimerWithTimeInterval:target:selector:userInfo:repeats:")
+    public static native NSTimer scheduledTimerWithTimeIntervalTargetSelectorUserInfoRepeats(double ti,
+            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
+            @Mapped(ObjCObjectMapper.class) Object userInfo, boolean yesOrNo);
+
+    @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")
     public static native Class superclass_static();
 
     @Generated
+    @Selector("timerWithTimeInterval:invocation:repeats:")
+    public static native NSTimer timerWithTimeIntervalInvocationRepeats(double ti, NSInvocation invocation,
+            boolean yesOrNo);
+
+    @Generated
+    @Selector("timerWithTimeInterval:repeats:block:")
+    public static native NSTimer timerWithTimeIntervalRepeatsBlock(double interval, boolean repeats,
+            @ObjCBlock(name = "call_timerWithTimeIntervalRepeatsBlock") Block_timerWithTimeIntervalRepeatsBlock block);
+
+    @Generated
+    @Selector("timerWithTimeInterval:target:selector:userInfo:repeats:")
+    public static native NSTimer timerWithTimeIntervalTargetSelectorUserInfoRepeats(double ti,
+            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
+            @Mapped(ObjCObjectMapper.class) Object userInfo, boolean yesOrNo);
+
+    @Generated
     @Selector("version")
     @NInt
-    public static native long version();
+    public static native long version_static();
 
     @Generated
     @Selector("fire")
@@ -188,6 +199,11 @@ public class NSTimer extends NSObject {
     @Generated
     @Selector("init")
     public native NSTimer init();
+
+    @Generated
+    @Selector("initWithFireDate:interval:repeats:block:")
+    public native NSTimer initWithFireDateIntervalRepeatsBlock(NSDate date, double interval, boolean repeats,
+            @ObjCBlock(name = "call_initWithFireDateIntervalRepeatsBlock") Block_initWithFireDateIntervalRepeatsBlock block);
 
     @Generated
     @Selector("initWithFireDate:interval:target:selector:userInfo:repeats:")
@@ -222,4 +238,25 @@ public class NSTimer extends NSObject {
     @Selector("userInfo")
     @MappedReturn(ObjCObjectMapper.class)
     public native Object userInfo();
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_initWithFireDateIntervalRepeatsBlock {
+        @Generated
+        void call_initWithFireDateIntervalRepeatsBlock(NSTimer arg0);
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_scheduledTimerWithTimeIntervalRepeatsBlock {
+        @Generated
+        void call_scheduledTimerWithTimeIntervalRepeatsBlock(NSTimer arg0);
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_timerWithTimeIntervalRepeatsBlock {
+        @Generated
+        void call_timerWithTimeIntervalRepeatsBlock(NSTimer arg0);
+    }
 }

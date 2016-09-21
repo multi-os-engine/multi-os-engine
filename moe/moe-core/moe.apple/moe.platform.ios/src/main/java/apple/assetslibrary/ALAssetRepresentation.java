@@ -62,13 +62,13 @@ public class ALAssetRepresentation extends NSObject {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native ALAssetRepresentation alloc();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -166,39 +166,39 @@ public class ALAssetRepresentation extends NSObject {
     @NInt
     public static native long version_static();
 
-    @Deprecated
     @Generated
+    @Deprecated
     @Selector("CGImageWithOptions:")
     public native CGImageRef CGImageWithOptions(NSDictionary<?, ?> options);
 
-    @Deprecated
     @Generated
+    @Deprecated
     @Selector("UTI")
     public native String UTI();
 
-    @Deprecated
     @Generated
+    @Deprecated
     @Selector("dimensions")
     @ByValue
     public native CGSize dimensions();
 
-    @Deprecated
     @Generated
+    @Deprecated
     @Selector("filename")
     public native String filename();
 
-    @Deprecated
     @Generated
+    @Deprecated
     @Selector("fullResolutionImage")
     public native CGImageRef fullResolutionImage();
 
-    @Deprecated
     @Generated
+    @Deprecated
     @Selector("fullScreenImage")
     public native CGImageRef fullScreenImage();
 
-    @Deprecated
     @Generated
+    @Deprecated
     @Selector("getBytes:fromOffset:length:error:")
     @NUInt
     public native long getBytesFromOffsetLengthError(BytePtr buffer, long offset, @NUInt long length,
@@ -208,29 +208,29 @@ public class ALAssetRepresentation extends NSObject {
     @Selector("init")
     public native ALAssetRepresentation init();
 
-    @Deprecated
     @Generated
+    @Deprecated
     @Selector("metadata")
     public native NSDictionary<?, ?> metadata();
 
-    @Deprecated
     @Generated
+    @Deprecated
     @Selector("orientation")
     @NInt
     public native long orientation();
 
-    @Deprecated
     @Generated
+    @Deprecated
     @Selector("scale")
     public native float scale();
 
-    @Deprecated
     @Generated
+    @Deprecated
     @Selector("size")
     public native long size();
 
-    @Deprecated
     @Generated
+    @Deprecated
     @Selector("url")
     public native NSURL url();
 }

@@ -59,13 +59,13 @@ public class PHContentEditingInput extends NSObject {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native PHContentEditingInput alloc();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -134,7 +134,7 @@ public class PHContentEditingInput extends NSObject {
 
     @Generated
     @Selector("load")
-    public static native void load_objc();
+    public static native void load_objc_static();
 
     @Generated
     @Owned
@@ -152,7 +152,7 @@ public class PHContentEditingInput extends NSObject {
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")
@@ -161,14 +161,18 @@ public class PHContentEditingInput extends NSObject {
     @Generated
     @Selector("version")
     @NInt
-    public static native long version();
+    public static native long version_static();
 
     @Generated
     @Selector("adjustmentData")
     public native PHAdjustmentData adjustmentData();
 
-    @Deprecated
     @Generated
+    @Selector("audiovisualAsset")
+    public native AVAsset audiovisualAsset();
+
+    @Generated
+    @Deprecated
     @Selector("avAsset")
     public native AVAsset avAsset();
 
@@ -193,6 +197,10 @@ public class PHContentEditingInput extends NSObject {
     public native PHContentEditingInput init();
 
     @Generated
+    @Selector("livePhoto")
+    public native PHLivePhoto livePhoto();
+
+    @Generated
     @Selector("location")
     public native CLLocation location();
 
@@ -209,8 +217,4 @@ public class PHContentEditingInput extends NSObject {
     @Generated
     @Selector("uniformTypeIdentifier")
     public native String uniformTypeIdentifier();
-
-    @Generated
-    @Selector("audiovisualAsset")
-    public native AVAsset audiovisualAsset();
 }

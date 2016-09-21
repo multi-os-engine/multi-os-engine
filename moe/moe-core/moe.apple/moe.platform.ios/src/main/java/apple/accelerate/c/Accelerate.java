@@ -31,12 +31,20 @@ import apple.accelerate.opaque.vImageCVImageFormatRef;
 import apple.accelerate.opaque.vImageConstCVImageFormatRef;
 import apple.accelerate.opaque.vImageConverterRef;
 import apple.accelerate.opaque.vImage_MultidimensionalTable;
+import apple.accelerate.struct.BNNSConvolutionLayerParameters;
+import apple.accelerate.struct.BNNSFilterParameters;
+import apple.accelerate.struct.BNNSFullyConnectedLayerParameters;
+import apple.accelerate.struct.BNNSImageStackDescriptor;
+import apple.accelerate.struct.BNNSPoolingLayerParameters;
+import apple.accelerate.struct.BNNSVectorDescriptor;
 import apple.accelerate.struct.DSPComplex;
 import apple.accelerate.struct.DSPDoubleComplex;
 import apple.accelerate.struct.DSPDoubleSplitComplex;
 import apple.accelerate.struct.DSPSplitComplex;
 import apple.accelerate.struct.__CLPK_complex;
 import apple.accelerate.struct.__CLPK_doublecomplex;
+import apple.accelerate.struct.quadrature_integrate_function;
+import apple.accelerate.struct.quadrature_integrate_options;
 import apple.accelerate.struct.vDSP_int24;
 import apple.accelerate.struct.vDSP_uint24;
 import apple.accelerate.struct.vImageChannelDescription;
@@ -172,6 +180,32 @@ public final class Accelerate {
     @Generated
     @CFunction
     public static native void vDSP_biquadm_ResetStateD(vDSP_biquadm_SetupD __setup);
+
+    @Generated
+    @CFunction
+    public static native void vDSP_biquadm_SetCoefficientsDouble(vDSP_biquadm_Setup __setup, ConstDoublePtr __coeffs,
+            @NUInt long __start_sec, @NUInt long __start_chn, @NUInt long __nsec, @NUInt long __nchn);
+
+    @Generated
+    @CFunction
+    public static native void vDSP_biquadm_SetTargetsDouble(vDSP_biquadm_Setup __setup, ConstDoublePtr __targets,
+            float __interp_rate, float __interp_threshold, @NUInt long __start_sec, @NUInt long __start_chn,
+            @NUInt long __nsec, @NUInt long __nchn);
+
+    @Generated
+    @CFunction
+    public static native void vDSP_biquadm_SetCoefficientsSingle(vDSP_biquadm_Setup __setup, ConstFloatPtr __coeffs,
+            @NUInt long __start_sec, @NUInt long __start_chn, @NUInt long __nsec, @NUInt long __nchn);
+
+    @Generated
+    @CFunction
+    public static native void vDSP_biquadm_SetTargetsSingle(vDSP_biquadm_Setup __setup, ConstFloatPtr __targets,
+            float __interp_rate, float __interp_threshold, @NUInt long __start_sec, @NUInt long __start_chn,
+            @NUInt long __nsec, @NUInt long __nchn);
+
+    @Generated
+    @CFunction
+    public static native void vDSP_biquadm_SetActiveFilters(vDSP_biquadm_Setup __setup, ConstBoolPtr __filter_states);
 
     @Generated
     @CFunction
@@ -569,16 +603,16 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __Buffer,
             @NUInt long __Log2N, @NUInt long __M, int __Direction);
 
-    @Deprecated
     @Generated
+    @Deprecated
     @CFunction
     public static native void vDSP_fft3_zop(FFTSetup __Setup,
             @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __A, @NInt long __IA,
             @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __C, @NInt long __IC,
             @NUInt long __Log2N, int __Direction);
 
-    @Deprecated
     @Generated
+    @Deprecated
     @CFunction
     public static native void vDSP_fft3_zopD(FFTSetupD __Setup,
             @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __A,
@@ -586,16 +620,16 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __C,
             @NInt long __IC, @NUInt long __Log2N, int __Direction);
 
-    @Deprecated
     @Generated
+    @Deprecated
     @CFunction
     public static native void vDSP_fft5_zop(FFTSetup __Setup,
             @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __A, @NInt long __IA,
             @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __C, @NInt long __IC,
             @NUInt long __Log2N, int __Direction);
 
-    @Deprecated
     @Generated
+    @Deprecated
     @CFunction
     public static native void vDSP_fft5_zopD(FFTSetupD __Setup,
             @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __A,
@@ -1200,7 +1234,7 @@ public final class Accelerate {
 
     @Generated
     @CFunction
-    public static native void vDSP_vfill(ConstFloatPtr __A, FloatPtr __C, @NInt long __IA, @NUInt long __N);
+    public static native void vDSP_vfill(ConstFloatPtr __A, FloatPtr __C, @NInt long __IC, @NUInt long __N);
 
     @Generated
     @CFunction
@@ -1809,13 +1843,13 @@ public final class Accelerate {
 
     @Generated
     @CFunction
-    public static native void vDSP_vdist(ConstFloatPtr __A, @NInt long __I, ConstFloatPtr __B, @NInt long __J,
-            FloatPtr __C, @NInt long __K, @NUInt long __N);
+    public static native void vDSP_vdist(ConstFloatPtr __A, @NInt long __IA, ConstFloatPtr __B, @NInt long __IB,
+            FloatPtr __C, @NInt long __IC, @NUInt long __N);
 
     @Generated
     @CFunction
-    public static native void vDSP_vdistD(ConstDoublePtr __A, @NInt long __I, ConstDoublePtr __B, @NInt long __J,
-            DoublePtr __C, @NInt long __K, @NUInt long __N);
+    public static native void vDSP_vdistD(ConstDoublePtr __A, @NInt long __IA, ConstDoublePtr __B, @NInt long __IB,
+            DoublePtr __C, @NInt long __IC, @NUInt long __N);
 
     @Generated
     @CFunction
@@ -2381,17 +2415,17 @@ public final class Accelerate {
     @Generated
     @CFunction
     public static native void vDSP_vsmsaD(ConstDoublePtr __A, @NInt long __IA, ConstDoublePtr __B, ConstDoublePtr __C,
-            DoublePtr __ID, @NInt long __L, @NUInt long __N);
+            DoublePtr __D, @NInt long __ID, @NUInt long __N);
 
     @Generated
     @CFunction
-    public static native void vDSP_vsmsb(ConstFloatPtr __A, @NInt long __I, ConstFloatPtr __B, ConstFloatPtr __C,
-            @NInt long __K, FloatPtr __D, @NInt long __L, @NUInt long __N);
+    public static native void vDSP_vsmsb(ConstFloatPtr __A, @NInt long __IA, ConstFloatPtr __B, ConstFloatPtr __C,
+            @NInt long __IC, FloatPtr __D, @NInt long __ID, @NUInt long __N);
 
     @Generated
     @CFunction
-    public static native void vDSP_vsmsbD(ConstDoublePtr __A, @NInt long __I, ConstDoublePtr __B, ConstDoublePtr __C,
-            @NInt long __K, DoublePtr __D, @NInt long __L, @NUInt long __N);
+    public static native void vDSP_vsmsbD(ConstDoublePtr __A, @NInt long __IA, ConstDoublePtr __B, ConstDoublePtr __C,
+            @NInt long __IC, DoublePtr __D, @NInt long __ID, @NUInt long __N);
 
     @Generated
     @CFunction
@@ -2448,7 +2482,7 @@ public final class Accelerate {
     @Generated
     @CFunction
     public static native void vDSP_vtabiD(ConstDoublePtr __A, @NInt long __IA, ConstDoublePtr __S1, ConstDoublePtr __S2,
-            ConstDoublePtr __C, @NUInt long __M, DoublePtr __ID, @NInt long __L, @NUInt long __N);
+            ConstDoublePtr __C, @NUInt long __M, DoublePtr __D, @NInt long __ID, @NUInt long __N);
 
     @Generated
     @CFunction
@@ -2586,36 +2620,33 @@ public final class Accelerate {
 
     @Generated
     @CFunction
-    public static native void vDSP_dotpr2(ConstFloatPtr __A0, @NInt long __A0Stride, ConstFloatPtr __A1,
-            @NInt long __A1Stride, ConstFloatPtr __B, @NInt long __BStride, FloatPtr __C0, FloatPtr __C1,
-            @NUInt long __Length);
+    public static native void vDSP_dotpr2(ConstFloatPtr __A0, @NInt long __IA0, ConstFloatPtr __A1, @NInt long __IA1,
+            ConstFloatPtr __B, @NInt long __IB, FloatPtr __C0, FloatPtr __C1, @NUInt long __N);
 
     @Generated
     @CFunction
-    public static native void vDSP_dotpr2D(ConstDoublePtr __A0, @NInt long __A0Stride, ConstDoublePtr __A1,
-            @NInt long __A1Stride, ConstDoublePtr __B, @NInt long __BStride, DoublePtr __C0, DoublePtr __C1,
-            @NUInt long __Length);
+    public static native void vDSP_dotpr2D(ConstDoublePtr __A0, @NInt long __IA0, ConstDoublePtr __A1, @NInt long __IA1,
+            ConstDoublePtr __B, @NInt long __IB, DoublePtr __C0, DoublePtr __C1, @NUInt long __N);
 
     @Generated
     @CFunction
-    public static native void vDSP_dotpr_s1_15(ConstShortPtr __A, @NInt long __AStride, ConstShortPtr __B,
-            @NInt long __BStride, ShortPtr __C, @NUInt long __N);
+    public static native void vDSP_dotpr_s1_15(ConstShortPtr __A, @NInt long __IA, ConstShortPtr __B, @NInt long __IB,
+            ShortPtr __C, @NUInt long __N);
 
     @Generated
     @CFunction
-    public static native void vDSP_dotpr2_s1_15(ConstShortPtr __A0, @NInt long __A0Stride, ConstShortPtr __A1,
-            @NInt long __A1Stride, ConstShortPtr __B, @NInt long __BStride, ShortPtr __C0, ShortPtr __C1,
-            @NUInt long __N);
+    public static native void vDSP_dotpr2_s1_15(ConstShortPtr __A0, @NInt long __IA0, ConstShortPtr __A1,
+            @NInt long __IA1, ConstShortPtr __B, @NInt long __IB, ShortPtr __C0, ShortPtr __C1, @NUInt long __N);
 
     @Generated
     @CFunction
-    public static native void vDSP_dotpr_s8_24(ConstIntPtr __A, @NInt long __AStride, ConstIntPtr __B,
-            @NInt long __BStride, IntPtr __C, @NUInt long __N);
+    public static native void vDSP_dotpr_s8_24(ConstIntPtr __A, @NInt long __IA, ConstIntPtr __B, @NInt long __IB,
+            IntPtr __C, @NUInt long __N);
 
     @Generated
     @CFunction
-    public static native void vDSP_dotpr2_s8_24(ConstIntPtr __A0, @NInt long __A0Stride, ConstIntPtr __A1,
-            @NInt long __A1Stride, ConstIntPtr __B, @NInt long __BStride, IntPtr __C0, IntPtr __C1, @NUInt long __N);
+    public static native void vDSP_dotpr2_s8_24(ConstIntPtr __A0, @NInt long __IA0, ConstIntPtr __A1, @NInt long __IA1,
+            ConstIntPtr __B, @NInt long __IB, IntPtr __C0, IntPtr __C1, @NUInt long __N);
 
     @Generated
     @CFunction
@@ -13435,6 +13466,375 @@ public final class Accelerate {
 
     @Generated
     @CFunction
+    public static native float sparse_inner_product_dense_float(long nz, ConstFloatPtr x, ConstLongPtr indx,
+            ConstFloatPtr y, long incy);
+
+    @Generated
+    @CFunction
+    public static native double sparse_inner_product_dense_double(long nz, ConstDoublePtr x, ConstLongPtr indx,
+            ConstDoublePtr y, long incy);
+
+    @Generated
+    @CFunction
+    public static native float sparse_inner_product_sparse_float(long nzx, long nzy, ConstFloatPtr x, ConstLongPtr indx,
+            ConstFloatPtr y, ConstLongPtr indy);
+
+    @Generated
+    @CFunction
+    public static native double sparse_inner_product_sparse_double(long nzx, long nzy, ConstDoublePtr x,
+            ConstLongPtr indx, ConstDoublePtr y, ConstLongPtr indy);
+
+    @Generated
+    @CFunction
+    public static native void sparse_vector_add_with_scale_dense_float(long nz, float alpha, ConstFloatPtr x,
+            ConstLongPtr indx, FloatPtr y, long incy);
+
+    @Generated
+    @CFunction
+    public static native void sparse_vector_add_with_scale_dense_double(long nz, double alpha, ConstDoublePtr x,
+            ConstLongPtr indx, DoublePtr y, long incy);
+
+    @Generated
+    @CFunction
+    public static native float sparse_vector_norm_float(long nz, ConstFloatPtr x, ConstLongPtr indx, int norm);
+
+    @Generated
+    @CFunction
+    public static native double sparse_vector_norm_double(long nz, ConstDoublePtr x, ConstLongPtr indx, int norm);
+
+    @Generated
+    @CFunction
+    public static native int sparse_matrix_vector_product_dense_float(int transa, float alpha, sparse_matrix_float A,
+            ConstFloatPtr x, long incx, FloatPtr y, long incy);
+
+    @Generated
+    @CFunction
+    public static native int sparse_matrix_vector_product_dense_double(int transa, double alpha, sparse_matrix_double A,
+            ConstDoublePtr x, long incx, DoublePtr y, long incy);
+
+    @Generated
+    @CFunction
+    public static native int sparse_vector_triangular_solve_dense_float(int transt, float alpha, sparse_matrix_float T,
+            FloatPtr x, long incx);
+
+    @Generated
+    @CFunction
+    public static native int sparse_vector_triangular_solve_dense_double(int transt, double alpha,
+            sparse_matrix_double T, DoublePtr x, long incx);
+
+    @Generated
+    @CFunction
+    public static native int sparse_outer_product_dense_float(long M, long N, long nz, float alpha, ConstFloatPtr x,
+            long incx, ConstFloatPtr y, ConstLongPtr indy, Ptr<sparse_matrix_float> C);
+
+    @Generated
+    @CFunction
+    public static native int sparse_outer_product_dense_double(long M, long N, long nz, double alpha, ConstDoublePtr x,
+            long incx, ConstDoublePtr y, ConstLongPtr indy, Ptr<sparse_matrix_double> C);
+
+    @Generated
+    @CFunction
+    public static native int sparse_permute_rows_float(sparse_matrix_float A, ConstLongPtr perm);
+
+    @Generated
+    @CFunction
+    public static native int sparse_permute_rows_double(sparse_matrix_double A, ConstLongPtr perm);
+
+    @Generated
+    @CFunction
+    public static native int sparse_permute_cols_float(sparse_matrix_float A, ConstLongPtr perm);
+
+    @Generated
+    @CFunction
+    public static native int sparse_permute_cols_double(sparse_matrix_double A, ConstLongPtr perm);
+
+    @Generated
+    @CFunction
+    public static native float sparse_elementwise_norm_float(sparse_matrix_float A, int norm);
+
+    @Generated
+    @CFunction
+    public static native double sparse_elementwise_norm_double(sparse_matrix_double A, int norm);
+
+    @Generated
+    @CFunction
+    public static native float sparse_operator_norm_float(sparse_matrix_float A, int norm);
+
+    @Generated
+    @CFunction
+    public static native double sparse_operator_norm_double(sparse_matrix_double A, int norm);
+
+    @Generated
+    @CFunction
+    public static native float sparse_matrix_trace_float(sparse_matrix_float A, long offset);
+
+    @Generated
+    @CFunction
+    public static native double sparse_matrix_trace_double(sparse_matrix_double A, long offset);
+
+    @Generated
+    @CFunction
+    public static native int sparse_matrix_product_dense_float(int order, int transa, long n, float alpha,
+            sparse_matrix_float A, ConstFloatPtr B, long ldb, FloatPtr C, long ldc);
+
+    @Generated
+    @CFunction
+    public static native int sparse_matrix_product_dense_double(int order, int transa, long n, double alpha,
+            sparse_matrix_double A, ConstDoublePtr B, long ldb, DoublePtr C, long ldc);
+
+    @Generated
+    @CFunction
+    public static native int sparse_matrix_product_sparse_float(int order, int transa, float alpha,
+            sparse_matrix_float A, sparse_matrix_float B, FloatPtr C, long ldc);
+
+    @Generated
+    @CFunction
+    public static native int sparse_matrix_product_sparse_double(int order, int transa, double alpha,
+            sparse_matrix_double A, sparse_matrix_double B, DoublePtr C, long ldc);
+
+    @Generated
+    @CFunction
+    public static native int sparse_matrix_triangular_solve_dense_float(int order, int transt, long nrhs, float alpha,
+            sparse_matrix_float T, FloatPtr B, long ldb);
+
+    @Generated
+    @CFunction
+    public static native int sparse_matrix_triangular_solve_dense_double(int order, int transt, long nrhs, double alpha,
+            sparse_matrix_double T, DoublePtr B, long ldb);
+
+    @Generated
+    @CFunction
+    public static native sparse_matrix_float sparse_matrix_create_float(long M, long N);
+
+    @Generated
+    @CFunction
+    public static native sparse_matrix_double sparse_matrix_create_double(long M, long N);
+
+    @Generated
+    @CFunction
+    public static native int sparse_insert_entry_float(sparse_matrix_float A, float val, long i, long j);
+
+    @Generated
+    @CFunction
+    public static native int sparse_insert_entry_double(sparse_matrix_double A, double val, long i, long j);
+
+    @Generated
+    @CFunction
+    public static native int sparse_insert_entries_float(sparse_matrix_float A, long N, ConstFloatPtr val,
+            ConstLongPtr indx, ConstLongPtr jndx);
+
+    @Generated
+    @CFunction
+    public static native int sparse_insert_entries_double(sparse_matrix_double A, long N, ConstDoublePtr val,
+            ConstLongPtr indx, ConstLongPtr jndx);
+
+    @Generated
+    @CFunction
+    public static native int sparse_insert_col_float(sparse_matrix_float A, long j, long nz, ConstFloatPtr val,
+            ConstLongPtr indx);
+
+    @Generated
+    @CFunction
+    public static native int sparse_insert_col_double(sparse_matrix_double A, long j, long nz, ConstDoublePtr val,
+            ConstLongPtr indx);
+
+    @Generated
+    @CFunction
+    public static native int sparse_insert_row_float(sparse_matrix_float A, long i, long nz, ConstFloatPtr val,
+            ConstLongPtr jndx);
+
+    @Generated
+    @CFunction
+    public static native int sparse_insert_row_double(sparse_matrix_double A, long i, long nz, ConstDoublePtr val,
+            ConstLongPtr jndx);
+
+    @Generated
+    @CFunction
+    public static native int sparse_extract_sparse_row_float(sparse_matrix_float A, long row, long column_start,
+            LongPtr column_end, long nz, FloatPtr val, LongPtr jndx);
+
+    @Generated
+    @CFunction
+    public static native int sparse_extract_sparse_row_double(sparse_matrix_double A, long row, long column_start,
+            LongPtr column_end, long nz, DoublePtr val, LongPtr jndx);
+
+    @Generated
+    @CFunction
+    public static native int sparse_extract_sparse_column_float(sparse_matrix_float A, long column, long row_start,
+            LongPtr row_end, long nz, FloatPtr val, LongPtr indx);
+
+    @Generated
+    @CFunction
+    public static native int sparse_extract_sparse_column_double(sparse_matrix_double A, long column, long row_start,
+            LongPtr row_end, long nz, DoublePtr val, LongPtr indx);
+
+    @Generated
+    @CFunction
+    public static native sparse_matrix_float sparse_matrix_block_create_float(long Mb, long Nb, long k, long l);
+
+    @Generated
+    @CFunction
+    public static native sparse_matrix_double sparse_matrix_block_create_double(long Mb, long Nb, long k, long l);
+
+    @Generated
+    @CFunction
+    public static native sparse_matrix_float sparse_matrix_variable_block_create_float(long Mb, long Nb, ConstLongPtr K,
+            ConstLongPtr L);
+
+    @Generated
+    @CFunction
+    public static native sparse_matrix_double sparse_matrix_variable_block_create_double(long Mb, long Nb,
+            ConstLongPtr K, ConstLongPtr L);
+
+    @Generated
+    @CFunction
+    public static native int sparse_insert_block_float(sparse_matrix_float A, ConstFloatPtr val, long row_stride,
+            long col_stride, long bi, long bj);
+
+    @Generated
+    @CFunction
+    public static native int sparse_insert_block_double(sparse_matrix_double A, ConstDoublePtr val, long row_stride,
+            long col_stride, long bi, long bj);
+
+    @Generated
+    @CFunction
+    public static native int sparse_extract_block_float(sparse_matrix_float A, long bi, long bj, long row_stride,
+            long col_stride, FloatPtr val);
+
+    @Generated
+    @CFunction
+    public static native int sparse_extract_block_double(sparse_matrix_double A, long bi, long bj, long row_stride,
+            long col_stride, DoublePtr val);
+
+    @Generated
+    @CFunction
+    @NInt
+    public static native long sparse_get_block_dimension_for_row(VoidPtr A, long i);
+
+    @Generated
+    @CFunction
+    @NInt
+    public static native long sparse_get_block_dimension_for_col(VoidPtr A, long j);
+
+    @Generated
+    @CFunction
+    public static native int sparse_commit(VoidPtr A);
+
+    @Generated
+    @CFunction
+    @NInt
+    public static native long sparse_get_matrix_property(VoidPtr A, int pname);
+
+    @Generated
+    @CFunction
+    public static native int sparse_set_matrix_property(VoidPtr A, int pname);
+
+    @Generated
+    @CFunction
+    public static native long sparse_get_matrix_number_of_rows(VoidPtr A);
+
+    @Generated
+    @CFunction
+    public static native long sparse_get_matrix_number_of_columns(VoidPtr A);
+
+    @Generated
+    @CFunction
+    @NInt
+    public static native long sparse_get_matrix_nonzero_count(VoidPtr A);
+
+    @Generated
+    @CFunction
+    @NInt
+    public static native long sparse_get_matrix_nonzero_count_for_row(VoidPtr A, long i);
+
+    @Generated
+    @CFunction
+    @NInt
+    public static native long sparse_get_matrix_nonzero_count_for_column(VoidPtr A, long j);
+
+    @Generated
+    @CFunction
+    public static native int sparse_matrix_destroy(VoidPtr A);
+
+    @Generated
+    @CFunction
+    @NInt
+    public static native long sparse_get_vector_nonzero_count_float(long N, ConstFloatPtr x, long incx);
+
+    @Generated
+    @CFunction
+    @NInt
+    public static native long sparse_get_vector_nonzero_count_double(long N, ConstDoublePtr x, long incx);
+
+    @Generated
+    @CFunction
+    @NInt
+    public static native long sparse_pack_vector_float(long N, long nz, ConstFloatPtr x, long incx, FloatPtr y,
+            LongPtr indy);
+
+    @Generated
+    @CFunction
+    @NInt
+    public static native long sparse_pack_vector_double(long N, long nz, ConstDoublePtr x, long incx, DoublePtr y,
+            LongPtr indy);
+
+    @Generated
+    @CFunction
+    public static native void sparse_unpack_vector_float(long N, long nz, boolean zero, ConstFloatPtr x,
+            ConstLongPtr indx, FloatPtr y, long incy);
+
+    @Generated
+    @CFunction
+    public static native void sparse_unpack_vector_double(long N, long nz, boolean zero, ConstDoublePtr x,
+            ConstLongPtr indx, DoublePtr y, long incy);
+
+    @Generated
+    @CFunction
+    public static native double quadrature_integrate(
+            @UncertainArgument("Options: reference, array Fallback: reference") quadrature_integrate_function __f,
+            double __a, double __b,
+            @UncertainArgument("Options: reference, array Fallback: reference") quadrature_integrate_options options,
+            IntPtr status, DoublePtr abs_error, @NUInt long workspace_size, VoidPtr workspace);
+
+    @Generated
+    @CFunction
+    public static native VoidPtr BNNSFilterCreateConvolutionLayer(
+            @UncertainArgument("Options: reference, array Fallback: reference") BNNSImageStackDescriptor in_desc,
+            @UncertainArgument("Options: reference, array Fallback: reference") BNNSImageStackDescriptor out_desc,
+            @UncertainArgument("Options: reference, array Fallback: reference") BNNSConvolutionLayerParameters layer_params,
+            @UncertainArgument("Options: reference, array Fallback: reference") BNNSFilterParameters filter_params);
+
+    @Generated
+    @CFunction
+    public static native VoidPtr BNNSFilterCreateFullyConnectedLayer(
+            @UncertainArgument("Options: reference, array Fallback: reference") BNNSVectorDescriptor in_desc,
+            @UncertainArgument("Options: reference, array Fallback: reference") BNNSVectorDescriptor out_desc,
+            @UncertainArgument("Options: reference, array Fallback: reference") BNNSFullyConnectedLayerParameters layer_params,
+            @UncertainArgument("Options: reference, array Fallback: reference") BNNSFilterParameters filter_params);
+
+    @Generated
+    @CFunction
+    public static native VoidPtr BNNSFilterCreatePoolingLayer(
+            @UncertainArgument("Options: reference, array Fallback: reference") BNNSImageStackDescriptor in_desc,
+            @UncertainArgument("Options: reference, array Fallback: reference") BNNSImageStackDescriptor out_desc,
+            @UncertainArgument("Options: reference, array Fallback: reference") BNNSPoolingLayerParameters layer_params,
+            @UncertainArgument("Options: reference, array Fallback: reference") BNNSFilterParameters filter_params);
+
+    @Generated
+    @CFunction
+    public static native int BNNSFilterApply(VoidPtr filter, ConstVoidPtr in, VoidPtr out);
+
+    @Generated
+    @CFunction
+    public static native int BNNSFilterApplyBatch(VoidPtr filter, @NUInt long batch_size, ConstVoidPtr in,
+            @NUInt long in_stride, VoidPtr out, @NUInt long out_stride);
+
+    @Generated
+    @CFunction
+    public static native void BNNSFilterDestroy(VoidPtr filter);
+
+    @Generated
+    @CFunction
     public static native void vvrecf(FloatPtr arg1, ConstFloatPtr arg2, ConstIntPtr arg3);
 
     @Generated
@@ -13828,14 +14228,6 @@ public final class Accelerate {
     @Generated
     @CFunction
     @NInt
-    public static native long vImagePremultipliedAlphaBlend_ARGBFFFF(
-            @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer srcTop,
-            @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer srcBottom,
-            @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer dest, int flags);
-
-    @Generated
-    @CFunction
-    @NInt
     public static native long vImagePremultipliedAlphaBlend_BGRA8888(
             @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer srcTop,
             @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer srcBottom,
@@ -13844,7 +14236,47 @@ public final class Accelerate {
     @Generated
     @CFunction
     @NInt
+    public static native long vImagePremultipliedAlphaBlend_ARGBFFFF(
+            @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer srcTop,
+            @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer srcBottom,
+            @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer dest, int flags);
+
+    @Generated
+    @CFunction
+    @NInt
     public static native long vImagePremultipliedAlphaBlend_BGRAFFFF(
+            @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer srcTop,
+            @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer srcBottom,
+            @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer dest, int flags);
+
+    @Generated
+    @CFunction
+    @NInt
+    public static native long vImagePremultipliedAlphaBlendMultiply_RGBA8888(
+            @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer srcTop,
+            @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer srcBottom,
+            @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer dest, int flags);
+
+    @Generated
+    @CFunction
+    @NInt
+    public static native long vImagePremultipliedAlphaBlendScreen_RGBA8888(
+            @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer srcTop,
+            @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer srcBottom,
+            @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer dest, int flags);
+
+    @Generated
+    @CFunction
+    @NInt
+    public static native long vImagePremultipliedAlphaBlendDarken_RGBA8888(
+            @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer srcTop,
+            @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer srcBottom,
+            @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer dest, int flags);
+
+    @Generated
+    @CFunction
+    @NInt
+    public static native long vImagePremultipliedAlphaBlendLighten_RGBA8888(
             @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer srcTop,
             @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer srcBottom,
             @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer dest, int flags);
@@ -13947,14 +14379,14 @@ public final class Accelerate {
     @Generated
     @CFunction
     @NInt
-    public static native long vImageUnpremultiplyData_ARGBFFFF(
+    public static native long vImageUnpremultiplyData_RGBA8888(
             @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer src,
             @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer dest, int flags);
 
     @Generated
     @CFunction
     @NInt
-    public static native long vImageUnpremultiplyData_RGBA8888(
+    public static native long vImageUnpremultiplyData_ARGBFFFF(
             @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer src,
             @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer dest, int flags);
 
@@ -14072,16 +14504,16 @@ public final class Accelerate {
     @Generated
     @CFunction
     @NInt
-    public static native long vImageClipToAlpha_ARGB8888(
+    public static native long vImageClipToAlpha_PlanarF(
             @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer src,
+            @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer alpha,
             @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer dest, int flags);
 
     @Generated
     @CFunction
     @NInt
-    public static native long vImageClipToAlpha_PlanarF(
+    public static native long vImageClipToAlpha_ARGB8888(
             @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer src,
-            @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer alpha,
             @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer dest, int flags);
 
     @Generated
@@ -14328,6 +14760,20 @@ public final class Accelerate {
     @Generated
     @CFunction
     @NInt
+    public static native long vImageConvert_12UTo16U(
+            @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer src,
+            @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer dest, int flags);
+
+    @Generated
+    @CFunction
+    @NInt
+    public static native long vImageConvert_16UTo12U(
+            @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer src,
+            @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer dest, int flags);
+
+    @Generated
+    @CFunction
+    @NInt
     public static native long vImageOverwriteChannels_ARGB8888(
             @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer newSrc,
             @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer origSrc,
@@ -14492,6 +14938,36 @@ public final class Accelerate {
     @Generated
     @CFunction
     @NInt
+    public static native long vImageConvert_RGBA5551toRGBA8888(
+            @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer src,
+            @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer dest, int flags);
+
+    @Generated
+    @CFunction
+    @NInt
+    public static native long vImageConvert_RGBA8888toRGBA5551(
+            @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer src,
+            @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer dest, int flags);
+
+    @Generated
+    @CFunction
+    @NInt
+    public static native long vImageConvert_ARGB8888toARGB1555_dithered(
+            @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer src,
+            @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer dest, VoidPtr tempBuffer,
+            int dither, int flags);
+
+    @Generated
+    @CFunction
+    @NInt
+    public static native long vImageConvert_RGBA8888toRGBA5551_dithered(
+            @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer src,
+            @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer dest, VoidPtr tempBuffer,
+            int dither, int flags);
+
+    @Generated
+    @CFunction
+    @NInt
     public static native long vImageConvert_RGB565toARGB8888(byte alpha,
             @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer src,
             @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer dest, int flags);
@@ -14537,6 +15013,38 @@ public final class Accelerate {
     public static native long vImageConvert_BGRA8888toRGB565(
             @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer src,
             @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer dest, int flags);
+
+    @Generated
+    @CFunction
+    @NInt
+    public static native long vImageConvert_RGB888toRGB565_dithered(
+            @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer src,
+            @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer dest, VoidPtr tempBuffer,
+            int dither, int flags);
+
+    @Generated
+    @CFunction
+    @NInt
+    public static native long vImageConvert_ARGB8888toRGB565_dithered(
+            @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer src,
+            @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer dest, VoidPtr tempBuffer,
+            int dither, int flags);
+
+    @Generated
+    @CFunction
+    @NInt
+    public static native long vImageConvert_RGBA8888toRGB565_dithered(
+            @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer src,
+            @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer dest, VoidPtr tempBuffer,
+            int dither, int flags);
+
+    @Generated
+    @CFunction
+    @NInt
+    public static native long vImageConvert_BGRA8888toRGB565_dithered(
+            @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer src,
+            @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer dest, VoidPtr tempBuffer,
+            int dither, int flags);
 
     @Generated
     @CFunction
@@ -14891,6 +15399,22 @@ public final class Accelerate {
     @Generated
     @CFunction
     @NInt
+    public static native long vImageConvert_Planar16UtoPlanar8_dithered(
+            @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer src,
+            @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer dest, int dither,
+            int flags);
+
+    @Generated
+    @CFunction
+    @NInt
+    public static native long vImageConvert_RGB16UtoRGB888_dithered(
+            @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer src,
+            @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer dest, int dither,
+            int flags);
+
+    @Generated
+    @CFunction
+    @NInt
     public static native long vImageByteSwap_Planar16U(
             @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer src,
             @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer dest, int flags);
@@ -14990,6 +15514,39 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer red,
             @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer green,
             @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer blue,
+            @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer dest, int flags);
+
+    @Generated
+    @CFunction
+    @NInt
+    public static native long vImageConvert_16Q12to16F(
+            @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer src,
+            @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer dest, int flags);
+
+    @Generated
+    @CFunction
+    @NInt
+    public static native long vImageConvert_Planar16Q12toRGB16F(
+            @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer red,
+            @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer green,
+            @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer blue,
+            @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer dest, int flags);
+
+    @Generated
+    @CFunction
+    @NInt
+    public static native long vImageConvert_Planar16Q12toARGB16F(
+            @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer alpha,
+            @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer red,
+            @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer green,
+            @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer blue,
+            @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer dest, int flags);
+
+    @Generated
+    @CFunction
+    @NInt
+    public static native long vImageConvert_16Fto16Q12(
+            @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer src,
             @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer dest, int flags);
 
     @Generated
@@ -15122,6 +15679,30 @@ public final class Accelerate {
     @CFunction
     @NInt
     public static native long vImageScale_ARGBFFFF(
+            @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer src,
+            @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer dest, VoidPtr tempBuffer,
+            int flags);
+
+    @Generated
+    @CFunction
+    @NInt
+    public static native long vImageScale_CbCr8(
+            @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer src,
+            @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer dest, VoidPtr tempBuffer,
+            int flags);
+
+    @Generated
+    @CFunction
+    @NInt
+    public static native long vImageScale_CbCr16U(
+            @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer src,
+            @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer dest, VoidPtr tempBuffer,
+            int flags);
+
+    @Generated
+    @CFunction
+    @NInt
+    public static native long vImageScale_XRGB2101010W(
             @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer src,
             @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer dest, VoidPtr tempBuffer,
             int flags);
@@ -15409,6 +15990,24 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer dest,
             @NUInt long srcOffsetToROI_X, @NUInt long srcOffsetToROI_Y, double yTranslate, double shearSlope,
             VoidPtr filter, float backColor, int flags);
+
+    @Generated
+    @CFunction
+    @NInt
+    public static native long vImageHorizontalShear_XRGB2101010W(
+            @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer src,
+            @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer dest,
+            @NUInt long srcOffsetToROI_X, @NUInt long srcOffsetToROI_Y, float xTranslate, float shearSlope,
+            VoidPtr filter, int backColor, int flags);
+
+    @Generated
+    @CFunction
+    @NInt
+    public static native long vImageVerticalShear_XRGB2101010W(
+            @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer src,
+            @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer dest,
+            @NUInt long srcOffsetToROI_X, @NUInt long srcOffsetToROI_Y, float yTranslate, float shearSlope,
+            VoidPtr filter, int backColor, int flags);
 
     @Generated
     @CFunction
@@ -15779,6 +16378,14 @@ public final class Accelerate {
     @Generated
     @CFunction
     @NInt
+    public static native long vImageSymmetricPiecewisePolynomial_PlanarF(
+            @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer src,
+            @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer dest,
+            Ptr<ConstFloatPtr> coefficients, ConstFloatPtr boundaries, int order, int log2segments, int flags);
+
+    @Generated
+    @CFunction
+    @NInt
     public static native long vImagePiecewiseRational_PlanarF(
             @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer src,
             @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer dest,
@@ -16041,6 +16648,13 @@ public final class Accelerate {
 
     @Generated
     @CFunction
+    public static native CGColorSpaceRef vImageCreateMonochromeColorSpaceWithWhitePointAndTransferFunction(
+            @UncertainArgument("Options: reference, array Fallback: reference") vImageWhitePoint whitePoint,
+            @UncertainArgument("Options: reference, array Fallback: reference") vImageTransferFunction tf, int intent,
+            int flags, NIntPtr error);
+
+    @Generated
+    @CFunction
     public static native vImageConverterRef vImageConverter_CreateForCGToCVImageFormat(
             @UncertainArgument("Options: reference, array Fallback: reference") vImage_CGImageFormat srcFormat,
             vImageCVImageFormatRef destFormat, ConstNFloatPtr backgroundColor, int flags, NIntPtr error);
@@ -16088,393 +16702,6 @@ public final class Accelerate {
     @Generated
     @CVariable()
     public static native ConstNFloatPtr kvImageDecodeArray_16Q12Format();
-
-    @Generated
-    @CFunction
-    public static native void vDSP_biquadm_SetCoefficientsDouble(vDSP_biquadm_Setup __setup, ConstDoublePtr __coeffs,
-            @NUInt long __start_sec, @NUInt long __start_chn, @NUInt long __nsec, @NUInt long __nchn);
-
-    @Generated
-    @CFunction
-    public static native void vDSP_biquadm_SetTargetsDouble(vDSP_biquadm_Setup __setup, ConstDoublePtr __targets,
-            float __interp_rate, float __interp_threshold, @NUInt long __start_sec, @NUInt long __start_chn,
-            @NUInt long __nsec, @NUInt long __nchn);
-
-    @Generated
-    @CFunction
-    public static native void vDSP_biquadm_SetCoefficientsSingle(vDSP_biquadm_Setup __setup, ConstFloatPtr __coeffs,
-            @NUInt long __start_sec, @NUInt long __start_chn, @NUInt long __nsec, @NUInt long __nchn);
-
-    @Generated
-    @CFunction
-    public static native void vDSP_biquadm_SetTargetsSingle(vDSP_biquadm_Setup __setup, ConstFloatPtr __targets,
-            float __interp_rate, float __interp_threshold, @NUInt long __start_sec, @NUInt long __start_chn,
-            @NUInt long __nsec, @NUInt long __nchn);
-
-    @Generated
-    @CFunction
-    public static native void vDSP_biquadm_SetActiveFilters(vDSP_biquadm_Setup __setup, ConstBoolPtr __filter_states);
-
-    @Generated
-    @CFunction
-    public static native float sparse_inner_product_dense_float(long nz, ConstFloatPtr x, ConstLongPtr indx,
-            ConstFloatPtr y, long incy);
-
-    @Generated
-    @CFunction
-    public static native double sparse_inner_product_dense_double(long nz, ConstDoublePtr x, ConstLongPtr indx,
-            ConstDoublePtr y, long incy);
-
-    @Generated
-    @CFunction
-    public static native float sparse_inner_product_sparse_float(long nzx, long nzy, ConstFloatPtr x, ConstLongPtr indx,
-            ConstFloatPtr y, ConstLongPtr indy);
-
-    @Generated
-    @CFunction
-    public static native double sparse_inner_product_sparse_double(long nzx, long nzy, ConstDoublePtr x,
-            ConstLongPtr indx, ConstDoublePtr y, ConstLongPtr indy);
-
-    @Generated
-    @CFunction
-    public static native void sparse_vector_add_with_scale_dense_float(long nz, float alpha, ConstFloatPtr x,
-            ConstLongPtr indx, FloatPtr y, long incy);
-
-    @Generated
-    @CFunction
-    public static native void sparse_vector_add_with_scale_dense_double(long nz, double alpha, ConstDoublePtr x,
-            ConstLongPtr indx, DoublePtr y, long incy);
-
-    @Generated
-    @CFunction
-    public static native float sparse_vector_norm_float(long nz, ConstFloatPtr x, ConstLongPtr indx, int norm);
-
-    @Generated
-    @CFunction
-    public static native double sparse_vector_norm_double(long nz, ConstDoublePtr x, ConstLongPtr indx, int norm);
-
-    @Generated
-    @CFunction
-    public static native int sparse_matrix_vector_product_dense_float(int transa, float alpha, sparse_matrix_float A,
-            ConstFloatPtr x, long incx, FloatPtr y, long incy);
-
-    @Generated
-    @CFunction
-    public static native int sparse_matrix_vector_product_dense_double(int transa, double alpha, sparse_matrix_double A,
-            ConstDoublePtr x, long incx, DoublePtr y, long incy);
-
-    @Generated
-    @CFunction
-    public static native int sparse_vector_triangular_solve_dense_float(int transt, float alpha, sparse_matrix_float T,
-            FloatPtr x, long incx);
-
-    @Generated
-    @CFunction
-    public static native int sparse_vector_triangular_solve_dense_double(int transt, double alpha,
-            sparse_matrix_double T, DoublePtr x, long incx);
-
-    @Generated
-    @CFunction
-    public static native int sparse_outer_product_dense_float(long M, long N, long nz, float alpha, ConstFloatPtr x,
-            long incx, ConstFloatPtr y, ConstLongPtr indy, Ptr<sparse_matrix_float> C);
-
-    @Generated
-    @CFunction
-    public static native int sparse_outer_product_dense_double(long M, long N, long nz, double alpha, ConstDoublePtr x,
-            long incx, ConstDoublePtr y, ConstLongPtr indy, Ptr<sparse_matrix_double> C);
-
-    @Generated
-    @CFunction
-    public static native int sparse_permute_rows_float(sparse_matrix_float A, ConstLongPtr perm);
-
-    @Generated
-    @CFunction
-    public static native int sparse_permute_rows_double(sparse_matrix_double A, ConstLongPtr perm);
-
-    @Generated
-    @CFunction
-    public static native int sparse_permute_cols_float(sparse_matrix_float A, ConstLongPtr perm);
-
-    @Generated
-    @CFunction
-    public static native int sparse_permute_cols_double(sparse_matrix_double A, ConstLongPtr perm);
-
-    @Generated
-    @CFunction
-    public static native float sparse_elementwise_norm_float(sparse_matrix_float A, int norm);
-
-    @Generated
-    @CFunction
-    public static native double sparse_elementwise_norm_double(sparse_matrix_double A, int norm);
-
-    @Generated
-    @CFunction
-    public static native float sparse_operator_norm_float(sparse_matrix_float A, int norm);
-
-    @Generated
-    @CFunction
-    public static native double sparse_operator_norm_double(sparse_matrix_double A, int norm);
-
-    @Generated
-    @CFunction
-    public static native float sparse_matrix_trace_float(sparse_matrix_float A, long offset);
-
-    @Generated
-    @CFunction
-    public static native double sparse_matrix_trace_double(sparse_matrix_double A, long offset);
-
-    @Generated
-    @CFunction
-    public static native int sparse_matrix_product_dense_float(int order, int transa, long n, float alpha,
-            sparse_matrix_float A, ConstFloatPtr B, long ldb, FloatPtr C, long ldc);
-
-    @Generated
-    @CFunction
-    public static native int sparse_matrix_product_dense_double(int order, int transa, long n, double alpha,
-            sparse_matrix_double A, ConstDoublePtr B, long ldb, DoublePtr C, long ldc);
-
-    @Generated
-    @CFunction
-    public static native int sparse_matrix_triangular_solve_dense_float(int order, int transt, long nrhs, float alpha,
-            sparse_matrix_float T, FloatPtr B, long ldb);
-
-    @Generated
-    @CFunction
-    public static native int sparse_matrix_triangular_solve_dense_double(int order, int transt, long nrhs, double alpha,
-            sparse_matrix_double T, DoublePtr B, long ldb);
-
-    @Generated
-    @CFunction
-    public static native sparse_matrix_float sparse_matrix_create_float(long M, long N);
-
-    @Generated
-    @CFunction
-    public static native sparse_matrix_double sparse_matrix_create_double(long M, long N);
-
-    @Generated
-    @CFunction
-    public static native int sparse_insert_entry_float(sparse_matrix_float A, float val, long i, long j);
-
-    @Generated
-    @CFunction
-    public static native int sparse_insert_entry_double(sparse_matrix_double A, double val, long i, long j);
-
-    @Generated
-    @CFunction
-    public static native int sparse_insert_entries_float(sparse_matrix_float A, long N, ConstFloatPtr val,
-            ConstLongPtr indx, ConstLongPtr jndx);
-
-    @Generated
-    @CFunction
-    public static native int sparse_insert_entries_double(sparse_matrix_double A, long N, ConstDoublePtr val,
-            ConstLongPtr indx, ConstLongPtr jndx);
-
-    @Generated
-    @CFunction
-    public static native int sparse_insert_col_float(sparse_matrix_float A, long j, long nz, ConstFloatPtr val,
-            ConstLongPtr indx);
-
-    @Generated
-    @CFunction
-    public static native int sparse_insert_col_double(sparse_matrix_double A, long j, long nz, ConstDoublePtr val,
-            ConstLongPtr indx);
-
-    @Generated
-    @CFunction
-    public static native int sparse_insert_row_float(sparse_matrix_float A, long i, long nz, ConstFloatPtr val,
-            ConstLongPtr jndx);
-
-    @Generated
-    @CFunction
-    public static native int sparse_insert_row_double(sparse_matrix_double A, long i, long nz, ConstDoublePtr val,
-            ConstLongPtr jndx);
-
-    @Generated
-    @CFunction
-    public static native int sparse_extract_sparse_row_float(sparse_matrix_float A, long row, long column_start,
-            LongPtr column_end, long nz, FloatPtr val, LongPtr jndx);
-
-    @Generated
-    @CFunction
-    public static native int sparse_extract_sparse_row_double(sparse_matrix_double A, long row, long column_start,
-            LongPtr column_end, long nz, DoublePtr val, LongPtr jndx);
-
-    @Generated
-    @CFunction
-    public static native int sparse_extract_sparse_column_float(sparse_matrix_float A, long column, long row_start,
-            LongPtr row_end, long nz, FloatPtr val, LongPtr indx);
-
-    @Generated
-    @CFunction
-    public static native int sparse_extract_sparse_column_double(sparse_matrix_double A, long column, long row_start,
-            LongPtr row_end, long nz, DoublePtr val, LongPtr indx);
-
-    @Generated
-    @CFunction
-    public static native sparse_matrix_float sparse_matrix_block_create_float(long Mb, long Nb, long k, long l);
-
-    @Generated
-    @CFunction
-    public static native sparse_matrix_double sparse_matrix_block_create_double(long Mb, long Nb, long k, long l);
-
-    @Generated
-    @CFunction
-    public static native sparse_matrix_float sparse_matrix_variable_block_create_float(long Mb, long Nb, ConstLongPtr K,
-            ConstLongPtr L);
-
-    @Generated
-    @CFunction
-    public static native sparse_matrix_double sparse_matrix_variable_block_create_double(long Mb, long Nb,
-            ConstLongPtr K, ConstLongPtr L);
-
-    @Generated
-    @CFunction
-    public static native int sparse_insert_block_float(sparse_matrix_float A, ConstFloatPtr val, long row_stride,
-            long col_stride, long bi, long bj);
-
-    @Generated
-    @CFunction
-    public static native int sparse_insert_block_double(sparse_matrix_double A, ConstDoublePtr val, long row_stride,
-            long col_stride, long bi, long bj);
-
-    @Generated
-    @CFunction
-    public static native int sparse_extract_block_float(sparse_matrix_float A, long bi, long bj, long row_stride,
-            long col_stride, FloatPtr val);
-
-    @Generated
-    @CFunction
-    public static native int sparse_extract_block_double(sparse_matrix_double A, long bi, long bj, long row_stride,
-            long col_stride, DoublePtr val);
-
-    @Generated
-    @CFunction
-    @NInt
-    public static native long sparse_get_block_dimension_for_row(VoidPtr A, long i);
-
-    @Generated
-    @CFunction
-    @NInt
-    public static native long sparse_get_block_dimension_for_col(VoidPtr A, long j);
-
-    @Generated
-    @CFunction
-    public static native int sparse_commit(VoidPtr A);
-
-    @Generated
-    @CFunction
-    @NInt
-    public static native long sparse_get_matrix_property(VoidPtr A, int pname);
-
-    @Generated
-    @CFunction
-    public static native int sparse_set_matrix_property(VoidPtr A, int pname);
-
-    @Generated
-    @CFunction
-    public static native long sparse_get_matrix_number_of_rows(VoidPtr A);
-
-    @Generated
-    @CFunction
-    public static native long sparse_get_matrix_number_of_columns(VoidPtr A);
-
-    @Generated
-    @CFunction
-    @NInt
-    public static native long sparse_get_matrix_nonzero_count(VoidPtr A);
-
-    @Generated
-    @CFunction
-    @NInt
-    public static native long sparse_get_matrix_nonzero_count_for_row(VoidPtr A, long i);
-
-    @Generated
-    @CFunction
-    @NInt
-    public static native long sparse_get_matrix_nonzero_count_for_column(VoidPtr A, long j);
-
-    @Generated
-    @CFunction
-    public static native int sparse_matrix_destroy(VoidPtr A);
-
-    @Generated
-    @CFunction
-    @NInt
-    public static native long sparse_get_vector_nonzero_count_float(long N, ConstFloatPtr x, long incx);
-
-    @Generated
-    @CFunction
-    @NInt
-    public static native long sparse_get_vector_nonzero_count_double(long N, ConstDoublePtr x, long incx);
-
-    @Generated
-    @CFunction
-    @NInt
-    public static native long sparse_pack_vector_float(long N, long nz, ConstFloatPtr x, long incx, FloatPtr y,
-            LongPtr indy);
-
-    @Generated
-    @CFunction
-    @NInt
-    public static native long sparse_pack_vector_double(long N, long nz, ConstDoublePtr x, long incx, DoublePtr y,
-            LongPtr indy);
-
-    @Generated
-    @CFunction
-    public static native void sparse_unpack_vector_float(long N, long nz, boolean zero, ConstFloatPtr x,
-            ConstLongPtr indx, FloatPtr y, long incy);
-
-    @Generated
-    @CFunction
-    public static native void sparse_unpack_vector_double(long N, long nz, boolean zero, ConstDoublePtr x,
-            ConstLongPtr indx, DoublePtr y, long incy);
-
-    @Generated
-    @CFunction
-    @NInt
-    public static native long vImagePremultipliedAlphaBlendMultiply_RGBA8888(
-            @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer srcTop,
-            @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer srcBottom,
-            @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer dest, int flags);
-
-    @Generated
-    @CFunction
-    @NInt
-    public static native long vImagePremultipliedAlphaBlendScreen_RGBA8888(
-            @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer srcTop,
-            @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer srcBottom,
-            @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer dest, int flags);
-
-    @Generated
-    @CFunction
-    @NInt
-    public static native long vImagePremultipliedAlphaBlendDarken_RGBA8888(
-            @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer srcTop,
-            @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer srcBottom,
-            @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer dest, int flags);
-
-    @Generated
-    @CFunction
-    @NInt
-    public static native long vImagePremultipliedAlphaBlendLighten_RGBA8888(
-            @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer srcTop,
-            @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer srcBottom,
-            @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer dest, int flags);
-
-    @Generated
-    @CFunction
-    @NInt
-    public static native long vImageSymmetricPiecewisePolynomial_PlanarF(
-            @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer src,
-            @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer dest,
-            Ptr<ConstFloatPtr> coefficients, ConstFloatPtr boundaries, int order, int log2segments, int flags);
-
-    @Generated
-    @CFunction
-    public static native CGColorSpaceRef vImageCreateMonochromeColorSpaceWithWhitePointAndTransferFunction(
-            @UncertainArgument("Options: reference, array Fallback: reference") vImageWhitePoint whitePoint,
-            @UncertainArgument("Options: reference, array Fallback: reference") vImageTransferFunction tf, int intent,
-            int flags, NIntPtr error);
 
     @Runtime(CRuntime.class)
     @Generated

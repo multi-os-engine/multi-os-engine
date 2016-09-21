@@ -17,7 +17,6 @@ limitations under the License.
 package apple.gamekit.protocol;
 
 import apple.foundation.NSArray;
-import apple.gamekit.GKPlayer;
 import apple.gamekit.GKTurnBasedMatch;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.Library;
@@ -35,7 +34,7 @@ public interface GKTurnBasedEventHandlerDelegate {
     @Generated
     @Deprecated
     @Selector("handleInviteFromGameCenter:")
-    void handleInviteFromGameCenter(NSArray<? extends GKPlayer> playersToInvite);
+    void handleInviteFromGameCenter(NSArray<String> playersToInvite);
 
     @Generated
     @IsOptional

@@ -59,17 +59,13 @@ public class CAReplicatorLayer extends CALayer {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native CAReplicatorLayer alloc();
-
-    @Generated
-    @Selector("layer")
-    public static native CAReplicatorLayer layer();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -147,6 +143,10 @@ public class CAReplicatorLayer extends CALayer {
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
     @Generated
+    @Selector("layer")
+    public static native CAReplicatorLayer layer();
+
+    @Generated
     @Selector("load")
     public static native void load_objc_static();
 
@@ -170,7 +170,7 @@ public class CAReplicatorLayer extends CALayer {
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")
@@ -184,6 +184,10 @@ public class CAReplicatorLayer extends CALayer {
     @Generated
     @Selector("init")
     public native CAReplicatorLayer init();
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native CAReplicatorLayer initWithCoder(NSCoder aDecoder);
 
     @Generated
     @Selector("initWithLayer:")
@@ -262,8 +266,4 @@ public class CAReplicatorLayer extends CALayer {
     @Generated
     @Selector("setPreservesDepth:")
     public native void setPreservesDepth(boolean value);
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native CAReplicatorLayer initWithCoder(NSCoder aDecoder);
 }

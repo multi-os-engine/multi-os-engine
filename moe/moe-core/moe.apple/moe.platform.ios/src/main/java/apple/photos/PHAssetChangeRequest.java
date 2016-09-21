@@ -59,36 +59,13 @@ public class PHAssetChangeRequest extends NSObject {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native PHAssetChangeRequest alloc();
-
-    @Generated
-    @Selector("changeRequestForAsset:")
-    public static native PHAssetChangeRequest changeRequestForAsset(PHAsset asset);
-
-    @Generated
-    @Selector("creationRequestForAssetFromImage:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object creationRequestForAssetFromImage(UIImage image);
-
-    @Generated
-    @Selector("creationRequestForAssetFromImageAtFileURL:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object creationRequestForAssetFromImageAtFileURL(NSURL fileURL);
-
-    @Generated
-    @Selector("creationRequestForAssetFromVideoAtFileURL:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object creationRequestForAssetFromVideoAtFileURL(NSURL fileURL);
-
-    @Generated
-    @Selector("deleteAssets:")
-    public static native void deleteAssets(@Mapped(ObjCObjectMapper.class) NSFastEnumeration assets);
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -110,6 +87,10 @@ public class PHAssetChangeRequest extends NSObject {
             @Mapped(ObjCObjectMapper.class) Object anArgument);
 
     @Generated
+    @Selector("changeRequestForAsset:")
+    public static native PHAssetChangeRequest changeRequestForAsset(PHAsset asset);
+
+    @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
@@ -118,8 +99,27 @@ public class PHAssetChangeRequest extends NSObject {
     public static native Class classForKeyedUnarchiver();
 
     @Generated
+    @Selector("creationRequestForAssetFromImage:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object creationRequestForAssetFromImage(UIImage image);
+
+    @Generated
+    @Selector("creationRequestForAssetFromImageAtFileURL:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object creationRequestForAssetFromImageAtFileURL(NSURL fileURL);
+
+    @Generated
+    @Selector("creationRequestForAssetFromVideoAtFileURL:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object creationRequestForAssetFromVideoAtFileURL(NSURL fileURL);
+
+    @Generated
     @Selector("debugDescription")
     public static native String debugDescription_static();
+
+    @Generated
+    @Selector("deleteAssets:")
+    public static native void deleteAssets(@Mapped(ObjCObjectMapper.class) NSFastEnumeration assets);
 
     @Generated
     @Selector("description")

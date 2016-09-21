@@ -14,8 +14,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 */
 
-#import <AVFoundation/AVAudioSequencer.h>
-#import <AVFoundation/AVAudioTypes.h>
+#import <AVFoundation/AVFoundation.h>
 
 
 #define EXPORT __attribute__ ((visibility ("default")))

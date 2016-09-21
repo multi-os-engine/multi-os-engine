@@ -58,13 +58,13 @@ public class GKLeaderboardViewController extends GKGameCenterViewController {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native GKLeaderboardViewController alloc();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -163,7 +163,7 @@ public class GKLeaderboardViewController extends GKGameCenterViewController {
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")
@@ -181,6 +181,10 @@ public class GKLeaderboardViewController extends GKGameCenterViewController {
     @Generated
     @Selector("init")
     public native GKLeaderboardViewController init();
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native GKLeaderboardViewController initWithCoder(NSCoder aDecoder);
 
     @Generated
     @Selector("initWithNavigationBarClass:toolbarClass:")
@@ -229,8 +233,4 @@ public class GKLeaderboardViewController extends GKGameCenterViewController {
     @Selector("timeScope")
     @NInt
     public native long timeScope();
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native GKLeaderboardViewController initWithCoder(NSCoder aDecoder);
 }

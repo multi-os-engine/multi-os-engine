@@ -58,25 +58,13 @@ public class CNInstantMessageAddress extends NSObject implements NSCopying, NSSe
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native CNInstantMessageAddress alloc();
-
-    @Generated
-    @Selector("localizedStringForKey:")
-    public static native String localizedStringForKey(String key);
-
-    @Generated
-    @Selector("localizedStringForService:")
-    public static native String localizedStringForService(String service);
-
-    @Generated
-    @Selector("supportsSecureCoding")
-    public static native boolean supportsSecureCoding();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -148,6 +136,14 @@ public class CNInstantMessageAddress extends NSObject implements NSCopying, NSSe
     public static native void load_objc_static();
 
     @Generated
+    @Selector("localizedStringForKey:")
+    public static native String localizedStringForKey(String key);
+
+    @Generated
+    @Selector("localizedStringForService:")
+    public static native String localizedStringForService(String service);
+
+    @Generated
     @Owned
     @Selector("new")
     @MappedReturn(ObjCObjectMapper.class)
@@ -163,11 +159,15 @@ public class CNInstantMessageAddress extends NSObject implements NSCopying, NSSe
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")
     public static native Class superclass_static();
+
+    @Generated
+    @Selector("supportsSecureCoding")
+    public static native boolean supportsSecureCoding();
 
     @Generated
     @Selector("version")

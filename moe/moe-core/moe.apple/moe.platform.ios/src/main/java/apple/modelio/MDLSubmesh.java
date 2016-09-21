@@ -21,6 +21,7 @@ import apple.foundation.NSArray;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
 import apple.modelio.protocol.MDLMeshBuffer;
+import apple.modelio.protocol.MDLMeshBufferAllocator;
 import apple.modelio.protocol.MDLNamed;
 import apple.scenekit.SCNGeometryElement;
 import org.moe.natj.c.ann.FunctionPtr;
@@ -57,17 +58,13 @@ public class MDLSubmesh extends NSObject implements MDLNamed {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native MDLSubmesh alloc();
-
-    @Generated
-    @Selector("submeshWithSCNGeometryElement:")
-    public static native MDLSubmesh submeshWithSCNGeometryElement(SCNGeometryElement scnGeometryElement);
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -157,6 +154,15 @@ public class MDLSubmesh extends NSObject implements MDLNamed {
     public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
+    @Selector("submeshWithSCNGeometryElement:")
+    public static native MDLSubmesh submeshWithSCNGeometryElement(SCNGeometryElement scnGeometryElement);
+
+    @Generated
+    @Selector("submeshWithSCNGeometryElement:bufferAllocator:")
+    public static native MDLSubmesh submeshWithSCNGeometryElementBufferAllocator(SCNGeometryElement scnGeometryElement,
+            @Mapped(ObjCObjectMapper.class) MDLMeshBufferAllocator bufferAllocator);
+
+    @Generated
     @Selector("superclass")
     public static native Class superclass_static();
 
@@ -174,6 +180,11 @@ public class MDLSubmesh extends NSObject implements MDLNamed {
     @Selector("indexBuffer")
     @MappedReturn(ObjCObjectMapper.class)
     public native MDLMeshBuffer indexBuffer();
+
+    @Generated
+    @Selector("indexBufferAsIndexType:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native MDLMeshBuffer indexBufferAsIndexType(@NUInt long indexType);
 
     @Generated
     @Selector("indexCount")

@@ -54,25 +54,13 @@ public class NSMutableIndexSet extends NSIndexSet {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native NSMutableIndexSet alloc();
-
-    @Generated
-    @Selector("indexSet")
-    public static native NSMutableIndexSet indexSet();
-
-    @Generated
-    @Selector("indexSetWithIndex:")
-    public static native NSMutableIndexSet indexSetWithIndex(@NUInt long value);
-
-    @Generated
-    @Selector("indexSetWithIndexesInRange:")
-    public static native NSMutableIndexSet indexSetWithIndexesInRange(@ByValue NSRange range);
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -113,6 +101,18 @@ public class NSMutableIndexSet extends NSIndexSet {
     @Selector("hash")
     @NUInt
     public static native long hash_static();
+
+    @Generated
+    @Selector("indexSet")
+    public static native NSMutableIndexSet indexSet();
+
+    @Generated
+    @Selector("indexSetWithIndex:")
+    public static native NSMutableIndexSet indexSetWithIndex(@NUInt long value);
+
+    @Generated
+    @Selector("indexSetWithIndexesInRange:")
+    public static native NSMutableIndexSet indexSetWithIndexesInRange(@ByValue NSRange range);
 
     @Generated
     @Selector("initialize")
@@ -191,6 +191,10 @@ public class NSMutableIndexSet extends NSIndexSet {
     public native NSMutableIndexSet init();
 
     @Generated
+    @Selector("initWithCoder:")
+    public native NSMutableIndexSet initWithCoder(NSCoder aDecoder);
+
+    @Generated
     @Selector("initWithIndex:")
     public native NSMutableIndexSet initWithIndex(@NUInt long value);
 
@@ -221,10 +225,6 @@ public class NSMutableIndexSet extends NSIndexSet {
     @Generated
     @Selector("shiftIndexesStartingAtIndex:by:")
     public native void shiftIndexesStartingAtIndexBy(@NUInt long index, @NInt long delta);
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native NSMutableIndexSet initWithCoder(NSCoder aDecoder);
 
     @Generated
     @ProtocolClassMethod("supportsSecureCoding")

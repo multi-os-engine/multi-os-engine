@@ -54,17 +54,13 @@ public class GKStateMachine extends NSObject {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native GKStateMachine alloc();
-
-    @Generated
-    @Selector("stateMachineWithStates:")
-    public static native GKStateMachine stateMachineWithStates(NSArray<? extends GKState> states);
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -151,7 +147,11 @@ public class GKStateMachine extends NSObject {
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
+
+    @Generated
+    @Selector("stateMachineWithStates:")
+    public static native GKStateMachine stateMachineWithStates(NSArray<? extends GKState> states);
 
     @Generated
     @Selector("superclass")

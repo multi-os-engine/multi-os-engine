@@ -18,6 +18,7 @@ package apple.gameplaykit;
 
 import apple.NSObject;
 import apple.foundation.NSArray;
+import apple.foundation.NSCoder;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
 import org.moe.natj.c.ann.FunctionPtr;
@@ -54,13 +55,13 @@ public class GKGraphNode2D extends GKGraphNode {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native GKGraphNode2D alloc();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -161,4 +162,8 @@ public class GKGraphNode2D extends GKGraphNode {
     @Generated
     @Selector("init")
     public native GKGraphNode2D init();
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native GKGraphNode2D initWithCoder(NSCoder aDecoder);
 }

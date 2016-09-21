@@ -21,6 +21,7 @@ import apple.coregraphics.opaque.CGColorRef;
 import apple.foundation.NSArray;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
+import apple.modelio.protocol.MDLMeshBufferAllocator;
 import apple.scenekit.SCNLight;
 import apple.scenekit.SCNNode;
 import org.moe.natj.c.ann.FunctionPtr;
@@ -57,21 +58,13 @@ public class MDLPhysicallyPlausibleLight extends MDLLight {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native MDLPhysicallyPlausibleLight alloc();
-
-    @Generated
-    @Selector("lightWithSCNLight:")
-    public static native MDLPhysicallyPlausibleLight lightWithSCNLight(SCNLight scnLight);
-
-    @Generated
-    @Selector("objectWithSCNNode:")
-    public static native MDLPhysicallyPlausibleLight objectWithSCNNode(SCNNode scnNode);
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -139,6 +132,10 @@ public class MDLPhysicallyPlausibleLight extends MDLLight {
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
     @Generated
+    @Selector("lightWithSCNLight:")
+    public static native MDLPhysicallyPlausibleLight lightWithSCNLight(SCNLight scnLight);
+
+    @Generated
     @Selector("load")
     public static native void load_objc_static();
 
@@ -147,6 +144,15 @@ public class MDLPhysicallyPlausibleLight extends MDLLight {
     @Selector("new")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object new_objc();
+
+    @Generated
+    @Selector("objectWithSCNNode:")
+    public static native MDLPhysicallyPlausibleLight objectWithSCNNode(SCNNode scnNode);
+
+    @Generated
+    @Selector("objectWithSCNNode:bufferAllocator:")
+    public static native MDLPhysicallyPlausibleLight objectWithSCNNodeBufferAllocator(SCNNode scnNode,
+            @Mapped(ObjCObjectMapper.class) MDLMeshBufferAllocator bufferAllocator);
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -158,7 +164,7 @@ public class MDLPhysicallyPlausibleLight extends MDLLight {
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")

@@ -62,38 +62,13 @@ public class GKAchievement extends NSObject implements NSCoding, NSSecureCoding 
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native GKAchievement alloc();
-
-    @Generated
-    @Selector("loadAchievementsWithCompletionHandler:")
-    public static native void loadAchievementsWithCompletionHandler(
-            @ObjCBlock(name = "call_loadAchievementsWithCompletionHandler") Block_loadAchievementsWithCompletionHandler completionHandler);
-
-    @Generated
-    @Selector("reportAchievements:withCompletionHandler:")
-    public static native void reportAchievementsWithCompletionHandler(NSArray<? extends GKAchievement> achievements,
-            @ObjCBlock(name = "call_reportAchievementsWithCompletionHandler") Block_reportAchievementsWithCompletionHandler completionHandler);
-
-    @Generated
-    @Selector("reportAchievements:withEligibleChallenges:withCompletionHandler:")
-    public static native void reportAchievementsWithEligibleChallengesWithCompletionHandler(
-            NSArray<? extends GKAchievement> achievements, NSArray<? extends GKChallenge> challenges,
-            @ObjCBlock(name = "call_reportAchievementsWithEligibleChallengesWithCompletionHandler") Block_reportAchievementsWithEligibleChallengesWithCompletionHandler completionHandler);
-
-    @Generated
-    @Selector("resetAchievementsWithCompletionHandler:")
-    public static native void resetAchievementsWithCompletionHandler(
-            @ObjCBlock(name = "call_resetAchievementsWithCompletionHandler") Block_resetAchievementsWithCompletionHandler completionHandler);
-
-    @Generated
-    @Selector("supportsSecureCoding")
-    public static native boolean supportsSecureCoding();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -165,10 +140,31 @@ public class GKAchievement extends NSObject implements NSCoding, NSSecureCoding 
     public static native void load_objc_static();
 
     @Generated
+    @Selector("loadAchievementsWithCompletionHandler:")
+    public static native void loadAchievementsWithCompletionHandler(
+            @ObjCBlock(name = "call_loadAchievementsWithCompletionHandler") Block_loadAchievementsWithCompletionHandler completionHandler);
+
+    @Generated
     @Owned
     @Selector("new")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object new_objc();
+
+    @Generated
+    @Selector("reportAchievements:withCompletionHandler:")
+    public static native void reportAchievementsWithCompletionHandler(NSArray<? extends GKAchievement> achievements,
+            @ObjCBlock(name = "call_reportAchievementsWithCompletionHandler") Block_reportAchievementsWithCompletionHandler completionHandler);
+
+    @Generated
+    @Selector("reportAchievements:withEligibleChallenges:withCompletionHandler:")
+    public static native void reportAchievementsWithEligibleChallengesWithCompletionHandler(
+            NSArray<? extends GKAchievement> achievements, NSArray<? extends GKChallenge> challenges,
+            @ObjCBlock(name = "call_reportAchievementsWithEligibleChallengesWithCompletionHandler") Block_reportAchievementsWithEligibleChallengesWithCompletionHandler completionHandler);
+
+    @Generated
+    @Selector("resetAchievementsWithCompletionHandler:")
+    public static native void resetAchievementsWithCompletionHandler(
+            @ObjCBlock(name = "call_resetAchievementsWithCompletionHandler") Block_resetAchievementsWithCompletionHandler completionHandler);
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -185,6 +181,10 @@ public class GKAchievement extends NSObject implements NSCoding, NSSecureCoding 
     @Generated
     @Selector("superclass")
     public static native Class superclass_static();
+
+    @Generated
+    @Selector("supportsSecureCoding")
+    public static native boolean supportsSecureCoding();
 
     @Generated
     @Selector("version")

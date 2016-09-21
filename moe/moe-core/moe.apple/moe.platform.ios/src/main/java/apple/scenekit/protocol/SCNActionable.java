@@ -36,6 +36,10 @@ public interface SCNActionable {
     SCNAction actionForKey(String key);
 
     @Generated
+    @Selector("actionKeys")
+    NSArray<String> actionKeys();
+
+    @Generated
     @Selector("hasActions")
     boolean hasActions();
 
@@ -64,10 +68,6 @@ public interface SCNActionable {
     @Selector("runAction:forKey:completionHandler:")
     void runActionForKeyCompletionHandler(SCNAction action, String key,
             @ObjCBlock(name = "call_runActionForKeyCompletionHandler") Block_runActionForKeyCompletionHandler block);
-
-    @Generated
-    @Selector("actionKeys")
-    NSArray<String> actionKeys();
 
     @Runtime(ObjCRuntime.class)
     @Generated

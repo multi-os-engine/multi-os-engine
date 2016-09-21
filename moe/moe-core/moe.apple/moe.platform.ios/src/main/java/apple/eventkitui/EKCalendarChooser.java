@@ -60,13 +60,13 @@ public class EKCalendarChooser extends UIViewController {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native EKCalendarChooser alloc();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -165,7 +165,7 @@ public class EKCalendarChooser extends UIViewController {
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")
@@ -186,6 +186,10 @@ public class EKCalendarChooser extends UIViewController {
     public native EKCalendarChooser init();
 
     @Generated
+    @Selector("initWithCoder:")
+    public native EKCalendarChooser initWithCoder(NSCoder aDecoder);
+
+    @Generated
     @Selector("initWithNibName:bundle:")
     public native EKCalendarChooser initWithNibNameBundle(String nibNameOrNil, NSBundle nibBundleOrNil);
 
@@ -203,9 +207,9 @@ public class EKCalendarChooser extends UIViewController {
     @Selector("selectedCalendars")
     public native NSSet<? extends EKCalendar> selectedCalendars();
 
-    @NInt
     @Generated
     @Selector("selectionStyle")
+    @NInt
     public native long selectionStyle();
 
     @Generated
@@ -243,8 +247,4 @@ public class EKCalendarChooser extends UIViewController {
     @Generated
     @Selector("showsDoneButton")
     public native boolean showsDoneButton();
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native EKCalendarChooser initWithCoder(NSCoder aDecoder);
 }

@@ -56,6 +56,10 @@ public class NSLayoutConstraint extends NSObject {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Selector("activateConstraints:")
     public static native void activateConstraints(NSArray<? extends NSLayoutConstraint> constraints);
 
@@ -63,26 +67,6 @@ public class NSLayoutConstraint extends NSObject {
     @Owned
     @Selector("alloc")
     public static native NSLayoutConstraint alloc();
-
-    @Generated
-    @Selector("constraintWithItem:attribute:relatedBy:toItem:attribute:multiplier:constant:")
-    public static native NSLayoutConstraint constraintWithItemAttributeRelatedByToItemAttributeMultiplierConstant(
-            @Mapped(ObjCObjectMapper.class) Object view1, @NInt long attr1, @NInt long relation,
-            @Mapped(ObjCObjectMapper.class) Object view2, @NInt long attr2, @NFloat double multiplier,
-            @NFloat double c);
-
-    @Generated
-    @Selector("constraintsWithVisualFormat:options:metrics:views:")
-    public static native NSArray<? extends NSLayoutConstraint> constraintsWithVisualFormatOptionsMetricsViews(
-            String format, @NUInt long opts, NSDictionary<String, ?> metrics, NSDictionary<String, ?> views);
-
-    @Generated
-    @Selector("deactivateConstraints:")
-    public static native void deactivateConstraints(NSArray<? extends NSLayoutConstraint> constraints);
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -110,6 +94,22 @@ public class NSLayoutConstraint extends NSObject {
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
+
+    @Generated
+    @Selector("constraintWithItem:attribute:relatedBy:toItem:attribute:multiplier:constant:")
+    public static native NSLayoutConstraint constraintWithItemAttributeRelatedByToItemAttributeMultiplierConstant(
+            @Mapped(ObjCObjectMapper.class) Object view1, @NInt long attr1, @NInt long relation,
+            @Mapped(ObjCObjectMapper.class) Object view2, @NInt long attr2, @NFloat double multiplier,
+            @NFloat double c);
+
+    @Generated
+    @Selector("constraintsWithVisualFormat:options:metrics:views:")
+    public static native NSArray<? extends NSLayoutConstraint> constraintsWithVisualFormatOptionsMetricsViews(
+            String format, @NUInt long opts, NSDictionary<String, ?> metrics, NSDictionary<String, ?> views);
+
+    @Generated
+    @Selector("deactivateConstraints:")
+    public static native void deactivateConstraints(NSArray<? extends NSLayoutConstraint> constraints);
 
     @Generated
     @Selector("debugDescription")
@@ -186,6 +186,10 @@ public class NSLayoutConstraint extends NSObject {
     public native double constant();
 
     @Generated
+    @Selector("firstAnchor")
+    public native NSLayoutAnchor<?> firstAnchor();
+
+    @Generated
     @Selector("firstAttribute")
     @NInt
     public native long firstAttribute();
@@ -224,6 +228,10 @@ public class NSLayoutConstraint extends NSObject {
     @Selector("relation")
     @NInt
     public native long relation();
+
+    @Generated
+    @Selector("secondAnchor")
+    public native NSLayoutAnchor<?> secondAnchor();
 
     @Generated
     @Selector("secondAttribute")

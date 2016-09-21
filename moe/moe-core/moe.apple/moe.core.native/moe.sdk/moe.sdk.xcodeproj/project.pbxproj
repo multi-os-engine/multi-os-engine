@@ -11,7 +11,6 @@
 		23040F5A19EBF5BD00CB250F /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 23040F5919EBF5BD00CB250F /* libz.dylib */; };
 		23040F6119EBFC2600CB250F /* ErrorDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 23040F5D19EBFC2600CB250F /* ErrorDelegate.m */; };
 		23040F6319EBFC2600CB250F /* MOE.mm in Sources */ = {isa = PBXBuildFile; fileRef = 23040F5F19EBFC2600CB250F /* MOE.mm */; };
-		6D92C4781B90A66B00D21D3A /* AudioUnit.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D92C4771B90A66B00D21D3A /* AudioUnit.m */; };
 		6D92C47A1B90A67600D21D3A /* CoreAudio.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D92C4791B90A67600D21D3A /* CoreAudio.m */; };
 		6D92C47C1B90A67F00D21D3A /* CoreMIDI.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D92C47B1B90A67F00D21D3A /* CoreMIDI.m */; };
 		D99B125919F0479D00F6B669 /* AudioToolbox.m in Sources */ = {isa = PBXBuildFile; fileRef = D99B124D19F0479D00F6B669 /* AudioToolbox.m */; };
@@ -37,7 +36,6 @@
 		23040F5D19EBFC2600CB250F /* ErrorDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ErrorDelegate.m; sourceTree = "<group>"; };
 		23040F5F19EBFC2600CB250F /* MOE.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = MOE.mm; sourceTree = "<group>"; };
 		23040F6719EC033700CB250F /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		6D92C4771B90A66B00D21D3A /* AudioUnit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AudioUnit.m; sourceTree = "<group>"; };
 		6D92C4791B90A67600D21D3A /* CoreAudio.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreAudio.m; sourceTree = "<group>"; };
 		6D92C47B1B90A67F00D21D3A /* CoreMIDI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreMIDI.m; sourceTree = "<group>"; };
 		D99B124D19F0479D00F6B669 /* AudioToolbox.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AudioToolbox.m; sourceTree = "<group>"; };
@@ -110,7 +108,6 @@
 			isa = PBXGroup;
 			children = (
 				D99B124D19F0479D00F6B669 /* AudioToolbox.m */,
-				6D92C4771B90A66B00D21D3A /* AudioUnit.m */,
 				D99B124E19F0479D00F6B669 /* AVFoundation.m */,
 				D99B124F19F0479D00F6B669 /* CFNetwork.m */,
 				6D92C4791B90A67600D21D3A /* CoreAudio.m */,
@@ -211,7 +208,6 @@
 				D99B126119F0479D00F6B669 /* MapKit.m in Sources */,
 				D99B125F19F0479D00F6B669 /* GLKit.m in Sources */,
 				6D92C47C1B90A67F00D21D3A /* CoreMIDI.m in Sources */,
-				6D92C4781B90A66B00D21D3A /* AudioUnit.m in Sources */,
 				23040F6119EBFC2600CB250F /* ErrorDelegate.m in Sources */,
 				D99B125B19F0479D00F6B669 /* CFNetwork.m in Sources */,
 				23040F6319EBFC2600CB250F /* MOE.mm in Sources */,

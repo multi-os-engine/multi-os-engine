@@ -56,17 +56,13 @@ public class UIPrinter extends NSObject {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native UIPrinter alloc();
-
-    @Generated
-    @Selector("printerWithURL:")
-    public static native UIPrinter printerWithURL(NSURL url);
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -142,6 +138,10 @@ public class UIPrinter extends NSObject {
     @Selector("new")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object new_objc();
+
+    @Generated
+    @Selector("printerWithURL:")
+    public static native UIPrinter printerWithURL(NSURL url);
 
     @Generated
     @Selector("resolveClassMethod:")

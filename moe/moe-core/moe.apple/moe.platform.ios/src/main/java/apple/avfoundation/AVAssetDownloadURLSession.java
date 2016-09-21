@@ -19,6 +19,7 @@ package apple.avfoundation;
 import apple.NSObject;
 import apple.avfoundation.protocol.AVAssetDownloadDelegate;
 import apple.foundation.NSArray;
+import apple.foundation.NSData;
 import apple.foundation.NSDictionary;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSOperationQueue;
@@ -61,29 +62,13 @@ public class AVAssetDownloadURLSession extends NSURLSession {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native AVAssetDownloadURLSession alloc();
-
-    @Generated
-    @Selector("sessionWithConfiguration:")
-    public static native NSURLSession sessionWithConfiguration(NSURLSessionConfiguration configuration);
-
-    @Generated
-    @Selector("sessionWithConfiguration:assetDownloadDelegate:delegateQueue:")
-    public static native AVAssetDownloadURLSession sessionWithConfigurationAssetDownloadDelegateDelegateQueue(
-            NSURLSessionConfiguration configuration, @Mapped(ObjCObjectMapper.class) AVAssetDownloadDelegate delegate,
-            NSOperationQueue delegateQueue);
-
-    @Generated
-    @Selector("sessionWithConfiguration:delegate:delegateQueue:")
-    public static native NSURLSession sessionWithConfigurationDelegateDelegateQueue(
-            NSURLSessionConfiguration configuration, @Mapped(ObjCObjectMapper.class) NSURLSessionDelegate delegate,
-            NSOperationQueue queue);
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -169,8 +154,24 @@ public class AVAssetDownloadURLSession extends NSURLSession {
     public static native boolean resolveInstanceMethod(SEL sel);
 
     @Generated
+    @Selector("sessionWithConfiguration:")
+    public static native NSURLSession sessionWithConfiguration(NSURLSessionConfiguration configuration);
+
+    @Generated
+    @Selector("sessionWithConfiguration:assetDownloadDelegate:delegateQueue:")
+    public static native AVAssetDownloadURLSession sessionWithConfigurationAssetDownloadDelegateDelegateQueue(
+            NSURLSessionConfiguration configuration, @Mapped(ObjCObjectMapper.class) AVAssetDownloadDelegate delegate,
+            NSOperationQueue delegateQueue);
+
+    @Generated
+    @Selector("sessionWithConfiguration:delegate:delegateQueue:")
+    public static native NSURLSession sessionWithConfigurationDelegateDelegateQueue(
+            NSURLSessionConfiguration configuration, @Mapped(ObjCObjectMapper.class) NSURLSessionDelegate delegate,
+            NSOperationQueue queue);
+
+    @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("sharedSession")
@@ -184,6 +185,11 @@ public class AVAssetDownloadURLSession extends NSURLSession {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("assetDownloadTaskWithURLAsset:assetTitle:assetArtworkData:options:")
+    public native AVAssetDownloadTask assetDownloadTaskWithURLAssetAssetTitleAssetArtworkDataOptions(
+            AVURLAsset URLAsset, String title, NSData artworkData, NSDictionary<String, ?> options);
 
     @Generated
     @Selector("assetDownloadTaskWithURLAsset:destinationURL:options:")

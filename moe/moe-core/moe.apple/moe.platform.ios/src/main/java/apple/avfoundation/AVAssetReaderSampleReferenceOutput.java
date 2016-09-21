@@ -54,23 +54,23 @@ public class AVAssetReaderSampleReferenceOutput extends AVAssetReaderOutput {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native AVAssetReaderSampleReferenceOutput alloc();
 
     @Generated
-    @Selector("assetReaderSampleReferenceOutputWithTrack:")
-    public static native AVAssetReaderSampleReferenceOutput assetReaderSampleReferenceOutputWithTrack(
-            AVAssetTrack track);
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
-
-    @Generated
     @Selector("allocWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object allocWithZone(VoidPtr zone);
+
+    @Generated
+    @Selector("assetReaderSampleReferenceOutputWithTrack:")
+    public static native AVAssetReaderSampleReferenceOutput assetReaderSampleReferenceOutputWithTrack(
+            AVAssetTrack track);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -152,7 +152,7 @@ public class AVAssetReaderSampleReferenceOutput extends AVAssetReaderOutput {
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")

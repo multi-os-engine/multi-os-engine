@@ -54,18 +54,13 @@ public class GKTurnBasedEventHandler extends NSObject {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native GKTurnBasedEventHandler alloc();
-
-    @Generated
-    @Deprecated
-    @Selector("sharedTurnBasedEventHandler")
-    public static native GKTurnBasedEventHandler sharedTurnBasedEventHandler();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -153,6 +148,11 @@ public class GKTurnBasedEventHandler extends NSObject {
     @Generated
     @Selector("setVersion:")
     public static native void setVersion_static(@NInt long aVersion);
+
+    @Generated
+    @Deprecated
+    @Selector("sharedTurnBasedEventHandler")
+    public static native GKTurnBasedEventHandler sharedTurnBasedEventHandler();
 
     @Generated
     @Selector("superclass")

@@ -56,18 +56,13 @@ public class MPPlayableContentManager extends NSObject {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native MPPlayableContentManager alloc();
-
-    @Generated
-    @Selector("sharedContentManager")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object sharedContentManager();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -154,7 +149,12 @@ public class MPPlayableContentManager extends NSObject {
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
+
+    @Generated
+    @Selector("sharedContentManager")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object sharedContentManager();
 
     @Generated
     @Selector("superclass")
@@ -163,11 +163,15 @@ public class MPPlayableContentManager extends NSObject {
     @Generated
     @Selector("version")
     @NInt
-    public static native long version();
+    public static native long version_static();
 
     @Generated
     @Selector("beginUpdates")
     public native void beginUpdates();
+
+    @Generated
+    @Selector("context")
+    public native MPPlayableContentManagerContext context();
 
     @Generated
     @Selector("dataSource")
@@ -186,6 +190,10 @@ public class MPPlayableContentManager extends NSObject {
     @Generated
     @Selector("init")
     public native MPPlayableContentManager init();
+
+    @Generated
+    @Selector("nowPlayingIdentifiers")
+    public native NSArray<String> nowPlayingIdentifiers();
 
     @Generated
     @Selector("reloadData")
@@ -224,6 +232,6 @@ public class MPPlayableContentManager extends NSObject {
     }
 
     @Generated
-    @Selector("context")
-    public native MPPlayableContentManagerContext context();
+    @Selector("setNowPlayingIdentifiers:")
+    public native void setNowPlayingIdentifiers(NSArray<String> value);
 }

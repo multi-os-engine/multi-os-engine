@@ -56,21 +56,13 @@ public class NSHashTable<_ObjectType> extends NSObject implements NSCopying, NSC
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native NSHashTable<?> alloc();
-
-    @Generated
-    @Selector("hashTableWithOptions:")
-    public static native <_ObjectType> NSHashTable<_ObjectType> hashTableWithOptions(@NUInt long options);
-
-    @Generated
-    @Selector("weakObjectsHashTable")
-    public static native <_ObjectType> NSHashTable<_ObjectType> weakObjectsHashTable();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -111,6 +103,10 @@ public class NSHashTable<_ObjectType> extends NSObject implements NSCopying, NSC
     @Selector("hash")
     @NUInt
     public static native long hash_static();
+
+    @Generated
+    @Selector("hashTableWithOptions:")
+    public static native <_ObjectType> NSHashTable<_ObjectType> hashTableWithOptions(@NUInt long options);
 
     @Generated
     @Selector("initialize")
@@ -169,6 +165,10 @@ public class NSHashTable<_ObjectType> extends NSObject implements NSCopying, NSC
     public static native long version_static();
 
     @Generated
+    @Selector("weakObjectsHashTable")
+    public static native <_ObjectType> NSHashTable<_ObjectType> weakObjectsHashTable();
+
+    @Generated
     @Selector("addObject:")
     public native void addObject(@Mapped(ObjCObjectMapper.class) _ObjectType object);
 
@@ -176,9 +176,9 @@ public class NSHashTable<_ObjectType> extends NSObject implements NSCopying, NSC
     @Selector("allObjects")
     public native NSArray<_ObjectType> allObjects();
 
-    @MappedReturn(ObjCObjectMapper.class)
     @Generated
     @Selector("anyObject")
+    @MappedReturn(ObjCObjectMapper.class)
     public native _ObjectType anyObject();
 
     @Generated
@@ -238,9 +238,9 @@ public class NSHashTable<_ObjectType> extends NSObject implements NSCopying, NSC
     @Selector("isSubsetOfHashTable:")
     public native boolean isSubsetOfHashTable(NSHashTable<_ObjectType> other);
 
-    @MappedReturn(ObjCObjectMapper.class)
     @Generated
     @Selector("member:")
+    @MappedReturn(ObjCObjectMapper.class)
     public native _ObjectType member(@Mapped(ObjCObjectMapper.class) _ObjectType object);
 
     @Generated

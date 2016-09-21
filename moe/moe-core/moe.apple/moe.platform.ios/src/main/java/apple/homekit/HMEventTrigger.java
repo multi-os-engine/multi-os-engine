@@ -58,43 +58,13 @@ public class HMEventTrigger extends HMTrigger {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native HMEventTrigger alloc();
-
-    @Generated
-    @Selector("predicateForEvaluatingTriggerOccurringAfterDateWithComponents:")
-    public static native NSPredicate predicateForEvaluatingTriggerOccurringAfterDateWithComponents(
-            NSDateComponents dateComponents);
-
-    @Generated
-    @Selector("predicateForEvaluatingTriggerOccurringAfterSignificantEvent:applyingOffset:")
-    public static native NSPredicate predicateForEvaluatingTriggerOccurringAfterSignificantEventApplyingOffset(
-            String significantEvent, NSDateComponents offset);
-
-    @Generated
-    @Selector("predicateForEvaluatingTriggerOccurringBeforeDateWithComponents:")
-    public static native NSPredicate predicateForEvaluatingTriggerOccurringBeforeDateWithComponents(
-            NSDateComponents dateComponents);
-
-    @Generated
-    @Selector("predicateForEvaluatingTriggerOccurringBeforeSignificantEvent:applyingOffset:")
-    public static native NSPredicate predicateForEvaluatingTriggerOccurringBeforeSignificantEventApplyingOffset(
-            String significantEvent, NSDateComponents offset);
-
-    @Generated
-    @Selector("predicateForEvaluatingTriggerOccurringOnDateWithComponents:")
-    public static native NSPredicate predicateForEvaluatingTriggerOccurringOnDateWithComponents(
-            NSDateComponents dateComponents);
-
-    @Generated
-    @Selector("predicateForEvaluatingTriggerWithCharacteristic:relatedBy:toValue:")
-    public static native NSPredicate predicateForEvaluatingTriggerWithCharacteristicRelatedByToValue(
-            HMCharacteristic characteristic, @NUInt long operatorType, @Mapped(ObjCObjectMapper.class) Object value);
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -170,6 +140,36 @@ public class HMEventTrigger extends HMTrigger {
     @Selector("new")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object new_objc();
+
+    @Generated
+    @Selector("predicateForEvaluatingTriggerOccurringAfterDateWithComponents:")
+    public static native NSPredicate predicateForEvaluatingTriggerOccurringAfterDateWithComponents(
+            NSDateComponents dateComponents);
+
+    @Generated
+    @Selector("predicateForEvaluatingTriggerOccurringAfterSignificantEvent:applyingOffset:")
+    public static native NSPredicate predicateForEvaluatingTriggerOccurringAfterSignificantEventApplyingOffset(
+            String significantEvent, NSDateComponents offset);
+
+    @Generated
+    @Selector("predicateForEvaluatingTriggerOccurringBeforeDateWithComponents:")
+    public static native NSPredicate predicateForEvaluatingTriggerOccurringBeforeDateWithComponents(
+            NSDateComponents dateComponents);
+
+    @Generated
+    @Selector("predicateForEvaluatingTriggerOccurringBeforeSignificantEvent:applyingOffset:")
+    public static native NSPredicate predicateForEvaluatingTriggerOccurringBeforeSignificantEventApplyingOffset(
+            String significantEvent, NSDateComponents offset);
+
+    @Generated
+    @Selector("predicateForEvaluatingTriggerOccurringOnDateWithComponents:")
+    public static native NSPredicate predicateForEvaluatingTriggerOccurringOnDateWithComponents(
+            NSDateComponents dateComponents);
+
+    @Generated
+    @Selector("predicateForEvaluatingTriggerWithCharacteristic:relatedBy:toValue:")
+    public static native NSPredicate predicateForEvaluatingTriggerWithCharacteristicRelatedByToValue(
+            HMCharacteristic characteristic, @NUInt long operatorType, @Mapped(ObjCObjectMapper.class) Object value);
 
     @Generated
     @Selector("resolveClassMethod:")

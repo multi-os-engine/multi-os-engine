@@ -64,49 +64,13 @@ public class SKUniform extends NSObject implements NSCopying, NSCoding {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native SKUniform alloc();
-
-    @Generated
-    @Selector("uniformWithName:")
-    public static native SKUniform uniformWithName(String name);
-
-    @Generated
-    @Selector("uniformWithName:float:")
-    public static native SKUniform uniformWithNameFloat(String name, float value);
-
-    @Generated
-    @Selector("uniformWithName:floatMatrix2:")
-    public static native SKUniform uniformWithNameFloatMatrix2(String name, @ByValue GLKMatrix2 value);
-
-    @Generated
-    @Selector("uniformWithName:floatMatrix3:")
-    public static native SKUniform uniformWithNameFloatMatrix3(String name, @ByValue GLKMatrix3 value);
-
-    @Generated
-    @Selector("uniformWithName:floatMatrix4:")
-    public static native SKUniform uniformWithNameFloatMatrix4(String name, @ByValue GLKMatrix4 value);
-
-    @Generated
-    @Selector("uniformWithName:floatVector2:")
-    public static native SKUniform uniformWithNameFloatVector2(String name, @ByValue GLKVector2 value);
-
-    @Generated
-    @Selector("uniformWithName:floatVector3:")
-    public static native SKUniform uniformWithNameFloatVector3(String name, @ByValue GLKVector3 value);
-
-    @Generated
-    @Selector("uniformWithName:floatVector4:")
-    public static native SKUniform uniformWithNameFloatVector4(String name, @ByValue GLKVector4 value);
-
-    @Generated
-    @Selector("uniformWithName:texture:")
-    public static native SKUniform uniformWithNameTexture(String name, SKTexture texture);
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -198,6 +162,42 @@ public class SKUniform extends NSObject implements NSCopying, NSCoding {
     @Generated
     @Selector("superclass")
     public static native Class superclass_static();
+
+    @Generated
+    @Selector("uniformWithName:")
+    public static native SKUniform uniformWithName(String name);
+
+    @Generated
+    @Selector("uniformWithName:float:")
+    public static native SKUniform uniformWithNameFloat(String name, float value);
+
+    @Generated
+    @Selector("uniformWithName:floatMatrix2:")
+    public static native SKUniform uniformWithNameFloatMatrix2(String name, @ByValue GLKMatrix2 value);
+
+    @Generated
+    @Selector("uniformWithName:floatMatrix3:")
+    public static native SKUniform uniformWithNameFloatMatrix3(String name, @ByValue GLKMatrix3 value);
+
+    @Generated
+    @Selector("uniformWithName:floatMatrix4:")
+    public static native SKUniform uniformWithNameFloatMatrix4(String name, @ByValue GLKMatrix4 value);
+
+    @Generated
+    @Selector("uniformWithName:floatVector2:")
+    public static native SKUniform uniformWithNameFloatVector2(String name, @ByValue GLKVector2 value);
+
+    @Generated
+    @Selector("uniformWithName:floatVector3:")
+    public static native SKUniform uniformWithNameFloatVector3(String name, @ByValue GLKVector3 value);
+
+    @Generated
+    @Selector("uniformWithName:floatVector4:")
+    public static native SKUniform uniformWithNameFloatVector4(String name, @ByValue GLKVector4 value);
+
+    @Generated
+    @Selector("uniformWithName:texture:")
+    public static native SKUniform uniformWithNameTexture(String name, SKTexture texture);
 
     @Generated
     @Selector("version")

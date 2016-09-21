@@ -55,32 +55,13 @@ public class GKRandomDistribution extends NSObject implements GKRandom {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native GKRandomDistribution alloc();
-
-    @Generated
-    @Selector("d20")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object d20();
-
-    @Generated
-    @Selector("d6")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object d6();
-
-    @Generated
-    @Selector("distributionForDieWithSideCount:")
-    public static native GKRandomDistribution distributionForDieWithSideCount(@NInt long sideCount);
-
-    @Generated
-    @Selector("distributionWithLowestValue:highestValue:")
-    public static native GKRandomDistribution distributionWithLowestValueHighestValue(@NInt long lowestInclusive,
-            @NInt long highestInclusive);
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -110,12 +91,31 @@ public class GKRandomDistribution extends NSObject implements GKRandom {
     public static native Class classForKeyedUnarchiver();
 
     @Generated
+    @Selector("d20")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object d20();
+
+    @Generated
+    @Selector("d6")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object d6();
+
+    @Generated
     @Selector("debugDescription")
     public static native String debugDescription_static();
 
     @Generated
     @Selector("description")
     public static native String description_static();
+
+    @Generated
+    @Selector("distributionForDieWithSideCount:")
+    public static native GKRandomDistribution distributionForDieWithSideCount(@NInt long sideCount);
+
+    @Generated
+    @Selector("distributionWithLowestValue:highestValue:")
+    public static native GKRandomDistribution distributionWithLowestValueHighestValue(@NInt long lowestInclusive,
+            @NInt long highestInclusive);
 
     @Generated
     @Selector("hash")
@@ -167,7 +167,7 @@ public class GKRandomDistribution extends NSObject implements GKRandom {
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")

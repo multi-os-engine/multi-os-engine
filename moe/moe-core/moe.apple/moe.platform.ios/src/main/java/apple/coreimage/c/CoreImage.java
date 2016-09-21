@@ -51,11 +51,63 @@ public final class CoreImage {
 
     @Generated
     @CVariable()
+    public static native int kCIFormatABGR8();
+
+    @Generated
+    @CVariable()
     public static native int kCIFormatRGBAf();
 
     @Generated
     @CVariable()
     public static native int kCIFormatRGBAh();
+
+    @Generated
+    @CVariable()
+    public static native int kCIFormatA8();
+
+    @Generated
+    @CVariable()
+    public static native int kCIFormatA16();
+
+    @Generated
+    @CVariable()
+    public static native int kCIFormatAh();
+
+    @Generated
+    @CVariable()
+    public static native int kCIFormatAf();
+
+    @Generated
+    @CVariable()
+    public static native int kCIFormatR8();
+
+    @Generated
+    @CVariable()
+    public static native int kCIFormatR16();
+
+    @Generated
+    @CVariable()
+    public static native int kCIFormatRh();
+
+    @Generated
+    @CVariable()
+    public static native int kCIFormatRf();
+
+    @Generated
+    @CVariable()
+    public static native int kCIFormatRG8();
+
+    @Generated
+    @CVariable()
+    public static native int kCIFormatRG16();
+
+    @Generated
+    @CVariable()
+    public static native int kCIFormatRGh();
+
+    @Generated
+    @CVariable()
+    public static native int kCIFormatRGf();
 
     @Generated
     @CVariable()
@@ -110,6 +162,21 @@ public final class CoreImage {
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
+    public static native String kCIContextHighQualityDownsample();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String kCIContextOutputPremultiplied();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String kCIContextCacheIntermediates();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
     public static native String kCIContextUseSoftwareRenderer();
 
     @Generated
@@ -126,6 +193,26 @@ public final class CoreImage {
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String kCIAttributeFilterDisplayName();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String kCIAttributeDescription();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String kCIAttributeFilterAvailable_Mac();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String kCIAttributeFilterAvailable_iOS();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String kCIAttributeReferenceDocumentation();
 
     @Generated
     @CVariable()
@@ -185,6 +272,31 @@ public final class CoreImage {
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
+    public static native String kCIUIParameterSet();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String kCIUISetBasic();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String kCIUISetIntermediate();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String kCIUISetAdvanced();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String kCIUISetDevelopment();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
     public static native String kCIAttributeTypeTime();
 
     @Generated
@@ -240,7 +352,17 @@ public final class CoreImage {
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
+    public static native String kCIAttributeTypeOpaqueColor();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
     public static native String kCIAttributeTypeColor();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String kCIAttributeTypeGradient();
 
     @Generated
     @CVariable()
@@ -355,6 +477,11 @@ public final class CoreImage {
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
+    public static native String kCICategoryFilterGenerator();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
     public static native String kCIOutputImageKey();
 
     @Generated
@@ -405,6 +532,11 @@ public final class CoreImage {
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
+    public static native String kCIInputRefractionKey();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
     public static native String kCIInputWidthKey();
 
     @Generated
@@ -445,7 +577,27 @@ public final class CoreImage {
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
+    public static native String kCIInputBiasKey();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String kCIInputWeightsKey();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String kCIInputGradientImageKey();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
     public static native String kCIInputMaskImageKey();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String kCIInputShadingImageKey();
 
     @Generated
     @CVariable()
@@ -480,6 +632,11 @@ public final class CoreImage {
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
+    public static native String CIDetectorTypeText();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
     public static native String CIDetectorAccuracy();
 
     @Generated
@@ -501,6 +658,16 @@ public final class CoreImage {
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String CIDetectorMinFeatureSize();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String CIDetectorMaxFeatureCount();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String CIDetectorNumberOfAngles();
 
     @Generated
     @CVariable()
@@ -530,164 +697,12 @@ public final class CoreImage {
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
-    public static native String CIFeatureTypeFace();
-
-    @Generated
-    @CVariable()
-    public static native int kCIFormatABGR8();
-
-    @Generated
-    @CVariable()
-    public static native int kCIFormatA8();
-
-    @Generated
-    @CVariable()
-    public static native int kCIFormatA16();
-
-    @Generated
-    @CVariable()
-    public static native int kCIFormatAh();
-
-    @Generated
-    @CVariable()
-    public static native int kCIFormatAf();
-
-    @Generated
-    @CVariable()
-    public static native int kCIFormatR8();
-
-    @Generated
-    @CVariable()
-    public static native int kCIFormatR16();
-
-    @Generated
-    @CVariable()
-    public static native int kCIFormatRh();
-
-    @Generated
-    @CVariable()
-    public static native int kCIFormatRf();
-
-    @Generated
-    @CVariable()
-    public static native int kCIFormatRG8();
-
-    @Generated
-    @CVariable()
-    public static native int kCIFormatRG16();
-
-    @Generated
-    @CVariable()
-    public static native int kCIFormatRGh();
-
-    @Generated
-    @CVariable()
-    public static native int kCIFormatRGf();
-
-    @Generated
-    @CVariable()
-    @MappedReturn(ObjCStringMapper.class)
-    public static native String kCIContextHighQualityDownsample();
-
-    @Generated
-    @CVariable()
-    @MappedReturn(ObjCStringMapper.class)
-    public static native String kCIAttributeDescription();
-
-    @Generated
-    @CVariable()
-    @MappedReturn(ObjCStringMapper.class)
-    public static native String kCIAttributeFilterAvailable_Mac();
-
-    @Generated
-    @CVariable()
-    @MappedReturn(ObjCStringMapper.class)
-    public static native String kCIAttributeFilterAvailable_iOS();
-
-    @Generated
-    @CVariable()
-    @MappedReturn(ObjCStringMapper.class)
-    public static native String kCIAttributeReferenceDocumentation();
-
-    @Generated
-    @CVariable()
-    @MappedReturn(ObjCStringMapper.class)
-    public static native String kCIUIParameterSet();
-
-    @Generated
-    @CVariable()
-    @MappedReturn(ObjCStringMapper.class)
-    public static native String kCIUISetBasic();
-
-    @Generated
-    @CVariable()
-    @MappedReturn(ObjCStringMapper.class)
-    public static native String kCIUISetIntermediate();
-
-    @Generated
-    @CVariable()
-    @MappedReturn(ObjCStringMapper.class)
-    public static native String kCIUISetAdvanced();
-
-    @Generated
-    @CVariable()
-    @MappedReturn(ObjCStringMapper.class)
-    public static native String kCIUISetDevelopment();
-
-    @Generated
-    @CVariable()
-    @MappedReturn(ObjCStringMapper.class)
-    public static native String kCIAttributeTypeOpaqueColor();
-
-    @Generated
-    @CVariable()
-    @MappedReturn(ObjCStringMapper.class)
-    public static native String kCIAttributeTypeGradient();
-
-    @Generated
-    @CVariable()
-    @MappedReturn(ObjCStringMapper.class)
-    public static native String kCICategoryFilterGenerator();
-
-    @Generated
-    @CVariable()
-    @MappedReturn(ObjCStringMapper.class)
-    public static native String kCIInputRefractionKey();
-
-    @Generated
-    @CVariable()
-    @MappedReturn(ObjCStringMapper.class)
-    public static native String kCIInputBiasKey();
-
-    @Generated
-    @CVariable()
-    @MappedReturn(ObjCStringMapper.class)
-    public static native String kCIInputWeightsKey();
-
-    @Generated
-    @CVariable()
-    @MappedReturn(ObjCStringMapper.class)
-    public static native String kCIInputGradientImageKey();
-
-    @Generated
-    @CVariable()
-    @MappedReturn(ObjCStringMapper.class)
-    public static native String kCIInputShadingImageKey();
-
-    @Generated
-    @CVariable()
-    @MappedReturn(ObjCStringMapper.class)
-    public static native String CIDetectorTypeText();
-
-    @Generated
-    @CVariable()
-    @MappedReturn(ObjCStringMapper.class)
-    public static native String CIDetectorNumberOfAngles();
-
-    @Generated
-    @CVariable()
-    @MappedReturn(ObjCStringMapper.class)
     public static native String CIDetectorReturnSubFeatures();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String CIFeatureTypeFace();
 
     @Generated
     @CVariable()
@@ -753,4 +768,139 @@ public final class CoreImage {
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String kCISamplerColorSpace();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String kCIInputAllowDraftModeKey();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String kCIInputDecoderVersionKey();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String kCISupportedDecoderVersionsKey();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String kCIInputBaselineExposureKey();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String kCIInputBoostKey();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String kCIInputBoostShadowAmountKey();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String kCIInputDisableGamutMapKey();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String kCIInputNeutralChromaticityXKey();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String kCIInputNeutralChromaticityYKey();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String kCIInputNeutralTemperatureKey();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String kCIInputNeutralTintKey();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String kCIInputNeutralLocationKey();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String kCIInputScaleFactorKey();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String kCIInputIgnoreImageOrientationKey();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String kCIInputImageOrientationKey();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String kCIInputEnableSharpeningKey();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String kCIInputEnableChromaticNoiseTrackingKey();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String kCIInputNoiseReductionAmountKey();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String kCIInputEnableVendorLensCorrectionKey();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String kCIInputLuminanceNoiseReductionAmountKey();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String kCIInputColorNoiseReductionAmountKey();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String kCIInputNoiseReductionSharpnessAmountKey();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String kCIInputNoiseReductionContrastAmountKey();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String kCIInputNoiseReductionDetailAmountKey();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String kCIInputLinearSpaceFilter();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String kCIOutputNativeSizeKey();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String kCIActiveKeys();
 }

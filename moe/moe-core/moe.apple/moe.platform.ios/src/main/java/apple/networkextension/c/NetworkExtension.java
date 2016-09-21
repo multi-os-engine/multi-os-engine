@@ -40,27 +40,22 @@ public final class NetworkExtension {
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
-    public static native String NEVPNErrorDomain();
-
-    @Generated
-    @CVariable()
-    @MappedReturn(ObjCStringMapper.class)
-    public static native String NEVPNConfigurationChangeNotification();
-
-    @Generated
-    @CVariable()
-    @MappedReturn(ObjCStringMapper.class)
-    public static native String NEVPNStatusDidChangeNotification();
-
-    @Generated
-    @CVariable()
-    @MappedReturn(ObjCStringMapper.class)
     public static native String NEAppProxyErrorDomain();
 
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String NETunnelProviderErrorDomain();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String NEVPNErrorDomain();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String NEVPNConfigurationChangeNotification();
 
     @Generated
     @CVariable()
@@ -86,6 +81,11 @@ public final class NetworkExtension {
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String kNEHotspotHelperOptionDisplayName();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String NEVPNStatusDidChangeNotification();
 
     @Generated
     @CVariable()

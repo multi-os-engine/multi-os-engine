@@ -55,13 +55,13 @@ public class AVSpeechSynthesizer extends NSObject {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native AVSpeechSynthesizer alloc();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -148,7 +148,7 @@ public class AVSpeechSynthesizer extends NSObject {
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")
@@ -181,6 +181,10 @@ public class AVSpeechSynthesizer extends NSObject {
     public native boolean isSpeaking();
 
     @Generated
+    @Selector("outputChannels")
+    public native NSArray<? extends AVAudioSessionChannelDescription> outputChannels();
+
+    @Generated
     @Selector("pauseSpeakingAtBoundary:")
     public native boolean pauseSpeakingAtBoundary(@NInt long boundary);
 
@@ -199,6 +203,10 @@ public class AVSpeechSynthesizer extends NSObject {
             org.moe.natj.objc.ObjCRuntime.dissociateObjCObject(this, __old);
         }
     }
+
+    @Generated
+    @Selector("setOutputChannels:")
+    public native void setOutputChannels(NSArray<? extends AVAudioSessionChannelDescription> value);
 
     @Generated
     @Selector("speakUtterance:")

@@ -19,6 +19,7 @@ package apple.gamecontroller.c;
 import apple.foundation.NSData;
 import apple.gamecontroller.struct.GCExtendedGamepadSnapShotDataV100;
 import apple.gamecontroller.struct.GCGamepadSnapShotDataV100;
+import apple.gamecontroller.struct.GCMicroGamepadSnapShotDataV100;
 import org.moe.natj.c.CRuntime;
 import org.moe.natj.c.ann.CFunction;
 import org.moe.natj.c.ann.CVariable;
@@ -63,6 +64,17 @@ public final class GameController {
     @CFunction
     public static native NSData NSDataFromGCExtendedGamepadSnapShotDataV100(
             @UncertainArgument("Options: reference, array Fallback: reference") GCExtendedGamepadSnapShotDataV100 snapshotData);
+
+    @Generated
+    @CFunction
+    public static native boolean GCMicroGamepadSnapShotDataV100FromNSData(
+            @UncertainArgument("Options: reference, array Fallback: reference") GCMicroGamepadSnapShotDataV100 snapshotData,
+            NSData data);
+
+    @Generated
+    @CFunction
+    public static native NSData NSDataFromGCMicroGamepadSnapShotDataV100(
+            @UncertainArgument("Options: reference, array Fallback: reference") GCMicroGamepadSnapShotDataV100 snapshotData);
 
     @Generated
     @CVariable()

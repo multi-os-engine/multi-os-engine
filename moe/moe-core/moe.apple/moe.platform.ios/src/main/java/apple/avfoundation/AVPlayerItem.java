@@ -65,26 +65,13 @@ public class AVPlayerItem extends NSObject implements NSCopying {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native AVPlayerItem alloc();
-
-    @Generated
-    @Selector("playerItemWithAsset:")
-    public static native AVPlayerItem playerItemWithAsset(AVAsset asset);
-
-    @Generated
-    @Selector("playerItemWithAsset:automaticallyLoadedAssetKeys:")
-    public static native AVPlayerItem playerItemWithAssetAutomaticallyLoadedAssetKeys(AVAsset asset,
-            NSArray<String> automaticallyLoadedAssetKeys);
-
-    @Generated
-    @Selector("playerItemWithURL:")
-    public static native AVPlayerItem playerItemWithURL(NSURL URL);
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -162,6 +149,19 @@ public class AVPlayerItem extends NSObject implements NSCopying {
     public static native Object new_objc();
 
     @Generated
+    @Selector("playerItemWithAsset:")
+    public static native AVPlayerItem playerItemWithAsset(AVAsset asset);
+
+    @Generated
+    @Selector("playerItemWithAsset:automaticallyLoadedAssetKeys:")
+    public static native AVPlayerItem playerItemWithAssetAutomaticallyLoadedAssetKeys(AVAsset asset,
+            NSArray<String> automaticallyLoadedAssetKeys);
+
+    @Generated
+    @Selector("playerItemWithURL:")
+    public static native AVPlayerItem playerItemWithURL(NSURL URL);
+
+    @Generated
     @Selector("resolveClassMethod:")
     public static native boolean resolveClassMethod(SEL sel);
 
@@ -171,7 +171,7 @@ public class AVPlayerItem extends NSObject implements NSCopying {
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")
@@ -185,6 +185,10 @@ public class AVPlayerItem extends NSObject implements NSCopying {
     @Generated
     @Selector("accessLog")
     public native AVPlayerItemAccessLog accessLog();
+
+    @Generated
+    @Selector("addMediaDataCollector:")
+    public native void addMediaDataCollector(AVPlayerItemMediaDataCollector collector);
 
     @Generated
     @Selector("addOutput:")
@@ -235,6 +239,10 @@ public class AVPlayerItem extends NSObject implements NSCopying {
     public native boolean canStepForward();
 
     @Generated
+    @Selector("canUseNetworkResourcesForLiveStreamingWhilePaused")
+    public native boolean canUseNetworkResourcesForLiveStreamingWhilePaused();
+
+    @Generated
     @Selector("cancelPendingSeeks")
     public native void cancelPendingSeeks();
 
@@ -247,6 +255,10 @@ public class AVPlayerItem extends NSObject implements NSCopying {
     @Generated
     @Selector("currentDate")
     public native NSDate currentDate();
+
+    @Generated
+    @Selector("currentMediaSelection")
+    public native AVMediaSelection currentMediaSelection();
 
     @Generated
     @Selector("currentTime")
@@ -310,8 +322,16 @@ public class AVPlayerItem extends NSObject implements NSCopying {
     public native NSArray<? extends NSValue> loadedTimeRanges();
 
     @Generated
+    @Selector("mediaDataCollectors")
+    public native NSArray<? extends AVPlayerItemMediaDataCollector> mediaDataCollectors();
+
+    @Generated
     @Selector("outputs")
     public native NSArray<? extends AVPlayerItemOutput> outputs();
+
+    @Generated
+    @Selector("preferredForwardBufferDuration")
+    public native double preferredForwardBufferDuration();
 
     @Generated
     @Selector("preferredPeakBitRate")
@@ -321,6 +341,10 @@ public class AVPlayerItem extends NSObject implements NSCopying {
     @Selector("presentationSize")
     @ByValue
     public native CGSize presentationSize();
+
+    @Generated
+    @Selector("removeMediaDataCollector:")
+    public native void removeMediaDataCollector(AVPlayerItemMediaDataCollector collector);
 
     @Generated
     @Selector("removeOutput:")
@@ -391,8 +415,16 @@ public class AVPlayerItem extends NSObject implements NSCopying {
     public native void setAudioTimePitchAlgorithm(String value);
 
     @Generated
+    @Selector("setCanUseNetworkResourcesForLiveStreamingWhilePaused:")
+    public native void setCanUseNetworkResourcesForLiveStreamingWhilePaused(boolean value);
+
+    @Generated
     @Selector("setForwardPlaybackEndTime:")
     public native void setForwardPlaybackEndTime(@ByValue CMTime value);
+
+    @Generated
+    @Selector("setPreferredForwardBufferDuration:")
+    public native void setPreferredForwardBufferDuration(double value);
 
     @Generated
     @Selector("setPreferredPeakBitRate:")
@@ -442,30 +474,6 @@ public class AVPlayerItem extends NSObject implements NSCopying {
     @Generated
     @Selector("videoComposition")
     public native AVVideoComposition videoComposition();
-
-    @Generated
-    @Selector("canUseNetworkResourcesForLiveStreamingWhilePaused")
-    public native boolean canUseNetworkResourcesForLiveStreamingWhilePaused();
-
-    @Generated
-    @Selector("currentMediaSelection")
-    public native AVMediaSelection currentMediaSelection();
-
-    @Generated
-    @Selector("setCanUseNetworkResourcesForLiveStreamingWhilePaused:")
-    public native void setCanUseNetworkResourcesForLiveStreamingWhilePaused(boolean value);
-
-    @Generated
-    @Selector("addMediaDataCollector:")
-    public native void addMediaDataCollector(AVPlayerItemMediaDataCollector collector);
-
-    @Generated
-    @Selector("mediaDataCollectors")
-    public native NSArray<? extends AVPlayerItemMediaDataCollector> mediaDataCollectors();
-
-    @Generated
-    @Selector("removeMediaDataCollector:")
-    public native void removeMediaDataCollector(AVPlayerItemMediaDataCollector collector);
 
     @Runtime(ObjCRuntime.class)
     @Generated

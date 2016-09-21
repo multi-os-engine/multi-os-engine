@@ -186,4 +186,9 @@ public final class CoreBluetooth {
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String CBUUIDCharacteristicAggregateFormatString();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String CBUUIDCharacteristicValidRangeString();
 }

@@ -62,13 +62,13 @@ public class MCBrowserViewController extends UIViewController implements MCNearb
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native MCBrowserViewController alloc();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -210,6 +210,10 @@ public class MCBrowserViewController extends UIViewController implements MCNearb
     public native MCBrowserViewController initWithBrowserSession(MCNearbyServiceBrowser browser, MCSession session);
 
     @Generated
+    @Selector("initWithCoder:")
+    public native MCBrowserViewController initWithCoder(NSCoder aDecoder);
+
+    @Generated
     @Selector("initWithNibName:bundle:")
     public native MCBrowserViewController initWithNibNameBundle(String nibNameOrNil, NSBundle nibBundleOrNil);
 
@@ -254,8 +258,4 @@ public class MCBrowserViewController extends UIViewController implements MCNearb
     @Generated
     @Selector("setMinimumNumberOfPeers:")
     public native void setMinimumNumberOfPeers(@NUInt long value);
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native MCBrowserViewController initWithCoder(NSCoder aDecoder);
 }

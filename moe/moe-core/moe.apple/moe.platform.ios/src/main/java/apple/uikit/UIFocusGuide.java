@@ -55,13 +55,13 @@ public class UIFocusGuide extends UILayoutGuide {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native UIFocusGuide alloc();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -130,7 +130,7 @@ public class UIFocusGuide extends UILayoutGuide {
 
     @Generated
     @Selector("load")
-    public static native void load_objc();
+    public static native void load_objc_static();
 
     @Generated
     @Owned
@@ -148,7 +148,7 @@ public class UIFocusGuide extends UILayoutGuide {
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")
@@ -157,7 +157,7 @@ public class UIFocusGuide extends UILayoutGuide {
     @Generated
     @Selector("version")
     @NInt
-    public static native long version();
+    public static native long version_static();
 
     @Generated
     @Selector("init")
@@ -176,8 +176,16 @@ public class UIFocusGuide extends UILayoutGuide {
     public native void setEnabled(boolean value);
 
     @Generated
+    @Selector("preferredFocusEnvironments")
+    public native NSArray<?> preferredFocusEnvironments();
+
+    @Generated
     @Selector("preferredFocusedView")
     public native UIView preferredFocusedView();
+
+    @Generated
+    @Selector("setPreferredFocusEnvironments:")
+    public native void setPreferredFocusEnvironments(NSArray<?> value);
 
     @Generated
     @Selector("setPreferredFocusedView:")

@@ -51,21 +51,13 @@ public class NSUserDefaults extends NSObject {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native NSUserDefaults alloc();
-
-    @Generated
-    @Selector("resetStandardUserDefaults")
-    public static native void resetStandardUserDefaults();
-
-    @Generated
-    @Selector("standardUserDefaults")
-    public static native NSUserDefaults standardUserDefaults();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -143,6 +135,10 @@ public class NSUserDefaults extends NSObject {
     public static native Object new_objc();
 
     @Generated
+    @Selector("resetStandardUserDefaults")
+    public static native void resetStandardUserDefaults();
+
+    @Generated
     @Selector("resolveClassMethod:")
     public static native boolean resolveClassMethod(SEL sel);
 
@@ -153,6 +149,10 @@ public class NSUserDefaults extends NSObject {
     @Generated
     @Selector("setVersion:")
     public static native void setVersion_static(@NInt long aVersion);
+
+    @Generated
+    @Selector("standardUserDefaults")
+    public static native NSUserDefaults standardUserDefaults();
 
     @Generated
     @Selector("superclass")

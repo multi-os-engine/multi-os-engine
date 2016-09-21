@@ -57,18 +57,13 @@ public class CKFetchRecordsOperation extends CKDatabaseOperation {
     }
 
     @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
     @Owned
     @Selector("alloc")
     public static native CKFetchRecordsOperation alloc();
-
-    @Generated
-    @Selector("fetchCurrentUserRecordOperation")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object fetchCurrentUserRecordOperation();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
     @Selector("allocWithZone:")
@@ -104,6 +99,11 @@ public class CKFetchRecordsOperation extends CKDatabaseOperation {
     @Generated
     @Selector("description")
     public static native String description_static();
+
+    @Generated
+    @Selector("fetchCurrentUserRecordOperation")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object fetchCurrentUserRecordOperation();
 
     @Generated
     @Selector("hash")
@@ -155,7 +155,7 @@ public class CKFetchRecordsOperation extends CKDatabaseOperation {
 
     @Generated
     @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
+    public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")
@@ -171,12 +171,27 @@ public class CKFetchRecordsOperation extends CKDatabaseOperation {
     public native NSArray<String> desiredKeys();
 
     @Generated
+    @Selector("fetchRecordsCompletionBlock")
+    @ObjCBlock(name = "call_fetchRecordsCompletionBlock_ret")
+    public native Block_fetchRecordsCompletionBlock_ret fetchRecordsCompletionBlock();
+
+    @Generated
     @Selector("init")
     public native CKFetchRecordsOperation init();
 
     @Generated
     @Selector("initWithRecordIDs:")
     public native CKFetchRecordsOperation initWithRecordIDs(NSArray<? extends CKRecordID> recordIDs);
+
+    @Generated
+    @Selector("perRecordCompletionBlock")
+    @ObjCBlock(name = "call_perRecordCompletionBlock_ret")
+    public native Block_perRecordCompletionBlock_ret perRecordCompletionBlock();
+
+    @Generated
+    @Selector("perRecordProgressBlock")
+    @ObjCBlock(name = "call_perRecordProgressBlock_ret")
+    public native Block_perRecordProgressBlock_ret perRecordProgressBlock();
 
     @Generated
     @Selector("recordIDs")
@@ -205,20 +220,27 @@ public class CKFetchRecordsOperation extends CKDatabaseOperation {
     @Selector("setRecordIDs:")
     public native void setRecordIDs(NSArray<? extends CKRecordID> value);
 
+    @Runtime(ObjCRuntime.class)
     @Generated
-    @Selector("fetchRecordsCompletionBlock")
-    @ObjCBlock(name = "call_fetchRecordsCompletionBlock_ret")
-    public native Block_fetchRecordsCompletionBlock_ret fetchRecordsCompletionBlock();
+    public interface Block_fetchRecordsCompletionBlock_ret {
+        @Generated
+        void call_fetchRecordsCompletionBlock_ret(NSDictionary<? extends CKRecordID, ? extends CKRecord> arg0,
+                NSError arg1);
+    }
 
+    @Runtime(ObjCRuntime.class)
     @Generated
-    @Selector("perRecordCompletionBlock")
-    @ObjCBlock(name = "call_perRecordCompletionBlock_ret")
-    public native Block_perRecordCompletionBlock_ret perRecordCompletionBlock();
+    public interface Block_perRecordCompletionBlock_ret {
+        @Generated
+        void call_perRecordCompletionBlock_ret(CKRecord arg0, CKRecordID arg1, NSError arg2);
+    }
 
+    @Runtime(ObjCRuntime.class)
     @Generated
-    @Selector("perRecordProgressBlock")
-    @ObjCBlock(name = "call_perRecordProgressBlock_ret")
-    public native Block_perRecordProgressBlock_ret perRecordProgressBlock();
+    public interface Block_perRecordProgressBlock_ret {
+        @Generated
+        void call_perRecordProgressBlock_ret(CKRecordID arg0, double arg1);
+    }
 
     @Runtime(ObjCRuntime.class)
     @Generated
@@ -240,27 +262,5 @@ public class CKFetchRecordsOperation extends CKDatabaseOperation {
     public interface Block_setPerRecordProgressBlock {
         @Generated
         void call_setPerRecordProgressBlock(CKRecordID arg0, double arg1);
-    }
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_fetchRecordsCompletionBlock_ret {
-        @Generated
-        void call_fetchRecordsCompletionBlock_ret(NSDictionary<? extends CKRecordID, ? extends CKRecord> arg0,
-                NSError arg1);
-    }
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_perRecordCompletionBlock_ret {
-        @Generated
-        void call_perRecordCompletionBlock_ret(CKRecord arg0, CKRecordID arg1, NSError arg2);
-    }
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_perRecordProgressBlock_ret {
-        @Generated
-        void call_perRecordProgressBlock_ret(CKRecordID arg0, double arg1);
     }
 }
