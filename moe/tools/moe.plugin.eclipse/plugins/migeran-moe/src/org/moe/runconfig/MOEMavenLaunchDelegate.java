@@ -44,4 +44,13 @@ public class MOEMavenLaunchDelegate extends MavenLaunchDelegate {
 		this.remoteArguments = args;
 	}
 
+	@Override
+	public String getVMArguments(ILaunchConfiguration configuration) throws CoreException {
+		String args = super.getVMArguments(configuration);
+		StringBuilder sb = new StringBuilder();
+		sb.append(args);
+		sb.append(" -Dmaven.multiModuleProjectDirectory=$M2_HOME");
+		return sb.toString();
+	}
+
 }
