@@ -44,6 +44,19 @@ task prebuild_windows(type: Prebuild) {
 prebuild_windows.dependsOn ':mingwPresence'
 prebuild.dependsOn prebuild_windows
 
+task prebuild_ndk(type: Prebuild) {
+    sourcePath 'external/libffi'
+    ramdiskSizeMB 256
+    buildScript 'moe-prebuild-ndk.sh'
+    targetName 'ndk'
+    preBuildCopySpec project.copySpec {
+        from('.') {
+            include 'moe-prebuild-ndk.sh'
+        }
+    }
+}
+prebuild.dependsOn prebuild_ndk
+
 task clean << {
     delete('build')
 }
