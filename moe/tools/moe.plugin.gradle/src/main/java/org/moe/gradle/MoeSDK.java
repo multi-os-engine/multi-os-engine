@@ -440,7 +440,6 @@ public class MoeSDK {
                 validate(DIR, path, "sdk/iphonesimulator/MOE.framework");
             }
             validate(FIL | EXE, path, "tools/dex2oat");
-            validate(FIL | EXE, path, "tools/dx");
             validate(FIL, path, "tools/dx.jar");
             validate(FIL, path, "tools/ios-device.jar");
             validate(FIL, path, "tools/java8support.jar");
@@ -509,7 +508,6 @@ public class MoeSDK {
     private @Nullable File MOE_SDK_IOS_RETRO_JAR;
     private @Nullable File MOE_SDK_IOS_RETRO_DEX;
     private @Nullable File MOE_SDK_DEX2OAT_EXEC;
-    private @Nullable File MOE_SDK_DX_EXEC;
     private @Nullable File MOE_SDK_DX_JAR;
     private @Nullable File MOE_SDK_IOS_DEVICE_JAR;
     private @Nullable File MOE_SDK_JAVA8SUPPORT_JAR;
@@ -539,7 +537,6 @@ public class MoeSDK {
         MOE_SDK_IOS_RETRO_JAR = path.resolve("sdk/moe-ios-retro.jar").toFile();
         MOE_SDK_IOS_RETRO_DEX = path.resolve("sdk/moe-ios-retro-dex.jar").toFile();
         MOE_SDK_DEX2OAT_EXEC = path.resolve("tools/dex2oat").toFile();
-        MOE_SDK_DX_EXEC = path.resolve("tools/dx").toFile();
         MOE_SDK_DX_JAR = path.resolve("tools/dx.jar").toFile();
         MOE_SDK_IOS_DEVICE_JAR = path.resolve("tools/ios-device.jar").toFile();
         MOE_SDK_JAVA8SUPPORT_JAR = path.resolve("tools/java8support.jar").toFile();
@@ -619,11 +616,6 @@ public class MoeSDK {
     @NotNull
     public File getDex2OatExec() {
         return safeVariable(MOE_SDK_DEX2OAT_EXEC, "MOE_SDK_DEX2OAT_EXEC");
-    }
-
-    @NotNull
-    public File getDxExec() {
-        return safeVariable(MOE_SDK_DX_EXEC, "MOE_SDK_DX_EXEC");
     }
 
     @NotNull

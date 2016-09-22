@@ -16,7 +16,6 @@ limitations under the License.
 
 package org.moe.gradle.tasks;
 
-import org.apache.tools.ant.taskdefs.condition.Os;
 import org.gradle.api.GradleException;
 import org.gradle.api.file.ConfigurableFileCollection;
 import org.gradle.api.tasks.Input;
@@ -45,25 +44,10 @@ import java.util.stream.Collectors;
 
 public class Dex extends AbstractBaseTask {
 
-    private static final String CONVENTION_DX_EXEC = "dxExec";
     private static final String CONVENTION_DX_JAR = "dxJar";
     private static final String CONVENTION_INPUT_FILES = "inputFiles";
     private static final String CONVENTION_EXTRA_ARGS = "extraArgs";
     private static final String CONVENTION_DEST_JAR = "destJar";
-
-    @Nullable
-    private Object dxExec;
-
-    @NotNull
-    public File getDxExec() {
-        return getProject().file(getOrConvention(dxExec, CONVENTION_DX_EXEC));
-    }
-
-    @InputFile
-    @IgnoreUnused
-    public void setDxExec(@Nullable Object dxExec) {
-        this.dxExec = dxExec;
-    }
 
     @Nullable
     private Object dxJar;
@@ -129,24 +113,11 @@ public class Dex extends AbstractBaseTask {
             throw new GradleException("an IOException occurred", e);
         }
 
-        if (Os.isFamily(Os.FAMILY_WINDOWS)) {
-            javaexec(spec -> {
-                /* Disabled to support 32-bit systems
-                spec.args("-DJXmx4096m");
-                */
-                spec.setMain("-jar");
-                spec.args(getDxJar().getAbsolutePath());
-                prepareArgumentsList().forEach(spec::args);
-            });
-        } else {
-            exec(spec -> {
-                spec.setExecutable(getDxExec());
-                /* Disabled to support 32-bit systems
-                spec.args("-JXmx4096m");
-                */
-                prepareArgumentsList().forEach(spec::args);
-            });
-        }
+        javaexec(spec -> {
+            spec.setMain("-jar");
+            spec.args(getDxJar().getAbsolutePath());
+            prepareArgumentsList().forEach(spec::args);
+        });
     }
 
     @NotNull
@@ -196,7 +167,6 @@ public class Dex extends AbstractBaseTask {
         dependsOn(retroTask);
 
         // Update convention mapping
-        addConvention(CONVENTION_DX_EXEC, sdk::getDxExec);
         addConvention(CONVENTION_DX_JAR, sdk::getDxJar);
         addConvention(CONVENTION_INPUT_FILES, () -> {
             final ArrayList<Object> files = new ArrayList<>();

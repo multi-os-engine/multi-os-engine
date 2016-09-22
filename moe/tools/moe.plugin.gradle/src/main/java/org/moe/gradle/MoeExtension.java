@@ -23,6 +23,7 @@ import org.gradle.internal.reflect.Instantiator;
 import org.moe.gradle.anns.IgnoreUnused;
 import org.moe.gradle.anns.NotNull;
 import org.moe.gradle.anns.Nullable;
+import org.moe.gradle.options.JavaProcessOptions;
 import org.moe.gradle.options.SigningOptions;
 import org.moe.gradle.options.PackagingOptions;
 import org.moe.gradle.options.ResourceOptions;
@@ -62,6 +63,9 @@ public class MoeExtension {
     @NotNull
     public final SigningOptions signingOptions;
 
+    @NotNull
+    public final JavaProcessOptions javaProcessOptions;
+
     @Nullable
     public String mainClassName;
 
@@ -78,6 +82,7 @@ public class MoeExtension {
         this.resourceOptions = instantiator.newInstance(ResourceOptions.class);
         this.xcodeOptions = instantiator.newInstance(XcodeOptions.class, plugin.getProject());
         this.signingOptions = instantiator.newInstance(SigningOptions.class);
+        this.javaProcessOptions = instantiator.newInstance(JavaProcessOptions.class);
     }
 
     void setup() {
@@ -123,6 +128,11 @@ public class MoeExtension {
     @IgnoreUnused
     public void signing(Action<SigningOptions> action) {
         Require.nonNull(action).execute(signingOptions);
+    }
+
+    @IgnoreUnused
+    public void javaProcess(Action<JavaProcessOptions> action) {
+        Require.nonNull(action).execute(javaProcessOptions);
     }
 
     @NotNull

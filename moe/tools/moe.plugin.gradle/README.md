@@ -12,6 +12,7 @@ The MOE Gradle plugin adds support to building MOE based applications via Gradle
   * [Xcode Project](#xcode-project)
   * [Code Signing](#code-signing)
   * [Resource Packaging](#resource-packaging)
+  * [Java Processes](#java-processes)
 * [Tasks](#tasks)
   * [ProGuard Task](#proguard-task)
   * [Retrolambda Task](#retrolambda-task)
@@ -76,7 +77,6 @@ The SDK's structure must be as follows, otherwise the validation will fail:
 |  \- iphonesimulator/MOE.framework
 \- tools
    +- dex2oat
-   +- dx
    +- dx.jar
    +- ios-device.jar
    +- java8support.jar
@@ -242,6 +242,18 @@ moe {
 }
 ```
 
+### Java Processes
+
+VM arguments for launched Java processes can be customized, for example custom `xmx` values can be set:
+
+```groovy
+moe {
+    javaProcess {
+        jvmArgs '-Xmx4096m'
+    }
+}
+```
+
 ## Tasks
 
 ### ProGuard Task
@@ -308,8 +320,7 @@ detailed information can be found in the `dx.log` file.
 
 #### Task Properties
 
-- `dxExec`: path to the `dx` executable file.
-- `dxJar`: path to the `dx.jar` file (used on Windows instead of `dxExec`).
+- `dxJar`: path to the `dx.jar` file.
 - `inputFiles`: collection of paths to files being passed to Dex.
 - `extraArgs`: extra arguments passed to Dex.
 - `destJar`: path to the jar file produced by dex.
