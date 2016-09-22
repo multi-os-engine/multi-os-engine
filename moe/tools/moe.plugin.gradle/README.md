@@ -2,6 +2,39 @@
 
 The MOE Gradle plugin adds support to building MOE based applications via Gradle.
 
+## Table of Contents
+
+* [Basics](#basics)
+  * [Plugins](#plugins)
+  * [SDK](#sdk)
+* [Configuration](#configuration)
+  * [ProGuard](#proguard)
+  * [Xcode Project](#xcode-project)
+  * [Code Signing](#code-signing)
+  * [Resource Packaging](#resource-packaging)
+* [Tasks](#tasks)
+  * [ProGuard Task](#proguard-task)
+  * [Retrolambda Task](#retrolambda-task)
+  * [Dex Task](#dex-task)
+  * [Dex2Oat Task](#dex2oat-task)
+  * [StartupProvider Task](#startupprovider-task)
+  * [ResourcePackager Task](#resourcepackager-task)
+  * [UITransformer Task](#uitransformer-task)
+  * [TestClassesProvider Task](#testclassesprovider-task)
+  * [XcodeProvider Task](#xcodeprovider-task)
+  * [XcodeInternal Task](#xcodeinternal-task)
+  * [XcodeBuild Task](#xcodebuild-task)
+  * [XcodeProjectGenerator Task](#xcodeprojectgenerator-task)
+  * [IpaBuild Task](#ipabuild-task)
+  * [ListDevices Task](#listdevices-task)
+  * [ListSimulators Task](#listsimulators-task)
+  * [Launch Task](#launch-task)
+  * [Test Task](#test-task)
+  * [ConfigRemote Task](#configremote-task)
+  * [TestRemote Task](#testremote-task)
+  * [RemoteServerSetup Task](#remoteserversetup-task)
+* [Remote Server Settings](#remote-server-settings)
+
 ## Basics
 
 ### Plugins
@@ -60,6 +93,155 @@ The SDK's structure must be as follows, otherwise the validation will fail:
    \- wrapnatjgen.jar
 ```
 
+## Configuration
+
+### ProGuard
+
+ProGuard has three supported levels of trimming: `app` (default), `platform`, `all`
+
+This level can be set in the buildscript:
+
+```groovy
+moe {
+    proguardLevel 'platform'
+}
+```
+
+- `app` will only process the classes of your application and it's non-MOE dependencies. This is the fastest mode and
+is recommended for development.
+- `platform` will do the same as `app` but will also include the `moe-ios.jar` MOE dependency. This mode is a bit
+slower and only provides marginally better results.
+- `all` will do the same as `platform` but will also include the `moe-core.jar` MOE dependency. This is much slower
+than the other two, but will provide the best size reduction.
+
+At any of these levels ProGuard may trim out classes which are needed at compile/runtime. For further configuration
+see [ProGuard Task](#proguard-task).
+
+### Xcode Project
+
+Generated Xcode project settings can be configured as follows:
+
+```groovy
+moe {
+    xcode {
+        // boolean, indicates whether the Xcode project should be generated or not, defaults to true.
+        generateProject
+
+        // String, name of the main target.
+        mainTarget
+
+        // String, name of the test target.
+        testTarget
+
+        // String, product name of the main target.
+        mainProductName
+
+        // String, path to the main storyboard.
+        mainUIStoryboardPath
+
+        // String, path to launch screen storyboard/xib.
+        launchScreenFilePath
+
+        // String, path to launch image.
+        launchImagesSource
+
+        // String, value for the 'NSLocationWhenInUseUsageDescription' property.
+        locationWhenInUseUsageDescription
+
+        // String, path to the app icons.
+        appIconsSource
+
+        // String, organizations name (ex: My Company).
+        organizationName
+
+        // String, company identifier (ex: com.mycompany).
+        companyIdentifier
+
+        // String, the app's bundle ID (ex: com.mycompany.myapp).
+        bundleID
+
+        // String, package where the 'Main' class can be found (ex: com.mycompany.myapp).
+        packageName
+
+        // String, path to the main target's Info.plist.
+        infoPlistPath
+
+        // String, path to the test target's Info.plist.
+        testInfoPlistPath
+
+        // boolean, value for the 'UIApplicationExitsOnSuspend' property.
+        applicationExitOnSuspend
+
+        // String, value for the 'CFBundleShortVersionString' property.
+        bundleShortVersionString
+
+        // String, value for the 'CFBundleVersion' property.
+        bundleVersion
+
+        // String, the minimal system version the app requires (ex: 9.0).
+        deploymentTarget
+
+        // String, path to the Xcode project's directory.
+        xcodeProjectDirPath
+
+        // List, list of supported interface orientations.
+        // - UIInterfaceOrientationPortrait
+        // - UIInterfaceOrientationPortraitUpsideDown
+        // - UIInterfaceOrientationLandscapeLeft
+        // - UIInterfaceOrientationLandscapeRight
+        supportedInterfaceOrientations
+    }
+}
+```
+
+### Code Signing
+
+Code signing can be configured by the following options:
+
+```groovy
+moe {
+    signing {
+        // String, ID of the development team.
+        developmentTeam
+
+        // String, path to the provisioning profile.
+        provisioningProfile
+
+        // String, name of the signing identity
+        signingIdentity
+    }
+}
+```
+
+#### Code Signing Defaults
+
+The development team setting can have a default value which can be set in this file:
+`<user-home>/.moe/default.properties`.
+
+```text
+developmentTeam=ABCDEFGHIJ
+```
+
+### Resource Packaging
+
+Resource packaging into the application.jar can be configured in the build script with the following options:
+
+```groovy
+moe {
+    packaging {
+        excludes = ['LICENSE', 'LICENSE.*']
+        exclude 'README.md' // Excludes the README.md file from the application.jar
+    }
+    resources {
+        // Enables resources from the source directory
+        enableResourcesFromSourceDirs = true
+
+        // Excludes all Java source files when copying from the source directory
+        resourcesFromSourceDirExcludes = ['**/*.java']
+    }
+}
+```
+
 ## Tasks
 
 ### ProGuard Task
@@ -75,15 +257,7 @@ can overwrite it by creating a `proguard.cfg` file in your project directory. Th
 `proguarded.jar` file which contains the minimized version of the application code which is required to run. Detailed
 information about what got stripped can be found in the `proguard.log` file which is in your build directory.
 
-ProGuard has three supported levels of trimming: `app` (default), `platform`, `all`
 
-This level can be set in the buildscript:
-
-```groovy
-moe {
-    proguardLevel 'platform'
-}
-```
 
 Overriding this level on the command-line can be done via the `moe.proguardLevel=<level>` project property.
 
@@ -204,22 +378,6 @@ This task collects the resource files used by the application. These files can o
 folder, dependent jars and additional external sources specified in the build script.
 The result of this task is an `application.jar` file which can be found in the build directory.
 
-#### Properties
-
-```groovy
-moe {
-    packagingOptions {
-        excludes = ['LICENSE', 'LICENSE.*']
-        exclude 'README.md' // Excludes the README.md file from the application.jar
-    }
-    resources {
-        enableResourcesFromSourceDirs = true // Enables resources from the source directory
-        resourcesFromSourceDirExcludes = ['**/*.java'] // Excludes all Java source files when copying from the source
-        // directory
-    }
-}
-```
-
 ---
 
 ### UITransformer Task
@@ -308,6 +466,7 @@ This task invokes `xcodebuild` and creates the application.
 - `additionalParameters`: additional parameters to pass to `xcodebuild`.
 - `provisioningProfile`: path to the provisioning profile.
 - `signingIdentity`: name of the signing identity.
+- `developmentTeam`: ID of the development team.
 - `xcodeBuildRoot`: `xcodebuild` root output directory.
 - `xcodeBuildSettingsFile`: path to the output Xcode build settings file.
 
@@ -317,80 +476,7 @@ This task invokes `xcodebuild` and creates the application.
 
 Task name: `moeXcodeProjectGenerator`
 
-Generates an Xcode project. This task is configured by the following options:
-
-```groovy
-moe {
-    xcode {
-        // boolean, indicates whether the Xcode project should be generated or not, defaults to true.
-        generateProject
-
-        // String, name of the main target.
-        mainTarget
-
-        // String, name of the test target.
-        testTarget
-
-        // String, product name of the main target.
-        mainProductName
-
-        // String, path to the main storyboard.
-        mainUIStoryboardPath
-
-        // String, path to launch screen storyboard/xib.
-        launchScreenFilePath
-
-        // String, path to launch image.
-        launchImagesSource
-
-        // String, value for the 'NSLocationWhenInUseUsageDescription' property.
-        locationWhenInUseUsageDescription
-
-        // String, path to the app icons.
-        appIconsSource
-
-        // String, organizations name (ex: My Company).
-        organizationName
-
-        // String, company identifier (ex: com.mycompany).
-        companyIdentifier
-
-        // String, the app's bundle ID (ex: com.mycompany.myapp).
-        bundleID
-
-        // String, package where the 'Main' class can be found (ex: com.mycompany.myapp).
-        packageName
-
-        // String, path to the main target's Info.plist.
-        infoPlistPath
-
-        // String, path to the test target's Info.plist.
-        testInfoPlistPath
-
-        // boolean, value for the 'UIApplicationExitsOnSuspend' property.
-        applicationExitOnSuspend
-
-        // String, value for the 'CFBundleShortVersionString' property.
-        bundleShortVersionString
-
-        // String, value for the 'CFBundleVersion' property.
-        bundleVersion
-
-        // String, the minimal system version the app requires (ex: 9.0).
-        deploymentTarget
-
-        // String, path to the Xcode project's directory.
-        xcodeProjectDirPath
-
-        // List, list of supported interface orientations.
-        // - UIInterfaceOrientationPortrait
-        // - UIInterfaceOrientationPortraitUpsideDown
-        // - UIInterfaceOrientationLandscapeLeft
-        // - UIInterfaceOrientationLandscapeRight
-        supportedInterfaceOrientations
-    }
-}
-```
+Generates an Xcode project.
 
 ---
 
@@ -515,7 +601,8 @@ The following settings are available for configuring the remote connection:
 - `gradle.repositories`: repositories to be used when setting up the MOE SDK on the remote server, defaults to
 'jcenter()'.
 
-The identity and knownhosts keys accept special parameters to access environmental variables (`$env$KEY`), system properties (`$sys$KEY`) and project properties (`$proj$KEY`).
+The identity and knownhosts keys accept special parameters to access environmental variables (`$env$KEY`),
+system properties (`$sys$KEY`) and project properties (`$proj$KEY`).
 
 Example: `knownhosts=$sys$user.home/.ssh/known_hosts`
 

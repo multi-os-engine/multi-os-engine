@@ -64,6 +64,7 @@ public class XcodeBuild extends AbstractBaseTask {
     private static final String CONVENTION_ADDITIONAL_PARAMETERS = "additionalParameters";
     private static final String CONVENTION_PROVISIONING_PROFILE = "provisioningProfile";
     private static final String CONVENTION_SIGNING_IDENTITY = "signingIdentity";
+    private static final String CONVENTION_DEVELOPMENT_TEAM = "developmentTeam";
     private static final String CONVENTION_XCODE_BUILD_ROOT = "xcodeBuildRoot";
     private static final String CONVENTION_XCODE_BUILD_SETTINGS_FILE = "xcodeBuildSettingsFile";
 
@@ -197,6 +198,21 @@ public class XcodeBuild extends AbstractBaseTask {
     @IgnoreUnused
     public void setSigningIdentity(@Nullable String signingIdentity) {
         this.signingIdentity = signingIdentity;
+    }
+
+    @Nullable
+    private String developmentTeam;
+
+    @Input
+    @Optional
+    @Nullable
+    public String getDevelopmentTeam() {
+        return nullableGetOrConvention(developmentTeam, CONVENTION_DEVELOPMENT_TEAM);
+    }
+
+    @IgnoreUnused
+    public void setDevelopmentTeam(@Nullable String developmentTeam) {
+        this.developmentTeam = developmentTeam;
     }
 
     @Nullable
@@ -438,6 +454,15 @@ public class XcodeBuild extends AbstractBaseTask {
             getProject().getLogger().info("Signing identity is not specified! Default one will be chosen!");
         }
 
+        final String DEVELOPMENT_TEAM;
+        final String developmentTeam = getDevelopmentTeam();
+        if (developmentTeam != null && !developmentTeam.isEmpty()) {
+            DEVELOPMENT_TEAM = developmentTeam;
+        } else {
+            DEVELOPMENT_TEAM = null;
+            getProject().getLogger().info("Development team is not specified! Default one will be chosen!");
+        }
+
         final List<String> args = new ArrayList<>();
         final Server remoteServer = getMoePlugin().getRemoteServer();
 
@@ -491,6 +516,9 @@ public class XcodeBuild extends AbstractBaseTask {
         }
         if (CODE_SIGN_IDENTITY != null) {
             args.add("CODE_SIGN_IDENTITY=" + CODE_SIGN_IDENTITY);
+        }
+        if (DEVELOPMENT_TEAM != null) {
+            args.add("DEVELOPMENT_TEAM=" + DEVELOPMENT_TEAM);
         }
 
         return args;
@@ -550,7 +578,7 @@ public class XcodeBuild extends AbstractBaseTask {
             if (SourceSet.MAIN_SOURCE_SET_NAME.equals(sourceSet.getName())) {
                 targetName = projectGenerator.getProjectName();
             } else {
-                String testTarget = ext.xcode.getTestTarget();
+                String testTarget = ext.xcodeOptions.getTestTarget();
                 if ((testTarget == null) || testTarget.isEmpty()) {
                     testTarget = projectGenerator.getProjectName() + "-Test";
                 }
@@ -565,8 +593,15 @@ public class XcodeBuild extends AbstractBaseTask {
         addConvention(CONVENTION_XCODE_BUILD_ROOT, () -> resolvePathInBuildDir(out));
         addConvention(CONVENTION_ADDITIONAL_PARAMETERS, () ->
                 new ArrayList<>(Arrays.asList("MOE_GRADLE_EXTERNAL_BUILD=YES", "ONLY_ACTIVE_ARCH=NO")));
-        addConvention(CONVENTION_PROVISIONING_PROFILE, ext.ipaOptions::getProvisioningProfile);
-        addConvention(CONVENTION_SIGNING_IDENTITY, ext.ipaOptions::getSigningIdentity);
+        addConvention(CONVENTION_PROVISIONING_PROFILE, ext.signingOptions::getProvisioningProfile);
+        addConvention(CONVENTION_SIGNING_IDENTITY, ext.signingOptions::getSigningIdentity);
+        addConvention(CONVENTION_DEVELOPMENT_TEAM, () -> {
+            if (ext.xcodeOptions.isGenerateProject() || !ext.signingOptions.usesDefaultDevelopmentTeam()) {
+                return ext.signingOptions.getDevelopmentTeam();
+            } else {
+                return null;
+            }
+        });
         addConvention(CONVENTION_XCODE_BUILD_SETTINGS_FILE, () -> resolvePathInBuildDir(out, "XcodeBuild-" +
                 sourceSet.getName() + "-" + mode.name + "-" + platform.platformName + ".properties"));
         addConvention(CONVENTION_LOG_FILE, () -> resolvePathInBuildDir(out, "XcodeBuild-" + sourceSet.getName() + "-" +

@@ -23,7 +23,7 @@ import org.gradle.internal.reflect.Instantiator;
 import org.moe.gradle.anns.IgnoreUnused;
 import org.moe.gradle.anns.NotNull;
 import org.moe.gradle.anns.Nullable;
-import org.moe.gradle.options.IpaOptions;
+import org.moe.gradle.options.SigningOptions;
 import org.moe.gradle.options.PackagingOptions;
 import org.moe.gradle.options.ResourceOptions;
 import org.moe.gradle.options.XcodeOptions;
@@ -54,13 +54,13 @@ public class MoeExtension {
     public final PackagingOptions packagingOptions;
 
     @NotNull
-    public final ResourceOptions resources;
+    public final ResourceOptions resourceOptions;
 
     @NotNull
-    public final XcodeOptions xcode;
+    public final XcodeOptions xcodeOptions;
 
     @NotNull
-    public final IpaOptions ipaOptions;
+    public final SigningOptions signingOptions;
 
     @Nullable
     public String mainClassName;
@@ -75,9 +75,9 @@ public class MoeExtension {
         this.plugin = Require.nonNull(plugin);
         Require.nonNull(instantiator);
         this.packagingOptions = instantiator.newInstance(PackagingOptions.class);
-        this.resources = instantiator.newInstance(ResourceOptions.class);
-        this.xcode = instantiator.newInstance(XcodeOptions.class, plugin.getProject());
-        this.ipaOptions = instantiator.newInstance(IpaOptions.class);
+        this.resourceOptions = instantiator.newInstance(ResourceOptions.class);
+        this.xcodeOptions = instantiator.newInstance(XcodeOptions.class, plugin.getProject());
+        this.signingOptions = instantiator.newInstance(SigningOptions.class);
     }
 
     void setup() {
@@ -106,23 +106,23 @@ public class MoeExtension {
     }
 
     @IgnoreUnused
-    public void packagingOptions(Action<PackagingOptions> action) {
+    public void packaging(Action<PackagingOptions> action) {
         Require.nonNull(action).execute(packagingOptions);
     }
 
     @IgnoreUnused
     public void resources(Action<ResourceOptions> action) {
-        Require.nonNull(action).execute(resources);
+        Require.nonNull(action).execute(resourceOptions);
     }
 
     @IgnoreUnused
     public void xcode(Action<XcodeOptions> action) {
-        Require.nonNull(action).execute(xcode);
+        Require.nonNull(action).execute(xcodeOptions);
     }
 
     @IgnoreUnused
-    public void ipaOptions(Action<IpaOptions> action) {
-        Require.nonNull(action).execute(ipaOptions);
+    public void signing(Action<SigningOptions> action) {
+        Require.nonNull(action).execute(signingOptions);
     }
 
     @NotNull

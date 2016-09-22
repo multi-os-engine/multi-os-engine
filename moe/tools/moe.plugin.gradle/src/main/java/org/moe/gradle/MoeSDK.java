@@ -54,7 +54,7 @@ public class MoeSDK {
     private static final String MOE_GROUP_ID = "org.multi-os-engine";
     private static final String MOE_SDK_ARTIFACT_ID = "moe-sdk";
 
-    private static final Path USER_MOE_HOME;
+    public static final Path USER_MOE_HOME;
 
     static {
         final String user_moe_home = System.getenv("USER_MOE_HOME");

@@ -133,7 +133,7 @@ public class ResourcePackager {
         Require.nonNull(jar);
         Require.nonNull(sourceSet);
 
-        if (!ext.resources.isEnableResourcesFromSourceDirs()) {
+        if (!ext.resourceOptions.isEnableResourcesFromSourceDirs()) {
             return;
         }
         sourceSet.getJava().getSrcDirs().forEach(src -> {
@@ -141,7 +141,7 @@ public class ResourcePackager {
             jar.from(src, new ConfigurationClosure<CopySpec>(ext.plugin.getProject()) {
                 @Override
                 public void doCall(final CopySpec spec) {
-                    ext.resources.getResourcesFromSourceDirExcludes().forEach(spec::exclude);
+                    ext.resourceOptions.getResourcesFromSourceDirExcludes().forEach(spec::exclude);
                 }
             });
         });
