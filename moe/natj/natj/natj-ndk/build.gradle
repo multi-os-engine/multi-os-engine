@@ -14,34 +14,38 @@ See the License for the specific language governing permissions and
 limitations under the License.
 */
 
-if (!"1".equals(System.getenv("NATJ_ENABLE_NDK_BUILD"))) {
-    logger.info("Skipping NDK build")
-    return;
-}
-
 apply plugin: 'base'
 apply plugin: 'maven-publish'
 
-def buildNativeTarget() {
-    mkdir("build")
-    new ByteArrayOutputStream().withStream { os ->
-        try {
-            exec {
-                executable = "./build.sh"
-                setIgnoreExitValue false
-                standardOutput = os
-                errorOutput = os
-            }
-        } catch (GradleException ex) {
-            logger.error(os.toString())
-            throw new GradleException("Failed to build native components", ex)
-        } finally {
-            def writer = new PrintWriter(file("build/build.log"))
-            writer.print(os.toString());
-            writer.flush();
-            writer.close();
-        }
+task buildNative(type: Exec) {
+    if (System.getenv('NDK_PATH') == null) {
+        throw new GradleException('NDK_PATH env var is not set')
     }
+
+    dependsOn ":prebuild_libffi_ndk"
+
+    executable "${System.getenv('NDK_PATH')}/ndk-build"
+    args 'NDK_OUT=build/Release/obj'
+    args 'NDK_APP_LIBS_OUT=build/Release/libs'
+    def stdoutfile = file("build/ndk-build.log")
+    stdoutfile.parentFile.mkdirs()
+    standardOutput = new FileOutputStream(stdoutfile)
+}
+
+task buildNativeDebug(type: Exec) {
+    if (System.getenv('NDK_PATH') == null) {
+        throw new GradleException('NDK_PATH env var is not set')
+    }
+
+    dependsOn ":prebuild_libffi_ndk"
+
+    executable "${System.getenv('NDK_PATH')}/ndk-build"
+    args 'NDK_OUT=build/Debug/obj'
+    args 'NDK_APP_LIBS_OUT=build/Debug/libs'
+    args 'DEBUG=1'
+    def stdoutfile = file("build/ndk-build-debug.log")
+    stdoutfile.parentFile.mkdirs()
+    standardOutput = new FileOutputStream(stdoutfile)
 }
 
 String[] outputs = []
@@ -53,16 +57,12 @@ for (arch in ['arm64-v8a', 'armeabi-v7a', 'mips', 'mips64', 'x86', 'x86_64']) {
     }
 }
 
-task buildNative (/*dependsOn: rootProject.checkNative*/) << {
-    buildNativeTarget()
-}
-
-buildNative.inputs.files file('../libffi/arm-unknown-linux-androideabi/.libs/libffi.a')
-buildNative.inputs.files file('../libffi/mipsel-unknown-linux-android/.libs/libffi.a')
-buildNative.inputs.files file('../libffi/i686-pc-linux-android/.libs/libffi.a')
-buildNative.inputs.files file('../libffi/aarch64-unknown-linux-android/.libs/libffi.a')
-buildNative.inputs.files file('../libffi/mips64el-unknown-linux-android/.libs/libffi.a')
-buildNative.inputs.files file('../libffi/x86_64-pc-linux-android/.libs/libffi.a')
+buildNative.inputs.files rootProject.file('../../../prebuilts/external/libffi/build/ndk/aarch64/lib/libffi.a')
+buildNative.inputs.files rootProject.file('../../../prebuilts/external/libffi/build/ndk/arm/lib/libffi.a')
+buildNative.inputs.files rootProject.file('../../../prebuilts/external/libffi/build/ndk/mips64el/lib/libffi.a')
+buildNative.inputs.files rootProject.file('../../../prebuilts/external/libffi/build/ndk/mipsel/lib/libffi.a')
+buildNative.inputs.files rootProject.file('../../../prebuilts/external/libffi/build/ndk/x86/lib/libffi.a')
+buildNative.inputs.files rootProject.file('../../../prebuilts/external/libffi/build/ndk/x86_64/lib/libffi.a')
 
 buildNative.inputs.files file('jni/Android.mk')
 buildNative.inputs.files file('jni/Application.mk')
@@ -70,7 +70,8 @@ buildNative.inputs.files file('jni/Application.mk')
 buildNative.inputs.files fileTree('../src/main/native').getFiles().toArray()
 buildNative.outputs.files outputs
 
-tasks.publish.dependsOn(buildNative)
+tasks.build.dependsOn(buildNative)
+tasks.build.dependsOn(buildNativeDebug)
 
 publishing {
     publications {
@@ -78,15 +79,15 @@ publishing {
             artifactId 'natj-ndk'
 
             for (o in outputs) {
-              def conf = new File(o).getParentFile().getParentFile().getParentFile().getName()
-              def arch = new File(o).getParentFile().getName()
+                def conf = new File(o).getParentFile().getParentFile().getParentFile().getName()
+                def arch = new File(o).getParentFile().getName()
 
-              def clser = "$conf-$arch"
-              if (new File(o).getName() != "libnatj.so") {
-                clser += "-c++"
-              }
+                def clser = "$conf-$arch"
+                if (new File(o).getName() != "libnatj.so") {
+                    clser += "-c++"
+                }
 
-              artifact source:o, extension:"so", classifier: clser
+                artifact source: o, extension: "so", classifier: clser
             }
         }
     }
