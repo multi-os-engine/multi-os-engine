@@ -73,11 +73,11 @@ public class ArgumentsPanel extends JPanel implements PanelWithAnchor {
         myVMParametersComponent = LabeledComponent.create(new RawCommandLineEditor(),
                 "VM options:");
         copyDialogCaption(myVMParametersComponent);
-        myVMParametersComponent.setLabelLocation(BorderLayout.WEST);
+        myVMParametersComponent.setLabelLocation(BorderLayout.CENTER);
         myProgramParametersComponent = LabeledComponent.create(new RawCommandLineEditor(), "Program arguments:");
         myEnvVariablesComponent = new EnvironmentVariablesComponent();
-        myEnvVariablesComponent.setLabelLocation("West");
-        myProgramParametersComponent.setLabelLocation("West");
+        myEnvVariablesComponent.setLabelLocation(BorderLayout.CENTER);
+        myProgramParametersComponent.setLabelLocation(BorderLayout.CENTER);
 
         copyDialogCaption(myProgramParametersComponent);
 
