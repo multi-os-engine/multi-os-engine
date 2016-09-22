@@ -18,13 +18,16 @@ package org.moe.runconfig;
 
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.OutputStream;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Properties;
 
 import org.apache.log4j.Logger;
 import org.eclipse.core.resources.IProject;
+import org.eclipse.core.resources.IResource;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.debug.core.ILaunchConfiguration;
 import org.eclipse.debug.core.ILaunchConfigurationWorkingCopy;
@@ -35,6 +38,7 @@ import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Button;
 import org.eclipse.swt.widgets.Composite;
+import org.eclipse.swt.widgets.DirectoryDialog;
 import org.eclipse.swt.widgets.Event;
 import org.eclipse.swt.widgets.FileDialog;
 import org.eclipse.swt.widgets.Group;
@@ -54,6 +58,11 @@ import org.moe.utils.logger.LoggerFactory;
 public class RunConfigurationEditorRemote extends AbstractTab {
 
 	private static final Logger LOG = LoggerFactory.getLogger(RunConfigurationEditorRemote.class);
+	
+	public static final int DEFAULT_REMOTE_BUILD_PORT = 22;
+	public static final int DEFAULT_REMOTE_BUILD_TIMEOUT = 3600;
+	public static final String DEFAULT_REMOTE_BUILD_REPOSITORY = "jcenter()";
+	public static final String DEFAULT_REMOTE_KEYCHAIN_NAME = "moeremotebuild.keychain";
 
 	protected boolean remoteBuildEnabled = false;
 	protected String remoteHost;
@@ -61,6 +70,7 @@ public class RunConfigurationEditorRemote extends AbstractTab {
 	protected String remoteUser;
 	protected String remoteKnownhosts;
 	protected String remoteIdentity;
+	protected String remoteKeychainName;
 	protected String remoteKeychainPass;
 	protected int remoteKeychainLocktimeout;
 	protected String remoteGradleRepositories;
@@ -70,6 +80,7 @@ public class RunConfigurationEditorRemote extends AbstractTab {
 	private Text remoteUserText;
 	private Text remoteKnownhostsText;
 	private Text remoteIdentityText;
+	private Text remoteKeychainNameText;
 	private Text remoteKeychainPassText;
 	private Text remoteKeychainLocktimeoutText;
 	private Text remoteGradleRepositoriesText;
@@ -191,6 +202,20 @@ public class RunConfigurationEditorRemote extends AbstractTab {
 				setRemoteIdentity(remoteIdentityText.getText());
 			}
 		});
+		
+		Label keychainNameLabel = new Label(remoteGroup, SWT.NONE);
+		keychainNameLabel.setText("Keychain.name:");
+
+		remoteKeychainNameText = new Text(remoteGroup, SWT.SINGLE | SWT.BORDER);
+		remoteKeychainNameText.setLayoutData(new GridData(GridData.FILL_HORIZONTAL));
+		remoteKeychainNameText.addModifyListener(new ModifyListener() {
+
+			@Override
+			public void modifyText(ModifyEvent arg0) {
+				updateLaunchConfigurationDialog();
+				setRemoteKeychainName(remoteKeychainNameText.getText());
+			}
+		});
 
 		Label keychainPassLabel = new Label(remoteGroup, SWT.NONE);
 		keychainPassLabel.setText("Keychain.pass:");
@@ -269,6 +294,22 @@ public class RunConfigurationEditorRemote extends AbstractTab {
 				}
 			}
 		});
+		
+		Button exportButton = new Button(parent, SWT.None);
+		exportButton.setLayoutData(new GridData(GridData.FILL_HORIZONTAL));
+		exportButton.setText("Export");
+		exportButton.addListener(SWT.Selection, new Listener() {
+
+			@Override
+			public void handleEvent(Event event) {
+				switch (event.type) {
+				case SWT.Selection: {
+					showExportPropertyDialog();
+				}
+					break;
+				}
+			}
+		});
 	}
 
 	@Override
@@ -289,18 +330,19 @@ public class RunConfigurationEditorRemote extends AbstractTab {
 				remoteGroup.setEnabled(true);
 			}
 			setRemoteHost(launchConfiguration.getAttribute(ApplicationManager.REMOTE_HOST_KEY, ""));
-			setRemotePort(launchConfiguration.getAttribute(ApplicationManager.REMOTE_PORT_KEY, 0));
+			setRemotePort(launchConfiguration.getAttribute(ApplicationManager.REMOTE_PORT_KEY, DEFAULT_REMOTE_BUILD_PORT));
 			setRemoteUser(launchConfiguration.getAttribute(ApplicationManager.REMOTE_USER_KEY, ""));
 			setRemoteKnownhosts(launchConfiguration.getAttribute(ApplicationManager.REMOTE_KNOWN_HOSTS_KEY, ""));
 			setRemoteIdentity(launchConfiguration.getAttribute(ApplicationManager.REMOTE_IDENTITY_KEY, ""));
+			setRemoteKeychainName(launchConfiguration.getAttribute(ApplicationManager.REMOTE_KEYCHAIN_NAME_KEY, DEFAULT_REMOTE_KEYCHAIN_NAME));
 			setRemoteKeychainPass(launchConfiguration.getAttribute(ApplicationManager.REMOTE_KEYCHAIN_PASS_KEY, ""));
 			setRemoteKeychainLocktimeout(
-					launchConfiguration.getAttribute(ApplicationManager.REMOTE_KEYCHAIN_LOCK_TIMEOUT_KEY, 0));
+					launchConfiguration.getAttribute(ApplicationManager.REMOTE_KEYCHAIN_LOCK_TIMEOUT_KEY, DEFAULT_REMOTE_BUILD_TIMEOUT));
 			setRemoteGradleRepositories(
-					launchConfiguration.getAttribute(ApplicationManager.REMOTE_GRADLE_REPOSITORIES_KEY, ""));
+					launchConfiguration.getAttribute(ApplicationManager.REMOTE_GRADLE_REPOSITORIES_KEY, DEFAULT_REMOTE_BUILD_REPOSITORY));
 
 			updateRemoteBuildSettings(remoteHost, remotePort, remoteUser, remoteKnownhosts, remoteIdentity,
-					remoteKeychainPass, remoteKeychainLocktimeout, remoteGradleRepositories);
+					remoteKeychainName, remoteKeychainPass, remoteKeychainLocktimeout, remoteGradleRepositories);
 		} catch (CoreException e) {
 		}
 	}
@@ -318,6 +360,7 @@ public class RunConfigurationEditorRemote extends AbstractTab {
 		launchConfiguration.setAttribute(ApplicationManager.REMOTE_KNOWN_HOSTS_KEY, getRemoteKnownhosts());
 		launchConfiguration.setAttribute(ApplicationManager.REMOTE_IDENTITY_KEY, getRemoteIdentity());
 		launchConfiguration.setAttribute(ApplicationManager.REMOTE_KEYCHAIN_PASS_KEY, getRemoteKeychainPass());
+		launchConfiguration.setAttribute(ApplicationManager.REMOTE_KEYCHAIN_NAME_KEY, getRemoteKeychainName());
 		launchConfiguration.setAttribute(ApplicationManager.REMOTE_KEYCHAIN_LOCK_TIMEOUT_KEY,
 				getRemoteKeychainLocktimeout());
 		launchConfiguration.setAttribute(ApplicationManager.REMOTE_GRADLE_REPOSITORIES_KEY,
@@ -369,6 +412,12 @@ public class RunConfigurationEditorRemote extends AbstractTab {
 			String remoteIdentity = remoteIdentityText.getText();
 			if (remoteIdentity == null || remoteIdentity.isEmpty()) {
 				setErrorMessage("Please enter a remote Identity value.");
+				return false;
+			}
+			
+			String remoteKeychainName = remoteKeychainNameText.getText();
+			if (remoteKeychainName == null || remoteKeychainName.isEmpty()) {
+				setErrorMessage("Please enter a remote Keychain.name value.");
 				return false;
 			}
 
@@ -468,6 +517,14 @@ public class RunConfigurationEditorRemote extends AbstractTab {
 	public void setRemoteGradleRepositories(String remoteGradleRepositories) {
 		this.remoteGradleRepositories = remoteGradleRepositories;
 	}
+	
+	public void setRemoteKeychainName(String remoteKeychainName) {
+		this.remoteKeychainName = remoteKeychainName;
+	}
+
+	public String getRemoteKeychainName() {
+		return remoteKeychainName;
+	}
 
 	private void showPropertiesChoicerDialog() {
 		FileDialog fileDialog = new FileDialog(getShell());
@@ -492,6 +549,7 @@ public class RunConfigurationEditorRemote extends AbstractTab {
 				String remoteUser = property.getProperty("user");
 				String remoteKnownhosts = property.getProperty("knownhosts");
 				String remoteIdentity = property.getProperty("identity");
+				String remoteKeychainName = property.getProperty("keychain.name");
 				String remoteKeychainPass = property.getProperty("keychain.pass");
 				String timeout = property.getProperty("keychain.locktimeout");
 				timeout = timeout == null || timeout.isEmpty() ? "0" : timeout;
@@ -499,7 +557,7 @@ public class RunConfigurationEditorRemote extends AbstractTab {
 				String remoteGradleRepositories = property.getProperty("gradle.repositories");
 
 				updateRemoteBuildSettings(remoteHost, remotePort, remoteUser, remoteKnownhosts, remoteIdentity,
-						remoteKeychainPass, remoteKeychainLocktimeout, remoteGradleRepositories);
+						remoteKeychainName, remoteKeychainPass, remoteKeychainLocktimeout, remoteGradleRepositories);
 			} catch (Exception e) {
 				showError("Unable load properties file");
 			} finally {
@@ -515,7 +573,7 @@ public class RunConfigurationEditorRemote extends AbstractTab {
 	}
 
 	private void updateRemoteBuildSettings(String remoteHost, int remotePort, String remoteUser,
-			String remoteKnownhosts, String remoteIdentity, String remoteKeychainPass, int remoteKeychainLocktimeout,
+			String remoteKnownhosts, String remoteIdentity, String remoteKeychainName, String remoteKeychainPass, int remoteKeychainLocktimeout,
 			String remoteGradleRepositories) {
 
 		if (remoteHost != null && !remoteHost.isEmpty()) {
@@ -523,7 +581,9 @@ public class RunConfigurationEditorRemote extends AbstractTab {
 		}
 		if (remotePort > 0) {
 			remotePortText.setText(Integer.toString(remotePort));
-		}
+		} else {
+			remotePortText.setText(Integer.toString(DEFAULT_REMOTE_BUILD_PORT));
+        }
 		if (remoteUser != null && !remoteUser.isEmpty()) {
 			remoteUserText.setText(remoteUser);
 		}
@@ -533,6 +593,11 @@ public class RunConfigurationEditorRemote extends AbstractTab {
 		if (remoteIdentity != null && !remoteIdentity.isEmpty()) {
 			remoteIdentityText.setText(remoteIdentity);
 		}
+		if (remoteKeychainName != null && !remoteKeychainName.isEmpty()) {
+			remoteKeychainNameText.setText(remoteKeychainName);
+        } else {
+        	remoteKeychainNameText.setText(DEFAULT_REMOTE_KEYCHAIN_NAME);
+        }
 		if (remoteKeychainPass != null && !remoteKeychainPass.isEmpty()) {
 			remoteKeychainPassText.setText(remoteKeychainPass);
 		}
@@ -541,7 +606,9 @@ public class RunConfigurationEditorRemote extends AbstractTab {
 		}
 		if (remoteGradleRepositories != null && !remoteGradleRepositories.isEmpty()) {
 			remoteGradleRepositoriesText.setText(remoteGradleRepositories);
-		}
+		} else {
+			remoteGradleRepositoriesText.setText(DEFAULT_REMOTE_BUILD_REPOSITORY);
+        }
 	}
 
 	private void testRemoteConnection() {
@@ -570,6 +637,7 @@ public class RunConfigurationEditorRemote extends AbstractTab {
 		String remoteUser = remoteUserText.getText();
 		String remoteKownHosts = remoteKnownhostsText.getText();
 		String remoteIdentity = remoteIdentityText.getText();
+		String remoteKeychainName = remoteKeychainNameText.getText();
 		String remoteKeychainPass = remoteKeychainPassText.getText();
 		String remoteBuildTimeout = remoteKeychainLocktimeoutText.getText();
 
@@ -592,6 +660,7 @@ public class RunConfigurationEditorRemote extends AbstractTab {
 		args.add("-Pmoe.remotebuild.user=" + remoteUser);
 		args.add("-Pmoe.remotebuild.knownhosts=" + remoteKownHosts);
 		args.add("-Pmoe.remotebuild.identity=" + remoteIdentity);
+		args.add("-Pmoe.remotebuild.keychain.name=" + remoteKeychainName);
 		args.add("-Pmoe.remotebuild.keychain.pass=" + remoteKeychainPass);
 		args.add("-Pmoe.remotebuild.keychain.locktimeout=" + remoteBuildTimeout);
 		args.add("-Pmoe.remotebuild.gradle.repositories=" + remoteGradleRepositories);
@@ -642,6 +711,73 @@ public class RunConfigurationEditorRemote extends AbstractTab {
 
 	public void setRunConfigurationEditorLocal(RunConfigurationEditorLocal editor) {
 		this.editorLocal = editor;
+	}
+	
+	private void showExportPropertyDialog() {
+		DirectoryDialog dialog = new DirectoryDialog(getShell());
+		dialog.setText("Select save folder");
+		
+		String selected = dialog.open();
+		
+		if (selected != null) {
+			StringBuilder comment = new StringBuilder();
+            comment.append(" Supported keys and values:");
+            comment.append("\n");
+            comment.append("   host: address of the remote build server");
+            comment.append("\n");
+            comment.append("   port: port for ssh, defaults to 22");
+            comment.append("\n");
+            comment.append("   user: user on the remote build server");
+            comment.append("\n");
+            comment.append("   knownhosts: path to known_hosts file");
+            comment.append("\n");
+            comment.append("   identity: path to private key");
+            comment.append("\n");
+            comment.append("   keychain.name: name of keychain to unlock, defaults to 'moeremotebuild.keychain'");
+            comment.append("\n");
+            comment.append("   keychain.pass: password for keychain, defaults to ''");
+            comment.append("\n");
+            comment.append("   keychain.locktimeout: keychain lock timeout in seconds, defaults to 3600");
+            comment.append("\n");
+            comment.append("   gradle.repositories: repositories to be used when setting up the MOE SDK on the remote server, defaults to 'jcenter()'");
+            comment.append("\n");
+            comment.append("\n");
+            comment.append("The identity and knownhosts keys accept special parameters to access");
+            comment.append("\n");
+            comment.append("   environmental variables ($env$KEY), system properties ($sys$KEY)");
+            comment.append("\n");
+            comment.append("   and project properties ($proj$KEY).");
+            comment.append("\n");
+            comment.append("   Example: knownhosts=$sys$user.home/.ssh/known_hosts");
+            comment.append("\n");
+
+            try {
+                File propertiesFile = new File(selected, "moe.remotebuild.properties");
+                if (propertiesFile.exists()) {
+                    propertiesFile.delete();
+                }
+
+                Properties props = new Properties();
+                props.setProperty("host", remoteHostText.getText());
+                props.setProperty("port", remotePortText.getText());
+                props.setProperty("user", remoteUserText.getText());
+                props.setProperty("knownhosts", remoteKnownhostsText.getText());
+                props.setProperty("identity", remoteIdentityText.getText());
+                props.setProperty("keychain.name", remoteKeychainNameText.getText());
+                props.setProperty("keychain.pass", remoteKeychainPassText.getText());
+                props.setProperty("keychain.locktimeout", remoteKeychainLocktimeoutText.getText());
+                props.setProperty("gradle.repositories", remoteGradleRepositoriesText.getText());
+                OutputStream out = new FileOutputStream(propertiesFile);
+                props.store(out, comment.toString());
+                
+                IProject project = getProject(editorLocal.getProjectName());
+                project.refreshLocal(IResource.DEPTH_INFINITE, null);
+
+                showMessage("Property file saved.");
+            } catch (Exception e) {
+            	showError("Unable save properties file");
+            }
+        }
 	}
 
 }

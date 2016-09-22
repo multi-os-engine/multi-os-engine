@@ -80,7 +80,6 @@ import org.moe.MOEProjectNature;
 import org.moe.runconfig.AbstractTab;
 import org.moe.runconfig.ApplicationManager;
 import org.moe.runconfig.RunConfigurationEditorLocal;
-import org.moe.utils.ProjectHelper;
 import org.moe.utils.logger.LoggerFactory;
 
 import java.lang.reflect.InvocationTargetException;
@@ -256,7 +255,7 @@ public class JUnitEditorTab extends AbstractTab {
 			updateTestTypeFromConfig(config);
 		}
 
-		IProject project = getProject();
+		IProject project = getProject(editorLocal.getProjectName());
 		boolean isMavenProject = false;
 		if (project != null) {
 			try {
@@ -383,7 +382,7 @@ public class JUnitEditorTab extends AbstractTab {
 	 */
 	private void handleSearchButtonSelected() {
 		Shell shell = getShell();
-		IProject project = getProject();
+		IProject project = getProject(editorLocal.getProjectName());
 		IJavaProject javaProject = JavaCore.create(project);
 		IType[] types = new IType[0];
 		boolean[] radioSetting = new boolean[2];
@@ -455,7 +454,7 @@ public class JUnitEditorTab extends AbstractTab {
 		setEnableSingleTestGroup(isSingleTestMode);
 		setEnableContainerTestGroup(!isSingleTestMode);
 		if (!isSingleTestMode && mContainerText.getText().length() == 0) {
-			IProject project = getProject();
+			IProject project = getProject(editorLocal.getProjectName());
 			String projText = project.getName();
 			if (Path.EMPTY.isValidSegment(projText)) {
 				IJavaProject javaProject = getJavaModel().getJavaProject(projText);
@@ -485,7 +484,7 @@ public class JUnitEditorTab extends AbstractTab {
 		}
 
 		try {
-			IProject project = getProject();
+			IProject project = getProject(editorLocal.getProjectName());
 			IJavaProject javaProject = JavaCore.create(project);
 			String className = mTestText.getText().trim();
 			if (className.length() == 0) {
@@ -719,19 +718,6 @@ public class JUnitEditorTab extends AbstractTab {
 		GridData gridData = new GridData();
 		button.setLayoutData(gridData);
 		LayoutUtil.setButtonDimensionHint(button);
-	}
-
-	private IProject getProject() {
-		String projectName = editorLocal.getProjectName();
-		if (projectName == null || projectName.isEmpty()) {
-			return null;
-		}
-
-		IProject project = ProjectHelper.getProject(projectName);
-		if (project == null) {
-			return null;
-		}
-		return project;
 	}
 
 	private class MyJavaElementContentProvider extends JavaElementContentProvider {

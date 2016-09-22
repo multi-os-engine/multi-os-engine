@@ -54,6 +54,7 @@ public class ApplicationManager {
 	public static final String REMOTEBUILD_USER = "moe.remotebuild.user=";
 	public static final String REMOTEBUILD_KNOWNHOSTS = "moe.remotebuild.knownhosts";
 	public static final String REMOTEBUILD_IDENTITY = "moe.remotebuild.identity=";
+	public static final String REMOTEBUILD_KEYCHAIN_NAME = "moe.remotebuild.keychain.name=";
 	public static final String REMOTEBUILD_KEYCHAIN_PASS = "moe.remotebuild.keychain.pass=";
 	public static final String REMOTEBUILD_KEYCHAINLOCKTIMEOUT = "moe.remotebuild.keychain.locktimeout";
 	public static final String REMOTEBUILD_GRADLE_REPOSITORIES = "moe.remotebuild.gradle.repositories=";
@@ -84,6 +85,7 @@ public class ApplicationManager {
 	public static final String ENVIRONMENT_VARIABLES_KEY = "environment_variables";
 	public static final String VM_ARGUMENTS_KEY = "vm_arguments";
 	public static final String PROGRAM_ARGUMENTS_KEY = "program_arguments";
+	public static final String REMOTE_KEYCHAIN_NAME_KEY = "remoteKeychainName";
 
 	private IProject project;
 	private ILaunchConfiguration launchConfiguration;
@@ -148,6 +150,7 @@ public class ApplicationManager {
 		String remoteUser = getRemoteUser();
 		String remoteKnownhosts = getRemoteKnownHosts();
 		String remoteIdentity = getRemoteIdentity();
+		String remoteKeychainName = getRemoteKeychainName();
 		String remoteKeychainPass = getRemoteKeychainPass();
 		int remoteKeychainLocktimeout = getRemoteKeychainLockTimeout();
 		String remoteGradleRepositories = getRemoteGradleRepository();
@@ -157,7 +160,8 @@ public class ApplicationManager {
 		args.add(prefix + REMOTEBUILD_USER + remoteUser);
 		args.add(prefix + REMOTEBUILD_KNOWNHOSTS + remoteKnownhosts);
 		args.add(prefix + REMOTEBUILD_IDENTITY + remoteIdentity);
-		args.add(prefix + REMOTEBUILD_KEYCHAIN_PASS + remoteKeychainPass);
+		args.add(prefix + REMOTEBUILD_KEYCHAIN_NAME + remoteKeychainPass);
+		args.add(prefix + REMOTEBUILD_KEYCHAIN_PASS + remoteKeychainName);
 		args.add(prefix + REMOTEBUILD_KEYCHAINLOCKTIMEOUT + remoteKeychainLocktimeout);
 		args.add(prefix + REMOTEBUILD_GRADLE_REPOSITORIES + remoteGradleRepositories);
 
@@ -523,7 +527,7 @@ public class ApplicationManager {
 
 	protected int getRemotePort() {
 		try {
-			return launchConfiguration.getAttribute(REMOTE_PORT_KEY, 0);
+			return launchConfiguration.getAttribute(REMOTE_PORT_KEY, RunConfigurationEditorRemote.DEFAULT_REMOTE_BUILD_PORT);
 		} catch (CoreException ignore) {
 
 		}
@@ -556,6 +560,15 @@ public class ApplicationManager {
 		}
 		return "";
 	}
+	
+	protected String getRemoteKeychainName() {
+		try {
+			return launchConfiguration.getAttribute(REMOTE_KEYCHAIN_NAME_KEY, RunConfigurationEditorRemote.DEFAULT_REMOTE_KEYCHAIN_NAME);
+		} catch (CoreException ignore) {
+
+		}
+		return "";
+	}
 
 	protected String getRemoteKeychainPass() {
 		try {
@@ -568,7 +581,7 @@ public class ApplicationManager {
 
 	protected String getRemoteGradleRepository() {
 		try {
-			return launchConfiguration.getAttribute(REMOTE_GRADLE_REPOSITORIES_KEY, "");
+			return launchConfiguration.getAttribute(REMOTE_GRADLE_REPOSITORIES_KEY, RunConfigurationEditorRemote.DEFAULT_REMOTE_BUILD_REPOSITORY);
 		} catch (CoreException ignore) {
 
 		}
@@ -577,7 +590,7 @@ public class ApplicationManager {
 
 	protected int getRemoteKeychainLockTimeout() {
 		try {
-			return launchConfiguration.getAttribute(REMOTE_KEYCHAIN_LOCK_TIMEOUT_KEY, 0);
+			return launchConfiguration.getAttribute(REMOTE_KEYCHAIN_LOCK_TIMEOUT_KEY, RunConfigurationEditorRemote.DEFAULT_REMOTE_BUILD_TIMEOUT);
 		} catch (CoreException ignore) {
 
 		}
