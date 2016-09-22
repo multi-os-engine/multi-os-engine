@@ -20,6 +20,7 @@ import com.intellij.execution.ExecutionBundle;
 import com.intellij.execution.configuration.BrowseModuleValueActionListener;
 import com.intellij.execution.ui.ConsoleViewContentType;
 import com.intellij.ide.util.PackageChooserDialog;
+import com.intellij.openapi.externalSystem.importing.ImportSpecBuilder;
 import com.intellij.openapi.fileChooser.FileChooser;
 import com.intellij.openapi.fileChooser.FileChooserDescriptor;
 import com.intellij.openapi.fileChooser.FileChooserDescriptorFactory;
@@ -31,6 +32,7 @@ import com.intellij.openapi.project.Project;
 import com.intellij.openapi.ui.ComponentWithBrowseButton;
 import com.intellij.openapi.ui.LabeledComponent;
 import com.intellij.openapi.ui.Messages;
+import com.intellij.openapi.vfs.VfsUtil;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.psi.PsiPackage;
 import com.intellij.ui.EditorTextFieldWithBrowseButton;
@@ -57,14 +59,15 @@ import res.MOEText;
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.IOException;
+import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Properties;
 
 public class MOERunConfigurationEditor extends SettingsEditor<MOERunConfiguration> {
+    private static final int DEFAULT_REMOTE_BUILD_PORT = 22;
+    private static final int DEFAULT_REMOTE_BUILD_TIMEOUT = 3600;
+    private static final String DEFAULT_REMOTE_BUILD_REPOSITORY = "jcenter()";
     private JTabbedPane component;
     private JPanel panel1;
     private JComboBox moduleCombo;
@@ -97,6 +100,8 @@ public class MOERunConfigurationEditor extends SettingsEditor<MOERunConfiguratio
     private JButton importButton;
     private JTextField gradleRepositoriesTextField;
     private ArgumentsPanel argumentsPanel;
+    private JButton exportButton;
+    private JTextField keychainNameTextField;
     private Project myProject;
     private final JRadioButton[] myTestingType2RadioButton = new JRadioButton[3];
     private JComponent anchor;
@@ -184,6 +189,9 @@ public class MOERunConfigurationEditor extends SettingsEditor<MOERunConfiguratio
             if (identityTextField.getText().isEmpty()) {
                 throw new ConfigurationException("Please enter a remote Identity value.");
             }
+            if (keychainNameTextField.getText().isEmpty()) {
+                throw new ConfigurationException("Please enter a remote Keychain.name value.");
+            }
             if (keychainPassTextField.getText().isEmpty()) {
                 throw new ConfigurationException("Please enter a remote Keychain.pass value.");
             }
@@ -211,6 +219,7 @@ public class MOERunConfigurationEditor extends SettingsEditor<MOERunConfiguratio
         configuration.setRemoteKnownhosts(knownhostsTextField.getText());
         configuration.setRemoteIdentity(identityTextField.getText());
         configuration.setRemoteKeychainPass(keychainPassTextField.getText());
+        configuration.setRemoteKeychainName(keychainNameTextField.getText());
         String remoteBuildTimeout = keychainLocktimeoutTextField.getText();
         remoteBuildTimeout = remoteBuildTimeout == null || remoteBuildTimeout.isEmpty() ? "0" : remoteBuildTimeout;
         configuration.setRemoteKeychainLocktimeout(Integer.parseInt(remoteBuildTimeout));
@@ -319,6 +328,13 @@ public class MOERunConfigurationEditor extends SettingsEditor<MOERunConfiguratio
             @Override
             public void actionPerformed(ActionEvent e) {
                 testRemoteConnection();
+            }
+        });
+
+        exportButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                showSavePropertyDialog();
             }
         });
     }
@@ -446,7 +462,7 @@ public class MOERunConfigurationEditor extends SettingsEditor<MOERunConfiguratio
                 Messages.showErrorDialog(component, ExecutionBundle.message("module.not.specified.error.text"));
                 return null;
             }
-            System.out.println("Select package in the module: " + module.getName() + " : project: " + module.getProject().getName());
+
             final PackageChooserDialog dialog = new PackageChooserDialog(ExecutionBundle.message("choose.package.dialog.title"), module.getProject());
             dialog.selectPackage(myPackageComponent.getComponent().getText());
             dialog.show();
@@ -514,11 +530,13 @@ public class MOERunConfigurationEditor extends SettingsEditor<MOERunConfiguratio
         String remoteUser = configuration.getRemoteUser();
         String remoteKnownhosts = configuration.getRemoteKnownhosts();
         String remoteIdentity = configuration.getRemoteIdentity();
+        String remoteKeychainName = configuration.getRemoteKeychainName();
         String remoteKeychainPass = configuration.getRemoteKeychainPass();
         int remoteKeychainLocktimeout = configuration.getRemoteKeychainLocktimeout();
         String remoteGradleRepositories = configuration.getRemoteGradleRepositories();
 
-        updateRemoteBuildSettings(remoteHost, remotePort, remoteUser, remoteKnownhosts, remoteIdentity, remoteKeychainPass,
+        updateRemoteBuildSettings(remoteHost, remotePort, remoteUser, remoteKnownhosts, remoteIdentity,
+                remoteKeychainName, remoteKeychainPass,
                 remoteKeychainLocktimeout, remoteGradleRepositories);
     }
 
@@ -544,13 +562,15 @@ public class MOERunConfigurationEditor extends SettingsEditor<MOERunConfiguratio
                 String remoteUser = property.getProperty("user");
                 String remoteKnownhosts = property.getProperty("knownhosts");
                 String remoteIdentity = property.getProperty("identity");
+                String remoteKeychainName = property.getProperty("keychain.name");
                 String remoteKeychainPass = property.getProperty("keychain.pass");
                 String timeout = property.getProperty("keychain.locktimeout");
                 timeout = timeout == null || timeout.isEmpty() ? "0" : timeout;
                 int remoteKeychainLocktimeout = Integer.parseInt(timeout);
                 String remoteGradleRepositories = property.getProperty("gradle.repositories");
 
-                updateRemoteBuildSettings(remoteHost, remotePort, remoteUser, remoteKnownhosts, remoteIdentity, remoteKeychainPass,
+                updateRemoteBuildSettings(remoteHost, remotePort, remoteUser, remoteKnownhosts, remoteIdentity,
+                        remoteKeychainName, remoteKeychainPass,
                         remoteKeychainLocktimeout, remoteGradleRepositories);
             } catch (Exception e) {
                 showMessage("Unable load properties file");
@@ -567,13 +587,16 @@ public class MOERunConfigurationEditor extends SettingsEditor<MOERunConfiguratio
     }
 
     private void updateRemoteBuildSettings(String remoteHost, int remotePort, String remoteUser, String remoteKnownhosts,
-                                           String remoteIdentity, String remoteKeychainPass, int remoteKeychainLocktimeout,
+                                           String remoteIdentity, String remoteKeychainName,
+                                           String remoteKeychainPass, int remoteKeychainLocktimeout,
                                            String remoteGradleRepositories) {
         if (remoteHost != null && !remoteHost.isEmpty()) {
             hostTextField.setText(remoteHost);
         }
         if (remotePort > 0) {
             portTextField.setText(Integer.toString(remotePort));
+        } else {
+            portTextField.setText(Integer.toString(DEFAULT_REMOTE_BUILD_PORT));
         }
         if (remoteUser != null && !remoteUser.isEmpty()) {
             userTextField.setText(remoteUser);
@@ -584,14 +607,23 @@ public class MOERunConfigurationEditor extends SettingsEditor<MOERunConfiguratio
         if (remoteIdentity != null && !remoteIdentity.isEmpty()) {
             identityTextField.setText(remoteIdentity);
         }
+        if (remoteKeychainName != null && !remoteKeychainName.isEmpty()) {
+            keychainNameTextField.setText(remoteKeychainName);
+        } else {
+            keychainNameTextField.setText("moeremotebuild.keychain");
+        }
         if (remoteKeychainPass != null && !remoteKeychainPass.isEmpty()) {
             keychainPassTextField.setText(remoteKeychainPass);
         }
         if (remoteKeychainLocktimeout > 0) {
             keychainLocktimeoutTextField.setText(Integer.toString(remoteKeychainLocktimeout));
+        } else {
+            keychainLocktimeoutTextField.setText(Integer.toString(DEFAULT_REMOTE_BUILD_TIMEOUT));
         }
         if (remoteGradleRepositories != null && !remoteGradleRepositories.isEmpty()) {
             gradleRepositoriesTextField.setText(remoteGradleRepositories);
+        } else {
+            gradleRepositoriesTextField.setText(DEFAULT_REMOTE_BUILD_REPOSITORY);
         }
     }
 
@@ -617,6 +649,7 @@ public class MOERunConfigurationEditor extends SettingsEditor<MOERunConfiguratio
         String remoteUser = userTextField.getText();
         String remoteKownHosts = knownhostsTextField.getText();
         String remoteIdentity = identityTextField.getText();
+        String remoteKeychainName = keychainNameTextField.getText();
         String remoteKeychainPass = keychainPassTextField.getText();
         String remoteBuildTimeout = keychainLocktimeoutTextField.getText();
         try {
@@ -637,6 +670,7 @@ public class MOERunConfigurationEditor extends SettingsEditor<MOERunConfiguratio
         args.add("-Pmoe.remotebuild.user=" + remoteUser);
         args.add("-Pmoe.remotebuild.knownhosts=" + remoteKownHosts);
         args.add("-Pmoe.remotebuild.identity=" + remoteIdentity);
+        args.add("-Pmoe.remotebuild.keychain.name=" + remoteKeychainName);
         args.add("-Pmoe.remotebuild.keychain.pass=" + remoteKeychainPass);
         args.add("-Pmoe.remotebuild.keychain.locktimeout=" + remoteBuildTimeout);
         args.add("-Pmoe.remotebuild.gradle.repositories=" + remoteGradleRepositories);
@@ -680,6 +714,72 @@ public class MOERunConfigurationEditor extends SettingsEditor<MOERunConfiguratio
             }
         } catch (Exception e) {
             showMessage("Unable run test: " + e.getMessage());
+        }
+    }
+
+    private void showSavePropertyDialog() {
+        final FileChooserDescriptor descriptor = FileChooserDescriptorFactory.createSingleFolderDescriptor();
+        descriptor.setTitle("Select save folder");
+        descriptor.setHideIgnored(true);
+        VirtualFile selected = FileChooser.chooseFile(descriptor, myProject, null);
+
+        if (selected != null) {
+            StringBuilder comment = new StringBuilder();
+            comment.append(" Supported keys and values:");
+            comment.append("\n");
+            comment.append("   host: address of the remote build server");
+            comment.append("\n");
+            comment.append("   port: port for ssh, defaults to 22");
+            comment.append("\n");
+            comment.append("   user: user on the remote build server");
+            comment.append("\n");
+            comment.append("   knownhosts: path to known_hosts file");
+            comment.append("\n");
+            comment.append("   identity: path to private key");
+            comment.append("\n");
+            comment.append("   keychain.name: name of keychain to unlock, defaults to 'moeremotebuild.keychain'");
+            comment.append("\n");
+            comment.append("   keychain.pass: password for keychain, defaults to ''");
+            comment.append("\n");
+            comment.append("   keychain.locktimeout: keychain lock timeout in seconds, defaults to 3600");
+            comment.append("\n");
+            comment.append("   gradle.repositories: repositories to be used when setting up the MOE SDK on the remote server, defaults to 'jcenter()'");
+            comment.append("\n");
+            comment.append("\n");
+            comment.append("The identity and knownhosts keys accept special parameters to access");
+            comment.append("\n");
+            comment.append("   environmental variables ($env$KEY), system properties ($sys$KEY)");
+            comment.append("\n");
+            comment.append("   and project properties ($proj$KEY).");
+            comment.append("\n");
+            comment.append("   Example: knownhosts=$sys$user.home/.ssh/known_hosts");
+            comment.append("\n");
+
+            try {
+                File propertiesFile = new File(selected.getCanonicalPath(), "moe.remotebuild.properties");
+                if (propertiesFile.exists()) {
+                    propertiesFile.delete();
+                }
+
+                Properties props = new Properties();
+                props.setProperty("host", hostTextField.getText());
+                props.setProperty("port", portTextField.getText());
+                props.setProperty("user", userTextField.getText());
+                props.setProperty("knownhosts", knownhostsTextField.getText());
+                props.setProperty("identity", identityTextField.getText());
+                props.setProperty("keychain.name", keychainNameTextField.getText());
+                props.setProperty("keychain.pass", keychainPassTextField.getText());
+                props.setProperty("keychain.locktimeout", keychainLocktimeoutTextField.getText());
+                props.setProperty("gradle.repositories", gradleRepositoriesTextField.getText());
+                OutputStream out = new FileOutputStream(propertiesFile);
+                props.store(out, comment.toString());
+
+                VfsUtil.markDirtyAndRefresh(false, true, true, selected);
+
+                showMessage("Property file saved.");
+            } catch (Exception e) {
+                showMessage("Unable save properties file");
+            }
         }
     }
 }

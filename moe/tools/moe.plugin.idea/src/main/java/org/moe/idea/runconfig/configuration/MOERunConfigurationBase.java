@@ -65,6 +65,7 @@ public abstract class MOERunConfigurationBase extends LocatableConfigurationBase
     protected String remoteKnownhosts;
     protected String remoteIdentity;
     protected String remoteKeychainPass;
+    protected String remoteKeychainName;
     protected int remoteKeychainLocktimeout;
     protected String remoteGradleRepositories;
 
@@ -234,6 +235,14 @@ public abstract class MOERunConfigurationBase extends LocatableConfigurationBase
         this.remoteGradleRepositories = remoteGradleRepositories;
     }
 
+    public String getRemoteKeychainName() {
+        return remoteKeychainName;
+    }
+
+    public void setRemoteKeychainName(String remoteKeychainName) {
+        this.remoteKeychainName = remoteKeychainName;
+    }
+
     @Nullable
     @Override
     public RunProfileState getState(@NotNull Executor executor, @NotNull ExecutionEnvironment executionEnvironment) throws ExecutionException {
@@ -271,6 +280,7 @@ public abstract class MOERunConfigurationBase extends LocatableConfigurationBase
         setRemoteKnownhosts(JDOMExternalizerUtil.readField(element, "remoteKnownhosts"));
         setRemoteIdentity(JDOMExternalizerUtil.readField(element, "remoteIdentity"));
         setRemoteKeychainPass(JDOMExternalizerUtil.readField(element, "remoteKeychainPass"));
+        setRemoteKeychainName(JDOMExternalizerUtil.readField(element, "remoteKeychainName"));
         setRemoteKeychainLocktimeout(JDOMHelper.readInteger(element, "remoteKeychainLocktimeout", 0));
         setRemoteGradleRepositories(JDOMExternalizerUtil.readField(element, "remoteGradleRepositories"));
 
@@ -295,6 +305,7 @@ public abstract class MOERunConfigurationBase extends LocatableConfigurationBase
         JDOMExternalizerUtil.writeField(element, "remoteKnownhosts", getRemoteKnownhosts());
         JDOMExternalizerUtil.writeField(element, "remoteIdentity", getRemoteIdentity());
         JDOMExternalizerUtil.writeField(element, "remoteKeychainPass", getRemoteKeychainPass());
+        JDOMExternalizerUtil.writeField(element, "remoteKeychainName", getRemoteKeychainName());
         JDOMExternalizerUtil.writeField(element, "remoteGradleRepositories", getRemoteGradleRepositories());
     }
 

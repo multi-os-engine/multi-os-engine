@@ -127,6 +127,7 @@ public class MOEGradleRunner {
             args.add("-Pmoe.remotebuild.user=" + runConfig.getRemoteUser());
             args.add("-Pmoe.remotebuild.knownhosts=" + runConfig.getRemoteKnownhosts());
             args.add("-Pmoe.remotebuild.identity=" + runConfig.getRemoteIdentity());
+            args.add("-Pmoe.remotebuild.keychain.name=" + runConfig.getRemoteKeychainName());
             args.add("-Pmoe.remotebuild.keychain.pass=" + runConfig.getRemoteKeychainPass());
             args.add("-Pmoe.remotebuild.keychain.locktimeout=" + Integer.toString(runConfig.getRemoteKeychainLocktimeout()));
             args.add("-Pmoe.remotebuild.gradle.repositories=" + runConfig.getRemoteGradleRepositories());
