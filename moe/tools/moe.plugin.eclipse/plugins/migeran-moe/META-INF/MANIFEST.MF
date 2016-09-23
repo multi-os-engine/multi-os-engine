@@ -4,26 +4,23 @@ Bundle-Name: MOEBuilderPlugin
 Bundle-SymbolicName: MOEBuilderPlugin;singleton:=true
 Bundle-Version: 1.0.0.qualifier
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
-Require-Bundle: org.eclipse.ui;bundle-version="3.108.0",
- org.eclipse.core.resources;bundle-version="3.11",
- org.eclipse.core.runtime;bundle-version="3.12.0",
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime,
  org.eclipse.debug.core;bundle-version="3.10.0",
  org.eclipse.debug.ui;bundle-version="3.11.101",
- org.eclipse.ui.ide;bundle-version="3.11.0",
- org.eclipse.ui.console;bundle-version="3.6.100",
- org.eclipse.jdt.core;bundle-version="3.11.2",
  org.eclipse.jdt.launching;bundle-version="3.8.0",
+ org.eclipse.ui.ide;bundle-version="3.11.0",
+ org.eclipse.jdt.core;bundle-version="3.11.2",
+ org.eclipse.ui.console;bundle-version="3.6.100",
  org.eclipse.jdt.ui;bundle-version="3.11.2",
  org.eclipse.jdt.junit;bundle-version="3.8.0",
+ org.eclipse.m2e.core;bundle-version="1.6.2",
+ org.eclipse.m2e.launching;bundle-version="1.6.2",
  org.eclipse.jdt.junit.runtime;bundle-version="3.4.500",
- org.eclipse.jdt.debug.ui;bundle-version="3.7.101",
  org.eclipse.core.expressions;bundle-version="3.5.0",
  org.apache.log4j;bundle-version="1.2.15",
  com.google.gson;bundle-version="2.2.4",
- org.eclipse.m2e.launching;bundle-version="1.6.2",
- org.eclipse.m2e.maven.runtime;bundle-version="1.7.0",
- org.eclipse.m2e.core;bundle-version="1.7.0",
- org.eclipse.m2e.jdt;bundle-version="1.7.0"
+ org.eclipse.jdt.debug.ui;bundle-version="3.7.101"
 Bundle-Activator: org.moe.MOEPlugin
 Bundle-ClassPath: .,
  lib/moe.generator.project.jar,
