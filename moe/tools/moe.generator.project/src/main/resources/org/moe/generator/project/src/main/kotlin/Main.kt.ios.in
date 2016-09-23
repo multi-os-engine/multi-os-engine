@@ -3,15 +3,15 @@ import Generated
 import RegisterOnStartup
 import Selector
 
-import ios.NSObject
-import ios.foundation.NSDictionary
-import ios.uikit.UIAlertView
-import ios.uikit.UIApplication
-import ios.uikit.UIScreen
-import ios.uikit.UIViewController
-import ios.uikit.UIWindow
-import ios.uikit.c.UIKit
-import ios.uikit.protocol.UIApplicationDelegate
+import apple.NSObject
+import apple.foundation.NSDictionary
+import apple.uikit.UIAlertView
+import apple.uikit.UIApplication
+import apple.uikit.UIScreen
+import apple.uikit.UIViewController
+import apple.uikit.UIWindow
+import apple.uikit.c.UIKit
+import apple.uikit.protocol.UIApplicationDelegate
 
 @RegisterOnStartup
 class Main protected constructor(peer: Pointer) : NSObject(peer), UIApplicationDelegate {

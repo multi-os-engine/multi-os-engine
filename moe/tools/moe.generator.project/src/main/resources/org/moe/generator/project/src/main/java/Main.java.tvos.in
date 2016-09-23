@@ -1,10 +1,10 @@
-import ios.NSObject;
-import ios.foundation.NSDictionary;
-import ios.uikit.*;
-import ios.uikit.c.UIKit;
-import ios.uikit.enums.NSLayoutAttribute;
-import ios.uikit.enums.NSLayoutRelation;
-import ios.uikit.protocol.UIApplicationDelegate;
+import apple.NSObject;
+import apple.foundation.NSDictionary;
+import apple.uikit.*;
+import apple.uikit.c.UIKit;
+import apple.uikit.enums.NSLayoutAttribute;
+import apple.uikit.enums.NSLayoutRelation;
+import apple.uikit.protocol.UIApplicationDelegate;
 
 import Pointer;
 import Generated;
