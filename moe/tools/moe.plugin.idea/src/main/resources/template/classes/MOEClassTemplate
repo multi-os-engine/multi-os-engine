@@ -9,7 +9,7 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.ObjCClassName;
 import org.moe.natj.objc.ann.Selector;
 
-import ios.uikit.__SUBCLASS_NAME__;
+import apple.uikit.__SUBCLASS_NAME__;
 
 @org.moe.natj.general.ann.Runtime(ObjCRuntime.class)
 @ObjCClassName("__CLASS_NAME__")
