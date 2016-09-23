@@ -43,9 +43,9 @@ import org.moe.MOEProjectNature;
 import org.moe.common.utils.ProjectUtil;
 import org.moe.utils.logger.LoggerFactory;
 
-public class MoeProjectConfigurator extends AbstractSourcesGenerationProjectConfigurator {
+public class MOEProjectConfigurator extends AbstractSourcesGenerationProjectConfigurator {
 	
-	private static final Logger LOG = LoggerFactory.getLogger(MoeProjectConfigurator.class);
+	private static final Logger LOG = LoggerFactory.getLogger(MOEProjectConfigurator.class);
 	
 	@Override
 	public AbstractBuildParticipant getBuildParticipant(IMavenProjectFacade projectFacade, 
@@ -59,12 +59,6 @@ public class MoeProjectConfigurator extends AbstractSourcesGenerationProjectConf
 		/*
 		 * In any case, the second in the call queue.
 		 */
-		IProject project = request.getProject(); 
-		if (isMoeProject(project)) {
-			// Add moe nature
-			LOG.debug("Add nature " + MOEProjectNature.NATURE_ID + " to project " + project.getName());
-			MOEProjectNature.addNature(project);
-		}
 	}
 
 	@Override
@@ -73,6 +67,16 @@ public class MoeProjectConfigurator extends AbstractSourcesGenerationProjectConf
 		/*
 		 * This one is called after the Eclipse started. In other cases, always the first in the call queue.
 		 */
+		IProject project = facade.getProject();
+		if (!project.hasNature(MOEProjectNature.NATURE_ID) && isMOEProject(project)) {
+			// Add MOE nature
+			LOG.debug("Add nature " + MOEProjectNature.NATURE_ID + " to project " + project.getName());
+			MOEProjectNature.addNature(project);
+		}
+		if (project.hasNature(MOEProjectNature.NATURE_ID)) {
+			LOG.debug("Found nature " + MOEProjectNature.NATURE_ID + " on project " + project.getName());
+			setSdk(project, classpath);
+		}
 	}
 
 	@Override
@@ -81,27 +85,22 @@ public class MoeProjectConfigurator extends AbstractSourcesGenerationProjectConf
 		/*
 		 * In any case, the last in the call queue.
 		 */
-		IProject project = request.getProject();
-		if (project.hasNature(MOEProjectNature.NATURE_ID)) {
-			LOG.debug("Found nature " + MOEProjectNature.NATURE_ID + " on project " + project.getName());
-			setSdk(project, classpath);
-		}
 	}
 	
 	static final String MOE_JARS_PATH = "sdk";
 	static final List<String> MOE_JARS = Arrays.asList("moe-core.jar", "moe-ios.jar", "moe-ios-junit.jar");
 	
 	private void setSdk(IProject project, IClasspathDescriptor classpath) {
-		LOG.debug("Set moe libs for project " + project.getName());
-		// Find moe home
-		final String moeHome = ProjectUtil.retrieveSDKPathFromGradle(project.getLocation().toFile());
-		if (moeHome == null || moeHome.isEmpty()) {
-			throw new RuntimeException("Unable to find moe home");
+		LOG.debug("Set MOE libs for project " + project.getName());
+		// Find MOE home
+		final String home = ProjectUtil.retrieveSDKPathFromGradle(project.getLocation().toFile());
+		if (home == null || home.isEmpty()) {
+			throw new RuntimeException("Unable to find MOE home");
 		}
-		LOG.debug("Found moe home " + moeHome);
+		LOG.debug("Found MOE home " + home);
 		// Add new entries
 		for (String jar : MOE_JARS) {
-			File f = new File(moeHome, MOE_JARS_PATH + File.separator + jar);
+			File f = new File(home, MOE_JARS_PATH + File.separator + jar);
 			if (!f.exists()) {
 				throw new RuntimeException("Unable to find " + f.getAbsolutePath());
 			}
@@ -114,8 +113,8 @@ public class MoeProjectConfigurator extends AbstractSourcesGenerationProjectConf
 			public boolean accept(IClasspathEntryDescriptor descriptor) {
 				IPath path = descriptor.getPath();
 				if (MOE_JARS.contains(path.lastSegment())) {
-					if (!moeHome.equals(path.removeLastSegments(2).toOSString())) {
-						LOG.debug("Remove old moe lib " + path);
+					if (!home.equals(path.removeLastSegments(2).toOSString())) {
+						LOG.debug("Remove old MOE lib " + path);
 						return true;
 					}
 				}
@@ -127,7 +126,7 @@ public class MoeProjectConfigurator extends AbstractSourcesGenerationProjectConf
 	
 	static final String MOE_MAVEN_ARTIFACT = "moe-maven";
 	
-	private boolean isMoeProject(IProject project) {
+	private boolean isMOEProject(IProject project) {
 		LOG.debug("Find artifact " + MOE_MAVEN_ARTIFACT + " on project " + project.getName());
 		IMavenProjectRegistry projectManager = MavenPlugin.getMavenProjectRegistry();
 		IMavenProjectFacade projectFacade = projectManager.create(project, new NullProgressMonitor());

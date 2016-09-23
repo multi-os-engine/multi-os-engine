@@ -12,7 +12,7 @@
       </pluginExecutionFilter>
       <action>
         <configurator>
-          <id>org.moe.moeConfigurator</id>
+          <id>org.moe.MOEConfigurator</id>
         </configurator>
       </action>
     </pluginExecution>
@@ -27,7 +27,7 @@
       </pluginExecutionFilter>
       <action>
         <configurator>
-          <id>org.moe.moeConfigurator</id>
+          <id>org.moe.MOEConfigurator</id>
         </configurator>
       </action>
     </pluginExecution>

@@ -5,8 +5,8 @@
    <extension
          point="org.eclipse.m2e.core.projectConfigurators">
       <configurator
-            class="org.moe.internal.MoeProjectConfigurator"
-            id="org.moe.moeConfigurator"
+            class="org.moe.internal.MOEProjectConfigurator"
+            id="org.moe.MOEConfigurator"
             name="MOE Project Configurator">
       </configurator>
    </extension>
