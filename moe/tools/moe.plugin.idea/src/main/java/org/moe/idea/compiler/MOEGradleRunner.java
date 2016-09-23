@@ -20,6 +20,7 @@ import com.intellij.execution.ExecutionException;
 import com.intellij.execution.configurations.GeneralCommandLine;
 import com.intellij.openapi.module.Module;
 import com.intellij.openapi.util.text.StringUtil;
+import org.moe.common.configuration.RemoteSettings;
 import org.moe.common.exec.GradleExec;
 import org.moe.idea.runconfig.configuration.MOERunConfiguration;
 import org.moe.idea.utils.ModuleUtils;
@@ -27,6 +28,7 @@ import org.moe.idea.utils.ModuleUtils;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Properties;
 
 public class MOEGradleRunner {
 
@@ -122,15 +124,11 @@ public class MOEGradleRunner {
         // Pass remote build settings
         if (runConfig.isRemoteBuildEnabled()) {
             args.add("-Pmoe.remotebuild.properties.ignore");
-            args.add("-Pmoe.remotebuild.host=" + runConfig.getRemoteHost());
-            args.add("-Pmoe.remotebuild.port=" + Integer.toString(runConfig.getRemotePort()));
-            args.add("-Pmoe.remotebuild.user=" + runConfig.getRemoteUser());
-            args.add("-Pmoe.remotebuild.knownhosts=" + runConfig.getRemoteKnownhosts());
-            args.add("-Pmoe.remotebuild.identity=" + runConfig.getRemoteIdentity());
-            args.add("-Pmoe.remotebuild.keychain.name=" + runConfig.getRemoteKeychainName());
-            args.add("-Pmoe.remotebuild.keychain.pass=" + runConfig.getRemoteKeychainPass());
-            args.add("-Pmoe.remotebuild.keychain.locktimeout=" + Integer.toString(runConfig.getRemoteKeychainLocktimeout()));
-            args.add("-Pmoe.remotebuild.gradle.repositories=" + runConfig.getRemoteGradleRepositories());
+            Properties properties = RemoteSettings.getProperties(runConfig.getRemoteHost(), Integer.toString(runConfig.getRemotePort()),
+                    runConfig.getRemoteUser(), runConfig.getRemoteKnownhosts(), runConfig.getRemoteIdentity(),
+                    runConfig.getRemoteKeychainName(), runConfig.getRemoteKeychainPass(),
+                    Integer.toString(runConfig.getRemoteKeychainLocktimeout()), runConfig.getRemoteGradleRepositories());
+            RemoteSettings.getArguments("-P", properties, args);
         }
 
         // Pass target device
