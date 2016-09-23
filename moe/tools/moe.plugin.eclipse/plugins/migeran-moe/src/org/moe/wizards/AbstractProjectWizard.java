@@ -79,7 +79,7 @@ public abstract class AbstractProjectWizard extends Wizard implements INewWizard
 
 		final File projectFile = new File(projectPath);
 
-		Configuration configuartion = new Configuration("1.0.0");
+		Configuration configuartion = new Configuration("1.2.+");
 		configuartion.setProjectRoot(projectFile);
 		configuartion.setGradleVersion(projecrSettingsPage.getGradleVersion());
 
@@ -100,7 +100,7 @@ public abstract class AbstractProjectWizard extends Wizard implements INewWizard
 
 				monitor.beginTask("Create project...", 4);
 
-				projectTemplate.createProject(getTemplateType().toString().toLowerCase() + ".zip", "1.1.+",
+				projectTemplate.createProject(getTemplateType().toString().toLowerCase() + ".zip", "1.2.+",
 						isNewProject);
 				monitor.worked(1);
 
