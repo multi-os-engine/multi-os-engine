@@ -16,9 +16,11 @@
 
 package org.moe.runconfig;
 
+import java.io.IOException;
 import java.util.Properties;
 
 import org.apache.log4j.Logger;
+import org.eclipse.core.internal.runtime.Log;
 import org.eclipse.core.resources.IProject;
 import org.eclipse.core.resources.IResource;
 import org.eclipse.core.runtime.CoreException;
@@ -611,13 +613,12 @@ public class RunConfigurationEditorRemote extends AbstractTab {
 				IProject project = getProject(editorLocal.getProjectName());
 				project.refreshLocal(IResource.DEPTH_INFINITE, null);
 				showMessage("Property file saved.");
-			} catch (Exception e) {
-				if (e instanceof ConfigurationValidationException) {
-					ConfigurationValidationException validationException = (ConfigurationValidationException) e;
-					showError(validationException.getErrorMessage());
-				} else {
-					showError("Unable save properties file: " + e.getMessage());
-				}
+			} catch (ConfigurationValidationException e) {
+				showError(e.getErrorMessage());
+			} catch (IOException e) {
+				showError("Unable save properties file: " + e.getMessage());
+			} catch (CoreException e) {
+				LOG.error("Unable refresh project: ", e);
 			}
 		}
 	}
