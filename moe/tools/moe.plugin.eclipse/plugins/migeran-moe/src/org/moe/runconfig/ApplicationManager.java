@@ -22,6 +22,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Properties;
 
 import org.apache.log4j.Logger;
 import org.eclipse.core.resources.IProject;
@@ -36,6 +37,7 @@ import org.eclipse.debug.core.model.IProcess;
 import org.eclipse.debug.core.model.IStreamMonitor;
 import org.eclipse.ui.console.MessageConsole;
 import org.eclipse.ui.console.MessageConsoleStream;
+import org.moe.common.configuration.RemoteSettings;
 import org.moe.common.exec.ExecRunner;
 import org.moe.common.exec.ExecRunnerBase.ExecRunnerListener;
 import org.moe.common.exec.GradleExec;
@@ -145,26 +147,11 @@ public class ApplicationManager {
 	}
 
 	private void addRemoteArguments(String prefix, List<String> args) throws CoreException {
-		String remoteHost = getRemoteHost();
-		int remotePort = getRemotePort();
-		String remoteUser = getRemoteUser();
-		String remoteKnownhosts = getRemoteKnownHosts();
-		String remoteIdentity = getRemoteIdentity();
-		String remoteKeychainName = getRemoteKeychainName();
-		String remoteKeychainPass = getRemoteKeychainPass();
-		int remoteKeychainLocktimeout = getRemoteKeychainLockTimeout();
-		String remoteGradleRepositories = getRemoteGradleRepository();
-
-		args.add(prefix + REMOTEBUILD_HOST + remoteHost);
-		args.add(prefix + REMOTEBUILD_PORT + remotePort);
-		args.add(prefix + REMOTEBUILD_USER + remoteUser);
-		args.add(prefix + REMOTEBUILD_KNOWNHOSTS + remoteKnownhosts);
-		args.add(prefix + REMOTEBUILD_IDENTITY + remoteIdentity);
-		args.add(prefix + REMOTEBUILD_KEYCHAIN_NAME + remoteKeychainPass);
-		args.add(prefix + REMOTEBUILD_KEYCHAIN_PASS + remoteKeychainName);
-		args.add(prefix + REMOTEBUILD_KEYCHAINLOCKTIMEOUT + remoteKeychainLocktimeout);
-		args.add(prefix + REMOTEBUILD_GRADLE_REPOSITORIES + remoteGradleRepositories);
-
+		Properties properties = RemoteSettings.getProperties(getRemoteHost(), String.valueOf(getRemotePort()),
+				getRemoteUser(), getRemoteKnownHosts(), getRemoteIdentity(),
+				getRemoteKeychainName(), getRemoteKeychainPass(),
+				String.valueOf(getRemoteKeychainLockTimeout()), getRemoteGradleRepository());
+		RemoteSettings.getArguments(prefix, properties, args);
 	}
 
 	private void addSimulatorUDIDArgument(String prefix, boolean isMaven, List<String> args) throws CoreException {

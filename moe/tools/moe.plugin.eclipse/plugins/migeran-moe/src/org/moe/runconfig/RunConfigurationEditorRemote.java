@@ -16,13 +16,6 @@
 
 package org.moe.runconfig;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.OutputStream;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Properties;
 
 import org.apache.log4j.Logger;
@@ -47,18 +40,17 @@ import org.eclipse.swt.widgets.Listener;
 import org.eclipse.swt.widgets.Text;
 import org.eclipse.ui.console.MessageConsole;
 import org.eclipse.ui.console.MessageConsoleStream;
-import org.moe.common.exec.ExecRunner;
+import org.moe.common.configuration.ConfigurationValidationException;
+import org.moe.common.configuration.RemoteSettings;
 import org.moe.common.exec.ExecRunnerBase;
-import org.moe.common.exec.GradleExec;
 import org.moe.common.utils.OsUtils;
-import org.moe.utils.InputValidationHelper;
 import org.moe.utils.ProjectHelper;
 import org.moe.utils.logger.LoggerFactory;
 
 public class RunConfigurationEditorRemote extends AbstractTab {
 
 	private static final Logger LOG = LoggerFactory.getLogger(RunConfigurationEditorRemote.class);
-	
+
 	public static final int DEFAULT_REMOTE_BUILD_PORT = 22;
 	public static final int DEFAULT_REMOTE_BUILD_TIMEOUT = 3600;
 	public static final String DEFAULT_REMOTE_BUILD_REPOSITORY = "jcenter()";
@@ -202,7 +194,7 @@ public class RunConfigurationEditorRemote extends AbstractTab {
 				setRemoteIdentity(remoteIdentityText.getText());
 			}
 		});
-		
+
 		Label keychainNameLabel = new Label(remoteGroup, SWT.NONE);
 		keychainNameLabel.setText("Keychain.name:");
 
@@ -294,7 +286,7 @@ public class RunConfigurationEditorRemote extends AbstractTab {
 				}
 			}
 		});
-		
+
 		Button exportButton = new Button(parent, SWT.None);
 		exportButton.setLayoutData(new GridData(GridData.FILL_HORIZONTAL));
 		exportButton.setText("Export");
@@ -330,16 +322,18 @@ public class RunConfigurationEditorRemote extends AbstractTab {
 				remoteGroup.setEnabled(true);
 			}
 			setRemoteHost(launchConfiguration.getAttribute(ApplicationManager.REMOTE_HOST_KEY, ""));
-			setRemotePort(launchConfiguration.getAttribute(ApplicationManager.REMOTE_PORT_KEY, DEFAULT_REMOTE_BUILD_PORT));
+			setRemotePort(
+					launchConfiguration.getAttribute(ApplicationManager.REMOTE_PORT_KEY, DEFAULT_REMOTE_BUILD_PORT));
 			setRemoteUser(launchConfiguration.getAttribute(ApplicationManager.REMOTE_USER_KEY, ""));
 			setRemoteKnownhosts(launchConfiguration.getAttribute(ApplicationManager.REMOTE_KNOWN_HOSTS_KEY, ""));
 			setRemoteIdentity(launchConfiguration.getAttribute(ApplicationManager.REMOTE_IDENTITY_KEY, ""));
-			setRemoteKeychainName(launchConfiguration.getAttribute(ApplicationManager.REMOTE_KEYCHAIN_NAME_KEY, DEFAULT_REMOTE_KEYCHAIN_NAME));
+			setRemoteKeychainName(launchConfiguration.getAttribute(ApplicationManager.REMOTE_KEYCHAIN_NAME_KEY,
+					DEFAULT_REMOTE_KEYCHAIN_NAME));
 			setRemoteKeychainPass(launchConfiguration.getAttribute(ApplicationManager.REMOTE_KEYCHAIN_PASS_KEY, ""));
-			setRemoteKeychainLocktimeout(
-					launchConfiguration.getAttribute(ApplicationManager.REMOTE_KEYCHAIN_LOCK_TIMEOUT_KEY, DEFAULT_REMOTE_BUILD_TIMEOUT));
-			setRemoteGradleRepositories(
-					launchConfiguration.getAttribute(ApplicationManager.REMOTE_GRADLE_REPOSITORIES_KEY, DEFAULT_REMOTE_BUILD_REPOSITORY));
+			setRemoteKeychainLocktimeout(launchConfiguration
+					.getAttribute(ApplicationManager.REMOTE_KEYCHAIN_LOCK_TIMEOUT_KEY, DEFAULT_REMOTE_BUILD_TIMEOUT));
+			setRemoteGradleRepositories(launchConfiguration
+					.getAttribute(ApplicationManager.REMOTE_GRADLE_REPOSITORIES_KEY, DEFAULT_REMOTE_BUILD_REPOSITORY));
 
 			updateRemoteBuildSettings(remoteHost, remotePort, remoteUser, remoteKnownhosts, remoteIdentity,
 					remoteKeychainName, remoteKeychainPass, remoteKeychainLocktimeout, remoteGradleRepositories);
@@ -382,63 +376,14 @@ public class RunConfigurationEditorRemote extends AbstractTab {
 		setMessage(null);
 
 		if (isRemoteBuildEnabled()) {
-			String host = remoteHostText.getText();
-			if (host == null || host.isEmpty()) {
-				setErrorMessage("Please enter a remote host value.");
-				return false;
-			}
-
-			String port = remotePortText.getText();
-			if (port == null || port.isEmpty()) {
-				setErrorMessage("Please enter a debug port");
-				return false;
-			} else if (!InputValidationHelper.isInteger(port)) {
-				setErrorMessage("Wrong remote port number, please enter a numeric value.");
-				return false;
-			}
-
-			String user = remoteUserText.getText();
-			if (user == null || user.isEmpty()) {
-				setErrorMessage("Please enter a remote user value.");
-				return false;
-			}
-
-			String remoteKnownhosts = remoteKnownhostsText.getText();
-			if (remoteKnownhosts == null || remoteKnownhosts.isEmpty()) {
-				setErrorMessage("Please enter a remote Knownhosts value.");
-				return false;
-			}
-
-			String remoteIdentity = remoteIdentityText.getText();
-			if (remoteIdentity == null || remoteIdentity.isEmpty()) {
-				setErrorMessage("Please enter a remote Identity value.");
-				return false;
-			}
-			
-			String remoteKeychainName = remoteKeychainNameText.getText();
-			if (remoteKeychainName == null || remoteKeychainName.isEmpty()) {
-				setErrorMessage("Please enter a remote Keychain.name value.");
-				return false;
-			}
-
-			String remoteKeychainPass = remoteKeychainPassText.getText();
-			if (remoteKeychainPass == null || remoteKeychainPass.isEmpty()) {
-				setErrorMessage("Please enter a remote Keychain.pass value.");
-				return false;
-			}
-
-			String remoteKeychainLocktimeout = remoteKeychainLocktimeoutText.getText();
-			if (remoteKeychainLocktimeout == null || remoteKeychainLocktimeout.isEmpty()) {
-				setErrorMessage("Wrong remote Keychain.locktimeout number, please enter a numeric value.");
-				return false;
-			} else if (!InputValidationHelper.isInteger(remoteKeychainLocktimeout)) {
-				setErrorMessage("Please enter a Keychain.locktimeout number value.");
-				return false;
-			}
-
-			String remoteGradleRepositories = remoteGradleRepositoriesText.getText();
-			if (remoteGradleRepositories == null || remoteGradleRepositories.isEmpty()) {
-				setErrorMessage("Please enter a remote gradle repositories value.");
+			Properties properties = RemoteSettings.getProperties(remoteHostText.getText(), remotePortText.getText(),
+					remoteUserText.getText(), remoteKnownhostsText.getText(), remoteIdentityText.getText(),
+					remoteKeychainNameText.getText(), remoteKeychainPassText.getText(),
+					remoteKeychainLocktimeoutText.getText(), remoteGradleRepositoriesText.getText());
+			try {
+				RemoteSettings.validate(properties);
+			} catch (ConfigurationValidationException e) {
+				setErrorMessage(e.getErrorMessage());
 				return false;
 			}
 		}
@@ -517,7 +462,7 @@ public class RunConfigurationEditorRemote extends AbstractTab {
 	public void setRemoteGradleRepositories(String remoteGradleRepositories) {
 		this.remoteGradleRepositories = remoteGradleRepositories;
 	}
-	
+
 	public void setRemoteKeychainName(String remoteKeychainName) {
 		this.remoteKeychainName = remoteKeychainName;
 	}
@@ -534,47 +479,35 @@ public class RunConfigurationEditorRemote extends AbstractTab {
 		String selected = fileDialog.open();
 
 		if (selected != null) {
-			FileInputStream inStream = null;
-			Properties property;
-			try {
-				File propertiesFile = new File(selected);
-				inStream = new FileInputStream(propertiesFile);
-				property = new Properties();
-				property.load(inStream);
 
-				String remoteHost = property.getProperty("host");
-				String port = property.getProperty("port");
+			try {
+
+				Properties property = RemoteSettings.readProperties(selected);
+				String remoteHost = property.getProperty(RemoteSettings.HOST_KEY);
+				String port = property.getProperty(RemoteSettings.PORT_KEY);
 				port = port == null || port.isEmpty() ? "0" : port;
 				int remotePort = Integer.parseInt(port);
-				String remoteUser = property.getProperty("user");
-				String remoteKnownhosts = property.getProperty("knownhosts");
-				String remoteIdentity = property.getProperty("identity");
-				String remoteKeychainName = property.getProperty("keychain.name");
-				String remoteKeychainPass = property.getProperty("keychain.pass");
-				String timeout = property.getProperty("keychain.locktimeout");
+				String remoteUser = property.getProperty(RemoteSettings.USER_KEY);
+				String remoteKnownhosts = property.getProperty(RemoteSettings.KNOWHOSTS_KEY);
+				String remoteIdentity = property.getProperty(RemoteSettings.IDENTITY_KEY);
+				String remoteKeychainName = property.getProperty(RemoteSettings.KEYCHAIN_NAME_KEY);
+				String remoteKeychainPass = property.getProperty(RemoteSettings.KEYCHAIN_PASS_KEY);
+				String timeout = property.getProperty(RemoteSettings.KEYCHAIN_LOCKTIMEOUT_KEY);
 				timeout = timeout == null || timeout.isEmpty() ? "0" : timeout;
 				int remoteKeychainLocktimeout = Integer.parseInt(timeout);
-				String remoteGradleRepositories = property.getProperty("gradle.repositories");
+				String remoteGradleRepositories = property.getProperty(RemoteSettings.GRADLE_REPOSITORIES_KEY);
 
 				updateRemoteBuildSettings(remoteHost, remotePort, remoteUser, remoteKnownhosts, remoteIdentity,
 						remoteKeychainName, remoteKeychainPass, remoteKeychainLocktimeout, remoteGradleRepositories);
 			} catch (Exception e) {
 				showError("Unable load properties file");
-			} finally {
-				if (inStream != null) {
-					try {
-						inStream.close();
-					} catch (IOException e) {
-						LOG.warn("Unable to close stream", e);
-					}
-				}
 			}
 		}
 	}
 
 	private void updateRemoteBuildSettings(String remoteHost, int remotePort, String remoteUser,
-			String remoteKnownhosts, String remoteIdentity, String remoteKeychainName, String remoteKeychainPass, int remoteKeychainLocktimeout,
-			String remoteGradleRepositories) {
+			String remoteKnownhosts, String remoteIdentity, String remoteKeychainName, String remoteKeychainPass,
+			int remoteKeychainLocktimeout, String remoteGradleRepositories) {
 
 		if (remoteHost != null && !remoteHost.isEmpty()) {
 			remoteHostText.setText(remoteHost);
@@ -583,7 +516,7 @@ public class RunConfigurationEditorRemote extends AbstractTab {
 			remotePortText.setText(Integer.toString(remotePort));
 		} else {
 			remotePortText.setText(Integer.toString(DEFAULT_REMOTE_BUILD_PORT));
-        }
+		}
 		if (remoteUser != null && !remoteUser.isEmpty()) {
 			remoteUserText.setText(remoteUser);
 		}
@@ -595,9 +528,9 @@ public class RunConfigurationEditorRemote extends AbstractTab {
 		}
 		if (remoteKeychainName != null && !remoteKeychainName.isEmpty()) {
 			remoteKeychainNameText.setText(remoteKeychainName);
-        } else {
-        	remoteKeychainNameText.setText(DEFAULT_REMOTE_KEYCHAIN_NAME);
-        }
+		} else {
+			remoteKeychainNameText.setText(DEFAULT_REMOTE_KEYCHAIN_NAME);
+		}
 		if (remoteKeychainPass != null && !remoteKeychainPass.isEmpty()) {
 			remoteKeychainPassText.setText(remoteKeychainPass);
 		}
@@ -608,7 +541,7 @@ public class RunConfigurationEditorRemote extends AbstractTab {
 			remoteGradleRepositoriesText.setText(remoteGradleRepositories);
 		} else {
 			remoteGradleRepositoriesText.setText(DEFAULT_REMOTE_BUILD_REPOSITORY);
-        }
+		}
 	}
 
 	private void testRemoteConnection() {
@@ -624,160 +557,69 @@ public class RunConfigurationEditorRemote extends AbstractTab {
 			return;
 		}
 
-		String remoteHost = remoteHostText.getText();
-		String remotePort = remotePortText.getText();
-
+		Properties properties = RemoteSettings.getProperties(remoteHostText.getText(), remotePortText.getText(),
+				remoteUserText.getText(), remoteKnownhostsText.getText(), remoteIdentityText.getText(),
+				remoteKeychainNameText.getText(), remoteKeychainPassText.getText(),
+				remoteKeychainLocktimeoutText.getText(), remoteGradleRepositoriesText.getText());
 		try {
-			Integer.parseInt(remotePort);
-		} catch (NumberFormatException e) {
-			showError("Wrong remote port number, please enter a numeric value.");
-			return;
+			RemoteSettings.validate(properties);
+		} catch (ConfigurationValidationException e) {
+			showError(e.getErrorMessage());
 		}
-
-		String remoteUser = remoteUserText.getText();
-		String remoteKownHosts = remoteKnownhostsText.getText();
-		String remoteIdentity = remoteIdentityText.getText();
-		String remoteKeychainName = remoteKeychainNameText.getText();
-		String remoteKeychainPass = remoteKeychainPassText.getText();
-		String remoteBuildTimeout = remoteKeychainLocktimeoutText.getText();
-
-		try {
-			Integer.parseInt(remoteBuildTimeout);
-		} catch (NumberFormatException e) {
-			showError("Wrong remote build timeout number, please enter a numeric value.");
-			return;
-		}
-
-		String remoteGradleRepositories = remoteGradleRepositoriesText.getText();
-
-		List<String> args = new ArrayList<String>();
-
-		args.add("moeTestRemote");
-		args.add("-Pmoe.remotebuild.properties.ignore");
-
-		args.add("-Pmoe.remotebuild.host=" + remoteHost);
-		args.add("-Pmoe.remotebuild.port=" + remotePort);
-		args.add("-Pmoe.remotebuild.user=" + remoteUser);
-		args.add("-Pmoe.remotebuild.knownhosts=" + remoteKownHosts);
-		args.add("-Pmoe.remotebuild.identity=" + remoteIdentity);
-		args.add("-Pmoe.remotebuild.keychain.name=" + remoteKeychainName);
-		args.add("-Pmoe.remotebuild.keychain.pass=" + remoteKeychainPass);
-		args.add("-Pmoe.remotebuild.keychain.locktimeout=" + remoteBuildTimeout);
-		args.add("-Pmoe.remotebuild.gradle.repositories=" + remoteGradleRepositories);
-		args.add("-s");
-
-		File f = project.getLocation().toFile();
-		GradleExec exec = new GradleExec(f);
-		exec.getArguments().addAll(args);
-		ExecRunner runner = null;
 		MessageConsole console = MOEProjectBuildConsole.getBuildConsole();
 		console.activate();
 		final MessageConsoleStream out = console.newMessageStream();
-		try {
-			runner = exec.getRunner();
-			runner.setListener(new ExecRunnerBase.ExecRunnerListener() {
-				@Override
-				public void stdout(String s) {
-					out.println(s);
-				}
+		String errorMessage = RemoteSettings.test(project.getLocation().toFile(), properties,
+				new ExecRunnerBase.ExecRunnerListener() {
+					@Override
+					public void stdout(String s) {
+						out.println(s);
+					}
 
-				@Override
-				public void stderr(String s) {
-					out.println(s);
-				}
-			});
-		} catch (IOException e) {
-			showError("Unable run test: " + e.getMessage());
-		}
+					@Override
+					public void stderr(String s) {
+						out.println(s);
+					}
+				});
 
-		if (runner != null) {
-			runner.getBuilder().directory(f);
-		}
-
-		try {
-			Process process = runner.execute();
-			int result = process.waitFor();
-
-			if (result != 0) {
-				showError("Test fail");
-			} else {
-				showMessage("Test successful.");
-
-			}
-		} catch (Exception e) {
-			showError("Unable run test: " + e.getMessage());
+		if (errorMessage == null) {
+			showMessage("Test successful");
+		} else {
+			showError(errorMessage);
 		}
 	}
 
 	public void setRunConfigurationEditorLocal(RunConfigurationEditorLocal editor) {
 		this.editorLocal = editor;
 	}
-	
+
 	private void showExportPropertyDialog() {
 		DirectoryDialog dialog = new DirectoryDialog(getShell());
 		dialog.setText("Select save folder");
-		
+
 		String selected = dialog.open();
-		
+
 		if (selected != null) {
-			StringBuilder comment = new StringBuilder();
-            comment.append(" Supported keys and values:");
-            comment.append("\n");
-            comment.append("   host: address of the remote build server");
-            comment.append("\n");
-            comment.append("   port: port for ssh, defaults to 22");
-            comment.append("\n");
-            comment.append("   user: user on the remote build server");
-            comment.append("\n");
-            comment.append("   knownhosts: path to known_hosts file");
-            comment.append("\n");
-            comment.append("   identity: path to private key");
-            comment.append("\n");
-            comment.append("   keychain.name: name of keychain to unlock, defaults to 'moeremotebuild.keychain'");
-            comment.append("\n");
-            comment.append("   keychain.pass: password for keychain, defaults to ''");
-            comment.append("\n");
-            comment.append("   keychain.locktimeout: keychain lock timeout in seconds, defaults to 3600");
-            comment.append("\n");
-            comment.append("   gradle.repositories: repositories to be used when setting up the MOE SDK on the remote server, defaults to 'jcenter()'");
-            comment.append("\n");
-            comment.append("\n");
-            comment.append("The identity and knownhosts keys accept special parameters to access");
-            comment.append("\n");
-            comment.append("   environmental variables ($env$KEY), system properties ($sys$KEY)");
-            comment.append("\n");
-            comment.append("   and project properties ($proj$KEY).");
-            comment.append("\n");
-            comment.append("   Example: knownhosts=$sys$user.home/.ssh/known_hosts");
-            comment.append("\n");
 
-            try {
-                File propertiesFile = new File(selected, "moe.remotebuild.properties");
-                if (propertiesFile.exists()) {
-                    propertiesFile.delete();
-                }
-
-                Properties props = new Properties();
-                props.setProperty("host", remoteHostText.getText());
-                props.setProperty("port", remotePortText.getText());
-                props.setProperty("user", remoteUserText.getText());
-                props.setProperty("knownhosts", remoteKnownhostsText.getText());
-                props.setProperty("identity", remoteIdentityText.getText());
-                props.setProperty("keychain.name", remoteKeychainNameText.getText());
-                props.setProperty("keychain.pass", remoteKeychainPassText.getText());
-                props.setProperty("keychain.locktimeout", remoteKeychainLocktimeoutText.getText());
-                props.setProperty("gradle.repositories", remoteGradleRepositoriesText.getText());
-                OutputStream out = new FileOutputStream(propertiesFile);
-                props.store(out, comment.toString());
-                
-                IProject project = getProject(editorLocal.getProjectName());
-                project.refreshLocal(IResource.DEPTH_INFINITE, null);
-
-                showMessage("Property file saved.");
-            } catch (Exception e) {
-            	showError("Unable save properties file");
-            }
-        }
+			try {
+				Properties properties = RemoteSettings.getProperties(remoteHostText.getText(), remotePortText.getText(),
+						remoteUserText.getText(), remoteKnownhostsText.getText(), remoteIdentityText.getText(),
+						remoteKeychainNameText.getText(), remoteKeychainPassText.getText(),
+						remoteKeychainLocktimeoutText.getText(), remoteGradleRepositoriesText.getText());
+				RemoteSettings.validate(properties);
+				RemoteSettings.saveProperties(selected, properties);
+				IProject project = getProject(editorLocal.getProjectName());
+				project.refreshLocal(IResource.DEPTH_INFINITE, null);
+				showMessage("Property file saved.");
+			} catch (Exception e) {
+				if (e instanceof ConfigurationValidationException) {
+					ConfigurationValidationException validationException = (ConfigurationValidationException) e;
+					showError(validationException.getErrorMessage());
+				} else {
+					showError("Unable save properties file: " + e.getMessage());
+				}
+			}
+		}
 	}
 
 }
