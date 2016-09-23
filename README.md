@@ -42,10 +42,10 @@ repo init -u https://github.com/multi-os-engine/manifest.git
 repo sync
 ```
 
-Note: if you want to get the source code from development branch with initial support of Windows and bitcode, switch to "moedev" branch:
+Note: if you want to get the source code from development branch with initial support of Windows and bitcode, switch to "moe-windows-bitcode" branch:
 
 ```
-repo init -u https://github.com/multi-os-engine/manifest.git -b moedev
+repo init -u https://github.com/multi-os-engine/manifest.git -b moe-windows-bitcode
 repo sync
 ```
 
