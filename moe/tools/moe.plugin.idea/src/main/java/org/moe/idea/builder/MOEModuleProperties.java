@@ -24,8 +24,6 @@ public class MOEModuleProperties {
     private String companyIdentifier;
     private String projectRoot;
     private String mainClassName = "Main";
-    private String xcodeProjectPath;
-    private boolean keepXcodeProject;
 
     public String getProjectRoot() {
         return projectRoot;
@@ -73,21 +71,5 @@ public class MOEModuleProperties {
 
     public void setMainClassName(String mainClassName) {
         this.mainClassName = mainClassName;
-    }
-
-    public boolean isKeepXcodeProject() {
-        return keepXcodeProject;
-    }
-
-    public String getXcodeProjectPath() {
-        return xcodeProjectPath;
-    }
-
-    public void setXcodeProjectPath(String xcodeProjectPath) {
-        this.xcodeProjectPath = xcodeProjectPath;
-    }
-
-    public void setKeepXcodeProject(boolean keepXcodeProject) {
-        this.keepXcodeProject = keepXcodeProject;
     }
 }

@@ -33,9 +33,6 @@ public class MOEWizardPageTwo extends ModuleWizardStep {
     private JTextField productName;
     private JTextField organizationName;
     private JTextField companyIdentifier;
-    private JRadioButton keepXcodeProject;
-    private JLabel xcodeProjectPathLabel;
-    private JTextField xcodeProjectPath;
 
     public JPanel getPanel() {
         return panel;
@@ -43,7 +40,6 @@ public class MOEWizardPageTwo extends ModuleWizardStep {
 
     public MOEWizardPageTwo(MOEModuleBuilder moduleBuilder) {
         this.moduleBuilder = moduleBuilder;
-        initControls();
     }
 
     @Override
@@ -59,27 +55,5 @@ public class MOEWizardPageTwo extends ModuleWizardStep {
         config.setProductName(productName.getText());
         config.setOrganizationName(organizationName.getText());
         config.setCompanyIdentifier(companyIdentifier.getText());
-        config.setKeepXcodeProject(keepXcodeProject.isSelected());
-        config.setXcodeProjectPath(xcodeProjectPath.getText());
-    }
-
-    private void initControls() {
-        keepXcodeProject.setSelected(false);
-        xcodeProjectPath.setVisible(false);
-        xcodeProjectPathLabel.setVisible(false);
-
-        keepXcodeProject.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                if (keepXcodeProject.isSelected()) {
-                    xcodeProjectPath.setVisible(true);
-                    xcodeProjectPathLabel.setVisible(true);
-                } else {
-                    xcodeProjectPath.setVisible(false);
-                    xcodeProjectPathLabel.setVisible(false);
-                }
-            }
-        });
-
     }
 }

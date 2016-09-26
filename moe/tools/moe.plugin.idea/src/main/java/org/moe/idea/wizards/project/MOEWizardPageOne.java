@@ -37,9 +37,6 @@ public class MOEWizardPageOne extends ModuleWizardStep {
     private JTextField productName;
     private JTextField organizationName;
     private JTextField companyIdentifier;
-    private JRadioButton keepXcodeProject;
-    private JLabel xcodeProjectPathLabel;
-    private JTextField xcodeProjectPath;
 
     private Pattern validJavaPackagePattern = Pattern.compile("^[a-zA-Z_\\$][\\w\\$]*(?:\\.[a-zA-Z_\\$][\\w\\$]*)*$");
 
@@ -73,14 +70,6 @@ public class MOEWizardPageOne extends ModuleWizardStep {
         if (companyIdentifier != null) {
             config.setCompanyIdentifier(companyIdentifier.getText());
         }
-
-        if (keepXcodeProject != null) {
-            config.setKeepXcodeProject(keepXcodeProject.isSelected());
-        }
-
-        if (xcodeProjectPath != null) {
-            config.setXcodeProjectPath(xcodeProjectPath.getText());
-        }
     }
 
     @Override
@@ -109,12 +98,6 @@ public class MOEWizardPageOne extends ModuleWizardStep {
                     "3) A digit cannot be the first character.");
         }
 
-        if (keepXcodeProject.isSelected()) {
-            if (xcodeProjectPath.getText().trim().isEmpty()) {
-                throw new ConfigurationException("Enter a Xcode Project Path");
-            }
-        }
-
         return true;
     }
 
@@ -126,22 +109,5 @@ public class MOEWizardPageOne extends ModuleWizardStep {
                 }
             });
         }
-
-        keepXcodeProject.setSelected(false);
-        xcodeProjectPath.setVisible(false);
-        xcodeProjectPathLabel.setVisible(false);
-
-        keepXcodeProject.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                if (keepXcodeProject.isSelected()) {
-                    xcodeProjectPath.setVisible(true);
-                    xcodeProjectPathLabel.setVisible(true);
-                } else {
-                    xcodeProjectPath.setVisible(false);
-                    xcodeProjectPathLabel.setVisible(false);
-                }
-            }
-        });
     }
 }

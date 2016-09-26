@@ -261,8 +261,8 @@ public class MOEModuleBuilder extends JavaModuleBuilder {
                 .organizationName(moduleProperties.getOrganizationName())
                 .companyIdentifier(moduleProperties.getCompanyIdentifier())
                 .mainClassName(moduleProperties.getMainClassName())
-                .keepXcode(moduleProperties.isKeepXcodeProject())
-                .xcodeProjectPath(moduleProperties.getXcodeProjectPath());
+                .keepXcode(true)
+                .xcodeProjectPath("xcode");
 
         // TODO: Implement better handling of Gradle plugin version
         projectTemplate.createProject(template.getType().toString().toLowerCase() + ".zip", "1.2.+", isNewProject);
