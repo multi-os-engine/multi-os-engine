@@ -73,8 +73,8 @@ public abstract class AbstractProjectWizard extends Wizard implements INewWizard
 
 		projectTemplate.rootPath(projectPath).packageName(packageName).projectName(productName)
 				.organizationName(organizationName).companyIdentifier(xcodeWizardPage.getCompanyIdentifier())
-				.mainClassName(mainClassName).keepXcode(xcodeWizardPage.isKeepXcodeProject())
-				.xcodeProjectPath(xcodeWizardPage.getXcodeProjectPath()).useEclipse(true);
+				.mainClassName(mainClassName).keepXcode(true)
+				.xcodeProjectPath("xcode").useEclipse(true);
 
 		final File projectFile = new File(projectPath);
 

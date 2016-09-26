@@ -27,12 +27,9 @@ import org.eclipse.swt.events.ModifyEvent;
 import org.eclipse.swt.events.ModifyListener;
 import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.layout.GridLayout;
-import org.eclipse.swt.widgets.Button;
 import org.eclipse.swt.widgets.Composite;
-import org.eclipse.swt.widgets.Event;
 import org.eclipse.swt.widgets.Group;
 import org.eclipse.swt.widgets.Label;
-import org.eclipse.swt.widgets.Listener;
 import org.eclipse.swt.widgets.Text;
 
 public class XcodeWizardPage extends AbstractWizardPage {
@@ -41,10 +38,6 @@ public class XcodeWizardPage extends AbstractWizardPage {
 	private Text productNameText;
 	private Text organizationNameText;
 	private Text companyIdentifierText;
-	private Button keepXcodeButton;
-	private Label xcodePathLabel;
-	private Text xcodePathText;
-	private Group xcodePathGroup;
 
 	private Pattern validJavaPackagePattern = Pattern.compile("^[a-zA-Z_\\$][\\w\\$]*(?:\\.[a-zA-Z_\\$][\\w\\$]*)*$");
 
@@ -88,36 +81,6 @@ public class XcodeWizardPage extends AbstractWizardPage {
 				productNameText.setText(xcodeProjectNameText.getText());
 			}
 		});
-
-		keepXcodeButton = new Button(projectGroup, SWT.CHECK);
-		keepXcodeButton.setText("Keep Xcode Project");
-		keepXcodeButton.addListener(SWT.Selection, new Listener() {
-
-			@Override
-			public void handleEvent(Event event) {
-				switch (event.type) {
-				case SWT.Selection: {
-					xcodePathGroup.setVisible(keepXcodeButton.getSelection());
-				}
-					break;
-				}
-			}
-		});
-
-		xcodePathGroup = new Group(projectGroup, SWT.NONE);
-		xcodePathGroup.setLayoutData(new GridData(GridData.FILL_HORIZONTAL));
-		GridLayout xcodePathLayout = new GridLayout();
-		xcodePathLayout.numColumns = 2;
-		xcodePathGroup.setLayout(xcodePathLayout);
-		xcodePathGroup.setVisible(false);
-
-		xcodePathLabel = new Label(xcodePathGroup, SWT.NONE);
-		xcodePathLabel.setText("Xcode Project Path:");
-
-		xcodePathText = new Text(xcodePathGroup, SWT.SINGLE | SWT.BORDER);
-		xcodePathText.addModifyListener(new ValidateListener());
-		xcodePathText.setLayoutData(new GridData(GridData.FILL_HORIZONTAL));
-		xcodePathText.setText("xcode");
 
 		Group bundleGroup = new Group(parent, SWT.NONE);
 		bundleGroup.setLayoutData(new GridData(GridData.FILL_HORIZONTAL));
@@ -172,14 +135,6 @@ public class XcodeWizardPage extends AbstractWizardPage {
 		return productNameText.getText().trim();
 	}
 
-	public String getXcodeProjectPath() {
-		return xcodePathText.getText().trim();
-	}
-
-	public boolean isKeepXcodeProject() {
-		return keepXcodeButton.getSelection();
-	}
-
 	public String getCompanyIdentifier() {
 		return companyIdentifierText.getText().trim();
 	}
@@ -213,13 +168,6 @@ public class XcodeWizardPage extends AbstractWizardPage {
 					"Product Name or Project Name is invalid!\n" + "1) Allowed word characters (a-zA-Z_0-9) and dots.\n"
 							+ "2) Segments between dots must be of non-zero length.\n"
 							+ "3) A digit cannot be the first character.");
-		}
-
-		if (keepXcodeButton.getSelection()) {
-			if (xcodePathText.getText().trim().isEmpty()) {
-				setErrorMessage("Enter a Xcode Project Path");
-				return false;
-			}
 		}
 
 		setPageComplete(true);
