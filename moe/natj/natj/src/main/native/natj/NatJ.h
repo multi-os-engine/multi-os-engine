@@ -1009,4 +1009,9 @@ bool removeWeakReference(JNIEnv* env, uint64_t reference);
  */
 jobject getWeakReference(JNIEnv* env, uint64_t reference);
 
+/**
+ * Prints the current thread's Java stack trace
+ */
+void natj_printJavaStackTrace(JNIEnv* env);
+
 #endif

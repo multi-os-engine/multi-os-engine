@@ -1672,3 +1672,21 @@ jobject getWeakReference(JNIEnv* env, uint64_t reference) {
   return env->CallStaticObjectMethod(gNatJClass, gGetWeakReferenceStaticMethod,
                                      reference);
 }
+
+void natj_printJavaStackTrace(JNIEnv *env) {
+  jclass cls = env->FindClass("java/lang/Exception");
+  if (cls != NULL) {
+    jmethodID constructor = env->GetMethodID(cls, "<init>", "()V");
+    if(constructor != NULL) {
+      jobject exc = env->NewObject(cls, constructor);
+      if(exc != NULL) {
+        jmethodID printStackTrace = env->GetMethodID(cls, "printStackTrace", "()V");
+        if(printStackTrace != NULL) {
+          env->CallObjectMethod(exc, printStackTrace);
+        }
+      }
+      env->DeleteLocalRef(exc);
+    }
+  }
+  env->DeleteLocalRef(cls);
+}

@@ -24,10 +24,6 @@
 #ifndef JNI_H_
 #define JNI_H_
 
-#if ITB
-#error Deprecated macro
-#endif
-
 #include <stdarg.h>
 
 /*
