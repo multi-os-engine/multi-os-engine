@@ -24,7 +24,11 @@ import org.eclipse.ui.console.MessageConsole;
 public class MOEProjectBuildConsole {
 
 	public static MessageConsole getBuildConsole() {
-		return getConsole("Migeran Multi-OS Engine");
+		return getConsole("Multi-OS Engine Build");
+	}
+	
+	public static MessageConsole getLaunchConsole() {
+		return getConsole("Multi-OS Engine Launch");
 	}
 
 	private static MessageConsole getConsole(String name) {

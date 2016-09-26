@@ -36,6 +36,8 @@ import org.eclipse.debug.core.model.IStreamMonitor;
 import org.eclipse.debug.core.model.IStreamsProxy;
 import org.eclipse.jdt.launching.IVMConnector;
 import org.eclipse.jdt.launching.JavaRuntime;
+import org.eclipse.ui.console.MessageConsole;
+import org.eclipse.ui.console.MessageConsoleStream;
 import org.moe.common.junit.MOETestResultParser;
 import org.moe.utils.logger.LoggerFactory;
 
@@ -168,9 +170,13 @@ public class Launcher implements IProcess {
 		private Object lock = new Object();
 		private StringBuffer stringBuffer = new StringBuffer();
 		private boolean stopped = false;
+		private MessageConsoleStream consoleStream;
 
 		public StreamMonitor(InputStream in) {
 			this.mInputStream = in;
+			MessageConsole console = MOEProjectBuildConsole.getLaunchConsole();
+			console.clearConsole();
+			this.consoleStream = console.newMessageStream();
 
 			new Thread(new Runnable() {
 
@@ -185,6 +191,7 @@ public class Launcher implements IProcess {
 									int size = mInputStream.read(buffer);
 									String content = new String(buffer, 0, size, "UTF-8");
 									stringBuffer.append(content);
+									consoleStream.println(content);
 									for (IStreamListener listener : listeners) {
 										listener.streamAppended(content, StreamMonitor.this);
 									}
