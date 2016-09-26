@@ -125,6 +125,7 @@ public class ProjecrSettingsPage extends AbstractWizardPage {
 
 		ArrayList<String> gradleVersions = new ArrayList<String>();
 		gradleVersions.add("2.14.1");
+		gradleVersions.add("3.0");
 
 		if (gradleVersions != null && !gradleVersions.isEmpty()) {
 			for (String s : gradleVersions) {

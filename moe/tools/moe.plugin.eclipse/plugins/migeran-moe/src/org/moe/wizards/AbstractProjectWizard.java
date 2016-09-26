@@ -42,7 +42,6 @@ public abstract class AbstractProjectWizard extends Wizard implements INewWizard
 	private ProjecrSettingsPage projecrSettingsPage;
 	private String mainClassName = "Main";
 	private String error = null;
-	private boolean isNewProject = true;
 
 	public enum TemplateType {
 		SingleView, SingleViewStoryboard, PageBased, PageBasedStoryboard, Game, MasterDetail, Tabbed,
@@ -101,7 +100,7 @@ public abstract class AbstractProjectWizard extends Wizard implements INewWizard
 				monitor.beginTask("Create project...", 4);
 
 				projectTemplate.createProject(getTemplateType().toString().toLowerCase() + ".zip", "1.2.+",
-						isNewProject);
+						false);
 				monitor.worked(1);
 
 				int gradleResult = -1;
