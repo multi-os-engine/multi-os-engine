@@ -35,14 +35,17 @@ import org.eclipse.debug.core.ILaunchManager;
 import org.eclipse.debug.core.IStreamListener;
 import org.eclipse.debug.core.model.IProcess;
 import org.eclipse.debug.core.model.IStreamMonitor;
+import org.eclipse.jface.preference.IPreferenceStore;
 import org.eclipse.ui.console.MessageConsole;
 import org.eclipse.ui.console.MessageConsoleStream;
+import org.moe.MOEPlugin;
 import org.moe.common.configuration.RemoteSettings;
 import org.moe.common.exec.ExecRunner;
 import org.moe.common.exec.ExecRunnerBase.ExecRunnerListener;
 import org.moe.common.exec.GradleExec;
 import org.moe.common.junit.MOEITestRunListener;
 import org.moe.common.junit.MOETestResultParser;
+import org.moe.preferences.PreferenceConstants;
 import org.moe.utils.MessageFactory;
 import org.moe.utils.logger.LoggerFactory;
 
@@ -123,6 +126,16 @@ public class ApplicationManager {
 		} else {
 			args.add("moeLaunch");
 		}
+		
+		IPreferenceStore store = MOEPlugin.getDefault().getPreferenceStore();
+		String consoleMode = store.getString(PreferenceConstants.GRADLE_RUN_MODE_KEY);
+		if (consoleMode != null && !consoleMode.isEmpty()) {
+            String[] modes = consoleMode.split(",");
+            for (String option : modes) {
+                args.add(option);
+            }
+        }
+		
 		optionsBuilder.push("no-launch");
 		optionsBuilder.push("config:" + getConfiguration());
 
@@ -350,6 +363,15 @@ public class ApplicationManager {
 		} else {
 			args.add("moeLaunch");
 		}
+		
+		IPreferenceStore store = MOEPlugin.getDefault().getPreferenceStore();
+		String consoleMode = store.getString(PreferenceConstants.GRADLE_RUN_MODE_KEY);
+		if (consoleMode != null && !consoleMode.isEmpty()) {
+            String[] modes = consoleMode.split(",");
+            for (String option : modes) {
+                args.add(option);
+            }
+        }
 
 		if (isDebug) {
 			vmArgs.put("hostname", "localhost");
