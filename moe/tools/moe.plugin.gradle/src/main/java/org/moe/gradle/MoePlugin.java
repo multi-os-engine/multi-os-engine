@@ -41,7 +41,6 @@ import org.moe.gradle.tasks.ResourcePackager;
 import org.moe.gradle.tasks.Retrolambda;
 import org.moe.gradle.tasks.StartupProvider;
 import org.moe.gradle.tasks.TestClassesProvider;
-import org.moe.gradle.tasks.UITransformer;
 import org.moe.gradle.tasks.XcodeBuild;
 import org.moe.gradle.tasks.XcodeInternal;
 import org.moe.gradle.tasks.XcodeProjectGenerator;
@@ -136,8 +135,6 @@ public class MoePlugin extends AbstractMoePlugin {
         addRule(TestClassesProvider.class, "Creates the classlist.txt file.",
                 singletonList(SOURCE_SET));
         addRule(StartupProvider.class, "Creates the preregister.txt file.",
-                singletonList(SOURCE_SET));
-        addRule(UITransformer.class, "Runs the UITransformer.",
                 singletonList(SOURCE_SET));
         addRule(XcodeProjectGenerator.class, "Creates an Xcode project.",
                 emptyList());

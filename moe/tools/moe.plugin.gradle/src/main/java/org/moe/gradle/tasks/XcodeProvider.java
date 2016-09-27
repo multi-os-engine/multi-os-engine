@@ -126,13 +126,6 @@ public class XcodeProvider extends AbstractBaseTask {
         return Require.nonNull(startupProviderTaskDep);
     }
 
-    private UITransformer uiTransformerTaskDep;
-
-    @NotNull
-    public UITransformer getUITransformerTaskDep() {
-        return Require.nonNull(uiTransformerTaskDep);
-    }
-
     private Path outRoot;
 
     @NotNull
@@ -192,10 +185,6 @@ public class XcodeProvider extends AbstractBaseTask {
         dependsOn(startupProviderTask);
 
         dependsOn(getProject().getTasks().getByName(MoePlugin.getTaskName(ResourcePackager.class, sourceSet)));
-
-        final UITransformer uiTransformerTask = getMoePlugin().getTaskBy(UITransformer.class, sourceSet);
-        uiTransformerTaskDep = uiTransformerTask;
-        dependsOn(uiTransformerTask);
 
         if (SourceSet.TEST_SOURCE_SET_NAME.equals(sourceSet.getName())) {
             dependsOn(getMoePlugin().getTaskBy(TestClassesProvider.class, sourceSet));

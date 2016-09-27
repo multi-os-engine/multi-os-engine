@@ -323,9 +323,6 @@ public class XcodeBuild extends AbstractBaseTask {
 
                 final StartupProvider startupProviderTask = xcodeProvider.getStartupProviderTaskDep();
                 excludes.add(startupProviderTask.getLogFile());
-
-                final UITransformer uiTransformerTask = xcodeProvider.getUITransformerTaskDep();
-                excludes.add(uiTransformerTask.getLogFile());
             }
 
             // Exclude files from "self"

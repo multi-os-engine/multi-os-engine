@@ -20,7 +20,6 @@ The MOE Gradle plugin adds support to building MOE based applications via Gradle
   * [Dex2Oat Task](#dex2oat-task)
   * [StartupProvider Task](#startupprovider-task)
   * [ResourcePackager Task](#resourcepackager-task)
-  * [UITransformer Task](#uitransformer-task)
   * [TestClassesProvider Task](#testclassesprovider-task)
   * [XcodeProvider Task](#xcodeprovider-task)
   * [XcodeInternal Task](#xcodeinternal-task)
@@ -388,27 +387,6 @@ Task name: `moe<sourceset>ResourcePackager`
 This task collects the resource files used by the application. These files can originate from the application's resource
 folder, dependent jars and additional external sources specified in the build script.
 The result of this task is an `application.jar` file which can be found in the build directory.
-
----
-
-### UITransformer Task
-
-Task name: `moe<sourceset>UITransformer`
-
-MOE supports generating UI layouts from ixml files. During the build process, these files are converted to a storyboard
-by the UITransformer task.
-
-#### Task Properties
-
-- `uiResourcesDir`: path to the UI resource's directory, for this task to execute, a subdirectory names `layout` must
-exist in this directory.
-- `uiTransformerJar`: path to the `uiTransformer.jar` file.
-- `uiTransformerRes`: path to the `UITransformer-res` directory.
-- `layoutDir` _(readonly)_: path to the `layout` subdirectory of the `uiResourcesDir` directory.
-- `outputStoryboardFile` _(readonly)_: path to the output storyboard of this task.
-- `logFile`: path to the task's log file.
-
-Setting any of these properties to null will reset them to their default values.
 
 ---
 

@@ -623,10 +623,6 @@ public class XcodeProjectGenerator extends AbstractBaseTask {
                 return project.file(xcode.getMainUIStoryboardPath());
             }
             final SourceSet mainSourceSet = sourceSets.getByName(SourceSet.MAIN_SOURCE_SET_NAME);
-            final UITransformer task = getMoePlugin().getTaskBy(UITransformer.class, mainSourceSet);
-            if (task.shouldRunUITransformer()) {
-                return task.getOutputStoryboardFile();
-            }
             File defaultLocation = project.file("src/main/resources/MainUI.storyboard");
             if (defaultLocation.exists()) {
                 return defaultLocation;
