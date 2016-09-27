@@ -27,12 +27,10 @@ import javax.swing.*;
 public class MOEProjectTemplate extends BuilderBasedTemplate {
     public enum MOETemplateType {
         SingleView,
-        SingleViewStoryboard,
         PageBased,
-        PageBasedStoryboard,
         Game,
         MasterDetail,
-        Tabbed,
+        Tabbed
     }
 
     private final MOETemplateType templateType;

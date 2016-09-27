@@ -53,8 +53,12 @@ public class MOEProjectTemplatesFactory extends ProjectTemplatesFactory {
     public ProjectTemplate[] createTemplates(String s, WizardContext wizardContext) {
 
         return new ProjectTemplate[] {
+                new MOEProjectTemplate(MOEText.get("Game.Application"),
+                        MOEText.get("Game.Application.Description"),
+                        MOEProjectTemplate.MOETemplateType.Game,
+                        new MOEModuleBuilder()),
 
-                new MOEProjectTemplate(MOEText.get("MasterDetailStoryboard.Application"),
+                new MOEProjectTemplate(MOEText.get("MasterDetail.Application"),
                         MOEText.get("MasterDetail.Application.Description"),
                         MOEProjectTemplate.MOETemplateType.MasterDetail,
                         new MOEModuleBuilder()),
@@ -64,29 +68,14 @@ public class MOEProjectTemplatesFactory extends ProjectTemplatesFactory {
                         MOEProjectTemplate.MOETemplateType.PageBased,
                         new MOEModuleBuilder()),
 
-                new MOEProjectTemplate(MOEText.get("PageBasedStoryboard.Application"),
-                        MOEText.get("PageBased.Application.Description"),
-                        MOEProjectTemplate.MOETemplateType.PageBasedStoryboard,
-                        new MOEModuleBuilder()),
-
                 new MOEProjectTemplate(MOEText.get("SingleView.Application"),
                         MOEText.get("SingleView.Application.Description"),
                         MOEProjectTemplate.MOETemplateType.SingleView,
                         new MOEModuleBuilder()),
 
-                new MOEProjectTemplate(MOEText.get("SingleViewStoryboard.Application"),
-                        MOEText.get("SingleView.Application.Description"),
-                        MOEProjectTemplate.MOETemplateType.SingleViewStoryboard,
-                        new MOEModuleBuilder()),
-
                 new MOEProjectTemplate(MOEText.get("Tabbed.Application"),
                         MOEText.get("Tabbed.Application.Description"),
                         MOEProjectTemplate.MOETemplateType.Tabbed,
-                        new MOEModuleBuilder()),
-
-                new MOEProjectTemplate(MOEText.get("Game.Application"),
-                        MOEText.get("Game.Application.Description"),
-                        MOEProjectTemplate.MOETemplateType.Game,
                         new MOEModuleBuilder())
         };
     }
