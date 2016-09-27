@@ -157,6 +157,11 @@ public class ObjCRuntime extends NativeRuntime {
         public void release(long peer) {
             releaseObject(peer);
         }
+
+        @Override
+        public boolean ifFinalizedExternally() {
+            return true;
+        }
     };
 
     /**

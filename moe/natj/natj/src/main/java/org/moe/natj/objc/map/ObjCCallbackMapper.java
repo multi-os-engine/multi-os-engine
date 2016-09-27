@@ -100,6 +100,11 @@ public class ObjCCallbackMapper implements Mapper {
             ObjCRuntime.unlockObject(peer);
             ObjCRuntime.releaseObject(peer);
         }
+
+        @Override
+        public boolean ifFinalizedExternally() {
+            return false;
+        }
     };
 
     /**

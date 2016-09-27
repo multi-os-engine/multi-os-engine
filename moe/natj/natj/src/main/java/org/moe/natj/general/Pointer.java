@@ -30,6 +30,7 @@ public class Pointer {
      */
     public interface Releaser {
         void release(long peer);
+        boolean ifFinalizedExternally();
     }
 
     /** The native pointer. */
@@ -66,7 +67,18 @@ public class Pointer {
      * Invokes the {@link #releaser releaser}'s {@link Releaser#release(long)} method.
      */
     protected void finalize() {
-        if (releaser != null && peer != 0) {
+        if (releaser != null && peer != 0 && !releaser.ifFinalizedExternally()) {
+            releaser.release(peer);
+        }
+    }
+
+    /**
+     * Invokes the {@link #releaser releaser}'s {@link Releaser#release(long)} method.
+     *
+     * This method should only be accessed from {@link NativeObject}.
+     */
+    void release() {
+        if (releaser != null && peer != 0 && releaser.ifFinalizedExternally()) {
             releaser.release(peer);
         }
     }

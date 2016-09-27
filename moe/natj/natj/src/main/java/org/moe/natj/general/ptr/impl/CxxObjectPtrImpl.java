@@ -451,5 +451,10 @@ class CxxObjectPtrImpl<T extends CxxObject> extends AbstractTypedPtr<T, T> {
                 throw new RuntimeException(e);
             }
         }
+
+        @Override
+        public boolean ifFinalizedExternally() {
+            return false;
+        }
     }
 }

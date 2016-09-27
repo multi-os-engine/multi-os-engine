@@ -54,4 +54,11 @@ public class NativeObject {
     protected NativeObject(Pointer peer) {
         this.peer = peer;
     }
+
+    @Override
+    protected void finalize() throws Throwable {
+        if (peer != null) {
+            peer.release();
+        }
+    }
 }

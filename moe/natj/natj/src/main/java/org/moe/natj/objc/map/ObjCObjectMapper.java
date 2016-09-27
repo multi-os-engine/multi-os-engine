@@ -82,6 +82,11 @@ public class ObjCObjectMapper implements Mapper {
             ObjCRuntime.unlockObject(peer);
             ObjCRuntime.releaseObject(peer);
         }
+
+        @Override
+        public boolean ifFinalizedExternally() {
+            return false;
+        }
     };
 
     /**

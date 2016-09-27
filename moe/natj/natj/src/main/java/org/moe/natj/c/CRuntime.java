@@ -121,6 +121,11 @@ public class CRuntime extends NativeRuntime {
         public void release(long peer) {
             free(peer);
         }
+
+        @Override
+        public boolean ifFinalizedExternally() {
+            return false;
+        }
     };
 
     /**
