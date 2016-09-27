@@ -1063,6 +1063,8 @@ void Java_org_moe_natj_objc_ObjCRuntime_destroyWeak(JNIEnv* env,
 
 void Java_org_moe_natj_objc_ObjCRuntime_associateObjCObject(
     JNIEnv* env, jclass clazz, jlong object, jlong instance) {
+  if (object == instance)
+    return;
   id obj = reinterpret_cast<id>(object);
   @synchronized(obj) {
     CountedAssociationHolder* associationHolder =
@@ -1079,6 +1081,8 @@ void Java_org_moe_natj_objc_ObjCRuntime_associateObjCObject(
 
 void Java_org_moe_natj_objc_ObjCRuntime_dissociateObjCObject(
     JNIEnv* env, jclass clazz, jlong object, jlong instance) {
+  if (object == instance)
+    return;
   id obj = reinterpret_cast<id>(object);
   @synchronized(obj) {
     CountedAssociationHolder* associationHolder =
