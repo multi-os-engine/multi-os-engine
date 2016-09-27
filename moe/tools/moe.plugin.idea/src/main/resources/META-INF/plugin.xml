@@ -36,6 +36,12 @@
 
       <moduleConfigurable instance="org.moe.idea.configurable.MOEModuleConfigurable"/>
       <postStartupActivity implementation="org.moe.idea.Startup"></postStartupActivity>
+
+      <applicationService
+              serviceInterface="org.moe.idea.MOEGlobalSettings"
+              serviceImplementation="org.moe.idea.MOEGlobalSettings"/>
+
+      <applicationConfigurable instance="org.moe.idea.MOEGlobalSearchableConfigurable" groupId="tools"/>
   </extensions>
 
     <project-components>

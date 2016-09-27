@@ -22,6 +22,7 @@ import com.intellij.openapi.module.Module;
 import com.intellij.openapi.util.text.StringUtil;
 import org.moe.common.configuration.RemoteSettings;
 import org.moe.common.exec.GradleExec;
+import org.moe.idea.MOEGlobalSettings;
 import org.moe.idea.runconfig.configuration.MOERunConfiguration;
 import org.moe.idea.utils.ModuleUtils;
 
@@ -55,6 +56,15 @@ public class MOEGradleRunner {
             args.add("moeTest");
         } else {
             args.add("moeLaunch");
+        }
+
+        MOEGlobalSettings globalSettings = MOEGlobalSettings.getInstance();
+        String consoleMode = globalSettings.getGradleConsoleMode();
+        if (consoleMode != null && !consoleMode.isEmpty()) {
+            String[] modes = consoleMode.split(",");
+            for (String option : modes) {
+                args.add(option);
+            }
         }
 
         final OptionsBuilder options = new OptionsBuilder();
