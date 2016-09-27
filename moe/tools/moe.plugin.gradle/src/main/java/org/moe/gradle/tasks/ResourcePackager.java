@@ -115,7 +115,7 @@ public class ResourcePackager {
         }
 
         resourcePackagerTask.exclude("**/*.class");
-        ext.packagingOptions.getExcludes().forEach(resourcePackagerTask::exclude);
+        ext.packaging.getExcludes().forEach(resourcePackagerTask::exclude);
 
         // Add support for copying resources from the source directory
         addResourceFromSources(ext, resourcePackagerTask, sourceSet);
@@ -133,7 +133,7 @@ public class ResourcePackager {
         Require.nonNull(jar);
         Require.nonNull(sourceSet);
 
-        if (!ext.resourceOptions.isEnableResourcesFromSourceDirs()) {
+        if (!ext.resources.isEnableResourcesFromSourceDirs()) {
             return;
         }
         sourceSet.getJava().getSrcDirs().forEach(src -> {
@@ -141,7 +141,7 @@ public class ResourcePackager {
             jar.from(src, new ConfigurationClosure<CopySpec>(ext.plugin.getProject()) {
                 @Override
                 public void doCall(final CopySpec spec) {
-                    ext.resourceOptions.getResourcesFromSourceDirExcludes().forEach(spec::exclude);
+                    ext.resources.getResourcesFromSourceDirExcludes().forEach(spec::exclude);
                 }
             });
         });

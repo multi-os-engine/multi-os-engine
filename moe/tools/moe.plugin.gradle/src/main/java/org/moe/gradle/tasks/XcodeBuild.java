@@ -575,7 +575,7 @@ public class XcodeBuild extends AbstractBaseTask {
             if (SourceSet.MAIN_SOURCE_SET_NAME.equals(sourceSet.getName())) {
                 targetName = projectGenerator.getProjectName();
             } else {
-                String testTarget = ext.xcodeOptions.getTestTarget();
+                String testTarget = ext.xcode.getTestTarget();
                 if ((testTarget == null) || testTarget.isEmpty()) {
                     testTarget = projectGenerator.getProjectName() + "-Test";
                 }
@@ -590,11 +590,11 @@ public class XcodeBuild extends AbstractBaseTask {
         addConvention(CONVENTION_XCODE_BUILD_ROOT, () -> resolvePathInBuildDir(out));
         addConvention(CONVENTION_ADDITIONAL_PARAMETERS, () ->
                 new ArrayList<>(Arrays.asList("MOE_GRADLE_EXTERNAL_BUILD=YES", "ONLY_ACTIVE_ARCH=NO")));
-        addConvention(CONVENTION_PROVISIONING_PROFILE, ext.signingOptions::getProvisioningProfile);
-        addConvention(CONVENTION_SIGNING_IDENTITY, ext.signingOptions::getSigningIdentity);
+        addConvention(CONVENTION_PROVISIONING_PROFILE, ext.signing::getProvisioningProfile);
+        addConvention(CONVENTION_SIGNING_IDENTITY, ext.signing::getSigningIdentity);
         addConvention(CONVENTION_DEVELOPMENT_TEAM, () -> {
-            if (ext.xcodeOptions.isGenerateProject() || !ext.signingOptions.usesDefaultDevelopmentTeam()) {
-                return ext.signingOptions.getDevelopmentTeam();
+            if (ext.xcode.isGenerateProject() || !ext.signing.usesDefaultDevelopmentTeam()) {
+                return ext.signing.getDevelopmentTeam();
             } else {
                 return null;
             }

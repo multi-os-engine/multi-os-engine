@@ -579,7 +579,7 @@ public class XcodeProjectGenerator extends AbstractBaseTask {
         final Project project = getProject();
         final MoeExtension ext = getMoeExtension();
         final SourceSetContainer sourceSets = getMoePlugin().getJavaConvention().getSourceSets();
-        final XcodeOptions xcode = ext.xcodeOptions;
+        final XcodeOptions xcode = ext.xcode;
 
         // Create task
         setDescription("Generates Xcode project.");

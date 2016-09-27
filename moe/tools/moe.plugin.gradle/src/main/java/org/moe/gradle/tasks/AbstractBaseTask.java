@@ -220,7 +220,7 @@ public abstract class AbstractBaseTask extends DefaultTask {
         FileUtils.append(getLogFile(), "");
 
         final ExecResult result = getProject().javaexec(execSpec -> {
-            execSpec.jvmArgs(getMoeExtension().javaProcessOptions.getJvmArgs());
+            execSpec.jvmArgs(getMoeExtension().javaProcess.getJvmArgs());
 
             spec.execute(execSpec);
 

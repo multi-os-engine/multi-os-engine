@@ -52,19 +52,19 @@ public class MoeExtension {
     public final MoePlugin plugin;
 
     @NotNull
-    public final PackagingOptions packagingOptions;
+    public final PackagingOptions packaging;
 
     @NotNull
-    public final ResourceOptions resourceOptions;
+    public final ResourceOptions resources;
 
     @NotNull
-    public final XcodeOptions xcodeOptions;
+    public final XcodeOptions xcode;
 
     @NotNull
-    public final SigningOptions signingOptions;
+    public final SigningOptions signing;
 
     @NotNull
-    public final JavaProcessOptions javaProcessOptions;
+    public final JavaProcessOptions javaProcess;
 
     @Nullable
     public String mainClassName;
@@ -78,11 +78,11 @@ public class MoeExtension {
     public MoeExtension(@NotNull MoePlugin plugin, @NotNull Instantiator instantiator) {
         this.plugin = Require.nonNull(plugin);
         Require.nonNull(instantiator);
-        this.packagingOptions = instantiator.newInstance(PackagingOptions.class);
-        this.resourceOptions = instantiator.newInstance(ResourceOptions.class);
-        this.xcodeOptions = instantiator.newInstance(XcodeOptions.class, plugin.getProject());
-        this.signingOptions = instantiator.newInstance(SigningOptions.class);
-        this.javaProcessOptions = instantiator.newInstance(JavaProcessOptions.class);
+        this.packaging = instantiator.newInstance(PackagingOptions.class);
+        this.resources = instantiator.newInstance(ResourceOptions.class);
+        this.xcode = instantiator.newInstance(XcodeOptions.class, plugin.getProject());
+        this.signing = instantiator.newInstance(SigningOptions.class);
+        this.javaProcess = instantiator.newInstance(JavaProcessOptions.class);
     }
 
     void setup() {
@@ -112,27 +112,27 @@ public class MoeExtension {
 
     @IgnoreUnused
     public void packaging(Action<PackagingOptions> action) {
-        Require.nonNull(action).execute(packagingOptions);
+        Require.nonNull(action).execute(packaging);
     }
 
     @IgnoreUnused
     public void resources(Action<ResourceOptions> action) {
-        Require.nonNull(action).execute(resourceOptions);
+        Require.nonNull(action).execute(resources);
     }
 
     @IgnoreUnused
     public void xcode(Action<XcodeOptions> action) {
-        Require.nonNull(action).execute(xcodeOptions);
+        Require.nonNull(action).execute(xcode);
     }
 
     @IgnoreUnused
     public void signing(Action<SigningOptions> action) {
-        Require.nonNull(action).execute(signingOptions);
+        Require.nonNull(action).execute(signing);
     }
 
     @IgnoreUnused
     public void javaProcess(Action<JavaProcessOptions> action) {
-        Require.nonNull(action).execute(javaProcessOptions);
+        Require.nonNull(action).execute(javaProcess);
     }
 
     @NotNull
