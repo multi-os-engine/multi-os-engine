@@ -91,6 +91,9 @@ public class ApplicationManager {
 	public static final String VM_ARGUMENTS_KEY = "vm_arguments";
 	public static final String PROGRAM_ARGUMENTS_KEY = "program_arguments";
 	public static final String REMOTE_KEYCHAIN_NAME_KEY = "remoteKeychainName";
+	public static final String GRADLE_INFO_PROPERTY = "moe.gradle.console.info=true";
+	public static final String GRADLE_DEBUG_PROPERTY = "moe.gradle.console.debug=true";
+	public static final String GRADLE_STACKTRACE_PROPERTY = "moe.gradle.console.stacktrace=true";
 
 	private IProject project;
 	private ILaunchConfiguration launchConfiguration;
@@ -186,6 +189,21 @@ public class ApplicationManager {
 		}
 
 		List<String> args = new ArrayList<String>();
+		
+		IPreferenceStore store = MOEPlugin.getDefault().getPreferenceStore();
+		String consoleMode = store.getString(PreferenceConstants.GRADLE_RUN_MODE_KEY);
+		if (consoleMode != null && !consoleMode.isEmpty()) {
+            String[] modes = consoleMode.split(",");
+            for (String option : modes) {
+                if (option.equals(PreferenceConstants.INFO)) {
+                	args.add("-D" + GRADLE_INFO_PROPERTY);
+                } else if (option.equals(PreferenceConstants.DEBUG)) {
+                	args.add("-D" + GRADLE_DEBUG_PROPERTY);
+                } else if (option.equals(PreferenceConstants.STACKTRACE)) {
+                	args.add("-D" + GRADLE_STACKTRACE_PROPERTY);
+                }
+            }
+        }
 
 		args.add("-D" + CONFIGURATION_MAVEN + getConfiguration());
 
