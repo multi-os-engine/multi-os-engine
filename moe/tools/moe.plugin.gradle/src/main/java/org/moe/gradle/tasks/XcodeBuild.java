@@ -24,6 +24,13 @@ import org.gradle.api.tasks.OutputFile;
 import org.gradle.api.tasks.SourceSet;
 import org.gradle.api.tasks.compile.JavaCompile;
 import org.moe.common.developer.ProvisioningProfile;
+import org.moe.document.pbxproj.PBXNativeTarget;
+import org.moe.document.pbxproj.PBXObject;
+import org.moe.document.pbxproj.PBXObjectRef;
+import org.moe.document.pbxproj.ProjFile;
+import org.moe.document.pbxproj.XCBuildConfiguration;
+import org.moe.document.pbxproj.XCConfigurationList;
+import org.moe.document.pbxproj.nextstep.Dictionary.Field;
 import org.moe.gradle.MoeExtension;
 import org.moe.gradle.MoePlatform;
 import org.moe.gradle.MoePlugin;
@@ -593,7 +600,7 @@ public class XcodeBuild extends AbstractBaseTask {
         addConvention(CONVENTION_PROVISIONING_PROFILE, ext.signing::getProvisioningProfile);
         addConvention(CONVENTION_SIGNING_IDENTITY, ext.signing::getSigningIdentity);
         addConvention(CONVENTION_DEVELOPMENT_TEAM, () -> {
-            if (ext.xcode.isGenerateProject() || !ext.signing.usesDefaultDevelopmentTeam()) {
+            if (!xcodeprojDevelopmentTeamIsSet() || !ext.signing.usesDefaultDevelopmentTeam()) {
                 return ext.signing.getDevelopmentTeam();
             } else {
                 return null;
@@ -603,5 +610,34 @@ public class XcodeBuild extends AbstractBaseTask {
                 sourceSet.getName() + "-" + mode.name + "-" + platform.platformName + ".properties"));
         addConvention(CONVENTION_LOG_FILE, () -> resolvePathInBuildDir(out, "XcodeBuild-" + sourceSet.getName() + "-" +
                 mode.name + "-" + platform.platformName + ".log"));
+    }
+
+    private boolean xcodeprojDevelopmentTeamIsSet() {
+        try {
+            // Open Xcode project
+            @NotNull File xcodeproj = getXcodeProjectFile();
+            final ProjFile project = new ProjFile(xcodeproj);
+
+            // Search for target with name
+            Field<PBXObjectRef<? extends PBXObject>, PBXObject> nTargetField = project.getRoot().getObjects().findFirst(
+                    field -> field.value instanceof PBXNativeTarget && ((PBXNativeTarget)field.key.getReferenced())
+                            .getName().equals(target));
+            Require.nonNull(nTargetField,
+                    "Target with name '" + target + "' doesn't exist in Xcode project at " + xcodeproj
+                            .getAbsolutePath());
+            PBXNativeTarget nTarget = (PBXNativeTarget)nTargetField.value;
+
+            // Search for build configuration with name
+            XCConfigurationList xcConfigurationList = nTarget.getBuildConfigurationList().getReferenced();
+            for (PBXObjectRef<XCBuildConfiguration> ref : xcConfigurationList.getBuildConfigurations()) {
+                XCBuildConfiguration xcBuildConfiguration = ref.getReferenced();
+                if (xcBuildConfiguration.getName().equals(getMode().getXcodeCompatibleName())) {
+                    return xcBuildConfiguration.getValue("DEVELOPMENT_TEAM") != null;
+                }
+            }
+        } catch (Throwable t) {
+            return false;
+        }
+        return false;
     }
 }
