@@ -392,6 +392,15 @@ public class Dictionary<K extends Value, V extends NextStep> extends NextStep {
         }
     }
 
+    public Field<K, V> findFirst(FieldPredicate<K, V> dictionaryIterator) {
+        for (Field<K, V> f : fields) {
+            if (dictionaryIterator.predicate(f)) {
+                return f;
+            }
+        }
+        return null;
+    }
+
     public FieldPrinter<K, V> getCustomPrinter() {
         return customPrinter;
     }
@@ -406,6 +415,10 @@ public class Dictionary<K extends Value, V extends NextStep> extends NextStep {
 
     public static interface FieldIterator<K extends Value, V extends NextStep> {
         public void process(Field<K, V> field);
+    }
+
+    public static interface FieldPredicate<K extends Value, V extends NextStep> {
+        public boolean predicate(Field<K, V> field);
     }
 
     public static interface FieldPrinter<K extends Value, V extends NextStep> {
