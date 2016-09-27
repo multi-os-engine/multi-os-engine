@@ -18,10 +18,10 @@ package org.moe.document.pbxproj;
 
 public class ProjectException extends Exception {
 
-	private static final long serialVersionUID = 4155182505861366843L;
+    private static final long serialVersionUID = 4155182505861366843L;
 
-	public ProjectException(String string) {
-		super(string);
-	}
+    public ProjectException(String string) {
+        super(string);
+    }
 
 }

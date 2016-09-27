@@ -22,18 +22,18 @@ import org.moe.document.pbxproj.nextstep.Value;
 
 public final class PBXResourcesBuildPhase extends PBXBuildPhase {
 
-	public PBXResourcesBuildPhase(Dictionary<Value, NextStep> dict) {
-		super(dict);
-	}
+    public PBXResourcesBuildPhase(Dictionary<Value, NextStep> dict) {
+        super(dict);
+    }
 
-	public PBXResourcesBuildPhase() {
-		super(null);
-		setIsa(this.getClass().getSimpleName());
-	}
+    public PBXResourcesBuildPhase() {
+        super(null);
+        setIsa(this.getClass().getSimpleName());
+    }
 
-	@Override
-	public String getCommentString() {
-		return "Resources";
-	}
+    @Override
+    public String getCommentString() {
+        return "Resources";
+    }
 
 }

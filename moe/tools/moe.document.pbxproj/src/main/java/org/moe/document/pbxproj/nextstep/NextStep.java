@@ -23,57 +23,57 @@ import java.io.IOException;
 
 public abstract class NextStep {
 
-	public static Dictionary<Value, NextStep> read(File file) throws NextStepException {
-		Tokenizer t = null;
-		try {
-			Parser p = new Parser(file);
-			t = new Tokenizer(p);
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-		if (t == null) {
-			return null;
-		}
+    public static Dictionary<Value, NextStep> read(File file) throws NextStepException {
+        Tokenizer t = null;
+        try {
+            Parser p = new Parser(file);
+            t = new Tokenizer(p);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        if (t == null) {
+            return null;
+        }
 
-		Token token = t.peek();
-		if (token != null && token.kind == Token.Brace_open) {
-			return Dictionary.create(t);
-		}
+        Token token = t.peek();
+        if (token != null && token.kind == Token.Brace_open) {
+            return Dictionary.create(t);
+        }
 
-		return null;
-	}
+        return null;
+    }
 
-	static NextStep get(Tokenizer t) throws NextStepException {
-		Token token = t.peek();
-		if (token == null) {
-			throw new NextStepException("early end of tokenstream");
-		}
-		switch (token.kind) {
-		case Token.Brace_open:
-			return Dictionary.create(t);
-		case Token.Parentheses_open:
-			return Array.create(t);
-		case Token.Value:
-			return Value.create(t);
+    static NextStep get(Tokenizer t) throws NextStepException {
+        Token token = t.peek();
+        if (token == null) {
+            throw new NextStepException("early end of tokenstream");
+        }
+        switch (token.kind) {
+        case Token.Brace_open:
+            return Dictionary.create(t);
+        case Token.Parentheses_open:
+            return Array.create(t);
+        case Token.Value:
+            return Value.create(t);
 
-		default:
-			return null;
-		}
-	}
+        default:
+            return null;
+        }
+    }
 
-	protected void ident(StringBuilder b, int depth) {
-		for (int i = 0; i < depth; ++i) {
-			b.append('\t');
-		}
-	}
+    protected void ident(StringBuilder b, int depth) {
+        for (int i = 0; i < depth; ++i) {
+            b.append('\t');
+        }
+    }
 
-	@Override
-	public String toString() {
-		return print(0);
-	}
+    @Override
+    public String toString() {
+        return print(0);
+    }
 
-	public abstract String print(int depth);
+    public abstract String print(int depth);
 
-	public abstract String printInline(int depth);
+    public abstract String printInline(int depth);
 
 }

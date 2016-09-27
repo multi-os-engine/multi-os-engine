@@ -20,25 +20,25 @@ import org.moe.document.pbxproj.nextstep.Value;
 
 public class PBXObjectRef<T extends PBXObject> extends Value {
 
-	private final T referenced;
+    private final T referenced;
 
-	public PBXObjectRef(Value old, T referenced) {
-		this.value = old.value;
-		this.referenced = referenced;
-	}
+    public PBXObjectRef(Value old, T referenced) {
+        this.value = old.value;
+        this.referenced = referenced;
+    }
 
-	public PBXObjectRef(String uid, T pbxobject) {
-		this.value = uid;
-		this.referenced = pbxobject;
-	}
+    public PBXObjectRef(String uid, T pbxobject) {
+        this.value = uid;
+        this.referenced = pbxobject;
+    }
 
-	@Override
-	public String getComment() {
-		return getReferenced().getCommentString();
-	}
+    @Override
+    public String getComment() {
+        return getReferenced().getCommentString();
+    }
 
-	public T getReferenced() {
-		return referenced;
-	}
+    public T getReferenced() {
+        return referenced;
+    }
 
 }

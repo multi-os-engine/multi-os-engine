@@ -25,73 +25,75 @@ import java.util.Map;
 @SuppressWarnings("unchecked")
 public class PBXContainerItemProxy extends PBXObject {
 
-	public static final String CONTAINER_PORTAL_KEY = "containerPortal";
-	public static final String PROXY_TYPE_KEY = "proxyType";
-	public static final String REMOTE_GLOBAL_ID_STRING_KEY = "remoteGlobalIDString";
-	public static final String REMOTE_INFO_KEY = "remoteInfo";
+    public static final String CONTAINER_PORTAL_KEY = "containerPortal";
+    public static final String PROXY_TYPE_KEY = "proxyType";
+    public static final String REMOTE_GLOBAL_ID_STRING_KEY = "remoteGlobalIDString";
+    public static final String REMOTE_INFO_KEY = "remoteInfo";
 
-	public PBXContainerItemProxy(Dictionary<Value, NextStep> dict) {
-		super(dict);
-	}
+    public PBXContainerItemProxy(Dictionary<Value, NextStep> dict) {
+        super(dict);
+    }
 
-	public PBXContainerItemProxy() {
-		super(null);
-		setIsa(this.getClass().getSimpleName());
-	}
+    public PBXContainerItemProxy() {
+        super(null);
+        setIsa(this.getClass().getSimpleName());
+    }
 
-	@Override
-	public String getCommentString() {
-		return "PBXContainerItemProxy";
-	}
+    @Override
+    public String getCommentString() {
+        return "PBXContainerItemProxy";
+    }
 
-	@Override
-	public void connectReferences(Map<String, Value> map) {
-		connectReferencesInValue(CONTAINER_PORTAL_KEY, map);
-	}
+    @Override
+    public void connectReferences(Map<String, Value> map) {
+        connectReferencesInValue(CONTAINER_PORTAL_KEY, map);
+    }
 
-	@Override
-	public void update() {
-	}
+    @Override
+    public void update() {
+    }
 
-	@Override
-	public void removeReference(PBXObjectRef<? extends PBXObject> ref) {
-		if (ref.equals(getContainerPortal())) {
-			setContainerPortal(null);
-		}
-	}
+    @Override
+    public void removeReference(PBXObjectRef<? extends PBXObject> ref) {
+        if (ref.equals(getContainerPortal())) {
+            setContainerPortal(null);
+        }
+    }
 
-	/** Fields **/
+    /**
+     * Fields
+     **/
 
-	public PBXObjectRef<PBXObject> getContainerPortal() {
-		return (PBXObjectRef<PBXObject>) getPBXObjectRefValue(CONTAINER_PORTAL_KEY);
-	}
+    public PBXObjectRef<PBXObject> getContainerPortal() {
+        return (PBXObjectRef<PBXObject>)getPBXObjectRefValue(CONTAINER_PORTAL_KEY);
+    }
 
-	public void setContainerPortal(PBXObjectRef<PBXObject> value) {
-		setPBXObjectRefValue(CONTAINER_PORTAL_KEY, value);
-	}
+    public void setContainerPortal(PBXObjectRef<PBXObject> value) {
+        setPBXObjectRefValue(CONTAINER_PORTAL_KEY, value);
+    }
 
-	public String getProxyType() {
-		return getStringValue(PROXY_TYPE_KEY);
-	}
+    public String getProxyType() {
+        return getStringValue(PROXY_TYPE_KEY);
+    }
 
-	public void setProxyType(String value) {
-		setStringValue(PROXY_TYPE_KEY, value);
-	}
+    public void setProxyType(String value) {
+        setStringValue(PROXY_TYPE_KEY, value);
+    }
 
-	public String getRemoteGlobalIDString() {
-		return getStringValue(REMOTE_GLOBAL_ID_STRING_KEY);
-	}
+    public String getRemoteGlobalIDString() {
+        return getStringValue(REMOTE_GLOBAL_ID_STRING_KEY);
+    }
 
-	public void setRemoteGlobalIDString(String value) {
-		setStringValue(REMOTE_GLOBAL_ID_STRING_KEY, value);
-	}
+    public void setRemoteGlobalIDString(String value) {
+        setStringValue(REMOTE_GLOBAL_ID_STRING_KEY, value);
+    }
 
-	public String getRemoteInfo() {
-		return getStringValue(REMOTE_INFO_KEY);
-	}
+    public String getRemoteInfo() {
+        return getStringValue(REMOTE_INFO_KEY);
+    }
 
-	public void setRemoteInfo(String value) {
-		setStringValue(REMOTE_INFO_KEY, value);
-	}
+    public void setRemoteInfo(String value) {
+        setStringValue(REMOTE_INFO_KEY, value);
+    }
 
 }

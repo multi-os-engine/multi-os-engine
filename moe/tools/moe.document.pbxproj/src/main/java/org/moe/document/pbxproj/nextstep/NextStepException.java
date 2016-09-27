@@ -18,10 +18,10 @@ package org.moe.document.pbxproj.nextstep;
 
 public class NextStepException extends Exception {
 
-	private static final long serialVersionUID = 4352179197025173190L;
+    private static final long serialVersionUID = 4352179197025173190L;
 
-	public NextStepException(String string) {
-		super(string);
-	}
+    public NextStepException(String string) {
+        super(string);
+    }
 
 }

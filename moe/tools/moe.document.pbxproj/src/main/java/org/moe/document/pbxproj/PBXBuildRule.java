@@ -26,74 +26,76 @@ import java.util.Map;
 @SuppressWarnings("unchecked")
 public class PBXBuildRule extends PBXObject {
 
-	public static final String COMPILER_SPEC_KEY = "compilerSpec";
-	public static final String FILE_PATTERNS_KEY = "filePatterns";
-	public static final String FILE_TYPE_KEY = "fileType";
-	public static final String IS_EDITABLE_KEY = "isEditable";
-	public static final String OUTPUT_FILES_KEY = "outputFiles";
-	public static final String SCRIPT_KEY = "script";
+    public static final String COMPILER_SPEC_KEY = "compilerSpec";
+    public static final String FILE_PATTERNS_KEY = "filePatterns";
+    public static final String FILE_TYPE_KEY = "fileType";
+    public static final String IS_EDITABLE_KEY = "isEditable";
+    public static final String OUTPUT_FILES_KEY = "outputFiles";
+    public static final String SCRIPT_KEY = "script";
 
-	public PBXBuildRule(Dictionary<Value, NextStep> dict) {
-		super(dict);
-	}
+    public PBXBuildRule(Dictionary<Value, NextStep> dict) {
+        super(dict);
+    }
 
-	@Override
-	public String getCommentString() {
-		return "PBXBuildRule";
-	}
+    @Override
+    public String getCommentString() {
+        return "PBXBuildRule";
+    }
 
-	@Override
-	public void connectReferences(Map<String, Value> map) {
-	}
+    @Override
+    public void connectReferences(Map<String, Value> map) {
+    }
 
-	@Override
-	public void removeReference(PBXObjectRef<? extends PBXObject> ref) {
-	}
+    @Override
+    public void removeReference(PBXObjectRef<? extends PBXObject> ref) {
+    }
 
-	/** Fields **/
+    /**
+     * Fields
+     **/
 
-	public String getCompilerSpec() {
-		return getStringValue(COMPILER_SPEC_KEY);
-	}
+    public String getCompilerSpec() {
+        return getStringValue(COMPILER_SPEC_KEY);
+    }
 
-	public void setCompilerSpec(String value) {
-		setStringValue(COMPILER_SPEC_KEY, value);
-	}
+    public void setCompilerSpec(String value) {
+        setStringValue(COMPILER_SPEC_KEY, value);
+    }
 
-	public String getFilePatterns() {
-		return getStringValue(FILE_PATTERNS_KEY);
-	}
+    public String getFilePatterns() {
+        return getStringValue(FILE_PATTERNS_KEY);
+    }
 
-	public void setFilePatterns(String value) {
-		setStringValue(FILE_PATTERNS_KEY, value);
-	}
+    public void setFilePatterns(String value) {
+        setStringValue(FILE_PATTERNS_KEY, value);
+    }
 
-	public String getFileType() {
-		return getStringValue(FILE_TYPE_KEY);
-	}
+    public String getFileType() {
+        return getStringValue(FILE_TYPE_KEY);
+    }
 
-	public void setFileType(String value) {
-		setStringValue(FILE_TYPE_KEY, value);
-	}
+    public void setFileType(String value) {
+        setStringValue(FILE_TYPE_KEY, value);
+    }
 
-	public String getIsEditable() {
-		return getStringValue(IS_EDITABLE_KEY);
-	}
+    public String getIsEditable() {
+        return getStringValue(IS_EDITABLE_KEY);
+    }
 
-	public void setIsEditable(String value) {
-		setStringValue(IS_EDITABLE_KEY, value);
-	}
+    public void setIsEditable(String value) {
+        setStringValue(IS_EDITABLE_KEY, value);
+    }
 
-	public Array<Value> getOutputFiles() {
-		return (Array<Value>) getArrayValue(OUTPUT_FILES_KEY);
-	}
+    public Array<Value> getOutputFiles() {
+        return (Array<Value>)getArrayValue(OUTPUT_FILES_KEY);
+    }
 
-	public String getScript() {
-		return getStringValue(SCRIPT_KEY);
-	}
+    public String getScript() {
+        return getStringValue(SCRIPT_KEY);
+    }
 
-	public void setScript(String value) {
-		setStringValue(SCRIPT_KEY, value);
-	}
+    public void setScript(String value) {
+        setStringValue(SCRIPT_KEY, value);
+    }
 
 }

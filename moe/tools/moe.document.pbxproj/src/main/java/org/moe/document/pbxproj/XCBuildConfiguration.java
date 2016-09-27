@@ -25,56 +25,58 @@ import java.util.Map;
 @SuppressWarnings("unchecked")
 public final class XCBuildConfiguration extends PBXObject {
 
-	public static final String BUILD_SETTINGS_KEY = "buildSettings";
-	public static final String BASE_CONFIGURATION_REFERENCE_KEY = "baseConfigurationReference";
-	public static final String NAME_KEY = "name";
+    public static final String BUILD_SETTINGS_KEY = "buildSettings";
+    public static final String BASE_CONFIGURATION_REFERENCE_KEY = "baseConfigurationReference";
+    public static final String NAME_KEY = "name";
 
-	public XCBuildConfiguration(Dictionary<Value, NextStep> dict) {
-		super(dict);
-	}
+    public XCBuildConfiguration(Dictionary<Value, NextStep> dict) {
+        super(dict);
+    }
 
-	public XCBuildConfiguration() {
-		super(null);
-		setIsa(this.getClass().getSimpleName());
-	}
+    public XCBuildConfiguration() {
+        super(null);
+        setIsa(this.getClass().getSimpleName());
+    }
 
-	@Override
-	public String getCommentString() {
-		return getName();
-	}
+    @Override
+    public String getCommentString() {
+        return getName();
+    }
 
-	@Override
-	public void connectReferences(Map<String, Value> map) {
-		connectReferencesInValue(BASE_CONFIGURATION_REFERENCE_KEY, map);
-	}
+    @Override
+    public void connectReferences(Map<String, Value> map) {
+        connectReferencesInValue(BASE_CONFIGURATION_REFERENCE_KEY, map);
+    }
 
-	@Override
-	public void removeReference(PBXObjectRef<? extends PBXObject> ref) {
-		if (ref.equals(getBaseConfigurationReference())) {
-			setBaseConfigurationReference(null);
-		}
-	}
+    @Override
+    public void removeReference(PBXObjectRef<? extends PBXObject> ref) {
+        if (ref.equals(getBaseConfigurationReference())) {
+            setBaseConfigurationReference(null);
+        }
+    }
 
-	/** Fields **/
+    /**
+     * Fields
+     **/
 
-	public Dictionary<Value, NextStep> getBuildSettings() {
-		return (Dictionary<Value, NextStep>) getDictionaryValue(BUILD_SETTINGS_KEY);
-	}
+    public Dictionary<Value, NextStep> getBuildSettings() {
+        return (Dictionary<Value, NextStep>)getDictionaryValue(BUILD_SETTINGS_KEY);
+    }
 
-	public String getName() {
-		return getStringValue(NAME_KEY);
-	}
+    public String getName() {
+        return getStringValue(NAME_KEY);
+    }
 
-	public void setName(String value) {
-		setStringValue(NAME_KEY, value);
-	}
+    public void setName(String value) {
+        setStringValue(NAME_KEY, value);
+    }
 
-	public PBXObjectRef<PBXFileReference> getBaseConfigurationReference() {
-		return (PBXObjectRef<PBXFileReference>) getPBXObjectRefValue(BASE_CONFIGURATION_REFERENCE_KEY);
-	}
+    public PBXObjectRef<PBXFileReference> getBaseConfigurationReference() {
+        return (PBXObjectRef<PBXFileReference>)getPBXObjectRefValue(BASE_CONFIGURATION_REFERENCE_KEY);
+    }
 
-	public void setBaseConfigurationReference(PBXObjectRef<PBXFileReference> value) {
-		setPBXObjectRefValue(BASE_CONFIGURATION_REFERENCE_KEY, value);
-	}
+    public void setBaseConfigurationReference(PBXObjectRef<PBXFileReference> value) {
+        setPBXObjectRefValue(BASE_CONFIGURATION_REFERENCE_KEY, value);
+    }
 
 }

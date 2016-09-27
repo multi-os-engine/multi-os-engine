@@ -27,68 +27,70 @@ import java.util.Map;
 @SuppressWarnings("unchecked")
 public final class XCConfigurationList extends PBXObject {
 
-	public static final String BUILD_CONFIGURATIONS_KEY = "buildConfigurations";
-	public static final String DEFAULT_CONFIGURATION_IS_VISIBLE_KEY = "defaultConfigurationIsVisible";
-	public static final String DEFAULT_CONFIGURATION_NAME_KEY = "defaultConfigurationName";
+    public static final String BUILD_CONFIGURATIONS_KEY = "buildConfigurations";
+    public static final String DEFAULT_CONFIGURATION_IS_VISIBLE_KEY = "defaultConfigurationIsVisible";
+    public static final String DEFAULT_CONFIGURATION_NAME_KEY = "defaultConfigurationName";
 
-	public PBXObject target;
+    public PBXObject target;
 
-	public XCConfigurationList(Dictionary<Value, NextStep> dict) {
-		super(dict);
-	}
+    public XCConfigurationList(Dictionary<Value, NextStep> dict) {
+        super(dict);
+    }
 
-	public XCConfigurationList() {
-		super(null);
-		setIsa(this.getClass().getSimpleName());
-	}
+    public XCConfigurationList() {
+        super(null);
+        setIsa(this.getClass().getSimpleName());
+    }
 
-	@Override
-	public String getCommentString() {
-		if (target instanceof PBXProject) {
-			return "Build configuration list for PBXProject \"" + ((PBXProject) target).getProjectName() + "\"";
-		}
-		if (target instanceof PBXNativeTarget) {
-			return "Build configuration list for PBXNativeTarget \"" + ((PBXNativeTarget) target).getName() + "\"";
-		}
+    @Override
+    public String getCommentString() {
+        if (target instanceof PBXProject) {
+            return "Build configuration list for PBXProject \"" + ((PBXProject)target).getProjectName() + "\"";
+        }
+        if (target instanceof PBXNativeTarget) {
+            return "Build configuration list for PBXNativeTarget \"" + ((PBXNativeTarget)target).getName() + "\"";
+        }
 
-		return null;
-	}
+        return null;
+    }
 
-	@Override
-	public void connectReferences(Map<String, Value> map) {
-		connectReferencesInValueArray(BUILD_CONFIGURATIONS_KEY, map);
-	}
+    @Override
+    public void connectReferences(Map<String, Value> map) {
+        connectReferencesInValueArray(BUILD_CONFIGURATIONS_KEY, map);
+    }
 
-	@Override
-	public void removeReference(PBXObjectRef<? extends PBXObject> ref) {
-		Iterator<?> it = getBuildConfigurations().iterator();
-		while (it.hasNext()) {
-			if (it.next().equals(ref)) {
-				it.remove();
-			}
-		}
-	}
+    @Override
+    public void removeReference(PBXObjectRef<? extends PBXObject> ref) {
+        Iterator<?> it = getBuildConfigurations().iterator();
+        while (it.hasNext()) {
+            if (it.next().equals(ref)) {
+                it.remove();
+            }
+        }
+    }
 
-	/** Fields **/
+    /**
+     * Fields
+     **/
 
-	public Array<PBXObjectRef<XCBuildConfiguration>> getBuildConfigurations() {
-		return (Array<PBXObjectRef<XCBuildConfiguration>>) getArrayValue(BUILD_CONFIGURATIONS_KEY);
-	}
+    public Array<PBXObjectRef<XCBuildConfiguration>> getBuildConfigurations() {
+        return (Array<PBXObjectRef<XCBuildConfiguration>>)getArrayValue(BUILD_CONFIGURATIONS_KEY);
+    }
 
-	public String getDefaultConfigurationIsVisible() {
-		return getStringValue(DEFAULT_CONFIGURATION_IS_VISIBLE_KEY);
-	}
+    public String getDefaultConfigurationIsVisible() {
+        return getStringValue(DEFAULT_CONFIGURATION_IS_VISIBLE_KEY);
+    }
 
-	public void setDefaultConfigurationIsVisible(String value) {
-		setStringValue(DEFAULT_CONFIGURATION_IS_VISIBLE_KEY, value);
-	}
+    public void setDefaultConfigurationIsVisible(String value) {
+        setStringValue(DEFAULT_CONFIGURATION_IS_VISIBLE_KEY, value);
+    }
 
-	public String getDefaultConfigurationName() {
-		return getStringValue(DEFAULT_CONFIGURATION_NAME_KEY);
-	}
+    public String getDefaultConfigurationName() {
+        return getStringValue(DEFAULT_CONFIGURATION_NAME_KEY);
+    }
 
-	public void setDefaultConfigurationName(String value) {
-		setStringValue(DEFAULT_CONFIGURATION_NAME_KEY, value);
-	}
+    public void setDefaultConfigurationName(String value) {
+        setStringValue(DEFAULT_CONFIGURATION_NAME_KEY, value);
+    }
 
 }

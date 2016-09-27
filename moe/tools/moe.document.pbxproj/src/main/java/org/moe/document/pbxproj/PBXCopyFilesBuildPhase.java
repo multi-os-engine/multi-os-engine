@@ -22,48 +22,50 @@ import org.moe.document.pbxproj.nextstep.Value;
 
 public class PBXCopyFilesBuildPhase extends PBXBuildPhase {
 
-	public static final String DST_PATH_KEY = "dstPath";
-	public static final String DST_SUBFOLDER_SPEC_KEY = "dstSubfolderSpec";
-	public static final String NAME_KEY = "name";
+    public static final String DST_PATH_KEY = "dstPath";
+    public static final String DST_SUBFOLDER_SPEC_KEY = "dstSubfolderSpec";
+    public static final String NAME_KEY = "name";
 
-	public PBXCopyFilesBuildPhase(Dictionary<Value, NextStep> dict) {
-		super(dict);
-	}
+    public PBXCopyFilesBuildPhase(Dictionary<Value, NextStep> dict) {
+        super(dict);
+    }
 
-	public PBXCopyFilesBuildPhase() {
-		super(null);
-		setIsa(this.getClass().getSimpleName());
-	}
+    public PBXCopyFilesBuildPhase() {
+        super(null);
+        setIsa(this.getClass().getSimpleName());
+    }
 
-	@Override
-	public String getCommentString() {
-		return "CopyFiles";
-	}
+    @Override
+    public String getCommentString() {
+        return "CopyFiles";
+    }
 
-	/** Fields **/
+    /**
+     * Fields
+     **/
 
-	public String getDstPath() {
-		return getStringValue(DST_PATH_KEY);
-	}
+    public String getDstPath() {
+        return getStringValue(DST_PATH_KEY);
+    }
 
-	public void setDstPath(String value) {
-		setStringValue(DST_PATH_KEY, value);
-	}
+    public void setDstPath(String value) {
+        setStringValue(DST_PATH_KEY, value);
+    }
 
-	public String getDstSubfolderSpec() {
-		return getStringValue(DST_SUBFOLDER_SPEC_KEY);
-	}
+    public String getDstSubfolderSpec() {
+        return getStringValue(DST_SUBFOLDER_SPEC_KEY);
+    }
 
-	public void setDstSubfolderSpec(String value) {
-		setStringValue(DST_SUBFOLDER_SPEC_KEY, value);
-	}
+    public void setDstSubfolderSpec(String value) {
+        setStringValue(DST_SUBFOLDER_SPEC_KEY, value);
+    }
 
-	public String getName() {
-		return getStringValue(NAME_KEY);
-	}
+    public String getName() {
+        return getStringValue(NAME_KEY);
+    }
 
-	public void setName(String value) {
-		setStringValue(NAME_KEY, value);
-	}
+    public void setName(String value) {
+        setStringValue(NAME_KEY, value);
+    }
 
 }

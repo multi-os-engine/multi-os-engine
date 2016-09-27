@@ -20,121 +20,121 @@ import org.moe.document.pbxproj.nextstep.Tokenizer.Token;
 
 public class Value extends NextStep {
 
-	public String value = "";
+    public String value = "";
 
-	static Value create(Tokenizer t) throws NextStepException {
-		Token token = t.next();
+    static Value create(Tokenizer t) throws NextStepException {
+        Token token = t.next();
 
-		if (token != null) {
-			if (token.kind != Token.Value) {
-				throw new NextStepException("illegal state");
-			}
+        if (token != null) {
+            if (token.kind != Token.Value) {
+                throw new NextStepException("illegal state");
+            }
 
-			return new Value(token.value);
-		}
+            return new Value(token.value);
+        }
 
-		throw new NextStepException("early end of tokenstream");
-	}
+        throw new NextStepException("early end of tokenstream");
+    }
 
-	public Value() {
+    public Value() {
 
-	}
+    }
 
-	public Value(String value) {
-		if (value == null) {
-			throw new IllegalArgumentException();
-		}
+    public Value(String value) {
+        if (value == null) {
+            throw new IllegalArgumentException();
+        }
 
-		this.value = value;
-	}
+        this.value = value;
+    }
 
-	public String getComment() {
-		return null;
-	}
+    public String getComment() {
+        return null;
+    }
 
-	@Override
-	public int hashCode() {
-		if (value == null) {
-			return 0;
-		}
-		return value.hashCode();
-	}
+    @Override
+    public int hashCode() {
+        if (value == null) {
+            return 0;
+        }
+        return value.hashCode();
+    }
 
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj) {
-			return true;
-		}
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
 
-		if (obj == null || !(obj instanceof Value)) {
-			return false;
-		}
+        if (obj == null || !(obj instanceof Value)) {
+            return false;
+        }
 
-		return value.equals(((Value) obj).value);
-	}
+        return value.equals(((Value)obj).value);
+    }
 
-	@Override
-	public String print(int depth) {
-		return printInline(depth);
-	}
+    @Override
+    public String print(int depth) {
+        return printInline(depth);
+    }
 
-	@Override
-	public String printInline(int depth) {
-		String comment = getComment();
-		if (comment != null) {
-			return normalize(value) + " /* " + comment + " */";
-		}
-		return normalize(value);
-	}
+    @Override
+    public String printInline(int depth) {
+        String comment = getComment();
+        if (comment != null) {
+            return normalize(value) + " /* " + comment + " */";
+        }
+        return normalize(value);
+    }
 
-	private String normalize(String value) {
-		if (value == null || value.length() == 0) {
-			return "\"\"";
-		}
-		if (value.matches("[\\w\\./]*")) {
-			return value;
-		}
+    private String normalize(String value) {
+        if (value == null || value.length() == 0) {
+            return "\"\"";
+        }
+        if (value.matches("[\\w\\./]*")) {
+            return value;
+        }
 
-		StringBuilder b = new StringBuilder(value.length() + 2);
-		b.append("\"");
-		int idx = 0;
-		char c = value.charAt(idx);
-		while (true) {
-			idx++;
-			switch (c) {
-			case '\n':
-				b.append("\\n");
-				break;
-			case '\r':
-				b.append("\\r");
-				break;
-			case '\t':
-				b.append("\\t");
-				break;
-			case '\f':
-				b.append("\\f");
-				break;
-			case '\b':
-				b.append("\\b");
-				break;
-			case '\"':
-				b.append("\\\"");
-				break;
-			case '\\':
-				b.append("\\\\");
-				break;
+        StringBuilder b = new StringBuilder(value.length() + 2);
+        b.append("\"");
+        int idx = 0;
+        char c = value.charAt(idx);
+        while (true) {
+            idx++;
+            switch (c) {
+            case '\n':
+                b.append("\\n");
+                break;
+            case '\r':
+                b.append("\\r");
+                break;
+            case '\t':
+                b.append("\\t");
+                break;
+            case '\f':
+                b.append("\\f");
+                break;
+            case '\b':
+                b.append("\\b");
+                break;
+            case '\"':
+                b.append("\\\"");
+                break;
+            case '\\':
+                b.append("\\\\");
+                break;
 
-			default:
-				b.append(c);
-				break;
-			}
-			if (idx >= value.length()) {
-				break;
-			}
-			c = value.charAt(idx);
-		}
-		b.append("\"");
-		return b.toString();
-	}
+            default:
+                b.append(c);
+                break;
+            }
+            if (idx >= value.length()) {
+                break;
+            }
+            c = value.charAt(idx);
+        }
+        b.append("\"");
+        return b.toString();
+    }
 
 }

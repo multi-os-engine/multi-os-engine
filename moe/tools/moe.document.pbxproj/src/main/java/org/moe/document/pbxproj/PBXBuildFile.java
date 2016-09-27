@@ -25,59 +25,61 @@ import java.util.Map;
 @SuppressWarnings("unchecked")
 public final class PBXBuildFile extends PBXObject {
 
-	public static final String FILE_REF = "fileRef";
-	public static final String SETTINGS = "settings";
+    public static final String FILE_REF = "fileRef";
+    public static final String SETTINGS = "settings";
 
-	public PBXBuildPhase container;
+    public PBXBuildPhase container;
 
-	public PBXBuildFile(Dictionary<Value, NextStep> dict) {
-		super(dict);
-	}
+    public PBXBuildFile(Dictionary<Value, NextStep> dict) {
+        super(dict);
+    }
 
-	public PBXBuildFile() {
-		super(null);
-		setIsa(this.getClass().getSimpleName());
-	}
+    public PBXBuildFile() {
+        super(null);
+        setIsa(this.getClass().getSimpleName());
+    }
 
-	@Override
-	public String getCommentString() {
-		PBXObjectRef<? extends PBXObject> fileRef = getFileRef();
-		if (fileRef != null) {
-			PBXObject referenced = fileRef.getReferenced();
-			return referenced.getCommentString() + " in " + (container == null ? "" : container.getCommentString());
-		}
-		return null;
-	}
+    @Override
+    public String getCommentString() {
+        PBXObjectRef<? extends PBXObject> fileRef = getFileRef();
+        if (fileRef != null) {
+            PBXObject referenced = fileRef.getReferenced();
+            return referenced.getCommentString() + " in " + (container == null ? "" : container.getCommentString());
+        }
+        return null;
+    }
 
-	@Override
-	public void connectReferences(Map<String, Value> map) {
-		connectReferencesInValue(FILE_REF, map);
-	}
+    @Override
+    public void connectReferences(Map<String, Value> map) {
+        connectReferencesInValue(FILE_REF, map);
+    }
 
-	@Override
-	public void removeReference(PBXObjectRef<? extends PBXObject> ref) {
-		if (ref.equals(getFileRef())) {
-			setFileRef(null);
-		}
-	}
+    @Override
+    public void removeReference(PBXObjectRef<? extends PBXObject> ref) {
+        if (ref.equals(getFileRef())) {
+            setFileRef(null);
+        }
+    }
 
-	@Override
-	protected boolean isInline() {
-		return true;
-	}
+    @Override
+    protected boolean isInline() {
+        return true;
+    }
 
-	/** Fields **/
+    /**
+     * Fields
+     **/
 
-	public PBXObjectRef<? extends PBXObject> getFileRef() {
-		return (PBXObjectRef<? extends PBXObject>) getPBXObjectRefValue(FILE_REF);
-	}
+    public PBXObjectRef<? extends PBXObject> getFileRef() {
+        return (PBXObjectRef<? extends PBXObject>)getPBXObjectRefValue(FILE_REF);
+    }
 
-	public void setFileRef(PBXObjectRef<? extends PBXObject> value) {
-		setPBXObjectRefValue(FILE_REF, value);
-	}
+    public void setFileRef(PBXObjectRef<? extends PBXObject> value) {
+        setPBXObjectRefValue(FILE_REF, value);
+    }
 
-	public Dictionary<Value, NextStep> getSettings() {
-		return (Dictionary<Value, NextStep>) getDictionaryValue(SETTINGS);
-	}
+    public Dictionary<Value, NextStep> getSettings() {
+        return (Dictionary<Value, NextStep>)getDictionaryValue(SETTINGS);
+    }
 
 }

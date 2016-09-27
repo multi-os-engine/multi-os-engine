@@ -16,128 +16,132 @@ limitations under the License.
 
 package org.moe.document.pbxproj.nextstep;
 
-import java.io.*;
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.InputStreamReader;
 import java.nio.charset.Charset;
 
 public class Parser {
 
-	private char buffer[];
-	private int loc = 0;
+    private char buffer[];
+    private int loc = 0;
 
-	public Parser(File nextstepfile) throws IOException {
-		FileInputStream fis = new FileInputStream(nextstepfile);
-		try {
-			InputStreamReader isr = new InputStreamReader(fis, Charset.forName("UTF-8"));
-			StringBuilder fileData = new StringBuilder(1000);
-			BufferedReader reader = new BufferedReader(isr);
-	
-			char[] buf = new char[10];
-			int numRead;
-			while ((numRead = reader.read(buf)) != -1) {
-				String readData = String.valueOf(buf, 0, numRead);
-				fileData.append(readData);
-				buf = new char[1024];
-			}
-	
-			reader.close();
-	
-			buffer = fileData.toString().toCharArray();
-		} finally {
-			fis.close();
-		}
-	}
+    public Parser(File nextstepfile) throws IOException {
+        FileInputStream fis = new FileInputStream(nextstepfile);
+        try {
+            InputStreamReader isr = new InputStreamReader(fis, Charset.forName("UTF-8"));
+            StringBuilder fileData = new StringBuilder(1000);
+            BufferedReader reader = new BufferedReader(isr);
 
-	public char read() {
-		return getNextChar();
-	}
+            char[] buf = new char[10];
+            int numRead;
+            while ((numRead = reader.read(buf)) != -1) {
+                String readData = String.valueOf(buf, 0, numRead);
+                fileData.append(readData);
+                buf = new char[1024];
+            }
 
-	boolean inStringMode = false;
+            reader.close();
 
-	private char getNextChar() {
-		if (inStringMode) {
-			return getNextCharInString();
-		} else {
-			return getNextCharRaw();
-		}
-	}
+            buffer = fileData.toString().toCharArray();
+        } finally {
+            fis.close();
+        }
+    }
 
-	private char getNextCharInString() {
-		char c = next();
-		if (c == '"' && buffer[loc - 2] != '\\') {
-			inStringMode = false;
-		}
-		return c;
-	}
+    public char read() {
+        return getNextChar();
+    }
 
-	private char getNextCharRaw() {
-		char c;
-		do {
-			c = next();
-		} while (Character.isWhitespace(c));
+    boolean inStringMode = false;
 
-		if (c == '/') {
-			c = next();
-			if (c == '/' && (loc == 2 || lookback(2) == '\r' || lookback(2) == '\n')) {
-				skipSingleLineComment();
-				return getNextChar();
-			} else if (c == '*') {
-				skipMultiLineComment();
-				return getNextChar();
-			} else {
-				reverse();
-				return '/';
-			}
-		} else if (c == '"') {
-			inStringMode = true;
-			return c;
-		} else {
-			return c;
-		}
-	}
+    private char getNextChar() {
+        if (inStringMode) {
+            return getNextCharInString();
+        } else {
+            return getNextCharRaw();
+        }
+    }
 
-	private void skipSingleLineComment() {
-		char c = next();
-		while (c != '\n' && c != '\r') {
-			c = next();
-		}
+    private char getNextCharInString() {
+        char c = next();
+        if (c == '"' && buffer[loc - 2] != '\\') {
+            inStringMode = false;
+        }
+        return c;
+    }
 
-		if (c == '\r' && peek() == '\n') {
-			next();
-		}
-	}
+    private char getNextCharRaw() {
+        char c;
+        do {
+            c = next();
+        } while (Character.isWhitespace(c));
 
-	private void skipMultiLineComment() {
-		char c = next();
-		while (c != '*') {
-			c = next();
-			if (c == '*') {
-				c = next();
-				if (c == '/') {
-					break;
-				}
-			}
-		}
-	}
+        if (c == '/') {
+            c = next();
+            if (c == '/' && (loc == 2 || lookback(2) == '\r' || lookback(2) == '\n')) {
+                skipSingleLineComment();
+                return getNextChar();
+            } else if (c == '*') {
+                skipMultiLineComment();
+                return getNextChar();
+            } else {
+                reverse();
+                return '/';
+            }
+        } else if (c == '"') {
+            inStringMode = true;
+            return c;
+        } else {
+            return c;
+        }
+    }
 
-	private char next() {
-		if (loc + 1 >= buffer.length) {
-			return 0;
-		}
-		return buffer[loc++];
-	}
+    private void skipSingleLineComment() {
+        char c = next();
+        while (c != '\n' && c != '\r') {
+            c = next();
+        }
 
-	private char lookback(int rel) {
-		return buffer[loc - 1 - rel];
-	}
+        if (c == '\r' && peek() == '\n') {
+            next();
+        }
+    }
 
-	private char peek() {
-		if (loc + 1 >= buffer.length) {
-			return 0;
-		}
-		return buffer[loc + 1];
-	}
+    private void skipMultiLineComment() {
+        char c = next();
+        while (c != '*') {
+            c = next();
+            if (c == '*') {
+                c = next();
+                if (c == '/') {
+                    break;
+                }
+            }
+        }
+    }
 
-	public void reverse() {
-		--loc;
-	}
+    private char next() {
+        if (loc + 1 >= buffer.length) {
+            return 0;
+        }
+        return buffer[loc++];
+    }
+
+    private char lookback(int rel) {
+        return buffer[loc - 1 - rel];
+    }
+
+    private char peek() {
+        if (loc + 1 >= buffer.length) {
+            return 0;
+        }
+        return buffer[loc + 1];
+    }
+
+    public void reverse() {
+        --loc;
+    }
 }

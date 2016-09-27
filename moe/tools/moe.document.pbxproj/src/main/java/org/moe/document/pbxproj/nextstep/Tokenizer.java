@@ -18,162 +18,162 @@ package org.moe.document.pbxproj.nextstep;
 
 public class Tokenizer {
 
-	public static class Token {
-		public static final int Brace_open = '{';
-		public static final int Brace_close = '}';
-		public static final int Parentheses_open = '(';
-		public static final int Parentheses_close = ')';
-		public static final int Equal = '=';
-		public static final int Comma = ',';
-		public static final int Semicolon = ';';
-		public static final int Value = 'v';
+    public static class Token {
+        public static final int Brace_open = '{';
+        public static final int Brace_close = '}';
+        public static final int Parentheses_open = '(';
+        public static final int Parentheses_close = ')';
+        public static final int Equal = '=';
+        public static final int Comma = ',';
+        public static final int Semicolon = ';';
+        public static final int Value = 'v';
 
-		public final char kind;
-		public final String value;
+        public final char kind;
+        public final String value;
 
-		public Token(char kind) {
-			this.kind = kind;
-			this.value = null;
-		}
+        public Token(char kind) {
+            this.kind = kind;
+            this.value = null;
+        }
 
-		public Token(String value) {
-			this.kind = Value;
-			this.value = value;
-		}
+        public Token(String value) {
+            this.kind = Value;
+            this.value = value;
+        }
 
-		@Override
-		public String toString() {
-			switch (kind) {
-			case Brace_open:
-				return "{";
-			case Brace_close:
-				return "}";
-			case Parentheses_open:
-				return "(";
-			case Parentheses_close:
-				return ")";
-			case Equal:
-				return "=";
-			case Comma:
-				return ",";
-			case Semicolon:
-				return ";";
-			case Value:
-				return value;
-			}
-			return super.toString();
-		}
-	}
+        @Override
+        public String toString() {
+            switch (kind) {
+            case Brace_open:
+                return "{";
+            case Brace_close:
+                return "}";
+            case Parentheses_open:
+                return "(";
+            case Parentheses_close:
+                return ")";
+            case Equal:
+                return "=";
+            case Comma:
+                return ",";
+            case Semicolon:
+                return ";";
+            case Value:
+                return value;
+            }
+            return super.toString();
+        }
+    }
 
-	private final Parser p;
+    private final Parser p;
 
-	public Tokenizer(Parser p) {
-		this.p = p;
-	}
+    public Tokenizer(Parser p) {
+        this.p = p;
+    }
 
-	private Token peekedToken;
+    private Token peekedToken;
 
-	public Token peek() throws NextStepException {
-		if (peekedToken == null) {
-			peekedToken = next();
-		}
-		return peekedToken;
-	}
+    public Token peek() throws NextStepException {
+        if (peekedToken == null) {
+            peekedToken = next();
+        }
+        return peekedToken;
+    }
 
-	public Token next() throws NextStepException {
-		if (peekedToken != null) {
-			Token t = peekedToken;
-			peekedToken = null;
-			return t;
-		}
+    public Token next() throws NextStepException {
+        if (peekedToken != null) {
+            Token t = peekedToken;
+            peekedToken = null;
+            return t;
+        }
 
-		char c = p.read();
-		if (c == 0) {
-			return null;
-		} else if (isStructure(c)) {
-			return new Token(c);
-		} else if (c == '"') {
-			StringBuilder b = new StringBuilder();
+        char c = p.read();
+        if (c == 0) {
+            return null;
+        } else if (isStructure(c)) {
+            return new Token(c);
+        } else if (c == '"') {
+            StringBuilder b = new StringBuilder();
 
-			boolean isesc = false;
-			c = p.read();
+            boolean isesc = false;
+            c = p.read();
 
-			while (true) {
-				if (!isesc && c == '"') {
-					break;
-				}
+            while (true) {
+                if (!isesc && c == '"') {
+                    break;
+                }
 
-				if (isesc) {
-					switch (c) {
-					case 'n':
-						b.append('\n');
-						isesc = false;
-						break;
-					case 'r':
-						b.append('\r');
-						isesc = false;
-						break;
-					case 't':
-						b.append('\t');
-						isesc = false;
-						break;
-					case 'f':
-						b.append('\f');
-						isesc = false;
-						break;
-					case 'b':
-						b.append('\b');
-						isesc = false;
-						break;
-					case '"':
-						b.append('\"');
-						isesc = false;
-						break;
-					case '\\':
-						b.append('\\');
-						isesc = false;
-						break;
+                if (isesc) {
+                    switch (c) {
+                    case 'n':
+                        b.append('\n');
+                        isesc = false;
+                        break;
+                    case 'r':
+                        b.append('\r');
+                        isesc = false;
+                        break;
+                    case 't':
+                        b.append('\t');
+                        isesc = false;
+                        break;
+                    case 'f':
+                        b.append('\f');
+                        isesc = false;
+                        break;
+                    case 'b':
+                        b.append('\b');
+                        isesc = false;
+                        break;
+                    case '"':
+                        b.append('\"');
+                        isesc = false;
+                        break;
+                    case '\\':
+                        b.append('\\');
+                        isesc = false;
+                        break;
 
-					default:
-						throw new NextStepException("unrecognized escaped char: " + c);
-					}
-				} else {
-					if (c == '\\') {
-						isesc = true;
-					} else {
-						b.append(c);
-					}
-				}
+                    default:
+                        throw new NextStepException("unrecognized escaped char: " + c);
+                    }
+                } else {
+                    if (c == '\\') {
+                        isesc = true;
+                    } else {
+                        b.append(c);
+                    }
+                }
 
-				c = p.read();
-			}
+                c = p.read();
+            }
 
-			return new Token(b.toString());
-		} else {
-			StringBuilder b = new StringBuilder();
-			while (!isStructure(c) && c != 0) {
-				b.append(c);
-				c = p.read();
-			}
-			p.reverse();
-			return new Token(b.toString());
-		}
-	}
+            return new Token(b.toString());
+        } else {
+            StringBuilder b = new StringBuilder();
+            while (!isStructure(c) && c != 0) {
+                b.append(c);
+                c = p.read();
+            }
+            p.reverse();
+            return new Token(b.toString());
+        }
+    }
 
-	private boolean isStructure(char c) {
-		switch (c) {
-		case Token.Brace_open:
-		case Token.Brace_close:
-		case Token.Parentheses_open:
-		case Token.Parentheses_close:
-		case Token.Equal:
-		case Token.Comma:
-		case Token.Semicolon:
-			return true;
+    private boolean isStructure(char c) {
+        switch (c) {
+        case Token.Brace_open:
+        case Token.Brace_close:
+        case Token.Parentheses_open:
+        case Token.Parentheses_close:
+        case Token.Equal:
+        case Token.Comma:
+        case Token.Semicolon:
+            return true;
 
-		default:
-			return false;
-		}
-	}
+        default:
+            return false;
+        }
+    }
 
 }

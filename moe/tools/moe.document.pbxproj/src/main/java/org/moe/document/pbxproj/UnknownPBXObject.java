@@ -24,22 +24,22 @@ import java.util.Map;
 
 public final class UnknownPBXObject extends PBXObject {
 
-	public UnknownPBXObject(Dictionary<Value, NextStep> dict) {
-		super(dict);
-		// System.out.println(dict.getValue(PBXObject.ISA_KEY));
-	}
+    public UnknownPBXObject(Dictionary<Value, NextStep> dict) {
+        super(dict);
+        // System.out.println(dict.getValue(PBXObject.ISA_KEY));
+    }
 
-	@Override
-	public String getCommentString() {
-		return null;
-	}
+    @Override
+    public String getCommentString() {
+        return null;
+    }
 
-	@Override
-	public void connectReferences(Map<String, Value> map) {
-	}
+    @Override
+    public void connectReferences(Map<String, Value> map) {
+    }
 
-	@Override
-	public void removeReference(PBXObjectRef<? extends PBXObject> ref) {
-	}
+    @Override
+    public void removeReference(PBXObjectRef<? extends PBXObject> ref) {
+    }
 
 }

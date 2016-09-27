@@ -22,18 +22,18 @@ import org.moe.document.pbxproj.nextstep.Value;
 
 public class PBXHeadersBuildPhase extends PBXBuildPhase {
 
-	public PBXHeadersBuildPhase(Dictionary<Value, NextStep> dict) {
-		super(dict);
-	}
+    public PBXHeadersBuildPhase(Dictionary<Value, NextStep> dict) {
+        super(dict);
+    }
 
-	public PBXHeadersBuildPhase() {
-		super(null);
-		setIsa(this.getClass().getSimpleName());
-	}
+    public PBXHeadersBuildPhase() {
+        super(null);
+        setIsa(this.getClass().getSimpleName());
+    }
 
-	@Override
-	public String getCommentString() {
-		return "Headers";
-	}
+    @Override
+    public String getCommentString() {
+        return "Headers";
+    }
 
 }

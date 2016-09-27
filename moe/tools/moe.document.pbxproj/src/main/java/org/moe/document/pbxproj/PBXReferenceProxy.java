@@ -25,73 +25,75 @@ import java.util.Map;
 @SuppressWarnings("unchecked")
 public class PBXReferenceProxy extends PBXObject {
 
-	public static final String FILE_TYPE_KEY = "fileType";
-	public static final String PATH_KEY = "path";
-	public static final String REMOTE_REF_KEY = "remoteRef";
-	public static final String SOURCE_TREE_KEY = "sourceTree";
+    public static final String FILE_TYPE_KEY = "fileType";
+    public static final String PATH_KEY = "path";
+    public static final String REMOTE_REF_KEY = "remoteRef";
+    public static final String SOURCE_TREE_KEY = "sourceTree";
 
-	public PBXReferenceProxy(Dictionary<Value, NextStep> dict) {
-		super(dict);
-	}
+    public PBXReferenceProxy(Dictionary<Value, NextStep> dict) {
+        super(dict);
+    }
 
-	public PBXReferenceProxy() {
-		super(null);
-		setIsa(this.getClass().getSimpleName());
-	}
+    public PBXReferenceProxy() {
+        super(null);
+        setIsa(this.getClass().getSimpleName());
+    }
 
-	@Override
-	public String getCommentString() {
-		return getPath();
-	}
+    @Override
+    public String getCommentString() {
+        return getPath();
+    }
 
-	@Override
-	public void connectReferences(Map<String, Value> map) {
-		connectReferencesInValue(REMOTE_REF_KEY, map);
-	}
+    @Override
+    public void connectReferences(Map<String, Value> map) {
+        connectReferencesInValue(REMOTE_REF_KEY, map);
+    }
 
-	@Override
-	public void update() {
-	}
+    @Override
+    public void update() {
+    }
 
-	@Override
-	public void removeReference(PBXObjectRef<? extends PBXObject> ref) {
-		if (ref.equals(getRemoteRef())) {
-			setRemoteRef(null);
-		}
-	}
+    @Override
+    public void removeReference(PBXObjectRef<? extends PBXObject> ref) {
+        if (ref.equals(getRemoteRef())) {
+            setRemoteRef(null);
+        }
+    }
 
-	/** Fields **/
+    /**
+     * Fields
+     **/
 
-	public String getFileType() {
-		return getStringValue(FILE_TYPE_KEY);
-	}
+    public String getFileType() {
+        return getStringValue(FILE_TYPE_KEY);
+    }
 
-	public void setFileType(String value) {
-		setStringValue(FILE_TYPE_KEY, value);
-	}
+    public void setFileType(String value) {
+        setStringValue(FILE_TYPE_KEY, value);
+    }
 
-	public String getPath() {
-		return getStringValue(PATH_KEY);
-	}
+    public String getPath() {
+        return getStringValue(PATH_KEY);
+    }
 
-	public void setPath(String value) {
-		setStringValue(PATH_KEY, value);
-	}
+    public void setPath(String value) {
+        setStringValue(PATH_KEY, value);
+    }
 
-	public PBXObjectRef<PBXContainerItemProxy> getRemoteRef() {
-		return (PBXObjectRef<PBXContainerItemProxy>) getPBXObjectRefValue(REMOTE_REF_KEY);
-	}
+    public PBXObjectRef<PBXContainerItemProxy> getRemoteRef() {
+        return (PBXObjectRef<PBXContainerItemProxy>)getPBXObjectRefValue(REMOTE_REF_KEY);
+    }
 
-	public void setRemoteRef(PBXObjectRef<PBXContainerItemProxy> value) {
-		setPBXObjectRefValue(REMOTE_REF_KEY, value);
-	}
+    public void setRemoteRef(PBXObjectRef<PBXContainerItemProxy> value) {
+        setPBXObjectRefValue(REMOTE_REF_KEY, value);
+    }
 
-	public String getSourceTree() {
-		return getStringValue(SOURCE_TREE_KEY);
-	}
+    public String getSourceTree() {
+        return getStringValue(SOURCE_TREE_KEY);
+    }
 
-	public void setSourceTree(String value) {
-		setStringValue(SOURCE_TREE_KEY, value);
-	}
+    public void setSourceTree(String value) {
+        setStringValue(SOURCE_TREE_KEY, value);
+    }
 
 }
