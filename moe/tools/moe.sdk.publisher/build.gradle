@@ -36,7 +36,6 @@ def projectDeps = [
         ':moe.generator.natjgen',
         ':moe.ios.device.launcher',
         ':moe.ios.simulator.launcher',
-        ':moe.ui.transformer',
 ]
 
 projectDeps.each { evaluationDependsOn it }
@@ -113,12 +112,6 @@ def getSDKCopySpec() {
                 include rootProject.external.moe_core.out.retrolambda_jar.name
                 rename rootProject.external.moe_core.out.retrolambda_jar.name, 'retrolambda.jar'
             }
-
-            from buildfiles(':moe.ui.transformer', 'libs') {
-                include 'moe.ui.transformer.jar'
-                rename 'moe.ui.transformer.jar', 'uiTransformer.jar'
-            }
-            from buildfiles(':moe.ui.transformer', 'resources/main') { include 'UITransformer-res/**/*' }
 
             from buildfiles(':moe.generator.natjgen', 'libs') {
                 include 'moe.generator.natjgen.jar'
