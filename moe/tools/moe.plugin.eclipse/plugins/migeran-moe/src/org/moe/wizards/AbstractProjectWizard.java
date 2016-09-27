@@ -44,7 +44,7 @@ public abstract class AbstractProjectWizard extends Wizard implements INewWizard
 	private String error = null;
 
 	public enum TemplateType {
-		SingleView, SingleViewStoryboard, PageBased, PageBasedStoryboard, Game, MasterDetail, Tabbed,
+		MasterDetail, PageBased, SingleView, Tabbed, Game
 	}
 
 	protected abstract TemplateType getTemplateType();

@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?eclipse version="3.4"?>
 <plugin>
-
    <extension
          point="org.eclipse.m2e.core.projectConfigurators">
       <configurator
@@ -13,8 +12,6 @@
    <extension
          point="org.eclipse.m2e.core.lifecycleMappingMetadataSource">
    </extension>
-
-	
     <extension
             point="org.eclipse.ui.startup">
         <startup
@@ -110,27 +107,15 @@
                 name="Multi-OS Engine">
         </category>
         <wizard
-                class="org.moe.wizards.SingleViewProjectWizard"
-                id="org.moe.wizards.SingleViewProjectWizard"
-                name="Single View Application"
+                class="org.moe.wizards.MasterDetailProjectWizard"
+                id="org.moe.wizards.MasterDetailProjectWizard"
+                name="Master-Detail Application"
                 category="moe.project.Category"
                 icon="icons/moe_small.png"
                 project="true"
                 finalPerspective="org.eclipse.jdt.ui.JavaPerspective">
             <description>
-                Create Single View Application project into the workspace.
-            </description>
-        </wizard>
-        <wizard
-                class="org.moe.wizards.SingleViewStoryboardProjectWizard"
-                id="org.moe.wizards.SingleViewStoryboardProjectWizard"
-                name="Single View Application with Storyboard"
-                category="moe.project.Category"
-                icon="icons/moe_small.png"
-                project="true"
-                finalPerspective="org.eclipse.jdt.ui.JavaPerspective">
-            <description>
-                Create Single View Application with Storyboard project into the workspace.
+                This template provides a starting point for a master-detail application. It provides a user interface configured with a navigation controller to display a list of items and also a split view on iPad.
             </description>
         </wizard>
         <wizard
@@ -142,43 +127,19 @@
                 project="true"
                 finalPerspective="org.eclipse.jdt.ui.JavaPerspective">
             <description>
-                Create Page-Based Application project into the workspace.
+                This template provides a starting point for a page-based application that uses a page view controller.
             </description>
         </wizard>
         <wizard
-                class="org.moe.wizards.PageBasedStoryboardProjectWizard"
-                id="org.moe.wizards.PageBasedStoryboardProjectWizard"
-                name="Page-Based Application with Storyboard"
+                class="org.moe.wizards.SingleViewProjectWizard"
+                id="org.moe.wizards.SingleViewProjectWizard"
+                name="Single View Application"
                 category="moe.project.Category"
                 icon="icons/moe_small.png"
                 project="true"
                 finalPerspective="org.eclipse.jdt.ui.JavaPerspective">
             <description>
-                Create Page-Based Application with Storyboard project into the workspace.
-            </description>
-        </wizard>
-        <wizard
-                class="org.moe.wizards.GameProjectWizard"
-                id="org.moe.wizards.GameProjectWizard"
-                name="Game"
-                category="moe.project.Category"
-                icon="icons/moe_small.png"
-                project="true"
-                finalPerspective="org.eclipse.jdt.ui.JavaPerspective">
-            <description>
-                Create Game project into the workspace.
-            </description>
-        </wizard>
-        <wizard
-                class="org.moe.wizards.MasterDetailProjectWizard"
-                id="org.moe.wizards.MasterDetailProjectWizard"
-                name="Master-Detail Application with Storyboard"
-                category="org.project.Category"
-                icon="icons/moe_small.png"
-                project="true"
-                finalPerspective="org.eclipse.jdt.ui.JavaPerspective">
-            <description>
-                Create Master-Detail Application with Storyboard project into the workspace.
+                This template provides a starting point for an application that uses a single view. It provides a view controller to manage the view, and a storyboard or nib file that contains the view.
             </description>
         </wizard>
         <wizard
@@ -190,7 +151,19 @@
                 project="true"
                 finalPerspective="org.eclipse.jdt.ui.JavaPerspective">
             <description>
-                Create Tabbed Application project into the workspace.
+                This template provides a starting point for an application that uses a tab bar. It provides a user interface configured with a tab bar controller, and view controllers for the tab bar items.
+            </description>
+        </wizard>
+        <wizard
+                class="org.moe.wizards.GameProjectWizard"
+                id="org.moe.wizards.GameProjectWizard"
+                name="Game"
+                category="moe.project.Category"
+                icon="icons/moe_small.png"
+                project="true"
+                finalPerspective="org.eclipse.jdt.ui.JavaPerspective">
+            <description>
+                This template provides a starting point for games.
             </description>
         </wizard>
     </extension>
