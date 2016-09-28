@@ -118,9 +118,12 @@ public class MOEGradleRunner {
         // Push test args
         if (runConfig.runJUnitTests()) {
             options.push("raw-test-output");
-            for (String testArg : runConfig.getTestArgs()) {
-                if (testArg != null && !testArg.isEmpty()) {
-                    options.push("arg:" + testArg);
+            String[] testArgs = runConfig.getTestArgs();
+            if (testArgs != null) {
+                for (String testArg : testArgs) {
+                    if (testArg != null && !testArg.isEmpty()) {
+                        options.push("arg:" + testArg);
+                    }
                 }
             }
         }
