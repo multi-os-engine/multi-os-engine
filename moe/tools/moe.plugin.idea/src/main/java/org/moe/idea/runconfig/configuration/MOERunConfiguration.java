@@ -91,12 +91,12 @@ public class MOERunConfiguration extends MOERunConfigurationBase {
         runOnSimulator = JDOMHelper.readBoolean(element, "runOnSimulator", true);
         runJUnitTests = JDOMHelper.readBoolean(element, "runJUnitTests", false);
         testType = JDOMHelper.readInteger(element, "testType", MOEJUnitUtil.TEST_ALL_IN_MODULE);
-        testMethodName = JDOMExternalizerUtil.readField(element, "testMethodName");
-        testClassName = JDOMExternalizerUtil.readField(element, "testClassName");
-        testPackageName = JDOMExternalizerUtil.readField(element, "testPackageName");
-        vmArgs = JDOMExternalizerUtil.readField(element, "vmArguments");
-        environmentVariables = JDOMExternalizerUtil.readField(element, "environmentVariables");
-        programArgs = JDOMExternalizerUtil.readField(element, "programArguments");
+        testMethodName = JDOMExternalizerUtil.readField(element, "testMethodName", "");
+        testClassName = JDOMExternalizerUtil.readField(element, "testClassName", "");
+        testPackageName = JDOMExternalizerUtil.readField(element, "testPackageName", "");
+        vmArgs = JDOMExternalizerUtil.readField(element, "vmArguments", "");
+        environmentVariables = JDOMExternalizerUtil.readField(element, "environmentVariables", "");
+        programArgs = JDOMExternalizerUtil.readField(element, "programArguments", "");
     }
 
     @Override
@@ -239,6 +239,10 @@ public class MOERunConfiguration extends MOERunConfigurationBase {
 
     private List<String> getArgumentList(String argumentString, String regex) {
         List<String> arguments = new ArrayList<String>();
+
+        if (argumentString == null || argumentString.isEmpty()) {
+            return arguments;
+        }
 
         String[] args = null;
         if (regex.equals(";")) {
