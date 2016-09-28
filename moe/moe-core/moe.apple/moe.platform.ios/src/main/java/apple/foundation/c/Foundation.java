@@ -17,6 +17,7 @@ limitations under the License.
 package apple.foundation.c;
 
 import apple.foundation.NSArray;
+import apple.foundation.NSBundle;
 import apple.foundation.NSException;
 import apple.foundation.struct.NSRange;
 import apple.foundation.struct.NSSwappedDouble;
@@ -71,6 +72,39 @@ public final class Foundation {
 
     @Generated
     private Foundation() {
+    }
+
+    public static String NSLocalizedString(String key, String comment) {
+        return NSBundle.mainBundle().localizedStringForKeyValueTable(key, "", null);
+    }
+
+    public static String NSLocalizedStringFromTable(String key, String tbl, String comment) {
+        return NSBundle.mainBundle().localizedStringForKeyValueTable(key, "", tbl);
+    }
+
+    public static String NSLocalizedStringFromTableInBundle(String key, String tbl, NSBundle bundle, String comment) {
+        return bundle.localizedStringForKeyValueTable(key, "", tbl);
+    }
+
+    public static String NSLocalizedStringWithDefaultValue(String key, String tbl, NSBundle bundle, String val,
+            String comment) {
+        return bundle.localizedStringForKeyValueTable(key, val, tbl);
+    }
+
+    public static String NSLocalizedString(String key) {
+        return NSBundle.mainBundle().localizedStringForKeyValueTable(key, "", null);
+    }
+
+    public static String NSLocalizedStringFromTable(String key, String tbl) {
+        return NSBundle.mainBundle().localizedStringForKeyValueTable(key, "", tbl);
+    }
+
+    public static String NSLocalizedStringFromTableInBundle(String key, String tbl, NSBundle bundle) {
+        return bundle.localizedStringForKeyValueTable(key, "", tbl);
+    }
+
+    public static String NSLocalizedStringWithDefaultValue(String key, String tbl, NSBundle bundle, String val) {
+        return bundle.localizedStringForKeyValueTable(key, val, tbl);
     }
 
     @Generated
