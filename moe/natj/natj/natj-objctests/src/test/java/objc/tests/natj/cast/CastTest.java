@@ -54,7 +54,7 @@ public class CastTest {
 
     @Test
     public void testCastIntegrityFromOpaquePtr() {
-        CFStringRef optr = CoreFoundation.CFStringCreateWithCString(null, "str", CFStringBuiltInEncodings.EncodingASCII);
+        CFStringRef optr = CoreFoundation.CFStringCreateWithCString(null, "str", CFStringBuiltInEncodings.ASCII);
 
         NSString obj = ObjCRuntime.cast(optr, NSString.class);
         Assert.assertEquals(obj.getPeerPointer(), optr.getPeer().getPeer());

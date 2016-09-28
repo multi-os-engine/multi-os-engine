@@ -48,30 +48,34 @@ limitations under the License.
 #error no byte swap intrinsics
 #endif
 
+#ifdef MOE_IOS_TEST_RUNNER
+#include "AppleSupport.h"
+#endif
+
 static const NJUInt NUM_ELEMENTS = 1000;
 
-void swap16(NJUInt count, void *input) {
+static void swap16(NJUInt count, void *input) {
     __NATJ_BYTE_SWAP_16_T *data = (__NATJ_BYTE_SWAP_16_T *)input;
     for (NJUInt i = 0; i < count; ++i) {
         data[i] = __NATJ_BYTE_SWAP_16(data[i]);
     }
 }
 
-void swap32(NJUInt count, void *input) {
+static void swap32(NJUInt count, void *input) {
     __NATJ_BYTE_SWAP_32_T *data = (__NATJ_BYTE_SWAP_32_T *)input;
     for (NJUInt i = 0; i < count; ++i) {
         data[i] = __NATJ_BYTE_SWAP_32(data[i]);
     }
 }
 
-void swap64(NJUInt count, void *input) {
+static void swap64(NJUInt count, void *input) {
     __NATJ_BYTE_SWAP_64_T *data = (__NATJ_BYTE_SWAP_64_T *)input;
     for (NJUInt i = 0; i < count; ++i) {
         data[i] = __NATJ_BYTE_SWAP_64(data[i]);
     }
 }
 
-void *loadFile(const char *fileName, NJUInt elemSize) {
+static void *loadFile(const char *fileName, NJUInt elemSize) {
     void *buffer;
     {
         char cwd[PATH_MAX];
@@ -84,8 +88,13 @@ void *loadFile(const char *fileName, NJUInt elemSize) {
 #endif
 
         char path[PATH_MAX];
+#ifdef MOE_IOS_TEST_RUNNER
+        getApplePath("ctests", fileName, path, PATH_MAX);
+#else
         snprintf(path, sizeof path, "%s%csrc%ctest%cresources%c%s", cwd,
                  PATH_SEP, PATH_SEP, PATH_SEP, PATH_SEP, fileName);
+#endif
+
         //printf("Loading %s\n", path);
 
         long length;
@@ -114,7 +123,7 @@ void *loadFile(const char *fileName, NJUInt elemSize) {
     return buffer;
 }
 
-void *createZero(NJUInt elemSize) {
+static void *createZero(NJUInt elemSize) {
     return calloc(NUM_ELEMENTS, elemSize);
 }
 

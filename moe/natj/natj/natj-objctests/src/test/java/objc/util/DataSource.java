@@ -21,7 +21,11 @@ import org.moe.natj.general.ptr.impl.PtrFactory;
 import apple.foundation.NSNumber;
 
 import java.io.DataInputStream;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
 
 public class DataSource {
 
@@ -34,13 +38,34 @@ public class DataSource {
     private static int[] INT_RAW_VALUES;
 
     private static final int[] getInts() throws IOException {
-        DataInputStream dis = new DataInputStream(DataSource.class.getClassLoader().getResourceAsStream(INT_FILE + ".txt"));
+        DataInputStream dis = getDataInputStream(INT_FILE);
         int data[] = new int[COUNT];
         for (int i = 0; i < COUNT; ++i) {
             data[i] = dis.readInt();
         }
         dis.close();
         return data;
+    }
+
+    private static DataInputStream getDataInputStream(String filename) {
+        try {
+            final Class<?> clz = Class.forName("org.moe.natj.apple.test.support.Util");
+            final Method method = clz.getMethod("getApplePath", String.class, String.class);
+            final String ctests = (String) method.invoke(null, "ctests", filename + ".txt");
+            return new DataInputStream(new FileInputStream(ctests));
+        } catch (ClassNotFoundException ignore) {
+            // Ignore
+        } catch (NoSuchMethodException e) {
+            e.printStackTrace();
+        } catch (InvocationTargetException e) {
+            e.printStackTrace();
+        } catch (IllegalAccessException e) {
+            e.printStackTrace();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+        return new DataInputStream(objc.util.DataSource.class.getClassLoader().getResourceAsStream
+                (filename + ".txt"));
     }
 
     private static NSNumber[] OBJC_OBJECT_VALUES;

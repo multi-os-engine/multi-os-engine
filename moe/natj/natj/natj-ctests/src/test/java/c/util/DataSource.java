@@ -25,7 +25,11 @@ import org.moe.natj.general.ptr.*;
 import org.moe.natj.general.ptr.impl.PtrFactory;
 
 import java.io.DataInputStream;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
 
 public class DataSource {
 
@@ -39,7 +43,7 @@ public class DataSource {
     private static Boolean[] BOOL_OBJ_VALUES;
 
     private static final boolean[] getBools() throws IOException {
-        DataInputStream dis = new DataInputStream(DataSource.class.getClassLoader().getResourceAsStream(BOOL_FILE + ".txt"));
+        DataInputStream dis = getDataInputStream(BOOL_FILE);
         boolean data[] = new boolean[COUNT];
         for (int i = 0; i < COUNT; ++i) {
             data[i] = dis.readBoolean();
@@ -72,13 +76,33 @@ public class DataSource {
     private static Byte[] BYTE_OBJ_VALUES;
 
     private static final byte[] getBytes() throws IOException {
-        DataInputStream dis = new DataInputStream(DataSource.class.getClassLoader().getResourceAsStream(BYTE_FILE + ".txt"));
+        DataInputStream dis = getDataInputStream(BYTE_FILE);
         byte data[] = new byte[COUNT];
         for (int i = 0; i < COUNT; ++i) {
             data[i] = dis.readByte();
         }
         dis.close();
         return data;
+    }
+
+    private static DataInputStream getDataInputStream(String filename) {
+        try {
+            final Class<?> clz = Class.forName("org.moe.natj.apple.test.support.Util");
+            final Method method = clz.getMethod("getApplePath", String.class, String.class);
+            final String ctests = (String) method.invoke(null, "ctests", filename + ".txt");
+            return new DataInputStream(new FileInputStream(ctests));
+        } catch (ClassNotFoundException ignore) {
+            // Ignore
+        } catch (NoSuchMethodException e) {
+            e.printStackTrace();
+        } catch (InvocationTargetException e) {
+            e.printStackTrace();
+        } catch (IllegalAccessException e) {
+            e.printStackTrace();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+        return new DataInputStream(DataSource.class.getClassLoader().getResourceAsStream(filename + ".txt"));
     }
 
     public static final byte[] getRawBytes() {
@@ -105,7 +129,7 @@ public class DataSource {
     private static Short[] SHORT_OBJ_VALUES;
 
     private static final short[] getShorts() throws IOException {
-        DataInputStream dis = new DataInputStream(DataSource.class.getClassLoader().getResourceAsStream(SHORT_FILE + ".txt"));
+        DataInputStream dis = getDataInputStream(SHORT_FILE);
         short data[] = new short[COUNT];
         for (int i = 0; i < COUNT; ++i) {
             data[i] = dis.readShort();
@@ -138,7 +162,7 @@ public class DataSource {
     private static Character[] CHAR_OBJ_VALUES;
 
     private static final char[] getChars() throws IOException {
-        DataInputStream dis = new DataInputStream(DataSource.class.getClassLoader().getResourceAsStream(CHAR_FILE + ".txt"));
+        DataInputStream dis = getDataInputStream(CHAR_FILE);
         char data[] = new char[COUNT];
         for (int i = 0; i < COUNT; ++i) {
             data[i] = dis.readChar();
@@ -207,7 +231,7 @@ public class DataSource {
     private static Integer[] INT_OBJ_VALUES;
 
     private static final int[] getInts() throws IOException {
-        DataInputStream dis = new DataInputStream(DataSource.class.getClassLoader().getResourceAsStream(INT_FILE + ".txt"));
+        DataInputStream dis = getDataInputStream(INT_FILE);
         int data[] = new int[COUNT];
         for (int i = 0; i < COUNT; ++i) {
             data[i] = dis.readInt();
@@ -311,7 +335,7 @@ public class DataSource {
     private static Long[] LONG_OBJ_VALUES;
 
     private static final long[] getLongs() throws IOException {
-        DataInputStream dis = new DataInputStream(DataSource.class.getClassLoader().getResourceAsStream(LONG_FILE + ".txt"));
+        DataInputStream dis = getDataInputStream(LONG_FILE);
         long data[] = new long[COUNT];
         for (int i = 0; i < COUNT; ++i) {
             data[i] = dis.readLong();
@@ -415,7 +439,7 @@ public class DataSource {
     private static Float[] FLOAT_OBJ_VALUES;
 
     private static final float[] getFloats() throws IOException {
-        DataInputStream dis = new DataInputStream(DataSource.class.getClassLoader().getResourceAsStream(FLOAT_FILE + ".txt"));
+        DataInputStream dis = getDataInputStream(FLOAT_FILE);
         float data[] = new float[COUNT];
         for (int i = 0; i < COUNT; ++i) {
             data[i] = dis.readFloat();
@@ -482,7 +506,7 @@ public class DataSource {
     private static Double[] DOUBLE_OBJ_VALUES;
 
     private static final double[] getDoubles() throws IOException {
-        DataInputStream dis = new DataInputStream(DataSource.class.getClassLoader().getResourceAsStream(DOUBLE_FILE + ".txt"));
+        DataInputStream dis = getDataInputStream(DOUBLE_FILE);
         double data[] = new double[COUNT];
         for (int i = 0; i < COUNT; ++i) {
             data[i] = dis.readDouble();

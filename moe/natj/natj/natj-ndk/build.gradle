@@ -19,7 +19,13 @@ apply plugin: 'maven-publish'
 
 task buildNative(type: Exec) {
     if (System.getenv('NDK_PATH') == null) {
-        throw new GradleException('NDK_PATH env var is not set')
+        logger.warn('NDK_PATH env var is not set')
+    }
+
+    doFirst {
+        if (System.getenv('NDK_PATH') == null) {
+            throw new GradleException('NDK_PATH env var is not set')
+        }
     }
 
     dependsOn ":prebuild_libffi_ndk"
@@ -34,7 +40,13 @@ task buildNative(type: Exec) {
 
 task buildNativeDebug(type: Exec) {
     if (System.getenv('NDK_PATH') == null) {
-        throw new GradleException('NDK_PATH env var is not set')
+        logger.warn('NDK_PATH env var is not set')
+    }
+
+    doFirst {
+        if (System.getenv('NDK_PATH') == null) {
+            throw new GradleException('NDK_PATH env var is not set')
+        }
     }
 
     dependsOn ":prebuild_libffi_ndk"

@@ -25,5 +25,5 @@ public final class CFStringBuiltInEncodings {
     }
 
     @Generated
-    public static final int EncodingASCII = 0x00000600;
+    public static final int ASCII = 0x00000600;
 }

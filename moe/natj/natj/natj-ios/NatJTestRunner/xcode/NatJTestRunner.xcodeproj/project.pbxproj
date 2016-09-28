@@ -1,0 +1,829 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		14799BBAFFE78023D781B58B /* application.jar in Resources */ = {isa = PBXBuildFile; fileRef = 279D9EE1B91DDB114861EAA9 /* application.jar */; };
+		3CD05FA7A8EAED8AD78510B4 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 39EA42054516C464D8301683 /* LaunchScreen.xib */; };
+		563A590278E428CDA47AA377 /* MOE.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F70AE979D4CACC8A96961A2D /* MOE.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		58AC08321D9BD47400E40FAA /* C+Functions+Invocation.c in Sources */ = {isa = PBXBuildFile; fileRef = 58AC081B1D9BD44500E40FAA /* C+Functions+Invocation.c */; };
+		58AC08331D9BD47400E40FAA /* C+Functions+LongInvocation.c in Sources */ = {isa = PBXBuildFile; fileRef = 58AC081D1D9BD44500E40FAA /* C+Functions+LongInvocation.c */; };
+		58AC08341D9BD47400E40FAA /* C+Functions+Primitives.c in Sources */ = {isa = PBXBuildFile; fileRef = 58AC081F1D9BD44500E40FAA /* C+Functions+Primitives.c */; };
+		58AC08351D9BD47400E40FAA /* C+Functions+Structs.c in Sources */ = {isa = PBXBuildFile; fileRef = 58AC08211D9BD44500E40FAA /* C+Functions+Structs.c */; };
+		58AC08361D9BD47400E40FAA /* C+Functions+Variadic.c in Sources */ = {isa = PBXBuildFile; fileRef = 58AC08231D9BD44500E40FAA /* C+Functions+Variadic.c */; };
+		58AC08371D9BD47400E40FAA /* C+Variables+Primitives.c in Sources */ = {isa = PBXBuildFile; fileRef = 58AC08251D9BD44500E40FAA /* C+Variables+Primitives.c */; };
+		58AC08381D9BD47400E40FAA /* NativeDataSource.c in Sources */ = {isa = PBXBuildFile; fileRef = 58AC08281D9BD44500E40FAA /* NativeDataSource.c */; };
+		58AC083A1D9BD80500E40FAA /* AppleSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = 58AC08391D9BD80500E40FAA /* AppleSupport.m */; };
+		58AC083F1D9BE08700E40FAA /* ctests in Resources */ = {isa = PBXBuildFile; fileRef = 58AC083E1D9BE08700E40FAA /* ctests */; };
+		58AC08621D9BED9E00E40FAA /* BaseTypes.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58AC08411D9BED9E00E40FAA /* BaseTypes.cpp */; };
+		58AC08631D9BED9E00E40FAA /* Fields.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58AC08461D9BED9E00E40FAA /* Fields.cpp */; };
+		58AC08641D9BED9E00E40FAA /* Functions.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58AC08481D9BED9E00E40FAA /* Functions.cpp */; };
+		58AC08651D9BED9E00E40FAA /* Hierarchy.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58AC084A1D9BED9E00E40FAA /* Hierarchy.cpp */; };
+		58AC08661D9BED9E00E40FAA /* ObjectContainer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58AC084C1D9BED9E00E40FAA /* ObjectContainer.cpp */; };
+		58AC08671D9BED9E00E40FAA /* Operators.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58AC084E1D9BED9E00E40FAA /* Operators.cpp */; };
+		58AC08681D9BED9E00E40FAA /* Primitives.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58AC08511D9BED9E00E40FAA /* Primitives.cpp */; };
+		58AC086A1D9BEE8D00E40FAA /* natj_cxx_stub.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58AC08691D9BEE8D00E40FAA /* natj_cxx_stub.cpp */; };
+		58AC08991D9BF85000E40FAA /* C+Functions+ObjC.m in Sources */ = {isa = PBXBuildFile; fileRef = 58AC086D1D9BF85000E40FAA /* C+Functions+ObjC.m */; };
+		58AC089A1D9BF85000E40FAA /* ClusterClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 58AC086F1D9BF85000E40FAA /* ClusterClass.m */; };
+		58AC089B1D9BF85000E40FAA /* CustomClassA.m in Sources */ = {isa = PBXBuildFile; fileRef = 58AC08721D9BF85000E40FAA /* CustomClassA.m */; };
+		58AC089C1D9BF85000E40FAA /* InstrumentedParent.m in Sources */ = {isa = PBXBuildFile; fileRef = 58AC08741D9BF85000E40FAA /* InstrumentedParent.m */; };
+		58AC089D1D9BF85000E40FAA /* MappingClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 58AC08761D9BF85000E40FAA /* MappingClass.m */; };
+		58AC089E1D9BF85000E40FAA /* NativeDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 58AC08781D9BF85000E40FAA /* NativeDataSource.m */; };
+		58AC089F1D9BF85000E40FAA /* NSStringInstrumentor.m in Sources */ = {isa = PBXBuildFile; fileRef = 58AC087A1D9BF85000E40FAA /* NSStringInstrumentor.m */; };
+		58AC08A01D9BF85000E40FAA /* ObjC+Methods+Exception.m in Sources */ = {isa = PBXBuildFile; fileRef = 58AC087C1D9BF85000E40FAA /* ObjC+Methods+Exception.m */; };
+		58AC08A11D9BF85000E40FAA /* ObjC+Methods+ObjectPtr.m in Sources */ = {isa = PBXBuildFile; fileRef = 58AC087E1D9BF85000E40FAA /* ObjC+Methods+ObjectPtr.m */; };
+		58AC08A21D9BF85000E40FAA /* ObjC+Methods+Primitives.m in Sources */ = {isa = PBXBuildFile; fileRef = 58AC08801D9BF85000E40FAA /* ObjC+Methods+Primitives.m */; };
+		58AC08A31D9BF85000E40FAA /* ObjC+Methods+Proxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 58AC08821D9BF85000E40FAA /* ObjC+Methods+Proxy.m */; };
+		58AC08A41D9BF85000E40FAA /* ObjC+Methods+Struct.m in Sources */ = {isa = PBXBuildFile; fileRef = 58AC08841D9BF85000E40FAA /* ObjC+Methods+Struct.m */; };
+		58AC08A51D9BF85000E40FAA /* ObjC+Methods+Variadic.m in Sources */ = {isa = PBXBuildFile; fileRef = 58AC08861D9BF85000E40FAA /* ObjC+Methods+Variadic.m */; };
+		58AC08A61D9BF85000E40FAA /* ObjCBlocks_Nested.m in Sources */ = {isa = PBXBuildFile; fileRef = 58AC08881D9BF85000E40FAA /* ObjCBlocks_Nested.m */; };
+		58AC08A71D9BF85000E40FAA /* ObjCBlocks.m in Sources */ = {isa = PBXBuildFile; fileRef = 58AC088A1D9BF85000E40FAA /* ObjCBlocks.m */; };
+		58AC08A81D9BF85000E40FAA /* ObjCForceCasting.m in Sources */ = {isa = PBXBuildFile; fileRef = 58AC088C1D9BF85000E40FAA /* ObjCForceCasting.m */; };
+		58AC08A91D9BF85000E40FAA /* ObjCUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 58AC088E1D9BF85000E40FAA /* ObjCUtility.m */; };
+		58AC08AA1D9BF85000E40FAA /* ProtocolFactoryClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 58AC08901D9BF85000E40FAA /* ProtocolFactoryClass.m */; };
+		58AC08AB1D9BF85000E40FAA /* SubHybrid.m in Sources */ = {isa = PBXBuildFile; fileRef = 58AC08921D9BF85000E40FAA /* SubHybrid.m */; };
+		58AC08AC1D9BF85000E40FAA /* UnmanagedBinding.m in Sources */ = {isa = PBXBuildFile; fileRef = 58AC08941D9BF85000E40FAA /* UnmanagedBinding.m */; };
+		58AC08AD1D9BF85000E40FAA /* UnmanagedNativeBlockManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 58AC08961D9BF85000E40FAA /* UnmanagedNativeBlockManager.m */; };
+		58AC08AE1D9BF85000E40FAA /* UnmanagedProtocolProxyManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 58AC08981D9BF85000E40FAA /* UnmanagedProtocolProxyManager.m */; };
+		58AC08B01D9BF8F400E40FAA /* objctests in Resources */ = {isa = PBXBuildFile; fileRef = 58AC08AF1D9BF8F400E40FAA /* objctests */; };
+		5F827CE6673AD73BD07242CA /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1B09EEB74B580C320B7AE423 /* main.cpp */; };
+		66F8227279FEFAE26E27F6A4 /* classlist.txt in Resources */ = {isa = PBXBuildFile; fileRef = A6C54B1F414860663FA811FF /* classlist.txt */; };
+		6A1F2F685821DAA79EF164CF /* preregister.txt in Resources */ = {isa = PBXBuildFile; fileRef = A9750BB173040A9CA2391A56 /* preregister.txt */; };
+		6F1D355C5088E137E301892D /* MOE.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F70AE979D4CACC8A96961A2D /* MOE.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		A7680274F67904473AB479AB /* application.jar in Resources */ = {isa = PBXBuildFile; fileRef = 7686422F0FFF83351D5CBB75 /* application.jar */; };
+		CD44DE0BEB3911890DB13F64 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1B09EEB74B580C320B7AE423 /* main.cpp */; };
+		CE6FCE78FA099DB4A3BB80E6 /* MainUI.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B45F3E6C7231EC9B664C12A3 /* MainUI.storyboard */; };
+		D09D73CAB61E7D62501CA082 /* MOE.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F70AE979D4CACC8A96961A2D /* MOE.framework */; };
+		D60362C58C39B5C85C4EF5F7 /* MOE.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F70AE979D4CACC8A96961A2D /* MOE.framework */; };
+		F776280134EA1FBE9DB3C47E /* preregister.txt in Resources */ = {isa = PBXBuildFile; fileRef = 1CCA4A9CC7DE4F2DD0639FFD /* preregister.txt */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		33C811AC4CA69AB38D502C72 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				563A590278E428CDA47AA377 /* MOE.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F26F67BE30DF2DA071D27007 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				6F1D355C5088E137E301892D /* MOE.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		1235924AA75839150B4FC510 /* Info-Test.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "Info-Test.plist"; path = "NatJTestRunner-Test/Info-Test.plist"; sourceTree = SOURCE_ROOT; };
+		1B09EEB74B580C320B7AE423 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		1CCA4A9CC7DE4F2DD0639FFD /* preregister.txt */ = {isa = PBXFileReference; lastKnownFileType = text; name = preregister.txt; path = ../build/moe/test/preregister.txt; sourceTree = SOURCE_ROOT; };
+		279D9EE1B91DDB114861EAA9 /* application.jar */ = {isa = PBXFileReference; lastKnownFileType = archive.jar; name = application.jar; path = ../build/moe/main/application.jar; sourceTree = SOURCE_ROOT; };
+		39EA42054516C464D8301683 /* LaunchScreen.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = LaunchScreen.xib; path = ../src/main/resources/LaunchScreen.xib; sourceTree = SOURCE_ROOT; };
+		58AC081B1D9BD44500E40FAA /* C+Functions+Invocation.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = "C+Functions+Invocation.c"; path = "../../../../natj-ctests/src/test/native/C+Functions+Invocation.c"; sourceTree = "<group>"; };
+		58AC081C1D9BD44500E40FAA /* C+Functions+Invocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "C+Functions+Invocation.h"; path = "../../../../natj-ctests/src/test/native/C+Functions+Invocation.h"; sourceTree = "<group>"; };
+		58AC081D1D9BD44500E40FAA /* C+Functions+LongInvocation.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = "C+Functions+LongInvocation.c"; path = "../../../../natj-ctests/src/test/native/C+Functions+LongInvocation.c"; sourceTree = "<group>"; };
+		58AC081E1D9BD44500E40FAA /* C+Functions+LongInvocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "C+Functions+LongInvocation.h"; path = "../../../../natj-ctests/src/test/native/C+Functions+LongInvocation.h"; sourceTree = "<group>"; };
+		58AC081F1D9BD44500E40FAA /* C+Functions+Primitives.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = "C+Functions+Primitives.c"; path = "../../../../natj-ctests/src/test/native/C+Functions+Primitives.c"; sourceTree = "<group>"; };
+		58AC08201D9BD44500E40FAA /* C+Functions+Primitives.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "C+Functions+Primitives.h"; path = "../../../../natj-ctests/src/test/native/C+Functions+Primitives.h"; sourceTree = "<group>"; };
+		58AC08211D9BD44500E40FAA /* C+Functions+Structs.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = "C+Functions+Structs.c"; path = "../../../../natj-ctests/src/test/native/C+Functions+Structs.c"; sourceTree = "<group>"; };
+		58AC08221D9BD44500E40FAA /* C+Functions+Structs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "C+Functions+Structs.h"; path = "../../../../natj-ctests/src/test/native/C+Functions+Structs.h"; sourceTree = "<group>"; };
+		58AC08231D9BD44500E40FAA /* C+Functions+Variadic.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = "C+Functions+Variadic.c"; path = "../../../../natj-ctests/src/test/native/C+Functions+Variadic.c"; sourceTree = "<group>"; };
+		58AC08241D9BD44500E40FAA /* C+Functions+Variadic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "C+Functions+Variadic.h"; path = "../../../../natj-ctests/src/test/native/C+Functions+Variadic.h"; sourceTree = "<group>"; };
+		58AC08251D9BD44500E40FAA /* C+Variables+Primitives.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = "C+Variables+Primitives.c"; path = "../../../../natj-ctests/src/test/native/C+Variables+Primitives.c"; sourceTree = "<group>"; };
+		58AC08261D9BD44500E40FAA /* C+Variables+Primitives.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "C+Variables+Primitives.h"; path = "../../../../natj-ctests/src/test/native/C+Variables+Primitives.h"; sourceTree = "<group>"; };
+		58AC08271D9BD44500E40FAA /* Common_Defines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Common_Defines.h; path = "../../../../natj-ctests/src/test/native/Common_Defines.h"; sourceTree = "<group>"; };
+		58AC08281D9BD44500E40FAA /* NativeDataSource.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = NativeDataSource.c; path = "../../../../natj-ctests/src/test/native/NativeDataSource.c"; sourceTree = "<group>"; };
+		58AC08291D9BD44500E40FAA /* NativeDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NativeDataSource.h; path = "../../../../natj-ctests/src/test/native/NativeDataSource.h"; sourceTree = "<group>"; };
+		58AC082A1D9BD44500E40FAA /* Structs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Structs.h; path = "../../../../natj-ctests/src/test/native/Structs.h"; sourceTree = "<group>"; };
+		58AC08391D9BD80500E40FAA /* AppleSupport.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppleSupport.m; sourceTree = "<group>"; };
+		58AC083B1D9BD81C00E40FAA /* AppleSupport.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = AppleSupport.h; path = "NatJTestRunner-Test/AppleSupport.h"; sourceTree = SOURCE_ROOT; };
+		58AC083E1D9BE08700E40FAA /* ctests */ = {isa = PBXFileReference; lastKnownFileType = folder; name = ctests; path = ../../build/external_resources/ctests; sourceTree = "<group>"; };
+		58AC08411D9BED9E00E40FAA /* BaseTypes.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = BaseTypes.cpp; path = "../../../../natj-cxxtests/src/test/native/BaseTypes.cpp"; sourceTree = "<group>"; };
+		58AC08421D9BED9E00E40FAA /* BaseTypes.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = BaseTypes.hpp; path = "../../../../natj-cxxtests/src/test/native/BaseTypes.hpp"; sourceTree = "<group>"; };
+		58AC08441D9BED9E00E40FAA /* DynamicTypes.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = DynamicTypes.hpp; sourceTree = "<group>"; };
+		58AC08451D9BED9E00E40FAA /* Enums.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Enums.hpp; sourceTree = "<group>"; };
+		58AC08461D9BED9E00E40FAA /* Fields.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Fields.cpp; sourceTree = "<group>"; };
+		58AC08471D9BED9E00E40FAA /* Fields.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Fields.hpp; sourceTree = "<group>"; };
+		58AC08481D9BED9E00E40FAA /* Functions.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Functions.cpp; sourceTree = "<group>"; };
+		58AC08491D9BED9E00E40FAA /* Functions.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Functions.hpp; sourceTree = "<group>"; };
+		58AC084A1D9BED9E00E40FAA /* Hierarchy.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Hierarchy.cpp; sourceTree = "<group>"; };
+		58AC084B1D9BED9E00E40FAA /* Hierarchy.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Hierarchy.hpp; sourceTree = "<group>"; };
+		58AC084C1D9BED9E00E40FAA /* ObjectContainer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ObjectContainer.cpp; sourceTree = "<group>"; };
+		58AC084D1D9BED9E00E40FAA /* ObjectContainer.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = ObjectContainer.hpp; sourceTree = "<group>"; };
+		58AC084E1D9BED9E00E40FAA /* Operators.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Operators.cpp; sourceTree = "<group>"; };
+		58AC084F1D9BED9E00E40FAA /* Operators.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Operators.hpp; sourceTree = "<group>"; };
+		58AC08501D9BED9E00E40FAA /* Pointers.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Pointers.hpp; sourceTree = "<group>"; };
+		58AC08511D9BED9E00E40FAA /* Primitives.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Primitives.cpp; sourceTree = "<group>"; };
+		58AC08521D9BED9E00E40FAA /* Primitives.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Primitives.hpp; sourceTree = "<group>"; };
+		58AC08531D9BED9E00E40FAA /* SpecialObjects.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = SpecialObjects.hpp; sourceTree = "<group>"; };
+		58AC08541D9BED9E00E40FAA /* Strings.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Strings.hpp; sourceTree = "<group>"; };
+		58AC08561D9BED9E00E40FAA /* Constructors.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Constructors.hpp; sourceTree = "<group>"; };
+		58AC08571D9BED9E00E40FAA /* Exceptions.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Exceptions.hpp; sourceTree = "<group>"; };
+		58AC08581D9BED9E00E40FAA /* Operators.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Operators.hpp; sourceTree = "<group>"; };
+		58AC08591D9BED9E00E40FAA /* Parameters.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Parameters.hpp; sourceTree = "<group>"; };
+		58AC085A1D9BED9E00E40FAA /* ReturnValues.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = ReturnValues.hpp; sourceTree = "<group>"; };
+		58AC085C1D9BED9E00E40FAA /* HeaderTestA.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = HeaderTestA.hpp; sourceTree = "<group>"; };
+		58AC085D1D9BED9E00E40FAA /* HeaderTestB.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = HeaderTestB.hpp; sourceTree = "<group>"; };
+		58AC085E1D9BED9E00E40FAA /* SizeofTest.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = SizeofTest.hpp; sourceTree = "<group>"; };
+		58AC08601D9BED9E00E40FAA /* Inheritance.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Inheritance.hpp; sourceTree = "<group>"; };
+		58AC08611D9BED9E00E40FAA /* VectorCounter.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = VectorCounter.hpp; sourceTree = "<group>"; };
+		58AC08691D9BEE8D00E40FAA /* natj_cxx_stub.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = natj_cxx_stub.cpp; path = "../../../../natj-cxxtests/build/native-gen/natj_cxx_stub.cpp"; sourceTree = "<group>"; };
+		58AC086C1D9BF85000E40FAA /* C+Functions+ObjC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "C+Functions+ObjC.h"; path = "../../../../natj-objctests/src/test/native/C+Functions+ObjC.h"; sourceTree = "<group>"; };
+		58AC086D1D9BF85000E40FAA /* C+Functions+ObjC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "C+Functions+ObjC.m"; path = "../../../../natj-objctests/src/test/native/C+Functions+ObjC.m"; sourceTree = "<group>"; };
+		58AC086E1D9BF85000E40FAA /* ClusterClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ClusterClass.h; path = "../../../../natj-objctests/src/test/native/ClusterClass.h"; sourceTree = "<group>"; };
+		58AC086F1D9BF85000E40FAA /* ClusterClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ClusterClass.m; path = "../../../../natj-objctests/src/test/native/ClusterClass.m"; sourceTree = "<group>"; };
+		58AC08701D9BF85000E40FAA /* Common_Defines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Common_Defines.h; path = "../../../../natj-objctests/src/test/native/Common_Defines.h"; sourceTree = "<group>"; };
+		58AC08711D9BF85000E40FAA /* CustomClassA.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CustomClassA.h; path = "../../../../natj-objctests/src/test/native/CustomClassA.h"; sourceTree = "<group>"; };
+		58AC08721D9BF85000E40FAA /* CustomClassA.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CustomClassA.m; path = "../../../../natj-objctests/src/test/native/CustomClassA.m"; sourceTree = "<group>"; };
+		58AC08731D9BF85000E40FAA /* InstrumentedParent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = InstrumentedParent.h; path = "../../../../natj-objctests/src/test/native/InstrumentedParent.h"; sourceTree = "<group>"; };
+		58AC08741D9BF85000E40FAA /* InstrumentedParent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = InstrumentedParent.m; path = "../../../../natj-objctests/src/test/native/InstrumentedParent.m"; sourceTree = "<group>"; };
+		58AC08751D9BF85000E40FAA /* MappingClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MappingClass.h; path = "../../../../natj-objctests/src/test/native/MappingClass.h"; sourceTree = "<group>"; };
+		58AC08761D9BF85000E40FAA /* MappingClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MappingClass.m; path = "../../../../natj-objctests/src/test/native/MappingClass.m"; sourceTree = "<group>"; };
+		58AC08771D9BF85000E40FAA /* NativeDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NativeDataSource.h; path = "../../../../natj-objctests/src/test/native/NativeDataSource.h"; sourceTree = "<group>"; };
+		58AC08781D9BF85000E40FAA /* NativeDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NativeDataSource.m; path = "../../../../natj-objctests/src/test/native/NativeDataSource.m"; sourceTree = "<group>"; };
+		58AC08791D9BF85000E40FAA /* NSStringInstrumentor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NSStringInstrumentor.h; path = "../../../../natj-objctests/src/test/native/NSStringInstrumentor.h"; sourceTree = "<group>"; };
+		58AC087A1D9BF85000E40FAA /* NSStringInstrumentor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NSStringInstrumentor.m; path = "../../../../natj-objctests/src/test/native/NSStringInstrumentor.m"; sourceTree = "<group>"; };
+		58AC087B1D9BF85000E40FAA /* ObjC+Methods+Exception.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "ObjC+Methods+Exception.h"; path = "../../../../natj-objctests/src/test/native/ObjC+Methods+Exception.h"; sourceTree = "<group>"; };
+		58AC087C1D9BF85000E40FAA /* ObjC+Methods+Exception.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "ObjC+Methods+Exception.m"; path = "../../../../natj-objctests/src/test/native/ObjC+Methods+Exception.m"; sourceTree = "<group>"; };
+		58AC087D1D9BF85000E40FAA /* ObjC+Methods+ObjectPtr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "ObjC+Methods+ObjectPtr.h"; path = "../../../../natj-objctests/src/test/native/ObjC+Methods+ObjectPtr.h"; sourceTree = "<group>"; };
+		58AC087E1D9BF85000E40FAA /* ObjC+Methods+ObjectPtr.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "ObjC+Methods+ObjectPtr.m"; path = "../../../../natj-objctests/src/test/native/ObjC+Methods+ObjectPtr.m"; sourceTree = "<group>"; };
+		58AC087F1D9BF85000E40FAA /* ObjC+Methods+Primitives.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "ObjC+Methods+Primitives.h"; path = "../../../../natj-objctests/src/test/native/ObjC+Methods+Primitives.h"; sourceTree = "<group>"; };
+		58AC08801D9BF85000E40FAA /* ObjC+Methods+Primitives.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "ObjC+Methods+Primitives.m"; path = "../../../../natj-objctests/src/test/native/ObjC+Methods+Primitives.m"; sourceTree = "<group>"; };
+		58AC08811D9BF85000E40FAA /* ObjC+Methods+Proxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "ObjC+Methods+Proxy.h"; path = "../../../../natj-objctests/src/test/native/ObjC+Methods+Proxy.h"; sourceTree = "<group>"; };
+		58AC08821D9BF85000E40FAA /* ObjC+Methods+Proxy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "ObjC+Methods+Proxy.m"; path = "../../../../natj-objctests/src/test/native/ObjC+Methods+Proxy.m"; sourceTree = "<group>"; };
+		58AC08831D9BF85000E40FAA /* ObjC+Methods+Struct.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "ObjC+Methods+Struct.h"; path = "../../../../natj-objctests/src/test/native/ObjC+Methods+Struct.h"; sourceTree = "<group>"; };
+		58AC08841D9BF85000E40FAA /* ObjC+Methods+Struct.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "ObjC+Methods+Struct.m"; path = "../../../../natj-objctests/src/test/native/ObjC+Methods+Struct.m"; sourceTree = "<group>"; };
+		58AC08851D9BF85000E40FAA /* ObjC+Methods+Variadic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "ObjC+Methods+Variadic.h"; path = "../../../../natj-objctests/src/test/native/ObjC+Methods+Variadic.h"; sourceTree = "<group>"; };
+		58AC08861D9BF85000E40FAA /* ObjC+Methods+Variadic.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "ObjC+Methods+Variadic.m"; path = "../../../../natj-objctests/src/test/native/ObjC+Methods+Variadic.m"; sourceTree = "<group>"; };
+		58AC08871D9BF85000E40FAA /* ObjCBlocks_Nested.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ObjCBlocks_Nested.h; path = "../../../../natj-objctests/src/test/native/ObjCBlocks_Nested.h"; sourceTree = "<group>"; };
+		58AC08881D9BF85000E40FAA /* ObjCBlocks_Nested.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ObjCBlocks_Nested.m; path = "../../../../natj-objctests/src/test/native/ObjCBlocks_Nested.m"; sourceTree = "<group>"; };
+		58AC08891D9BF85000E40FAA /* ObjCBlocks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ObjCBlocks.h; path = "../../../../natj-objctests/src/test/native/ObjCBlocks.h"; sourceTree = "<group>"; };
+		58AC088A1D9BF85000E40FAA /* ObjCBlocks.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ObjCBlocks.m; path = "../../../../natj-objctests/src/test/native/ObjCBlocks.m"; sourceTree = "<group>"; };
+		58AC088B1D9BF85000E40FAA /* ObjCForceCasting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ObjCForceCasting.h; path = "../../../../natj-objctests/src/test/native/ObjCForceCasting.h"; sourceTree = "<group>"; };
+		58AC088C1D9BF85000E40FAA /* ObjCForceCasting.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ObjCForceCasting.m; path = "../../../../natj-objctests/src/test/native/ObjCForceCasting.m"; sourceTree = "<group>"; };
+		58AC088D1D9BF85000E40FAA /* ObjCUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ObjCUtility.h; path = "../../../../natj-objctests/src/test/native/ObjCUtility.h"; sourceTree = "<group>"; };
+		58AC088E1D9BF85000E40FAA /* ObjCUtility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ObjCUtility.m; path = "../../../../natj-objctests/src/test/native/ObjCUtility.m"; sourceTree = "<group>"; };
+		58AC088F1D9BF85000E40FAA /* ProtocolFactoryClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ProtocolFactoryClass.h; path = "../../../../natj-objctests/src/test/native/ProtocolFactoryClass.h"; sourceTree = "<group>"; };
+		58AC08901D9BF85000E40FAA /* ProtocolFactoryClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ProtocolFactoryClass.m; path = "../../../../natj-objctests/src/test/native/ProtocolFactoryClass.m"; sourceTree = "<group>"; };
+		58AC08911D9BF85000E40FAA /* SubHybrid.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SubHybrid.h; path = "../../../../natj-objctests/src/test/native/SubHybrid.h"; sourceTree = "<group>"; };
+		58AC08921D9BF85000E40FAA /* SubHybrid.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SubHybrid.m; path = "../../../../natj-objctests/src/test/native/SubHybrid.m"; sourceTree = "<group>"; };
+		58AC08931D9BF85000E40FAA /* UnmanagedBinding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UnmanagedBinding.h; path = "../../../../natj-objctests/src/test/native/UnmanagedBinding.h"; sourceTree = "<group>"; };
+		58AC08941D9BF85000E40FAA /* UnmanagedBinding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UnmanagedBinding.m; path = "../../../../natj-objctests/src/test/native/UnmanagedBinding.m"; sourceTree = "<group>"; };
+		58AC08951D9BF85000E40FAA /* UnmanagedNativeBlockManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UnmanagedNativeBlockManager.h; path = "../../../../natj-objctests/src/test/native/UnmanagedNativeBlockManager.h"; sourceTree = "<group>"; };
+		58AC08961D9BF85000E40FAA /* UnmanagedNativeBlockManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UnmanagedNativeBlockManager.m; path = "../../../../natj-objctests/src/test/native/UnmanagedNativeBlockManager.m"; sourceTree = "<group>"; };
+		58AC08971D9BF85000E40FAA /* UnmanagedProtocolProxyManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UnmanagedProtocolProxyManager.h; path = "../../../../natj-objctests/src/test/native/UnmanagedProtocolProxyManager.h"; sourceTree = "<group>"; };
+		58AC08981D9BF85000E40FAA /* UnmanagedProtocolProxyManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UnmanagedProtocolProxyManager.m; path = "../../../../natj-objctests/src/test/native/UnmanagedProtocolProxyManager.m"; sourceTree = "<group>"; };
+		58AC08AF1D9BF8F400E40FAA /* objctests */ = {isa = PBXFileReference; lastKnownFileType = folder; name = objctests; path = ../../build/external_resources/objctests; sourceTree = "<group>"; };
+		7686422F0FFF83351D5CBB75 /* application.jar */ = {isa = PBXFileReference; lastKnownFileType = archive.jar; name = application.jar; path = ../build/moe/test/application.jar; sourceTree = SOURCE_ROOT; };
+		A3C58F51F62EAE6B48FC7C84 /* NatJTestRunner-Test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "NatJTestRunner-Test.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A5AB9AE9729CD4517E3C5491 /* NatJTestRunner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NatJTestRunner.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A6C54B1F414860663FA811FF /* classlist.txt */ = {isa = PBXFileReference; lastKnownFileType = text; name = classlist.txt; path = ../build/moe/test/classlist.txt; sourceTree = SOURCE_ROOT; };
+		A9750BB173040A9CA2391A56 /* preregister.txt */ = {isa = PBXFileReference; lastKnownFileType = text; name = preregister.txt; path = ../build/moe/main/preregister.txt; sourceTree = SOURCE_ROOT; };
+		B45F3E6C7231EC9B664C12A3 /* MainUI.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = MainUI.storyboard; path = ../src/main/resources/MainUI.storyboard; sourceTree = SOURCE_ROOT; };
+		ED252F24B41EADAB79CC4EA7 /* build.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = build.xcconfig; sourceTree = "<group>"; };
+		F70AE979D4CACC8A96961A2D /* MOE.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MOE.framework; sourceTree = MOE_FRAMEWORK_PATH; };
+		F9AEBC3AEC71EF745362303B /* build.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = build.xcconfig; sourceTree = "<group>"; };
+		FD40C8DF97112AB4BF5D3C97 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = NatJTestRunner/Info.plist; sourceTree = SOURCE_ROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		70B810A686FDEA29EF1F022E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D09D73CAB61E7D62501CA082 /* MOE.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E9C22179093B8A9F47E13B22 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D60362C58C39B5C85C4EF5F7 /* MOE.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		32B6F40D0C08D30C476BFB2E = {
+			isa = PBXGroup;
+			children = (
+				EBD7838AE40B3829CBF1347F /* NatJTestRunner */,
+				B7A3A315F342AC9A22367F38 /* NatJTestRunner-Test */,
+				D7C82D1258C2C7F1F8331286 /* Frameworks */,
+				94BC09E9B4D99FE6B81F257E /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		58AC081A1D9BD43000E40FAA /* ctests */ = {
+			isa = PBXGroup;
+			children = (
+				58AC083E1D9BE08700E40FAA /* ctests */,
+				58AC081B1D9BD44500E40FAA /* C+Functions+Invocation.c */,
+				58AC081C1D9BD44500E40FAA /* C+Functions+Invocation.h */,
+				58AC081D1D9BD44500E40FAA /* C+Functions+LongInvocation.c */,
+				58AC081E1D9BD44500E40FAA /* C+Functions+LongInvocation.h */,
+				58AC081F1D9BD44500E40FAA /* C+Functions+Primitives.c */,
+				58AC08201D9BD44500E40FAA /* C+Functions+Primitives.h */,
+				58AC08211D9BD44500E40FAA /* C+Functions+Structs.c */,
+				58AC08221D9BD44500E40FAA /* C+Functions+Structs.h */,
+				58AC08231D9BD44500E40FAA /* C+Functions+Variadic.c */,
+				58AC08241D9BD44500E40FAA /* C+Functions+Variadic.h */,
+				58AC08251D9BD44500E40FAA /* C+Variables+Primitives.c */,
+				58AC08261D9BD44500E40FAA /* C+Variables+Primitives.h */,
+				58AC08271D9BD44500E40FAA /* Common_Defines.h */,
+				58AC08281D9BD44500E40FAA /* NativeDataSource.c */,
+				58AC08291D9BD44500E40FAA /* NativeDataSource.h */,
+				58AC082A1D9BD44500E40FAA /* Structs.h */,
+			);
+			name = ctests;
+			path = ../NatJTestRunner;
+			sourceTree = "<group>";
+		};
+		58AC08401D9BED9000E40FAA /* cxxtests */ = {
+			isa = PBXGroup;
+			children = (
+				58AC08691D9BEE8D00E40FAA /* natj_cxx_stub.cpp */,
+				58AC08411D9BED9E00E40FAA /* BaseTypes.cpp */,
+				58AC08421D9BED9E00E40FAA /* BaseTypes.hpp */,
+				58AC08431D9BED9E00E40FAA /* binding */,
+				58AC08551D9BED9E00E40FAA /* inheritance */,
+				58AC085B1D9BED9E00E40FAA /* other */,
+				58AC085F1D9BED9E00E40FAA /* templates */,
+			);
+			name = cxxtests;
+			sourceTree = "<group>";
+		};
+		58AC08431D9BED9E00E40FAA /* binding */ = {
+			isa = PBXGroup;
+			children = (
+				58AC08441D9BED9E00E40FAA /* DynamicTypes.hpp */,
+				58AC08451D9BED9E00E40FAA /* Enums.hpp */,
+				58AC08461D9BED9E00E40FAA /* Fields.cpp */,
+				58AC08471D9BED9E00E40FAA /* Fields.hpp */,
+				58AC08481D9BED9E00E40FAA /* Functions.cpp */,
+				58AC08491D9BED9E00E40FAA /* Functions.hpp */,
+				58AC084A1D9BED9E00E40FAA /* Hierarchy.cpp */,
+				58AC084B1D9BED9E00E40FAA /* Hierarchy.hpp */,
+				58AC084C1D9BED9E00E40FAA /* ObjectContainer.cpp */,
+				58AC084D1D9BED9E00E40FAA /* ObjectContainer.hpp */,
+				58AC084E1D9BED9E00E40FAA /* Operators.cpp */,
+				58AC084F1D9BED9E00E40FAA /* Operators.hpp */,
+				58AC08501D9BED9E00E40FAA /* Pointers.hpp */,
+				58AC08511D9BED9E00E40FAA /* Primitives.cpp */,
+				58AC08521D9BED9E00E40FAA /* Primitives.hpp */,
+				58AC08531D9BED9E00E40FAA /* SpecialObjects.hpp */,
+				58AC08541D9BED9E00E40FAA /* Strings.hpp */,
+			);
+			name = binding;
+			path = "../../../../natj-cxxtests/src/test/native/binding";
+			sourceTree = "<group>";
+		};
+		58AC08551D9BED9E00E40FAA /* inheritance */ = {
+			isa = PBXGroup;
+			children = (
+				58AC08561D9BED9E00E40FAA /* Constructors.hpp */,
+				58AC08571D9BED9E00E40FAA /* Exceptions.hpp */,
+				58AC08581D9BED9E00E40FAA /* Operators.hpp */,
+				58AC08591D9BED9E00E40FAA /* Parameters.hpp */,
+				58AC085A1D9BED9E00E40FAA /* ReturnValues.hpp */,
+			);
+			name = inheritance;
+			path = "../../../../natj-cxxtests/src/test/native/inheritance";
+			sourceTree = "<group>";
+		};
+		58AC085B1D9BED9E00E40FAA /* other */ = {
+			isa = PBXGroup;
+			children = (
+				58AC085C1D9BED9E00E40FAA /* HeaderTestA.hpp */,
+				58AC085D1D9BED9E00E40FAA /* HeaderTestB.hpp */,
+				58AC085E1D9BED9E00E40FAA /* SizeofTest.hpp */,
+			);
+			name = other;
+			path = "../../../../natj-cxxtests/src/test/native/other";
+			sourceTree = "<group>";
+		};
+		58AC085F1D9BED9E00E40FAA /* templates */ = {
+			isa = PBXGroup;
+			children = (
+				58AC08601D9BED9E00E40FAA /* Inheritance.hpp */,
+				58AC08611D9BED9E00E40FAA /* VectorCounter.hpp */,
+			);
+			name = templates;
+			path = "../../../../natj-cxxtests/src/test/native/templates";
+			sourceTree = "<group>";
+		};
+		58AC086B1D9BF83100E40FAA /* objctests */ = {
+			isa = PBXGroup;
+			children = (
+				58AC08AF1D9BF8F400E40FAA /* objctests */,
+				58AC086C1D9BF85000E40FAA /* C+Functions+ObjC.h */,
+				58AC086D1D9BF85000E40FAA /* C+Functions+ObjC.m */,
+				58AC086E1D9BF85000E40FAA /* ClusterClass.h */,
+				58AC086F1D9BF85000E40FAA /* ClusterClass.m */,
+				58AC08701D9BF85000E40FAA /* Common_Defines.h */,
+				58AC08711D9BF85000E40FAA /* CustomClassA.h */,
+				58AC08721D9BF85000E40FAA /* CustomClassA.m */,
+				58AC08731D9BF85000E40FAA /* InstrumentedParent.h */,
+				58AC08741D9BF85000E40FAA /* InstrumentedParent.m */,
+				58AC08751D9BF85000E40FAA /* MappingClass.h */,
+				58AC08761D9BF85000E40FAA /* MappingClass.m */,
+				58AC08771D9BF85000E40FAA /* NativeDataSource.h */,
+				58AC08781D9BF85000E40FAA /* NativeDataSource.m */,
+				58AC08791D9BF85000E40FAA /* NSStringInstrumentor.h */,
+				58AC087A1D9BF85000E40FAA /* NSStringInstrumentor.m */,
+				58AC087B1D9BF85000E40FAA /* ObjC+Methods+Exception.h */,
+				58AC087C1D9BF85000E40FAA /* ObjC+Methods+Exception.m */,
+				58AC087D1D9BF85000E40FAA /* ObjC+Methods+ObjectPtr.h */,
+				58AC087E1D9BF85000E40FAA /* ObjC+Methods+ObjectPtr.m */,
+				58AC087F1D9BF85000E40FAA /* ObjC+Methods+Primitives.h */,
+				58AC08801D9BF85000E40FAA /* ObjC+Methods+Primitives.m */,
+				58AC08811D9BF85000E40FAA /* ObjC+Methods+Proxy.h */,
+				58AC08821D9BF85000E40FAA /* ObjC+Methods+Proxy.m */,
+				58AC08831D9BF85000E40FAA /* ObjC+Methods+Struct.h */,
+				58AC08841D9BF85000E40FAA /* ObjC+Methods+Struct.m */,
+				58AC08851D9BF85000E40FAA /* ObjC+Methods+Variadic.h */,
+				58AC08861D9BF85000E40FAA /* ObjC+Methods+Variadic.m */,
+				58AC08871D9BF85000E40FAA /* ObjCBlocks_Nested.h */,
+				58AC08881D9BF85000E40FAA /* ObjCBlocks_Nested.m */,
+				58AC08891D9BF85000E40FAA /* ObjCBlocks.h */,
+				58AC088A1D9BF85000E40FAA /* ObjCBlocks.m */,
+				58AC088B1D9BF85000E40FAA /* ObjCForceCasting.h */,
+				58AC088C1D9BF85000E40FAA /* ObjCForceCasting.m */,
+				58AC088D1D9BF85000E40FAA /* ObjCUtility.h */,
+				58AC088E1D9BF85000E40FAA /* ObjCUtility.m */,
+				58AC088F1D9BF85000E40FAA /* ProtocolFactoryClass.h */,
+				58AC08901D9BF85000E40FAA /* ProtocolFactoryClass.m */,
+				58AC08911D9BF85000E40FAA /* SubHybrid.h */,
+				58AC08921D9BF85000E40FAA /* SubHybrid.m */,
+				58AC08931D9BF85000E40FAA /* UnmanagedBinding.h */,
+				58AC08941D9BF85000E40FAA /* UnmanagedBinding.m */,
+				58AC08951D9BF85000E40FAA /* UnmanagedNativeBlockManager.h */,
+				58AC08961D9BF85000E40FAA /* UnmanagedNativeBlockManager.m */,
+				58AC08971D9BF85000E40FAA /* UnmanagedProtocolProxyManager.h */,
+				58AC08981D9BF85000E40FAA /* UnmanagedProtocolProxyManager.m */,
+			);
+			name = objctests;
+			sourceTree = "<group>";
+		};
+		5A043F6BFD1DFCA4F5C571C8 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				1B09EEB74B580C320B7AE423 /* main.cpp */,
+				ED252F24B41EADAB79CC4EA7 /* build.xcconfig */,
+				FD40C8DF97112AB4BF5D3C97 /* Info.plist */,
+				A9750BB173040A9CA2391A56 /* preregister.txt */,
+				279D9EE1B91DDB114861EAA9 /* application.jar */,
+				39EA42054516C464D8301683 /* LaunchScreen.xib */,
+				B45F3E6C7231EC9B664C12A3 /* MainUI.storyboard */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		94BC09E9B4D99FE6B81F257E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A5AB9AE9729CD4517E3C5491 /* NatJTestRunner.app */,
+				A3C58F51F62EAE6B48FC7C84 /* NatJTestRunner-Test.app */,
+			);
+			path = Products;
+			sourceTree = "<group>";
+		};
+		B7A3A315F342AC9A22367F38 /* NatJTestRunner-Test */ = {
+			isa = PBXGroup;
+			children = (
+				E12E17AD932D578718277682 /* Supporting Files */,
+				58AC081A1D9BD43000E40FAA /* ctests */,
+				58AC08401D9BED9000E40FAA /* cxxtests */,
+				58AC086B1D9BF83100E40FAA /* objctests */,
+				58AC083B1D9BD81C00E40FAA /* AppleSupport.h */,
+				58AC08391D9BD80500E40FAA /* AppleSupport.m */,
+			);
+			path = "NatJTestRunner-Test";
+			sourceTree = "<group>";
+		};
+		D7C82D1258C2C7F1F8331286 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F70AE979D4CACC8A96961A2D /* MOE.framework */,
+			);
+			path = Frameworks;
+			sourceTree = "<group>";
+		};
+		E12E17AD932D578718277682 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				F9AEBC3AEC71EF745362303B /* build.xcconfig */,
+				1235924AA75839150B4FC510 /* Info-Test.plist */,
+				1CCA4A9CC7DE4F2DD0639FFD /* preregister.txt */,
+				7686422F0FFF83351D5CBB75 /* application.jar */,
+				A6C54B1F414860663FA811FF /* classlist.txt */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		EBD7838AE40B3829CBF1347F /* NatJTestRunner */ = {
+			isa = PBXGroup;
+			children = (
+				5A043F6BFD1DFCA4F5C571C8 /* Supporting Files */,
+			);
+			path = NatJTestRunner;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		01C53F1EE07260738281FFD8 /* NatJTestRunner-Test */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AD3B4C846D19D959BE6DB769 /* Build configuration list for PBXNativeTarget "NatJTestRunner-Test" */;
+			buildPhases = (
+				5C3C133714985BBC288D3C55 /* Compile Sources (MOE) */,
+				E9C22179093B8A9F47E13B22 /* Frameworks */,
+				3DD0795F44AFE039BBF67635 /* Resources */,
+				ED5CE8B42F9A6A6E2879C316 /* Sources */,
+				33C811AC4CA69AB38D502C72 /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			name = "NatJTestRunner-Test";
+			productName = "NatJTestRunner-Test";
+			productReference = A3C58F51F62EAE6B48FC7C84 /* NatJTestRunner-Test.app */;
+			productType = "com.apple.product-type.application";
+		};
+		83F8BA8DBF2016DB5E4E86A1 /* NatJTestRunner */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E6B52019E4644A8C18CD63E1 /* Build configuration list for PBXNativeTarget "NatJTestRunner" */;
+			buildPhases = (
+				BC6A2D2E322EF078FFD9217D /* Compile Sources (MOE) */,
+				70B810A686FDEA29EF1F022E /* Frameworks */,
+				20DD889FF01430D2B211D625 /* Resources */,
+				282DDEBE70EF4F16D141A39B /* Sources */,
+				F26F67BE30DF2DA071D27007 /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			name = NatJTestRunner;
+			productName = NatJTestRunner;
+			productReference = A5AB9AE9729CD4517E3C5491 /* NatJTestRunner.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		2327917862693CF2C608A6EB /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				ORGANIZATIONNAME = "My Company";
+			};
+			buildConfigurationList = 4E72E22E763BE07A1741A3DB /* Build configuration list for PBXProject "NatJTestRunner" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 32B6F40D0C08D30C476BFB2E;
+			productRefGroup = 94BC09E9B4D99FE6B81F257E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				83F8BA8DBF2016DB5E4E86A1 /* NatJTestRunner */,
+				01C53F1EE07260738281FFD8 /* NatJTestRunner-Test */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		20DD889FF01430D2B211D625 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6A1F2F685821DAA79EF164CF /* preregister.txt in Resources */,
+				14799BBAFFE78023D781B58B /* application.jar in Resources */,
+				3CD05FA7A8EAED8AD78510B4 /* LaunchScreen.xib in Resources */,
+				CE6FCE78FA099DB4A3BB80E6 /* MainUI.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3DD0795F44AFE039BBF67635 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				58AC083F1D9BE08700E40FAA /* ctests in Resources */,
+				F776280134EA1FBE9DB3C47E /* preregister.txt in Resources */,
+				A7680274F67904473AB479AB /* application.jar in Resources */,
+				58AC08B01D9BF8F400E40FAA /* objctests in Resources */,
+				66F8227279FEFAE26E27F6A4 /* classlist.txt in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		5C3C133714985BBC288D3C55 /* Compile Sources (MOE) */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Compile Sources (MOE)";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/bash;
+			shellScript = "\n# Check directories set by xcconfigs\nif [ ! -d \"$MOE_PROJECT_DIR\" ]; then\n    echo \"$0:$LINENO:1: error: 'MOE_PROJECT_DIR' doesn't point to a directory!\"; exit 1;\nfi\nif [ ! -d \"$MOE_PROJECT_BUILD_DIR\" ]; then\n    echo \"$0:$LINENO:1: error: 'MOE_PROJECT_BUILD_DIR' doesn't point to a directory!\"; exit 1;\nfi\n\ncd \"$MOE_PROJECT_DIR/\"\n\nexport JAVA_HOME=$(/usr/libexec/java_home -v 1.8)\njava -version\n\n########################\n# Find Gradle\n########################\nfunction findGradle {\n\tCD=\"$PWD\"\n\twhile [ \"$CD\" != \"\" ]; do\n\t\techo \"Looking for gradlew in $CD\"\n\t\tif [ -x \"$CD/gradlew\" ]; then\n\t\t\tGRADLE_EXEC=$CD/gradlew\n\t\t\treturn 0\n\t\tfi\n\t\tCD=\"${CD%/*}\"\n\tdone\n\n\techo \"Checking with 'which'\"\n\tGRADLE_EXEC=$(which 'gradle')\n\n\tif [ \"$GRADLE_EXEC\" = \"\" ]; then\n\t\techo \"Failed to locate 'gradle' executable!\"\n\t\texit 1\n\tfi\n}\n########################\n# Execute Gradle build\n########################\nif [ -z \"$MOE_GRADLE_EXTERNAL_BUILD\" ]; then\n    findGradle\n\n    export MOE_BUILD_SOURCE_SET=test\n    \"$GRADLE_EXEC\" --daemon moeXcodeInternal\nfi\n";
+		};
+		BC6A2D2E322EF078FFD9217D /* Compile Sources (MOE) */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Compile Sources (MOE)";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/bash;
+			shellScript = "\n# Check directories set by xcconfigs\nif [ ! -d \"$MOE_PROJECT_DIR\" ]; then\n    echo \"$0:$LINENO:1: error: 'MOE_PROJECT_DIR' doesn't point to a directory!\"; exit 1;\nfi\nif [ ! -d \"$MOE_PROJECT_BUILD_DIR\" ]; then\n    echo \"$0:$LINENO:1: error: 'MOE_PROJECT_BUILD_DIR' doesn't point to a directory!\"; exit 1;\nfi\n\ncd \"$MOE_PROJECT_DIR/\"\n\nexport JAVA_HOME=$(/usr/libexec/java_home -v 1.8)\njava -version\n\n########################\n# Find Gradle\n########################\nfunction findGradle {\n\tCD=\"$PWD\"\n\twhile [ \"$CD\" != \"\" ]; do\n\t\techo \"Looking for gradlew in $CD\"\n\t\tif [ -x \"$CD/gradlew\" ]; then\n\t\t\tGRADLE_EXEC=$CD/gradlew\n\t\t\treturn 0\n\t\tfi\n\t\tCD=\"${CD%/*}\"\n\tdone\n\n\techo \"Checking with 'which'\"\n\tGRADLE_EXEC=$(which 'gradle')\n\n\tif [ \"$GRADLE_EXEC\" = \"\" ]; then\n\t\techo \"Failed to locate 'gradle' executable!\"\n\t\texit 1\n\tfi\n}\n########################\n# Execute Gradle build\n########################\nif [ -z \"$MOE_GRADLE_EXTERNAL_BUILD\" ]; then\n    findGradle\n\n    \"$GRADLE_EXEC\" --daemon moeXcodeInternal\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		282DDEBE70EF4F16D141A39B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CD44DE0BEB3911890DB13F64 /* main.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ED5CE8B42F9A6A6E2879C316 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				58AC08661D9BED9E00E40FAA /* ObjectContainer.cpp in Sources */,
+				58AC089D1D9BF85000E40FAA /* MappingClass.m in Sources */,
+				58AC08A01D9BF85000E40FAA /* ObjC+Methods+Exception.m in Sources */,
+				58AC08A71D9BF85000E40FAA /* ObjCBlocks.m in Sources */,
+				58AC08AA1D9BF85000E40FAA /* ProtocolFactoryClass.m in Sources */,
+				58AC08371D9BD47400E40FAA /* C+Variables+Primitives.c in Sources */,
+				58AC08AB1D9BF85000E40FAA /* SubHybrid.m in Sources */,
+				58AC08351D9BD47400E40FAA /* C+Functions+Structs.c in Sources */,
+				58AC089A1D9BF85000E40FAA /* ClusterClass.m in Sources */,
+				58AC08A41D9BF85000E40FAA /* ObjC+Methods+Struct.m in Sources */,
+				58AC089C1D9BF85000E40FAA /* InstrumentedParent.m in Sources */,
+				58AC08991D9BF85000E40FAA /* C+Functions+ObjC.m in Sources */,
+				58AC08671D9BED9E00E40FAA /* Operators.cpp in Sources */,
+				58AC08A31D9BF85000E40FAA /* ObjC+Methods+Proxy.m in Sources */,
+				58AC08621D9BED9E00E40FAA /* BaseTypes.cpp in Sources */,
+				58AC08A61D9BF85000E40FAA /* ObjCBlocks_Nested.m in Sources */,
+				58AC08651D9BED9E00E40FAA /* Hierarchy.cpp in Sources */,
+				58AC08AC1D9BF85000E40FAA /* UnmanagedBinding.m in Sources */,
+				58AC08A51D9BF85000E40FAA /* ObjC+Methods+Variadic.m in Sources */,
+				58AC08641D9BED9E00E40FAA /* Functions.cpp in Sources */,
+				5F827CE6673AD73BD07242CA /* main.cpp in Sources */,
+				58AC086A1D9BEE8D00E40FAA /* natj_cxx_stub.cpp in Sources */,
+				58AC08361D9BD47400E40FAA /* C+Functions+Variadic.c in Sources */,
+				58AC08331D9BD47400E40FAA /* C+Functions+LongInvocation.c in Sources */,
+				58AC083A1D9BD80500E40FAA /* AppleSupport.m in Sources */,
+				58AC08681D9BED9E00E40FAA /* Primitives.cpp in Sources */,
+				58AC08AE1D9BF85000E40FAA /* UnmanagedProtocolProxyManager.m in Sources */,
+				58AC08A11D9BF85000E40FAA /* ObjC+Methods+ObjectPtr.m in Sources */,
+				58AC08AD1D9BF85000E40FAA /* UnmanagedNativeBlockManager.m in Sources */,
+				58AC089B1D9BF85000E40FAA /* CustomClassA.m in Sources */,
+				58AC08A21D9BF85000E40FAA /* ObjC+Methods+Primitives.m in Sources */,
+				58AC08381D9BD47400E40FAA /* NativeDataSource.c in Sources */,
+				58AC089F1D9BF85000E40FAA /* NSStringInstrumentor.m in Sources */,
+				58AC08321D9BD47400E40FAA /* C+Functions+Invocation.c in Sources */,
+				58AC089E1D9BF85000E40FAA /* NativeDataSource.m in Sources */,
+				58AC08A91D9BF85000E40FAA /* ObjCUtility.m in Sources */,
+				58AC08A81D9BF85000E40FAA /* ObjCForceCasting.m in Sources */,
+				58AC08631D9BED9E00E40FAA /* Fields.cpp in Sources */,
+				58AC08341D9BD47400E40FAA /* C+Functions+Primitives.c in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		06292E6D77D3A48AA0F34756 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = ED252F24B41EADAB79CC4EA7 /* build.xcconfig */;
+			buildSettings = {
+				DEAD_CODE_STRIPPING = NO;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = NO;
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				INFOPLIST_FILE = NatJTestRunner/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = "${MOE_OTHER_LDFLAGS}";
+				PRODUCT_NAME = NatJTestRunner;
+				STRIP_STYLE = "non-global";
+			};
+			name = Debug;
+		};
+		12AD41BF2E1A0933855764C7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F9AEBC3AEC71EF745362303B /* build.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = NO;
+				DEAD_CODE_STRIPPING = NO;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = NO;
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"MOE_IOS_TEST_RUNNER=1",
+				);
+				HEADER_SEARCH_PATHS = (
+					"\"$(SRCROOT)/../../../src/main/native/natj\"",
+					"\"$(MOE_FRAMEWORK_PATH)/MOE.framework/Headers\"",
+				);
+				INFOPLIST_FILE = "NatJTestRunner-Test/Info-Test.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = "${MOE_OTHER_LDFLAGS}";
+				PRODUCT_NAME = "NatJTestRunner-Test";
+				STRIP_STYLE = "non-global";
+				USER_HEADER_SEARCH_PATHS = "\"$(SRCROOT)/../../../natj-cxxtests/src/test/native\"";
+			};
+			name = Debug;
+		};
+		2F421788CEF4E9175876D653 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"${MOE_FRAMEWORK_PATH}",
+				);
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SYMROOT = "$(SRCROOT)/../build/moe/xcodebuild/sym";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		40EF57E88272223A2EDA859E /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = ED252F24B41EADAB79CC4EA7 /* build.xcconfig */;
+			buildSettings = {
+				DEAD_CODE_STRIPPING = NO;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = NO;
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				INFOPLIST_FILE = NatJTestRunner/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = "${MOE_OTHER_LDFLAGS}";
+				PRODUCT_NAME = NatJTestRunner;
+				STRIP_STYLE = "non-global";
+			};
+			name = Release;
+		};
+		A1BD56A261145952E2E0DCBC /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F9AEBC3AEC71EF745362303B /* build.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = NO;
+				DEAD_CODE_STRIPPING = NO;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = NO;
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"MOE_IOS_TEST_RUNNER=1",
+				);
+				HEADER_SEARCH_PATHS = (
+					"\"$(SRCROOT)/../../../src/main/native/natj\"",
+					"\"$(MOE_FRAMEWORK_PATH)/MOE.framework/Headers\"",
+				);
+				INFOPLIST_FILE = "NatJTestRunner-Test/Info-Test.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = "${MOE_OTHER_LDFLAGS}";
+				PRODUCT_NAME = "NatJTestRunner-Test";
+				STRIP_STYLE = "non-global";
+				USER_HEADER_SEARCH_PATHS = "\"$(SRCROOT)/../../../natj-cxxtests/src/test/native\"";
+			};
+			name = Release;
+		};
+		F59A312D6B280E88A86EA697 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"${MOE_FRAMEWORK_PATH}",
+				);
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				SDKROOT = iphoneos;
+				SYMROOT = "$(SRCROOT)/../build/moe/xcodebuild/sym";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4E72E22E763BE07A1741A3DB /* Build configuration list for PBXProject "NatJTestRunner" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F59A312D6B280E88A86EA697 /* Debug */,
+				2F421788CEF4E9175876D653 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AD3B4C846D19D959BE6DB769 /* Build configuration list for PBXNativeTarget "NatJTestRunner-Test" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				12AD41BF2E1A0933855764C7 /* Debug */,
+				A1BD56A261145952E2E0DCBC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E6B52019E4644A8C18CD63E1 /* Build configuration list for PBXNativeTarget "NatJTestRunner" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				06292E6D77D3A48AA0F34756 /* Debug */,
+				40EF57E88272223A2EDA859E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 2327917862693CF2C608A6EB /* Project object */;
+}

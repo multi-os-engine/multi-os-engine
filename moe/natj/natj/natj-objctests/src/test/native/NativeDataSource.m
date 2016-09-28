@@ -34,28 +34,32 @@ static const NSUInteger NUM_ELEMENTS = 1000;
 #error no byte swap intrinsics
 #endif
 
-void swap16(NSUInteger count, void *input) {
+#ifdef MOE_IOS_TEST_RUNNER
+#include "AppleSupport.h"
+#endif
+
+static void swap16(NSUInteger count, void *input) {
     __NATJ_BYTE_SWAP_16_T *data = (__NATJ_BYTE_SWAP_16_T *)input;
     for (NSUInteger i = 0; i < count; ++i) {
         data[i] = __NATJ_BYTE_SWAP_16(data[i]);
     }
 }
 
-void swap32(NSUInteger count, void *input) {
+static void swap32(NSUInteger count, void *input) {
     __NATJ_BYTE_SWAP_32_T *data = (__NATJ_BYTE_SWAP_32_T *)input;
     for (NSUInteger i = 0; i < count; ++i) {
         data[i] = __NATJ_BYTE_SWAP_32(data[i]);
     }
 }
 
-void swap64(NSUInteger count, void *input) {
+static void swap64(NSUInteger count, void *input) {
     __NATJ_BYTE_SWAP_64_T *data = (__NATJ_BYTE_SWAP_64_T *)input;
     for (NSUInteger i = 0; i < count; ++i) {
         data[i] = __NATJ_BYTE_SWAP_64(data[i]);
     }
 }
 
-void *loadFile(const char *fileName, int elemSize) {
+static void *loadFile(const char *fileName, int elemSize) {
     void *buffer;
     {
         char cwd[PATH_MAX];
@@ -68,8 +72,12 @@ void *loadFile(const char *fileName, int elemSize) {
 #endif
         
         char path[PATH_MAX];
+#ifdef MOE_IOS_TEST_RUNNER
+        getApplePath("objctests", fileName, path, PATH_MAX);
+#else
         snprintf(path, sizeof path, "%s%csrc%ctest%cresources%c%s", cwd,
                  PATH_SEP, PATH_SEP, PATH_SEP, PATH_SEP, fileName);
+#endif
         
         long length;
         FILE *f = fopen(path, "rb");
@@ -97,7 +105,7 @@ void *loadFile(const char *fileName, int elemSize) {
     return buffer;
 }
 
-void *createZero(NSUInteger elemSize) {
+static void *createZero(NSUInteger elemSize) {
     return calloc(NUM_ELEMENTS, elemSize);
 }
 

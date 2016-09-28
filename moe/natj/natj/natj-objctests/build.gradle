@@ -25,7 +25,7 @@ targetCompatibility = "1.8"
 
 dependencies {
     testCompile 'junit:junit:[4,)'
-    testCompile rootProject
+    compile rootProject
     testCompile files(System.getProperty("java.home") + "/../lib/tools.jar")
 }
 

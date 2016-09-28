@@ -2,3 +2,6 @@
 build
 workspace.xml
 **/xcuserdata
+moe.sdk.localbuild
+.idea
+local.properties
