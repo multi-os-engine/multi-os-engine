@@ -21,10 +21,14 @@ import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
 
 import org.eclipse.core.resources.IProject;
+import org.eclipse.core.resources.IProjectDescription;
 import org.eclipse.core.resources.IWorkspace;
 import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.core.runtime.CoreException;
+import org.eclipse.core.runtime.IPath;
 import org.eclipse.core.runtime.IProgressMonitor;
+import org.eclipse.core.runtime.Path;
+import org.eclipse.core.runtime.Platform;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.jface.wizard.Wizard;
 import org.eclipse.ui.INewWizard;
@@ -39,7 +43,7 @@ import org.moe.utils.MessageFactory;
 public abstract class AbstractProjectWizard extends Wizard implements INewWizard {
 
 	private XcodeWizardPage xcodeWizardPage;
-	private ProjecrSettingsPage projecrSettingsPage;
+	private ProjecrSettingsPage projectSettingsPage;
 	private String mainClassName = "Main";
 	private String error = null;
 
@@ -68,19 +72,20 @@ public abstract class AbstractProjectWizard extends Wizard implements INewWizard
 		String packageName = "com." + organizationName + "." + productName;
 		packageName = packageName.replace(" ", "").trim().toLowerCase();
 
-		String projectPath = projecrSettingsPage.getProjectRoot();
-		final String projectName = projecrSettingsPage.getProjectName();
+		IWorkspace workspace = ResourcesPlugin.getWorkspace();
+		IPath projectPath = projectSettingsPage.getProjectLocationPath();
+		IPath path = projectPath == null ? workspace.getRoot().getLocation() : projectPath;
+		final String projectName = projectSettingsPage.getProjectName();
+		final File projectFile = projectSettingsPage.isUseDefault() ? new File(path.toOSString() , projectName) : new File(path.toOSString());
 
-		projectTemplate.rootPath(projectPath).packageName(packageName).projectName(productName)
+		projectTemplate.rootPath(projectFile.getAbsolutePath()).packageName(packageName).projectName(productName)
 				.organizationName(organizationName).companyIdentifier(xcodeWizardPage.getCompanyIdentifier())
 				.mainClassName(mainClassName).keepXcode(true)
 				.xcodeProjectPath("xcode").useEclipse(true);
 
-		final File projectFile = new File(projectPath);
-
 		Configuration configuartion = new Configuration("1.2.+");
 		configuartion.setProjectRoot(projectFile);
-		configuartion.setGradleVersion(projecrSettingsPage.getGradleVersion());
+		configuartion.setGradleVersion(projectSettingsPage.getGradleVersion());
 
 		final Generator projectGenerator = new Generator(configuartion);
 
@@ -119,12 +124,7 @@ public abstract class AbstractProjectWizard extends Wizard implements INewWizard
 				}
 				monitor.worked(1);
 
-				IWorkspace workspace = ResourcesPlugin.getWorkspace();
-				IProject project = workspace.getRoot().getProject(projectName);
-				if (project != null) {
-					project.create(monitor);
-					project.open(monitor);
-				}
+				createProject(projectName, projectFile.getAbsolutePath(), monitor);
 				monitor.worked(1);
 			}
 		};
@@ -161,9 +161,26 @@ public abstract class AbstractProjectWizard extends Wizard implements INewWizard
 		super.addPages();
 
 		xcodeWizardPage = new XcodeWizardPage("Xcode Settings");
-		projecrSettingsPage = new ProjecrSettingsPage("Project Settings");
+		projectSettingsPage = new ProjecrSettingsPage("Project Settings");
 		addPage(xcodeWizardPage);
-		addPage(projecrSettingsPage);
+		addPage(projectSettingsPage);
+	}
+	
+	private void createProject(String projectName, String projectPath, IProgressMonitor monitor) throws CoreException {
+		IWorkspace workspace = ResourcesPlugin.getWorkspace();
+		IProject project = workspace.getRoot().getProject(projectName);
+		if (project != null) {
+			IProjectDescription description = workspace.newProjectDescription(projectName);
+			description.setName(projectName);
+			IPath path = new Path(projectPath);
+			if (Platform.getLocation().isPrefixOf(path)) {
+				description.setLocation(null);
+			} else {
+				description.setLocation(path);
+			}
+			project.create(description, monitor);
+			project.open(monitor);
+		}
 	}
 
 }

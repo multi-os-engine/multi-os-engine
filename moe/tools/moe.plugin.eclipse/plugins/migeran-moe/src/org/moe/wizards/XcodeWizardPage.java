@@ -18,9 +18,6 @@ package org.moe.wizards;
 
 import java.util.regex.Pattern;
 
-import org.eclipse.core.resources.IWorkspace;
-import org.eclipse.core.resources.ResourcesPlugin;
-import org.eclipse.core.runtime.IPath;
 import org.eclipse.jface.wizard.IWizardPage;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.events.ModifyEvent;
@@ -122,7 +119,6 @@ public class XcodeWizardPage extends AbstractWizardPage {
 		if (nextPage instanceof ProjecrSettingsPage) {
 			ProjecrSettingsPage settingsPage = (ProjecrSettingsPage)nextPage;
 			settingsPage.setProjectName(xcodeProjectNameText.getText().trim());
-			settingsPage.setLocation(getDefaultDirectory());
 		}
 		return nextPage;
 	}
@@ -172,12 +168,6 @@ public class XcodeWizardPage extends AbstractWizardPage {
 
 		setPageComplete(true);
 		return true;
-	}
-
-	private String getDefaultDirectory() {
-		IWorkspace workspace = ResourcesPlugin.getWorkspace();
-		IPath path = workspace.getRoot().getLocation();
-		return path.toOSString();
 	}
 
 }
