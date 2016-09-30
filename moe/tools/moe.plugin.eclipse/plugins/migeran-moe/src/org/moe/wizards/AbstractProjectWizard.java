@@ -173,11 +173,7 @@ public abstract class AbstractProjectWizard extends Wizard implements INewWizard
 			IProjectDescription description = workspace.newProjectDescription(projectName);
 			description.setName(projectName);
 			IPath path = new Path(projectPath);
-			if (Platform.getLocation().isPrefixOf(path)) {
-				description.setLocation(null);
-			} else {
-				description.setLocation(path);
-			}
+			description.setLocation(path);
 			project.create(description, monitor);
 			project.open(monitor);
 		}
