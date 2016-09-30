@@ -95,22 +95,14 @@ def getSDKCopySpec() {
 
             from files(rootProject.external.moe_core.out.java8support_jar.parentFile) {
                 include rootProject.external.moe_core.out.java8support_jar.name
+                include rootProject.external.moe_core.out.proguard_full_cfg.name
+                include rootProject.external.moe_core.out.proguard_cfg.name
+                include rootProject.external.moe_core.out.proguard_jar.name
+                include rootProject.external.moe_core.out.retrolambda_jar.name
+                rename rootProject.external.moe_core.out.retrolambda_jar.name, 'retrolambda.jar'
             }
             from files(rootProject.external.moe_core.out.preloaded_classes.parentFile) {
                 include rootProject.external.moe_core.out.preloaded_classes.name
-            }
-            from files(rootProject.external.moe_core.out.proguard_full_cfg.parentFile) {
-                include rootProject.external.moe_core.out.proguard_full_cfg.name
-            }
-            from files(rootProject.external.moe_core.out.proguard_cfg.parentFile) {
-                include rootProject.external.moe_core.out.proguard_cfg.name
-            }
-            from files(rootProject.external.moe_core.out.proguard_jar.parentFile) {
-                include rootProject.external.moe_core.out.proguard_jar.name
-            }
-            from files(rootProject.external.moe_core.out.retrolambda_jar.parentFile) {
-                include rootProject.external.moe_core.out.retrolambda_jar.name
-                rename rootProject.external.moe_core.out.retrolambda_jar.name, 'retrolambda.jar'
             }
 
             from buildfiles(':moe.generator.natjgen', 'libs') {
@@ -131,6 +123,7 @@ def getSDKCopySpec() {
             from files(external.libimobiledevice.windows)
             from files(external.natj.win)
         }
+        eachFile { println "${it}" }
     }
 }
 
