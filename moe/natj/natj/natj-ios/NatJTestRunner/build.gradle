@@ -20,6 +20,7 @@ buildscript {
 
 // Apply plugins
 apply plugin: 'moe'
+apply plugin: 'eclipse'
 
 // Set source and target to Java 8
 sourceCompatibility = "1.8"
@@ -72,4 +73,12 @@ dependencies {
     // Compile with 'jar' files in the project's 'lib' directory
     compile fileTree(dir: 'lib', include: '*.jar')
     testCompile files('../../natj-cxxtests/build/classes/processedCxxTest')
+}
+
+// Setup Eclipse
+eclipse {
+    // Set MOE natures and build commands
+    project {
+        natures 'org.multi-os-engine.project'
+    }
 }

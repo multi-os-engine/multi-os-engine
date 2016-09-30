@@ -5,3 +5,6 @@ workspace.xml
 moe.sdk.localbuild
 .idea
 local.properties
+.project
+.classpath
+.settings
