@@ -1,9 +1,6 @@
 #!/bin/bash
-cd ../../../
-rm -r ./moe.tools.natjgen/build
-rm -r ./moe.tools.common/build
-rm -r ./moe.generator.project/build
-rm -r ./moe.document.xib/build
-rm -r ./moe.document.pbxproj/build
-cd master
-./gradlew :moe.plugin.idea:build
+
+set -e
+
+cd ../../../master
+./gradlew :moe.tools.natjgen:build :moe.tools.common:build :moe.generator.project:build :moe.document.xib:build :moe.document.pbxproj:build
