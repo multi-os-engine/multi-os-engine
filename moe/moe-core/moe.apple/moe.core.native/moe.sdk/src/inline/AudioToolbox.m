@@ -15,7 +15,7 @@ limitations under the License.
 */
 
 #import <AudioToolbox/AudioFile.h>
-#import <AudioToolbox/AudioUnitProperties.h>
+#import <AudioUnit/AudioUnitProperties.h>
 #import <AudioToolbox/MusicPlayer.h>
 #import <MacTypes.h>
 #import <sys/_types/_size_t.h>
