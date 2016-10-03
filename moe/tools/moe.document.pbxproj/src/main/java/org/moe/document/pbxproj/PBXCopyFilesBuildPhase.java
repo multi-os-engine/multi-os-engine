@@ -37,6 +37,11 @@ public class PBXCopyFilesBuildPhase extends PBXBuildPhase {
 
     @Override
     public String getCommentString() {
+        String name = getName();
+        if (name != null) {
+            return name;
+        }
+
         return "CopyFiles";
     }
 

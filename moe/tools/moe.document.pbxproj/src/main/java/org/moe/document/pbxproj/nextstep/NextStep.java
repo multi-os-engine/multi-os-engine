@@ -18,18 +18,18 @@ package org.moe.document.pbxproj.nextstep;
 
 import org.moe.document.pbxproj.nextstep.Tokenizer.Token;
 
-import java.io.File;
 import java.io.IOException;
+import java.io.InputStream;
 
 public abstract class NextStep {
 
-    public static Dictionary<Value, NextStep> read(File file) throws NextStepException {
-        Tokenizer t = null;
+    public static Dictionary<Value, NextStep> read(InputStream inStream) throws NextStepException {
+        Tokenizer t;
         try {
-            Parser p = new Parser(file);
+            Parser p = new Parser(inStream);
             t = new Tokenizer(p);
         } catch (IOException e) {
-            e.printStackTrace();
+            throw new NextStepException(e);
         }
         if (t == null) {
             return null;

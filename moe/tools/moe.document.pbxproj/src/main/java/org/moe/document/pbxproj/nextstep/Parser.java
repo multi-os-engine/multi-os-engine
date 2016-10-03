@@ -17,9 +17,8 @@ limitations under the License.
 package org.moe.document.pbxproj.nextstep;
 
 import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileInputStream;
 import java.io.IOException;
+import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.nio.charset.Charset;
 
@@ -28,27 +27,22 @@ public class Parser {
     private char buffer[];
     private int loc = 0;
 
-    public Parser(File nextstepfile) throws IOException {
-        FileInputStream fis = new FileInputStream(nextstepfile);
-        try {
-            InputStreamReader isr = new InputStreamReader(fis, Charset.forName("UTF-8"));
-            StringBuilder fileData = new StringBuilder(1000);
-            BufferedReader reader = new BufferedReader(isr);
+    public Parser(InputStream inStream) throws IOException {
+        InputStreamReader isr = new InputStreamReader(inStream, Charset.forName("UTF-8"));
+        StringBuilder fileData = new StringBuilder(1000);
+        BufferedReader reader = new BufferedReader(isr);
 
-            char[] buf = new char[10];
-            int numRead;
-            while ((numRead = reader.read(buf)) != -1) {
-                String readData = String.valueOf(buf, 0, numRead);
-                fileData.append(readData);
-                buf = new char[1024];
-            }
-
-            reader.close();
-
-            buffer = fileData.toString().toCharArray();
-        } finally {
-            fis.close();
+        char[] buf = new char[10];
+        int numRead;
+        while ((numRead = reader.read(buf)) != -1) {
+            String readData = String.valueOf(buf, 0, numRead);
+            fileData.append(readData);
+            buf = new char[1024];
         }
+
+        reader.close();
+
+        buffer = fileData.toString().toCharArray();
     }
 
     public char read() {

@@ -45,7 +45,12 @@ public final class XCConfigurationList extends PBXObject {
     @Override
     public String getCommentString() {
         if (target instanceof PBXProject) {
-            return "Build configuration list for PBXProject \"" + ((PBXProject)target).getProjectName() + "\"";
+            PBXProject project = (PBXProject)this.target;
+            String projectName = project.getProjectName();
+            if (projectName.length() == 0 && project.getTargets().size() > 0) {
+                projectName = project.getTargets().get(0).getReferenced().getName();
+            }
+            return "Build configuration list for PBXProject \"" + projectName + "\"";
         }
         if (target instanceof PBXNativeTarget) {
             return "Build configuration list for PBXNativeTarget \"" + ((PBXNativeTarget)target).getName() + "\"";

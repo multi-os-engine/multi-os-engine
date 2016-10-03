@@ -45,10 +45,12 @@ public final class PBXProject extends PBXObject {
     public PBXProject(Dictionary<Value, NextStep> dict) {
         super(dict);
 
-        Array<ProjectReference> refs = getProjectReferences();
-        int count = refs.size();
-        for (int i = 0; i < count; ++i) {
-            refs.set(i, new ProjectReference(refs.get(i)));
+        if (contains(PROJECT_REFERENCES_KEY)) {
+            Array<ProjectReference> refs = getProjectReferences();
+            int count = refs.size();
+            for (int i = 0; i < count; ++i) {
+                refs.set(i, new ProjectReference(refs.get(i)));
+            }
         }
     }
 
@@ -76,9 +78,11 @@ public final class PBXProject extends PBXObject {
         connectReferencesInValue(MAIN_GROUP_KEY, map);
         connectReferencesInValue(PRODUCT_REF_GROUP_KEY, map);
         connectReferencesInValueArray(TARGETS_KEY, map);
-        Iterator<ProjectReference> it = getProjectReferences().iterator();
-        while (it.hasNext()) {
-            it.next().connectReferences(map);
+        if (contains(PROJECT_REFERENCES_KEY)) {
+            Iterator<ProjectReference> it = getProjectReferences().iterator();
+            while (it.hasNext()) {
+                it.next().connectReferences(map);
+            }
         }
     }
 
@@ -116,9 +120,11 @@ public final class PBXProject extends PBXObject {
             }
         }
 
-        Iterator<ProjectReference> pref_it = getProjectReferences().iterator();
-        while (pref_it.hasNext()) {
-            pref_it.next().removeReference(ref);
+        if (contains(PROJECT_REFERENCES_KEY)) {
+            Iterator<ProjectReference> pref_it = getProjectReferences().iterator();
+            while (pref_it.hasNext()) {
+                pref_it.next().removeReference(ref);
+            }
         }
     }
 

@@ -166,6 +166,7 @@ public class Dictionary<K extends Value, V extends NextStep> extends NextStep {
         if (printer == null) {
             printer = (FieldPrinter<K, V>)nullPrinter;
         }
+        printer.initialize();
 
         StringBuilder builder = new StringBuilder();
         builder.append("{\n");
@@ -192,6 +193,7 @@ public class Dictionary<K extends Value, V extends NextStep> extends NextStep {
         if (printer == null) {
             printer = (FieldPrinter<K, V>)nullPrinter;
         }
+        printer.initialize();
 
         StringBuilder builder = new StringBuilder();
         builder.append("{");
@@ -413,23 +415,29 @@ public class Dictionary<K extends Value, V extends NextStep> extends NextStep {
         return fields;
     }
 
-    public static interface FieldIterator<K extends Value, V extends NextStep> {
-        public void process(Field<K, V> field);
+    public interface FieldIterator<K extends Value, V extends NextStep> {
+        void process(Field<K, V> field);
     }
 
-    public static interface FieldPredicate<K extends Value, V extends NextStep> {
-        public boolean predicate(Field<K, V> field);
+    public interface FieldPredicate<K extends Value, V extends NextStep> {
+        boolean predicate(Field<K, V> field);
     }
 
-    public static interface FieldPrinter<K extends Value, V extends NextStep> {
-        public void beforeField(Field<K, V> current, boolean hasNext, StringBuilder builder);
+    public interface FieldPrinter<K extends Value, V extends NextStep> {
+        void initialize();
 
-        public boolean printField(Field<K, V> current, boolean hasNext, StringBuilder builder);
+        void beforeField(Field<K, V> current, boolean hasNext, StringBuilder builder);
 
-        public void afterField(Field<K, V> current, boolean hasNext, StringBuilder builder);
+        boolean printField(Field<K, V> current, boolean hasNext, StringBuilder builder);
+
+        void afterField(Field<K, V> current, boolean hasNext, StringBuilder builder);
     }
 
     private static class NullFieldPrinter implements FieldPrinter<Value, NextStep> {
+
+        @Override
+        public void initialize() {
+        }
 
         @Override
         public void beforeField(Field<Value, NextStep> current, boolean hasNext, StringBuilder builder) {

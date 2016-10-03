@@ -24,4 +24,7 @@ public class NextStepException extends Exception {
         super(string);
     }
 
+    public NextStepException(Throwable cause) {
+        super(cause);
+    }
 }

@@ -23,8 +23,11 @@ import org.moe.document.pbxproj.nextstep.NextStepException;
 import org.moe.document.pbxproj.nextstep.Value;
 
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.InputStream;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.security.SecureRandom;
@@ -80,7 +83,13 @@ public class ProjFile {
         // Read file
         Dictionary<Value, NextStep> rootdict;
         try {
-            rootdict = NextStep.read(file);
+            FileInputStream fis;
+            try {
+                fis = new FileInputStream(file);
+            } catch (FileNotFoundException e) {
+                throw new NextStepException(e);
+            }
+            rootdict = NextStep.read(fis);
         } catch (NextStepException e) {
             throw new ProjectException("Failed to parse file!");
         }
@@ -90,6 +99,32 @@ public class ProjFile {
 
         // Set root
         this.projectFile = file;
+        this.root = new Root(rootdict);
+
+        build();
+    }
+
+    public ProjFile(InputStream stream) throws ProjectException {
+        if (stream == null) {
+            throw new IllegalArgumentException("stream cannot be null");
+        }
+
+        // Get project name
+        projectName = null;
+
+        // Read file
+        Dictionary<Value, NextStep> rootdict;
+        try {
+            rootdict = NextStep.read(stream);
+        } catch (NextStepException e) {
+            throw new ProjectException("Failed to parse file!");
+        }
+        if (rootdict == null) {
+            throw new ProjectException("Failed to parse file!");
+        }
+
+        // Set root
+        this.projectFile = null;
         this.root = new Root(rootdict);
 
         build();
@@ -162,6 +197,11 @@ public class ProjFile {
             private Class<? extends PBXObject> lastClass = null;
 
             @Override
+            public void initialize() {
+                lastClass = null;
+            }
+
+            @Override
             public boolean printField(Dictionary.Field<Value, NextStep> current, boolean hasNext,
                     StringBuilder builder) {
                 return false;
@@ -199,8 +239,7 @@ public class ProjFile {
     }
 
     public void saveAs(File file) throws IOException {
-        getRoot().getObjects().sortObjects();
-        getRoot().getObjects().updateObjects();
+        sortAndUpdate();
 
         // Fix path if xcodeproj is the input
         int idx = file.getName().lastIndexOf('.');
@@ -218,8 +257,14 @@ public class ProjFile {
         }
     }
 
+    private void sortAndUpdate() {
+        getRoot().getObjects().sortObjects();
+        getRoot().getObjects().updateObjects();
+    }
+
     @Override
     public String toString() {
+        sortAndUpdate();
         return getRoot().toString();
     }
 
