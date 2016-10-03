@@ -17,7 +17,8 @@ public class PreferenceInitializer extends AbstractPreferenceInitializer {
 	 */
 	public void initializeDefaultPreferences() {
 		IPreferenceStore store = MOEPlugin.getDefault().getPreferenceStore();
-		store.setDefault(PreferenceConstants.GRADLE_RUN_MODE_KEY, PreferenceConstants.GRADLE_DEFAULT_VALUE);
+		store.setDefault(PreferenceConstants.GRADLE_LOG_LEVEL_KEY, PreferenceConstants.GRADLE_DEFAULT_VALUE);
+		store.setDefault(PreferenceConstants.GRADLE_STACKTRACE_LEVEL_KEY, PreferenceConstants.GRADLE_STACKTRACE_NONE_VALUE);
 	}
 
 }

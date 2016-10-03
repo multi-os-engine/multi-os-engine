@@ -91,9 +91,8 @@ public class ApplicationManager {
 	public static final String VM_ARGUMENTS_KEY = "vm_arguments";
 	public static final String PROGRAM_ARGUMENTS_KEY = "program_arguments";
 	public static final String REMOTE_KEYCHAIN_NAME_KEY = "remoteKeychainName";
-	public static final String GRADLE_INFO_PROPERTY = "moe.gradle.console.info=true";
-	public static final String GRADLE_DEBUG_PROPERTY = "moe.gradle.console.debug=true";
-	public static final String GRADLE_STACKTRACE_PROPERTY = "moe.gradle.console.stacktrace=true";
+	public static final String GRADLE_LOG_LEVEL_PROPERTY = "moe.gradle.log.level=";
+	public static final String GRADLE_STACKTRACE_LEVEL_PROPERTY = "moe.gradle.stacktrace.level=";
 
 	private IProject project;
 	private ILaunchConfiguration launchConfiguration;
@@ -131,12 +130,13 @@ public class ApplicationManager {
 		}
 		
 		IPreferenceStore store = MOEPlugin.getDefault().getPreferenceStore();
-		String consoleMode = store.getString(PreferenceConstants.GRADLE_RUN_MODE_KEY);
-		if (consoleMode != null && !consoleMode.isEmpty()) {
-            String[] modes = consoleMode.split(",");
-            for (String option : modes) {
-                args.add(option);
-            }
+		String logLevel = store.getString(PreferenceConstants.GRADLE_LOG_LEVEL_KEY);
+		if (logLevel != null && !logLevel.isEmpty()) {
+            args.add(logLevel);
+        }
+		String stacktraceLevel = store.getString(PreferenceConstants.GRADLE_STACKTRACE_LEVEL_KEY);
+		if (stacktraceLevel != null && !stacktraceLevel.isEmpty()) {
+            args.add(stacktraceLevel);
         }
 		
 		optionsBuilder.push("no-launch");
@@ -191,18 +191,13 @@ public class ApplicationManager {
 		List<String> args = new ArrayList<String>();
 		
 		IPreferenceStore store = MOEPlugin.getDefault().getPreferenceStore();
-		String consoleMode = store.getString(PreferenceConstants.GRADLE_RUN_MODE_KEY);
-		if (consoleMode != null && !consoleMode.isEmpty()) {
-            String[] modes = consoleMode.split(",");
-            for (String option : modes) {
-                if (option.equals(PreferenceConstants.INFO)) {
-                	args.add("-D" + GRADLE_INFO_PROPERTY);
-                } else if (option.equals(PreferenceConstants.DEBUG)) {
-                	args.add("-D" + GRADLE_DEBUG_PROPERTY);
-                } else if (option.equals(PreferenceConstants.STACKTRACE)) {
-                	args.add("-D" + GRADLE_STACKTRACE_PROPERTY);
-                }
-            }
+		String logLevel = store.getString(PreferenceConstants.GRADLE_LOG_LEVEL_KEY);
+		if (logLevel != null && !logLevel.isEmpty()) {
+            args.add("-D" + GRADLE_LOG_LEVEL_PROPERTY + logLevel);
+        }
+		String stacktraceLevel = store.getString(PreferenceConstants.GRADLE_STACKTRACE_LEVEL_KEY);
+		if (stacktraceLevel != null && !stacktraceLevel.isEmpty()) {
+            args.add("-D" + GRADLE_STACKTRACE_LEVEL_PROPERTY + stacktraceLevel);
         }
 
 		args.add("-D" + CONFIGURATION_MAVEN + getConfiguration());
@@ -383,12 +378,13 @@ public class ApplicationManager {
 		}
 		
 		IPreferenceStore store = MOEPlugin.getDefault().getPreferenceStore();
-		String consoleMode = store.getString(PreferenceConstants.GRADLE_RUN_MODE_KEY);
-		if (consoleMode != null && !consoleMode.isEmpty()) {
-            String[] modes = consoleMode.split(",");
-            for (String option : modes) {
-                args.add(option);
-            }
+		String logLevel = store.getString(PreferenceConstants.GRADLE_LOG_LEVEL_KEY);
+		if (logLevel != null && !logLevel.isEmpty()) {
+            args.add(logLevel);
+        }
+		String stacktraceLevel = store.getString(PreferenceConstants.GRADLE_STACKTRACE_LEVEL_KEY);
+		if (stacktraceLevel != null && !stacktraceLevel.isEmpty()) {
+            args.add(stacktraceLevel);
         }
 
 		if (isDebug) {
