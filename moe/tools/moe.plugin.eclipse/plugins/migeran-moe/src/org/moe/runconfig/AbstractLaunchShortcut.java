@@ -121,6 +121,7 @@ public abstract class AbstractLaunchShortcut implements ILaunchShortcut {
 	protected abstract String getConfigurationSuffix();
 
 	protected void setJUNitDefaultValues(ILaunchConfigurationWorkingCopy workingCopy) {
+		workingCopy.setAttribute(RunConfigurationEditorLocal.ATTR_GOALS, "moe:testxcodebuild");
 		workingCopy.setAttribute(ApplicationManager.RUN_JUNIT_TEST_KEY, true);
 		workingCopy.setAttribute(IJavaLaunchConfigurationConstants.ATTR_MAIN_TYPE_NAME, "");
 		workingCopy.setAttribute(JUnitLaunchConfigurationConstants.ATTR_TEST_CONTAINER,

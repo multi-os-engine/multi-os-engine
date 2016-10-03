@@ -255,32 +255,14 @@ public class JUnitEditorTab extends AbstractTab {
 			updateTestTypeFromConfig(config);
 		}
 
-		IProject project = getProject(editorLocal.getProjectName());
-		boolean isMavenProject = false;
-		if (project != null) {
-			try {
-				if (project.hasNature("org.eclipse.m2e.core.maven2Nature")) {
-					isMavenProject = true;
-				}
-			} catch (CoreException e1) {
-				LOG.error("Unable check nature", e1);
-			}
-			
-			if (!isMavenProject) {
-				try {
-					junitEnabledButton.setEnabled(true);
-					junitEnabledButton.setSelection(config.getAttribute(ApplicationManager.RUN_JUNIT_TEST_KEY, false));
-				} catch (CoreException e) {
-					LOG.error("Configuration error", e);
-					junitEnabledButton.setSelection(false);
-				}
-			} else {
-				junitEnabledButton.setSelection(false);
-				junitEnabledButton.setEnabled(false);
-			}
-
-			validatePage();
+		junitEnabledButton.setEnabled(true);
+		try {
+			junitEnabledButton.setSelection(config.getAttribute(ApplicationManager.RUN_JUNIT_TEST_KEY, false));
+		} catch (CoreException e) {
+			LOG.error("Configuration exception", e);
 		}
+
+		validatePage();
 	}
 
 	private void updateTestTypeFromConfig(ILaunchConfiguration config) {
