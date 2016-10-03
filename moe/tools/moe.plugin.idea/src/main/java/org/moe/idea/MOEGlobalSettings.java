@@ -34,21 +34,33 @@ import java.util.Map;
 )
 public class MOEGlobalSettings implements PersistentStateComponent<MOEGlobalSettings.MOEGlobalSettingsBean> {
 
-    public static final String GRADLE_DEFAULT_KEY = "Default";
+    public static final String GRADLE_DEFAULT_KEY = "Lifecycle";
 
     public static final String GRADLE_DEFAULT_VALUE = "";
+
+    public static final String GRADLE_QUIET_KEY = "Quiet";
+
+    public static final String GRADLE_QUIET_VALUE = "--quiet";
 
     public static final String GRADLE_INFO_KEY = "Info";
 
     public static final String GRADLE_INFO_VALUE = "--info";
 
-    public static final String GRADLE_STACKTRACE_KEY = "Stacktrace";
-
-    public static final String GRADLE_STACKTRACE_VALUE = "--info,--stacktrace";
-
     public static final String GRADLE_DEBUG_KEY = "Debug";
 
-    public static final String GRADLE_DEBUG_VALUE = "--info,--stacktrace,--debug";
+    public static final String GRADLE_DEBUG_VALUE = "--debug";
+
+    public static final String GRADLE_STACKTRACE_NONE_KEY = "None";
+
+    public static final String GRADLE_STACKTRACE_NONE_VALUE = "";
+
+    public static final String GRADLE_STACKTRACE_SIMPLE_KEY = "Simple";
+
+    public static final String GRADLE_STACKTRACE_SIMPLE_VALUE = "--stacktrace";
+
+    public static final String GRADLE_STACKTRACE_FULL_KEY = "Full";
+
+    public static final String GRADLE_STACKTRACE_FULL_VALUE = "--full-stacktrace";
 
     private MOEGlobalSettingsBean settingsBean = new MOEGlobalSettingsBean();
 
@@ -68,23 +80,36 @@ public class MOEGlobalSettings implements PersistentStateComponent<MOEGlobalSett
         return ServiceManager.getService(MOEGlobalSettings.class);
     }
 
-    public String getGradleConsoleMode() {
-        return settingsBean.GRADLE_RUN_MODE;
+    public String getGradleLoggingLevel() {
+        return settingsBean.GRADLE_LOGGING_LEVEL;
     }
 
-    public static Map<String, String> getRunModes() {
-        Map<String, String> runModes = new HashMap<String, String>();
-        runModes.put(GRADLE_DEFAULT_KEY, GRADLE_DEFAULT_VALUE);
-        runModes.put(GRADLE_INFO_KEY, GRADLE_INFO_VALUE);
-        runModes.put(GRADLE_STACKTRACE_KEY, GRADLE_STACKTRACE_VALUE);
-        runModes.put(GRADLE_DEBUG_KEY, GRADLE_DEBUG_VALUE);
-        return runModes;
+    public String getGradleStacktraceLevel() {
+        return settingsBean.GRADLE_STACKTRACE_LEVEL;
+    }
+
+    public static Map<String, String> getLoggingLevels() {
+        Map<String, String> levels = new HashMap<String, String>();
+        levels.put(GRADLE_DEFAULT_KEY, GRADLE_DEFAULT_VALUE);
+        levels.put(GRADLE_QUIET_KEY, GRADLE_QUIET_VALUE);
+        levels.put(GRADLE_INFO_KEY, GRADLE_INFO_VALUE);
+        levels.put(GRADLE_DEBUG_KEY, GRADLE_DEBUG_VALUE);
+        return levels;
+    }
+
+    public static Map<String, String> getStacktraceLevels() {
+        Map<String, String> levels = new HashMap<String, String>();
+        levels.put(GRADLE_STACKTRACE_NONE_KEY, GRADLE_STACKTRACE_NONE_VALUE);
+        levels.put(GRADLE_STACKTRACE_SIMPLE_KEY, GRADLE_STACKTRACE_SIMPLE_VALUE);
+        levels.put(GRADLE_STACKTRACE_FULL_KEY, GRADLE_STACKTRACE_FULL_VALUE);
+        return levels;
     }
 
     public static class MOEGlobalSettingsBean {
         public MOEGlobalSettingsBean(){}
 
-        public String GRADLE_RUN_MODE = GRADLE_DEFAULT_VALUE;
+        public String GRADLE_LOGGING_LEVEL = GRADLE_DEFAULT_VALUE;
+        public String GRADLE_STACKTRACE_LEVEL = GRADLE_STACKTRACE_NONE_VALUE;
 
     }
 }

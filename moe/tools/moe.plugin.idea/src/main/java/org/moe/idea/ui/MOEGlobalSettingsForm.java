@@ -22,38 +22,54 @@ import javax.swing.*;
 import java.util.Map;
 
 import static org.moe.idea.MOEGlobalSettings.GRADLE_DEFAULT_KEY;
+import static org.moe.idea.MOEGlobalSettings.GRADLE_STACKTRACE_NONE_VALUE;
 
 public class MOEGlobalSettingsForm {
-    private JComboBox gradleRunModeComboBox;
+    private JComboBox logLevelComboBox;
     private JPanel basePanel;
-    protected static Map<String, String> runModes;
+    private JComboBox stacktraceLevelComboBox;
+    protected static Map<String, String> loggingLevels;
+    protected static Map<String, String> stackTraceLevels;
     private MOEGlobalSettings globalSettings = MOEGlobalSettings.getInstance();
 
     public MOEGlobalSettingsForm() {
-        runModes = MOEGlobalSettings.getRunModes();
+        loggingLevels = MOEGlobalSettings.getLoggingLevels();
+        stackTraceLevels = MOEGlobalSettings.getStacktraceLevels();
 
-        for (String s : runModes.keySet()) {
-            gradleRunModeComboBox.addItem(s);
+        for (String s : loggingLevels.keySet()) {
+            logLevelComboBox.addItem(s);
         }
-        gradleRunModeComboBox.setSelectedItem(GRADLE_DEFAULT_KEY);
+        logLevelComboBox.setSelectedItem(GRADLE_DEFAULT_KEY);
+
+        for (String s : stackTraceLevels.keySet()) {
+            stacktraceLevelComboBox.addItem(s);
+        }
+        stacktraceLevelComboBox.setSelectedItem(GRADLE_STACKTRACE_NONE_VALUE);
     }
 
     public boolean isModified() {
         if (globalSettings.getState() == null) {
             return false;
         }
-        return !globalSettings.getState().GRADLE_RUN_MODE.equals(runModes.get((String)gradleRunModeComboBox.getSelectedItem()));
+        if (!globalSettings.getState().GRADLE_LOGGING_LEVEL.equals(loggingLevels.get((String) logLevelComboBox.getSelectedItem())) ||
+                !globalSettings.getState().GRADLE_STACKTRACE_LEVEL.equals(stackTraceLevels.get((String) stacktraceLevelComboBox.getSelectedItem()))) {
+            return true;
+        }
+        return false;
     }
 
     public void apply() {
-        globalSettings.getState().GRADLE_RUN_MODE = runModes.get((String)gradleRunModeComboBox.getSelectedItem());
+        globalSettings.getState().GRADLE_LOGGING_LEVEL = loggingLevels.get((String) logLevelComboBox.getSelectedItem());
+        globalSettings.getState().GRADLE_STACKTRACE_LEVEL = stackTraceLevels.get((String) stacktraceLevelComboBox.getSelectedItem());
     }
 
     public void reset() {
         if (globalSettings.getState() != null) {
-            gradleRunModeComboBox.setSelectedItem(getValue());
+            logLevelComboBox.setSelectedItem(getLoggingValue());
+            stacktraceLevelComboBox.setSelectedItem(getStacktraceValue());
         } else {
-            gradleRunModeComboBox.setSelectedItem(GRADLE_DEFAULT_KEY);
+            logLevelComboBox.setSelectedItem(GRADLE_DEFAULT_KEY);
+            stacktraceLevelComboBox.setSelectedItem(GRADLE_STACKTRACE_NONE_VALUE);
         }
     }
 
@@ -61,10 +77,21 @@ public class MOEGlobalSettingsForm {
         return basePanel;
     }
 
-    public String getValue() {
-        String mode = globalSettings.getState().GRADLE_RUN_MODE;
-        for (String key : runModes.keySet()) {
-            String value = runModes.get(key);
+    public String getLoggingValue() {
+        String mode = globalSettings.getState().GRADLE_LOGGING_LEVEL;
+        for (String key : loggingLevels.keySet()) {
+            String value = loggingLevels.get(key);
+            if (value.equals(mode)) {
+                return key;
+            }
+        }
+        return "";
+    }
+
+    public String getStacktraceValue() {
+        String mode = globalSettings.getState().GRADLE_STACKTRACE_LEVEL;
+        for (String key : stackTraceLevels.keySet()) {
+            String value = stackTraceLevels.get(key);
             if (value.equals(mode)) {
                 return key;
             }

@@ -59,12 +59,13 @@ public class MOEGradleRunner {
         }
 
         MOEGlobalSettings globalSettings = MOEGlobalSettings.getInstance();
-        String consoleMode = globalSettings.getGradleConsoleMode();
-        if (consoleMode != null && !consoleMode.isEmpty()) {
-            String[] modes = consoleMode.split(",");
-            for (String option : modes) {
-                args.add(option);
-            }
+        String logLevel = globalSettings.getGradleLoggingLevel();
+        if (logLevel != null && !logLevel.isEmpty()) {
+            args.add(logLevel);
+        }
+        String stacktraceLevel = globalSettings.getGradleStacktraceLevel();
+        if (stacktraceLevel != null && !stacktraceLevel.isEmpty()) {
+            args.add(stacktraceLevel);
         }
 
         final OptionsBuilder options = new OptionsBuilder();
