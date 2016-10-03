@@ -69,10 +69,180 @@
     <extension
             point="org.eclipse.debug.ui.launchShortcuts">
         <shortcut
-                class="org.moe.runconfig.LocalLaunchShortcut"
+                class="org.moe.runconfig.DeviceLaunchShortcut"
                 icon="icons/moe_small.png"
-                id="org.moe.runconfig.LocalLaunchShortcut"
-                label="Multi-OS Engine iOS Application"
+                id="org.moe.runconfig.DeviceLaunchShortcut"
+                label="Multi-OS Engine iOS Application (Device)"
+                modes="run,debug">
+            <contextualLaunch>
+                <enablement>
+                    <with variable="selection">
+                        <count value="1"/>
+                        <iterate>
+                            <and>
+                                <test property="org.eclipse.jdt.launching.isContainer"/>
+                                <reference definitionId="org.moe.isRelevantProjectAndMac"/>
+                            </and>
+                        </iterate>
+                    </with>
+                </enablement>
+            </contextualLaunch>
+            <configurationType
+                    id="org.moe.runconfig.LocalConfigurationDelegate">
+            </configurationType>
+            <description
+                    description="Multi-OS Engine build"
+                    mode="run">
+            </description>
+            <description
+                    description="Multi-OS Engine build"
+                    mode="debug">
+            </description>
+        </shortcut>
+    </extension>
+    <extension
+            point="org.eclipse.debug.ui.launchShortcuts">
+        <shortcut
+                class="org.moe.runconfig.SimulatorIPhoneLaunchShortcut"
+                icon="icons/moe_small.png"
+                id="org.moe.runconfig.SimulatorIPhoneLaunchShortcut"
+                label="Multi-OS Engine iOS Application Simulator (iPhone)"
+                modes="run,debug">
+            <contextualLaunch>
+                <enablement>
+                    <with variable="selection">
+                        <count value="1"/>
+                        <iterate>
+                            <and>
+                                <test property="org.eclipse.jdt.launching.isContainer"/>
+                                <reference definitionId="org.moe.isRelevantProjectAndMac"/>
+                            </and>
+                        </iterate>
+                    </with>
+                </enablement>
+            </contextualLaunch>
+            <configurationType
+                    id="org.moe.runconfig.LocalConfigurationDelegate">
+            </configurationType>
+            <description
+                    description="Multi-OS Engine build"
+                    mode="run">
+            </description>
+            <description
+                    description="Multi-OS Engine build"
+                    mode="debug">
+            </description>
+        </shortcut>
+    </extension>
+    <extension
+            point="org.eclipse.debug.ui.launchShortcuts">
+        <shortcut
+                class="org.moe.runconfig.SimulatorIPadLaunchShortcut"
+                icon="icons/moe_small.png"
+                id="org.moe.runconfig.SimulatorIPadLaunchShortcut"
+                label="Multi-OS Engine iOS Application Simulator (iPad)"
+                modes="run,debug">
+            <contextualLaunch>
+                <enablement>
+                    <with variable="selection">
+                        <count value="1"/>
+                        <iterate>
+                            <and>
+                                <test property="org.eclipse.jdt.launching.isContainer"/>
+                                <reference definitionId="org.moe.isRelevantProjectAndMac"/>
+                            </and>
+                        </iterate>
+                    </with>
+                </enablement>
+            </contextualLaunch>
+            <configurationType
+                    id="org.moe.runconfig.LocalConfigurationDelegate">
+            </configurationType>
+            <description
+                    description="Multi-OS Engine build"
+                    mode="run">
+            </description>
+            <description
+                    description="Multi-OS Engine build"
+                    mode="debug">
+            </description>
+        </shortcut>
+    </extension>
+    <extension
+            point="org.eclipse.debug.ui.launchShortcuts">
+        <shortcut
+                class="org.moe.runconfig.JUnitDeviceLaunchShortcut"
+                icon="icons/moe_small.png"
+                id="org.moe.runconfig.JUnitDeviceLaunchShortcut"
+                label="Multi-OS Engine JUnit Test (Device)"
+                modes="run,debug">
+            <contextualLaunch>
+                <enablement>
+                    <with variable="selection">
+                        <count value="1"/>
+                        <iterate>
+                            <and>
+                                <test property="org.eclipse.jdt.launching.isContainer"/>
+                                <reference definitionId="org.moe.isRelevantProjectAndMac"/>
+                            </and>
+                        </iterate>
+                    </with>
+                </enablement>
+            </contextualLaunch>
+            <configurationType
+                    id="org.moe.runconfig.LocalConfigurationDelegate">
+            </configurationType>
+            <description
+                    description="Multi-OS Engine build"
+                    mode="run">
+            </description>
+            <description
+                    description="Multi-OS Engine build"
+                    mode="debug">
+            </description>
+        </shortcut>
+    </extension>
+    <extension
+            point="org.eclipse.debug.ui.launchShortcuts">
+        <shortcut
+                class="org.moe.runconfig.JUnitSimulatorIPhoneLaunchShortcut"
+                icon="icons/moe_small.png"
+                id="org.moe.runconfig.JUnitSimulatorIPhoneLaunchShortcut"
+                label="Multi-OS Engine JUnit Test (iPhone)"
+                modes="run,debug">
+            <contextualLaunch>
+                <enablement>
+                    <with variable="selection">
+                        <count value="1"/>
+                        <iterate>
+                            <and>
+                                <test property="org.eclipse.jdt.launching.isContainer"/>
+                                <reference definitionId="org.moe.isRelevantProjectAndMac"/>
+                            </and>
+                        </iterate>
+                    </with>
+                </enablement>
+            </contextualLaunch>
+            <configurationType
+                    id="org.moe.runconfig.LocalConfigurationDelegate">
+            </configurationType>
+            <description
+                    description="Multi-OS Engine build"
+                    mode="run">
+            </description>
+            <description
+                    description="Multi-OS Engine build"
+                    mode="debug">
+            </description>
+        </shortcut>
+    </extension>
+    <extension
+            point="org.eclipse.debug.ui.launchShortcuts">
+        <shortcut
+                class="org.moe.runconfig.JUnitSimulatorIPadLaunchShortcut"
+                icon="icons/moe_small.png"
+                id="org.moe.runconfig.JUnitSimulatorIPadLaunchShortcut"
+                label="Multi-OS Engine JUnit Test (iPad)"
                 modes="run,debug">
             <contextualLaunch>
                 <enablement>

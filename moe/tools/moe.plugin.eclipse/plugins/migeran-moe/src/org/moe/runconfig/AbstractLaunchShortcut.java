@@ -25,21 +25,25 @@ import org.eclipse.debug.core.ILaunchConfigurationWorkingCopy;
 import org.eclipse.debug.core.ILaunchManager;
 import org.eclipse.debug.ui.DebugUITools;
 import org.eclipse.debug.ui.ILaunchShortcut;
+import org.eclipse.jdt.core.JavaCore;
+import org.eclipse.jdt.internal.junit.launcher.JUnitLaunchConfigurationConstants;
+import org.eclipse.jdt.internal.junit.launcher.TestKindRegistry;
 import org.eclipse.jdt.launching.IJavaLaunchConfigurationConstants;
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.ui.IEditorPart;
-import org.moe.common.utils.OsUtils;
 import org.moe.utils.MessageFactory;
 import org.moe.utils.ProjectHelper;
-import org.moe.utils.SimCtl;
 
-public class LocalLaunchShortcut implements ILaunchShortcut {
+@SuppressWarnings("restriction")
+public abstract class AbstractLaunchShortcut implements ILaunchShortcut {
 
 	public static final String LOCAL_CONFIGURATION_ID = "org.moe.runconfig.LocalConfigurationDelegate";
 
+	private IProject project;
+
 	@Override
 	public void launch(ISelection arg0, String arg1) {
-		IProject project = ProjectHelper.getSelectedProject(arg0);
+		this.project = ProjectHelper.getSelectedProject(arg0);
 		if (project != null) {
 			launch(project.getName(), arg1);
 		}
@@ -52,23 +56,24 @@ public class LocalLaunchShortcut implements ILaunchShortcut {
 	}
 
 	private void launch(String projectName, String mode) {
-		ILaunchConfiguration launchConfiguration = getLaunchConfiguration(projectName);
+		ILaunchConfiguration launchConfiguration = getLaunchConfiguration(projectName + getConfigurationSuffix(),
+				projectName);
 
 		if (launchConfiguration != null) {
 			DebugUITools.launch(launchConfiguration, mode);
 		}
 	}
 
-	private ILaunchConfiguration getLaunchConfiguration(String projectName) {
+	private ILaunchConfiguration getLaunchConfiguration(String configName, String projectName) {
 		ILaunchManager manager = DebugPlugin.getDefault().getLaunchManager();
 
 		ILaunchConfigurationType configurationType = manager.getLaunchConfigurationType(LOCAL_CONFIGURATION_ID);
 
-		ILaunchConfiguration configuration = findConfiguration(manager, configurationType, projectName);
+		ILaunchConfiguration configuration = findConfiguration(manager, configurationType, configName);
 
 		if (configuration == null) {
 			try {
-				configuration = newLaunchConfiguration(configurationType, projectName).doSave();
+				configuration = newLaunchConfiguration(configurationType, configName, projectName).doSave();
 			} catch (CoreException e) {
 				MessageFactory.showErrorDialog("Unable create launch configuration", e.getStatus().getMessage());
 			}
@@ -77,14 +82,13 @@ public class LocalLaunchShortcut implements ILaunchShortcut {
 		return configuration;
 	}
 
-	private static ILaunchConfiguration findConfiguration(ILaunchManager manager, ILaunchConfigurationType type,
-			String projectName) {
+	private ILaunchConfiguration findConfiguration(ILaunchManager manager, ILaunchConfigurationType type, String name) {
 
 		try {
 			ILaunchConfiguration[] configurations = manager.getLaunchConfigurations(type);
 
 			for (ILaunchConfiguration config : configurations) {
-				if (config.getAttribute(IJavaLaunchConfigurationConstants.ATTR_PROJECT_NAME, "").equals(projectName)) {
+				if (config.getName().equals(name)) {
 					return config;
 				}
 			}
@@ -96,28 +100,34 @@ public class LocalLaunchShortcut implements ILaunchShortcut {
 
 	}
 
-	public static ILaunchConfigurationWorkingCopy newLaunchConfiguration(ILaunchConfigurationType configType,
-			String name) throws CoreException {
+	public ILaunchConfigurationWorkingCopy newLaunchConfiguration(ILaunchConfigurationType configType,
+			String configName, String projectName) throws CoreException {
 		ILaunchConfigurationWorkingCopy workingCopy = null;
 		ILaunchManager manager = DebugPlugin.getDefault().getLaunchManager();
 
-		workingCopy = configType.newInstance(null, manager.generateLaunchConfigurationName(name));
+		workingCopy = configType.newInstance(null, manager.generateLaunchConfigurationName(configName));
 
-		workingCopy.setAttribute(IJavaLaunchConfigurationConstants.ATTR_PROJECT_NAME, name);
+		workingCopy.setAttribute(IJavaLaunchConfigurationConstants.ATTR_PROJECT_NAME, projectName);
 		workingCopy.setAttribute(RunConfigurationEditorLocal.ATTR_GOALS, "moe:xcodebuild");
 		workingCopy.setAttribute(RunConfigurationEditorLocal.ATTR_RUNTIME, ProjectHelper.getMavenRuntimePath());
 		workingCopy.setAttribute(IJavaLaunchConfigurationConstants.ATTR_ALLOW_TERMINATE, true);
-		if (!OsUtils.isMac()) {
-			workingCopy.setAttribute(ApplicationManager.RUN_ON_SIMULATOR_KEY, false);
-		} else {
-			for (SimCtl.Device device : SimCtl.getDevices()) {
-				workingCopy.setAttribute(ApplicationManager.RUN_ON_SIMULATOR_KEY, true);
-				workingCopy.setAttribute(ApplicationManager.SIMULATOR_UUID_KEY, device.udid);
-				break;
-			}
-		}
+		setTargetDevice(workingCopy);
 
 		return workingCopy;
+	}
+
+	protected abstract void setTargetDevice(ILaunchConfigurationWorkingCopy workingCopy);
+
+	protected abstract String getConfigurationSuffix();
+
+	protected void setJUNitDefaultValues(ILaunchConfigurationWorkingCopy workingCopy) {
+		workingCopy.setAttribute(ApplicationManager.RUN_JUNIT_TEST_KEY, true);
+		workingCopy.setAttribute(IJavaLaunchConfigurationConstants.ATTR_MAIN_TYPE_NAME, "");
+		workingCopy.setAttribute(JUnitLaunchConfigurationConstants.ATTR_TEST_CONTAINER,
+				JavaCore.create(project).getHandleIdentifier());
+		workingCopy.setAttribute(JUnitLaunchConfigurationConstants.ATTR_TEST_METHOD_NAME, "");
+		workingCopy.setAttribute(JUnitLaunchConfigurationConstants.ATTR_TEST_RUNNER_KIND,
+				TestKindRegistry.JUNIT4_TEST_KIND_ID);
 	}
 
 }
