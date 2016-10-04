@@ -71,7 +71,7 @@ public final class PBXBuildFile extends PBXObject {
      **/
 
     public PBXObjectRef<? extends PBXObject> getFileRef() {
-        return (PBXObjectRef<? extends PBXObject>)getPBXObjectRefValue(FILE_REF);
+        return getPBXObjectRefValue(FILE_REF);
     }
 
     public void setFileRef(PBXObjectRef<? extends PBXObject> value) {
@@ -79,7 +79,7 @@ public final class PBXBuildFile extends PBXObject {
     }
 
     public Dictionary<Value, NextStep> getSettings() {
-        return (Dictionary<Value, NextStep>)getDictionaryValue(SETTINGS);
+        return getDictionaryValueOrNull(SETTINGS);
     }
 
 }

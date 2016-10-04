@@ -50,10 +50,6 @@ public class PBXContainerItemProxy extends PBXObject {
     }
 
     @Override
-    public void update() {
-    }
-
-    @Override
     public void removeReference(PBXObjectRef<? extends PBXObject> ref) {
         if (ref.equals(getContainerPortal())) {
             setContainerPortal(null);
@@ -65,7 +61,7 @@ public class PBXContainerItemProxy extends PBXObject {
      **/
 
     public PBXObjectRef<PBXObject> getContainerPortal() {
-        return (PBXObjectRef<PBXObject>)getPBXObjectRefValue(CONTAINER_PORTAL_KEY);
+        return getPBXObjectRefValue(CONTAINER_PORTAL_KEY);
     }
 
     public void setContainerPortal(PBXObjectRef<PBXObject> value) {

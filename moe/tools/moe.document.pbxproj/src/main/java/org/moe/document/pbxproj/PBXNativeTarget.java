@@ -109,7 +109,7 @@ public final class PBXNativeTarget extends PBXObject {
      **/
 
     public PBXObjectRef<XCConfigurationList> getBuildConfigurationList() {
-        return (PBXObjectRef<XCConfigurationList>)getPBXObjectRefValue(BUILD_CONFIGURATION_LIST_KEY);
+        return getPBXObjectRefValue(BUILD_CONFIGURATION_LIST_KEY);
     }
 
     public void setBuildConfigurationList(PBXObjectRef<XCConfigurationList> value) {
@@ -117,15 +117,15 @@ public final class PBXNativeTarget extends PBXObject {
     }
 
     public Array<PBXObjectRef<PBXBuildPhase>> getBuildPhases() {
-        return (Array<PBXObjectRef<PBXBuildPhase>>)getArrayValue(BUILD_PHASES_KEY);
+        return getArrayValueOrNull(BUILD_PHASES_KEY);
     }
 
     public Array<PBXObjectRef<PBXBuildRule>> getBuildRules() {
-        return (Array<PBXObjectRef<PBXBuildRule>>)getArrayValue(BUILD_RULES_KEY);
+        return getArrayValueOrNull(BUILD_RULES_KEY);
     }
 
     public Array<PBXObjectRef<?>> getDependencies() {
-        return (Array<PBXObjectRef<?>>)getArrayValue(DEPENDENCIES_KEY);
+        return getArrayValueOrNull(DEPENDENCIES_KEY);
     }
 
     public String getName() {
@@ -145,7 +145,7 @@ public final class PBXNativeTarget extends PBXObject {
     }
 
     public PBXObjectRef<PBXFileReference> getProductReference() {
-        return (PBXObjectRef<PBXFileReference>)getPBXObjectRefValue(PRODUCT_REFERENCE_KEY);
+        return getPBXObjectRefValue(PRODUCT_REFERENCE_KEY);
     }
 
     public void setProductReference(PBXObjectRef<PBXFileReference> value) {

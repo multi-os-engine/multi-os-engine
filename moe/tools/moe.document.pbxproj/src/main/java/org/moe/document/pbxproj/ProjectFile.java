@@ -34,7 +34,7 @@ import java.security.SecureRandom;
 import java.util.HashMap;
 
 @SuppressWarnings("unchecked")
-public class ProjFile {
+public class ProjectFile {
 
     private final Root root;
     private final File projectFile;
@@ -48,7 +48,7 @@ public class ProjFile {
             XCConfigurationList.class
     };
 
-    public ProjFile() {
+    public ProjectFile() {
         this.projectName = null;
         this.projectFile = null;
         this.root = new Root(new Dictionary<Value, NextStep>());
@@ -56,7 +56,7 @@ public class ProjFile {
         build();
     }
 
-    public ProjFile(File file) throws ProjectException {
+    public ProjectFile(File file) throws ProjectException {
         if (file == null) {
             throw new IllegalArgumentException("file cannot be null");
         }
@@ -104,7 +104,7 @@ public class ProjFile {
         build();
     }
 
-    public ProjFile(InputStream stream) throws ProjectException {
+    public ProjectFile(InputStream stream) throws ProjectException {
         if (stream == null) {
             throw new IllegalArgumentException("stream cannot be null");
         }
@@ -225,7 +225,7 @@ public class ProjFile {
 
             @Override
             public void afterField(Dictionary.Field<Value, NextStep> current, boolean hasNext, StringBuilder builder) {
-                if (hasNext == false && lastClass != null) {
+                if (!hasNext && lastClass != null) {
                     builder.append("/* End ");
                     builder.append(lastClass.getSimpleName());
                     builder.append(" section */\n");
@@ -302,7 +302,7 @@ public class ProjFile {
             throw new RuntimeException("Random generator failed", e);
         }
 
-        String randomNum = new Integer(prng.nextInt()).toString();
+        String randomNum = Integer.toString(prng.nextInt());
         String ref = new String(Hex.encodeHex(md.digest(randomNum.getBytes())));
         return ref.toUpperCase().substring(0, 24);
     }

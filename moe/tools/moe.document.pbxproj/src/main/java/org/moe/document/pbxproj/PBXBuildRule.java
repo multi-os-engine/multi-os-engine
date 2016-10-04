@@ -87,7 +87,7 @@ public class PBXBuildRule extends PBXObject {
     }
 
     public Array<Value> getOutputFiles() {
-        return (Array<Value>)getArrayValue(OUTPUT_FILES_KEY);
+        return getArrayValueOrNull(OUTPUT_FILES_KEY);
     }
 
     public String getScript() {

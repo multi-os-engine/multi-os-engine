@@ -23,9 +23,8 @@ import java.util.List;
 public class Util {
 
     public static <V extends PBXObject> V getFirstConforming(List<PBXObjectRef<V>> array, String key, String value) {
-        Iterator<PBXObjectRef<V>> it = array.iterator();
-        while (it.hasNext()) {
-            V elem = it.next().getReferenced();
+        for (PBXObjectRef<V> reference : array) {
+            V elem = reference.getReferenced();
             String stringValue = elem.getStringValue(key);
             if (stringValue == null) {
                 continue;
@@ -40,9 +39,8 @@ public class Util {
     public static <V extends PBXObject> ArrayList<V> getAllConforming(List<PBXObjectRef<V>> array, String key,
             String value) {
         ArrayList<V> all = new ArrayList<V>();
-        Iterator<PBXObjectRef<V>> it = array.iterator();
-        while (it.hasNext()) {
-            V elem = it.next().getReferenced();
+        for (PBXObjectRef<V> reference : array) {
+            V elem = reference.getReferenced();
             String stringValue = elem.getStringValue(key);
             if (stringValue == null) {
                 continue;

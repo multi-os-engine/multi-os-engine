@@ -52,11 +52,7 @@ public class Dictionary<K extends Value, V extends NextStep> extends NextStep {
             }
 
             Field<K, V> field = (Field<K, V>)obj;
-            if (field.isValid() && key.equals(field.key) && value.equals(field.value)) {
-                return true;
-            } else {
-                return false;
-            }
+            return field.isValid() && key.equals(field.key) && value.equals(field.value);
         }
     }
 
@@ -69,7 +65,7 @@ public class Dictionary<K extends Value, V extends NextStep> extends NextStep {
     static Dictionary<Value, NextStep> create(Tokenizer t) throws NextStepException {
         Token token = t.next();
         if (token == null) {
-            throw new NextStepException("early end of tokenstream");
+            throw new NextStepException("early end of token stream");
         }
         if (token.kind != Token.Brace_open) {
             throw new NextStepException("illegal state");
@@ -93,7 +89,7 @@ public class Dictionary<K extends Value, V extends NextStep> extends NextStep {
 
                 token = t.next();
                 if (token == null) {
-                    throw new NextStepException("early end of tokenstream");
+                    throw new NextStepException("early end of token stream");
                 }
                 if (token.kind != Token.Equal) {
                     throw new NextStepException("illegal state");
@@ -103,7 +99,7 @@ public class Dictionary<K extends Value, V extends NextStep> extends NextStep {
 
                 token = t.next();
                 if (token == null) {
-                    throw new NextStepException("early end of tokenstream");
+                    throw new NextStepException("early end of token stream");
                 }
                 if (token.kind != Token.Semicolon) {
                     throw new NextStepException("illegal state");
@@ -115,7 +111,7 @@ public class Dictionary<K extends Value, V extends NextStep> extends NextStep {
 
             token = t.peek();
         }
-        throw new NextStepException("early end of tokenstream");
+        throw new NextStepException("early end of token stream");
     }
 
     public Dictionary() {
@@ -211,8 +207,6 @@ public class Dictionary<K extends Value, V extends NextStep> extends NextStep {
         builder.append("}");
         return builder.toString();
     }
-
-    ;
 
     protected boolean isInline() {
         return false;

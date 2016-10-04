@@ -49,11 +49,11 @@ public final class PBXShellScriptBuildPhase extends PBXBuildPhase {
      **/
 
     public Array<Value> getInputPaths() {
-        return (Array<Value>)getArrayValue(INPUT_PATHS_KEY);
+        return getArrayValueOrNull(INPUT_PATHS_KEY);
     }
 
     public Array<Value> getOutputPaths() {
-        return (Array<Value>)getArrayValue(OUTPUT_PATHS_KEY);
+        return getArrayValueOrNull(OUTPUT_PATHS_KEY);
     }
 
     public String getShellPath() {

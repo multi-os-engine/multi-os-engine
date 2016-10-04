@@ -18,20 +18,22 @@ package test.org.moe.document.pbxproj;
 
 import org.junit.BeforeClass;
 import org.junit.Test;
-import org.moe.document.pbxproj.PBXNativeTarget;
+import org.moe.document.pbxproj.PBXObject;
 import org.moe.document.pbxproj.PBXObjectRef;
 import org.moe.document.pbxproj.PBXProject;
-import org.moe.document.pbxproj.ProjectFile;
 import org.moe.document.pbxproj.ProjectException;
-import org.moe.document.pbxproj.nextstep.Array;
+import org.moe.document.pbxproj.ProjectFile;
+import org.moe.document.pbxproj.Root.RootObjects;
+import org.moe.document.pbxproj.nextstep.Dictionary.Field;
+import org.moe.document.pbxproj.nextstep.Dictionary.FieldIterator;
 
 import java.io.InputStream;
-import java.util.Arrays;
-import java.util.List;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
-public class Values {
+public class Types {
+
+    private static final String PACKAGE_ROOT = "org.moe.document.pbxproj.";
 
     private static ProjectFile pbxproj;
     private static PBXProject project;
@@ -45,20 +47,22 @@ public class Values {
     }
 
     @Test
-    public void testProject() {
-        assertNotNull(project);
-        assertEquals(0, project.getProjectName().length());
-    }
-
-    @Test
-    public void testTargets() {
-        Array<PBXObjectRef<PBXNativeTarget>> targets = project.getTargets();
-        List<String> names = Arrays
-                .asList("App-SingleView", "App-Game", "App-MasterDetail", "App-PageBased", "App-Tabbed",
-                        "Lib-Framework", "Lib-Static", "Lib-Metal");
-        assertEquals(names.size(), targets.size());
-        for (PBXObjectRef<PBXNativeTarget> ref : targets) {
-            assertTrue(names.contains(ref.getReferenced().getName()));
-        }
+    public void testTypes() {
+        RootObjects objects = pbxproj.getRoot().getObjects();
+        objects.iterate(new FieldIterator<PBXObjectRef<? extends PBXObject>, PBXObject>() {
+            @Override
+            public void process(Field<PBXObjectRef<? extends PBXObject>, PBXObject> field) {
+                PBXObject value = field.value;
+                String isa = value.getIsa();
+                String className = PACKAGE_ROOT + isa;
+                Class<?> clazz;
+                try {
+                    clazz = Class.forName(className);
+                } catch (ClassNotFoundException ignore) {
+                    return;
+                }
+                assertEquals(clazz, value.getClass());
+            }
+        });
     }
 }

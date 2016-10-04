@@ -50,10 +50,6 @@ public class PBXTargetDependency extends PBXObject {
     }
 
     @Override
-    public void update() {
-    }
-
-    @Override
     public void removeReference(PBXObjectRef<? extends PBXObject> ref) {
         if (ref.equals(getTargetProxy())) {
             setTargetProxy(null);
@@ -77,7 +73,7 @@ public class PBXTargetDependency extends PBXObject {
     }
 
     public PBXObjectRef<PBXNativeTarget> getTarget() {
-        return (PBXObjectRef<PBXNativeTarget>)getPBXObjectRefValue(TARGET_KEY);
+        return getPBXObjectRefValue(TARGET_KEY);
     }
 
     public void setTarget(PBXObjectRef<PBXNativeTarget> value) {
@@ -85,7 +81,7 @@ public class PBXTargetDependency extends PBXObject {
     }
 
     public PBXObjectRef<PBXContainerItemProxy> getTargetProxy() {
-        return (PBXObjectRef<PBXContainerItemProxy>)getPBXObjectRefValue(TARGET_PROXY_KEY);
+        return getPBXObjectRefValue(TARGET_PROXY_KEY);
     }
 
     public void setTargetProxy(PBXObjectRef<PBXContainerItemProxy> value) {

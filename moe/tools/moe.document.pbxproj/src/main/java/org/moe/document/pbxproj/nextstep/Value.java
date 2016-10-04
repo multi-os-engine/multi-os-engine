@@ -33,7 +33,7 @@ public class Value extends NextStep {
             return new Value(token.value);
         }
 
-        throw new NextStepException("early end of tokenstream");
+        throw new NextStepException("early end of token stream");
     }
 
     public Value() {

@@ -60,7 +60,7 @@ public final class XCBuildConfiguration extends PBXObject {
      **/
 
     public Dictionary<Value, NextStep> getBuildSettings() {
-        return (Dictionary<Value, NextStep>)getDictionaryValue(BUILD_SETTINGS_KEY);
+        return getDictionaryValueOrNull(BUILD_SETTINGS_KEY);
     }
 
     public String getName() {
@@ -72,7 +72,7 @@ public final class XCBuildConfiguration extends PBXObject {
     }
 
     public PBXObjectRef<PBXFileReference> getBaseConfigurationReference() {
-        return (PBXObjectRef<PBXFileReference>)getPBXObjectRefValue(BASE_CONFIGURATION_REFERENCE_KEY);
+        return getPBXObjectRefValue(BASE_CONFIGURATION_REFERENCE_KEY);
     }
 
     public void setBaseConfigurationReference(PBXObjectRef<PBXFileReference> value) {

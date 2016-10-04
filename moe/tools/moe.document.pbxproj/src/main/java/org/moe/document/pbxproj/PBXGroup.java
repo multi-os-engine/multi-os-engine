@@ -71,7 +71,7 @@ public final class PBXGroup extends PBXObject {
      **/
 
     public Array<PBXObjectRef<? extends PBXObject>> getChildren() {
-        return (Array<PBXObjectRef<? extends PBXObject>>)getArrayValue(CHILDREN_KEY);
+        return getArrayValueOrNull(CHILDREN_KEY);
     }
 
     public String getName() {

@@ -54,9 +54,7 @@ public abstract class PBXBuildPhase extends PBXObject {
     public void update() {
         Array<PBXObjectRef<PBXBuildFile>> values = getFiles();
         if (values != null) {
-            int count = values.size();
-            for (int i = 0; i < count; ++i) {
-                PBXObjectRef<PBXBuildFile> ref = values.get(i);
+            for (PBXObjectRef<PBXBuildFile> ref : values) {
                 ref.getReferenced().container = this;
             }
         }
@@ -75,7 +73,7 @@ public abstract class PBXBuildPhase extends PBXObject {
     }
 
     public Array<PBXObjectRef<PBXBuildFile>> getFiles() {
-        return (Array<PBXObjectRef<PBXBuildFile>>)getArrayValue(FILES_KEY);
+        return getArrayValueOrNull(FILES_KEY);
     }
 
     public String getRunOnlyForDeploymentPostprocessing() {
@@ -86,7 +84,7 @@ public abstract class PBXBuildPhase extends PBXObject {
         setStringValue(RUN_ONLY_FOR_DEPLOYMENT_POSTPROCESSING_KEY, value);
     }
 
-    public PBXBuildPhase addFileReference(ProjFile projectFile, PBXObjectRef<PBXFileReference> fileRef) {
+    public PBXBuildPhase addFileReference(ProjectFile projectFile, PBXObjectRef<PBXFileReference> fileRef) {
 
         PBXObjectRef<PBXBuildFile> buildFileRef = projectFile.createReference(new PBXBuildFile());
         projectFile.getRoot().getObjects().add(buildFileRef);

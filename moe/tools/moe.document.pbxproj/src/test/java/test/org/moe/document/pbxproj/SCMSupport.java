@@ -18,7 +18,7 @@ package test.org.moe.document.pbxproj;
 
 import org.apache.commons.io.IOUtils;
 import org.junit.Test;
-import org.moe.document.pbxproj.ProjFile;
+import org.moe.document.pbxproj.ProjectFile;
 import org.moe.document.pbxproj.ProjectException;
 
 import java.io.IOException;
@@ -39,7 +39,7 @@ public class SCMSupport {
         String expected = IOUtils.toString(resourceStream, "UTF-8");
 
         resourceStream = SCMSupport.class.getResourceAsStream(filename);
-        ProjFile project = new ProjFile(resourceStream);
+        ProjectFile project = new ProjectFile(resourceStream);
         String actual = project.toString();
         assertEquals(expected, actual);
     }

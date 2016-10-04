@@ -65,7 +65,7 @@ public final class PBXVariantGroup extends PBXObject {
      **/
 
     public Array<PBXObjectRef<PBXFileReference>> getChildren() {
-        return (Array<PBXObjectRef<PBXFileReference>>)getArrayValue(CHILDREN_KEY);
+        return getArrayValueOrNull(CHILDREN_KEY);
     }
 
     public String getName() {

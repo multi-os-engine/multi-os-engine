@@ -45,12 +45,9 @@ public final class PBXProject extends PBXObject {
     public PBXProject(Dictionary<Value, NextStep> dict) {
         super(dict);
 
-        if (contains(PROJECT_REFERENCES_KEY)) {
-            Array<ProjectReference> refs = getProjectReferences();
-            int count = refs.size();
-            for (int i = 0; i < count; ++i) {
-                refs.set(i, new ProjectReference(refs.get(i)));
-            }
+        Array<ProjectReference> refs = getProjectReferences();
+        for (int i = 0, count = refs == null ? 0 : refs.size(); i < count; ++i) {
+            refs.set(i, new ProjectReference(refs.get(i)));
         }
     }
 
@@ -78,11 +75,11 @@ public final class PBXProject extends PBXObject {
         connectReferencesInValue(MAIN_GROUP_KEY, map);
         connectReferencesInValue(PRODUCT_REF_GROUP_KEY, map);
         connectReferencesInValueArray(TARGETS_KEY, map);
-        if (contains(PROJECT_REFERENCES_KEY)) {
-            Iterator<ProjectReference> it = getProjectReferences().iterator();
-            while (it.hasNext()) {
-                it.next().connectReferences(map);
-            }
+
+        Array<ProjectReference> projectReferences = getProjectReferences();
+        for (int i = 0, size = projectReferences == null ? 0 : projectReferences.size(); i < size; i++) {
+            ProjectReference reference = projectReferences.get(i);
+            reference.connectReferences(map);
         }
     }
 
@@ -120,11 +117,10 @@ public final class PBXProject extends PBXObject {
             }
         }
 
-        if (contains(PROJECT_REFERENCES_KEY)) {
-            Iterator<ProjectReference> pref_it = getProjectReferences().iterator();
-            while (pref_it.hasNext()) {
-                pref_it.next().removeReference(ref);
-            }
+        Array<ProjectReference> projectReferences = getProjectReferences();
+        for (int i = 0, size = projectReferences == null ? 0 : projectReferences.size(); i < size; i++) {
+            ProjectReference reference = projectReferences.get(i);
+            reference.removeReference(ref);
         }
     }
 
@@ -137,11 +133,11 @@ public final class PBXProject extends PBXObject {
      **/
 
     public Dictionary<Value, Value> getAttributes() {
-        return (Dictionary<Value, Value>)getDictionaryValue(ATTRIBUTES_KEY);
+        return getDictionaryValueOrNull(ATTRIBUTES_KEY);
     }
 
     public PBXObjectRef<XCConfigurationList> getBuildConfigurationList() {
-        return (PBXObjectRef<XCConfigurationList>)getPBXObjectRefValue(BUILD_CONFIGURATION_LIST_KEY);
+        return getPBXObjectRefValue(BUILD_CONFIGURATION_LIST_KEY);
     }
 
     public void setBuildConfigurationList(PBXObjectRef<XCConfigurationList> value) {
@@ -173,11 +169,11 @@ public final class PBXProject extends PBXObject {
     }
 
     public Array<Value> getKnownRegions() {
-        return (Array<Value>)getArrayValue(KNOWN_REGIONS_KEY);
+        return getArrayValueOrNull(KNOWN_REGIONS_KEY);
     }
 
     public PBXObjectRef<PBXGroup> getMainGroup() {
-        return (PBXObjectRef<PBXGroup>)getPBXObjectRefValue(MAIN_GROUP_KEY);
+        return getPBXObjectRefValue(MAIN_GROUP_KEY);
     }
 
     public void setMainGroup(PBXObjectRef<PBXGroup> value) {
@@ -185,7 +181,7 @@ public final class PBXProject extends PBXObject {
     }
 
     public PBXObjectRef<PBXGroup> getProductRefGroup() {
-        return (PBXObjectRef<PBXGroup>)getPBXObjectRefValue(PRODUCT_REF_GROUP_KEY);
+        return getPBXObjectRefValue(PRODUCT_REF_GROUP_KEY);
     }
 
     public void setProductRefGroup(PBXObjectRef<PBXGroup> value) {
@@ -201,7 +197,7 @@ public final class PBXProject extends PBXObject {
     }
 
     public Array<ProjectReference> getProjectReferences() {
-        return (Array<ProjectReference>)getArrayValue(PROJECT_REFERENCES_KEY);
+        return getArrayValueOrNull(PROJECT_REFERENCES_KEY);
     }
 
     public String getProjectRoot() {
@@ -213,7 +209,7 @@ public final class PBXProject extends PBXObject {
     }
 
     public Array<PBXObjectRef<PBXNativeTarget>> getTargets() {
-        return (Array<PBXObjectRef<PBXNativeTarget>>)getArrayValue(TARGETS_KEY);
+        return getArrayValueOrNull(TARGETS_KEY);
     }
 
     /**
@@ -257,7 +253,7 @@ public final class PBXProject extends PBXObject {
          **/
 
         public PBXObjectRef<PBXGroup> getProductGroup() {
-            return (PBXObjectRef<PBXGroup>)getPBXObjectRefValue(PRODUCT_GROUP_KEY);
+            return getPBXObjectRefValue(PRODUCT_GROUP_KEY);
         }
 
         public void setProductGroup(PBXObjectRef<PBXGroup> value) {
@@ -265,7 +261,7 @@ public final class PBXProject extends PBXObject {
         }
 
         public PBXObjectRef<PBXFileReference> getProjectRef() {
-            return (PBXObjectRef<PBXFileReference>)getPBXObjectRefValue(PROJECT_REF_KEY);
+            return getPBXObjectRefValue(PROJECT_REF_KEY);
         }
 
         public void setProjectRef(PBXObjectRef<PBXFileReference> value) {

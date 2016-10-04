@@ -39,7 +39,6 @@ public abstract class PBXObject extends Dictionary<Value, NextStep> {
     public abstract void removeReference(PBXObjectRef<? extends PBXObject> ref);
 
     public void update() {
-
     }
 
     protected void connectReferencesInValue(String key, Map<String, Value> map) {
@@ -81,30 +80,38 @@ public abstract class PBXObject extends Dictionary<Value, NextStep> {
         }
     }
 
-    protected Array<?> getArrayValue(String key) {
-        Array<?> value = (Array<?>)getValue(key);
+    protected <T extends NextStep> Array<T> getArrayValueOrNull(String key) {
+        return (Array<T>)getValue(key);
+    }
+
+    protected <T extends NextStep> Array<T> getOrCreateArrayValue(String key) {
+        Array<T> value = (Array<T>)getValue(key);
         if (value != null) {
             return value;
         } else {
-            value = new Array<NextStep>();
+            value = new Array<T>();
             add(new Value(key), value);
             return value;
         }
     }
 
-    protected Dictionary<?, ?> getDictionaryValue(String key) {
-        Dictionary<?, ?> value = (Dictionary<?, ?>)getValue(key);
+    protected <T extends Value, U extends NextStep> Dictionary<T, U> getDictionaryValueOrNull(String key) {
+        return (Dictionary<T, U>)getValue(key);
+    }
+
+    protected <T extends Value, U extends NextStep> Dictionary<T, U> getOrCreateDictionaryValue(String key) {
+        Dictionary<T, U> value = (Dictionary<T, U>)getValue(key);
         if (value != null) {
             return value;
         } else {
-            value = new Dictionary<Value, NextStep>();
+            value = new Dictionary<T, U>();
             add(new Value(key), value);
             return value;
         }
     }
 
-    protected PBXObjectRef<?> getPBXObjectRefValue(String key) {
-        return (PBXObjectRef<?>)getValue(key);
+    protected <T extends PBXObject> PBXObjectRef<T> getPBXObjectRefValue(String key) {
+        return (PBXObjectRef<T>)getValue(key);
     }
 
     protected void setPBXObjectRefValue(String key, PBXObjectRef<?> newvalue) {

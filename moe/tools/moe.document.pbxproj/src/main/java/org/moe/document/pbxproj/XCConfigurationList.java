@@ -79,7 +79,7 @@ public final class XCConfigurationList extends PBXObject {
      **/
 
     public Array<PBXObjectRef<XCBuildConfiguration>> getBuildConfigurations() {
-        return (Array<PBXObjectRef<XCBuildConfiguration>>)getArrayValue(BUILD_CONFIGURATIONS_KEY);
+        return getArrayValueOrNull(BUILD_CONFIGURATIONS_KEY);
     }
 
     public String getDefaultConfigurationIsVisible() {

@@ -31,9 +31,6 @@ public abstract class NextStep {
         } catch (IOException e) {
             throw new NextStepException(e);
         }
-        if (t == null) {
-            return null;
-        }
 
         Token token = t.peek();
         if (token != null && token.kind == Token.Brace_open) {
@@ -46,7 +43,7 @@ public abstract class NextStep {
     static NextStep get(Tokenizer t) throws NextStepException {
         Token token = t.peek();
         if (token == null) {
-            throw new NextStepException("early end of tokenstream");
+            throw new NextStepException("early end of token stream");
         }
         switch (token.kind) {
         case Token.Brace_open:

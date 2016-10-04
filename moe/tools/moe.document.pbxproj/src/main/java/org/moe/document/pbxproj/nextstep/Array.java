@@ -31,7 +31,7 @@ public class Array<V extends NextStep> extends NextStep implements List<V> {
     static Array<NextStep> create(Tokenizer t) throws NextStepException {
         Token token = t.next();
         if (token == null) {
-            throw new NextStepException("early end of tokenstream");
+            throw new NextStepException("early end of token stream");
         }
         if (token.kind != Token.Parentheses_open) {
             throw new NextStepException("illegal state");
@@ -50,7 +50,7 @@ public class Array<V extends NextStep> extends NextStep implements List<V> {
 
                 token = t.next();
                 if (token == null) {
-                    throw new NextStepException("early end of tokenstream");
+                    throw new NextStepException("early end of token stream");
                 }
                 if (token.kind != Token.Comma) {
                     throw new NextStepException("illegal state");
@@ -62,7 +62,7 @@ public class Array<V extends NextStep> extends NextStep implements List<V> {
 
             token = t.peek();
         }
-        throw new NextStepException("early end of tokenstream");
+        throw new NextStepException("early end of token stream");
     }
 
     public Array() {
@@ -136,7 +136,7 @@ public class Array<V extends NextStep> extends NextStep implements List<V> {
 
     @Override
     public void add(int index, V object) {
-        add(index, object);
+        values.add(index, object);
     }
 
     @Override
