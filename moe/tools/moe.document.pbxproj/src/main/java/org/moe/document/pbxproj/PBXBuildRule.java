@@ -86,8 +86,12 @@ public class PBXBuildRule extends PBXObject {
         setStringValue(IS_EDITABLE_KEY, value);
     }
 
-    public Array<Value> getOutputFiles() {
+    public Array<Value> getOutputFilesOrNull() {
         return getArrayValueOrNull(OUTPUT_FILES_KEY);
+    }
+
+    public Array<Value> getOrCreateOutputFiles() {
+        return getOrCreateArrayValue(OUTPUT_FILES_KEY);
     }
 
     public String getScript() {

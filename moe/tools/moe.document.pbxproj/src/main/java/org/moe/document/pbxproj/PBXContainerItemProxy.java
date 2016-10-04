@@ -51,9 +51,7 @@ public class PBXContainerItemProxy extends PBXObject {
 
     @Override
     public void removeReference(PBXObjectRef<? extends PBXObject> ref) {
-        if (ref.equals(getContainerPortal())) {
-            setContainerPortal(null);
-        }
+        removeReferenceFromReferenceValue(CONTAINER_PORTAL_KEY, ref);
     }
 
     /**

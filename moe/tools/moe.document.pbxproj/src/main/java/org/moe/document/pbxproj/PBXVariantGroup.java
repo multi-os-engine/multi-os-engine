@@ -21,7 +21,6 @@ import org.moe.document.pbxproj.nextstep.Dictionary;
 import org.moe.document.pbxproj.nextstep.NextStep;
 import org.moe.document.pbxproj.nextstep.Value;
 
-import java.util.Iterator;
 import java.util.Map;
 
 @SuppressWarnings("unchecked")
@@ -47,25 +46,24 @@ public final class PBXVariantGroup extends PBXObject {
 
     @Override
     public void connectReferences(Map<String, Value> map) {
-        connectReferencesInValueArray(CHILDREN_KEY, map);
+        connectReferencesInArray(CHILDREN_KEY, map);
     }
 
     @Override
     public void removeReference(PBXObjectRef<? extends PBXObject> ref) {
-        Iterator<?> it = getChildren().iterator();
-        while (it.hasNext()) {
-            if (it.next().equals(ref)) {
-                it.remove();
-            }
-        }
+        removeReferenceFromReferenceArray(CHILDREN_KEY, ref);
     }
 
     /**
      * Fields
      **/
 
-    public Array<PBXObjectRef<PBXFileReference>> getChildren() {
+    public Array<PBXObjectRef<PBXFileReference>> getChildrenOrNull() {
         return getArrayValueOrNull(CHILDREN_KEY);
+    }
+
+    public Array<PBXObjectRef<PBXFileReference>> getOrCreateChildren() {
+        return getOrCreateArrayValue(CHILDREN_KEY);
     }
 
     public String getName() {

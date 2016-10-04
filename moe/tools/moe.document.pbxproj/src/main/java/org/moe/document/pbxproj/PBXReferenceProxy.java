@@ -51,9 +51,7 @@ public class PBXReferenceProxy extends PBXObject {
 
     @Override
     public void removeReference(PBXObjectRef<? extends PBXObject> ref) {
-        if (ref.equals(getRemoteRef())) {
-            setRemoteRef(null);
-        }
+        removeReferenceFromReferenceValue(REMOTE_REF_KEY, ref);
     }
 
     /**

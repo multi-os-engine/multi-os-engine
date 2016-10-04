@@ -50,17 +50,19 @@ public final class XCBuildConfiguration extends PBXObject {
 
     @Override
     public void removeReference(PBXObjectRef<? extends PBXObject> ref) {
-        if (ref.equals(getBaseConfigurationReference())) {
-            setBaseConfigurationReference(null);
-        }
+        removeReferenceFromReferenceValue(BASE_CONFIGURATION_REFERENCE_KEY, ref);
     }
 
     /**
      * Fields
      **/
 
-    public Dictionary<Value, NextStep> getBuildSettings() {
+    public Dictionary<Value, NextStep> getBuildSettingsOrNull() {
         return getDictionaryValueOrNull(BUILD_SETTINGS_KEY);
+    }
+
+    public Dictionary<Value, NextStep> getOrCreateBuildSettings() {
+        return getOrCreateDictionaryValue(BUILD_SETTINGS_KEY);
     }
 
     public String getName() {

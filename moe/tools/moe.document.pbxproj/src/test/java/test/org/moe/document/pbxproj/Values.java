@@ -52,7 +52,7 @@ public class Values {
 
     @Test
     public void testTargets() {
-        Array<PBXObjectRef<PBXNativeTarget>> targets = project.getTargets();
+        Array<PBXObjectRef<PBXNativeTarget>> targets = project.getTargetsOrNull();
         List<String> names = Arrays
                 .asList("App-SingleView", "App-Game", "App-MasterDetail", "App-PageBased", "App-Tabbed",
                         "Lib-Framework", "Lib-Static", "Lib-Metal");

@@ -56,9 +56,7 @@ public final class PBXBuildFile extends PBXObject {
 
     @Override
     public void removeReference(PBXObjectRef<? extends PBXObject> ref) {
-        if (ref.equals(getFileRef())) {
-            setFileRef(null);
-        }
+        removeReferenceFromReferenceValue(FILE_REF, ref);
     }
 
     @Override
@@ -78,8 +76,12 @@ public final class PBXBuildFile extends PBXObject {
         setPBXObjectRefValue(FILE_REF, value);
     }
 
-    public Dictionary<Value, NextStep> getSettings() {
+    public Dictionary<Value, NextStep> getSettingsOrNull() {
         return getDictionaryValueOrNull(SETTINGS);
+    }
+
+    public Dictionary<Value, NextStep> getOrCreateSettings() {
+        return getOrCreateDictionaryValue(SETTINGS);
     }
 
 }

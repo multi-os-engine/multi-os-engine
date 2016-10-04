@@ -48,12 +48,20 @@ public final class PBXShellScriptBuildPhase extends PBXBuildPhase {
      * Fields
      **/
 
-    public Array<Value> getInputPaths() {
+    public Array<Value> getInputPathsOrNull() {
         return getArrayValueOrNull(INPUT_PATHS_KEY);
     }
 
-    public Array<Value> getOutputPaths() {
+    public Array<Value> getOrCreateInputPaths() {
+        return getOrCreateArrayValue(INPUT_PATHS_KEY);
+    }
+
+    public Array<Value> getOutputPathsOrNull() {
         return getArrayValueOrNull(OUTPUT_PATHS_KEY);
+    }
+
+    public Array<Value> getOrCreateOutputPaths() {
+        return getOrCreateArrayValue(OUTPUT_PATHS_KEY);
     }
 
     public String getShellPath() {

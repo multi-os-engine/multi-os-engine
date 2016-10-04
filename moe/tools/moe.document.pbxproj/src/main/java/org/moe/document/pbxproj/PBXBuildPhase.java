@@ -21,7 +21,6 @@ import org.moe.document.pbxproj.nextstep.Dictionary;
 import org.moe.document.pbxproj.nextstep.NextStep;
 import org.moe.document.pbxproj.nextstep.Value;
 
-import java.util.Iterator;
 import java.util.Map;
 
 @SuppressWarnings("unchecked")
@@ -37,22 +36,17 @@ public abstract class PBXBuildPhase extends PBXObject {
 
     @Override
     public void connectReferences(Map<String, Value> map) {
-        connectReferencesInValueArray(FILES_KEY, map);
+        connectReferencesInArray(FILES_KEY, map);
     }
 
     @Override
     public void removeReference(PBXObjectRef<? extends PBXObject> ref) {
-        Iterator<?> it = getFiles().iterator();
-        while (it.hasNext()) {
-            if (it.next().equals(ref)) {
-                it.remove();
-            }
-        }
+        removeReferenceFromReferenceArray(FILES_KEY, ref);
     }
 
     @Override
     public void update() {
-        Array<PBXObjectRef<PBXBuildFile>> values = getFiles();
+        Array<PBXObjectRef<PBXBuildFile>> values = getFilesOrNull();
         if (values != null) {
             for (PBXObjectRef<PBXBuildFile> ref : values) {
                 ref.getReferenced().container = this;
@@ -72,8 +66,12 @@ public abstract class PBXBuildPhase extends PBXObject {
         setStringValue(BUILD_ACTION_MASK_KEY, value);
     }
 
-    public Array<PBXObjectRef<PBXBuildFile>> getFiles() {
+    public Array<PBXObjectRef<PBXBuildFile>> getFilesOrNull() {
         return getArrayValueOrNull(FILES_KEY);
+    }
+
+    public Array<PBXObjectRef<PBXBuildFile>> getOrCreateFiles() {
+        return getOrCreateArrayValue(FILES_KEY);
     }
 
     public String getRunOnlyForDeploymentPostprocessing() {
@@ -85,12 +83,11 @@ public abstract class PBXBuildPhase extends PBXObject {
     }
 
     public PBXBuildPhase addFileReference(ProjectFile projectFile, PBXObjectRef<PBXFileReference> fileRef) {
-
         PBXObjectRef<PBXBuildFile> buildFileRef = projectFile.createReference(new PBXBuildFile());
         projectFile.getRoot().getObjects().add(buildFileRef);
         PBXBuildFile buildFile = buildFileRef.getReferenced();
         buildFile.setFileRef(fileRef);
-        this.getFiles().add(buildFileRef);
+        this.getOrCreateFiles().add(buildFileRef);
         return this;
     }
 }

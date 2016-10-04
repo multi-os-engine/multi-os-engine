@@ -51,13 +51,8 @@ public class PBXTargetDependency extends PBXObject {
 
     @Override
     public void removeReference(PBXObjectRef<? extends PBXObject> ref) {
-        if (ref.equals(getTargetProxy())) {
-            setTargetProxy(null);
-        }
-
-        if (ref.equals(getTarget())) {
-            setTarget(null);
-        }
+        removeReferenceFromReferenceValue(TARGET_PROXY_KEY, ref);
+        removeReferenceFromReferenceValue(TARGET_KEY, ref);
     }
 
     /**

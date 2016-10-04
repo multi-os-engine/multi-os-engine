@@ -21,7 +21,6 @@ import org.moe.document.pbxproj.nextstep.Dictionary;
 import org.moe.document.pbxproj.nextstep.NextStep;
 import org.moe.document.pbxproj.nextstep.Value;
 
-import java.util.Iterator;
 import java.util.Map;
 
 @SuppressWarnings("unchecked")
@@ -53,9 +52,9 @@ public final class PBXNativeTarget extends PBXObject {
     @Override
     public void connectReferences(Map<String, Value> map) {
         connectReferencesInValue(BUILD_CONFIGURATION_LIST_KEY, map);
-        connectReferencesInValueArray(BUILD_PHASES_KEY, map);
-        connectReferencesInValueArray(BUILD_RULES_KEY, map);
-        connectReferencesInValueArray(DEPENDENCIES_KEY, map);
+        connectReferencesInArray(BUILD_PHASES_KEY, map);
+        connectReferencesInArray(BUILD_RULES_KEY, map);
+        connectReferencesInArray(DEPENDENCIES_KEY, map);
         connectReferencesInValue(PRODUCT_REFERENCE_KEY, map);
     }
 
@@ -74,34 +73,11 @@ public final class PBXNativeTarget extends PBXObject {
 
     @Override
     public void removeReference(PBXObjectRef<? extends PBXObject> ref) {
-        if (ref.equals(getBuildConfigurationList())) {
-            setBuildConfigurationList(null);
-        }
-
-        Iterator<?> it = getBuildPhases().iterator();
-        while (it.hasNext()) {
-            if (it.next().equals(ref)) {
-                it.remove();
-            }
-        }
-
-        it = getBuildRules().iterator();
-        while (it.hasNext()) {
-            if (it.next().equals(ref)) {
-                it.remove();
-            }
-        }
-
-        it = getDependencies().iterator();
-        while (it.hasNext()) {
-            if (it.next().equals(ref)) {
-                it.remove();
-            }
-        }
-
-        if (ref.equals(getProductReference())) {
-            setProductReference(null);
-        }
+        removeReferenceFromReferenceValue(BUILD_CONFIGURATION_LIST_KEY, ref);
+        removeReferenceFromReferenceArray(BUILD_PHASES_KEY, ref);
+        removeReferenceFromReferenceArray(BUILD_RULES_KEY, ref);
+        removeReferenceFromReferenceArray(DEPENDENCIES_KEY, ref);
+        removeReferenceFromReferenceValue(PRODUCT_REFERENCE_KEY, ref);
     }
 
     /**
@@ -116,16 +92,28 @@ public final class PBXNativeTarget extends PBXObject {
         setPBXObjectRefValue(BUILD_CONFIGURATION_LIST_KEY, value);
     }
 
-    public Array<PBXObjectRef<PBXBuildPhase>> getBuildPhases() {
+    public Array<PBXObjectRef<PBXBuildPhase>> getBuildPhasesOrNull() {
         return getArrayValueOrNull(BUILD_PHASES_KEY);
     }
 
-    public Array<PBXObjectRef<PBXBuildRule>> getBuildRules() {
+    public Array<PBXObjectRef<PBXBuildPhase>> getOrCreateBuildPhases() {
+        return getOrCreateArrayValue(BUILD_PHASES_KEY);
+    }
+
+    public Array<PBXObjectRef<PBXBuildRule>> getBuildRulesOrNull() {
         return getArrayValueOrNull(BUILD_RULES_KEY);
     }
 
-    public Array<PBXObjectRef<?>> getDependencies() {
+    public Array<PBXObjectRef<PBXBuildRule>> getOrCreateBuildRules() {
+        return getOrCreateArrayValue(BUILD_RULES_KEY);
+    }
+
+    public Array<PBXObjectRef<?>> getDependenciesOrNull() {
         return getArrayValueOrNull(DEPENDENCIES_KEY);
+    }
+
+    public Array<PBXObjectRef<?>> getOrCreateDependencies() {
+        return getOrCreateArrayValue(DEPENDENCIES_KEY);
     }
 
     public String getName() {

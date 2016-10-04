@@ -84,7 +84,7 @@ public class Root extends PBXObject {
     }
 
     public Dictionary<Value, NextStep> getClasses() {
-        return getDictionaryValueOrNull(CLASSES_KEY);
+        return getOrCreateDictionaryValue(CLASSES_KEY);
     }
 
     public String getObjectVersion() {
@@ -100,7 +100,7 @@ public class Root extends PBXObject {
     public RootObjects getObjects() {
         if (objects == null) {
             objects = new RootObjects(
-                    this.<PBXObjectRef<? extends PBXObject>, PBXObject>getDictionaryValueOrNull(OBJECTS_KEY));
+                    this.<PBXObjectRef<? extends PBXObject>, PBXObject>getOrCreateDictionaryValue(OBJECTS_KEY));
         }
         return objects;
     }

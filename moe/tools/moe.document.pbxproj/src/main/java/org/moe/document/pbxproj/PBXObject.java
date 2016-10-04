@@ -21,6 +21,7 @@ import org.moe.document.pbxproj.nextstep.Dictionary;
 import org.moe.document.pbxproj.nextstep.NextStep;
 import org.moe.document.pbxproj.nextstep.Value;
 
+import java.util.Iterator;
 import java.util.Map;
 
 @SuppressWarnings("unchecked")
@@ -48,13 +49,31 @@ public abstract class PBXObject extends Dictionary<Value, NextStep> {
         }
     }
 
-    protected void connectReferencesInValueArray(String key, Map<String, Value> map) {
-        Array<NextStep> array = (Array<NextStep>)getValue(key);
+    protected void connectReferencesInArray(String key, Map<String, Value> map) {
+        Array<NextStep> array = getArrayValueOrNull(key);
         if (array != null) {
             int count = array.size();
             for (int i = 0; i < count; ++i) {
                 Value v = (Value)array.get(i);
                 array.set(i, map.get(v.value));
+            }
+        }
+    }
+
+    protected void removeReferenceFromReferenceValue(String key, PBXObjectRef<? extends PBXObject> ref) {
+        if (ref.equals(getPBXObjectRefValue(key))) {
+            setPBXObjectRefValue(key, null);
+        }
+    }
+
+    protected void removeReferenceFromReferenceArray(String key, PBXObjectRef<? extends PBXObject> ref) {
+        Array<? extends PBXObjectRef> values = getArrayValueOrNull(key);
+        if (values != null) {
+            Iterator<?> it = values.iterator();
+            while (it.hasNext()) {
+                if (it.next().equals(ref)) {
+                    it.remove();
+                }
             }
         }
     }
