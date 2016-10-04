@@ -244,4 +244,11 @@ public class Array<V extends NextStep> extends NextStep implements List<V> {
         return values.toArray(array);
     }
 
+    public interface Consumer<T extends NextStep> {
+        void accept(Array<T> array);
+    }
+
+    public void accept(Consumer<V> consumer) {
+        consumer.accept(this);
+    }
 }

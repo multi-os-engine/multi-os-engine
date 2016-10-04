@@ -447,4 +447,11 @@ public class Dictionary<K extends Value, V extends NextStep> extends NextStep {
         }
     }
 
+    public interface Consumer<T extends Value, U extends NextStep> {
+        void accept(Dictionary<T, U> array);
+    }
+
+    public void accept(Consumer<K, V> consumer) {
+        consumer.accept(this);
+    }
 }
