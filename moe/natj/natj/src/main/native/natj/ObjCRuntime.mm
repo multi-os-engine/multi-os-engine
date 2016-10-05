@@ -1679,7 +1679,8 @@ Class registerObjCClass(JNIEnv* env, jclass type, bool isProxy, jstring baseClas
       // We are handling native methods only of original classes
       if (isAbstract || (!isNewClass && !isNative) ||
           env->CallBooleanMethod(method, gIsSyntheticMethodMethod) ||
-          env->CallBooleanMethod(method, gIsDefaultMethodMethod)) {
+          (gIsDefaultMethodMethod != nullptr &&
+           env->CallBooleanMethod(method, gIsDefaultMethodMethod))) {
         env->PopLocalFrame(NULL);
         continue;
       }

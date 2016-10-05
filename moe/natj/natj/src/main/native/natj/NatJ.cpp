@@ -350,6 +350,13 @@ void JNICALL Java_org_moe_natj_general_NatJ_initialize(JNIEnv* env, jclass clazz
   gGetPointerPeerMethod = env->GetMethodID(gPointerClass, "getPeer", "()J");
   gGetModifiersMethod = env->GetMethodID(gMethodClass, "getModifiers", "()I");
   gIsDefaultMethodMethod = env->GetMethodID(gMethodClass, "isDefault", "()Z");
+  if ((gIsDefaultMethodMethod == nullptr) != (env->ExceptionCheck())) {
+    LOGF << "Invalid state after getting method 'boolean java.lang.reflect.Method.isDefault()'!";
+  }
+  if (env->ExceptionCheck()) {
+    LOGI << "Method 'boolean java.lang.reflect.Method.isDefault()' is not accessible.";
+    env->ExceptionClear();
+  }
   gGetLibraryMethod =
       env->GetMethodID(gLibraryClass, "value", "()Ljava/lang/String;");
   gLookUpLibraryStaticMethod = env->GetStaticMethodID(
