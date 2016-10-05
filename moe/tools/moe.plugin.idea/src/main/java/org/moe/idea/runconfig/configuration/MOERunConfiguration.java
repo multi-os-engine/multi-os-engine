@@ -53,6 +53,8 @@ public class MOERunConfiguration extends MOERunConfigurationBase {
     private String vmArgs = "";
     private String environmentVariables = "";
     private String programArgs = "";
+    private boolean openDeploymentTargetDialog;
+    private boolean cancaled;
 
     public MOERunConfiguration(final Project project, final ConfigurationFactory factory) {
         super(project, factory);
@@ -97,6 +99,7 @@ public class MOERunConfiguration extends MOERunConfigurationBase {
         vmArgs = JDOMExternalizerUtil.readField(element, "vmArguments", "");
         environmentVariables = JDOMExternalizerUtil.readField(element, "environmentVariables", "");
         programArgs = JDOMExternalizerUtil.readField(element, "programArguments", "");
+        openDeploymentTargetDialog = JDOMHelper.readBoolean(element, "openDeploymentTargetDialog", false);
     }
 
     @Override
@@ -113,6 +116,7 @@ public class MOERunConfiguration extends MOERunConfigurationBase {
         JDOMExternalizerUtil.writeField(element, "vmArguments", vmArgs);
         JDOMExternalizerUtil.writeField(element, "environmentVariables", environmentVariables);
         JDOMExternalizerUtil.writeField(element, "programArguments", programArgs);
+        JDOMExternalizerUtil.writeField(element, "openDeploymentTargetDialog", Boolean.toString(openDeploymentTargetDialog));
     }
 
     public String simulatorUdid() {
@@ -270,5 +274,21 @@ public class MOERunConfiguration extends MOERunConfigurationBase {
             }
         }
         return variables;
+    }
+
+    public void setOpenDeploymentTargetDialog(boolean openDeploymentTargetDialog) {
+        this.openDeploymentTargetDialog = openDeploymentTargetDialog;
+    }
+
+    public boolean getOpenDeploymentTargetDialog() {
+        return openDeploymentTargetDialog;
+    }
+
+    public boolean isCancaled() {
+        return cancaled;
+    }
+
+    public void setCancaled(boolean cancaled) {
+        this.cancaled = cancaled;
     }
 }

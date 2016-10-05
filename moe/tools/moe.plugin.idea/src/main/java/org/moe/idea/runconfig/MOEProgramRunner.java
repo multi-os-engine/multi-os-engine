@@ -41,6 +41,7 @@ import com.intellij.xdebugger.XDebuggerManager;
 import com.intellij.xdebugger.impl.XDebugSessionImpl;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.moe.idea.runconfig.configuration.MOERunConfiguration;
 import org.moe.idea.runconfig.configuration.MOERunConfigurationBase;
 
 public class MOEProgramRunner extends GenericProgramRunner {
@@ -74,8 +75,11 @@ public class MOEProgramRunner extends GenericProgramRunner {
     @Nullable
     @Override
     protected RunContentDescriptor doExecute(@NotNull RunProfileState state, @NotNull ExecutionEnvironment environment) throws ExecutionException {
+        MOERunConfiguration runConfig = (MOERunConfiguration)environment.getRunProfile();
+        if (runConfig.isCancaled()) {
+            return null;
+        }
         if(isDebugExecutor(environment.getExecutor())) {
-            MOERunConfigurationBase runConfig = (MOERunConfigurationBase)environment.getRunProfile();
 
             RemoteConnection connection = new RemoteConnection(true, "localhost", Integer.toString(runConfig.debugPort()), false);
 

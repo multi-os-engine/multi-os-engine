@@ -29,10 +29,12 @@ import com.intellij.openapi.compiler.CompileTask;
 import com.intellij.openapi.compiler.CompilerMessageCategory;
 import com.intellij.openapi.diagnostic.Logger;
 import com.intellij.openapi.progress.ProgressIndicator;
+import com.intellij.openapi.ui.DialogWrapper;
 import com.intellij.openapi.ui.MessageType;
 import com.intellij.openapi.util.Key;
 import com.intellij.util.ui.UIUtil;
 import org.moe.idea.runconfig.configuration.MOERunConfiguration;
+import org.moe.idea.ui.DeviceChooserDialog;
 import org.moe.idea.ui.MOEToolWindow;
 import org.moe.idea.utils.logger.LoggerFactory;
 
@@ -41,6 +43,9 @@ import java.io.IOException;
 public class MOECompileTask implements CompileTask {
     private static final Logger LOG = LoggerFactory.getLogger(MOECompileTask.class);
 
+    private boolean isOpenDialog;
+    private boolean canceled;
+
     @Override
     public boolean execute(CompileContext context) {
         RunConfiguration c = context.getCompileScope().getUserData(CompileStepBeforeRun.RUN_CONFIGURATION);
@@ -48,20 +53,43 @@ public class MOECompileTask implements CompileTask {
         if (!(c instanceof MOERunConfiguration)) {
             return true;
         }
+
         final MOERunConfiguration runConfig = (MOERunConfiguration) c;
+        isOpenDialog = runConfig.getOpenDeploymentTargetDialog();
+        canceled = false;
+        runConfig.setCancaled(canceled);
 
         final MOEToolWindow toolWindow = MOEToolWindow.getInstance(runConfig.getProject());
         UIUtil.invokeAndWaitIfNeeded(new Runnable() {
             @Override
             public void run() {
                 toolWindow.clear();
+                if (isOpenDialog) {
+                    DeviceChooserDialog dialog = new DeviceChooserDialog(runConfig.module(), runConfig);
+                    dialog.show();
+                    if (dialog.getExitCode() != DialogWrapper.OK_EXIT_CODE) {
+                        canceled = true;
+                        runConfig.setCancaled(canceled);
+                    }
+                    isOpenDialog = false;
+                }
             }
         });
         try {
+
+            while (isOpenDialog) {
+                Thread.sleep(100);
+            }
+
             // Start progress
             ProgressIndicator progress = context.getProgressIndicator();
             context.getProgressIndicator().pushState();
             progress.setText("Building MOE application");
+
+            if (canceled) {
+                toolWindow.balloon(MessageType.INFO, "BUILD CANCELLED");
+                return true;
+            }
 
             final CompileThread compileThread = new CompileThread(runConfig, context);
             compileThread.start();

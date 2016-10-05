@@ -104,6 +104,7 @@ public class MOERunConfigurationEditor extends SettingsEditor<MOERunConfiguratio
     private ArgumentsPanel argumentsPanel;
     private JButton exportButton;
     private JTextField keychainNameTextField;
+    private JCheckBox openSelectDeploymentTargetCheckBox;
     private Project myProject;
     private final JRadioButton[] myTestingType2RadioButton = new JRadioButton[3];
     private JComponent anchor;
@@ -208,6 +209,7 @@ public class MOERunConfigurationEditor extends SettingsEditor<MOERunConfiguratio
         remoteBuildTimeout = remoteBuildTimeout == null || remoteBuildTimeout.isEmpty() ? "0" : remoteBuildTimeout;
         configuration.setRemoteKeychainLocktimeout(Integer.parseInt(remoteBuildTimeout));
         configuration.setRemoteGradleRepositories(gradleRepositoriesTextField.getText());
+        configuration.setOpenDeploymentTargetDialog(openSelectDeploymentTargetCheckBox.isSelected());
 
         argumentsPanel.applyEditorTo(configuration);
     }
@@ -321,6 +323,8 @@ public class MOERunConfigurationEditor extends SettingsEditor<MOERunConfiguratio
                 showSavePropertyDialog();
             }
         });
+
+        openSelectDeploymentTargetCheckBox.setSelected(configuration.getOpenDeploymentTargetDialog());
     }
 
     private void populateSimulators(String sdk, String selectedUdid) {
@@ -382,10 +386,10 @@ public class MOERunConfigurationEditor extends SettingsEditor<MOERunConfiguratio
         Messages.showMessageDialog(message, MOEText.get("Configuration.Editor"), MOEIcons.MOELogo);
     }
 
-    private class SimulatorComboItem {
+    public static class SimulatorComboItem {
         private SimCtl.Device device;
 
-        SimulatorComboItem(SimCtl.Device device) {
+        public SimulatorComboItem(SimCtl.Device device) {
             this.device = device;
         }
 
@@ -393,7 +397,7 @@ public class MOERunConfigurationEditor extends SettingsEditor<MOERunConfiguratio
             return device.name + " (" + device.runtime + ")";
         }
 
-        String udid() {
+        public String udid() {
             return device.udid;
         }
     }
