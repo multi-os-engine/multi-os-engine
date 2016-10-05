@@ -313,10 +313,6 @@ void JNICALL Java_org_moe_natj_general_NatJ_initialize(JNIEnv* env, jclass clazz
       "org/moe/natj/general/VariadicArg$ByValueVariadicArg"));
   gNativeRuntimeClass = (jclass)env->NewGlobalRef(
       env->FindClass("org/moe/natj/general/NativeRuntime"));
-#ifdef __APPLE__
-  gObjCObjectPtrImplClass = (jclass)env->NewGlobalRef(
-      env->FindClass("org/moe/natj/general/ptr/impl/ObjCObjectPtrImpl"));
-#endif
 
   env->PopLocalFrame(NULL);
 
@@ -457,10 +453,6 @@ void JNICALL Java_org_moe_natj_general_NatJ_initialize(JNIEnv* env, jclass clazz
       env->GetMethodID(gNLongVariadicArgClass, "getNLong", "()J");
   gGetDefaultUnboxPolicyMethod =
       env->GetMethodID(gNativeRuntimeClass, "getDefaultUnboxPolicy", "()B");
-#ifdef __APPLE__
-  gRefreshRetainListMethod =
-      env->GetMethodID(gObjCObjectPtrImplClass, "refreshRetainList", "()V");
-#endif
 
   env->PushLocalFrame(50);
 
@@ -559,7 +551,17 @@ void JNICALL Java_org_moe_natj_general_NatJ_initialize(JNIEnv* env, jclass clazz
       gVariadicClass, env->GetStaticFieldID(gVariadicClass, "Unbox", "B"));
   assert(gUnboxVariadicPolicyValue != -1);
 
+#ifdef __APPLE__
+  gObjCObjectPtrImplClass = (jclass)env->NewGlobalRef(
+      env->FindClass("org/moe/natj/general/ptr/impl/ObjCObjectPtrImpl"));
+#endif
+
   env->PopLocalFrame(NULL);
+
+#ifdef __APPLE__
+  gRefreshRetainListMethod =
+      env->GetMethodID(gObjCObjectPtrImplClass, "refreshRetainList", "()V");
+#endif
 }
 
 void JNICALL Java_org_moe_natj_general_NatJ_handleShutdown(JNIEnv* env,

@@ -191,9 +191,8 @@ public class NatJ {
                         } else {
                             lookUpLibrary("natj", true);
                         }
-                        initialize();
                         initialized = true;
-
+                        initialize();
                     } catch (RuntimeException e) {
                         System.out.println("[ERROR] Cannot initialize NatJ");
                         e.printStackTrace();
