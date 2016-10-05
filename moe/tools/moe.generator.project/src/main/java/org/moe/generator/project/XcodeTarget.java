@@ -17,6 +17,8 @@ limitations under the License.
 package org.moe.generator.project;
 
 import org.moe.document.pbxproj.*;
+import org.moe.document.pbxproj.nextstep.Dictionary.Field;
+import org.moe.document.pbxproj.nextstep.Dictionary.FieldIterator;
 import org.moe.generator.project.config.Configuration;
 import org.moe.generator.project.util.FileTypeUtil;
 
@@ -262,11 +264,70 @@ public class XcodeTarget {
 	}
 
 	/**
+	 * Returns the group.
+	 *
+	 * @return group
+	 */
+	public PBXGroup getOrCreateGroup() {
+		if (groupRef == null) {
+			helper.getFile().getRoot().getObjects().iterate(new FieldIterator<PBXObjectRef<? extends PBXObject>, PBXObject>() {
+				@Override
+				public void process(Field<PBXObjectRef<? extends PBXObject>, PBXObject> field) {
+					if (groupRef != null || field.value.getClass() != PBXGroup.class) {
+						return;
+					}
+					PBXGroup group = (PBXGroup)field.value;
+					String name = group.getName();
+					if (name == null) {
+						name = group.getPath();
+					}
+					if (name == null || !name.equals(XcodeTarget.this.name)) {
+						return;
+					}
+					groupRef = (PBXObjectRef<PBXGroup>)field.key;
+				}
+			});
+		}
+		return groupRef.getReferenced();
+	}
+
+	/**
 	 * Returns the supporting files group.
 	 *
 	 * @return supporting files group
 	 */
 	public PBXGroup getSupportingFilesGroup() {
+		return supportingFilesGroupRef.getReferenced();
+	}
+
+	/**
+	 * Returns the supporting files group.
+	 *
+	 * @return supporting files group
+	 */
+	public PBXGroup getOrCreateSupportingFilesGroup() {
+		if (supportingFilesGroupRef == null) {
+			final PBXGroup targetGroup = getOrCreateGroup();
+			for (PBXObjectRef<? extends PBXObject> ref : targetGroup.getChildren()) {
+				if (supportingFilesGroupRef != null || ref.getReferenced().getClass() != PBXGroup.class) {
+					continue;
+				}
+				PBXGroup group = (PBXGroup)ref.getReferenced();
+				String name = group.getName();
+				if (name == null) {
+					name = group.getPath();
+				}
+				if (name == null || !name.equals(SUPPORTING_FILES_GROUP_NAME)) {
+					continue;
+				}
+				supportingFilesGroupRef = (PBXObjectRef<PBXGroup>)ref;
+				break;
+			}
+			if (supportingFilesGroupRef == null) {
+				this.supportingFilesGroupRef = helper.getFile().newPBXGroup(SUPPORTING_FILES_GROUP_NAME, null, Generator.SOURCE_TREE_GROUP);
+				targetGroup.getChildren().add(supportingFilesGroupRef);
+			}
+		}
 		return supportingFilesGroupRef.getReferenced();
 	}
 
