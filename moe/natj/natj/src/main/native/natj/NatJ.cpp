@@ -119,6 +119,7 @@ jmethodID gGetNativeObjectPeerMethod = NULL;
 jmethodID gGetNativeObjectPeerPointerMethod = NULL;
 jmethodID gGetPointerPeerMethod = NULL;
 jmethodID gGetModifiersMethod = NULL;
+jmethodID gIsDefaultMethodMethod = NULL;
 jmethodID gGetReturnTypeMethod = NULL;
 jmethodID gGetParameterTypesMethod = NULL;
 jmethodID gGetMethodNameMethod = NULL;
@@ -348,6 +349,7 @@ void JNICALL Java_org_moe_natj_general_NatJ_initialize(JNIEnv* env, jclass clazz
       env->GetMethodID(gNativeObjectClass, "getPeerPointer", "()J");
   gGetPointerPeerMethod = env->GetMethodID(gPointerClass, "getPeer", "()J");
   gGetModifiersMethod = env->GetMethodID(gMethodClass, "getModifiers", "()I");
+  gIsDefaultMethodMethod = env->GetMethodID(gMethodClass, "isDefault", "()Z");
   gGetLibraryMethod =
       env->GetMethodID(gLibraryClass, "value", "()Ljava/lang/String;");
   gLookUpLibraryStaticMethod = env->GetStaticMethodID(

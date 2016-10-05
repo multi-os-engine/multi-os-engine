@@ -491,6 +491,7 @@ extern jmethodID gGetNativeObjectPeerMethod;
 extern jmethodID gGetNativeObjectPeerPointerMethod;
 extern jmethodID gGetPointerPeerMethod;
 extern jmethodID gGetModifiersMethod;
+extern jmethodID gIsDefaultMethodMethod;
 extern jmethodID gGetReturnTypeMethod;
 extern jmethodID gGetParameterTypesMethod;
 extern jmethodID gGetMethodNameMethod;
