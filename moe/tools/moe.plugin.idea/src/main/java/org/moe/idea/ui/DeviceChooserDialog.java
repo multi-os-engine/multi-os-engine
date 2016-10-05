@@ -24,6 +24,7 @@ import com.intellij.openapi.ui.DialogWrapper;
 import org.jetbrains.annotations.Nullable;
 import org.moe.common.ios.Device;
 import org.moe.common.ios.DeviceInfo;
+import org.moe.common.utils.OsUtils;
 import org.moe.idea.compiler.MOECompileTask;
 import org.moe.idea.runconfig.configuration.MOERunConfiguration;
 import org.moe.idea.runconfig.configuration.MOERunConfigurationEditor;
@@ -54,17 +55,35 @@ public class DeviceChooserDialog extends DialogWrapper {
         this.configuration = runConfig;
         setTitle("Select Deployment Target");
 
-        simulatorRadio.setSelected(configuration.runOnSimulator());
-        deviceRadio.setSelected(!configuration.runOnSimulator());
+        if(OsUtils.isMac()) {
+            simulatorRadio.setSelected(configuration.runOnSimulator());
+            deviceRadio.setSelected(!configuration.runOnSimulator());
+        } else {
+            simulatorRadio.setSelected(false);
+            deviceRadio.setSelected(true);
+            simulatorRadio.setEnabled(false);
+        }
+
+        simulatorRadio.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                updateRunOn();
+            }
+        });
+        deviceRadio.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                updateRunOn();
+            }
+        });
+
+        updateRunOn();
 
         simulatorCombo.removeAllItems();
-        String selecteSimulatordUdid = runConfig.simulatorUdid();
+        String selectedSimulatordUdid = runConfig.simulatorUdid();
         String selecteDevicedUdid = runConfig.deviceUdid();
 
-        for (SimCtl.Device device : SimCtl.getDevices()) {
-            simulatorCombo.addItem(new MOERunConfigurationEditor.SimulatorComboItem(device));
-
-        }
+        populateSimulators(selectedSimulatordUdid);
 
         populateDevices(module, configuration);
 
@@ -126,5 +145,30 @@ public class DeviceChooserDialog extends DialogWrapper {
             configuration.deviceUdid(deviceUdid);
         }
         super.doOKAction();
+    }
+
+    private void populateSimulators(String selectedUdid) {
+        if(!OsUtils.isMac()) {
+            return;
+        }
+        simulatorCombo.removeAllItems();
+
+        for (SimCtl.Device device : SimCtl.getDevices()) {
+            simulatorCombo.addItem(new MOERunConfigurationEditor.SimulatorComboItem(device));
+            if(selectedUdid != null && selectedUdid.equals(device.udid)) {
+                simulatorCombo.setSelectedIndex(simulatorCombo.getItemCount() - 1);
+            }
+        }
+
+        if (simulatorCombo.getItemCount() == 0) {
+            simulatorCombo.setModel(new DefaultComboBoxModel(new String[]{MOEText.get("No.Simulator.Device.Available")}));
+        }
+    }
+
+    private void updateRunOn() {
+        boolean simulator = simulatorRadio.isSelected();
+
+        simulatorCombo.setEnabled(simulator);
+        deviceCombo.setEnabled(!simulator);
     }
 }
