@@ -132,7 +132,7 @@ public class MOEBindingGeneratorByJava {
                                         for (XcodeTarget target : mainTargets) {
                                             FileResult hFile = target.createFile(headerFile.getName(), null, "",
                                                     SOURCE_TREE_GROUP);
-                                            target.getSupportingFilesGroup().getChildren().add(hFile.getFileRef());
+                                            target.getOrCreateSupportingFilesGroup().getChildren().add(hFile.getFileRef());
                                             hFile.getFileRef().getReferenced().setPath("Generated/"
                                                     + headerFile.getName());
                                         }
@@ -148,7 +148,7 @@ public class MOEBindingGeneratorByJava {
                                         for (XcodeTarget target : mainTargets) {
                                             FileResult srcFile = target.createFile(sourceFile.getName(), null, "",
                                                     SOURCE_TREE_GROUP);
-                                            target.getSupportingFilesGroup().getChildren().add(srcFile.getFileRef());
+                                            target.getOrCreateSupportingFilesGroup().getChildren().add(srcFile.getFileRef());
                                             srcFile.getFileRef().getReferenced().setPath("Generated/"
                                                     + sourceFile.getName());
                                             PBXNativeTarget nativeTarget = target.getTarget();

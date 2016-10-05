@@ -18,6 +18,7 @@ package org.moe.idea;
 
 import com.intellij.ide.plugins.IdeaPluginDescriptor;
 import com.intellij.ide.plugins.PluginManager;
+import com.intellij.openapi.diagnostic.Logger;
 import com.intellij.openapi.extensions.PluginId;
 import com.intellij.openapi.module.Module;
 import com.intellij.openapi.module.ModuleManager;
@@ -29,6 +30,7 @@ import com.intellij.openapi.vfs.VirtualFile;
 import org.moe.common.utils.ProjectUtil;
 import org.moe.idea.sdk.MOESdkType;
 import org.moe.idea.utils.ModuleUtils;
+import org.moe.idea.utils.logger.LoggerFactory;
 import res.MOEIcons;
 import res.MOEText;
 
@@ -38,6 +40,9 @@ import java.util.Collection;
 import java.util.List;
 
 public class MOESdkPlugin {
+
+    private static final Logger LOG = LoggerFactory.getLogger(MOESdkPlugin.class);
+
     public static String getResourcesFolderName() {
         return "resources";
     }
@@ -120,6 +125,10 @@ public class MOESdkPlugin {
 
     public static boolean isValidMoeModule(Module module) {
         if (module == null) {
+            return false;
+        }
+        if (module.isDisposed()) {
+            LOG.info("Invalid MOE module, already disposed (" + module.getName() + ")");
             return false;
         }
 

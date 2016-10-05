@@ -18,6 +18,7 @@ package org.moe.idea.ui;
 
 import com.intellij.openapi.diagnostic.Logger;
 import com.intellij.openapi.module.Module;
+import com.intellij.openapi.module.ModuleManager;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.ui.DialogWrapper;
 import org.jetbrains.annotations.Nullable;
@@ -32,6 +33,8 @@ import org.moe.idea.utils.logger.LoggerFactory;
 import res.MOEText;
 
 import javax.swing.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.io.File;
 
 public class DeviceChooserDialog extends DialogWrapper {
@@ -46,7 +49,7 @@ public class DeviceChooserDialog extends DialogWrapper {
     private JButton refreshButton;
     private MOERunConfiguration configuration;
 
-    public DeviceChooserDialog(Module module, MOERunConfiguration runConfig) {
+    public DeviceChooserDialog(final Module module, MOERunConfiguration runConfig) {
         super(module.getProject(), true, IdeModalityType.PROJECT);
         this.configuration = runConfig;
         setTitle("Select Deployment Target");
@@ -63,7 +66,29 @@ public class DeviceChooserDialog extends DialogWrapper {
 
         }
 
+        populateDevices(module, configuration);
+
+        if(selecteDevicedUdid != null && !selecteDevicedUdid.isEmpty()) {
+            deviceCombo.setSelectedItem(selecteDevicedUdid);
+        } else {
+            deviceCombo.setSelectedItem(MOEText.get("First.Device.Available"));
+        }
+
+        refreshButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                populateDevices(module, configuration);
+            }
+        });
+
+        init();
+    }
+
+    private void populateDevices(Module module, MOERunConfiguration configuration) {
+        deviceCombo.removeAllItems();
+
         deviceCombo.addItem(MOEText.get("First.Device.Available"));
+
         File projectFile = new File(ModuleUtils.getModulePath(module));
 
         try {
@@ -71,15 +96,10 @@ public class DeviceChooserDialog extends DialogWrapper {
                 deviceCombo.addItem(device.udid());
             }
         } catch (Exception e) {
-            LOG.error("Unable find devices", e);
+            LOG.error("An error occurred during getDevices", e);
         }
 
-        if(selecteDevicedUdid != null && !selecteDevicedUdid.isEmpty()) {
-            deviceCombo.setSelectedItem(selecteDevicedUdid);
-        } else {
-            deviceCombo.setSelectedItem(MOEText.get("First.Device.Available"));
-        }
-        init();
+        deviceCombo.setSelectedItem(MOEText.get("First.Device.Available"));
     }
 
     @Nullable

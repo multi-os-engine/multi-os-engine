@@ -60,6 +60,9 @@ public class MOEGenerateBindingAction extends AnAction {
     @Contract("null -> false")
     private static boolean isHeaderFile(@Nullable VirtualFile[] files) {
         boolean result = true;
+        if (files == null) {
+            return false;
+        }
         for(VirtualFile file : files){
             result &= file.exists() && file.getName().endsWith(".h");
         }

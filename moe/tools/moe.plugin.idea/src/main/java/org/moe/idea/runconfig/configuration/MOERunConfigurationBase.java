@@ -23,6 +23,7 @@ import com.intellij.execution.runners.ExecutionEnvironment;
 import com.intellij.execution.runners.RunConfigurationWithSuppressedDefaultRunAction;
 import com.intellij.ide.passwordSafe.PasswordSafe;
 import com.intellij.ide.passwordSafe.PasswordSafeException;
+import com.intellij.openapi.diagnostic.Logger;
 import com.intellij.openapi.module.Module;
 import com.intellij.openapi.module.ModuleManager;
 import com.intellij.openapi.project.Project;
@@ -39,11 +40,14 @@ import org.moe.idea.runconfig.MOERunProfileState;
 import org.moe.idea.utils.Configuration;
 import org.moe.idea.utils.JDOMHelper;
 import org.moe.idea.utils.ModuleUtils;
+import org.moe.idea.utils.logger.LoggerFactory;
 
 public abstract class MOERunConfigurationBase extends LocatableConfigurationBase
         implements RunConfigurationWithSuppressedDefaultDebugAction,
         RunConfigurationWithSuppressedDefaultRunAction,
         RunProfileWithCompileBeforeLaunchOption {
+
+    private static final Logger LOG = LoggerFactory.getLogger(MOERunConfigurationBase.class);
 
     public static final String DEFAULT_CONFIGURATION = "Debug";
     protected static PasswordSafe safeStorage = PasswordSafe.getInstance();
@@ -312,10 +316,16 @@ public abstract class MOERunConfigurationBase extends LocatableConfigurationBase
     @NotNull
     @Override
     public Module[] getModules() {
+        final String moduleName = moduleName();
         if (moduleName == null || moduleName.isEmpty()) {
             return new Module[0];
         } else {
-            return new Module[]{ModuleManager.getInstance(getProject()).findModuleByName(moduleName())};
+            final Module moduleByName = ModuleManager.getInstance(getProject()).findModuleByName(moduleName);
+            if (moduleByName == null) {
+                LOG.error("Failed to find module by name '" + moduleName + "'");
+                return new Module[0];
+            }
+            return new Module[]{ moduleByName };
         }
     }
 
