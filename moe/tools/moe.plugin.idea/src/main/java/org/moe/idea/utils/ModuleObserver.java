@@ -18,7 +18,9 @@ package org.moe.idea.utils;
 
 import com.intellij.execution.RunManager;
 import com.intellij.execution.RunnerAndConfigurationSettings;
+import com.intellij.execution.configurations.ConfigurationType;
 import com.intellij.execution.configurations.RunConfiguration;
+import com.intellij.execution.impl.RunManagerImpl;
 import com.intellij.openapi.diagnostic.Logger;
 import com.intellij.openapi.module.Module;
 import com.intellij.openapi.module.ModuleManager;
@@ -55,6 +57,7 @@ public class ModuleObserver implements ModuleListener {
             // Create MOE run config
             RunnerAndConfigurationSettings settings = null;
             try {
+                LOG.debug("Create run configuration " + module.getName());
                 settings = MOERunConfiguration.createRunConfiguration(project, module);
                 runManager.addConfiguration(settings, false);
                 runManager.setSelectedConfiguration(settings);
@@ -71,7 +74,15 @@ public class ModuleObserver implements ModuleListener {
 
     @Override
     public void moduleRemoved(@NotNull Project project, @NotNull Module module) {
-
+        // Find run config for the module
+        RunManager runManager = RunManager.getInstance(project);
+        for (RunnerAndConfigurationSettings r : runManager.getConfigurationSettingsList(MOERunConfigurationType.getInstance())) {
+            if (module.getName().equals(r.getName())) {
+                LOG.debug("Remove run configuration " + r.getName());
+                ((RunManagerImpl) runManager).removeConfiguration(r);
+                return;
+            };
+        }
     }
 
     @Override
