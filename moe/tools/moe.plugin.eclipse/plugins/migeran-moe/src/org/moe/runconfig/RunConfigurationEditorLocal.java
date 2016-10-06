@@ -74,6 +74,7 @@ public class RunConfigurationEditorLocal extends AbstractTab {
 	private List<String> simulatorIds = new ArrayList<>();
 	private List<String> deviceIds = new ArrayList<>();
 	private IProject project;
+	private Button showDialogButton;
 
 	@Override
 	public void createControl(Composite composite) {
@@ -150,6 +151,9 @@ public class RunConfigurationEditorLocal extends AbstractTab {
 
 			configurationCombo.setText(
 					launchConfiguration.getAttribute(ApplicationManager.CONFIGURATION_KEY, Configuration.RELEASE_NAME));
+			
+			showDialogButton.setSelection(launchConfiguration.getAttribute(ApplicationManager.OPEN_DEPLOYMENT_TARGET_DIALOD_KEY,
+						false));
 		} catch (CoreException e) {
 
 		}
@@ -179,6 +183,8 @@ public class RunConfigurationEditorLocal extends AbstractTab {
 		launchConfigurationWorkingCopy.setAttribute(ATTR_RUNTIME, ProjectHelper.getMavenRuntimePath());
 		launchConfigurationWorkingCopy.setAttribute(ApplicationManager.CONFIGURATION_KEY,
 				configurationCombo.getItem(configurationCombo.getSelectionIndex()));
+		launchConfigurationWorkingCopy.setAttribute(ApplicationManager.OPEN_DEPLOYMENT_TARGET_DIALOD_KEY,
+				showDialogButton.getSelection());
 	}
 
 	@Override
@@ -277,6 +283,16 @@ public class RunConfigurationEditorLocal extends AbstractTab {
 	}
 
 	private void initRunOnSection(Composite parent) {
+		Group dialogGroup = new Group(parent, SWT.NONE);
+		dialogGroup.setLayoutData(new GridData(GridData.FILL_HORIZONTAL));
+		GridLayout dialogLayout = new GridLayout();
+		dialogLayout.numColumns = 1;
+		dialogGroup.setLayout(dialogLayout);
+		
+		showDialogButton = new Button(dialogGroup, SWT.CHECK);
+		showDialogButton.setText("Open Select Deployment Target Dialog");
+		showDialogButton.addSelectionListener(new MySelectionListener());
+		
 		Group runOnGroup = new Group(parent, SWT.NONE);
 		runOnGroup.setLayoutData(new GridData(GridData.FILL_HORIZONTAL));
 		runOnGroup.setText("Run on");

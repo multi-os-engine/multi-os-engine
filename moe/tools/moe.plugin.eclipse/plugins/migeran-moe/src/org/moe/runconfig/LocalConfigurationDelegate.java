@@ -24,12 +24,21 @@ import org.eclipse.debug.core.ILaunch;
 import org.eclipse.debug.core.ILaunchConfiguration;
 import org.eclipse.jdt.core.IJavaProject;
 import org.eclipse.jdt.junit.launcher.JUnitLaunchConfigurationDelegate;
+import org.eclipse.jface.window.Window;
+import org.eclipse.swt.widgets.Display;
+import org.eclipse.swt.widgets.Shell;
 import org.moe.runconfig.junit.MOEJUnitLaunchConfigurationDelegate;
+import org.moe.ui.SelectDeploymenttargetDialog;
 import org.moe.utils.logger.LoggerFactory;
 
 public class LocalConfigurationDelegate extends JUnitLaunchConfigurationDelegate {
 
 	private static final Logger LOG = LoggerFactory.getLogger(LocalConfigurationDelegate.class);
+	
+	private boolean showDialog;
+	private boolean canceled;;
+	private IProject project;
+	private SelectDeploymenttargetDialog dialog;
 
 	@Override
 	public void launch(ILaunchConfiguration launchConfiguration, String mode, ILaunch launch,
@@ -38,9 +47,45 @@ public class LocalConfigurationDelegate extends JUnitLaunchConfigurationDelegate
 		setDefaultSourceLocator(launch, launchConfiguration);
 
 		IJavaProject javaProject = getJavaProject(launchConfiguration);
-		IProject project = javaProject.getProject();
+		project = javaProject.getProject();
+		
+		showDialog = launchConfiguration.getAttribute(ApplicationManager.OPEN_DEPLOYMENT_TARGET_DIALOD_KEY, false);
+		canceled = false;
+		
+		Display.getDefault().syncExec(new Runnable() {
+		    public void run() {
+		    	if (showDialog) {
+			    	Shell shell = Display.getDefault().getActiveShell();
+					dialog = new SelectDeploymenttargetDialog(shell, project, launchConfiguration);
+					if (dialog.open() != Window.OK) {
+						canceled = true;
+					}
+					showDialog = false;
+		    	}
+		    }
+		});
+		
+		while (showDialog) {
+			try {
+				Thread.sleep(100);
+			} catch (InterruptedException e) {
+				LOG.error(e);
+			}
+		}
+		
+		if (canceled) {
+			return;
+		}
 
 		ApplicationManager manager = new ApplicationManager(project, launchConfiguration, launch, progressMonitor);
+		
+		if (dialog != null) {
+			if (!dialog.runOnSimulator()) {
+				manager.setDeviceUDID(dialog.getDeviceUDID());
+			} else {
+				manager.setSimulatorUDID(dialog.getSimulatorUDID());
+			}
+		}
 
 		LOG.debug("Start build");
 
@@ -52,7 +97,7 @@ public class LocalConfigurationDelegate extends JUnitLaunchConfigurationDelegate
 		}
 
 		LOG.debug("Start launch");
-
+		
 		// Launch
 		boolean isJUnitEnabled = launchConfiguration.getAttribute(ApplicationManager.RUN_JUNIT_TEST_KEY, false);
 

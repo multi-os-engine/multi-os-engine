@@ -93,12 +93,15 @@ public class ApplicationManager {
 	public static final String REMOTE_KEYCHAIN_NAME_KEY = "remoteKeychainName";
 	public static final String GRADLE_LOG_LEVEL_PROPERTY = "moe.gradle.log.level=";
 	public static final String GRADLE_STACKTRACE_LEVEL_PROPERTY = "moe.gradle.stacktrace.level=";
+	public static final String OPEN_DEPLOYMENT_TARGET_DIALOD_KEY = "openDeploymentTargetDialog";
 
 	private IProject project;
 	private ILaunchConfiguration launchConfiguration;
 	private IProgressMonitor progressMonitor;
 	private ILaunch launch;
 	private List<String> testArgs = null;
+	private String simulatorUDID;
+	private String deviceUDID;
 
 	public ApplicationManager(IProject project, ILaunchConfiguration launchConfiguration, ILaunch launch,
 			IProgressMonitor progressMonitor) {
@@ -470,6 +473,9 @@ public class ApplicationManager {
 	}
 
 	protected boolean isRunOnSimulator() {
+		if (deviceUDID != null) {
+			return false;
+		}
 		try {
 			return launchConfiguration.getAttribute(RUN_ON_SIMULATOR_KEY, true);
 		} catch (CoreException ignored) {
@@ -504,6 +510,9 @@ public class ApplicationManager {
 	}
 
 	protected String getSimulatoreUdid() {
+		if (simulatorUDID != null) {
+			return simulatorUDID;
+		}
 		try {
 			return launchConfiguration.getAttribute(SIMULATOR_UUID_KEY, "");
 		} catch (CoreException ignored) {
@@ -513,6 +522,9 @@ public class ApplicationManager {
 	}
 
 	protected String getDeviceUdid() {
+		if (deviceUDID != null) {
+			return deviceUDID;
+		}
 		try {
 			return launchConfiguration.getAttribute(DEVICE_UUID_KEY, "");
 		} catch (CoreException ignored) {
@@ -682,6 +694,14 @@ public class ApplicationManager {
 			args.add(s);
 		}
 		return args;
+	}
+	
+	public void setSimulatorUDID(String simulatorUDID) {
+		this.simulatorUDID = simulatorUDID;
+	}
+	
+	public void setDeviceUDID(String deviceUDID) {
+		this.deviceUDID = deviceUDID;
 	}
 
 }

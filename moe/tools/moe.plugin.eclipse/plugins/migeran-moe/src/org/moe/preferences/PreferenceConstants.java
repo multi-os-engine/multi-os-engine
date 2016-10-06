@@ -42,5 +42,7 @@ public class PreferenceConstants {
     public static final String GRADLE_STACKTRACE_FULL_KEY = "Full";
 
     public static final String GRADLE_STACKTRACE_FULL_VALUE = "--full-stacktrace";
+    
+    public static final String ENABLE_PROJECT_SETTINGS = "moe.project.settings";
 	
 }
