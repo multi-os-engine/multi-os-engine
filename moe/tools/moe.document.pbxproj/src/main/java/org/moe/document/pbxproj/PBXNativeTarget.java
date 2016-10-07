@@ -92,11 +92,11 @@ public final class PBXNativeTarget extends PBXObject {
         setPBXObjectRefValue(BUILD_CONFIGURATION_LIST_KEY, value);
     }
 
-    public Array<PBXObjectRef<PBXBuildPhase>> getBuildPhasesOrNull() {
+    public <T extends PBXBuildPhase> Array<PBXObjectRef<T>> getBuildPhasesOrNull() {
         return getArrayValueOrNull(BUILD_PHASES_KEY);
     }
 
-    public Array<PBXObjectRef<PBXBuildPhase>> getOrCreateBuildPhases() {
+    public <T extends PBXBuildPhase> Array<PBXObjectRef<T>> getOrCreateBuildPhases() {
         return getOrCreateArrayValue(BUILD_PHASES_KEY);
     }
 
