@@ -16,7 +16,11 @@ limitations under the License.
 
 package org.moe.generator.project.writer;
 
-import java.io.*;
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.nio.charset.Charset;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -27,119 +31,119 @@ import java.util.regex.Pattern;
 /**
  * ResourceWriter writes a resource from an input stream to an external file with support for placeholder replacement.
  */
-class ResourceWriter {
+public class ResourceWriter {
 
-	/**
-	 * Content writer.
-	 */
-	private final ContentWriter w;
+    /**
+     * Content writer.
+     */
+    private final ContentWriter w;
 
-	/**
-	 * Input stream.
-	 */
-	private final InputStream inputStream;
+    /**
+     * Input stream.
+     */
+    private final InputStream inputStream;
 
-	/**
-	 * Map for placeholders.
-	 */
-	private final HashMap<String, String> placeholders = new HashMap<String, String>();
+    /**
+     * Map for placeholders.
+     */
+    private final HashMap<String, String> placeholders = new HashMap<String, String>();
 
-	/**
-	 * List for enabled placeholders.
-	 */
-	private final ArrayList<String> enabledRegions = new ArrayList<String>();
+    /**
+     * List for enabled placeholders.
+     */
+    private final ArrayList<String> enabledRegions = new ArrayList<String>();
 
-	/**
-	 * Creates a new ResourceWriter instance.
-	 *
-	 * @param file        file to write into
-	 * @param inputStream input stream
-	 */
-	ResourceWriter(File file, InputStream inputStream) {
-		if (file == null || inputStream == null) {
-			throw new NullPointerException();
-		}
-		this.inputStream = inputStream;
-		w = new ContentWriter(file);
-	}
+    /**
+     * Creates a new ResourceWriter instance.
+     *
+     * @param file        file to write into
+     * @param inputStream input stream
+     */
+    public ResourceWriter(File file, InputStream inputStream) {
+        if (file == null || inputStream == null) {
+            throw new NullPointerException();
+        }
+        this.inputStream = inputStream;
+        w = new ContentWriter(file);
+    }
 
-	/**
-	 * Add a key-value pair into the placeholder map.
-	 *
-	 * @param placeholder placeholder name
-	 * @param value       value
-	 */
-	void setPlaceholder(String placeholder, String value) {
-		if (placeholder == null || value == null) {
-			throw new NullPointerException();
-		}
-		placeholders.put("${_PLACEHOLDER_" + placeholder + "}", value);
-	}
+    /**
+     * Add a key-value pair into the placeholder map.
+     *
+     * @param placeholder placeholder name
+     * @param value       value
+     */
+    public void setPlaceholder(String placeholder, String value) {
+        if (placeholder == null || value == null) {
+            throw new NullPointerException();
+        }
+        placeholders.put("${_PLACEHOLDER_" + placeholder + "}", value);
+    }
 
-	/**
-	 * Add enabled region.
-	 *
-	 * @param region region to enable
-	 */
-	void enableRegion(String region) {
-		if (region == null) {
-			throw new NullPointerException();
-		}
-		enabledRegions.add(region);
-	}
+    /**
+     * Add enabled region.
+     *
+     * @param region region to enable
+     */
+    public void enableRegion(String region) {
+        if (region == null) {
+            throw new NullPointerException();
+        }
+        enabledRegions.add(region);
+    }
 
-	/**
-	 * Write to file and close.
-	 */
-	void writeAndClose() {
-		Stack<String> regionStack = new Stack<String>();
-		BufferedReader br = new BufferedReader(new InputStreamReader(inputStream, Charset.forName("UTF-8")));
-		String line;
-		try {
-			while ((line = br.readLine()) != null) {
-				if (checkRegion(line, regionStack)) {
-					continue;
-				}
-				if (regionStack.size() > 0 && regionStack.peek().startsWith("-")) {
-					continue;
-				}
-				for (Map.Entry<String, String> next : placeholders.entrySet()) {
-					line = line.replaceAll(Pattern.quote(next.getKey()), next.getValue());
-				}
-				w.wl(line);
-			}
+    /**
+     * Write to file and close.
+     */
+    public void writeAndClose() {
+        Stack<String> regionStack = new Stack<String>();
+        BufferedReader br = new BufferedReader(new InputStreamReader(inputStream, Charset.forName("UTF-8")));
+        String line;
+        try {
+            while ((line = br.readLine()) != null) {
+                if (checkRegion(line, regionStack)) {
+                    continue;
+                }
+                if (regionStack.size() > 0 && regionStack.peek().startsWith("-")) {
+                    continue;
+                }
+                for (Map.Entry<String, String> next : placeholders.entrySet()) {
+                    line = line.replaceAll(Pattern.quote(next.getKey()), next.getValue());
+                }
+                w.wl(line);
+            }
 
-			// Done with the file
-			br.close();
-		} catch (IOException e) {
-			throw new RuntimeException("Failed to write to file", e);
-		}
-		w.close();
-	}
+            // Done with the file
+            br.close();
+        } catch (IOException e) {
+            throw new RuntimeException("Failed to write to file", e);
+        }
+        w.close();
+    }
 
-	private boolean checkRegion(String line, Stack<String> regionStack) {
-		// Push
-		if (line.startsWith("//<<---REGION:")) {
-			String region = line.substring("//<<---REGION:".length());
-			boolean enabled = enabledRegions.contains(region);
-			if (regionStack.size() > 0 && regionStack.peek().startsWith("-")) {
-				enabled = false;
-			}
-			regionStack.push((enabled ? "+" : "-") + region);
-			return true;
-		}
-		// Pop
-		else if (line.startsWith("//>>---REGION:")) {
-			String region = line.substring("//>>---REGION:".length());
-			if (regionStack.size() == 0) {
-				throw new IllegalStateException("Number of region starts must match the number of region ends");
-			}
-			String top = regionStack.pop();
-			if (top.length() != region.length() + 1 || !top.endsWith(region)) {
-				throw new IllegalStateException("Number of region starts must match the number of region ends");
-			}
-			return true;
-		}
-		return false;
-	}
+    private boolean checkRegion(String line, Stack<String> regionStack) {
+        // Push
+        if (line.startsWith("//<<---REGION:")) {
+            String region = line.substring("//<<---REGION:".length());
+            boolean enabled = enabledRegions.contains(region);
+            if (regionStack.size() > 0 && regionStack.peek().startsWith("-")) {
+                enabled = false;
+            }
+            regionStack.push((enabled ? "+" : "-") + region);
+            return true;
+        }
+        // Pop
+        else if (line.startsWith("//>>---REGION:")) {
+            String region = line.substring("//>>---REGION:".length());
+            if (regionStack.size() == 0) {
+                throw new IllegalStateException("Number of region starts must match the number of region ends");
+            }
+            String top = regionStack.pop();
+            if (top.length() != region.length() + 1 || !top.endsWith(region)) {
+                throw new IllegalStateException("Number of region starts must match the number of region ends");
+            }
+            return true;
+        }
+        return false;
+    }
 }

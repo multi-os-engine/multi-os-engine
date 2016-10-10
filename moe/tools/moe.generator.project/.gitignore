@@ -13,3 +13,5 @@ moe.generator.project.iws
 .classpath
 .project
 .settings
+contents.xcworkspacedata
+xcuserdata

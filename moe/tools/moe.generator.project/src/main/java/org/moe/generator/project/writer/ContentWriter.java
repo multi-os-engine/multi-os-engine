@@ -25,82 +25,82 @@ import java.io.IOException;
  */
 class ContentWriter {
 
-	/**
-	 * File writer.
-	 */
-	private FileWriter writer;
+    /**
+     * File writer.
+     */
+    private FileWriter writer;
 
-	/**
-	 * Creates a new ContentWriter instance.
-	 *
-	 * @param file file to write to
-	 */
-	ContentWriter(File file) {
-		try {
-			writer = new FileWriter(file);
-		} catch (IOException e) {
-			System.err.println("Failed to write to file: " + file);
-			writer = null;
-		}
-	}
+    /**
+     * Creates a new ContentWriter instance.
+     *
+     * @param file file to write to
+     */
+    ContentWriter(File file) {
+        try {
+            writer = new FileWriter(file);
+        } catch (IOException e) {
+            System.err.println("Failed to write to file: " + file);
+            writer = null;
+        }
+    }
 
-	/**
-	 * Write content into a file.
-	 *
-	 * @param string content
-	 */
-	void w(String string) {
-		if (writer != null) {
-			try {
-				writer.write(string);
-			} catch (IOException e) {
-				System.err.println("Failed to write to file: " + e.getMessage());
-				e.printStackTrace(System.err);
-				writer = null;
-			}
-		}
-	}
+    /**
+     * Write content into a file.
+     *
+     * @param string content
+     */
+    void w(String string) {
+        if (writer != null) {
+            try {
+                writer.write(string);
+            } catch (IOException e) {
+                System.err.println("Failed to write to file: " + e.getMessage());
+                e.printStackTrace(System.err);
+                writer = null;
+            }
+        }
+    }
 
-	/**
-	 * Write content on a line into the file.
-	 *
-	 * @param string content
-	 */
-	public void wl(String string) {
-		w(string);
-		w("\n");
-	}
+    /**
+     * Write content on a line into the file.
+     *
+     * @param string content
+     */
+    public void wl(String string) {
+        w(string);
+        w("\n");
+    }
 
-	/**
-	 * Write a new line.
-	 */
-	public void nl() {
-		w("\n");
-	}
+    /**
+     * Write a new line.
+     */
+    public void nl() {
+        w("\n");
+    }
 
-	/**
-	 * Finish the writing
-	 */
-	void close() {
-		try {
-			if (writer == null) {
-				return;
-			}
-			writer.flush();
-		} catch (IOException e) {
-			System.err.println("Failed to flush: " + e.getMessage());
-			e.printStackTrace(System.err);
-			writer = null;
-		}
-		try {
-			if (writer == null) {
-				return;
-			}
-			writer.close();
-		} catch (IOException e) {
-			System.err.println("Failed to close: " + e.getMessage());
-			e.printStackTrace(System.err);
-			writer = null;
-		}
-	}
+    /**
+     * Finish the writing
+     */
+    void close() {
+        try {
+            if (writer == null) {
+                return;
+            }
+            writer.flush();
+        } catch (IOException e) {
+            System.err.println("Failed to flush: " + e.getMessage());
+            e.printStackTrace(System.err);
+            writer = null;
+        }
+        try {
+            if (writer == null) {
+                return;
+            }
+            writer.close();
+        } catch (IOException e) {
+            System.err.println("Failed to close: " + e.getMessage());
+            e.printStackTrace(System.err);
+            writer = null;
+        }
+    }
 }
