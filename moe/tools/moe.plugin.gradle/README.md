@@ -24,7 +24,6 @@ The MOE Gradle plugin adds support to building MOE based applications via Gradle
   * [XcodeProvider Task](#xcodeprovider-task)
   * [XcodeInternal Task](#xcodeinternal-task)
   * [XcodeBuild Task](#xcodebuild-task)
-  * [XcodeProjectGenerator Task](#xcodeprojectgenerator-task)
   * [IpaBuild Task](#ipabuild-task)
   * [ListDevices Task](#listdevices-task)
   * [ListSimulators Task](#listsimulators-task)
@@ -123,72 +122,14 @@ Generated Xcode project settings can be configured as follows:
 ```groovy
 moe {
     xcode {
-        // boolean, indicates whether the Xcode project should be generated or not, defaults to true.
-        generateProject
+        // Object, path to the Xcode project.
+        project
 
         // String, name of the main target.
         mainTarget
 
         // String, name of the test target.
         testTarget
-
-        // String, product name of the main target.
-        mainProductName
-
-        // String, path to the main storyboard.
-        mainUIStoryboardPath
-
-        // String, path to launch screen storyboard/xib.
-        launchScreenFilePath
-
-        // String, path to launch image.
-        launchImagesSource
-
-        // String, value for the 'NSLocationWhenInUseUsageDescription' property.
-        locationWhenInUseUsageDescription
-
-        // String, path to the app icons.
-        appIconsSource
-
-        // String, organizations name (ex: My Company).
-        organizationName
-
-        // String, company identifier (ex: com.mycompany).
-        companyIdentifier
-
-        // String, the app's bundle ID (ex: com.mycompany.myapp).
-        bundleID
-
-        // String, package where the 'Main' class can be found (ex: com.mycompany.myapp).
-        packageName
-
-        // String, path to the main target's Info.plist.
-        infoPlistPath
-
-        // String, path to the test target's Info.plist.
-        testInfoPlistPath
-
-        // boolean, value for the 'UIApplicationExitsOnSuspend' property.
-        applicationExitOnSuspend
-
-        // String, value for the 'CFBundleShortVersionString' property.
-        bundleShortVersionString
-
-        // String, value for the 'CFBundleVersion' property.
-        bundleVersion
-
-        // String, the minimal system version the app requires (ex: 9.0).
-        deploymentTarget
-
-        // String, path to the Xcode project's directory.
-        xcodeProjectDirPath
-
-        // List, list of supported interface orientations.
-        // - UIInterfaceOrientationPortrait
-        // - UIInterfaceOrientationPortraitUpsideDown
-        // - UIInterfaceOrientationLandscapeLeft
-        // - UIInterfaceOrientationLandscapeRight
-        supportedInterfaceOrientations
     }
 }
 ```
@@ -458,14 +399,6 @@ This task invokes `xcodebuild` and creates the application.
 - `developmentTeam`: ID of the development team.
 - `xcodeBuildRoot`: `xcodebuild` root output directory.
 - `xcodeBuildSettingsFile`: path to the output Xcode build settings file.
-
----
-
-### XcodeProjectGenerator Task
-
-Task name: `moeXcodeProjectGenerator`
-
-Generates an Xcode project.
 
 ---
 

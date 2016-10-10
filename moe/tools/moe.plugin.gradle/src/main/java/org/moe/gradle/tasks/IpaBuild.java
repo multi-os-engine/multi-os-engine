@@ -139,9 +139,13 @@ public class IpaBuild extends AbstractBaseTask {
         // Update convention mapping
         addConvention(CONVENTION_INPUT_APP, () -> {
             final String sym = xcodeBuildTask.getConfigurationBuildDir().getAbsolutePath();
-            return Paths.get(sym, ext.xcode.getMainProductName() + ".app").toFile();
+            final String productName = xcodeBuildTask.getXcodeBuildSettings().get("PRODUCT_NAME");
+            return Paths.get(sym, productName + ".app").toFile();
         });
-        addConvention(CONVENTION_OUTPUT_IPA, () -> resolvePathInBuildDir(ext.xcode.getMainProductName() + ".ipa"));
+        addConvention(CONVENTION_OUTPUT_IPA, () -> {
+            final String productName = xcodeBuildTask.getXcodeBuildSettings().get("PRODUCT_NAME");
+            return resolvePathInBuildDir(productName + ".ipa");
+        });
         addConvention(CONVENTION_LOG_FILE, () -> resolvePathInBuildDir(out, "IpaBuild.log"));
     }
 }

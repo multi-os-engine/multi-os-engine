@@ -66,9 +66,6 @@ public class MoeExtension {
     @NotNull
     public final JavaProcessOptions javaProcess;
 
-    @Nullable
-    public String mainClassName;
-
     @NotNull
     private MoePlatform platform = MoePlatform.IOS;
 
@@ -80,7 +77,7 @@ public class MoeExtension {
         Require.nonNull(instantiator);
         this.packaging = instantiator.newInstance(PackagingOptions.class);
         this.resources = instantiator.newInstance(ResourceOptions.class);
-        this.xcode = instantiator.newInstance(XcodeOptions.class, plugin.getProject());
+        this.xcode = instantiator.newInstance(XcodeOptions.class);
         this.signing = instantiator.newInstance(SigningOptions.class);
         this.javaProcess = instantiator.newInstance(JavaProcessOptions.class);
     }

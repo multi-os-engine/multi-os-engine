@@ -27,7 +27,7 @@ import org.moe.common.developer.ProvisioningProfile;
 import org.moe.document.pbxproj.PBXNativeTarget;
 import org.moe.document.pbxproj.PBXObject;
 import org.moe.document.pbxproj.PBXObjectRef;
-import org.moe.document.pbxproj.ProjFile;
+import org.moe.document.pbxproj.ProjectFile;
 import org.moe.document.pbxproj.XCBuildConfiguration;
 import org.moe.document.pbxproj.XCConfigurationList;
 import org.moe.document.pbxproj.nextstep.Dictionary.Field;
@@ -535,14 +535,6 @@ public class XcodeBuild extends AbstractBaseTask {
         return Collections.unmodifiableList(Require.nonNull(xcodeProviderTaskDeps));
     }
 
-    private XcodeProjectGenerator projectGeneratorTaskDep;
-
-    @NotNull
-    @IgnoreUnused
-    public XcodeProjectGenerator getProjectGeneratorTaskDep() {
-        return Require.nonNull(projectGeneratorTaskDep);
-    }
-
     protected final void setupMoeTask(@NotNull SourceSet sourceSet, @NotNull Mode mode, @NotNull MoePlatform platform) {
         Require.nonNull(sourceSet);
         Require.nonNull(mode);
@@ -572,28 +564,20 @@ public class XcodeBuild extends AbstractBaseTask {
         });
         xcodeProviderTaskDeps = xcodeProviderTasks;
 
-        final XcodeProjectGenerator projectGenerator = getMoePlugin().getTaskBy(XcodeProjectGenerator.class);
-        projectGeneratorTaskDep = projectGenerator;
-        dependsOn(projectGenerator);
-
         // Update convention mapping
         addConvention(CONVENTION_TARGET, () -> {
             String targetName;
             if (SourceSet.MAIN_SOURCE_SET_NAME.equals(sourceSet.getName())) {
-                targetName = projectGenerator.getProjectName();
+                targetName = ext.xcode.getMainTarget();
             } else {
-                String testTarget = ext.xcode.getTestTarget();
-                if ((testTarget == null) || testTarget.isEmpty()) {
-                    testTarget = projectGenerator.getProjectName() + "-Test";
-                }
-                targetName = testTarget;
+                targetName = ext.xcode.getTestTarget();
             }
             return targetName;
         });
         addConvention(CONVENTION_CONFIGURATION, mode::getXcodeCompatibleName);
         addConvention(CONVENTION_SDK, () -> platform.platformName);
         addConvention(CONVENTION_XCODE_PROJECT_FILE, () ->
-                resolvePathRelativeToRoot(projectGenerator.getXcodeProjectDir(), projectGenerator.getProjectName() + ".xcodeproj"));
+                resolvePathRelativeToRoot(getProject().file(ext.xcode.getProject())));
         addConvention(CONVENTION_XCODE_BUILD_ROOT, () -> resolvePathInBuildDir(out));
         addConvention(CONVENTION_ADDITIONAL_PARAMETERS, () ->
                 new ArrayList<>(Arrays.asList("MOE_GRADLE_EXTERNAL_BUILD=YES", "ONLY_ACTIVE_ARCH=NO")));
@@ -616,7 +600,7 @@ public class XcodeBuild extends AbstractBaseTask {
         try {
             // Open Xcode project
             @NotNull File xcodeproj = getXcodeProjectFile();
-            final ProjFile project = new ProjFile(xcodeproj);
+            final ProjectFile project = new ProjectFile(xcodeproj);
 
             // Search for target with name
             Field<PBXObjectRef<? extends PBXObject>, PBXObject> nTargetField = project.getRoot().getObjects().findFirst(
@@ -629,7 +613,7 @@ public class XcodeBuild extends AbstractBaseTask {
 
             // Search for build configuration with name
             XCConfigurationList xcConfigurationList = nTarget.getBuildConfigurationList().getReferenced();
-            for (PBXObjectRef<XCBuildConfiguration> ref : xcConfigurationList.getBuildConfigurations()) {
+            for (PBXObjectRef<XCBuildConfiguration> ref : xcConfigurationList.getOrCreateBuildConfigurations()) {
                 XCBuildConfiguration xcBuildConfiguration = ref.getReferenced();
                 if (xcBuildConfiguration.getName().equals(getMode().getXcodeCompatibleName())) {
                     return xcBuildConfiguration.getValue("DEVELOPMENT_TEAM") != null;

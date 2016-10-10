@@ -43,7 +43,6 @@ import org.moe.gradle.tasks.StartupProvider;
 import org.moe.gradle.tasks.TestClassesProvider;
 import org.moe.gradle.tasks.XcodeBuild;
 import org.moe.gradle.tasks.XcodeInternal;
-import org.moe.gradle.tasks.XcodeProjectGenerator;
 import org.moe.gradle.tasks.XcodeProvider;
 import org.moe.gradle.utils.Arch;
 import org.moe.gradle.utils.Mode;
@@ -136,8 +135,6 @@ public class MoePlugin extends AbstractMoePlugin {
                 singletonList(SOURCE_SET));
         addRule(StartupProvider.class, "Creates the preregister.txt file.",
                 singletonList(SOURCE_SET));
-        addRule(XcodeProjectGenerator.class, "Creates an Xcode project.",
-                emptyList());
         addRule(XcodeProvider.class, "Collects the required dependencies.",
                 asList(SOURCE_SET, MODE, ARCH, PLATFORM));
         addRule(XcodeInternal.class, "Creates all files for Xcode.",
@@ -164,9 +161,8 @@ public class MoePlugin extends AbstractMoePlugin {
             task.setGroup(MOE);
             task.setDescription("Prints some properties of the MOE Xcode project.");
             task.getActions().add(t -> {
-                final XcodeProjectGenerator generator = getTaskBy(XcodeProjectGenerator.class);
                 System.out.println("\n" +
-                        "moe.xcode.xcodeProjectPath=" + (new File(generator.getXcodeProjectDir(), generator.getProjectName() + ".xcodeproj")) + "\n" +
+                        "moe.xcode.xcodeProjectPath=" + project.file(extension.xcode.getProject()).getAbsolutePath() + "\n" +
                         "\n");
             });
         });

@@ -4,6 +4,7 @@ import org.apache.commons.io.FileUtils;
 import org.gradle.testkit.runner.BuildResult;
 import org.gradle.testkit.runner.GradleRunner;
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.TemporaryFolder;
@@ -39,6 +40,7 @@ public class ApplyPluginTest {
         pluginClasspath = lines.stream().map(File::new).collect(Collectors.toList());
     }
 
+    @Ignore
     @Test
     public void testPluginApply() throws IOException {
         String buildFileContent = "plugins {\n" +
