@@ -24,6 +24,7 @@ public class MOEModuleProperties {
     private String companyIdentifier;
     private String projectRoot;
     private String mainClassName = "Main";
+    private String packageName;
 
     public String getProjectRoot() {
         return projectRoot;
@@ -71,5 +72,13 @@ public class MOEModuleProperties {
 
     public void setMainClassName(String mainClassName) {
         this.mainClassName = mainClassName;
+    }
+
+    public void setPackageName(String packageName) {
+        this.packageName = packageName;
+    }
+
+    public String getPackageName() {
+        return packageName;
     }
 }

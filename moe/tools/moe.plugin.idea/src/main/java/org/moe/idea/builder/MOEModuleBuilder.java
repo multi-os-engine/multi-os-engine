@@ -251,9 +251,7 @@ public class MOEModuleBuilder extends JavaModuleBuilder {
 
         ProjectTemplate projectTemplate = new ProjectTemplate();
 
-        String packageName = String.format("%s.%s.%s", moduleProperties.getCompanyIdentifier(), moduleProperties.getOrganizationName(), moduleProperties.getProductName());
-
-        packageName = packageName.replace(" ", "").trim().toLowerCase();
+        String packageName = moduleProperties.getPackageName();
 
         projectTemplate.rootPath(moduleProperties.getProjectRoot())
                 .packageName(packageName)

@@ -33,6 +33,7 @@ public class MOEWizardPageTwo extends ModuleWizardStep {
     private JTextField productName;
     private JTextField organizationName;
     private JTextField companyIdentifier;
+    private JTextField packageNameTextField;
 
     public JPanel getPanel() {
         return panel;
@@ -55,5 +56,6 @@ public class MOEWizardPageTwo extends ModuleWizardStep {
         config.setProductName(productName.getText());
         config.setOrganizationName(organizationName.getText());
         config.setCompanyIdentifier(companyIdentifier.getText());
+        config.setPackageName(packageNameTextField.getText());
     }
 }

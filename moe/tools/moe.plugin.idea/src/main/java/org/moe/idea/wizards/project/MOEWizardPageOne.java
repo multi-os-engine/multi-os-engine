@@ -37,6 +37,7 @@ public class MOEWizardPageOne extends ModuleWizardStep {
     private JTextField productName;
     private JTextField organizationName;
     private JTextField companyIdentifier;
+    private JTextField packageNameTextField;
 
     private Pattern validJavaPackagePattern = Pattern.compile("^[a-zA-Z_\\$][\\w\\$]*(?:\\.[a-zA-Z_\\$][\\w\\$]*)*$");
 
@@ -69,6 +70,10 @@ public class MOEWizardPageOne extends ModuleWizardStep {
 
         if (companyIdentifier != null) {
             config.setCompanyIdentifier(companyIdentifier.getText());
+        }
+
+        if (packageNameTextField != null) {
+            config.setPackageName(packageNameTextField.getText());
         }
     }
 
