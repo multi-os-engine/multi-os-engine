@@ -80,7 +80,7 @@ public class MOEProjectComposer implements Cloneable {
 
     public enum Template {
 //        IOS_JAVA_GAME(Platform.IOS, Language.JAVA, "Game", ID.GAME),
-//        IOS_JAVA_MASTER_DETAIL(Platform.IOS, Language.JAVA, "Master-Detail Application", ID.MASTER_DETAIL),
+        IOS_JAVA_MASTER_DETAIL(Platform.IOS, Language.JAVA, "Master-Detail Application", ID.MASTER_DETAIL),
 //        IOS_JAVA_PAGE_BASED(Platform.IOS, Language.JAVA, "Page-Based Application", ID.PAGE_BASED),
         IOS_JAVA_SINGLE_VIEW(Platform.IOS, Language.JAVA, "Single View Application", ID.SINGE_VIEW),
 //        IOS_JAVA_TABBED(Platform.IOS, Language.JAVA, "Tabbed Application", ID.TABBED),
