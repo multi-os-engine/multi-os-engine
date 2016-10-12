@@ -98,31 +98,33 @@ public class ResourcePackager {
         resourcePackagerTask.setDestinationDir(project.file(project.getBuildDir().toPath().resolve(out).toFile()));
         resourcePackagerTask.setArchiveName("application.jar");
         resourcePackagerTask.from(project.zipTree(proguardTask.getOutJar()));
-
-        // When using full trim, ProGuard will copy the the resources from the common jar
-        switch (ext.getProguardLevelRaw()) {
-            case MoeExtension.PROGUARD_LEVEL_APP:
-                resourcePackagerTask.from(project.zipTree(sdk.getCoreJar()));
-                resourcePackagerTask.from(project.zipTree(ext.getPlatformJar()));
-                break;
-            case MoeExtension.PROGUARD_LEVEL_PLATFORM:
-                resourcePackagerTask.from(project.zipTree(sdk.getCoreJar()));
-                break;
-            case MoeExtension.PROGUARD_LEVEL_ALL:
-                break;
-            default:
-                throw new IllegalStateException();
-        }
-
         resourcePackagerTask.exclude("**/*.class");
-        ext.packaging.getExcludes().forEach(resourcePackagerTask::exclude);
 
-        // Add support for copying resources from the source directory
-        addResourceFromSources(ext, resourcePackagerTask, sourceSet);
-        if (SourceSet.TEST_SOURCE_SET_NAME.equals(sourceSet.getName())) {
-            SourceSet main = plugin.getJavaConvention().getSourceSets().getByName(SourceSet.MAIN_SOURCE_SET_NAME);
-            addResourceFromSources(ext, resourcePackagerTask, main);
-        }
+        project.afterEvaluate(_project -> {
+            // When using full trim, ProGuard will copy the the resources from the common jar
+            switch (ext.getProguardLevelRaw()) {
+                case MoeExtension.PROGUARD_LEVEL_APP:
+                    resourcePackagerTask.from(_project.zipTree(sdk.getCoreJar()));
+                    resourcePackagerTask.from(_project.zipTree(ext.getPlatformJar()));
+                    break;
+                case MoeExtension.PROGUARD_LEVEL_PLATFORM:
+                    resourcePackagerTask.from(_project.zipTree(sdk.getCoreJar()));
+                    break;
+                case MoeExtension.PROGUARD_LEVEL_ALL:
+                    break;
+                default:
+                    throw new IllegalStateException();
+            }
+
+            ext.packaging.getExcludes().forEach(resourcePackagerTask::exclude);
+
+            // Add support for copying resources from the source directory
+            addResourceFromSources(ext, resourcePackagerTask, sourceSet);
+            if (SourceSet.TEST_SOURCE_SET_NAME.equals(sourceSet.getName())) {
+                SourceSet main = plugin.getJavaConvention().getSourceSets().getByName(SourceSet.MAIN_SOURCE_SET_NAME);
+                addResourceFromSources(ext, resourcePackagerTask, main);
+            }
+        });
 
         return resourcePackagerTask;
     }
