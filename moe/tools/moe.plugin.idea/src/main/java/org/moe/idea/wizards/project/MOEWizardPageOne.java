@@ -99,12 +99,11 @@ public class MOEWizardPageOne extends ModuleWizardStep {
     @Override
     public boolean validate() throws ConfigurationException {
         try {
-            projectComposer.validate(new MOEProjectComposer.Field[]{
-                PROJECT_NAME,
-                PACKAGE_NAME,
-                ORGANIZATION_NAME,
-                ORGANIZATION_IDENTIFIER
-            });
+            projectComposer.validate(
+                    PROJECT_NAME,
+                    PACKAGE_NAME,
+                    ORGANIZATION_NAME,
+                    ORGANIZATION_IDENTIFIER);
         } catch (MOEProjectComposer.MOEProjectComposerValidationException e) {
             throw new ConfigurationException(e.getMessage());
         }
