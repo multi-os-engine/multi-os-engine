@@ -19,11 +19,9 @@ package org.moe.idea.builder;
 
 public class MOEModuleProperties {
     private String projectName;
-    private String productName;
     private String organizationName;
     private String companyIdentifier;
     private String projectRoot;
-    private String mainClassName = "Main";
     private String packageName;
 
     public String getProjectRoot() {
@@ -42,14 +40,6 @@ public class MOEModuleProperties {
         return projectName;
     }
 
-    public void setProductName(String productName) {
-        this.productName = productName;
-    }
-
-    public String getProductName() {
-        return productName;
-    }
-
     public void setOrganizationName(String organizationName) {
         this.organizationName = organizationName;
     }
@@ -64,14 +54,6 @@ public class MOEModuleProperties {
 
     public String getCompanyIdentifier() {
         return companyIdentifier;
-    }
-
-    public String getMainClassName() {
-        return mainClassName;
-    }
-
-    public void setMainClassName(String mainClassName) {
-        this.mainClassName = mainClassName;
     }
 
     public void setPackageName(String packageName) {

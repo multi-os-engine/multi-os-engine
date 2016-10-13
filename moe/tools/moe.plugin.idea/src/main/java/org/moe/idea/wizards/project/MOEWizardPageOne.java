@@ -19,6 +19,7 @@ package org.moe.idea.wizards.project;
 import com.intellij.ide.util.projectWizard.ModuleWizardStep;
 import com.intellij.openapi.options.ConfigurationException;
 import com.intellij.ui.DocumentAdapter;
+import org.moe.generator.project.MOEProjectComposer;
 import org.moe.idea.builder.MOEModuleBuilder;
 import org.moe.idea.builder.MOEModuleProperties;
 
@@ -26,25 +27,47 @@ import javax.swing.*;
 import javax.swing.event.DocumentEvent;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.regex.Pattern;
+
+import static org.moe.generator.project.MOEProjectComposer.Field.*;
 
 public class MOEWizardPageOne extends ModuleWizardStep {
+
+    private final static String BUNDLE_ID = "Application Bundle Id: ";
     private final MOEModuleBuilder builder;
-
     private JPanel panel;
-
-    private JTextField projectName;
-    private JTextField productName;
     private JTextField organizationName;
     private JTextField companyIdentifier;
     private JTextField packageNameTextField;
-
-    private Pattern validJavaPackagePattern = Pattern.compile("^[a-zA-Z_\\$][\\w\\$]*(?:\\.[a-zA-Z_\\$][\\w\\$]*)*$");
+    private JLabel bundleIdField;
+    private JTextField projectName;
+    private MOEProjectComposer projectComposer;
 
     public MOEWizardPageOne(MOEModuleBuilder builder) {
         this.builder = builder;
+        this.projectComposer = new MOEProjectComposer();
 
-        initControls();
+        projectName.getDocument().addDocumentListener(new DocumentAdapter() {
+            protected void textChanged(DocumentEvent e) {
+                projectComposer.setProjectName(projectName.getText().trim());
+                bundleIdField.setText(BUNDLE_ID + projectComposer.getBundleID());
+            }
+        });
+        companyIdentifier.getDocument().addDocumentListener(new DocumentAdapter() {
+            protected void textChanged(DocumentEvent e) {
+                projectComposer.setOrganizationID(companyIdentifier.getText().trim());
+                bundleIdField.setText(BUNDLE_ID + projectComposer.getBundleID());
+            }
+        });
+        organizationName.getDocument().addDocumentListener(new DocumentAdapter() {
+            protected void textChanged(DocumentEvent e) {
+                projectComposer.setOrganizationName(organizationName.getText().trim());
+            }
+        });
+        packageNameTextField.getDocument().addDocumentListener(new DocumentAdapter() {
+            protected void textChanged(DocumentEvent e) {
+                projectComposer.setPackageName(packageNameTextField.getText().trim());
+            }
+        });
     }
 
     @Override
@@ -57,62 +80,35 @@ public class MOEWizardPageOne extends ModuleWizardStep {
         MOEModuleProperties config = builder.getMOEModuleProperties();
 
         if (projectName != null) {
-            config.setProjectName(projectName.getText());
-        }
-
-        if (productName != null) {
-            config.setProductName(productName.getText());
+            config.setProjectName(projectName.getText().trim());
         }
 
         if (organizationName != null) {
-            config.setOrganizationName(organizationName.getText());
+            config.setOrganizationName(organizationName.getText().trim());
         }
 
         if (companyIdentifier != null) {
-            config.setCompanyIdentifier(companyIdentifier.getText());
+            config.setCompanyIdentifier(companyIdentifier.getText().trim());
         }
 
         if (packageNameTextField != null) {
-            config.setPackageName(packageNameTextField.getText());
+            config.setPackageName(packageNameTextField.getText().trim());
         }
     }
 
     @Override
     public boolean validate() throws ConfigurationException {
-        if (projectName.getText().trim().isEmpty()) {
-            throw new ConfigurationException("Enter a Project Name");
+        try {
+            projectComposer.validate(new MOEProjectComposer.Field[]{
+                PROJECT_NAME,
+                PACKAGE_NAME,
+                ORGANIZATION_NAME,
+                ORGANIZATION_IDENTIFIER
+            });
+        } catch (MOEProjectComposer.MOEProjectComposerValidationException e) {
+            throw new ConfigurationException(e.getMessage());
         }
-
-        if (productName.getText().trim().isEmpty()) {
-            throw new ConfigurationException("Enter a Product Name");
-        }
-
-        if (companyIdentifier.getText().trim().isEmpty()) {
-            throw new ConfigurationException("Enter a Company Identifier");
-        }
-
-        if (organizationName.getText().trim().isEmpty()) {
-            throw new ConfigurationException("Enter a Organization Name");
-        }
-
-        if (!validJavaPackagePattern.matcher(productName.getText()).matches() ||
-                !validJavaPackagePattern.matcher(projectName.getText()).matches()) {
-            throw new ConfigurationException("Product Name or Project Name is invalid!\n" +
-                    "1) Allowed word characters (a-zA-Z_0-9) and dots.\n" +
-                    "2) Segments between dots must be of non-zero length.\n" +
-                    "3) A digit cannot be the first character.");
-        }
-
         return true;
     }
 
-    private void initControls() {
-        if (projectName != null) {
-            projectName.getDocument().addDocumentListener(new DocumentAdapter() {
-                protected void textChanged(DocumentEvent e) {
-                    productName.setText(projectName.getText());
-                }
-            });
-        }
-    }
 }

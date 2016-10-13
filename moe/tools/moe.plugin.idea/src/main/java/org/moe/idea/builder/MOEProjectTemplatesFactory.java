@@ -54,10 +54,10 @@ public class MOEProjectTemplatesFactory extends ProjectTemplatesFactory {
     public ProjectTemplate[] createTemplates(String s, WizardContext wizardContext) {
 
         return new ProjectTemplate[] {
-                new MOEProjectTemplate(MOEText.get("Game.Application"),
+                /*new MOEProjectTemplate(MOEText.get("Game.Application"),
                         MOEText.get("Game.Application.Description"),
                         MOEProjectComposer.Template.IOS_JAVA_SINGLE_VIEW,
-                        new MOEModuleBuilder()),
+                        new MOEModuleBuilder()),*/
 
                 new MOEProjectTemplate(MOEText.get("MasterDetail.Application"),
                         MOEText.get("MasterDetail.Application.Description"),
@@ -67,14 +67,14 @@ public class MOEProjectTemplatesFactory extends ProjectTemplatesFactory {
                 /*new MOEProjectTemplate(MOEText.get("PageBased.Application"),
                         MOEText.get("PageBased.Application.Description"),
                         MOEProjectTemplate.MOETemplateType.PageBased,
-                        new MOEModuleBuilder()),
+                        new MOEModuleBuilder()),*/
 
                 new MOEProjectTemplate(MOEText.get("SingleView.Application"),
                         MOEText.get("SingleView.Application.Description"),
-                        MOEProjectTemplate.MOETemplateType.SingleView,
+                        MOEProjectComposer.Template.IOS_JAVA_SINGLE_VIEW,
                         new MOEModuleBuilder()),
 
-                new MOEProjectTemplate(MOEText.get("Tabbed.Application"),
+                /*new MOEProjectTemplate(MOEText.get("Tabbed.Application"),
                         MOEText.get("Tabbed.Application.Description"),
                         MOEProjectTemplate.MOETemplateType.Tabbed,
                         new MOEModuleBuilder())*/
