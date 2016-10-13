@@ -205,14 +205,42 @@ public class MOEProjectComposer implements Cloneable {
         return String.valueOf(getOrganizationID()) + "." + String.valueOf(getProjectName());
     }
 
-    public void validate() throws MOEProjectComposerValidationException {
-        requireNotNull(TARGET_DIRECTORY, targetDirectory);
-        requireNotEmpty(PROJECT_NAME, projectName);
-        requireNotEmpty(ORGANIZATION_NAME, organizationName);
-        requireNotEmpty(ORGANIZATION_IDENTIFIER, organizationID);
-        requireJavaPackage(PACKAGE_NAME, packageName);
-        requireVersionNumber(MOE_VERSION, moeVersion);
-        requireNotNull(TEMPLATE, template);
+    public void validate(Field... fields) throws MOEProjectComposerValidationException {
+        if (fields == null) {
+            requireNotNull(TARGET_DIRECTORY, targetDirectory);
+            requireNotEmpty(PROJECT_NAME, projectName);
+            requireNotEmpty(ORGANIZATION_NAME, organizationName);
+            requireNotEmpty(ORGANIZATION_IDENTIFIER, organizationID);
+            requireJavaPackage(PACKAGE_NAME, packageName);
+            requireVersionNumber(MOE_VERSION, moeVersion);
+            requireNotNull(TEMPLATE, template);
+        } else {
+            for (Field filed : fields) {
+                switch (filed) {
+                    case TARGET_DIRECTORY: {
+                        requireNotNull(TARGET_DIRECTORY, targetDirectory);
+                    } break;
+                    case PROJECT_NAME: {
+                        requireNotEmpty(PROJECT_NAME, projectName);
+                    } break;
+                    case ORGANIZATION_NAME: {
+                        requireNotEmpty(ORGANIZATION_NAME, organizationName);
+                    } break;
+                    case ORGANIZATION_IDENTIFIER: {
+                        requireNotEmpty(ORGANIZATION_IDENTIFIER, organizationID);
+                    } break;
+                    case PACKAGE_NAME: {
+                        requireJavaPackage(PACKAGE_NAME, packageName);
+                    } break;
+                    case MOE_VERSION: {
+                        requireVersionNumber(MOE_VERSION, moeVersion);
+                    } break;
+                    case TEMPLATE: {
+                        requireNotNull(TEMPLATE, template);
+                    } break;
+                }
+            }
+        }
     }
 
     public void compose() throws MOEProjectComposerException {
