@@ -20,7 +20,7 @@ import org.moe.common.exec.ExecOutputCollector;
 import org.moe.tools.natjgen.WrapNatJGenExec;
 import org.moe.common.utils.ProjectUtil;
 import org.moe.common.utils.XCodeUtil;
-import org.moe.document.pbxproj.ProjFile;
+import org.moe.document.pbxproj.ProjectFile;
 
 import java.io.File;
 import java.io.IOException;
@@ -102,9 +102,9 @@ public class MOEBindingGeneratorByXcode implements MOEBindingGenerator {
         String companyName = "";
         try {
             File xcodeProjectFile = new File(ProjectUtil.retrieveXcodeProjectPathFromGradle(projectFile));
-            ProjFile xcodeProject = new ProjFile(xcodeProjectFile);
+            ProjectFile xcodeProject = new ProjectFile(xcodeProjectFile);
 
-            companyName = xcodeProject.getRoot().getRootObject().getReferenced().getAttributes().getValue("ORGANIZATIONNAME").value;
+            companyName = xcodeProject.getRoot().getRootObject().getReferenced().getAttributesOrNull().getValue("ORGANIZATIONNAME").value;
         } catch (Exception e) {
             e.printStackTrace();
         }

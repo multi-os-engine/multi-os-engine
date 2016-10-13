@@ -136,7 +136,7 @@ public class NatjGenUtil {
     private static List<File> getStoryboardFiles(File projectFile, File xcodeProjectFile) {
         List<File> result = new ArrayList<File>();
         try {
-            ProjFile xcodeProject = new ProjFile(xcodeProjectFile);
+            ProjectFile xcodeProject = new ProjectFile(xcodeProjectFile);
 
             ArrayList<Dictionary.Field<PBXObjectRef<? extends PBXObject>, PBXObject>> fields = xcodeProject.getRoot().getObjects().rawData();
             for (Dictionary.Field<PBXObjectRef<? extends PBXObject>, PBXObject> field : fields) {
@@ -182,11 +182,11 @@ public class NatjGenUtil {
         return result;
     }
 
-    private static String getGroupPathForReference(ProjFile project, String reference){
+    private static String getGroupPathForReference(ProjectFile project, String reference){
         List<PBXGroup> groups = getGroups(project.getRoot());
         String path = null;
         for (PBXGroup group : groups) {
-            for (PBXObjectRef<? extends PBXObject> groupChild : group.getChildren()){
+            for (PBXObjectRef<? extends PBXObject> groupChild : group.getChildrenOrNull()){
                 if (groupChild.value.equals(reference)) {
                     path = groupChild.getReferenced().getValue("path").toString();
                 }
@@ -228,7 +228,7 @@ public class NatjGenUtil {
 
     private static File getFilesByProject(File projectFile, File xcodeProjectFile, String interfaceName){
         try {
-            ProjFile xcodeProject = new ProjFile(xcodeProjectFile);
+            ProjectFile xcodeProject = new ProjectFile(xcodeProjectFile);
 
             List<PBXObjectRef<PBXFileReference>> fileRef = getFileReferences(xcodeProject.getRoot());
             for (PBXObjectRef<PBXFileReference> pbxFileRef : fileRef) {
