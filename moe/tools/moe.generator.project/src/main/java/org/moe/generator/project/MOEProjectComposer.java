@@ -79,7 +79,7 @@ public class MOEProjectComposer implements Cloneable {
     private String moeVersion;
 
     public enum Template {
-//        IOS_JAVA_GAME(Platform.IOS, Language.JAVA, "Game", ID.GAME),
+        IOS_JAVA_GAME(Platform.IOS, Language.JAVA, "OpenGL ES Game", ID.GAME),
         IOS_JAVA_MASTER_DETAIL(Platform.IOS, Language.JAVA, "Master-Detail Application", ID.MASTER_DETAIL),
 //        IOS_JAVA_PAGE_BASED(Platform.IOS, Language.JAVA, "Page-Based Application", ID.PAGE_BASED),
         IOS_JAVA_SINGLE_VIEW(Platform.IOS, Language.JAVA, "Single View Application", ID.SINGE_VIEW),
@@ -116,7 +116,7 @@ public class MOEProjectComposer implements Cloneable {
         }
 
         public static class ID {
-            public static final String GAME = "game";
+            public static final String GAME = "game-gl";
             public static final String MASTER_DETAIL = "master-detail";
             public static final String PAGE_BASED = "page-based";
             public static final String SINGE_VIEW = "single-view";
