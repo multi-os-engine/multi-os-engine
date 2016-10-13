@@ -123,7 +123,7 @@ public class GameViewController extends GLKViewController {
     }
 
     float gCubeVertexData[] = new float[]{
-            // @formatter:off
+        // @formatter:off
         // Data layout for each line below is:
         // positionX, positionY, positionZ,     normalX, normalY, normalZ,
         0.5f, -0.5f, -0.5f,        1.0f, 0.0f, 0.0f,

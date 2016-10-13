@@ -153,7 +153,7 @@ public class MOEProjectFabricator {
                 outpath = "src/" + sourceSet + "/java/" + composer.getPackageName().replaceAll("\\.", "/") + "/"
                         + resource;
 
-            } else if (composer.getTemplate().language.equals(Language.JAVA)) {
+            } else if (composer.getTemplate().language.equals(Language.KOTLIN)) {
                 outpath = "src/" + sourceSet + "/kotlin/" + composer.getPackageName().replaceAll("\\.", "/") + "/"
                         + resource;
 
