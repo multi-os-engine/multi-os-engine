@@ -27,10 +27,6 @@ import org.moe.document.pbxproj.nextstep.Array;
 import org.moe.document.pbxproj.nextstep.Dictionary;
 import org.moe.document.pbxproj.nextstep.NextStep;
 import org.moe.document.pbxproj.nextstep.Value;
-import org.moe.generator.project.FileManager;
-import org.moe.generator.project.FileResult;
-import org.moe.generator.project.ProjectHelper;
-import org.moe.generator.project.XcodeTarget;
 import org.moe.idea.utils.IMonitor;
 import org.moe.idea.utils.ModuleUtils;
 import org.moe.idea.utils.logger.LoggerFactory;
@@ -45,8 +41,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-
-import static org.moe.generator.project.Generator.SOURCE_TREE_GROUP;
 
 public class MOEBindingGeneratorByJava {
 
@@ -80,7 +74,7 @@ public class MOEBindingGeneratorByJava {
                                         return;
                                     }
 
-                                    ProjFile xcodeProject = new ProjFile(xcodeProjectFile);
+                                    ProjectFile xcodeProject = new ProjectFile(xcodeProjectFile);
 
                                     //TODO do not remove!!! Only in case of files update
                                     File headerFile = getFileWithInterface(xcodeProjectFile, xcodeProject, module,
@@ -115,11 +109,11 @@ public class MOEBindingGeneratorByJava {
                                     headerFile = generateNewHeader(headerFile, psiClass, xcodeProjectFile,
                                             xcodeProjectName, outlets, actions, nativeClassName);
 
-                                    ProjectHelper projectHelper = new ProjectHelper(xcodeProject,
+                                    /*ProjectHelper projectHelper = new ProjectHelper(xcodeProject,
                                             new FileManager(xcodeProjectFile.getParentFile()));
 
                                     Array<PBXObjectRef<PBXNativeTarget>> targets = xcodeProject.getRoot()
-                                            .getRootObject().getReferenced().getTargets();
+                                            .getRootObject().getReferenced().getTargetsOrNull();
                                     List<XcodeTarget> mainTargets = new ArrayList<XcodeTarget>();
                                     for (PBXObjectRef<PBXNativeTarget> target : targets) {
                                         if (!target.getReferenced().getName().endsWith("-Test")) {
@@ -160,7 +154,7 @@ public class MOEBindingGeneratorByJava {
                                             }
                                         }
                                     }
-                                    xcodeProject.save();
+                                    xcodeProject.save();*/
                                 }
                             }
                         }
@@ -210,7 +204,7 @@ public class MOEBindingGeneratorByJava {
         return null;
     }
 
-    private File getFileWithInterface(File xcodeProjectFile, ProjFile project, Module module, String interfaceName,
+    private File getFileWithInterface(File xcodeProjectFile, ProjectFile project, Module module, String interfaceName,
                                       String extension) {
         ArrayList<Dictionary.Field<Value, NextStep>> fields = project.getRoot().rawData();
         for (Dictionary.Field pbxFile : fields) {
@@ -900,7 +894,7 @@ public class MOEBindingGeneratorByJava {
      * @param srcBuildPhase phase to add to
      * @return reference to the build file
      */
-    private PBXObjectRef<PBXBuildFile> createBuildFile(ProjectHelper projectHelper,
+    /*private PBXObjectRef<PBXBuildFile> createBuildFile(ProjectHelper projectHelper,
                                                        PBXObjectRef<PBXFileReference> fileRef,
                                                        PBXBuildPhase srcBuildPhase) {
         PBXObjectRef<PBXBuildFile> buildFileRef = projectHelper.addAndReturn(new PBXBuildFile());
@@ -908,5 +902,5 @@ public class MOEBindingGeneratorByJava {
         buildFile.setFileRef(fileRef);
         srcBuildPhase.getFiles().add(buildFileRef);
         return buildFileRef;
-    }
+    }*/
 }

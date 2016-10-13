@@ -22,14 +22,14 @@ import java.io.File;
 import java.util.List;
 
 public class XCodeProjectFileManager {
-    private final ProjFile project;
+    private final ProjectFile project;
 
     public enum FileType {
         Resource,
         Sources
     }
 
-    public XCodeProjectFileManager(ProjFile project) {
+    public XCodeProjectFileManager(ProjectFile project) {
         this.project = project;
     }
 
@@ -81,7 +81,7 @@ public class XCodeProjectFileManager {
             return false;
         }
 
-        desiredGroup.getChildren().add(frNewFile);
+        desiredGroup.getOrCreateChildren().add(frNewFile);
 
         PBXObjectRef<PBXBuildPhase> buildPhase = null;
 

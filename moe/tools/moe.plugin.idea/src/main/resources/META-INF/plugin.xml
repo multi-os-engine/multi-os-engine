@@ -98,10 +98,10 @@
                   text="Generate Bindings"
                   description="Generate Bindings"/>
 
-          <action id="MOE.SynchronizeToXcode"
+         <!-- <action id="MOE.SynchronizeToXcode"
                   class="org.moe.idea.actions.SynchronizeToXcodeAction"
                   text="Synchronize to Xcode"
-                  description="Generate UI Interface Bindings"/>
+                  description="Generate UI Interface Bindings"/>-->
 
           <action id="MOE.SynchronizeToJava"
                   class="org.moe.idea.actions.SynchronizeToJavaAction"

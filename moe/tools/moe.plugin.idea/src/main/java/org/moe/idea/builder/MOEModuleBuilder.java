@@ -57,7 +57,7 @@ import org.jetbrains.plugins.gradle.settings.DistributionType;
 import org.jetbrains.plugins.gradle.settings.GradleProjectSettings;
 import org.jetbrains.plugins.gradle.util.GradleConstants;
 import org.moe.common.utils.OsUtils;
-import org.moe.generator.project.ProjectTemplate;
+import org.moe.generator.project.MOEProjectComposer;
 import org.moe.idea.MOESdkPlugin;
 import org.moe.idea.runconfig.configuration.MOERunConfiguration;
 import org.moe.idea.sdk.MOESdkType;
@@ -128,7 +128,11 @@ public class MOEModuleBuilder extends JavaModuleBuilder {
 
         VirtualFile contentRoot = LocalFileSystem.getInstance().findFileByIoFile(new File(contentEntryPath));
 
-        createModule(contentRoot, project);
+        try {
+            createModule(contentRoot, project);
+        } catch (MOEProjectComposer.MOEProjectComposerException e) {
+            throw new ConfigurationException(e.getMessage());
+        }
 
         VirtualFile[] contentFiles = new VirtualFile[]{contentRoot};
 
@@ -240,7 +244,7 @@ public class MOEModuleBuilder extends JavaModuleBuilder {
         return StdModuleTypes.JAVA.modifySettingsStep(settingsStep, this);
     }
 
-    private void createModule(VirtualFile contentRoot, Project project) {
+    private void createModule(VirtualFile contentRoot, Project project) throws MOEProjectComposer.MOEProjectComposerException {
         String path = contentRoot.getCanonicalPath();
 
         if (moduleProperties == null) {
@@ -249,21 +253,18 @@ public class MOEModuleBuilder extends JavaModuleBuilder {
 
         moduleProperties.setProjectRoot(path);
 
-        ProjectTemplate projectTemplate = new ProjectTemplate();
+        MOEProjectComposer projectComposer = new MOEProjectComposer();
 
         String packageName = moduleProperties.getPackageName();
 
-        projectTemplate.rootPath(moduleProperties.getProjectRoot())
-                .packageName(packageName)
-                .projectName(moduleProperties.getProductName())
-                .organizationName(moduleProperties.getOrganizationName())
-                .companyIdentifier(moduleProperties.getCompanyIdentifier())
-                .mainClassName(moduleProperties.getMainClassName())
-                .keepXcode(true)
-                .xcodeProjectPath("xcode");
-
-        // TODO: Implement better handling of Gradle plugin version
-        projectTemplate.createProject(template.getType().toString().toLowerCase() + ".zip", "1.2.+", isNewProject);
+        projectComposer.setTargetDirectory(new File(moduleProperties.getProjectRoot()))
+        .setMoeVersion("1.3.+")
+        .setProjectName(moduleProperties.getProjectName())
+        .setOrganizationName(moduleProperties.getOrganizationName())
+        .setOrganizationID(moduleProperties.getCompanyIdentifier())
+        .setPackageName(packageName)
+        .setTemplate(template.getType())
+        .compose();
     }
 
     private void configureGradle(ModifiableRootModel rootModel) throws IOException {

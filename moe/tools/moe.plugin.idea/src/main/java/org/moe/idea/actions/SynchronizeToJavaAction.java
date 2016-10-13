@@ -136,7 +136,7 @@ public class SynchronizeToJavaAction extends AnAction {
     private List<File> getStoryboardFiles(File xcodeProjectFile) {
         List<File> result = new ArrayList<File>();
         try {
-            ProjFile xcodeProject = new ProjFile(xcodeProjectFile);
+            ProjectFile xcodeProject = new ProjectFile(xcodeProjectFile);
             ArrayList<Dictionary.Field<PBXObjectRef<? extends PBXObject>, PBXObject>> fields = xcodeProject.getRoot()
                     .getObjects().rawData();
             for (Dictionary.Field<PBXObjectRef<? extends PBXObject>, PBXObject> field : fields) {
@@ -161,7 +161,7 @@ public class SynchronizeToJavaAction extends AnAction {
 
     private File getFilesByProject(File xcodeProjectFile, Module module, String interfaceName) {
         try {
-            ProjFile xcodeProject = new ProjFile(xcodeProjectFile);
+            ProjectFile xcodeProject = new ProjectFile(xcodeProjectFile);
             List<PBXObjectRef<PBXFileReference>> fileRef = xcodeProject.getRoot().getFileReferences();
             for (PBXObjectRef<PBXFileReference> pbxFileRef : fileRef) {
                 String filePath = pbxFileRef.getReferenced().getPath();
@@ -192,10 +192,10 @@ public class SynchronizeToJavaAction extends AnAction {
         return null;
     }
 
-    private String getGroupPathForReference(ProjFile project, String reference) {
+    private String getGroupPathForReference(ProjectFile project, String reference) {
         List<PBXGroup> groups = project.getRoot().getGroups();
         for (PBXGroup group : groups) {
-            for (PBXObjectRef<? extends PBXObject> groupChild : group.getChildren()) {
+            for (PBXObjectRef<? extends PBXObject> groupChild : group.getChildrenOrNull()) {
                 if (groupChild.value.equals(reference)) {
                     return group.getPath() == null ? "" : group.getPath();
                 }

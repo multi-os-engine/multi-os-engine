@@ -21,6 +21,7 @@ import com.intellij.ide.util.projectWizard.WizardContext;
 import com.intellij.platform.ProjectTemplate;
 import com.intellij.platform.ProjectTemplatesFactory;
 import org.jetbrains.annotations.NotNull;
+import org.moe.generator.project.MOEProjectComposer;
 import res.MOEIcons;
 import res.MOEText;
 
@@ -55,15 +56,15 @@ public class MOEProjectTemplatesFactory extends ProjectTemplatesFactory {
         return new ProjectTemplate[] {
                 new MOEProjectTemplate(MOEText.get("Game.Application"),
                         MOEText.get("Game.Application.Description"),
-                        MOEProjectTemplate.MOETemplateType.Game,
+                        MOEProjectComposer.Template.IOS_JAVA_SINGLE_VIEW,
                         new MOEModuleBuilder()),
 
                 new MOEProjectTemplate(MOEText.get("MasterDetail.Application"),
                         MOEText.get("MasterDetail.Application.Description"),
-                        MOEProjectTemplate.MOETemplateType.MasterDetail,
+                        MOEProjectComposer.Template.IOS_JAVA_MASTER_DETAIL,
                         new MOEModuleBuilder()),
 
-                new MOEProjectTemplate(MOEText.get("PageBased.Application"),
+                /*new MOEProjectTemplate(MOEText.get("PageBased.Application"),
                         MOEText.get("PageBased.Application.Description"),
                         MOEProjectTemplate.MOETemplateType.PageBased,
                         new MOEModuleBuilder()),
@@ -76,7 +77,7 @@ public class MOEProjectTemplatesFactory extends ProjectTemplatesFactory {
                 new MOEProjectTemplate(MOEText.get("Tabbed.Application"),
                         MOEText.get("Tabbed.Application.Description"),
                         MOEProjectTemplate.MOETemplateType.Tabbed,
-                        new MOEModuleBuilder())
+                        new MOEModuleBuilder())*/
         };
     }
 }

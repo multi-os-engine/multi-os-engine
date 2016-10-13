@@ -25,7 +25,7 @@ import com.intellij.openapi.vfs.newvfs.events.*;
 import org.jetbrains.annotations.NotNull;
 import org.moe.common.constants.MOEManifestConstants.LINKER_FLAGS;
 import org.moe.common.utils.ProjectUtil;
-import org.moe.document.pbxproj.ProjFile;
+import org.moe.document.pbxproj.ProjectFile;
 import org.moe.idea.MOESdkPlugin;
 import org.moe.xcode.XCodeProjectFileManager;
 
@@ -136,10 +136,10 @@ public class XCodeProjectSyncListener extends ModuleAdapter implements BulkFileL
             return;
         }
 
-        ProjFile xcodeProject;
+        ProjectFile xcodeProject;
 
         try {
-            xcodeProject = new ProjFile(xcodeProjectFile);
+            xcodeProject = new ProjectFile(xcodeProjectFile);
         } catch (Exception e) {
             return;
         }

@@ -20,25 +20,19 @@ import com.intellij.ide.util.projectWizard.ModuleBuilder;
 import com.intellij.platform.templates.BuilderBasedTemplate;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.moe.generator.project.MOEProjectComposer;
 import res.MOEIcons;
 
 import javax.swing.*;
 
 public class MOEProjectTemplate extends BuilderBasedTemplate {
-    public enum MOETemplateType {
-        SingleView,
-        PageBased,
-        Game,
-        MasterDetail,
-        Tabbed
-    }
 
-    private final MOETemplateType templateType;
+    private final MOEProjectComposer.Template templateType;
 
     private final String name;
     private final String description;
 
-    public MOEProjectTemplate(String name, String description, MOETemplateType templateType, ModuleBuilder builder) {
+    public MOEProjectTemplate(String name, String description, MOEProjectComposer.Template templateType, ModuleBuilder builder) {
         super(builder);
 
         this.templateType = templateType;
@@ -65,7 +59,7 @@ public class MOEProjectTemplate extends BuilderBasedTemplate {
         return MOEIcons.MOESmall;
     }
 
-    public MOETemplateType getType() {
+    public MOEProjectComposer.Template getType() {
         return this.templateType;
     }
 }
