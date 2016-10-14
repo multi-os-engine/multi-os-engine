@@ -4,7 +4,6 @@ import org.apache.commons.io.FileUtils;
 import org.gradle.testkit.runner.BuildResult;
 import org.gradle.testkit.runner.GradleRunner;
 import org.junit.Before;
-import org.junit.Ignore;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.TemporaryFolder;
@@ -25,33 +24,41 @@ public class ApplyPluginTest {
     @Rule
     public final TemporaryFolder testProjectDir = new TemporaryFolder();
     private File buildFile;
-    List<File> pluginClasspath;
+    private List<File> pluginClasspath;
+    private String sdkLocalbuild;
 
     @Before
     public void setup() throws IOException {
         buildFile = testProjectDir.newFile("build.gradle");
 
-        URL pluginClasspathResource = getClass().getClassLoader().getResource("plugin-classpath.txt");
+        final URL pluginClasspathResource = getClass().getClassLoader().getResource("plugin-classpath.txt");
         if (pluginClasspathResource == null) {
             throw new IllegalStateException("Did not find plugin classpath resource, run `testClasses` build task.");
         }
 
         final List<String> lines = FileUtils.readLines(new File(pluginClasspathResource.getFile()));
         pluginClasspath = lines.stream().map(File::new).collect(Collectors.toList());
+
+        final URL sdkLocalbuildResource = getClass().getClassLoader().getResource("plugin-sdk-localbuild.txt");
+        if (sdkLocalbuildResource == null) {
+            throw new IllegalStateException("Did not find plugin sdk localbuild resource, run `testClasses` build task.");
+        }
+
+        sdkLocalbuild = FileUtils.readLines(new File(sdkLocalbuildResource.getFile())).get(0);
+        assertTrue(new File(sdkLocalbuild).exists());
     }
 
-    @Ignore
     @Test
     public void testPluginApply() throws IOException {
         String buildFileContent = "plugins {\n" +
                 "    id 'java'\n" +
-                "    id 'moe'\n" +
+                "    id 'moe-sdk'\n" +
                 "}";
         writeFile(buildFile, buildFileContent);
 
         BuildResult result = GradleRunner.create()
                 .withProjectDir(testProjectDir.getRoot())
-                .withArguments("tasks")
+                .withArguments("tasks", "-Pmoe.sdk.localbuild=" + sdkLocalbuild, "-s")
                 .withPluginClasspath(pluginClasspath)
                 .build();
 
