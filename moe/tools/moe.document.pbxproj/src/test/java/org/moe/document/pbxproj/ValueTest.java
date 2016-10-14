@@ -14,15 +14,10 @@ See the License for the specific language governing permissions and
 limitations under the License.
 */
 
-package test.org.moe.document.pbxproj;
+package org.moe.document.pbxproj;
 
 import org.junit.BeforeClass;
 import org.junit.Test;
-import org.moe.document.pbxproj.PBXNativeTarget;
-import org.moe.document.pbxproj.PBXObjectRef;
-import org.moe.document.pbxproj.PBXProject;
-import org.moe.document.pbxproj.ProjectFile;
-import org.moe.document.pbxproj.ProjectException;
 import org.moe.document.pbxproj.nextstep.Array;
 
 import java.io.InputStream;
@@ -31,7 +26,7 @@ import java.util.List;
 
 import static org.junit.Assert.*;
 
-public class Values {
+public class ValueTest {
 
     private static ProjectFile pbxproj;
     private static PBXProject project;
@@ -39,7 +34,7 @@ public class Values {
     @BeforeClass
     public static void setup() throws ProjectException {
         String filename = "project.pbxproj";
-        InputStream resourceStream = SCMSupport.class.getResourceAsStream(filename);
+        InputStream resourceStream = SCMSupportTest.class.getResourceAsStream(filename);
         pbxproj = new ProjectFile(resourceStream);
         project = pbxproj.getRoot().getRootObject().getReferenced();
     }

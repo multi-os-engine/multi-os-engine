@@ -14,19 +14,17 @@ See the License for the specific language governing permissions and
 limitations under the License.
 */
 
-package test.org.moe.document.pbxproj;
+package org.moe.document.pbxproj;
 
 import org.apache.commons.io.IOUtils;
 import org.junit.Test;
-import org.moe.document.pbxproj.ProjectFile;
-import org.moe.document.pbxproj.ProjectException;
 
 import java.io.IOException;
 import java.io.InputStream;
 
 import static org.junit.Assert.assertEquals;
 
-public class SCMSupport {
+public class SCMSupportTest {
 
     /*
      * We want the output to be perfectly formatted. This means every output must be exactly the same as the project
@@ -35,10 +33,10 @@ public class SCMSupport {
     @Test
     public void testEqualityOnNoChange() throws ProjectException, IOException {
         String filename = "project.pbxproj";
-        InputStream resourceStream = SCMSupport.class.getResourceAsStream(filename);
+        InputStream resourceStream = SCMSupportTest.class.getResourceAsStream(filename);
         String expected = IOUtils.toString(resourceStream, "UTF-8");
 
-        resourceStream = SCMSupport.class.getResourceAsStream(filename);
+        resourceStream = SCMSupportTest.class.getResourceAsStream(filename);
         ProjectFile project = new ProjectFile(resourceStream);
         String actual = project.toString();
         assertEquals(expected, actual);

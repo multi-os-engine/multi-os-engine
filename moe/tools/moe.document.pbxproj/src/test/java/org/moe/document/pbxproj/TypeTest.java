@@ -14,15 +14,10 @@ See the License for the specific language governing permissions and
 limitations under the License.
 */
 
-package test.org.moe.document.pbxproj;
+package org.moe.document.pbxproj;
 
 import org.junit.BeforeClass;
 import org.junit.Test;
-import org.moe.document.pbxproj.PBXObject;
-import org.moe.document.pbxproj.PBXObjectRef;
-import org.moe.document.pbxproj.PBXProject;
-import org.moe.document.pbxproj.ProjectException;
-import org.moe.document.pbxproj.ProjectFile;
 import org.moe.document.pbxproj.Root.RootObjects;
 import org.moe.document.pbxproj.nextstep.Dictionary.Field;
 import org.moe.document.pbxproj.nextstep.Dictionary.FieldIterator;
@@ -31,7 +26,7 @@ import java.io.InputStream;
 
 import static org.junit.Assert.assertEquals;
 
-public class Types {
+public class TypeTest {
 
     private static final String PACKAGE_ROOT = "org.moe.document.pbxproj.";
 
@@ -41,7 +36,7 @@ public class Types {
     @BeforeClass
     public static void setup() throws ProjectException {
         String filename = "project.pbxproj";
-        InputStream resourceStream = SCMSupport.class.getResourceAsStream(filename);
+        InputStream resourceStream = SCMSupportTest.class.getResourceAsStream(filename);
         pbxproj = new ProjectFile(resourceStream);
         project = pbxproj.getRoot().getRootObject().getReferenced();
     }
