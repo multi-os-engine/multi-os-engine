@@ -23,11 +23,13 @@ import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.Mapped;
 import org.moe.natj.general.ann.UncertainArgument;
 import org.moe.natj.general.ptr.CharPtr;
+import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ObjCClassName;
 import org.moe.natj.objc.ann.Selector;
 import apple.NSObject;
 
 @ObjCClassName("NSString")
+@ObjCClassBinding()
 public class xNSString extends NSObject {
 
 	static {
@@ -46,17 +48,17 @@ public class xNSString extends NSObject {
     @Selector("init")
     public native xNSString init();
     
-    @Override
-    public String toString() {
-        return toJavaString();
-    }
+//    @Override
+//    public String toString() {
+//        return toJavaString();
+//    }
 
     @Selector("stringWithCString:")
     public static native xNSString stringWithCString(
             @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") @Mapped(CStringMapper.class) String bytes);
 
 
-    private native String toJavaString();
+//    private native String toJavaString();
 
     @Selector("stringWithUTF8String:")
     public static native xNSString stringWithUTF8String(CharPtr nullTerminatedCString); //TODO: const char* nullTerminatedCString
