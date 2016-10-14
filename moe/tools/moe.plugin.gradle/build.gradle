@@ -63,6 +63,8 @@ dependencies {
     included project(':moe.generator.project')
 }
 
+tasks.test.dependsOn ':moe-sdk:devsdk'
+
 bintray {
     if (project.hasProperty('bintray.user')) {
         user = property('bintray.user')
@@ -127,7 +129,8 @@ task createClasspathManifest {
 
     doLast {
         outputDir.mkdirs()
-        file("$outputDir/plugin-classpath.txt").text = sourceSets.main.runtimeClasspath.join("\n")
+        file("$outputDir/plugin-classpath.txt").text = (sourceSets.main.runtimeClasspath + configurations.included).join("\n")
+        file("$outputDir/plugin-sdk-localbuild.txt").text = project(':moe-sdk').file('build/dev-sdk')
     }
 }
 
