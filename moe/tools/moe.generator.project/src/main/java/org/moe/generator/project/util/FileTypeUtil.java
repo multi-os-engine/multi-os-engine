@@ -48,6 +48,7 @@ public final class FileTypeUtil {
         extensionFileTypeMap.put("scnassets", "wrapper.scnassets");
         extensionFileTypeMap.put("xcconfig", "text.xcconfig");
         extensionFileTypeMap.put("xib", "file.xib");
+        extensionFileTypeMap.put("tbd", "sourcecode.text-based-dylib-definition");
     }
 
     /**

@@ -319,7 +319,7 @@ public class MOEProjectFabricator {
         moeEmbedFrameworksBuildPhase.getOrCreateFiles().add(moeFWEmbed);
     }
 
-    private PBXObjectRef<PBXFileReference> createFileReference(ProjectFile file, String name, String filePath,
+    public static PBXObjectRef<PBXFileReference> createFileReference(ProjectFile file, String name, String filePath,
             String sourceTree) {
         final PBXFileReference fileReference = new PBXFileReference();
         fileReference.setLastKnownFileType(FileTypeUtil.getFileType(filePath));
@@ -335,7 +335,7 @@ public class MOEProjectFabricator {
         return reference;
     }
 
-    private PBXObjectRef<PBXBuildFile> createBuildFile(ProjectFile file, PBXObjectRef<PBXFileReference> fileReference) {
+    public static PBXObjectRef<PBXBuildFile> createBuildFile(ProjectFile file, PBXObjectRef<PBXFileReference> fileReference) {
         final PBXBuildFile buildFile = new PBXBuildFile();
         buildFile.setFileRef(fileReference);
         final PBXObjectRef<PBXBuildFile> reference = file.createReference(buildFile);
@@ -377,7 +377,7 @@ public class MOEProjectFabricator {
         return phase;
     }
 
-    private PBXFrameworksBuildPhase getOrCreateFrameworksBuildPhase(ProjectFile file, PBXNativeTarget target) {
+    public static PBXFrameworksBuildPhase getOrCreateFrameworksBuildPhase(ProjectFile file, PBXNativeTarget target) {
         for (PBXObjectRef<PBXBuildPhase> ref : target.getOrCreateBuildPhases()) {
             if (!(ref.getReferenced().getClass().equals(PBXFrameworksBuildPhase.class))) {
                 continue;
