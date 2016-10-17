@@ -97,7 +97,7 @@ public class MoeSDK {
             sdkVersion = props.getProperty("MOE-SDK-Version");
         }
         if (pluginVersion == null || pluginVersion.length() == 0) {
-            throw new GradleException("MOE SDK version is undefined");
+            throw new GradleException("MOE plugin version is undefined");
         }
         if (sdkVersion == null || sdkVersion.length() == 0) {
             throw new GradleException("MOE SDK version is undefined");
@@ -499,9 +499,9 @@ public class MoeSDK {
     private @Nullable File MOE_SDK_TOOLS_DIR;
     private @Nullable File MOE_SDK_CORE_JAR;
     private @Nullable File MOE_SDK_CORE_DEX;
-    private @Nullable File MOE_SDK_JAVADOC_JAR;
-    private @Nullable File MOE_SDK_JUNIT_JAR;
-    private @Nullable File MOE_SDK_JUNIT_DEX;
+    private @Nullable File MOE_SDK_IOS_JAVADOC_JAR;
+    private @Nullable File MOE_SDK_IOS_JUNIT_JAR;
+    private @Nullable File MOE_SDK_IOS_JUNIT_DEX;
     private @Nullable File MOE_SDK_IOS_JAR;
     private @Nullable File MOE_SDK_IOS_RETRO_JAR;
     private @Nullable File MOE_SDK_IOS_RETRO_DEX;
@@ -526,9 +526,9 @@ public class MoeSDK {
         MOE_SDK_TOOLS_DIR = path.resolve("tools").toFile();
         MOE_SDK_CORE_JAR = path.resolve("sdk/moe-core.jar").toFile();
         MOE_SDK_CORE_DEX = path.resolve("sdk/moe-core.dex").toFile();
-        MOE_SDK_JAVADOC_JAR = path.resolve("sdk/moe-ios-javadoc.jar").toFile();
-        MOE_SDK_JUNIT_JAR = path.resolve("sdk/moe-ios-junit.jar").toFile();
-        MOE_SDK_JUNIT_DEX = path.resolve("sdk/moe-ios-junit.dex").toFile();
+        MOE_SDK_IOS_JAVADOC_JAR = path.resolve("sdk/moe-ios-javadoc.jar").toFile();
+        MOE_SDK_IOS_JUNIT_JAR = path.resolve("sdk/moe-ios-junit.jar").toFile();
+        MOE_SDK_IOS_JUNIT_DEX = path.resolve("sdk/moe-ios-junit.dex").toFile();
         MOE_SDK_IOS_JAR = path.resolve("sdk/moe-ios.jar").toFile();
         MOE_SDK_IOS_RETRO_JAR = path.resolve("sdk/moe-ios-retro.jar").toFile();
         MOE_SDK_IOS_RETRO_DEX = path.resolve("sdk/moe-ios-retro-dex.jar").toFile();
@@ -576,19 +576,19 @@ public class MoeSDK {
 
     @NotNull
     @IgnoreUnused
-    public File getJavadocJar() {
-        return safeVariable(MOE_SDK_JAVADOC_JAR, "MOE_SDK_JAVADOC_JAR");
+    public File getiOSJavadocJar() {
+        return safeVariable(MOE_SDK_IOS_JAVADOC_JAR, "MOE_SDK_IOS_JAVADOC_JAR");
     }
 
     @NotNull
-    public File getJUnitJar() {
-        return safeVariable(MOE_SDK_JUNIT_JAR, "MOE_SDK_JUNIT_JAR");
+    public File getiOSJUnitJar() {
+        return safeVariable(MOE_SDK_IOS_JUNIT_JAR, "MOE_SDK_IOS_JUNIT_JAR");
     }
 
     @NotNull
     @IgnoreUnused
-    public File getJUnitDex() {
-        return safeVariable(MOE_SDK_JUNIT_DEX, "MOE_SDK_JUNIT_DEX");
+    public File getiOSJUnitDex() {
+        return safeVariable(MOE_SDK_IOS_JUNIT_DEX, "MOE_SDK_IOS_JUNIT_DEX");
     }
 
     @NotNull

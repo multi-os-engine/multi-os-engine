@@ -57,7 +57,7 @@ public class MoeSDKPlugin extends AbstractMoePlugin {
                         "moe.sdk.home=" + getSDK().getRoot() + "\n" +
                         "moe.sdk.coreJar=" + getSDK().getCoreJar() + "\n" +
                         "moe.sdk.platformJar=" + (platformJar == null ? "" : platformJar) + "\n" +
-                        "moe.sdk.junitJar=" + getSDK().getJUnitJar() + "\n" +
+                        "moe.sdk.junitJar=" + getSDK().getiOSJUnitJar() + "\n" +
                         "\n");
             });
         });

@@ -22,7 +22,6 @@ import org.apache.tools.ant.taskdefs.condition.Os;
 import org.gradle.api.GradleException;
 import org.gradle.api.Project;
 import org.gradle.api.Task;
-import org.gradle.api.internal.file.collections.SimpleFileCollection;
 import org.gradle.api.plugins.JavaPlugin;
 import org.gradle.api.plugins.JavaPluginConvention;
 import org.gradle.api.tasks.SourceSet;
@@ -45,6 +44,7 @@ import org.moe.gradle.tasks.XcodeBuild;
 import org.moe.gradle.tasks.XcodeInternal;
 import org.moe.gradle.tasks.XcodeProvider;
 import org.moe.gradle.utils.Arch;
+import org.moe.gradle.utils.FileUtils;
 import org.moe.gradle.utils.Mode;
 import org.moe.gradle.utils.Require;
 import org.moe.gradle.utils.StringUtils;
@@ -52,6 +52,7 @@ import org.moe.gradle.utils.TaskUtils;
 
 import javax.inject.Inject;
 import java.io.File;
+import java.net.MalformedURLException;
 import java.util.Arrays;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicInteger;
@@ -112,14 +113,24 @@ public class MoePlugin extends AbstractMoePlugin {
         Require.nonNull(javaConvention, "The 'java' Gradle plugin must be applied before the '" + MOE + "' plugin");
 
         // Install core, ios and junit jars as dependencies
+        project.getRepositories().ivy(ivy -> {
+            ivy.setName("multi-os-engine-implicit-repo");
+            try {
+                ivy.setUrl(getSDK().getSDKDir().toURI().toURL());
+            } catch (MalformedURLException e) {
+                throw new GradleException("Failed to add Multi-OS Engine repo", e);
+            }
+            ivy.artifactPattern(ivy.getUrl() + "/[artifact](-[classifier])(.[ext])");
+        });
+
         project.getDependencies().add(JavaPlugin.COMPILE_CONFIGURATION_NAME,
-                new SimpleFileCollection(getSDK().getCoreJar()));
+                FileUtils.getNameAsArtifact(getSDK().getCoreJar(), getSDK().sdkVersion));
         if (extension.getPlatformJar() != null) {
             project.getDependencies().add(JavaPlugin.COMPILE_CONFIGURATION_NAME,
-                    new SimpleFileCollection(extension.getPlatformJar()));
+                    FileUtils.getNameAsArtifact(getExtension().getPlatformJar(), getSDK().sdkVersion));
         }
         project.getDependencies().add(JavaPlugin.TEST_COMPILE_CONFIGURATION_NAME,
-                new SimpleFileCollection(getSDK().getJUnitJar()));
+                FileUtils.getNameAsArtifact(getSDK().getiOSJUnitJar(), getSDK().sdkVersion));
 
         // Install rules
         addRule(ProGuard.class, "Creates a ProGuarded jar.",
@@ -153,7 +164,7 @@ public class MoePlugin extends AbstractMoePlugin {
                         "moe.sdk.home=" + getSDK().getRoot() + "\n" +
                         "moe.sdk.coreJar=" + getSDK().getCoreJar() + "\n" +
                         "moe.sdk.platformJar=" + (platformJar == null ? "" : platformJar) + "\n" +
-                        "moe.sdk.junitJar=" + getSDK().getJUnitJar() + "\n" +
+                        "moe.sdk.junitJar=" + getSDK().getiOSJUnitJar() + "\n" +
                         "\n");
             });
         });

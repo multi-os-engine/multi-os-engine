@@ -121,4 +121,21 @@ public class FileUtils {
 
         return Paths.get(base.getAbsolutePath()).relativize(Paths.get(other.getAbsolutePath())).toFile();
     }
+
+    @NotNull
+    public static String getNameAsArtifact(@NotNull File file, @NotNull String version) {
+        Require.nonNull(file);
+        Require.nonNull(version);
+
+        final String name = file.getName();
+        final int idx = name.indexOf('.');
+        if (idx == -1) {
+            throw new GradleException("Unexpected state");
+
+        } else {
+            final String baseName = name.substring(0, idx);
+            final String ext = name.substring(idx + 1);
+            return "multi-os-engine:" + baseName + ":" + version + "@" + ext;
+        }
+    }
 }
