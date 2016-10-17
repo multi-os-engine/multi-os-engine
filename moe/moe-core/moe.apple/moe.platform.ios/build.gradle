@@ -47,6 +47,9 @@ task sourceJar(type: Jar) {
     baseName 'moe-ios'
     classifier = 'sources'
     from sourceSets.main.allSource
+    from(rootProject.external.natj.sources) {
+        include '**/*.java'
+    }
 }
 
 jar {

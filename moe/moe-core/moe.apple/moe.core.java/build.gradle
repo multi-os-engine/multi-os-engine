@@ -221,7 +221,7 @@ task coreSourcesJar(type: Jar, dependsOn: compileCoreJava) {
     classifier 'sources'
 
     from rootProject.file('LICENSE'), rootProject.file('NOTICE')
-    from sourceSets.core.allSource
+    from sourceSets.core.allJava
     destinationDir file('build/libs/core')
     from(file('../eula/LICENSE.TXT')) { into 'META-INF' }
 }

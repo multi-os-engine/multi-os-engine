@@ -18,7 +18,7 @@ import org.moe.prebuilts.Script
 
 apply plugin: 'base'
 
-version '1.2.1'
+version '1.2.3'
 
 allprojects {
     repositories {
@@ -38,6 +38,7 @@ ext {
     external.natj = [:]
     external.natj.root = file('../natj/natj').absolutePath
     external.natj.jar = file("${external.natj.root}/build/libs/natj-1.1.0.jar")
+    external.natj.sources = file("${external.natj.root}/src/main/java")
     external.natj.jnipath = file("${external.natj.root}/natj-mac/build/xcode/Release")
 }
 for (target in [[name: 'ios', outputs: ["${external.natj.root}/natj-ios/build/xcode/Release-iphoneos/libnatj.a",
