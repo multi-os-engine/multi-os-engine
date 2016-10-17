@@ -19,7 +19,7 @@ plugins {
 }
 
 group 'org.multi-os-engine'
-version '1.2.1'
+version '1.2.3'
 
 apply plugin: 'base'
 apply plugin: 'maven-publish'
@@ -59,8 +59,14 @@ def getSDKCopySpec() {
             from files(rootProject.external.moe_core.out.moe_core_jar) {
                 rename rootProject.external.moe_core.out.moe_core_jar.name, 'moe-core.jar'
             }
+            from files(rootProject.external.moe_core.out.moe_core_sources_jar) {
+                rename rootProject.external.moe_core.out.moe_core_sources_jar.name, 'moe-core-sources.jar'
+            }
             from files(rootProject.external.moe_core.out.moe_ios_jar) {
                 rename rootProject.external.moe_core.out.moe_ios_jar.name, 'moe-ios.jar'
+            }
+            from files(rootProject.external.moe_core.out.moe_ios_sources_jar) {
+                rename rootProject.external.moe_core.out.moe_ios_sources_jar.name, 'moe-ios-sources.jar'
             }
             from files(rootProject.external.moe_core.out.moe_ios_javadoc_jar) {
                 rename rootProject.external.moe_core.out.moe_ios_javadoc_jar.name, 'moe-ios-javadoc.jar'
