@@ -119,9 +119,11 @@ ext {
     external.moe_core.out = [:]
     external.moe_core.out.moe_ios_jar = file("${external.moe_core.root}/moe.apple/moe.platform.ios/build/libs/moe-ios.jar")
     external.moe_core.out.moe_ios_javadoc_jar = file("${external.moe_core.root}/moe.apple/moe.platform.ios/build/libs/moe-ios-javadoc.jar")
+    external.moe_core.out.moe_ios_sources_jar = file("${external.moe_core.root}/moe.apple/moe.platform.ios/build/libs/moe-ios-sources.jar")
     external.moe_core.out.moe_ios_junit_jar = file("${external.moe_core.root}/moe.apple/moe.platform.ios.junit/build/libs/moe.platform.ios.junit.jar")
     external.moe_core.out.moe_core_jar = file("${external.moe_core.root}/moe.apple/moe.core.java/build/libs/core/moe-core.jar")
     external.moe_core.out.moe_core_javadoc_jar = file("${external.moe_core.root}/moe.apple/moe.core.java/build/libs/core/moe-core-javadoc.jar")
+    external.moe_core.out.moe_core_sources_jar = file("${external.moe_core.root}/moe.apple/moe.core.java/build/libs/core/moe-core-sources.jar")
     external.moe_core.out.java8support_jar = file("${external.moe_core.root}/moe.apple/tools/java8support.jar")
     external.moe_core.out.preloaded_classes = file('../../../aosp/frameworks/base/preloaded-classes')
     external.moe_core.out.proguard_full_cfg = file("${external.moe_core.root}/moe.apple/tools/proguard-full.cfg")
