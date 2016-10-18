@@ -40,6 +40,23 @@ public abstract class NextStep {
         return null;
     }
 
+    public static Dictionary<Value, NextStep> readString(String content) throws NextStepException {
+        Tokenizer t;
+        try {
+            Parser p = new Parser(content);
+            t = new Tokenizer(p);
+        } catch (IOException e) {
+            throw new NextStepException(e);
+        }
+
+        Token token = t.peek();
+        if (token != null && token.kind == Token.Brace_open) {
+            return Dictionary.create(t);
+        }
+
+        return null;
+    }
+
     static NextStep get(Tokenizer t) throws NextStepException {
         Token token = t.peek();
         if (token == null) {

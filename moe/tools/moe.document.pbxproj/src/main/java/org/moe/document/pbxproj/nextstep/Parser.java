@@ -45,6 +45,10 @@ public class Parser {
         buffer = fileData.toString().toCharArray();
     }
 
+    public Parser(String content) throws IOException {
+        buffer = content.toCharArray();
+    }
+
     public char read() {
         return getNextChar();
     }

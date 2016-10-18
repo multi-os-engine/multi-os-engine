@@ -130,6 +130,32 @@ public class ProjectFile {
         build();
     }
 
+    public ProjectFile(String content) throws ProjectException {
+        if (content == null) {
+            throw new IllegalArgumentException("content cannot be null");
+        }
+
+        // Get project name
+        projectName = null;
+
+        // Read file
+        Dictionary<Value, NextStep> rootdict;
+        try {
+            rootdict = NextStep.readString(content);
+        } catch (NextStepException e) {
+            throw new ProjectException("Failed to parse file!");
+        }
+        if (rootdict == null) {
+            throw new ProjectException("Failed to parse file!");
+        }
+
+        // Set root
+        this.projectFile = null;
+        this.root = new Root(rootdict);
+
+        build();
+    }
+
     private final HashMap<String, Value> pbxobjects = new HashMap<String, Value>();
 
     private void build() {
