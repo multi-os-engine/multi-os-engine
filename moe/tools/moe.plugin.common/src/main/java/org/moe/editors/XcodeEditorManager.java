@@ -55,10 +55,13 @@ public class XcodeEditorManager {
     private File xcodeFile;
     private DocumentChangeListener documentChangeListener;
 
-    public XcodeEditorManager(File xcodeProjectFile, String content, DocumentChangeListener listener) throws ProjectException {
+    public XcodeEditorManager(File xcodeProjectFile, String content) throws ProjectException {
         this.xcodeFile = xcodeProjectFile;
-        this.documentChangeListener = listener;
         load(content);
+    }
+
+    public void setListener(DocumentChangeListener listener) {
+        this.documentChangeListener = listener;
     }
 
     public void load(String content) throws ProjectException {
@@ -606,6 +609,30 @@ public class XcodeEditorManager {
         testDebugXCBuildConfiguration.getOrCreateBuildSettings().replaceValue(new Value("PRODUCT_BUNDLE_IDENTIFIER"), new Value(id));
         if (documentChangeListener != null) {
             documentChangeListener.documentChanged();
+        }
+    }
+
+    public String getOrganizationName() {
+        Dictionary<Value, Value> attributes = pbxProject.getAttributesOrNull();
+        if (attributes != null) {
+            Value value = attributes.getValue(new Value("ORGANIZATIONNAME"));
+            return  value.value;
+        }
+        return "";
+    }
+
+    public void setOrganizationName(String name) {
+        Dictionary<Value, Value> attributes = pbxProject.getOrCreateAttributes();
+        if (attributes != null) {
+            Value value = attributes.getValue(new Value("ORGANIZATIONNAME"));
+            if (value != null) {
+                attributes.replaceValue(new Value("ORGANIZATIONNAME"), new Value(name));
+            } else {
+                attributes.add(new Value("ORGANIZATIONNAME"), new Value(name));
+            }
+            if (documentChangeListener != null) {
+                documentChangeListener.documentChanged();
+            }
         }
     }
 }
