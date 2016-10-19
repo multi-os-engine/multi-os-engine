@@ -16,11 +16,13 @@
 
 package org.moe.wizards;
 
+import org.moe.generator.project.MOEProjectComposer.Template;
+
 public class PageBasedProjectWizard extends AbstractProjectWizard {
 
 	@Override
-	protected TemplateType getTemplateType() {
-		return TemplateType.PageBased;
+	protected Template getTemplateType() {
+		return null;
 	}
 
 }

@@ -19,11 +19,9 @@ package org.moe.wizards;
 
 import java.io.File;
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.Observable;
 import java.util.Observer;
 
-import org.eclipse.jdt.internal.corext.util.Messages;
 import org.eclipse.core.resources.IProject;
 import org.eclipse.core.resources.IResource;
 import org.eclipse.core.resources.IWorkspace;
@@ -32,7 +30,6 @@ import org.eclipse.core.runtime.IPath;
 import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.Path;
 import org.eclipse.core.runtime.Platform;
-import org.eclipse.jdt.internal.junit.BasicElementLabels;
 import org.eclipse.jdt.internal.ui.JavaPlugin;
 import org.eclipse.jdt.internal.ui.wizards.NewWizardMessages;
 import org.eclipse.jdt.internal.ui.wizards.dialogfields.DialogField;
@@ -48,12 +45,10 @@ import org.eclipse.jface.wizard.WizardPage;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.layout.GridLayout;
-import org.eclipse.swt.widgets.Combo;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Control;
 import org.eclipse.swt.widgets.DirectoryDialog;
 import org.eclipse.swt.widgets.Group;
-import org.eclipse.swt.widgets.Label;
 
 @SuppressWarnings("restriction")
 public class ProjecrSettingsPage extends WizardPage {
@@ -61,7 +56,6 @@ public class ProjecrSettingsPage extends WizardPage {
 	private NameGroup nameGroup;
 	private LocationGroup locationGroup;
 	private Validator validator;
-	private Combo gradleVersionCombo;
 
 	protected ProjecrSettingsPage(String pageName) {
 		super(pageName);
@@ -102,24 +96,6 @@ public class ProjecrSettingsPage extends WizardPage {
 		gradleLayout.numColumns = 2;
 		pgradleGroup.setLayout(gradleLayout);
 
-		Label gradleVersionLabel = new Label(pgradleGroup, SWT.NONE);
-		gradleVersionLabel.setText("Gradle Version:");
-
-		gradleVersionCombo = new Combo(pgradleGroup, SWT.READ_ONLY);
-		gradleVersionCombo.setFont(parent.getFont());
-		gradleVersionCombo.setEnabled(true);
-
-		ArrayList<String> gradleVersions = new ArrayList<String>();
-		gradleVersions.add("2.14.1");
-		gradleVersions.add("3.0");
-
-		if (gradleVersions != null && !gradleVersions.isEmpty()) {
-			for (String s : gradleVersions) {
-				gradleVersionCombo.add(s);
-			}
-			gradleVersionCombo.setText("2.14.1");
-		}
-
 		setPageComplete(false);
 	}
 
@@ -148,10 +124,6 @@ public class ProjecrSettingsPage extends WizardPage {
 			throw new IllegalArgumentException();
 
 		nameGroup.setName(name);
-	}
-
-	public String getGradleVersion() {
-		return gradleVersionCombo.getText();
 	}
 
 	public boolean isUseDefault() {
@@ -187,10 +159,6 @@ public class ProjecrSettingsPage extends WizardPage {
 
 		public String getName() {
 			return fNameField.getText().trim();
-		}
-
-		public void postSetFocus() {
-			fNameField.postSetFocusOnDialogField(getShell().getDisplay());
 		}
 
 		public void setName(String name) {

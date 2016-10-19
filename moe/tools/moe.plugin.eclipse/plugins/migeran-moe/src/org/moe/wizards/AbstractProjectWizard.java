@@ -28,15 +28,14 @@ import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IPath;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.core.runtime.Path;
-import org.eclipse.core.runtime.Platform;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.jface.wizard.Wizard;
 import org.eclipse.ui.INewWizard;
 import org.eclipse.ui.IWorkbench;
 import org.eclipse.ui.actions.WorkspaceModifyOperation;
-import org.moe.generator.project.Generator;
-import org.moe.generator.project.ProjectTemplate;
-import org.moe.generator.project.config.Configuration;
+import org.moe.generator.project.MOEProjectComposer;
+import org.moe.generator.project.MOEProjectComposer.MOEProjectComposerException;
+import org.moe.generator.project.MOEProjectComposer.Template;
 import org.moe.gradle.GradleTask;
 import org.moe.utils.MessageFactory;
 
@@ -44,14 +43,13 @@ public abstract class AbstractProjectWizard extends Wizard implements INewWizard
 
 	private XcodeWizardPage xcodeWizardPage;
 	private ProjecrSettingsPage projectSettingsPage;
-	private String mainClassName = "Main";
 	private String error = null;
 
 	public enum TemplateType {
 		MasterDetail, PageBased, SingleView, Tabbed, Game
 	}
 
-	protected abstract TemplateType getTemplateType();
+	protected abstract Template getTemplateType();
 
 	public AbstractProjectWizard() {
 		super();
@@ -63,31 +61,27 @@ public abstract class AbstractProjectWizard extends Wizard implements INewWizard
 	public boolean performFinish() {
 
 		error = null;
-
-		final ProjectTemplate projectTemplate = new ProjectTemplate();
-
+		
+		final MOEProjectComposer projectComposer = new MOEProjectComposer();
+		
 		String organizationName = xcodeWizardPage.getOrganizationName();
-		String productName = xcodeWizardPage.getProductName();
 
-		String packageName = "com." + organizationName + "." + productName;
-		packageName = packageName.replace(" ", "").trim().toLowerCase();
+		String packageName = xcodeWizardPage.getPackageName();
 
 		IWorkspace workspace = ResourcesPlugin.getWorkspace();
 		IPath projectPath = projectSettingsPage.getProjectLocationPath();
 		IPath path = projectPath == null ? workspace.getRoot().getLocation() : projectPath;
 		final String projectName = projectSettingsPage.getProjectName();
 		final File projectFile = projectSettingsPage.isUseDefault() ? new File(path.toOSString() , projectName) : new File(path.toOSString());
-
-		projectTemplate.rootPath(projectFile.getAbsolutePath()).packageName(packageName).projectName(productName)
-				.organizationName(organizationName).companyIdentifier(xcodeWizardPage.getCompanyIdentifier())
-				.mainClassName(mainClassName).keepXcode(true)
-				.xcodeProjectPath("xcode").useEclipse(true);
-
-		Configuration configuartion = new Configuration("1.2.+");
-		configuartion.setProjectRoot(projectFile);
-		configuartion.setGradleVersion(projectSettingsPage.getGradleVersion());
-
-		final Generator projectGenerator = new Generator(configuartion);
+		
+		projectComposer.setTargetDirectory(projectFile)
+        .setMoeVersion("1.3.+")
+        .setProjectName(projectName)
+        .setOrganizationName(organizationName)
+        .setOrganizationID(xcodeWizardPage.getCompanyIdentifier())
+        .setPackageName(packageName)
+        .setSubproject(false)
+        .setTemplate(getTemplateType());
 
 		WorkspaceModifyOperation workspaceModifiy = new WorkspaceModifyOperation() {
 
@@ -95,17 +89,16 @@ public abstract class AbstractProjectWizard extends Wizard implements INewWizard
 			protected void execute(IProgressMonitor monitor)
 					throws CoreException, InvocationTargetException, InterruptedException {
 
-				try {
-					projectGenerator.createGradleWrapper();
-				} catch (Exception e) {
-					throw new CoreException(MessageFactory.getError("Unable create gradle wrapper", e));
-				}
 				monitor.worked(1);
 
 				monitor.beginTask("Create project...", 4);
 
-				projectTemplate.createProject(getTemplateType().toString().toLowerCase() + ".zip", "1.2.+",
-						false);
+				try {
+					projectComposer.compose();
+				} catch (MOEProjectComposerException e) {
+					throw new CoreException(MessageFactory.getError("Generator error", e));
+				}
+				
 				monitor.worked(1);
 
 				int gradleResult = -1;

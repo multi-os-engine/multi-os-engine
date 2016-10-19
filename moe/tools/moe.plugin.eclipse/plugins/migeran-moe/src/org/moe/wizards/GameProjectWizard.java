@@ -16,11 +16,13 @@
 
 package org.moe.wizards;
 
+import org.moe.generator.project.MOEProjectComposer.Template;
+
 public class GameProjectWizard extends AbstractProjectWizard {
 
 	@Override
-	protected TemplateType getTemplateType() {
-		return TemplateType.Game;
+	protected Template getTemplateType() {
+		return Template.IOS_JAVA_GAME;
 	}
 
 }

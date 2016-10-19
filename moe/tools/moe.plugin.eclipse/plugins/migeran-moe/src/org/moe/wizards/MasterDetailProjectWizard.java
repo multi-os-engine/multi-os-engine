@@ -16,11 +16,13 @@
 
 package org.moe.wizards;
 
+import org.moe.generator.project.MOEProjectComposer.Template;
+
 public class MasterDetailProjectWizard extends AbstractProjectWizard {
 
 	@Override
-	protected TemplateType getTemplateType() {
-		return TemplateType.MasterDetail;
+	protected Template getTemplateType() {
+		return Template.IOS_JAVA_MASTER_DETAIL;
 	}
 
 }

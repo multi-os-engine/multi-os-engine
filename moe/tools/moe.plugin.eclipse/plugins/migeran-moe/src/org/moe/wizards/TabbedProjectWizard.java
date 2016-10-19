@@ -16,11 +16,13 @@
 
 package org.moe.wizards;
 
+import org.moe.generator.project.MOEProjectComposer.Template;
+
 public class TabbedProjectWizard extends AbstractProjectWizard {
 
 	@Override
-	protected TemplateType getTemplateType() {
-		return TemplateType.Tabbed;
+	protected Template getTemplateType() {
+		return null;
 	}
 
 }

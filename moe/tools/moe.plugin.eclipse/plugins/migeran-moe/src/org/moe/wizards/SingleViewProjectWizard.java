@@ -16,11 +16,13 @@
 
 package org.moe.wizards;
 
+import org.moe.generator.project.MOEProjectComposer.Template;
+
 public class SingleViewProjectWizard extends AbstractProjectWizard {
 
 	@Override
-	protected TemplateType getTemplateType() {
-		return TemplateType.SingleView;
+	protected Template getTemplateType() {
+		return Template.IOS_JAVA_SINGLE_VIEW;
 	}
 
 }
