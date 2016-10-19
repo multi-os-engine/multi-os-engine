@@ -16,6 +16,15 @@ limitations under the License.
 
 import org.moe.prebuilts.Script
 
+apply plugin: 'idea'
+
+idea {
+    module {
+        excludeDirs += file('llvm')
+        excludeDirs += file('mingw')
+    }
+}
+
 task prebuildAll << {}
 
 task cleanAll << {
@@ -216,16 +225,27 @@ task mingwPresence << {
 task llvm(type: Script) {
     progress 'Checking brew dependencies'
     def BREW_CMAKE = checkDir '/usr/local/opt/cmake'
-    def isNew = !file('llvm/macos/Makefile').exists()
+    def isNew = !file('build/llvm/macos/Makefile').exists()
 
     progress 'Creating LLVM makefiles'
-    rawWorkDir 'llvm/macos'
+    workDir 'llvm/macos'
     if (isNew) {
-        exec 'cmake', '-DCMAKE_BUILD_TYPE=MinSizeRel', '-G', 'Unix Makefiles', file('../external/llvm').absolutePath
+        exec 'cmake',
+                '-DCMAKE_BUILD_TYPE=MinSizeRel',
+                '-DCMAKE_INSTALL_PREFIX=' + file('llvm/macos').absolutePath,
+                '-DLLVM_TARGETS_TO_BUILD=AArch64;ARM;X86',
+                '-DLLVM_BUILD_TOOLS=OFF',
+                '-DLLVM_BUILD_EXAMPLES=OFF',
+                '-G', 'Unix Makefiles',
+                file('../external/llvm').absolutePath
     }
 
     progress 'Building LLVM'
     exec 'make', "-j${Runtime.getRuntime().availableProcessors()}"
+    exec 'make', 'install'
+
+    exec 'make', 'llvm-config'
+    exec 'cp', 'bin/llvm-config', file('llvm/macos/bin/llvm-config').absolutePath
 }
 
 task llvmPresence << {
