@@ -14,15 +14,28 @@ See the License for the specific language governing permissions and
 limitations under the License.
 */
 
+buildscript {
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        classpath "org.jfrog.buildinfo:build-info-extractor-gradle:4.0.0"
+    }
+}
+
 plugins {
     id "com.jfrog.bintray" version "1.7"
 }
 
 group 'org.multi-os-engine'
-version '1.2.3'
+version '1.3.0'
 
 apply plugin: 'base'
 apply plugin: 'maven-publish'
+
+if (rootProject.hasProperty('artifactory.url')) {
+    apply plugin: "com.jfrog.artifactory"
+}
 
 tasks.build.dependsOn ':ext_natj_mac'
 tasks.build.dependsOn ':ext_natj_win'
@@ -170,10 +183,33 @@ bintray {
     }
 }
 
+if (rootProject.hasProperty('artifactory.url')) {
+    artifactory {
+        contextUrl = rootProject.getProperty('artifactory.url')
+        publish {
+            repository {
+                repoKey = rootProject.getProperty('artifactory.key')
+                username = rootProject.getProperty('artifactory.user')
+                password = rootProject.getProperty('artifactory.pass')
+            }
+            defaults {
+                publications('mavenJavaSnapshot')
+                publishArtifacts = true
+                publishPom = true
+                publishIvy = true
+            }
+        }
+    }
+}
+
 publishing {
     publications {
         mavenJava(MavenPublication) {
             artifact sdk {}
+        }
+        mavenJavaSnapshot(MavenPublication) {
+            artifact sdk {}
+            version = "${project.version}-SNAPSHOT"
         }
     }
 }
