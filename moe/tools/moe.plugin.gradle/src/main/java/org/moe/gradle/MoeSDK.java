@@ -24,6 +24,7 @@ import org.gradle.api.artifacts.Configuration;
 import org.gradle.api.artifacts.ExternalDependency;
 import org.gradle.api.artifacts.UnknownConfigurationException;
 import org.gradle.api.artifacts.repositories.ArtifactRepository;
+import org.gradle.api.plugins.ExtraPropertiesExtension;
 import org.moe.gradle.anns.IgnoreUnused;
 import org.moe.gradle.anns.NotNull;
 import org.moe.gradle.anns.Nullable;
@@ -148,16 +149,42 @@ public class MoeSDK {
         }
 
         // Check for pre-installed SDK
-        final Path SDK_PATH = USER_MOE_HOME.resolve("moe-sdk-" + sdkVersion);
-        if (SDK_PATH.toFile().exists()) {
+        final String optionalSnapshotSuffix;
+        if (moeUseSnapshot(project)) {
+            optionalSnapshotSuffix = "-SNAPSHOT";
+        } else {
+            optionalSnapshotSuffix = "";
+        }
+        final Path SDK_PATH = USER_MOE_HOME.resolve("moe-sdk-" + sdkVersion + optionalSnapshotSuffix);
+        if (SDK_PATH.toFile().exists() && optionalSnapshotSuffix.length() == 0) {
             sdk.validateCompleteSDK(SDK_PATH, false);
             sdk.bakeSDKPaths(SDK_PATH);
             return sdk;
         }
 
+        // Get or create configuration
+        final File file = sdk.downloadSDK(project, sdkVersion + optionalSnapshotSuffix);
+
+        // Calculate MD5 on SDK
+        final AtomicReference<String> sdkCalculatedMD5Ref = new AtomicReference<>();
+        final boolean sdkUpToDate = checkComponentUpToDate(file, SDK_PATH.resolve("sdk.md5").toFile(), sdkCalculatedMD5Ref);
+        if (SDK_PATH.toFile().exists() && optionalSnapshotSuffix.length() > 0) {
+            if (sdkUpToDate) {
+                sdk.validateCompleteSDK(SDK_PATH, false);
+                sdk.bakeSDKPaths(SDK_PATH);
+                return sdk;
+            } else {
+                try {
+                    FileUtils.deleteFileOrFolder(SDK_PATH);
+                } catch (IOException e) {
+                    throw new GradleException("Failed to remote directory at " + SDK_PATH.toFile().getAbsolutePath(), e);
+                }
+            }
+        }
+
         // Prepare temp dir by removing old tmp directory and re-creating it
         System.out.println("Installing MOE SDK, this may take a few minutes...");
-        final Path TEMP_SDK_PATH = USER_MOE_HOME.resolve("moe-sdk-" + sdkVersion + ".tmp");
+        final Path TEMP_SDK_PATH = USER_MOE_HOME.resolve("moe-sdk-" + sdkVersion + optionalSnapshotSuffix + ".tmp");
         if (TEMP_SDK_PATH.toFile().exists()) {
             try {
                 FileUtils.deleteFileOrFolder(TEMP_SDK_PATH);
@@ -168,9 +195,6 @@ public class MoeSDK {
         if (!TEMP_SDK_PATH.toFile().mkdir()) {
             throw new GradleException("Failed to create directory at " + TEMP_SDK_PATH);
         }
-
-        // Get or create configuration
-        final File file = sdk.downloadSDK(project, sdkVersion);
 
         // Extract zip into the temp directory
         project.copy(spec -> {
@@ -184,12 +208,30 @@ public class MoeSDK {
         // Process SDK
         sdk.completePartialSDK(project, TEMP_SDK_PATH, false);
 
+        // Write SDK MD5
+        FileUtils.write(TEMP_SDK_PATH.resolve("sdk.md5").toFile(), sdkCalculatedMD5Ref.get());
+
         // Move the SDK into place
         if (!TEMP_SDK_PATH.toFile().renameTo(SDK_PATH.toFile())) {
             throw new GradleException("Failed to move the MOE SDK into its final place");
         }
         sdk.bakeSDKPaths(SDK_PATH);
         return sdk;
+    }
+
+    private static boolean moeUseSnapshot(@NotNull Project project) {
+        final ExtraPropertiesExtension extraProperties = project.getExtensions().getExtraProperties();
+        if (!extraProperties.has("moeUseSnapshot")) {
+            return false;
+        }
+        final Object moeUseSnapshot = extraProperties.get("moeUseSnapshot");
+        if (moeUseSnapshot == null) {
+            throw new GradleException("'moeUseSnapshot' property cannot be null");
+        }
+        if (!(moeUseSnapshot instanceof Boolean)) {
+            throw new GradleException("'moeUseSnapshot' property must be a boolean");
+        }
+        return (Boolean)moeUseSnapshot;
     }
 
     private void completePartialSDK(@NotNull Project project, @NotNull Path path, boolean isLocalSDK) {
@@ -347,7 +389,7 @@ public class MoeSDK {
         validateCompleteSDK(path, isLocalSDK);
     }
 
-    private boolean checkComponentUpToDate(File input, File md5file, AtomicReference<String> out) {
+    private static boolean checkComponentUpToDate(File input, File md5file, AtomicReference<String> out) {
         final String calculatedMD5;
         try {
             calculatedMD5 = DigestUtils.md5Hex(new FileInputStream(input)).trim();
