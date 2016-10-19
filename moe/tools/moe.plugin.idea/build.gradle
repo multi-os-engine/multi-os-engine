@@ -44,6 +44,7 @@ dependencies {
     compile project(':moe.document.xib')
     compile project(':moe.generator.project')
     compile project(':moe.tools.natjgen')
+    compile project(':moe.plugin.common')
     testCompile group: 'junit', name: 'junit', version: '4.12'
 }
 

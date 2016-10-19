@@ -42,6 +42,13 @@
               serviceImplementation="org.moe.idea.MOEGlobalSettings"/>
 
       <applicationConfigurable instance="org.moe.idea.MOEGlobalSearchableConfigurable" groupId="tools"/>
+
+      <applicationService
+              serviceInterface="org.moe.idea.fileTypes.MOEFileTypeFactory"
+              serviceImplementation="org.moe.idea.fileTypes.MOEFileTypeFactory"/>
+      <fileTypeFactory implementation="org.moe.idea.fileTypes.MOEFileTypeFactory"/>
+
+      <fileEditorProvider implementation="org.moe.idea.editors.XcodeProjectEditorProvider"/>
   </extensions>
 
     <project-components>
@@ -97,6 +104,11 @@
           <action id="MOE.GenerateBinding" class="org.moe.idea.actions.MOEGenerateBindingAction"
                   text="Generate Bindings"
                   description="Generate Bindings"/>
+
+          <action id="org.moe.idea.MOEOpenXcodeEditorAction"
+                  class="org.moe.idea.actions.MOEOpenXcodeEditorAction"
+                  text="Open Xcode Editor"
+                  description="Open Xcode project settings editor"/>
 
          <!-- <action id="MOE.SynchronizeToXcode"
                   class="org.moe.idea.actions.SynchronizeToXcodeAction"
