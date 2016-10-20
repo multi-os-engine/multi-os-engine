@@ -16,41 +16,17 @@ limitations under the License.
 
 package org.moe.idea.ui;
 
-import com.dd.plist.PropertyListFormatException;
-import com.intellij.openapi.application.ApplicationManager;
-import com.intellij.openapi.command.CommandProcessor;
 import com.intellij.openapi.diagnostic.Logger;
-import com.intellij.openapi.fileEditor.FileDocumentManager;
-import com.intellij.openapi.project.Project;
-import com.intellij.openapi.vfs.VirtualFile;
-import com.intellij.openapi.vfs.VirtualFileAdapter;
-import com.intellij.openapi.vfs.VirtualFileManager;
 import com.intellij.ui.DocumentAdapter;
-import org.jetbrains.annotations.NotNull;
-import org.moe.document.pbxproj.*;
-import org.moe.document.pbxproj.nextstep.Array;
-import org.moe.document.pbxproj.nextstep.Dictionary;
-import org.moe.document.pbxproj.nextstep.NextStep;
-import org.moe.document.pbxproj.nextstep.Value;
-import org.moe.editors.DocumentChangeListener;
 import org.moe.editors.EditorUtil;
 import org.moe.editors.InfoPlistManager;
 import org.moe.editors.XcodeEditorManager;
 import org.moe.idea.utils.logger.LoggerFactory;
-import org.mozilla.javascript.commonjs.module.Require;
-import org.xml.sax.SAXException;
 
 import javax.swing.*;
 import javax.swing.event.DocumentEvent;
-import javax.swing.text.Document;
-import javax.swing.text.html.HTMLEditorKit;
-import javax.swing.text.html.StyleSheet;
-import javax.xml.parsers.ParserConfigurationException;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.io.File;
-import java.io.IOException;
-import java.text.ParseException;
 import java.util.Map;
 
 public class XcodeEditorForm {
@@ -69,6 +45,8 @@ public class XcodeEditorForm {
     private JComboBox deploymentComboBox;
     private JComboBox devicesComboBox;
     private JTextField organizationTextField;
+    private AppIconsAndLaunchImages appIconsAndLaunchImagesMain;
+    private AppIconsAndLaunchImages appIconsAndLaunchImagesTest;
 
     private XcodeEditorManager xcodeEditorManager;
     private Map<String, String> devices;
@@ -138,6 +116,8 @@ public class XcodeEditorForm {
         testDeploymentInfo.init(false, xcodeEditorManager, testInfoPlistManager);
         mainLinkedFrameworks.init(true, xcodeEditorManager);
         testLinkedFrameworks.init(false, xcodeEditorManager);
+        appIconsAndLaunchImagesMain.init(xcodeEditorManager, mainInfoPlistManager);
+        appIconsAndLaunchImagesTest.init(xcodeEditorManager, testInfoPlistManager);
         inited = true;
     }
 

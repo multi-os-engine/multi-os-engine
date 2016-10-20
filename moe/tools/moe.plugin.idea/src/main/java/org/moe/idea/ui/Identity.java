@@ -24,7 +24,8 @@ import org.moe.idea.utils.logger.LoggerFactory;
 
 import javax.swing.*;
 import javax.swing.event.DocumentEvent;
-import java.io.IOException;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class Identity extends JPanel {
 
@@ -36,6 +37,7 @@ public class Identity extends JPanel {
     private JPanel contentPane;
     private JTextField productNameTextField;
     private JTextField mainClassTextField;
+    private JCheckBox copyCACertificatesCheckBox;
 
     private InfoPlistManager infoPlistManager;
     private XcodeEditorManager xcodeEditorManager;
@@ -97,6 +99,19 @@ public class Identity extends JPanel {
                 }
             }
         });
+
+        copyCACertificatesCheckBox.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if (inited) {
+                    if (mainTarget) {
+                        xcodeEditorManager.setCopyAndroidCertsMain(copyCACertificatesCheckBox.isSelected());
+                    } else {
+                        xcodeEditorManager.setCopyAndroidCertsTest(copyCACertificatesCheckBox.isSelected());
+                    }
+                }
+            }
+        });
     }
 
     public void init(boolean mainTarget, XcodeEditorManager xcodeEditorManager, InfoPlistManager infoPlistManager) {
@@ -128,6 +143,9 @@ public class Identity extends JPanel {
         if (!mainClassTextField.getText().equals(mainClass)) {
             mainClassTextField.setText(mainClass);
         }
+
+        boolean copyCA = mainTarget ? xcodeEditorManager.isCopyAndroidCertsMain() : xcodeEditorManager.isCopyAndroidCertsTest();
+        copyCACertificatesCheckBox.setSelected(copyCA);
         inited = true;
     }
 

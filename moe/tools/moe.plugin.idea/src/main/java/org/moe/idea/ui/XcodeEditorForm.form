@@ -114,7 +114,7 @@
                 <properties/>
                 <border type="none"/>
                 <children>
-                  <grid id="52026" layout-manager="GridLayoutManager" row-count="3" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+                  <grid id="52026" layout-manager="GridLayoutManager" row-count="4" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
                     <margin top="0" left="0" bottom="0" right="0"/>
                     <constraints/>
                     <properties/>
@@ -132,6 +132,11 @@
                       </nested-form>
                       <nested-form id="62f1b" form-file="org/moe/idea/ui/LinkedFrameworksForm.form" binding="mainLinkedFrameworks">
                         <constraints>
+                          <grid row="3" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+                        </constraints>
+                      </nested-form>
+                      <nested-form id="3f8e8" form-file="org/moe/idea/ui/AppIconsAndLaunchImages.form" binding="appIconsAndLaunchImagesMain">
+                        <constraints>
                           <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
                         </constraints>
                       </nested-form>
@@ -146,7 +151,7 @@
                 <properties/>
                 <border type="none"/>
                 <children>
-                  <grid id="2732d" layout-manager="GridLayoutManager" row-count="3" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+                  <grid id="2732d" layout-manager="GridLayoutManager" row-count="4" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
                     <margin top="0" left="0" bottom="0" right="0"/>
                     <constraints/>
                     <properties/>
@@ -163,6 +168,11 @@
                         </constraints>
                       </nested-form>
                       <nested-form id="8d792" form-file="org/moe/idea/ui/LinkedFrameworksForm.form" binding="testLinkedFrameworks">
+                        <constraints>
+                          <grid row="3" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+                        </constraints>
+                      </nested-form>
+                      <nested-form id="1a3ad" form-file="org/moe/idea/ui/AppIconsAndLaunchImages.form" binding="appIconsAndLaunchImagesTest">
                         <constraints>
                           <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
                         </constraints>
