@@ -40,6 +40,14 @@ public class XcodeEditorManager {
     public static final String DEVICE_IPAD_KEY = "iPad";
     public static final String DEVICE_UNIVERSAL_KEY = "Universal";
     public static final String[] DEPLOYMENT_TARGET_SUGGESTED_VALUES = {"8.0", "8.1", "8.2", "8.3", "8.4", "9.0", "9.1", "9.2", "9.3", "10.0"};
+    public static final String PRODUCT_BUNDLE_ID_KEY = "PRODUCT_BUNDLE_IDENTIFIER";
+    public static final String ORGANIZATIONNAME_KEY = "ORGANIZATIONNAME";
+    public static final String STORYBOARD_FILE = ".storyboard";
+    public static final String XIB_FILE = ".xib";
+    public static final String PLIST_FILE = ".plist";
+    public static final String MOE_COPY_ANDROID_CACERTS_KEY = "MOE_COPY_ANDROID_CACERTS";
+    public static final String ANDROID_CACERTS_YES = "YES";
+    public static final String ANDROID_CACERTS_NO = "NO";
 
     private ProjectFile projectFile;
     private PBXNativeTarget mainTarget;
@@ -111,7 +119,7 @@ public class XcodeEditorManager {
     }
 
     public void setMainTargetName(String name) {
-        if (getMainTargetName().equals(name)) {
+        if (getMainTargetName() != null && getMainTargetName().equals(name)) {
             return;
         }
         mainTarget.setName(name);
@@ -125,7 +133,7 @@ public class XcodeEditorManager {
     }
 
     public void setTestTargetName(String name) {
-        if (getTestTargetName().equals(name)) {
+        if (getTestTargetName() != null && getTestTargetName().equals(name)) {
             return;
         }
         testTarget.setName(name);
@@ -154,224 +162,102 @@ public class XcodeEditorManager {
     }
 
     public String getDefaultDeploymentTarget() {
-        Value nextStep = (Value) defaultReleaseXCBuildConfiguration.getOrCreateBuildSettings().getValue(new Value(DEPLOYMENT_KEY));
-        if (nextStep != null) {
-            return nextStep.value;
-        }
-        return "";
+        String value = getBuildSettingsValueWithKey(defaultReleaseXCBuildConfiguration, DEPLOYMENT_KEY);
+        value = value == null ? getBuildSettingsValueWithKey(defaultDebugXCBuildConfiguration, DEPLOYMENT_KEY) : value;
+        return value;
     }
 
     public void setDefaultDeploymentTarget(String target) {
-        if (getDefaultDeploymentTarget().equals(target)) {
+        if (getDefaultDeploymentTarget() != null && getDefaultDeploymentTarget().equals(target)) {
             return;
         }
-        Dictionary<Value, NextStep> buildSettings = defaultReleaseXCBuildConfiguration.getOrCreateBuildSettings();
-        Value key = new Value(DEPLOYMENT_KEY);
-        NextStep nextStep = buildSettings.getValue(key);
-        if (nextStep != null) {
-            buildSettings.replaceValue(key, new Value(target));
-        } else {
-            buildSettings.add(key, new Value(target));
-        }
-
-        buildSettings = defaultDebugXCBuildConfiguration.getOrCreateBuildSettings();
-        nextStep = buildSettings.getValue(key);
-        if (nextStep != null) {
-            buildSettings.replaceValue(key, new Value(target));
-        } else {
-            buildSettings.add(key, new Value(target));
-        }
+        setBuildSettingsWithKeyAndValue(defaultReleaseXCBuildConfiguration, DEPLOYMENT_KEY, target);
+        setBuildSettingsWithKeyAndValue(defaultDebugXCBuildConfiguration, DEPLOYMENT_KEY, target);
         if (documentChangeListener != null) {
             documentChangeListener.documentChanged();
         }
     }
 
     public String getMainDeploymentTarget() {
-        if (mainReleaseXCBuildConfiguration == null) {
-            return null;
-        }
-        Value nextStep = (Value) mainReleaseXCBuildConfiguration.getOrCreateBuildSettings().getValue(new Value(DEPLOYMENT_KEY));
-        if (nextStep != null) {
-            return nextStep.value;
-        }
-        return null;
+        String value = getBuildSettingsValueWithKey(mainReleaseXCBuildConfiguration, DEPLOYMENT_KEY);
+        value = value == null ? getBuildSettingsValueWithKey(mainDebugXCBuildConfiguration, DEPLOYMENT_KEY) : value;
+        return value;
     }
 
     public void setMainDeploymentTarget(String target) {
-        if (mainReleaseXCBuildConfiguration == null) {
+        if (getMainDeploymentTarget() != null && getMainDeploymentTarget().equals(target)) {
             return;
         }
-        Dictionary<Value, NextStep> buildSettings = mainReleaseXCBuildConfiguration.getOrCreateBuildSettings();
-        Value key = new Value(DEPLOYMENT_KEY);
-        NextStep nextStep = buildSettings.getValue(key);
-        if (nextStep != null) {
-            buildSettings.replaceValue(key, new Value(target));
-        } else {
-            buildSettings.add(key, new Value(target));
-        }
-
-        if (mainDebugXCBuildConfiguration == null) {
-            return;
-        }
-        buildSettings = mainDebugXCBuildConfiguration.getOrCreateBuildSettings();
-        nextStep = buildSettings.getValue(key);
-        if (nextStep != null) {
-            buildSettings.replaceValue(key, new Value(target));
-        } else {
-            buildSettings.add(key, new Value(target));
-        }
+        setBuildSettingsWithKeyAndValue(mainReleaseXCBuildConfiguration, DEPLOYMENT_KEY, target);
+        setBuildSettingsWithKeyAndValue(mainDebugXCBuildConfiguration, DEPLOYMENT_KEY, target);
         if (documentChangeListener != null) {
             documentChangeListener.documentChanged();
         }
     }
 
     public String getTestDeploymentTarget() {
-        if (testReleaseXCBuildConfiguration == null) {
-            return null;
-        }
-        Value nextStep = (Value) testReleaseXCBuildConfiguration.getOrCreateBuildSettings().getValue(new Value(DEPLOYMENT_KEY));
-        if (nextStep != null) {
-            return nextStep.value;
-        }
-
-        return null;
+        String value = getBuildSettingsValueWithKey(testReleaseXCBuildConfiguration, DEPLOYMENT_KEY);
+        value = value == null ? getBuildSettingsValueWithKey(testDebugXCBuildConfiguration, DEPLOYMENT_KEY) : value;
+        return value;
     }
 
     public void setTestDeploymentTarget(String target) {
-        if (testReleaseXCBuildConfiguration == null) {
+        if (getTestDeploymentTarget() != null && getTestDeploymentTarget().equals(target)) {
             return;
         }
-        Dictionary<Value, NextStep> buildSettings = testReleaseXCBuildConfiguration.getOrCreateBuildSettings();
-        Value key = new Value(DEPLOYMENT_KEY);
-        NextStep nextStep = buildSettings.getValue(key);
-        if (nextStep != null) {
-            buildSettings.replaceValue(key, new Value(target));
-        } else {
-            buildSettings.add(key, new Value(target));
-        }
-
-        if (testDebugXCBuildConfiguration == null) {
-            return;
-        }
-        buildSettings = testDebugXCBuildConfiguration.getOrCreateBuildSettings();
-        nextStep = buildSettings.getValue(key);
-        if (nextStep != null) {
-            buildSettings.replaceValue(key, new Value(target));
-        } else {
-            buildSettings.add(key, new Value(target));
-        }
+        setBuildSettingsWithKeyAndValue(testReleaseXCBuildConfiguration, DEPLOYMENT_KEY, target);
+        setBuildSettingsWithKeyAndValue(testDebugXCBuildConfiguration, DEPLOYMENT_KEY, target);
         if (documentChangeListener != null) {
             documentChangeListener.documentChanged();
         }
     }
 
     public String getDefaultDevices() {
-        Value nextStep = (Value) defaultReleaseXCBuildConfiguration.getOrCreateBuildSettings().getValue(new Value(DEVICE_KEY));
-        if (nextStep != null) {
-            return nextStep.toString();
-        }
-        return "";
+        String value = getBuildSettingsValueWithKey(defaultReleaseXCBuildConfiguration, DEVICE_KEY);
+        value = value == null ? getBuildSettingsValueWithKey(defaultDebugXCBuildConfiguration, DEVICE_KEY) : value;
+        return value;
     }
 
     public void setDefaultDevices(String device) {
-        if (getDefaultDevices().equals(device)) {
+        if (getDefaultDevices() != null && getDefaultDevices().equals(device)) {
             return;
         }
-        Dictionary<Value, NextStep> buildSettings = defaultReleaseXCBuildConfiguration.getOrCreateBuildSettings();
-        Value key = new Value(DEVICE_KEY);
-        NextStep nextStep = buildSettings.getValue(key);
-        if (nextStep != null) {
-            buildSettings.replaceValue(key, new Value(device));
-        } else {
-            buildSettings.add(key, new Value(device));
-        }
-        buildSettings = defaultDebugXCBuildConfiguration.getOrCreateBuildSettings();
-        nextStep = buildSettings.getValue(key);
-        if (nextStep != null) {
-            buildSettings.replaceValue(key, new Value(device));
-        } else {
-            buildSettings.add(key, new Value(device));
-        }
+        setBuildSettingsWithKeyAndValue(defaultReleaseXCBuildConfiguration, DEVICE_KEY, device);
+        setBuildSettingsWithKeyAndValue(defaultDebugXCBuildConfiguration, DEVICE_KEY, device);
         if (documentChangeListener != null) {
             documentChangeListener.documentChanged();
         }
     }
 
     public String getMainDevices() {
-        if (mainReleaseXCBuildConfiguration == null) {
-            return null;
-        }
-        Value nextStep = (Value) mainReleaseXCBuildConfiguration.getOrCreateBuildSettings().getValue(new Value(DEVICE_KEY));
-        if (nextStep != null) {
-            return nextStep.value;
-        }
-        return null;
+        String value = getBuildSettingsValueWithKey(mainReleaseXCBuildConfiguration, DEVICE_KEY);
+        value = value == null ? getBuildSettingsValueWithKey(mainDebugXCBuildConfiguration, DEVICE_KEY) : value;
+        return value;
     }
 
     public void setMainDevices(String target) {
-        if (getMainDevices().equals(target)) {
+        if (getMainDevices() != null && getMainDevices().equals(target)) {
             return;
         }
-        if (mainReleaseXCBuildConfiguration == null) {
-            return;
-        }
-        Dictionary<Value, NextStep> buildSettings = mainReleaseXCBuildConfiguration.getOrCreateBuildSettings();
-        Value key = new Value(DEVICE_KEY);
-        NextStep nextStep = buildSettings.getValue(key);
-        if (nextStep != null) {
-            buildSettings.replaceValue(key, new Value(target));
-        } else {
-            buildSettings.add(key, new Value(target));
-        }
-
-        if (mainDebugXCBuildConfiguration == null) {
-            return;
-        }
-        buildSettings = mainDebugXCBuildConfiguration.getOrCreateBuildSettings();
-        nextStep = buildSettings.getValue(key);
-        if (nextStep != null) {
-            buildSettings.replaceValue(key, new Value(target));
-        } else {
-            buildSettings.add(key, new Value(target));
-        }
+        setBuildSettingsWithKeyAndValue(mainReleaseXCBuildConfiguration, DEVICE_KEY, target);
+        setBuildSettingsWithKeyAndValue(mainDebugXCBuildConfiguration, DEVICE_KEY, target);
         if (documentChangeListener != null) {
             documentChangeListener.documentChanged();
         }
     }
 
     public String getTestDevices() {
-        if (testReleaseXCBuildConfiguration == null) {
-            return null;
-        }
-        Value nextStep = (Value) testReleaseXCBuildConfiguration.getOrCreateBuildSettings().getValue(new Value(DEVICE_KEY));
-        if (nextStep != null) {
-            return nextStep.value;
-        }
-        return null;
+        String value = getBuildSettingsValueWithKey(testReleaseXCBuildConfiguration, DEVICE_KEY);
+        value = value == null ? getBuildSettingsValueWithKey(testDebugXCBuildConfiguration, DEVICE_KEY) : value;
+        return value;
     }
 
     public void setTestDevices(String target) {
-        if (getDefaultDevices().equals(target)) {
+        if (getDefaultDevices() != null && getDefaultDevices().equals(target)) {
             return;
         }
-        if (testReleaseXCBuildConfiguration == null) {
-            return;
-        }
-        Dictionary<Value, NextStep> buildSettings = testReleaseXCBuildConfiguration.getOrCreateBuildSettings();
-        Value key = new Value(DEVICE_KEY);
-        NextStep nextStep = buildSettings.getValue(key);
-        if (nextStep != null) {
-            buildSettings.replaceValue(key, new Value(target));
-        } else {
-            buildSettings.add(key, new Value(target));
-        }
-        buildSettings = testDebugXCBuildConfiguration.getOrCreateBuildSettings();
-        nextStep = buildSettings.getValue(key);
-        if (nextStep != null) {
-            buildSettings.replaceValue(key, new Value(target));
-        } else {
-            buildSettings.add(key, new Value(target));
-        }
+        setBuildSettingsWithKeyAndValue(testReleaseXCBuildConfiguration, DEVICE_KEY, target);
+        setBuildSettingsWithKeyAndValue(testDebugXCBuildConfiguration, DEVICE_KEY, target);
         if (documentChangeListener != null) {
             documentChangeListener.documentChanged();
         }
@@ -389,7 +275,7 @@ public class XcodeEditorManager {
         Map<String, String> devices = new HashMap<String, String>();
         devices.put(DEVICE_IPHONE_KEY, "1");
         devices.put(DEVICE_IPAD_KEY, "2");
-        devices.put(DEVICE_UNIVERSAL_KEY, "\"1,2\"");
+        devices.put(DEVICE_UNIVERSAL_KEY, "1,2");
         return devices;
     }
 
@@ -514,7 +400,7 @@ public class XcodeEditorManager {
     }
 
     public void setMainProductName(String productName) {
-        if (mainTarget.getProductName().equals(productName)) {
+        if (mainTarget.getProductName() != null && mainTarget.getProductName().equals(productName)) {
             return;
         }
         mainTarget.setProductName(productName);
@@ -524,7 +410,7 @@ public class XcodeEditorManager {
     }
 
     public void setTestProductName(String productName) {
-        if (testTarget.getProductName().equals(productName)) {
+        if (testTarget.getProductName() != null && testTarget.getProductName().equals(productName)) {
             return;
         }
         testTarget.setProductName(productName);
@@ -540,9 +426,9 @@ public class XcodeEditorManager {
             if (field.value instanceof PBXFileReference) {
                 PBXFileReference pbxFileRef = (PBXFileReference) field.value;
                 String filePath = pbxFileRef.getPath();
-                if (filePath.endsWith(".xib") || filePath.endsWith(".storyboard")) {
+                if (filePath.endsWith(XIB_FILE) || filePath.endsWith(STORYBOARD_FILE)) {
                     String name = pbxFileRef.getName();
-                    if (name.endsWith(".xib") || name.endsWith(".storyboard")) {
+                    if (name.endsWith(XIB_FILE) || name.endsWith(STORYBOARD_FILE)) {
                         files.put(name, filePath);
                     } else {
                         files.put(getNameInPath(filePath), filePath);
@@ -551,6 +437,15 @@ public class XcodeEditorManager {
             }
         }
         return files;
+    }
+
+    public Map<String, String> getInterfaceFilesNamesAndFullNames() {
+        Map<String, String> simpleAndFullnames = new HashMap<String, String>();
+        Map<String, String> files = getInterfaceFiles();
+        for (String fullName : files.keySet()) {
+            simpleAndFullnames.put(EditorUtil.getInterfaceNameWithoutExtension(fullName), fullName);
+        }
+        return simpleAndFullnames;
     }
 
     private String getNameInPath(String filePath) {
@@ -563,9 +458,9 @@ public class XcodeEditorManager {
 
 
     public static File findInfoPlist(File root) {
-        File[] files =root.listFiles();
+        File[] files = root.listFiles();
         for (File f : files) {
-            if (f.getPath().endsWith(".plist")) {
+            if (f.getPath().endsWith(PLIST_FILE)) {
                 return f;
             }
         }
@@ -573,40 +468,34 @@ public class XcodeEditorManager {
     }
 
     public String getBundleIdentifier() {
-        NextStep nextStep = mainReleaseXCBuildConfiguration.getOrCreateBuildSettings().getValue(new Value("PRODUCT_BUNDLE_IDENTIFIER"));
-        nextStep = nextStep == null ? mainDebugXCBuildConfiguration.getOrCreateBuildSettings().getValue(new Value("PRODUCT_BUNDLE_IDENTIFIER")) : nextStep;
-        if (nextStep != null) {
-            return nextStep.print(0);
-        }
-        return null;
+        String value = getBuildSettingsValueWithKey(mainReleaseXCBuildConfiguration, PRODUCT_BUNDLE_ID_KEY);
+        value = value == null ? getBuildSettingsValueWithKey(mainDebugXCBuildConfiguration, PRODUCT_BUNDLE_ID_KEY) : value;
+        return value;
     }
 
     public String getTestBundleIdentifier() {
-        Value nextStep = (Value) testReleaseXCBuildConfiguration.getOrCreateBuildSettings().getValue(new Value("PRODUCT_BUNDLE_IDENTIFIER"));
-        nextStep = nextStep == null ? (Value) testDebugXCBuildConfiguration.getOrCreateBuildSettings().getValue(new Value("PRODUCT_BUNDLE_IDENTIFIER")) : nextStep;
-        if (nextStep != null) {
-            return nextStep.value;
-        }
-        return null;
+        String value = getBuildSettingsValueWithKey(testReleaseXCBuildConfiguration, PRODUCT_BUNDLE_ID_KEY);
+        value = value == null ? getBuildSettingsValueWithKey(testDebugXCBuildConfiguration, PRODUCT_BUNDLE_ID_KEY) : value;
+        return value;
     }
 
     public void setBundleIdentifier(String id) {
-        if (getBundleIdentifier().endsWith(id)) {
+        if (getBundleIdentifier() != null && getBundleIdentifier().equals(id)) {
             return;
         }
-        mainReleaseXCBuildConfiguration.getOrCreateBuildSettings().replaceValue(new Value("PRODUCT_BUNDLE_IDENTIFIER"), new Value(id));
-        mainDebugXCBuildConfiguration.getOrCreateBuildSettings().replaceValue(new Value("PRODUCT_BUNDLE_IDENTIFIER"), new Value(id));
+        setBuildSettingsWithKeyAndValue(mainReleaseXCBuildConfiguration, PRODUCT_BUNDLE_ID_KEY, id);
+        setBuildSettingsWithKeyAndValue(mainDebugXCBuildConfiguration, PRODUCT_BUNDLE_ID_KEY, id);
         if (documentChangeListener != null) {
             documentChangeListener.documentChanged();
         }
     }
 
     public void setTestBundleIdentifier(String id) {
-        if (getTestBundleIdentifier().endsWith(id)) {
+        if (getTestBundleIdentifier() != null && getTestBundleIdentifier().equals(id)) {
             return;
         }
-        testReleaseXCBuildConfiguration.getOrCreateBuildSettings().replaceValue(new Value("PRODUCT_BUNDLE_IDENTIFIER"), new Value(id));
-        testDebugXCBuildConfiguration.getOrCreateBuildSettings().replaceValue(new Value("PRODUCT_BUNDLE_IDENTIFIER"), new Value(id));
+        setBuildSettingsWithKeyAndValue(testReleaseXCBuildConfiguration, PRODUCT_BUNDLE_ID_KEY, id);
+        setBuildSettingsWithKeyAndValue(testDebugXCBuildConfiguration, PRODUCT_BUNDLE_ID_KEY, id);
         if (documentChangeListener != null) {
             documentChangeListener.documentChanged();
         }
@@ -615,23 +504,105 @@ public class XcodeEditorManager {
     public String getOrganizationName() {
         Dictionary<Value, Value> attributes = pbxProject.getAttributesOrNull();
         if (attributes != null) {
-            Value value = attributes.getValue(new Value("ORGANIZATIONNAME"));
+            Value value = attributes.getValue(new Value(ORGANIZATIONNAME_KEY));
             return  value.value;
         }
         return "";
     }
 
     public void setOrganizationName(String name) {
+        if (getOrganizationName() != null && getOrganizationName().equals(name)) {
+            return;
+        }
         Dictionary<Value, Value> attributes = pbxProject.getOrCreateAttributes();
         if (attributes != null) {
-            Value value = attributes.getValue(new Value("ORGANIZATIONNAME"));
+            Value value = attributes.getValue(new Value(ORGANIZATIONNAME_KEY));
             if (value != null) {
-                attributes.replaceValue(new Value("ORGANIZATIONNAME"), new Value(name));
+                attributes.replaceValue(new Value(ORGANIZATIONNAME_KEY), new Value(name));
             } else {
-                attributes.add(new Value("ORGANIZATIONNAME"), new Value(name));
+                attributes.add(new Value(ORGANIZATIONNAME_KEY), new Value(name));
             }
             if (documentChangeListener != null) {
                 documentChangeListener.documentChanged();
+            }
+        }
+    }
+
+    public boolean isCopyAndroidCertsMain() {
+        String value = getBuildSettingsValueWithKey(mainReleaseXCBuildConfiguration, MOE_COPY_ANDROID_CACERTS_KEY);
+        value = value == null ? getBuildSettingsValueWithKey(mainDebugXCBuildConfiguration, MOE_COPY_ANDROID_CACERTS_KEY) : value;
+        if (value == null || value.isEmpty()) {
+            return false;
+        } else if (value.equals(ANDROID_CACERTS_YES)) {
+            return true;
+        }
+        return false;
+    }
+
+    public boolean isCopyAndroidCertsTest() {
+        String value = getBuildSettingsValueWithKey(testReleaseXCBuildConfiguration, MOE_COPY_ANDROID_CACERTS_KEY);
+        value = value == null ? getBuildSettingsValueWithKey(testDebugXCBuildConfiguration, MOE_COPY_ANDROID_CACERTS_KEY) : value;
+        if (value == null || value.isEmpty()) {
+            return false;
+        } else if (value.equals(ANDROID_CACERTS_YES)) {
+            return true;
+        }
+        return false;
+    }
+
+    public void setCopyAndroidCertsMain(boolean b) {
+        boolean stored = isCopyAndroidCertsMain();
+        if (b == stored) {
+            return;
+        }
+        String value = b ? ANDROID_CACERTS_YES : ANDROID_CACERTS_NO;
+        setBuildSettingsWithKeyAndValue(mainReleaseXCBuildConfiguration, MOE_COPY_ANDROID_CACERTS_KEY, value);
+        setBuildSettingsWithKeyAndValue(mainDebugXCBuildConfiguration, MOE_COPY_ANDROID_CACERTS_KEY, value);
+        if (documentChangeListener != null) {
+            documentChangeListener.documentChanged();
+        }
+    }
+
+    public void setCopyAndroidCertsTest(boolean b) {
+        boolean stored = isCopyAndroidCertsTest();
+        if (b == stored) {
+            return;
+        }
+        String value = b ? ANDROID_CACERTS_YES : ANDROID_CACERTS_NO;
+        setBuildSettingsWithKeyAndValue(testReleaseXCBuildConfiguration, MOE_COPY_ANDROID_CACERTS_KEY, value);
+        setBuildSettingsWithKeyAndValue(testDebugXCBuildConfiguration, MOE_COPY_ANDROID_CACERTS_KEY, value);
+        if (documentChangeListener != null) {
+            documentChangeListener.documentChanged();
+        }
+    }
+
+    private String getBuildSettingsValueWithKey(XCBuildConfiguration xcBuildConfiguration, String key) {
+        Value valueKey = new Value(key);
+        Value nextStep = (Value) xcBuildConfiguration.getOrCreateBuildSettings().getValue(valueKey);
+        if (nextStep != null) {
+            return nextStep.value;
+        }
+        return null;
+    }
+
+    private void setBuildSettingsWithKeyAndValue(XCBuildConfiguration xcBuildConfiguration, String key, String value) {
+        if (xcBuildConfiguration == null) {
+            return;
+        }
+        Dictionary<Value, NextStep> buildSettings = xcBuildConfiguration.getOrCreateBuildSettings();
+        Value keyValue = new Value(key);
+        NextStep nextStep = buildSettings.getValue(keyValue);
+
+        if (value == null) {
+            if (nextStep != null) {
+                nextStep = null;
+                buildSettings.remove(keyValue);
+            }
+        } else {
+            if (nextStep != null) {
+                buildSettings.replaceValue(keyValue, new Value(value));
+            } else {
+                buildSettings.add(keyValue, new Value(value));
             }
         }
     }

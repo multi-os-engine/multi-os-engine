@@ -30,7 +30,7 @@ public class EditorUtil {
                 return key;
             }
         }
-        return "";
+        return null;
     }
 
     public static String getNSStringKey(Map<String, NSString> map, NSString value) {
@@ -62,5 +62,9 @@ public class EditorUtil {
         } else {
             return null;
         }
+    }
+
+    public static String getInterfaceNameWithoutExtension(String fullName) {
+        return fullName.substring(0, fullName.indexOf("."));
     }
 }
