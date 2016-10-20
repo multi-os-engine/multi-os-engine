@@ -14,6 +14,15 @@ See the License for the specific language governing permissions and
 limitations under the License.
 */
 
+buildscript {
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        classpath "org.jfrog.buildinfo:build-info-extractor-gradle:4.0.0"
+    }
+}
+
 plugins {
     id "com.jfrog.bintray" version "1.7"
 }
@@ -33,6 +42,10 @@ version loadPluginVersion()
 
 apply plugin: 'java'
 apply plugin: 'maven-publish'
+
+if (rootProject.hasProperty('artifactory.url')) {
+    apply plugin: "com.jfrog.artifactory"
+}
 
 sourceCompatibility = 1.8
 targetCompatibility = 1.8
@@ -93,6 +106,25 @@ bintray {
     }
 }
 
+if (rootProject.hasProperty('artifactory.url')) {
+    artifactory {
+        contextUrl = rootProject.getProperty('artifactory.url')
+        publish {
+            repository {
+                repoKey = rootProject.getProperty('artifactory.key')
+                username = rootProject.getProperty('artifactory.user')
+                password = rootProject.getProperty('artifactory.pass')
+            }
+            defaults {
+                publications('mavenJavaSnapshot')
+                publishArtifacts = true
+                publishPom = true
+                publishIvy = true
+            }
+        }
+    }
+}
+
 task javadocJar(type: Jar, dependsOn: javadoc) {
     classifier = 'javadoc'
     from javadoc.destinationDir
@@ -112,6 +144,14 @@ publishing {
             group project.group
             artifactId 'moe-gradle'
             version project.version
+        }
+        mavenJavaSnapshot(MavenPublication) {
+            from components.java
+            artifact(javadocJar)
+            artifact(sourceJar)
+            group project.group
+            artifactId 'moe-gradle'
+            version = "${project.version}-SNAPSHOT"
         }
     }
 }
