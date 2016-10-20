@@ -29,7 +29,9 @@
                 <constraints>
                   <tabbedpane title="Project"/>
                 </constraints>
-                <properties/>
+                <properties>
+                  <verticalScrollBarPolicy value="20"/>
+                </properties>
                 <border type="none"/>
                 <children>
                   <grid id="be98d" layout-manager="GridLayoutManager" row-count="5" column-count="2" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
@@ -111,7 +113,9 @@
                 <constraints>
                   <tabbedpane title="Main"/>
                 </constraints>
-                <properties/>
+                <properties>
+                  <verticalScrollBarPolicy value="22"/>
+                </properties>
                 <border type="none"/>
                 <children>
                   <grid id="52026" layout-manager="GridLayoutManager" row-count="4" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
@@ -148,7 +152,9 @@
                 <constraints>
                   <tabbedpane title="Test"/>
                 </constraints>
-                <properties/>
+                <properties>
+                  <verticalScrollBarPolicy value="22"/>
+                </properties>
                 <border type="none"/>
                 <children>
                   <grid id="2732d" layout-manager="GridLayoutManager" row-count="4" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
