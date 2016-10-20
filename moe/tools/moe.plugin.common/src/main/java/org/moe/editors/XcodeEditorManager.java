@@ -63,6 +63,12 @@ public class XcodeEditorManager {
     private File xcodeFile;
     private DocumentChangeListener documentChangeListener;
 
+    public XcodeEditorManager(File xcodeProjectFile) throws ProjectException {
+        this.xcodeFile = xcodeProjectFile;
+        this.projectFile = new ProjectFile(xcodeFile);
+        init();
+    }
+
     public XcodeEditorManager(File xcodeProjectFile, String content) throws ProjectException {
         this.xcodeFile = xcodeProjectFile;
         load(content);
@@ -74,6 +80,10 @@ public class XcodeEditorManager {
 
     public void load(String content) throws ProjectException {
         this.projectFile = new ProjectFile(content);
+        init();
+    }
+
+    public void init() throws ProjectException {
         this.root = projectFile.getRoot();
         this.pbxProject = root.getRootObject().getReferenced();
         setTragets();
