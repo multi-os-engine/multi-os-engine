@@ -35,5 +35,7 @@ Bundle-ClassPath: .,
  lib/moe.tools.common.jar,
  lib/moe.tools.natjgen.jar,
  lib/moe.document.pbxproj.jar,
- lib/moe.document.xib.jar
+ lib/moe.document.xib.jar,
+ lib/moe.plugin.common.jar,
+ lib/dd-plist-1.16.jar
 Bundle-ActivationPolicy: lazy

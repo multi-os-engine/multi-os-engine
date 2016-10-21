@@ -357,12 +357,12 @@
                 id="org.moe.popup.actions.LinkThirdpartyFrameworkActionHandler"
                 name="Link third party framework to Xcode">
         </command>
-        <!-- <command
+        <command
                 categoryId="org.eclipse.ui.commands"
                 defaultHandler="org.moe.popup.actions.OpenXcodeEditorActionHandler"
                 id="org.moe.popup.actions.OpenXcodeEditorActionHandler"
                 name="Open Xcode Editor">
-        </command> -->
+        </command>
     </extension>
     <extension
             point="org.eclipse.ui.menus">
@@ -393,14 +393,14 @@
                         <reference definitionId="org.moe.isRelevantProjectAndMac"/>
                     </visibleWhen>
                 </command>
-                <!-- <command
+                <command
                         commandId="org.moe.popup.actions.OpenXcodeEditorActionHandler"
                         label="Open Xcode Editor"
                         style="push">
                     <visibleWhen>
                         <reference definitionId="org.moe.isRelevantProject"/>
                     </visibleWhen>
-                </command> -->
+                </command>
             </menu>
         </menuContribution>
     </extension>
@@ -448,7 +448,7 @@
     <extension
           point="org.eclipse.core.runtime.preferences">
     </extension>
-    <!-- <extension
+    <extension
           point="org.eclipse.ui.editors">
        <editor
              class="org.moe.editors.XCodeEditor"
@@ -458,5 +458,5 @@
              id="org.moe.editors.XCodeEditor"
              name="XCode Editor">
        </editor>
-    </extension> -->
+    </extension>
 </plugin>
