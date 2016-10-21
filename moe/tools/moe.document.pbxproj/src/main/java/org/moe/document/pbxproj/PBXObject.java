@@ -43,9 +43,9 @@ public abstract class PBXObject extends Dictionary<Value, NextStep> {
     }
 
     protected void connectReferencesInValue(String key, Map<String, Value> map) {
-        Value value = (Value)getValue(key);
+        Value value = (Value)get(key);
         if (value != null) {
-            replaceValue(key, map.get(value.value));
+            put(key, map.get(value.value));
         }
     }
 
@@ -79,7 +79,7 @@ public abstract class PBXObject extends Dictionary<Value, NextStep> {
     }
 
     protected String getStringValue(String key) {
-        Value value = (Value)getValue(key);
+        Value value = (Value)get(key);
         if (value != null) {
             return value.value;
         }
@@ -90,59 +90,49 @@ public abstract class PBXObject extends Dictionary<Value, NextStep> {
         if (newvalue == null) {
             remove(key);
         } else {
-            Value value = (Value)getValue(key);
-            if (value == null) {
-                add(new Value(key), new Value(newvalue));
-            } else {
-                value.value = newvalue;
-            }
+            put(key, new Value(newvalue));
         }
     }
 
     protected <T extends NextStep> Array<T> getArrayValueOrNull(String key) {
-        return (Array<T>)getValue(key);
+        return (Array<T>)get(key);
     }
 
     protected <T extends NextStep> Array<T> getOrCreateArrayValue(String key) {
-        Array<T> value = (Array<T>)getValue(key);
+        Array<T> value = (Array<T>)get(key);
         if (value != null) {
             return value;
         } else {
             value = new Array<T>();
-            add(new Value(key), value);
+            put(key, value);
             return value;
         }
     }
 
     protected <T extends Value, U extends NextStep> Dictionary<T, U> getDictionaryValueOrNull(String key) {
-        return (Dictionary<T, U>)getValue(key);
+        return (Dictionary<T, U>)get(key);
     }
 
     protected <T extends Value, U extends NextStep> Dictionary<T, U> getOrCreateDictionaryValue(String key) {
-        Dictionary<T, U> value = (Dictionary<T, U>)getValue(key);
+        Dictionary<T, U> value = (Dictionary<T, U>)get(key);
         if (value != null) {
             return value;
         } else {
             value = new Dictionary<T, U>();
-            add(new Value(key), value);
+            put(key, value);
             return value;
         }
     }
 
     protected <T extends PBXObject> PBXObjectRef<T> getPBXObjectRefValue(String key) {
-        return (PBXObjectRef<T>)getValue(key);
+        return (PBXObjectRef<T>)get(key);
     }
 
     protected void setPBXObjectRefValue(String key, PBXObjectRef<?> newvalue) {
         if (newvalue == null) {
             remove(key);
         } else {
-            Value value = (Value)getValue(key);
-            if (value == null) {
-                add(new Value(key), newvalue);
-            } else {
-                replaceValue(key, newvalue);
-            }
+            put(key, newvalue);
         }
     }
 

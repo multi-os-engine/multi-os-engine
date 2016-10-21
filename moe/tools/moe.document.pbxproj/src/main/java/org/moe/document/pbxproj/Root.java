@@ -117,8 +117,8 @@ public class Root extends PBXObject {
         List<PBXGroup> result = new ArrayList<PBXGroup>();
 
         for (Dictionary.Field<PBXObjectRef<? extends PBXObject>, PBXObject> field : getObjects().rawData()) {
-            if (field.value instanceof PBXGroup) {
-                result.add((PBXGroup)field.value);
+            if (field.getValue() instanceof PBXGroup) {
+                result.add((PBXGroup)field.getValue());
             }
         }
 
@@ -129,8 +129,8 @@ public class Root extends PBXObject {
         List<PBXObjectRef<PBXFileReference>> result = new ArrayList<PBXObjectRef<PBXFileReference>>();
 
         for (Dictionary.Field<PBXObjectRef<? extends PBXObject>, PBXObject> field : getObjects().rawData()) {
-            if (field.value instanceof PBXFileReference) {
-                result.add((PBXObjectRef<PBXFileReference>)field.key);
+            if (field.getValue() instanceof PBXFileReference) {
+                result.add((PBXObjectRef<PBXFileReference>)field.getKey());
             }
         }
 
@@ -141,8 +141,8 @@ public class Root extends PBXObject {
         List<PBXObjectRef<PBXBuildPhase>> result = new ArrayList<PBXObjectRef<PBXBuildPhase>>();
 
         for (Dictionary.Field<PBXObjectRef<? extends PBXObject>, PBXObject> field : getObjects().rawData()) {
-            if (field.value instanceof PBXBuildPhase) {
-                result.add((PBXObjectRef<PBXBuildPhase>)field.key);
+            if (field.getValue() instanceof PBXBuildPhase) {
+                result.add((PBXObjectRef<PBXBuildPhase>)field.getKey());
             }
         }
 
@@ -153,8 +153,8 @@ public class Root extends PBXObject {
         List<PBXObjectRef<PBXBuildFile>> result = new ArrayList<PBXObjectRef<PBXBuildFile>>();
 
         for (Dictionary.Field<PBXObjectRef<? extends PBXObject>, PBXObject> field : getObjects().rawData()) {
-            if (field.value instanceof PBXBuildFile) {
-                result.add((PBXObjectRef<PBXBuildFile>)field.key);
+            if (field.getValue() instanceof PBXBuildFile) {
+                result.add((PBXObjectRef<PBXBuildFile>)field.getKey());
             }
         }
 
@@ -175,8 +175,8 @@ public class Root extends PBXObject {
             Collections.sort(rawData(), new Comparator<Field<PBXObjectRef<?>, PBXObject>>() {
                 @Override
                 public int compare(Field<PBXObjectRef<?>, PBXObject> o1, Field<PBXObjectRef<?>, PBXObject> o2) {
-                    String isa1 = o1.value.getIsa();
-                    String isa2 = o2.value.getIsa();
+                    String isa1 = o1.getValue().getIsa();
+                    String isa2 = o2.getValue().getIsa();
                     if (isa1 == null && isa2 == null) {
                         return 0;
                     } else if (isa1 == null) {
@@ -190,33 +190,32 @@ public class Root extends PBXObject {
         }
 
         public void updateObjects() {
-            iterate(new FieldIterator<PBXObjectRef<? extends PBXObject>, PBXObject>() {
-                @Override
-                public void process(Field<PBXObjectRef<? extends PBXObject>, PBXObject> field) {
-                    field.value.update();
-                }
-            });
+            for (Entry<PBXObjectRef<? extends PBXObject>, PBXObject> entry : entrySet()) {
+                entry.getValue().update();
+            }
         }
 
-        public void add(PBXObjectRef<? extends PBXObject> ref) {
-            add(ref, ref.getReferenced());
+        public void put(PBXObjectRef<? extends PBXObject> ref) {
+            put(ref, ref.getReferenced());
         }
 
-        public PBXObject remove(final PBXObjectRef<? extends PBXObject> ref) {
+        public PBXObject remove(Object ref) {
             PBXObject removed = super.remove(ref);
             if (removed != null) {
-                iterate(new FieldIterator<PBXObjectRef<? extends PBXObject>, PBXObject>() {
-                    @Override
-                    public void process(Field<PBXObjectRef<? extends PBXObject>, PBXObject> field) {
-                        field.value.removeReference(ref);
-                    }
-                });
+                for (Entry<PBXObjectRef<? extends PBXObject>, PBXObject> entry : entrySet()) {
+                    entry.getValue().removeReference((PBXObjectRef<? extends PBXObject>)ref);
+                }
             }
             return removed;
         }
 
         public PBXObject removeRaw(final PBXObjectRef<? extends PBXObject> ref) {
             return super.remove(ref);
+        }
+
+        public void replaceKey(Entry<Value, NextStep> field, PBXObjectRef<PBXObject> key) {
+            EntryImpl entry = (EntryImpl)field;
+            entry.replaceKey(key);
         }
     }
 

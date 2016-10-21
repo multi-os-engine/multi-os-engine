@@ -19,10 +19,9 @@ package org.moe.document.pbxproj;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import org.moe.document.pbxproj.Root.RootObjects;
-import org.moe.document.pbxproj.nextstep.Dictionary.Field;
-import org.moe.document.pbxproj.nextstep.Dictionary.FieldIterator;
 
 import java.io.InputStream;
+import java.util.Map.Entry;
 
 import static org.junit.Assert.assertEquals;
 
@@ -44,20 +43,17 @@ public class TypeTest {
     @Test
     public void testTypes() {
         RootObjects objects = pbxproj.getRoot().getObjects();
-        objects.iterate(new FieldIterator<PBXObjectRef<? extends PBXObject>, PBXObject>() {
-            @Override
-            public void process(Field<PBXObjectRef<? extends PBXObject>, PBXObject> field) {
-                PBXObject value = field.value;
-                String isa = value.getIsa();
-                String className = PACKAGE_ROOT + isa;
-                Class<?> clazz;
-                try {
-                    clazz = Class.forName(className);
-                } catch (ClassNotFoundException ignore) {
-                    return;
-                }
-                assertEquals(clazz, value.getClass());
+        for (Entry<PBXObjectRef<? extends PBXObject>, PBXObject> field : objects.entrySet()) {
+            PBXObject value = field.getValue();
+            String isa = value.getIsa();
+            String className = PACKAGE_ROOT + isa;
+            Class<?> clazz;
+            try {
+                clazz = Class.forName(className);
+            } catch (ClassNotFoundException ignore) {
+                return;
             }
-        });
+            assertEquals(clazz, value.getClass());
+        }
     }
 }

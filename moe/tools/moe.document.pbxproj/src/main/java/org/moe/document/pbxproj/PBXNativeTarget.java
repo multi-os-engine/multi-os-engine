@@ -60,8 +60,7 @@ public final class PBXNativeTarget extends PBXObject {
 
     @Override
     public void update() {
-        PBXObjectRef<XCConfigurationList> ref = (PBXObjectRef<XCConfigurationList>)getValue(
-                BUILD_CONFIGURATION_LIST_KEY);
+        PBXObjectRef<XCConfigurationList> ref = (PBXObjectRef<XCConfigurationList>)get(BUILD_CONFIGURATION_LIST_KEY);
         if (ref == null) {
             return;
         }

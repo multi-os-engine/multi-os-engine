@@ -84,7 +84,7 @@ public abstract class PBXBuildPhase extends PBXObject {
 
     public PBXBuildPhase addFileReference(ProjectFile projectFile, PBXObjectRef<PBXFileReference> fileRef) {
         PBXObjectRef<PBXBuildFile> buildFileRef = projectFile.createReference(new PBXBuildFile());
-        projectFile.getRoot().getObjects().add(buildFileRef);
+        projectFile.getRoot().getObjects().put(buildFileRef);
         PBXBuildFile buildFile = buildFileRef.getReferenced();
         buildFile.setFileRef(fileRef);
         this.getOrCreateFiles().add(buildFileRef);

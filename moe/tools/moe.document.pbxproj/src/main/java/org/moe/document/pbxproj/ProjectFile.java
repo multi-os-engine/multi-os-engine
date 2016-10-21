@@ -17,6 +17,7 @@ limitations under the License.
 package org.moe.document.pbxproj;
 
 import org.apache.commons.codec.binary.Hex;
+import org.moe.document.pbxproj.Root.RootObjects;
 import org.moe.document.pbxproj.nextstep.Dictionary;
 import org.moe.document.pbxproj.nextstep.NextStep;
 import org.moe.document.pbxproj.nextstep.NextStepException;
@@ -32,6 +33,7 @@ import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.security.SecureRandom;
 import java.util.HashMap;
+import java.util.Map.Entry;
 
 @SuppressWarnings("unchecked")
 public class ProjectFile {
@@ -159,58 +161,48 @@ public class ProjectFile {
     private final HashMap<String, Value> pbxobjects = new HashMap<String, Value>();
 
     private void build() {
-        getRoot().getObjects();
-        Dictionary<Value, NextStep> objects = (Dictionary<Value, NextStep>)getRoot().getValue("objects");
-        if (objects == null) {
+        final RootObjects objects = getRoot().getObjects();
+        Dictionary<Value, NextStep> rawobjects = (Dictionary<Value, NextStep>)getRoot().get("objects");
+        if (rawobjects == null) {
             throw new NullPointerException();
         }
-        objects.iterate(new Dictionary.FieldIterator<Value, NextStep>() {
+        for (Entry<Value, NextStep> field : rawobjects.entrySet()) {
+            if (field.getValue() instanceof Dictionary) {
+                Dictionary<Value, NextStep> value = (Dictionary<Value, NextStep>)field.getValue();
 
-            @Override
-            public void process(Dictionary.Field<Value, NextStep> field) {
-                if (field.value instanceof Dictionary) {
-                    Dictionary<Value, NextStep> value = (Dictionary<Value, NextStep>)field.value;
-
-                    Value isa = (Value)value.getValue(PBXObject.ISA_KEY);
-                    if (isa != null) {
-                        boolean promoted = false;
-                        for (Class<? extends PBXObject> cls : promotions) {
-                            if (isa.value.equals(cls.getSimpleName())) {
-                                try {
-                                    field.value = cls.getConstructor(Dictionary.class).newInstance(value);
-                                    promoted = true;
-                                    break;
-                                } catch (Exception e) {
-                                    throw new RuntimeException("Failed to instantiate " + cls.getSimpleName(), e);
-                                }
+                Value isa = (Value)value.get(PBXObject.ISA_KEY);
+                if (isa != null) {
+                    boolean promoted = false;
+                    for (Class<? extends PBXObject> cls : promotions) {
+                        if (isa.value.equals(cls.getSimpleName())) {
+                            try {
+                                field.setValue(cls.getConstructor(Dictionary.class).newInstance(value));
+                                promoted = true;
+                                break;
+                            } catch (Exception e) {
+                                throw new RuntimeException("Failed to instantiate " + cls.getSimpleName(), e);
                             }
                         }
-
-                        if (!promoted) {
-                            field.value = new UnknownPBXObject(value);
-                        }
-
-                        field.key = new PBXObjectRef<PBXObject>(field.key, (PBXObject)field.value);
-                        pbxobjects.put(field.key.value, field.key);
                     }
+
+                    if (!promoted) {
+                        field.setValue(new UnknownPBXObject(value));
+                    }
+
+                    objects.replaceKey(field, new PBXObjectRef<PBXObject>(field.getKey(), (PBXObject)field.getValue()));
+                    pbxobjects.put(field.getKey().value, field.getKey());
                 }
             }
-
-        });
+        }
 
         // Connect references
         root.connectReferences(pbxobjects);
-        objects.iterate(new Dictionary.FieldIterator<Value, NextStep>() {
-
-            @Override
-            public void process(Dictionary.Field<Value, NextStep> field) {
-                if (field.value instanceof PBXObject) {
-                    PBXObject value = (PBXObject)field.value;
-                    value.connectReferences(pbxobjects);
-                }
+        for (Entry<Value, NextStep> field : rawobjects.entrySet()) {
+            if (field.getValue() instanceof PBXObject) {
+                PBXObject value = (PBXObject)field.getValue();
+                value.connectReferences(pbxobjects);
             }
-
-        });
+        }
 
         // Set project name
         PBXObjectRef<PBXProject> proj = root.getRootObject();
@@ -218,7 +210,7 @@ public class ProjectFile {
             proj.getReferenced().setProjectName(projectName);
         }
 
-        objects.setCustomPrinter(new Dictionary.FieldPrinter<Value, NextStep>() {
+        rawobjects.setCustomPrinter(new Dictionary.FieldPrinter<Value, NextStep>() {
 
             private Class<? extends PBXObject> lastClass = null;
 
@@ -235,14 +227,14 @@ public class ProjectFile {
 
             @Override
             public void beforeField(Dictionary.Field<Value, NextStep> current, boolean hasNext, StringBuilder builder) {
-                if (current.value.getClass() != lastClass) {
+                if (current.getValue().getClass() != lastClass) {
                     if (lastClass != null) {
                         builder.append("/* End ");
                         builder.append(lastClass.getSimpleName());
                         builder.append(" section */\n");
                     }
 
-                    lastClass = (Class<? extends PBXObject>)current.value.getClass();
+                    lastClass = (Class<? extends PBXObject>)current.getValue().getClass();
                     builder.append("\n/* Begin ");
                     builder.append(lastClass.getSimpleName());
                     builder.append(" section */\n");
@@ -311,7 +303,7 @@ public class ProjectFile {
         }
 
         String uid = generateReference();
-        while (root.contains(uid)) {
+        while (root.containsKey(uid)) {
             uid = generateReference();
         }
 
@@ -338,7 +330,7 @@ public class ProjectFile {
         object.setFileRef(fileref);
 
         PBXObjectRef<PBXBuildFile> ref = createReference(object);
-        getRoot().getObjects().add(ref);
+        getRoot().getObjects().put(ref);
 
         return ref;
     }
@@ -354,7 +346,7 @@ public class ProjectFile {
         object.setSourceTree(sourceTree);
 
         PBXObjectRef<PBXFileReference> ref = createReference(object);
-        getRoot().getObjects().add(ref);
+        getRoot().getObjects().put(ref);
 
         return ref;
     }
@@ -366,7 +358,7 @@ public class ProjectFile {
         object.setSourceTree(sourceTree);
 
         PBXObjectRef<PBXGroup> ref = createReference(object);
-        getRoot().getObjects().add(ref);
+        getRoot().getObjects().put(ref);
 
         return ref;
     }

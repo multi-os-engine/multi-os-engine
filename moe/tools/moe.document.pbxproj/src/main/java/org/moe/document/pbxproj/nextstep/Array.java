@@ -251,4 +251,17 @@ public class Array<V extends NextStep> extends NextStep implements List<V> {
     public void accept(Consumer<V> consumer) {
         consumer.accept(this);
     }
+
+    public interface Predicate<V> {
+        boolean predicate(V obj);
+    }
+
+    public V find(Predicate<V> predicate) {
+        for (V obj : this) {
+            if (predicate.predicate(obj)) {
+                return obj;
+            }
+        }
+        return null;
+    }
 }
