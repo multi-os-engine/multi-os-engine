@@ -136,6 +136,7 @@ public class TargetEditorPage extends AbstractEditiorPage {
 		managedForm.getForm().setAlwaysShowScrollBars(true);
 		managedForm.getForm().getBody().setBackground(SWTResourceManager.getColor(SWT.COLOR_WIDGET_LIGHT_SHADOW));
 		FormToolkit toolkit = managedForm.getToolkit();
+		toolkit.setBackground(null);
 		ScrolledForm form = managedForm.getForm();
 		Composite body = form.getBody();
 		toolkit.decorateFormHeading(form.getForm());
@@ -166,7 +167,6 @@ public class TargetEditorPage extends AbstractEditiorPage {
 		
 		Label lblNewLabel = new Label(group_1, SWT.NONE);
 		lblNewLabel.setBackground(SWTResourceManager.getColor(SWT.COLOR_WIDGET_LIGHT_SHADOW));
-		lblNewLabel.setLayoutData(new GridData(SWT.RIGHT, SWT.CENTER, false, false, 1, 1));
 		managedForm.getToolkit().adapt(lblNewLabel, true, true);
 		lblNewLabel.setText("Bundle Identifier:");
 		
@@ -175,7 +175,6 @@ public class TargetEditorPage extends AbstractEditiorPage {
 		managedForm.getToolkit().adapt(bundleIdText, true, true);
 		
 		Label lblNewLabel_1 = new Label(group_1, SWT.NONE);
-		lblNewLabel_1.setLayoutData(new GridData(SWT.RIGHT, SWT.CENTER, false, false, 1, 1));
 		managedForm.getToolkit().adapt(lblNewLabel_1, true, true);
 		lblNewLabel_1.setText("Version:");
 		
@@ -184,7 +183,6 @@ public class TargetEditorPage extends AbstractEditiorPage {
 		managedForm.getToolkit().adapt(versionText, true, true);
 		
 		Label lblNewLabel_2 = new Label(group_1, SWT.NONE);
-		lblNewLabel_2.setLayoutData(new GridData(SWT.RIGHT, SWT.CENTER, false, false, 1, 1));
 		managedForm.getToolkit().adapt(lblNewLabel_2, true, true);
 		lblNewLabel_2.setText("Build:");
 		
@@ -193,7 +191,6 @@ public class TargetEditorPage extends AbstractEditiorPage {
 		managedForm.getToolkit().adapt(build, true, true);
 		
 		Label lblNewLabel_3 = new Label(group_1, SWT.NONE);
-		lblNewLabel_3.setLayoutData(new GridData(SWT.RIGHT, SWT.CENTER, false, false, 1, 1));
 		managedForm.getToolkit().adapt(lblNewLabel_3, true, true);
 		lblNewLabel_3.setText("Product name:");
 		
@@ -202,7 +199,6 @@ public class TargetEditorPage extends AbstractEditiorPage {
 		managedForm.getToolkit().adapt(productName, true, true);
 		
 		Label lblNewLabel_4 = new Label(group_1, SWT.NONE);
-		lblNewLabel_4.setLayoutData(new GridData(SWT.RIGHT, SWT.CENTER, false, false, 1, 1));
 		managedForm.getToolkit().adapt(lblNewLabel_4, true, true);
 		lblNewLabel_4.setText("Main class:");
 		
@@ -227,7 +223,6 @@ public class TargetEditorPage extends AbstractEditiorPage {
 		group_2.setLayout(new GridLayout(4, false));
 		
 		Label lblDeploymentTarget = new Label(group_2, SWT.NONE);
-		lblDeploymentTarget.setLayoutData(new GridData(SWT.RIGHT, SWT.CENTER, false, false, 1, 1));
 		managedForm.getToolkit().adapt(lblDeploymentTarget, true, true);
 		lblDeploymentTarget.setText("Deployment target:");
 		
@@ -276,7 +271,6 @@ public class TargetEditorPage extends AbstractEditiorPage {
 		group_5.setLayout(new GridLayout(2, false));
 		
 		Label lblMainInterface = new Label(group_5, SWT.NONE);
-		lblMainInterface.setLayoutData(new GridData(SWT.RIGHT, SWT.CENTER, false, false, 1, 1));
 		managedForm.getToolkit().adapt(lblMainInterface, true, true);
 		lblMainInterface.setText("Main interface:");
 		
@@ -309,7 +303,6 @@ public class TargetEditorPage extends AbstractEditiorPage {
 		iphonelandscapeRight.setText("Landscape Right");
 		
 		Label lblStatusBarStyle = new Label(group_5, SWT.NONE);
-		lblStatusBarStyle.setLayoutData(new GridData(SWT.RIGHT, SWT.CENTER, false, false, 1, 1));
 		managedForm.getToolkit().adapt(lblStatusBarStyle, true, true);
 		lblStatusBarStyle.setText("Status Bar Style:");
 		
@@ -337,7 +330,6 @@ public class TargetEditorPage extends AbstractEditiorPage {
 		group_6.setLayout(new GridLayout(2, false));
 		
 		Label lblNewLabel_9 = new Label(group_6, SWT.NONE);
-		lblNewLabel_9.setLayoutData(new GridData(SWT.RIGHT, SWT.CENTER, false, false, 1, 1));
 		managedForm.getToolkit().adapt(lblNewLabel_9, true, true);
 		lblNewLabel_9.setText("Main interface:");
 		
@@ -390,7 +382,6 @@ public class TargetEditorPage extends AbstractEditiorPage {
 		group_4.setLayout(new GridLayout(2, false));
 		
 		Label lblLaunchScreenFile = new Label(group_4, SWT.NONE);
-		lblLaunchScreenFile.setLayoutData(new GridData(SWT.RIGHT, SWT.CENTER, false, false, 1, 1));
 		managedForm.getToolkit().adapt(lblLaunchScreenFile, true, true);
 		lblLaunchScreenFile.setText("Launch Screen File:");
 		
@@ -424,7 +415,7 @@ public class TargetEditorPage extends AbstractEditiorPage {
 		FormData fd_group_9 = new FormData();
 		fd_group_9.bottom = new FormAttachment(group_8, 0, SWT.BOTTOM);
 		
-		frameworksList = new List(group_8, SWT.BORDER);
+		frameworksList = new List(group_8, SWT.BORDER | SWT.V_SCROLL);
 		frameworksList.setBounds(0, 0, 408, 72);
 		managedForm.getToolkit().adapt(frameworksList, true, true);
 		fd_group_9.right = new FormAttachment(0, 534);
@@ -881,7 +872,7 @@ public class TargetEditorPage extends AbstractEditiorPage {
             build.setText(buildString);
         }
 
-        String product = isMain() ? xcodeEditorManager.getMainTargetName() : xcodeEditorManager.getTestTargetName();
+        String product = isMain() ? xcodeEditorManager.getMainProductName() : xcodeEditorManager.getTestProductName();
         if (!productName.getText().equals(product)) {
         	productName.setText(product);
         }

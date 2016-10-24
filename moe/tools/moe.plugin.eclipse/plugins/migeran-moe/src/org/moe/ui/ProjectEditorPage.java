@@ -81,6 +81,7 @@ public class ProjectEditorPage extends AbstractEditiorPage {
 	protected void createFormContent(IManagedForm managedForm) {
 		managedForm.getForm().getBody().setBackground(SWTResourceManager.getColor(SWT.COLOR_WIDGET_LIGHT_SHADOW));
 		FormToolkit toolkit = managedForm.getToolkit();
+		toolkit.setBackground(null);
 		ScrolledForm form = managedForm.getForm();
 		Composite body = form.getBody();
 		toolkit.decorateFormHeading(form.getForm());
@@ -101,7 +102,6 @@ public class ProjectEditorPage extends AbstractEditiorPage {
 		new Label(group, SWT.NONE);
 		
 		Label lblNewLabel = new Label(group, SWT.NONE);
-		lblNewLabel.setLayoutData(new GridData(SWT.RIGHT, SWT.CENTER, false, false, 1, 1));
 		managedForm.getToolkit().adapt(lblNewLabel, true, true);
 		lblNewLabel.setText("Project name:");
 		
@@ -112,7 +112,6 @@ public class ProjectEditorPage extends AbstractEditiorPage {
 		new Label(group, SWT.NONE);
 		
 		Label lblDeploymentTarget = new Label(group, SWT.NONE);
-		lblDeploymentTarget.setLayoutData(new GridData(SWT.RIGHT, SWT.CENTER, false, false, 1, 1));
 		managedForm.getToolkit().adapt(lblDeploymentTarget, true, true);
 		lblDeploymentTarget.setText("iOS Deployment Target:");
 		
@@ -123,7 +122,6 @@ public class ProjectEditorPage extends AbstractEditiorPage {
 		new Label(group, SWT.NONE);
 		
 		Label lblDevices_1 = new Label(group, SWT.NONE);
-		lblDevices_1.setLayoutData(new GridData(SWT.RIGHT, SWT.CENTER, false, false, 1, 1));
 		managedForm.getToolkit().adapt(lblDevices_1, true, true);
 		lblDevices_1.setText("Devices:");
 		
@@ -135,7 +133,6 @@ public class ProjectEditorPage extends AbstractEditiorPage {
 		
 		Label lblDevices = new Label(group, SWT.NONE);
 		lblDevices.setBackground(SWTResourceManager.getColor(SWT.COLOR_WIDGET_LIGHT_SHADOW));
-		lblDevices.setLayoutData(new GridData(SWT.RIGHT, SWT.CENTER, false, false, 1, 1));
 		managedForm.getToolkit().adapt(lblDevices, true, true);
 		lblDevices.setText("Organization:");
 		

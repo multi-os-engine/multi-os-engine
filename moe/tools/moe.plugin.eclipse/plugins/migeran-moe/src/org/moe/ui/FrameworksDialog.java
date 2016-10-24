@@ -97,7 +97,7 @@ public class FrameworksDialog extends Dialog {
 		scrolledComposite.setExpandHorizontal(true);
 		scrolledComposite.setExpandVertical(true);
 		
-		frameworksList = new List(scrolledComposite, SWT.BORDER);
+		frameworksList = new List(scrolledComposite, SWT.BORDER | SWT.V_SCROLL);
 		scrolledComposite.setContent(frameworksList);
 		scrolledComposite.setMinSize(frameworksList.computeSize(SWT.DEFAULT, SWT.DEFAULT));
 		searchText.addModifyListener(new ModifyListener() {

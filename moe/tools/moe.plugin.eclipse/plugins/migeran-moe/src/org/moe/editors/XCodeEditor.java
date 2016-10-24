@@ -49,9 +49,6 @@ public class XCodeEditor extends FormEditor {
 
 	public XCodeEditor() {
 		super();
-		this.projectForm = new ProjectEditorPage(this, "moe.editors.form.project", "Project", false);
-		this.mainForm = new TargetEditorPage(this, "moe.editors.form.main", "Main", true);
-		this.testForm = new TargetEditorPage(this, "moe.editors.form.test", "Test", false);
 	}
 	
 	@Override
@@ -59,6 +56,9 @@ public class XCodeEditor extends FormEditor {
 		super.init(site, input);
 		setPartName("Xcode Editor");
 		initManagers();
+		this.projectForm = new ProjectEditorPage(this, "moe.editors.form.project", "Project", false);
+		this.mainForm = new TargetEditorPage(this, "moe.editors.form.main", xcodeEditorManager.getMainTargetName(), true);
+		this.testForm = new TargetEditorPage(this, "moe.editors.form.test", xcodeEditorManager.getTestTargetName(), false);
 		projectForm.setXcodeEditorManager(xcodeEditorManager);
 		mainForm.setXcodeEditorManager(xcodeEditorManager);
 		mainForm.setInfoPlistManager(mainInfoPlistManager);
