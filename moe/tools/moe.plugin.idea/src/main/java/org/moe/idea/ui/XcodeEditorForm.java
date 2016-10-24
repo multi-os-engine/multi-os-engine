@@ -105,6 +105,8 @@ public class XcodeEditorForm {
 
     public void init() {
         inited = false;
+        baseTabbedPane.setTitleAt(1, xcodeEditorManager.getMainTargetName());
+        baseTabbedPane.setTitleAt(2, xcodeEditorManager.getTestTargetName());
         projectNameTextField.setText(xcodeEditorManager.getProjectName());
         devicesComboBox.setSelectedItem(EditorUtil.getKey(devices, xcodeEditorManager.getDefaultDevices()));
         deploymentComboBox.setSelectedItem(xcodeEditorManager.getDefaultDeploymentTarget());
