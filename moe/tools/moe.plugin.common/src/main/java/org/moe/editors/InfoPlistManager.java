@@ -84,16 +84,16 @@ public class InfoPlistManager {
         return styles;
     }
 
-    public InfoPlistManager(File infoPlist) throws PropertyListFormatException, ParserConfigurationException, SAXException, ParseException, IOException {
+    public InfoPlistManager(File infoPlist) throws Exception {
         this.infoPlistFile = infoPlist;
         load();
     }
 
-    public InfoPlistManager(String content) throws ParserConfigurationException, ParseException, SAXException, PropertyListFormatException, IOException {
+    public InfoPlistManager(String content) throws Exception {
         load(content);
     }
 
-    public void load(String content) throws ParserConfigurationException, ParseException, SAXException, PropertyListFormatException, IOException {
+    public void load(String content) throws Exception {
         this.rootDict = (NSDictionary) PropertyListParser.parse(content.getBytes("UTF-8"));
         setValues();
     }
@@ -102,7 +102,7 @@ public class InfoPlistManager {
         this.documentChangeListener = listener;
     }
 
-    public void load() throws ParserConfigurationException, ParseException, SAXException, PropertyListFormatException, IOException {
+    public void load() throws Exception {
         this.rootDict = (NSDictionary) PropertyListParser.parse(infoPlistFile);
         setValues();
     }
