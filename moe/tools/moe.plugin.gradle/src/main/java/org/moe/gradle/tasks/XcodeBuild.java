@@ -57,6 +57,7 @@ import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
+import java.util.Map.Entry;
 import java.util.Properties;
 import java.util.Set;
 import java.util.regex.Pattern;
@@ -603,20 +604,21 @@ public class XcodeBuild extends AbstractBaseTask {
             final ProjectFile project = new ProjectFile(xcodeproj);
 
             // Search for target with name
-            Field<PBXObjectRef<? extends PBXObject>, PBXObject> nTargetField = project.getRoot().getObjects().findFirst(
-                    field -> field.value instanceof PBXNativeTarget && ((PBXNativeTarget)field.key.getReferenced())
-                            .getName().equals(target));
-            Require.nonNull(nTargetField,
+            final java.util.Optional<Entry<PBXObjectRef<? extends PBXObject>, PBXObject>> optional = project.getRoot()
+                    .getObjects().entrySet().stream()
+                    .filter(field -> field.getValue() instanceof PBXNativeTarget && ((PBXNativeTarget)field.getKey()
+                            .getReferenced()).getName().equals(target)).findFirst();
+            Require.TRUE(optional.isPresent(),
                     "Target with name '" + target + "' doesn't exist in Xcode project at " + xcodeproj
                             .getAbsolutePath());
-            PBXNativeTarget nTarget = (PBXNativeTarget)nTargetField.value;
+            PBXNativeTarget nTarget = (PBXNativeTarget)optional.get().getValue();
 
             // Search for build configuration with name
             XCConfigurationList xcConfigurationList = nTarget.getBuildConfigurationList().getReferenced();
             for (PBXObjectRef<XCBuildConfiguration> ref : xcConfigurationList.getOrCreateBuildConfigurations()) {
                 XCBuildConfiguration xcBuildConfiguration = ref.getReferenced();
                 if (xcBuildConfiguration.getName().equals(getMode().getXcodeCompatibleName())) {
-                    return xcBuildConfiguration.getValue("DEVELOPMENT_TEAM") != null;
+                    return xcBuildConfiguration.get("DEVELOPMENT_TEAM") != null;
                 }
             }
         } catch (Throwable t) {
