@@ -104,7 +104,7 @@ public class MOEBindingGeneratorByXcode implements MOEBindingGenerator {
             File xcodeProjectFile = new File(ProjectUtil.retrieveXcodeProjectPathFromGradle(projectFile));
             ProjectFile xcodeProject = new ProjectFile(xcodeProjectFile);
 
-            companyName = xcodeProject.getRoot().getRootObject().getReferenced().getAttributesOrNull().getValue("ORGANIZATIONNAME").value;
+            companyName = xcodeProject.getRoot().getRootObject().getReferenced().getAttributesOrNull().get("ORGANIZATIONNAME").value;
         } catch (Exception e) {
             e.printStackTrace();
         }

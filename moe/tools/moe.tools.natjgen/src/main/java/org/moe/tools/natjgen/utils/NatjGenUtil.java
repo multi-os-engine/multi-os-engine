@@ -140,8 +140,8 @@ public class NatjGenUtil {
 
             ArrayList<Dictionary.Field<PBXObjectRef<? extends PBXObject>, PBXObject>> fields = xcodeProject.getRoot().getObjects().rawData();
             for (Dictionary.Field<PBXObjectRef<? extends PBXObject>, PBXObject> field : fields) {
-                if (field.value instanceof PBXFileReference){
-                    PBXFileReference pbxFileRef = (PBXFileReference)field.value;
+                if (field.getValue() instanceof PBXFileReference){
+                    PBXFileReference pbxFileRef = (PBXFileReference)field.getValue();
                     String filePath = pbxFileRef.getPath();
 
                     if (filePath.endsWith(".xib") || filePath.endsWith(".storyboard")) {
@@ -156,7 +156,7 @@ public class NatjGenUtil {
                         if (checkFile != null && checkFile.exists()) {
                             headerFile = checkFile;
                         } else {
-                            String groupPath = getGroupPathForReference(xcodeProject, field.key.value);
+                            String groupPath = getGroupPathForReference(xcodeProject, field.getKey().value);
                             String fileSearchPath = groupPath.isEmpty() ? filePath : groupPath;
                             String fixedPath = fileSearchPath;
                             if (fixedPath.startsWith("..")) {
@@ -188,7 +188,7 @@ public class NatjGenUtil {
         for (PBXGroup group : groups) {
             for (PBXObjectRef<? extends PBXObject> groupChild : group.getChildrenOrNull()){
                 if (groupChild.value.equals(reference)) {
-                    path = groupChild.getReferenced().getValue("path").toString();
+                    path = groupChild.getReferenced().get("path").toString();
                 }
                 if (path != null && !path.isEmpty()) {
                     return path;
@@ -204,8 +204,8 @@ public class NatjGenUtil {
 
         while(it.hasNext()) {
             Dictionary.Field field = (Dictionary.Field)it.next();
-            if(field.value instanceof PBXGroup) {
-                result.add((PBXGroup)field.value);
+            if(field.getValue() instanceof PBXGroup) {
+                result.add((PBXGroup)field.getValue());
             }
         }
 
@@ -218,8 +218,8 @@ public class NatjGenUtil {
 
         while(var2.hasNext()) {
             Dictionary.Field field = (Dictionary.Field)var2.next();
-            if(field.value instanceof PBXFileReference) {
-                result.add((PBXObjectRef)field.key);
+            if(field.getValue() instanceof PBXFileReference) {
+                result.add((PBXObjectRef)field.getKey());
             }
         }
 
