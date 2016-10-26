@@ -217,27 +217,34 @@ public class MOEProjectComposer implements Cloneable {
         } else {
             for (Field filed : fields) {
                 switch (filed) {
-                    case TARGET_DIRECTORY: {
-                        requireNotNull(TARGET_DIRECTORY, targetDirectory);
-                    } break;
-                    case PROJECT_NAME: {
-                        requireNotEmpty(PROJECT_NAME, projectName);
-                    } break;
-                    case ORGANIZATION_NAME: {
-                        requireNotEmpty(ORGANIZATION_NAME, organizationName);
-                    } break;
-                    case ORGANIZATION_IDENTIFIER: {
-                        requireNotEmpty(ORGANIZATION_IDENTIFIER, organizationID);
-                    } break;
-                    case PACKAGE_NAME: {
-                        requireJavaPackage(PACKAGE_NAME, packageName);
-                    } break;
-                    case MOE_VERSION: {
-                        requireVersionNumber(MOE_VERSION, moeVersion);
-                    } break;
-                    case TEMPLATE: {
-                        requireNotNull(TEMPLATE, template);
-                    } break;
+                case TARGET_DIRECTORY: {
+                    requireNotNull(TARGET_DIRECTORY, targetDirectory);
+                }
+                break;
+                case PROJECT_NAME: {
+                    requireNotEmpty(PROJECT_NAME, projectName);
+                }
+                break;
+                case ORGANIZATION_NAME: {
+                    requireNotEmpty(ORGANIZATION_NAME, organizationName);
+                }
+                break;
+                case ORGANIZATION_IDENTIFIER: {
+                    requireNotEmpty(ORGANIZATION_IDENTIFIER, organizationID);
+                }
+                break;
+                case PACKAGE_NAME: {
+                    requireJavaPackage(PACKAGE_NAME, packageName);
+                }
+                break;
+                case MOE_VERSION: {
+                    requireVersionNumber(MOE_VERSION, moeVersion);
+                }
+                break;
+                case TEMPLATE: {
+                    requireNotNull(TEMPLATE, template);
+                }
+                break;
                 }
             }
         }

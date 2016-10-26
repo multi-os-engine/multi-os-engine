@@ -34,11 +34,6 @@ import java.util.regex.Pattern;
 public class ResourceWriter {
 
     /**
-     * Content writer.
-     */
-    private final ContentWriter w;
-
-    /**
      * Input stream.
      */
     private final InputStream inputStream;
@@ -56,15 +51,13 @@ public class ResourceWriter {
     /**
      * Creates a new ResourceWriter instance.
      *
-     * @param file        file to write into
      * @param inputStream input stream
      */
-    public ResourceWriter(File file, InputStream inputStream) {
-        if (file == null || inputStream == null) {
+    public ResourceWriter(InputStream inputStream) {
+        if (inputStream == null) {
             throw new NullPointerException();
         }
         this.inputStream = inputStream;
-        w = new ContentWriter(file);
     }
 
     /**
@@ -95,7 +88,8 @@ public class ResourceWriter {
     /**
      * Write to file and close.
      */
-    public void writeAndClose() {
+    public void writeAndClose(File file) {
+        final ContentWriter w = new ContentWriter(file);
         Stack<String> regionStack = new Stack<String>();
         BufferedReader br = new BufferedReader(new InputStreamReader(inputStream, Charset.forName("UTF-8")));
         String line;
@@ -119,6 +113,36 @@ public class ResourceWriter {
             throw new RuntimeException("Failed to write to file", e);
         }
         w.close();
+    }
+
+    /**
+     * Write to file and close.
+     */
+    public String replaceAndGet() {
+        final StringBuilder builder = new StringBuilder();
+        Stack<String> regionStack = new Stack<String>();
+        BufferedReader br = new BufferedReader(new InputStreamReader(inputStream, Charset.forName("UTF-8")));
+        String line;
+        try {
+            while ((line = br.readLine()) != null) {
+                if (checkRegion(line, regionStack)) {
+                    continue;
+                }
+                if (regionStack.size() > 0 && regionStack.peek().startsWith("-")) {
+                    continue;
+                }
+                for (Map.Entry<String, String> next : placeholders.entrySet()) {
+                    line = line.replaceAll(Pattern.quote(next.getKey()), next.getValue());
+                }
+                builder.append(line).append('\n');
+            }
+
+            // Done with the file
+            br.close();
+        } catch (IOException e) {
+            throw new RuntimeException("Failed to write to file", e);
+        }
+        return builder.toString();
     }
 
     private boolean checkRegion(String line, Stack<String> regionStack) {

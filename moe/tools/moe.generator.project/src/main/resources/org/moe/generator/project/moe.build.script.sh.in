@@ -1,0 +1,68 @@
+#!/bin/bash
+set -e
+
+export MOE_BUILD_SOURCE_SET="${_PLACEHOLDER_MOE_TARGET_SOURCESET_NAME}"
+
+# Check project directory
+if [ ! -d "$MOE_PROJECT_DIR" ]; then
+    echo "$0:$LINENO:1: error: 'MOE_PROJECT_DIR' doesn't point to a directory!"; exit 1;
+fi
+cd "$MOE_PROJECT_DIR"
+
+# Export JAVA_HOME
+export JAVA_HOME=$(/usr/libexec/java_home -v 1.8)
+
+# Utility function for finding the Gradle implementation
+function findGradle {
+    CD="$PWD"
+    while [ "$CD" != "" ]; do
+        echo "Looking for gradlew in $CD"
+        if [ -x "$CD/gradlew" ]; then
+            GRADLE_EXEC=$CD/gradlew
+            return 0
+        fi
+        CD="${CD%/*}"
+    done
+
+    echo "Checking with 'which'"
+    GRADLE_EXEC=$(which 'gradle')
+
+    if [ "$GRADLE_EXEC" = "" ]; then
+        echo "Failed to locate 'gradle' executable!"
+        exit 1
+    fi
+}
+
+# Build project with Gradle
+if [ -z "$MOE_GRADLE_EXTERNAL_BUILD" ]; then
+    findGradle
+    "$GRADLE_EXEC" --daemon moeXcodeInternal -s
+fi
+
+# Check output directory
+if [ ! -d "${MOE_PROJECT_BUILD_DIR}" ]; then
+    echo "$0:$LINENO:1: error: 'MOE_PROJECT_BUILD_DIR' doesn't point to a directory!"; exit 1;
+fi
+
+# Copy some resources
+mkdir -p "${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}"
+cp "${MOE_PROJECT_BUILD_DIR}/moe/${MOE_BUILD_SOURCE_SET}/application.jar" "${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/"
+cp "${MOE_PROJECT_BUILD_DIR}/moe/${MOE_BUILD_SOURCE_SET}/preregister.txt" "${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/"
+if [ "${MOE_BUILD_SOURCE_SET}" == "test" ]; then
+    cp "${MOE_PROJECT_BUILD_DIR}/moe/${MOE_BUILD_SOURCE_SET}/classlist.txt" "${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/"
+fi
+
+# Copy android CA certificates on demand
+if [ "${MOE_COPY_ANDROID_CACERTS}" == "YES" ]; then
+    rm -rf "${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/android_root/etc/security/cacerts"
+    mkdir -p "${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/android_root/etc/security/cacerts"
+    unzip "${MOE_SDK_PATH}/sdk/moe-core-certificates.zip" -d "${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/android_root/etc/security/cacerts"
+fi
+
+# Copy and sign MOE framework
+rsync -av --filter "- CVS/" --filter "- .svn/" --filter "- .git/" --filter "- .hg/" --filter "- Headers" --filter "- PrivateHeaders" --filter "- Modules" \
+    "${MOE_FRAMEWORK_PATH}/MOE.framework" "${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/"
+if [ -n "${EXPANDED_CODE_SIGN_IDENTITY}" -a "${CODE_SIGNING_REQUIRED}" != "NO" -a "${CODE_SIGNING_ALLOWED}" != "NO" ]; then
+    /usr/bin/codesign --force --sign $EXPANDED_CODE_SIGN_IDENTITY $OTHER_CODE_SIGN_FLAGS \
+        --preserve-metadata=identifier,entitlements "${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MOE.framework"
+fi

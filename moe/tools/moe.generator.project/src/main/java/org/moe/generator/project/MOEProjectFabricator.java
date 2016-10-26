@@ -20,32 +20,13 @@ import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
-import org.moe.document.pbxproj.PBXBuildFile;
-import org.moe.document.pbxproj.PBXBuildPhase;
-import org.moe.document.pbxproj.PBXCopyFilesBuildPhase;
-import org.moe.document.pbxproj.PBXFileReference;
-import org.moe.document.pbxproj.PBXFrameworksBuildPhase;
-import org.moe.document.pbxproj.PBXGroup;
-import org.moe.document.pbxproj.PBXNativeTarget;
-import org.moe.document.pbxproj.PBXObject;
-import org.moe.document.pbxproj.PBXObjectRef;
-import org.moe.document.pbxproj.PBXProject;
-import org.moe.document.pbxproj.PBXResourcesBuildPhase;
-import org.moe.document.pbxproj.PBXShellScriptBuildPhase;
-import org.moe.document.pbxproj.PBXSourcesBuildPhase;
 import org.moe.document.pbxproj.ProjectException;
-import org.moe.document.pbxproj.ProjectFile;
-import org.moe.document.pbxproj.XCBuildConfiguration;
-import org.moe.document.pbxproj.XCConfigurationList;
-import org.moe.document.pbxproj.nextstep.Array;
-import org.moe.document.pbxproj.nextstep.Dictionary;
-import org.moe.document.pbxproj.nextstep.NextStep;
-import org.moe.document.pbxproj.nextstep.Value;
 import org.moe.generator.project.MOEProjectComposer.Template;
 import org.moe.generator.project.MOEProjectComposer.Template.Language;
-import org.moe.generator.project.util.FileTypeUtil;
-import org.moe.generator.project.writer.ContentProvider;
 import org.moe.generator.project.writer.ResourceWriter;
+import org.moe.generator.project.writer.XcodeEditor;
+import org.moe.generator.project.writer.XcodeTemplateEditor;
+import org.moe.generator.project.writer.XcodeTemplateEditor.Settings;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -81,11 +62,13 @@ public class MOEProjectFabricator {
 
         // Create Gradle files
         write("build.gradle.in", rootDir, "build.gradle");
-        copy("wrapper/gradlew", rootDir, SOURCE_FILE_NAME).setExecutable(true);
-        copy("wrapper/gradlew.bat", rootDir, SOURCE_FILE_NAME);
-        final File gradleWrapperDir = createDirectory("gradle", "wrapper");
-        copy("wrapper/gradle/wrapper/gradle-wrapper.jar", gradleWrapperDir, SOURCE_FILE_NAME);
-        copy("wrapper/gradle/wrapper/gradle-wrapper.properties", gradleWrapperDir, SOURCE_FILE_NAME);
+        if (!composer.isSubproject()) {
+            copy("wrapper/gradlew", rootDir, SOURCE_FILE_NAME).setExecutable(true);
+            copy("wrapper/gradlew.bat", rootDir, SOURCE_FILE_NAME);
+            final File gradleWrapperDir = createDirectory("gradle", "wrapper");
+            copy("wrapper/gradle/wrapper/gradle-wrapper.jar", gradleWrapperDir, SOURCE_FILE_NAME);
+            copy("wrapper/gradle/wrapper/gradle-wrapper.properties", gradleWrapperDir, SOURCE_FILE_NAME);
+        }
 
         // Copy Git files
         copy("git/.gitignore.in", rootDir, ".gitignore");
@@ -93,7 +76,7 @@ public class MOEProjectFabricator {
 
     private void reifyTemplate() throws IOException, ProjectException {
         final String resource = "/org/moe/generator/project/" + templateRootPath + "template.json";
-        final InputStream stream = ContentProvider.class.getResourceAsStream(resource);
+        final InputStream stream = XcodeEditor.class.getResourceAsStream(resource);
         if (stream == null) {
             throw new IOException("Failed to locate resource " + resource);
         }
@@ -171,315 +154,27 @@ public class MOEProjectFabricator {
 
         final String from = taskObject.get("from").getAsString();
         final String resource = "/org/moe/generator/project/" + templateRootPath + from;
-        final InputStream stream = ContentProvider.class.getResourceAsStream(resource);
+        final InputStream stream = XcodeEditor.class.getResourceAsStream(resource);
         if (stream == null) {
             throw new IOException("Failed to locate resource " + resource);
         }
-        ProjectFile file = new ProjectFile(stream);
-
-        final PBXProject project = file.getRoot().getRootObject().getReferenced();
-        project.getOrCreateAttributes().replaceValue("ORGANIZATIONNAME", new Value(composer.getOrganizationName()));
-
-        final PBXGroup mainGroup;
-        final PBXGroup testGroup;
-        {
-            PBXGroup _mainGroup = null;
-            PBXGroup _testGroup = null;
-            final Array<PBXObjectRef<? extends PBXObject>> mainGroupElements = project.getMainGroup().getReferenced()
-                    .getOrCreateChildren();
-            for (PBXObjectRef<? extends PBXObject> elementRef : mainGroupElements) {
-                final PBXObject referenced = elementRef.getReferenced();
-                if (!(referenced instanceof PBXGroup)) {
-                    continue;
-                }
-                final PBXGroup group = (PBXGroup)referenced;
-                if (group.getPath() == null) {
-                    continue;
-                } else if (group.getPath().equals("__main_target__")) {
-                    _mainGroup = group;
-
-                } else if (group.getPath().equals("__test_target__")) {
-                    _testGroup = group;
-                }
-            }
-            mainGroup = _mainGroup;
-            testGroup = _testGroup;
-        }
-
-        final Array<PBXObjectRef<PBXNativeTarget>> targets = project.getOrCreateTargets();
-        for (PBXObjectRef<PBXNativeTarget> targetRef : targets) {
-            final PBXNativeTarget target = targetRef.getReferenced();
-            if (target.getName().equals("__main_target__")) {
-                configureTarget(file, target, mainGroup, false);
-
-            } else if (target.getName().equals("__test_target__")) {
-                configureTarget(file, target, testGroup, true);
-            }
-        }
+        XcodeTemplateEditor editor = new XcodeTemplateEditor(stream);
+        XcodeTemplateEditor.Settings settings = new Settings();
+        settings.projectName = composer.getProjectName();
+        settings.organizationName = composer.getOrganizationName();
+        settings.bundleID = composer.getBundleID();
+        editor.update(settings);
 
         final File xcodeDir = createDirectory("xcode");
-        file.saveAs(new File(xcodeDir, composer.getProjectName() + ".xcodeproj"));
-    }
+        editor.getProjectFile().saveAs(new File(xcodeDir, composer.getProjectName() + ".xcodeproj"));
 
-    private void configureTarget(ProjectFile file, PBXNativeTarget target, PBXGroup group, boolean isTest)
-            throws IOException {
-        final String suffix;
-        final String sourceSet;
-        if (isTest) {
-            suffix = "-Test";
-            sourceSet = "test";
-        } else {
-            suffix = "";
-            sourceSet = "main";
-        }
+        for (String target : new String[] { composer.getProjectName(), composer.getProjectName() + "-Test" }) {
+            final File xcodeTargetDir = createDirectory("xcode", target);
 
-        final String projectName = composer.getProjectName() + suffix;
-        group.setPath(projectName);
-        target.setName(projectName);
-        target.setProductName(projectName);
-        target.getProductReference().getReferenced().setPath(projectName + ".app");
-
-        final XCConfigurationList configurationList = target.getBuildConfigurationList().getReferenced();
-        for (PBXObjectRef<XCBuildConfiguration> configRef : configurationList.getOrCreateBuildConfigurations()) {
-            final XCBuildConfiguration buildConfiguration = configRef.getReferenced();
-            final Dictionary<Value, NextStep> settings = buildConfiguration.getOrCreateBuildSettings();
-            _setxcbs(settings, "INFOPLIST_FILE", projectName + "/Info.plist");
-            _setxcbs(settings, "PRODUCT_BUNDLE_IDENTIFIER", composer.getBundleID() + suffix);
-            _setxcbs(settings, "ENABLE_BITCODE", "NO");
-
-            _setxcbs(settings, "MOE_PROJECT_DIR", "${SRCROOT}/..");
-            _setxcbs(settings, "MOE_PROJECT_BUILD_DIR", "${MOE_PROJECT_DIR}/build");
-            _setxcbs(settings, "MOE_SECT_OAT",
-                    "-sectcreate __OATDATA __oatdata \"${MOE_PROJECT_BUILD_DIR}/moe/" + sourceSet
-                            + "/xcode/${CONFIGURATION}${EFFECTIVE_PLATFORM_NAME}/${arch}.oat\"");
-            _setxcbs(settings, "MOE_SECT_ART",
-                    "-sectcreate __ARTDATA __artdata \"${MOE_PROJECT_BUILD_DIR}/moe/" + sourceSet
-                            + "/xcode/${CONFIGURATION}${EFFECTIVE_PLATFORM_NAME}/${arch}.art\"");
-
-            _setxcbs(settings, "MOE_SEGPROT[sdk=iphoneos*]", "-segprot __OATDATA rx rx -segprot __ARTDATA rw rw");
-            _setxcbs(settings, "MOE_SEGPROT[sdk=iphonesimulator*]",
-                    "-segprot __OATDATA rwx rx -segprot __ARTDATA rwx rw");
-
-            _setxcbs(settings, "MOE_PAGEZERO[sdk=iphoneos*]", "");
-            _setxcbs(settings, "MOE_PAGEZERO[sdk=iphonesimulator*]", "-pagezero_size 4096");
-
-            _setxcbs(settings, "MOE_FRAMEWORK_PATH", "${MOE_PROJECT_BUILD_DIR}/moe/sdk/sdk/${PLATFORM_NAME}");
-
-            _setxcbs(settings, "MOE_OTHER_LDFLAGS",
-                    "${MOE_SECT_OAT} ${MOE_SECT_ART} ${MOE_SEGPROT} ${MOE_PAGEZERO} ${MOE_CUSTOM_OTHER_LDFLAGS} -lstdc++");
-
-            _appendxcbs(settings, "FRAMEWORK_SEARCH_PATHS", "$(inherited)");
-            _appendxcbs(settings, "FRAMEWORK_SEARCH_PATHS", "${MOE_FRAMEWORK_PATH}");
-
-            _appendxcbs(settings, "OTHER_LDFLAGS", "$(inherited)");
-            _appendxcbs(settings, "OTHER_LDFLAGS", "${MOE_OTHER_LDFLAGS}");
-        }
-
-        final PBXGroup supportingFiles = getOrCreateSubGroup(file, group, "Supporting Files");
-        final Array<PBXObjectRef<? extends PBXObject>> supportingFilesChildren = supportingFiles.getOrCreateChildren();
-
-        // Create main.cpp file reference
-        final PBXObjectRef<PBXFileReference> mainCppFileRef = createFileReference(file, null, "main.cpp", "<group>");
-        {
-            final File xcodeTargetDir = createDirectory("xcode", composer.getProjectName() + suffix);
-            ContentProvider.generateMainCppContent(new File(xcodeTargetDir, mainCppFileRef.getReferenced().getPath()));
-        }
-        supportingFilesChildren.add(mainCppFileRef);
-
-        // Create main.cpp build file
-        final PBXObjectRef<PBXBuildFile> mainCppBuildFile = createBuildFile(file, mainCppFileRef);
-
-        // Create MOE.framework file reference
-        final PBXObjectRef<PBXFileReference> moeFwFileRef = createFileReference(file, null, "MOE.framework",
-                "MOE_FRAMEWORK_PATH");
-
-        // Create MOE.framework build files
-        final PBXObjectRef<PBXBuildFile> moeFWLink = createBuildFile(file, moeFwFileRef);
-        final PBXObjectRef<PBXBuildFile> moeFWEmbed = createBuildFile(file, moeFwFileRef);
-        {
-            final Array<Value> moeEmbedFwBuildFileAttrs = new Array<Value>();
-            moeEmbedFwBuildFileAttrs.add(new Value("CodeSignOnCopy"));
-            moeEmbedFwBuildFileAttrs.add(new Value("RemoveHeadersOnCopy"));
-            moeFWEmbed.getReferenced().getOrCreateSettings().add(new Value("ATTRIBUTES"), moeEmbedFwBuildFileAttrs);
-        }
-
-        // Create build script
-        final PBXShellScriptBuildPhase moeCompileBuildPhase = getOrCreateMOECompileBuildPhase(file, target);
-        moeCompileBuildPhase.setShellPath("/bin/bash");
-        moeCompileBuildPhase.setShellScript(ContentProvider.getGradleBuildScriptContents(isTest));
-
-        final PBXSourcesBuildPhase sourcesBuildPhase = getOrCreateSourcesBuildPhase(file, target);
-        sourcesBuildPhase.getOrCreateFiles().add(mainCppBuildFile);
-
-        final PBXFrameworksBuildPhase frameworksBuildPhase = getOrCreateFrameworksBuildPhase(file, target);
-        frameworksBuildPhase.getOrCreateFiles().add(moeFWLink);
-
-        final PBXCopyFilesBuildPhase moeEmbedFrameworksBuildPhase = getOrCreateMOEEmbedFrameworksBuildPhase(file,
-                target);
-        moeEmbedFrameworksBuildPhase.getOrCreateFiles().add(moeFWEmbed);
-    }
-
-    public static PBXObjectRef<PBXFileReference> createFileReference(ProjectFile file, String name, String filePath,
-            String sourceTree) {
-        final PBXFileReference fileReference = new PBXFileReference();
-        fileReference.setLastKnownFileType(FileTypeUtil.getFileType(filePath));
-        fileReference.setPath(filePath);
-        if (name != null) {
-            fileReference.setName(name);
-        }
-        if (sourceTree != null) {
-            fileReference.setSourceTree(sourceTree);
-        }
-        final PBXObjectRef<PBXFileReference> reference = file.createReference(fileReference);
-        file.getRoot().getObjects().add(reference);
-        return reference;
-    }
-
-    public static PBXObjectRef<PBXBuildFile> createBuildFile(ProjectFile file, PBXObjectRef<PBXFileReference> fileReference) {
-        final PBXBuildFile buildFile = new PBXBuildFile();
-        buildFile.setFileRef(fileReference);
-        final PBXObjectRef<PBXBuildFile> reference = file.createReference(buildFile);
-        file.getRoot().getObjects().add(reference);
-        return reference;
-    }
-
-    private PBXSourcesBuildPhase getOrCreateSourcesBuildPhase(ProjectFile file, PBXNativeTarget target) {
-        for (PBXObjectRef<PBXBuildPhase> ref : target.getOrCreateBuildPhases()) {
-            if (!(ref.getReferenced().getClass().equals(PBXSourcesBuildPhase.class))) {
-                continue;
-            }
-            return (PBXSourcesBuildPhase)ref.getReferenced();
-        }
-        final PBXSourcesBuildPhase phase = new PBXSourcesBuildPhase();
-        phase.setBuildActionMask("2147483647");
-        phase.setRunOnlyForDeploymentPostprocessing("0");
-        phase.getOrCreateFiles();
-        final PBXObjectRef<PBXBuildPhase> reference = file.<PBXBuildPhase>createReference(phase);
-        file.getRoot().getObjects().add(reference);
-        target.getBuildPhasesOrNull().add(reference);
-        return phase;
-    }
-
-    private PBXResourcesBuildPhase getOrCreateResourcesBuildPhase(ProjectFile file, PBXNativeTarget target) {
-        for (PBXObjectRef<PBXBuildPhase> ref : target.getOrCreateBuildPhases()) {
-            if (!(ref.getReferenced().getClass().equals(PBXResourcesBuildPhase.class))) {
-                continue;
-            }
-            return (PBXResourcesBuildPhase)ref.getReferenced();
-        }
-        final PBXResourcesBuildPhase phase = new PBXResourcesBuildPhase();
-        phase.setBuildActionMask("2147483647");
-        phase.setRunOnlyForDeploymentPostprocessing("0");
-        phase.getOrCreateFiles();
-        final PBXObjectRef<PBXBuildPhase> reference = file.<PBXBuildPhase>createReference(phase);
-        file.getRoot().getObjects().add(reference);
-        target.getBuildPhasesOrNull().add(reference);
-        return phase;
-    }
-
-    public static PBXFrameworksBuildPhase getOrCreateFrameworksBuildPhase(ProjectFile file, PBXNativeTarget target) {
-        for (PBXObjectRef<PBXBuildPhase> ref : target.getOrCreateBuildPhases()) {
-            if (!(ref.getReferenced().getClass().equals(PBXFrameworksBuildPhase.class))) {
-                continue;
-            }
-            return (PBXFrameworksBuildPhase)ref.getReferenced();
-        }
-        final PBXFrameworksBuildPhase phase = new PBXFrameworksBuildPhase();
-        phase.setBuildActionMask("2147483647");
-        phase.setRunOnlyForDeploymentPostprocessing("0");
-        phase.getOrCreateFiles();
-        final PBXObjectRef<PBXBuildPhase> reference = file.<PBXBuildPhase>createReference(phase);
-        file.getRoot().getObjects().add(reference);
-        target.getBuildPhasesOrNull().add(reference);
-        return phase;
-    }
-
-    private PBXShellScriptBuildPhase getOrCreateMOECompileBuildPhase(ProjectFile file, PBXNativeTarget target) {
-        for (PBXObjectRef<PBXBuildPhase> ref : target.getOrCreateBuildPhases()) {
-            if (!(ref.getReferenced().getClass().equals(PBXShellScriptBuildPhase.class))) {
-                continue;
-            }
-            final PBXShellScriptBuildPhase referenced = (PBXShellScriptBuildPhase)ref.getReferenced();
-            if (!"Compile Sources (MOE)".equals(referenced.getName())) {
-                continue;
-            }
-            return (PBXShellScriptBuildPhase)ref.getReferenced();
-        }
-        final PBXShellScriptBuildPhase phase = new PBXShellScriptBuildPhase();
-        phase.setBuildActionMask("2147483647");
-        phase.setRunOnlyForDeploymentPostprocessing("0");
-        phase.getOrCreateFiles();
-        phase.getOrCreateInputPaths();
-        phase.getOrCreateOutputPaths();
-        phase.setName("Compile Sources (MOE)");
-        final PBXObjectRef<PBXBuildPhase> reference = file.<PBXBuildPhase>createReference(phase);
-        file.getRoot().getObjects().add(reference);
-        target.getBuildPhasesOrNull().add(0, reference);
-        return phase;
-    }
-
-    private PBXCopyFilesBuildPhase getOrCreateMOEEmbedFrameworksBuildPhase(ProjectFile file, PBXNativeTarget target) {
-        for (PBXObjectRef<PBXBuildPhase> ref : target.getOrCreateBuildPhases()) {
-            if (!(ref.getReferenced().getClass().equals(PBXCopyFilesBuildPhase.class))) {
-                continue;
-            }
-            final PBXCopyFilesBuildPhase referenced = (PBXCopyFilesBuildPhase)ref.getReferenced();
-            if (!"Embed Frameworks (MOE)".equals(referenced.getName())) {
-                continue;
-            }
-            return referenced;
-        }
-        final PBXCopyFilesBuildPhase phase = new PBXCopyFilesBuildPhase();
-        phase.setBuildActionMask("2147483647");
-        phase.setRunOnlyForDeploymentPostprocessing("0");
-        phase.getOrCreateFiles();
-        phase.setName("Embed Frameworks (MOE)");
-        phase.setDstPath("");
-        phase.setDstSubfolderSpec("10");
-        final PBXObjectRef<PBXBuildPhase> reference = file.<PBXBuildPhase>createReference(phase);
-        file.getRoot().getObjects().add(reference);
-        target.getBuildPhasesOrNull().add(reference);
-        return phase;
-    }
-
-    private PBXGroup getOrCreateSubGroup(ProjectFile file, PBXGroup group, String name) {
-        for (PBXObjectRef<? extends PBXObject> ref : group.getOrCreateChildren()) {
-            final PBXObject object = ref.getReferenced();
-            if (object instanceof PBXGroup) {
-                PBXGroup child = (PBXGroup)object;
-                if (name.equals(child.getName())) {
-                    return child;
-                }
-            }
-        }
-        final PBXGroup child = new PBXGroup();
-        child.setName(name);
-        child.setSourceTree("<group>");
-        child.getOrCreateChildren();
-        final PBXObjectRef<PBXGroup> reference = file.createReference(child);
-        file.getRoot().getObjects().add(reference);
-        group.getChildrenOrNull().add(reference);
-        return child;
-    }
-
-    private static void _setxcbs(Dictionary<Value, NextStep> settings, String key, String value) {
-        final Value _key = new Value(key);
-        if (settings.contains(_key)) {
-            settings.replaceValue(_key, new Value(value));
-        } else {
-            settings.add(_key, new Value(value));
-        }
-    }
-
-    private static void _appendxcbs(Dictionary<Value, NextStep> settings, String key, String value) {
-        final Value _key = new Value(key);
-        if (settings.contains(_key)) {
-            @SuppressWarnings("unchecked") final Array<Value> list = (Array<Value>)settings.getValue(_key);
-            list.add(new Value(value));
-        } else {
-            final Array<Value> list = new Array<Value>();
-            list.add(new Value(value));
-            settings.add(_key, list);
+            final InputStream buildScriptAsStream = XcodeEditor.class
+                    .getResourceAsStream("/org/moe/generator/project/main.cpp.in");
+            final ResourceWriter buildScriptResourceWriter = new ResourceWriter(buildScriptAsStream);
+            buildScriptResourceWriter.writeAndClose(new File(xcodeTargetDir, "main.cpp"));
         }
     }
 
@@ -550,12 +245,12 @@ public class MOEProjectFabricator {
         createDirectory(outputFile.getParentFile());
 
         // Process and write file
-        final InputStream stream = ContentProvider.class.getResourceAsStream(resource);
+        final InputStream stream = XcodeEditor.class.getResourceAsStream(resource);
         if (stream == null) {
             throw new IOException("Failed to locate resource " + resource);
         }
         try {
-            ResourceWriter w = new ResourceWriter(outputFile, stream);
+            ResourceWriter w = new ResourceWriter(stream);
             w.setPlaceholder("MOE_PROJECT_NAME", composer.getProjectName());
             w.setPlaceholder("MOE_VERSION", composer.getMoeVersion());
             w.setPlaceholder("PACKAGE_NAME", composer.getPackageName());
@@ -563,7 +258,7 @@ public class MOEProjectFabricator {
                 w.enableRegion("USE_KOTLIN_PLUGIN");
                 w.setPlaceholder("KOTLIN_VERSION", "1.0.4");
             }
-            w.writeAndClose();
+            w.writeAndClose(outputFile);
         } finally {
             try {
                 stream.close();
@@ -605,7 +300,7 @@ public class MOEProjectFabricator {
         createDirectory(outputFile.getParentFile());
 
         // Write file
-        final InputStream stream = ContentProvider.class.getResourceAsStream(resource);
+        final InputStream stream = XcodeEditor.class.getResourceAsStream(resource);
         if (stream == null) {
             throw new IOException("Failed to locate resource " + resource);
         }

@@ -66,7 +66,7 @@ class ContentWriter {
      *
      * @param string content
      */
-    public void wl(String string) {
+    void wl(String string) {
         w(string);
         w("\n");
     }
@@ -74,7 +74,7 @@ class ContentWriter {
     /**
      * Write a new line.
      */
-    public void nl() {
+    void nl() {
         w("\n");
     }
 
