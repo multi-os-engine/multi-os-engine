@@ -17,6 +17,14 @@ limitations under the License.
 package org.moe.editors;
 
 import com.dd.plist.NSString;
+import org.moe.document.pbxproj.PBXBuildFile;
+import org.moe.document.pbxproj.PBXBuildPhase;
+import org.moe.document.pbxproj.PBXFileReference;
+import org.moe.document.pbxproj.PBXFrameworksBuildPhase;
+import org.moe.document.pbxproj.PBXNativeTarget;
+import org.moe.document.pbxproj.PBXObjectRef;
+import org.moe.document.pbxproj.ProjectFile;
+import org.moe.generator.project.util.FileTypeUtil;
 
 import java.io.File;
 import java.util.Map;
@@ -66,5 +74,46 @@ public class EditorUtil {
 
     public static String getInterfaceNameWithoutExtension(String fullName) {
         return fullName.substring(0, fullName.indexOf("."));
+    }
+
+    public static PBXObjectRef<PBXFileReference> createFileReference(ProjectFile file, String name, String filePath,
+            String sourceTree) {
+        final PBXFileReference fileReference = new PBXFileReference();
+        fileReference.setLastKnownFileType(FileTypeUtil.getFileType(filePath));
+        fileReference.setPath(filePath);
+        if (name != null) {
+            fileReference.setName(name);
+        }
+        if (sourceTree != null) {
+            fileReference.setSourceTree(sourceTree);
+        }
+        final PBXObjectRef<PBXFileReference> reference = file.createReference(fileReference);
+        file.getRoot().getObjects().put(reference);
+        return reference;
+    }
+
+    public static PBXObjectRef<PBXBuildFile> createBuildFile(ProjectFile file, PBXObjectRef<PBXFileReference> fileReference) {
+        final PBXBuildFile buildFile = new PBXBuildFile();
+        buildFile.setFileRef(fileReference);
+        final PBXObjectRef<PBXBuildFile> reference = file.createReference(buildFile);
+        file.getRoot().getObjects().put(reference);
+        return reference;
+    }
+
+    public static PBXFrameworksBuildPhase getOrCreateFrameworksBuildPhase(ProjectFile file, PBXNativeTarget target) {
+        for (PBXObjectRef<PBXBuildPhase> ref : target.getOrCreateBuildPhases()) {
+            if (!(ref.getReferenced().getClass().equals(PBXFrameworksBuildPhase.class))) {
+                continue;
+            }
+            return (PBXFrameworksBuildPhase)ref.getReferenced();
+        }
+        final PBXFrameworksBuildPhase phase = new PBXFrameworksBuildPhase();
+        phase.setBuildActionMask("2147483647");
+        phase.setRunOnlyForDeploymentPostprocessing("0");
+        phase.getOrCreateFiles();
+        final PBXObjectRef<PBXBuildPhase> reference = file.<PBXBuildPhase>createReference(phase);
+        file.getRoot().getObjects().put(reference);
+        target.getBuildPhasesOrNull().add(reference);
+        return phase;
     }
 }

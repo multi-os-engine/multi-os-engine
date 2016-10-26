@@ -18,6 +18,7 @@ package org.moe.editors;
 
 import org.moe.document.pbxproj.*;
 import org.moe.document.pbxproj.nextstep.Array;
+import org.moe.document.pbxproj.nextstep.Array.Predicate;
 import org.moe.document.pbxproj.nextstep.Dictionary;
 import org.moe.document.pbxproj.nextstep.NextStep;
 import org.moe.document.pbxproj.nextstep.Value;
@@ -112,16 +113,17 @@ public class XcodeEditorManager {
     }
 
     private PBXNativeTarget getTarget(final String targetName) {
-        // Search for target with name
-        Dictionary.Field<PBXObjectRef<? extends PBXObject>, PBXObject> nTargetField = root.getObjects().findFirst(new Dictionary.FieldPredicate<PBXObjectRef<? extends PBXObject>, PBXObject>() {
-            @Override
-            public boolean predicate(Dictionary.Field<PBXObjectRef<? extends PBXObject>, PBXObject> field) {
-                return field.value instanceof PBXNativeTarget && ((PBXNativeTarget)field.key.getReferenced())
-                        .getName().equals(targetName);
-            }
-        });
-
-        return (PBXNativeTarget)nTargetField.value;
+        final PBXObjectRef<PBXNativeTarget> objectRef = pbxProject.getOrCreateTargets()
+                .find(new Predicate<PBXObjectRef<PBXNativeTarget>>() {
+                    @Override
+                    public boolean predicate(PBXObjectRef<PBXNativeTarget> objRef) {
+                        return objRef.getReferenced().getName().equals(targetName);
+                    }
+                });
+        if (objectRef == null) {
+            throw new RuntimeException("Failed to find target with name '" + targetName + "'");
+        }
+        return objectRef.getReferenced();
     }
 
     public String getMainTargetName() {
@@ -311,11 +313,11 @@ public class XcodeEditorManager {
 
     private List<Framework> getFrameworks(PBXNativeTarget target) {
         List<Framework> frameworks = new ArrayList<Framework>();
-        PBXFrameworksBuildPhase frameworksBuildPhase = MOEProjectFabricator.getOrCreateFrameworksBuildPhase(projectFile, target);
+        PBXFrameworksBuildPhase frameworksBuildPhase = EditorUtil.getOrCreateFrameworksBuildPhase(projectFile, target);
 
         for (PBXObjectRef<PBXBuildFile> frameworkFile : frameworksBuildPhase.getOrCreateFiles()) {
             PBXFileReference pbxFileReference =
-                    (PBXFileReference) root.getObjects().getValue(frameworkFile.getReferenced().getFileRef());
+                    (PBXFileReference) root.getObjects().get(frameworkFile.getReferenced().getFileRef());
             String name = pbxFileReference.getName();
             String path = pbxFileReference.getPath();
             name = name == null ? path : name;
@@ -326,7 +328,7 @@ public class XcodeEditorManager {
     }
 
     private void removeFramework(PBXNativeTarget target, Framework framework) {
-        PBXFrameworksBuildPhase frameworksBuildPhase = MOEProjectFabricator.getOrCreateFrameworksBuildPhase(projectFile, target);
+        PBXFrameworksBuildPhase frameworksBuildPhase = EditorUtil.getOrCreateFrameworksBuildPhase(projectFile, target);
         Array<PBXObjectRef<PBXBuildFile>> files = frameworksBuildPhase.getOrCreateFiles();
 
         PBXObjectRef<PBXBuildFile> frameworkBuildFile = null;
@@ -335,7 +337,7 @@ public class XcodeEditorManager {
         for (PBXObjectRef<PBXBuildFile> file : files) {
             PBXObjectRef<PBXFileReference> fileRef = (PBXObjectRef<PBXFileReference>) file.getReferenced().getFileRef();
             PBXFileReference pbxFileReference =
-                    (PBXFileReference) root.getObjects().getValue(fileRef);
+                    (PBXFileReference) root.getObjects().get(fileRef);
             String name = pbxFileReference.getName();
             String path = pbxFileReference.getPath();
             name = name == null ? "" : name;
@@ -381,7 +383,7 @@ public class XcodeEditorManager {
 
     private void addFramework(Framework framework, PBXNativeTarget target) {
         // Create framework file reference
-        final PBXObjectRef<PBXFileReference> frameWorkFileRef = MOEProjectFabricator.createFileReference(
+        final PBXObjectRef<PBXFileReference> frameWorkFileRef = EditorUtil.createFileReference(
                 projectFile,
                 framework.getName(),
                 framework.getPath(),
@@ -389,9 +391,9 @@ public class XcodeEditorManager {
         );
 
         // Create framework build files
-        PBXObjectRef<PBXBuildFile> frameworkLink = MOEProjectFabricator.createBuildFile(projectFile, frameWorkFileRef);
+        PBXObjectRef<PBXBuildFile> frameworkLink = EditorUtil.createBuildFile(projectFile, frameWorkFileRef);
 
-        PBXFrameworksBuildPhase frameworksBuildPhase = MOEProjectFabricator.getOrCreateFrameworksBuildPhase(projectFile, target);
+        PBXFrameworksBuildPhase frameworksBuildPhase = EditorUtil.getOrCreateFrameworksBuildPhase(projectFile, target);
         frameworksBuildPhase.getOrCreateFiles().add(frameworkLink);
 
         pbxProject.getMainGroup().getReferenced().getOrCreateChildren().add(0, frameWorkFileRef);
@@ -433,8 +435,8 @@ public class XcodeEditorManager {
         Map<String, String> files = new HashMap<String, String>();
         ArrayList<Dictionary.Field<PBXObjectRef<? extends PBXObject>, PBXObject>> fields = root.getObjects().rawData();
         for (Dictionary.Field<PBXObjectRef<? extends PBXObject>, PBXObject> field : fields) {
-            if (field.value instanceof PBXFileReference) {
-                PBXFileReference pbxFileRef = (PBXFileReference) field.value;
+            if (field.getValue() instanceof PBXFileReference) {
+                PBXFileReference pbxFileRef = (PBXFileReference) field.getValue();
                 String filePath = pbxFileRef.getPath();
                 if (filePath.endsWith(XIB_FILE) || filePath.endsWith(STORYBOARD_FILE)) {
                     String name = pbxFileRef.getName();
@@ -514,7 +516,7 @@ public class XcodeEditorManager {
     public String getOrganizationName() {
         Dictionary<Value, Value> attributes = pbxProject.getAttributesOrNull();
         if (attributes != null) {
-            Value value = attributes.getValue(new Value(ORGANIZATIONNAME_KEY));
+            Value value = attributes.get(new Value(ORGANIZATIONNAME_KEY));
             return  value.value;
         }
         return "";
@@ -526,12 +528,7 @@ public class XcodeEditorManager {
         }
         Dictionary<Value, Value> attributes = pbxProject.getOrCreateAttributes();
         if (attributes != null) {
-            Value value = attributes.getValue(new Value(ORGANIZATIONNAME_KEY));
-            if (value != null) {
-                attributes.replaceValue(new Value(ORGANIZATIONNAME_KEY), new Value(name));
-            } else {
-                attributes.add(new Value(ORGANIZATIONNAME_KEY), new Value(name));
-            }
+            attributes.put(ORGANIZATIONNAME_KEY, new Value(name));
             if (documentChangeListener != null) {
                 documentChangeListener.documentChanged();
             }
@@ -588,7 +585,7 @@ public class XcodeEditorManager {
 
     private String getBuildSettingsValueWithKey(XCBuildConfiguration xcBuildConfiguration, String key) {
         Value valueKey = new Value(key);
-        Value nextStep = (Value) xcBuildConfiguration.getOrCreateBuildSettings().getValue(valueKey);
+        Value nextStep = (Value) xcBuildConfiguration.getOrCreateBuildSettings().get(valueKey);
         if (nextStep != null) {
             return nextStep.value;
         }
@@ -601,19 +598,14 @@ public class XcodeEditorManager {
         }
         Dictionary<Value, NextStep> buildSettings = xcBuildConfiguration.getOrCreateBuildSettings();
         Value keyValue = new Value(key);
-        NextStep nextStep = buildSettings.getValue(keyValue);
+        NextStep nextStep = buildSettings.get(keyValue);
 
         if (value == null) {
             if (nextStep != null) {
-                nextStep = null;
                 buildSettings.remove(keyValue);
             }
         } else {
-            if (nextStep != null) {
-                buildSettings.replaceValue(keyValue, new Value(value));
-            } else {
-                buildSettings.add(keyValue, new Value(value));
-            }
+            buildSettings.put(keyValue, new Value(value));
         }
     }
 }
