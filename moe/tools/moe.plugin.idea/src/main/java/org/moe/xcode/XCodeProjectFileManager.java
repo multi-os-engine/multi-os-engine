@@ -47,7 +47,7 @@ public class XCodeProjectFileManager {
         }
 
         PBXObjectRef<PBXFileReference> frNewFile = project.createReference(new PBXFileReference());
-        project.getRoot().getObjects().add(frNewFile);
+        project.getRoot().getObjects().put(frNewFile);
         frNewFile.getReferenced().setPath(filePath);
         frNewFile.getReferenced().setName(getFileName(filePath));
 

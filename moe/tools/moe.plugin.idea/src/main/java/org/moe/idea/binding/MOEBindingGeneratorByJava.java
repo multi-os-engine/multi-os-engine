@@ -208,8 +208,8 @@ public class MOEBindingGeneratorByJava {
                                       String extension) {
         ArrayList<Dictionary.Field<Value, NextStep>> fields = project.getRoot().rawData();
         for (Dictionary.Field pbxFile : fields) {
-            if (pbxFile.value instanceof PBXFileReference) {
-                PBXFileReference pbxFileRef = (PBXFileReference)pbxFile.value;
+            if (pbxFile.getValue() instanceof PBXFileReference) {
+                PBXFileReference pbxFileRef = (PBXFileReference)pbxFile.getValue();
                 String filePath = pbxFileRef.getPath();
                 if (filePath.endsWith(extension)) {
                     String xCodeProjectName = ProjectUtil.retrieveXcodeProjectPathFromGradle(

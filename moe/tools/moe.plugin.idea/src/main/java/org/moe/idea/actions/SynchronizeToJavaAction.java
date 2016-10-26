@@ -140,11 +140,11 @@ public class SynchronizeToJavaAction extends AnAction {
             ArrayList<Dictionary.Field<PBXObjectRef<? extends PBXObject>, PBXObject>> fields = xcodeProject.getRoot()
                     .getObjects().rawData();
             for (Dictionary.Field<PBXObjectRef<? extends PBXObject>, PBXObject> field : fields) {
-                if (field.value instanceof PBXFileReference) {
-                    PBXFileReference pbxFileRef = (PBXFileReference)field.value;
+                if (field.getValue() instanceof PBXFileReference) {
+                    PBXFileReference pbxFileRef = (PBXFileReference)field.getValue();
                     String filePath = pbxFileRef.getPath();
                     if (filePath.endsWith(".xib") || filePath.endsWith(".storyboard")) {
-                        String groupPath = getGroupPathForReference(xcodeProject, field.key.value);
+                        String groupPath = getGroupPathForReference(xcodeProject, field.getKey().value);
                         File headerFile = new File(xcodeProjectFile.getParentFile(),
                                 groupPath + File.separator + filePath);
                         if (headerFile.exists()) {
