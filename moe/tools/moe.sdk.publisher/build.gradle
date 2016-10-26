@@ -75,6 +75,9 @@ def getSDKCopySpec() {
             from files(rootProject.external.moe_core.out.moe_core_sources_jar) {
                 rename rootProject.external.moe_core.out.moe_core_sources_jar.name, 'moe-core-sources.jar'
             }
+            from files(rootProject.external.moe_core.out.moe_core_certificates_zip) {
+                rename rootProject.external.moe_core.out.moe_core_certificates_zip.name, 'moe-core-certificates.zip'
+            }
             from files(rootProject.external.moe_core.out.moe_ios_jar) {
                 rename rootProject.external.moe_core.out.moe_ios_jar.name, 'moe-ios.jar'
             }
