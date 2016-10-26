@@ -24,7 +24,7 @@ import java.io.IOException;
 public class ExecGradleTest extends TestCase {
 
     public void testCanFindExec() throws IOException {
-        GradleExec gradle = new GradleExec(new File("./"));
+        GradleExec gradle = new GradleExec(new File("../master"));
 
         assertNotNull(gradle.getExecPath());
         assertFalse(gradle.getExecPath().isEmpty());
