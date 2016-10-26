@@ -252,8 +252,19 @@ task coreJavadocJar(type: Jar, dependsOn: coreJavadoc) {
     from(file('../eula/LICENSE.TXT')) { into 'META-INF' }
 }
 
+task coreCertificatesZip(type: Zip) {
+    baseName 'moe-core'
+    classifier 'certificates'
+
+    into('.') {
+        from files("${android_path}/system/ca-certificates/files")
+    }
+    destinationDir file('build/libs/core')
+}
+
 artifacts {
     archives coreJar
     archives coreSourcesJar
     archives coreJavadocJar
+    archives coreCertificatesZip
 }
