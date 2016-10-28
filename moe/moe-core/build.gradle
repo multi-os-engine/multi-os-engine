@@ -18,7 +18,7 @@ import org.moe.prebuilts.Script
 
 apply plugin: 'base'
 
-version '1.2.3'
+version '1.2.4'
 
 allprojects {
     repositories {
