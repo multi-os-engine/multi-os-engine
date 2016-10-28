@@ -1438,30 +1438,54 @@ Class registerObjCClass(JNIEnv* env, jclass type, bool isProxy, jstring baseClas
   {
     if (isProxy) {
       classJName = (jstring)env->CallObjectMethod(type, gGetClassNameMethod);
+      classCName = env->GetStringUTFChars(classJName, NULL);
     } else {
       jclass originalClass = isCategory ? categClass : type;
-      jobject classAnn = env->CallObjectMethod(
-          originalClass, gGetAnnotationMethod, gObjCClassNameClass);
-      if (!env->IsSameObject(classAnn, NULL)) {
-        classJName =
-            (jstring)env->CallObjectMethod(classAnn, gGetObjCClassNameMethod);
-        env->DeleteLocalRef(classAnn);
-      } else {
-        if (isOriginalBinding) {
-          classJName = (jstring)env->CallObjectMethod(
-              originalClass, gGetClassSimpleNameMethod);
+
+      bool first_candidate = true;
+      while (true) {
+        jobject classAnn = env->CallObjectMethod(
+            originalClass, gGetAnnotationMethod, gObjCClassNameClass);
+        if (!env->IsSameObject(classAnn, NULL)) {
+          classJName =
+              (jstring)env->CallObjectMethod(classAnn, gGetObjCClassNameMethod);
+          env->DeleteLocalRef(classAnn);
         } else {
-          classJName = (jstring)env->CallObjectMethod(originalClass,
-                                                      gGetClassNameMethod);
+          if (isOriginalBinding) {
+            classJName = (jstring)env->CallObjectMethod(
+                originalClass, gGetClassSimpleNameMethod);
+          } else {
+            classJName = (jstring)env->CallObjectMethod(originalClass,
+                                                        gGetClassNameMethod);
+          }
+        }
+
+        classCName = env->GetStringUTFChars(classJName, NULL);
+
+        // Check wheter the Objective-C class is already present
+        objcClass = objc_getClass(classCName);
+
+        // A binding must refer to an existing class.
+        if (isOriginalBinding && !objcClass) {
+          originalClass = env->GetSuperclass(originalClass);
+
+          if (env->IsSameObject(originalClass, NULL)) {
+            break;
+          }
+
+          env->ReleaseStringUTFChars(classJName, classCName);
+          env->DeleteLocalRef(classJName);
+
+          if (first_candidate) {
+            first_candidate = false;
+            LOGW << "Binding class refers to class " << classCName
+                 << ", but it can not be found. Fallback to indirect super class.";
+          }
+        } else {
+          break;
         }
       }
     }
-    classCName = env->GetStringUTFChars(classJName, NULL);
-  }
-
-  // Check wheter the Objective-C class is already present
-  if (!isProxy) {
-    objcClass = objc_getClass(classCName);
   }
 
   // A category must refer to an existing class.
