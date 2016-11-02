@@ -23,11 +23,15 @@ import org.clang.struct.CXIdxIBOutletCollectionAttrInfo;
 import org.moe.natj.general.ptr.Ptr;
 import org.moe.natj.general.ptr.impl.PtrUtils;
 
+import java.util.HashSet;
+import java.util.Set;
+
 abstract class AbstractModelEditor implements IModelEditor {
 
     protected final Indexer indexer;
     protected final int memModel;
     protected final Configuration configuration;
+    protected final Set<String> disabledObjCClasses = new HashSet<>();
 
     protected AbstractModelEditor(Indexer indexer, int memModel) {
         if (indexer == null) {

@@ -669,7 +669,7 @@ public class Type {
         case CXTypeKind.Char_S:
         case CXTypeKind.Char_U: {
             ASSERT_TYPE_SIZE(type, 1);
-            if (typeDefType != null && "BOOL".equals(typeDefType.getTypeSpelling())) {
+            if (typeDefType != null && "BOOL".equals(typeDefType.getTypeSpelling().toString())) {
                 kind = Boolean;
             } else {
                 kind = Byte;

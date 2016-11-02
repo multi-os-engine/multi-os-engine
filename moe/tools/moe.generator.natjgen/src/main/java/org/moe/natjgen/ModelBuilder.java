@@ -57,6 +57,7 @@ class ModelBuilder extends AbstractModelEditor {
         // Get unit
         final Unit unit = configuration.getUnit(decl);
         if (unit.handlingDisabled()) {
+            disabledObjCClasses.add(unit.getOriginalName());
             return;
         }
 
@@ -150,9 +151,10 @@ class ModelBuilder extends AbstractModelEditor {
         final String class_name = info.classCursor().toString();
         final ObjCClassManager objcclass = getGenerator().getClass(class_name);
         if (objcclass == null) {
-            // TODO: check
+            if (disabledObjCClasses.contains(class_name)) {
+                return;
+            }
             throw new RuntimeException("Class with name " + info.classCursor().toString() + " couldn't be found!");
-            // return;
         }
 
         int numOLG = clang.clang_Cursor_getNumObjCGenericParams(declCursor);

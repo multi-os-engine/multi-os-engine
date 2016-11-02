@@ -905,7 +905,13 @@ public class TypeResolver extends AbstractASTBase {
         }
         final ObjCClassManager clazz = manager.getGenerator().getClass(baseType.getElementName());
         if (clazz == null) {
-            throw new RuntimeException("Couldn't find class with name: " + baseType.getElementName());
+            // Default to 'id' if Objective-C class is not found
+            if (resolver._supports(OBJC_GENERICS, 0) && baseType.getObjCGenericParamType() != null) {
+                return manager.getAST()
+                        .newSimpleType(manager.getAST().newName(baseType.getObjCGenericParamType().getName()));
+            } else {
+                return manager.getAST().newSimpleType(manager.getAST().newName(manager.addImport("java.lang.Object")));
+            }
         }
 
         // Handle NSString
