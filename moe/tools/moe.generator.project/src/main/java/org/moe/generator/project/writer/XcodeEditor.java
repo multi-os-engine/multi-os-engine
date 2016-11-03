@@ -75,10 +75,18 @@ public class XcodeEditor extends AbstractXcodeEditor {
             sourceSet = "main";
         }
 
+        // Save some important values
+        final String MOE_PROJECT_DIR_VALUE = getBuildSetting(target, "MOE_COPY_ANDROID_CACERTS", "${SRCROOT}/..");
+        final String MOE_PROJECT_BUILD_DIR_VALUE = getBuildSetting(target, "MOE_COPY_ANDROID_CACERTS",
+                "${MOE_PROJECT_DIR}/build");
+        final String MOE_COPY_ANDROID_CACERTS_VALUE = getBuildSetting(target, "MOE_COPY_ANDROID_CACERTS", "NO");
+
+        // Remove all "MOE_" values
         removeMOEPrefixKeys(target);
 
-        setBuildSetting(target, "MOE_PROJECT_DIR", "${SRCROOT}/..");
-        setBuildSetting(target, "MOE_PROJECT_BUILD_DIR", "${MOE_PROJECT_DIR}/build");
+        // Add all "MOE_" values
+        setBuildSetting(target, "MOE_PROJECT_DIR", MOE_PROJECT_DIR_VALUE);
+        setBuildSetting(target, "MOE_PROJECT_BUILD_DIR", MOE_PROJECT_BUILD_DIR_VALUE);
         setBuildSetting(target, "MOE_SECT_OAT",
                 "-sectcreate __OATDATA __oatdata \"${MOE_PROJECT_BUILD_DIR}/moe/" + sourceSet
                         + "/xcode/${CONFIGURATION}${EFFECTIVE_PLATFORM_NAME}/${arch}.oat\"");
@@ -100,7 +108,7 @@ public class XcodeEditor extends AbstractXcodeEditor {
                 "${MOE_SECT_OAT} ${MOE_SECT_ART} ${MOE_SEGPROT} ${MOE_PAGEZERO} ${MOE_CUSTOM_OTHER_LDFLAGS} -lstdc++ "
                         + "-framework MOE");
 
-        setBuildSetting(target, "MOE_COPY_ANDROID_CACERTS", "NO");
+        setBuildSetting(target, "MOE_COPY_ANDROID_CACERTS", MOE_COPY_ANDROID_CACERTS_VALUE);
     }
 
     protected PBXNativeTarget getTarget(final String targetName) {

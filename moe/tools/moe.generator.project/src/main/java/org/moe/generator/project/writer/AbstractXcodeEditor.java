@@ -144,6 +144,26 @@ public abstract class AbstractXcodeEditor {
         }
     }
 
+    protected String getBuildSetting(PBXNativeTarget target, String key, String defaultValue) {
+        for (PBXObjectRef<XCBuildConfiguration> ref : target.getBuildConfigurationList().getReferenced()
+                .getOrCreateBuildConfigurations()) {
+            final XCBuildConfiguration buildConfiguration = ref.getReferenced();
+            final Dictionary<Value, NextStep> buildSettings = buildConfiguration.getOrCreateBuildSettings();
+            for (Iterator<Entry<Value, NextStep>> iterator = buildSettings.entrySet().iterator(); iterator
+                    .hasNext(); ) {
+                final Entry<Value, NextStep> entry = iterator.next();
+                Value existingKey = entry.getKey();
+                if (existingKey.value.equals(key)) {
+                    final NextStep value = entry.getValue();
+                    if (value instanceof Value) {
+                        return ((Value)value).value;
+                    }
+                }
+            }
+        }
+        return defaultValue;
+    }
+
     protected void setBuildSetting(PBXNativeTarget target, String key, String value) {
         for (PBXObjectRef<XCBuildConfiguration> ref : target.getBuildConfigurationList().getReferenced()
                 .getOrCreateBuildConfigurations()) {
