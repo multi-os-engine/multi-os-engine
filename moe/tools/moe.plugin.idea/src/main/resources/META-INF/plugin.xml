@@ -101,38 +101,15 @@
                   text="Open Project in Xcode"
                   description="Open Project in Xcode"/>
 
-          <action id="MOE.GenerateBinding" class="org.moe.idea.actions.MOEGenerateBindingAction"
-                  text="Generate Bindings"
-                  description="Generate Bindings"/>
-
           <action id="org.moe.idea.MOEOpenXcodeEditorAction"
                   class="org.moe.idea.actions.MOEOpenXcodeEditorAction"
                   text="Open Xcode Editor"
                   description="Open Xcode project settings editor"/>
 
-         <!-- <action id="MOE.SynchronizeToXcode"
+          <action id="MOE.SynchronizeToXcode"
                   class="org.moe.idea.actions.SynchronizeToXcodeAction"
                   text="Synchronize to Xcode"
-                  description="Generate UI Interface Bindings"/>-->
-
-          <action id="MOE.SynchronizeToJava"
-                  class="org.moe.idea.actions.SynchronizeToJavaAction"
-                  text="Synchronize to Java"
                   description="Generate UI Interface Bindings"/>
-
-          <action id="MOE.LinkThirdPartyFramework"
-                  class="org.moe.idea.actions.MOELinkThirdpartyFramework"
-                  text="Link third party framework to Xcode"
-                  description="Link third party framework to Xcode"/>
-
-          <action id="MOE.LinkThirdPartyLibraries"
-                  class="org.moe.idea.actions.MOELinkThirdpartyLibraries"
-                  text="Link third party libraries to Xcode"
-                  description="Link third party libraries to Xcode"/>
-          <action id="MOE.LinkPodThirdPartyLibraries"
-                  class="org.moe.idea.actions.LinkPodThirdPartyLibraries"
-                  text="Link CocoaPods to Xcode"
-                  description="Link CocoaPods to Xcode"/>
 
           <separator/>
           <add-to-group group-id="ProjectViewPopupMenu" relative-to-action="MOEModuleActions.Separator" anchor="after"/>

@@ -34,8 +34,6 @@ import org.jdom.Element;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.moe.common.PasswordEntry;
-import org.moe.common.constants.ProductType;
-import org.moe.common.utils.OsUtils;
 import org.moe.idea.runconfig.MOERunProfileState;
 import org.moe.idea.utils.Configuration;
 import org.moe.idea.utils.JDOMHelper;
@@ -57,7 +55,6 @@ public abstract class MOERunConfigurationBase extends LocatableConfigurationBase
     protected boolean debug;
     protected int debugPort = 8000;
     protected int debugRemotePort = 8000;
-    protected ProductType productType;
     private String moduleName;
     private String modulePath;
     protected Module module;
@@ -77,15 +74,6 @@ public abstract class MOERunConfigurationBase extends LocatableConfigurationBase
         super(project, factory, "");
 
         configuration = Configuration.DEBUG_NAME;
-        productType = ProductType.app;
-    }
-
-    public ProductType productType() {
-        return productType;
-    }
-
-    public void productType(ProductType productType) {
-        this.productType = productType;
     }
 
     public Module module() {
@@ -276,7 +264,6 @@ public abstract class MOERunConfigurationBase extends LocatableConfigurationBase
         deviceUdid(JDOMExternalizerUtil.readField(element, "deviceUdid"));
         debugPort(JDOMHelper.readInteger(element, "debugPort", 8000));
         debugRemotePort(JDOMHelper.readInteger(element, "debugRemotePort", 8000));
-        productType(ProductType.valueOf(JDOMHelper.readString(element, "productType", ProductType.app.name())));
         setRemoteBuildEnabled(JDOMHelper.readBoolean(element, "remoteBuildEnabled", false));
         setRemoteHost(JDOMExternalizerUtil.readField(element, "remoteHost"));
         setRemotePort(JDOMHelper.readInteger(element, "remotePort", 0));
@@ -300,7 +287,6 @@ public abstract class MOERunConfigurationBase extends LocatableConfigurationBase
         JDOMExternalizerUtil.writeField(element, "deviceUdid", deviceUdid());
         JDOMExternalizerUtil.writeField(element, "debugPort", Integer.toString(debugPort()));
         JDOMExternalizerUtil.writeField(element, "debugRemotePort", Integer.toString(debugRemotePort()));
-        JDOMExternalizerUtil.writeField(element, "productType", productType.name());
         JDOMExternalizerUtil.writeField(element, "remoteBuildEnabled", Boolean.toString(isRemoteBuildEnabled()));
         JDOMExternalizerUtil.writeField(element, "remotePort", Integer.toString(getRemotePort()));
         JDOMExternalizerUtil.writeField(element, "remoteKeychainLocktimeout", Integer.toString(getRemoteKeychainLocktimeout()));

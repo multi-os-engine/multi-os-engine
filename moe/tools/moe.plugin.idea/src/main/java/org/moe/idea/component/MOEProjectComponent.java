@@ -25,7 +25,6 @@ import com.intellij.openapi.fileEditor.FileEditorManagerListener;
 import com.intellij.openapi.module.Module;
 import com.intellij.openapi.module.ModuleManager;
 import com.intellij.openapi.project.Project;
-import com.intellij.openapi.vfs.VirtualFileManager;
 import com.intellij.util.messages.MessageBusConnection;
 import org.moe.idea.MOESdkPlugin;
 import org.moe.idea.compiler.MOECompileTask;
@@ -46,7 +45,6 @@ public class MOEProjectComponent extends AbstractProjectComponent {
     public void initComponent() {
         super.initComponent();
         messageBusConnection = myProject.getMessageBus().connect();
-        messageBusConnection.subscribe(VirtualFileManager.VFS_CHANGES, new XCodeProjectSyncListener(myProject));
         messageBusConnection.subscribe(FileEditorManagerListener.FILE_EDITOR_MANAGER, new FileEditorListener());
         messageBusConnection.subscribe(ProjectTopics.MODULES, new ModuleObserver());
     }
