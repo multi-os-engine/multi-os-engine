@@ -341,21 +341,9 @@
             point="org.eclipse.ui.commands">
         <command
                 categoryId="org.eclipse.ui.commands"
-                defaultHandler="org.moe.popup.actions.SynchronizeToJavaHandler"
-                id="org.moe.popup.actions.SynchronizeToJavaHandler"
-                name="Synchronize to Java">
-        </command>
-        <command
-                categoryId="org.eclipse.ui.commands"
                 defaultHandler="org.moe.popup.actions.OpenXcodeActionHandler"
                 id="org.moe.popup.actions.OpenXcodeActionHandler"
                 name="Open Project in Xcode">
-        </command>
-        <command
-                categoryId="org.eclipse.ui.commands"
-                defaultHandler="org.moe.popup.actions.LinkThirdpartyFrameworkActionHandler"
-                id="org.moe.popup.actions.LinkThirdpartyFrameworkActionHandler"
-                name="Link third party framework to Xcode">
         </command>
         <command
                 categoryId="org.eclipse.ui.commands"
@@ -370,24 +358,8 @@
                 locationURI="popup:org.eclipse.ui.popup.any">
             <menu label="Multi-OS Engine Actions">
                 <command
-                        commandId="org.moe.popup.actions.SynchronizeToJavaHandler"
-                        label="Synchronize to Java"
-                        style="push">
-                    <visibleWhen>
-                        <reference definitionId="org.moe.isRelevantProjectAndMac"/>
-                    </visibleWhen>
-                </command>
-                <command
                         commandId="org.moe.popup.actions.OpenXcodeActionHandler"
                         label="Open Project in Xcode"
-                        style="push">
-                    <visibleWhen>
-                        <reference definitionId="org.moe.isRelevantProjectAndMac"/>
-                    </visibleWhen>
-                </command>
-                <command
-                        commandId="org.moe.popup.actions.LinkThirdpartyFrameworkActionHandler"
-                        label="Link third party framework to Xcode"
                         style="push">
                     <visibleWhen>
                         <reference definitionId="org.moe.isRelevantProjectAndMac"/>
