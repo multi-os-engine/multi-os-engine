@@ -17,7 +17,6 @@ limitations under the License.
 package org.moe.gradle.utils;
 
 import org.gradle.api.GradleException;
-import org.moe.common.constants.MOEManifestConstants;
 import org.moe.gradle.anns.NotNull;
 
 import java.util.Arrays;
@@ -86,30 +85,4 @@ public class Arch {
     public String toString() {
         return name;
     }
-
-    /**
-     * Get variant by manifest property.
-     *
-     * @param property manifest property
-     * @return variant or null
-     */
-    public static Arch getByManifestProperty(MOEManifestConstants.LIBRARIES_PATHS property) {
-        if (property == MOEManifestConstants.LIBRARIES_PATHS.MOE_ThirdpartyFramework_armv7) {
-            return ARMV7;
-        }
-        if (property == MOEManifestConstants.LIBRARIES_PATHS.MOE_ThirdpartyFramework_armv7s) {
-            return ARMV7S;
-        }
-        if (property == MOEManifestConstants.LIBRARIES_PATHS.MOE_ThirdpartyFramework_arm64) {
-            return ARM64;
-        }
-        if (property == MOEManifestConstants.LIBRARIES_PATHS.MOE_ThirdpartyFramework_i386) {
-            return I386;
-        }
-        if (property == MOEManifestConstants.LIBRARIES_PATHS.MOE_ThirdpartyFramework_x86_64) {
-            return X86_64;
-        }
-        return null;
-    }
-
 }

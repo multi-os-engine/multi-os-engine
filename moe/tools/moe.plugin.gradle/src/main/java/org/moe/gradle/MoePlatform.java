@@ -17,7 +17,6 @@ limitations under the License.
 package org.moe.gradle;
 
 import org.gradle.api.GradleException;
-import org.moe.common.constants.MOEManifestConstants;
 import org.moe.gradle.anns.NotNull;
 import org.moe.gradle.anns.Nullable;
 import org.moe.gradle.utils.Arch;
@@ -138,22 +137,6 @@ public class MoePlatform {
         return platformName;
     }
 
-    /**
-     * Get variant by manifest property.
-     *
-     * @param property manifest property
-     * @return property or null
-     */
-    public static MoePlatform getByManifestProperty(MOEManifestConstants.LIBRARIES_PATHS property) {
-        if (property == MOEManifestConstants.LIBRARIES_PATHS.MOE_ThirdpartyFramework_ios_device) {
-            return IOS;
-        }
-        if (property == MOEManifestConstants.LIBRARIES_PATHS.MOE_ThirdpartyFramework_ios_simulator) {
-            return IOS_SIMULATOR;
-        }
-        return null;
-    }
-
     public static List<MoePlatform> getSupportedTargetVariants(Arch archVariant) {
         List<MoePlatform> supported = new ArrayList<MoePlatform>();
         for (MoePlatform currentTarget : ALL_PLATFORMS) {
@@ -165,5 +148,4 @@ public class MoePlatform {
         }
         return supported;
     }
-
 }

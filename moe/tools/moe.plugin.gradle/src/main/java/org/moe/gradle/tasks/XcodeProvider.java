@@ -190,6 +190,10 @@ public class XcodeProvider extends AbstractBaseTask {
             dependsOn(getMoePlugin().getTaskBy(TestClassesProvider.class, sourceSet));
         }
 
+        if (SourceSet.MAIN_SOURCE_SET_NAME.equals(sourceSet.getName())) {
+            dependsOn(getMoePlugin().getTaskBy(GenerateUIObjCInterface.class));
+        }
+
         // Update convention mapping
         addConvention(CONVENTION_LOG_FILE, () -> resolvePathInBuildDir(outPath.get(), "XcodeProvider.log"));
     }
