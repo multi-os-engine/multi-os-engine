@@ -1,7 +1,7 @@
 <idea-plugin version="2">
   <id>org.moe</id>
   <name>Multi-OS Engine Plugin</name>
-  <version>1.2.1</version>
+  <version>1.3.0</version>
 
   <vendor url="https://multi-os-engine.org">Multi-OS Engine</vendor>
 
@@ -63,7 +63,7 @@
 
   <actions>
 
-      <action id="MOE.NewClass"
+      <action id="org.moe.idea.NewClass"
               text="Multi-OS Engine Class"
               description="Create new Multi-OS Engine class"
               class="org.moe.idea.actions.MOENewClassAction"
@@ -71,7 +71,7 @@
           <add-to-group group-id="NewGroup" anchor="before" relative-to-action="NewFile"/>
       </action>
 
-      <action id="MOE.NewModule"
+      <action id="org.moe.idea.NewModule"
               text="Multi-OS Engine Module"
               description="Create new Multi-OS Engine module"
               class="org.moe.idea.actions.MOENewModuleAction"
@@ -79,7 +79,7 @@
           <add-to-group group-id="NewGroup" anchor="before" relative-to-action="NewFile"/>
       </action>
 
-      <action id="MOE.NewProject"
+      <action id="org.moe.idea.NewProject"
               text="Multi-OS Engine Project"
               description="Create new Multi-OS Engine project"
               class="org.moe.idea.actions.MOENewProjectAction"
@@ -106,10 +106,15 @@
                   text="Open Xcode Editor"
                   description="Open Xcode project settings editor"/>
 
-          <action id="MOE.SynchronizeToXcode"
-                  class="org.moe.idea.actions.SynchronizeToXcodeAction"
-                  text="Synchronize to Xcode"
-                  description="Generate UI Interface Bindings"/>
+          <action id="org.moe.idea.MOEGenerateActionsAndOutletsAction"
+                  class="org.moe.idea.actions.MOEGenerateActionsAndOutletsAction"
+                  text="Generate Actions and Outlets for Interface Builder"
+                  description="Generate Actions and Outlets for Interface Builder"/>
+
+          <action id="org.moe.idea.MOERefreshXcodeProject"
+                  class="org.moe.idea.actions.MOERefreshXcodeProject"
+                  text="Inject/Refresh Xcode Project Settings"
+                  description="Inject/Refresh changes required to use Multi-OS Engine"/>
 
           <separator/>
           <add-to-group group-id="ProjectViewPopupMenu" relative-to-action="MOEModuleActions.Separator" anchor="after"/>

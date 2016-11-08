@@ -49,8 +49,6 @@ public class MOESdkType extends JavaDependentSdkType implements JavaSdkType {
     private String name;
     private String sdkRootPath;
 
-    private static final String VERSION = MOEText.get("SDK.Version");
-
     public static final LanguageLevel REQUIRED_JAVA_LANGUAGE_LEVEL = LanguageLevel.JDK_1_8;
 
     private final Sdk javaSdk;

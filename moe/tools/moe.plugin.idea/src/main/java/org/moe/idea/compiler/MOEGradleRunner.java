@@ -42,6 +42,21 @@ public class MOEGradleRunner {
         this.runConfig = runConfig;
     }
 
+    public static GeneralCommandLine construct(Module module, String... args) {
+        final List<String> cmdargs = new ArrayList<String>();
+
+        // Get Gradle
+        File workingDir = new File(ModuleUtils.getModulePath(module));
+        GradleExec exec = new GradleExec(workingDir);
+        cmdargs.add(exec.getExecPath());
+
+        for (String arg : args) {
+            cmdargs.add(arg);
+        }
+
+        return new GeneralCommandLine(cmdargs).withWorkDirectory(workingDir);
+    }
+
     public GeneralCommandLine construct(boolean isDebug, boolean isLaunch) throws ExecutionException {
         final List<String> args = new ArrayList<String>();
 
