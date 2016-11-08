@@ -22,6 +22,8 @@ import java.util.AbstractCollection;
 import java.util.AbstractSet;
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.Iterator;
 import java.util.Map;
 import java.util.NoSuchElementException;
@@ -470,6 +472,15 @@ public class Dictionary<K extends Value, V extends NextStep> extends NextStep im
                 return fields.size();
             }
         };
+    }
+
+    public void sortByKeys() {
+        Collections.sort(fields, new Comparator<Field<K, V>>() {
+            @Override
+            public int compare(Field<K, V> o1, Field<K, V> o2) {
+                return o1.getKey().value.compareTo(o2.getKey().value);
+            }
+        });
     }
 
     public FieldPrinter<K, V> getCustomPrinter() {
