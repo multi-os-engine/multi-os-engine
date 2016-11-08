@@ -191,7 +191,7 @@ public class XcodeProvider extends AbstractBaseTask {
         }
 
         if (SourceSet.MAIN_SOURCE_SET_NAME.equals(sourceSet.getName())) {
-            dependsOn(getMoePlugin().getTaskBy(GenerateUIObjCInterface.class));
+            dependsOn(getMoePlugin().getTaskBy(GenerateUIObjCInterfaces.class));
         }
 
         // Update convention mapping

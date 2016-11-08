@@ -40,7 +40,7 @@ import static org.objectweb.asm.Opcodes.ASM5;
 /**
  * This class composes Objective-C source code from Java classes.
  */
-public class UIObjCInterfaceComposer {
+public class IBActionAndOutletComposer {
 
     private final Map<String, ClassVisitor> classMap = new HashMap<>();
 
@@ -184,6 +184,7 @@ public class UIObjCInterfaceComposer {
                     if (returnType.getSort() != Type.OBJECT) {
                         warn("Method " + m + " in class " + v.getName()
                                 + " cannot have the @Property annotation and have a non-object return type. Skipping");
+                        return;
                     }
                     final String internalName = returnType.getInternalName();
                     final ClassVisitor internalType = classMap.get(internalName);
@@ -191,6 +192,7 @@ public class UIObjCInterfaceComposer {
                     if (m.isIBOutlet()) {
                         builder.append("IBOutlet ");
                     }
+                    final int begin = builder.length();
                     if (internalType == null) {
                         builder.append("id ").append(m.getSel()).append(";\n");
                     } else if (internalType.hasObjcProtocolName()) {
@@ -202,9 +204,10 @@ public class UIObjCInterfaceComposer {
                         builder.append(internalType.getObjcClassBinding()).append(" *").append(m.getSel())
                                 .append(";\n");
                     } else {
-                        throw new GradleException(
-                                "Unsupported return type for method " + m + " in class " + v.getName() + ": "
-                                        + returnType.getDescriptor());
+                        builder.replace(begin, builder.length(), "");
+                        warn("Unsupported return type for method " + m + " in class " + v.getName() + ": " + returnType
+                                .getDescriptor() + ". Skipping");
+                        return;
                     }
                     return;
                 }
@@ -216,6 +219,7 @@ public class UIObjCInterfaceComposer {
                     if (returnType.getSort() != Type.VOID) {
                         warn("Method " + m + " in class " + v.getName()
                                 + " cannot have the @IBAction annotation and have a non-void return type. Skipping");
+                        return;
                     }
 
                     final int numArgs = methodType.getArgumentTypes().length;
@@ -229,19 +233,23 @@ public class UIObjCInterfaceComposer {
                         warn("Method " + m + " in class " + v.getName()
                                 + " cannot have the @IBAction annotation, have 1 one or more arguments and have a "
                                 + "non-object first argument type. Skipping");
+                        return;
                     }
                     final String arg0InternalName = arg0.getInternalName();
                     final ClassVisitor arg0InternalType = classMap.get(arg0InternalName);
 
                     if (numArgs == 1) {
                         if (StringUtils.countMatches(m.getSel(), ":") != 1) {
-                            throw new GradleException("Malformed selector for method " + m + " in class " + v.getName()
-                                    + ": expected one argument in selector");
+                            warn("Malformed selector for method " + m + " in class " + v.getName()
+                                    + ": expected one argument in selector. Skipping");
+                            return;
                         }
                         if (!m.getSel().endsWith(":")) {
-                            throw new GradleException("Malformed selector for method " + m + " in class " + v.getName()
-                                    + ": selector must end in ':'");
+                            warn("Malformed selector for method " + m + " in class " + v.getName()
+                                    + ": selector must end in ':'. Skipping");
+                            return;
                         }
+                        final int begin = builder.length();
                         builder.append("- (IBAction)").append(m.getSel()).append("(");
                         if (arg0InternalType == null) {
                             builder.append("id");
@@ -252,9 +260,10 @@ public class UIObjCInterfaceComposer {
                         } else if (arg0InternalType.hasObjcClassBinding()) {
                             builder.append(arg0InternalType.getObjcClassBinding()).append(" *");
                         } else {
-                            throw new GradleException(
-                                    "Unsupported return type for method " + m + " in class " + v.getName() + ": "
-                                            + returnType.getDescriptor());
+                            builder.replace(begin, builder.length(), "");
+                            warn("Unsupported return type for method " + m + " in class " + v.getName() + ": "
+                                    + returnType.getDescriptor() + ". Skipping");
+                            return;
                         }
                         builder.append(")sender;\n");
                         return;
@@ -265,6 +274,7 @@ public class UIObjCInterfaceComposer {
                         warn("Method " + m + " in class " + v.getName()
                                 + " cannot have the @IBAction annotation, have 2 one or more arguments and have a "
                                 + "non UIEvent second argument type. Skipping");
+                        return;
                     }
                     final String arg1InternalName = arg0.getInternalName();
                     final ClassVisitor arg1InternalType = classMap.get(arg1InternalName);
@@ -272,17 +282,21 @@ public class UIObjCInterfaceComposer {
                         warn("Method " + m + " in class " + v.getName()
                                 + " cannot have the @IBAction annotation, have 2 one or more arguments and have a "
                                 + "non UIEvent second argument type. Skipping");
+                        return;
                     }
 
                     if (numArgs == 2) {
                         if (StringUtils.countMatches(m.getSel(), ":") != 2) {
-                            throw new GradleException("Malformed selector for method " + m + " in class " + v.getName()
-                                    + ": expected two argument in selector");
+                            warn("Malformed selector for method " + m + " in class " + v.getName()
+                                    + ": expected two arguments in selector. Skipping");
+                            return;
                         }
                         if (!m.getSel().endsWith(":withEvent:")) {
-                            throw new GradleException("Malformed selector for method " + m + " in class " + v.getName()
-                                    + ": selector must end in ':withEvent:'");
+                            warn("Malformed selector for method " + m + " in class " + v.getName()
+                                    + ": selector must end in ':withEvent:'. Skipping");
+                            return;
                         }
+                        final int begin = builder.length();
                         builder.append("- (IBAction)").append(m.getSel()).append("(");
                         if (arg0InternalType == null) {
                             builder.append("id");
@@ -293,15 +307,16 @@ public class UIObjCInterfaceComposer {
                         } else if (arg0InternalType.hasObjcClassBinding()) {
                             builder.append(arg0InternalType.getObjcClassBinding()).append(" *");
                         } else {
-                            throw new GradleException(
-                                    "Unsupported return type for method " + m + " in class " + v.getName() + ": "
-                                            + returnType.getDescriptor());
+                            builder.replace(begin, builder.length(), "");
+                            warn("Unsupported return type for method " + m + " in class " + v.getName() + ": "
+                                    + returnType.getDescriptor() + ". Skipping");
                         }
                         builder.append(")sender withEvent:(UIEvent *)event;\n");
                     }
 
-                    throw new GradleException("Too many arguments for method " + m + " in class " + v.getName()
-                            + ": expected zero, one or two argument in selector");
+                    warn("Too many arguments for method " + m + " in class " + v.getName()
+                            + ": expected zero, one or two arguments in selector. Skipping");
+                    return;
                 }
 
                 log("    Skipping " + m.getName() + m.getDesc() + "\n");

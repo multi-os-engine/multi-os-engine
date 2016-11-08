@@ -38,7 +38,7 @@ import org.moe.gradle.MoePlugin;
 import org.moe.gradle.anns.IgnoreUnused;
 import org.moe.gradle.anns.NotNull;
 import org.moe.gradle.anns.Nullable;
-import org.moe.gradle.natj.UIObjCInterfaceComposer;
+import org.moe.gradle.natj.IBActionAndOutletComposer;
 import org.moe.gradle.utils.FileUtils;
 import org.moe.gradle.utils.Require;
 import org.moe.gradle.utils.TaskUtils;
@@ -51,7 +51,7 @@ import java.util.Collection;
 import java.util.HashSet;
 import java.util.Set;
 
-public class GenerateUIObjCInterface extends AbstractBaseTask {
+public class GenerateUIObjCInterfaces extends AbstractBaseTask {
 
     private static final String CONVENTION_INPUT_FILES = "inputFiles";
     private static final String CONVENTION_OUTPUT_SOURCE = "outputSource";
@@ -101,7 +101,7 @@ public class GenerateUIObjCInterface extends AbstractBaseTask {
         // Reset logs
         FileUtils.write(getLogFile(), "");
 
-        final UIObjCInterfaceComposer composer = new UIObjCInterfaceComposer();
+        final IBActionAndOutletComposer composer = new IBActionAndOutletComposer();
         composer.setInfoLogger(m -> FileUtils.append(getLogFile(), m));
         composer.setWarnLogger(m -> getProject().getLogger().warn(m));
         FileUtils.classAndJarInputIterator(getProject(), getInputFiles(), composer::read);

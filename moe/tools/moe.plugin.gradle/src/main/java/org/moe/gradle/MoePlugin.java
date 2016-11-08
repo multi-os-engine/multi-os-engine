@@ -33,7 +33,7 @@ import org.moe.gradle.remote.Server;
 import org.moe.gradle.tasks.AbstractBaseTask;
 import org.moe.gradle.tasks.Dex;
 import org.moe.gradle.tasks.Dex2Oat;
-import org.moe.gradle.tasks.GenerateUIObjCInterface;
+import org.moe.gradle.tasks.GenerateUIObjCInterfaces;
 import org.moe.gradle.tasks.IpaBuild;
 import org.moe.gradle.tasks.Launchers;
 import org.moe.gradle.tasks.ProGuard;
@@ -155,7 +155,7 @@ public class MoePlugin extends AbstractMoePlugin {
                 asList(SOURCE_SET, MODE, PLATFORM));
         addRule(IpaBuild.class, "Creates .ipa files.",
                 emptyList());
-        addRule(GenerateUIObjCInterface.class, "Creates a source file for Interface Builder",
+        addRule(GenerateUIObjCInterfaces.class, "Creates a source file for Interface Builder",
                 emptyList());
 
         project.getTasks().create("moeSDKProperties", task -> {
@@ -177,6 +177,8 @@ public class MoePlugin extends AbstractMoePlugin {
             task.getActions().add(t -> {
                 System.out.println("\n" +
                         "moe.xcode.xcodeProjectPath=" + project.file(extension.xcode.getProject()).getAbsolutePath() + "\n" +
+                        "moe.xcode.mainTarget=" + extension.xcode.getMainTarget() + "\n" +
+                        "moe.xcode.testTarget=" + extension.xcode.getTestTarget() + "\n" +
                         "\n");
             });
         });
