@@ -20,11 +20,14 @@ import org.moe.common.exec.ExecOutputCollector;
 import org.moe.common.exec.GradleExec;
 
 import java.io.File;
+import java.util.Properties;
 
 public class ProjectUtil {
 
     public static final String XCODE_PROJECT_PATH_KEY = "moe.xcode.xcodeProjectPath";
     public static final String XCODE_PROJECT_PATH_TASK = "moeXcodeProperties";
+    public static final String XCODE_MAIN_TARGET_KEY = "moe.xcode.mainTarget";
+    public static final String XCODE_TEST_TARGET_KEY = "moe.xcode.testTarget";
     public static final String SDK_PROPERTIES_TASK = "moeSDKProperties";
     public static final String SDK_PATH_KEY = "moe.sdk.home";
 
@@ -36,8 +39,8 @@ public class ProjectUtil {
         return retrievePropertyFromGradle(projectFile, SDK_PROPERTIES_TASK, SDK_PATH_KEY);
     }
 
-    public static String retrievePropertyFromGradle(File projectFile, String taskName, String modulePropertyKey) {
-        String property = null;
+    private static String retrievePropertyFromGradle(File projectFile, String taskName, String modulePropertyKey) {
+        String property;
 
         GradleExec exec = new GradleExec(projectFile, null, projectFile);
         exec.getArguments().add(taskName);
@@ -56,5 +59,32 @@ public class ProjectUtil {
         }
 
         return property;
+    }
+
+    public static Properties retrievePropertiesFromGradle(File projectFile, String taskName) {
+        GradleExec exec = new GradleExec(projectFile, null, projectFile);
+        exec.getArguments().add(taskName);
+        exec.getArguments().add("-Dorg.gradle.daemon=true");
+        exec.getArguments().add("-Dorg.gradle.configureondemand=true");
+
+        final Properties properties = new Properties();
+        try {
+            String output = ExecOutputCollector.collect(exec);
+            final String[] outputLines = output.split("[\\n\\r]");
+            for (String line : outputLines) {
+                if (line.contains("=")) {
+                    try {
+                        final int start = line.indexOf('=');
+                        properties.put(line.substring(0, start), line.substring(start + 1));
+                    } catch (Throwable ignore) {
+                        System.out.println("Failed to add property line: " + line);
+                    }
+                }
+            }
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+
+        return properties;
     }
 }
