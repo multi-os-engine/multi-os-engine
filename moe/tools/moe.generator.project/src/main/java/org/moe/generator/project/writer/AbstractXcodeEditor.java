@@ -19,6 +19,7 @@ package org.moe.generator.project.writer;
 import org.moe.document.pbxproj.PBXBuildFile;
 import org.moe.document.pbxproj.PBXBuildPhase;
 import org.moe.document.pbxproj.PBXFileReference;
+import org.moe.document.pbxproj.PBXFrameworksBuildPhase;
 import org.moe.document.pbxproj.PBXGroup;
 import org.moe.document.pbxproj.PBXNativeTarget;
 import org.moe.document.pbxproj.PBXObject;
@@ -36,6 +37,7 @@ import org.moe.generator.project.writer.XcodeEditor.Settings;
 
 import java.io.IOException;
 import java.util.Iterator;
+import java.util.Map;
 import java.util.Map.Entry;
 
 public abstract class AbstractXcodeEditor {
@@ -106,6 +108,25 @@ public abstract class AbstractXcodeEditor {
         file.getRoot().getObjects().put(reference);
         target.getBuildPhasesOrNull().add(0, reference);
         return phase;
+    }
+
+    protected PBXFrameworksBuildPhase getFrameworksBuildPhaseOrNull(ProjectFile file, PBXNativeTarget target) {
+        for (PBXObjectRef<PBXBuildPhase> ref : target.getOrCreateBuildPhases()) {
+            if (!(ref.getReferenced().getClass().equals(PBXFrameworksBuildPhase.class))) {
+                continue;
+            }
+            return (PBXFrameworksBuildPhase)ref.getReferenced();
+        }
+        return null;
+    }
+
+    public static void cleanupBuildSettings(PBXNativeTarget target) {
+        for (PBXObjectRef<XCBuildConfiguration> ref : target.getBuildConfigurationList().getReferenced()
+                .getOrCreateBuildConfigurations()) {
+            final XCBuildConfiguration buildConfiguration = ref.getReferenced();
+            final Dictionary<Value, NextStep> buildSettings = buildConfiguration.getOrCreateBuildSettings();
+            buildSettings.sortByKeys();
+        }
     }
 
     protected PBXGroup getOrCreateSubGroup(ProjectFile file, PBXGroup group, String name) {
@@ -179,6 +200,27 @@ public abstract class AbstractXcodeEditor {
             }
             final Value newValue = new Value(value);
             buildSettings.put(key, newValue);
+        }
+    }
+
+    protected void setBuildSetting(PBXNativeTarget target, String key, Map<String, String> values) {
+        for (PBXObjectRef<XCBuildConfiguration> ref : target.getBuildConfigurationList().getReferenced()
+                .getOrCreateBuildConfigurations()) {
+            final XCBuildConfiguration buildConfiguration = ref.getReferenced();
+            final Dictionary<Value, NextStep> buildSettings = buildConfiguration.getOrCreateBuildSettings();
+            for (Iterator<Entry<Value, NextStep>> iterator = buildSettings.entrySet().iterator(); iterator
+                    .hasNext(); ) {
+                final Entry<Value, NextStep> entry = iterator.next();
+                Value existingKey = entry.getKey();
+                if (existingKey.value.equals(key) || existingKey.value.startsWith(key + "[")) {
+                    iterator.remove();
+                }
+            }
+            final String value = values.get(buildConfiguration.getName());
+            if (value != null) {
+                final Value newValue = new Value(value);
+                buildSettings.put(key, newValue);
+            }
         }
     }
 

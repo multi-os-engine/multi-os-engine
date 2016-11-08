@@ -22,7 +22,6 @@ import org.moe.document.pbxproj.PBXGroup;
 import org.moe.document.pbxproj.PBXNativeTarget;
 import org.moe.document.pbxproj.PBXObject;
 import org.moe.document.pbxproj.PBXObjectRef;
-import org.moe.document.pbxproj.PBXShellScriptBuildPhase;
 import org.moe.document.pbxproj.PBXSourcesBuildPhase;
 import org.moe.document.pbxproj.ProjectException;
 import org.moe.document.pbxproj.nextstep.Array;
@@ -86,7 +85,6 @@ public class XcodeTemplateEditor extends XcodeEditor {
 
         setBuildSetting(target, "INFOPLIST_FILE", projectName + "/Info.plist");
         setBuildSetting(target, "PRODUCT_BUNDLE_IDENTIFIER", settings.bundleID + suffix);
-        setBuildSetting(target, "ENABLE_BITCODE", "NO");
 
         appendBuildSetting(target, "FRAMEWORK_SEARCH_PATHS", "$(inherited)");
         appendBuildSetting(target, "FRAMEWORK_SEARCH_PATHS", "${MOE_FRAMEWORK_PATH}");
@@ -105,17 +103,9 @@ public class XcodeTemplateEditor extends XcodeEditor {
         // Create main.cpp build file
         final PBXObjectRef<PBXBuildFile> mainCppBuildFile = createBuildFile(projectFile, mainCppFileRef);
 
-        // Create build script
-        final PBXShellScriptBuildPhase moeCompileBuildPhase = getOrCreateMOECompileBuildPhase(projectFile, target);
-        moeCompileBuildPhase.setShellPath("/bin/bash");
-
-        final InputStream buildScriptAsStream = XcodeEditor.class
-                .getResourceAsStream("/org/moe/generator/project/moe.build.script.sh.in");
-        final ResourceWriter buildScriptResourceWriter = new ResourceWriter(buildScriptAsStream);
-        buildScriptResourceWriter.setPlaceholder("MOE_TARGET_SOURCESET_NAME", sourceSet);
-        moeCompileBuildPhase.setShellScript(buildScriptResourceWriter.replaceAndGet());
-
         final PBXSourcesBuildPhase sourcesBuildPhase = getOrCreateSourcesBuildPhase(projectFile, target);
         sourcesBuildPhase.getOrCreateFiles().add(mainCppBuildFile);
+
+        cleanupBuildSettings(target);
     }
 }

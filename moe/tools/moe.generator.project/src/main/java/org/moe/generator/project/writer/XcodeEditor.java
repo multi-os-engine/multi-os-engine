@@ -16,11 +16,14 @@ limitations under the License.
 
 package org.moe.generator.project.writer;
 
+import org.moe.document.pbxproj.PBXBuildFile;
+import org.moe.document.pbxproj.PBXFileReference;
 import org.moe.document.pbxproj.PBXGroup;
 import org.moe.document.pbxproj.PBXNativeTarget;
 import org.moe.document.pbxproj.PBXObject;
 import org.moe.document.pbxproj.PBXObjectRef;
 import org.moe.document.pbxproj.PBXProject;
+import org.moe.document.pbxproj.PBXShellScriptBuildPhase;
 import org.moe.document.pbxproj.ProjectException;
 import org.moe.document.pbxproj.ProjectFile;
 import org.moe.document.pbxproj.nextstep.Array.Predicate;
@@ -28,6 +31,11 @@ import org.moe.document.pbxproj.nextstep.Array.Predicate;
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.Map.Entry;
 
 public class XcodeEditor extends AbstractXcodeEditor {
 
@@ -65,6 +73,28 @@ public class XcodeEditor extends AbstractXcodeEditor {
         if (testTarget != null) {
             configureTarget(testTarget, true);
         }
+
+        // Remove MOE.framework references
+        final List<PBXObjectRef<?>> toRemove = new ArrayList<PBXObjectRef<?>>();
+        for (Entry<PBXObjectRef<? extends PBXObject>, PBXObject> entry : projectFile.getRoot().getObjects()
+                .entrySet()) {
+            if (entry.getValue() instanceof PBXBuildFile) {
+                final PBXObjectRef<?> fileRefObjRef = ((PBXBuildFile)entry.getValue()).getFileRef();
+                final PBXObject filerefobj = fileRefObjRef.getReferenced();
+                if (filerefobj instanceof PBXFileReference) {
+                    PBXFileReference fileref = (PBXFileReference)filerefobj;
+                    if ("MOE.framework".equals(fileref.getName()) || (fileref.getPath() != null && fileref.getPath()
+                            .endsWith("MOE.framework"))) {
+                        toRemove.add(fileRefObjRef);
+                        toRemove.add(entry.getKey());
+                    }
+                }
+            }
+        }
+
+        for (PBXObjectRef<?> ref : toRemove) {
+            projectFile.getRoot().getObjects().remove(ref);
+        }
     }
 
     private void configureTarget(PBXNativeTarget target, boolean isTest) throws IOException {
@@ -76,8 +106,8 @@ public class XcodeEditor extends AbstractXcodeEditor {
         }
 
         // Save some important values
-        final String MOE_PROJECT_DIR_VALUE = getBuildSetting(target, "MOE_COPY_ANDROID_CACERTS", "${SRCROOT}/..");
-        final String MOE_PROJECT_BUILD_DIR_VALUE = getBuildSetting(target, "MOE_COPY_ANDROID_CACERTS",
+        final String MOE_PROJECT_DIR_VALUE = getBuildSetting(target, "MOE_PROJECT_DIR", "${SRCROOT}/..");
+        final String MOE_PROJECT_BUILD_DIR_VALUE = getBuildSetting(target, "MOE_PROJECT_BUILD_DIR",
                 "${MOE_PROJECT_DIR}/build");
         final String MOE_COPY_ANDROID_CACERTS_VALUE = getBuildSetting(target, "MOE_COPY_ANDROID_CACERTS", "NO");
 
@@ -109,6 +139,36 @@ public class XcodeEditor extends AbstractXcodeEditor {
                         + "-framework MOE");
 
         setBuildSetting(target, "MOE_COPY_ANDROID_CACERTS", MOE_COPY_ANDROID_CACERTS_VALUE);
+
+        setBuildSetting(target, "STRIP_STYLE", "non-global");
+        setBuildSetting(target, "DEAD_CODE_STRIPPING", "NO");
+        setBuildSetting(target, "ENABLE_BITCODE", "NO");
+        setBuildSetting(target, "ONLY_ACTIVE_ARCH", getDebugReleaseMap("YES", "NO"));
+
+        // Create build script
+        final PBXShellScriptBuildPhase moeCompileBuildPhase = getOrCreateMOECompileBuildPhase(projectFile, target);
+        moeCompileBuildPhase.setShellPath("/bin/bash");
+
+        final InputStream buildScriptAsStream = XcodeEditor.class
+                .getResourceAsStream("/org/moe/generator/project/moe.build.script.sh.in");
+        final ResourceWriter buildScriptResourceWriter = new ResourceWriter(buildScriptAsStream);
+        buildScriptResourceWriter.setPlaceholder("MOE_TARGET_SOURCESET_NAME", sourceSet);
+        moeCompileBuildPhase.setShellScript(buildScriptResourceWriter.replaceAndGet());
+
+        cleanupBuildSettings(target);
+    }
+
+    private Map<String, String> getDebugReleaseMap(String debugValue, String releaseValue) {
+        if (debugValue == null) {
+            throw new NullPointerException();
+        }
+        if (releaseValue == null) {
+            throw new NullPointerException();
+        }
+        final Map<String, String> map = new HashMap<String, String>();
+        map.put("Debug", debugValue);
+        map.put("Release", releaseValue);
+        return map;
     }
 
     protected PBXNativeTarget getTarget(final String targetName) {

@@ -1,4 +1,3 @@
-#!/bin/bash
 set -e
 
 export MOE_BUILD_SOURCE_SET="${_PLACEHOLDER_MOE_TARGET_SOURCESET_NAME}"
