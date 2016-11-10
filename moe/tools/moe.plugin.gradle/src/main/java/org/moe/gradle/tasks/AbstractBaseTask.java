@@ -180,7 +180,7 @@ public abstract class AbstractBaseTask extends DefaultTask {
     protected void exec(@NotNull Action<ExecSpec> spec) {
         Require.nonNull(spec);
 
-        FileUtils.append(getLogFile(), "");
+        FileUtils.createEmpty(getLogFile());
 
         final ExecResult result = getProject().exec(execSpec -> {
             // Pre-configure
@@ -217,7 +217,7 @@ public abstract class AbstractBaseTask extends DefaultTask {
     protected void javaexec(@NotNull Action<JavaExecSpec> spec) {
         Require.nonNull(spec);
 
-        FileUtils.append(getLogFile(), "");
+        FileUtils.createEmpty(getLogFile());
 
         final ExecResult result = getProject().javaexec(execSpec -> {
             execSpec.jvmArgs(getMoeExtension().javaProcess.getJvmArgs());

@@ -105,6 +105,10 @@ public class IBActionAndOutletComposer {
             log("Generating interface for " + objcClassName + "\n");
 
             // Get super class
+            if (v.getSuperName() == null) {
+                warn("Superclass is null for " + objcClassName);
+                return;
+            }
             final String objcSuperClassName = getObjCSuperClass(classMap, v.getSuperName());
             if (objcSuperClassName == null) {
                 warn("Failed to locate superclass for " + objcClassName);
@@ -358,6 +362,9 @@ public class IBActionAndOutletComposer {
     }
 
     private String getObjCSuperClass(Map<String, ClassVisitor> classMap, String superName) {
+        if (superName == null) {
+            return null;
+        }
         final ClassVisitor superClass = classMap.get(superName);
         if (superClass == null) {
             return null;

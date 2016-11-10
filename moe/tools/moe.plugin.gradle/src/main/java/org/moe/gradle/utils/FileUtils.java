@@ -98,12 +98,11 @@ public class FileUtils {
         }
     }
 
-    public static void append(@NotNull File file, @NotNull String string) {
+    public static void createEmpty(@NotNull File file) {
         Require.nonNull(file);
-        Require.nonNull(string);
 
         try {
-            Files.write(Paths.get(file.toURI()), string.getBytes(),
+            Files.write(Paths.get(file.toURI()), "".getBytes(),
                     StandardOpenOption.CREATE,
                     StandardOpenOption.WRITE,
                     StandardOpenOption.APPEND);
@@ -173,10 +172,12 @@ public class FileUtils {
                             return;
                         }
 
-                        try {
-                            consumer.accept(new FileInputStream(f));
+                        try (FileInputStream fis = new FileInputStream(f)) {
+                            consumer.accept(fis);
                         } catch (FileNotFoundException e) {
-                            throw new GradleException("failed to open file", e);
+                            throw new GradleException("Failed to open file", e);
+                        } catch (IOException e) {
+                            throw new GradleException("Failed to open file", e);
                         }
                     }
                 });

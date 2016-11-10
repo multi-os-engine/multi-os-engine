@@ -39,7 +39,7 @@ public class NatJClass<T extends NatJClass> {
     /**
      * Name of the superclass.
      */
-    @NotNull private String superName;
+    @Nullable private String superName;
 
     /**
      * Name of the super interfaces.
@@ -76,7 +76,7 @@ public class NatJClass<T extends NatJClass> {
         return name;
     }
 
-    @NotNull
+    @Nullable
     public String getSuperName() {
         return superName;
     }
@@ -135,7 +135,7 @@ public class NatJClass<T extends NatJClass> {
             public void visit(int version, int access, String name, String signature, String superName,
                     String[] interfaces) {
                 NatJClass.this.name = Require.nonNull(name);
-                NatJClass.this.superName = Require.nonNull(superName);
+                NatJClass.this.superName = superName;
                 NatJClass.this.superInterfaces = Arrays.copyOf(Require.nonNull(interfaces), interfaces.length);
             }
 
