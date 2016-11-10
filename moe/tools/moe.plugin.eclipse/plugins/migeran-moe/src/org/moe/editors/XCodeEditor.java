@@ -146,12 +146,7 @@ public class XCodeEditor extends FormEditor {
 		
 		String root = new File(file.getParent()).getParent();
         File mainInfoPlist = new File(root +
-                File.separator + xcodeEditorManager.getMainTargetName() +
-                File.separator + "Info.plist");
-        if (!mainInfoPlist.exists()) {
-            mainInfoPlist = XcodeEditorManager.findInfoPlist(new File(root +
-                    File.separator + xcodeEditorManager.getMainTargetName()));
-        }
+                File.separator + xcodeEditorManager.getInfoMainPlist());
         
         try {
             this.mainInfoPlistManager = new InfoPlistManager(mainInfoPlist);
@@ -162,12 +157,7 @@ public class XCodeEditor extends FormEditor {
         mainInfoPlistManager.setListener(new MainInfoPlistDocumentChangeListener());
         
         File testInfoPlist = new File(root +
-                File.separator + xcodeEditorManager.getTestTargetName() +
-                File.separator + "Info.plist");
-        if (!testInfoPlist.exists()) {
-            testInfoPlist = XcodeEditorManager.findInfoPlist(new File(root +
-                    File.separator + xcodeEditorManager.getTestTargetName()));
-        }
+                File.separator + xcodeEditorManager.getInfoTestPlist());
         
         try {
             this.testInfoPlistManager = new InfoPlistManager(testInfoPlist);

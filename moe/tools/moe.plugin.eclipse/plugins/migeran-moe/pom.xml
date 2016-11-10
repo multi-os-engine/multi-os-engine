@@ -73,6 +73,9 @@
 	                                <resource>
 	                                    <directory>${session.executionRootDirectory}/../moe.document.pbxproj/build/libs</directory>
 	                                </resource>
+	                                <resource>
+	                                    <directory>${session.executionRootDirectory}/../moe.plugin.common/build/libs</directory>
+	                                </resource>
 	                            </resources>
 	                            <overwrite>true</overwrite>
 	                        </configuration>
