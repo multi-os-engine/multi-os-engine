@@ -440,10 +440,12 @@ public class XcodeEditorManager {
                 String filePath = pbxFileRef.getPath();
                 if (filePath.endsWith(XIB_FILE) || filePath.endsWith(STORYBOARD_FILE)) {
                     String name = pbxFileRef.getName();
-                    if (name.endsWith(XIB_FILE) || name.endsWith(STORYBOARD_FILE)) {
-                        files.put(name, filePath);
-                    } else {
-                        files.put(getNameInPath(filePath), filePath);
+                    if (name != null) {
+                        if (name.endsWith(XIB_FILE) || name.endsWith(STORYBOARD_FILE)) {
+                            files.put(name, filePath);
+                        } else {
+                            files.put(getNameInPath(filePath), filePath);
+                        }
                     }
                 }
             }
@@ -469,12 +471,23 @@ public class XcodeEditorManager {
     }
 
 
-    public static File findInfoPlist(File root) {
-        File[] files = root.listFiles();
-        for (File f : files) {
-            if (f.getPath().endsWith(PLIST_FILE)) {
-                return f;
-            }
+    public String getInfoMainPlist() {
+        String infoPlist = getInfoPlist(mainReleaseXCBuildConfiguration);
+        infoPlist = infoPlist == null ? getInfoPlist(mainDebugXCBuildConfiguration) : infoPlist;
+        return infoPlist;
+    }
+
+    public String getInfoTestPlist() {
+        String infoPlist = getInfoPlist(testReleaseXCBuildConfiguration);
+        infoPlist = infoPlist == null ? getInfoPlist(testDebugXCBuildConfiguration) : infoPlist;
+        return infoPlist;
+    }
+
+    private String getInfoPlist(XCBuildConfiguration configuration) {
+        Dictionary<Value, NextStep> settings = configuration.getBuildSettingsOrNull();
+        if (settings != null) {
+            Value value = (Value) settings.get(new Value("INFOPLIST_FILE"));
+            return value.value;
         }
         return null;
     }
