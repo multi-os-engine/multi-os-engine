@@ -192,12 +192,7 @@ public class XcodeEditor extends VirtualFileAdapter implements FileEditor {
 
         String root = virtualFile.getParent().getParent().getPath();
         File mainInfoPlist = new File(root +
-                File.separator + xcodeEditorManager.getMainTargetName() +
-                File.separator + "Info.plist");
-        if (!mainInfoPlist.exists()) {
-            mainInfoPlist = XcodeEditorManager.findInfoPlist(new File(root +
-                    File.separator + xcodeEditorManager.getMainTargetName()));
-        }
+                File.separator + xcodeEditorManager.getInfoMainPlist());
 
         VirtualFile mainInfoVirtualFile = project.getBaseDir().getFileSystem().findFileByPath(mainInfoPlist.getAbsolutePath());
         this.mainInfoPlistDocument = fileDocumentManager.getDocument(mainInfoVirtualFile);
@@ -227,12 +222,8 @@ public class XcodeEditor extends VirtualFileAdapter implements FileEditor {
         });
 
         File testInfoPlist = new File(root +
-                File.separator + xcodeEditorManager.getTestTargetName() +
-                File.separator + "Info.plist");
-        if (!testInfoPlist.exists()) {
-            testInfoPlist = XcodeEditorManager.findInfoPlist(new File(root +
-                    File.separator + xcodeEditorManager.getTestTargetName()));
-        }
+                File.separator + xcodeEditorManager.getInfoTestPlist());
+        
         VirtualFile testInfoVirtualFile = project.getBaseDir().getFileSystem().findFileByPath(testInfoPlist.getAbsolutePath());
         this.testInfoPlistDocument = fileDocumentManager.getDocument(testInfoVirtualFile);
         try {
