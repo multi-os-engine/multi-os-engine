@@ -36,6 +36,7 @@ import org.moe.generator.project.util.FileTypeUtil;
 import org.moe.generator.project.writer.XcodeEditor.Settings;
 
 import java.io.IOException;
+import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
 import java.util.Map.Entry;
@@ -165,7 +166,26 @@ public abstract class AbstractXcodeEditor {
         }
     }
 
-    protected String getBuildSetting(PBXNativeTarget target, String key, String defaultValue) {
+    public static Map<String, String> getDebugReleaseMap(String value) {
+        return getDebugReleaseMap(value, value);
+    }
+
+    public static Map<String, String> getDebugReleaseMap(String debugValue, String releaseValue) {
+        if (debugValue == null) {
+            throw new NullPointerException();
+        }
+        if (releaseValue == null) {
+            throw new NullPointerException();
+        }
+        final Map<String, String> map = new HashMap<String, String>();
+        map.put("Debug", debugValue);
+        map.put("Release", releaseValue);
+        return map;
+    }
+
+    public static Map<String, String> getBuildSetting(PBXNativeTarget target, String key,
+            Map<String, String> defaultValue) {
+        final Map<String, String> map = new HashMap<String, String>();
         for (PBXObjectRef<XCBuildConfiguration> ref : target.getBuildConfigurationList().getReferenced()
                 .getOrCreateBuildConfigurations()) {
             final XCBuildConfiguration buildConfiguration = ref.getReferenced();
@@ -177,15 +197,20 @@ public abstract class AbstractXcodeEditor {
                 if (existingKey.value.equals(key)) {
                     final NextStep value = entry.getValue();
                     if (value instanceof Value) {
-                        return ((Value)value).value;
+                        map.put(buildConfiguration.getName(), ((Value)value).value);
                     }
                 }
             }
         }
-        return defaultValue;
+        for (Entry<String, String> entry : defaultValue.entrySet()) {
+            if (!map.containsKey(entry.getKey())) {
+                map.put(entry.getKey(), entry.getValue());
+            }
+        }
+        return map;
     }
 
-    protected void setBuildSetting(PBXNativeTarget target, String key, String value) {
+    public static void setBuildSetting(PBXNativeTarget target, String key, String value) {
         for (PBXObjectRef<XCBuildConfiguration> ref : target.getBuildConfigurationList().getReferenced()
                 .getOrCreateBuildConfigurations()) {
             final XCBuildConfiguration buildConfiguration = ref.getReferenced();
@@ -203,7 +228,7 @@ public abstract class AbstractXcodeEditor {
         }
     }
 
-    protected void setBuildSetting(PBXNativeTarget target, String key, Map<String, String> values) {
+    public static void setBuildSetting(PBXNativeTarget target, String key, Map<String, String> values) {
         for (PBXObjectRef<XCBuildConfiguration> ref : target.getBuildConfigurationList().getReferenced()
                 .getOrCreateBuildConfigurations()) {
             final XCBuildConfiguration buildConfiguration = ref.getReferenced();
@@ -224,7 +249,7 @@ public abstract class AbstractXcodeEditor {
         }
     }
 
-    protected void appendBuildSetting(PBXNativeTarget target, String key, String value) {
+    public static void appendBuildSetting(PBXNativeTarget target, String key, String value) {
         for (PBXObjectRef<XCBuildConfiguration> ref : target.getBuildConfigurationList().getReferenced()
                 .getOrCreateBuildConfigurations()) {
             final XCBuildConfiguration buildConfiguration = ref.getReferenced();

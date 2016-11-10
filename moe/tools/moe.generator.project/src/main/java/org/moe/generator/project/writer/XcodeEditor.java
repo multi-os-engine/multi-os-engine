@@ -32,7 +32,6 @@ import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
@@ -106,10 +105,12 @@ public class XcodeEditor extends AbstractXcodeEditor {
         }
 
         // Save some important values
-        final String MOE_PROJECT_DIR_VALUE = getBuildSetting(target, "MOE_PROJECT_DIR", "${SRCROOT}/..");
-        final String MOE_PROJECT_BUILD_DIR_VALUE = getBuildSetting(target, "MOE_PROJECT_BUILD_DIR",
-                "${MOE_PROJECT_DIR}/build");
-        final String MOE_COPY_ANDROID_CACERTS_VALUE = getBuildSetting(target, "MOE_COPY_ANDROID_CACERTS", "NO");
+        final Map<String, String> MOE_PROJECT_DIR_VALUE = getBuildSetting(target, "MOE_PROJECT_DIR",
+                getDebugReleaseMap("${SRCROOT}/.."));
+        final Map<String, String> MOE_PROJECT_BUILD_DIR_VALUE = getBuildSetting(target, "MOE_PROJECT_BUILD_DIR",
+                getDebugReleaseMap("${MOE_PROJECT_DIR}/build"));
+        final Map<String, String> MOE_COPY_ANDROID_CACERTS_VALUE = getBuildSetting(target, "MOE_COPY_ANDROID_CACERTS",
+                getDebugReleaseMap("NO"));
 
         // Remove all "MOE_" values
         removeMOEPrefixKeys(target);
@@ -156,19 +157,6 @@ public class XcodeEditor extends AbstractXcodeEditor {
         moeCompileBuildPhase.setShellScript(buildScriptResourceWriter.replaceAndGet());
 
         cleanupBuildSettings(target);
-    }
-
-    private Map<String, String> getDebugReleaseMap(String debugValue, String releaseValue) {
-        if (debugValue == null) {
-            throw new NullPointerException();
-        }
-        if (releaseValue == null) {
-            throw new NullPointerException();
-        }
-        final Map<String, String> map = new HashMap<String, String>();
-        map.put("Debug", debugValue);
-        map.put("Release", releaseValue);
-        return map;
     }
 
     protected PBXNativeTarget getTarget(final String targetName) {
