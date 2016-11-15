@@ -51,7 +51,7 @@
 	                <executions>
 	                    <execution>
 	                        <id>copy-jars</id>
-	                        <phase>compile</phase>
+	                        <phase>initialize</phase>
 	                        <goals>
 	                            <goal>copy-resources</goal>
 	                        </goals>
