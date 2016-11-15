@@ -55,6 +55,6 @@ jar {
 
     manifest {
         attributes("Class-Path": ".")
-        attributes("Main-Class": "org.moe.natjgen.cli.Main")
+        attributes("Main-Class": "org.moe.natjgen.Main")
     }
 }
