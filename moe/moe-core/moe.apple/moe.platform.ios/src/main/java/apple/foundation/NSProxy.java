@@ -61,9 +61,10 @@ public class NSProxy extends ObjCObject implements NSObject {
     @Selector("class")
     public native Class class_objc();
 
-    @Generated
-    @Selector("dealloc")
-    public native void dealloc();
+    public final void dealloc() {
+        System.err.println("Calling dealloc is a no-op. Use ObjCRuntime.dispose(...) instead.");
+        new RuntimeException().printStackTrace(System.err);
+    }
 
     @Generated
     @Selector("debugDescription")
