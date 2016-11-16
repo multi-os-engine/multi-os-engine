@@ -28,6 +28,7 @@ import com.intellij.openapi.project.ModuleListener;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.roots.*;
 import com.intellij.openapi.roots.libraries.Library;
+import com.intellij.openapi.roots.libraries.LibraryTable;
 import com.intellij.openapi.vfs.JarFileSystem;
 import com.intellij.openapi.vfs.LocalFileSystem;
 import com.intellij.openapi.vfs.VirtualFile;
@@ -116,6 +117,7 @@ public class ModuleObserver implements ModuleListener {
         if (!MOESdkPlugin.isValidMoeModule(module)) {
             addMOEDependencies(module);
         } else {
+            checkMOEDependencies(module);
             checkRunConfiguration(module.getProject(), module);
         }
     }
@@ -139,8 +141,8 @@ public class ModuleObserver implements ModuleListener {
                     final Library jarLibrary = rootModel.getModuleLibraryTable().createLibrary();
                     final Library.ModifiableModel libraryModel = jarLibrary.getModifiableModel();
                     libraryModel.setName("Maven: " + jar);
-                    String newUrl = VirtualFileManager.constructUrl(JarFileSystem.PROTOCOL, jarPath) + JarFileSystem.JAR_SEPARATOR;
-                    libraryModel.addRoot(newUrl, OrderRootType.CLASSES);
+                    String url = VirtualFileManager.constructUrl(JarFileSystem.PROTOCOL, jarPath) + JarFileSystem.JAR_SEPARATOR;
+                    libraryModel.addRoot(url, OrderRootType.CLASSES);
                     libraryModel.commit();
 
                     final LibraryOrderEntry orderEntry = rootModel.findLibraryOrderEntry(jarLibrary);
@@ -150,6 +152,40 @@ public class ModuleObserver implements ModuleListener {
                 }
 
                 checkRunConfiguration(module.getProject(), module);
+            }
+        });
+    }
+
+    private void checkMOEDependencies(@NotNull final Module module) {
+        final String home = MOESdkPlugin.getSdkRootPath(module);
+        if (home == null || home.isEmpty()) {
+            LOG.debug("Unable to find MOE home");
+            return;
+        }
+        ModuleRootManager manager = ModuleRootManager.getInstance(module);
+        final ModifiableRootModel rootModel = manager.getModifiableModel();
+        final LibraryTable libraryTable = rootModel.getModuleLibraryTable();
+        ApplicationManager.getApplication().runWriteAction(new DumbAwareRunnable() {
+            @Override
+            public void run() {
+                for (String jar : MOE_JARS) {
+                    Library library = libraryTable.getLibraryByName("Maven: " + jar);
+                    if (library != null) {
+                        String jarPath = home + File.separator + MOE_JARS_PATH + File.separator + jar;
+                        String[] urls = library.getUrls(OrderRootType.CLASSES);
+                        if (urls.length > 0) {
+                            String url = urls[0];
+                            String newUrl = VirtualFileManager.constructUrl(JarFileSystem.PROTOCOL, jarPath) + JarFileSystem.JAR_SEPARATOR;
+                            if (!url.equals(newUrl)) {
+                                final Library.ModifiableModel libraryModel = library.getModifiableModel();
+                                libraryModel.removeRoot(url, OrderRootType.CLASSES);
+                                libraryModel.addRoot(newUrl, OrderRootType.CLASSES);
+                                libraryModel.commit();
+                            }
+                        }
+                    }
+                }
+                rootModel.commit();
             }
         });
     }
