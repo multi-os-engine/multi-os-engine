@@ -106,6 +106,8 @@ public class MOERefreshXcodeProject extends AnAction {
                 XcodeEditor.Settings settings = new Settings();
                 settings.mainTarget = (mainTarget == null || mainTarget.length() == 0) ? null : mainTarget;
                 settings.testTarget = (testTarget == null || testTarget.length() == 0) ? null : testTarget;
+                settings.moeProject = moduleFile;
+                settings.xcodeProject = xcodeFile;
                 xcodeEditor.update(settings);
 
                 xcodeEditor.getProjectFile().save();
