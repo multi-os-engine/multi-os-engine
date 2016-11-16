@@ -24,18 +24,26 @@ import com.intellij.execution.process.OSProcessHandler;
 import com.intellij.execution.process.ProcessAdapter;
 import com.intellij.execution.process.ProcessEvent;
 import com.intellij.execution.process.ProcessOutputTypes;
+import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.compiler.CompileContext;
 import com.intellij.openapi.compiler.CompileTask;
 import com.intellij.openapi.compiler.CompilerMessageCategory;
 import com.intellij.openapi.diagnostic.Logger;
 import com.intellij.openapi.progress.ProgressIndicator;
+import com.intellij.openapi.project.Project;
 import com.intellij.openapi.ui.DialogWrapper;
 import com.intellij.openapi.ui.MessageType;
 import com.intellij.openapi.util.Key;
 import com.intellij.util.ui.UIUtil;
+import org.jetbrains.idea.maven.execution.SoutMavenConsole;
+import org.jetbrains.idea.maven.project.MavenConsole;
+import org.jetbrains.idea.maven.project.MavenConsoleImpl;
+import org.jetbrains.idea.maven.project.MavenProjectsManager;
+import org.moe.idea.maven.MOEMavenTask;
 import org.moe.idea.runconfig.configuration.MOERunConfiguration;
 import org.moe.idea.ui.DeviceChooserDialog;
 import org.moe.idea.ui.MOEToolWindow;
+import org.moe.idea.utils.ModuleUtils;
 import org.moe.idea.utils.logger.LoggerFactory;
 
 import java.io.IOException;
@@ -81,6 +89,8 @@ public class MOECompileTask implements CompileTask {
                 Thread.sleep(100);
             }
 
+            boolean isMaven = ModuleUtils.isMOEMavenModule(runConfig.module());
+
             // Start progress
             ProgressIndicator progress = context.getProgressIndicator();
             context.getProgressIndicator().pushState();
@@ -91,34 +101,45 @@ public class MOECompileTask implements CompileTask {
                 return true;
             }
 
-            final CompileThread compileThread = new CompileThread(runConfig, context);
-            compileThread.start();
+            if (!isMaven) {
 
-            context.addMessage(CompilerMessageCategory.INFORMATION, "Building " + runConfig.moduleName(), null, -1, -1);
+                final CompileThread compileThread = new CompileThread(runConfig, context);
+                compileThread.start();
 
-            // Wait for completion
-            while (compileThread.isAlive() && !progress.isCanceled()) {
-                compileThread.join(1000);
-            }
-            if (compileThread.isAlive() && progress.isCanceled()) {
-                compileThread.interrupt();
-                compileThread.join(1000);
-            }
+                context.addMessage(CompilerMessageCategory.INFORMATION, "Building " + runConfig.moduleName(), null, -1, -1);
 
-            // Re-throw error
-            if (compileThread.throwable != null) {
-                throw compileThread.throwable;
-            }
+                // Wait for completion
+                while (compileThread.isAlive() && !progress.isCanceled()) {
+                    compileThread.join(1000);
+                }
+                if (compileThread.isAlive() && progress.isCanceled()) {
+                    compileThread.interrupt();
+                    compileThread.join(1000);
+                }
 
-            // Show on failure
-            if (compileThread.returnCode != 0) {
-                if (!compileThread.cancelled) {
+                // Re-throw error
+                if (compileThread.throwable != null) {
+                    throw compileThread.throwable;
+                }
+
+                // Show on failure
+                if (compileThread.returnCode != 0) {
+                    if (!compileThread.cancelled) {
+                        toolWindow.balloon(MessageType.ERROR, "BUILD FAILED");
+                        context.addMessage(CompilerMessageCategory.ERROR, "Multi-OS Engine module build failed", null, -1, -1, toolWindow.getNavigatable());
+                    } else {
+                        toolWindow.balloon(MessageType.INFO, "BUILD CANCELLED");
+                    }
+                    return false;
+                }
+            } else {
+                MOEMavenTask mavenTask = new MOEMavenTask(runConfig);
+                boolean result = mavenTask.runTask();
+                if (!result) {
                     toolWindow.balloon(MessageType.ERROR, "BUILD FAILED");
                     context.addMessage(CompilerMessageCategory.ERROR, "Multi-OS Engine module build failed", null, -1, -1, toolWindow.getNavigatable());
-                } else {
-                    toolWindow.balloon(MessageType.INFO, "BUILD CANCELLED");
+                    return false;
                 }
-                return false;
             }
 
         } catch (Throwable t) {

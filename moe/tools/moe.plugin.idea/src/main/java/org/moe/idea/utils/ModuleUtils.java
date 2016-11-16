@@ -22,13 +22,14 @@ import com.intellij.openapi.application.ReadAction;
 import com.intellij.openapi.application.WriteAction;
 import com.intellij.openapi.module.Module;
 import com.intellij.openapi.module.ModuleManager;
-import com.intellij.openapi.progress.ProgressIndicator;
-import com.intellij.openapi.progress.ProgressManager;
-import com.intellij.openapi.progress.Task;
 import com.intellij.openapi.project.Project;
+import com.intellij.openapi.roots.ModuleRootManager;
+import com.intellij.openapi.vfs.LocalFileSystem;
+import com.intellij.openapi.vfs.VirtualFile;
 import org.jetbrains.annotations.NotNull;
-import org.moe.common.exec.ExecOutputCollector;
-import org.moe.common.exec.GradleExec;
+import org.jetbrains.idea.maven.model.MavenPlugin;
+import org.jetbrains.idea.maven.project.MavenProject;
+import org.jetbrains.idea.maven.project.MavenProjectsManager;
 
 import java.io.File;
 
@@ -116,5 +117,56 @@ public class ModuleUtils {
 
     private static void runInDispatchedThread(@NotNull Runnable runnable) {
         ApplicationManager.getApplication().invokeLater(runnable);
+    }
+
+    public static boolean isMavenModule(Module module) {
+        return findPomXml(module) != null;
+    }
+
+    public static String findPomXml(@NotNull Module module) {
+        ModuleRootManager moduleRootManager = ModuleRootManager.getInstance(module);
+        VirtualFile[] roots = moduleRootManager.getContentRoots();
+        for (VirtualFile vFile : roots) {
+            VirtualFile child = vFile.findChild("pom.xml");
+            if (child != null) {
+                return child.getCanonicalPath();
+            }
+        }
+        return null;
+    }
+
+    public static boolean isMOEMavenModule(@NotNull Module module) {
+        if (!isMavenSupport()) {
+            return false;
+        }
+        String pomXmlPath = findPomXml(module);
+        if (pomXmlPath == null || pomXmlPath.isEmpty()) {
+            return false;
+        }
+        VirtualFile file = LocalFileSystem.getInstance().findFileByPath(pomXmlPath);
+        if (file == null) return false;
+
+        MavenProjectsManager manager = MavenProjectsManager.getInstance(module.getProject());
+        if (manager == null) {
+            return false;
+        }
+        MavenProject mavenProject = manager.findProject(file);
+        if (mavenProject == null) {
+            return false;
+        }
+        MavenPlugin mavenPlugin = mavenProject.findPlugin("org.multi-os-engine", "moe-maven");
+        if (mavenPlugin != null) {
+            return true;
+        }
+        return false;
+    }
+
+    public static boolean isMavenSupport() {
+        try {
+            Class.forName( "org.jetbrains.idea.maven.project.MavenProjectsManager" );
+        } catch( ClassNotFoundException e ) {
+            return false;
+        }
+        return true;
     }
 }
