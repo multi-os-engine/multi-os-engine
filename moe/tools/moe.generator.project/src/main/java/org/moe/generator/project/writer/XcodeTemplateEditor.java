@@ -68,13 +68,10 @@ public class XcodeTemplateEditor extends XcodeEditor {
     private void configureTarget(Settings settings, PBXNativeTarget target, PBXGroup group, boolean isTest)
             throws IOException {
         final String suffix;
-        final String sourceSet;
         if (isTest) {
             suffix = "-Test";
-            sourceSet = "test";
         } else {
             suffix = "";
-            sourceSet = "main";
         }
 
         final String projectName = settings.projectName + suffix;

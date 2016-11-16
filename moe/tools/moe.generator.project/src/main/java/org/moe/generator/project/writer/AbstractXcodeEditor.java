@@ -35,6 +35,7 @@ import org.moe.document.pbxproj.nextstep.Value;
 import org.moe.generator.project.util.FileTypeUtil;
 import org.moe.generator.project.writer.XcodeEditor.Settings;
 
+import java.io.File;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Iterator;
@@ -274,5 +275,26 @@ public abstract class AbstractXcodeEditor {
                 array.add(new Value(value));
             }
         }
+    }
+
+    public static String getRelativePath(File base, File path) throws IOException {
+        String a = base.toURI().getPath();
+        String b = path.toURI().getPath();
+        String[] basePaths = a.split("/");
+        String[] otherPaths = b.split("/");
+        int n = 0;
+        for (; n < basePaths.length && n < otherPaths.length; n++) {
+            if (!basePaths[n].equals(otherPaths[n])) break;
+        }
+        System.out.println("Common length: " + n);
+        StringBuilder tmp = new StringBuilder("../");
+        for (int m = n; m < basePaths.length - 1; m++)
+            tmp.append("../");
+        for (int m = n; m < otherPaths.length; m++) {
+            tmp.append(otherPaths[m]);
+            tmp.append("/");
+        }
+
+        return tmp.toString();
     }
 }

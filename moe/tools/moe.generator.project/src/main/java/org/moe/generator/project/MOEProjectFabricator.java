@@ -158,15 +158,20 @@ public class MOEProjectFabricator {
         if (stream == null) {
             throw new IOException("Failed to locate resource " + resource);
         }
+
+        final File xcodeDir = createDirectory("xcode");
+        final File xcodeProjectFile = new File(xcodeDir, composer.getProjectName() + ".xcodeproj");
+
         XcodeTemplateEditor editor = new XcodeTemplateEditor(stream);
         XcodeTemplateEditor.Settings settings = new Settings();
+        settings.moeProject = rootDir;
+        settings.xcodeProject = xcodeProjectFile;
         settings.projectName = composer.getProjectName();
         settings.organizationName = composer.getOrganizationName();
         settings.bundleID = composer.getBundleID();
         editor.update(settings);
 
-        final File xcodeDir = createDirectory("xcode");
-        editor.getProjectFile().saveAs(new File(xcodeDir, composer.getProjectName() + ".xcodeproj"));
+        editor.getProjectFile().saveAs(xcodeProjectFile);
 
         for (String target : new String[] { composer.getProjectName(), composer.getProjectName() + "-Test" }) {
             final File xcodeTargetDir = createDirectory("xcode", target);

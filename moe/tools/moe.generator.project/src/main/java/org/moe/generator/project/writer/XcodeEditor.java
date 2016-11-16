@@ -58,19 +58,29 @@ public class XcodeEditor extends AbstractXcodeEditor {
     public static class Settings {
         public String mainTarget;
         public String testTarget;
+        public File moeProject;
+        public File xcodeProject;
 
         public void validate() {
-
+            if (mainTarget == null) {
+                throw new NullPointerException("mainTarget is null");
+            }
+            if (moeProject == null) {
+                throw new NullPointerException("moeProject is null");
+            }
+            if (xcodeProject == null) {
+                throw new NullPointerException("xcodeProject is null");
+            }
         }
     }
 
     public void update(Settings settings) throws IOException {
         settings.validate();
 
-        configureTarget(getTarget(settings.mainTarget), false);
+        configureTarget(getTarget(settings.mainTarget), settings, false);
         final PBXNativeTarget testTarget = getTarget(settings.testTarget, true);
         if (testTarget != null) {
-            configureTarget(testTarget, true);
+            configureTarget(testTarget, settings, true);
         }
 
         // Remove MOE.framework references
@@ -96,7 +106,7 @@ public class XcodeEditor extends AbstractXcodeEditor {
         }
     }
 
-    private void configureTarget(PBXNativeTarget target, boolean isTest) throws IOException {
+    private void configureTarget(PBXNativeTarget target, Settings settings, boolean isTest) throws IOException {
         final String sourceSet;
         if (isTest) {
             sourceSet = "test";
@@ -104,9 +114,13 @@ public class XcodeEditor extends AbstractXcodeEditor {
             sourceSet = "main";
         }
 
+        final String moeProjectPath =
+                "${SRCROOT}/" + (getRelativePath(settings.xcodeProject.getParentFile().getAbsoluteFile(),
+                        settings.moeProject.getAbsoluteFile()));
+
         // Save some important values
         final Map<String, String> MOE_PROJECT_DIR_VALUE = getBuildSetting(target, "MOE_PROJECT_DIR",
-                getDebugReleaseMap("${SRCROOT}/.."));
+                getDebugReleaseMap(moeProjectPath));
         final Map<String, String> MOE_PROJECT_BUILD_DIR_VALUE = getBuildSetting(target, "MOE_PROJECT_BUILD_DIR",
                 getDebugReleaseMap("${MOE_PROJECT_DIR}/build"));
         final Map<String, String> MOE_COPY_ANDROID_CACERTS_VALUE = getBuildSetting(target, "MOE_COPY_ANDROID_CACERTS",
