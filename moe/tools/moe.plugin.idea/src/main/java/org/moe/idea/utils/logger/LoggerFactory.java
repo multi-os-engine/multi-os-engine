@@ -17,9 +17,6 @@ limitations under the License.
 package org.moe.idea.utils.logger;
 
 import com.intellij.openapi.diagnostic.Logger;
-import org.apache.log4j.PropertyConfigurator;
-
-import java.util.Properties;
 
 public class LoggerFactory {
 

@@ -54,11 +54,13 @@ public class ModuleObserver implements ModuleListener {
 
     @Override
     public void moduleAdded(@NotNull final Project project, @NotNull final Module module) {
-        if (ModuleUtils.isMOEMavenModule(module)) {
+        if (ModuleUtils.isMavenModule(module)) {
             MavenUtil.runWhenInitialized(project, new DumbAwareRunnable() {
                 @Override
                 public void run() {
-                    checkMavenDependencies(module);
+                    if (ModuleUtils.isMOEMavenModule(module)) {
+                        checkMavenDependencies(module);
+                    }
                 }
             });
         } else if (MOESdkPlugin.isValidMoeModule(module)) {
@@ -135,7 +137,9 @@ public class ModuleObserver implements ModuleListener {
                 for (String jar : MOE_JARS) {
                     String jarPath = home + File.separator + MOE_JARS_PATH + File.separator + jar;
                     VirtualFile file = LocalFileSystem.getInstance().findFileByPath(jarPath);
-                    if (file == null) return;
+                    if (file == null) {
+                        return;
+                    }
                     final ModuleRootManager manager = ModuleRootManager.getInstance(module);
                     final ModifiableRootModel rootModel = manager.getModifiableModel();
                     final Library jarLibrary = rootModel.getModuleLibraryTable().createLibrary();
