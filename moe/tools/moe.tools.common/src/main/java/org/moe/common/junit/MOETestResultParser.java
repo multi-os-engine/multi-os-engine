@@ -113,7 +113,7 @@ public class MOETestResultParser {
 	public void processNewLines(String[] lines) {
 		
         for (String line : lines) {
-            parse(line);
+            parse(normalizeLine(line));
         }
     }
 
@@ -181,6 +181,26 @@ public class MOETestResultParser {
 				errorBuffer.append(line);
 			}
 		}
+	}
+
+	private String normalizeLine(String s) {
+		int index = 0;
+		if ((index = s.indexOf(MessageIds.TEST_RUN_START)) > 0) {
+			s = s.substring(index, s.length());
+		} else if ((index = s.indexOf(MessageIds.TEST_START)) > 0) {
+			s = s.substring(index, s.length());
+		} else if ((index = s.indexOf(MessageIds.TEST_END)) > 0) {
+			s = s.substring(index, s.length());
+		} else if ((index = s.indexOf(MessageIds.TEST_FAILED)) > 0) {
+			s = s.substring(index, s.length());
+		} else if ((index = s.indexOf(MessageIds.TEST_RUN_END)) > 0) {
+			s = s.substring(index, s.length());
+		} else if ((index = s.indexOf(MessageIds.TEST_IGNORED)) > 0) {
+			s = s.substring(index, s.length());
+		} else if ((index = s.indexOf(TEST_RUN_DEFINE)) > 0) {
+			s = s.substring(index, s.length());
+		}
+		return s;
 	}
 
     public class MessageIds {
