@@ -19,6 +19,8 @@ import com.intellij.execution.process.ProcessHandler;
 import com.intellij.execution.process.ProcessOutputTypes;
 import com.intellij.execution.testframework.sm.ServiceMessageBuilder;
 import com.intellij.openapi.util.Comparing;
+import org.moe.common.junit.MOEITestRunListener;
+import org.moe.common.junit.MOETestIdentifier;
 import org.moe.idea.runconfig.MOERunProfileState;
 
 import java.util.Map;
@@ -57,6 +59,11 @@ public class MOETestListener implements MOEITestRunListener {
     final ProcessHandler handler = getProcessHandler();
     handler.notifyTextAvailable("Finish\n", ProcessOutputTypes.STDOUT);
     handler.destroyProcess();
+  }
+
+  @Override
+  public void testDefined(MOETestIdentifier test) {
+
   }
 
   @Override

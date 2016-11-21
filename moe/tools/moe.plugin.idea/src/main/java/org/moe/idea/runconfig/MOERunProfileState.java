@@ -36,13 +36,13 @@ import com.intellij.openapi.project.Project;
 import com.intellij.openapi.ui.MessageType;
 import com.intellij.openapi.util.Key;
 import org.jetbrains.annotations.NotNull;
+import org.moe.common.junit.MOETestResultParser;
 import org.moe.idea.compiler.MOEGradleRunner;
 import org.moe.idea.execution.process.MOEOSProcessHandler;
 import org.moe.idea.runconfig.configuration.MOERunConfiguration;
 import org.moe.idea.runconfig.configuration.MOERunConfigurationBase;
 import org.moe.idea.runconfig.configuration.test.MOEJUnitUtil;
 import org.moe.idea.runconfig.configuration.test.MOETestListener;
-import org.moe.idea.runconfig.configuration.test.MOETestResultParser;
 import org.moe.idea.ui.MOEToolWindow;
 import org.moe.idea.utils.logger.LoggerFactory;
 
