@@ -22,7 +22,7 @@ targetCompatibility = 1.6
 def PLUGIN_NAME = 'moe_intellij_plugin'
 
 intellij {
-    version 'IC-15.0'
+    version 'IC-2016.2'
     plugins = ['gradle', 'maven']
     pluginName PLUGIN_NAME
     downloadSources false

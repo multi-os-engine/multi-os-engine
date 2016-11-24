@@ -282,6 +282,8 @@ public class MOEModuleBuilder extends JavaModuleBuilder {
 
         gradleSettings.setExternalProjectPath(contentEntryPath);
 
+        gradleSettings.setResolveModulePerSourceSet(false);
+
         AbstractExternalSystemSettings settings = ExternalSystemApiUtil.getSettings(rootModel.getProject(), GradleConstants.SYSTEM_ID);
         project.putUserData(ExternalSystemDataKeys.NEWLY_CREATED_PROJECT, Boolean.TRUE);
         settings.linkProject(gradleSettings);
