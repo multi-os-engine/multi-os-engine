@@ -20,6 +20,8 @@ import com.intellij.ide.plugins.IdeaPluginDescriptor;
 import com.intellij.ide.plugins.PluginManager;
 import com.intellij.openapi.diagnostic.Logger;
 import com.intellij.openapi.extensions.PluginId;
+import com.intellij.openapi.externalSystem.model.execution.ExternalTaskPojo;
+import com.intellij.openapi.externalSystem.util.ExternalSystemConstants;
 import com.intellij.openapi.module.Module;
 import com.intellij.openapi.module.ModuleManager;
 import com.intellij.openapi.module.ModuleUtil;
@@ -27,6 +29,7 @@ import com.intellij.openapi.module.impl.scopes.ModuleWithDependenciesScope;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.ui.Messages;
 import com.intellij.openapi.vfs.VirtualFile;
+import org.jetbrains.plugins.gradle.settings.GradleLocalSettings;
 import org.moe.common.utils.ProjectUtil;
 import org.moe.idea.sdk.MOESdkType;
 import org.moe.idea.utils.ModuleUtils;
@@ -38,10 +41,13 @@ import java.io.File;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
+import java.util.Map;
 
 public class MOESdkPlugin {
 
     private static final Logger LOG = LoggerFactory.getLogger(MOESdkPlugin.class);
+
+    public static final String MOE_GRADLE_TASK_PREFIX = "moe";
 
     public static String getResourcesFolderName() {
         return "resources";
@@ -132,16 +138,40 @@ public class MOESdkPlugin {
             return false;
         }
 
-        ModuleWithDependenciesScope libraries = (ModuleWithDependenciesScope) module.getModuleWithLibrariesScope();
-        Collection<VirtualFile> roots = libraries.getRoots();
+        if (ModuleUtils.isMavenModule(module)) {
+            return ModuleUtils.isMOEMavenModule(module);
+        }
 
-        boolean coreFound = false;
-        boolean iosFound = false;
-        for (VirtualFile vf : roots) {
-            String name = vf.getName();
-            coreFound = coreFound ? coreFound : name.equals("moe-core.jar");
-            iosFound = iosFound ? iosFound : name.equals("moe-ios.jar");
-            if (coreFound & iosFound) {
+        GradleLocalSettings localSettings = GradleLocalSettings.getInstance(module.getProject());
+        String rootPath = module.getOptionValue(ExternalSystemConstants.ROOT_PROJECT_PATH_KEY);
+
+        if (rootPath == null) {
+            rootPath = module.getProject().getProjectFile().getParent().getCanonicalPath();
+        }
+
+        String path = ModuleUtils.getModulePath(module);
+
+        // Skip root module, if found multi modules
+        if (rootPath.equals(path) && ( ModuleManager.getInstance(module.getProject()).getModules().length > 1)) {
+            return false;
+        }
+
+        Map<String, Collection<ExternalTaskPojo>> tasks = localSettings.getAvailableTasks();
+
+        if (tasks == null) {
+            LOG.info("Not found gradle tasks: " + module.getName());
+            return false;
+        }
+
+        Collection<ExternalTaskPojo> taskPojos = tasks.get(path);
+
+        if (taskPojos == null) {
+            LOG.info("Not found gradle task pojos: " + module.getName());
+            return false;
+        }
+
+        for (ExternalTaskPojo taskPojo : taskPojos) {
+            if (taskPojo.getName().startsWith(MOE_GRADLE_TASK_PREFIX)) {
                 return true;
             }
         }

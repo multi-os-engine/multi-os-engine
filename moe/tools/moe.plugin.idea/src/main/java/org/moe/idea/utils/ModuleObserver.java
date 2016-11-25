@@ -55,7 +55,7 @@ public class ModuleObserver implements ModuleListener {
     @Override
     public void moduleAdded(@NotNull final Project project, @NotNull final Module module) {
         if (ModuleUtils.isMavenModule(module)) {
-            MavenUtil.runWhenInitialized(project, new DumbAwareRunnable() {
+            ModuleUtils.runWhenInitialized(project, new DumbAwareRunnable() {
                 @Override
                 public void run() {
                     if (ModuleUtils.isMOEMavenModule(module)) {
@@ -63,8 +63,15 @@ public class ModuleObserver implements ModuleListener {
                     }
                 }
             });
-        } else if (MOESdkPlugin.isValidMoeModule(module)) {
-            checkRunConfiguration(project, module);
+        } else {
+            ModuleUtils.runWhenInitialized(project, new DumbAwareRunnable() {
+                @Override
+                public void run() {
+                    if (MOESdkPlugin.isValidMoeModule(module)) {
+                        checkRunConfiguration(project, module);
+                    }
+                }
+            });
         }
     }
 

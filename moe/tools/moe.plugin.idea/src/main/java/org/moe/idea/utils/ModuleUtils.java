@@ -22,10 +22,13 @@ import com.intellij.openapi.application.ReadAction;
 import com.intellij.openapi.application.WriteAction;
 import com.intellij.openapi.module.Module;
 import com.intellij.openapi.module.ModuleManager;
+import com.intellij.openapi.project.DumbService;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.roots.ModuleRootManager;
+import com.intellij.openapi.startup.StartupManager;
 import com.intellij.openapi.vfs.LocalFileSystem;
 import com.intellij.openapi.vfs.VirtualFile;
+import com.intellij.util.DisposeAwareRunnable;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.idea.maven.model.MavenPlugin;
 import org.jetbrains.idea.maven.project.MavenProject;
@@ -168,5 +171,30 @@ public class ModuleUtils {
             return false;
         }
         return true;
+    }
+
+    public static void runWhenInitialized(Project project, Runnable r) {
+        if(!project.isDisposed()) {
+            if(isNoBackgroundMode()) {
+                r.run();
+            } else if(!project.isInitialized()) {
+                StartupManager.getInstance(project).registerPostStartupActivity(DisposeAwareRunnable.create(r, project));
+            } else {
+                runDumbAware(project, r);
+            }
+        }
+    }
+
+    public static boolean isNoBackgroundMode() {
+        return ApplicationManager.getApplication().isUnitTestMode() || ApplicationManager.getApplication().isHeadlessEnvironment();
+    }
+
+    public static void runDumbAware(Project project, Runnable r) {
+        if(DumbService.isDumbAware(r)) {
+            r.run();
+        } else {
+            DumbService.getInstance(project).runWhenSmart(DisposeAwareRunnable.create(r, project));
+        }
+
     }
 }
