@@ -17,6 +17,7 @@ limitations under the License.
 package org.moe.gradle.tasks;
 
 import org.gradle.api.GradleException;
+import org.gradle.api.logging.LogLevel;
 import org.gradle.api.tasks.Input;
 import org.gradle.api.tasks.InputDirectory;
 import org.gradle.api.tasks.Optional;
@@ -619,7 +620,9 @@ public class XcodeBuild extends AbstractBaseTask {
         addConvention(CONVENTION_PROVISIONING_PROFILE, ext.signing::getProvisioningProfile);
         addConvention(CONVENTION_SIGNING_IDENTITY, ext.signing::getSigningIdentity);
         addConvention(CONVENTION_DEVELOPMENT_TEAM, () -> {
-            if (!xcodeprojDevelopmentTeamIsSet() || !ext.signing.usesDefaultDevelopmentTeam()) {
+            if (!ext.signing.usesDefaultDevelopmentTeam()) {
+                return ext.signing.getDevelopmentTeam();
+            } else if (!xcodeprojDevelopmentTeamIsSet()) {
                 return ext.signing.getDevelopmentTeam();
             } else {
                 return null;
@@ -634,8 +637,9 @@ public class XcodeBuild extends AbstractBaseTask {
     private boolean xcodeprojDevelopmentTeamIsSet() {
         try {
             // Open Xcode project
-            @NotNull File xcodeproj = getXcodeProjectFile();
+            final File xcodeproj = Require.nonNull(getXcodeProjectFile());
             final ProjectFile project = new ProjectFile(xcodeproj);
+            final String target = Require.nonNull(getTarget());
 
             // Search for target with name
             final java.util.Optional<Entry<PBXObjectRef<? extends PBXObject>, PBXObject>> optional = project.getRoot()
@@ -652,7 +656,7 @@ public class XcodeBuild extends AbstractBaseTask {
             for (PBXObjectRef<XCBuildConfiguration> ref : xcConfigurationList.getOrCreateBuildConfigurations()) {
                 XCBuildConfiguration xcBuildConfiguration = ref.getReferenced();
                 if (xcBuildConfiguration.getName().equals(getMode().getXcodeCompatibleName())) {
-                    final NextStep developmentTeam = xcBuildConfiguration.get("DEVELOPMENT_TEAM");
+                    final NextStep developmentTeam = xcBuildConfiguration.getOrCreateBuildSettings().get("DEVELOPMENT_TEAM");
                     if (developmentTeam != null && ((Value)developmentTeam).value.length() != 0) {
                         return true;
                     }
@@ -664,13 +668,14 @@ public class XcodeBuild extends AbstractBaseTask {
             for (PBXObjectRef<XCBuildConfiguration> ref : xcConfigurationList.getOrCreateBuildConfigurations()) {
                 XCBuildConfiguration xcBuildConfiguration = ref.getReferenced();
                 if (xcBuildConfiguration.getName().equals(getMode().getXcodeCompatibleName())) {
-                    final NextStep developmentTeam = xcBuildConfiguration.get("DEVELOPMENT_TEAM");
+                    final NextStep developmentTeam = xcBuildConfiguration.getOrCreateBuildSettings().get("DEVELOPMENT_TEAM");
                     if (developmentTeam != null && ((Value)developmentTeam).value.length() != 0) {
                         return true;
                     }
                 }
             }
         } catch (Throwable t) {
+            getProject().getLogger().log(LogLevel.ERROR, "Failed to read Xcode project file", t);
             return false;
         }
         return false;
