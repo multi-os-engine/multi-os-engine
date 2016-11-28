@@ -60,6 +60,19 @@ public class SigningOptions {
     }
 
     @Nullable
+    private String provisioningProfileSpecifier;
+
+    @Nullable
+    public String getProvisioningProfileSpecifier() {
+        return provisioningProfileSpecifier;
+    }
+
+    @IgnoreUnused
+    public void setProvisioningProfileSpecifier(@Nullable String provisioningProfileSpecifier) {
+        this.provisioningProfileSpecifier = provisioningProfileSpecifier;
+    }
+
+    @Nullable
     private String signingIdentity;
 
     @Nullable

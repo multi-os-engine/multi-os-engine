@@ -144,8 +144,11 @@ moe {
         // String, ID of the development team.
         developmentTeam
 
-        // String, path to the provisioning profile.
+        // String, path to the provisioning profile or UUID.
         provisioningProfile
+
+        // String, name of the provisioning profile (new in Xcode 8).
+        provisioningProfileSpecifier
 
         // String, name of the signing identity
         signingIdentity
@@ -348,6 +351,22 @@ Setting any of these properties to null will reset them to their default values.
 
 ---
 
+GenerateUIObjCInterfaces Task
+
+Task name: `moeGenerateUIObjCInterfaces`
+
+Generates Objective-C class interfaces for working with Xcode's Interface Builder.
+
+#### Task Properties
+
+- `inputFiles`: collection of paths to directories and jars. These inputs will be searched for Objective-C classes.
+- `outputSource`: path to the output file containing the class interfaces.
+- `xcodeProjectFile`: path to the Xcode project.
+
+Setting any of these properties to null will reset them to their default values.
+
+---
+
 ### XcodeProvider Task
 
 Task name: `moe<sourceset><mode><arch><plat>XcodeProvider`
@@ -394,7 +413,8 @@ This task invokes `xcodebuild` and creates the application.
 - `sdk`: sdk to build for, derived from `plat`.
 - `xcodeProjectFile`: path to the Xcode project file.
 - `additionalParameters`: additional parameters to pass to `xcodebuild`.
-- `provisioningProfile`: path to the provisioning profile.
+- `provisioningProfile`: path to the provisioning profile or UUID.
+- `provisioningProfileSpecifier`: name of the provisioning profile (new in Xcode 8).
 - `signingIdentity`: name of the signing identity.
 - `developmentTeam`: ID of the development team.
 - `xcodeBuildRoot`: `xcodebuild` root output directory.

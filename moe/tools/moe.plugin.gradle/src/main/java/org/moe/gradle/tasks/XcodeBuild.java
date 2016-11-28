@@ -30,7 +30,8 @@ import org.moe.document.pbxproj.PBXObjectRef;
 import org.moe.document.pbxproj.ProjectFile;
 import org.moe.document.pbxproj.XCBuildConfiguration;
 import org.moe.document.pbxproj.XCConfigurationList;
-import org.moe.document.pbxproj.nextstep.Dictionary.Field;
+import org.moe.document.pbxproj.nextstep.NextStep;
+import org.moe.document.pbxproj.nextstep.Value;
 import org.moe.gradle.MoeExtension;
 import org.moe.gradle.MoePlatform;
 import org.moe.gradle.MoePlugin;
@@ -71,6 +72,7 @@ public class XcodeBuild extends AbstractBaseTask {
     private static final String CONVENTION_XCODE_PROJECT_FILE = "xcodeProjectFile";
     private static final String CONVENTION_ADDITIONAL_PARAMETERS = "additionalParameters";
     private static final String CONVENTION_PROVISIONING_PROFILE = "provisioningProfile";
+    private static final String CONVENTION_PROVISIONING_PROFILE_SPECIFIER = "provisioningProfileSpecifier";
     private static final String CONVENTION_SIGNING_IDENTITY = "signingIdentity";
     private static final String CONVENTION_DEVELOPMENT_TEAM = "developmentTeam";
     private static final String CONVENTION_XCODE_BUILD_ROOT = "xcodeBuildRoot";
@@ -84,14 +86,16 @@ public class XcodeBuild extends AbstractBaseTask {
         return Require.nonNull(sourceSet);
     }
 
-    private @Nullable Mode mode;
+    @Nullable
+    private Mode mode;
 
     @NotNull
     public Mode getMode() {
         return Require.nonNull(mode);
     }
 
-    private @Nullable MoePlatform platform;
+    @Nullable
+    private MoePlatform platform;
 
     @NotNull
     public MoePlatform getPlatform() {
@@ -194,6 +198,21 @@ public class XcodeBuild extends AbstractBaseTask {
     }
 
     @Nullable
+    private String provisioningProfileSpecifier;
+
+    @Input
+    @Optional
+    @Nullable
+    public String getProvisioningProfileSpecifier() {
+        return nullableGetOrConvention(provisioningProfileSpecifier, CONVENTION_PROVISIONING_PROFILE);
+    }
+
+    @IgnoreUnused
+    public void setProvisioningProfileSpecifier(@Nullable String provisioningProfileSpecifier) {
+        this.provisioningProfileSpecifier = provisioningProfileSpecifier;
+    }
+
+    @Nullable
     private String signingIdentity;
 
     @Input
@@ -279,7 +298,7 @@ public class XcodeBuild extends AbstractBaseTask {
             throw new GradleException(e.getMessage(), e);
         }
         Map<String, String> xcodeBuildSettings = new HashMap<>();
-        xcodeBuildSettingsP.forEach((k, v) -> xcodeBuildSettings.put((String) k, (String) v));
+        xcodeBuildSettingsP.forEach((k, v) -> xcodeBuildSettings.put((String)k, (String)v));
         return xcodeBuildSettings;
     }
 
@@ -433,21 +452,33 @@ public class XcodeBuild extends AbstractBaseTask {
         final String PROVISIONING_PROFILE;
         final String provisioningProfile = getProvisioningProfile();
         if (provisioningProfile != null && !provisioningProfile.isEmpty()) {
-            String uuid;
-            File fileProvisioningProfile = new File(provisioningProfile);
-            if (fileProvisioningProfile.exists()) {
-                try {
-                    uuid = ProvisioningProfile.getUUIDFromProfile(fileProvisioningProfile);
-                } catch (Exception e) {
-                    throw new GradleException(e.getMessage(), e);
-                }
-                PROVISIONING_PROFILE = uuid;
+            if (provisioningProfile
+                    .matches("^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$")) {
+                PROVISIONING_PROFILE = provisioningProfile;
             } else {
-                throw new GradleException("Failed to find provisioning profile: " + provisioningProfile);
+                File fileProvisioningProfile = new File(provisioningProfile);
+                if (fileProvisioningProfile.exists()) {
+                    try {
+                        PROVISIONING_PROFILE = ProvisioningProfile.getUUIDFromProfile(fileProvisioningProfile);
+                    } catch (Exception e) {
+                        throw new GradleException(e.getMessage(), e);
+                    }
+                } else {
+                    throw new GradleException("Failed to find provisioning profile: " + provisioningProfile);
+                }
             }
         } else {
             PROVISIONING_PROFILE = null;
             getProject().getLogger().info("Provisioning profile is not specified! Default one will be chosen!");
+        }
+
+        final String PROVISIONING_PROFILE_SPECIFIER;
+        final String provisioningProfileSpecifier = getProvisioningProfileSpecifier();
+        if (provisioningProfileSpecifier != null && !provisioningProfileSpecifier.isEmpty()) {
+            PROVISIONING_PROFILE_SPECIFIER = provisioningProfileSpecifier;
+        } else {
+            PROVISIONING_PROFILE_SPECIFIER = null;
+            getProject().getLogger().info("Provisioning profile specifier is not specified! Default one will be chosen!");
         }
 
         final String CODE_SIGN_IDENTITY;
@@ -518,6 +549,9 @@ public class XcodeBuild extends AbstractBaseTask {
         args.add("SHARED_PRECOMPS_DIR=" + _xcodeBuildRoot + "/shared_precomps");
         if (PROVISIONING_PROFILE != null) {
             args.add("PROVISIONING_PROFILE=" + PROVISIONING_PROFILE);
+        }
+        if (PROVISIONING_PROFILE_SPECIFIER != null) {
+            args.add("PROVISIONING_PROFILE_SPECIFIER=" + PROVISIONING_PROFILE_SPECIFIER);
         }
         if (CODE_SIGN_IDENTITY != null) {
             args.add("CODE_SIGN_IDENTITY=" + CODE_SIGN_IDENTITY);
@@ -618,7 +652,22 @@ public class XcodeBuild extends AbstractBaseTask {
             for (PBXObjectRef<XCBuildConfiguration> ref : xcConfigurationList.getOrCreateBuildConfigurations()) {
                 XCBuildConfiguration xcBuildConfiguration = ref.getReferenced();
                 if (xcBuildConfiguration.getName().equals(getMode().getXcodeCompatibleName())) {
-                    return xcBuildConfiguration.get("DEVELOPMENT_TEAM") != null;
+                    final NextStep developmentTeam = xcBuildConfiguration.get("DEVELOPMENT_TEAM");
+                    if (developmentTeam != null && ((Value)developmentTeam).value.length() != 0) {
+                        return true;
+                    }
+                }
+            }
+
+            xcConfigurationList = project.getRoot().getRootObject().getReferenced().getBuildConfigurationList()
+                    .getReferenced();
+            for (PBXObjectRef<XCBuildConfiguration> ref : xcConfigurationList.getOrCreateBuildConfigurations()) {
+                XCBuildConfiguration xcBuildConfiguration = ref.getReferenced();
+                if (xcBuildConfiguration.getName().equals(getMode().getXcodeCompatibleName())) {
+                    final NextStep developmentTeam = xcBuildConfiguration.get("DEVELOPMENT_TEAM");
+                    if (developmentTeam != null && ((Value)developmentTeam).value.length() != 0) {
+                        return true;
+                    }
                 }
             }
         } catch (Throwable t) {
