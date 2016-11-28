@@ -175,6 +175,7 @@ public class IBActionAndOutletComposer {
             builder.append("\n");
             v.methods.forEach(m -> {
                 final Type methodType = Type.getMethodType(m.getDesc());
+                final String sel = m.getSel();
 
                 // Generate properties
                 if (m.isProperty()) {
@@ -198,15 +199,14 @@ public class IBActionAndOutletComposer {
                     }
                     final int begin = builder.length();
                     if (internalType == null) {
-                        builder.append("id ").append(m.getSel()).append(";\n");
+                        builder.append("id ").append(sel).append(";\n");
                     } else if (internalType.hasObjcProtocolName()) {
-                        builder.append("id<").append(internalType.getObjcProtocolName()).append("> ").append(m.getSel())
+                        builder.append("id<").append(internalType.getObjcProtocolName()).append("> ").append(sel)
                                 .append(";\n");
                     } else if (internalType.hasObjcClassName()) {
-                        builder.append(internalType.getObjcClassName()).append(" *").append(m.getSel()).append(";\n");
+                        builder.append(internalType.getObjcClassName()).append(" *").append(sel).append(";\n");
                     } else if (internalType.hasObjcClassBinding()) {
-                        builder.append(internalType.getObjcClassBinding()).append(" *").append(m.getSel())
-                                .append(";\n");
+                        builder.append(internalType.getObjcClassBinding()).append(" *").append(sel).append(";\n");
                     } else {
                         builder.replace(begin, builder.length(), "");
                         warn("Unsupported return type for method " + m + " in class " + v.getName() + ": " + returnType
@@ -228,7 +228,7 @@ public class IBActionAndOutletComposer {
 
                     final int numArgs = methodType.getArgumentTypes().length;
                     if (numArgs == 0) {
-                        builder.append("- (IBAction)").append(m.getSel()).append(";\n");
+                        builder.append("- (IBAction)").append(sel).append(";\n");
                         return;
                     }
 
@@ -243,18 +243,18 @@ public class IBActionAndOutletComposer {
                     final ClassVisitor arg0InternalType = classMap.get(arg0InternalName);
 
                     if (numArgs == 1) {
-                        if (StringUtils.countMatches(m.getSel(), ":") != 1) {
+                        if (StringUtils.countMatches(sel, ":") != 1) {
                             warn("Malformed selector for method " + m + " in class " + v.getName()
                                     + ": expected one argument in selector. Skipping");
                             return;
                         }
-                        if (!m.getSel().endsWith(":")) {
+                        if (!sel.endsWith(":")) {
                             warn("Malformed selector for method " + m + " in class " + v.getName()
                                     + ": selector must end in ':'. Skipping");
                             return;
                         }
                         final int begin = builder.length();
-                        builder.append("- (IBAction)").append(m.getSel()).append("(");
+                        builder.append("- (IBAction)").append(sel).append("(");
                         if (arg0InternalType == null) {
                             builder.append("id");
                         } else if (arg0InternalType.hasObjcProtocolName()) {
@@ -280,7 +280,7 @@ public class IBActionAndOutletComposer {
                                 + "non UIEvent second argument type. Skipping");
                         return;
                     }
-                    final String arg1InternalName = arg0.getInternalName();
+                    final String arg1InternalName = arg1.getInternalName();
                     final ClassVisitor arg1InternalType = classMap.get(arg1InternalName);
                     if (arg1InternalType == null || !"UIEvent".equals(arg1InternalType.getObjcClassBinding())) {
                         warn("Method " + m + " in class " + v.getName()
@@ -290,18 +290,18 @@ public class IBActionAndOutletComposer {
                     }
 
                     if (numArgs == 2) {
-                        if (StringUtils.countMatches(m.getSel(), ":") != 2) {
+                        if (StringUtils.countMatches(sel, ":") != 2) {
                             warn("Malformed selector for method " + m + " in class " + v.getName()
                                     + ": expected two arguments in selector. Skipping");
                             return;
                         }
-                        if (!m.getSel().endsWith(":withEvent:")) {
+                        if (!sel.endsWith(":")) {
                             warn("Malformed selector for method " + m + " in class " + v.getName()
-                                    + ": selector must end in ':withEvent:'. Skipping");
+                                    + ": selector must end in ':'. Skipping");
                             return;
                         }
                         final int begin = builder.length();
-                        builder.append("- (IBAction)").append(m.getSel()).append("(");
+                        builder.append("- (IBAction)").append(sel).append("(");
                         if (arg0InternalType == null) {
                             builder.append("id");
                         } else if (arg0InternalType.hasObjcProtocolName()) {
@@ -315,7 +315,8 @@ public class IBActionAndOutletComposer {
                             warn("Unsupported return type for method " + m + " in class " + v.getName() + ": "
                                     + returnType.getDescriptor() + ". Skipping");
                         }
-                        builder.append(")sender withEvent:(UIEvent *)event;\n");
+                        final String selSuffix = sel.substring(sel.indexOf(':') + 1);
+                        builder.append(")sender ").append(selSuffix).append("(UIEvent *)event;\n");
                     }
 
                     warn("Too many arguments for method " + m + " in class " + v.getName()
