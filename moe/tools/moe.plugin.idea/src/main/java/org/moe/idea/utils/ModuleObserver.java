@@ -123,7 +123,7 @@ public class ModuleObserver implements ModuleListener {
     }
 
     private void checkMavenDependencies(@NotNull Module module) {
-        if (!MOESdkPlugin.isValidMoeModule(module)) {
+        if (!MOESdkPlugin.isMoeJarsInModule(module)) {
             addMOEDependencies(module);
         } else {
             checkMOEDependencies(module);

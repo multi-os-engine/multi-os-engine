@@ -179,6 +179,32 @@ public class MOESdkPlugin {
         return false;
     }
 
+    public static boolean isMoeJarsInModule(Module module) {
+        if (module == null) {
+            return false;
+        }
+        if (module.isDisposed()) {
+            LOG.info("Invalid MOE module, already disposed (" + module.getName() + ")");
+            return false;
+        }
+
+        ModuleWithDependenciesScope libraries = (ModuleWithDependenciesScope) module.getModuleWithLibrariesScope();
+        Collection<VirtualFile> roots = libraries.getRoots();
+
+        boolean coreFound = false;
+        boolean iosFound = false;
+        for (VirtualFile vf : roots) {
+            String name = vf.getName();
+            coreFound = coreFound ? coreFound : name.equals("moe-core.jar");
+            iosFound = iosFound ? iosFound : name.equals("moe-ios.jar");
+            if (coreFound & iosFound) {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
     public static Module findModuleForFile(Project project, VirtualFile file) {
 
         if (project == null || project.getBaseDir() == null) {
