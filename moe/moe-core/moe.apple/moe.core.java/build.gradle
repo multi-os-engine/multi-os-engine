@@ -153,7 +153,7 @@ def android_java_sources = [
 sourceSets {
     core {
         java {
-            srcDirs = android_java_sources
+            srcDirs += android_java_sources
             exclude {
                 it.file.absolutePath.endsWith('okhttp/src/main/java/com/squareup/okhttp/internal/Platform.java')
             }
@@ -176,6 +176,16 @@ tasks.compileCoreJava.sourceCompatibility = "1.7"
 tasks.compileCoreJava.targetCompatibility = "1.7"
 tasks.compileCoreJava.dependsOn generateConscryptFiles
 tasks.compileCoreJava.dependsOn copyICUDataFiles
+
+def staticloadProject = project(':moe.apple:moe.core.java:staticload')
+tasks.compileCoreJava.dependsOn ':moe.apple:moe.core.java:staticload:jar'
+staticloadProject.afterEvaluate {
+    def jar = staticloadProject.tasks['jar']
+    tasks.compileCoreJava.options.compilerArgs.addAll(['-Xplugin:org.moe.javacplugin.StaticLoad',
+                                                       '-processorpath',
+                                                      jar.archivePath.absolutePath])
+    tasks.compileCoreJava.inputs.files jar.outputs.files
+}
 
 // Don't run tests with the built-in junit
 test { exclude '**' }
