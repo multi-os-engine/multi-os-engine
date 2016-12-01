@@ -22,12 +22,23 @@ sourceCompatibility = 1.6
 dependencies {
     compile group: 'org.slf4j', name: 'slf4j-api', version: '1.7.+'
     compile group: 'commons-io', name: 'commons-io', version: '2.5'
+    compile group: 'com.google.code.gson', name: 'gson', version: '2.7'
     compile project(':moe.tools.common')
     compile project(':moe.document.xib')
     compile project(':moe.document.pbxproj')
     testCompile group: 'junit', name: 'junit', version: '4.12'
 }
 
+test {
+    systemProperty "test.resources", file('build/resources/test').absolutePath
+}
+
 jar {
     exclude 'META-INF/*.RSA', 'META-INF/*.SF', 'META-INF/*.DSA'
 }
+
+task installTestPod(type: Exec, dependsOn: 'processTestResources') {
+    workingDir 'build/resources/test/MyApp'
+    commandLine '/usr/local/bin/pod', 'install', '--no-ansi', '--silent'
+}
+tasks.test.dependsOn installTestPod

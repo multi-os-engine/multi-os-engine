@@ -1,5 +1,5 @@
 /*
-Copyright 2014-2016 Intel Corporation
+Copyright (C) 2016 Migeran
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
@@ -14,9 +14,14 @@ See the License for the specific language governing permissions and
 limitations under the License.
 */
 
-package org.moe.tools.natjgen.binding;
+package org.moe.tools.natjgen.util;
 
-public interface IConsole {
+public class Compute {
+    public interface Computer<T> {
+        T compute();
+    }
 
-    void write(String message);
+    public static <T> T compute(Computer<T> computer) {
+        return computer.compute();
+    }
 }
