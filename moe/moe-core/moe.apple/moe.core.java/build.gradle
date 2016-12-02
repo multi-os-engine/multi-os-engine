@@ -57,9 +57,11 @@ task generateConscryptFiles {
 def icuOutputBase = file("build/icugen")
 def icuOutput = new File(icuOutputBase, "android/icu/impl/data/icudt56b")
 
-task icuOutputPrepare << {
-    delete(icuOutput)
-    mkdir(icuOutput)
+task icuOutputPrepare {
+    doLast {
+        delete(icuOutput)
+        mkdir(icuOutput)
+    }
 }
 
 task generateSPrepFiles(type: Script, dependsOn: icuOutputPrepare) {
