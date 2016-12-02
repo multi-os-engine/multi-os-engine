@@ -1,0 +1,166 @@
+/*
+Copyright 2014-2016 Intel Corporation
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+*/
+
+package org.moe.common.developer;
+
+import org.moe.common.exec.ExecOutputCollector;
+import org.moe.common.exec.SimpleExec;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import java.io.File;
+import java.io.IOException;
+
+public class NativeSDKUtil {
+
+    private static final Logger LOG = LoggerFactory.getLogger(NativeSDKUtil.class);
+
+    public final static String PLATFORM_IOS = "iOS";
+    public final static String PLATFORM_OSX = "OS X";
+    public final static String PLATFORM_TVOS = "tvOS";
+    public final static String PLATFORM_NDK = "NDK";
+
+    private NativeSDKUtil() {
+    }
+
+    public static File getXcodeDeveloperPath() {
+        SimpleExec xcodeSelect = SimpleExec.getXcodeSelect();
+        xcodeSelect.getArguments().add("-p");
+        String out;
+        try {
+            out = ExecOutputCollector.collect(xcodeSelect).trim();
+        } catch (IOException e) {
+            LOG.debug("Failed to get Xcode developer path", e);
+            return null;
+        } catch (InterruptedException e) {
+            LOG.debug("Failed to get Xcode developer path", e);
+            return null;
+        }
+        File f = new File(out);
+        return f.exists() ? f : null;
+    }
+
+    public static File getXcodePlatformPath(String sdk) {
+        SimpleExec xcodeSelect = SimpleExec.getExec("xcrun");
+        xcodeSelect.getArguments().add("--sdk");
+        xcodeSelect.getArguments().add(sdk);
+        xcodeSelect.getArguments().add("--show-sdk-platform-path");
+        String out;
+        try {
+            out = ExecOutputCollector.collect(xcodeSelect).trim();
+        } catch (IOException e) {
+            LOG.debug("Failed to get Xcode developer path", e);
+            return null;
+        } catch (InterruptedException e) {
+            LOG.debug("Failed to get Xcode developer path", e);
+            return null;
+        }
+        File f = new File(out);
+        return f.exists() ? f : null;
+    }
+
+    public static File getXcodePlatformSDKsPath(String sdk) {
+        File path = getXcodePlatformPath(sdk);
+        if (path != null) {
+            File file = new File(path, "Developer" + File.separator + "SDKs");
+            if (file.exists()) {
+                return file;
+            }
+        }
+        return null;
+    }
+
+    public static File getXcodePath() {
+        File path = getXcodeDeveloperPath();
+        if (path == null) {
+            LOG.debug("Failed to get Xcode.app path, developer path is null, falling back to /Applications/Xcode.app");
+            return null;
+        }
+        if (!"Developer".equals(path.getName())) {
+            return null;
+        }
+        path = path.getParentFile();
+        if (!"Contents".equals(path.getName())) {
+            return null;
+        }
+        path = path.getParentFile();
+        if (!path.getName().endsWith(".app")) {
+            LOG.debug("Failed to get Xcode.app path, didn't find .app file");
+            return null;
+        }
+        return path;
+    }
+
+    public static void openWithXcode(String file) throws IOException {
+        if (file == null) {
+            throw new NullPointerException();
+        }
+        final File xcodePath = getXcodePath();
+        if (xcodePath == null) {
+            throw new NullPointerException();
+        }
+        SimpleExec open = SimpleExec.getOpen(xcodePath.toString(), file);
+        int exit = open.getRunner().run(null);
+        if (exit != 0) {
+            throw new IOException("exit code " + exit);
+        }
+    }
+
+    public static File getPlatformSDKsPath(String platform) {
+        if (platform.equalsIgnoreCase(PLATFORM_IOS)) {
+            return getXcodePlatformSDKsPath("iphoneos");
+        } else if (platform.equalsIgnoreCase(PLATFORM_OSX)) {
+            return getXcodePlatformSDKsPath("macosx");
+        } else if (platform.equalsIgnoreCase(PLATFORM_TVOS)) {
+            return getXcodePlatformSDKsPath("appletvos");
+        } else if (platform.equalsIgnoreCase(PLATFORM_NDK)) {
+            final String ndkHomeEnv = System.getenv("NDK_HOME");
+            if (ndkHomeEnv != null) {
+                File ndkHome = new File(ndkHomeEnv, "platforms");
+                if (ndkHome.exists()) {
+                    return ndkHome;
+                }
+            }
+            final String userHomeProp = System.getProperty("user.home");
+            if (userHomeProp != null) {
+                File userHome = new File(userHomeProp,
+                        "Library" + File.separator + "Android" + File.separator + "sdk" + File.separator + "ndk-bundle"
+                                + File.separator + "platforms");
+                if (userHome.exists()) {
+                    return userHome;
+                }
+                userHome = new File(userHomeProp,
+                        "AppData" + File.separator + "Local" + File.separator + "Android" + File.separator + "sdk"
+                                + File.separator + "ndk-bundle" + File.separator + "platforms");
+                if (userHome.exists()) {
+                    return userHome;
+                }
+            }
+            return null;
+        } else {
+            return null;
+        }
+    }
+
+    public static File getDocsetPath() {
+        File dev = getXcodeDeveloperPath();
+        if (dev == null) {
+            return null;
+        }
+        File ds = new File(dev, "Documentation" + File.separator + "DocSets");
+        return ds;
+    }
+}
