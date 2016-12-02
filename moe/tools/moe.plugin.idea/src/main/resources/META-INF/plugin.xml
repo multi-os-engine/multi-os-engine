@@ -49,6 +49,7 @@
       <fileTypeFactory implementation="org.moe.idea.fileTypes.MOEFileTypeFactory"/>
 
       <fileEditorProvider implementation="org.moe.idea.editors.XcodeProjectEditorProvider"/>
+      <fileEditorProvider implementation="org.moe.idea.editors.BindingEditorProvider"/>
   </extensions>
 
     <project-components>
