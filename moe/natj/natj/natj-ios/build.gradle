@@ -85,8 +85,10 @@ task buildAll {
 }
 
 // Create clean task
-task clean << {
-    delete buildDir
+task clean {
+    doLast {
+        delete buildDir
+    }
 }
 
 // Setup publishing
