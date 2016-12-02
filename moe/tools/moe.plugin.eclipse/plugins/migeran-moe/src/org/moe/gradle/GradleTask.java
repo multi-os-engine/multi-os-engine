@@ -25,7 +25,6 @@ import org.moe.common.exec.ExecRunner;
 import org.moe.common.exec.ExecRunnerBase.ExecRunnerListener;
 import org.moe.common.exec.GradleExec;
 import org.moe.common.exec.IKillListener;
-import org.moe.tools.natjgen.binding.IConsole;
 
 public class GradleTask {
 
