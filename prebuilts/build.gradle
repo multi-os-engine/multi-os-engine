@@ -25,10 +25,12 @@ idea {
     }
 }
 
-task prebuildAll << {}
+task prebuildAll {}
 
-task cleanAll << {
-    delete('build')
+task cleanAll {
+    doLast {
+        delete('build')
+    }
 }
 
 subprojects {
@@ -216,9 +218,11 @@ task mingw(type: Script) {
     exec 'make', "install-strip"
 }
 
-task mingwPresence << {
-    if (!file('mingw').exists()) {
-        throw new GradleException("MinGW is not built")
+task mingwPresence() {
+    doLast {
+        if (!file('mingw').exists()) {
+            throw new GradleException("MinGW is not built")
+        }
     }
 }
 
@@ -248,8 +252,10 @@ task llvm(type: Script) {
     exec 'cp', 'bin/llvm-config', file('llvm/macos/bin/llvm-config').absolutePath
 }
 
-task llvmPresence << {
-    if (!file('llvm').exists()) {
-        throw new GradleException("LLVM is not built")
+task llvmPresence() {
+    doLast {
+        if (!file('llvm').exists()) {
+            throw new GradleException("LLVM is not built")
+        }
     }
 }

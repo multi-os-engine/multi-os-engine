@@ -16,7 +16,7 @@ limitations under the License.
 
 import org.moe.prebuilts.Prebuild
 
-task prebuild << {}
+task prebuild {}
 
 task prebuild_ios(type: Prebuild) {
     sourcePath 'external/libffi'
@@ -57,6 +57,8 @@ task prebuild_ndk(type: Prebuild) {
 }
 prebuild.dependsOn prebuild_ndk
 
-task clean << {
-    delete('build')
+task clean {
+    doLast {
+        delete('build')
+    }
 }

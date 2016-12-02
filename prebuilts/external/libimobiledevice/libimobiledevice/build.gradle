@@ -17,7 +17,7 @@ limitations under the License.
 import org.moe.prebuilts.Prebuild
 import org.moe.prebuilts.Script
 
-task prebuild << {}
+task prebuild {}
 
 task prebuild_macos_static(type: Prebuild) {
     sourcePath 'external/libimobiledevice/libimobiledevice'
@@ -74,6 +74,8 @@ task prebuild_windows(type: Script, dependsOn: prebuild_windows_static) {
 }
 prebuild.dependsOn prebuild_windows
 
-task clean << {
-    delete('build')
+task clean {
+    doLast {
+        delete('build')
+    }
 }

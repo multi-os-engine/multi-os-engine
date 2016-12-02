@@ -16,7 +16,7 @@ limitations under the License.
 
 import org.moe.prebuilts.Prebuild
 
-task prebuild << {}
+task prebuild {}
 
 task prebuild_macos(type: Prebuild) {
     sourcePath 'external/libimobiledevice/libxml2'
@@ -46,6 +46,8 @@ task prebuild_windows(type: Prebuild) {
 prebuild_windows.dependsOn ':mingwPresence'
 prebuild.dependsOn prebuild_windows
 
-task clean << {
-    delete('build')
+task clean {
+    doLast {
+        delete('build')
+    }
 }
