@@ -17,14 +17,13 @@ limitations under the License.
 package org.moe.natjgen.test.sources;
 
 import org.junit.Assert;
+import org.moe.common.developer.NativeSDKUtil;
 import org.moe.natjgen.Configuration;
 import org.moe.natjgen.Configuration.Action;
 import org.moe.natjgen.Configuration.Condition;
 import org.moe.natjgen.Configuration.Unit;
 import org.moe.natjgen.Configuration.UnitRule;
 import org.moe.natjgen.Main;
-import org.moe.natjgen.util.Path;
-import org.moe.natjgen.util.XcodeUtil;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -74,10 +73,10 @@ public class NatJGenTest {
         final Configuration conf = Configuration.createDefault();
 
         // Settings
-        conf.setOutputPackageFramgentRootPath(FRAGMENT_ROOT);
+        conf.setOutputPackageFragmentRootPath(FRAGMENT_ROOT);
         conf.setPlatform(TEST_PLATFORM);
         conf.setPackageBase(PACKAGE_BASE);
-        Path platformSDKsPath = XcodeUtil.getPlatformSDKsPath(conf.getPlatform());
+        File platformSDKsPath = NativeSDKUtil.getPlatformSDKsPath(conf.getPlatform());
         Assert.assertTrue(platformSDKsPath.exists() && platformSDKsPath.isDirectory());
         int latestSDK = -1;
         for (File sdk : platformSDKsPath.listFiles()) {

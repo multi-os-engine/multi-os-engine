@@ -31,6 +31,7 @@ import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.core.runtime.NullProgressMonitor;
 import org.eclipse.text.edits.TextEditGroup;
+import org.moe.common.developer.NativeSDKUtil;
 import org.moe.natj.general.NatJ;
 import org.moe.natj.general.ptr.IntPtr;
 import org.moe.natj.general.ptr.Ptr;
@@ -39,7 +40,6 @@ import org.moe.natj.general.ptr.impl.PtrFactory;
 import org.moe.natjgen.Configuration.Unit;
 import org.moe.natjgen.helper.MOEJavaProject;
 import org.moe.natjgen.util.Path;
-import org.moe.natjgen.util.XcodeUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -216,8 +216,8 @@ public class Indexer {
     /**
      * Create a new indexer
      *
-     * @param project in which which the source folder is
-     * @param root    source folder in which the compilation units should be placed
+     * @param project       in which which the source folder is
+     * @param configuration configuration
      * @throws IOException
      * @throws CoreException
      */
@@ -232,13 +232,13 @@ public class Indexer {
             throw new CoreException(ValidationEntry.createMultiStatus(problems, true));
         }
 
-        String path = configuration.getOutputPackageFramgentRootPath();
+        String path = configuration.getOutputPackageFragmentRootPath();
 
         this.pkgroot = project.getLocation().toOSString() + File.separator + path;
 
         if (this.pkgroot == null) {
             throw new IOException(
-                    "Could not find package root at path " + configuration.getOutputPackageFramgentRootPath());
+                    "Could not find package root at path " + configuration.getOutputPackageFragmentRootPath());
         }
     }
 
@@ -249,6 +249,7 @@ public class Indexer {
      * @throws IOException
      */
     public boolean generate(IProgressMonitor monitor) throws IOException {
+        final boolean isTestRun = "true".equalsIgnoreCase(System.getProperty("moe.natjgen.testrun", "false"));
         configuration.setVariable(Configuration.DATETIME_VARIABLE,
                 new SimpleDateFormat("yyyy.MM.dd-HH.mm.ss").format(new Date()));
         generator = new Generator();
@@ -310,6 +311,9 @@ public class Indexer {
 
                 @Override
                 public void call_indexDeclaration(VoidPtr arg0, CXIdxDeclInfo arg1) {
+                    if (isTestRun) {
+                        return;
+                    }
                     indexDeclaration(arg1);
                 }
             });
@@ -336,6 +340,10 @@ public class Indexer {
             }
 
             modelEditor.postProcess();
+        }
+
+        if (isTestRun) {
+            return true;
         }
 
         // TODO: add better save support
@@ -556,11 +564,12 @@ public class Indexer {
      * @return path to Xcode's Developer directory
      */
     public String getXcodePath() {
-        if (hasCachedXcodePath == false) {
-            Path xcodeDeveloperPath = XcodeUtil.getXcodeDeveloperPath();
-            if (xcodeDeveloperPath == null) {
+        if (!hasCachedXcodePath) {
+            final File xcodeDeveloperFile = NativeSDKUtil.getXcodeDeveloperPath();
+            if (xcodeDeveloperFile == null) {
                 throw new RuntimeException("Xcode path is null");
             }
+            Path xcodeDeveloperPath = new Path(xcodeDeveloperFile);
             cachedXcodePath = xcodeDeveloperPath.toString();
             if (cachedXcodePath == null) {
                 throw new RuntimeException("Xcode path is null");

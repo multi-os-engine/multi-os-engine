@@ -32,8 +32,8 @@ import org.clang.struct.CXIdxDeclInfo;
 import org.clang.struct.CXIdxObjCInterfaceDeclInfo;
 import org.clang.struct.CXType;
 import org.clang.util.StdHeaders;
+import org.moe.common.developer.NativeSDKUtil;
 import org.moe.natjgen.util.Path;
-import org.moe.natjgen.util.XcodeUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -48,7 +48,6 @@ import java.io.PrintStream;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
-import java.util.Iterator;
 import java.util.List;
 import java.util.Map.Entry;
 
@@ -93,7 +92,6 @@ public class Configuration implements IConfigurationElement {
      * Create a new empty {@link Configuration}.
      *
      * @return new {@link Configuration}
-     * @throws IOException
      */
     public static Configuration createEmpty() {
         return new Configuration();
@@ -103,7 +101,6 @@ public class Configuration implements IConfigurationElement {
      * Create a new {@link Configuration} with default parameters.
      *
      * @return new {@link Configuration}
-     * @throws IOException
      */
     public static Configuration createDefault() {
         Configuration conf = new Configuration();
@@ -117,7 +114,7 @@ public class Configuration implements IConfigurationElement {
      *
      * @param path path to the file
      * @return new {@link Configuration}
-     * @throws IOException
+     * @throws IOException if loading from the specified path fails
      */
     public static Configuration createFromFile(String path) throws IOException {
         final InputStream is = new FileInputStream(path);
@@ -138,7 +135,6 @@ public class Configuration implements IConfigurationElement {
      *
      * @param contents contents
      * @return new {@link Configuration}
-     * @throws IOException
      */
     public static Configuration createWithContents(String contents) {
         Gson gson = getJsonBuilder().create();
@@ -387,21 +383,22 @@ public class Configuration implements IConfigurationElement {
      * @return bit width
      */
     public int getArchBitWidth(String arch) {
-        if (arch.equals(ARCH_ARM)) {
+        switch (arch) {
+        case ARCH_ARM:
             return ARCH_32BIT;
-        } else if (arch.equals(ARCH_ARMV7)) {
+        case ARCH_ARMV7:
             return ARCH_32BIT;
-        } else if (arch.equals(ARCH_I386)) {
+        case ARCH_I386:
             return ARCH_32BIT;
-        } else if (arch.equals(ARCH_X86)) {
+        case ARCH_X86:
             return ARCH_32BIT;
-        } else if (arch.equals(ARCH_MIPS)) {
+        case ARCH_MIPS:
             return ARCH_32BIT;
-        } else if (arch.equals(ARCH_ARM64)) {
+        case ARCH_ARM64:
             return ARCH_64BIT;
-        } else if (arch.equals(ARCH_MIPS64)) {
+        case ARCH_MIPS64:
             return ARCH_64BIT;
-        } else if (arch.equals(ARCH_X86_64)) {
+        case ARCH_X86_64:
             return ARCH_64BIT;
         }
         throw new IllegalArgumentException("Invalid arch");
@@ -437,10 +434,14 @@ public class Configuration implements IConfigurationElement {
     /**
      * Returns the SDKs path for the current platform
      *
-     * @return
+     * @return SDKs path for the current platform
      */
     public Path getSDKsBasePath() {
-        return XcodeUtil.getPlatformSDKsPath(platform);
+        final File platformSDKsPath = NativeSDKUtil.getPlatformSDKsPath(platform);
+        if (platformSDKsPath == null) {
+            return null;
+        }
+        return new Path(platformSDKsPath);
     }
 
     /**
@@ -508,34 +509,34 @@ public class Configuration implements IConfigurationElement {
     /**
      * Project-relative path of where the code will be generated
      */
-    private String outputPackageFramgentRootPath = null;
+    private String outputPackageFragmentRootPath = null;
 
     /**
      * Returns the output package fragment root's relative path
      *
      * @return path
      */
-    public String getOutputPackageFramgentRootPath() {
-        return outputPackageFramgentRootPath;
+    public String getOutputPackageFragmentRootPath() {
+        return outputPackageFragmentRootPath;
     }
 
     /**
      * Sets the output package fragment root's relative path
      *
-     * @param outputPackageFramgentRootPath path
+     * @param outputPackageFragmentRootPath path
      */
-    public void setOutputPackageFramgentRootPath(String outputPackageFramgentRootPath) {
-        if (outputPackageFramgentRootPath != null && outputPackageFramgentRootPath.length() == 0) {
-            outputPackageFramgentRootPath = null;
+    public void setOutputPackageFragmentRootPath(String outputPackageFragmentRootPath) {
+        if (outputPackageFragmentRootPath != null && outputPackageFragmentRootPath.length() == 0) {
+            outputPackageFragmentRootPath = null;
         }
 
-        this.outputPackageFramgentRootPath = outputPackageFramgentRootPath;
+        this.outputPackageFragmentRootPath = outputPackageFragmentRootPath;
     }
 
     /**
      * A list of header search paths
      */
-    private final ArrayList<String> headerSearchPaths = new ArrayList<String>();
+    private final ArrayList<String> headerSearchPaths = new ArrayList<>();
 
     /**
      * Returns a list of header search paths
@@ -549,7 +550,7 @@ public class Configuration implements IConfigurationElement {
     /**
      * A list of user header search paths
      */
-    private final ArrayList<String> userHeaderSearchPaths = new ArrayList<String>();
+    private final ArrayList<String> userHeaderSearchPaths = new ArrayList<>();
 
     /**
      * Returns a list of user header search paths
@@ -563,7 +564,7 @@ public class Configuration implements IConfigurationElement {
     /**
      * A list of framework search paths
      */
-    private final ArrayList<String> frameworkSearchPaths = new ArrayList<String>();
+    private final ArrayList<String> frameworkSearchPaths = new ArrayList<>();
 
     /**
      * Returns a list of framework search paths
@@ -577,7 +578,7 @@ public class Configuration implements IConfigurationElement {
     /**
      * A list of paths for resolving header files paths
      */
-    private final ArrayList<String> headerFileResolvingPaths = new ArrayList<String>();
+    private final ArrayList<String> headerFileResolvingPaths = new ArrayList<>();
 
     /**
      * Returns a list of paths for resolving header files paths
@@ -591,7 +592,7 @@ public class Configuration implements IConfigurationElement {
     /**
      * A list for other C flags
      */
-    private final ArrayList<String> otherCFlags = new ArrayList<String>();
+    private final ArrayList<String> otherCFlags = new ArrayList<>();
 
     /**
      * Returns the other C flags' list
@@ -678,7 +679,7 @@ public class Configuration implements IConfigurationElement {
     /**
      * Docsets enabled for this configuration
      */
-    private final ArrayList<String> docsets = new ArrayList<String>();
+    private final ArrayList<String> docsets = new ArrayList<>();
 
     /**
      * Return a list of docsets enabled for this configuration
@@ -767,7 +768,7 @@ public class Configuration implements IConfigurationElement {
     /**
      * Map for the variables to replace
      */
-    private HashMap<String, String> variableMap = new HashMap<String, String>();
+    private HashMap<String, String> variableMap = new HashMap<>();
 
     /**
      * Set variable value
@@ -937,7 +938,7 @@ public class Configuration implements IConfigurationElement {
 
     @Override
     public ArrayList<ValidationEntry> getProblems() {
-        ArrayList<ValidationEntry> problems = new ArrayList<ValidationEntry>();
+        ArrayList<ValidationEntry> problems = new ArrayList<>();
 
         if (platform == null) {
             problems.add(new ValidationEntry(ValidationEntry.ERROR, "Platform is not specified!", CONFKEY_PLATFORM));
@@ -970,7 +971,7 @@ public class Configuration implements IConfigurationElement {
                     "- Package base should be something like 'com.mypackage'."));
         }
 
-        if (outputPackageFramgentRootPath == null || outputPackageFramgentRootPath.length() == 0) {
+        if (outputPackageFragmentRootPath == null || outputPackageFragmentRootPath.length() == 0) {
             problems.add(new ValidationEntry(ValidationEntry.ERROR, "Output path for the source is not defined!",
                     CONFKEY_OUTPUT));
             problems.add(new ValidationEntry(ValidationEntry.INFO,
@@ -1052,7 +1053,7 @@ public class Configuration implements IConfigurationElement {
             }
 
             obj.addProperty(CONFKEY_SOURCE, src.getSourceCode());
-            obj.addProperty(CONFKEY_OUTPUT, src.getOutputPackageFramgentRootPath());
+            obj.addProperty(CONFKEY_OUTPUT, src.getOutputPackageFragmentRootPath());
 
             {
                 JsonArray array = new JsonArray();
@@ -1108,21 +1109,30 @@ public class Configuration implements IConfigurationElement {
 
                 JsonObject o = element.getAsJsonObject();
                 try {
-                    conf.setPlatform((String)context.deserialize(o.get(CONFKEY_PLATFORM), String.class));
+                    final JsonElement json = o.get(CONFKEY_PLATFORM);
+                    if (json != null) {
+                        conf.setPlatform(context.deserialize(json, String.class));
+                    }
                 } catch (Exception ex) {
-                    LOG.info("Failed to read natjgen key '" + CONFKEY_PLATFORM + "'");
+                    LOG.info("Failed to read natjgen key '" + CONFKEY_PLATFORM + "'", ex);
                 }
 
                 try {
-                    conf.setPackageBase((String)context.deserialize(o.get(CONFKEY_PKG_BASE), String.class));
+                    final JsonElement json = o.get(CONFKEY_PKG_BASE);
+                    if (json != null) {
+                        conf.setPackageBase(context.deserialize(json, String.class));
+                    }
                 } catch (Exception ex) {
-                    LOG.info("Failed to read natjgen key '" + CONFKEY_PKG_BASE + "'");
+                    LOG.info("Failed to read natjgen key '" + CONFKEY_PKG_BASE + "'", ex);
                 }
 
                 try {
-                    conf.setSDKPathDontMangle((String)context.deserialize(o.get(CONFKEY_BASE_SDK), String.class));
+                    final JsonElement json = o.get(CONFKEY_BASE_SDK);
+                    if (json != null) {
+                        conf.setSDKPathDontMangle(context.deserialize(json, String.class));
+                    }
                 } catch (Exception ex) {
-                    LOG.info("Failed to read natjgen key '" + CONFKEY_BASE_SDK + "'");
+                    LOG.info("Failed to read natjgen key '" + CONFKEY_BASE_SDK + "'", ex);
                 }
 
                 try {
@@ -1134,7 +1144,7 @@ public class Configuration implements IConfigurationElement {
                         }
                     }
                 } catch (Exception ex) {
-                    LOG.info("Failed to read natjgen key '" + CONFKEY_HEADER_SEARCH_PATHS + "'");
+                    LOG.info("Failed to read natjgen key '" + CONFKEY_HEADER_SEARCH_PATHS + "'", ex);
                 }
 
                 try {
@@ -1146,7 +1156,7 @@ public class Configuration implements IConfigurationElement {
                         }
                     }
                 } catch (Exception ex) {
-                    LOG.info("Failed to read natjgen key '" + CONFKEY_USER_HEADER_SEARCH_PATHS + "'");
+                    LOG.info("Failed to read natjgen key '" + CONFKEY_USER_HEADER_SEARCH_PATHS + "'", ex);
                 }
 
                 try {
@@ -1158,20 +1168,25 @@ public class Configuration implements IConfigurationElement {
                         }
                     }
                 } catch (Exception ex) {
-                    LOG.info("Failed to read natjgen key '" + CONFKEY_FRAMEWORK_SEARCH_PATHS + "'");
+                    LOG.info("Failed to read natjgen key '" + CONFKEY_FRAMEWORK_SEARCH_PATHS + "'", ex);
                 }
 
                 try {
-                    conf.setSourceCode((String)context.deserialize(o.get(CONFKEY_SOURCE), String.class));
+                    final JsonElement json = o.get(CONFKEY_SOURCE);
+                    if (json != null) {
+                        conf.setSourceCode(context.deserialize(json, String.class));
+                    }
                 } catch (Exception ex) {
-                    LOG.info("Failed to read natjgen key '" + CONFKEY_SOURCE + "'");
+                    LOG.info("Failed to read natjgen key '" + CONFKEY_SOURCE + "'", ex);
                 }
 
                 try {
-                    conf.setOutputPackageFramgentRootPath(
-                            (String)context.deserialize(o.get(CONFKEY_OUTPUT), String.class));
+                    final JsonElement json = o.get(CONFKEY_OUTPUT);
+                    if (json != null) {
+                        conf.setOutputPackageFragmentRootPath(context.deserialize(json, String.class));
+                    }
                 } catch (Exception ex) {
-                    LOG.info("Failed to read natjgen key '" + CONFKEY_OUTPUT + "'");
+                    LOG.info("Failed to read natjgen key '" + CONFKEY_OUTPUT + "'", ex);
                 }
 
                 try {
@@ -1183,40 +1198,52 @@ public class Configuration implements IConfigurationElement {
                         }
                     }
                 } catch (Exception ex) {
-                    LOG.info("Failed to read natjgen key '" + CONFKEY_DOCSETS + "'");
+                    LOG.info("Failed to read natjgen key '" + CONFKEY_DOCSETS + "'", ex);
                 }
 
                 try {
-                    conf.manager = context.deserialize(o.get(CONFKEY_UNIT_ACTION_MANAGER), UnitActionManager.class);
+                    final JsonElement json = o.get(CONFKEY_UNIT_ACTION_MANAGER);
+                    if (json != null) {
+                        conf.manager = context.deserialize(json, UnitActionManager.class);
+                    }
                 } catch (Exception ex) {
-                    LOG.info("Failed to read natjgen key '" + CONFKEY_UNIT_ACTION_MANAGER + "'");
+                    LOG.info("Failed to read natjgen key '" + CONFKEY_UNIT_ACTION_MANAGER + "'", ex);
                 }
 
                 try {
-                    conf.setLoggingPath((String)context.deserialize(o.get(CONFKEY_LOGS_PATH), String.class));
+                    final JsonElement json = o.get(CONFKEY_LOGS_PATH);
+                    if (json != null) {
+                        conf.setLoggingPath(context.deserialize(json, String.class));
+                    }
                 } catch (Exception ex) {
-                    LOG.info("Failed to read natjgen key '" + CONFKEY_LOGS_PATH + "'");
+                    LOG.info("Failed to read natjgen key '" + CONFKEY_LOGS_PATH + "'", ex);
                 }
 
                 try {
-                    conf.setInputTypeConfigurationPath(
-                            (String)context.deserialize(o.get(CONFKEY_TYPE_CONFIG_INPUT_PATH), String.class));
+                    final JsonElement json = o.get(CONFKEY_TYPE_CONFIG_INPUT_PATH);
+                    if (json != null) {
+                        conf.setInputTypeConfigurationPath(context.deserialize(json, String.class));
+                    }
                 } catch (Exception ex) {
-                    LOG.info("Failed to read natjgen key '" + CONFKEY_TYPE_CONFIG_INPUT_PATH + "'");
+                    LOG.info("Failed to read natjgen key '" + CONFKEY_TYPE_CONFIG_INPUT_PATH + "'", ex);
                 }
 
                 try {
-                    conf.setOutputTypeConfigurationPath(
-                            (String)context.deserialize(o.get(CONFKEY_TYPE_CONFIG_OUTPUT_PATH), String.class));
+                    final JsonElement json = o.get(CONFKEY_TYPE_CONFIG_OUTPUT_PATH);
+                    if (json != null) {
+                        conf.setOutputTypeConfigurationPath(context.deserialize(json, String.class));
+                    }
                 } catch (Exception ex) {
-                    LOG.info("Failed to read natjgen key '" + CONFKEY_TYPE_CONFIG_OUTPUT_PATH + "'");
+                    LOG.info("Failed to read natjgen key '" + CONFKEY_TYPE_CONFIG_OUTPUT_PATH + "'", ex);
                 }
 
                 try {
-                    conf.setCleanOutputTypeConfiguration(
-                            (Boolean)context.deserialize(o.get(CONFKEY_TYPE_CONFIG_CLEAN_OUTPUT), Boolean.class));
+                    final JsonElement json = o.get(CONFKEY_TYPE_CONFIG_CLEAN_OUTPUT);
+                    if (json != null) {
+                        conf.setCleanOutputTypeConfiguration(context.deserialize(json, Boolean.class));
+                    }
                 } catch (Exception ex) {
-                    LOG.info("Failed to read natjgen key '" + CONFKEY_TYPE_CONFIG_CLEAN_OUTPUT + "'");
+                    LOG.info("Failed to read natjgen key '" + CONFKEY_TYPE_CONFIG_CLEAN_OUTPUT + "'", ex);
                 }
 
                 try {
@@ -1228,14 +1255,16 @@ public class Configuration implements IConfigurationElement {
                         }
                     }
                 } catch (Exception ex) {
-                    LOG.info("Failed to read natjgen key '" + CONFKEY_HEADER_FILE_RESOLVING_PATHS + "'");
+                    LOG.info("Failed to read natjgen key '" + CONFKEY_HEADER_FILE_RESOLVING_PATHS + "'", ex);
                 }
 
                 try {
-                    conf.setInlineFunctionsNativeBindingOutputPath((String)context
-                            .deserialize(o.get(CONFKEY_INLINE_FUNCTION_BINDING_OUTPUT_PATH), String.class));
+                    final JsonElement json = o.get(CONFKEY_INLINE_FUNCTION_BINDING_OUTPUT_PATH);
+                    if (json != null) {
+                        conf.setInlineFunctionsNativeBindingOutputPath(context.deserialize(json, String.class));
+                    }
                 } catch (Exception ex) {
-                    LOG.info("Failed to read natjgen key '" + CONFKEY_INLINE_FUNCTION_BINDING_OUTPUT_PATH + "'");
+                    LOG.info("Failed to read natjgen key '" + CONFKEY_INLINE_FUNCTION_BINDING_OUTPUT_PATH + "'", ex);
                 }
 
                 try {
@@ -1247,21 +1276,25 @@ public class Configuration implements IConfigurationElement {
                         }
                     }
                 } catch (Exception ex) {
-                    LOG.info("Failed to read natjgen key '" + CONFKEY_OTHER_CFLAGS + "'");
+                    LOG.info("Failed to read natjgen key '" + CONFKEY_OTHER_CFLAGS + "'", ex);
                 }
 
                 try {
-                    conf.setInjectDefaultCFlags(
-                            (Boolean)context.deserialize(o.get(CONFKEY_INJECT_DEFAULT_CFLAGS), Boolean.class));
+                    final JsonElement json = o.get(CONFKEY_INJECT_DEFAULT_CFLAGS);
+                    if (json != null) {
+                        conf.setInjectDefaultCFlags(context.deserialize(json, Boolean.class));
+                    }
                 } catch (Exception ex) {
-                    LOG.info("Failed to read natjgen key '" + CONFKEY_INJECT_DEFAULT_CFLAGS + "'");
+                    LOG.info("Failed to read natjgen key '" + CONFKEY_INJECT_DEFAULT_CFLAGS + "'", ex);
                 }
 
                 try {
-                    conf.setUseIncludedStandardHeaders(
-                            (Boolean)context.deserialize(o.get(CONFKEY_USE_INCLUDED_STD_HEADERS), Boolean.class));
+                    final JsonElement json = o.get(CONFKEY_USE_INCLUDED_STD_HEADERS);
+                    if (json != null) {
+                        conf.setUseIncludedStandardHeaders(context.deserialize(json, Boolean.class));
+                    }
                 } catch (Exception ex) {
-                    LOG.info("Failed to read natjgen key '" + CONFKEY_USE_INCLUDED_STD_HEADERS + "'");
+                    LOG.info("Failed to read natjgen key '" + CONFKEY_USE_INCLUDED_STD_HEADERS + "'", ex);
                 }
 
                 return conf;
@@ -1276,7 +1309,7 @@ public class Configuration implements IConfigurationElement {
      * Save configuration information to a file
      *
      * @param path file path
-     * @throws IOException
+     * @throws IOException if the save fails
      */
     public void saveToFile(String path) throws IOException {
         try {
@@ -1309,7 +1342,7 @@ public class Configuration implements IConfigurationElement {
             throw new IllegalArgumentException();
         }
 
-        final ArrayList<String> cmdlineArgs = new ArrayList<String>(32);
+        final ArrayList<String> cmdlineArgs = new ArrayList<>(32);
 
         if (getInjectDefaultCFlags()) {
             cmdlineArgs.add("-arch");
@@ -1351,29 +1384,36 @@ public class Configuration implements IConfigurationElement {
 
                 // Set target
                 cmdlineArgs.add("-target");
-                if (arch.equals(ARCH_ARM)) {
+                switch (arch) {
+                case ARCH_ARM:
                     cmdlineArgs.add("armv5te-none-linux-androideabi");
 
-                } else if (arch.equals(ARCH_ARMV7)) {
+                    break;
+                case ARCH_ARMV7:
                     throw new RuntimeException("Unexpected arch " + arch + " for platform " + platform);
 
-                } else if (arch.equals(ARCH_I386)) {
+                case ARCH_I386:
                     throw new RuntimeException("Unexpected arch " + arch + " for platform " + platform);
 
-                } else if (arch.equals(ARCH_X86)) {
+                case ARCH_X86:
                     cmdlineArgs.add("i686-none-linux-android");
 
-                } else if (arch.equals(ARCH_MIPS)) {
+                    break;
+                case ARCH_MIPS:
                     cmdlineArgs.add("mipsel-none-linux-android");
 
-                } else if (arch.equals(ARCH_ARM64)) {
+                    break;
+                case ARCH_ARM64:
                     cmdlineArgs.add("aarch64-none-linux-android");
 
-                } else if (arch.equals(ARCH_MIPS64)) {
+                    break;
+                case ARCH_MIPS64:
                     cmdlineArgs.add("mips64el-none-linux-android");
 
-                } else if (arch.equals(ARCH_X86_64)) {
+                    break;
+                case ARCH_X86_64:
                     cmdlineArgs.add("x86_64-none-linux-android");
+                    break;
                 }
 
                 // Set other flags
@@ -1427,9 +1467,7 @@ public class Configuration implements IConfigurationElement {
      * @return demangled path
      */
     private String getDemangledPath(String path) {
-        Iterator<Entry<String, String>> it = variableMap.entrySet().iterator();
-        while (it.hasNext()) {
-            Entry<String, String> entry = it.next();
+        for (Entry<String, String> entry : variableMap.entrySet()) {
             String key = "${" + entry.getKey() + "}";
             int idx = path.indexOf(key);
             if (idx != -1) {
@@ -1453,9 +1491,7 @@ public class Configuration implements IConfigurationElement {
         }
         path = Path.canonicalize(path);
 
-        Iterator<Entry<String, String>> it = variableMap.entrySet().iterator();
-        while (it.hasNext()) {
-            Entry<String, String> entry = it.next();
+        for (Entry<String, String> entry : variableMap.entrySet()) {
             String key = "${" + entry.getKey() + "}";
             int idx = path.indexOf(entry.getValue());
             if (idx != -1 && entry.getValue() != null && entry.getValue().length() != 0) {
@@ -1472,7 +1508,7 @@ public class Configuration implements IConfigurationElement {
         /**
          * List of unit rules
          */
-        private final ArrayList<UnitRule> unitRules = new ArrayList<UnitRule>();
+        private final ArrayList<UnitRule> unitRules = new ArrayList<>();
 
         /**
          * Returns all the unit rules in the manager
@@ -1519,7 +1555,7 @@ public class Configuration implements IConfigurationElement {
                 if (element.isJsonArray()) {
                     UnitActionManager manager = new UnitActionManager();
                     for (JsonElement unitRule : element.getAsJsonArray()) {
-                        manager.unitRules.add((UnitRule)context.deserialize(unitRule, UnitRule.class));
+                        manager.unitRules.add(context.deserialize(unitRule, UnitRule.class));
                     }
                     return manager;
                 }
@@ -1532,7 +1568,7 @@ public class Configuration implements IConfigurationElement {
 
         @Override
         public ArrayList<ValidationEntry> getProblems() {
-            ArrayList<ValidationEntry> problems = new ArrayList<ValidationEntry>();
+            ArrayList<ValidationEntry> problems = new ArrayList<>();
             for (UnitRule unitrule : unitRules) {
                 problems.addAll(unitrule.getProblems());
             }
@@ -1900,7 +1936,7 @@ public class Configuration implements IConfigurationElement {
                 throw new IllegalStateException("can't modify locked unit");
             }
             this.pkg = isNull(pkg) ? null : pkg;
-            this.packageBaseLength = this.pkg.length();
+            this.packageBaseLength = isNull(pkg) ? 0 : pkg.length();
         }
 
         public String getPath() {
@@ -1997,12 +2033,12 @@ public class Configuration implements IConfigurationElement {
         /**
          * An array of conditions
          */
-        private final ArrayList<Condition> conditions = new ArrayList<Condition>();
+        private final ArrayList<Condition> conditions = new ArrayList<>();
 
         /**
          * An array of actions
          */
-        private final ArrayList<Action> actions = new ArrayList<Action>();
+        private final ArrayList<Action> actions = new ArrayList<>();
 
         /**
          * Indicates whether the {@link UnitRule} finalizes the {@link Unit} or
@@ -2054,7 +2090,7 @@ public class Configuration implements IConfigurationElement {
          */
         public void applyRule(Unit unit) {
             for (Condition condition : conditions) {
-                if (condition.matches(unit) == false) {
+                if (!condition.matches(unit)) {
                     return;
                 }
             }
@@ -2103,12 +2139,21 @@ public class Configuration implements IConfigurationElement {
                     JsonObject o = element.getAsJsonObject();
 
                     UnitRule rule = new UnitRule();
-                    rule.setFinal(o.get(UnitRule.CONFKEY_FINAL).getAsBoolean());
-                    for (JsonElement cond : o.getAsJsonArray(UnitRule.CONFKEY_CONDITIONS)) {
-                        rule.conditions.add((Condition)context.deserialize(cond, Condition.class));
+                    final JsonElement jsonFinal = o.get(UnitRule.CONFKEY_FINAL);
+                    if (jsonFinal != null) {
+                        rule.setFinal(jsonFinal.getAsBoolean());
                     }
-                    for (JsonElement cond : o.getAsJsonArray(UnitRule.CONFKEY_ACTIONS)) {
-                        rule.actions.add((Action)context.deserialize(cond, Action.class));
+                    final JsonArray jsonConditions = o.getAsJsonArray(UnitRule.CONFKEY_CONDITIONS);
+                    if (jsonConditions != null) {
+                        for (JsonElement cond : jsonConditions) {
+                            rule.conditions.add(context.deserialize(cond, Condition.class));
+                        }
+                    }
+                    final JsonArray jsonActions = o.getAsJsonArray(UnitRule.CONFKEY_ACTIONS);
+                    if (jsonActions != null) {
+                        for (JsonElement cond : jsonActions) {
+                            rule.actions.add(context.deserialize(cond, Action.class));
+                        }
                     }
                     return rule;
                 }
@@ -2121,7 +2166,7 @@ public class Configuration implements IConfigurationElement {
 
         @Override
         public ArrayList<ValidationEntry> getProblems() {
-            ArrayList<ValidationEntry> problems = new ArrayList<ValidationEntry>();
+            ArrayList<ValidationEntry> problems = new ArrayList<>();
             for (Condition condition : conditions) {
                 problems.addAll(condition.getProblems());
             }
@@ -2369,8 +2414,16 @@ public class Configuration implements IConfigurationElement {
                     JsonDeserializationContext context) throws JsonParseException {
                 if (element.isJsonObject()) {
                     JsonObject o = element.getAsJsonObject();
-                    String condition = context.deserialize(o.get(Condition.CONFKEY_CONDITION), String.class);
-                    String value = context.deserialize(o.get(Condition.CONFKEY_VALUE), String.class);
+                    String condition = null;
+                    final JsonElement jsonCondition = o.get(Condition.CONFKEY_CONDITION);
+                    if (jsonCondition != null) {
+                        condition = context.deserialize(jsonCondition, String.class);
+                    }
+                    String value = null;
+                    final JsonElement jsonValue = o.get(Condition.CONFKEY_VALUE);
+                    if (jsonValue != null) {
+                        value = context.deserialize(jsonValue, String.class);
+                    }
                     return new Condition(condition, value);
                 }
 
@@ -2382,7 +2435,7 @@ public class Configuration implements IConfigurationElement {
 
         @Override
         public ArrayList<ValidationEntry> getProblems() {
-            ArrayList<ValidationEntry> problems = new ArrayList<ValidationEntry>();
+            ArrayList<ValidationEntry> problems = new ArrayList<>();
 
             if (condition == null) {
                 problems.add(new ValidationEntry(ValidationEntry.ERROR, "Condition must be defined!",
@@ -2404,12 +2457,6 @@ public class Configuration implements IConfigurationElement {
          * Logger for this class
          */
         private static final Logger LOG = LoggerFactory.getLogger(Action.class);
-
-        /**
-         * Action for replacing a unit's name
-         */
-        // TODO: need to update ObjCClassManager for this
-        // public static final String REPLACE_NAME = "replace-name";
 
         /**
          * Action for replacing a unit's package
@@ -2640,8 +2687,16 @@ public class Configuration implements IConfigurationElement {
                     JsonDeserializationContext context) throws JsonParseException {
                 if (element.isJsonObject()) {
                     JsonObject o = element.getAsJsonObject();
-                    String action = context.deserialize(o.get(Action.CONFKEY_ACTION), String.class);
-                    String value = context.deserialize(o.get(Action.CONFKEY_VALUE), String.class);
+                    String action = null;
+                    final JsonElement jsonAction = o.get(Action.CONFKEY_ACTION);
+                    if (jsonAction != null) {
+                        action = context.deserialize(jsonAction, String.class);
+                    }
+                    String value = null;
+                    final JsonElement jsonValue = o.get(Action.CONFKEY_VALUE);
+                    if (jsonValue != null) {
+                        value = context.deserialize(jsonValue, String.class);
+                    }
                     return new Action(action, value);
                 }
 
@@ -2653,7 +2708,7 @@ public class Configuration implements IConfigurationElement {
 
         @Override
         public ArrayList<ValidationEntry> getProblems() {
-            ArrayList<ValidationEntry> problems = new ArrayList<ValidationEntry>();
+            ArrayList<ValidationEntry> problems = new ArrayList<>();
 
             if (action == null) {
                 problems.add(new ValidationEntry(ValidationEntry.ERROR, "Action must be defined!",
@@ -2692,11 +2747,10 @@ public class Configuration implements IConfigurationElement {
     /**
      * Create a new {@link Configuration} from a string
      *
-     * @param string with .natjgen
+     * @param natjgenContent with .natjgen
      * @return new {@link Configuration}
-     * @throws IOException
      */
-    public static Configuration createFromString(String natjgenContent) throws IOException {
+    public static Configuration createFromString(String natjgenContent) {
 
         Gson gson = getJsonBuilder().create();
         Configuration conf = gson.fromJson(natjgenContent, Configuration.class);
