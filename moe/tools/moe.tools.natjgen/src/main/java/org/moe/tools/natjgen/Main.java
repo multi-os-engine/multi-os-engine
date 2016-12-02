@@ -18,18 +18,38 @@ package org.moe.tools.natjgen;
 
 public class Main {
 
-    public static void main(String[] args) {
+    public static Bindings getGooglePlayGamesSample() {
         final Bindings bindings = new Bindings();
         bindings.setOutputDirectory("src/binding/google-gpg/java");
 
-        FrameworkBinding frameworkBinding = new FrameworkBinding();
-        frameworkBinding.setName("Google Play Games");
-        frameworkBinding.setFrameworkPath("src/binding/google-gpg/sdk/ios/gpg.framework");
-        frameworkBinding.setPackageBase("org.moe.binding");
-        frameworkBinding.setImportCode("#import <gpg/GooglePlayGames.h>");
-        bindings.add(frameworkBinding);
+        FrameworkBinding gpg = new FrameworkBinding();
+        gpg.setName("Google Play Games");
+        gpg.setFrameworkPath("src/binding/google-gpg/sdk/ios/gpg.framework");
+        gpg.setPackageBase("org.moe.binding");
+        gpg.setImportCode("#import <gpg/GooglePlayGames.h>");
+        bindings.add(gpg);
 
-        final ConfigurationBuilder builder = new ConfigurationBuilder(bindings);
+        return bindings;
+    }
+
+    public static Bindings getClangSample() {
+        final Bindings bindings = new Bindings();
+        bindings.setOutputDirectory("src/main/java");
+        bindings.setPlatform(Bindings.PLATFORM_OSX);
+
+        HeaderBinding clang = new HeaderBinding();
+        clang.setName("clang");
+        clang.setHeaderPath("../../../external/llvm/tools/clang/include");
+        clang.setImportCode("#import \"clang-c/Index.h\"\n" + "#import \"clang-c/Documentation.h\"\n");
+        clang.setPackageBase("org.clang");
+        clang.setExplicitLibrary("clang");
+        bindings.add(clang);
+
+        return bindings;
+    }
+
+    public static void main(String[] args) {
+        final ConfigurationBuilder builder = new ConfigurationBuilder(getClangSample());
         try {
             System.out.println(builder.build());
         } catch (ValidationException e) {

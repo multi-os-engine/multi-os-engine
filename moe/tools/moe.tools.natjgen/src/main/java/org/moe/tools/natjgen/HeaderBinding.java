@@ -33,6 +33,7 @@ public class HeaderBinding extends AbstractBinding {
     public static final String ERR_IMPORT_CODE_IS_NOT_SET = "import code is not set";
     public static final String ERR_PATH_VALUE_MUST_NOT_BE_NULL = "path value must not be null";
     public static final String ERR_PATH_MUST_USE_UNIX_FILE_SEPARATORS = "path is incorrect, path must use Unix file separators (/)";
+    public static final String ERR_EXPLICIT_LIBRARY_IS_SET_BUT_EMPTY = "explicitLibrary is invalid, value is set but length is 0";
 
     private String headerPath;
     private final List<String> headerSearchPaths = new ArrayList<String>();
@@ -40,6 +41,7 @@ public class HeaderBinding extends AbstractBinding {
     private final List<String> frameworkSearchPaths = new ArrayList<String>();
     private String packageBase;
     private String importCode;
+    private String explicitLibrary;
 
     public HeaderBinding() {
         super(TYPE);
@@ -81,6 +83,14 @@ public class HeaderBinding extends AbstractBinding {
         this.importCode = importCode;
     }
 
+    public String getExplicitLibrary() {
+        return explicitLibrary;
+    }
+
+    public void setExplicitLibrary(String explicitLibrary) {
+        this.explicitLibrary = explicitLibrary;
+    }
+
     @Override
     public void validate() throws ValidationException {
         validate(headerPath != null, ERR_HEADER_PATH_IS_NOT_SET);
@@ -91,6 +101,9 @@ public class HeaderBinding extends AbstractBinding {
         validate(JavaUtil.isValidJavaPackage(packageBase), ERR_PACKAGE_BASE_IS_NOT_A_VALID_JAVA_PACKAGE);
         validate(importCode != null, ERR_IMPORT_CODE_IS_NOT_SET);
         validate(importCode.length() > 0, ERR_IMPORT_CODE_IS_NOT_SET);
+        if (explicitLibrary != null) {
+            validate(explicitLibrary.length() > 0, ERR_EXPLICIT_LIBRARY_IS_SET_BUT_EMPTY);
+        }
 
         for (String path : headerSearchPaths) {
             validate(path != null, ERR_PATH_VALUE_MUST_NOT_BE_NULL);
@@ -145,6 +158,9 @@ public class HeaderBinding extends AbstractBinding {
         if (getImportCode() != null) {
             json.addProperty("importCode", getImportCode());
         }
+        if (getExplicitLibrary() != null) {
+            json.addProperty("explicitLibrary", getExplicitLibrary());
+        }
         return json;
     }
 
@@ -172,6 +188,12 @@ public class HeaderBinding extends AbstractBinding {
         final JsonPrimitive jsonImportCode = json.getAsJsonPrimitive("importCode");
         if (jsonImportCode != null) {
             setImportCode(jsonImportCode.getAsString());
+        }
+
+        setExplicitLibrary(null);
+        final JsonPrimitive jsonExplicitLibrary = json.getAsJsonPrimitive("explicitLibrary");
+        if (jsonExplicitLibrary != null) {
+            setExplicitLibrary(jsonExplicitLibrary.getAsString());
         }
     }
 }

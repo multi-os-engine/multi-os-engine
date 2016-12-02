@@ -109,7 +109,7 @@ public class ConfigurationBuilder {
         final JsonArray unitRules = new JsonArray();
 
         // Lookup SDK
-        final String platform = NativeSDKUtil.PLATFORM_IOS;
+        final String platform = bindings.getPlatform() == null ? Bindings.PLATFORM_IOS : bindings.getPlatform();
         final File platformSDKsPath = NativeSDKUtil.getPlatformSDKsPath(platform);
         if (platformSDKsPath == null || !platformSDKsPath.exists() && !platformSDKsPath.isDirectory()) {
             throw new RuntimeException("failed to locate platform SDK (" + platform + ")");
@@ -159,11 +159,14 @@ public class ConfigurationBuilder {
             @Override
             public void visit(HeaderBinding binding) {
                 // @formatter:off
-                unitRules.add(new UnitRuleBuilder(true)
-                        .addCondition("path-prefix","${PROJECT}/" + binding.getHeaderPath())
-                        .addAction("replace-package-base", binding.getPackageBase())
-                        .build());
+                final UnitRuleBuilder ruleBuilder = new UnitRuleBuilder(true)
+                        .addCondition("path-prefix", "${PROJECT}/" + binding.getHeaderPath())
+                        .addAction("replace-package-base", binding.getPackageBase());
                 // @formatter:on
+                if (binding.getExplicitLibrary() != null) {
+                    ruleBuilder.addAction("replace-library", binding.getExplicitLibrary());
+                }
+                unitRules.add(ruleBuilder.build());
                 sourceFile.append(binding.getImportCode()).append("\n\n");
                 copyPath(binding.getHeaderPath(), headerSearchPaths);
                 copyPath(binding.getHeaderPath(), userHeaderSearchPaths);

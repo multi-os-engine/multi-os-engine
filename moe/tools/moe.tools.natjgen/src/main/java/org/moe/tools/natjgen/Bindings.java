@@ -21,6 +21,7 @@ import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 import com.google.gson.JsonPrimitive;
+import org.moe.common.developer.NativeSDKUtil;
 
 import java.io.File;
 import java.io.FileReader;
@@ -31,8 +32,20 @@ import java.util.Iterator;
 import java.util.List;
 
 public class Bindings implements Iterable<AbstractBinding>, IJsonAdapter {
+    public final static String PLATFORM_IOS = NativeSDKUtil.PLATFORM_IOS;
+    public final static String PLATFORM_OSX = NativeSDKUtil.PLATFORM_OSX;
+
+    private String platform;
     private final List<AbstractBinding> bindings = new ArrayList<AbstractBinding>();
     private String outputDirectory;
+
+    public String getPlatform() {
+        return platform;
+    }
+
+    public void setPlatform(String platform) {
+        this.platform = platform;
+    }
 
     public int size() {
         return bindings.size();
@@ -80,6 +93,9 @@ public class Bindings implements Iterable<AbstractBinding>, IJsonAdapter {
         if (outputDirectory != null) {
             obj.addProperty("output", outputDirectory);
         }
+        if (platform != null) {
+            obj.addProperty("platform", platform);
+        }
         JsonArray binds = new JsonArray();
         for (AbstractBinding binding : bindings) {
             binds.add(binding.getJsonObject());
@@ -91,11 +107,18 @@ public class Bindings implements Iterable<AbstractBinding>, IJsonAdapter {
     @Override
     public void setJsonObject(JsonObject json) {
         setOutputDirectory(null);
-        bindings.clear();
         final JsonPrimitive jsonOutput = json.getAsJsonPrimitive("output");
         if (jsonOutput != null) {
             setOutputDirectory(jsonOutput.getAsString());
         }
+
+        setPlatform(null);
+        final JsonPrimitive jsonPlatform = json.getAsJsonPrimitive("platform");
+        if (jsonPlatform != null) {
+            setPlatform(jsonPlatform.getAsString());
+        }
+
+        bindings.clear();
         final JsonArray jsonBindings = json.getAsJsonArray("bindings");
         if (jsonBindings != null) {
             for (JsonElement jsonBinding : jsonBindings) {

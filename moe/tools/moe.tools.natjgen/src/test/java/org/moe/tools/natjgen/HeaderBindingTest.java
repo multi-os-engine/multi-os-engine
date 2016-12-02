@@ -51,6 +51,12 @@ public class HeaderBindingTest extends TestCase {
         binding.setImportCode("#import <>");
         binding.validate();
 
+        binding.setExplicitLibrary("");
+        _validate(binding, ERR_EXPLICIT_LIBRARY_IS_SET_BUT_EMPTY);
+
+        binding.setExplicitLibrary("a");
+        binding.validate();
+
         binding.getHeaderSearchPaths().add(null);
         _validate(binding, ERR_PATH_VALUE_MUST_NOT_BE_NULL);
 
@@ -90,6 +96,7 @@ public class HeaderBindingTest extends TestCase {
         source.getFrameworkSearchPaths().add(null);
         source.setPackageBase("c");
         source.setImportCode("d");
+        source.setExplicitLibrary("f");
 
         final JsonObject json = source.getJsonObject();
         assertNotNull(json);
@@ -109,6 +116,7 @@ public class HeaderBindingTest extends TestCase {
         assertEquals("z", target.getFrameworkSearchPaths().get(0));
         assertEquals("c", target.getPackageBase());
         assertEquals("d", target.getImportCode());
+        assertEquals("f", target.getExplicitLibrary());
     }
 
     private void _validate(HeaderBinding binding, String expectedExceptionMsg) {
