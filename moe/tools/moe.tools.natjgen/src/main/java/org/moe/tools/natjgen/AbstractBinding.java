@@ -16,7 +16,14 @@ limitations under the License.
 
 package org.moe.tools.natjgen;
 
-public abstract class AbstractBinding {
+import com.google.gson.JsonArray;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonPrimitive;
+
+import java.util.List;
+
+public abstract class AbstractBinding implements IJsonAdapter {
     private String name;
     private final String type;
 
@@ -64,6 +71,43 @@ public abstract class AbstractBinding {
     public void visit(HeaderBindingVisitor visitor) {
         if (this instanceof HeaderBinding) {
             visitor.visit((HeaderBinding)this);
+        }
+    }
+
+    @Override
+    public JsonObject getJsonObject() {
+        final JsonObject json = new JsonObject();
+        json.addProperty("type", getType());
+        if (getName() != null) {
+            json.addProperty("name", getName());
+        }
+        return json;
+    }
+
+    @Override
+    public void setJsonObject(JsonObject json) {
+        final JsonPrimitive jsonType = json.getAsJsonPrimitive("type");
+        if (jsonType == null) {
+            throw new NullPointerException();
+        }
+        if (!type.equals(jsonType.getAsString())) {
+            throw new IllegalArgumentException();
+        }
+
+        setName(null);
+        final JsonPrimitive jsonName = json.getAsJsonPrimitive("name");
+        if (jsonName != null) {
+            setName(jsonName.getAsString());
+        }
+    }
+
+    protected void readJsonStringArray(JsonArray array, List<String> target) {
+        target.clear();
+        if (array == null) {
+            return;
+        }
+        for (JsonElement jsonElement : array) {
+            target.add(jsonElement.getAsString());
         }
     }
 }
