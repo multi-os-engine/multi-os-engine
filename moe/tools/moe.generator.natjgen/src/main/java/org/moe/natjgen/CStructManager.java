@@ -467,6 +467,8 @@ public class CStructManager extends AbstractUnitManager {
             modifiers.setNative();
             modifiers.setStructureField(order, isGetter, field.getConstantArraySize());
             modifiers.setGenerated();
+
+            editor.close();
         }
 
         // Add uncertain bindings to outputTypeConfiguration

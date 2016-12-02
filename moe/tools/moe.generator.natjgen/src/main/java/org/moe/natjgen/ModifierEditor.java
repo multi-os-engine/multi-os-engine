@@ -912,6 +912,10 @@ public class ModifierEditor extends EditContext {
             aNInt = newMarker(aNInt, NInt);
         } else if (Constants.NUIntAnnotationFQ.equals(downgradeAnnotation)) {
             aNUInt = newMarker(aNUInt, NUInt);
+        } else if (downgradeAnnotation == null) {
+            aNFloat = null;
+            aNInt = null;
+            aNUInt = null;
         } else {
             throw new IllegalArgumentException();
         }

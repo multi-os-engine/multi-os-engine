@@ -285,9 +285,7 @@ public class TypeResolver extends AbstractASTBase {
         switch (depth) {
         case 0: {
             // Non-referenced types (i.e. int)
-            if (type.getDowngradeAnnotation() != null) {
-                modifiers.setDowngradeAnnotation(type.getDowngradeAnnotation());
-            }
+            modifiers.setDowngradeAnnotation(type.getDowngradeAnnotation());
             _Apply(newPrimitiveType(type.getSimpleTypeCode()));
             return;
         }
