@@ -26,14 +26,14 @@ import java.util.List;
 
 public class HeaderBinding extends AbstractBinding {
     public static final String TYPE = "header";
-    public static final String ERR_HEADER_PATH_IS_NOT_SET = "headerPath is not set";
-    public static final String ERR_HEADER_PATH_MUST_USE_UNIX_FILE_SEPARATORS = "headerPath is incorrect, path must use Unix file separators (/)";
+    public static final String ERR_HEADER_PATH_IS_NOT_SET = "header path is not set";
+    public static final String ERR_HEADER_PATH_MUST_USE_UNIX_FILE_SEPARATORS = "header path is incorrect, path must use Unix file separators (/)";
     public static final String ERR_PACKAGE_BASE_IS_NOT_SET = "package base is not set";
     public static final String ERR_PACKAGE_BASE_IS_NOT_A_VALID_JAVA_PACKAGE = "package base is not a valid Java package";
     public static final String ERR_IMPORT_CODE_IS_NOT_SET = "import code is not set";
     public static final String ERR_PATH_VALUE_MUST_NOT_BE_NULL = "path value must not be null";
     public static final String ERR_PATH_MUST_USE_UNIX_FILE_SEPARATORS = "path is incorrect, path must use Unix file separators (/)";
-    public static final String ERR_EXPLICIT_LIBRARY_IS_SET_BUT_EMPTY = "explicitLibrary is invalid, value is set but length is 0";
+    public static final String ERR_EXPLICIT_LIBRARY_IS_SET_BUT_EMPTY = "explicit library is invalid, value is set but length is 0";
 
     private String headerPath;
     private final List<String> headerSearchPaths = new ArrayList<String>();

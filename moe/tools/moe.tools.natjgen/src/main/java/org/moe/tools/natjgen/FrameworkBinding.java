@@ -22,11 +22,11 @@ import org.moe.tools.natjgen.util.JavaUtil;
 
 public class FrameworkBinding extends AbstractBinding {
     public static final String TYPE = "framework";
-    public static final String ERR_FRAMEWORK_PATH_IS_NOT_SET = "frameworkPath is not set";
+    public static final String ERR_FRAMEWORK_PATH_IS_NOT_SET = "framework path is not set";
     public static final String ERR_FRAMEWORK_PATH_IS_NOT_FRAMEWORK_DIRECTORY =
-            "frameworkPath is incorrect, path must " + "point to a <name>.framework directory";
+            "framework path is incorrect, path must " + "point to a <name>.framework directory";
     public static final String ERR_FRAMEWORK_PATH_MUST_USE_UNIX_FILE_SEPARATORS =
-            "frameworkPath is incorrect, path " + "must use Unix file separators (/)";
+            "framework path is incorrect, path " + "must use Unix file separators (/)";
     public static final String ERR_PACKAGE_BASE_IS_NOT_SET = "package base is not set";
     public static final String ERR_PACKAGE_BASE_IS_NOT_A_VALID_JAVA_PACKAGE = "package base is not a valid Java package";
     public static final String ERR_IMPORT_CODE_IS_NOT_SET = "import code is not set";
