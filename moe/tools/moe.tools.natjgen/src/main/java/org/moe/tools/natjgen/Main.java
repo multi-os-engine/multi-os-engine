@@ -24,7 +24,7 @@ public class Main {
 
         FrameworkBinding frameworkBinding = new FrameworkBinding();
         frameworkBinding.setName("Google Play Games");
-        frameworkBinding.setFramework("src/binding/google-gpg/sdk/ios/gpg.framework");
+        frameworkBinding.setFrameworkPath("src/binding/google-gpg/sdk/ios/gpg.framework");
         frameworkBinding.setPackageBase("org.moe.binding");
         frameworkBinding.setImportCode("#import <gpg/GooglePlayGames.h>");
         bindings.add(frameworkBinding);

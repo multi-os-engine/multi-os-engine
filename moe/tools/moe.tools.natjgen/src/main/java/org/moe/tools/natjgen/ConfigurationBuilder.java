@@ -21,11 +21,12 @@ import com.google.gson.GsonBuilder;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
+import org.moe.common.developer.NativeSDKUtil;
 import org.moe.tools.natjgen.AbstractBinding.FrameworkBindingVisitor;
 import org.moe.tools.natjgen.AbstractBinding.HeaderBindingVisitor;
-import org.moe.tools.natjgen.util.XcodeUtil;
 
 import java.io.File;
+import java.util.List;
 
 public class ConfigurationBuilder {
 
@@ -108,8 +109,8 @@ public class ConfigurationBuilder {
         final JsonArray unitRules = new JsonArray();
 
         // Lookup SDK
-        final String platform = XcodeUtil.PLATFORM_IOS;
-        final File platformSDKsPath = XcodeUtil.getPlatformSDKsPath(platform);
+        final String platform = NativeSDKUtil.PLATFORM_IOS;
+        final File platformSDKsPath = NativeSDKUtil.getPlatformSDKsPath(platform);
         if (platformSDKsPath == null || !platformSDKsPath.exists() && !platformSDKsPath.isDirectory()) {
             throw new RuntimeException("failed to locate platform SDK (" + platform + ")");
         }
@@ -151,13 +152,24 @@ public class ConfigurationBuilder {
                         .build());
                 // @formatter:on
                 sourceFile.append(binding.getImportCode()).append("\n\n");
-                frameworkSearchPaths.add("${PROJECT}/" + binding.getFrameworkParent());
+                copyPath(binding.getFrameworkParentPath(), frameworkSearchPaths);
             }
         };
         final HeaderBindingVisitor headerBindingVisitor = new HeaderBindingVisitor() {
             @Override
             public void visit(HeaderBinding binding) {
-
+                // @formatter:off
+                unitRules.add(new UnitRuleBuilder(true)
+                        .addCondition("path-prefix","${PROJECT}/" + binding.getHeaderPath())
+                        .addAction("replace-package-base", binding.getPackageBase())
+                        .build());
+                // @formatter:on
+                sourceFile.append(binding.getImportCode()).append("\n\n");
+                copyPath(binding.getHeaderPath(), headerSearchPaths);
+                copyPath(binding.getHeaderPath(), userHeaderSearchPaths);
+                copyPaths(binding.getHeaderSearchPaths(), headerSearchPaths);
+                copyPaths(binding.getUserHeaderSearchPaths(), userHeaderSearchPaths);
+                copyPaths(binding.getFrameworkSearchPaths(), frameworkSearchPaths);
             }
         };
         for (AbstractBinding binding : bindings) {
@@ -187,6 +199,20 @@ public class ConfigurationBuilder {
 
         final Gson gson = new GsonBuilder().setPrettyPrinting().create();
         return gson.toJson(cfg);
+    }
+
+    private void copyPaths(List<String> source, JsonArray target) {
+        for (String path : source) {
+            copyPath(path, target);
+        }
+    }
+
+    private void copyPath(String path, JsonArray target) {
+        if (path.startsWith("/")) {
+            target.add(path);
+        } else {
+            target.add("${PROJECT}/" + path);
+        }
     }
 
     private JsonElement getDisabledObjCRule(String type, String name) {

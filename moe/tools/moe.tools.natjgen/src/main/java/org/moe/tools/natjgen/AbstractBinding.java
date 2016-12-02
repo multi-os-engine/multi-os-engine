@@ -18,6 +18,18 @@ package org.moe.tools.natjgen;
 
 public abstract class AbstractBinding {
     private String name;
+    private final String type;
+
+    public AbstractBinding(String type) {
+        if (type == null) {
+            throw new NullPointerException();
+        }
+        this.type = type;
+    }
+
+    public String getType() {
+        return type;
+    }
 
     public String getName() {
         return name;

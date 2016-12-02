@@ -19,16 +19,21 @@ package org.moe.tools.natjgen;
 import org.moe.tools.natjgen.util.JavaUtil;
 
 public class FrameworkBinding extends AbstractBinding {
-    private String framework;
+    public static final String TYPE = "framework";
+    private String frameworkPath;
     private String packageBase;
     private String importCode;
 
-    public String getFramework() {
-        return framework;
+    public FrameworkBinding() {
+        super(TYPE);
     }
 
-    public void setFramework(String framework) {
-        this.framework = framework;
+    public String getFrameworkPath() {
+        return frameworkPath;
+    }
+
+    public void setFrameworkPath(String frameworkPath) {
+        this.frameworkPath = frameworkPath;
     }
 
     public String getPackageBase() {
@@ -49,11 +54,11 @@ public class FrameworkBinding extends AbstractBinding {
 
     @Override
     public void validate() throws ValidationException {
-        validate(framework != null, "framework path is not set");
-        validate(framework.length() > 0, "framework path is not set");
-        validate(framework.endsWith(".framework"),
-                "framework path is incorrect, path must point to a <name>.framework directory");
-        validate(!framework.contains("\\"), "framework path is incorrect, path must use Unix file separators (/)");
+        validate(frameworkPath != null, "frameworkPath is not set");
+        validate(frameworkPath.length() > 0, "frameworkPath is not set");
+        validate(frameworkPath.endsWith(".framework"),
+                "frameworkPath is incorrect, path must point to a <name>.framework directory");
+        validate(!frameworkPath.contains("\\"), "frameworkPath is incorrect, path must use Unix file separators (/)");
         validate(packageBase != null, "package base is not set");
         validate(packageBase.length() > 0, "package base is not set");
         validate(JavaUtil.isValidJavaPackage(packageBase), "package base is not a valid Java package");
@@ -62,7 +67,7 @@ public class FrameworkBinding extends AbstractBinding {
     }
 
     public String getFrameworkName() {
-        String framework = this.framework;
+        String framework = this.frameworkPath;
         int lastIndexOf = framework.lastIndexOf('/');
         if (lastIndexOf != -1) {
             framework = framework.substring(lastIndexOf + 1);
@@ -74,8 +79,8 @@ public class FrameworkBinding extends AbstractBinding {
         return framework;
     }
 
-    public String getFrameworkParent() {
-        String framework = this.framework;
+    public String getFrameworkParentPath() {
+        String framework = this.frameworkPath;
         int lastIndexOf = framework.lastIndexOf('/');
         if (lastIndexOf != -1) {
             framework = framework.substring(0, lastIndexOf);
