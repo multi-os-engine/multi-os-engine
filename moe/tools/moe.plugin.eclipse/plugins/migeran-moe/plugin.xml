@@ -426,9 +426,17 @@
              class="org.moe.editors.XCodeEditor"
              contributorClass="org.eclipse.ui.texteditor.BasicTextEditorActionContributor"
              extensions="pbxproj"
-             icon="icons/sample.gif"
+             icon="icons/moe_small.png"
              id="org.moe.editors.XCodeEditor"
              name="XCode Editor">
+       </editor>
+       <editor
+             class="org.moe.editors.BindingEditor"
+             contributorClass="org.eclipse.ui.texteditor.BasicTextEditorActionContributor"
+             extensions="mbc"
+             icon="icons/moe_small.png"
+             id="org.moe.editors.BindingEditor"
+             name="Binding Editor">
        </editor>
     </extension>
 </plugin>
