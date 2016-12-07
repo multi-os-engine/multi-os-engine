@@ -30,6 +30,7 @@ import org.moe.natj.general.ptr.ConstVoidPtr;
 import org.moe.natj.general.ptr.VoidPtr;
 import org.moe.natj.general.ptr.impl.PtrFactory;
 
+import java.lang.reflect.Constructor;
 import java.lang.reflect.Method;
 import java.nio.ByteBuffer;
 import java.nio.CharBuffer;
@@ -202,6 +203,25 @@ public class CRuntime extends NativeRuntime {
      */
     public static VoidPtr cast(OpaquePtr ptr) {
         return PtrFactory.newWeakVoidPtr(ptr.getPeer().getPeer());
+    }
+
+    /**
+     * Casts a structure object.
+     *
+     * <p>
+     * This returns a new StructObject with the same Pointer peer.
+     *
+     * @param obj The structure object we want to cast
+     * @return The new structure object
+     */
+    public static <T extends StructObject> T cast(StructObject obj, java.lang.Class<T> cls) {
+        try {
+            Constructor<T> constructor = cls.getDeclaredConstructor(Pointer.class);
+            constructor.setAccessible(true);
+            return constructor.newInstance(obj.getPeer());
+        } catch (Exception ex) {
+            throw new RuntimeException("Could not construct casted StructObject.", ex);
+        }
     }
 
     /**
