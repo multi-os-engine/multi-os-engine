@@ -16,11 +16,16 @@ limitations under the License.
 
 package org.moe.idea.ui;
 
+import com.intellij.openapi.fileChooser.FileChooser;
+import com.intellij.openapi.fileChooser.FileChooserDescriptor;
+import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.ui.DocumentAdapter;
 import org.moe.tools.natjgen.FrameworkBinding;
 
 import javax.swing.*;
 import javax.swing.event.DocumentEvent;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class FrameworkBindingEditorForm extends JPanel{
     private JPanel content;
@@ -32,26 +37,54 @@ public class FrameworkBindingEditorForm extends JPanel{
     private JTextField basePackageNameTextField;
 
     private FrameworkBinding frameworkBinding;
+    private BindingEditorListForm listForm;
+    private boolean inited = false;
 
     public FrameworkBindingEditorForm() {
         nameTextField.getDocument().addDocumentListener(new DocumentAdapter() {
 
             protected void textChanged(DocumentEvent e) {
-                frameworkBinding.setName(nameTextField.getText().trim());
+                if (inited) {
+                    frameworkBinding.setName(nameTextField.getText().trim());
+                    save();
+                }
             }
         });
 
         frameworkTextField.getDocument().addDocumentListener(new DocumentAdapter() {
 
             protected void textChanged(DocumentEvent e) {
-                frameworkBinding.setFrameworkPath(frameworkTextField.getText().trim());
+                if (inited) {
+                    frameworkBinding.setFrameworkPath(frameworkTextField.getText().trim());
+                    save();
+                }
             }
         });
 
         importHeadersTextArea.getDocument().addDocumentListener(new DocumentAdapter() {
 
             protected void textChanged(DocumentEvent e) {
-                frameworkBinding.setImportCode(importHeadersTextArea.getText().trim());
+                if (inited) {
+                    frameworkBinding.setImportCode(importHeadersTextArea.getText().trim());
+                    save();
+                }
+            }
+        });
+
+        basePackageNameTextField.getDocument().addDocumentListener(new DocumentAdapter() {
+
+            protected void textChanged(DocumentEvent e) {
+                if (inited) {
+                    frameworkBinding.setPackageBase(basePackageNameTextField.getText().trim());
+                    save();
+                }
+            }
+        });
+
+        selectFrameworkButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                openDirChooser();
             }
         });
     }
@@ -60,11 +93,34 @@ public class FrameworkBindingEditorForm extends JPanel{
         content.setVisible(b);
     }
 
-    public void setFrameworkBinding(FrameworkBinding frameworkBinding) {
+    public void initWithFrameworkBinding(FrameworkBinding frameworkBinding) {
+        inited = false;
         this.frameworkBinding = frameworkBinding;
         nameTextField.setText(frameworkBinding.getName());
         frameworkTextField.setText(frameworkBinding.getFrameworkPath());
         importHeadersTextArea.setText(frameworkBinding.getImportCode());
         basePackageNameTextField.setText(frameworkBinding.getPackageBase());
+        inited = true;
+    }
+
+    public void setBindingEditorListForm(BindingEditorListForm form) {
+        this.listForm = form;
+    }
+
+    private void save() {
+        listForm.save();
+    }
+
+    private void openDirChooser() {
+        FileChooserDescriptor descriptor = new FileChooserDescriptor(false, true, false, false, false, false);
+        VirtualFile root = FileChooser.chooseFile(descriptor, null, null);
+        if (root != null) {
+            String modulePath = listForm.getModulePath();
+            String frameworkPath = root.getCanonicalPath();
+            if (frameworkPath.startsWith(modulePath)) {
+                frameworkPath = frameworkPath.substring(modulePath.length() + 1, frameworkPath.length());
+            }
+            frameworkTextField.setText(frameworkPath);
+        }
     }
 }

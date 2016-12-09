@@ -8,7 +8,7 @@
     <properties/>
     <border type="none"/>
     <children>
-      <component id="609af" class="javax.swing.JList" binding="list1" default-binding="true">
+      <component id="609af" class="javax.swing.JList" binding="pathList">
         <constraints>
           <grid row="0" column="0" row-span="3" col-span="1" vsize-policy="6" hsize-policy="2" anchor="0" fill="3" indent="0" use-parent-layout="false">
             <preferred-size width="400" height="50"/>
@@ -24,7 +24,7 @@
         <properties/>
         <border type="none"/>
         <children>
-          <component id="8fd3a" class="javax.swing.JButton" binding="button1" default-binding="true">
+          <component id="8fd3a" class="javax.swing.JButton" binding="addButton">
             <constraints>
               <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
             </constraints>
@@ -32,7 +32,7 @@
               <text value="+"/>
             </properties>
           </component>
-          <component id="38709" class="javax.swing.JButton" binding="button2" default-binding="true">
+          <component id="38709" class="javax.swing.JButton" binding="removeButton">
             <constraints>
               <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
             </constraints>

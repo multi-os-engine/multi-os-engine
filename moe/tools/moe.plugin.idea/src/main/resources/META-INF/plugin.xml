@@ -117,6 +117,11 @@
                   text="Inject/Refresh Xcode Project Settings"
                   description="Inject/Refresh changes required to use Multi-OS Engine"/>
 
+          <action id="org.moe.idea.MOENewBinding"
+                  class="org.moe.idea.actions.MOENewBindingAction"
+                  text="Create New Binding"
+                  description="Create a new binding"/>
+
           <separator/>
           <add-to-group group-id="ProjectViewPopupMenu" relative-to-action="MOEModuleActions.Separator" anchor="after"/>
       </group>

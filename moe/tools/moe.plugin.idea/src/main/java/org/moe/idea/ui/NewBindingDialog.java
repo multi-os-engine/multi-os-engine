@@ -16,9 +16,13 @@ limitations under the License.
 
 package org.moe.idea.ui;
 
-import com.intellij.icons.AllIcons;
+import com.intellij.openapi.fileChooser.FileChooser;
+import com.intellij.openapi.fileChooser.FileChooserDescriptor;
+import com.intellij.openapi.fileChooser.FileChooserDescriptorFactory;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.ui.DialogWrapper;
+import com.intellij.openapi.vfs.VFileProperty;
+import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.ui.DocumentAdapter;
 import org.jetbrains.annotations.Nullable;
 
@@ -27,37 +31,20 @@ import javax.swing.event.DocumentEvent;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class CreateFrameorkBindingDialog  extends DialogWrapper {
+public class NewBindingDialog  extends DialogWrapper {
 
     private JPanel contentPane;
     private JTextField nameTextField;
-    private JRadioButton headerRadioButton;
-    private JRadioButton frameworkRadioButton;
 
-    private boolean isFramework = true;
     private String name;
 
-    public CreateFrameorkBindingDialog(Project project) {
+    public NewBindingDialog(Project project) {
         super(project);
 
         nameTextField.getDocument().addDocumentListener(new DocumentAdapter() {
 
             protected void textChanged(DocumentEvent e) {
                 name = nameTextField.getText().trim();
-            }
-        });
-
-        headerRadioButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                isFramework = !headerRadioButton.isSelected();
-            }
-        });
-
-        frameworkRadioButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                isFramework = frameworkRadioButton.isSelected();
             }
         });
 
@@ -72,9 +59,5 @@ public class CreateFrameorkBindingDialog  extends DialogWrapper {
 
     public String getName() {
         return name;
-    }
-
-    public boolean isFramework() {
-        return isFramework;
     }
 }

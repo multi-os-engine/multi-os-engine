@@ -16,11 +16,79 @@ limitations under the License.
 
 package org.moe.idea.ui;
 
+import com.intellij.openapi.fileChooser.FileChooser;
+import com.intellij.openapi.fileChooser.FileChooserDescriptor;
+import com.intellij.openapi.vfs.VirtualFile;
+
 import javax.swing.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.util.List;
 
 public class SearchPathForm extends JPanel {
+
     private JPanel content;
-    private JList list1;
-    private JButton button1;
-    private JButton button2;
+    private JList pathList;
+    private JButton addButton;
+    private JButton removeButton;
+
+    private DefaultListModel listModel;
+    private List<String> searchPaths;
+    private HeaderBindingEditorForm bindingEditorForm;
+
+    public SearchPathForm() {
+
+        this.listModel = new DefaultListModel();
+        pathList.setModel(listModel);
+
+        addButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                openDirChooser();
+            }
+        });
+
+        removeButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                int idx = pathList.getSelectedIndex();
+                if (idx >= 0) {
+                    searchPaths.remove(idx);
+                }
+                save();
+                loadList();
+            }
+        });
+    }
+
+    public void init(List<String> paths) {
+        this.searchPaths = paths;
+        loadList();
+    }
+
+    public void setBindingEditorForm(HeaderBindingEditorForm form) {
+        this.bindingEditorForm = form;
+    }
+
+    private void openDirChooser() {
+        FileChooserDescriptor descriptor = new FileChooserDescriptor(false, true, false, false, false, false);
+        VirtualFile root = FileChooser.chooseFile(descriptor, null, null);
+        if (root != null) {
+            searchPaths.add(root.getCanonicalPath());
+            save();
+            loadList();
+        }
+    }
+
+    private void loadList() {
+        listModel.removeAllElements();
+
+        for (String path : searchPaths) {
+            listModel.addElement(path);
+        }
+    }
+
+    private void save() {
+        bindingEditorForm.save();
+    }
 }

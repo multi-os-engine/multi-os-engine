@@ -62,6 +62,7 @@ dependencies {
     compile project(':moe.tools.natjgen')
     compile project(':moe.plugin.common')
     testCompile group: 'junit', name: 'junit', version: '4.12'
+    compile group: 'org.slf4j', name: 'slf4j-simple', version: '1.7.+'
 }
 
 publishing {

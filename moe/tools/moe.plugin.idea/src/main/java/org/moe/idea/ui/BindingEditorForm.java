@@ -17,18 +17,21 @@ limitations under the License.
 package org.moe.idea.ui;
 
 import com.intellij.openapi.diagnostic.Logger;
+import com.intellij.openapi.module.Module;
+import com.intellij.openapi.module.ModuleUtil;
 import com.intellij.openapi.project.Project;
+import com.intellij.openapi.ui.Messages;
 import com.intellij.openapi.vfs.VirtualFile;
+import org.moe.idea.MOESdkPlugin;
+import org.moe.idea.binding.GeneratorRunner;
 import org.moe.idea.utils.logger.LoggerFactory;
-import org.moe.tools.natjgen.AbstractBinding;
-import org.moe.tools.natjgen.Bindings;
-import org.moe.tools.natjgen.FrameworkBinding;
-import org.moe.tools.natjgen.HeaderBinding;
+import org.moe.tools.natjgen.*;
 
 import javax.swing.*;
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.util.Vector;
+import java.io.PrintWriter;
 
 public class BindingEditorForm {
 
@@ -36,22 +39,26 @@ public class BindingEditorForm {
 
     private JPanel content;
     private BindingEditorListForm bindingsListPanel;
+    private JScrollPane scrollPane;
     private JTabbedPane editorTabbedPane;
-    private JPanel frameworkEditorTab;
-    private JPanel headerEditorTab;
     private FrameworkBindingEditorForm frameworkEditor;
     private HeaderBindingEditorForm headerEditor;
+    private JPanel panel;
     private Project project;
+    private Module module;
     private File configurationFile;
+
+    private String modulePath;
 
     private  Bindings bindings;
 
     public BindingEditorForm(Project project, VirtualFile virtualFile) {
         this.project = project;
-
+        this.module = MOESdkPlugin.findModuleForFile(project, virtualFile);
+        this.modulePath = ModuleUtil.getModuleDirPath(module);
         this.configurationFile = new File(virtualFile.getCanonicalPath());
         this.bindings = new Bindings();
-        loadBindingsList();
+        loadBindings();
 
         if (bindings.isEmpty()) {
             editorTabbedPane.setVisible(false);
@@ -67,34 +74,13 @@ public class BindingEditorForm {
         return content;
     }
 
-    private void loadBindingsList() {
+    private void loadBindings() {
 
         try {
             bindings.load(configurationFile);
-        } catch (IOException e) {
-            e.printStackTrace();
+        } catch (Exception e) {
+            LOG.info("Wrong configuration or empty: " + e.getMessage());
         }
-
-        /*FrameworkBinding frameworkBinding = new FrameworkBinding();
-        frameworkBinding.setName("Google Play Games");
-        frameworkBinding.setFrameworkPath("src/frameworks/google-gpg/sdk/ios/gpg.framework");
-        frameworkBinding.setImportCode("#import <gpg/GooglePlayGames.h>");
-        frameworkBinding.setPackageBase("com.migeran.bindings");
-
-        bindings.add(frameworkBinding);
-
-        FrameworkBinding frameworkBinding2 = new FrameworkBinding();
-        frameworkBinding2.setName("Google Play Test");
-        frameworkBinding2.setFrameworkPath("src/frameworks/google-gpg/sdk/ios/GooglePlus.framework");
-        frameworkBinding2.setImportCode("#import <gpg/GooglePlayGames.h>");
-        frameworkBinding2.setPackageBase("com.migeran.bindings");
-
-        bindings.add(frameworkBinding2);
-
-        HeaderBinding headerBinding = new HeaderBinding();
-        headerBinding.setName("Header test");
-        headerBinding.setPackageBase("org.moe.headerbinding");
-        bindings.add(headerBinding);*/
     }
 
     public void showFrameworkEditorTab() {
@@ -109,7 +95,7 @@ public class BindingEditorForm {
         editorTabbedPane.setEnabledAt(1, true);
     }
 
-    public Bindings getBindingsList() {
+    public Bindings getBindings() {
         return bindings;
     }
 
@@ -121,7 +107,64 @@ public class BindingEditorForm {
         try {
             bindings.save(configurationFile);
         } catch (IOException e) {
-            e.printStackTrace();
+            LOG.info("Unable save binding configuration: " + e.getMessage());
         }
+        if (!bindings.isEmpty()) {
+            editorTabbedPane.setVisible(true);
+        } else {
+            editorTabbedPane.setVisible(false);
+        }
+    }
+
+    public void generate() {
+        generate(null,false);
+    }
+
+    public void generate(AbstractBinding binding, boolean test) {
+        save();
+        File temp = null;
+        try {
+            temp = File.createTempFile(configurationFile.getParent(), configurationFile.getName() + ".natjgen");
+            generateNatjGenFile(binding, temp);
+            GeneratorRunner testGeneratorRunner = new GeneratorRunner(module);
+            testGeneratorRunner.generateBinding(temp, test);
+        } catch (Exception e) {
+            Messages.showErrorDialog(e.getMessage(), "Generate Binding Error");
+        } finally {
+            if (temp != null) {
+                temp.delete();
+            }
+        }
+    }
+
+    public void testAll() {
+        generate(null, true);
+    }
+
+    public void testSelected(AbstractBinding binding) {
+        generate(binding, true);
+    }
+
+    private void generateNatjGenFile(AbstractBinding binding, File target) throws FileNotFoundException, ValidationException {
+        ConfigurationBuilder builder = null;
+        if (binding == null) {
+            builder = new ConfigurationBuilder(bindings);
+        } else {
+            Bindings testBindings = new Bindings();
+            testBindings.setPlatform(bindings.getPlatform());
+            testBindings.setOutputDirectory(bindings.getOutputDirectory());
+            testBindings.add(binding);
+            builder = new ConfigurationBuilder(testBindings);
+        }
+        final PrintWriter writer = new PrintWriter(target);
+        try {
+            writer.write(builder.build());
+        } finally {
+            writer.close();
+        }
+    }
+
+    public String getModulePath() {
+        return modulePath;
     }
 }
