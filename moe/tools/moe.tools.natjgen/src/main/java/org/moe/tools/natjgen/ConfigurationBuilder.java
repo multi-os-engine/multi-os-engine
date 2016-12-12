@@ -160,7 +160,7 @@ public class ConfigurationBuilder {
             public void visit(HeaderBinding binding) {
                 // @formatter:off
                 final UnitRuleBuilder ruleBuilder = new UnitRuleBuilder(true)
-                        .addCondition("path-prefix", "${PROJECT}/" + binding.getHeaderPath())
+                        .addCondition("path-prefix", projectRelativePath(binding.getHeaderPath()))
                         .addAction("replace-package-base", binding.getPackageBase());
                 // @formatter:on
                 if (binding.getExplicitLibrary() != null) {
@@ -211,10 +211,14 @@ public class ConfigurationBuilder {
     }
 
     private void copyPath(String path, JsonArray target) {
+        target.add(projectRelativePath(path));
+    }
+
+    private String projectRelativePath(String path) {
         if (path.startsWith("/")) {
-            target.add(path);
+            return path;
         } else {
-            target.add("${PROJECT}/" + path);
+            return "${PROJECT}/" + path;
         }
     }
 
