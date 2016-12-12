@@ -125,15 +125,12 @@ public class BindingEditorForm {
         File temp = null;
         try {
             temp = File.createTempFile(configurationFile.getParent(), configurationFile.getName() + ".natjgen");
+            temp.deleteOnExit();
             generateNatjGenFile(binding, temp);
             GeneratorRunner testGeneratorRunner = new GeneratorRunner(module);
             testGeneratorRunner.generateBinding(temp, test);
         } catch (Exception e) {
             Messages.showErrorDialog(e.getMessage(), "Generate Binding Error");
-        } finally {
-            if (temp != null) {
-                temp.delete();
-            }
         }
     }
 
