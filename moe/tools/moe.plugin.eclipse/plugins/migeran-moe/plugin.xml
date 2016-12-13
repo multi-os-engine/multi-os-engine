@@ -341,6 +341,12 @@
             point="org.eclipse.ui.commands">
         <command
                 categoryId="org.eclipse.ui.commands"
+                defaultHandler="org.moe.popup.actions.GenerateActionsAndOutletsActionHandler"
+                id="org.moe.popup.actions.GenerateActionsAndOutletsActionHandler"
+                name="Generate Actions and Outlets for Interface Builder">
+        </command>
+        <command
+                categoryId="org.eclipse.ui.commands"
                 defaultHandler="org.moe.popup.actions.OpenXcodeActionHandler"
                 id="org.moe.popup.actions.OpenXcodeActionHandler"
                 name="Open Project in Xcode">
@@ -363,6 +369,14 @@
         <menuContribution
                 locationURI="popup:org.eclipse.ui.popup.any">
             <menu label="Multi-OS Engine Actions">
+            	<command
+                        commandId="org.moe.popup.actions.GenerateActionsAndOutletsActionHandler"
+                        label="Generate Actions and Outlets for Interface Builder"
+                        style="push">
+                    <visibleWhen>
+                        <reference definitionId="org.moe.isRelevantProject"/>
+                    </visibleWhen>
+                </command>
                 <command
                         commandId="org.moe.popup.actions.OpenXcodeActionHandler"
                         label="Open Project in Xcode"

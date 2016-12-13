@@ -1,8 +1,6 @@
 package org.moe.popup.actions;
 
 import java.io.File;
-import java.io.IOException;
-
 import org.eclipse.core.commands.AbstractHandler;
 import org.eclipse.core.commands.ExecutionEvent;
 import org.eclipse.core.commands.ExecutionException;
