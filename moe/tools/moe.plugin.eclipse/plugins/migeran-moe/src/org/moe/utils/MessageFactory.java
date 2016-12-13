@@ -28,6 +28,10 @@ public class MessageFactory {
 	public static void showErrorDialog(String title, String message) {
 		MessageDialog.openError(PlatformUI.getWorkbench().getDisplay().getActiveShell(), title, message);
 	}
+	
+	public static void showInfoDialog(String title, String message) {
+		MessageDialog.openInformation(PlatformUI.getWorkbench().getDisplay().getActiveShell(), title, message);
+	}
 
 	public static Status getError(String message) {
 		return getError(message, null);

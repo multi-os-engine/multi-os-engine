@@ -351,6 +351,12 @@
                 id="org.moe.popup.actions.OpenXcodeEditorActionHandler"
                 name="Open Xcode Editor">
         </command>
+        <command
+                categoryId="org.eclipse.ui.commands"
+                defaultHandler="org.moe.popup.actions.NewBindingActionHandler"
+                id="org.moe.popup.actions.NewBindingActionHandler"
+                name="Create New Binding Configuration">
+        </command>
     </extension>
     <extension
             point="org.eclipse.ui.menus">
@@ -371,6 +377,14 @@
                         style="push">
                     <visibleWhen>
                         <reference definitionId="org.moe.isRelevantProject"/>
+                    </visibleWhen>
+                </command>
+                <command
+                        commandId="org.moe.popup.actions.NewBindingActionHandler"
+                        label="Create New Binding Configuration"
+                        style="push">
+                    <visibleWhen>
+                        <reference definitionId="org.moe.isRelevantProjectAndMac"/>
                     </visibleWhen>
                 </command>
             </menu>
@@ -433,7 +447,7 @@
        <editor
              class="org.moe.editors.BindingEditor"
              contributorClass="org.eclipse.ui.texteditor.BasicTextEditorActionContributor"
-             extensions="mbc"
+             extensions="nbc"
              icon="icons/moe_small.png"
              id="org.moe.editors.BindingEditor"
              name="Binding Editor">

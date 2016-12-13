@@ -19,6 +19,8 @@ package org.moe.editors;
 import java.io.File;
 
 import org.apache.log4j.Logger;
+import org.eclipse.core.resources.IFile;
+import org.eclipse.core.resources.IProject;
 import org.eclipse.core.runtime.IPath;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.ui.IEditorInput;
@@ -43,7 +45,7 @@ public class BindingEditor extends FormEditor {
 	public void init(IEditorSite site, IEditorInput input) throws PartInitException {
 		super.init(site, input);
 		setPartName("Binding Editor");
-		this.bindingEditorForm = new BindingEditorForm(this, "moe.editors.form.binding", "Binding");
+		this.bindingEditorForm = new BindingEditorForm(this, "moe.editors.form.binding", "Binding", getProject());
 		bindingEditorForm.setConfigurationFile(getFile());
 	}
 
@@ -78,6 +80,16 @@ public class BindingEditor extends FormEditor {
 		ILocationProvider lprovider = (ILocationProvider) input.getAdapter(ILocationProvider.class);
 		IPath path = lprovider.getPath(input);
 		return path.toFile();
+	}
+	
+	private IProject getProject() {
+		IEditorInput input = this.getEditorInput();
+		Object adapter = input.getAdapter(IFile.class);
+		if (adapter instanceof IFile) {
+			IFile file = (IFile) adapter;
+			return file.getProject();
+		}
+		return null;
 	}
 
 }

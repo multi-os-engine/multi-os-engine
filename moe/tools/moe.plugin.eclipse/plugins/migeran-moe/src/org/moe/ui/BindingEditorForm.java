@@ -23,12 +23,17 @@ import org.eclipse.ui.forms.editor.FormEditor;
 import org.eclipse.ui.forms.editor.FormPage;
 import org.eclipse.ui.forms.widgets.FormToolkit;
 import org.eclipse.ui.forms.widgets.ScrolledForm;
+import org.moe.bindings.GeneratorRunner;
 import org.moe.tools.natjgen.AbstractBinding;
 import org.moe.tools.natjgen.Bindings;
+import org.moe.tools.natjgen.ConfigurationBuilder;
 import org.moe.tools.natjgen.FrameworkBinding;
 import org.moe.tools.natjgen.HeaderBinding;
+import org.moe.tools.natjgen.ValidationException;
+import org.moe.utils.MessageFactory;
 import org.moe.utils.logger.LoggerFactory;
 import org.apache.log4j.Logger;
+import org.eclipse.core.resources.IProject;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.jface.window.Window;
 import org.eclipse.swt.SWT;
@@ -45,7 +50,9 @@ import org.eclipse.swt.events.SelectionListener;
 import org.eclipse.swt.graphics.Rectangle;
 
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.io.PrintWriter;
 
 import org.eclipse.wb.swt.SWTResourceManager;
 import org.eclipse.swt.widgets.Group;
@@ -66,20 +73,24 @@ public class BindingEditorForm extends FormPage {
 	private Button upButton;
 	private Button downButton;
 	private Button generateBindingsButton;
+	private Button testAllButton;
+	private Button testSelectedButton;
 	
 	private FrameworkBinding frameworkBinding;
 	private FrameworkComposite frameworkComposite;
 	private HeaderComposite headerComposite;
 	protected boolean dirty = false;
 	private boolean inited = false;
+	private IProject project;
 
 	/**
 	 * Create the form page.
 	 * @param id
 	 * @param title
 	 */
-	public BindingEditorForm(String id, String title) {
+	public BindingEditorForm(String id, String title, IProject project) {
 		super(id, title);
+		this.project = project;
 	}
 
 	/**
@@ -91,8 +102,9 @@ public class BindingEditorForm extends FormPage {
 	 * @wbp.eval.method.parameter id "Some id"
 	 * @wbp.eval.method.parameter title "Some title"
 	 */
-	public BindingEditorForm(FormEditor editor, String id, String title) {
+	public BindingEditorForm(FormEditor editor, String id, String title, IProject project) {
 		super(editor, id, title);
+		this.project = project;
 	}
 
 	/**
@@ -160,15 +172,15 @@ public class BindingEditorForm extends FormPage {
 		managedForm.getToolkit().adapt(generateBindingsButton, true, true);
 		generateBindingsButton.setText("Generate Bindings");
 		
-		Button btnNewButton_1 = new Button(managedForm.getForm().getBody(), SWT.NONE);
-		btnNewButton_1.setBounds(245, 389, 141, 28);
-		managedForm.getToolkit().adapt(btnNewButton_1, true, true);
-		btnNewButton_1.setText("Test All");
+		testAllButton = new Button(managedForm.getForm().getBody(), SWT.NONE);
+		testAllButton.setBounds(245, 389, 141, 28);
+		managedForm.getToolkit().adapt(testAllButton, true, true);
+		testAllButton.setText("Test All");
 		
-		Button btnNewButton_2 = new Button(managedForm.getForm().getBody(), SWT.NONE);
-		btnNewButton_2.setBounds(245, 352, 141, 28);
-		managedForm.getToolkit().adapt(btnNewButton_2, true, true);
-		btnNewButton_2.setText("Test Selected");
+		testSelectedButton = new Button(managedForm.getForm().getBody(), SWT.NONE);
+		testSelectedButton.setBounds(245, 352, 141, 28);
+		managedForm.getToolkit().adapt(testSelectedButton, true, true);
+		testSelectedButton.setText("Test Selected");
 		
 		editorGroup = new Group(managedForm.getForm().getBody(), SWT.NONE);
 		editorGroup.setBounds(392, 48, 504, 535);
@@ -328,8 +340,41 @@ public class BindingEditorForm extends FormPage {
 			
 			@Override
 			public void widgetSelected(SelectionEvent arg0) {
-				doSave(null);
-				generateBindings();
+				generate();
+			}
+			
+			@Override
+			public void widgetDefaultSelected(SelectionEvent arg0) {
+				// TODO Auto-generated method stub
+				
+			}
+		});
+		
+		testAllButton.addSelectionListener(new SelectionListener() {
+			
+			@Override
+			public void widgetSelected(SelectionEvent arg0) {
+				testAll();
+			}
+			
+			@Override
+			public void widgetDefaultSelected(SelectionEvent arg0) {
+				// TODO Auto-generated method stub
+				
+			}
+		});
+		
+		testSelectedButton.addSelectionListener(new SelectionListener() {
+			
+			@Override
+			public void widgetSelected(SelectionEvent arg0) {
+				int idx = list.getSelectionIndex();
+				if (idx >= 0) {
+					AbstractBinding binding = bindings.get(idx);
+					if (binding != null) {
+						testSelected(binding);
+					}
+				}
 			}
 			
 			@Override
@@ -343,20 +388,24 @@ public class BindingEditorForm extends FormPage {
 	public void init() {
 		inited = false;
 		this.bindings = new Bindings();
-		try {
-			bindings.load(configurationFile);
-		} catch (IOException e) {
-			LOG.error("Unable load binding configuration", e);
+		if (configurationFile.length() > 0) {
+			try {
+				bindings.load(configurationFile);
+			} catch (Exception e) {
+				LOG.error("Unable load binding configuration", e);
+			}
 		}
 		
 		updateList();
 		
 		String outputFolder = bindings.getOutputDirectory();
 		outputFolder = outputFolder == null || outputFolder.isEmpty() ? "src/main/java" : outputFolder;
+		bindings.setOutputDirectory(outputFolder);
 		outputText.setText(outputFolder);
 		
 		String platform = bindings.getPlatform();
 		platform = platform == null || platform.isEmpty() ? Bindings.PLATFORM_IOS : platform;
+		bindings.setPlatform(platform);
 		platformCombo.select(getSelectedPlatformIndex(platform));
 		
 		inited = true;
@@ -474,5 +523,48 @@ public class BindingEditorForm extends FormPage {
 		}
 	}
 	
-	private void generateBindings() {}
+	public void generate() {
+        generate(null,false);
+    }
+	
+	public void testAll() {
+        generate(null, true);
+    }
+
+    public void testSelected(AbstractBinding binding) {
+        generate(binding, true);
+    }
+	
+	public void generate(AbstractBinding binding, boolean test) {
+		doSave(null);
+        File temp = null;
+        try {
+            temp = File.createTempFile(configurationFile.getParent(), configurationFile.getName() + ".natjgen");
+            temp.deleteOnExit();
+            generateNatjGenFile(binding, temp);
+            GeneratorRunner testGeneratorRunner = new GeneratorRunner(project);
+            testGeneratorRunner.generateBinding(temp, test);
+        } catch (Exception e) {
+        	MessageFactory.showErrorDialog("Binding error", e.getMessage());
+        }
+    }
+	
+	private void generateNatjGenFile(AbstractBinding binding, File target) throws FileNotFoundException, ValidationException {
+        ConfigurationBuilder builder = null;
+        if (binding == null) {
+            builder = new ConfigurationBuilder(bindings);
+        } else {
+            Bindings testBindings = new Bindings();
+            testBindings.setPlatform(bindings.getPlatform());
+            testBindings.setOutputDirectory(bindings.getOutputDirectory());
+            testBindings.add(binding);
+            builder = new ConfigurationBuilder(testBindings);
+        }
+        final PrintWriter writer = new PrintWriter(target);
+        try {
+            writer.write(builder.build());
+        } finally {
+            writer.close();
+        }
+    }
 }
