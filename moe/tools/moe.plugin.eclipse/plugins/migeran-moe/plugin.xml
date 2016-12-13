@@ -347,6 +347,12 @@
         </command>
         <command
                 categoryId="org.eclipse.ui.commands"
+                defaultHandler="org.moe.popup.actions.RefreshXcodeProjectActionHandler"
+                id="org.moe.popup.actions.RefreshXcodeProjectActionHandler"
+                name="Inject/Refresh Xcode Project Settings">
+        </command>
+        <command
+                categoryId="org.eclipse.ui.commands"
                 defaultHandler="org.moe.popup.actions.OpenXcodeActionHandler"
                 id="org.moe.popup.actions.OpenXcodeActionHandler"
                 name="Open Project in Xcode">
@@ -372,6 +378,14 @@
             	<command
                         commandId="org.moe.popup.actions.GenerateActionsAndOutletsActionHandler"
                         label="Generate Actions and Outlets for Interface Builder"
+                        style="push">
+                    <visibleWhen>
+                        <reference definitionId="org.moe.isRelevantProject"/>
+                    </visibleWhen>
+                </command>
+                <command
+                        commandId="org.moe.popup.actions.RefreshXcodeProjectActionHandler"
+                        label="Inject/Refresh Xcode Project Settings"
                         style="push">
                     <visibleWhen>
                         <reference definitionId="org.moe.isRelevantProject"/>

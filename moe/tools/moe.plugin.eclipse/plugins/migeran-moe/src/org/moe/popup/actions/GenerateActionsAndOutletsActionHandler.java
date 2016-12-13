@@ -33,6 +33,8 @@ public class GenerateActionsAndOutletsActionHandler extends AbstractHandler {
 			} catch (InterruptedException e) {
 				return new Status(Status.ERROR, ID, "Exception", e);
 			}
+		} else {
+			return new Status(Status.ERROR, ID, "Unable find project");
 		}
 		return Status.OK_STATUS;
 	}
