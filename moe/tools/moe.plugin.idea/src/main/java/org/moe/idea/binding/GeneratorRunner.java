@@ -20,28 +20,20 @@ import com.intellij.openapi.module.Module;
 import com.intellij.openapi.progress.EmptyProgressIndicator;
 import com.intellij.openapi.progress.ProgressIndicator;
 import com.intellij.openapi.progress.ProgressManager;
-import com.intellij.openapi.project.Project;
 import com.intellij.openapi.ui.MessageType;
 import com.intellij.openapi.ui.Messages;
 import com.intellij.util.ui.UIUtil;
-import org.moe.common.exec.AbstractJarExec;
-import org.moe.common.exec.ExecOutputCollector;
+import org.moe.common.exec.BindingExec;
+import org.moe.common.exec.ExecRunner;
 import org.moe.common.exec.ExecRunnerBase;
-import org.moe.common.exec.GradleExec;
-import org.moe.common.utils.ProjectUtil;
+import org.moe.common.exec.IKillListener;
 import org.moe.document.pbxproj.ProjectException;
-import org.moe.generator.project.writer.XcodeEditor;
 import org.moe.idea.MOESdkPlugin;
 import org.moe.idea.ui.MOEToolWindow;
 import org.moe.idea.utils.ModuleUtils;
 
-import java.io.BufferedReader;
 import java.io.File;
 import java.io.IOException;
-import java.io.InputStreamReader;
-import java.util.Properties;
-
-import static org.moe.common.utils.ProjectUtil.*;
 
 public class GeneratorRunner {
 
@@ -100,7 +92,7 @@ public class GeneratorRunner {
                 }
             }
 
-            private void runInternal(ProgressIndicator progress) throws ProjectException, IOException {
+            private void runInternal(final ProgressIndicator progress) throws ProjectException, IOException {
                 String s = null;
 
                 final MOEToolWindow toolWindow = MOEToolWindow.getInstance(module.getProject());
@@ -108,71 +100,36 @@ public class GeneratorRunner {
 
                 progress.setFraction(0.1);
 
-                progress.setFraction(0.2);
-
-                StringBuilder builder = new StringBuilder();
-                builder.append("cd ");
-                builder.append(sdkPath);
-                builder.append("/tools && ");
-                builder.append("java ");
-                if (test) {
-                    builder.append("-Dmoe.natjgen.testrun=true ");
-                }
+                final StringBuilder errorBuilder = new StringBuilder();
                 String modulePath = ModuleUtils.getModulePath(module);
                 File moduleFile = new File(modulePath);
-                builder.append("-cp wrapnatjgen.jar org.moe.natjgen.Main ");
-                builder.append(moduleFile.getParent());
-                builder.append(" ");
-                builder.append(module.getName());
-                builder.append(" ");
-                builder.append(coonfigurationFile.getCanonicalFile() + " ");
-                String[] cmd = {"/bin/sh", "-c", builder.toString()};
 
-                Process p = Runtime.getRuntime().exec(cmd);
+                progress.setFraction(0.2);
 
-                final BufferedReader stdInput = new BufferedReader(new
-                        InputStreamReader(p.getInputStream()));
+                BindingExec bindingExec = new BindingExec(moduleFile, sdkPath, coonfigurationFile, test);
+                ExecRunner runner = bindingExec.getRunner();
+                runner.setListener(new ExecRunnerBase.ExecRunnerListener() {
 
-                final BufferedReader stdError = new BufferedReader(new
-                        InputStreamReader(p.getErrorStream()));
-
-
-                Thread t1 = new Thread(new Runnable() {
                     @Override
-                        public void run() {
-                            String s = null;
-                            try {
-                                while ((s = stdInput.readLine()) != null) {
-                                    toolWindow.printNormalMessage("I: " + s + "\n");
-                                }
-                            } catch (Exception e) {
+                    public void stdout(String line) {
+                        toolWindow.printNormalMessage(line + "\n");
+                    }
 
-                            }
-                        }
-                });
-                t1.start();
-
-                Thread t2 = new Thread(new Runnable() {
                     @Override
-                    public void run() {
-                        String s = null;
-                        try {
-                            while ((s = stdError.readLine()) != null) {
-                                toolWindow.printNormalMessage("E: " + s + "\n");
-                            }
-                        } catch (Exception e) {
-
-                        }
+                    public void stderr(String line) {
+                        toolWindow.printErrorMessage(line + "\n");
+                        errorBuilder.append(line);
+                        errorBuilder.append("\n");
                     }
                 });
-                t2.start();
 
-                int result = 0;
-                try {
-                    result = p.waitFor();
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
+                runner.run(new IKillListener() {
+
+                    @Override
+                    public boolean needsKill() {
+                        return progress.isCanceled();
+                    }
+                });
 
                 progress.setFraction(0.9);
 
@@ -180,12 +137,22 @@ public class GeneratorRunner {
 
                 progress.setFraction(1.0);
 
-                if (result == 0) {
+                final String errorMessage = errorBuilder.toString();
+
+                if (errorMessage == null || errorMessage.isEmpty()) {
                     String format = test ? "Test successful" : "Generate successful";
                     toolWindow.balloon(MessageType.INFO, format);
                 } else {
                     String format = test ? "Test Error" : "Generate Error";
                     toolWindow.balloon(MessageType.INFO, format);
+
+                    UIUtil.invokeLaterIfNeeded(new Runnable() {
+                        @Override
+                        public void run() {
+                            String title = test ? "Test Binding Error" : "Generate Binding Error";
+                            Messages.showErrorDialog(errorMessage, title);
+                        }
+                    });
                 }
             }
         }, ACTION_TITLE, true, module.getProject());

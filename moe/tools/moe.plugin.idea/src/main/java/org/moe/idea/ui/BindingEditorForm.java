@@ -76,10 +76,12 @@ public class BindingEditorForm {
 
     private void loadBindings() {
 
-        try {
-            bindings.load(configurationFile);
-        } catch (Exception e) {
-            LOG.info("Wrong configuration or empty: " + e.getMessage());
+        if (configurationFile.length() > 0) {
+            try {
+                bindings.load(configurationFile);
+            } catch (Exception e) {
+                LOG.info("Wrong configurationó: " + e.getMessage());
+            }
         }
     }
 
