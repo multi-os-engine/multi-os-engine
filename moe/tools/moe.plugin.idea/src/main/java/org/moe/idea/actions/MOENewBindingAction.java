@@ -37,7 +37,7 @@ public class MOENewBindingAction extends AnAction {
 
     private static final Logger LOG = LoggerFactory.getLogger(MOENewBindingAction.class);
 
-    private static final String ACTION_TITLE = "Create New Binding";
+    private static final String ACTION_TITLE = "Create New Binding Configuration";
 
     private Module module;;
 
@@ -56,7 +56,7 @@ public class MOENewBindingAction extends AnAction {
                 String name = dialog.getName();
                 String path = ModuleUtils.getModulePath(module);
                 if (name != null && !name.isEmpty() && path != null && !path.isEmpty()) {
-                    File newConfFile = new File(path, name + ".mbc");
+                    File newConfFile = new File(path, name + ".nbc");
 
                     if (!newConfFile.exists()) {
                         try {
