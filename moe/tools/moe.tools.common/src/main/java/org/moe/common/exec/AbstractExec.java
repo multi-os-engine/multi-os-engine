@@ -30,7 +30,7 @@ public abstract class AbstractExec {
 
 	private final ArrayList<String> arguments = new ArrayList<String>();
 
-	private File workingDir = null;
+	protected File workingDir = null;
 
 	public AbstractExec() {
 		// Do nothing
