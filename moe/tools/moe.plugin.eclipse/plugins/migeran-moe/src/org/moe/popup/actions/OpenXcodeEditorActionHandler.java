@@ -17,6 +17,8 @@
 package org.moe.popup.actions;
 
 import java.io.File;
+import java.util.Properties;
+
 import org.apache.log4j.Logger;
 import org.eclipse.core.commands.AbstractHandler;
 import org.eclipse.core.commands.ExecutionEvent;
@@ -30,6 +32,7 @@ import org.eclipse.ui.PartInitException;
 import org.eclipse.ui.PlatformUI;
 import org.eclipse.ui.ide.IDE;
 import org.moe.common.utils.ProjectUtil;
+import org.moe.utils.MessageFactory;
 import org.moe.utils.ProjectHelper;
 import org.moe.utils.logger.LoggerFactory;
 
@@ -39,24 +42,33 @@ public class OpenXcodeEditorActionHandler extends AbstractHandler {
 
 	@Override
 	public Object execute(ExecutionEvent event) throws ExecutionException {
-		LOG.debug("Open Project in Xcode action");
+		LOG.debug("Open Project in Xcode Editor action");
 		IProject project = ProjectHelper.getSelectedProject(ProjectHelper.getSelection());
-		if (project != null) {
-			File projectFile = new File(project.getLocation().toOSString());
-			String xcodePath = ProjectUtil.retrieveXcodeProjectPathFromGradle(projectFile);
-			File xcodeProjectFile = new File(xcodePath, "project.pbxproj");
-			
-			if (xcodeProjectFile.exists() && xcodeProjectFile.isFile()) {
-			    IFileStore fileStore = EFS.getLocalFileSystem().getStore(xcodeProjectFile.toURI());
-			    IWorkbenchPage page = PlatformUI.getWorkbench().getActiveWorkbenchWindow().getActivePage();
-			 
-			    try {
-			        IDE.openEditorOnFileStore( page, fileStore );
-			    } catch ( PartInitException e ) {
-			        //Put your exception handler here if you wish to
-			    }
-			}
+		if (project == null) {
+			return Status.OK_STATUS;
 		}
+
+		File projectFile = new File(project.getLocation().toOSString());
+        final Properties properties = ProjectUtil
+                .retrievePropertiesFromGradle(projectFile, ProjectUtil.XCODE_PROPERTIES_TASK);
+        final String pr = properties.getProperty(ProjectUtil.XCODE_PROJECT_KEY);
+        if (pr == null) {
+            MessageFactory.getError("Xcode project is not set in the Gradle plugin");
+    		return Status.OK_STATUS;
+        }
+
+		File xcodeProjectFile = new File(pr, "project.pbxproj");
+		if (xcodeProjectFile.exists()) {
+		    IFileStore fileStore = EFS.getLocalFileSystem().getStore(xcodeProjectFile.toURI());
+		    IWorkbenchPage page = PlatformUI.getWorkbench().getActiveWorkbenchWindow().getActivePage();
+		 
+		    try {
+		        IDE.openEditorOnFileStore( page, fileStore );
+		    } catch ( PartInitException e ) {
+		        //Put your exception handler here if you wish to
+		    }
+		}
+		
 		return Status.OK_STATUS;
 	}
 

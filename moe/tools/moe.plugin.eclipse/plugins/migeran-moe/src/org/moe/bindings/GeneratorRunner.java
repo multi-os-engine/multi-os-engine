@@ -17,6 +17,8 @@
 package org.moe.bindings;
 
 import java.io.File;
+import java.util.Properties;
+
 import org.eclipse.core.resources.IProject;
 import org.eclipse.core.resources.IResource;
 import org.eclipse.core.resources.ResourcesPlugin;
@@ -71,7 +73,10 @@ public class GeneratorRunner {
 	    			
 	    			monitor.beginTask(title, 10);
 	    			
-	    			sdkPath = ProjectUtil.retrieveSDKPathFromGradle(project.getLocation().toFile());
+	    	        final Properties properties = ProjectUtil
+	    	                .retrievePropertiesFromGradle(project.getLocation().toFile(), ProjectUtil.SDK_PROPERTIES_TASK);
+
+	    	        sdkPath = properties.getProperty(ProjectUtil.SDK_PATH_KEY);
 	    			
 	    			monitor.worked(2);
 	    			

@@ -18,6 +18,7 @@ package org.moe.popup.actions;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.Properties;
 
 import org.apache.log4j.Logger;
 import org.eclipse.core.commands.AbstractHandler;
@@ -39,16 +40,47 @@ public class OpenXcodeActionHandler extends AbstractHandler {
 	public Object execute(ExecutionEvent event) throws ExecutionException {
 		LOG.debug("Open Project in Xcode action");
 		IProject project = ProjectHelper.getSelectedProject(ProjectHelper.getSelection());
-		if (project != null) {
-			File projectFile = new File(project.getLocation().toOSString());
-			String xcodePath = ProjectUtil.retrieveXcodeProjectPathFromGradle(projectFile);
-			try {
-				SimpleExec.getOpen("xcode", xcodePath).getRunner().run(null);
-			} catch (IOException ignored) {
-				LOG.error("Unale to open xcode project " + xcodePath, ignored);
-				return MessageFactory.getError("Could not open project " + xcodePath + "\n" + ignored.getMessage());
-			}
+		if (project == null) {
+			return Status.OK_STATUS;
 		}
+
+		File projectFile = new File(project.getLocation().toOSString());
+        final Properties properties = ProjectUtil
+                .retrievePropertiesFromGradle(projectFile, ProjectUtil.XCODE_PROPERTIES_TASK);
+
+        // Try to open workspace
+        final String ws = properties.getProperty(ProjectUtil.XCODE_WORKSPACE_KEY);
+        if (ws != null) {
+            final File file = new File(ws);
+            if (!file.exists()) {
+            	MessageFactory.getError("Xcode workspace does not exist");
+            }
+            try {
+                SimpleExec.getOpen("xcode", file.getAbsolutePath()).getRunner().run(null);
+            } catch (IOException ignored) {
+    			LOG.error("Unale to open xcode workspace " + file.getAbsolutePath(), ignored);
+            	MessageFactory.getError("Could not open workspace " + file.getAbsolutePath() + "\n" + ignored.getMessage());
+            }
+			return Status.OK_STATUS;
+        }
+
+        // Try to open project
+        final String pr = properties.getProperty(ProjectUtil.XCODE_PROJECT_KEY);
+        if (pr != null) {
+            final File file = new File(pr);
+            if (!file.exists()) {
+            	MessageFactory.getError("Xcode project does not exist");
+            }
+            try {
+                SimpleExec.getOpen("xcode", file.getAbsolutePath()).getRunner().run(null);
+            } catch (IOException ignored) {
+    			LOG.error("Unale to open xcode project " + file.getAbsolutePath(), ignored);
+            	MessageFactory.getError("Could not open project " + file.getAbsolutePath() + "\n" + ignored.getMessage());
+            }
+			return Status.OK_STATUS;
+        }
+
+        MessageFactory.getError("Neither the Xcode project nor the workspace is set in the Gradle plugin");
 		return Status.OK_STATUS;
 	}
 

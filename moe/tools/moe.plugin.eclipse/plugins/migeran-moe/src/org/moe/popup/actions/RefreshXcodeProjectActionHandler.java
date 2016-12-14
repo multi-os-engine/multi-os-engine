@@ -54,13 +54,13 @@ public class RefreshXcodeProjectActionHandler extends AbstractHandler {
 					monitor.worked(1);
 
 					final Properties properties = ProjectUtil
-	                        .retrievePropertiesFromGradle(projectFile, ProjectUtil.XCODE_PROJECT_PATH_TASK);
+	                        .retrievePropertiesFromGradle(projectFile, ProjectUtil.XCODE_PROPERTIES_TASK);
 					
 					monitor.worked(1);
 
-	                final String xcodeProjectPath = (String)properties.get(ProjectUtil.XCODE_PROJECT_PATH_KEY);
-	                final String mainTarget = (String)properties.get(ProjectUtil.XCODE_MAIN_TARGET_KEY);
-	                final String testTarget = (String)properties.get(ProjectUtil.XCODE_TEST_TARGET_KEY);
+	                final String xcodeProjectPath = properties.getProperty(ProjectUtil.XCODE_PROJECT_KEY);
+	                final String mainTarget = properties.getProperty(ProjectUtil.XCODE_MAIN_TARGET_KEY);
+	                final String testTarget = properties.getProperty(ProjectUtil.XCODE_TEST_TARGET_KEY);
 	                File xcodeFile = new File(xcodeProjectPath);
 	                if (!xcodeFile.exists()) {
 	                    throw new RuntimeException("Xcode project does not exist at " + xcodeProjectPath);

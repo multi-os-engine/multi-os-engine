@@ -20,6 +20,8 @@ import java.io.File;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
+import java.util.Properties;
+
 import org.apache.log4j.Logger;
 import org.apache.maven.plugin.MojoExecution;
 import org.eclipse.core.resources.IProject;
@@ -93,7 +95,10 @@ public class MOEProjectConfigurator extends AbstractSourcesGenerationProjectConf
 	private void setSdk(IProject project, IClasspathDescriptor classpath) {
 		LOG.debug("Set MOE libs for project " + project.getName());
 		// Find MOE home
-		final String home = ProjectUtil.retrieveSDKPathFromGradle(project.getLocation().toFile());
+        final Properties properties = ProjectUtil
+                .retrievePropertiesFromGradle(project.getLocation().toFile(), ProjectUtil.SDK_PROPERTIES_TASK);
+
+        final String home = properties.getProperty(ProjectUtil.SDK_PATH_KEY);
 		if (home == null || home.isEmpty()) {
 			throw new RuntimeException("Unable to find MOE home");
 		}

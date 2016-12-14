@@ -17,6 +17,7 @@
 package org.moe.utils;
 
 import java.io.File;
+import java.util.Properties;
 
 import org.eclipse.core.resources.IProject;
 import org.eclipse.core.resources.IResource;
@@ -81,7 +82,9 @@ public class ProjectHelper {
 	public static String getSdkRootPath(File projectFile) {
 		String sdkPath = null;
 		if (projectFile != null) {
-			ProjectUtil.retrieveSDKPathFromGradle(projectFile);
+	        final Properties properties = ProjectUtil
+	                .retrievePropertiesFromGradle(projectFile, ProjectUtil.SDK_PROPERTIES_TASK);
+	        sdkPath = properties.getProperty(ProjectUtil.SDK_PATH_KEY);
 		}
 
 		if (sdkPath == null || sdkPath.isEmpty()) {
