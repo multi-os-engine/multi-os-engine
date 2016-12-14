@@ -45,6 +45,42 @@ accessing its properties.
 - `moe`: this plugin does the same as `moe-sdk`, but also adds all the tasks, rules, etc. necessary to build a MOE-based
 application.
 
+### Building
+
+Build and publish _release_ version to Maven local repository:
+
+```sh
+cd <repo>/moe/tools/master
+./gradlew :moe-gradle:publishToMavenLocal
+```
+
+Build and publish _snapshot_ version to Maven local repository:
+
+```sh
+cd <repo>/moe/tools/master
+./gradlew :moe-gradle:publishMavenJavaSnapshotPublicationToMavenLocal
+```
+
+Build and publish _release_ version to Bintray:
+
+```sh
+cd <repo>/moe/tools/master
+./gradlew :moe-gradle: bintrayUpload \
+    -Pbintray.user=<user> \
+    -Pbintray.key=<key>
+```
+
+Build and publish _snapshot_ version to Artifactory:
+
+```sh
+cd <repo>/moe/tools/master
+./gradlew :moe-gradle:artifactoryPublish \
+    -Partifactory.url=<url> \
+    -Partifactory.key=<key> \
+    -Partifactory.user=<user> \
+    -Partifactory.pass=<pass>
+```
+
 ### SDK
 
 The plugin knows which SDK to download, and automatically installs it into the `.moe` directory under the user's home
@@ -124,15 +160,26 @@ moe {
     xcode {
         // Object, path to the Xcode project.
         project
+        
+        // Object, path to the Xcode workspace.
+        workspace
 
         // String, name of the main target.
         mainTarget
 
         // String, name of the test target.
         testTarget
+
+        // String, name of the main scheme.
+        mainScheme
+
+        // String, name of the test scheme.
+        testScheme
     }
 }
 ```
+
+**Note:** when working with Xcode workspaces, scheme settings are required!
 
 ### Code Signing
 
@@ -409,9 +456,11 @@ This task invokes `xcodebuild` and creates the application.
 #### Task Properties
 
 - `target`: target name in the Xcode project.
+- `scheme`: scheme name in the Xcode project.
 - `configuration`: configuration to build, derived from `mode`.
 - `sdk`: sdk to build for, derived from `plat`.
 - `xcodeProjectFile`: path to the Xcode project file.
+- `xcodeWorkspaceFile`: path to the Xcode workspace file.
 - `additionalParameters`: additional parameters to pass to `xcodebuild`.
 - `provisioningProfile`: path to the provisioning profile or UUID.
 - `provisioningProfileSpecifier`: name of the provisioning profile (new in Xcode 8).

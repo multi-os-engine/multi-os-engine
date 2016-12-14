@@ -70,4 +70,30 @@ public class XcodeOptions {
     public void setTestTarget(@Nullable String testTarget) {
         this.testTarget = testTarget;
     }
+
+    @Nullable
+    private String mainScheme;
+
+    @Nullable
+    public String getMainScheme() {
+        return mainScheme;
+    }
+
+    @IgnoreUnused
+    public void setMainScheme(@Nullable String mainScheme) {
+        this.mainScheme = mainScheme;
+    }
+
+    @Nullable
+    private String testScheme;
+
+    @Nullable
+    public String getTestScheme() {
+        return testScheme;
+    }
+
+    @IgnoreUnused
+    public void setTestScheme(@Nullable String testScheme) {
+        this.testScheme = testScheme;
+    }
 }

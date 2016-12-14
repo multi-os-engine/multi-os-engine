@@ -68,9 +68,11 @@ import java.util.stream.Collectors;
 public class XcodeBuild extends AbstractBaseTask {
 
     private static final String CONVENTION_TARGET = "target";
+    private static final String CONVENTION_SCHEME = "scheme";
     private static final String CONVENTION_CONFIGURATION = "configuration";
     private static final String CONVENTION_SDK = "sdk";
     private static final String CONVENTION_XCODE_PROJECT_FILE = "xcodeProjectFile";
+    private static final String CONVENTION_XCODE_WORKSPACE_FILE = "xcodeWorkspaceFile";
     private static final String CONVENTION_ADDITIONAL_PARAMETERS = "additionalParameters";
     private static final String CONVENTION_PROVISIONING_PROFILE = "provisioningProfile";
     private static final String CONVENTION_PROVISIONING_PROFILE_SPECIFIER = "provisioningProfileSpecifier";
@@ -129,6 +131,21 @@ public class XcodeBuild extends AbstractBaseTask {
     }
 
     @Nullable
+    private String scheme;
+
+    @Input
+    @Optional
+    @Nullable
+    public String getScheme() {
+        return nullableGetOrConvention(scheme, CONVENTION_SCHEME);
+    }
+
+    @IgnoreUnused
+    public void setScheme(@Nullable String scheme) {
+        this.scheme = scheme;
+    }
+
+    @Nullable
     private String configuration;
 
     @Input
@@ -167,6 +184,25 @@ public class XcodeBuild extends AbstractBaseTask {
     @IgnoreUnused
     public void setXcodeProjectFile(@Nullable Object xcodeProjectFile) {
         this.xcodeProjectFile = xcodeProjectFile;
+    }
+
+    @Nullable
+    private Object xcodeWorkspaceFile;
+
+    @InputDirectory
+    @Optional
+    @Nullable
+    public File getXcodeWorkspaceFile() {
+        final Object object = nullableGetOrConvention(xcodeWorkspaceFile, CONVENTION_XCODE_WORKSPACE_FILE);
+        if (object == null) {
+            return null;
+        }
+        return getProject().file(object);
+    }
+
+    @IgnoreUnused
+    public void setXcodeWorkspaceFile(@Nullable Object xcodeWorkspaceFile) {
+        this.xcodeWorkspaceFile = xcodeWorkspaceFile;
     }
 
     @Nullable
@@ -306,6 +342,12 @@ public class XcodeBuild extends AbstractBaseTask {
     @Override
     protected void run() {
         getMoePlugin().requireMacHostOrRemoteServerConfig(this);
+
+        if (getXcodeWorkspaceFile() != null && getScheme() == null) {
+            String set = SourceSet.MAIN_SOURCE_SET_NAME.equals(sourceSet.getName()) ? "main" : "test";
+            throw new GradleException("Using Xcode workspaces requires schemes! Please set the "
+                    + "moe.xcode." + set + "Scheme property");
+        }
 
         final Server remoteServer = getMoePlugin().getRemoteServer();
         if (remoteServer != null) {
@@ -503,43 +545,73 @@ public class XcodeBuild extends AbstractBaseTask {
         final List<String> args = new ArrayList<>();
         final Server remoteServer = getMoePlugin().getRemoteServer();
 
-        args.add("-target");
-        args.add(getTarget());
-
         args.add("-configuration");
         args.add(getConfiguration());
 
         args.add("-sdk");
         args.add(getSdk());
 
-        args.add("-project");
-
         final String _xcodeProjectFile;
+        final String _xcodeWorkspaceFile;
         final String _xcodeBuildRoot;
         final String _configurationBuildDir;
 
         if (remoteServer != null) {
             final Path xcodeProjectFileRel;
+            final Path xcodeWorkspaceFileRel;
             final Path xcodeBuildRootRel;
             final Path configurationBuildDirRel;
             try {
                 xcodeProjectFileRel = getInnerProjectRelativePath(getXcodeProjectFile());
+                if (getXcodeWorkspaceFile() != null) {
+                    xcodeWorkspaceFileRel = getInnerProjectRelativePath(getXcodeWorkspaceFile());
+                } else {
+                    xcodeWorkspaceFileRel = null;
+                }
                 xcodeBuildRootRel = getInnerProjectRelativePath(getXcodeBuildRoot());
                 configurationBuildDirRel = getInnerProjectRelativePath(getConfigurationBuildDir());
             } catch (IOException e) {
                 throw new GradleException("Unsupported configuration", e);
             }
             _xcodeProjectFile = remoteServer.getRemotePath(xcodeProjectFileRel);
+            if (xcodeWorkspaceFileRel != null) {
+                _xcodeWorkspaceFile = remoteServer.getRemotePath(xcodeWorkspaceFileRel);
+            } else {
+                _xcodeWorkspaceFile = null;
+            }
             _xcodeBuildRoot = remoteServer.getRemotePath(xcodeBuildRootRel);
             _configurationBuildDir = remoteServer.getRemotePath(configurationBuildDirRel);
 
         } else {
             _xcodeProjectFile = getXcodeProjectFile().getAbsolutePath();
+            if (getXcodeWorkspaceFile() != null) {
+                _xcodeWorkspaceFile = getXcodeWorkspaceFile().getAbsolutePath();
+            } else {
+                _xcodeWorkspaceFile = null;
+            }
             _xcodeBuildRoot = getXcodeBuildRoot().getAbsolutePath();
             _configurationBuildDir = getConfigurationBuildDir().getAbsolutePath();
         }
 
-        args.add(_xcodeProjectFile);
+        if (_xcodeWorkspaceFile != null) {
+            args.add("-workspace");
+            args.add(_xcodeWorkspaceFile);
+
+            args.add("-scheme");
+            args.add(getScheme());
+        } else {
+            args.add("-project");
+            args.add(_xcodeProjectFile);
+
+            final String scheme = getScheme();
+            if (scheme != null) {
+                args.add("-scheme");
+                args.add(scheme);
+            } else {
+                args.add("-target");
+                args.add(getTarget());
+            }
+        }
 
         args.addAll(getAdditionalParameters());
 
@@ -610,10 +682,26 @@ public class XcodeBuild extends AbstractBaseTask {
             }
             return targetName;
         });
+        addConvention(CONVENTION_SCHEME, () -> {
+            String schemeName;
+            if (SourceSet.MAIN_SOURCE_SET_NAME.equals(sourceSet.getName())) {
+                schemeName = ext.xcode.getMainScheme();
+            } else {
+                schemeName = ext.xcode.getTestScheme();
+            }
+            return schemeName;
+        });
         addConvention(CONVENTION_CONFIGURATION, mode::getXcodeCompatibleName);
         addConvention(CONVENTION_SDK, () -> platform.platformName);
         addConvention(CONVENTION_XCODE_PROJECT_FILE, () ->
                 resolvePathRelativeToRoot(getProject().file(ext.xcode.getProject())));
+        addConvention(CONVENTION_XCODE_WORKSPACE_FILE, () -> {
+            final Object workspace = ext.xcode.getWorkspace();
+            if (workspace == null) {
+                return null;
+            }
+            return resolvePathRelativeToRoot(getProject().file(workspace));
+        });
         addConvention(CONVENTION_XCODE_BUILD_ROOT, () -> resolvePathInBuildDir(out));
         addConvention(CONVENTION_ADDITIONAL_PARAMETERS, () ->
                 new ArrayList<>(Arrays.asList("MOE_GRADLE_EXTERNAL_BUILD=YES", "ONLY_ACTIVE_ARCH=NO")));
