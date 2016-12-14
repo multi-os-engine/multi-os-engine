@@ -45,7 +45,7 @@ public class MOEOpenXcodeEditorAction extends AnAction {
         // Try to open project
         final String pr = properties.getProperty(ProjectUtil.XCODE_PROJECT_KEY);
         if (pr != null) {
-            final File file = new File(pr);
+            final File file = new File(pr, "project.pbxproj");
             if (!file.exists()) {
                 Messages.showErrorDialog("Xcode project does not exist", "Open Xcode Project");
             }
