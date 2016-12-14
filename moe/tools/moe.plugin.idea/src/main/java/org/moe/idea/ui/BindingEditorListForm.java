@@ -27,24 +27,25 @@ import javax.swing.*;
 import javax.swing.event.DocumentEvent;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 import java.util.ArrayList;
 import java.util.List;
 
 public class BindingEditorListForm extends JPanel {
 
     private JList bindingsList;
-    private JButton testAllButton;
     private JButton addButton;
     private JButton removeButton;
-    private JButton testSelectedButton;
     private JButton upButton;
     private JButton downButton;
     private JPanel content;
-    private JButton generateBindingsButton;
     private JTextField outputDirectoryTextField;
     private JComboBox platformComboBox;
+    private JButton actionsButton;
 
     private BindingEditorForm editorForm;
     private FrameworkBindingEditorForm frameworkBindingEditorForm;
@@ -131,33 +132,6 @@ public class BindingEditorListForm extends JPanel {
             }
         });
 
-        generateBindingsButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                editorForm.generate();
-            }
-        });
-
-        testAllButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                editorForm.testAll();
-            }
-        });
-
-        testSelectedButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                int idx = bindingsList.getSelectedIndex();
-                if (idx >= 0) {
-                    AbstractBinding binding = bindings.get(idx);
-                    if (binding != null) {
-                        editorForm.testSelected(binding);
-                    }
-                }
-            }
-        });
-
         outputDirectoryTextField.getDocument().addDocumentListener(new DocumentAdapter() {
 
             protected void textChanged(DocumentEvent e) {
@@ -175,6 +149,35 @@ public class BindingEditorListForm extends JPanel {
                     editorForm.getBindings().setPlatform((String) platformComboBox.getSelectedItem());
                     save();
                 }
+            }
+        });
+        actionsButton.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mousePressed(MouseEvent e) {
+                final JPopupMenu popup = new JPopupMenu();
+                popup.add(new JMenuItem(new AbstractAction("Test Selected") {
+                    public void actionPerformed(ActionEvent e) {
+                        int idx = bindingsList.getSelectedIndex();
+                        if (idx >= 0) {
+                            AbstractBinding binding = bindings.get(idx);
+                            if (binding != null) {
+                                editorForm.testSelected(binding);
+                            }
+                        }
+                    }
+                }));
+                popup.add(new JMenuItem(new AbstractAction("Test All") {
+                    public void actionPerformed(ActionEvent e) {
+                        editorForm.testAll();
+                    }
+                }));
+                popup.add(new JMenuItem(new AbstractAction("Generate Bindings") {
+                    public void actionPerformed(ActionEvent e) {
+                        editorForm.generate();
+                    }
+                }));
+
+                popup.show(e.getComponent(), e.getX(), e.getY());
             }
         });
     }

@@ -42,7 +42,6 @@ public class DeploymentInfo extends JPanel {
     private JComboBox iphoneInterfaceComboBox;
     private JComboBox iphoneStyleComboBox;
     private JComboBox ipadInterfaceComboBox;
-    private JPanel deploymentPanel;
     private JPanel contentPane;
     private JCheckBox iphonePortraitCheckBox;
     private JCheckBox iphoneUpsideDownCheckBox;
