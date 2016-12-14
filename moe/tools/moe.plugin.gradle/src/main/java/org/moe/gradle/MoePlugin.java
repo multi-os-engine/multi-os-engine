@@ -56,6 +56,7 @@ import java.io.File;
 import java.net.MalformedURLException;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Optional;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.stream.Collectors;
 
@@ -175,11 +176,21 @@ public class MoePlugin extends AbstractMoePlugin {
             task.setGroup(MOE);
             task.setDescription("Prints some properties of the MOE Xcode project.");
             task.getActions().add(t -> {
-                System.out.println("\n" +
-                        "moe.xcode.xcodeProjectPath=" + project.file(extension.xcode.getProject()).getAbsolutePath() + "\n" +
-                        "moe.xcode.mainTarget=" + extension.xcode.getMainTarget() + "\n" +
-                        "moe.xcode.testTarget=" + extension.xcode.getTestTarget() + "\n" +
-                        "\n");
+                final StringBuilder b = new StringBuilder("\n");
+                Optional.ofNullable(extension.xcode.getProject()).ifPresent(
+                        o -> b.append("moe.xcode.project=").append(project.file(o).getAbsolutePath()).append("\n"));
+                Optional.ofNullable(extension.xcode.getWorkspace()).ifPresent(
+                        o -> b.append("moe.xcode.workspace=").append(project.file(o).getAbsolutePath()).append("\n"));
+                Optional.ofNullable(extension.xcode.getMainTarget()).ifPresent(
+                        o -> b.append("moe.xcode.mainTarget=").append(o).append("\n"));
+                Optional.ofNullable(extension.xcode.getTestTarget()).ifPresent(
+                        o -> b.append("moe.xcode.testTarget=").append(o).append("\n"));
+                Optional.ofNullable(extension.xcode.getMainScheme()).ifPresent(
+                        o -> b.append("moe.xcode.mainScheme=").append(o).append("\n"));
+                Optional.ofNullable(extension.xcode.getTestScheme()).ifPresent(
+                        o -> b.append("moe.xcode.testScheme=").append(o).append("\n"));
+                b.append("\n");
+                System.out.println(b.toString());
             });
         });
 
