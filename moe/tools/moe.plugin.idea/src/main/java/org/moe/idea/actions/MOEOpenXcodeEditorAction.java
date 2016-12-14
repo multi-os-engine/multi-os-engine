@@ -27,6 +27,7 @@ import org.moe.idea.MOESdkPlugin;
 import org.moe.idea.utils.ModuleUtils;
 
 import java.io.File;
+import java.util.Properties;
 
 public class MOEOpenXcodeEditorAction extends AnAction {
     private Module module;
@@ -37,19 +38,29 @@ public class MOEOpenXcodeEditorAction extends AnAction {
             return;
         }
 
-        File xcodeFile = new File(ProjectUtil.retrieveXcodeProjectPathFromGradle(new File(ModuleUtils.getModulePath(module))));
-        if ((xcodeFile == null) || !xcodeFile.exists()) {
-            Messages.showErrorDialog("Xcode project not exist", "Edit Xcode Project");
+        final File modulePath = new File(ModuleUtils.getModulePath(module));
+        final Properties properties = ProjectUtil
+                .retrievePropertiesFromGradle(modulePath, ProjectUtil.XCODE_PROPERTIES_TASK);
+
+        // Try to open project
+        final String pr = properties.getProperty(ProjectUtil.XCODE_PROJECT_KEY);
+        if (pr != null) {
+            final File file = new File(pr);
+            if (!file.exists()) {
+                Messages.showErrorDialog("Xcode project does not exist", "Open Xcode Project");
+            }
+            Project project = getEventProject(anActionEvent);
+            if (project != null) {
+                VirtualFile virtualFile = project.getBaseDir().getFileSystem().findFileByPath(file.getAbsolutePath());
+                if (virtualFile.exists()) {
+                    FileEditorManager.getInstance(project).openFile(virtualFile, true);
+                }
+            }
             return;
         }
 
-        Project project = getEventProject(anActionEvent);
-        if (project != null) {
-            VirtualFile virtualFile = project.getBaseDir().getFileSystem().findFileByPath(xcodeFile.getAbsolutePath() + File.separator + "project.pbxproj");
-            if (virtualFile.exists()) {
-                FileEditorManager.getInstance(project).openFile(virtualFile, true);
-            }
-        }
+        Messages.showErrorDialog("Neither the Xcode project nor the workspace is set in the Gradle plugin",
+                "Open Xcode Project");
     }
 
     @Override

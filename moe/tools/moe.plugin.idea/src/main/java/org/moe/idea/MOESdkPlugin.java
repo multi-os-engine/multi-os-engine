@@ -42,6 +42,7 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 import java.util.Map;
+import java.util.Properties;
 
 public class MOESdkPlugin {
 
@@ -54,7 +55,10 @@ public class MOESdkPlugin {
     }
 
     public static String getSdkRootPath(Module module) {
-        String sdkPath = ProjectUtil.retrieveSDKPathFromGradle(new File(ModuleUtils.getModulePath(module)));
+        final Properties properties = ProjectUtil
+                .retrievePropertiesFromGradle(new File(ModuleUtils.getModulePath(module)), ProjectUtil.SDK_PROPERTIES_TASK);
+
+        String sdkPath = properties.getProperty(ProjectUtil.SDK_PATH_KEY);
 
         if (sdkPath == null || sdkPath.isEmpty()) {
             Messages.showMessageDialog(MOEText.get("Invalid.SDK.Path"), "Error", MOEIcons.MOELogo);

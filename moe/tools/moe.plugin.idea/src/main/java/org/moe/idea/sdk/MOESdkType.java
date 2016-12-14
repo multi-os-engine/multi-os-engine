@@ -42,6 +42,7 @@ import res.MOEText;
 import javax.swing.*;
 import java.io.File;
 import java.util.List;
+import java.util.Properties;
 
 import static com.intellij.openapi.projectRoots.JavaSdk.checkForJdk;
 
@@ -191,16 +192,16 @@ public class MOESdkType extends JavaDependentSdkType implements JavaSdkType {
         if (modulePath == null) {
             return null;
         }
-        String moeRootPath = ProjectUtil.retrieveSDKPathFromGradle(new File(modulePath));
+
+        final Properties properties = ProjectUtil
+                .retrievePropertiesFromGradle(new File(modulePath), ProjectUtil.SDK_PROPERTIES_TASK);
+
+        String moeRootPath = properties.getProperty(ProjectUtil.SDK_PATH_KEY);
         if (moeRootPath == null) {
             return null;
         }
 
         String name = new File(moeRootPath).getName();
-
-        if(moeRootPath == null) {
-            return null;
-        }
 
         ProjectJdkTable jdkTable = ProjectJdkTable.getInstance();
 

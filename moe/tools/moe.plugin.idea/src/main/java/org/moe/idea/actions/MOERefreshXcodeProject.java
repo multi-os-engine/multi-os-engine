@@ -92,9 +92,9 @@ public class MOERefreshXcodeProject extends AnAction {
             private void runInternal() throws ProjectException, IOException {
                 final File moduleFile = new File(ModuleUtils.getModulePath(module));
                 final Properties properties = ProjectUtil
-                        .retrievePropertiesFromGradle(moduleFile, XCODE_PROJECT_PATH_TASK);
+                        .retrievePropertiesFromGradle(moduleFile, XCODE_PROPERTIES_TASK);
 
-                final String xcodeProjectPath = (String)properties.get(XCODE_PROJECT_PATH_KEY);
+                final String xcodeProjectPath = (String)properties.get(XCODE_PROJECT_KEY);
                 final String mainTarget = (String)properties.get(XCODE_MAIN_TARGET_KEY);
                 final String testTarget = (String)properties.get(XCODE_TEST_TARGET_KEY);
                 File xcodeFile = new File(xcodeProjectPath);
