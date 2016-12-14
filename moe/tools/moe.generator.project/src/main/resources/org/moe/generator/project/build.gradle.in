@@ -45,9 +45,16 @@ test { exclude '**' }
 
 // Setup Multi-OS Engine
 moe {
-    xcode.project 'xcode/${_PLACEHOLDER_MOE_PROJECT_NAME}.xcodeproj'
-    xcode.mainTarget '${_PLACEHOLDER_MOE_PROJECT_NAME}'
-    xcode.testTarget '${_PLACEHOLDER_MOE_PROJECT_NAME}-Test'
+    xcode {
+        project 'xcode/${_PLACEHOLDER_MOE_PROJECT_NAME}.xcodeproj'
+        mainTarget '${_PLACEHOLDER_MOE_PROJECT_NAME}'
+        testTarget '${_PLACEHOLDER_MOE_PROJECT_NAME}-Test'
+
+        // Uncomment and change these settings if you are working with a Xcode workspace
+        // workspace 'xcode/${_PLACEHOLDER_MOE_PROJECT_NAME}.xcworkspace'
+        // mainScheme '${_PLACEHOLDER_MOE_PROJECT_NAME}'
+        // testScheme '${_PLACEHOLDER_MOE_PROJECT_NAME}-Test'
+    }
 }
 
 dependencies {
