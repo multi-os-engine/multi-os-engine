@@ -16,6 +16,7 @@ import org.eclipse.core.runtime.jobs.Job;
 import org.moe.common.utils.ProjectUtil;
 import org.moe.generator.project.writer.XcodeEditor;
 import org.moe.generator.project.writer.XcodeEditor.Settings;
+import org.moe.utils.MessageFactory;
 import org.moe.utils.ProjectHelper;
 
 public class RefreshXcodeProjectActionHandler extends AbstractHandler {
@@ -25,16 +26,16 @@ public class RefreshXcodeProjectActionHandler extends AbstractHandler {
 	@Override
 	public Object execute(ExecutionEvent arg0) throws ExecutionException {
 		IProject project = ProjectHelper.getSelectedProject(ProjectHelper.getSelection());
-		if (project != null) {
-			try {
-				refreshXcodeProject(project);
-			} catch (InterruptedException e) {
-				return new Status(Status.ERROR, ID, "Exception", e);
-			}
-		} else {
-			return new Status(Status.ERROR, ID, "Unable find project");
+		if (project == null) {
+			return MessageFactory.showErrorDialog("There are no selected projects");
 		}
-		return Status.OK_STATUS;
+		
+		try {
+			refreshXcodeProject(project);
+			return null;
+		} catch (InterruptedException e) {
+			return MessageFactory.showErrorDialog("Operation interrupted", e);
+		}
 	}
 
 	private void refreshXcodeProject(IProject project) throws InterruptedException {

@@ -18,6 +18,7 @@ import org.moe.common.exec.ExecRunnerBase.ExecRunnerListener;
 import org.moe.runconfig.MOEProjectBuildConsole;
 import org.moe.common.exec.GradleExec;
 import org.moe.common.exec.IKillListener;
+import org.moe.utils.MessageFactory;
 import org.moe.utils.ProjectHelper;
 
 public class GenerateActionsAndOutletsActionHandler extends AbstractHandler {
@@ -27,16 +28,16 @@ public class GenerateActionsAndOutletsActionHandler extends AbstractHandler {
 	@Override
 	public Object execute(ExecutionEvent arg0) throws ExecutionException {
 		IProject project = ProjectHelper.getSelectedProject(ProjectHelper.getSelection());
-		if (project != null) {
-			try {
-				refresh(project);
-			} catch (InterruptedException e) {
-				return new Status(Status.ERROR, ID, "Exception", e);
-			}
-		} else {
-			return new Status(Status.ERROR, ID, "Unable find project");
+		if (project == null) {
+			return MessageFactory.showErrorDialog("There are no selected projects");
 		}
-		return Status.OK_STATUS;
+		
+		try {
+			refresh(project);
+			return null;
+		} catch (InterruptedException e) {
+			return MessageFactory.showErrorDialog("Operation interrupted", e);
+		}
 	}
 	
 	private void refresh(final IProject project) throws InterruptedException {

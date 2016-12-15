@@ -122,7 +122,7 @@ public class GeneratorRunner {
 	        		    	if (errorMessage == null || errorMessage.isEmpty()) {
 	        		    		MessageFactory.showInfoDialog(title, "Successful");
 	    	                } else {
-	    	                	MessageFactory.showErrorDialog(title, errorMessage);
+	    	                	MessageFactory.showErrorDialog(errorMessage);
 	    	                }
 	        		    }
 	        		});

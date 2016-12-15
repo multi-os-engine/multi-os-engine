@@ -16,17 +16,43 @@
 
 package org.moe.utils;
 
+import org.apache.log4j.Logger;
 import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.Status;
+import org.eclipse.jface.dialogs.ErrorDialog;
 import org.eclipse.jface.dialogs.MessageDialog;
 import org.eclipse.ui.PlatformUI;
+import org.moe.utils.logger.LoggerFactory;
 
 public class MessageFactory {
 
+	private static final Logger LOG = LoggerFactory.getLogger(MessageFactory.class);
+
+	private static final String MULTI_OS_ENGINE_ERROR_TITLE = "Multi-OS Engine Error";
 	private static final String ID = "com.migeran.moe";
 
-	public static void showErrorDialog(String title, String message) {
-		MessageDialog.openError(PlatformUI.getWorkbench().getDisplay().getActiveShell(), title, message);
+	@Deprecated
+	public static Object showErrorDialog(String t, String message) {
+		return showErrorDialog(message);
+	}
+
+	public static Object showErrorDialog(String message) {
+		// Error dialogs without exceptions are only informal
+		LOG.debug(MULTI_OS_ENGINE_ERROR_TITLE + ": " + message);
+		MessageDialog.openError(PlatformUI.getWorkbench().getDisplay().getActiveShell(), MULTI_OS_ENGINE_ERROR_TITLE, message);
+		return null;
+	}
+
+	public static Object showErrorDialog(String message, Throwable t) {
+		if (t == null) {
+			return showErrorDialog(message);
+		} else {
+			// Always log dialogs with exceptions
+			LOG.error(MULTI_OS_ENGINE_ERROR_TITLE + ": " + message, t);
+			Status status = getStatus(IStatus.ERROR, "Internal error", t);
+			ErrorDialog.openError(PlatformUI.getWorkbench().getDisplay().getActiveShell(), MULTI_OS_ENGINE_ERROR_TITLE, message, status);
+			return null;
+		}
 	}
 	
 	public static void showInfoDialog(String title, String message) {
@@ -37,11 +63,11 @@ public class MessageFactory {
 		return getError(message, null);
 	}
 
-	public static Status getError(String message, Exception ex) {
+	public static Status getError(String message, Throwable ex) {
 		return getStatus(IStatus.ERROR, message, ex);
 	}
 
-	private static Status getStatus(int severity, String message, Exception ex) {
+	private static Status getStatus(int severity, String message, Throwable ex) {
 		return new Status(severity, ID, message, ex);
 	}
 

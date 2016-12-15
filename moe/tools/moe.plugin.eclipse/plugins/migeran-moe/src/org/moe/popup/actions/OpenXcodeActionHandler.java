@@ -20,28 +20,22 @@ import java.io.File;
 import java.io.IOException;
 import java.util.Properties;
 
-import org.apache.log4j.Logger;
 import org.eclipse.core.commands.AbstractHandler;
 import org.eclipse.core.commands.ExecutionEvent;
 import org.eclipse.core.commands.ExecutionException;
 import org.eclipse.core.resources.IProject;
-import org.eclipse.core.runtime.Status;
 import org.moe.common.exec.SimpleExec;
 import org.moe.common.utils.ProjectUtil;
 import org.moe.utils.MessageFactory;
 import org.moe.utils.ProjectHelper;
-import org.moe.utils.logger.LoggerFactory;
 
 public class OpenXcodeActionHandler extends AbstractHandler {
 
-	private static final Logger LOG = LoggerFactory.getLogger(OpenXcodeActionHandler.class);
-
 	@Override
 	public Object execute(ExecutionEvent event) throws ExecutionException {
-		LOG.debug("Open Project in Xcode action");
 		IProject project = ProjectHelper.getSelectedProject(ProjectHelper.getSelection());
 		if (project == null) {
-			return Status.OK_STATUS;
+			return MessageFactory.showErrorDialog("There are no selected projects");
 		}
 
 		File projectFile = new File(project.getLocation().toOSString());
@@ -53,15 +47,14 @@ public class OpenXcodeActionHandler extends AbstractHandler {
         if (ws != null) {
             final File file = new File(ws);
             if (!file.exists()) {
-            	MessageFactory.getError("Xcode workspace does not exist");
+            	return MessageFactory.showErrorDialog("Xcode workspace does not exist at " + file.getAbsolutePath());
             }
             try {
                 SimpleExec.getOpen("xcode", file.getAbsolutePath()).getRunner().run(null);
-            } catch (IOException ignored) {
-    			LOG.error("Unale to open xcode workspace " + file.getAbsolutePath(), ignored);
-            	MessageFactory.getError("Could not open workspace " + file.getAbsolutePath() + "\n" + ignored.getMessage());
+    			return null;
+            } catch (IOException e) {
+            	return MessageFactory.showErrorDialog("Could not open workspace at " + file.getAbsolutePath(), e);
             }
-			return Status.OK_STATUS;
         }
 
         // Try to open project
@@ -69,19 +62,17 @@ public class OpenXcodeActionHandler extends AbstractHandler {
         if (pr != null) {
             final File file = new File(pr);
             if (!file.exists()) {
-            	MessageFactory.getError("Xcode project does not exist");
+            	return MessageFactory.showErrorDialog("Xcode project does not exist at " + file.getAbsolutePath());
             }
             try {
                 SimpleExec.getOpen("xcode", file.getAbsolutePath()).getRunner().run(null);
-            } catch (IOException ignored) {
-    			LOG.error("Unale to open xcode project " + file.getAbsolutePath(), ignored);
-            	MessageFactory.getError("Could not open project " + file.getAbsolutePath() + "\n" + ignored.getMessage());
+    			return null;
+            } catch (IOException e) {
+            	return MessageFactory.showErrorDialog("Could not open project at " + file.getAbsolutePath(), e);
             }
-			return Status.OK_STATUS;
         }
 
-        MessageFactory.getError("Neither the Xcode project nor the workspace is set in the Gradle plugin");
-		return Status.OK_STATUS;
+        return MessageFactory.showErrorDialog("Neither moe.xcode.project nor moe.xcode.workspace property is set in the Gradle project");
 	}
 
 }

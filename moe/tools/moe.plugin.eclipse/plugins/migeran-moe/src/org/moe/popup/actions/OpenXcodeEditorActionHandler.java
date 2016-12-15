@@ -19,14 +19,12 @@ package org.moe.popup.actions;
 import java.io.File;
 import java.util.Properties;
 
-import org.apache.log4j.Logger;
 import org.eclipse.core.commands.AbstractHandler;
 import org.eclipse.core.commands.ExecutionEvent;
 import org.eclipse.core.commands.ExecutionException;
 import org.eclipse.core.filesystem.EFS;
 import org.eclipse.core.filesystem.IFileStore;
 import org.eclipse.core.resources.IProject;
-import org.eclipse.core.runtime.Status;
 import org.eclipse.ui.IWorkbenchPage;
 import org.eclipse.ui.PartInitException;
 import org.eclipse.ui.PlatformUI;
@@ -34,42 +32,38 @@ import org.eclipse.ui.ide.IDE;
 import org.moe.common.utils.ProjectUtil;
 import org.moe.utils.MessageFactory;
 import org.moe.utils.ProjectHelper;
-import org.moe.utils.logger.LoggerFactory;
 
 public class OpenXcodeEditorActionHandler extends AbstractHandler {
 
-	private static final Logger LOG = LoggerFactory.getLogger(OpenXcodeEditorActionHandler.class);
-
 	@Override
 	public Object execute(ExecutionEvent event) throws ExecutionException {
-		LOG.debug("Open Project in Xcode Editor action");
 		IProject project = ProjectHelper.getSelectedProject(ProjectHelper.getSelection());
 		if (project == null) {
-			return Status.OK_STATUS;
+			return MessageFactory.showErrorDialog("There are no selected projects");
 		}
 
 		File projectFile = new File(project.getLocation().toOSString());
-        final Properties properties = ProjectUtil
-                .retrievePropertiesFromGradle(projectFile, ProjectUtil.XCODE_PROPERTIES_TASK);
-        final String pr = properties.getProperty(ProjectUtil.XCODE_PROJECT_KEY);
-        if (pr == null) {
-            MessageFactory.getError("Xcode project is not set in the Gradle plugin");
-    		return Status.OK_STATUS;
-        }
+		final Properties properties = ProjectUtil.retrievePropertiesFromGradle(projectFile,
+				ProjectUtil.XCODE_PROPERTIES_TASK);
+		final String pr = properties.getProperty(ProjectUtil.XCODE_PROJECT_KEY);
+		if (pr == null) {
+			return MessageFactory.showErrorDialog("The moe.xcode.project property is not set in the Gradle project");
+		}
 
 		File xcodeProjectFile = new File(pr, "project.pbxproj");
 		if (xcodeProjectFile.exists()) {
-		    IFileStore fileStore = EFS.getLocalFileSystem().getStore(xcodeProjectFile.toURI());
-		    IWorkbenchPage page = PlatformUI.getWorkbench().getActiveWorkbenchWindow().getActivePage();
-		 
-		    try {
-		        IDE.openEditorOnFileStore( page, fileStore );
-		    } catch ( PartInitException e ) {
-		        //Put your exception handler here if you wish to
-		    }
+			IFileStore fileStore = EFS.getLocalFileSystem().getStore(xcodeProjectFile.toURI());
+			IWorkbenchPage page = PlatformUI.getWorkbench().getActiveWorkbenchWindow().getActivePage();
+
+			try {
+				IDE.openEditorOnFileStore(page, fileStore);
+				return null;
+			} catch (PartInitException e) {
+				return MessageFactory.showErrorDialog("Failed to open document in editor", e);
+			}
+		} else {
+			return MessageFactory.showErrorDialog("Xcode project file does not exist at " + xcodeProjectFile.getPath());
 		}
-		
-		return Status.OK_STATUS;
 	}
 
 }
