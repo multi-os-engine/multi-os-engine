@@ -31,7 +31,10 @@ public class BindingEditorProvider implements FileEditorProvider {
 
     @Override
     public boolean accept(@NotNull Project project, @NotNull VirtualFile virtualFile) {
-        return virtualFile.getExtension().equals("nbc");
+        if (virtualFile.getExtension() != null) {
+            return virtualFile.getExtension().equals("nbc");
+        }
+        return false;
     }
 
     @NotNull
