@@ -331,9 +331,10 @@ public class NSObject extends ObjCObject implements apple.protocol.NSObject {
     @MappedReturn(ObjCObjectMapper.class)
     public native Object copy();
 
-    @Generated
-    @Selector("dealloc")
-    public native void dealloc();
+    public final void dealloc() {
+        System.err.println("Calling dealloc is a no-op. Use ObjCRuntime.dispose(...) instead.");
+        new RuntimeException().printStackTrace(System.err);
+    }
 
     @Generated
     @IsOptional
