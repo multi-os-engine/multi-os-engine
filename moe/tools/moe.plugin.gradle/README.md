@@ -65,7 +65,7 @@ Build and publish _release_ version to Bintray:
 
 ```sh
 cd <repo>/moe/tools/master
-./gradlew :moe-gradle: bintrayUpload \
+./gradlew :moe-gradle:bintrayUpload \
     -Pbintray.user=<user> \
     -Pbintray.key=<key>
 ```
