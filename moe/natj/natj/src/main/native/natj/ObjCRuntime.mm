@@ -560,7 +560,7 @@ jobjectArray Java_org_moe_natj_objc_ObjCRuntime_createDataForNativeProtocolProxy
   jsize methodCount = env->GetArrayLength(methods);
   
   jobject* protocolMethods = (jobject*)alloca(sizeof(void*) * methodCount);
-  size_t protocolMethodCount = 0;
+  jsize protocolMethodCount = 0;
   
   // Collect protocol methods
   for (jsize i = 0; i < methodCount; i++) {
@@ -1734,7 +1734,7 @@ Class registerObjCClass(JNIEnv* env, jclass type, bool isProxy, jstring baseClas
             env->ThrowNew(gUnsupportedAnnotationExceptionClass,
                 "Property annotation is supported for getters "
                 "returning only subclasses of NSObject");
-            return;
+            return nullptr;
         }
         
         jobject propAnn = env->CallObjectMethod(method, gGetAnnotationMethod, gSelectorClass);

@@ -43,6 +43,7 @@ class LogAppender {
 
 #define LOG(severity) LogAppender::get(severity) << __FILE__ << ":" << __LINE__ << ": "
 
+#define LOGD LOG(ANDROID_LOG_DEBUG)
 #define LOGI LOG(ANDROID_LOG_INFO)
 #define LOGW LOG(ANDROID_LOG_WARN)
 #define LOGF LOG(ANDROID_LOG_FATAL)
@@ -75,6 +76,7 @@ class LogAppender {
   LogAppender::get(toAbort) << __FILE__ << ":" << __LINE__ << " " << #severity \
                             << ": "
 
+#define LOGD LOG(DEBUG, false)
 #define LOGI LOG(INFO, false)
 #define LOGW LOG(WARNING, false)
 #define LOGF LOG(FAILURE, true)

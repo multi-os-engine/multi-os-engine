@@ -350,7 +350,7 @@ void JNICALL Java_org_moe_natj_general_NatJ_initialize(JNIEnv* env, jclass clazz
     LOGF << "Invalid state after getting method 'boolean java.lang.reflect.Method.isDefault()'!";
   }
   if (env->ExceptionCheck()) {
-    LOGI << "Method 'boolean java.lang.reflect.Method.isDefault()' is not accessible.";
+    LOGD << "Method 'boolean java.lang.reflect.Method.isDefault()' is not accessible.";
     env->ExceptionClear();
   }
   gGetLibraryMethod =
