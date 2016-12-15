@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <site>
-   <feature url="features/MOEFeature_1.2.0.qualifier.jar" id="MOEFeature" version="1.2.0.qualifier"/>
+   <feature url="features/MOEFeature_1.3.0.qualifier.jar" id="MOEFeature" version="1.3.0.qualifier"/>
    <category-def name="org.multi-os-engine" label="Multi-OS Engine"/>
 </site>
