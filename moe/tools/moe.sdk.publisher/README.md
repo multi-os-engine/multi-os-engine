@@ -2,7 +2,7 @@
 
 This project creates a publishable SDK.
 
-## Creating A Developer SDK
+### Creating A Developer SDK
 
 For development we recommend packing SDKs with the following method:
 
@@ -14,6 +14,44 @@ cd <repo>/moe/tools/master
 This will create the SDK structure under the `build` directory, which can be used with the [Gradle plugin](https://github.com/multi-os-engine/moe-plugin-gradle).
 
 This task requires the `moe-core` project to be built.
+
+### Building
+
+Build and publish _release_ version to Maven local repository:
+
+```sh
+cd <repo>/moe/tools/master
+./gradlew :moe-sdk:publishMavenJavaPublicationToMavenLocal
+```
+
+Build and publish _snapshot_ version to Maven local repository:
+
+```sh
+cd <repo>/moe/tools/master
+./gradlew :moe-sdk:publishMavenJavaSnapshotPublicationToMavenLocal
+```
+
+Build and publish _release_ version to Bintray:
+
+```sh
+cd <repo>/moe/tools/master
+./gradlew :moe-sdk:bintrayUpload \
+    -Pbintray.user=<user> \
+    -Pbintray.key=<key>
+```
+
+Build and publish _snapshot_ version to Artifactory:
+
+```sh
+cd <repo>/moe/tools/master
+./gradlew :moe-sdk:artifactoryPublish \
+    -Partifactory.url=<url> \
+    -Partifactory.key=<key> \
+    -Partifactory.user=<user> \
+    -Partifactory.pass=<pass>
+```
+
+These tasks require the `moe-core` project to be built.
 
 ### Packing Debug dex2oat and/or Frameworks
 
