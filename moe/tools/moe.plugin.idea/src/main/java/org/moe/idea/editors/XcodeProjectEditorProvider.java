@@ -32,7 +32,10 @@ public class XcodeProjectEditorProvider implements FileEditorProvider {
 
     @Override
     public boolean accept(@NotNull Project project, @NotNull VirtualFile virtualFile) {
-        return virtualFile.getExtension().equals("pbxproj");
+        if (virtualFile.getExtension() != null) {
+            return virtualFile.getExtension().equals("pbxproj");
+        }
+        return false;
     }
 
     @NotNull
