@@ -21,7 +21,7 @@ Build and publish _release_ version to Maven local repository:
 
 ```sh
 cd <repo>/moe/tools/master
-./gradlew :moe-sdk:publishToMavenLocal
+./gradlew :moe-sdk:publishMavenJavaPublicationToMavenLocal
 ```
 
 Build and publish _snapshot_ version to Maven local repository:
