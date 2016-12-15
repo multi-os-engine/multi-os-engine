@@ -24,7 +24,6 @@ The MOE Gradle plugin adds support to building MOE based applications via Gradle
   * [XcodeProvider Task](#xcodeprovider-task)
   * [XcodeInternal Task](#xcodeinternal-task)
   * [XcodeBuild Task](#xcodebuild-task)
-  * [XcodeProjectGenerator Task](#xcodeprojectgenerator-task)
   * [IpaBuild Task](#ipabuild-task)
   * [ListDevices Task](#listdevices-task)
   * [ListSimulators Task](#listsimulators-task)
@@ -45,6 +44,42 @@ There are two Gradle plugins:
 accessing its properties.
 - `moe`: this plugin does the same as `moe-sdk`, but also adds all the tasks, rules, etc. necessary to build a MOE-based
 application.
+
+### Building
+
+Build and publish _release_ version to Maven local repository:
+
+```sh
+cd <repo>/moe/tools/master
+./gradlew :moe-gradle:publishMavenJavaPublicationToMavenLocal
+```
+
+Build and publish _snapshot_ version to Maven local repository:
+
+```sh
+cd <repo>/moe/tools/master
+./gradlew :moe-gradle:publishMavenJavaSnapshotPublicationToMavenLocal
+```
+
+Build and publish _release_ version to Bintray:
+
+```sh
+cd <repo>/moe/tools/master
+./gradlew :moe-gradle:bintrayUpload \
+    -Pbintray.user=<user> \
+    -Pbintray.key=<key>
+```
+
+Build and publish _snapshot_ version to Artifactory:
+
+```sh
+cd <repo>/moe/tools/master
+./gradlew :moe-gradle:artifactoryPublish \
+    -Partifactory.url=<url> \
+    -Partifactory.key=<key> \
+    -Partifactory.user=<user> \
+    -Partifactory.pass=<pass>
+```
 
 ### SDK
 
@@ -123,8 +158,11 @@ Generated Xcode project settings can be configured as follows:
 ```groovy
 moe {
     xcode {
-        // boolean, indicates whether the Xcode project should be generated or not, defaults to true.
-        generateProject
+        // Object, path to the Xcode project.
+        project
+        
+        // Object, path to the Xcode workspace.
+        workspace
 
         // String, name of the main target.
         mainTarget
@@ -132,66 +170,16 @@ moe {
         // String, name of the test target.
         testTarget
 
-        // String, product name of the main target.
-        mainProductName
+        // String, name of the main scheme.
+        mainScheme
 
-        // String, path to the main storyboard.
-        mainUIStoryboardPath
-
-        // String, path to launch screen storyboard/xib.
-        launchScreenFilePath
-
-        // String, path to launch image.
-        launchImagesSource
-
-        // String, value for the 'NSLocationWhenInUseUsageDescription' property.
-        locationWhenInUseUsageDescription
-
-        // String, path to the app icons.
-        appIconsSource
-
-        // String, organizations name (ex: My Company).
-        organizationName
-
-        // String, company identifier (ex: com.mycompany).
-        companyIdentifier
-
-        // String, the app's bundle ID (ex: com.mycompany.myapp).
-        bundleID
-
-        // String, package where the 'Main' class can be found (ex: com.mycompany.myapp).
-        packageName
-
-        // String, path to the main target's Info.plist.
-        infoPlistPath
-
-        // String, path to the test target's Info.plist.
-        testInfoPlistPath
-
-        // boolean, value for the 'UIApplicationExitsOnSuspend' property.
-        applicationExitOnSuspend
-
-        // String, value for the 'CFBundleShortVersionString' property.
-        bundleShortVersionString
-
-        // String, value for the 'CFBundleVersion' property.
-        bundleVersion
-
-        // String, the minimal system version the app requires (ex: 9.0).
-        deploymentTarget
-
-        // String, path to the Xcode project's directory.
-        xcodeProjectDirPath
-
-        // List, list of supported interface orientations.
-        // - UIInterfaceOrientationPortrait
-        // - UIInterfaceOrientationPortraitUpsideDown
-        // - UIInterfaceOrientationLandscapeLeft
-        // - UIInterfaceOrientationLandscapeRight
-        supportedInterfaceOrientations
+        // String, name of the test scheme.
+        testScheme
     }
 }
 ```
+
+**Note:** when working with Xcode workspaces, scheme settings are required!
 
 ### Code Signing
 
@@ -203,8 +191,11 @@ moe {
         // String, ID of the development team.
         developmentTeam
 
-        // String, path to the provisioning profile.
+        // String, path to the provisioning profile or UUID.
         provisioningProfile
+
+        // String, name of the provisioning profile (new in Xcode 8).
+        provisioningProfileSpecifier
 
         // String, name of the signing identity
         signingIdentity
@@ -407,6 +398,22 @@ Setting any of these properties to null will reset them to their default values.
 
 ---
 
+GenerateUIObjCInterfaces Task
+
+Task name: `moeGenerateUIObjCInterfaces`
+
+Generates Objective-C class interfaces for working with Xcode's Interface Builder.
+
+#### Task Properties
+
+- `inputFiles`: collection of paths to directories and jars. These inputs will be searched for Objective-C classes.
+- `outputSource`: path to the output file containing the class interfaces.
+- `xcodeProjectFile`: path to the Xcode project.
+
+Setting any of these properties to null will reset them to their default values.
+
+---
+
 ### XcodeProvider Task
 
 Task name: `moe<sourceset><mode><arch><plat>XcodeProvider`
@@ -449,23 +456,18 @@ This task invokes `xcodebuild` and creates the application.
 #### Task Properties
 
 - `target`: target name in the Xcode project.
+- `scheme`: scheme name in the Xcode project.
 - `configuration`: configuration to build, derived from `mode`.
 - `sdk`: sdk to build for, derived from `plat`.
 - `xcodeProjectFile`: path to the Xcode project file.
+- `xcodeWorkspaceFile`: path to the Xcode workspace file.
 - `additionalParameters`: additional parameters to pass to `xcodebuild`.
-- `provisioningProfile`: path to the provisioning profile.
+- `provisioningProfile`: path to the provisioning profile or UUID.
+- `provisioningProfileSpecifier`: name of the provisioning profile (new in Xcode 8).
 - `signingIdentity`: name of the signing identity.
 - `developmentTeam`: ID of the development team.
 - `xcodeBuildRoot`: `xcodebuild` root output directory.
 - `xcodeBuildSettingsFile`: path to the output Xcode build settings file.
-
----
-
-### XcodeProjectGenerator Task
-
-Task name: `moeXcodeProjectGenerator`
-
-Generates an Xcode project.
 
 ---
 

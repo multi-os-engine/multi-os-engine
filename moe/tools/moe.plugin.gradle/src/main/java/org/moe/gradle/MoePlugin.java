@@ -33,6 +33,7 @@ import org.moe.gradle.remote.Server;
 import org.moe.gradle.tasks.AbstractBaseTask;
 import org.moe.gradle.tasks.Dex;
 import org.moe.gradle.tasks.Dex2Oat;
+import org.moe.gradle.tasks.GenerateUIObjCInterfaces;
 import org.moe.gradle.tasks.IpaBuild;
 import org.moe.gradle.tasks.Launchers;
 import org.moe.gradle.tasks.ProGuard;
@@ -42,7 +43,6 @@ import org.moe.gradle.tasks.StartupProvider;
 import org.moe.gradle.tasks.TestClassesProvider;
 import org.moe.gradle.tasks.XcodeBuild;
 import org.moe.gradle.tasks.XcodeInternal;
-import org.moe.gradle.tasks.XcodeProjectGenerator;
 import org.moe.gradle.tasks.XcodeProvider;
 import org.moe.gradle.utils.Arch;
 import org.moe.gradle.utils.FileUtils;
@@ -56,6 +56,7 @@ import java.io.File;
 import java.net.MalformedURLException;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Optional;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.stream.Collectors;
 
@@ -147,8 +148,6 @@ public class MoePlugin extends AbstractMoePlugin {
                 singletonList(SOURCE_SET));
         addRule(StartupProvider.class, "Creates the preregister.txt file.",
                 singletonList(SOURCE_SET));
-        addRule(XcodeProjectGenerator.class, "Creates an Xcode project.",
-                emptyList());
         addRule(XcodeProvider.class, "Collects the required dependencies.",
                 asList(SOURCE_SET, MODE, ARCH, PLATFORM));
         addRule(XcodeInternal.class, "Creates all files for Xcode.",
@@ -156,6 +155,8 @@ public class MoePlugin extends AbstractMoePlugin {
         addRule(XcodeBuild.class, "Creates .app files.",
                 asList(SOURCE_SET, MODE, PLATFORM));
         addRule(IpaBuild.class, "Creates .ipa files.",
+                emptyList());
+        addRule(GenerateUIObjCInterfaces.class, "Creates a source file for Interface Builder",
                 emptyList());
 
         project.getTasks().create("moeSDKProperties", task -> {
@@ -175,10 +176,21 @@ public class MoePlugin extends AbstractMoePlugin {
             task.setGroup(MOE);
             task.setDescription("Prints some properties of the MOE Xcode project.");
             task.getActions().add(t -> {
-                final XcodeProjectGenerator generator = getTaskBy(XcodeProjectGenerator.class);
-                System.out.println("\n" +
-                        "moe.xcode.xcodeProjectPath=" + (new File(generator.getXcodeProjectDir(), generator.getProjectName() + ".xcodeproj")) + "\n" +
-                        "\n");
+                final StringBuilder b = new StringBuilder("\n");
+                Optional.ofNullable(extension.xcode.getProject()).ifPresent(
+                        o -> b.append("moe.xcode.project=").append(project.file(o).getAbsolutePath()).append("\n"));
+                Optional.ofNullable(extension.xcode.getWorkspace()).ifPresent(
+                        o -> b.append("moe.xcode.workspace=").append(project.file(o).getAbsolutePath()).append("\n"));
+                Optional.ofNullable(extension.xcode.getMainTarget()).ifPresent(
+                        o -> b.append("moe.xcode.mainTarget=").append(o).append("\n"));
+                Optional.ofNullable(extension.xcode.getTestTarget()).ifPresent(
+                        o -> b.append("moe.xcode.testTarget=").append(o).append("\n"));
+                Optional.ofNullable(extension.xcode.getMainScheme()).ifPresent(
+                        o -> b.append("moe.xcode.mainScheme=").append(o).append("\n"));
+                Optional.ofNullable(extension.xcode.getTestScheme()).ifPresent(
+                        o -> b.append("moe.xcode.testScheme=").append(o).append("\n"));
+                b.append("\n");
+                System.out.println(b.toString());
             });
         });
 

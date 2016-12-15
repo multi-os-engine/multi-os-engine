@@ -37,6 +37,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.function.Consumer;
+import java.util.function.Supplier;
 
 public class TaskUtils {
     private static final Logger LOG = LoggerFactory.getLogger(TaskUtils.class);
@@ -171,5 +172,9 @@ public class TaskUtils {
             spec.setStandardOutput(new NullOutputStream());
         });
         return result.getExitValue() == 0;
+    }
+
+    public static <T> T compute(@NotNull Supplier<T> supplier) {
+        return supplier.get();
     }
 }

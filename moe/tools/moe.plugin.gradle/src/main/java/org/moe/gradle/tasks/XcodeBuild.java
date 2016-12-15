@@ -17,6 +17,7 @@ limitations under the License.
 package org.moe.gradle.tasks;
 
 import org.gradle.api.GradleException;
+import org.gradle.api.logging.LogLevel;
 import org.gradle.api.tasks.Input;
 import org.gradle.api.tasks.InputDirectory;
 import org.gradle.api.tasks.Optional;
@@ -27,10 +28,11 @@ import org.moe.common.developer.ProvisioningProfile;
 import org.moe.document.pbxproj.PBXNativeTarget;
 import org.moe.document.pbxproj.PBXObject;
 import org.moe.document.pbxproj.PBXObjectRef;
-import org.moe.document.pbxproj.ProjFile;
+import org.moe.document.pbxproj.ProjectFile;
 import org.moe.document.pbxproj.XCBuildConfiguration;
 import org.moe.document.pbxproj.XCConfigurationList;
-import org.moe.document.pbxproj.nextstep.Dictionary.Field;
+import org.moe.document.pbxproj.nextstep.NextStep;
+import org.moe.document.pbxproj.nextstep.Value;
 import org.moe.gradle.MoeExtension;
 import org.moe.gradle.MoePlatform;
 import org.moe.gradle.MoePlugin;
@@ -57,6 +59,7 @@ import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
+import java.util.Map.Entry;
 import java.util.Properties;
 import java.util.Set;
 import java.util.regex.Pattern;
@@ -65,11 +68,14 @@ import java.util.stream.Collectors;
 public class XcodeBuild extends AbstractBaseTask {
 
     private static final String CONVENTION_TARGET = "target";
+    private static final String CONVENTION_SCHEME = "scheme";
     private static final String CONVENTION_CONFIGURATION = "configuration";
     private static final String CONVENTION_SDK = "sdk";
     private static final String CONVENTION_XCODE_PROJECT_FILE = "xcodeProjectFile";
+    private static final String CONVENTION_XCODE_WORKSPACE_FILE = "xcodeWorkspaceFile";
     private static final String CONVENTION_ADDITIONAL_PARAMETERS = "additionalParameters";
     private static final String CONVENTION_PROVISIONING_PROFILE = "provisioningProfile";
+    private static final String CONVENTION_PROVISIONING_PROFILE_SPECIFIER = "provisioningProfileSpecifier";
     private static final String CONVENTION_SIGNING_IDENTITY = "signingIdentity";
     private static final String CONVENTION_DEVELOPMENT_TEAM = "developmentTeam";
     private static final String CONVENTION_XCODE_BUILD_ROOT = "xcodeBuildRoot";
@@ -83,14 +89,16 @@ public class XcodeBuild extends AbstractBaseTask {
         return Require.nonNull(sourceSet);
     }
 
-    private @Nullable Mode mode;
+    @Nullable
+    private Mode mode;
 
     @NotNull
     public Mode getMode() {
         return Require.nonNull(mode);
     }
 
-    private @Nullable MoePlatform platform;
+    @Nullable
+    private MoePlatform platform;
 
     @NotNull
     public MoePlatform getPlatform() {
@@ -120,6 +128,21 @@ public class XcodeBuild extends AbstractBaseTask {
     @IgnoreUnused
     public void setTarget(@Nullable String target) {
         this.target = target;
+    }
+
+    @Nullable
+    private String scheme;
+
+    @Input
+    @Optional
+    @Nullable
+    public String getScheme() {
+        return nullableGetOrConvention(scheme, CONVENTION_SCHEME);
+    }
+
+    @IgnoreUnused
+    public void setScheme(@Nullable String scheme) {
+        this.scheme = scheme;
     }
 
     @Nullable
@@ -164,6 +187,25 @@ public class XcodeBuild extends AbstractBaseTask {
     }
 
     @Nullable
+    private Object xcodeWorkspaceFile;
+
+    @InputDirectory
+    @Optional
+    @Nullable
+    public File getXcodeWorkspaceFile() {
+        final Object object = nullableGetOrConvention(xcodeWorkspaceFile, CONVENTION_XCODE_WORKSPACE_FILE);
+        if (object == null) {
+            return null;
+        }
+        return getProject().file(object);
+    }
+
+    @IgnoreUnused
+    public void setXcodeWorkspaceFile(@Nullable Object xcodeWorkspaceFile) {
+        this.xcodeWorkspaceFile = xcodeWorkspaceFile;
+    }
+
+    @Nullable
     private List<String> additionalParameters;
 
     @Input
@@ -190,6 +232,21 @@ public class XcodeBuild extends AbstractBaseTask {
     @IgnoreUnused
     public void setProvisioningProfile(@Nullable String provisioningProfile) {
         this.provisioningProfile = provisioningProfile;
+    }
+
+    @Nullable
+    private String provisioningProfileSpecifier;
+
+    @Input
+    @Optional
+    @Nullable
+    public String getProvisioningProfileSpecifier() {
+        return nullableGetOrConvention(provisioningProfileSpecifier, CONVENTION_PROVISIONING_PROFILE);
+    }
+
+    @IgnoreUnused
+    public void setProvisioningProfileSpecifier(@Nullable String provisioningProfileSpecifier) {
+        this.provisioningProfileSpecifier = provisioningProfileSpecifier;
     }
 
     @Nullable
@@ -278,13 +335,19 @@ public class XcodeBuild extends AbstractBaseTask {
             throw new GradleException(e.getMessage(), e);
         }
         Map<String, String> xcodeBuildSettings = new HashMap<>();
-        xcodeBuildSettingsP.forEach((k, v) -> xcodeBuildSettings.put((String) k, (String) v));
+        xcodeBuildSettingsP.forEach((k, v) -> xcodeBuildSettings.put((String)k, (String)v));
         return xcodeBuildSettings;
     }
 
     @Override
     protected void run() {
         getMoePlugin().requireMacHostOrRemoteServerConfig(this);
+
+        if (getXcodeWorkspaceFile() != null && getScheme() == null) {
+            String set = SourceSet.MAIN_SOURCE_SET_NAME.equals(sourceSet.getName()) ? "main" : "test";
+            throw new GradleException("Using Xcode workspaces requires schemes! Please set the "
+                    + "moe.xcode." + set + "Scheme property");
+        }
 
         final Server remoteServer = getMoePlugin().getRemoteServer();
         if (remoteServer != null) {
@@ -432,21 +495,33 @@ public class XcodeBuild extends AbstractBaseTask {
         final String PROVISIONING_PROFILE;
         final String provisioningProfile = getProvisioningProfile();
         if (provisioningProfile != null && !provisioningProfile.isEmpty()) {
-            String uuid;
-            File fileProvisioningProfile = new File(provisioningProfile);
-            if (fileProvisioningProfile.exists()) {
-                try {
-                    uuid = ProvisioningProfile.getUUIDFromProfile(fileProvisioningProfile);
-                } catch (Exception e) {
-                    throw new GradleException(e.getMessage(), e);
-                }
-                PROVISIONING_PROFILE = uuid;
+            if (provisioningProfile
+                    .matches("^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$")) {
+                PROVISIONING_PROFILE = provisioningProfile;
             } else {
-                throw new GradleException("Failed to find provisioning profile: " + provisioningProfile);
+                File fileProvisioningProfile = new File(provisioningProfile);
+                if (fileProvisioningProfile.exists()) {
+                    try {
+                        PROVISIONING_PROFILE = ProvisioningProfile.getUUIDFromProfile(fileProvisioningProfile);
+                    } catch (Exception e) {
+                        throw new GradleException(e.getMessage(), e);
+                    }
+                } else {
+                    throw new GradleException("Failed to find provisioning profile: " + provisioningProfile);
+                }
             }
         } else {
             PROVISIONING_PROFILE = null;
             getProject().getLogger().info("Provisioning profile is not specified! Default one will be chosen!");
+        }
+
+        final String PROVISIONING_PROFILE_SPECIFIER;
+        final String provisioningProfileSpecifier = getProvisioningProfileSpecifier();
+        if (provisioningProfileSpecifier != null && !provisioningProfileSpecifier.isEmpty()) {
+            PROVISIONING_PROFILE_SPECIFIER = provisioningProfileSpecifier;
+        } else {
+            PROVISIONING_PROFILE_SPECIFIER = null;
+            getProject().getLogger().info("Provisioning profile specifier is not specified! Default one will be chosen!");
         }
 
         final String CODE_SIGN_IDENTITY;
@@ -470,43 +545,73 @@ public class XcodeBuild extends AbstractBaseTask {
         final List<String> args = new ArrayList<>();
         final Server remoteServer = getMoePlugin().getRemoteServer();
 
-        args.add("-target");
-        args.add(getTarget());
-
         args.add("-configuration");
         args.add(getConfiguration());
 
         args.add("-sdk");
         args.add(getSdk());
 
-        args.add("-project");
-
         final String _xcodeProjectFile;
+        final String _xcodeWorkspaceFile;
         final String _xcodeBuildRoot;
         final String _configurationBuildDir;
 
         if (remoteServer != null) {
             final Path xcodeProjectFileRel;
+            final Path xcodeWorkspaceFileRel;
             final Path xcodeBuildRootRel;
             final Path configurationBuildDirRel;
             try {
                 xcodeProjectFileRel = getInnerProjectRelativePath(getXcodeProjectFile());
+                if (getXcodeWorkspaceFile() != null) {
+                    xcodeWorkspaceFileRel = getInnerProjectRelativePath(getXcodeWorkspaceFile());
+                } else {
+                    xcodeWorkspaceFileRel = null;
+                }
                 xcodeBuildRootRel = getInnerProjectRelativePath(getXcodeBuildRoot());
                 configurationBuildDirRel = getInnerProjectRelativePath(getConfigurationBuildDir());
             } catch (IOException e) {
                 throw new GradleException("Unsupported configuration", e);
             }
             _xcodeProjectFile = remoteServer.getRemotePath(xcodeProjectFileRel);
+            if (xcodeWorkspaceFileRel != null) {
+                _xcodeWorkspaceFile = remoteServer.getRemotePath(xcodeWorkspaceFileRel);
+            } else {
+                _xcodeWorkspaceFile = null;
+            }
             _xcodeBuildRoot = remoteServer.getRemotePath(xcodeBuildRootRel);
             _configurationBuildDir = remoteServer.getRemotePath(configurationBuildDirRel);
 
         } else {
             _xcodeProjectFile = getXcodeProjectFile().getAbsolutePath();
+            if (getXcodeWorkspaceFile() != null) {
+                _xcodeWorkspaceFile = getXcodeWorkspaceFile().getAbsolutePath();
+            } else {
+                _xcodeWorkspaceFile = null;
+            }
             _xcodeBuildRoot = getXcodeBuildRoot().getAbsolutePath();
             _configurationBuildDir = getConfigurationBuildDir().getAbsolutePath();
         }
 
-        args.add(_xcodeProjectFile);
+        if (_xcodeWorkspaceFile != null) {
+            args.add("-workspace");
+            args.add(_xcodeWorkspaceFile);
+
+            args.add("-scheme");
+            args.add(getScheme());
+        } else {
+            args.add("-project");
+            args.add(_xcodeProjectFile);
+
+            final String scheme = getScheme();
+            if (scheme != null) {
+                args.add("-scheme");
+                args.add(scheme);
+            } else {
+                args.add("-target");
+                args.add(getTarget());
+            }
+        }
 
         args.addAll(getAdditionalParameters());
 
@@ -517,6 +622,9 @@ public class XcodeBuild extends AbstractBaseTask {
         args.add("SHARED_PRECOMPS_DIR=" + _xcodeBuildRoot + "/shared_precomps");
         if (PROVISIONING_PROFILE != null) {
             args.add("PROVISIONING_PROFILE=" + PROVISIONING_PROFILE);
+        }
+        if (PROVISIONING_PROFILE_SPECIFIER != null) {
+            args.add("PROVISIONING_PROFILE_SPECIFIER=" + PROVISIONING_PROFILE_SPECIFIER);
         }
         if (CODE_SIGN_IDENTITY != null) {
             args.add("CODE_SIGN_IDENTITY=" + CODE_SIGN_IDENTITY);
@@ -533,14 +641,6 @@ public class XcodeBuild extends AbstractBaseTask {
     @NotNull
     public List<XcodeProvider> getXcodeProviderTaskDeps() {
         return Collections.unmodifiableList(Require.nonNull(xcodeProviderTaskDeps));
-    }
-
-    private XcodeProjectGenerator projectGeneratorTaskDep;
-
-    @NotNull
-    @IgnoreUnused
-    public XcodeProjectGenerator getProjectGeneratorTaskDep() {
-        return Require.nonNull(projectGeneratorTaskDep);
     }
 
     protected final void setupMoeTask(@NotNull SourceSet sourceSet, @NotNull Mode mode, @NotNull MoePlatform platform) {
@@ -572,35 +672,45 @@ public class XcodeBuild extends AbstractBaseTask {
         });
         xcodeProviderTaskDeps = xcodeProviderTasks;
 
-        final XcodeProjectGenerator projectGenerator = getMoePlugin().getTaskBy(XcodeProjectGenerator.class);
-        projectGeneratorTaskDep = projectGenerator;
-        dependsOn(projectGenerator);
-
         // Update convention mapping
         addConvention(CONVENTION_TARGET, () -> {
             String targetName;
             if (SourceSet.MAIN_SOURCE_SET_NAME.equals(sourceSet.getName())) {
-                targetName = projectGenerator.getProjectName();
+                targetName = ext.xcode.getMainTarget();
             } else {
-                String testTarget = ext.xcode.getTestTarget();
-                if ((testTarget == null) || testTarget.isEmpty()) {
-                    testTarget = projectGenerator.getProjectName() + "-Test";
-                }
-                targetName = testTarget;
+                targetName = ext.xcode.getTestTarget();
             }
             return targetName;
+        });
+        addConvention(CONVENTION_SCHEME, () -> {
+            String schemeName;
+            if (SourceSet.MAIN_SOURCE_SET_NAME.equals(sourceSet.getName())) {
+                schemeName = ext.xcode.getMainScheme();
+            } else {
+                schemeName = ext.xcode.getTestScheme();
+            }
+            return schemeName;
         });
         addConvention(CONVENTION_CONFIGURATION, mode::getXcodeCompatibleName);
         addConvention(CONVENTION_SDK, () -> platform.platformName);
         addConvention(CONVENTION_XCODE_PROJECT_FILE, () ->
-                resolvePathRelativeToRoot(projectGenerator.getXcodeProjectDir(), projectGenerator.getProjectName() + ".xcodeproj"));
+                resolvePathRelativeToRoot(getProject().file(ext.xcode.getProject())));
+        addConvention(CONVENTION_XCODE_WORKSPACE_FILE, () -> {
+            final Object workspace = ext.xcode.getWorkspace();
+            if (workspace == null) {
+                return null;
+            }
+            return resolvePathRelativeToRoot(getProject().file(workspace));
+        });
         addConvention(CONVENTION_XCODE_BUILD_ROOT, () -> resolvePathInBuildDir(out));
         addConvention(CONVENTION_ADDITIONAL_PARAMETERS, () ->
                 new ArrayList<>(Arrays.asList("MOE_GRADLE_EXTERNAL_BUILD=YES", "ONLY_ACTIVE_ARCH=NO")));
         addConvention(CONVENTION_PROVISIONING_PROFILE, ext.signing::getProvisioningProfile);
         addConvention(CONVENTION_SIGNING_IDENTITY, ext.signing::getSigningIdentity);
         addConvention(CONVENTION_DEVELOPMENT_TEAM, () -> {
-            if (!xcodeprojDevelopmentTeamIsSet() || !ext.signing.usesDefaultDevelopmentTeam()) {
+            if (!ext.signing.usesDefaultDevelopmentTeam()) {
+                return ext.signing.getDevelopmentTeam();
+            } else if (!xcodeprojDevelopmentTeamIsSet()) {
                 return ext.signing.getDevelopmentTeam();
             } else {
                 return null;
@@ -615,27 +725,45 @@ public class XcodeBuild extends AbstractBaseTask {
     private boolean xcodeprojDevelopmentTeamIsSet() {
         try {
             // Open Xcode project
-            @NotNull File xcodeproj = getXcodeProjectFile();
-            final ProjFile project = new ProjFile(xcodeproj);
+            final File xcodeproj = Require.nonNull(getXcodeProjectFile());
+            final ProjectFile project = new ProjectFile(xcodeproj);
+            final String target = Require.nonNull(getTarget());
 
             // Search for target with name
-            Field<PBXObjectRef<? extends PBXObject>, PBXObject> nTargetField = project.getRoot().getObjects().findFirst(
-                    field -> field.value instanceof PBXNativeTarget && ((PBXNativeTarget)field.key.getReferenced())
-                            .getName().equals(target));
-            Require.nonNull(nTargetField,
+            final java.util.Optional<Entry<PBXObjectRef<? extends PBXObject>, PBXObject>> optional = project.getRoot()
+                    .getObjects().entrySet().stream()
+                    .filter(field -> field.getValue() instanceof PBXNativeTarget && ((PBXNativeTarget)field.getKey()
+                            .getReferenced()).getName().equals(target)).findFirst();
+            Require.TRUE(optional.isPresent(),
                     "Target with name '" + target + "' doesn't exist in Xcode project at " + xcodeproj
                             .getAbsolutePath());
-            PBXNativeTarget nTarget = (PBXNativeTarget)nTargetField.value;
+            PBXNativeTarget nTarget = (PBXNativeTarget)optional.get().getValue();
 
             // Search for build configuration with name
             XCConfigurationList xcConfigurationList = nTarget.getBuildConfigurationList().getReferenced();
-            for (PBXObjectRef<XCBuildConfiguration> ref : xcConfigurationList.getBuildConfigurations()) {
+            for (PBXObjectRef<XCBuildConfiguration> ref : xcConfigurationList.getOrCreateBuildConfigurations()) {
                 XCBuildConfiguration xcBuildConfiguration = ref.getReferenced();
                 if (xcBuildConfiguration.getName().equals(getMode().getXcodeCompatibleName())) {
-                    return xcBuildConfiguration.getValue("DEVELOPMENT_TEAM") != null;
+                    final NextStep developmentTeam = xcBuildConfiguration.getOrCreateBuildSettings().get("DEVELOPMENT_TEAM");
+                    if (developmentTeam != null && ((Value)developmentTeam).value.length() != 0) {
+                        return true;
+                    }
+                }
+            }
+
+            xcConfigurationList = project.getRoot().getRootObject().getReferenced().getBuildConfigurationList()
+                    .getReferenced();
+            for (PBXObjectRef<XCBuildConfiguration> ref : xcConfigurationList.getOrCreateBuildConfigurations()) {
+                XCBuildConfiguration xcBuildConfiguration = ref.getReferenced();
+                if (xcBuildConfiguration.getName().equals(getMode().getXcodeCompatibleName())) {
+                    final NextStep developmentTeam = xcBuildConfiguration.getOrCreateBuildSettings().get("DEVELOPMENT_TEAM");
+                    if (developmentTeam != null && ((Value)developmentTeam).value.length() != 0) {
+                        return true;
+                    }
                 }
             }
         } catch (Throwable t) {
+            getProject().getLogger().log(LogLevel.ERROR, "Failed to read Xcode project file", t);
             return false;
         }
         return false;
