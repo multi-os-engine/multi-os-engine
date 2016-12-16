@@ -17,17 +17,17 @@
 package org.moe.wizards;
 
 import java.io.File;
-import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
+import java.util.ArrayList;
 
-import org.eclipse.core.resources.IProject;
-import org.eclipse.core.resources.IProjectDescription;
+import org.eclipse.buildship.core.CorePlugin;
+import org.eclipse.buildship.core.workspace.GradleBuild;
+import org.eclipse.buildship.core.workspace.NewProjectHandler;
 import org.eclipse.core.resources.IWorkspace;
 import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IPath;
 import org.eclipse.core.runtime.IProgressMonitor;
-import org.eclipse.core.runtime.Path;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.jface.wizard.Wizard;
 import org.eclipse.ui.INewWizard;
@@ -36,8 +36,10 @@ import org.eclipse.ui.actions.WorkspaceModifyOperation;
 import org.moe.generator.project.MOEProjectComposer;
 import org.moe.generator.project.MOEProjectComposer.MOEProjectComposerException;
 import org.moe.generator.project.MOEProjectComposer.Template;
-import org.moe.gradle.GradleTask;
 import org.moe.utils.MessageFactory;
+
+import com.gradleware.tooling.toolingclient.GradleDistribution;
+import com.gradleware.tooling.toolingmodel.repository.FixedRequestAttributes;
 
 public abstract class AbstractProjectWizard extends Wizard implements INewWizard {
 
@@ -100,24 +102,8 @@ public abstract class AbstractProjectWizard extends Wizard implements INewWizard
 				}
 				
 				monitor.worked(1);
-
-				int gradleResult = -1;
-				String gradleOutput = "";
-
-				try {
-					GradleTask eclipseTask = new GradleTask(projectFile, "eclipse", null, monitor);
-					gradleResult = eclipseTask.run();
-					gradleOutput = eclipseTask.getOutput();
-				} catch (IOException ignore) {
-					System.out.println("Gradle error: " + ignore.getMessage());
-				}
-
-				if (gradleResult != 0) {
-					throw new CoreException(MessageFactory.getError("Unable run eclipse command: " + gradleOutput));
-				}
-				monitor.worked(1);
-
-				createProject(projectName, projectFile.getAbsolutePath(), monitor);
+				
+				performImportProject(NewProjectHandler.IMPORT_AND_MERGE, projectFile);
 				monitor.worked(1);
 			}
 		};
@@ -136,7 +122,7 @@ public abstract class AbstractProjectWizard extends Wizard implements INewWizard
 		}
 
 		if (error != null) {
-			MessageFactory.showErrorDialog("Error", error);
+			MessageFactory.showErrorDialog(error);
 			return false;
 		}
 
@@ -159,17 +145,15 @@ public abstract class AbstractProjectWizard extends Wizard implements INewWizard
 		addPage(projectSettingsPage);
 	}
 	
-	private void createProject(String projectName, String projectPath, IProgressMonitor monitor) throws CoreException {
-		IWorkspace workspace = ResourcesPlugin.getWorkspace();
-		IProject project = workspace.getRoot().getProject(projectName);
-		if (project != null) {
-			IProjectDescription description = workspace.newProjectDescription(projectName);
-			description.setName(projectName);
-			IPath path = new Path(projectPath);
-			description.setLocation(path);
-			project.create(description, monitor);
-			project.open(monitor);
-		}
-	}
+	public boolean performImportProject(NewProjectHandler newProjectHandler, File projectDir) {
+        FixedRequestAttributes rootRequestAttributes = toFixedAttributes(projectDir);
+        GradleBuild build = CorePlugin.gradleWorkspaceManager().getGradleBuild(rootRequestAttributes);
+        build.synchronize(newProjectHandler);
+        return true;
+    }
+	
+	public FixedRequestAttributes toFixedAttributes(File projectDir) {
+        return new FixedRequestAttributes(projectDir, null, GradleDistribution.fromBuild(), null, new ArrayList<String>(), new ArrayList<String>());
+    }
 
 }
