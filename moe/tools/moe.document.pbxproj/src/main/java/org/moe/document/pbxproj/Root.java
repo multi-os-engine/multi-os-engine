@@ -184,7 +184,11 @@ public class Root extends PBXObject {
                     } else if (isa2 == null) {
                         return 1;
                     }
-                    return isa1.compareTo(isa2);
+                    final int isa = isa1.compareTo(isa2);
+                    if (isa != 0) {
+                        return isa;
+                    }
+                    return o1.getKey().value.compareTo(o2.getKey().value);
                 }
             });
         }
