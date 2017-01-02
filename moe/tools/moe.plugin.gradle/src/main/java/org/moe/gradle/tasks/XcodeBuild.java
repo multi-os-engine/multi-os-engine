@@ -316,6 +316,7 @@ public class XcodeBuild extends AbstractBaseTask {
         this.xcodeBuildSettingsFile = xcodeBuildSettingsFile;
     }
 
+    @Nullable
     private Map<String, String> xcodeBuildSettings;
 
     @NotNull
@@ -324,6 +325,14 @@ public class XcodeBuild extends AbstractBaseTask {
             this.xcodeBuildSettings = getCachedXcodeBuildSettings();
         }
         return Require.nonNull(xcodeBuildSettings);
+    }
+
+    @Nullable
+    public Map<String, String> getNullableXcodeBuildSettings() {
+        if (xcodeBuildSettings == null && getState().getSkipped()) {
+            this.xcodeBuildSettings = getCachedXcodeBuildSettings();
+        }
+        return xcodeBuildSettings;
     }
 
     @NotNull

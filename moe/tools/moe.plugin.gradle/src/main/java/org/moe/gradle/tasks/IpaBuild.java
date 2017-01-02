@@ -17,7 +17,9 @@ limitations under the License.
 package org.moe.gradle.tasks;
 
 import org.gradle.api.GradleException;
+import org.gradle.api.tasks.Input;
 import org.gradle.api.tasks.InputDirectory;
+import org.gradle.api.tasks.Optional;
 import org.gradle.api.tasks.OutputFile;
 import org.gradle.api.tasks.SourceSet;
 import org.moe.gradle.MoeExtension;
@@ -35,6 +37,8 @@ import java.io.File;
 import java.io.IOException;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.Date;
+import java.util.Map;
 
 public class IpaBuild extends AbstractBaseTask {
 
@@ -45,9 +49,14 @@ public class IpaBuild extends AbstractBaseTask {
     private Object inputApp;
 
     @InputDirectory
-    @NotNull
+    @Optional
+    @Nullable
     public File getInputApp() {
-        return getProject().file(getOrConvention(inputApp, CONVENTION_INPUT_APP));
+        final Object inputApp = nullableGetOrConvention(this.inputApp, CONVENTION_INPUT_APP);
+        if (inputApp == null) {
+            return null;
+        }
+        return getProject().file(inputApp);
     }
 
     @IgnoreUnused
@@ -69,11 +78,23 @@ public class IpaBuild extends AbstractBaseTask {
         this.outputIpa = outputIpa;
     }
 
+    @NotNull
+    private final String ipaBuildTaskDate = new Date().toString();
+
+    @Input
+    @NotNull
+    @IgnoreUnused
+    public String getIpaBuildTaskDate() {
+        // NOTE: never allow Gradle to skip this task due to incremental build!!!
+        return ipaBuildTaskDate;
+    }
+
     @Override
     protected void run() {
         getMoePlugin().requireMacHostOrRemoteServerConfig(this);
 
         final Server remoteServer = getMoePlugin().getRemoteServer();
+        final File inputApp = Require.nonNull(getInputApp());
         if (remoteServer != null) {
             final Path ipaRel;
             try {
@@ -85,7 +106,7 @@ public class IpaBuild extends AbstractBaseTask {
 
             // Upload project
             final FileList list = new FileList(getProject().getProjectDir(), remoteServer.getBuildDir());
-            final String remoteApp = list.add(getInputApp());
+            final String remoteApp = list.add(inputApp);
 
             // NOTE: do not re-upload the files, incremental builds are disabled for remotely executed tasks, the
             // files are guarantied to be there. Also, enabling this would possibly break the signed files.
@@ -104,7 +125,7 @@ public class IpaBuild extends AbstractBaseTask {
                 // Set options
                 spec.args("-sdk", "iphoneos");
                 spec.args("PackageApplication");
-                spec.args("-v", getInputApp().getAbsolutePath());
+                spec.args("-v", inputApp.getAbsolutePath());
                 spec.args("-o", getOutputIpa().getAbsolutePath());
             });
         }
@@ -138,12 +159,17 @@ public class IpaBuild extends AbstractBaseTask {
 
         // Update convention mapping
         addConvention(CONVENTION_INPUT_APP, () -> {
+            final Map<String, String> buildSettings = xcodeBuildTask.getNullableXcodeBuildSettings();
+            if (buildSettings == null) {
+                return null;
+            }
             final String sym = xcodeBuildTask.getConfigurationBuildDir().getAbsolutePath();
-            final String productName = xcodeBuildTask.getXcodeBuildSettings().get("PRODUCT_NAME");
+            final String productName = buildSettings.get("PRODUCT_NAME");
             return Paths.get(sym, productName + ".app").toFile();
         });
         addConvention(CONVENTION_OUTPUT_IPA, () -> {
-            final String productName = xcodeBuildTask.getXcodeBuildSettings().get("PRODUCT_NAME");
+            final Map<String, String> buildSettings = xcodeBuildTask.getXcodeBuildSettings();
+            final String productName = buildSettings.get("PRODUCT_NAME");
             return resolvePathInBuildDir(productName + ".ipa");
         });
         addConvention(CONVENTION_LOG_FILE, () -> resolvePathInBuildDir(out, "IpaBuild.log"));
