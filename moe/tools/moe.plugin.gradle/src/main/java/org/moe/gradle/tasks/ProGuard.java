@@ -19,9 +19,6 @@ package org.moe.gradle.tasks;
 import org.gradle.api.GradleException;
 import org.gradle.api.Project;
 import org.gradle.api.Task;
-import org.gradle.api.artifacts.Configuration;
-import org.gradle.api.artifacts.Dependency;
-import org.gradle.api.artifacts.DependencySet;
 import org.gradle.api.file.ConfigurableFileCollection;
 import org.gradle.api.plugins.JavaPlugin;
 import org.gradle.api.tasks.InputFile;
@@ -38,6 +35,8 @@ import org.moe.gradle.anns.NotNull;
 import org.moe.gradle.anns.Nullable;
 import org.moe.gradle.utils.FileUtils;
 import org.moe.gradle.utils.Require;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.io.File;
 import java.io.IOException;
@@ -50,6 +49,8 @@ import java.util.Set;
 import java.util.regex.Pattern;
 
 public class ProGuard extends AbstractBaseTask {
+
+    private static final Logger LOG = LoggerFactory.getLogger(ProGuard.class);
 
     private static final String CONVENTION_PROGUARD_JAR = "proGuardJar";
     private static final String CONVENTION_BASE_CFG_FILE = "baseCfgFile";
@@ -185,7 +186,7 @@ public class ProGuard extends AbstractBaseTask {
             if (it.exists()) {
                 conf.append("-injars ").append(it.getAbsolutePath()).append("(!**.framework/**,!**.bundle/**)\n");
             } else {
-                getProject().getLogger().warn("InJar " + it + " for ProGuard task doesn't exist!");
+                LOG.debug("inJars file doesn't exist: " + it.getAbsolutePath());
             }
         });
 
@@ -199,7 +200,7 @@ public class ProGuard extends AbstractBaseTask {
             if (it.exists()) {
                 conf.append("-libraryjars ").append(it.getAbsolutePath()).append("\n");
             } else {
-                getProject().getLogger().warn("LibraryJar " + it + " for ProGuard task doesn't exist!");
+                LOG.debug("libraryJars file doesn't exist: " + it.getAbsolutePath());
             }
         });
 
@@ -247,7 +248,7 @@ public class ProGuard extends AbstractBaseTask {
         return javaCompileTaskDep;
     }
 
-    protected final void setupMoeTask(@NotNull SourceSet sourceSet) {
+    protected final void setupMoeTask(final @NotNull SourceSet sourceSet) {
         Require.nonNull(sourceSet);
 
         setSupportsRemoteBuild(false);
@@ -262,7 +263,6 @@ public class ProGuard extends AbstractBaseTask {
         setDescription("Generates ProGuarded jar files (sourceset: " + sourceSet.getName() + ").");
 
         final boolean usesCustomInJars = project.hasProperty(MOE_PROGUARD_INJARS_PROPERTY);
-        final JavaCompile javaCompileTask;
         if (!usesCustomInJars) {
             // Add dependencies
             final String classesTaskName;
@@ -280,12 +280,10 @@ public class ProGuard extends AbstractBaseTask {
             classesTaskDep = classesTask;
             dependsOn(classesTask);
 
-            javaCompileTask = getMoePlugin().getTaskByName(compileJavaTaskName);
+            final JavaCompile javaCompileTask = getMoePlugin().getTaskByName(compileJavaTaskName);
             javaCompileTaskDep = javaCompileTask;
             javaCompileTask.setSourceCompatibility("1.8");
             javaCompileTask.setTargetCompatibility("1.8");
-        } else {
-            javaCompileTask = null;
         }
 
         addConvention(CONVENTION_PROGUARD_JAR, sdk::getProGuardJar);
@@ -315,11 +313,9 @@ public class ProGuard extends AbstractBaseTask {
             final HashSet<Object> jars = new HashSet<>();
 
             if (!usesCustomInJars) {
-                final Configuration compileConf = project.getConfigurations().getByName(sourceSet.getCompileConfigurationName());
-                final DependencySet dependencies = compileConf.getDependencies();
-                final Set<File> compileConfFiles = compileConf.files(dependencies.toArray(new Dependency[dependencies.size()]));
-                jars.addAll(compileConfFiles);
-                jars.add(javaCompileTask.getDestinationDir());
+                jars.addAll(sourceSet.getRuntimeClasspath().getFiles());
+                jars.remove(sdk.getCoreJar());
+                jars.remove(ext.getPlatformJar());
 
             } else {
                 final String injars = (String) project.property(MOE_PROGUARD_INJARS_PROPERTY);

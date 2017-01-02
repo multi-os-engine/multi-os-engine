@@ -135,16 +135,6 @@ public class ResourcePackager {
         Require.nonNull(jar);
         Require.nonNull(sourceSet);
 
-        sourceSet.getResources().getSrcDirs().forEach(src -> {
-            ext.plugin.getLogger().debug("Adding path " + src + " to " + jar.getName());
-            jar.from(src, new ConfigurationClosure<CopySpec>(ext.plugin.getProject()) {
-                @Override
-                public void doCall(final CopySpec spec) {
-                    ext.resources.getResourcesFromSourceDirExcludes().forEach(spec::exclude);
-                }
-            });
-        });
-
         if (!ext.resources.isEnableResourcesFromSourceDirs()) {
             return;
         }
