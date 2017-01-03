@@ -23,6 +23,7 @@ import apple.coregraphics.struct.CGRect;
 import apple.coregraphics.struct.CGSize;
 import apple.foundation.NSArray;
 import apple.foundation.NSCoder;
+import apple.foundation.NSDictionary;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
 import apple.gameplaykit.GKPolygonObstacle;
@@ -240,6 +241,10 @@ public class SKShapeNode extends SKNode {
     public static native long version_static();
 
     @Generated
+    @Selector("attributeValues")
+    public native NSDictionary<String, ? extends SKAttributeValue> attributeValues();
+
+    @Generated
     @Selector("blendMode")
     @NInt
     public native long blendMode();
@@ -305,6 +310,10 @@ public class SKShapeNode extends SKNode {
     public native CGPathRef path();
 
     @Generated
+    @Selector("setAttributeValues:")
+    public native void setAttributeValues(NSDictionary<String, ? extends SKAttributeValue> value);
+
+    @Generated
     @Selector("setBlendMode:")
     public native void setBlendMode(@NInt long value);
 
@@ -357,6 +366,10 @@ public class SKShapeNode extends SKNode {
     public native void setStrokeTexture(SKTexture value);
 
     @Generated
+    @Selector("setValue:forAttributeNamed:")
+    public native void setValueForAttributeNamed(SKAttributeValue value, String key);
+
+    @Generated
     @Selector("strokeColor")
     public native UIColor strokeColor();
 
@@ -367,4 +380,8 @@ public class SKShapeNode extends SKNode {
     @Generated
     @Selector("strokeTexture")
     public native SKTexture strokeTexture();
+
+    @Generated
+    @Selector("valueForAttributeNamed:")
+    public native SKAttributeValue valueForAttributeNamed(String key);
 }

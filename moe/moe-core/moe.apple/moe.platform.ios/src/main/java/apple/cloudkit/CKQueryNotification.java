@@ -141,7 +141,7 @@ public class CKQueryNotification extends CKNotification {
     @Generated
     @Selector("notificationFromRemoteNotificationDictionary:")
     public static native CKQueryNotification notificationFromRemoteNotificationDictionary(
-            NSDictionary<String, ? extends NSObject> notificationDictionary);
+            NSDictionary<?, ?> notificationDictionary);
 
     @Generated
     @Selector("resolveClassMethod:")

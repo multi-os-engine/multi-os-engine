@@ -189,6 +189,14 @@ public class INPersonHandle extends NSObject implements NSCopying, NSSecureCodin
     public native INPersonHandle initWithValueType(String value, @NInt long type);
 
     @Generated
+    @Selector("initWithValue:type:label:")
+    public native INPersonHandle initWithValueTypeLabel(String value, @NInt long type, String label);
+
+    @Generated
+    @Selector("label")
+    public native String label();
+
+    @Generated
     @ProtocolClassMethod("supportsSecureCoding")
     public boolean _supportsSecureCoding() {
         return supportsSecureCoding();

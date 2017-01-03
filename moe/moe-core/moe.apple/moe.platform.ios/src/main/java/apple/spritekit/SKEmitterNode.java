@@ -22,6 +22,7 @@ import apple.coregraphics.struct.CGSize;
 import apple.coregraphics.struct.CGVector;
 import apple.foundation.NSArray;
 import apple.foundation.NSCoder;
+import apple.foundation.NSDictionary;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
 import apple.gameplaykit.GKPolygonObstacle;
@@ -195,6 +196,10 @@ public class SKEmitterNode extends SKNode {
     @Generated
     @Selector("advanceSimulationTime:")
     public native void advanceSimulationTime(double sec);
+
+    @Generated
+    @Selector("attributeValues")
+    public native NSDictionary<String, ? extends SKAttributeValue> attributeValues();
 
     @Generated
     @Selector("emissionAngle")
@@ -423,6 +428,10 @@ public class SKEmitterNode extends SKNode {
     public native void resetSimulation();
 
     @Generated
+    @Selector("setAttributeValues:")
+    public native void setAttributeValues(NSDictionary<String, ? extends SKAttributeValue> value);
+
+    @Generated
     @Selector("setEmissionAngle:")
     public native void setEmissionAngle(@NFloat double value);
 
@@ -621,6 +630,10 @@ public class SKEmitterNode extends SKNode {
     }
 
     @Generated
+    @Selector("setValue:forAttributeNamed:")
+    public native void setValueForAttributeNamed(SKAttributeValue value, String key);
+
+    @Generated
     @Selector("setXAcceleration:")
     public native void setXAcceleration(@NFloat double value);
 
@@ -635,6 +648,10 @@ public class SKEmitterNode extends SKNode {
     @Generated
     @Selector("targetNode")
     public native SKNode targetNode();
+
+    @Generated
+    @Selector("valueForAttributeNamed:")
+    public native SKAttributeValue valueForAttributeNamed(String key);
 
     @Generated
     @Selector("xAcceleration")

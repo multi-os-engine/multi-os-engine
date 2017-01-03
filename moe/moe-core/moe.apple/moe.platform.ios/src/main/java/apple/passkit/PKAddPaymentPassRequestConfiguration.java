@@ -159,6 +159,10 @@ public class PKAddPaymentPassRequestConfiguration extends NSObject {
     public static native long version_static();
 
     @Generated
+    @Selector("cardDetails")
+    public native NSArray<? extends PKLabeledValue> cardDetails();
+
+    @Generated
     @Selector("cardholderName")
     public native String cardholderName();
 
@@ -191,6 +195,14 @@ public class PKAddPaymentPassRequestConfiguration extends NSObject {
     public native String primaryAccountSuffix();
 
     @Generated
+    @Selector("requiresFelicaSecureElement")
+    public native boolean requiresFelicaSecureElement();
+
+    @Generated
+    @Selector("setCardDetails:")
+    public native void setCardDetails(NSArray<? extends PKLabeledValue> value);
+
+    @Generated
     @Selector("setCardholderName:")
     public native void setCardholderName(String value);
 
@@ -209,4 +221,8 @@ public class PKAddPaymentPassRequestConfiguration extends NSObject {
     @Generated
     @Selector("setPrimaryAccountSuffix:")
     public native void setPrimaryAccountSuffix(String value);
+
+    @Generated
+    @Selector("setRequiresFelicaSecureElement:")
+    public native void setRequiresFelicaSecureElement(boolean value);
 }

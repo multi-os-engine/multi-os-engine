@@ -32,7 +32,7 @@ import org.moe.natj.objc.ann.Selector;
 @ObjCProtocolName("GKLocalPlayerListener")
 public interface GKLocalPlayerListener
         extends GKChallengeListener, GKInviteEventListener, GKTurnBasedEventListener, GKSavedGameListener {
-
+    @Generated
     @IsOptional
     @Deprecated
     @Selector("player:didRequestMatchWithPlayers:")

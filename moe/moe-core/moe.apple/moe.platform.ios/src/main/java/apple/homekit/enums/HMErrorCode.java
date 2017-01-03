@@ -110,6 +110,7 @@ public final class HMErrorCode {
     @Generated @NInt public static final long InvalidOrMissingAuthorizationData = 0x0000000000000057L;
     @Generated @NInt public static final long BridgedAccessoryNotReachable = 0x0000000000000058L;
     @Generated @NInt public static final long NotAuthorizedForMicrophoneAccess = 0x0000000000000059L;
+    @Generated @NInt public static final long IncompatibleNetwork = 0x000000000000005AL;
 
     @Generated
     private HMErrorCode() {

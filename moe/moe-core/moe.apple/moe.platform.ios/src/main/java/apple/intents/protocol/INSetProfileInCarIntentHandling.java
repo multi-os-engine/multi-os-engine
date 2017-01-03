@@ -20,6 +20,7 @@ import apple.intents.INBooleanResolutionResult;
 import apple.intents.INIntegerResolutionResult;
 import apple.intents.INSetProfileInCarIntent;
 import apple.intents.INSetProfileInCarIntentResponse;
+import apple.intents.INStringResolutionResult;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.Library;
 import org.moe.natj.general.ann.Runtime;
@@ -57,6 +58,14 @@ public interface INSetProfileInCarIntentHandling {
 
     @Generated
     @IsOptional
+    @Selector("resolveProfileNameForSetProfileInCar:withCompletion:")
+    default void resolveProfileNameForSetProfileInCarWithCompletion(INSetProfileInCarIntent intent,
+            @ObjCBlock(name = "call_resolveProfileNameForSetProfileInCarWithCompletion") Block_resolveProfileNameForSetProfileInCarWithCompletion completion) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Generated
+    @IsOptional
     @Selector("resolveProfileNumberForSetProfileInCar:withCompletion:")
     default void resolveProfileNumberForSetProfileInCarWithCompletion(INSetProfileInCarIntent intent,
             @ObjCBlock(name = "call_resolveProfileNumberForSetProfileInCarWithCompletion") Block_resolveProfileNumberForSetProfileInCarWithCompletion completion) {
@@ -82,6 +91,13 @@ public interface INSetProfileInCarIntentHandling {
     public interface Block_resolveDefaultProfileForSetProfileInCarWithCompletion {
         @Generated
         void call_resolveDefaultProfileForSetProfileInCarWithCompletion(INBooleanResolutionResult arg0);
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_resolveProfileNameForSetProfileInCarWithCompletion {
+        @Generated
+        void call_resolveProfileNameForSetProfileInCarWithCompletion(INStringResolutionResult arg0);
     }
 
     @Runtime(ObjCRuntime.class)

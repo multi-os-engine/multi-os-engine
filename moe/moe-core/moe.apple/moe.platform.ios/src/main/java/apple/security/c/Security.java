@@ -1497,6 +1497,14 @@ public final class Security {
     @CVariable()
     public static native CFStringRef kSSLSessionConfig_anonymous();
 
+    @Generated
+    @CVariable()
+    public static native CFStringRef kSSLSessionConfig_3DES_fallback();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kSSLSessionConfig_TLSv1_3DES_fallback();
+
     @Runtime(CRuntime.class)
     @Generated
     public interface Block_SecAddSharedWebCredential {

@@ -169,6 +169,10 @@ public class VSAccountMetadata extends NSObject {
     public native String accountProviderIdentifier();
 
     @Generated
+    @Selector("accountProviderResponse")
+    public native VSAccountProviderResponse accountProviderResponse();
+
+    @Generated
     @Selector("authenticationExpirationDate")
     public native NSDate authenticationExpirationDate();
 

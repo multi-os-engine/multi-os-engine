@@ -27,6 +27,7 @@ public final class MPErrorCode {
     @Generated @NInt public static final long NetworkConnectionFailed = 0x0000000000000003L;
     @Generated @NInt public static final long NotFound = 0x0000000000000004L;
     @Generated @NInt public static final long NotSupported = 0x0000000000000005L;
+    @Generated @NInt public static final long Cancelled = 0x0000000000000006L;
 
     @Generated
     private MPErrorCode() {

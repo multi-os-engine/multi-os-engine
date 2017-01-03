@@ -36,10 +36,12 @@ import org.moe.natj.general.ann.NInt;
 import org.moe.natj.general.ann.NUInt;
 import org.moe.natj.general.ann.Owned;
 import org.moe.natj.general.ann.Runtime;
+import org.moe.natj.general.ptr.BoolPtr;
 import org.moe.natj.general.ptr.VoidPtr;
 import org.moe.natj.objc.Class;
 import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.SEL;
+import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
@@ -182,6 +184,12 @@ public class MDLObject extends NSObject implements MDLNamed {
     public native MDLObjectContainerComponent children();
 
     @Generated
+    @Selector("enumerateChildObjectsOfClass:root:usingBlock:stopPointer:")
+    public native void enumerateChildObjectsOfClassRootUsingBlockStopPointer(Class objectClass, MDLObject root,
+            @ObjCBlock(name = "call_enumerateChildObjectsOfClassRootUsingBlockStopPointer") Block_enumerateChildObjectsOfClassRootUsingBlockStopPointer block,
+            BoolPtr stopPointer);
+
+    @Generated
     @Selector("hidden")
     public native boolean hidden();
 
@@ -249,4 +257,11 @@ public class MDLObject extends NSObject implements MDLNamed {
     @Selector("transform")
     @MappedReturn(ObjCObjectMapper.class)
     public native MDLTransformComponent transform();
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_enumerateChildObjectsOfClassRootUsingBlockStopPointer {
+        @Generated
+        void call_enumerateChildObjectsOfClassRootUsingBlockStopPointer(MDLObject arg0, BoolPtr arg1);
+    }
 }

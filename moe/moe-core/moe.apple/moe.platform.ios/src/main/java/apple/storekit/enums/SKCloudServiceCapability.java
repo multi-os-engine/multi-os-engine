@@ -23,6 +23,7 @@ import org.moe.natj.general.ann.NUInt;
 public final class SKCloudServiceCapability {
     @Generated @NUInt public static final long None = 0x0000000000000000L;
     @Generated @NUInt public static final long MusicCatalogPlayback = 0x0000000000000001L;
+    @Generated @NUInt public static final long MusicCatalogSubscriptionEligible = 0x0000000000000002L;
     @Generated @NUInt public static final long AddToCloudMusicLibrary = 0x0000000000000100L;
 
     @Generated

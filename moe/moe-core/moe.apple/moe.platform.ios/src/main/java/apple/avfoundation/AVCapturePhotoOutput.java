@@ -196,6 +196,10 @@ public class AVCapturePhotoOutput extends AVCaptureOutput {
     public native AVCapturePhotoOutput init();
 
     @Generated
+    @Selector("isDualCameraFusionSupported")
+    public native boolean isDualCameraFusionSupported();
+
+    @Generated
     @Selector("isFlashScene")
     public native boolean isFlashScene();
 

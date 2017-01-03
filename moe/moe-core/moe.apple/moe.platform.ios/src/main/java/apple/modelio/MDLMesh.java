@@ -161,6 +161,14 @@ public class MDLMesh extends MDLObject {
 
     @Generated
     @Owned
+    @Selector("newIcosahedronWithRadius:inwardNormals:geometryType:allocator:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object newIcosahedronWithRadiusInwardNormalsGeometryTypeAllocator(float radius,
+            boolean inwardNormals, @NInt long geometryType,
+            @Mapped(ObjCObjectMapper.class) MDLMeshBufferAllocator allocator);
+
+    @Generated
+    @Owned
     @Selector("newSubdividedMesh:submeshIndex:subdivisionLevels:")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object newSubdividedMeshSubmeshIndexSubdivisionLevels(MDLMesh mesh, @NUInt long submeshIndex,
@@ -303,6 +311,10 @@ public class MDLMesh extends MDLObject {
     @Generated
     @Selector("setSubmeshes:")
     public native void setSubmeshes(NSMutableArray<MDLSubmesh> value);
+
+    @Generated
+    @Selector("setVertexBuffers:")
+    public native void setVertexBuffers(NSArray<?> value);
 
     @Generated
     @Selector("setVertexCount:")

@@ -183,8 +183,17 @@ public class INSetProfileInCarIntent extends INIntent {
             String profileLabel, NSNumber defaultProfile);
 
     @Generated
+    @Selector("initWithProfileNumber:profileName:defaultProfile:")
+    public native INSetProfileInCarIntent initWithProfileNumberProfileNameDefaultProfile(NSNumber profileNumber,
+            String profileName, NSNumber defaultProfile);
+
+    @Generated
     @Selector("profileLabel")
     public native String profileLabel();
+
+    @Generated
+    @Selector("profileName")
+    public native String profileName();
 
     @Generated
     @Selector("profileNumber")

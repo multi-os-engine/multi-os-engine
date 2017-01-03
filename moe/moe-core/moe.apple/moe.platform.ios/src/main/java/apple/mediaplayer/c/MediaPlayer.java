@@ -53,11 +53,6 @@ public final class MediaPlayer {
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
-    public static native String MPErrorDomain();
-
-    @Generated
-    @CVariable()
-    @MappedReturn(ObjCStringMapper.class)
     public static native String MPMediaEntityPropertyPersistentID();
 
     @Generated
@@ -448,6 +443,21 @@ public final class MediaPlayer {
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
+    public static native String MPVolumeViewWirelessRoutesAvailableDidChangeNotification();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String MPVolumeViewWirelessRouteActiveDidChangeNotification();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String MPErrorDomain();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
     public static native String MPNowPlayingInfoPropertyElapsedPlaybackTime();
 
     @Generated
@@ -569,14 +579,4 @@ public final class MediaPlayer {
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String MPLanguageOptionCharacteristicVoiceOverTranslation();
-
-    @Generated
-    @CVariable()
-    @MappedReturn(ObjCStringMapper.class)
-    public static native String MPVolumeViewWirelessRoutesAvailableDidChangeNotification();
-
-    @Generated
-    @CVariable()
-    @MappedReturn(ObjCStringMapper.class)
-    public static native String MPVolumeViewWirelessRouteActiveDidChangeNotification();
 }

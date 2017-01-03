@@ -240,6 +240,10 @@ public class MDLSubmesh extends NSObject implements MDLNamed {
     public native void setName(String value);
 
     @Generated
+    @Selector("setTopology:")
+    public native void setTopology(MDLSubmeshTopology value);
+
+    @Generated
     @Selector("topology")
     public native MDLSubmeshTopology topology();
 }

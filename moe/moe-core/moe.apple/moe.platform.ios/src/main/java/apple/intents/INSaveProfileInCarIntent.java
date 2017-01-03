@@ -179,8 +179,16 @@ public class INSaveProfileInCarIntent extends INIntent {
             String profileLabel);
 
     @Generated
+    @Selector("initWithProfileNumber:profileName:")
+    public native INSaveProfileInCarIntent initWithProfileNumberProfileName(NSNumber profileNumber, String profileName);
+
+    @Generated
     @Selector("profileLabel")
     public native String profileLabel();
+
+    @Generated
+    @Selector("profileName")
+    public native String profileName();
 
     @Generated
     @Selector("profileNumber")

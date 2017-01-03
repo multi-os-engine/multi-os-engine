@@ -230,6 +230,11 @@ public class INRideDriver extends INPerson implements NSCopying, NSSecureCoding 
             String rating, String phoneNumber);
 
     @Generated
+    @Selector("initWithPhoneNumber:nameComponents:displayName:image:rating:")
+    public native INRideDriver initWithPhoneNumberNameComponentsDisplayNameImageRating(String phoneNumber,
+            NSPersonNameComponents nameComponents, String displayName, INImage image, String rating);
+
+    @Generated
     @Selector("phoneNumber")
     public native String phoneNumber();
 

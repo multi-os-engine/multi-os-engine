@@ -21,7 +21,6 @@ import apple.coregraphics.struct.CGPoint;
 import apple.coregraphics.struct.CGRect;
 import apple.foundation.NSArray;
 import apple.foundation.NSCoder;
-import apple.foundation.NSDictionary;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSMutableDictionary;
 import apple.foundation.NSSet;
@@ -215,10 +214,6 @@ public class SKNode extends UIResponder implements NSCopying, NSCoding, UIFocusI
     @Selector("alpha")
     @NFloat
     public native double alpha();
-
-    @Generated
-    @Selector("attributeValues")
-    public native NSDictionary<String, ? extends SKAttributeValue> attributeValues();
 
     @Generated
     @Selector("calculateAccumulatedFrame")
@@ -424,10 +419,6 @@ public class SKNode extends UIResponder implements NSCopying, NSCoding, UIFocusI
     public native void setAlpha(@NFloat double value);
 
     @Generated
-    @Selector("setAttributeValues:")
-    public native void setAttributeValues(NSDictionary<String, ? extends SKAttributeValue> value);
-
-    @Generated
     @Selector("setConstraints:")
     public native void setConstraints(NSArray<? extends SKConstraint> value);
 
@@ -480,10 +471,6 @@ public class SKNode extends UIResponder implements NSCopying, NSCoding, UIFocusI
     public native void setUserData(NSMutableDictionary<?, ?> value);
 
     @Generated
-    @Selector("setValue:forAttributeNamed:")
-    public native void setValueForAttributeNamed(SKAttributeValue value, String key);
-
-    @Generated
     @Selector("setXScale:")
     public native void setXScale(@NFloat double value);
 
@@ -515,10 +502,6 @@ public class SKNode extends UIResponder implements NSCopying, NSCoding, UIFocusI
     @Generated
     @Selector("userData")
     public native NSMutableDictionary<?, ?> userData();
-
-    @Generated
-    @Selector("valueForAttributeNamed:")
-    public native SKAttributeValue valueForAttributeNamed(String key);
 
     @Generated
     @Selector("xScale")

@@ -85,6 +85,16 @@ public final class PassKit {
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
+    public static native String PKPaymentNetworkJCB();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String PKPaymentNetworkSuica();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
     public static native String PKPassKitErrorDomain();
 
     @Generated

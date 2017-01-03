@@ -23,6 +23,7 @@ import org.moe.natj.general.ann.NInt;
 public final class HMCharacteristicValueChargingState {
     @Generated @NInt public static final long None = 0x0000000000000000L;
     @Generated @NInt public static final long InProgress = 0x0000000000000001L;
+    @Generated @NInt public static final long NotChargeable = 0x0000000000000002L;
 
     @Generated
     private HMCharacteristicValueChargingState() {

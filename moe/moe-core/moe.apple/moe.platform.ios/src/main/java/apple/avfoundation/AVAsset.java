@@ -286,6 +286,11 @@ public class AVAsset extends NSObject implements NSCopying, AVAsynchronousKeyVal
     public native CGSize naturalSize();
 
     @Generated
+    @Selector("overallDurationHint")
+    @ByValue
+    public native CMTime overallDurationHint();
+
+    @Generated
     @Selector("preferredMediaSelection")
     public native AVMediaSelection preferredMediaSelection();
 

@@ -21,6 +21,7 @@ import apple.coregraphics.struct.CGPoint;
 import apple.coregraphics.struct.CGSize;
 import apple.foundation.NSArray;
 import apple.foundation.NSCoder;
+import apple.foundation.NSDictionary;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSNumber;
 import apple.foundation.NSSet;
@@ -223,6 +224,10 @@ public class SKTileMapNode extends SKNode implements NSCopying, NSCoding {
     public native CGPoint anchorPoint();
 
     @Generated
+    @Selector("attributeValues")
+    public native NSDictionary<String, ? extends SKAttributeValue> attributeValues();
+
+    @Generated
     @Selector("blendMode")
     @NInt
     public native long blendMode();
@@ -307,6 +312,10 @@ public class SKTileMapNode extends SKNode implements NSCopying, NSCoding {
     public native void setAnchorPoint(@ByValue CGPoint value);
 
     @Generated
+    @Selector("setAttributeValues:")
+    public native void setAttributeValues(NSDictionary<String, ? extends SKAttributeValue> value);
+
+    @Generated
     @Selector("setBlendMode:")
     public native void setBlendMode(@NInt long value);
 
@@ -356,6 +365,10 @@ public class SKTileMapNode extends SKNode implements NSCopying, NSCoding {
     public native void setTileSize(@ByValue CGSize value);
 
     @Generated
+    @Selector("setValue:forAttributeNamed:")
+    public native void setValueForAttributeNamed(SKAttributeValue value, String key);
+
+    @Generated
     @Selector("shader")
     public native SKShader shader();
 
@@ -385,4 +398,8 @@ public class SKTileMapNode extends SKNode implements NSCopying, NSCoding {
     @Selector("tileSize")
     @ByValue
     public native CGSize tileSize();
+
+    @Generated
+    @Selector("valueForAttributeNamed:")
+    public native SKAttributeValue valueForAttributeNamed(String key);
 }

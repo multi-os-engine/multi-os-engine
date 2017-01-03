@@ -141,7 +141,7 @@ public class CKRecordZoneNotification extends CKNotification {
     @Generated
     @Selector("notificationFromRemoteNotificationDictionary:")
     public static native CKRecordZoneNotification notificationFromRemoteNotificationDictionary(
-            NSDictionary<String, ? extends NSObject> notificationDictionary);
+            NSDictionary<?, ?> notificationDictionary);
 
     @Generated
     @Selector("resolveClassMethod:")

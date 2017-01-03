@@ -18,6 +18,7 @@ package apple.mediaplayer;
 
 import apple.NSObject;
 import apple.foundation.NSArray;
+import apple.foundation.NSError;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
 import apple.mediaplayer.protocol.MPMediaPlayback;
@@ -36,6 +37,7 @@ import org.moe.natj.general.ptr.VoidPtr;
 import org.moe.natj.objc.Class;
 import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.SEL;
+import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
@@ -235,6 +237,11 @@ public class MPMusicPlayerController extends NSObject implements MPMediaPlayback
     public native void prepareToPlay();
 
     @Generated
+    @Selector("prepareToPlayWithCompletionHandler:")
+    public native void prepareToPlayWithCompletionHandler(
+            @ObjCBlock(name = "call_prepareToPlayWithCompletionHandler") Block_prepareToPlayWithCompletionHandler completionHandler);
+
+    @Generated
     @Selector("repeatMode")
     @NInt
     public native long repeatMode();
@@ -250,6 +257,10 @@ public class MPMusicPlayerController extends NSObject implements MPMediaPlayback
     @Generated
     @Selector("setNowPlayingItem:")
     public native void setNowPlayingItem(MPMediaItem value);
+
+    @Generated
+    @Selector("setQueueWithDescriptor:")
+    public native void setQueueWithDescriptor(MPMusicPlayerQueueDescriptor descriptor);
 
     @Generated
     @Selector("setQueueWithItemCollection:")
@@ -301,4 +312,11 @@ public class MPMusicPlayerController extends NSObject implements MPMediaPlayback
     @Deprecated
     @Selector("volume")
     public native float volume();
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_prepareToPlayWithCompletionHandler {
+        @Generated
+        void call_prepareToPlayWithCompletionHandler(NSError arg0);
+    }
 }

@@ -173,6 +173,10 @@ public class INSpeakableString extends NSObject implements INSpeakable {
             String spokenPhrase, String pronunciationHint);
 
     @Generated
+    @Selector("initWithSpokenPhrase:")
+    public native INSpeakableString initWithSpokenPhrase(String spokenPhrase);
+
+    @Generated
     @Selector("pronunciationHint")
     public native String pronunciationHint();
 

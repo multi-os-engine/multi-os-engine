@@ -26,6 +26,8 @@ public final class INStartAudioCallIntentResponseCode {
     @Generated @NInt public static final long ContinueInApp = 0x0000000000000002L;
     @Generated @NInt public static final long Failure = 0x0000000000000003L;
     @Generated @NInt public static final long FailureRequiringAppLaunch = 0x0000000000000004L;
+    @Generated @NInt public static final long FailureAppConfigurationRequired = 0x0000000000000005L;
+    @Generated @NInt public static final long FailureCallingServiceNotAvailable = 0x0000000000000006L;
 
     @Generated
     private INStartAudioCallIntentResponseCode() {

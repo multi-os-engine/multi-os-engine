@@ -205,6 +205,36 @@ public final class HomeKit {
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
+    public static native String HMServiceTypeAirPurifier();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String HMServiceTypeVentilationFan();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String HMServiceTypeFilterMaintenance();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String HMServiceTypeHeaterCooler();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String HMServiceTypeHumidifierDehumidifier();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String HMServiceTypeSlats();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
     public static native String HMCharacteristicPropertySupportsEventNotification();
 
     @Generated
@@ -645,6 +675,141 @@ public final class HomeKit {
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
+    public static native String HMCharacteristicTypeActive();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String HMCharacteristicTypeCurrentAirPurifierState();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String HMCharacteristicTypeTargetAirPurifierState();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String HMCharacteristicTypeCurrentFanState();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String HMCharacteristicTypeCurrentHeaterCoolerState();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String HMCharacteristicTypeCurrentHumidifierDehumidifierState();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String HMCharacteristicTypeCurrentSlatState();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String HMCharacteristicTypeWaterLevel();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String HMCharacteristicTypeFilterChangeIndication();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String HMCharacteristicTypeFilterLifeLevel();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String HMCharacteristicTypeFilterResetChangeIndication();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String HMCharacteristicTypeLockPhysicalControls();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String HMCharacteristicTypeSwingMode();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String HMCharacteristicTypeTargetHeaterCoolerState();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String HMCharacteristicTypeTargetHumidifierDehumidifierState();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String HMCharacteristicTypeTargetFanState();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String HMCharacteristicTypeSlatType();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String HMCharacteristicTypeCurrentTilt();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String HMCharacteristicTypeTargetTilt();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String HMCharacteristicTypeOzoneDensity();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String HMCharacteristicTypeNitrogenDioxideDensity();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String HMCharacteristicTypeSulphurDioxideDensity();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String HMCharacteristicTypePM2_5Density();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String HMCharacteristicTypePM10Density();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String HMCharacteristicTypeVolatileOrganicCompoundDensity();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String HMCharacteristicTypeDehumidifierThreshold();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String HMCharacteristicTypeHumidifierThreshold();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
     public static native String HMCharacteristicMetadataFormatBool();
 
     @Generated
@@ -861,6 +1026,31 @@ public final class HomeKit {
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String HMAccessoryCategoryTypeWindowCovering();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String HMAccessoryCategoryTypeAirPurifier();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String HMAccessoryCategoryTypeAirHeater();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String HMAccessoryCategoryTypeAirConditioner();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String HMAccessoryCategoryTypeAirHumidifier();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String HMAccessoryCategoryTypeAirDehumidifier();
 
     @Generated
     @CVariable()

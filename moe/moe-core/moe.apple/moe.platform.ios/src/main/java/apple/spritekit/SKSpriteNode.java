@@ -22,6 +22,7 @@ import apple.coregraphics.struct.CGRect;
 import apple.coregraphics.struct.CGSize;
 import apple.foundation.NSArray;
 import apple.foundation.NSCoder;
+import apple.foundation.NSDictionary;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
 import apple.gameplaykit.GKPolygonObstacle;
@@ -223,6 +224,10 @@ public class SKSpriteNode extends SKNode implements SKWarpable {
     public native CGPoint anchorPoint();
 
     @Generated
+    @Selector("attributeValues")
+    public native NSDictionary<String, ? extends SKAttributeValue> attributeValues();
+
+    @Generated
     @Selector("blendMode")
     @NInt
     public native long blendMode();
@@ -282,6 +287,10 @@ public class SKSpriteNode extends SKNode implements SKWarpable {
     public native void setAnchorPoint(@ByValue CGPoint value);
 
     @Generated
+    @Selector("setAttributeValues:")
+    public native void setAttributeValues(NSDictionary<String, ? extends SKAttributeValue> value);
+
+    @Generated
     @Selector("setBlendMode:")
     public native void setBlendMode(@NInt long value);
 
@@ -330,6 +339,10 @@ public class SKSpriteNode extends SKNode implements SKWarpable {
     public native void setTexture(SKTexture value);
 
     @Generated
+    @Selector("setValue:forAttributeNamed:")
+    public native void setValueForAttributeNamed(SKAttributeValue value, String key);
+
+    @Generated
     @Selector("setWarpGeometry:")
     public native void setWarpGeometry(SKWarpGeometry value);
 
@@ -358,6 +371,10 @@ public class SKSpriteNode extends SKNode implements SKWarpable {
     @Generated
     @Selector("texture")
     public native SKTexture texture();
+
+    @Generated
+    @Selector("valueForAttributeNamed:")
+    public native SKAttributeValue valueForAttributeNamed(String key);
 
     @Generated
     @Selector("warpGeometry")

@@ -207,6 +207,14 @@ public class AVCapturePhotoSettings extends NSObject implements NSCopying {
     public native AVCapturePhotoSettings init();
 
     @Generated
+    @Selector("isAutoDualCameraFusionEnabled")
+    public native boolean isAutoDualCameraFusionEnabled();
+
+    @Generated
+    @Selector("setAutoDualCameraFusionEnabled:")
+    public native void setAutoDualCameraFusionEnabled(boolean value);
+
+    @Generated
     @Selector("isAutoStillImageStabilizationEnabled")
     public native boolean isAutoStillImageStabilizationEnabled();
 

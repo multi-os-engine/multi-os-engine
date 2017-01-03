@@ -207,6 +207,10 @@ public class MDLMaterial extends NSObject implements MDLNamed, NSFastEnumeration
     public native MDLMaterialProperty objectForKeyedSubscript(String name);
 
     @Generated
+    @Selector("propertiesWithSemantic:")
+    public native NSArray<? extends MDLMaterialProperty> propertiesWithSemantic(@NUInt long semantic);
+
+    @Generated
     @Selector("propertyNamed:")
     public native MDLMaterialProperty propertyNamed(String name);
 

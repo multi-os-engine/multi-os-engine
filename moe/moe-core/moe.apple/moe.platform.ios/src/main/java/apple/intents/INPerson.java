@@ -255,6 +255,10 @@ public class INPerson extends NSObject implements NSCopying, NSSecureCoding, INS
     public native String pronunciationHint();
 
     @Generated
+    @Selector("relationship")
+    public native String relationship();
+
+    @Generated
     @Selector("spokenPhrase")
     public native String spokenPhrase();
 

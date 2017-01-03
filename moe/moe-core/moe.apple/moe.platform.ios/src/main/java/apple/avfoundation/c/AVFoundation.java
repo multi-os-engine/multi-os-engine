@@ -318,6 +318,11 @@ public final class AVFoundation {
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
+    public static native String AVCaptureDeviceTypeBuiltInDualCamera();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
     public static native String AVCaptureDeviceTypeBuiltInDuoCamera();
 
     @Generated
@@ -624,66 +629,6 @@ public final class AVFoundation {
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
-    public static native String AVAudioUnitTypeOutput();
-
-    @Generated
-    @CVariable()
-    @MappedReturn(ObjCStringMapper.class)
-    public static native String AVAudioUnitTypeMusicDevice();
-
-    @Generated
-    @CVariable()
-    @MappedReturn(ObjCStringMapper.class)
-    public static native String AVAudioUnitTypeMusicEffect();
-
-    @Generated
-    @CVariable()
-    @MappedReturn(ObjCStringMapper.class)
-    public static native String AVAudioUnitTypeFormatConverter();
-
-    @Generated
-    @CVariable()
-    @MappedReturn(ObjCStringMapper.class)
-    public static native String AVAudioUnitTypeEffect();
-
-    @Generated
-    @CVariable()
-    @MappedReturn(ObjCStringMapper.class)
-    public static native String AVAudioUnitTypeMixer();
-
-    @Generated
-    @CVariable()
-    @MappedReturn(ObjCStringMapper.class)
-    public static native String AVAudioUnitTypePanner();
-
-    @Generated
-    @CVariable()
-    @MappedReturn(ObjCStringMapper.class)
-    public static native String AVAudioUnitTypeGenerator();
-
-    @Generated
-    @CVariable()
-    @MappedReturn(ObjCStringMapper.class)
-    public static native String AVAudioUnitTypeOfflineEffect();
-
-    @Generated
-    @CVariable()
-    @MappedReturn(ObjCStringMapper.class)
-    public static native String AVAudioUnitTypeMIDIProcessor();
-
-    @Generated
-    @CVariable()
-    @MappedReturn(ObjCStringMapper.class)
-    public static native String AVAudioUnitManufacturerNameApple();
-
-    @Generated
-    @CVariable()
-    @MappedReturn(ObjCStringMapper.class)
-    public static native String AVAudioUnitComponentTagsDidChangeNotification();
-
-    @Generated
-    @CVariable()
-    @MappedReturn(ObjCStringMapper.class)
     public static native String AVAudioSessionInterruptionNotification();
 
     @Generated
@@ -930,6 +875,66 @@ public final class AVFoundation {
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String AVAudioSessionPolarPatternSubcardioid();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String AVAudioUnitTypeOutput();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String AVAudioUnitTypeMusicDevice();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String AVAudioUnitTypeMusicEffect();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String AVAudioUnitTypeFormatConverter();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String AVAudioUnitTypeEffect();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String AVAudioUnitTypeMixer();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String AVAudioUnitTypePanner();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String AVAudioUnitTypeGenerator();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String AVAudioUnitTypeOfflineEffect();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String AVAudioUnitTypeMIDIProcessor();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String AVAudioUnitManufacturerNameApple();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String AVAudioUnitComponentTagsDidChangeNotification();
 
     @Generated
     @CVariable()

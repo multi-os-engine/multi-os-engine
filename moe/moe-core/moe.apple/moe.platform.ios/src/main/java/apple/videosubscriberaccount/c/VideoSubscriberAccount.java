@@ -55,10 +55,20 @@ public final class VideoSubscriberAccount {
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
+    public static native String VSErrorInfoKeyAccountProviderResponse();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
     public static native String VSErrorInfoKeyUnsupportedProviderIdentifier();
 
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String VSCheckAccessOptionPrompt();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String VSAccountProviderAuthenticationSchemeSAML();
 }

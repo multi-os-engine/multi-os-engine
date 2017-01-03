@@ -19,6 +19,7 @@ package apple.intents.protocol;
 import apple.intents.INIntegerResolutionResult;
 import apple.intents.INSaveProfileInCarIntent;
 import apple.intents.INSaveProfileInCarIntentResponse;
+import apple.intents.INStringResolutionResult;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.Library;
 import org.moe.natj.general.ann.Runtime;
@@ -48,6 +49,14 @@ public interface INSaveProfileInCarIntentHandling {
 
     @Generated
     @IsOptional
+    @Selector("resolveProfileNameForSaveProfileInCar:withCompletion:")
+    default void resolveProfileNameForSaveProfileInCarWithCompletion(INSaveProfileInCarIntent intent,
+            @ObjCBlock(name = "call_resolveProfileNameForSaveProfileInCarWithCompletion") Block_resolveProfileNameForSaveProfileInCarWithCompletion completion) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Generated
+    @IsOptional
     @Selector("resolveProfileNumberForSaveProfileInCar:withCompletion:")
     default void resolveProfileNumberForSaveProfileInCarWithCompletion(INSaveProfileInCarIntent intent,
             @ObjCBlock(name = "call_resolveProfileNumberForSaveProfileInCarWithCompletion") Block_resolveProfileNumberForSaveProfileInCarWithCompletion completion) {
@@ -66,6 +75,13 @@ public interface INSaveProfileInCarIntentHandling {
     public interface Block_handleSaveProfileInCarCompletion {
         @Generated
         void call_handleSaveProfileInCarCompletion(INSaveProfileInCarIntentResponse arg0);
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_resolveProfileNameForSaveProfileInCarWithCompletion {
+        @Generated
+        void call_resolveProfileNameForSaveProfileInCarWithCompletion(INStringResolutionResult arg0);
     }
 
     @Runtime(ObjCRuntime.class)

@@ -199,6 +199,10 @@ public class MDLSubmeshTopology extends NSObject {
     public native MDLSubmeshTopology init();
 
     @Generated
+    @Selector("initWithSubmesh:")
+    public native MDLSubmeshTopology initWithSubmesh(MDLSubmesh submesh);
+
+    @Generated
     @Selector("setEdgeCreaseCount:")
     public native void setEdgeCreaseCount(@NUInt long value);
 

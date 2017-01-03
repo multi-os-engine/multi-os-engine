@@ -223,12 +223,20 @@ public class VSAccountMetadataRequest extends NSObject {
     public native void setSupportedAccountProviderIdentifiers(NSArray<String> value);
 
     @Generated
+    @Selector("setSupportedAuthenticationSchemes:")
+    public native void setSupportedAuthenticationSchemes(NSArray<String> value);
+
+    @Generated
     @Selector("setVerificationToken:")
     public native void setVerificationToken(String value);
 
     @Generated
     @Selector("supportedAccountProviderIdentifiers")
     public native NSArray<String> supportedAccountProviderIdentifiers();
+
+    @Generated
+    @Selector("supportedAuthenticationSchemes")
+    public native NSArray<String> supportedAuthenticationSchemes();
 
     @Generated
     @Selector("verificationToken")

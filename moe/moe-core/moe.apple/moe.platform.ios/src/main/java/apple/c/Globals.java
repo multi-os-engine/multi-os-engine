@@ -4538,6 +4538,10 @@ public final class Globals {
     @CVariable()
     public static native int daylight();
 
+    @Generated
+    @CFunction
+    public static native int timingsafe_bcmp(ConstVoidPtr __b1, ConstVoidPtr __b2, @NUInt long __len);
+
     @Runtime(CRuntime.class)
     @Generated
     public interface Function_dispatch_set_finalizer_f {

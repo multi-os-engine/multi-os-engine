@@ -20,6 +20,7 @@ import apple.NSObject;
 import apple.coreimage.CIFilter;
 import apple.foundation.NSArray;
 import apple.foundation.NSCoder;
+import apple.foundation.NSDictionary;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
 import apple.gameplaykit.GKPolygonObstacle;
@@ -189,6 +190,10 @@ public class SKEffectNode extends SKNode implements SKWarpable {
     public static native long version_static();
 
     @Generated
+    @Selector("attributeValues")
+    public native NSDictionary<String, ? extends SKAttributeValue> attributeValues();
+
+    @Generated
     @Selector("blendMode")
     @NInt
     public native long blendMode();
@@ -204,6 +209,10 @@ public class SKEffectNode extends SKNode implements SKWarpable {
     @Generated
     @Selector("initWithCoder:")
     public native SKEffectNode initWithCoder(NSCoder aDecoder);
+
+    @Generated
+    @Selector("setAttributeValues:")
+    public native void setAttributeValues(NSDictionary<String, ? extends SKAttributeValue> value);
 
     @Generated
     @Selector("setBlendMode:")
@@ -234,6 +243,10 @@ public class SKEffectNode extends SKNode implements SKWarpable {
     public native void setSubdivisionLevels(@NInt long value);
 
     @Generated
+    @Selector("setValue:forAttributeNamed:")
+    public native void setValueForAttributeNamed(SKAttributeValue value, String key);
+
+    @Generated
     @Selector("setWarpGeometry:")
     public native void setWarpGeometry(SKWarpGeometry value);
 
@@ -257,6 +270,10 @@ public class SKEffectNode extends SKNode implements SKWarpable {
     @Selector("subdivisionLevels")
     @NInt
     public native long subdivisionLevels();
+
+    @Generated
+    @Selector("valueForAttributeNamed:")
+    public native SKAttributeValue valueForAttributeNamed(String key);
 
     @Generated
     @Selector("warpGeometry")

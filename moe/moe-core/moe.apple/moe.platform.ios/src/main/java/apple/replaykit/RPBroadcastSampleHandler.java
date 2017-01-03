@@ -20,6 +20,7 @@ import apple.NSObject;
 import apple.coremedia.opaque.CMSampleBufferRef;
 import apple.foundation.NSArray;
 import apple.foundation.NSDictionary;
+import apple.foundation.NSError;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
 import org.moe.natj.c.ann.FunctionPtr;
@@ -175,6 +176,10 @@ public class RPBroadcastSampleHandler extends RPBroadcastHandler {
     @Generated
     @Selector("broadcastStartedWithSetupInfo:")
     public native void broadcastStartedWithSetupInfo(NSDictionary<String, ? extends NSObject> setupInfo);
+
+    @Generated
+    @Selector("finishBroadcastWithError:")
+    public native void finishBroadcastWithError(NSError error);
 
     @Generated
     @Selector("init")

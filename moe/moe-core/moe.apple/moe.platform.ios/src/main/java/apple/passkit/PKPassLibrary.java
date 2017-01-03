@@ -201,6 +201,10 @@ public class PKPassLibrary extends NSObject {
             @ObjCBlock(name = "call_addPassesWithCompletionHandler") Block_addPassesWithCompletionHandler completion);
 
     @Generated
+    @Selector("canAddFelicaPass")
+    public native boolean canAddFelicaPass();
+
+    @Generated
     @Selector("canAddPaymentPassWithPrimaryAccountIdentifier:")
     public native boolean canAddPaymentPassWithPrimaryAccountIdentifier(String primaryAccountIdentifier);
 

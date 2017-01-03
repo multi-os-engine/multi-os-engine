@@ -39,4 +39,11 @@ public interface HMCameraSnapshotControlDelegate {
             HMCameraSnapshot snapshot, NSError error) {
         throw new java.lang.UnsupportedOperationException();
     }
+
+    @Generated
+    @IsOptional
+    @Selector("cameraSnapshotControlDidUpdateMostRecentSnapshot:")
+    default void cameraSnapshotControlDidUpdateMostRecentSnapshot(HMCameraSnapshotControl cameraSnapshotControl) {
+        throw new java.lang.UnsupportedOperationException();
+    }
 }

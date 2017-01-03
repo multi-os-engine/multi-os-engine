@@ -22,7 +22,6 @@ import apple.foundation.NSArray;
 import apple.foundation.NSDictionary;
 import apple.foundation.NSError;
 import apple.foundation.NSMethodSignature;
-import apple.foundation.NSNumber;
 import apple.foundation.NSSet;
 import apple.foundation.NSURL;
 import org.moe.natj.c.ann.FunctionPtr;
@@ -170,7 +169,7 @@ public class AVAudioRecorder extends NSObject {
 
     @Generated
     @Selector("channelAssignments")
-    public native NSArray<? extends NSNumber> channelAssignments();
+    public native NSArray<? extends AVAudioSessionChannelDescription> channelAssignments();
 
     @Generated
     @Selector("currentTime")
@@ -248,7 +247,7 @@ public class AVAudioRecorder extends NSObject {
 
     @Generated
     @Selector("setChannelAssignments:")
-    public native void setChannelAssignments(NSArray<? extends NSNumber> value);
+    public native void setChannelAssignments(NSArray<? extends AVAudioSessionChannelDescription> value);
 
     @Generated
     @Selector("setDelegate:")

@@ -18,6 +18,8 @@ package apple.systemconfiguration.c;
 
 import apple.NSObject;
 import apple.corefoundation.opaque.CFAllocatorRef;
+import apple.corefoundation.opaque.CFArrayRef;
+import apple.corefoundation.opaque.CFDictionaryRef;
 import apple.corefoundation.opaque.CFErrorRef;
 import apple.corefoundation.opaque.CFRunLoopRef;
 import apple.corefoundation.opaque.CFStringRef;
@@ -109,8 +111,43 @@ public final class SystemConfiguration {
     public static native String SCErrorString(int status);
 
     @Generated
+    @Deprecated
+    @CFunction
+    public static native byte CNSetSupportedSSIDs(CFArrayRef ssidArray);
+
+    @Generated
+    @Deprecated
+    @CFunction
+    public static native byte CNMarkPortalOnline(CFStringRef interfaceName);
+
+    @Generated
+    @Deprecated
+    @CFunction
+    public static native byte CNMarkPortalOffline(CFStringRef interfaceName);
+
+    @Generated
+    @CFunction
+    public static native CFArrayRef CNCopySupportedInterfaces();
+
+    @Generated
+    @CFunction
+    public static native CFDictionaryRef CNCopyCurrentNetworkInfo(CFStringRef interfaceName);
+
+    @Generated
     @CVariable()
     public static native CFStringRef kCFErrorDomainSystemConfiguration();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCNNetworkInfoKeySSIDData();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCNNetworkInfoKeySSID();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCNNetworkInfoKeyBSSID();
 
     @Runtime(CRuntime.class)
     @Generated

@@ -54,6 +54,21 @@ public final class StoreKit {
 
     @Generated
     @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String SKCloudServiceSetupOptionsActionKey();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String SKCloudServiceSetupOptionsITunesItemIdentifierKey();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String SKCloudServiceSetupActionSubscribe();
+
+    @Generated
+    @CVariable()
     public static native double SKDownloadTimeRemainingUnknown();
 
     @Generated

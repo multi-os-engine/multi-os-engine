@@ -165,6 +165,10 @@ public class AVCaptureResolvedPhotoSettings extends NSObject {
     public native AVCaptureResolvedPhotoSettings init();
 
     @Generated
+    @Selector("isDualCameraFusionEnabled")
+    public native boolean isDualCameraFusionEnabled();
+
+    @Generated
     @Selector("isFlashEnabled")
     public native boolean isFlashEnabled();
 
