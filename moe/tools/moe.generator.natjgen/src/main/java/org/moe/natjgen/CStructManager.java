@@ -66,6 +66,8 @@ public class CStructManager extends AbstractUnitManager {
         });
     }
 
+    private boolean declarationComplete;
+
     /**
      * Create a struct manager
      *
@@ -531,5 +533,13 @@ public class CStructManager extends AbstractUnitManager {
 
     public void incModelDowngraderExecutionCount() {
         ++this.numberOfModelDowngraderRuns;
+    }
+
+    public void setDeclarationComplete(boolean declarationComplete) {
+        this.declarationComplete = declarationComplete;
+    }
+
+    public boolean isDeclarationComplete() {
+        return declarationComplete;
     }
 }

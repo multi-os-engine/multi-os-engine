@@ -290,6 +290,9 @@ public class Generator {
      * @param manager  unit manager to store
      */
     public void put(String unitname, ObjCClassManager manager) {
+        if (objcClassMap.containsKey(unitname)) {
+            throw new IllegalStateException("key " + unitname + " already exists");
+        }
         objcClassMap.put(unitname, manager);
     }
 
@@ -300,6 +303,9 @@ public class Generator {
      * @param manager  unit manager to store
      */
     public void put(String unitname, ObjCProtocolManager manager) {
+        if (objcProtocolMap.containsKey(unitname)) {
+            throw new IllegalStateException("key " + unitname + " already exists");
+        }
         objcProtocolMap.put(unitname, manager);
     }
 
@@ -310,6 +316,9 @@ public class Generator {
      * @param manager    unit manager to store
      */
     public void put(String unitname, ObjCExternalCategoryManager manager) {
+        if (objcExternalCategoryMap.containsKey(unitname)) {
+            throw new IllegalStateException("key " + unitname + " already exists");
+        }
         objcExternalCategoryMap.put(unitname, manager);
     }
 
@@ -320,6 +329,9 @@ public class Generator {
      * @param manager  unit manager to store
      */
     public void put(String unitname, CStructManager manager) {
+        if (cStructMap.containsKey(unitname)) {
+            throw new IllegalStateException("key " + unitname + " already exists");
+        }
         cStructMap.put(unitname, manager);
     }
 
@@ -330,6 +342,9 @@ public class Generator {
      * @param manager  unit manager to store
      */
     public void put(String unitname, CEnumManager manager) {
+        if (cEnumMap.containsKey(unitname)) {
+            throw new IllegalStateException("key " + unitname + " already exists");
+        }
         cEnumMap.put(unitname, manager);
     }
 
@@ -340,6 +355,9 @@ public class Generator {
      * @param manager  unit manager to store
      */
     public void put(String unitname, CManager manager) {
+        if (cManagerMap.containsKey(unitname)) {
+            throw new IllegalStateException("key " + unitname + " already exists");
+        }
         cManagerMap.put(unitname, manager);
     }
 
@@ -350,6 +368,9 @@ public class Generator {
      * @param manager  unit manager to store
      */
     public void put(String unitname, COpaquePtrManager manager) {
+        if (cOpaqueTypeMap.containsKey(unitname)) {
+            throw new IllegalStateException("key " + unitname + " already exists");
+        }
         cOpaqueTypeMap.put(unitname, manager);
         if (manager.isRootConst()) {
             cConstRootOpaqueTypeMap.put(manager.getRootName(), manager);
@@ -363,6 +384,9 @@ public class Generator {
      * @param manager  unit manager to store
      */
     public void putAlias(String unitname, COpaquePtrManager manager) {
+        if (cOpaqueTypeAliasMap.containsKey(unitname)) {
+            throw new IllegalStateException("key " + unitname + " already exists");
+        }
         cOpaqueTypeAliasMap.put(unitname, manager);
     }
 

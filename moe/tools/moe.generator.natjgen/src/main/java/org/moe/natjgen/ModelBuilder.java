@@ -384,6 +384,12 @@ class ModelBuilder extends AbstractModelEditor {
             return;
         }
 
+        final CStructManager existingStruct = getGenerator().getStruct(decl.entityInfo().USR());
+        if (existingStruct != null) {
+            existingStruct.setDeclarationComplete(true);
+            return;
+        }
+
         // Create manager
         final CStructManager manager = new CStructManager(indexer, unit.getFQName(), ClangUtil.getFilePath(decl),
                 decl.entityInfo().USR());
@@ -397,7 +403,7 @@ class ModelBuilder extends AbstractModelEditor {
         // Get manager
         final CStructManager struct = getGenerator()
                 .getStruct(decl.semanticContainer().cursor().getCursorUSR().toString());
-        if (struct == null) {
+        if (struct == null || struct.isDeclarationComplete()) {
             return;
         }
 
@@ -665,6 +671,10 @@ class ModelBuilder extends AbstractModelEditor {
 
             final Unit unit = configuration.getUnit(decl, type);
             if (unit.handlingDisabled()) {
+                return;
+            }
+            if (getGenerator().getOpaqueTypeManager(unit.getOriginalName()) != null) {
+//                System.out.println("Skipping " + decl.cursor() + " -> " + ut.getTypeSpelling());
                 return;
             }
 
