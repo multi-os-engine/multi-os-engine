@@ -47,7 +47,10 @@ public class MOETestListener implements MOEITestRunListener {
   @Override
   public void testRunStopped(long elapsedTime) {
     ProcessHandler handler = getProcessHandler();
-    handler.notifyTextAvailable("Test running stopped\n", ProcessOutputTypes.STDOUT);
+    StringBuilder message = new StringBuilder("\n");
+    message.append("Test running stopped");
+    message.append("\n");
+    handler.notifyTextAvailable(message.toString(), ProcessOutputTypes.STDOUT);
     handler.destroyProcess();
   }
 
@@ -57,7 +60,10 @@ public class MOETestListener implements MOEITestRunListener {
       testSuiteFinished();
     }
     final ProcessHandler handler = getProcessHandler();
-    handler.notifyTextAvailable("Finish\n", ProcessOutputTypes.STDOUT);
+    StringBuilder message = new StringBuilder("\n");
+    message.append("Finish");
+    message.append("\n");
+    handler.notifyTextAvailable(message.toString(), ProcessOutputTypes.STDOUT);
     handler.destroyProcess();
   }
 
@@ -68,11 +74,16 @@ public class MOETestListener implements MOEITestRunListener {
 
   @Override
   public void testRunStarted(String runName, int testCount) {
-    ProcessHandler handler = getProcessHandler();
-    handler.notifyTextAvailable("Test running started\n", ProcessOutputTypes.STDOUT);
+    StringBuilder message = new StringBuilder("\n");
+    message.append("Test running started");
+    message.append("\n");
+    getProcessHandler().notifyTextAvailable(message.toString(), ProcessOutputTypes.STDOUT);
 
     final ServiceMessageBuilder builder = new ServiceMessageBuilder("enteredTheMatrix");
-    handler.notifyTextAvailable(builder.toString() + '\n', ProcessOutputTypes.STDOUT);
+    message = new StringBuilder("\n");
+    message.append(builder.toString());
+    message.append("\n");
+    getProcessHandler().notifyTextAvailable(message.toString(), ProcessOutputTypes.STDOUT);
   }
 
   @Override
@@ -87,7 +98,10 @@ public class MOETestListener implements MOEITestRunListener {
     ServiceMessageBuilder builder = new ServiceMessageBuilder("testStarted");
     builder.addAttribute("name", test.getTestName());
     builder.addAttribute("locationHint", MOETestLocationProvider.PROTOCOL_ID + "://" + myRunningState.getConfiguration().moduleName() + ':' + test.getClassName() + '.' + test.getTestName() + "()");
-    getProcessHandler().notifyTextAvailable(builder.toString() + '\n', ProcessOutputTypes.STDOUT);
+    StringBuilder message = new StringBuilder("\n");
+    message.append(builder.toString());
+    message.append("\n");
+    getProcessHandler().notifyTextAvailable(message.toString(), ProcessOutputTypes.STDOUT);
     myTestStartingTime = System.currentTimeMillis();
   }
 
@@ -96,14 +110,20 @@ public class MOETestListener implements MOEITestRunListener {
     ServiceMessageBuilder builder = new ServiceMessageBuilder("testSuiteStarted");
     builder.addAttribute("name", myTestClassName);
     builder.addAttribute("locationHint", MOETestLocationProvider.PROTOCOL_ID + "://" + myRunningState.getConfiguration().moduleName() + ':' + myTestClassName);
-    getProcessHandler().notifyTextAvailable(builder.toString() + '\n', ProcessOutputTypes.STDOUT);
+    StringBuilder message = new StringBuilder("\n");
+    message.append(builder.toString());
+    message.append("\n");
+    getProcessHandler().notifyTextAvailable(message.toString(), ProcessOutputTypes.STDOUT);
   }
 
   private void testSuiteFinished() {
     ServiceMessageBuilder builder = new ServiceMessageBuilder("testSuiteFinished");
     builder.addAttribute("name", myTestClassName);
     builder.addAttribute("duration", Long.toString(System.currentTimeMillis() - myTestSuiteStartingTime));
-    getProcessHandler().notifyTextAvailable(builder.toString() + '\n', ProcessOutputTypes.STDOUT);
+    StringBuilder message = new StringBuilder("\n");
+    message.append(builder.toString());
+    message.append("\n");
+    getProcessHandler().notifyTextAvailable(message.toString(), ProcessOutputTypes.STDOUT);
     myTestClassName = null;
   }
 
@@ -114,7 +134,10 @@ public class MOETestListener implements MOEITestRunListener {
     builder.addAttribute("message", "");
     builder.addAttribute("details", stackTrace);
     builder.addAttribute("error", "true");
-    getProcessHandler().notifyTextAvailable(builder.toString() + '\n', ProcessOutputTypes.STDOUT);
+    StringBuilder message = new StringBuilder("\n");
+    message.append(builder.toString());
+    message.append("\n");
+    getProcessHandler().notifyTextAvailable(message.toString(), ProcessOutputTypes.STDOUT);
   }
 
   @Override
@@ -123,13 +146,19 @@ public class MOETestListener implements MOEITestRunListener {
     builder.addAttribute("message", "Assumption Failed");
     builder.addAttribute("details", trace);
     builder.addAttribute("error", "true");
-    getProcessHandler().notifyTextAvailable(builder.toString() + "\n", ProcessOutputTypes.STDOUT);
+    StringBuilder message = new StringBuilder("\n");
+    message.append(builder.toString());
+    message.append("\n");
+    getProcessHandler().notifyTextAvailable(message.toString(), ProcessOutputTypes.STDOUT);
   }
 
   @Override
   public void testIgnored(MOETestIdentifier test) {
     ServiceMessageBuilder builder = ServiceMessageBuilder.testIgnored(test.getTestName());
-    getProcessHandler().notifyTextAvailable(builder.toString() + "\n", ProcessOutputTypes.STDOUT);
+    StringBuilder message = new StringBuilder("\n");
+    message.append(builder.toString());
+    message.append("\n");
+    getProcessHandler().notifyTextAvailable(message.toString(), ProcessOutputTypes.STDOUT);
   }
 
   @Override
@@ -137,13 +166,20 @@ public class MOETestListener implements MOEITestRunListener {
     ServiceMessageBuilder builder = new ServiceMessageBuilder("testFinished");
     builder.addAttribute("name", test.getTestName());
     builder.addAttribute("duration", Long.toString(System.currentTimeMillis() - myTestStartingTime));
-    getProcessHandler().notifyTextAvailable(builder.toString() + '\n', ProcessOutputTypes.STDOUT);
+    StringBuilder message = new StringBuilder("\n");
+    message.append(builder.toString());
+    message.append("\n");
+    getProcessHandler().notifyTextAvailable(message.toString(), ProcessOutputTypes.STDOUT);
   }
 
   @Override
   public void testRunFailed(String errorMessage) {
     ProcessHandler handler = getProcessHandler();
-    handler.notifyTextAvailable("Test running failed: " + errorMessage + "\n", ProcessOutputTypes.STDERR);
+    StringBuilder message = new StringBuilder("\n");
+    message.append("Test running failed: ");
+    message.append(errorMessage);
+    message.append("\n");
+    handler.notifyTextAvailable(message.toString(), ProcessOutputTypes.STDERR);
     handler.destroyProcess();
   }
 }
