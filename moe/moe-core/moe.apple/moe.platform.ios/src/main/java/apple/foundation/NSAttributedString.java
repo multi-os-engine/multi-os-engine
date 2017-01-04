@@ -37,6 +37,7 @@ import org.moe.natj.general.ann.MappedReturn;
 import org.moe.natj.general.ann.NInt;
 import org.moe.natj.general.ann.NUInt;
 import org.moe.natj.general.ann.Owned;
+import org.moe.natj.general.ann.ReferenceInfo;
 import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.general.ptr.BoolPtr;
 import org.moe.natj.general.ptr.Ptr;
@@ -220,7 +221,7 @@ public class NSAttributedString extends NSObject implements NSCopying, NSMutable
     @Generated
     @Selector("dataFromRange:documentAttributes:error:")
     public native NSData dataFromRangeDocumentAttributesError(@ByValue NSRange range, NSDictionary<String, ?> dict,
-            Ptr<NSError> error);
+            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     @Generated
     @Selector("drawAtPoint:")
@@ -253,7 +254,7 @@ public class NSAttributedString extends NSObject implements NSCopying, NSMutable
     @Generated
     @Selector("fileWrapperFromRange:documentAttributes:error:")
     public native NSFileWrapper fileWrapperFromRangeDocumentAttributesError(@ByValue NSRange range,
-            NSDictionary<String, ?> dict, Ptr<NSError> error);
+            NSDictionary<String, ?> dict, @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     @Generated
     @Selector("init")
@@ -270,13 +271,16 @@ public class NSAttributedString extends NSObject implements NSCopying, NSMutable
     @Generated
     @Selector("initWithData:options:documentAttributes:error:")
     public native NSAttributedString initWithDataOptionsDocumentAttributesError(NSData data,
-            NSDictionary<String, ?> options, Ptr<NSDictionary<String, ?>> dict, Ptr<NSError> error);
+            NSDictionary<String, ?> options,
+            @ReferenceInfo(type = NSDictionary.class) Ptr<NSDictionary<String, ?>> dict,
+            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     @Generated
     @Deprecated
     @Selector("initWithFileURL:options:documentAttributes:error:")
     public native NSAttributedString initWithFileURLOptionsDocumentAttributesError(NSURL url,
-            NSDictionary<?, ?> options, Ptr<NSDictionary<?, ?>> dict, Ptr<NSError> error);
+            NSDictionary<?, ?> options, @ReferenceInfo(type = NSDictionary.class) Ptr<NSDictionary<?, ?>> dict,
+            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     @Generated
     @Selector("initWithString:")
@@ -289,7 +293,9 @@ public class NSAttributedString extends NSObject implements NSCopying, NSMutable
     @Generated
     @Selector("initWithURL:options:documentAttributes:error:")
     public native NSAttributedString initWithURLOptionsDocumentAttributesError(NSURL url,
-            NSDictionary<String, ?> options, Ptr<NSDictionary<String, ?>> dict, Ptr<NSError> error);
+            NSDictionary<String, ?> options,
+            @ReferenceInfo(type = NSDictionary.class) Ptr<NSDictionary<String, ?>> dict,
+            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     @Generated
     @Selector("isEqualToAttributedString:")

@@ -27,6 +27,7 @@ import org.moe.natj.general.ann.MappedReturn;
 import org.moe.natj.general.ann.NInt;
 import org.moe.natj.general.ann.NUInt;
 import org.moe.natj.general.ann.Owned;
+import org.moe.natj.general.ann.ReferenceInfo;
 import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.general.ptr.NUIntPtr;
 import org.moe.natj.general.ptr.Ptr;
@@ -92,12 +93,12 @@ public class NSPropertyListSerialization extends NSObject {
     @Deprecated
     @Selector("dataFromPropertyList:format:errorDescription:")
     public static native NSData dataFromPropertyListFormatErrorDescription(@Mapped(ObjCObjectMapper.class) Object plist,
-            @NUInt long format, Ptr<NSString> errorString);
+            @NUInt long format, @ReferenceInfo(type = NSString.class) Ptr<NSString> errorString);
 
     @Generated
     @Selector("dataWithPropertyList:format:options:error:")
     public static native NSData dataWithPropertyListFormatOptionsError(@Mapped(ObjCObjectMapper.class) Object plist,
-            @NUInt long format, @NUInt long opt, Ptr<NSError> error);
+            @NUInt long format, @NUInt long opt, @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     @Generated
     @Selector("debugDescription")
@@ -157,19 +158,19 @@ public class NSPropertyListSerialization extends NSObject {
     @Selector("propertyListFromData:mutabilityOption:format:errorDescription:")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object propertyListFromDataMutabilityOptionFormatErrorDescription(NSData data, @NUInt long opt,
-            NUIntPtr format, Ptr<NSString> errorString);
+            NUIntPtr format, @ReferenceInfo(type = NSString.class) Ptr<NSString> errorString);
 
     @Generated
     @Selector("propertyListWithData:options:format:error:")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object propertyListWithDataOptionsFormatError(NSData data, @NUInt long opt, NUIntPtr format,
-            Ptr<NSError> error);
+            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     @Generated
     @Selector("propertyListWithStream:options:format:error:")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object propertyListWithStreamOptionsFormatError(NSInputStream stream, @NUInt long opt,
-            NUIntPtr format, Ptr<NSError> error);
+            NUIntPtr format, @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -196,7 +197,8 @@ public class NSPropertyListSerialization extends NSObject {
     @Selector("writePropertyList:toStream:format:options:error:")
     @NInt
     public static native long writePropertyListToStreamFormatOptionsError(@Mapped(ObjCObjectMapper.class) Object plist,
-            NSOutputStream stream, @NUInt long format, @NUInt long opt, Ptr<NSError> error);
+            NSOutputStream stream, @NUInt long format, @NUInt long opt,
+            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     @Generated
     @Selector("init")

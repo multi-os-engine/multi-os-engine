@@ -38,6 +38,7 @@ import org.moe.natj.general.ann.NFloat;
 import org.moe.natj.general.ann.NInt;
 import org.moe.natj.general.ann.NUInt;
 import org.moe.natj.general.ann.Owned;
+import org.moe.natj.general.ann.ReferenceInfo;
 import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.general.ptr.Ptr;
 import org.moe.natj.general.ptr.VoidPtr;
@@ -455,7 +456,7 @@ public class AVCaptureDevice extends NSObject {
 
     @Generated
     @Selector("lockForConfiguration:")
-    public native boolean lockForConfiguration(Ptr<NSError> outError);
+    public native boolean lockForConfiguration(@ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
     @Generated
     @Selector("maxExposureTargetBias")
@@ -551,7 +552,8 @@ public class AVCaptureDevice extends NSObject {
 
     @Generated
     @Selector("setTorchModeOnWithLevel:error:")
-    public native boolean setTorchModeOnWithLevelError(float torchLevel, Ptr<NSError> outError);
+    public native boolean setTorchModeOnWithLevelError(float torchLevel,
+            @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
     @Generated
     @Selector("setVideoZoomFactor:")

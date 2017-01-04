@@ -28,6 +28,7 @@ import org.moe.natj.general.ann.MappedReturn;
 import org.moe.natj.general.ann.NInt;
 import org.moe.natj.general.ann.NUInt;
 import org.moe.natj.general.ann.Owned;
+import org.moe.natj.general.ann.ReferenceInfo;
 import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.general.ptr.Ptr;
 import org.moe.natj.general.ptr.VoidPtr;
@@ -152,7 +153,8 @@ public class NSFileVersion extends NSObject {
 
     @Generated
     @Selector("removeOtherVersionsOfItemAtURL:error:")
-    public static native boolean removeOtherVersionsOfItemAtURLError(NSURL url, Ptr<NSError> outError);
+    public static native boolean removeOtherVersionsOfItemAtURLError(NSURL url,
+            @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -231,11 +233,12 @@ public class NSFileVersion extends NSObject {
 
     @Generated
     @Selector("removeAndReturnError:")
-    public native boolean removeAndReturnError(Ptr<NSError> outError);
+    public native boolean removeAndReturnError(@ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
     @Generated
     @Selector("replaceItemAtURL:options:error:")
-    public native NSURL replaceItemAtURLOptionsError(NSURL url, @NUInt long options, Ptr<NSError> error);
+    public native NSURL replaceItemAtURLOptionsError(NSURL url, @NUInt long options,
+            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     @Runtime(ObjCRuntime.class)
     @Generated

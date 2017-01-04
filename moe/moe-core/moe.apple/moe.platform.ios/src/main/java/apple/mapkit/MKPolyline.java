@@ -35,6 +35,7 @@ import org.moe.natj.general.ann.MappedReturn;
 import org.moe.natj.general.ann.NInt;
 import org.moe.natj.general.ann.NUInt;
 import org.moe.natj.general.ann.Owned;
+import org.moe.natj.general.ann.ReferenceInfo;
 import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.general.ptr.ConstPtr;
 import org.moe.natj.general.ptr.VoidPtr;
@@ -146,12 +147,14 @@ public class MKPolyline extends MKMultiPoint implements MKOverlay {
 
     @Generated
     @Selector("polylineWithCoordinates:count:")
-    public static native MKPolyline polylineWithCoordinatesCount(ConstPtr<CLLocationCoordinate2D> coords,
+    public static native MKPolyline polylineWithCoordinatesCount(
+            @ReferenceInfo(type = CLLocationCoordinate2D.class) ConstPtr<CLLocationCoordinate2D> coords,
             @NUInt long count);
 
     @Generated
     @Selector("polylineWithPoints:count:")
-    public static native MKPolyline polylineWithPointsCount(ConstPtr<MKMapPoint> points, @NUInt long count);
+    public static native MKPolyline polylineWithPointsCount(
+            @ReferenceInfo(type = MKMapPoint.class) ConstPtr<MKMapPoint> points, @NUInt long count);
 
     @Generated
     @Selector("resolveClassMethod:")

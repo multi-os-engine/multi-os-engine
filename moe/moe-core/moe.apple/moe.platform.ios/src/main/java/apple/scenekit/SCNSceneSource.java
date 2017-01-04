@@ -34,6 +34,7 @@ import org.moe.natj.general.ann.MappedReturn;
 import org.moe.natj.general.ann.NInt;
 import org.moe.natj.general.ann.NUInt;
 import org.moe.natj.general.ann.Owned;
+import org.moe.natj.general.ann.ReferenceInfo;
 import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.general.ptr.BoolPtr;
 import org.moe.natj.general.ptr.Ptr;
@@ -210,7 +211,8 @@ public class SCNSceneSource extends NSObject {
 
     @Generated
     @Selector("sceneWithOptions:error:")
-    public native SCNScene sceneWithOptionsError(NSDictionary<String, ?> options, Ptr<NSError> error);
+    public native SCNScene sceneWithOptionsError(NSDictionary<String, ?> options,
+            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     @Generated
     @Selector("sceneWithOptions:statusHandler:")

@@ -40,6 +40,7 @@ import org.moe.natj.general.ann.NFloat;
 import org.moe.natj.general.ann.NInt;
 import org.moe.natj.general.ann.NUInt;
 import org.moe.natj.general.ann.Owned;
+import org.moe.natj.general.ann.ReferenceInfo;
 import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.general.ptr.BoolPtr;
 import org.moe.natj.general.ptr.Ptr;
@@ -179,7 +180,7 @@ public class SCNScene extends NSObject implements NSSecureCoding {
     @Generated
     @Selector("sceneWithURL:options:error:")
     public static native SCNScene sceneWithURLOptionsError(NSURL url, NSDictionary<String, ?> options,
-            Ptr<NSError> error);
+            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     @Generated
     @Selector("setVersion:")

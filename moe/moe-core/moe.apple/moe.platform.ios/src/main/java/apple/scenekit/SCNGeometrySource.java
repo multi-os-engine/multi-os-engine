@@ -36,6 +36,7 @@ import org.moe.natj.general.ann.MappedReturn;
 import org.moe.natj.general.ann.NInt;
 import org.moe.natj.general.ann.NUInt;
 import org.moe.natj.general.ann.Owned;
+import org.moe.natj.general.ann.ReferenceInfo;
 import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.general.ptr.ConstPtr;
 import org.moe.natj.general.ptr.VoidPtr;
@@ -119,18 +120,18 @@ public class SCNGeometrySource extends NSObject implements NSSecureCoding {
 
     @Generated
     @Selector("geometrySourceWithNormals:count:")
-    public static native SCNGeometrySource geometrySourceWithNormalsCount(ConstPtr<SCNVector3> normals,
-            @NInt long count);
+    public static native SCNGeometrySource geometrySourceWithNormalsCount(
+            @ReferenceInfo(type = SCNVector3.class) ConstPtr<SCNVector3> normals, @NInt long count);
 
     @Generated
     @Selector("geometrySourceWithTextureCoordinates:count:")
-    public static native SCNGeometrySource geometrySourceWithTextureCoordinatesCount(ConstPtr<CGPoint> texcoord,
-            @NInt long count);
+    public static native SCNGeometrySource geometrySourceWithTextureCoordinatesCount(
+            @ReferenceInfo(type = CGPoint.class) ConstPtr<CGPoint> texcoord, @NInt long count);
 
     @Generated
     @Selector("geometrySourceWithVertices:count:")
-    public static native SCNGeometrySource geometrySourceWithVerticesCount(ConstPtr<SCNVector3> vertices,
-            @NInt long count);
+    public static native SCNGeometrySource geometrySourceWithVerticesCount(
+            @ReferenceInfo(type = SCNVector3.class) ConstPtr<SCNVector3> vertices, @NInt long count);
 
     @Generated
     @Selector("hash")

@@ -40,6 +40,7 @@ import org.moe.natj.general.ann.NFloat;
 import org.moe.natj.general.ann.NInt;
 import org.moe.natj.general.ann.NUInt;
 import org.moe.natj.general.ann.Owned;
+import org.moe.natj.general.ann.ReferenceInfo;
 import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.general.ptr.Ptr;
 import org.moe.natj.general.ptr.VoidPtr;
@@ -208,7 +209,8 @@ public class SKShapeNode extends SKNode {
 
     @Generated
     @Selector("shapeNodeWithPoints:count:")
-    public static native SKShapeNode shapeNodeWithPointsCount(Ptr<CGPoint> points, @NUInt long numPoints);
+    public static native SKShapeNode shapeNodeWithPointsCount(@ReferenceInfo(type = CGPoint.class) Ptr<CGPoint> points,
+            @NUInt long numPoints);
 
     @Generated
     @Selector("shapeNodeWithRect:")
@@ -229,7 +231,8 @@ public class SKShapeNode extends SKNode {
 
     @Generated
     @Selector("shapeNodeWithSplinePoints:count:")
-    public static native SKShapeNode shapeNodeWithSplinePointsCount(Ptr<CGPoint> points, @NUInt long numPoints);
+    public static native SKShapeNode shapeNodeWithSplinePointsCount(
+            @ReferenceInfo(type = CGPoint.class) Ptr<CGPoint> points, @NUInt long numPoints);
 
     @Generated
     @Selector("superclass")

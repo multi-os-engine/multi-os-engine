@@ -32,6 +32,7 @@ import org.moe.natj.general.ann.MappedReturn;
 import org.moe.natj.general.ann.NInt;
 import org.moe.natj.general.ann.NUInt;
 import org.moe.natj.general.ann.Owned;
+import org.moe.natj.general.ann.ReferenceInfo;
 import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.general.ptr.Ptr;
 import org.moe.natj.general.ptr.VoidPtr;
@@ -250,7 +251,7 @@ public class AVAudioEngine extends NSObject {
 
     @Generated
     @Selector("startAndReturnError:")
-    public native boolean startAndReturnError(Ptr<NSError> outError);
+    public native boolean startAndReturnError(@ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
     @Generated
     @Selector("stop")

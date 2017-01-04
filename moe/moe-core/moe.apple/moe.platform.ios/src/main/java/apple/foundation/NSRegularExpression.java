@@ -31,6 +31,7 @@ import org.moe.natj.general.ann.MappedReturn;
 import org.moe.natj.general.ann.NInt;
 import org.moe.natj.general.ann.NUInt;
 import org.moe.natj.general.ann.Owned;
+import org.moe.natj.general.ann.ReferenceInfo;
 import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.general.ptr.BoolPtr;
 import org.moe.natj.general.ptr.Ptr;
@@ -153,7 +154,7 @@ public class NSRegularExpression extends NSObject implements NSCopying, NSSecure
     @Generated
     @Selector("regularExpressionWithPattern:options:error:")
     public static native NSRegularExpression regularExpressionWithPatternOptionsError(String pattern,
-            @NUInt long options, Ptr<NSError> error);
+            @NUInt long options, @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -212,7 +213,7 @@ public class NSRegularExpression extends NSObject implements NSCopying, NSSecure
     @Generated
     @Selector("initWithPattern:options:error:")
     public native NSRegularExpression initWithPatternOptionsError(String pattern, @NUInt long options,
-            Ptr<NSError> error);
+            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     @Generated
     @Selector("matchesInString:options:range:")

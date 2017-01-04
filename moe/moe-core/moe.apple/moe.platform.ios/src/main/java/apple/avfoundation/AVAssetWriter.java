@@ -35,6 +35,7 @@ import org.moe.natj.general.ann.MappedReturn;
 import org.moe.natj.general.ann.NInt;
 import org.moe.natj.general.ann.NUInt;
 import org.moe.natj.general.ann.Owned;
+import org.moe.natj.general.ann.ReferenceInfo;
 import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.general.ptr.Ptr;
 import org.moe.natj.general.ptr.VoidPtr;
@@ -77,7 +78,7 @@ public class AVAssetWriter extends NSObject {
     @Generated
     @Selector("assetWriterWithURL:fileType:error:")
     public static native AVAssetWriter assetWriterWithURLFileTypeError(NSURL outputURL, String outputFileType,
-            Ptr<NSError> outError);
+            @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -226,7 +227,8 @@ public class AVAssetWriter extends NSObject {
 
     @Generated
     @Selector("initWithURL:fileType:error:")
-    public native AVAssetWriter initWithURLFileTypeError(NSURL outputURL, String outputFileType, Ptr<NSError> outError);
+    public native AVAssetWriter initWithURLFileTypeError(NSURL outputURL, String outputFileType,
+            @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
     @Generated
     @Selector("inputGroups")

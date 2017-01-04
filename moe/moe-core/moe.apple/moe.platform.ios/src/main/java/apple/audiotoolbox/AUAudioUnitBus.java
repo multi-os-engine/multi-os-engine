@@ -33,6 +33,7 @@ import org.moe.natj.general.ann.MappedReturn;
 import org.moe.natj.general.ann.NInt;
 import org.moe.natj.general.ann.NUInt;
 import org.moe.natj.general.ann.Owned;
+import org.moe.natj.general.ann.ReferenceInfo;
 import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.general.ptr.Ptr;
 import org.moe.natj.general.ptr.VoidPtr;
@@ -186,7 +187,8 @@ public class AUAudioUnitBus extends NSObject {
 
     @Generated
     @Selector("initWithFormat:error:")
-    public native AUAudioUnitBus initWithFormatError(AVAudioFormat format, Ptr<NSError> outError);
+    public native AUAudioUnitBus initWithFormatError(AVAudioFormat format,
+            @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
     @Generated
     @Selector("isEnabled")
@@ -214,7 +216,8 @@ public class AUAudioUnitBus extends NSObject {
 
     @Generated
     @Selector("setFormat:error:")
-    public native boolean setFormatError(AVAudioFormat format, Ptr<NSError> outError);
+    public native boolean setFormatError(AVAudioFormat format,
+            @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
     @Generated
     @Selector("setMaximumChannelCount:")

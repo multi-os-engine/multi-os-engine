@@ -28,6 +28,7 @@ import org.moe.natj.general.ann.MappedReturn;
 import org.moe.natj.general.ann.NInt;
 import org.moe.natj.general.ann.NUInt;
 import org.moe.natj.general.ann.Owned;
+import org.moe.natj.general.ann.ReferenceInfo;
 import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.general.ptr.Ptr;
 import org.moe.natj.general.ptr.VoidPtr;
@@ -184,7 +185,9 @@ public class NSNetService extends NSObject {
 
     @Generated
     @Selector("getInputStream:outputStream:")
-    public native boolean getInputStreamOutputStream(Ptr<NSInputStream> inputStream, Ptr<NSOutputStream> outputStream);
+    public native boolean getInputStreamOutputStream(
+            @ReferenceInfo(type = NSInputStream.class) Ptr<NSInputStream> inputStream,
+            @ReferenceInfo(type = NSOutputStream.class) Ptr<NSOutputStream> outputStream);
 
     @Generated
     @Selector("hostName")

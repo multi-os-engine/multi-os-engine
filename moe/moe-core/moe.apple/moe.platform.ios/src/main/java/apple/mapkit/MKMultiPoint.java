@@ -166,7 +166,9 @@ public class MKMultiPoint extends MKShape {
 
     @Generated
     @Selector("getCoordinates:range:")
-    public native void getCoordinatesRange(Ptr<CLLocationCoordinate2D> coords, @ByValue NSRange range);
+    public native void getCoordinatesRange(
+            @ReferenceInfo(type = CLLocationCoordinate2D.class) Ptr<CLLocationCoordinate2D> coords,
+            @ByValue NSRange range);
 
     @Generated
     @Selector("init")

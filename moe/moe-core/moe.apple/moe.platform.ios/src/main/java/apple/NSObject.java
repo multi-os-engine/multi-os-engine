@@ -45,6 +45,7 @@ import org.moe.natj.general.ann.MappedReturn;
 import org.moe.natj.general.ann.NInt;
 import org.moe.natj.general.ann.NUInt;
 import org.moe.natj.general.ann.Owned;
+import org.moe.natj.general.ann.ReferenceInfo;
 import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.general.ptr.Ptr;
 import org.moe.natj.general.ptr.VoidPtr;
@@ -656,12 +657,13 @@ public class NSObject extends ObjCObject implements apple.protocol.NSObject {
 
     @Generated
     @Selector("validateValue:forKey:error:")
-    public native boolean validateValueForKeyError(Ptr<ObjCObject> ioValue, String inKey, Ptr<NSError> outError);
+    public native boolean validateValueForKeyError(@ReferenceInfo(type = ObjCObject.class) Ptr<ObjCObject> ioValue,
+            String inKey, @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
     @Generated
     @Selector("validateValue:forKeyPath:error:")
-    public native boolean validateValueForKeyPathError(Ptr<ObjCObject> ioValue, String inKeyPath,
-            Ptr<NSError> outError);
+    public native boolean validateValueForKeyPathError(@ReferenceInfo(type = ObjCObject.class) Ptr<ObjCObject> ioValue,
+            String inKeyPath, @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
     @Generated
     @Selector("valueForKey:")

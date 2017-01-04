@@ -28,6 +28,7 @@ import org.moe.natj.general.ann.MappedReturn;
 import org.moe.natj.general.ann.NInt;
 import org.moe.natj.general.ann.NUInt;
 import org.moe.natj.general.ann.Owned;
+import org.moe.natj.general.ann.ReferenceInfo;
 import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.general.ptr.Ptr;
 import org.moe.natj.general.ptr.VoidPtr;
@@ -208,7 +209,8 @@ public class NSFileWrapper extends NSObject implements NSCoding {
 
     @Generated
     @Selector("initWithURL:options:error:")
-    public native NSFileWrapper initWithURLOptionsError(NSURL url, @NUInt long options, Ptr<NSError> outError);
+    public native NSFileWrapper initWithURLOptionsError(NSURL url, @NUInt long options,
+            @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
     @Generated
     @Selector("isDirectory")
@@ -236,7 +238,8 @@ public class NSFileWrapper extends NSObject implements NSCoding {
 
     @Generated
     @Selector("readFromURL:options:error:")
-    public native boolean readFromURLOptionsError(NSURL url, @NUInt long options, Ptr<NSError> outError);
+    public native boolean readFromURLOptionsError(NSURL url, @NUInt long options,
+            @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
     @Generated
     @Selector("regularFileContents")
@@ -269,5 +272,5 @@ public class NSFileWrapper extends NSObject implements NSCoding {
     @Generated
     @Selector("writeToURL:options:originalContentsURL:error:")
     public native boolean writeToURLOptionsOriginalContentsURLError(NSURL url, @NUInt long options,
-            NSURL originalContentsURL, Ptr<NSError> outError);
+            NSURL originalContentsURL, @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 }

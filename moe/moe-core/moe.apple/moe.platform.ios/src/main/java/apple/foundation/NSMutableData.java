@@ -29,6 +29,7 @@ import org.moe.natj.general.ann.MappedReturn;
 import org.moe.natj.general.ann.NInt;
 import org.moe.natj.general.ann.NUInt;
 import org.moe.natj.general.ann.Owned;
+import org.moe.natj.general.ann.ReferenceInfo;
 import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.general.ptr.ConstVoidPtr;
 import org.moe.natj.general.ptr.Ptr;
@@ -120,7 +121,7 @@ public class NSMutableData extends NSData {
     @Generated
     @Selector("dataWithContentsOfFile:options:error:")
     public static native NSMutableData dataWithContentsOfFileOptionsError(String path, @NUInt long readOptionsMask,
-            Ptr<NSError> errorPtr);
+            @ReferenceInfo(type = NSError.class) Ptr<NSError> errorPtr);
 
     @Generated
     @Deprecated
@@ -134,7 +135,7 @@ public class NSMutableData extends NSData {
     @Generated
     @Selector("dataWithContentsOfURL:options:error:")
     public static native NSMutableData dataWithContentsOfURLOptionsError(NSURL url, @NUInt long readOptionsMask,
-            Ptr<NSError> errorPtr);
+            @ReferenceInfo(type = NSError.class) Ptr<NSError> errorPtr);
 
     @Generated
     @Selector("dataWithData:")
@@ -278,7 +279,7 @@ public class NSMutableData extends NSData {
     @Generated
     @Selector("initWithContentsOfFile:options:error:")
     public native NSMutableData initWithContentsOfFileOptionsError(String path, @NUInt long readOptionsMask,
-            Ptr<NSError> errorPtr);
+            @ReferenceInfo(type = NSError.class) Ptr<NSError> errorPtr);
 
     @Generated
     @Deprecated
@@ -292,7 +293,7 @@ public class NSMutableData extends NSData {
     @Generated
     @Selector("initWithContentsOfURL:options:error:")
     public native NSMutableData initWithContentsOfURLOptionsError(NSURL url, @NUInt long readOptionsMask,
-            Ptr<NSError> errorPtr);
+            @ReferenceInfo(type = NSError.class) Ptr<NSError> errorPtr);
 
     @Generated
     @Selector("initWithData:")

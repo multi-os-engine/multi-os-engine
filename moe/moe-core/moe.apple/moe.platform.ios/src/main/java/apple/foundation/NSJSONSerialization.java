@@ -27,6 +27,7 @@ import org.moe.natj.general.ann.MappedReturn;
 import org.moe.natj.general.ann.NInt;
 import org.moe.natj.general.ann.NUInt;
 import org.moe.natj.general.ann.Owned;
+import org.moe.natj.general.ann.ReferenceInfo;
 import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.general.ptr.Ptr;
 import org.moe.natj.general.ptr.VoidPtr;
@@ -54,13 +55,14 @@ public class NSJSONSerialization extends NSObject {
     @Generated
     @Selector("JSONObjectWithData:options:error:")
     @MappedReturn(ObjCObjectMapper.class)
-    public static native Object JSONObjectWithDataOptionsError(NSData data, @NUInt long opt, Ptr<NSError> error);
+    public static native Object JSONObjectWithDataOptionsError(NSData data, @NUInt long opt,
+            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     @Generated
     @Selector("JSONObjectWithStream:options:error:")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object JSONObjectWithStreamOptionsError(NSInputStream stream, @NUInt long opt,
-            Ptr<NSError> error);
+            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     @Generated
     @Selector("accessInstanceVariablesDirectly")
@@ -101,7 +103,7 @@ public class NSJSONSerialization extends NSObject {
     @Generated
     @Selector("dataWithJSONObject:options:error:")
     public static native NSData dataWithJSONObjectOptionsError(@Mapped(ObjCObjectMapper.class) Object obj,
-            @NUInt long opt, Ptr<NSError> error);
+            @NUInt long opt, @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     @Generated
     @Selector("debugDescription")
@@ -180,7 +182,7 @@ public class NSJSONSerialization extends NSObject {
     @Selector("writeJSONObject:toStream:options:error:")
     @NInt
     public static native long writeJSONObjectToStreamOptionsError(@Mapped(ObjCObjectMapper.class) Object obj,
-            NSOutputStream stream, @NUInt long opt, Ptr<NSError> error);
+            NSOutputStream stream, @NUInt long opt, @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     @Generated
     @Selector("init")

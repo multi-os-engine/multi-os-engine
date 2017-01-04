@@ -34,6 +34,7 @@ import org.moe.natj.general.ann.MappedReturn;
 import org.moe.natj.general.ann.NInt;
 import org.moe.natj.general.ann.NUInt;
 import org.moe.natj.general.ann.Owned;
+import org.moe.natj.general.ann.ReferenceInfo;
 import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.general.ptr.Ptr;
 import org.moe.natj.general.ptr.VoidPtr;
@@ -165,7 +166,8 @@ public class AVAudioSequencer extends NSObject {
 
     @Generated
     @Selector("beatsForHostTime:error:")
-    public native double beatsForHostTimeError(long inHostTime, Ptr<NSError> outError);
+    public native double beatsForHostTimeError(long inHostTime,
+            @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
     @Generated
     @Selector("beatsForSeconds:")
@@ -181,11 +183,13 @@ public class AVAudioSequencer extends NSObject {
 
     @Generated
     @Selector("dataWithSMPTEResolution:error:")
-    public native NSData dataWithSMPTEResolutionError(@NInt long SMPTEResolution, Ptr<NSError> outError);
+    public native NSData dataWithSMPTEResolutionError(@NInt long SMPTEResolution,
+            @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
     @Generated
     @Selector("hostTimeForBeats:error:")
-    public native long hostTimeForBeatsError(double inBeats, Ptr<NSError> outError);
+    public native long hostTimeForBeatsError(double inBeats,
+            @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
     @Generated
     @Selector("init")
@@ -201,11 +205,13 @@ public class AVAudioSequencer extends NSObject {
 
     @Generated
     @Selector("loadFromData:options:error:")
-    public native boolean loadFromDataOptionsError(NSData data, @NUInt long options, Ptr<NSError> outError);
+    public native boolean loadFromDataOptionsError(NSData data, @NUInt long options,
+            @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
     @Generated
     @Selector("loadFromURL:options:error:")
-    public native boolean loadFromURLOptionsError(NSURL fileURL, @NUInt long options, Ptr<NSError> outError);
+    public native boolean loadFromURLOptionsError(NSURL fileURL, @NUInt long options,
+            @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
     @Generated
     @Selector("prepareToPlay")
@@ -233,7 +239,7 @@ public class AVAudioSequencer extends NSObject {
 
     @Generated
     @Selector("startAndReturnError:")
-    public native boolean startAndReturnError(Ptr<NSError> outError);
+    public native boolean startAndReturnError(@ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
     @Generated
     @Selector("stop")
@@ -254,5 +260,5 @@ public class AVAudioSequencer extends NSObject {
     @Generated
     @Selector("writeToURL:SMPTEResolution:replaceExisting:error:")
     public native boolean writeToURLSMPTEResolutionReplaceExistingError(NSURL fileURL, @NInt long resolution,
-            boolean replace, Ptr<NSError> outError);
+            boolean replace, @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 }

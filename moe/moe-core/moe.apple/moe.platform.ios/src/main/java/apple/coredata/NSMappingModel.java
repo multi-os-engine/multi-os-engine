@@ -34,6 +34,7 @@ import org.moe.natj.general.ann.MappedReturn;
 import org.moe.natj.general.ann.NInt;
 import org.moe.natj.general.ann.NUInt;
 import org.moe.natj.general.ann.Owned;
+import org.moe.natj.general.ann.ReferenceInfo;
 import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.general.ptr.Ptr;
 import org.moe.natj.general.ptr.VoidPtr;
@@ -110,7 +111,8 @@ public class NSMappingModel extends NSObject {
     @Generated
     @Selector("inferredMappingModelForSourceModel:destinationModel:error:")
     public static native NSMappingModel inferredMappingModelForSourceModelDestinationModelError(
-            NSManagedObjectModel sourceModel, NSManagedObjectModel destinationModel, Ptr<NSError> error);
+            NSManagedObjectModel sourceModel, NSManagedObjectModel destinationModel,
+            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     @Generated
     @Selector("initialize")

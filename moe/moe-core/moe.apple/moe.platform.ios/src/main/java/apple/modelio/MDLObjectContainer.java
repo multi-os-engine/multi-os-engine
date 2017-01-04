@@ -31,6 +31,7 @@ import org.moe.natj.general.ann.MappedReturn;
 import org.moe.natj.general.ann.NInt;
 import org.moe.natj.general.ann.NUInt;
 import org.moe.natj.general.ann.Owned;
+import org.moe.natj.general.ann.ReferenceInfo;
 import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.general.ptr.Ptr;
 import org.moe.natj.general.ptr.VoidPtr;
@@ -168,7 +169,8 @@ public class MDLObjectContainer extends NSObject implements MDLObjectContainerCo
     @Generated
     @Selector("countByEnumeratingWithState:objects:count:")
     @NUInt
-    public native long countByEnumeratingWithStateObjectsCount(VoidPtr state, Ptr<ObjCObject> buffer, @NUInt long len);
+    public native long countByEnumeratingWithStateObjectsCount(VoidPtr state,
+            @ReferenceInfo(type = ObjCObject.class) Ptr<ObjCObject> buffer, @NUInt long len);
 
     @Generated
     @Selector("init")

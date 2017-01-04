@@ -33,6 +33,7 @@ import org.moe.natj.general.ann.MappedReturn;
 import org.moe.natj.general.ann.NInt;
 import org.moe.natj.general.ann.NUInt;
 import org.moe.natj.general.ann.Owned;
+import org.moe.natj.general.ann.ReferenceInfo;
 import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.general.ptr.Ptr;
 import org.moe.natj.general.ptr.VoidPtr;
@@ -209,17 +210,18 @@ public class GKMatch extends NSObject {
     @Generated
     @Selector("sendData:toPlayers:dataMode:error:")
     public native boolean sendDataToPlayersDataModeError(NSData data, NSArray<? extends GKPlayer> players,
-            @NInt long mode, Ptr<NSError> error);
+            @NInt long mode, @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     @Generated
     @Deprecated
     @Selector("sendData:toPlayers:withDataMode:error:")
     public native boolean sendDataToPlayersWithDataModeError(NSData data, NSArray<String> playerIDs, @NInt long mode,
-            Ptr<NSError> error);
+            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     @Generated
     @Selector("sendDataToAllPlayers:withDataMode:error:")
-    public native boolean sendDataToAllPlayersWithDataModeError(NSData data, @NInt long mode, Ptr<NSError> error);
+    public native boolean sendDataToAllPlayersWithDataModeError(NSData data, @NInt long mode,
+            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     @Generated
     @Selector("setDelegate:")

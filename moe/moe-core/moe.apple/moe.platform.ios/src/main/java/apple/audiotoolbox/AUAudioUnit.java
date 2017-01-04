@@ -39,6 +39,7 @@ import org.moe.natj.general.ann.MappedReturn;
 import org.moe.natj.general.ann.NInt;
 import org.moe.natj.general.ann.NUInt;
 import org.moe.natj.general.ann.Owned;
+import org.moe.natj.general.ann.ReferenceInfo;
 import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.general.ptr.ConstBytePtr;
 import org.moe.natj.general.ptr.DoublePtr;
@@ -191,7 +192,8 @@ public class AUAudioUnit extends NSObject {
 
     @Generated
     @Selector("allocateRenderResourcesAndReturnError:")
-    public native boolean allocateRenderResourcesAndReturnError(Ptr<NSError> outError);
+    public native boolean allocateRenderResourcesAndReturnError(
+            @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
     @Generated
     @Selector("audioUnitName")
@@ -265,12 +267,13 @@ public class AUAudioUnit extends NSObject {
     @Generated
     @Selector("initWithComponentDescription:error:")
     public native AUAudioUnit initWithComponentDescriptionError(@ByValue AudioComponentDescription componentDescription,
-            Ptr<NSError> outError);
+            @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
     @Generated
     @Selector("initWithComponentDescription:options:error:")
     public native AUAudioUnit initWithComponentDescriptionOptionsError(
-            @ByValue AudioComponentDescription componentDescription, int options, Ptr<NSError> outError);
+            @ByValue AudioComponentDescription componentDescription, int options,
+            @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
     @Generated
     @Selector("inputBusses")
@@ -434,7 +437,7 @@ public class AUAudioUnit extends NSObject {
 
     @Generated
     @Selector("startHardwareAndReturnError:")
-    public native boolean startHardwareAndReturnError(Ptr<NSError> outError);
+    public native boolean startHardwareAndReturnError(@ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
     @Generated
     @Selector("stopHardware")

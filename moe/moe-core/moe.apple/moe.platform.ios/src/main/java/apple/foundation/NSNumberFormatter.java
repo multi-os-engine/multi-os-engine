@@ -28,6 +28,7 @@ import org.moe.natj.general.ann.MappedReturn;
 import org.moe.natj.general.ann.NInt;
 import org.moe.natj.general.ann.NUInt;
 import org.moe.natj.general.ann.Owned;
+import org.moe.natj.general.ann.ReferenceInfo;
 import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.general.ptr.Ptr;
 import org.moe.natj.general.ptr.VoidPtr;
@@ -224,8 +225,8 @@ public class NSNumberFormatter extends NSFormatter {
 
     @Generated
     @Selector("getObjectValue:forString:range:error:")
-    public native boolean getObjectValueForStringRangeError(Ptr<ObjCObject> obj, String string, NSRange rangep,
-            Ptr<NSError> error);
+    public native boolean getObjectValueForStringRangeError(@ReferenceInfo(type = ObjCObject.class) Ptr<ObjCObject> obj,
+            String string, NSRange rangep, @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     @Generated
     @Selector("groupingSeparator")

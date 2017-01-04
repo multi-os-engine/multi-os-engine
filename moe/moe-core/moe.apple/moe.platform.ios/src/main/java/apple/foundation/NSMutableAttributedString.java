@@ -30,6 +30,7 @@ import org.moe.natj.general.ann.MappedReturn;
 import org.moe.natj.general.ann.NInt;
 import org.moe.natj.general.ann.NUInt;
 import org.moe.natj.general.ann.Owned;
+import org.moe.natj.general.ann.ReferenceInfo;
 import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.general.ptr.Ptr;
 import org.moe.natj.general.ptr.VoidPtr;
@@ -212,13 +213,16 @@ public class NSMutableAttributedString extends NSAttributedString {
     @Generated
     @Selector("initWithData:options:documentAttributes:error:")
     public native NSMutableAttributedString initWithDataOptionsDocumentAttributesError(NSData data,
-            NSDictionary<String, ?> options, Ptr<NSDictionary<String, ?>> dict, Ptr<NSError> error);
+            NSDictionary<String, ?> options,
+            @ReferenceInfo(type = NSDictionary.class) Ptr<NSDictionary<String, ?>> dict,
+            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     @Generated
     @Deprecated
     @Selector("initWithFileURL:options:documentAttributes:error:")
     public native NSMutableAttributedString initWithFileURLOptionsDocumentAttributesError(NSURL url,
-            NSDictionary<?, ?> options, Ptr<NSDictionary<?, ?>> dict, Ptr<NSError> error);
+            NSDictionary<?, ?> options, @ReferenceInfo(type = NSDictionary.class) Ptr<NSDictionary<?, ?>> dict,
+            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     @Generated
     @Selector("initWithString:")
@@ -231,7 +235,9 @@ public class NSMutableAttributedString extends NSAttributedString {
     @Generated
     @Selector("initWithURL:options:documentAttributes:error:")
     public native NSMutableAttributedString initWithURLOptionsDocumentAttributesError(NSURL url,
-            NSDictionary<String, ?> options, Ptr<NSDictionary<String, ?>> dict, Ptr<NSError> error);
+            NSDictionary<String, ?> options,
+            @ReferenceInfo(type = NSDictionary.class) Ptr<NSDictionary<String, ?>> dict,
+            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     @Generated
     @Selector("insertAttributedString:atIndex:")
@@ -244,18 +250,21 @@ public class NSMutableAttributedString extends NSAttributedString {
     @Generated
     @Selector("readFromData:options:documentAttributes:error:")
     public native boolean readFromDataOptionsDocumentAttributesError(NSData data, NSDictionary<String, ?> opts,
-            Ptr<NSDictionary<String, ?>> dict, Ptr<NSError> error);
+            @ReferenceInfo(type = NSDictionary.class) Ptr<NSDictionary<String, ?>> dict,
+            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     @Generated
     @Deprecated
     @Selector("readFromFileURL:options:documentAttributes:error:")
     public native boolean readFromFileURLOptionsDocumentAttributesError(NSURL url, NSDictionary<?, ?> opts,
-            Ptr<NSDictionary<?, ?>> dict, Ptr<NSError> error);
+            @ReferenceInfo(type = NSDictionary.class) Ptr<NSDictionary<?, ?>> dict,
+            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     @Generated
     @Selector("readFromURL:options:documentAttributes:error:")
     public native boolean readFromURLOptionsDocumentAttributesError(NSURL url, NSDictionary<String, ?> opts,
-            Ptr<NSDictionary<String, ?>> dict, Ptr<NSError> error);
+            @ReferenceInfo(type = NSDictionary.class) Ptr<NSDictionary<String, ?>> dict,
+            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     @Generated
     @Selector("removeAttribute:range:")

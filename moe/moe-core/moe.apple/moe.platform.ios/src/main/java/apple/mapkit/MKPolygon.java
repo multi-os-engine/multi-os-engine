@@ -35,6 +35,7 @@ import org.moe.natj.general.ann.MappedReturn;
 import org.moe.natj.general.ann.NInt;
 import org.moe.natj.general.ann.NUInt;
 import org.moe.natj.general.ann.Owned;
+import org.moe.natj.general.ann.ReferenceInfo;
 import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.general.ptr.ConstPtr;
 import org.moe.natj.general.ptr.VoidPtr;
@@ -146,22 +147,26 @@ public class MKPolygon extends MKMultiPoint implements MKOverlay {
 
     @Generated
     @Selector("polygonWithCoordinates:count:")
-    public static native MKPolygon polygonWithCoordinatesCount(ConstPtr<CLLocationCoordinate2D> coords,
+    public static native MKPolygon polygonWithCoordinatesCount(
+            @ReferenceInfo(type = CLLocationCoordinate2D.class) ConstPtr<CLLocationCoordinate2D> coords,
             @NUInt long count);
 
     @Generated
     @Selector("polygonWithCoordinates:count:interiorPolygons:")
-    public static native MKPolygon polygonWithCoordinatesCountInteriorPolygons(ConstPtr<CLLocationCoordinate2D> coords,
+    public static native MKPolygon polygonWithCoordinatesCountInteriorPolygons(
+            @ReferenceInfo(type = CLLocationCoordinate2D.class) ConstPtr<CLLocationCoordinate2D> coords,
             @NUInt long count, NSArray<? extends MKPolygon> interiorPolygons);
 
     @Generated
     @Selector("polygonWithPoints:count:")
-    public static native MKPolygon polygonWithPointsCount(ConstPtr<MKMapPoint> points, @NUInt long count);
+    public static native MKPolygon polygonWithPointsCount(
+            @ReferenceInfo(type = MKMapPoint.class) ConstPtr<MKMapPoint> points, @NUInt long count);
 
     @Generated
     @Selector("polygonWithPoints:count:interiorPolygons:")
-    public static native MKPolygon polygonWithPointsCountInteriorPolygons(ConstPtr<MKMapPoint> points,
-            @NUInt long count, NSArray<? extends MKPolygon> interiorPolygons);
+    public static native MKPolygon polygonWithPointsCountInteriorPolygons(
+            @ReferenceInfo(type = MKMapPoint.class) ConstPtr<MKMapPoint> points, @NUInt long count,
+            NSArray<? extends MKPolygon> interiorPolygons);
 
     @Generated
     @Selector("resolveClassMethod:")

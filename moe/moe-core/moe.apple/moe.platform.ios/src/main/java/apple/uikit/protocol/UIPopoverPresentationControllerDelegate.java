@@ -21,6 +21,7 @@ import apple.uikit.UIPopoverPresentationController;
 import apple.uikit.UIView;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.Library;
+import org.moe.natj.general.ann.ReferenceInfo;
 import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.general.ptr.Ptr;
 import org.moe.natj.objc.ObjCRuntime;
@@ -37,7 +38,8 @@ public interface UIPopoverPresentationControllerDelegate extends UIAdaptivePrese
     @IsOptional
     @Selector("popoverPresentationController:willRepositionPopoverToRect:inView:")
     default void popoverPresentationControllerWillRepositionPopoverToRectInView(
-            UIPopoverPresentationController popoverPresentationController, CGRect rect, Ptr<UIView> view) {
+            UIPopoverPresentationController popoverPresentationController, CGRect rect,
+            @ReferenceInfo(type = UIView.class) Ptr<UIView> view) {
         throw new java.lang.UnsupportedOperationException();
     }
 

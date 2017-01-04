@@ -31,6 +31,7 @@ import org.moe.natj.general.ann.MappedReturn;
 import org.moe.natj.general.ann.NInt;
 import org.moe.natj.general.ann.NUInt;
 import org.moe.natj.general.ann.Owned;
+import org.moe.natj.general.ann.ReferenceInfo;
 import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.general.ptr.Ptr;
 import org.moe.natj.general.ptr.VoidPtr;
@@ -195,15 +196,16 @@ public class NSMergePolicy extends NSObject {
 
     @Generated
     @Selector("resolveConflicts:error:")
-    public native boolean resolveConflictsError(NSArray<?> list, Ptr<NSError> error);
+    public native boolean resolveConflictsError(NSArray<?> list,
+            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     @Generated
     @Selector("resolveConstraintConflicts:error:")
     public native boolean resolveConstraintConflictsError(NSArray<? extends NSConstraintConflict> list,
-            Ptr<NSError> error);
+            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     @Generated
     @Selector("resolveOptimisticLockingVersionConflicts:error:")
     public native boolean resolveOptimisticLockingVersionConflictsError(NSArray<? extends NSMergeConflict> list,
-            Ptr<NSError> error);
+            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 }

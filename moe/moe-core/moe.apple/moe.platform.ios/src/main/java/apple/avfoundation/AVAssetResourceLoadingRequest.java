@@ -35,6 +35,7 @@ import org.moe.natj.general.ann.MappedReturn;
 import org.moe.natj.general.ann.NInt;
 import org.moe.natj.general.ann.NUInt;
 import org.moe.natj.general.ann.Owned;
+import org.moe.natj.general.ann.ReferenceInfo;
 import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.general.ptr.Ptr;
 import org.moe.natj.general.ptr.VoidPtr;
@@ -201,7 +202,7 @@ public class AVAssetResourceLoadingRequest extends NSObject {
     @Generated
     @Selector("persistentContentKeyFromKeyVendorResponse:options:error:")
     public native NSData persistentContentKeyFromKeyVendorResponseOptionsError(NSData keyVendorResponse,
-            NSDictionary<String, ?> options, Ptr<NSError> outError);
+            NSDictionary<String, ?> options, @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
     @Generated
     @Selector("redirect")
@@ -226,5 +227,6 @@ public class AVAssetResourceLoadingRequest extends NSObject {
     @Generated
     @Selector("streamingContentKeyRequestDataForApp:contentIdentifier:options:error:")
     public native NSData streamingContentKeyRequestDataForAppContentIdentifierOptionsError(NSData appIdentifier,
-            NSData contentIdentifier, NSDictionary<String, ?> options, Ptr<NSError> outError);
+            NSData contentIdentifier, NSDictionary<String, ?> options,
+            @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 }

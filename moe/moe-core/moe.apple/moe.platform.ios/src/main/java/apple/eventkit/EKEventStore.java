@@ -33,6 +33,7 @@ import org.moe.natj.general.ann.MappedReturn;
 import org.moe.natj.general.ann.NInt;
 import org.moe.natj.general.ann.NUInt;
 import org.moe.natj.general.ann.Owned;
+import org.moe.natj.general.ann.ReferenceInfo;
 import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.general.ptr.BoolPtr;
 import org.moe.natj.general.ptr.Ptr;
@@ -196,7 +197,7 @@ public class EKEventStore extends NSObject {
 
     @Generated
     @Selector("commit:")
-    public native boolean commit(Ptr<NSError> error);
+    public native boolean commit(@ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     @Generated
     @Selector("defaultCalendarForNewEvents")
@@ -258,20 +259,23 @@ public class EKEventStore extends NSObject {
 
     @Generated
     @Selector("removeCalendar:commit:error:")
-    public native boolean removeCalendarCommitError(EKCalendar calendar, boolean commit, Ptr<NSError> error);
+    public native boolean removeCalendarCommitError(EKCalendar calendar, boolean commit,
+            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     @Generated
     @Selector("removeEvent:span:commit:error:")
     public native boolean removeEventSpanCommitError(EKEvent event, @NInt long span, boolean commit,
-            Ptr<NSError> error);
+            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     @Generated
     @Selector("removeEvent:span:error:")
-    public native boolean removeEventSpanError(EKEvent event, @NInt long span, Ptr<NSError> error);
+    public native boolean removeEventSpanError(EKEvent event, @NInt long span,
+            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     @Generated
     @Selector("removeReminder:commit:error:")
-    public native boolean removeReminderCommitError(EKReminder reminder, boolean commit, Ptr<NSError> error);
+    public native boolean removeReminderCommitError(EKReminder reminder, boolean commit,
+            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     @Generated
     @Selector("requestAccessToEntityType:completion:")
@@ -284,19 +288,23 @@ public class EKEventStore extends NSObject {
 
     @Generated
     @Selector("saveCalendar:commit:error:")
-    public native boolean saveCalendarCommitError(EKCalendar calendar, boolean commit, Ptr<NSError> error);
+    public native boolean saveCalendarCommitError(EKCalendar calendar, boolean commit,
+            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     @Generated
     @Selector("saveEvent:span:commit:error:")
-    public native boolean saveEventSpanCommitError(EKEvent event, @NInt long span, boolean commit, Ptr<NSError> error);
+    public native boolean saveEventSpanCommitError(EKEvent event, @NInt long span, boolean commit,
+            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     @Generated
     @Selector("saveEvent:span:error:")
-    public native boolean saveEventSpanError(EKEvent event, @NInt long span, Ptr<NSError> error);
+    public native boolean saveEventSpanError(EKEvent event, @NInt long span,
+            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     @Generated
     @Selector("saveReminder:commit:error:")
-    public native boolean saveReminderCommitError(EKReminder reminder, boolean commit, Ptr<NSError> error);
+    public native boolean saveReminderCommitError(EKReminder reminder, boolean commit,
+            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     @Generated
     @Selector("sourceWithIdentifier:")

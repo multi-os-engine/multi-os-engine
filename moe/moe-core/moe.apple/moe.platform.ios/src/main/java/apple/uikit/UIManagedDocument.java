@@ -35,6 +35,7 @@ import org.moe.natj.general.ann.MappedReturn;
 import org.moe.natj.general.ann.NInt;
 import org.moe.natj.general.ann.NUInt;
 import org.moe.natj.general.ann.Owned;
+import org.moe.natj.general.ann.ReferenceInfo;
 import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.general.ptr.Ptr;
 import org.moe.natj.general.ptr.VoidPtr;
@@ -171,12 +172,14 @@ public class UIManagedDocument extends UIDocument {
     @Generated
     @Selector("additionalContentForURL:error:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object additionalContentForURLError(NSURL absoluteURL, Ptr<NSError> error);
+    public native Object additionalContentForURLError(NSURL absoluteURL,
+            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     @Generated
     @Selector("configurePersistentStoreCoordinatorForURL:ofType:modelConfiguration:storeOptions:error:")
     public native boolean configurePersistentStoreCoordinatorForURLOfTypeModelConfigurationStoreOptionsError(
-            NSURL storeURL, String fileType, String configuration, NSDictionary<?, ?> storeOptions, Ptr<NSError> error);
+            NSURL storeURL, String fileType, String configuration, NSDictionary<?, ?> storeOptions,
+            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     @Generated
     @Selector("init")
@@ -208,7 +211,8 @@ public class UIManagedDocument extends UIDocument {
 
     @Generated
     @Selector("readAdditionalContentFromURL:error:")
-    public native boolean readAdditionalContentFromURLError(NSURL absoluteURL, Ptr<NSError> error);
+    public native boolean readAdditionalContentFromURLError(NSURL absoluteURL,
+            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     @Generated
     @Selector("setModelConfiguration:")
@@ -222,5 +226,5 @@ public class UIManagedDocument extends UIDocument {
     @Selector("writeAdditionalContent:toURL:originalContentsURL:error:")
     public native boolean writeAdditionalContentToURLOriginalContentsURLError(
             @Mapped(ObjCObjectMapper.class) Object content, NSURL absoluteURL, NSURL absoluteOriginalContentsURL,
-            Ptr<NSError> error);
+            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 }

@@ -28,6 +28,7 @@ import org.moe.natj.general.ann.MappedReturn;
 import org.moe.natj.general.ann.NInt;
 import org.moe.natj.general.ann.NUInt;
 import org.moe.natj.general.ann.Owned;
+import org.moe.natj.general.ann.ReferenceInfo;
 import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.general.ptr.BoolPtr;
 import org.moe.natj.general.ptr.ConstPtr;
@@ -143,7 +144,8 @@ public class NSMutableDictionary<_KeyType, _ObjectType> extends NSDictionary<_Ke
     @Generated
     @Selector("dictionaryWithObjects:forKeys:count:")
     public static native <_KeyType, _ObjectType> NSMutableDictionary<?, ?> dictionaryWithObjectsForKeysCount(
-            ConstPtr<_ObjectType> objects, ConstPtr<ObjCObject> keys, @NUInt long cnt);
+            @ReferenceInfo(type = ObjCObject.class) ConstPtr<_ObjectType> objects,
+            @ReferenceInfo(type = ObjCObject.class) ConstPtr<ObjCObject> keys, @NUInt long cnt);
 
     @Generated
     @Variadic()
@@ -265,8 +267,9 @@ public class NSMutableDictionary<_KeyType, _ObjectType> extends NSDictionary<_Ke
 
     @Generated
     @Selector("initWithObjects:forKeys:count:")
-    public native NSMutableDictionary<?, ?> initWithObjectsForKeysCount(Ptr<_ObjectType> objects, Ptr<ObjCObject> keys,
-            @NUInt long cnt);
+    public native NSMutableDictionary<?, ?> initWithObjectsForKeysCount(
+            @ReferenceInfo(type = ObjCObject.class) Ptr<_ObjectType> objects,
+            @ReferenceInfo(type = ObjCObject.class) Ptr<ObjCObject> keys, @NUInt long cnt);
 
     @Generated
     @Variadic()

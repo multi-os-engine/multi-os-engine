@@ -23,6 +23,7 @@ import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.Library;
 import org.moe.natj.general.ann.Mapped;
 import org.moe.natj.general.ann.MappedReturn;
+import org.moe.natj.general.ann.ReferenceInfo;
 import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.general.ptr.Ptr;
 import org.moe.natj.objc.ObjCRuntime;
@@ -63,7 +64,7 @@ public interface MTLLibrary {
     @Selector("newFunctionWithName:constantValues:error:")
     @MappedReturn(ObjCObjectMapper.class)
     Object newFunctionWithNameConstantValuesError(String name, MTLFunctionConstantValues constantValues,
-            Ptr<NSError> error);
+            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     @Generated
     @Selector("setLabel:")

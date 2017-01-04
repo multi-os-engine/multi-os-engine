@@ -28,6 +28,7 @@ import org.moe.natj.general.ann.MappedReturn;
 import org.moe.natj.general.ann.NInt;
 import org.moe.natj.general.ann.NUInt;
 import org.moe.natj.general.ann.Owned;
+import org.moe.natj.general.ann.ReferenceInfo;
 import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.general.ptr.Ptr;
 import org.moe.natj.general.ptr.VoidPtr;
@@ -183,25 +184,27 @@ public class NSFileCoordinator extends NSObject {
     @Generated
     @Selector("coordinateReadingItemAtURL:options:error:byAccessor:")
     public native void coordinateReadingItemAtURLOptionsErrorByAccessor(NSURL url, @NUInt long options,
-            Ptr<NSError> outError,
+            @ReferenceInfo(type = NSError.class) Ptr<NSError> outError,
             @ObjCBlock(name = "call_coordinateReadingItemAtURLOptionsErrorByAccessor") Block_coordinateReadingItemAtURLOptionsErrorByAccessor reader);
 
     @Generated
     @Selector("coordinateReadingItemAtURL:options:writingItemAtURL:options:error:byAccessor:")
     public native void coordinateReadingItemAtURLOptionsWritingItemAtURLOptionsErrorByAccessor(NSURL readingURL,
-            @NUInt long readingOptions, NSURL writingURL, @NUInt long writingOptions, Ptr<NSError> outError,
+            @NUInt long readingOptions, NSURL writingURL, @NUInt long writingOptions,
+            @ReferenceInfo(type = NSError.class) Ptr<NSError> outError,
             @ObjCBlock(name = "call_coordinateReadingItemAtURLOptionsWritingItemAtURLOptionsErrorByAccessor") Block_coordinateReadingItemAtURLOptionsWritingItemAtURLOptionsErrorByAccessor readerWriter);
 
     @Generated
     @Selector("coordinateWritingItemAtURL:options:error:byAccessor:")
     public native void coordinateWritingItemAtURLOptionsErrorByAccessor(NSURL url, @NUInt long options,
-            Ptr<NSError> outError,
+            @ReferenceInfo(type = NSError.class) Ptr<NSError> outError,
             @ObjCBlock(name = "call_coordinateWritingItemAtURLOptionsErrorByAccessor") Block_coordinateWritingItemAtURLOptionsErrorByAccessor writer);
 
     @Generated
     @Selector("coordinateWritingItemAtURL:options:writingItemAtURL:options:error:byAccessor:")
     public native void coordinateWritingItemAtURLOptionsWritingItemAtURLOptionsErrorByAccessor(NSURL url1,
-            @NUInt long options1, NSURL url2, @NUInt long options2, Ptr<NSError> outError,
+            @NUInt long options1, NSURL url2, @NUInt long options2,
+            @ReferenceInfo(type = NSError.class) Ptr<NSError> outError,
             @ObjCBlock(name = "call_coordinateWritingItemAtURLOptionsWritingItemAtURLOptionsErrorByAccessor") Block_coordinateWritingItemAtURLOptionsWritingItemAtURLOptionsErrorByAccessor writer);
 
     @Generated

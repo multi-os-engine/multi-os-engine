@@ -31,6 +31,7 @@ import org.moe.natj.general.ann.MappedReturn;
 import org.moe.natj.general.ann.NInt;
 import org.moe.natj.general.ann.NUInt;
 import org.moe.natj.general.ann.Owned;
+import org.moe.natj.general.ann.ReferenceInfo;
 import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.general.ptr.Ptr;
 import org.moe.natj.general.ptr.VoidPtr;
@@ -182,8 +183,9 @@ public class NSFormatter extends NSObject implements NSCopying, NSCoding {
 
     @Generated
     @Selector("getObjectValue:forString:errorDescription:")
-    public native boolean getObjectValueForStringErrorDescription(Ptr<ObjCObject> obj, String string,
-            Ptr<NSString> error);
+    public native boolean getObjectValueForStringErrorDescription(
+            @ReferenceInfo(type = ObjCObject.class) Ptr<ObjCObject> obj, String string,
+            @ReferenceInfo(type = NSString.class) Ptr<NSString> error);
 
     @Generated
     @Selector("init")
@@ -196,13 +198,15 @@ public class NSFormatter extends NSObject implements NSCopying, NSCoding {
     @Generated
     @Selector("isPartialStringValid:newEditingString:errorDescription:")
     public native boolean isPartialStringValidNewEditingStringErrorDescription(String partialString,
-            Ptr<NSString> newString, Ptr<NSString> error);
+            @ReferenceInfo(type = NSString.class) Ptr<NSString> newString,
+            @ReferenceInfo(type = NSString.class) Ptr<NSString> error);
 
     @Generated
     @Selector("isPartialStringValid:proposedSelectedRange:originalString:originalSelectedRange:errorDescription:")
     public native boolean isPartialStringValidProposedSelectedRangeOriginalStringOriginalSelectedRangeErrorDescription(
-            Ptr<NSString> partialStringPtr, NSRange proposedSelRangePtr, String origString,
-            @ByValue NSRange origSelRange, Ptr<NSString> error);
+            @ReferenceInfo(type = NSString.class) Ptr<NSString> partialStringPtr, NSRange proposedSelRangePtr,
+            String origString, @ByValue NSRange origSelRange,
+            @ReferenceInfo(type = NSString.class) Ptr<NSString> error);
 
     @Generated
     @Selector("stringForObjectValue:")

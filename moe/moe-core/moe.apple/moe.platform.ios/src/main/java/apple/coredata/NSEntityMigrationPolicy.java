@@ -31,6 +31,7 @@ import org.moe.natj.general.ann.MappedReturn;
 import org.moe.natj.general.ann.NInt;
 import org.moe.natj.general.ann.NUInt;
 import org.moe.natj.general.ann.Owned;
+import org.moe.natj.general.ann.ReferenceInfo;
 import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.general.ptr.Ptr;
 import org.moe.natj.general.ptr.VoidPtr;
@@ -163,32 +164,34 @@ public class NSEntityMigrationPolicy extends NSObject {
     @Generated
     @Selector("beginEntityMapping:manager:error:")
     public native boolean beginEntityMappingManagerError(NSEntityMapping mapping, NSMigrationManager manager,
-            Ptr<NSError> error);
+            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     @Generated
     @Selector("createDestinationInstancesForSourceInstance:entityMapping:manager:error:")
     public native boolean createDestinationInstancesForSourceInstanceEntityMappingManagerError(
-            NSManagedObject sInstance, NSEntityMapping mapping, NSMigrationManager manager, Ptr<NSError> error);
+            NSManagedObject sInstance, NSEntityMapping mapping, NSMigrationManager manager,
+            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     @Generated
     @Selector("createRelationshipsForDestinationInstance:entityMapping:manager:error:")
     public native boolean createRelationshipsForDestinationInstanceEntityMappingManagerError(NSManagedObject dInstance,
-            NSEntityMapping mapping, NSMigrationManager manager, Ptr<NSError> error);
+            NSEntityMapping mapping, NSMigrationManager manager,
+            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     @Generated
     @Selector("endEntityMapping:manager:error:")
     public native boolean endEntityMappingManagerError(NSEntityMapping mapping, NSMigrationManager manager,
-            Ptr<NSError> error);
+            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     @Generated
     @Selector("endInstanceCreationForEntityMapping:manager:error:")
     public native boolean endInstanceCreationForEntityMappingManagerError(NSEntityMapping mapping,
-            NSMigrationManager manager, Ptr<NSError> error);
+            NSMigrationManager manager, @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     @Generated
     @Selector("endRelationshipCreationForEntityMapping:manager:error:")
     public native boolean endRelationshipCreationForEntityMappingManagerError(NSEntityMapping mapping,
-            NSMigrationManager manager, Ptr<NSError> error);
+            NSMigrationManager manager, @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     @Generated
     @Selector("init")
@@ -197,5 +200,5 @@ public class NSEntityMigrationPolicy extends NSObject {
     @Generated
     @Selector("performCustomValidationForEntityMapping:manager:error:")
     public native boolean performCustomValidationForEntityMappingManagerError(NSEntityMapping mapping,
-            NSMigrationManager manager, Ptr<NSError> error);
+            NSMigrationManager manager, @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 }

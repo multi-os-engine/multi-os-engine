@@ -33,6 +33,7 @@ import org.moe.natj.general.ann.MappedReturn;
 import org.moe.natj.general.ann.NInt;
 import org.moe.natj.general.ann.NUInt;
 import org.moe.natj.general.ann.Owned;
+import org.moe.natj.general.ann.ReferenceInfo;
 import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.general.ptr.Ptr;
 import org.moe.natj.general.ptr.VoidPtr;
@@ -181,10 +182,12 @@ public class AUAudioUnitV2Bridge extends AUAudioUnit {
     @Generated
     @Selector("initWithComponentDescription:error:")
     public native AUAudioUnitV2Bridge initWithComponentDescriptionError(
-            @ByValue AudioComponentDescription componentDescription, Ptr<NSError> outError);
+            @ByValue AudioComponentDescription componentDescription,
+            @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
     @Generated
     @Selector("initWithComponentDescription:options:error:")
     public native AUAudioUnitV2Bridge initWithComponentDescriptionOptionsError(
-            @ByValue AudioComponentDescription componentDescription, int options, Ptr<NSError> outError);
+            @ByValue AudioComponentDescription componentDescription, int options,
+            @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 }

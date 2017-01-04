@@ -35,6 +35,7 @@ import org.moe.natj.general.ann.MappedReturn;
 import org.moe.natj.general.ann.NInt;
 import org.moe.natj.general.ann.NUInt;
 import org.moe.natj.general.ann.Owned;
+import org.moe.natj.general.ann.ReferenceInfo;
 import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.general.ptr.Ptr;
 import org.moe.natj.general.ptr.VoidPtr;
@@ -142,12 +143,12 @@ public class NSPersistentStoreCoordinator extends NSObject implements NSLocking 
     @Deprecated
     @Selector("metadataForPersistentStoreOfType:URL:error:")
     public static native NSDictionary<String, ?> metadataForPersistentStoreOfTypeURLError(String storeType, NSURL url,
-            Ptr<NSError> error);
+            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     @Generated
     @Selector("metadataForPersistentStoreOfType:URL:options:error:")
     public static native NSDictionary<String, ?> metadataForPersistentStoreOfTypeURLOptionsError(String storeType,
-            NSURL url, NSDictionary<?, ?> options, Ptr<NSError> error);
+            NSURL url, NSDictionary<?, ?> options, @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     @Generated
     @Owned
@@ -166,7 +167,7 @@ public class NSPersistentStoreCoordinator extends NSObject implements NSLocking 
     @Generated
     @Selector("removeUbiquitousContentAndPersistentStoreAtURL:options:error:")
     public static native boolean removeUbiquitousContentAndPersistentStoreAtURLOptionsError(NSURL storeURL,
-            NSDictionary<?, ?> options, Ptr<NSError> error);
+            NSDictionary<?, ?> options, @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -180,12 +181,13 @@ public class NSPersistentStoreCoordinator extends NSObject implements NSLocking 
     @Deprecated
     @Selector("setMetadata:forPersistentStoreOfType:URL:error:")
     public static native boolean setMetadataForPersistentStoreOfTypeURLError(NSDictionary<String, ?> metadata,
-            String storeType, NSURL url, Ptr<NSError> error);
+            String storeType, NSURL url, @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     @Generated
     @Selector("setMetadata:forPersistentStoreOfType:URL:options:error:")
     public static native boolean setMetadataForPersistentStoreOfTypeURLOptionsError(NSDictionary<String, ?> metadata,
-            String storeType, NSURL url, NSDictionary<?, ?> options, Ptr<NSError> error);
+            String storeType, NSURL url, NSDictionary<?, ?> options,
+            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     @Generated
     @Selector("setVersion:")
@@ -212,18 +214,19 @@ public class NSPersistentStoreCoordinator extends NSObject implements NSLocking 
     @Generated
     @Selector("addPersistentStoreWithType:configuration:URL:options:error:")
     public native NSPersistentStore addPersistentStoreWithTypeConfigurationURLOptionsError(String storeType,
-            String configuration, NSURL storeURL, NSDictionary<?, ?> options, Ptr<NSError> error);
+            String configuration, NSURL storeURL, NSDictionary<?, ?> options,
+            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     @Generated
     @Selector("destroyPersistentStoreAtURL:withType:options:error:")
     public native boolean destroyPersistentStoreAtURLWithTypeOptionsError(NSURL url, String storeType,
-            NSDictionary<?, ?> options, Ptr<NSError> error);
+            NSDictionary<?, ?> options, @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     @Generated
     @Selector("executeRequest:withContext:error:")
     @MappedReturn(ObjCObjectMapper.class)
     public native Object executeRequestWithContextError(NSPersistentStoreRequest request,
-            NSManagedObjectContext context, Ptr<NSError> error);
+            NSManagedObjectContext context, @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     @Generated
     @Selector("init")
@@ -253,7 +256,7 @@ public class NSPersistentStoreCoordinator extends NSObject implements NSLocking 
     @Generated
     @Selector("migratePersistentStore:toURL:options:withType:error:")
     public native NSPersistentStore migratePersistentStoreToURLOptionsWithTypeError(NSPersistentStore store, NSURL URL,
-            NSDictionary<?, ?> options, String storeType, Ptr<NSError> error);
+            NSDictionary<?, ?> options, String storeType, @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     @Generated
     @Selector("name")
@@ -278,13 +281,15 @@ public class NSPersistentStoreCoordinator extends NSObject implements NSLocking 
 
     @Generated
     @Selector("removePersistentStore:error:")
-    public native boolean removePersistentStoreError(NSPersistentStore store, Ptr<NSError> error);
+    public native boolean removePersistentStoreError(NSPersistentStore store,
+            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     @Generated
     @Selector("replacePersistentStoreAtURL:destinationOptions:withPersistentStoreFromURL:sourceOptions:storeType:error:")
     public native boolean replacePersistentStoreAtURLDestinationOptionsWithPersistentStoreFromURLSourceOptionsStoreTypeError(
             NSURL destinationURL, NSDictionary<?, ?> destinationOptions, NSURL sourceURL,
-            NSDictionary<?, ?> sourceOptions, String storeType, Ptr<NSError> error);
+            NSDictionary<?, ?> sourceOptions, String storeType,
+            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     @Generated
     @Selector("setMetadata:forPersistentStore:")

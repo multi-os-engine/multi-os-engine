@@ -28,6 +28,7 @@ import org.moe.natj.general.ann.MappedReturn;
 import org.moe.natj.general.ann.NInt;
 import org.moe.natj.general.ann.NUInt;
 import org.moe.natj.general.ann.Owned;
+import org.moe.natj.general.ann.ReferenceInfo;
 import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.general.ptr.Ptr;
 import org.moe.natj.general.ptr.VoidPtr;
@@ -166,7 +167,8 @@ public class NSURLConnection extends NSObject {
     @Deprecated
     @Selector("sendSynchronousRequest:returningResponse:error:")
     public static native NSData sendSynchronousRequestReturningResponseError(NSURLRequest request,
-            Ptr<NSURLResponse> response, Ptr<NSError> error);
+            @ReferenceInfo(type = NSURLResponse.class) Ptr<NSURLResponse> response,
+            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     @Generated
     @Selector("setVersion:")

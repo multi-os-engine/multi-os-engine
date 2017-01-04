@@ -42,6 +42,7 @@ import org.moe.natj.general.ann.NFloat;
 import org.moe.natj.general.ann.NInt;
 import org.moe.natj.general.ann.NUInt;
 import org.moe.natj.general.ann.Owned;
+import org.moe.natj.general.ann.ReferenceInfo;
 import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.general.ptr.BoolPtr;
 import org.moe.natj.general.ptr.BytePtr;
@@ -200,7 +201,8 @@ public class NSString extends NSObject
     @Selector("stringEncodingForData:encodingOptions:convertedString:usedLossyConversion:")
     @NUInt
     public static native long stringEncodingForDataEncodingOptionsConvertedStringUsedLossyConversion(NSData data,
-            NSDictionary<String, ?> opts, Ptr<NSString> string, BoolPtr usedLossyConversion);
+            NSDictionary<String, ?> opts, @ReferenceInfo(type = NSString.class) Ptr<NSString> string,
+            BoolPtr usedLossyConversion);
 
     @Generated
     @Deprecated
@@ -228,12 +230,12 @@ public class NSString extends NSObject
     @Generated
     @Selector("stringWithContentsOfFile:encoding:error:")
     public static native NSString stringWithContentsOfFileEncodingError(String path, @NUInt long enc,
-            Ptr<NSError> error);
+            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     @Generated
     @Selector("stringWithContentsOfFile:usedEncoding:error:")
     public static native NSString stringWithContentsOfFileUsedEncodingError(String path, NUIntPtr enc,
-            Ptr<NSError> error);
+            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     @Generated
     @Deprecated
@@ -242,11 +244,13 @@ public class NSString extends NSObject
 
     @Generated
     @Selector("stringWithContentsOfURL:encoding:error:")
-    public static native NSString stringWithContentsOfURLEncodingError(NSURL url, @NUInt long enc, Ptr<NSError> error);
+    public static native NSString stringWithContentsOfURLEncodingError(NSURL url, @NUInt long enc,
+            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     @Generated
     @Selector("stringWithContentsOfURL:usedEncoding:error:")
-    public static native NSString stringWithContentsOfURLUsedEncodingError(NSURL url, NUIntPtr enc, Ptr<NSError> error);
+    public static native NSString stringWithContentsOfURLUsedEncodingError(NSURL url, NUIntPtr enc,
+            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     @Generated
     @Variadic()
@@ -352,8 +356,9 @@ public class NSString extends NSObject
     @Generated
     @Selector("completePathIntoString:caseSensitive:matchesIntoArray:filterTypes:")
     @NUInt
-    public native long completePathIntoStringCaseSensitiveMatchesIntoArrayFilterTypes(Ptr<NSString> outputName,
-            boolean flag, Ptr<NSArray<String>> outputArray, NSArray<String> filterTypes);
+    public native long completePathIntoStringCaseSensitiveMatchesIntoArrayFilterTypes(
+            @ReferenceInfo(type = NSString.class) Ptr<NSString> outputName, boolean flag,
+            @ReferenceInfo(type = NSArray.class) Ptr<NSArray<String>> outputArray, NSArray<String> filterTypes);
 
     @Generated
     @Selector("componentsSeparatedByCharactersInSet:")
@@ -606,11 +611,13 @@ public class NSString extends NSObject
 
     @Generated
     @Selector("initWithContentsOfFile:encoding:error:")
-    public native NSString initWithContentsOfFileEncodingError(String path, @NUInt long enc, Ptr<NSError> error);
+    public native NSString initWithContentsOfFileEncodingError(String path, @NUInt long enc,
+            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     @Generated
     @Selector("initWithContentsOfFile:usedEncoding:error:")
-    public native NSString initWithContentsOfFileUsedEncodingError(String path, NUIntPtr enc, Ptr<NSError> error);
+    public native NSString initWithContentsOfFileUsedEncodingError(String path, NUIntPtr enc,
+            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     @Generated
     @Deprecated
@@ -619,11 +626,13 @@ public class NSString extends NSObject
 
     @Generated
     @Selector("initWithContentsOfURL:encoding:error:")
-    public native NSString initWithContentsOfURLEncodingError(NSURL url, @NUInt long enc, Ptr<NSError> error);
+    public native NSString initWithContentsOfURLEncodingError(NSURL url, @NUInt long enc,
+            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     @Generated
     @Selector("initWithContentsOfURL:usedEncoding:error:")
-    public native NSString initWithContentsOfURLUsedEncodingError(NSURL url, NUIntPtr enc, Ptr<NSError> error);
+    public native NSString initWithContentsOfURLUsedEncodingError(NSURL url, NUIntPtr enc,
+            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     @Generated
     @Selector("initWithData:encoding:")
@@ -696,7 +705,8 @@ public class NSString extends NSObject
     @Generated
     @Selector("linguisticTagsInRange:scheme:options:orthography:tokenRanges:")
     public native NSArray<String> linguisticTagsInRangeSchemeOptionsOrthographyTokenRanges(@ByValue NSRange range,
-            String tagScheme, @NUInt long opts, NSOrthography orthography, Ptr<NSArray<? extends NSValue>> tokenRanges);
+            String tagScheme, @NUInt long opts, NSOrthography orthography,
+            @ReferenceInfo(type = NSArray.class) Ptr<NSArray<? extends NSValue>> tokenRanges);
 
     @Generated
     @Selector("localizedCapitalizedString")
@@ -1016,7 +1026,7 @@ public class NSString extends NSObject
     @Generated
     @Selector("writeToFile:atomically:encoding:error:")
     public native boolean writeToFileAtomicallyEncodingError(String path, boolean useAuxiliaryFile, @NUInt long enc,
-            Ptr<NSError> error);
+            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     @Generated
     @Deprecated
@@ -1026,7 +1036,7 @@ public class NSString extends NSObject
     @Generated
     @Selector("writeToURL:atomically:encoding:error:")
     public native boolean writeToURLAtomicallyEncodingError(NSURL url, boolean useAuxiliaryFile, @NUInt long enc,
-            Ptr<NSError> error);
+            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     @Runtime(ObjCRuntime.class)
     @Generated

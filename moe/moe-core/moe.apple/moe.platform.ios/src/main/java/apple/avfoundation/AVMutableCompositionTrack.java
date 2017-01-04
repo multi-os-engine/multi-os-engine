@@ -36,6 +36,7 @@ import org.moe.natj.general.ann.MappedReturn;
 import org.moe.natj.general.ann.NInt;
 import org.moe.natj.general.ann.NUInt;
 import org.moe.natj.general.ann.Owned;
+import org.moe.natj.general.ann.ReferenceInfo;
 import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.general.ptr.Ptr;
 import org.moe.natj.general.ptr.VoidPtr;
@@ -180,12 +181,13 @@ public class AVMutableCompositionTrack extends AVCompositionTrack {
     @Generated
     @Selector("insertTimeRange:ofTrack:atTime:error:")
     public native boolean insertTimeRangeOfTrackAtTimeError(@ByValue CMTimeRange timeRange, AVAssetTrack track,
-            @ByValue CMTime startTime, Ptr<NSError> outError);
+            @ByValue CMTime startTime, @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
     @Generated
     @Selector("insertTimeRanges:ofTracks:atTime:error:")
     public native boolean insertTimeRangesOfTracksAtTimeError(NSArray<? extends NSValue> timeRanges,
-            NSArray<? extends AVAssetTrack> tracks, @ByValue CMTime startTime, Ptr<NSError> outError);
+            NSArray<? extends AVAssetTrack> tracks, @ByValue CMTime startTime,
+            @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
     @Generated
     @Selector("languageCode")
@@ -243,5 +245,5 @@ public class AVMutableCompositionTrack extends AVCompositionTrack {
     @Generated
     @Selector("validateTrackSegments:error:")
     public native boolean validateTrackSegmentsError(NSArray<? extends AVCompositionTrackSegment> trackSegments,
-            Ptr<NSError> outError);
+            @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 }

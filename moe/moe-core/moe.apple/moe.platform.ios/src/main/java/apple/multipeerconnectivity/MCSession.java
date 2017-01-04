@@ -36,6 +36,7 @@ import org.moe.natj.general.ann.MappedReturn;
 import org.moe.natj.general.ann.NInt;
 import org.moe.natj.general.ann.NUInt;
 import org.moe.natj.general.ann.Owned;
+import org.moe.natj.general.ann.ReferenceInfo;
 import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.general.ptr.Ptr;
 import org.moe.natj.general.ptr.VoidPtr;
@@ -221,7 +222,7 @@ public class MCSession extends NSObject {
     @Generated
     @Selector("sendData:toPeers:withMode:error:")
     public native boolean sendDataToPeersWithModeError(NSData data, NSArray<? extends MCPeerID> peerIDs,
-            @NInt long mode, Ptr<NSError> error);
+            @NInt long mode, @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     @Generated
     @Selector("sendResourceAtURL:withName:toPeer:withCompletionHandler:")
@@ -247,7 +248,8 @@ public class MCSession extends NSObject {
 
     @Generated
     @Selector("startStreamWithName:toPeer:error:")
-    public native NSOutputStream startStreamWithNameToPeerError(String streamName, MCPeerID peerID, Ptr<NSError> error);
+    public native NSOutputStream startStreamWithNameToPeerError(String streamName, MCPeerID peerID,
+            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     @Runtime(ObjCRuntime.class)
     @Generated

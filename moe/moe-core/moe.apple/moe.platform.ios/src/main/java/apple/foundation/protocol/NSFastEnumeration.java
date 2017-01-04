@@ -19,6 +19,7 @@ package apple.foundation.protocol;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.Library;
 import org.moe.natj.general.ann.NUInt;
+import org.moe.natj.general.ann.ReferenceInfo;
 import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.general.ptr.Ptr;
 import org.moe.natj.general.ptr.VoidPtr;
@@ -35,5 +36,6 @@ public interface NSFastEnumeration {
     @Generated
     @Selector("countByEnumeratingWithState:objects:count:")
     @NUInt
-    long countByEnumeratingWithStateObjectsCount(VoidPtr state, Ptr<ObjCObject> buffer, @NUInt long len);
+    long countByEnumeratingWithStateObjectsCount(VoidPtr state,
+            @ReferenceInfo(type = ObjCObject.class) Ptr<ObjCObject> buffer, @NUInt long len);
 }

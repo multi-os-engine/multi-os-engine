@@ -33,6 +33,7 @@ import org.moe.natj.general.ann.MappedReturn;
 import org.moe.natj.general.ann.NInt;
 import org.moe.natj.general.ann.NUInt;
 import org.moe.natj.general.ann.Owned;
+import org.moe.natj.general.ann.ReferenceInfo;
 import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.general.ptr.Ptr;
 import org.moe.natj.general.ptr.VoidPtr;
@@ -142,7 +143,8 @@ public class NSIncrementalStore extends NSPersistentStore {
 
     @Generated
     @Selector("metadataForPersistentStoreWithURL:error:")
-    public static native NSDictionary<String, ?> metadataForPersistentStoreWithURLError(NSURL url, Ptr<NSError> error);
+    public static native NSDictionary<String, ?> metadataForPersistentStoreWithURLError(NSURL url,
+            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     @Generated
     @Selector("migrationManagerClass")
@@ -165,7 +167,7 @@ public class NSIncrementalStore extends NSPersistentStore {
     @Generated
     @Selector("setMetadata:forPersistentStoreWithURL:error:")
     public static native boolean setMetadataForPersistentStoreWithURLError(NSDictionary<String, ?> metadata, NSURL url,
-            Ptr<NSError> error);
+            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     @Generated
     @Selector("setVersion:")
@@ -184,7 +186,7 @@ public class NSIncrementalStore extends NSPersistentStore {
     @Selector("executeRequest:withContext:error:")
     @MappedReturn(ObjCObjectMapper.class)
     public native Object executeRequestWithContextError(NSPersistentStoreRequest request,
-            NSManagedObjectContext context, Ptr<NSError> error);
+            NSManagedObjectContext context, @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     @Generated
     @Selector("init")
@@ -197,7 +199,7 @@ public class NSIncrementalStore extends NSPersistentStore {
 
     @Generated
     @Selector("loadMetadata:")
-    public native boolean loadMetadata(Ptr<NSError> error);
+    public native boolean loadMetadata(@ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     @Generated
     @Selector("managedObjectContextDidRegisterObjectsWithIDs:")
@@ -216,17 +218,18 @@ public class NSIncrementalStore extends NSPersistentStore {
     @Selector("newValueForRelationship:forObjectWithID:withContext:error:")
     @MappedReturn(ObjCObjectMapper.class)
     public native Object newValueForRelationshipForObjectWithIDWithContextError(NSRelationshipDescription relationship,
-            NSManagedObjectID objectID, NSManagedObjectContext context, Ptr<NSError> error);
+            NSManagedObjectID objectID, NSManagedObjectContext context,
+            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     @Generated
     @Selector("newValuesForObjectWithID:withContext:error:")
     public native NSIncrementalStoreNode newValuesForObjectWithIDWithContextError(NSManagedObjectID objectID,
-            NSManagedObjectContext context, Ptr<NSError> error);
+            NSManagedObjectContext context, @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     @Generated
     @Selector("obtainPermanentIDsForObjects:error:")
     public native NSArray<? extends NSManagedObjectID> obtainPermanentIDsForObjectsError(
-            NSArray<? extends NSManagedObject> array, Ptr<NSError> error);
+            NSArray<? extends NSManagedObject> array, @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     @Generated
     @Selector("referenceObjectForObjectID:")

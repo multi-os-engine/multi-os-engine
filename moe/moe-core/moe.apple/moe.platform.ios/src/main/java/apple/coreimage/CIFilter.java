@@ -42,6 +42,7 @@ import org.moe.natj.general.ann.MappedReturn;
 import org.moe.natj.general.ann.NInt;
 import org.moe.natj.general.ann.NUInt;
 import org.moe.natj.general.ann.Owned;
+import org.moe.natj.general.ann.ReferenceInfo;
 import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.general.ptr.Ptr;
 import org.moe.natj.general.ptr.VoidPtr;
@@ -114,7 +115,7 @@ public class CIFilter extends NSObject implements NSSecureCoding, NSCopying {
     @Generated
     @Selector("filterArrayFromSerializedXMP:inputImageExtent:error:")
     public static native NSArray<? extends CIFilter> filterArrayFromSerializedXMPInputImageExtentError(NSData xmpData,
-            @ByValue CGRect extent, Ptr<NSError> outError);
+            @ByValue CGRect extent, @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
     @Generated
     @Selector("filterNamesInCategories:")

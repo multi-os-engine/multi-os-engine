@@ -25,6 +25,7 @@ import org.moe.natj.general.ann.Library;
 import org.moe.natj.general.ann.Mapped;
 import org.moe.natj.general.ann.NInt;
 import org.moe.natj.general.ann.NUInt;
+import org.moe.natj.general.ann.ReferenceInfo;
 import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.general.ptr.ConstFloatPtr;
 import org.moe.natj.general.ptr.ConstNUIntPtr;
@@ -137,7 +138,8 @@ public interface MTLRenderCommandEncoder extends MTLCommandEncoder {
 
     @Generated
     @Selector("setFragmentBuffers:offsets:withRange:")
-    void setFragmentBuffersOffsetsWithRange(Ptr<ObjCObject> buffers, ConstNUIntPtr offset, @ByValue NSRange range);
+    void setFragmentBuffersOffsetsWithRange(@ReferenceInfo(type = ObjCObject.class) Ptr<ObjCObject> buffers,
+            ConstNUIntPtr offset, @ByValue NSRange range);
 
     @Generated
     @Selector("setFragmentBytes:length:atIndex:")
@@ -154,12 +156,14 @@ public interface MTLRenderCommandEncoder extends MTLCommandEncoder {
 
     @Generated
     @Selector("setFragmentSamplerStates:lodMinClamps:lodMaxClamps:withRange:")
-    void setFragmentSamplerStatesLodMinClampsLodMaxClampsWithRange(Ptr<ObjCObject> samplers, ConstFloatPtr lodMinClamps,
+    void setFragmentSamplerStatesLodMinClampsLodMaxClampsWithRange(
+            @ReferenceInfo(type = ObjCObject.class) Ptr<ObjCObject> samplers, ConstFloatPtr lodMinClamps,
             ConstFloatPtr lodMaxClamps, @ByValue NSRange range);
 
     @Generated
     @Selector("setFragmentSamplerStates:withRange:")
-    void setFragmentSamplerStatesWithRange(Ptr<ObjCObject> samplers, @ByValue NSRange range);
+    void setFragmentSamplerStatesWithRange(@ReferenceInfo(type = ObjCObject.class) Ptr<ObjCObject> samplers,
+            @ByValue NSRange range);
 
     @Generated
     @Selector("setFragmentTexture:atIndex:")
@@ -167,7 +171,8 @@ public interface MTLRenderCommandEncoder extends MTLCommandEncoder {
 
     @Generated
     @Selector("setFragmentTextures:withRange:")
-    void setFragmentTexturesWithRange(Ptr<ObjCObject> textures, @ByValue NSRange range);
+    void setFragmentTexturesWithRange(@ReferenceInfo(type = ObjCObject.class) Ptr<ObjCObject> textures,
+            @ByValue NSRange range);
 
     @Generated
     @Selector("setFrontFacingWinding:")
@@ -217,7 +222,8 @@ public interface MTLRenderCommandEncoder extends MTLCommandEncoder {
 
     @Generated
     @Selector("setVertexBuffers:offsets:withRange:")
-    void setVertexBuffersOffsetsWithRange(Ptr<ObjCObject> buffers, ConstNUIntPtr offsets, @ByValue NSRange range);
+    void setVertexBuffersOffsetsWithRange(@ReferenceInfo(type = ObjCObject.class) Ptr<ObjCObject> buffers,
+            ConstNUIntPtr offsets, @ByValue NSRange range);
 
     @Generated
     @Selector("setVertexBytes:length:atIndex:")
@@ -234,12 +240,14 @@ public interface MTLRenderCommandEncoder extends MTLCommandEncoder {
 
     @Generated
     @Selector("setVertexSamplerStates:lodMinClamps:lodMaxClamps:withRange:")
-    void setVertexSamplerStatesLodMinClampsLodMaxClampsWithRange(Ptr<ObjCObject> samplers, ConstFloatPtr lodMinClamps,
+    void setVertexSamplerStatesLodMinClampsLodMaxClampsWithRange(
+            @ReferenceInfo(type = ObjCObject.class) Ptr<ObjCObject> samplers, ConstFloatPtr lodMinClamps,
             ConstFloatPtr lodMaxClamps, @ByValue NSRange range);
 
     @Generated
     @Selector("setVertexSamplerStates:withRange:")
-    void setVertexSamplerStatesWithRange(Ptr<ObjCObject> samplers, @ByValue NSRange range);
+    void setVertexSamplerStatesWithRange(@ReferenceInfo(type = ObjCObject.class) Ptr<ObjCObject> samplers,
+            @ByValue NSRange range);
 
     @Generated
     @Selector("setVertexTexture:atIndex:")
@@ -247,7 +255,8 @@ public interface MTLRenderCommandEncoder extends MTLCommandEncoder {
 
     @Generated
     @Selector("setVertexTextures:withRange:")
-    void setVertexTexturesWithRange(Ptr<ObjCObject> textures, @ByValue NSRange range);
+    void setVertexTexturesWithRange(@ReferenceInfo(type = ObjCObject.class) Ptr<ObjCObject> textures,
+            @ByValue NSRange range);
 
     @Generated
     @Selector("setViewport:")

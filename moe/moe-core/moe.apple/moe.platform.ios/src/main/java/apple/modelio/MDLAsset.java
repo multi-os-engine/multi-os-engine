@@ -38,6 +38,7 @@ import org.moe.natj.general.ann.MappedReturn;
 import org.moe.natj.general.ann.NInt;
 import org.moe.natj.general.ann.NUInt;
 import org.moe.natj.general.ann.Owned;
+import org.moe.natj.general.ann.ReferenceInfo;
 import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.general.ptr.Ptr;
 import org.moe.natj.general.ptr.VoidPtr;
@@ -221,7 +222,8 @@ public class MDLAsset extends NSObject implements NSCopying, NSFastEnumeration {
     @Generated
     @Selector("countByEnumeratingWithState:objects:count:")
     @NUInt
-    public native long countByEnumeratingWithStateObjectsCount(VoidPtr state, Ptr<ObjCObject> buffer, @NUInt long len);
+    public native long countByEnumeratingWithStateObjectsCount(VoidPtr state,
+            @ReferenceInfo(type = ObjCObject.class) Ptr<ObjCObject> buffer, @NUInt long len);
 
     @Generated
     @Selector("endTime")
@@ -233,7 +235,7 @@ public class MDLAsset extends NSObject implements NSCopying, NSFastEnumeration {
 
     @Generated
     @Selector("exportAssetToURL:error:")
-    public native boolean exportAssetToURLError(NSURL URL, Ptr<NSError> error);
+    public native boolean exportAssetToURLError(NSURL URL, @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     @Generated
     @Selector("frameInterval")
@@ -262,7 +264,7 @@ public class MDLAsset extends NSObject implements NSCopying, NSFastEnumeration {
     public native MDLAsset initWithURLVertexDescriptorBufferAllocatorPreserveTopologyError(NSURL URL,
             MDLVertexDescriptor vertexDescriptor,
             @Mapped(ObjCObjectMapper.class) MDLMeshBufferAllocator bufferAllocator, boolean preserveTopology,
-            Ptr<NSError> error);
+            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     @Generated
     @Selector("masters")

@@ -37,6 +37,7 @@ import org.moe.natj.general.ann.MappedReturn;
 import org.moe.natj.general.ann.NInt;
 import org.moe.natj.general.ann.NUInt;
 import org.moe.natj.general.ann.Owned;
+import org.moe.natj.general.ann.ReferenceInfo;
 import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.general.ptr.BoolPtr;
 import org.moe.natj.general.ptr.BytePtr;
@@ -201,7 +202,8 @@ public class CSLocalizedString extends NSString {
     @Selector("stringEncodingForData:encodingOptions:convertedString:usedLossyConversion:")
     @NUInt
     public static native long stringEncodingForDataEncodingOptionsConvertedStringUsedLossyConversion(NSData data,
-            NSDictionary<String, ?> opts, Ptr<NSString> string, BoolPtr usedLossyConversion);
+            NSDictionary<String, ?> opts, @ReferenceInfo(type = NSString.class) Ptr<NSString> string,
+            BoolPtr usedLossyConversion);
 
     @Generated
     @Deprecated
@@ -229,12 +231,12 @@ public class CSLocalizedString extends NSString {
     @Generated
     @Selector("stringWithContentsOfFile:encoding:error:")
     public static native CSLocalizedString stringWithContentsOfFileEncodingError(String path, @NUInt long enc,
-            Ptr<NSError> error);
+            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     @Generated
     @Selector("stringWithContentsOfFile:usedEncoding:error:")
     public static native CSLocalizedString stringWithContentsOfFileUsedEncodingError(String path, NUIntPtr enc,
-            Ptr<NSError> error);
+            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     @Generated
     @Deprecated
@@ -244,12 +246,12 @@ public class CSLocalizedString extends NSString {
     @Generated
     @Selector("stringWithContentsOfURL:encoding:error:")
     public static native CSLocalizedString stringWithContentsOfURLEncodingError(NSURL url, @NUInt long enc,
-            Ptr<NSError> error);
+            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     @Generated
     @Selector("stringWithContentsOfURL:usedEncoding:error:")
     public static native CSLocalizedString stringWithContentsOfURLUsedEncodingError(NSURL url, NUIntPtr enc,
-            Ptr<NSError> error);
+            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     @Generated
     @Variadic()
@@ -332,12 +334,12 @@ public class CSLocalizedString extends NSString {
     @Generated
     @Selector("initWithContentsOfFile:encoding:error:")
     public native CSLocalizedString initWithContentsOfFileEncodingError(String path, @NUInt long enc,
-            Ptr<NSError> error);
+            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     @Generated
     @Selector("initWithContentsOfFile:usedEncoding:error:")
     public native CSLocalizedString initWithContentsOfFileUsedEncodingError(String path, NUIntPtr enc,
-            Ptr<NSError> error);
+            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     @Generated
     @Deprecated
@@ -346,11 +348,13 @@ public class CSLocalizedString extends NSString {
 
     @Generated
     @Selector("initWithContentsOfURL:encoding:error:")
-    public native CSLocalizedString initWithContentsOfURLEncodingError(NSURL url, @NUInt long enc, Ptr<NSError> error);
+    public native CSLocalizedString initWithContentsOfURLEncodingError(NSURL url, @NUInt long enc,
+            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     @Generated
     @Selector("initWithContentsOfURL:usedEncoding:error:")
-    public native CSLocalizedString initWithContentsOfURLUsedEncodingError(NSURL url, NUIntPtr enc, Ptr<NSError> error);
+    public native CSLocalizedString initWithContentsOfURLUsedEncodingError(NSURL url, NUIntPtr enc,
+            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     @Generated
     @Selector("initWithData:encoding:")

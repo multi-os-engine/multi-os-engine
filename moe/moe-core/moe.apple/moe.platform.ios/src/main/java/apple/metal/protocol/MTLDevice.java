@@ -36,6 +36,7 @@ import org.moe.natj.general.ann.Library;
 import org.moe.natj.general.ann.Mapped;
 import org.moe.natj.general.ann.MappedReturn;
 import org.moe.natj.general.ann.NUInt;
+import org.moe.natj.general.ann.ReferenceInfo;
 import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.general.ptr.ConstVoidPtr;
 import org.moe.natj.general.ptr.Ptr;
@@ -106,7 +107,9 @@ public interface MTLDevice {
     @Selector("newComputePipelineStateWithDescriptor:options:reflection:error:")
     @MappedReturn(ObjCObjectMapper.class)
     Object newComputePipelineStateWithDescriptorOptionsReflectionError(MTLComputePipelineDescriptor descriptor,
-            @NUInt long options, Ptr<MTLComputePipelineReflection> reflection, Ptr<NSError> error);
+            @NUInt long options,
+            @ReferenceInfo(type = MTLComputePipelineReflection.class) Ptr<MTLComputePipelineReflection> reflection,
+            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     @Generated
     @Selector("newComputePipelineStateWithFunction:completionHandler:")
@@ -117,7 +120,7 @@ public interface MTLDevice {
     @Selector("newComputePipelineStateWithFunction:error:")
     @MappedReturn(ObjCObjectMapper.class)
     Object newComputePipelineStateWithFunctionError(@Mapped(ObjCObjectMapper.class) Object computeFunction,
-            Ptr<NSError> error);
+            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     @Generated
     @Selector("newComputePipelineStateWithFunction:options:completionHandler:")
@@ -130,7 +133,8 @@ public interface MTLDevice {
     @MappedReturn(ObjCObjectMapper.class)
     Object newComputePipelineStateWithFunctionOptionsReflectionError(
             @Mapped(ObjCObjectMapper.class) Object computeFunction, @NUInt long options,
-            Ptr<MTLComputePipelineReflection> reflection, Ptr<NSError> error);
+            @ReferenceInfo(type = MTLComputePipelineReflection.class) Ptr<MTLComputePipelineReflection> reflection,
+            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     @Generated
     @Selector("newDefaultLibrary")
@@ -140,7 +144,7 @@ public interface MTLDevice {
     @Generated
     @Selector("newDefaultLibraryWithBundle:error:")
     @MappedReturn(ObjCObjectMapper.class)
-    Object newDefaultLibraryWithBundleError(NSBundle bundle, Ptr<NSError> error);
+    Object newDefaultLibraryWithBundleError(NSBundle bundle, @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     @Generated
     @Selector("newDepthStencilStateWithDescriptor:")
@@ -160,12 +164,12 @@ public interface MTLDevice {
     @Generated
     @Selector("newLibraryWithData:error:")
     @MappedReturn(ObjCObjectMapper.class)
-    Object newLibraryWithDataError(NSObject data, Ptr<NSError> error);
+    Object newLibraryWithDataError(NSObject data, @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     @Generated
     @Selector("newLibraryWithFile:error:")
     @MappedReturn(ObjCObjectMapper.class)
-    Object newLibraryWithFileError(String filepath, Ptr<NSError> error);
+    Object newLibraryWithFileError(String filepath, @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     @Generated
     @Selector("newLibraryWithSource:options:completionHandler:")
@@ -175,7 +179,8 @@ public interface MTLDevice {
     @Generated
     @Selector("newLibraryWithSource:options:error:")
     @MappedReturn(ObjCObjectMapper.class)
-    Object newLibraryWithSourceOptionsError(String source, MTLCompileOptions options, Ptr<NSError> error);
+    Object newLibraryWithSourceOptionsError(String source, MTLCompileOptions options,
+            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     @Generated
     @Selector("newRenderPipelineStateWithDescriptor:completionHandler:")
@@ -185,7 +190,8 @@ public interface MTLDevice {
     @Generated
     @Selector("newRenderPipelineStateWithDescriptor:error:")
     @MappedReturn(ObjCObjectMapper.class)
-    Object newRenderPipelineStateWithDescriptorError(MTLRenderPipelineDescriptor descriptor, Ptr<NSError> error);
+    Object newRenderPipelineStateWithDescriptorError(MTLRenderPipelineDescriptor descriptor,
+            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     @Generated
     @Selector("newRenderPipelineStateWithDescriptor:options:completionHandler:")
@@ -197,7 +203,9 @@ public interface MTLDevice {
     @Selector("newRenderPipelineStateWithDescriptor:options:reflection:error:")
     @MappedReturn(ObjCObjectMapper.class)
     Object newRenderPipelineStateWithDescriptorOptionsReflectionError(MTLRenderPipelineDescriptor descriptor,
-            @NUInt long options, Ptr<MTLRenderPipelineReflection> reflection, Ptr<NSError> error);
+            @NUInt long options,
+            @ReferenceInfo(type = MTLRenderPipelineReflection.class) Ptr<MTLRenderPipelineReflection> reflection,
+            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     @Generated
     @Selector("newSamplerStateWithDescriptor:")

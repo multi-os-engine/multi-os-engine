@@ -40,6 +40,7 @@ import org.moe.natj.general.ann.MappedReturn;
 import org.moe.natj.general.ann.NInt;
 import org.moe.natj.general.ann.NUInt;
 import org.moe.natj.general.ann.Owned;
+import org.moe.natj.general.ann.ReferenceInfo;
 import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.general.ptr.ConstBytePtr;
 import org.moe.natj.general.ptr.ConstVoidPtr;
@@ -298,23 +299,25 @@ public class NSCoder extends NSObject {
     @Generated
     @Selector("decodeTopLevelObjectAndReturnError:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object decodeTopLevelObjectAndReturnError(Ptr<NSError> error);
+    public native Object decodeTopLevelObjectAndReturnError(@ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     @Generated
     @Selector("decodeTopLevelObjectForKey:error:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object decodeTopLevelObjectForKeyError(String key, Ptr<NSError> error);
+    public native Object decodeTopLevelObjectForKeyError(String key,
+            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     @Generated
     @Selector("decodeTopLevelObjectOfClass:forKey:error:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object decodeTopLevelObjectOfClassForKeyError(Class aClass, String key, Ptr<NSError> error);
+    public native Object decodeTopLevelObjectOfClassForKeyError(Class aClass, String key,
+            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     @Generated
     @Selector("decodeTopLevelObjectOfClasses:forKey:error:")
     @MappedReturn(ObjCObjectMapper.class)
     public native Object decodeTopLevelObjectOfClassesForKeyError(NSSet<? extends Class> classes, String key,
-            Ptr<NSError> error);
+            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     @Generated
     @Selector("decodeUIEdgeInsetsForKey:")

@@ -35,6 +35,7 @@ import org.moe.natj.general.ann.MappedReturn;
 import org.moe.natj.general.ann.NInt;
 import org.moe.natj.general.ann.NUInt;
 import org.moe.natj.general.ann.Owned;
+import org.moe.natj.general.ann.ReferenceInfo;
 import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.general.ptr.NIntPtr;
 import org.moe.natj.general.ptr.Ptr;
@@ -202,13 +203,14 @@ public class AVAudioConverter extends NSObject {
     @Generated
     @Selector("convertToBuffer:error:withInputFromBlock:")
     @NInt
-    public native long convertToBufferErrorWithInputFromBlock(AVAudioBuffer outputBuffer, Ptr<NSError> outError,
+    public native long convertToBufferErrorWithInputFromBlock(AVAudioBuffer outputBuffer,
+            @ReferenceInfo(type = NSError.class) Ptr<NSError> outError,
             @ObjCBlock(name = "call_convertToBufferErrorWithInputFromBlock") Block_convertToBufferErrorWithInputFromBlock inputBlock);
 
     @Generated
     @Selector("convertToBuffer:fromBuffer:error:")
     public native boolean convertToBufferFromBufferError(AVAudioPCMBuffer outputBuffer, AVAudioPCMBuffer inputBuffer,
-            Ptr<NSError> outError);
+            @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
     @Generated
     @Selector("dither")

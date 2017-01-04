@@ -38,6 +38,7 @@ import org.moe.natj.general.ann.MappedReturn;
 import org.moe.natj.general.ann.NInt;
 import org.moe.natj.general.ann.NUInt;
 import org.moe.natj.general.ann.Owned;
+import org.moe.natj.general.ann.ReferenceInfo;
 import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.general.ptr.Ptr;
 import org.moe.natj.general.ptr.VoidPtr;
@@ -191,7 +192,8 @@ public class NSManagedObjectContext extends NSObject implements NSCoding, NSLock
     @Generated
     @Selector("countForFetchRequest:error:")
     @NUInt
-    public native long countForFetchRequestError(NSFetchRequest<?> request, Ptr<NSError> error);
+    public native long countForFetchRequestError(NSFetchRequest<?> request,
+            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     @Generated
     @Selector("deleteObject:")
@@ -211,15 +213,18 @@ public class NSManagedObjectContext extends NSObject implements NSCoding, NSLock
 
     @Generated
     @Selector("executeFetchRequest:error:")
-    public native NSArray<?> executeFetchRequestError(NSFetchRequest<?> request, Ptr<NSError> error);
+    public native NSArray<?> executeFetchRequestError(NSFetchRequest<?> request,
+            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     @Generated
     @Selector("executeRequest:error:")
-    public native NSPersistentStoreResult executeRequestError(NSPersistentStoreRequest request, Ptr<NSError> error);
+    public native NSPersistentStoreResult executeRequestError(NSPersistentStoreRequest request,
+            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     @Generated
     @Selector("existingObjectWithID:error:")
-    public native NSManagedObject existingObjectWithIDError(NSManagedObjectID objectID, Ptr<NSError> error);
+    public native NSManagedObject existingObjectWithIDError(NSManagedObjectID objectID,
+            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     @Generated
     @Selector("hasChanges")
@@ -280,7 +285,7 @@ public class NSManagedObjectContext extends NSObject implements NSCoding, NSLock
     @Generated
     @Selector("obtainPermanentIDsForObjects:error:")
     public native boolean obtainPermanentIDsForObjectsError(NSArray<? extends NSManagedObject> objects,
-            Ptr<NSError> error);
+            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     @Generated
     @Selector("parentContext")
@@ -341,7 +346,7 @@ public class NSManagedObjectContext extends NSObject implements NSCoding, NSLock
 
     @Generated
     @Selector("save:")
-    public native boolean save(Ptr<NSError> error);
+    public native boolean save(@ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     @Generated
     @Selector("setAutomaticallyMergesChangesFromParent:")
@@ -369,7 +374,8 @@ public class NSManagedObjectContext extends NSObject implements NSCoding, NSLock
 
     @Generated
     @Selector("setQueryGenerationFromToken:error:")
-    public native boolean setQueryGenerationFromTokenError(NSQueryGenerationToken generation, Ptr<NSError> error);
+    public native boolean setQueryGenerationFromTokenError(NSQueryGenerationToken generation,
+            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     @Generated
     @Selector("setRetainsRegisteredObjects:")

@@ -27,6 +27,7 @@ import org.moe.natj.general.ann.MappedReturn;
 import org.moe.natj.general.ann.NInt;
 import org.moe.natj.general.ann.NUInt;
 import org.moe.natj.general.ann.Owned;
+import org.moe.natj.general.ann.ReferenceInfo;
 import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.general.ptr.Ptr;
 import org.moe.natj.general.ptr.VoidPtr;
@@ -303,7 +304,7 @@ public class NSBundle extends NSObject {
 
     @Generated
     @Selector("loadAndReturnError:")
-    public native boolean loadAndReturnError(Ptr<NSError> error);
+    public native boolean loadAndReturnError(@ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     @Generated
     @Selector("loadNibNamed:owner:options:")
@@ -359,7 +360,7 @@ public class NSBundle extends NSObject {
 
     @Generated
     @Selector("preflightAndReturnError:")
-    public native boolean preflightAndReturnError(Ptr<NSError> error);
+    public native boolean preflightAndReturnError(@ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     @Generated
     @Selector("preservationPriorityForTag:")

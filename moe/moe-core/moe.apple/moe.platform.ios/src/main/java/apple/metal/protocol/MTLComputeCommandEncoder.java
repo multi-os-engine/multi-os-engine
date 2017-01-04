@@ -24,6 +24,7 @@ import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.Library;
 import org.moe.natj.general.ann.Mapped;
 import org.moe.natj.general.ann.NUInt;
+import org.moe.natj.general.ann.ReferenceInfo;
 import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.general.ptr.ConstFloatPtr;
 import org.moe.natj.general.ptr.ConstNUIntPtr;
@@ -61,7 +62,8 @@ public interface MTLComputeCommandEncoder extends MTLCommandEncoder {
 
     @Generated
     @Selector("setBuffers:offsets:withRange:")
-    void setBuffersOffsetsWithRange(Ptr<ObjCObject> buffers, ConstNUIntPtr offsets, @ByValue NSRange range);
+    void setBuffersOffsetsWithRange(@ReferenceInfo(type = ObjCObject.class) Ptr<ObjCObject> buffers,
+            ConstNUIntPtr offsets, @ByValue NSRange range);
 
     @Generated
     @Selector("setBytes:length:atIndex:")
@@ -82,12 +84,14 @@ public interface MTLComputeCommandEncoder extends MTLCommandEncoder {
 
     @Generated
     @Selector("setSamplerStates:lodMinClamps:lodMaxClamps:withRange:")
-    void setSamplerStatesLodMinClampsLodMaxClampsWithRange(Ptr<ObjCObject> samplers, ConstFloatPtr lodMinClamps,
+    void setSamplerStatesLodMinClampsLodMaxClampsWithRange(
+            @ReferenceInfo(type = ObjCObject.class) Ptr<ObjCObject> samplers, ConstFloatPtr lodMinClamps,
             ConstFloatPtr lodMaxClamps, @ByValue NSRange range);
 
     @Generated
     @Selector("setSamplerStates:withRange:")
-    void setSamplerStatesWithRange(Ptr<ObjCObject> samplers, @ByValue NSRange range);
+    void setSamplerStatesWithRange(@ReferenceInfo(type = ObjCObject.class) Ptr<ObjCObject> samplers,
+            @ByValue NSRange range);
 
     @Generated
     @Selector("setStageInRegion:")
@@ -99,7 +103,7 @@ public interface MTLComputeCommandEncoder extends MTLCommandEncoder {
 
     @Generated
     @Selector("setTextures:withRange:")
-    void setTexturesWithRange(Ptr<ObjCObject> textures, @ByValue NSRange range);
+    void setTexturesWithRange(@ReferenceInfo(type = ObjCObject.class) Ptr<ObjCObject> textures, @ByValue NSRange range);
 
     @Generated
     @Selector("setThreadgroupMemoryLength:atIndex:")

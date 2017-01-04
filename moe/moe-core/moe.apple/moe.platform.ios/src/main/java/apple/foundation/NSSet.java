@@ -32,6 +32,7 @@ import org.moe.natj.general.ann.MappedReturn;
 import org.moe.natj.general.ann.NInt;
 import org.moe.natj.general.ann.NUInt;
 import org.moe.natj.general.ann.Owned;
+import org.moe.natj.general.ann.ReferenceInfo;
 import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.general.ptr.BoolPtr;
 import org.moe.natj.general.ptr.ConstPtr;
@@ -174,7 +175,8 @@ public class NSSet<_ObjectType> extends NSObject
 
     @Generated
     @Selector("setWithObjects:count:")
-    public static native <_ObjectType> NSSet<?> setWithObjectsCount(ConstPtr<_ObjectType> objects, @NUInt long cnt);
+    public static native <_ObjectType> NSSet<?> setWithObjectsCount(
+            @ReferenceInfo(type = ObjCObject.class) ConstPtr<_ObjectType> objects, @NUInt long cnt);
 
     @Generated
     @Selector("setWithSet:")
@@ -225,7 +227,8 @@ public class NSSet<_ObjectType> extends NSObject
     @Generated
     @Selector("countByEnumeratingWithState:objects:count:")
     @NUInt
-    public native long countByEnumeratingWithStateObjectsCount(VoidPtr state, Ptr<ObjCObject> buffer, @NUInt long len);
+    public native long countByEnumeratingWithStateObjectsCount(VoidPtr state,
+            @ReferenceInfo(type = ObjCObject.class) Ptr<ObjCObject> buffer, @NUInt long len);
 
     @Generated
     @Selector("description")
@@ -272,7 +275,8 @@ public class NSSet<_ObjectType> extends NSObject
 
     @Generated
     @Selector("initWithObjects:count:")
-    public native NSSet<?> initWithObjectsCount(Ptr<_ObjectType> objects, @NUInt long cnt);
+    public native NSSet<?> initWithObjectsCount(@ReferenceInfo(type = ObjCObject.class) Ptr<_ObjectType> objects,
+            @NUInt long cnt);
 
     @Generated
     @Selector("initWithSet:")

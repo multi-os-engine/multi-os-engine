@@ -33,6 +33,7 @@ import org.moe.natj.general.ann.MappedReturn;
 import org.moe.natj.general.ann.NInt;
 import org.moe.natj.general.ann.NUInt;
 import org.moe.natj.general.ann.Owned;
+import org.moe.natj.general.ann.ReferenceInfo;
 import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.general.ptr.Ptr;
 import org.moe.natj.general.ptr.VoidPtr;
@@ -73,7 +74,8 @@ public class AVAssetReader extends NSObject {
 
     @Generated
     @Selector("assetReaderWithAsset:error:")
-    public static native AVAssetReader assetReaderWithAssetError(AVAsset asset, Ptr<NSError> outError);
+    public static native AVAssetReader assetReaderWithAssetError(AVAsset asset,
+            @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -192,7 +194,8 @@ public class AVAssetReader extends NSObject {
 
     @Generated
     @Selector("initWithAsset:error:")
-    public native AVAssetReader initWithAssetError(AVAsset asset, Ptr<NSError> outError);
+    public native AVAssetReader initWithAssetError(AVAsset asset,
+            @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
     @Generated
     @Selector("outputs")

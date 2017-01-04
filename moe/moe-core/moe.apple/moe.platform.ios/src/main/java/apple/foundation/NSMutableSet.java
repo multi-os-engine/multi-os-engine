@@ -28,11 +28,13 @@ import org.moe.natj.general.ann.MappedReturn;
 import org.moe.natj.general.ann.NInt;
 import org.moe.natj.general.ann.NUInt;
 import org.moe.natj.general.ann.Owned;
+import org.moe.natj.general.ann.ReferenceInfo;
 import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.general.ptr.ConstPtr;
 import org.moe.natj.general.ptr.Ptr;
 import org.moe.natj.general.ptr.VoidPtr;
 import org.moe.natj.objc.Class;
+import org.moe.natj.objc.ObjCObject;
 import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
@@ -175,8 +177,8 @@ public class NSMutableSet<_ObjectType> extends NSSet<_ObjectType> {
 
     @Generated
     @Selector("setWithObjects:count:")
-    public static native <_ObjectType> NSMutableSet<?> setWithObjectsCount(ConstPtr<_ObjectType> objects,
-            @NUInt long cnt);
+    public static native <_ObjectType> NSMutableSet<?> setWithObjectsCount(
+            @ReferenceInfo(type = ObjCObject.class) ConstPtr<_ObjectType> objects, @NUInt long cnt);
 
     @Generated
     @Selector("setWithSet:")
@@ -231,7 +233,8 @@ public class NSMutableSet<_ObjectType> extends NSSet<_ObjectType> {
 
     @Generated
     @Selector("initWithObjects:count:")
-    public native NSMutableSet<?> initWithObjectsCount(Ptr<_ObjectType> objects, @NUInt long cnt);
+    public native NSMutableSet<?> initWithObjectsCount(@ReferenceInfo(type = ObjCObject.class) Ptr<_ObjectType> objects,
+            @NUInt long cnt);
 
     @Generated
     @Selector("initWithSet:")

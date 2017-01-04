@@ -31,6 +31,7 @@ import org.moe.natj.general.ann.MappedReturn;
 import org.moe.natj.general.ann.NInt;
 import org.moe.natj.general.ann.NUInt;
 import org.moe.natj.general.ann.Owned;
+import org.moe.natj.general.ann.ReferenceInfo;
 import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.general.ptr.BoolPtr;
 import org.moe.natj.general.ptr.BytePtr;
@@ -63,12 +64,13 @@ public class NSURL extends NSObject implements NSSecureCoding, NSCopying, QLPrev
     @Generated
     @Selector("URLByResolvingAliasFileAtURL:options:error:")
     public static native NSURL URLByResolvingAliasFileAtURLOptionsError(NSURL url, @NUInt long options,
-            Ptr<NSError> error);
+            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     @Generated
     @Selector("URLByResolvingBookmarkData:options:relativeToURL:bookmarkDataIsStale:error:")
     public static native NSURL URLByResolvingBookmarkDataOptionsRelativeToURLBookmarkDataIsStaleError(
-            NSData bookmarkData, @NUInt long options, NSURL relativeURL, BoolPtr isStale, Ptr<NSError> error);
+            NSData bookmarkData, @NUInt long options, NSURL relativeURL, BoolPtr isStale,
+            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     @Generated
     @Selector("URLWithDataRepresentation:relativeToURL:")
@@ -106,7 +108,8 @@ public class NSURL extends NSObject implements NSSecureCoding, NSCopying, QLPrev
 
     @Generated
     @Selector("bookmarkDataWithContentsOfURL:error:")
-    public static native NSData bookmarkDataWithContentsOfURLError(NSURL bookmarkFileURL, Ptr<NSError> error);
+    public static native NSData bookmarkDataWithContentsOfURLError(NSURL bookmarkFileURL,
+            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
@@ -232,7 +235,7 @@ public class NSURL extends NSObject implements NSSecureCoding, NSCopying, QLPrev
     @Generated
     @Selector("writeBookmarkData:toURL:options:error:")
     public static native boolean writeBookmarkDataToURLOptionsError(NSData bookmarkData, NSURL bookmarkFileURL,
-            @NUInt long options, Ptr<NSError> error);
+            @NUInt long options, @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     @Generated
     @Selector("URLByAppendingPathComponent:")
@@ -277,15 +280,17 @@ public class NSURL extends NSObject implements NSSecureCoding, NSCopying, QLPrev
     @Generated
     @Selector("bookmarkDataWithOptions:includingResourceValuesForKeys:relativeToURL:error:")
     public native NSData bookmarkDataWithOptionsIncludingResourceValuesForKeysRelativeToURLError(@NUInt long options,
-            NSArray<String> keys, NSURL relativeURL, Ptr<NSError> error);
+            NSArray<String> keys, NSURL relativeURL, @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     @Generated
     @Selector("checkPromisedItemIsReachableAndReturnError:")
-    public native boolean checkPromisedItemIsReachableAndReturnError(Ptr<NSError> error);
+    public native boolean checkPromisedItemIsReachableAndReturnError(
+            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     @Generated
     @Selector("checkResourceIsReachableAndReturnError:")
-    public native boolean checkResourceIsReachableAndReturnError(Ptr<NSError> error);
+    public native boolean checkResourceIsReachableAndReturnError(
+            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     @Generated
     @Owned
@@ -324,12 +329,14 @@ public class NSURL extends NSObject implements NSSecureCoding, NSCopying, QLPrev
 
     @Generated
     @Selector("getPromisedItemResourceValue:forKey:error:")
-    public native boolean getPromisedItemResourceValueForKeyError(Ptr<ObjCObject> value, String key,
-            Ptr<NSError> error);
+    public native boolean getPromisedItemResourceValueForKeyError(
+            @ReferenceInfo(type = ObjCObject.class) Ptr<ObjCObject> value, String key,
+            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     @Generated
     @Selector("getResourceValue:forKey:error:")
-    public native boolean getResourceValueForKeyError(Ptr<ObjCObject> value, String key, Ptr<NSError> error);
+    public native boolean getResourceValueForKeyError(@ReferenceInfo(type = ObjCObject.class) Ptr<ObjCObject> value,
+            String key, @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     @Generated
     @Selector("hasDirectoryPath")
@@ -350,7 +357,8 @@ public class NSURL extends NSObject implements NSSecureCoding, NSCopying, QLPrev
     @Generated
     @Selector("initByResolvingBookmarkData:options:relativeToURL:bookmarkDataIsStale:error:")
     public native NSURL initByResolvingBookmarkDataOptionsRelativeToURLBookmarkDataIsStaleError(NSData bookmarkData,
-            @NUInt long options, NSURL relativeURL, BoolPtr isStale, Ptr<NSError> error);
+            @NUInt long options, NSURL relativeURL, BoolPtr isStale,
+            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     @Generated
     @Selector("initFileURLWithFileSystemRepresentation:isDirectory:relativeToURL:")
@@ -442,7 +450,7 @@ public class NSURL extends NSObject implements NSSecureCoding, NSCopying, QLPrev
     @Generated
     @Selector("promisedItemResourceValuesForKeys:error:")
     public native NSDictionary<String, ?> promisedItemResourceValuesForKeysError(NSArray<String> keys,
-            Ptr<NSError> error);
+            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     @Generated
     @Selector("query")
@@ -470,7 +478,8 @@ public class NSURL extends NSObject implements NSSecureCoding, NSCopying, QLPrev
 
     @Generated
     @Selector("resourceValuesForKeys:error:")
-    public native NSDictionary<String, ?> resourceValuesForKeysError(NSArray<String> keys, Ptr<NSError> error);
+    public native NSDictionary<String, ?> resourceValuesForKeysError(NSArray<String> keys,
+            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     @Generated
     @Selector("scheme")
@@ -479,11 +488,12 @@ public class NSURL extends NSObject implements NSSecureCoding, NSCopying, QLPrev
     @Generated
     @Selector("setResourceValue:forKey:error:")
     public native boolean setResourceValueForKeyError(@Mapped(ObjCObjectMapper.class) Object value, String key,
-            Ptr<NSError> error);
+            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     @Generated
     @Selector("setResourceValues:error:")
-    public native boolean setResourceValuesError(NSDictionary<String, ?> keyedValues, Ptr<NSError> error);
+    public native boolean setResourceValuesError(NSDictionary<String, ?> keyedValues,
+            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     @Generated
     @Selector("setTemporaryResourceValue:forKey:")

@@ -33,6 +33,7 @@ import org.moe.natj.general.ann.MappedReturn;
 import org.moe.natj.general.ann.NInt;
 import org.moe.natj.general.ann.NUInt;
 import org.moe.natj.general.ann.Owned;
+import org.moe.natj.general.ann.ReferenceInfo;
 import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.general.ptr.Ptr;
 import org.moe.natj.general.ptr.VoidPtr;
@@ -301,19 +302,20 @@ public class NSManagedObject extends NSObject implements NSFetchRequestResult {
 
     @Generated
     @Selector("validateForDelete:")
-    public native boolean validateForDelete(Ptr<NSError> error);
+    public native boolean validateForDelete(@ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     @Generated
     @Selector("validateForInsert:")
-    public native boolean validateForInsert(Ptr<NSError> error);
+    public native boolean validateForInsert(@ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     @Generated
     @Selector("validateForUpdate:")
-    public native boolean validateForUpdate(Ptr<NSError> error);
+    public native boolean validateForUpdate(@ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     @Generated
     @Selector("validateValue:forKey:error:")
-    public native boolean validateValueForKeyError(Ptr<ObjCObject> value, String key, Ptr<NSError> error);
+    public native boolean validateValueForKeyError(@ReferenceInfo(type = ObjCObject.class) Ptr<ObjCObject> value,
+            String key, @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     @Generated
     @Selector("valueForKey:")

@@ -39,6 +39,7 @@ import org.moe.natj.general.ann.NFloat;
 import org.moe.natj.general.ann.NInt;
 import org.moe.natj.general.ann.NUInt;
 import org.moe.natj.general.ann.Owned;
+import org.moe.natj.general.ann.ReferenceInfo;
 import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.general.ptr.Ptr;
 import org.moe.natj.general.ptr.VoidPtr;
@@ -103,17 +104,20 @@ public class GLKTextureLoader extends NSObject {
     @Generated
     @Selector("cubeMapWithContentsOfFile:options:error:")
     public static native GLKTextureInfo cubeMapWithContentsOfFileOptionsError(String path,
-            NSDictionary<String, ? extends NSNumber> options, Ptr<NSError> outError);
+            NSDictionary<String, ? extends NSNumber> options,
+            @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
     @Generated
     @Selector("cubeMapWithContentsOfFiles:options:error:")
     public static native GLKTextureInfo cubeMapWithContentsOfFilesOptionsError(NSArray<?> paths,
-            NSDictionary<String, ? extends NSNumber> options, Ptr<NSError> outError);
+            NSDictionary<String, ? extends NSNumber> options,
+            @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
     @Generated
     @Selector("cubeMapWithContentsOfURL:options:error:")
     public static native GLKTextureInfo cubeMapWithContentsOfURLOptionsError(NSURL url,
-            NSDictionary<String, ? extends NSNumber> options, Ptr<NSError> outError);
+            NSDictionary<String, ? extends NSNumber> options,
+            @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
     @Generated
     @Selector("debugDescription")
@@ -182,28 +186,32 @@ public class GLKTextureLoader extends NSObject {
     @Generated
     @Selector("textureWithCGImage:options:error:")
     public static native GLKTextureInfo textureWithCGImageOptionsError(CGImageRef cgImage,
-            NSDictionary<String, ? extends NSNumber> options, Ptr<NSError> outError);
+            NSDictionary<String, ? extends NSNumber> options,
+            @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
     @Generated
     @Selector("textureWithContentsOfData:options:error:")
     public static native GLKTextureInfo textureWithContentsOfDataOptionsError(NSData data,
-            NSDictionary<String, ? extends NSNumber> options, Ptr<NSError> outError);
+            NSDictionary<String, ? extends NSNumber> options,
+            @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
     @Generated
     @Selector("textureWithContentsOfFile:options:error:")
     public static native GLKTextureInfo textureWithContentsOfFileOptionsError(String path,
-            NSDictionary<String, ? extends NSNumber> options, Ptr<NSError> outError);
+            NSDictionary<String, ? extends NSNumber> options,
+            @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
     @Generated
     @Selector("textureWithContentsOfURL:options:error:")
     public static native GLKTextureInfo textureWithContentsOfURLOptionsError(NSURL url,
-            NSDictionary<String, ? extends NSNumber> options, Ptr<NSError> outError);
+            NSDictionary<String, ? extends NSNumber> options,
+            @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
     @Generated
     @Selector("textureWithName:scaleFactor:bundle:options:error:")
     public static native GLKTextureInfo textureWithNameScaleFactorBundleOptionsError(String name,
             @NFloat double scaleFactor, NSBundle bundle, NSDictionary<String, ? extends NSNumber> options,
-            Ptr<NSError> outError);
+            @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
     @Generated
     @Selector("version")

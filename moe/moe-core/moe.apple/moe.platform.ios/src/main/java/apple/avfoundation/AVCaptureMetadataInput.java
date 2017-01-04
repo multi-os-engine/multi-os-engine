@@ -33,6 +33,7 @@ import org.moe.natj.general.ann.MappedReturn;
 import org.moe.natj.general.ann.NInt;
 import org.moe.natj.general.ann.NUInt;
 import org.moe.natj.general.ann.Owned;
+import org.moe.natj.general.ann.ReferenceInfo;
 import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.general.ptr.Ptr;
 import org.moe.natj.general.ptr.VoidPtr;
@@ -169,7 +170,8 @@ public class AVCaptureMetadataInput extends AVCaptureInput {
 
     @Generated
     @Selector("appendTimedMetadataGroup:error:")
-    public native boolean appendTimedMetadataGroupError(AVTimedMetadataGroup metadata, Ptr<NSError> outError);
+    public native boolean appendTimedMetadataGroupError(AVTimedMetadataGroup metadata,
+            @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
     @Generated
     @Selector("init")

@@ -40,6 +40,7 @@ import org.moe.natj.general.ann.MappedReturn;
 import org.moe.natj.general.ann.NInt;
 import org.moe.natj.general.ann.NUInt;
 import org.moe.natj.general.ann.Owned;
+import org.moe.natj.general.ann.ReferenceInfo;
 import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.general.ptr.Ptr;
 import org.moe.natj.general.ptr.VoidPtr;
@@ -230,13 +231,15 @@ public class NSTextStorage extends NSMutableAttributedString {
     @Generated
     @Selector("initWithData:options:documentAttributes:error:")
     public native NSTextStorage initWithDataOptionsDocumentAttributesError(NSData data, NSDictionary<String, ?> options,
-            Ptr<NSDictionary<String, ?>> dict, Ptr<NSError> error);
+            @ReferenceInfo(type = NSDictionary.class) Ptr<NSDictionary<String, ?>> dict,
+            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     @Generated
     @Deprecated
     @Selector("initWithFileURL:options:documentAttributes:error:")
     public native NSTextStorage initWithFileURLOptionsDocumentAttributesError(NSURL url, NSDictionary<?, ?> options,
-            Ptr<NSDictionary<?, ?>> dict, Ptr<NSError> error);
+            @ReferenceInfo(type = NSDictionary.class) Ptr<NSDictionary<?, ?>> dict,
+            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     @Generated
     @Selector("initWithString:")
@@ -249,7 +252,8 @@ public class NSTextStorage extends NSMutableAttributedString {
     @Generated
     @Selector("initWithURL:options:documentAttributes:error:")
     public native NSTextStorage initWithURLOptionsDocumentAttributesError(NSURL url, NSDictionary<String, ?> options,
-            Ptr<NSDictionary<String, ?>> dict, Ptr<NSError> error);
+            @ReferenceInfo(type = NSDictionary.class) Ptr<NSDictionary<String, ?>> dict,
+            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     @Generated
     @Selector("invalidateAttributesInRange:")

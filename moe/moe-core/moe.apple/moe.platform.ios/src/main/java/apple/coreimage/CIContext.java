@@ -46,6 +46,7 @@ import org.moe.natj.general.ann.MappedReturn;
 import org.moe.natj.general.ann.NInt;
 import org.moe.natj.general.ann.NUInt;
 import org.moe.natj.general.ann.Owned;
+import org.moe.natj.general.ann.ReferenceInfo;
 import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.general.ptr.Ptr;
 import org.moe.natj.general.ptr.VoidPtr;
@@ -292,10 +293,12 @@ public class CIContext extends NSObject {
     @Generated
     @Selector("writeJPEGRepresentationOfImage:toURL:colorSpace:options:error:")
     public native boolean writeJPEGRepresentationOfImageToURLColorSpaceOptionsError(CIImage image, NSURL url,
-            CGColorSpaceRef colorSpace, NSDictionary<?, ?> options, Ptr<NSError> errorPtr);
+            CGColorSpaceRef colorSpace, NSDictionary<?, ?> options,
+            @ReferenceInfo(type = NSError.class) Ptr<NSError> errorPtr);
 
     @Generated
     @Selector("writeTIFFRepresentationOfImage:toURL:format:colorSpace:options:error:")
     public native boolean writeTIFFRepresentationOfImageToURLFormatColorSpaceOptionsError(CIImage image, NSURL url,
-            int format, CGColorSpaceRef colorSpace, NSDictionary<?, ?> options, Ptr<NSError> errorPtr);
+            int format, CGColorSpaceRef colorSpace, NSDictionary<?, ?> options,
+            @ReferenceInfo(type = NSError.class) Ptr<NSError> errorPtr);
 }

@@ -27,6 +27,7 @@ import org.moe.natj.general.ann.MappedReturn;
 import org.moe.natj.general.ann.NInt;
 import org.moe.natj.general.ann.NUInt;
 import org.moe.natj.general.ann.Owned;
+import org.moe.natj.general.ann.ReferenceInfo;
 import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.general.ptr.NIntPtr;
 import org.moe.natj.general.ptr.Ptr;
@@ -160,8 +161,9 @@ public class NSEnergyFormatter extends NSFormatter {
 
     @Generated
     @Selector("getObjectValue:forString:errorDescription:")
-    public native boolean getObjectValueForStringErrorDescription(Ptr<ObjCObject> obj, String string,
-            Ptr<NSString> error);
+    public native boolean getObjectValueForStringErrorDescription(
+            @ReferenceInfo(type = ObjCObject.class) Ptr<ObjCObject> obj, String string,
+            @ReferenceInfo(type = NSString.class) Ptr<NSString> error);
 
     @Generated
     @Selector("init")

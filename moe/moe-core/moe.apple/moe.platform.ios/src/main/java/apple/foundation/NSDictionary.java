@@ -33,6 +33,7 @@ import org.moe.natj.general.ann.MappedReturn;
 import org.moe.natj.general.ann.NInt;
 import org.moe.natj.general.ann.NUInt;
 import org.moe.natj.general.ann.Owned;
+import org.moe.natj.general.ann.ReferenceInfo;
 import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.general.ptr.BoolPtr;
 import org.moe.natj.general.ptr.ConstPtr;
@@ -142,7 +143,8 @@ public class NSDictionary<_KeyType, _ObjectType> extends NSObject
     @Generated
     @Selector("dictionaryWithObjects:forKeys:count:")
     public static native <_KeyType, _ObjectType> NSDictionary<?, ?> dictionaryWithObjectsForKeysCount(
-            ConstPtr<_ObjectType> objects, ConstPtr<ObjCObject> keys, @NUInt long cnt);
+            @ReferenceInfo(type = ObjCObject.class) ConstPtr<_ObjectType> objects,
+            @ReferenceInfo(type = ObjCObject.class) ConstPtr<ObjCObject> keys, @NUInt long cnt);
 
     @Generated
     @Variadic()
@@ -246,7 +248,8 @@ public class NSDictionary<_KeyType, _ObjectType> extends NSObject
     @Generated
     @Selector("countByEnumeratingWithState:objects:count:")
     @NUInt
-    public native long countByEnumeratingWithStateObjectsCount(VoidPtr state, Ptr<ObjCObject> buffer, @NUInt long len);
+    public native long countByEnumeratingWithStateObjectsCount(VoidPtr state,
+            @ReferenceInfo(type = ObjCObject.class) Ptr<ObjCObject> buffer, @NUInt long len);
 
     @Generated
     @Selector("description")
@@ -347,11 +350,13 @@ public class NSDictionary<_KeyType, _ObjectType> extends NSObject
 
     @Generated
     @Selector("getObjects:andKeys:")
-    public native void getObjectsAndKeys(Ptr<ObjCObject> objects, Ptr<ObjCObject> keys);
+    public native void getObjectsAndKeys(@ReferenceInfo(type = ObjCObject.class) Ptr<ObjCObject> objects,
+            @ReferenceInfo(type = ObjCObject.class) Ptr<ObjCObject> keys);
 
     @Generated
     @Selector("getObjects:andKeys:count:")
-    public native void getObjectsAndKeysCount(Ptr<ObjCObject> objects, Ptr<ObjCObject> keys, @NUInt long count);
+    public native void getObjectsAndKeysCount(@ReferenceInfo(type = ObjCObject.class) Ptr<ObjCObject> objects,
+            @ReferenceInfo(type = ObjCObject.class) Ptr<ObjCObject> keys, @NUInt long count);
 
     @Generated
     @Selector("init")
@@ -384,8 +389,9 @@ public class NSDictionary<_KeyType, _ObjectType> extends NSObject
 
     @Generated
     @Selector("initWithObjects:forKeys:count:")
-    public native NSDictionary<?, ?> initWithObjectsForKeysCount(Ptr<_ObjectType> objects, Ptr<ObjCObject> keys,
-            @NUInt long cnt);
+    public native NSDictionary<?, ?> initWithObjectsForKeysCount(
+            @ReferenceInfo(type = ObjCObject.class) Ptr<_ObjectType> objects,
+            @ReferenceInfo(type = ObjCObject.class) Ptr<ObjCObject> keys, @NUInt long cnt);
 
     @Generated
     @Variadic()

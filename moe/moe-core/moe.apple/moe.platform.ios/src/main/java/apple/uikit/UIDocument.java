@@ -41,6 +41,7 @@ import org.moe.natj.general.ann.MappedReturn;
 import org.moe.natj.general.ann.NInt;
 import org.moe.natj.general.ann.NUInt;
 import org.moe.natj.general.ann.Owned;
+import org.moe.natj.general.ann.ReferenceInfo;
 import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.general.ptr.Ptr;
 import org.moe.natj.general.ptr.VoidPtr;
@@ -202,7 +203,8 @@ public class UIDocument extends NSObject implements NSFilePresenter, NSProgressR
     @Generated
     @Selector("contentsForType:error:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object contentsForTypeError(String typeName, Ptr<NSError> outError);
+    public native Object contentsForTypeError(String typeName,
+            @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
     @Generated
     @Selector("disableEditing")
@@ -220,7 +222,7 @@ public class UIDocument extends NSObject implements NSFilePresenter, NSProgressR
     @Generated
     @Selector("fileAttributesToWriteToURL:forSaveOperation:error:")
     public native NSDictionary<?, ?> fileAttributesToWriteToURLForSaveOperationError(NSURL url,
-            @NInt long saveOperation, Ptr<NSError> outError);
+            @NInt long saveOperation, @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
     @Generated
     @Selector("fileModificationDate")
@@ -261,7 +263,7 @@ public class UIDocument extends NSObject implements NSFilePresenter, NSProgressR
     @Generated
     @Selector("loadFromContents:ofType:error:")
     public native boolean loadFromContentsOfTypeError(@Mapped(ObjCObjectMapper.class) Object contents, String typeName,
-            Ptr<NSError> outError);
+            @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
     @Generated
     @Selector("localizedName")
@@ -346,7 +348,7 @@ public class UIDocument extends NSObject implements NSFilePresenter, NSProgressR
 
     @Generated
     @Selector("readFromURL:error:")
-    public native boolean readFromURLError(NSURL url, Ptr<NSError> outError);
+    public native boolean readFromURLError(NSURL url, @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
     @Generated
     @Selector("restoreUserActivityState:")
@@ -413,13 +415,13 @@ public class UIDocument extends NSObject implements NSFilePresenter, NSProgressR
     @Selector("writeContents:andAttributes:safelyToURL:forSaveOperation:error:")
     public native boolean writeContentsAndAttributesSafelyToURLForSaveOperationError(
             @Mapped(ObjCObjectMapper.class) Object contents, NSDictionary<?, ?> additionalFileAttributes, NSURL url,
-            @NInt long saveOperation, Ptr<NSError> outError);
+            @NInt long saveOperation, @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
     @Generated
     @Selector("writeContents:toURL:forSaveOperation:originalContentsURL:error:")
     public native boolean writeContentsToURLForSaveOperationOriginalContentsURLError(
             @Mapped(ObjCObjectMapper.class) Object contents, NSURL url, @NInt long saveOperation,
-            NSURL originalContentsURL, Ptr<NSError> outError);
+            NSURL originalContentsURL, @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
     @Runtime(ObjCRuntime.class)
     @Generated

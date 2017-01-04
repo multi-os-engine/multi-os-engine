@@ -34,6 +34,7 @@ import org.moe.natj.general.ann.MappedReturn;
 import org.moe.natj.general.ann.NInt;
 import org.moe.natj.general.ann.NUInt;
 import org.moe.natj.general.ann.Owned;
+import org.moe.natj.general.ann.ReferenceInfo;
 import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.general.ptr.Ptr;
 import org.moe.natj.general.ptr.VoidPtr;
@@ -146,7 +147,8 @@ public class GLKMesh extends NSObject {
     @Owned
     @Selector("newMeshesFromAsset:sourceMeshes:error:")
     public static native NSArray<? extends GLKMesh> newMeshesFromAssetSourceMeshesError(MDLAsset asset,
-            Ptr<NSArray<? extends MDLMesh>> sourceMeshes, Ptr<NSError> error);
+            @ReferenceInfo(type = NSArray.class) Ptr<NSArray<? extends MDLMesh>> sourceMeshes,
+            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -175,7 +177,7 @@ public class GLKMesh extends NSObject {
 
     @Generated
     @Selector("initWithMesh:error:")
-    public native GLKMesh initWithMeshError(MDLMesh mesh, Ptr<NSError> error);
+    public native GLKMesh initWithMeshError(MDLMesh mesh, @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     @Generated
     @Selector("name")

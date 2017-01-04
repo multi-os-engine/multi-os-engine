@@ -35,6 +35,7 @@ import org.moe.natj.general.ann.MappedReturn;
 import org.moe.natj.general.ann.NInt;
 import org.moe.natj.general.ann.NUInt;
 import org.moe.natj.general.ann.Owned;
+import org.moe.natj.general.ann.ReferenceInfo;
 import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.general.ptr.Ptr;
 import org.moe.natj.general.ptr.VoidPtr;
@@ -64,7 +65,7 @@ public class HKCDADocumentSample extends HKDocumentSample {
     @Selector("CDADocumentSampleWithData:startDate:endDate:metadata:validationError:")
     public static native HKCDADocumentSample CDADocumentSampleWithDataStartDateEndDateMetadataValidationError(
             NSData documentData, NSDate startDate, NSDate endDate, NSDictionary<String, ?> metadata,
-            Ptr<NSError> validationError);
+            @ReferenceInfo(type = NSError.class) Ptr<NSError> validationError);
 
     @Generated
     @Selector("accessInstanceVariablesDirectly")

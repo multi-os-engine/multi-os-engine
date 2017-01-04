@@ -33,6 +33,7 @@ import org.moe.natj.general.ann.MappedReturn;
 import org.moe.natj.general.ann.NInt;
 import org.moe.natj.general.ann.NUInt;
 import org.moe.natj.general.ann.Owned;
+import org.moe.natj.general.ann.ReferenceInfo;
 import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.general.ptr.Ptr;
 import org.moe.natj.general.ptr.VoidPtr;
@@ -95,11 +96,13 @@ public class CNContactVCardSerialization extends NSObject {
 
     @Generated
     @Selector("contactsWithData:error:")
-    public static native NSArray<? extends CNContact> contactsWithDataError(NSData data, Ptr<NSError> error);
+    public static native NSArray<? extends CNContact> contactsWithDataError(NSData data,
+            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     @Generated
     @Selector("dataWithContacts:error:")
-    public static native NSData dataWithContactsError(NSArray<? extends CNContact> contacts, Ptr<NSError> error);
+    public static native NSData dataWithContactsError(NSArray<? extends CNContact> contacts,
+            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     @Generated
     @Selector("debugDescription")

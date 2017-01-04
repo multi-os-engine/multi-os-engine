@@ -36,6 +36,7 @@ import org.moe.natj.general.ann.MappedReturn;
 import org.moe.natj.general.ann.NInt;
 import org.moe.natj.general.ann.NUInt;
 import org.moe.natj.general.ann.Owned;
+import org.moe.natj.general.ann.ReferenceInfo;
 import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.general.ptr.BytePtr;
 import org.moe.natj.general.ptr.Ptr;
@@ -202,7 +203,7 @@ public class ALAssetRepresentation extends NSObject {
     @Selector("getBytes:fromOffset:length:error:")
     @NUInt
     public native long getBytesFromOffsetLengthError(BytePtr buffer, long offset, @NUInt long length,
-            Ptr<NSError> error);
+            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     @Generated
     @Selector("init")

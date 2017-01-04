@@ -38,6 +38,7 @@ import org.moe.natj.general.ann.MappedReturn;
 import org.moe.natj.general.ann.NInt;
 import org.moe.natj.general.ann.NUInt;
 import org.moe.natj.general.ann.Owned;
+import org.moe.natj.general.ann.ReferenceInfo;
 import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.general.ptr.Ptr;
 import org.moe.natj.general.ptr.VoidPtr;
@@ -182,7 +183,8 @@ public class MPSUnaryImageKernel extends MPSKernel {
     @Generated
     @Selector("encodeToCommandBuffer:inPlaceTexture:fallbackCopyAllocator:")
     public native boolean encodeToCommandBufferInPlaceTextureFallbackCopyAllocator(
-            @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer, Ptr<ObjCObject> texture,
+            @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer,
+            @ReferenceInfo(type = ObjCObject.class) Ptr<ObjCObject> texture,
             @ObjCBlock(name = "call_encodeToCommandBufferInPlaceTextureFallbackCopyAllocator") Block_encodeToCommandBufferInPlaceTextureFallbackCopyAllocator copyAllocator);
 
     @Generated

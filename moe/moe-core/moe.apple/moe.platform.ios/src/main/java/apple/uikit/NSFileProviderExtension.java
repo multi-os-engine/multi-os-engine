@@ -33,6 +33,7 @@ import org.moe.natj.general.ann.MappedReturn;
 import org.moe.natj.general.ann.NInt;
 import org.moe.natj.general.ann.NUInt;
 import org.moe.natj.general.ann.Owned;
+import org.moe.natj.general.ann.ReferenceInfo;
 import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.general.ptr.Ptr;
 import org.moe.natj.general.ptr.VoidPtr;
@@ -170,7 +171,7 @@ public class NSFileProviderExtension extends NSObject {
     @Generated
     @Selector("writePlaceholderAtURL:withMetadata:error:")
     public static native boolean writePlaceholderAtURLWithMetadataError(NSURL placeholderURL,
-            NSDictionary<?, ?> metadata, Ptr<NSError> error);
+            NSDictionary<?, ?> metadata, @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     @Generated
     @Selector("URLForItemWithPersistentIdentifier:")

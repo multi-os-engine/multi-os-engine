@@ -27,6 +27,7 @@ import org.moe.natj.general.ann.MappedReturn;
 import org.moe.natj.general.ann.NInt;
 import org.moe.natj.general.ann.NUInt;
 import org.moe.natj.general.ann.Owned;
+import org.moe.natj.general.ann.ReferenceInfo;
 import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.general.ptr.Ptr;
 import org.moe.natj.general.ptr.VoidPtr;
@@ -90,7 +91,8 @@ public class NSDataDetector extends NSRegularExpression {
 
     @Generated
     @Selector("dataDetectorWithTypes:error:")
-    public static native NSDataDetector dataDetectorWithTypesError(long checkingTypes, Ptr<NSError> error);
+    public static native NSDataDetector dataDetectorWithTypesError(long checkingTypes,
+            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     @Generated
     @Selector("debugDescription")
@@ -151,7 +153,7 @@ public class NSDataDetector extends NSRegularExpression {
     @Generated
     @Selector("regularExpressionWithPattern:options:error:")
     public static native NSRegularExpression regularExpressionWithPatternOptionsError(String pattern,
-            @NUInt long options, Ptr<NSError> error);
+            @NUInt long options, @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -192,11 +194,13 @@ public class NSDataDetector extends NSRegularExpression {
 
     @Generated
     @Selector("initWithPattern:options:error:")
-    public native NSDataDetector initWithPatternOptionsError(String pattern, @NUInt long options, Ptr<NSError> error);
+    public native NSDataDetector initWithPatternOptionsError(String pattern, @NUInt long options,
+            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     @Generated
     @Selector("initWithTypes:error:")
-    public native NSDataDetector initWithTypesError(long checkingTypes, Ptr<NSError> error);
+    public native NSDataDetector initWithTypesError(long checkingTypes,
+            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     @Generated
     @ProtocolClassMethod("supportsSecureCoding")

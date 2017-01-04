@@ -25,6 +25,7 @@ import org.moe.natj.general.ann.ByValue;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.Library;
 import org.moe.natj.general.ann.Mapped;
+import org.moe.natj.general.ann.ReferenceInfo;
 import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.general.ptr.Ptr;
 import org.moe.natj.objc.ObjCRuntime;
@@ -43,7 +44,7 @@ public interface QLPreviewControllerDelegate {
     @Selector("previewController:frameForPreviewItem:inSourceView:")
     @ByValue
     default CGRect previewControllerFrameForPreviewItemInSourceView(QLPreviewController controller,
-            @Mapped(ObjCObjectMapper.class) Object item, Ptr<UIView> view) {
+            @Mapped(ObjCObjectMapper.class) Object item, @ReferenceInfo(type = UIView.class) Ptr<UIView> view) {
         throw new java.lang.UnsupportedOperationException();
     }
 

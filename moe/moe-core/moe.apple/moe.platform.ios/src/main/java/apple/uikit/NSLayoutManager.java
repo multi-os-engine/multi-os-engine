@@ -42,6 +42,7 @@ import org.moe.natj.general.ann.NFloat;
 import org.moe.natj.general.ann.NInt;
 import org.moe.natj.general.ann.NUInt;
 import org.moe.natj.general.ann.Owned;
+import org.moe.natj.general.ann.ReferenceInfo;
 import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.general.ptr.BoolPtr;
 import org.moe.natj.general.ptr.BytePtr;
@@ -309,8 +310,9 @@ public class NSLayoutManager extends NSObject implements NSCoding {
 
     @Generated
     @Selector("fillBackgroundRectArray:count:forCharacterRange:color:")
-    public native void fillBackgroundRectArrayCountForCharacterRangeColor(ConstPtr<CGRect> rectArray,
-            @NUInt long rectCount, @ByValue NSRange charRange, UIColor color);
+    public native void fillBackgroundRectArrayCountForCharacterRangeColor(
+            @ReferenceInfo(type = CGRect.class) ConstPtr<CGRect> rectArray, @NUInt long rectCount,
+            @ByValue NSRange charRange, UIColor color);
 
     @Generated
     @Selector("firstUnlaidCharacterIndex")
@@ -581,8 +583,8 @@ public class NSLayoutManager extends NSObject implements NSCoding {
     @Generated
     @Selector("showCGGlyphs:positions:count:font:matrix:attributes:inContext:")
     public native void showCGGlyphsPositionsCountFontMatrixAttributesInContext(ConstCharPtr glyphs,
-            ConstPtr<CGPoint> positions, @NUInt long glyphCount, UIFont font, @ByValue CGAffineTransform textMatrix,
-            NSDictionary<String, ?> attributes, CGContextRef graphicsContext);
+            @ReferenceInfo(type = CGPoint.class) ConstPtr<CGPoint> positions, @NUInt long glyphCount, UIFont font,
+            @ByValue CGAffineTransform textMatrix, NSDictionary<String, ?> attributes, CGContextRef graphicsContext);
 
     @Generated
     @Selector("showsControlCharacters")

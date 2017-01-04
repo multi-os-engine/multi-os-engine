@@ -38,6 +38,7 @@ import org.moe.natj.general.ann.MappedReturn;
 import org.moe.natj.general.ann.NInt;
 import org.moe.natj.general.ann.NUInt;
 import org.moe.natj.general.ann.Owned;
+import org.moe.natj.general.ann.ReferenceInfo;
 import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.general.ptr.Ptr;
 import org.moe.natj.general.ptr.VoidPtr;
@@ -177,7 +178,8 @@ public class MPSBinaryImageKernel extends MPSKernel {
     @Generated
     @Selector("encodeToCommandBuffer:inPlacePrimaryTexture:secondaryTexture:fallbackCopyAllocator:")
     public native boolean encodeToCommandBufferInPlacePrimaryTextureSecondaryTextureFallbackCopyAllocator(
-            @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer, Ptr<ObjCObject> inPlacePrimaryTexture,
+            @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer,
+            @ReferenceInfo(type = ObjCObject.class) Ptr<ObjCObject> inPlacePrimaryTexture,
             @Mapped(ObjCObjectMapper.class) MTLTexture secondaryTexture,
             @ObjCBlock(name = "call_encodeToCommandBufferInPlacePrimaryTextureSecondaryTextureFallbackCopyAllocator") Block_encodeToCommandBufferInPlacePrimaryTextureSecondaryTextureFallbackCopyAllocator copyAllocator);
 
@@ -185,7 +187,8 @@ public class MPSBinaryImageKernel extends MPSKernel {
     @Selector("encodeToCommandBuffer:primaryTexture:inPlaceSecondaryTexture:fallbackCopyAllocator:")
     public native boolean encodeToCommandBufferPrimaryTextureInPlaceSecondaryTextureFallbackCopyAllocator(
             @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer,
-            @Mapped(ObjCObjectMapper.class) MTLTexture primaryTexture, Ptr<ObjCObject> inPlaceSecondaryTexture,
+            @Mapped(ObjCObjectMapper.class) MTLTexture primaryTexture,
+            @ReferenceInfo(type = ObjCObject.class) Ptr<ObjCObject> inPlaceSecondaryTexture,
             @ObjCBlock(name = "call_encodeToCommandBufferPrimaryTextureInPlaceSecondaryTextureFallbackCopyAllocator") Block_encodeToCommandBufferPrimaryTextureInPlaceSecondaryTextureFallbackCopyAllocator copyAllocator);
 
     @Generated

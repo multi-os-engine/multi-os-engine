@@ -29,6 +29,7 @@ import org.moe.natj.general.ann.MappedReturn;
 import org.moe.natj.general.ann.NInt;
 import org.moe.natj.general.ann.NUInt;
 import org.moe.natj.general.ann.Owned;
+import org.moe.natj.general.ann.ReferenceInfo;
 import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.general.ptr.BoolPtr;
 import org.moe.natj.general.ptr.Ptr;
@@ -185,7 +186,8 @@ public class NSLinguisticTagger extends NSObject {
     @Generated
     @Selector("possibleTagsAtIndex:scheme:tokenRange:sentenceRange:scores:")
     public native NSArray<String> possibleTagsAtIndexSchemeTokenRangeSentenceRangeScores(@NUInt long charIndex,
-            String tagScheme, NSRange tokenRange, NSRange sentenceRange, Ptr<NSArray<? extends NSValue>> scores);
+            String tagScheme, NSRange tokenRange, NSRange sentenceRange,
+            @ReferenceInfo(type = NSArray.class) Ptr<NSArray<? extends NSValue>> scores);
 
     @Generated
     @Selector("sentenceRangeForRange:")
@@ -220,7 +222,7 @@ public class NSLinguisticTagger extends NSObject {
     @Generated
     @Selector("tagsInRange:scheme:options:tokenRanges:")
     public native NSArray<String> tagsInRangeSchemeOptionsTokenRanges(@ByValue NSRange range, String tagScheme,
-            @NUInt long opts, Ptr<NSArray<? extends NSValue>> tokenRanges);
+            @NUInt long opts, @ReferenceInfo(type = NSArray.class) Ptr<NSArray<? extends NSValue>> tokenRanges);
 
     @Runtime(ObjCRuntime.class)
     @Generated

@@ -33,6 +33,7 @@ import org.moe.natj.general.ann.MappedReturn;
 import org.moe.natj.general.ann.NInt;
 import org.moe.natj.general.ann.NUInt;
 import org.moe.natj.general.ann.Owned;
+import org.moe.natj.general.ann.ReferenceInfo;
 import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.general.ptr.Ptr;
 import org.moe.natj.general.ptr.VoidPtr;
@@ -178,11 +179,12 @@ public class AVMIDIPlayer extends NSObject {
     @Generated
     @Selector("initWithContentsOfURL:soundBankURL:error:")
     public native AVMIDIPlayer initWithContentsOfURLSoundBankURLError(NSURL inURL, NSURL bankURL,
-            Ptr<NSError> outError);
+            @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
     @Generated
     @Selector("initWithData:soundBankURL:error:")
-    public native AVMIDIPlayer initWithDataSoundBankURLError(NSData data, NSURL bankURL, Ptr<NSError> outError);
+    public native AVMIDIPlayer initWithDataSoundBankURLError(NSData data, NSURL bankURL,
+            @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
     @Generated
     @Selector("isPlaying")

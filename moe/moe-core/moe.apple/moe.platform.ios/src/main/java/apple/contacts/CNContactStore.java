@@ -32,6 +32,7 @@ import org.moe.natj.general.ann.MappedReturn;
 import org.moe.natj.general.ann.NInt;
 import org.moe.natj.general.ann.NUInt;
 import org.moe.natj.general.ann.Owned;
+import org.moe.natj.general.ann.ReferenceInfo;
 import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.general.ptr.BoolPtr;
 import org.moe.natj.general.ptr.Ptr;
@@ -171,7 +172,7 @@ public class CNContactStore extends NSObject {
     @Generated
     @Selector("containersMatchingPredicate:error:")
     public native NSArray<? extends CNContainer> containersMatchingPredicateError(NSPredicate predicate,
-            Ptr<NSError> error);
+            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     @Generated
     @Selector("defaultContainerIdentifier")
@@ -180,16 +181,18 @@ public class CNContactStore extends NSObject {
     @Generated
     @Selector("enumerateContactsWithFetchRequest:error:usingBlock:")
     public native boolean enumerateContactsWithFetchRequestErrorUsingBlock(CNContactFetchRequest fetchRequest,
-            Ptr<NSError> error,
+            @ReferenceInfo(type = NSError.class) Ptr<NSError> error,
             @ObjCBlock(name = "call_enumerateContactsWithFetchRequestErrorUsingBlock") Block_enumerateContactsWithFetchRequestErrorUsingBlock block);
 
     @Generated
     @Selector("executeSaveRequest:error:")
-    public native boolean executeSaveRequestError(CNSaveRequest saveRequest, Ptr<NSError> error);
+    public native boolean executeSaveRequestError(CNSaveRequest saveRequest,
+            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     @Generated
     @Selector("groupsMatchingPredicate:error:")
-    public native NSArray<? extends CNGroup> groupsMatchingPredicateError(NSPredicate predicate, Ptr<NSError> error);
+    public native NSArray<? extends CNGroup> groupsMatchingPredicateError(NSPredicate predicate,
+            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     @Generated
     @Selector("init")
@@ -203,12 +206,12 @@ public class CNContactStore extends NSObject {
     @Generated
     @Selector("unifiedContactWithIdentifier:keysToFetch:error:")
     public native CNContact unifiedContactWithIdentifierKeysToFetchError(String identifier, NSArray<?> keys,
-            Ptr<NSError> error);
+            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     @Generated
     @Selector("unifiedContactsMatchingPredicate:keysToFetch:error:")
     public native NSArray<? extends CNContact> unifiedContactsMatchingPredicateKeysToFetchError(NSPredicate predicate,
-            NSArray<?> keys, Ptr<NSError> error);
+            NSArray<?> keys, @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     @Runtime(ObjCRuntime.class)
     @Generated

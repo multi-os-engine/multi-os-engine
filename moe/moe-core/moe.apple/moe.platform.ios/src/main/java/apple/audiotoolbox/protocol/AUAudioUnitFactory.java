@@ -23,6 +23,7 @@ import apple.foundation.protocol.NSExtensionRequestHandling;
 import org.moe.natj.general.ann.ByValue;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.Library;
+import org.moe.natj.general.ann.ReferenceInfo;
 import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.general.ptr.Ptr;
 import org.moe.natj.objc.ObjCRuntime;
@@ -37,5 +38,5 @@ public interface AUAudioUnitFactory extends NSExtensionRequestHandling {
     @Generated
     @Selector("createAudioUnitWithComponentDescription:error:")
     AUAudioUnit createAudioUnitWithComponentDescriptionError(@ByValue AudioComponentDescription desc,
-            Ptr<NSError> error);
+            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 }

@@ -32,6 +32,7 @@ import org.moe.natj.general.ann.MappedReturn;
 import org.moe.natj.general.ann.NInt;
 import org.moe.natj.general.ann.NUInt;
 import org.moe.natj.general.ann.Owned;
+import org.moe.natj.general.ann.ReferenceInfo;
 import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.general.ptr.Ptr;
 import org.moe.natj.general.ptr.VoidPtr;
@@ -297,7 +298,8 @@ public class AVAudioSession extends NSObject {
 
     @Generated
     @Selector("overrideOutputAudioPort:error:")
-    public native boolean overrideOutputAudioPortError(@NUInt long portOverride, Ptr<NSError> outError);
+    public native boolean overrideOutputAudioPortError(@NUInt long portOverride,
+            @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
     @Generated
     @Deprecated
@@ -346,33 +348,37 @@ public class AVAudioSession extends NSObject {
 
     @Generated
     @Selector("setActive:error:")
-    public native boolean setActiveError(boolean active, Ptr<NSError> outError);
+    public native boolean setActiveError(boolean active, @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
     @Generated
     @Deprecated
     @Selector("setActive:withFlags:error:")
-    public native boolean setActiveWithFlagsError(boolean active, @NInt long flags, Ptr<NSError> outError);
+    public native boolean setActiveWithFlagsError(boolean active, @NInt long flags,
+            @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
     @Generated
     @Selector("setActive:withOptions:error:")
-    public native boolean setActiveWithOptionsError(boolean active, @NUInt long options, Ptr<NSError> outError);
+    public native boolean setActiveWithOptionsError(boolean active, @NUInt long options,
+            @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
     @Generated
     @Selector("setAggregatedIOPreference:error:")
-    public native boolean setAggregatedIOPreferenceError(@NUInt long inIOType, Ptr<NSError> outError);
+    public native boolean setAggregatedIOPreferenceError(@NUInt long inIOType,
+            @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
     @Generated
     @Selector("setCategory:error:")
-    public native boolean setCategoryError(String category, Ptr<NSError> outError);
+    public native boolean setCategoryError(String category, @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
     @Generated
     @Selector("setCategory:mode:options:error:")
     public native boolean setCategoryModeOptionsError(String category, String mode, @NUInt long options,
-            Ptr<NSError> outError);
+            @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
     @Generated
     @Selector("setCategory:withOptions:error:")
-    public native boolean setCategoryWithOptionsError(String category, @NUInt long options, Ptr<NSError> outError);
+    public native boolean setCategoryWithOptionsError(String category, @NUInt long options,
+            @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
     @Generated
     @Deprecated
@@ -395,45 +401,51 @@ public class AVAudioSession extends NSObject {
     @Generated
     @Selector("setInputDataSource:error:")
     public native boolean setInputDataSourceError(AVAudioSessionDataSourceDescription dataSource,
-            Ptr<NSError> outError);
+            @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
     @Generated
     @Selector("setInputGain:error:")
-    public native boolean setInputGainError(float gain, Ptr<NSError> outError);
+    public native boolean setInputGainError(float gain, @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
     @Generated
     @Selector("setMode:error:")
-    public native boolean setModeError(String mode, Ptr<NSError> outError);
+    public native boolean setModeError(String mode, @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
     @Generated
     @Selector("setOutputDataSource:error:")
     public native boolean setOutputDataSourceError(AVAudioSessionDataSourceDescription dataSource,
-            Ptr<NSError> outError);
+            @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
     @Generated
     @Deprecated
     @Selector("setPreferredHardwareSampleRate:error:")
-    public native boolean setPreferredHardwareSampleRateError(double sampleRate, Ptr<NSError> outError);
+    public native boolean setPreferredHardwareSampleRateError(double sampleRate,
+            @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
     @Generated
     @Selector("setPreferredIOBufferDuration:error:")
-    public native boolean setPreferredIOBufferDurationError(double duration, Ptr<NSError> outError);
+    public native boolean setPreferredIOBufferDurationError(double duration,
+            @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
     @Generated
     @Selector("setPreferredInput:error:")
-    public native boolean setPreferredInputError(AVAudioSessionPortDescription inPort, Ptr<NSError> outError);
+    public native boolean setPreferredInputError(AVAudioSessionPortDescription inPort,
+            @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
     @Generated
     @Selector("setPreferredInputNumberOfChannels:error:")
-    public native boolean setPreferredInputNumberOfChannelsError(@NInt long count, Ptr<NSError> outError);
+    public native boolean setPreferredInputNumberOfChannelsError(@NInt long count,
+            @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
     @Generated
     @Selector("setPreferredOutputNumberOfChannels:error:")
-    public native boolean setPreferredOutputNumberOfChannelsError(@NInt long count, Ptr<NSError> outError);
+    public native boolean setPreferredOutputNumberOfChannelsError(@NInt long count,
+            @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
     @Generated
     @Selector("setPreferredSampleRate:error:")
-    public native boolean setPreferredSampleRateError(double sampleRate, Ptr<NSError> outError);
+    public native boolean setPreferredSampleRateError(double sampleRate,
+            @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
     @Runtime(ObjCRuntime.class)
     @Generated

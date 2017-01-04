@@ -33,6 +33,7 @@ import org.moe.natj.general.ann.MappedReturn;
 import org.moe.natj.general.ann.NInt;
 import org.moe.natj.general.ann.NUInt;
 import org.moe.natj.general.ann.Owned;
+import org.moe.natj.general.ann.ReferenceInfo;
 import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.general.ptr.Ptr;
 import org.moe.natj.general.ptr.VoidPtr;
@@ -177,21 +178,23 @@ public class AVAudioFile extends NSObject {
     @Generated
     @Selector("initForReading:commonFormat:interleaved:error:")
     public native AVAudioFile initForReadingCommonFormatInterleavedError(NSURL fileURL, @NUInt long format,
-            boolean interleaved, Ptr<NSError> outError);
+            boolean interleaved, @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
     @Generated
     @Selector("initForReading:error:")
-    public native AVAudioFile initForReadingError(NSURL fileURL, Ptr<NSError> outError);
+    public native AVAudioFile initForReadingError(NSURL fileURL,
+            @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
     @Generated
     @Selector("initForWriting:settings:commonFormat:interleaved:error:")
     public native AVAudioFile initForWritingSettingsCommonFormatInterleavedError(NSURL fileURL,
-            NSDictionary<String, ?> settings, @NUInt long format, boolean interleaved, Ptr<NSError> outError);
+            NSDictionary<String, ?> settings, @NUInt long format, boolean interleaved,
+            @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
     @Generated
     @Selector("initForWriting:settings:error:")
     public native AVAudioFile initForWritingSettingsError(NSURL fileURL, NSDictionary<String, ?> settings,
-            Ptr<NSError> outError);
+            @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
     @Generated
     @Selector("length")
@@ -203,11 +206,13 @@ public class AVAudioFile extends NSObject {
 
     @Generated
     @Selector("readIntoBuffer:error:")
-    public native boolean readIntoBufferError(AVAudioPCMBuffer buffer, Ptr<NSError> outError);
+    public native boolean readIntoBufferError(AVAudioPCMBuffer buffer,
+            @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
     @Generated
     @Selector("readIntoBuffer:frameCount:error:")
-    public native boolean readIntoBufferFrameCountError(AVAudioPCMBuffer buffer, int frames, Ptr<NSError> outError);
+    public native boolean readIntoBufferFrameCountError(AVAudioPCMBuffer buffer, int frames,
+            @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
     @Generated
     @Selector("setFramePosition:")
@@ -219,5 +224,6 @@ public class AVAudioFile extends NSObject {
 
     @Generated
     @Selector("writeFromBuffer:error:")
-    public native boolean writeFromBufferError(AVAudioPCMBuffer buffer, Ptr<NSError> outError);
+    public native boolean writeFromBufferError(AVAudioPCMBuffer buffer,
+            @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 }

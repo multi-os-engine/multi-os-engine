@@ -34,6 +34,7 @@ import org.moe.natj.general.ann.MappedReturn;
 import org.moe.natj.general.ann.NInt;
 import org.moe.natj.general.ann.NUInt;
 import org.moe.natj.general.ann.Owned;
+import org.moe.natj.general.ann.ReferenceInfo;
 import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.general.ptr.BoolPtr;
 import org.moe.natj.general.ptr.ConstPtr;
@@ -170,8 +171,8 @@ public class NSOrderedSet<_ObjectType> extends NSObject
 
     @Generated
     @Selector("orderedSetWithObjects:count:")
-    public static native <_ObjectType> NSOrderedSet<?> orderedSetWithObjectsCount(ConstPtr<_ObjectType> objects,
-            @NUInt long cnt);
+    public static native <_ObjectType> NSOrderedSet<?> orderedSetWithObjectsCount(
+            @ReferenceInfo(type = ObjCObject.class) ConstPtr<_ObjectType> objects, @NUInt long cnt);
 
     @Generated
     @Selector("orderedSetWithOrderedSet:")
@@ -242,7 +243,8 @@ public class NSOrderedSet<_ObjectType> extends NSObject
     @Generated
     @Selector("countByEnumeratingWithState:objects:count:")
     @NUInt
-    public native long countByEnumeratingWithStateObjectsCount(VoidPtr state, Ptr<ObjCObject> buffer, @NUInt long len);
+    public native long countByEnumeratingWithStateObjectsCount(VoidPtr state,
+            @ReferenceInfo(type = ObjCObject.class) Ptr<ObjCObject> buffer, @NUInt long len);
 
     @Generated
     @Selector("description")
@@ -286,7 +288,8 @@ public class NSOrderedSet<_ObjectType> extends NSObject
 
     @Generated
     @Selector("getObjects:range:")
-    public native void getObjectsRange(Ptr<ObjCObject> objects, @ByValue NSRange range);
+    public native void getObjectsRange(@ReferenceInfo(type = ObjCObject.class) Ptr<ObjCObject> objects,
+            @ByValue NSRange range);
 
     @Generated
     @Selector("indexOfObject:")
@@ -366,7 +369,8 @@ public class NSOrderedSet<_ObjectType> extends NSObject
 
     @Generated
     @Selector("initWithObjects:count:")
-    public native NSOrderedSet<?> initWithObjectsCount(Ptr<_ObjectType> objects, @NUInt long cnt);
+    public native NSOrderedSet<?> initWithObjectsCount(@ReferenceInfo(type = ObjCObject.class) Ptr<_ObjectType> objects,
+            @NUInt long cnt);
 
     @Generated
     @Selector("initWithOrderedSet:")

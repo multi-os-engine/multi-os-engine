@@ -34,6 +34,7 @@ import org.moe.natj.general.ann.MappedReturn;
 import org.moe.natj.general.ann.NInt;
 import org.moe.natj.general.ann.NUInt;
 import org.moe.natj.general.ann.Owned;
+import org.moe.natj.general.ann.ReferenceInfo;
 import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.general.ptr.Ptr;
 import org.moe.natj.general.ptr.VoidPtr;
@@ -208,7 +209,7 @@ public class NSFetchedResultsController<_ResultType> extends NSObject {
 
     @Generated
     @Selector("performFetch:")
-    public native boolean performFetch(Ptr<NSError> error);
+    public native boolean performFetch(@ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     @Generated
     @Selector("sectionForSectionIndexTitle:atIndex:")

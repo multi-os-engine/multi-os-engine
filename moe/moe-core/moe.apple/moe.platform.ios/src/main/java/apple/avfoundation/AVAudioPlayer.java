@@ -35,6 +35,7 @@ import org.moe.natj.general.ann.MappedReturn;
 import org.moe.natj.general.ann.NInt;
 import org.moe.natj.general.ann.NUInt;
 import org.moe.natj.general.ann.Owned;
+import org.moe.natj.general.ann.ReferenceInfo;
 import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.general.ptr.Ptr;
 import org.moe.natj.general.ptr.VoidPtr;
@@ -207,20 +208,23 @@ public class AVAudioPlayer extends NSObject {
 
     @Generated
     @Selector("initWithContentsOfURL:error:")
-    public native AVAudioPlayer initWithContentsOfURLError(NSURL url, Ptr<NSError> outError);
+    public native AVAudioPlayer initWithContentsOfURLError(NSURL url,
+            @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
     @Generated
     @Selector("initWithContentsOfURL:fileTypeHint:error:")
     public native AVAudioPlayer initWithContentsOfURLFileTypeHintError(NSURL url, String utiString,
-            Ptr<NSError> outError);
+            @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
     @Generated
     @Selector("initWithData:error:")
-    public native AVAudioPlayer initWithDataError(NSData data, Ptr<NSError> outError);
+    public native AVAudioPlayer initWithDataError(NSData data,
+            @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
     @Generated
     @Selector("initWithData:fileTypeHint:error:")
-    public native AVAudioPlayer initWithDataFileTypeHintError(NSData data, String utiString, Ptr<NSError> outError);
+    public native AVAudioPlayer initWithDataFileTypeHintError(NSData data, String utiString,
+            @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
     @Generated
     @Selector("isMeteringEnabled")

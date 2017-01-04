@@ -35,6 +35,7 @@ import org.moe.natj.general.ann.MappedReturn;
 import org.moe.natj.general.ann.NInt;
 import org.moe.natj.general.ann.NUInt;
 import org.moe.natj.general.ann.Owned;
+import org.moe.natj.general.ann.ReferenceInfo;
 import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.general.ptr.Ptr;
 import org.moe.natj.general.ptr.VoidPtr;
@@ -181,19 +182,20 @@ public class HKHealthStore extends NSObject {
 
     @Generated
     @Selector("biologicalSexWithError:")
-    public native HKBiologicalSexObject biologicalSexWithError(Ptr<NSError> error);
+    public native HKBiologicalSexObject biologicalSexWithError(@ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     @Generated
     @Selector("bloodTypeWithError:")
-    public native HKBloodTypeObject bloodTypeWithError(Ptr<NSError> error);
+    public native HKBloodTypeObject bloodTypeWithError(@ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     @Generated
     @Selector("dateOfBirthComponentsWithError:")
-    public native NSDateComponents dateOfBirthComponentsWithError(Ptr<NSError> error);
+    public native NSDateComponents dateOfBirthComponentsWithError(
+            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     @Generated
     @Selector("dateOfBirthWithError:")
-    public native NSDate dateOfBirthWithError(Ptr<NSError> error);
+    public native NSDate dateOfBirthWithError(@ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     @Generated
     @Selector("deleteObject:withCompletion:")
@@ -235,7 +237,8 @@ public class HKHealthStore extends NSObject {
 
     @Generated
     @Selector("fitzpatrickSkinTypeWithError:")
-    public native HKFitzpatrickSkinTypeObject fitzpatrickSkinTypeWithError(Ptr<NSError> error);
+    public native HKFitzpatrickSkinTypeObject fitzpatrickSkinTypeWithError(
+            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     @Generated
     @Selector("handleAuthorizationForExtensionWithCompletion:")
@@ -284,7 +287,7 @@ public class HKHealthStore extends NSObject {
 
     @Generated
     @Selector("wheelchairUseWithError:")
-    public native HKWheelchairUseObject wheelchairUseWithError(Ptr<NSError> error);
+    public native HKWheelchairUseObject wheelchairUseWithError(@ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     @Runtime(ObjCRuntime.class)
     @Generated

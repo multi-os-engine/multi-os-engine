@@ -28,6 +28,7 @@ import org.moe.natj.general.ann.MappedReturn;
 import org.moe.natj.general.ann.NInt;
 import org.moe.natj.general.ann.NUInt;
 import org.moe.natj.general.ann.Owned;
+import org.moe.natj.general.ann.ReferenceInfo;
 import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.general.ptr.DoublePtr;
 import org.moe.natj.general.ptr.FloatPtr;
@@ -204,7 +205,8 @@ public class NSScanner extends NSObject implements NSCopying {
 
     @Generated
     @Selector("scanCharactersFromSet:intoString:")
-    public native boolean scanCharactersFromSetIntoString(NSCharacterSet set, Ptr<NSString> result);
+    public native boolean scanCharactersFromSetIntoString(NSCharacterSet set,
+            @ReferenceInfo(type = NSString.class) Ptr<NSString> result);
 
     @Generated
     @Selector("scanDecimal:")
@@ -253,7 +255,8 @@ public class NSScanner extends NSObject implements NSCopying {
 
     @Generated
     @Selector("scanString:intoString:")
-    public native boolean scanStringIntoString(String string, Ptr<NSString> result);
+    public native boolean scanStringIntoString(String string,
+            @ReferenceInfo(type = NSString.class) Ptr<NSString> result);
 
     @Generated
     @Selector("scanUnsignedLongLong:")
@@ -261,11 +264,13 @@ public class NSScanner extends NSObject implements NSCopying {
 
     @Generated
     @Selector("scanUpToCharactersFromSet:intoString:")
-    public native boolean scanUpToCharactersFromSetIntoString(NSCharacterSet set, Ptr<NSString> result);
+    public native boolean scanUpToCharactersFromSetIntoString(NSCharacterSet set,
+            @ReferenceInfo(type = NSString.class) Ptr<NSString> result);
 
     @Generated
     @Selector("scanUpToString:intoString:")
-    public native boolean scanUpToStringIntoString(String string, Ptr<NSString> result);
+    public native boolean scanUpToStringIntoString(String string,
+            @ReferenceInfo(type = NSString.class) Ptr<NSString> result);
 
     @Generated
     @Selector("setCaseSensitive:")

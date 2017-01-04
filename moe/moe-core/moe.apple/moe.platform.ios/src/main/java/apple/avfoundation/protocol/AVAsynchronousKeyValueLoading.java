@@ -21,6 +21,7 @@ import apple.foundation.NSError;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.Library;
 import org.moe.natj.general.ann.NInt;
+import org.moe.natj.general.ann.ReferenceInfo;
 import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.general.ptr.Ptr;
 import org.moe.natj.objc.ObjCRuntime;
@@ -41,7 +42,7 @@ public interface AVAsynchronousKeyValueLoading {
     @Generated
     @Selector("statusOfValueForKey:error:")
     @NInt
-    long statusOfValueForKeyError(String key, Ptr<NSError> outError);
+    long statusOfValueForKeyError(String key, @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
     @Runtime(ObjCRuntime.class)
     @Generated

@@ -31,6 +31,7 @@ import org.moe.natj.general.ann.MappedReturn;
 import org.moe.natj.general.ann.NInt;
 import org.moe.natj.general.ann.NUInt;
 import org.moe.natj.general.ann.Owned;
+import org.moe.natj.general.ann.ReferenceInfo;
 import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.general.ptr.Ptr;
 import org.moe.natj.general.ptr.VoidPtr;
@@ -101,7 +102,8 @@ public class AVCaptureDeviceInput extends AVCaptureInput {
 
     @Generated
     @Selector("deviceInputWithDevice:error:")
-    public static native AVCaptureDeviceInput deviceInputWithDeviceError(AVCaptureDevice device, Ptr<NSError> outError);
+    public static native AVCaptureDeviceInput deviceInputWithDeviceError(AVCaptureDevice device,
+            @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
     @Generated
     @Selector("hash")
@@ -174,5 +176,6 @@ public class AVCaptureDeviceInput extends AVCaptureInput {
 
     @Generated
     @Selector("initWithDevice:error:")
-    public native AVCaptureDeviceInput initWithDeviceError(AVCaptureDevice device, Ptr<NSError> outError);
+    public native AVCaptureDeviceInput initWithDeviceError(AVCaptureDevice device,
+            @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 }

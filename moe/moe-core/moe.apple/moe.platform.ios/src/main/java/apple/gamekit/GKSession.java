@@ -33,6 +33,7 @@ import org.moe.natj.general.ann.MappedReturn;
 import org.moe.natj.general.ann.NInt;
 import org.moe.natj.general.ann.NUInt;
 import org.moe.natj.general.ann.Owned;
+import org.moe.natj.general.ann.ReferenceInfo;
 import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.general.ptr.Ptr;
 import org.moe.natj.general.ptr.VoidPtr;
@@ -164,7 +165,8 @@ public class GKSession extends NSObject {
 
     @Generated
     @Selector("acceptConnectionFromPeer:error:")
-    public native boolean acceptConnectionFromPeerError(String peerID, Ptr<NSError> error);
+    public native boolean acceptConnectionFromPeerError(String peerID,
+            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     @Generated
     @Selector("cancelConnectToPeer:")
@@ -232,12 +234,14 @@ public class GKSession extends NSObject {
     @Generated
     @Deprecated
     @Selector("sendData:toPeers:withDataMode:error:")
-    public native boolean sendDataToPeersWithDataModeError(NSData data, NSArray<?> peers, int mode, Ptr<NSError> error);
+    public native boolean sendDataToPeersWithDataModeError(NSData data, NSArray<?> peers, int mode,
+            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     @Generated
     @Deprecated
     @Selector("sendDataToAllPeers:withDataMode:error:")
-    public native boolean sendDataToAllPeersWithDataModeError(NSData data, int mode, Ptr<NSError> error);
+    public native boolean sendDataToAllPeersWithDataModeError(NSData data, int mode,
+            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     @Generated
     @Selector("sessionID")

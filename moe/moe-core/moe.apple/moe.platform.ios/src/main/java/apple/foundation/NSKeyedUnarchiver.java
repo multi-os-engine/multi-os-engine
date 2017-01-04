@@ -28,6 +28,7 @@ import org.moe.natj.general.ann.MappedReturn;
 import org.moe.natj.general.ann.NInt;
 import org.moe.natj.general.ann.NUInt;
 import org.moe.natj.general.ann.Owned;
+import org.moe.natj.general.ann.ReferenceInfo;
 import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.general.ptr.ConstBytePtr;
 import org.moe.natj.general.ptr.NUIntPtr;
@@ -175,7 +176,8 @@ public class NSKeyedUnarchiver extends NSCoder {
     @Generated
     @Selector("unarchiveTopLevelObjectWithData:error:")
     @MappedReturn(ObjCObjectMapper.class)
-    public static native Object unarchiveTopLevelObjectWithDataError(NSData data, Ptr<NSError> error);
+    public static native Object unarchiveTopLevelObjectWithDataError(NSData data,
+            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     @Generated
     @Selector("version")

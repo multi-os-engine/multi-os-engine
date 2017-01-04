@@ -40,6 +40,7 @@ import org.moe.natj.general.ann.NFloat;
 import org.moe.natj.general.ann.NInt;
 import org.moe.natj.general.ann.NUInt;
 import org.moe.natj.general.ann.Owned;
+import org.moe.natj.general.ann.ReferenceInfo;
 import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.general.ptr.Ptr;
 import org.moe.natj.general.ptr.VoidPtr;
@@ -193,7 +194,7 @@ public class MTKTextureLoader extends NSObject {
     @Selector("newTextureWithCGImage:options:error:")
     @MappedReturn(ObjCObjectMapper.class)
     public native MTLTexture newTextureWithCGImageOptionsError(CGImageRef cgImage,
-            NSDictionary<String, ? extends NSObject> options, Ptr<NSError> error);
+            NSDictionary<String, ? extends NSObject> options, @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     @Generated
     @Selector("newTextureWithContentsOfURL:options:completionHandler:")
@@ -205,7 +206,7 @@ public class MTKTextureLoader extends NSObject {
     @Selector("newTextureWithContentsOfURL:options:error:")
     @MappedReturn(ObjCObjectMapper.class)
     public native MTLTexture newTextureWithContentsOfURLOptionsError(NSURL URL,
-            NSDictionary<String, ? extends NSObject> options, Ptr<NSError> error);
+            NSDictionary<String, ? extends NSObject> options, @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     @Generated
     @Selector("newTextureWithData:options:completionHandler:")
@@ -217,7 +218,7 @@ public class MTKTextureLoader extends NSObject {
     @Selector("newTextureWithData:options:error:")
     @MappedReturn(ObjCObjectMapper.class)
     public native MTLTexture newTextureWithDataOptionsError(NSData data,
-            NSDictionary<String, ? extends NSObject> options, Ptr<NSError> error);
+            NSDictionary<String, ? extends NSObject> options, @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     @Generated
     @Selector("newTextureWithMDLTexture:options:completionHandler:")
@@ -229,7 +230,7 @@ public class MTKTextureLoader extends NSObject {
     @Selector("newTextureWithMDLTexture:options:error:")
     @MappedReturn(ObjCObjectMapper.class)
     public native MTLTexture newTextureWithMDLTextureOptionsError(MDLTexture texture,
-            NSDictionary<String, ? extends NSObject> options, Ptr<NSError> error);
+            NSDictionary<String, ? extends NSObject> options, @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     @Generated
     @Selector("newTextureWithName:scaleFactor:bundle:options:completionHandler:")
@@ -241,7 +242,8 @@ public class MTKTextureLoader extends NSObject {
     @Selector("newTextureWithName:scaleFactor:bundle:options:error:")
     @MappedReturn(ObjCObjectMapper.class)
     public native MTLTexture newTextureWithNameScaleFactorBundleOptionsError(String name, @NFloat double scaleFactor,
-            NSBundle bundle, NSDictionary<String, ? extends NSObject> options, Ptr<NSError> error);
+            NSBundle bundle, NSDictionary<String, ? extends NSObject> options,
+            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     @Generated
     @Selector("newTexturesWithContentsOfURLs:options:completionHandler:")
@@ -252,7 +254,7 @@ public class MTKTextureLoader extends NSObject {
     @Generated
     @Selector("newTexturesWithContentsOfURLs:options:error:")
     public native NSArray<?> newTexturesWithContentsOfURLsOptionsError(NSArray<? extends NSURL> URLs,
-            NSDictionary<String, ? extends NSObject> options, Ptr<NSError> error);
+            NSDictionary<String, ? extends NSObject> options, @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     @Generated
     @Selector("newTexturesWithNames:scaleFactor:bundle:options:completionHandler:")

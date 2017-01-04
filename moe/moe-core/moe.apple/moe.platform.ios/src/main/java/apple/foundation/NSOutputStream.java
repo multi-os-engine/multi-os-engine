@@ -27,6 +27,7 @@ import org.moe.natj.general.ann.MappedReturn;
 import org.moe.natj.general.ann.NInt;
 import org.moe.natj.general.ann.NUInt;
 import org.moe.natj.general.ann.Owned;
+import org.moe.natj.general.ann.ReferenceInfo;
 import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.general.ptr.BytePtr;
 import org.moe.natj.general.ptr.ConstBytePtr;
@@ -100,12 +101,14 @@ public class NSOutputStream extends NSStream {
     @Generated
     @Selector("getBoundStreamsWithBufferSize:inputStream:outputStream:")
     public static native void getBoundStreamsWithBufferSizeInputStreamOutputStream(@NUInt long bufferSize,
-            Ptr<NSInputStream> inputStream, Ptr<NSOutputStream> outputStream);
+            @ReferenceInfo(type = NSInputStream.class) Ptr<NSInputStream> inputStream,
+            @ReferenceInfo(type = NSOutputStream.class) Ptr<NSOutputStream> outputStream);
 
     @Generated
     @Selector("getStreamsToHostWithName:port:inputStream:outputStream:")
     public static native void getStreamsToHostWithNamePortInputStreamOutputStream(String hostname, @NInt long port,
-            Ptr<NSInputStream> inputStream, Ptr<NSOutputStream> outputStream);
+            @ReferenceInfo(type = NSInputStream.class) Ptr<NSInputStream> inputStream,
+            @ReferenceInfo(type = NSOutputStream.class) Ptr<NSOutputStream> outputStream);
 
     @Generated
     @Selector("hash")

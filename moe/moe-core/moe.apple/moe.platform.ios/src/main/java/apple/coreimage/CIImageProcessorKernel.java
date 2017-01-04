@@ -35,6 +35,7 @@ import org.moe.natj.general.ann.MappedReturn;
 import org.moe.natj.general.ann.NInt;
 import org.moe.natj.general.ann.NUInt;
 import org.moe.natj.general.ann.Owned;
+import org.moe.natj.general.ann.ReferenceInfo;
 import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.general.ptr.Ptr;
 import org.moe.natj.general.ptr.VoidPtr;
@@ -76,7 +77,8 @@ public class CIImageProcessorKernel extends NSObject {
     @Generated
     @Selector("applyWithExtent:inputs:arguments:error:")
     public static native CIImage applyWithExtentInputsArgumentsError(@ByValue CGRect extent,
-            NSArray<? extends CIImage> inputs, NSDictionary<String, ?> args, Ptr<NSError> error);
+            NSArray<? extends CIImage> inputs, NSDictionary<String, ?> args,
+            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -160,7 +162,7 @@ public class CIImageProcessorKernel extends NSObject {
     @Selector("processWithInputs:arguments:output:error:")
     public static native boolean processWithInputsArgumentsOutputError(NSArray<?> inputs,
             NSDictionary<String, ?> arguments, @Mapped(ObjCObjectMapper.class) CIImageProcessorOutput output,
-            Ptr<NSError> error);
+            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     @Generated
     @Selector("resolveClassMethod:")

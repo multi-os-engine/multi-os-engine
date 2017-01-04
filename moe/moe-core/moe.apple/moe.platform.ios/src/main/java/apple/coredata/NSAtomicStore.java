@@ -33,6 +33,7 @@ import org.moe.natj.general.ann.MappedReturn;
 import org.moe.natj.general.ann.NInt;
 import org.moe.natj.general.ann.NUInt;
 import org.moe.natj.general.ann.Owned;
+import org.moe.natj.general.ann.ReferenceInfo;
 import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.general.ptr.Ptr;
 import org.moe.natj.general.ptr.VoidPtr;
@@ -137,7 +138,8 @@ public class NSAtomicStore extends NSPersistentStore {
 
     @Generated
     @Selector("metadataForPersistentStoreWithURL:error:")
-    public static native NSDictionary<String, ?> metadataForPersistentStoreWithURLError(NSURL url, Ptr<NSError> error);
+    public static native NSDictionary<String, ?> metadataForPersistentStoreWithURLError(NSURL url,
+            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     @Generated
     @Selector("migrationManagerClass")
@@ -160,7 +162,7 @@ public class NSAtomicStore extends NSPersistentStore {
     @Generated
     @Selector("setMetadata:forPersistentStoreWithURL:error:")
     public static native boolean setMetadataForPersistentStoreWithURLError(NSDictionary<String, ?> metadata, NSURL url,
-            Ptr<NSError> error);
+            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     @Generated
     @Selector("setVersion:")
@@ -198,7 +200,7 @@ public class NSAtomicStore extends NSPersistentStore {
 
     @Generated
     @Selector("load:")
-    public native boolean load_objc(Ptr<NSError> error);
+    public native boolean load_objc(@ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     @Generated
     @Selector("newCacheNodeForManagedObject:")
@@ -221,7 +223,7 @@ public class NSAtomicStore extends NSPersistentStore {
 
     @Generated
     @Selector("save:")
-    public native boolean save(Ptr<NSError> error);
+    public native boolean save(@ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     @Generated
     @Selector("updateCacheNode:fromManagedObject:")

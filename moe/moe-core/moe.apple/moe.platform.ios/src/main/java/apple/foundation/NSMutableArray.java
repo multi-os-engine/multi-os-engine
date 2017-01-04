@@ -30,12 +30,14 @@ import org.moe.natj.general.ann.MappedReturn;
 import org.moe.natj.general.ann.NInt;
 import org.moe.natj.general.ann.NUInt;
 import org.moe.natj.general.ann.Owned;
+import org.moe.natj.general.ann.ReferenceInfo;
 import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.general.ptr.ConstPtr;
 import org.moe.natj.general.ptr.NUIntPtr;
 import org.moe.natj.general.ptr.Ptr;
 import org.moe.natj.general.ptr.VoidPtr;
 import org.moe.natj.objc.Class;
+import org.moe.natj.objc.ObjCObject;
 import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCBlock;
@@ -109,8 +111,8 @@ public class NSMutableArray<_ObjectType> extends NSArray<_ObjectType> {
 
     @Generated
     @Selector("arrayWithObjects:count:")
-    public static native <_ObjectType> NSMutableArray<?> arrayWithObjectsCount(ConstPtr<_ObjectType> objects,
-            @NUInt long cnt);
+    public static native <_ObjectType> NSMutableArray<?> arrayWithObjectsCount(
+            @ReferenceInfo(type = ObjCObject.class) ConstPtr<_ObjectType> objects, @NUInt long cnt);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -259,7 +261,8 @@ public class NSMutableArray<_ObjectType> extends NSArray<_ObjectType> {
 
     @Generated
     @Selector("initWithObjects:count:")
-    public native NSMutableArray<?> initWithObjectsCount(Ptr<_ObjectType> objects, @NUInt long cnt);
+    public native NSMutableArray<?> initWithObjectsCount(
+            @ReferenceInfo(type = ObjCObject.class) Ptr<_ObjectType> objects, @NUInt long cnt);
 
     @Generated
     @Selector("insertObject:atIndex:")

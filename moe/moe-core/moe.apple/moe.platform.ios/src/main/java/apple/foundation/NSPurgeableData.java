@@ -28,6 +28,7 @@ import org.moe.natj.general.ann.MappedReturn;
 import org.moe.natj.general.ann.NInt;
 import org.moe.natj.general.ann.NUInt;
 import org.moe.natj.general.ann.Owned;
+import org.moe.natj.general.ann.ReferenceInfo;
 import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.general.ptr.ConstVoidPtr;
 import org.moe.natj.general.ptr.Ptr;
@@ -119,7 +120,7 @@ public class NSPurgeableData extends NSMutableData implements NSDiscardableConte
     @Generated
     @Selector("dataWithContentsOfFile:options:error:")
     public static native NSPurgeableData dataWithContentsOfFileOptionsError(String path, @NUInt long readOptionsMask,
-            Ptr<NSError> errorPtr);
+            @ReferenceInfo(type = NSError.class) Ptr<NSError> errorPtr);
 
     @Generated
     @Deprecated
@@ -133,7 +134,7 @@ public class NSPurgeableData extends NSMutableData implements NSDiscardableConte
     @Generated
     @Selector("dataWithContentsOfURL:options:error:")
     public static native NSPurgeableData dataWithContentsOfURLOptionsError(NSURL url, @NUInt long readOptionsMask,
-            Ptr<NSError> errorPtr);
+            @ReferenceInfo(type = NSError.class) Ptr<NSError> errorPtr);
 
     @Generated
     @Selector("dataWithData:")
@@ -277,7 +278,7 @@ public class NSPurgeableData extends NSMutableData implements NSDiscardableConte
     @Generated
     @Selector("initWithContentsOfFile:options:error:")
     public native NSPurgeableData initWithContentsOfFileOptionsError(String path, @NUInt long readOptionsMask,
-            Ptr<NSError> errorPtr);
+            @ReferenceInfo(type = NSError.class) Ptr<NSError> errorPtr);
 
     @Generated
     @Deprecated
@@ -291,7 +292,7 @@ public class NSPurgeableData extends NSMutableData implements NSDiscardableConte
     @Generated
     @Selector("initWithContentsOfURL:options:error:")
     public native NSPurgeableData initWithContentsOfURLOptionsError(NSURL url, @NUInt long readOptionsMask,
-            Ptr<NSError> errorPtr);
+            @ReferenceInfo(type = NSError.class) Ptr<NSError> errorPtr);
 
     @Generated
     @Selector("initWithData:")

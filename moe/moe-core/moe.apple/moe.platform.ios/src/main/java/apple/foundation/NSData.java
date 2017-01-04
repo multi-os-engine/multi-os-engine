@@ -33,6 +33,7 @@ import org.moe.natj.general.ann.MappedReturn;
 import org.moe.natj.general.ann.NInt;
 import org.moe.natj.general.ann.NUInt;
 import org.moe.natj.general.ann.Owned;
+import org.moe.natj.general.ann.ReferenceInfo;
 import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.general.ptr.BoolPtr;
 import org.moe.natj.general.ptr.ConstVoidPtr;
@@ -120,7 +121,7 @@ public class NSData extends NSObject implements NSCopying, NSMutableCopying, NSS
     @Generated
     @Selector("dataWithContentsOfFile:options:error:")
     public static native NSData dataWithContentsOfFileOptionsError(String path, @NUInt long readOptionsMask,
-            Ptr<NSError> errorPtr);
+            @ReferenceInfo(type = NSError.class) Ptr<NSError> errorPtr);
 
     @Generated
     @Deprecated
@@ -134,7 +135,7 @@ public class NSData extends NSObject implements NSCopying, NSMutableCopying, NSS
     @Generated
     @Selector("dataWithContentsOfURL:options:error:")
     public static native NSData dataWithContentsOfURLOptionsError(NSURL url, @NUInt long readOptionsMask,
-            Ptr<NSError> errorPtr);
+            @ReferenceInfo(type = NSError.class) Ptr<NSError> errorPtr);
 
     @Generated
     @Selector("dataWithData:")
@@ -303,7 +304,7 @@ public class NSData extends NSObject implements NSCopying, NSMutableCopying, NSS
     @Generated
     @Selector("initWithContentsOfFile:options:error:")
     public native NSData initWithContentsOfFileOptionsError(String path, @NUInt long readOptionsMask,
-            Ptr<NSError> errorPtr);
+            @ReferenceInfo(type = NSError.class) Ptr<NSError> errorPtr);
 
     @Generated
     @Deprecated
@@ -317,7 +318,7 @@ public class NSData extends NSObject implements NSCopying, NSMutableCopying, NSS
     @Generated
     @Selector("initWithContentsOfURL:options:error:")
     public native NSData initWithContentsOfURLOptionsError(NSURL url, @NUInt long readOptionsMask,
-            Ptr<NSError> errorPtr);
+            @ReferenceInfo(type = NSError.class) Ptr<NSError> errorPtr);
 
     @Generated
     @Selector("initWithData:")
@@ -358,7 +359,8 @@ public class NSData extends NSObject implements NSCopying, NSMutableCopying, NSS
 
     @Generated
     @Selector("writeToFile:options:error:")
-    public native boolean writeToFileOptionsError(String path, @NUInt long writeOptionsMask, Ptr<NSError> errorPtr);
+    public native boolean writeToFileOptionsError(String path, @NUInt long writeOptionsMask,
+            @ReferenceInfo(type = NSError.class) Ptr<NSError> errorPtr);
 
     @Generated
     @Selector("writeToURL:atomically:")
@@ -366,7 +368,8 @@ public class NSData extends NSObject implements NSCopying, NSMutableCopying, NSS
 
     @Generated
     @Selector("writeToURL:options:error:")
-    public native boolean writeToURLOptionsError(NSURL url, @NUInt long writeOptionsMask, Ptr<NSError> errorPtr);
+    public native boolean writeToURLOptionsError(NSURL url, @NUInt long writeOptionsMask,
+            @ReferenceInfo(type = NSError.class) Ptr<NSError> errorPtr);
 
     @Runtime(ObjCRuntime.class)
     @Generated

@@ -34,6 +34,7 @@ import org.moe.natj.general.ann.MappedReturn;
 import org.moe.natj.general.ann.NInt;
 import org.moe.natj.general.ann.NUInt;
 import org.moe.natj.general.ann.Owned;
+import org.moe.natj.general.ann.ReferenceInfo;
 import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.general.ptr.Ptr;
 import org.moe.natj.general.ptr.VoidPtr;
@@ -198,12 +199,13 @@ public class AVAudioRecorder extends NSObject {
 
     @Generated
     @Selector("initWithURL:format:error:")
-    public native AVAudioRecorder initWithURLFormatError(NSURL url, AVAudioFormat format, Ptr<NSError> outError);
+    public native AVAudioRecorder initWithURLFormatError(NSURL url, AVAudioFormat format,
+            @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
     @Generated
     @Selector("initWithURL:settings:error:")
     public native AVAudioRecorder initWithURLSettingsError(NSURL url, NSDictionary<String, ?> settings,
-            Ptr<NSError> outError);
+            @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
     @Generated
     @Selector("isMeteringEnabled")

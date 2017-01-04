@@ -37,6 +37,7 @@ import org.moe.natj.general.ann.MappedReturn;
 import org.moe.natj.general.ann.NInt;
 import org.moe.natj.general.ann.NUInt;
 import org.moe.natj.general.ann.Owned;
+import org.moe.natj.general.ann.ReferenceInfo;
 import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.general.ptr.Ptr;
 import org.moe.natj.general.ptr.VoidPtr;
@@ -195,7 +196,7 @@ public class AVMutableComposition extends AVComposition {
     @Generated
     @Selector("insertTimeRange:ofAsset:atTime:error:")
     public native boolean insertTimeRangeOfAssetAtTimeError(@ByValue CMTimeRange timeRange, AVAsset asset,
-            @ByValue CMTime startTime, Ptr<NSError> outError);
+            @ByValue CMTime startTime, @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
     @Generated
     @Selector("mutableTrackCompatibleWithTrack:")

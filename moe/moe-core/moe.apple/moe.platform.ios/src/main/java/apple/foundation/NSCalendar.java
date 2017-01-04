@@ -31,6 +31,7 @@ import org.moe.natj.general.ann.MappedReturn;
 import org.moe.natj.general.ann.NInt;
 import org.moe.natj.general.ann.NUInt;
 import org.moe.natj.general.ann.Owned;
+import org.moe.natj.general.ann.ReferenceInfo;
 import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.general.ptr.BoolPtr;
 import org.moe.natj.general.ptr.DoublePtr;
@@ -380,8 +381,8 @@ public class NSCalendar extends NSObject implements NSCopying, NSSecureCoding {
 
     @Generated
     @Selector("nextWeekendStartDate:interval:options:afterDate:")
-    public native boolean nextWeekendStartDateIntervalOptionsAfterDate(Ptr<NSDate> datep, DoublePtr tip,
-            @NUInt long options, NSDate date);
+    public native boolean nextWeekendStartDateIntervalOptionsAfterDate(
+            @ReferenceInfo(type = NSDate.class) Ptr<NSDate> datep, DoublePtr tip, @NUInt long options, NSDate date);
 
     @Generated
     @Selector("ordinalityOfUnit:inUnit:forDate:")
@@ -399,12 +400,13 @@ public class NSCalendar extends NSObject implements NSCopying, NSSecureCoding {
 
     @Generated
     @Selector("rangeOfUnit:startDate:interval:forDate:")
-    public native boolean rangeOfUnitStartDateIntervalForDate(@NUInt long unit, Ptr<NSDate> datep, DoublePtr tip,
-            NSDate date);
+    public native boolean rangeOfUnitStartDateIntervalForDate(@NUInt long unit,
+            @ReferenceInfo(type = NSDate.class) Ptr<NSDate> datep, DoublePtr tip, NSDate date);
 
     @Generated
     @Selector("rangeOfWeekendStartDate:interval:containingDate:")
-    public native boolean rangeOfWeekendStartDateIntervalContainingDate(Ptr<NSDate> datep, DoublePtr tip, NSDate date);
+    public native boolean rangeOfWeekendStartDateIntervalContainingDate(
+            @ReferenceInfo(type = NSDate.class) Ptr<NSDate> datep, DoublePtr tip, NSDate date);
 
     @Generated
     @Selector("setFirstWeekday:")
