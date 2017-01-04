@@ -16,6 +16,7 @@ limitations under the License.
 
 package org.moe.natjgen;
 
+import org.moe.natjgen.TypeResolver.Context;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -56,7 +57,7 @@ public class CStructManager extends AbstractUnitManager {
     private static final TypeResolver fieldTResolver;
 
     static {
-        fieldTResolver = new TypeResolver("Struct Field", Constants.CRuntime);
+        fieldTResolver = new TypeResolver("Struct Field", Constants.CRuntime, Context.C);
         fieldTResolver.set(TypeResolver.VOID, TypeResolver.BOTH, false, true, true);
         fieldTResolver.set(TypeResolver.PRIMITIVE, TypeResolver.BOTH, true, true, true);
         fieldTResolver.set(TypeResolver.STRUCT, TypeResolver.BOTH, true, true, true);

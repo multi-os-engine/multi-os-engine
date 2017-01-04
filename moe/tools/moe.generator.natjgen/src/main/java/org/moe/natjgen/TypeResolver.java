@@ -48,14 +48,18 @@ public class TypeResolver extends AbstractASTBase {
     public static final TypeResolver PRIMITIVE_RESOLVER;
 
     static {
-        PRIMITIVE_RESOLVER = new TypeResolver("Primitive", Constants.CRuntime);
+        PRIMITIVE_RESOLVER = new TypeResolver("Primitive", Constants.CRuntime, Context.C);
         PRIMITIVE_RESOLVER.set(PRIMITIVE, BOTH, true, false, true);
         PRIMITIVE_RESOLVER.set(VOID, RETURN, true, false, true);
     }
 
     private final String resolverName;
     private final String runtime;
-    private final boolean isCallbackResolver;
+
+    public enum Context {
+        C, CALLBACK, OTHER
+    }
+    private final Context context;
 
     private final int tSupport[] = new int[LAST_OPTION + 1];
     private final Set<String> supportedMappers = new HashSet<String>();
@@ -97,17 +101,16 @@ public class TypeResolver extends AbstractASTBase {
         return (tSupport[type] & (mask << offs)) > 0;
     }
 
-    public TypeResolver(String name, String runtime) {
-        this(name, runtime, false);
-    }
-
-    public TypeResolver(String name, String runtime, boolean isCallbackResolver) {
+    public TypeResolver(String name, String runtime, Context resolverContext) {
         if (runtime != Constants.CRuntime && runtime != Constants.ObjCRuntime) {
             throw new IllegalArgumentException();
         }
+        if (resolverContext == null) {
+            throw new NullPointerException();
+        }
         this.resolverName = name;
         this.runtime = runtime;
-        this.isCallbackResolver = isCallbackResolver;
+        this.context = resolverContext;
     }
 
     @Override
@@ -132,6 +135,16 @@ public class TypeResolver extends AbstractASTBase {
         for (String mapper : supportedMappers) {
             this.supportedMappers.add(mapper);
         }
+    }
+
+    private boolean needsReferenceInfo() {
+        if (context == Context.C) {
+            return !isArg;
+        }
+        if (context == Context.CALLBACK) {
+            return isArg;
+        }
+        return true;
     }
 
     public synchronized boolean supports(Type type, boolean isArg) {
@@ -259,7 +272,7 @@ public class TypeResolver extends AbstractASTBase {
             // Level 1+ referenced types (i.e. void*, void**, ...)
             final Type rootType = type.getPonierRootType();
             final String rootTypePtrFQ = Constants.getVoidOrPrimitiveFQPtr(rootType);
-            if (depth > 1 && (isCallbackResolver ? isArg : !isArg)) {
+            if (depth > 1 && (needsReferenceInfo())) {
                 modifiers.setReferenceInfo(manager.addImport("java.lang." + rootType.getPrimitiveJavaClassName()),
                         depth);
             }
@@ -368,7 +381,7 @@ public class TypeResolver extends AbstractASTBase {
 
             // Simple binding
             final String rootTypePtrFQ = Constants.getVoidOrPrimitiveFQPtr(rootType);
-            if (depth > 1 && (isCallbackResolver ? isArg : !isArg)) {
+            if (depth > 1 && (needsReferenceInfo())) {
                 modifiers.setReferenceInfo(manager.addImport("java.lang." + rootType.getPrimitiveJavaClassName()),
                         depth);
             }
@@ -415,7 +428,7 @@ public class TypeResolver extends AbstractASTBase {
                 // Fallback to void*
                 final Type voidType = new Type();
                 final String rootTypePtrFQ = Constants.getVoidOrPrimitiveFQPtr(voidType);
-                if (depth > 1 && (isCallbackResolver ? isArg : !isArg)) {
+                if (depth > 1 && (needsReferenceInfo())) {
                     modifiers.setReferenceInfo(manager.addImport("java.lang." + voidType.getPrimitiveJavaClassName()),
                             depth);
                 }
@@ -450,7 +463,7 @@ public class TypeResolver extends AbstractASTBase {
                 }
             }
 
-            if (isCallbackResolver ? isArg : !isArg) {
+            if (needsReferenceInfo()) {
                 modifiers.setReferenceInfo(manager.addImport(struct), depth);
             }
             _Apply(_CreateNestedPtr(type, depth, newSimpleType(struct)));
@@ -519,7 +532,7 @@ public class TypeResolver extends AbstractASTBase {
                 // Fallback to void*
                 final Type voidType = new Type();
                 final String rootTypePtrFQ = Constants.getVoidOrPrimitiveFQPtr(voidType);
-                if (depth > 0 && (isCallbackResolver ? isArg : !isArg)) {
+                if (depth > 0 && (needsReferenceInfo())) {
                     modifiers.setReferenceInfo(manager.addImport("java.lang." + voidType.getPrimitiveJavaClassName()),
                             depth);
                 }
@@ -527,7 +540,7 @@ public class TypeResolver extends AbstractASTBase {
                 return;
             }
 
-            if (depth > 0 && (isCallbackResolver ? isArg : !isArg)) {
+            if (depth > 0 && (needsReferenceInfo())) {
                 modifiers.setReferenceInfo(manager.addImport(opaque), depth);
             }
             _Apply(_CreateNestedPtr(type, depth, newSimpleType(opaque)));
@@ -591,7 +604,7 @@ public class TypeResolver extends AbstractASTBase {
             } else {
                 name = manager.addImport(Constants.ObjCObjectFQ);
             }
-            if (isCallbackResolver ? isArg : !isArg) {
+            if (needsReferenceInfo()) {
                 modifiers.setReferenceInfo(manager.addImport(Constants.ObjCObjectFQ), depth);
             }
             _Apply(_CreateNestedPtr(type, depth, newUnimportedSimpleType(name)));
@@ -647,7 +660,7 @@ public class TypeResolver extends AbstractASTBase {
             if (clazz == null) {
                 throw new RuntimeException("Couldn't find class with name: " + rootType.getElementName());
             }
-            if (isCallbackResolver ? isArg : !isArg) {
+            if (needsReferenceInfo()) {
                 modifiers.setReferenceInfo(manager.addImport(clazz), depth);
             }
             SimpleType simpleType = newSimpleType(clazz);

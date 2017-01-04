@@ -17,6 +17,7 @@ limitations under the License.
 package org.moe.natjgen;
 
 import org.eclipse.core.runtime.CoreException;
+import org.moe.natjgen.TypeResolver.Context;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -57,7 +58,7 @@ public final class CManager extends AbstractUnitManager {
     private static final TypeResolver varTResolver;
 
     static {
-        funcTResolver = new TypeResolver("C Function", Constants.CRuntime);
+        funcTResolver = new TypeResolver("C Function", Constants.CRuntime, Context.C);
         funcTResolver.set(TypeResolver.VOID, TypeResolver.BOTH, false, true, true);
         funcTResolver.add(TypeResolver.VOID, TypeResolver.RETURN, true, false, false);
         funcTResolver.set(TypeResolver.PRIMITIVE, TypeResolver.BOTH, true, true, true);
@@ -72,7 +73,7 @@ public final class CManager extends AbstractUnitManager {
                 new String[] { Constants.CStringMapper, Constants.ObjCStringMapper, Constants.CStringArrayMapper
                 });
 
-        varTResolver = new TypeResolver("C Variable", Constants.CRuntime);
+        varTResolver = new TypeResolver("C Variable", Constants.CRuntime, Context.C);
         varTResolver.set(TypeResolver.VOID, TypeResolver.RETURN, false, true, true);
         varTResolver.set(TypeResolver.PRIMITIVE, TypeResolver.RETURN, true, true, true);
         varTResolver.set(TypeResolver.STRUCT, TypeResolver.RETURN, true, true, true);

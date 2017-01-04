@@ -364,7 +364,7 @@ public class Indexer {
             File f = new File(logPath);
 
             if (!f.getParentFile().exists() && !f.getParentFile().mkdirs()) {
-                LOG.error("Failed to create direcroty at path: " + f.getParentFile());
+                LOG.error("Failed to create directory at path: " + f.getParentFile());
             } else {
                 stats.writeHTMLLogToFile(f.getAbsolutePath());
             }

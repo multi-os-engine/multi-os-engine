@@ -16,6 +16,7 @@ limitations under the License.
 
 package org.moe.natjgen;
 
+import org.moe.natjgen.TypeResolver.Context;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -202,7 +203,7 @@ public class ObjCClassManager extends AbstractUnitManager {
     protected static final TypeResolver methCreatorRetTResolver;
 
     static {
-        methTResolver = new TypeResolver("Objective-C Method", Constants.ObjCRuntime);
+        methTResolver = new TypeResolver("Objective-C Method", Constants.ObjCRuntime, Context.OTHER);
         methTResolver.set(TypeResolver.VOID, TypeResolver.BOTH, false, true, true);
         methTResolver.add(TypeResolver.VOID, TypeResolver.RETURN, true, false, false);
         methTResolver.set(TypeResolver.PRIMITIVE, TypeResolver.BOTH, true, true, true);
@@ -218,7 +219,7 @@ public class ObjCClassManager extends AbstractUnitManager {
                 new String[] { Constants.CStringMapper, Constants.ObjCStringMapper, Constants.CStringArrayMapper
                 });
 
-        methCreatorRetTResolver = new TypeResolver("Objective-C Init/Factory/Alloc Return", Constants.ObjCRuntime);
+        methCreatorRetTResolver = new TypeResolver("Objective-C Init/Factory/Alloc Return", Constants.ObjCRuntime, Context.OTHER);
         methCreatorRetTResolver.set(TypeResolver.OBJC_OBJECT, TypeResolver.RETURN, true, false, false);
         methCreatorRetTResolver.set(TypeResolver.OBJC_GENERICS, TypeResolver.RETURN, true, true, true);
     }

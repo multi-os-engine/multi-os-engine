@@ -16,6 +16,8 @@ limitations under the License.
 
 package org.moe.natjgen;
 
+import org.moe.natjgen.TypeResolver.Context;
+
 public class CallbackManager {
 
     /**
@@ -29,7 +31,7 @@ public class CallbackManager {
     protected static final TypeResolver funcTResolver;
 
     static {
-        blockTResolver = new TypeResolver("Objective-C Block", Constants.ObjCRuntime, true);
+        blockTResolver = new TypeResolver("Objective-C Block", Constants.ObjCRuntime, Context.CALLBACK);
         blockTResolver.set(TypeResolver.VOID, TypeResolver.BOTH, false, true, true);
         blockTResolver.add(TypeResolver.VOID, TypeResolver.RETURN, true, false, false);
         blockTResolver.set(TypeResolver.PRIMITIVE, TypeResolver.BOTH, true, true, true);
@@ -41,7 +43,7 @@ public class CallbackManager {
         blockTResolver.setSupportedMappers(new String[] { Constants.CStringMapper, Constants.ObjCStringMapper
         });
 
-        funcTResolver = new TypeResolver("Function Callback", Constants.CRuntime, true);
+        funcTResolver = new TypeResolver("Function Callback", Constants.CRuntime, Context.CALLBACK);
         funcTResolver.set(TypeResolver.VOID, TypeResolver.BOTH, false, true, true);
         funcTResolver.add(TypeResolver.VOID, TypeResolver.RETURN, true, false, false);
         funcTResolver.set(TypeResolver.PRIMITIVE, TypeResolver.BOTH, true, true, true);
