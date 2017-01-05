@@ -9,67 +9,41 @@
 
 ### Setup & Generation
 
-* Create a workspace and initialize git
+* Locate the latest build of the MOE SDK (at the time of writing, this is MOE 1.3). From this directory Clang and NatJ dylibs will be used. Create a local MOE SDK build if necessary.
+	
+	```sh
+	cd ~/.moe/moe-sdk-1.3.0/tools
+	```
 
-```sh
-mkdir iOSSDKBinding
-cd iOSSDKBinding
-git init
-```
+* Build NatJGen if necessary
 
-* Create lib directory
+	```sh
+	cd <repo>/moe/tools/master
+	./gradlew :moe.generator.natjgen:build
+	```
 
-```sh
-mkdir lib
-```
+* Run NatJGen with the configuration in moe-core
 
-* Copy the newest NatJ API jar under lib
+	```sh
+	java -cp <repo>/moe/tools/moe.generator.natjgen/build/libs/moe.generator.natjgen.jar \
+	    org.moe.natjgen.Main \
+	    <repo>/moe/moe-core/moe.apple \
+	    moe.platform.ios \
+	    <repo>/moe/moe-core/moe.apple/moe.platform.ios/platform.natjgen
+	```
 
-* Copy all current source files from your MOE repository
-
-```sh
-cp -R /path/to/moe/moe-core/moe.apple/moe.binding.ios/natjgen/ios/DefineHelpers ./
-cp -R /path/to/moe/moe-core/moe.apple/moe.binding.ios/src/main ./
-cp /path/to/moe-core/moe.apple/moe.binding.ios/natjgen/ios/platform.natjgen ./
-cp /path/to/moe-core/moe.apple/license_updater.py ./
-cp /path/to/moe-core/moe.apple/moe.binding.ios/natjgen/ios/typeconfig.ngtconf ./
-cp /path/to/moe-core/moe.apple/moe.binding.ios/updater.gitignore .gitignore
-```
-
-* Create a build.gradle file
-
-```sh
-echo "apply plugin: 'java'" > build.gradle
-echo "apply plugin: 'idea'" >> build.gradle
-echo "repositories { mavenLocal(); mavenCentral() }" >> build.gradle
-echo "dependencies { compile fileTree(dir: 'lib', include: '*.jar') }" >> build.gradle
-```
-
-* Open Android Studio
-  * Import project (Eclipse ADT, Gradle, etc.)
-  * Select the `iOSSDKBinding` for import
-  * Click 'OK' for use Gradle wrapper
-
-* Do initial git commit
-
-```sh
-git add --all
-git commit -m "initial"
-```
-
-* In Android Studio
-  * Make sure everything is set up as needed in the natjgen and ngtconf files
-  * Right-click on the ios.natjgen and generate bindings
-
+* After the generator completed successfully, open the project in IDEA
+* In the Project navigator, select `moe.apple > moe.platform.ios > src > main > java > apple`
+* Right-click and select `Reformat code`
+	* Check `Include subdirectories`
+	* Check `Optimize imports`
+	* Run and repeat 1-2 times (in some versions of IDEA running only once will not do a sufficient job)
 * Review your git diff and revert any changes that are whitespace only, meaning indentation changes and line-breaks
-  * NatJGen has a known issue where it will generate the same code but with different indentation
-  * **DO NOT SKIP THIS STEP** if you plan to update moe-core
-
-* Run the license_updater.py script from the lib directory to append license headers to new files
-
-* Check generated native source files also
-
-* Copy back all new files under moe-core
+	* NatJGen has a known issue where it will generate the same code but with different indentation
+	* Do not commit `moe.apple/moe.platform.ios/typeconfig.out.ngtconf` it is only generated so `moe.apple/moe.platform.ios/typeconfig.ngtconf` can be updated
+	* **DO NOT SKIP THIS STEP** if you plan to update moe-core
+* Run the license_updater.py script from the moe.apple directory to append license headers to new files
+* Also check generated native source files
 
 ### Custom Modifications List
 
@@ -78,6 +52,12 @@ git commit -m "initial"
 * `setValueForKey` method in `ios.foundation.NSMutableDictionary` has been manually edited due to a compiler error
 * `ios.uikit.UIControl` was extended to be able to use custom `TargetActionProxy` and `ITargetAction` classes/interfaces, both of which can be found in the ios.uikit package.
 * `playerDidRequestMatchWithPlayers` method was added to `ios.gamekit.protocol.GKLocalPlayerListener` to override duplicate default methods in 2 parent interfaces.
+* In `apple.callkit.CXCallDirectoryProvider` method was changed:
+	* from: `public native void beginRequestWithExtensionContext(CXCallDirectoryExtensionContext context);`
+	* to: `public native void beginRequestWithExtensionContext(NSExtensionContext context);`
+* In `apple.gameplaykit.GKCompositeBehavior` method was changed:
+	* from: `public native GKBehavior objectAtIndexedSubscript(@NUInt long idx);`
+	* to: `public native GKGoal objectAtIndexedSubscript(@NUInt long idx);`
 
 ### How to Update Custom Modifications List
 
