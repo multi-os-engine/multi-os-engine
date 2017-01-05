@@ -27,6 +27,7 @@ import org.clang.struct.CXIdxDeclInfo;
 import org.clang.struct.CXSourceLocation;
 import org.clang.struct.IndexerCallbacks;
 import org.clang.struct.IndexerCallbacks.Function_indexDeclaration;
+import org.clang.util.StdHeaders;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.core.runtime.NullProgressMonitor;
@@ -37,7 +38,10 @@ import org.moe.natj.general.ptr.IntPtr;
 import org.moe.natj.general.ptr.Ptr;
 import org.moe.natj.general.ptr.VoidPtr;
 import org.moe.natj.general.ptr.impl.PtrFactory;
+import org.moe.natjgen.Configuration.Action;
+import org.moe.natjgen.Configuration.Condition;
 import org.moe.natjgen.Configuration.Unit;
+import org.moe.natjgen.Configuration.UnitRule;
 import org.moe.natjgen.helper.MOEJavaProject;
 import org.moe.natjgen.util.Path;
 import org.slf4j.Logger;
@@ -53,6 +57,8 @@ import java.util.Date;
 import java.util.HashMap;
 
 import static org.clang.c.clang.*;
+import static org.moe.natjgen.Configuration.Unit.C_FUNCTION_TYPE;
+import static org.moe.natjgen.Configuration.Unit.HANDLING_DISABLED;
 
 public class Indexer {
 
@@ -253,6 +259,15 @@ public class Indexer {
         configuration.setVariable(Configuration.DATETIME_VARIABLE,
                 new SimpleDateFormat("yyyy.MM.dd-HH.mm.ss").format(new Date()));
         generator = new Generator();
+
+        if (configuration.getUseIncludedStandardHeaders()) {
+            final UnitRule rule = new UnitRule();
+            rule.setFinal(true);
+            rule.getConditions().add(new Condition(Condition.PATH_PREFIX, StdHeaders.getPath()));
+            rule.getConditions().add(new Condition(Condition.TYPE_MATCH, C_FUNCTION_TYPE));
+            rule.getActions().add(new Action(Action.HANDLING_MODE, HANDLING_DISABLED));
+            configuration.getUnitActionManager().getUnitRules().add(0, rule);
+        }
 
         ArrayList<ValidationEntry> problems = configuration.validate();
         if (problems != null && ValidationEntry.containsErrors(problems)) {
