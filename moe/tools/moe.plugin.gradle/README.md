@@ -517,6 +517,9 @@ following project properties control this task:
     the correct configuration.
     - `no-launch`: tells the task not to launch the app. This is useful when you only want to build for your target
     devices and want to run as a separate step.
+    - `install-on-target`: forces application to be installed on the target device. Mostly used in combination with
+    `no-launch`.
+    - `no-install-on-target`: skips installation of the application. Mostly used in combination with `no-build`.
     - `debug`: tells the device and simulator launchers to launch with JDWP. Parameters for this option `<local-port>`
     or `<local-port>:<remote-port>`. Remote port only has an effect when launching on devices.
     - `arg`: passes the specified argument to the application.

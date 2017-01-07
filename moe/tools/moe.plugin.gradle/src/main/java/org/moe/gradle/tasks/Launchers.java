@@ -37,6 +37,7 @@ import org.moe.gradle.MoePlugin;
 import org.moe.gradle.anns.IgnoreUnused;
 import org.moe.gradle.anns.NotNull;
 import org.moe.gradle.anns.Nullable;
+import org.moe.gradle.tasks.Launchers.DeviceLauncherBuilder.InstallMode;
 import org.moe.gradle.utils.FileUtils;
 import org.moe.gradle.utils.JUnitTestCollector;
 import org.moe.gradle.utils.Mode;
@@ -71,6 +72,8 @@ public class Launchers {
     private static final String MOE_LAUNCHER_NO_WAIT_DEVICE_OPTION = "no-wait-device";
     private static final String MOE_LAUNCHER_NO_BUILD_OPTION = "no-build";
     private static final String MOE_LAUNCHER_NO_LAUNCH_OPTION = "no-launch";
+    private static final String MOE_LAUNCHER_INSTALL_ON_TARGET_OPTION = "install-on-target";
+    private static final String MOE_LAUNCHER_NO_INSTALL_ON_TARGET_OPTION = "no-install-on-target";
     private static final String MOE_LAUNCHER_DEBUG_OPTION = "debug";
     private static final String MOE_LAUNCHER_ENV_OPTION = "env";
     private static final String MOE_LAUNCHER_VMARG_OPTION = "vmarg";
@@ -81,6 +84,7 @@ public class Launchers {
     private static class Options {
         boolean build = true;
         boolean launch = true;
+        boolean installOnTarget = true;
         boolean waitForDevice = true;
         Mode mode = Mode.RELEASE;
         Port debug;
@@ -129,12 +133,26 @@ public class Launchers {
                         project.getLogger().warn("Ignoring value for launcher option: '" + key + "'");
                     }
                     build = false;
+                    installOnTarget = true;
 
                 } else if (MOE_LAUNCHER_NO_LAUNCH_OPTION.equals(key)) {
                     if (value != null) {
                         project.getLogger().warn("Ignoring value for launcher option: '" + key + "'");
                     }
                     launch = false;
+                    installOnTarget = false;
+
+                } else if (MOE_LAUNCHER_INSTALL_ON_TARGET_OPTION.equals(key)) {
+                    if (value != null) {
+                        project.getLogger().warn("Ignoring value for launcher option: '" + key + "'");
+                    }
+                    installOnTarget = true;
+
+                } else if (MOE_LAUNCHER_NO_INSTALL_ON_TARGET_OPTION.equals(key)) {
+                    if (value != null) {
+                        project.getLogger().warn("Ignoring value for launcher option: '" + key + "'");
+                    }
+                    installOnTarget = false;
 
                 } else if (MOE_LAUNCHER_DEBUG_OPTION.equals(key)) {
                     if (value == null) {
@@ -255,7 +273,7 @@ public class Launchers {
         }
     }
 
-    private static class DeviceLauncherBuilder {
+    static class DeviceLauncherBuilder {
         // @formatter:off
         private static final String UDID_ARG            = "--udid";
         private static final String APP_PATH_ARG        = "--app-path";
@@ -798,7 +816,7 @@ public class Launchers {
         }
 
         for (String udid : devices) {
-            if (!options.launch) {
+            if (!options.launch && !options.installOnTarget) {
                 continue;
             }
             task.getActions().add(t -> {
@@ -814,7 +832,7 @@ public class Launchers {
                 final File appPath = new File(settings.get("BUILT_PRODUCTS_DIR"), settings.get("FULL_PRODUCT_NAME"));
 
                 final JUnitTestCollector testCollector;
-                if (test && !options.rawTestOutput) {
+                if (test && !options.rawTestOutput && options.launch) {
                     testCollector = new JUnitTestCollector();
                 } else {
                     testCollector = null;
@@ -828,6 +846,11 @@ public class Launchers {
                     }
                     if (options.debug != null) {
                         builder.setDebug(options.debug.local, options.debug.remote);
+                    }
+                    if (options.installOnTarget && !options.launch) {
+                        builder.setInstallMode(InstallMode.UPGRADE_ONLY);
+                    } else if (!options.installOnTarget && options.launch) {
+                        builder.setInstallMode(InstallMode.RUN_ONLY);
                     }
                     options.envs.forEach(builder::putEnvVar);
                     options.vmargs.forEach(builder::addLaunchArgs);
