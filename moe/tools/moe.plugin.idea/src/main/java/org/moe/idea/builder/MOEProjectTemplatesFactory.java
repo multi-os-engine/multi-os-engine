@@ -55,11 +55,11 @@ public class MOEProjectTemplatesFactory extends ProjectTemplatesFactory {
 
     @NotNull
     @Override
-    public ProjectTemplate[] createTemplates(String s, WizardContext wizardContext) {
+    public ProjectTemplate[] createTemplates(String group, WizardContext wizardContext) {
         final List<MOEProjectTemplate> templates = new ArrayList<MOEProjectTemplate>();
         for (Template template : Template.values()) {
-            final MOEProjectTemplate projectTemplate = new MOEProjectTemplate(template.description, "", template,
-                    new MOEModuleBuilder());
+            final MOEProjectTemplate projectTemplate = new MOEProjectTemplate(
+                    template.language + " > " + template.description, "", template, new MOEModuleBuilder());
             templates.add(projectTemplate);
         }
         Collections.sort(templates, new Comparator<MOEProjectTemplate>() {
