@@ -1,15 +1,15 @@
 package ${_PLACEHOLDER_PACKAGE_NAME}.ui;
 
+import apple.uikit.UILabel;
+import apple.uikit.UIViewController;
 import org.moe.natj.general.Pointer;
 import org.moe.natj.general.ann.Owned;
 import org.moe.natj.general.ann.RegisterOnStartup;
 import org.moe.natj.objc.ObjCRuntime;
+import org.moe.natj.objc.ann.IBOutlet;
 import org.moe.natj.objc.ann.ObjCClassName;
 import org.moe.natj.objc.ann.Property;
 import org.moe.natj.objc.ann.Selector;
-
-import apple.uikit.UILabel;
-import apple.uikit.UIViewController;
 
 @org.moe.natj.general.ann.Runtime(ObjCRuntime.class)
 @ObjCClassName("DetailViewController")
@@ -28,7 +28,6 @@ public class DetailViewController extends UIViewController {
     }
 
     private String detailItem;
-    private UILabel detailDescriptionLabel;
 
     public String getDetailItem() {
         return detailItem;
@@ -46,19 +45,16 @@ public class DetailViewController extends UIViewController {
     }
 
     private void configureView() {
-        if (detailItem != null && detailDescriptionLabel != null) {
-            detailDescriptionLabel.setText(detailItem);
+        if (detailItem != null && detailDescriptionLabel() != null) {
+            detailDescriptionLabel().setText(detailItem);
         }
     }
 
     @Property
+    @IBOutlet
     @Selector("detailDescriptionLabel")
-    public UILabel getDetailDescriptionLabel() {
-        return detailDescriptionLabel;
-    }
+    public native UILabel detailDescriptionLabel();
 
     @Selector("setDetailDescriptionLabel:")
-    public void setDetailDescriptionLabel(UILabel detailDescriptionLabel) {
-        this.detailDescriptionLabel = detailDescriptionLabel;
-    }
+    public native void setDetailDescriptionLabel(UILabel detailDescriptionLabel);
 }

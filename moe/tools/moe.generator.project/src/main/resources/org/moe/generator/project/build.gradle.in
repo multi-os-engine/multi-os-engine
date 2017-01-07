@@ -30,15 +30,16 @@ apply plugin: 'moe'
 // Set source and target to Java 8
 sourceCompatibility = "1.8"
 targetCompatibility = "1.8"
-//<<---REGION:USE_KOTLIN_PLUGIN
 
 // Set maven repository
 repositories {
+    jcenter()
+//<<---REGION:USE_KOTLIN_PLUGIN
     maven {
         url 'http://oss.sonatype.org/content/repositories/snapshots'
     }
-}
 //>>---REGION:USE_KOTLIN_PLUGIN
+}
 
 // Exclude all files from Gradle's test runner
 test { exclude '**' }

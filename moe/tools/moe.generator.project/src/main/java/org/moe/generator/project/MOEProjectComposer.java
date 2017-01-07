@@ -84,10 +84,10 @@ public class MOEProjectComposer implements Cloneable {
 //        IOS_JAVA_PAGE_BASED(Platform.IOS, Language.JAVA, "Page-Based Application", ID.PAGE_BASED),
         IOS_JAVA_SINGLE_VIEW(Platform.IOS, Language.JAVA, "Single View Application", ID.SINGE_VIEW),
 //        IOS_JAVA_TABBED(Platform.IOS, Language.JAVA, "Tabbed Application", ID.TABBED),
-//        IOS_KOTLIN_GAME(Platform.IOS, Language.KOTLIN, "Game", ID.GAME),
-//        IOS_KOTLIN_MASTER_DETAIL(Platform.IOS, Language.KOTLIN, "Master-Detail Application", ID.MASTER_DETAIL),
+        IOS_KOTLIN_GAME(Platform.IOS, Language.KOTLIN, "OpenGL ES Game", ID.GAME),
+        IOS_KOTLIN_MASTER_DETAIL(Platform.IOS, Language.KOTLIN, "Master-Detail Application", ID.MASTER_DETAIL),
 //        IOS_KOTLIN_PAGE_BASED(Platform.IOS, Language.KOTLIN, "Page-Based Application", ID.PAGE_BASED),
-//        IOS_KOTLIN_SINGLE_VIEW(Platform.IOS, Language.KOTLIN, "Single View Application", ID.SINGE_VIEW),
+        IOS_KOTLIN_SINGLE_VIEW(Platform.IOS, Language.KOTLIN, "Single View Application", ID.SINGE_VIEW),
 //        IOS_KOTLIN_TABBED(Platform.IOS, Language.KOTLIN, "Tabbed Application", ID.TABBED),
         ;
 

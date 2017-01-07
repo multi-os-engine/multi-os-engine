@@ -11,6 +11,16 @@
       ]
     },
     {
+      "condition": "language:kotlin",
+      "task": "copy-package-source",
+      "source-set": "main",
+      "root": "kotlin",
+      "from": [
+        "Main.kt",
+        "ui/AppViewController.kt"
+      ]
+    },
+    {
       "task": "copy",
       "from": [
         "xcode/__main_target__/Assets.xcassets/AppIcon.appiconset/Contents.json",

@@ -8,7 +8,6 @@ import org.moe.natj.general.ann.RegisterOnStartup;
 import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassName;
-import org.moe.natj.objc.ann.Property;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
@@ -46,17 +45,6 @@ public class MasterViewController extends UITableViewController {
     private DetailViewController detailViewController;
 
     private ArrayList<String> objects = new ArrayList<>();
-
-    @Property
-    @Selector("detailViewController")
-    public DetailViewController getDetailViewController() {
-        return detailViewController;
-    }
-
-    @Selector("setDetailViewController:")
-    public void setDetailViewController(DetailViewController detailViewController) {
-        this.detailViewController = detailViewController;
-    }
 
     @Override
     public void viewDidLoad() {

@@ -261,7 +261,7 @@ public class MOEProjectFabricator {
             w.setPlaceholder("PACKAGE_NAME", composer.getPackageName());
             if (composer.getTemplate().language.equals(Language.KOTLIN)) {
                 w.enableRegion("USE_KOTLIN_PLUGIN");
-                w.setPlaceholder("KOTLIN_VERSION", "1.0.4");
+                w.setPlaceholder("KOTLIN_VERSION", "1.0.6");
             }
             w.writeAndClose(outputFile);
         } finally {
