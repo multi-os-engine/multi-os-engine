@@ -9,17 +9,17 @@
 
 ### Setup & Generation
 
-* Locate the latest build of the MOE SDK (at the time of writing, this is MOE 1.3). From this directory Clang and NatJ dylibs will be used. Create a local MOE SDK build if necessary.
-	
-	```sh
-	cd ~/.moe/moe-sdk-1.3.0/tools
-	```
-
 * Build NatJGen if necessary
 
 	```sh
 	cd <repo>/moe/tools/master
 	./gradlew :moe.generator.natjgen:build
+	```
+
+* Locate the latest build of the MOE SDK (at the time of writing, this is MOE 1.3). From this directory Clang and NatJ dylibs will be used. Create a local MOE SDK build if necessary.
+	
+	```sh
+	cd ~/.moe/moe-sdk-1.3.0/tools
 	```
 
 * Run NatJGen with the configuration in moe-core
