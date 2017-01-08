@@ -53,7 +53,6 @@ public class ResourcePackager {
 
         // Add rule
         return AbstractBaseTask.addTaskRule(project, "Pattern: " + PATTERN + ": Creates a application resource jar.", taskName -> {
-            project.getLogger().info("Evaluating for " + TASK_NAME + " rule: " + taskName);
 
             // Check for prefix, suffix and get elements in-between
             final List<String> elements = StringUtils.getElemsInRule(taskName, MoePlugin.MOE, TASK_NAME);

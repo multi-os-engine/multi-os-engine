@@ -295,7 +295,6 @@ public class MoePlugin extends AbstractMoePlugin {
             @Override
             public @Nullable Task doCall(@NotNull String taskName) {
                 Require.nonNull(taskName);
-                getLogger().info("Evaluating for " + TASK_NAME + " rule: " + taskName);
 
                 // Check for prefix, suffix and get elements in-between
                 List<String> elements = StringUtils.getElemsInRule(taskName, MOE, TASK_NAME);

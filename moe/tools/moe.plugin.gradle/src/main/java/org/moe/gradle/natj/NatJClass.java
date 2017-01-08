@@ -26,6 +26,8 @@ import org.objectweb.asm.ClassVisitor;
 import java.util.Arrays;
 import java.util.function.Consumer;
 
+import static org.objectweb.asm.Opcodes.*;
+
 /**
  * Class representing a Java class.
  */
@@ -70,6 +72,11 @@ public class NatJClass<T extends NatJClass> {
      * Flag for existence of @Generated annotation.
      */
     private boolean isGenerated;
+
+    /**
+     * Flag for marking as class.
+     */
+    private boolean isClass;
 
     @NotNull
     public String getName() {
@@ -129,6 +136,10 @@ public class NatJClass<T extends NatJClass> {
         return isGenerated;
     }
 
+    public boolean isClass() {
+        return isClass;
+    }
+
     public ClassVisitor getInitializingVisitor(int api, Consumer<T> consumer) {
         return new ClassVisitor(api) {
             @Override
@@ -137,6 +148,7 @@ public class NatJClass<T extends NatJClass> {
                 NatJClass.this.name = Require.nonNull(name);
                 NatJClass.this.superName = superName;
                 NatJClass.this.superInterfaces = Arrays.copyOf(Require.nonNull(interfaces), interfaces.length);
+                NatJClass.this.isClass = (access & ACC_INTERFACE) == 0;
             }
 
             @Override

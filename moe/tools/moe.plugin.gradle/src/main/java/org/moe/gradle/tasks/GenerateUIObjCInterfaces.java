@@ -44,9 +44,6 @@ import org.moe.gradle.utils.Require;
 import org.moe.gradle.utils.TaskUtils;
 
 import java.io.File;
-import java.io.FileOutputStream;
-import java.io.FileWriter;
-import java.io.IOException;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
@@ -103,31 +100,8 @@ public class GenerateUIObjCInterfaces extends AbstractBaseTask {
     protected void run() {
         // Reset logs
         FileUtils.write(getLogFile(), "");
-        final FileWriter logWriter;
-        try {
-            logWriter = new FileWriter(getLogFile());
-        } catch (IOException e) {
-            throw new GradleException("An internal exception occurred", e);
-        }
 
         final IBActionAndOutletComposer composer = new IBActionAndOutletComposer();
-        composer.setInfoLogger(m -> {
-            try {
-                logWriter.write(m);
-                logWriter.flush();
-            } catch (IOException e) {
-                throw new GradleException("An internal exception occurred", e);
-            }
-        });
-        composer.setWarnLogger(m -> {
-            getProject().getLogger().warn(m);
-            try {
-                logWriter.write(m);
-                logWriter.flush();
-            } catch (IOException e) {
-                throw new GradleException("An internal exception occurred", e);
-            }
-        });
         FileUtils.classAndJarInputIterator(getProject(), getInputFiles(), composer::read);
         final String composition = composer.compose();
 
