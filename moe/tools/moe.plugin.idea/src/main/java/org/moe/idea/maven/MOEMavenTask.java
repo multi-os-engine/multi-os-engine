@@ -145,6 +145,8 @@ public class MOEMavenTask {
     private void addBuildArguments(StringBuilder goalBuilder) {
         List<String> args = new ArrayList<String>();
 
+        args.add("-Dmoe.install.ontarget=true");
+
         MOEGlobalSettings globalSettings = MOEGlobalSettings.getInstance();
         String logLevel = globalSettings.getGradleLoggingLevel();
         if (logLevel != null && !logLevel.isEmpty()) {

@@ -88,10 +88,7 @@ public class MOEGradleRunner {
         // Push mode
         if (isLaunch) {
             options.push("no-build");
-            // TODO: add proper maven support
-            if (!ModuleUtils.isMOEMavenModule(runConfig.module())) {
-                options.push("no-install-on-target");
-            }
+            options.push("no-install-on-target");
         } else {
             options.push("no-launch");
             options.push("install-on-target");
