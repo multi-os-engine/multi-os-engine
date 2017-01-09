@@ -197,13 +197,19 @@ public class BindingEditorListForm extends JPanel {
 
         String path = bindings.getOutputDirectory();
 
-        path = path == null || path.isEmpty() ? "src/main/java" : path;
-        bindings.setOutputDirectory(path);
+        if (path == null || path.isEmpty()) {
+            path = "src/main/java";
+            bindings.setOutputDirectory(path);
+            save();
+        }
         outputDirectoryTextField.setText(path);
 
         String platform = bindings.getPlatform();
-        platform = platform == null || platform.isEmpty() ? Bindings.PLATFORM_IOS : platform;
-        bindings.setPlatform(platform);
+        if (platform == null || platform.isEmpty()) {
+            platform = Bindings.PLATFORM_IOS;
+            bindings.setPlatform(platform);
+            save();
+        }
         platformComboBox.setSelectedItem(platform);
 
         inited = true;

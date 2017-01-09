@@ -20,12 +20,15 @@ import com.intellij.openapi.fileChooser.FileChooser;
 import com.intellij.openapi.fileChooser.FileChooserDescriptor;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.ui.DocumentAdapter;
+import org.moe.tools.natjgen.Bindings;
 import org.moe.tools.natjgen.HeaderBinding;
 
 import javax.swing.*;
 import javax.swing.event.DocumentEvent;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.ItemEvent;
+import java.awt.event.ItemListener;
 
 public class HeaderBindingEditorForm extends JPanel {
 
@@ -39,6 +42,8 @@ public class HeaderBindingEditorForm extends JPanel {
     private JTextField headerPathTextField;
     private JButton browsePathButton;
     private JTextField explicitLibraryTextField;
+    private JRadioButton bindingRadioButton;
+    private JRadioButton hybridRadioButton;
 
     private BindingEditorListForm listForm;
     private HeaderBinding headerBinding;
@@ -102,6 +107,24 @@ public class HeaderBindingEditorForm extends JPanel {
                 openDirChooser();
             }
         });
+
+        bindingRadioButton.addItemListener(new ItemListener() {
+            @Override
+            public void itemStateChanged(ItemEvent e) {
+                if (e.getStateChange() == ItemEvent.SELECTED) {
+                    if (inited) {
+                        headerBinding.setObjcClassGenerationMode(Bindings.BINDING);
+                        save();
+                    }
+                }
+                else if (e.getStateChange() == ItemEvent.DESELECTED) {
+                    if (inited) {
+                        headerBinding.setObjcClassGenerationMode(Bindings.HYBRID);
+                        save();
+                    }
+                }
+            }
+        });
     }
 
     public void initWithHeaderBinding(HeaderBinding headerBinding) {
@@ -119,6 +142,17 @@ public class HeaderBindingEditorForm extends JPanel {
         userHeadersSearchPathsList.init(headerBinding.getUserHeaderSearchPaths());
         frameworkSearchPathsList.setBindingEditorForm(this);
         frameworkSearchPathsList.init(headerBinding.getFrameworkSearchPaths());
+
+        String bindingType = headerBinding.getObjcClassGenerationMode();
+        if (bindingType == null || bindingType.isEmpty()) {
+            bindingType = Bindings.BINDING;
+            headerBinding.setObjcClassGenerationMode(bindingType);
+            save();
+        }
+        boolean isBinding = bindingType == null || bindingType.equals(Bindings.BINDING);
+        bindingRadioButton.setSelected(isBinding);
+        hybridRadioButton.setSelected(!isBinding);
+
         inited = true;
 
     }

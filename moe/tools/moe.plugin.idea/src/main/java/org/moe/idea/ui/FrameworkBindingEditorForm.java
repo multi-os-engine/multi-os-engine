@@ -20,12 +20,15 @@ import com.intellij.openapi.fileChooser.FileChooser;
 import com.intellij.openapi.fileChooser.FileChooserDescriptor;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.ui.DocumentAdapter;
+import org.moe.tools.natjgen.Bindings;
 import org.moe.tools.natjgen.FrameworkBinding;
 
 import javax.swing.*;
 import javax.swing.event.DocumentEvent;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.ItemEvent;
+import java.awt.event.ItemListener;
 
 public class FrameworkBindingEditorForm extends JPanel{
     private JPanel content;
@@ -35,6 +38,8 @@ public class FrameworkBindingEditorForm extends JPanel{
     private JButton selectFrameworkButton;
     private JTextArea importHeadersTextArea;
     private JTextField basePackageNameTextField;
+    private JRadioButton hybridRadioButton;
+    private JRadioButton bindingRadioButton;
 
     private FrameworkBinding frameworkBinding;
     private BindingEditorListForm listForm;
@@ -87,6 +92,24 @@ public class FrameworkBindingEditorForm extends JPanel{
                 openDirChooser();
             }
         });
+
+        bindingRadioButton.addItemListener(new ItemListener() {
+            @Override
+            public void itemStateChanged(ItemEvent e) {
+                if (e.getStateChange() == ItemEvent.SELECTED) {
+                    if (inited) {
+                        frameworkBinding.setObjcClassGenerationMode(Bindings.BINDING);
+                        save();
+                    }
+                }
+                else if (e.getStateChange() == ItemEvent.DESELECTED) {
+                    if (inited) {
+                        frameworkBinding.setObjcClassGenerationMode(Bindings.HYBRID);
+                        save();
+                    }
+                }
+            }
+        });
     }
 
     public void setVisibility(boolean b) {
@@ -100,6 +123,17 @@ public class FrameworkBindingEditorForm extends JPanel{
         frameworkTextField.setText(frameworkBinding.getFrameworkPath());
         importHeadersTextArea.setText(frameworkBinding.getImportCode());
         basePackageNameTextField.setText(frameworkBinding.getPackageBase());
+
+        String bindingType = frameworkBinding.getObjcClassGenerationMode();
+        if (bindingType == null || bindingType.isEmpty()) {
+            bindingType = Bindings.BINDING;
+            frameworkBinding.setObjcClassGenerationMode(bindingType);
+            save();
+        }
+        boolean isBinding = bindingType.equals(Bindings.BINDING);
+        bindingRadioButton.setSelected(isBinding);
+        hybridRadioButton.setSelected(!isBinding);
+
         inited = true;
     }
 
