@@ -143,6 +143,7 @@ public class ApplicationManager {
         }
 		
 		optionsBuilder.push("no-launch");
+		optionsBuilder.push("install-on-target");
 		optionsBuilder.push("config:" + getConfiguration());
 
 		if (isRemoteBuildEnabled()) {
@@ -192,6 +193,8 @@ public class ApplicationManager {
 		}
 
 		List<String> args = new ArrayList<String>();
+		
+		args.add("-Dmoe.install.ontarget=true");
 		
 		IPreferenceStore store = MOEPlugin.getDefault().getPreferenceStore();
 		String logLevel = store.getString(PreferenceConstants.GRADLE_LOG_LEVEL_KEY);
@@ -398,6 +401,7 @@ public class ApplicationManager {
 		}
 
 		optionsBuilder.push("no-build");
+		optionsBuilder.push("no-install-on-target");
 		optionsBuilder.push("config:" + getConfiguration());
 
 		if (runOnSimulator) {
