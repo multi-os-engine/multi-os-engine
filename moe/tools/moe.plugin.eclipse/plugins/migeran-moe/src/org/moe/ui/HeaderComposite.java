@@ -24,6 +24,7 @@ import org.eclipse.swt.events.ModifyEvent;
 import org.eclipse.swt.events.ModifyListener;
 import org.eclipse.swt.events.SelectionEvent;
 import org.eclipse.swt.events.SelectionListener;
+import org.moe.tools.natjgen.Bindings;
 import org.moe.tools.natjgen.HeaderBinding;
 import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.widgets.List;
@@ -50,6 +51,9 @@ public class HeaderComposite extends Composite {
 	private HeaderBinding headerBinding;
 	private BindingEditorForm editorForm;
 	private boolean inited = false;
+	private Label lblNewLabel_7;
+	private Button btnBinding;
+	private Button btnHybrid;
 
 	/**
 	 * Create the composite.
@@ -60,7 +64,7 @@ public class HeaderComposite extends Composite {
 		super(parent, style);
 		
 		Composite composite = new Composite(this, SWT.NONE);
-		composite.setBounds(10, 10, 461, 446);
+		composite.setBounds(10, 10, 461, 493);
 		
 		nameText = new Text(composite, SWT.BORDER);
 		nameText.setBounds(139, 10, 249, 19);
@@ -91,60 +95,73 @@ public class HeaderComposite extends Composite {
 		lblNewLabel_3.setText("Explicit library:");
 		
 		Label lblNewLabel_4 = new Label(composite, SWT.NONE);
-		lblNewLabel_4.setBounds(10, 110, 149, 14);
+		lblNewLabel_4.setBounds(10, 137, 149, 14);
 		lblNewLabel_4.setText("Header search paths:");
 		
 		headerSearchPathsList = new List(composite, SWT.BORDER | SWT.H_SCROLL | SWT.V_SCROLL);
-		headerSearchPathsList.setBounds(10, 130, 348, 58);
+		headerSearchPathsList.setBounds(10, 157, 348, 58);
 		
 		newHeaderSearchPathButton = new Button(composite, SWT.NONE);
-		newHeaderSearchPathButton.setBounds(364, 130, 56, 28);
+		newHeaderSearchPathButton.setBounds(364, 153, 56, 28);
 		newHeaderSearchPathButton.setText("+");
 		
 		removeHeaderSearchPathButton = new Button(composite, SWT.NONE);
-		removeHeaderSearchPathButton.setBounds(364, 160, 56, 28);
+		removeHeaderSearchPathButton.setBounds(364, 187, 56, 28);
 		removeHeaderSearchPathButton.setText("-");
 		
 		Label lblUserHeaderSearch = new Label(composite, SWT.NONE);
-		lblUserHeaderSearch.setBounds(10, 196, 149, 14);
+		lblUserHeaderSearch.setBounds(10, 221, 149, 14);
 		lblUserHeaderSearch.setText("User header search paths:");
 		
 		userHeaderSearchPathsList = new List(composite, SWT.BORDER | SWT.H_SCROLL | SWT.V_SCROLL);
-		userHeaderSearchPathsList.setBounds(10, 216, 348, 58);
+		userHeaderSearchPathsList.setBounds(10, 241, 348, 58);
 		
 		newUserHeaderSearchPathButton = new Button(composite, SWT.NONE);
-		newUserHeaderSearchPathButton.setBounds(364, 216, 56, 28);
+		newUserHeaderSearchPathButton.setBounds(364, 237, 56, 28);
 		newUserHeaderSearchPathButton.setText("+");
 		
 		removeUserHeaderSearchPathButton = new Button(composite, SWT.NONE);
-		removeUserHeaderSearchPathButton.setBounds(364, 246, 56, 28);
+		removeUserHeaderSearchPathButton.setBounds(364, 271, 56, 28);
 		removeUserHeaderSearchPathButton.setText("-");
 		
 		Label lblNewLabel_5 = new Label(composite, SWT.NONE);
-		lblNewLabel_5.setBounds(10, 280, 149, 14);
+		lblNewLabel_5.setBounds(10, 305, 149, 14);
 		lblNewLabel_5.setText("Framework search paths:");
 		
 		frameworkSearchPathsList = new List(composite, SWT.BORDER | SWT.H_SCROLL | SWT.V_SCROLL);
-		frameworkSearchPathsList.setBounds(10, 297, 348, 58);
+		frameworkSearchPathsList.setBounds(10, 325, 348, 58);
 		
 		newFrameworkSearchPathButton = new Button(composite, SWT.NONE);
-		newFrameworkSearchPathButton.setBounds(364, 297, 56, 28);
+		newFrameworkSearchPathButton.setBounds(364, 321, 56, 28);
 		newFrameworkSearchPathButton.setText("+");
 		
 		removeFrameworkSearchPathButton = new Button(composite, SWT.NONE);
-		removeFrameworkSearchPathButton.setBounds(364, 327, 56, 28);
+		removeFrameworkSearchPathButton.setBounds(364, 355, 56, 28);
 		removeFrameworkSearchPathButton.setText("-");
 		
 		Label lblNewLabel_6 = new Label(composite, SWT.NONE);
-		lblNewLabel_6.setBounds(10, 361, 149, 14);
+		lblNewLabel_6.setBounds(10, 389, 149, 14);
 		lblNewLabel_6.setText("Import headers:");
 		
 		importHeadersText = new Text(composite, SWT.BORDER | SWT.V_SCROLL | SWT.MULTI);
-		importHeadersText.setBounds(10, 381, 348, 55);
+		importHeadersText.setBounds(10, 409, 348, 55);
 		
 		browseHeaderPathButton = new Button(composite, SWT.NONE);
 		browseHeaderPathButton.setBounds(398, 31, 42, 28);
 		browseHeaderPathButton.setText("...");
+		
+		lblNewLabel_7 = new Label(composite, SWT.NONE);
+		lblNewLabel_7.setBounds(10, 110, 123, 14);
+		lblNewLabel_7.setText("Binding mode:");
+		
+		btnBinding = new Button(composite, SWT.RADIO);
+		btnBinding.setSelection(true);
+		btnBinding.setBounds(139, 112, 90, 18);
+		btnBinding.setText("Binding");
+		
+		btnHybrid = new Button(composite, SWT.RADIO);
+		btnHybrid.setBounds(235, 112, 90, 18);
+		btnHybrid.setText("Hybrid");
 		
 		setDefaultValuesAndListeners();
 	}
@@ -315,6 +332,40 @@ public class HeaderComposite extends Composite {
 				
 			}
 		});
+		
+		btnBinding.addSelectionListener(new SelectionListener() {
+			
+			@Override
+			public void widgetSelected(SelectionEvent arg0) {
+				if (inited) {
+					headerBinding.setObjcClassGenerationMode(Bindings.BINDING);
+					documentChanged();
+				}
+			}
+			
+			@Override
+			public void widgetDefaultSelected(SelectionEvent arg0) {
+				// TODO Auto-generated method stub
+				
+			}
+		});
+		
+		btnHybrid.addSelectionListener(new SelectionListener() {
+			
+			@Override
+			public void widgetSelected(SelectionEvent arg0) {
+				if (inited) {
+					headerBinding.setObjcClassGenerationMode(Bindings.HYBRID);
+					documentChanged();
+				}
+			}
+			
+			@Override
+			public void widgetDefaultSelected(SelectionEvent arg0) {
+				// TODO Auto-generated method stub
+				
+			}
+		});
 	}
 	
 	public void initWithHeaderBinding(HeaderBinding headerBinding) {
@@ -352,6 +403,14 @@ public class HeaderComposite extends Composite {
 		for (String path : headerBinding.getFrameworkSearchPaths()) {
 			frameworkSearchPathsList.add(path);
 		}
+		
+		String bindingType = headerBinding.getObjcClassGenerationMode();
+        if (bindingType == null || bindingType.isEmpty()) {
+            bindingType = Bindings.BINDING;
+        }
+        boolean isBinding = bindingType == null || bindingType.equals(Bindings.BINDING);
+        btnBinding.setSelection(isBinding);
+        btnHybrid.setSelection(!isBinding);
 		
 		inited = true;
 	}

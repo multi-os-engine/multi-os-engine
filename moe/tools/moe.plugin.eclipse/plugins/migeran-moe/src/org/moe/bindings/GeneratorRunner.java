@@ -21,7 +21,6 @@ import java.util.Properties;
 
 import org.eclipse.core.resources.IProject;
 import org.eclipse.core.resources.IResource;
-import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.NullProgressMonitor;
@@ -73,8 +72,10 @@ public class GeneratorRunner {
 	    			
 	    			monitor.beginTask(title, 10);
 	    			
+	    			File projectFile = project.getLocation().toFile();
+	    			
 	    	        final Properties properties = ProjectUtil
-	    	                .retrievePropertiesFromGradle(project.getLocation().toFile(), ProjectUtil.SDK_PROPERTIES_TASK);
+	    	                .retrievePropertiesFromGradle(projectFile, ProjectUtil.SDK_PROPERTIES_TASK);
 
 	    	        sdkPath = properties.getProperty(ProjectUtil.SDK_PATH_KEY);
 	    			
@@ -82,8 +83,7 @@ public class GeneratorRunner {
 	    			
 	    			StringBuilder errorBuilder = new StringBuilder();
 	    			
-	    			String workspace = ResourcesPlugin.getWorkspace().getRoot().getLocation().toString();
-	    			BindingExec bindingExec = new BindingExec(new File(workspace, project.getName()), sdkPath, configurationFile, test);
+	    			BindingExec bindingExec = new BindingExec(new File(projectFile.getParent(), project.getName()), sdkPath, configurationFile, test);
 	    			ExecRunner runner = bindingExec.getRunner();
 	    			runner.setListener(new ExecRunnerListener() {
 						

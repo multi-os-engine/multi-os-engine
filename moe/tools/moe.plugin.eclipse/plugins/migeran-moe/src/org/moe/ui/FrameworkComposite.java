@@ -25,8 +25,10 @@ import org.eclipse.swt.events.SelectionEvent;
 import org.eclipse.swt.events.SelectionListener;
 import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.widgets.Text;
+import org.moe.tools.natjgen.Bindings;
 import org.moe.tools.natjgen.FrameworkBinding;
 import org.eclipse.swt.widgets.Button;
+import org.eclipse.swt.events.SelectionAdapter;
 
 public class FrameworkComposite extends Composite {
 	
@@ -35,6 +37,8 @@ public class FrameworkComposite extends Composite {
 	private Text packageNameText;
 	private Text importHeadersText;
 	private Button browseButton;
+	private Button btnBinding;
+	private Button btnHybrid;
 	
 	private FrameworkBinding frameworkBinding;
 	private BindingEditorForm editorForm;
@@ -82,6 +86,24 @@ public class FrameworkComposite extends Composite {
 		browseButton = new Button(composite, SWT.NONE);
 		browseButton.setBounds(368, 31, 52, 28);
 		browseButton.setText("...");
+		
+		Label lblBindingType = new Label(composite, SWT.NONE);
+		lblBindingType.setBounds(10, 85, 111, 14);
+		lblBindingType.setText("Binding type:");
+		
+		btnBinding = new Button(composite, SWT.RADIO);
+		btnBinding.setSelection(true);
+		btnBinding.addSelectionListener(new SelectionAdapter() {
+			@Override
+			public void widgetSelected(SelectionEvent e) {
+			}
+		});
+		btnBinding.setBounds(127, 85, 90, 18);
+		btnBinding.setText("Binding");
+		
+		btnHybrid = new Button(composite, SWT.RADIO);
+		btnHybrid.setBounds(232, 85, 90, 18);
+		btnHybrid.setText("Hybrid");
 		
 		setDefaultValuesAndListeners();
 
@@ -151,6 +173,40 @@ public class FrameworkComposite extends Composite {
 				
 			}
 		});
+		
+		btnBinding.addSelectionListener(new SelectionListener() {
+			
+			@Override
+			public void widgetSelected(SelectionEvent arg0) {
+				if (inited) {
+					frameworkBinding.setObjcClassGenerationMode(Bindings.BINDING);
+					documentChanged();
+				}
+			}
+			
+			@Override
+			public void widgetDefaultSelected(SelectionEvent arg0) {
+				// TODO Auto-generated method stub
+				
+			}
+		});
+		
+		btnHybrid.addSelectionListener(new SelectionListener() {
+			
+			@Override
+			public void widgetSelected(SelectionEvent arg0) {
+				if (inited) {
+					frameworkBinding.setObjcClassGenerationMode(Bindings.HYBRID);
+					documentChanged();
+				}
+			}
+			
+			@Override
+			public void widgetDefaultSelected(SelectionEvent arg0) {
+				// TODO Auto-generated method stub
+				
+			}
+		});
 	}
 	
 	public void initWithFrameworkBinding(FrameworkBinding frameworkBinding) {
@@ -173,6 +229,14 @@ public class FrameworkComposite extends Composite {
 		importCode = importCode == null ? "" : importCode;
 		importHeadersText.setText(importCode);
 		
+		String bindingType = frameworkBinding.getObjcClassGenerationMode();
+        if (bindingType == null || bindingType.isEmpty()) {
+            bindingType = Bindings.BINDING;
+        }
+        boolean isBinding = bindingType == null || bindingType.equals(Bindings.BINDING);
+        btnBinding.setSelection(isBinding);
+        btnHybrid.setSelection(!isBinding);
+		
 		inited = true;
 	}
 	
@@ -192,5 +256,4 @@ public class FrameworkComposite extends Composite {
 			frameworkPathText.setText(selected);
 		}
 	}
-
 }
