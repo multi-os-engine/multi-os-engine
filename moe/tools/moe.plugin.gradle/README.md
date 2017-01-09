@@ -81,6 +81,16 @@ cd <repo>/moe/tools/master
     -Partifactory.pass=<pass>
 ```
 
+### Debugging the Plugin
+
+Before running Gradle, export the following:
+
+```sh
+export GRADLE_OPTS="-Xdebug -Xrunjdwp:transport=dt_socket,server=y,suspend=y,address=5005"
+```
+
+This way you can remote connect to debug the plugin.
+
 ### SDK
 
 The plugin knows which SDK to download, and automatically installs it into the `.moe` directory under the user's home
