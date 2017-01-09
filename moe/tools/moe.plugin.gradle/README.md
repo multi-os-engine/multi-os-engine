@@ -252,6 +252,31 @@ moe {
 }
 ```
 
+### UI Actions and Outlets
+
+Generating Objective-C interfaces can be configured to limit what should be generated. By default all classes marked
+with `@ObjCClassName` annotation will be processed.
+
+```groovy
+moe {
+    actionsAndOutlets {
+        // Only include classes matching any regex in this array, setting to empty list resets to default behavior
+        includes = ['org\\.moe\\.\\w*Controller']
+
+        // Add include criteria regex to the includes array
+        include 'org\\.moe\\.\\w*Controller'
+        
+        // Additional code to be generated into the Objective-C source
+        additionalCodes = ['@class MyObjCOnlyClass;']
+        additionalCode '#import "MyClass.h"'
+        
+        // Disable the generation of specified `@import`'s
+        excludeLibraries = ['NotValidImport']
+        excludeLibrary 'UIKit'
+    }
+}
+```
+
 ## Tasks
 
 ### ProGuard Task

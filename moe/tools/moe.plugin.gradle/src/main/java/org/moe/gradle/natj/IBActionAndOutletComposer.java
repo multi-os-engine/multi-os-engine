@@ -19,6 +19,7 @@ package org.moe.gradle.natj;
 import org.apache.commons.lang3.StringUtils;
 import org.gradle.api.GradleException;
 import org.moe.gradle.natj.NatJResolver.ResolvedClass;
+import org.moe.gradle.options.UIActionsAndOutletsOptions;
 import org.moe.gradle.utils.TaskUtils;
 import org.objectweb.asm.ClassReader;
 import org.objectweb.asm.MethodVisitor;
@@ -60,7 +61,12 @@ public class IBActionAndOutletComposer {
         reader.accept(visitor.getInitializingVisitor(ASM5, resolver::add), 0);
     }
 
-    public String compose() {
+    public String compose(UIActionsAndOutletsOptions options) {
+        final List<String> classIncludeFilters = new ArrayList<>(options.getIncludes());
+        if (classIncludeFilters.size() == 0) {
+            classIncludeFilters.add(".*");
+        }
+
         final StringBuilder builder = new StringBuilder();
         final StringBuilder headBuilder = new StringBuilder();
 
@@ -72,6 +78,11 @@ public class IBActionAndOutletComposer {
         resolver.resolve((k, resolvedClass) -> {
             final ClassVisitor v = resolvedClass.getClazz();
             if (!v.hasObjcClassName() || !resolvedClass.isValidObjCType()) {
+                return;
+            }
+            final String prettyName = resolvedClass.getPrettyName();
+            if (classIncludeFilters.stream().noneMatch(prettyName::matches)) {
+                LOG.info("Skipping " + prettyName + ": not found in include list");
                 return;
             }
 
@@ -281,7 +292,10 @@ public class IBActionAndOutletComposer {
         headBuilder.append("\n");
 
         // Generate imports
+        allLibraries.removeAll(options.getExcludeLibraries());
         allLibraries.forEach(x -> headBuilder.append("@import ").append(x).append(";\n"));
+        headBuilder.append("\n");
+        options.getAdditionalCodes().forEach(x -> headBuilder.append(x).append("\n"));
         headBuilder.append("\n");
 
         headBuilder.append(builder);

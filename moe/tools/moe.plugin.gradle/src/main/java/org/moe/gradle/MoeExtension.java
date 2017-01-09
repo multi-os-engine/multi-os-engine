@@ -24,9 +24,10 @@ import org.moe.gradle.anns.IgnoreUnused;
 import org.moe.gradle.anns.NotNull;
 import org.moe.gradle.anns.Nullable;
 import org.moe.gradle.options.JavaProcessOptions;
-import org.moe.gradle.options.SigningOptions;
 import org.moe.gradle.options.PackagingOptions;
 import org.moe.gradle.options.ResourceOptions;
+import org.moe.gradle.options.SigningOptions;
+import org.moe.gradle.options.UIActionsAndOutletsOptions;
 import org.moe.gradle.options.XcodeOptions;
 import org.moe.gradle.utils.Require;
 
@@ -67,6 +68,9 @@ public class MoeExtension {
     public final JavaProcessOptions javaProcess;
 
     @NotNull
+    public final UIActionsAndOutletsOptions actionsAndOutlets;
+
+    @NotNull
     private MoePlatform platform = MoePlatform.IOS;
 
     private int proguardLevel = PROGUARD_LEVEL_APP;
@@ -80,6 +84,7 @@ public class MoeExtension {
         this.xcode = instantiator.newInstance(XcodeOptions.class);
         this.signing = instantiator.newInstance(SigningOptions.class);
         this.javaProcess = instantiator.newInstance(JavaProcessOptions.class);
+        this.actionsAndOutlets = instantiator.newInstance(UIActionsAndOutletsOptions.class);
     }
 
     void setup() {
@@ -130,6 +135,11 @@ public class MoeExtension {
     @IgnoreUnused
     public void javaProcess(Action<JavaProcessOptions> action) {
         Require.nonNull(action).execute(javaProcess);
+    }
+
+    @IgnoreUnused
+    public void actionsAndOutlets(Action<UIActionsAndOutletsOptions> action) {
+        Require.nonNull(action).execute(actionsAndOutlets);
     }
 
     @NotNull

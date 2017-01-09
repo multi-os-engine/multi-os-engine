@@ -66,14 +66,13 @@ dependencies {
 
     testCompile group: 'junit', name: 'junit', version: '4.12'
     testCompile gradleTestKit()
+    testCompile project(':moe.generator.project')
 
     compileOnly project(':moe.tools.common')
     compileOnly project(':moe.document.pbxproj')
-    compileOnly project(':moe.generator.project')
 
     included project(':moe.tools.common')
     included project(':moe.document.pbxproj')
-    included project(':moe.generator.project')
 }
 
 tasks.test.dependsOn ':moe-sdk:devsdk'
@@ -171,6 +170,7 @@ task createClasspathManifest {
         outputDir.mkdirs()
         file("$outputDir/plugin-classpath.txt").text = (sourceSets.main.runtimeClasspath + configurations.included).join("\n")
         file("$outputDir/plugin-sdk-localbuild.txt").text = project(':moe-sdk').file('build/dev-sdk')
+        file("$outputDir/plugin-version.txt").text = project.version
     }
 }
 

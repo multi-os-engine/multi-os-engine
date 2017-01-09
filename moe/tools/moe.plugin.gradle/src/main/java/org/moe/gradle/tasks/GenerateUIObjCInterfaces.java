@@ -18,6 +18,7 @@ package org.moe.gradle.tasks;
 
 import org.gradle.api.GradleException;
 import org.gradle.api.file.ConfigurableFileCollection;
+import org.gradle.api.tasks.Input;
 import org.gradle.api.tasks.InputDirectory;
 import org.gradle.api.tasks.InputFiles;
 import org.gradle.api.tasks.OutputFile;
@@ -49,6 +50,7 @@ import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 public class GenerateUIObjCInterfaces extends AbstractBaseTask {
@@ -96,6 +98,24 @@ public class GenerateUIObjCInterfaces extends AbstractBaseTask {
         this.xcodeProjectFile = xcodeProjectFile;
     }
 
+    @Input
+    @NotNull
+    public List<String> getOptions_Includes() {
+        return getMoeExtension().actionsAndOutlets.getIncludes();
+    }
+
+    @Input
+    @NotNull
+    public List<String> getOptions_AdditionalCodes() {
+        return getMoeExtension().actionsAndOutlets.getAdditionalCodes();
+    }
+
+    @Input
+    @NotNull
+    public List<String> getOptions_ExcludeLibraries() {
+        return getMoeExtension().actionsAndOutlets.getExcludeLibraries();
+    }
+
     @Override
     protected void run() {
         // Reset logs
@@ -103,7 +123,7 @@ public class GenerateUIObjCInterfaces extends AbstractBaseTask {
 
         final IBActionAndOutletComposer composer = new IBActionAndOutletComposer();
         FileUtils.classAndJarInputIterator(getProject(), getInputFiles(), composer::read);
-        final String composition = composer.compose();
+        final String composition = composer.compose(getMoeExtension().actionsAndOutlets);
 
         // Save to file
         FileUtils.write(getOutputSource(), composition);
