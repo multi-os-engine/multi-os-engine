@@ -49,43 +49,43 @@ application.
 
 Build and publish _release_ version to Maven local repository:
 
-```sh
+```bash
 cd <repo>/moe/tools/master
 ./gradlew :moe-gradle:publishMavenJavaPublicationToMavenLocal
 ```
 
 Build and publish _snapshot_ version to Maven local repository:
 
-```sh
+```bash
 cd <repo>/moe/tools/master
 ./gradlew :moe-gradle:publishMavenJavaSnapshotPublicationToMavenLocal
 ```
 
 Build and publish _release_ version to Bintray:
 
-```sh
+```bash
 cd <repo>/moe/tools/master
 ./gradlew :moe-gradle:bintrayUpload \
-    -Pbintray.user=<user> \
-    -Pbintray.key=<key>
+    -Pbintray.user=user \
+    -Pbintray.key=key
 ```
 
 Build and publish _snapshot_ version to Artifactory:
 
-```sh
+```bash
 cd <repo>/moe/tools/master
 ./gradlew :moe-gradle:artifactoryPublish \
-    -Partifactory.url=<url> \
-    -Partifactory.key=<key> \
-    -Partifactory.user=<user> \
-    -Partifactory.pass=<pass>
+    -Partifactory.url=url \
+    -Partifactory.key=key \
+    -Partifactory.user=user \
+    -Partifactory.pass=pass
 ```
 
 ### Debugging the Plugin
 
 Before running Gradle, export the following:
 
-```sh
+```bash
 export GRADLE_OPTS="-Xdebug -Xrunjdwp:transport=dt_socket,server=y,suspend=y,address=5005"
 ```
 
@@ -543,13 +543,13 @@ first available device.
 
 Build for and launch on the first available device:
 
-```sh
+```bash
 ./gradlew moeLaunch
 ```
 
 Don't build and launch a debug session (with JDWP on port 5005) on simulator:
 
-```sh
+```bash
 ./gradlew moeLaunch -Pmoe.launcher.simulators=XXXXXXXXXXXX -Pmoe.launcher.options=no-build,debug:5005
 ```
 
