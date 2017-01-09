@@ -99,13 +99,13 @@ The SDK's structure must be as follows, otherwise the validation will fail:
 
 ```
 +- sdk
-|  +- moe-core.dex          /* generated on download */
+|  +- moe-core.dex
 |  +- moe-core.jar
 |  +- moe-ios-javadoc.jar
-|  +- moe-ios-junit.dex     /* generated on download */
+|  +- moe-ios-junit.dex
 |  +- moe-ios-junit.jar
-|  +- moe-ios-retro-dex.jar /* generated on download */
-|  +- moe-ios-retro.jar     /* generated on download */
+|  +- moe-ios-retro-dex.jar
+|  +- moe-ios-retro.jar
 |  +- moe-ios.jar
 |  +- iphoneos/MOE.framework
 |  \- iphonesimulator/MOE.framework
@@ -121,8 +121,6 @@ The SDK's structure must be as follows, otherwise the validation will fail:
    +- proguard.jar
    +- retrolambda.jar
    +- simlauncher
-   +- UITransformer-res
-   +- uiTransformer.jar
    +- windows/x86_64/(libeay32|libimobiledevice|natj|ssleay32).dll
    \- wrapnatjgen.jar
 ```

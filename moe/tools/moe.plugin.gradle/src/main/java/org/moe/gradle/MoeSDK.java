@@ -17,7 +17,6 @@ limitations under the License.
 package org.moe.gradle;
 
 import org.apache.commons.codec.digest.DigestUtils;
-import org.apache.tools.ant.taskdefs.condition.Os;
 import org.gradle.api.GradleException;
 import org.gradle.api.Project;
 import org.gradle.api.artifacts.Configuration;
@@ -30,7 +29,6 @@ import org.moe.gradle.anns.NotNull;
 import org.moe.gradle.anns.Nullable;
 import org.moe.gradle.utils.FileUtils;
 import org.moe.gradle.utils.Require;
-import org.moe.gradle.utils.TaskUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -39,9 +37,7 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.util.ArrayList;
 import java.util.HashSet;
-import java.util.List;
 import java.util.Properties;
 import java.util.Set;
 import java.util.concurrent.atomic.AtomicReference;
@@ -115,8 +111,7 @@ public class MoeSDK {
                 throw new GradleException("Value of " + MOE_LOCAL_SDK_PROPERTY + " property is not a String");
             }
             final Path path = Paths.get((String)property);
-            sdk.validatePartialSDK(path, true);
-            sdk.completePartialSDK(project, path, true);
+            sdk.validateSDK(path, true);
             sdk.bakeSDKPaths(path);
             return sdk;
         }
@@ -125,8 +120,7 @@ public class MoeSDK {
         if (System.getenv(MOE_LOCAL_SDK_ENV) != null) {
             LOG.info("Using custom local MOE SDK (env)");
             final Path path = Paths.get(System.getenv(MOE_LOCAL_SDK_ENV));
-            sdk.validatePartialSDK(path, true);
-            sdk.completePartialSDK(project, path, true);
+            sdk.validateSDK(path, true);
             sdk.bakeSDKPaths(path);
             return sdk;
         }
@@ -134,8 +128,7 @@ public class MoeSDK {
         if (plugin.getProject().file("moe.sdk.localbuild").exists()) {
             LOG.info("Using custom local MOE SDK (file)");
             final Path path = Paths.get(FileUtils.read(plugin.getProject().file("moe.sdk.localbuild")).trim());
-            sdk.validatePartialSDK(path, true);
-            sdk.completePartialSDK(project, path, true);
+            sdk.validateSDK(path, true);
             sdk.bakeSDKPaths(path);
             return sdk;
         }
@@ -157,7 +150,7 @@ public class MoeSDK {
         }
         final Path SDK_PATH = USER_MOE_HOME.resolve("moe-sdk-" + sdkVersion + optionalSnapshotSuffix);
         if (SDK_PATH.toFile().exists() && optionalSnapshotSuffix.length() == 0) {
-            sdk.validateCompleteSDK(SDK_PATH, false);
+            sdk.validateSDK(SDK_PATH, false);
             sdk.bakeSDKPaths(SDK_PATH);
             return sdk;
         }
@@ -170,7 +163,7 @@ public class MoeSDK {
         final boolean sdkUpToDate = checkComponentUpToDate(file, SDK_PATH.resolve("sdk.md5").toFile(), sdkCalculatedMD5Ref);
         if (SDK_PATH.toFile().exists() && optionalSnapshotSuffix.length() > 0) {
             if (sdkUpToDate) {
-                sdk.validateCompleteSDK(SDK_PATH, false);
+                sdk.validateSDK(SDK_PATH, false);
                 sdk.bakeSDKPaths(SDK_PATH);
                 return sdk;
             } else {
@@ -184,37 +177,16 @@ public class MoeSDK {
 
         // Prepare temp dir by removing old tmp directory and re-creating it
         System.out.println("Installing MOE SDK, this may take a few minutes...");
-        final Path TEMP_SDK_PATH = USER_MOE_HOME.resolve("moe-sdk-" + sdkVersion + optionalSnapshotSuffix + ".tmp");
-        if (TEMP_SDK_PATH.toFile().exists()) {
-            try {
-                FileUtils.deleteFileOrFolder(TEMP_SDK_PATH);
-            } catch (IOException e) {
-                throw new GradleException("Failed to delete directory " + TEMP_SDK_PATH, e);
-            }
-        }
-        if (!TEMP_SDK_PATH.toFile().mkdir()) {
-            throw new GradleException("Failed to create directory at " + TEMP_SDK_PATH);
-        }
 
         // Extract zip into the temp directory
         project.copy(spec -> {
             spec.from(project.zipTree(file));
-            spec.into(TEMP_SDK_PATH.toFile());
+            spec.into(SDK_PATH.toFile());
         });
 
         // Validate files
-        sdk.validatePartialSDK(TEMP_SDK_PATH, false);
+        sdk.validateSDK(SDK_PATH, false);
 
-        // Process SDK
-        sdk.completePartialSDK(project, TEMP_SDK_PATH, false);
-
-        // Write SDK MD5
-        FileUtils.write(TEMP_SDK_PATH.resolve("sdk.md5").toFile(), sdkCalculatedMD5Ref.get());
-
-        // Move the SDK into place
-        if (!TEMP_SDK_PATH.toFile().renameTo(SDK_PATH.toFile())) {
-            throw new GradleException("Failed to move the MOE SDK into its final place");
-        }
         sdk.bakeSDKPaths(SDK_PATH);
         return sdk;
     }
@@ -234,161 +206,6 @@ public class MoeSDK {
         return (Boolean)moeUseSnapshot;
     }
 
-    private void completePartialSDK(@NotNull Project project, @NotNull Path path, boolean isLocalSDK) {
-        final ASync ios = new ASync(() -> {
-            final File cachedMD5File = path.resolve("sdk/moe-ios.jar.md5").toFile();
-            final File md5CheckInputFile = path.resolve("sdk/moe-ios.jar").toFile();
-
-            final AtomicReference<String> calculatedMD5Ref = new AtomicReference<>();
-            if (checkComponentUpToDate(md5CheckInputFile, cachedMD5File, calculatedMD5Ref)) {
-                return;
-            }
-
-            LOG.info("Extracting retrolambda on moe-ios.jar");
-            project.copy(spec -> {
-                spec.from(project.zipTree(md5CheckInputFile));
-                spec.into(path.resolve("sdk/moe-ios-jar.dir").toFile());
-            });
-
-            LOG.info("Running retrolambda on moe-ios.jar");
-            TaskUtils.javaexec(project, spec -> {
-                spec.systemProperty("retrolambda.inputDir", path.resolve("sdk/moe-ios-jar.dir"));
-                spec.systemProperty("retrolambda.classpath", path.resolve("sdk/moe-core.jar"));
-                spec.systemProperty("retrolambda.defaultMethods", "true");
-                spec.systemProperty("retrolambda.outputDir", path.resolve("sdk/moe-ios-retro.dir"));
-                spec.setMain("-jar");
-                spec.args(path.resolve("tools/retrolambda.jar").toFile());
-            });
-
-            LOG.info("Creating moe-ios-retro.jar");
-            TaskUtils.exec(project, spec -> {
-                final Path wdir = path.resolve("sdk/moe-ios-retro.dir");
-                spec.setWorkingDir(wdir.toFile());
-                spec.setCommandLine("jar", "-cvf", path.resolve("sdk/moe-ios-retro.jar"), wdir.resolve("."));
-            });
-
-            LOG.info("Cleaning up temp files after moe-ios-retro.jar");
-            try {
-                FileUtils.deleteFileOrFolder(path.resolve("sdk/moe-ios-jar.dir"));
-            } catch (IOException ex) {
-                LOG.warn(ex.getMessage());
-            }
-            try {
-                FileUtils.deleteFileOrFolder(path.resolve("sdk/moe-ios-retro.dir"));
-            } catch (IOException ex) {
-                LOG.warn(ex.getMessage());
-            }
-
-            LOG.info("Created moe-ios-retro.jar");
-
-            LOG.info("Running dx on moe-ios-retro.jar");
-
-            final List<Object> cmd = new ArrayList<>();
-            cmd.add("--dex");
-            cmd.add("--output");
-            cmd.add(path.resolve("sdk/moe-ios-retro-dex.jar"));
-            cmd.add("--core-library");
-            cmd.add("--multi-dex");
-            cmd.add(path.resolve("sdk/moe-ios-retro.jar"));
-
-            if (Os.isFamily(Os.FAMILY_WINDOWS)) {
-                TaskUtils.javaexec(project, spec -> {
-                    spec.setMain("-jar");
-                    spec.args(path.resolve("tools/dx.jar").toFile());
-                    spec.args(cmd);
-                    System.out.println(spec.getCommandLine());
-                });
-            } else {
-                TaskUtils.exec(project, spec -> {
-                    spec.setExecutable(path.resolve("tools/dx").toFile());
-                    spec.args(cmd);
-                });
-            }
-
-            LOG.info("Created moe-ios-retro-dex.jar");
-            FileUtils.write(cachedMD5File, calculatedMD5Ref.get());
-        });
-
-        final ASync core = new ASync(() -> {
-            final File cachedMD5File = path.resolve("sdk/moe-core.jar.md5").toFile();
-            final File md5CheckInputFile = path.resolve("sdk/moe-core.jar").toFile();
-
-            final AtomicReference<String> calculatedMD5Ref = new AtomicReference<>();
-            if (checkComponentUpToDate(md5CheckInputFile, cachedMD5File, calculatedMD5Ref)) {
-                return;
-            }
-
-            LOG.info("Running dx on moe-core.jar");
-
-            final List<Object> cmd = new ArrayList<>();
-            cmd.add("--dex");
-            cmd.add("--output");
-            cmd.add(path.resolve("sdk/moe-core.dex"));
-            cmd.add("--core-library");
-            cmd.add(path.resolve("sdk/moe-core.jar"));
-
-            if (Os.isFamily(Os.FAMILY_WINDOWS)) {
-                TaskUtils.javaexec(project, spec -> {
-                    spec.setMain("-jar");
-                    spec.args(path.resolve("tools/dx.jar").toFile());
-                    spec.args(cmd);
-                    System.out.println(spec.getCommandLine());
-                });
-            } else {
-                TaskUtils.exec(project, spec -> {
-                    spec.setExecutable(path.resolve("tools/dx").toFile());
-                    spec.args(cmd);
-                });
-            }
-
-            LOG.info("Created moe-core.dex");
-            FileUtils.write(cachedMD5File, calculatedMD5Ref.get());
-        });
-
-        final ASync junit = new ASync(() -> {
-            final File cachedMD5File = path.resolve("sdk/moe-ios-junit.jar.md5").toFile();
-            final File md5CheckInputFile = path.resolve("sdk/moe-ios-junit.jar").toFile();
-
-            final AtomicReference<String> calculatedMD5Ref = new AtomicReference<>();
-            if (checkComponentUpToDate(md5CheckInputFile, cachedMD5File, calculatedMD5Ref)) {
-                return;
-            }
-
-            LOG.info("Running dx on moe-ios-junit.jar");
-
-            final List<Object> cmd = new ArrayList<>();
-            cmd.add("--dex");
-            cmd.add("--output");
-            cmd.add(path.resolve("sdk/moe-ios-junit.dex"));
-            cmd.add("--core-library");
-            cmd.add(path.resolve("sdk/moe-ios-junit.jar"));
-
-            if (Os.isFamily(Os.FAMILY_WINDOWS)) {
-                TaskUtils.javaexec(project, spec -> {
-                    spec.setMain("-jar");
-                    spec.args(path.resolve("tools/dx.jar").toFile());
-                    spec.args(cmd);
-                    System.out.println(spec.getCommandLine());
-                });
-            } else {
-                TaskUtils.exec(project, spec -> {
-                    spec.setExecutable(path.resolve("tools/dx").toFile());
-                    spec.args(cmd);
-                });
-            }
-
-            LOG.info("Created moe-ios-junit.dex");
-            FileUtils.write(cachedMD5File, calculatedMD5Ref.get());
-        });
-
-        // Wait for all tasks to complete
-        ios.join();
-        core.join();
-        junit.join();
-
-        validateCompleteSDK(path, isLocalSDK);
-    }
-
     private static boolean checkComponentUpToDate(File input, File md5file, AtomicReference<String> out) {
         final String calculatedMD5;
         try {
@@ -403,24 +220,6 @@ public class MoeSDK {
         }
         final String cachedMD5 = FileUtils.read(md5file);
         return cachedMD5.length() != 0 && cachedMD5.trim().equalsIgnoreCase(calculatedMD5);
-    }
-
-    private static class ASync {
-        @NotNull
-        final Thread worker;
-
-        ASync(@NotNull Runnable task) {
-            worker = new Thread(Require.nonNull(task));
-            worker.start();
-        }
-
-        void join() {
-            try {
-                worker.join();
-            } catch (InterruptedException e) {
-                throw new GradleException("Failed to join worker thread", e);
-            }
-        }
     }
 
     @NotNull
@@ -468,14 +267,18 @@ public class MoeSDK {
         return Require.sizeEQ(files, 1, "Unexpected number of files in MOE SDK").iterator().next();
     }
 
-    private void validatePartialSDK(@NotNull Path path, boolean isLocalSDK) {
+    private void validateSDK(@NotNull Path path, boolean isLocalSDK) {
         Require.nonNull(path);
 
         try {
             validate(DIR, path, "");
+            validate(FIL, path, "sdk/moe-core.dex");
             validate(FIL, path, "sdk/moe-core.jar");
             validate(FIL, path, "sdk/moe-ios-javadoc.jar");
+            validate(FIL, path, "sdk/moe-ios-junit.dex");
             validate(FIL, path, "sdk/moe-ios-junit.jar");
+            validate(FIL, path, "sdk/moe-ios-retro.jar");
+            validate(FIL, path, "sdk/moe-ios-retro-dex.jar");
             validate(FIL, path, "sdk/moe-ios.jar");
             if (!isLocalSDK) {
                 validate(DIR, path, "sdk/iphoneos/MOE.framework");
@@ -495,21 +298,6 @@ public class MoeSDK {
             validate(DIR, path, "tools/windows/x86_64");
             validate(FIL, path, "tools/wrapnatjgen.jar");
             validate(FIL, path, "tools/gradlew.zip");
-        } catch (IOException ex) {
-            LOG.error("Error: failed to validate MOE SDK, " + ex.getMessage());
-            throw new GradleException("MOE SDK is probably damaged, please remove it manually from " + path);
-        }
-    }
-
-    private void validateCompleteSDK(@NotNull Path path, boolean isLocalSDK) {
-        Require.nonNull(path);
-
-        validatePartialSDK(path, isLocalSDK);
-        try {
-            validate(FIL, path, "sdk/moe-core.dex");
-            validate(FIL, path, "sdk/moe-ios-junit.dex");
-            validate(FIL, path, "sdk/moe-ios-retro.jar");
-            validate(FIL, path, "sdk/moe-ios-retro-dex.jar");
         } catch (IOException ex) {
             LOG.error("Error: failed to validate MOE SDK, " + ex.getMessage());
             throw new GradleException("MOE SDK is probably damaged, please remove it manually from " + path);
