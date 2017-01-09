@@ -26,6 +26,7 @@ import java.util.List;
 public abstract class AbstractBinding implements IJsonAdapter {
     private String name;
     private final String type;
+    private String objcClassGenerationMode;
 
     public AbstractBinding(String type) {
         if (type == null) {
@@ -44,6 +45,14 @@ public abstract class AbstractBinding implements IJsonAdapter {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public String getObjcClassGenerationMode() {
+        return objcClassGenerationMode;
+    }
+
+    public void setObjcClassGenerationMode(String mode) {
+        this.objcClassGenerationMode = mode;
     }
 
     public abstract void validate() throws ValidationException;
@@ -81,6 +90,9 @@ public abstract class AbstractBinding implements IJsonAdapter {
         if (getName() != null) {
             json.addProperty("name", getName());
         }
+        if (objcClassGenerationMode != null) {
+            json.addProperty("objcClassGenerationMode", objcClassGenerationMode);
+        }
         return json;
     }
 
@@ -98,6 +110,14 @@ public abstract class AbstractBinding implements IJsonAdapter {
         final JsonPrimitive jsonName = json.getAsJsonPrimitive("name");
         if (jsonName != null) {
             setName(jsonName.getAsString());
+        }
+
+        setObjcClassGenerationMode(null);
+        final JsonPrimitive jsonObjcClassGenerationMode = json.getAsJsonPrimitive("objcClassGenerationMode");
+        if (jsonObjcClassGenerationMode != null) {
+            setObjcClassGenerationMode(jsonObjcClassGenerationMode.getAsString());
+        } else {
+            setObjcClassGenerationMode(Bindings.BINDING);
         }
     }
 

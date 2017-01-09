@@ -35,6 +35,9 @@ public class Bindings implements Iterable<AbstractBinding>, IJsonAdapter {
     public final static String PLATFORM_IOS = NativeSDKUtil.PLATFORM_IOS;
     public final static String PLATFORM_OSX = NativeSDKUtil.PLATFORM_OSX;
 
+    public final static String BINDING = "Binding";
+    public final static String HYBRID = "Hybrid";
+
     private String platform;
     private final List<AbstractBinding> bindings = new ArrayList<AbstractBinding>();
     private String outputDirectory;

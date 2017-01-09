@@ -16,11 +16,7 @@ limitations under the License.
 
 package org.moe.tools.natjgen;
 
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-import com.google.gson.JsonArray;
-import com.google.gson.JsonElement;
-import com.google.gson.JsonObject;
+import com.google.gson.*;
 import org.moe.common.developer.NativeSDKUtil;
 import org.moe.tools.natjgen.AbstractBinding.FrameworkBindingVisitor;
 import org.moe.tools.natjgen.AbstractBinding.HeaderBindingVisitor;
@@ -145,11 +141,16 @@ public class ConfigurationBuilder {
         final FrameworkBindingVisitor frameworkBindingVisitor = new FrameworkBindingVisitor() {
             @Override
             public void visit(FrameworkBinding binding) {
+                String objcClassGenerationMode = binding.getObjcClassGenerationMode();
+                final boolean isBinding = objcClassGenerationMode == null || objcClassGenerationMode.equals(Bindings.BINDING);
                 // @formatter:off
-                unitRules.add(new UnitRuleBuilder(true)
+                final UnitRuleBuilder ruleBuilder = new UnitRuleBuilder(true)
                         .addCondition("framework-match", binding.getFrameworkName())
-                        .addAction("replace-package-base", binding.getPackageBase())
-                        .build());
+                        .addAction("replace-package-base", binding.getPackageBase());
+                if (!isBinding) {
+                    ruleBuilder.addAction("generate-hybrid-class", null);
+                }
+                unitRules.add(ruleBuilder.build());
                 // @formatter:on
                 sourceFile.append(binding.getImportCode()).append("\n\n");
                 copyPath(binding.getFrameworkParentPath(), frameworkSearchPaths);
@@ -158,10 +159,15 @@ public class ConfigurationBuilder {
         final HeaderBindingVisitor headerBindingVisitor = new HeaderBindingVisitor() {
             @Override
             public void visit(HeaderBinding binding) {
+                String objcClassGenerationMode = binding.getObjcClassGenerationMode();
+                final boolean isBinding = objcClassGenerationMode == null || objcClassGenerationMode.equals(Bindings.BINDING);
                 // @formatter:off
                 final UnitRuleBuilder ruleBuilder = new UnitRuleBuilder(true)
                         .addCondition("path-prefix", projectRelativePath(binding.getHeaderPath()))
                         .addAction("replace-package-base", binding.getPackageBase());
+                if (!isBinding) {
+                    ruleBuilder.addAction("generate-hybrid-class", null);
+                }
                 // @formatter:on
                 if (binding.getExplicitLibrary() != null) {
                     ruleBuilder.addAction("replace-library", binding.getExplicitLibrary());
