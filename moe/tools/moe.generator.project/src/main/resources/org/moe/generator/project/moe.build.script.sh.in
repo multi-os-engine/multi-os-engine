@@ -35,7 +35,9 @@ function findGradle {
 # Build project with Gradle
 if [ -z "$MOE_GRADLE_EXTERNAL_BUILD" ]; then
     findGradle
-    "$GRADLE_EXEC" --daemon moeXcodeInternal -s
+    DAEMON_MODE=""
+    if [ "$ACTION" = "install" ]; then DAEMON_MODE="--no-daemon"; fi
+    "$GRADLE_EXEC" $DAEMON_MODE moeXcodeInternal -s
 fi
 
 # Check output directory
