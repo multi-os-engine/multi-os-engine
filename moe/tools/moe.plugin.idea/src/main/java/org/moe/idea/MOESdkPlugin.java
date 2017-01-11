@@ -155,9 +155,8 @@ public class MOESdkPlugin {
 
         String path = ModuleUtils.getModulePath(module);
 
-        // Skip root module, if found multi modules
-        if (rootPath.equals(path) && ( ModuleManager.getInstance(module.getProject()).getModules().length > 1)) {
-            return false;
+        if (rootPath.equals(path) && ( ModuleManager.getInstance(module.getProject()).getModules().length != 1)) {
+            return isMoeJarsInModule(module);
         }
 
         Map<String, Collection<ExternalTaskPojo>> tasks = localSettings.getAvailableTasks();
