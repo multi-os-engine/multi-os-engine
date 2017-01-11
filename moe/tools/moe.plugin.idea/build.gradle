@@ -23,7 +23,7 @@ buildscript {
 }
 
 plugins {
-    id "org.jetbrains.intellij" version "0.1.10"
+    id "org.jetbrains.intellij" version "0.2.0"
 }
 
 apply plugin: 'idea'
@@ -36,6 +36,11 @@ sourceCompatibility = 1.6
 targetCompatibility = 1.6
 
 def PLUGIN_NAME = 'moe_intellij_plugin'
+
+// Uncomment to debug via `./gradlew :moe.plugin.idea:runIdea`
+//tasks.runIdea {
+//    jvmArgs '-Xrunjdwp:transport=dt_socket,server=y,suspend=y,address=5005'
+//}
 
 intellij {
     version 'IC-2016.2'

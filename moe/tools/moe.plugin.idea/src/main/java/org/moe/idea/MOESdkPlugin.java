@@ -21,7 +21,7 @@ import com.intellij.ide.plugins.PluginManager;
 import com.intellij.openapi.diagnostic.Logger;
 import com.intellij.openapi.extensions.PluginId;
 import com.intellij.openapi.externalSystem.model.execution.ExternalTaskPojo;
-import com.intellij.openapi.externalSystem.util.ExternalSystemConstants;
+import com.intellij.openapi.externalSystem.model.project.ExternalProjectPojo;
 import com.intellij.openapi.module.Module;
 import com.intellij.openapi.module.ModuleManager;
 import com.intellij.openapi.module.ModuleUtil;
@@ -42,13 +42,12 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 import java.util.Map;
+import java.util.Map.Entry;
 import java.util.Properties;
 
 public class MOESdkPlugin {
 
     private static final Logger LOG = LoggerFactory.getLogger(MOESdkPlugin.class);
-
-    public static final String MOE_GRADLE_TASK_PREFIX = "moe";
 
     public static String getResourcesFolderName() {
         return "resources";
@@ -137,8 +136,9 @@ public class MOESdkPlugin {
         if (module == null) {
             return false;
         }
+        final String moduleName = module.getName();
         if (module.isDisposed()) {
-            LOG.info("Invalid MOE module, already disposed (" + module.getName() + ")");
+            LOG.info("Invalid MOE module, already disposed (" + moduleName + ")");
             return false;
         }
 
@@ -146,35 +146,45 @@ public class MOESdkPlugin {
             return ModuleUtils.isMOEMavenModule(module);
         }
 
-        GradleLocalSettings localSettings = GradleLocalSettings.getInstance(module.getProject());
-        String rootPath = module.getOptionValue(ExternalSystemConstants.ROOT_PROJECT_PATH_KEY);
+        final Project project = module.getProject();
+        final String path = ModuleUtils.getModulePath(module);
+        final GradleLocalSettings localSettings = GradleLocalSettings.getInstance(project);
 
-        if (rootPath == null) {
-            rootPath = module.getProject().getProjectFile().getParent().getCanonicalPath();
+        // Get available projects
+        Collection<ExternalProjectPojo> availableProjects = null;
+        for (Entry<ExternalProjectPojo, Collection<ExternalProjectPojo>> entry : localSettings.getAvailableProjects()
+                .entrySet()) {
+            if (entry.getKey().getPath().equals(project.getBasePath())) {
+                availableProjects = entry.getValue();
+                break;
+            }
+        }
+        if (availableProjects == null) {
+            LOG.info("Not found available projects: " + moduleName);
+            return false;
         }
 
-        String path = ModuleUtils.getModulePath(module);
-
-        if (rootPath.equals(path) && ( ModuleManager.getInstance(module.getProject()).getModules().length != 1)) {
-            return isMoeJarsInModule(module);
+        // Match IDEA module to Gradle project/subproject
+        for (ExternalProjectPojo availableProject : availableProjects) {
+            if (availableProject.getPath().equals(path)) {
+                if (!availableProject.getName().equals(moduleName) && !availableProject.getName()
+                        .endsWith(":" + moduleName)) {
+                    LOG.info("Could not associate IDEA module with Gradle project: " + moduleName);
+                    return false;
+                }
+                break;
+            }
         }
 
+        // Check for moeLaunch task
         Map<String, Collection<ExternalTaskPojo>> tasks = localSettings.getAvailableTasks();
-
-        if (tasks == null) {
-            LOG.info("Not found gradle tasks: " + module.getName());
-            return false;
-        }
-
         Collection<ExternalTaskPojo> taskPojos = tasks.get(path);
-
         if (taskPojos == null) {
-            LOG.info("Not found gradle task pojos: " + module.getName());
+            LOG.info("Not found gradle task pojos: " + moduleName);
             return false;
         }
-
         for (ExternalTaskPojo taskPojo : taskPojos) {
-            if (taskPojo.getName().startsWith(MOE_GRADLE_TASK_PREFIX)) {
+            if ("moeLaunch".equals(taskPojo.getName())) {
                 return true;
             }
         }
