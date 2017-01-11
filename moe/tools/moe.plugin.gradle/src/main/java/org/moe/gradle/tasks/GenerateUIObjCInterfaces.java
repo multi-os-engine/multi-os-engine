@@ -184,7 +184,7 @@ public class GenerateUIObjCInterfaces extends AbstractBaseTask {
             // Calculate relative path to output source from SRCROOT
             final Path relativePath = getXcodeProjectFile().getParentFile().toPath()
                     .relativize(getOutputSource().toPath());
-            final String relativePathString = relativePath.toString();
+            final String relativePathString = relativePath.toString().replaceAll("\\\\", "/");
 
             // Search for the generated file's file reference and create it on demand
             @SuppressWarnings("unchecked") PBXObjectRef<PBXFileReference> fileRef = (PBXObjectRef<PBXFileReference>)groupRef
