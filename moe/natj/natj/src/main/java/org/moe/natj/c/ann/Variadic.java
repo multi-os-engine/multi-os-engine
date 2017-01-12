@@ -28,7 +28,6 @@ import java.lang.annotation.Target;
  * Mark a native method as variadic with this annotation to tell NatJ
  * that how the arguments should be handled.
  */
-@Runtime(CRuntime.class)
 @Retention(RetentionPolicy.RUNTIME)
 @Target({
         ElementType.METHOD

@@ -525,7 +525,7 @@ public class VariadicClass extends NSObject {
 
 
     /*
-     * Methods for @NULong long
+     * Methods for implicitly mapped objects
      */
 
     @Variadic()
