@@ -522,4 +522,14 @@ public class VariadicClass extends NSObject {
         @Variadic()
         public boolean call_blockForExplicitWCharTs(int n, VariadicArg.WCharTVariadicArg... varargs);
     }
+
+
+    /*
+     * Methods for @NULong long
+     */
+
+    @Variadic()
+    @Selector("testFirstArgString:withVariadics:")
+    public static native boolean testFirstArgStringWithVariadics(String str,
+                                                                 String others, Object... arargs);
 }

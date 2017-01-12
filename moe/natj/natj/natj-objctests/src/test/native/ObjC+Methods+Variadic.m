@@ -98,4 +98,11 @@ TEST_METHOD_BLOCK(ExplicitWCharT, wchar_t, uint32_t, _1 == _2)
 #undef TEST_METHOD_BLOCK
 #undef TEST_METHOD
 
++ (BOOL) testFirstArgString:(NSString *)str withVariadics:(NSString *) others,
+    ... {
+    [str retain];
+    [str release];
+    return true;
+}
+
 @end

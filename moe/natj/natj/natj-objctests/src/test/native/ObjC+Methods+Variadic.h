@@ -69,4 +69,7 @@ TEST_METHOD_BLOCK(ExplicitWCharT)
 #undef TEST_METHOD_BLOCK
 #undef TEST_METHOD
 
++ (BOOL) testFirstArgString:(NSString *)str withVariadics:(NSString *) others,
+    ...;
+
 @end

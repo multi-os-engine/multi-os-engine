@@ -414,4 +414,9 @@ public class ObjCVariadicTest {
         Assert.assertTrue(block2.call_blockForExplicitWCharTs(3, a, a, b, b, a, a));
         Assert.assertFalse(block2.call_blockForExplicitWCharTs(3, a, a, b, b, a, b));
     }
+
+    @Test
+    public void testFirstArgStringWithVariadics() {
+        Assert.assertTrue(VariadicClass.testFirstArgStringWithVariadics("Text", null));
+    }
 }
