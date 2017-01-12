@@ -44,9 +44,10 @@ public class BindingEditor extends FormEditor {
 	@Override
 	public void init(IEditorSite site, IEditorInput input) throws PartInitException {
 		super.init(site, input);
-		setPartName("Binding Editor");
-		this.bindingEditorForm = new BindingEditorForm(this, "moe.editors.form.binding", "Binding", getProject());
-		bindingEditorForm.setConfigurationFile(getFile());
+		File file = getFile();
+		setPartName(file.getName());
+		this.bindingEditorForm = new BindingEditorForm(this, "moe.editors.form.binding", "Binding Editor", getProject());
+		bindingEditorForm.setConfigurationFile(file);
 	}
 
 	@Override

@@ -54,8 +54,8 @@ public class XCodeEditor extends FormEditor {
 	@Override
 	public void init(IEditorSite site, IEditorInput input) throws PartInitException {
 		super.init(site, input);
-		setPartName("Xcode Editor");
 		initManagers();
+		setPartName(xcodeEditorManager.getProjectName());
 		this.projectForm = new ProjectEditorPage(this, "moe.editors.form.project", "Project", false);
 		this.mainForm = new TargetEditorPage(this, "moe.editors.form.main", xcodeEditorManager.getMainTargetName(), true);
 		this.testForm = new TargetEditorPage(this, "moe.editors.form.test", xcodeEditorManager.getTestTargetName(), false);

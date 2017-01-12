@@ -545,7 +545,7 @@ public class BindingEditorForm extends FormPage {
             GeneratorRunner testGeneratorRunner = new GeneratorRunner(project);
             testGeneratorRunner.generateBinding(temp, test);
         } catch (Exception e) {
-        	MessageFactory.showErrorDialog("Binding error", e.getMessage());
+        	MessageFactory.showErrorDialog("Binding error", e);
         }
     }
 	
