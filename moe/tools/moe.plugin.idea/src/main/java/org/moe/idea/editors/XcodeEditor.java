@@ -21,7 +21,11 @@ import com.intellij.ide.structureView.StructureViewBuilder;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.command.CommandProcessor;
 import com.intellij.openapi.diagnostic.Logger;
-import com.intellij.openapi.fileEditor.*;
+import com.intellij.openapi.fileEditor.FileDocumentManager;
+import com.intellij.openapi.fileEditor.FileEditor;
+import com.intellij.openapi.fileEditor.FileEditorLocation;
+import com.intellij.openapi.fileEditor.FileEditorState;
+import com.intellij.openapi.fileEditor.FileEditorStateLevel;
 import com.intellij.openapi.fileEditor.impl.text.TextEditorProvider;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.util.Key;
@@ -191,8 +195,7 @@ public class XcodeEditor extends VirtualFileAdapter implements FileEditor {
         xcodeEditorManager.setProjectName(projectName);
 
         String root = virtualFile.getParent().getParent().getPath();
-        File mainInfoPlist = new File(root +
-                File.separator + xcodeEditorManager.getInfoMainPlist());
+        File mainInfoPlist = getFileFromXcodeConfiguration(root, xcodeEditorManager.getInfoMainPlist());
 
         VirtualFile mainInfoVirtualFile = project.getBaseDir().getFileSystem().findFileByPath(mainInfoPlist.getAbsolutePath());
         this.mainInfoPlistDocument = fileDocumentManager.getDocument(mainInfoVirtualFile);
@@ -221,9 +224,8 @@ public class XcodeEditor extends VirtualFileAdapter implements FileEditor {
             }
         });
 
-        File testInfoPlist = new File(root +
-                File.separator + xcodeEditorManager.getInfoTestPlist());
-        
+        File testInfoPlist = getFileFromXcodeConfiguration(root, xcodeEditorManager.getInfoTestPlist());
+
         VirtualFile testInfoVirtualFile = project.getBaseDir().getFileSystem().findFileByPath(testInfoPlist.getAbsolutePath());
         this.testInfoPlistDocument = fileDocumentManager.getDocument(testInfoVirtualFile);
         try {
@@ -250,6 +252,17 @@ public class XcodeEditor extends VirtualFileAdapter implements FileEditor {
                 reloadTestInfoPlist();
             }
         });
+    }
+
+    @NotNull
+    private File getFileFromXcodeConfiguration(String srcroot, String path) {
+        path = path.replaceAll("/", "\\" + File.separator);
+        path = path.replaceAll("\\$\\(SRCROOT\\)", srcroot);
+        final File file = new File(path);
+        if (file.isAbsolute()) {
+            return file;
+        }
+        return new File(srcroot, path);
     }
 
     private void saveXcodeDocument() {
